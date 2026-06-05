@@ -95,18 +95,6 @@ Color myStatusDotColor(String label) {
 
 /// 카테고리별 대표 그라디언트 색상 (포스터 플레이스홀더용)
 List<Color> categoryGradient(MediaCategory category) {
-  switch (category) {
-    case MediaCategory.manga:
-      return [const Color(0xFF7B2FF7), const Color(0xFFC471F5)]; // 보라-연보라
-    case MediaCategory.animation:
-      return [const Color(0xFFFF512F), const Color(0xFFF09819)]; // 오렌지-황토
-    case MediaCategory.game:
-      return [const Color(0xFF00B09B), const Color(0xFF96C93D)]; // 청록-연두
-    case MediaCategory.book:
-      return [const Color(0xFF0052D4), const Color(0xFF6FB1FC)]; // 파랑-하늘
-    case MediaCategory.movie:
-      return [const Color(0xFF373B44), const Color(0xFF4286F4)]; // 철청-하늘
-    case MediaCategory.drama:
-      return [const Color(0xFF11998E), const Color(0xFF38EF7D)]; // 청록-민트
-  }
+  // 모든 카테고리에 대해 차분한 연한 회색 그라디언트로 통일 (Phase 9)
+  return [const Color(0xFF374151), const Color(0xFF4B5563)];
 }

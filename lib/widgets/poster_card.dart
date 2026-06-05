@@ -320,10 +320,10 @@ class _PosterCardState extends State<PosterCard> {
           children: [
             Icon(
               item.category.icon,
-              size: 32,
-              color: Colors.white.withValues(alpha: 0.6),
+              size: 38,
+              color: Colors.white.withValues(alpha: 0.85),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
@@ -332,7 +332,7 @@ class _PosterCardState extends State<PosterCard> {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white.withValues(alpha: 0.85),
+                  color: Colors.white.withValues(alpha: 0.9),
                   height: 1.3,
                 ),
                 maxLines: 3,
