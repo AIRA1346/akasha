@@ -100,21 +100,38 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadItems() async {
     setState(() => _isLoading = true);
     final service = AkashaFileService();
+    List<AkashaItem> loadedItems = [];
     if (service.vaultPath != null) {
-      final vaultItems = await service.loadAllItems();
-      if (mounted) {
-        setState(() {
-          _items = vaultItems;
-          _isLoading = false;
-        });
-      }
+      loadedItems = await service.loadAllItems();
     } else {
-      if (mounted) {
-        setState(() {
-          _items = buildSampleData();
-          _isLoading = false;
-        });
+      loadedItems = buildSampleData();
+    }
+
+    // 인메모리 변경사항 캐시 병합 (데모 모드 및 즉시 갱신 보완)
+    final cache = service.inMemoryCache;
+    if (cache.isNotEmpty) {
+      for (int i = 0; i < loadedItems.length; i++) {
+        final key = loadedItems[i].workId.isNotEmpty ? loadedItems[i].workId : loadedItems[i].title;
+        if (cache.containsKey(key)) {
+          loadedItems[i] = cache[key]!;
+        }
       }
+      for (final cachedItem in cache.values) {
+        final alreadyExists = loadedItems.any((e) =>
+          (e.workId.isNotEmpty && e.workId == cachedItem.workId) ||
+          (e.workId.isEmpty && e.title == cachedItem.title)
+        );
+        if (!alreadyExists) {
+          loadedItems.add(cachedItem);
+        }
+      }
+    }
+
+    if (mounted) {
+      setState(() {
+        _items = loadedItems;
+        _isLoading = false;
+      });
     }
   }
 

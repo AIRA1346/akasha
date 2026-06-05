@@ -17,6 +17,10 @@ class AkashaFileService {
   String? _vaultPath;
   StreamController<void>? _vaultUpdateController;
   StreamSubscription<FileSystemEvent>? _watcherSubscription;
+  final Map<String, AkashaItem> _inMemoryCache = {};
+
+  /// 메모리 캐시 반환 (데모 모드 지원용)
+  Map<String, AkashaItem> get inMemoryCache => _inMemoryCache;
 
   /// 현재 설정된 볼트 경로. 설정되지 않은 경우 null을 반환.
   String? get vaultPath => _vaultPath;
@@ -153,6 +157,10 @@ class AkashaFileService {
 
   /// AkashaItem을 마크다운 파일로 저장합니다.
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
+    // 메모리 캐시에 먼저 저장 (데모 모드 및 실시간 상태 동기화 지원)
+    final key = item.workId.isNotEmpty ? item.workId : item.title;
+    _inMemoryCache[key] = item;
+
     if (_vaultPath == null) return;
 
     // 제목이 변경된 경우 이전 파일을 먼저 삭제 처리
@@ -203,6 +211,10 @@ class AkashaFileService {
 
   /// AkashaItem을 볼트에서 제거(마크다운 파일 삭제)합니다.
   Future<void> deleteItem(String title, MediaCategory category) async {
+    _inMemoryCache.removeWhere((key, item) => 
+      item.title == title && item.category == category
+    );
+
     if (_vaultPath == null) return;
 
     final safeTitle = _makeSafeFilename(title);
