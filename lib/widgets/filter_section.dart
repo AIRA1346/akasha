@@ -3,34 +3,32 @@ import '../models/enums.dart';
 import '../utils/helpers.dart';
 
 // ════════════════════════════════════════════════════════════════
-//  필터 섹션 위젯 (지능형 중첩 필터링)
+//  필터 섹션 위젯 (지능형 중첩 필터링 - 다중 카테고리 지원)
 // ════════════════════════════════════════════════════════════════
 
 class FilterSection extends StatelessWidget {
   final AppDomain? selectedDomain;
-  final MediaCategory? selectedCategory;
+  final Set<MediaCategory> selectedCategories; // 변경: 다중 카테고리 지원
   final Set<String> selectedWorkStatuses;
   final Set<String> selectedMyStatuses;
-  final SortCriteria sortCriteria;
 
   final ValueChanged<AppDomain?> onDomainChanged;
-  final ValueChanged<MediaCategory?> onCategoryChanged;
+  final ValueChanged<MediaCategory> onToggleCategory; // 변경: 카테고리 토글 콜백
+  final VoidCallback onClearCategories; // 변경: 카테고리 전체 클리어
   final ValueChanged<String> onToggleWorkStatus;
   final ValueChanged<String> onToggleMyStatus;
-  final ValueChanged<SortCriteria> onSortChanged;
 
   const FilterSection({
     super.key,
     required this.selectedDomain,
-    required this.selectedCategory,
+    required this.selectedCategories,
     required this.selectedWorkStatuses,
     required this.selectedMyStatuses,
-    required this.sortCriteria,
     required this.onDomainChanged,
-    required this.onCategoryChanged,
+    required this.onToggleCategory,
+    required this.onClearCategories,
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
-    required this.onSortChanged,
   });
 
   @override
@@ -42,7 +40,7 @@ class FilterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── 1. 대분류 (도메인) 필터 + 정렬 ──
+          // ── 1. 대분류 (도메인) 필터 ──
           Row(
             children: [
               Expanded(
@@ -71,9 +69,6 @@ class FilterSection extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
-              // 정렬 드롭다운
-              _sortDropdown(context),
             ],
           ),
 
@@ -89,8 +84,8 @@ class FilterSection extends StatelessWidget {
                     children: [
                       _chip(
                         label: selectedDomain == null ? '매체 전체' : '${selectedDomain!.label} 전체',
-                        selected: selectedCategory == null,
-                        onTap: () => onCategoryChanged(null),
+                        selected: selectedCategories.isEmpty,
+                        onTap: onClearCategories,
                         small: true,
                       ),
                       const SizedBox(width: 6),
@@ -100,8 +95,8 @@ class FilterSection extends StatelessWidget {
                           child: _chip(
                             label: cat.label,
                             icon: cat.icon,
-                            selected: selectedCategory == cat,
-                            onTap: () => onCategoryChanged(cat),
+                            selected: selectedCategories.contains(cat),
+                            onTap: () => onToggleCategory(cat),
                             small: true,
                           ),
                         ),
@@ -113,14 +108,14 @@ class FilterSection extends StatelessWidget {
             ],
           ),
 
-          // ── 상태 필터 (카테고리 선택 시에만 활성화) ──
-          if (selectedCategory != null) ...[
+          // ── 상태 필터 (하나 이상의 카테고리 선택 시에만 활성화) ──
+          if (selectedCategories.isNotEmpty) ...[
             const SizedBox(height: 10),
             _buildStatusFilters(context),
           ],
 
           // ── 전체 선택 시 안내 텍스트 ──
-          if (selectedCategory == null)
+          if (selectedCategories.isEmpty)
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
@@ -138,8 +133,13 @@ class FilterSection extends StatelessWidget {
   }
 
   Widget _buildStatusFilters(BuildContext context) {
-    final workOpts = workStatusOptionsFor(selectedCategory!);
-    final myOpts = myStatusOptionsFor(selectedCategory!);
+    // 선택된 모든 카테고리의 옵션들을 모아서 보여줌
+    final Set<String> workOpts = {};
+    final Set<String> myOpts = {};
+    for (final cat in selectedCategories) {
+      workOpts.addAll(workStatusOptionsFor(cat));
+      myOpts.addAll(myStatusOptionsFor(cat));
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -195,32 +195,6 @@ class FilterSection extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-
-  Widget _sortDropdown(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2A3E),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton<SortCriteria>(
-          value: sortCriteria,
-          isDense: true,
-          icon: const Icon(Icons.sort, size: 16),
-          style: TextStyle(fontSize: 12, color: Colors.grey[300]),
-          dropdownColor: const Color(0xFF2A2A3E),
-          items: SortCriteria.values
-              .map((c) =>
-                  DropdownMenuItem(value: c, child: Text(c.label)))
-              .toList(),
-          onChanged: (v) {
-            if (v != null) onSortChanged(v);
-          },
-        ),
-      ),
     );
   }
 

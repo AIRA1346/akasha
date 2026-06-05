@@ -6,6 +6,7 @@ import '../models/akasha_item.dart';
 import '../services/file_service.dart';
 import '../services/image_cache_service.dart';
 import 'star_rating.dart';
+import 'safe_local_image.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  포스터 카드 위젯 (옵시디언 대시보드 스타일)
@@ -264,12 +265,14 @@ class _PosterCardState extends State<PosterCard> {
   /// 포스터 이미지가 있으면 표시, 없으면 카테고리별 그라디언트 플레이스홀더
   Widget _buildPoster(AkashaItem item, List<Color> gradColors) {
     if (_localCacheFile != null) {
-      return Image.file(
-        _localCacheFile!,
+      return SafeLocalImage(
+        file: _localCacheFile!,
         fit: BoxFit.cover,
         width: double.infinity,
-        errorBuilder: (_, __, ___) =>
-            _buildGradientPlaceholder(item, gradColors),
+        errorBuilder: (_, error, stackTrace) {
+          print('[PosterCard] IMAGE.FILE ERROR (cached) for ${item.title}: $error\n$stackTrace');
+          return _buildGradientPlaceholder(item, gradColors);
+        },
       );
     }
 
@@ -279,20 +282,39 @@ class _PosterCardState extends State<PosterCard> {
           item.posterPath!,
           fit: BoxFit.cover,
           width: double.infinity,
-          errorBuilder: (_, __, ___) =>
-              _buildGradientPlaceholder(item, gradColors),
+          headers: const {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          },
+          errorBuilder: (_, error, stackTrace) {
+            print('[PosterCard] IMAGE.NETWORK ERROR for ${item.title}: $error\n$stackTrace');
+            return _buildGradientPlaceholder(item, gradColors);
+          },
         );
       } else {
+        final absFile = File(item.posterPath!);
+        if (absFile.existsSync()) {
+          return SafeLocalImage(
+            file: absFile,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            errorBuilder: (_, error, stackTrace) {
+              print('[PosterCard] IMAGE.FILE ERROR (absFile) for ${item.title}: $error\n$stackTrace');
+              return _buildGradientPlaceholder(item, gradColors);
+            },
+          );
+        }
         final vaultPath = AkashaFileService().vaultPath;
         if (vaultPath != null) {
           final file = File(p.join(vaultPath, item.posterPath!));
           if (file.existsSync()) {
-            return Image.file(
-              file,
+            return SafeLocalImage(
+              file: file,
               fit: BoxFit.cover,
               width: double.infinity,
-              errorBuilder: (_, __, ___) =>
-                  _buildGradientPlaceholder(item, gradColors),
+              errorBuilder: (_, error, stackTrace) {
+                print('[PosterCard] IMAGE.FILE ERROR (vault) for ${item.title}: $error\n$stackTrace');
+                return _buildGradientPlaceholder(item, gradColors);
+              },
             );
           }
         }

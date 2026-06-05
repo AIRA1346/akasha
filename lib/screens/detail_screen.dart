@@ -2,11 +2,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:path/path.dart' as p;
+import 'package:file_picker/file_picker.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../services/file_service.dart';
+import '../services/image_cache_service.dart';
 import '../utils/helpers.dart';
 import '../widgets/star_rating.dart';
+import '../widgets/safe_local_image.dart';
+import '../widgets/web_image_search_dialog.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  작품 상세 페이지 (Detail Screen)
@@ -23,11 +27,32 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late AkashaItem item;
+  File? _localCacheFile;
 
   @override
   void initState() {
     super.initState();
     item = widget.item;
+    _checkLocalCache();
+  }
+
+  Future<void> _checkLocalCache() async {
+    if (item.posterPath != null && item.posterPath!.startsWith('http')) {
+      final file = await ImageCacheService().getLocalPosterFile(item.workId, item.posterPath);
+      if (file != null && await file.exists()) {
+        if (mounted) {
+          setState(() {
+            _localCacheFile = file;
+          });
+        }
+        return;
+      }
+    }
+    if (mounted) {
+      setState(() {
+        _localCacheFile = null;
+      });
+    }
   }
 
   @override
@@ -221,30 +246,57 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: item.posterPath != null
-                  ? (item.posterPath!.startsWith('http')
-                      ? Image.network(
-                          item.posterPath!,
-                          fit: BoxFit.cover,
-                          errorBuilder: (_, __, ___) =>
-                              _posterPlaceholder(gradColors),
-                        )
-                      : (() {
-                          final vaultPath = AkashaFileService().vaultPath;
-                          if (vaultPath != null) {
-                            final file = File(p.join(vaultPath, item.posterPath!));
-                            if (file.existsSync()) {
-                              return Image.file(
-                                file,
-                                fit: BoxFit.cover,
-                                errorBuilder: (_, __, ___) =>
-                                    _posterPlaceholder(gradColors),
-                              );
-                            }
-                          }
-                          return _posterPlaceholder(gradColors);
-                        })())
-                  : _posterPlaceholder(gradColors),
+              child: _localCacheFile != null
+                  ? SafeLocalImage(
+                      file: _localCacheFile!,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, error, stackTrace) {
+                        print('[DetailScreen] IMAGE.FILE ERROR (cached) for ${item.title}: $error\n$stackTrace');
+                        return _posterPlaceholder(gradColors);
+                      },
+                    )
+                  : (item.posterPath != null
+                      ? (item.posterPath!.startsWith('http')
+                          ? Image.network(
+                              item.posterPath!,
+                              fit: BoxFit.cover,
+                              headers: const {
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                              },
+                              errorBuilder: (_, error, stackTrace) {
+                                print('[DetailScreen] IMAGE.NETWORK ERROR for ${item.title}: $error\n$stackTrace');
+                                return _posterPlaceholder(gradColors);
+                              },
+                            )
+                          : (() {
+                              final absFile = File(item.posterPath!);
+                              if (absFile.existsSync()) {
+                                return SafeLocalImage(
+                                  file: absFile,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, error, stackTrace) {
+                                    print('[DetailScreen] IMAGE.FILE ERROR (absFile) for ${item.title}: $error\n$stackTrace');
+                                    return _posterPlaceholder(gradColors);
+                                  },
+                                );
+                              }
+                              final vaultPath = AkashaFileService().vaultPath;
+                              if (vaultPath != null) {
+                                final file = File(p.join(vaultPath, item.posterPath!));
+                                if (file.existsSync()) {
+                                  return SafeLocalImage(
+                                    file: file,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (_, error, stackTrace) {
+                                      print('[DetailScreen] IMAGE.FILE ERROR (vault) for ${item.title}: $error\n$stackTrace');
+                                      return _posterPlaceholder(gradColors);
+                                    },
+                                  );
+                                }
+                              }
+                              return _posterPlaceholder(gradColors);
+                            })())
+                      : _posterPlaceholder(gradColors)),
             ),
           ),
           const SizedBox(width: 20),
@@ -461,6 +513,7 @@ class _DetailScreenState extends State<DetailScreen> {
     String currentMy = item.myStatusLabel;
     double currentRating = item.rating;
     bool currentHoF = item.isHallOfFame;
+    final posterUrlCtrl = TextEditingController(text: item.posterPath ?? '');
 
     final result = await showDialog<Map<String, dynamic>>(
       context: context,
@@ -472,6 +525,64 @@ class _DetailScreenState extends State<DetailScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // 포스터 이미지
+                const Text('포스터 이미지 (웹 URL 또는 로컬 파일)',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                const SizedBox(height: 6),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: posterUrlCtrl,
+                        decoration: InputDecoration(
+                          hintText: 'https://... 또는 로컬 경로 입력',
+                          border: const OutlineInputBorder(),
+                          isDense: true,
+                          suffixIcon: IconButton(
+                            icon: const Icon(Icons.folder_open),
+                            tooltip: '로컬 이미지 파일 선택',
+                            onPressed: () async {
+                              final fileResult = await FilePicker.pickFiles(
+                                type: FileType.image,
+                              );
+                              if (fileResult != null && fileResult.files.single.path != null) {
+                                final path = fileResult.files.single.path!;
+                                final service = AkashaFileService();
+                                if (service.vaultPath != null) {
+                                  final relativePath = await service.importPosterImage(path);
+                                  if (relativePath != null) {
+                                    posterUrlCtrl.text = relativePath;
+                                  }
+                                } else {
+                                  posterUrlCtrl.text = path;
+                                }
+                              }
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    IconButton.filledTonal(
+                      icon: const Icon(Icons.image_search),
+                      tooltip: '인터넷 이미지 검색',
+                      onPressed: () async {
+                        final selectedUrl = await showDialog<String>(
+                          context: context,
+                          builder: (ctx) => WebImageSearchDialog(
+                            initialQuery: item.title,
+                            category: item.category,
+                          ),
+                        );
+                        if (selectedUrl != null) {
+                          posterUrlCtrl.text = selectedUrl;
+                        }
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
                 // 별점
                 const Text('별점',
                     style:
@@ -555,6 +666,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 'my': currentMy,
                 'rating': currentRating,
                 'hof': currentHoF,
+                'poster': posterUrlCtrl.text.trim().isNotEmpty ? posterUrlCtrl.text.trim() : null,
               }),
               child: const Text('저장'),
             ),
@@ -569,8 +681,15 @@ class _DetailScreenState extends State<DetailScreen> {
         item.setMyStatus(result['my'] as String);
         item.rating = result['rating'] as double;
         item.isHallOfFame = result['hof'] as bool;
+        item.posterPath = result['poster'] as String?;
       });
       AkashaFileService().saveItem(item);
+
+      // 웹 URL 이미지 등록 시 즉각 백그라운드 캐시 다운로드 예약 가동
+      if (item.posterPath != null && item.posterPath!.startsWith('http')) {
+        await ImageCacheService().cachePosterImage(item.workId, item.posterPath);
+      }
+      _checkLocalCache();
     }
   }
 

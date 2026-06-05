@@ -1,11 +1,13 @@
 import 'enums.dart';
 import 'akasha_item.dart';
+import '../services/works_registry.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 초기 샘플 데이터 (대분류 동적 도메인 속성 반영 버전)
 // ════════════════════════════════════════════════════════════════
 
-List<AkashaItem> buildSampleData() => [
+List<AkashaItem> buildSampleData() {
+  final list = <AkashaItem>[
       // ── 서브컬처 (Subculture) ──
 
       ContentItem(
@@ -239,4 +241,14 @@ List<AkashaItem> buildSampleData() => [
         ],
         review: '뇌과학과 기상물리학을 영리하게 결합한 히가시노 게이고 특유의 흡인력 있는 미스터리.',
       ),
-    ];
+  ];
+  for (final item in list) {
+    if (item.workId.isNotEmpty) {
+      final registryWork = WorksRegistry.getWorkById(item.workId);
+      if (registryWork != null) {
+        item.posterPath ??= registryWork.posterPath;
+      }
+    }
+  }
+  return list;
+}

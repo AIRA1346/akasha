@@ -82,6 +82,7 @@ class ImageCacheService {
     try {
       final uri = Uri.parse(imageUrl);
       final request = await client.getUrl(uri);
+      request.headers.set('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
       final response = await request.close();
 
       if (response.statusCode == 200) {

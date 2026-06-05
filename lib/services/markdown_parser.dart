@@ -99,7 +99,7 @@ class MarkdownParser {
     }
 
     // 메타데이터 추출
-    final workId = yamlMap['work_id']?.toString() ?? '';
+    String workId = yamlMap['work_id']?.toString() ?? '';
     final title = yamlMap['title']?.toString() ?? fallbackTitle;
     final categoryStr = yamlMap['category']?.toString() ?? 'manga';
     
@@ -191,20 +191,31 @@ class MarkdownParser {
     String? posterPath = yamlMap['poster']?.toString();
     String description = '';
 
+    RegistryWork? registryWork;
     if (workId.isNotEmpty) {
-      final registryWork = WorksRegistry.getWorkById(workId);
-      if (registryWork != null) {
-        // 공통 정보는 사전 DB에서 가져와 융합시킵니다.
-        domain = registryWork.domain;
-        creator = registryWork.creator;
-        releaseYear = registryWork.releaseYear;
-        posterPath = registryWork.posterPath ?? posterPath;
-        description = registryWork.description;
-        // 유저가 설정한 태그 외에 사전의 공통 장르 태그도 함께 노출되도록 머지합니다.
-        for (final tag in registryWork.tags) {
-          if (!tags.contains(tag)) {
-            tags.add(tag);
-          }
+      registryWork = WorksRegistry.getWorkById(workId);
+    } else if (title.isNotEmpty) {
+      // 제목이 완전히 일치하는 사전 항목이 있는지 탐색 (공백/대소문자 무시)
+      final matchedWorks = WorksRegistry.search(title);
+      final exactMatch = matchedWorks.where((w) => w.title.replaceAll(' ', '').toLowerCase() == title.replaceAll(' ', '').toLowerCase());
+      if (exactMatch.isNotEmpty) {
+        registryWork = exactMatch.first;
+        // 객체에도 workId를 바인딩하여 저장 시 반영되도록 함
+        workId = registryWork.workId;
+      }
+    }
+
+    if (registryWork != null) {
+      // 공통 정보는 사전 DB에서 가져와 융합시킵니다.
+      domain = registryWork.domain;
+      creator = registryWork.creator;
+      releaseYear = registryWork.releaseYear;
+      posterPath = registryWork.posterPath ?? posterPath;
+      description = registryWork.description;
+      // 유저가 설정한 태그 외에 사전의 공통 장르 태그도 함께 노출되도록 머지합니다.
+      for (final tag in registryWork.tags) {
+        if (!tags.contains(tag)) {
+          tags.add(tag);
         }
       }
     }
