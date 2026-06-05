@@ -83,5 +83,25 @@ void main() {
       await prefs.setString('akasha_sort_hof', SortCriteria.titleAsc.name);
       expect(prefs.getString('akasha_sort_hof'), 'titleAsc');
     });
+
+    test('SharedPreferences reads and writes section expanded states correctly', () async {
+      SharedPreferences.setMockInitialValues({
+        'akasha_expanded_hof': false,
+        'akasha_expanded_library': true,
+        'akasha_expanded_yearly': false,
+        'akasha_expanded_watchlist': true,
+      });
+
+      final prefs = await SharedPreferences.getInstance();
+
+      expect(prefs.getBool('akasha_expanded_hof'), false);
+      expect(prefs.getBool('akasha_expanded_library'), true);
+      expect(prefs.getBool('akasha_expanded_yearly'), false);
+      expect(prefs.getBool('akasha_expanded_watchlist'), true);
+
+      // 값 쓰기 테스트
+      await prefs.setBool('akasha_expanded_hof', true);
+      expect(prefs.getBool('akasha_expanded_hof'), true);
+    });
   });
 }

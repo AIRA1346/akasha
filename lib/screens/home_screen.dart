@@ -79,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await _loadSidebarState(); // 사이드바 오픈 상태 로드
     await _loadDashboards();   // 대시보드 리스트 로드
     await _loadSortSettings(); // 정렬 설정 불러오기
+    await _loadSectionExpandedStates(); // 접이식 섹션 상태 불러오기
     await _loadItems();
     
     // 첫 실행 시 사전 작품 로컬 자동 아카이빙 실행
@@ -298,6 +299,32 @@ class _HomeScreenState extends State<HomeScreen> {
       await prefs.setString('akasha_sort_$sectionKey', criteria.name);
     } catch (e) {
       debugPrint('Error saving sort setting for $sectionKey: $e');
+    }
+  }
+
+  /// SharedPreferences에서 접이식 섹션들의 확장/축소 상태 불러오기
+  Future<void> _loadSectionExpandedStates() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _hofExpanded = prefs.getBool('akasha_expanded_hof') ?? true;
+      _libraryExpanded = prefs.getBool('akasha_expanded_library') ?? true;
+      _yearlyExpanded = prefs.getBool('akasha_expanded_yearly') ?? true;
+      _watchlistExpanded = prefs.getBool('akasha_expanded_watchlist') ?? true;
+      if (mounted) {
+        setState(() {});
+      }
+    } catch (e) {
+      debugPrint('Error loading expanded states: $e');
+    }
+  }
+
+  /// SharedPreferences에 접이식 섹션들의 확장/축소 상태 저장하기
+  Future<void> _saveSectionExpandedState(String sectionKey, bool expanded) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('akasha_expanded_$sectionKey', expanded);
+    } catch (e) {
+      debugPrint('Error saving expanded state for $sectionKey: $e');
     }
   }
 
@@ -1023,8 +1050,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       // ── 1. S-Tier 인생 명작 컬렉션 (Hall of Fame) ──
                       if (hofItems.isNotEmpty) ...[
                         GestureDetector(
-                          onTap: () =>
-                              setState(() => _hofExpanded = !_hofExpanded),
+                          onTap: () {
+                            final newVal = !_hofExpanded;
+                            setState(() => _hofExpanded = newVal);
+                            _saveSectionExpandedState('hof', newVal);
+                          },
                           child: SectionHeader(
                             emoji: '👑',
                             title: 'S-Tier 인생 명작 컬렉션 (Hall of Fame)',
@@ -1066,8 +1096,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       // ── 2. 전체 작품 라이브러리 (All Consumed Works) ──
                       if (libraryItems.isNotEmpty) ...[
                         GestureDetector(
-                          onTap: () =>
-                              setState(() => _libraryExpanded = !_libraryExpanded),
+                          onTap: () {
+                            final newVal = !_libraryExpanded;
+                            setState(() => _libraryExpanded = newVal);
+                            _saveSectionExpandedState('library', newVal);
+                          },
                           child: SectionHeader(
                             emoji: '📚',
                             title: '전체 작품 라이브러리 (All Consumed Works)',
@@ -1092,8 +1125,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       // ── 3. 연도별 라이브러리 (Yearly Chronological Library) ──
                       if (libraryItems.isNotEmpty) ...[
                         GestureDetector(
-                          onTap: () =>
-                              setState(() => _yearlyExpanded = !_yearlyExpanded),
+                          onTap: () {
+                            final newVal = !_yearlyExpanded;
+                            setState(() => _yearlyExpanded = newVal);
+                            _saveSectionExpandedState('yearly', newVal);
+                          },
                           child: SectionHeader(
                             emoji: '🗓️',
                             title: '연도별 라이브러리 (Yearly Chronological Library)',
@@ -1169,8 +1205,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       // ── 4. 감상 예정 보관함 (Watchlist) ──
                       GestureDetector(
-                        onTap: () =>
-                            setState(() => _watchlistExpanded = !_watchlistExpanded),
+                        onTap: () {
+                          final newVal = !_watchlistExpanded;
+                          setState(() => _watchlistExpanded = newVal);
+                          _saveSectionExpandedState('watchlist', newVal);
+                        },
                         child: SectionHeader(
                           emoji: '⌛',
                           title: '감상 예정 보관함 (Watchlist)',
