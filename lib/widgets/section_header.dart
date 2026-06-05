@@ -12,6 +12,7 @@ class SectionHeader extends StatelessWidget {
   final String? subtitle;
   final Color? titleColor;
   final Widget? trailing;
+  final bool? isExpanded;
 
   const SectionHeader({
     super.key,
@@ -20,6 +21,7 @@ class SectionHeader extends StatelessWidget {
     this.subtitle,
     this.titleColor,
     this.trailing,
+    this.isExpanded,
   });
 
   @override
@@ -33,6 +35,16 @@ class SectionHeader extends StatelessWidget {
         children: [
           Row(
             children: [
+              if (isExpanded != null) ...[
+                Icon(
+                  isExpanded!
+                      ? Icons.keyboard_arrow_down
+                      : Icons.keyboard_arrow_right,
+                  size: 20,
+                  color: Colors.grey[400],
+                ),
+                const SizedBox(width: 4),
+              ],
               Text(emoji, style: const TextStyle(fontSize: 18)),
               const SizedBox(width: 8),
               Expanded(

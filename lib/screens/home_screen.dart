@@ -38,8 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final Set<String> _selectedMyStatuses = {};
   SortCriteria _sortCriteria = SortCriteria.titleAsc;
 
-  // ── Hall of Fame 접이식 ──
+  // ── 접이식 섹션 상태 ──
   bool _hofExpanded = true;
+  bool _libraryExpanded = true;
+  bool _yearlyExpanded = true;
   bool _watchlistExpanded = true;
 
   @override
@@ -350,6 +352,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final watchlistItems = filtered.where((item) => item.myStatusLabel == '볼 예정').toList();
     final libraryItems = filtered.where((item) => item.myStatusLabel != '볼 예정').toList();
 
+    // ── 연도별 그룹화 연산 (Yearly Chronological Library) ──
+    final Map<int, List<AkashaItem>> groupedByYear = {};
+    final List<AkashaItem> noYearItems = [];
+    for (final item in libraryItems) {
+      if (item.releaseYear != null) {
+        groupedByYear.putIfAbsent(item.releaseYear!, () => []).add(item);
+      } else {
+        noYearItems.add(item);
+      }
+    }
+    final sortedYears = groupedByYear.keys.toList()..sort((a, b) => b.compareTo(a));
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -470,7 +484,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 : ListView(
                     padding: const EdgeInsets.only(bottom: 80),
                     children: [
-                      // ── Hall of Fame 섹션 ──
+                      // ── 1. S-Tier 인생 명작 컬렉션 (Hall of Fame) ──
                       if (hofItems.isNotEmpty) ...[
                         GestureDetector(
                           onTap: () =>
@@ -479,12 +493,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             emoji: '👑',
                             title: 'S-Tier 인생 명작 컬렉션 (Hall of Fame)',
                             titleColor: const Color(0xFFFFD700),
-                            trailing: Icon(
-                              _hofExpanded
-                                  ? Icons.expand_less
-                                  : Icons.expand_more,
-                              color: Colors.grey[500],
-                            ),
+                            isExpanded: _hofExpanded,
                           ),
                         ),
                         if (_hofExpanded)
@@ -508,10 +517,100 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 16),
                       ],
 
-                      // ── 감상 예정 보관함 (Watchlist) 섹션 ──
+                      // ── 2. 전체 작품 라이브러리 (All Consumed Works) ──
+                      if (libraryItems.isNotEmpty) ...[
+                        GestureDetector(
+                          onTap: () =>
+                              setState(() => _libraryExpanded = !_libraryExpanded),
+                          child: SectionHeader(
+                            emoji: '📚',
+                            title: '전체 작품 라이브러리 (All Consumed Works)',
+                            titleColor: const Color(0xFFF09819),
+                            subtitle:
+                                '${libraryItems.length}개의 작품이 아카이브되어 있습니다.',
+                            isExpanded: _libraryExpanded,
+                          ),
+                        ),
+                        if (_libraryExpanded)
+                          _buildGrid(libraryItems),
+                        const SizedBox(height: 16),
+                      ],
+
+                      // ── 3. 연도별 라이브러리 (Yearly Chronological Library) ──
+                      if (libraryItems.isNotEmpty) ...[
+                        GestureDetector(
+                          onTap: () =>
+                              setState(() => _yearlyExpanded = !_yearlyExpanded),
+                          child: SectionHeader(
+                            emoji: '🗓️',
+                            title: '연도별 라이브러리 (Yearly Chronological Library)',
+                            titleColor: const Color(0xFFF09819),
+                            subtitle:
+                                '출시 연도별로 크로놀로지컬하게 정렬된 라이브러리입니다.',
+                            isExpanded: _yearlyExpanded,
+                          ),
+                        ),
+                        if (_yearlyExpanded) ...[
+                          for (final year in sortedYears) ...[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(28, 12, 16, 4),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '🗓️ $year년',
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.tealAccent,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    '(${groupedByYear[year]!.length}개 작품)',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[400],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            _buildGrid(groupedByYear[year]!),
+                          ],
+                          if (noYearItems.isNotEmpty) ...[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(28, 12, 16, 4),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    '🗓️ 연도 미지정',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.tealAccent,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    '(${noYearItems.length}개 작품)',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[400],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            _buildGrid(noYearItems),
+                          ],
+                        ],
+                        const SizedBox(height: 16),
+                      ],
+
+                      // ── 4. 감상 예정 보관함 (Watchlist) ──
                       if (watchlistItems.isNotEmpty) ...[
                         GestureDetector(
                           onTap: () =>
@@ -522,40 +621,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             titleColor: const Color(0xFFF09819),
                             subtitle:
                                 '지석 님이 감상하기 위해 아껴두었거나, 나중에 꼭 감상하여 아카이빙할 예정인 작품 리스트입니다. 작품 문서 내에 status: "볼 예정"으로 설정하시면 자동으로 이 리스트에 꽂히게 됩니다.',
-                            trailing: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  '정렬 기준 : 🆕 ${_sortCriteria.label}  ',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: Colors.grey[400],
-                                  ),
-                                ),
-                                Icon(
-                                  _watchlistExpanded
-                                      ? Icons.expand_less
-                                      : Icons.expand_more,
-                                  color: Colors.grey[500],
-                                  size: 18,
-                                ),
-                              ],
+                            isExpanded: _watchlistExpanded,
+                            trailing: Text(
+                              '정렬 기준 : 🆕 ${_sortCriteria.label}  ',
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey[400],
+                              ),
                             ),
                           ),
                         ),
                         if (_watchlistExpanded)
                           _buildGrid(watchlistItems),
-                        const SizedBox(height: 16),
                       ],
-
-                      // ── 전체 작품 라이브러리 ──
-                      SectionHeader(
-                        emoji: '📚',
-                        title: '전체 작품 라이브러리',
-                        subtitle:
-                            '${libraryItems.length}개의 작품이 아카이브되어 있습니다.',
-                      ),
-                      _buildGrid(libraryItems),
                     ],
                   ),
           ),
