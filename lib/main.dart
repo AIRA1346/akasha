@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
+import 'services/works_registry.dart';
+
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
 //  앱 진입점 & 테마 설정
 // ════════════════════════════════════════════════════════════════
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // 로컬 캐시 사전 불러오기 (Phase 4)
+  await WorksRegistry.loadCachedRegistry();
+  
   runApp(const AkashaApp());
 }
 

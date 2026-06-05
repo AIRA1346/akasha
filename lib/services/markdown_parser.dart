@@ -13,6 +13,7 @@ class MarkdownParser {
     buffer.writeln('work_id: "${item.workId}"');
     buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // 옵시디언 파일 리딩용 제목
     buffer.writeln('category: ${item.category.name}');
+    buffer.writeln('domain: ${item.domain.name}');
     buffer.writeln('rating: ${item.rating}');
     
     // 작품 상태 및 나의 상태 저장
@@ -73,7 +74,24 @@ class MarkdownParser {
           yamlMap = parsed;
         }
       } catch (e) {
-        // YAML 파싱 실패 시 무시
+        // YAML 파싱 실패 시 비상 정규식 파서 작동 (Phase 5)
+        String? regExtract(String key, String text) {
+          final reg = RegExp('$key:\\s*"?([^"\\n\\r]+)"?');
+          final match = reg.firstMatch(text);
+          return match?.group(1)?.trim();
+        }
+
+        yamlMap = {
+          'work_id': regExtract('work_id', yamlStr),
+          'title': regExtract('title', yamlStr),
+          'category': regExtract('category', yamlStr),
+          'domain': regExtract('domain', yamlStr),
+          'rating': regExtract('rating', yamlStr),
+          'work_status': regExtract('work_status', yamlStr),
+          'my_status': regExtract('my_status', yamlStr),
+          'is_hall_of_fame': regExtract('is_hall_of_fame', yamlStr),
+          'added_at': regExtract('added_at', yamlStr),
+        };
       }
       bodyStartLine = frontMatterEnd + 1;
     }
@@ -87,6 +105,15 @@ class MarkdownParser {
     for (final cat in MediaCategory.values) {
       if (cat.name == categoryStr) {
         category = cat;
+        break;
+      }
+    }
+
+    AppDomain domain = AppDomain.subculture;
+    final domainStr = yamlMap['domain']?.toString();
+    for (final dom in AppDomain.values) {
+      if (dom.name == domainStr) {
+        domain = dom;
         break;
       }
     }
@@ -160,6 +187,7 @@ class MarkdownParser {
       final registryWork = WorksRegistry.getWorkById(workId);
       if (registryWork != null) {
         // 공통 정보는 사전 DB에서 가져와 융합시킵니다.
+        domain = registryWork.domain;
         creator = registryWork.creator;
         releaseYear = registryWork.releaseYear;
         posterPath = registryWork.posterPath ?? posterPath;
@@ -177,6 +205,7 @@ class MarkdownParser {
       workId: workId,
       title: title,
       category: category,
+      domain: domain,
       workStatus: workStatusStr,
       myStatus: myStatusStr,
       creator: creator,

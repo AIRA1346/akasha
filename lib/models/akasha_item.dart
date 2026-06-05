@@ -12,6 +12,7 @@ abstract class AkashaItem {
   String workId; // 공통 사전 DB 조인용 식별값
   String title;
   final MediaCategory category;
+  AppDomain domain; // 대분류 속성 필드 추가
 
   // ── 확장 메타데이터 (공통 레지스트리에서 융합되는 항목들이나 마크다운 파싱 시 임시 저장 가능) ──
   String creator;
@@ -29,6 +30,7 @@ abstract class AkashaItem {
     required this.workId,
     required this.title,
     required this.category,
+    required this.domain,
     this.creator = '',
     this.releaseYear,
     this.rating = 0.0,
@@ -81,6 +83,7 @@ class ContentItem extends AkashaItem {
     required super.workId,
     required super.title,
     required super.category,
+    required super.domain,
     this.workStatus = ContentWorkStatus.serializing,
     this.myStatus = ContentMyStatus.notStarted,
     super.creator,
@@ -130,6 +133,7 @@ class GameItem extends AkashaItem {
   GameItem({
     required super.workId,
     required super.title,
+    required super.domain,
     this.workStatus = GameWorkStatus.released,
     this.myStatus = GameMyStatus.backlog,
     super.creator,

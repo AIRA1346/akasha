@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../services/file_service.dart';
+import '../services/image_cache_service.dart';
 import 'star_rating.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -26,12 +27,97 @@ class PosterCard extends StatefulWidget {
 
 class _PosterCardState extends State<PosterCard> {
   bool _isHovered = false;
+  File? _localCacheFile;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkLocalCache();
+  }
+
+  @override
+  void didUpdateWidget(PosterCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.item.posterPath != widget.item.posterPath ||
+        oldWidget.item.workId != widget.item.workId) {
+      _checkLocalCache();
+    }
+  }
+
+  Future<void> _checkLocalCache() async {
+    final item = widget.item;
+    if (item.posterPath != null && item.posterPath!.startsWith('http')) {
+      final file = await ImageCacheService().getLocalPosterFile(item.workId, item.posterPath);
+      if (file != null && await file.exists()) {
+        if (mounted) {
+          setState(() {
+            _localCacheFile = file;
+          });
+        }
+      } else {
+        if (mounted) {
+          setState(() {
+            _localCacheFile = null;
+          });
+        }
+        // 로컬 캐시가 없으면 다운로드 트리거
+        _downloadPoster(item.workId, item.posterPath!);
+      }
+    } else {
+      if (mounted) {
+        setState(() {
+          _localCacheFile = null;
+        });
+      }
+    }
+  }
+
+  Future<void> _downloadPoster(String workId, String url) async {
+    final file = await ImageCacheService().cachePosterImage(workId, url);
+    if (file != null && await file.exists()) {
+      if (mounted && widget.item.workId == workId) {
+        setState(() {
+          _localCacheFile = file;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final item = widget.item;
     final gradColors = categoryGradient(item.category);
     final dotColor = myStatusDotColor(item.myStatusLabel);
+
+    // ── 아카이빙 상태별 테두리 및 글로우 스킨 판별 (Phase 6) ──
+    final isNotStarted = item.myStatusLabel == '아직 안 봄' || 
+                         item.myStatusLabel == '할 예정(백로그)';
+    final isFinished = (item.workStatusLabel == '완결' || item.workStatusLabel == '출시됨') && 
+                       (item.myStatusLabel == '전부 봄' || item.myStatusLabel == '클리어(완결)');
+
+    Border cardBorder;
+    Color glowColor;
+
+    if (isNotStarted) {
+      cardBorder = Border.all(
+        color: Colors.white.withValues(alpha: 0.12),
+        width: 1.5,
+      );
+      glowColor = gradColors[0];
+    } else if (isFinished) {
+      cardBorder = Border.all(
+        color: const Color(0xFF9D4EDD).withValues(alpha: 0.7),
+        width: 2.0,
+      );
+      glowColor = const Color(0xFF9D4EDD);
+    } else {
+      // 진행/연재 중
+      cardBorder = Border.all(
+        color: Colors.greenAccent.withValues(alpha: 0.6),
+        width: 2.0,
+      );
+      glowColor = Colors.greenAccent;
+    }
 
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
@@ -48,10 +134,11 @@ class _PosterCardState extends State<PosterCard> {
           decoration: BoxDecoration(
             color: const Color(0xFF1E1E2E),
             borderRadius: BorderRadius.circular(10),
+            border: cardBorder,
             boxShadow: _isHovered
                 ? [
                     BoxShadow(
-                      color: gradColors[0].withValues(alpha: 0.3),
+                      color: glowColor.withValues(alpha: isNotStarted ? 0.25 : 0.4),
                       blurRadius: 16,
                       offset: const Offset(0, 6),
                     ),
@@ -173,6 +260,16 @@ class _PosterCardState extends State<PosterCard> {
 
   /// 포스터 이미지가 있으면 표시, 없으면 카테고리별 그라디언트 플레이스홀더
   Widget _buildPoster(AkashaItem item, List<Color> gradColors) {
+    if (_localCacheFile != null) {
+      return Image.file(
+        _localCacheFile!,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        errorBuilder: (_, __, ___) =>
+            _buildGradientPlaceholder(item, gradColors),
+      );
+    }
+
     if (item.posterPath != null) {
       if (item.posterPath!.startsWith('http')) {
         return Image.network(

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
@@ -8,6 +7,7 @@ import '../models/sample_data.dart';
 import '../services/file_service.dart';
 import '../services/markdown_parser.dart';
 import '../services/works_registry.dart';
+import '../services/registry_sync_service.dart';
 import '../utils/helpers.dart';
 import '../widgets/filter_section.dart';
 import '../widgets/poster_card.dart';
@@ -29,8 +29,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<AkashaItem> _items = [];
   bool _isLoading = false;
+  bool _isSyncing = false;
 
   // ── 필터 상태 ──
+  AppDomain? _selectedDomain;
   MediaCategory? _selectedCategory;
   final Set<String> _selectedWorkStatuses = {};
   final Set<String> _selectedMyStatuses = {};
@@ -55,6 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
         _loadItems();
       }
     });
+
+    // 백그라운드 자동 동기화 시도 (Phase 4)
+    _checkAutoSync();
   }
 
   Future<void> _loadItems() async {
@@ -81,10 +86,57 @@ class _HomeScreenState extends State<HomeScreen> {
   // ── 필터링 & 정렬 로직 ──────────────────
 
   List<AkashaItem> get _filteredItems {
-    var result = _items.where((item) {
+    // 1. 실제 사용자의 아카이브 데이터 필터링 (도메인, 카테고리 선 필터링)
+    final userFiltered = _items.where((item) {
+      if (_selectedDomain != null && item.domain != _selectedDomain) {
+        return false;
+      }
       if (_selectedCategory != null && item.category != _selectedCategory) {
         return false;
       }
+      return true;
+    }).toList();
+
+    // 실제 등록된 작품의 workId 수집
+    final userWorkIds = userFiltered
+        .map((e) => e.workId)
+        .where((id) => id.isNotEmpty)
+        .toSet();
+
+    // 2. 현재 도메인/카테고리 필터에 해당하는 사전(Registry) 작품 조회
+    final registryWorks = WorksRegistry.getFilteredWorks(
+      domain: _selectedDomain,
+      category: _selectedCategory,
+    );
+
+    // 3. 사용자가 등록하지 않은 사전 작품들에 대해 가상 아이템 생성 및 병합
+    final List<AkashaItem> fusedList = [...userFiltered];
+    for (final work in registryWorks) {
+      if (!userWorkIds.contains(work.workId)) {
+        final defaultMyStatus = work.category.isContentType
+            ? ContentMyStatus.notStarted.label
+            : GameMyStatus.backlog.label;
+        final defaultWorkStatus = work.category.isContentType
+            ? ContentWorkStatus.completed.label
+            : GameWorkStatus.released.label;
+
+        final virtualItem = createItem(
+          workId: work.workId,
+          title: work.title,
+          category: work.category,
+          domain: work.domain,
+          myStatus: defaultMyStatus,
+          workStatus: defaultWorkStatus,
+          creator: work.creator,
+          releaseYear: work.releaseYear,
+          rating: 0.0,
+        );
+        fusedList.add(virtualItem);
+      }
+    }
+
+    // 4. 세부 상태 필터가 활성화된 경우 추가 필터링 수행
+    var result = fusedList.where((item) {
       if (_selectedWorkStatuses.isNotEmpty &&
           !_selectedWorkStatuses.contains(item.workStatusLabel)) {
         return false;
@@ -96,11 +148,21 @@ class _HomeScreenState extends State<HomeScreen> {
       return true;
     }).toList();
 
+    // 5. 정렬하여 반환
     return sortItems(result, _sortCriteria);
   }
 
   List<AkashaItem> get _hallOfFameItems =>
       _filteredItems.where((i) => i.isHallOfFame).toList();
+
+  void _onDomainChanged(AppDomain? domain) {
+    setState(() {
+      _selectedDomain = domain;
+      _selectedCategory = null;
+      _selectedWorkStatuses.clear();
+      _selectedMyStatuses.clear();
+    });
+  }
 
   void _onCategoryChanged(MediaCategory? category) {
     setState(() {
@@ -133,6 +195,97 @@ class _HomeScreenState extends State<HomeScreen> {
     ).then((_) => setState(() {})); // 돌아왔을 때 변경사항 반영
   }
 
+  // ── 글로벌 작품 사전 동기화 메소드 ──
+
+  Future<void> _checkAutoSync() async {
+    final syncService = RegistrySyncService();
+    if (await syncService.shouldAutoSync()) {
+      setState(() => _isSyncing = true);
+      final success = await syncService.sync();
+      if (success) {
+        await WorksRegistry.loadCachedRegistry();
+        await _loadItems();
+      }
+      if (mounted) {
+        setState(() => _isSyncing = false);
+      }
+    }
+  }
+
+  Future<void> _syncRegistry() async {
+    if (_isSyncing) return;
+    setState(() => _isSyncing = true);
+    
+    final success = await RegistrySyncService().sync();
+    if (success) {
+      await WorksRegistry.loadCachedRegistry();
+      await _loadItems();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('작품 사전 동기화 완료!')),
+        );
+      }
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('동기화 실패. 네트워크 연결 또는 URL 설정을 확인하세요.')),
+        );
+      }
+    }
+    if (mounted) {
+      setState(() => _isSyncing = false);
+    }
+  }
+
+  Future<void> _showCustomUrlDialog() async {
+    final syncService = RegistrySyncService();
+    final ctrl = TextEditingController(text: syncService.customDbUrl);
+    
+    await showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('🔗 커스텀 사전 DB URL 설정'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '원격 작품 사전 JSON 파일이 위치한 커스텀 URL을 지정합니다. 비워두면 기본 GitHub 저장소 주소로 재설정됩니다.',
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: ctrl,
+              decoration: const InputDecoration(
+                labelText: '데이터베이스 JSON URL',
+                border: OutlineInputBorder(),
+                isDense: true,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: () async {
+              await syncService.setCustomDbUrl(ctrl.text);
+              if (mounted) {
+                Navigator.pop(ctx);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('동기화 주소가 변경되었습니다.')),
+                );
+              }
+            },
+            child: const Text('저장'),
+          ),
+        ],
+      ),
+    );
+  }
+
   // ── 빌드 ──────────────────────────────────
 
   @override
@@ -162,6 +315,21 @@ class _HomeScreenState extends State<HomeScreen> {
             tooltip: 'AI 마크다운 가져오기',
             onPressed: () => _showClipboardImportDialog(),
           ),
+          _isSyncing
+              ? const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  child: SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                )
+              : IconButton(
+                  icon: const Icon(Icons.sync),
+                  tooltip: '글로벌 작품 사전 동기화 (길게 눌러 설정)',
+                  onPressed: () => _syncRegistry(),
+                  onLongPress: () => _showCustomUrlDialog(),
+                ),
           IconButton(
             icon: const Icon(Icons.copy_all),
             tooltip: 'AI 프롬프트 템플릿 복사',
@@ -214,10 +382,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           // ━━━ 필터 영역 ━━━
           FilterSection(
+            selectedDomain: _selectedDomain,
             selectedCategory: _selectedCategory,
             selectedWorkStatuses: _selectedWorkStatuses,
             selectedMyStatuses: _selectedMyStatuses,
             sortCriteria: _sortCriteria,
+            onDomainChanged: _onDomainChanged,
             onCategoryChanged: _onCategoryChanged,
             onToggleWorkStatus: _toggleWorkStatus,
             onToggleMyStatus: _toggleMyStatus,
@@ -411,6 +581,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final titleCtrl = TextEditingController();
     final creatorCtrl = TextEditingController();
     final yearCtrl = TextEditingController();
+    AppDomain selDomain = AppDomain.subculture;
     MediaCategory selCategory = MediaCategory.manga;
     String selWork = workStatusOptionsFor(selCategory).first;
     String selMy = myStatusOptionsFor(selCategory).first;
@@ -455,6 +626,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           creatorCtrl.text = selection.creator;
                           yearCtrl.text = selection.releaseYear?.toString() ?? '';
                           selCategory = selection.category;
+                          selDomain = selection.domain;
                         });
                       },
                       fieldViewBuilder:
@@ -477,6 +649,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         titleCtrl.clear();
                                         creatorCtrl.clear();
                                         yearCtrl.clear();
+                                        selDomain = AppDomain.subculture;
                                       });
                                     },
                                   )
@@ -538,6 +711,56 @@ class _HomeScreenState extends State<HomeScreen> {
                       onChanged: (v) => setD(() => selRating = v),
                     ),
                     const SizedBox(height: 18),
+
+                    // 대분류 (도메인)
+                    const Text('대분류 (도메인)',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                    const SizedBox(height: 6),
+                    DropdownButtonFormField<AppDomain>(
+                      value: selDomain,
+                      isExpanded: true,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        isDense: true,
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      ),
+                      items: isPreRegistered
+                          ? [
+                              DropdownMenuItem(
+                                value: selDomain,
+                                child: Row(
+                                  children: [
+                                    Icon(selDomain.icon, size: 18),
+                                    const SizedBox(width: 8),
+                                    Text(selDomain.label),
+                                  ],
+                                ),
+                              )
+                            ]
+                          : AppDomain.values
+                              .map((d) => DropdownMenuItem(
+                                    value: d,
+                                    child: Row(
+                                      children: [
+                                        Icon(d.icon, size: 18),
+                                        const SizedBox(width: 8),
+                                        Text(d.label),
+                                      ],
+                                    ),
+                                  ))
+                              .toList(),
+                      onChanged: isPreRegistered
+                          ? null
+                          : (v) {
+                              if (v != null) {
+                                setD(() {
+                                  selDomain = v;
+                                });
+                              }
+                            },
+                    ),
+                    const SizedBox(height: 14),
 
                     // 카테고리
                     const Text('카테고리',
@@ -659,6 +882,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       workId: selectedRegistryWork?.workId ?? '',
                       title: title,
                       category: selCategory,
+                      domain: selDomain,
                       workStatus: selWork,
                       myStatus: selMy,
                       creator: creatorCtrl.text.trim(),
@@ -846,6 +1070,7 @@ class _HomeScreenState extends State<HomeScreen> {
 ---
 title: "작품의 정확한 제목"
 category: manga | game | animation | book (카테고리에 맞게 하나만 선택)
+domain: subculture | generalCulture (대분류에 맞게 하나만 선택)
 creator: "원작자 / 제작사 / 감독 등"
 release_year: 출시 또는 연재 시작 연도 (숫자만, 예: 2011)
 rating: 5.0 (0.0~5.0 범위의 실수)

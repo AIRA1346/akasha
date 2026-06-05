@@ -10,6 +10,7 @@ AkashaItem createItem({
   required String workId,
   required String title,
   required MediaCategory category,
+  AppDomain? domain,
   String? workStatus,
   String? myStatus,
   String creator = '',
@@ -22,11 +23,13 @@ AkashaItem createItem({
   bool isHallOfFame = false,
   List<String>? tags,
 }) {
+  final resolvedDomain = domain ?? AppDomain.subculture;
   if (category.isContentType) {
     final item = ContentItem(
       workId: workId,
       title: title,
       category: category,
+      domain: resolvedDomain,
       creator: creator,
       releaseYear: releaseYear,
       rating: rating,
@@ -44,6 +47,7 @@ AkashaItem createItem({
     final item = GameItem(
       workId: workId,
       title: title,
+      domain: resolvedDomain,
       creator: creator,
       releaseYear: releaseYear,
       rating: rating,

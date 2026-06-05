@@ -7,10 +7,13 @@ import '../utils/helpers.dart';
 // ════════════════════════════════════════════════════════════════
 
 class FilterSection extends StatelessWidget {
+  final AppDomain? selectedDomain;
   final MediaCategory? selectedCategory;
   final Set<String> selectedWorkStatuses;
   final Set<String> selectedMyStatuses;
   final SortCriteria sortCriteria;
+
+  final ValueChanged<AppDomain?> onDomainChanged;
   final ValueChanged<MediaCategory?> onCategoryChanged;
   final ValueChanged<String> onToggleWorkStatus;
   final ValueChanged<String> onToggleMyStatus;
@@ -18,10 +21,12 @@ class FilterSection extends StatelessWidget {
 
   const FilterSection({
     super.key,
+    required this.selectedDomain,
     required this.selectedCategory,
     required this.selectedWorkStatuses,
     required this.selectedMyStatuses,
     required this.sortCriteria,
+    required this.onDomainChanged,
     required this.onCategoryChanged,
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
@@ -30,12 +35,14 @@ class FilterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final visibleCategories = MediaCategory.values;
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── 카테고리 필터 + 정렬 ──
+          // ── 1. 대분류 (도메인) 필터 + 정렬 ──
           Row(
             children: [
               Expanded(
@@ -45,18 +52,18 @@ class FilterSection extends StatelessWidget {
                     children: [
                       _chip(
                         label: '전체',
-                        selected: selectedCategory == null,
-                        onTap: () => onCategoryChanged(null),
+                        selected: selectedDomain == null,
+                        onTap: () => onDomainChanged(null),
                       ),
                       const SizedBox(width: 6),
-                      ...MediaCategory.values.map(
-                        (cat) => Padding(
+                      ...AppDomain.values.map(
+                        (dom) => Padding(
                           padding: const EdgeInsets.only(right: 6),
                           child: _chip(
-                            label: cat.label,
-                            icon: cat.icon,
-                            selected: selectedCategory == cat,
-                            onTap: () => onCategoryChanged(cat),
+                            label: dom.label,
+                            icon: dom.icon,
+                            selected: selectedDomain == dom,
+                            onTap: () => onDomainChanged(dom),
                           ),
                         ),
                       ),
@@ -70,6 +77,42 @@ class FilterSection extends StatelessWidget {
             ],
           ),
 
+          const SizedBox(height: 8),
+
+          // ── 2. 소분류 (카테고리) 필터 ──
+          Row(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _chip(
+                        label: selectedDomain == null ? '매체 전체' : '${selectedDomain!.label} 전체',
+                        selected: selectedCategory == null,
+                        onTap: () => onCategoryChanged(null),
+                        small: true,
+                      ),
+                      const SizedBox(width: 6),
+                      ...visibleCategories.map(
+                        (cat) => Padding(
+                          padding: const EdgeInsets.only(right: 6),
+                          child: _chip(
+                            label: cat.label,
+                            icon: cat.icon,
+                            selected: selectedCategory == cat,
+                            onTap: () => onCategoryChanged(cat),
+                            small: true,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+
           // ── 상태 필터 (카테고리 선택 시에만 활성화) ──
           if (selectedCategory != null) ...[
             const SizedBox(height: 10),
@@ -79,9 +122,9 @@ class FilterSection extends StatelessWidget {
           // ── 전체 선택 시 안내 텍스트 ──
           if (selectedCategory == null)
             Padding(
-              padding: const EdgeInsets.only(top: 6),
+              padding: const EdgeInsets.only(top: 8),
               child: Text(
-                '💡  카테고리를 선택하면 매체별 세부 상태 필터가 활성화됩니다.',
+                '💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.',
                 style: TextStyle(
                   fontSize: 11,
                   color: Colors.grey[600],
