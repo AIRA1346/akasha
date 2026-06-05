@@ -773,7 +773,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
-    ).then((_) => setState(() {})); // 돌아왔을 때 변경사항 반영
+    ).then((_) async {
+      await _loadItems(); // 상세화면에서 변경된 내용(디렉토리 감시자가 건너뛴 쓰기 작업)을 안전하게 디스크에서 재로드
+    });
   }
 
   // ── 글로벌 작품 사전 동기화 메소드 ──
