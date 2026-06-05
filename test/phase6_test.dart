@@ -67,9 +67,9 @@ void main() {
       final elden = fusedList.firstWhere((e) => e.workId == 'eldenring_2022');
       expect(elden.myStatusLabel, '클리어(완결)');
 
-      // - 사전에서 가상으로 융합된 마인크래프트는 기본 '할 예정(백로그)' 및 별점 0.0이어야 함.
+      // - 사전에서 가상으로 융합된 마인크래프트는 기본 '볼 예정' 및 별점 0.0이어야 함.
       final minecraft = fusedList.firstWhere((e) => e.workId == 'minecraft_2011');
-      expect(minecraft.myStatusLabel, '할 예정(백로그)');
+      expect(minecraft.myStatusLabel, '볼 예정');
       expect(minecraft.rating, 0.0);
     });
   });

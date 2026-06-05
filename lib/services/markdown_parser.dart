@@ -16,8 +16,9 @@ class MarkdownParser {
     buffer.writeln('domain: ${item.domain.name}');
     buffer.writeln('rating: ${item.rating}');
     
-    // 작품 상태 및 나의 상태 저장
+    // 작품 상태 및 나의 상태 저장 (Obsidian 호환성 극대화)
     buffer.writeln('work_status: "${item.workStatusLabel}"');
+    buffer.writeln('status: "${item.myStatusLabel}"');
     buffer.writeln('my_status: "${item.myStatusLabel}"');
     buffer.writeln('is_hall_of_fame: ${item.isHallOfFame}');
     
@@ -88,6 +89,7 @@ class MarkdownParser {
           'domain': regExtract('domain', yamlStr),
           'rating': regExtract('rating', yamlStr),
           'work_status': regExtract('work_status', yamlStr),
+          'status': regExtract('status', yamlStr),
           'my_status': regExtract('my_status', yamlStr),
           'is_hall_of_fame': regExtract('is_hall_of_fame', yamlStr),
           'added_at': regExtract('added_at', yamlStr),
@@ -120,7 +122,13 @@ class MarkdownParser {
 
     final rating = double.tryParse(yamlMap['rating']?.toString() ?? '') ?? 0.0;
     final workStatusStr = yamlMap['work_status']?.toString();
-    final myStatusStr = yamlMap['my_status']?.toString();
+    var myStatusStr = yamlMap['my_status']?.toString() ?? yamlMap['status']?.toString();
+    
+    // 이전 버전 상태 또는 구버전 라벨 호환 처리
+    if (myStatusStr == '아직 안 봄' || myStatusStr == '할 예정(백로그)') {
+      myStatusStr = '볼 예정';
+    }
+    
     final isHallOfFame = yamlMap['is_hall_of_fame'] == true || yamlMap['is_hall_of_fame']?.toString() == 'true';
     
     List<String> tags = [];

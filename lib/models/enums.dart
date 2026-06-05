@@ -43,7 +43,7 @@ enum ContentWorkStatus {
 
 /// 콘텐츠(만화·책·애니) — 나의 상태
 enum ContentMyStatus {
-  notStarted('아직 안 봄'),
+  notStarted('볼 예정'),
   watching('보는 중'),
   finished('전부 봄'),
   dropped('하차함');
@@ -64,7 +64,7 @@ enum GameWorkStatus {
 
 /// 게임 — 나의 상태
 enum GameMyStatus {
-  backlog('할 예정(백로그)'),
+  backlog('볼 예정'),
   playing('플레이 중'),
   cleared('클리어(완결)'),
   abandoned('중도포기(하차)');
@@ -80,13 +80,14 @@ enum GameMyStatus {
 /// 나의 상태 라벨에 대응하는 컬러 도트 색상
 Color myStatusDotColor(String label) {
   const map = {
-    '아직 안 봄': Colors.grey,
+    '볼 예정': Color(0xFF9D4EDD), // 보라색
+    '아직 안 봄': Color(0xFF9D4EDD), // 하위 호환
+    '할 예정(백로그)': Color(0xFF9D4EDD), // 하위 호환
     '보는 중': Colors.lightGreen,
-    '전부 봄': Colors.deepOrange,
-    '하차함': Colors.red,
-    '할 예정(백로그)': Colors.grey,
     '플레이 중': Colors.lightGreen,
-    '클리어(완결)': Colors.deepOrange,
+    '전부 봄': Color(0xFF9D4EDD), // 보라색
+    '클리어(완결)': Color(0xFF9D4EDD), // 보라색
+    '하차함': Colors.red,
     '중도포기(하차)': Colors.red,
   };
   return map[label] ?? Colors.grey;

@@ -13,6 +13,7 @@ abstract class AkashaItem {
   String title;
   final MediaCategory category;
   AppDomain domain; // 대분류 속성 필드 추가
+  String? filePath; // 로컬 볼트 내 마크다운 파일 절대 경로
 
   // ── 확장 메타데이터 (공통 레지스트리에서 융합되는 항목들이나 마크다운 파싱 시 임시 저장 가능) ──
   String creator;

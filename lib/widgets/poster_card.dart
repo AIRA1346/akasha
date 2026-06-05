@@ -90,7 +90,8 @@ class _PosterCardState extends State<PosterCard> {
     final dotColor = myStatusDotColor(item.myStatusLabel);
 
     // ── 아카이빙 상태별 테두리 및 글로우 스킨 판별 (Phase 6) ──
-    final isNotStarted = item.myStatusLabel == '아직 안 봄' || 
+    final isNotStarted = item.myStatusLabel == '볼 예정' ||
+                         item.myStatusLabel == '아직 안 봄' || 
                          item.myStatusLabel == '할 예정(백로그)';
     final isFinished = (item.workStatusLabel == '완결' || item.workStatusLabel == '출시됨') && 
                        (item.myStatusLabel == '전부 봄' || item.myStatusLabel == '클리어(완결)');
@@ -199,29 +200,34 @@ class _PosterCardState extends State<PosterCard> {
                         ),
                       const Spacer(),
 
-                      // 별점
+                      // 별점 / 평가 대기 (Phase 7)
                       if (item.rating > 0)
-                        StarRating(rating: item.rating, size: 14),
-                      const SizedBox(height: 4),
+                        StarRating(rating: item.rating, size: 14)
+                      else
+                        const Row(
+                          children: [
+                            Text(
+                              '⏳ 평가 대기',
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.amber,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      const SizedBox(height: 5),
 
-                      // 상태 (컬러 도트 + 텍스트)
+                      // 상태 (이모지 매핑, Phase 7)
                       Row(
                         children: [
-                          Container(
-                            width: 8,
-                            height: 8,
-                            decoration: BoxDecoration(
-                              color: dotColor,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          const SizedBox(width: 5),
                           Expanded(
                             child: Text(
-                              item.combinedStatusLabel,
+                              _getStatusTextWithEmoji(item),
                               style: TextStyle(
-                                fontSize: 10,
-                                color: Colors.grey[400],
+                                fontSize: 11,
+                                color: Colors.grey[300],
+                                fontWeight: FontWeight.w500,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
@@ -229,20 +235,17 @@ class _PosterCardState extends State<PosterCard> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 2),
+                      const SizedBox(height: 5),
 
-                      // 연도
+                      // 연도 (캘린더 이모지, Phase 7)
                       if (item.releaseYear != null)
                         Row(
                           children: [
-                            Icon(Icons.calendar_today,
-                                size: 10, color: Colors.grey[500]),
-                            const SizedBox(width: 4),
                             Text(
-                              '${item.releaseYear}년',
+                              '🗓️ ${item.releaseYear}년',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: Colors.grey[500],
+                                color: Colors.grey[400],
                               ),
                             ),
                           ],
@@ -340,5 +343,19 @@ class _PosterCardState extends State<PosterCard> {
         ),
       ),
     );
+  }
+
+  /// 상태별 대응 이모지 텍스트 반환
+  String _getStatusTextWithEmoji(AkashaItem item) {
+    final label = item.myStatusLabel;
+    if (label == '볼 예정' || label == '아직 안 봄' || label == '할 예정(백로그)') {
+      return '🟣 볼 예정';
+    } else if (label == '보는 중' || label == '플레이 중') {
+      return '🟢 $label';
+    } else if (label == '전부 봄' || label == '클리어(완결)') {
+      return '🟣 $label';
+    } else {
+      return '⚪ $label';
+    }
   }
 }

@@ -40,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // ── Hall of Fame 접이식 ──
   bool _hofExpanded = true;
+  bool _watchlistExpanded = true;
 
   @override
   void initState() {
@@ -51,6 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
     final service = AkashaFileService();
     await service.init();
     await _loadItems();
+    
+    // 첫 실행 시 사전 작품 로컬 자동 아카이빙 실행
+    if (service.vaultPath != null) {
+      await _autoArchiveRegistryWorks();
+    }
     
     service.onVaultUpdated.listen((_) {
       if (mounted) {
@@ -80,6 +86,53 @@ class _HomeScreenState extends State<HomeScreen> {
           _isLoading = false;
         });
       }
+    }
+  }
+
+  /// 글로벌 사전에 새로 올라온 작품이나 아카이빙되지 않은 사전을 마크다운 파일로 자동 생성합니다.
+  Future<void> _autoArchiveRegistryWorks() async {
+    final service = AkashaFileService();
+    if (service.vaultPath == null) return;
+
+    // 1. 현재 로컬 파일로 존재하는 모든 작품의 workId 수집
+    final localWorkIds = _items
+        .map((e) => e.workId)
+        .where((id) => id.isNotEmpty)
+        .toSet();
+
+    // 2. 전체 레지스트리 작품 목록 가져오기
+    final allRegistryWorks = WorksRegistry.getFilteredWorks();
+
+    // 3. 존재하지 않는 작품들에 대해 기본 마크다운 생성
+    int createdCount = 0;
+    for (final work in allRegistryWorks) {
+      if (!localWorkIds.contains(work.workId)) {
+        final defaultMyStatus = '볼 예정';
+        final defaultWorkStatus = work.category.isContentType
+            ? ContentWorkStatus.completed.label
+            : GameWorkStatus.released.label;
+
+        final newItem = createItem(
+          workId: work.workId,
+          title: work.title,
+          category: work.category,
+          domain: work.domain,
+          myStatus: defaultMyStatus,
+          workStatus: defaultWorkStatus,
+          creator: work.creator,
+          releaseYear: work.releaseYear,
+          rating: 0.0,
+        );
+
+        await service.saveItem(newItem);
+        createdCount++;
+      }
+    }
+
+    if (createdCount > 0) {
+      debugPrint('Auto-archived $createdCount new works from registry.');
+      // 새 파일들이 디스크에 작성되었으므로 다시 한 번 볼트 로드
+      await _loadItems();
     }
   }
 
@@ -205,6 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (success) {
         await WorksRegistry.loadCachedRegistry();
         await _loadItems();
+        await _autoArchiveRegistryWorks();
       }
       if (mounted) {
         setState(() => _isSyncing = false);
@@ -220,6 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (success) {
       await WorksRegistry.loadCachedRegistry();
       await _loadItems();
+      await _autoArchiveRegistryWorks();
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('작품 사전 동기화 완료!')),
@@ -292,6 +347,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final filtered = _filteredItems;
     final hofItems = _hallOfFameItems;
+    final watchlistItems = filtered.where((item) => item.myStatusLabel == '볼 예정').toList();
+    final libraryItems = filtered.where((item) => item.myStatusLabel != '볼 예정').toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -454,14 +511,51 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 8),
                       ],
 
+                      // ── 감상 예정 보관함 (Watchlist) 섹션 ──
+                      if (watchlistItems.isNotEmpty) ...[
+                        GestureDetector(
+                          onTap: () =>
+                              setState(() => _watchlistExpanded = !_watchlistExpanded),
+                          child: SectionHeader(
+                            emoji: '⌛',
+                            title: '감상 예정 보관함 (Watchlist)',
+                            titleColor: const Color(0xFFF09819),
+                            subtitle:
+                                '지석 님이 감상하기 위해 아껴두었거나, 나중에 꼭 감상하여 아카이빙할 예정인 작품 리스트입니다. 작품 문서 내에 status: "볼 예정"으로 설정하시면 자동으로 이 리스트에 꽂히게 됩니다.',
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  '정렬 기준 : 🆕 ${_sortCriteria.label}  ',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.grey[400],
+                                  ),
+                                ),
+                                Icon(
+                                  _watchlistExpanded
+                                      ? Icons.expand_less
+                                      : Icons.expand_more,
+                                  color: Colors.grey[500],
+                                  size: 18,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        if (_watchlistExpanded)
+                          _buildGrid(watchlistItems),
+                        const SizedBox(height: 16),
+                      ],
+
                       // ── 전체 작품 라이브러리 ──
                       SectionHeader(
                         emoji: '📚',
                         title: '전체 작품 라이브러리',
                         subtitle:
-                            '${filtered.length}개의 작품이 아카이브되어 있습니다.',
+                            '${libraryItems.length}개의 작품이 아카이브되어 있습니다.',
                       ),
-                      _buildGrid(filtered),
+                      _buildGrid(libraryItems),
                     ],
                   ),
           ),
@@ -918,6 +1012,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (selectedDirectory != null) {
         await AkashaFileService().setVaultPath(selectedDirectory);
         await _loadItems();
+        await _autoArchiveRegistryWorks();
       }
     } catch (e) {
       if (mounted) {

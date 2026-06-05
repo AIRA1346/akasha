@@ -102,51 +102,42 @@ class AkashaFileService {
     final items = <AkashaItem>[];
     
     try {
-      // 카테고리 폴더 스캔
-      for (final cat in MediaCategory.values) {
-        final catDir = Directory(p.join(_vaultPath!, cat.name));
-        if (await catDir.exists()) {
-          final fileList = catDir.listSync();
-          for (final entity in fileList) {
-            if (entity is File && entity.path.endsWith('.md')) {
-              try {
-                final content = await entity.readAsString();
-                final filename = p.basenameWithoutExtension(entity.path);
-                final item = MarkdownParser.deserialize(content, filename);
-                items.add(item);
-              } catch (e) {
-                // 특정 파일 로드 실패 시 로그 출력 후 계속 진행
-                print('Error reading file ${entity.path}: $e');
-              }
+      final dir = Directory(_vaultPath!);
+      if (await dir.exists()) {
+        final entities = dir.listSync(recursive: true);
+        for (final entity in entities) {
+          if (entity is File && entity.path.endsWith('.md')) {
+            // 숨겨진 폴더/파일 (.obsidian, .git 등) 건너뜀
+            final pathParts = p.split(entity.path);
+            if (pathParts.any((part) => part.startsWith('.'))) {
+              continue;
             }
-          }
-        }
-      }
+            // posters 폴더 건너뜀
+            if (pathParts.contains('posters')) {
+              continue;
+            }
 
-      // 루트 폴더에도 마크다운이 존재하는 경우를 대비한 추가 검색
-      final rootDir = Directory(_vaultPath!);
-      final rootFiles = rootDir.listSync();
-      for (final entity in rootFiles) {
-        if (entity is File && entity.path.endsWith('.md')) {
-          try {
-            final content = await entity.readAsString();
-            final filename = p.basenameWithoutExtension(entity.path);
-            final item = MarkdownParser.deserialize(content, filename);
-            
-            // 이미 등록된 아이템(카테고리 폴더에서 로드된 것)과 중복되지 않는지 검사
-            final exists = items.any((existing) => 
-              existing.title == item.title && existing.category == item.category
-            );
-            if (!exists) {
-              items.add(item);
+            try {
+              final content = await entity.readAsString();
+              final filename = p.basenameWithoutExtension(entity.path);
+              final item = MarkdownParser.deserialize(content, filename);
+              item.filePath = entity.path; // 원본 파일 경로 기억
+              
+              // 중복 방지 (제목과 카테고리가 겹치면 중복 처리)
+              final exists = items.any((existing) => 
+                existing.title == item.title && existing.category == item.category
+              );
+              if (!exists) {
+                items.add(item);
+              }
+            } catch (e) {
+              print('Error reading file ${entity.path}: $e');
             }
-          } catch (e) {
-            print('Error reading root file ${entity.path}: $e');
           }
         }
       }
     } catch (e) {
-      print('Error loading items from vault: $e');
+      print('Error loading items recursively from vault: $e');
     }
 
     return items;
@@ -158,22 +149,44 @@ class AkashaFileService {
 
     // 제목이 변경된 경우 이전 파일을 먼저 삭제 처리
     if (oldTitle != null && oldTitle != item.title) {
-      await deleteItem(oldTitle, item.category);
+      if (item.filePath != null && item.filePath!.isNotEmpty) {
+        final oldFile = File(item.filePath!);
+        final parentDir = p.dirname(item.filePath!);
+        if (oldFile.existsSync()) {
+          _stopWatching();
+          try {
+            await oldFile.delete();
+          } catch (e) {
+            print('Error deleting old file: $e');
+          } finally {
+            _startWatching();
+          }
+        }
+        // 원래 존재하던 폴더 경로 그대로 새 파일명 조합
+        final safeTitle = _makeSafeFilename(item.title);
+        item.filePath = p.join(parentDir, '$safeTitle.md');
+      } else {
+        await deleteItem(oldTitle, item.category);
+      }
     }
 
-    final categoryDir = p.join(_vaultPath!, item.category.name);
-    await Directory(categoryDir).create(recursive: true);
+    String targetPath;
+    if (item.filePath != null && item.filePath!.isNotEmpty) {
+      targetPath = item.filePath!;
+    } else {
+      final categoryDir = p.join(_vaultPath!, item.category.name);
+      await Directory(categoryDir).create(recursive: true);
+      final safeTitle = _makeSafeFilename(item.title);
+      targetPath = p.join(categoryDir, '$safeTitle.md');
+      item.filePath = targetPath;
+    }
 
-    // 파일명 유효하게 변경 (특수 문자 치환)
-    final safeTitle = _makeSafeFilename(item.title);
-    final filePath = p.join(categoryDir, '$safeTitle.md');
-    
     final content = MarkdownParser.serialize(item);
     
     // 파일 쓰기 전에 watcher가 일시적으로 중단되도록 하여 불필요한 새로고침 루프 방지
     _stopWatching();
     try {
-      final file = File(filePath);
+      final file = File(targetPath);
       await file.writeAsString(content);
     } finally {
       _startWatching();
