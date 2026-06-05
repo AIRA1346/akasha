@@ -106,3 +106,37 @@ List<AkashaItem> sortItems(List<AkashaItem> items, SortCriteria criteria) {
   }
   return sorted;
 }
+
+/// 이미지 URL이 유효한 인터넷 이미지 주소 형태인지 검증
+bool isValidImageUrl(String text) {
+  if (!text.startsWith('http://') && !text.startsWith('https://')) return false;
+  if (text.length > 2048) return false;
+
+  final lower = text.toLowerCase();
+
+  // 일반적인 이미지 확장자 포함 여부
+  if (lower.contains('.jpg') ||
+      lower.contains('.jpeg') ||
+      lower.contains('.png') ||
+      lower.contains('.webp') ||
+      lower.contains('.gif')) {
+    return true;
+  }
+
+  // 자주 쓰이는 신뢰할 수 있는 CDN 도메인
+  if (lower.contains('gstatic.com/images') ||
+      lower.contains('yes24.com/goods') ||
+      lower.contains('kyobobook.co.kr') ||
+      lower.contains('steamstatic.com') ||
+      lower.contains('akamaihd.net') ||
+      lower.contains('anilist.co/file/anilistcdn')) {
+    return true;
+  }
+
+  try {
+    final uri = Uri.parse(text);
+    return uri.hasAbsolutePath;
+  } catch (_) {
+    return false;
+  }
+}
