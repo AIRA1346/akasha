@@ -22,6 +22,16 @@ class MarkdownParser {
     buffer.writeln('my_status: "${item.myStatusLabel}"');
     buffer.writeln('is_hall_of_fame: ${item.isHallOfFame}');
     
+    if (item.creator.isNotEmpty) {
+      buffer.writeln('creator: "${item.creator.replaceAll('"', '\\"')}"');
+    }
+    if (item.releaseYear != null) {
+      buffer.writeln('release_year: ${item.releaseYear}');
+    }
+    if (item.posterPath != null && item.posterPath!.isNotEmpty) {
+      buffer.writeln('poster: "${item.posterPath!.replaceAll('"', '\\"')}"');
+    }
+    
     if (item.tags.isNotEmpty) {
       buffer.writeln('tags: [${item.tags.map((t) => '"${t.replaceAll('"', '\\"')}"').join(', ')}]');
     } else {
@@ -206,11 +216,11 @@ class MarkdownParser {
     }
 
     if (registryWork != null) {
-      // 공통 정보는 사전 DB에서 가져와 융합시킵니다.
+      // 공통 정보는 사전 DB에서 가져오되, 사용자 정의 값(YAML)이 있으면 그것을 최우선으로 적용합니다.
       domain = registryWork.domain;
-      creator = registryWork.creator;
-      releaseYear = registryWork.releaseYear;
-      posterPath = registryWork.posterPath ?? posterPath;
+      creator = creator.isNotEmpty ? creator : registryWork.creator;
+      releaseYear = releaseYear ?? registryWork.releaseYear;
+      posterPath = (posterPath != null && posterPath.isNotEmpty) ? posterPath : registryWork.posterPath;
       description = registryWork.description;
       // 유저가 설정한 태그 외에 사전의 공통 장르 태그도 함께 노출되도록 머지합니다.
       for (final tag in registryWork.tags) {

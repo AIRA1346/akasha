@@ -79,13 +79,21 @@ class AkashaFileService {
     if (!dir.existsSync()) return;
 
     // 디렉토리 변경 감시 (재귀적)
-    _watcherSubscription = dir.watch(recursive: true).listen((event) {
-      // .md 파일의 변경, 생성, 삭제 이벤트만 감지하여 알림
-      if (event.path.endsWith('.md')) {
-        // 중복 이벤트 방지를 위해 디바운싱을 하면 좋으나, 일단 이벤트 발생 시 스트림으로 알림
-        _vaultUpdateController?.add(null);
-      }
-    });
+    try {
+      _watcherSubscription = dir.watch(recursive: true).listen(
+        (event) {
+          // .md 파일의 변경, 생성, 삭제 이벤트만 감지하여 알림
+          if (event.path.endsWith('.md')) {
+            _vaultUpdateController?.add(null);
+          }
+        },
+        onError: (error) {
+          print('[AkashaFileService] Directory watch error: $error');
+        },
+      );
+    } catch (e) {
+      print('[AkashaFileService] Failed to start directory watch: $e');
+    }
   }
 
   /// 파일 감시를 중단합니다.

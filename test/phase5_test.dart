@@ -2,7 +2,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/image_cache_service.dart';
+import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/utils/helpers.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -75,6 +77,41 @@ is_hall_of_fame: true
       expect(file1!.path, equals(file2!.path)); // 동일 이미지 주소면 동일한 로컬 파일명
       expect(file1.path, isNot(equals(file3!.path))); // 다른 이미지 주소면 무효화(새 파일명)
       expect(file1.path, contains('test_work_')); // prefix 확인
+    });
+
+    test('MarkdownParser serializes and deserializes custom poster path prioritizing it over registry defaults', () async {
+      // 1. 커스텀 포스터 정보가 담긴 아이템 생성
+      final item = createItem(
+        workId: 'shigatsu_2011',
+        title: '4월은 너의 거짓말',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        workStatus: '완결',
+        myStatus: '전부 봄',
+        creator: '아라카와 나오시',
+        releaseYear: 2011,
+        rating: 5.0,
+        posterPath: 'posters/custom_poster.jpg',
+        description: 'Mock description',
+        memorableQuotes: [],
+        review: 'Excellent.',
+        isHallOfFame: true,
+        tags: [],
+      );
+
+      // 직렬화 검증 (프론트 매터에 커스텀 값들이 작성되어야 함)
+      final serialized = MarkdownParser.serialize(item);
+      expect(serialized, contains('poster: "posters/custom_poster.jpg"'));
+      expect(serialized, contains('creator: "아라카와 나오시"'));
+      expect(serialized, contains('release_year: 2011'));
+
+      // 역직렬화 검증 (사전 데이터가 존재해도 사용자가 수정한 커스텀 포스터 주소가 유지되는지)
+      await WorksRegistry.loadCachedRegistry();
+      final deserialized = MarkdownParser.deserialize(serialized, '4월은 너의 거짓말');
+
+      expect(deserialized.posterPath, equals('posters/custom_poster.jpg'));
+      expect(deserialized.creator, equals('아라카와 나오시'));
+      expect(deserialized.releaseYear, equals(2011));
     });
   });
 }
