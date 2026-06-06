@@ -1,0 +1,18 @@
+{
+  "gen_game_appid252490_2013": {
+    "workId": "gen_game_appid252490_2013",
+    "title": "러스트",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Facepunch Studios",
+    "releaseYear": 2013,
+    "description": "야생 서버에서 생존·기지 건설·PvP가 공존하는 하드코어 서바이벌.",
+    "tags": [
+      "서바이벌",
+      "PvP",
+      "샌드박스",
+      "하드코어"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg"
+  }
+}

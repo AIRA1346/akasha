@@ -7,7 +7,12 @@
     "creator": "아라카와 나오시 (Naoshi Arakawa)",
     "releaseYear": 2011,
     "description": "피아노를 포기한 천재 소년 아리마 코세이가 자유분방한 바이올리니스트 미야조노 카오리를 만나 다시 음악과 마주하게 되는 이야기.",
-    "tags": ["감동", "음악", "청춘", "피아노"],
+    "tags": [
+      "감동",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx67707-srHFl9GBmfig.png"
   },
   "sub_manga_shingeki-no-kyojin_2009": {
@@ -18,7 +23,12 @@
     "creator": "이사야마 하지메 (Hajime Isayama)",
     "releaseYear": 2009,
     "description": "거대한 벽 안에서 살아가던 인류가 벽 너머의 거인과 맞서 싸우는 이야기.",
-    "tags": ["SF", "전쟁", "자유", "반전"],
+    "tags": [
+      "SF",
+      "전쟁",
+      "자유",
+      "반전"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx53390-1RsuABC34P9D.jpg"
   },
   "sub_manga_slam-dunk_1990": {
@@ -29,7 +39,44 @@
     "creator": "이노우에 다케히코 (Takehiko Inoue)",
     "releaseYear": 1990,
     "description": "불량소년 강백호가 농구부에 입단해 진정한 선수로 성장하는 열혈 스포츠 만화.",
-    "tags": ["스포츠", "농구", "열혈", "청춘"],
+    "tags": [
+      "스포츠",
+      "농구",
+      "열혈",
+      "청춘"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30051-5KJyPlO7z5F4.png"
+  },
+  "sub_manga_spy-x-family_2018": {
+    "workId": "sub_manga_spy-x-family_2018",
+    "title": "스파이 패밀리",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카야 스기타",
+    "releaseYear": 2018,
+    "description": "스파이와 암살자 부부가 입양한 초능력 아이를 둘러싼 가족 코미디.",
+    "tags": [
+      "코미디",
+      "스파이",
+      "가족",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108725.jpg"
+  },
+  "sub_manga_solo-leveling_2018": {
+    "workId": "sub_manga_solo-leveling_2018",
+    "title": "나 혼자만 레벨업",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "추공 / DUBU",
+    "releaseYear": 2018,
+    "description": "최약 헌터가 유일하게 레벨업할 수 있게 된 판타지 액션.",
+    "tags": [
+      "판타지",
+      "헌터",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101517.jpg"
   }
 }

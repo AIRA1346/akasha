@@ -1,0 +1,50 @@
+{
+  "sub_animation_chainsaw-man_2022": {
+    "workId": "sub_animation_chainsaw-man_2022",
+    "title": "체인소 맨",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2022,
+    "description": "악마의 힘이 각인된 소년 덴지의 혼돈스러운 액션 드라마.",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230.jpg"
+  },
+  "sub_animation_code-geass_2006": {
+    "workId": "sub_animation_code-geass_2006",
+    "title": "코드 기어스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SUNRISE",
+    "releaseYear": 2006,
+    "description": "기사단의 힘으로 일본 해방을 꿈꾸는 왕자의 전략 로봇 대전.",
+    "tags": [
+      "메카",
+      "전략",
+      "반란",
+      "SF"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575.jpg"
+  },
+  "gen_animation_cowboy-bebop_1998": {
+    "workId": "gen_animation_cowboy-bebop_1998",
+    "title": "카우보이 비밥",
+    "category": "animation",
+    "domain": "generalCulture",
+    "creator": "SUNRISE",
+    "releaseYear": 1998,
+    "description": "우주 현상금 사냥꾼들의 느와르풍 SF 액션.",
+    "tags": [
+      "SF",
+      "느와르",
+      "재즈",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1.jpg"
+  }
+}

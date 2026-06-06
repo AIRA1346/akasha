@@ -1,0 +1,34 @@
+{
+  "sub_manga_fullmetal-alchemist_2001": {
+    "workId": "sub_manga_fullmetal-alchemist_2001",
+    "title": "강철의 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 히로",
+    "releaseYear": 2001,
+    "description": "연금술사 형제가 잃은 몸을 되찾기 위해 필사적으로 여행하는 대서사.",
+    "tags": [
+      "판타지",
+      "연금술",
+      "전쟁",
+      "형제"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30040.jpg"
+  },
+  "sub_manga_fire-force_2015": {
+    "workId": "sub_manga_fire-force_2015",
+    "title": "불꽃 소방대",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 다카히로",
+    "releaseYear": 2015,
+    "description": "인간이 불타는 현상을 진압하는 특수 소방대의 활약.",
+    "tags": [
+      "액션",
+      "초능력",
+      "소방",
+      "다크"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85130.jpg"
+  }
+}

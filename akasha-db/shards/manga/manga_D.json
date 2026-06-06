@@ -1,0 +1,50 @@
+{
+  "sub_manga_death-note_2003": {
+    "workId": "sub_manga_death-note_2003",
+    "title": "데스노트",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 타케시",
+    "releaseYear": 2003,
+    "description": "이름이 적히면 죽는 노트를 손에 넣은 천재 소년의 심리 스릴러.",
+    "tags": [
+      "스릴러",
+      "초자연",
+      "정의",
+      "다크"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30042.jpg"
+  },
+  "sub_manga_dr-stone_2017": {
+    "workId": "sub_manga_dr-stone_2017",
+    "title": "Dr.STONE",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "보이치",
+    "releaseYear": 2017,
+    "description": "인류가 석화된 뒤 과학으로 문명을 재건하려는 소년의 모험.",
+    "tags": [
+      "SF",
+      "과학",
+      "서바이벌",
+      "개그"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx98416.jpg"
+  },
+  "sub_manga_dandadan_2021": {
+    "workId": "sub_manga_dandadan_2021",
+    "title": "단다단",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타츠타 유키",
+    "releaseYear": 2021,
+    "description": "오컬트와 로봇이 뒤섞인 기묘한 청춘 배틀 코미디.",
+    "tags": [
+      "오컬트",
+      "코미디",
+      "액션",
+      "로맨스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx128703.jpg"
+  }
+}

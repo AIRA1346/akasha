@@ -23,6 +23,8 @@ akasha-db/
 
 > **v2 마이그레이션:** 신규 기여는 `shards/` JSON 샤드 방식을 사용합니다. `works_registry.json`은 구버전 앱 호환용으로만 유지됩니다.
 
+현재 시드: **100작품** / 69샤드 (2026-06 batch2 확장). 재생성: `dart run tool/seed_expansion.dart` (이미 반영된 항목은 skip).
+
 ## 앱 동기화
 
 앱은 다음 base URL에서 파일을 내려받습니다:

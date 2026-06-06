@@ -7,7 +7,28 @@
     "creator": "크리스토퍼 놀란 (Christopher Nolan)",
     "releaseYear": 2014,
     "description": "인류의 생존을 위해 새 행성을 찾아 떠나는 우주 비행사들의 여정.",
-    "tags": ["SF", "우주", "가족", "블랙홀"],
+    "tags": [
+      "SF",
+      "우주",
+      "가족",
+      "블랙홀"
+    ],
     "posterPath": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+  },
+  "gen_movie_inception_2010": {
+    "workId": "gen_movie_inception_2010",
+    "title": "인셉션",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "크리스토퍼 놀란",
+    "releaseYear": 2010,
+    "description": "꿈 속에 잠입해 정보를 훔치는 도둑의 마지막 임무.",
+    "tags": [
+      "SF",
+      "스릴러",
+      "꿈",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/9o7OZCqtqbcz1DtgZg40WkZVfbu.jpg"
   }
 }

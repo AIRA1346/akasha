@@ -7,7 +7,28 @@
     "creator": "고토게 코요하루 (Koyoharu Gotouge)",
     "releaseYear": 2016,
     "description": "가족을 귀신에게 잃은 소년 카마도 탄지로가 귀살대에 입대하는 이야기.",
-    "tags": ["액션", "가족애", "귀신", "다이쇼"],
+    "tags": [
+      "액션",
+      "가족애",
+      "귀신",
+      "다이쇼"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx87216-c9bSNVD10UuD.png"
+  },
+  "sub_manga_kaiju-no-8_2020": {
+    "workId": "sub_manga_kaiju-no-8_2020",
+    "title": "괴수 8호",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마츠모토 나오야",
+    "releaseYear": 2020,
+    "description": "청소부가 괴수와 융합하며 일본 방위대에 입대하는 이야기.",
+    "tags": [
+      "괴수",
+      "액션",
+      "밀리터리",
+      "코미디"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx114043.jpg"
   }
 }

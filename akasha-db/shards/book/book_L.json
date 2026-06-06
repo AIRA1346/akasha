@@ -7,7 +7,28 @@
     "creator": "히가시노 게이고 (Keigo Higashino)",
     "releaseYear": 2015,
     "description": "자연현상을 예측하는 소녀와 미스터리.",
-    "tags": ["소설", "미스터리", "SF", "히가시노게이고"],
+    "tags": [
+      "소설",
+      "미스터리",
+      "SF",
+      "히가시노게이고"
+    ],
     "posterPath": "https://image.yes24.com/goods/18063773/L"
+  },
+  "gen_book_lord-of-the-rings-fellowship_1954": {
+    "workId": "gen_book_lord-of-the-rings-fellowship_1954",
+    "title": "반지의 제왕: 반지 원정대",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "J.R.R. 톨킨",
+    "releaseYear": 1954,
+    "description": "반지를 파괴하기 위한 호빗과 동료들의 대장정.",
+    "tags": [
+      "판타지",
+      "모험",
+      "서사",
+      "명작"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg"
   }
 }

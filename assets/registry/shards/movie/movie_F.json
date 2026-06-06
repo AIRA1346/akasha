@@ -1,0 +1,34 @@
+{
+  "gen_movie_fight-club_1999": {
+    "workId": "gen_movie_fight-club_1999",
+    "title": "파이트 클럽",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "데이비드 핀처",
+    "releaseYear": 1999,
+    "description": "불면증에 시달리는 남자가 비밀 결투 클럽에 빠져드는 이야기.",
+    "tags": [
+      "스릴러",
+      "심리",
+      "반항",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+  },
+  "gen_movie_forrest-gump_1994": {
+    "workId": "gen_movie_forrest-gump_1994",
+    "title": "포레스트 검프",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "로버트 저메키스",
+    "releaseYear": 1994,
+    "description": "순수한 소년이 미국 현대사를 관통하며 살아가는 감동 드라마.",
+    "tags": [
+      "드라마",
+      "감동",
+      "역사",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/arw2vcZweWUW3oy8Xsd0Ym5Q9SY.jpg"
+  }
+}

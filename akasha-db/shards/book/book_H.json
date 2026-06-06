@@ -7,7 +7,28 @@
     "creator": "J.K. 롤링 (J.K. Rowling)",
     "releaseYear": 1997,
     "description": "호그와트 마법학교에 입학한 해리 포터의 모험의 시작.",
-    "tags": ["소설", "판타지", "마법", "호그와트"],
+    "tags": [
+      "소설",
+      "판타지",
+      "마법",
+      "호그와트"
+    ],
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg"
+  },
+  "gen_book_hunger-games_2008": {
+    "workId": "gen_book_hunger-games_2008",
+    "title": "헝거 게임",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "수잔 콜린스",
+    "releaseYear": 2008,
+    "description": "서바이벌 게임에 참가한 소녀가 체제에 맞서는 디스토피아 SF.",
+    "tags": [
+      "SF",
+      "서바이벌",
+      "청소년",
+      "반란"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg"
   }
 }

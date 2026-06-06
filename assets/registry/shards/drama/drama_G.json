@@ -1,0 +1,18 @@
+{
+  "gen_drama_game-of-thrones_2011": {
+    "workId": "gen_drama_game-of-thrones_2011",
+    "title": "왕좌의 게임",
+    "category": "drama",
+    "domain": "generalCulture",
+    "creator": "DB Weiss / David Benioff",
+    "releaseYear": 2011,
+    "description": "일곱 왕국의 왕좌를 둘러싼 판타지 정치 드라마.",
+    "tags": [
+      "판타지",
+      "정치",
+      "전쟁",
+      "서사"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/u3bZgnVQ9opdIn2fwkqjy4tK44.jpg"
+  }
+}

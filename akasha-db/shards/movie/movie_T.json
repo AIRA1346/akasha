@@ -7,7 +7,60 @@
     "creator": "워쇼스키 자매 (The Wachowskis)",
     "releaseYear": 1999,
     "description": "가상현실 매트릭스 속에서 인류를 구원하려는 네오의 사이버펑크 액션.",
-    "tags": ["사이버펑크", "SF", "액션", "철학"],
+    "tags": [
+      "사이버펑크",
+      "SF",
+      "액션",
+      "철학"
+    ],
     "posterPath": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GpdPYMoLHkAo.jpg"
+  },
+  "gen_movie_the-dark-knight_2008": {
+    "workId": "gen_movie_the-dark-knight_2008",
+    "title": "다크 나이트",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "크리스토퍼 놀란",
+    "releaseYear": 2008,
+    "description": "배트맨과 조커의 대결을 그린 다크 히어로 걸작.",
+    "tags": [
+      "히어로",
+      "범죄",
+      "스릴러",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7RMax3aGw.jpg"
+  },
+  "gen_movie_the-godfather_1972": {
+    "workId": "gen_movie_the-godfather_1972",
+    "title": "대부",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "프란시스 포드 코폴라",
+    "releaseYear": 1972,
+    "description": "마피아 콜레오네 가문의 흥망성쇠를 그린 범죄 서사시.",
+    "tags": [
+      "범죄",
+      "가족",
+      "명작",
+      "드라마"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enSsRlawKtKzX5.jpg"
+  },
+  "gen_movie_toy-story_1995": {
+    "workId": "gen_movie_toy-story_1995",
+    "title": "토이 스토리",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "존 래시터",
+    "releaseYear": 1995,
+    "description": "장난감들이 살아 움직이는 세계를 그린 픽사 애니메이션.",
+    "tags": [
+      "애니메이션",
+      "가족",
+      "우정",
+      "픽사"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWRPhgcpGm2EZ.jpg"
   }
 }

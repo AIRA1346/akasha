@@ -1,0 +1,18 @@
+{
+  "gen_movie_lord-of-the-rings-fellowship_2001": {
+    "workId": "gen_movie_lord-of-the-rings-fellowship_2001",
+    "title": "반지의 제왕: 반지 원정대",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "피터 잭슨",
+    "releaseYear": 2001,
+    "description": "호빗 프로도가 반지를 파괴하기 위해 떠나는 판타지 대서사.",
+    "tags": [
+      "판타지",
+      "모험",
+      "명작",
+      "서사"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkH9UKpaM.jpg"
+  }
+}

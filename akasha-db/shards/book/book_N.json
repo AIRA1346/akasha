@@ -1,0 +1,18 @@
+{
+  "gen_book_norwegian-wood_1987": {
+    "workId": "gen_book_norwegian-wood_1987",
+    "title": "노르웨이의 숲",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "무라카미 하루키",
+    "releaseYear": 1987,
+    "description": "1960년대 도쿄를 배경으로 한 청춘의 사랑과 상실.",
+    "tags": [
+      "청춘",
+      "로맨스",
+      "문학",
+      "일본"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg"
+  }
+}

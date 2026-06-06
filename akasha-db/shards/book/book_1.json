@@ -1,0 +1,18 @@
+{
+  "gen_book_1984_1949": {
+    "workId": "gen_book_1984_1949",
+    "title": "1984",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "조지 오웰",
+    "releaseYear": 1949,
+    "description": "전체주의 감시 사회를 그린 디스토피아 소설의 고전.",
+    "tags": [
+      "디스토피아",
+      "정치",
+      "고전",
+      "소설"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+  }
+}

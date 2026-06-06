@@ -1,0 +1,18 @@
+{
+  "sub_game_honkai-star-rail_2023": {
+    "workId": "sub_game_honkai-star-rail_2023",
+    "title": "붕괴: 스타레일",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2023,
+    "description": "우주를 여행하며 벌어지는 턴제 RPG 어드벤처.",
+    "tags": [
+      "턴제",
+      "SF",
+      "수집형RPG",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg"
+  }
+}

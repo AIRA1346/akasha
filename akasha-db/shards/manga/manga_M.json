@@ -7,7 +7,44 @@
     "creator": "송도수 / 서정은",
     "releaseYear": 2006,
     "description": "메이플스토리 아바타들이 펼치는 수학 학습만화 베스트셀러.",
-    "tags": ["학습만화", "모험", "수학", "메이플"],
+    "tags": [
+      "학습만화",
+      "모험",
+      "수학",
+      "메이플"
+    ],
     "posterPath": "https://image.yes24.com/goods/2301053/L"
+  },
+  "sub_manga_my-hero-academia_2014": {
+    "workId": "sub_manga_my-hero-academia_2014",
+    "title": "나의 히어로 아카데미아",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "releaseYear": 2014,
+    "description": "초능력 사회에서 무력한 소년이 최고의 히어로를 꿈꾸는 이야기.",
+    "tags": [
+      "히어로",
+      "학원",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85486.jpg"
+  },
+  "sub_manga_mob-psycho-100_2012": {
+    "workId": "sub_manga_mob-psycho-100_2012",
+    "title": "모브 사이코 100",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "ONE",
+    "releaseYear": 2012,
+    "description": "강력한 초능력을 가진 평범해 보이는 소년의 성장 이야기.",
+    "tags": [
+      "초능력",
+      "코미디",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx70345.jpg"
   }
 }

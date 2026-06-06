@@ -1,0 +1,18 @@
+{
+  "gen_game_appid570_2013": {
+    "workId": "gen_game_appid570_2013",
+    "title": "도타 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2013,
+    "description": "전 세계적으로 사랑받는 5대5 MOBA 대전 게임.",
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "전략"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "gen_drama_breaking-bad_2008": {
+    "workId": "gen_drama_breaking-bad_2008",
+    "title": "브레이킹 배드",
+    "category": "drama",
+    "domain": "generalCulture",
+    "creator": "빈스 길리건",
+    "releaseYear": 2008,
+    "description": "화학 교사가 마약 제조자로 변모하는 범죄 드라마.",
+    "tags": [
+      "범죄",
+      "스릴러",
+      "드라마",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/ggFHVNu6YYi5NYi69jNgnB9osm.jpg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "gen_game_appid730_2012": {
+    "workId": "gen_game_appid730_2012",
+    "title": "카운터 스트라이크 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2012,
+    "description": "전술 FPS의 대표작으로 팀워크와 에임이 승부를 가른다.",
+    "tags": [
+      "FPS",
+      "PvP",
+      "e스포츠",
+      "전술"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg"
+  }
+}

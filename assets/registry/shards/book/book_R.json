@@ -1,0 +1,34 @@
+{
+  "gen_book_ready-player-one_2011": {
+    "workId": "gen_book_ready-player-one_2011",
+    "title": "아이언 레디 플레이어 원",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "언스트 어니스트 클라인",
+    "releaseYear": 2011,
+    "description": "VR 오아시스의 유산을 둘러싼 레트로 게임 퀘스트.",
+    "tags": [
+      "SF",
+      "게임",
+      "VR",
+      "레트로"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg"
+  },
+  "sub_book_rezero-light-novel_2014": {
+    "workId": "sub_book_rezero-light-novel_2014",
+    "title": "Re:제로 라이트노벨",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "나가츠키 탓페이",
+    "releaseYear": 2014,
+    "description": "이세계에서 죽음을 반복하는 소년의 라이트노벨 원작.",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "서브컬처"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx84847.jpg"
+  }
+}

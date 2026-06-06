@@ -1,0 +1,18 @@
+{
+  "gen_book_murder-on-orient-express_1934": {
+    "workId": "gen_book_murder-on-orient-express_1934",
+    "title": "오리엔트 특급 살인",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "아가사 크리스티",
+    "releaseYear": 1934,
+    "description": "설원 속 열차에서 벌어진 살인 사건을 추리하는 포와로의 활약.",
+    "tags": [
+      "추리",
+      "미스터리",
+      "고전",
+      "포와로"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg"
+  }
+}

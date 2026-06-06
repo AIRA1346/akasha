@@ -1,0 +1,18 @@
+{
+  "sub_manga_vagabond_1998": {
+    "workId": "sub_manga_vagabond_1998",
+    "title": "바감동",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 다케히코",
+    "releaseYear": 1998,
+    "description": "미야모토 무사시의 일생을 그린 사무라이 무도 서사시.",
+    "tags": [
+      "사무라이",
+      "무도",
+      "역사",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30745.jpg"
+  }
+}

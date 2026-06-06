@@ -1,0 +1,50 @@
+{
+  "sub_manga_berserk_1989": {
+    "workId": "sub_manga_berserk_1989",
+    "title": "베르세르크",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "미우라 켄트",
+    "releaseYear": 1989,
+    "description": "거대한 검을 휘두르는 전사 가츠의 복수와 어두운 판타지 세계.",
+    "tags": [
+      "다크판타지",
+      "복수",
+      "중세",
+      "잔혹"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30015.jpg"
+  },
+  "sub_manga_blue-lock_2018": {
+    "workId": "sub_manga_blue-lock_2018",
+    "title": "블루 록",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "무인치 혼",
+    "releaseYear": 2018,
+    "description": "일본 최고의 스트라이커를 뽑기 위한 극한의 축구 서바이벌.",
+    "tags": [
+      "스포츠",
+      "축구",
+      "서바이벌",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx104613.jpg"
+  },
+  "sub_manga_bleach_2001": {
+    "workId": "sub_manga_bleach_2001",
+    "title": "블리치",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "releaseYear": 2001,
+    "description": "소년이 영혼을 보는 사신 대행으로서 사후 세계를 지키는 이야기.",
+    "tags": [
+      "액션",
+      "사신",
+      "초자연",
+      "우정"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30016.jpg"
+  }
+}

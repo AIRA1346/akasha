@@ -1,0 +1,34 @@
+{
+  "sub_animation_spy-x-family_2022": {
+    "workId": "sub_animation_spy-x-family_2022",
+    "title": "스파이 패밀리",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WIT STUDIO / CloverWorks",
+    "releaseYear": 2022,
+    "description": "가짜 가족이 각자의 임무 속에서 진짜 유대를 쌓아가는 스파이 코미디.",
+    "tags": [
+      "코미디",
+      "스파이",
+      "가족",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960.jpg"
+  },
+  "sub_animation_steinsgate_2011": {
+    "workId": "sub_animation_steinsgate_2011",
+    "title": "슈타인즈 게이트",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WHITE FOX",
+    "releaseYear": 2011,
+    "description": "타임머신 실험이 비극적 미래를 초래하며 반복되는 시간여행 SF.",
+    "tags": [
+      "SF",
+      "시간여행",
+      "서스펜스",
+      "감동"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757.jpg"
+  }
+}
