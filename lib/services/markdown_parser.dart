@@ -18,8 +18,9 @@ class MarkdownParser {
     if (normalized.startsWith('posters/')) return true;
 
     if (path.startsWith('http://') || path.startsWith('https://')) {
-      if (item.workId.isNotEmpty) {
-        final registry = WorksRegistry.getWorkById(item.workId);
+      final resolvedId = WorksRegistry.resolveWorkId(item.workId);
+      if (resolvedId.isNotEmpty) {
+        final registry = WorksRegistry.getWorkById(resolvedId);
         if (registry?.posterPath != null && registry!.posterPath == path) {
           return false;
         }
@@ -135,7 +136,9 @@ class MarkdownParser {
     }
 
     // 메타데이터 추출
-    String workId = yamlMap['work_id']?.toString() ?? '';
+    String workId = WorksRegistry.resolveWorkId(
+      yamlMap['work_id']?.toString() ?? '',
+    );
     final title = yamlMap['title']?.toString() ?? fallbackTitle;
     final categoryStr = yamlMap['category']?.toString() ?? 'manga';
     

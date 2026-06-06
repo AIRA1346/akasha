@@ -1,0 +1,35 @@
+{
+  "sub_manga_shigatsu-wa-kimi-no-uso_2011": {
+    "workId": "sub_manga_shigatsu-wa-kimi-no-uso_2011",
+    "title": "4월은 너의 거짓말",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 나오시 (Naoshi Arakawa)",
+    "releaseYear": 2011,
+    "description": "피아노를 포기한 천재 소년 아리마 코세이가 자유분방한 바이올리니스트 미야조노 카오리를 만나 다시 음악과 마주하게 되는 이야기.",
+    "tags": ["감동", "음악", "청춘", "피아노"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx67707-srHFl9GBmfig.png"
+  },
+  "sub_manga_shingeki-no-kyojin_2009": {
+    "workId": "sub_manga_shingeki-no-kyojin_2009",
+    "title": "진격의 거인",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이사야마 하지메 (Hajime Isayama)",
+    "releaseYear": 2009,
+    "description": "거대한 벽 안에서 살아가던 인류가 벽 너머의 거인과 맞서 싸우는 이야기.",
+    "tags": ["SF", "전쟁", "자유", "반전"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx53390-1RsuABC34P9D.jpg"
+  },
+  "sub_manga_slam-dunk_1990": {
+    "workId": "sub_manga_slam-dunk_1990",
+    "title": "슬램덩크",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 다케히코 (Takehiko Inoue)",
+    "releaseYear": 1990,
+    "description": "불량소년 강백호가 농구부에 입단해 진정한 선수로 성장하는 열혈 스포츠 만화.",
+    "tags": ["스포츠", "농구", "열혈", "청춘"],
+    "posterPath": null
+  }
+}

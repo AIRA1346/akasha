@@ -1,0 +1,226 @@
+[
+  {
+    "workId": "sub_manga_shigatsu-wa-kimi-no-uso_2011",
+    "title": "4월은 너의 거짓말",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_manga_86-eighty-six_2017",
+    "title": "86 -에이티식스-",
+    "shardId": "manga_numeric",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_manga_gabriel-dropout_2013",
+    "title": "가브릴 드롭아웃",
+    "shardId": "manga_G",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_manga_kimetsu-no-yaiba_2016",
+    "title": "귀멸의 칼날",
+    "shardId": "manga_K",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_drama_stranger-things_2016",
+    "title": "기묘한 이야기",
+    "shardId": "drama_S",
+    "category": "drama",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_manga_naruto_1999",
+    "title": "나루토",
+    "shardId": "manga_N",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_animation_your-name_2016",
+    "title": "너의 이름은.",
+    "shardId": "animation_Y",
+    "category": "animation",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_book_laplace-novel_2015",
+    "title": "라플라스의 마녀",
+    "shardId": "book_L",
+    "category": "book",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_game_league-of-legends_2009",
+    "title": "리그 오브 레전드",
+    "shardId": "game_L",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_game_minecraft_2011",
+    "title": "마인크래프트",
+    "shardId": "game_M",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_movie_the-matrix_1999",
+    "title": "매트릭스",
+    "shardId": "movie_T",
+    "category": "movie",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_manga_detective-conan_1994",
+    "title": "명탐정 코난",
+    "shardId": "manga_C",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_game_blue-archive_2021",
+    "title": "블루 아카이브",
+    "shardId": "game_A",
+    "category": "game",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_book_sword-art-online_2009",
+    "title": "소드 아트 온라인",
+    "shardId": "book_S",
+    "category": "book",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_manga_math-thief_2006",
+    "title": "수학도둑",
+    "shardId": "manga_M",
+    "category": "manga",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_game_stardew-valley_2016",
+    "title": "스타듀 밸리",
+    "shardId": "game_S",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_manga_slam-dunk_1990",
+    "title": "슬램덩크",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_game_nikke_2022",
+    "title": "승리의 여신: 니케",
+    "shardId": "game_N",
+    "category": "game",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_game_axiom_2024",
+    "title": "엑시옴",
+    "shardId": "game_A",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_game_appid1245620_2022",
+    "title": "엘든 링",
+    "shardId": "game_E",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_drama_squid-game_2021",
+    "title": "오징어 게임",
+    "shardId": "drama_S",
+    "category": "drama",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_game_genshin-impact_2020",
+    "title": "원신",
+    "shardId": "game_G",
+    "category": "game",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_manga_one-piece_1997",
+    "title": "원피스",
+    "shardId": "manga_O",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_animation_my-neighbor-totoro_1988",
+    "title": "이웃집 토토로",
+    "shardId": "animation_M",
+    "category": "animation",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "gen_movie_interstellar_2014",
+    "title": "인터스텔라",
+    "shardId": "movie_I",
+    "category": "movie",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_animation_frieren_2023",
+    "title": "장송의 프리렌",
+    "shardId": "animation_F",
+    "category": "animation",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_game_zelda-breath-of-the-wild_2017",
+    "title": "젤다의 전설 브레스 오브 더 와일드",
+    "shardId": "game_Z",
+    "category": "game",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_manga_jujutsu-kaisen_2018",
+    "title": "주술회전",
+    "shardId": "manga_J",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "sub_manga_shingeki-no-kyojin_2009",
+    "title": "진격의 거인",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_manga_crayon-shin-chan_1990",
+    "title": "짱구는 못말려",
+    "shardId": "manga_C",
+    "category": "manga",
+    "domain": "generalCulture"
+  },
+  {
+    "workId": "sub_manga_chainsaw-man_2018",
+    "title": "체인소 맨",
+    "shardId": "manga_C",
+    "category": "manga",
+    "domain": "subculture"
+  },
+  {
+    "workId": "gen_book_harry-potter-philosophers-stone_1997",
+    "title": "해리 포터와 마법사의 돌",
+    "shardId": "book_H",
+    "category": "book",
+    "domain": "generalCulture"
+  }
+]

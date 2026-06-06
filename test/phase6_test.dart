@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/models/enums.dart';
@@ -5,12 +6,24 @@ import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/utils/helpers.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  const channel = MethodChannel('plugins.flutter.io/path_provider');
+  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+      .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+    return '.';
+  });
+
+  setUpAll(() async {
+    await WorksRegistry.init();
+  });
+
   group('Phase 6 — Global Library Autoloading & Status Borders Tests', () {
     test('On-Demand Fusion merges local vault items with registry templates correctly', () {
-      // 1. 임의의 실제 사용자 아카이브 작품 (1종)
+      const eldenId = 'gen_game_appid1245620_2022';
       final userItems = <AkashaItem>[
         createItem(
-          workId: 'eldenring_2022',
+          workId: eldenId,
           title: '엘든 링',
           category: MediaCategory.game,
           domain: AppDomain.generalCulture,
@@ -21,14 +34,11 @@ void main() {
 
       final userWorkIds = userItems.map((e) => e.workId).toSet();
 
-      // 2. game 카테고리와 generalCulture 도메인을 기준으로 사전(Registry)에서 필터링 조회
-      // ( works_registry.dart에 등록된 젤다, 스타듀밸리, 마인크래프트, 롤, 엘든링 등이 걸러짐)
-      final filteredWorks = WorksRegistry.getFilteredWorks(
+      final filteredWorks = WorksRegistry.getFilteredWorksSync(
         domain: AppDomain.generalCulture,
         category: MediaCategory.game,
       );
 
-      // 3. 융합 (Join) 실행
       final List<AkashaItem> fusedList = [...userItems];
       for (final work in filteredWorks) {
         if (!userWorkIds.contains(work.workId)) {
@@ -55,20 +65,16 @@ void main() {
         }
       }
 
-      // 검증:
-      // - 융합된 리스트에는 'eldenring_2022' (실제) 와 사전에서 땡겨온 'minecraft_2011', 'lol_2009', 'zelda_botw_2017' 등이 모두 들어가 있어야 함.
       final fusedIds = fusedList.map((e) => e.workId).toList();
-      expect(fusedIds, contains('eldenring_2022'));
-      expect(fusedIds, contains('minecraft_2011'));
-      expect(fusedIds, contains('lol_2009'));
-      expect(fusedIds, contains('axiom_game'));
+      expect(fusedIds, contains(eldenId));
+      expect(fusedIds, contains('gen_game_minecraft_2011'));
+      expect(fusedIds, contains('gen_game_league-of-legends_2009'));
+      expect(fusedIds, contains('gen_game_axiom_2024'));
 
-      // - 실제 등록된 엘든링은 '클리어(완결)' 상태를 유지해야 함.
-      final elden = fusedList.firstWhere((e) => e.workId == 'eldenring_2022');
+      final elden = fusedList.firstWhere((e) => e.workId == eldenId);
       expect(elden.myStatusLabel, '클리어(완결)');
 
-      // - 사전에서 가상으로 융합된 마인크래프트는 기본 '볼 예정' 및 별점 0.0이어야 함.
-      final minecraft = fusedList.firstWhere((e) => e.workId == 'minecraft_2011');
+      final minecraft = fusedList.firstWhere((e) => e.workId == 'gen_game_minecraft_2011');
       expect(minecraft.myStatusLabel, '볼 예정');
       expect(minecraft.rating, 0.0);
     });

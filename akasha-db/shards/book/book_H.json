@@ -1,0 +1,13 @@
+{
+  "gen_book_harry-potter-philosophers-stone_1997": {
+    "workId": "gen_book_harry-potter-philosophers-stone_1997",
+    "title": "해리 포터와 마법사의 돌",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "J.K. 롤링 (J.K. Rowling)",
+    "releaseYear": 1997,
+    "description": "호그와트 마법학교에 입학한 해리 포터의 모험의 시작.",
+    "tags": ["소설", "판타지", "마법", "호그와트"],
+    "posterPath": null
+  }
+}

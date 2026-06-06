@@ -3,17 +3,19 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'works_registry.dart';
 
-/// Git 기반 글로벌 작품 사전 동기화 서비스 (Phase 4)
+/// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
 class RegistrySyncService {
   static const String _prefLastSyncKey = 'akasha_last_sync_time';
   static const String _prefCustomUrlKey = 'akasha_custom_db_url';
-  
-  // 기본 작품 사전 데이터 URL (GitHub raw 주소)
-  static const String defaultDbUrl =
-      'https://raw.githubusercontent.com/AIRA1346/akasha-db/main/works_registry.json';
 
-  // 싱글톤
+  static const String defaultDbBaseUrl =
+      'https://raw.githubusercontent.com/AIRA1346/akasha-db/main/';
+
+  static const String defaultLegacyDbUrl =
+      '${defaultDbBaseUrl}works_registry.json';
+
   static final RegistrySyncService _instance = RegistrySyncService._internal();
   factory RegistrySyncService() => _instance;
   RegistrySyncService._internal();
@@ -24,12 +26,16 @@ class RegistrySyncService {
     _prefs ??= await SharedPreferences.getInstance();
   }
 
-  /// 커스텀 DB 동기화 URL 가져오기
   String get customDbUrl {
-    return _prefs?.getString(_prefCustomUrlKey) ?? defaultDbUrl;
+    return _prefs?.getString(_prefCustomUrlKey) ?? defaultDbBaseUrl;
   }
 
-  /// 커스텀 DB 동기화 URL 설정하기 (비우면 기본값 복구)
+  String get baseUrl {
+    final url = customDbUrl.trim();
+    if (url.isEmpty) return defaultDbBaseUrl;
+    return url.endsWith('/') ? url : '$url/';
+  }
+
   Future<void> setCustomDbUrl(String url) async {
     await init();
     if (url.trim().isEmpty) {
@@ -39,76 +45,128 @@ class RegistrySyncService {
     }
   }
 
-  /// 마지막 동기화 일시 가져오기
   DateTime? get lastSyncTime {
     final timeStr = _prefs?.getString(_prefLastSyncKey);
     if (timeStr == null) return null;
     return DateTime.tryParse(timeStr);
   }
 
-  /// 로컬 캐시 파일 경로 얻기
-  Future<File> get _localCacheFile async {
+  Future<File> get _legacyCacheFile async {
     final dir = await getApplicationDocumentsDirectory();
     return File(p.join(dir.path, 'local_works_registry.json'));
   }
 
-  /// 로컬 캐시 파일의 텍스트 콘텐츠 읽기
   Future<String?> readCachedRegistry() async {
     try {
-      final file = await _localCacheFile;
+      final file = await _legacyCacheFile;
       if (await file.exists()) {
         return await file.readAsString();
       }
     } catch (e) {
-      print('Error reading local registry cache: $e');
+      print('Error reading legacy registry cache: $e');
     }
     return null;
   }
 
-  /// 백그라운드 자동 동기화 필요 여부 확인 (마지막 동기화 후 24시간 경과 시)
   Future<bool> shouldAutoSync() async {
     await init();
     final lastSync = lastSyncTime;
     if (lastSync == null) return true;
-    
-    final difference = DateTime.now().difference(lastSync);
-    return difference.inHours >= 24;
+    return DateTime.now().difference(lastSync).inHours >= 24;
   }
 
-  /// 원격 정적 사전을 다운로드하여 로컬 캐시에 저장
+  /// 샤딩 메타데이터 + 검색 인덱스 + eager 샤드 동기화
   Future<bool> sync() async {
     await init();
-    final url = customDbUrl;
+    final loader = WorksRegistry.loader;
+    var success = false;
+
+    final manifestContent = await _fetchText('${baseUrl}manifest.json');
+    if (manifestContent != null) {
+      success = await loader.cacheRemoteManifest(manifestContent);
+    }
+
+    final indexContent = await _fetchText('${baseUrl}search_index.json');
+    if (indexContent != null) {
+      success = (await loader.cacheRemoteSearchIndex(indexContent)) || success;
+    }
+
+    final eagerShards = loader.manifest?.eagerShards() ?? const [];
+    for (final shard in eagerShards) {
+      final shardContent = await _fetchText('${baseUrl}${shard.path}');
+      if (shardContent != null) {
+        final ok = await loader.cacheRemoteShard(shard.path, shardContent);
+        success = ok || success;
+      }
+    }
+
+    // 레거시 단일 JSON 폴백 (akasha-db 마이그레이션 전)
+    if (!success) {
+      final legacyUrl = baseUrl.endsWith('/')
+          ? '${baseUrl}works_registry.json'
+          : '$baseUrl/works_registry.json';
+      final legacyContent = await _fetchText(legacyUrl);
+      if (legacyContent != null) {
+        try {
+          final decoded = json.decode(legacyContent);
+          if (decoded is Map || decoded is List) {
+            final file = await _legacyCacheFile;
+            await file.writeAsString(legacyContent);
+            await loader.mergeLegacyMonolithicJson(legacyContent);
+            success = true;
+          }
+        } catch (e) {
+          print('Error syncing legacy registry: $e');
+        }
+      }
+    }
+
+    if (success) {
+      await _prefs?.setString(
+        _prefLastSyncKey,
+        DateTime.now().toIso8601String(),
+      );
+    }
+    return success;
+  }
+
+  /// 검색어에 필요한 샤드만 온디맨드 다운로드
+  Future<bool> syncShardsForQuery(String query) async {
+    if (query.trim().isEmpty) return false;
+    final loader = WorksRegistry.loader;
+    final q = query.toLowerCase().replaceAll(' ', '');
+    final targets = loader.searchIndex.where((entry) {
+      final title = entry.title.toLowerCase().replaceAll(' ', '');
+      return title.contains(q);
+    });
+
+    var success = false;
+    for (final entry in targets) {
+      final meta = loader.manifest?.shardById(entry.shardId);
+      if (meta == null) continue;
+      final content = await _fetchText('${baseUrl}${meta.path}');
+      if (content != null) {
+        success = await loader.cacheRemoteShard(meta.path, content) || success;
+      }
+    }
+    return success;
+  }
+
+  Future<String?> _fetchText(String url) async {
     final client = HttpClient();
-    
-    // 타임아웃 설정 (10초)
-    client.connectionTimeout = const Duration(seconds: 10);
-    
+    client.connectionTimeout = const Duration(seconds: 15);
     try {
       final uri = Uri.parse(url);
       final request = await client.getUrl(uri);
       final response = await request.close();
-      
       if (response.statusCode == 200) {
-        final content = await response.transform(utf8.decoder).join();
-        
-        // JSON 유효성 검증
-        final decoded = json.decode(content);
-        if (decoded is Map || decoded is List) {
-          // 로컬 캐시 디스크 저장
-          final file = await _localCacheFile;
-          await file.writeAsString(content);
-          
-          // 동기화 시간 저장
-          await _prefs?.setString(_prefLastSyncKey, DateTime.now().toIso8601String());
-          return true;
-        }
+        return await response.transform(utf8.decoder).join();
       }
     } catch (e) {
-      print('Error syncing registry database from $url: $e');
+      print('Error fetching registry resource from $url: $e');
     } finally {
       client.close();
     }
-    return false;
+    return null;
   }
 }

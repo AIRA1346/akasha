@@ -1,0 +1,35 @@
+{
+  "sub_manga_chainsaw-man_2018": {
+    "workId": "sub_manga_chainsaw-man_2018",
+    "title": "체인소 맨",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "releaseYear": 2018,
+    "description": "가난한 소년 덴지가 체인소의 악마와 합체하는 이야기.",
+    "tags": ["액션", "다크", "악마", "카오스"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-euxXZEIfDY2u.png"
+  },
+  "sub_manga_detective-conan_1994": {
+    "workId": "sub_manga_detective-conan_1994",
+    "title": "명탐정 코난",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아오야마 고쇼 (Gosho Aoyama)",
+    "releaseYear": 1994,
+    "description": "소년 탐정 에도가와 코난의 추리 활약.",
+    "tags": ["추리", "소년만화", "럽코", "장수작"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx106015-yK0zreKP7RVs.jpg"
+  },
+  "gen_manga_crayon-shin-chan_1990": {
+    "workId": "gen_manga_crayon-shin-chan_1990",
+    "title": "짱구는 못말려",
+    "category": "manga",
+    "domain": "generalCulture",
+    "creator": "우스이 요시토 (Yoshito Usui)",
+    "releaseYear": 1990,
+    "description": "떡잎마을의 장난꾸러기 신짱구와 가족의 코믹 일상.",
+    "tags": ["코미디", "일상", "가족", "장수작"],
+    "posterPath": null
+  }
+}

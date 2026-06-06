@@ -1,0 +1,242 @@
+// ignore_for_file: avoid_print
+/// AKASHA Registry Builder
+/// Usage: dart run tool/registry_builder.dart [--sync-assets]
+///
+/// - Validates all shard JSON files under akasha-db/shards/
+/// - Regenerates manifest.json and search_index.json
+/// - Optionally copies akasha-db → assets/registry for app bundle
+
+import 'dart:convert';
+import 'dart:io';
+
+final _masterPatternWithYear = RegExp(
+  r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)_(\d{4})$',
+);
+final _masterPatternNoYear = RegExp(
+  r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)$',
+);
+
+bool _isMasterFormat(String workId) =>
+    _masterPatternWithYear.hasMatch(workId) ||
+    _masterPatternNoYear.hasMatch(workId);
+
+const _validCategories = {
+  'manga',
+  'animation',
+  'game',
+  'book',
+  'movie',
+  'drama',
+};
+
+const _validDomains = {'subculture', 'generalCulture'};
+
+void main(List<String> args) {
+  final syncAssets = args.contains('--sync-assets');
+  final projectRoot = _findProjectRoot();
+  final dbRoot = Directory('${projectRoot.path}/akasha-db');
+  final shardsRoot = Directory('${dbRoot.path}/shards');
+
+  if (!shardsRoot.existsSync()) {
+    stderr.writeln('ERROR: ${shardsRoot.path} not found');
+    exit(1);
+  }
+
+  final errors = <String>[];
+  final allWorks = <String, Map<String, dynamic>>{};
+  final workShardIds = <String, String>{};
+  final shardMetas = <Map<String, dynamic>>[];
+
+  for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
+    final categoryName = p.basename(categoryDir.path);
+    for (final shardFile in categoryDir
+        .listSync()
+        .whereType<File>()
+        .where((f) => f.path.endsWith('.json'))) {
+      final relativePath =
+          'shards/$categoryName/${p.basename(shardFile.path)}';
+      final shardId = p.basenameWithoutExtension(shardFile.path);
+      final content = json.decode(shardFile.readAsStringSync());
+
+      if (content is! Map<String, dynamic>) {
+        errors.add('$relativePath: root must be a JSON object');
+        continue;
+      }
+
+      var entryCount = 0;
+      for (final entry in content.entries) {
+        entryCount++;
+        if (entry.value is! Map<String, dynamic>) {
+          errors.add('$relativePath: value for ${entry.key} must be object');
+          continue;
+        }
+        final work = Map<String, dynamic>.from(entry.value as Map);
+        _validateWork(entry.key, work, relativePath, errors);
+
+        final workId = work['workId']?.toString() ?? entry.key;
+        if (allWorks.containsKey(workId)) {
+          errors.add('Duplicate workId: $workId');
+        }
+        allWorks[workId] = work;
+        workShardIds[workId] = shardId;
+      }
+
+      shardMetas.add({
+        'id': shardId,
+        'category': categoryName,
+        'path': relativePath,
+        'eager': true,
+        'entryCount': entryCount,
+      });
+    }
+  }
+
+  if (errors.isNotEmpty) {
+    stderr.writeln('Validation failed with ${errors.length} error(s):');
+    for (final e in errors) {
+      stderr.writeln('  - $e');
+    }
+    exit(1);
+  }
+
+  shardMetas.sort((a, b) => (a['id'] as String).compareTo(b['id'] as String));
+
+  final manifest = {
+    'version': 2,
+    'generatedAt': DateTime.now().toUtc().toIso8601String(),
+    'shards': shardMetas,
+  };
+
+  final searchIndex = allWorks.entries.map((entry) {
+    final workId = entry.key;
+    final work = entry.value;
+    return {
+      'workId': workId,
+      'title': work['title'],
+      'shardId': workShardIds[workId] ?? 'unknown',
+      'category': work['category'],
+      'domain': work['domain'],
+    };
+  }).toList()
+    ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));
+
+  _writeJson('${dbRoot.path}/manifest.json', manifest);
+  _writeJson('${dbRoot.path}/search_index.json', searchIndex);
+
+  print('OK: ${allWorks.length} works across ${shardMetas.length} shards');
+  print('  → ${dbRoot.path}/manifest.json');
+  print('  → ${dbRoot.path}/search_index.json');
+
+  if (syncAssets) {
+    final assetsRoot = Directory('${projectRoot.path}/assets/registry');
+    _copyTree(dbRoot, assetsRoot, {
+      'manifest.json',
+      'search_index.json',
+      'legacy_aliases.json',
+      'shards',
+    });
+    print('  → synced to ${assetsRoot.path}');
+  }
+}
+
+void _validateWork(
+  String mapKey,
+  Map<String, dynamic> work,
+  String shardPath,
+  List<String> errors,
+) {
+  final workId = work['workId']?.toString() ?? mapKey;
+  if (mapKey != workId) {
+    errors.add('$shardPath: map key $mapKey != workId $workId');
+  }
+  if (!_isMasterFormat(workId)) {
+    errors.add('$shardPath: invalid master workId format: $workId');
+  }
+
+  final category = work['category']?.toString() ?? '';
+  final domain = work['domain']?.toString() ?? '';
+  final title = work['title']?.toString() ?? '';
+
+  if (!_validCategories.contains(category)) {
+    errors.add('$shardPath/$workId: invalid category $category');
+  }
+  if (!_validDomains.contains(domain)) {
+    errors.add('$shardPath/$workId: invalid domain $domain');
+  }
+  if (title.isEmpty) {
+    errors.add('$shardPath/$workId: title is required');
+  }
+
+  final poster = work['posterPath'];
+  if (poster != null &&
+      poster is String &&
+      poster.isNotEmpty &&
+      !poster.startsWith('http')) {
+    errors.add('$shardPath/$workId: posterPath must be http URL or null');
+  }
+}
+
+void _writeJson(String path, Object data) {
+  final encoder = const JsonEncoder.withIndent('  ');
+  File(path).writeAsStringSync('${encoder.convert(data)}\n');
+}
+
+Directory _findProjectRoot() {
+  var dir = Directory.current;
+  while (true) {
+    if (File('${dir.path}/pubspec.yaml').existsSync()) return dir;
+    final parent = dir.parent;
+    if (parent.path == dir.path) {
+      return Directory.current;
+    }
+    dir = parent;
+  }
+}
+
+void _copyTree(Directory source, Directory dest, Set<String> names) {
+  for (final name in names) {
+    final src = FileSystemEntity.typeSync('${source.path}/$name');
+    if (src == FileSystemEntityType.notFound) continue;
+
+    final target = '${dest.path}/$name';
+    if (src == FileSystemEntityType.directory) {
+      _copyDirectory(Directory('${source.path}/$name'), Directory(target));
+    } else {
+      File('${source.path}/$name').copySync(target);
+    }
+  }
+}
+
+void _copyDirectory(Directory source, Directory destination) {
+  if (!destination.existsSync()) destination.createSync(recursive: true);
+  for (final entity in source.listSync(recursive: false)) {
+    final name = p.basename(entity.path);
+    final targetPath = p.join(destination.path, name);
+    if (entity is Directory) {
+      _copyDirectory(entity, Directory(targetPath));
+    } else if (entity is File) {
+      entity.copySync(targetPath);
+    }
+  }
+}
+
+// Minimal path basename helper without package:path in tool
+class p {
+  static String basename(String path) {
+    final normalized = path.replaceAll('\\', '/');
+    return normalized.split('/').last;
+  }
+
+  static String basenameWithoutExtension(String path) {
+    final base = basename(path);
+    final dot = base.lastIndexOf('.');
+    return dot == -1 ? base : base.substring(0, dot);
+  }
+
+  static String join(String part1, String part2) {
+    if (part1.endsWith('/') || part1.endsWith('\\')) {
+      return '$part1$part2';
+    }
+    return '$part1/$part2';
+  }
+}

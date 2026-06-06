@@ -11,6 +11,7 @@ import '../services/file_service.dart';
 import '../services/markdown_parser.dart';
 import '../services/works_registry.dart';
 import '../services/registry_sync_service.dart';
+import '../models/work_id_codec.dart';
 import '../utils/helpers.dart';
 import '../widgets/web_image_search_dialog.dart';
 import '../widgets/filter_section.dart';
@@ -146,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .toSet();
 
     // 2. 전체 레지스트리 작품 목록 가져오기
-    final allRegistryWorks = WorksRegistry.getFilteredWorks();
+    final allRegistryWorks = WorksRegistry.getFilteredWorksSync();
 
     // 3. 존재하지 않는 작품들에 대해 기본 마크다운 생성
     int createdCount = 0;
@@ -204,13 +205,13 @@ class _HomeScreenState extends State<HomeScreen> {
     // 2. 현재 도메인/카테고리 필터에 해당하는 사전(Registry) 작품 조회
     final List<RegistryWork> registryWorks = [];
     if (_selectedCategories.isEmpty) {
-      registryWorks.addAll(WorksRegistry.getFilteredWorks(
+      registryWorks.addAll(WorksRegistry.getFilteredWorksSync(
         domain: _selectedDomain,
         category: null,
       ));
     } else {
       for (final cat in _selectedCategories) {
-        registryWorks.addAll(WorksRegistry.getFilteredWorks(
+        registryWorks.addAll(WorksRegistry.getFilteredWorksSync(
           domain: _selectedDomain,
           category: cat,
         ));
@@ -841,24 +842,32 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showCustomUrlDialog() async {
     final syncService = RegistrySyncService();
     final ctrl = TextEditingController(text: syncService.customDbUrl);
-    
+    const defaultBase = RegistrySyncService.defaultDbBaseUrl;
+
     await showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('🔗 커스텀 사전 DB URL 설정'),
+        title: const Text('🔗 커스텀 사전 DB Base URL 설정'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              '원격 작품 사전 JSON 파일이 위치한 커스텀 URL을 지정합니다. 비워두면 기본 GitHub 저장소 주소로 재설정됩니다.',
+              '원격 작품 사전의 루트(base) URL을 지정합니다.\n'
+              'manifest.json, search_index.json, shards/ 하위 파일을 이 주소에서 내려받습니다.',
               style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '기본값: $defaultBase',
+              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: ctrl,
               decoration: const InputDecoration(
-                labelText: '데이터베이스 JSON URL',
+                labelText: 'Registry Base URL (끝에 / 포함)',
+                hintText: 'https://raw.githubusercontent.com/.../main/',
                 border: OutlineInputBorder(),
                 isDense: true,
               ),
@@ -1810,7 +1819,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pop(
                     ctx,
                     createItem(
-                      workId: selectedRegistryWork?.workId ?? '',
+                      workId: selectedRegistryWork?.workId ??
+                          WorkIdCodec.buildCustom(
+                            domain: selDomain,
+                            category: selCategory,
+                            releaseYear: int.tryParse(yearCtrl.text.trim()),
+                          ),
                       title: title,
                       category: selCategory,
                       domain: selDomain,

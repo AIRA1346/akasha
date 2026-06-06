@@ -11,8 +11,8 @@ import 'services/works_registry.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // 로컬 캐시 사전 불러오기 (Phase 4)
-  await WorksRegistry.loadCachedRegistry();
+  // 샤딩 레지스트리 초기화 (번들 + 캐시 + 레거시 병합)
+  await WorksRegistry.init();
   
   runApp(const AkashaApp());
 }

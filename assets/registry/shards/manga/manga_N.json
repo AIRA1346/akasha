@@ -1,0 +1,13 @@
+{
+  "sub_manga_naruto_1999": {
+    "workId": "sub_manga_naruto_1999",
+    "title": "나루토",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "키시모토 마사시 (Masashi Kishimoto)",
+    "releaseYear": 1999,
+    "description": "닌자 소년 나루토가 호카게를 꿈꾸는 성장 이야기.",
+    "tags": ["액션", "닌자", "우정", "성장"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx30011-9yUF1dXWgDOx.jpg"
+  }
+}

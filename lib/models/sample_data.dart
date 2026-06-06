@@ -11,7 +11,7 @@ List<AkashaItem> buildSampleData() {
       // ── 서브컬처 (Subculture) ──
 
       ContentItem(
-        workId: 'shigatsu_2011',
+        workId: 'sub_manga_shigatsu-wa-kimi-no-uso_2011',
         title: '4월은 너의 거짓말',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -31,7 +31,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'onepiece_1997',
+        workId: 'sub_manga_one-piece_1997',
         title: '원피스',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -51,7 +51,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'demonslayer_2016',
+        workId: 'sub_manga_kimetsu-no-yaiba_2016',
         title: '귀멸의 칼날',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -70,7 +70,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'shingeki_2009',
+        workId: 'sub_manga_shingeki-no-kyojin_2009',
         title: '진격의 거인',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -89,7 +89,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'eightysix_2017',
+        workId: 'sub_manga_86-eighty-six_2017',
         title: '86 -에이티식스-',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -104,7 +104,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'conan_manga',
+        workId: 'sub_manga_detective-conan_1994',
         title: '명탐정 코난',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -122,7 +122,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       GameItem(
-        workId: 'bluearchive_2021',
+        workId: 'sub_game_blue-archive_2021',
         title: '블루 아카이브',
         domain: AppDomain.subculture,
         creator: 'NEXON Games',
@@ -141,7 +141,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       GameItem(
-        workId: 'nikke_2022',
+        workId: 'sub_game_nikke_2022',
         title: '승리의 여신: 니케',
         domain: AppDomain.subculture,
         creator: 'Shift Up',
@@ -160,7 +160,7 @@ List<AkashaItem> buildSampleData() {
       // ── 일반 문화 (General Culture) ──
 
       ContentItem(
-        workId: 'math_thief',
+        workId: 'gen_manga_math-thief_2006',
         title: '수학도둑',
         category: MediaCategory.manga,
         domain: AppDomain.generalCulture,
@@ -178,7 +178,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       GameItem(
-        workId: 'minecraft_2011',
+        workId: 'gen_game_minecraft_2011',
         title: '마인크래프트',
         domain: AppDomain.generalCulture,
         creator: 'Mojang Studios',
@@ -193,7 +193,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       GameItem(
-        workId: 'lol_2009',
+        workId: 'gen_game_league-of-legends_2009',
         title: '리그 오브 레전드',
         domain: AppDomain.generalCulture,
         creator: 'Riot Games',
@@ -207,7 +207,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       GameItem(
-        workId: 'eldenring_2022',
+        workId: 'gen_game_appid1245620_2022',
         title: '엘든 링',
         domain: AppDomain.generalCulture,
         creator: 'FromSoftware',
@@ -225,7 +225,7 @@ List<AkashaItem> buildSampleData() {
       ),
 
       ContentItem(
-        workId: 'laplace_novel',
+        workId: 'gen_book_laplace-novel_2015',
         title: '라플라스의 마녀',
         category: MediaCategory.book,
         domain: AppDomain.generalCulture,

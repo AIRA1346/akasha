@@ -1,0 +1,13 @@
+{
+  "gen_game_stardew-valley_2016": {
+    "workId": "gen_game_stardew-valley_2016",
+    "title": "스타듀 밸리",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "ConcernedApe",
+    "releaseYear": 2016,
+    "description": "할아버지의 농장을 물려받아 꾸려가는 힐링 농경 RPG.",
+    "tags": ["농사", "힐링", "인디", "샌드박스"],
+    "posterPath": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "gen_game_league-of-legends_2009": {
+    "workId": "gen_game_league-of-legends_2009",
+    "title": "리그 오브 레전드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Riot Games",
+    "releaseYear": 2009,
+    "description": "5v5 팀 기반 전략 대전 게임.",
+    "tags": ["MOBA", "PvP", "e스포츠", "팀전"],
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg"
+  }
+}

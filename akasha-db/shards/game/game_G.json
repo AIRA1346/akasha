@@ -1,0 +1,13 @@
+{
+  "sub_game_genshin-impact_2020": {
+    "workId": "sub_game_genshin-impact_2020",
+    "title": "원신",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2020,
+    "description": "티바트 대륙을 탐험하는 오픈월드 어드벤처 RPG.",
+    "tags": ["오픈월드", "수집형RPG", "판타지", "서브컬처"],
+    "posterPath": null
+  }
+}

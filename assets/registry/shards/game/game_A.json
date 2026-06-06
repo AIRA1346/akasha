@@ -1,0 +1,24 @@
+{
+  "gen_game_axiom_2024": {
+    "workId": "gen_game_axiom_2024",
+    "title": "엑시옴",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "인디 제작사",
+    "releaseYear": 2024,
+    "description": "공상과학 우주 테마 인디 메트로배니아 기대작.",
+    "tags": ["인디", "얼리액세스", "SF"],
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg"
+  },
+  "sub_game_blue-archive_2021": {
+    "workId": "sub_game_blue-archive_2021",
+    "title": "블루 아카이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "releaseYear": 2021,
+    "description": "학원 도시 키보토스의 선생님이 되어 학생들을 이끄는 수집형 RPG.",
+    "tags": ["학원물", "수집형RPG", "청춘", "OST"],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b172598-MynXMFF72Ha3.jpg"
+  }
+}

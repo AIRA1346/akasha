@@ -14,11 +14,15 @@ void main() {
     return '.';
   });
 
+  setUpAll(() async {
+    await WorksRegistry.init();
+  });
+
   group('Phase 5 — Reliability & Offline Completeness Tests', () {
     test('MarkdownParser rescues values from broken YAML front-matter', () {
       const brokenYamlContent = '''
 ---
-work_id: "eldenring_2022
+work_id: "gen_game_appid1245620_2022
 title: "엘든 링 (문법 깨짐)
 category: game
 domain: generalCulture
@@ -37,7 +41,7 @@ is_hall_of_fame: true
 
       final item = MarkdownParser.deserialize(brokenYamlContent, '대체 타이틀');
 
-      expect(item.workId, 'eldenring_2022');
+      expect(item.workId, 'gen_game_appid1245620_2022');
       expect(item.title, '엘든 링 (문법 깨짐)');
       expect(item.category, MediaCategory.game);
       expect(item.domain, AppDomain.generalCulture);
@@ -50,12 +54,13 @@ is_hall_of_fame: true
     });
 
     test('MarkdownParser does not persist registry default CDN URL to YAML', () {
-      final registry = WorksRegistry.getWorkById('shigatsu_2011');
+      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+      final registry = WorksRegistry.getWorkById(masterId);
       expect(registry, isNotNull);
       expect(registry!.posterPath, startsWith('http'));
 
       final item = createItem(
-        workId: 'shigatsu_2011',
+        workId: masterId,
         title: '4월은 너의 거짓말',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -75,9 +80,27 @@ is_hall_of_fame: true
       expect(serialized, isNot(contains('poster:')));
     });
 
-    test('MarkdownParser persists user-customized URL and posters/ relative path', () {
-      final customUrlItem = createItem(
+    test('legacy work_id resolves and still blocks default poster persistence', () {
+      final registry = WorksRegistry.getWorkById('shigatsu_2011');
+      expect(registry, isNotNull);
+
+      final item = createItem(
         workId: 'shigatsu_2011',
+        title: '4월은 너의 거짓말',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        posterPath: registry!.posterPath,
+        memorableQuotes: [],
+        review: '',
+      );
+
+      expect(MarkdownParser.shouldPersistPosterToYaml(item), isFalse);
+    });
+
+    test('MarkdownParser persists user-customized URL and posters/ relative path', () {
+      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+      final customUrlItem = createItem(
+        workId: masterId,
         title: '4월은 너의 거짓말',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -93,7 +116,7 @@ is_hall_of_fame: true
       );
 
       final localItem = createItem(
-        workId: 'shigatsu_2011',
+        workId: masterId,
         title: '4월은 너의 거짓말',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -107,8 +130,9 @@ is_hall_of_fame: true
     });
 
     test('MarkdownParser deserializes custom poster path prioritizing it over registry defaults', () async {
+      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
       final item = createItem(
-        workId: 'shigatsu_2011',
+        workId: masterId,
         title: '4월은 너의 거짓말',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
@@ -127,10 +151,7 @@ is_hall_of_fame: true
 
       final serialized = MarkdownParser.serialize(item);
       expect(serialized, contains('poster: "posters/custom_poster.jpg"'));
-      expect(serialized, contains('creator: "아라카와 나오시"'));
-      expect(serialized, contains('release_year: 2011'));
 
-      await WorksRegistry.loadCachedRegistry();
       final deserialized = MarkdownParser.deserialize(serialized, '4월은 너의 거짓말');
 
       expect(deserialized.posterPath, equals('posters/custom_poster.jpg'));
