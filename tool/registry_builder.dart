@@ -31,6 +31,20 @@ const _validCategories = {
 
 const _validDomains = {'subculture', 'generalCulture'};
 
+/// 오프라인 bootstrap용 eager 샤드 (나머지는 lazy — 검색 시 온디맨드)
+const _eagerBootstrapShardIds = {
+  'manga_C',
+  'manga_K',
+  'manga_N',
+  'manga_O',
+  'manga_S',
+  'game_A',
+  'game_E',
+  'game_L',
+  'game_M',
+  'book_L',
+};
+
 void main(List<String> args) {
   final syncAssets = args.contains('--sync-assets');
   final projectRoot = _findProjectRoot();
@@ -85,7 +99,7 @@ void main(List<String> args) {
         'id': shardId,
         'category': categoryName,
         'path': relativePath,
-        'eager': true,
+        'eager': _eagerBootstrapShardIds.contains(shardId),
         'entryCount': entryCount,
       });
     }
@@ -116,6 +130,8 @@ void main(List<String> args) {
       'shardId': workShardIds[workId] ?? 'unknown',
       'category': work['category'],
       'domain': work['domain'],
+      'creator': work['creator'] ?? '',
+      'tags': work['tags'] ?? [],
     };
   }).toList()
     ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));

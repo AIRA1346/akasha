@@ -72,6 +72,8 @@ class RegistrySearchIndexEntry {
   final String shardId;
   final MediaCategory category;
   final AppDomain domain;
+  final String creator;
+  final List<String> tags;
 
   const RegistrySearchIndexEntry({
     required this.workId,
@@ -79,6 +81,8 @@ class RegistrySearchIndexEntry {
     required this.shardId,
     required this.category,
     required this.domain,
+    this.creator = '',
+    this.tags = const [],
   });
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
@@ -96,6 +100,9 @@ class RegistrySearchIndexEntry {
         (e) => e.name == domainStr,
         orElse: () => AppDomain.subculture,
       ),
+      creator: json['creator']?.toString() ?? '',
+      tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
+          const [],
     );
   }
 }

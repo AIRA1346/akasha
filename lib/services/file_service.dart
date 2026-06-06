@@ -210,9 +210,42 @@ class AkashaFileService {
   }
 
   /// AkashaItem을 볼트에서 제거(마크다운 파일 삭제)합니다.
+  Future<bool> deleteAkashaItem(AkashaItem item) async {
+    var removed = false;
+    _inMemoryCache.removeWhere((key, cached) {
+      final match = item.workId.isNotEmpty && cached.workId == item.workId ||
+          cached.title == item.title && cached.category == item.category;
+      if (match) removed = true;
+      return match;
+    });
+
+    if (_vaultPath == null) return removed;
+
+    File? targetFile;
+    if (item.filePath != null && item.filePath!.isNotEmpty) {
+      targetFile = File(item.filePath!);
+    } else {
+      final safeTitle = _makeSafeFilename(item.title);
+      targetFile = File(
+        p.join(_vaultPath!, item.category.name, '$safeTitle.md'),
+      );
+    }
+
+    if (!await targetFile.exists()) return false;
+
+    _stopWatching();
+    try {
+      await targetFile.delete();
+      return true;
+    } finally {
+      _startWatching();
+    }
+  }
+
+  /// 제목·카테고리 기반 삭제 (파일명 변경 시 saveItem 내부용)
   Future<void> deleteItem(String title, MediaCategory category) async {
-    _inMemoryCache.removeWhere((key, item) => 
-      item.title == title && item.category == category
+    _inMemoryCache.removeWhere(
+      (key, item) => item.title == title && item.category == category,
     );
 
     if (_vaultPath == null) return;

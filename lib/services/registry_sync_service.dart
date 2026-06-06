@@ -130,19 +130,17 @@ class RegistrySyncService {
     return success;
   }
 
-  /// 검색어에 필요한 샤드만 온디맨드 다운로드
+  /// 검색어에 필요한 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
   Future<bool> syncShardsForQuery(String query) async {
     if (query.trim().isEmpty) return false;
     final loader = WorksRegistry.loader;
-    final q = query.toLowerCase().replaceAll(' ', '');
-    final targets = loader.searchIndex.where((entry) {
-      final title = entry.title.toLowerCase().replaceAll(' ', '');
-      return title.contains(q);
-    });
+    final shardIds = loader.resolveShardIdsForQuery(query);
+    if (shardIds.isEmpty) return false;
 
     var success = false;
-    for (final entry in targets) {
-      final meta = loader.manifest?.shardById(entry.shardId);
+    for (final shardId in shardIds) {
+      if (loader.isShardLoaded(shardId)) continue;
+      final meta = loader.manifest?.shardById(shardId);
       if (meta == null) continue;
       final content = await _fetchText('${baseUrl}${meta.path}');
       if (content != null) {

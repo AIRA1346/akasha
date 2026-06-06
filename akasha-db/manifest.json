@@ -1,33 +1,33 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-06T08:00:34.279205Z",
+  "generatedAt": "2026-06-06T09:21:05.395371Z",
   "shards": [
     {
       "id": "animation_F",
       "category": "animation",
       "path": "shards/animation/animation_F.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "animation_M",
       "category": "animation",
       "path": "shards/animation/animation_M.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "animation_Y",
       "category": "animation",
       "path": "shards/animation/animation_Y.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "book_H",
       "category": "book",
       "path": "shards/book/book_H.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -41,14 +41,14 @@
       "id": "book_S",
       "category": "book",
       "path": "shards/book/book_S.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "drama_S",
       "category": "drama",
       "path": "shards/drama/drama_S.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 2
     },
     {
@@ -69,7 +69,7 @@
       "id": "game_G",
       "category": "game",
       "path": "shards/game/game_G.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -90,21 +90,21 @@
       "id": "game_N",
       "category": "game",
       "path": "shards/game/game_N.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "game_S",
       "category": "game",
       "path": "shards/game/game_S.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "game_Z",
       "category": "game",
       "path": "shards/game/game_Z.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -118,14 +118,14 @@
       "id": "manga_G",
       "category": "manga",
       "path": "shards/manga/manga_G.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "manga_J",
       "category": "manga",
       "path": "shards/manga/manga_J.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -139,7 +139,7 @@
       "id": "manga_M",
       "category": "manga",
       "path": "shards/manga/manga_M.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -167,21 +167,21 @@
       "id": "manga_numeric",
       "category": "manga",
       "path": "shards/manga/manga_numeric.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "movie_I",
       "category": "movie",
       "path": "shards/movie/movie_I.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "movie_T",
       "category": "movie",
       "path": "shards/movie/movie_T.json",
-      "eager": true,
+      "eager": false,
       "entryCount": 1
     }
   ]

@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
+import '../utils/registry_search_utils.dart';
 import 'works_registry.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -24,6 +25,11 @@ class RegistryShardLoader {
   RegistryManifest? get manifest => _manifest;
   List<RegistrySearchIndexEntry> get searchIndex => _searchIndex;
   Map<String, String> get legacyAliases => Map.unmodifiable(_legacyAliases);
+
+  bool isShardLoaded(String shardId) => _loadedShardIds.contains(shardId);
+
+  Set<String> resolveShardIdsForQuery(String query) =>
+      shardIdsForQuery(_searchIndex, query);
 
   Future<void> loadBundledBootstrap() async {
     await _loadBundledManifest();
@@ -107,19 +113,8 @@ class RegistryShardLoader {
   }
 
   Future<void> ensureShardsForQuery(String query) async {
-    if (query.trim().isEmpty) {
-      await loadEagerShards();
-      return;
-    }
-    final q = query.toLowerCase().replaceAll(' ', '');
-    final shardIds = <String>{};
-    for (final entry in _searchIndex) {
-      final title = entry.title.toLowerCase().replaceAll(' ', '');
-      if (title.contains(q)) {
-        shardIds.add(entry.shardId);
-      }
-    }
-    for (final id in shardIds) {
+    if (query.trim().isEmpty) return;
+    for (final id in resolveShardIdsForQuery(query)) {
       await ensureShardLoaded(id);
     }
   }

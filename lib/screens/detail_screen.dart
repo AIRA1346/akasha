@@ -45,6 +45,11 @@ class _DetailScreenState extends State<DetailScreen> {
             tooltip: '편집',
             onPressed: () => _showEditDialog(context),
           ),
+          IconButton(
+            icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
+            tooltip: '작품 삭제',
+            onPressed: () => _confirmDelete(context),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -628,6 +633,59 @@ class _DetailScreenState extends State<DetailScreen> {
     if (result != null) {
       setState(() => item.memorableQuotes.add(result));
       AkashaFileService().saveItem(item);
+    }
+  }
+
+  // ── 작품 삭제 ──
+
+  Future<void> _confirmDelete(BuildContext context) async {
+    final service = AkashaFileService();
+    final hasVault = service.vaultPath != null;
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('🗑️ 작품 삭제'),
+        content: Text(
+          hasVault
+              ? '"${item.title}" 작품을 아카이브에서 삭제할까요?\n로컬 볼트의 .md 파일이 영구 삭제됩니다.'
+              : '"${item.title}" 작품을 목록에서 제거할까요?\n(데모 모드 — 볼트 연동 시 .md 파일이 삭제됩니다)',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: FilledButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('삭제'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true || !context.mounted) return;
+
+    final deleted = await service.deleteAkashaItem(item);
+    if (!context.mounted) return;
+
+    if (hasVault) {
+      if (deleted) {
+        Navigator.pop(context, true);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('"${item.title}" 작품이 삭제되었습니다.')),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('삭제할 파일을 찾지 못했습니다.')),
+        );
+      }
+    } else {
+      Navigator.pop(context, true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('"${item.title}" 이(가) 목록에서 제거되었습니다.')),
+      );
     }
   }
 

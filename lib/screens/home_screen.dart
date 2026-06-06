@@ -18,6 +18,8 @@ import '../widgets/filter_section.dart';
 import '../widgets/poster_card.dart';
 import '../widgets/section_header.dart';
 import '../widgets/star_rating.dart';
+import '../widgets/fusion_search_dialog.dart';
+import '../services/user_preferences.dart';
 import 'detail_screen.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -59,6 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _yearlyExpanded = true;
   bool _watchlistExpanded = true;
 
+  String _displayName = UserPreferences.defaultDisplayName;
+
   DashboardConfig? get _activeDashboard {
     if (_activeDashboardId == null || _dashboards.isEmpty) return null;
     return _dashboards.firstWhere(
@@ -80,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await _loadDashboards();   // 대시보드 리스트 로드
     await _loadSortSettings(); // 정렬 설정 불러오기
     await _loadSectionExpandedStates(); // 접이식 섹션 상태 불러오기
+    _displayName = await UserPreferences.getDisplayName();
     await _loadItems();
     
     // 첫 실행 시 사전 작품 로컬 자동 아카이빙 실행
@@ -790,8 +795,15 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
-    ).then((_) async {
-      await _loadItems(); // 상세화면에서 변경된 내용(디렉토리 감시자가 건너뛴 쓰기 작업)을 안전하게 디스크에서 재로드
+    ).then((result) async {
+      if (result == true && mounted) {
+        setState(() {
+          _items.removeWhere((e) =>
+              (item.workId.isNotEmpty && e.workId == item.workId) ||
+              (e.title == item.title && e.category == item.category));
+        });
+      }
+      await _loadItems();
     });
   }
 
@@ -1242,7 +1254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: '감상 예정 보관함 (Watchlist)',
                           titleColor: const Color(0xFFF09819),
                           subtitle:
-                              '지석 님이 감상하기 위해 아껴두었거나, 나중에 꼭 감상하여 아카이빙할 예정인 작품 리스트입니다. 작품 문서 내에 status: "볼 예정"으로 설정하시면 자동으로 이 리스트에 꽂히게 됩니다.',
+                              '$_displayName 님이 감상하기 위해 아껴두었거나, 나중에 꼭 감상하여 아카이빙할 예정인 작품 리스트입니다. 작품 문서 내에 status: "볼 예정"으로 설정하시면 자동으로 이 리스트에 꽂히게 됩니다.',
                           isExpanded: _watchlistExpanded,
                           trailing: _buildSectionSortDropdown(
                             currentCriteria: _watchlistSortCriteria,
@@ -1384,80 +1396,63 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // ── 검색 다이얼로그 ──
+  // ── 3중 퓨전 검색 다이얼로그 ──
 
   Future<void> _showSearchDialog(BuildContext context) async {
-    final ctrl = TextEditingController();
-    List<AkashaItem> results = [];
-
     await showDialog(
       context: context,
-      builder: (ctx) => StatefulBuilder(
-        builder: (ctx, setD) => AlertDialog(
-          title: const Text('🔍 작품 검색'),
-          content: SizedBox(
-            width: 400,
-            height: 400,
-            child: Column(
-              children: [
-                TextField(
-                  controller: ctrl,
-                  autofocus: true,
-                  decoration: const InputDecoration(
-                    hintText: '제목, 작가, 태그로 검색...',
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.search),
-                  ),
-                  onChanged: (query) {
-                    final q = query.toLowerCase();
-                    setD(() {
-                      results = _items.where((item) {
-                        return item.title.toLowerCase().contains(q) ||
-                            item.creator.toLowerCase().contains(q) ||
-                            item.tags.any((t) => t.toLowerCase().contains(q));
-                      }).toList();
-                    });
-                  },
-                ),
-                const SizedBox(height: 12),
-                Expanded(
-                  child: results.isEmpty && ctrl.text.isNotEmpty
-                      ? const Center(child: Text('결과 없음'))
-                      : ListView.builder(
-                          itemCount: results.length,
-                          itemBuilder: (_, i) {
-                            final item = results[i];
-                            return ListTile(
-                              leading: Icon(item.category.icon),
-                              title: Text(item.title),
-                              subtitle: Text(item.creator),
-                              trailing: StarRating(
-                                  rating: item.rating, size: 12),
-                              onTap: () {
-                                Navigator.pop(ctx);
-                                _navigateToDetail(item);
-                              },
-                            );
-                          },
-                        ),
-                ),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('닫기'),
-            ),
-          ],
-        ),
+      builder: (ctx) => FusionSearchDialog(
+        localItems: _items,
+        onSelectLocal: _navigateToDetail,
+        onSelectRemote: _archiveAndOpenRegistryWork,
+        onCustomAdd: (query) => _showAddDialog(context, initialTitle: query),
       ),
     );
   }
 
+  /// 원격 사전 작품 탭 → 로컬 .md 자동 아카이빙 후 상세 화면 이동
+  Future<void> _archiveAndOpenRegistryWork(RegistryWork work) async {
+    final service = AkashaFileService();
+    final defaultMyStatus = work.category.isContentType
+        ? ContentMyStatus.notStarted.label
+        : GameMyStatus.backlog.label;
+    final defaultWorkStatus = work.category.isContentType
+        ? ContentWorkStatus.completed.label
+        : GameWorkStatus.released.label;
+
+    final newItem = createItem(
+      workId: work.workId,
+      title: work.title,
+      category: work.category,
+      domain: work.domain,
+      myStatus: defaultMyStatus,
+      workStatus: defaultWorkStatus,
+      creator: work.creator,
+      releaseYear: work.releaseYear,
+      rating: 0.0,
+      posterPath: work.posterPath,
+      description: work.description,
+      tags: work.tags,
+    );
+
+    if (service.vaultPath != null) {
+      await service.saveItem(newItem);
+      await _loadItems();
+    } else {
+      setState(() => _items.add(newItem));
+    }
+
+    if (mounted) {
+      _navigateToDetail(newItem);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('"${work.title}" 사전에서 아카이브에 추가되었습니다.')),
+      );
+    }
+  }
+
   // ── 신규 등록 다이얼로그 ──
-  Future<void> _showAddDialog(BuildContext context) async {
-    final titleCtrl = TextEditingController();
+  Future<void> _showAddDialog(BuildContext context, {String? initialTitle}) async {
+    final titleCtrl = TextEditingController(text: initialTitle ?? '');
     final creatorCtrl = TextEditingController();
     final yearCtrl = TextEditingController();
     final posterUrlCtrl = TextEditingController();
@@ -1879,6 +1874,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showVaultInfoDialog() async {
     final service = AkashaFileService();
     final path = service.vaultPath;
+    final nameCtrl = TextEditingController(text: _displayName);
+
     await showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -1900,6 +1897,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 11, color: Colors.grey),
               ),
             ],
+            const SizedBox(height: 16),
+            const Text(
+              '표시 이름 (워치리스트 등)',
+              style: TextStyle(fontSize: 11, color: Colors.grey, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 6),
+            TextField(
+              controller: nameCtrl,
+              decoration: const InputDecoration(
+                hintText: '사용자',
+                border: OutlineInputBorder(),
+                isDense: true,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -1915,6 +1926,20 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
               child: const Text('연동 해제'),
             ),
+          TextButton(
+            onPressed: () async {
+              await UserPreferences.setDisplayName(nameCtrl.text);
+              if (mounted) {
+                setState(() {
+                  _displayName = nameCtrl.text.trim().isEmpty
+                      ? UserPreferences.defaultDisplayName
+                      : nameCtrl.text.trim();
+                });
+                Navigator.pop(ctx);
+              }
+            },
+            child: const Text('이름 저장'),
+          ),
           TextButton(
             onPressed: () {
               Navigator.pop(ctx);

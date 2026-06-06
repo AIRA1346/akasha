@@ -126,9 +126,15 @@ class WorksRegistry {
     return results.values.toList();
   }
 
+  /// 온디맨드 검색: 원격 shard fetch → 캐시/번들 로드 → 메모리 검색
+  /// [금지] sync(), loadEagerShards(), ensureShardsForFilters() 호출 없음
   static Future<List<RegistryWork>> searchAsync(String query) async {
-    await _loader.ensureShardsForQuery(query);
-    return search(query);
+    final trimmed = query.trim();
+    if (trimmed.isEmpty) return [];
+
+    await RegistrySyncService().syncShardsForQuery(trimmed);
+    await _loader.ensureShardsForQuery(trimmed);
+    return search(trimmed);
   }
 
   static List<RegistryWork> get allWorks => _uniqueWorks();

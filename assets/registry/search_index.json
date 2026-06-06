@@ -4,223 +4,446 @@
     "title": "4월은 너의 거짓말",
     "shardId": "manga_S",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "아라카와 나오시 (Naoshi Arakawa)",
+    "tags": [
+      "감동",
+      "음악",
+      "청춘",
+      "피아노"
+    ]
   },
   {
     "workId": "sub_manga_86-eighty-six_2017",
     "title": "86 -에이티식스-",
     "shardId": "manga_numeric",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "아사토 아사토 (Asato Asato)",
+    "tags": [
+      "SF",
+      "전쟁",
+      "차별",
+      "밀리터리"
+    ]
   },
   {
     "workId": "sub_manga_gabriel-dropout_2013",
     "title": "가브릴 드롭아웃",
     "shardId": "manga_G",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "우카미 (Ukami)",
+    "tags": [
+      "코미디",
+      "일상",
+      "천사",
+      "악마"
+    ]
   },
   {
     "workId": "sub_manga_kimetsu-no-yaiba_2016",
     "title": "귀멸의 칼날",
     "shardId": "manga_K",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "고토게 코요하루 (Koyoharu Gotouge)",
+    "tags": [
+      "액션",
+      "가족애",
+      "귀신",
+      "다이쇼"
+    ]
   },
   {
     "workId": "gen_drama_stranger-things_2016",
     "title": "기묘한 이야기",
     "shardId": "drama_S",
     "category": "drama",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "더퍼 형제 (The Duffer Brothers)",
+    "tags": [
+      "SF",
+      "판타지",
+      "스릴러",
+      "레트로"
+    ]
   },
   {
     "workId": "sub_manga_naruto_1999",
     "title": "나루토",
     "shardId": "manga_N",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "키시모토 마사시 (Masashi Kishimoto)",
+    "tags": [
+      "액션",
+      "닌자",
+      "우정",
+      "성장"
+    ]
   },
   {
     "workId": "sub_animation_your-name_2016",
     "title": "너의 이름은.",
     "shardId": "animation_Y",
     "category": "animation",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "신카이 마코토 (Makoto Shinkai)",
+    "tags": [
+      "로맨스",
+      "시공간",
+      "판타지",
+      "감동"
+    ]
   },
   {
     "workId": "gen_book_laplace-novel_2015",
     "title": "라플라스의 마녀",
     "shardId": "book_L",
     "category": "book",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "히가시노 게이고 (Keigo Higashino)",
+    "tags": [
+      "소설",
+      "미스터리",
+      "SF",
+      "히가시노게이고"
+    ]
   },
   {
     "workId": "gen_game_league-of-legends_2009",
     "title": "리그 오브 레전드",
     "shardId": "game_L",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "Riot Games",
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "팀전"
+    ]
   },
   {
     "workId": "gen_game_minecraft_2011",
     "title": "마인크래프트",
     "shardId": "game_M",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "Mojang Studios",
+    "tags": [
+      "샌드박스",
+      "서바이벌",
+      "크래프팅",
+      "멀티플레이"
+    ]
   },
   {
     "workId": "gen_movie_the-matrix_1999",
     "title": "매트릭스",
     "shardId": "movie_T",
     "category": "movie",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "워쇼스키 자매 (The Wachowskis)",
+    "tags": [
+      "사이버펑크",
+      "SF",
+      "액션",
+      "철학"
+    ]
   },
   {
     "workId": "sub_manga_detective-conan_1994",
     "title": "명탐정 코난",
     "shardId": "manga_C",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "아오야마 고쇼 (Gosho Aoyama)",
+    "tags": [
+      "추리",
+      "소년만화",
+      "럽코",
+      "장수작"
+    ]
   },
   {
     "workId": "sub_game_blue-archive_2021",
     "title": "블루 아카이브",
     "shardId": "game_A",
     "category": "game",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "tags": [
+      "학원물",
+      "수집형RPG",
+      "청춘",
+      "OST"
+    ]
   },
   {
     "workId": "sub_book_sword-art-online_2009",
     "title": "소드 아트 온라인",
     "shardId": "book_S",
     "category": "book",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "카와하라 레키 (Reki Kawahara)",
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ]
   },
   {
     "workId": "gen_manga_math-thief_2006",
     "title": "수학도둑",
     "shardId": "manga_M",
     "category": "manga",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "송도수 / 서정은",
+    "tags": [
+      "학습만화",
+      "모험",
+      "수학",
+      "메이플"
+    ]
   },
   {
     "workId": "gen_game_stardew-valley_2016",
     "title": "스타듀 밸리",
     "shardId": "game_S",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "ConcernedApe",
+    "tags": [
+      "농사",
+      "힐링",
+      "인디",
+      "샌드박스"
+    ]
   },
   {
     "workId": "sub_manga_slam-dunk_1990",
     "title": "슬램덩크",
     "shardId": "manga_S",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "이노우에 다케히코 (Takehiko Inoue)",
+    "tags": [
+      "스포츠",
+      "농구",
+      "열혈",
+      "청춘"
+    ]
   },
   {
     "workId": "sub_game_nikke_2022",
     "title": "승리의 여신: 니케",
     "shardId": "game_N",
     "category": "game",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "Shift Up",
+    "tags": [
+      "포스트아포칼립스",
+      "건슈팅",
+      "수집형RPG",
+      "SF"
+    ]
   },
   {
     "workId": "gen_game_axiom_2024",
     "title": "엑시옴",
     "shardId": "game_A",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "인디 제작사",
+    "tags": [
+      "인디",
+      "얼리액세스",
+      "SF"
+    ]
   },
   {
     "workId": "gen_game_appid1245620_2022",
     "title": "엘든 링",
     "shardId": "game_E",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "소울라이크",
+      "오픈월드",
+      "RPG",
+      "다크판타지"
+    ]
   },
   {
     "workId": "gen_drama_squid-game_2021",
     "title": "오징어 게임",
     "shardId": "drama_S",
     "category": "drama",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "황동혁 (Hwang Dong-hyuk)",
+    "tags": [
+      "서바이벌",
+      "데스게임",
+      "스릴러",
+      "넷플릭스"
+    ]
   },
   {
     "workId": "sub_game_genshin-impact_2020",
     "title": "원신",
     "shardId": "game_G",
     "category": "game",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "tags": [
+      "오픈월드",
+      "수집형RPG",
+      "판타지",
+      "서브컬처"
+    ]
   },
   {
     "workId": "sub_manga_one-piece_1997",
     "title": "원피스",
     "shardId": "manga_O",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "오다 에이이치로 (Eiichiro Oda)",
+    "tags": [
+      "모험",
+      "우정",
+      "해적",
+      "대하"
+    ]
   },
   {
     "workId": "gen_animation_my-neighbor-totoro_1988",
     "title": "이웃집 토토로",
     "shardId": "animation_M",
     "category": "animation",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "미야자키 하야오 (Hayao Miyazaki)",
+    "tags": [
+      "지브리",
+      "판타지",
+      "가족",
+      "힐링"
+    ]
   },
   {
     "workId": "gen_movie_interstellar_2014",
     "title": "인터스텔라",
     "shardId": "movie_I",
     "category": "movie",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "크리스토퍼 놀란 (Christopher Nolan)",
+    "tags": [
+      "SF",
+      "우주",
+      "가족",
+      "블랙홀"
+    ]
   },
   {
     "workId": "sub_animation_frieren_2023",
     "title": "장송의 프리렌",
     "shardId": "animation_F",
     "category": "animation",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "야마다 카네히토 / 아베 츠카사",
+    "tags": [
+      "판타지",
+      "모험",
+      "감동",
+      "성장"
+    ]
   },
   {
     "workId": "gen_game_zelda-breath-of-the-wild_2017",
     "title": "젤다의 전설 브레스 오브 더 와일드",
     "shardId": "game_Z",
     "category": "game",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "Nintendo",
+    "tags": [
+      "오픈월드",
+      "어드벤처",
+      "닌텐도",
+      "명작"
+    ]
   },
   {
     "workId": "sub_manga_jujutsu-kaisen_2018",
     "title": "주술회전",
     "shardId": "manga_J",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "아쿠타미 게게 (Gege Akutami)",
+    "tags": [
+      "액션",
+      "다크판타지",
+      "주술",
+      "배틀"
+    ]
   },
   {
     "workId": "sub_manga_shingeki-no-kyojin_2009",
     "title": "진격의 거인",
     "shardId": "manga_S",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "이사야마 하지메 (Hajime Isayama)",
+    "tags": [
+      "SF",
+      "전쟁",
+      "자유",
+      "반전"
+    ]
   },
   {
     "workId": "gen_manga_crayon-shin-chan_1990",
     "title": "짱구는 못말려",
     "shardId": "manga_C",
     "category": "manga",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "우스이 요시토 (Yoshito Usui)",
+    "tags": [
+      "코미디",
+      "일상",
+      "가족",
+      "장수작"
+    ]
   },
   {
     "workId": "sub_manga_chainsaw-man_2018",
     "title": "체인소 맨",
     "shardId": "manga_C",
     "category": "manga",
-    "domain": "subculture"
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ]
   },
   {
     "workId": "gen_book_harry-potter-philosophers-stone_1997",
     "title": "해리 포터와 마법사의 돌",
     "shardId": "book_H",
     "category": "book",
-    "domain": "generalCulture"
+    "domain": "generalCulture",
+    "creator": "J.K. 롤링 (J.K. Rowling)",
+    "tags": [
+      "소설",
+      "판타지",
+      "마법",
+      "호그와트"
+    ]
   }
 ]
