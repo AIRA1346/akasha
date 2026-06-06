@@ -440,6 +440,8 @@ class _DetailScreenState extends State<DetailScreen> {
   // ── 편집 다이얼로그 ───────────────────────
 
   Future<void> _showEditDialog(BuildContext context) async {
+    final oldTitle = item.title;
+    final titleCtrl = TextEditingController(text: item.title);
     String currentWork = item.workStatusLabel;
     String currentMy = item.myStatusLabel;
     double currentRating = item.rating;
@@ -456,6 +458,18 @@ class _DetailScreenState extends State<DetailScreen> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Text('제목',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                const SizedBox(height: 6),
+                TextField(
+                  controller: titleCtrl,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    isDense: true,
+                  ),
+                ),
+                const SizedBox(height: 16),
                 // 포스터 이미지
                 const Text('포스터 이미지 (웹 URL 또는 로컬 파일)',
                     style:
@@ -592,13 +606,20 @@ class _DetailScreenState extends State<DetailScreen> {
               child: const Text('취소'),
             ),
             FilledButton(
-              onPressed: () => Navigator.pop(ctx, {
-                'work': currentWork,
-                'my': currentMy,
-                'rating': currentRating,
-                'hof': currentHoF,
-                'poster': posterUrlCtrl.text.trim().isNotEmpty ? posterUrlCtrl.text.trim() : null,
-              }),
+              onPressed: () {
+                final title = titleCtrl.text.trim();
+                if (title.isEmpty) return;
+                Navigator.pop(ctx, {
+                  'title': title,
+                  'work': currentWork,
+                  'my': currentMy,
+                  'rating': currentRating,
+                  'hof': currentHoF,
+                  'poster': posterUrlCtrl.text.trim().isNotEmpty
+                      ? posterUrlCtrl.text.trim()
+                      : null,
+                });
+              },
               child: const Text('저장'),
             ),
           ],
@@ -607,14 +628,37 @@ class _DetailScreenState extends State<DetailScreen> {
     );
 
     if (result != null) {
+      final newTitle = result['title'] as String;
       setState(() {
+        item.title = newTitle;
         item.setWorkStatus(result['work'] as String);
         item.setMyStatus(result['my'] as String);
         item.rating = result['rating'] as double;
         item.isHallOfFame = result['hof'] as bool;
         item.posterPath = result['poster'] as String?;
       });
-      await _persistItem(context);
+      try {
+        await AkashaFileService().saveItem(
+          item,
+          oldTitle: newTitle != oldTitle ? oldTitle : null,
+        );
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AkashaFileService().vaultPath != null
+                  ? '마크다운 아카이브에 저장되었습니다.'
+                  : '변경 사항이 저장되었습니다.',
+            ),
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      } catch (e) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('저장 실패: $e')),
+        );
+      }
     }
   }
 

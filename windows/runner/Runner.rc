@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "akasha" "\0"
+            VALUE "CompanyName", "Rune Atelier" "\0"
+            VALUE "FileDescription", "AKASHA - Personal Media Archive" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "akasha" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 Rune Atelier. All rights reserved." "\0"
             VALUE "OriginalFilename", "akasha.exe" "\0"
-            VALUE "ProductName", "akasha" "\0"
+            VALUE "ProductName", "AKASHA" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -191,8 +191,35 @@ class AkashaFileService {
     return items;
   }
 
+  /// 볼트 내 .md 파일 개수 (파싱 없이 스캔)
+  Future<int> countMarkdownFiles() async {
+    if (_vaultPath == null) return 0;
+    var count = 0;
+    try {
+      final dir = Directory(_vaultPath!);
+      if (!await dir.exists()) return 0;
+      await for (final entity in dir.list(recursive: true, followLinks: false)) {
+        if (entity is File &&
+            entity.path.endsWith('.md') &&
+            !_shouldSkipPath(entity.path)) {
+          count++;
+        }
+      }
+    } catch (e) {
+      print('[AkashaFileService] countMarkdownFiles error: $e');
+    }
+    return count;
+  }
+
+  /// 볼트 경로가 유효한지 확인합니다.
+  Future<bool> isVaultPathValid() async {
+    if (_vaultPath == null || _vaultPath!.isEmpty) return false;
+    return Directory(_vaultPath!).exists();
+  }
+
   /// AkashaItem을 마크다운 파일로 저장합니다.
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
+    item.workId = MarkdownParser.ensureWorkId(item);
     _inMemoryCache[cacheKeyFor(item)] = item;
 
     if (_vaultPath == null) return;

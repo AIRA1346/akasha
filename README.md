@@ -28,3 +28,40 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 * **Storage**: Local Markdown Files (.md with YAML Front-matter)
 * **State Management**: Provider / Riverpod (추후 고도화 예정)
 * **Parser Engine**: Custom YAML & Markdown Parser for Obsidian Vault compatibility
+
+---
+
+## 📂 Obsidian Vault 연동 (볼트 구조)
+
+앱에서 **폴더 연동** 시 아래 구조가 자동 생성됩니다.
+
+```
+{Vault}/
+├── posters/          # 사용자 업로드 포스터 (상대경로 posters/...)
+├── manga/
+├── animation/
+├── game/
+├── book/
+├── movie/
+└── drama/
+```
+
+### YAML Front-matter (필수·권장 필드)
+
+| 필드 | 설명 |
+|------|------|
+| `work_id` | 마스터 ID (`sub_manga_..._2011`). 비어 있으면 사전 매칭 후 자동 부여 |
+| `title` | 작품 제목 (Obsidian 파일명과 동기화) |
+| `category` | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
+| `domain` | `subculture` · `generalCulture` |
+| `status` / `my_status` | 나의 상태 (볼 예정, 전부 봄 등) |
+| `work_status` | 작품 상태 (완결, 출시됨 등) |
+| `rating` | 0.0~5.0 |
+| `is_hall_of_fame` | S-Tier 명예의 전당 여부 |
+| `poster` | `posters/` 상대경로 또는 커스텀 URL만 저장 (Registry CDN URL은 생략) |
+
+본문에는 **명대사·감상문**만 기록합니다. 작품 설명·포스터 기본값은 글로벌 사전에서 UI fusion 됩니다.
+
+### 외부 편집
+
+Obsidian에서 `.md`를 수정하면 앱이 **약 0.4초 후** 자동 반영합니다. 앱에서 저장 시 **원자적 쓰기**(임시 파일 → rename)로 파일 손상을 방지합니다.

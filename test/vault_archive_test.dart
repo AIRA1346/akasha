@@ -5,10 +5,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/markdown_parser.dart';
+import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(() async {
+    await WorksRegistry.init();
+  });
 
   setUp(() {
     SharedPreferences.setMockInitialValues({});
@@ -64,6 +69,29 @@ void main() {
       expect(restored.memorableQuotes, contains('"명대사 테스트"'));
       expect(restored.review, '감상문 본문입니다.');
       expect(restored.tags, containsAll(['테스트', '판타지']));
+    });
+
+    test('ensureWorkId assigns master id from registry title match', () {
+      final item = createItem(
+        workId: '',
+        title: '나루토',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+      );
+      final id = MarkdownParser.ensureWorkId(item);
+      expect(id, 'sub_manga_naruto_1999');
+    });
+
+    test('ensureWorkId creates custom id when no registry match', () {
+      final item = createItem(
+        workId: '',
+        title: '존재하지않는작품XYZ',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        releaseYear: 2025,
+      );
+      final id = MarkdownParser.ensureWorkId(item);
+      expect(id, startsWith('sub_manga_custom_'));
     });
 
     test('saveItem writes .md to vault and loadAllItems reads it back', () async {

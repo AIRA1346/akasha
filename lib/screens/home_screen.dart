@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   /// 글로벌 사전에 새로 올라온 작품이나 아카이빙되지 않은 사전을 마크다운 파일로 자동 생성합니다.
-  Future<void> _autoArchiveRegistryWorks() async {
+  Future<void> _autoArchiveRegistryWorks({bool showFeedback = false}) async {
     if (!await UserPreferences.isAutoArchiveRegistryEnabled()) return;
 
     final service = AkashaFileService();
@@ -193,45 +193,71 @@ class _HomeScreenState extends State<HomeScreen> {
 
     await _prefetchRegistryForCurrentFilters();
 
-    // 1. 현재 로컬 파일로 존재하는 모든 작품의 workId 수집
-    final localWorkIds = _items
+    final onDisk = await service.loadAllItems();
+    final localWorkIds = onDisk
         .map((e) => e.workId)
         .where((id) => id.isNotEmpty)
         .toSet();
+    final localKeys = onDisk
+        .map((e) => AkashaFileService.cacheKeyFor(e))
+        .toSet();
 
-    // 2. 전체 레지스트리 작품 목록 가져오기
     final allRegistryWorks = WorksRegistry.getFilteredWorksSync();
+    final pending = allRegistryWorks.where((work) {
+      if (localWorkIds.contains(work.workId)) return false;
+      final key = work.workId.isNotEmpty
+          ? work.workId
+          : '${work.category.name}::${work.title}';
+      return !localKeys.contains(key);
+    }).toList();
 
-    // 3. 존재하지 않는 작품들에 대해 기본 마크다운 생성
-    int createdCount = 0;
-    for (final work in allRegistryWorks) {
-      if (!localWorkIds.contains(work.workId)) {
-        final defaultMyStatus = '볼 예정';
-        final defaultWorkStatus = work.category.isContentType
-            ? ContentWorkStatus.completed.label
-            : GameWorkStatus.released.label;
-
-        final newItem = createItem(
-          workId: work.workId,
-          title: work.title,
-          category: work.category,
-          domain: work.domain,
-          myStatus: defaultMyStatus,
-          workStatus: defaultWorkStatus,
-          creator: work.creator,
-          releaseYear: work.releaseYear,
-          rating: 0.0,
+    if (pending.isEmpty) {
+      if (showFeedback && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('새로 아카이빙할 사전 작품이 없습니다.')),
         );
-
-        await service.saveItem(newItem);
-        createdCount++;
       }
+      return;
+    }
+
+    int createdCount = 0;
+    for (final work in pending) {
+      final defaultMyStatus = work.category.isContentType
+          ? ContentMyStatus.notStarted.label
+          : GameMyStatus.backlog.label;
+      final defaultWorkStatus = work.category.isContentType
+          ? ContentWorkStatus.completed.label
+          : GameWorkStatus.released.label;
+
+      final newItem = createItem(
+        workId: work.workId,
+        title: work.title,
+        category: work.category,
+        domain: work.domain,
+        myStatus: defaultMyStatus,
+        workStatus: defaultWorkStatus,
+        creator: work.creator,
+        releaseYear: work.releaseYear,
+        rating: 0.0,
+        posterPath: WorksRegistry.resolvePosterPath(work.workId),
+        description: work.description,
+        tags: work.tags,
+      );
+
+      await service.saveItem(newItem);
+      createdCount++;
     }
 
     if (createdCount > 0) {
       debugPrint('Auto-archived $createdCount new works from registry.');
-      // 새 파일들이 디스크에 작성되었으므로 다시 한 번 볼트 로드
       await _loadItems();
+      if (showFeedback && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('사전 작품 $createdCount편을 .md로 아카이빙했습니다.'),
+          ),
+        );
+      }
     }
   }
 
@@ -2011,6 +2037,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showVaultInfoDialog() async {
     final service = AkashaFileService();
     final path = service.vaultPath;
+    final vaultValid = await service.isVaultPathValid();
+    final mdCount =
+        vaultValid && path != null ? await service.countMarkdownFiles() : 0;
     final nameCtrl = TextEditingController(text: _displayName);
 
     await showDialog(
@@ -2030,9 +2059,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const TextStyle(fontSize: 13),
                 ),
                 if (path != null) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    vaultValid
+                        ? '상태: 연동됨 · 아카이브 .md $mdCount개'
+                        : '상태: 경로를 찾을 수 없음 (다시 연동해 주세요)',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: vaultValid ? Colors.tealAccent : Colors.redAccent,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                   const SizedBox(height: 12),
                   const Text(
-                    '※ 이 폴더의 하위에 manga, game, book 등 카테고리별 마크다운 파일이 생성 및 수정됩니다.',
+                    '※ manga, game, animation 등 카테고리 폴더에 .md가 생성됩니다. work_id는 YAML에 기록됩니다.',
                     style: TextStyle(fontSize: 11, color: Colors.grey),
                   ),
                   const SizedBox(height: 8),
@@ -2051,8 +2091,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       await UserPreferences.setAutoArchiveRegistryEnabled(value);
                       setD(() => _autoArchiveRegistry = value);
                       if (mounted) setState(() => _autoArchiveRegistry = value);
+                      if (value && service.vaultPath != null) {
+                        Navigator.pop(ctx);
+                        await _autoArchiveRegistryWorks(showFeedback: true);
+                      }
                     },
                   ),
+                  if (_autoArchiveRegistry)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: TextButton.icon(
+                        onPressed: () async {
+                          Navigator.pop(ctx);
+                          await _autoArchiveRegistryWorks(showFeedback: true);
+                        },
+                        icon: const Icon(Icons.archive_outlined, size: 16),
+                        label: const Text('지금 사전 작품 아카이빙 실행'),
+                      ),
+                    ),
                 ],
                 const SizedBox(height: 16),
                 const Text(
@@ -2168,19 +2224,36 @@ class _HomeScreenState extends State<HomeScreen> {
               if (content.isEmpty) return;
               try {
                 final item = MarkdownParser.deserialize(content, '이름 없는 작품');
+                final exists = _items.any(
+                  (e) =>
+                      (item.workId.isNotEmpty && e.workId == item.workId) ||
+                      (e.title == item.title && e.category == item.category),
+                );
+                if (exists) {
+                  ScaffoldMessenger.of(ctx).showSnackBar(
+                    SnackBar(
+                      content: Text('"${item.title}"은(는) 이미 아카이브에 있습니다.'),
+                    ),
+                  );
+                  return;
+                }
+
                 final service = AkashaFileService();
                 if (service.vaultPath != null) {
                   await service.saveItem(item);
                   await _loadItems();
                 } else {
-                  setState(() {
-                    _items.add(item);
-                  });
+                  await service.saveItem(item);
+                  setState(() => _items.add(item));
                 }
                 if (mounted) {
                   Navigator.pop(ctx);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('"${item.title}" 작품이 성공적으로 추가되었습니다.')),
+                    SnackBar(
+                      content: Text(
+                        '"${item.title}" 추가됨 (work_id: ${item.workId})',
+                      ),
+                    ),
                   );
                 }
               } catch (e) {
@@ -2203,8 +2276,9 @@ class _HomeScreenState extends State<HomeScreen> {
 사용자가 요청한 작품의 정보를 아래 YAML Front-Matter 형식을 포함한 마크다운 문서로 작성해 주세요.
 
 ---
+work_id: "" (비워두면 AKASHA가 사전 매칭 또는 custom ID를 부여)
 title: "작품의 정확한 제목"
-category: manga | game | animation | book (카테고리에 맞게 하나만 선택)
+category: manga | game | animation | book | movie | drama (하나만)
 domain: subculture | generalCulture (대분류에 맞게 하나만 선택)
 creator: "원작자 / 제작사 / 감독 등"
 release_year: 출시 또는 연재 시작 연도 (숫자만, 예: 2011)

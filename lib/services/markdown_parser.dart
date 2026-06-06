@@ -1,10 +1,34 @@
 import 'package:yaml/yaml.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
+import '../models/work_id_codec.dart';
 import '../utils/helpers.dart';
 import 'works_registry.dart';
 
 class MarkdownParser {
+  /// work_id가 비어 있거나 레거시일 때 사전 매칭 → 마스터 ID 생성
+  static String ensureWorkId(AkashaItem item) {
+    final resolved = WorksRegistry.resolveWorkId(item.workId);
+    if (resolved.isNotEmpty && WorkIdCodec.isMasterFormat(resolved)) {
+      return resolved;
+    }
+
+    if (item.title.trim().isNotEmpty) {
+      final q = item.title.trim().toLowerCase().replaceAll(' ', '');
+      final hits = WorksRegistry.search(item.title).where((w) {
+        final t = w.title.toLowerCase().replaceAll(' ', '');
+        return t == q && w.category == item.category;
+      });
+      if (hits.isNotEmpty) return hits.first.workId;
+    }
+
+    return WorkIdCodec.buildCustom(
+      domain: item.domain,
+      category: item.category,
+      releaseYear: item.releaseYear,
+    );
+  }
+
   /// YAML `poster:` 필드에 저장할지 판별합니다.
   ///
   /// - `posters/` 상대 경로 (사용자 업로드): 저장
@@ -279,6 +303,9 @@ class MarkdownParser {
       tags: tags,
     );
     item.addedAt = addedAt;
+    if (workId.isEmpty || !WorkIdCodec.isMasterFormat(workId)) {
+      item.workId = ensureWorkId(item);
+    }
     return item;
   }
 }
