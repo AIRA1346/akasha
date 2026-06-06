@@ -20,6 +20,8 @@ import '../widgets/section_header.dart';
 import '../widgets/star_rating.dart';
 import '../widgets/fusion_search_dialog.dart';
 import '../widgets/registry_work_autocomplete.dart';
+import '../widgets/today_recall_card.dart';
+import '../utils/recall_picker.dart';
 import '../services/user_preferences.dart';
 import 'detail_screen.dart';
 
@@ -38,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<AkashaItem> _items = [];
   bool _isLoading = false;
   bool _isSyncing = false;
+  DateTime? _lastSyncTime;
 
   // ── 필터 상태 ──
   AppDomain? _selectedDomain;
@@ -95,7 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     await _prefetchRegistryForCurrentFilters();
-    
+    await _refreshLastSyncTime();
+
     service.onVaultUpdated.listen((_) {
       if (mounted) {
         _loadItems();
@@ -839,6 +843,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // ── 글로벌 작품 사전 동기화 메소드 ──
 
+  Future<void> _refreshLastSyncTime() async {
+    await RegistrySyncService().init();
+    if (!mounted) return;
+    setState(() => _lastSyncTime = RegistrySyncService().lastSyncTime);
+  }
+
+  String _formatLastSyncTime(DateTime? time) {
+    if (time == null) return '아직 동기화하지 않음';
+    final local = time.toLocal();
+    final y = local.year;
+    final m = local.month.toString().padLeft(2, '0');
+    final d = local.day.toString().padLeft(2, '0');
+    final h = local.hour.toString().padLeft(2, '0');
+    final min = local.minute.toString().padLeft(2, '0');
+    return '$y-$m-$d $h:$min';
+  }
+
   Future<void> _checkAutoSync() async {
     final syncService = RegistrySyncService();
     if (await syncService.shouldAutoSync()) {
@@ -851,6 +872,7 @@ class _HomeScreenState extends State<HomeScreen> {
       }
       if (mounted) {
         setState(() => _isSyncing = false);
+        await _refreshLastSyncTime();
       }
     }
   }
@@ -864,9 +886,14 @@ class _HomeScreenState extends State<HomeScreen> {
       await WorksRegistry.loadCachedRegistry();
       await _loadItems();
       await _autoArchiveRegistryWorks();
+      await _refreshLastSyncTime();
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('작품 사전 동기화 완료!')),
+          SnackBar(
+            content: Text(
+              '작품 사전 동기화 완료! (마지막: ${_formatLastSyncTime(_lastSyncTime)})',
+            ),
+          ),
         );
       }
     } else {
@@ -878,62 +905,112 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     if (mounted) {
       setState(() => _isSyncing = false);
+      await _refreshLastSyncTime();
     }
   }
 
   Future<void> _showCustomUrlDialog() async {
     final syncService = RegistrySyncService();
+    await syncService.init();
     final ctrl = TextEditingController(text: syncService.customDbUrl);
     const defaultBase = RegistrySyncService.defaultDbBaseUrl;
+    var dialogLastSync = syncService.lastSyncTime;
 
     await showDialog(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('🔗 커스텀 사전 DB Base URL 설정'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              '원격 작품 사전의 루트(base) URL을 지정합니다.\n'
-              'manifest.json, search_index.json, shards/ 하위 파일을 이 주소에서 내려받습니다.',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '기본값: $defaultBase',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: ctrl,
-              decoration: const InputDecoration(
-                labelText: 'Registry Base URL (끝에 / 포함)',
-                hintText: 'https://raw.githubusercontent.com/.../main/',
-                border: OutlineInputBorder(),
-                isDense: true,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDialogState) {
+          return AlertDialog(
+            title: const Text('🌐 글로벌 사전 동기화'),
+            content: SizedBox(
+              width: 420,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.history,
+                        size: 16,
+                        color: Colors.grey[500],
+                      ),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text(
+                          '마지막 동기화: ${_formatLastSyncTime(dialogLastSync)}',
+                          style: const TextStyle(fontSize: 13),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  FilledButton.icon(
+                    onPressed: _isSyncing
+                        ? null
+                        : () async {
+                            Navigator.pop(ctx);
+                            await _syncRegistry();
+                          },
+                    icon: const Icon(Icons.sync, size: 18),
+                    label: const Text('지금 동기화'),
+                  ),
+                  const SizedBox(height: 16),
+                  const Divider(),
+                  const SizedBox(height: 8),
+                  const Text(
+                    '커스텀 사전 DB Base URL',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    'manifest.json, search_index.json, shards/ 파일을 이 주소에서 내려받습니다.',
+                    style: TextStyle(fontSize: 11, color: Colors.grey),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '기본값: $defaultBase',
+                    style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                  ),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: ctrl,
+                    decoration: const InputDecoration(
+                      labelText: 'Registry Base URL (끝에 / 포함)',
+                      hintText: 'https://raw.githubusercontent.com/.../main/',
+                      border: OutlineInputBorder(),
+                      isDense: true,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('취소'),
-          ),
-          FilledButton(
-            onPressed: () async {
-              await syncService.setCustomDbUrl(ctrl.text);
-              if (mounted) {
-                Navigator.pop(ctx);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('동기화 주소가 변경되었습니다.')),
-                );
-              }
-            },
-            child: const Text('저장'),
-          ),
-        ],
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: const Text('닫기'),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  await syncService.setCustomDbUrl(ctrl.text);
+                  await syncService.init();
+                  dialogLastSync = syncService.lastSyncTime;
+                  if (mounted) {
+                    await _refreshLastSyncTime();
+                    Navigator.pop(ctx);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('동기화 주소가 변경되었습니다.')),
+                    );
+                  }
+                },
+                child: const Text('URL 저장'),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -943,6 +1020,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final filtered = _filteredItems;
+    final dailyRecall = RecallPicker.pickDailyRecall(_items);
     final hofItems = sortItems(_hallOfFameItems, _hofSortCriteria);
     final watchlistItems = sortItems(
       filtered.where((item) => item.myStatusLabel == '볼 예정').toList(),
@@ -1100,22 +1178,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // ━━━ 스크롤 가능한 메인 콘텐츠 ━━━
           Expanded(
-            child: filtered.isEmpty
-                ? Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.search_off,
-                            size: 48, color: Colors.grey[700]),
-                        const SizedBox(height: 12),
-                        Text('조건에 맞는 작품이 없습니다.',
-                            style: TextStyle(color: Colors.grey[500])),
-                      ],
-                    ),
-                  )
-                : ListView(
-                    padding: const EdgeInsets.only(bottom: 80),
-                    children: [
+            child: Column(
+              children: [
+                if (dailyRecall != null)
+                  TodayRecallCard(
+                    recall: dailyRecall,
+                    onTap: () => _navigateToDetail(dailyRecall.item),
+                  ),
+                Expanded(
+                  child: filtered.isEmpty
+                      ? Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.search_off,
+                                  size: 48, color: Colors.grey[700]),
+                              const SizedBox(height: 12),
+                              Text('조건에 맞는 작품이 없습니다.',
+                                  style: TextStyle(color: Colors.grey[500])),
+                            ],
+                          ),
+                        )
+                      : ListView(
+                          padding: const EdgeInsets.only(bottom: 80),
+                          children: [
                       // ── 1. S-Tier 인생 명작 컬렉션 (Hall of Fame) ──
                       if (hofItems.isNotEmpty) ...[
                         GestureDetector(
@@ -1344,18 +1430,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ],
                   ),
+                ),
+              ],
+            ),
           ),
-        ],
+                ],
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () => _showAddDialog(context),
+          icon: const Icon(Icons.add),
+          label: const Text('새 작품'),
+        ),
       ),
-    ),
-  ],
-),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _showAddDialog(context),
-        icon: const Icon(Icons.add),
-        label: const Text('새 작품'),
-      ),
-    )));
+    ));
   }
 
   // ── 섹션별 정렬 선택 드롭다운 (Phase 10) ──
