@@ -40,4 +40,4 @@ https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
 dart run tool/registry_builder.dart --sync-assets
 ```
 
-자세한 규칙: [SCHEMA.md](SCHEMA.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
+자세한 규칙: [SCHEMA.md](SCHEMA.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md)

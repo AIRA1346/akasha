@@ -246,7 +246,7 @@ List<AkashaItem> buildSampleData() {
     if (item.workId.isNotEmpty) {
       final registryWork = WorksRegistry.getWorkById(item.workId);
       if (registryWork != null) {
-        item.posterPath ??= registryWork.posterPath;
+        item.posterPath ??= WorksRegistry.resolvePosterPath(item.workId);
       }
     }
   }

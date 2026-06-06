@@ -31,6 +31,16 @@ class RegistryShardLoader {
   Set<String> resolveShardIdsForQuery(String query) =>
       shardIdsForQuery(_searchIndex, query);
 
+  Set<String> resolveShardIdsForFilters({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) =>
+      shardIdsForFilters(
+        _searchIndex,
+        domain: domain,
+        category: category,
+      );
+
   Future<void> loadBundledBootstrap() async {
     await _loadBundledManifest();
     await _loadBundledSearchIndex();

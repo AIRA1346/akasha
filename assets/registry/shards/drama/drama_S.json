@@ -8,7 +8,7 @@
     "releaseYear": 2021,
     "description": "거액의 상금이 걸린 서바이벌 게임에 참가한 사람들의 이야기.",
     "tags": ["서바이벌", "데스게임", "스릴러", "넷플릭스"],
-    "posterPath": null
+    "posterPath": "https://image.tmdb.org/t/p/w500/dDlEXTvolsAqrjkxwprf7gqGElx.jpg"
   },
   "gen_drama_stranger-things_2016": {
     "workId": "gen_drama_stranger-things_2016",
@@ -19,6 +19,6 @@
     "releaseYear": 2016,
     "description": "소년의 실종 이후 호킨스에서 벌어지는 SF 판타지 스릴러.",
     "tags": ["SF", "판타지", "스릴러", "레트로"],
-    "posterPath": null
+    "posterPath": "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfumrcbtJ62gk.jpg"
   }
 }

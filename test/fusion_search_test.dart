@@ -59,5 +59,25 @@ void main() {
         isTrue,
       );
     });
+
+    test('shardIdsForFilters returns only matching category shards', () {
+      final ids = shardIdsForFilters(
+        index,
+        category: MediaCategory.animation,
+      );
+      expect(ids, {'animation_F'});
+    });
+
+    test('shardIdsForFilters dedupes and respects domain', () {
+      final ids = shardIdsForFilters(
+        index,
+        domain: AppDomain.generalCulture,
+      );
+      expect(ids, {'game_M'});
+    });
+
+    test('prefetch scope empty when no domain and no category filter', () {
+      expect(shardIdsForFilters(index), isEmpty);
+    });
   });
 }

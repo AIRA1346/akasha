@@ -20,7 +20,7 @@ dart run tool/registry_builder.dart --sync-assets
 - [ ] `work_id`가 기존 항목과 중복되지 않음
 - [ ] `category` / `domain` enum 값 준수
 - [ ] `description`은 2~3문장 요약 (장문 복제 금지)
-- [ ] `posterPath`는 URL 문자열만 (이미지 바이너리·호스팅 금지)
+- [ ] `posterPath`는 URL 문자열만 (이미지 바이너리·호스팅 금지) — [POSTER_POLICY.md](POSTER_POLICY.md) 티어 준수
 - [ ] `registry_builder` 검증 통과
 
 ## 샤딩 규칙

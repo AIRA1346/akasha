@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/enums.dart';
 import 'works_registry.dart';
 
 /// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
@@ -135,6 +136,31 @@ class RegistrySyncService {
     if (query.trim().isEmpty) return false;
     final loader = WorksRegistry.loader;
     final shardIds = loader.resolveShardIdsForQuery(query);
+    if (shardIds.isEmpty) return false;
+
+    var success = false;
+    for (final shardId in shardIds) {
+      if (loader.isShardLoaded(shardId)) continue;
+      final meta = loader.manifest?.shardById(shardId);
+      if (meta == null) continue;
+      final content = await _fetchText('${baseUrl}${meta.path}');
+      if (content != null) {
+        success = await loader.cacheRemoteShard(meta.path, content) || success;
+      }
+    }
+    return success;
+  }
+
+  /// 필터 범위에 해당하는 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
+  Future<bool> syncShardsForFilters({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) async {
+    final loader = WorksRegistry.loader;
+    final shardIds = loader.resolveShardIdsForFilters(
+      domain: domain,
+      category: category,
+    );
     if (shardIds.isEmpty) return false;
 
     var success = false;

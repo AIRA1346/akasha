@@ -124,7 +124,8 @@ void main(List<String> args) {
   final searchIndex = allWorks.entries.map((entry) {
     final workId = entry.key;
     final work = entry.value;
-    return {
+    final poster = work['posterPath'];
+    final map = <String, dynamic>{
       'workId': workId,
       'title': work['title'],
       'shardId': workShardIds[workId] ?? 'unknown',
@@ -133,6 +134,12 @@ void main(List<String> args) {
       'creator': work['creator'] ?? '',
       'tags': work['tags'] ?? [],
     };
+    if (poster is String &&
+        poster.isNotEmpty &&
+        poster.startsWith('http')) {
+      map['posterPath'] = poster;
+    }
+    return map;
   }).toList()
     ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));
 

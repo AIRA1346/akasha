@@ -19,6 +19,7 @@ import '../widgets/poster_card.dart';
 import '../widgets/section_header.dart';
 import '../widgets/star_rating.dart';
 import '../widgets/fusion_search_dialog.dart';
+import '../widgets/registry_work_autocomplete.dart';
 import '../services/user_preferences.dart';
 import 'detail_screen.dart';
 
@@ -62,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _watchlistExpanded = true;
 
   String _displayName = UserPreferences.defaultDisplayName;
+  bool _autoArchiveRegistry = false;
 
   DashboardConfig? get _activeDashboard {
     if (_activeDashboardId == null || _dashboards.isEmpty) return null;
@@ -85,12 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
     await _loadSortSettings(); // 정렬 설정 불러오기
     await _loadSectionExpandedStates(); // 접이식 섹션 상태 불러오기
     _displayName = await UserPreferences.getDisplayName();
+    _autoArchiveRegistry = await UserPreferences.isAutoArchiveRegistryEnabled();
     await _loadItems();
-    
-    // 첫 실행 시 사전 작품 로컬 자동 아카이빙 실행
-    if (service.vaultPath != null) {
+
+    if (service.vaultPath != null && _autoArchiveRegistry) {
       await _autoArchiveRegistryWorks();
     }
+
+    await _prefetchRegistryForCurrentFilters();
     
     service.onVaultUpdated.listen((_) {
       if (mounted) {
@@ -140,10 +144,31 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  /// 현재 필터 범위에 맞는 lazy 샤드만 온디맨드 프리페치 (전체 bulk fetch 금지)
+  Future<void> _prefetchRegistryForCurrentFilters() async {
+    if (_selectedDomain == null && _selectedCategories.isEmpty) {
+      if (mounted) setState(() {});
+      return;
+    }
+
+    await WorksRegistry.prefetchForFilters(
+      domain: _selectedDomain,
+      categories: _selectedCategories.isEmpty
+          ? null
+          : Set<MediaCategory>.from(_selectedCategories),
+    );
+
+    if (mounted) setState(() {});
+  }
+
   /// 글로벌 사전에 새로 올라온 작품이나 아카이빙되지 않은 사전을 마크다운 파일로 자동 생성합니다.
   Future<void> _autoArchiveRegistryWorks() async {
+    if (!await UserPreferences.isAutoArchiveRegistryEnabled()) return;
+
     final service = AkashaFileService();
     if (service.vaultPath == null) return;
+
+    await _prefetchRegistryForCurrentFilters();
 
     // 1. 현재 로컬 파일로 존재하는 모든 작품의 workId 수집
     final localWorkIds = _items
@@ -244,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
           creator: work.creator,
           releaseYear: work.releaseYear,
           rating: 0.0,
-          posterPath: work.posterPath,
+          posterPath: WorksRegistry.resolvePosterPath(work.workId),
           description: work.description,
           tags: work.tags,
         );
@@ -423,6 +448,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (mounted) {
         setState(() {});
       }
+      await _prefetchRegistryForCurrentFilters();
     } catch (e) {
       debugPrint('Error loading dashboards: $e');
     }
@@ -467,6 +493,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _selectedMyStatuses.addAll(active.myStatuses);
       }
     });
+    _prefetchRegistryForCurrentFilters();
   }
 
   void _deleteDashboard(String id) {
@@ -712,6 +739,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _saveDashboards();
       }
     });
+    _prefetchRegistryForCurrentFilters();
   }
 
   void _toggleCategory(MediaCategory category) {
@@ -729,6 +757,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _saveDashboards();
       }
     });
+    _prefetchRegistryForCurrentFilters();
   }
 
   void _clearCategories() {
@@ -745,6 +774,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _saveDashboards();
       }
     });
+    _prefetchRegistryForCurrentFilters();
   }
 
   void _pruneInvalidStatuses() {
@@ -1430,7 +1460,7 @@ class _HomeScreenState extends State<HomeScreen> {
       creator: work.creator,
       releaseYear: work.releaseYear,
       rating: 0.0,
-      posterPath: work.posterPath,
+      posterPath: WorksRegistry.resolvePosterPath(work.workId),
       description: work.description,
       tags: work.tags,
     );
@@ -1488,51 +1518,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Text('공통 작품 사전 검색',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                     const SizedBox(height: 6),
-                    Autocomplete<RegistryWork>(
-                      displayStringForOption: (option) =>
-                          '${option.title} (${option.category.label})',
-                      optionsBuilder: (TextEditingValue textEditingValue) {
-                        return WorksRegistry.search(textEditingValue.text);
-                      },
-                      onSelected: (RegistryWork selection) {
+                    RegistryWorkAutocomplete(
+                      selectedWork: selectedRegistryWork,
+                      onSelected: (selection) {
                         setD(() {
+                          if (selection == null) {
+                            selectedRegistryWork = null;
+                            titleCtrl.clear();
+                            creatorCtrl.clear();
+                            yearCtrl.clear();
+                            posterUrlCtrl.clear();
+                            selDomain = AppDomain.subculture;
+                            return;
+                          }
                           selectedRegistryWork = selection;
                           titleCtrl.text = selection.title;
                           creatorCtrl.text = selection.creator;
-                          yearCtrl.text = selection.releaseYear?.toString() ?? '';
+                          yearCtrl.text =
+                              selection.releaseYear?.toString() ?? '';
                           posterUrlCtrl.text = selection.posterPath ?? '';
                           selCategory = selection.category;
                           selDomain = selection.domain;
                         });
-                      },
-                      fieldViewBuilder:
-                          (context, textEditingController, focusNode, onFieldSubmitted) {
-                        return TextField(
-                          controller: textEditingController,
-                          focusNode: focusNode,
-                          decoration: InputDecoration(
-                            hintText: '사전에서 작품을 검색하여 선택해 보세요...',
-                            border: const OutlineInputBorder(),
-                            isDense: true,
-                            prefixIcon: const Icon(Icons.search, size: 18),
-                            suffixIcon: selectedRegistryWork != null
-                                ? IconButton(
-                                    icon: const Icon(Icons.clear, size: 16),
-                                    onPressed: () {
-                                      textEditingController.clear();
-                                      setD(() {
-                                        selectedRegistryWork = null;
-                                        titleCtrl.clear();
-                                        creatorCtrl.clear();
-                                        yearCtrl.clear();
-                                        posterUrlCtrl.clear();
-                                        selDomain = AppDomain.subculture;
-                                      });
-                                    },
-                                  )
-                                : null,
-                          ),
-                        );
                       },
                     ),
                     const SizedBox(height: 18),
@@ -1878,80 +1885,106 @@ class _HomeScreenState extends State<HomeScreen> {
 
     await showDialog(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('📂 로컬 볼트(Vault) 설정'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              path != null
-                  ? '현재 연동된 폴더:\n$path'
-                  : '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Obsidian Vault 폴더를 연동해 주세요.',
-              style: const TextStyle(fontSize: 13),
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setD) {
+          return AlertDialog(
+            title: const Text('📂 로컬 볼트(Vault) 설정'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  path != null
+                      ? '현재 연동된 폴더:\n$path'
+                      : '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Obsidian Vault 폴더를 연동해 주세요.',
+                  style: const TextStyle(fontSize: 13),
+                ),
+                if (path != null) ...[
+                  const SizedBox(height: 12),
+                  const Text(
+                    '※ 이 폴더의 하위에 manga, game, book 등 카테고리별 마크다운 파일이 생성 및 수정됩니다.',
+                    style: TextStyle(fontSize: 11, color: Colors.grey),
+                  ),
+                  const SizedBox(height: 8),
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: const Text(
+                      '사전 작품 자동 아카이빙',
+                      style: TextStyle(fontSize: 13),
+                    ),
+                    subtitle: const Text(
+                      '켜면 현재 필터 범위의 사전 작품을 .md로 자동 생성합니다. (기본: 끔)',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                    value: _autoArchiveRegistry,
+                    onChanged: (value) async {
+                      await UserPreferences.setAutoArchiveRegistryEnabled(value);
+                      setD(() => _autoArchiveRegistry = value);
+                      if (mounted) setState(() => _autoArchiveRegistry = value);
+                    },
+                  ),
+                ],
+                const SizedBox(height: 16),
+                const Text(
+                  '표시 이름 (워치리스트 등)',
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                TextField(
+                  controller: nameCtrl,
+                  decoration: const InputDecoration(
+                    hintText: '사용자',
+                    border: OutlineInputBorder(),
+                    isDense: true,
+                  ),
+                ),
+              ],
             ),
-            if (path != null) ...[
-              const SizedBox(height: 12),
-              const Text(
-                '※ 이 폴더의 하위에 manga, game, book 등 카테고리별 마크다운 파일이 생성 및 수정됩니다.',
-                style: TextStyle(fontSize: 11, color: Colors.grey),
+            actions: [
+              if (path != null)
+                TextButton(
+                  onPressed: () async {
+                    await service.setVaultPath('');
+                    if (mounted) {
+                      Navigator.pop(ctx);
+                      _loadItems();
+                    }
+                  },
+                  style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
+                  child: const Text('연동 해제'),
+                ),
+              TextButton(
+                onPressed: () async {
+                  await UserPreferences.setDisplayName(nameCtrl.text);
+                  if (mounted) {
+                    setState(() {
+                      _displayName = nameCtrl.text.trim().isEmpty
+                          ? UserPreferences.defaultDisplayName
+                          : nameCtrl.text.trim();
+                    });
+                    Navigator.pop(ctx);
+                  }
+                },
+                child: const Text('이름 저장'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  _selectVaultFolder();
+                },
+                child: Text(path != null ? '폴더 변경' : '폴더 연동'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: const Text('닫기'),
               ),
             ],
-            const SizedBox(height: 16),
-            const Text(
-              '표시 이름 (워치리스트 등)',
-              style: TextStyle(fontSize: 11, color: Colors.grey, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 6),
-            TextField(
-              controller: nameCtrl,
-              decoration: const InputDecoration(
-                hintText: '사용자',
-                border: OutlineInputBorder(),
-                isDense: true,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          if (path != null)
-            TextButton(
-              onPressed: () async {
-                await service.setVaultPath('');
-                if (mounted) {
-                  Navigator.pop(ctx);
-                  _loadItems();
-                }
-              },
-              style: TextButton.styleFrom(foregroundColor: Colors.redAccent),
-              child: const Text('연동 해제'),
-            ),
-          TextButton(
-            onPressed: () async {
-              await UserPreferences.setDisplayName(nameCtrl.text);
-              if (mounted) {
-                setState(() {
-                  _displayName = nameCtrl.text.trim().isEmpty
-                      ? UserPreferences.defaultDisplayName
-                      : nameCtrl.text.trim();
-                });
-                Navigator.pop(ctx);
-              }
-            },
-            child: const Text('이름 저장'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(ctx);
-              _selectVaultFolder();
-            },
-            child: Text(path != null ? '폴더 변경' : '폴더 연동'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('닫기'),
-          ),
-        ],
+          );
+        },
       ),
     );
   }

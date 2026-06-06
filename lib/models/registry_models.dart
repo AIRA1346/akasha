@@ -74,6 +74,7 @@ class RegistrySearchIndexEntry {
   final AppDomain domain;
   final String creator;
   final List<String> tags;
+  final String? posterPath;
 
   const RegistrySearchIndexEntry({
     required this.workId,
@@ -83,11 +84,13 @@ class RegistrySearchIndexEntry {
     required this.domain,
     this.creator = '',
     this.tags = const [],
+    this.posterPath,
   });
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
     final categoryStr = json['category']?.toString() ?? 'manga';
     final domainStr = json['domain']?.toString() ?? 'subculture';
+    final poster = json['posterPath']?.toString();
     return RegistrySearchIndexEntry(
       workId: json['workId']?.toString() ?? '',
       title: json['title']?.toString() ?? '',
@@ -103,6 +106,8 @@ class RegistrySearchIndexEntry {
       creator: json['creator']?.toString() ?? '',
       tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
           const [],
+      posterPath:
+          poster != null && poster.isNotEmpty ? poster : null,
     );
   }
 }

@@ -20,8 +20,8 @@ class MarkdownParser {
     if (path.startsWith('http://') || path.startsWith('https://')) {
       final resolvedId = WorksRegistry.resolveWorkId(item.workId);
       if (resolvedId.isNotEmpty) {
-        final registry = WorksRegistry.getWorkById(resolvedId);
-        if (registry?.posterPath != null && registry!.posterPath == path) {
+        final registryPoster = WorksRegistry.resolvePosterPath(resolvedId);
+        if (registryPoster != null && registryPoster == path) {
           return false;
         }
       }
@@ -249,7 +249,9 @@ class MarkdownParser {
       domain = registryWork.domain;
       creator = creator.isNotEmpty ? creator : registryWork.creator;
       releaseYear = releaseYear ?? registryWork.releaseYear;
-      posterPath = (posterPath != null && posterPath.isNotEmpty) ? posterPath : registryWork.posterPath;
+      posterPath = (posterPath != null && posterPath.isNotEmpty)
+          ? posterPath
+          : WorksRegistry.resolvePosterPath(workId);
       description = registryWork.description;
       // 유저가 설정한 태그 외에 사전의 공통 장르 태그도 함께 노출되도록 머지합니다.
       for (final tag in registryWork.tags) {

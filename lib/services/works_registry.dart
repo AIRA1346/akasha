@@ -177,14 +177,58 @@ class WorksRegistry {
     }
   }
 
-  /// 검색 인덱스 기반 샤드 프리페치 (홈 필터 변경 시)
+  /// 필터 범위 샤드 온디맨드 프리페치 (원격 fetch → 캐시/번들 로드)
+  /// domain·categories 모두 비어 있으면 no-op (전체 샤드 bulk fetch 방지)
   static Future<void> prefetchForFilters({
     AppDomain? domain,
+    Set<MediaCategory>? categories,
+  }) async {
+    final hasDomain = domain != null;
+    final hasCategories = categories != null && categories.isNotEmpty;
+    if (!hasDomain && !hasCategories) return;
+
+    if (hasCategories) {
+      for (final category in categories!) {
+        await _prefetchSingleFilter(domain: domain, category: category);
+      }
+      return;
+    }
+
+    await _prefetchSingleFilter(domain: domain, category: null);
+  }
+
+  static Future<void> _prefetchSingleFilter({
+    AppDomain? domain,
     MediaCategory? category,
-  }) =>
-      _loader.ensureShardsForFilters(domain: domain, category: category);
+  }) async {
+    await RegistrySyncService().syncShardsForFilters(
+      domain: domain,
+      category: category,
+    );
+    await _loader.ensureShardsForFilters(domain: domain, category: category);
+  }
 
   static String resolveWorkId(String workId) => _loader.resolveWorkId(workId);
+
+  /// 로드된 샤드 → search_index 순으로 registry 포스터 URL을 반환합니다.
+  /// lazy 샤드 미로드 시에도 search_index의 posterPath로 UI fusion이 가능합니다.
+  static String? resolvePosterPath(String workId) {
+    if (workId.isEmpty) return null;
+    final resolved = _loader.resolveWorkId(workId);
+
+    final work = getWorkById(resolved);
+    final fromShard = work?.posterPath;
+    if (fromShard != null && fromShard.isNotEmpty) return fromShard;
+
+    for (final entry in _loader.searchIndex) {
+      if (entry.workId == resolved || entry.workId == workId) {
+        final poster = entry.posterPath;
+        if (poster != null && poster.isNotEmpty) return poster;
+        break;
+      }
+    }
+    return null;
+  }
 
   static bool isLegacyWorkId(String workId) =>
       !WorkIdCodec.isMasterFormat(workId) && workId.isNotEmpty;

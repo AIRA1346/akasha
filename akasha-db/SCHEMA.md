@@ -50,6 +50,22 @@
 
 경량 검색용 배열. `registry_builder`가 자동 생성합니다.
 
+```json
+{
+  "workId": "sub_manga_one-piece_1997",
+  "title": "원피스",
+  "shardId": "manga_O",
+  "category": "manga",
+  "domain": "subculture",
+  "creator": "오다 에이이치로",
+  "tags": ["모험"],
+  "posterPath": "https://..."
+}
+```
+
+- `posterPath`: 샤드에 URL이 있을 때만 포함 (lazy 샤드 미로드 시 포스터 fusion용)
+- 출처 규칙: [POSTER_POLICY.md](POSTER_POLICY.md)
+
 ## legacy_aliases.json
 
 구버전 work_id → 신규 master work_id 매핑.

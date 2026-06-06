@@ -1,3 +1,4 @@
+import '../models/enums.dart';
 import '../models/registry_models.dart';
 
 /// 검색어 정규화 (공백 제거, 소문자)
@@ -23,6 +24,22 @@ Set<String> shardIdsForQuery(
     if (registryEntryMatchesQuery(entry, query)) {
       ids.add(entry.shardId);
     }
+  }
+  return ids;
+}
+
+/// search_index에서 필터(도메인/카테고리)에 해당하는 shardId 집합 (중복 제거)
+Set<String> shardIdsForFilters(
+  List<RegistrySearchIndexEntry> index, {
+  AppDomain? domain,
+  MediaCategory? category,
+}) {
+  if (domain == null && category == null) return {};
+  final ids = <String>{};
+  for (final entry in index) {
+    if (domain != null && entry.domain != domain) continue;
+    if (category != null && entry.category != category) continue;
+    ids.add(entry.shardId);
   }
   return ids;
 }
