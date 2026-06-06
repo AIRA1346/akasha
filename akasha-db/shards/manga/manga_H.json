@@ -30,5 +30,37 @@
       "팀워크"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx65795.jpg"
+  },
+  "sub_manga_hells-paradise_2018": {
+    "workId": "sub_manga_hells-paradise_2018",
+    "title": "지옥락",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "가쿠 쿠지",
+    "releaseYear": 2018,
+    "description": "사형수들이 불멸의 약을 찾기 위해 지옥섬에 들어가는 이야기.",
+    "tags": [
+      "액션",
+      "닌자",
+      "판타지",
+      "서바이벌"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101348.jpg"
+  },
+  "sub_manga_horimiya_2011": {
+    "workId": "sub_manga_horimiya_2011",
+    "title": "호리미야",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "releaseYear": 2011,
+    "description": "학교와 집에서 다른 모습을 보이는 두 학생의 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "코미디",
+      "일상"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx122633.jpg"
   }
 }

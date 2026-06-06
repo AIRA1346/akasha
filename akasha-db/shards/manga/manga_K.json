@@ -30,5 +30,37 @@
       "코미디"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx114043.jpg"
+  },
+  "sub_manga_kingdom_2006": {
+    "workId": "sub_manga_kingdom_2006",
+    "title": "킹덤",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "releaseYear": 2006,
+    "description": "춘추전국시대 중국을 배경으로 한 대규모 전쟁 서사.",
+    "tags": [
+      "역사",
+      "전쟁",
+      "전략",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx44347.jpg"
+  },
+  "sub_manga_kaguya-sama_2015": {
+    "workId": "sub_manga_kaguya-sama_2015",
+    "title": "카구야님은 고백받고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2015,
+    "description": "서로 고백받기 위해 두뇌 싸움을 벌이는 학생회장 커플의 로맨스 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "두뇌전"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101921.jpg"
   }
 }

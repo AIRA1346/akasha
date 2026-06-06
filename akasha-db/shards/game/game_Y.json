@@ -1,0 +1,18 @@
+{
+  "sub_game_yakuza-0_2015": {
+    "workId": "sub_game_yakuza-0_2015",
+    "title": "용과 같이 0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Ryu Ga Gotoku Studio",
+    "releaseYear": 2015,
+    "description": "20세기 가오리호시에서 벌어지는 야쿠자 오리진 액션 어드벤처.",
+    "tags": [
+      "액션",
+      "야쿠자",
+      "스토리",
+      "일본"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638970/library_600x900.jpg"
+  }
+}

@@ -1,27 +1,55 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-06T11:27:23.652701Z",
+  "generatedAt": "2026-06-06T12:06:55.481861Z",
   "shards": [
+    {
+      "id": "animation_A",
+      "category": "animation",
+      "path": "shards/animation/animation_A.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "animation_B",
+      "category": "animation",
+      "path": "shards/animation/animation_B.json",
+      "eager": false,
+      "entryCount": 3
+    },
     {
       "id": "animation_C",
       "category": "animation",
       "path": "shards/animation/animation_C.json",
       "eager": false,
-      "entryCount": 3
+      "entryCount": 5
     },
     {
       "id": "animation_D",
       "category": "animation",
       "path": "shards/animation/animation_D.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "animation_F",
       "category": "animation",
       "path": "shards/animation/animation_F.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 3
+    },
+    {
+      "id": "animation_G",
+      "category": "animation",
+      "path": "shards/animation/animation_G.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "animation_H",
+      "category": "animation",
+      "path": "shards/animation/animation_H.json",
+      "eager": false,
+      "entryCount": 1
     },
     {
       "id": "animation_J",
@@ -31,16 +59,51 @@
       "entryCount": 1
     },
     {
+      "id": "animation_K",
+      "category": "animation",
+      "path": "shards/animation/animation_K.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "animation_L",
+      "category": "animation",
+      "path": "shards/animation/animation_L.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "animation_M",
       "category": "animation",
       "path": "shards/animation/animation_M.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 5
     },
     {
       "id": "animation_N",
       "category": "animation",
       "path": "shards/animation/animation_N.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "animation_O",
+      "category": "animation",
+      "path": "shards/animation/animation_O.json",
+      "eager": false,
+      "entryCount": 3
+    },
+    {
+      "id": "animation_P",
+      "category": "animation",
+      "path": "shards/animation/animation_P.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "animation_R",
+      "category": "animation",
+      "path": "shards/animation/animation_R.json",
       "eager": false,
       "entryCount": 1
     },
@@ -49,12 +112,26 @@
       "category": "animation",
       "path": "shards/animation/animation_S.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 6
+    },
+    {
+      "id": "animation_T",
+      "category": "animation",
+      "path": "shards/animation/animation_T.json",
+      "eager": false,
+      "entryCount": 1
     },
     {
       "id": "animation_V",
       "category": "animation",
       "path": "shards/animation/animation_V.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "animation_W",
+      "category": "animation",
+      "path": "shards/animation/animation_W.json",
       "eager": false,
       "entryCount": 1
     },
@@ -73,18 +150,39 @@
       "entryCount": 1
     },
     {
+      "id": "book_8",
+      "category": "book",
+      "path": "shards/book/book_8.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "book_C",
+      "category": "book",
+      "path": "shards/book/book_C.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "book_D",
       "category": "book",
       "path": "shards/book/book_D.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "book_H",
       "category": "book",
       "path": "shards/book/book_H.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 3
+    },
+    {
+      "id": "book_K",
+      "category": "book",
+      "path": "shards/book/book_K.json",
+      "eager": false,
+      "entryCount": 1
     },
     {
       "id": "book_L",
@@ -98,12 +196,19 @@
       "category": "book",
       "path": "shards/book/book_M.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 3
     },
     {
       "id": "book_N",
       "category": "book",
       "path": "shards/book/book_N.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "book_O",
+      "category": "book",
+      "path": "shards/book/book_O.json",
       "eager": false,
       "entryCount": 1
     },
@@ -126,7 +231,7 @@
       "category": "book",
       "path": "shards/book/book_S.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 4
     },
     {
       "id": "drama_B",
@@ -164,6 +269,13 @@
       "entryCount": 1
     },
     {
+      "id": "drama_O",
+      "category": "drama",
+      "path": "shards/drama/drama_O.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "drama_S",
       "category": "drama",
       "path": "shards/drama/drama_S.json",
@@ -175,13 +287,34 @@
       "category": "drama",
       "path": "shards/drama/drama_T.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 4
     },
     {
       "id": "game_A",
       "category": "game",
       "path": "shards/game/game_A.json",
       "eager": true,
+      "entryCount": 3
+    },
+    {
+      "id": "game_B",
+      "category": "game",
+      "path": "shards/game/game_B.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_C",
+      "category": "game",
+      "path": "shards/game/game_C.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_D",
+      "category": "game",
+      "path": "shards/game/game_D.json",
+      "eager": false,
       "entryCount": 2
     },
     {
@@ -190,6 +323,13 @@
       "path": "shards/game/game_E.json",
       "eager": true,
       "entryCount": 1
+    },
+    {
+      "id": "game_F",
+      "category": "game",
+      "path": "shards/game/game_F.json",
+      "eager": false,
+      "entryCount": 3
     },
     {
       "id": "game_G",
@@ -203,33 +343,82 @@
       "category": "game",
       "path": "shards/game/game_H.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "game_L",
       "category": "game",
       "path": "shards/game/game_L.json",
       "eager": true,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "game_M",
       "category": "game",
       "path": "shards/game/game_M.json",
       "eager": true,
-      "entryCount": 1
+      "entryCount": 3
     },
     {
       "id": "game_N",
       "category": "game",
       "path": "shards/game/game_N.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
+    },
+    {
+      "id": "game_O",
+      "category": "game",
+      "path": "shards/game/game_O.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_P",
+      "category": "game",
+      "path": "shards/game/game_P.json",
+      "eager": false,
+      "entryCount": 4
     },
     {
       "id": "game_S",
       "category": "game",
       "path": "shards/game/game_S.json",
+      "eager": false,
+      "entryCount": 4
+    },
+    {
+      "id": "game_T",
+      "category": "game",
+      "path": "shards/game/game_T.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_U",
+      "category": "game",
+      "path": "shards/game/game_U.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_W",
+      "category": "game",
+      "path": "shards/game/game_W.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_X",
+      "category": "game",
+      "path": "shards/game/game_X.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_Y",
+      "category": "game",
+      "path": "shards/game/game_Y.json",
       "eager": false,
       "entryCount": 1
     },
@@ -238,7 +427,7 @@
       "category": "game",
       "path": "shards/game/game_Z.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "game_steam_105600",
@@ -332,46 +521,53 @@
       "entryCount": 1
     },
     {
+      "id": "manga_A",
+      "category": "manga",
+      "path": "shards/manga/manga_A.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "manga_B",
       "category": "manga",
       "path": "shards/manga/manga_B.json",
       "eager": false,
-      "entryCount": 3
+      "entryCount": 7
     },
     {
       "id": "manga_C",
       "category": "manga",
       "path": "shards/manga/manga_C.json",
       "eager": true,
-      "entryCount": 3
+      "entryCount": 5
     },
     {
       "id": "manga_D",
       "category": "manga",
       "path": "shards/manga/manga_D.json",
       "eager": false,
-      "entryCount": 3
+      "entryCount": 4
     },
     {
       "id": "manga_F",
       "category": "manga",
       "path": "shards/manga/manga_F.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 4
     },
     {
       "id": "manga_G",
       "category": "manga",
       "path": "shards/manga/manga_G.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 4
     },
     {
       "id": "manga_H",
       "category": "manga",
       "path": "shards/manga/manga_H.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 4
     },
     {
       "id": "manga_J",
@@ -385,27 +581,41 @@
       "category": "manga",
       "path": "shards/manga/manga_K.json",
       "eager": true,
-      "entryCount": 2
+      "entryCount": 4
     },
     {
       "id": "manga_M",
       "category": "manga",
       "path": "shards/manga/manga_M.json",
       "eager": false,
-      "entryCount": 3
+      "entryCount": 7
     },
     {
       "id": "manga_N",
       "category": "manga",
       "path": "shards/manga/manga_N.json",
       "eager": true,
-      "entryCount": 1
+      "entryCount": 3
     },
     {
       "id": "manga_O",
       "category": "manga",
       "path": "shards/manga/manga_O.json",
       "eager": true,
+      "entryCount": 3
+    },
+    {
+      "id": "manga_P",
+      "category": "manga",
+      "path": "shards/manga/manga_P.json",
+      "eager": false,
+      "entryCount": 3
+    },
+    {
+      "id": "manga_Q",
+      "category": "manga",
+      "path": "shards/manga/manga_Q.json",
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -413,19 +623,26 @@
       "category": "manga",
       "path": "shards/manga/manga_R.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 3
     },
     {
       "id": "manga_S",
       "category": "manga",
       "path": "shards/manga/manga_S.json",
       "eager": true,
-      "entryCount": 5
+      "entryCount": 7
     },
     {
       "id": "manga_T",
       "category": "manga",
       "path": "shards/manga/manga_T.json",
+      "eager": false,
+      "entryCount": 5
+    },
+    {
+      "id": "manga_U",
+      "category": "manga",
+      "path": "shards/manga/manga_U.json",
       "eager": false,
       "entryCount": 1
     },
@@ -434,6 +651,13 @@
       "category": "manga",
       "path": "shards/manga/manga_V.json",
       "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "manga_Y",
+      "category": "manga",
+      "path": "shards/manga/manga_Y.json",
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -441,12 +665,19 @@
       "category": "manga",
       "path": "shards/manga/manga_numeric.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "movie_A",
       "category": "movie",
       "path": "shards/movie/movie_A.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "movie_D",
+      "category": "movie",
+      "path": "shards/movie/movie_D.json",
       "eager": false,
       "entryCount": 1
     },
@@ -465,6 +696,13 @@
       "entryCount": 2
     },
     {
+      "id": "movie_J",
+      "category": "movie",
+      "path": "shards/movie/movie_J.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "movie_L",
       "category": "movie",
       "path": "shards/movie/movie_L.json",
@@ -477,6 +715,13 @@
       "path": "shards/movie/movie_P.json",
       "eager": false,
       "entryCount": 2
+    },
+    {
+      "id": "movie_S",
+      "category": "movie",
+      "path": "shards/movie/movie_S.json",
+      "eager": false,
+      "entryCount": 1
     },
     {
       "id": "movie_T",

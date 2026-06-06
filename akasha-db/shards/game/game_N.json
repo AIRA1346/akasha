@@ -7,7 +7,28 @@
     "creator": "Shift Up",
     "releaseYear": 2022,
     "description": "황폐해진 지상에서 외계 기계 병기에 맞서 싸우는 건슈팅 RPG.",
-    "tags": ["포스트아포칼립스", "건슈팅", "수집형RPG", "SF"],
+    "tags": [
+      "포스트아포칼립스",
+      "건슈팅",
+      "수집형RPG",
+      "SF"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx186872-PecL686Sgicx.jpg"
+  },
+  "sub_game_nier-automata_2017": {
+    "workId": "sub_game_nier-automata_2017",
+    "title": "니어: 오토마타",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "PlatinumGames",
+    "releaseYear": 2017,
+    "description": "안드로이드 전투원이 인류를 위해 싸우는 액션 RPG.",
+    "tags": [
+      "액션",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/library_600x900.jpg"
   }
 }

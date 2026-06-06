@@ -7,7 +7,44 @@
     "creator": "오다 에이이치로 (Eiichiro Oda)",
     "releaseYear": 1997,
     "description": "해적왕을 꿈꾸는 소년 몽키 D. 루피가 동료들과 함께 위대한 항로를 항해하며 겪는 대서사시.",
-    "tags": ["모험", "우정", "해적", "대하"],
+    "tags": [
+      "모험",
+      "우정",
+      "해적",
+      "대하"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30013-BeslEMqiPhlk.jpg"
+  },
+  "sub_manga_oshi-no-ko_2020": {
+    "workId": "sub_manga_oshi-no-ko_2020",
+    "title": "최애의 아이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2020,
+    "description": "연예계를 배경으로 한 환생과 복수, 성장의 드라마.",
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx120377.jpg"
+  },
+  "sub_manga_oregairu_2011": {
+    "workId": "sub_manga_oregairu_2011",
+    "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와타리 와타루",
+    "releaseYear": 2011,
+    "description": "봉사부에 끌려간 고독한 소년의 학원 코미디 드라마.",
+    "tags": [
+      "학원",
+      "코미디",
+      "드라마",
+      "청춘"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx14813.jpg"
   }
 }

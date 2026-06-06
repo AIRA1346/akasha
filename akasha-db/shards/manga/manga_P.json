@@ -1,0 +1,50 @@
+{
+  "sub_manga_parasyte_1990": {
+    "workId": "sub_manga_parasyte_1990",
+    "title": "기생수",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
+    "releaseYear": 1990,
+    "description": "손에 기생한 외계 생명체와 공존하며 인류를 지키는 이야기.",
+    "tags": [
+      "SF",
+      "호러",
+      "철학",
+      "액션"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30045.jpg"
+  },
+  "sub_manga_promised-neverland_2016": {
+    "workId": "sub_manga_promised-neverland_2016",
+    "title": "약속의 네버랜드",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "시라이 카이",
+    "releaseYear": 2016,
+    "description": "고아원 아이들이 숨겨진 진실을 알게 된 뒤 탈출을 꾸미는 스릴러.",
+    "tags": [
+      "스릴러",
+      "미스터리",
+      "탈출",
+      "다크"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx99624.jpg"
+  },
+  "sub_manga_pluto_2003": {
+    "workId": "sub_manga_pluto_2003",
+    "title": "플루토",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우라사와 나오키",
+    "releaseYear": 2003,
+    "description": "로봇과 인간이 공존하는 미래의 연쇄 살인 추적 스릴러.",
+    "tags": [
+      "SF",
+      "로봇",
+      "스릴러",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30735.jpg"
+  }
+}

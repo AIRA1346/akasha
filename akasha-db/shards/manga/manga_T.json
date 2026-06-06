@@ -14,5 +14,69 @@
       "액션"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx97810.jpg"
+  },
+  "sub_manga_tokyo-ghoul_2011": {
+    "workId": "sub_manga_tokyo-ghoul_2011",
+    "title": "도쿄 구울",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이시다 슈이",
+    "releaseYear": 2011,
+    "description": "인간을 사냥하는 구울이 된 대학생의 어두운 서울 생존기.",
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "서울"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30054.jpg"
+  },
+  "sub_manga_tensura_2014": {
+    "workId": "sub_manga_tensura_2014",
+    "title": "전생했더니 슬라임이었던 건",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후세이 / 미와타리",
+    "releaseYear": 2014,
+    "description": "슬라임으로 전생한 주인공이 나라를 건설하는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "슬라임",
+      "건국"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101280.jpg"
+  },
+  "sub_manga_toradora_2007": {
+    "workId": "sub_manga_toradora_2007",
+    "title": "토라도라!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카에마시 유우",
+    "releaseYear": 2007,
+    "description": "까칠한 소녀와 소심한 소년이 연인 연기를 하며 벌어지는 로맨스.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "청춘"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx4224.jpg"
+  },
+  "sub_manga_tower-of-god_2010": {
+    "workId": "sub_manga_tower-of-god_2010",
+    "title": "신의 탑",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "SIU",
+    "releaseYear": 2010,
+    "description": "신의 탑을 오르며 비밀을 밝히는 소년의 판타지 모험.",
+    "tags": [
+      "판타지",
+      "모험",
+      "웹툰",
+      "미스터리"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101573.jpg"
   }
 }

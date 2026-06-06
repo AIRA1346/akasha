@@ -14,5 +14,37 @@
       "포와로"
     ],
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg"
+  },
+  "sub_book_monogatari-light-novel_2006": {
+    "workId": "sub_book_monogatari-light-novel_2006",
+    "title": "바케모노가타리",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "니시오 이시인",
+    "releaseYear": 2006,
+    "description": "괴물과 인간의 이야기를 풀어가는 대화 중심 라이트노벨.",
+    "tags": [
+      "라이트노벨",
+      "초자연",
+      "대화",
+      "서브컬처"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx5081.jpg"
+  },
+  "sub_book_mushoku-tensei-light-novel_2014": {
+    "workId": "sub_book_mushoku-tensei-light-novel_2014",
+    "title": "무직전생",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "리덕션",
+    "releaseYear": 2014,
+    "description": "전생한 소년의 마법 세계 성장기 라노벨 원작.",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108465.jpg"
   }
 }

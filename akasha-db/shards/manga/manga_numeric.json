@@ -7,7 +7,28 @@
     "creator": "아사토 아사토 (Asato Asato)",
     "releaseYear": 2017,
     "description": "86구역 출신 소년병들의 전쟁 이야기.",
-    "tags": ["SF", "전쟁", "차별", "밀리터리"],
+    "tags": [
+      "SF",
+      "전쟁",
+      "차별",
+      "밀리터리"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx101606-3lMiy9HQjBgv.jpg"
+  },
+  "sub_manga_20th-century-boys_1999": {
+    "workId": "sub_manga_20th-century-boys_1999",
+    "title": "20세기 소년",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우라사와 나오키",
+    "releaseYear": 1999,
+    "description": "어릴 적 음모와 세계 파멸을 둘러싼 미스터리 서사.",
+    "tags": [
+      "미스터리",
+      "음모",
+      "SF",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30039.jpg"
   }
 }

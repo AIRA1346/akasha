@@ -7,7 +7,60 @@
     "creator": "카와하라 레키 (Reki Kawahara)",
     "releaseYear": 2009,
     "description": "VR MMORPG에 갇힌 유저들이 데스게임에서 탈출을 시도하는 라이트노벨.",
-    "tags": ["라이트노벨", "게임판타지", "데스게임", "서브컬처"],
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx60083-pLrhCqW8iiHb.jpg"
+  },
+  "sub_book_spice-and-wolf_2006": {
+    "workId": "sub_book_spice-and-wolf_2006",
+    "title": "늑대와 향신료",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "히세키 아야",
+    "releaseYear": 2006,
+    "description": "상인과 늑대신의 여행을 그린 경제 판타지 라노벨.",
+    "tags": [
+      "라이트노벨",
+      "판타지",
+      "경제",
+      "로맨스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx2966.jpg"
+  },
+  "sub_book_slime-light-novel_2014": {
+    "workId": "sub_book_slime-light-novel_2014",
+    "title": "전생 슬라임",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "후세이",
+    "releaseYear": 2014,
+    "description": "슬라임으로 전생한 림루의 건국 판타지 라노벨 원작.",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "슬라임",
+      "건국"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101280.jpg"
+  },
+  "gen_book_sherlock-holmes_1887": {
+    "workId": "gen_book_sherlock-holmes_1887",
+    "title": "셜록 홈즈: 단홍색 연구",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "아서 코난 도일",
+    "releaseYear": 1887,
+    "description": "탐정 셜록 홈즈의 데뷔 미스터리 고전.",
+    "tags": [
+      "추리",
+      "미스터리",
+      "고전",
+      "명작"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg"
   }
 }

@@ -14,5 +14,21 @@
       "명작"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922.jpg"
+  },
+  "sub_animation_dandadan-anime_2024": {
+    "workId": "sub_animation_dandadan-anime_2024",
+    "title": "단다단",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Science SARU",
+    "releaseYear": 2024,
+    "description": "오컬트와 로봇이 뒤섞인 기묘한 청춘 배틀 코미디.",
+    "tags": [
+      "오컬트",
+      "코미디",
+      "액션",
+      "청춘"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018.jpg"
   }
 }

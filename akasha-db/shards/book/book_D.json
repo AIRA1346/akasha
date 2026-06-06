@@ -14,5 +14,21 @@
       "베스트셀러"
     ],
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg"
+  },
+  "gen_book_dune_1965": {
+    "workId": "gen_book_dune_1965",
+    "title": "듄",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "프랭크 허버트",
+    "releaseYear": 1965,
+    "description": "사막 행성 아라키스의 스파이스와 권력 투쟁 SF 고전.",
+    "tags": [
+      "SF",
+      "고전",
+      "정치",
+      "명작"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg"
   }
 }

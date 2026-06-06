@@ -30,5 +30,37 @@
       "다크"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85130.jpg"
+  },
+  "sub_manga_fairy-tail_2006": {
+    "workId": "sub_manga_fairy-tail_2006",
+    "title": "페어리 테일",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마시마 히로",
+    "releaseYear": 2006,
+    "description": "마법 길드 페어리 테일의 모험과 우정 이야기.",
+    "tags": [
+      "판타지",
+      "마법",
+      "길드",
+      "우정"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30694.jpg"
+  },
+  "sub_manga_fruits-basket_1998": {
+    "workId": "sub_manga_fruits-basket_1998",
+    "title": "후르츠 바스켓",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카야 나츠키",
+    "releaseYear": 1998,
+    "description": "십이지 신의 저주에 걸린 소년과 가족들의 로맨스 판타지.",
+    "tags": [
+      "로맨스",
+      "판타지",
+      "힐링",
+      "가족"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30026.jpg"
   }
 }

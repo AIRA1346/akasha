@@ -30,5 +30,69 @@
       "감동"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757.jpg"
+  },
+  "sub_animation_samurai-champloo_2004": {
+    "workId": "sub_animation_samurai-champloo_2004",
+    "title": "사무라이 참프루",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Manglobe",
+    "releaseYear": 2004,
+    "description": "에도 시대 힙합 무협을 그린 유쾌한 사무라이 로드무비.",
+    "tags": [
+      "사무라이",
+      "액션",
+      "힙합",
+      "로드무비"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205.jpg"
+  },
+  "sub_animation_slime-anime_2018": {
+    "workId": "sub_animation_slime-anime_2018",
+    "title": "전생 슬라임",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "8bit",
+    "releaseYear": 2018,
+    "description": "슬라임으로 전생한 주인공의 이세계 건국 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "슬라임",
+      "건국"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280.jpg"
+  },
+  "sub_animation_shield-hero_2019": {
+    "workId": "sub_animation_shield-hero_2019",
+    "title": "방패 용사 성공담",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kinema Citrus",
+    "releaseYear": 2019,
+    "description": "배신당한 방패 용사가 세계를 구원해 나가는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "복수",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99624.jpg"
+  },
+  "sub_animation_silent-voice_2016": {
+    "workId": "sub_animation_silent-voice_2016",
+    "title": "목소리의 형태",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kyoto Animation",
+    "releaseYear": 2016,
+    "description": "청각장애 소녀와 전학생의 화해와 성장을 그린 감동 영화.",
+    "tags": [
+      "감동",
+      "청춘",
+      "학원",
+      "영화"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954.jpg"
   }
 }

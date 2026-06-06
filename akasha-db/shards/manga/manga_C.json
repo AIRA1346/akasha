@@ -7,7 +7,12 @@
     "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
     "releaseYear": 2018,
     "description": "가난한 소년 덴지가 체인소의 악마와 합체하는 이야기.",
-    "tags": ["액션", "다크", "악마", "카오스"],
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-euxXZEIfDY2u.png"
   },
   "sub_manga_detective-conan_1994": {
@@ -18,7 +23,12 @@
     "creator": "아오야마 고쇼 (Gosho Aoyama)",
     "releaseYear": 1994,
     "description": "소년 탐정 에도가와 코난의 추리 활약.",
-    "tags": ["추리", "소년만화", "럽코", "장수작"],
+    "tags": [
+      "추리",
+      "소년만화",
+      "럽코",
+      "장수작"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx106015-yK0zreKP7RVs.jpg"
   },
   "gen_manga_crayon-shin-chan_1990": {
@@ -29,7 +39,44 @@
     "creator": "우스이 요시토 (Yoshito Usui)",
     "releaseYear": 1990,
     "description": "떡잎마을의 장난꾸러기 신짱구와 가족의 코믹 일상.",
-    "tags": ["코미디", "일상", "가족", "장수작"],
+    "tags": [
+      "코미디",
+      "일상",
+      "가족",
+      "장수작"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx32435-9lY7xiwr7VQL.jpg"
+  },
+  "sub_manga_cardcaptor-sakura_1996": {
+    "workId": "sub_manga_cardcaptor-sakura_1996",
+    "title": "카드캡터 체리",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "CLAMP",
+    "releaseYear": 1996,
+    "description": "마법 카드를 수집하는 소녀의 판타지 모험.",
+    "tags": [
+      "판타지",
+      "마법",
+      "소녀",
+      "순정"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30073.jpg"
+  },
+  "sub_manga_chihayafuru_2007": {
+    "workId": "sub_manga_chihayafuru_2007",
+    "title": "치하야후루",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스에마스 치카",
+    "releaseYear": 2007,
+    "description": "경쟁 카루타를 통해 성장하는 청춘 스포츠 로맨스.",
+    "tags": [
+      "스포츠",
+      "카루타",
+      "청춘",
+      "로맨스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx10800.jpg"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "sub_manga_yu-yu-hakusho_1990": {
+    "workId": "sub_manga_yu-yu-hakusho_1990",
+    "title": "유유백서",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토가시 요시히로",
+    "releaseYear": 1990,
+    "description": "소년이 영계 탐정이 되어 요괴와 싸우는 액션 판타지.",
+    "tags": [
+      "액션",
+      "요괴",
+      "판타지",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30031.jpg"
+  }
+}

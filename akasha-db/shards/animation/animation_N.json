@@ -14,5 +14,21 @@
       "명작"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30.jpg"
+  },
+  "sub_animation_noragami_2014": {
+    "workId": "sub_animation_noragami_2014",
+    "title": "노라가미",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2014,
+    "description": "가난한 신이 소녀와 함께 소원을 들어주며 성장하는 판타지.",
+    "tags": [
+      "판타지",
+      "신",
+      "액션",
+      "코미디"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20447.jpg"
   }
 }

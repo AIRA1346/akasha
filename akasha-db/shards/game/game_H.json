@@ -14,5 +14,21 @@
       "서브컬처"
     ],
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg"
+  },
+  "gen_game_half-life-2_2004": {
+    "workId": "gen_game_half-life-2_2004",
+    "title": "하프라이프 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2004,
+    "description": "억압 체제에 맞서는 SF FPS 명작.",
+    "tags": [
+      "FPS",
+      "SF",
+      "명작",
+      "스토리"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg"
   }
 }
