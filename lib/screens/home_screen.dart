@@ -69,6 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   String _displayName = UserPreferences.defaultDisplayName;
   bool _autoArchiveRegistry = false;
+  StreamSubscription<void>? _vaultUpdateSubscription;
+  Timer? _vaultReloadDebounce;
 
   DashboardConfig? get _activeDashboard {
     if (_activeDashboardId == null || _dashboards.isEmpty) return null;
@@ -82,6 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _initVault();
+  }
+
+  @override
+  void dispose() {
+    _vaultReloadDebounce?.cancel();
+    _vaultUpdateSubscription?.cancel();
+    super.dispose();
   }
 
   Future<void> _initVault() async {
@@ -102,10 +111,11 @@ class _HomeScreenState extends State<HomeScreen> {
     await _prefetchRegistryForCurrentFilters();
     await _refreshLastSyncTime();
 
-    service.onVaultUpdated.listen((_) {
-      if (mounted) {
-        _loadItems();
-      }
+    _vaultUpdateSubscription = service.onVaultUpdated.listen((_) {
+      _vaultReloadDebounce?.cancel();
+      _vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
+        if (mounted) _loadItems();
+      });
     });
 
     // 백그라운드 자동 동기화 시도 (Phase 4)
@@ -117,28 +127,21 @@ class _HomeScreenState extends State<HomeScreen> {
     final service = AkashaFileService();
     List<AkashaItem> loadedItems = [];
     if (service.vaultPath != null) {
+      // 볼트 모드: 디스크 기준 로드 + 캐시 동기화는 loadAllItems 내부에서 처리
       loadedItems = await service.loadAllItems();
     } else {
       loadedItems = buildSampleData();
-    }
-
-    // 인메모리 변경사항 캐시 병합 (데모 모드 및 즉시 갱신 보완)
-    final cache = service.inMemoryCache;
-    if (cache.isNotEmpty) {
-      for (int i = 0; i < loadedItems.length; i++) {
-        final key = loadedItems[i].workId.isNotEmpty ? loadedItems[i].workId : loadedItems[i].title;
-        if (cache.containsKey(key)) {
-          loadedItems[i] = cache[key]!;
-        }
-      }
+      // 데모 모드: 메모리에만 있는 신규 항목 병합
+      final cache = service.inMemoryCache;
       for (final cachedItem in cache.values) {
-        final alreadyExists = loadedItems.any((e) =>
-          (e.workId.isNotEmpty && e.workId == cachedItem.workId) ||
-          (e.workId.isEmpty && e.title == cachedItem.title)
+        final exists = loadedItems.any(
+          (e) =>
+              (cachedItem.workId.isNotEmpty &&
+                  e.workId == cachedItem.workId) ||
+              (e.title == cachedItem.title &&
+                  e.category == cachedItem.category),
         );
-        if (!alreadyExists) {
-          loadedItems.add(cachedItem);
-        }
+        if (!exists) loadedItems.add(cachedItem);
       }
     }
 

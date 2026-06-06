@@ -8,7 +8,16 @@ import 'markdown_parser.dart';
 
 class AkashaFileService {
   static const String _prefVaultKey = 'akasha_vault_path';
-  
+
+  static final Set<String> _skipDirNames = {
+    'posters',
+    'node_modules',
+    '.git',
+    '.obsidian',
+    '.trash',
+    '.cursor',
+  };
+
   // 싱글톤 패턴
   static final AkashaFileService _instance = AkashaFileService._internal();
   factory AkashaFileService() => _instance;
@@ -17,6 +26,7 @@ class AkashaFileService {
   String? _vaultPath;
   StreamController<void>? _vaultUpdateController;
   StreamSubscription<FileSystemEvent>? _watcherSubscription;
+  Timer? _watchDebounce;
   final Map<String, AkashaItem> _inMemoryCache = {};
 
   /// 메모리 캐시 반환 (데모 모드 지원용)
@@ -34,19 +44,26 @@ class AkashaFileService {
   /// SharedPreferences에서 기존에 저장된 볼트 경로를 불러옵니다.
   Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
-    _vaultPath = prefs.getString(_prefVaultKey);
-    if (_vaultPath != null && _vaultPath!.isNotEmpty) {
-      if (await Directory(_vaultPath!).exists()) {
-        _startWatching();
-      } else {
-        _vaultPath = null;
-      }
+    final saved = prefs.getString(_prefVaultKey);
+    if (saved == null || saved.isEmpty) {
+      _vaultPath = null;
+      return;
+    }
+
+    if (await Directory(saved).exists()) {
+      _vaultPath = saved;
+      _startWatching();
+    } else {
+      _vaultPath = null;
+      await prefs.remove(_prefVaultKey);
     }
   }
 
   /// 새로운 볼트 경로를 설정하고 저장합니다.
   Future<void> setVaultPath(String path) async {
     final prefs = await SharedPreferences.getInstance();
+    _inMemoryCache.clear();
+
     if (path.isEmpty) {
       _vaultPath = null;
       await prefs.remove(_prefVaultKey);
@@ -54,24 +71,30 @@ class AkashaFileService {
     } else {
       _vaultPath = path;
       await prefs.setString(_prefVaultKey, path);
-      // 필수 폴더 구조 생성
       await _ensureFolderStructure();
       _startWatching();
     }
-    _vaultUpdateController?.add(null);
+    _notifyVaultUpdated();
   }
 
-  /// 볼트에 필요한 기본 폴더 구조(posters, manga, book, animation, game)를 생성합니다.
+  /// 볼트에 필요한 기본 폴더 구조(posters, 카테고리별)를 생성합니다.
   Future<void> _ensureFolderStructure() async {
     if (_vaultPath == null) return;
-    
-    // posters 폴더
+
     await Directory(p.join(_vaultPath!, 'posters')).create(recursive: true);
-    
-    // 각 카테고리 폴더
+
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
     }
+  }
+
+  void _notifyVaultUpdated() {
+    _vaultUpdateController?.add(null);
+  }
+
+  void _scheduleVaultUpdateNotification() {
+    _watchDebounce?.cancel();
+    _watchDebounce = Timer(const Duration(milliseconds: 400), _notifyVaultUpdated);
   }
 
   /// 볼트의 마크다운 파일 변경 감지를 위한 파일 감시를 시작합니다.
@@ -82,13 +105,11 @@ class AkashaFileService {
     final dir = Directory(_vaultPath!);
     if (!dir.existsSync()) return;
 
-    // 디렉토리 변경 감시 (재귀적)
     try {
       _watcherSubscription = dir.watch(recursive: true).listen(
         (event) {
-          // .md 파일의 변경, 생성, 삭제 이벤트만 감지하여 알림
-          if (event.path.endsWith('.md')) {
-            _vaultUpdateController?.add(null);
+          if (event.path.endsWith('.md') && !_shouldSkipPath(event.path)) {
+            _scheduleVaultUpdateNotification();
           }
         },
         onError: (error) {
@@ -100,51 +121,64 @@ class AkashaFileService {
     }
   }
 
-  /// 파일 감시를 중단합니다.
   void _stopWatching() {
+    _watchDebounce?.cancel();
+    _watchDebounce = null;
     _watcherSubscription?.cancel();
     _watcherSubscription = null;
   }
 
+  bool _shouldSkipPath(String filePath) {
+    final parts = p.split(filePath);
+    return parts.any((part) => part.startsWith('.') || _skipDirNames.contains(part));
+  }
+
+  static String cacheKeyFor(AkashaItem item) {
+    if (item.workId.isNotEmpty) return item.workId;
+    return '${item.category.name}::${item.title}';
+  }
+
+  /// workId 우선으로 중복 항목을 병합합니다. 동일 키면 addedAt이 최신인 항목을 유지합니다.
+  static List<AkashaItem> dedupeItems(List<AkashaItem> items) {
+    final map = <String, AkashaItem>{};
+    for (final item in items) {
+      final key = cacheKeyFor(item);
+      final existing = map[key];
+      if (existing == null || item.addedAt.isAfter(existing.addedAt)) {
+        map[key] = item;
+      }
+    }
+    return map.values.toList();
+  }
+
+  void _syncCacheFromItems(List<AkashaItem> items) {
+    _inMemoryCache.clear();
+    for (final item in items) {
+      _inMemoryCache[cacheKeyFor(item)] = item;
+    }
+  }
+
   /// 볼트 내의 모든 마크다운 파일을 로드하여 AkashaItem 리스트를 반환합니다.
-  /// 볼트 경로가 지정되지 않은 경우 빈 리스트를 반환합니다.
   Future<List<AkashaItem>> loadAllItems() async {
     if (_vaultPath == null) return [];
 
-    final items = <AkashaItem>[];
-    
+    final parsed = <AkashaItem>[];
+
     try {
       final dir = Directory(_vaultPath!);
       if (await dir.exists()) {
-        final entities = dir.listSync(recursive: true);
-        for (final entity in entities) {
-          if (entity is File && entity.path.endsWith('.md')) {
-            // 숨겨진 폴더/파일 (.obsidian, .git 등) 건너뜀
-            final pathParts = p.split(entity.path);
-            if (pathParts.any((part) => part.startsWith('.'))) {
-              continue;
-            }
-            // posters 폴더 건너뜀
-            if (pathParts.contains('posters')) {
-              continue;
-            }
+        await for (final entity in dir.list(recursive: true, followLinks: false)) {
+          if (entity is! File || !entity.path.endsWith('.md')) continue;
+          if (_shouldSkipPath(entity.path)) continue;
 
-            try {
-              final content = await entity.readAsString();
-              final filename = p.basenameWithoutExtension(entity.path);
-              final item = MarkdownParser.deserialize(content, filename);
-              item.filePath = entity.path; // 원본 파일 경로 기억
-              
-              // 중복 방지 (제목과 카테고리가 겹치면 중복 처리)
-              final exists = items.any((existing) => 
-                existing.title == item.title && existing.category == item.category
-              );
-              if (!exists) {
-                items.add(item);
-              }
-            } catch (e) {
-              print('Error reading file ${entity.path}: $e');
-            }
+          try {
+            final content = await entity.readAsString();
+            final filename = p.basenameWithoutExtension(entity.path);
+            final item = MarkdownParser.deserialize(content, filename);
+            item.filePath = entity.path;
+            parsed.add(item);
+          } catch (e) {
+            print('Error reading file ${entity.path}: $e');
           }
         }
       }
@@ -152,18 +186,17 @@ class AkashaFileService {
       print('Error loading items recursively from vault: $e');
     }
 
+    final items = dedupeItems(parsed);
+    _syncCacheFromItems(items);
     return items;
   }
 
   /// AkashaItem을 마크다운 파일로 저장합니다.
   Future<void> saveItem(AkashaItem item, {String? oldTitle}) async {
-    // 메모리 캐시에 먼저 저장 (데모 모드 및 실시간 상태 동기화 지원)
-    final key = item.workId.isNotEmpty ? item.workId : item.title;
-    _inMemoryCache[key] = item;
+    _inMemoryCache[cacheKeyFor(item)] = item;
 
     if (_vaultPath == null) return;
 
-    // 제목이 변경된 경우 이전 파일을 먼저 삭제 처리
     if (oldTitle != null && oldTitle != item.title) {
       if (item.filePath != null && item.filePath!.isNotEmpty) {
         final oldFile = File(item.filePath!);
@@ -178,7 +211,6 @@ class AkashaFileService {
             _startWatching();
           }
         }
-        // 원래 존재하던 폴더 경로 그대로 새 파일명 조합
         final safeTitle = _makeSafeFilename(item.title);
         item.filePath = p.join(parentDir, '$safeTitle.md');
       } else {
@@ -198,28 +230,49 @@ class AkashaFileService {
     }
 
     final content = MarkdownParser.serialize(item);
-    
-    // 파일 쓰기 전에 watcher가 일시적으로 중단되도록 하여 불필요한 새로고침 루프 방지
+
     _stopWatching();
     try {
-      final file = File(targetPath);
-      await file.writeAsString(content);
+      await _writeAtomic(targetPath, content);
+      _notifyVaultUpdated();
     } finally {
       _startWatching();
     }
   }
 
+  Future<void> _writeAtomic(String targetPath, String content) async {
+    final file = File(targetPath);
+    final parent = file.parent;
+    if (!await parent.exists()) {
+      await parent.create(recursive: true);
+    }
+
+    final tempPath = p.join(
+      parent.path,
+      '.akasha_${DateTime.now().microsecondsSinceEpoch}_${p.basename(targetPath)}.tmp',
+    );
+    final temp = File(tempPath);
+    try {
+      await temp.writeAsString(content, flush: true);
+      if (await file.exists()) {
+        await file.delete();
+      }
+      await temp.rename(targetPath);
+    } catch (e) {
+      if (await temp.exists()) {
+        try {
+          await temp.delete();
+        } catch (_) {}
+      }
+      rethrow;
+    }
+  }
+
   /// AkashaItem을 볼트에서 제거(마크다운 파일 삭제)합니다.
   Future<bool> deleteAkashaItem(AkashaItem item) async {
-    var removed = false;
-    _inMemoryCache.removeWhere((key, cached) {
-      final match = item.workId.isNotEmpty && cached.workId == item.workId ||
-          cached.title == item.title && cached.category == item.category;
-      if (match) removed = true;
-      return match;
-    });
+    _inMemoryCache.remove(cacheKeyFor(item));
 
-    if (_vaultPath == null) return removed;
+    if (_vaultPath == null) return true;
 
     File? targetFile;
     if (item.filePath != null && item.filePath!.isNotEmpty) {
@@ -236,6 +289,7 @@ class AkashaFileService {
     _stopWatching();
     try {
       await targetFile.delete();
+      _notifyVaultUpdated();
       return true;
     } finally {
       _startWatching();
@@ -245,7 +299,7 @@ class AkashaFileService {
   /// 제목·카테고리 기반 삭제 (파일명 변경 시 saveItem 내부용)
   Future<void> deleteItem(String title, MediaCategory category) async {
     _inMemoryCache.removeWhere(
-      (key, item) => item.title == title && item.category == category,
+      (key, cached) => cached.title == title && cached.category == category,
     );
 
     if (_vaultPath == null) return;
@@ -258,6 +312,7 @@ class AkashaFileService {
       _stopWatching();
       try {
         await file.delete();
+        _notifyVaultUpdated();
       } finally {
         _startWatching();
       }
@@ -276,17 +331,16 @@ class AkashaFileService {
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
 
     await file.copy(destinationPath);
-    return p.join('posters', uniqueFilename); // relative path stored in DB/YAML
+    return p.join('posters', uniqueFilename);
   }
 
-  /// 파일명에 사용할 수 없는 특수 기호를 언더바로 치환합니다.
   String _makeSafeFilename(String title) {
-    return title.replaceAll(RegExp(r'[\\/:*?"<>|]'), '_');
+    return title.replaceAll(RegExp(r'[\\/:*?"<>|]'), '_').trim();
   }
 
-  /// 리소스를 해제합니다.
   void dispose() {
     _stopWatching();
     _vaultUpdateController?.close();
+    _vaultUpdateController = null;
   }
 }

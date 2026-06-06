@@ -31,6 +31,28 @@ class _DetailScreenState extends State<DetailScreen> {
     item = widget.item;
   }
 
+  Future<void> _persistItem(BuildContext context) async {
+    try {
+      await AkashaFileService().saveItem(item);
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AkashaFileService().vaultPath != null
+                ? '마크다운 아카이브에 저장되었습니다.'
+                : '변경 사항이 저장되었습니다. (볼트 연동 시 .md로 기록됩니다)',
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    } catch (e) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('저장 실패: $e')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
@@ -592,7 +614,7 @@ class _DetailScreenState extends State<DetailScreen> {
         item.isHallOfFame = result['hof'] as bool;
         item.posterPath = result['poster'] as String?;
       });
-      AkashaFileService().saveItem(item);
+      await _persistItem(context);
     }
   }
 
@@ -632,7 +654,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
     if (result != null) {
       setState(() => item.memorableQuotes.add(result));
-      AkashaFileService().saveItem(item);
+      await _persistItem(context);
     }
   }
 
@@ -724,7 +746,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
     if (result != null) {
       setState(() => item.review = result);
-      AkashaFileService().saveItem(item);
+      await _persistItem(context);
     }
   }
 }
