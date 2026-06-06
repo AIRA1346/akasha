@@ -28,6 +28,15 @@ class RegistryShardLoader {
 
   bool isShardLoaded(String shardId) => _loadedShardIds.contains(shardId);
 
+  Future<bool> isShardCached(String relativePath) async {
+    if (relativePath.isEmpty) return false;
+    final file = await _cacheFile(relativePath);
+    return file.exists();
+  }
+
+  int? entryCountForShard(String shardId) =>
+      _manifest?.shardById(shardId)?.entryCount;
+
   Set<String> resolveShardIdsForQuery(String query) =>
       shardIdsForQuery(_searchIndex, query);
 

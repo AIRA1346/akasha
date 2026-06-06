@@ -13,7 +13,9 @@ void main() async {
   
   // 샤딩 레지스트리 초기화 (번들 + 캐시 + 레거시 병합)
   await WorksRegistry.init();
-  
+  // master_index 즉시 노출용: 번들/캐시에서 전체 카탈로그 선로드
+  await WorksRegistry.prefetchMasterCatalog();
+
   runApp(const AkashaApp());
 }
 

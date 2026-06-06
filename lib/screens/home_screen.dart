@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<AkashaItem> _items = [];
   bool _isLoading = false;
   bool _isSyncing = false;
+  bool _isCatalogLoading = false;
   DateTime? _lastSyncTime;
 
   // ── 필터 상태 ──
@@ -150,6 +152,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// 현재 필터 범위에 맞는 lazy 샤드만 온디맨드 프리페치 (전체 bulk fetch 금지)
   Future<void> _prefetchRegistryForCurrentFilters() async {
+    if (_activeDashboardId == 'master_index') {
+      if (mounted) setState(() => _isCatalogLoading = true);
+      await WorksRegistry.prefetchMasterCatalog();
+      if (mounted) {
+        setState(() => _isCatalogLoading = false);
+      }
+      unawaited(
+        WorksRegistry.prefetchMasterCatalog(fetchRemote: true).then((_) {
+          if (mounted) setState(() {});
+        }),
+      );
+      return;
+    }
+
     if (_selectedDomain == null && _selectedCategories.isEmpty) {
       if (mounted) setState(() {});
       return;
@@ -449,10 +465,11 @@ class _HomeScreenState extends State<HomeScreen> {
         _selectedMyStatuses.addAll(active.myStatuses);
       }
 
+      await _prefetchRegistryForCurrentFilters();
+
       if (mounted) {
         setState(() {});
       }
-      await _prefetchRegistryForCurrentFilters();
     } catch (e) {
       debugPrint('Error loading dashboards: $e');
     }
@@ -481,7 +498,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  void _selectDashboard(String id) {
+  Future<void> _selectDashboard(String id) async {
     setState(() {
       _activeDashboardId = id;
       _saveActiveDashboardId(id);
@@ -497,7 +514,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _selectedMyStatuses.addAll(active.myStatuses);
       }
     });
-    _prefetchRegistryForCurrentFilters();
+    await _prefetchRegistryForCurrentFilters();
   }
 
   void _deleteDashboard(String id) {
@@ -1175,6 +1192,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       onToggleMyStatus: _toggleMyStatus,
                     ),
                     const Divider(height: 1),
+                    if (_isCatalogLoading)
+                      const LinearProgressIndicator(minHeight: 2),
 
           // ━━━ 스크롤 가능한 메인 콘텐츠 ━━━
           Expanded(
@@ -1186,7 +1205,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => _navigateToDetail(dailyRecall.item),
                   ),
                 Expanded(
-                  child: filtered.isEmpty
+                  child: _isCatalogLoading
+                      ? const Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(
+                                width: 28,
+                                height: 28,
+                                child: CircularProgressIndicator(strokeWidth: 2),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                '글로벌 작품 사전 불러오는 중…',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                        )
+                      : filtered.isEmpty
                       ? Center(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,

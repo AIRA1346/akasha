@@ -177,6 +177,29 @@ class WorksRegistry {
     }
   }
 
+  /// master_index용: 번들/캐시에서 전체 카탈로그 즉시 로드 (카테고리 병렬)
+  /// [fetchRemote] true면 로컬 로드 후 원격 샤드도 백그라운드 갱신합니다.
+  static Future<void> prefetchMasterCatalog({bool fetchRemote = false}) async {
+    await Future.wait(
+      MediaCategory.values.map(
+        (category) => _loader.ensureShardsForFilters(
+          domain: null,
+          category: category,
+        ),
+      ),
+    );
+
+    if (!fetchRemote) return;
+
+    for (final category in MediaCategory.values) {
+      await RegistrySyncService().syncShardsForFilters(
+        domain: null,
+        category: category,
+      );
+      await _loader.ensureShardsForFilters(domain: null, category: category);
+    }
+  }
+
   /// 필터 범위 샤드 온디맨드 프리페치 (원격 fetch → 캐시/번들 로드)
   /// domain·categories 모두 비어 있으면 no-op (전체 샤드 bulk fetch 방지)
   static Future<void> prefetchForFilters({
@@ -201,6 +224,7 @@ class WorksRegistry {
     AppDomain? domain,
     MediaCategory? category,
   }) async {
+    await _loader.ensureShardsForFilters(domain: domain, category: category);
     await RegistrySyncService().syncShardsForFilters(
       domain: domain,
       category: category,

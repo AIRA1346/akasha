@@ -36,10 +36,12 @@ class RegistryShardMeta {
 
 class RegistryManifest {
   final int version;
+  final String? generatedAt;
   final List<RegistryShardMeta> shards;
 
   const RegistryManifest({
     required this.version,
+    this.generatedAt,
     required this.shards,
   });
 
@@ -47,6 +49,7 @@ class RegistryManifest {
     final shardList = (json['shards'] as List?) ?? const [];
     return RegistryManifest(
       version: int.tryParse(json['version']?.toString() ?? '') ?? 1,
+      generatedAt: json['generatedAt']?.toString(),
       shards: shardList
           .whereType<Map>()
           .map((e) => RegistryShardMeta.fromJson(Map<String, dynamic>.from(e)))

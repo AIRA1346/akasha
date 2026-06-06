@@ -4,6 +4,8 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/enums.dart';
+import '../models/registry_models.dart';
+import 'registry_shard_loader.dart';
 import 'works_registry.dart';
 
 /// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
@@ -76,24 +78,43 @@ class RegistrySyncService {
     return DateTime.now().difference(lastSync).inHours >= 24;
   }
 
-  /// 샤딩 메타데이터 + 검색 인덱스 + eager 샤드 동기화
+  /// 샤딩 메타데이터 + 검색 인덱스 + eager 샤드 동기화 (증분)
   Future<bool> sync() async {
     await init();
     final loader = WorksRegistry.loader;
+    final previousManifest = loader.manifest;
     var success = false;
 
     final manifestContent = await _fetchText('${baseUrl}manifest.json');
-    if (manifestContent != null) {
-      success = await loader.cacheRemoteManifest(manifestContent);
+    if (manifestContent == null) {
+      return _syncLegacyFallback(loader);
     }
+
+    RegistryManifest? remoteManifest;
+    try {
+      remoteManifest = RegistryManifest.fromJson(
+        json.decode(manifestContent) as Map<String, dynamic>,
+      );
+    } catch (e) {
+      print('Error parsing remote manifest: $e');
+      return _syncLegacyFallback(loader);
+    }
+
+    if (_isManifestUpToDate(previousManifest, remoteManifest)) {
+      await _updateLastSyncTime();
+      return true;
+    }
+
+    success = await loader.cacheRemoteManifest(manifestContent);
 
     final indexContent = await _fetchText('${baseUrl}search_index.json');
     if (indexContent != null) {
       success = (await loader.cacheRemoteSearchIndex(indexContent)) || success;
     }
 
-    final eagerShards = loader.manifest?.eagerShards() ?? const [];
+    final eagerShards = remoteManifest.eagerShards();
     for (final shard in eagerShards) {
+      if (!await _shardNeedsSync(shard, previousManifest, loader)) continue;
       final shardContent = await _fetchText('${baseUrl}${shard.path}');
       if (shardContent != null) {
         final ok = await loader.cacheRemoteShard(shard.path, shardContent);
@@ -123,10 +144,64 @@ class RegistrySyncService {
     }
 
     if (success) {
-      await _prefs?.setString(
-        _prefLastSyncKey,
-        DateTime.now().toIso8601String(),
-      );
+      await _updateLastSyncTime();
+    }
+    return success;
+  }
+
+  Future<void> _updateLastSyncTime() async {
+    await _prefs?.setString(
+      _prefLastSyncKey,
+      DateTime.now().toIso8601String(),
+    );
+  }
+
+  bool _isManifestUpToDate(
+    RegistryManifest? local,
+    RegistryManifest remote,
+  ) {
+    if (local == null) return false;
+    final localGen = local.generatedAt;
+    final remoteGen = remote.generatedAt;
+    if (localGen == null || remoteGen == null) return false;
+    return localGen == remoteGen;
+  }
+
+  Future<bool> _shardNeedsSync(
+    RegistryShardMeta remoteShard,
+    RegistryManifest? previousManifest,
+    RegistryShardLoader loader,
+  ) async {
+    final previousShard = previousManifest?.shardById(remoteShard.id);
+    if (previousShard == null) return true;
+    if (previousShard.entryCount != remoteShard.entryCount) return true;
+    if (!loader.isShardLoaded(remoteShard.id)) {
+      return !(await loader.isShardCached(remoteShard.path));
+    }
+    return false;
+  }
+
+  Future<bool> _syncLegacyFallback(RegistryShardLoader loader) async {
+    var success = false;
+    final legacyUrl = baseUrl.endsWith('/')
+        ? '${baseUrl}works_registry.json'
+        : '$baseUrl/works_registry.json';
+    final legacyContent = await _fetchText(legacyUrl);
+    if (legacyContent != null) {
+      try {
+        final decoded = json.decode(legacyContent);
+        if (decoded is Map || decoded is List) {
+          final file = await _legacyCacheFile;
+          await file.writeAsString(legacyContent);
+          await loader.mergeLegacyMonolithicJson(legacyContent);
+          success = true;
+        }
+      } catch (e) {
+        print('Error syncing legacy registry: $e');
+      }
+    }
+    if (success) {
+      await _updateLastSyncTime();
     }
     return success;
   }
