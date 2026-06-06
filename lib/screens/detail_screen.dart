@@ -1,15 +1,12 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:path/path.dart' as p;
 import 'package:file_picker/file_picker.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../services/file_service.dart';
-import '../services/image_cache_service.dart';
 import '../utils/helpers.dart';
 import '../widgets/star_rating.dart';
-import '../widgets/safe_local_image.dart';
+import '../widgets/poster_image.dart';
 import '../widgets/web_image_search_dialog.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -27,32 +24,11 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late AkashaItem item;
-  File? _localCacheFile;
 
   @override
   void initState() {
     super.initState();
     item = widget.item;
-    _checkLocalCache();
-  }
-
-  Future<void> _checkLocalCache() async {
-    if (item.posterPath != null && item.posterPath!.startsWith('http')) {
-      final file = await ImageCacheService().getLocalPosterFile(item.workId, item.posterPath);
-      if (file != null && await file.exists()) {
-        if (mounted) {
-          setState(() {
-            _localCacheFile = file;
-          });
-        }
-        return;
-      }
-    }
-    if (mounted) {
-      setState(() {
-        _localCacheFile = null;
-      });
-    }
   }
 
   @override
@@ -246,57 +222,12 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: _localCacheFile != null
-                  ? SafeLocalImage(
-                      file: _localCacheFile!,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, error, stackTrace) {
-                        print('[DetailScreen] IMAGE.FILE ERROR (cached) for ${item.title}: $error\n$stackTrace');
-                        return _posterPlaceholder(gradColors);
-                      },
-                    )
-                  : (item.posterPath != null
-                      ? (item.posterPath!.startsWith('http')
-                          ? Image.network(
-                              item.posterPath!,
-                              fit: BoxFit.cover,
-                              headers: const {
-                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-                              },
-                              errorBuilder: (_, error, stackTrace) {
-                                print('[DetailScreen] IMAGE.NETWORK ERROR for ${item.title}: $error\n$stackTrace');
-                                return _posterPlaceholder(gradColors);
-                              },
-                            )
-                          : (() {
-                              final absFile = File(item.posterPath!);
-                              if (absFile.existsSync()) {
-                                return SafeLocalImage(
-                                  file: absFile,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (_, error, stackTrace) {
-                                    print('[DetailScreen] IMAGE.FILE ERROR (absFile) for ${item.title}: $error\n$stackTrace');
-                                    return _posterPlaceholder(gradColors);
-                                  },
-                                );
-                              }
-                              final vaultPath = AkashaFileService().vaultPath;
-                              if (vaultPath != null) {
-                                final file = File(p.join(vaultPath, item.posterPath!));
-                                if (file.existsSync()) {
-                                  return SafeLocalImage(
-                                    file: file,
-                                    fit: BoxFit.cover,
-                                    errorBuilder: (_, error, stackTrace) {
-                                      print('[DetailScreen] IMAGE.FILE ERROR (vault) for ${item.title}: $error\n$stackTrace');
-                                      return _posterPlaceholder(gradColors);
-                                    },
-                                  );
-                                }
-                              }
-                              return _posterPlaceholder(gradColors);
-                            })())
-                      : _posterPlaceholder(gradColors)),
+              child: PosterImage(
+                item: item,
+                fit: BoxFit.cover,
+                width: 140,
+                height: 190,
+              ),
             ),
           ),
           const SizedBox(width: 20),
@@ -420,33 +351,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ],
               ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _posterPlaceholder(List<Color> gradColors) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(item.category.icon,
-              size: 36, color: Colors.white.withValues(alpha: 0.6)),
-          const SizedBox(height: 8),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              item.title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.white.withValues(alpha: 0.85),
-              ),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
@@ -684,12 +588,6 @@ class _DetailScreenState extends State<DetailScreen> {
         item.posterPath = result['poster'] as String?;
       });
       AkashaFileService().saveItem(item);
-
-      // 웹 URL 이미지 등록 시 즉각 백그라운드 캐시 다운로드 예약 가동
-      if (item.posterPath != null && item.posterPath!.startsWith('http')) {
-        await ImageCacheService().cachePosterImage(item.workId, item.posterPath);
-      }
-      _checkLocalCache();
     }
   }
 

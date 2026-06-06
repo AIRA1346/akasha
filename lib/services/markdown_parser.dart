@@ -5,8 +5,34 @@ import '../utils/helpers.dart';
 import 'works_registry.dart';
 
 class MarkdownParser {
+  /// YAML `poster:` 필드에 저장할지 판별합니다.
+  ///
+  /// - `posters/` 상대 경로 (사용자 업로드): 저장
+  /// - Registry 기본 CDN URL: 저장 금지 (런타임 UI Fusion 전용)
+  /// - 사용자가 스마트 이미지 교정 등으로 지정한 커스텀 URL: 저장
+  static bool shouldPersistPosterToYaml(AkashaItem item) {
+    final path = item.posterPath;
+    if (path == null || path.isEmpty) return false;
+
+    final normalized = path.replaceAll('\\', '/');
+    if (normalized.startsWith('posters/')) return true;
+
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      if (item.workId.isNotEmpty) {
+        final registry = WorksRegistry.getWorkById(item.workId);
+        if (registry?.posterPath != null && registry!.posterPath == path) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    return false;
+  }
+
   /// AkashaItem을 마크다운 파일 내용(YAML Front-matter + Markdown Body)으로 직렬화합니다.
-  /// 2원화 설계에 따라 공통 정보(작가, 연도, 설명, 포스터 등)는 걷어내고 사용자 기록만 저장합니다.
+  /// Registry 기본 CDN 포스터는 YAML에 저장하지 않으며, `posters/` 상대경로 또는
+  /// 사용자가 명시적으로 지정한 커스텀 URL만 `poster:` 필드에 기록합니다.
   static String serialize(AkashaItem item) {
     final buffer = StringBuffer();
     buffer.writeln('---');
@@ -28,7 +54,7 @@ class MarkdownParser {
     if (item.releaseYear != null) {
       buffer.writeln('release_year: ${item.releaseYear}');
     }
-    if (item.posterPath != null && item.posterPath!.isNotEmpty) {
+    if (shouldPersistPosterToYaml(item)) {
       buffer.writeln('poster: "${item.posterPath!.replaceAll('"', '\\"')}"');
     }
     

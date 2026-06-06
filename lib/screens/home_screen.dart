@@ -11,7 +11,6 @@ import '../services/file_service.dart';
 import '../services/markdown_parser.dart';
 import '../services/works_registry.dart';
 import '../services/registry_sync_service.dart';
-import '../services/image_cache_service.dart';
 import '../utils/helpers.dart';
 import '../widgets/web_image_search_dialog.dart';
 import '../widgets/filter_section.dart';
@@ -1837,12 +1836,6 @@ class _HomeScreenState extends State<HomeScreen> {
       final service = AkashaFileService();
       if (service.vaultPath != null) {
         await service.saveItem(result);
-        
-        // 원격 이미지 등록 시 즉각 백그라운드 캐시 다운로드 예약
-        if (result.posterPath != null && result.posterPath!.startsWith('http')) {
-          ImageCacheService().cachePosterImage(result.workId, result.posterPath);
-        }
-        
         await _loadItems();
       } else {
         setState(() => _items.add(result));
