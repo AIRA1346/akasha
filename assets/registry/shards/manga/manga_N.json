@@ -7,7 +7,44 @@
     "creator": "키시모토 마사시 (Masashi Kishimoto)",
     "releaseYear": 1999,
     "description": "닌자 소년 나루토가 호카게를 꿈꾸는 성장 이야기.",
-    "tags": ["액션", "닌자", "우정", "성장"],
+    "tags": [
+      "액션",
+      "닌자",
+      "우정",
+      "성장"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx30011-9yUF1dXWgDOx.jpg"
+  },
+  "sub_manga_nana_2000": {
+    "workId": "sub_manga_nana_2000",
+    "title": "NANA",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "야자와 아이",
+    "releaseYear": 2000,
+    "description": "같은 이름을 가진 두 여성의 우정과 사랑, 꿈을 그린 청춘 드라마.",
+    "tags": [
+      "로맨스",
+      "음악",
+      "청춘",
+      "드라마"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30014.jpg"
+  },
+  "sub_manga_nisekoi_2011": {
+    "workId": "sub_manga_nisekoi_2011",
+    "title": "니세코이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "칸노 코스키",
+    "releaseYear": 2011,
+    "description": "라이벌 조직 자녀들이 연인 연기를 하며 벌어지는 로맨스 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "하렘"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx16664.jpg"
   }
 }

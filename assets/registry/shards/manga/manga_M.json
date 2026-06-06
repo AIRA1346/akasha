@@ -46,5 +46,69 @@
       "액션"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx70345.jpg"
+  },
+  "sub_manga_monster_1994": {
+    "workId": "sub_manga_monster_1994",
+    "title": "몬스터",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우라사와 나오키",
+    "releaseYear": 1994,
+    "description": "의사가 구한 소년이 연쇄살인마로 성장하며 벌어지는 심리 스릴러.",
+    "tags": [
+      "스릴러",
+      "심리",
+      "범죄",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30019.jpg"
+  },
+  "sub_manga_march-comes-in-like-a-lion_2007": {
+    "workId": "sub_manga_march-comes-in-like-a-lion_2007",
+    "title": "3월의 라이온",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우메자와 하토",
+    "releaseYear": 2007,
+    "description": "고독한 장기 기사가 가족과 만나 마음을 치유하는 성장 드라마.",
+    "tags": [
+      "장기",
+      "성장",
+      "힐링",
+      "드라마"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx21366.jpg"
+  },
+  "sub_manga_mushoku-tensei_2014": {
+    "workId": "sub_manga_mushoku-tensei_2014",
+    "title": "무직전생",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "리덕션 / 후지카와 유카",
+    "releaseYear": 2014,
+    "description": "전생한 소년이 마법 세계에서 새 삶을 시작하는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108465.jpg"
+  },
+  "sub_manga_mushishi_1999": {
+    "workId": "sub_manga_mushishi_1999",
+    "title": "충사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "요시나가 루리",
+    "releaseYear": 1999,
+    "description": "맹(蟲)을 다루는 충사의 오묘한 여행담.",
+    "tags": [
+      "판타지",
+      "오컬트",
+      "단편",
+      "힐링"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30091.jpg"
   }
 }

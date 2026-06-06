@@ -78,5 +78,37 @@
       "액션"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101517.jpg"
+  },
+  "sub_manga_sakamoto-days_2020": {
+    "workId": "sub_manga_sakamoto-days_2020",
+    "title": "사카모토 데이즈",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스즈키 유우",
+    "releaseYear": 2020,
+    "description": "전설의 킬러가 평범한 가족 생활을 지키기 위해 싸우는 액션 코미디.",
+    "tags": [
+      "액션",
+      "코미디",
+      "킬러",
+      "가족"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx128893.jpg"
+  },
+  "sub_manga_skip-and-loafer_2018": {
+    "workId": "sub_manga_skip-and-loafer_2018",
+    "title": "스킵과 로퍼",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카무라 마시무",
+    "releaseYear": 2018,
+    "description": "시골 소녀가 도쿄 명문고에 입학하며 겪는 청춘 성장기.",
+    "tags": [
+      "청춘",
+      "학원",
+      "성장",
+      "코미디"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx124195.jpg"
   }
 }

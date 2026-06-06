@@ -14,5 +14,21 @@
       "일본"
     ],
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg"
+  },
+  "sub_book_no-game-no-life_2011": {
+    "workId": "sub_book_no-game-no-life_2011",
+    "title": "노 게임 노 라이프",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카무라",
+    "releaseYear": 2011,
+    "description": "게임만이 세계의 법인 판타지 세계에서 이기는 남매의 이야기.",
+    "tags": [
+      "라이트노벨",
+      "판타지",
+      "게임",
+      "서브컬처"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx19815.jpg"
   }
 }

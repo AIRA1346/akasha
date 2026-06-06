@@ -7,7 +7,60 @@
     "creator": "ConcernedApe",
     "releaseYear": 2016,
     "description": "할아버지의 농장을 물려받아 꾸려가는 힐링 농경 RPG.",
-    "tags": ["농사", "힐링", "인디", "샌드박스"],
+    "tags": [
+      "농사",
+      "힐링",
+      "인디",
+      "샌드박스"
+    ],
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg"
+  },
+  "sub_game_stardew-valley-sub_2016": {
+    "workId": "sub_game_stardew-valley-sub_2016",
+    "title": "스타듀 밸리",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "ConcernedApe",
+    "releaseYear": 2016,
+    "description": "농장을 가꾸며 마을과 교감하는 힐링 시뮬레이션.",
+    "tags": [
+      "시뮬",
+      "농장",
+      "힐링",
+      "인디"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg"
+  },
+  "sub_game_splatoon-3_2022": {
+    "workId": "sub_game_splatoon-3_2022",
+    "title": "스플래툰 3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Nintendo",
+    "releaseYear": 2022,
+    "description": "먹물 슈터로 팀 대전을 즐기는 액션 게임.",
+    "tags": [
+      "슈터",
+      "액션",
+      "팀전",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5k1z.jpg"
+  },
+  "gen_game_skyrim_2011": {
+    "workId": "gen_game_skyrim_2011",
+    "title": "더 엘더스크롤 V: 스카이림",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "releaseYear": 2011,
+    "description": "드래곤과 용맹한 자의 전설을 쓰는 오픈월드 RPG.",
+    "tags": [
+      "오픈월드",
+      "RPG",
+      "판타지",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg"
   }
 }

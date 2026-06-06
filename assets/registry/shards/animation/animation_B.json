@@ -1,0 +1,50 @@
+{
+  "sub_animation_bocchi-the-rock_2022": {
+    "workId": "sub_animation_bocchi-the-rock_2022",
+    "title": "봇치 더 록!",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "CloverWorks",
+    "releaseYear": 2022,
+    "description": "내향적 소녀의 밴드 성장기를 그린 음악 코미디.",
+    "tags": [
+      "음악",
+      "코미디",
+      "밴드",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146065.jpg"
+  },
+  "sub_animation_bungo-stray-dogs_2016": {
+    "workId": "sub_animation_bungo-stray-dogs_2016",
+    "title": "문호 스트레이 독스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2016,
+    "description": "문호 능력을 가진 탐정들의 초능력 액션.",
+    "tags": [
+      "액션",
+      "초능력",
+      "문학",
+      "미스터리"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21311.jpg"
+  },
+  "sub_animation_black-lagoon_2006": {
+    "workId": "sub_animation_black-lagoon_2006",
+    "title": "블랙 라군",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 2006,
+    "description": "동남아 해적과 용병들의 거친 액션 스릴러.",
+    "tags": [
+      "액션",
+      "총기",
+      "스릴러",
+      "성인"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx889.jpg"
+  }
+}

@@ -7,7 +7,60 @@
     "creator": "우카미 (Ukami)",
     "releaseYear": 2013,
     "description": "천사학교 수석 졸업생 가브릴의 타락 일상 코미디.",
-    "tags": ["코미디", "일상", "천사", "악마"],
+    "tags": [
+      "코미디",
+      "일상",
+      "천사",
+      "악마"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21878-rfzDjP2gjxGR.jpg"
+  },
+  "sub_manga_gintama_2003": {
+    "workId": "sub_manga_gintama_2003",
+    "title": "은혼",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "소라타히로",
+    "releaseYear": 2003,
+    "description": "에도 말기 외계인과 사무라이들의 유쾌한 코믹 액션.",
+    "tags": [
+      "코미디",
+      "사무라이",
+      "SF",
+      "패러디"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30044.jpg"
+  },
+  "sub_manga_golden-kamuy_2014": {
+    "workId": "sub_manga_golden-kamuy_2014",
+    "title": "골든 카무이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나츠미 소이치",
+    "releaseYear": 2014,
+    "description": "홋카이도에서 금 보물을 찾는 아이누와 전직 군인의 모험.",
+    "tags": [
+      "역사",
+      "모험",
+      "서바이벌",
+      "코미디"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86559.jpg"
+  },
+  "sub_manga_goodnight-punpun_2007": {
+    "workId": "sub_manga_goodnight-punpun_2007",
+    "title": "잘 자 뚱뚱이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아사노 이네",
+    "releaseYear": 2007,
+    "description": "평범해 보이는 소년의 성장과 붕괴를 그린 청춘 심리 드라마.",
+    "tags": [
+      "심리",
+      "청춘",
+      "드라마",
+      "다크"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx34646.jpg"
   }
 }

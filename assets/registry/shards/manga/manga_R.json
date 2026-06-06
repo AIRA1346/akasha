@@ -14,5 +14,37 @@
       "드라마"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85934.jpg"
+  },
+  "sub_manga_rurouni-kenshin_1994": {
+    "workId": "sub_manga_rurouni-kenshin_1994",
+    "title": "루론검심",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와츠키 노부히로",
+    "releaseYear": 1994,
+    "description": "메이지 시대를 배경으로 한 비검살 검객의 여정.",
+    "tags": [
+      "사무라이",
+      "역사",
+      "액션",
+      "로맨스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30018.jpg"
+  },
+  "sub_manga_real_1999": {
+    "workId": "sub_manga_real_1999",
+    "title": "REAL",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 다케히코",
+    "releaseYear": 1999,
+    "description": "휠체어 농구를 통해 삶을 재건하는 청소년들의 성장 스포츠 드라마.",
+    "tags": [
+      "스포츠",
+      "농구",
+      "성장",
+      "드라마"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30895.jpg"
   }
 }

@@ -7,7 +7,76 @@
     "creator": "미야자키 하야오 (Hayao Miyazaki)",
     "releaseYear": 1988,
     "description": "시골로 이사 온 자매가 숲의 수호신 토토로를 만나는 지브리 판타지.",
-    "tags": ["지브리", "판타지", "가족", "힐링"],
+    "tags": [
+      "지브리",
+      "판타지",
+      "가족",
+      "힐링"
+    ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx523-fErBvxOHP7IX.jpg"
+  },
+  "sub_animation_mob-psycho-100_2016": {
+    "workId": "sub_animation_mob-psycho-100_2016",
+    "title": "모브 사이코 100",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2016,
+    "description": "강력한 초능력 소년의 성장과 청소부 일상을 그린 액션.",
+    "tags": [
+      "초능력",
+      "액션",
+      "코미디",
+      "성장"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21507.jpg"
+  },
+  "sub_animation_made-in-abyss_2017": {
+    "workId": "sub_animation_made-in-abyss_2017",
+    "title": "메이드 인 어비스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kinema Citrus",
+    "releaseYear": 2017,
+    "description": "거대한 구덩이를 탐험하는 소녀와 로봇의 다크 판타지 모험.",
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97986.jpg"
+  },
+  "sub_animation_mushoku-tensei_2021": {
+    "workId": "sub_animation_mushoku-tensei_2021",
+    "title": "무직전생",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Bind",
+    "releaseYear": 2021,
+    "description": "전생한 소년이 마법 세계에서 새 삶을 사는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114065.jpg"
+  },
+  "sub_animation_monogatari_2009": {
+    "workId": "sub_animation_monogatari_2009",
+    "title": "바케모노가타리",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SHAFT",
+    "releaseYear": 2009,
+    "description": "괴물과 인간의 이야기를 풀어가는 대화 중심 초자연 시리즈.",
+    "tags": [
+      "초자연",
+      "로맨스",
+      "대화",
+      "명작"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081.jpg"
   }
 }

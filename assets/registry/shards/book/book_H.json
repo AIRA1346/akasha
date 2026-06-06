@@ -30,5 +30,21 @@
       "반란"
     ],
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg"
+  },
+  "gen_book_hitchhiker-guide_1979": {
+    "workId": "gen_book_hitchhiker-guide_1979",
+    "title": "은하수를 여행하는 히치하이커를 위한 안내서",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "더글러스 애덤스",
+    "releaseYear": 1979,
+    "description": "우주를 떠도는 코믹 SF 고전.",
+    "tags": [
+      "SF",
+      "코미디",
+      "고전",
+      "우주"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg"
   }
 }

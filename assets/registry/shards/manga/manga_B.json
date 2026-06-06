@@ -46,5 +46,69 @@
       "우정"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30016.jpg"
+  },
+  "sub_manga_black-clover_2015": {
+    "workId": "sub_manga_black-clover_2015",
+    "title": "블랙 클로버",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "releaseYear": 2015,
+    "description": "마법이 없는 소년이 마법제 최강을 꿈꾸는 판타지 배틀.",
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86337.jpg"
+  },
+  "sub_manga_bocchi-the-rock_2017": {
+    "workId": "sub_manga_bocchi-the-rock_2017",
+    "title": "봇치 더 록!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하마다 쿠키",
+    "releaseYear": 2017,
+    "description": "내향적인 소녀가 밴드 활동을 통해 성장하는 음악 코미디.",
+    "tags": [
+      "음악",
+      "코미디",
+      "성장",
+      "밴드"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx109099.jpg"
+  },
+  "sub_manga_blue-period_2017": {
+    "workId": "sub_manga_blue-period_2017",
+    "title": "블루 피리어드",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "야마다코",
+    "releaseYear": 2017,
+    "description": "미술에 빠진 소년이 도쿄 미대 입시를 향해 달리는 성장 이야기.",
+    "tags": [
+      "미술",
+      "성장",
+      "청춘",
+      "드라마"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx124080.jpg"
+  },
+  "sub_manga_beastars_2016": {
+    "workId": "sub_manga_beastars_2016",
+    "title": "BEASTARS",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이토 파루",
+    "releaseYear": 2016,
+    "description": "육식·초식 동물이 공존하는 세계의 학원 드라마.",
+    "tags": [
+      "학원",
+      "드라마",
+      "동물",
+      "로맨스"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx107660.jpg"
   }
 }

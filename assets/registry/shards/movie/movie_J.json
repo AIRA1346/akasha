@@ -1,0 +1,18 @@
+{
+  "sub_movie_jujutsu-kaisen-0_2021": {
+    "workId": "sub_movie_jujutsu-kaisen-0_2021",
+    "title": "주술회전 0",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2021,
+    "description": "오쿠코츠 유타의 주술 고등학교 시절을 그린 극장판.",
+    "tags": [
+      "액션",
+      "초자연",
+      "극장판",
+      "서브컬처"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/3Arj5jAkTrR0lBr8qsR9oMtOuUY.jpg"
+  }
+}
