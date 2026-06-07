@@ -11,6 +11,7 @@ import 'tmdb_tv_legacy_map.dart';
 
 const _posterCacheFile = 'akasha-db/tmdb_poster_cache.json';
 const _batch5SeedFile = 'tool/seed_expansion_batch5.dart';
+const _batch6SeedFile = 'tool/seed_expansion_batch6.dart';
 
 void main(List<String> args) async {
   final apply = args.contains('--apply');
@@ -115,12 +116,13 @@ void main(List<String> args) async {
 
 Map<String, int> _buildTmdbMap(Directory root) {
   final map = <String, int>{};
-  map.addAll(_parseBatch5TmdbIds(File('${root.path}/$_batch5SeedFile')));
+  map.addAll(_parseBatchTmdbIds(File('${root.path}/$_batch5SeedFile')));
+  map.addAll(_parseBatchTmdbIds(File('${root.path}/$_batch6SeedFile')));
   map.addAll(tmdbTvOverrides);
   return map;
 }
 
-Map<String, int> _parseBatch5TmdbIds(File seedFile) {
+Map<String, int> _parseBatchTmdbIds(File seedFile) {
   if (!seedFile.existsSync()) return {};
   final src = seedFile.readAsStringSync();
   final map = <String, int>{};

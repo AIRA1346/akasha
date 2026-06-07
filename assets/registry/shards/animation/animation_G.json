@@ -16,5 +16,83 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_golden-kamuy_2018": {
+    "workId": "sub_animation_golden-kamuy_2018",
+    "title": "골든 카무이",
+    "titles": {
+      "ko": "골든 카무이",
+      "en": "Golden Kamuy",
+      "ja": "ゴールデンカムイ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야기 노리코",
+    "releaseYear": 2018,
+    "description": "전쟁에서 돌아온 사찌와 아이누 소년 아시리파가 황금 보물을 찾아 홋카이도를 가로지르는 모험.",
+    "tags": [
+      "모험",
+      "역사",
+      "액션",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2021,
+          "episodes": 12
+        },
+        {
+          "label": "4기",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "4기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg"
+  },
+  "sub_animation_gurren-lagann_2007": {
+    "workId": "sub_animation_gurren-lagann_2007",
+    "title": "천원돌파 그렌라간",
+    "titles": {
+      "ko": "천원돌파 그렌라간",
+      "en": "Gurren Lagann",
+      "ja": "天元突破グレンラガン"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "가이낙스",
+    "releaseYear": 2007,
+    "description": "지하 마을에서 시작한 시몬과 카미나가 거대 로봇으로 하늘을 향해 돌파하는 SF 액션.",
+    "tags": [
+      "SF",
+      "로봇",
+      "액션",
+      "열혈"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2007,
+          "episodes": 27
+        }
+      ],
+      "latestSeason": "1기"
+    }
   }
 }

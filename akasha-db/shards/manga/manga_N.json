@@ -103,5 +103,52 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_noragami_2010": {
+    "workId": "sub_manga_noragami_2010",
+    "title": "노라가미",
+    "titles": {
+      "ko": "노라가미",
+      "en": "Noragami",
+      "ja": "ノラガミ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아다치로",
+    "releaseYear": 2010,
+    "description": "신이 되고 싶은 빈신 야토와 히요리가 요괴와 신들의 세계를 오가는 액션.",
+    "tags": [
+      "액션",
+      "신화",
+      "코미디",
+      "초자연"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/oOReMl2ELJky9IFJrIFQXEINXRJ.jpg"
+  },
+  "sub_manga_nodame-cantabile_2001": {
+    "workId": "sub_manga_nodame-cantabile_2001",
+    "title": "노다메 칸타빌레",
+    "titles": {
+      "ko": "노다메 칸타빌레",
+      "en": "Nodame Cantabile",
+      "ja": "のだめカンタービレ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "니시노 에무",
+    "releaseYear": 2001,
+    "description": "피아니스트 치아키와 천재지만 산만한 노다메가 음악과 사랑을 키워가는 로맨스 코미디.",
+    "tags": [
+      "음악",
+      "로맨스",
+      "코미디",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   }
 }

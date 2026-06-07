@@ -16,5 +16,29 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_usagi-drop_2005": {
+    "workId": "sub_manga_usagi-drop_2005",
+    "title": "토끼 드롭스",
+    "titles": {
+      "ko": "토끼 드롭스",
+      "en": "Bunny Drop",
+      "ja": "うさぎドロップ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우노 요미",
+    "releaseYear": 2005,
+    "description": "다이키치가 혼외손녀 리온을 키우며 가족의 의미를 배우는 힐링 드라마.",
+    "tags": [
+      "힐링",
+      "가족",
+      "일상",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/w9aOvcN09KRNDmsuHEYS00Td285.jpg"
   }
 }

@@ -79,5 +79,29 @@
     "externalIds": {
       "tmdb": "96316"
     }
+  },
+  "sub_manga_ranma-half_1987": {
+    "workId": "sub_manga_ranma-half_1987",
+    "title": "란마 1/2",
+    "titles": {
+      "ko": "란마 1/2",
+      "en": "Ranma ½",
+      "ja": "らんま1/2"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 루미코",
+    "releaseYear": 1987,
+    "description": "물에 닿으면 성별이 바뀌는 란마를 둘러싼 무술 도장과 연애가 뒤엉킨 코미디.",
+    "tags": [
+      "코미디",
+      "무술",
+      "로맨스",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg"
   }
 }

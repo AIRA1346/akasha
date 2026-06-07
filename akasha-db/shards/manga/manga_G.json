@@ -113,5 +113,53 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_gto_1997": {
+    "workId": "sub_manga_gto_1997",
+    "title": "GTO",
+    "titles": {
+      "ko": "GTO",
+      "en": "Great Teacher Onizuka",
+      "ja": "GTO"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지이 카즈히로",
+    "releaseYear": 1997,
+    "description": "전 양아치 오니즈카가 교사가 되어 문제 학급을 때로는 거칠게, 때로는 따뜻하게 이끄는 이야기.",
+    "tags": [
+      "학원",
+      "코미디",
+      "성장",
+      "교육"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg"
+  },
+  "sub_manga_goblin-slayer_2016": {
+    "workId": "sub_manga_goblin-slayer_2016",
+    "title": "고블린 슬레이어",
+    "titles": {
+      "ko": "고블린 슬레이어",
+      "en": "Goblin Slayer",
+      "ja": "ゴブリンスレイヤー"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가유 카우스",
+    "releaseYear": 2016,
+    "description": "고블린만을 죽이는 전사와 파티가 던전에서 생존과 복수를 이어가는 다크 판타지.",
+    "tags": [
+      "판타지",
+      "다크",
+      "액션",
+      "던전"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg"
   }
 }

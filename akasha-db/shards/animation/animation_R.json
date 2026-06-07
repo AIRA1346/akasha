@@ -21,5 +21,42 @@
     "externalIds": {
       "tmdb": "65942"
     }
+  },
+  "sub_animation_ranking-of-kings_2021": {
+    "workId": "sub_animation_ranking-of-kings_2021",
+    "title": "왕의 랭킹",
+    "titles": {
+      "ko": "왕의 랭킹",
+      "en": "Ranking of Kings",
+      "ja": "王様ランキング"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "토키타 소스케",
+    "releaseYear": 2021,
+    "description": "작고 약해 보이는 보지 왕자 보지가 동료와 함께 성장하며 왕이 되어가는 판타지.",
+    "tags": [
+      "판타지",
+      "성장",
+      "모험",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 23
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg"
   }
 }

@@ -39,5 +39,72 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_naruto_2002": {
+    "workId": "sub_animation_naruto_2002",
+    "title": "나루토",
+    "titles": {
+      "ko": "나루토",
+      "en": "Naruto",
+      "ja": "NARUTO"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "키시모토 마사시",
+    "releaseYear": 2002,
+    "description": "닌자 호카게를 꿈꾸는 나루토가 동료와 함께 수행과 전투를 겪으며 성장하는 이야기.",
+    "tags": [
+      "닌자",
+      "액션",
+      "성장",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1부",
+          "year": 2002,
+          "episodes": 220
+        }
+      ],
+      "latestSeason": "1부",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
+    "externalIds": {
+      "tmdb": "46260"
+    }
+  },
+  "sub_animation_no-game-no-life_2014": {
+    "workId": "sub_animation_no-game-no-life_2014",
+    "title": "노 게임 노 라이프",
+    "titles": {
+      "ko": "노 게임 노 라이프",
+      "en": "No Game No Life",
+      "ja": "ノーゲーム・ノーライフ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "카무라 유우",
+    "releaseYear": 2014,
+    "description": "게임만이 특기인 남매가 이세계 디스보드에서 모든 분쟁을 게임으로 해결하는 판타지.",
+    "tags": [
+      "판타지",
+      "게임",
+      "이세계",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "1기"
+    }
   }
 }

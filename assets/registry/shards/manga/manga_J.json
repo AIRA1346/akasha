@@ -21,5 +21,29 @@
       "posterSource": "tmdb",
       "posterVerified": true
     }
+  },
+  "sub_manga_jojo-bizarre-adventure_1987": {
+    "workId": "sub_manga_jojo-bizarre-adventure_1987",
+    "title": "죠죠의 기묘한 모험",
+    "titles": {
+      "ko": "죠죠의 기묘한 모험",
+      "en": "JoJo's Bizarre Adventure",
+      "ja": "ジョジョの奇妙な冒険"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라키 히로히코",
+    "releaseYear": 1987,
+    "description": "죠스타 가문과 디오의 대립이 세대를 넘어 이어지는 스탠드 배틀 액션 만화.",
+    "tags": [
+      "액션",
+      "초능력",
+      "모험",
+      "다크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg"
   }
 }

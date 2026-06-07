@@ -136,5 +136,53 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_dragon-ball_1984": {
+    "workId": "sub_manga_dragon-ball_1984",
+    "title": "드래곤볼",
+    "titles": {
+      "ko": "드래곤볼",
+      "en": "Dragon Ball",
+      "ja": "ドラゴンボール"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토리야마 아키라",
+    "releaseYear": 1984,
+    "description": "손오공이 드래곤볼을 모으며 성장하고 강적과 맞서는 액션 모험 만화.",
+    "tags": [
+      "액션",
+      "모험",
+      "무술",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg"
+  },
+  "sub_manga_doraemon_1969": {
+    "workId": "sub_manga_doraemon_1969",
+    "title": "도라에몽",
+    "titles": {
+      "ko": "도라에몽",
+      "en": "Doraemon",
+      "ja": "ドラえもん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지코 F. 후지오",
+    "releaseYear": 1969,
+    "description": "미래에서 온 고양이 로봇 도라에몽이 노진구를 도우며 겪는 일상과 모험.",
+    "tags": [
+      "코미디",
+      "SF",
+      "가족",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg"
   }
 }

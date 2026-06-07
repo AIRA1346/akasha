@@ -34,5 +34,36 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_parasyte_2014": {
+    "workId": "sub_animation_parasyte_2014",
+    "title": "기생수",
+    "titles": {
+      "ko": "기생수",
+      "en": "Parasyte: The Maxim",
+      "ja": "寄生獣 セイの格率"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
+    "releaseYear": 2014,
+    "description": "손에 기생한 미치가 신이치와 공존하며 기생생물과 맞서는 SF 호러 액션.",
+    "tags": [
+      "SF",
+      "호러",
+      "액션",
+      "공존"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "1기"
+    }
   }
 }

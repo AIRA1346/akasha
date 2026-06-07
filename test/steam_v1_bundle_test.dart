@@ -18,8 +18,8 @@ void main() {
   });
 
   group('Steam v1 bundle smoke (dogfood pre-check)', () {
-    test('bundled catalog exposes 370 works after prefetch', () {
-      expect(WorksRegistry.allWorks.length, 370);
+    test('bundled catalog exposes 410 works after prefetch', () {
+      expect(WorksRegistry.allWorks.length, 410);
     });
 
     test('webtoon migration resolves legacy manga work_id', () {

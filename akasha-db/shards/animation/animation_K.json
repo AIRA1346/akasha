@@ -93,5 +93,69 @@
       ],
       "latestSeason": "3기"
     }
+  },
+  "sub_animation_kill-la-kill_2013": {
+    "workId": "sub_animation_kill-la-kill_2013",
+    "title": "킬 라 킬",
+    "titles": {
+      "ko": "킬 라 킬",
+      "en": "Kill la Kill",
+      "ja": "キルラキル"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "트리거",
+    "releaseYear": 2013,
+    "description": "전투복을 입은 류코가 학원 지배 체제에 맞서 복수와 진실을 쫓는 과장된 액션.",
+    "tags": [
+      "액션",
+      "코미디",
+      "학원",
+      "복수"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2013,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg"
+  },
+  "sub_animation_kingdom_2012": {
+    "workId": "sub_animation_kingdom_2012",
+    "title": "킹덤",
+    "titles": {
+      "ko": "킹덤",
+      "en": "Kingdom",
+      "ja": "キングダム"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "releaseYear": 2012,
+    "description": "전국시대를 배경으로 신이 왕국 통일을 꿈꾸며 전장에서 성장하는 소년의 이야기.",
+    "tags": [
+      "역사",
+      "전쟁",
+      "성장",
+      "액션"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1~5기",
+          "year": 2012,
+          "episodes": 120
+        }
+      ],
+      "latestSeason": "1~5기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg"
   }
 }

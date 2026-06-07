@@ -62,5 +62,41 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_one-piece-anime_1999": {
+    "workId": "sub_animation_one-piece-anime_1999",
+    "title": "원피스",
+    "titles": {
+      "ko": "원피스",
+      "en": "One Piece",
+      "ja": "ONE PIECE"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "오다 에이치로",
+    "releaseYear": 1999,
+    "description": "루피와 밀짚모자 해적단이 위대한 항로를 항해하며 원피스를 찾아가는 대장정.",
+    "tags": [
+      "모험",
+      "액션",
+      "해적",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "TV",
+          "year": 1999,
+          "episodes": 1100
+        }
+      ],
+      "latestSeason": "TV",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
+    "externalIds": {
+      "tmdb": "37854"
+    }
   }
 }

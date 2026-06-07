@@ -16,5 +16,42 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_vinland-saga_2019": {
+    "workId": "sub_animation_vinland-saga_2019",
+    "title": "빈란드 사가",
+    "titles": {
+      "ko": "빈란드 사가",
+      "en": "Vinland Saga",
+      "ja": "ヴィンランド・サガ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "유키마쓰 신야",
+    "releaseYear": 2019,
+    "description": "아이슬란드의 복수를 꿈꾸던 토르핀이 전쟁과 삶의 의미를 마주하며 성장하는 역사 드라마.",
+    "tags": [
+      "역사",
+      "액션",
+      "복수",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg"
   }
 }

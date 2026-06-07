@@ -169,5 +169,41 @@
       ],
       "latestSeason": "3기"
     }
+  },
+  "sub_animation_death-note_2006": {
+    "workId": "sub_animation_death-note_2006",
+    "title": "데스노트",
+    "titles": {
+      "ko": "데스노트",
+      "en": "Death Note",
+      "ja": "DEATH NOTE"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "오바 타케노부",
+    "releaseYear": 2006,
+    "description": "데스노트를 손에 넣은 야가미 라이토와 탐정 L의 치열한 지능전을 그린 스릴러.",
+    "tags": [
+      "스릴러",
+      "미스터리",
+      "초자연",
+      "심리"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2006,
+          "episodes": 37
+        }
+      ],
+      "latestSeason": "1기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
+    "externalIds": {
+      "tmdb": "13916"
+    }
   }
 }

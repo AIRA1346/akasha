@@ -98,5 +98,29 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_konosuba_2014": {
+    "workId": "sub_manga_konosuba_2014",
+    "title": "이 멋진 세계에 축복을!",
+    "titles": {
+      "ko": "이 멋진 세계에 축복을!",
+      "en": "KonoSuba",
+      "ja": "この素晴らしい世界に祝福を！"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카츠키 나츠메",
+    "releaseYear": 2014,
+    "description": "카즈마와 개그 넘치는 파티가 이세계에서 모험과 빚을 떠안는 코미디 판타지.",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "파티"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg"
   }
 }

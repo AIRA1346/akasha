@@ -87,10 +87,11 @@
   "franchise_overlord": {
     "displayName": "오버로드",
     "members": [
+      "sub_manga_overlord_2012",
       "sub_book_overlord-light-novel_2012",
       "sub_animation_overlord_2015"
     ],
-    "primaryWorkId": "sub_book_overlord-light-novel_2012"
+    "primaryWorkId": "sub_manga_overlord_2012"
   },
   "franchise_rezero": {
     "displayName": "Re:제로부터 시작하는 이세계 생활",
@@ -120,10 +121,11 @@
   "franchise_konosuba": {
     "displayName": "이 멋진 세계에 축복을!",
     "members": [
+      "sub_manga_konosuba_2014",
       "sub_book_konosuba-light-novel_2013",
       "sub_animation_konosuba_2016"
     ],
-    "primaryWorkId": "sub_book_konosuba-light-novel_2013"
+    "primaryWorkId": "sub_manga_konosuba_2014"
   },
   "franchise_slime": {
     "displayName": "전생 슬라임",
@@ -169,6 +171,7 @@
     "displayName": "킹덤",
     "members": [
       "sub_manga_kingdom_2006",
+      "sub_animation_kingdom_2012",
       "gen_drama_kingdom_2019"
     ],
     "primaryWorkId": "sub_manga_kingdom_2006"
@@ -348,5 +351,141 @@
       "sub_animation_horimiya_2021"
     ],
     "primaryWorkId": "sub_manga_horimiya_2011"
+  },
+  "franchise_shigatsu": {
+    "displayName": "4월은 너의 거짓말",
+    "members": [
+      "sub_manga_shigatsu-wa-kimi-no-uso_2011",
+      "sub_animation_shigatsu-wa-kimi-no-uso_2011"
+    ],
+    "primaryWorkId": "sub_manga_shigatsu-wa-kimi-no-uso_2011"
+  },
+  "franchise_beastars": {
+    "displayName": "BEASTARS",
+    "members": [
+      "sub_manga_beastars_2016",
+      "sub_animation_beastars_2019"
+    ],
+    "primaryWorkId": "sub_manga_beastars_2016"
+  },
+  "franchise_golden_kamuy": {
+    "displayName": "골든 카무이",
+    "members": [
+      "sub_manga_golden-kamuy_2014",
+      "sub_animation_golden-kamuy_2018"
+    ],
+    "primaryWorkId": "sub_manga_golden-kamuy_2014"
+  },
+  "franchise_parasyte": {
+    "displayName": "기생수",
+    "members": [
+      "sub_manga_parasyte_1990",
+      "sub_animation_parasyte_2014"
+    ],
+    "primaryWorkId": "sub_manga_parasyte_1990"
+  },
+  "franchise_naruto": {
+    "displayName": "나루토",
+    "members": [
+      "sub_manga_naruto_1999",
+      "sub_animation_naruto_2002"
+    ],
+    "primaryWorkId": "sub_manga_naruto_1999"
+  },
+  "franchise_no_game_no_life": {
+    "displayName": "노 게임 노 라이프",
+    "members": [
+      "sub_book_no-game-no-life_2011",
+      "sub_animation_no-game-no-life_2014"
+    ],
+    "primaryWorkId": "sub_book_no-game-no-life_2011"
+  },
+  "franchise_noragami": {
+    "displayName": "노라가미",
+    "members": [
+      "sub_manga_noragami_2010",
+      "sub_animation_noragami_2014"
+    ],
+    "primaryWorkId": "sub_manga_noragami_2010"
+  },
+  "franchise_death_note": {
+    "displayName": "데스노트",
+    "members": [
+      "sub_manga_death-note_2003",
+      "sub_animation_death-note_2006"
+    ],
+    "primaryWorkId": "sub_manga_death-note_2003"
+  },
+  "franchise_tokyo_ghoul": {
+    "displayName": "도쿄 구울",
+    "members": [
+      "sub_manga_tokyo-ghoul_2011",
+      "sub_animation_tokyo-ghoul_2014"
+    ],
+    "primaryWorkId": "sub_manga_tokyo-ghoul_2011"
+  },
+  "franchise_tokyo_revengers": {
+    "displayName": "도쿄 리벤저스",
+    "members": [
+      "sub_manga_tokyo-revengers_2017",
+      "sub_animation_tokyo-revengers_2021"
+    ],
+    "primaryWorkId": "sub_manga_tokyo-revengers_2017"
+  },
+  "franchise_made_in_abyss": {
+    "displayName": "메이드 인 어비스",
+    "members": [
+      "sub_manga_made-in-abyss_2012",
+      "sub_animation_made-in-abyss_2017"
+    ],
+    "primaryWorkId": "sub_manga_made-in-abyss_2012"
+  },
+  "franchise_bleach": {
+    "displayName": "블리치",
+    "members": [
+      "sub_manga_bleach_2001",
+      "sub_animation_bleach_2004"
+    ],
+    "primaryWorkId": "sub_manga_bleach_2001"
+  },
+  "franchise_vinland_saga": {
+    "displayName": "빈란드 사가",
+    "members": [
+      "sub_manga_vinland-saga_2005",
+      "sub_animation_vinland-saga_2019"
+    ],
+    "primaryWorkId": "sub_manga_vinland-saga_2005"
+  },
+  "franchise_one_piece": {
+    "displayName": "원피스",
+    "members": [
+      "sub_manga_one-piece_1997",
+      "sub_animation_one-piece-anime_1999"
+    ],
+    "primaryWorkId": "sub_manga_one-piece_1997"
+  },
+  "franchise_jojo": {
+    "displayName": "죠죠의 기묘한 모험",
+    "members": [
+      "sub_manga_jojo-bizarre-adventure_1987",
+      "sub_animation_jojo-bizarre-adventure_2012"
+    ],
+    "primaryWorkId": "sub_manga_jojo-bizarre-adventure_1987"
+  },
+  "franchise_toradora": {
+    "displayName": "토라도라!",
+    "members": [
+      "sub_manga_toradora_2007",
+      "sub_animation_toradora_2008"
+    ],
+    "primaryWorkId": "sub_manga_toradora_2007"
+  },
+  "franchise_hunter_x_hunter": {
+    "displayName": "헌터×헌터",
+    "members": [
+      "sub_manga_hunter-x-hunter_1998",
+      "sub_animation_hunter-x-hunter_2011"
+    ],
+    "primaryWorkId": "sub_manga_hunter-x-hunter_1998"
   }
 }

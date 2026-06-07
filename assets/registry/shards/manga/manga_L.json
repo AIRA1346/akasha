@@ -1,0 +1,26 @@
+{
+  "sub_manga_land-of-the-lustrous_2012": {
+    "workId": "sub_manga_land-of-the-lustrous_2012",
+    "title": "보석의 나라",
+    "titles": {
+      "ko": "보석의 나라",
+      "en": "Land of the Lustrous",
+      "ja": "宝石の国"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이치카와 하루코",
+    "releaseYear": 2012,
+    "description": "보석로 변한 인간들이 월인과 싸우며 정체성과 기억을 잃어가는 독특한 SF 판타지.",
+    "tags": [
+      "SF",
+      "판타지",
+      "다크",
+      "철학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg"
+  }
+}

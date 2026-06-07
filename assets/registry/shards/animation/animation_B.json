@@ -124,5 +124,84 @@
       ],
       "latestSeason": "1기"
     }
+  },
+  "sub_animation_bleach_2004": {
+    "workId": "sub_animation_bleach_2004",
+    "title": "블리치",
+    "titles": {
+      "ko": "블리치",
+      "en": "Bleach",
+      "ja": "BLEACH"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "releaseYear": 2004,
+    "description": "소울 소사 이치고가 사신의 힘으로 호로와 싸우며 영혼의 세계를 지키는 액션.",
+    "tags": [
+      "액션",
+      "초자연",
+      "사신",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2004,
+          "episodes": 366
+        },
+        {
+          "label": "천년혈전",
+          "year": 2022,
+          "episodes": 26
+        }
+      ],
+      "latestSeason": "천년혈전"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg"
+  },
+  "sub_animation_beastars_2019": {
+    "workId": "sub_animation_beastars_2019",
+    "title": "BEASTARS",
+    "titles": {
+      "ko": "BEASTARS",
+      "en": "BEASTARS",
+      "ja": "BEASTARS"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이토 파루",
+    "releaseYear": 2019,
+    "description": "육식·초식 동물이 공존하는 학교에서 늑대 레고시가 알마와 사회적 갈등을 헤쳐 나가는 이야기.",
+    "tags": [
+      "드라마",
+      "학원",
+      "로맨스",
+      "사회"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2021,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2024,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "3기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg"
   }
 }

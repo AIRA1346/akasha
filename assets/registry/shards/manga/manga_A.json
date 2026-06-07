@@ -67,5 +67,29 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_ascendance-of-a-bookworm_2013": {
+    "workId": "sub_manga_ascendance-of-a-bookworm_2013",
+    "title": "책벌레의 하극상",
+    "titles": {
+      "ko": "책벌레의 하극상",
+      "en": "Ascendance of a Bookworm",
+      "ja": "本好きの下剋上"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "미나츠키 미즈카",
+    "releaseYear": 2013,
+    "description": "책을 사랑한 소녀가 이세계 귀족 아기로 환생해 인쇄와 지식을 퍼뜨리려는 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "책"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg"
   }
 }

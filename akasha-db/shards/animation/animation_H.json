@@ -144,5 +144,37 @@
     "externalIds": {
       "tmdb": "117465"
     }
+  },
+  "sub_animation_hunter-x-hunter_2011": {
+    "workId": "sub_animation_hunter-x-hunter_2011",
+    "title": "헌터×헌터",
+    "titles": {
+      "ko": "헌터×헌터",
+      "en": "Hunter x Hunter",
+      "ja": "ハンター×ハンター"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "토가시 요시히로",
+    "releaseYear": 2011,
+    "description": "헌터 시험에 도전하는 곤이 아버지를 찾으며 겪는 모험과 넨 배틀 이야기.",
+    "tags": [
+      "액션",
+      "모험",
+      "판타지",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "2011판",
+          "year": 2011,
+          "episodes": 148
+        }
+      ],
+      "latestSeason": "2011판"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg"
   }
 }

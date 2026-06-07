@@ -187,5 +187,53 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_manga_seraph-of-the-end_2012": {
+    "workId": "sub_manga_seraph-of-the-end_2012",
+    "title": "종말의 세라프",
+    "titles": {
+      "ko": "종말의 세라프",
+      "en": "Seraph of the End",
+      "ja": "終わりのセラフ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가미 타카히로",
+    "releaseYear": 2012,
+    "description": "바이러스로 인류가 사라진 뒤 뱀파이어와 싸우는 유우와 동료들의 다크 액션.",
+    "tags": [
+      "다크",
+      "액션",
+      "뱀파이어",
+      "SF"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg"
+  },
+  "sub_manga_saint-seiya_1985": {
+    "workId": "sub_manga_saint-seiya_1985",
+    "title": "세인트 세이야",
+    "titles": {
+      "ko": "세인트 세이야",
+      "en": "Saint Seiya",
+      "ja": "聖闘士星矢"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠로다 마사미",
+    "releaseYear": 1985,
+    "description": "청소년 성斗士들이 성衣를 입고 황금십이궁과 싸우는 신화 액션.",
+    "tags": [
+      "액션",
+      "신화",
+      "우정",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg"
   }
 }

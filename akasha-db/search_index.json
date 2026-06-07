@@ -110,6 +110,39 @@
     }
   },
   {
+    "workId": "sub_animation_shigatsu-wa-kimi-no-uso_2011",
+    "title": "4월은 너의 거짓말",
+    "shardId": "animation_S",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아라키 코세이",
+    "tags": [
+      "음악",
+      "청춘",
+      "로맨스",
+      "감동"
+    ],
+    "searchTokens": [
+      "4월은 너의 거짓말",
+      "4월은너의거짓말",
+      "Your Lie in April",
+      "yourlieinapril",
+      "四月は君の嘘",
+      "감동",
+      "로맨스",
+      "아라키 코세이",
+      "아라키코세이",
+      "음악",
+      "청춘"
+    ],
+    "titles": {
+      "ko": "4월은 너의 거짓말",
+      "en": "Your Lie in April",
+      "ja": "四月は君の嘘"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/yTI2M0SVtDcBJwklSpwwPLRaqg.jpg"
+  },
+  {
     "workId": "sub_manga_quintessential-quintuplets_2017",
     "title": "5등분의 신부",
     "shardId": "manga_Q",
@@ -165,6 +198,34 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_86-eighty-six_2017",
+    "title": "86 -에이티식스-",
+    "shardId": "manga_numeric",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아사토 아사토 (Asato Asato)",
+    "tags": [
+      "SF",
+      "전쟁",
+      "차별",
+      "밀리터리"
+    ],
+    "searchTokens": [
+      "86 -에이티식스-",
+      "86-에이티식스-",
+      "SF",
+      "sf",
+      "밀리터리",
+      "아사토 아사토 (Asato Asato)",
+      "아사토아사토(asatoasato)",
+      "전쟁",
+      "차별"
+    ],
+    "titles": {
+      "ko": "86 -에이티식스-"
+    }
+  },
+  {
     "workId": "sub_book_86-light-novel_2016",
     "title": "86 -에이티식스-",
     "shardId": "book_8",
@@ -192,34 +253,6 @@
       "ko": "86 -에이티식스-"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040681412-L.jpg"
-  },
-  {
-    "workId": "sub_manga_86-eighty-six_2017",
-    "title": "86 -에이티식스-",
-    "shardId": "manga_numeric",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아사토 아사토 (Asato Asato)",
-    "tags": [
-      "SF",
-      "전쟁",
-      "차별",
-      "밀리터리"
-    ],
-    "searchTokens": [
-      "86 -에이티식스-",
-      "86-에이티식스-",
-      "SF",
-      "sf",
-      "밀리터리",
-      "아사토 아사토 (Asato Asato)",
-      "아사토아사토(asatoasato)",
-      "전쟁",
-      "차별"
-    ],
-    "titles": {
-      "ko": "86 -에이티식스-"
-    }
   },
   {
     "workId": "gen_game_appid813780_2019",
@@ -301,6 +334,36 @@
       "en": "Armored Core VI"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_animation_beastars_2019",
+    "title": "BEASTARS",
+    "shardId": "animation_B",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이토 파루",
+    "tags": [
+      "드라마",
+      "학원",
+      "로맨스",
+      "사회"
+    ],
+    "searchTokens": [
+      "BEASTARS",
+      "beastars",
+      "드라마",
+      "로맨스",
+      "사회",
+      "이토 파루",
+      "이토파루",
+      "학원"
+    ],
+    "titles": {
+      "ko": "BEASTARS",
+      "en": "BEASTARS",
+      "ja": "BEASTARS"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg"
   },
   {
     "workId": "sub_manga_beastars_2016",
@@ -607,6 +670,38 @@
       "en": "GTA San Andreas"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_manga_gto_1997",
+    "title": "GTO",
+    "shardId": "manga_G",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지이 카즈히로",
+    "tags": [
+      "학원",
+      "코미디",
+      "성장",
+      "교육"
+    ],
+    "searchTokens": [
+      "GTO",
+      "Great Teacher Onizuka",
+      "greatteacheronizuka",
+      "gto",
+      "교육",
+      "성장",
+      "코미디",
+      "학원",
+      "후지이 카즈히로",
+      "후지이카즈히로"
+    ],
+    "titles": {
+      "ko": "GTO",
+      "en": "Great Teacher Onizuka",
+      "ja": "GTO"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg"
   },
   {
     "workId": "gen_game_appid2218500_2024",
@@ -1213,6 +1308,39 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg"
   },
   {
+    "workId": "sub_manga_goblin-slayer_2016",
+    "title": "고블린 슬레이어",
+    "shardId": "manga_G",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가유 카우스",
+    "tags": [
+      "판타지",
+      "다크",
+      "액션",
+      "던전"
+    ],
+    "searchTokens": [
+      "Goblin Slayer",
+      "goblinslayer",
+      "ゴブリンスレイヤー",
+      "고블린 슬레이어",
+      "고블린슬레이어",
+      "다크",
+      "던전",
+      "액션",
+      "카가유 카우스",
+      "카가유카우스",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "고블린 슬레이어",
+      "en": "Goblin Slayer",
+      "ja": "ゴブリンスレイヤー"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg"
+  },
+  {
     "workId": "sub_manga_golden-kamuy_2014",
     "title": "골든 카무이",
     "shardId": "manga_G",
@@ -1238,6 +1366,39 @@
     "titles": {
       "ko": "골든 카무이"
     }
+  },
+  {
+    "workId": "sub_animation_golden-kamuy_2018",
+    "title": "골든 카무이",
+    "shardId": "animation_G",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야기 노리코",
+    "tags": [
+      "모험",
+      "역사",
+      "액션",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Golden Kamuy",
+      "goldenkamuy",
+      "ゴールデンカムイ",
+      "골든 카무이",
+      "골든카무이",
+      "모험",
+      "액션",
+      "야기 노리코",
+      "야기노리코",
+      "역사",
+      "코미디"
+    ],
+    "titles": {
+      "ko": "골든 카무이",
+      "en": "Golden Kamuy",
+      "ja": "ゴールデンカムイ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg"
   },
   {
     "workId": "sub_manga_kaiju-no-8_2020",
@@ -1434,33 +1595,6 @@
     }
   },
   {
-    "workId": "gen_game_appid271590_2015",
-    "title": "그랜드 테프트 오토 V",
-    "shardId": "game_steam_271590",
-    "category": "game",
-    "domain": "generalCulture",
-    "creator": "Rockstar",
-    "tags": [
-      "게임",
-      "Steam",
-      "대중문화"
-    ],
-    "searchTokens": [
-      "Rockstar",
-      "Steam",
-      "rockstar",
-      "steam",
-      "게임",
-      "그랜드 테프트 오토 V",
-      "그랜드테프트오토v",
-      "대중문화"
-    ],
-    "titles": {
-      "ko": "그랜드 테프트 오토 V"
-    },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg"
-  },
-  {
     "workId": "gen_game_appid271590_2013",
     "title": "그랜드 테프트 오토 V",
     "shardId": "game_steam_271590",
@@ -1482,6 +1616,33 @@
       "범죄",
       "액션",
       "오픈월드"
+    ],
+    "titles": {
+      "ko": "그랜드 테프트 오토 V"
+    },
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg"
+  },
+  {
+    "workId": "gen_game_appid271590_2015",
+    "title": "그랜드 테프트 오토 V",
+    "shardId": "game_steam_271590",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Rockstar",
+      "Steam",
+      "rockstar",
+      "steam",
+      "게임",
+      "그랜드 테프트 오토 V",
+      "그랜드테프트오토v",
+      "대중문화"
     ],
     "titles": {
       "ko": "그랜드 테프트 오토 V"
@@ -1544,24 +1705,36 @@
     }
   },
   {
-    "workId": "gen_movie_parasite-2019_2019",
-    "title": "기생충",
-    "shardId": "movie_P",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "봉준호",
+    "workId": "sub_animation_parasyte_2014",
+    "title": "기생수",
+    "shardId": "animation_P",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
     "tags": [
-      "영화",
-      "대중문화"
+      "SF",
+      "호러",
+      "액션",
+      "공존"
     ],
     "searchTokens": [
-      "기생충",
-      "대중문화",
-      "봉준호",
-      "영화"
+      "Parasyte: The Maxim",
+      "SF",
+      "parasyte:themaxim",
+      "sf",
+      "寄生獣 セイの格率",
+      "寄生獣セイの格率",
+      "공존",
+      "기생수",
+      "액션",
+      "이와와키 히토시",
+      "이와와키히토시",
+      "호러"
     ],
     "titles": {
-      "ko": "기생충"
+      "ko": "기생수",
+      "en": "Parasyte: The Maxim",
+      "ja": "寄生獣 セイの格率"
     }
   },
   {
@@ -1584,6 +1757,27 @@
       "스릴러",
       "아카데미",
       "한국영화"
+    ],
+    "titles": {
+      "ko": "기생충"
+    }
+  },
+  {
+    "workId": "gen_movie_parasite-2019_2019",
+    "title": "기생충",
+    "shardId": "movie_P",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "봉준호",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "기생충",
+      "대중문화",
+      "봉준호",
+      "영화"
     ],
     "titles": {
       "ko": "기생충"
@@ -1677,6 +1871,66 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg"
   },
   {
+    "workId": "sub_animation_naruto_2002",
+    "title": "나루토",
+    "shardId": "animation_N",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "키시모토 마사시",
+    "tags": [
+      "닌자",
+      "액션",
+      "성장",
+      "우정"
+    ],
+    "searchTokens": [
+      "NARUTO",
+      "Naruto",
+      "naruto",
+      "나루토",
+      "닌자",
+      "성장",
+      "액션",
+      "우정",
+      "키시모토 마사시",
+      "키시모토마사시"
+    ],
+    "titles": {
+      "ko": "나루토",
+      "en": "Naruto",
+      "ja": "NARUTO"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg"
+  },
+  {
+    "workId": "sub_manga_my-hero-academia_2014",
+    "title": "나의 히어로 아카데미아",
+    "shardId": "manga_M",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "tags": [
+      "히어로",
+      "학원",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "나의 히어로 아카데미아",
+      "나의히어로아카데미아",
+      "성장",
+      "액션",
+      "학원",
+      "호리코시 코헤이",
+      "호리코시코헤이",
+      "히어로"
+    ],
+    "titles": {
+      "ko": "나의 히어로 아카데미아"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg"
+  },
+  {
     "workId": "sub_animation_my-hero-academia_2016",
     "title": "나의 히어로 아카데미아",
     "shardId": "animation_M",
@@ -1709,57 +1963,6 @@
     }
   },
   {
-    "workId": "sub_manga_my-hero-academia_2014",
-    "title": "나의 히어로 아카데미아",
-    "shardId": "manga_M",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "호리코시 코헤이",
-    "tags": [
-      "히어로",
-      "학원",
-      "성장",
-      "액션"
-    ],
-    "searchTokens": [
-      "나의 히어로 아카데미아",
-      "나의히어로아카데미아",
-      "성장",
-      "액션",
-      "학원",
-      "호리코시 코헤이",
-      "호리코시코헤이",
-      "히어로"
-    ],
-    "titles": {
-      "ko": "나의 히어로 아카데미아"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg"
-  },
-  {
-    "workId": "sub_movie_weathering-with-you_2019",
-    "title": "날씨의 아이",
-    "shardId": "movie_W",
-    "category": "movie",
-    "domain": "subculture",
-    "creator": "신카이 마코토",
-    "tags": [
-      "영화",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "날씨의 아이",
-      "날씨의아이",
-      "서브컬처",
-      "신카이 마코토",
-      "신카이마코토",
-      "영화"
-    ],
-    "titles": {
-      "ko": "날씨의 아이"
-    }
-  },
-  {
     "workId": "sub_animation_weathering-with-you_2019",
     "title": "날씨의 아이",
     "shardId": "animation_W",
@@ -1786,6 +1989,29 @@
       "ko": "날씨의 아이"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg"
+  },
+  {
+    "workId": "sub_movie_weathering-with-you_2019",
+    "title": "날씨의 아이",
+    "shardId": "movie_W",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "신카이 마코토",
+    "tags": [
+      "영화",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "날씨의 아이",
+      "날씨의아이",
+      "서브컬처",
+      "신카이 마코토",
+      "신카이마코토",
+      "영화"
+    ],
+    "titles": {
+      "ko": "날씨의 아이"
+    }
   },
   {
     "workId": "sub_manga_oregairu_2011",
@@ -1866,6 +2092,38 @@
     }
   },
   {
+    "workId": "sub_animation_no-game-no-life_2014",
+    "title": "노 게임 노 라이프",
+    "shardId": "animation_N",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "카무라 유우",
+    "tags": [
+      "판타지",
+      "게임",
+      "이세계",
+      "코미디"
+    ],
+    "searchTokens": [
+      "No Game No Life",
+      "nogamenolife",
+      "ノーゲーム・ノーライフ",
+      "게임",
+      "노 게임 노 라이프",
+      "노게임노라이프",
+      "이세계",
+      "카무라 유우",
+      "카무라유우",
+      "코미디",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "노 게임 노 라이프",
+      "en": "No Game No Life",
+      "ja": "ノーゲーム・ノーライフ"
+    }
+  },
+  {
     "workId": "sub_book_no-game-no-life_2011",
     "title": "노 게임 노 라이프",
     "shardId": "book_N",
@@ -1891,6 +2149,69 @@
       "ko": "노 게임 노 라이프"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg"
+  },
+  {
+    "workId": "sub_manga_nodame-cantabile_2001",
+    "title": "노다메 칸타빌레",
+    "shardId": "manga_N",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "니시노 에무",
+    "tags": [
+      "음악",
+      "로맨스",
+      "코미디",
+      "성장"
+    ],
+    "searchTokens": [
+      "Nodame Cantabile",
+      "nodamecantabile",
+      "のだめカンタービレ",
+      "노다메 칸타빌레",
+      "노다메칸타빌레",
+      "니시노 에무",
+      "니시노에무",
+      "로맨스",
+      "성장",
+      "음악",
+      "코미디"
+    ],
+    "titles": {
+      "ko": "노다메 칸타빌레",
+      "en": "Nodame Cantabile",
+      "ja": "のだめカンタービレ"
+    }
+  },
+  {
+    "workId": "sub_manga_noragami_2010",
+    "title": "노라가미",
+    "shardId": "manga_N",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아다치로",
+    "tags": [
+      "액션",
+      "신화",
+      "코미디",
+      "초자연"
+    ],
+    "searchTokens": [
+      "Noragami",
+      "noragami",
+      "ノラガミ",
+      "노라가미",
+      "신화",
+      "아다치로",
+      "액션",
+      "초자연",
+      "코미디"
+    ],
+    "titles": {
+      "ko": "노라가미",
+      "en": "Noragami",
+      "ja": "ノラガミ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/oOReMl2ELJky9IFJrIFQXEINXRJ.jpg"
   },
   {
     "workId": "sub_animation_noragami_2014",
@@ -2166,33 +2487,6 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413410/library_600x900.jpg"
   },
   {
-    "workId": "sub_animation_dandadan-anime_2024",
-    "title": "단다단",
-    "shardId": "animation_D",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Science SARU",
-    "tags": [
-      "오컬트",
-      "코미디",
-      "액션",
-      "청춘"
-    ],
-    "searchTokens": [
-      "Science SARU",
-      "sciencesaru",
-      "단다단",
-      "액션",
-      "오컬트",
-      "청춘",
-      "코미디"
-    ],
-    "titles": {
-      "ko": "단다단"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg"
-  },
-  {
     "workId": "sub_manga_dandadan_2021",
     "title": "단다단",
     "shardId": "manga_D",
@@ -2213,6 +2507,33 @@
       "코미디",
       "타츠타 유키",
       "타츠타유키"
+    ],
+    "titles": {
+      "ko": "단다단"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg"
+  },
+  {
+    "workId": "sub_animation_dandadan-anime_2024",
+    "title": "단다단",
+    "shardId": "animation_D",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Science SARU",
+    "tags": [
+      "오컬트",
+      "코미디",
+      "액션",
+      "청춘"
+    ],
+    "searchTokens": [
+      "Science SARU",
+      "sciencesaru",
+      "단다단",
+      "액션",
+      "오컬트",
+      "청춘",
+      "코미디"
     ],
     "titles": {
       "ko": "단다단"
@@ -2409,38 +2730,6 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/library_600x900.jpg"
   },
   {
-    "workId": "sub_manga_dungeon-meshi_2014",
-    "title": "던전밥",
-    "shardId": "manga_D",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "오오토마 록코",
-    "tags": [
-      "판타지",
-      "요리",
-      "모험",
-      "코미디"
-    ],
-    "searchTokens": [
-      "Delicious in Dungeon",
-      "deliciousindungeon",
-      "ダンジョン飯",
-      "던전밥",
-      "모험",
-      "오오토마 록코",
-      "오오토마록코",
-      "요리",
-      "코미디",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "던전밥",
-      "en": "Delicious in Dungeon",
-      "ja": "ダンジョン飯"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg"
-  },
-  {
     "workId": "sub_animation_dungeon-meshi_2024",
     "title": "던전밥",
     "shardId": "animation_D",
@@ -2472,6 +2761,38 @@
       "en": "Delicious in Dungeon",
       "ja": "ダンジョン飯",
       "romaji": "Dungeon Meshi"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg"
+  },
+  {
+    "workId": "sub_manga_dungeon-meshi_2014",
+    "title": "던전밥",
+    "shardId": "manga_D",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오오토마 록코",
+    "tags": [
+      "판타지",
+      "요리",
+      "모험",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Delicious in Dungeon",
+      "deliciousindungeon",
+      "ダンジョン飯",
+      "던전밥",
+      "모험",
+      "오오토마 록코",
+      "오오토마록코",
+      "요리",
+      "코미디",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "던전밥",
+      "en": "Delicious in Dungeon",
+      "ja": "ダンジョン飯"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg"
   },
@@ -2538,6 +2859,38 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/library_600x900.jpg"
   },
   {
+    "workId": "sub_animation_death-note_2006",
+    "title": "데스노트",
+    "shardId": "animation_D",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "오바 타케노부",
+    "tags": [
+      "스릴러",
+      "미스터리",
+      "초자연",
+      "심리"
+    ],
+    "searchTokens": [
+      "DEATH NOTE",
+      "Death Note",
+      "deathnote",
+      "데스노트",
+      "미스터리",
+      "스릴러",
+      "심리",
+      "오바 타케노부",
+      "오바타케노부",
+      "초자연"
+    ],
+    "titles": {
+      "ko": "데스노트",
+      "en": "Death Note",
+      "ja": "DEATH NOTE"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg"
+  },
+  {
     "workId": "sub_manga_death-note_2003",
     "title": "데스노트",
     "shardId": "manga_D",
@@ -2595,6 +2948,39 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_doraemon_1969",
+    "title": "도라에몽",
+    "shardId": "manga_D",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지코 F. 후지오",
+    "tags": [
+      "코미디",
+      "SF",
+      "가족",
+      "일상"
+    ],
+    "searchTokens": [
+      "Doraemon",
+      "SF",
+      "doraemon",
+      "sf",
+      "ドラえもん",
+      "가족",
+      "도라에몽",
+      "일상",
+      "코미디",
+      "후지코 F. 후지오",
+      "후지코f.후지오"
+    ],
+    "titles": {
+      "ko": "도라에몽",
+      "en": "Doraemon",
+      "ja": "ドラえもん"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg"
+  },
+  {
     "workId": "sub_manga_dorohedoro_2000",
     "title": "도로헤도로",
     "shardId": "manga_D",
@@ -2619,6 +3005,39 @@
     "titles": {
       "ko": "도로헤도로"
     }
+  },
+  {
+    "workId": "sub_animation_tokyo-ghoul_2014",
+    "title": "도쿄 구울",
+    "shardId": "animation_T",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이시다 슈",
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "정체성"
+    ],
+    "searchTokens": [
+      "Tokyo Ghoul",
+      "tokyoghoul",
+      "東京喰種トーキョーグール",
+      "다크",
+      "도쿄 구울",
+      "도쿄구울",
+      "액션",
+      "이시다 슈",
+      "이시다슈",
+      "정체성",
+      "호러"
+    ],
+    "titles": {
+      "ko": "도쿄 구울",
+      "en": "Tokyo Ghoul",
+      "ja": "東京喰種トーキョーグール"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg"
   },
   {
     "workId": "sub_manga_tokyo-ghoul_2011",
@@ -2647,6 +3066,39 @@
       "ko": "도쿄 구울"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg"
+  },
+  {
+    "workId": "sub_animation_tokyo-revengers_2021",
+    "title": "도쿄 리벤저스",
+    "shardId": "animation_T",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "와카이 켄",
+    "tags": [
+      "액션",
+      "시간여행",
+      "조직",
+      "청춘"
+    ],
+    "searchTokens": [
+      "Tokyo Revengers",
+      "tokyorevengers",
+      "東京卍リベンジャーズ",
+      "도쿄 리벤저스",
+      "도쿄리벤저스",
+      "시간여행",
+      "액션",
+      "와카이 켄",
+      "와카이켄",
+      "조직",
+      "청춘"
+    ],
+    "titles": {
+      "ko": "도쿄 리벤저스",
+      "en": "Tokyo Revengers",
+      "ja": "東京卍リベンジャーズ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg"
   },
   {
     "workId": "sub_manga_tokyo-revengers_2017",
@@ -2761,28 +3213,6 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg"
   },
   {
-    "workId": "gen_movie_dune-2021_2021",
-    "title": "듄",
-    "shardId": "movie_D",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "Denis Villeneuve",
-    "tags": [
-      "영화",
-      "대중문화"
-    ],
-    "searchTokens": [
-      "Denis Villeneuve",
-      "denisvilleneuve",
-      "대중문화",
-      "듄",
-      "영화"
-    ],
-    "titles": {
-      "ko": "듄"
-    }
-  },
-  {
     "workId": "gen_book_dune_1965",
     "title": "듄",
     "shardId": "book_D",
@@ -2809,6 +3239,60 @@
       "ko": "듄"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg"
+  },
+  {
+    "workId": "gen_movie_dune-2021_2021",
+    "title": "듄",
+    "shardId": "movie_D",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Denis Villeneuve",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Denis Villeneuve",
+      "denisvilleneuve",
+      "대중문화",
+      "듄",
+      "영화"
+    ],
+    "titles": {
+      "ko": "듄"
+    }
+  },
+  {
+    "workId": "sub_manga_dragon-ball_1984",
+    "title": "드래곤볼",
+    "shardId": "manga_D",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토리야마 아키라",
+    "tags": [
+      "액션",
+      "모험",
+      "무술",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Dragon Ball",
+      "dragonball",
+      "ドラゴンボール",
+      "드래곤볼",
+      "모험",
+      "무술",
+      "액션",
+      "코미디",
+      "토리야마 아키라",
+      "토리야마아키라"
+    ],
+    "titles": {
+      "ko": "드래곤볼",
+      "en": "Dragon Ball",
+      "ja": "ドラゴンボール"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg"
   },
   {
     "workId": "gen_game_diablo-4_2023",
@@ -2923,6 +3407,39 @@
     "posterPath": "https://image.yes24.com/goods/18063773/L"
   },
   {
+    "workId": "sub_manga_ranma-half_1987",
+    "title": "란마 1/2",
+    "shardId": "manga_R",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 루미코",
+    "tags": [
+      "코미디",
+      "무술",
+      "로맨스",
+      "판타지"
+    ],
+    "searchTokens": [
+      "Ranma ½",
+      "ranma½",
+      "らんま1/2",
+      "란마 1/2",
+      "란마1/2",
+      "로맨스",
+      "무술",
+      "코미디",
+      "타카하시 루미코",
+      "타카하시루미코",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "란마 1/2",
+      "en": "Ranma ½",
+      "ja": "らんま1/2"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg"
+  },
+  {
     "workId": "sub_game_love-live-all-stars_2020",
     "title": "러브라이브! 올스타즈",
     "shardId": "game_L",
@@ -2951,6 +3468,32 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg"
   },
   {
+    "workId": "gen_game_appid252490_2018",
+    "title": "러스트",
+    "shardId": "game_steam_252490",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Facepunch",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Facepunch",
+      "Steam",
+      "facepunch",
+      "steam",
+      "게임",
+      "대중문화",
+      "러스트"
+    ],
+    "titles": {
+      "ko": "러스트"
+    },
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg"
+  },
+  {
     "workId": "gen_game_appid252490_2013",
     "title": "러스트",
     "shardId": "game_steam_252490",
@@ -2972,32 +3515,6 @@
       "샌드박스",
       "서바이벌",
       "하드코어"
-    ],
-    "titles": {
-      "ko": "러스트"
-    },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg"
-  },
-  {
-    "workId": "gen_game_appid252490_2018",
-    "title": "러스트",
-    "shardId": "game_steam_252490",
-    "category": "game",
-    "domain": "generalCulture",
-    "creator": "Facepunch",
-    "tags": [
-      "게임",
-      "Steam",
-      "대중문화"
-    ],
-    "searchTokens": [
-      "Facepunch",
-      "Steam",
-      "facepunch",
-      "steam",
-      "게임",
-      "대중문화",
-      "러스트"
     ],
     "titles": {
       "ko": "러스트"
@@ -3165,6 +3682,39 @@
       "ko": "레프트 4 데드 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_animation_log-horizon_2013",
+    "title": "로그 호라이즌",
+    "shardId": "animation_L",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "마메타와 마모루",
+    "tags": [
+      "이세계",
+      "게임",
+      "전략",
+      "판타지"
+    ],
+    "searchTokens": [
+      "Log Horizon",
+      "loghorizon",
+      "ログ・ホライズン",
+      "게임",
+      "로그 호라이즌",
+      "로그호라이즌",
+      "마메타와 마모루",
+      "마메타와마모루",
+      "이세계",
+      "전략",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "로그 호라이즌",
+      "en": "Log Horizon",
+      "ja": "ログ・ホライズン"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg"
   },
   {
     "workId": "gen_game_appid1599340_2022",
@@ -3411,10 +3961,10 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/library_600x900.jpg"
   },
   {
-    "workId": "sub_manga_mashle_2018",
+    "workId": "sub_animation_mashle_2023",
     "title": "마슐",
-    "shardId": "manga_M",
-    "category": "manga",
+    "shardId": "animation_M",
+    "category": "animation",
     "domain": "subculture",
     "creator": "코마도 타케시",
     "tags": [
@@ -3443,10 +3993,10 @@
     }
   },
   {
-    "workId": "sub_animation_mashle_2023",
+    "workId": "sub_manga_mashle_2018",
     "title": "마슐",
-    "shardId": "animation_M",
-    "category": "animation",
+    "shardId": "manga_M",
+    "category": "manga",
     "domain": "subculture",
     "creator": "코마도 타케시",
     "tags": [
@@ -3557,6 +4107,39 @@
     "titles": {
       "ko": "매트릭스"
     }
+  },
+  {
+    "workId": "sub_manga_made-in-abyss_2012",
+    "title": "메이드 인 어비스",
+    "shardId": "manga_M",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "츠쿠시 아키히토",
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "탐험"
+    ],
+    "searchTokens": [
+      "Made in Abyss",
+      "madeinabyss",
+      "メイドインアビス",
+      "다크",
+      "메이드 인 어비스",
+      "메이드인어비스",
+      "모험",
+      "츠쿠시 아키히토",
+      "츠쿠시아키히토",
+      "탐험",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "메이드 인 어비스",
+      "en": "Made in Abyss",
+      "ja": "メイドインアビス"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ofjHLIGpQP0VscNPkq5CKQvMcQH.jpg"
   },
   {
     "workId": "sub_animation_made-in-abyss_2017",
@@ -3808,6 +4391,32 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/library_600x900.jpg"
   },
   {
+    "workId": "sub_book_mushoku-tensei-light-novel_2014",
+    "title": "무직전생",
+    "shardId": "book_M",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "리덕션",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "성장"
+    ],
+    "searchTokens": [
+      "라이트노벨",
+      "리덕션",
+      "무직전생",
+      "성장",
+      "이세계",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "무직전생"
+    },
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg"
+  },
+  {
     "workId": "sub_manga_mushoku-tensei_2014",
     "title": "무직전생",
     "shardId": "manga_M",
@@ -3858,32 +4467,6 @@
     "titles": {
       "ko": "무직전생"
     }
-  },
-  {
-    "workId": "sub_book_mushoku-tensei-light-novel_2014",
-    "title": "무직전생",
-    "shardId": "book_M",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "리덕션",
-    "tags": [
-      "라이트노벨",
-      "이세계",
-      "판타지",
-      "성장"
-    ],
-    "searchTokens": [
-      "라이트노벨",
-      "리덕션",
-      "무직전생",
-      "성장",
-      "이세계",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "무직전생"
-    },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg"
   },
   {
     "workId": "sub_animation_bungo-stray-dogs_2016",
@@ -4074,32 +4657,6 @@
     }
   },
   {
-    "workId": "sub_animation_monogatari_2009",
-    "title": "바케모노가타리",
-    "shardId": "animation_M",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "SHAFT",
-    "tags": [
-      "초자연",
-      "로맨스",
-      "대화",
-      "명작"
-    ],
-    "searchTokens": [
-      "SHAFT",
-      "shaft",
-      "대화",
-      "로맨스",
-      "명작",
-      "바케모노가타리",
-      "초자연"
-    ],
-    "titles": {
-      "ko": "바케모노가타리"
-    }
-  },
-  {
     "workId": "sub_book_monogatari-light-novel_2006",
     "title": "바케모노가타리",
     "shardId": "book_M",
@@ -4125,6 +4682,32 @@
       "ko": "바케모노가타리"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg"
+  },
+  {
+    "workId": "sub_animation_monogatari_2009",
+    "title": "바케모노가타리",
+    "shardId": "animation_M",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SHAFT",
+    "tags": [
+      "초자연",
+      "로맨스",
+      "대화",
+      "명작"
+    ],
+    "searchTokens": [
+      "SHAFT",
+      "shaft",
+      "대화",
+      "로맨스",
+      "명작",
+      "바케모노가타리",
+      "초자연"
+    ],
+    "titles": {
+      "ko": "바케모노가타리"
+    }
   },
   {
     "workId": "gen_movie_lord-of-the-rings-fellowship_2001",
@@ -4341,31 +4924,38 @@
     }
   },
   {
-    "workId": "sub_manga_bocchi-the-rock_2017",
-    "title": "봇치 더 록!",
-    "shardId": "manga_B",
+    "workId": "sub_manga_land-of-the-lustrous_2012",
+    "title": "보석의 나라",
+    "shardId": "manga_L",
     "category": "manga",
     "domain": "subculture",
-    "creator": "하마다 쿠키",
+    "creator": "이치카와 하루코",
     "tags": [
-      "음악",
-      "코미디",
-      "성장",
-      "밴드"
+      "SF",
+      "판타지",
+      "다크",
+      "철학"
     ],
     "searchTokens": [
-      "밴드",
-      "봇치 더 록!",
-      "봇치더록!",
-      "성장",
-      "음악",
-      "코미디",
-      "하마다 쿠키",
-      "하마다쿠키"
+      "Land of the Lustrous",
+      "SF",
+      "landofthelustrous",
+      "sf",
+      "宝石の国",
+      "다크",
+      "보석의 나라",
+      "보석의나라",
+      "이치카와 하루코",
+      "이치카와하루코",
+      "철학",
+      "판타지"
     ],
     "titles": {
-      "ko": "봇치 더 록!"
-    }
+      "ko": "보석의 나라",
+      "en": "Land of the Lustrous",
+      "ja": "宝石の国"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg"
   },
   {
     "workId": "sub_animation_bocchi-the-rock_2022",
@@ -4395,32 +4985,31 @@
     }
   },
   {
-    "workId": "sub_manga_fire-force_2015",
-    "title": "불꽃 소방대",
-    "shardId": "manga_F",
+    "workId": "sub_manga_bocchi-the-rock_2017",
+    "title": "봇치 더 록!",
+    "shardId": "manga_B",
     "category": "manga",
     "domain": "subculture",
-    "creator": "오바 다카히로",
+    "creator": "하마다 쿠키",
     "tags": [
-      "액션",
-      "초능력",
-      "소방",
-      "다크"
+      "음악",
+      "코미디",
+      "성장",
+      "밴드"
     ],
     "searchTokens": [
-      "다크",
-      "불꽃 소방대",
-      "불꽃소방대",
-      "소방",
-      "액션",
-      "오바 다카히로",
-      "오바다카히로",
-      "초능력"
+      "밴드",
+      "봇치 더 록!",
+      "봇치더록!",
+      "성장",
+      "음악",
+      "코미디",
+      "하마다 쿠키",
+      "하마다쿠키"
     ],
     "titles": {
-      "ko": "불꽃 소방대"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg"
+      "ko": "봇치 더 록!"
+    }
   },
   {
     "workId": "sub_animation_fire-force_2019",
@@ -4453,6 +5042,34 @@
       "ko": "불꽃 소방대",
       "en": "Fire Force",
       "ja": "炎炎ノ消防隊"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg"
+  },
+  {
+    "workId": "sub_manga_fire-force_2015",
+    "title": "불꽃 소방대",
+    "shardId": "manga_F",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 다카히로",
+    "tags": [
+      "액션",
+      "초능력",
+      "소방",
+      "다크"
+    ],
+    "searchTokens": [
+      "다크",
+      "불꽃 소방대",
+      "불꽃소방대",
+      "소방",
+      "액션",
+      "오바 다카히로",
+      "오바다카히로",
+      "초능력"
+    ],
+    "titles": {
+      "ko": "불꽃 소방대"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg"
   },
@@ -4568,6 +5185,33 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_black-clover_2015",
+    "title": "블랙 클로버",
+    "shardId": "manga_B",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "searchTokens": [
+      "마법",
+      "블랙 클로버",
+      "블랙클로버",
+      "액션",
+      "우정",
+      "타바타 유키",
+      "타바타유키",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "블랙 클로버"
+    }
+  },
+  {
     "workId": "sub_animation_black-clover_2017",
     "title": "블랙 클로버",
     "shardId": "animation_B",
@@ -4597,33 +5241,6 @@
       "ko": "블랙 클로버",
       "en": "Black Clover",
       "ja": "ブラッククローバー"
-    }
-  },
-  {
-    "workId": "sub_manga_black-clover_2015",
-    "title": "블랙 클로버",
-    "shardId": "manga_B",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타바타 유키",
-    "tags": [
-      "판타지",
-      "마법",
-      "액션",
-      "우정"
-    ],
-    "searchTokens": [
-      "마법",
-      "블랙 클로버",
-      "블랙클로버",
-      "액션",
-      "우정",
-      "타바타 유키",
-      "타바타유키",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "블랙 클로버"
     }
   },
   {
@@ -4796,6 +5413,38 @@
     }
   },
   {
+    "workId": "sub_animation_bleach_2004",
+    "title": "블리치",
+    "shardId": "animation_B",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "tags": [
+      "액션",
+      "초자연",
+      "사신",
+      "성장"
+    ],
+    "searchTokens": [
+      "BLEACH",
+      "Bleach",
+      "bleach",
+      "블리치",
+      "사신",
+      "성장",
+      "액션",
+      "초자연",
+      "쿠보 타이토",
+      "쿠보타이토"
+    ],
+    "titles": {
+      "ko": "블리치",
+      "en": "Bleach",
+      "ja": "BLEACH"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg"
+  },
+  {
     "workId": "gen_game_appid960090_2019",
     "title": "비디오페이퍼",
     "shardId": "game_steam_960090",
@@ -4846,6 +5495,39 @@
     "titles": {
       "ko": "빈란드 사가"
     }
+  },
+  {
+    "workId": "sub_animation_vinland-saga_2019",
+    "title": "빈란드 사가",
+    "shardId": "animation_V",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "유키마쓰 신야",
+    "tags": [
+      "역사",
+      "액션",
+      "복수",
+      "성장"
+    ],
+    "searchTokens": [
+      "Vinland Saga",
+      "vinlandsaga",
+      "ヴィンランド・サガ",
+      "복수",
+      "빈란드 사가",
+      "빈란드사가",
+      "성장",
+      "액션",
+      "역사",
+      "유키마쓰 신야",
+      "유키마쓰신야"
+    ],
+    "titles": {
+      "ko": "빈란드 사가",
+      "en": "Vinland Saga",
+      "ja": "ヴィンランド・サガ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg"
   },
   {
     "workId": "sub_animation_samurai-champloo_2004",
@@ -5022,6 +5704,38 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg"
   },
   {
+    "workId": "sub_manga_yona-of-the-dawn_2009",
+    "title": "새벽의 연화",
+    "shardId": "manga_Y",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠스노다 미즈",
+    "tags": [
+      "모험",
+      "역사",
+      "로맨스",
+      "성장"
+    ],
+    "searchTokens": [
+      "Yona of the Dawn",
+      "yonaofthedawn",
+      "暁のヨナ",
+      "로맨스",
+      "모험",
+      "새벽의 연화",
+      "새벽의연화",
+      "성장",
+      "역사",
+      "쿠스노다 미즈",
+      "쿠스노다미즈"
+    ],
+    "titles": {
+      "ko": "새벽의 연화",
+      "en": "Yona of the Dawn",
+      "ja": "暁のヨナ"
+    }
+  },
+  {
     "workId": "gen_game_appid526870_2020",
     "title": "새티스팩토리",
     "shardId": "game_steam_526870",
@@ -5046,6 +5760,39 @@
       "ko": "새티스팩토리"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_manga_saint-seiya_1985",
+    "title": "세인트 세이야",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠로다 마사미",
+    "tags": [
+      "액션",
+      "신화",
+      "우정",
+      "성장"
+    ],
+    "searchTokens": [
+      "Saint Seiya",
+      "saintseiya",
+      "聖闘士星矢",
+      "성장",
+      "세인트 세이야",
+      "세인트세이야",
+      "신화",
+      "액션",
+      "우정",
+      "쿠로다 마사미",
+      "쿠로다마사미"
+    ],
+    "titles": {
+      "ko": "세인트 세이야",
+      "en": "Saint Seiya",
+      "ja": "聖闘士星矢"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg"
   },
   {
     "workId": "gen_game_appid814380_2019",
@@ -5156,34 +5903,6 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg"
   },
   {
-    "workId": "sub_book_sword-art-online_2009",
-    "title": "소드 아트 온라인",
-    "shardId": "book_S",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "카와하라 레키 (Reki Kawahara)",
-    "tags": [
-      "라이트노벨",
-      "게임판타지",
-      "데스게임",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "게임판타지",
-      "데스게임",
-      "라이트노벨",
-      "서브컬처",
-      "소드 아트 온라인",
-      "소드아트온라인",
-      "카와하라 레키 (Reki Kawahara)",
-      "카와하라레키(rekikawahara)"
-    ],
-    "titles": {
-      "ko": "소드 아트 온라인"
-    },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg"
-  },
-  {
     "workId": "sub_animation_sword-art-online_2012",
     "title": "소드 아트 온라인",
     "shardId": "animation_S",
@@ -5218,6 +5937,34 @@
       "ja": "ソードアート・オンライン",
       "romaji": "SAO"
     }
+  },
+  {
+    "workId": "sub_book_sword-art-online_2009",
+    "title": "소드 아트 온라인",
+    "shardId": "book_S",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카와하라 레키 (Reki Kawahara)",
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "게임판타지",
+      "데스게임",
+      "라이트노벨",
+      "서브컬처",
+      "소드 아트 온라인",
+      "소드아트온라인",
+      "카와하라 레키 (Reki Kawahara)",
+      "카와하라레키(rekikawahara)"
+    ],
+    "titles": {
+      "ko": "소드 아트 온라인"
+    },
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg"
   },
   {
     "workId": "sub_manga_soul-eater_2004",
@@ -5361,6 +6108,33 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_skip-and-loafer_2018",
+    "title": "스킵과 로퍼",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카무라 마시무",
+    "tags": [
+      "청춘",
+      "학원",
+      "성장",
+      "코미디"
+    ],
+    "searchTokens": [
+      "성장",
+      "스킵과 로퍼",
+      "스킵과로퍼",
+      "청춘",
+      "코미디",
+      "타카무라 마시무",
+      "타카무라마시무",
+      "학원"
+    ],
+    "titles": {
+      "ko": "스킵과 로퍼"
+    }
+  },
+  {
     "workId": "sub_animation_skip-and-loafer_2023",
     "title": "스킵과 로퍼",
     "shardId": "animation_S",
@@ -5390,33 +6164,6 @@
       "ko": "스킵과 로퍼",
       "en": "Skip and Loafer",
       "ja": "スキップとローファー"
-    }
-  },
-  {
-    "workId": "sub_manga_skip-and-loafer_2018",
-    "title": "스킵과 로퍼",
-    "shardId": "manga_S",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타카무라 마시무",
-    "tags": [
-      "청춘",
-      "학원",
-      "성장",
-      "코미디"
-    ],
-    "searchTokens": [
-      "성장",
-      "스킵과 로퍼",
-      "스킵과로퍼",
-      "청춘",
-      "코미디",
-      "타카무라 마시무",
-      "타카무라마시무",
-      "학원"
-    ],
-    "titles": {
-      "ko": "스킵과 로퍼"
     }
   },
   {
@@ -5582,34 +6329,6 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/281990/library_600x900.jpg"
   },
   {
-    "workId": "sub_animation_spy-x-family_2022",
-    "title": "스파이 패밀리",
-    "shardId": "animation_S",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "WIT STUDIO / CloverWorks",
-    "tags": [
-      "코미디",
-      "스파이",
-      "가족",
-      "액션"
-    ],
-    "searchTokens": [
-      "WIT STUDIO / CloverWorks",
-      "witstudio/cloverworks",
-      "가족",
-      "스파이",
-      "스파이 패밀리",
-      "스파이패밀리",
-      "액션",
-      "코미디"
-    ],
-    "titles": {
-      "ko": "스파이 패밀리"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg"
-  },
-  {
     "workId": "sub_manga_spy-x-family_2018",
     "title": "스파이 패밀리",
     "shardId": "manga_S",
@@ -5631,6 +6350,34 @@
       "코미디",
       "타카야 스기타",
       "타카야스기타"
+    ],
+    "titles": {
+      "ko": "스파이 패밀리"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg"
+  },
+  {
+    "workId": "sub_animation_spy-x-family_2022",
+    "title": "스파이 패밀리",
+    "shardId": "animation_S",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WIT STUDIO / CloverWorks",
+    "tags": [
+      "코미디",
+      "스파이",
+      "가족",
+      "액션"
+    ],
+    "searchTokens": [
+      "WIT STUDIO / CloverWorks",
+      "witstudio/cloverworks",
+      "가족",
+      "스파이",
+      "스파이 패밀리",
+      "스파이패밀리",
+      "액션",
+      "코미디"
     ],
     "titles": {
       "ko": "스파이 패밀리"
@@ -6092,10 +6839,10 @@
     }
   },
   {
-    "workId": "sub_animation_apothecary-diaries_2023",
+    "workId": "sub_manga_apothecary-diaries_2016",
     "title": "약사의 혼잣말",
-    "shardId": "animation_A",
-    "category": "animation",
+    "shardId": "manga_A",
+    "category": "manga",
     "domain": "subculture",
     "creator": "히나타 네코",
     "tags": [
@@ -6125,10 +6872,10 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg"
   },
   {
-    "workId": "sub_manga_apothecary-diaries_2016",
+    "workId": "sub_animation_apothecary-diaries_2023",
     "title": "약사의 혼잣말",
-    "shardId": "manga_A",
-    "category": "manga",
+    "shardId": "animation_A",
+    "category": "animation",
     "domain": "subculture",
     "creator": "히나타 네코",
     "tags": [
@@ -6242,34 +6989,6 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg"
   },
   {
-    "workId": "sub_manga_undead-unluck_2020",
-    "title": "언데드 언럭",
-    "shardId": "manga_U",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "토가시 토시히사",
-    "tags": [
-      "액션",
-      "초능력",
-      "SF",
-      "코미디"
-    ],
-    "searchTokens": [
-      "SF",
-      "sf",
-      "액션",
-      "언데드 언럭",
-      "언데드언럭",
-      "초능력",
-      "코미디",
-      "토가시 토시히사",
-      "토가시토시히사"
-    ],
-    "titles": {
-      "ko": "언데드 언럭"
-    }
-  },
-  {
     "workId": "sub_animation_undead-unluck_2023",
     "title": "언데드 언럭",
     "shardId": "animation_U",
@@ -6303,6 +7022,34 @@
     }
   },
   {
+    "workId": "sub_manga_undead-unluck_2020",
+    "title": "언데드 언럭",
+    "shardId": "manga_U",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토가시 토시히사",
+    "tags": [
+      "액션",
+      "초능력",
+      "SF",
+      "코미디"
+    ],
+    "searchTokens": [
+      "SF",
+      "sf",
+      "액션",
+      "언데드 언럭",
+      "언데드언럭",
+      "초능력",
+      "코미디",
+      "토가시 토시히사",
+      "토가시토시히사"
+    ],
+    "titles": {
+      "ko": "언데드 언럭"
+    }
+  },
+  {
     "workId": "gen_game_appid1659420_2022",
     "title": "언차티드: 도적들과 유산",
     "shardId": "game_steam_1659420",
@@ -6328,6 +7075,40 @@
       "ko": "언차티드: 도적들과 유산"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_manga_edens-zero_2018",
+    "title": "에덴스 제로",
+    "shardId": "manga_E",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마시마 히로",
+    "tags": [
+      "SF",
+      "모험",
+      "우주",
+      "우정"
+    ],
+    "searchTokens": [
+      "EDENS ZERO",
+      "Edens Zero",
+      "SF",
+      "edenszero",
+      "sf",
+      "마시마 히로",
+      "마시마히로",
+      "모험",
+      "에덴스 제로",
+      "에덴스제로",
+      "우정",
+      "우주"
+    ],
+    "titles": {
+      "ko": "에덴스 제로",
+      "en": "Edens Zero",
+      "ja": "EDENS ZERO"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg"
   },
   {
     "workId": "gen_movie_everything-everywhere_2022",
@@ -6579,6 +7360,38 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261550/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_overlord_2012",
+    "title": "오버로드",
+    "shardId": "manga_O",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마루야마 쿠가네",
+    "tags": [
+      "이세계",
+      "판타지",
+      "액션",
+      "전략"
+    ],
+    "searchTokens": [
+      "Overlord",
+      "overlord",
+      "オーバーロード",
+      "마루야마 쿠가네",
+      "마루야마쿠가네",
+      "액션",
+      "오버로드",
+      "이세계",
+      "전략",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "오버로드",
+      "en": "Overlord",
+      "ja": "オーバーロード"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg"
+  },
+  {
     "workId": "sub_book_overlord-light-novel_2012",
     "title": "오버로드",
     "shardId": "book_O",
@@ -6765,6 +7578,39 @@
       "ko": "옥토패스 트래블러"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/921570/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_animation_ranking-of-kings_2021",
+    "title": "왕의 랭킹",
+    "shardId": "animation_R",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "토키타 소스케",
+    "tags": [
+      "판타지",
+      "성장",
+      "모험",
+      "감동"
+    ],
+    "searchTokens": [
+      "Ranking of Kings",
+      "rankingofkings",
+      "王様ランキング",
+      "감동",
+      "모험",
+      "성장",
+      "왕의 랭킹",
+      "왕의랭킹",
+      "토키타 소스케",
+      "토키타소스케",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "왕의 랭킹",
+      "en": "Ranking of Kings",
+      "ja": "王様ランキング"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg"
   },
   {
     "workId": "gen_drama_game-of-thrones_2011",
@@ -6991,6 +7837,33 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg"
   },
   {
+    "workId": "sub_animation_one-punch-man_2015",
+    "title": "원펀맨",
+    "shardId": "animation_O",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "tags": [
+      "액션",
+      "코미디",
+      "히어로",
+      "패러디"
+    ],
+    "searchTokens": [
+      "MADHOUSE",
+      "madhouse",
+      "액션",
+      "원펀맨",
+      "코미디",
+      "패러디",
+      "히어로"
+    ],
+    "titles": {
+      "ko": "원펀맨"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg"
+  },
+  {
     "workId": "sub_manga_one-punch-man_2012",
     "title": "원펀맨",
     "shardId": "manga_O",
@@ -7023,31 +7896,36 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg"
   },
   {
-    "workId": "sub_animation_one-punch-man_2015",
-    "title": "원펀맨",
+    "workId": "sub_animation_one-piece-anime_1999",
+    "title": "원피스",
     "shardId": "animation_O",
     "category": "animation",
     "domain": "subculture",
-    "creator": "MADHOUSE",
+    "creator": "오다 에이치로",
     "tags": [
+      "모험",
       "액션",
-      "코미디",
-      "히어로",
-      "패러디"
+      "해적",
+      "우정"
     ],
     "searchTokens": [
-      "MADHOUSE",
-      "madhouse",
+      "ONE PIECE",
+      "One Piece",
+      "onepiece",
+      "모험",
       "액션",
-      "원펀맨",
-      "코미디",
-      "패러디",
-      "히어로"
+      "오다 에이치로",
+      "오다에이치로",
+      "우정",
+      "원피스",
+      "해적"
     ],
     "titles": {
-      "ko": "원펀맨"
+      "ko": "원피스",
+      "en": "One Piece",
+      "ja": "ONE PIECE"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg"
   },
   {
     "workId": "sub_manga_one-piece_1997",
@@ -7163,10 +8041,10 @@
     }
   },
   {
-    "workId": "sub_manga_wind-breaker_2021",
+    "workId": "sub_animation_wind-breaker_2024",
     "title": "윈드 브레이커",
-    "shardId": "manga_W",
-    "category": "manga",
+    "shardId": "animation_W",
+    "category": "animation",
     "domain": "subculture",
     "creator": "나츠키 코타",
     "tags": [
@@ -7195,10 +8073,10 @@
     }
   },
   {
-    "workId": "sub_animation_wind-breaker_2024",
+    "workId": "sub_manga_wind-breaker_2021",
     "title": "윈드 브레이커",
-    "shardId": "animation_W",
-    "category": "animation",
+    "shardId": "manga_W",
+    "category": "manga",
     "domain": "subculture",
     "creator": "나츠키 코타",
     "tags": [
@@ -7336,6 +8214,33 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg"
   },
   {
+    "workId": "sub_animation_gintama_2006",
+    "title": "은혼",
+    "shardId": "animation_G",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SUNRISE",
+    "tags": [
+      "코미디",
+      "사무라이",
+      "SF",
+      "패러디"
+    ],
+    "searchTokens": [
+      "SF",
+      "SUNRISE",
+      "sf",
+      "sunrise",
+      "사무라이",
+      "은혼",
+      "코미디",
+      "패러디"
+    ],
+    "titles": {
+      "ko": "은혼"
+    }
+  },
+  {
     "workId": "sub_manga_gintama_2003",
     "title": "은혼",
     "shardId": "manga_G",
@@ -7362,31 +8267,64 @@
     }
   },
   {
-    "workId": "sub_animation_gintama_2006",
-    "title": "은혼",
-    "shardId": "animation_G",
+    "workId": "sub_animation_konosuba_2016",
+    "title": "이 멋진 세계에 축복을!",
+    "shardId": "animation_K",
     "category": "animation",
     "domain": "subculture",
-    "creator": "SUNRISE",
+    "creator": "Studio Deen",
     "tags": [
+      "이세계",
       "코미디",
-      "사무라이",
-      "SF",
+      "판타지",
       "패러디"
     ],
     "searchTokens": [
-      "SF",
-      "SUNRISE",
-      "sf",
-      "sunrise",
-      "사무라이",
-      "은혼",
+      "Studio Deen",
+      "studiodeen",
+      "이 멋진 세계에 축복을!",
+      "이멋진세계에축복을!",
+      "이세계",
       "코미디",
+      "판타지",
       "패러디"
     ],
     "titles": {
-      "ko": "은혼"
+      "ko": "이 멋진 세계에 축복을!"
     }
+  },
+  {
+    "workId": "sub_manga_konosuba_2014",
+    "title": "이 멋진 세계에 축복을!",
+    "shardId": "manga_K",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카츠키 나츠메",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "파티"
+    ],
+    "searchTokens": [
+      "KonoSuba",
+      "konosuba",
+      "この素晴らしい世界に祝福を！",
+      "아카츠키 나츠메",
+      "아카츠키나츠메",
+      "이 멋진 세계에 축복을!",
+      "이멋진세계에축복을!",
+      "이세계",
+      "코미디",
+      "파티",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "이 멋진 세계에 축복을!",
+      "en": "KonoSuba",
+      "ja": "この素晴らしい世界に祝福を！"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg"
   },
   {
     "workId": "sub_book_konosuba-light-novel_2013",
@@ -7415,33 +8353,6 @@
       "ko": "이 멋진 세계에 축복을!"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg"
-  },
-  {
-    "workId": "sub_animation_konosuba_2016",
-    "title": "이 멋진 세계에 축복을!",
-    "shardId": "animation_K",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Studio Deen",
-    "tags": [
-      "이세계",
-      "코미디",
-      "판타지",
-      "패러디"
-    ],
-    "searchTokens": [
-      "Studio Deen",
-      "studiodeen",
-      "이 멋진 세계에 축복을!",
-      "이멋진세계에축복을!",
-      "이세계",
-      "코미디",
-      "판타지",
-      "패러디"
-    ],
-    "titles": {
-      "ko": "이 멋진 세계에 축복을!"
-    }
   },
   {
     "workId": "sub_manga_inuyasha_1996",
@@ -7965,6 +8876,106 @@
     }
   },
   {
+    "workId": "sub_manga_seraph-of-the-end_2012",
+    "title": "종말의 세라프",
+    "shardId": "manga_S",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가미 타카히로",
+    "tags": [
+      "다크",
+      "액션",
+      "뱀파이어",
+      "SF"
+    ],
+    "searchTokens": [
+      "SF",
+      "Seraph of the End",
+      "seraphoftheend",
+      "sf",
+      "終わりのセラフ",
+      "다크",
+      "뱀파이어",
+      "액션",
+      "종말의 세라프",
+      "종말의세라프",
+      "카가미 타카히로",
+      "카가미타카히로"
+    ],
+    "titles": {
+      "ko": "종말의 세라프",
+      "en": "Seraph of the End",
+      "ja": "終わりのセラフ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg"
+  },
+  {
+    "workId": "sub_manga_jojo-bizarre-adventure_1987",
+    "title": "죠죠의 기묘한 모험",
+    "shardId": "manga_J",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라키 히로히코",
+    "tags": [
+      "액션",
+      "초능력",
+      "모험",
+      "다크"
+    ],
+    "searchTokens": [
+      "JoJo's Bizarre Adventure",
+      "jojo'sbizarreadventure",
+      "ジョジョの奇妙な冒険",
+      "다크",
+      "모험",
+      "아라키 히로히코",
+      "아라키히로히코",
+      "액션",
+      "죠죠의 기묘한 모험",
+      "죠죠의기묘한모험",
+      "초능력"
+    ],
+    "titles": {
+      "ko": "죠죠의 기묘한 모험",
+      "en": "JoJo's Bizarre Adventure",
+      "ja": "ジョジョの奇妙な冒険"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg"
+  },
+  {
+    "workId": "sub_animation_jojo-bizarre-adventure_2012",
+    "title": "죠죠의 기묘한 모험",
+    "shardId": "animation_J",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아라키 히로히코",
+    "tags": [
+      "액션",
+      "초능력",
+      "모험",
+      "다크"
+    ],
+    "searchTokens": [
+      "JoJo's Bizarre Adventure",
+      "jojo'sbizarreadventure",
+      "ジョジョの奇妙な冒険",
+      "다크",
+      "모험",
+      "아라키 히로히코",
+      "아라키히로히코",
+      "액션",
+      "죠죠의 기묘한 모험",
+      "죠죠의기묘한모험",
+      "초능력"
+    ],
+    "titles": {
+      "ko": "죠죠의 기묘한 모험",
+      "en": "JoJo's Bizarre Adventure",
+      "ja": "ジョジョの奇妙な冒険"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg"
+  },
+  {
     "workId": "sub_manga_jujutsu-kaisen_2018",
     "title": "주술회전",
     "shardId": "manga_J",
@@ -8189,6 +9200,71 @@
     }
   },
   {
+    "workId": "sub_manga_ascendance-of-a-bookworm_2013",
+    "title": "책벌레의 하극상",
+    "shardId": "manga_A",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "미나츠키 미즈카",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "책"
+    ],
+    "searchTokens": [
+      "Ascendance of a Bookworm",
+      "ascendanceofabookworm",
+      "本好きの下剋上",
+      "미나츠키 미즈카",
+      "미나츠키미즈카",
+      "성장",
+      "이세계",
+      "책",
+      "책벌레의 하극상",
+      "책벌레의하극상",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "책벌레의 하극상",
+      "en": "Ascendance of a Bookworm",
+      "ja": "本好きの下剋上"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg"
+  },
+  {
+    "workId": "sub_animation_gurren-lagann_2007",
+    "title": "천원돌파 그렌라간",
+    "shardId": "animation_G",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "가이낙스",
+    "tags": [
+      "SF",
+      "로봇",
+      "액션",
+      "열혈"
+    ],
+    "searchTokens": [
+      "Gurren Lagann",
+      "SF",
+      "gurrenlagann",
+      "sf",
+      "天元突破グレンラガン",
+      "가이낙스",
+      "로봇",
+      "액션",
+      "열혈",
+      "천원돌파 그렌라간",
+      "천원돌파그렌라간"
+    ],
+    "titles": {
+      "ko": "천원돌파 그렌라간",
+      "en": "Gurren Lagann",
+      "ja": "天元突破グレンラガン"
+    }
+  },
+  {
     "workId": "sub_animation_hajime-no-ippo_2000",
     "title": "첫걸음",
     "shardId": "animation_H",
@@ -8241,34 +9317,6 @@
     }
   },
   {
-    "workId": "sub_manga_chainsaw-man_2018",
-    "title": "체인소 맨",
-    "shardId": "manga_C",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
-    "tags": [
-      "액션",
-      "다크",
-      "악마",
-      "카오스"
-    ],
-    "searchTokens": [
-      "다크",
-      "악마",
-      "액션",
-      "체인소 맨",
-      "체인소맨",
-      "카오스",
-      "후지모토 타츠키 (Tatsuki Fujimoto)",
-      "후지모토타츠키(tatsukifujimoto)"
-    ],
-    "titles": {
-      "ko": "체인소 맨"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
-  },
-  {
     "workId": "sub_animation_chainsaw-man_2022",
     "title": "체인소 맨",
     "shardId": "animation_C",
@@ -8290,6 +9338,34 @@
       "체인소 맨",
       "체인소맨",
       "카오스"
+    ],
+    "titles": {
+      "ko": "체인소 맨"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
+  },
+  {
+    "workId": "sub_manga_chainsaw-man_2018",
+    "title": "체인소 맨",
+    "shardId": "manga_C",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "searchTokens": [
+      "다크",
+      "악마",
+      "액션",
+      "체인소 맨",
+      "체인소맨",
+      "카오스",
+      "후지모토 타츠키 (Tatsuki Fujimoto)",
+      "후지모토타츠키(tatsukifujimoto)"
     ],
     "titles": {
       "ko": "체인소 맨"
@@ -8320,34 +9396,6 @@
     }
   },
   {
-    "workId": "sub_animation_oshi-no-ko_2023",
-    "title": "최애의 아이",
-    "shardId": "animation_O",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Doga Kobo",
-    "tags": [
-      "연예",
-      "드라마",
-      "미스터리",
-      "복수"
-    ],
-    "searchTokens": [
-      "Doga Kobo",
-      "dogakobo",
-      "드라마",
-      "미스터리",
-      "복수",
-      "연예",
-      "최애의 아이",
-      "최애의아이"
-    ],
-    "titles": {
-      "ko": "최애의 아이"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
-  },
-  {
     "workId": "sub_manga_oshi-no-ko_2020",
     "title": "최애의 아이",
     "shardId": "manga_O",
@@ -8366,6 +9414,34 @@
       "복수",
       "아카사카 아카",
       "아카사카아카",
+      "연예",
+      "최애의 아이",
+      "최애의아이"
+    ],
+    "titles": {
+      "ko": "최애의 아이"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
+  },
+  {
+    "workId": "sub_animation_oshi-no-ko_2023",
+    "title": "최애의 아이",
+    "shardId": "animation_O",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Doga Kobo",
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "searchTokens": [
+      "Doga Kobo",
+      "dogakobo",
+      "드라마",
+      "미스터리",
+      "복수",
       "연예",
       "최애의 아이",
       "최애의아이"
@@ -8455,33 +9531,6 @@
     }
   },
   {
-    "workId": "sub_manga_kaguya-sama_2015",
-    "title": "카구야님은 고백받고 싶어",
-    "shardId": "manga_K",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아카사카 아카",
-    "tags": [
-      "로맨스",
-      "코미디",
-      "학원",
-      "두뇌전"
-    ],
-    "searchTokens": [
-      "두뇌전",
-      "로맨스",
-      "아카사카 아카",
-      "아카사카아카",
-      "카구야님은 고백받고 싶어",
-      "카구야님은고백받고싶어",
-      "코미디",
-      "학원"
-    ],
-    "titles": {
-      "ko": "카구야님은 고백받고 싶어"
-    }
-  },
-  {
     "workId": "sub_animation_kaguya-sama_2019",
     "title": "카구야님은 고백받고 싶어",
     "shardId": "animation_K",
@@ -8511,6 +9560,33 @@
       "ko": "카구야님은 고백받고 싶어",
       "en": "Kaguya-sama: Love Is War",
       "ja": "かぐや様は告らせたい"
+    }
+  },
+  {
+    "workId": "sub_manga_kaguya-sama_2015",
+    "title": "카구야님은 고백받고 싶어",
+    "shardId": "manga_K",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "두뇌전"
+    ],
+    "searchTokens": [
+      "두뇌전",
+      "로맨스",
+      "아카사카 아카",
+      "아카사카아카",
+      "카구야님은 고백받고 싶어",
+      "카구야님은고백받고싶어",
+      "코미디",
+      "학원"
+    ],
+    "titles": {
+      "ko": "카구야님은 고백받고 싶어"
     }
   },
   {
@@ -8626,6 +9702,39 @@
       "ko": "카운터 스트라이크 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_manga_captain-tsubasa_1981",
+    "title": "캡틴 츠바사",
+    "shardId": "manga_C",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 요이치",
+    "tags": [
+      "스포츠",
+      "축구",
+      "성장",
+      "청춘"
+    ],
+    "searchTokens": [
+      "Captain Tsubasa",
+      "captaintsubasa",
+      "キャプテン翼",
+      "성장",
+      "스포츠",
+      "청춘",
+      "축구",
+      "캡틴 츠바사",
+      "캡틴츠바사",
+      "타카하시 요이치",
+      "타카하시요이치"
+    ],
+    "titles": {
+      "ko": "캡틴 츠바사",
+      "en": "Captain Tsubasa",
+      "ja": "キャプテン翼"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg"
   },
   {
     "workId": "gen_game_appid268910_2017",
@@ -8794,6 +9903,70 @@
     }
   },
   {
+    "workId": "sub_animation_kill-la-kill_2013",
+    "title": "킬 라 킬",
+    "shardId": "animation_K",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "트리거",
+    "tags": [
+      "액션",
+      "코미디",
+      "학원",
+      "복수"
+    ],
+    "searchTokens": [
+      "Kill la Kill",
+      "killlakill",
+      "キルラキル",
+      "복수",
+      "액션",
+      "코미디",
+      "킬 라 킬",
+      "킬라킬",
+      "트리거",
+      "학원"
+    ],
+    "titles": {
+      "ko": "킬 라 킬",
+      "en": "Kill la Kill",
+      "ja": "キルラキル"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg"
+  },
+  {
+    "workId": "sub_animation_kingdom_2012",
+    "title": "킹덤",
+    "shardId": "animation_K",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "tags": [
+      "역사",
+      "전쟁",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "Kingdom",
+      "kingdom",
+      "キングダム",
+      "성장",
+      "액션",
+      "역사",
+      "전쟁",
+      "킹덤",
+      "하라 야스히사",
+      "하라야스히사"
+    ],
+    "titles": {
+      "ko": "킹덤",
+      "en": "Kingdom",
+      "ja": "キングダム"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg"
+  },
+  {
     "workId": "gen_drama_kingdom_2019",
     "title": "킹덤",
     "shardId": "drama_K",
@@ -8926,6 +10099,71 @@
       "ko": "테라리아"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg"
+  },
+  {
+    "workId": "sub_manga_usagi-drop_2005",
+    "title": "토끼 드롭스",
+    "shardId": "manga_U",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우노 요미",
+    "tags": [
+      "힐링",
+      "가족",
+      "일상",
+      "성장"
+    ],
+    "searchTokens": [
+      "Bunny Drop",
+      "bunnydrop",
+      "うさぎドロップ",
+      "가족",
+      "성장",
+      "우노 요미",
+      "우노요미",
+      "일상",
+      "토끼 드롭스",
+      "토끼드롭스",
+      "힐링"
+    ],
+    "titles": {
+      "ko": "토끼 드롭스",
+      "en": "Bunny Drop",
+      "ja": "うさぎドロップ"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/w9aOvcN09KRNDmsuHEYS00Td285.jpg"
+  },
+  {
+    "workId": "sub_animation_toradora_2008",
+    "title": "토라도라!",
+    "shardId": "animation_T",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "타케마야 야스코",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "성장"
+    ],
+    "searchTokens": [
+      "Toradora!",
+      "toradora!",
+      "とらドラ！",
+      "로맨스",
+      "성장",
+      "코미디",
+      "타케마야 야스코",
+      "타케마야야스코",
+      "토라도라!",
+      "학원"
+    ],
+    "titles": {
+      "ko": "토라도라!",
+      "en": "Toradora!",
+      "ja": "とらドラ！"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/2StXCVS3mm09HwRBWsee3QCz3TM.jpg"
   },
   {
     "workId": "sub_manga_toradora_2007",
@@ -9362,6 +10600,40 @@
     "titles": {
       "ko": "페어리 테일"
     }
+  },
+  {
+    "workId": "sub_manga_fairy-tail-100-years-quest_2018",
+    "title": "페어리 테일 100년 퀘스트",
+    "shardId": "manga_F",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마시마 히로",
+    "tags": [
+      "판타지",
+      "마법",
+      "모험",
+      "우정"
+    ],
+    "searchTokens": [
+      "FAIRY TAIL 100年クエスト",
+      "Fairy Tail: 100 Years Quest",
+      "fairytail100年クエスト",
+      "fairytail:100yearsquest",
+      "마법",
+      "마시마 히로",
+      "마시마히로",
+      "모험",
+      "우정",
+      "판타지",
+      "페어리 테일 100년 퀘스트",
+      "페어리테일100년퀘스트"
+    ],
+    "titles": {
+      "ko": "페어리 테일 100년 퀘스트",
+      "en": "Fairy Tail: 100 Years Quest",
+      "ja": "FAIRY TAIL 100年クエスト"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg"
   },
   {
     "workId": "sub_game_fate-grand-order_2015",
@@ -9826,6 +11098,33 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg"
   },
   {
+    "workId": "sub_manga_haikyuu_2012",
+    "title": "하이큐!!",
+    "shardId": "manga_H",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후루다테 하루이치",
+    "tags": [
+      "스포츠",
+      "배구",
+      "청춘",
+      "팀워크"
+    ],
+    "searchTokens": [
+      "배구",
+      "스포츠",
+      "청춘",
+      "팀워크",
+      "하이큐!!",
+      "후루다테 하루이치",
+      "후루다테하루이치"
+    ],
+    "titles": {
+      "ko": "하이큐!!"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg"
+  },
+  {
     "workId": "sub_animation_haikyuu_2014",
     "title": "하이큐!!",
     "shardId": "animation_H",
@@ -9854,33 +11153,6 @@
       "ko": "하이큐!!",
       "en": "Haikyu!!",
       "ja": "ハイキュー!!"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg"
-  },
-  {
-    "workId": "sub_manga_haikyuu_2012",
-    "title": "하이큐!!",
-    "shardId": "manga_H",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "후루다테 하루이치",
-    "tags": [
-      "스포츠",
-      "배구",
-      "청춘",
-      "팀워크"
-    ],
-    "searchTokens": [
-      "배구",
-      "스포츠",
-      "청춘",
-      "팀워크",
-      "하이큐!!",
-      "후루다테 하루이치",
-      "후루다테하루이치"
-    ],
-    "titles": {
-      "ko": "하이큐!!"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg"
   },
@@ -9968,6 +11240,38 @@
       "ko": "해리 포터와 마법사의 돌"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg"
+  },
+  {
+    "workId": "sub_animation_hunter-x-hunter_2011",
+    "title": "헌터×헌터",
+    "shardId": "animation_H",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "토가시 요시히로",
+    "tags": [
+      "액션",
+      "모험",
+      "판타지",
+      "우정"
+    ],
+    "searchTokens": [
+      "Hunter x Hunter",
+      "hunterxhunter",
+      "ハンター×ハンター",
+      "모험",
+      "액션",
+      "우정",
+      "토가시 요시히로",
+      "토가시요시히로",
+      "판타지",
+      "헌터×헌터"
+    ],
+    "titles": {
+      "ko": "헌터×헌터",
+      "en": "Hunter x Hunter",
+      "ja": "ハンター×ハンター"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg"
   },
   {
     "workId": "sub_manga_hunter-x-hunter_1998",

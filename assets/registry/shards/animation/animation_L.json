@@ -16,5 +16,42 @@
     "extensions": {
       "posterSource": "tmdb"
     }
+  },
+  "sub_animation_log-horizon_2013": {
+    "workId": "sub_animation_log-horizon_2013",
+    "title": "로그 호라이즌",
+    "titles": {
+      "ko": "로그 호라이즌",
+      "en": "Log Horizon",
+      "ja": "ログ・ホライズン"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "마메타와 마모루",
+    "releaseYear": 2013,
+    "description": "MMORPG에 갇힌 플레이어들이 세계 규칙을 분석하며 새 사회를 만들어가는 이세계 드라마.",
+    "tags": [
+      "이세계",
+      "게임",
+      "전략",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2013,
+          "episodes": 25
+        },
+        {
+          "label": "2기",
+          "year": 2014,
+          "episodes": 25
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg"
   }
 }
