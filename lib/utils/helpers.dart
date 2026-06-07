@@ -1,3 +1,5 @@
+import '../models/browse_card.dart';
+import '../models/category_descriptor.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 
@@ -24,7 +26,7 @@ AkashaItem createItem({
   List<String>? tags,
 }) {
   final resolvedDomain = domain ?? AppDomain.subculture;
-  if (category.isContentType) {
+  if (CategoryRegistry.isContentType(category)) {
     final item = ContentItem(
       workId: workId,
       title: title,
@@ -66,7 +68,7 @@ AkashaItem createItem({
 
 /// 특정 카테고리에 해당하는 작품 상태 옵션 목록을 반환.
 List<String> workStatusOptionsFor(MediaCategory category) {
-  if (category.isContentType) {
+  if (CategoryRegistry.isContentType(category)) {
     return ContentWorkStatus.values.map((e) => e.label).toList();
   }
   return GameWorkStatus.values.map((e) => e.label).toList();
@@ -74,7 +76,7 @@ List<String> workStatusOptionsFor(MediaCategory category) {
 
 /// 특정 카테고리에 해당하는 나의 상태 옵션 목록을 반환.
 List<String> myStatusOptionsFor(MediaCategory category) {
-  if (category.isContentType) {
+  if (CategoryRegistry.isContentType(category)) {
     return ContentMyStatus.values.map((e) => e.label).toList();
   }
   return GameMyStatus.values.map((e) => e.label).toList();
@@ -104,6 +106,26 @@ List<AkashaItem> sortItems(List<AkashaItem> items, SortCriteria criteria) {
     case SortCriteria.yearDesc:
       sorted.sort((a, b) => (b.releaseYear ?? 0).compareTo(a.releaseYear ?? 0));
   }
+  return sorted;
+}
+
+/// BrowseCard 리스트 정렬 (대표 item 기준)
+List<BrowseCard> sortBrowseCards(List<BrowseCard> cards, SortCriteria criteria) {
+  final sorted = List<BrowseCard>.from(cards);
+  int compare(AkashaItem a, AkashaItem b) {
+    switch (criteria) {
+      case SortCriteria.titleAsc:
+        return a.title.compareTo(b.title);
+      case SortCriteria.ratingDesc:
+        return b.rating.compareTo(a.rating);
+      case SortCriteria.recentlyAdded:
+        return b.addedAt.compareTo(a.addedAt);
+      case SortCriteria.yearDesc:
+        return (b.releaseYear ?? 0).compareTo(a.releaseYear ?? 0);
+    }
+  }
+
+  sorted.sort((a, b) => compare(a.item, b.item));
   return sorted;
 }
 

@@ -78,5 +78,970 @@
       "미스터리"
     ],
     "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101573.jpg"
+  },
+  "sub_manga_tokyo-ghoul-a63327_2011": {
+    "workId": "sub_manga_tokyo-ghoul-a63327_2011",
+    "title": "東京喰種 トーキョーグール",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2011,
+    "description": "Shy Ken Kaneki is thrilled to go on a date with the beautiful Rize. But it turns out that she’s only interested in his body—eating it, that is. When a morally questionable rescue transforms him into the first half-human half-Ghoul hybrid, Ken is drawn into the dark and violent world of Ghouls, which exists alongside our own.\n\n(Source: VIZ Media)\n\nNote: Includes one extra chapter.",
+    "tags": [
+      "Action",
+      "Horror",
+      "Mystery",
+      "Psychological",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx63327-glC9cDxYBja9.png",
+    "extensions": {
+      "anilistId": 63327,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tokyo-revengers-a102988_2017": {
+    "workId": "sub_manga_tokyo-revengers-a102988_2017",
+    "title": "東京卍リベンジャーズ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2017,
+    "description": "Hanagaki Takemichi was once a low-life punk, but after biting off more than he could chew with a gang in middle school, he ran away from his old life. Now that he’s an adult, the gang that once terrorized him has grown into the largest gang in Tokyo, and they’ve started killing people–including his old girlfriend! After learning this news, a mysterious force on a train platform shoves Takemichi right in front of an approaching train. As his life flashes before his eyes, he blinks to find himself transported back to middle school, before he fled from the gang! Now he has the chance to right what went wrong all those years ago. Can he save his girlfriend’s life in the future–and what else might he change if he’s rewriting the past?\n\n(Source: Seven Seas Entertainment)\n\nNotes:\n- Winner of the Shounen Manga category of the 44th annual Kodansha Manga Awards.\n- Includes 1 extra chapter.",
+    "tags": [
+      "Action",
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx102988-OoVJxQCH6fbR.jpg",
+    "extensions": {
+      "anilistId": 102988,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tokyo-ghoul-re-a85611_2014": {
+    "workId": "sub_manga_tokyo-ghoul-re-a85611_2014",
+    "title": "東京喰種-トーキョーグール-:re",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "In Tokyo, an unchanging despair is lurking. Mysterious man-eating beings, ghouls, run rampant in Tokyo. Living hidden during everyday life, the existence of ghouls, whose true identities are shrouded in mystery, permanently terrorizes Tokyo's residents.\nAt CCG, the sole institution that investigates and resolves cases related to ghouls, Haise Sasaki has been assigned a certain mission. While dealing with the unruly four problem children known as \"Quinx\", Haise's days of suffering begin...?!\nNote: Includes 1 extra chapter and the one-shot \"Tokyo Ghoul: Joker\".",
+    "tags": [
+      "Action",
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Psychological",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85611-Asb0BNP23NsJ.png",
+    "extensions": {
+      "anilistId": 85611,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tongari-boushi-no-atelier-a98263_2016": {
+    "workId": "sub_manga_tongari-boushi-no-atelier-a98263_2016",
+    "title": "とんがり帽子のアトリエ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2016,
+    "description": "In a world where everyone takes wonders like magic spells and dragons for granted, Coco is a girl with a simple dream: she wants to be a witch. But everybody knows magicians are born, not made, and Coco was not born with a gift for magic. Resigned to her un-magical life, Coco is about to give up on her dream to become a witch … until the day she meets Qifrey, a mysterious, traveling magician. After secretly seeing Qifrey perform magic in a way she’s never seen before, Coco soon learns what everybody “knows” might not be the truth, and discovers that her magical dream may not be as far away as it may seem...\n\n(Source: Kodansha USA)\n\n\nNotes:\n- Nominated for the 11th Manga Taishou Award in 2018.\n- Won the Daruma d'Or at Japan Expo in 2019.\n- Won Best U.S. Edition of International Material - Asia at the Eisner Awards in 2020.\n- Won the Best Manga Award at the Harvey Awards in 2020.",
+    "tags": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx98263-kIeaTXrAbGkj.jpg",
+    "extensions": {
+      "anilistId": 98263,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tensei-shitara-slime-datta-ken-a86399_2015": {
+    "workId": "sub_manga_tensei-shitara-slime-datta-ken-a86399_2015",
+    "title": "転生したらスライムだった件",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2015,
+    "description": "As players of Monster Hunter and Dungeons & Dragons know, the slime is not exactly the king of the fantasy monsters. So when a 37-year-old Tokyo salaryman dies and wakes up in a world of dragons and magic, he's a little disappointed to find he's become a blind, boneless slime monster.\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx86399-NwbRFVh5koqc.jpg",
+    "extensions": {
+      "anilistId": 86399,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tomo-chan-wa-onnanoko-a86300_2015": {
+    "workId": "sub_manga_tomo-chan-wa-onnanoko-a86300_2015",
+    "title": "トモちゃんは女の子!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2015,
+    "description": "Boyish high school girl Aizawa Tomo finally manages to tell her childhood friend Jun that she’s got a crush on him. Unfortunately, her confession goes right over his head—he didn’t even realize she was a girl until junior high, and even now, Jun still thinks of her as a bro! How can Tomo-chan possibly convince him otherwise and win Jun’s heart?\n\n(Source: Seven Seas Entertainment)\n\nNotes:\n- Originally published daily on Twi4. The volume release compiled the series into 51 chapters.\n- Includes 8 sets of bonus pages, where each set is considered a chapter; each volume contains a set.",
+    "tags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx86300-VQWRaxoTXciF.jpg",
+    "extensions": {
+      "anilistId": 86300,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_totsukuni-no-shoujo-a86770_2015": {
+    "workId": "sub_manga_totsukuni-no-shoujo-a86770_2015",
+    "title": "とつくにの少女",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2015,
+    "description": "In a world split between the Inside and the Outside, those living in both realms are told never to cross over to the other side, lest they be cursed. A young girl named Shiva lives on the other side, in a vacant village with a demonic guardian known only as “Teacher.” Although the two are forbidden to touch, they seem to share a bond that transcends their disparate appearances. But when Shiva leaves Teacher’s care to seek out her grandmother, the secret behind her mysterious living arrangement comes to light.(Source: Seven Seas Entertainment)",
+    "tags": [
+      "Drama",
+      "Fantasy",
+      "Mystery"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx86770-vjBM79Z1GVbs.jpg",
+    "extensions": {
+      "anilistId": 86770,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-boxer-a119174_2019": {
+    "workId": "sub_manga_the-boxer-a119174_2019",
+    "title": "더 복서",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2019,
+    "description": "You’ve got the raw talent. Or you’re the underdog. But do you have the heart? Do you have what it takes? Let’s see what you’re made of. The real fight starts now! \n\n(Source: WEBTOON)\n\nNote: Includes 30 extra chapters.",
+    "tags": [
+      "Action",
+      "Drama",
+      "Sports"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b119174-nFMZSHbrDDbt.png",
+    "extensions": {
+      "anilistId": 119174,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tomie-a30912_1987": {
+    "workId": "sub_manga_tomie-a30912_1987",
+    "title": "富江",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 1987,
+    "description": "Tomie Kawakami is a femme fatale with long black hair and a beauty mark just under her left eye. She can seduce nearly any man, and drive them to murder as well, even though the victim is often Tomie herself. While one lover seeks to keep her for himself, another grows terrified of the immortal succubus. But soon they realize that no matter how many times they kill her, the world will never be free of Tomie.\n(Source: VIZ Media)\nNotes:\n- While a collection of mainly independent short stories, Tomie was originally published as Volumes 1 and 2 of the  Ito Junji Kyofu Manga Collection. This entry is for the standalone release of Tomie first published in February 2000 with previously unreleased chapter \"小指/Little Finger\".\n- Later collections such as the 'Complete Deluxe edition' by VIZ combines this and the sequel entry Tomie: Again for a total of 20 chapters.\n- The short story “Painter” has been adapted in the first part of episode 9 of Ito Junji: Collection.",
+    "tags": [
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Supernatural",
+      "Thriller"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30912-LzqytEFBrqUM.jpg",
+    "extensions": {
+      "anilistId": 30912,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tomodachi-game-a85911_2013": {
+    "workId": "sub_manga_tomodachi-game-a85911_2013",
+    "title": "トモダチゲーム",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2013,
+    "description": "Play a game that costs a lot of money with your best friends! The key to clearing the game is \"don't doubt your friends.\" However, one betrayal raises suspicion, and the game becomes a psychological warfare! Money or friends?\n\nThe ultimate intellectual game manga that shakes people's hearts has been born!\n\n(Source: K MANGA)\n\nNote: Includes three extra chapters.",
+    "tags": [
+      "Drama",
+      "Mystery",
+      "Psychological"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85911-Z6xE67IxevPA.jpg",
+    "extensions": {
+      "anilistId": 85911,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tonikaku-kawaii-a101177_2018": {
+    "workId": "sub_manga_tonikaku-kawaii-a101177_2018",
+    "title": "トニカクカワイイ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2018,
+    "description": "First comes marriage, then comes an earthbound love that is out of this world! From the day his parents named him, Nasa Yuzaki has been destined for outer space…or so he believes. But while trying to join the space program, he is thrown for a loop when an accident introduces him to Tsukasa, a mysterious girl with strange powers. Is she an alien, a moon goddess or something else? Since she insists on marrying him, Nasa has plenty of chances to find out!\n\n(Source: VIZ Media)\n\nNotes: The 16th volume includes the 4 chapter prequel \"FLY ME TO THE MOON\".",
+    "tags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx101177-FjjD5UWB3C3t.png",
+    "extensions": {
+      "anilistId": 101177,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-breaker-a38586_2007": {
+    "workId": "sub_manga_the-breaker-a38586_2007",
+    "title": "브레이커",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2007,
+    "description": "The story of The Breaker follows Shi-Woon Yi, a timid high school student who becomes the disciple of Chun-Woo Han, a martial artist who is an enemy to the secret martial arts society known as the Murim. However, Shi-Woon is nave and unaware of his master's shady past and the unseen underbelly of the society. How will Chun-Woo manage to teach Shi-Woon and help him survive in the world of the Murim?(Source: ABLAZE)",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx38586-F697FlJkHF9z.jpg",
+    "extensions": {
+      "anilistId": 38586,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tusinjeonsaenggi-a136220_2021": {
+    "workId": "sub_manga_tusinjeonsaenggi-a136220_2021",
+    "title": "투신전생기",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2021,
+    "description": "Zephyr is the last human fighting evil in a world abandoned by the gods. When he is killed in battle by Tartarus, the god of destruction, all hope for humanity seems lost. But Zephyr’s fate is not sealed — the gods who find his battles entertaining have gifted him a second chance at life, as he is sent ten years into the past, back to when he was a slave instead of the most powerful human alive. Can Zephyr get his revenge against Tartarus and save the woman he loves, or is he doomed to repeat the past? \n(Source: WEBTOON)",
+    "tags": [
+      "Action",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx136220-u9sewv3u02mN.jpg",
+    "extensions": {
+      "anilistId": 136220,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tamen-de-gushi-a85734_2014": {
+    "workId": "sub_manga_tamen-de-gushi-a85734_2014",
+    "title": "她们的故事",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "Sun Jing has a massive crush on a girl she sees at the bus station—feminine, blonde, and absolutely adorable, Qiu Tong is everything Sun Jing desires. But the tomboyish, outgoing Sun Jing cannot bring herself to utter a single word in Qiu Tong's presence. Once she musters up the courage, however, Sun Jing successfully introduces herself and secures a friendship with the cute girl. Although they are only friends for now, Sun Jing will do anything to see Qiu Tong smile; and with her genuine kindness, she might just win Qiu Tong's heart.\n\n(Source: MAL Rewrite)",
+    "tags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85734-yllpIVoPjADr.jpg",
+    "extensions": {
+      "anilistId": 85734,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_temppal-a117460_2020": {
+    "workId": "sub_manga_temppal-a117460_2020",
+    "title": "템빨",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2020,
+    "description": "Sin Yeong-U (a.k.a. Grid), an unlucky man in life and a low-level player in the popular VR game “Satisfy,” finds a powerful item that earns him a rare legendary class title: “Pagma’s Successor.” He’s now a skilled blacksmith who can forge unique weapons and equip the game’s most powerful gear. Grid resolves to use his new abilities to achieve fame and fortune, but as his very existence begins to stir up trouble in Satisfy, he realizes that life as a legend may be more than he bargained for….\n\n(Source: Tapas, edited)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx117460-46JbftfHSXoc.jpg",
+    "extensions": {
+      "anilistId": 117460,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tate-no-yuusha-no-nariagari-a85442_2014": {
+    "workId": "sub_manga_tate-no-yuusha-no-nariagari-a85442_2014",
+    "title": "盾の勇者の成り上がり",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "Naofumi Iwatani, an uncharismatic Otaku who spends his days on games and manga, suddenly finds himself summoned to a parallel universe! He discovers he is one of four heroes equipped with legendary weapons and tasked with saving the world from its prophesied destruction. As the Shield Hero, the weakest of the heroes, all is not as it seems. Naofumi is soon alone, penniless, and betrayed. With no one to turn to, and nowhere to run, he is left with only his shield. Now, Naofumi must rise to become the legendary Shield Hero and save the world!\n\n(Source: One Peace Books)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85442-pIcvm2OjfTjR.jpg",
+    "extensions": {
+      "anilistId": 85442,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tonari-no-kaibutsu-kun-a43702_2008": {
+    "workId": "sub_manga_tonari-no-kaibutsu-kun-a43702_2008",
+    "title": "となりの怪物くん",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2008,
+    "description": "Mizutani is a self-absorbed overachiever, concerned only with maintaining the highest grades in school. Haru is an impulsive short tempered brute, who scares everyone with his explosive bursts of violence. Haru gets suspended on the first day of school when he encounters some bullies harassing a student and dispatches the bullies with great bloody violence. Mizutani is tasked with delivering school materials to Haru who interprets this as an act of friendship and latches on to Mizutani, much to her dismay. And so begins a strange and potentially combustible relationship!\n\n(Source: Kodansha USA)\nNote: Includes 17 extra chapters.",
+    "tags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx43702-poPxKDtUeBWj.jpg",
+    "extensions": {
+      "anilistId": 43702,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_takopii-no-genzai-a142568_2021": {
+    "workId": "sub_manga_takopii-no-genzai-a142568_2021",
+    "title": "タコピーの原罪",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2021,
+    "description": "Takopi travels from his home of Happy Planet to spread happiness across Earth, but meets the unsmiling Shizuka upon landing. Her friends at school and home life seem to be the source of her somber expression—and the pure-hearted Takopi is determined to change things for the better! But what truths await him when the curtains rise in this shocking drama?!\n\n(Source: MANGA Plus)",
+    "tags": [
+      "Drama",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx142568-xPC5wQPxTV1s.jpg",
+    "extensions": {
+      "anilistId": 142568,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-fable-a94490_2014": {
+    "workId": "sub_manga_the-fable-a94490_2014",
+    "title": "ザ・ファブル",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "When you're the infamous prodigy hitman known only as “Fable,” many things come easy. Being a normal person, however, isn't one of them. In fact, being told that he can't kill anyone for a while may just be the hardest job Fable’s ever taken...\n(Source: Kodansha USA)\nNote: Won the 41st Kodansha Manga Awards in the general manga category in 2017.",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx94490-rdtpGHQHOHHC.jpg",
+    "extensions": {
+      "anilistId": 94490,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tengoku-daimakyou-a101942_2018": {
+    "workId": "sub_manga_tengoku-daimakyou-a101942_2018",
+    "title": "天国大魔境",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2018,
+    "description": "Within the safety of the walls, youths are raised in a nursery-style setting by robots. While life there may appear stale on the surface, the children are full of potential and curiosity. In many ways it is like a slice of heaven. The outside world is a hell-scape. It is almost entirely void of anything mechanical and is now inhabited by bizarre, yet powerful super-natural beings.\n\nMaru, with the aid of Kiruko, is out there crisscrossing what was once Tokyo for heaven. But after searching for so long, maybe heaven is more of an untenable dream than a potential reality.\n\n(Source: DENPA)\nNote: Winner of Kono Manga ga Sugoi! 2019 Award in Male Readers category.",
+    "tags": [
+      "Adventure",
+      "Drama",
+      "Mystery"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx101942-yjslDpT6XcpK.jpg",
+    "extensions": {
+      "anilistId": 101942,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_taiyou-no-ie-a56736_2010": {
+    "workId": "sub_manga_taiyou-no-ie-a56736_2010",
+    "title": "たいようのいえ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2010,
+    "description": "As a child, Mao spent all her time at Hiro’s house across the street. Going to his house always made her feel cheerful. A few years later, Mao’s father gets remarried and Mao finds herself with nowhere to call home. Hiro ends up letting her stay with him in the house he’s been occupying alone since the death of his parents. A love story unfolds, between two childhood friends of different ages.\n\n(Source: Kodansha USA)\n\nNote: Includes 20 extra chapters.",
+    "tags": [
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx56736-qYpc12PAQMxi.jpg",
+    "extensions": {
+      "anilistId": 56736,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tutorial-tabui-goinmul-a119276_2020": {
+    "workId": "sub_manga_tutorial-tabui-goinmul-a119276_2020",
+    "title": "튜토리얼 탑의 고인물",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2020,
+    "description": "After being trapped for 12 years in a tower full of regenerating monsters, Hyeon-U Kim is more powerful than just about any human or monster on Earth. Now that he’s free, he’s determined to find out who was behind his imprisonment, even if that means he has to kill hordes of monsters — and inadvertently save the world — along the way.\n(Source: WEBTOON, edited)\nNote: Includes four extra chapters.",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx119276-wqzyyB3xuPVo.jpg",
+    "extensions": {
+      "anilistId": 119276,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tenkuu-shinpan-a85388_2013": {
+    "workId": "sub_manga_tenkuu-shinpan-a85388_2013",
+    "title": "天空侵犯",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2013,
+    "description": "High-school girl Yuri suddenly finds herself on the rooftop of a high-rise building. She's trapped in a bizarre world surrounded by skyscrapers, where a masked man cracked open a man's head with an axe before her eyes. The original author of \"Ajin,\" Tsuina Miura works in collaboration with Takahiro Oba, the artist of \"Box!\", to bring you this thrilling skyscraper suspense!",
+    "tags": [
+      "Action",
+      "Horror",
+      "Mystery"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85388-41lRoFY1CDgI.jpg",
+    "extensions": {
+      "anilistId": 85388,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-breaker-new-waves-a52651_2010": {
+    "workId": "sub_manga_the-breaker-new-waves-a52651_2010",
+    "title": "브레이커NW",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2010,
+    "description": "ATime has passed since the great confrontation at the Core Business tower. After Chun-woo Han destroyed Si-woon's ki-center, depriving him of his ability to practice martial arts, Si-woon thinks his time with the Murim is done. But his status as the sole disciple of the Nine-Doors Dragon makes him a target for many clans eager for revenge! How will he cope now that he's deprived of his ki? Meanwhile, graffiti in praise of the Nine-Doors Dragon begins appearing all around the world for all to see, and the Murim Alliance must react quickly. The Soldiers Under Command are on the move; will it be possible to stop them before the destruction of the world as we know it?(Source: ABLAZE)\nNote: Includes three extra chapters.",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/22651.jpg",
+    "extensions": {
+      "anilistId": 52651,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tougen-anki-a119968_2020": {
+    "workId": "sub_manga_tougen-anki-a119968_2020",
+    "title": "桃源暗鬼",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2020,
+    "description": "Shiki Ichinose's blood is Oni, and his father's is Momotarou. Normally, those with Momotarou blood hunt the Oni—but Shiki's father refused to kill him as an infant. Instead, he adopted Shiki and raised him despite the rebellious attitude and dangerous temper that come with Oni blood. When a member of the Momotarou Agency kills Shiki's father, Shiki vows to avenge him. But as he hones his abilities and learns to control his Oni blood, will he be strong enough to survive the dangers waiting for him…?\n\n(Source: Yen Press)",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Mystery",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx119968-dFbxdXwpkZ3s.jpg",
+    "extensions": {
+      "anilistId": 119968,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-gamer-a85155_2013": {
+    "workId": "sub_manga_the-gamer-a85155_2013",
+    "title": "더 게이머",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2013,
+    "description": "Ji-Han Han is your typical high school student -- minus the fact the he’s acquired the special ability to view the world around him as a video-game. Not long after this discovery, he stumbles upon a hidden world filled with others just like him. Now, amidst juggling homework and completing quests, Ji-Han must learn how to navigate his newfound power in order to level up in life.\n\n(Source: WEBTOONS)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b85155-HtYBpaLAa9E7.jpg",
+    "extensions": {
+      "anilistId": 85155,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsuki-ga-michibiku-isekai-douchuu-a87225_2015": {
+    "workId": "sub_manga_tsuki-ga-michibiku-isekai-douchuu-a87225_2015",
+    "title": "月が導く異世界道中",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2015,
+    "description": "Misumi Makoto was just a normal high-school student... until the day he was summoned to another world because of an agreement his parents had made with a goddess. Except when he meets the only goddess in the world he's sent to, she insults him by calling him \"extremely unattractive\" and makes an arbitrary decision to banish him to a deserted wilderness. Makoto searches the desolate land to find other humans, but for some reason only finds creatures that are all nonhuman. Even the two pretty women who decide to follow him on his journey used to be a dragon and a giant spider. Along with two extremely eccentric characters (but really reliable in battles), so begins Makoto's unlucky adventure in the new world! A fantasy about a teenage boy who keeps getting hit by one problem after another!\n\n(Source: Alpha Manga)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx87225-EYFJq2QMzHkk.jpg",
+    "extensions": {
+      "anilistId": 87225,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tokidoki-bosotto-russiago-de-dereru-tonari-no-alya-san-a152404_2022": {
+    "workId": "sub_manga_tokidoki-bosotto-russiago-de-dereru-tonari-no-alya-san-a152404_2022",
+    "title": "時々ボソッとロシア語でデレる隣のアーリャさん",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2022,
+    "description": "Masachika Kuse sits next to Alya, a girl of Russian and Japanese descent. She's beautiful, haughty, and an exceptional student, while Masachika is nerdy and known for being a slacker. He's an easy target for her comments in Russian, which she's all too happy to translate—except he can understand what she's really saying!\n\n(Source: K MANGA)",
+    "tags": [
+      "Comedy",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b152404-PeFLFZXXuVr2.jpg",
+    "extensions": {
+      "anilistId": 152404,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsurezure-children-a86481_2012": {
+    "workId": "sub_manga_tsurezure-children-a86481_2012",
+    "title": "徒然チルドレン",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2012,
+    "description": "This manga is for those of you who just can't seem to say, \"I love you.\" Toshiya Wakabayashi's acclaimed school-romance is jam-packed with frustration, embarrassment, and awkwardness!\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Comedy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx86481-drBTspZ1CIwo.jpg",
+    "extensions": {
+      "anilistId": 86481,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsukiatte-agete-mo-ii-ka-na-a104241_2018": {
+    "workId": "sub_manga_tsukiatte-agete-mo-ii-ka-na-a104241_2018",
+    "title": "付き合ってあげてもいいかな",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2018,
+    "description": "Shy Miwa has always dreamed of finding love, but living in small-town Japan made finding the right match difficult—especially since she likes girls! Even going away to college didn’t seem to help, until one day her outgoing classmate Saeko suggests they might as well start dating each other since it’s not like either of them has other options.\nAt first it seems like things won't work out as their personalities clash and misunderstandings abound. But when their casual friendship starts to become something more, Miwa begins to wonder—can a pragmatic proposal lead to true love?\n\n(Source: VIZ Media)\n\nNotes:\n- Includes eight extra chapters.\n- Placed 13th in the Tsugimanga 2019 Award in the Web Manga Category.",
+    "tags": [
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx104241-221zPt7Gpr5K.png",
+    "extensions": {
+      "anilistId": 104241,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tian-guan-ci-fu-a112275_2019": {
+    "workId": "sub_manga_tian-guan-ci-fu-a112275_2019",
+    "title": "天官赐福",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2019,
+    "description": "800 years ago, Xie Lian was a pure-blooded and noble Crown Prince, a well-regarded child of Heaven with unlimited potential. But who knew that, after he ascended and became a god with tens of thousands of worshippers, his fate would take such a sharp downhill turn? He was demoted again and again, and fell to rock bottom. 800 years later, Xie Lian ascended again, but this time, without worshippers or and without incense. One day, after returning from collecting scraps, he took a mysterious young man home. And this young man was the Ghost King that made others pale in fear whenever discussed—Hua Cheng.\n\n(Source: Bilibili Comics)",
+    "tags": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx112275-fh0u5cH2qB5b.jpg",
+    "extensions": {
+      "anilistId": 112275,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tokidoki-a97812_2016": {
+    "workId": "sub_manga_tokidoki-a97812_2016",
+    "title": "刻どキ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2016,
+    "description": "A heart can only beat so many times in a lifetime. Kokuhaku disease, a rare condition that weakens the heart, leaves the victim with less heartbeats and a shorter lifespan than normal. With the right device, the amount of heartbeats remaining can be measured. When Hato Iijima accidentally walks in on Hatsu Takagi changing her clothes, he sees this device attached to her chest. Hatsu has resigned herself to an uneventful and isolated life to avoid elevating her heart rate. However, she expresses her true desire—to freely and wholeheartedly experience every second she has left. Recognizing her wish, Hato swears to help her enjoy life to the fullest and make her heart beat like crazy.",
+    "tags": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx97812-ApW0c5hDLFvX.png",
+    "extensions": {
+      "anilistId": 97812,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_to-love-ru-a30671_2006": {
+    "workId": "sub_manga_to-love-ru-a30671_2006",
+    "title": "To LOVEる -とらぶる-",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2006,
+    "description": "Yuuki Rito is your average high school student–awkward, shy, and hopeless when it comes to confessing his feelings to the girl of his dreams. But one day, an alien princess on the run suddenly appears in his bathtub! When Rito finds himself engaged to the beautiful Lala after a misunderstanding, he becomes embroiled in the chaos of extraterrestrial politics, rival alien suitors, and harem hilarity! The story continues in To Love Ru Darkness, when Lala’s younger sister Momo begins her own machinations to marry Rito…but it can only happen if he is coronated as king of their interstellar empire, which would allow him to marry as many women as he wants!\n\n(Source: Seven Seas Entertainment)",
+    "tags": [
+      "Comedy",
+      "Ecchi",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx30671-cwnEkatRF2oB.jpg",
+    "extensions": {
+      "anilistId": 30671,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_the-new-gate-a85978_2014": {
+    "workId": "sub_manga_the-new-gate-a85978_2014",
+    "title": "THE NEW GATE",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "THE NEW GATE—an online game transformed into a life-and-death struggle for its players. Thanks to the valiant efforts of Shin, the most powerful of them all, an end to the game and freedom for everyone seemed within reach. But just moments after Shin defeats the game’s final boss, he finds himself bathed in an unknown light and transported some 500 years into the future of the in-game world. Thrown from a simple game gone wrong into a strange new land, one young swordsman of unrivalled strength is about to embark on a legendary journey!\n\n(Source: One Peace Books)",
+    "tags": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx85978-JAIgazeTTEsh.png",
+    "extensions": {
+      "anilistId": 85978,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsubasa-reservoir-chronicle-a30009_2003": {
+    "workId": "sub_manga_tsubasa-reservoir-chronicle-a30009_2003",
+    "title": "ツバサ -RESERVoir CHRoNiCLE-",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2003,
+    "description": "\"The world is a very small place, but for those who know it...it is very, very large. And the world, when it is viewed by those who 'know'&mdash; is far larger than just one world can hold!\"\nThe famous CLAMP brings back the characters from all their creations for an ultimate showdown in this multi-dimensional tale.\nThis is the story of four travelers, bound by fate and by prophesied future. Sakura is the princess of Clow Country, and possessor of a strange power that promises to change the world. Syaoran is an aspiring archaeologist and her childhood friend. When Sakura is endangered by the plan a certain man has for the future, the princess' memories are scattered across dimensions in the form of feathers, and Syaoran is forced to go on a desperate journey to retrieve them. They are accompanied by Fay D. Flourite, a magician running from the horrible truth of his past, and Kurogane, a rough-mannered ninja trying to get back to his world. However, the ability to cross worlds demands a great price, and each of them must pay the Dimensional Witch with what he or she values most. In order to save his princess, Syaoran must give up his relationship with her. Even if he gathers all of Sakura's memories, she will never remember their past together...\nBut the world is not so simple. The very moment these four made this decision, their destinies are sealed into a tragic course...as everyone in the group has their own secrets. Visions of the future are seen, and prophesies are made. The cruel future which lies ahead reads only of betrayal, abandonment, devastation and anguish.",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30009-09bbURlklWWL.jpg",
+    "extensions": {
+      "anilistId": 30009,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tensei-shitara-slime-datta-ken-a86355_2014": {
+    "workId": "sub_manga_tensei-shitara-slime-datta-ken-a86355_2014",
+    "title": "転生したらスライムだった件",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2014,
+    "description": "Living alone and never having had a girlfriend, 37-year-old Satoru Mikami is dissatisfied with how his life has turned out. But after dying at the hands of a robber, he awakens to a fresh start in a new world...as a slime monster.\n\n(Source: Yen Press)\nNote: Includes 61 extra chapters.",
+    "tags": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx86355-pGwmLqVTwwE4.jpg",
+    "extensions": {
+      "anilistId": 86355,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tutorial-i-neomu-eoryeopda-a129632_2021": {
+    "workId": "sub_manga_tutorial-i-neomu-eoryeopda-a129632_2021",
+    "title": "튜토리얼이 너무 어렵다",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2021,
+    "description": "Lee Ho-Jae had given up his life as a pro gamer, until one day he received a mysterious message:\n“Congratulations! You’ve been invited to the Tutorial World.”\nIntrigued, he enters the game and confidently chooses “hell” difficulty, but soon learns that he is trapped there. With a mere 0.01% survival rate, Ho-Jae must somehow overcome the game’s agonizing challenges to figure out the real reason he was invited. This tutorial may be tough, but its secrets are what’s truly hellacious.(Source: Tapas, edited)",
+    "tags": [
+      "Action",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx129632-ArHo6qvYQoHs.jpg",
+    "extensions": {
+      "anilistId": 129632,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tensei-shitara-ken-deshita-a98014_2016": {
+    "workId": "sub_manga_tensei-shitara-ken-deshita-a98014_2016",
+    "title": "転生したら剣でした",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2016,
+    "description": "Reincarnated as a sentient weapon with memories of his past life, but not his name, a magical sword saves a young beastgirl from a life of slavery. Fran, the cat-eared girl, becomes his wielder, and wants only to grow stronger, while the sword wants to know why he is here. Together, the strange duo’s journey has only just begun! This manga adaptation of the hit light novel series features charming artwork by manga artist Tomowo Maruyama, and is sure to be enjoyed by existing fans of the franchise as well as all-new readers who are ready for a sharp fantasy tale.\n\n(Source: Seven Seas Entertainment)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx98014-R2uPBlpQWTzJ.jpg",
+    "extensions": {
+      "anilistId": 98014,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_trigun-a30703_1995": {
+    "workId": "sub_manga_trigun-a30703_1995",
+    "title": "トライガン",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 1995,
+    "description": "Much of the damage attributed to \"Vash\" is caused by the activities of bounty hunters who are after the 60,000,000,000$$ (sixty billion \"double dollars\") reward on Vash's head for the destruction of a city called July. Vash does not clearly remember the destruction of July, and only wants \"love and peace\", as he puts it; though he is a gunfighter of inhuman skill, he uses his weapons only to save lives wherever he can.\nAs the series progresses, more is gradually learned about Vash's mysterious history and the history of the human civilization on Gunsmoke, the desert planet the series is set on. The series is often humorous in tone, but at the same time it involves very serious character development and especially in later episodes it becomes quite emotionally intense. Vash is occasionally joined by a priest, Nicholas D. Wolfwood, who is almost as good a gunfighter as Vash himself, and later is targeted by a band of assassins known as the Gung-Ho Guns for reasons which are mysterious at first.\nTrigun evolves into a very serious discussion of the nature of morality, posing questions such as: What is the nature of morality? Can we judge different moral codes? If a person is forced to betray their moral code, does that betrayal invalidate that moral code, and can the person still try to live up to that moral code? Can the person find redemption from their wrongs, and if so, how?\n(Source: Wikipedia)\n\nNote: Includes 3 extra chapters.",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30703-iRLjKRnSwCFP.jpg",
+    "extensions": {
+      "anilistId": 30703,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsue-to-tsurugi-no-wistoria-a125116_2020": {
+    "workId": "sub_manga_tsue-to-tsurugi-no-wistoria-a125116_2020",
+    "title": "杖と剣のウィストリア",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2020,
+    "description": "Will Serfort dreams of keeping his promise to a childhood friend by becoming a Magia Vander, one of the mighty magicians who sit atop the Wizard's Tower. However, he is unable to cast even the simplest of spells, leaving him to fight dungeon monsters to earn credits at Regarden Magical Academy. As if that weren't enough, he finds himself putting his sword skills to the test against a bullying professor!\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx125116-ZfCpel1WOdmF.jpg",
+    "extensions": {
+      "anilistId": 125116,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tamsig-ui-jaerim-a114198_2019": {
+    "workId": "sub_manga_tamsig-ui-jaerim-a114198_2019",
+    "title": "탐식의 재림",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2019,
+    "description": "At the brink of death on an otherworldly battlefield, Jihoo Seol is granted the chance to relive his life. But all magic has its limits, and Seol only retains a few fragments of the man he will become. Memories of a future he has yet to live manifest in sporadic dreams and magic grants him unearned luck. When his magic fails, Seol's life takes a turn for the worse. Desperate and alone, he's approached by a mysterious woman with an offer that will change his life forever. Will his dreams be enough to save him from the horrors that lie ahead?\n\n(Source: Tapas)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx114198-0qSpHmfzpv5K.jpg",
+    "extensions": {
+      "anilistId": 114198,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsubaki-chou-lonely-planet-a86243_2015": {
+    "workId": "sub_manga_tsubaki-chou-lonely-planet-a86243_2015",
+    "title": "椿町ロンリープラネット",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2015,
+    "description": "Fumi Oono, second-year high-school student. Stuck with the debts of her father, she needs a job—fast. While she did indeed manage to find one as a housekeeper for THE Akatsuki Kibikino, it leaves much to be desired. After all, the novelist has a mean glare and an even worse attitude...And on top of that, she has to live with him?! \n(Source: Yen Press)\n\nNote: Includes 8 extra chapters (from which two are Hirunaka no Ryuusei extras, released with this series).",
+    "tags": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/nx86243-VNz7YlbNI6ao.jpg",
+    "extensions": {
+      "anilistId": 86243,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_temple-a109122_2018": {
+    "workId": "sub_manga_temple-a109122_2018",
+    "title": "てんぷる",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2018,
+    "description": "Akemitsu Akegami was always told by his father that \"no one can live alone\"... but he's sure determined to do just that! After all, his father sure wasn't saying it with the best intentions, and Akemitsu has no desire to become like that creep. But when a chance encounter with a young woman leaves him with thoughts that are all too impure, he decides to do what he must - become a Buddhist monk and renounce his worldly ways. But the temple he decides to devote himself to...is full of women? And that same young woman is there, too?? What's a guy to do?\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Comedy",
+      "Drama",
+      "Ecchi",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx109122-86JvQEePvySE.jpg",
+    "extensions": {
+      "anilistId": 109122,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tondemo-skill-de-isekai-hourou-meshi-a98608_2017": {
+    "workId": "sub_manga_tondemo-skill-de-isekai-hourou-meshi-a98608_2017",
+    "title": "とんでもスキルで異世界放浪メシ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2017,
+    "description": "Tsuyoshi Mukouda was nothing special in modern Japan, so when he was summoned to a world of swordplay and sorcery, he thought he was ready for the adventure of a lifetime. Too bad the kingdom that summoned him only got him by mistake! Not only was he not one of the three summoned heroes, but his stats were laughable compared to theirs.\n\nOn top of that, there's something really sketchy about this kingdom... \"Ah, these people are the kind to try and use the Hero,\" he realized, and immediately left to make his own way in this other world. The only thing Mukouda can rely on is his unique skill: the \"Online Supermarket,\" a skill that allows him to buy modern goods in a fantasy world. It's useless for combat, but if he plays his cards right, he could lead a comfortable life, maybe? At least, that's what Mukouda thinks, but it turns out modern food bought with this skill has some absurd effects!\n\nWhat happens when Mukouda introduces ridiculously tasty modern cooking to a fantasy world like this? He gets some ridiculous repeat customers begging for more...!\n\n(Source: J-Novel Club, edited)",
+    "tags": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx98608-n6PySBSH67H0.jpg",
+    "extensions": {
+      "anilistId": 98608,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tasogare-otome-x-amnesia-a45805_2008": {
+    "workId": "sub_manga_tasogare-otome-x-amnesia-a45805_2008",
+    "title": "黄昏乙女×アムネジア",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2008,
+    "description": "Legend states that the ghost of a student who died at Seikyou Private Academy still haunts the grounds to this day... A truth that first year student Teiichi uncovers when he stumbles into that very ghost, Yuuko! However, with no memories of her previous life, she enlists the help of Teiichi and opens a paranormal investigations club to unravel the school’s ghastly mysteries. From Maybe, the author of \"Tales of Wedding Rings\".\n\n(Source: MANGA UP! Global)",
+    "tags": [
+      "Horror",
+      "Mystery",
+      "Romance",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx45805-GaLIeACbsnGy.png",
+    "extensions": {
+      "anilistId": 45805,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tensei-shitara-dai-nana-ouji-datta-node-kimamani-majutsu-wo-kiwamemasu-a123264_2020": {
+    "workId": "sub_manga_tensei-shitara-dai-nana-ouji-datta-node-kimamani-majutsu-wo-kiwamemasu-a123264_2020",
+    "title": "転生したら第七王子だったので、気ままに魔術を極めます",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2020,
+    "description": "Prince Lloyd wasn't always a prince...in fact, his previous life is one he remembers perfectly: he was a sorcerer, of sorts. So when he was forced to reincarnate, he decided to continue his studies, prince of the realm or no! But his new life has its own sets of challenges...including being a 10-year-old! What's the 7th prince/sorcerer to do?!\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Adventure",
+      "Comedy",
+      "Ecchi",
+      "Fantasy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx123264-y6pceUf7DfkF.jpg",
+    "extensions": {
+      "anilistId": 123264,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_terra-formars-a67563_2011": {
+    "workId": "sub_manga_terra-formars-a67563_2011",
+    "title": "テラフォーマーズ",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2011,
+    "description": "After humanity’s first manned mission to the Red Planet was lost, a second expedition arrives. The explorers prepare to exterminate the cockroaches that were used to transform the Martian environment, but are shocked to discover that the insects have mutated into giant, aggressive humanoids with one overriding goal—exterminate the humans! However, this crew of explorers has each undergone the “Bugs Procedure,” terrifying experimental surgery designed to make them more than human…\n\n(Source: VIZ Media)",
+    "tags": [
+      "Action",
+      "Adventure",
+      "Horror",
+      "Sci-Fi"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx67563-AJqT7kcdBZqT.png",
+    "extensions": {
+      "anilistId": 67563,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_toshokan-no-daimajutsushi-a101131_2017": {
+    "workId": "sub_manga_toshokan-no-daimajutsushi-a101131_2017",
+    "title": "図書館の大魔術師",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2017,
+    "description": "A story about a poor boy swept away by a kind library mage and the (literal) magic of reading, Magus of the Library is a beautifully-drawn, spirited fantasy adventure, like a Fullmetal Alchemist for all ages!\n\nIn the small village of Amun lives a poor boy named Theo. Theo adores books, but because of his pointed ears and impoverished life, he isn’t allowed to use the village library. As he endures the prejudice and hatred of the village, he dreams of going where such things don’t exist: Aftzaak, City of Books. But one day, Theo chances to meet a Kafna—a librarian who works for the great library of Aftzaak—and his life changes forever…\n\n(Source: Kodansha USA)",
+    "tags": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx101131-u4iK3v1VvfLq.jpg",
+    "extensions": {
+      "anilistId": 101131,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_tsugumomo-a44369_2007": {
+    "workId": "sub_manga_tsugumomo-a44369_2007",
+    "title": "つぐもも",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2007,
+    "description": "Kazuya Kagami never goes anywhere without the precious \"Sakura Obi\" his mother gave him. One day a beautiful, kimono-clad girl named Kiriha appeared before him. Kiriha naturally began to live with Kazuya in his room. Then there's Chisato, Kazuya's childhood friend with glasses and a ponytail, who meddles in his affairs. Soon there's also an overprotective older sister who seems to want to take baths with him. Jumble in a huge-chested priestess, a good-looking sorceress named Kokuyoura, beautiful women, and hot girls, and Kazuya's happy, embarrassing, confusing life begins...",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Ecchi",
+      "Romance",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx44369-ApD5JhQu8BFl.png",
+    "extensions": {
+      "anilistId": 44369,
+      "seedSource": "anilist_popularity"
+    }
   }
 }

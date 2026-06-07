@@ -1,0 +1,16 @@
+{
+  "sub_movie_chainsaw-man-movie_2025": {
+    "workId": "sub_movie_chainsaw-man-movie_2025",
+    "title": "체인소 맨 레제편",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2025,
+    "description": "체인소 맨 레제편 영화.",
+    "tags": [
+      "영화",
+      "서브컬처"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg"
+  }
+}

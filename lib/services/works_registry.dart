@@ -14,6 +14,7 @@ class RegistryWork {
   final String description;
   final List<String> tags;
   final String? posterPath;
+  final Map<String, dynamic> extensions;
 
   const RegistryWork({
     required this.workId,
@@ -25,6 +26,7 @@ class RegistryWork {
     this.description = '',
     this.tags = const [],
     this.posterPath,
+    this.extensions = const {},
   });
 
   factory RegistryWork.fromJson(Map<String, dynamic> json) {
@@ -43,6 +45,14 @@ class RegistryWork {
       orElse: () => AppDomain.subculture,
     );
 
+    final extensions = <String, dynamic>{};
+    final rawExtensions = json['extensions'];
+    if (rawExtensions is Map) {
+      rawExtensions.forEach((key, value) {
+        if (key != null) extensions[key.toString()] = value;
+      });
+    }
+
     return RegistryWork(
       workId: workId,
       title: title,
@@ -53,6 +63,7 @@ class RegistryWork {
       description: json['description']?.toString() ?? '',
       tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ?? const [],
       posterPath: json['posterPath']?.toString(),
+      extensions: extensions,
     );
   }
 }
@@ -91,6 +102,7 @@ class WorksRegistry {
         description: incoming.description,
         tags: incoming.tags,
         posterPath: incoming.posterPath,
+        extensions: incoming.extensions,
       );
       _registry[resolvedId] = work;
       _registry[key] = work;

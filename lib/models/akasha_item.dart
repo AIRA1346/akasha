@@ -1,3 +1,4 @@
+import 'category_descriptor.dart';
 import 'enums.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -97,7 +98,7 @@ class ContentItem extends AkashaItem {
     super.isHallOfFame,
     super.tags,
     super.addedAt,
-  }) : assert(category.isContentType,
+  }) : assert(CategoryRegistry.isContentType(category),
             '콘텐츠 아이템에 게임 카테고리를 할당할 수 없습니다.');
 
   @override

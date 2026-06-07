@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'category_descriptor.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 카테고리 & 상태 Enum 정의
@@ -28,7 +29,7 @@ enum MediaCategory {
   const MediaCategory(this.label, this.icon);
 
   /// 콘텐츠 계열(만화·책·애니 등 게임이 아닌 모든 것)인지 여부
-  bool get isContentType => this != game;
+  bool get isContentType => CategoryRegistry.isContentType(this);
 }
 
 /// 콘텐츠(만화·책·애니) — 작품 상태

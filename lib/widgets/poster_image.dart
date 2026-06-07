@@ -4,13 +4,14 @@ import 'package:path/path.dart' as p;
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
 import '../services/file_service.dart';
+import '../services/works_registry.dart';
 import 'safe_local_image.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  포스터 이미지 뷰어 (링크 참조 + 사용자 로컬 이미지 2출처 정책)
 //  - HTTP URL: Image.network 자체 캐싱만 사용 (디스크 다운로드 금지)
 //  - 로컬: vault/posters/ 상대경로 또는 사용자 파일
-//  - 실패 시: 카테고리 플레이스홀더
+//  - 실패 시: 사전 registry 포스터로 fallback → 플레이스홀더
 // ════════════════════════════════════════════════════════════════
 
 const _networkImageHeaders = {
@@ -79,7 +80,7 @@ class CategoryPosterPlaceholder extends StatelessWidget {
 }
 
 /// 포스터 표시 위젯 — 외부 URL은 Image.network만, 로컬은 SafeLocalImage
-class PosterImage extends StatelessWidget {
+class PosterImage extends StatefulWidget {
   final AkashaItem item;
   final BoxFit fit;
   final double? width;
@@ -94,31 +95,80 @@ class PosterImage extends StatelessWidget {
   });
 
   @override
+  State<PosterImage> createState() => _PosterImageState();
+}
+
+class _PosterImageState extends State<PosterImage> {
+  late List<String> _networkCandidates;
+  int _candidateIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _networkCandidates = _buildNetworkCandidates();
+  }
+
+  @override
+  void didUpdateWidget(PosterImage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.item.posterPath != widget.item.posterPath ||
+        oldWidget.item.workId != widget.item.workId) {
+      _candidateIndex = 0;
+      _networkCandidates = _buildNetworkCandidates();
+    }
+  }
+
+  List<String> _buildNetworkCandidates() {
+    final candidates = <String>[];
+    final path = widget.item.posterPath;
+    if (path != null && path.isNotEmpty && _isNetworkUrl(path)) {
+      candidates.add(path);
+    }
+    if (widget.item.workId.isNotEmpty) {
+      final registry = WorksRegistry.resolvePosterPath(widget.item.workId);
+      if (registry != null &&
+          registry.isNotEmpty &&
+          _isNetworkUrl(registry) &&
+          !candidates.contains(registry)) {
+        candidates.add(registry);
+      }
+    }
+    return candidates;
+  }
+
+  void _tryNextCandidate() {
+    if (_candidateIndex + 1 >= _networkCandidates.length) return;
+    setState(() => _candidateIndex++);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final placeholder = CategoryPosterPlaceholder(
-      item: item,
-      fit: fit,
-      width: width,
-      height: height,
+      item: widget.item,
+      fit: widget.fit,
+      width: widget.width,
+      height: widget.height,
     );
 
-    final path = item.posterPath;
-    if (path == null || path.isEmpty) {
-      return placeholder;
-    }
-
-    if (_isNetworkUrl(path)) {
+    if (_networkCandidates.isNotEmpty) {
+      final url = _networkCandidates[_candidateIndex];
       return Image.network(
-        path,
-        fit: fit,
-        width: width,
-        height: height,
+        url,
+        key: ValueKey(url),
+        fit: widget.fit,
+        width: widget.width,
+        height: widget.height,
         headers: _networkImageHeaders,
         gaplessPlayback: true,
         errorBuilder: (_, error, stackTrace) {
           debugPrint(
-            '[PosterImage] NETWORK ERROR for ${item.title}: $error\n$stackTrace',
+            '[PosterImage] NETWORK ERROR for ${widget.item.title} ($url): $error',
           );
+          if (_candidateIndex + 1 < _networkCandidates.length) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted) _tryNextCandidate();
+            });
+          }
           return placeholder;
         },
         loadingBuilder: (context, child, loadingProgress) {
@@ -128,20 +178,23 @@ class PosterImage extends StatelessWidget {
       );
     }
 
-    final localFile = _resolveLocalFile(path);
-    if (localFile != null) {
-      return SafeLocalImage(
-        file: localFile,
-        fit: fit,
-        width: width,
-        height: height,
-        errorBuilder: (_, error, stackTrace) {
-          debugPrint(
-            '[PosterImage] LOCAL ERROR for ${item.title}: $error\n$stackTrace',
-          );
-          return placeholder;
-        },
-      );
+    final path = widget.item.posterPath;
+    if (path != null && path.isNotEmpty) {
+      final localFile = _resolveLocalFile(path);
+      if (localFile != null) {
+        return SafeLocalImage(
+          file: localFile,
+          fit: widget.fit,
+          width: widget.width,
+          height: widget.height,
+          errorBuilder: (_, error, stackTrace) {
+            debugPrint(
+              '[PosterImage] LOCAL ERROR for ${widget.item.title}: $error\n$stackTrace',
+            );
+            return placeholder;
+          },
+        );
+      }
     }
 
     return placeholder;

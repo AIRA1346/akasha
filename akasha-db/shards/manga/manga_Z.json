@@ -1,0 +1,42 @@
+{
+  "sub_manga_zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto-a104660_2018": {
+    "workId": "sub_manga_zom-100-zombie-ni-naru-made-ni-shitai-100-no-koto-a104660_2018",
+    "title": "ゾン100 ～ゾンビになるまでにしたい100のこと～",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2018,
+    "description": "Surviving a zombie apocalypse beats being a wage slave any day! After spending years slaving away for a soul-crushing company, Akira's life has lost its luster. He lives in a trash-filled apartment, his pay is abysmal, and he can't even muster up the nerve to confess his love to his beautiful co-worker. But when a zombie apocalypse ravages his town, it gives him the push he needs to live for himself. Now Akira's on a mission to complete all 100 items on his bucket list before he...well, kicks the bucket.\n\n(Source: VIZ Media)\n\nNote: Volume 1 contains a bonus chapter titled \"Sakura Mochi Of The Dead\" \nNote: Volume 4 contains a bonus chapter titled \"Show Club of the Dead\"",
+    "tags": [
+      "Action",
+      "Comedy",
+      "Horror"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx104660-NZZdpLJlgHle.jpg",
+    "extensions": {
+      "anilistId": 104660,
+      "seedSource": "anilist_popularity"
+    }
+  },
+  "sub_manga_zetman-a31534_2002": {
+    "workId": "sub_manga_zetman-a31534_2002",
+    "title": "ZETMAN-ゼットマン",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "releaseYear": 2002,
+    "description": "Jin is a strange kid with an angel mark on his hand. He lives a poor but peaceful life with his grandfather, along with the other destitute and abandoned vagabonds near the river. One day, his peaceful life changes when a strange monster named \"player\" appears, chopping off heads and killing everyone who appears in front of it.",
+    "tags": [
+      "Action",
+      "Drama",
+      "Romance",
+      "Sci-Fi",
+      "Supernatural"
+    ],
+    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx31534-HBISOyZgyIqj.jpg",
+    "extensions": {
+      "anilistId": 31534,
+      "seedSource": "anilist_popularity"
+    }
+  }
+}

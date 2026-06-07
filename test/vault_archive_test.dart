@@ -94,6 +94,32 @@ void main() {
       expect(id, startsWith('sub_manga_custom_'));
     });
 
+    test('isArchivedInVault is true only when vault linked and filePath set', () async {
+      final service = AkashaFileService();
+      final item = createItem(
+        workId: 'sub_manga_archbadge_2020',
+        title: '배지 테스트',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+      );
+
+      expect(service.isArchivedInVault(item), isFalse);
+
+      final tempDir = await Directory.systemTemp.createTemp('akasha_badge_test_');
+      try {
+        await service.setVaultPath(tempDir.path);
+        expect(service.isArchivedInVault(item), isFalse);
+
+        item.filePath = '${tempDir.path}/manga/배지 테스트.md';
+        expect(service.isArchivedInVault(item), isTrue);
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
     test('saveItem writes .md to vault and loadAllItems reads it back', () async {
       final service = AkashaFileService();
       final tempDir = await Directory.systemTemp.createTemp('akasha_vault_test_');

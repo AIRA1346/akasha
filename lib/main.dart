@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
+import 'services/franchise_registry.dart';
 import 'services/works_registry.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -13,8 +14,8 @@ void main() async {
   
   // 샤딩 레지스트리 초기화 (번들 + 캐시 + 레거시 병합)
   await WorksRegistry.init();
-  // master_index 즉시 노출용: 번들/캐시에서 전체 카탈로그 선로드
-  await WorksRegistry.prefetchMasterCatalog();
+  await FranchiseRegistry.init();
+  // cold start: search_index + eager 샤드만 (전체 카탈로그는 master_index 진입 시 prefetch)
 
   runApp(const AkashaApp());
 }

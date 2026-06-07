@@ -62,5 +62,19 @@
       "픽사"
     ],
     "posterPath": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWRPhgcpGm2EZ.jpg"
+  },
+  "gen_movie_the-batman_2022": {
+    "workId": "gen_movie_the-batman_2022",
+    "title": "더 배트맨",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Matt Reeves",
+    "releaseYear": 2022,
+    "description": "더 배트맨 영화.",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg"
   }
 }

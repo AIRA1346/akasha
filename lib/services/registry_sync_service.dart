@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,6 +9,8 @@ import '../models/enums.dart';
 import '../models/registry_models.dart';
 import 'registry_shard_loader.dart';
 import 'works_registry.dart';
+
+typedef RegistryTextFetcher = Future<String?> Function(String url);
 
 /// Git 기반 글로벌 작품 사전 동기화 서비스 (샤딩 아키텍처)
 class RegistrySyncService {
@@ -24,6 +28,17 @@ class RegistrySyncService {
   RegistrySyncService._internal();
 
   SharedPreferences? _prefs;
+  static RegistryTextFetcher? _textFetcherOverride;
+
+  @visibleForTesting
+  static void setTextFetcherForTesting(RegistryTextFetcher? fetcher) {
+    _textFetcherOverride = fetcher;
+  }
+
+  @visibleForTesting
+  void resetForTesting() {
+    _prefs = null;
+  }
 
   Future<void> init() async {
     _prefs ??= await SharedPreferences.getInstance();
@@ -252,6 +267,9 @@ class RegistrySyncService {
   }
 
   Future<String?> _fetchText(String url) async {
+    final override = _textFetcherOverride;
+    if (override != null) return override(url);
+
     final client = HttpClient();
     client.connectionTimeout = const Duration(seconds: 15);
     try {

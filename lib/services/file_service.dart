@@ -35,6 +35,13 @@ class AkashaFileService {
   /// 현재 설정된 볼트 경로. 설정되지 않은 경우 null을 반환.
   String? get vaultPath => _vaultPath;
 
+  /// 볼트에 `.md` 아카이브가 연동된 작품인지 여부.
+  bool isArchivedInVault(AkashaItem item) {
+    if (_vaultPath == null || _vaultPath!.isEmpty) return false;
+    final path = item.filePath;
+    return path != null && path.isNotEmpty;
+  }
+
   /// 볼트 변경 시 알림을 받을 수 있는 스트림.
   Stream<void> get onVaultUpdated {
     _vaultUpdateController ??= StreamController<void>.broadcast();

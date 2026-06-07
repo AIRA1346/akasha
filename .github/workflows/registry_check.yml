@@ -1,0 +1,28 @@
+name: Registry Check
+
+on:
+  push:
+    paths:
+      - 'akasha-db/**'
+      - 'assets/registry/**'
+      - 'tool/**'
+      - '.github/workflows/registry_check.yml'
+  pull_request:
+    paths:
+      - 'akasha-db/**'
+      - 'assets/registry/**'
+      - 'tool/**'
+      - '.github/workflows/registry_check.yml'
+
+jobs:
+  registry-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Validate registry shards and franchise groups
+        run: dart run tool/ci_registry_check.dart

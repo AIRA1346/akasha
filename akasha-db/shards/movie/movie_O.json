@@ -1,0 +1,16 @@
+{
+  "gen_movie_oppenheimer-2023_2023": {
+    "workId": "gen_movie_oppenheimer-2023_2023",
+    "title": "오펜하이머",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Christopher Nolan",
+    "releaseYear": 2023,
+    "description": "오펜하이머 영화.",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1nGlU.jpg"
+  }
+}

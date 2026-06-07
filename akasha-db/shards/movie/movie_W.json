@@ -1,0 +1,16 @@
+{
+  "sub_movie_weathering-with-you_2019": {
+    "workId": "sub_movie_weathering-with-you_2019",
+    "title": "날씨의 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "신카이 마코토",
+    "releaseYear": 2019,
+    "description": "날씨의 아이 영화.",
+    "tags": [
+      "영화",
+      "서브컬처"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/qfbHDBZHNAd5mPC43oCA2BSwV2S.jpg"
+  }
+}

@@ -1,6 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/akasha_item.dart';
+import '../models/franchise_group.dart';
+import '../services/franchise_fusion_service.dart';
+import '../services/franchise_registry.dart';
+import '../services/franchise_representative_picker.dart';
+import '../services/registry_visibility_service.dart';
+import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import '../widgets/star_rating.dart';
 
@@ -23,11 +29,18 @@ class FusionSearchDialog extends StatefulWidget {
   State<FusionSearchDialog> createState() => _FusionSearchDialogState();
 }
 
+class _RemoteSearchEntry {
+  final RegistryWork work;
+  final RegistryRemoteHint hint;
+
+  const _RemoteSearchEntry({required this.work, required this.hint});
+}
+
 class _FusionSearchDialogState extends State<FusionSearchDialog> {
   final _ctrl = TextEditingController();
   Timer? _debounce;
   List<AkashaItem> _localResults = [];
-  List<RegistryWork> _remoteResults = [];
+  List<_RemoteSearchEntry> _remoteEntries = [];
   bool _isSearching = false;
   String? _searchError;
 
@@ -38,13 +51,18 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     super.dispose();
   }
 
+  Set<String> get _allLocalWorkIds => widget.localItems
+      .map((e) => e.workId)
+      .where((id) => id.isNotEmpty)
+      .toSet();
+
   void _onQueryChanged(String query) {
     _debounce?.cancel();
     final trimmed = query.trim();
     if (trimmed.isEmpty) {
       setState(() {
         _localResults = [];
-        _remoteResults = [];
+        _remoteEntries = [];
         _isSearching = false;
         _searchError = null;
       });
@@ -74,31 +92,166 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
         .where((id) => id.isNotEmpty)
         .toSet();
 
-    List<RegistryWork> remote = [];
+    List<_RemoteSearchEntry> remoteEntries = [];
     String? error;
     try {
       final registryHits = await WorksRegistry.searchAsync(query);
-      remote = registryHits
-          .where((work) => !localWorkIds.contains(work.workId))
-          .toList();
+      remoteEntries = _dedupeFranchiseEntries(
+        registryHits
+            .where((work) => !localWorkIds.contains(work.workId))
+            .map((work) => _RemoteSearchEntry(
+                  work: work,
+                  hint: RegistryVisibilityService.remoteSearchHint(
+                    workId: work.workId,
+                    userWorkIds: _allLocalWorkIds,
+                  ),
+                ))
+            .toList()
+          ..sort((a, b) {
+            final order = RegistryVisibilityService.remoteHintSortOrder(a.hint)
+                .compareTo(
+                    RegistryVisibilityService.remoteHintSortOrder(b.hint));
+            if (order != 0) return order;
+            return a.work.title.compareTo(b.work.title);
+          }),
+      );
     } catch (e) {
       error = '원격 사전 검색 실패 (오프라인일 수 있습니다)';
     }
 
     if (!mounted) return;
     setState(() {
-      _localResults = local;
-      _remoteResults = remote;
+      _localResults = FranchiseRepresentativePicker.dedupeLocalByFranchise(local);
+      _remoteEntries = remoteEntries;
       _isSearching = false;
       _searchError = error;
     });
   }
 
+  List<_RemoteSearchEntry> _dedupeFranchiseEntries(
+    List<_RemoteSearchEntry> entries,
+  ) {
+    final localFranchiseIds = <String>{};
+    for (final local in widget.localItems) {
+      final group = FranchiseRegistry.groupFor(local.workId);
+      if (group != null) localFranchiseIds.add(group.id);
+    }
+
+    final emittedFranchises = <String>{};
+    final result = <_RemoteSearchEntry>[];
+
+    for (final entry in entries) {
+      final group = FranchiseRegistry.groupFor(entry.work.workId);
+      if (group == null) {
+        result.add(entry);
+        continue;
+      }
+
+      if (UserRegistryPreferences.instance.tracksMultipleFormats(group.id)) {
+        if (localFranchiseIds.contains(group.id)) continue;
+        result.add(entry);
+        continue;
+      }
+
+      if (localFranchiseIds.contains(group.id)) continue;
+      if (emittedFranchises.contains(group.id)) continue;
+      emittedFranchises.add(group.id);
+
+      final franchiseEntries = entries
+          .where(
+            (e) => FranchiseRegistry.groupFor(e.work.workId)?.id == group.id,
+          )
+          .toList();
+
+      final primaryWork =
+          WorksRegistry.getWorkById(group.primaryWorkId) ?? entry.work;
+      final hint = _mergeHints(franchiseEntries.map((e) => e.hint));
+
+      result.add(_RemoteSearchEntry(work: primaryWork, hint: hint));
+    }
+
+    return result;
+  }
+
+  RegistryRemoteHint _mergeHints(Iterable<RegistryRemoteHint> hints) {
+    if (hints.any((h) => h == RegistryRemoteHint.hidden)) {
+      return RegistryRemoteHint.hidden;
+    }
+    if (hints.any((h) => h == RegistryRemoteHint.siblingTracked)) {
+      return RegistryRemoteHint.siblingTracked;
+    }
+    return RegistryRemoteHint.available;
+  }
+
+  FranchiseGroup? _franchiseForWork(RegistryWork work) =>
+      FranchiseRegistry.groupFor(work.workId);
+
+  Future<void> _handleRemoteTap(_RemoteSearchEntry entry) async {
+    final work = entry.work;
+    final hint = entry.hint;
+
+    if (hint == RegistryRemoteHint.siblingTracked) {
+      final proceed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('다른 매체 버전'),
+          content: Text(
+            '「${work.title}」(${work.category.label})은(는) '
+            '이미 추적 중인 같은 작품의 다른 매체입니다.\n\n'
+            '이 버전도 따로 추가할까요?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('취소'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('추가'),
+            ),
+          ],
+        ),
+      );
+      if (proceed != true || !mounted) return;
+    }
+
+    if (hint == RegistryRemoteHint.hidden) {
+      final proceed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('숨긴 항목'),
+          content: Text(
+            '「${work.title}」은(는) 사전에서 숨긴 항목입니다.\n'
+            '복원하고 추가할까요?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('취소'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('복원 후 추가'),
+            ),
+          ],
+        ),
+      );
+      if (proceed != true || !mounted) return;
+      await UserRegistryPreferences.instance.unhideWork(work.workId);
+    }
+
+    if (!mounted) return;
+    Navigator.pop(context);
+    await widget.onSelectRemote(work);
+  }
+
   @override
   Widget build(BuildContext context) {
     final query = _ctrl.text.trim();
-    final showCustomCta =
-        query.isNotEmpty && !_isSearching && _localResults.isEmpty && _remoteResults.isEmpty;
+    final showCustomCta = query.isNotEmpty &&
+        !_isSearching &&
+        _localResults.isEmpty &&
+        _remoteEntries.isEmpty;
 
     return AlertDialog(
       title: const Text('🔍 작품 검색'),
@@ -151,9 +304,9 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                           ..._localResults.map(_buildLocalTile),
                           const SizedBox(height: 8),
                         ],
-                        if (_remoteResults.isNotEmpty) ...[
-                          _sectionLabel('🌐 글로벌 사전', _remoteResults.length),
-                          ..._remoteResults.map(_buildRemoteTile),
+                        if (_remoteEntries.isNotEmpty) ...[
+                          _sectionLabel('🌐 글로벌 사전', _remoteEntries.length),
+                          ..._remoteEntries.map(_buildRemoteTile),
                         ],
                         if (showCustomCta) ...[
                           const SizedBox(height: 16),
@@ -171,7 +324,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                         if (!_isSearching &&
                             query.isNotEmpty &&
                             _localResults.isEmpty &&
-                            _remoteResults.isEmpty &&
+                            _remoteEntries.isEmpty &&
                             _searchError == null)
                           const Padding(
                             padding: EdgeInsets.only(top: 24),
@@ -207,12 +360,25 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   }
 
   Widget _buildLocalTile(AkashaItem item) {
+    final franchise = FranchiseRegistry.groupFor(item.workId);
+    final formatLabels = franchise != null
+        ? FranchiseFusionService.franchiseFormatLabels(franchise)
+        : null;
+
+    final subtitle = [
+      item.creator.isNotEmpty ? item.creator : '내 아카이브',
+      if (formatLabels != null && formatLabels.isNotEmpty) formatLabels,
+    ].join(' · ');
+
     return ListTile(
       dense: true,
       leading: Icon(item.category.icon, size: 20),
-      title: Text(item.title, style: const TextStyle(fontSize: 13)),
+      title: Text(
+        franchise?.displayName ?? item.title,
+        style: const TextStyle(fontSize: 13),
+      ),
       subtitle: Text(
-        item.creator.isNotEmpty ? item.creator : '내 아카이브',
+        subtitle,
         style: const TextStyle(fontSize: 11),
       ),
       trailing: StarRating(rating: item.rating, size: 11),
@@ -223,27 +389,71 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     );
   }
 
-  Widget _buildRemoteTile(RegistryWork work) {
-    return ListTile(
-      dense: true,
-      leading: Icon(work.category.icon, size: 20, color: Colors.lightBlueAccent),
-      title: Text(work.title, style: const TextStyle(fontSize: 13)),
-      subtitle: Text(
-        work.creator.isNotEmpty ? work.creator : '글로벌 사전',
-        style: const TextStyle(fontSize: 11),
-      ),
-      trailing: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-        decoration: BoxDecoration(
-          color: Colors.blue.withValues(alpha: 0.15),
-          borderRadius: BorderRadius.circular(4),
+  Widget _buildRemoteTile(_RemoteSearchEntry entry) {
+    final work = entry.work;
+    final hint = entry.hint;
+    final dimmed = hint != RegistryRemoteHint.available;
+    final franchise = _franchiseForWork(work);
+
+    String? hintText;
+    switch (hint) {
+      case RegistryRemoteHint.siblingTracked:
+        hintText = '다른 매체 버전 추적 중';
+      case RegistryRemoteHint.hidden:
+        hintText = '숨김됨';
+      case RegistryRemoteHint.available:
+        break;
+    }
+
+    final formatLabels =
+        franchise != null ? FranchiseFusionService.franchiseFormatLabels(franchise) : null;
+
+    final subtitle = [
+      work.creator.isNotEmpty ? work.creator : '글로벌 사전',
+      if (formatLabels != null && formatLabels.isNotEmpty) formatLabels else work.category.label,
+      ?hintText,
+    ].whereType<String>().join(' · ');
+
+    return Opacity(
+      opacity: dimmed ? 0.55 : 1.0,
+      child: ListTile(
+        dense: true,
+        leading: Icon(
+          work.category.icon,
+          size: 20,
+          color: dimmed ? Colors.grey : Colors.lightBlueAccent,
         ),
-        child: const Text('사전', style: TextStyle(fontSize: 10, color: Colors.lightBlueAccent)),
+        title: Text(
+          franchise?.displayName ?? work.title,
+          style: const TextStyle(fontSize: 13),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(
+            fontSize: 11,
+            color: hint == RegistryRemoteHint.siblingTracked
+                ? Colors.orange[300]
+                : hint == RegistryRemoteHint.hidden
+                    ? Colors.grey[500]
+                    : null,
+          ),
+        ),
+        trailing: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+          decoration: BoxDecoration(
+            color: Colors.blue.withValues(alpha: dimmed ? 0.08 : 0.15),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Text(
+            hint == RegistryRemoteHint.available ? '사전' : '주의',
+            style: TextStyle(
+              fontSize: 10,
+              color: dimmed ? Colors.grey[500] : Colors.lightBlueAccent,
+            ),
+          ),
+        ),
+        onTap: () => _handleRemoteTap(entry),
       ),
-      onTap: () async {
-        Navigator.pop(context);
-        await widget.onSelectRemote(work);
-      },
     );
   }
 }

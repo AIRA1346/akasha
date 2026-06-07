@@ -33,11 +33,17 @@ const _validDomains = {'subculture', 'generalCulture'};
 
 /// 오프라인 bootstrap용 eager 샤드 (나머지는 lazy — 검색 시 온디맨드)
 const _eagerBootstrapShardIds = {
+  // 서브컬 핵심 IP + 테스트·dogfood 프랜차이즈 샤드
   'manga_C',
   'manga_K',
   'manga_N',
   'manga_O',
   'manga_S',
+  'manga_R',
+  'manga_numeric',
+  'animation_R',
+  'book_R',
+  'book_8',
   'game_A',
   'game_E',
   'game_L',
@@ -152,14 +158,73 @@ void main(List<String> args) {
 
   if (syncAssets) {
     final assetsRoot = Directory('${projectRoot.path}/assets/registry');
-    _copyTree(dbRoot, assetsRoot, {
-      'manifest.json',
-      'search_index.json',
-      'legacy_aliases.json',
-      'shards',
-    });
+    _syncAssetsRegistry(
+      dbRoot: dbRoot,
+      assetsRoot: assetsRoot,
+      shardMetas: shardMetas,
+    );
     print('  → synced to ${assetsRoot.path}');
   }
+}
+
+/// 앱 번들에는 메타 + **eager 샤드만** 포함 (lazy는 GitHub 온디맨드)
+void _syncAssetsRegistry({
+  required Directory dbRoot,
+  required Directory assetsRoot,
+  required List<Map<String, dynamic>> shardMetas,
+}) {
+  if (!assetsRoot.existsSync()) assetsRoot.createSync(recursive: true);
+
+  for (final name in [
+    'manifest.json',
+    'search_index.json',
+    'legacy_aliases.json',
+  ]) {
+    final src = File('${dbRoot.path}/$name');
+    if (src.existsSync()) {
+      src.copySync('${assetsRoot.path}/$name');
+    }
+  }
+
+  final eagerPaths = <String>{
+    for (final meta in shardMetas)
+      if (meta['eager'] == true) meta['path'] as String,
+  };
+
+  final shardsDest = Directory('${assetsRoot.path}/shards');
+  var lazyRemoved = 0;
+  if (shardsDest.existsSync()) {
+    for (final entity in shardsDest.listSync(recursive: true)) {
+      if (entity is! File || !entity.path.endsWith('.json')) continue;
+      final normalized = entity.path.replaceAll('\\', '/');
+      final assetsNorm = assetsRoot.path.replaceAll('\\', '/');
+      final relativePath = normalized.startsWith('$assetsNorm/')
+          ? normalized.substring(assetsNorm.length + 1)
+          : p.basename(normalized);
+      if (eagerPaths.contains(relativePath)) continue;
+      try {
+        entity.deleteSync();
+        lazyRemoved++;
+      } catch (e) {
+        stderr.writeln('  WARN: could not remove lazy bundle shard $relativePath: $e');
+      }
+    }
+  }
+
+  var eagerCopied = 0;
+  for (final relativePath in eagerPaths) {
+    final src = File('${dbRoot.path}/$relativePath');
+    if (!src.existsSync()) continue;
+
+    final dest = File('${assetsRoot.path}/$relativePath');
+    dest.parent.createSync(recursive: true);
+    src.copySync(dest.path);
+    eagerCopied++;
+  }
+
+  print(
+    '  → bundle shards: $eagerCopied eager, $lazyRemoved lazy removed from assets',
+  );
 }
 
 void _validateWork(
@@ -196,6 +261,11 @@ void _validateWork(
       poster.isNotEmpty &&
       !poster.startsWith('http')) {
     errors.add('$shardPath/$workId: posterPath must be http URL or null');
+  }
+
+  final extensions = work['extensions'];
+  if (extensions != null && extensions is! Map) {
+    errors.add('$shardPath/$workId: extensions must be a JSON object');
   }
 }
 

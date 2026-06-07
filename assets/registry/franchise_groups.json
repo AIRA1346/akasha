@@ -1,0 +1,176 @@
+{
+  "_schema": {
+    "version": 1,
+    "note": "그리드 IP 1카드. 검색 개별 표시는 UserRegistryPreferences.tracksMultipleFormats"
+  },
+  "franchise_86": {
+    "displayName": "86 -에이티식스-",
+    "members": [
+      "sub_manga_86-eighty-six_2017",
+      "sub_book_86-light-novel_2016"
+    ],
+    "primaryWorkId": "sub_manga_86-eighty-six_2017"
+  },
+  "franchise_kimetsu": {
+    "displayName": "귀멸의 칼날",
+    "members": [
+      "sub_manga_kimetsu-no-yaiba_2016",
+      "sub_animation_demon-slayer_2019"
+    ],
+    "primaryWorkId": "sub_manga_kimetsu-no-yaiba_2016"
+  },
+  "franchise_dandadan": {
+    "displayName": "단다단",
+    "members": [
+      "sub_manga_dandadan_2021",
+      "sub_animation_dandadan-anime_2024"
+    ],
+    "primaryWorkId": "sub_manga_dandadan_2021"
+  },
+  "franchise_mob_psycho": {
+    "displayName": "모브 사이코 100",
+    "members": [
+      "sub_manga_mob-psycho-100_2012",
+      "sub_animation_mob-psycho-100_2016"
+    ],
+    "primaryWorkId": "sub_manga_mob-psycho-100_2012"
+  },
+  "franchise_mushoku": {
+    "displayName": "무직전생",
+    "members": [
+      "sub_manga_mushoku-tensei_2014",
+      "sub_book_mushoku-tensei-light-novel_2014",
+      "sub_animation_mushoku-tensei_2021"
+    ],
+    "primaryWorkId": "sub_manga_mushoku-tensei_2014"
+  },
+  "franchise_monogatari": {
+    "displayName": "바케모노가타리",
+    "members": [
+      "sub_book_monogatari-light-novel_2006",
+      "sub_animation_monogatari_2009"
+    ],
+    "primaryWorkId": "sub_book_monogatari-light-novel_2006"
+  },
+  "franchise_lotr": {
+    "displayName": "반지의 제왕: 반지 원정대",
+    "members": [
+      "gen_book_lord-of-the-rings-fellowship_1954",
+      "gen_movie_lord-of-the-rings-fellowship_2001"
+    ],
+    "primaryWorkId": "gen_book_lord-of-the-rings-fellowship_1954"
+  },
+  "franchise_bocchi": {
+    "displayName": "봇치 더 록!",
+    "members": [
+      "sub_manga_bocchi-the-rock_2017",
+      "sub_animation_bocchi-the-rock_2022"
+    ],
+    "primaryWorkId": "sub_manga_bocchi-the-rock_2017"
+  },
+  "franchise_stardew": {
+    "displayName": "스타듀 밸리",
+    "members": [
+      "gen_game_stardew-valley_2016",
+      "sub_game_stardew-valley-sub_2016"
+    ],
+    "primaryWorkId": "gen_game_stardew-valley_2016"
+  },
+  "franchise_spy_family": {
+    "displayName": "스파이 패밀리",
+    "members": [
+      "sub_manga_spy-x-family_2018",
+      "sub_animation_spy-x-family_2022"
+    ],
+    "primaryWorkId": "sub_manga_spy-x-family_2018"
+  },
+  "franchise_overlord": {
+    "displayName": "오버로드",
+    "members": [
+      "sub_book_overlord-light-novel_2012",
+      "sub_animation_overlord_2015"
+    ],
+    "primaryWorkId": "sub_book_overlord-light-novel_2012"
+  },
+  "franchise_rezero": {
+    "displayName": "Re:제로부터 시작하는 이세계 생활",
+    "members": [
+      "sub_manga_rezero_2014",
+      "sub_book_rezero-light-novel_2014",
+      "sub_animation_rezero-anime_2016"
+    ],
+    "primaryWorkId": "sub_manga_rezero_2014"
+  },
+  "franchise_weathering_with_you": {
+    "displayName": "날씨의 아이",
+    "members": [
+      "sub_movie_weathering-with-you_2019",
+      "sub_animation_weathering-with-you_2019"
+    ],
+    "primaryWorkId": "sub_movie_weathering-with-you_2019"
+  },
+  "franchise_gintama": {
+    "displayName": "은혼",
+    "members": [
+      "sub_manga_gintama_2003",
+      "sub_animation_gintama_2006"
+    ],
+    "primaryWorkId": "sub_manga_gintama_2003"
+  },
+  "franchise_konosuba": {
+    "displayName": "이 멋진 세계에 축복을!",
+    "members": [
+      "sub_book_konosuba-light-novel_2013",
+      "sub_animation_konosuba_2016"
+    ],
+    "primaryWorkId": "sub_book_konosuba-light-novel_2013"
+  },
+  "franchise_slime": {
+    "displayName": "전생 슬라임",
+    "members": [
+      "sub_book_slime-light-novel_2014",
+      "sub_animation_slime-anime_2018"
+    ],
+    "primaryWorkId": "sub_book_slime-light-novel_2014"
+  },
+  "franchise_jujutsu": {
+    "displayName": "주술회전",
+    "members": [
+      "sub_manga_jujutsu-kaisen_2018",
+      "sub_animation_jujutsu-kaisen_2020"
+    ],
+    "primaryWorkId": "sub_manga_jujutsu-kaisen_2018"
+  },
+  "franchise_aot": {
+    "displayName": "진격의 거인",
+    "members": [
+      "sub_manga_shingeki-no-kyojin_2009",
+      "sub_animation_attack-on-titan_2013"
+    ],
+    "primaryWorkId": "sub_manga_shingeki-no-kyojin_2009"
+  },
+  "franchise_chainsaw": {
+    "displayName": "체인소 맨",
+    "members": [
+      "sub_manga_chainsaw-man_2018",
+      "sub_animation_chainsaw-man_2022"
+    ],
+    "primaryWorkId": "sub_manga_chainsaw-man_2018"
+  },
+  "franchise_oshi_no_ko": {
+    "displayName": "최애의 아이",
+    "members": [
+      "sub_manga_oshi-no-ko_2020",
+      "sub_animation_oshi-no-ko_2023"
+    ],
+    "primaryWorkId": "sub_manga_oshi-no-ko_2020"
+  },
+  "franchise_kingdom": {
+    "displayName": "킹덤",
+    "members": [
+      "sub_manga_kingdom_2006",
+      "gen_drama_kingdom_2019"
+    ],
+    "primaryWorkId": "sub_manga_kingdom_2006"
+  }
+}

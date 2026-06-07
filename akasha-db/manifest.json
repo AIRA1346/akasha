@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-06T12:06:55.481861Z",
+  "generatedAt": "2026-06-07T01:14:52.311655Z",
   "shards": [
     {
       "id": "animation_A",
@@ -104,7 +104,7 @@
       "id": "animation_R",
       "category": "animation",
       "path": "shards/animation/animation_R.json",
-      "eager": false,
+      "eager": true,
       "entryCount": 1
     },
     {
@@ -153,7 +153,7 @@
       "id": "book_8",
       "category": "book",
       "path": "shards/book/book_8.json",
-      "eager": false,
+      "eager": true,
       "entryCount": 1
     },
     {
@@ -223,7 +223,7 @@
       "id": "book_R",
       "category": "book",
       "path": "shards/book/book_R.json",
-      "eager": false,
+      "eager": true,
       "entryCount": 2
     },
     {
@@ -444,6 +444,20 @@
       "entryCount": 1
     },
     {
+      "id": "game_steam_108600",
+      "category": "game",
+      "path": "shards/game/game_steam_108600.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1086940",
+      "category": "game",
+      "path": "shards/game/game_steam_1086940.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "game_steam_1091500",
       "category": "game",
       "path": "shards/game/game_steam_1091500.json",
@@ -451,9 +465,44 @@
       "entryCount": 1
     },
     {
+      "id": "game_steam_1142710",
+      "category": "game",
+      "path": "shards/game/game_steam_1142710.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1145350",
+      "category": "game",
+      "path": "shards/game/game_steam_1145350.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "game_steam_1145360",
       "category": "game",
       "path": "shards/game/game_steam_1145360.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1151340",
+      "category": "game",
+      "path": "shards/game/game_steam_1151340.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1151640",
+      "category": "game",
+      "path": "shards/game/game_steam_1151640.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1158310",
+      "category": "game",
+      "path": "shards/game/game_steam_1158310.json",
       "eager": false,
       "entryCount": 1
     },
@@ -469,12 +518,243 @@
       "category": "game",
       "path": "shards/game/game_steam_1174180.json",
       "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_steam_1196590",
+      "category": "game",
+      "path": "shards/game/game_steam_1196590.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1203220",
+      "category": "game",
+      "path": "shards/game/game_steam_1203220.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_12120",
+      "category": "game",
+      "path": "shards/game/game_steam_12120.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_12210",
+      "category": "game",
+      "path": "shards/game/game_steam_12210.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1284190",
+      "category": "game",
+      "path": "shards/game/game_steam_1284190.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1325200",
+      "category": "game",
+      "path": "shards/game/game_steam_1325200.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1326470",
+      "category": "game",
+      "path": "shards/game/game_steam_1326470.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1328670",
+      "category": "game",
+      "path": "shards/game/game_steam_1328670.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1454400",
+      "category": "game",
+      "path": "shards/game/game_steam_1454400.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1466860",
+      "category": "game",
+      "path": "shards/game/game_steam_1466860.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1517290",
+      "category": "game",
+      "path": "shards/game/game_steam_1517290.json",
+      "eager": false,
       "entryCount": 1
     },
     {
       "id": "game_steam_1593500",
       "category": "game",
       "path": "shards/game/game_steam_1593500.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1599340",
+      "category": "game",
+      "path": "shards/game/game_steam_1599340.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1623730",
+      "category": "game",
+      "path": "shards/game/game_steam_1623730.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1627720",
+      "category": "game",
+      "path": "shards/game/game_steam_1627720.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1659420",
+      "category": "game",
+      "path": "shards/game/game_steam_1659420.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1771300",
+      "category": "game",
+      "path": "shards/game/game_steam_1771300.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1817070",
+      "category": "game",
+      "path": "shards/game/game_steam_1817070.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1888160",
+      "category": "game",
+      "path": "shards/game/game_steam_1888160.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1888930",
+      "category": "game",
+      "path": "shards/game/game_steam_1888930.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1938090",
+      "category": "game",
+      "path": "shards/game/game_steam_1938090.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1962663",
+      "category": "game",
+      "path": "shards/game/game_steam_1962663.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_1966720",
+      "category": "game",
+      "path": "shards/game/game_steam_1966720.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2050650",
+      "category": "game",
+      "path": "shards/game/game_steam_2050650.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_205100",
+      "category": "game",
+      "path": "shards/game/game_steam_205100.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_219740",
+      "category": "game",
+      "path": "shards/game/game_steam_219740.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2215430",
+      "category": "game",
+      "path": "shards/game/game_steam_2215430.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2218500",
+      "category": "game",
+      "path": "shards/game/game_steam_2218500.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_22300",
+      "category": "game",
+      "path": "shards/game/game_steam_22300.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_22380",
+      "category": "game",
+      "path": "shards/game/game_steam_22380.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_227300",
+      "category": "game",
+      "path": "shards/game/game_steam_227300.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_230410",
+      "category": "game",
+      "path": "shards/game/game_steam_230410.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_233450",
+      "category": "game",
+      "path": "shards/game/game_steam_233450.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2358720",
+      "category": "game",
+      "path": "shards/game/game_steam_2358720.json",
       "eager": false,
       "entryCount": 1
     },
@@ -486,9 +766,86 @@
       "entryCount": 1
     },
     {
+      "id": "game_steam_236850",
+      "category": "game",
+      "path": "shards/game/game_steam_236850.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_239140",
+      "category": "game",
+      "path": "shards/game/game_steam_239140.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2420110",
+      "category": "game",
+      "path": "shards/game/game_steam_2420110.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_242050",
+      "category": "game",
+      "path": "shards/game/game_steam_242050.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_242760",
+      "category": "game",
+      "path": "shards/game/game_steam_242760.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_251570",
+      "category": "game",
+      "path": "shards/game/game_steam_251570.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "game_steam_252490",
       "category": "game",
       "path": "shards/game/game_steam_252490.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_steam_252950",
+      "category": "game",
+      "path": "shards/game/game_steam_252950.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_2531310",
+      "category": "game",
+      "path": "shards/game/game_steam_2531310.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_255710",
+      "category": "game",
+      "path": "shards/game/game_steam_255710.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_261550",
+      "category": "game",
+      "path": "shards/game/game_steam_261550.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_268910",
+      "category": "game",
+      "path": "shards/game/game_steam_268910.json",
       "eager": false,
       "entryCount": 1
     },
@@ -496,6 +853,48 @@
       "id": "game_steam_271590",
       "category": "game",
       "path": "shards/game/game_steam_271590.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_steam_281990",
+      "category": "game",
+      "path": "shards/game/game_steam_281990.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_294100",
+      "category": "game",
+      "path": "shards/game/game_steam_294100.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_322330",
+      "category": "game",
+      "path": "shards/game/game_steam_322330.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_3240220",
+      "category": "game",
+      "path": "shards/game/game_steam_3240220.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_346110",
+      "category": "game",
+      "path": "shards/game/game_steam_346110.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_359550",
+      "category": "game",
+      "path": "shards/game/game_steam_359550.json",
       "eager": false,
       "entryCount": 1
     },
@@ -507,9 +906,156 @@
       "entryCount": 1
     },
     {
+      "id": "game_steam_374320",
+      "category": "game",
+      "path": "shards/game/game_steam_374320.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_377160",
+      "category": "game",
+      "path": "shards/game/game_steam_377160.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_379430",
+      "category": "game",
+      "path": "shards/game/game_steam_379430.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_381210",
+      "category": "game",
+      "path": "shards/game/game_steam_381210.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_394360",
+      "category": "game",
+      "path": "shards/game/game_steam_394360.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_400",
+      "category": "game",
+      "path": "shards/game/game_steam_400.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_4000",
+      "category": "game",
+      "path": "shards/game/game_steam_4000.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_413150",
+      "category": "game",
+      "path": "shards/game/game_steam_413150.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_427520",
+      "category": "game",
+      "path": "shards/game/game_steam_427520.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_440",
+      "category": "game",
+      "path": "shards/game/game_steam_440.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_440900",
+      "category": "game",
+      "path": "shards/game/game_steam_440900.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_485510",
+      "category": "game",
+      "path": "shards/game/game_steam_485510.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_489830",
+      "category": "game",
+      "path": "shards/game/game_steam_489830.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_493340",
+      "category": "game",
+      "path": "shards/game/game_steam_493340.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_526870",
+      "category": "game",
+      "path": "shards/game/game_steam_526870.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_534380",
+      "category": "game",
+      "path": "shards/game/game_steam_534380.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_548430",
+      "category": "game",
+      "path": "shards/game/game_steam_548430.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_548570",
+      "category": "game",
+      "path": "shards/game/game_steam_548570.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_550",
+      "category": "game",
+      "path": "shards/game/game_steam_550.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "game_steam_570",
       "category": "game",
       "path": "shards/game/game_steam_570.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_578080",
+      "category": "game",
+      "path": "shards/game/game_steam_578080.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_594650",
+      "category": "game",
+      "path": "shards/game/game_steam_594650.json",
       "eager": false,
       "entryCount": 1
     },
@@ -518,6 +1064,83 @@
       "category": "game",
       "path": "shards/game/game_steam_730.json",
       "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_steam_774181",
+      "category": "game",
+      "path": "shards/game/game_steam_774181.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_774361",
+      "category": "game",
+      "path": "shards/game/game_steam_774361.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_782330",
+      "category": "game",
+      "path": "shards/game/game_steam_782330.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_813780",
+      "category": "game",
+      "path": "shards/game/game_steam_813780.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_814380",
+      "category": "game",
+      "path": "shards/game/game_steam_814380.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_883710",
+      "category": "game",
+      "path": "shards/game/game_steam_883710.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_892970",
+      "category": "game",
+      "path": "shards/game/game_steam_892970.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_949230",
+      "category": "game",
+      "path": "shards/game/game_steam_949230.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_952060",
+      "category": "game",
+      "path": "shards/game/game_steam_952060.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "game_steam_960090",
+      "category": "game",
+      "path": "shards/game/game_steam_960090.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "game_steam_990080",
+      "category": "game",
+      "path": "shards/game/game_steam_990080.json",
+      "eager": false,
       "entryCount": 1
     },
     {
@@ -525,152 +1148,208 @@
       "category": "manga",
       "path": "shards/manga/manga_A.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 46
     },
     {
       "id": "manga_B",
       "category": "manga",
       "path": "shards/manga/manga_B.json",
       "eager": false,
-      "entryCount": 7
+      "entryCount": 54
     },
     {
       "id": "manga_C",
       "category": "manga",
       "path": "shards/manga/manga_C.json",
       "eager": true,
-      "entryCount": 5
+      "entryCount": 21
     },
     {
       "id": "manga_D",
       "category": "manga",
       "path": "shards/manga/manga_D.json",
       "eager": false,
-      "entryCount": 4
+      "entryCount": 34
+    },
+    {
+      "id": "manga_E",
+      "category": "manga",
+      "path": "shards/manga/manga_E.json",
+      "eager": false,
+      "entryCount": 11
     },
     {
       "id": "manga_F",
       "category": "manga",
       "path": "shards/manga/manga_F.json",
       "eager": false,
-      "entryCount": 4
+      "entryCount": 16
     },
     {
       "id": "manga_G",
       "category": "manga",
       "path": "shards/manga/manga_G.json",
       "eager": false,
-      "entryCount": 4
+      "entryCount": 38
     },
     {
       "id": "manga_H",
       "category": "manga",
       "path": "shards/manga/manga_H.json",
       "eager": false,
-      "entryCount": 4
+      "entryCount": 46
+    },
+    {
+      "id": "manga_I",
+      "category": "manga",
+      "path": "shards/manga/manga_I.json",
+      "eager": false,
+      "entryCount": 16
     },
     {
       "id": "manga_J",
       "category": "manga",
       "path": "shards/manga/manga_J.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 30
     },
     {
       "id": "manga_K",
       "category": "manga",
       "path": "shards/manga/manga_K.json",
       "eager": true,
-      "entryCount": 4
+      "entryCount": 74
+    },
+    {
+      "id": "manga_L",
+      "category": "manga",
+      "path": "shards/manga/manga_L.json",
+      "eager": false,
+      "entryCount": 9
     },
     {
       "id": "manga_M",
       "category": "manga",
       "path": "shards/manga/manga_M.json",
       "eager": false,
-      "entryCount": 7
+      "entryCount": 50
     },
     {
       "id": "manga_N",
       "category": "manga",
       "path": "shards/manga/manga_N.json",
       "eager": true,
-      "entryCount": 3
+      "entryCount": 33
     },
     {
       "id": "manga_O",
       "category": "manga",
       "path": "shards/manga/manga_O.json",
       "eager": true,
-      "entryCount": 3
+      "entryCount": 24
     },
     {
       "id": "manga_P",
       "category": "manga",
       "path": "shards/manga/manga_P.json",
       "eager": false,
-      "entryCount": 3
+      "entryCount": 17
     },
     {
       "id": "manga_Q",
       "category": "manga",
       "path": "shards/manga/manga_Q.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "manga_R",
       "category": "manga",
       "path": "shards/manga/manga_R.json",
-      "eager": false,
-      "entryCount": 3
+      "eager": true,
+      "entryCount": 19
     },
     {
       "id": "manga_S",
       "category": "manga",
       "path": "shards/manga/manga_S.json",
       "eager": true,
-      "entryCount": 7
+      "entryCount": 80
     },
     {
       "id": "manga_T",
       "category": "manga",
       "path": "shards/manga/manga_T.json",
       "eager": false,
-      "entryCount": 5
+      "entryCount": 54
     },
     {
       "id": "manga_U",
       "category": "manga",
       "path": "shards/manga/manga_U.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 11
     },
     {
       "id": "manga_V",
       "category": "manga",
       "path": "shards/manga/manga_V.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 10
+    },
+    {
+      "id": "manga_W",
+      "category": "manga",
+      "path": "shards/manga/manga_W.json",
+      "eager": false,
+      "entryCount": 13
+    },
+    {
+      "id": "manga_X",
+      "category": "manga",
+      "path": "shards/manga/manga_X.json",
+      "eager": false,
+      "entryCount": 1
     },
     {
       "id": "manga_Y",
       "category": "manga",
       "path": "shards/manga/manga_Y.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 33
+    },
+    {
+      "id": "manga_Z",
+      "category": "manga",
+      "path": "shards/manga/manga_Z.json",
+      "eager": false,
+      "entryCount": 2
     },
     {
       "id": "manga_numeric",
       "category": "manga",
       "path": "shards/manga/manga_numeric.json",
-      "eager": false,
-      "entryCount": 2
+      "eager": true,
+      "entryCount": 12
     },
     {
       "id": "movie_A",
       "category": "movie",
       "path": "shards/movie/movie_A.json",
+      "eager": false,
+      "entryCount": 2
+    },
+    {
+      "id": "movie_B",
+      "category": "movie",
+      "path": "shards/movie/movie_B.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "movie_C",
+      "category": "movie",
+      "path": "shards/movie/movie_C.json",
       "eager": false,
       "entryCount": 1
     },
@@ -678,6 +1357,13 @@
       "id": "movie_D",
       "category": "movie",
       "path": "shards/movie/movie_D.json",
+      "eager": false,
+      "entryCount": 3
+    },
+    {
+      "id": "movie_E",
+      "category": "movie",
+      "path": "shards/movie/movie_E.json",
       "eager": false,
       "entryCount": 1
     },
@@ -710,25 +1396,46 @@
       "entryCount": 1
     },
     {
+      "id": "movie_O",
+      "category": "movie",
+      "path": "shards/movie/movie_O.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
       "id": "movie_P",
       "category": "movie",
       "path": "shards/movie/movie_P.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 3
     },
     {
       "id": "movie_S",
       "category": "movie",
       "path": "shards/movie/movie_S.json",
       "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "movie_T",
       "category": "movie",
       "path": "shards/movie/movie_T.json",
       "eager": false,
-      "entryCount": 4
+      "entryCount": 5
+    },
+    {
+      "id": "movie_W",
+      "category": "movie",
+      "path": "shards/movie/movie_W.json",
+      "eager": false,
+      "entryCount": 1
+    },
+    {
+      "id": "movie_Y",
+      "category": "movie",
+      "path": "shards/movie/movie_Y.json",
+      "eager": false,
+      "entryCount": 1
     }
   ]
 }

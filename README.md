@@ -1,43 +1,138 @@
 # 🏛️ AKASHA (아카샤)
+
 > **세상 모든 작품을 기억하고, 추억하며, 다음 여정을 찾아가는 개인 미디어 아카이브 공간**
 
-AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 사랑하고 영접한 **세상의 모든 작품들(만화, 게임, 애니메이션, 책, 영화, 드라마 등)**을 옵시디언(Obsidian) 호환 로컬 마크다운 파일로 축적하고, 감동을 회상하며, 취향을 바탕으로 다음 여정을 발견하도록 돕는 **통합 미디어 아카이빙 플랫폼**입니다.
+AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 사랑하고 영접한 **세상의 모든 작품들**(만화, 게임, 애니메이션, 책, 영화, 드라마 등)을 Obsidian 호환 로컬 마크다운으로 축적하고, 글로벌 작품 사전과 조인해 전시하는 **통합 미디어 아카이빙 플랫폼**입니다.
+
+**1차 출시 목표:** Steam (Windows) · **v1 목표 시점:** 2026년 3분기
+
+상세 마일스톤·백로그는 [ROADMAP.md](ROADMAP.md)를 참고하세요.
 
 ---
 
-## 🌌 Core Philosophy (핵심 철학 및 비전)
+## 🎯 Steam v1 범위 (MVP)
 
-우리가 작품을 보고 기록하는 진짜 이유는 데이터의 수집이 아닌 **'그때의 감동과 내 생각의 보존'**에 있습니다. AKASHA는 다음의 3대 핵심 사용자 경험을 토대로 움직이며, 어떤 개발이나 확장 중에도 이 방향성을 잃지 않습니다.
+### 핵심 (반드시 포함)
 
-### 1. 📂 지능적인 다형성 기록 (Archive & Write)
-* **모든 매체 수용**: 게임, 책, 영화, 애니메이션 등 매체 고유의 특성(출시 여부, 내 플레이 상태 등)을 완벽히 수용할 수 있는 유연한 다형성 데이터 구조를 지향합니다.
-* **영구적인 개인 소유**: 모든 상세 리뷰, 평점, 태그, 명장면/명대사는 유저 로컬의 마크다운(`.md`) 파일에 Obsidian 양식으로 보존됩니다. 플랫폼 종속적이지 않은 100% 개인 소유 데이터입니다.
+| 영역 | 설명 |
+|------|------|
+| **Obsidian 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
+| **글로벌 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
+| **IP 1카드 그리드** | 같은 IP는 카드 1장, 매체는 하단 칩으로 전부 표시 |
+| **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰(기본 무료) + 테마·꾸미기(IAP) |
 
-### 2. 👑 감동의 실시간 회상 (Remind & Relive)
-* **묻히지 않는 기록**: 아카이브에 기록된 명대사와 감상문을 홈 화면에 무작위로 호출하는 **'오늘의 회상 카드'** 등을 통해, 잊고 있던 과거의 영감과 감동을 환기합니다.
-* **성장과 여정의 기록**: 타임라인과 완성 캘린더를 통해 내가 걸어온 미디어 여정과 성장의 기록을 시각적으로 돌아봅니다.
+### v1에 포함하는 부가 기능 (이미 구현 → 다듬기)
 
-### 3. 🗺️ 다음 여정으로의 인도 (Discover & Journey)
-* **메타데이터 자동화**: 유저가 정보를 다 기입할 필요 없이 AI와 외부 API(TMDB, IGDB 등)가 작품의 장르, 포스터, 작가를 자동으로 연동하여 채워줍니다.
-* **취향 기반 탐색**: 내가 작성한 아카이브 태그와 S-Tier 컬렉션(명예의 전당) 데이터를 유기적으로 연결하여, 아직 보지 않은 작품들 중에서 "내 취향에 맞는 최고의 다음 작품"을 정밀하게 추천하고 탐색할 수 있도록 돕습니다.
+- **작품 검색** — 내 볼트 + 글로벌 사전 + 없으면 직접 등록
+- **AI 마크다운 가져오기** — ChatGPT 등이 만든 YAML+마크다운 붙여넣기로 **새 작품** 등록 (기존 `.md` 수정 아님)
+- **대시보드** — 카테고리·도메인 필터, Hall of Fame, 워치리스트, 섹션 정렬·접기
+- **볼트 자동 아카이빙** — 사전 작품을 필터 범위에 맞춰 `.md` 자동 생성
+
+### v1에서 보류
+
+| 항목 | 비고 |
+|------|------|
+| 오늘의 회상 카드 | 코드는 있으나 v1 스토어 설명·마케팅에서 제외 → v1.1 |
+| 타임라인 / 완성 캘린더 | 철학 2번 축, v1 이후 |
+| 취향 기반 추천 (Discover) | 철학 3번 축, v1 이후 |
+| TMDB / IGDB 등 외부 API | 저작권·운영 리스크, v1 이후 |
+| Riverpod 대규모 리팩터 | v1 이후 |
+| 모바일 (Android / iOS) | Windows 검증 후 |
+
+---
+
+## 💰 Steam 배포 모델
+
+- **기본 앱:** 무료
+- **IAP (유료):**
+  - 나의 서재 **테마·꾸미기** (배경, 진열 방식 등)
+  - 비주얼 테마·서재 꾸미기 팩
+  - 서포터 팩
+
+나의 서재 **기본 뷰**(내 아카이브 모아 보기)는 무료로 제공합니다.
+
+---
+
+## 📚 글로벌 작품 사전 (akasha-db)
+
+| 항목 | 정책 |
+|------|------|
+| **출시 목표** | 엄선 **~1,000작** (서브컬·대중문화 명작 중심) |
+| **장기 비전** | 수백만 작품 체급까지 확장 |
+| **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |
+| **운영** | **하이브리드** — 핵심 시드는 개발자, 롱테일은 기여자 PR + `franchise_linter` 검증 |
+
+동기화 base URL:
+
+```
+https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
+```
+
+레포: [akasha-db](https://github.com/AIRA1346/akasha-db) (앱 저장소 내 `akasha-db/` 서브모듈/미러)
+
+---
+
+## 🌌 Core Philosophy (핵심 철학)
+
+작품을 기록하는 이유는 데이터 수집이 아니라 **그때의 감동과 생각의 보존**입니다.
+
+### 1. 📂 지능적인 다형성 기록 (Archive & Write) — **v1 ✅**
+
+- 매체별 상태·평점·명대사를 유연한 다형성 구조로 수용
+- 모든 개인 기록은 로컬 `.md`에 Obsidian 양식으로 보존 (100% 개인 소유)
+
+### 2. 👑 감동의 실시간 회상 (Remind & Relive) — **v1 이후**
+
+- **오늘의 회상 카드** — v1.1+
+- **타임라인·완성 캘린더** — v1 이후
+
+### 3. 🗺️ 다음 여정으로의 인도 (Discover & Journey) — **v1 이후**
+
+- 외부 API 자동 메타 — v1 이후 (저작권 주의)
+- **취향 기반 추천** — v1 이후
+
+---
+
+## 🏗️ 아키텍처 요약
+
+```mermaid
+flowchart LR
+    subgraph Tier1["Tier 1 — 글로벌 사전"]
+        DB["akasha-db<br/>manifest + shards"]
+    end
+    subgraph Tier2["Tier 2 — 개인 기록"]
+        Vault["Obsidian 볼트<br/>.md + posters/"]
+    end
+    DB -->|work_id 조인| Fusion["UI Fusion"]
+    Vault --> Fusion
+    Fusion --> UI["홈 · 나의 서재 · 상세"]
+```
+
+- **work_id:** `{sub|gen}_{category}_{identifier}_{year}` (샤드 키 자동 계산)
+- **그리드:** IP당 1카드 (`FranchiseDisplayPolicy`)
+- **검색:** 로컬 + 사전 + 가상 항목; 같은 IP는 검색에서만 매체별 노출 가능
 
 ---
 
 ## 🛠️ Technology Stack
-* **Core Framework**: Flutter (Windows Desktop 우선 검증 및 모바일 확장성 확보)
-* **Storage**: Local Markdown Files (.md with YAML Front-matter)
-* **State Management**: Provider / Riverpod (추후 고도화 예정)
-* **Parser Engine**: Custom YAML & Markdown Parser for Obsidian Vault compatibility
+
+| 영역 | 선택 |
+|------|------|
+| Framework | Flutter (Windows Desktop 우선) |
+| Storage | Local Markdown + YAML front-matter |
+| State | Provider (Riverpod는 v1 이후 검토) |
+| Registry | JSON 샤딩 v2, 온디맨드 fetch |
+| CI | `flutter_ci`, `ci_registry_check`, `franchise_linter` |
 
 ---
 
-## 📂 Obsidian Vault 연동 (볼트 구조)
+## 📂 Obsidian Vault 연동
 
 앱에서 **폴더 연동** 시 아래 구조가 자동 생성됩니다.
 
 ```
 {Vault}/
-├── posters/          # 사용자 업로드 포스터 (상대경로 posters/...)
+├── posters/          # 사용자 업로드 포스터
 ├── manga/
 ├── animation/
 ├── game/
@@ -46,22 +141,53 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 └── drama/
 ```
 
-### YAML Front-matter (필수·권장 필드)
+### YAML Front-matter (필수·권장)
 
 | 필드 | 설명 |
 |------|------|
-| `work_id` | 마스터 ID (`sub_manga_..._2011`). 비어 있으면 사전 매칭 후 자동 부여 |
-| `title` | 작품 제목 (Obsidian 파일명과 동기화) |
+| `work_id` | 마스터 ID. 비어 있으면 사전 매칭 후 자동 부여 |
+| `title` | 작품 제목 (파일명과 동기화) |
 | `category` | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
 | `domain` | `subculture` · `generalCulture` |
-| `status` / `my_status` | 나의 상태 (볼 예정, 전부 봄 등) |
+| `status` / `my_status` | 나의 상태 |
 | `work_status` | 작품 상태 (완결, 출시됨 등) |
 | `rating` | 0.0~5.0 |
-| `is_hall_of_fame` | S-Tier 명예의 전당 여부 |
-| `poster` | `posters/` 상대경로 또는 커스텀 URL만 저장 (Registry CDN URL은 생략) |
+| `is_hall_of_fame` | S-Tier 명예의 전당 |
+| `poster` | `posters/` 상대경로 또는 커스텀 URL (Registry CDN URL은 YAML에 저장하지 않음) |
 
-본문에는 **명대사·감상문**만 기록합니다. 작품 설명·포스터 기본값은 글로벌 사전에서 UI fusion 됩니다.
+본문에는 **명대사·감상문**만 기록합니다. 설명·기본 포스터는 글로벌 사전에서 UI fusion 됩니다.
 
 ### 외부 편집
 
-Obsidian에서 `.md`를 수정하면 앱이 **약 0.4초 후** 자동 반영합니다. 앱에서 저장 시 **원자적 쓰기**(임시 파일 → rename)로 파일 손상을 방지합니다.
+Obsidian에서 `.md`를 수정하면 앱이 **약 0.4초 후** 자동 반영합니다. 앱 저장 시 **원자적 쓰기**(임시 파일 → rename)로 손상을 방지합니다.
+
+---
+
+## 🚀 개발
+
+**Flutter SDK (로컬):** `C:\src\flutter`  
+경로 기록: `tool/flutter_sdk.path`, `.vscode/settings.json`  
+Windows 래퍼: `.\scripts\flutter.ps1 test`  
+Release 빌드: `.\scripts\build_release.ps1` → `build\windows\x64\runner\Release\akasha.exe`
+
+```bash
+flutter pub get
+flutter analyze lib/
+flutter test
+dart run tool/ci_registry_check.dart
+dart run tool/seed_expansion_anilist.dart   # akasha-db → ~1,000작
+dart run tool/registry_builder.dart --sync-assets   # 번들: search_index 전체 + eager 샤드만
+flutter build windows
+```
+
+앱 번들에는 **search_index(전체 ~1,000작)** 와 **eager 샤드 10개**만 포함됩니다. 나머지 샤드는 동기화·검색 시 GitHub에서 온디맨드로 받습니다.
+
+Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
+
+---
+
+## 📄 관련 문서
+
+- [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태
+- `akasha-db/README.md` — 사전 기여·샤딩 규칙
+- `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈 CI 검증

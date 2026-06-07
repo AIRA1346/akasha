@@ -1,5 +1,5 @@
 name: akasha
-description: "A new Flutter project."
+description: "AKASHA — Obsidian 볼트 + 글로벌 작품 사전(1,000작) + IP 1카드 그리드 · Windows/Steam v1"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -68,6 +68,7 @@ flutter:
     - assets/registry/manifest.json
     - assets/registry/search_index.json
     - assets/registry/legacy_aliases.json
+    - assets/registry/franchise_groups.json
     - assets/registry/shards/manga/
     - assets/registry/shards/animation/
     - assets/registry/shards/game/
