@@ -172,5 +172,181 @@
       "gen_drama_kingdom_2019"
     ],
     "primaryWorkId": "sub_manga_kingdom_2006"
+  },
+  "franchise_dr_stone": {
+    "displayName": "Dr.STONE",
+    "members": [
+      "sub_manga_dr-stone_2017",
+      "sub_animation_dr-stone_2019"
+    ],
+    "primaryWorkId": "sub_manga_dr-stone_2017"
+  },
+  "franchise_kaiju8": {
+    "displayName": "괴수 8호",
+    "members": [
+      "sub_manga_kaiju-no-8_2020",
+      "sub_animation_kaiju-no-8_2024"
+    ],
+    "primaryWorkId": "sub_manga_kaiju-no-8_2020"
+  },
+  "franchise_solo_leveling": {
+    "displayName": "나 혼자만 레벨업",
+    "members": [
+      "sub_webtoon_solo-leveling_2018",
+      "sub_animation_solo-leveling_2024"
+    ],
+    "primaryWorkId": "sub_webtoon_solo-leveling_2018"
+  },
+  "franchise_mha": {
+    "displayName": "나의 히어로 아카데미아",
+    "members": [
+      "sub_manga_my-hero-academia_2014",
+      "sub_animation_my-hero-academia_2016"
+    ],
+    "primaryWorkId": "sub_manga_my-hero-academia_2014"
+  },
+  "franchise_dungeon_meshi": {
+    "displayName": "던전밥",
+    "members": [
+      "sub_manga_dungeon-meshi_2014",
+      "sub_animation_dungeon-meshi_2024"
+    ],
+    "primaryWorkId": "sub_manga_dungeon-meshi_2014"
+  },
+  "franchise_mashle": {
+    "displayName": "마슐",
+    "members": [
+      "sub_manga_mashle_2018",
+      "sub_animation_mashle_2023"
+    ],
+    "primaryWorkId": "sub_manga_mashle_2018"
+  },
+  "franchise_fire_force": {
+    "displayName": "불꽃 소방대",
+    "members": [
+      "sub_manga_fire-force_2015",
+      "sub_animation_fire-force_2019"
+    ],
+    "primaryWorkId": "sub_manga_fire-force_2015"
+  },
+  "franchise_black_clover": {
+    "displayName": "블랙 클로버",
+    "members": [
+      "sub_manga_black-clover_2015",
+      "sub_animation_black-clover_2017"
+    ],
+    "primaryWorkId": "sub_manga_black-clover_2015"
+  },
+  "franchise_blue_lock": {
+    "displayName": "블루 록",
+    "members": [
+      "sub_manga_blue-lock_2018",
+      "sub_animation_blue-lock_2022"
+    ],
+    "primaryWorkId": "sub_manga_blue-lock_2018"
+  },
+  "franchise_sakamoto_days": {
+    "displayName": "사카모토 데이즈",
+    "members": [
+      "sub_manga_sakamoto-days_2020",
+      "sub_animation_sakamoto-days_2025"
+    ],
+    "primaryWorkId": "sub_manga_sakamoto-days_2020"
+  },
+  "franchise_sao": {
+    "displayName": "소드 아트 온라인",
+    "members": [
+      "sub_book_sword-art-online_2009",
+      "sub_animation_sword-art-online_2012"
+    ],
+    "primaryWorkId": "sub_book_sword-art-online_2009"
+  },
+  "franchise_skip_loafer": {
+    "displayName": "스킵과 로퍼",
+    "members": [
+      "sub_manga_skip-and-loafer_2018",
+      "sub_animation_skip-and-loafer_2023"
+    ],
+    "primaryWorkId": "sub_manga_skip-and-loafer_2018"
+  },
+  "franchise_classroom_elite": {
+    "displayName": "실력 지상주의 교실",
+    "members": [
+      "sub_book_classroom-of-the-elite_2015",
+      "sub_animation_classroom-of-the-elite_2017"
+    ],
+    "primaryWorkId": "sub_book_classroom-of-the-elite_2015"
+  },
+  "franchise_apothecary": {
+    "displayName": "약사의 혼잣말",
+    "members": [
+      "sub_manga_apothecary-diaries_2016",
+      "sub_animation_apothecary-diaries_2023"
+    ],
+    "primaryWorkId": "sub_manga_apothecary-diaries_2016"
+  },
+  "franchise_undead_unluck": {
+    "displayName": "언데드 언럭",
+    "members": [
+      "sub_manga_undead-unluck_2020",
+      "sub_animation_undead-unluck_2023"
+    ],
+    "primaryWorkId": "sub_manga_undead-unluck_2020"
+  },
+  "franchise_opm": {
+    "displayName": "원펀맨",
+    "members": [
+      "sub_manga_one-punch-man_2012",
+      "sub_animation_one-punch-man_2015"
+    ],
+    "primaryWorkId": "sub_manga_one-punch-man_2012"
+  },
+  "franchise_wind_breaker": {
+    "displayName": "윈드 브레이커",
+    "members": [
+      "sub_manga_wind-breaker_2021",
+      "sub_animation_wind-breaker_2024"
+    ],
+    "primaryWorkId": "sub_manga_wind-breaker_2021"
+  },
+  "franchise_frieren": {
+    "displayName": "장송의 프리렌",
+    "members": [
+      "sub_manga_frieren_2020",
+      "sub_animation_frieren_2023"
+    ],
+    "primaryWorkId": "sub_manga_frieren_2020"
+  },
+  "franchise_hells_paradise": {
+    "displayName": "지옥락",
+    "members": [
+      "sub_manga_hells-paradise_2018",
+      "sub_animation_hells-paradise_2023"
+    ],
+    "primaryWorkId": "sub_manga_hells-paradise_2018"
+  },
+  "franchise_kaguya": {
+    "displayName": "카구야님은 고백받고 싶어",
+    "members": [
+      "sub_manga_kaguya-sama_2015",
+      "sub_animation_kaguya-sama_2019"
+    ],
+    "primaryWorkId": "sub_manga_kaguya-sama_2015"
+  },
+  "franchise_haikyuu": {
+    "displayName": "하이큐!!",
+    "members": [
+      "sub_manga_haikyuu_2012",
+      "sub_animation_haikyuu_2014"
+    ],
+    "primaryWorkId": "sub_manga_haikyuu_2012"
+  },
+  "franchise_horimiya": {
+    "displayName": "호리미야",
+    "members": [
+      "sub_manga_horimiya_2011",
+      "sub_animation_horimiya_2021"
+    ],
+    "primaryWorkId": "sub_manga_horimiya_2011"
   }
 }

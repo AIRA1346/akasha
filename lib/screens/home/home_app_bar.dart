@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onSyncSettings;
   final VoidCallback onPromptTemplates;
   final VoidCallback onVaultSettings;
-  final VoidCallback onOpenMyLibrary;
+  final VoidCallback onClearRegistryCache;
 
   const HomeAppBar({
     super.key,
@@ -26,7 +26,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onSyncSettings,
     required this.onPromptTemplates,
     required this.onVaultSettings,
-    required this.onOpenMyLibrary,
+    required this.onClearRegistryCache,
   });
 
   @override
@@ -52,11 +52,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
-        IconButton(
-          icon: const Icon(Icons.collections_bookmark_outlined),
-          tooltip: '나의 서재',
-          onPressed: onOpenMyLibrary,
-        ),
         IconButton(
           icon: const Icon(Icons.search),
           tooltip: '검색',
@@ -87,6 +82,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.copy_all),
           tooltip: 'AI 프롬프트 템플릿 복사',
           onPressed: onPromptTemplates,
+        ),
+        IconButton(
+          icon: const Icon(Icons.delete_sweep_outlined),
+          tooltip: '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
+          onPressed: onClearRegistryCache,
         ),
         IconButton(
           icon: Icon(

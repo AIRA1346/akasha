@@ -1,0 +1,25 @@
+{
+  "sub_webtoon_solo-leveling_2018": {
+    "workId": "sub_webtoon_solo-leveling_2018",
+    "title": "나 혼자만 레벨업",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "추공 / DUBU",
+    "releaseYear": 2018,
+    "description": "최약 헌터가 유일하게 레벨업할 수 있게 된 판타지 액션.",
+    "tags": [
+      "판타지",
+      "헌터",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
+    "externalIds": {
+      "tmdb": "127532"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "sub_manga_wind-breaker_2021": {
+    "workId": "sub_manga_wind-breaker_2021",
+    "title": "윈드 브레이커",
+    "titles": {
+      "ko": "윈드 브레이커",
+      "en": "Wind Breaker",
+      "ja": "WIND BREAKER"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나츠키 코타",
+    "releaseYear": 2021,
+    "description": "학원 도시에서 바람을 지키는 학생들의 싸움과 우정을 그린 학원 액션 만화.",
+    "tags": [
+      "학원",
+      "액션",
+      "우정",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  },
+  "sub_manga_world-trigger_2006": {
+    "workId": "sub_manga_world-trigger_2006",
+    "title": "월드 트리거",
+    "titles": {
+      "ko": "월드 트리거",
+      "en": "World Trigger",
+      "ja": "ワールドトリガー"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아시하라 다이스케",
+    "releaseYear": 2006,
+    "description": "이웃이라는 차원 침략자에 맞서 국경 방위기관이 싸우는 SF 액션 만화.",
+    "tags": [
+      "SF",
+      "액션",
+      "전략",
+      "학원"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  }
+}

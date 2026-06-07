@@ -1,0 +1,18 @@
+{
+  "sub_game_celeste_2018": {
+    "workId": "sub_game_celeste_2018",
+    "title": "셀레스테",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Maddy Makes Games",
+    "releaseYear": 2018,
+    "description": "산 정상을 향한 플랫포머와 마음의 성장 이야기.",
+    "tags": [
+      "인디",
+      "플랫포머",
+      "난이도",
+      "힐링"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900.jpg"
+  }
+}

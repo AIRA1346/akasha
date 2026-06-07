@@ -1,0 +1,18 @@
+{
+  "gen_game_appid105600_2011": {
+    "workId": "gen_game_appid105600_2011",
+    "title": "테라리아",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Re-Logic",
+    "releaseYear": 2011,
+    "description": "2D 샌드박스에서 탐험·건축·보스전을 즐기는 인디 명작.",
+    "tags": [
+      "샌드박스",
+      "2D",
+      "인디",
+      "협동"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg"
+  }
+}

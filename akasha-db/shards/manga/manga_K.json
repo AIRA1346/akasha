@@ -13,7 +13,14 @@
       "귀신",
       "다이쇼"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
+    "externalIds": {
+      "tmdb": "85937"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
   },
   "sub_manga_kaiju-no-8_2020": {
     "workId": "sub_manga_kaiju-no-8_2020",
@@ -29,7 +36,9 @@
       "밀리터리",
       "코미디"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/uyrvUpiHa2fG9QB17kiKrWsmj67.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   },
   "sub_manga_kingdom_2006": {
     "workId": "sub_manga_kingdom_2006",
@@ -45,7 +54,9 @@
       "전략",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/1q4edsAnbjUwZYFK425kdM5WtYJ.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   },
   "sub_manga_kaguya-sama_2015": {
     "workId": "sub_manga_kaguya-sama_2015",
@@ -61,6 +72,31 @@
       "학원",
       "두뇌전"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  },
+  "sub_manga_komi-san_2016": {
+    "workId": "sub_manga_komi-san_2016",
+    "title": "코미는, 커뮤니케이션이 어렵다",
+    "titles": {
+      "ko": "코미는, 커뮤니케이션이 어렵다",
+      "en": "Komi Can't Communicate",
+      "ja": "古見さんは、コミュ症です。"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오다 토모히토",
+    "releaseYear": 2016,
+    "description": "교류장애 소녀 코미의 친구 100명 만들기 프로젝트를 돕는 학원 코미디.",
+    "tags": [
+      "학원",
+      "코미디",
+      "로맨스",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   }
 }

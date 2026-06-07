@@ -11,7 +11,7 @@
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | 엄선 **~325작** (v1) → PR·직접 등록으로 점진 확장 |
+| 사전 규모 | 엄선 **370작** (v1) → PR·직접 등록으로 점진 확장 |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
@@ -46,10 +46,12 @@
 - [x] 회상 카드 UI 숨김 또는 플래그 off (`FeatureFlags.showRecallCard = false`)
 - [x] Windows 앱 메타 (`Runner.rc` — Rune Atelier / AKASHA)
 - [ ] Steam depot / 인스톨러 / 스토어 페이지 에셋 — **M2 (Steamworks 등록 후)**
-- [x] AniList bulk 시드 **제거** (684작 삭제 → **325작** 엄선 카탈로그, `purge_anilist_bulk`)
+- [x] AniList bulk 시드 **제거** (684작 삭제 → 엄선 카탈로그, `purge_anilist_bulk`)
+- [x] **만화/웹툰 분리** (`MediaCategory.webtoon`, 2작 이관 + legacy_aliases)
+- [x] TMDB 포스터 검증·오매핑 제거 (`poster_validate_tmdb`, `poster_fixup_tmdb`)
 - [x] 증분 sync (`generatedAt` early return + 샤드 `entryCount` 스킵)
 - [x] `pubspec` description v1 범위 반영
-- [x] 앱 번들 lazy 샤드 제외 (`registry_builder --sync-assets` eager만)
+- [x] 앱 번들 전체 샤드 동기화 (`registry_builder --sync-assets` — GitHub 옛 데이터 덮어쓰기 방지)
 
 ---
 
@@ -60,7 +62,7 @@
 - [x] v1 체크리스트 (Steam depot 제외)
 - [x] `flutter test` 74/74 · `ci_registry_check` green
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
-- [x] **akasha-db GitHub push** — 325작 엄선 카탈로그 반영 (AniList bulk 제거)
+- [x] **akasha-db GitHub push** — 370작 엄선 카탈로그 반영
 - [ ] 내부 dogfood (본인 볼트 + 동기화 검증)
 
 ### M2 — Steam 제출 준비 (2026 Q3 초)
@@ -96,7 +98,7 @@
 
 - [x] cold start preload 축소 (`main.dart` — master_index 진입 시에만 full prefetch)
 - [x] `flutter_ci.yml`에 `ci_registry_check` 연동
-- [x] akasha-db **325작** 엄선 (`purge_anilist_bulk` + `batch4` + 수동 시드, AniList bulk 금지)
+- [x] akasha-db **370작** 엄선 (`purge_anilist_bulk` + batch 시드 + 수동 큐레이션, AniList bulk 금지)
 - [x] lazy 샤드 정책 — 번들은 eager 15샤드만, 나머지 온디맨드
 - [x] **akasha-db v3** — `titles`/`aliases`/`externalIds`/`searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md))
 - [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)

@@ -13,7 +13,14 @@
       "판타지",
       "드라마"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/vZdiCCuOFY7gxiNKqGK93UKHVxe.jpg"
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
+    "externalIds": {
+      "tmdb": "65942"
+    }
   },
   "sub_manga_rurouni-kenshin_1994": {
     "workId": "sub_manga_rurouni-kenshin_1994",
@@ -28,8 +35,7 @@
       "역사",
       "액션",
       "로맨스"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/2OTMpFejspg3fYnRbiuVuLsZtaq.jpg"
+    ]
   },
   "sub_manga_real_1999": {
     "workId": "sub_manga_real_1999",
@@ -45,5 +51,33 @@
       "성장",
       "드라마"
     ]
+  },
+  "sub_manga_rent-a-girlfriend_2017": {
+    "workId": "sub_manga_rent-a-girlfriend_2017",
+    "title": "여친, 빌리겠습니다",
+    "titles": {
+      "ko": "여친, 빌리겠습니다",
+      "en": "Rent-a-Girlfriend",
+      "ja": "彼女、お借りします"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "미야지마 레이지",
+    "releaseYear": 2017,
+    "description": "렌탈 여친 서비스를 이용한 카즈야의 연애와 성장을 그린 로맨틱 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "대학",
+      "연애"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/uLrEqu1JkSMe4AN7IMMBEfhFAXE.jpg",
+    "externalIds": {
+      "tmdb": "96316"
+    }
   }
 }

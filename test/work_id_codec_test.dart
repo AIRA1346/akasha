@@ -23,6 +23,13 @@ void main() {
       expect(parsed.shardKey, startsWith('game_steam_'));
     });
 
+    test('parses slug-based webtoon id', () {
+      final parsed = WorkIdCodec.parse('sub_webtoon_solo-leveling_2018');
+      expect(parsed, isNotNull);
+      expect(parsed!.category, MediaCategory.webtoon);
+      expect(parsed.shardKey, 'webtoon_S');
+    });
+
     test('buildCustom generates custom token id', () {
       final id = WorkIdCodec.buildCustom(
         domain: AppDomain.subculture,

@@ -1,0 +1,33 @@
+{
+  "sub_animation_undead-unluck_2023": {
+    "workId": "sub_animation_undead-unluck_2023",
+    "title": "언데드 언럭",
+    "titles": {
+      "ko": "언데드 언럭",
+      "en": "Undead Unluck",
+      "ja": "アンデッドアンラック"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하라 와카토",
+    "releaseYear": 2023,
+    "description": "불사의 앤디와 언럭 능력의 푸코가 겪는 초능력 액션과 운명에 맞서는 여정.",
+    "tags": [
+      "액션",
+      "초능력",
+      "코미디",
+      "SF"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "1기"
+    }
+  }
+}

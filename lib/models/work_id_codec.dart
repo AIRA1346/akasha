@@ -5,7 +5,7 @@ import 'enums.dart';
 //
 //  형식: {domain}_{category}_{identifier}_{releaseYear}
 //  - domain: sub (subculture) | gen (generalCulture)
-//  - category: manga | animation | game | book | movie | drama
+//  - category: manga | webtoon | animation | game | book | movie | drama
 //  - identifier:
 //      · ISBN: 9788925251111
 //      · Steam: appid1245620
@@ -57,11 +57,11 @@ class ParsedWorkId {
 
 class WorkIdCodec {
   static final RegExp _masterPatternWithYear = RegExp(
-    r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)_(\d{4})$',
+    r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',
   );
 
   static final RegExp _masterPatternNoYear = RegExp(
-    r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)$',
+    r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)$',
   );
 
   static String domainPrefix(AppDomain domain) =>

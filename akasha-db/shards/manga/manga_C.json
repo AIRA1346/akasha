@@ -13,7 +13,14 @@
       "악마",
       "카오스"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
+    "externalIds": {
+      "tmdb": "114410"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
   },
   "sub_manga_detective-conan_1994": {
     "workId": "sub_manga_detective-conan_1994",
@@ -29,7 +36,14 @@
       "럽코",
       "장수작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
+    "externalIds": {
+      "tmdb": "30983"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
   },
   "gen_manga_crayon-shin-chan_1990": {
     "workId": "gen_manga_crayon-shin-chan_1990",
@@ -45,7 +59,9 @@
       "가족",
       "장수작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/vhythNI2xgNwXLmDvZzw6f48uPg.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   },
   "sub_manga_cardcaptor-sakura_1996": {
     "workId": "sub_manga_cardcaptor-sakura_1996",
@@ -61,7 +77,14 @@
       "소녀",
       "순정"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
+    "externalIds": {
+      "tmdb": "35790"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
   },
   "sub_manga_chihayafuru_2007": {
     "workId": "sub_manga_chihayafuru_2007",
@@ -77,6 +100,31 @@
       "청춘",
       "로맨스"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/bj9lZLRey7ZTWNbA9o3L0tW0HfW.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  },
+  "sub_manga_cells-at-work_2015": {
+    "workId": "sub_manga_cells-at-work_2015",
+    "title": "일하는 세포",
+    "titles": {
+      "ko": "일하는 세포",
+      "en": "Cells at Work!",
+      "ja": "はたらく細胞"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "시미즈 하루카",
+    "releaseYear": 2015,
+    "description": "인체 속 세포들이 질병과 싸우는 모습을 의인화한 교육·코미디 만화.",
+    "tags": [
+      "교육",
+      "코미디",
+      "SF",
+      "의학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   }
 }

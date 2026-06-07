@@ -1,0 +1,25 @@
+{
+  "sub_manga_inuyasha_1996": {
+    "workId": "sub_manga_inuyasha_1996",
+    "title": "이누야샤",
+    "titles": {
+      "ko": "이누야샤",
+      "en": "Inuyasha",
+      "ja": "犬夜叉"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 루미코",
+    "releaseYear": 1996,
+    "description": "현대에서 온 히구라시 카구ome와 반요 이누야샤가 사혼의 구슬을 둘러싼 모험.",
+    "tags": [
+      "판타지",
+      "액션",
+      "로맨스",
+      "시대극"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  }
+}

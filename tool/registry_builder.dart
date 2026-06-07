@@ -13,10 +13,10 @@ import 'poster_url_policy.dart';
 import 'registry_v3_utils.dart';
 
 final _masterPatternWithYear = RegExp(
-  r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)_(\d{4})$',
+  r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',
 );
 final _masterPatternNoYear = RegExp(
-  r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)$',
+  r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)$',
 );
 
 bool _isMasterFormat(String workId) =>
@@ -25,6 +25,7 @@ bool _isMasterFormat(String workId) =>
 
 const _validCategories = {
   'manga',
+  'webtoon',
   'animation',
   'game',
   'book',
@@ -196,7 +197,7 @@ void main(List<String> args) {
   }
 }
 
-/// 앱 번들에는 메타 + **eager 샤드만** 포함 (lazy는 GitHub 온디맨드)
+/// 앱 번들에는 메타 + **전체 샤드** 포함 (GitHub 옛 데이터 덮어쓰기 방지)
 void _syncAssetsRegistry({
   required Directory dbRoot,
   required Directory assetsRoot,
@@ -208,6 +209,7 @@ void _syncAssetsRegistry({
     'manifest.json',
     'search_index.json',
     'legacy_aliases.json',
+    'franchise_groups.json',
   ]) {
     final src = File('${dbRoot.path}/$name');
     if (src.existsSync()) {
@@ -215,45 +217,22 @@ void _syncAssetsRegistry({
     }
   }
 
-  final eagerPaths = <String>{
-    for (final meta in shardMetas)
-      if (meta['eager'] == true) meta['path'] as String,
+  final allPaths = <String>{
+    for (final meta in shardMetas) meta['path'] as String,
   };
 
-  final shardsDest = Directory('${assetsRoot.path}/shards');
-  var lazyRemoved = 0;
-  if (shardsDest.existsSync()) {
-    for (final entity in shardsDest.listSync(recursive: true)) {
-      if (entity is! File || !entity.path.endsWith('.json')) continue;
-      final normalized = entity.path.replaceAll('\\', '/');
-      final assetsNorm = assetsRoot.path.replaceAll('\\', '/');
-      final relativePath = normalized.startsWith('$assetsNorm/')
-          ? normalized.substring(assetsNorm.length + 1)
-          : p.basename(normalized);
-      if (eagerPaths.contains(relativePath)) continue;
-      try {
-        entity.deleteSync();
-        lazyRemoved++;
-      } catch (e) {
-        stderr.writeln('  WARN: could not remove lazy bundle shard $relativePath: $e');
-      }
-    }
-  }
-
-  var eagerCopied = 0;
-  for (final relativePath in eagerPaths) {
+  var copied = 0;
+  for (final relativePath in allPaths) {
     final src = File('${dbRoot.path}/$relativePath');
     if (!src.existsSync()) continue;
 
     final dest = File('${assetsRoot.path}/$relativePath');
     dest.parent.createSync(recursive: true);
     src.copySync(dest.path);
-    eagerCopied++;
+    copied++;
   }
 
-  print(
-    '  → bundle shards: $eagerCopied eager, $lazyRemoved lazy removed from assets',
-  );
+  print('  → bundle shards: $copied total (full catalog)');
 }
 
 bool _isAnilistBulkWork(String workId, Map<String, dynamic> work) {

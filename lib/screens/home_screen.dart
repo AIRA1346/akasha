@@ -7,6 +7,7 @@ import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/sample_data.dart';
 import '../models/dashboard_config.dart';
+import '../models/personal_library_config.dart';
 import '../services/file_service.dart';
 import '../services/works_registry.dart';
 import '../services/registry_sync_service.dart';
@@ -38,7 +39,9 @@ import 'home/dialogs/prompt_templates_dialog.dart';
 import '../config/feature_flags.dart';
 import '../widgets/today_recall_card.dart';
 import '../utils/recall_picker.dart';
-import 'my_library_screen.dart';
+import 'home/home_personal_library_controller.dart';
+import 'home/dialogs/personal_library_add_dialog.dart';
+import '../services/my_library_pipeline.dart';
 import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/browse_pipeline.dart';
@@ -65,6 +68,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final HomeBrowseFilterController _filterCtrl = HomeBrowseFilterController();
   final HomeDashboardController _dashboardCtrl = HomeDashboardController();
+  final HomePersonalLibraryController _personalLibCtrl =
+      HomePersonalLibraryController();
   HomeSectionPreferences _sectionPrefs = HomeSectionPreferences();
   late final HomeRegistryHideActions _hideActions;
   bool _isSidebarOpen = true;
@@ -119,7 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final service = AkashaFileService();
     await service.init();
     await _loadSidebarState(); // 사이드바 오픈 상태 로드
-    await _loadDashboards();   // 대시보드 리스트 로드
+    await _loadDashboards();
+    await _loadPersonalLibraries();
     _sectionPrefs = await HomeSectionPreferences.load();
     _displayName = await UserPreferences.getDisplayName();
     _autoArchiveRegistry = await UserPreferences.isAutoArchiveRegistryEnabled();
@@ -240,16 +246,108 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadDashboards() async {
     await _dashboardCtrl.load();
     _applyDashboardFilters(_dashboardCtrl.activeFilterSnapshot);
-    await _prefetchRegistryForCurrentFilters();
+    if (_personalLibCtrl.sidebarMode == SidebarSelectionMode.dashboard) {
+      await _prefetchRegistryForCurrentFilters();
+    }
+    if (mounted) setState(() {});
+  }
+
+  Future<void> _loadPersonalLibraries() async {
+    await _personalLibCtrl.load();
     if (mounted) setState(() {});
   }
 
   Future<void> _selectDashboard(String id) async {
     setState(() {
       _dashboardCtrl.select(id);
+      _personalLibCtrl.selectDashboardMode();
       _applyDashboardFilters(_dashboardCtrl.activeFilterSnapshot);
     });
     await _prefetchRegistryForCurrentFilters();
+  }
+
+  void _selectPersonalLibrary(String id) {
+    setState(() {
+      _personalLibCtrl.selectPersonal(id);
+    });
+  }
+
+  Future<void> _showPersonalLibraryAddDialog() async {
+    final config = await showPersonalLibraryAddDialog(context);
+    if (config == null || !mounted) return;
+    setState(() {
+      _personalLibCtrl.add(config);
+    });
+    await _personalLibCtrl.save();
+  }
+
+  void _deletePersonalLibrary(String id) {
+    if (PersonalLibraryConfig.presetIds.contains(id)) return;
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('🗑️ 나만의 서재 삭제'),
+        content: const Text('이 서재를 목록에서 삭제하시겠습니까?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: () {
+              setState(() {
+                _personalLibCtrl.remove(id);
+              });
+              _personalLibCtrl.save();
+              Navigator.pop(ctx);
+            },
+            style: FilledButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('삭제'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _showPersonalLibraryRenameDialog(
+    PersonalLibraryConfig config,
+  ) async {
+    if (config.isPreset) return;
+    final nameCtrl = TextEditingController(text: config.name);
+
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('✏️ 서재 이름 변경'),
+        content: TextField(
+          controller: nameCtrl,
+          autofocus: true,
+          decoration: const InputDecoration(
+            labelText: '서재 이름',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('저장'),
+          ),
+        ],
+      ),
+    );
+
+    if (ok == true && mounted) {
+      setState(() {
+        _personalLibCtrl.rename(config.id, nameCtrl.text);
+      });
+      await _personalLibCtrl.save();
+    }
+    nameCtrl.dispose();
   }
 
   void _deleteDashboard(String id) {
@@ -305,8 +403,62 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<BrowseCard> get _hallOfFameCards =>
-      _filteredBrowseCards.where((c) => c.item.isHallOfFame).toList();
+  Widget _buildEmptyMainContent() {
+    if (_isPersonalLibraryMode) {
+      final vaultLinked = AkashaFileService().vaultPath != null;
+      final libName = _personalLibCtrl.activeLibrary?.name ?? '나만의 서재';
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                vaultLinked
+                    ? Icons.inventory_2_outlined
+                    : Icons.folder_off_outlined,
+                size: 48,
+                color: Colors.grey[700],
+              ),
+              const SizedBox(height: 12),
+              Text(
+                vaultLinked
+                    ? '$libName에 표시할 아카이브 작품이 없습니다.'
+                    : '볼트를 연동하면 나만의 서재가 열립니다',
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                vaultLinked
+                    ? '검색으로 작품을 추가하거나 「새 작품」으로 등록해 보세요.'
+                    : '홈 상단에서 Obsidian 볼트 폴더를 연동해 주세요.',
+                style: TextStyle(color: Colors.grey[500], height: 1.5),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.search_off, size: 48, color: Colors.grey[700]),
+          const SizedBox(height: 12),
+          Text(
+            '조건에 맞는 작품이 없습니다.',
+            style: TextStyle(color: Colors.grey[500]),
+          ),
+        ],
+      ),
+    );
+  }
 
   void _onDomainChanged(AppDomain? domain) {
     setState(() {
@@ -387,6 +539,54 @@ class _HomeScreenState extends State<HomeScreen> {
     await _registrySync.syncNow();
   }
 
+  Future<void> _clearRegistryCache() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('사전 캐시 삭제'),
+        content: const Text(
+          '디스크에 저장된 글로벌 사전 캐시(registry_cache)를 삭제하고\n'
+          '앱에 포함된 번들 사전으로 다시 로드합니다.\n\n'
+          '포스터·메타가 옛날로 보일 때 사용하세요.\n'
+          '최신 원격 사전은 이후 「동기화」로 받을 수 있습니다.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('취소'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('삭제'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+
+    setState(() => _isCatalogLoading = true);
+    try {
+      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await _prefetchRegistryForCurrentFilters();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('사전 캐시를 삭제하고 번들 사전으로 다시 로드했습니다.'),
+          ),
+        );
+        setState(() {});
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('캐시 삭제 중 오류: $e')),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isCatalogLoading = false);
+    }
+  }
+
   Future<void> _showCustomUrlDialog() async {
     await showRegistrySyncDialog(
       context,
@@ -399,13 +599,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // ── 빌드 ──────────────────────────────────
 
+  bool get _isPersonalLibraryMode =>
+      _personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary;
+
+  List<BrowseCard> get _personalBrowseCards => MyLibraryPipeline.build(
+        _items,
+        library: _personalLibCtrl.activeLibrary,
+      );
+
   @override
   Widget build(BuildContext context) {
-    final filtered = _filteredBrowseCards;
-    final dailyRecall = FeatureFlags.showRecallCard
+    final filtered =
+        _isPersonalLibraryMode ? _personalBrowseCards : _filteredBrowseCards;
+    final dailyRecall = FeatureFlags.showRecallCard && !_isPersonalLibraryMode
         ? RecallPicker.pickDailyRecall(_items)
         : null;
-    final hofCards = sortBrowseCards(_hallOfFameCards, _sectionPrefs.hofSort);
+    final hofCards = sortBrowseCards(
+      filtered.where((c) => c.item.isHallOfFame).toList(),
+      _sectionPrefs.hofSort,
+    );
     final watchlistCards = sortBrowseCards(
       filterWatchlistCards(filtered, _items),
       _sectionPrefs.watchlistSort,
@@ -449,45 +661,48 @@ class _HomeScreenState extends State<HomeScreen> {
             onSyncSettings: _showCustomUrlDialog,
             onPromptTemplates: () => showPromptTemplatesDialog(context),
             onVaultSettings: _showVaultInfoDialog,
-            onOpenMyLibrary: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const MyLibraryScreen()),
-              );
-            },
+            onClearRegistryCache: _clearRegistryCache,
           ),
           body: Row(
             children: [
               DashboardSidebar(
                 isOpen: _isSidebarOpen,
+                selectionMode: _personalLibCtrl.sidebarMode,
                 dashboards: _dashboardCtrl.dashboards,
                 activeDashboardId: _dashboardCtrl.activeDashboardId,
+                personalLibraries: _personalLibCtrl.libraries,
+                activePersonalLibraryId: _personalLibCtrl.activeLibraryId,
                 onAddDashboard: () => _showDashboardEditDialog(context, null),
                 onSelectDashboard: _selectDashboard,
                 onEditDashboard: (dash) =>
                     _showDashboardEditDialog(context, dash),
                 onDeleteDashboard: _deleteDashboard,
+                onAddPersonalLibrary: _showPersonalLibraryAddDialog,
+                onSelectPersonalLibrary: _selectPersonalLibrary,
+                onEditPersonalLibrary: _showPersonalLibraryRenameDialog,
+                onDeletePersonalLibrary: _deletePersonalLibrary,
               ),
               Expanded(
                 child: Column(
                   children: [
                     if (AkashaFileService().vaultPath == null)
                       HomeVaultBanner(onConnectVault: _selectVaultFolder),
-                    // ━━━ 필터 영역 ━━━
-                    FilterSection(
-                      selectedDomain: _filterCtrl.domain,
-                      selectedCategories: _filterCtrl.categories,
-                      selectedWorkStatuses: _filterCtrl.workStatuses,
-                      selectedMyStatuses: _filterCtrl.myStatuses,
-                      onDomainChanged: _onDomainChanged,
-                      onToggleCategory: _toggleCategory,
-                      onClearCategories: _clearCategories,
-                      onToggleWorkStatus: _toggleWorkStatus,
-                      onToggleMyStatus: _toggleMyStatus,
-                    ),
-                    const Divider(height: 1),
-                    if (_isCatalogLoading)
-                      const LinearProgressIndicator(minHeight: 2),
+                    if (!_isPersonalLibraryMode) ...[
+                      FilterSection(
+                        selectedDomain: _filterCtrl.domain,
+                        selectedCategories: _filterCtrl.categories,
+                        selectedWorkStatuses: _filterCtrl.workStatuses,
+                        selectedMyStatuses: _filterCtrl.myStatuses,
+                        onDomainChanged: _onDomainChanged,
+                        onToggleCategory: _toggleCategory,
+                        onClearCategories: _clearCategories,
+                        onToggleWorkStatus: _toggleWorkStatus,
+                        onToggleMyStatus: _toggleMyStatus,
+                      ),
+                      const Divider(height: 1),
+                      if (_isCatalogLoading)
+                        const LinearProgressIndicator(minHeight: 2),
+                    ],
 
           // ━━━ 스크롤 가능한 메인 콘텐츠 ━━━
           Expanded(
@@ -499,7 +714,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => _navigateToDetail(dailyRecall.item),
                   ),
                 Expanded(
-                  child: _isCatalogLoading
+                  child: !_isPersonalLibraryMode && _isCatalogLoading
                       ? const Center(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -518,51 +733,44 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         )
                       : filtered.isEmpty
-                      ? Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.search_off,
-                                  size: 48, color: Colors.grey[700]),
-                              const SizedBox(height: 12),
-                              Text('조건에 맞는 작품이 없습니다.',
-                                  style: TextStyle(color: Colors.grey[500])),
-                            ],
-                          ),
-                        )
-                      : BrowseDashboardSections(
-                          hofCards: hofCards,
-                          libraryCards: libraryCards,
-                          watchlistCards: watchlistCards,
-                          yearGroups: yearGroups,
-                          displayName: _displayName,
-                          hofExpanded: _sectionPrefs.hofExpanded,
-                          libraryExpanded: _sectionPrefs.libraryExpanded,
-                          yearlyExpanded: _sectionPrefs.yearlyExpanded,
-                          watchlistExpanded: _sectionPrefs.watchlistExpanded,
-                          hofSortCriteria: _sectionPrefs.hofSort,
-                          librarySortCriteria: _sectionPrefs.librarySort,
-                          yearlySortCriteria: _sectionPrefs.yearlySort,
-                          watchlistSortCriteria: _sectionPrefs.watchlistSort,
-                          onHofExpandedChanged: (v) =>
-                              _sectionPrefs.setHofExpanded(v, () => setState(() {})),
-                          onLibraryExpandedChanged: (v) =>
-                              _sectionPrefs.setLibraryExpanded(v, () => setState(() {})),
-                          onYearlyExpandedChanged: (v) =>
-                              _sectionPrefs.setYearlyExpanded(v, () => setState(() {})),
-                          onWatchlistExpandedChanged: (v) =>
-                              _sectionPrefs.setWatchlistExpanded(v, () => setState(() {})),
-                          onHofSortChanged: (val) =>
-                              _sectionPrefs.setHofSort(val, () => setState(() {})),
-                          onLibrarySortChanged: (val) =>
-                              _sectionPrefs.setLibrarySort(val, () => setState(() {})),
-                          onYearlySortChanged: (val) =>
-                              _sectionPrefs.setYearlySort(val, () => setState(() {})),
-                          onWatchlistSortChanged: (val) =>
-                              _sectionPrefs.setWatchlistSort(val, () => setState(() {})),
-                          posterCardBuilder: _buildPosterCard,
-                          gridBuilder: _buildGrid,
-                        ),
+                          ? _buildEmptyMainContent()
+                          : BrowseDashboardSections(
+                              hofCards: hofCards,
+                              libraryCards: libraryCards,
+                              watchlistCards: watchlistCards,
+                              yearGroups: yearGroups,
+                              displayName: _displayName,
+                              isPersonalLibraryMode: _isPersonalLibraryMode,
+                              hofExpanded: _sectionPrefs.hofExpanded,
+                              libraryExpanded: _sectionPrefs.libraryExpanded,
+                              yearlyExpanded: _sectionPrefs.yearlyExpanded,
+                              watchlistExpanded: _sectionPrefs.watchlistExpanded,
+                              hofSortCriteria: _sectionPrefs.hofSort,
+                              librarySortCriteria: _sectionPrefs.librarySort,
+                              yearlySortCriteria: _sectionPrefs.yearlySort,
+                              watchlistSortCriteria:
+                                  _sectionPrefs.watchlistSort,
+                              onHofExpandedChanged: (v) => _sectionPrefs
+                                  .setHofExpanded(v, () => setState(() {})),
+                              onLibraryExpandedChanged: (v) => _sectionPrefs
+                                  .setLibraryExpanded(
+                                      v, () => setState(() {})),
+                              onYearlyExpandedChanged: (v) => _sectionPrefs
+                                  .setYearlyExpanded(v, () => setState(() {})),
+                              onWatchlistExpandedChanged: (v) => _sectionPrefs
+                                  .setWatchlistExpanded(
+                                      v, () => setState(() {})),
+                              onHofSortChanged: (val) => _sectionPrefs
+                                  .setHofSort(val, () => setState(() {})),
+                              onLibrarySortChanged: (val) => _sectionPrefs
+                                  .setLibrarySort(val, () => setState(() {})),
+                              onYearlySortChanged: (val) => _sectionPrefs
+                                  .setYearlySort(val, () => setState(() {})),
+                              onWatchlistSortChanged: (val) => _sectionPrefs
+                                  .setWatchlistSort(val, () => setState(() {})),
+                              posterCardBuilder: _buildPosterCard,
+                              gridBuilder: _buildGrid,
+                            ),
                 ),
               ],
             ),

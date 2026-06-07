@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/browse_card.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/services/my_library_pipeline.dart';
 import 'package:akasha/utils/archived_works_query.dart';
 
@@ -49,6 +50,24 @@ void main() {
       final cards = MyLibraryPipeline.build([archived]);
       expect(cards, hasLength(1));
       expect(cards.first.item.title, 'Archived');
+    });
+
+    test('MyLibraryPipeline filters by personal library category', () {
+      final manga = userItem(workId: 'sub_manga_a', title: 'Manga A');
+      manga.filePath = '/vault/manga/a.md';
+      final movie = ContentItem(
+        workId: 'sub_movie_b',
+        title: 'Movie B',
+        category: MediaCategory.movie,
+        domain: AppDomain.generalCulture,
+      );
+      movie.filePath = '/vault/movie/b.md';
+      final lib = PersonalLibraryConfig.defaultLibraries().firstWhere(
+        (l) => l.id == 'archive_manga',
+      );
+      final cards = MyLibraryPipeline.build([manga, movie], library: lib);
+      expect(cards, hasLength(1));
+      expect(cards.first.item.title, 'Manga A');
     });
   });
 }

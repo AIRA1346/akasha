@@ -60,7 +60,8 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 |------|------|
 | **철학** | **자체 DB 구축** — API bulk·온디맨드 빌리기 없음 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | **스키마** | **v3** — `titles` / `aliases` / `externalIds` / `searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md)) |
-| **규모** | 엄선 **~325작** (수동 큐레이션만 — AniList bulk 제거됨) |
+| **규모** | 엄선 **370작** / 205샤드 (수동 큐레이션 — AniList bulk 제거됨) |
+| **카테고리** | 만화 · **웹툰** · 애니 · 게임 · 책 · 영화 · 드라마 |
 | **포스터** | `posterPath` = **URL 링크만** (repo·번들에 이미지 없음) — [POSTER_POLICY.md](akasha-db/POSTER_POLICY.md) |
 | **확장** | 수동 PR + 사용자 직접 등록; 없으면 placeholder |
 | **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |

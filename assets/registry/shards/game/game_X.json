@@ -1,0 +1,18 @@
+{
+  "sub_game_xenoblade-3_2022": {
+    "workId": "sub_game_xenoblade-3_2022",
+    "title": "제노블레이드 3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Monolith Soft",
+    "releaseYear": 2022,
+    "description": "두 세계가 맞닿은 미래를 배경으로 한 대서사 JRPG.",
+    "tags": [
+      "JRPG",
+      "SF",
+      "판타지",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg"
+  }
+}

@@ -149,6 +149,15 @@ class WorksRegistry {
     }
   }
 
+  /// 디스크·레거시 캐시 삭제 후 앱 번들 사전으로 메모리를 재구성합니다.
+  static Future<void> clearDiskCacheAndReloadBundle() async {
+    _registry.clear();
+    _loader.resetLoadedShards();
+    await _loader.clearDiskCache();
+    await RegistrySyncService().clearLegacyRegistryCache();
+    await _loader.loadBundledBootstrap();
+  }
+
   static void mergeShardEntries(Map<String, dynamic> entries) {
     entries.forEach((key, value) {
       if (value is! Map) return;
@@ -157,6 +166,13 @@ class WorksRegistry {
       final resolvedId = _loader.resolveWorkId(incoming.workId.isNotEmpty
           ? incoming.workId
           : key);
+      final existing =
+          _registry[resolvedId] ?? _registry[key];
+      final posterPath = _resolveMergedPosterPath(
+        workId: resolvedId,
+        incoming: incoming,
+        existing: existing,
+      );
       final work = RegistryWork(
         workId: resolvedId,
         title: incoming.title,
@@ -169,12 +185,45 @@ class WorksRegistry {
         releaseYear: incoming.releaseYear,
         description: incoming.description,
         tags: incoming.tags,
-        posterPath: incoming.posterPath,
+        posterPath: posterPath,
         extensions: incoming.extensions,
       );
       _registry[resolvedId] = work;
       _registry[key] = work;
     });
+  }
+
+  static bool _isPosterVerified(RegistryWork work) =>
+      work.extensions['posterVerified'] == true;
+
+  static String? _posterFromSearchIndex(String workId) {
+    for (final entry in _loader.searchIndex) {
+      if (entry.workId == workId) {
+        final poster = entry.posterPath;
+        if (poster != null && poster.isNotEmpty) return poster;
+        break;
+      }
+    }
+    return null;
+  }
+
+  static String? _resolveMergedPosterPath({
+    required String workId,
+    required RegistryWork incoming,
+    required RegistryWork? existing,
+  }) {
+    if (existing != null &&
+        _isPosterVerified(existing) &&
+        !_isPosterVerified(incoming)) {
+      return existing.posterPath;
+    }
+    if (_isPosterVerified(incoming)) return incoming.posterPath;
+
+    final fromIndex = _posterFromSearchIndex(workId);
+    if (fromIndex != null && fromIndex.isNotEmpty) {
+      return fromIndex;
+    }
+    return incoming.posterPath ?? existing?.posterPath;
   }
 
   static RegistryWork? getWorkById(String workId) {
@@ -319,23 +368,22 @@ class WorksRegistry {
 
   static String resolveWorkId(String workId) => _loader.resolveWorkId(workId);
 
-  /// 로드된 샤드 → search_index 순으로 registry 포스터 URL을 반환합니다.
-  /// lazy 샤드 미로드 시에도 search_index의 posterPath로 UI fusion이 가능합니다.
+  /// 검증된 샤드 → search_index → 미검증 샤드 순으로 포스터 URL을 반환합니다.
   static String? resolvePosterPath(String workId) {
     if (workId.isEmpty) return null;
     final resolved = _loader.resolveWorkId(workId);
-
     final work = getWorkById(resolved);
-    final fromShard = work?.posterPath;
-    if (fromShard != null && fromShard.isNotEmpty) return fromShard;
+    final fromIndex =
+        _posterFromSearchIndex(resolved) ?? _posterFromSearchIndex(workId);
 
-    for (final entry in _loader.searchIndex) {
-      if (entry.workId == resolved || entry.workId == workId) {
-        final poster = entry.posterPath;
-        if (poster != null && poster.isNotEmpty) return poster;
-        break;
-      }
+    if (work != null && _isPosterVerified(work)) {
+      final fromShard = work.posterPath;
+      if (fromShard != null && fromShard.isNotEmpty) return fromShard;
     }
+    if (fromIndex != null && fromIndex.isNotEmpty) return fromIndex;
+
+    final fallback = work?.posterPath;
+    if (fallback != null && fallback.isNotEmpty) return fallback;
     return null;
   }
 

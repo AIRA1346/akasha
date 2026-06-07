@@ -1,25 +1,45 @@
 import 'package:flutter/material.dart';
-import '../models/dashboard_config.dart';
 
-/// 대시보드 서재 사이드바
+import '../models/dashboard_config.dart';
+import '../models/personal_library_config.dart';
+import '../screens/home/home_personal_library_controller.dart';
+
+/// 대시보드 서재 + 나만의 서재 사이드바
 class DashboardSidebar extends StatelessWidget {
+  static const Color dashboardAccent = Colors.tealAccent;
+  static const Color personalAccent = Colors.amberAccent;
+
   final bool isOpen;
+  final SidebarSelectionMode selectionMode;
   final List<DashboardConfig> dashboards;
   final String? activeDashboardId;
+  final List<PersonalLibraryConfig> personalLibraries;
+  final String? activePersonalLibraryId;
   final VoidCallback onAddDashboard;
   final void Function(String id) onSelectDashboard;
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
+  final VoidCallback onAddPersonalLibrary;
+  final void Function(String id) onSelectPersonalLibrary;
+  final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
+  final void Function(String id) onDeletePersonalLibrary;
 
   const DashboardSidebar({
     super.key,
     required this.isOpen,
+    required this.selectionMode,
     required this.dashboards,
     required this.activeDashboardId,
+    required this.personalLibraries,
+    required this.activePersonalLibraryId,
     required this.onAddDashboard,
     required this.onSelectDashboard,
     required this.onEditDashboard,
     required this.onDeleteDashboard,
+    required this.onAddPersonalLibrary,
+    required this.onSelectPersonalLibrary,
+    required this.onEditPersonalLibrary,
+    required this.onDeletePersonalLibrary,
   });
 
   @override
@@ -38,49 +58,71 @@ class DashboardSidebar extends StatelessWidget {
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 20, 12, 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Row(
-                        children: [
-                          Icon(Icons.library_books,
-                              color: Colors.tealAccent, size: 18),
-                          SizedBox(width: 8),
-                          Text(
-                            '대시보드 서재',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.add_box_outlined,
-                            size: 20, color: Colors.grey),
-                        tooltip: '새 대시보드 추가',
-                        onPressed: onAddDashboard,
-                      ),
-                    ],
-                  ),
+                _SectionHeader(
+                  icon: Icons.library_books,
+                  iconColor: dashboardAccent,
+                  title: '대시보드 서재',
+                  onAdd: onAddDashboard,
+                  addTooltip: '새 대시보드 추가',
                 ),
                 const Divider(color: Color(0xFF2D2D44), height: 1),
                 Expanded(
+                  flex: 2,
                   child: ListView.builder(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     itemCount: dashboards.length,
                     itemBuilder: (context, index) {
                       final dash = dashboards[index];
-                      final isActive = dash.id == activeDashboardId;
+                      final isActive = selectionMode ==
+                              SidebarSelectionMode.dashboard &&
+                          dash.id == activeDashboardId;
                       return SidebarItemWidget(
-                        dash: dash,
+                        name: dash.name,
+                        icon: dash.categories.isNotEmpty
+                            ? dash.categories.first.icon
+                            : dash.domain != null
+                                ? dash.domain!.icon
+                                : Icons.dashboard_outlined,
                         isActive: isActive,
+                        accentColor: dashboardAccent,
+                        isImmutable: dash.id == 'master_index',
                         onTap: () => onSelectDashboard(dash.id),
                         onEdit: () => onEditDashboard(dash),
                         onDelete: () => onDeleteDashboard(dash.id),
+                      );
+                    },
+                  ),
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                _SectionHeader(
+                  icon: Icons.collections_bookmark_outlined,
+                  iconColor: personalAccent,
+                  title: '나만의 서재',
+                  onAdd: onAddPersonalLibrary,
+                  addTooltip: '나만의 서재 추가',
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                Expanded(
+                  flex: 3,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    itemCount: personalLibraries.length,
+                    itemBuilder: (context, index) {
+                      final lib = personalLibraries[index];
+                      final isActive = selectionMode ==
+                              SidebarSelectionMode.personalLibrary &&
+                          lib.id == activePersonalLibraryId;
+                      return SidebarItemWidget(
+                        name: lib.name,
+                        icon: lib.categories.length == 1
+                            ? lib.categories.first.icon
+                            : Icons.inventory_2_outlined,
+                        isActive: isActive,
+                        accentColor: personalAccent,
+                        isImmutable: lib.isPreset,
+                        onTap: () => onSelectPersonalLibrary(lib.id),
+                        onEdit: () => onEditPersonalLibrary(lib),
+                        onDelete: () => onDeletePersonalLibrary(lib.id),
                       );
                     },
                   ),
@@ -112,6 +154,54 @@ class DashboardSidebar extends StatelessWidget {
   }
 }
 
+class _SectionHeader extends StatelessWidget {
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final VoidCallback onAdd;
+  final String addTooltip;
+
+  const _SectionHeader({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.onAdd,
+    required this.addTooltip,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 20, 12, 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: iconColor, size: 18),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+          IconButton(
+            icon: const Icon(Icons.add_box_outlined,
+                size: 20, color: Colors.grey),
+            tooltip: addTooltip,
+            onPressed: onAdd,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _TabKeyHint extends StatelessWidget {
   const _TabKeyHint();
 
@@ -137,16 +227,22 @@ class _TabKeyHint extends StatelessWidget {
 }
 
 class SidebarItemWidget extends StatefulWidget {
-  final DashboardConfig dash;
+  final String name;
+  final IconData icon;
   final bool isActive;
+  final Color accentColor;
+  final bool isImmutable;
   final VoidCallback onTap;
   final VoidCallback onEdit;
   final VoidCallback onDelete;
 
   const SidebarItemWidget({
     super.key,
-    required this.dash,
+    required this.name,
+    required this.icon,
     required this.isActive,
+    required this.accentColor,
+    required this.isImmutable,
     required this.onTap,
     required this.onEdit,
     required this.onDelete,
@@ -176,7 +272,9 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
           borderRadius: BorderRadius.circular(6),
           border: isActive
               ? Border.all(
-                  color: Colors.tealAccent.withValues(alpha: 0.3), width: 1.0)
+                  color: widget.accentColor.withValues(alpha: 0.35),
+                  width: 1.0,
+                )
               : Border.all(color: Colors.transparent, width: 1.0),
         ),
         child: InkWell(
@@ -187,18 +285,14 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
             child: Row(
               children: [
                 Icon(
-                  widget.dash.categories.isNotEmpty
-                      ? widget.dash.categories.first.icon
-                      : widget.dash.domain != null
-                          ? widget.dash.domain!.icon
-                          : Icons.dashboard_outlined,
+                  widget.icon,
                   size: 16,
-                  color: isActive ? Colors.tealAccent : Colors.grey[400],
+                  color: isActive ? widget.accentColor : Colors.grey[400],
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    widget.dash.name,
+                    widget.name,
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight:
@@ -208,13 +302,13 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                if (widget.dash.id != 'master_index' &&
-                    (_isHovered || isActive)) ...[
+                if (!widget.isImmutable && (_isHovered || isActive)) ...[
                   IconButton(
-                    icon: const Icon(Icons.settings,
+                    icon: const Icon(Icons.edit_outlined,
                         size: 14, color: Colors.grey),
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
+                    tooltip: '이름 변경',
                     onPressed: widget.onEdit,
                   ),
                   const SizedBox(width: 6),

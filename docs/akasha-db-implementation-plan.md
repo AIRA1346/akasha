@@ -78,14 +78,25 @@
 
 ---
 
-## Phase 5 — 백로그 (v1 이후)
+## Phase 5 — 카탈로그 확장 (애니·만화 우선)
+
+> 상세 계획: [catalog-expansion-plan.md](catalog-expansion-plan.md)  
+> **법무:** 메타 직접 작성 · 포스터 URL만 · API bulk·anilistcdn 신규 금지
+
+| 마일스톤 | manga + animation | 총 카탈로그 | 상태 |
+|----------|-------------------|------------|------|
+| AM1 | 115 → **180** (+45) | **370** | ✅ |
+| AM2 | 180 → **220** (+40) | ~410 | 🔲 |
+| AM3 | 220 → **250** (+30) | ~450 | 🔲 |
 
 | 작업 | 우선순위 |
 |------|----------|
-| ~~기존 `anilistcdn` URL 교체~~ | ✅ `migrate_anilistcdn_posters.dart`, baseline 0 |
+| `seed_expansion_batch5.dart` + 큐레이션 백로그 | **높** |
+| `catalog_stats.dart` | ✅ |
+| ~~기존 `anilistcdn` URL 교체~~ | ✅ baseline 0 |
 | `locale_linter` PR 검증 | 중 |
 | `sanitize_borrowed_metadata.dart` 정리 범위 확정 | 낮 |
-| 샤드 v3 전량 `migrate_registry_v3` | 중 |
+| 샤드 v3 전량 `migrate_registry_v3` | 중 (신규만 v3 우선) |
 
 ---
 

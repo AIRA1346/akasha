@@ -18,6 +18,7 @@ enum AppDomain {
 /// 매체 카테고리
 enum MediaCategory {
   manga('만화', Icons.menu_book),
+  webtoon('웹툰', Icons.web_stories),
   animation('애니메이션', Icons.movie_filter),
   game('게임', Icons.sports_esports),
   book('책/소설/라노벨', Icons.auto_stories),

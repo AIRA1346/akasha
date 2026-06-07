@@ -108,7 +108,7 @@ const _slugTmdbTv = <String, int>{
   'shigatsu-wa-kimi-no-uso': 61663,
   'oregairu': 65676,
   'nisekoi': 60859,
-  'quintessential-quintuplets': 83631,
+  'quintessential-quintuplets': 84669,
   'tower-of-god': 96346,
   'real': 0, // skip
   'goodnight-punpun': 0,

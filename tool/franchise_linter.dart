@@ -107,7 +107,7 @@ int _readMinMembers(List<String> args) {
 String _franchiseStem(String workId) {
   final withoutYear = workId.replaceFirst(RegExp(r'_\d{4}$'), '');
   final match = RegExp(
-    r'^(?:sub|gen)_(?:manga|animation|game|book|movie|drama)_(.+)$',
+    r'^(?:sub|gen)_(?:manga|webtoon|animation|game|book|movie|drama)_(.+)$',
   ).firstMatch(withoutYear);
   if (match == null) return '';
 

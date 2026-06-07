@@ -70,6 +70,7 @@ flutter:
     - assets/registry/legacy_aliases.json
     - assets/registry/franchise_groups.json
     - assets/registry/shards/manga/
+    - assets/registry/shards/webtoon/
     - assets/registry/shards/animation/
     - assets/registry/shards/game/
     - assets/registry/shards/book/

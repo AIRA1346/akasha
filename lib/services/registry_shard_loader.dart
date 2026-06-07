@@ -189,11 +189,11 @@ class RegistryShardLoader {
 
     Map<String, dynamic>? shardMap;
 
-    // 1) 디스크 캐시
-    shardMap = await _readCachedShardMap(meta.path);
+    // 1) 번들 asset (로컬 수정본 우선)
+    shardMap = await _readBundledShardMap(meta.path);
 
-    // 2) 번들 asset
-    shardMap ??= await _readBundledShardMap(meta.path);
+    // 2) 디스크 캐시
+    shardMap ??= await _readCachedShardMap(meta.path);
 
     if (shardMap != null) {
       WorksRegistry.mergeShardEntries(shardMap);
@@ -330,6 +330,15 @@ class RegistryShardLoader {
       }
     } catch (e) {
       print('[RegistryShardLoader] Failed to merge legacy monolithic JSON: $e');
+    }
+  }
+
+  Future<bool> hasBundledShard(String relativePath) async {
+    try {
+      await rootBundle.loadString('assets/registry/$relativePath');
+      return true;
+    } catch (_) {
+      return false;
     }
   }
 

@@ -13,7 +13,14 @@
       "우정",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
+    "externalIds": {
+      "tmdb": "46260"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    }
   },
   "sub_manga_nana_2000": {
     "workId": "sub_manga_nana_2000",
@@ -29,7 +36,9 @@
       "청춘",
       "드라마"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/zjgqkIvBURbwoHbHhmnzaTFyZgR.png"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   },
   "sub_manga_nisekoi_2011": {
     "workId": "sub_manga_nisekoi_2011",
@@ -45,6 +54,54 @@
       "학원",
       "하렘"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/liO4UdLxQq49dgshML1ffzPdH7.jpg"
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  },
+  "sub_manga_nagatoro_2017": {
+    "workId": "sub_manga_nagatoro_2017",
+    "title": "이런 걸 좋아하시는 건가요, 나가토르양?",
+    "titles": {
+      "ko": "이런 걸 좋아하시는 건가요, 나가토르양?",
+      "en": "Don't Toy with Me, Miss Nagatoro",
+      "ja": "イジらないで、長瀬さん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나노무라 774",
+    "releaseYear": 2017,
+    "description": "후배 나가토르가 선배 나오토를 장난치며 두 사람의 관계가 변하는 학원 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "코미디",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
+  },
+  "sub_manga_nichijou_2006": {
+    "workId": "sub_manga_nichijou_2006",
+    "title": "일상",
+    "titles": {
+      "ko": "일상",
+      "en": "Nichijou - My Ordinary Life",
+      "ja": "日常"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라와 케이이치로",
+    "releaseYear": 2006,
+    "description": "고등학생들의 기묘하고 과장된 일상을 그린 개그 학원 코미디.",
+    "tags": [
+      "코미디",
+      "일상",
+      "학원",
+      "개그"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    }
   }
 }

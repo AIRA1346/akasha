@@ -190,10 +190,16 @@ class RegistrySyncService {
     RegistryManifest remote,
   ) {
     if (local == null) return false;
-    final localGen = local.generatedAt;
-    final remoteGen = remote.generatedAt;
-    if (localGen == null || remoteGen == null) return false;
-    return localGen == remoteGen;
+    final localAt = _parseGeneratedAt(local.generatedAt);
+    final remoteAt = _parseGeneratedAt(remote.generatedAt);
+    if (localAt == null || remoteAt == null) return false;
+    // 번들/캐시가 원격보다 최신이면 다운그레이드하지 않음
+    return !localAt.isBefore(remoteAt);
+  }
+
+  DateTime? _parseGeneratedAt(String? raw) {
+    if (raw == null || raw.isEmpty) return null;
+    return DateTime.tryParse(raw);
   }
 
   Future<bool> _shardNeedsSync(
@@ -238,6 +244,7 @@ class RegistrySyncService {
   /// 검색어에 필요한 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
   Future<bool> syncShardsForQuery(String query) async {
     if (query.trim().isEmpty) return false;
+    if (!await _remoteManifestIsNewerThanLocal()) return false;
     final loader = WorksRegistry.loader;
     final shardIds = loader.resolveShardIdsForQuery(query);
     if (shardIds.isEmpty) return false;
@@ -247,6 +254,7 @@ class RegistrySyncService {
       if (loader.isShardLoaded(shardId)) continue;
       final meta = loader.manifest?.shardById(shardId);
       if (meta == null) continue;
+      if (await loader.hasBundledShard(meta.path)) continue;
       final content = await _fetchText('${baseUrl}${meta.path}');
       if (content != null) {
         success = await loader.cacheRemoteShard(meta.path, content) || success;
@@ -256,10 +264,13 @@ class RegistrySyncService {
   }
 
   /// 필터 범위에 해당하는 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
+  /// 번들·캐시 manifest가 원격보다 최신이면 fetch 생략 (옛 GitHub 데이터로 덮어쓰기 방지)
   Future<bool> syncShardsForFilters({
     AppDomain? domain,
     MediaCategory? category,
   }) async {
+    if (!await _remoteManifestIsNewerThanLocal()) return false;
+
     final loader = WorksRegistry.loader;
     final shardIds = loader.resolveShardIdsForFilters(
       domain: domain,
@@ -272,12 +283,33 @@ class RegistrySyncService {
       if (loader.isShardLoaded(shardId)) continue;
       final meta = loader.manifest?.shardById(shardId);
       if (meta == null) continue;
+      if (await loader.hasBundledShard(meta.path)) continue;
       final content = await _fetchText('${baseUrl}${meta.path}');
       if (content != null) {
         success = await loader.cacheRemoteShard(meta.path, content) || success;
       }
     }
     return success;
+  }
+
+  Future<bool> _remoteManifestIsNewerThanLocal() async {
+    final loader = WorksRegistry.loader;
+    final localAt = _parseGeneratedAt(loader.manifest?.generatedAt) ??
+        loader.bundledManifestGeneratedAt;
+    if (localAt == null) return true;
+
+    final remoteContent = await _fetchText('${baseUrl}manifest.json');
+    if (remoteContent == null) return false;
+    try {
+      final remote = RegistryManifest.fromJson(
+        json.decode(remoteContent) as Map<String, dynamic>,
+      );
+      final remoteAt = _parseGeneratedAt(remote.generatedAt);
+      if (remoteAt == null) return false;
+      return remoteAt.isAfter(localAt);
+    } catch (_) {
+      return false;
+    }
   }
 
   Future<String?> _fetchText(String url) async {

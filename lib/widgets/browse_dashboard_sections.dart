@@ -35,6 +35,7 @@ class BrowseDashboardSections extends StatelessWidget {
 
   final Widget Function(BrowseCard card) posterCardBuilder;
   final Widget Function(List<BrowseCard> cards) gridBuilder;
+  final bool isPersonalLibraryMode;
 
   const BrowseDashboardSections({
     super.key,
@@ -61,6 +62,7 @@ class BrowseDashboardSections extends StatelessWidget {
     required this.onWatchlistSortChanged,
     required this.posterCardBuilder,
     required this.gridBuilder,
+    this.isPersonalLibraryMode = false,
   });
 
   @override
@@ -99,10 +101,15 @@ class BrowseDashboardSections extends StatelessWidget {
         if (libraryCards.isNotEmpty) ...[
           _sectionHeader(
             emoji: '📚',
-            title: '작품 카탈로그 (사전 + 아카이브)',
-            titleColor: const Color(0xFFF09819),
-            subtitle:
-                '${libraryCards.length}개 표시 · 나의 아카이브만 보려면 상단 「나의 서재」를 이용하세요.',
+            title: isPersonalLibraryMode
+                ? '내 아카이브'
+                : '작품 카탈로그 (사전 + 아카이브)',
+            titleColor: isPersonalLibraryMode
+                ? const Color(0xFFFFB74D)
+                : const Color(0xFFF09819),
+            subtitle: isPersonalLibraryMode
+                ? '${libraryCards.length}개 아카이브 작품'
+                : '${libraryCards.length}개 표시 · 엄선 아카이브는 사이드바 「나만의 서재」를 이용하세요.',
             expanded: libraryExpanded,
             onExpandedChanged: onLibraryExpandedChanged,
             sortCriteria: librarySortCriteria,
