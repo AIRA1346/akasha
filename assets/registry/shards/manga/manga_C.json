@@ -13,7 +13,7 @@
       "악마",
       "카오스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-euxXZEIfDY2u.png"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
   },
   "sub_manga_detective-conan_1994": {
     "workId": "sub_manga_detective-conan_1994",
@@ -29,7 +29,7 @@
       "럽코",
       "장수작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx106015-yK0zreKP7RVs.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg"
   },
   "gen_manga_crayon-shin-chan_1990": {
     "workId": "gen_manga_crayon-shin-chan_1990",
@@ -45,7 +45,7 @@
       "가족",
       "장수작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx32435-9lY7xiwr7VQL.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vhythNI2xgNwXLmDvZzw6f48uPg.jpg"
   },
   "sub_manga_cardcaptor-sakura_1996": {
     "workId": "sub_manga_cardcaptor-sakura_1996",
@@ -61,7 +61,7 @@
       "소녀",
       "순정"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30073.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg"
   },
   "sub_manga_chihayafuru_2007": {
     "workId": "sub_manga_chihayafuru_2007",
@@ -77,6 +77,6 @@
       "청춘",
       "로맨스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx10800.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/bj9lZLRey7ZTWNbA9o3L0tW0HfW.jpg"
   }
 }

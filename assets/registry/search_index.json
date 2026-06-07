@@ -53,7 +53,7 @@
     "titles": {
       "ko": "20세기 소년"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30039.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/gadB0EHZehVHy4dBGKYmjvuvPDz.jpg"
   },
   {
     "workId": "sub_manga_march-comes-in-like-a-lion_2007",
@@ -81,7 +81,7 @@
     "titles": {
       "ko": "3월의 라이온"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx21366.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/aSlLkbHdaq7g7zmniazLfxHHB4D.jpg"
   },
   {
     "workId": "sub_manga_shigatsu-wa-kimi-no-uso_2011",
@@ -109,7 +109,7 @@
     "titles": {
       "ko": "4월은 너의 거짓말"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx67707-srHFl9GBmfig.png"
+    "posterPath": "https://image.tmdb.org/t/p/w500/rRjfH3ckTYz8z8aSkJshFL4VyK9.jpg"
   },
   {
     "workId": "sub_manga_quintessential-quintuplets_2017",
@@ -137,7 +137,7 @@
     "titles": {
       "ko": "5등분의 신부"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx103635.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/unGzAJszSJ42mLgTOj8jEO77PYg.jpg"
   },
   {
     "workId": "gen_game_appid251570_2016",
@@ -193,7 +193,7 @@
     "titles": {
       "ko": "86 -에이티식스-"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx101606-3lMiy9HQjBgv.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/oIirhgCRpo2ZPFjl6HdxQSLhjq2.jpg"
   },
   {
     "workId": "sub_book_86-light-novel_2016",
@@ -222,7 +222,7 @@
     "titles": {
       "ko": "86 -에이티식스-"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx116589.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040681412-L.jpg"
   },
   {
     "workId": "gen_game_appid813780_2019",
@@ -331,7 +331,7 @@
     "titles": {
       "en": "BEASTARS"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx107660.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg"
   },
   {
     "workId": "gen_game_appid949230_2023",
@@ -440,7 +440,7 @@
     "titles": {
       "en": "Dr.STONE"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx98416.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHMvk2BhwDKAyXwRSqTuAnURoS5.jpg"
   },
   {
     "workId": "gen_game_appid239140_2015",
@@ -684,7 +684,7 @@
     "titles": {
       "en": "NANA"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30014.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zjgqkIvBURbwoHbHhmnzaTFyZgR.png"
   },
   {
     "workId": "gen_game_appid485510_2017",
@@ -765,8 +765,7 @@
     ],
     "titles": {
       "en": "REAL"
-    },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30895.jpg"
+    }
   },
   {
     "workId": "sub_animation_rezero-anime_2016",
@@ -794,7 +793,7 @@
     "titles": {
       "ko": "Re:제로"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21355.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vZdiCCuOFY7gxiNKqGK93UKHVxe.jpg"
   },
   {
     "workId": "sub_book_rezero-light-novel_2014",
@@ -822,7 +821,7 @@
     "titles": {
       "ko": "Re:제로 라이트노벨"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx84847.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg"
   },
   {
     "workId": "sub_manga_rezero_2014",
@@ -850,7 +849,7 @@
     "titles": {
       "ko": "Re:제로부터 시작하는 이세계 생활"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85934.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vZdiCCuOFY7gxiNKqGK93UKHVxe.jpg"
   },
   {
     "workId": "gen_game_appid883710_2019",
@@ -1040,7 +1039,7 @@
     "titles": {
       "ko": "가브릴 드롭아웃"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21878-rfzDjP2gjxGR.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/dHSbtJAVjgcGfquEIvQaGR3DF36.jpg"
   },
   {
     "workId": "gen_game_appid1593500_2022",
@@ -1096,7 +1095,7 @@
     "titles": {
       "ko": "강철의 연금술사"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30040.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1Qb3qTvq1Wo0HxzfwECTuj7Aa80.jpg"
   },
   {
     "workId": "sub_animation_fullmetal-alchemist-brotherhood_2009",
@@ -1124,7 +1123,7 @@
     "titles": {
       "ko": "강철의 연금술사 BROTHERHOOD"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1Qb3qTvq1Wo0HxzfwECTuj7Aa80.jpg"
   },
   {
     "workId": "sub_manga_golden-kamuy_2014",
@@ -1152,7 +1151,7 @@
     "titles": {
       "ko": "골든 카무이"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86559.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2tIxiE9KWJVHm5nByp8X9e43y3E.jpg"
   },
   {
     "workId": "sub_manga_kaiju-no-8_2020",
@@ -1180,7 +1179,7 @@
     "titles": {
       "ko": "괴수 8호"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx114043.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/uyrvUpiHa2fG9QB17kiKrWsmj67.jpg"
   },
   {
     "workId": "sub_movie_demon-slayer-mugen_2020",
@@ -1230,7 +1229,7 @@
     "titles": {
       "ko": "귀멸의 칼날"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg"
   },
   {
     "workId": "sub_manga_kimetsu-no-yaiba_2016",
@@ -1258,7 +1257,7 @@
     "titles": {
       "ko": "귀멸의 칼날"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx87216-c9bSNVD10UuD.png"
+    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg"
   },
   {
     "workId": "sub_movie_demon-slayer-mugen-train_2020",
@@ -1397,7 +1396,7 @@
     "titles": {
       "ko": "기생수"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30045.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/q4nqNwAhzVR7JuYctrWJvUWz3xR.jpg"
   },
   {
     "workId": "gen_movie_parasite-2019_2019",
@@ -1473,7 +1472,7 @@
     "titles": {
       "ko": "나 혼자만 레벨업"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101517.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg"
   },
   {
     "workId": "sub_manga_naruto_1999",
@@ -1500,7 +1499,7 @@
     "titles": {
       "ko": "나루토"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx30011-9yUF1dXWgDOx.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg"
   },
   {
     "workId": "sub_manga_my-hero-academia_2014",
@@ -1528,7 +1527,7 @@
     "titles": {
       "ko": "나의 히어로 아카데미아"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85486.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yY7eds57HBPNuD2SoPyHh9AmRcQ.jpg"
   },
   {
     "workId": "sub_movie_weathering-with-you_2019",
@@ -1580,7 +1579,7 @@
     "titles": {
       "ko": "날씨의 아이"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106286.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg"
   },
   {
     "workId": "sub_manga_oregairu_2011",
@@ -1608,7 +1607,7 @@
     "titles": {
       "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx14813.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/d1SLKTqBuBKAzhupohSBLeEQ8zo.jpg"
   },
   {
     "workId": "sub_animation_your-name_2016",
@@ -1636,7 +1635,7 @@
     "titles": {
       "ko": "너의 이름은."
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21665-QnenQOaxzhpf.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg"
   },
   {
     "workId": "sub_movie_your-name-2016_2016",
@@ -1687,7 +1686,7 @@
     "titles": {
       "ko": "노 게임 노 라이프"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx19815.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg"
   },
   {
     "workId": "sub_animation_noragami_2014",
@@ -1714,7 +1713,7 @@
     "titles": {
       "ko": "노라가미"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20447.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/wQub2j7xzXxjtjELPqDYgDmru4r.jpg"
   },
   {
     "workId": "gen_book_norwegian-wood_1987",
@@ -1770,7 +1769,7 @@
     "titles": {
       "ko": "늑대와 향신료"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx2966.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048862579-L.jpg"
   },
   {
     "workId": "sub_manga_nisekoi_2011",
@@ -1797,7 +1796,7 @@
     "titles": {
       "ko": "니세코이"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx16664.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/liO4UdLxQq49dgshML1ffzPdH7.jpg"
   },
   {
     "workId": "sub_game_nier-automata_2017",
@@ -1990,7 +1989,7 @@
     "titles": {
       "ko": "단다단"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx128703.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg"
   },
   {
     "workId": "sub_animation_dandadan-anime_2024",
@@ -2017,7 +2016,7 @@
     "titles": {
       "ko": "단다단"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg"
   },
   {
     "workId": "gen_movie_the-godfather_1972",
@@ -2264,7 +2263,7 @@
     "titles": {
       "ko": "데스노트"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30042.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg"
   },
   {
     "workId": "gen_game_appid1085660_2019",
@@ -2321,7 +2320,7 @@
     "titles": {
       "ko": "도로헤도로"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx33427.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vPl7hAY0vt0OPhIflRb5IXrssBv.jpg"
   },
   {
     "workId": "sub_manga_tokyo-ghoul_2011",
@@ -2349,7 +2348,7 @@
     "titles": {
       "ko": "도쿄 구울"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30054.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg"
   },
   {
     "workId": "sub_manga_tokyo-revengers_2017",
@@ -2377,7 +2376,7 @@
     "titles": {
       "ko": "도쿄 리벤저스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx97810.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1JvgwTD93Au1rBmmY7hOkf2Ts16.jpg"
   },
   {
     "workId": "gen_game_appid570_2013",
@@ -2950,7 +2949,7 @@
     "titles": {
       "ko": "루론검심"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30018.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2OTMpFejspg3fYnRbiuVuLsZtaq.jpg"
   },
   {
     "workId": "gen_game_league-of-legends_2009",
@@ -3008,7 +3007,7 @@
     "titles": {
       "ko": "리코리스 리코일"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143270.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/xtK4PjzICkOEB2JSD9hgeQLow9K.png"
   },
   {
     "workId": "gen_game_appid242050_2017",
@@ -3228,7 +3227,7 @@
     "titles": {
       "ko": "메이드 인 어비스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97986.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yLZS7lrY9GrWrzpMKSNkAfJNXCP.jpg"
   },
   {
     "workId": "sub_game_arknights_2019",
@@ -3313,7 +3312,7 @@
     "titles": {
       "ko": "명탐정 코난"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx106015-yK0zreKP7RVs.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg"
   },
   {
     "workId": "sub_manga_mob-psycho-100_2012",
@@ -3341,7 +3340,7 @@
     "titles": {
       "ko": "모브 사이코 100"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx70345.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pyeW47f058e8uLAwsR0EU5ELnc.jpg"
   },
   {
     "workId": "sub_animation_mob-psycho-100_2016",
@@ -3369,7 +3368,7 @@
     "titles": {
       "ko": "모브 사이코 100"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21507.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pyeW47f058e8uLAwsR0EU5ELnc.jpg"
   },
   {
     "workId": "sub_animation_silent-voice_2016",
@@ -3397,7 +3396,7 @@
     "titles": {
       "ko": "목소리의 형태"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/jNJ9shLhjRavjrCGRnoTmYB18d2.jpg"
   },
   {
     "workId": "sub_manga_monster_1994",
@@ -3424,7 +3423,7 @@
     "titles": {
       "ko": "몬스터"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30019.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tjFYkWMafg71sihs1aa7IDx17aS.jpg"
   },
   {
     "workId": "sub_game_monster-hunter-world_2018",
@@ -3479,7 +3478,7 @@
     "titles": {
       "ko": "무직전생"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108465.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/fAuObbfKA13hSlwZCW9CFRgz3eG.jpg"
   },
   {
     "workId": "sub_animation_mushoku-tensei_2021",
@@ -3506,7 +3505,7 @@
     "titles": {
       "ko": "무직전생"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114065.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/fAuObbfKA13hSlwZCW9CFRgz3eG.jpg"
   },
   {
     "workId": "sub_book_mushoku-tensei-light-novel_2014",
@@ -3532,7 +3531,7 @@
     "titles": {
       "ko": "무직전생"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108465.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg"
   },
   {
     "workId": "sub_animation_bungo-stray-dogs_2016",
@@ -3560,7 +3559,7 @@
     "titles": {
       "ko": "문호 스트레이 독스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21311.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg"
   },
   {
     "workId": "gen_game_appid1328670_2024",
@@ -3612,8 +3611,7 @@
     ],
     "titles": {
       "ko": "바감동"
-    },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30745.jpg"
+    }
   },
   {
     "workId": "gen_movie_barbie-2023_2023",
@@ -3693,7 +3691,7 @@
     "titles": {
       "ko": "바이올렛 에버가든"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21827.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yr1u5rhG3vbwNQuRC5f29Sa7Tnp.jpg"
   },
   {
     "workId": "sub_animation_monogatari_2009",
@@ -3720,7 +3718,7 @@
     "titles": {
       "ko": "바케모노가타리"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/o8RiEBqQ7VnDqxvfg5WA1GcFHUi.jpg"
   },
   {
     "workId": "sub_book_monogatari-light-novel_2006",
@@ -3747,7 +3745,7 @@
     "titles": {
       "ko": "바케모노가타리"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx5081.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg"
   },
   {
     "workId": "gen_movie_lord-of-the-rings-fellowship_2001",
@@ -3884,7 +3882,7 @@
     "titles": {
       "ko": "방패 용사 성공담"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99624.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vc3O5LIry6zxO4A7gelyjojjpGZ.jpg"
   },
   {
     "workId": "gen_game_appid578080_2017",
@@ -3964,7 +3962,7 @@
     "titles": {
       "ko": "베르세르크"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30015.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/xmGQsMbXKELzD4n78uMoCsgJPi4.jpg"
   },
   {
     "workId": "sub_manga_bocchi-the-rock_2017",
@@ -3992,7 +3990,7 @@
     "titles": {
       "ko": "봇치 더 록!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx109099.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/buXHm2shttFRQIBsCFlv5L2TmKh.jpg"
   },
   {
     "workId": "sub_animation_bocchi-the-rock_2022",
@@ -4020,7 +4018,7 @@
     "titles": {
       "ko": "봇치 더 록!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146065.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/buXHm2shttFRQIBsCFlv5L2TmKh.jpg"
   },
   {
     "workId": "sub_manga_fire-force_2015",
@@ -4048,7 +4046,7 @@
     "titles": {
       "ko": "불꽃 소방대"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85130.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg"
   },
   {
     "workId": "sub_game_honkai-star-rail_2023",
@@ -4134,7 +4132,7 @@
     "titles": {
       "ko": "블랙 라군"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx889.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg"
   },
   {
     "workId": "gen_game_appid2358720_2024",
@@ -4189,7 +4187,7 @@
     "titles": {
       "ko": "블랙 클로버"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86337.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/j0YC5g3VEWLfMRgLCCvsNgwgqjb.jpg"
   },
   {
     "workId": "gen_game_appid774361_2015",
@@ -4243,7 +4241,7 @@
     "titles": {
       "ko": "블루 록"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx104613.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg"
   },
   {
     "workId": "sub_game_blue-archive_2021",
@@ -4273,7 +4271,7 @@
     "titles": {
       "ko": "블루 아카이브"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b172598-MynXMFF72Ha3.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3511790/library_600x900.jpg"
   },
   {
     "workId": "sub_manga_blue-period_2017",
@@ -4300,7 +4298,7 @@
     "titles": {
       "ko": "블루 피리어드"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx124080.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/a8VmgZ8M5geRnHQ28EzZ50hFQbV.jpg"
   },
   {
     "workId": "sub_manga_bleach_2001",
@@ -4327,7 +4325,7 @@
     "titles": {
       "ko": "블리치"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30016.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/m6G92osOtSeXwjSfL21jZCUOvxe.jpg"
   },
   {
     "workId": "gen_game_appid960090_2019",
@@ -4380,7 +4378,7 @@
     "titles": {
       "ko": "빈란드 사가"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx34825.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/w4MXbXCRwjGDKRBgwSLmYtFrtJf.jpg"
   },
   {
     "workId": "sub_animation_samurai-champloo_2004",
@@ -4408,7 +4406,7 @@
     "titles": {
       "ko": "사무라이 참프루"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/l0TrgNyJsY0yV1hTggk9eWDtV5I.png"
   },
   {
     "workId": "gen_game_appid1091500_2020",
@@ -4467,7 +4465,7 @@
     "titles": {
       "ko": "사이버펑크: 엣지러너"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120377.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5GrYF4dzKqlG8qcABlBC93zY7ny.jpg"
   },
   {
     "workId": "sub_animation_psycho-pass_2012",
@@ -4496,7 +4494,7 @@
     "titles": {
       "ko": "사이코 패스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13601.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/wcP6vBTCpFMg0EkllrrqPBAGugX.jpg"
   },
   {
     "workId": "sub_manga_sakamoto-days_2020",
@@ -4524,7 +4522,7 @@
     "titles": {
       "ko": "사카모토 데이즈"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx128893.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1n1ZP0KHXUSvVxZG63x7aOzmO4M.jpg"
   },
   {
     "workId": "gen_game_appid526870_2020",
@@ -4687,7 +4685,7 @@
     "titles": {
       "ko": "소드 아트 온라인"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx60083-pLrhCqW8iiHb.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg"
   },
   {
     "workId": "gen_manga_math-thief_2006",
@@ -4743,7 +4741,7 @@
     "titles": {
       "ko": "슈타인즈 게이트"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/jq7yvqKHgi7mBckRj3vipbQpRY4.jpg"
   },
   {
     "workId": "gen_game_appid1454400_2021",
@@ -4825,7 +4823,7 @@
     "titles": {
       "ko": "스킵과 로퍼"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx124195.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2rY99dcQWHIHecy6Xit783UEQg0.jpg"
   },
   {
     "workId": "sub_game_stardew-valley-sub_2016",
@@ -5015,7 +5013,7 @@
     "titles": {
       "ko": "스파이 패밀리"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg"
   },
   {
     "workId": "sub_manga_spy-x-family_2018",
@@ -5043,7 +5041,7 @@
     "titles": {
       "ko": "스파이 패밀리"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108725.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg"
   },
   {
     "workId": "gen_game_appid2215430_2023",
@@ -5176,7 +5174,7 @@
     "titles": {
       "ko": "슬램덩크"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30051-5KJyPlO7z5F4.png"
+    "posterPath": "https://image.tmdb.org/t/p/w500/uLrEqu1JkSMe4AN7IMMBEfhFAXE.jpg"
   },
   {
     "workId": "sub_game_nikke_2022",
@@ -5206,7 +5204,7 @@
     "titles": {
       "ko": "승리의 여신: 니케"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx186872-PecL686Sgicx.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg"
   },
   {
     "workId": "gen_game_appid255710_2015",
@@ -5262,7 +5260,7 @@
     "titles": {
       "ko": "신세기 에반게리온"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/n7VN6sOrTIeXW9VfzSaciLizIia.jpg"
   },
   {
     "workId": "sub_manga_tower-of-god_2010",
@@ -5290,7 +5288,7 @@
     "titles": {
       "ko": "신의 탑"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101573.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ukAWA52fqoNSfkbbNB3XkKqsycz.jpg"
   },
   {
     "workId": "sub_manga_ao-ashi_2015",
@@ -5317,7 +5315,7 @@
     "titles": {
       "ko": "아오아시"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx110229.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/4FTPCP43DobWvQkwR1YSp9bRW16.jpg"
   },
   {
     "workId": "gen_book_ready-player-one_2011",
@@ -5402,7 +5400,7 @@
     "titles": {
       "ko": "약속의 네버랜드"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx99624.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg"
   },
   {
     "workId": "gen_movie_avengers-endgame_2019",
@@ -5489,7 +5487,7 @@
     "titles": {
       "ko": "언데드 언럭"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx127053.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/7Zi8ckWAaaGrVHx64Mc83Ua2kn9.jpg"
   },
   {
     "workId": "gen_game_appid1659420_2022",
@@ -5650,7 +5648,7 @@
     "titles": {
       "ko": "엔젤 비츠!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg"
   },
   {
     "workId": "gen_game_appid1245620_2022",
@@ -5761,7 +5759,7 @@
     "titles": {
       "ko": "오버로드"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg"
   },
   {
     "workId": "sub_book_overlord-light-novel_2012",
@@ -5787,7 +5785,7 @@
     "titles": {
       "ko": "오버로드"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85934.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg"
   },
   {
     "workId": "gen_game_overwatch-2_2022",
@@ -6009,7 +6007,7 @@
     "titles": {
       "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx98659.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg"
   },
   {
     "workId": "sub_game_umamusume_2021",
@@ -6146,7 +6144,7 @@
     "titles": {
       "ko": "원펀맨"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg"
   },
   {
     "workId": "sub_manga_one-piece_1997",
@@ -6173,7 +6171,7 @@
     "titles": {
       "ko": "원피스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30013-BeslEMqiPhlk.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/t5AnYuoWrDEyLWmDLbF1FVauS5k.jpg"
   },
   {
     "workId": "sub_drama_one-piece-live-action_2023",
@@ -6309,7 +6307,7 @@
     "titles": {
       "ko": "유유백서"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30031.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/9ECU2frZqzR77WBBkBY6dpib5Pc.jpg"
   },
   {
     "workId": "gen_book_hitchhiker-guide_1979",
@@ -6366,7 +6364,7 @@
     "titles": {
       "ko": "은혼"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx918.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zzl1YOJ1vda6aEBIerqS53zNI4D.jpg"
   },
   {
     "workId": "sub_manga_gintama_2003",
@@ -6393,7 +6391,7 @@
     "titles": {
       "ko": "은혼"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30044.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zzl1YOJ1vda6aEBIerqS53zNI4D.jpg"
   },
   {
     "workId": "sub_animation_konosuba_2016",
@@ -6421,7 +6419,7 @@
     "titles": {
       "ko": "이 멋진 세계에 축복을!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2c3lH4JNuAHbKF93lTZKpZM45LT.jpg"
   },
   {
     "workId": "sub_book_konosuba-light-novel_2013",
@@ -6449,7 +6447,7 @@
     "titles": {
       "ko": "이 멋진 세계에 축복을!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx21202.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg"
   },
   {
     "workId": "gen_drama_extraordinary-attorney-woo_2022",
@@ -6504,7 +6502,7 @@
     "titles": {
       "ko": "이웃집 토토로"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx523-fErBvxOHP7IX.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/c9zCkL0rTkNQ1HB9cmeFIqbkS50.jpg"
   },
   {
     "workId": "gen_movie_inception_2010",
@@ -6587,8 +6585,7 @@
     ],
     "titles": {
       "ko": "잘 자 뚱뚱이"
-    },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx34646.jpg"
+    }
   },
   {
     "workId": "sub_animation_frieren_2023",
@@ -6616,7 +6613,7 @@
     "titles": {
       "ko": "장송의 프리렌"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154587-qQTzQnEJJ3oB.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg"
   },
   {
     "workId": "sub_book_slime-light-novel_2014",
@@ -6643,7 +6640,7 @@
     "titles": {
       "ko": "전생 슬라임"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101280.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040702279-L.jpg"
   },
   {
     "workId": "sub_animation_slime-anime_2018",
@@ -6670,7 +6667,7 @@
     "titles": {
       "ko": "전생 슬라임"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8Dv8aU9aAPv16B7JVUtHr5QxpA4.jpg"
   },
   {
     "workId": "sub_manga_tensura_2014",
@@ -6698,7 +6695,7 @@
     "titles": {
       "ko": "전생했더니 슬라임이었던 건"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101280.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8Dv8aU9aAPv16B7JVUtHr5QxpA4.jpg"
   },
   {
     "workId": "sub_game_xenoblade-3_2022",
@@ -6812,7 +6809,7 @@
     "titles": {
       "ko": "주술회전"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg"
   },
   {
     "workId": "sub_manga_jujutsu-kaisen_2018",
@@ -6839,7 +6836,7 @@
     "titles": {
       "ko": "주술회전"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101517-H3TdM3g5ZUe9.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg"
   },
   {
     "workId": "sub_movie_jujutsu-kaisen-0_2021",
@@ -6894,7 +6891,7 @@
     "titles": {
       "ko": "지옥락"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101348.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg"
   },
   {
     "workId": "sub_manga_shingeki-no-kyojin_2009",
@@ -6923,7 +6920,7 @@
     "titles": {
       "ko": "진격의 거인"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx53390-1RsuABC34P9D.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg"
   },
   {
     "workId": "sub_animation_attack-on-titan_2013",
@@ -6951,7 +6948,7 @@
     "titles": {
       "ko": "진격의 거인"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg"
   },
   {
     "workId": "gen_manga_crayon-shin-chan_1990",
@@ -6979,7 +6976,7 @@
     "titles": {
       "ko": "짱구는 못말려"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx32435-9lY7xiwr7VQL.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vhythNI2xgNwXLmDvZzw6f48uPg.jpg"
   },
   {
     "workId": "sub_animation_hajime-no-ippo_2000",
@@ -7006,7 +7003,7 @@
     "titles": {
       "ko": "첫걸음"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx263.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/mPXzwheCTrTWZJtUeueOkv00pL1.jpg"
   },
   {
     "workId": "gen_drama_chernobyl_2019",
@@ -7061,7 +7058,7 @@
     "titles": {
       "ko": "체인소 맨"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
   },
   {
     "workId": "sub_manga_chainsaw-man_2018",
@@ -7089,7 +7086,7 @@
     "titles": {
       "ko": "체인소 맨"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx105778-euxXZEIfDY2u.png"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
   },
   {
     "workId": "sub_movie_chainsaw-man-movie_2025",
@@ -7141,7 +7138,7 @@
     "titles": {
       "ko": "최애의 아이"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150672.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
   },
   {
     "workId": "sub_manga_oshi-no-ko_2020",
@@ -7169,7 +7166,7 @@
     "titles": {
       "ko": "최애의 아이"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx120377.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
   },
   {
     "workId": "gen_game_appid1888930_2023",
@@ -7223,7 +7220,7 @@
     "titles": {
       "ko": "충사"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30091.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/n5XNKXnoXpoXyfiCtXHOf8q8PFM.jpg"
   },
   {
     "workId": "sub_manga_chihayafuru_2007",
@@ -7250,7 +7247,7 @@
     "titles": {
       "ko": "치하야후루"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx10800.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/bj9lZLRey7ZTWNbA9o3L0tW0HfW.jpg"
   },
   {
     "workId": "sub_manga_kaguya-sama_2015",
@@ -7278,7 +7275,7 @@
     "titles": {
       "ko": "카구야님은 고백받고 싶어"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101921.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg"
   },
   {
     "workId": "sub_manga_cardcaptor-sakura_1996",
@@ -7306,7 +7303,7 @@
     "titles": {
       "ko": "카드캡터 체리"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30073.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg"
   },
   {
     "workId": "gen_animation_cowboy-bebop_1998",
@@ -7335,7 +7332,7 @@
     "titles": {
       "ko": "카우보이 비밥"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg"
   },
   {
     "workId": "gen_game_appid730_2012",
@@ -7447,7 +7444,7 @@
     "titles": {
       "ko": "코드 기어스"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/oiS5BaTgqfR72MHh3yzFSUQyWy.jpg"
   },
   {
     "workId": "gen_game_appid1938090_2022",
@@ -7528,7 +7525,7 @@
     "titles": {
       "ko": "클라나드"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2167.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/7fviKkX8RJh9Iz4SOmwcs1Mp7Cm.jpg"
   },
   {
     "workId": "sub_manga_kingdom_2006",
@@ -7555,7 +7552,7 @@
     "titles": {
       "ko": "킹덤"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx44347.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1q4edsAnbjUwZYFK425kdM5WtYJ.jpg"
   },
   {
     "workId": "gen_drama_kingdom_2019",
@@ -7691,7 +7688,7 @@
     "titles": {
       "ko": "토라도라!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx4224.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nZ2qXHJTtNAfa6cP1iw9onhA2H7.jpg"
   },
   {
     "workId": "gen_movie_toy-story_1995",
@@ -7801,7 +7798,7 @@
     "titles": {
       "ko": "트라이건"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/acDtMnoo5byrtFLEJa6J5BYfgBW.png"
   },
   {
     "workId": "gen_drama_true-detective_2014",
@@ -8107,7 +8104,7 @@
     "titles": {
       "ko": "페어리 테일"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30694.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/11m6y2KdpnTJux0pStJ94GU1zQ7.jpg"
   },
   {
     "workId": "sub_game_fate-grand-order_2015",
@@ -8162,7 +8159,7 @@
     "titles": {
       "ko": "페이트/제로"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/uxaXSoT8K0S2NE5PWsBpHUl3GGU.png"
   },
   {
     "workId": "gen_movie_forrest-gump_1994",
@@ -8519,7 +8516,7 @@
     "titles": {
       "ko": "플루토"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30735.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yz9M8WV0TFevVMfT5i5VsoWBMPS.jpg"
   },
   {
     "workId": "sub_animation_ping-pong_2014",
@@ -8546,7 +8543,7 @@
     "titles": {
       "ko": "핑퐁"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20707.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/xEGAqvlfJwkkrp7KHR01P6nzWs4.jpg"
   },
   {
     "workId": "gen_game_appid1145360_2020",
@@ -8600,7 +8597,7 @@
     "titles": {
       "ko": "하이큐!!"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx65795.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg"
   },
   {
     "workId": "gen_game_appid394360_2016",
@@ -8712,7 +8709,7 @@
     "titles": {
       "ko": "헌터×헌터"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30002.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg"
   },
   {
     "workId": "gen_book_hunger-games_2008",
@@ -8873,7 +8870,7 @@
     "titles": {
       "ko": "호리미야"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx122633.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pqNpFjqF9uujQOvK4BBhSHBftGK.jpg"
   },
   {
     "workId": "gen_game_appid367520_2017",
@@ -8929,6 +8926,6 @@
     "titles": {
       "ko": "후르츠 바스켓"
     },
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30026.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/39yPNaLGAKTVpeN3CadhhfPNO0P.jpg"
   }
 ]
