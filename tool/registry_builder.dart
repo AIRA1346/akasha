@@ -1,13 +1,15 @@
 // ignore_for_file: avoid_print
-/// AKASHA Registry Builder
+/// AKASHA Registry Builder (akasha-db v3)
 /// Usage: dart run tool/registry_builder.dart [--sync-assets]
 ///
 /// - Validates all shard JSON files under akasha-db/shards/
-/// - Regenerates manifest.json and search_index.json
+/// - Regenerates manifest.json (v3) and search_index.json (searchTokens)
 /// - Optionally copies akasha-db → assets/registry for app bundle
 
 import 'dart:convert';
 import 'dart:io';
+
+import 'registry_v3_utils.dart';
 
 final _masterPatternWithYear = RegExp(
   r'^(sub|gen)_(manga|animation|game|book|movie|drama)_(.+)_(\d{4})$',
@@ -122,7 +124,7 @@ void main(List<String> args) {
   shardMetas.sort((a, b) => (a['id'] as String).compareTo(b['id'] as String));
 
   final manifest = {
-    'version': 2,
+    'version': 3,
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
     'shards': shardMetas,
   };
@@ -131,15 +133,41 @@ void main(List<String> args) {
     final workId = entry.key;
     final work = entry.value;
     final poster = work['posterPath'];
+    final title = work['title']?.toString() ?? '';
+    var titles = parseTitlesJson(work['titles']);
+    if (titles.isEmpty && title.isNotEmpty) {
+      titles = inferTitlesFromLegacyTitle(title);
+    }
+    final aliases = (work['aliases'] as List?)
+            ?.map((e) => e.toString().trim())
+            .where((e) => e.isNotEmpty)
+            .toList() ??
+        const <String>[];
+    final extensions = work['extensions'] is Map
+        ? Map<String, dynamic>.from(work['extensions'] as Map)
+        : <String, dynamic>{};
+    final searchTokens = buildWorkSearchTokens(
+      legacyTitle: title,
+      titles: titles,
+      aliases: aliases,
+      creator: work['creator']?.toString() ?? '',
+      tags: (work['tags'] as List?)?.map((e) => e.toString()).toList() ??
+          const <String>[],
+    );
+
     final map = <String, dynamic>{
       'workId': workId,
-      'title': work['title'],
+      'title': title,
       'shardId': workShardIds[workId] ?? 'unknown',
       'category': work['category'],
       'domain': work['domain'],
       'creator': work['creator'] ?? '',
       'tags': work['tags'] ?? [],
+      'searchTokens': searchTokens,
     };
+    if (titles.isNotEmpty) {
+      map['titles'] = titles;
+    }
     if (poster is String &&
         poster.isNotEmpty &&
         poster.startsWith('http')) {
@@ -244,6 +272,8 @@ void _validateWork(
   final category = work['category']?.toString() ?? '';
   final domain = work['domain']?.toString() ?? '';
   final title = work['title']?.toString() ?? '';
+  final titles = parseTitlesJson(work['titles']);
+  final hasTitle = title.isNotEmpty || titles.isNotEmpty;
 
   if (!_validCategories.contains(category)) {
     errors.add('$shardPath/$workId: invalid category $category');
@@ -251,8 +281,17 @@ void _validateWork(
   if (!_validDomains.contains(domain)) {
     errors.add('$shardPath/$workId: invalid domain $domain');
   }
-  if (title.isEmpty) {
-    errors.add('$shardPath/$workId: title is required');
+  if (!hasTitle) {
+    errors.add('$shardPath/$workId: title or titles is required');
+  }
+
+  final aliases = work['aliases'];
+  if (aliases != null && aliases is! List) {
+    errors.add('$shardPath/$workId: aliases must be a JSON array');
+  }
+  final externalIds = work['externalIds'];
+  if (externalIds != null && externalIds is! Map) {
+    errors.add('$shardPath/$workId: externalIds must be a JSON object');
   }
 
   final poster = work['posterPath'];

@@ -79,6 +79,9 @@
 
 | 기능 | 상태 | 메모 |
 |------|------|------|
+| **글로벌 i18n (UI)** | 스키마만 | `CatalogLocale` · ARB `ko`/`en` — [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
+| **다국어 카탈로그** | v3 스키마 ✅ | `titles`/`aliases`/`searchTokens` · 샤드 마이그레이션 `migrate_registry_v3` |
+| **제휴 커머스** | entitlement 분리 ✅ | cosmetic(Steam) vs content(제휴) — [commerce-boundary.md](docs/commerce-boundary.md) |
 | 오늘의 회상 카드 | 코드 있음 | v1에서 제외, v1.1에 스토어 노출 |
 | 타임라인 / 완성 캘린더 | 미구현 | 철학 2번 축 |
 | 취향 기반 추천 (Discover) | 미구현 | 철학 3번 축, 규칙 기반 MVP 설계됨 |
@@ -93,8 +96,11 @@
 - [x] cold start preload 축소 (`main.dart` — master_index 진입 시에만 full prefetch)
 - [x] `flutter_ci.yml`에 `ci_registry_check` 연동
 - [x] akasha-db 시드 ~1,000작 (`seed_expansion_anilist.dart` + `batch4` + `registry_builder --sync-assets`)
-- [x] lazy 샤드 정책 — 번들은 eager 10샤드만, 나머지 온디맨드
-- [ ] `franchise_groups.json` 커버리지 확대
+- [x] lazy 샤드 정책 — 번들은 eager 15샤드만, 나머지 온디맨드
+- [x] **akasha-db v3** — `titles`/`aliases`/`externalIds`/`searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md))
+- [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)
+- [ ] `franchise_groups.json` `displayNames` 커버리지 확대
+- [ ] `locale_linter` — PR 시 titles·externalIds 검증
 - [ ] 포스터 정책 tier 유지 (`POSTER_POLICY.md`)
 - [ ] 증분 sync + `lastSyncTime` UX 고도화
 

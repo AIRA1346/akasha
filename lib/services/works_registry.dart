@@ -1,12 +1,21 @@
+import '../config/catalog_locale.dart';
 import '../models/enums.dart';
+import '../models/external_ids.dart';
 import '../models/work_id_codec.dart';
+import '../models/work_titles.dart';
+import '../utils/registry_search_utils.dart';
+import '../utils/work_title_resolver.dart';
 import 'registry_shard_loader.dart';
 import 'registry_sync_service.dart';
 
-/// 공통 작품 사전 모델 (Tier 1 - Metadata)
+/// 공통 작품 사전 모델 (Tier 1 - Metadata, akasha-db v3)
 class RegistryWork {
   final String workId;
+  /// 레거시 단일 제목 — 하위 호환·정렬 키 (v3: `titles`와 동기화 권장)
   final String title;
+  final WorkTitles titles;
+  final List<String> aliases;
+  final ExternalIds externalIds;
   final MediaCategory category;
   final AppDomain domain;
   final String creator;
@@ -19,6 +28,9 @@ class RegistryWork {
   const RegistryWork({
     required this.workId,
     required this.title,
+    this.titles = const WorkTitles(),
+    this.aliases = const [],
+    this.externalIds = const ExternalIds(),
     required this.category,
     required this.domain,
     this.creator = '',
@@ -28,6 +40,23 @@ class RegistryWork {
     this.posterPath,
     this.extensions = const {},
   });
+
+  /// UI·카드용 로케일 제목 (사용자 볼트 `AkashaItem.title`과 별개)
+  String displayTitle([CatalogLocale? locale]) {
+    return resolveWorkDisplayTitle(
+      legacyTitle: title,
+      titles: titles,
+      locale: locale ?? CatalogLocaleScope.current,
+    );
+  }
+
+  List<String> get searchTokens => buildWorkSearchTokens(
+        legacyTitle: title,
+        titles: titles,
+        aliases: aliases,
+        creator: creator,
+        tags: tags,
+      );
 
   factory RegistryWork.fromJson(Map<String, dynamic> json) {
     final workId = json['workId']?.toString() ?? '';
@@ -53,9 +82,29 @@ class RegistryWork {
       });
     }
 
+    var titles = WorkTitles.fromJson(json['titles']);
+    if (titles.isEmpty && title.isNotEmpty) {
+      titles = inferTitlesFromLegacyTitle(title);
+    }
+
+    final aliases = (json['aliases'] as List?)
+            ?.map((e) => e.toString().trim())
+            .where((e) => e.isNotEmpty)
+            .toList() ??
+        const <String>[];
+
+    final explicitIds = ExternalIds.fromJson(json['externalIds']);
+    final externalIds = ExternalIds.mergeFromExtensions(
+      extensions,
+      explicit: explicitIds,
+    );
+
     return RegistryWork(
       workId: workId,
       title: title,
+      titles: titles,
+      aliases: aliases,
+      externalIds: externalIds,
       category: category,
       domain: domain,
       creator: json['creator']?.toString() ?? '',
@@ -95,6 +144,9 @@ class WorksRegistry {
       final work = RegistryWork(
         workId: resolvedId,
         title: incoming.title,
+        titles: incoming.titles,
+        aliases: incoming.aliases,
+        externalIds: incoming.externalIds,
         category: incoming.category,
         domain: incoming.domain,
         creator: incoming.creator,
@@ -125,17 +177,22 @@ class WorksRegistry {
 
   static List<RegistryWork> search(String query) {
     if (query.isEmpty) return _uniqueWorks();
-    final q = query.toLowerCase().replaceAll(' ', '');
+    final q = normalizeRegistryQuery(query);
     final results = <String, RegistryWork>{};
     for (final work in _uniqueWorks()) {
-      final t = work.title.toLowerCase().replaceAll(' ', '');
-      final c = work.creator.toLowerCase().replaceAll(' ', '');
-      final tagsMatch = work.tags.any((tag) => tag.toLowerCase().contains(q));
-      if (t.contains(q) || c.contains(q) || tagsMatch) {
+      if (_workMatchesQuery(work, q)) {
         results[work.workId] = work;
       }
     }
     return results.values.toList();
+  }
+
+  static bool _workMatchesQuery(RegistryWork work, String normalizedQuery) {
+    if (normalizedQuery.isEmpty) return false;
+    for (final token in work.searchTokens) {
+      if (token.contains(normalizedQuery)) return true;
+    }
+    return false;
   }
 
   /// 온디맨드 검색: 원격 shard fetch → 캐시/번들 로드 → 메모리 검색

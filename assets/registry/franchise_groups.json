@@ -1,7 +1,7 @@
 {
   "_schema": {
-    "version": 1,
-    "note": "그리드 IP 1카드. 검색 개별 표시는 UserRegistryPreferences.tracksMultipleFormats"
+    "version": 2,
+    "note": "그리드 IP 1카드. displayNames(ko/en/ja) 로케일별 IP명. 검색 개별 표시는 UserRegistryPreferences.tracksMultipleFormats"
   },
   "franchise_86": {
     "displayName": "86 -에이티식스-",

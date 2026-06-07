@@ -290,10 +290,11 @@ class FranchiseFusionService {
 
   /// 그리드 표시용 — 원본 .md 제목과 무관하게 IP 표시명으로 통일
   static AkashaItem _franchiseCardItem(AkashaItem rep, FranchiseGroup group) {
-    if (rep.title == group.displayName) return rep;
+    final ipTitle = group.localizedDisplayName();
+    if (rep.title == ipTitle) return rep;
     final card = createItem(
       workId: rep.workId,
-      title: group.displayName,
+      title: ipTitle,
       category: rep.category,
       domain: rep.domain,
       workStatus: rep.workStatusLabel,
@@ -323,7 +324,7 @@ class FranchiseFusionService {
     if (work == null) {
       return createItem(
         workId: group.primaryWorkId,
-        title: group.displayName,
+        title: group.localizedDisplayName(),
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
         myStatus: ContentMyStatus.notStarted.label,
@@ -332,7 +333,7 @@ class FranchiseFusionService {
     }
     return _createVirtualFromRegistryWork(
       work,
-      titleOverride: group.displayName,
+      titleOverride: group.localizedDisplayName(),
     );
   }
 
@@ -349,7 +350,7 @@ class FranchiseFusionService {
 
     return createItem(
       workId: work.workId,
-      title: titleOverride ?? work.title,
+      title: titleOverride ?? work.displayTitle(),
       category: work.category,
       domain: work.domain,
       myStatus: defaultMyStatus,

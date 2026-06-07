@@ -1,71 +1,31 @@
-# AKASHA Registry Schema (v2)
+# akasha-db Schema
 
-## work_id 마스터 규칙
+현재 버전: **v3** (`manifest.json` → `"version": 3`)
 
+상세 정책: [docs/locale-catalog-policy.md](../docs/locale-catalog-policy.md)
+
+## Work entry (shard JSON)
+
+| 필드 | 필수 | 설명 |
+|------|------|------|
+| `workId` | ✅ | 마스터 형식 식별자 |
+| `title` | ✅* | 레거시 단일 제목 (*`titles`만 있어도 됨) |
+| `titles` | | `{ "ko", "en", "ja", "romaji", "native", "zh" }` |
+| `aliases` | | 검색용 별칭 배열 |
+| `externalIds` | | `{ "anilist", "steam", "isbn", ... }` |
+| `category` | ✅ | manga · animation · game · book · movie · drama |
+| `domain` | ✅ | subculture · generalCulture |
+| `extensions` | | 레거시 확장 (v3에서 `externalIds`로 승격 권장) |
+
+## search_index.json (빌드 산출)
+
+- `searchTokens`: 교차 언어 검색 (빌드 시 생성, 샤드에 저장 안 함)
+- `titles`: 샤드에 있을 때만 인덱스에 포함
+
+## 도구
+
+```bash
+dart run tool/migrate_registry_v3.dart      # 샤드 titles/externalIds 승격
+dart run tool/registry_builder.dart --sync-assets
+dart run tool/ci_registry_check.dart
 ```
-{domain}_{category}_{identifier}_{releaseYear}
-```
-
-| 세그먼트 | 값 |
-|----------|-----|
-| domain | `sub` (서브컬처) · `gen` (일반문화) |
-| category | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
-| identifier | ISBN · `appid{숫자}` · 슬러그 · `custom_{token}` |
-| releaseYear | 4자리 연도 (선택이지만 권장) |
-
-예시:
-
-- `sub_manga_kimetsu-no-yaiba_2016`
-- `gen_game_appid1245620_2022`
-- `sub_manga_custom_abc123_2026`
-
-## 샤드 파일
-
-경로: `shards/{category}/{shardId}.json`
-
-```json
-{
-  "sub_manga_one-piece_1997": {
-    "workId": "sub_manga_one-piece_1997",
-    "title": "원피스",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "오다 에이이치로",
-    "releaseYear": 1997,
-    "description": "2~3문장 요약",
-    "tags": ["모험", "우정"],
-    "posterPath": "https://..." 
-  }
-}
-```
-
-- `posterPath`: 공개 CDN URL 또는 `null` (이미지 파일 업로드 금지)
-- map key와 `workId`는 반드시 일치
-
-## manifest.json
-
-샤드 목록과 `eager` 플래그(앱 기본 로드 여부)를 정의합니다.
-
-## search_index.json
-
-경량 검색용 배열. `registry_builder`가 자동 생성합니다.
-
-```json
-{
-  "workId": "sub_manga_one-piece_1997",
-  "title": "원피스",
-  "shardId": "manga_O",
-  "category": "manga",
-  "domain": "subculture",
-  "creator": "오다 에이이치로",
-  "tags": ["모험"],
-  "posterPath": "https://..."
-}
-```
-
-- `posterPath`: 샤드에 URL이 있을 때만 포함 (lazy 샤드 미로드 시 포스터 fusion용)
-- 출처 규칙: [POSTER_POLICY.md](POSTER_POLICY.md)
-
-## legacy_aliases.json
-
-구버전 work_id → 신규 master work_id 매핑.

@@ -8,6 +8,15 @@ String normalizeRegistryQuery(String query) =>
 bool registryEntryMatchesQuery(RegistrySearchIndexEntry entry, String query) {
   final q = normalizeRegistryQuery(query);
   if (q.isEmpty) return false;
+
+  if (entry.searchTokens.isNotEmpty) {
+    for (final token in entry.searchTokens) {
+      if (token.contains(q)) return true;
+    }
+    return false;
+  }
+
+  // v2 search_index 하위 호환
   final title = entry.title.toLowerCase().replaceAll(' ', '');
   final creator = entry.creator.toLowerCase().replaceAll(' ', '');
   final tagsMatch = entry.tags.any((tag) => tag.toLowerCase().contains(q));

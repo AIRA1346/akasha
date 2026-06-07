@@ -78,6 +78,8 @@ class RegistrySearchIndexEntry {
   final String creator;
   final List<String> tags;
   final String? posterPath;
+  /// v3 — 교차 언어·별칭 검색용 (registry_builder가 생성)
+  final List<String> searchTokens;
 
   const RegistrySearchIndexEntry({
     required this.workId,
@@ -88,6 +90,7 @@ class RegistrySearchIndexEntry {
     this.creator = '',
     this.tags = const [],
     this.posterPath,
+    this.searchTokens = const [],
   });
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
@@ -111,6 +114,11 @@ class RegistrySearchIndexEntry {
           const [],
       posterPath:
           poster != null && poster.isNotEmpty ? poster : null,
+      searchTokens: (json['searchTokens'] as List?)
+              ?.map((e) => e.toString())
+              .where((e) => e.isNotEmpty)
+              .toList() ??
+          const [],
     );
   }
 }

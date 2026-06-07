@@ -190,6 +190,14 @@ Map<String, dynamic>? _mediaToSeed(
       : (english.isNotEmpty ? english : romaji);
   if (displayTitle.isEmpty) return null;
 
+  final titles = <String, String>{};
+  if (english.isNotEmpty) titles['en'] = english;
+  if (native.isNotEmpty) titles['native'] = native;
+  if (romaji.isNotEmpty) titles['romaji'] = romaji;
+  if (native.isNotEmpty && RegExp(r'[\u3040-\u30FF\u4E00-\u9FFF]').hasMatch(native)) {
+    titles['ja'] = native;
+  }
+
   final startDate = media['startDate'] as Map<String, dynamic>? ?? {};
   final year = (startDate['year'] as int?) ?? 2000;
 
@@ -212,6 +220,7 @@ Map<String, dynamic>? _mediaToSeed(
   return {
     'workId': workId,
     'title': displayTitle,
+    'titles': titles,
     'category': category,
     'domain': 'subculture',
     'creator': '',
@@ -221,6 +230,9 @@ Map<String, dynamic>? _mediaToSeed(
         : description,
     'tags': genres.take(8).toList(),
     'posterPath': posterPath,
+    'externalIds': {
+      'anilist': anilistId.toString(),
+    },
     'extensions': {
       'anilistId': anilistId,
       'seedSource': 'anilist_popularity',

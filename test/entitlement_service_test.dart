@@ -32,9 +32,19 @@ void main() {
       final svc = EntitlementService.instance;
       await svc.load();
       expect(
-        await svc.purchase(EntitlementService.libraryThemePackId),
+        await svc.purchaseCosmetic(EntitlementService.libraryThemePackId),
         isFalse,
       );
+    });
+
+    test('content entitlements are separate from cosmetic', () async {
+      final svc = EntitlementService.instance;
+      await svc.load();
+      expect(svc.ownsContent('partner:bookwalker:bn_1'), isFalse);
+
+      await svc.grantContentEntitlement('partner:bookwalker:bn_1');
+      expect(svc.ownsContent('partner:bookwalker:bn_1'), isTrue);
+      expect(svc.owns('partner:bookwalker:bn_1'), isFalse);
     });
   });
 }

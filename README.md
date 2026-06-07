@@ -44,10 +44,11 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 ## 💰 Steam 배포 모델
 
 - **기본 앱:** 무료
-- **IAP (유료):**
+- **Steam IAP (코스메틱만):**
   - 나의 서재 **테마·꾸미기** (배경, 진열 방식 등)
   - 비주얼 테마·서재 꾸미기 팩
   - 서포터 팩
+- **작품 구매·감상 (장기):** 플랫폼 제휴·웹결제 — Steam 수수료 회피 ([commerce-boundary.md](docs/commerce-boundary.md))
 
 나의 서재 **기본 뷰**(내 아카이브 모아 보기)는 무료로 제공합니다.
 
@@ -57,10 +58,12 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 | 항목 | 정책 |
 |------|------|
-| **출시 목표** | 엄선 **~1,000작** (서브컬·대중문화 명작 중심) |
+| **스키마** | **v3** — `titles` / `aliases` / `externalIds` / `searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md)) |
+| **출시 목표** | 엄선 **~1,000작** (현재 **1,009작** / 205샤드) |
 | **장기 비전** | 수백만 작품 체급까지 확장 |
 | **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |
 | **운영** | **하이브리드** — 핵심 시드는 개발자, 롱테일은 기여자 PR + `franchise_linter` 검증 |
+| **글로벌화** | 로케일별 제목·교차 언어 검색 — [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
 
 동기화 base URL:
 
@@ -121,7 +124,9 @@ flowchart LR
 | Framework | Flutter (Windows Desktop 우선) |
 | Storage | Local Markdown + YAML front-matter |
 | State | Provider (Riverpod는 v1 이후 검토) |
-| Registry | JSON 샤딩 v2, 온디맨드 fetch |
+| Registry | JSON 샤딩 **v3**, 온디맨드 fetch, `searchTokens` 교차 언어 검색 |
+| Locale | `CatalogLocale` + `titles` fallback (UI i18n은 v1.1) |
+| Commerce | `EntitlementService` — cosmetic(Steam) / content(제휴) 분리 |
 | CI | `flutter_ci`, `ci_registry_check`, `franchise_linter` |
 
 ---
@@ -175,12 +180,13 @@ flutter pub get
 flutter analyze lib/
 flutter test
 dart run tool/ci_registry_check.dart
+dart run tool/migrate_registry_v3.dart      # 샤드 titles/externalIds 승격 (선택)
 dart run tool/seed_expansion_anilist.dart   # akasha-db → ~1,000작
-dart run tool/registry_builder.dart --sync-assets   # 번들: search_index 전체 + eager 샤드만
+dart run tool/registry_builder.dart --sync-assets   # v3 manifest + search_index + eager 샤드
 flutter build windows
 ```
 
-앱 번들에는 **search_index(전체 ~1,000작)** 와 **eager 샤드 10개**만 포함됩니다. 나머지 샤드는 동기화·검색 시 GitHub에서 온디맨드로 받습니다.
+앱 번들에는 **search_index(전체 ~1,000작, v3 searchTokens)** 와 **eager 샤드 15개**만 포함됩니다. 나머지 샤드는 동기화·검색 시 GitHub에서 온디맨드로 받습니다.
 
 Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 
@@ -188,6 +194,9 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 
 ## 📄 관련 문서
 
-- [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태
+- [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
+- [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v3 필드 규격
+- [docs/locale-catalog-policy.md](docs/locale-catalog-policy.md) — 언어·작품명·검색 정책
+- [docs/commerce-boundary.md](docs/commerce-boundary.md) — Steam IAP vs 제휴 커머스
 - `akasha-db/README.md` — 사전 기여·샤딩 규칙
 - `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈 CI 검증
