@@ -59,7 +59,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 | 항목 | 정책 |
 |------|------|
 | **스키마** | **v3** — `titles` / `aliases` / `externalIds` / `searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md)) |
-| **출시 목표** | 엄선 **~1,000작** (현재 **1,009작** / 205샤드) |
+| **출시 목표** | 엄선 **~300작+** (현재 **~325작**, 수동·batch만 — AniList bulk 제거됨) |
 | **장기 비전** | 수백만 작품 체급까지 확장 |
 | **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |
 | **운영** | **하이브리드** — 핵심 시드는 개발자, 롱테일은 기여자 PR + `franchise_linter` 검증 |
@@ -181,12 +181,12 @@ flutter analyze lib/
 flutter test
 dart run tool/ci_registry_check.dart
 dart run tool/migrate_registry_v3.dart      # 샤드 titles/externalIds 승격 (선택)
-dart run tool/seed_expansion_anilist.dart   # akasha-db → ~1,000작
+dart run tool/purge_anilist_bulk.dart       # AniList bulk 제거 (dry-run / --apply)
 dart run tool/registry_builder.dart --sync-assets   # v3 manifest + search_index + eager 샤드
 flutter build windows
 ```
 
-앱 번들에는 **search_index(전체 ~1,000작, v3 searchTokens)** 와 **eager 샤드 15개**만 포함됩니다. 나머지 샤드는 동기화·검색 시 GitHub에서 온디맨드로 받습니다.
+앱 번들에는 **search_index(엄선 카탈로그 전체, v3 searchTokens)** 와 **eager 샤드**만 포함됩니다. 사전 확장은 **수동 큐레이션 PR**만 허용합니다 (AniList API bulk·온디맨드 미사용).
 
 Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 

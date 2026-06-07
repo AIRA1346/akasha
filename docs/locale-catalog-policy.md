@@ -130,7 +130,7 @@ dart run tool/migrate_registry_v3.dart
 dart run tool/registry_builder.dart --sync-assets
 ```
 
-AniList 시드(`seed_expansion_anilist.dart`)는 신규 작품부터 v3 필드 출력.
+**AniList API bulk 시드는 금지** (`purge_anilist_bulk.dart`로 제거됨). 신규 작품은 수동 PR만.
 
 ---
 

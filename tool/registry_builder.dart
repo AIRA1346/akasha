@@ -255,6 +255,18 @@ void _syncAssetsRegistry({
   );
 }
 
+bool _isAnilistBulkWork(String workId, Map<String, dynamic> work) {
+  final ext = work['extensions'];
+  if (ext is Map && ext['seedSource']?.toString() == 'anilist_popularity') {
+    return true;
+  }
+  final parts = workId.split('_');
+  if (parts.length >= 4 && RegExp(r'-a\d+$').hasMatch(parts[2])) {
+    return true;
+  }
+  return false;
+}
+
 void _validateWork(
   String mapKey,
   Map<String, dynamic> work,
@@ -283,6 +295,12 @@ void _validateWork(
   }
   if (!hasTitle) {
     errors.add('$shardPath/$workId: title or titles is required');
+  }
+
+  if (_isAnilistBulkWork(workId, work)) {
+    errors.add(
+      '$shardPath/$workId: AniList bulk seed is prohibited (use manual curation)',
+    );
   }
 
   final aliases = work['aliases'];

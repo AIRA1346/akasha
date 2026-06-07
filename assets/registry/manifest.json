@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generatedAt": "2026-06-07T01:59:51.403Z",
+  "generatedAt": "2026-06-07T02:33:11.857595Z",
   "shards": [
     {
       "id": "animation_A",
@@ -1148,189 +1148,147 @@
       "category": "manga",
       "path": "shards/manga/manga_A.json",
       "eager": false,
-      "entryCount": 46
+      "entryCount": 1
     },
     {
       "id": "manga_B",
       "category": "manga",
       "path": "shards/manga/manga_B.json",
       "eager": false,
-      "entryCount": 54
+      "entryCount": 7
     },
     {
       "id": "manga_C",
       "category": "manga",
       "path": "shards/manga/manga_C.json",
       "eager": true,
-      "entryCount": 21
+      "entryCount": 5
     },
     {
       "id": "manga_D",
       "category": "manga",
       "path": "shards/manga/manga_D.json",
       "eager": false,
-      "entryCount": 34
-    },
-    {
-      "id": "manga_E",
-      "category": "manga",
-      "path": "shards/manga/manga_E.json",
-      "eager": false,
-      "entryCount": 11
+      "entryCount": 4
     },
     {
       "id": "manga_F",
       "category": "manga",
       "path": "shards/manga/manga_F.json",
       "eager": false,
-      "entryCount": 16
+      "entryCount": 4
     },
     {
       "id": "manga_G",
       "category": "manga",
       "path": "shards/manga/manga_G.json",
       "eager": false,
-      "entryCount": 38
+      "entryCount": 4
     },
     {
       "id": "manga_H",
       "category": "manga",
       "path": "shards/manga/manga_H.json",
       "eager": false,
-      "entryCount": 46
-    },
-    {
-      "id": "manga_I",
-      "category": "manga",
-      "path": "shards/manga/manga_I.json",
-      "eager": false,
-      "entryCount": 16
+      "entryCount": 4
     },
     {
       "id": "manga_J",
       "category": "manga",
       "path": "shards/manga/manga_J.json",
       "eager": false,
-      "entryCount": 30
+      "entryCount": 1
     },
     {
       "id": "manga_K",
       "category": "manga",
       "path": "shards/manga/manga_K.json",
       "eager": true,
-      "entryCount": 74
-    },
-    {
-      "id": "manga_L",
-      "category": "manga",
-      "path": "shards/manga/manga_L.json",
-      "eager": false,
-      "entryCount": 9
+      "entryCount": 4
     },
     {
       "id": "manga_M",
       "category": "manga",
       "path": "shards/manga/manga_M.json",
       "eager": false,
-      "entryCount": 50
+      "entryCount": 7
     },
     {
       "id": "manga_N",
       "category": "manga",
       "path": "shards/manga/manga_N.json",
       "eager": true,
-      "entryCount": 33
+      "entryCount": 3
     },
     {
       "id": "manga_O",
       "category": "manga",
       "path": "shards/manga/manga_O.json",
       "eager": true,
-      "entryCount": 24
+      "entryCount": 3
     },
     {
       "id": "manga_P",
       "category": "manga",
       "path": "shards/manga/manga_P.json",
       "eager": false,
-      "entryCount": 17
+      "entryCount": 3
     },
     {
       "id": "manga_Q",
       "category": "manga",
       "path": "shards/manga/manga_Q.json",
       "eager": false,
-      "entryCount": 2
+      "entryCount": 1
     },
     {
       "id": "manga_R",
       "category": "manga",
       "path": "shards/manga/manga_R.json",
       "eager": true,
-      "entryCount": 19
+      "entryCount": 3
     },
     {
       "id": "manga_S",
       "category": "manga",
       "path": "shards/manga/manga_S.json",
       "eager": true,
-      "entryCount": 80
+      "entryCount": 7
     },
     {
       "id": "manga_T",
       "category": "manga",
       "path": "shards/manga/manga_T.json",
       "eager": false,
-      "entryCount": 54
+      "entryCount": 5
     },
     {
       "id": "manga_U",
       "category": "manga",
       "path": "shards/manga/manga_U.json",
       "eager": false,
-      "entryCount": 11
+      "entryCount": 1
     },
     {
       "id": "manga_V",
       "category": "manga",
       "path": "shards/manga/manga_V.json",
       "eager": false,
-      "entryCount": 10
-    },
-    {
-      "id": "manga_W",
-      "category": "manga",
-      "path": "shards/manga/manga_W.json",
-      "eager": false,
-      "entryCount": 13
-    },
-    {
-      "id": "manga_X",
-      "category": "manga",
-      "path": "shards/manga/manga_X.json",
-      "eager": false,
-      "entryCount": 1
+      "entryCount": 2
     },
     {
       "id": "manga_Y",
       "category": "manga",
       "path": "shards/manga/manga_Y.json",
       "eager": false,
-      "entryCount": 33
-    },
-    {
-      "id": "manga_Z",
-      "category": "manga",
-      "path": "shards/manga/manga_Z.json",
-      "eager": false,
-      "entryCount": 2
+      "entryCount": 1
     },
     {
       "id": "manga_numeric",
       "category": "manga",
       "path": "shards/manga/manga_numeric.json",
       "eager": true,
-      "entryCount": 12
+      "entryCount": 2
     },
     {
       "id": "movie_A",

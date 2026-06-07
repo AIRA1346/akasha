@@ -45,7 +45,7 @@
 - [x] 회상 카드 UI 숨김 또는 플래그 off (`FeatureFlags.showRecallCard = false`)
 - [x] Windows 앱 메타 (`Runner.rc` — Rune Atelier / AKASHA)
 - [ ] Steam depot / 인스톨러 / 스토어 페이지 에셋 — **M2 (Steamworks 등록 후)**
-- [x] 사전 **~1,000작** 시드 배치 (akasha-db **1,009작** / 205샤드)
+- [x] AniList bulk 시드 **제거** (684작 삭제 → **325작** 엄선 카탈로그, `purge_anilist_bulk`)
 - [x] 증분 sync (`generatedAt` early return + 샤드 `entryCount` 스킵)
 - [x] `pubspec` description v1 범위 반영
 - [x] 앱 번들 lazy 샤드 제외 (`registry_builder --sync-assets` eager만)
@@ -95,7 +95,7 @@
 
 - [x] cold start preload 축소 (`main.dart` — master_index 진입 시에만 full prefetch)
 - [x] `flutter_ci.yml`에 `ci_registry_check` 연동
-- [x] akasha-db 시드 ~1,000작 (`seed_expansion_anilist.dart` + `batch4` + `registry_builder --sync-assets`)
+- [x] akasha-db **325작** 엄선 (`purge_anilist_bulk` + `batch4` + 수동 시드, AniList bulk 금지)
 - [x] lazy 샤드 정책 — 번들은 eager 15샤드만, 나머지 온디맨드
 - [x] **akasha-db v3** — `titles`/`aliases`/`externalIds`/`searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md))
 - [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)

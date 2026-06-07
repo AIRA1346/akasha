@@ -5,6 +5,7 @@
 ///
 /// Exit 0 = OK, 1 = validation or franchise linter issues
 
+import 'dart:convert';
 import 'dart:io';
 
 void main(List<String> args) {
@@ -51,7 +52,49 @@ void main(List<String> args) {
     print('OK: no justwatch in legacy works_registry');
   }
 
+  print('\n==> AniList bulk seed prohibition');
+  final bulkCount = _countAnilistBulkShards(root);
+  if (bulkCount > 0) {
+    failed = true;
+    print('FAIL: found $bulkCount AniList bulk work(s) in akasha-db/shards');
+  } else {
+    print('OK: no AniList bulk seeds');
+  }
+
+  if (File('${root.path}/tool/seed_expansion_anilist.dart').existsSync()) {
+    failed = true;
+    print('FAIL: tool/seed_expansion_anilist.dart must be removed');
+  } else {
+    print('OK: seed_expansion_anilist.dart absent');
+  }
+
   exit(failed ? 1 : 0);
+}
+
+int _countAnilistBulkShards(Directory root) {
+  final shardsRoot = Directory('${root.path}/akasha-db/shards');
+  if (!shardsRoot.existsSync()) return 0;
+  var count = 0;
+  for (final f in shardsRoot.listSync(recursive: true).whereType<File>()) {
+    if (!f.path.endsWith('.json')) continue;
+    final decoded = json.decode(f.readAsStringSync());
+    if (decoded is! Map) continue;
+    for (final entry in decoded.entries) {
+      if (entry.value is! Map) continue;
+      final work = Map<String, dynamic>.from(entry.value as Map);
+      final workId = entry.key.toString();
+      final ext = work['extensions'];
+      if (ext is Map && ext['seedSource']?.toString() == 'anilist_popularity') {
+        count++;
+        continue;
+      }
+      final parts = workId.split('_');
+      if (parts.length >= 4 && RegExp(r'-a\d+$').hasMatch(parts[2])) {
+        count++;
+      }
+    }
+  }
+  return count;
 }
 
 bool _legacyHasJustWatch(Directory root) {
