@@ -13,7 +13,7 @@
       "청춘",
       "액션"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx97810.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1JvgwTD93Au1rBmmY7hOkf2Ts16.jpg"
   },
   "sub_manga_tokyo-ghoul_2011": {
     "workId": "sub_manga_tokyo-ghoul_2011",
@@ -29,7 +29,7 @@
       "호러",
       "서울"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30054.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg"
   },
   "sub_manga_tensura_2014": {
     "workId": "sub_manga_tensura_2014",
@@ -45,7 +45,7 @@
       "슬라임",
       "건국"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101280.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8Dv8aU9aAPv16B7JVUtHr5QxpA4.jpg"
   },
   "sub_manga_toradora_2007": {
     "workId": "sub_manga_toradora_2007",
@@ -61,7 +61,7 @@
       "학원",
       "청춘"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx4224.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nZ2qXHJTtNAfa6cP1iw9onhA2H7.jpg"
   },
   "sub_manga_tower-of-god_2010": {
     "workId": "sub_manga_tower-of-god_2010",
@@ -77,6 +77,6 @@
       "웹툰",
       "미스터리"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101573.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ukAWA52fqoNSfkbbNB3XkKqsycz.jpg"
   }
 }

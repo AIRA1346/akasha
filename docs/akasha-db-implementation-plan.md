@@ -1,0 +1,98 @@
+# AKASHA 사전(akasha-db) 구현 계획
+
+> 마스터 정책: [akasha-db-policy.md](akasha-db-policy.md)  
+> 기준일: 2026-06-07
+
+---
+
+## 목표
+
+1. **자체 DB** — API bulk 없이 엄선 카탈로그 유지·확장  
+2. **포스터** — URL 링크만 (self-hosted ❌), 가벼운 CI denylist  
+3. **앱** — 번들 갱신 시 옛 `registry_cache`가 사전을 오염시키지 않도록 자동 무효화  
+4. **문서** — README / ROADMAP / CONTRIBUTING 정책 정렬
+
+---
+
+## Phase 1 — 정책·문서 (완료)
+
+| 작업 | 상태 |
+|------|------|
+| `docs/akasha-db-policy.md` 마스터 정책 | ✅ |
+| `catalog-ownership.md` 포스터 문구 정렬 | ✅ |
+| `POSTER_POLICY.md` / `SCHEMA.md` 링크 | ✅ |
+| `docs/akasha-db-implementation-plan.md` (이 문서) | ✅ |
+| README / ROADMAP / akasha-db README 링크 | ✅ |
+
+---
+
+## Phase 2 — CI·빌드 도구
+
+| 작업 | 파일 | 상태 |
+|------|------|------|
+| 포스터 denylist 공통 모듈 | `tool/poster_url_policy.dart` | ✅ |
+| CI: justwatch·self-hosted 즉시 실패 | `tool/ci_registry_check.dart` | ✅ |
+| CI: `anilistcdn` baseline 초과 시 실패 | `akasha-db/poster_url_baseline.json` | ✅ |
+| registry_builder 포스터 검증 연동 | `tool/registry_builder.dart` | ✅ |
+| baseline 갱신 | `dart run tool/ci_registry_check.dart --update-poster-baseline` | 수동 |
+
+**규칙 요약**
+
+- `justwatch` — 카탈로그 전체 0건
+- `anilistcdn` — 기존 N건 유지 가능, **N 초과 추가만** CI 실패
+- 신규 PR 권장 URL: Steam, Open Library, 공식 홍보, TMDB 등 ([POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md))
+
+---
+
+## Phase 3 — 앱 캐시 무효화
+
+| 작업 | 파일 | 상태 |
+|------|------|------|
+| 번들 `generatedAt` > 캐시 시 디스크 캐시 삭제 | `registry_shard_loader.dart` | ✅ |
+| `WorksRegistry.init()` stale 분기 | `works_registry.dart` | ✅ |
+| 원격 sync 후 메모리 레지스트리 재로드 | `registry_sync_service.dart` | ✅ |
+| 단위 테스트 | `test/registry_shard_loader_test.dart` | ✅ |
+
+**동작**
+
+```
+앱 시작
+  → 번들 manifest 로드
+  → 캐시 manifest.generatedAt 비교
+      → 번들이 더 최신: registry_cache 삭제 (옛 1009작 방지)
+      → 캐시가 같거나 더 최신: 캐시 샤드 병합
+원격 sync (manifest 변경)
+  → 캐시 갱신 후 WorksRegistry.reloadAfterRemoteSync()
+```
+
+---
+
+## Phase 4 — README / ROADMAP 정리
+
+| 작업 | 상태 |
+|------|------|
+| README — 엄선 325작·링크 포스터·정책 링크 | ✅ |
+| ROADMAP — ~1,000작·M1 push 구식 항목 수정 | ✅ |
+| akasha-db README v3·정책 링크 | ✅ |
+| CONTRIBUTING — 정책·신규 포스터 규칙 | ✅ |
+
+---
+
+## Phase 5 — 백로그 (v1 이후)
+
+| 작업 | 우선순위 |
+|------|----------|
+| ~~기존 `anilistcdn` URL 교체~~ | ✅ `migrate_anilistcdn_posters.dart`, baseline 0 |
+| `locale_linter` PR 검증 | 중 |
+| `sanitize_borrowed_metadata.dart` 정리 범위 확정 | 낮 |
+| 샤드 v3 전량 `migrate_registry_v3` | 중 |
+
+---
+
+## 검증 명령
+
+```bash
+dart run tool/ci_registry_check.dart
+dart run tool/registry_builder.dart
+flutter test test/registry_shard_loader_test.dart test/registry_sync_service_test.dart
+```

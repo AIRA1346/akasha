@@ -13,7 +13,7 @@
       "우정",
       "판타지"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30002.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg"
   },
   "sub_manga_haikyuu_2012": {
     "workId": "sub_manga_haikyuu_2012",
@@ -29,7 +29,7 @@
       "청춘",
       "팀워크"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx65795.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg"
   },
   "sub_manga_hells-paradise_2018": {
     "workId": "sub_manga_hells-paradise_2018",
@@ -45,7 +45,7 @@
       "판타지",
       "서바이벌"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx101348.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg"
   },
   "sub_manga_horimiya_2011": {
     "workId": "sub_manga_horimiya_2011",
@@ -61,6 +61,6 @@
       "코미디",
       "일상"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx122633.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pqNpFjqF9uujQOvK4BBhSHBftGK.jpg"
   }
 }

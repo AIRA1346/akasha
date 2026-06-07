@@ -4,7 +4,9 @@ AKASHA 앱의 **글로벌 작품 메타데이터 사전** (Tier 1 Registry).
 
 누구나 자유롭게 데이터를 추가·수정하여 전 세계 서브컬처 및 대중 문화 작품 메타데이터를 확장할 수 있습니다.
 
-## 구조 (v2 — 샤딩)
+## 구조 (v3 — 샤딩)
+
+> 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md) · 구현 계획: [docs/akasha-db-implementation-plan.md](../docs/akasha-db-implementation-plan.md)
 
 ```
 akasha-db/
@@ -21,9 +23,10 @@ akasha-db/
     └── drama/
 ```
 
-> **v2 마이그레이션:** 신규 기여는 `shards/` JSON 샤드 방식을 사용합니다. `works_registry.json`은 구버전 앱 호환용으로만 유지됩니다.
+> **v3:** `titles` / `aliases` / `externalIds` / `searchTokens`. `works_registry.json`은 구버전 앱 호환용만.
 
-현재 시드: **~325작품** (수동 큐레이션 + Steam/TMDB batch). **AniList bulk 시드 금지** — 확장은 수동 PR만. `dart run tool/registry_builder.dart --sync-assets`
+현재 시드: **325작** (수동 큐레이션). **API bulk 금지** — 확장은 수동 PR + 사용자 직접 등록.  
+포스터: **`posterPath` URL만** (이미지 파일 커밋 금지). CI: `dart run tool/ci_registry_check.dart`
 
 ## 앱 동기화
 
@@ -42,4 +45,4 @@ https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
 dart run tool/registry_builder.dart --sync-assets
 ```
 
-자세한 규칙: [SCHEMA.md](SCHEMA.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md)
+자세한 규칙: [SCHEMA.md](SCHEMA.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md) · [akasha-db-policy.md](../docs/akasha-db-policy.md)

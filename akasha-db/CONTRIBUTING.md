@@ -1,7 +1,8 @@
 # AKASHA-DB 기여 가이드
 
-전 세계 작품 메타데이터를 **GitHub 크라우드소싱**으로 확장하는 저장소입니다.
+Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
+> 마스터 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 ## 빠른 시작
 
 1. `shards/{category}/` 아래 적절한 샤드 JSON 파일을 수정하거나 새 샤드를 추가합니다.
@@ -20,7 +21,8 @@ dart run tool/registry_builder.dart --sync-assets
 - [ ] `work_id`가 기존 항목과 중복되지 않음
 - [ ] `category` / `domain` enum 값 준수
 - [ ] `description`은 2~3문장 요약 (장문 복제 금지)
-- [ ] `posterPath`는 URL 문자열만 (이미지 바이너리·호스팅 금지) — [POSTER_POLICY.md](POSTER_POLICY.md) 티어 준수
+- [ ] `posterPath`는 **https URL만** (repo·self-hosted 이미지 금지) — [POSTER_POLICY.md](POSTER_POLICY.md)
+- [ ] 신규 작품에 **justwatch·anilistcdn** URL 사용 금지 (CI baseline 초과 시 실패)
 - [ ] `registry_builder` 검증 통과
 
 ## 샤딩 규칙
@@ -36,6 +38,6 @@ dart run tool/registry_builder.dart --sync-assets
 
 ## 저작권
 
-- 메타데이터(제목, 작가, 태그, 요약)만 기록합니다.
-- 포스터는 **공개 CDN URL 참조**만 허용합니다.
-- 이미지 파일을 이 레포에 커밋하지 마세요.
+- 메타데이터(제목, 작가, 태그, **자체 1~2문장 요약**)만 기록합니다.
+- 포스터는 **외부 URL 링크 참조**만 (`posterPath`). 이미지 파일을 이 레포에 커밋하지 마세요.
+- AniList/TMDB API로 메타·이미지를 **자동 수집**하지 마세요.

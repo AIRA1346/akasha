@@ -8,8 +8,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'poster_url_policy.dart';
+
 void main(List<String> args) {
   final root = _findProjectRoot();
+  final updateBaseline = args.contains('--update-poster-baseline');
   var failed = false;
 
   print('==> registry_builder (validate shards)');
@@ -66,6 +69,35 @@ void main(List<String> args) {
     print('FAIL: tool/seed_expansion_anilist.dart must be removed');
   } else {
     print('OK: seed_expansion_anilist.dart absent');
+  }
+
+  print('\n==> poster URL policy (link-only, denylist)');
+  final posterScan = scanRegistryPosters(root);
+  if (updateBaseline) {
+    final counts = <String, int>{
+      for (final pattern in incrementDenylistPatterns)
+        pattern: posterScan.patternCounts[pattern] ?? 0,
+    };
+    writePosterBaseline(root, counts);
+    print('OK: updated $posterUrlBaselineFile → $counts');
+  } else {
+    final baseline = readPosterBaseline(root);
+    final posterErrors = validatePosterScan(posterScan, baseline);
+    if (posterErrors.isNotEmpty) {
+      failed = true;
+      print('FAIL: ${posterErrors.length} poster policy violation(s):');
+      for (final e in posterErrors.take(20)) {
+        print('  - $e');
+      }
+      if (posterErrors.length > 20) {
+        print('  ... and ${posterErrors.length - 20} more');
+      }
+    } else {
+      print(
+        'OK: poster policy (${posterScan.workCount} works, '
+        'baseline $baseline)',
+      );
+    }
   }
 
   exit(failed ? 1 : 0);

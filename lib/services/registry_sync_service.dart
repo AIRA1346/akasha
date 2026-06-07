@@ -74,6 +74,17 @@ class RegistrySyncService {
     return File(p.join(dir.path, 'local_works_registry.json'));
   }
 
+  Future<void> clearLegacyRegistryCache() async {
+    try {
+      final file = await _legacyCacheFile;
+      if (await file.exists()) {
+        await file.delete();
+      }
+    } catch (e) {
+      print('Error clearing legacy registry cache: $e');
+    }
+  }
+
   Future<String?> readCachedRegistry() async {
     try {
       final file = await _legacyCacheFile;
@@ -120,6 +131,8 @@ class RegistrySyncService {
       return true;
     }
 
+    await loader.clearDiskCache();
+    await clearLegacyRegistryCache();
     success = await loader.cacheRemoteManifest(manifestContent);
 
     final indexContent = await _fetchText('${baseUrl}search_index.json');
@@ -159,6 +172,7 @@ class RegistrySyncService {
     }
 
     if (success) {
+      await WorksRegistry.reloadAfterRemoteSync();
       await _updateLastSyncTime();
     }
     return success;

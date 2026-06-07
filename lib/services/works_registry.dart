@@ -125,12 +125,28 @@ class WorksRegistry {
 
   static RegistryShardLoader get loader => _loader;
 
-  /// 앱 시작 시 번들 샤드 + 캐시 + 레거시 병합
+  /// 앱 시작 시 번들 샤드 + (유효한) 캐시 + 레거시 병합
   static Future<void> init() async {
     if (_initialized) return;
     await _loader.loadBundledBootstrap();
-    await loadCachedRegistry();
+    if (await _loader.isDiskCacheStaleComparedToBundle()) {
+      await _loader.clearDiskCache();
+      await RegistrySyncService().clearLegacyRegistryCache();
+    } else {
+      await loadCachedRegistry();
+    }
     _initialized = true;
+  }
+
+  /// 원격 manifest 갱신 후 메모리·캐시 기준으로 레지스트리를 다시 구성합니다.
+  static Future<void> reloadAfterRemoteSync() async {
+    _registry.clear();
+    _loader.resetLoadedShards();
+    await _loader.loadCachedBootstrap();
+    final legacyJson = await RegistrySyncService().readCachedRegistry();
+    if (legacyJson != null && legacyJson.isNotEmpty) {
+      await _loader.mergeLegacyMonolithicJson(legacyJson);
+    }
   }
 
   static void mergeShardEntries(Map<String, dynamic> entries) {

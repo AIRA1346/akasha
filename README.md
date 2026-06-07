@@ -17,7 +17,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 | 영역 | 설명 |
 |------|------|
 | **Obsidian 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
-| **글로벌 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
+| **엄선 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
 | **IP 1카드 그리드** | 같은 IP는 카드 1장, 매체는 하단 칩으로 전부 표시 |
 | **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰(기본 무료) + 테마·꾸미기(IAP) |
 
@@ -54,15 +54,16 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 ---
 
-## 📚 글로벌 작품 사전 (akasha-db)
+## 📚 엄선 작품 사전 (akasha-db)
 
 | 항목 | 정책 |
 |------|------|
+| **철학** | **자체 DB 구축** — API bulk·온디맨드 빌리기 없음 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | **스키마** | **v3** — `titles` / `aliases` / `externalIds` / `searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md)) |
-| **출시 목표** | 엄선 **~300작+** (현재 **~325작**, 수동·batch만 — AniList bulk 제거됨) |
-| **장기 비전** | 수백만 작품 체급까지 확장 |
+| **규모** | 엄선 **~325작** (수동 큐레이션만 — AniList bulk 제거됨) |
+| **포스터** | `posterPath` = **URL 링크만** (repo·번들에 이미지 없음) — [POSTER_POLICY.md](akasha-db/POSTER_POLICY.md) |
+| **확장** | 수동 PR + 사용자 직접 등록; 없으면 placeholder |
 | **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |
-| **운영** | **하이브리드** — 핵심 시드는 개발자, 롱테일은 기여자 PR + `franchise_linter` 검증 |
 | **글로벌화** | 로케일별 제목·교차 언어 검색 — [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
 
 동기화 base URL:
@@ -195,8 +196,10 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 ## 📄 관련 문서
 
 - [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
+- [docs/akasha-db-policy.md](docs/akasha-db-policy.md) — **사전 구축·포스터·CI 마스터 정책**
+- [docs/akasha-db-implementation-plan.md](docs/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
 - [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v3 필드 규격
 - [docs/locale-catalog-policy.md](docs/locale-catalog-policy.md) — 언어·작품명·검색 정책
 - [docs/commerce-boundary.md](docs/commerce-boundary.md) — Steam IAP vs 제휴 커머스
-- `akasha-db/README.md` — 사전 기여·샤딩 규칙
-- `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈 CI 검증
+- [akasha-db/README.md](akasha-db/README.md) — 사전 기여·샤딩 규칙
+- `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈·포스터 denylist CI

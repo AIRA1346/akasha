@@ -9,6 +9,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'poster_url_policy.dart';
 import 'registry_v3_utils.dart';
 
 final _masterPatternWithYear = RegExp(
@@ -312,12 +313,12 @@ void _validateWork(
     errors.add('$shardPath/$workId: externalIds must be a JSON object');
   }
 
-  final poster = work['posterPath'];
-  if (poster != null &&
-      poster is String &&
-      poster.isNotEmpty &&
-      !poster.startsWith('http')) {
-    errors.add('$shardPath/$workId: posterPath must be http URL or null');
+  final poster = work['posterPath']?.toString();
+  final posterError = validatePosterUrlForShard(
+    poster != null && poster.isNotEmpty ? poster : null,
+  );
+  if (posterError != null) {
+    errors.add('$shardPath/$workId: $posterError');
   }
 
   final extensions = work['extensions'];

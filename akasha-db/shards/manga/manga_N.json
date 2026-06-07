@@ -13,7 +13,7 @@
       "우정",
       "성장"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx30011-9yUF1dXWgDOx.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg"
   },
   "sub_manga_nana_2000": {
     "workId": "sub_manga_nana_2000",
@@ -29,7 +29,7 @@
       "청춘",
       "드라마"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30014.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zjgqkIvBURbwoHbHhmnzaTFyZgR.png"
   },
   "sub_manga_nisekoi_2011": {
     "workId": "sub_manga_nisekoi_2011",
@@ -45,6 +45,6 @@
       "학원",
       "하렘"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx16664.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/liO4UdLxQq49dgshML1ffzPdH7.jpg"
   }
 }

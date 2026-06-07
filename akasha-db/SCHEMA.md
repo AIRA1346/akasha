@@ -24,10 +24,12 @@
 
 ## 카탈로그 정책 (법무)
 
+정책 마스터: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+
 - **AniList API bulk 시드 금지** — `seedSource: anilist_popularity`, `-a{id}` 슬러그
 - 신규 작품은 **수동 큐레이션 PR**만
 - 설명은 **자체 1~2문장**; 외부 시놉시스 복제 금지
-- 포스터: [POSTER_POLICY.md](POSTER_POLICY.md)
+- 포스터: URL 링크만 (`posterPath`). [POSTER_POLICY.md](POSTER_POLICY.md)
 
 ## 도구
 

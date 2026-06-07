@@ -11,8 +11,9 @@
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | 출시 엄선 ~1,000작 → 장기 수백만 체급 |
-| 사전 운영 | GitHub raw sync + 하이브리드 기여 |
+| 사전 규모 | 엄선 **~325작** (v1) → PR·직접 등록으로 점진 확장 |
+| 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
+| 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
 
 ---
@@ -59,7 +60,7 @@
 - [x] v1 체크리스트 (Steam depot 제외)
 - [x] `flutter test` 74/74 · `ci_registry_check` green
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
-- [ ] **akasha-db GitHub push** — 원격 sync가 1,009작을 받으려면 필수
+- [x] **akasha-db GitHub push** — 325작 엄선 카탈로그 반영 (AniList bulk 제거)
 - [ ] 내부 dogfood (본인 볼트 + 동기화 검증)
 
 ### M2 — Steam 제출 준비 (2026 Q3 초)
@@ -101,7 +102,8 @@
 - [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)
 - [ ] `franchise_groups.json` `displayNames` 커버리지 확대
 - [ ] `locale_linter` — PR 시 titles·externalIds 검증
-- [ ] 포스터 정책 tier 유지 (`POSTER_POLICY.md`)
+- [x] 포스터 링크 전용 정책 + CI denylist (`poster_url_policy.dart`, `poster_url_baseline.json`)
+- [x] `registry_cache` 자동 무효화 (번들·원격 manifest 갱신 시)
 - [ ] 증분 sync + `lastSyncTime` UX 고도화
 
 ---

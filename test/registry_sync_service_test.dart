@@ -1,18 +1,42 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/services/registry_sync_service.dart';
 import 'package:akasha/services/works_registry.dart';
 
+class _FakePathProvider extends Fake
+    with MockPlatformInterfaceMixin
+    implements PathProviderPlatform {
+  _FakePathProvider(this.root);
+
+  final Directory root;
+
+  @override
+  Future<String?> getApplicationDocumentsPath() async => root.path;
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  late Directory tempRoot;
+
   setUp(() async {
+    tempRoot = await Directory.systemTemp.createTemp('akasha_sync_test_');
+    PathProviderPlatform.instance = _FakePathProvider(tempRoot);
     SharedPreferences.setMockInitialValues({});
     RegistrySyncService.setTextFetcherForTesting(null);
     RegistrySyncService().resetForTesting();
     await WorksRegistry.init();
+  });
+
+  tearDown(() async {
+    if (await tempRoot.exists()) {
+      await tempRoot.delete(recursive: true);
+    }
   });
 
   tearDown(() {
@@ -36,6 +60,51 @@ void main() {
       service.resetForTesting();
       await service.init();
       expect(await service.shouldAutoSync(), isFalse);
+    });
+
+    test('sync clears stale cache when remote manifest is newer', () async {
+      final localManifest = WorksRegistry.loader.manifest;
+      expect(localManifest, isNotNull);
+
+      final fetchedUrls = <String>[];
+      RegistrySyncService.setTextFetcherForTesting((url) async {
+        fetchedUrls.add(url);
+        if (url.endsWith('manifest.json')) {
+          return jsonEncode({
+            'version': localManifest!.version,
+            'generatedAt': '2099-01-01T00:00:00.000Z',
+            'shards': localManifest.shards
+                .where((s) => s.eager)
+                .map(
+                  (s) => {
+                    'id': s.id,
+                    'category': s.category.name,
+                    'path': s.path,
+                    'eager': s.eager,
+                    'entryCount': s.entryCount,
+                  },
+                )
+                .toList(),
+          });
+        }
+        if (url.endsWith('search_index.json')) {
+          return jsonEncode([]);
+        }
+        if (url.contains('/shards/')) {
+          return jsonEncode({});
+        }
+        return null;
+      });
+
+      final service = RegistrySyncService();
+      await service.init();
+      final result = await service.sync();
+
+      expect(result, isTrue);
+      expect(
+        fetchedUrls.where((u) => u.endsWith('search_index.json')),
+        isNotEmpty,
+      );
     });
 
     test('sync returns true when remote manifest matches local', () async {

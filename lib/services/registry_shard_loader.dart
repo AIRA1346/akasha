@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
@@ -26,7 +28,75 @@ class RegistryShardLoader {
   List<RegistrySearchIndexEntry> get searchIndex => _searchIndex;
   Map<String, String> get legacyAliases => Map.unmodifiable(_legacyAliases);
 
+  @visibleForTesting
+  set manifestForTesting(RegistryManifest? value) => _manifest = value;
+
+  @visibleForTesting
+  void resetLoadedShardsForTesting() => _loadedShardIds.clear();
+
   bool isShardLoaded(String shardId) => _loadedShardIds.contains(shardId);
+
+  void resetLoadedShards() => _loadedShardIds.clear();
+
+  DateTime? get bundledManifestGeneratedAt =>
+      _parseGeneratedAt(_manifest?.generatedAt);
+
+  Future<DateTime?> cachedManifestGeneratedAt() async {
+    try {
+      final file = await _cacheFile('manifest.json');
+      if (!await file.exists()) return null;
+      final decoded = json.decode(await file.readAsString());
+      if (decoded is! Map) return null;
+      return _parseGeneratedAt(decoded['generatedAt']?.toString());
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// 번들(앱 업데이트)이 디스크 캐시보다 최신이면 옛 샤드 캐시를 무효화합니다.
+  Future<bool> isDiskCacheStaleComparedToBundle() async {
+    final bundledRaw = _manifest?.generatedAt;
+    final cachedRaw = await _readCachedManifestGeneratedAtRaw();
+    if (bundledRaw == null ||
+        cachedRaw == null ||
+        bundledRaw.isEmpty ||
+        cachedRaw.isEmpty) {
+      return false;
+    }
+    if (bundledRaw == cachedRaw) return false;
+    final bundledAt = _parseGeneratedAt(bundledRaw);
+    final cachedAt = _parseGeneratedAt(cachedRaw);
+    if (bundledAt == null || cachedAt == null) return false;
+    return bundledAt.isAfter(cachedAt);
+  }
+
+  Future<String?> _readCachedManifestGeneratedAtRaw() async {
+    try {
+      final file = await _cacheFile('manifest.json');
+      if (!await file.exists()) return null;
+      final decoded = json.decode(await file.readAsString());
+      if (decoded is! Map) return null;
+      return decoded['generatedAt']?.toString();
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<void> clearDiskCache() async {
+    try {
+      final dir = await _cacheDirectory();
+      if (await dir.exists()) {
+        await for (final entity in dir.list(recursive: true)) {
+          if (entity is File) {
+            await entity.delete();
+          }
+        }
+      }
+    } catch (e) {
+      print('[RegistryShardLoader] Failed to clear disk cache: $e');
+    }
+    resetLoadedShards();
+  }
 
   Future<bool> isShardCached(String relativePath) async {
     if (relativePath.isEmpty) return false;
@@ -160,6 +230,7 @@ class RegistryShardLoader {
       );
       _manifest = parsed;
       final file = await _cacheFile('manifest.json');
+      await file.parent.create(recursive: true);
       await file.writeAsString(content);
       return true;
     } catch (e) {
@@ -180,6 +251,7 @@ class RegistryShardLoader {
             .where((e) => e.workId.isNotEmpty)
             .toList();
         final file = await _cacheFile('search_index.json');
+        await file.parent.create(recursive: true);
         await file.writeAsString(content);
         return true;
       }
@@ -281,9 +353,19 @@ class RegistryShardLoader {
     return null;
   }
 
-  Future<File> _cacheFile(String relativePath) async {
+  Future<Directory> _cacheDirectory() async {
     final dir = await getApplicationDocumentsDirectory();
-    return File(p.join(dir.path, 'registry_cache', relativePath));
+    return Directory(p.join(dir.path, 'registry_cache'));
+  }
+
+  Future<File> _cacheFile(String relativePath) async {
+    final dir = await _cacheDirectory();
+    return File(p.join(dir.path, relativePath));
+  }
+
+  static DateTime? _parseGeneratedAt(String? raw) {
+    if (raw == null || raw.isEmpty) return null;
+    return DateTime.tryParse(raw);
   }
 }
 

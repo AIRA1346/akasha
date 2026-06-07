@@ -29,7 +29,7 @@
       "성장",
       "액션"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85486.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yY7eds57HBPNuD2SoPyHh9AmRcQ.jpg"
   },
   "sub_manga_mob-psycho-100_2012": {
     "workId": "sub_manga_mob-psycho-100_2012",
@@ -45,7 +45,7 @@
       "성장",
       "액션"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx70345.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pyeW47f058e8uLAwsR0EU5ELnc.jpg"
   },
   "sub_manga_monster_1994": {
     "workId": "sub_manga_monster_1994",
@@ -61,7 +61,7 @@
       "범죄",
       "명작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30019.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/tjFYkWMafg71sihs1aa7IDx17aS.jpg"
   },
   "sub_manga_march-comes-in-like-a-lion_2007": {
     "workId": "sub_manga_march-comes-in-like-a-lion_2007",
@@ -77,7 +77,7 @@
       "힐링",
       "드라마"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx21366.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/aSlLkbHdaq7g7zmniazLfxHHB4D.jpg"
   },
   "sub_manga_mushoku-tensei_2014": {
     "workId": "sub_manga_mushoku-tensei_2014",
@@ -93,7 +93,7 @@
       "성장",
       "마법"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108465.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/fAuObbfKA13hSlwZCW9CFRgz3eG.jpg"
   },
   "sub_manga_mushishi_1999": {
     "workId": "sub_manga_mushishi_1999",
@@ -109,6 +109,6 @@
       "단편",
       "힐링"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30091.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/n5XNKXnoXpoXyfiCtXHOf8q8PFM.jpg"
   }
 }

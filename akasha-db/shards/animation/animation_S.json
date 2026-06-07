@@ -13,7 +13,7 @@
       "가족",
       "액션"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg"
   },
   "sub_animation_steinsgate_2011": {
     "workId": "sub_animation_steinsgate_2011",
@@ -29,7 +29,7 @@
       "서스펜스",
       "감동"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/jq7yvqKHgi7mBckRj3vipbQpRY4.jpg"
   },
   "sub_animation_samurai-champloo_2004": {
     "workId": "sub_animation_samurai-champloo_2004",
@@ -45,7 +45,7 @@
       "힙합",
       "로드무비"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/l0TrgNyJsY0yV1hTggk9eWDtV5I.png"
   },
   "sub_animation_slime-anime_2018": {
     "workId": "sub_animation_slime-anime_2018",
@@ -61,7 +61,7 @@
       "슬라임",
       "건국"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8Dv8aU9aAPv16B7JVUtHr5QxpA4.jpg"
   },
   "sub_animation_shield-hero_2019": {
     "workId": "sub_animation_shield-hero_2019",
@@ -77,7 +77,7 @@
       "복수",
       "성장"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99624.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vc3O5LIry6zxO4A7gelyjojjpGZ.jpg"
   },
   "sub_animation_silent-voice_2016": {
     "workId": "sub_animation_silent-voice_2016",
@@ -93,6 +93,6 @@
       "학원",
       "영화"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/jNJ9shLhjRavjrCGRnoTmYB18d2.jpg"
   }
 }

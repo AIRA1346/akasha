@@ -13,7 +13,7 @@
       "해적",
       "대하"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30013-BeslEMqiPhlk.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/t5AnYuoWrDEyLWmDLbF1FVauS5k.jpg"
   },
   "sub_manga_oshi-no-ko_2020": {
     "workId": "sub_manga_oshi-no-ko_2020",
@@ -29,7 +29,7 @@
       "미스터리",
       "복수"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx120377.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
   },
   "sub_manga_oregairu_2011": {
     "workId": "sub_manga_oregairu_2011",
@@ -45,6 +45,6 @@
       "드라마",
       "청춘"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx14813.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/d1SLKTqBuBKAzhupohSBLeEQ8zo.jpg"
   }
 }

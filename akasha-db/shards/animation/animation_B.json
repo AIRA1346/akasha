@@ -13,7 +13,7 @@
       "밴드",
       "성장"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx146065.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/buXHm2shttFRQIBsCFlv5L2TmKh.jpg"
   },
   "sub_animation_bungo-stray-dogs_2016": {
     "workId": "sub_animation_bungo-stray-dogs_2016",
@@ -29,7 +29,7 @@
       "문학",
       "미스터리"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21311.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg"
   },
   "sub_animation_black-lagoon_2006": {
     "workId": "sub_animation_black-lagoon_2006",
@@ -45,6 +45,6 @@
       "스릴러",
       "성인"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx889.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg"
   }
 }

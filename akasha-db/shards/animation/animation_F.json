@@ -13,7 +13,7 @@
       "감동",
       "성장"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154587-qQTzQnEJJ3oB.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg"
   },
   "sub_animation_fullmetal-alchemist-brotherhood_2009": {
     "workId": "sub_animation_fullmetal-alchemist-brotherhood_2009",
@@ -29,7 +29,7 @@
       "형제",
       "명작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/1Qb3qTvq1Wo0HxzfwECTuj7Aa80.jpg"
   },
   "sub_animation_fate-zero_2011": {
     "workId": "sub_animation_fate-zero_2011",
@@ -45,6 +45,6 @@
       "전쟁",
       "명작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/uxaXSoT8K0S2NE5PWsBpHUl3GGU.png"
   }
 }

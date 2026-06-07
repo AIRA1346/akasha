@@ -13,7 +13,7 @@
       "천사",
       "악마"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21878-rfzDjP2gjxGR.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/dHSbtJAVjgcGfquEIvQaGR3DF36.jpg"
   },
   "sub_manga_gintama_2003": {
     "workId": "sub_manga_gintama_2003",
@@ -29,7 +29,7 @@
       "SF",
       "패러디"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30044.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zzl1YOJ1vda6aEBIerqS53zNI4D.jpg"
   },
   "sub_manga_golden-kamuy_2014": {
     "workId": "sub_manga_golden-kamuy_2014",
@@ -45,7 +45,7 @@
       "서바이벌",
       "코미디"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86559.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2tIxiE9KWJVHm5nByp8X9e43y3E.jpg"
   },
   "sub_manga_goodnight-punpun_2007": {
     "workId": "sub_manga_goodnight-punpun_2007",
@@ -60,7 +60,6 @@
       "청춘",
       "드라마",
       "다크"
-    ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx34646.jpg"
+    ]
   }
 }

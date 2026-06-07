@@ -13,7 +13,7 @@
       "악마",
       "카오스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg"
   },
   "sub_animation_code-geass_2006": {
     "workId": "sub_animation_code-geass_2006",
@@ -29,7 +29,7 @@
       "반란",
       "SF"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/oiS5BaTgqfR72MHh3yzFSUQyWy.jpg"
   },
   "gen_animation_cowboy-bebop_1998": {
     "workId": "gen_animation_cowboy-bebop_1998",
@@ -45,7 +45,7 @@
       "재즈",
       "액션"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg"
   },
   "sub_animation_clannad_2007": {
     "workId": "sub_animation_clannad_2007",
@@ -61,7 +61,7 @@
       "가족",
       "로맨스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2167.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/7fviKkX8RJh9Iz4SOmwcs1Mp7Cm.jpg"
   },
   "sub_animation_cyberpunk-edgerunners_2022": {
     "workId": "sub_animation_cyberpunk-edgerunners_2022",
@@ -77,6 +77,6 @@
       "SF",
       "다크"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120377.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/5GrYF4dzKqlG8qcABlBC93zY7ny.jpg"
   }
 }

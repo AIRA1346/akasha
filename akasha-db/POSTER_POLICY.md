@@ -1,13 +1,19 @@
 # AKASHA 포스터 URL 정책
 
+> 마스터 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+
 AKASHA 레지스트리(`akasha-db`)와 앱은 **이미지 바이너리를 저장·배포하지 않습니다.**  
 포스터는 항상 **외부 URL 링크 참조**만 사용합니다. (Steam·앱스토어 배포 정책과 동일)
+
+**self-hosted 금지:** `akasha-db/posters/` 등에 이미지를 커밋하지 않습니다.
 
 ## 채택하지 않음
 
 - 구글 이미지 검색 결과를 **자동 수집·등록**하는 방식
-- 이 레포 또는 앱 번들에 포스터 파일 커밋·호스팅
-- 출처·라이선스를 확인할 수 없는 임의 핫링크
+- 이 레포 또는 앱 번들에 포스터 파일 커밋·호스팅 (**self-hosted**)
+- `posterProvenance` 전수 장부 (v1 필수 아님; `extensions.posterSource` 태그만 선택)
+- 출처를 확인하지 않은 임의 핫링크
+- **신규 PR:** JustWatch, AniList bulk 파이프라인, `anilistcdn` 등 [금지 CDN](../docs/akasha-db-policy.md#42-v1에서-피할-것)
 
 구글 검색은 **찾기 도구**로만 사용하고, 최종 URL은 아래 티어에 맞는 공식·메타데이터 소스로 **교차 확인**합니다.
 

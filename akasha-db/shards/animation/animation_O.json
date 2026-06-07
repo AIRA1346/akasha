@@ -13,7 +13,7 @@
       "히어로",
       "패러디"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg"
   },
   "sub_animation_oshi-no-ko_2023": {
     "workId": "sub_animation_oshi-no-ko_2023",
@@ -29,7 +29,7 @@
       "미스터리",
       "복수"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150672.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg"
   },
   "sub_animation_overlord_2015": {
     "workId": "sub_animation_overlord_2015",
@@ -45,6 +45,6 @@
       "악역",
       "전략"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg"
   }
 }

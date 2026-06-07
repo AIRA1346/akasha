@@ -13,7 +13,7 @@
       "가족",
       "힐링"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx523-fErBvxOHP7IX.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/c9zCkL0rTkNQ1HB9cmeFIqbkS50.jpg"
   },
   "sub_animation_mob-psycho-100_2016": {
     "workId": "sub_animation_mob-psycho-100_2016",
@@ -29,7 +29,7 @@
       "코미디",
       "성장"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21507.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/pyeW47f058e8uLAwsR0EU5ELnc.jpg"
   },
   "sub_animation_made-in-abyss_2017": {
     "workId": "sub_animation_made-in-abyss_2017",
@@ -45,7 +45,7 @@
       "다크",
       "명작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97986.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/yLZS7lrY9GrWrzpMKSNkAfJNXCP.jpg"
   },
   "sub_animation_mushoku-tensei_2021": {
     "workId": "sub_animation_mushoku-tensei_2021",
@@ -61,7 +61,7 @@
       "성장",
       "마법"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114065.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/fAuObbfKA13hSlwZCW9CFRgz3eG.jpg"
   },
   "sub_animation_monogatari_2009": {
     "workId": "sub_animation_monogatari_2009",
@@ -77,6 +77,6 @@
       "대화",
       "명작"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/o8RiEBqQ7VnDqxvfg5WA1GcFHUi.jpg"
   }
 }

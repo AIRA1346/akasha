@@ -13,7 +13,7 @@
       "판타지",
       "드라마"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx85934.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vZdiCCuOFY7gxiNKqGK93UKHVxe.jpg"
   },
   "sub_manga_rurouni-kenshin_1994": {
     "workId": "sub_manga_rurouni-kenshin_1994",
@@ -29,7 +29,7 @@
       "액션",
       "로맨스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30018.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/2OTMpFejspg3fYnRbiuVuLsZtaq.jpg"
   },
   "sub_manga_real_1999": {
     "workId": "sub_manga_real_1999",
@@ -44,7 +44,6 @@
       "농구",
       "성장",
       "드라마"
-    ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30895.jpg"
+    ]
   }
 }

@@ -13,7 +13,7 @@
       "정의",
       "다크"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30042.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg"
   },
   "sub_manga_dr-stone_2017": {
     "workId": "sub_manga_dr-stone_2017",
@@ -29,7 +29,7 @@
       "서바이벌",
       "개그"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx98416.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHMvk2BhwDKAyXwRSqTuAnURoS5.jpg"
   },
   "sub_manga_dandadan_2021": {
     "workId": "sub_manga_dandadan_2021",
@@ -45,7 +45,7 @@
       "액션",
       "로맨스"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx128703.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg"
   },
   "sub_manga_dorohedoro_2000": {
     "workId": "sub_manga_dorohedoro_2000",
@@ -61,6 +61,6 @@
       "액션",
       "코미디"
     ],
-    "posterPath": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx33427.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/vPl7hAY0vt0OPhIflRb5IXrssBv.jpg"
   }
 }
