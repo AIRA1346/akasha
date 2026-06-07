@@ -60,10 +60,15 @@
 ### M1 — 기능 동결 (2026 Q2)
 
 - [x] v1 체크리스트 (Steam depot 제외)
-- [x] `flutter test` 74/74 · `ci_registry_check` green
+- [x] `flutter test` 91/91 · `ci_registry_check` green
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
 - [x] **akasha-db GitHub push** — 370작 엄선 카탈로그 반영
 - [ ] 내부 dogfood (본인 볼트 + 동기화 검증)
+  - [ ] 볼트 연결·watch·`.md` 저장/재로드
+  - [ ] 검색: 로컬 + 사전 + 직접 등록
+  - [ ] 필터·웹툰 카테고리·프랜차이즈 IP 1카드
+  - [ ] 동기화(수동) + AppBar 「사전 캐시 삭제」 후 번들 재로드
+  - [ ] 나의 서재 아카이브·테마 피커
 
 ### M2 — Steam 제출 준비 (2026 Q3 초)
 

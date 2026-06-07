@@ -54,14 +54,14 @@ is_hall_of_fame: true
     });
 
     test('MarkdownParser does not persist registry default CDN URL to YAML', () {
-      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+      const masterId = 'sub_manga_detective-conan_1994';
       final registry = WorksRegistry.getWorkById(masterId);
       expect(registry, isNotNull);
       expect(registry!.posterPath, startsWith('http'));
 
       final item = createItem(
         workId: masterId,
-        title: '4월은 너의 거짓말',
+        title: '명탐정 코난',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
         workStatus: '완결',
@@ -81,12 +81,12 @@ is_hall_of_fame: true
     });
 
     test('legacy work_id resolves and still blocks default poster persistence', () {
-      final registry = WorksRegistry.getWorkById('shigatsu_2011');
+      final registry = WorksRegistry.getWorkById('conan_manga');
       expect(registry, isNotNull);
 
       final item = createItem(
-        workId: 'shigatsu_2011',
-        title: '4월은 너의 거짓말',
+        workId: 'conan_manga',
+        title: '명탐정 코난',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,
         posterPath: registry!.posterPath,
