@@ -33,8 +33,14 @@ class BrowsePipeline {
       allUserItems: allUserItems,
       selectedCategories: filters.categories,
     );
-    return _applyStatusFilters(fused, filters);
+    return applyStatusFilters(fused, filters);
   }
+
+  static List<BrowseCard> applyStatusFilters(
+    List<BrowseCard> cards,
+    BrowseFilterState filters,
+  ) =>
+      _applyStatusFilters(cards, filters);
 
   static List<AkashaItem> _filterUserItems(
     List<AkashaItem> items,

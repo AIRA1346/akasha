@@ -22,14 +22,22 @@ void main() {
       expect(book.isPreset, isTrue);
     });
 
-    test('json round-trip', () {
+    test('json round-trip with filters', () {
       final original = PersonalLibraryConfig(
         id: 'personal_1',
         name: '커스텀 서재',
+        domain: AppDomain.subculture,
+        categories: {MediaCategory.manga, MediaCategory.animation},
+        workStatuses: {'완결'},
+        myStatuses: {'전부 봄'},
       );
       final restored = PersonalLibraryConfig.fromJson(original.toJson());
       expect(restored.id, original.id);
       expect(restored.name, original.name);
+      expect(restored.domain, AppDomain.subculture);
+      expect(restored.categories, original.categories);
+      expect(restored.workStatuses, original.workStatuses);
+      expect(restored.myStatuses, original.myStatuses);
       expect(restored.inclusionRules, ['archived']);
     });
   });

@@ -40,7 +40,7 @@ import '../config/feature_flags.dart';
 import '../widgets/today_recall_card.dart';
 import '../utils/recall_picker.dart';
 import 'home/home_personal_library_controller.dart';
-import 'home/dialogs/personal_library_add_dialog.dart';
+import 'home/dialogs/personal_library_edit_dialog.dart';
 import '../services/my_library_pipeline.dart';
 import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
@@ -239,8 +239,22 @@ class _HomeScreenState extends State<HomeScreen> {
     _filterCtrl.applySnapshot(snap);
   }
 
-  void _syncFiltersToActiveDashboard() {
+  void _syncFiltersToActiveView() {
+    if (_isPersonalLibraryMode) {
+      _personalLibCtrl.syncActiveFromFilters(
+        domain: _filterCtrl.domain,
+        categories: _filterCtrl.categories,
+        workStatuses: _filterCtrl.workStatuses,
+        myStatuses: _filterCtrl.myStatuses,
+      );
+      _personalLibCtrl.save();
+      return;
+    }
     _filterCtrl.syncToDashboard(_dashboardCtrl);
+  }
+
+  void _applyPersonalLibraryFilterSnapshot(PersonalLibraryConfig? library) {
+    _applyDashboardFilters(_personalLibCtrl.filterSnapshotFor(library));
   }
 
   Future<void> _loadDashboards() async {
@@ -254,6 +268,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadPersonalLibraries() async {
     await _personalLibCtrl.load();
+    if (_personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary) {
+      _applyPersonalLibraryFilterSnapshot(_personalLibCtrl.activeLibrary);
+    }
     if (mounted) setState(() {});
   }
 
@@ -269,14 +286,16 @@ class _HomeScreenState extends State<HomeScreen> {
   void _selectPersonalLibrary(String id) {
     setState(() {
       _personalLibCtrl.selectPersonal(id);
+      _applyPersonalLibraryFilterSnapshot(_personalLibCtrl.activeLibrary);
     });
   }
 
   Future<void> _showPersonalLibraryAddDialog() async {
-    final config = await showPersonalLibraryAddDialog(context);
+    final config = await showPersonalLibraryEditDialog(context);
     if (config == null || !mounted) return;
     setState(() {
       _personalLibCtrl.add(config);
+      _applyPersonalLibraryFilterSnapshot(config);
     });
     await _personalLibCtrl.save();
   }
@@ -310,44 +329,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Future<void> _showPersonalLibraryRenameDialog(
+  Future<void> _showPersonalLibraryEditDialog(
     PersonalLibraryConfig config,
   ) async {
-    if (config.isPreset) return;
-    final nameCtrl = TextEditingController(text: config.name);
-
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('✏️ 서재 이름 변경'),
-        content: TextField(
-          controller: nameCtrl,
-          autofocus: true,
-          decoration: const InputDecoration(
-            labelText: '서재 이름',
-            border: OutlineInputBorder(),
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('취소'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('저장'),
-          ),
-        ],
-      ),
-    );
-
-    if (ok == true && mounted) {
-      setState(() {
-        _personalLibCtrl.rename(config.id, nameCtrl.text);
-      });
-      await _personalLibCtrl.save();
-    }
-    nameCtrl.dispose();
+    final updated = await showPersonalLibraryEditDialog(context, config: config);
+    if (updated == null || !mounted) return;
+    setState(() {
+      if (_personalLibCtrl.activeLibraryId == updated.id) {
+        _applyPersonalLibraryFilterSnapshot(updated);
+      }
+    });
+    await _personalLibCtrl.save();
   }
 
   void _deleteDashboard(String id) {
@@ -463,38 +455,38 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onDomainChanged(AppDomain? domain) {
     setState(() {
       _filterCtrl.onDomainChanged(domain);
-      _syncFiltersToActiveDashboard();
+      _syncFiltersToActiveView();
     });
-    _prefetchRegistryForCurrentFilters();
+    if (!_isPersonalLibraryMode) _prefetchRegistryForCurrentFilters();
   }
 
   void _toggleCategory(MediaCategory category) {
     setState(() {
       _filterCtrl.toggleCategory(category);
-      _syncFiltersToActiveDashboard();
+      _syncFiltersToActiveView();
     });
-    _prefetchRegistryForCurrentFilters();
+    if (!_isPersonalLibraryMode) _prefetchRegistryForCurrentFilters();
   }
 
   void _clearCategories() {
     setState(() {
       _filterCtrl.clearCategories();
-      _syncFiltersToActiveDashboard();
+      _syncFiltersToActiveView();
     });
-    _prefetchRegistryForCurrentFilters();
+    if (!_isPersonalLibraryMode) _prefetchRegistryForCurrentFilters();
   }
 
   void _toggleWorkStatus(String label) {
     setState(() {
       _filterCtrl.toggleWorkStatus(label);
-      _syncFiltersToActiveDashboard();
+      _syncFiltersToActiveView();
     });
   }
 
   void _toggleMyStatus(String label) {
     setState(() {
       _filterCtrl.toggleMyStatus(label);
-      _syncFiltersToActiveDashboard();
+      _syncFiltersToActiveView();
     });
   }
 
@@ -604,7 +596,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<BrowseCard> get _personalBrowseCards => MyLibraryPipeline.build(
         _items,
-        library: _personalLibCtrl.activeLibrary,
+        filters: _filterCtrl.filterState,
       );
 
   @override
@@ -679,7 +671,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onDeleteDashboard: _deleteDashboard,
                 onAddPersonalLibrary: _showPersonalLibraryAddDialog,
                 onSelectPersonalLibrary: _selectPersonalLibrary,
-                onEditPersonalLibrary: _showPersonalLibraryRenameDialog,
+                onEditPersonalLibrary: _showPersonalLibraryEditDialog,
                 onDeletePersonalLibrary: _deletePersonalLibrary,
               ),
               Expanded(
@@ -687,22 +679,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     if (AkashaFileService().vaultPath == null)
                       HomeVaultBanner(onConnectVault: _selectVaultFolder),
-                    if (!_isPersonalLibraryMode) ...[
-                      FilterSection(
-                        selectedDomain: _filterCtrl.domain,
-                        selectedCategories: _filterCtrl.categories,
-                        selectedWorkStatuses: _filterCtrl.workStatuses,
-                        selectedMyStatuses: _filterCtrl.myStatuses,
-                        onDomainChanged: _onDomainChanged,
-                        onToggleCategory: _toggleCategory,
-                        onClearCategories: _clearCategories,
-                        onToggleWorkStatus: _toggleWorkStatus,
-                        onToggleMyStatus: _toggleMyStatus,
-                      ),
-                      const Divider(height: 1),
-                      if (_isCatalogLoading)
-                        const LinearProgressIndicator(minHeight: 2),
-                    ],
+                    FilterSection(
+                      selectedDomain: _filterCtrl.domain,
+                      selectedCategories: _filterCtrl.categories,
+                      selectedWorkStatuses: _filterCtrl.workStatuses,
+                      selectedMyStatuses: _filterCtrl.myStatuses,
+                      onDomainChanged: _onDomainChanged,
+                      onToggleCategory: _toggleCategory,
+                      onClearCategories: _clearCategories,
+                      onToggleWorkStatus: _toggleWorkStatus,
+                      onToggleMyStatus: _toggleMyStatus,
+                    ),
+                    const Divider(height: 1),
+                    if (!_isPersonalLibraryMode && _isCatalogLoading)
+                      const LinearProgressIndicator(minHeight: 2),
 
           // ━━━ 스크롤 가능한 메인 콘텐츠 ━━━
           Expanded(

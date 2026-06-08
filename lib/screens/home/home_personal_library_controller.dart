@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../models/enums.dart';
 import '../../models/personal_library_config.dart';
+import 'home_dashboard_controller.dart';
 
 enum SidebarSelectionMode { dashboard, personalLibrary }
 
@@ -24,6 +26,19 @@ class HomePersonalLibraryController {
       orElse: () => libraries.first,
     );
   }
+
+  DashboardFilterSnapshot filterSnapshotFor(PersonalLibraryConfig? library) {
+    if (library == null) return const DashboardFilterSnapshot();
+    return DashboardFilterSnapshot(
+      domain: library.domain,
+      categories: Set.from(library.categories),
+      workStatuses: Set.from(library.workStatuses),
+      myStatuses: Set.from(library.myStatuses),
+    );
+  }
+
+  DashboardFilterSnapshot get activeFilterSnapshot =>
+      filterSnapshotFor(activeLibrary);
 
   Future<void> load() async {
     try {
@@ -134,16 +149,17 @@ class HomePersonalLibraryController {
     return true;
   }
 
-  bool rename(String id, String newName) {
-    if (PersonalLibraryConfig.presetIds.contains(id)) return false;
-    final trimmed = newName.trim();
-    if (trimmed.isEmpty) return false;
-    for (final lib in libraries) {
-      if (lib.id == id) {
-        lib.name = trimmed;
-        return true;
-      }
-    }
-    return false;
+  void syncActiveFromFilters({
+    required AppDomain? domain,
+    required Set<MediaCategory> categories,
+    required Set<String> workStatuses,
+    required Set<String> myStatuses,
+  }) {
+    final active = activeLibrary;
+    if (active == null) return;
+    active.domain = domain;
+    active.categories = Set.from(categories);
+    active.workStatuses = Set.from(workStatuses);
+    active.myStatuses = Set.from(myStatuses);
   }
 }

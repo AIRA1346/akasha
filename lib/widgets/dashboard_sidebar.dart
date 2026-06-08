@@ -85,7 +85,8 @@ class DashboardSidebar extends StatelessWidget {
                                 : Icons.dashboard_outlined,
                         isActive: isActive,
                         accentColor: dashboardAccent,
-                        isImmutable: dash.id == 'master_index',
+                        canEdit: dash.id != 'master_index',
+                        canDelete: dash.id != 'master_index',
                         onTap: () => onSelectDashboard(dash.id),
                         onEdit: () => onEditDashboard(dash),
                         onDelete: () => onDeleteDashboard(dash.id),
@@ -119,7 +120,9 @@ class DashboardSidebar extends StatelessWidget {
                             : Icons.inventory_2_outlined,
                         isActive: isActive,
                         accentColor: personalAccent,
-                        isImmutable: lib.isPreset,
+                        canEdit: true,
+                        canDelete: !lib.isPreset,
+                        editTooltip: '서재 설정',
                         onTap: () => onSelectPersonalLibrary(lib.id),
                         onEdit: () => onEditPersonalLibrary(lib),
                         onDelete: () => onDeletePersonalLibrary(lib.id),
@@ -231,7 +234,9 @@ class SidebarItemWidget extends StatefulWidget {
   final IconData icon;
   final bool isActive;
   final Color accentColor;
-  final bool isImmutable;
+  final bool canEdit;
+  final bool canDelete;
+  final String editTooltip;
   final VoidCallback onTap;
   final VoidCallback onEdit;
   final VoidCallback onDelete;
@@ -242,7 +247,9 @@ class SidebarItemWidget extends StatefulWidget {
     required this.icon,
     required this.isActive,
     required this.accentColor,
-    required this.isImmutable,
+    this.canEdit = true,
+    this.canDelete = true,
+    this.editTooltip = '설정',
     required this.onTap,
     required this.onEdit,
     required this.onDelete,
@@ -302,23 +309,26 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                if (!widget.isImmutable && (_isHovered || isActive)) ...[
-                  IconButton(
-                    icon: const Icon(Icons.edit_outlined,
-                        size: 14, color: Colors.grey),
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    tooltip: '이름 변경',
-                    onPressed: widget.onEdit,
-                  ),
-                  const SizedBox(width: 6),
-                  IconButton(
-                    icon: const Icon(Icons.delete,
-                        size: 14, color: Colors.redAccent),
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    onPressed: widget.onDelete,
-                  ),
+                if (_isHovered || isActive) ...[
+                  if (widget.canEdit) ...[
+                    IconButton(
+                      icon: const Icon(Icons.edit_outlined,
+                          size: 14, color: Colors.grey),
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      tooltip: widget.editTooltip,
+                      onPressed: widget.onEdit,
+                    ),
+                    if (widget.canDelete) const SizedBox(width: 6),
+                  ],
+                  if (widget.canDelete)
+                    IconButton(
+                      icon: const Icon(Icons.delete,
+                          size: 14, color: Colors.redAccent),
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      onPressed: widget.onDelete,
+                    ),
                 ],
               ],
             ),
