@@ -10,7 +10,8 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
   PersonalLibraryConfig? config,
 }) async {
   final isNew = config == null;
-  final isPreset = config?.isPreset ?? false;
+  final isMasterArchive =
+      config?.id == PersonalLibraryConfig.masterArchiveId;
   final nameCtrl = TextEditingController(text: config?.name ?? '');
   AppDomain? tempDomain = config?.domain;
   final Set<MediaCategory> tempCategories =
@@ -55,13 +56,13 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                   const SizedBox(height: 6),
                   TextField(
                     controller: nameCtrl,
-                    readOnly: isPreset,
+                    readOnly: isMasterArchive,
                     decoration: InputDecoration(
                       hintText: '예: 인생 명작, 감상 완료 목록…',
                       border: const OutlineInputBorder(),
                       isDense: true,
-                      helperText: isPreset
-                          ? '기본 서재 이름은 변경할 수 없습니다. 필터만 수정됩니다.'
+                      helperText: isMasterArchive
+                          ? 'master_archive 이름은 변경할 수 없습니다.'
                           : '볼트에 아카이브된 작품만 표시됩니다.',
                       helperMaxLines: 2,
                     ),

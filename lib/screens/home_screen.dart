@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _deletePersonalLibrary(String id) {
-    if (PersonalLibraryConfig.presetIds.contains(id)) return;
+    if (id == PersonalLibraryConfig.masterArchiveId) return;
 
     showDialog(
       context: context,

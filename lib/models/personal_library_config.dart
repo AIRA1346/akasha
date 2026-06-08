@@ -1,8 +1,12 @@
 import 'enums.dart';
 
-/// 나만의 서재 — 사용자 큐레이션 뷰 설정 (아카이브 + 필터 프리셋)
+/// 나만의 서재 — 사용자 큐레이션 뷰 설정 (아카이브 + 필터)
 class PersonalLibraryConfig {
-  static const presetIds = <String>{
+  /// 대시보드 `master_index`와 대응하는 기본 서재 (삭제·이름 변경 불가)
+  static const masterArchiveId = 'master_archive';
+
+  /// v1 프리셋 — 로드 시 제거·`master_archive`로 흡수
+  static const legacyPresetIds = <String>{
     'archive_manga',
     'archive_anime',
     'archive_game',
@@ -33,7 +37,7 @@ class PersonalLibraryConfig {
         myStatuses = myStatuses ?? {},
         inclusionRules = inclusionRules ?? const ['archived'];
 
-  bool get isPreset => presetIds.contains(id);
+  bool get isMasterArchive => id == masterArchiveId;
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -82,6 +86,7 @@ class PersonalLibraryConfig {
   }
 
   PersonalLibraryConfig copyWith({
+    String? id,
     String? name,
     AppDomain? domain,
     Set<MediaCategory>? categories,
@@ -90,7 +95,7 @@ class PersonalLibraryConfig {
     List<String>? inclusionRules,
   }) {
     return PersonalLibraryConfig(
-      id: id,
+      id: id ?? this.id,
       name: name ?? this.name,
       domain: domain ?? this.domain,
       categories: categories ?? Set.from(this.categories),
@@ -100,40 +105,52 @@ class PersonalLibraryConfig {
     );
   }
 
-  static List<PersonalLibraryConfig> defaultLibraries() => [
-        PersonalLibraryConfig(
-          id: 'archive_manga',
-          name: '내 만화 아카이브',
-          categories: {MediaCategory.manga},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_anime',
-          name: '내 애니 아카이브',
-          categories: {MediaCategory.animation},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_game',
-          name: '내 게임 아카이브',
-          categories: {MediaCategory.game},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_book',
-          name: '내 책·라노벨 아카이브',
-          categories: {MediaCategory.book},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_movie',
-          name: '내 영화 아카이브',
-          categories: {MediaCategory.movie},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_drama',
-          name: '내 드라마 아카이브',
-          categories: {MediaCategory.drama},
-        ),
-        PersonalLibraryConfig(
-          id: 'archive_all',
-          name: '내 전체 아카이브',
-        ),
-      ];
+  static PersonalLibraryConfig masterArchive() => PersonalLibraryConfig(
+        id: masterArchiveId,
+        name: masterArchiveId,
+      );
+
+  static List<PersonalLibraryConfig> defaultLibraries() => [masterArchive()];
+
+  /// 저장된 목록에서 레거시 프리셋 제거 + `master_archive` 보장
+  static List<PersonalLibraryConfig> normalizeLibraries(
+    List<PersonalLibraryConfig> input,
+  ) {
+    PersonalLibraryConfig? existingMaster;
+    PersonalLibraryConfig? legacyAll;
+    final custom = <PersonalLibraryConfig>[];
+
+    for (final lib in input) {
+      if (lib.id == masterArchiveId) {
+        existingMaster = lib;
+      } else if (lib.id == 'archive_all') {
+        legacyAll = lib;
+      } else if (legacyPresetIds.contains(lib.id)) {
+        continue;
+      } else {
+        custom.add(lib);
+      }
+    }
+
+    final master = existingMaster ??
+        (legacyAll != null
+            ? legacyAll.copyWith(
+                id: masterArchiveId,
+                name: masterArchiveId,
+              )
+            : masterArchive());
+
+    custom.sort((a, b) => a.name.compareTo(b.name));
+    return [master, ...custom];
+  }
+
+  static String? migrateActiveId(String? activeId, List<PersonalLibraryConfig> libs) {
+    if (activeId != null && libs.any((l) => l.id == activeId)) {
+      return activeId;
+    }
+    if (activeId != null && legacyPresetIds.contains(activeId)) {
+      return masterArchiveId;
+    }
+    return libs.isEmpty ? null : libs.first.id;
+  }
 }

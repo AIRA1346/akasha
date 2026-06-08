@@ -53,7 +53,7 @@ void main() {
       expect(cards.first.item.title, 'Archived');
     });
 
-    test('MyLibraryPipeline applies top filter chips on archive_all', () {
+    test('MyLibraryPipeline applies top filter chips on master_archive', () {
       final manga = userItem(workId: 'sub_manga_a', title: 'Manga A');
       manga.filePath = '/vault/manga/a.md';
       final movie = ContentItem(

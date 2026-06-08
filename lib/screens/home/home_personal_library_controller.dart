@@ -47,54 +47,58 @@ class HomePersonalLibraryController {
       final activeId = prefs.getString(_activeIdKey);
       final modeStr = prefs.getString(_sidebarModeKey);
 
+      var needsSave = false;
+
       if (jsonStr != null) {
         final decoded = jsonDecode(jsonStr) as List;
-        libraries = decoded
+        final loaded = decoded
             .map(
               (e) => PersonalLibraryConfig.fromJson(e as Map<String, dynamic>),
             )
             .toList();
-        _ensurePresets();
+        final normalized = PersonalLibraryConfig.normalizeLibraries(loaded);
+        if (_librariesChanged(loaded, normalized)) {
+          needsSave = true;
+        }
+        libraries = normalized;
       } else {
         libraries = PersonalLibraryConfig.defaultLibraries();
-        await _saveLibrariesInternal(prefs);
+        needsSave = true;
       }
 
-      if (activeId != null && libraries.any((l) => l.id == activeId)) {
-        activeLibraryId = activeId;
-      } else {
-        activeLibraryId = 'archive_all';
+      final migratedActive =
+          PersonalLibraryConfig.migrateActiveId(activeId, libraries);
+      if (migratedActive != activeId) {
+        needsSave = true;
       }
+      activeLibraryId = migratedActive ?? PersonalLibraryConfig.masterArchiveId;
 
       sidebarMode = modeStr == SidebarSelectionMode.personalLibrary.name
           ? SidebarSelectionMode.personalLibrary
           : SidebarSelectionMode.dashboard;
+
+      if (needsSave) {
+        await _saveLibrariesInternal(prefs);
+        if (migratedActive != null) {
+          await prefs.setString(_activeIdKey, migratedActive);
+        }
+      }
     } catch (e) {
       debugPrint('Error loading personal libraries: $e');
       libraries = PersonalLibraryConfig.defaultLibraries();
-      activeLibraryId = 'archive_all';
+      activeLibraryId = PersonalLibraryConfig.masterArchiveId;
     }
   }
 
-  void _ensurePresets() {
-    final existingIds = libraries.map((l) => l.id).toSet();
-    for (final preset in PersonalLibraryConfig.defaultLibraries()) {
-      if (!existingIds.contains(preset.id)) {
-        libraries.add(preset);
-      }
+  bool _librariesChanged(
+    List<PersonalLibraryConfig> before,
+    List<PersonalLibraryConfig> after,
+  ) {
+    if (before.length != after.length) return true;
+    for (var i = 0; i < before.length; i++) {
+      if (before[i].id != after[i].id) return true;
     }
-    libraries.sort((a, b) {
-      final aPreset = a.isPreset;
-      final bPreset = b.isPreset;
-      if (aPreset != bPreset) return aPreset ? -1 : 1;
-      if (aPreset && bPreset) {
-        final order = PersonalLibraryConfig.defaultLibraries()
-            .map((e) => e.id)
-            .toList();
-        return order.indexOf(a.id).compareTo(order.indexOf(b.id));
-      }
-      return a.name.compareTo(b.name);
-    });
+    return false;
   }
 
   Future<void> save() async {
@@ -140,10 +144,10 @@ class HomePersonalLibraryController {
   }
 
   bool remove(String id) {
-    if (PersonalLibraryConfig.presetIds.contains(id)) return false;
+    if (id == PersonalLibraryConfig.masterArchiveId) return false;
     libraries.removeWhere((l) => l.id == id);
     if (activeLibraryId == id) {
-      activeLibraryId = 'archive_all';
+      activeLibraryId = PersonalLibraryConfig.masterArchiveId;
       sidebarMode = SidebarSelectionMode.personalLibrary;
     }
     return true;

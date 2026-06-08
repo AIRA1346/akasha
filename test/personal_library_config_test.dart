@@ -4,22 +4,52 @@ import 'package:akasha/models/enums.dart';
 
 void main() {
   group('PersonalLibraryConfig', () {
-    test('defaultLibraries includes seven presets', () {
+    test('defaultLibraries is master_archive only', () {
       final libs = PersonalLibraryConfig.defaultLibraries();
-      expect(libs, hasLength(7));
-      expect(
-        libs.map((l) => l.id).toSet(),
-        PersonalLibraryConfig.presetIds,
-      );
+      expect(libs, hasLength(1));
+      expect(libs.first.id, PersonalLibraryConfig.masterArchiveId);
+      expect(libs.first.name, 'master_archive');
+      expect(libs.first.isMasterArchive, isTrue);
     });
 
-    test('archive_book uses book category', () {
-      final book = PersonalLibraryConfig.defaultLibraries().firstWhere(
-        (l) => l.id == 'archive_book',
+    test('normalizeLibraries removes legacy presets and keeps custom', () {
+      final normalized = PersonalLibraryConfig.normalizeLibraries([
+        PersonalLibraryConfig(
+          id: 'archive_manga',
+          name: '내 만화 아카이브',
+          categories: {MediaCategory.manga},
+        ),
+        PersonalLibraryConfig(
+          id: 'archive_all',
+          name: '내 전체 아카이브',
+          workStatuses: {'완결'},
+        ),
+        PersonalLibraryConfig(
+          id: 'personal_1',
+          name: '커스텀 서재',
+          categories: {MediaCategory.game},
+        ),
+      ]);
+
+      expect(normalized, hasLength(2));
+      expect(normalized.first.id, PersonalLibraryConfig.masterArchiveId);
+      expect(normalized.first.workStatuses, {'완결'});
+      expect(normalized[1].id, 'personal_1');
+    });
+
+    test('migrateActiveId maps legacy preset to master_archive', () {
+      final libs = PersonalLibraryConfig.defaultLibraries();
+      expect(
+        PersonalLibraryConfig.migrateActiveId('archive_manga', libs),
+        PersonalLibraryConfig.masterArchiveId,
       );
-      expect(book.name, '내 책·라노벨 아카이브');
-      expect(book.categories, {MediaCategory.book});
-      expect(book.isPreset, isTrue);
+      expect(
+        PersonalLibraryConfig.migrateActiveId('personal_1', [
+          ...libs,
+          PersonalLibraryConfig(id: 'personal_1', name: '커스텀'),
+        ]),
+        'personal_1',
+      );
     });
 
     test('json round-trip with filters', () {
