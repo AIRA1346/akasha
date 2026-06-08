@@ -1,6 +1,6 @@
 {
-  "wk_00000152": {
-    "workId": "wk_00000152",
+  "wk_000000152": {
+    "workId": "wk_000000152",
     "title": "듄",
     "category": "movie",
     "domain": "generalCulture",
@@ -15,8 +15,8 @@
       "gen_movie_dune-2021_2021"
     ]
   },
-  "wk_00000404": {
-    "workId": "wk_00000404",
+  "wk_000000404": {
+    "workId": "wk_000000404",
     "title": "귀멸의 칼날: 무한열차편",
     "category": "movie",
     "domain": "subculture",
@@ -33,8 +33,8 @@
       "sub_movie_demon-slayer-mugen-train_2020"
     ]
   },
-  "wk_00000405": {
-    "workId": "wk_00000405",
+  "wk_000000405": {
+    "workId": "wk_000000405",
     "title": "귀멸 칼날 무한열차",
     "category": "movie",
     "domain": "subculture",

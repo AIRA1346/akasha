@@ -1,0 +1,21 @@
+{
+  "wk_000000133": {
+    "workId": "wk_000000133",
+    "title": "페이퍼스, 플리즈",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Lucas Pope",
+    "releaseYear": 2013,
+    "description": "국경 검문소 공무원이 되어 서류를 심사하는 독립 퍼즐 게임.",
+    "tags": [
+      "퍼즐",
+      "인디",
+      "시뮬",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid239030_2013"
+    ]
+  }
+}

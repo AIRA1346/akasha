@@ -1,6 +1,6 @@
 {
-  "wk_00000011": {
-    "workId": "wk_00000011",
+  "wk_000000011": {
+    "workId": "wk_000000011",
     "title": "오리엔트 특급 살인",
     "category": "book",
     "domain": "generalCulture",
@@ -18,8 +18,8 @@
       "gen_book_murder-on-orient-express_1934"
     ]
   },
-  "wk_00000256": {
-    "workId": "wk_00000256",
+  "wk_000000256": {
+    "workId": "wk_000000256",
     "title": "바케모노가타리",
     "category": "book",
     "domain": "subculture",
@@ -37,8 +37,8 @@
       "sub_book_monogatari-light-novel_2006"
     ]
   },
-  "wk_00000257": {
-    "workId": "wk_00000257",
+  "wk_000000257": {
+    "workId": "wk_000000257",
     "title": "무직전생",
     "category": "book",
     "domain": "subculture",

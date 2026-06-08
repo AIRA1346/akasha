@@ -34,7 +34,7 @@
 
 | 항목 | v3 (현재) | v4 (목표) |
 |------|-----------|-----------|
-| **workId** | `sub_manga_one-piece_1997` | **`wk_00001234`** (불변) |
+| **workId** | `sub_manga_one-piece_1997` | **`wk_000012345`** (9자리, 불변) |
 | **legacy** | — | `legacy_aliases.json` |
 | **샤드 키** | 슬러그 첫 글자·연대 | **`hash(wk_) % 256`** |
 | **manifest** | `version: 3` | `version: 4`, `shardBits: 8`, `sha256` |
@@ -71,9 +71,8 @@ cd ..  # akasha 앱 루트
 dart run tool/registry_builder.dart --sync-assets
 dart run tool/ci_registry_check.dart
 dart run tool/franchise_linter.dart
-# Phase A (다음):
-# dart run tool/assign_wk_ids.dart          # dry-run
-# dart run tool/assign_wk_ids.dart --apply
+dart run tool/dedupe_linter.dart
+# dart run tool/retire_work_ids.dart --survivor=wk_xxx --retire=wk_yyy --apply
 # Phase D:
 # dart run tool/migrate_shards_v3_to_v4_hash.dart
 ```

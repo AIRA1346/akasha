@@ -6,486 +6,478 @@
   "franchise_86": {
     "displayName": "86 -에이티식스-",
     "members": [
-      "wk_00000292",
-      "wk_00000253"
+      "wk_000000292",
+      "wk_000000253"
     ],
-    "primaryWorkId": "wk_00000292"
+    "primaryWorkId": "wk_000000292"
   },
   "franchise_kimetsu": {
     "displayName": "귀멸의 칼날",
     "members": [
-      "wk_00000343",
-      "wk_00000188"
+      "wk_000000343",
+      "wk_000000188"
     ],
-    "primaryWorkId": "wk_00000343"
+    "primaryWorkId": "wk_000000343"
   },
   "franchise_dandadan": {
     "displayName": "단다단",
     "members": [
-      "wk_00000310",
-      "wk_00000185"
+      "wk_000000310",
+      "wk_000000185"
     ],
-    "primaryWorkId": "wk_00000310"
+    "primaryWorkId": "wk_000000310"
   },
   "franchise_mob_psycho": {
     "displayName": "모브 사이코 100",
     "members": [
-      "wk_00000351",
-      "wk_00000214"
+      "wk_000000351",
+      "wk_000000214"
     ],
-    "primaryWorkId": "wk_00000351"
+    "primaryWorkId": "wk_000000351"
   },
   "franchise_mushoku": {
     "displayName": "무직전생",
     "members": [
-      "wk_00000354",
-      "wk_00000257",
-      "wk_00000216"
+      "wk_000000354",
+      "wk_000000257",
+      "wk_000000216"
     ],
-    "primaryWorkId": "wk_00000354"
+    "primaryWorkId": "wk_000000354"
   },
   "franchise_monogatari": {
     "displayName": "바케모노가타리",
     "members": [
-      "wk_00000256",
-      "wk_00000215"
+      "wk_000000256",
+      "wk_000000215"
     ],
-    "primaryWorkId": "wk_00000256"
+    "primaryWorkId": "wk_000000256"
   },
   "franchise_lotr": {
     "displayName": "반지의 제왕: 반지 원정대",
     "members": [
-      "wk_00000010",
-      "wk_00000158"
+      "wk_000000010",
+      "wk_000000158"
     ],
-    "primaryWorkId": "wk_00000010"
+    "primaryWorkId": "wk_000000010"
   },
   "franchise_bocchi": {
     "displayName": "봇치 더 록!",
     "members": [
-      "wk_00000304",
-      "wk_00000178"
+      "wk_000000304",
+      "wk_000000178"
     ],
-    "primaryWorkId": "wk_00000304"
-  },
-  "franchise_stardew": {
-    "displayName": "스타듀 밸리",
-    "members": [
-      "wk_00000145",
-      "wk_00000283"
-    ],
-    "primaryWorkId": "wk_00000145"
+    "primaryWorkId": "wk_000000304"
   },
   "franchise_spy_family": {
     "displayName": "스파이 패밀리",
     "members": [
-      "wk_00000387",
-      "wk_00000239"
+      "wk_000000387",
+      "wk_000000239"
     ],
-    "primaryWorkId": "wk_00000387"
+    "primaryWorkId": "wk_000000387"
   },
   "franchise_overlord": {
     "displayName": "오버로드",
     "members": [
-      "wk_00000367",
-      "wk_00000259",
-      "wk_00000225"
+      "wk_000000367",
+      "wk_000000259",
+      "wk_000000225"
     ],
-    "primaryWorkId": "wk_00000367"
+    "primaryWorkId": "wk_000000367"
   },
   "franchise_rezero": {
     "displayName": "Re:제로부터 시작하는 이세계 생활",
     "members": [
-      "wk_00000375",
-      "wk_00000260",
-      "wk_00000230"
+      "wk_000000375",
+      "wk_000000260",
+      "wk_000000230"
     ],
-    "primaryWorkId": "wk_00000375"
+    "primaryWorkId": "wk_000000375"
   },
   "franchise_weathering_with_you": {
     "displayName": "날씨의 아이",
     "members": [
-      "wk_00000407",
-      "wk_00000249"
+      "wk_000000407",
+      "wk_000000249"
     ],
-    "primaryWorkId": "wk_00000407"
+    "primaryWorkId": "wk_000000407"
   },
   "franchise_gintama": {
     "displayName": "은혼",
     "members": [
-      "wk_00000328",
-      "wk_00000195"
+      "wk_000000328",
+      "wk_000000195"
     ],
-    "primaryWorkId": "wk_00000328"
+    "primaryWorkId": "wk_000000328"
   },
   "franchise_konosuba": {
     "displayName": "이 멋진 세계에 축복을!",
     "members": [
-      "wk_00000346",
-      "wk_00000255",
-      "wk_00000209"
+      "wk_000000346",
+      "wk_000000255",
+      "wk_000000209"
     ],
-    "primaryWorkId": "wk_00000346"
+    "primaryWorkId": "wk_000000346"
   },
   "franchise_slime": {
     "displayName": "전생 슬라임",
     "members": [
-      "wk_00000261",
-      "wk_00000237"
+      "wk_000000261",
+      "wk_000000237"
     ],
-    "primaryWorkId": "wk_00000261"
+    "primaryWorkId": "wk_000000261"
   },
   "franchise_jujutsu": {
     "displayName": "주술회전",
     "members": [
-      "wk_00000340",
-      "wk_00000204"
+      "wk_000000340",
+      "wk_000000204"
     ],
-    "primaryWorkId": "wk_00000340"
+    "primaryWorkId": "wk_000000340"
   },
   "franchise_aot": {
     "displayName": "진격의 거인",
     "members": [
-      "wk_00000381",
-      "wk_00000172"
+      "wk_000000381",
+      "wk_000000172"
     ],
-    "primaryWorkId": "wk_00000381"
+    "primaryWorkId": "wk_000000381"
   },
   "franchise_chainsaw": {
     "displayName": "체인소 맨",
     "members": [
-      "wk_00000308",
-      "wk_00000180"
+      "wk_000000308",
+      "wk_000000180"
     ],
-    "primaryWorkId": "wk_00000308"
+    "primaryWorkId": "wk_000000308"
   },
   "franchise_oshi_no_ko": {
     "displayName": "최애의 아이",
     "members": [
-      "wk_00000366",
-      "wk_00000224"
+      "wk_000000366",
+      "wk_000000224"
     ],
-    "primaryWorkId": "wk_00000366"
+    "primaryWorkId": "wk_000000366"
   },
   "franchise_kingdom": {
     "displayName": "킹덤",
     "members": [
-      "wk_00000344",
-      "wk_00000208",
-      "wk_00000020"
+      "wk_000000344",
+      "wk_000000208",
+      "wk_000000020"
     ],
-    "primaryWorkId": "wk_00000344"
+    "primaryWorkId": "wk_000000344"
   },
   "franchise_dr_stone": {
     "displayName": "Dr.STONE",
     "members": [
-      "wk_00000316",
-      "wk_00000189"
+      "wk_000000316",
+      "wk_000000189"
     ],
-    "primaryWorkId": "wk_00000316"
+    "primaryWorkId": "wk_000000316"
   },
   "franchise_kaiju8": {
     "displayName": "괴수 8호",
     "members": [
-      "wk_00000342",
-      "wk_00000206"
+      "wk_000000342",
+      "wk_000000206"
     ],
-    "primaryWorkId": "wk_00000342"
+    "primaryWorkId": "wk_000000342"
   },
   "franchise_solo_leveling": {
     "displayName": "나 혼자만 레벨업",
     "members": [
-      "wk_00000409",
-      "wk_00000238"
+      "wk_000000409",
+      "wk_000000238"
     ],
-    "primaryWorkId": "wk_00000409"
+    "primaryWorkId": "wk_000000409"
   },
   "franchise_mha": {
     "displayName": "나의 히어로 아카데미아",
     "members": [
-      "wk_00000355",
-      "wk_00000217"
+      "wk_000000355",
+      "wk_000000217"
     ],
-    "primaryWorkId": "wk_00000355"
+    "primaryWorkId": "wk_000000355"
   },
   "franchise_dungeon_meshi": {
     "displayName": "던전밥",
     "members": [
-      "wk_00000318",
-      "wk_00000190"
+      "wk_000000318",
+      "wk_000000190"
     ],
-    "primaryWorkId": "wk_00000318"
+    "primaryWorkId": "wk_000000318"
   },
   "franchise_mashle": {
     "displayName": "마슐",
     "members": [
-      "wk_00000350",
-      "wk_00000213"
+      "wk_000000350",
+      "wk_000000213"
     ],
-    "primaryWorkId": "wk_00000350"
+    "primaryWorkId": "wk_000000350"
   },
   "franchise_fire_force": {
     "displayName": "불꽃 소방대",
     "members": [
-      "wk_00000322",
-      "wk_00000192"
+      "wk_000000322",
+      "wk_000000192"
     ],
-    "primaryWorkId": "wk_00000322"
+    "primaryWorkId": "wk_000000322"
   },
   "franchise_black_clover": {
     "displayName": "블랙 클로버",
     "members": [
-      "wk_00000300",
-      "wk_00000174"
+      "wk_000000300",
+      "wk_000000174"
     ],
-    "primaryWorkId": "wk_00000300"
+    "primaryWorkId": "wk_000000300"
   },
   "franchise_blue_lock": {
     "displayName": "블루 록",
     "members": [
-      "wk_00000302",
-      "wk_00000177"
+      "wk_000000302",
+      "wk_000000177"
     ],
-    "primaryWorkId": "wk_00000302"
+    "primaryWorkId": "wk_000000302"
   },
   "franchise_sakamoto_days": {
     "displayName": "사카모토 데이즈",
     "members": [
-      "wk_00000378",
-      "wk_00000231"
+      "wk_000000378",
+      "wk_000000231"
     ],
-    "primaryWorkId": "wk_00000378"
+    "primaryWorkId": "wk_000000378"
   },
   "franchise_sao": {
     "displayName": "소드 아트 온라인",
     "members": [
-      "wk_00000263",
-      "wk_00000241"
+      "wk_000000263",
+      "wk_000000241"
     ],
-    "primaryWorkId": "wk_00000263"
+    "primaryWorkId": "wk_000000263"
   },
   "franchise_skip_loafer": {
     "displayName": "스킵과 로퍼",
     "members": [
-      "wk_00000384",
-      "wk_00000236"
+      "wk_000000384",
+      "wk_000000236"
     ],
-    "primaryWorkId": "wk_00000384"
+    "primaryWorkId": "wk_000000384"
   },
   "franchise_classroom_elite": {
     "displayName": "실력 지상주의 교실",
     "members": [
-      "wk_00000254",
-      "wk_00000182"
+      "wk_000000254",
+      "wk_000000182"
     ],
-    "primaryWorkId": "wk_00000254"
+    "primaryWorkId": "wk_000000254"
   },
   "franchise_apothecary": {
     "displayName": "약사의 혼잣말",
     "members": [
-      "wk_00000294",
-      "wk_00000171"
+      "wk_000000294",
+      "wk_000000171"
     ],
-    "primaryWorkId": "wk_00000294"
+    "primaryWorkId": "wk_000000294"
   },
   "franchise_undead_unluck": {
     "displayName": "언데드 언럭",
     "members": [
-      "wk_00000393",
-      "wk_00000246"
+      "wk_000000393",
+      "wk_000000246"
     ],
-    "primaryWorkId": "wk_00000393"
+    "primaryWorkId": "wk_000000393"
   },
   "franchise_opm": {
     "displayName": "원펀맨",
     "members": [
-      "wk_00000364",
-      "wk_00000223"
+      "wk_000000364",
+      "wk_000000223"
     ],
-    "primaryWorkId": "wk_00000364"
+    "primaryWorkId": "wk_000000364"
   },
   "franchise_wind_breaker": {
     "displayName": "윈드 브레이커",
     "members": [
-      "wk_00000397",
-      "wk_00000250"
+      "wk_000000397",
+      "wk_000000250"
     ],
-    "primaryWorkId": "wk_00000397"
+    "primaryWorkId": "wk_000000397"
   },
   "franchise_frieren": {
     "displayName": "장송의 프리렌",
     "members": [
-      "wk_00000323",
-      "wk_00000193"
+      "wk_000000323",
+      "wk_000000193"
     ],
-    "primaryWorkId": "wk_00000323"
+    "primaryWorkId": "wk_000000323"
   },
   "franchise_hells_paradise": {
     "displayName": "지옥락",
     "members": [
-      "wk_00000335",
-      "wk_00000200"
+      "wk_000000335",
+      "wk_000000200"
     ],
-    "primaryWorkId": "wk_00000335"
+    "primaryWorkId": "wk_000000335"
   },
   "franchise_kaguya": {
     "displayName": "카구야님은 고백받고 싶어",
     "members": [
-      "wk_00000341",
-      "wk_00000205"
+      "wk_000000341",
+      "wk_000000205"
     ],
-    "primaryWorkId": "wk_00000341"
+    "primaryWorkId": "wk_000000341"
   },
   "franchise_haikyuu": {
     "displayName": "하이큐!!",
     "members": [
-      "wk_00000334",
-      "wk_00000198"
+      "wk_000000334",
+      "wk_000000198"
     ],
-    "primaryWorkId": "wk_00000334"
+    "primaryWorkId": "wk_000000334"
   },
   "franchise_horimiya": {
     "displayName": "호리미야",
     "members": [
-      "wk_00000336",
-      "wk_00000201"
+      "wk_000000336",
+      "wk_000000201"
     ],
-    "primaryWorkId": "wk_00000336"
+    "primaryWorkId": "wk_000000336"
   },
   "franchise_shigatsu": {
     "displayName": "4월은 너의 거짓말",
     "members": [
-      "wk_00000380",
-      "wk_00000234"
+      "wk_000000380",
+      "wk_000000234"
     ],
-    "primaryWorkId": "wk_00000380"
+    "primaryWorkId": "wk_000000380"
   },
   "franchise_beastars": {
     "displayName": "BEASTARS",
     "members": [
-      "wk_00000298",
-      "wk_00000173"
+      "wk_000000298",
+      "wk_000000173"
     ],
-    "primaryWorkId": "wk_00000298"
+    "primaryWorkId": "wk_000000298"
   },
   "franchise_golden_kamuy": {
     "displayName": "골든 카무이",
     "members": [
-      "wk_00000330",
-      "wk_00000196"
+      "wk_000000330",
+      "wk_000000196"
     ],
-    "primaryWorkId": "wk_00000330"
+    "primaryWorkId": "wk_000000330"
   },
   "franchise_parasyte": {
     "displayName": "기생수",
     "members": [
-      "wk_00000368",
-      "wk_00000226"
+      "wk_000000368",
+      "wk_000000226"
     ],
-    "primaryWorkId": "wk_00000368"
+    "primaryWorkId": "wk_000000368"
   },
   "franchise_naruto": {
     "displayName": "나루토",
     "members": [
-      "wk_00000358",
-      "wk_00000218"
+      "wk_000000358",
+      "wk_000000218"
     ],
-    "primaryWorkId": "wk_00000358"
+    "primaryWorkId": "wk_000000358"
   },
   "franchise_no_game_no_life": {
     "displayName": "노 게임 노 라이프",
     "members": [
-      "wk_00000258",
-      "wk_00000220"
+      "wk_000000258",
+      "wk_000000220"
     ],
-    "primaryWorkId": "wk_00000258"
+    "primaryWorkId": "wk_000000258"
   },
   "franchise_noragami": {
     "displayName": "노라가미",
     "members": [
-      "wk_00000362",
-      "wk_00000221"
+      "wk_000000362",
+      "wk_000000221"
     ],
-    "primaryWorkId": "wk_00000362"
+    "primaryWorkId": "wk_000000362"
   },
   "franchise_death_note": {
     "displayName": "데스노트",
     "members": [
-      "wk_00000311",
-      "wk_00000187"
+      "wk_000000311",
+      "wk_000000187"
     ],
-    "primaryWorkId": "wk_00000311"
+    "primaryWorkId": "wk_000000311"
   },
   "franchise_tokyo_ghoul": {
     "displayName": "도쿄 구울",
     "members": [
-      "wk_00000390",
-      "wk_00000242"
+      "wk_000000390",
+      "wk_000000242"
     ],
-    "primaryWorkId": "wk_00000390"
+    "primaryWorkId": "wk_000000390"
   },
   "franchise_tokyo_revengers": {
     "displayName": "도쿄 리벤저스",
     "members": [
-      "wk_00000391",
-      "wk_00000243"
+      "wk_000000391",
+      "wk_000000243"
     ],
-    "primaryWorkId": "wk_00000391"
+    "primaryWorkId": "wk_000000391"
   },
   "franchise_made_in_abyss": {
     "displayName": "메이드 인 어비스",
     "members": [
-      "wk_00000348",
-      "wk_00000212"
+      "wk_000000348",
+      "wk_000000212"
     ],
-    "primaryWorkId": "wk_00000348"
+    "primaryWorkId": "wk_000000348"
   },
   "franchise_bleach": {
     "displayName": "블리치",
     "members": [
-      "wk_00000301",
-      "wk_00000176"
+      "wk_000000301",
+      "wk_000000176"
     ],
-    "primaryWorkId": "wk_00000301"
+    "primaryWorkId": "wk_000000301"
   },
   "franchise_vinland_saga": {
     "displayName": "빈란드 사가",
     "members": [
-      "wk_00000396",
-      "wk_00000247"
+      "wk_000000396",
+      "wk_000000247"
     ],
-    "primaryWorkId": "wk_00000396"
+    "primaryWorkId": "wk_000000396"
   },
   "franchise_one_piece": {
     "displayName": "원피스",
     "members": [
-      "wk_00000363",
-      "wk_00000222"
+      "wk_000000363",
+      "wk_000000222"
     ],
-    "primaryWorkId": "wk_00000363"
+    "primaryWorkId": "wk_000000363"
   },
   "franchise_jojo": {
     "displayName": "죠죠의 기묘한 모험",
     "members": [
-      "wk_00000339",
-      "wk_00000203"
+      "wk_000000339",
+      "wk_000000203"
     ],
-    "primaryWorkId": "wk_00000339"
+    "primaryWorkId": "wk_000000339"
   },
   "franchise_toradora": {
     "displayName": "토라도라!",
     "members": [
-      "wk_00000392",
-      "wk_00000244"
+      "wk_000000392",
+      "wk_000000244"
     ],
-    "primaryWorkId": "wk_00000392"
+    "primaryWorkId": "wk_000000392"
   },
   "franchise_hunter_x_hunter": {
     "displayName": "헌터×헌터",
     "members": [
-      "wk_00000337",
-      "wk_00000202"
+      "wk_000000337",
+      "wk_000000202"
     ],
-    "primaryWorkId": "wk_00000337"
+    "primaryWorkId": "wk_000000337"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "wk_00000140": {
-    "workId": "wk_00000140",
+  "wk_000000140": {
+    "workId": "wk_000000140",
     "title": "매스 이펙트 2",
     "category": "game",
     "domain": "generalCulture",
@@ -18,8 +18,8 @@
       "gen_game_mass-effect-2_2010"
     ]
   },
-  "wk_00000141": {
-    "workId": "wk_00000141",
+  "wk_000000141": {
+    "workId": "wk_000000141",
     "title": "마인크래프트",
     "category": "game",
     "domain": "generalCulture",
@@ -44,8 +44,8 @@
       "gen_game_minecraft_2011"
     ]
   },
-  "wk_00000275": {
-    "workId": "wk_00000275",
+  "wk_000000275": {
+    "workId": "wk_000000275",
     "title": "몬스터 헌터: 월드",
     "category": "game",
     "domain": "subculture",

@@ -56,8 +56,8 @@ class ParsedWorkId {
 }
 
 class WorkIdCodec {
-  /// v4 영구 ID — `wk_00001234` (8자리 순번)
-  static final RegExp wkIdPattern = RegExp(r'^wk_\d{8}$');
+  /// v4 영구 ID — `wk_000012345` (9자리 순번, 최대 ~10억 작)
+  static final RegExp wkIdPattern = RegExp(r'^wk_\d{9}$');
 
   static final RegExp _masterPatternWithYear = RegExp(
     r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',

@@ -75,7 +75,7 @@
 
 - [ ] **Phase A** — `assign_wk_ids.dart` + `id_registry.json` + `legacy_aliases`
 - [ ] **Phase B** — `WorkIdCodec`·loader·볼트 `wk_` 해석
-- [ ] **Phase C** — `dedupe_linter` + canonicalization CI
+- [x] **Phase C** — `dedupe_linter` + canonicalization CI (402작)
 - [ ] **Phase D** — 해시 샤딩 v4 + manifest v4 + builder/loader/sync
 - [ ] v4 dogfood + akasha-db GitHub push
 
@@ -118,7 +118,7 @@
 
 - [ ] Phase A: `assign_wk_ids` + `id_registry.json`
 - [ ] Phase B: 앱·볼트 `wk_` 호환
-- [ ] Phase C: `dedupe_linter` CI
+- [x] Phase C: `dedupe_linter` CI
 - [ ] Phase D: 해시 샤딩 v4
 
 ### Steam 후

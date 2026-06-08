@@ -79,14 +79,14 @@ void main(List<String> args) async {
 
   collected.sort((a, b) => a.legacyId.compareTo(b.legacyId));
 
-  final alreadyWk = collected.where((w) => isWkId(w.legacyId)).length;
-  final toAssign = collected.where((w) => !isWkId(w.legacyId)).toList();
+  final alreadyWk = collected.where((w) => isWkIdAny(w.legacyId)).length;
+  final toAssign = collected.where((w) => !isWkIdAny(w.legacyId)).toList();
 
   final legacyToWk = <String, String>{};
   var seq = 1;
   for (final item in collected) {
-    if (isWkId(item.legacyId)) {
-      legacyToWk[item.legacyId] = item.legacyId;
+    if (isWkIdAny(item.legacyId)) {
+      legacyToWk[item.legacyId] = canonicalizeWkId(item.legacyId) ?? item.legacyId;
       final n = parseWkSequence(item.legacyId);
       if (n != null && n >= seq) seq = n + 1;
       continue;

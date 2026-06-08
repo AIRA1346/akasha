@@ -12,7 +12,7 @@
 |--------|------|------|
 | 설계·ADR·정책 문서 | ✅ | v2 확정, canonicalization-policy 포함 |
 | 앱 기능 (M1) | ✅ | dogfood 통과, `master_archive`, ~410작 |
-| **v4 런타임 코드** | 🔶 Phase A·B 일부 | `wk_` 410작 적용, 해시 샤드 미전환 |
+| **v4 런타임 코드** | 🔶 Phase A~C 일부 | `wk_` 402작, dedupe CI ✅, 해시 샤드 미전환 |
 
 **Steam 출시 게이트 = 아래 Phase A~D 완료 + dogfood 재검증.**
 
@@ -53,12 +53,12 @@
 ### 왜 필요한가
 
 현재 ID: `sub_manga_one-piece_1997` (슬러그·연도에 종속 → 메타 변경 시 조인 깨짐)  
-목표 ID: `wk_00000042` (한 번 부여 후 **절대 불변**)
+목표 ID: `wk_000000042` (9자리, 한 번 부여 후 **절대 불변**)
 
 ### 하는 일
 
 1. 모든 샤드 JSON에서 work 엔트리 수집 (현재 ~410작)
-2. **전역 순번**으로 `wk_00000001` … 할당 (8자리 zero-pad)
+2. **전역 순번**으로 `wk_000000001` … 할당 (9자리 zero-pad, 최대 ~10억 작)
 3. `akasha-db/id_registry.json` 생성 — `wk_` ↔ legacy `sub_*` 매핑
 4. `legacy_aliases.json` 확장 — 앱·볼트가 옛 ID로도 `wk_` 해석
 5. `--apply` 시 샤드 `workId`를 `wk_`로 교체 (`legacyIds` 필드에 옛 ID 보존)
@@ -76,7 +76,7 @@
 
 | # | 작업 | 산출물 | 상태 |
 |---|------|--------|------|
-| A1 | 할당 규칙 확정 | 8자리 `wk_`, 전역 순번 | ✅ |
+| A1 | 할당 규칙 확정 | 9자리 `wk_`, 전역 순번 (최대 999,999,999) | ✅ |
 | A2 | `assign_wk_ids.dart` | dry-run / `--apply` | ✅ |
 | A3 | `id_registry.json` | 410작 매핑 | ✅ |
 | A4 | `legacy_aliases.json` | 전량 `sub_*` → `wk_` | ✅ |
@@ -97,15 +97,16 @@
 
 **완료 기준:** 옛 `sub_*` 볼트·검색·IP 카드 정상
 
-### Phase C — Canonicalization CI (예상 2~3일)
+### Phase C — Canonicalization CI (예상 2~3일) ✅
 
-| # | 작업 | 산출물 |
-|---|------|--------|
-| C1 | `dedupe_linter.dart` | `externalIds` exact + fuzzy title 후보 |
-| C2 | `ci_registry_check` 연동 | 후보 리포트, **자동 merge 금지** |
-| C3 | `franchise_linter` | `wk_` members 일관성 |
+| # | 작업 | 산출물 | 상태 |
+|---|------|--------|------|
+| C1 | `dedupe_linter.dart` | `externalIds` exact + fuzzy title 후보 | ✅ |
+| C2 | `ci_registry_check` 연동 | 후보 리포트, **자동 merge 금지** | ✅ |
+| C3 | `retire_work_ids.dart` | 중복 8건 병합 → 402작 | ✅ |
+| C4 | `franchise_groups` | `wk_` members 일관성 검증 | ✅ |
 
-**완료 기준:** CI green, 중복 0건(또는 문서화된 예외만)
+**완료 기준:** CI green, 중복 0건 — **달성** (402작)
 
 ### Phase D — 해시 샤딩 v4 (예상 5~7일)
 
@@ -149,7 +150,7 @@
 [ ] id_registry.json — 410작 wk_ 매핑
 [ ] legacy_aliases — sub_* → wk_ 전량
 [ ] WorkIdCodec + loader wk_ resolve
-[ ] dedupe_linter in CI
+[x] dedupe_linter in CI
 [ ] manifest v4 + hash(wk_)%256 샤드
 [ ] registry_builder / ci_registry_check v4
 [ ] flutter test + dogfood_precheck green

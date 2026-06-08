@@ -1,0 +1,7 @@
+{
+  "_schema": {
+    "version": 1,
+    "note": "문서화된 중복 예외만 허용. 자동 merge 금지 — human 리뷰 후 등록."
+  },
+  "allowedPairs": []
+}

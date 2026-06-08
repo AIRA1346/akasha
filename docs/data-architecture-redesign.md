@@ -388,11 +388,12 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 - [ ] Loader `id_registry` 로드 (선택)  
 - [ ] dogfood 재검증  
 
-### Phase C — Canonicalization CI
+### Phase C — Canonicalization CI ✅
 
 - [x] [canonicalization-policy.md](canonicalization-policy.md) 문서  
-- [ ] `dedupe_linter.dart` — 후보 제시만, 자동 merge 금지  
-- [ ] `franchise_groups` = `wk_` members  
+- [x] `dedupe_linter.dart` — 후보 제시만, 자동 merge 금지  
+- [x] `retire_work_ids.dart` — 중복 8건 병합 (402작)  
+- [x] `franchise_groups` = `wk_` members 검증  
 
 ### Phase D — 해시 샤딩 v4
 

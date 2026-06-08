@@ -1,22 +1,6 @@
 {
-  "wk_00000160": {
-    "workId": "wk_00000160",
-    "title": "기생충",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "봉준호",
-    "releaseYear": 2019,
-    "description": "기생충 영화.",
-    "tags": [
-      "영화",
-      "대중문화"
-    ],
-    "legacyIds": [
-      "gen_movie_parasite-2019_2019"
-    ]
-  },
-  "wk_00000161": {
-    "workId": "wk_00000161",
+  "wk_000000161": {
+    "workId": "wk_000000161",
     "title": "기생충",
     "category": "movie",
     "domain": "generalCulture",
@@ -30,11 +14,12 @@
       "아카데미"
     ],
     "legacyIds": [
+      "gen_movie_parasite-2019_2019",
       "gen_movie_parasite_2019"
     ]
   },
-  "wk_00000162": {
-    "workId": "wk_00000162",
+  "wk_000000162": {
+    "workId": "wk_000000162",
     "title": "펄프 픽션",
     "category": "movie",
     "domain": "generalCulture",

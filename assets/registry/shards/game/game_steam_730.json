@@ -1,6 +1,6 @@
 {
-  "wk_00000121": {
-    "workId": "wk_00000121",
+  "wk_000000121": {
+    "workId": "wk_000000121",
     "title": "카운터 스트라이크 2",
     "category": "game",
     "domain": "generalCulture",
@@ -15,24 +15,7 @@
     ],
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
     "legacyIds": [
-      "gen_game_appid730_2012"
-    ]
-  },
-  "wk_00000122": {
-    "workId": "wk_00000122",
-    "title": "카운터 스트라이크 2",
-    "category": "game",
-    "domain": "generalCulture",
-    "creator": "Valve",
-    "releaseYear": 2023,
-    "description": "카운터 스트라이크 2 — Steam 인기 게임.",
-    "tags": [
-      "게임",
-      "Steam",
-      "대중문화"
-    ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
-    "legacyIds": [
+      "gen_game_appid730_2012",
       "gen_game_appid730_2023"
     ]
   }

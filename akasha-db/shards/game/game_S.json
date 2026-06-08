@@ -1,6 +1,6 @@
 {
-  "wk_00000144": {
-    "workId": "wk_00000144",
+  "wk_000000144": {
+    "workId": "wk_000000144",
     "title": "더 엘더스크롤 V: 스카이림",
     "category": "game",
     "domain": "generalCulture",
@@ -18,8 +18,8 @@
       "gen_game_skyrim_2011"
     ]
   },
-  "wk_00000145": {
-    "workId": "wk_00000145",
+  "wk_000000145": {
+    "workId": "wk_000000145",
     "title": "스타듀 밸리",
     "category": "game",
     "domain": "generalCulture",
@@ -34,11 +34,13 @@
     ],
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg",
     "legacyIds": [
-      "gen_game_stardew-valley_2016"
+      "gen_game_appid413150_2016",
+      "gen_game_stardew-valley_2016",
+      "sub_game_stardew-valley-sub_2016"
     ]
   },
-  "wk_00000282": {
-    "workId": "wk_00000282",
+  "wk_000000282": {
+    "workId": "wk_000000282",
     "title": "스플래툰 3",
     "category": "game",
     "domain": "subculture",
@@ -54,25 +56,6 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5k1z.jpg",
     "legacyIds": [
       "sub_game_splatoon-3_2022"
-    ]
-  },
-  "wk_00000283": {
-    "workId": "wk_00000283",
-    "title": "스타듀 밸리",
-    "category": "game",
-    "domain": "subculture",
-    "creator": "ConcernedApe",
-    "releaseYear": 2016,
-    "description": "농장을 가꾸며 마을과 교감하는 힐링 시뮬레이션.",
-    "tags": [
-      "시뮬",
-      "농장",
-      "힐링",
-      "인디"
-    ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg",
-    "legacyIds": [
-      "sub_game_stardew-valley-sub_2016"
     ]
   }
 }

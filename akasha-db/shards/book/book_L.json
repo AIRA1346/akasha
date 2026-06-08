@@ -1,6 +1,6 @@
 {
-  "wk_00000009": {
-    "workId": "wk_00000009",
+  "wk_000000009": {
+    "workId": "wk_000000009",
     "title": "라플라스의 마녀",
     "category": "book",
     "domain": "generalCulture",
@@ -18,8 +18,8 @@
       "gen_book_laplace-novel_2015"
     ]
   },
-  "wk_00000010": {
-    "workId": "wk_00000010",
+  "wk_000000010": {
+    "workId": "wk_000000010",
     "title": "반지의 제왕: 반지 원정대",
     "category": "book",
     "domain": "generalCulture",

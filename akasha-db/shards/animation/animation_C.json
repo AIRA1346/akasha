@@ -1,6 +1,6 @@
 {
-  "wk_00000001": {
-    "workId": "wk_00000001",
+  "wk_000000001": {
+    "workId": "wk_000000001",
     "title": "카우보이 비밥",
     "category": "animation",
     "domain": "generalCulture",
@@ -25,8 +25,8 @@
       "gen_animation_cowboy-bebop_1998"
     ]
   },
-  "wk_00000180": {
-    "workId": "wk_00000180",
+  "wk_000000180": {
+    "workId": "wk_000000180",
     "title": "체인소 맨",
     "category": "animation",
     "domain": "subculture",
@@ -51,8 +51,8 @@
       "sub_animation_chainsaw-man_2022"
     ]
   },
-  "wk_00000181": {
-    "workId": "wk_00000181",
+  "wk_000000181": {
+    "workId": "wk_000000181",
     "title": "클라나드",
     "category": "animation",
     "domain": "subculture",
@@ -72,8 +72,8 @@
       "sub_animation_clannad_2007"
     ]
   },
-  "wk_00000182": {
-    "workId": "wk_00000182",
+  "wk_000000182": {
+    "workId": "wk_000000182",
     "title": "실력 지상주의 교실",
     "titles": {
       "ko": "실력 지상주의 교실",
@@ -116,8 +116,8 @@
       "sub_animation_classroom-of-the-elite_2017"
     ]
   },
-  "wk_00000183": {
-    "workId": "wk_00000183",
+  "wk_000000183": {
+    "workId": "wk_000000183",
     "title": "코드 기어스",
     "category": "animation",
     "domain": "subculture",
@@ -137,8 +137,8 @@
       "sub_animation_code-geass_2006"
     ]
   },
-  "wk_00000184": {
-    "workId": "wk_00000184",
+  "wk_000000184": {
+    "workId": "wk_000000184",
     "title": "사이버펑크: 엣지러너",
     "category": "animation",
     "domain": "subculture",

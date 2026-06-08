@@ -18,8 +18,8 @@ void main() {
   });
 
   group('Steam v1 bundle smoke (dogfood pre-check)', () {
-    test('bundled catalog exposes 410 works after prefetch', () {
-      expect(WorksRegistry.allWorks.length, 410);
+    test('bundled catalog exposes 402 works after prefetch', () {
+      expect(WorksRegistry.allWorks.length, 402);
     });
 
     test('legacy sub_* resolves to wk_ via legacy_aliases', () {

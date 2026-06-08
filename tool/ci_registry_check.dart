@@ -85,6 +85,22 @@ void main(List<String> args) {
     print('FAIL: id_registry_check exited ${idReg.exitCode}');
   }
 
+  print('\n==> dedupe_linter');
+  final dedupe = Process.runSync(
+    Platform.resolvedExecutable,
+    ['run', 'tool/dedupe_linter.dart'],
+    workingDirectory: root.path,
+    runInShell: true,
+  );
+  stdout.write(dedupe.stdout);
+  stderr.write(dedupe.stderr);
+  if (dedupe.exitCode != 0) {
+    failed = true;
+    print('FAIL: dedupe_linter exited ${dedupe.exitCode}');
+  } else {
+    print('OK: dedupe_linter');
+  }
+
   print('\n==> poster URL policy (link-only, denylist)');
   final posterScan = scanRegistryPosters(root);
   if (updateBaseline) {

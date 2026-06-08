@@ -17,7 +17,7 @@ AKASHA가 커질수록 **검색보다** 아래 질문이 더 중요해진다.
 
 | 계층 | 필드 | 규칙 |
 |------|------|------|
-| **Canonical ID** | `wk_00001234` | **절대 불변**. 삭제·재사용 금지 |
+| **Canonical ID** | `wk_000012345` (9자리) | **절대 불변**. 삭제·재사용 금지 |
 | **Legacy ID** | `sub_manga_one-piece_1997` | `legacy_aliases.json`로 `wk_`에 영구 매핑 |
 | **External ID** | `externalIds.tmdb`, `mal`, `steam` … | 중복 탐지·대조용 (자동 merge 근거 단독 사용 금지) |
 
@@ -73,7 +73,9 @@ Pipeline·CI가 **후보**를 만들 때 참고하는 신호:
 | 도구 | 역할 |
 |------|------|
 | `franchise_linter.dart` | 다매체 IP 미등록 탐지 |
-| `dedupe_linter.dart` (신규) | externalId·fuzzy title 중복 후보 |
+| `dedupe_linter.dart` | externalId·fuzzy title 중복 후보 |
+| `retire_work_ids.dart` | 중복 wk_ 병합 (legacy 흡수, 자동 merge 아님) |
+| `dedupe_exceptions.json` | 문서화된 예외 쌍 |
 | `ci_registry_check.dart` | duplicate `wk_`, denylist URL |
 | Registry Pipeline | ingest 전 dedupe gate |
 
