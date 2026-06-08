@@ -2,17 +2,18 @@
 
 AKASHA 앱의 **글로벌 작품 메타데이터 사전** (Tier 1 Registry).
 
-누구나 자유롭게 데이터를 추가·수정하여 전 세계 서브컬처 및 대중 문화 작품 메타데이터를 확장할 수 있습니다.
+**현재:** Steam v1 엄선 **~410작** · v3 슬러그 샤드  
+**장기:** 세상의 모든 작품 사전 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
 
 ## 구조 (v3 — 샤딩)
 
-> 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md) · 구현 계획: [docs/akasha-db-implementation-plan.md](../docs/akasha-db-implementation-plan.md)
+> 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md) · 스키마: [SCHEMA.md](SCHEMA.md)
 
 ```
 akasha-db/
 ├── manifest.json         # 샤드 카탈로그
 ├── search_index.json     # 경량 검색 인덱스 (자동 생성)
-├── legacy_aliases.json   # 구 work_id 호환
+├── legacy_aliases.json   # 구 work_id 호환 (v4에서 wk_ 매핑 확장)
 ├── works_registry.json   # (레거시) v1 단일 JSON — 하위 호환용
 └── shards/
     ├── manga/
@@ -20,17 +21,17 @@ akasha-db/
     ├── game/
     ├── book/
     ├── movie/
-    └── drama/
+    ├── drama/
+    └── webtoon/
 ```
 
-> **v3:** `titles` / `aliases` / `externalIds` / `searchTokens`. `works_registry.json`은 구버전 앱 호환용만.
+> **v3:** `titles` / `aliases` / `externalIds` / `posterPath` / `searchTokens`.  
+> **v4 (계획):** `wk_` ID · `hash(wk_)%256` 샤드 — 슬러그 샤드 deprecated.
 
-현재 시드: **325작** (수동 큐레이션). **API bulk 금지** — 확장은 수동 PR + 사용자 직접 등록.  
-포스터: **`posterPath` URL만** (이미지 파일 커밋 금지). CI: `dart run tool/ci_registry_check.dart`
+**API bulk 금지** — 확장은 수동 PR + (장기) Registry Pipeline + 사용자 직접 등록.  
+포스터: **`posterPath` URL만** (이미지 파일 커밋 금지).
 
 ## 앱 동기화
-
-앱은 다음 base URL에서 파일을 내려받습니다:
 
 ```
 https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
@@ -43,6 +44,7 @@ https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
 ```bash
 # akasha 앱 루트에서
 dart run tool/registry_builder.dart --sync-assets
+dart run tool/ci_registry_check.dart
 ```
 
-자세한 규칙: [SCHEMA.md](SCHEMA.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md) · [akasha-db-policy.md](../docs/akasha-db-policy.md)
+[CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md) · [canonicalization-policy.md](../docs/canonicalization-policy.md)

@@ -11,7 +11,7 @@
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | 엄선 **370작** (v1) → PR·직접 등록으로 점진 확장 |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 엄선 **~410작** → Pipeline으로 확장 |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
@@ -28,7 +28,7 @@
 - [x] 작품 검색 (로컬 + 사전 + 직접 등록)
 - [x] AI 마크다운 가져오기 + 프롬프트 템플릿
 - [x] 대시보드 (필터, HoF, 워치리스트, 섹션 정렬·접기)
-- [x] 볼트 자동 아카이빙
+- [x] 볼트 아카이빙 (선택 토글 — 아카이브한 작품만 `.md`)
 
 ### 🔨 v1 신규 구현
 
@@ -61,10 +61,11 @@
 
 - [x] v1 체크리스트 (Steam depot 제외)
 - [x] `flutter test` 94/94 · `ci_registry_check` green
-- [x] 번들 smoke (`steam_v1_bundle_test` — 370작·웹툰 이관)
+- [x] 번들 smoke (`steam_v1_bundle_test` — ~410작·웹툰 이관)
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
-- [x] **akasha-db GitHub push** — 370작 엄선 카탈로그 반영
-- [ ] 내부 dogfood (본인 볼트 + 동기화 검증)
+- [x] **akasha-db GitHub push** — ~410작 엄선 카탈로그 반영
+- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test 95/95 · ci_registry_check)
+- [ ] 내부 dogfood (본인 볼트 + 동기화 검증) — `.\scripts\dogfood_precheck.ps1` 후 수동
   - [ ] 볼트 연결·watch·`.md` 저장/재로드
   - [ ] 검색: 로컬 + 사전 + 직접 등록
   - [ ] 필터·웹툰 카테고리·프랜차이즈 IP 1카드
@@ -102,9 +103,26 @@
 
 ## 데이터·인프라 백로그
 
+> **아키텍처 v2:** [data-architecture-redesign.md](docs/data-architecture-redesign.md) · [canonicalization-policy.md](docs/canonicalization-policy.md)  
+> 전 작품 사전 · **샤딩 유지** (해시 키) · `wk_` ID · **posterPath DB 유지** · Registry Pipeline
+
+### 구현 우선순위 (합의)
+
+1. **`wk_` 영구 ID** + `legacy_aliases`
+2. **canonicalization·dedupe** 규칙 + CI
+3. **해시 샤딩** `hash(wk_) % 256` — 슬러그 키(`manga_K`) 폐기
+4. **Registry Pipeline** (extract → dedupe → shard → Git)
+5. **AI 자동 수집** (2027~)
+
+- [ ] Phase 1: `wk_` ID 전환
+- [ ] Phase 2: dedupe linter · [canonicalization-policy.md](docs/canonicalization-policy.md) CI
+- [ ] Phase 3: 해시 샤딩 v4 migrate
+- [ ] Phase 4: Registry Pipeline 스켈레톤
+- [ ] searchTokens 품질 CI · poster URL 배치 재검증
+
 - [x] cold start preload 축소 (`main.dart` — master_index 진입 시에만 full prefetch)
 - [x] `flutter_ci.yml`에 `ci_registry_check` 연동
-- [x] akasha-db **370작** 엄선 (`purge_anilist_bulk` + batch 시드 + 수동 큐레이션, AniList bulk 금지)
+- [x] akasha-db **~410작** 엄선 (batch 시드 + 수동 큐레이션, AniList bulk 금지)
 - [x] lazy 샤드 정책 — 번들은 eager 15샤드만, 나머지 온디맨드
 - [x] **akasha-db v3** — `titles`/`aliases`/`externalIds`/`searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md))
 - [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)

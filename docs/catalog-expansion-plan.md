@@ -1,9 +1,10 @@
 # 작품 카탈로그 확장 계획 — 애니·만화 우선
 
-> **목적:** akasha-db에 **인지도 높은 애니·만화**를 엄선 추가  
+> **목적:** akasha-db에 **인지도 높은 애니·만화**를 엄선 추가 (Steam v1 단계)  
 > **전제:** [akasha-db-policy.md](akasha-db-policy.md) 법무·운영 방침 **절대 우선**  
-> **기준일:** 2026-06-07  
-> **현재:** **370작** (manga **95** · animation **65**) — AM1 완료 (2026-06-07)
+> **아키텍처:** 장기 비전·`wk_`·Pipeline은 [data-architecture-redesign.md](data-architecture-redesign.md) 참고  
+> **기준일:** 2026-06-08  
+> **현재:** **~410작** (batch6 완료) — Steam v1 엄선 목표 달성
 
 ---
 

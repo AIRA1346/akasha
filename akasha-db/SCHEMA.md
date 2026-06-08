@@ -1,41 +1,77 @@
 # akasha-db Schema
 
-현재 버전: **v3** (`manifest.json` → `"version": 3`)
+## 현재 (v3)
 
-상세 정책: [docs/locale-catalog-policy.md](../docs/locale-catalog-policy.md)
+`manifest.json` → `"version": 3`  
+샤딩: **슬러그 기반** (`manga_K.json`, `animation_2020s.json` 등)  
+규모: **~410작** (Steam v1 엄선)
 
-## Work entry (shard JSON)
+상세 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)  
+아키텍처 로드맵: [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
+
+### Work entry (shard JSON)
 
 | 필드 | 필수 | 설명 |
 |------|------|------|
-| `workId` | ✅ | 마스터 형식 식별자 |
+| `workId` | ✅ | 마스터 형식 식별자 (v4에서 `wk_` 전환 예정) |
 | `title` | ✅* | 레거시 단일 제목 (*`titles`만 있어도 됨) |
 | `titles` | | `{ "ko", "en", "ja", "romaji", "native", "zh" }` |
 | `aliases` | | 검색용 별칭 배열 |
-| `externalIds` | | `{ "anilist", "steam", "isbn", ... }` |
-| `category` | ✅ | manga · animation · game · book · movie · drama |
+| `posterPath` | | `https://...` URL 또는 `null` |
+| `externalIds` | | `{ "anilist", "steam", "tmdb", "isbn", ... }` |
+| `category` | ✅ | manga · animation · game · book · movie · drama · webtoon |
 | `domain` | ✅ | subculture · generalCulture |
-| `extensions` | | 레거시 확장 (v3에서 `externalIds`로 승격 권장) |
+| `extensions` | | 레거시 확장 (`externalIds`로 승격 권장) |
 
-## search_index.json (빌드 산출)
+### search_index.json (빌드 산출)
 
-- `searchTokens`: 교차 언어 검색 (빌드 시 생성, 샤드에 저장 안 함)
+- `searchTokens`: 교차 언어 검색 (빌드 시 생성)
 - `titles`: 샤드에 있을 때만 인덱스에 포함
+
+---
+
+## 계획 (v4)
+
+| 항목 | v3 (현재) | v4 (목표) |
+|------|-----------|-----------|
+| **workId** | `sub_manga_one-piece_1997` | **`wk_00001234`** (불변) |
+| **legacy** | — | `legacy_aliases.json` |
+| **샤드 키** | 슬러그 첫 글자·연대 | **`hash(wk_) % 256`** |
+| **manifest** | `version: 3` | `version: 4`, `shardBits: 8`, `sha256` |
+
+전환 순서: **`wk_` ID → canonicalization → 해시 샤딩** — [docs/data-architecture-redesign.md §9](../docs/data-architecture-redesign.md)
+
+### id_registry.json (계획)
+
+```json
+{
+  "wk_00000001": {
+    "category": "manga",
+    "legacyIds": ["sub_manga_one-piece_1997"]
+  }
+}
+```
+
+---
 
 ## 카탈로그 정책 (법무)
 
-정책 마스터: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+- **AniList API bulk 시드 금지**
+- 신규 작품: 수동 PR + (장기) Registry Pipeline
+- 설명: **자체 1~2문장**; 외부 시놉시스 복제 금지
+- 포스터: URL 링크만 — [POSTER_POLICY.md](POSTER_POLICY.md)
+- 중복: [canonicalization-policy.md](../docs/canonicalization-policy.md)
 
-- **AniList API bulk 시드 금지** — `seedSource: anilist_popularity`, `-a{id}` 슬러그
-- 신규 작품은 **수동 큐레이션 PR**만
-- 설명은 **자체 1~2문장**; 외부 시놉시스 복제 금지
-- 포스터: URL 링크만 (`posterPath`). [POSTER_POLICY.md](POSTER_POLICY.md)
+---
 
 ## 도구
 
 ```bash
-dart run tool/purge_anilist_bulk.dart       # dry-run / --apply
-dart run tool/migrate_registry_v3.dart      # 샤드 titles/externalIds 승격
+cd ..  # akasha 앱 루트
 dart run tool/registry_builder.dart --sync-assets
 dart run tool/ci_registry_check.dart
+dart run tool/franchise_linter.dart
+# 계획:
+# dart run tool/migrate_wk_ids.dart
+# dart run tool/migrate_shards_v3_to_v4_hash.dart
 ```

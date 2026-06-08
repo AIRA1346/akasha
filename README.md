@@ -26,7 +26,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 - **작품 검색** — 내 볼트 + 글로벌 사전 + 없으면 직접 등록
 - **AI 마크다운 가져오기** — ChatGPT 등이 만든 YAML+마크다운 붙여넣기로 **새 작품** 등록 (기존 `.md` 수정 아님)
 - **대시보드** — 카테고리·도메인 필터, Hall of Fame, 워치리스트, 섹션 정렬·접기
-- **볼트 자동 아카이빙** — 사전 작품을 필터 범위에 맞춰 `.md` 자동 생성
+- **볼트 아카이빙** — 사용자가 아카이브한 작품만 `.md` 생성 (사전 전체는 가상 카드)
 
 ### v1에서 보류
 
@@ -54,18 +54,22 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 ---
 
-## 📚 엄선 작품 사전 (akasha-db)
+## 📚 글로벌 작품 사전 (akasha-db)
+
+> **최종 목표:** 세상의 모든 작품 사전 (IMDb + OpenLibrary급)  
+> **현재 단계:** 엄선 **~410작**부터 시작 → 단계적 확장 ([data-architecture-redesign.md](docs/data-architecture-redesign.md))
 
 | 항목 | 정책 |
 |------|------|
-| **철학** | **자체 DB 구축** — API bulk·온디맨드 빌리기 없음 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
-| **스키마** | **v3** — `titles` / `aliases` / `externalIds` / `searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md)) |
-| **규모** | 엄선 **370작** / 205샤드 (수동 큐레이션 — AniList bulk 제거됨) |
-| **카테고리** | 만화 · **웹툰** · 애니 · 게임 · 책 · 영화 · 드라마 |
-| **포스터** | `posterPath` = **URL 링크만** (repo·번들에 이미지 없음) — [POSTER_POLICY.md](akasha-db/POSTER_POLICY.md) |
-| **확장** | 수동 PR + 사용자 직접 등록; 없으면 placeholder |
-| **기술** | GitHub raw sync — 앱은 가벼운 클라이언트, 서버 비용 0 |
-| **글로벌화** | 로케일별 제목·교차 언어 검색 — [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
+| **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
+| **스키마** | **v3** → **v4** (`wk_` ID, 해시 샤딩) — [SCHEMA.md](akasha-db/SCHEMA.md) |
+| **규모 목표** | 2026 ~400 · 2027 ~5k · 2028 ~50k · 2030 ~500k |
+| **샤딩** | **유지** (lazy sync) — 슬러그 키 → `hash(id)%256` 전환 예정 |
+| **포스터** | **`posterPath` URL을 DB에 저장** (검색 즉시 표시) + `externalIds`로 재검증 |
+| **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
+| **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
+| **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
+| **글로벌화** | `searchTokens` · [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
 
 동기화 base URL:
 
