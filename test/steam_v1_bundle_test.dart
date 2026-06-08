@@ -22,22 +22,22 @@ void main() {
       expect(WorksRegistry.allWorks.length, 410);
     });
 
-    test('webtoon migration resolves legacy manga work_id', () {
+    test('legacy sub_* resolves to wk_ via legacy_aliases', () {
       final solo = WorksRegistry.getWorkById('sub_manga_solo-leveling_2018');
       expect(solo, isNotNull);
-      expect(solo!.workId, 'sub_webtoon_solo-leveling_2018');
+      expect(solo!.workId, startsWith('wk_'));
       expect(solo.category, MediaCategory.webtoon);
       expect(solo.posterPath, startsWith('http'));
     });
 
-    test('webtoon category filter returns migrated pair', () async {
+    test('webtoon category filter returns wk_ pair', () async {
       final works = await WorksRegistry.getFilteredWorks(
         category: MediaCategory.webtoon,
       );
       expect(works.length, 2);
-      final ids = works.map((w) => w.workId).toSet();
-      expect(ids, contains('sub_webtoon_solo-leveling_2018'));
-      expect(ids, contains('sub_webtoon_tower-of-god_2010'));
+      for (final work in works) {
+        expect(work.workId, startsWith('wk_'));
+      }
     });
   });
 }

@@ -1,52 +1,6 @@
 {
-  "sub_manga_death-note_2003": {
-    "workId": "sub_manga_death-note_2003",
-    "title": "데스노트",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "오바 타케시",
-    "releaseYear": 2003,
-    "description": "이름이 적히면 죽는 노트를 손에 넣은 천재 소년의 심리 스릴러.",
-    "tags": [
-      "스릴러",
-      "초자연",
-      "정의",
-      "다크"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
-    "externalIds": {
-      "tmdb": "13916"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_manga_dr-stone_2017": {
-    "workId": "sub_manga_dr-stone_2017",
-    "title": "Dr.STONE",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "보이치",
-    "releaseYear": 2017,
-    "description": "인류가 석화된 뒤 과학으로 문명을 재건하려는 소년의 모험.",
-    "tags": [
-      "SF",
-      "과학",
-      "서바이벌",
-      "개그"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
-    "externalIds": {
-      "tmdb": "86031"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_manga_dandadan_2021": {
-    "workId": "sub_manga_dandadan_2021",
+  "wk_00000310": {
+    "workId": "wk_00000310",
     "title": "단다단",
     "category": "manga",
     "domain": "subculture",
@@ -66,10 +20,92 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_manga_dandadan_2021"
+    ]
   },
-  "sub_manga_dorohedoro_2000": {
-    "workId": "sub_manga_dorohedoro_2000",
+  "wk_00000311": {
+    "workId": "wk_00000311",
+    "title": "데스노트",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 타케시",
+    "releaseYear": 2003,
+    "description": "이름이 적히면 죽는 노트를 손에 넣은 천재 소년의 심리 스릴러.",
+    "tags": [
+      "스릴러",
+      "초자연",
+      "정의",
+      "다크"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
+    "externalIds": {
+      "tmdb": "13916"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_death-note_2003"
+    ]
+  },
+  "wk_00000313": {
+    "workId": "wk_00000313",
+    "title": "D.Gray-man",
+    "titles": {
+      "ko": "D.Gray-man",
+      "en": "D.Gray-man",
+      "ja": "ディー・グレイマン"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호시노 카츠라",
+    "releaseYear": 2004,
+    "description": "엑소시스트 알렌 워커가 아크와 싸우며 세계를 구하는 다크 판타지 액션.",
+    "tags": [
+      "액션",
+      "판타지",
+      "다크",
+      "악마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_dgray-man_2004"
+    ]
+  },
+  "wk_00000314": {
+    "workId": "wk_00000314",
+    "title": "도라에몽",
+    "titles": {
+      "ko": "도라에몽",
+      "en": "Doraemon",
+      "ja": "ドラえもん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지코 F. 후지오",
+    "releaseYear": 1969,
+    "description": "미래에서 온 고양이 로봇 도라에몽이 노진구를 도우며 겪는 일상과 모험.",
+    "tags": [
+      "코미디",
+      "SF",
+      "가족",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg",
+    "legacyIds": [
+      "sub_manga_doraemon_1969"
+    ]
+  },
+  "wk_00000315": {
+    "workId": "wk_00000315",
     "title": "도로헤도로",
     "category": "manga",
     "domain": "subculture",
@@ -84,10 +120,66 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_dorohedoro_2000"
+    ]
   },
-  "sub_manga_dungeon-meshi_2014": {
-    "workId": "sub_manga_dungeon-meshi_2014",
+  "wk_00000316": {
+    "workId": "wk_00000316",
+    "title": "Dr.STONE",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "보이치",
+    "releaseYear": 2017,
+    "description": "인류가 석화된 뒤 과학으로 문명을 재건하려는 소년의 모험.",
+    "tags": [
+      "SF",
+      "과학",
+      "서바이벌",
+      "개그"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
+    "externalIds": {
+      "tmdb": "86031"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_dr-stone_2017"
+    ]
+  },
+  "wk_00000317": {
+    "workId": "wk_00000317",
+    "title": "드래곤볼",
+    "titles": {
+      "ko": "드래곤볼",
+      "en": "Dragon Ball",
+      "ja": "ドラゴンボール"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토리야마 아키라",
+    "releaseYear": 1984,
+    "description": "손오공이 드래곤볼을 모으며 성장하고 강적과 맞서는 액션 모험 만화.",
+    "tags": [
+      "액션",
+      "모험",
+      "무술",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg",
+    "legacyIds": [
+      "sub_manga_dragon-ball_1984"
+    ]
+  },
+  "wk_00000318": {
+    "workId": "wk_00000318",
     "title": "던전밥",
     "titles": {
       "ko": "던전밥",
@@ -112,77 +204,9 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg",
     "externalIds": {
       "tmdb": "207784"
-    }
-  },
-  "sub_manga_dgray-man_2004": {
-    "workId": "sub_manga_dgray-man_2004",
-    "title": "D.Gray-man",
-    "titles": {
-      "ko": "D.Gray-man",
-      "en": "D.Gray-man",
-      "ja": "ディー・グレイマン"
     },
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "호시노 카츠라",
-    "releaseYear": 2004,
-    "description": "엑소시스트 알렌 워커가 아크와 싸우며 세계를 구하는 다크 판타지 액션.",
-    "tags": [
-      "액션",
-      "판타지",
-      "다크",
-      "악마"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_dragon-ball_1984": {
-    "workId": "sub_manga_dragon-ball_1984",
-    "title": "드래곤볼",
-    "titles": {
-      "ko": "드래곤볼",
-      "en": "Dragon Ball",
-      "ja": "ドラゴンボール"
-    },
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "토리야마 아키라",
-    "releaseYear": 1984,
-    "description": "손오공이 드래곤볼을 모으며 성장하고 강적과 맞서는 액션 모험 만화.",
-    "tags": [
-      "액션",
-      "모험",
-      "무술",
-      "코미디"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg"
-  },
-  "sub_manga_doraemon_1969": {
-    "workId": "sub_manga_doraemon_1969",
-    "title": "도라에몽",
-    "titles": {
-      "ko": "도라에몽",
-      "en": "Doraemon",
-      "ja": "ドラえもん"
-    },
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "후지코 F. 후지오",
-    "releaseYear": 1969,
-    "description": "미래에서 온 고양이 로봇 도라에몽이 노진구를 도우며 겪는 일상과 모험.",
-    "tags": [
-      "코미디",
-      "SF",
-      "가족",
-      "일상"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg"
+    "legacyIds": [
+      "sub_manga_dungeon-meshi_2014"
+    ]
   }
 }

@@ -17,9 +17,7 @@ class RegistryVisibilityService {
   }) {
     if (workId.isEmpty) return false;
 
-    final resolved = WorksRegistry.resolveWorkId(workId);
-    if (userWorkIds.contains(workId) ||
-        (resolved.isNotEmpty && userWorkIds.contains(resolved))) {
+    if (WorksRegistry.setContainsWorkId(userWorkIds, workId)) {
       return false;
     }
 

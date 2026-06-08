@@ -1,6 +1,6 @@
 {
-  "gen_game_zelda-breath-of-the-wild_2017": {
-    "workId": "gen_game_zelda-breath-of-the-wild_2017",
+  "wk_00000147": {
+    "workId": "wk_00000147",
     "title": "젤다의 전설 브레스 오브 더 와일드",
     "category": "game",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "닌텐도",
       "명작"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
+    "legacyIds": [
+      "gen_game_zelda-breath-of-the-wild_2017"
+    ]
   },
-  "sub_game_zenless-zone-zero_2024": {
-    "workId": "sub_game_zenless-zone-zero_2024",
+  "wk_00000290": {
+    "workId": "wk_00000290",
     "title": "젠레스 존 제로",
     "category": "game",
     "domain": "subculture",
@@ -29,6 +32,9 @@
       "도시",
       "서브컬처"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg",
+    "legacyIds": [
+      "sub_game_zenless-zone-zero_2024"
+    ]
   }
 }

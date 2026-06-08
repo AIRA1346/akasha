@@ -1,60 +1,6 @@
 {
-  "sub_animation_konosuba_2016": {
-    "workId": "sub_animation_konosuba_2016",
-    "title": "이 멋진 세계에 축복을!",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Studio Deen",
-    "releaseYear": 2016,
-    "description": "최약 직업으로 이세계에 소환된 소년의 코믹 판타지.",
-    "tags": [
-      "이세계",
-      "코미디",
-      "판타지",
-      "패러디"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_kaiju-no-8_2024": {
-    "workId": "sub_animation_kaiju-no-8_2024",
-    "title": "괴수 8호",
-    "titles": {
-      "ko": "괴수 8호",
-      "en": "Kaiju No. 8",
-      "ja": "怪獣8号"
-    },
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "마츠모토 나오야",
-    "releaseYear": 2024,
-    "description": "청소부 카프카가 괴수와 융합한 뒤 일본 방위대에서 괴수와 싸우는 이야기.",
-    "tags": [
-      "괴수",
-      "액션",
-      "밀리터리",
-      "성장"
-    ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "seasons": [
-        {
-          "label": "1기",
-          "year": 2024,
-          "episodes": 12
-        },
-        {
-          "label": "2기",
-          "year": 2025,
-          "episodes": 12
-        }
-      ],
-      "latestSeason": "2기"
-    }
-  },
-  "sub_animation_kaguya-sama_2019": {
-    "workId": "sub_animation_kaguya-sama_2019",
+  "wk_00000205": {
+    "workId": "wk_00000205",
     "title": "카구야님은 고백받고 싶어",
     "titles": {
       "ko": "카구야님은 고백받고 싶어",
@@ -92,10 +38,52 @@
         }
       ],
       "latestSeason": "3기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_kaguya-sama_2019"
+    ]
   },
-  "sub_animation_kill-la-kill_2013": {
-    "workId": "sub_animation_kill-la-kill_2013",
+  "wk_00000206": {
+    "workId": "wk_00000206",
+    "title": "괴수 8호",
+    "titles": {
+      "ko": "괴수 8호",
+      "en": "Kaiju No. 8",
+      "ja": "怪獣8号"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "마츠모토 나오야",
+    "releaseYear": 2024,
+    "description": "청소부 카프카가 괴수와 융합한 뒤 일본 방위대에서 괴수와 싸우는 이야기.",
+    "tags": [
+      "괴수",
+      "액션",
+      "밀리터리",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2024,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2025,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "legacyIds": [
+      "sub_animation_kaiju-no-8_2024"
+    ]
+  },
+  "wk_00000207": {
+    "workId": "wk_00000207",
     "title": "킬 라 킬",
     "titles": {
       "ko": "킬 라 킬",
@@ -124,10 +112,13 @@
       ],
       "latestSeason": "1기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg",
+    "legacyIds": [
+      "sub_animation_kill-la-kill_2013"
+    ]
   },
-  "sub_animation_kingdom_2012": {
-    "workId": "sub_animation_kingdom_2012",
+  "wk_00000208": {
+    "workId": "wk_00000208",
     "title": "킹덤",
     "titles": {
       "ko": "킹덤",
@@ -156,6 +147,30 @@
       ],
       "latestSeason": "1~5기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg",
+    "legacyIds": [
+      "sub_animation_kingdom_2012"
+    ]
+  },
+  "wk_00000209": {
+    "workId": "wk_00000209",
+    "title": "이 멋진 세계에 축복을!",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Deen",
+    "releaseYear": 2016,
+    "description": "최약 직업으로 이세계에 소환된 소년의 코믹 판타지.",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "패러디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_konosuba_2016"
+    ]
   }
 }

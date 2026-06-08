@@ -1,6 +1,6 @@
 {
-  "sub_manga_edens-zero_2018": {
-    "workId": "sub_manga_edens-zero_2018",
+  "wk_00000319": {
+    "workId": "wk_00000319",
     "title": "에덴스 제로",
     "titles": {
       "ko": "에덴스 제로",
@@ -21,6 +21,9 @@
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg",
+    "legacyIds": [
+      "sub_manga_edens-zero_2018"
+    ]
   }
 }

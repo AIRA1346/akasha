@@ -1,6 +1,6 @@
 {
-  "gen_movie_avengers-endgame_2019": {
-    "workId": "gen_movie_avengers-endgame_2019",
+  "wk_00000150": {
+    "workId": "wk_00000150",
     "title": "어벤져스: 엔드게임",
     "category": "movie",
     "domain": "generalCulture",
@@ -12,10 +12,13 @@
       "액션",
       "SF",
       "MCU"
+    ],
+    "legacyIds": [
+      "gen_movie_avengers-endgame_2019"
     ]
   },
-  "sub_movie_a-silent-voice_2016": {
-    "workId": "sub_movie_a-silent-voice_2016",
+  "wk_00000402": {
+    "workId": "wk_00000402",
     "title": "형색의 보이스",
     "category": "movie",
     "domain": "subculture",
@@ -25,6 +28,9 @@
     "tags": [
       "영화",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_a-silent-voice_2016"
     ]
   }
 }

@@ -1,6 +1,6 @@
 {
-  "sub_manga_vagabond_1998": {
-    "workId": "sub_manga_vagabond_1998",
+  "wk_00000395": {
+    "workId": "wk_00000395",
     "title": "바감동",
     "category": "manga",
     "domain": "subculture",
@@ -12,10 +12,13 @@
       "무도",
       "역사",
       "성장"
+    ],
+    "legacyIds": [
+      "sub_manga_vagabond_1998"
     ]
   },
-  "sub_manga_vinland-saga_2005": {
-    "workId": "sub_manga_vinland-saga_2005",
+  "wk_00000396": {
+    "workId": "wk_00000396",
     "title": "빈란드 사가",
     "category": "manga",
     "domain": "subculture",
@@ -30,6 +33,9 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_vinland-saga_2005"
+    ]
   }
 }

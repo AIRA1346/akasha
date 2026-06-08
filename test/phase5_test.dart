@@ -41,7 +41,10 @@ is_hall_of_fame: true
 
       final item = MarkdownParser.deserialize(brokenYamlContent, '대체 타이틀');
 
-      expect(item.workId, 'gen_game_appid1245620_2022');
+      expect(
+        item.workId,
+        WorksRegistry.getWorkById('gen_game_appid1245620_2022')!.workId,
+      );
       expect(item.title, '엘든 링 (문법 깨짐)');
       expect(item.category, MediaCategory.game);
       expect(item.domain, AppDomain.generalCulture);

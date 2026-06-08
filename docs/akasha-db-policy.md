@@ -137,7 +137,8 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 | 문서 | 내용 |
 |------|------|
 | **이 문서** | 사전 **구축·운영·법무** (마스터) |
-| [data-architecture-redesign.md](data-architecture-redesign.md) | v2 아키텍처·로드맵 |
+| [data-architecture-redesign.md](data-architecture-redesign.md) | v2 아키텍처·ADR |
+| [v4-migration-plan.md](v4-migration-plan.md) | **Steam 전 v4 실행 계획** |
 | [canonicalization-policy.md](canonicalization-policy.md) | identity·dedupe |
 | [catalog-ownership.md](catalog-ownership.md) | 소유권·3계층 |
 | [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | 포스터 URL |
@@ -149,8 +150,10 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 ## 9. 구현·백로그
 
 - [x] CI denylist, AniList bulk 제거
-- [x] ~410작 엄선, `posterPath` in DB
-- [ ] `wk_` ID 전환 (Phase 1)
-- [ ] canonicalization-policy CI 연동 (Phase 2)
-- [ ] 해시 샤딩 v4 (Phase 3)
-- [ ] Registry Pipeline (Phase 4)
+- [x] ~410작 엄선, `posterPath` in DB, M1 dogfood
+- [ ] **Steam 게이트** — [v4-migration-plan.md](v4-migration-plan.md) Phase A~D
+  - [ ] `assign_wk_ids.dart` + `id_registry.json`
+  - [ ] 앱·볼트 `wk_` 호환
+  - [ ] dedupe CI
+  - [ ] 해시 샤딩 v4
+- [ ] Registry Pipeline · AI 수집 (출시 후)

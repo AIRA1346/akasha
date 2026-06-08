@@ -1,24 +1,6 @@
 {
-  "sub_animation_violet-evergarden_2018": {
-    "workId": "sub_animation_violet-evergarden_2018",
-    "title": "바이올렛 에버가든",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Kyoto Animation",
-    "releaseYear": 2018,
-    "description": "전쟁 고아가 대필사가 되며 사랑의 의미를 배우는 감동 드라마.",
-    "tags": [
-      "감동",
-      "드라마",
-      "성장",
-      "힐링"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_vinland-saga_2019": {
-    "workId": "sub_animation_vinland-saga_2019",
+  "wk_00000247": {
+    "workId": "wk_00000247",
     "title": "빈란드 사가",
     "titles": {
       "ko": "빈란드 사가",
@@ -52,6 +34,30 @@
       ],
       "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
+    "legacyIds": [
+      "sub_animation_vinland-saga_2019"
+    ]
+  },
+  "wk_00000248": {
+    "workId": "wk_00000248",
+    "title": "바이올렛 에버가든",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kyoto Animation",
+    "releaseYear": 2018,
+    "description": "전쟁 고아가 대필사가 되며 사랑의 의미를 배우는 감동 드라마.",
+    "tags": [
+      "감동",
+      "드라마",
+      "성장",
+      "힐링"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_violet-evergarden_2018"
+    ]
   }
 }

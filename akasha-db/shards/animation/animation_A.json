@@ -1,29 +1,6 @@
 {
-  "sub_animation_attack-on-titan_2013": {
-    "workId": "sub_animation_attack-on-titan_2013",
-    "title": "진격의 거인",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "WIT STUDIO / MAPPA",
-    "releaseYear": 2013,
-    "description": "거대한 벽 너머의 거인과 맞서는 인류의 생존 액션.",
-    "tags": [
-      "액션",
-      "다크",
-      "미스터리",
-      "명작"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
-    "externalIds": {
-      "tmdb": "1429"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_animation_angel-beats_2010": {
-    "workId": "sub_animation_angel-beats_2010",
+  "wk_00000170": {
+    "workId": "wk_00000170",
     "title": "엔젤 비츠!",
     "category": "animation",
     "domain": "subculture",
@@ -38,10 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_angel-beats_2010"
+    ]
   },
-  "sub_animation_apothecary-diaries_2023": {
-    "workId": "sub_animation_apothecary-diaries_2023",
+  "wk_00000171": {
+    "workId": "wk_00000171",
     "title": "약사의 혼잣말",
     "titles": {
       "ko": "약사의 혼잣말",
@@ -79,6 +59,35 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
     "externalIds": {
       "tmdb": "220542"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_apothecary-diaries_2023"
+    ]
+  },
+  "wk_00000172": {
+    "workId": "wk_00000172",
+    "title": "진격의 거인",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WIT STUDIO / MAPPA",
+    "releaseYear": 2013,
+    "description": "거대한 벽 너머의 거인과 맞서는 인류의 생존 액션.",
+    "tags": [
+      "액션",
+      "다크",
+      "미스터리",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
+    "externalIds": {
+      "tmdb": "1429"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_attack-on-titan_2013"
+    ]
   }
 }

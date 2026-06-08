@@ -1,52 +1,6 @@
 {
-  "sub_manga_chainsaw-man_2018": {
-    "workId": "sub_manga_chainsaw-man_2018",
-    "title": "체인소 맨",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
-    "releaseYear": 2018,
-    "description": "가난한 소년 덴지가 체인소의 악마와 합체하는 이야기.",
-    "tags": [
-      "액션",
-      "다크",
-      "악마",
-      "카오스"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
-    "externalIds": {
-      "tmdb": "114410"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_manga_detective-conan_1994": {
-    "workId": "sub_manga_detective-conan_1994",
-    "title": "명탐정 코난",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아오야마 고쇼 (Gosho Aoyama)",
-    "releaseYear": 1994,
-    "description": "소년 탐정 에도가와 코난의 추리 활약.",
-    "tags": [
-      "추리",
-      "소년만화",
-      "럽코",
-      "장수작"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
-    "externalIds": {
-      "tmdb": "30983"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "gen_manga_crayon-shin-chan_1990": {
-    "workId": "gen_manga_crayon-shin-chan_1990",
+  "wk_00000148": {
+    "workId": "wk_00000148",
     "title": "짱구는 못말려",
     "category": "manga",
     "domain": "generalCulture",
@@ -61,74 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_cardcaptor-sakura_1996": {
-    "workId": "sub_manga_cardcaptor-sakura_1996",
-    "title": "카드캡터 체리",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "CLAMP",
-    "releaseYear": 1996,
-    "description": "마법 카드를 수집하는 소녀의 판타지 모험.",
-    "tags": [
-      "판타지",
-      "마법",
-      "소녀",
-      "순정"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
-    "externalIds": {
-      "tmdb": "35790"
     },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
+    "legacyIds": [
+      "gen_manga_crayon-shin-chan_1990"
+    ]
   },
-  "sub_manga_chihayafuru_2007": {
-    "workId": "sub_manga_chihayafuru_2007",
-    "title": "치하야후루",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "스에마스 치카",
-    "releaseYear": 2007,
-    "description": "경쟁 카루타를 통해 성장하는 청춘 스포츠 로맨스.",
-    "tags": [
-      "스포츠",
-      "카루타",
-      "청춘",
-      "로맨스"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_cells-at-work_2015": {
-    "workId": "sub_manga_cells-at-work_2015",
-    "title": "일하는 세포",
-    "titles": {
-      "ko": "일하는 세포",
-      "en": "Cells at Work!",
-      "ja": "はたらく細胞"
-    },
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "시미즈 하루카",
-    "releaseYear": 2015,
-    "description": "인체 속 세포들이 질병과 싸우는 모습을 의인화한 교육·코미디 만화.",
-    "tags": [
-      "교육",
-      "코미디",
-      "SF",
-      "의학"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_captain-tsubasa_1981": {
-    "workId": "sub_manga_captain-tsubasa_1981",
+  "wk_00000305": {
+    "workId": "wk_00000305",
     "title": "캡틴 츠바사",
     "titles": {
       "ko": "캡틴 츠바사",
@@ -149,6 +42,134 @@
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg",
+    "legacyIds": [
+      "sub_manga_captain-tsubasa_1981"
+    ]
+  },
+  "wk_00000306": {
+    "workId": "wk_00000306",
+    "title": "카드캡터 체리",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "CLAMP",
+    "releaseYear": 1996,
+    "description": "마법 카드를 수집하는 소녀의 판타지 모험.",
+    "tags": [
+      "판타지",
+      "마법",
+      "소녀",
+      "순정"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
+    "externalIds": {
+      "tmdb": "35790"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_cardcaptor-sakura_1996"
+    ]
+  },
+  "wk_00000307": {
+    "workId": "wk_00000307",
+    "title": "일하는 세포",
+    "titles": {
+      "ko": "일하는 세포",
+      "en": "Cells at Work!",
+      "ja": "はたらく細胞"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "시미즈 하루카",
+    "releaseYear": 2015,
+    "description": "인체 속 세포들이 질병과 싸우는 모습을 의인화한 교육·코미디 만화.",
+    "tags": [
+      "교육",
+      "코미디",
+      "SF",
+      "의학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_cells-at-work_2015"
+    ]
+  },
+  "wk_00000308": {
+    "workId": "wk_00000308",
+    "title": "체인소 맨",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "releaseYear": 2018,
+    "description": "가난한 소년 덴지가 체인소의 악마와 합체하는 이야기.",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
+    "externalIds": {
+      "tmdb": "114410"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_chainsaw-man_2018"
+    ]
+  },
+  "wk_00000309": {
+    "workId": "wk_00000309",
+    "title": "치하야후루",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스에마스 치카",
+    "releaseYear": 2007,
+    "description": "경쟁 카루타를 통해 성장하는 청춘 스포츠 로맨스.",
+    "tags": [
+      "스포츠",
+      "카루타",
+      "청춘",
+      "로맨스"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_chihayafuru_2007"
+    ]
+  },
+  "wk_00000312": {
+    "workId": "wk_00000312",
+    "title": "명탐정 코난",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아오야마 고쇼 (Gosho Aoyama)",
+    "releaseYear": 1994,
+    "description": "소년 탐정 에도가와 코난의 추리 활약.",
+    "tags": [
+      "추리",
+      "소년만화",
+      "럽코",
+      "장수작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
+    "externalIds": {
+      "tmdb": "30983"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_detective-conan_1994"
+    ]
   }
 }

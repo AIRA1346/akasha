@@ -241,8 +241,7 @@ class FranchiseFusionService {
     FormatSlotState state;
     if (prefs.isHidden(workId)) {
       state = FormatSlotState.hidden;
-    } else if (trackedWorkIds.contains(workId) ||
-        (resolved.isNotEmpty && trackedWorkIds.contains(resolved))) {
+    } else if (WorksRegistry.setContainsWorkId(trackedWorkIds, workId)) {
       state = FormatSlotState.tracked;
     } else {
       state = FormatSlotState.catalogOnly;

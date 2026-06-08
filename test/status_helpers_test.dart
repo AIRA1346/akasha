@@ -2,11 +2,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/franchise_fusion_service.dart';
 import 'package:akasha/services/franchise_registry.dart';
+import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/browse_section_filters.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:akasha/utils/status_helpers.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(() async {
+    await WorksRegistry.init();
+    await FranchiseRegistry.init();
+  });
   test('isWatchlistItem uses enum labels for content and game', () {
     final content = createItem(
       workId: 'sub_manga_test_2020',
@@ -37,10 +44,7 @@ void main() {
   });
 
   test('isWatchlistBrowseCard includes franchise when any member is watchlist',
-      () async {
-    TestWidgetsFlutterBinding.ensureInitialized();
-    await FranchiseRegistry.init();
-
+      () {
     final manga = createItem(
       workId: 'sub_manga_rezero_2014',
       title: 'Re:제로부터 시작하는 이세계 생활',

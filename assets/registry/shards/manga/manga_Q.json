@@ -1,6 +1,6 @@
 {
-  "sub_manga_quintessential-quintuplets_2017": {
-    "workId": "sub_manga_quintessential-quintuplets_2017",
+  "wk_00000371": {
+    "workId": "wk_00000371",
     "title": "5등분의 신부",
     "category": "manga",
     "domain": "subculture",
@@ -20,6 +20,9 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_manga_quintessential-quintuplets_2017"
+    ]
   }
 }

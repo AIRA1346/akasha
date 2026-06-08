@@ -1,47 +1,6 @@
 {
-  "sub_manga_tokyo-revengers_2017": {
-    "workId": "sub_manga_tokyo-revengers_2017",
-    "title": "도쿄 리벤저스",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "와카모토 켄",
-    "releaseYear": 2017,
-    "description": "과거로 돌아가 양아치 조직과 운명을 바꾸려는 소년의 이야기.",
-    "tags": [
-      "시간여행",
-      "갱",
-      "청춘",
-      "액션"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_tokyo-ghoul_2011": {
-    "workId": "sub_manga_tokyo-ghoul_2011",
-    "title": "도쿄 구울",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "이시다 슈이",
-    "releaseYear": 2011,
-    "description": "인간을 사냥하는 구울이 된 대학생의 어두운 서울 생존기.",
-    "tags": [
-      "다크",
-      "액션",
-      "호러",
-      "서울"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
-    "externalIds": {
-      "tmdb": "61374"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_manga_tensura_2014": {
-    "workId": "sub_manga_tensura_2014",
+  "wk_00000388": {
+    "workId": "wk_00000388",
     "title": "전생했더니 슬라임이었던 건",
     "category": "manga",
     "domain": "subculture",
@@ -56,28 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_tensura_2014"
+    ]
   },
-  "sub_manga_toradora_2007": {
-    "workId": "sub_manga_toradora_2007",
-    "title": "토라도라!",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타카에마시 유우",
-    "releaseYear": 2007,
-    "description": "까칠한 소녀와 소심한 소년이 연인 연기를 하며 벌어지는 로맨스.",
-    "tags": [
-      "로맨스",
-      "코미디",
-      "학원",
-      "청춘"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_toilet-bound-hanako-kun_2014": {
-    "workId": "sub_manga_toilet-bound-hanako-kun_2014",
+  "wk_00000389": {
+    "workId": "wk_00000389",
     "title": "화장실의 하니코 군",
     "titles": {
       "ko": "화장실의 하니코 군",
@@ -97,6 +41,77 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_toilet-bound-hanako-kun_2014"
+    ]
+  },
+  "wk_00000390": {
+    "workId": "wk_00000390",
+    "title": "도쿄 구울",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이시다 슈이",
+    "releaseYear": 2011,
+    "description": "인간을 사냥하는 구울이 된 대학생의 어두운 서울 생존기.",
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "서울"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
+    "externalIds": {
+      "tmdb": "61374"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_tokyo-ghoul_2011"
+    ]
+  },
+  "wk_00000391": {
+    "workId": "wk_00000391",
+    "title": "도쿄 리벤저스",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와카모토 켄",
+    "releaseYear": 2017,
+    "description": "과거로 돌아가 양아치 조직과 운명을 바꾸려는 소년의 이야기.",
+    "tags": [
+      "시간여행",
+      "갱",
+      "청춘",
+      "액션"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_tokyo-revengers_2017"
+    ]
+  },
+  "wk_00000392": {
+    "workId": "wk_00000392",
+    "title": "토라도라!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카에마시 유우",
+    "releaseYear": 2007,
+    "description": "까칠한 소녀와 소심한 소년이 연인 연기를 하며 벌어지는 로맨스.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_toradora_2007"
+    ]
   }
 }

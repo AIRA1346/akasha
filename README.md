@@ -57,14 +57,14 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 ## 📚 글로벌 작품 사전 (akasha-db)
 
 > **최종 목표:** 세상의 모든 작품 사전 (IMDb + OpenLibrary급)  
-> **현재 단계:** 엄선 **~410작**부터 시작 → 단계적 확장 ([data-architecture-redesign.md](docs/data-architecture-redesign.md))
+> **현재 단계:** 엄선 **~410작** · **Steam 전 v4**(`wk_`·해시 샤드) — [v4-migration-plan.md](docs/v4-migration-plan.md)
 
 | 항목 | 정책 |
 |------|------|
 | **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
-| **스키마** | **v3** → **v4** (`wk_` ID, 해시 샤딩) — [SCHEMA.md](akasha-db/SCHEMA.md) |
-| **규모 목표** | 2026 ~400 · 2027 ~5k · 2028 ~50k · 2030 ~500k |
-| **샤딩** | **유지** (lazy sync) — 슬러그 키 → `hash(id)%256` 전환 예정 |
+| **스키마** | **v3** (현재) → **v4** Steam 게이트 — [SCHEMA.md](akasha-db/SCHEMA.md) |
+| **규모 목표** | 2026 ~410(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
+| **샤딩** | **유지** — Steam 전 `hash(wk_)%256` 전환 ([v4-migration-plan.md](docs/v4-migration-plan.md)) |
 | **포스터** | **`posterPath` URL을 DB에 저장** (검색 즉시 표시) + `externalIds`로 재검증 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |

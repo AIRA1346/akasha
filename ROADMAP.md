@@ -1,7 +1,8 @@
 # AKASHA Roadmap
 
-> 목표: **2026 Q3** Steam (Windows) v1 출시  
-> 기준일: 2026-06-07
+> 목표: **2026 Q3** Steam (Windows) v1 출시 — **v4 데이터 아키텍처 완료 후**  
+> 기준일: 2026-06-08  
+> 실행 계획: [docs/v4-migration-plan.md](docs/v4-migration-plan.md)
 
 ---
 
@@ -11,7 +12,7 @@
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | **최종: 전 작품 사전** · 현재 엄선 **~410작** → Pipeline으로 확장 |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 **~410작** · Steam 전 **v4**(`wk_`·해시 샤드) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
@@ -64,24 +65,31 @@
 - [x] 번들 smoke (`steam_v1_bundle_test` — ~410작·웹툰 이관)
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
 - [x] **akasha-db GitHub push** — ~410작 엄선 카탈로그 반영
-- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test 95/95 · ci_registry_check)
-- [ ] 내부 dogfood (본인 볼트 + 동기화 검증) — `.\scripts\dogfood_precheck.ps1` 후 수동
-  - [ ] 볼트 연결·watch·`.md` 저장/재로드
-  - [ ] 검색: 로컬 + 사전 + 직접 등록
-  - [ ] 필터·웹툰 카테고리·프랜차이즈 IP 1카드
-  - [ ] 동기화(수동) + AppBar 「사전 캐시 삭제」 후 번들 재로드
-  - [ ] 나의 서재 아카이브·테마 피커
+- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test 96/96 · ci_registry_check)
+- [x] 내부 dogfood (본인 볼트 + 동기화 검증)
+- [x] 나만의 서재 `master_archive` (대시보드 `master_index`와 대응)
 
-### M2 — Steam 제출 준비 (2026 Q3 초)
+### M-v4 — 데이터 아키텍처 v4 (Steam 출시 **게이트**)
 
-- Steamworks 앱 등록, 빌드 업로드
-- 스토어 페이지 (스크린샷, 태그, 한/영 설명)
-- IAP 상품 등록 (서재 테마, 서포터 팩)
+> 상세: [v4-migration-plan.md](docs/v4-migration-plan.md) · 설계: [data-architecture-redesign.md](docs/data-architecture-redesign.md)
+
+- [ ] **Phase A** — `assign_wk_ids.dart` + `id_registry.json` + `legacy_aliases`
+- [ ] **Phase B** — `WorkIdCodec`·loader·볼트 `wk_` 해석
+- [ ] **Phase C** — `dedupe_linter` + canonicalization CI
+- [ ] **Phase D** — 해시 샤딩 v4 + manifest v4 + builder/loader/sync
+- [ ] v4 dogfood + akasha-db GitHub push
+
+### M2 — Steam 제출 준비 (v4 후반 ~ Q3)
+
+- [ ] `main` push (akasha + akasha-db)
+- [ ] Steamworks 앱 등록, 빌드 업로드
+- [ ] 스토어 페이지 (스크린샷, 태그, 한/영 설명)
+- [ ] IAP 상품 등록 (서재 테마, 서포터 팩)
 
 ### M3 — Steam v1 출시 (2026 Q3)
 
-- Windows 무료 출시
-- akasha-db 운영 가이드 공개 (기여 PR 워크플로)
+- [ ] Windows 무료 출시
+- [ ] akasha-db 운영 가이드 공개 (기여 PR 워크플로)
 
 ---
 
@@ -103,21 +111,21 @@
 
 ## 데이터·인프라 백로그
 
-> **아키텍처 v2:** [data-architecture-redesign.md](docs/data-architecture-redesign.md) · [canonicalization-policy.md](docs/canonicalization-policy.md)  
-> 전 작품 사전 · **샤딩 유지** (해시 키) · `wk_` ID · **posterPath DB 유지** · Registry Pipeline
+> **Steam 게이트:** [v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~D  
+> **비전:** [data-architecture-redesign.md](docs/data-architecture-redesign.md)
 
-### 구현 우선순위 (합의)
+### Steam 전 (v4 게이트)
 
-1. **`wk_` 영구 ID** + `legacy_aliases`
-2. **canonicalization·dedupe** 규칙 + CI
-3. **해시 샤딩** `hash(wk_) % 256` — 슬러그 키(`manga_K`) 폐기
-4. **Registry Pipeline** (extract → dedupe → shard → Git)
-5. **AI 자동 수집** (2027~)
+- [ ] Phase A: `assign_wk_ids` + `id_registry.json`
+- [ ] Phase B: 앱·볼트 `wk_` 호환
+- [ ] Phase C: `dedupe_linter` CI
+- [ ] Phase D: 해시 샤딩 v4
 
-- [ ] Phase 1: `wk_` ID 전환
-- [ ] Phase 2: dedupe linter · [canonicalization-policy.md](docs/canonicalization-policy.md) CI
-- [ ] Phase 3: 해시 샤딩 v4 migrate
-- [ ] Phase 4: Registry Pipeline 스켈레톤
+### Steam 후
+
+- [ ] Registry Pipeline 스켈레톤
+- [ ] AI 자동 수집 (2027~)
+- [ ] 50k+ CDN·R2
 - [ ] searchTokens 품질 CI · poster URL 배치 재검증
 
 - [x] cold start preload 축소 (`main.dart` — master_index 진입 시에만 full prefetch)

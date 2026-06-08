@@ -1,6 +1,6 @@
 {
-  "sub_animation_weathering-with-you_2019": {
-    "workId": "sub_animation_weathering-with-you_2019",
+  "wk_00000249": {
+    "workId": "wk_00000249",
     "title": "날씨의 아이",
     "category": "animation",
     "domain": "subculture",
@@ -20,10 +20,13 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_animation_weathering-with-you_2019"
+    ]
   },
-  "sub_animation_wind-breaker_2024": {
-    "workId": "sub_animation_wind-breaker_2024",
+  "wk_00000250": {
+    "workId": "wk_00000250",
     "title": "윈드 브레이커",
     "titles": {
       "ko": "윈드 브레이커",
@@ -51,6 +54,9 @@
         }
       ],
       "latestSeason": "1기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_wind-breaker_2024"
+    ]
   }
 }

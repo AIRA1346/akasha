@@ -1,0 +1,2878 @@
+{
+  "version": 1,
+  "nextWorkId": 411,
+  "byWk": {
+    "wk_00000001": {
+      "category": "animation",
+      "legacyIds": [
+        "gen_animation_cowboy-bebop_1998"
+      ]
+    },
+    "wk_00000002": {
+      "category": "animation",
+      "legacyIds": [
+        "gen_animation_my-neighbor-totoro_1988"
+      ]
+    },
+    "wk_00000003": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_1984_1949"
+      ]
+    },
+    "wk_00000004": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_da-vinci-code_2003"
+      ]
+    },
+    "wk_00000005": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_dune_1965"
+      ]
+    },
+    "wk_00000006": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_harry-potter-philosophers-stone_1997"
+      ]
+    },
+    "wk_00000007": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_hitchhiker-guide_1979"
+      ]
+    },
+    "wk_00000008": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_hunger-games_2008"
+      ]
+    },
+    "wk_00000009": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_laplace-novel_2015"
+      ]
+    },
+    "wk_00000010": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_lord-of-the-rings-fellowship_1954"
+      ]
+    },
+    "wk_00000011": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_murder-on-orient-express_1934"
+      ]
+    },
+    "wk_00000012": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_norwegian-wood_1987"
+      ]
+    },
+    "wk_00000013": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_percy-jackson_2005"
+      ]
+    },
+    "wk_00000014": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_ready-player-one_2011"
+      ]
+    },
+    "wk_00000015": {
+      "category": "book",
+      "legacyIds": [
+        "gen_book_sherlock-holmes_1887"
+      ]
+    },
+    "wk_00000016": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_breaking-bad_2008"
+      ]
+    },
+    "wk_00000017": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_chernobyl_2019"
+      ]
+    },
+    "wk_00000018": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_extraordinary-attorney-woo_2022"
+      ]
+    },
+    "wk_00000019": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_game-of-thrones_2011"
+      ]
+    },
+    "wk_00000020": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_kingdom_2019"
+      ]
+    },
+    "wk_00000021": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_squid-game_2021"
+      ]
+    },
+    "wk_00000022": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_stranger-things_2016"
+      ]
+    },
+    "wk_00000023": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_the-mandalorian_2019"
+      ]
+    },
+    "wk_00000024": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_the-office-us_2005"
+      ]
+    },
+    "wk_00000025": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_the-witcher_2019"
+      ]
+    },
+    "wk_00000026": {
+      "category": "drama",
+      "legacyIds": [
+        "gen_drama_true-detective_2014"
+      ]
+    },
+    "wk_00000027": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid105600_2011"
+      ]
+    },
+    "wk_00000028": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1085660_2019"
+      ]
+    },
+    "wk_00000029": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid108600_2013"
+      ]
+    },
+    "wk_00000030": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1086940_2020"
+      ]
+    },
+    "wk_00000031": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1091500_2020"
+      ]
+    },
+    "wk_00000032": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1142710_2022"
+      ]
+    },
+    "wk_00000033": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1145350_2024"
+      ]
+    },
+    "wk_00000034": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1145360_2020"
+      ]
+    },
+    "wk_00000035": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1151340_2023"
+      ]
+    },
+    "wk_00000036": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1151640_2020"
+      ]
+    },
+    "wk_00000037": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1158310_2020"
+      ]
+    },
+    "wk_00000038": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1172470_2020"
+      ]
+    },
+    "wk_00000039": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1174180_2018"
+      ]
+    },
+    "wk_00000040": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1174180_2019"
+      ]
+    },
+    "wk_00000041": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1196590_2021"
+      ]
+    },
+    "wk_00000042": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1203220_2023"
+      ]
+    },
+    "wk_00000043": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid12120_2004"
+      ]
+    },
+    "wk_00000044": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid12210_2008"
+      ]
+    },
+    "wk_00000045": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1245620_2022"
+      ]
+    },
+    "wk_00000046": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1284190_2021"
+      ]
+    },
+    "wk_00000047": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1325200_2020"
+      ]
+    },
+    "wk_00000048": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1326470_2023"
+      ]
+    },
+    "wk_00000049": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1328670_2024"
+      ]
+    },
+    "wk_00000050": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1454400_2021"
+      ]
+    },
+    "wk_00000051": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1466860_2021"
+      ]
+    },
+    "wk_00000052": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1517290_2021"
+      ]
+    },
+    "wk_00000053": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1593500_2022"
+      ]
+    },
+    "wk_00000054": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1599340_2022"
+      ]
+    },
+    "wk_00000055": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1623730_2024"
+      ]
+    },
+    "wk_00000056": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1627720_2023"
+      ]
+    },
+    "wk_00000057": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1659420_2022"
+      ]
+    },
+    "wk_00000058": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1771300_2024"
+      ]
+    },
+    "wk_00000059": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1817070_2022"
+      ]
+    },
+    "wk_00000060": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1888160_2023"
+      ]
+    },
+    "wk_00000061": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1888930_2023"
+      ]
+    },
+    "wk_00000062": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1938090_2022"
+      ]
+    },
+    "wk_00000063": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1962663_2017"
+      ]
+    },
+    "wk_00000064": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid1966720_2023"
+      ]
+    },
+    "wk_00000065": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2050650_2023"
+      ]
+    },
+    "wk_00000066": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid205100_2012"
+      ]
+    },
+    "wk_00000067": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid219740_2013"
+      ]
+    },
+    "wk_00000068": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2215430_2023"
+      ]
+    },
+    "wk_00000069": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2218500_2024"
+      ]
+    },
+    "wk_00000070": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid22300_2008"
+      ]
+    },
+    "wk_00000071": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid22380_2010"
+      ]
+    },
+    "wk_00000072": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid227300_2012"
+      ]
+    },
+    "wk_00000073": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid230410_2013"
+      ]
+    },
+    "wk_00000074": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid233450_2015"
+      ]
+    },
+    "wk_00000075": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2358720_2024"
+      ]
+    },
+    "wk_00000076": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid236390_2013"
+      ]
+    },
+    "wk_00000077": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid236850_2013"
+      ]
+    },
+    "wk_00000078": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid239140_2015"
+      ]
+    },
+    "wk_00000079": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2420110_2024"
+      ]
+    },
+    "wk_00000080": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid242050_2017"
+      ]
+    },
+    "wk_00000081": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid242760_2018"
+      ]
+    },
+    "wk_00000082": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid251570_2016"
+      ]
+    },
+    "wk_00000083": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid252490_2013"
+      ]
+    },
+    "wk_00000084": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid252490_2018"
+      ]
+    },
+    "wk_00000085": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid252950_2015"
+      ]
+    },
+    "wk_00000086": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid2531310_2024"
+      ]
+    },
+    "wk_00000087": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid255710_2015"
+      ]
+    },
+    "wk_00000088": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid261550_2015"
+      ]
+    },
+    "wk_00000089": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid268910_2017"
+      ]
+    },
+    "wk_00000090": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid271590_2013"
+      ]
+    },
+    "wk_00000091": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid271590_2015"
+      ]
+    },
+    "wk_00000092": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid281990_2016"
+      ]
+    },
+    "wk_00000093": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid294100_2018"
+      ]
+    },
+    "wk_00000094": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid322330_2016"
+      ]
+    },
+    "wk_00000095": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid3240220_2001"
+      ]
+    },
+    "wk_00000096": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid346110_2017"
+      ]
+    },
+    "wk_00000097": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid359550_2015"
+      ]
+    },
+    "wk_00000098": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid367520_2017"
+      ]
+    },
+    "wk_00000099": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid374320_2016"
+      ]
+    },
+    "wk_00000100": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid377160_2015"
+      ]
+    },
+    "wk_00000101": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid379430_2018"
+      ]
+    },
+    "wk_00000102": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid381210_2016"
+      ]
+    },
+    "wk_00000103": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid394360_2016"
+      ]
+    },
+    "wk_00000104": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid4000_2007"
+      ]
+    },
+    "wk_00000105": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid400_2007"
+      ]
+    },
+    "wk_00000106": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid413150_2016"
+      ]
+    },
+    "wk_00000107": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid427520_2020"
+      ]
+    },
+    "wk_00000108": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid440900_2018"
+      ]
+    },
+    "wk_00000109": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid440_2007"
+      ]
+    },
+    "wk_00000110": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid485510_2017"
+      ]
+    },
+    "wk_00000111": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid489830_2016"
+      ]
+    },
+    "wk_00000112": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid493340_2016"
+      ]
+    },
+    "wk_00000113": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid526870_2020"
+      ]
+    },
+    "wk_00000114": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid534380_2022"
+      ]
+    },
+    "wk_00000115": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid548430_2020"
+      ]
+    },
+    "wk_00000116": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid548570_2017"
+      ]
+    },
+    "wk_00000117": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid550_2009"
+      ]
+    },
+    "wk_00000118": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid570_2013"
+      ]
+    },
+    "wk_00000119": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid578080_2017"
+      ]
+    },
+    "wk_00000120": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid594650_2019"
+      ]
+    },
+    "wk_00000121": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid730_2012"
+      ]
+    },
+    "wk_00000122": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid730_2023"
+      ]
+    },
+    "wk_00000123": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid774181_2021"
+      ]
+    },
+    "wk_00000124": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid774361_2015"
+      ]
+    },
+    "wk_00000125": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid782330_2020"
+      ]
+    },
+    "wk_00000126": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid813780_2019"
+      ]
+    },
+    "wk_00000127": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid814380_2019"
+      ]
+    },
+    "wk_00000128": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid883710_2019"
+      ]
+    },
+    "wk_00000129": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid892970_2021"
+      ]
+    },
+    "wk_00000130": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid949230_2023"
+      ]
+    },
+    "wk_00000131": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid952060_2020"
+      ]
+    },
+    "wk_00000132": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid960090_2016"
+      ]
+    },
+    "wk_00000133": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid960090_2019"
+      ]
+    },
+    "wk_00000134": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_appid990080_2023"
+      ]
+    },
+    "wk_00000135": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_axiom_2024"
+      ]
+    },
+    "wk_00000136": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_bioshock_2007"
+      ]
+    },
+    "wk_00000137": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_diablo-4_2023"
+      ]
+    },
+    "wk_00000138": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_half-life-2_2004"
+      ]
+    },
+    "wk_00000139": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_league-of-legends_2009"
+      ]
+    },
+    "wk_00000140": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_mass-effect-2_2010"
+      ]
+    },
+    "wk_00000141": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_minecraft_2011"
+      ]
+    },
+    "wk_00000142": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_overwatch-2_2022"
+      ]
+    },
+    "wk_00000143": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_portal-2_2011"
+      ]
+    },
+    "wk_00000144": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_skyrim_2011"
+      ]
+    },
+    "wk_00000145": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_stardew-valley_2016"
+      ]
+    },
+    "wk_00000146": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_witcher-3_2015"
+      ]
+    },
+    "wk_00000147": {
+      "category": "game",
+      "legacyIds": [
+        "gen_game_zelda-breath-of-the-wild_2017"
+      ]
+    },
+    "wk_00000148": {
+      "category": "manga",
+      "legacyIds": [
+        "gen_manga_crayon-shin-chan_1990"
+      ]
+    },
+    "wk_00000149": {
+      "category": "manga",
+      "legacyIds": [
+        "gen_manga_math-thief_2006"
+      ]
+    },
+    "wk_00000150": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_avengers-endgame_2019"
+      ]
+    },
+    "wk_00000151": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_barbie-2023_2023"
+      ]
+    },
+    "wk_00000152": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_dune-2021_2021"
+      ]
+    },
+    "wk_00000153": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_everything-everywhere_2022"
+      ]
+    },
+    "wk_00000154": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_fight-club_1999"
+      ]
+    },
+    "wk_00000155": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_forrest-gump_1994"
+      ]
+    },
+    "wk_00000156": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_inception_2010"
+      ]
+    },
+    "wk_00000157": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_interstellar_2014"
+      ]
+    },
+    "wk_00000158": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_lord-of-the-rings-fellowship_2001"
+      ]
+    },
+    "wk_00000159": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_oppenheimer-2023_2023"
+      ]
+    },
+    "wk_00000160": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_parasite-2019_2019"
+      ]
+    },
+    "wk_00000161": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_parasite_2019"
+      ]
+    },
+    "wk_00000162": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_pulp-fiction_1994"
+      ]
+    },
+    "wk_00000163": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_spider-man-nwh_2021"
+      ]
+    },
+    "wk_00000164": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_spirited-away_2001"
+      ]
+    },
+    "wk_00000165": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_the-batman_2022"
+      ]
+    },
+    "wk_00000166": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_the-dark-knight_2008"
+      ]
+    },
+    "wk_00000167": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_the-godfather_1972"
+      ]
+    },
+    "wk_00000168": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_the-matrix_1999"
+      ]
+    },
+    "wk_00000169": {
+      "category": "movie",
+      "legacyIds": [
+        "gen_movie_toy-story_1995"
+      ]
+    },
+    "wk_00000170": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_angel-beats_2010"
+      ]
+    },
+    "wk_00000171": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_apothecary-diaries_2023"
+      ]
+    },
+    "wk_00000172": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_attack-on-titan_2013"
+      ]
+    },
+    "wk_00000173": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_beastars_2019"
+      ]
+    },
+    "wk_00000174": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_black-clover_2017"
+      ]
+    },
+    "wk_00000175": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_black-lagoon_2006"
+      ]
+    },
+    "wk_00000176": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_bleach_2004"
+      ]
+    },
+    "wk_00000177": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_blue-lock_2022"
+      ]
+    },
+    "wk_00000178": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_bocchi-the-rock_2022"
+      ]
+    },
+    "wk_00000179": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_bungo-stray-dogs_2016"
+      ]
+    },
+    "wk_00000180": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_chainsaw-man_2022"
+      ]
+    },
+    "wk_00000181": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_clannad_2007"
+      ]
+    },
+    "wk_00000182": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_classroom-of-the-elite_2017"
+      ]
+    },
+    "wk_00000183": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_code-geass_2006"
+      ]
+    },
+    "wk_00000184": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_cyberpunk-edgerunners_2022"
+      ]
+    },
+    "wk_00000185": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_dandadan-anime_2024"
+      ]
+    },
+    "wk_00000186": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_danmachi_2015"
+      ]
+    },
+    "wk_00000187": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_death-note_2006"
+      ]
+    },
+    "wk_00000188": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_demon-slayer_2019"
+      ]
+    },
+    "wk_00000189": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_dr-stone_2019"
+      ]
+    },
+    "wk_00000190": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_dungeon-meshi_2024"
+      ]
+    },
+    "wk_00000191": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_fate-zero_2011"
+      ]
+    },
+    "wk_00000192": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_fire-force_2019"
+      ]
+    },
+    "wk_00000193": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_frieren_2023"
+      ]
+    },
+    "wk_00000194": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_fullmetal-alchemist-brotherhood_2009"
+      ]
+    },
+    "wk_00000195": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_gintama_2006"
+      ]
+    },
+    "wk_00000196": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_golden-kamuy_2018"
+      ]
+    },
+    "wk_00000197": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_gurren-lagann_2007"
+      ]
+    },
+    "wk_00000198": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_haikyuu_2014"
+      ]
+    },
+    "wk_00000199": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_hajime-no-ippo_2000"
+      ]
+    },
+    "wk_00000200": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_hells-paradise_2023"
+      ]
+    },
+    "wk_00000201": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_horimiya_2021"
+      ]
+    },
+    "wk_00000202": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_hunter-x-hunter_2011"
+      ]
+    },
+    "wk_00000203": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_jojo-bizarre-adventure_2012"
+      ]
+    },
+    "wk_00000204": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_jujutsu-kaisen_2020"
+      ]
+    },
+    "wk_00000205": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_kaguya-sama_2019"
+      ]
+    },
+    "wk_00000206": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_kaiju-no-8_2024"
+      ]
+    },
+    "wk_00000207": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_kill-la-kill_2013"
+      ]
+    },
+    "wk_00000208": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_kingdom_2012"
+      ]
+    },
+    "wk_00000209": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_konosuba_2016"
+      ]
+    },
+    "wk_00000210": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_log-horizon_2013"
+      ]
+    },
+    "wk_00000211": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_lycoris-recoil_2022"
+      ]
+    },
+    "wk_00000212": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_made-in-abyss_2017"
+      ]
+    },
+    "wk_00000213": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_mashle_2023"
+      ]
+    },
+    "wk_00000214": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_mob-psycho-100_2016"
+      ]
+    },
+    "wk_00000215": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_monogatari_2009"
+      ]
+    },
+    "wk_00000216": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_mushoku-tensei_2021"
+      ]
+    },
+    "wk_00000217": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_my-hero-academia_2016"
+      ]
+    },
+    "wk_00000218": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_naruto_2002"
+      ]
+    },
+    "wk_00000219": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_neon-genesis-evangelion_1995"
+      ]
+    },
+    "wk_00000220": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_no-game-no-life_2014"
+      ]
+    },
+    "wk_00000221": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_noragami_2014"
+      ]
+    },
+    "wk_00000222": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_one-piece-anime_1999"
+      ]
+    },
+    "wk_00000223": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_one-punch-man_2015"
+      ]
+    },
+    "wk_00000224": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_oshi-no-ko_2023"
+      ]
+    },
+    "wk_00000225": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_overlord_2015"
+      ]
+    },
+    "wk_00000226": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_parasyte_2014"
+      ]
+    },
+    "wk_00000227": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_ping-pong_2014"
+      ]
+    },
+    "wk_00000228": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_psycho-pass_2012"
+      ]
+    },
+    "wk_00000229": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_ranking-of-kings_2021"
+      ]
+    },
+    "wk_00000230": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_rezero-anime_2016"
+      ]
+    },
+    "wk_00000231": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_sakamoto-days_2025"
+      ]
+    },
+    "wk_00000232": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_samurai-champloo_2004"
+      ]
+    },
+    "wk_00000233": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_shield-hero_2019"
+      ]
+    },
+    "wk_00000234": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_shigatsu-wa-kimi-no-uso_2011"
+      ]
+    },
+    "wk_00000235": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_silent-voice_2016"
+      ]
+    },
+    "wk_00000236": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_skip-and-loafer_2023"
+      ]
+    },
+    "wk_00000237": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_slime-anime_2018"
+      ]
+    },
+    "wk_00000238": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_solo-leveling_2024"
+      ]
+    },
+    "wk_00000239": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_spy-x-family_2022"
+      ]
+    },
+    "wk_00000240": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_steinsgate_2011"
+      ]
+    },
+    "wk_00000241": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_sword-art-online_2012"
+      ]
+    },
+    "wk_00000242": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_tokyo-ghoul_2014"
+      ]
+    },
+    "wk_00000243": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_tokyo-revengers_2021"
+      ]
+    },
+    "wk_00000244": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_toradora_2008"
+      ]
+    },
+    "wk_00000245": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_trigun_1998"
+      ]
+    },
+    "wk_00000246": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_undead-unluck_2023"
+      ]
+    },
+    "wk_00000247": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_vinland-saga_2019"
+      ]
+    },
+    "wk_00000248": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_violet-evergarden_2018"
+      ]
+    },
+    "wk_00000249": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_weathering-with-you_2019"
+      ]
+    },
+    "wk_00000250": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_wind-breaker_2024"
+      ]
+    },
+    "wk_00000251": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_your-name_2016"
+      ]
+    },
+    "wk_00000252": {
+      "category": "animation",
+      "legacyIds": [
+        "sub_animation_zom-100_2023"
+      ]
+    },
+    "wk_00000253": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_86-light-novel_2016"
+      ]
+    },
+    "wk_00000254": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_classroom-of-the-elite_2015"
+      ]
+    },
+    "wk_00000255": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_konosuba-light-novel_2013"
+      ]
+    },
+    "wk_00000256": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_monogatari-light-novel_2006"
+      ]
+    },
+    "wk_00000257": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_mushoku-tensei-light-novel_2014"
+      ]
+    },
+    "wk_00000258": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_no-game-no-life_2011"
+      ]
+    },
+    "wk_00000259": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_overlord-light-novel_2012"
+      ]
+    },
+    "wk_00000260": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_rezero-light-novel_2014"
+      ]
+    },
+    "wk_00000261": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_slime-light-novel_2014"
+      ]
+    },
+    "wk_00000262": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_spice-and-wolf_2006"
+      ]
+    },
+    "wk_00000263": {
+      "category": "book",
+      "legacyIds": [
+        "sub_book_sword-art-online_2009"
+      ]
+    },
+    "wk_00000264": {
+      "category": "drama",
+      "legacyIds": [
+        "sub_drama_one-piece-live-action_2023"
+      ]
+    },
+    "wk_00000265": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_arknights_2019"
+      ]
+    },
+    "wk_00000266": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_blue-archive_2021"
+      ]
+    },
+    "wk_00000267": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_celeste_2018"
+      ]
+    },
+    "wk_00000268": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_danganronpa_2010"
+      ]
+    },
+    "wk_00000269": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_fate-grand-order_2015"
+      ]
+    },
+    "wk_00000270": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_ffxiv_2013"
+      ]
+    },
+    "wk_00000271": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_fire-emblem-three-houses_2019"
+      ]
+    },
+    "wk_00000272": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_genshin-impact_2020"
+      ]
+    },
+    "wk_00000273": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_honkai-star-rail_2023"
+      ]
+    },
+    "wk_00000274": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_love-live-all-stars_2020"
+      ]
+    },
+    "wk_00000275": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_monster-hunter-world_2018"
+      ]
+    },
+    "wk_00000276": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_nier-automata_2017"
+      ]
+    },
+    "wk_00000277": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_nikke_2022"
+      ]
+    },
+    "wk_00000278": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_octopath-traveler_2018"
+      ]
+    },
+    "wk_00000279": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_persona-5-royal_2020"
+      ]
+    },
+    "wk_00000280": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_princess-connect_2018"
+      ]
+    },
+    "wk_00000281": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_project-sekai_2020"
+      ]
+    },
+    "wk_00000282": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_splatoon-3_2022"
+      ]
+    },
+    "wk_00000283": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_stardew-valley-sub_2016"
+      ]
+    },
+    "wk_00000284": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_touhou-lost-word_2019"
+      ]
+    },
+    "wk_00000285": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_umamusume_2021"
+      ]
+    },
+    "wk_00000286": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_undertale_2015"
+      ]
+    },
+    "wk_00000287": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_wuthering-waves_2024"
+      ]
+    },
+    "wk_00000288": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_xenoblade-3_2022"
+      ]
+    },
+    "wk_00000289": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_yakuza-0_2015"
+      ]
+    },
+    "wk_00000290": {
+      "category": "game",
+      "legacyIds": [
+        "sub_game_zenless-zone-zero_2024"
+      ]
+    },
+    "wk_00000291": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_20th-century-boys_1999"
+      ]
+    },
+    "wk_00000292": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_86-eighty-six_2017"
+      ]
+    },
+    "wk_00000293": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_ao-ashi_2015"
+      ]
+    },
+    "wk_00000294": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_apothecary-diaries_2016"
+      ]
+    },
+    "wk_00000295": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_ascendance-of-a-bookworm_2013"
+      ]
+    },
+    "wk_00000296": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_assassination-classroom_2012"
+      ]
+    },
+    "wk_00000297": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_barakamon_2009"
+      ]
+    },
+    "wk_00000298": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_beastars_2016"
+      ]
+    },
+    "wk_00000299": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_berserk_1989"
+      ]
+    },
+    "wk_00000300": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_black-clover_2015"
+      ]
+    },
+    "wk_00000301": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_bleach_2001"
+      ]
+    },
+    "wk_00000302": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_blue-lock_2018"
+      ]
+    },
+    "wk_00000303": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_blue-period_2017"
+      ]
+    },
+    "wk_00000304": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_bocchi-the-rock_2017"
+      ]
+    },
+    "wk_00000305": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_captain-tsubasa_1981"
+      ]
+    },
+    "wk_00000306": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_cardcaptor-sakura_1996"
+      ]
+    },
+    "wk_00000307": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_cells-at-work_2015"
+      ]
+    },
+    "wk_00000308": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_chainsaw-man_2018"
+      ]
+    },
+    "wk_00000309": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_chihayafuru_2007"
+      ]
+    },
+    "wk_00000310": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dandadan_2021"
+      ]
+    },
+    "wk_00000311": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_death-note_2003"
+      ]
+    },
+    "wk_00000312": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_detective-conan_1994"
+      ]
+    },
+    "wk_00000313": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dgray-man_2004"
+      ]
+    },
+    "wk_00000314": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_doraemon_1969"
+      ]
+    },
+    "wk_00000315": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dorohedoro_2000"
+      ]
+    },
+    "wk_00000316": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dr-stone_2017"
+      ]
+    },
+    "wk_00000317": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dragon-ball_1984"
+      ]
+    },
+    "wk_00000318": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_dungeon-meshi_2014"
+      ]
+    },
+    "wk_00000319": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_edens-zero_2018"
+      ]
+    },
+    "wk_00000320": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_fairy-tail-100-years-quest_2018"
+      ]
+    },
+    "wk_00000321": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_fairy-tail_2006"
+      ]
+    },
+    "wk_00000322": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_fire-force_2015"
+      ]
+    },
+    "wk_00000323": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_frieren_2020"
+      ]
+    },
+    "wk_00000324": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_fruits-basket_1998"
+      ]
+    },
+    "wk_00000325": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_fullmetal-alchemist_2001"
+      ]
+    },
+    "wk_00000326": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_gabriel-dropout_2013"
+      ]
+    },
+    "wk_00000327": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_gachiakuta_2022"
+      ]
+    },
+    "wk_00000328": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_gintama_2003"
+      ]
+    },
+    "wk_00000329": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_goblin-slayer_2016"
+      ]
+    },
+    "wk_00000330": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_golden-kamuy_2014"
+      ]
+    },
+    "wk_00000331": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_goodnight-punpun_2007"
+      ]
+    },
+    "wk_00000332": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_grand-blue_2014"
+      ]
+    },
+    "wk_00000333": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_gto_1997"
+      ]
+    },
+    "wk_00000334": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_haikyuu_2012"
+      ]
+    },
+    "wk_00000335": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_hells-paradise_2018"
+      ]
+    },
+    "wk_00000336": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_horimiya_2011"
+      ]
+    },
+    "wk_00000337": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_hunter-x-hunter_1998"
+      ]
+    },
+    "wk_00000338": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_inuyasha_1996"
+      ]
+    },
+    "wk_00000339": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_jojo-bizarre-adventure_1987"
+      ]
+    },
+    "wk_00000340": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_jujutsu-kaisen_2018"
+      ]
+    },
+    "wk_00000341": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_kaguya-sama_2015"
+      ]
+    },
+    "wk_00000342": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_kaiju-no-8_2020"
+      ]
+    },
+    "wk_00000343": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_kimetsu-no-yaiba_2016"
+      ]
+    },
+    "wk_00000344": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_kingdom_2006"
+      ]
+    },
+    "wk_00000345": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_komi-san_2016"
+      ]
+    },
+    "wk_00000346": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_konosuba_2014"
+      ]
+    },
+    "wk_00000347": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_land-of-the-lustrous_2012"
+      ]
+    },
+    "wk_00000348": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_made-in-abyss_2012"
+      ]
+    },
+    "wk_00000349": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_march-comes-in-like-a-lion_2007"
+      ]
+    },
+    "wk_00000350": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_mashle_2018"
+      ]
+    },
+    "wk_00000351": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_mob-psycho-100_2012"
+      ]
+    },
+    "wk_00000352": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_monster_1994"
+      ]
+    },
+    "wk_00000353": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_mushishi_1999"
+      ]
+    },
+    "wk_00000354": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_mushoku-tensei_2014"
+      ]
+    },
+    "wk_00000355": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_my-hero-academia_2014"
+      ]
+    },
+    "wk_00000356": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_nagatoro_2017"
+      ]
+    },
+    "wk_00000357": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_nana_2000"
+      ]
+    },
+    "wk_00000358": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_naruto_1999"
+      ]
+    },
+    "wk_00000359": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_nichijou_2006"
+      ]
+    },
+    "wk_00000360": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_nisekoi_2011"
+      ]
+    },
+    "wk_00000361": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_nodame-cantabile_2001"
+      ]
+    },
+    "wk_00000362": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_noragami_2010"
+      ]
+    },
+    "wk_00000363": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_one-piece_1997"
+      ]
+    },
+    "wk_00000364": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_one-punch-man_2012"
+      ]
+    },
+    "wk_00000365": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_oregairu_2011"
+      ]
+    },
+    "wk_00000366": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_oshi-no-ko_2020"
+      ]
+    },
+    "wk_00000367": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_overlord_2012"
+      ]
+    },
+    "wk_00000368": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_parasyte_1990"
+      ]
+    },
+    "wk_00000369": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_pluto_2003"
+      ]
+    },
+    "wk_00000370": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_promised-neverland_2016"
+      ]
+    },
+    "wk_00000371": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_quintessential-quintuplets_2017"
+      ]
+    },
+    "wk_00000372": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_ranma-half_1987"
+      ]
+    },
+    "wk_00000373": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_real_1999"
+      ]
+    },
+    "wk_00000374": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_rent-a-girlfriend_2017"
+      ]
+    },
+    "wk_00000375": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_rezero_2014"
+      ]
+    },
+    "wk_00000376": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_rurouni-kenshin_1994"
+      ]
+    },
+    "wk_00000377": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_saint-seiya_1985"
+      ]
+    },
+    "wk_00000378": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_sakamoto-days_2020"
+      ]
+    },
+    "wk_00000379": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_seraph-of-the-end_2012"
+      ]
+    },
+    "wk_00000380": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_shigatsu-wa-kimi-no-uso_2011"
+      ]
+    },
+    "wk_00000381": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_shingeki-no-kyojin_2009"
+      ]
+    },
+    "wk_00000382": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_shokugeki-no-soma_2012"
+      ]
+    },
+    "wk_00000383": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_silver-spoon_2011"
+      ]
+    },
+    "wk_00000384": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_skip-and-loafer_2018"
+      ]
+    },
+    "wk_00000385": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_slam-dunk_1990"
+      ]
+    },
+    "wk_00000386": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_soul-eater_2004"
+      ]
+    },
+    "wk_00000387": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_spy-x-family_2018"
+      ]
+    },
+    "wk_00000388": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_tensura_2014"
+      ]
+    },
+    "wk_00000389": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_toilet-bound-hanako-kun_2014"
+      ]
+    },
+    "wk_00000390": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_tokyo-ghoul_2011"
+      ]
+    },
+    "wk_00000391": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_tokyo-revengers_2017"
+      ]
+    },
+    "wk_00000392": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_toradora_2007"
+      ]
+    },
+    "wk_00000393": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_undead-unluck_2020"
+      ]
+    },
+    "wk_00000394": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_usagi-drop_2005"
+      ]
+    },
+    "wk_00000395": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_vagabond_1998"
+      ]
+    },
+    "wk_00000396": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_vinland-saga_2005"
+      ]
+    },
+    "wk_00000397": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_wind-breaker_2021"
+      ]
+    },
+    "wk_00000398": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_world-trigger_2006"
+      ]
+    },
+    "wk_00000399": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_yona-of-the-dawn_2009"
+      ]
+    },
+    "wk_00000400": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_yotsubato_2003"
+      ]
+    },
+    "wk_00000401": {
+      "category": "manga",
+      "legacyIds": [
+        "sub_manga_yu-yu-hakusho_1990"
+      ]
+    },
+    "wk_00000402": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_a-silent-voice_2016"
+      ]
+    },
+    "wk_00000403": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_chainsaw-man-movie_2025"
+      ]
+    },
+    "wk_00000404": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_demon-slayer-mugen-train_2020"
+      ]
+    },
+    "wk_00000405": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_demon-slayer-mugen_2020"
+      ]
+    },
+    "wk_00000406": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_jujutsu-kaisen-0_2021"
+      ]
+    },
+    "wk_00000407": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_weathering-with-you_2019"
+      ]
+    },
+    "wk_00000408": {
+      "category": "movie",
+      "legacyIds": [
+        "sub_movie_your-name-2016_2016"
+      ]
+    },
+    "wk_00000409": {
+      "category": "webtoon",
+      "legacyIds": [
+        "sub_webtoon_solo-leveling_2018"
+      ]
+    },
+    "wk_00000410": {
+      "category": "webtoon",
+      "legacyIds": [
+        "sub_webtoon_tower-of-god_2010"
+      ]
+    }
+  },
+  "byLegacy": {
+    "gen_animation_cowboy-bebop_1998": "wk_00000001",
+    "gen_animation_my-neighbor-totoro_1988": "wk_00000002",
+    "gen_book_1984_1949": "wk_00000003",
+    "gen_book_da-vinci-code_2003": "wk_00000004",
+    "gen_book_dune_1965": "wk_00000005",
+    "gen_book_harry-potter-philosophers-stone_1997": "wk_00000006",
+    "gen_book_hitchhiker-guide_1979": "wk_00000007",
+    "gen_book_hunger-games_2008": "wk_00000008",
+    "gen_book_laplace-novel_2015": "wk_00000009",
+    "gen_book_lord-of-the-rings-fellowship_1954": "wk_00000010",
+    "gen_book_murder-on-orient-express_1934": "wk_00000011",
+    "gen_book_norwegian-wood_1987": "wk_00000012",
+    "gen_book_percy-jackson_2005": "wk_00000013",
+    "gen_book_ready-player-one_2011": "wk_00000014",
+    "gen_book_sherlock-holmes_1887": "wk_00000015",
+    "gen_drama_breaking-bad_2008": "wk_00000016",
+    "gen_drama_chernobyl_2019": "wk_00000017",
+    "gen_drama_extraordinary-attorney-woo_2022": "wk_00000018",
+    "gen_drama_game-of-thrones_2011": "wk_00000019",
+    "gen_drama_kingdom_2019": "wk_00000020",
+    "gen_drama_squid-game_2021": "wk_00000021",
+    "gen_drama_stranger-things_2016": "wk_00000022",
+    "gen_drama_the-mandalorian_2019": "wk_00000023",
+    "gen_drama_the-office-us_2005": "wk_00000024",
+    "gen_drama_the-witcher_2019": "wk_00000025",
+    "gen_drama_true-detective_2014": "wk_00000026",
+    "gen_game_appid105600_2011": "wk_00000027",
+    "gen_game_appid1085660_2019": "wk_00000028",
+    "gen_game_appid108600_2013": "wk_00000029",
+    "gen_game_appid1086940_2020": "wk_00000030",
+    "gen_game_appid1091500_2020": "wk_00000031",
+    "gen_game_appid1142710_2022": "wk_00000032",
+    "gen_game_appid1145350_2024": "wk_00000033",
+    "gen_game_appid1145360_2020": "wk_00000034",
+    "gen_game_appid1151340_2023": "wk_00000035",
+    "gen_game_appid1151640_2020": "wk_00000036",
+    "gen_game_appid1158310_2020": "wk_00000037",
+    "gen_game_appid1172470_2020": "wk_00000038",
+    "gen_game_appid1174180_2018": "wk_00000039",
+    "gen_game_appid1174180_2019": "wk_00000040",
+    "gen_game_appid1196590_2021": "wk_00000041",
+    "gen_game_appid1203220_2023": "wk_00000042",
+    "gen_game_appid12120_2004": "wk_00000043",
+    "gen_game_appid12210_2008": "wk_00000044",
+    "gen_game_appid1245620_2022": "wk_00000045",
+    "gen_game_appid1284190_2021": "wk_00000046",
+    "gen_game_appid1325200_2020": "wk_00000047",
+    "gen_game_appid1326470_2023": "wk_00000048",
+    "gen_game_appid1328670_2024": "wk_00000049",
+    "gen_game_appid1454400_2021": "wk_00000050",
+    "gen_game_appid1466860_2021": "wk_00000051",
+    "gen_game_appid1517290_2021": "wk_00000052",
+    "gen_game_appid1593500_2022": "wk_00000053",
+    "gen_game_appid1599340_2022": "wk_00000054",
+    "gen_game_appid1623730_2024": "wk_00000055",
+    "gen_game_appid1627720_2023": "wk_00000056",
+    "gen_game_appid1659420_2022": "wk_00000057",
+    "gen_game_appid1771300_2024": "wk_00000058",
+    "gen_game_appid1817070_2022": "wk_00000059",
+    "gen_game_appid1888160_2023": "wk_00000060",
+    "gen_game_appid1888930_2023": "wk_00000061",
+    "gen_game_appid1938090_2022": "wk_00000062",
+    "gen_game_appid1962663_2017": "wk_00000063",
+    "gen_game_appid1966720_2023": "wk_00000064",
+    "gen_game_appid2050650_2023": "wk_00000065",
+    "gen_game_appid205100_2012": "wk_00000066",
+    "gen_game_appid219740_2013": "wk_00000067",
+    "gen_game_appid2215430_2023": "wk_00000068",
+    "gen_game_appid2218500_2024": "wk_00000069",
+    "gen_game_appid22300_2008": "wk_00000070",
+    "gen_game_appid22380_2010": "wk_00000071",
+    "gen_game_appid227300_2012": "wk_00000072",
+    "gen_game_appid230410_2013": "wk_00000073",
+    "gen_game_appid233450_2015": "wk_00000074",
+    "gen_game_appid2358720_2024": "wk_00000075",
+    "gen_game_appid236390_2013": "wk_00000076",
+    "gen_game_appid236850_2013": "wk_00000077",
+    "gen_game_appid239140_2015": "wk_00000078",
+    "gen_game_appid2420110_2024": "wk_00000079",
+    "gen_game_appid242050_2017": "wk_00000080",
+    "gen_game_appid242760_2018": "wk_00000081",
+    "gen_game_appid251570_2016": "wk_00000082",
+    "gen_game_appid252490_2013": "wk_00000083",
+    "gen_game_appid252490_2018": "wk_00000084",
+    "gen_game_appid252950_2015": "wk_00000085",
+    "gen_game_appid2531310_2024": "wk_00000086",
+    "gen_game_appid255710_2015": "wk_00000087",
+    "gen_game_appid261550_2015": "wk_00000088",
+    "gen_game_appid268910_2017": "wk_00000089",
+    "gen_game_appid271590_2013": "wk_00000090",
+    "gen_game_appid271590_2015": "wk_00000091",
+    "gen_game_appid281990_2016": "wk_00000092",
+    "gen_game_appid294100_2018": "wk_00000093",
+    "gen_game_appid322330_2016": "wk_00000094",
+    "gen_game_appid3240220_2001": "wk_00000095",
+    "gen_game_appid346110_2017": "wk_00000096",
+    "gen_game_appid359550_2015": "wk_00000097",
+    "gen_game_appid367520_2017": "wk_00000098",
+    "gen_game_appid374320_2016": "wk_00000099",
+    "gen_game_appid377160_2015": "wk_00000100",
+    "gen_game_appid379430_2018": "wk_00000101",
+    "gen_game_appid381210_2016": "wk_00000102",
+    "gen_game_appid394360_2016": "wk_00000103",
+    "gen_game_appid4000_2007": "wk_00000104",
+    "gen_game_appid400_2007": "wk_00000105",
+    "gen_game_appid413150_2016": "wk_00000106",
+    "gen_game_appid427520_2020": "wk_00000107",
+    "gen_game_appid440900_2018": "wk_00000108",
+    "gen_game_appid440_2007": "wk_00000109",
+    "gen_game_appid485510_2017": "wk_00000110",
+    "gen_game_appid489830_2016": "wk_00000111",
+    "gen_game_appid493340_2016": "wk_00000112",
+    "gen_game_appid526870_2020": "wk_00000113",
+    "gen_game_appid534380_2022": "wk_00000114",
+    "gen_game_appid548430_2020": "wk_00000115",
+    "gen_game_appid548570_2017": "wk_00000116",
+    "gen_game_appid550_2009": "wk_00000117",
+    "gen_game_appid570_2013": "wk_00000118",
+    "gen_game_appid578080_2017": "wk_00000119",
+    "gen_game_appid594650_2019": "wk_00000120",
+    "gen_game_appid730_2012": "wk_00000121",
+    "gen_game_appid730_2023": "wk_00000122",
+    "gen_game_appid774181_2021": "wk_00000123",
+    "gen_game_appid774361_2015": "wk_00000124",
+    "gen_game_appid782330_2020": "wk_00000125",
+    "gen_game_appid813780_2019": "wk_00000126",
+    "gen_game_appid814380_2019": "wk_00000127",
+    "gen_game_appid883710_2019": "wk_00000128",
+    "gen_game_appid892970_2021": "wk_00000129",
+    "gen_game_appid949230_2023": "wk_00000130",
+    "gen_game_appid952060_2020": "wk_00000131",
+    "gen_game_appid960090_2016": "wk_00000132",
+    "gen_game_appid960090_2019": "wk_00000133",
+    "gen_game_appid990080_2023": "wk_00000134",
+    "gen_game_axiom_2024": "wk_00000135",
+    "gen_game_bioshock_2007": "wk_00000136",
+    "gen_game_diablo-4_2023": "wk_00000137",
+    "gen_game_half-life-2_2004": "wk_00000138",
+    "gen_game_league-of-legends_2009": "wk_00000139",
+    "gen_game_mass-effect-2_2010": "wk_00000140",
+    "gen_game_minecraft_2011": "wk_00000141",
+    "gen_game_overwatch-2_2022": "wk_00000142",
+    "gen_game_portal-2_2011": "wk_00000143",
+    "gen_game_skyrim_2011": "wk_00000144",
+    "gen_game_stardew-valley_2016": "wk_00000145",
+    "gen_game_witcher-3_2015": "wk_00000146",
+    "gen_game_zelda-breath-of-the-wild_2017": "wk_00000147",
+    "gen_manga_crayon-shin-chan_1990": "wk_00000148",
+    "gen_manga_math-thief_2006": "wk_00000149",
+    "gen_movie_avengers-endgame_2019": "wk_00000150",
+    "gen_movie_barbie-2023_2023": "wk_00000151",
+    "gen_movie_dune-2021_2021": "wk_00000152",
+    "gen_movie_everything-everywhere_2022": "wk_00000153",
+    "gen_movie_fight-club_1999": "wk_00000154",
+    "gen_movie_forrest-gump_1994": "wk_00000155",
+    "gen_movie_inception_2010": "wk_00000156",
+    "gen_movie_interstellar_2014": "wk_00000157",
+    "gen_movie_lord-of-the-rings-fellowship_2001": "wk_00000158",
+    "gen_movie_oppenheimer-2023_2023": "wk_00000159",
+    "gen_movie_parasite-2019_2019": "wk_00000160",
+    "gen_movie_parasite_2019": "wk_00000161",
+    "gen_movie_pulp-fiction_1994": "wk_00000162",
+    "gen_movie_spider-man-nwh_2021": "wk_00000163",
+    "gen_movie_spirited-away_2001": "wk_00000164",
+    "gen_movie_the-batman_2022": "wk_00000165",
+    "gen_movie_the-dark-knight_2008": "wk_00000166",
+    "gen_movie_the-godfather_1972": "wk_00000167",
+    "gen_movie_the-matrix_1999": "wk_00000168",
+    "gen_movie_toy-story_1995": "wk_00000169",
+    "sub_animation_angel-beats_2010": "wk_00000170",
+    "sub_animation_apothecary-diaries_2023": "wk_00000171",
+    "sub_animation_attack-on-titan_2013": "wk_00000172",
+    "sub_animation_beastars_2019": "wk_00000173",
+    "sub_animation_black-clover_2017": "wk_00000174",
+    "sub_animation_black-lagoon_2006": "wk_00000175",
+    "sub_animation_bleach_2004": "wk_00000176",
+    "sub_animation_blue-lock_2022": "wk_00000177",
+    "sub_animation_bocchi-the-rock_2022": "wk_00000178",
+    "sub_animation_bungo-stray-dogs_2016": "wk_00000179",
+    "sub_animation_chainsaw-man_2022": "wk_00000180",
+    "sub_animation_clannad_2007": "wk_00000181",
+    "sub_animation_classroom-of-the-elite_2017": "wk_00000182",
+    "sub_animation_code-geass_2006": "wk_00000183",
+    "sub_animation_cyberpunk-edgerunners_2022": "wk_00000184",
+    "sub_animation_dandadan-anime_2024": "wk_00000185",
+    "sub_animation_danmachi_2015": "wk_00000186",
+    "sub_animation_death-note_2006": "wk_00000187",
+    "sub_animation_demon-slayer_2019": "wk_00000188",
+    "sub_animation_dr-stone_2019": "wk_00000189",
+    "sub_animation_dungeon-meshi_2024": "wk_00000190",
+    "sub_animation_fate-zero_2011": "wk_00000191",
+    "sub_animation_fire-force_2019": "wk_00000192",
+    "sub_animation_frieren_2023": "wk_00000193",
+    "sub_animation_fullmetal-alchemist-brotherhood_2009": "wk_00000194",
+    "sub_animation_gintama_2006": "wk_00000195",
+    "sub_animation_golden-kamuy_2018": "wk_00000196",
+    "sub_animation_gurren-lagann_2007": "wk_00000197",
+    "sub_animation_haikyuu_2014": "wk_00000198",
+    "sub_animation_hajime-no-ippo_2000": "wk_00000199",
+    "sub_animation_hells-paradise_2023": "wk_00000200",
+    "sub_animation_horimiya_2021": "wk_00000201",
+    "sub_animation_hunter-x-hunter_2011": "wk_00000202",
+    "sub_animation_jojo-bizarre-adventure_2012": "wk_00000203",
+    "sub_animation_jujutsu-kaisen_2020": "wk_00000204",
+    "sub_animation_kaguya-sama_2019": "wk_00000205",
+    "sub_animation_kaiju-no-8_2024": "wk_00000206",
+    "sub_animation_kill-la-kill_2013": "wk_00000207",
+    "sub_animation_kingdom_2012": "wk_00000208",
+    "sub_animation_konosuba_2016": "wk_00000209",
+    "sub_animation_log-horizon_2013": "wk_00000210",
+    "sub_animation_lycoris-recoil_2022": "wk_00000211",
+    "sub_animation_made-in-abyss_2017": "wk_00000212",
+    "sub_animation_mashle_2023": "wk_00000213",
+    "sub_animation_mob-psycho-100_2016": "wk_00000214",
+    "sub_animation_monogatari_2009": "wk_00000215",
+    "sub_animation_mushoku-tensei_2021": "wk_00000216",
+    "sub_animation_my-hero-academia_2016": "wk_00000217",
+    "sub_animation_naruto_2002": "wk_00000218",
+    "sub_animation_neon-genesis-evangelion_1995": "wk_00000219",
+    "sub_animation_no-game-no-life_2014": "wk_00000220",
+    "sub_animation_noragami_2014": "wk_00000221",
+    "sub_animation_one-piece-anime_1999": "wk_00000222",
+    "sub_animation_one-punch-man_2015": "wk_00000223",
+    "sub_animation_oshi-no-ko_2023": "wk_00000224",
+    "sub_animation_overlord_2015": "wk_00000225",
+    "sub_animation_parasyte_2014": "wk_00000226",
+    "sub_animation_ping-pong_2014": "wk_00000227",
+    "sub_animation_psycho-pass_2012": "wk_00000228",
+    "sub_animation_ranking-of-kings_2021": "wk_00000229",
+    "sub_animation_rezero-anime_2016": "wk_00000230",
+    "sub_animation_sakamoto-days_2025": "wk_00000231",
+    "sub_animation_samurai-champloo_2004": "wk_00000232",
+    "sub_animation_shield-hero_2019": "wk_00000233",
+    "sub_animation_shigatsu-wa-kimi-no-uso_2011": "wk_00000234",
+    "sub_animation_silent-voice_2016": "wk_00000235",
+    "sub_animation_skip-and-loafer_2023": "wk_00000236",
+    "sub_animation_slime-anime_2018": "wk_00000237",
+    "sub_animation_solo-leveling_2024": "wk_00000238",
+    "sub_animation_spy-x-family_2022": "wk_00000239",
+    "sub_animation_steinsgate_2011": "wk_00000240",
+    "sub_animation_sword-art-online_2012": "wk_00000241",
+    "sub_animation_tokyo-ghoul_2014": "wk_00000242",
+    "sub_animation_tokyo-revengers_2021": "wk_00000243",
+    "sub_animation_toradora_2008": "wk_00000244",
+    "sub_animation_trigun_1998": "wk_00000245",
+    "sub_animation_undead-unluck_2023": "wk_00000246",
+    "sub_animation_vinland-saga_2019": "wk_00000247",
+    "sub_animation_violet-evergarden_2018": "wk_00000248",
+    "sub_animation_weathering-with-you_2019": "wk_00000249",
+    "sub_animation_wind-breaker_2024": "wk_00000250",
+    "sub_animation_your-name_2016": "wk_00000251",
+    "sub_animation_zom-100_2023": "wk_00000252",
+    "sub_book_86-light-novel_2016": "wk_00000253",
+    "sub_book_classroom-of-the-elite_2015": "wk_00000254",
+    "sub_book_konosuba-light-novel_2013": "wk_00000255",
+    "sub_book_monogatari-light-novel_2006": "wk_00000256",
+    "sub_book_mushoku-tensei-light-novel_2014": "wk_00000257",
+    "sub_book_no-game-no-life_2011": "wk_00000258",
+    "sub_book_overlord-light-novel_2012": "wk_00000259",
+    "sub_book_rezero-light-novel_2014": "wk_00000260",
+    "sub_book_slime-light-novel_2014": "wk_00000261",
+    "sub_book_spice-and-wolf_2006": "wk_00000262",
+    "sub_book_sword-art-online_2009": "wk_00000263",
+    "sub_drama_one-piece-live-action_2023": "wk_00000264",
+    "sub_game_arknights_2019": "wk_00000265",
+    "sub_game_blue-archive_2021": "wk_00000266",
+    "sub_game_celeste_2018": "wk_00000267",
+    "sub_game_danganronpa_2010": "wk_00000268",
+    "sub_game_fate-grand-order_2015": "wk_00000269",
+    "sub_game_ffxiv_2013": "wk_00000270",
+    "sub_game_fire-emblem-three-houses_2019": "wk_00000271",
+    "sub_game_genshin-impact_2020": "wk_00000272",
+    "sub_game_honkai-star-rail_2023": "wk_00000273",
+    "sub_game_love-live-all-stars_2020": "wk_00000274",
+    "sub_game_monster-hunter-world_2018": "wk_00000275",
+    "sub_game_nier-automata_2017": "wk_00000276",
+    "sub_game_nikke_2022": "wk_00000277",
+    "sub_game_octopath-traveler_2018": "wk_00000278",
+    "sub_game_persona-5-royal_2020": "wk_00000279",
+    "sub_game_princess-connect_2018": "wk_00000280",
+    "sub_game_project-sekai_2020": "wk_00000281",
+    "sub_game_splatoon-3_2022": "wk_00000282",
+    "sub_game_stardew-valley-sub_2016": "wk_00000283",
+    "sub_game_touhou-lost-word_2019": "wk_00000284",
+    "sub_game_umamusume_2021": "wk_00000285",
+    "sub_game_undertale_2015": "wk_00000286",
+    "sub_game_wuthering-waves_2024": "wk_00000287",
+    "sub_game_xenoblade-3_2022": "wk_00000288",
+    "sub_game_yakuza-0_2015": "wk_00000289",
+    "sub_game_zenless-zone-zero_2024": "wk_00000290",
+    "sub_manga_20th-century-boys_1999": "wk_00000291",
+    "sub_manga_86-eighty-six_2017": "wk_00000292",
+    "sub_manga_ao-ashi_2015": "wk_00000293",
+    "sub_manga_apothecary-diaries_2016": "wk_00000294",
+    "sub_manga_ascendance-of-a-bookworm_2013": "wk_00000295",
+    "sub_manga_assassination-classroom_2012": "wk_00000296",
+    "sub_manga_barakamon_2009": "wk_00000297",
+    "sub_manga_beastars_2016": "wk_00000298",
+    "sub_manga_berserk_1989": "wk_00000299",
+    "sub_manga_black-clover_2015": "wk_00000300",
+    "sub_manga_bleach_2001": "wk_00000301",
+    "sub_manga_blue-lock_2018": "wk_00000302",
+    "sub_manga_blue-period_2017": "wk_00000303",
+    "sub_manga_bocchi-the-rock_2017": "wk_00000304",
+    "sub_manga_captain-tsubasa_1981": "wk_00000305",
+    "sub_manga_cardcaptor-sakura_1996": "wk_00000306",
+    "sub_manga_cells-at-work_2015": "wk_00000307",
+    "sub_manga_chainsaw-man_2018": "wk_00000308",
+    "sub_manga_chihayafuru_2007": "wk_00000309",
+    "sub_manga_dandadan_2021": "wk_00000310",
+    "sub_manga_death-note_2003": "wk_00000311",
+    "sub_manga_detective-conan_1994": "wk_00000312",
+    "sub_manga_dgray-man_2004": "wk_00000313",
+    "sub_manga_doraemon_1969": "wk_00000314",
+    "sub_manga_dorohedoro_2000": "wk_00000315",
+    "sub_manga_dr-stone_2017": "wk_00000316",
+    "sub_manga_dragon-ball_1984": "wk_00000317",
+    "sub_manga_dungeon-meshi_2014": "wk_00000318",
+    "sub_manga_edens-zero_2018": "wk_00000319",
+    "sub_manga_fairy-tail-100-years-quest_2018": "wk_00000320",
+    "sub_manga_fairy-tail_2006": "wk_00000321",
+    "sub_manga_fire-force_2015": "wk_00000322",
+    "sub_manga_frieren_2020": "wk_00000323",
+    "sub_manga_fruits-basket_1998": "wk_00000324",
+    "sub_manga_fullmetal-alchemist_2001": "wk_00000325",
+    "sub_manga_gabriel-dropout_2013": "wk_00000326",
+    "sub_manga_gachiakuta_2022": "wk_00000327",
+    "sub_manga_gintama_2003": "wk_00000328",
+    "sub_manga_goblin-slayer_2016": "wk_00000329",
+    "sub_manga_golden-kamuy_2014": "wk_00000330",
+    "sub_manga_goodnight-punpun_2007": "wk_00000331",
+    "sub_manga_grand-blue_2014": "wk_00000332",
+    "sub_manga_gto_1997": "wk_00000333",
+    "sub_manga_haikyuu_2012": "wk_00000334",
+    "sub_manga_hells-paradise_2018": "wk_00000335",
+    "sub_manga_horimiya_2011": "wk_00000336",
+    "sub_manga_hunter-x-hunter_1998": "wk_00000337",
+    "sub_manga_inuyasha_1996": "wk_00000338",
+    "sub_manga_jojo-bizarre-adventure_1987": "wk_00000339",
+    "sub_manga_jujutsu-kaisen_2018": "wk_00000340",
+    "sub_manga_kaguya-sama_2015": "wk_00000341",
+    "sub_manga_kaiju-no-8_2020": "wk_00000342",
+    "sub_manga_kimetsu-no-yaiba_2016": "wk_00000343",
+    "sub_manga_kingdom_2006": "wk_00000344",
+    "sub_manga_komi-san_2016": "wk_00000345",
+    "sub_manga_konosuba_2014": "wk_00000346",
+    "sub_manga_land-of-the-lustrous_2012": "wk_00000347",
+    "sub_manga_made-in-abyss_2012": "wk_00000348",
+    "sub_manga_march-comes-in-like-a-lion_2007": "wk_00000349",
+    "sub_manga_mashle_2018": "wk_00000350",
+    "sub_manga_mob-psycho-100_2012": "wk_00000351",
+    "sub_manga_monster_1994": "wk_00000352",
+    "sub_manga_mushishi_1999": "wk_00000353",
+    "sub_manga_mushoku-tensei_2014": "wk_00000354",
+    "sub_manga_my-hero-academia_2014": "wk_00000355",
+    "sub_manga_nagatoro_2017": "wk_00000356",
+    "sub_manga_nana_2000": "wk_00000357",
+    "sub_manga_naruto_1999": "wk_00000358",
+    "sub_manga_nichijou_2006": "wk_00000359",
+    "sub_manga_nisekoi_2011": "wk_00000360",
+    "sub_manga_nodame-cantabile_2001": "wk_00000361",
+    "sub_manga_noragami_2010": "wk_00000362",
+    "sub_manga_one-piece_1997": "wk_00000363",
+    "sub_manga_one-punch-man_2012": "wk_00000364",
+    "sub_manga_oregairu_2011": "wk_00000365",
+    "sub_manga_oshi-no-ko_2020": "wk_00000366",
+    "sub_manga_overlord_2012": "wk_00000367",
+    "sub_manga_parasyte_1990": "wk_00000368",
+    "sub_manga_pluto_2003": "wk_00000369",
+    "sub_manga_promised-neverland_2016": "wk_00000370",
+    "sub_manga_quintessential-quintuplets_2017": "wk_00000371",
+    "sub_manga_ranma-half_1987": "wk_00000372",
+    "sub_manga_real_1999": "wk_00000373",
+    "sub_manga_rent-a-girlfriend_2017": "wk_00000374",
+    "sub_manga_rezero_2014": "wk_00000375",
+    "sub_manga_rurouni-kenshin_1994": "wk_00000376",
+    "sub_manga_saint-seiya_1985": "wk_00000377",
+    "sub_manga_sakamoto-days_2020": "wk_00000378",
+    "sub_manga_seraph-of-the-end_2012": "wk_00000379",
+    "sub_manga_shigatsu-wa-kimi-no-uso_2011": "wk_00000380",
+    "sub_manga_shingeki-no-kyojin_2009": "wk_00000381",
+    "sub_manga_shokugeki-no-soma_2012": "wk_00000382",
+    "sub_manga_silver-spoon_2011": "wk_00000383",
+    "sub_manga_skip-and-loafer_2018": "wk_00000384",
+    "sub_manga_slam-dunk_1990": "wk_00000385",
+    "sub_manga_soul-eater_2004": "wk_00000386",
+    "sub_manga_spy-x-family_2018": "wk_00000387",
+    "sub_manga_tensura_2014": "wk_00000388",
+    "sub_manga_toilet-bound-hanako-kun_2014": "wk_00000389",
+    "sub_manga_tokyo-ghoul_2011": "wk_00000390",
+    "sub_manga_tokyo-revengers_2017": "wk_00000391",
+    "sub_manga_toradora_2007": "wk_00000392",
+    "sub_manga_undead-unluck_2020": "wk_00000393",
+    "sub_manga_usagi-drop_2005": "wk_00000394",
+    "sub_manga_vagabond_1998": "wk_00000395",
+    "sub_manga_vinland-saga_2005": "wk_00000396",
+    "sub_manga_wind-breaker_2021": "wk_00000397",
+    "sub_manga_world-trigger_2006": "wk_00000398",
+    "sub_manga_yona-of-the-dawn_2009": "wk_00000399",
+    "sub_manga_yotsubato_2003": "wk_00000400",
+    "sub_manga_yu-yu-hakusho_1990": "wk_00000401",
+    "sub_movie_a-silent-voice_2016": "wk_00000402",
+    "sub_movie_chainsaw-man-movie_2025": "wk_00000403",
+    "sub_movie_demon-slayer-mugen-train_2020": "wk_00000404",
+    "sub_movie_demon-slayer-mugen_2020": "wk_00000405",
+    "sub_movie_jujutsu-kaisen-0_2021": "wk_00000406",
+    "sub_movie_weathering-with-you_2019": "wk_00000407",
+    "sub_movie_your-name-2016_2016": "wk_00000408",
+    "sub_webtoon_solo-leveling_2018": "wk_00000409",
+    "sub_webtoon_tower-of-god_2010": "wk_00000410"
+  }
+}

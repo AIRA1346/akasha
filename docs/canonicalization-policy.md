@@ -2,7 +2,8 @@
 
 > **상태:** 설계 초안  
 > **기준일:** 2026-06-08  
-> **상위 문서:** [data-architecture-redesign.md](data-architecture-redesign.md)
+> **상위 문서:** [data-architecture-redesign.md](data-architecture-redesign.md)  
+> **구현 일정:** Phase C — [v4-migration-plan.md](v4-migration-plan.md) (Steam 게이트)
 
 AKASHA가 커질수록 **검색보다** 아래 질문이 더 중요해진다.
 

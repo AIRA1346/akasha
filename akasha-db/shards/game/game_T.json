@@ -1,6 +1,6 @@
 {
-  "sub_game_touhou-lost-word_2019": {
-    "workId": "sub_game_touhou-lost-word_2019",
+  "wk_00000284": {
+    "workId": "wk_00000284",
     "title": "동방 로스트 워드",
     "category": "game",
     "domain": "subculture",
@@ -13,6 +13,9 @@
       "판타지",
       "서브컬처"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg",
+    "legacyIds": [
+      "sub_game_touhou-lost-word_2019"
+    ]
   }
 }

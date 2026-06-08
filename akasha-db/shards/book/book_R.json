@@ -1,6 +1,6 @@
 {
-  "gen_book_ready-player-one_2011": {
-    "workId": "gen_book_ready-player-one_2011",
+  "wk_00000014": {
+    "workId": "wk_00000014",
     "title": "아이언 레디 플레이어 원",
     "category": "book",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "VR",
       "레트로"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg",
+    "legacyIds": [
+      "gen_book_ready-player-one_2011"
+    ]
   },
-  "sub_book_rezero-light-novel_2014": {
-    "workId": "sub_book_rezero-light-novel_2014",
+  "wk_00000260": {
+    "workId": "wk_00000260",
     "title": "Re:제로 라이트노벨",
     "category": "book",
     "domain": "subculture",
@@ -29,6 +32,9 @@
       "판타지",
       "서브컬처"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg",
+    "legacyIds": [
+      "sub_book_rezero-light-novel_2014"
+    ]
   }
 }

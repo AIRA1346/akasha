@@ -11,6 +11,7 @@ import 'dart:io';
 
 import 'poster_url_policy.dart';
 import 'registry_v3_utils.dart';
+import 'wk_id_utils.dart';
 
 final _masterPatternWithYear = RegExp(
   r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',
@@ -22,6 +23,8 @@ final _masterPatternNoYear = RegExp(
 bool _isMasterFormat(String workId) =>
     _masterPatternWithYear.hasMatch(workId) ||
     _masterPatternNoYear.hasMatch(workId);
+
+bool _isValidWorkId(String workId) => _isMasterFormat(workId) || isWkId(workId);
 
 const _validCategories = {
   'manga',
@@ -209,6 +212,7 @@ void _syncAssetsRegistry({
     'manifest.json',
     'search_index.json',
     'legacy_aliases.json',
+    'id_registry.json',
     'franchise_groups.json',
   ]) {
     final src = File('${dbRoot.path}/$name');
@@ -257,8 +261,13 @@ void _validateWork(
   if (mapKey != workId) {
     errors.add('$shardPath: map key $mapKey != workId $workId');
   }
-  if (!_isMasterFormat(workId)) {
-    errors.add('$shardPath: invalid master workId format: $workId');
+  if (!_isValidWorkId(workId)) {
+    errors.add('$shardPath: invalid workId format: $workId');
+  }
+
+  final legacyIds = work['legacyIds'];
+  if (legacyIds != null && legacyIds is! List) {
+    errors.add('$shardPath/$workId: legacyIds must be a JSON array');
   }
 
   final category = work['category']?.toString() ?? '';

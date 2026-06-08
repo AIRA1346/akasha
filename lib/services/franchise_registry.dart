@@ -56,9 +56,14 @@ class FranchiseRegistry {
     final group = groupFor(workId);
     if (group == null) return false;
 
+    final userCanonical = <String>{
+      for (final id in userWorkIds) ...{id, WorksRegistry.resolveWorkId(id)},
+    };
+
     for (final member in group.members) {
-      final resolved = WorksRegistry.resolveWorkId(member);
-      if (userWorkIds.contains(member) || userWorkIds.contains(resolved)) {
+      final memberResolved = WorksRegistry.resolveWorkId(member);
+      if (userCanonical.contains(member) ||
+          userCanonical.contains(memberResolved)) {
         return true;
       }
     }

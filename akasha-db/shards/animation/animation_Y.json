@@ -1,6 +1,6 @@
 {
-  "sub_animation_your-name_2016": {
-    "workId": "sub_animation_your-name_2016",
+  "wk_00000251": {
+    "workId": "wk_00000251",
     "title": "너의 이름은.",
     "category": "animation",
     "domain": "subculture",
@@ -20,6 +20,9 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_animation_your-name_2016"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
-  "sub_movie_jujutsu-kaisen-0_2021": {
-    "workId": "sub_movie_jujutsu-kaisen-0_2021",
+  "wk_00000406": {
+    "workId": "wk_00000406",
     "title": "주술회전 0",
     "category": "movie",
     "domain": "subculture",
@@ -12,6 +12,9 @@
       "초자연",
       "극장판",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_jujutsu-kaisen-0_2021"
     ]
   }
 }

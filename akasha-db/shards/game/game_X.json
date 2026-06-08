@@ -1,6 +1,6 @@
 {
-  "sub_game_xenoblade-3_2022": {
-    "workId": "sub_game_xenoblade-3_2022",
+  "wk_00000288": {
+    "workId": "wk_00000288",
     "title": "제노블레이드 3",
     "category": "game",
     "domain": "subculture",
@@ -13,6 +13,9 @@
       "판타지",
       "서브컬처"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
+    "legacyIds": [
+      "sub_game_xenoblade-3_2022"
+    ]
   }
 }

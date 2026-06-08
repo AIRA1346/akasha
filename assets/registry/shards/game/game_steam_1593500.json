@@ -1,6 +1,6 @@
 {
-  "gen_game_appid1593500_2022": {
-    "workId": "gen_game_appid1593500_2022",
+  "wk_00000053": {
+    "workId": "wk_00000053",
     "title": "갓 오브 워",
     "category": "game",
     "domain": "generalCulture",
@@ -13,6 +13,9 @@
       "스토리",
       "명작"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1593500_2022"
+    ]
   }
 }

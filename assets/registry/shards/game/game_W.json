@@ -1,22 +1,6 @@
 {
-  "sub_game_wuthering-waves_2024": {
-    "workId": "sub_game_wuthering-waves_2024",
-    "title": "명조: 워더링 웨이브",
-    "category": "game",
-    "domain": "subculture",
-    "creator": "Kuro Games",
-    "releaseYear": 2024,
-    "description": "잔향을 수집하며 모험하는 오픈월드 액션 RPG.",
-    "tags": [
-      "오픈월드",
-      "액션",
-      "SF",
-      "서브컬처"
-    ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k5k.jpg"
-  },
-  "gen_game_witcher-3_2015": {
-    "workId": "gen_game_witcher-3_2015",
+  "wk_00000146": {
+    "workId": "wk_00000146",
     "title": "더 위처 3: 와일드 헌트",
     "category": "game",
     "domain": "generalCulture",
@@ -29,6 +13,28 @@
       "판타지",
       "명작"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_witcher-3_2015"
+    ]
+  },
+  "wk_00000287": {
+    "workId": "wk_00000287",
+    "title": "명조: 워더링 웨이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Kuro Games",
+    "releaseYear": 2024,
+    "description": "잔향을 수집하며 모험하는 오픈월드 액션 RPG.",
+    "tags": [
+      "오픈월드",
+      "액션",
+      "SF",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k5k.jpg",
+    "legacyIds": [
+      "sub_game_wuthering-waves_2024"
+    ]
   }
 }

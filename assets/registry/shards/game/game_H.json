@@ -1,22 +1,6 @@
 {
-  "sub_game_honkai-star-rail_2023": {
-    "workId": "sub_game_honkai-star-rail_2023",
-    "title": "붕괴: 스타레일",
-    "category": "game",
-    "domain": "subculture",
-    "creator": "HoYoverse",
-    "releaseYear": 2023,
-    "description": "우주를 여행하며 벌어지는 턴제 RPG 어드벤처.",
-    "tags": [
-      "턴제",
-      "SF",
-      "수집형RPG",
-      "서브컬처"
-    ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg"
-  },
-  "gen_game_half-life-2_2004": {
-    "workId": "gen_game_half-life-2_2004",
+  "wk_00000138": {
+    "workId": "wk_00000138",
     "title": "하프라이프 2",
     "category": "game",
     "domain": "generalCulture",
@@ -29,6 +13,28 @@
       "명작",
       "스토리"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_half-life-2_2004"
+    ]
+  },
+  "wk_00000273": {
+    "workId": "wk_00000273",
+    "title": "붕괴: 스타레일",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2023,
+    "description": "우주를 여행하며 벌어지는 턴제 RPG 어드벤처.",
+    "tags": [
+      "턴제",
+      "SF",
+      "수집형RPG",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
+    "legacyIds": [
+      "sub_game_honkai-star-rail_2023"
+    ]
   }
 }

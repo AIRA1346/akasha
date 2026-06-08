@@ -1,6 +1,6 @@
 {
-  "gen_drama_chernobyl_2019": {
-    "workId": "gen_drama_chernobyl_2019",
+  "wk_00000017": {
+    "workId": "wk_00000017",
     "title": "체르노빌",
     "category": "drama",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "재난",
       "드라마",
       "미니시리즈"
+    ],
+    "legacyIds": [
+      "gen_drama_chernobyl_2019"
     ]
   }
 }

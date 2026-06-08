@@ -1,6 +1,6 @@
 {
-  "sub_manga_land-of-the-lustrous_2012": {
-    "workId": "sub_manga_land-of-the-lustrous_2012",
+  "wk_00000347": {
+    "workId": "wk_00000347",
     "title": "보석의 나라",
     "titles": {
       "ko": "보석의 나라",
@@ -21,6 +21,9 @@
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg",
+    "legacyIds": [
+      "sub_manga_land-of-the-lustrous_2012"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
-  "gen_book_laplace-novel_2015": {
-    "workId": "gen_book_laplace-novel_2015",
+  "wk_00000009": {
+    "workId": "wk_00000009",
     "title": "라플라스의 마녀",
     "category": "book",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "SF",
       "히가시노게이고"
     ],
-    "posterPath": "https://image.yes24.com/goods/18063773/L"
+    "posterPath": "https://image.yes24.com/goods/18063773/L",
+    "legacyIds": [
+      "gen_book_laplace-novel_2015"
+    ]
   },
-  "gen_book_lord-of-the-rings-fellowship_1954": {
-    "workId": "gen_book_lord-of-the-rings-fellowship_1954",
+  "wk_00000010": {
+    "workId": "wk_00000010",
     "title": "반지의 제왕: 반지 원정대",
     "category": "book",
     "domain": "generalCulture",
@@ -29,6 +32,9 @@
       "서사",
       "명작"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
+    "legacyIds": [
+      "gen_book_lord-of-the-rings-fellowship_1954"
+    ]
   }
 }

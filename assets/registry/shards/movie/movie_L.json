@@ -1,6 +1,6 @@
 {
-  "gen_movie_lord-of-the-rings-fellowship_2001": {
-    "workId": "gen_movie_lord-of-the-rings-fellowship_2001",
+  "wk_00000158": {
+    "workId": "wk_00000158",
     "title": "반지의 제왕: 반지 원정대",
     "category": "movie",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "모험",
       "명작",
       "서사"
+    ],
+    "legacyIds": [
+      "gen_movie_lord-of-the-rings-fellowship_2001"
     ]
   }
 }

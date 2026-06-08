@@ -1,60 +1,6 @@
 {
-  "sub_animation_hajime-no-ippo_2000": {
-    "workId": "sub_animation_hajime-no-ippo_2000",
-    "title": "첫걸음",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "MADHOUSE",
-    "releaseYear": 2000,
-    "description": "소심한 소년이 복싱을 통해 강해지는 스포츠 성장 드라마.",
-    "tags": [
-      "스포츠",
-      "복싱",
-      "성장",
-      "청춘"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_horimiya_2021": {
-    "workId": "sub_animation_horimiya_2021",
-    "title": "호리미야",
-    "titles": {
-      "ko": "호리미야",
-      "en": "Horimiya",
-      "ja": "ホリミヤ"
-    },
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "하기와라 히로",
-    "releaseYear": 2021,
-    "description": "학교와 집에서 다른 모습을 보이는 호리와 미야무라의 일상 로맨스.",
-    "tags": [
-      "로맨스",
-      "학원",
-      "일상",
-      "성장"
-    ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "seasons": [
-        {
-          "label": "1기",
-          "year": 2021,
-          "episodes": 13
-        },
-        {
-          "label": "피스",
-          "year": 2023,
-          "episodes": 13
-        }
-      ],
-      "latestSeason": "피스"
-    }
-  },
-  "sub_animation_haikyuu_2014": {
-    "workId": "sub_animation_haikyuu_2014",
+  "wk_00000198": {
+    "workId": "wk_00000198",
     "title": "하이큐!!",
     "titles": {
       "ko": "하이큐!!",
@@ -102,10 +48,34 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
     "externalIds": {
       "tmdb": "60863"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_haikyuu_2014"
+    ]
   },
-  "sub_animation_hells-paradise_2023": {
-    "workId": "sub_animation_hells-paradise_2023",
+  "wk_00000199": {
+    "workId": "wk_00000199",
+    "title": "첫걸음",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 2000,
+    "description": "소심한 소년이 복싱을 통해 강해지는 스포츠 성장 드라마.",
+    "tags": [
+      "스포츠",
+      "복싱",
+      "성장",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_hajime-no-ippo_2000"
+    ]
+  },
+  "wk_00000200": {
+    "workId": "wk_00000200",
     "title": "지옥락",
     "titles": {
       "ko": "지옥락",
@@ -143,10 +113,52 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
     "externalIds": {
       "tmdb": "117465"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_hells-paradise_2023"
+    ]
   },
-  "sub_animation_hunter-x-hunter_2011": {
-    "workId": "sub_animation_hunter-x-hunter_2011",
+  "wk_00000201": {
+    "workId": "wk_00000201",
+    "title": "호리미야",
+    "titles": {
+      "ko": "호리미야",
+      "en": "Horimiya",
+      "ja": "ホリミヤ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "releaseYear": 2021,
+    "description": "학교와 집에서 다른 모습을 보이는 호리와 미야무라의 일상 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "일상",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 13
+        },
+        {
+          "label": "피스",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "피스"
+    },
+    "legacyIds": [
+      "sub_animation_horimiya_2021"
+    ]
+  },
+  "wk_00000202": {
+    "workId": "wk_00000202",
     "title": "헌터×헌터",
     "titles": {
       "ko": "헌터×헌터",
@@ -175,6 +187,9 @@
       ],
       "latestSeason": "2011판"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg",
+    "legacyIds": [
+      "sub_animation_hunter-x-hunter_2011"
+    ]
   }
 }

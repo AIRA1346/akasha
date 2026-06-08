@@ -1,29 +1,54 @@
 {
-  "sub_manga_fullmetal-alchemist_2001": {
-    "workId": "sub_manga_fullmetal-alchemist_2001",
-    "title": "강철의 연금술사",
+  "wk_00000320": {
+    "workId": "wk_00000320",
+    "title": "페어리 테일 100년 퀘스트",
+    "titles": {
+      "ko": "페어리 테일 100년 퀘스트",
+      "en": "Fairy Tail: 100 Years Quest",
+      "ja": "FAIRY TAIL 100年クエスト"
+    },
     "category": "manga",
     "domain": "subculture",
-    "creator": "아라카와 히로",
-    "releaseYear": 2001,
-    "description": "연금술사 형제가 잃은 몸을 되찾기 위해 필사적으로 여행하는 대서사.",
+    "creator": "마시마 히로",
+    "releaseYear": 2018,
+    "description": "나츠 일행이 백년 퀘스트를 수행하며 새로운 적과 마법 대륙을 마주하는 후속 모험.",
     "tags": [
       "판타지",
-      "연금술",
-      "전쟁",
-      "형제"
+      "마법",
+      "모험",
+      "우정"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
-    "externalIds": {
-      "tmdb": "31911"
-    },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg",
+    "legacyIds": [
+      "sub_manga_fairy-tail-100-years-quest_2018"
+    ]
   },
-  "sub_manga_fire-force_2015": {
-    "workId": "sub_manga_fire-force_2015",
+  "wk_00000321": {
+    "workId": "wk_00000321",
+    "title": "페어리 테일",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마시마 히로",
+    "releaseYear": 2006,
+    "description": "마법 길드 페어리 테일의 모험과 우정 이야기.",
+    "tags": [
+      "판타지",
+      "마법",
+      "길드",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_fairy-tail_2006"
+    ]
+  },
+  "wk_00000322": {
+    "workId": "wk_00000322",
     "title": "불꽃 소방대",
     "category": "manga",
     "domain": "subculture",
@@ -43,46 +68,13 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_manga_fire-force_2015"
+    ]
   },
-  "sub_manga_fairy-tail_2006": {
-    "workId": "sub_manga_fairy-tail_2006",
-    "title": "페어리 테일",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "마시마 히로",
-    "releaseYear": 2006,
-    "description": "마법 길드 페어리 테일의 모험과 우정 이야기.",
-    "tags": [
-      "판타지",
-      "마법",
-      "길드",
-      "우정"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_fruits-basket_1998": {
-    "workId": "sub_manga_fruits-basket_1998",
-    "title": "후르츠 바스켓",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타카야 나츠키",
-    "releaseYear": 1998,
-    "description": "십이지 신의 저주에 걸린 소년과 가족들의 로맨스 판타지.",
-    "tags": [
-      "로맨스",
-      "판타지",
-      "힐링",
-      "가족"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_frieren_2020": {
-    "workId": "sub_manga_frieren_2020",
+  "wk_00000323": {
+    "workId": "wk_00000323",
     "title": "장송의 프리렌",
     "titles": {
       "ko": "장송의 프리렌",
@@ -107,30 +99,56 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
     "externalIds": {
       "tmdb": "209867"
-    }
-  },
-  "sub_manga_fairy-tail-100-years-quest_2018": {
-    "workId": "sub_manga_fairy-tail-100-years-quest_2018",
-    "title": "페어리 테일 100년 퀘스트",
-    "titles": {
-      "ko": "페어리 테일 100년 퀘스트",
-      "en": "Fairy Tail: 100 Years Quest",
-      "ja": "FAIRY TAIL 100年クエスト"
     },
+    "legacyIds": [
+      "sub_manga_frieren_2020"
+    ]
+  },
+  "wk_00000324": {
+    "workId": "wk_00000324",
+    "title": "후르츠 바스켓",
     "category": "manga",
     "domain": "subculture",
-    "creator": "마시마 히로",
-    "releaseYear": 2018,
-    "description": "나츠 일행이 백년 퀘스트를 수행하며 새로운 적과 마법 대륙을 마주하는 후속 모험.",
+    "creator": "타카야 나츠키",
+    "releaseYear": 1998,
+    "description": "십이지 신의 저주에 걸린 소년과 가족들의 로맨스 판타지.",
     "tags": [
+      "로맨스",
       "판타지",
-      "마법",
-      "모험",
-      "우정"
+      "힐링",
+      "가족"
     ],
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg"
+    "legacyIds": [
+      "sub_manga_fruits-basket_1998"
+    ]
+  },
+  "wk_00000325": {
+    "workId": "wk_00000325",
+    "title": "강철의 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 히로",
+    "releaseYear": 2001,
+    "description": "연금술사 형제가 잃은 몸을 되찾기 위해 필사적으로 여행하는 대서사.",
+    "tags": [
+      "판타지",
+      "연금술",
+      "전쟁",
+      "형제"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
+    "externalIds": {
+      "tmdb": "31911"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_fullmetal-alchemist_2001"
+    ]
   }
 }

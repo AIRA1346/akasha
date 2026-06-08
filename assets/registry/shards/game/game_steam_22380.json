@@ -1,6 +1,6 @@
 {
-  "gen_game_appid22380_2010": {
-    "workId": "gen_game_appid22380_2010",
+  "wk_00000071": {
+    "workId": "wk_00000071",
     "title": "폴아웃: 뉴 베가스",
     "category": "game",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "Steam",
       "대중문화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid22380_2010"
+    ]
   }
 }

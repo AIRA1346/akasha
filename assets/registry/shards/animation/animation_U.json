@@ -1,6 +1,6 @@
 {
-  "sub_animation_undead-unluck_2023": {
-    "workId": "sub_animation_undead-unluck_2023",
+  "wk_00000246": {
+    "workId": "wk_00000246",
     "title": "언데드 언럭",
     "titles": {
       "ko": "언데드 언럭",
@@ -28,6 +28,9 @@
         }
       ],
       "latestSeason": "1기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_undead-unluck_2023"
+    ]
   }
 }

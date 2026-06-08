@@ -1,6 +1,6 @@
 {
-  "gen_game_appid105600_2011": {
-    "workId": "gen_game_appid105600_2011",
+  "wk_00000027": {
+    "workId": "wk_00000027",
     "title": "테라리아",
     "category": "game",
     "domain": "generalCulture",
@@ -13,6 +13,9 @@
       "인디",
       "협동"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid105600_2011"
+    ]
   }
 }

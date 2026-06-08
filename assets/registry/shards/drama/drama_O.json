@@ -1,6 +1,6 @@
 {
-  "sub_drama_one-piece-live-action_2023": {
-    "workId": "sub_drama_one-piece-live-action_2023",
+  "wk_00000264": {
+    "workId": "wk_00000264",
     "title": "원피스 (실사)",
     "category": "drama",
     "domain": "subculture",
@@ -12,6 +12,9 @@
       "모험",
       "실사",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_drama_one-piece-live-action_2023"
     ]
   }
 }

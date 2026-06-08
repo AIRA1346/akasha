@@ -1,52 +1,6 @@
 {
-  "sub_animation_frieren_2023": {
-    "workId": "sub_animation_frieren_2023",
-    "title": "장송의 프리렌",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "야마다 카네히토 / 아베 츠카사",
-    "releaseYear": 2023,
-    "description": "마왕을 물리친 후 동료들의 죽음 이후 여행을 떠나는 프리렌의 판타지.",
-    "tags": [
-      "판타지",
-      "모험",
-      "감동",
-      "성장"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
-    "externalIds": {
-      "tmdb": "209867"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_animation_fullmetal-alchemist-brotherhood_2009": {
-    "workId": "sub_animation_fullmetal-alchemist-brotherhood_2009",
-    "title": "강철의 연금술사 BROTHERHOOD",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "BONES",
-    "releaseYear": 2009,
-    "description": "연금술사 형제가 잃은 것을 되찾기 위한 여정을 그린 애니메이션.",
-    "tags": [
-      "판타지",
-      "연금술",
-      "형제",
-      "명작"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
-    "externalIds": {
-      "tmdb": "31911"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_animation_fate-zero_2011": {
-    "workId": "sub_animation_fate-zero_2011",
+  "wk_00000191": {
+    "workId": "wk_00000191",
     "title": "페이트/제로",
     "category": "animation",
     "domain": "subculture",
@@ -61,10 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_fate-zero_2011"
+    ]
   },
-  "sub_animation_fire-force_2019": {
-    "workId": "sub_animation_fire-force_2019",
+  "wk_00000192": {
+    "workId": "wk_00000192",
     "title": "불꽃 소방대",
     "titles": {
       "ko": "불꽃 소방대",
@@ -107,6 +64,61 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
     "externalIds": {
       "tmdb": "88046"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_fire-force_2019"
+    ]
+  },
+  "wk_00000193": {
+    "workId": "wk_00000193",
+    "title": "장송의 프리렌",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야마다 카네히토 / 아베 츠카사",
+    "releaseYear": 2023,
+    "description": "마왕을 물리친 후 동료들의 죽음 이후 여행을 떠나는 프리렌의 판타지.",
+    "tags": [
+      "판타지",
+      "모험",
+      "감동",
+      "성장"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
+    "externalIds": {
+      "tmdb": "209867"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_frieren_2023"
+    ]
+  },
+  "wk_00000194": {
+    "workId": "wk_00000194",
+    "title": "강철의 연금술사 BROTHERHOOD",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2009,
+    "description": "연금술사 형제가 잃은 것을 되찾기 위한 여정을 그린 애니메이션.",
+    "tags": [
+      "판타지",
+      "연금술",
+      "형제",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
+    "externalIds": {
+      "tmdb": "31911"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_fullmetal-alchemist-brotherhood_2009"
+    ]
   }
 }

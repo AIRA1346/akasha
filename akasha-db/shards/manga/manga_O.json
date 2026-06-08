@@ -1,6 +1,6 @@
 {
-  "sub_manga_one-piece_1997": {
-    "workId": "sub_manga_one-piece_1997",
+  "wk_00000363": {
+    "workId": "wk_00000363",
     "title": "원피스",
     "category": "manga",
     "domain": "subculture",
@@ -20,51 +20,13 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
-  },
-  "sub_manga_oshi-no-ko_2020": {
-    "workId": "sub_manga_oshi-no-ko_2020",
-    "title": "최애의 아이",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아카사카 아카",
-    "releaseYear": 2020,
-    "description": "연예계를 배경으로 한 환생과 복수, 성장의 드라마.",
-    "tags": [
-      "연예",
-      "드라마",
-      "미스터리",
-      "복수"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
-    "externalIds": {
-      "tmdb": "203737"
     },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
+    "legacyIds": [
+      "sub_manga_one-piece_1997"
+    ]
   },
-  "sub_manga_oregairu_2011": {
-    "workId": "sub_manga_oregairu_2011",
-    "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "와타리 와타루",
-    "releaseYear": 2011,
-    "description": "봉사부에 끌려간 고독한 소년의 학원 코미디 드라마.",
-    "tags": [
-      "학원",
-      "코미디",
-      "드라마",
-      "청춘"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_manga_one-punch-man_2012": {
-    "workId": "sub_manga_one-punch-man_2012",
+  "wk_00000364": {
+    "workId": "wk_00000364",
     "title": "원펀맨",
     "titles": {
       "ko": "원펀맨",
@@ -89,10 +51,60 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
     "externalIds": {
       "tmdb": "63926"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_one-punch-man_2012"
+    ]
   },
-  "sub_manga_overlord_2012": {
-    "workId": "sub_manga_overlord_2012",
+  "wk_00000365": {
+    "workId": "wk_00000365",
+    "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와타리 와타루",
+    "releaseYear": 2011,
+    "description": "봉사부에 끌려간 고독한 소년의 학원 코미디 드라마.",
+    "tags": [
+      "학원",
+      "코미디",
+      "드라마",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_oregairu_2011"
+    ]
+  },
+  "wk_00000366": {
+    "workId": "wk_00000366",
+    "title": "최애의 아이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2020,
+    "description": "연예계를 배경으로 한 환생과 복수, 성장의 드라마.",
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
+    "externalIds": {
+      "tmdb": "203737"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_oshi-no-ko_2020"
+    ]
+  },
+  "wk_00000367": {
+    "workId": "wk_00000367",
     "title": "오버로드",
     "titles": {
       "ko": "오버로드",
@@ -113,6 +125,9 @@
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg",
+    "legacyIds": [
+      "sub_manga_overlord_2012"
+    ]
   }
 }

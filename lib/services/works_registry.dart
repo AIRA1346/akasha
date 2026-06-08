@@ -368,6 +368,23 @@ class WorksRegistry {
 
   static String resolveWorkId(String workId) => _loader.resolveWorkId(workId);
 
+  /// `sub_*` 볼트 ID와 `wk_*` 사전 ID가 같은 작품인지 판별
+  static bool setContainsWorkId(Set<String> ids, String workId) {
+    if (workId.isEmpty) return false;
+    final canonical = resolveWorkId(workId);
+    for (final id in ids) {
+      if (id.isEmpty) continue;
+      final idCanonical = resolveWorkId(id);
+      if (id == workId ||
+          id == canonical ||
+          idCanonical == workId ||
+          idCanonical == canonical) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /// 검증된 샤드 → search_index → 미검증 샤드 순으로 포스터 URL을 반환합니다.
   static String? resolvePosterPath(String workId) {
     if (workId.isEmpty) return null;

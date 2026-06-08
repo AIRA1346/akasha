@@ -1,6 +1,6 @@
 {
-  "sub_manga_ao-ashi_2015": {
-    "workId": "sub_manga_ao-ashi_2015",
+  "wk_00000293": {
+    "workId": "wk_00000293",
     "title": "아오아시",
     "category": "manga",
     "domain": "subculture",
@@ -15,10 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_ao-ashi_2015"
+    ]
   },
-  "sub_manga_apothecary-diaries_2016": {
-    "workId": "sub_manga_apothecary-diaries_2016",
+  "wk_00000294": {
+    "workId": "wk_00000294",
     "title": "약사의 혼잣말",
     "titles": {
       "ko": "약사의 혼잣말",
@@ -43,33 +46,13 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
     "externalIds": {
       "tmdb": "220542"
-    }
-  },
-  "sub_manga_assassination-classroom_2012": {
-    "workId": "sub_manga_assassination-classroom_2012",
-    "title": "암살교실",
-    "titles": {
-      "ko": "암살교실",
-      "en": "Assassination Classroom",
-      "ja": "暗殺教室"
     },
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "마츠이 유세이",
-    "releaseYear": 2012,
-    "description": "달을 파괴한 문어 선생님을 암살하라는 미션을 받은 3-E반 학생들의 이야기.",
-    "tags": [
-      "학원",
-      "액션",
-      "코미디",
-      "감동"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
+    "legacyIds": [
+      "sub_manga_apothecary-diaries_2016"
+    ]
   },
-  "sub_manga_ascendance-of-a-bookworm_2013": {
-    "workId": "sub_manga_ascendance-of-a-bookworm_2013",
+  "wk_00000295": {
+    "workId": "wk_00000295",
     "title": "책벌레의 하극상",
     "titles": {
       "ko": "책벌레의 하극상",
@@ -90,6 +73,35 @@
     "extensions": {
       "posterSource": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg",
+    "legacyIds": [
+      "sub_manga_ascendance-of-a-bookworm_2013"
+    ]
+  },
+  "wk_00000296": {
+    "workId": "wk_00000296",
+    "title": "암살교실",
+    "titles": {
+      "ko": "암살교실",
+      "en": "Assassination Classroom",
+      "ja": "暗殺教室"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마츠이 유세이",
+    "releaseYear": 2012,
+    "description": "달을 파괴한 문어 선생님을 암살하라는 미션을 받은 3-E반 학생들의 이야기.",
+    "tags": [
+      "학원",
+      "액션",
+      "코미디",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_assassination-classroom_2012"
+    ]
   }
 }

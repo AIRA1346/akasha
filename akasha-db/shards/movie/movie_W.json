@@ -1,6 +1,6 @@
 {
-  "sub_movie_weathering-with-you_2019": {
-    "workId": "sub_movie_weathering-with-you_2019",
+  "wk_00000407": {
+    "workId": "wk_00000407",
     "title": "날씨의 아이",
     "category": "movie",
     "domain": "subculture",
@@ -10,6 +10,9 @@
     "tags": [
       "영화",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_weathering-with-you_2019"
     ]
   }
 }

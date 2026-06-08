@@ -1,6 +1,6 @@
 {
-  "gen_game_appid1599340_2022": {
-    "workId": "gen_game_appid1599340_2022",
+  "wk_00000054": {
+    "workId": "wk_00000054",
     "title": "로스트 아크",
     "category": "game",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "Steam",
       "대중문화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1599340_2022"
+    ]
   }
 }

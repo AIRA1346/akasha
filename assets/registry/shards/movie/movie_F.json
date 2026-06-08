@@ -1,6 +1,6 @@
 {
-  "gen_movie_fight-club_1999": {
-    "workId": "gen_movie_fight-club_1999",
+  "wk_00000154": {
+    "workId": "wk_00000154",
     "title": "파이트 클럽",
     "category": "movie",
     "domain": "generalCulture",
@@ -12,10 +12,13 @@
       "심리",
       "반항",
       "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_fight-club_1999"
     ]
   },
-  "gen_movie_forrest-gump_1994": {
-    "workId": "gen_movie_forrest-gump_1994",
+  "wk_00000155": {
+    "workId": "wk_00000155",
     "title": "포레스트 검프",
     "category": "movie",
     "domain": "generalCulture",
@@ -27,6 +30,9 @@
       "감동",
       "역사",
       "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_forrest-gump_1994"
     ]
   }
 }

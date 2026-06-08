@@ -1,6 +1,6 @@
 {
-  "gen_book_da-vinci-code_2003": {
-    "workId": "gen_book_da-vinci-code_2003",
+  "wk_00000004": {
+    "workId": "wk_00000004",
     "title": "다빈치 코드",
     "category": "book",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "음모",
       "베스트셀러"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
+    "legacyIds": [
+      "gen_book_da-vinci-code_2003"
+    ]
   },
-  "gen_book_dune_1965": {
-    "workId": "gen_book_dune_1965",
+  "wk_00000005": {
+    "workId": "wk_00000005",
     "title": "듄",
     "category": "book",
     "domain": "generalCulture",
@@ -29,6 +32,9 @@
       "정치",
       "명작"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
+    "legacyIds": [
+      "gen_book_dune_1965"
+    ]
   }
 }

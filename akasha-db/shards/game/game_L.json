@@ -1,6 +1,6 @@
 {
-  "gen_game_league-of-legends_2009": {
-    "workId": "gen_game_league-of-legends_2009",
+  "wk_00000139": {
+    "workId": "wk_00000139",
     "title": "리그 오브 레전드",
     "category": "game",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "e스포츠",
       "팀전"
     ],
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg"
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
+    "legacyIds": [
+      "gen_game_league-of-legends_2009"
+    ]
   },
-  "sub_game_love-live-all-stars_2020": {
-    "workId": "sub_game_love-live-all-stars_2020",
+  "wk_00000274": {
+    "workId": "wk_00000274",
     "title": "러브라이브! 올스타즈",
     "category": "game",
     "domain": "subculture",
@@ -29,6 +32,9 @@
       "수집",
       "서브컬처"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg",
+    "legacyIds": [
+      "sub_game_love-live-all-stars_2020"
+    ]
   }
 }

@@ -1,21 +1,6 @@
 {
-  "gen_game_appid960090_2019": {
-    "workId": "gen_game_appid960090_2019",
-    "title": "비디오페이퍼",
-    "category": "game",
-    "domain": "generalCulture",
-    "creator": "Lucas Pope",
-    "releaseYear": 2019,
-    "description": "비디오페이퍼 — Steam 인기 게임.",
-    "tags": [
-      "게임",
-      "Steam",
-      "대중문화"
-    ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg"
-  },
-  "gen_game_appid960090_2016": {
-    "workId": "gen_game_appid960090_2016",
+  "wk_00000132": {
+    "workId": "wk_00000132",
     "title": "슬라임 랜처",
     "category": "game",
     "domain": "generalCulture",
@@ -27,6 +12,27 @@
       "Steam",
       "대중문화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid960090_2016"
+    ]
+  },
+  "wk_00000133": {
+    "workId": "wk_00000133",
+    "title": "비디오페이퍼",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Lucas Pope",
+    "releaseYear": 2019,
+    "description": "비디오페이퍼 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid960090_2019"
+    ]
   }
 }

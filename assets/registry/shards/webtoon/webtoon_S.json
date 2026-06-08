@@ -1,6 +1,6 @@
 {
-  "sub_webtoon_solo-leveling_2018": {
-    "workId": "sub_webtoon_solo-leveling_2018",
+  "wk_00000409": {
+    "workId": "wk_00000409",
     "title": "나 혼자만 레벨업",
     "category": "webtoon",
     "domain": "subculture",
@@ -20,6 +20,9 @@
     "extensions": {
       "posterSource": "tmdb",
       "posterVerified": true
-    }
+    },
+    "legacyIds": [
+      "sub_webtoon_solo-leveling_2018"
+    ]
   }
 }

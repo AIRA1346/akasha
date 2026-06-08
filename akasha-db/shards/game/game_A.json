@@ -1,6 +1,6 @@
 {
-  "gen_game_axiom_2024": {
-    "workId": "gen_game_axiom_2024",
+  "wk_00000135": {
+    "workId": "wk_00000135",
     "title": "엑시옴",
     "category": "game",
     "domain": "generalCulture",
@@ -12,26 +12,13 @@
       "얼리액세스",
       "SF"
     ],
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg"
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
+    "legacyIds": [
+      "gen_game_axiom_2024"
+    ]
   },
-  "sub_game_blue-archive_2021": {
-    "workId": "sub_game_blue-archive_2021",
-    "title": "블루 아카이브",
-    "category": "game",
-    "domain": "subculture",
-    "creator": "NEXON Games",
-    "releaseYear": 2021,
-    "description": "학원 도시 키보토스의 선생님이 되어 학생들을 이끄는 수집형 RPG.",
-    "tags": [
-      "학원물",
-      "수집형RPG",
-      "청춘",
-      "OST"
-    ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3511790/library_600x900.jpg"
-  },
-  "sub_game_arknights_2019": {
-    "workId": "sub_game_arknights_2019",
+  "wk_00000265": {
+    "workId": "wk_00000265",
     "title": "명일방주",
     "category": "game",
     "domain": "subculture",
@@ -44,6 +31,28 @@
       "SF",
       "수집"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg",
+    "legacyIds": [
+      "sub_game_arknights_2019"
+    ]
+  },
+  "wk_00000266": {
+    "workId": "wk_00000266",
+    "title": "블루 아카이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "releaseYear": 2021,
+    "description": "학원 도시 키보토스의 선생님이 되어 학생들을 이끄는 수집형 RPG.",
+    "tags": [
+      "학원물",
+      "수집형RPG",
+      "청춘",
+      "OST"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3511790/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_blue-archive_2021"
+    ]
   }
 }

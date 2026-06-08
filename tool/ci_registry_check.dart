@@ -71,6 +71,20 @@ void main(List<String> args) {
     print('OK: seed_expansion_anilist.dart absent');
   }
 
+  print('\n==> id_registry consistency');
+  final idReg = Process.runSync(
+    Platform.resolvedExecutable,
+    ['run', 'tool/id_registry_check.dart'],
+    workingDirectory: root.path,
+    runInShell: true,
+  );
+  stdout.write(idReg.stdout);
+  stderr.write(idReg.stderr);
+  if (idReg.exitCode != 0) {
+    failed = true;
+    print('FAIL: id_registry_check exited ${idReg.exitCode}');
+  }
+
   print('\n==> poster URL policy (link-only, denylist)');
   final posterScan = scanRegistryPosters(root);
   if (updateBaseline) {

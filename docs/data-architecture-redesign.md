@@ -1,8 +1,9 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정안 v2 (비전 정정 반영)  
+> **상태:** 설계 확정 v2 · **구현 0%** (v3 런타임 운영 중)  
 > **기준일:** 2026-06-08  
-> **한 줄:** **세상의 모든 작품 사전**이 최종 목표다. 지금은 엄선 일부만 포함하지만, **스키마·샤딩·동기화·ID 체계는 100만 작품 이상**을 전제로 설계한다.
+> **한 줄:** **세상의 모든 작품 사전**이 최종 목표다. **Steam v1 출시 전에 v4 런타임**(wk_·해시 샤드)을 완료한다.  
+> **실행 계획:** [v4-migration-plan.md](v4-migration-plan.md)
 
 관련: [akasha-db-policy.md](akasha-db-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [ROADMAP.md](../ROADMAP.md)
 
@@ -26,7 +27,7 @@
 
 | 시점 | 레지스트리 작품 수 | 운영 모델 |
 |------|-------------------|-----------|
-| **2026** (Steam v1) | ~400 | 엄선 + 수동/배치 시드 |
+| **2026** (Steam v1) | ~410 | v4 런타임(`wk_`·해시 샤드) + 엄선 |
 | **2027** | ~5,000 | 배치 + AI 보조 파이프라인 도입 |
 | **2028** | ~50,000 | Registry Pipeline 본격화 |
 | **2030** | ~500,000 | Git 소스 + CDN/R2 read, 검색 인덱스 분리 |
@@ -220,6 +221,20 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 - Pipeline이 배치 추가 시 자동 할당  
 - CI: `wk_` 중복·역참조 금지
 
+### 4.3 `assign_wk_ids` 도구 (Phase A 진입점)
+
+**`tool/assign_wk_ids.dart`** — 기존 ~410작에 `wk_00000001` 형식의 영구 ID를 일괄 부여하는 마이그레이션 스크립트.
+
+| 단계 | 동작 |
+|------|------|
+| 수집 | v3 샤드 JSON 전 work 엔트리 |
+| 할당 | 전역 순번, 8자리 zero-pad (`wk_00000410`) |
+| 기록 | `id_registry.json` + `legacy_aliases.json` |
+| 적용 | `--apply` 시 샤드 `workId` → `wk_`, `legacyIds`에 옛 `sub_*` 보존 |
+
+옛 볼트 `.md`의 `work_id`는 **rename 없이** `legacy_aliases`로 `wk_`에 조인된다.  
+상세 일정: [v4-migration-plan.md](v4-migration-plan.md) Phase A.
+
 ---
 
 ## 5. WorkEntry 스키마 (v4 초안)
@@ -337,64 +352,68 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ---
 
-## 9. 구현 우선순위 (합의)
+## 9. 구현 우선순위 · Steam 출시 게이트
 
-데이터가 늘수록 **검색보다 작품 정체성(identity)·중복 병합(canonicalization)** 이 더 큰 과제가 된다.  
-인프라보다 아래 순서를 따른다.
+> **결정:** Steam v1 **이전에** Phase A~D(v4 런타임) 완료. 실행 상세는 [v4-migration-plan.md](v4-migration-plan.md).
 
-| 순위 | 과제 | 산출물 |
-|------|------|--------|
-| **1** | **`wk_` 영구 ID 체계 확정** | `id_registry.json`, SCHEMA v4, `legacy_aliases` |
-| **2** | **중복 제거·canonicalization 규칙** | dedupe 정책 문서, CI, `franchise_linter` 확장 |
-| **3** | **해시 샤딩 전환** | `hash(id)%256`, migrate 도구, manifest v4 |
-| **4** | **Registry Pipeline 설계** | `tool/registry_pipeline/` 스펙·스켈레톤 |
-| **5** | **AI 자동 수집** | extract → dedupe → shard → Git 자동화 |
+| 구분 | Phase | Steam 전 |
+|------|-------|----------|
+| **게이트** | A `wk_` ID | ✅ 필수 |
+| **게이트** | B 앱·볼트 호환 | ✅ 필수 |
+| **게이트** | C dedupe CI | ✅ 필수 |
+| **게이트** | D 해시 샤딩 v4 | ✅ 필수 |
+| 권장 | Pipeline 스켈레톤 | 🔶 시간 있으면 |
+| 출시 후 | AI 자동 수집 | ❌ 2027~ |
+| 출시 후 | 50k+ CDN·R2 | ❌ 2028~ |
 
-### Phase 0 — Steam v1 (2026 Q3) ✅
+### Phase 0 — v3 기반·M1 ✅
 
 - [x] v3 슬러그 샤드 + lazy sync + `posterPath` in DB  
-- [x] ~410작 엄선  
-- [x] 본 문서 v2 · README/ROADMAP 정렬  
+- [x] ~410작 엄선 · dogfood 통과 · `master_archive`  
+- [x] 설계 v2 문서 · 정책 정렬  
 
-**하지 않음:** flat JSON 전환, poster URL 제거
+### Phase A — `wk_` 영구 ID ✅
 
-### Phase 1 — `wk_` 영구 ID (최우선 · 출시 직후)
+- [x] `assign_wk_ids.dart` (dry-run / `--apply`)  
+- [x] `id_registry.json` — 410작 전역 순번  
+- [x] `legacy_aliases` 전량 매핑  
+- [x] 샤드 `workId` → `wk_` + `legacyIds`  
+- [x] CI: `id_registry_check.dart`  
 
-- [ ] `wk_` 할당 규칙·`id_registry.json`  
-- [ ] 기존 410작 + `legacy_aliases` 전량 매핑  
-- [ ] 앱 `WorkIdCodec` — `wk_` 우선 해석  
-- [ ] CI: `wk_` 중복·orphan alias 금지  
+### Phase B — 앱·볼트 호환 (진행 중)
 
-### Phase 2 — Canonicalization / Dedupe
+- [x] `WorkIdCodec` — `wk_` 파싱  
+- [x] `setContainsWorkId` — legacy·wk 교차 매칭  
+- [x] 프랜차이즈·가시성 legacy 호환  
+- [ ] Loader `id_registry` 로드 (선택)  
+- [ ] dogfood 재검증  
 
-- [ ] [canonicalization-policy.md](canonicalization-policy.md) — 동일 작품·IP·매체 판별 규칙  
-- [ ] `externalIds` + `searchTokens` + fuzzy title 교차검증  
-- [ ] 자동 merge **금지**, Pipeline/CI는 **후보 제시**만  
-- [ ] `franchise_groups` = `wk_` members 기준 통일  
+### Phase C — Canonicalization CI
 
-### Phase 3 — 해시 샤딩 v4
+- [x] [canonicalization-policy.md](canonicalization-policy.md) 문서  
+- [ ] `dedupe_linter.dart` — 후보 제시만, 자동 merge 금지  
+- [ ] `franchise_groups` = `wk_` members  
 
-- [ ] `shardKey = hash(wk_) % 256`  
+### Phase D — 해시 샤딩 v4
+
 - [ ] `migrate_shards_v3_to_v4_hash.dart`  
-- [ ] manifest v4 (`shardBits`, `sha256`)  
+- [ ] manifest v4 (`shardBits: 8`)  
+- [ ] builder / loader / sync / CI v4  
 - [ ] 슬러그 샤드(`manga_K`) deprecated  
 
-### Phase 4 — Registry Pipeline MVP
+### Phase E — Steam v1 출시
 
-- [ ] Pipeline 스펙·디렉터리 스켈레톤  
-- [ ] extract → dedupe → poster batch → shard → Git  
-- [ ] CI 게이트 (denylist, duplicate, description)  
+- [ ] akasha-db push · dogfood 재검증  
+- [ ] Steamworks · 스토어 · IAP · 출시  
 
-### Phase 5 — AI 자동 수집 (2027~)
+### Phase F — Registry Pipeline (출시 후)
 
-- [ ] 일 1k~10k 작품 ingest 목표  
-- [ ] human/CI 샘플 spot check  
+- [ ] `tool/registry_pipeline/` 스켈레톤  
+- [ ] extract → dedupe → shard → Git  
 
-### Phase 6 — 50k+ 인프라
+### Phase G — AI 자동 수집 · 50k+ 인프라 (2027~)
 
-- [ ] search_index CDN 분리·압축  
-- [ ] Cloudflare R2 read mirror  
-- [ ] 앱 번들 = manifest + search_index만
+- [ ] 일 1k~10k ingest · CDN/R2 분리
 
 ---
 
@@ -422,6 +441,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 | [akasha-db-policy.md](akasha-db-policy.md) | 구축·운영·법무 마스터 |
 | [canonicalization-policy.md](canonicalization-policy.md) | identity·dedupe 규칙 |
 | [catalog-ownership.md](catalog-ownership.md) | 3계층·소유권 |
+| [v4-migration-plan.md](v4-migration-plan.md) | **Steam 전 실행 계획** |
 | [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md) | v3 현재 · v4 `wk_`·해시 샤드 |
 
 ---

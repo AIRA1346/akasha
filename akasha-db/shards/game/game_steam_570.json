@@ -1,6 +1,6 @@
 {
-  "gen_game_appid570_2013": {
-    "workId": "gen_game_appid570_2013",
+  "wk_00000118": {
+    "workId": "wk_00000118",
     "title": "도타 2",
     "category": "game",
     "domain": "generalCulture",
@@ -13,6 +13,9 @@
       "e스포츠",
       "전략"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid570_2013"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
-  "sub_animation_zom-100_2023": {
-    "workId": "sub_animation_zom-100_2023",
+  "wk_00000252": {
+    "workId": "wk_00000252",
     "title": "좀비랜드 사가",
     "titles": {
       "ko": "좀비랜드 사가",
@@ -28,6 +28,9 @@
         }
       ],
       "latestSeason": "1기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_zom-100_2023"
+    ]
   }
 }

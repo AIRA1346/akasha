@@ -1,6 +1,22 @@
 {
-  "gen_movie_spirited-away_2001": {
-    "workId": "gen_movie_spirited-away_2001",
+  "wk_00000163": {
+    "workId": "wk_00000163",
+    "title": "스파이더맨: 노 웨이 홈",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Jon Watts",
+    "releaseYear": 2021,
+    "description": "스파이더맨: 노 웨이 홈 영화.",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_spider-man-nwh_2021"
+    ]
+  },
+  "wk_00000164": {
+    "workId": "wk_00000164",
     "title": "센과 치히로의 행방불명",
     "category": "movie",
     "domain": "generalCulture",
@@ -12,19 +28,9 @@
       "판타지",
       "가족",
       "명작"
-    ]
-  },
-  "gen_movie_spider-man-nwh_2021": {
-    "workId": "gen_movie_spider-man-nwh_2021",
-    "title": "스파이더맨: 노 웨이 홈",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "Jon Watts",
-    "releaseYear": 2021,
-    "description": "스파이더맨: 노 웨이 홈 영화.",
-    "tags": [
-      "영화",
-      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_spirited-away_2001"
     ]
   }
 }

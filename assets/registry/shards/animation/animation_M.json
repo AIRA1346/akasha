@@ -1,6 +1,6 @@
 {
-  "gen_animation_my-neighbor-totoro_1988": {
-    "workId": "gen_animation_my-neighbor-totoro_1988",
+  "wk_00000002": {
+    "workId": "wk_00000002",
     "title": "이웃집 토토로",
     "category": "animation",
     "domain": "generalCulture",
@@ -15,33 +15,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_mob-psycho-100_2016": {
-    "workId": "sub_animation_mob-psycho-100_2016",
-    "title": "모브 사이코 100",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "BONES",
-    "releaseYear": 2016,
-    "description": "강력한 초능력 소년의 성장과 청소부 일상을 그린 액션.",
-    "tags": [
-      "초능력",
-      "액션",
-      "코미디",
-      "성장"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
-    "externalIds": {
-      "tmdb": "67075"
     },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
+    "legacyIds": [
+      "gen_animation_my-neighbor-totoro_1988"
+    ]
   },
-  "sub_animation_made-in-abyss_2017": {
-    "workId": "sub_animation_made-in-abyss_2017",
+  "wk_00000212": {
+    "workId": "wk_00000212",
     "title": "메이드 인 어비스",
     "category": "animation",
     "domain": "subculture",
@@ -56,46 +36,13 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_made-in-abyss_2017"
+    ]
   },
-  "sub_animation_mushoku-tensei_2021": {
-    "workId": "sub_animation_mushoku-tensei_2021",
-    "title": "무직전생",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Studio Bind",
-    "releaseYear": 2021,
-    "description": "전생한 소년이 마법 세계에서 새 삶을 사는 이세계 판타지.",
-    "tags": [
-      "이세계",
-      "판타지",
-      "성장",
-      "마법"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_monogatari_2009": {
-    "workId": "sub_animation_monogatari_2009",
-    "title": "바케모노가타리",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "SHAFT",
-    "releaseYear": 2009,
-    "description": "괴물과 인간의 이야기를 풀어가는 대화 중심 초자연 시리즈.",
-    "tags": [
-      "초자연",
-      "로맨스",
-      "대화",
-      "명작"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_mashle_2023": {
-    "workId": "sub_animation_mashle_2023",
+  "wk_00000213": {
+    "workId": "wk_00000213",
     "title": "마슐",
     "titles": {
       "ko": "마슐",
@@ -128,10 +75,81 @@
         }
       ],
       "latestSeason": "2기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_mashle_2023"
+    ]
   },
-  "sub_animation_my-hero-academia_2016": {
-    "workId": "sub_animation_my-hero-academia_2016",
+  "wk_00000214": {
+    "workId": "wk_00000214",
+    "title": "모브 사이코 100",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2016,
+    "description": "강력한 초능력 소년의 성장과 청소부 일상을 그린 액션.",
+    "tags": [
+      "초능력",
+      "액션",
+      "코미디",
+      "성장"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
+    "externalIds": {
+      "tmdb": "67075"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_mob-psycho-100_2016"
+    ]
+  },
+  "wk_00000215": {
+    "workId": "wk_00000215",
+    "title": "바케모노가타리",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SHAFT",
+    "releaseYear": 2009,
+    "description": "괴물과 인간의 이야기를 풀어가는 대화 중심 초자연 시리즈.",
+    "tags": [
+      "초자연",
+      "로맨스",
+      "대화",
+      "명작"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_monogatari_2009"
+    ]
+  },
+  "wk_00000216": {
+    "workId": "wk_00000216",
+    "title": "무직전생",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Bind",
+    "releaseYear": 2021,
+    "description": "전생한 소년이 마법 세계에서 새 삶을 사는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_mushoku-tensei_2021"
+    ]
+  },
+  "wk_00000217": {
+    "workId": "wk_00000217",
     "title": "나의 히어로 아카데미아",
     "titles": {
       "ko": "나의 히어로 아카데미아",
@@ -189,6 +207,9 @@
         }
       ],
       "latestSeason": "7기"
-    }
+    },
+    "legacyIds": [
+      "sub_animation_my-hero-academia_2016"
+    ]
   }
 }

@@ -39,7 +39,7 @@
 | **샤드 키** | 슬러그 첫 글자·연대 | **`hash(wk_) % 256`** |
 | **manifest** | `version: 3` | `version: 4`, `shardBits: 8`, `sha256` |
 
-전환 순서: **`wk_` ID → canonicalization → 해시 샤딩** — [docs/data-architecture-redesign.md §9](../docs/data-architecture-redesign.md)
+전환 순서·일정: [docs/v4-migration-plan.md](../docs/v4-migration-plan.md) (Steam 출시 게이트)
 
 ### id_registry.json (계획)
 
@@ -71,7 +71,9 @@ cd ..  # akasha 앱 루트
 dart run tool/registry_builder.dart --sync-assets
 dart run tool/ci_registry_check.dart
 dart run tool/franchise_linter.dart
-# 계획:
-# dart run tool/migrate_wk_ids.dart
+# Phase A (다음):
+# dart run tool/assign_wk_ids.dart          # dry-run
+# dart run tool/assign_wk_ids.dart --apply
+# Phase D:
 # dart run tool/migrate_shards_v3_to_v4_hash.dart
 ```

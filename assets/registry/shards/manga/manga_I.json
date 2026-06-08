@@ -1,6 +1,6 @@
 {
-  "sub_manga_inuyasha_1996": {
-    "workId": "sub_manga_inuyasha_1996",
+  "wk_00000338": {
+    "workId": "wk_00000338",
     "title": "이누야샤",
     "titles": {
       "ko": "이누야샤",
@@ -20,6 +20,9 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_manga_inuyasha_1996"
+    ]
   }
 }

@@ -1,21 +1,22 @@
 {
-  "gen_movie_the-matrix_1999": {
-    "workId": "gen_movie_the-matrix_1999",
-    "title": "매트릭스",
+  "wk_00000165": {
+    "workId": "wk_00000165",
+    "title": "더 배트맨",
     "category": "movie",
     "domain": "generalCulture",
-    "creator": "워쇼스키 자매 (The Wachowskis)",
-    "releaseYear": 1999,
-    "description": "가상현실 매트릭스 속에서 인류를 구원하려는 네오의 사이버펑크 액션.",
+    "creator": "Matt Reeves",
+    "releaseYear": 2022,
+    "description": "더 배트맨 영화.",
     "tags": [
-      "사이버펑크",
-      "SF",
-      "액션",
-      "철학"
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_the-batman_2022"
     ]
   },
-  "gen_movie_the-dark-knight_2008": {
-    "workId": "gen_movie_the-dark-knight_2008",
+  "wk_00000166": {
+    "workId": "wk_00000166",
     "title": "다크 나이트",
     "category": "movie",
     "domain": "generalCulture",
@@ -27,10 +28,13 @@
       "범죄",
       "스릴러",
       "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_the-dark-knight_2008"
     ]
   },
-  "gen_movie_the-godfather_1972": {
-    "workId": "gen_movie_the-godfather_1972",
+  "wk_00000167": {
+    "workId": "wk_00000167",
     "title": "대부",
     "category": "movie",
     "domain": "generalCulture",
@@ -42,10 +46,31 @@
       "가족",
       "명작",
       "드라마"
+    ],
+    "legacyIds": [
+      "gen_movie_the-godfather_1972"
     ]
   },
-  "gen_movie_toy-story_1995": {
-    "workId": "gen_movie_toy-story_1995",
+  "wk_00000168": {
+    "workId": "wk_00000168",
+    "title": "매트릭스",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "워쇼스키 자매 (The Wachowskis)",
+    "releaseYear": 1999,
+    "description": "가상현실 매트릭스 속에서 인류를 구원하려는 네오의 사이버펑크 액션.",
+    "tags": [
+      "사이버펑크",
+      "SF",
+      "액션",
+      "철학"
+    ],
+    "legacyIds": [
+      "gen_movie_the-matrix_1999"
+    ]
+  },
+  "wk_00000169": {
+    "workId": "wk_00000169",
     "title": "토이 스토리",
     "category": "movie",
     "domain": "generalCulture",
@@ -57,19 +82,9 @@
       "가족",
       "우정",
       "픽사"
-    ]
-  },
-  "gen_movie_the-batman_2022": {
-    "workId": "gen_movie_the-batman_2022",
-    "title": "더 배트맨",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "Matt Reeves",
-    "releaseYear": 2022,
-    "description": "더 배트맨 영화.",
-    "tags": [
-      "영화",
-      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_toy-story_1995"
     ]
   }
 }

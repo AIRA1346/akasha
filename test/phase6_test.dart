@@ -41,7 +41,7 @@ void main() {
 
       final List<AkashaItem> fusedList = [...userItems];
       for (final work in filteredWorks) {
-        if (!userWorkIds.contains(work.workId)) {
+        if (!WorksRegistry.setContainsWorkId(userWorkIds, work.workId)) {
           final defaultMyStatus = work.category.isContentType
               ? ContentMyStatus.notStarted.label
               : GameMyStatus.backlog.label;
@@ -67,14 +67,20 @@ void main() {
 
       final fusedIds = fusedList.map((e) => e.workId).toList();
       expect(fusedIds, contains(eldenId));
-      expect(fusedIds, contains('gen_game_minecraft_2011'));
-      expect(fusedIds, contains('gen_game_league-of-legends_2009'));
-      expect(fusedIds, contains('gen_game_axiom_2024'));
+
+      final minecraftId =
+          WorksRegistry.getWorkById('gen_game_minecraft_2011')!.workId;
+      final lolId =
+          WorksRegistry.getWorkById('gen_game_league-of-legends_2009')!.workId;
+      final axiomId = WorksRegistry.getWorkById('gen_game_axiom_2024')!.workId;
+      expect(fusedIds, contains(minecraftId));
+      expect(fusedIds, contains(lolId));
+      expect(fusedIds, contains(axiomId));
 
       final elden = fusedList.firstWhere((e) => e.workId == eldenId);
       expect(elden.myStatusLabel, '클리어(완결)');
 
-      final minecraft = fusedList.firstWhere((e) => e.workId == 'gen_game_minecraft_2011');
+      final minecraft = fusedList.firstWhere((e) => e.workId == minecraftId);
       expect(minecraft.myStatusLabel, '볼 예정');
       expect(minecraft.rating, 0.0);
     });

@@ -1,16 +1,17 @@
 # AKASHA 사전(akasha-db) 구현 계획
 
 > 마스터 정책: [akasha-db-policy.md](akasha-db-policy.md)  
-> 기준일: 2026-06-07
+> **v4 마이그레이션 (Steam 게이트):** [v4-migration-plan.md](v4-migration-plan.md) ← **현재 우선**  
+> 기준일: 2026-06-08
 
 ---
 
 ## 목표
 
-1. **자체 DB** — API bulk 없이 엄선 카탈로그 유지·확장  
-2. **포스터** — URL 링크만 (self-hosted ❌), 가벼운 CI denylist  
-3. **앱** — 번들 갱신 시 옛 `registry_cache`가 사전을 오염시키지 않도록 자동 무효화  
-4. **문서** — README / ROADMAP / CONTRIBUTING 정책 정렬
+1. **v4 런타임** — Steam 출시 전 `wk_` ID + 해시 샤딩 + dedupe CI 완료  
+2. **자체 DB** — API bulk 없이 엄선 카탈로그 유지·확장  
+3. **포스터** — URL 링크만 (self-hosted ❌), CI denylist  
+4. **앱** — 번들·캐시 무효화 · v4 loader/sync
 
 ---
 
@@ -100,10 +101,23 @@
 
 ---
 
+## Phase v4 — Steam 출시 게이트 (진행 예정)
+
+> **마스터:** [v4-migration-plan.md](v4-migration-plan.md)
+
+| Phase | 핵심 도구 | 상태 |
+|-------|-----------|------|
+| A | `assign_wk_ids.dart`, `id_registry.json` | ❌ |
+| B | `WorkIdCodec`, loader alias | ❌ |
+| C | `dedupe_linter.dart` | ❌ |
+| D | `migrate_shards_v3_to_v4_hash.dart`, manifest v4 | ❌ |
+
+---
+
 ## 검증 명령
 
 ```bash
 dart run tool/ci_registry_check.dart
-dart run tool/registry_builder.dart
-flutter test test/registry_shard_loader_test.dart test/registry_sync_service_test.dart
+dart run tool/registry_builder.dart --sync-assets
+.\scripts\dogfood_precheck.ps1
 ```

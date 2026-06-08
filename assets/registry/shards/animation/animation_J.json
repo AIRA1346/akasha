@@ -1,29 +1,6 @@
 {
-  "sub_animation_jujutsu-kaisen_2020": {
-    "workId": "sub_animation_jujutsu-kaisen_2020",
-    "title": "주술회전",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "MAPPA",
-    "releaseYear": 2020,
-    "description": "저주받은 물건을 삼킨 소년이 주술사가 되어 저주와 맞서는 이야기.",
-    "tags": [
-      "액션",
-      "초자연",
-      "학원",
-      "다크"
-    ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
-    "externalIds": {
-      "tmdb": "95479"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    }
-  },
-  "sub_animation_jojo-bizarre-adventure_2012": {
-    "workId": "sub_animation_jojo-bizarre-adventure_2012",
+  "wk_00000203": {
+    "workId": "wk_00000203",
     "title": "죠죠의 기묘한 모험",
     "titles": {
       "ko": "죠죠의 기묘한 모험",
@@ -52,6 +29,35 @@
       ],
       "latestSeason": "1~6부"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
+    "legacyIds": [
+      "sub_animation_jojo-bizarre-adventure_2012"
+    ]
+  },
+  "wk_00000204": {
+    "workId": "wk_00000204",
+    "title": "주술회전",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2020,
+    "description": "저주받은 물건을 삼킨 소년이 주술사가 되어 저주와 맞서는 이야기.",
+    "tags": [
+      "액션",
+      "초자연",
+      "학원",
+      "다크"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
+    "externalIds": {
+      "tmdb": "95479"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_jujutsu-kaisen_2020"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
-  "sub_movie_your-name-2016_2016": {
-    "workId": "sub_movie_your-name-2016_2016",
+  "wk_00000408": {
+    "workId": "wk_00000408",
     "title": "너의 이름은.",
     "category": "movie",
     "domain": "subculture",
@@ -10,6 +10,9 @@
     "tags": [
       "영화",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_your-name-2016_2016"
     ]
   }
 }

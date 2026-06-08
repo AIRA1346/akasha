@@ -1,6 +1,6 @@
 {
-  "gen_book_norwegian-wood_1987": {
-    "workId": "gen_book_norwegian-wood_1987",
+  "wk_00000012": {
+    "workId": "wk_00000012",
     "title": "노르웨이의 숲",
     "category": "book",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "문학",
       "일본"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
+    "legacyIds": [
+      "gen_book_norwegian-wood_1987"
+    ]
   },
-  "sub_book_no-game-no-life_2011": {
-    "workId": "sub_book_no-game-no-life_2011",
+  "wk_00000258": {
+    "workId": "wk_00000258",
     "title": "노 게임 노 라이프",
     "category": "book",
     "domain": "subculture",
@@ -29,6 +32,9 @@
       "게임",
       "서브컬처"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg",
+    "legacyIds": [
+      "sub_book_no-game-no-life_2011"
+    ]
   }
 }

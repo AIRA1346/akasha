@@ -1,6 +1,6 @@
 {
-  "sub_book_overlord-light-novel_2012": {
-    "workId": "sub_book_overlord-light-novel_2012",
+  "wk_00000259": {
+    "workId": "wk_00000259",
     "title": "오버로드",
     "category": "book",
     "domain": "subculture",
@@ -13,6 +13,9 @@
       "판타지",
       "서브컬처"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
+    "legacyIds": [
+      "sub_book_overlord-light-novel_2012"
+    ]
   }
 }

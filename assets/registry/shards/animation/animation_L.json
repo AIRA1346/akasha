@@ -1,24 +1,6 @@
 {
-  "sub_animation_lycoris-recoil_2022": {
-    "workId": "sub_animation_lycoris-recoil_2022",
-    "title": "리코리스 리코일",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "A-1 Pictures",
-    "releaseYear": 2022,
-    "description": "카페 직원이자 비밀 요원 두 소녀의 액션 드라마.",
-    "tags": [
-      "액션",
-      "총기",
-      "일상",
-      "배틀"
-    ],
-    "extensions": {
-      "posterSource": "tmdb"
-    }
-  },
-  "sub_animation_log-horizon_2013": {
-    "workId": "sub_animation_log-horizon_2013",
+  "wk_00000210": {
+    "workId": "wk_00000210",
     "title": "로그 호라이즌",
     "titles": {
       "ko": "로그 호라이즌",
@@ -52,6 +34,30 @@
       ],
       "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg"
+    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
+    "legacyIds": [
+      "sub_animation_log-horizon_2013"
+    ]
+  },
+  "wk_00000211": {
+    "workId": "wk_00000211",
+    "title": "리코리스 리코일",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A-1 Pictures",
+    "releaseYear": 2022,
+    "description": "카페 직원이자 비밀 요원 두 소녀의 액션 드라마.",
+    "tags": [
+      "액션",
+      "총기",
+      "일상",
+      "배틀"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_lycoris-recoil_2022"
+    ]
   }
 }

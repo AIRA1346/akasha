@@ -1,6 +1,6 @@
 {
-  "gen_drama_game-of-thrones_2011": {
-    "workId": "gen_drama_game-of-thrones_2011",
+  "wk_00000019": {
+    "workId": "wk_00000019",
     "title": "왕좌의 게임",
     "category": "drama",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "정치",
       "전쟁",
       "서사"
+    ],
+    "legacyIds": [
+      "gen_drama_game-of-thrones_2011"
     ]
   }
 }

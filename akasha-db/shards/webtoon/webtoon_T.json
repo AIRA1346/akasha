@@ -1,6 +1,6 @@
 {
-  "sub_webtoon_tower-of-god_2010": {
-    "workId": "sub_webtoon_tower-of-god_2010",
+  "wk_00000410": {
+    "workId": "wk_00000410",
     "title": "신의 탑",
     "category": "webtoon",
     "domain": "subculture",
@@ -15,6 +15,9 @@
     ],
     "extensions": {
       "posterSource": "tmdb"
-    }
+    },
+    "legacyIds": [
+      "sub_webtoon_tower-of-god_2010"
+    ]
   }
 }

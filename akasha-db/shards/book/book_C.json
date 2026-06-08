@@ -1,6 +1,6 @@
 {
-  "sub_book_classroom-of-the-elite_2015": {
-    "workId": "sub_book_classroom-of-the-elite_2015",
+  "wk_00000254": {
+    "workId": "wk_00000254",
     "title": "우등생의 즐거운 육아 생활… 아니 학교생활",
     "category": "book",
     "domain": "subculture",
@@ -13,6 +13,9 @@
       "심리",
       "서브컬처"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg",
+    "legacyIds": [
+      "sub_book_classroom-of-the-elite_2015"
+    ]
   }
 }

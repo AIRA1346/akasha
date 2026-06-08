@@ -1,6 +1,6 @@
 {
-  "gen_book_1984_1949": {
-    "workId": "gen_book_1984_1949",
+  "wk_00000003": {
+    "workId": "wk_00000003",
     "title": "1984",
     "category": "book",
     "domain": "generalCulture",
@@ -13,6 +13,9 @@
       "고전",
       "소설"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+    "legacyIds": [
+      "gen_book_1984_1949"
+    ]
   }
 }

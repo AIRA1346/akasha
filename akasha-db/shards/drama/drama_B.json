@@ -1,6 +1,6 @@
 {
-  "gen_drama_breaking-bad_2008": {
-    "workId": "gen_drama_breaking-bad_2008",
+  "wk_00000016": {
+    "workId": "wk_00000016",
     "title": "브레이킹 배드",
     "category": "drama",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "스릴러",
       "드라마",
       "명작"
+    ],
+    "legacyIds": [
+      "gen_drama_breaking-bad_2008"
     ]
   }
 }

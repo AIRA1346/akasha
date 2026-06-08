@@ -79,7 +79,7 @@ void main() {
         domain: AppDomain.subculture,
       );
       final id = MarkdownParser.ensureWorkId(item);
-      expect(id, 'sub_manga_naruto_1999');
+      expect(id, WorksRegistry.getWorkById('sub_manga_naruto_1999')!.workId);
     });
 
     test('ensureWorkId creates custom id when no registry match', () {

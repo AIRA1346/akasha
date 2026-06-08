@@ -1,6 +1,6 @@
 {
-  "gen_movie_everything-everywhere_2022": {
-    "workId": "gen_movie_everything-everywhere_2022",
+  "wk_00000153": {
+    "workId": "wk_00000153",
     "title": "에브리씽 에브리웨어",
     "category": "movie",
     "domain": "generalCulture",
@@ -10,6 +10,9 @@
     "tags": [
       "영화",
       "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_everything-everywhere_2022"
     ]
   }
 }

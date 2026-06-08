@@ -56,6 +56,9 @@ class ParsedWorkId {
 }
 
 class WorkIdCodec {
+  /// v4 영구 ID — `wk_00001234` (8자리 순번)
+  static final RegExp wkIdPattern = RegExp(r'^wk_\d{8}$');
+
   static final RegExp _masterPatternWithYear = RegExp(
     r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',
   );
@@ -63,6 +66,8 @@ class WorkIdCodec {
   static final RegExp _masterPatternNoYear = RegExp(
     r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)$',
   );
+
+  static bool isWkFormat(String workId) => wkIdPattern.hasMatch(workId);
 
   static String domainPrefix(AppDomain domain) =>
       domain == AppDomain.subculture ? 'sub' : 'gen';
@@ -81,6 +86,16 @@ class WorkIdCodec {
 
   static ParsedWorkId? parse(String workId) {
     if (workId.isEmpty) return null;
+
+    if (isWkFormat(workId)) {
+      return ParsedWorkId(
+        raw: workId,
+        domain: AppDomain.subculture,
+        category: MediaCategory.manga,
+        identifierType: WorkIdIdentifierType.legacy,
+        identifier: workId,
+      );
+    }
 
     RegExpMatch? match = _masterPatternWithYear.firstMatch(workId);
     int? releaseYear;
@@ -116,6 +131,7 @@ class WorkIdCodec {
   }
 
   static bool isMasterFormat(String workId) =>
+      isWkFormat(workId) ||
       _masterPatternWithYear.hasMatch(workId) ||
       _masterPatternNoYear.hasMatch(workId);
 

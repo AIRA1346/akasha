@@ -1,6 +1,6 @@
 {
-  "sub_movie_chainsaw-man-movie_2025": {
-    "workId": "sub_movie_chainsaw-man-movie_2025",
+  "wk_00000403": {
+    "workId": "wk_00000403",
     "title": "체인소 맨 레제편",
     "category": "movie",
     "domain": "subculture",
@@ -10,6 +10,9 @@
     "tags": [
       "영화",
       "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_chainsaw-man-movie_2025"
     ]
   }
 }

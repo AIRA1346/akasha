@@ -1,6 +1,6 @@
 {
-  "gen_drama_kingdom_2019": {
-    "workId": "gen_drama_kingdom_2019",
+  "wk_00000020": {
+    "workId": "wk_00000020",
     "title": "킹덤",
     "category": "drama",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "좀비",
       "스릴러",
       "한국드라마"
+    ],
+    "legacyIds": [
+      "gen_drama_kingdom_2019"
     ]
   }
 }

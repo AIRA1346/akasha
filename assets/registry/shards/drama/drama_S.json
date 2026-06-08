@@ -1,6 +1,6 @@
 {
-  "gen_drama_squid-game_2021": {
-    "workId": "gen_drama_squid-game_2021",
+  "wk_00000021": {
+    "workId": "wk_00000021",
     "title": "오징어 게임",
     "category": "drama",
     "domain": "generalCulture",
@@ -12,10 +12,13 @@
       "데스게임",
       "스릴러",
       "넷플릭스"
+    ],
+    "legacyIds": [
+      "gen_drama_squid-game_2021"
     ]
   },
-  "gen_drama_stranger-things_2016": {
-    "workId": "gen_drama_stranger-things_2016",
+  "wk_00000022": {
+    "workId": "wk_00000022",
     "title": "기묘한 이야기",
     "category": "drama",
     "domain": "generalCulture",
@@ -27,6 +30,9 @@
       "판타지",
       "스릴러",
       "레트로"
+    ],
+    "legacyIds": [
+      "gen_drama_stranger-things_2016"
     ]
   }
 }

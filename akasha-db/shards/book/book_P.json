@@ -1,6 +1,6 @@
 {
-  "gen_book_percy-jackson_2005": {
-    "workId": "gen_book_percy-jackson_2005",
+  "wk_00000013": {
+    "workId": "wk_00000013",
     "title": "퍼시 잭슨과 번개 도둑",
     "category": "book",
     "domain": "generalCulture",
@@ -13,6 +13,9 @@
       "청소년",
       "모험"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg",
+    "legacyIds": [
+      "gen_book_percy-jackson_2005"
+    ]
   }
 }

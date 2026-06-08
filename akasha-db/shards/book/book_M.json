@@ -1,6 +1,6 @@
 {
-  "gen_book_murder-on-orient-express_1934": {
-    "workId": "gen_book_murder-on-orient-express_1934",
+  "wk_00000011": {
+    "workId": "wk_00000011",
     "title": "오리엔트 특급 살인",
     "category": "book",
     "domain": "generalCulture",
@@ -13,10 +13,13 @@
       "고전",
       "포와로"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg",
+    "legacyIds": [
+      "gen_book_murder-on-orient-express_1934"
+    ]
   },
-  "sub_book_monogatari-light-novel_2006": {
-    "workId": "sub_book_monogatari-light-novel_2006",
+  "wk_00000256": {
+    "workId": "wk_00000256",
     "title": "바케모노가타리",
     "category": "book",
     "domain": "subculture",
@@ -29,10 +32,13 @@
       "대화",
       "서브컬처"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg",
+    "legacyIds": [
+      "sub_book_monogatari-light-novel_2006"
+    ]
   },
-  "sub_book_mushoku-tensei-light-novel_2014": {
-    "workId": "sub_book_mushoku-tensei-light-novel_2014",
+  "wk_00000257": {
+    "workId": "wk_00000257",
     "title": "무직전생",
     "category": "book",
     "domain": "subculture",
@@ -45,6 +51,9 @@
       "판타지",
       "성장"
     ],
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg"
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg",
+    "legacyIds": [
+      "sub_book_mushoku-tensei-light-novel_2014"
+    ]
   }
 }

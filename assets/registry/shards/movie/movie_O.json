@@ -1,6 +1,6 @@
 {
-  "gen_movie_oppenheimer-2023_2023": {
-    "workId": "gen_movie_oppenheimer-2023_2023",
+  "wk_00000159": {
+    "workId": "wk_00000159",
     "title": "오펜하이머",
     "category": "movie",
     "domain": "generalCulture",
@@ -10,6 +10,9 @@
     "tags": [
       "영화",
       "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_oppenheimer-2023_2023"
     ]
   }
 }

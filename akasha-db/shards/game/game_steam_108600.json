@@ -1,6 +1,6 @@
 {
-  "gen_game_appid108600_2013": {
-    "workId": "gen_game_appid108600_2013",
+  "wk_00000029": {
+    "workId": "wk_00000029",
     "title": "프로젝트 좀보이드",
     "category": "game",
     "domain": "generalCulture",
@@ -12,6 +12,9 @@
       "Steam",
       "대중문화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_600x900.jpg"
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid108600_2013"
+    ]
   }
 }
