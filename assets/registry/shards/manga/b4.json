@@ -1,0 +1,55 @@
+{
+  "wk_000000334": {
+    "workId": "wk_000000334",
+    "title": "하이큐!!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후루다테 하루이치",
+    "releaseYear": 2012,
+    "description": "작은 키의 소년이 배구를 통해 성장하는 청춘 스포츠 만화.",
+    "tags": [
+      "스포츠",
+      "배구",
+      "청춘",
+      "팀워크"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
+    "externalIds": {
+      "tmdb": "60863"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_haikyuu_2012"
+    ]
+  },
+  "wk_000000346": {
+    "workId": "wk_000000346",
+    "title": "이 멋진 세계에 축복을!",
+    "titles": {
+      "ko": "이 멋진 세계에 축복을!",
+      "en": "KonoSuba",
+      "ja": "この素晴らしい世界に祝福を！"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카츠키 나츠메",
+    "releaseYear": 2014,
+    "description": "카즈마와 개그 넘치는 파티가 이세계에서 모험과 빚을 떠안는 코미디 판타지.",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "파티"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg",
+    "legacyIds": [
+      "sub_manga_konosuba_2014"
+    ]
+  }
+}

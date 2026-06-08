@@ -1,0 +1,28 @@
+{
+  "wk_000000249": {
+    "workId": "wk_000000249",
+    "title": "날씨의 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "CoMix Wave Films",
+    "releaseYear": 2019,
+    "description": "비를 막는 소녀와 소년의 도쿄 판타지 로맨스.",
+    "tags": [
+      "로맨스",
+      "판타지",
+      "영화",
+      "신카이"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg",
+    "externalIds": {
+      "tmdb": "568160"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_weathering-with-you_2019"
+    ]
+  }
+}

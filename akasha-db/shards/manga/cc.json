@@ -1,0 +1,28 @@
+{
+  "wk_000000400": {
+    "workId": "wk_000000400",
+    "title": "요츠바랑!",
+    "titles": {
+      "ko": "요츠바랑!",
+      "en": "Yotsuba&!",
+      "ja": "よつばと!"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아자마 케이야",
+    "releaseYear": 2003,
+    "description": "초록 머리 소녀 요츠바의 호기심 가득한 일상을 그린 힐링 코미디.",
+    "tags": [
+      "일상",
+      "코미디",
+      "힐링",
+      "가족"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_yotsubato_2003"
+    ]
+  }
+}

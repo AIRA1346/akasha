@@ -1,0 +1,29 @@
+{
+  "wk_000000379": {
+    "workId": "wk_000000379",
+    "title": "종말의 세라프",
+    "titles": {
+      "ko": "종말의 세라프",
+      "en": "Seraph of the End",
+      "ja": "終わりのセラフ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가미 타카히로",
+    "releaseYear": 2012,
+    "description": "바이러스로 인류가 사라진 뒤 뱀파이어와 싸우는 유우와 동료들의 다크 액션.",
+    "tags": [
+      "다크",
+      "액션",
+      "뱀파이어",
+      "SF"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg",
+    "legacyIds": [
+      "sub_manga_seraph-of-the-end_2012"
+    ]
+  }
+}

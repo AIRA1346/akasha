@@ -1,0 +1,18 @@
+{
+  "wk_000000152": {
+    "workId": "wk_000000152",
+    "title": "듄",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Denis Villeneuve",
+    "releaseYear": 2021,
+    "description": "듄 영화.",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_dune-2021_2021"
+    ]
+  }
+}

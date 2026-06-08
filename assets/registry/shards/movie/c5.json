@@ -1,0 +1,20 @@
+{
+  "wk_000000162": {
+    "workId": "wk_000000162",
+    "title": "펄프 픽션",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "쿠엔틴 타란티노",
+    "releaseYear": 1994,
+    "description": "비선형 서사로 엮인 LA 범죄자들의 블랙코미디.",
+    "tags": [
+      "범죄",
+      "코미디",
+      "명작",
+      "비선형"
+    ],
+    "legacyIds": [
+      "gen_movie_pulp-fiction_1994"
+    ]
+  }
+}

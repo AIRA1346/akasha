@@ -10,6 +10,8 @@ class RegistryShardMeta {
   final String path;
   final bool eager;
   final int entryCount;
+  /// v4 — 샤드 JSON 본문 SHA-256 (증분 sync)
+  final String? sha256;
 
   const RegistryShardMeta({
     required this.id,
@@ -17,10 +19,12 @@ class RegistryShardMeta {
     required this.path,
     this.eager = false,
     this.entryCount = 0,
+    this.sha256,
   });
 
   factory RegistryShardMeta.fromJson(Map<String, dynamic> json) {
     final categoryStr = json['category']?.toString() ?? 'manga';
+    final sha = json['sha256']?.toString();
     return RegistryShardMeta(
       id: json['id']?.toString() ?? '',
       category: MediaCategory.values.firstWhere(
@@ -30,6 +34,7 @@ class RegistryShardMeta {
       path: json['path']?.toString() ?? '',
       eager: json['eager'] == true,
       entryCount: int.tryParse(json['entryCount']?.toString() ?? '') ?? 0,
+      sha256: sha != null && sha.isNotEmpty ? sha : null,
     );
   }
 }
@@ -38,11 +43,16 @@ class RegistryManifest {
   final int version;
   final String? generatedAt;
   final List<RegistryShardMeta> shards;
+  /// v4 — `hash(wk_) % 2^shardBits`
+  final int? shardBits;
+  final int? entryCount;
 
   const RegistryManifest({
     required this.version,
     this.generatedAt,
     required this.shards,
+    this.shardBits,
+    this.entryCount,
   });
 
   factory RegistryManifest.fromJson(Map<String, dynamic> json) {
@@ -50,6 +60,8 @@ class RegistryManifest {
     return RegistryManifest(
       version: int.tryParse(json['version']?.toString() ?? '') ?? 1,
       generatedAt: json['generatedAt']?.toString(),
+      shardBits: int.tryParse(json['shardBits']?.toString() ?? ''),
+      entryCount: int.tryParse(json['entryCount']?.toString() ?? ''),
       shards: shardList
           .whereType<Map>()
           .map((e) => RegistryShardMeta.fromJson(Map<String, dynamic>.from(e)))

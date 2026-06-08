@@ -1,0 +1,28 @@
+{
+  "wk_000000359": {
+    "workId": "wk_000000359",
+    "title": "일상",
+    "titles": {
+      "ko": "일상",
+      "en": "Nichijou - My Ordinary Life",
+      "ja": "日常"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라와 케이이치로",
+    "releaseYear": 2006,
+    "description": "고등학생들의 기묘하고 과장된 일상을 그린 개그 학원 코미디.",
+    "tags": [
+      "코미디",
+      "일상",
+      "학원",
+      "개그"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_nichijou_2006"
+    ]
+  }
+}

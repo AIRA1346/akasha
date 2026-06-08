@@ -1,0 +1,51 @@
+{
+  "wk_000000294": {
+    "workId": "wk_000000294",
+    "title": "약사의 혼잣말",
+    "titles": {
+      "ko": "약사의 혼잣말",
+      "en": "The Apothecary Diaries",
+      "ja": "薬屋のひとりごと"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "히나타 네코",
+    "releaseYear": 2016,
+    "description": "궁중 약사 마오마오가 지식과 관찰력으로 미스터리를 풀어가는 역사 드라마 만화.",
+    "tags": [
+      "미스터리",
+      "역사",
+      "궁중",
+      "약학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
+    "externalIds": {
+      "tmdb": "220542"
+    },
+    "legacyIds": [
+      "sub_manga_apothecary-diaries_2016"
+    ]
+  },
+  "wk_000000292": {
+    "workId": "wk_000000292",
+    "title": "86 -에이티식스-",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아사토 아사토 (Asato Asato)",
+    "releaseYear": 2017,
+    "description": "86구역 출신 소년병들의 전쟁 이야기.",
+    "tags": [
+      "SF",
+      "전쟁",
+      "차별",
+      "밀리터리"
+    ],
+    "legacyIds": [
+      "sub_manga_86-eighty-six_2017"
+    ]
+  }
+}

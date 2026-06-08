@@ -1,0 +1,37 @@
+{
+  "wk_000000234": {
+    "workId": "wk_000000234",
+    "title": "4월은 너의 거짓말",
+    "titles": {
+      "ko": "4월은 너의 거짓말",
+      "en": "Your Lie in April",
+      "ja": "四月は君の嘘"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아라키 코세이",
+    "releaseYear": 2014,
+    "description": "피아노를 떠났던 코세이가 바이올리니스트 카오리를 만나 음악과 상처를 치유하는 청춘 드라마.",
+    "tags": [
+      "음악",
+      "청춘",
+      "로맨스",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 22
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/yTI2M0SVtDcBJwklSpwwPLRaqg.jpg",
+    "legacyIds": [
+      "sub_animation_shigatsu-wa-kimi-no-uso_2011"
+    ]
+  }
+}

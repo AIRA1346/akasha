@@ -1,0 +1,21 @@
+{
+  "wk_000000256": {
+    "workId": "wk_000000256",
+    "title": "바케모노가타리",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "니시오 이시인",
+    "releaseYear": 2006,
+    "description": "괴물과 인간의 이야기를 풀어가는 대화 중심 라이트노벨.",
+    "tags": [
+      "라이트노벨",
+      "초자연",
+      "대화",
+      "서브컬처"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg",
+    "legacyIds": [
+      "sub_book_monogatari-light-novel_2006"
+    ]
+  }
+}

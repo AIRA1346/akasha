@@ -1,0 +1,20 @@
+{
+  "wk_000000135": {
+    "workId": "wk_000000135",
+    "title": "엑시옴",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "인디 제작사",
+    "releaseYear": 2024,
+    "description": "공상과학 우주 테마 인디 메트로배니아 기대작.",
+    "tags": [
+      "인디",
+      "얼리액세스",
+      "SF"
+    ],
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
+    "legacyIds": [
+      "gen_game_axiom_2024"
+    ]
+  }
+}

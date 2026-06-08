@@ -8,7 +8,7 @@ import '../utils/work_title_resolver.dart';
 import 'registry_shard_loader.dart';
 import 'registry_sync_service.dart';
 
-/// 공통 작품 사전 모델 (Tier 1 - Metadata, akasha-db v3)
+/// 공통 작품 사전 모델 (Tier 1 - Metadata, akasha-db v4)
 class RegistryWork {
   final String workId;
   /// 레거시 단일 제목 — 하위 호환·정렬 키 (v3: `titles`와 동기화 권장)

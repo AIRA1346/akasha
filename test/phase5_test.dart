@@ -16,6 +16,7 @@ void main() {
 
   setUpAll(() async {
     await WorksRegistry.init();
+    await WorksRegistry.prefetchMasterCatalog();
   });
 
   group('Phase 5 — Reliability & Offline Completeness Tests', () {
@@ -84,11 +85,11 @@ is_hall_of_fame: true
     });
 
     test('legacy work_id resolves and still blocks default poster persistence', () {
-      final registry = WorksRegistry.getWorkById('conan_manga');
+      final registry = WorksRegistry.getWorkById('sub_manga_detective-conan_1994');
       expect(registry, isNotNull);
 
       final item = createItem(
-        workId: 'conan_manga',
+        workId: 'sub_manga_detective-conan_1994',
         title: '명탐정 코난',
         category: MediaCategory.manga,
         domain: AppDomain.subculture,

@@ -1,0 +1,23 @@
+{
+  "wk_000000330": {
+    "workId": "wk_000000330",
+    "title": "골든 카무이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나츠미 소이치",
+    "releaseYear": 2014,
+    "description": "홋카이도에서 금 보물을 찾는 아이누와 전직 군인의 모험.",
+    "tags": [
+      "역사",
+      "모험",
+      "서바이벌",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_golden-kamuy_2014"
+    ]
+  }
+}

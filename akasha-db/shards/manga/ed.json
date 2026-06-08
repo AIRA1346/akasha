@@ -1,0 +1,46 @@
+{
+  "wk_000000308": {
+    "workId": "wk_000000308",
+    "title": "체인소 맨",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "releaseYear": 2018,
+    "description": "가난한 소년 덴지가 체인소의 악마와 합체하는 이야기.",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
+    "externalIds": {
+      "tmdb": "114410"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_chainsaw-man_2018"
+    ]
+  },
+  "wk_000000385": {
+    "workId": "wk_000000385",
+    "title": "슬램덩크",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 다케히코 (Takehiko Inoue)",
+    "releaseYear": 1990,
+    "description": "불량소년 강백호가 농구부에 입단해 진정한 선수로 성장하는 열혈 스포츠 만화.",
+    "tags": [
+      "스포츠",
+      "농구",
+      "열혈",
+      "청춘"
+    ],
+    "legacyIds": [
+      "sub_manga_slam-dunk_1990"
+    ]
+  }
+}

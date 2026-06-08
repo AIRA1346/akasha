@@ -1,0 +1,29 @@
+{
+  "wk_000000329": {
+    "workId": "wk_000000329",
+    "title": "고블린 슬레이어",
+    "titles": {
+      "ko": "고블린 슬레이어",
+      "en": "Goblin Slayer",
+      "ja": "ゴブリンスレイヤー"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "카가유 카우스",
+    "releaseYear": 2016,
+    "description": "고블린만을 죽이는 전사와 파티가 던전에서 생존과 복수를 이어가는 다크 판타지.",
+    "tags": [
+      "판타지",
+      "다크",
+      "액션",
+      "던전"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg",
+    "legacyIds": [
+      "sub_manga_goblin-slayer_2016"
+    ]
+  }
+}

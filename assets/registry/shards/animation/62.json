@@ -1,0 +1,83 @@
+{
+  "wk_000000002": {
+    "workId": "wk_000000002",
+    "title": "이웃집 토토로",
+    "category": "animation",
+    "domain": "generalCulture",
+    "creator": "미야자키 하야오 (Hayao Miyazaki)",
+    "releaseYear": 1988,
+    "description": "시골로 이사 온 자매가 숲의 수호신 토토로를 만나는 지브리 판타지.",
+    "tags": [
+      "지브리",
+      "판타지",
+      "가족",
+      "힐링"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "gen_animation_my-neighbor-totoro_1988"
+    ]
+  },
+  "wk_000000213": {
+    "workId": "wk_000000213",
+    "title": "마슐",
+    "titles": {
+      "ko": "마슐",
+      "en": "Mashle: Magic and Muscles",
+      "ja": "マッシュル-MASHLE-"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "코마도 타케시",
+    "releaseYear": 2023,
+    "description": "마법이 없는 마시 번의 근육 파워로 마법 학교를 제패하는 코미디 액션 판타지.",
+    "tags": [
+      "코미디",
+      "액션",
+      "학원",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2024,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "legacyIds": [
+      "sub_animation_mashle_2023"
+    ]
+  },
+  "wk_000000240": {
+    "workId": "wk_000000240",
+    "title": "슈타인즈 게이트",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WHITE FOX",
+    "releaseYear": 2011,
+    "description": "타임머신 실험이 비극적 미래를 초래하며 반복되는 시간여행 SF.",
+    "tags": [
+      "SF",
+      "시간여행",
+      "서스펜스",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_steinsgate_2011"
+    ]
+  }
+}

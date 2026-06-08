@@ -1,0 +1,47 @@
+{
+  "wk_000000241": {
+    "workId": "wk_000000241",
+    "title": "소드 아트 온라인",
+    "titles": {
+      "ko": "소드 아트 온라인",
+      "en": "Sword Art Online",
+      "ja": "ソードアート・オンライン",
+      "romaji": "SAO"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "가와하라 레키",
+    "releaseYear": 2012,
+    "description": "VRMMORPG에 갇힌 플레이어들의 생존과 키리토의 모험을 그린 게임 판타지 애니메이션.",
+    "tags": [
+      "게임",
+      "VR",
+      "판타지",
+      "액션"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "아인크라드편",
+          "year": 2012,
+          "episodes": 25
+        },
+        {
+          "label": "フェアリィ・ダンス",
+          "year": 2014,
+          "episodes": 24
+        },
+        {
+          "label": "アリシゼーション",
+          "year": 2018,
+          "episodes": 47
+        }
+      ],
+      "latestSeason": "アリシゼーション"
+    },
+    "legacyIds": [
+      "sub_animation_sword-art-online_2012"
+    ]
+  }
+}

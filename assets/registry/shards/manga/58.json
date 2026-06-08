@@ -1,0 +1,23 @@
+{
+  "wk_000000353": {
+    "workId": "wk_000000353",
+    "title": "충사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "요시나가 루리",
+    "releaseYear": 1999,
+    "description": "맹(蟲)을 다루는 충사의 오묘한 여행담.",
+    "tags": [
+      "판타지",
+      "오컬트",
+      "단편",
+      "힐링"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_mushishi_1999"
+    ]
+  }
+}

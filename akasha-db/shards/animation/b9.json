@@ -1,0 +1,28 @@
+{
+  "wk_000000219": {
+    "workId": "wk_000000219",
+    "title": "신세기 에반게리온",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "GAINAX / khara",
+    "releaseYear": 1995,
+    "description": "소년이 거대 생체 로봇 EVA를 조종해 사도와 싸우는 SF 명작.",
+    "tags": [
+      "메카",
+      "SF",
+      "심리",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg",
+    "externalIds": {
+      "tmdb": "890"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_neon-genesis-evangelion_1995"
+    ]
+  }
+}

@@ -12,7 +12,7 @@
 |--------|------|------|
 | 설계·ADR·정책 문서 | ✅ | v2 확정, canonicalization-policy 포함 |
 | 앱 기능 (M1) | ✅ | dogfood 통과, `master_archive`, ~410작 |
-| **v4 런타임 코드** | 🔶 Phase A~C 일부 | `wk_` 402작, dedupe CI ✅, 해시 샤드 미전환 |
+| **v4 런타임 코드** | ✅ Phase A~D | `wk_` 402작, dedupe CI ✅, manifest v4·해시 샤드 331버킷 |
 
 **Steam 출시 게이트 = 아래 Phase A~D 완료 + dogfood 재검증.**
 
@@ -108,18 +108,18 @@
 
 **완료 기준:** CI green, 중복 0건 — **달성** (402작)
 
-### Phase D — 해시 샤딩 v4 (예상 5~7일)
+### Phase D — 해시 샤딩 v4 (예상 5~7일) ✅
 
-| # | 작업 | 산출물 |
-|---|------|--------|
-| D1 | `migrate_shards_v3_to_v4_hash.dart` | `shard_{000..255}.json` |
-| D2 | manifest v4 | `version: 4`, `shardBits: 8`, `sha256` |
-| D3 | `registry_builder` | hash 키·v4 검증 |
-| D4 | `RegistryShardLoader` / `RegistrySyncService` | v4 manifest·샤드 경로 |
-| D5 | `ci_registry_check` | v4 스키마·샤드 entryCount |
-| D6 | `--sync-assets` | 번들 207→256 샤드 (sparse) |
+| # | 작업 | 산출물 | 상태 |
+|---|------|--------|------|
+| D1 | `migrate_shards_v3_to_v4_hash.dart` | `shards/{category}/{hh}.json` (sparse) | ✅ |
+| D2 | manifest v4 | `version: 4`, `shardBits: 8`, `sha256` | ✅ |
+| D3 | `registry_builder` | hash 키·v4 검증 | ✅ |
+| D4 | `RegistryShardLoader` / `RegistrySyncService` | v4 manifest·sha256 증분 sync | ✅ |
+| D5 | `ci_registry_check` | `manifest_v4_check` 연동 | ✅ |
+| D6 | `--sync-assets` | 번들 331 sparse 버킷 / 402작 | ✅ |
 
-**완료 기준:** 410작 dogfood, lazy sync, 검색·필터 동일 UX
+**완료 기준:** 402작 dogfood, lazy sync, 검색·필터 동일 UX — **달성** (110 tests)
 
 ### Phase E — Steam 제출 (v4 완료 후, v4와 후반 병행 가능)
 
@@ -147,14 +147,14 @@
 ## 5. 체크리스트 (Steam 게이트)
 
 ```
-[ ] id_registry.json — 410작 wk_ 매핑
-[ ] legacy_aliases — sub_* → wk_ 전량
-[ ] WorkIdCodec + loader wk_ resolve
+[x] id_registry.json — 402작 wk_ 매핑
+[x] legacy_aliases — sub_* → wk_ 전량
+[x] WorkIdCodec + loader wk_ resolve
 [x] dedupe_linter in CI
-[ ] manifest v4 + hash(wk_)%256 샤드
-[ ] registry_builder / ci_registry_check v4
-[ ] flutter test + dogfood_precheck green
-[ ] akasha-db GitHub push
+[x] manifest v4 + hash(wk_)%256 샤드 (331 sparse 버킷)
+[x] registry_builder / ci_registry_check v4
+[x] flutter test + dogfood_precheck green (110/110)
+[ ] akasha-db GitHub push (Phase E)
 ```
 
 ---

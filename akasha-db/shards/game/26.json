@@ -1,0 +1,21 @@
+{
+  "wk_000000146": {
+    "workId": "wk_000000146",
+    "title": "더 위처 3: 와일드 헌트",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "CD PROJEKT RED",
+    "releaseYear": 2015,
+    "description": "괴물 사냥꾼 게롤트의 오픈월드 판타지 RPG.",
+    "tags": [
+      "오픈월드",
+      "RPG",
+      "판타지",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_witcher-3_2015"
+    ]
+  }
+}

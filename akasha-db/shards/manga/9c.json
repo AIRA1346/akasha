@@ -1,0 +1,28 @@
+{
+  "wk_000000335": {
+    "workId": "wk_000000335",
+    "title": "지옥락",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "가쿠 쿠지",
+    "releaseYear": 2018,
+    "description": "사형수들이 불멸의 약을 찾기 위해 지옥섬에 들어가는 이야기.",
+    "tags": [
+      "액션",
+      "닌자",
+      "판타지",
+      "서바이벌"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
+    "externalIds": {
+      "tmdb": "117465"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_hells-paradise_2018"
+    ]
+  }
+}

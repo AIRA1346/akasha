@@ -1,0 +1,18 @@
+{
+  "wk_000000165": {
+    "workId": "wk_000000165",
+    "title": "더 배트맨",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Matt Reeves",
+    "releaseYear": 2022,
+    "description": "더 배트맨 영화.",
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_the-batman_2022"
+    ]
+  }
+}

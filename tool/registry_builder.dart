@@ -1,15 +1,16 @@
 // ignore_for_file: avoid_print
-/// AKASHA Registry Builder (akasha-db v3)
+/// AKASHA Registry Builder (akasha-db v4)
 /// Usage: dart run tool/registry_builder.dart [--sync-assets]
 ///
-/// - Validates all shard JSON files under akasha-db/shards/
-/// - Regenerates manifest.json (v3) and search_index.json (searchTokens)
+/// - Validates hash shards under akasha-db/shards/{category}/{00..ff}.json
+/// - Regenerates manifest.json (v4) and search_index.json (searchTokens)
 /// - Optionally copies akasha-db → assets/registry for app bundle
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'poster_url_policy.dart';
+import 'registry_hash_utils.dart';
 import 'registry_v3_utils.dart';
 import 'wk_id_utils.dart';
 
@@ -38,26 +39,6 @@ const _validCategories = {
 
 const _validDomains = {'subculture', 'generalCulture'};
 
-/// 오프라인 bootstrap용 eager 샤드 (나머지는 lazy — 검색 시 온디맨드)
-const _eagerBootstrapShardIds = {
-  // 서브컬 핵심 IP + 테스트·dogfood 프랜차이즈 샤드
-  'manga_C',
-  'manga_K',
-  'manga_N',
-  'manga_O',
-  'manga_S',
-  'manga_R',
-  'manga_numeric',
-  'animation_R',
-  'book_R',
-  'book_8',
-  'game_A',
-  'game_E',
-  'game_L',
-  'game_M',
-  'book_L',
-};
-
 void main(List<String> args) {
   final syncAssets = args.contains('--sync-assets');
   final projectRoot = _findProjectRoot();
@@ -73,6 +54,7 @@ void main(List<String> args) {
   final allWorks = <String, Map<String, dynamic>>{};
   final workShardIds = <String, String>{};
   final shardMetas = <Map<String, dynamic>>[];
+  final eagerWorkIds = _loadFranchisePrimaryWorkIds(dbRoot);
 
   for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
     final categoryName = p.basename(categoryDir.path);
@@ -80,10 +62,18 @@ void main(List<String> args) {
         .listSync()
         .whereType<File>()
         .where((f) => f.path.endsWith('.json'))) {
-      final relativePath =
-          'shards/$categoryName/${p.basename(shardFile.path)}';
-      final shardId = p.basenameWithoutExtension(shardFile.path);
-      final content = json.decode(shardFile.readAsStringSync());
+      final hexKey = p.basenameWithoutExtension(shardFile.path).toLowerCase();
+      if (!isV4ShardFileName(hexKey)) {
+        errors.add(
+          '${shardFile.path}: v4 shard file must be 2-char hex (run migrate_shards_v3_to_v4_hash)',
+        );
+        continue;
+      }
+
+      final relativePath = v4ShardPath(categoryName, hexKey);
+      final shardId = v4ShardId(categoryName, hexKey);
+      final rawContent = shardFile.readAsStringSync();
+      final content = json.decode(rawContent);
 
       if (content is! Map<String, dynamic>) {
         errors.add('$relativePath: root must be a JSON object');
@@ -91,6 +81,7 @@ void main(List<String> args) {
       }
 
       var entryCount = 0;
+      var eager = false;
       for (final entry in content.entries) {
         entryCount++;
         if (entry.value is! Map<String, dynamic>) {
@@ -104,16 +95,24 @@ void main(List<String> args) {
         if (allWorks.containsKey(workId)) {
           errors.add('Duplicate workId: $workId');
         }
+        final expectedHex = shardHexForWorkId(workId);
+        if (expectedHex != hexKey) {
+          errors.add(
+            '$relativePath: $workId belongs in bucket $expectedHex not $hexKey',
+          );
+        }
         allWorks[workId] = work;
         workShardIds[workId] = shardId;
+        if (eagerWorkIds.contains(workId)) eager = true;
       }
 
       shardMetas.add({
         'id': shardId,
         'category': categoryName,
         'path': relativePath,
-        'eager': _eagerBootstrapShardIds.contains(shardId),
+        'eager': eager,
         'entryCount': entryCount,
+        'sha256': sha256HexUtf8(rawContent),
       });
     }
   }
@@ -129,7 +128,9 @@ void main(List<String> args) {
   shardMetas.sort((a, b) => (a['id'] as String).compareTo(b['id'] as String));
 
   final manifest = {
-    'version': 3,
+    'version': 4,
+    'shardBits': defaultShardBits,
+    'entryCount': allWorks.length,
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
     'shards': shardMetas,
   };
@@ -236,7 +237,41 @@ void _syncAssetsRegistry({
     copied++;
   }
 
+  _pruneOrphanAssetShards(assetsRoot, allPaths);
+
   print('  → bundle shards: $copied total (full catalog)');
+}
+
+Set<String> _loadFranchisePrimaryWorkIds(Directory dbRoot) {
+  final ids = <String>{};
+  final file = File('${dbRoot.path}/franchise_groups.json');
+  if (!file.existsSync()) return ids;
+
+  final raw = json.decode(file.readAsStringSync());
+  if (raw is! Map) return ids;
+
+  raw.forEach((key, value) {
+    if (key.startsWith('_') || value is! Map) return;
+    final primary = value['primaryWorkId']?.toString() ?? '';
+    if (primary.isNotEmpty) ids.add(primary);
+  });
+  return ids;
+}
+
+void _pruneOrphanAssetShards(Directory assetsRoot, Set<String> keepPaths) {
+  final shardsRoot = Directory('${assetsRoot.path}/shards');
+  if (!shardsRoot.existsSync()) return;
+
+  for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
+    for (final file in categoryDir.listSync().whereType<File>()) {
+      if (!file.path.endsWith('.json')) continue;
+      final relative =
+          'shards/${p.basename(categoryDir.path)}/${p.basename(file.path)}';
+      if (!keepPaths.contains(relative)) {
+        file.deleteSync();
+      }
+    }
+  }
 }
 
 bool _isAnilistBulkWork(String workId, Map<String, dynamic> work) {

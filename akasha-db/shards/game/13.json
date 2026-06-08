@@ -1,0 +1,21 @@
+{
+  "wk_000000137": {
+    "workId": "wk_000000137",
+    "title": "디아블로 IV",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "releaseYear": 2023,
+    "description": "어둠의 세계에서 악마를 토벌하는 핵앤슬래시 RPG.",
+    "tags": [
+      "핵앤슬래시",
+      "RPG",
+      "다크",
+      "온라인"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_diablo-4_2023"
+    ]
+  }
+}

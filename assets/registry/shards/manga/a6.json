@@ -1,0 +1,23 @@
+{
+  "wk_000000336": {
+    "workId": "wk_000000336",
+    "title": "호리미야",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "releaseYear": 2011,
+    "description": "학교와 집에서 다른 모습을 보이는 두 학생의 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "코미디",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_horimiya_2011"
+    ]
+  }
+}

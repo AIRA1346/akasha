@@ -1,0 +1,21 @@
+{
+  "wk_000000268": {
+    "workId": "wk_000000268",
+    "title": "단간론파",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Spike Chunsoft",
+    "releaseYear": 2010,
+    "description": "학원에서 벌어지는 학급재판 미스터리 어드벤처.",
+    "tags": [
+      "미스터리",
+      "어드벤처",
+      "학원",
+      "서브컬처"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413410/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_danganronpa_2010"
+    ]
+  }
+}

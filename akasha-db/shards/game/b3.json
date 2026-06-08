@@ -1,0 +1,39 @@
+{
+  "wk_000000045": {
+    "workId": "wk_000000045",
+    "title": "엘든 링",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "releaseYear": 2022,
+    "description": "미야자키 히데타카와 조지 R.R. 마틴의 세계관이 결합된 오픈월드 액션 RPG.",
+    "tags": [
+      "소울라이크",
+      "오픈월드",
+      "RPG",
+      "다크판타지"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1245620_2022"
+    ]
+  },
+  "wk_000000101": {
+    "workId": "wk_000000101",
+    "title": "킹덤 컴: 딜리버런스",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Warhorse",
+    "releaseYear": 2018,
+    "description": "킹덤 컴: 딜리버런스 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379430/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid379430_2018"
+    ]
+  }
+}

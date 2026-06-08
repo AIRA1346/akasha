@@ -1,0 +1,58 @@
+{
+  "wk_000000139": {
+    "workId": "wk_000000139",
+    "title": "리그 오브 레전드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Riot Games",
+    "releaseYear": 2009,
+    "description": "5v5 팀 기반 전략 대전 게임.",
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "팀전"
+    ],
+    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
+    "legacyIds": [
+      "gen_game_league-of-legends_2009"
+    ]
+  },
+  "wk_000000140": {
+    "workId": "wk_000000140",
+    "title": "매스 이펙트 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "BioWare",
+    "releaseYear": 2010,
+    "description": "은하계를 구하기 위한 크루를 모으는 SF RPG.",
+    "tags": [
+      "SF",
+      "RPG",
+      "스토리",
+      "선택"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_mass-effect-2_2010"
+    ]
+  },
+  "wk_000000103": {
+    "workId": "wk_000000103",
+    "title": "하트 오브 아이언 IV",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Paradox",
+    "releaseYear": 2016,
+    "description": "하트 오브 아이언 IV — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid394360_2016"
+    ]
+  }
+}

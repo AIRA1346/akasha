@@ -1,0 +1,21 @@
+{
+  "wk_000000008": {
+    "workId": "wk_000000008",
+    "title": "헝거 게임",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "수잔 콜린스",
+    "releaseYear": 2008,
+    "description": "서바이벌 게임에 참가한 소녀가 체제에 맞서는 디스토피아 SF.",
+    "tags": [
+      "SF",
+      "서바이벌",
+      "청소년",
+      "반란"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
+    "legacyIds": [
+      "gen_book_hunger-games_2008"
+    ]
+  }
+}

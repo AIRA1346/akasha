@@ -1,0 +1,21 @@
+{
+  "wk_000000260": {
+    "workId": "wk_000000260",
+    "title": "Re:제로 라이트노벨",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "나가츠키 탓페이",
+    "releaseYear": 2014,
+    "description": "이세계에서 죽음을 반복하는 소년의 라이트노벨 원작.",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "서브컬처"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg",
+    "legacyIds": [
+      "sub_book_rezero-light-novel_2014"
+    ]
+  }
+}

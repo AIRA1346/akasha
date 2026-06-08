@@ -1,0 +1,37 @@
+{
+  "wk_000000244": {
+    "workId": "wk_000000244",
+    "title": "토라도라!",
+    "titles": {
+      "ko": "토라도라!",
+      "en": "Toradora!",
+      "ja": "とらドラ！"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "타케마야 야스코",
+    "releaseYear": 2008,
+    "description": "강호동 같은 소녀 아이스와 작은 소년 류지가 짝사랑을 도우며 사랑을 배우는 로맨스 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2008,
+          "episodes": 25
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/2StXCVS3mm09HwRBWsee3QCz3TM.jpg",
+    "legacyIds": [
+      "sub_animation_toradora_2008"
+    ]
+  }
+}

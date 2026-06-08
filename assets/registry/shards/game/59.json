@@ -1,0 +1,40 @@
+{
+  "wk_000000270": {
+    "workId": "wk_000000270",
+    "title": "파이널 판타지 XIV",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Square Enix",
+    "releaseYear": 2013,
+    "description": "에오르제아 대륙을 배경으로 한 대규모 MMORPG.",
+    "tags": [
+      "MMORPG",
+      "판타지",
+      "스토리",
+      "협동"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39210/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_ffxiv_2013"
+    ]
+  },
+  "wk_000000098": {
+    "workId": "wk_000000098",
+    "title": "홀로우 나이트",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Cherry",
+    "releaseYear": 2017,
+    "description": "버섯 왕국을 탐험하는 2D 메트로바니아 액션.",
+    "tags": [
+      "메트로바니아",
+      "인디",
+      "다크판타지",
+      "액션"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid367520_2017"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "wk_000000365": {
+    "workId": "wk_000000365",
+    "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와타리 와타루",
+    "releaseYear": 2011,
+    "description": "봉사부에 끌려간 고독한 소년의 학원 코미디 드라마.",
+    "tags": [
+      "학원",
+      "코미디",
+      "드라마",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_oregairu_2011"
+    ]
+  }
+}

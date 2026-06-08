@@ -1,0 +1,39 @@
+{
+  "wk_000000280": {
+    "workId": "wk_000000280",
+    "title": "프린세스 커넥트",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Cygames",
+    "releaseYear": 2018,
+    "description": "왕녀와 동료를 모아 모험하는 수집형 RPG.",
+    "tags": [
+      "수집형RPG",
+      "판타지",
+      "코미디",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg",
+    "legacyIds": [
+      "sub_game_princess-connect_2018"
+    ]
+  },
+  "wk_000000119": {
+    "workId": "wk_000000119",
+    "title": "배틀그라운드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "KRAFTON",
+    "releaseYear": 2017,
+    "description": "배틀그라운드 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid578080_2017"
+    ]
+  }
+}

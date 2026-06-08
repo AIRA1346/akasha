@@ -1,0 +1,40 @@
+{
+  "wk_000000272": {
+    "workId": "wk_000000272",
+    "title": "원신",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2020,
+    "description": "티바트 대륙을 탐험하는 오픈월드 어드벤처 RPG.",
+    "tags": [
+      "오픈월드",
+      "수집형RPG",
+      "판타지",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg",
+    "legacyIds": [
+      "sub_game_genshin-impact_2020"
+    ]
+  },
+  "wk_000000143": {
+    "workId": "wk_000000143",
+    "title": "포털 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2011,
+    "description": "포털 건으로 퍼즐을 푸는 SF 코미디 명작.",
+    "tags": [
+      "퍼즐",
+      "SF",
+      "코미디",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_portal-2_2011"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "wk_000000265": {
+    "workId": "wk_000000265",
+    "title": "명일방주",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Hypergryph",
+    "releaseYear": 2019,
+    "description": "오퍼레이터를 배치해 감염체를 막는 타워 디펜스 전략.",
+    "tags": [
+      "타워디펜스",
+      "전략",
+      "SF",
+      "수집"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg",
+    "legacyIds": [
+      "sub_game_arknights_2019"
+    ]
+  },
+  "wk_000000064": {
+    "workId": "wk_000000064",
+    "title": "레딧 리데임",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Digixart",
+    "releaseYear": 2023,
+    "description": "레딧 리데임 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1966720_2023"
+    ]
+  }
+}

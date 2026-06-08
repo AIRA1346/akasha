@@ -1,0 +1,37 @@
+{
+  "wk_000000208": {
+    "workId": "wk_000000208",
+    "title": "킹덤",
+    "titles": {
+      "ko": "킹덤",
+      "en": "Kingdom",
+      "ja": "キングダム"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "releaseYear": 2012,
+    "description": "전국시대를 배경으로 신이 왕국 통일을 꿈꾸며 전장에서 성장하는 소년의 이야기.",
+    "tags": [
+      "역사",
+      "전쟁",
+      "성장",
+      "액션"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1~5기",
+          "year": 2012,
+          "episodes": 120
+        }
+      ],
+      "latestSeason": "1~5기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg",
+    "legacyIds": [
+      "sub_animation_kingdom_2012"
+    ]
+  }
+}

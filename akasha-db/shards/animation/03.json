@@ -1,0 +1,52 @@
+{
+  "wk_000000186": {
+    "workId": "wk_000000186",
+    "title": "던전에서 만남을 추구하면 안 되는걸까",
+    "titles": {
+      "ko": "던전에서 만남을 추구하면 안 되는걸까",
+      "en": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+      "ja": "ダンジョンに出会いを求めるのは間違っているだろうか",
+      "romaji": "DanMachi"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "오모리 후지",
+    "releaseYear": 2015,
+    "description": "오르에오가 라벤 패밀리아에 들어가 던전을 탐험하며 성장하는 판타지 모험 이야기.",
+    "tags": [
+      "판타지",
+      "던전",
+      "모험",
+      "하렘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2015,
+          "episodes": 13
+        },
+        {
+          "label": "2기",
+          "year": 2019,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2020,
+          "episodes": 12
+        },
+        {
+          "label": "4기",
+          "year": 2022,
+          "episodes": 22
+        }
+      ],
+      "latestSeason": "4기"
+    },
+    "legacyIds": [
+      "sub_animation_danmachi_2015"
+    ]
+  }
+}

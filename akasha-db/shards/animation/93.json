@@ -1,0 +1,51 @@
+{
+  "wk_000000192": {
+    "workId": "wk_000000192",
+    "title": "불꽃 소방대",
+    "titles": {
+      "ko": "불꽃 소방대",
+      "en": "Fire Force",
+      "ja": "炎炎ノ消防隊"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아츠시 오쿠보",
+    "releaseYear": 2019,
+    "description": "인간 발화 현상과 싸우는 특수 소방대의 액션과 세계의 비밀을 파헤치는 이야기.",
+    "tags": [
+      "액션",
+      "초능력",
+      "SF",
+      "미스터리"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2020,
+          "episodes": 24
+        },
+        {
+          "label": "3기",
+          "year": 2025,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "3기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
+    "externalIds": {
+      "tmdb": "88046"
+    },
+    "legacyIds": [
+      "sub_animation_fire-force_2019"
+    ]
+  }
+}

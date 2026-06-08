@@ -1,0 +1,21 @@
+{
+  "wk_000000015": {
+    "workId": "wk_000000015",
+    "title": "셜록 홈즈: 단홍색 연구",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "아서 코난 도일",
+    "releaseYear": 1887,
+    "description": "탐정 셜록 홈즈의 데뷔 미스터리 고전.",
+    "tags": [
+      "추리",
+      "미스터리",
+      "고전",
+      "명작"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg",
+    "legacyIds": [
+      "gen_book_sherlock-holmes_1887"
+    ]
+  }
+}

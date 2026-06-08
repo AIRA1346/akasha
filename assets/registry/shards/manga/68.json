@@ -1,0 +1,76 @@
+{
+  "wk_000000298": {
+    "workId": "wk_000000298",
+    "title": "BEASTARS",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이토 파루",
+    "releaseYear": 2016,
+    "description": "육식·초식 동물이 공존하는 세계의 학원 드라마.",
+    "tags": [
+      "학원",
+      "드라마",
+      "동물",
+      "로맨스"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
+    "externalIds": {
+      "tmdb": "90937"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_beastars_2016"
+    ]
+  },
+  "wk_000000314": {
+    "workId": "wk_000000314",
+    "title": "도라에몽",
+    "titles": {
+      "ko": "도라에몽",
+      "en": "Doraemon",
+      "ja": "ドラえもん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지코 F. 후지오",
+    "releaseYear": 1969,
+    "description": "미래에서 온 고양이 로봇 도라에몽이 노진구를 도우며 겪는 일상과 모험.",
+    "tags": [
+      "코미디",
+      "SF",
+      "가족",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg",
+    "legacyIds": [
+      "sub_manga_doraemon_1969"
+    ]
+  },
+  "wk_000000392": {
+    "workId": "wk_000000392",
+    "title": "토라도라!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카에마시 유우",
+    "releaseYear": 2007,
+    "description": "까칠한 소녀와 소심한 소년이 연인 연기를 하며 벌어지는 로맨스.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_toradora_2007"
+    ]
+  }
+}

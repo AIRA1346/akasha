@@ -1,0 +1,23 @@
+{
+  "wk_000000179": {
+    "workId": "wk_000000179",
+    "title": "문호 스트레이 독스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2016,
+    "description": "문호 능력을 가진 탐정들의 초능력 액션.",
+    "tags": [
+      "액션",
+      "초능력",
+      "문학",
+      "미스터리"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_bungo-stray-dogs_2016"
+    ]
+  }
+}

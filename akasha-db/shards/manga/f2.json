@@ -1,0 +1,28 @@
+{
+  "wk_000000363": {
+    "workId": "wk_000000363",
+    "title": "원피스",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오다 에이이치로 (Eiichiro Oda)",
+    "releaseYear": 1997,
+    "description": "해적왕을 꿈꾸는 소년 몽키 D. 루피가 동료들과 함께 위대한 항로를 항해하며 겪는 대서사시.",
+    "tags": [
+      "모험",
+      "우정",
+      "해적",
+      "대하"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
+    "externalIds": {
+      "tmdb": "37854"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_one-piece_1997"
+    ]
+  }
+}

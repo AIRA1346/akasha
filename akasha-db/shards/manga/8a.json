@@ -1,0 +1,29 @@
+{
+  "wk_000000305": {
+    "workId": "wk_000000305",
+    "title": "캡틴 츠바사",
+    "titles": {
+      "ko": "캡틴 츠바사",
+      "en": "Captain Tsubasa",
+      "ja": "キャプテン翼"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 요이치",
+    "releaseYear": 1981,
+    "description": "오자와 츠바사가 드리블과 슈팅으로 세계를 향해 성장하는 축구 만화.",
+    "tags": [
+      "스포츠",
+      "축구",
+      "성장",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg",
+    "legacyIds": [
+      "sub_manga_captain-tsubasa_1981"
+    ]
+  }
+}

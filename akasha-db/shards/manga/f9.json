@@ -1,0 +1,28 @@
+{
+  "wk_000000296": {
+    "workId": "wk_000000296",
+    "title": "암살교실",
+    "titles": {
+      "ko": "암살교실",
+      "en": "Assassination Classroom",
+      "ja": "暗殺教室"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마츠이 유세이",
+    "releaseYear": 2012,
+    "description": "달을 파괴한 문어 선생님을 암살하라는 미션을 받은 3-E반 학생들의 이야기.",
+    "tags": [
+      "학원",
+      "액션",
+      "코미디",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_assassination-classroom_2012"
+    ]
+  }
+}

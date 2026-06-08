@@ -1,0 +1,28 @@
+{
+  "wk_000000239": {
+    "workId": "wk_000000239",
+    "title": "스파이 패밀리",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WIT STUDIO / CloverWorks",
+    "releaseYear": 2022,
+    "description": "가짜 가족이 각자의 임무 속에서 진짜 유대를 쌓아가는 스파이 코미디.",
+    "tags": [
+      "코미디",
+      "스파이",
+      "가족",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
+    "externalIds": {
+      "tmdb": "120089"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_spy-x-family_2022"
+    ]
+  }
+}

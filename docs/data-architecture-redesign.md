@@ -1,6 +1,6 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정 v2 · **구현 0%** (v3 런타임 운영 중)  
+> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (402작 · 331 해시 샤드)  
 > **기준일:** 2026-06-08  
 > **한 줄:** **세상의 모든 작품 사전**이 최종 목표다. **Steam v1 출시 전에 v4 런타임**(wk_·해시 샤드)을 완료한다.  
 > **실행 계획:** [v4-migration-plan.md](v4-migration-plan.md)
@@ -380,13 +380,13 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 - [x] 샤드 `workId` → `wk_` + `legacyIds`  
 - [x] CI: `id_registry_check.dart`  
 
-### Phase B — 앱·볼트 호환 (진행 중)
+### Phase B — 앱·볼트 호환 ✅
 
 - [x] `WorkIdCodec` — `wk_` 파싱  
 - [x] `setContainsWorkId` — legacy·wk 교차 매칭  
 - [x] 프랜차이즈·가시성 legacy 호환  
-- [ ] Loader `id_registry` 로드 (선택)  
-- [ ] dogfood 재검증  
+- [x] `legacy_aliases` 번들 로드 + resolve  
+- [x] dogfood 재검증 (110 tests)  
 
 ### Phase C — Canonicalization CI ✅
 
@@ -395,12 +395,12 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 - [x] `retire_work_ids.dart` — 중복 8건 병합 (402작)  
 - [x] `franchise_groups` = `wk_` members 검증  
 
-### Phase D — 해시 샤딩 v4
+### Phase D — 해시 샤딩 v4 ✅
 
-- [ ] `migrate_shards_v3_to_v4_hash.dart`  
-- [ ] manifest v4 (`shardBits: 8`)  
-- [ ] builder / loader / sync / CI v4  
-- [ ] 슬러그 샤드(`manga_K`) deprecated  
+- [x] `migrate_shards_v3_to_v4_hash.dart` — v3 슬러그 206개 제거  
+- [x] manifest v4 (`shardBits: 8`, per-shard `sha256`)  
+- [x] builder / loader / sync / CI v4 (`manifest_v4_check`)  
+- [x] 슬러그 샤드(`manga_K`) deprecated → `shards/{category}/{hh}.json`  
 
 ### Phase E — Steam v1 출시
 

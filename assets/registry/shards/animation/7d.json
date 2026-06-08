@@ -1,0 +1,57 @@
+{
+  "wk_000000199": {
+    "workId": "wk_000000199",
+    "title": "첫걸음",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 2000,
+    "description": "소심한 소년이 복싱을 통해 강해지는 스포츠 성장 드라마.",
+    "tags": [
+      "스포츠",
+      "복싱",
+      "성장",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_hajime-no-ippo_2000"
+    ]
+  },
+  "wk_000000220": {
+    "workId": "wk_000000220",
+    "title": "노 게임 노 라이프",
+    "titles": {
+      "ko": "노 게임 노 라이프",
+      "en": "No Game No Life",
+      "ja": "ノーゲーム・ノーライフ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "카무라 유우",
+    "releaseYear": 2014,
+    "description": "게임만이 특기인 남매가 이세계 디스보드에서 모든 분쟁을 게임으로 해결하는 판타지.",
+    "tags": [
+      "판타지",
+      "게임",
+      "이세계",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "legacyIds": [
+      "sub_animation_no-game-no-life_2014"
+    ]
+  }
+}

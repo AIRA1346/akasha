@@ -1,0 +1,23 @@
+{
+  "wk_000000175": {
+    "workId": "wk_000000175",
+    "title": "블랙 라군",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 2006,
+    "description": "동남아 해적과 용병들의 거친 액션 스릴러.",
+    "tags": [
+      "액션",
+      "총기",
+      "스릴러",
+      "성인"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_black-lagoon_2006"
+    ]
+  }
+}

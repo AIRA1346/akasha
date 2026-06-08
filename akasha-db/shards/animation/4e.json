@@ -1,0 +1,62 @@
+{
+  "wk_000000201": {
+    "workId": "wk_000000201",
+    "title": "호리미야",
+    "titles": {
+      "ko": "호리미야",
+      "en": "Horimiya",
+      "ja": "ホリミヤ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "releaseYear": 2021,
+    "description": "학교와 집에서 다른 모습을 보이는 호리와 미야무라의 일상 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "일상",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 13
+        },
+        {
+          "label": "피스",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "피스"
+    },
+    "legacyIds": [
+      "sub_animation_horimiya_2021"
+    ]
+  },
+  "wk_000000228": {
+    "workId": "wk_000000228",
+    "title": "사이코 패스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Production I.G",
+    "releaseYear": 2012,
+    "description": "범죄 수치로 사회를 통제하는 디스토피아 SF 수사극.",
+    "tags": [
+      "SF",
+      "스릴러",
+      "디스토피아",
+      "수사"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_psycho-pass_2012"
+    ]
+  }
+}

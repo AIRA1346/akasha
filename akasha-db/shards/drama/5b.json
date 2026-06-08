@@ -1,0 +1,20 @@
+{
+  "wk_000000021": {
+    "workId": "wk_000000021",
+    "title": "오징어 게임",
+    "category": "drama",
+    "domain": "generalCulture",
+    "creator": "황동혁 (Hwang Dong-hyuk)",
+    "releaseYear": 2021,
+    "description": "거액의 상금이 걸린 서바이벌 게임에 참가한 사람들의 이야기.",
+    "tags": [
+      "서바이벌",
+      "데스게임",
+      "스릴러",
+      "넷플릭스"
+    ],
+    "legacyIds": [
+      "gen_drama_squid-game_2021"
+    ]
+  }
+}

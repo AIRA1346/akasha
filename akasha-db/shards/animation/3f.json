@@ -1,0 +1,28 @@
+{
+  "wk_000000224": {
+    "workId": "wk_000000224",
+    "title": "최애의 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Doga Kobo",
+    "releaseYear": 2023,
+    "description": "연예계의 환생과 음모를 그린 드라마 애니메이션.",
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
+    "externalIds": {
+      "tmdb": "203737"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_oshi-no-ko_2023"
+    ]
+  }
+}

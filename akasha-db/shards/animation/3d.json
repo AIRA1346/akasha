@@ -1,0 +1,23 @@
+{
+  "wk_000000227": {
+    "workId": "wk_000000227",
+    "title": "핑퐁",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "TMS",
+    "releaseYear": 2014,
+    "description": "탁구 소년들의 청춘과 재능을 그린 스포츠 드라마.",
+    "tags": [
+      "스포츠",
+      "탁구",
+      "청춘",
+      "드라마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_ping-pong_2014"
+    ]
+  }
+}

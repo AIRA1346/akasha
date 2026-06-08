@@ -1,0 +1,23 @@
+{
+  "wk_000000380": {
+    "workId": "wk_000000380",
+    "title": "4월은 너의 거짓말",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 나오시 (Naoshi Arakawa)",
+    "releaseYear": 2011,
+    "description": "피아노를 포기한 천재 소년 아리마 코세이가 자유분방한 바이올리니스트 미야조노 카오리를 만나 다시 음악과 마주하게 되는 이야기.",
+    "tags": [
+      "감동",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_shigatsu-wa-kimi-no-uso_2011"
+    ]
+  }
+}

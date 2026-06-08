@@ -1,0 +1,41 @@
+{
+  "wk_000000206": {
+    "workId": "wk_000000206",
+    "title": "괴수 8호",
+    "titles": {
+      "ko": "괴수 8호",
+      "en": "Kaiju No. 8",
+      "ja": "怪獣8号"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "마츠모토 나오야",
+    "releaseYear": 2024,
+    "description": "청소부 카프카가 괴수와 융합한 뒤 일본 방위대에서 괴수와 싸우는 이야기.",
+    "tags": [
+      "괴수",
+      "액션",
+      "밀리터리",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2024,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2025,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "legacyIds": [
+      "sub_animation_kaiju-no-8_2024"
+    ]
+  }
+}

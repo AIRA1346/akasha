@@ -1,0 +1,75 @@
+{
+  "wk_000000327": {
+    "workId": "wk_000000327",
+    "title": "가치아쿠타",
+    "titles": {
+      "ko": "가치아쿠타",
+      "en": "Gachiakuta",
+      "ja": "ガチアクタ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하시리 오케",
+    "releaseYear": 2022,
+    "description": "누명을 쓴 루도가 쓰레기장 세계에서 살아남으며 진실을 찾는 다크 액션.",
+    "tags": [
+      "액션",
+      "다크",
+      "생존",
+      "미스터리"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_gachiakuta_2022"
+    ]
+  },
+  "wk_000000332": {
+    "workId": "wk_000000332",
+    "title": "그랜드 블루",
+    "titles": {
+      "ko": "그랜드 블루",
+      "en": "Grand Blue Dreaming",
+      "ja": "ぐらんぶる"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 켄지",
+    "releaseYear": 2014,
+    "description": "다이빙 동아리에 들어간 이오리의 대학 생활과 과장된 코미디 일상.",
+    "tags": [
+      "코미디",
+      "대학",
+      "다이빙",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_grand-blue_2014"
+    ]
+  },
+  "wk_000000388": {
+    "workId": "wk_000000388",
+    "title": "전생했더니 슬라임이었던 건",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후세이 / 미와타리",
+    "releaseYear": 2014,
+    "description": "슬라임으로 전생한 주인공이 나라를 건설하는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "슬라임",
+      "건국"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_tensura_2014"
+    ]
+  }
+}

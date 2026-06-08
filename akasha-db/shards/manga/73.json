@@ -1,0 +1,28 @@
+{
+  "wk_000000397": {
+    "workId": "wk_000000397",
+    "title": "윈드 브레이커",
+    "titles": {
+      "ko": "윈드 브레이커",
+      "en": "Wind Breaker",
+      "ja": "WIND BREAKER"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나츠키 코타",
+    "releaseYear": 2021,
+    "description": "학원 도시에서 바람을 지키는 학생들의 싸움과 우정을 그린 학원 액션 만화.",
+    "tags": [
+      "학원",
+      "액션",
+      "우정",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_wind-breaker_2021"
+    ]
+  }
+}

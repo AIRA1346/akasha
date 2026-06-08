@@ -1,0 +1,42 @@
+{
+  "wk_000000243": {
+    "workId": "wk_000000243",
+    "title": "도쿄 리벤저스",
+    "titles": {
+      "ko": "도쿄 리벤저스",
+      "en": "Tokyo Revengers",
+      "ja": "東京卍リベンジャーズ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "와카이 켄",
+    "releaseYear": 2021,
+    "description": "한타케 타케미치가 과거로 돌아가 양아치 조직과 운명을 바꾸려는 시간여행 액션.",
+    "tags": [
+      "액션",
+      "시간여행",
+      "조직",
+      "청춘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg",
+    "legacyIds": [
+      "sub_animation_tokyo-revengers_2021"
+    ]
+  }
+}

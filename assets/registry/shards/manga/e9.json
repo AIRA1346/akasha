@@ -1,0 +1,28 @@
+{
+  "wk_000000297": {
+    "workId": "wk_000000297",
+    "title": "바라카몬",
+    "titles": {
+      "ko": "바라카몬",
+      "en": "Barakamon",
+      "ja": "ばらかもん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스기모토 요시노",
+    "releaseYear": 2009,
+    "description": "서울 캘리그래퍼 세이가 고도 후쿠오에 내려가 마을 사람들과 성장하는 힐링 이야기.",
+    "tags": [
+      "힐링",
+      "일상",
+      "성장",
+      "캘리그래피"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_barakamon_2009"
+    ]
+  }
+}

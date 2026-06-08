@@ -1,0 +1,21 @@
+{
+  "wk_000000161": {
+    "workId": "wk_000000161",
+    "title": "기생충",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "봉준호",
+    "releaseYear": 2019,
+    "description": "반지하 가족과 부유층 가족의 운명이 얽히는 블랙코미디 스릴러.",
+    "tags": [
+      "스릴러",
+      "사회비판",
+      "한국영화",
+      "아카데미"
+    ],
+    "legacyIds": [
+      "gen_movie_parasite-2019_2019",
+      "gen_movie_parasite_2019"
+    ]
+  }
+}

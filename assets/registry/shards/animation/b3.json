@@ -1,0 +1,23 @@
+{
+  "wk_000000216": {
+    "workId": "wk_000000216",
+    "title": "무직전생",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Bind",
+    "releaseYear": 2021,
+    "description": "전생한 소년이 마법 세계에서 새 삶을 사는 이세계 판타지.",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_mushoku-tensei_2021"
+    ]
+  }
+}

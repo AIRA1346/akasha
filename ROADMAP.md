@@ -73,11 +73,12 @@
 
 > 상세: [v4-migration-plan.md](docs/v4-migration-plan.md) · 설계: [data-architecture-redesign.md](docs/data-architecture-redesign.md)
 
-- [ ] **Phase A** — `assign_wk_ids.dart` + `id_registry.json` + `legacy_aliases`
-- [ ] **Phase B** — `WorkIdCodec`·loader·볼트 `wk_` 해석
+- [x] **Phase A** — `assign_wk_ids.dart` + `id_registry.json` + `legacy_aliases`
+- [x] **Phase B** — `WorkIdCodec`·loader·볼트 `wk_` 해석
 - [x] **Phase C** — `dedupe_linter` + canonicalization CI (402작)
-- [ ] **Phase D** — 해시 샤딩 v4 + manifest v4 + builder/loader/sync
-- [ ] v4 dogfood + akasha-db GitHub push
+- [x] **Phase D** — 해시 샤딩 v4 + manifest v4 + builder/loader/sync (331 버킷)
+- [x] v4 dogfood (`110/110` tests · `ci_registry_check` green)
+- [ ] akasha-db GitHub push (Phase E)
 
 ### M2 — Steam 제출 준비 (v4 후반 ~ Q3)
 
@@ -114,12 +115,12 @@
 > **Steam 게이트:** [v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~D  
 > **비전:** [data-architecture-redesign.md](docs/data-architecture-redesign.md)
 
-### Steam 전 (v4 게이트)
+### Steam 전 (v4 게이트) ✅
 
-- [ ] Phase A: `assign_wk_ids` + `id_registry.json`
-- [ ] Phase B: 앱·볼트 `wk_` 호환
-- [x] Phase C: `dedupe_linter` CI
-- [ ] Phase D: 해시 샤딩 v4
+- [x] Phase A: `assign_wk_ids` + `id_registry.json`
+- [x] Phase B: 앱·볼트 `wk_` 호환
+- [x] Phase C: `dedupe_linter` CI (402작)
+- [x] Phase D: 해시 샤딩 v4 (manifest v4 · 331 버킷)
 
 ### Steam 후
 
@@ -132,7 +133,7 @@
 - [x] `flutter_ci.yml`에 `ci_registry_check` 연동
 - [x] akasha-db **~410작** 엄선 (batch 시드 + 수동 큐레이션, AniList bulk 금지)
 - [x] lazy 샤드 정책 — 번들은 eager 15샤드만, 나머지 온디맨드
-- [x] **akasha-db v3** — `titles`/`aliases`/`externalIds`/`searchTokens` ([SCHEMA.md](akasha-db/SCHEMA.md))
+- [x] **akasha-db v4** — `wk_`·해시 샤드·`sha256` manifest ([SCHEMA.md](akasha-db/SCHEMA.md))
 - [ ] 샤드 v3 전량 마이그레이션 (`migrate_registry_v3.dart` — 점진 실행)
 - [ ] `franchise_groups.json` `displayNames` 커버리지 확대
 - [ ] `locale_linter` — PR 시 titles·externalIds 검증

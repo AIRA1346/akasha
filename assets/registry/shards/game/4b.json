@@ -1,0 +1,21 @@
+{
+  "wk_000000144": {
+    "workId": "wk_000000144",
+    "title": "더 엘더스크롤 V: 스카이림",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "releaseYear": 2011,
+    "description": "드래곤과 용맹한 자의 전설을 쓰는 오픈월드 RPG.",
+    "tags": [
+      "오픈월드",
+      "RPG",
+      "판타지",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_skyrim_2011"
+    ]
+  }
+}

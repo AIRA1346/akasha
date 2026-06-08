@@ -1,0 +1,46 @@
+{
+  "wk_000000182": {
+    "workId": "wk_000000182",
+    "title": "실력 지상주의 교실",
+    "titles": {
+      "ko": "실력 지상주의 교실",
+      "en": "Classroom of the Elite",
+      "ja": "ようこそ実力至上主義の教室へ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "시무라 킨고",
+    "releaseYear": 2017,
+    "description": "실력 지상주의 학교에서 아야노코지가 전략과 능력으로 학급 전쟁에 개입하는 학원 드라마.",
+    "tags": [
+      "학원",
+      "심리",
+      "전략",
+      "드라마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2017,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2022,
+          "episodes": 13
+        },
+        {
+          "label": "3기",
+          "year": 2024,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "3기"
+    },
+    "legacyIds": [
+      "sub_animation_classroom-of-the-elite_2017"
+    ]
+  }
+}

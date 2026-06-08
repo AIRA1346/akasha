@@ -1,0 +1,29 @@
+{
+  "wk_000000320": {
+    "workId": "wk_000000320",
+    "title": "페어리 테일 100년 퀘스트",
+    "titles": {
+      "ko": "페어리 테일 100년 퀘스트",
+      "en": "Fairy Tail: 100 Years Quest",
+      "ja": "FAIRY TAIL 100年クエスト"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마시마 히로",
+    "releaseYear": 2018,
+    "description": "나츠 일행이 백년 퀘스트를 수행하며 새로운 적과 마법 대륙을 마주하는 후속 모험.",
+    "tags": [
+      "판타지",
+      "마법",
+      "모험",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg",
+    "legacyIds": [
+      "sub_manga_fairy-tail-100-years-quest_2018"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "wk_000000217": {
+    "workId": "wk_000000217",
+    "title": "나의 히어로 아카데미아",
+    "titles": {
+      "ko": "나의 히어로 아카데미아",
+      "en": "My Hero Academia",
+      "ja": "僕のヒーローアカデミア"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "releaseYear": 2016,
+    "description": "쿼크 없이 태어난 이즈쿠가 최고의 히어로를 꿈꾸며 유에이 고등학교에서 성장하는 이야기.",
+    "tags": [
+      "히어로",
+      "학원",
+      "액션",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2016,
+          "episodes": 13
+        },
+        {
+          "label": "2기",
+          "year": 2017,
+          "episodes": 25
+        },
+        {
+          "label": "3기",
+          "year": 2018,
+          "episodes": 25
+        },
+        {
+          "label": "4기",
+          "year": 2019,
+          "episodes": 25
+        },
+        {
+          "label": "5기",
+          "year": 2021,
+          "episodes": 25
+        },
+        {
+          "label": "6기",
+          "year": 2022,
+          "episodes": 25
+        },
+        {
+          "label": "7기",
+          "year": 2024,
+          "episodes": 21
+        }
+      ],
+      "latestSeason": "7기"
+    },
+    "legacyIds": [
+      "sub_animation_my-hero-academia_2016"
+    ]
+  }
+}

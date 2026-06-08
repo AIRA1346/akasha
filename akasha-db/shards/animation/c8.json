@@ -1,0 +1,28 @@
+{
+  "wk_000000223": {
+    "workId": "wk_000000223",
+    "title": "원펀맨",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 2015,
+    "description": "한 방에 적을 쓰러뜨리는 히어로의 유쾌한 액션 코미디.",
+    "tags": [
+      "액션",
+      "코미디",
+      "히어로",
+      "패러디"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
+    "externalIds": {
+      "tmdb": "63926"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_one-punch-man_2015"
+    ]
+  }
+}

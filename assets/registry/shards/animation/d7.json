@@ -1,0 +1,23 @@
+{
+  "wk_000000170": {
+    "workId": "wk_000000170",
+    "title": "엔젤 비츠!",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "P.A.Works",
+    "releaseYear": 2010,
+    "description": "사후 세계 학교에서 벌어지는 청춘과 이별의 이야기.",
+    "tags": [
+      "학원",
+      "감동",
+      "판타지",
+      "음악"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_angel-beats_2010"
+    ]
+  }
+}

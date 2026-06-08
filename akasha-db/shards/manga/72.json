@@ -1,0 +1,28 @@
+{
+  "wk_000000350": {
+    "workId": "wk_000000350",
+    "title": "마슐",
+    "titles": {
+      "ko": "마슐",
+      "en": "Mashle: Magic and Muscles",
+      "ja": "マッシュル-MASHLE-"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "코마도 타케시",
+    "releaseYear": 2018,
+    "description": "마법 없는 마시 번이 근육으로 마법 학교를 휘저는 코미디 액션 만화.",
+    "tags": [
+      "코미디",
+      "액션",
+      "학원",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_mashle_2018"
+    ]
+  }
+}

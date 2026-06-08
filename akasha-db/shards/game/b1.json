@@ -1,0 +1,39 @@
+{
+  "wk_000000266": {
+    "workId": "wk_000000266",
+    "title": "블루 아카이브",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "releaseYear": 2021,
+    "description": "학원 도시 키보토스의 선생님이 되어 학생들을 이끄는 수집형 RPG.",
+    "tags": [
+      "학원물",
+      "수집형RPG",
+      "청춘",
+      "OST"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3511790/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_blue-archive_2021"
+    ]
+  },
+  "wk_000000111": {
+    "workId": "wk_000000111",
+    "title": "스카이림 SE",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "releaseYear": 2016,
+    "description": "스카이림 SE — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid489830_2016"
+    ]
+  }
+}

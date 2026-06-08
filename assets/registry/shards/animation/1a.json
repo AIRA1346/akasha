@@ -1,0 +1,46 @@
+{
+  "wk_000000189": {
+    "workId": "wk_000000189",
+    "title": "Dr.STONE",
+    "titles": {
+      "ko": "Dr.STONE",
+      "en": "Dr. Stone",
+      "ja": "Dr.STONE"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이노우에 료",
+    "releaseYear": 2019,
+    "description": "석화에서 깨어난 센쿠가 과학의 힘으로 문명을 재건하는 포스트 아포칼립스 SF.",
+    "tags": [
+      "SF",
+      "과학",
+      "모험",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2021,
+          "episodes": 11
+        },
+        {
+          "label": "3기",
+          "year": 2023,
+          "episodes": 22
+        }
+      ],
+      "latestSeason": "3기"
+    },
+    "legacyIds": [
+      "sub_animation_dr-stone_2019"
+    ]
+  }
+}

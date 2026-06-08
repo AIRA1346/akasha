@@ -85,6 +85,20 @@ void main(List<String> args) {
     print('FAIL: id_registry_check exited ${idReg.exitCode}');
   }
 
+  print('\n==> manifest v4');
+  final v4 = Process.runSync(
+    Platform.resolvedExecutable,
+    ['run', 'tool/manifest_v4_check.dart'],
+    workingDirectory: root.path,
+    runInShell: true,
+  );
+  stdout.write(v4.stdout);
+  stderr.write(v4.stderr);
+  if (v4.exitCode != 0) {
+    failed = true;
+    print('FAIL: manifest_v4_check exited ${v4.exitCode}');
+  }
+
   print('\n==> dedupe_linter');
   final dedupe = Process.runSync(
     Platform.resolvedExecutable,

@@ -1,0 +1,28 @@
+{
+  "wk_000000194": {
+    "workId": "wk_000000194",
+    "title": "강철의 연금술사 BROTHERHOOD",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2009,
+    "description": "연금술사 형제가 잃은 것을 되찾기 위한 여정을 그린 애니메이션.",
+    "tags": [
+      "판타지",
+      "연금술",
+      "형제",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
+    "externalIds": {
+      "tmdb": "31911"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_fullmetal-alchemist-brotherhood_2009"
+    ]
+  }
+}

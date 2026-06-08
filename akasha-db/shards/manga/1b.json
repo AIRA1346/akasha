@@ -1,0 +1,23 @@
+{
+  "wk_000000304": {
+    "workId": "wk_000000304",
+    "title": "봇치 더 록!",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하마다 쿠키",
+    "releaseYear": 2017,
+    "description": "내향적인 소녀가 밴드 활동을 통해 성장하는 음악 코미디.",
+    "tags": [
+      "음악",
+      "코미디",
+      "성장",
+      "밴드"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_bocchi-the-rock_2017"
+    ]
+  }
+}

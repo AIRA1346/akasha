@@ -1,0 +1,28 @@
+{
+  "wk_000000382": {
+    "workId": "wk_000000382",
+    "title": "식극의 소마",
+    "titles": {
+      "ko": "식극의 소마",
+      "en": "Food Wars!: Shokugeki no Soma",
+      "ja": "食戟のソーマ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "츠쿠다 유토",
+    "releaseYear": 2012,
+    "description": "요리 천재 소마가 토츠키 요리학교에서 경쟁하며 성장하는 요리 배틀 만화.",
+    "tags": [
+      "요리",
+      "학원",
+      "경쟁",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_shokugeki-no-soma_2012"
+    ]
+  }
+}

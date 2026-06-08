@@ -1,0 +1,63 @@
+{
+  "wk_000000176": {
+    "workId": "wk_000000176",
+    "title": "블리치",
+    "titles": {
+      "ko": "블리치",
+      "en": "Bleach",
+      "ja": "BLEACH"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "releaseYear": 2004,
+    "description": "소울 소사 이치고가 사신의 힘으로 호로와 싸우며 영혼의 세계를 지키는 액션.",
+    "tags": [
+      "액션",
+      "초자연",
+      "사신",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2004,
+          "episodes": 366
+        },
+        {
+          "label": "천년혈전",
+          "year": 2022,
+          "episodes": 26
+        }
+      ],
+      "latestSeason": "천년혈전"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg",
+    "legacyIds": [
+      "sub_animation_bleach_2004"
+    ]
+  },
+  "wk_000000212": {
+    "workId": "wk_000000212",
+    "title": "메이드 인 어비스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kinema Citrus",
+    "releaseYear": 2017,
+    "description": "거대한 구덩이를 탐험하는 소녀와 로봇의 다크 판타지 모험.",
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "명작"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_made-in-abyss_2017"
+    ]
+  }
+}

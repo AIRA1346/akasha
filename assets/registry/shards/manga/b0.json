@@ -1,0 +1,28 @@
+{
+  "wk_000000361": {
+    "workId": "wk_000000361",
+    "title": "노다메 칸타빌레",
+    "titles": {
+      "ko": "노다메 칸타빌레",
+      "en": "Nodame Cantabile",
+      "ja": "のだめカンタービレ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "니시노 에무",
+    "releaseYear": 2001,
+    "description": "피아니스트 치아키와 천재지만 산만한 노다메가 음악과 사랑을 키워가는 로맨스 코미디.",
+    "tags": [
+      "음악",
+      "로맨스",
+      "코미디",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_nodame-cantabile_2001"
+    ]
+  }
+}

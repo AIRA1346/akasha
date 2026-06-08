@@ -1,0 +1,21 @@
+{
+  "wk_000000279": {
+    "workId": "wk_000000279",
+    "title": "페르소나 5 로열",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Atlus",
+    "releaseYear": 2020,
+    "description": "마스크를 쓴 도둑단이 심장의 궁전을 훔치는 JRPG.",
+    "tags": [
+      "JRPG",
+      "학원",
+      "스타일",
+      "서브컬처"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_persona-5-royal_2020"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "wk_000000338": {
+    "workId": "wk_000000338",
+    "title": "이누야샤",
+    "titles": {
+      "ko": "이누야샤",
+      "en": "Inuyasha",
+      "ja": "犬夜叉"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 루미코",
+    "releaseYear": 1996,
+    "description": "현대에서 온 히구라시 카구ome와 반요 이누야샤가 사혼의 구슬을 둘러싼 모험.",
+    "tags": [
+      "판타지",
+      "액션",
+      "로맨스",
+      "시대극"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_inuyasha_1996"
+    ]
+  },
+  "wk_000000364": {
+    "workId": "wk_000000364",
+    "title": "원펀맨",
+    "titles": {
+      "ko": "원펀맨",
+      "en": "One-Punch Man",
+      "ja": "ワンパンマン"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "ONE·무라타 유스케",
+    "releaseYear": 2012,
+    "description": "한 방에 적을 쓰러뜨리는 히어로 사이타마의 일상과 진정한 상대를 찾는 여정.",
+    "tags": [
+      "액션",
+      "코미디",
+      "히어로",
+      "패러디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
+    "externalIds": {
+      "tmdb": "63926"
+    },
+    "legacyIds": [
+      "sub_manga_one-punch-man_2012"
+    ]
+  }
+}

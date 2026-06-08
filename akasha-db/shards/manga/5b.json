@@ -1,0 +1,28 @@
+{
+  "wk_000000349": {
+    "workId": "wk_000000349",
+    "title": "3월의 라이온",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "우메자와 하토",
+    "releaseYear": 2007,
+    "description": "고독한 장기 기사가 가족과 만나 마음을 치유하는 성장 드라마.",
+    "tags": [
+      "장기",
+      "성장",
+      "힐링",
+      "드라마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
+    "externalIds": {
+      "tmdb": "65336"
+    },
+    "legacyIds": [
+      "sub_manga_march-comes-in-like-a-lion_2007"
+    ]
+  }
+}

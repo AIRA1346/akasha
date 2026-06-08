@@ -1,0 +1,44 @@
+{
+  "wk_000000303": {
+    "workId": "wk_000000303",
+    "title": "블루 피리어드",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "야마다코",
+    "releaseYear": 2017,
+    "description": "미술에 빠진 소년이 도쿄 미대 입시를 향해 달리는 성장 이야기.",
+    "tags": [
+      "미술",
+      "성장",
+      "청춘",
+      "드라마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_blue-period_2017"
+    ]
+  },
+  "wk_000000342": {
+    "workId": "wk_000000342",
+    "title": "괴수 8호",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마츠모토 나오야",
+    "releaseYear": 2020,
+    "description": "청소부가 괴수와 융합하며 일본 방위대에 입대하는 이야기.",
+    "tags": [
+      "괴수",
+      "액션",
+      "밀리터리",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_kaiju-no-8_2020"
+    ]
+  }
+}

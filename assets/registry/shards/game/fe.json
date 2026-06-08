@@ -1,0 +1,21 @@
+{
+  "wk_000000142": {
+    "workId": "wk_000000142",
+    "title": "오버워치 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "releaseYear": 2022,
+    "description": "영웅 기반 팀 대전 슈터.",
+    "tags": [
+      "FPS",
+      "팀전",
+      "히어로",
+      "PvP"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_overwatch-2_2022"
+    ]
+  }
+}

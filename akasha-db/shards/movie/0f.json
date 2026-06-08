@@ -1,0 +1,21 @@
+{
+  "wk_000000157": {
+    "workId": "wk_000000157",
+    "title": "인터스텔라",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "크리스토퍼 놀란 (Christopher Nolan)",
+    "releaseYear": 2014,
+    "description": "인류의 생존을 위해 새 행성을 찾아 떠나는 우주 비행사들의 여정.",
+    "tags": [
+      "SF",
+      "우주",
+      "가족",
+      "블랙홀"
+    ],
+    "posterPath": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+    "legacyIds": [
+      "gen_movie_interstellar_2014"
+    ]
+  }
+}

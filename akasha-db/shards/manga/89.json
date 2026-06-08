@@ -1,0 +1,23 @@
+{
+  "wk_000000301": {
+    "workId": "wk_000000301",
+    "title": "블리치",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "releaseYear": 2001,
+    "description": "소년이 영혼을 보는 사신 대행으로서 사후 세계를 지키는 이야기.",
+    "tags": [
+      "액션",
+      "사신",
+      "초자연",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_bleach_2001"
+    ]
+  }
+}

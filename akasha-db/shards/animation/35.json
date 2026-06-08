@@ -1,0 +1,37 @@
+{
+  "wk_000000203": {
+    "workId": "wk_000000203",
+    "title": "죠죠의 기묘한 모험",
+    "titles": {
+      "ko": "죠죠의 기묘한 모험",
+      "en": "JoJo's Bizarre Adventure",
+      "ja": "ジョジョの奇妙な冒険"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아라키 히로히코",
+    "releaseYear": 2012,
+    "description": "죠스타 가문과 디오의 인연이 이어지며 세대를 넘어 전개되는 독특한 스탠드 배틀 액션.",
+    "tags": [
+      "액션",
+      "초능력",
+      "모험",
+      "다크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1~6부",
+          "year": 2012,
+          "episodes": 190
+        }
+      ],
+      "latestSeason": "1~6부"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
+    "legacyIds": [
+      "sub_animation_jojo-bizarre-adventure_2012"
+    ]
+  }
+}

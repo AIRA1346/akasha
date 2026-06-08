@@ -210,6 +210,14 @@ class RegistrySyncService {
     final previousShard = previousManifest?.shardById(remoteShard.id);
     if (previousShard == null) return true;
     if (previousShard.entryCount != remoteShard.entryCount) return true;
+    final remoteSha = remoteShard.sha256;
+    final localSha = previousShard.sha256;
+    if (remoteSha != null &&
+        remoteSha.isNotEmpty &&
+        localSha != null &&
+        remoteSha != localSha) {
+      return true;
+    }
     if (!loader.isShardLoaded(remoteShard.id)) {
       return !(await loader.isShardCached(remoteShard.path));
     }

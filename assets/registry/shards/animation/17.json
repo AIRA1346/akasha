@@ -1,0 +1,46 @@
+{
+  "wk_000000171": {
+    "workId": "wk_000000171",
+    "title": "약사의 혼잣말",
+    "titles": {
+      "ko": "약사의 혼잣말",
+      "en": "The Apothecary Diaries",
+      "ja": "薬屋のひとりごと"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "히나타 네코",
+    "releaseYear": 2023,
+    "description": "궁중에서 일하는 약사 소녀 마오마오가 미스터리와 권력 다툼 속에서 지식으로 사건을 풀어가는 이야기.",
+    "tags": [
+      "미스터리",
+      "역사",
+      "궁중",
+      "약학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2025,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "2기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
+    "externalIds": {
+      "tmdb": "220542"
+    },
+    "legacyIds": [
+      "sub_animation_apothecary-diaries_2023"
+    ]
+  }
+}

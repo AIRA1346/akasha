@@ -1,0 +1,23 @@
+{
+  "wk_000000184": {
+    "workId": "wk_000000184",
+    "title": "사이버펑크: 엣지러너",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Trigger",
+    "releaseYear": 2022,
+    "description": "나이트 시티에서 살아남으려는 사이버펑크 청춘의 비극.",
+    "tags": [
+      "사이버펑크",
+      "액션",
+      "SF",
+      "다크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_cyberpunk-edgerunners_2022"
+    ]
+  }
+}

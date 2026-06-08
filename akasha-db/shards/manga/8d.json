@@ -1,0 +1,50 @@
+{
+  "wk_000000148": {
+    "workId": "wk_000000148",
+    "title": "짱구는 못말려",
+    "category": "manga",
+    "domain": "generalCulture",
+    "creator": "우스이 요시토 (Yoshito Usui)",
+    "releaseYear": 1990,
+    "description": "떡잎마을의 장난꾸러기 신짱구와 가족의 코믹 일상.",
+    "tags": [
+      "코미디",
+      "일상",
+      "가족",
+      "장수작"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "gen_manga_crayon-shin-chan_1990"
+    ]
+  },
+  "wk_000000347": {
+    "workId": "wk_000000347",
+    "title": "보석의 나라",
+    "titles": {
+      "ko": "보석의 나라",
+      "en": "Land of the Lustrous",
+      "ja": "宝石の国"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이치카와 하루코",
+    "releaseYear": 2012,
+    "description": "보석로 변한 인간들이 월인과 싸우며 정체성과 기억을 잃어가는 독특한 SF 판타지.",
+    "tags": [
+      "SF",
+      "판타지",
+      "다크",
+      "철학"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg",
+    "legacyIds": [
+      "sub_manga_land-of-the-lustrous_2012"
+    ]
+  }
+}

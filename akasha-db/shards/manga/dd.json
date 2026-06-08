@@ -1,0 +1,28 @@
+{
+  "wk_000000340": {
+    "workId": "wk_000000340",
+    "title": "주술회전",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아쿠타미 게게 (Gege Akutami)",
+    "releaseYear": 2018,
+    "description": "주술사와 저주의 세계를 그린 다크 판타지 배틀 만화.",
+    "tags": [
+      "액션",
+      "다크판타지",
+      "주술",
+      "배틀"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
+    "externalIds": {
+      "tmdb": "95479"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_jujutsu-kaisen_2018"
+    ]
+  }
+}

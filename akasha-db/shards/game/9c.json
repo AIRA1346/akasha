@@ -1,0 +1,59 @@
+{
+  "wk_000000031": {
+    "workId": "wk_000000031",
+    "title": "사이버펑크 2077",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "CD PROJEKT RED",
+    "releaseYear": 2020,
+    "description": "나이트 시티에서 벌어지는 오픈월드 SF RPG.",
+    "tags": [
+      "SF",
+      "오픈월드",
+      "RPG",
+      "사이버펑크"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1091500_2020"
+    ]
+  },
+  "wk_000000039": {
+    "workId": "wk_000000039",
+    "title": "레드 데드 리뎀션 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar Games",
+    "releaseYear": 2018,
+    "description": "서부 시대를 배경으로 한 오픈월드 서사 액션.",
+    "tags": [
+      "오픈월드",
+      "서부",
+      "액션",
+      "스토리"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1174180_2018",
+      "gen_game_appid1174180_2019"
+    ]
+  },
+  "wk_000000113": {
+    "workId": "wk_000000113",
+    "title": "새티스팩토리",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Coffee Stain",
+    "releaseYear": 2020,
+    "description": "새티스팩토리 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid526870_2020"
+    ]
+  }
+}

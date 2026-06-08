@@ -1,0 +1,46 @@
+{
+  "wk_000000200": {
+    "workId": "wk_000000200",
+    "title": "지옥락",
+    "titles": {
+      "ko": "지옥락",
+      "en": "Hell's Paradise",
+      "ja": "地獄楽"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "카지 켄지",
+    "releaseYear": 2023,
+    "description": "닌자 가부마루가 불사의 꽃을 찾기 위해 신비한 섬에 파견되는 다크 판타지 액션.",
+    "tags": [
+      "닌자",
+      "액션",
+      "판타지",
+      "다크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 13
+        },
+        {
+          "label": "2기",
+          "year": 2026,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
+    "externalIds": {
+      "tmdb": "117465"
+    },
+    "legacyIds": [
+      "sub_animation_hells-paradise_2023"
+    ]
+  }
+}

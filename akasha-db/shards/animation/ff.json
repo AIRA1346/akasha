@@ -1,0 +1,23 @@
+{
+  "wk_000000211": {
+    "workId": "wk_000000211",
+    "title": "리코리스 리코일",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A-1 Pictures",
+    "releaseYear": 2022,
+    "description": "카페 직원이자 비밀 요원 두 소녀의 액션 드라마.",
+    "tags": [
+      "액션",
+      "총기",
+      "일상",
+      "배틀"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_lycoris-recoil_2022"
+    ]
+  }
+}

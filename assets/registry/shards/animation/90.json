@@ -1,0 +1,28 @@
+{
+  "wk_000000180": {
+    "workId": "wk_000000180",
+    "title": "체인소 맨",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2022,
+    "description": "악마의 힘이 각인된 소년 덴지의 혼돈스러운 액션 드라마.",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
+    "externalIds": {
+      "tmdb": "114410"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_chainsaw-man_2022"
+    ]
+  }
+}

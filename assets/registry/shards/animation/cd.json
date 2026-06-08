@@ -1,0 +1,23 @@
+{
+  "wk_000000183": {
+    "workId": "wk_000000183",
+    "title": "코드 기어스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "SUNRISE",
+    "releaseYear": 2006,
+    "description": "기사단의 힘으로 일본 해방을 꿈꾸는 왕자의 전략 로봇 대전.",
+    "tags": [
+      "메카",
+      "전략",
+      "반란",
+      "SF"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_code-geass_2006"
+    ]
+  }
+}

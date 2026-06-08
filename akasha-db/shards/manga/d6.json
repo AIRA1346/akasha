@@ -1,0 +1,29 @@
+{
+  "wk_000000348": {
+    "workId": "wk_000000348",
+    "title": "메이드 인 어비스",
+    "titles": {
+      "ko": "메이드 인 어비스",
+      "en": "Made in Abyss",
+      "ja": "メイドインアビス"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "츠쿠시 아키히토",
+    "releaseYear": 2012,
+    "description": "거대 구덩이 어비스를 탐험하는 리코와 레그가 미지의 세계와 저주를 마주하는 다크 판타지.",
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "탐험"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ofjHLIGpQP0VscNPkq5CKQvMcQH.jpg",
+    "legacyIds": [
+      "sub_manga_made-in-abyss_2012"
+    ]
+  }
+}

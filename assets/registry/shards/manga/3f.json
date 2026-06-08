@@ -1,0 +1,28 @@
+{
+  "wk_000000345": {
+    "workId": "wk_000000345",
+    "title": "코미는, 커뮤니케이션이 어렵다",
+    "titles": {
+      "ko": "코미는, 커뮤니케이션이 어렵다",
+      "en": "Komi Can't Communicate",
+      "ja": "古見さんは、コミュ症です。"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오다 토모히토",
+    "releaseYear": 2016,
+    "description": "교류장애 소녀 코미의 친구 100명 만들기 프로젝트를 돕는 학원 코미디.",
+    "tags": [
+      "학원",
+      "코미디",
+      "로맨스",
+      "일상"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_komi-san_2016"
+    ]
+  }
+}

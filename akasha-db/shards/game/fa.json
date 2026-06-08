@@ -1,0 +1,21 @@
+{
+  "wk_000000290": {
+    "workId": "wk_000000290",
+    "title": "젠레스 존 제로",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2024,
+    "description": "공동구역을 탐험하는 액션 RPG.",
+    "tags": [
+      "액션",
+      "SF",
+      "도시",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg",
+    "legacyIds": [
+      "sub_game_zenless-zone-zero_2024"
+    ]
+  }
+}

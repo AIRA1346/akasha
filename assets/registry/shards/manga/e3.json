@@ -1,0 +1,54 @@
+{
+  "wk_000000355": {
+    "workId": "wk_000000355",
+    "title": "나의 히어로 아카데미아",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "releaseYear": 2014,
+    "description": "초능력 사회에서 무력한 소년이 최고의 히어로를 꿈꾸는 이야기.",
+    "tags": [
+      "히어로",
+      "학원",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg",
+    "externalIds": {
+      "tmdb": "65930"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_my-hero-academia_2014"
+    ]
+  },
+  "wk_000000381": {
+    "workId": "wk_000000381",
+    "title": "진격의 거인",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이사야마 하지메 (Hajime Isayama)",
+    "releaseYear": 2009,
+    "description": "거대한 벽 안에서 살아가던 인류가 벽 너머의 거인과 맞서 싸우는 이야기.",
+    "tags": [
+      "SF",
+      "전쟁",
+      "자유",
+      "반전"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
+    "externalIds": {
+      "tmdb": "1429"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_shingeki-no-kyojin_2009"
+    ]
+  }
+}

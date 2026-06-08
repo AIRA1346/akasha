@@ -1,0 +1,23 @@
+{
+  "wk_000000396": {
+    "workId": "wk_000000396",
+    "title": "빈란드 사가",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "야마다코",
+    "releaseYear": 2005,
+    "description": "바이킹 시대를 배경으로 한 복수와 성장의 서사시.",
+    "tags": [
+      "역사",
+      "액션",
+      "복수",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_vinland-saga_2005"
+    ]
+  }
+}

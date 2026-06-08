@@ -1,0 +1,28 @@
+{
+  "wk_000000343": {
+    "workId": "wk_000000343",
+    "title": "귀멸의 칼날",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "고토게 코요하루 (Koyoharu Gotouge)",
+    "releaseYear": 2016,
+    "description": "가족을 귀신에게 잃은 소년 카마도 탄지로가 귀살대에 입대하는 이야기.",
+    "tags": [
+      "액션",
+      "가족애",
+      "귀신",
+      "다이쇼"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
+    "externalIds": {
+      "tmdb": "85937"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_kimetsu-no-yaiba_2016"
+    ]
+  }
+}

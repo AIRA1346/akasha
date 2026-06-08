@@ -1,0 +1,52 @@
+{
+  "wk_000000196": {
+    "workId": "wk_000000196",
+    "title": "골든 카무이",
+    "titles": {
+      "ko": "골든 카무이",
+      "en": "Golden Kamuy",
+      "ja": "ゴールデンカムイ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야기 노리코",
+    "releaseYear": 2018,
+    "description": "전쟁에서 돌아온 사찌와 아이누 소년 아시리파가 황금 보물을 찾아 홋카이도를 가로지르는 모험.",
+    "tags": [
+      "모험",
+      "역사",
+      "액션",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2018,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2021,
+          "episodes": 12
+        },
+        {
+          "label": "4기",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "4기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg",
+    "legacyIds": [
+      "sub_animation_golden-kamuy_2018"
+    ]
+  }
+}

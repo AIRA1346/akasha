@@ -1,0 +1,20 @@
+{
+  "wk_000000154": {
+    "workId": "wk_000000154",
+    "title": "파이트 클럽",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "데이비드 핀처",
+    "releaseYear": 1999,
+    "description": "불면증에 시달리는 남자가 비밀 결투 클럽에 빠져드는 이야기.",
+    "tags": [
+      "스릴러",
+      "심리",
+      "반항",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_movie_fight-club_1999"
+    ]
+  }
+}

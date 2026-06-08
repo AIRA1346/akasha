@@ -1,0 +1,23 @@
+{
+  "wk_000000370": {
+    "workId": "wk_000000370",
+    "title": "약속의 네버랜드",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "시라이 카이",
+    "releaseYear": 2016,
+    "description": "고아원 아이들이 숨겨진 진실을 알게 된 뒤 탈출을 꾸미는 스릴러.",
+    "tags": [
+      "스릴러",
+      "미스터리",
+      "탈출",
+      "다크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_promised-neverland_2016"
+    ]
+  }
+}

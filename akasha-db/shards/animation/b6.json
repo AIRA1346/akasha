@@ -1,0 +1,82 @@
+{
+  "wk_000000229": {
+    "workId": "wk_000000229",
+    "title": "왕의 랭킹",
+    "titles": {
+      "ko": "왕의 랭킹",
+      "en": "Ranking of Kings",
+      "ja": "王様ランキング"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "토키타 소스케",
+    "releaseYear": 2021,
+    "description": "작고 약해 보이는 보지 왕자 보지가 동료와 함께 성장하며 왕이 되어가는 판타지.",
+    "tags": [
+      "판타지",
+      "성장",
+      "모험",
+      "감동"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 23
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg",
+    "legacyIds": [
+      "sub_animation_ranking-of-kings_2021"
+    ]
+  },
+  "wk_000000247": {
+    "workId": "wk_000000247",
+    "title": "빈란드 사가",
+    "titles": {
+      "ko": "빈란드 사가",
+      "en": "Vinland Saga",
+      "ja": "ヴィンランド・サガ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "유키마쓰 신야",
+    "releaseYear": 2019,
+    "description": "아이슬란드의 복수를 꿈꾸던 토르핀이 전쟁과 삶의 의미를 마주하며 성장하는 역사 드라마.",
+    "tags": [
+      "역사",
+      "액션",
+      "복수",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
+    "legacyIds": [
+      "sub_animation_vinland-saga_2019"
+    ]
+  }
+}

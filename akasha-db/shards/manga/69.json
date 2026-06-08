@@ -1,0 +1,28 @@
+{
+  "wk_000000356": {
+    "workId": "wk_000000356",
+    "title": "이런 걸 좋아하시는 건가요, 나가토르양?",
+    "titles": {
+      "ko": "이런 걸 좋아하시는 건가요, 나가토르양?",
+      "en": "Don't Toy with Me, Miss Nagatoro",
+      "ja": "イジらないで、長瀬さん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나노무라 774",
+    "releaseYear": 2017,
+    "description": "후배 나가토르가 선배 나오토를 장난치며 두 사람의 관계가 변하는 학원 로맨스.",
+    "tags": [
+      "로맨스",
+      "학원",
+      "코미디",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_nagatoro_2017"
+    ]
+  }
+}

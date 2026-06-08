@@ -1,0 +1,85 @@
+{
+  "wk_000000302": {
+    "workId": "wk_000000302",
+    "title": "블루 록",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "무인치 혼",
+    "releaseYear": 2018,
+    "description": "일본 최고의 스트라이커를 뽑기 위한 극한의 축구 서바이벌.",
+    "tags": [
+      "스포츠",
+      "축구",
+      "서바이벌",
+      "성장"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
+    "externalIds": {
+      "tmdb": "131041"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_blue-lock_2018"
+    ]
+  },
+  "wk_000000311": {
+    "workId": "wk_000000311",
+    "title": "데스노트",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 타케시",
+    "releaseYear": 2003,
+    "description": "이름이 적히면 죽는 노트를 손에 넣은 천재 소년의 심리 스릴러.",
+    "tags": [
+      "스릴러",
+      "초자연",
+      "정의",
+      "다크"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
+    "externalIds": {
+      "tmdb": "13916"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_death-note_2003"
+    ]
+  },
+  "wk_000000374": {
+    "workId": "wk_000000374",
+    "title": "여친, 빌리겠습니다",
+    "titles": {
+      "ko": "여친, 빌리겠습니다",
+      "en": "Rent-a-Girlfriend",
+      "ja": "彼女、お借りします"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "미야지마 레이지",
+    "releaseYear": 2017,
+    "description": "렌탈 여친 서비스를 이용한 카즈야의 연애와 성장을 그린 로맨틱 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "대학",
+      "연애"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/uLrEqu1JkSMe4AN7IMMBEfhFAXE.jpg",
+    "externalIds": {
+      "tmdb": "96316"
+    },
+    "legacyIds": [
+      "sub_manga_rent-a-girlfriend_2017"
+    ]
+  }
+}

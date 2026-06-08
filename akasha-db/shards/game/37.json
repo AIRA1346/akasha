@@ -1,0 +1,21 @@
+{
+  "wk_000000278": {
+    "workId": "wk_000000278",
+    "title": "옥토패스 트래블러",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Square Enix",
+    "releaseYear": 2018,
+    "description": "여덟 여행자의 HD-2D 판타지 여정.",
+    "tags": [
+      "JRPG",
+      "판타지",
+      "HD-2D",
+      "서브컬처"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/921570/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_octopath-traveler_2018"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "wk_000000172": {
+    "workId": "wk_000000172",
+    "title": "진격의 거인",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "WIT STUDIO / MAPPA",
+    "releaseYear": 2013,
+    "description": "거대한 벽 너머의 거인과 맞서는 인류의 생존 액션.",
+    "tags": [
+      "액션",
+      "다크",
+      "미스터리",
+      "명작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
+    "externalIds": {
+      "tmdb": "1429"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_attack-on-titan_2013"
+    ]
+  }
+}

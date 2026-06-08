@@ -1,0 +1,23 @@
+{
+  "wk_000000209": {
+    "workId": "wk_000000209",
+    "title": "이 멋진 세계에 축복을!",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Deen",
+    "releaseYear": 2016,
+    "description": "최약 직업으로 이세계에 소환된 소년의 코믹 판타지.",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "패러디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_konosuba_2016"
+    ]
+  }
+}

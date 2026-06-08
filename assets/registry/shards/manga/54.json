@@ -1,0 +1,56 @@
+{
+  "wk_000000372": {
+    "workId": "wk_000000372",
+    "title": "란마 1/2",
+    "titles": {
+      "ko": "란마 1/2",
+      "en": "Ranma ½",
+      "ja": "らんま1/2"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카하시 루미코",
+    "releaseYear": 1987,
+    "description": "물에 닿으면 성별이 바뀌는 란마를 둘러싼 무술 도장과 연애가 뒤엉킨 코미디.",
+    "tags": [
+      "코미디",
+      "무술",
+      "로맨스",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg",
+    "legacyIds": [
+      "sub_manga_ranma-half_1987"
+    ]
+  },
+  "wk_000000377": {
+    "workId": "wk_000000377",
+    "title": "세인트 세이야",
+    "titles": {
+      "ko": "세인트 세이야",
+      "en": "Saint Seiya",
+      "ja": "聖闘士星矢"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠로다 마사미",
+    "releaseYear": 1985,
+    "description": "청소년 성斗士들이 성衣를 입고 황금십이궁과 싸우는 신화 액션.",
+    "tags": [
+      "액션",
+      "신화",
+      "우정",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg",
+    "legacyIds": [
+      "sub_manga_saint-seiya_1985"
+    ]
+  }
+}

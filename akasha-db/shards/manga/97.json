@@ -1,0 +1,23 @@
+{
+  "wk_000000300": {
+    "workId": "wk_000000300",
+    "title": "블랙 클로버",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "releaseYear": 2015,
+    "description": "마법이 없는 소년이 마법제 최강을 꿈꾸는 판타지 배틀.",
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_black-clover_2015"
+    ]
+  }
+}

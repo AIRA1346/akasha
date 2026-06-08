@@ -1,0 +1,21 @@
+{
+  "wk_000000276": {
+    "workId": "wk_000000276",
+    "title": "니어: 오토마타",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "PlatinumGames",
+    "releaseYear": 2017,
+    "description": "안드로이드 전투원이 인류를 위해 싸우는 액션 RPG.",
+    "tags": [
+      "액션",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_nier-automata_2017"
+    ]
+  }
+}

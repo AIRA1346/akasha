@@ -1,0 +1,21 @@
+{
+  "wk_000000274": {
+    "workId": "wk_000000274",
+    "title": "러브라이브! 올스타즈",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "KLab",
+    "releaseYear": 2020,
+    "description": "스쿨 아이돌을 육성하는 리듬 수집형 게임.",
+    "tags": [
+      "리듬",
+      "아이돌",
+      "수집",
+      "서브컬처"
+    ],
+    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg",
+    "legacyIds": [
+      "sub_game_love-live-all-stars_2020"
+    ]
+  }
+}

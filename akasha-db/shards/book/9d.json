@@ -1,0 +1,21 @@
+{
+  "wk_000000009": {
+    "workId": "wk_000000009",
+    "title": "라플라스의 마녀",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "히가시노 게이고 (Keigo Higashino)",
+    "releaseYear": 2015,
+    "description": "자연현상을 예측하는 소녀와 미스터리.",
+    "tags": [
+      "소설",
+      "미스터리",
+      "SF",
+      "히가시노게이고"
+    ],
+    "posterPath": "https://image.yes24.com/goods/18063773/L",
+    "legacyIds": [
+      "gen_book_laplace-novel_2015"
+    ]
+  }
+}

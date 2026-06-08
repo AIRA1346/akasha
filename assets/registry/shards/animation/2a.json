@@ -1,0 +1,23 @@
+{
+  "wk_000000191": {
+    "workId": "wk_000000191",
+    "title": "페이트/제로",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "ufotable",
+    "releaseYear": 2011,
+    "description": "성배전쟁을 둘러싼 마술사들의 비극적 서사.",
+    "tags": [
+      "판타지",
+      "마술",
+      "전쟁",
+      "명작"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_animation_fate-zero_2011"
+    ]
+  }
+}

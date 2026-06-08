@@ -1,0 +1,20 @@
+{
+  "wk_000000168": {
+    "workId": "wk_000000168",
+    "title": "매트릭스",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "워쇼스키 자매 (The Wachowskis)",
+    "releaseYear": 1999,
+    "description": "가상현실 매트릭스 속에서 인류를 구원하려는 네오의 사이버펑크 액션.",
+    "tags": [
+      "사이버펑크",
+      "SF",
+      "액션",
+      "철학"
+    ],
+    "legacyIds": [
+      "gen_movie_the-matrix_1999"
+    ]
+  }
+}

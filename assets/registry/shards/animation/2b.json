@@ -1,0 +1,80 @@
+{
+  "wk_000000205": {
+    "workId": "wk_000000205",
+    "title": "카구야님은 고백받고 싶어",
+    "titles": {
+      "ko": "카구야님은 고백받고 싶어",
+      "en": "Kaguya-sama: Love Is War",
+      "ja": "かぐや様は告らせたい"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2019,
+    "description": "학생회장과 부회장이 고백을 피하려 두뇌 싸움을 벌이는 로맨틱 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "심리"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2020,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2022,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "3기"
+    },
+    "legacyIds": [
+      "sub_animation_kaguya-sama_2019"
+    ]
+  },
+  "wk_000000226": {
+    "workId": "wk_000000226",
+    "title": "기생수",
+    "titles": {
+      "ko": "기생수",
+      "en": "Parasyte: The Maxim",
+      "ja": "寄生獣 セイの格率"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
+    "releaseYear": 2014,
+    "description": "손에 기생한 미치가 신이치와 공존하며 기생생물과 맞서는 SF 호러 액션.",
+    "tags": [
+      "SF",
+      "호러",
+      "액션",
+      "공존"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "legacyIds": [
+      "sub_animation_parasyte_2014"
+    ]
+  }
+}

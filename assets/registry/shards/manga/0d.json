@@ -1,0 +1,28 @@
+{
+  "wk_000000325": {
+    "workId": "wk_000000325",
+    "title": "강철의 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 히로",
+    "releaseYear": 2001,
+    "description": "연금술사 형제가 잃은 몸을 되찾기 위해 필사적으로 여행하는 대서사.",
+    "tags": [
+      "판타지",
+      "연금술",
+      "전쟁",
+      "형제"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
+    "externalIds": {
+      "tmdb": "31911"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_fullmetal-alchemist_2001"
+    ]
+  }
+}

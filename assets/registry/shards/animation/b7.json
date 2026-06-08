@@ -1,0 +1,28 @@
+{
+  "wk_000000001": {
+    "workId": "wk_000000001",
+    "title": "카우보이 비밥",
+    "category": "animation",
+    "domain": "generalCulture",
+    "creator": "SUNRISE",
+    "releaseYear": 1998,
+    "description": "우주 현상금 사냥꾼들의 느와르풍 SF 액션.",
+    "tags": [
+      "SF",
+      "느와르",
+      "재즈",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg",
+    "externalIds": {
+      "tmdb": "30991"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "gen_animation_cowboy-bebop_1998"
+    ]
+  }
+}

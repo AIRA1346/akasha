@@ -1,0 +1,28 @@
+{
+  "wk_000000399": {
+    "workId": "wk_000000399",
+    "title": "새벽의 연화",
+    "titles": {
+      "ko": "새벽의 연화",
+      "en": "Yona of the Dawn",
+      "ja": "暁のヨナ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠스노다 미즈",
+    "releaseYear": 2009,
+    "description": "공주 요나가 멸망한 왕국을 되찾기 위해 전설의 사룡과 함께 여행하는 모험.",
+    "tags": [
+      "모험",
+      "역사",
+      "로맨스",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_yona-of-the-dawn_2009"
+    ]
+  }
+}

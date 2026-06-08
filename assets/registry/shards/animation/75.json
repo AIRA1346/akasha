@@ -1,0 +1,46 @@
+{
+  "wk_000000242": {
+    "workId": "wk_000000242",
+    "title": "도쿄 구울",
+    "titles": {
+      "ko": "도쿄 구울",
+      "en": "Tokyo Ghoul",
+      "ja": "東京喰種トーキョーグール"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이시다 슈",
+    "releaseYear": 2014,
+    "description": "반구울이 된 칸키 켄이 인간과 구울 사이에서 정체성과 생존을 고민하는 다크 액션.",
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "정체성"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 12
+        },
+        {
+          "label": ":re",
+          "year": 2018,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": ":re",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
+    "externalIds": {
+      "tmdb": "61374"
+    },
+    "legacyIds": [
+      "sub_animation_tokyo-ghoul_2014"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000014": {
+    "workId": "wk_000000014",
+    "title": "아이언 레디 플레이어 원",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "언스트 어니스트 클라인",
+    "releaseYear": 2011,
+    "description": "VR 오아시스의 유산을 둘러싼 레트로 게임 퀘스트.",
+    "tags": [
+      "SF",
+      "게임",
+      "VR",
+      "레트로"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg",
+    "legacyIds": [
+      "gen_book_ready-player-one_2011"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000263": {
+    "workId": "wk_000000263",
+    "title": "소드 아트 온라인",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카와하라 레키 (Reki Kawahara)",
+    "releaseYear": 2009,
+    "description": "VR MMORPG에 갇힌 유저들이 데스게임에서 탈출을 시도하는 라이트노벨.",
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
+    "legacyIds": [
+      "sub_book_sword-art-online_2009"
+    ]
+  }
+}

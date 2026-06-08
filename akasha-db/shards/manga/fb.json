@@ -1,0 +1,23 @@
+{
+  "wk_000000337": {
+    "workId": "wk_000000337",
+    "title": "헌터×헌터",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토가시 요시히로",
+    "releaseYear": 1998,
+    "description": "아버지를 찾기 위해 헌터 시험에 도전하는 소년의 모험.",
+    "tags": [
+      "모험",
+      "배틀",
+      "우정",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_hunter-x-hunter_1998"
+    ]
+  }
+}

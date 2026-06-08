@@ -1,0 +1,20 @@
+{
+  "wk_000000022": {
+    "workId": "wk_000000022",
+    "title": "기묘한 이야기",
+    "category": "drama",
+    "domain": "generalCulture",
+    "creator": "더퍼 형제 (The Duffer Brothers)",
+    "releaseYear": 2016,
+    "description": "소년의 실종 이후 호킨스에서 벌어지는 SF 판타지 스릴러.",
+    "tags": [
+      "SF",
+      "판타지",
+      "스릴러",
+      "레트로"
+    ],
+    "legacyIds": [
+      "gen_drama_stranger-things_2016"
+    ]
+  }
+}

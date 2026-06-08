@@ -1,0 +1,46 @@
+{
+  "wk_000000238": {
+    "workId": "wk_000000238",
+    "title": "나 혼자만 레벨업",
+    "titles": {
+      "ko": "나 혼자만 레벨업",
+      "en": "Solo Leveling",
+      "ja": "俺だけレベルアップな件"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "추성원·장성락",
+    "releaseYear": 2024,
+    "description": "최약 헌터 성진우가 유일하게 레벨업할 수 있는 능력을 얻고 던전을 정복해 나가는 성장 서사.",
+    "tags": [
+      "액션",
+      "판타지",
+      "헌터",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2024,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2025,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "2기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
+    "externalIds": {
+      "tmdb": "127532"
+    },
+    "legacyIds": [
+      "sub_animation_solo-leveling_2024"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "wk_000000312": {
+    "workId": "wk_000000312",
+    "title": "명탐정 코난",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아오야마 고쇼 (Gosho Aoyama)",
+    "releaseYear": 1994,
+    "description": "소년 탐정 에도가와 코난의 추리 활약.",
+    "tags": [
+      "추리",
+      "소년만화",
+      "럽코",
+      "장수작"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
+    "externalIds": {
+      "tmdb": "30983"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_detective-conan_1994"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "wk_000000317": {
+    "workId": "wk_000000317",
+    "title": "드래곤볼",
+    "titles": {
+      "ko": "드래곤볼",
+      "en": "Dragon Ball",
+      "ja": "ドラゴンボール"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토리야마 아키라",
+    "releaseYear": 1984,
+    "description": "손오공이 드래곤볼을 모으며 성장하고 강적과 맞서는 액션 모험 만화.",
+    "tags": [
+      "액션",
+      "모험",
+      "무술",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg",
+    "legacyIds": [
+      "sub_manga_dragon-ball_1984"
+    ]
+  }
+}

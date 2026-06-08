@@ -1,0 +1,28 @@
+{
+  "wk_000000306": {
+    "workId": "wk_000000306",
+    "title": "카드캡터 체리",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "CLAMP",
+    "releaseYear": 1996,
+    "description": "마법 카드를 수집하는 소녀의 판타지 모험.",
+    "tags": [
+      "판타지",
+      "마법",
+      "소녀",
+      "순정"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
+    "externalIds": {
+      "tmdb": "35790"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_cardcaptor-sakura_1996"
+    ]
+  }
+}

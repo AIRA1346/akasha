@@ -1,0 +1,23 @@
+{
+  "wk_000000368": {
+    "workId": "wk_000000368",
+    "title": "기생수",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
+    "releaseYear": 1990,
+    "description": "손에 기생한 외계 생명체와 공존하며 인류를 지키는 이야기.",
+    "tags": [
+      "SF",
+      "호러",
+      "철학",
+      "액션"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_parasyte_1990"
+    ]
+  }
+}

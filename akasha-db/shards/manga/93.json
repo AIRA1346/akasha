@@ -1,0 +1,28 @@
+{
+  "wk_000000313": {
+    "workId": "wk_000000313",
+    "title": "D.Gray-man",
+    "titles": {
+      "ko": "D.Gray-man",
+      "en": "D.Gray-man",
+      "ja": "ディー・グレイマン"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호시노 카츠라",
+    "releaseYear": 2004,
+    "description": "엑소시스트 알렌 워커가 아크와 싸우며 세계를 구하는 다크 판타지 액션.",
+    "tags": [
+      "액션",
+      "판타지",
+      "다크",
+      "악마"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_dgray-man_2004"
+    ]
+  }
+}

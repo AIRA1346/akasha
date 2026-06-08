@@ -1,0 +1,39 @@
+{
+  "wk_000000053": {
+    "workId": "wk_000000053",
+    "title": "갓 오브 워",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Santa Monica Studio",
+    "releaseYear": 2022,
+    "description": "크라토스와 아트레우스의 북유럽 신화 여정을 그린 액션 어드벤처.",
+    "tags": [
+      "액션",
+      "신화",
+      "스토리",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid1593500_2022"
+    ]
+  },
+  "wk_000000089": {
+    "workId": "wk_000000089",
+    "title": "컵헤드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Studio MDHR",
+    "releaseYear": 2017,
+    "description": "컵헤드 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid268910_2017"
+    ]
+  }
+}

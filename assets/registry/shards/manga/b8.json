@@ -1,0 +1,23 @@
+{
+  "wk_000000384": {
+    "workId": "wk_000000384",
+    "title": "스킵과 로퍼",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타카무라 마시무",
+    "releaseYear": 2018,
+    "description": "시골 소녀가 도쿄 명문고에 입학하며 겪는 청춘 성장기.",
+    "tags": [
+      "청춘",
+      "학원",
+      "성장",
+      "코미디"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_skip-and-loafer_2018"
+    ]
+  }
+}

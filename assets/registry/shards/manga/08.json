@@ -1,0 +1,28 @@
+{
+  "wk_000000366": {
+    "workId": "wk_000000366",
+    "title": "최애의 아이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2020,
+    "description": "연예계를 배경으로 한 환생과 복수, 성장의 드라마.",
+    "tags": [
+      "연예",
+      "드라마",
+      "미스터리",
+      "복수"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
+    "externalIds": {
+      "tmdb": "203737"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_oshi-no-ko_2020"
+    ]
+  }
+}

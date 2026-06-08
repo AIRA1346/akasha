@@ -1,0 +1,50 @@
+{
+  "wk_000000333": {
+    "workId": "wk_000000333",
+    "title": "GTO",
+    "titles": {
+      "ko": "GTO",
+      "en": "Great Teacher Onizuka",
+      "ja": "GTO"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지이 카즈히로",
+    "releaseYear": 1997,
+    "description": "전 양아치 오니즈카가 교사가 되어 문제 학급을 때로는 거칠게, 때로는 따뜻하게 이끄는 이야기.",
+    "tags": [
+      "학원",
+      "코미디",
+      "성장",
+      "교육"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg",
+    "legacyIds": [
+      "sub_manga_gto_1997"
+    ]
+  },
+  "wk_000000360": {
+    "workId": "wk_000000360",
+    "title": "니세코이",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "칸노 코스키",
+    "releaseYear": 2011,
+    "description": "라이벌 조직 자녀들이 연인 연기를 하며 벌어지는 로맨스 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "하렘"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_nisekoi_2011"
+    ]
+  }
+}

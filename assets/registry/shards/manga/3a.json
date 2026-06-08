@@ -1,0 +1,28 @@
+{
+  "wk_000000378": {
+    "workId": "wk_000000378",
+    "title": "사카모토 데이즈",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스즈키 유우",
+    "releaseYear": 2020,
+    "description": "전설의 킬러가 평범한 가족 생활을 지키기 위해 싸우는 액션 코미디.",
+    "tags": [
+      "액션",
+      "코미디",
+      "킬러",
+      "가족"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
+    "externalIds": {
+      "tmdb": "207332"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_sakamoto-days_2020"
+    ]
+  }
+}

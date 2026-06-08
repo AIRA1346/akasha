@@ -1,0 +1,58 @@
+{
+  "wk_000000136": {
+    "workId": "wk_000000136",
+    "title": "바이오쇼크",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Irrational Games",
+    "releaseYear": 2007,
+    "description": "수중 도시 루테르시아의 비밀을 파헤치는 SF FPS.",
+    "tags": [
+      "FPS",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_bioshock_2007"
+    ]
+  },
+  "wk_000000277": {
+    "workId": "wk_000000277",
+    "title": "승리의 여신: 니케",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Shift Up",
+    "releaseYear": 2022,
+    "description": "황폐해진 지상에서 외계 기계 병기에 맞서 싸우는 건슈팅 RPG.",
+    "tags": [
+      "포스트아포칼립스",
+      "건슈팅",
+      "수집형RPG",
+      "SF"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
+    "legacyIds": [
+      "sub_game_nikke_2022"
+    ]
+  },
+  "wk_000000087": {
+    "workId": "wk_000000087",
+    "title": "시티즈: 스카이라인",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Colossal Order",
+    "releaseYear": 2015,
+    "description": "시티즈: 스카이라인 — Steam 인기 게임.",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255710/library_600x900.jpg",
+    "legacyIds": [
+      "gen_game_appid255710_2015"
+    ]
+  }
+}

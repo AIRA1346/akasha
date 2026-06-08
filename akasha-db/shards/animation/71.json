@@ -1,0 +1,41 @@
+{
+  "wk_000000231": {
+    "workId": "wk_000000231",
+    "title": "사카모토 데이즈",
+    "titles": {
+      "ko": "사카모토 데이즈",
+      "en": "Sakamoto Days",
+      "ja": "SAKAMOTO DAYS"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "스즈키 유우토",
+    "releaseYear": 2025,
+    "description": "전설의 킬러 사카모토가 가게 주인으로 은퇴했지만 과거의 적들이 다시 나타나는 액션 코미디.",
+    "tags": [
+      "액션",
+      "코미디",
+      "킬러",
+      "가족"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2025,
+          "episodes": 11
+        }
+      ],
+      "latestSeason": "1기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
+    "externalIds": {
+      "tmdb": "207332"
+    },
+    "legacyIds": [
+      "sub_animation_sakamoto-days_2025"
+    ]
+  }
+}

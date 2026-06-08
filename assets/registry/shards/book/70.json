@@ -1,0 +1,21 @@
+{
+  "wk_000000262": {
+    "workId": "wk_000000262",
+    "title": "늑대와 향신료",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "히세키 아야",
+    "releaseYear": 2006,
+    "description": "상인과 늑대신의 여행을 그린 경제 판타지 라노벨.",
+    "tags": [
+      "라이트노벨",
+      "판타지",
+      "경제",
+      "로맨스"
+    ],
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048862579-L.jpg",
+    "legacyIds": [
+      "sub_book_spice-and-wolf_2006"
+    ]
+  }
+}

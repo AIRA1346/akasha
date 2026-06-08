@@ -1,0 +1,28 @@
+{
+  "wk_000000351": {
+    "workId": "wk_000000351",
+    "title": "모브 사이코 100",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "ONE",
+    "releaseYear": 2012,
+    "description": "강력한 초능력을 가진 평범해 보이는 소년의 성장 이야기.",
+    "tags": [
+      "초능력",
+      "코미디",
+      "성장",
+      "액션"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
+    "externalIds": {
+      "tmdb": "67075"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_mob-psycho-100_2012"
+    ]
+  }
+}

@@ -16,6 +16,7 @@ void main() {
 
   setUpAll(() async {
     await WorksRegistry.init();
+    await WorksRegistry.prefetchMasterCatalog();
   });
 
   group('Phase 6 — Global Library Autoloading & Status Borders Tests', () {

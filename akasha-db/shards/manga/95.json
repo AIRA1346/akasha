@@ -1,0 +1,41 @@
+{
+  "wk_000000341": {
+    "workId": "wk_000000341",
+    "title": "카구야님은 고백받고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2015,
+    "description": "서로 고백받기 위해 두뇌 싸움을 벌이는 학생회장 커플의 로맨스 코미디.",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "두뇌전"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_kaguya-sama_2015"
+    ]
+  },
+  "wk_000000395": {
+    "workId": "wk_000000395",
+    "title": "바감동",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이노우에 다케히코",
+    "releaseYear": 1998,
+    "description": "미야모토 무사시의 일생을 그린 사무라이 무도 서사시.",
+    "tags": [
+      "사무라이",
+      "무도",
+      "역사",
+      "성장"
+    ],
+    "legacyIds": [
+      "sub_manga_vagabond_1998"
+    ]
+  }
+}

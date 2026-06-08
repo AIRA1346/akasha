@@ -1,0 +1,28 @@
+{
+  "wk_000000322": {
+    "workId": "wk_000000322",
+    "title": "불꽃 소방대",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 다카히로",
+    "releaseYear": 2015,
+    "description": "인간이 불타는 현상을 진압하는 특수 소방대의 활약.",
+    "tags": [
+      "액션",
+      "초능력",
+      "소방",
+      "다크"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
+    "externalIds": {
+      "tmdb": "88046"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_fire-force_2015"
+    ]
+  }
+}

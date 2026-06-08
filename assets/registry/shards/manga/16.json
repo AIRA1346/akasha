@@ -1,0 +1,28 @@
+{
+  "wk_000000390": {
+    "workId": "wk_000000390",
+    "title": "도쿄 구울",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이시다 슈이",
+    "releaseYear": 2011,
+    "description": "인간을 사냥하는 구울이 된 대학생의 어두운 서울 생존기.",
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "서울"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
+    "externalIds": {
+      "tmdb": "61374"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_manga_tokyo-ghoul_2011"
+    ]
+  }
+}

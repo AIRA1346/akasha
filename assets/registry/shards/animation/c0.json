@@ -1,0 +1,102 @@
+{
+  "wk_000000193": {
+    "workId": "wk_000000193",
+    "title": "장송의 프리렌",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야마다 카네히토 / 아베 츠카사",
+    "releaseYear": 2023,
+    "description": "마왕을 물리친 후 동료들의 죽음 이후 여행을 떠나는 프리렌의 판타지.",
+    "tags": [
+      "판타지",
+      "모험",
+      "감동",
+      "성장"
+    ],
+    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
+    "externalIds": {
+      "tmdb": "209867"
+    },
+    "extensions": {
+      "posterSource": "tmdb",
+      "posterVerified": true
+    },
+    "legacyIds": [
+      "sub_animation_frieren_2023"
+    ]
+  },
+  "wk_000000210": {
+    "workId": "wk_000000210",
+    "title": "로그 호라이즌",
+    "titles": {
+      "ko": "로그 호라이즌",
+      "en": "Log Horizon",
+      "ja": "ログ・ホライズン"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "마메타와 마모루",
+    "releaseYear": 2013,
+    "description": "MMORPG에 갇힌 플레이어들이 세계 규칙을 분석하며 새 사회를 만들어가는 이세계 드라마.",
+    "tags": [
+      "이세계",
+      "게임",
+      "전략",
+      "판타지"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2013,
+          "episodes": 25
+        },
+        {
+          "label": "2기",
+          "year": 2014,
+          "episodes": 25
+        }
+      ],
+      "latestSeason": "2기"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
+    "legacyIds": [
+      "sub_animation_log-horizon_2013"
+    ]
+  },
+  "wk_000000236": {
+    "workId": "wk_000000236",
+    "title": "스킵과 로퍼",
+    "titles": {
+      "ko": "스킵과 로퍼",
+      "en": "Skip and Loafer",
+      "ja": "スキップとローファー"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "타케모토 아유",
+    "releaseYear": 2023,
+    "description": "시골에서 도쿄의 명문 학교로 진학한 미츠미의 성장과 친구들과의 청춘 이야기.",
+    "tags": [
+      "청춘",
+      "학원",
+      "일상",
+      "성장"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2023,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "1기"
+    },
+    "legacyIds": [
+      "sub_animation_skip-and-loafer_2023"
+    ]
+  }
+}

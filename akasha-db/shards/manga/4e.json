@@ -1,0 +1,23 @@
+{
+  "wk_000000309": {
+    "workId": "wk_000000309",
+    "title": "치하야후루",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "스에마스 치카",
+    "releaseYear": 2007,
+    "description": "경쟁 카루타를 통해 성장하는 청춘 스포츠 로맨스.",
+    "tags": [
+      "스포츠",
+      "카루타",
+      "청춘",
+      "로맨스"
+    ],
+    "extensions": {
+      "posterSource": "tmdb"
+    },
+    "legacyIds": [
+      "sub_manga_chihayafuru_2007"
+    ]
+  }
+}

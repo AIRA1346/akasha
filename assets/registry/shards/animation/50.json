@@ -1,0 +1,56 @@
+{
+  "wk_000000198": {
+    "workId": "wk_000000198",
+    "title": "하이큐!!",
+    "titles": {
+      "ko": "하이큐!!",
+      "en": "Haikyu!!",
+      "ja": "ハイキュー!!"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "후루다테 하루이치",
+    "releaseYear": 2014,
+    "description": "작은 체구의 히나타가 배구를 통해 팀과 함께 성장하는 스포츠 청춘 드라마.",
+    "tags": [
+      "스포츠",
+      "배구",
+      "청춘",
+      "팀워크"
+    ],
+    "extensions": {
+      "posterSource": "tmdb",
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 25
+        },
+        {
+          "label": "2기",
+          "year": 2015,
+          "episodes": 25
+        },
+        {
+          "label": "3기",
+          "year": 2016,
+          "episodes": 10
+        },
+        {
+          "label": "4기",
+          "year": 2020,
+          "episodes": 25
+        }
+      ],
+      "latestSeason": "4기",
+      "posterVerified": true
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
+    "externalIds": {
+      "tmdb": "60863"
+    },
+    "legacyIds": [
+      "sub_animation_haikyuu_2014"
+    ]
+  }
+}
