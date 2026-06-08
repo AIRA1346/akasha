@@ -13,9 +13,6 @@
       "가족",
       "힐링"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "gen_animation_my-neighbor-totoro_1988"
     ]
@@ -40,7 +37,6 @@
       "판타지"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -73,9 +69,6 @@
       "서스펜스",
       "감동"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_animation_steinsgate_2011"
     ]

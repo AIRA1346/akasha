@@ -2,7 +2,8 @@
 
 > **AKASHA는 남의 데이터베이스를 빌려 쓰지 않습니다.**  
 > `akasha-db`는 Rune Atelier가 **직접 구축·검수**하는 작품 메타데이터입니다.  
-> **장기 목표:** 세상의 모든 작품 사전 — [data-architecture-redesign.md](data-architecture-redesign.md)
+> **장기 목표:** 세상의 모든 작품 사전 — [data-architecture-redesign.md](data-architecture-redesign.md)  
+> **필드·Discovery 법무:** [data-policy.md](data-policy.md)
 
 ---
 
@@ -87,7 +88,8 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 
 ## 8. 관련 문서
 
-- [akasha-db-policy.md](akasha-db-policy.md) — **마스터**
+- [data-policy.md](data-policy.md) — **필드·소스·법무 최상위**
+- [akasha-db-policy.md](akasha-db-policy.md) — 구축·운영
 - [canonicalization-policy.md](canonicalization-policy.md)
 - [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md)
 - [locale-catalog-policy.md](locale-catalog-policy.md)

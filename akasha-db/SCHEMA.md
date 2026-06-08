@@ -6,8 +6,14 @@
 샤딩: **해시 기반** (`shards/{category}/{hh}.json`, `hash(wk_)%256`)  
 규모: **402작** / **331 sparse 버킷** (Steam v1 엄선)
 
+데이터 권리 (최상위): [docs/data-policy.md](../docs/data-policy.md)  
 상세 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)  
 아키텍처 로드맵: [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
+
+### Registry Minimal Core (등록 최소)
+
+`workId` + `title` + `category` + (`releaseYear` 또는 `externalIds`) + (`creator` 권장).  
+`description`·`tags`·`posterPath`는 **필수 아님**. 상세: [data-policy.md §1.2](../docs/data-policy.md#12-registry-minimal-core-필수-영구-저장)
 
 ### Work entry (shard JSON)
 
@@ -23,11 +29,40 @@
 | `category` | ✅ | manga · animation · game · book · movie · drama · webtoon |
 | `domain` | ✅ | subculture · generalCulture |
 | `extensions` | | 레거시 확장 (`externalIds`로 승격 권장) |
+| `qualitySignals` | | **원본** 품질 신호만 저장 (`tier`·`score` 저장 금지) |
+
+#### qualitySignals (shard — 원본만)
+
+```json
+{
+  "qualitySignals": {
+    "hasPoster": false,
+    "hasDescription": false,
+    "posterVerified": false,
+    "externalIdVerified": false,
+    "descriptionVerified": false,
+    "franchiseVerified": false
+  }
+}
+```
+
+- `hasPoster` / `hasDescription`: 생략 시 빌드가 `posterPath`·`description`에서 유도
+- `posterVerified`: TMDB 등 검증 통과 시 `true` (또는 레거시 `extensions.posterVerified`)
+- `externalIdVerified` / `descriptionVerified`: 파이프라인·Contribution merge 시 설정
+- `franchiseVerified`: 생략 시 `franchise_groups` 멤버십으로 유도 가능
+- **`qualityScore` / `qualityTier`는 shard에 저장하지 않음** — `registry_builder`가 계산
+
+점수 (0–100, 파생): 제목 20 · 연도 10 · creator 10 · 포스터 10 · 설명 10 · externalId 20 · 검증 20 (verified 신호 4×5)
+
+tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 95+→5
+
+**Canonicalization**(franchise·edition·dedupe)은 Quality와 **독립 축** — [canonicalization-policy.md](../docs/canonicalization-policy.md)
 
 ### search_index.json (빌드 산출)
 
 - `searchTokens`: 교차 언어 검색 (빌드 시 생성)
 - `titles`: 샤드에 있을 때만 인덱스에 포함
+- `qualityScore`, `qualityTier`: 빌드 시 계산 (검색 랭킹용; 향후 `search/` 샤드에도 동일 필드)
 
 ---
 
@@ -71,8 +106,11 @@
 cd ..  # akasha 앱 루트
 dart run tool/registry_builder.dart --sync-assets
 dart run tool/ci_registry_check.dart
+dart run tool/data_policy_linter.dart
 dart run tool/franchise_linter.dart
 dart run tool/dedupe_linter.dart
+# Contribution → Quality Loop (fixWork 승인 반영)
+# dart run tool/merge_catalog_contribution.dart --id <id> --apply
 # dart run tool/retire_work_ids.dart --survivor=wk_xxx --retire=wk_yyy --apply
 dart run tool/manifest_v4_check.dart
 # (일회성) dart run tool/migrate_shards_v3_to_v4_hash.dart --apply

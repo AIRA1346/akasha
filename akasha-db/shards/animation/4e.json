@@ -19,7 +19,6 @@
       "성장"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -52,9 +51,6 @@
       "디스토피아",
       "수사"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_animation_psycho-pass_2012"
     ]

@@ -107,6 +107,14 @@ class RegistryShardLoader {
   int? entryCountForShard(String shardId) =>
       _manifest?.shardById(shardId)?.entryCount;
 
+  int qualityScoreFor(String workId) {
+    if (workId.isEmpty) return 0;
+    for (final entry in _searchIndex) {
+      if (entry.workId == workId) return entry.qualityScore;
+    }
+    return 0;
+  }
+
   Set<String> resolveShardIdsForQuery(String query) =>
       shardIdsForQuery(_searchIndex, query);
 

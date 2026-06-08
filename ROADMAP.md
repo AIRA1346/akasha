@@ -122,8 +122,49 @@
 - [x] Phase C: `dedupe_linter` CI (402작)
 - [x] Phase D: 해시 샤딩 v4 (manifest v4 · 331 버킷)
 
-### Steam 후
+### Steam 후 — 카탈로그 운영 (우선순위 상단)
 
+> 상세: [docs/catalog-contribution-roadmap.md](docs/catalog-contribution-roadmap.md)  
+> **장기:** 유저 Contribution = **보조** · **Catalog Expansion Pipeline** = 주력 (작품 확보 속도)
+
+**확정 구현 순서:** ① status → ② contribution 커밋 → ③ add/fix 분리 → ④ AI validation → ⑤ catalog expansion
+
+| # | 백로그 | 상태 | 목적 |
+|---|--------|------|------|
+| **C0** | **Contribution status** (GitHub SoT) | 🔶 | `status` 필드 · `contributions/{add,fix}/{pending…}/` · `status.json` CDN |
+| C0b | contribution 구조 커밋 | ⏳ | 앱 제안 UI + export |
+| **C1** | add / fix **운영 분리** | ⏳ | 폴더 분리 완료 · Issue·SLA·검수 난이도 분리 |
+| **C3** | **AI Validation Pipeline** | ⏳ | confidence → auto-merge vs human queue |
+| C4 | `fixWork --apply` | ⏳ | accepted 수정 → 샤드 patch |
+| C5 | Issue 폭발 완화 | ⏳ | 주간 배치 import · dedupe 선행 |
+| **E1** | **Catalog Expansion Pipeline** | ⏳ | 외부 참고 → AI 후보 → dedupe → maintainer → Registry |
+
+### Steam 후 — 인프라·확장
+
+> **Registry Stress Review (선행 게이트):** Discovery 확장 전 Registry 그릇 검증 — [docs/registry-scaling-review.md](docs/registry-scaling-review.md)
+> **Bottleneck Validation:** ✅ search_index = 첫 병목 (실측) — [docs/registry-bottleneck-validation-report.md](docs/registry-bottleneck-validation-report.md)
+> **Search Index Validation:** ✅ 10k/100k/300k/1M synthetic — [docs/search-index-validation-plan.md](docs/search-index-validation-plan.md)
+> **Architecture Options:** ✅ 후보 비교 — [docs/search-index-architecture-options.md](docs/search-index-architecture-options.md)
+> **Search Workload Profile:** ✅ 가정 v0 — [docs/search-workload-profile.md](docs/search-workload-profile.md)
+> **SW1 Global Search Validation:** 🔶 계획·스위트 ✅ — [docs/global-search-validation-plan.md](docs/global-search-validation-plan.md)
+> **URV Universal Registry Validation:** 🔶 계획 ✅ — [docs/universal-registry-validation.md](docs/universal-registry-validation.md)
+> **Search Index Refactor:** ⏸ SW1 게이트 + POC + ADR 전까지 보류
+
+- [x] **[Validation P0] Search Index Bottleneck** — 파일·메모리·parse·latency 실측
+- [x] **[Validation P0b] Architecture Options** — 후보 비교 문서
+- [x] **[Validation P0c] Search Workload Profile** — 유형·비율 가정 v0
+- [x] **[Validation P1] SW1 Global Search Validation** — 계획·쿼리 스위트 95건·recall 기준 ([global-search-validation-plan.md](docs/global-search-validation-plan.md))
+- [x] **[Validation P1] URV Universal Registry Validation** — Work/Franchise·canonical·alias·series·dedupe ([universal-registry-validation.md](docs/universal-registry-validation.md))
+- [ ] **[Validation P1] SW1-A / URV-A 402 baseline** — recall + registry consistency 수동 실행
+- [x] **[Validation P1] ADR-001 Dual-layer** — Work + Franchise 승인 ([docs/adr/ADR-001-dual-layer-entity-model.md](docs/adr/ADR-001-dual-layer-entity-model.md))
+- [ ] **[Validation P1] ADR-005 최소 기록 단위** — 매체별 Work 표 (대부분 승인) ([ADR-005](docs/adr/ADR-005-minimum-recordable-unit.md))
+- [ ] **[Validation P1] ADR-006 Franchise 계층** — 경계·깊이·IP 1카드 ([ADR-006](docs/adr/ADR-006-franchise-boundary-hierarchy.md)) — URV-A 선행
+- [ ] **[Validation P1] ADR-002 A/B 결정** — B안(곡=Work) 가중 ([ADR-002](docs/adr/ADR-002-music-registry-model.md))
+- [ ] **[Validation P1] Architecture Options POC** — Workload 기준 · A / B / E1 벤치
+- [ ] **[Validation P1] shardBits 임계 실측** — 8/12/14 bits별 shard당 작품 수·로드 비용 비교
+- [ ] **[Validation P1] quality 재빌드 실측** — 전량 rebuild vs 증분
+- [ ] **[Validation P2] franchise 운영량 검증** — 수동 큐레이션 throughput
+- [ ] **[Validation 장기] Discovery Throughput** — 1M에서 dedupe cost · merge/create ratio · Discovery Cost vs Registry Growth
 - [ ] Registry Pipeline 스켈레톤
 - [ ] AI 자동 수집 (2027~)
 - [ ] 50k+ CDN·R2

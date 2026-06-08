@@ -92,6 +92,9 @@ class RegistrySearchIndexEntry {
   final String? posterPath;
   /// v3 — 교차 언어·별칭 검색용 (registry_builder가 생성)
   final List<String> searchTokens;
+  /// 빌드 시 파생 — shard에 저장하지 않음
+  final int qualityScore;
+  final int qualityTier;
 
   const RegistrySearchIndexEntry({
     required this.workId,
@@ -103,6 +106,8 @@ class RegistrySearchIndexEntry {
     this.tags = const [],
     this.posterPath,
     this.searchTokens = const [],
+    this.qualityScore = 0,
+    this.qualityTier = 0,
   });
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
@@ -131,6 +136,9 @@ class RegistrySearchIndexEntry {
               .where((e) => e.isNotEmpty)
               .toList() ??
           const [],
+      qualityScore:
+          int.tryParse(json['qualityScore']?.toString() ?? '') ?? 0,
+      qualityTier: int.tryParse(json['qualityTier']?.toString() ?? '') ?? 0,
     );
   }
 }

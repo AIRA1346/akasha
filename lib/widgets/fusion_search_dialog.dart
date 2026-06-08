@@ -16,6 +16,7 @@ class FusionSearchDialog extends StatefulWidget {
   final void Function(AkashaItem item) onSelectLocal;
   final Future<void> Function(RegistryWork work) onSelectRemote;
   final void Function(String query) onCustomAdd;
+  final void Function(String query)? onCatalogPropose;
 
   const FusionSearchDialog({
     super.key,
@@ -23,6 +24,7 @@ class FusionSearchDialog extends StatefulWidget {
     required this.onSelectLocal,
     required this.onSelectRemote,
     required this.onCustomAdd,
+    this.onCatalogPropose,
   });
 
   @override
@@ -112,6 +114,9 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                 .compareTo(
                     RegistryVisibilityService.remoteHintSortOrder(b.hint));
             if (order != 0) return order;
+            final scoreCmp = WorksRegistry.qualityScoreFor(b.work.workId)
+                .compareTo(WorksRegistry.qualityScoreFor(a.work.workId));
+            if (scoreCmp != 0) return scoreCmp;
             return a.work.title.compareTo(b.work.title);
           }),
       );
@@ -311,13 +316,29 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                         if (showCustomCta) ...[
                           const SizedBox(height: 16),
                           Center(
-                            child: OutlinedButton.icon(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                widget.onCustomAdd(query);
-                              },
-                              icon: const Icon(Icons.add_circle_outline),
-                              label: const Text('사전에 없는 작품 직접 추가하기'),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                OutlinedButton.icon(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    widget.onCustomAdd(query);
+                                  },
+                                  icon: const Icon(Icons.person_add_outlined),
+                                  label: const Text('내 아카이브에 직접 추가'),
+                                ),
+                                if (widget.onCatalogPropose != null) ...[
+                                  const SizedBox(height: 8),
+                                  FilledButton.tonalIcon(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                      widget.onCatalogPropose!(query);
+                                    },
+                                    icon: const Icon(Icons.library_add_outlined),
+                                    label: const Text('글로벌 사전에 추가 제안'),
+                                  ),
+                                ],
+                              ],
                             ),
                           ),
                         ],

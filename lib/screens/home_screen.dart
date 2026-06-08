@@ -34,8 +34,11 @@ import 'home/dialogs/registry_sync_dialog.dart';
 import 'home/dialogs/vault_settings_dialog.dart';
 import 'home/dialogs/dashboard_edit_dialog.dart';
 import 'home/dialogs/add_work_dialog.dart';
+import 'home/dialogs/catalog_add_contribution_dialog.dart';
+import 'home/dialogs/catalog_contributions_inbox_dialog.dart';
 import 'home/dialogs/clipboard_import_dialog.dart';
 import 'home/dialogs/prompt_templates_dialog.dart';
+import '../services/catalog_contribution_service.dart';
 import '../config/feature_flags.dart';
 import '../widgets/today_recall_card.dart';
 import '../utils/recall_picker.dart';
@@ -73,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
   HomeSectionPreferences _sectionPrefs = HomeSectionPreferences();
   late final HomeRegistryHideActions _hideActions;
   bool _isSidebarOpen = true;
+  int _catalogContributionCount = 0;
 
   String _displayName = UserPreferences.defaultDisplayName;
   bool _autoArchiveRegistry = false;
@@ -111,6 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
     _initVault();
+    if (FeatureFlags.catalogContributions) {
+      _refreshCatalogContributionCount();
+    }
   }
 
   @override
@@ -654,6 +661,10 @@ class _HomeScreenState extends State<HomeScreen> {
             onPromptTemplates: () => showPromptTemplatesDialog(context),
             onVaultSettings: _showVaultInfoDialog,
             onClearRegistryCache: _clearRegistryCache,
+            onCatalogInbox: FeatureFlags.catalogContributions
+                ? _showCatalogContributionsInbox
+                : null,
+            catalogContributionCount: _catalogContributionCount,
           ),
           body: Row(
             children: [
@@ -798,8 +809,42 @@ class _HomeScreenState extends State<HomeScreen> {
         onSelectLocal: _navigateToDetail,
         onSelectRemote: _archiveAndOpenRegistryWork,
         onCustomAdd: (query) => _showAddDialog(context, initialTitle: query),
+        onCatalogPropose: FeatureFlags.catalogContributions
+            ? (query) => _proposeCatalogAdd(context, query)
+            : null,
       ),
     );
+  }
+
+  Future<void> _refreshCatalogContributionCount() async {
+    await CatalogContributionService.instance.load();
+    if (!mounted) return;
+    setState(() {
+      _catalogContributionCount =
+          CatalogContributionService.instance.pendingCount;
+    });
+  }
+
+  Future<void> _showCatalogContributionsInbox() async {
+    await showCatalogContributionsInboxDialog(context);
+    await _refreshCatalogContributionCount();
+  }
+
+  Future<void> _proposeCatalogAdd(BuildContext context, String query) async {
+    final saved = await showCatalogAddContributionDialog(
+      context,
+      initialTitle: query,
+      searchQuery: query,
+    );
+    if (saved == true) {
+      await _refreshCatalogContributionCount();
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('글로벌 사전 추가 제안이 저장되었습니다. (제안함에서 export)'),
+        ),
+      );
+    }
   }
 
   /// 원격 사전 작품 탭 → 로컬 .md 자동 아카이빙 후 상세 화면 이동

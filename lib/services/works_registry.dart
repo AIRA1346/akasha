@@ -125,6 +125,9 @@ class WorksRegistry {
 
   static RegistryShardLoader get loader => _loader;
 
+  /// search_index 빌드 산출 품질 점수 (0–100, 파생값)
+  static int qualityScoreFor(String workId) => _loader.qualityScoreFor(workId);
+
   /// 앱 시작 시 번들 샤드 + (유효한) 캐시 + 레거시 병합
   static Future<void> init() async {
     if (_initialized) return;
@@ -249,7 +252,14 @@ class WorksRegistry {
         results[work.workId] = work;
       }
     }
-    return results.values.toList();
+    final list = results.values.toList();
+    list.sort((a, b) {
+      final scoreCmp =
+          qualityScoreFor(b.workId).compareTo(qualityScoreFor(a.workId));
+      if (scoreCmp != 0) return scoreCmp;
+      return a.title.compareTo(b.title);
+    });
+    return list;
   }
 
   static bool _workMatchesQuery(RegistryWork work, String normalizedQuery) {

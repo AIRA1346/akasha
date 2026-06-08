@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "policyDoc": "docs/discovery-policy.md",
+  "dataPolicyDoc": "docs/data-policy.md",
+  "generatedAt": "2026-06-08T00:00:00.000Z",
+  "principles": {
+    "notDatabaseMirroring": true,
+    "signalEphemeral": true,
+    "canonicalIdentity": "wk_",
+    "anilistIsReferenceOnly": true
+  },
+  "kpiDefinition": {
+    "primary": "userValueCoverage",
+    "technical": ["wouldCreate", "coverageDelta", "zeroToHit"],
+    "discovery": [
+      "wouldCreate",
+      "mergeCandidates",
+      "coverageDelta",
+      "zeroToHit"
+    ],
+    "product": [
+      "userSearchGapResolved",
+      "aliasCoverageIncrease",
+      "searchRecallIncrease",
+      "franchiseCoverageIncrease"
+    ],
+    "independence": [
+      "independentRegistryValue",
+      "percentWorksJustifiedWithoutAniList"
+    ],
+    "secondary": ["dedupePassRate", "policyViolationsZero"],
+    "notPrimary": ["signalsFetched", "wouldCreateAlone"],
+    "patchGate": [
+      "recommend5bPatch",
+      "productReviewApproved",
+      "anilistRemovalTestPassed"
+    ],
+    "patchStatus": "on_hold"
+  },
+  "channels": {
+    "anilist_animation": {
+      "source": "anilist",
+      "category": "animation",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 500,
+      "trialBatchSize": 100,
+      "allowedFacts": [
+        "externalId",
+        "title",
+        "titles",
+        "releaseYear",
+        "creator",
+        "format",
+        "aliases"
+      ],
+      "forbiddenFacts": [
+        "description",
+        "synopsis",
+        "tags",
+        "coverImage",
+        "bannerImage",
+        "characters",
+        "popularity",
+        "score",
+        "rawResponse"
+      ],
+      "cursorPath": "pipeline/discovery/cursors/anilist_animation.json",
+      "lastRun": null
+    }
+  }
+}

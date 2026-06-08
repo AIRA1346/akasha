@@ -2,4 +2,7 @@
 class FeatureFlags {
   /// 오늘의 회상 카드 — v1.1에서 활성화 예정
   static const bool showRecallCard = false;
+
+  /// 글로벌 사전 추가·수정 제안 (로컬 큐 → export / GitHub Issue)
+  static const bool catalogContributions = true;
 }

@@ -13,9 +13,6 @@
       "청춘",
       "드라마"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_manga_nana_2000"
     ]
@@ -39,9 +36,6 @@
       "전략",
       "학원"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_manga_world-trigger_2006"
     ]

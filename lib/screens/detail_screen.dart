@@ -6,6 +6,8 @@ import '../models/format_slot.dart';
 import '../services/file_service.dart';
 import '../services/franchise_fusion_service.dart';
 import '../services/user_registry_preferences.dart';
+import '../services/works_registry.dart';
+import 'home/dialogs/catalog_fix_contribution_dialog.dart';
 import 'detail/detail_franchise_section.dart';
 import 'detail/detail_profile_section.dart';
 import 'detail/detail_section_title.dart';
@@ -67,6 +69,13 @@ class _DetailScreenState extends State<DetailScreen> {
     });
   }
 
+  Future<void> _proposeCatalogFix(BuildContext context) async {
+    final saved = await showCatalogFixContributionDialog(context, item: item);
+    if (saved == true && mounted) {
+      _showSnack('사전 수정 제안이 저장되었습니다. (제안함에서 export 가능)');
+    }
+  }
+
   void _showSnack(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
@@ -97,6 +106,15 @@ class _DetailScreenState extends State<DetailScreen> {
       appBar: AppBar(
         title: Text(item.title),
         actions: [
+          if (WorksRegistry.getWorkById(
+                WorksRegistry.resolveWorkId(item.workId),
+              ) !=
+              null)
+            IconButton(
+              icon: const Icon(Icons.flag_outlined),
+              tooltip: '글로벌 사전 정보 수정 제안',
+              onPressed: () => _proposeCatalogFix(context),
+            ),
           IconButton(
             icon: const Icon(Icons.edit),
             tooltip: '편집',

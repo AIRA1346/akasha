@@ -14,6 +14,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onPromptTemplates;
   final VoidCallback onVaultSettings;
   final VoidCallback onClearRegistryCache;
+  final VoidCallback? onCatalogInbox;
+  final int catalogContributionCount;
 
   const HomeAppBar({
     super.key,
@@ -27,6 +29,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onPromptTemplates,
     required this.onVaultSettings,
     required this.onClearRegistryCache,
+    this.onCatalogInbox,
+    this.catalogContributionCount = 0,
   });
 
   @override
@@ -57,6 +61,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           tooltip: '검색',
           onPressed: onSearch,
         ),
+        if (onCatalogInbox != null)
+          IconButton(
+            tooltip: '카탈로그 제안함',
+            onPressed: onCatalogInbox,
+            icon: Badge(
+              isLabelVisible: catalogContributionCount > 0,
+              label: Text('$catalogContributionCount'),
+              child: const Icon(Icons.inbox_outlined),
+            ),
+          ),
         IconButton(
           icon: const Icon(Icons.smart_toy_outlined),
           tooltip: 'AI 마크다운 가져오기',

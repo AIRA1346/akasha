@@ -2,7 +2,7 @@
 
 Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
-> **현재:** v3 슬러그 샤드, **~410작** 엄선  
+> **현재:** v4 해시 샤드, **402작** 엄선  
 > **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)  
 > **마스터 정책:** [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 
@@ -19,6 +19,17 @@ dart run tool/ci_registry_check.dart
 ```
 
 4. PR을 엽니다.
+
+## 앱 유저 제안 (카탈로그 기여)
+
+AKASHA 앱 **「글로벌 사전에 추가 제안」** / **「정보 수정 제안」** 으로 들어온 JSON 번들은
+[contributions/README.md](contributions/README.md) 흐름으로 검수합니다.
+
+```bash
+dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
+```
+
+자동 shard merge는 없습니다. inbox 검토 후 수동 반영하세요.
 
 ## 작품 1건 추가 체크리스트
 

@@ -1,0 +1,7 @@
+# Ephemeral — Discovery Signal (docs/discovery-policy.md §2)
+staging/
+signals/
+raw/
+artifacts/
+*.jsonl
+*.ndjson

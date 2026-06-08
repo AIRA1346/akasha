@@ -10,6 +10,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'poster_url_policy.dart';
+import 'quality_score_utils.dart';
 import 'registry_hash_utils.dart';
 import 'registry_v3_utils.dart';
 import 'wk_id_utils.dart';
@@ -55,6 +56,7 @@ void main(List<String> args) {
   final workShardIds = <String, String>{};
   final shardMetas = <Map<String, dynamic>>[];
   final eagerWorkIds = _loadFranchisePrimaryWorkIds(dbRoot);
+  final franchiseMemberIds = _loadFranchiseMemberWorkIds(dbRoot);
 
   for (final categoryDir in shardsRoot.listSync().whereType<Directory>()) {
     final categoryName = p.basename(categoryDir.path);
@@ -179,6 +181,15 @@ void main(List<String> args) {
         poster.startsWith('http')) {
       map['posterPath'] = poster;
     }
+
+    final qualitySignals = resolveQualitySignals(
+      work,
+      franchiseMember: franchiseMemberIds.contains(workId),
+    );
+    final qualityScore = computeQualityScore(work, qualitySignals);
+    map['qualityScore'] = qualityScore;
+    map['qualityTier'] = qualityTierFromScore(qualityScore);
+
     return map;
   }).toList()
     ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));
@@ -254,6 +265,23 @@ Set<String> _loadFranchisePrimaryWorkIds(Directory dbRoot) {
     if (key.startsWith('_') || value is! Map) return;
     final primary = value['primaryWorkId']?.toString() ?? '';
     if (primary.isNotEmpty) ids.add(primary);
+  });
+  return ids;
+}
+
+Set<String> _loadFranchiseMemberWorkIds(Directory dbRoot) {
+  final ids = <String>{};
+  final file = File('${dbRoot.path}/franchise_groups.json');
+  if (!file.existsSync()) return ids;
+
+  final raw = json.decode(file.readAsStringSync());
+  if (raw is! Map) return ids;
+
+  raw.forEach((key, value) {
+    if (key.startsWith('_') || value is! Map) return;
+    final members = (value['members'] as List?)?.map((e) => e.toString()) ??
+        const <String>[];
+    ids.addAll(members.where((id) => id.isNotEmpty));
   });
   return ids;
 }

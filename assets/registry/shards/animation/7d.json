@@ -13,9 +13,6 @@
       "성장",
       "청춘"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_animation_hajime-no-ippo_2000"
     ]
@@ -40,7 +37,6 @@
       "코미디"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",

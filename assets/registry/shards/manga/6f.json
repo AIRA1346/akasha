@@ -13,9 +13,6 @@
       "청춘",
       "드라마"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_manga_blue-period_2017"
     ]
@@ -34,9 +31,6 @@
       "밀리터리",
       "코미디"
     ],
-    "extensions": {
-      "posterSource": "tmdb"
-    },
     "legacyIds": [
       "sub_manga_kaiju-no-8_2020"
     ]

@@ -4,6 +4,8 @@
 > `akasha-db`는 Rune Atelier가 **직접 구축·검수**하는 작품 메타데이터이며,  
 > 포스터는 **URL 링크 참조만** 사용합니다. (이미지 파일을 repo에 넣지 않음)
 
+> **필드·소스·법무 최상위:** [data-policy.md](data-policy.md) — Discovery ≠ DB Mirroring, Registry Minimal Core, 소스별 필드 분류
+
 **상태:** v2 방향 (2026-06)  
 **현재 규모:** **~410작** 엄선 (Steam v1)  
 **장기 비전:** 세상의 **모든 작품 사전** — [data-architecture-redesign.md](data-architecture-redesign.md)
@@ -136,7 +138,8 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 
 | 문서 | 내용 |
 |------|------|
-| **이 문서** | 사전 **구축·운영·법무** (마스터) |
+| [data-policy.md](data-policy.md) | **데이터 권리·필드·소스** (최상위) |
+| **이 문서** | 사전 **구축·운영** |
 | [data-architecture-redesign.md](data-architecture-redesign.md) | v2 아키텍처·ADR |
 | [v4-migration-plan.md](v4-migration-plan.md) | **Steam 전 v4 실행 계획** |
 | [canonicalization-policy.md](canonicalization-policy.md) | identity·dedupe |

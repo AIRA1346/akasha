@@ -99,6 +99,38 @@ void main(List<String> args) {
     print('FAIL: manifest_v4_check exited ${v4.exitCode}');
   }
 
+  print('\n==> discovery_manifest_check');
+  final discoveryManifest = Process.runSync(
+    Platform.resolvedExecutable,
+    ['run', 'tool/discovery_manifest_check.dart'],
+    workingDirectory: root.path,
+    runInShell: true,
+  );
+  stdout.write(discoveryManifest.stdout);
+  stderr.write(discoveryManifest.stderr);
+  if (discoveryManifest.exitCode != 0) {
+    failed = true;
+    print('FAIL: discovery_manifest_check exited ${discoveryManifest.exitCode}');
+  } else {
+    print('OK: discovery_manifest_check');
+  }
+
+  print('\n==> data_policy_linter (strict)');
+  final dataPolicy = Process.runSync(
+    Platform.resolvedExecutable,
+    ['run', 'tool/data_policy_linter.dart', '--strict'],
+    workingDirectory: root.path,
+    runInShell: true,
+  );
+  stdout.write(dataPolicy.stdout);
+  stderr.write(dataPolicy.stderr);
+  if (dataPolicy.exitCode != 0) {
+    failed = true;
+    print('FAIL: data_policy_linter exited ${dataPolicy.exitCode}');
+  } else {
+    print('OK: data_policy_linter');
+  }
+
   print('\n==> dedupe_linter');
   final dedupe = Process.runSync(
     Platform.resolvedExecutable,
