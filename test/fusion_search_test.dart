@@ -60,6 +60,29 @@ void main() {
       );
     });
 
+    test('registryEntryMatchesQuery strips delimiter variants', () {
+      const entry = RegistrySearchIndexEntry(
+        workId: 'wk_hunter',
+        title: '헌터×헌터',
+        shardId: 'manga_H',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        searchTokens: ['헌터×헌터'],
+      );
+      expect(registryEntryMatchesQuery(entry, '헌터 헌터'), isTrue);
+      expect(registryEntryMatchesQuery(entry, '헌터헌터'), isTrue);
+
+      const fate = RegistrySearchIndexEntry(
+        workId: 'wk_fate',
+        title: '페이트/그랜드 오더',
+        shardId: 'game_F',
+        category: MediaCategory.game,
+        domain: AppDomain.subculture,
+        searchTokens: ['페이트/그랜드 오더'],
+      );
+      expect(registryEntryMatchesQuery(fate, '페이트 그랜드 오더'), isTrue);
+    });
+
     test('shardIdsForFilters returns only matching category shards', () {
       final ids = shardIdsForFilters(
         index,

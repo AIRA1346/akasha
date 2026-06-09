@@ -12,8 +12,40 @@ Map<String, String> parseTitlesJson(dynamic json) {
   return map;
 }
 
-String normalizeRegistryQuery(String query) =>
-    query.toLowerCase().replaceAll(' ', '');
+/// lib/utils/registry_search_utils.dart 와 동기화 (도구·builder SSOT).
+String normalizeRegistryQuery(String query) {
+  final aggressive =
+      _stripSearchDelimiters(query.toLowerCase().replaceAll(RegExp(r'\s+'), ''));
+  if (aggressive.length >= 3) return aggressive;
+  return query.toLowerCase().replaceAll(RegExp(r'\s+'), '');
+}
+
+String _stripSearchDelimiters(String t) {
+  return t
+      .replaceAll('：', '')
+      .replaceAll(':', '')
+      .replaceAll('／', '')
+      .replaceAll('/', '')
+      .replaceAll('×', '')
+      .replaceAll('✕', '')
+      .replaceAll('⨯', '')
+      .replaceAll('·', '')
+      .replaceAll('・', '')
+      .replaceAll(RegExp(r'[-–—－]'), '');
+}
+
+bool registryTokenMatchesQuery(String token, String query) {
+  final q = normalizeRegistryQuery(query);
+  if (q.isEmpty) return false;
+
+  final queryCompact = query.toLowerCase().replaceAll(RegExp(r'\s+'), '');
+  final useAggressive = _stripSearchDelimiters(queryCompact).length >= 3;
+
+  if (useAggressive) {
+    return normalizeRegistryQuery(token).contains(q);
+  }
+  return token.toLowerCase().replaceAll(RegExp(r'\s+'), '').contains(q);
+}
 
 String inferTitleLocaleTag(String title) {
   if (RegExp(r'[\uAC00-\uD7A3]').hasMatch(title)) return 'ko';

@@ -282,17 +282,18 @@ int _countQueryHits(List<Map<String, dynamic>> entries, String query) {
         const <String>[];
     var matched = false;
     for (final token in tokens) {
-      if (token.contains(q)) {
+      if (registryTokenMatchesQuery(token, query)) {
         matched = true;
         break;
       }
     }
     if (!matched) {
-      final title =
-          entry['title']?.toString().toLowerCase().replaceAll(' ', '') ?? '';
-      final creator =
-          entry['creator']?.toString().toLowerCase().replaceAll(' ', '') ?? '';
-      if (title.contains(q) || creator.contains(q)) matched = true;
+      final title = entry['title']?.toString() ?? '';
+      final creator = entry['creator']?.toString() ?? '';
+      if (registryTokenMatchesQuery(title, query) ||
+          registryTokenMatchesQuery(creator, query)) {
+        matched = true;
+      }
     }
     if (matched) hits++;
   }

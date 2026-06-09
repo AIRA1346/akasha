@@ -78,9 +78,8 @@ void main() {
         },
       });
 
-      final q = normalizeRegistryQuery('Demon Slayer');
       expect(
-        work.searchTokens.any((t) => t.contains(q)),
+        work.searchTokens.any((t) => registryTokenMatchesQuery(t, 'Demon Slayer')),
         isTrue,
       );
     });

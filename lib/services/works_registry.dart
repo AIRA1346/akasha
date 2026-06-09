@@ -265,7 +265,7 @@ class WorksRegistry {
   static bool _workMatchesQuery(RegistryWork work, String normalizedQuery) {
     if (normalizedQuery.isEmpty) return false;
     for (final token in work.searchTokens) {
-      if (token.contains(normalizedQuery)) return true;
+      if (registryTokenMatchesQuery(token, normalizedQuery)) return true;
     }
     return false;
   }

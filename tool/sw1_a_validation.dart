@@ -10,6 +10,8 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'registry_v3_utils.dart';
+
 void main() {
   final root = _findProjectRoot();
   final outDir = Directory(
@@ -180,9 +182,8 @@ String? _failureTag(GsQuery q, List<String> topK, List<Map<String, dynamic>> ind
       );
   if (entry == null) return 'MISSING_WORK';
 
-  final qn = q.query.toLowerCase().replaceAll(' ', '');
   final tokens = (entry['searchTokens'] as List?)?.map((e) => e.toString()).toList() ?? [];
-  final tokenHit = tokens.any((t) => t.contains(qn));
+  final tokenHit = tokens.any((t) => registryTokenMatchesQuery(t, q.query));
   if (!tokenHit) {
     if (tagsContainGap(q)) return 'MISSING_LOCALE';
     return 'MISSING_TOKEN';
@@ -193,7 +194,7 @@ String? _failureTag(GsQuery q, List<String> topK, List<Map<String, dynamic>> ind
 bool tagsContainGap(GsQuery q) => q.tags.contains('GAP');
 
 List<String> _searchTopK(List<Map<String, dynamic>> index, String query, {required int k}) {
-  final q = query.toLowerCase().replaceAll(' ', '');
+  final q = normalizeRegistryQuery(query);
   if (q.isEmpty) return [];
 
   final hits = <_Hit>[];
@@ -201,14 +202,14 @@ List<String> _searchTopK(List<Map<String, dynamic>> index, String query, {requir
     final tokens = (entry['searchTokens'] as List?)?.map((e) => e.toString()).toList() ?? [];
     var match = false;
     for (final token in tokens) {
-      if (token.contains(q)) {
+      if (registryTokenMatchesQuery(token, query)) {
         match = true;
         break;
       }
     }
     if (!match) {
-      final title = entry['title']?.toString().toLowerCase().replaceAll(' ', '') ?? '';
-      if (title.contains(q)) match = true;
+      final title = entry['title']?.toString() ?? '';
+      if (registryTokenMatchesQuery(title, query)) match = true;
     }
     if (!match) continue;
     hits.add(_Hit(
