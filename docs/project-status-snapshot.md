@@ -14,7 +14,7 @@
 | **4종 핵심 Gate** | **전부 PASS** |
 | **ci_registry_check** | **PASS** (전 단계) |
 | **프로그램** | Phase 2 **COMPLETE** · A5 Pilot **SUCCESS** · Scale **SD2.6 도달** · O8–O12 **1차** |
-| **Git** | `main` ahead **9+** · 작업 트리 **커밋 대기** (Scale 7–11) |
+| **Git** | `main` @ `f6299d0` · **origin 동기화** · 작업 트리 **clean** |
 | **Scale 차단** | **SD2.6 hold** — insert 중단 · O3 checkpoint **2026-07-09** |
 
 ---
@@ -81,19 +81,13 @@
 
 ## 4. Git 인벤토리
 
-| 구분 | 건수 (커밋 전) |
-|------|---------------:|
-| **전체** | **27** |
-| modified (`M`) | 15 |
-| untracked (`??`) | 12 |
-
-| 경로 | 비고 |
+| 구분 | 상태 |
 |------|------|
-| `akasha-db/` | batch7 · supply b4–6 shards · manifest/index |
-| `tool/` | batch7 · supply/enrich b4–8 · O8/O9/O12 관측 3종 |
-| `docs/` | observation log · SD4 · grading · snapshot |
+| **브랜치** | `main` @ `f6299d0` |
+| **remote** | `origin/main` **동기화** (push 완료) |
+| **작업 트리** | **clean** |
 
-**브랜치:** `main` — **ahead 9** (미 push) + 본 세션 커밋 예정
+**최신 커밋:** `feat(a5): reach SD2.6 cap at 430 with batch7 and O8-O12 tooling` (28 files)
 
 ---
 
@@ -115,7 +109,7 @@
 
 | # | 이슈 | 심각도 | Scale 영향 |
 |---|------|:------:|:----------:|
-| R1 | 미커밋·미 push | 중 | 이력·재현성 — **본 세션 정리 중** |
+| R1 | ~~미커밋·미 push~~ | — | **해소** (2026-06-09) |
 | R2 | **batch3/4/seed_expansion** v3·gate 없음 | **높** | 실행 금지 — [expansion-tool-grading.md](expansion-tool-grading.md) |
 | R3 | maintainer `sub_*` **28건** (wk_ 미할당) | 낮 | ci 예외 · 장기 wk_ 할당 검토 |
 | R4 | **CI/GitHub Actions 없음** | 중 | `preflight_check`로 부분 완화 |
@@ -127,7 +121,7 @@
 
 | 순서 | 상태 | 작업 |
 |:----:|:----:|------|
-| 1 | **진행** | Git 커밋 · push (Scale 7–11) |
+| 1 | **done** | Git 커밋 · push (Scale 7–11) |
 | 2 | **done** | `project-status-snapshot` @430 갱신 |
 | 3 | **done** | `docs/README` SD4·도구 인덱스 |
 | 4 | **hold** | SD2.6 — insert 중단 → **2026-07-09** |
@@ -143,3 +137,4 @@
 | 2026-06-09 | Phase 0 스냅샷 — gate · Git · 위험 |
 | 2026-06-09 | Scale 2–5 (412→416) · ci 정리 |
 | 2026-06-09 | Scale 7–11: batch7 + supply b4–6 → **430** · O8–O12 · SD4 |
+| 2026-06-09 | Git 정리 — `f6299d0` push · snapshot/README 동기화 |
