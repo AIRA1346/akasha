@@ -2,7 +2,7 @@
 
 > **목적:** Pilot에서 **Deferred**로 남은 항목을 **실제 규모 확장**에서 관측·운영한다.  
 > **질문:** *「410작 이후 A5를 어떻게 확장하고, 언제 Supported로 닫을 수 있는가?」*  
-> **전제:** [a5-pilot-final-review.md](a5-pilot-final-review.md) **Pilot Success** · Scale Readiness **GO** · Assumption A5 **Deferred**  
+> **전제:** [a5-pilot-final-review.md](archive/a5-pilot-final-review.md) **Pilot Success** · Scale Readiness **GO** · Assumption A5 **Deferred**  
 > **기준일:** 2026-06-09 · Registry **410작** (Pilot 종료 시점)
 
 **금지:** Pilot 문서 **재개** · Pilot 결과 **재판정** · 구조 변경 · add(B) 개방.
@@ -37,7 +37,7 @@ Pilot (검증·소량)  ──SUCCESS──►  Scale (확장·관측)  ──S1
 | Registry **규모 확장** 운영 (insert + enrich **병행**) | Pilot 결과 **재검증** |
 | Pilot **Deferred** 질문 **실측** (O3·O6·O7·O8·O9·O12) | Pilot Observation Log **갱신** |
 | Expansion cohort **단계적 apply** (gate 선행) | Registry / shard **구조 변경** |
-| G1 **5k 경로** 실측 ([a5-discovery-charter.md](a5-discovery-charter.md) R1) | 50k **전량 달성** 선언 (Discovery X8) |
+| G1 **5k 경로** 실측 ([a5-discovery-charter.md](archive/a5-discovery-charter.md) R1) | 50k **전량 달성** 선언 (Discovery X8) |
 | G2 **50k 경로** throughput **신호** 확보 (R2 · O3) | Contribution add(B) **개방** |
 | A5 **Supported** 판정 **입력** 확보 (S1~S4) | 신규 아키텍처 · ADR |
 
@@ -50,7 +50,7 @@ Pilot (검증·소량)  ──SUCCESS──►  Scale (확장·관측)  ──S1
 | **M2** | **G2 신호** — 50k **도달 경로** throughput 관측 | O3 **핵심** · 문서 가설 ~3k–5k/월 **대비** |
 | **M3** | **A5 종료** — S1~S4 Scale **확정** | Supported / Deferred 연장 / Unsupported |
 
-**주의:** M2는 **50k 달성**이 아니라 **경로 존재·운영 가능성** 확정이다 ([a5-discovery-charter.md](a5-discovery-charter.md) R2).
+**주의:** M2는 **50k 달성**이 아니라 **경로 존재·운영 가능성** 확정이다 ([a5-discovery-charter.md](archive/a5-discovery-charter.md) R2).
 
 ### 1.3 Discovery 증명 대상(P1~P5) — Scale 매핑
 
@@ -358,7 +358,7 @@ A5 Supported 후보  IF  S1 AND S2 AND S3 AND S4
 
 ## 7. 후속 운영 결정 (본 계획 범위 밖)
 
-[a5-operational-decisions.md](a5-operational-decisions.md) D1~D3 패턴 — Scale **착수 전** 확정 필요:
+[a5-operational-decisions.md](archive/a5-operational-decisions.md) D1~D3 패턴 — Scale **착수 전** 확정 필요:
 
 | ID | Scale 결정 영역 | 예시 |
 |:--:|-----------------|------|
@@ -375,11 +375,11 @@ A5 Supported 후보  IF  S1 AND S2 AND S3 AND S4
 | 문서 | 역할 |
 |------|------|
 | [a5-scale-plan.md](a5-scale-plan.md) | **본 문서** — Scale 계획 |
-| [a5-pilot-final-review.md](a5-pilot-final-review.md) | Pilot **종료·GO** (동결) |
+| [a5-pilot-final-review.md](archive/a5-pilot-final-review.md) | Pilot **종료·GO** (동결) |
 | [a5-gate-review.md](a5-gate-review.md) | S1~S5 · Stop/Pause/Continue |
 | [a5-question-register.md](a5-question-register.md) | O1~O14 · Scale 시점 |
-| [a5-discovery-charter.md](a5-discovery-charter.md) | R1~R4 · P1~P5 |
-| [a5-operational-decisions.md](a5-operational-decisions.md) | D1~D3 (Pilot) · SD1~SD3 **후속** |
+| [a5-discovery-charter.md](archive/a5-discovery-charter.md) | R1~R4 · P1~P5 |
+| [a5-operational-decisions.md](archive/a5-operational-decisions.md) | D1~D3 (Pilot) · SD1~SD3 **후속** |
 
 ---
 

@@ -1,7 +1,7 @@
 # A5 Scale Observation Log
 
 > **기간:** 2026-06-09 (Scale 1차 관측)  
-> **Baseline:** **410작** (Pilot 종료 · [a5-pilot-final-review.md](a5-pilot-final-review.md) 확정)  
+> **Baseline:** **410작** (Pilot 종료 · [a5-pilot-final-review.md](archive/a5-pilot-final-review.md) 확정)  
 > **경로:** Expansion `seed_expansion_batch5/6` · `pre_insert_dedupe_gate` · v4 hex shard
 
 ---

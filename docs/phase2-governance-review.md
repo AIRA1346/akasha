@@ -7,7 +7,7 @@
 
 **성격:** 운영·거버넌스 인벤토리 — **신규 실험 · enrich · ADR · 구조 변경 없음**.
 
-**선행 결정:** [phase2-mid-review.md](phase2-mid-review.md) — Coverage 가능성 검증 완료 → **품질·운영 모델** 단계.
+**선행 결정:** [phase2-mid-review.md](archive/phase2-mid-review.md) — Coverage 가능성 검증 완료 → **품질·운영 모델** 단계.
 
 ---
 
@@ -39,8 +39,8 @@ Phase 2는 Registry **구조 고정** 아래 **Coverage enrich + KPI + 회귀 + 
 |------|------|
 | [phase2-charter.md](phase2-charter.md) | Phase 2 범위·KPI·성공/종료 조건·워크플로 |
 | [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md) | Coverage KPI 정의·PASS/FAIL |
-| [phase2-mid-review.md](phase2-mid-review.md) | Sprint 01~03 · Economics 검증 기록 |
-| [phase2-late-stage-plan.md](phase2-late-stage-plan.md) | 잔여 검증 질문·Sprint 04 재정의 |
+| [phase2-mid-review.md](archive/phase2-mid-review.md) | Sprint 01~03 · Economics 검증 기록 |
+| [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) | 잔여 검증 질문·Sprint 04 재정의 |
 
 ### 1.3 Coverage Sprint (실측 완료)
 
@@ -263,7 +263,7 @@ registry_builder
 
 ## 7. Sprint 04 착수 조건
 
-Sprint 04는 **titles.en 연장이 아님** — [phase2-late-stage-plan.md](phase2-late-stage-plan.md) · [phase2-mid-review.md](phase2-mid-review.md) §7.
+Sprint 04는 **titles.en 연장이 아님** — [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) · [phase2-mid-review.md](archive/phase2-mid-review.md) §7.
 
 **재정의 목적:** **zh · externalId · composite Economics** 검증.
 

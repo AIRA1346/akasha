@@ -57,14 +57,14 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 ## 📚 글로벌 작품 사전 (akasha-db)
 
 > **최종 목표:** 세상의 모든 작품 사전 (IMDb + OpenLibrary급)  
-> **현재 단계:** 엄선 **~410작** · **Steam 전 v4**(`wk_`·해시 샤드) — [v4-migration-plan.md](docs/v4-migration-plan.md)
+> **현재 단계:** 엄선 **430작** · **v4 운영 중** (`wk_` 영구 ID · 해시 샤드 · externalId G2 **50%**) — [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
 
 | 항목 | 정책 |
 |------|------|
 | **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
-| **스키마** | **v3** (현재) → **v4** Steam 게이트 — [SCHEMA.md](akasha-db/SCHEMA.md) |
-| **규모 목표** | 2026 ~410(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
-| **샤딩** | **유지** — Steam 전 `hash(wk_)%256` 전환 ([v4-migration-plan.md](docs/v4-migration-plan.md)) |
+| **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
+| **규모 목표** | 2026 ~430(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
+| **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~E ✅) |
 | **포스터** | **`posterPath` URL을 DB에 저장** (검색 즉시 표시) + `externalIds`로 재검증 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
@@ -117,7 +117,7 @@ flowchart LR
     Fusion --> UI["홈 · 나의 서재 · 상세"]
 ```
 
-- **work_id:** `{sub|gen}_{category}_{identifier}_{year}` (샤드 키 자동 계산)
+- **work_id:** `wk_` + 9자리 영구 ID (예: `wk_000000111`) — 작품명과 무관한 불변 키. 구 슬러그 ID(`{sub|gen}_{category}_{slug}_{year}`)는 `legacy_aliases`로 자동 해석
 - **그리드:** IP당 1카드 (`FranchiseDisplayPolicy`)
 - **검색:** 로컬 + 사전 + 가상 항목; 같은 IP는 검색에서만 매체별 노출 가능
 
@@ -130,7 +130,7 @@ flowchart LR
 | Framework | Flutter (Windows Desktop 우선) |
 | Storage | Local Markdown + YAML front-matter |
 | State | Provider (Riverpod는 v1 이후 검토) |
-| Registry | JSON 샤딩 **v3**, 온디맨드 fetch, `searchTokens` 교차 언어 검색 |
+| Registry | JSON **v4 해시 샤딩** (`wk_` 영구 ID), 온디맨드 fetch, `searchTokens` 교차 언어 검색 |
 | Locale | `CatalogLocale` + `titles` fallback (UI i18n은 v1.1) |
 | Commerce | `EntitlementService` — cosmetic(Steam) / content(제휴) 분리 |
 | CI | `flutter_ci`, `ci_registry_check`, `franchise_linter` |
@@ -156,7 +156,7 @@ flowchart LR
 
 | 필드 | 설명 |
 |------|------|
-| `work_id` | 마스터 ID. 비어 있으면 사전 매칭 후 자동 부여 |
+| `work_id` | `wk_` 영구 ID (마스터 키). 비어 있으면 사전 매칭 후 자동 부여 · 구 슬러그 ID는 자동 변환 |
 | `title` | 작품 제목 (파일명과 동기화) |
 | `category` | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
 | `domain` | `subculture` · `generalCulture` |
@@ -186,13 +186,12 @@ flutter pub get
 flutter analyze lib/
 flutter test
 dart run tool/ci_registry_check.dart
-dart run tool/migrate_registry_v3.dart      # 샤드 titles/externalIds 승격 (선택)
-dart run tool/purge_anilist_bulk.dart       # AniList bulk 제거 (dry-run / --apply)
-dart run tool/registry_builder.dart --sync-assets   # v3 manifest + search_index + eager 샤드
+dart run tool/preflight_check.dart          # 4종 핵심 gate 일괄
+dart run tool/registry_builder.dart --sync-assets   # v4 manifest + search_index + 번들 샤드 동기화
 flutter build windows
 ```
 
-앱 번들에는 **search_index(엄선 카탈로그 전체, v3 searchTokens)** 와 **eager 샤드**만 포함됩니다. 사전 확장은 **수동 큐레이션 PR**만 허용합니다 (AniList API bulk·온디맨드 미사용).
+앱 번들에는 **search_index(엄선 카탈로그 전체)** 와 **전체 v4 샤드**가 포함됩니다. 사전 확장은 **수동 큐레이션 PR**만 허용합니다 (AniList API bulk·온디맨드 미사용).
 
 Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 
@@ -203,7 +202,8 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 - [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
 - [docs/akasha-db-policy.md](docs/akasha-db-policy.md) — **사전 구축·포스터·CI 마스터 정책**
 - [docs/akasha-db-implementation-plan.md](docs/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
-- [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v3 필드 규격
+- [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v4 필드 규격 (`wk_`·해시 샤드)
+- [docs/project-status-snapshot.md](docs/project-status-snapshot.md) — Gate·Registry·프로그램 현황 스냅샷
 - [docs/locale-catalog-policy.md](docs/locale-catalog-policy.md) — 언어·작품명·검색 정책
 - [docs/commerce-boundary.md](docs/commerce-boundary.md) — Steam IAP vs 제휴 커머스
 - [akasha-db/README.md](akasha-db/README.md) — 사전 기여·샤딩 규칙

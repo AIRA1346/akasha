@@ -1,7 +1,7 @@
 # A5 Gate Decision Record
 
 > **세션:** 2026-06-09 A5 Pilot  
-> **근거:** [a5-pilot-observation-log.md](a5-pilot-observation-log.md) · [a5-verification-charter.md](a5-verification-charter.md) §4
+> **근거:** [a5-pilot-observation-log.md](a5-pilot-observation-log.md) · [a5-verification-charter.md](../a5-verification-charter.md) §4
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **목적:** A5 Pilot에서 **무엇을 관측**하고, **어떤 방식으로** H1~H5를 Continue / Pause / Stop 판정할지 정의.  
 > **질문:** *「A5 Pilot에서 무엇을 측정하고 어떤 결과가 나오면 어떤 Gate 판정인가?」* — **방법론**만.  
-> **전제:** [a5-pilot-readiness-review.md](a5-pilot-readiness-review.md) **PILOT GO** · [a5-pilot-charter.md](a5-pilot-charter.md) · [a5-gate-review.md](a5-gate-review.md)  
+> **전제:** [a5-pilot-readiness-review.md](archive/a5-pilot-readiness-review.md) **PILOT GO** · [a5-pilot-charter.md](a5-pilot-charter.md) · [a5-gate-review.md](a5-gate-review.md)  
 > **기준일:** 2026-06-09 · Registry **402** baseline
 
 **금지:** Pilot **실행** · **수치 목표** 확정 · **합격선** 결정 · **데이터 수집**.
@@ -45,7 +45,7 @@
 | **Pilot 질문** | O14 · O1 · O2 |
 | **Scale 이관** | O3 (G2 throughput) |
 | **Discovery 축** | P1 · Data Scale |
-| **후보 카테고리** | R1 · R4 ([a5-discovery-charter.md](a5-discovery-charter.md) §2.1) |
+| **후보 카테고리** | R1 · R4 ([a5-discovery-charter.md](archive/a5-discovery-charter.md) §2.1) |
 
 **관측 범위:** Maintainer · 수동 PR · merge · Expansion **기존 경로**의 **존재·가동·측정 가능성**. G2 **전량 달성** 아님.
 
@@ -439,7 +439,7 @@ Pilot 성공  IF  S1 AND S2
 | [a5-gate-review.md](a5-gate-review.md) | Gate · M/S 조건 |
 | [a5-question-register.md](a5-question-register.md) | O1~O14 |
 | [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 |
-| [a5-pilot-readiness-review.md](a5-pilot-readiness-review.md) | PILOT GO |
+| [a5-pilot-readiness-review.md](archive/a5-pilot-readiness-review.md) | PILOT GO |
 
 ---
 

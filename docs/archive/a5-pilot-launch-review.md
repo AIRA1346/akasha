@@ -18,7 +18,7 @@
 A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification Charter · Gate 체계 · Pilot 산출물 정의가 **정합**한다.  
 **LAUNCH NO-GO**에 해당하는 설계 결함·Gate 충돌·산출물 누락 **없음**.
 
-**§6 미결정 3건**(관측 기간 · 배치 규모 · 합격 수치)은 [a5-verification-charter.md](a5-verification-charter.md) §7에서 **의도적 미포함** 항목이다. **첫 실측·배치 이벤트 전** 확정이 필요하나, **설계 미완**으로 보지 않는다.
+**§6 미결정 3건**(관측 기간 · 배치 규모 · 합격 수치)은 [a5-verification-charter.md](../a5-verification-charter.md) §7에서 **의도적 미포함** 항목이다. **첫 실측·배치 이벤트 전** 확정이 필요하나, **설계 미완**으로 보지 않는다.
 
 **본 판정:** Pilot 프로그램 **실측 착수 승인**. §6 **확정 전** insert·enrich·데이터 수집 **시작 불가**.
 
@@ -39,10 +39,10 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 | Discovery 산출 | 문서 | 상태 |
 |----------------|------|:----:|
 | Charter | [a5-discovery-charter.md](a5-discovery-charter.md) | **완료** |
-| Question Register | [a5-question-register.md](a5-question-register.md) | **완료** |
-| Hypothesis Map | [a5-hypothesis-map.md](a5-hypothesis-map.md) | **완료** |
-| Gate Review | [a5-gate-review.md](a5-gate-review.md) | **완료** |
-| Pilot Charter | [a5-pilot-charter.md](a5-pilot-charter.md) | **완료** |
+| Question Register | [a5-question-register.md](../a5-question-register.md) | **완료** |
+| Hypothesis Map | [a5-hypothesis-map.md](../a5-hypothesis-map.md) | **완료** |
+| Gate Review | [a5-gate-review.md](../a5-gate-review.md) | **완료** |
+| Pilot Charter | [a5-pilot-charter.md](../a5-pilot-charter.md) | **완료** |
 
 **판정:** Discovery **종료** — 후속 설계 문서로 **이관 완료**.
 
@@ -62,7 +62,7 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 
 | Readiness 판정 한계 | Launch Review 대응 |
 |---------------------|---------------------|
-| Verification Charter **미작성** | [a5-verification-charter.md](a5-verification-charter.md) **작성 완료** |
+| Verification Charter **미작성** | [a5-verification-charter.md](../a5-verification-charter.md) **작성 완료** |
 | 실측·배치 **미승인** | 본 문서 **LAUNCH** 판정 |
 | O1~O14 **미답** | **예상** — Pilot **관측 대상** |
 
@@ -72,7 +72,7 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 
 ## 3. Verification Charter 완성도 검토
 
-[a5-verification-charter.md](a5-verification-charter.md) 요구 섹션 대비.
+[a5-verification-charter.md](../a5-verification-charter.md) 요구 섹션 대비.
 
 | # | 요구 내용 | Charter 섹션 | 완성도 |
 |---|-----------|:------------:|:------:|
@@ -121,7 +121,7 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 
 ## 5. Pilot 산출물 정의 여부
 
-[a5-verification-charter.md](a5-verification-charter.md) §5 · [a5-pilot-charter.md](a5-pilot-charter.md) §2.4.
+[a5-verification-charter.md](../a5-verification-charter.md) §5 · [a5-pilot-charter.md](../a5-pilot-charter.md) §2.4.
 
 | # | 산출물 | 정의 | 종료 시 필수 |
 |---|--------|:----:|:------------:|
@@ -146,13 +146,13 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 ## 6. 착수 전 남은 결정 항목
 
 **본 절은 목록만.** 값·수치·일정 **확정하지 않음**.  
-출처: [a5-verification-charter.md](a5-verification-charter.md) §7 · [a5-discovery-charter.md](a5-discovery-charter.md) §2 후보.
+출처: [a5-verification-charter.md](../a5-verification-charter.md) §7 · [a5-discovery-charter.md](a5-discovery-charter.md) §2 후보.
 
 ### 6.1 관측 기간
 
 | 결정 필요 | 관련 가설·질문 | Discovery 후보·근거 |
 |-----------|----------------|---------------------|
-| Pilot **시작·종료** 시점 정의 | 전체 H1~H5 | Exit X3·X4 ([a5-verification-charter.md](a5-verification-charter.md) §6.1) |
+| Pilot **시작·종료** 시점 정의 | 전체 H1~H5 | Exit X3·X4 ([a5-verification-charter.md](../a5-verification-charter.md) §6.1) |
 | O1 **insert rate** 관측 **윈도** | H1 · O1 · O2 | R1 G1 경로 실측 |
 | O7 **backlog vs insert** 관측 **최소 기간** | H3 · O7 | E3 enrich SLA |
 | H2 **배치 전** O4 선행 관측 **기간** | H2 · O4 | Q5 dedupe 효과 |
@@ -255,12 +255,12 @@ A5 **설계 문서 체인**이 완료되었고, Pilot Readiness · Verification 
 | 순서 | 문서 | 역할 | 상태 |
 |:----:|------|------|:----:|
 | 1 | [a5-discovery-charter.md](a5-discovery-charter.md) | Discovery 범위 | **완료** |
-| 2 | [a5-question-register.md](a5-question-register.md) | O1~O14 | **완료** |
-| 3 | [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 | **완료** |
-| 4 | [a5-gate-review.md](a5-gate-review.md) | Gate · M/S | **완료** |
-| 5 | [a5-pilot-charter.md](a5-pilot-charter.md) | Pilot 범위 | **완료** |
+| 2 | [a5-question-register.md](../a5-question-register.md) | O1~O14 | **완료** |
+| 3 | [a5-hypothesis-map.md](../a5-hypothesis-map.md) | H1~H5 | **완료** |
+| 4 | [a5-gate-review.md](../a5-gate-review.md) | Gate · M/S | **완료** |
+| 5 | [a5-pilot-charter.md](../a5-pilot-charter.md) | Pilot 범위 | **완료** |
 | 6 | [a5-pilot-readiness-review.md](a5-pilot-readiness-review.md) | PILOT GO | **완료** |
-| 7 | [a5-verification-charter.md](a5-verification-charter.md) | 관측·판정 방법론 | **완료** |
+| 7 | [a5-verification-charter.md](../a5-verification-charter.md) | 관측·판정 방법론 | **완료** |
 | 8 | [a5-pilot-launch-review.md](a5-pilot-launch-review.md) | **본 문서** — LAUNCH GO | **완료** |
 
 **A5 설계 단계:** **CLOSED** (실측·§6 운영 결정은 **별도**).

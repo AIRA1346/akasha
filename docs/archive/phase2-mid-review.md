@@ -1,11 +1,11 @@
 # Phase 2 Mid-Review — Coverage Economics 검증
 
 > **역할:** Phase 2 **중간 점검** — Sprint 01~03 실측만 근거로 판단을 정리한다.  
-> **전제:** [Baseline v1](baseline-v1.md) Validated through Phase 1 · [phase2-charter.md](phase2-charter.md)  
+> **전제:** [Baseline v1](../baseline-v1.md) Validated through Phase 1 · [phase2-charter.md](../phase2-charter.md)  
 > **기준일:** 2026-06-09 · Registry **402작**  
 > **산출물:** Sprint 01~03 도구·리포트 (`tool/coverage_sprint_0*.dart` · `akasha-db/pipeline/artifacts/coverage_dashboard/`)
 
-**선행:** [phase1-final-review.md](phase1-final-review.md) · [assumption-register.md](assumption-register.md) §10 · [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md)
+**선행:** [phase1-final-review.md](phase1-final-review.md) · [assumption-register.md](../assumption-register.md) §10 · [canonical-identity-coverage-dashboard.md](../canonical-identity-coverage-dashboard.md)
 
 ---
 
@@ -80,7 +80,7 @@ Sprint 01~03은 **Coverage 품질 실험이 아니라 Coverage Economics 가설 
 | **3** | **Coverage Economics가 Phase 2의 실질 게이트** | Sprint 02 추정 vs Sprint 03 실측 괴리 — §4 |
 | **4** | **자동화 파이프라인이 titles.en 축에서 실용 가능** | TMDB/Steam fetch + legacy slug/latin 휴리스틱으로 **수동 0건** 처리 (Sprint 03 성공작) |
 | **5** | **Panel KPI는 Sprint 01 이후 안정** | GAP · alias · subtitle panel **100%** 유지 — 운영 게이트(§4.1) 충족 |
-| **6** | **A3 = Supported (Operational Dependency) 전제가 유지됨** | KPI·회귀 게이트 동시 충족 — [phase2-charter](phase2-charter.md) §4.3 |
+| **6** | **A3 = Supported (Operational Dependency) 전제가 유지됨** | KPI·회귀 게이트 동시 충족 — [phase2-charter](../phase2-charter.md) §4.3 |
 
 ---
 
@@ -123,7 +123,7 @@ Sprint 01~03은 **Coverage 품질 실험이 아니라 Coverage Economics 가설 
 | **Δ vs 추정 (human-eq)** | — | **약 −50%** | §4.2 해석 |
 | **자동화율 가정** | **11%** auto · **89%** manual | **100%** auto+semi (성공작) | cohort·도구 의존 |
 
-¹ Human-equivalent: Sprint 02 보정 단가 — auto **2분** · semi **5분** · manual **15분** / Work ([`coverage_sprint_03_titles_en.dart`](../tool/coverage_sprint_03_titles_en.dart) · Sprint 02 calibration).  
+¹ Human-equivalent: Sprint 02 보정 단가 — auto **2분** · semi **5분** · manual **15분** / Work ([`coverage_sprint_03_titles_en.dart`](../../tool/coverage_sprint_03_titles_en.dart) · Sprint 02 calibration).  
 ² Sprint 03 cohort가 **+101작을 넘어** 잔여 missing까지 처리했으므로, human-equivalent **11.6h**는 「50% 마일스톤 단독」보다 **넓은 작업 집합**에 가깝다. **보수적 비교** 시 +101작 분만 환산하면 human-eq는 더 낮을 수 있다.
 
 ### 4.2 해석 (Phase 2 Mid 판단)
@@ -157,7 +157,7 @@ Sprint 01~03은 **Coverage 품질 실험이 아니라 Coverage Economics 가설 
 |------|------|
 | **등급** | **Supported (Operational Dependency)** — **유지** |
 | **근거** | Sprint 01~03: 구조 변경 없이 Identity **회귀 100%** · GAP panel **100%** · titles.en **대폭 개선** |
-| **전제 강화** | ① [Coverage Dashboard](canonical-identity-coverage-dashboard.md) panel·회귀 게이트 ② **Coverage Economics 모니터링** (wall vs human-eq) ③ **auto enrich 품질 가드** (`_isValidEnTitle` · fallback) |
+| **전제 강화** | ① [Coverage Dashboard](../canonical-identity-coverage-dashboard.md) panel·회귀 게이트 ② **Coverage Economics 모니터링** (wall vs human-eq) ③ **auto enrich 품질 가드** (`_isValidEnTitle` · fallback) |
 | **승격/강등** | **Contested로 강등 근거 없음** · **Fully Supported로 승격 근거 부족** — Coverage **운영·비용** 의존은 여전 |
 | **실패 정의** | 구조 붕괴가 아닌 **운영 실패** (KPI 미달 · Economics 예산 초과 · 자동화 품질 사고) |
 
@@ -220,7 +220,7 @@ Sprint 01~03은 **Coverage 품질 실험이 아니라 Coverage Economics 가설 
 | **4** | **G1 insert 실측** | A1 burden · A2 stub 희석 — Coverage와 **독립** 게이트 |
 | **5** | **Coverage Dashboard 회귀 루틴 고정** | enrich 배치마다 SW1/URV/panel 스냅샷 |
 
-**하지 않는 것:** 신규 ADR · Registry/Franchise 구조 변경 ([phase2-charter](phase2-charter.md) §3).
+**하지 않는 것:** 신규 ADR · Registry/Franchise 구조 변경 ([phase2-charter](../phase2-charter.md) §3).
 
 ---
 

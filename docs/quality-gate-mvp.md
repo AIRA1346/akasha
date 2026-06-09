@@ -193,7 +193,7 @@ dart run tool/quality_gate.dart --release
 |------|------|
 | [coverage-quality-governance.md](coverage-quality-governance.md) | 거버넌스·게이트 정의 |
 | [quality-gate-mvp.md](quality-gate-mvp.md) | **본 문서** — MVP 규칙·CI·구현 |
-| [phase2-late-stage-plan.md](phase2-late-stage-plan.md) | P0 QA |
+| [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) | P0 QA |
 
 ---
 

@@ -1,7 +1,7 @@
 # externalId Coverage Economics Plan — Sprint 04 (P1 / Q2)
 
 > **목적:** Sprint 04 범위 확정 — **externalId G2 50%** Economics 검증 계획.  
-> **전제:** Sprint 03 이후 · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) Q2 · [phase2-governance-review.md](phase2-governance-review.md)  
+> **전제:** Sprint 03 이후 · [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) Q2 · [phase2-governance-review.md](phase2-governance-review.md)  
 > **기준일:** 2026-06-09 · Registry **402작**
 
 **금지:** 본 문서 작성 시점 **enrich · 실험 실행 · 구조 변경**.
@@ -290,7 +290,7 @@ coverage_sprint_04_external_id.dart  (가칭)
 | 문서 | 역할 |
 |------|------|
 | [externalid-economics-plan.md](externalid-economics-plan.md) | **본 문서** — Sprint 04 P1/Q2 계획 |
-| [phase2-late-stage-plan.md](phase2-late-stage-plan.md) | Q2 정의 |
+| [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) | Q2 정의 |
 | [phase2-governance-review.md](phase2-governance-review.md) | Release·회귀 게이트 |
 | [quality-gate-mvp.md](quality-gate-mvp.md) | Quality block |
 

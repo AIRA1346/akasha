@@ -7,13 +7,13 @@
 
 **금지 (본 문서 작성 시점):** enrich 실행 · 실험 실행 · 구조 변경 · 신규 provider.
 
-**Charter 연계:** [phase2-charter.md](phase2-charter.md) §5 **#4** — externalId coverage **≥ 50% (G2)** · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) **Q2**.
+**Charter 연계:** [phase2-charter.md](phase2-charter.md) §5 **#4** — externalId coverage **≥ 50% (G2)** · [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) **Q2**.
 
 ### Sprint 04 레이어 (R1 / R2)
 
 | 레이어 | 기준 Registry | 내용 | SSOT |
 |--------|:-------------:|------|------|
-| **04-R1** | **402작** | 1차 externalId apply (+141) · Economics·G2 **@402 달성** | [sprint-04-final-review.md](sprint-04-final-review.md) *(superseded · 아카이브)* |
+| **04-R1** | **402작** | 1차 externalId apply (+141) · Economics·G2 **@402 달성** | [sprint-04-final-review.md](archive/sprint-04-final-review.md) *(superseded · 아카이브)* |
 | **04-R2** | **430작** | Scale 이후 재기준선 · Phase A baseline · Phase B 품질 감사 · 잔여 15건 | [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) · [sprint-04-baseline-report.md](sprint-04-baseline-report.md) |
 
 **현재 운영·수치:** **04-R2** (@430 · externalId **46.74%**) — 본 Charter의 **402작 수치는 04-R1 착수 정의**이며 R2 SSOT가 **아님**.
@@ -107,7 +107,7 @@
 | # | 제외 | 근거 |
 |---|------|------|
 | **X1** | **titles.en** enrich | Sprint 03 **91.5%** · Sprint 04는 **externalId 축** |
-| **X2** | **zh** enrich | [phase2-late-stage-plan.md](phase2-late-stage-plan.md) **Q1** — 별 Sprint |
+| **X2** | **zh** enrich | [phase2-late-stage-plan.md](archive/phase2-late-stage-plan.md) **Q1** — 별 Sprint |
 | **X3** | **신규 provider** | IGDB · openlibrary 등 **402 내 미사용** — 도입은 구조·공급 검토 필요 |
 | **X4** | **구조 변경** | Phase 2 거버넌스 · ADR-006 franchise 정책 **유지** |
 | **X5** | **E4 manual 대량** (186작) | G2 달성에 **불필요** (E1+E2 충분) — 50% 초과 시 **후속** |

@@ -2,7 +2,7 @@
 
 > **목적:** 설계·전략 문서 세트를 **Baseline v1**으로 고정한다.  
 > **상태:** **Validated through Phase 1** (2026-06-09)  
-> **검증 종료:** [phase1-final-review.md](phase1-final-review.md)  
+> **검증 종료:** [phase1-final-review.md](archive/phase1-final-review.md)  
 > **다음:** [phase2-charter.md](phase2-charter.md) — Coverage Improvement Program (운영)  
 > 기준일: 2026-06-09
 
@@ -23,7 +23,7 @@
 | Growth | [registry-growth-strategy.md](registry-growth-strategy.md) | 402→5M+ 성장·병목 | ✅ |
 | Contribution | [contribution-model-strategy.md](contribution-model-strategy.md) | Registry→Platform·커뮤니티 | ✅ |
 | Assumptions | [assumption-register.md](assumption-register.md) | Baseline v1 **핵심 가정** 인벤토리 | ✅ · Phase 1 판정 확정 |
-| Phase 1 | [phase1-final-review.md](phase1-final-review.md) | Baseline v1 **검증 종료** 보고서 | ✅ |
+| Phase 1 | [phase1-final-review.md](archive/phase1-final-review.md) | Baseline v1 **검증 종료** 보고서 | ✅ |
 | Coverage | [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md) | Identity Coverage KPI | ✅ · Phase 2 운영 |
 | Phase 2 | [phase2-charter.md](phase2-charter.md) | Coverage Improvement Program | 🔶 진행 |
 
@@ -82,7 +82,7 @@
 | Coverage Dashboard | ✅ baseline | [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md) |
 
 **Phase 1 결론:** Registry **구조는 Supported**. 최대 과제는 **Canonical Identity Coverage** (운영·enrich).  
-전체 보고: [phase1-final-review.md](phase1-final-review.md).
+전체 보고: [phase1-final-review.md](archive/phase1-final-review.md).
 
 ---
 

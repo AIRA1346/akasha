@@ -2,7 +2,7 @@
 
 > **단계:** Sprint 04 Phase B-4 (Quality Gate **적용 시뮬레이션** · apply **아님**)  
 > **대상:** E1 Steam candidate **15건**  
-> **규칙:** [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) E1–E5  
+> **규칙:** [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) E1–E5  
 > **기준일:** 2026-06-09 · Registry **430 works** · externalId **201** (46.74%)  
 > **측정 도구:** `dart run tool/coverage_sprint_04_e1_post_gate.dart --write-json`  
 > **원본 JSON:** `akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_e1_post_gate.json`
@@ -55,7 +55,7 @@
 
 **최종 판정 우선순위:** E1/E2/E3/E5 중 하나라도 해당 → **BLOCK** · else E4 → **REVIEW** · else **AUTO_APPROVE**.
 
-**E4 측정식:** 알파벳·숫자 토큰(len ≥ 2) 집합 · overlap = |A ∩ B| / max(|A|, |B|) · 임계 **T = 0.15** ([B-3 초안](externalid-quality-gate-rules.md) 동일).
+**E4 측정식:** 알파벳·숫자 토큰(len ≥ 2) 집합 · overlap = |A ∩ B| / max(|A|, |B|) · 임계 **T = 0.15** ([B-3 초안](../externalid-quality-gate-rules.md) 동일).
 
 ---
 
@@ -140,7 +140,7 @@ HIGH     ×4      ──────►  BLOCK    ×4   (E1/E2/E3/E5)
 
 | 평가 | 내용 |
 |------|------|
-| HIGH 4건 | **전건 BLOCK** — [B-3 매핑](externalid-quality-gate-rules.md) **검증** |
+| HIGH 4건 | **전건 BLOCK** — [B-3 매핑](../externalid-quality-gate-rules.md) **검증** |
 | MEDIUM 4건 | Phase B "attach 가능·titles 정리 권장" → Gate는 **선행 BLOCK** |
 | false negative | cohort 내 **0** — 기계적 runner 15/15 ok 대비 **8건 추가 차단** |
 | false positive (BLOCK) | **관측 0** — E2 차단 4건(MEDIUM)은 appId **정합**이나 identity **오염** |
@@ -154,7 +154,7 @@ HIGH     ×4      ──────►  BLOCK    ×4   (E1/E2/E3/E5)
 | HIGH 보조 | 266·270·277 — **교차게임 사전** hit · 이미 BLOCK이라 **한계 기여** |
 | 144 | E4 발화하나 E3/E5가 **BLOCK** — B-3 "E4 통과"는 **판정 비결정** 의미 |
 
-**결론:** 문서화된 E4(token overlap T=0.15)는 **ko/en 로컬라이즈 레지스트리**에서 **실효 REVIEW=100%**. 운영 시 **교차게임 사전 전용** 또는 **romanization·alias 교차**로 **범위 축소** 필요 ([B-3 false positive 경고](externalid-quality-gate-rules.md) **실측 확인**).
+**결론:** 문서화된 E4(token overlap T=0.15)는 **ko/en 로컬라이즈 레지스트리**에서 **실효 REVIEW=100%**. 운영 시 **교차게임 사전 전용** 또는 **romanization·alias 교차**로 **범위 축소** 필요 ([B-3 false positive 경고](../externalid-quality-gate-rules.md) **실측 확인**).
 
 ### 5.3 종합
 

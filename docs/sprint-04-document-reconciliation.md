@@ -1,5 +1,7 @@
 # Sprint 04 Documentation Reconciliation
 
+> **⚠️ 후속 갱신 (2026-06-10):** 본 문서의 "G2 미달 (-14)" 판정은 **Phase C resolution으로 해소** — externalId **215/430 (50.00%) G2 달성**. 현재 수치 SSOT: [sprint-04-e1-resolution.md](sprint-04-e1-resolution.md) · [project-status-snapshot.md](project-status-snapshot.md). 아래 본문은 2026-06-09 시점 기록.
+
 > **목적:** Sprint 04 관련 문서의 **현재 진실(SSOT)** 확정  
 > **기준일:** 2026-06-09 · Registry **430 works** · externalId **201 (46.74%)**  
 > **대상:** 지정 6건 + 교차 참조 문서
@@ -13,8 +15,8 @@
 | 질문 | SSOT |
 |------|------|
 | **지금 Registry·coverage는?** | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) · [project-status-snapshot.md](project-status-snapshot.md) — **430 / 201 / 46.74%** |
-| **잔여 E1 15건·품질 판정은?** | Phase B 체인: [e1-audit](sprint-04-e1-audit.md) → [high-risk-disposition](sprint-04-high-risk-disposition.md) → [post-gate](sprint-04-e1-post-gate-audit.md) → [e4-effectiveness](sprint-04-e4-effectiveness-review.md) |
-| **Sprint 04 1차 실행(apply 141건)은?** | [sprint-04-final-review.md](sprint-04-final-review.md) — **@402 시점 아카이브** · 현재 운영 진실 **아님** |
+| **잔여 E1 15건·품질 판정은?** | Phase B 체인: [e1-audit](archive/sprint-04-e1-audit.md) → [high-risk-disposition](archive/sprint-04-high-risk-disposition.md) → [post-gate](archive/sprint-04-e1-post-gate-audit.md) → [e4-effectiveness](archive/sprint-04-e4-effectiveness-review.md) |
+| **Sprint 04 1차 실행(apply 141건)은?** | [sprint-04-final-review.md](archive/sprint-04-final-review.md) — **@402 시점 아카이브** · 현재 운영 진실 **아님** |
 | **G2 50% 달성 여부 (현재)?** | **미달** (215 필요 · **-14**) — baseline · post-gate **일치** |
 | **G2 50% 달성 (과거 @402)?** | **달성** (201/402) — final-review **해당 시점만 유효** |
 
@@ -44,11 +46,11 @@
 | 문서 | 역할 | 상태 | SSOT 범위 |
 |------|------|:----:|-----------|
 | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) | @430 **측정 전** baseline · E1 15 · G2 갭 | **active** | Registry 수 · coverage · cohort **상한** |
-| [sprint-04-e1-audit.md](sprint-04-e1-audit.md) | Phase B **수동** 위험 감사 (LOW/MED/HIGH) | **active** | 15건 **severity** · LOW 7 apply 후보 |
-| [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) | HIGH 4건 **disposition** | **active** | 144·266·270·277 **조치 코드** |
-| [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) | Rule E1–E5 **시뮬레이션** | **active** | AUTO/REVIEW/BLOCK **건수** · gate 적용 시 coverage |
-| [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) | E4 **실효성** · FALSE_REVIEW | **active** | E4 **정책 권고** (overlap 폐기) |
-| [sprint-04-final-review.md](sprint-04-final-review.md) | 1차 Sprint **실행 완료** 기록 | **superseded†** | @402 · +141 apply · **역사** |
+| [sprint-04-e1-audit.md](archive/sprint-04-e1-audit.md) | Phase B **수동** 위험 감사 (LOW/MED/HIGH) | **active** | 15건 **severity** · LOW 7 apply 후보 |
+| [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md) | HIGH 4건 **disposition** | **active** | 144·266·270·277 **조치 코드** |
+| [sprint-04-e1-post-gate-audit.md](archive/sprint-04-e1-post-gate-audit.md) | Rule E1–E5 **시뮬레이션** | **active** | AUTO/REVIEW/BLOCK **건수** · gate 적용 시 coverage |
+| [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md) | E4 **실효성** · FALSE_REVIEW | **active** | E4 **정책 권고** (overlap 폐기) |
+| [sprint-04-final-review.md](archive/sprint-04-final-review.md) | 1차 Sprint **실행 완료** 기록 | **superseded†** | @402 · +141 apply · **역사** |
 
 † 폐기가 아니라 **시점 한정 아카이브** — 본 reconciliation이 **superseded 관계** 정의.
 
@@ -59,7 +61,7 @@
 | [project-status-snapshot.md](project-status-snapshot.md) | L0 — gate·coverage **운영** |
 | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) | Rule **초안** (B-3) — E4는 B-5와 **정책 충돌** |
 | [sprint-04-charter.md](sprint-04-charter.md) | Charter **@402** — 수치 **구식** |
-| [doc-inventory-externalid.md](doc-inventory-externalid.md) | 문서 인벤토리 |
+| [doc-inventory-externalid.md](archive/doc-inventory-externalid.md) | 문서 인벤토리 |
 
 ---
 
@@ -151,8 +153,8 @@
 | 출처 | E4 정책 |
 |------|---------|
 | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) (B-3 초안) | token overlap **< 0.15** → **REVIEW** |
-| [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) (B-4) | 위 규칙 **적용 시** 15/15 발화 · AUTO **0** |
-| [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) (B-5) | overlap **단독 유지 비권고** · 교차게임 사전 **only** 권고 |
+| [sprint-04-e1-post-gate-audit.md](archive/sprint-04-e1-post-gate-audit.md) (B-4) | 위 규칙 **적용 시** 15/15 발화 · AUTO **0** |
+| [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md) (B-5) | overlap **단독 유지 비권고** · 교차게임 사전 **only** 권고 |
 
 | 충돌 유형 | 판정 |
 |-----------|------|
@@ -277,15 +279,15 @@
 
 ### 8.2 잔여 15건·품질·Gate
 
-1. [sprint-04-e1-audit.md](sprint-04-e1-audit.md)  
-2. [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md)  
+1. [sprint-04-e1-audit.md](archive/sprint-04-e1-audit.md)  
+2. [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md)  
 3. [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) *(초안 · E4 주의)*  
-4. [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md)  
-5. [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md)
+4. [sprint-04-e1-post-gate-audit.md](archive/sprint-04-e1-post-gate-audit.md)  
+5. [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md)
 
 ### 8.3 1차 Sprint 역사
 
-1. [sprint-04-final-review.md](sprint-04-final-review.md) *(superseded · @402)*
+1. [sprint-04-final-review.md](archive/sprint-04-final-review.md) *(superseded · @402)*
 
 ---
 

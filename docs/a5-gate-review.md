@@ -2,7 +2,7 @@
 
 > **목적:** H1~H5 중 **어떤 가설이 A5 진행 여부를 결정하는 Gate인지** 정의.  
 > **질문:** *「A5에서 무엇이 정말 통과되어야 하는가?」*  
-> **전제:** [a5-hypothesis-map.md](a5-hypothesis-map.md) · [a5-discovery-charter.md](a5-discovery-charter.md) · A5 **Deferred**  
+> **전제:** [a5-hypothesis-map.md](a5-hypothesis-map.md) · [a5-discovery-charter.md](archive/a5-discovery-charter.md) · A5 **Deferred**  
 > **기준일:** 2026-06-09
 
 **금지:** 가설 **검증** · 실험 설계 · 수치 **추정**.
@@ -172,7 +172,7 @@ A5 성공  IF  S1 AND S2 AND S3 AND S4
 | S1 **미충족** | **Unsupported** |
 | S2~S4 **미충족** | **Deferred** 연장 또는 **조건부 Supported** — Verification Charter에서 **수치·범위** 확정 |
 
-**50k 전량 달성**은 A5 Discovery **비목표** — 성공은 **경로·운영 가능성** 기각 아님 ([a5-discovery-charter.md](a5-discovery-charter.md) X8).
+**50k 전량 달성**은 A5 Discovery **비목표** — 성공은 **경로·운영 가능성** 기각 아님 ([a5-discovery-charter.md](archive/a5-discovery-charter.md) X8).
 
 ---
 
@@ -221,7 +221,7 @@ Discovery 합의 (M1)
 | [a5-gate-review.md](a5-gate-review.md) | **본 문서** — Gate 정의 |
 | [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 |
 | [a5-question-register.md](a5-question-register.md) | O1~O14 |
-| [a5-discovery-charter.md](a5-discovery-charter.md) | A5 범위 |
+| [a5-discovery-charter.md](archive/a5-discovery-charter.md) | A5 범위 |
 
 ---
 

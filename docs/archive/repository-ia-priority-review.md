@@ -1,7 +1,7 @@
 # Repository Information Architecture — 우선순위 평가
 
 > **목적:** Sprint 04 **종료 전** 문서 체계 정리 **우선순위 확정**  
-> **근거:** [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) · [rule-id-collision-analysis.md](rule-id-collision-analysis.md) · [doc-inventory-externalid.md](doc-inventory-externalid.md)  
+> **근거:** [sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md) · [rule-id-collision-analysis.md](../rule-id-collision-analysis.md) · [doc-inventory-externalid.md](doc-inventory-externalid.md)  
 > **기준일:** 2026-06-09 · Registry **430** · externalId **46.74%**
 
 **금지 준수:** 수정 · rename · ADR · 구현 **없음** — **평가만**
@@ -36,7 +36,7 @@
 
 ### 개요
 
-`E1`~`E5`가 **attach gate(EG)** · **Sprint cohort(SC)** · **enrich gate(CG/EN)** 에 **동시 사용** ([rule-id-collision-analysis.md](rule-id-collision-analysis.md)). 추천: **EG1~EG5** · **SC1~SC4** · enrich는 **EN1~EN8**(선택).
+`E1`~`E5`가 **attach gate(EG)** · **Sprint cohort(SC)** · **enrich gate(CG/EN)** 에 **동시 사용** ([rule-id-collision-analysis.md](../rule-id-collision-analysis.md)). 추천: **EG1~EG5** · **SC1~SC4** · enrich는 **EN1~EN8**(선택).
 
 | 차원 | 평가 |
 |------|------|
@@ -65,7 +65,7 @@
 
 ### 개요
 
-**04-R1**(@402 · `final-review` · G2 달성) vs **04-R2**(@430 · Phase B · apply 보류) **이중 서사** ([sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md)).
+**04-R1**(@402 · `final-review` · G2 달성) vs **04-R2**(@430 · Phase B · apply 보류) **이중 서사** ([sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md)).
 
 | 차원 | 평가 |
 |------|------|
@@ -90,7 +90,7 @@
 
 ### 개요
 
-[docs/README.md](README.md) Phase 2에 **`sprint-04-final-review`만** 링크 · Phase B **5건·reconciliation·IA 조사 미등록** · @430 snapshot은 운영 섹션에만 존재.
+[docs/README.md](../README.md) Phase 2에 **`sprint-04-final-review`만** 링크 · Phase B **5건·reconciliation·IA 조사 미등록** · @430 snapshot은 운영 섹션에만 존재.
 
 | 차원 | 평가 |
 |------|------|
@@ -114,7 +114,7 @@
 
 ### 개요
 
-[coverage-quality-governance.md](coverage-quality-governance.md)(정의) · [phase2-governance-review.md](phase2-governance-review.md)(요약) · [quality-gate-mvp.md](quality-gate-mvp.md)(titles.en) · attach gate **분산** · enrich **E1–E8** vs attach **E1–E5** **숫자 충돌**.
+[coverage-quality-governance.md](../coverage-quality-governance.md)(정의) · [phase2-governance-review.md](../phase2-governance-review.md)(요약) · [quality-gate-mvp.md](../quality-gate-mvp.md)(titles.en) · attach gate **분산** · enrich **E1–E8** vs attach **E1–E5** **숫자 충돌**.
 
 | 차원 | 평가 |
 |------|------|
@@ -136,7 +136,7 @@
 
 ### 개요
 
-[externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) **초안** · E4 overlap vs [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) **비권고** · B-3~B-5 측정 **미동기화** · 구현 **없음**.
+[externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) **초안** · E4 overlap vs [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) **비권고** · B-3~B-5 측정 **미동기화** · 구현 **없음**.
 
 | 차원 | 평가 |
 |------|------|

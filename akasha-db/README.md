@@ -2,31 +2,27 @@
 
 AKASHA 앱의 **글로벌 작품 메타데이터 사전** (Tier 1 Registry).
 
-**현재:** Steam v1 엄선 **~410작** · v3 슬러그 샤드  
+**현재:** Steam v1 엄선 **430작** · **v4** — `wk_` 영구 ID · 해시 샤드 (351개)  
 **장기:** 세상의 모든 작품 사전 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
 
-## 구조 (v3 — 샤딩)
+## 구조 (v4 — 해시 샤딩)
 
 > 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md) · 스키마: [SCHEMA.md](SCHEMA.md)
 
 ```
 akasha-db/
-├── manifest.json         # 샤드 카탈로그
+├── manifest.json         # 샤드 카탈로그 (sha256 · entryCount)
 ├── search_index.json     # 경량 검색 인덱스 (자동 생성)
-├── legacy_aliases.json   # 구 work_id 호환 (v4에서 wk_ 매핑 확장)
+├── id_registry.json      # wk_ 발급 대장
+├── legacy_aliases.json   # 구 슬러그 work_id → wk_ 매핑
+├── franchise_groups.json # IP 1카드 프랜차이즈 그룹
 ├── works_registry.json   # (레거시) v1 단일 JSON — 하위 호환용
-└── shards/
-    ├── manga/
-    ├── animation/
-    ├── game/
-    ├── book/
-    ├── movie/
-    ├── drama/
-    └── webtoon/
+├── contributions/        # add/fix 기여 큐 (status.json)
+└── shards/{category}/{hh}.json   # hash(wk_)%256 — manga·animation·game·book·movie·drama·webtoon
 ```
 
-> **v3:** `titles` / `aliases` / `externalIds` / `posterPath` / `searchTokens`.  
-> **v4 (계획):** `wk_` ID · `hash(wk_)%256` 샤드 — 슬러그 샤드 deprecated.
+> **v4:** `wk_000000042`(9자리 불변 ID) · `titles` / `aliases` / `externalIds` / `posterPath` / `searchTokens`.  
+> 구 슬러그 ID(`sub_manga_one-piece_1997` 등)는 `legacy_aliases.json`으로만 해석 — 신규 발급 금지.
 
 **API bulk 금지** — 확장은 수동 PR + (장기) Registry Pipeline + 사용자 직접 등록.  
 포스터: **`posterPath` URL만** (이미지 파일 커밋 금지).

@@ -7,7 +7,7 @@
 
 **금지:** Pilot **실행** · 실험 설계 · 수치 **추정**.
 
-**판정 범위:** Discovery·Charter·Gate **문서 정합성** 및 [a5-gate-review.md](a5-gate-review.md) **M1~M5** 전제 충족 여부. O1~O14 **답**은 본 판정 **대상 아님**.
+**판정 범위:** Discovery·Charter·Gate **문서 정합성** 및 [a5-gate-review.md](../a5-gate-review.md) **M1~M5** 전제 충족 여부. O1~O14 **답**은 본 판정 **대상 아님**.
 
 ---
 
@@ -18,7 +18,7 @@
 A5 Discovery 산출물이 **완결**되었고, Gate·Pilot 범위·성공·중단 조건이 **문서 간 정합**한다. 구조 변경·Gate 충돌·조건 불명확으로 인한 **NO-GO 사유 없음**.  
 Open Question O1~O14 **미답**은 Discovery **예상 상태**이며 Pilot **검증 대상**이다.
 
-**Pilot 착수**는 본 판정으로 **허용**된다. **실측·배치**는 [a5-pilot-charter.md](a5-pilot-charter.md) 및 후속 **A5 Verification Charter** 범위에서만 진행한다 (본 문서는 **실행 승인 아님**).
+**Pilot 착수**는 본 판정으로 **허용**된다. **실측·배치**는 [a5-pilot-charter.md](../a5-pilot-charter.md) 및 후속 **A5 Verification Charter** 범위에서만 진행한다 (본 문서는 **실행 승인 아님**).
 
 ---
 
@@ -29,10 +29,10 @@ Open Question O1~O14 **미답**은 Discovery **예상 상태**이며 Pilot **검
 | 산출물 | 문서 | 점검 항목 | 결과 |
 |--------|------|-----------|:----:|
 | **Charter** | [a5-discovery-charter.md](a5-discovery-charter.md) | P1~P5 · 4축 · O1~O14 · 비목표 X1~X9 | **PASS** |
-| **Question Register** | [a5-question-register.md](a5-question-register.md) | O1~O14 전수 · P0~P3 · Pilot/Scale 시점 | **PASS** |
-| **Hypothesis Map** | [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 · O 매핑 누락·중복 없음 · 의존 그래프 | **PASS** |
-| **Gate Review** | [a5-gate-review.md](a5-gate-review.md) | Critical/Supporting/Informational · M1~M5 · S1~S5 · Stop/Pause/Continue | **PASS** |
-| **Pilot Charter** | [a5-pilot-charter.md](a5-pilot-charter.md) | Pilot 목적·범위·비목표 · Gate 연결 · 성공·중단 | **PASS** |
+| **Question Register** | [a5-question-register.md](../a5-question-register.md) | O1~O14 전수 · P0~P3 · Pilot/Scale 시점 | **PASS** |
+| **Hypothesis Map** | [a5-hypothesis-map.md](../a5-hypothesis-map.md) | H1~H5 · O 매핑 누락·중복 없음 · 의존 그래프 | **PASS** |
+| **Gate Review** | [a5-gate-review.md](../a5-gate-review.md) | Critical/Supporting/Informational · M1~M5 · S1~S5 · Stop/Pause/Continue | **PASS** |
+| **Pilot Charter** | [a5-pilot-charter.md](../a5-pilot-charter.md) | Pilot 목적·범위·비목표 · Gate 연결 · 성공·중단 | **PASS** |
 
 ### 1.1 교차 참조
 
@@ -60,7 +60,7 @@ Open Question O1~O14 **미답**은 Discovery **예상 상태**이며 Pilot **검
 
 ## 2. Gate 정합성 검토
 
-[a5-gate-review.md](a5-gate-review.md) 기준. 세 문서(가설 맵 · Gate Review · Pilot Charter) **교차 검증**.
+[a5-gate-review.md](../a5-gate-review.md) 기준. 세 문서(가설 맵 · Gate Review · Pilot Charter) **교차 검증**.
 
 | 가설 | Gate | 유형 | 실패 판정 | Pilot 역할 | 정합 |
 |------|------|------|-----------|------------|:----:|
@@ -122,7 +122,7 @@ Open Question O1~O14 **미답**은 Discovery **예상 상태**이며 Pilot **검
 
 ## 4. 미해결 사항
 
-Open Question **미답**은 실패가 **아님** ([a5-question-register.md](a5-question-register.md)). Pilot 착수 **차단 사유 아님**.
+Open Question **미답**은 실패가 **아님** ([a5-question-register.md](../a5-question-register.md)). Pilot 착수 **차단 사유 아님**.
 
 ### 4.1 Pilot 전 필수 (Gate Review M1~M5)
 
@@ -149,7 +149,7 @@ Open Question **미답**은 실패가 **아님** ([a5-question-register.md](a5-q
 | P2 | O6 · O12 | H3 · H5 | G-IDENTITY · G-PLATFORM |
 | P3 | O9 · O10 · O11 · O13 | H4 · H3 · H5 | G-QUALITY · G-IDENTITY · G-PLATFORM |
 
-**판정:** P0는 Pilot **초기** 관측 — 착수 **전 답** 요구 **아님** ([a5-question-register.md](a5-question-register.md) §O1: Pilot 시점).
+**판정:** P0는 Pilot **초기** 관측 — 착수 **전 답** 요구 **아님** ([a5-question-register.md](../a5-question-register.md) §O1: Pilot 시점).
 
 ### 4.3 Scale 단계 이관
 
@@ -261,10 +261,10 @@ Open Question **미답**은 실패가 **아님** ([a5-question-register.md](a5-q
 |------|------|
 | [a5-pilot-readiness-review.md](a5-pilot-readiness-review.md) | **본 문서** — PILOT GO |
 | [a5-discovery-charter.md](a5-discovery-charter.md) | Discovery 범위 |
-| [a5-question-register.md](a5-question-register.md) | O1~O14 |
-| [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 |
-| [a5-gate-review.md](a5-gate-review.md) | Gate · M/S 조건 |
-| [a5-pilot-charter.md](a5-pilot-charter.md) | Pilot 범위 |
+| [a5-question-register.md](../a5-question-register.md) | O1~O14 |
+| [a5-hypothesis-map.md](../a5-hypothesis-map.md) | H1~H5 |
+| [a5-gate-review.md](../a5-gate-review.md) | Gate · M/S 조건 |
+| [a5-pilot-charter.md](../a5-pilot-charter.md) | Pilot 범위 |
 
 ---
 

@@ -45,11 +45,11 @@
 | 파일 | 의미 | 상태 | externalId gate 충돌 |
 |------|------|:----:|:--------------------:|
 | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) | Rule E1~E5 정의 · BLOCK/REVIEW | **draft** | **정의 원본** |
-| [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) | Gate E1~E5 시뮬레이션 · AUTO/REVIEW/BLOCK | **active** (측정) | — |
-| [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) | **Gate E4** 실효성 · FALSE_REVIEW 7 | **active** (분석) | — |
+| [sprint-04-e1-post-gate-audit.md](archive/sprint-04-e1-post-gate-audit.md) | Gate E1~E5 시뮬레이션 · AUTO/REVIEW/BLOCK | **active** (측정) | — |
+| [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md) | **Gate E4** 실효성 · FALSE_REVIEW 7 | **active** (분석) | — |
 | [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) | 3-way E1 대조표 · rename 권고 | **active** (메타) | — |
-| [doc-inventory-externalid.md](doc-inventory-externalid.md) | Rule ID 충돌 인벤토리 | **active** (메타) | — |
-| [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) | 대부분 **SC** 「E1 경로」·B-5에서 **EG E1/E2** 인용 | **active** | **혼용** |
+| [doc-inventory-externalid.md](archive/doc-inventory-externalid.md) | Rule ID 충돌 인벤토리 | **active** (메타) | — |
+| [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md) | 대부분 **SC** 「E1 경로」·B-5에서 **EG E1/E2** 인용 | **active** | **혼용** |
 | `tool/coverage_sprint_04_e1_post_gate.dart` | `'E1'`…`'E5'` triggeredRules JSON | **active** (측정) | — |
 
 ### 2.2 SC — Sprint 04 cohort / Economics (`E1`~`E4`)
@@ -59,12 +59,12 @@
 | [sprint-04-charter.md](sprint-04-charter.md) | E1 Steam · E2 TMDB · E3 잔여 · E4 초과 | **active**† | **E1·E2·E3·E4** |
 | [externalid-economics-plan.md](externalid-economics-plan.md) | Economics tier E1~E4 표 | **active**† | **E1~E4** |
 | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) | E1/E2 cohort 수 · 예상 coverage | **active** | **E1·E2** |
-| [sprint-04-final-review.md](sprint-04-final-review.md) | E1/E2 **배치** apply 110+31 | **superseded** | **E1·E2** |
-| [sprint-04-e1-audit.md](sprint-04-e1-audit.md) | **E1 Steam cohort** 15건 감사 | **active** | **E1‡** |
-| [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) | 「E1 attach 경로」poster direct | **active** | **E1‡** |
+| [sprint-04-final-review.md](archive/sprint-04-final-review.md) | E1/E2 **배치** apply 110+31 | **superseded** | **E1·E2** |
+| [sprint-04-e1-audit.md](archive/sprint-04-e1-audit.md) | **E1 Steam cohort** 15건 감사 | **active** | **E1‡** |
+| [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md) | 「E1 attach 경로」poster direct | **active** | **E1‡** |
 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) | Sprint 04 **E1** ≤125 · spot-check 표 | **active** | **E1·E2** |
-| [sprint-04-readiness-review.md](sprint-04-readiness-review.md) | Economics 검증 행 E1~E4 + cohort E1/E2 체크리스트 | **active** (historical) | **E1~E4** |
-| [phase2-final-review.md](phase2-final-review.md) | E2+E1 poster-priority 실측 | **active** (동결) | **E1·E2** |
+| [sprint-04-readiness-review.md](archive/sprint-04-readiness-review.md) | Economics 검증 행 E1~E4 + cohort E1/E2 체크리스트 | **active** (historical) | **E1~E4** |
+| [phase2-final-review.md](archive/phase2-final-review.md) | E2+E1 poster-priority 실측 | **active** (동결) | **E1·E2** |
 | `tool/coverage_sprint_04_baseline.dart` | cohort `'E1'`/`'E2'` JSON 키 | **active** | **E1·E2** |
 | `tool/coverage_sprint_04_external_id.dart` | 주석·phase **E1 Steam / E2 TMDB** | **active** | **E1·E2** |
 | `tool/coverage_sprint_04_e1_audit.dart` | cohort `'E1 Steam'` | **active** | **E1‡** |
@@ -83,9 +83,9 @@
 
 | 파일 | 의미 | 상태 | externalId gate 충돌 |
 |------|------|:----:|:--------------------:|
-| [a5-discovery-charter.md](a5-discovery-charter.md) | §2 Economics **E1**~**E4** 가정 | **동결** | 숫자만 (의미 독립) |
-| [a5-operational-decisions.md](a5-operational-decisions.md) | 본문 **E2·E3** Discovery 참조 | **active** | 낮음 |
-| [a5-pilot-launch-review.md](a5-pilot-launch-review.md) | **E2·E3** 참조 | **동결** | 낮음 |
+| [a5-discovery-charter.md](archive/a5-discovery-charter.md) | §2 Economics **E1**~**E4** 가정 | **동결** | 숫자만 (의미 독립) |
+| [a5-operational-decisions.md](archive/a5-operational-decisions.md) | 본문 **E2·E3** Discovery 참조 | **active** | 낮음 |
+| [a5-pilot-launch-review.md](archive/a5-pilot-launch-review.md) | **E2·E3** 참조 | **동결** | 낮음 |
 | [a5-verification-charter.md](a5-verification-charter.md) | 후보 **E1·E3** | **active** | 낮음 |
 
 ### 2.5 A5S — A5 Scale 관측 (`E1`~`E5`)

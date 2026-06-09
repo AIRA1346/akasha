@@ -2,7 +2,7 @@
 
 > **목적:** A5 Discovery **종료 후** Pilot 단계가 **무엇을 검증해야 하는지** 정의.  
 > **질문:** *「Pilot에서 H1~H5 중 실제로 무엇을 관측·판정하는가?」*  
-> **전제:** [a5-discovery-charter.md](a5-discovery-charter.md) · [a5-gate-review.md](a5-gate-review.md) · [a5-hypothesis-map.md](a5-hypothesis-map.md) · Phase 2 **COMPLETE** (402)  
+> **전제:** [a5-discovery-charter.md](archive/a5-discovery-charter.md) · [a5-gate-review.md](a5-gate-review.md) · [a5-hypothesis-map.md](a5-hypothesis-map.md) · Phase 2 **COMPLETE** (402)  
 > **기준일:** 2026-06-09
 
 **금지:** Pilot **실행** · 실험 설계 · **수치 결정** · **구현 계획**.
@@ -31,7 +31,7 @@
 Pilot은 A5 가정 — *Contribution 없이 Maintainer + 반자동 Import + Expansion Pipeline만으로 50k까지 **도달·운영 가능한가?*** — 에 대해 **실측 가능한 첫 관문**이다.
 
 Discovery가 **「무엇을 증명해야 하는가」** 를 정의했다면, Pilot은 **「G1 경로에서 그 증명이 성립하는지 관측한다」**.  
-50k **전량 달성**이나 **G2 throughput 확정**은 Pilot 목적이 **아니다** ([a5-discovery-charter.md](a5-discovery-charter.md) X8 · [a5-question-register.md](a5-question-register.md) Scale 시점).
+50k **전량 달성**이나 **G2 throughput 확정**은 Pilot 목적이 **아니다** ([a5-discovery-charter.md](archive/a5-discovery-charter.md) X8 · [a5-question-register.md](a5-question-register.md) Scale 시점).
 
 ### 1.2 H1~H5별 Pilot 검증 역할
 
@@ -63,10 +63,10 @@ Discovery가 **「무엇을 증명해야 하는가」** 를 정의했다면, Pil
 
 | 축 | Pilot 범위 (구조만) |
 |----|---------------------|
-| **Data Scale** | **G1(5k) 경로** — Maintainer · 수동 PR · merge · Expansion **기존 파이프라인** 소량 관측 ([a5-discovery-charter.md](a5-discovery-charter.md) §3.1) |
-| **Coverage Scale** | Pilot 볼륨에서 **titles.en · zh · externalId** · stub 희석 **신호** ([a5-discovery-charter.md](a5-discovery-charter.md) §3.2) |
-| **Governance Scale** | Phase 2 **기존** `quality_gate` · `coverage_dashboard` · SW1 · URV · Release Block **재사용** ([a5-discovery-charter.md](a5-discovery-charter.md) §3.3) |
-| **Tooling Scale** | **기존** `registry_builder` · shard · manifest · Sprint Economics runner — **402 이후 확장 관측** ([a5-discovery-charter.md](a5-discovery-charter.md) §3.4) |
+| **Data Scale** | **G1(5k) 경로** — Maintainer · 수동 PR · merge · Expansion **기존 파이프라인** 소량 관측 ([a5-discovery-charter.md](archive/a5-discovery-charter.md) §3.1) |
+| **Coverage Scale** | Pilot 볼륨에서 **titles.en · zh · externalId** · stub 희석 **신호** ([a5-discovery-charter.md](archive/a5-discovery-charter.md) §3.2) |
+| **Governance Scale** | Phase 2 **기존** `quality_gate` · `coverage_dashboard` · SW1 · URV · Release Block **재사용** ([a5-discovery-charter.md](archive/a5-discovery-charter.md) §3.3) |
+| **Tooling Scale** | **기존** `registry_builder` · shard · manifest · Sprint Economics runner — **402 이후 확장 관측** ([a5-discovery-charter.md](archive/a5-discovery-charter.md) §3.4) |
 
 ### 2.2 Open Question — Pilot 해결 대상
 
@@ -259,7 +259,7 @@ Pilot 성공  IF  S1 AND S2
 | 문서 | 역할 |
 |------|------|
 | [a5-pilot-charter.md](a5-pilot-charter.md) | **본 문서** — Pilot 범위 |
-| [a5-discovery-charter.md](a5-discovery-charter.md) | Discovery 범위·P1~P5 |
+| [a5-discovery-charter.md](archive/a5-discovery-charter.md) | Discovery 범위·P1~P5 |
 | [a5-gate-review.md](a5-gate-review.md) | Gate · 성공·중단 기준 |
 | [a5-hypothesis-map.md](a5-hypothesis-map.md) | H1~H5 |
 | [a5-question-register.md](a5-question-register.md) | O1~O14 · Pilot/Scale 시점 |

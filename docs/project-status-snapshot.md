@@ -123,12 +123,12 @@
 
 | 순서 | 상태 | 작업 |
 |:----:|:----:|------|
-| 1 | **done** | Git 커밋 · push (Scale 7–11) |
-| 2 | **done** | `project-status-snapshot` @430 갱신 |
-| 3 | **done** | `docs/README` SD4·도구 인덱스 |
-| 4 | **hold** | SD2.6 — insert 중단 → **2026-07-09** |
-| 5 | **prep** | O3 checkpoint 도구 · hold 관측 **Scale 12** |
-| 6 | **next** | **2026-07-09** O3 rate vs G2 |
+| 1 | **done** | externalId **G2 50% 달성** — [sprint-04-e1-resolution.md](sprint-04-e1-resolution.md) |
+| 2 | **done** | **Phase E** — akasha-db 원격 push (CDN @430 현행화) |
+| 3 | **done** | 문서 IA 정리 — `docs/archive/` 분리 · 인덱스 재작성 |
+| 4 | **next** | **M2** Steam 제출 준비 — Steamworks 등록·스토어 페이지 ([ROADMAP](../ROADMAP.md)) |
+| 5 | **hold** | SD2.6 — insert 중단 → **2026-07-09** O3 rate vs G2 |
+| 6 | **next** | Sprint 05 우선순위 확정 ([후보 백로그](sprint-05-candidate-backlog.md)) |
 | 7 | **next** | 5k 마일스톤 — O12·O8 재관측 |
 
 ---
@@ -144,3 +144,4 @@
 | 2026-06-09 | Scale 12 — hold 관측 · O3 prep · CI `scale_hold_check` |
 | 2026-06-10 | 검색 정규화 구분자 처리 · Sprint 04 R1/R2 SSOT 문서 정리 push |
 | 2026-06-10 | **E1 15건 resolution — G2 50.00% 달성** ([sprint-04-e1-resolution.md](sprint-04-e1-resolution.md)) · 번들 테스트 핀 430 갱신 |
+| 2026-06-10 | **Phase E** akasha-db push (CDN @430) · 문서 IA 정리 (`archive/` 21건·인덱스 재작성·v4 표기 현행화) |

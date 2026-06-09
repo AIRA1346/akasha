@@ -2,7 +2,7 @@
 
 > **단계:** Sprint 04 Phase B-5 (E4 규칙 **분석** · apply **아님**)  
 > **대상:** E1 Steam candidate **15건** (E4 발화 **15/15**) · 심층 판정 **REVIEW 7건** (Phase B LOW)  
-> **근거:** [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) · [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md)  
+> **근거:** [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) · [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md)  
 > **기준일:** 2026-06-09 · Registry **430 works**
 
 **금지 준수:** 구현 **금지** · apply **금지** · Registry **수정 없음** · **문서만** 작성

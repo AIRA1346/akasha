@@ -1,6 +1,6 @@
 # Phase 1 Final Review — Baseline v1 검증 종료
 
-> **역할:** [Baseline v1](baseline-v1.md) 검증 단계(Phase 1) **종료 보고서**.  
+> **역할:** [Baseline v1](../baseline-v1.md) 검증 단계(Phase 1) **종료 보고서**.  
 > **기준일:** 2026-06-09 · Registry **402작**  
 > **다음 단계:** 구조 설계·신규 ADR가 아니라 **Coverage Improvement Program** (운영·enrich).
 
@@ -13,7 +13,7 @@
 | URV-A | `tool/urv_a_validation.dart` | `universal_registry_validation/urv_a_report.json` |
 | Coverage KPI | `tool/coverage_dashboard.dart` | `coverage_dashboard/coverage_snapshot.json` |
 
-**근거 문서:** [assumption-register.md](assumption-register.md) · [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md)
+**근거 문서:** [assumption-register.md](../assumption-register.md) · [canonical-identity-coverage-dashboard.md](../canonical-identity-coverage-dashboard.md)
 
 ---
 
@@ -160,7 +160,7 @@ Phase 1의 핵심 결론은 다음과 같다.
 
 ## 5. 향후 3개월 우선순위
 
-> Phase 2 = **Coverage Improvement Program** — [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md) 운영.
+> Phase 2 = **Coverage Improvement Program** — [canonical-identity-coverage-dashboard.md](../canonical-identity-coverage-dashboard.md) 운영.
 
 | 순위 | 작업 | 목표 (3개월) | 근거 |
 |:----:|------|--------------|------|

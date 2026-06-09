@@ -2,7 +2,7 @@
 
 > **목적:** Sprint 05 계획 수립 **전** 후보 목록 정리  
 > **기준일:** 2026-06-09 · Registry **430** · externalId **46.74%**  
-> **근거:** [sprint-04-closure-review.md](sprint-04-closure-review.md) · [repository-ia-priority-review.md](repository-ia-priority-review.md) · [ROADMAP.md](../ROADMAP.md)
+> **근거:** [sprint-04-closure-review.md](archive/sprint-04-closure-review.md) · [repository-ia-priority-review.md](archive/repository-ia-priority-review.md) · [ROADMAP.md](../ROADMAP.md)
 
 **금지 준수:** 계획 **확정 없음** · **우선순위 결정 없음** · 신규 정책·ADR **없음** — **후보만**
 
@@ -51,7 +51,7 @@
 
 | 차원 | 내용 |
 |------|------|
-| **내용** | 잔여 Steam cohort **15건** — HIGH 4 [disposition](sprint-04-high-risk-disposition.md) 실행 · LOW 7 **인적 REVIEW** · partial apply **결정·실행** |
+| **내용** | 잔여 Steam cohort **15건** — HIGH 4 [disposition](archive/sprint-04-high-risk-disposition.md) 실행 · LOW 7 **인적 REVIEW** · partial apply **결정·실행** |
 | **예상 효과** | @430 G2 **+0~+7** (LOW만 시 **208/430 = 48.37%**) · duplicate·identity **오염 방지** |
 | **난이도** | **중** — Registry **선별 patch** · 144·270·277 **수동** · gate **문서 준수** |
 | **선행조건** | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) (E4 B-5) · HIGH disposition **승인** · `quality_gate` · SW1 · URV **재실행** |

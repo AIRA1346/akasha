@@ -2,7 +2,7 @@
 
 > **목적:** Assumption **A5** 검증 **범위를 정의**하기 위한 Discovery Charter.  
 > **질문:** *「Contribution 없이도 50k까지 도달·운영 가능한가?」* — **무엇을 증명해야 하는가?**  
-> **전제:** [assumption-register.md](assumption-register.md) A5 **Deferred** · [phase2-summary.md](phase2-summary.md) **PHASE 2 COMPLETE**  
+> **전제:** [assumption-register.md](../assumption-register.md) A5 **Deferred** · [phase2-summary.md](../phase2-summary.md) **PHASE 2 COMPLETE**  
 > **기준일:** 2026-06-09 · Registry **402작** (실측 기준선)
 
 **금지:** A5 **검증 실행 없음** · 새 실험 · 새 구조 변경 · 새 구현 · 실행 계획.
@@ -26,11 +26,11 @@
 
 ### 1.1 원문 가정 (A5)
 
-[assumption-register.md](assumption-register.md):
+[assumption-register.md](../assumption-register.md):
 
 > **Contribution 없이도 50k까지 도달 가능하다** — 50k까지 사용자 add 미개방 · Maintainer + 반자동 Import + Expansion Pipeline.
 
-**성장 맥락** ([contribution-model-strategy.md](contribution-model-strategy.md) · [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md)):
+**성장 맥락** ([contribution-model-strategy.md](../contribution-model-strategy.md) · [scale-5k-risk-analysis.md](../scale-5k-risk-analysis.md)):
 
 | 구간 | 공급 모델 (문서 가정) |
 |------|----------------------|
@@ -253,11 +253,11 @@ A5 Discovery·후속 검증 Charter **포함하지 않음**.
 | 문서 | 역할 |
 |------|------|
 | [a5-discovery-charter.md](a5-discovery-charter.md) | **본 문서** — A5 검증 범위 Discovery |
-| [assumption-register.md](assumption-register.md) | A5 정의 · Deferred |
-| [phase2-summary.md](phase2-summary.md) | 402 기준선 |
+| [assumption-register.md](../assumption-register.md) | A5 정의 · Deferred |
+| [phase2-summary.md](../phase2-summary.md) | 402 기준선 |
 | [phase2-final-review.md](phase2-final-review.md) | A5 Deferred 판정 |
-| [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md) | 5k 공급·리스크 |
-| [contribution-model-strategy.md](contribution-model-strategy.md) | R0→R1→R2 공급 모델 |
+| [scale-5k-risk-analysis.md](../scale-5k-risk-analysis.md) | 5k 공급·리스크 |
+| [contribution-model-strategy.md](../contribution-model-strategy.md) | R0→R1→R2 공급 모델 |
 
 ---
 

@@ -3,7 +3,7 @@
 > **단계:** Sprint 04-R2 Phase C — E1 잔여 15건 disposition **실행**  
 > **실행일:** 2026-06-10 · Registry **430 works**  
 > **도구:** `dart run tool/coverage_sprint_04_e1_resolution.dart --apply`  
-> **선행:** [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) · [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md)  
+> **선행:** [sprint-04-e1-post-gate-audit.md](archive/sprint-04-e1-post-gate-audit.md) · [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md)  
 > **승인:** REVIEW 7건 일괄 · 스카이림 분리 정정 · 니케 포스터 제거 — maintainer 승인 (2026-06-10)
 
 ---
@@ -21,7 +21,7 @@
 
 ## 1. 외부 검증 — 내부 disposition과의 차이
 
-apply 전 Steam 실데이터 검증에서 [disposition](sprint-04-high-risk-disposition.md)의 가정 3건이 정정됨:
+apply 전 Steam 실데이터 검증에서 [disposition](archive/sprint-04-high-risk-disposition.md)의 가정 3건이 정정됨:
 
 | work | 내부 가정 | 실측 (2026-06-10) | 영향 |
 |------|----------|-------------------|------|
@@ -76,7 +76,7 @@ apply 전 Steam 실데이터 검증에서 [disposition](sprint-04-high-risk-disp
 
 | # | 항목 | 비고 |
 |---|------|------|
-| 1 | E4 범위 재정의 | post-gate 감사 권고 — 한·영 로컬라이즈 false REVIEW 100% ([sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md)) |
+| 1 | E4 범위 재정의 | post-gate 감사 권고 — 한·영 로컬라이즈 false REVIEW 100% ([sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md)) |
 | 2 | 266·277 poster 재확보 | Steam library 자산 부재 — 대체 소스 검토 시 |
 | 3 | A5 sub_* 스텁 노출 | webtoon 필터에 Scale probe 스텁 3건 노출 — Steam v1 전 사용자 노출 정책 검토 |
 

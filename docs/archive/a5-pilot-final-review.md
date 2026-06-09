@@ -2,7 +2,7 @@
 
 > **세션:** 2026-06-09  
 > **Registry:** 402 baseline → **410** (Pilot 종료 시점)  
-> **근거:** [a5-pilot-observation-log.md](a5-pilot-observation-log.md) · [a5-pilot-gate-decision-record.md](a5-pilot-gate-decision-record.md) · [a5-pilot-charter.md](a5-pilot-charter.md) §5.2 · [a5-gate-review.md](a5-gate-review.md) §5  
+> **근거:** [a5-pilot-observation-log.md](a5-pilot-observation-log.md) · [a5-pilot-gate-decision-record.md](a5-pilot-gate-decision-record.md) · [a5-pilot-charter.md](../a5-pilot-charter.md) §5.2 · [a5-gate-review.md](../a5-gate-review.md) §5  
 > **상태:** **최종 확정** — Pilot **종료** · Scale **준비 단계 전환**
 
 ---
@@ -140,7 +140,7 @@ H1 반복 공급 3회  →  dedupe 0 유지  →  H2 Continue (확인)
 
 ## 4. Pilot Success 여부
 
-**기준:** [a5-pilot-charter.md](a5-pilot-charter.md) §5.2
+**기준:** [a5-pilot-charter.md](../a5-pilot-charter.md) §5.2
 
 ```
 Pilot 성공  IF  S1 AND S2
@@ -162,13 +162,13 @@ Pilot 성공  IF  S1 AND S2
 | Stop 발생 | **없음** |
 | Critical Gate 최종 | **H1·H2 Continue** |
 
-**주의:** Pilot 성공 ≠ A5 전체 **Supported** 선언. Assumption A5 **Supported**는 Gate Review §5 **S1~S4 전부 Scale에서 확정** 후 판정 ([a5-pilot-charter.md](a5-pilot-charter.md) §5.2).
+**주의:** Pilot 성공 ≠ A5 전체 **Supported** 선언. Assumption A5 **Supported**는 Gate Review §5 **S1~S4 전부 Scale에서 확정** 후 판정 ([a5-pilot-charter.md](../a5-pilot-charter.md) §5.2).
 
 ---
 
 ## 5. Scale 단계 진입 가능 여부
 
-**기준:** [a5-pilot-charter.md](a5-pilot-charter.md) §6.4
+**기준:** [a5-pilot-charter.md](../a5-pilot-charter.md) §6.4
 
 | 조건 | 판정 |
 |------|:----:|

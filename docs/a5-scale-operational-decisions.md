@@ -4,7 +4,7 @@
 > **전제:** [a5-scale-plan.md](a5-scale-plan.md) · Pilot **동결** · Scale baseline **410작** (2026-06-09)  
 > **기준일:** 2026-06-09
 
-**출처:** [a5-operational-decisions.md](a5-operational-decisions.md) D1~D3 Scale 이관.
+**출처:** [a5-operational-decisions.md](archive/a5-operational-decisions.md) D1~D3 Scale 이관.
 
 ---
 

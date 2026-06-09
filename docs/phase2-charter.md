@@ -1,8 +1,8 @@
 # Phase 2 Charter — Coverage Improvement Program
 
 > **성격:** 운영 계획 문서 — **설계·아키텍처 문서가 아님**.  
-> **전제:** [Baseline v1](baseline-v1.md) **Validated through Phase 1** · [phase1-final-review.md](phase1-final-review.md)  
-> **Mid-Review:** [phase2-mid-review.md](phase2-mid-review.md) — Sprint 01~03 의사결정 기록  
+> **전제:** [Baseline v1](baseline-v1.md) **Validated through Phase 1** · [phase1-final-review.md](archive/phase1-final-review.md)  
+> **Mid-Review:** [phase2-mid-review.md](archive/phase2-mid-review.md) — Sprint 01~03 의사결정 기록  
 > **기준일:** 2026-06-09 · Registry **402작** (G1→G2 병행)
 
 ---
@@ -27,13 +27,13 @@ Phase 1 결론 — **검증 완료:**
 - 실패의 직접 원인은 **표면형 미부착** (MISSING_LOCALE / MISSING_TOKEN).
 - Phase 2 우선순위: **구조 설계 < Coverage KPI 운영**.
 
-**Mid-Review 이후 재정의 (Sprint 01~03):** Phase 2의 미해결 질문은 *「Coverage가 가능한가?」* 가 아니라 **「Coverage를 어떤 품질 관리 체계로 유지할 것인가?」** 에 가깝다. ([phase2-mid-review.md](phase2-mid-review.md) §Executive Summary)
+**Mid-Review 이후 재정의 (Sprint 01~03):** Phase 2의 미해결 질문은 *「Coverage가 가능한가?」* 가 아니라 **「Coverage를 어떤 품질 관리 체계로 유지할 것인가?」** 에 가깝다. ([phase2-mid-review.md](archive/phase2-mid-review.md) §Executive Summary)
 
 ---
 
 ## 1.1 현재 상태 (Sprint 01~03 · Mid-Review)
 
-> 근거: [phase2-mid-review.md](phase2-mid-review.md) · `tool/coverage_sprint_0*.dart`
+> 근거: [phase2-mid-review.md](archive/phase2-mid-review.md) · `tool/coverage_sprint_0*.dart`
 
 ### 검증 완료 (Mid-Review 합의)
 
@@ -67,7 +67,7 @@ Phase 1 결론 — **검증 완료:**
 | **회귀** | SW1 recall@10 | 100% | **100%** | ≥ 100% |
 | **회귀** | URV convergence | 100% | **100%** | ≥ 100% |
 
-**A3:** **Supported (Operational Dependency)** 유지 — 최신 근거 [assumption-register.md](assumption-register.md) §10 · [phase2-mid-review.md](phase2-mid-review.md) §5.
+**A3:** **Supported (Operational Dependency)** 유지 — 최신 근거 [assumption-register.md](assumption-register.md) §10 · [phase2-mid-review.md](archive/phase2-mid-review.md) §5.
 
 **다음 초점:** titles.en 연장이 아닌 **zh · externalId · composite Economics** + **auto enrich 품질 가드** (Sprint 04 재정의).
 
@@ -154,7 +154,7 @@ Phase 2는 **순수 운영·데이터 품질 개선** 단계이다. 아래는 **
 | **season** | 43.3% (anim+drama) | — | **60%** |
 | **externalId** | 14.9% | **~15%** | **G2 목표 50%** |
 
-**Economics:** Sprint 02 추정 [`coverage_sprint_02_economics.dart`](../tool/coverage_sprint_02_economics.dart) · Sprint 03 실측 [`coverage_sprint_03_titles_en.dart`](../tool/coverage_sprint_03_titles_en.dart) — [phase2-mid-review.md](phase2-mid-review.md) §4.
+**Economics:** Sprint 02 추정 [`coverage_sprint_02_economics.dart`](../tool/coverage_sprint_02_economics.dart) · Sprint 03 실측 [`coverage_sprint_03_titles_en.dart`](../tool/coverage_sprint_03_titles_en.dart) — [phase2-mid-review.md](archive/phase2-mid-review.md) §4.
 
 ### 4.3 회귀 지표 (품질 하락 방지)
 
@@ -163,7 +163,7 @@ Phase 2는 **순수 운영·데이터 품질 개선** 단계이다. 아래는 **
 | SW1-A recall@10 | **100%** | **≥ 100%** (Sprint 01 이후 하락 금지) |
 | URV-A query convergence | **100%** | **≥ 100%** (동일) |
 
-**A3:** **Supported (Operational Dependency)** — [assumption-register.md](assumption-register.md) §10 · [phase2-mid-review.md](phase2-mid-review.md) · KPI·품질 가드 유지 전제.
+**A3:** **Supported (Operational Dependency)** — [assumption-register.md](assumption-register.md) §10 · [phase2-mid-review.md](archive/phase2-mid-review.md) · KPI·품질 가드 유지 전제.
 
 ---
 
@@ -213,7 +213,7 @@ dart run tool/sw1_a_validation.dart
 §5 성공 조건 · §6 종료 조건 점검
 ```
 
-**우선 enrich 백로그** (Sprint 01~03 ✅ — [phase2-mid-review.md](phase2-mid-review.md)):
+**우선 enrich 백로그** (Sprint 01~03 ✅ — [phase2-mid-review.md](archive/phase2-mid-review.md)):
 
 1. ~~GAP panel 16건~~ ✅
 2. ~~Registry-wide titles.en → 90%~~ ✅ (Sprint 03: **91.5%** · 유지·회귀)
@@ -223,7 +223,7 @@ dart run tool/sw1_a_validation.dart
 6. **auto enrich 품질 가드** (TMDB fallback · CI)
 7. alias field · season (백로그)
 
-**Sprint 04 (재정의):** titles.en 연장 ❌ → **zh · externalId · composite Economics 검증** ([phase2-mid-review.md](phase2-mid-review.md) §7).
+**Sprint 04 (재정의):** titles.en 연장 ❌ → **zh · externalId · composite Economics 검증** ([phase2-mid-review.md](archive/phase2-mid-review.md) §7).
 
 ---
 
@@ -243,8 +243,8 @@ dart run tool/sw1_a_validation.dart
 
 | 문서 | Phase 2 역할 |
 |------|--------------|
-| [phase1-final-review.md](phase1-final-review.md) | Phase 1 종료 근거 |
-| **[phase2-mid-review.md](phase2-mid-review.md)** | **Sprint 01~03 의사결정 · Economics · Sprint 04 재정의** |
+| [phase1-final-review.md](archive/phase1-final-review.md) | Phase 1 종료 근거 |
+| **[phase2-mid-review.md](archive/phase2-mid-review.md)** | **Sprint 01~03 의사결정 · Economics · Sprint 04 재정의** |
 | [canonical-identity-coverage-dashboard.md](canonical-identity-coverage-dashboard.md) | KPI 정의·baseline |
 | [assumption-register.md](assumption-register.md) | A1–A6 판정 · §10 A3 최신 근거 |
 | [baseline-v1.md](baseline-v1.md) | 설계 불변 참조 |
@@ -259,4 +259,4 @@ dart run tool/sw1_a_validation.dart
 3. SW1 · URV · Coverage Dashboard는 **동일 실패의 다른 측정** — 통합 게이트.
 4. Phase 2 문서는 **운영 계획** — 아키텍처 제안·신규 ADR을 포함하지 않는다.
 5. **채우기 우선** — 설계 논의보다 Coverage Improvement Program 실행.
-6. **품질 관리 체계** — Coverage 가능성은 Sprint 01~03으로 확인됨; 이후는 KPI 유지·Economics·auto enrich QA가 운영 핵심 ([phase2-mid-review.md](phase2-mid-review.md)).
+6. **품질 관리 체계** — Coverage 가능성은 Sprint 01~03으로 확인됨; 이후는 KPI 유지·Economics·auto enrich QA가 운영 핵심 ([phase2-mid-review.md](archive/phase2-mid-review.md)).

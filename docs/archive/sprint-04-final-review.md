@@ -1,10 +1,10 @@
 # Sprint 04 Final Review — externalId G2 50%
 
 > **⛔ Superseded (운영 SSOT 아님)** — 본 문서는 **Sprint 04-R1** (Registry **402작** 기준) **1차 실행** 결과를 기록한다.  
-> **현재 운영 기준:** **Sprint 04-R2** — [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) · [sprint-04-baseline-report.md](sprint-04-baseline-report.md) (@430).
+> **현재 운영 기준:** **Sprint 04-R2** — [sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md) · [sprint-04-baseline-report.md](../sprint-04-baseline-report.md) (@430).
 
 > **목적:** Sprint 04 실행 결과를 정리하고 Phase 2 후속 GO/NO-GO를 판정한다.  
-> **범위:** externalId G2 50% — [sprint-04-charter.md](sprint-04-charter.md) · [sprint-04-readiness-review.md](sprint-04-readiness-review.md) 기준.  
+> **범위:** externalId G2 50% — [sprint-04-charter.md](../sprint-04-charter.md) · [sprint-04-readiness-review.md](sprint-04-readiness-review.md) 기준.  
 > **실행일:** 2026-06-09 · Registry **402작**
 
 ---

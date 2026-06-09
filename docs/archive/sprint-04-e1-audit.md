@@ -22,7 +22,7 @@
 
 **판정:** syntactic audit(기존 runner)은 15/15 **ok**였으나, **identity·중복·제목 오염** 관점에서 **4건 HIGH** — Phase B apply는 **HIGH 제외 partial** 또는 **선행 수정 후** 진행.
 
-**현재 externalId coverage (baseline):** **46.74%** (201/430) — [sprint-04-baseline-report.md](sprint-04-baseline-report.md)
+**현재 externalId coverage (baseline):** **46.74%** (201/430) — [sprint-04-baseline-report.md](../sprint-04-baseline-report.md)
 
 ---
 

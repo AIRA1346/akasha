@@ -1,10 +1,10 @@
 # externalId Quality Gate Rule Set — 초안
 
-> **Reviewed after Sprint 04 B-5** — E4는 [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) 실측 반영 (token overlap 단독 **폐기**).
+> **Reviewed after Sprint 04 B-5** — E4는 [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md) 실측 반영 (token overlap 단독 **폐기**).
 
 > **단계:** Sprint 04 Phase B-3 (규칙 정의 · **구현 금지**)  
 > **목적:** externalId attach **파이프라인 이전**에 차단 가능한 오류를 **문서화**  
-> **근거:** [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) HIGH 4건 · [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md)  
+> **근거:** [sprint-04-high-risk-disposition.md](archive/sprint-04-high-risk-disposition.md) HIGH 4건 · [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md)  
 > **기준일:** 2026-06-09 · Registry **430 works** · externalId coverage **46.74%**
 
 **금지 (본 문서):** 코드 구현 · Registry apply · enrich 실행
@@ -128,7 +128,7 @@ FOR each candidate (workId W, provider P, id I):
 |------|------|
 | **조건** | 아래 **어느 하나** 해당 시 **REVIEW** (자동 BLOCK **아님**) |
 | **조치** | **REVIEW** |
-| **목적** | [MATCHING_ERROR](sprint-04-high-risk-disposition.md) — poster-derived appId는 맞지만 **ko/en identity 분리** (니케 vs Wukong). syntactic gate **밖** semantic 불일치 **가시화**. |
+| **목적** | [MATCHING_ERROR](archive/sprint-04-high-risk-disposition.md) — poster-derived appId는 맞지만 **ko/en identity 분리** (니케 vs Wukong). syntactic gate **밖** semantic 불일치 **가시화**. |
 | **검출 가능 여부** | **중간** — 교차게임 사전·identity 신호에 **의존** |
 | **false positive 위험** | **낮음~중** (B-5) — 정상 로컬라이즈 ko/en은 **미해당** |
 | **Release block** | **아니오** (기본) — REVIEW 큐 **인적 확인** 후 proceed |
@@ -144,7 +144,7 @@ FOR each candidate (workId W, provider P, id I):
 
 | 항목 | 내용 |
 |------|------|
-| token overlap `< 0.15` | cohort 15/15 **오발화** · LOW 7건 **FALSE_REVIEW 100%** — [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) |
+| token overlap `< 0.15` | cohort 15/15 **오발화** · LOW 7건 **FALSE_REVIEW 100%** — [sprint-04-e4-effectiveness-review.md](archive/sprint-04-e4-effectiveness-review.md) |
 
 **근거 사례:** wk_000000277 — 교차게임 사전 (E3/E5와 **복합**) · wk_000000266 — 교차게임 (E2 **선행 BLOCK**).
 

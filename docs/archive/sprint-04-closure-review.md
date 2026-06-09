@@ -1,8 +1,10 @@
 # Sprint 04 Closure Review
 
+> **⚠️ 후속 갱신 (2026-06-10):** 본 회고의 PARTIAL SUCCESS 판정 이후 **Phase C resolution으로 G2 달성** — externalId **215/430 (50.00%)**. 최종 기록: [sprint-04-e1-resolution.md](../sprint-04-e1-resolution.md).
+
 > **목적:** Sprint 04 **최종 결과** 기록 — 회고 전용  
 > **기준일:** 2026-06-09 · Registry **430 works** · externalId **201 (46.74%)**  
-> **SSOT:** [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md)
+> **SSOT:** [sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md)
 
 **금지 준수:** 신규 설계 · 신규 정책 · ADR · 구현 **없음** — **기존 산출물 정리만**
 
@@ -23,7 +25,7 @@
 
 ### 1.1 원래 Sprint 04 목표
 
-[sprint-04-charter.md](sprint-04-charter.md) · [externalid-economics-plan.md](externalid-economics-plan.md) 기준.
+[sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](../externalid-economics-plan.md) 기준.
 
 | # | 목표 |
 |---|------|
@@ -55,12 +57,12 @@
 | # | 발견 | 근거 |
 |---|------|------|
 | 1 | **Coverage rate 하락의 주원인은 분모 증가** | externalId **201 유지** · Registry **402→430** → 50.0%→**46.74%** |
-| 2 | **기계적 cohort 상한은 여전히 G2 초과** | E1 15건 적용 시 **216/430 (50.23%)** — [sprint-04-baseline-report.md](sprint-04-baseline-report.md) |
+| 2 | **기계적 cohort 상한은 여전히 G2 초과** | E1 15건 적용 시 **216/430 (50.23%)** — [sprint-04-baseline-report.md](../sprint-04-baseline-report.md) |
 | 3 | **Runner syntactic audit ≠ semantic 안전** | dry-run **blocking 0** (R1) vs Phase B **HIGH 4** · [sprint-04-e1-audit.md](sprint-04-e1-audit.md) |
 | 4 | **무인 attach보다 identity·integrity가 병목** | HIGH: duplicate·Site Error·교차 게임명 · MEDIUM: Steam 프로모 `titles.en` |
 | 5 | **E2 TMDB poster 경로는 @430 소진** | baseline E2 후보 **0** — 잔여 G2는 **E1(Steam)만** |
-| 6 | **문서 SSOT 이중화 비용** | R1 종료 GO vs R2 재감사 — [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) |
-| 7 | **Rule ID `E1`~`E5` 다의어** | cohort · enrich gate · attach gate **충돌** — [rule-id-collision-analysis.md](rule-id-collision-analysis.md) |
+| 6 | **문서 SSOT 이중화 비용** | R1 종료 GO vs R2 재감사 — [sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md) |
+| 7 | **Rule ID `E1`~`E5` 다의어** | cohort · enrich gate · attach gate **충돌** — [rule-id-collision-analysis.md](../rule-id-collision-analysis.md) |
 
 ---
 
@@ -84,7 +86,7 @@
 |------|------|------|
 | **poster-priority Economics** | +141 **100% auto** · manual 대비 **대폭 단축** | [sprint-04-final-review.md](sprint-04-final-review.md) |
 | **E1 Steam + E2 TMDB ≥ G2 gap** | 125+31 ≥ 141 **확인** (R1) | economics-plan · final-review |
-| **E1 Site Error → BLOCK** | wk_270 **차단** | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) |
+| **E1 Site Error → BLOCK** | wk_270 **차단** | [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) |
 | **E2 Save prefix → BLOCK** | 프로모 `titles.en` **5건** (266+4 MEDIUM) | post-gate · rules |
 | **E3/E5 duplicate attach → BLOCK** | 144·277 **차단** | disposition · rules |
 | **Steam attach 위험 분석 (수동)** | LOW/MED/HIGH **15건 분류** | [sprint-04-e1-audit.md](sprint-04-e1-audit.md) |
@@ -102,13 +104,13 @@
 | 항목 | 산출 |
 |------|------|
 | Wave 1 SSOT | README 04-R1/R2 · superseded 배너 · charter 레이어 |
-| Wave 2 E4 정합 | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) B-5 반영 |
+| Wave 2 E4 정합 | [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) B-5 반영 |
 
 ### 5.2 미완 — Sprint 05 이전 권고
 
 | 우선 | 항목 | 성격 |
 |:----:|------|------|
-| P1 | **EG namespace** (E1~E5 → EG1~EG5) | 문서·도구 · [rule-id-collision-analysis.md](rule-id-collision-analysis.md) |
+| P1 | **EG namespace** (E1~E5 → EG1~EG5) | 문서·도구 · [rule-id-collision-analysis.md](../rule-id-collision-analysis.md) |
 | P1 | **SC cohort** 각주/정리 (선택 SC1~SC4) | charter · economics · sprint 도구 주석 |
 | P1 | **잔여 15건 disposition 실행** | HIGH 4 **MANUAL/DO_NOT_APPLY** · LOW 7 **인적 REVIEW 후** partial apply **결정** |
 | P2 | **Coverage Governance 통합** | attach gate ↔ governance §4 링크 · EN 각주 |
@@ -157,10 +159,10 @@
 
 | 순서 | 문서 |
 |:----:|------|
-| 1 | [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) |
-| 2 | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) |
+| 1 | [sprint-04-document-reconciliation.md](../sprint-04-document-reconciliation.md) |
+| 2 | [sprint-04-baseline-report.md](../sprint-04-baseline-report.md) |
 | 3 | Phase B: e1-audit → disposition → post-gate → e4-effectiveness |
-| 4 | [externalid-quality-gate-rules.md](externalid-quality-gate-rules.md) |
+| 4 | [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) |
 | 5 | (archive) [sprint-04-final-review.md](sprint-04-final-review.md) |
 
 ---

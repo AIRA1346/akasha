@@ -1,8 +1,23 @@
 # AKASHA Roadmap
 
-> 목표: **2026 Q3** Steam (Windows) v1 출시 — **v4 데이터 아키텍처 완료 후**  
-> 기준일: 2026-06-08  
-> 실행 계획: [docs/v4-migration-plan.md](docs/v4-migration-plan.md)
+> 목표: **2026 Q3** Steam (Windows) v1 출시  
+> 기준일: **2026-06-10** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
+
+---
+
+## 현재 위치 → 출시 경로
+
+**M1 기능 동결 ✅ → M-v4 데이터 아키텍처 ✅ (Phase E 포함, 2026-06-10) → M2 Steam 제출 준비 ← 현재 → M3 출시 (Q3)**
+
+### 병행 트랙 (2026-06-10 확정)
+
+| 트랙 | 다음 작업 | 상태 |
+|------|-----------|------|
+| **제품 (M2)** | Steamworks 앱 등록 → 빌드 업로드 → 스토어 페이지 → IAP 등록 | **다음 마일스톤** |
+| **데이터 — A5 Scale** | SD2.6 hold (insert 중단 @430) · **O3 checkpoint 2026-07-09** | hold 관측 중 |
+| **데이터 — Sprint 05** | [후보 백로그](docs/sprint-05-candidate-backlog.md) — My Library UX·Search Quality 등 (우선순위 미확정) | 후보만 |
+
+externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/sprint-04-e1-resolution.md)) — Phase 2 Coverage 프로그램 완결.
 
 ---
 
@@ -12,7 +27,7 @@
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | **최종: 전 작품 사전** · 현재 **~410작** · Steam 전 **v4**(`wk_`·해시 샤드) |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 **430작** · **v4 운영** (`wk_` 영구 ID·해시 샤드) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
@@ -78,11 +93,11 @@
 - [x] **Phase C** — `dedupe_linter` + canonicalization CI (402작)
 - [x] **Phase D** — 해시 샤딩 v4 + manifest v4 + builder/loader/sync (331 버킷)
 - [x] v4 dogfood (`110/110` tests · `ci_registry_check` green)
-- [ ] akasha-db GitHub push (Phase E)
+- [x] **Phase E** — akasha-db GitHub push (2026-06-10 · 430작·G2 50% CDN 반영)
 
-### M2 — Steam 제출 준비 (v4 후반 ~ Q3)
+### M2 — Steam 제출 준비 (현재 마일스톤 · ~Q3)
 
-- [ ] `main` push (akasha + akasha-db)
+- [x] `main` push (akasha + akasha-db) — 2026-06-10
 - [ ] Steamworks 앱 등록, 빌드 업로드
 - [ ] 스토어 페이지 (스크린샷, 태그, 한/영 설명)
 - [ ] IAP 상품 등록 (서재 테마, 서포터 팩)
@@ -121,6 +136,7 @@
 - [x] Phase B: 앱·볼트 `wk_` 호환
 - [x] Phase C: `dedupe_linter` CI (402작)
 - [x] Phase D: 해시 샤딩 v4 (manifest v4 · 331 버킷)
+- [x] Phase E: akasha-db GitHub push (430작 · 2026-06-10)
 
 ### Steam 후 — 카탈로그 운영 (우선순위 상단)
 

@@ -1,6 +1,6 @@
 # A5 Question Register — Open Questions O1~O14
 
-> **목적:** [a5-discovery-charter.md](a5-discovery-charter.md) Open Question **인벤토리** 및 **검증 우선순위** 결정.  
+> **목적:** [a5-discovery-charter.md](archive/a5-discovery-charter.md) Open Question **인벤토리** 및 **검증 우선순위** 결정.  
 > **질문:** *「A5에서 가장 먼저 답해야 할 질문은 무엇인가?」*  
 > **기준일:** 2026-06-09
 
@@ -264,7 +264,7 @@ O11 — (독립 · Discovery/Pilot 병행 가능)
 | **O4** | 배치 유입 **dedupe**는 안전한가? |
 | **O14** | add 없이 **G2 경로**가 성립하는가? |
 
-**이유:** [a5-discovery-charter.md](a5-discovery-charter.md) · [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md) — 50k의 1차 관문은 **공급·무결성**이며, A5 원문은 **Contribution 없이** G2 도달이다. O1·O4 없이 Pilot 설계 자체가 성립하지 않고, O14 없이 A5 검증 **목적**이 불명확하다.
+**이유:** [a5-discovery-charter.md](archive/a5-discovery-charter.md) · [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md) — 50k의 1차 관문은 **공급·무결성**이며, A5 원문은 **Contribution 없이** G2 도달이다. O1·O4 없이 Pilot 설계 자체가 성립하지 않고, O14 없이 A5 검증 **목적**이 불명확하다.
 
 **2순위 (P1 — Pilot 초기)**
 
@@ -283,7 +283,7 @@ O11 — (독립 · Discovery/Pilot 병행 가능)
 | 문서 | 역할 |
 |------|------|
 | [a5-question-register.md](a5-question-register.md) | **본 문서** — O1~O14 · 우선순위 |
-| [a5-discovery-charter.md](a5-discovery-charter.md) | Open Question 출처 |
+| [a5-discovery-charter.md](archive/a5-discovery-charter.md) | Open Question 출처 |
 | [assumption-register.md](assumption-register.md) | A5 정의 |
 
 ---
