@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
 /// Batch 2 seed expansion: 32 → 100 works
 /// Usage: dart run tool/seed_expansion.dart
+///
+/// ⚠ D-GRADE — Pilot/Scale apply 금지. v3 shard · pre_insert_dedupe_gate 없음.
+///    docs/expansion-tool-grading.md 참고. A급: batch5/6 · a5_pilot_supply_batch.
 
 import 'dart:convert';
 import 'dart:io';

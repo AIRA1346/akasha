@@ -27,11 +27,20 @@
           "episodes": 190
         }
       ],
-      "latestSeason": "1~6부"
+      "latestSeason": "1~6부",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
     "legacyIds": [
       "sub_animation_jojo-bizarre-adventure_2012"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "46393"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

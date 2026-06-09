@@ -27,11 +27,20 @@
           "episodes": 22
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/yTI2M0SVtDcBJwklSpwwPLRaqg.jpg",
     "legacyIds": [
       "sub_animation_shigatsu-wa-kimi-no-uso_2011"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "61677"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

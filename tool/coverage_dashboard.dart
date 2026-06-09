@@ -11,6 +11,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'coverage_quality.dart';
 import 'dedupe_utils.dart';
 
 void main() {
@@ -97,6 +98,8 @@ void main() {
     subtitlePanelResults.add({...c, 'covered': hit});
   }
 
+  final qualityScan = scanTitlesEnQuality(loadRegistryWorkMaps(root));
+
   final kpis = <String, Map<String, dynamic>>{
     'titles_en': _kpi(titlesEn, total, target: 0.90),
     'titles_ja': _kpi(titlesJa, total, target: 0.85),
@@ -122,6 +125,18 @@ void main() {
     'registry': '402',
     'workCount': total,
     'kpis': kpis,
+    'quality': {
+      'invalid_en_count': qualityScan.invalidEnCount,
+      'invalid_en_rate': qualityScan.invalidEnRate,
+      'invalid_en_percent': (qualityScan.invalidEnRate * 100).toStringAsFixed(2),
+      'titles_en_populated': qualityScan.titlesEnPopulated,
+      'source_breakage_count': qualityScan.sourceBreakageCount,
+      'status': qualityScan.status,
+      'by_reason': qualityScan.byReason,
+      'invalid_en_samples': qualityScan.samples,
+      'release_block': qualityScan.invalidEnCount > 0 ||
+          qualityScan.sourceBreakageCount > 0,
+    },
     'gapPanel': {
       'description': 'URV-A/SW1 GAP 표면형 — target wk_에 variant 부착 여부',
       'hits': panelHit,
@@ -147,6 +162,7 @@ void main() {
       'alias_panel': '운영 게이트 — SW1 alias 버킷(81.8%)과 동일 축',
       'external_id_phaseTarget': 'G2 interim 50% · G3+ 90%',
       'gap_panel': '운영 게이트 — SW1 GAP 15건 표면형 직접 추적',
+      'quality': 'Coverage와 분리 — titles.en syntactic validity (quality-gate-mvp.md)',
     },
   };
 
@@ -163,6 +179,13 @@ void main() {
       'target=${k['target']}  status=${k['status']}',
     );
   }
+  print('\nQuality KPI:');
+  print(
+    '  invalid_en: ${qualityScan.invalidEnCount}/${qualityScan.titlesEnPopulated} '
+    '(${qualityScan.invalidEnRate.toStringAsFixed(4)})  status=${qualityScan.status}',
+  );
+  print('  source_breakage_count: ${qualityScan.sourceBreakageCount}');
+  print('  release_block: ${qualityScan.invalidEnCount > 0 || qualityScan.sourceBreakageCount > 0}');
   print('\nWrote: ${outFile.path}');
 }
 

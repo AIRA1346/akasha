@@ -31,8 +31,13 @@ void main() {
   final shardWkIds = _collectShardWorkIds(root);
   final registryWkIds = byWk.keys.map((e) => e.toString()).toSet();
 
+  var stubSkipped = 0;
   for (final wk in shardWkIds) {
     if (!isWkId(wk)) {
+      if (_isMaintainerStubId(wk)) {
+        stubSkipped++;
+        continue;
+      }
       errors.add('Shard workId is not wk_: $wk');
       continue;
     }
@@ -82,11 +87,17 @@ void main() {
     exit(1);
   }
 
+  final wkCount = shardWkIds.where(isWkId).length;
   print(
-    'OK: id_registry (${shardWkIds.length} wk_, '
+    'OK: id_registry ($wkCount wk_, $stubSkipped maintainer stub(s), '
     '${byLegacy.length} legacy mappings)',
   );
 }
+
+/// A5 Pilot/Scale Maintainer `sub_` stub — wk_ 할당 전 transitional ID.
+bool _isMaintainerStubId(String workId) =>
+    workId.startsWith('sub_') &&
+    (workId.contains('pilot') || workId.contains('scale'));
 
 Set<String> _collectShardWorkIds(Directory root) {
   final ids = <String>{};

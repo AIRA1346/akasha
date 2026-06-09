@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
 /// Batch 4: game·movie·book·drama 보강 (903 → ~1,000작)
 /// Usage: dart run tool/seed_expansion_batch4.dart
+///
+/// ⚠ D-GRADE — Pilot/Scale apply 금지. v3 shard · pre_insert_dedupe_gate 없음.
+///    docs/expansion-tool-grading.md 참고. A급: batch5/6 · a5_pilot_supply_batch.
 
 import 'dart:convert';
 import 'dart:io';

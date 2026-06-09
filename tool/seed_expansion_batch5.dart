@@ -12,6 +12,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'poster_url_policy.dart';
+import 'pre_insert_dedupe_gate.dart';
+import 'registry_hash_utils.dart';
 
 const _tmdbImageBase = 'https://image.tmdb.org/t/p/w500';
 const _posterCacheFile = 'akasha-db/tmdb_poster_cache.json';
@@ -22,6 +24,8 @@ void main(List<String> args) async {
   final projectRoot = _findProjectRoot();
   final shardsRoot = Directory('${projectRoot.path}/akasha-db/shards');
   final existingIds = _collectExistingWorkIds(shardsRoot);
+  final dedupeGate = PreInsertDedupeGate.load(projectRoot);
+  final maxAdd = int.tryParse(_argValue(args, '--max-add') ?? '') ?? 999999;
   final posterCache = _loadPosterCache(projectRoot);
 
   if (fetchPosters) {
@@ -31,12 +35,22 @@ void main(List<String> args) async {
 
   var added = 0;
   var skipped = 0;
+  var blocked = 0;
   var noPoster = 0;
 
   for (final seed in _batch5Seeds()) {
+    if (added >= maxAdd) break;
+
     final workId = seed['workId'] as String;
     if (existingIds.contains(workId)) {
       skipped++;
+      continue;
+    }
+
+    final conflicts = dedupeGate.check(seed);
+    if (conflicts.isNotEmpty) {
+      print('BLOCK $workId: ${conflicts.first}');
+      blocked++;
       continue;
     }
 
@@ -55,9 +69,9 @@ void main(List<String> args) async {
       print('NOTE $workId: no poster (placeholder)');
     }
 
-    final shardId = _shardIdFor(workId);
     final category = seed['category'] as String;
-    final shardPath = '${shardsRoot.path}/$category/$shardId.json';
+    final hex = shardHexForWorkId(workId);
+    final shardPath = '${shardsRoot.path}/$category/$hex.json';
     final shardFile = File(shardPath);
 
     Map<String, dynamic> shardMap = {};
@@ -80,8 +94,17 @@ void main(List<String> args) async {
     added++;
   }
 
-  print('Done: $added added, $skipped skipped, $noPoster without poster');
+  print(
+    'Done: $added added, $skipped skipped, $blocked blocked, '
+    '$noPoster without poster',
+  );
   if (!apply) print('Dry-run. Pass --apply to write shards.');
+}
+
+String? _argValue(List<String> args, String name) {
+  final i = args.indexOf(name);
+  if (i < 0 || i + 1 >= args.length) return null;
+  return args[i + 1];
 }
 
 String? _resolvePoster(
@@ -166,15 +189,6 @@ Set<String> _collectExistingWorkIds(Directory shardsRoot) {
     if (decoded is Map<String, dynamic>) ids.addAll(decoded.keys);
   }
   return ids;
-}
-
-String _shardIdFor(String workId) {
-  final parts = workId.split('_');
-  if (parts.length < 4) return 'misc';
-  final category = parts[1];
-  final identifier = parts[2];
-  final letter = identifier.isNotEmpty ? identifier[0].toUpperCase() : 'X';
-  return '${category}_$letter';
 }
 
 Directory _findProjectRoot() {

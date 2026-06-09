@@ -32,11 +32,20 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg",
     "legacyIds": [
       "sub_animation_tokyo-revengers_2021"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "95481"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

@@ -27,11 +27,20 @@
           "episodes": 25
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/2StXCVS3mm09HwRBWsee3QCz3TM.jpg",
     "legacyIds": [
       "sub_animation_toradora_2008"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "65334"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

@@ -27,12 +27,21 @@
           "episodes": 148
         }
       ],
-      "latestSeason": "2011판"
+      "latestSeason": "2011판",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg",
     "legacyIds": [
       "sub_animation_hunter-x-hunter_2011"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "46298"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000218": {
     "workId": "wk_000000218",

@@ -1,0 +1,19 @@
+{
+  "sub_book_pilot-h1-supply-b2b_2026": {
+    "workId": "sub_book_pilot-h1-supply-b2b_2026",
+    "title": "파일럿 H1 공급 배치2B",
+    "titles": {
+      "ko": "파일럿 H1 공급 배치2B",
+      "en": "Pilot H1 Supply Batch 2B"
+    },
+    "category": "book",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "releaseYear": 2026,
+    "description": "H1 supply path repeatability test — batch insert.",
+    "tags": [
+      "pilot",
+      "supply"
+    ]
+  }
+}

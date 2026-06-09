@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
 /// Batch 3 seed expansion: 100 → 220 works (서브컬처 비중 ~85%)
 /// Usage: dart run tool/seed_expansion_batch3.dart
+///
+/// ⚠ D-GRADE — Pilot/Scale apply 금지. v3 shard · pre_insert_dedupe_gate 없음.
+///    docs/expansion-tool-grading.md 참고. A급: batch5/6 · a5_pilot_supply_batch.
 
 import 'dart:convert';
 import 'dart:io';

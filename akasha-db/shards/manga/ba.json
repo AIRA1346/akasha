@@ -19,11 +19,20 @@
       "던전"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg",
     "legacyIds": [
       "sub_manga_goblin-slayer_2016"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "82307"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

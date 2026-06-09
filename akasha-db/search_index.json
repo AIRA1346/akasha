@@ -99,6 +99,38 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000000380",
+    "title": "4월은 너의 거짓말",
+    "shardId": "manga_98",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 나오시 (Naoshi Arakawa)",
+    "tags": [
+      "감동",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
+    "searchTokens": [
+      "4월은 너의 거짓말",
+      "4월은너의거짓말",
+      "Shigatsu WA Kimi NO USO",
+      "shigatsuwakiminouso",
+      "감동",
+      "아라카와 나오시 (Naoshi Arakawa)",
+      "아라카와나오시(naoshiarakawa)",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
+    "titles": {
+      "en": "Shigatsu WA Kimi NO USO",
+      "ko": "4월은 너의 거짓말"
+    },
+    "qualityScore": 55,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000234",
     "title": "4월은 너의 거짓말",
     "shardId": "animation_e5",
@@ -130,40 +162,8 @@
       "ja": "四月は君の嘘"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/yTI2M0SVtDcBJwklSpwwPLRaqg.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000380",
-    "title": "4월은 너의 거짓말",
-    "shardId": "manga_98",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아라카와 나오시 (Naoshi Arakawa)",
-    "tags": [
-      "감동",
-      "음악",
-      "청춘",
-      "피아노"
-    ],
-    "searchTokens": [
-      "4월은 너의 거짓말",
-      "4월은너의거짓말",
-      "Shigatsu WA Kimi NO USO",
-      "shigatsuwakiminouso",
-      "감동",
-      "아라카와 나오시 (Naoshi Arakawa)",
-      "아라카와나오시(naoshiarakawa)",
-      "음악",
-      "청춘",
-      "피아노"
-    ],
-    "titles": {
-      "en": "Shigatsu WA Kimi NO USO",
-      "ko": "4월은 너의 거짓말"
-    },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000371",
@@ -225,7 +225,40 @@
       "ko": "7 Days to Die"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/library_600x900.jpg",
-    "qualityScore": 50,
+    "qualityScore": 85,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000292",
+    "title": "86 -에이티식스-",
+    "shardId": "manga_2f",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아사토 아사토 (Asato Asato)",
+    "tags": [
+      "SF",
+      "전쟁",
+      "차별",
+      "밀리터리"
+    ],
+    "searchTokens": [
+      "86 -에이티식스-",
+      "86 Eighty SIX",
+      "86-에이티식스-",
+      "86eightysix",
+      "SF",
+      "sf",
+      "밀리터리",
+      "아사토 아사토 (Asato Asato)",
+      "아사토아사토(asatoasato)",
+      "전쟁",
+      "차별"
+    ],
+    "titles": {
+      "en": "86 Eighty SIX",
+      "ko": "86 -에이티식스-"
+    },
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -263,39 +296,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000292",
-    "title": "86 -에이티식스-",
-    "shardId": "manga_2f",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아사토 아사토 (Asato Asato)",
-    "tags": [
-      "SF",
-      "전쟁",
-      "차별",
-      "밀리터리"
-    ],
-    "searchTokens": [
-      "86 -에이티식스-",
-      "86 Eighty SIX",
-      "86-에이티식스-",
-      "86eightysix",
-      "SF",
-      "sf",
-      "밀리터리",
-      "아사토 아사토 (Asato Asato)",
-      "아사토아사토(asatoasato)",
-      "전쟁",
-      "차별"
-    ],
-    "titles": {
-      "en": "86 Eighty SIX",
-      "ko": "86 -에이티식스-"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000126",
     "title": "Age of Empires II DE",
     "shardId": "game_c2",
@@ -324,8 +324,8 @@
       "ko": "Age of Empires II DE"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813780/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000051",
@@ -356,8 +356,8 @@
       "ko": "Age of Empires IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000060",
@@ -388,8 +388,8 @@
       "ko": "Armored Core VI"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000298",
@@ -451,8 +451,8 @@
       "ja": "BEASTARS"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000130",
@@ -483,8 +483,8 @@
       "ko": "Cities Skylines II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000313",
@@ -545,8 +545,8 @@
       "ko": "Don't Starve"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219740/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000094",
@@ -575,38 +575,7 @@
       "ko": "Don't Starve Together"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322330/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
-  },
-  {
-    "workId": "wk_000000316",
-    "title": "Dr.STONE",
-    "shardId": "manga_8c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "보이치",
-    "tags": [
-      "SF",
-      "과학",
-      "서바이벌",
-      "개그"
-    ],
-    "searchTokens": [
-      "Dr.STONE",
-      "SF",
-      "dr.stone",
-      "sf",
-      "개그",
-      "과학",
-      "보이치",
-      "서바이벌"
-    ],
-    "titles": {
-      "en": "Dr.STONE",
-      "ko": "Dr.STONE"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
-    "qualityScore": 80,
+    "qualityScore": 85,
     "qualityTier": 4
   },
   {
@@ -643,6 +612,37 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000316",
+    "title": "Dr.STONE",
+    "shardId": "manga_8c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "보이치",
+    "tags": [
+      "SF",
+      "과학",
+      "서바이벌",
+      "개그"
+    ],
+    "searchTokens": [
+      "Dr.STONE",
+      "SF",
+      "dr.stone",
+      "sf",
+      "개그",
+      "과학",
+      "보이치",
+      "서바이벌"
+    ],
+    "titles": {
+      "en": "Dr.STONE",
+      "ko": "Dr.STONE"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000078",
     "title": "Dying Light",
     "shardId": "game_97",
@@ -669,8 +669,8 @@
       "ko": "Dying Light"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000114",
@@ -701,8 +701,8 @@
       "ko": "Dying Light 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534380/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000044",
@@ -733,8 +733,8 @@
       "ko": "GTA IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000043",
@@ -765,8 +765,8 @@
       "ko": "GTA San Andreas"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000333",
@@ -799,8 +799,8 @@
       "ja": "GTO"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000069",
@@ -831,8 +831,8 @@
       "ko": "Ghost of Tsushima"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2218500/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000095",
@@ -863,8 +863,8 @@
       "ko": "Grand Theft Auto III"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000033",
@@ -893,8 +893,8 @@
       "ko": "Hades II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000056",
@@ -923,8 +923,8 @@
       "ko": "Lies of P"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000357",
@@ -984,8 +984,8 @@
       "ko": "Nioh"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/485510/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000047",
@@ -1016,8 +1016,8 @@
       "ko": "Nioh 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1325200/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000373",
@@ -1197,8 +1197,8 @@
       "ko": "Resident Evil 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000131",
@@ -1229,8 +1229,8 @@
       "ko": "Resident Evil 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000065",
@@ -1261,8 +1261,8 @@
       "ko": "Resident Evil 4"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000041",
@@ -1293,8 +1293,8 @@
       "ko": "Resident Evil Village"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000048",
@@ -1325,8 +1325,8 @@
       "ko": "Sons of the Forest"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1326470/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000104",
@@ -1357,8 +1357,8 @@
       "ko": "가라오케 파티"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000326",
@@ -1455,8 +1455,8 @@
       "ko": "갓 오브 워"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000325",
@@ -1575,8 +1575,8 @@
       "ja": "ゴブリンスレイヤー"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000330",
@@ -1642,40 +1642,8 @@
       "ja": "ゴールデンカムイ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000342",
-    "title": "괴수 8호",
-    "shardId": "manga_6f",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "마츠모토 나오야",
-    "tags": [
-      "괴수",
-      "액션",
-      "밀리터리",
-      "코미디"
-    ],
-    "searchTokens": [
-      "Kaiju NO 8",
-      "kaijuno8",
-      "괴수",
-      "괴수 8호",
-      "괴수8호",
-      "마츠모토 나오야",
-      "마츠모토나오야",
-      "밀리터리",
-      "액션",
-      "코미디"
-    ],
-    "titles": {
-      "en": "Kaiju NO 8",
-      "ko": "괴수 8호"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000206",
@@ -1709,6 +1677,38 @@
       "ja": "怪獣8号"
     },
     "qualityScore": 55,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000342",
+    "title": "괴수 8호",
+    "shardId": "manga_6f",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "마츠모토 나오야",
+    "tags": [
+      "괴수",
+      "액션",
+      "밀리터리",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Kaiju NO 8",
+      "kaijuno8",
+      "괴수",
+      "괴수 8호",
+      "괴수8호",
+      "마츠모토 나오야",
+      "마츠모토나오야",
+      "밀리터리",
+      "액션",
+      "코미디"
+    ],
+    "titles": {
+      "en": "Kaiju NO 8",
+      "ko": "괴수 8호"
+    },
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -1910,8 +1910,8 @@
       "ko": "그랜드 테프트 오토 V"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000022",
@@ -2176,6 +2176,39 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000355",
+    "title": "나의 히어로 아카데미아",
+    "shardId": "manga_e3",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "tags": [
+      "히어로",
+      "학원",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "MY Hero Academia",
+      "myheroacademia",
+      "나의 히어로 아카데미아",
+      "나의히어로아카데미아",
+      "성장",
+      "액션",
+      "학원",
+      "호리코시 코헤이",
+      "호리코시코헤이",
+      "히어로"
+    ],
+    "titles": {
+      "en": "MY Hero Academia",
+      "ko": "나의 히어로 아카데미아"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000217",
     "title": "나의 히어로 아카데미아",
     "shardId": "animation_ad",
@@ -2210,37 +2243,29 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000355",
-    "title": "나의 히어로 아카데미아",
-    "shardId": "manga_e3",
-    "category": "manga",
+    "workId": "wk_000000407",
+    "title": "날씨의 아이",
+    "shardId": "movie_98",
+    "category": "movie",
     "domain": "subculture",
-    "creator": "호리코시 코헤이",
+    "creator": "신카이 마코토",
     "tags": [
-      "히어로",
-      "학원",
-      "성장",
-      "액션"
+      "영화",
+      "서브컬처"
     ],
     "searchTokens": [
-      "MY Hero Academia",
-      "myheroacademia",
-      "나의 히어로 아카데미아",
-      "나의히어로아카데미아",
-      "성장",
-      "액션",
-      "학원",
-      "호리코시 코헤이",
-      "호리코시코헤이",
-      "히어로"
+      "날씨의 아이",
+      "날씨의아이",
+      "서브컬처",
+      "신카이 마코토",
+      "신카이마코토",
+      "영화"
     ],
     "titles": {
-      "en": "MY Hero Academia",
-      "ko": "나의 히어로 아카데미아"
+      "ko": "날씨의 아이"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 45,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000249",
@@ -2276,31 +2301,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000407",
-    "title": "날씨의 아이",
-    "shardId": "movie_98",
-    "category": "movie",
-    "domain": "subculture",
-    "creator": "신카이 마코토",
-    "tags": [
-      "영화",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "날씨의 아이",
-      "날씨의아이",
-      "서브컬처",
-      "신카이 마코토",
-      "신카이마코토",
-      "영화"
-    ],
-    "titles": {
-      "ko": "날씨의 아이"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000365",
     "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
     "shardId": "manga_bc",
@@ -2325,31 +2325,6 @@
     ],
     "titles": {
       "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
-    },
-    "qualityScore": 40,
-    "qualityTier": 2
-  },
-  {
-    "workId": "wk_000000408",
-    "title": "너의 이름은.",
-    "shardId": "movie_3f",
-    "category": "movie",
-    "domain": "subculture",
-    "creator": "신카이 마코토",
-    "tags": [
-      "영화",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "너의 이름은.",
-      "너의이름은.",
-      "서브컬처",
-      "신카이 마코토",
-      "신카이마코토",
-      "영화"
-    ],
-    "titles": {
-      "ko": "너의 이름은."
     },
     "qualityScore": 40,
     "qualityTier": 2
@@ -2386,6 +2361,31 @@
     "posterPath": "https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg",
     "qualityScore": 75,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000408",
+    "title": "너의 이름은.",
+    "shardId": "movie_3f",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "신카이 마코토",
+    "tags": [
+      "영화",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "너의 이름은.",
+      "너의이름은.",
+      "서브컬처",
+      "신카이 마코토",
+      "신카이마코토",
+      "영화"
+    ],
+    "titles": {
+      "ko": "너의 이름은."
+    },
+    "qualityScore": 40,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000258",
@@ -2517,8 +2517,8 @@
       "ja": "ノラガミ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/oOReMl2ELJky9IFJrIFQXEINXRJ.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000221",
@@ -2773,8 +2773,8 @@
       "ko": "다크 소울"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205100/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000099",
@@ -2805,8 +2805,8 @@
       "ko": "다크 소울 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000268",
@@ -2841,41 +2841,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000185",
-    "title": "단다단",
-    "shardId": "animation_a7",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Science SARU",
-    "tags": [
-      "오컬트",
-      "코미디",
-      "액션",
-      "청춘"
-    ],
-    "searchTokens": [
-      "Dandadan",
-      "Science SARU",
-      "dandadan",
-      "sciencesaru",
-      "ダンダダン",
-      "단다단",
-      "액션",
-      "오컬트",
-      "청춘",
-      "코미디"
-    ],
-    "titles": {
-      "ko": "단다단",
-      "en": "Dandadan",
-      "ja": "ダンダダン",
-      "romaji": "Dandadan"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000310",
     "title": "단다단",
     "shardId": "manga_a9",
@@ -2899,6 +2864,41 @@
       "코미디",
       "타츠타 유키",
       "타츠타유키"
+    ],
+    "titles": {
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000185",
+    "title": "단다단",
+    "shardId": "animation_a7",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Science SARU",
+    "tags": [
+      "오컬트",
+      "코미디",
+      "액션",
+      "청춘"
+    ],
+    "searchTokens": [
+      "Dandadan",
+      "Science SARU",
+      "dandadan",
+      "sciencesaru",
+      "ダンダダン",
+      "단다단",
+      "액션",
+      "오컬트",
+      "청춘",
+      "코미디"
     ],
     "titles": {
       "ko": "단다단",
@@ -3125,8 +3125,8 @@
       "ko": "더 포레스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000318",
@@ -3265,8 +3265,8 @@
       "ko": "데드 바이 데이라이트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000311",
@@ -3368,8 +3368,8 @@
       "ko": "데스티니 가디언즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000314",
@@ -3403,8 +3403,8 @@
       "ja": "ドラえもん"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000315",
@@ -3503,38 +3503,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000391",
-    "title": "도쿄 리벤저스",
-    "shardId": "manga_0f",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "와카모토 켄",
-    "tags": [
-      "시간여행",
-      "갱",
-      "청춘",
-      "액션"
-    ],
-    "searchTokens": [
-      "Tokyo Revengers",
-      "tokyorevengers",
-      "갱",
-      "도쿄 리벤저스",
-      "도쿄리벤저스",
-      "시간여행",
-      "액션",
-      "와카모토 켄",
-      "와카모토켄",
-      "청춘"
-    ],
-    "titles": {
-      "en": "Tokyo Revengers",
-      "ko": "도쿄 리벤저스"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000243",
     "title": "도쿄 리벤저스",
     "shardId": "animation_a2",
@@ -3566,8 +3534,40 @@
       "ja": "東京卍リベンジャーズ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000391",
+    "title": "도쿄 리벤저스",
+    "shardId": "manga_0f",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와카모토 켄",
+    "tags": [
+      "시간여행",
+      "갱",
+      "청춘",
+      "액션"
+    ],
+    "searchTokens": [
+      "Tokyo Revengers",
+      "tokyorevengers",
+      "갱",
+      "도쿄 리벤저스",
+      "도쿄리벤저스",
+      "시간여행",
+      "액션",
+      "와카모토 켄",
+      "와카모토켄",
+      "청춘"
+    ],
+    "titles": {
+      "en": "Tokyo Revengers",
+      "ko": "도쿄 리벤저스"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000118",
@@ -3601,8 +3601,8 @@
       "ko": "도타 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000125",
@@ -3633,8 +3633,8 @@
       "ko": "도타 언더로드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000284",
@@ -3757,8 +3757,8 @@
       "ja": "ドラゴンボール"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000137",
@@ -3791,8 +3791,8 @@
       "ko": "디아블로 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000115",
@@ -3823,8 +3823,8 @@
       "ko": "딥 락 갤럭틱"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548430/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000086",
@@ -3855,8 +3855,8 @@
       "ko": "라스트 오브 어스 Part II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000009",
@@ -3924,8 +3924,8 @@
       "ja": "らんま1/2"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000274",
@@ -3990,8 +3990,8 @@
       "ko": "러스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000039",
@@ -4023,8 +4023,8 @@
       "ko": "레드 데드 리뎀션 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000064",
@@ -4055,8 +4055,8 @@
       "ko": "레딧 리데임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000097",
@@ -4087,8 +4087,8 @@
       "ko": "레인보우 식스 시즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000116",
@@ -4118,8 +4118,8 @@
       "ko": "레인월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548570/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000117",
@@ -4150,8 +4150,8 @@
       "ko": "레프트 4 데드 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000210",
@@ -4185,8 +4185,8 @@
       "ja": "ログ・ホライズン"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000054",
@@ -4217,8 +4217,8 @@
       "ko": "로스트 아크"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000085",
@@ -4249,8 +4249,8 @@
       "ko": "로켓 리그"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252950/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000376",
@@ -4315,8 +4315,8 @@
       "ko": "리그 오브 레전드"
     },
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000211",
@@ -4379,8 +4379,8 @@
       "ko": "리틀 나이트메어"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242050/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000123",
@@ -4411,8 +4411,8 @@
       "ko": "리틀 나이트메어 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774181/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000093",
@@ -4442,8 +4442,8 @@
       "ko": "림월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294100/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000059",
@@ -4474,7 +4474,41 @@
       "ko": "마블 스파이더맨 리마스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/library_600x900.jpg",
-    "qualityScore": 50,
+    "qualityScore": 85,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000350",
+    "title": "마슐",
+    "shardId": "manga_72",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "코마도 타케시",
+    "tags": [
+      "코미디",
+      "액션",
+      "학원",
+      "판타지"
+    ],
+    "searchTokens": [
+      "Mashle: Magic and Muscles",
+      "mashle:magicandmuscles",
+      "マッシュル-MASHLE-",
+      "マッシュル-mashle-",
+      "마슐",
+      "액션",
+      "코마도 타케시",
+      "코마도타케시",
+      "코미디",
+      "판타지",
+      "학원"
+    ],
+    "titles": {
+      "ko": "마슐",
+      "en": "Mashle: Magic and Muscles",
+      "ja": "マッシュル-MASHLE-"
+    },
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -4512,40 +4546,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000350",
-    "title": "마슐",
-    "shardId": "manga_72",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "코마도 타케시",
-    "tags": [
-      "코미디",
-      "액션",
-      "학원",
-      "판타지"
-    ],
-    "searchTokens": [
-      "Mashle: Magic and Muscles",
-      "mashle:magicandmuscles",
-      "マッシュル-MASHLE-",
-      "マッシュル-mashle-",
-      "마슐",
-      "액션",
-      "코마도 타케시",
-      "코마도타케시",
-      "코미디",
-      "판타지",
-      "학원"
-    ],
-    "titles": {
-      "ko": "마슐",
-      "en": "Mashle: Magic and Muscles",
-      "ja": "マッシュル-MASHLE-"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000141",
     "title": "마인크래프트",
     "shardId": "game_69",
@@ -4574,8 +4574,8 @@
       "ko": "마인크래프트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322170/library_600x900_2x.jpg",
-    "qualityScore": 70,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000140",
@@ -4609,8 +4609,8 @@
       "ko": "매스 이펙트 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000168",
@@ -4673,8 +4673,8 @@
       "ja": "メイドインアビス"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ofjHLIGpQP0VscNPkq5CKQvMcQH.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000212",
@@ -4968,6 +4968,44 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000354",
+    "title": "무직전생",
+    "shardId": "manga_0c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "리덕션 / 후지카와 유카",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "searchTokens": [
+      "Jobless Reincarnation",
+      "Mushoku Tensei",
+      "Mushoku Tensei: Jobless Reincarnation",
+      "joblessreincarnation",
+      "mushokutensei",
+      "mushokutensei:joblessreincarnation",
+      "無職転生",
+      "리덕션 / 후지카와 유카",
+      "리덕션/후지카와유카",
+      "마법",
+      "무직전생",
+      "성장",
+      "이세계",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "무직전생",
+      "en": "Mushoku Tensei: Jobless Reincarnation",
+      "ja": "無職転生",
+      "romaji": "Mushoku Tensei"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000216",
     "title": "무직전생",
     "shardId": "animation_b3",
@@ -5037,44 +5075,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000354",
-    "title": "무직전생",
-    "shardId": "manga_0c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "리덕션 / 후지카와 유카",
-    "tags": [
-      "이세계",
-      "판타지",
-      "성장",
-      "마법"
-    ],
-    "searchTokens": [
-      "Jobless Reincarnation",
-      "Mushoku Tensei",
-      "Mushoku Tensei: Jobless Reincarnation",
-      "joblessreincarnation",
-      "mushokutensei",
-      "mushokutensei:joblessreincarnation",
-      "無職転生",
-      "리덕션 / 후지카와 유카",
-      "리덕션/후지카와유카",
-      "마법",
-      "무직전생",
-      "성장",
-      "이세계",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "무직전생",
-      "en": "Mushoku Tensei: Jobless Reincarnation",
-      "ja": "無職転生",
-      "romaji": "Mushoku Tensei"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000179",
     "title": "문호 스트레이 독스",
     "shardId": "animation_6b",
@@ -5134,8 +5134,8 @@
       "ko": "미스트워커"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1328670/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000395",
@@ -5256,8 +5256,8 @@
       "ko": "바이오쇼크"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000248",
@@ -5355,44 +5355,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000158",
-    "title": "반지의 제왕: 반지 원정대",
-    "shardId": "movie_f2",
-    "category": "movie",
-    "domain": "generalCulture",
-    "creator": "피터 잭슨",
-    "tags": [
-      "판타지",
-      "모험",
-      "명작",
-      "서사"
-    ],
-    "searchTokens": [
-      "Lord of the Rings",
-      "The Fellowship of the Ring",
-      "The Lord of the Rings",
-      "The Lord of the Rings: The Fellowship of the Ring",
-      "lordoftherings",
-      "thefellowshipofthering",
-      "thelordoftherings",
-      "thelordoftherings:thefellowshipofthering",
-      "명작",
-      "모험",
-      "반지의 제왕: 반지 원정대",
-      "반지의제왕:반지원정대",
-      "서사",
-      "판타지",
-      "피터 잭슨",
-      "피터잭슨"
-    ],
-    "titles": {
-      "ko": "반지의 제왕: 반지 원정대",
-      "en": "The Lord of the Rings: The Fellowship of the Ring"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000010",
     "title": "반지의 제왕: 반지 원정대",
     "shardId": "book_b4",
@@ -5432,6 +5394,44 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000158",
+    "title": "반지의 제왕: 반지 원정대",
+    "shardId": "movie_f2",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "피터 잭슨",
+    "tags": [
+      "판타지",
+      "모험",
+      "명작",
+      "서사"
+    ],
+    "searchTokens": [
+      "Lord of the Rings",
+      "The Fellowship of the Ring",
+      "The Lord of the Rings",
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "lordoftherings",
+      "thefellowshipofthering",
+      "thelordoftherings",
+      "thelordoftherings:thefellowshipofthering",
+      "명작",
+      "모험",
+      "반지의 제왕: 반지 원정대",
+      "반지의제왕:반지원정대",
+      "서사",
+      "판타지",
+      "피터 잭슨",
+      "피터잭슨"
+    ],
+    "titles": {
+      "ko": "반지의 제왕: 반지 원정대",
+      "en": "The Lord of the Rings: The Fellowship of the Ring"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000030",
     "title": "발할라: 신들의 황혼",
     "shardId": "game_eb",
@@ -5460,8 +5460,8 @@
       "ko": "발할라: 신들의 황혼"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000129",
@@ -5491,8 +5491,8 @@
       "ko": "발헤임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/892970/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000233",
@@ -5554,8 +5554,8 @@
       "ko": "배틀그라운드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000052",
@@ -5586,8 +5586,8 @@
       "ko": "배틀필드 2042"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517290/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000299",
@@ -5653,40 +5653,8 @@
       "ja": "宝石の国"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000304",
-    "title": "봇치 더 록!",
-    "shardId": "manga_1b",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "하마다 쿠키",
-    "tags": [
-      "음악",
-      "코미디",
-      "성장",
-      "밴드"
-    ],
-    "searchTokens": [
-      "Bocchi THE Rock",
-      "bocchitherock",
-      "밴드",
-      "봇치 더 록!",
-      "봇치더록!",
-      "성장",
-      "음악",
-      "코미디",
-      "하마다 쿠키",
-      "하마다쿠키"
-    ],
-    "titles": {
-      "en": "Bocchi THE Rock",
-      "ko": "봇치 더 록!"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000178",
@@ -5712,6 +5680,38 @@
       "성장",
       "음악",
       "코미디"
+    ],
+    "titles": {
+      "en": "Bocchi THE Rock",
+      "ko": "봇치 더 록!"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000304",
+    "title": "봇치 더 록!",
+    "shardId": "manga_1b",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하마다 쿠키",
+    "tags": [
+      "음악",
+      "코미디",
+      "성장",
+      "밴드"
+    ],
+    "searchTokens": [
+      "Bocchi THE Rock",
+      "bocchitherock",
+      "밴드",
+      "봇치 더 록!",
+      "봇치더록!",
+      "성장",
+      "음악",
+      "코미디",
+      "하마다 쿠키",
+      "하마다쿠키"
     ],
     "titles": {
       "en": "Bocchi THE Rock",
@@ -5917,7 +5917,39 @@
       "ko": "블랙 미스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
-    "qualityScore": 50,
+    "qualityScore": 85,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000300",
+    "title": "블랙 클로버",
+    "shardId": "manga_97",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "searchTokens": [
+      "Black Clover",
+      "blackclover",
+      "마법",
+      "블랙 클로버",
+      "블랙클로버",
+      "액션",
+      "우정",
+      "타바타 유키",
+      "타바타유키",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Black Clover",
+      "ko": "블랙 클로버"
+    },
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -5955,38 +5987,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000300",
-    "title": "블랙 클로버",
-    "shardId": "manga_97",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타바타 유키",
-    "tags": [
-      "판타지",
-      "마법",
-      "액션",
-      "우정"
-    ],
-    "searchTokens": [
-      "Black Clover",
-      "blackclover",
-      "마법",
-      "블랙 클로버",
-      "블랙클로버",
-      "액션",
-      "우정",
-      "타바타 유키",
-      "타바타유키",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Black Clover",
-      "ko": "블랙 클로버"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000124",
     "title": "블러드본",
     "shardId": "game_93",
@@ -6014,8 +6014,8 @@
       "ko": "블러드본"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774361/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000177",
@@ -6152,34 +6152,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000301",
-    "title": "블리치",
-    "shardId": "manga_89",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "쿠보 타이토",
-    "tags": [
-      "액션",
-      "사신",
-      "초자연",
-      "우정"
-    ],
-    "searchTokens": [
-      "블리치",
-      "사신",
-      "액션",
-      "우정",
-      "초자연",
-      "쿠보 타이토",
-      "쿠보타이토"
-    ],
-    "titles": {
-      "ko": "블리치"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000176",
     "title": "블리치",
     "shardId": "animation_e4",
@@ -6210,8 +6182,36 @@
       "ja": "BLEACH"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000301",
+    "title": "블리치",
+    "shardId": "manga_89",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "tags": [
+      "액션",
+      "사신",
+      "초자연",
+      "우정"
+    ],
+    "searchTokens": [
+      "블리치",
+      "사신",
+      "액션",
+      "우정",
+      "초자연",
+      "쿠보 타이토",
+      "쿠보타이토"
+    ],
+    "titles": {
+      "ko": "블리치"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000247",
@@ -6245,8 +6245,8 @@
       "ja": "ヴィンランド・サガ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000396",
@@ -6343,8 +6343,8 @@
       "ko": "사이버펑크 2077"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000184",
@@ -6542,8 +6542,8 @@
       "ko": "새티스팩토리"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000377",
@@ -6577,8 +6577,8 @@
       "ja": "聖闘士星矢"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000127",
@@ -6608,8 +6608,8 @@
       "ko": "세키로"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000164",
@@ -6706,6 +6706,39 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000263",
+    "title": "소드 아트 온라인",
+    "shardId": "book_55",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카와하라 레키 (Reki Kawahara)",
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Sword ART Online",
+      "swordartonline",
+      "게임판타지",
+      "데스게임",
+      "라이트노벨",
+      "서브컬처",
+      "소드 아트 온라인",
+      "소드아트온라인",
+      "카와하라 레키 (Reki Kawahara)",
+      "카와하라레키(rekikawahara)"
+    ],
+    "titles": {
+      "en": "Sword ART Online",
+      "ko": "소드 아트 온라인"
+    },
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000241",
     "title": "소드 아트 온라인",
     "shardId": "animation_31",
@@ -6742,39 +6775,6 @@
     },
     "qualityScore": 55,
     "qualityTier": 2
-  },
-  {
-    "workId": "wk_000000263",
-    "title": "소드 아트 온라인",
-    "shardId": "book_55",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "카와하라 레키 (Reki Kawahara)",
-    "tags": [
-      "라이트노벨",
-      "게임판타지",
-      "데스게임",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "Sword ART Online",
-      "swordartonline",
-      "게임판타지",
-      "데스게임",
-      "라이트노벨",
-      "서브컬처",
-      "소드 아트 온라인",
-      "소드아트온라인",
-      "카와하라 레키 (Reki Kawahara)",
-      "카와하라레키(rekikawahara)"
-    ],
-    "titles": {
-      "en": "Sword ART Online",
-      "ko": "소드 아트 온라인"
-    },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
   },
   {
     "workId": "wk_000000386",
@@ -6904,8 +6904,8 @@
       "ko": "슈퍼 러버런"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1454400/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000111",
@@ -6936,6 +6936,62 @@
       "ko": "스카이림 SE"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
+    "qualityScore": 85,
+    "qualityTier": 4
+  },
+  {
+    "workId": "sub_webtoon_scale-supply-b1a_2026",
+    "title": "스케일 공급 배치1A",
+    "shardId": "webtoon_48",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Scale Maintainer",
+      "Scale Supply Batch 1A",
+      "a5scalemaintainer",
+      "scale",
+      "scalesupplybatch1a",
+      "supply",
+      "스케일 공급 배치1A",
+      "스케일공급배치1a"
+    ],
+    "titles": {
+      "ko": "스케일 공급 배치1A",
+      "en": "Scale Supply Batch 1A"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_game_scale-supply-b1b_2026",
+    "title": "스케일 공급 배치1B",
+    "shardId": "game_d0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Scale Maintainer",
+      "Scale Supply Batch 1B",
+      "a5scalemaintainer",
+      "scale",
+      "scalesupplybatch1b",
+      "supply",
+      "스케일 공급 배치1B",
+      "스케일공급배치1b"
+    ],
+    "titles": {
+      "ko": "스케일 공급 배치1B",
+      "en": "Scale Supply Batch 1B"
+    },
     "qualityScore": 50,
     "qualityTier": 2
   },
@@ -7064,8 +7120,8 @@
       "ko": "스타크래프트 리마스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962663/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000035",
@@ -7095,8 +7151,8 @@
       "ko": "스타필드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151340/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000092",
@@ -7126,8 +7182,8 @@
       "ko": "스텔라리스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/281990/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000239",
@@ -7236,8 +7292,8 @@
       "ko": "스파이더맨 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000163",
@@ -7326,8 +7382,8 @@
       "ko": "슬라임 랜처"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000385",
@@ -7421,8 +7477,8 @@
       "ko": "시티즈: 스카이라인"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255710/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000382",
@@ -7687,8 +7743,8 @@
       "ko": "아크: 서바이벌 이볼브드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000296",
@@ -7724,10 +7780,10 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000294",
+    "workId": "wk_000000171",
     "title": "약사의 혼잣말",
-    "shardId": "manga_2f",
-    "category": "manga",
+    "shardId": "animation_17",
+    "category": "animation",
     "domain": "subculture",
     "creator": "히나타 네코",
     "tags": [
@@ -7759,10 +7815,10 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000171",
+    "workId": "wk_000000294",
     "title": "약사의 혼잣말",
-    "shardId": "animation_17",
-    "category": "animation",
+    "shardId": "manga_2f",
+    "category": "manga",
     "domain": "subculture",
     "creator": "히나타 네코",
     "tags": [
@@ -7986,8 +8042,8 @@
       "ko": "언차티드: 도적들과 유산"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000319",
@@ -8022,8 +8078,8 @@
       "ja": "EDENS ZERO"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000153",
@@ -8082,8 +8138,8 @@
       "ko": "에이펙스 레전드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000042",
@@ -8113,8 +8169,8 @@
       "ko": "엑스칼리버"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000135",
@@ -8144,8 +8200,8 @@
       "ko": "엑시옴"
     },
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000170",
@@ -8210,8 +8266,8 @@
       "ko": "엘든 링"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000374",
@@ -8310,8 +8366,8 @@
       "ko": "오리와 먹구름"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261550/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000225",
@@ -8345,6 +8401,37 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000259",
+    "title": "오버로드",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "칸나카",
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Overlord",
+      "overlord",
+      "라이트노벨",
+      "서브컬처",
+      "오버로드",
+      "이세계",
+      "칸나카",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Overlord",
+      "ko": "오버로드"
+    },
+    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
+    "qualityScore": 55,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000367",
     "title": "오버로드",
     "shardId": "manga_ab",
@@ -8375,39 +8462,8 @@
       "ja": "オーバーロード"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000259",
-    "title": "오버로드",
-    "shardId": "book_f4",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "칸나카",
-    "tags": [
-      "라이트노벨",
-      "이세계",
-      "판타지",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "Overlord",
-      "overlord",
-      "라이트노벨",
-      "서브컬처",
-      "오버로드",
-      "이세계",
-      "칸나카",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Overlord",
-      "ko": "오버로드"
-    },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000142",
@@ -8441,8 +8497,8 @@
       "ko": "오버워치 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000108",
@@ -8473,8 +8529,8 @@
       "ko": "오버쿡드 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440900/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000021",
@@ -8599,8 +8655,8 @@
       "ja": "王様ランキング"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000019",
@@ -8796,8 +8852,8 @@
       "ko": "워프레임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000272",
@@ -9063,10 +9119,10 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000250",
+    "workId": "wk_000000397",
     "title": "윈드 브레이커",
-    "shardId": "animation_0d",
-    "category": "animation",
+    "shardId": "manga_73",
+    "category": "manga",
     "domain": "subculture",
     "creator": "나츠키 코타",
     "tags": [
@@ -9097,10 +9153,10 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000397",
+    "workId": "wk_000000250",
     "title": "윈드 브레이커",
-    "shardId": "manga_73",
-    "category": "manga",
+    "shardId": "animation_0d",
+    "category": "animation",
     "domain": "subculture",
     "creator": "나츠키 코타",
     "tags": [
@@ -9159,8 +9215,8 @@
       "ko": "유로 트럭 시뮬레이터 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000077",
@@ -9191,8 +9247,8 @@
       "ko": "유로파 유니버설리스 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000401",
@@ -9323,6 +9379,38 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000209",
+    "title": "이 멋진 세계에 축복을!",
+    "shardId": "animation_6a",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Studio Deen",
+    "tags": [
+      "이세계",
+      "코미디",
+      "판타지",
+      "패러디"
+    ],
+    "searchTokens": [
+      "Konosuba",
+      "Studio Deen",
+      "konosuba",
+      "studiodeen",
+      "이 멋진 세계에 축복을!",
+      "이멋진세계에축복을!",
+      "이세계",
+      "코미디",
+      "판타지",
+      "패러디"
+    ],
+    "titles": {
+      "en": "Konosuba",
+      "ko": "이 멋진 세계에 축복을!"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000255",
     "title": "이 멋진 세계에 축복을!",
     "shardId": "book_91",
@@ -9353,38 +9441,6 @@
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg",
     "qualityScore": 55,
-    "qualityTier": 2
-  },
-  {
-    "workId": "wk_000000209",
-    "title": "이 멋진 세계에 축복을!",
-    "shardId": "animation_6a",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Studio Deen",
-    "tags": [
-      "이세계",
-      "코미디",
-      "판타지",
-      "패러디"
-    ],
-    "searchTokens": [
-      "Konosuba",
-      "Studio Deen",
-      "konosuba",
-      "studiodeen",
-      "이 멋진 세계에 축복을!",
-      "이멋진세계에축복을!",
-      "이세계",
-      "코미디",
-      "판타지",
-      "패러디"
-    ],
-    "titles": {
-      "en": "Konosuba",
-      "ko": "이 멋진 세계에 축복을!"
-    },
-    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -9419,8 +9475,8 @@
       "ja": "この素晴らしい世界に祝福を！"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000338",
@@ -9711,6 +9767,39 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000193",
+    "title": "장송의 프리렌",
+    "shardId": "animation_c0",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "야마다 카네히토 / 아베 츠카사",
+    "tags": [
+      "판타지",
+      "모험",
+      "감동",
+      "성장"
+    ],
+    "searchTokens": [
+      "Frieren",
+      "frieren",
+      "감동",
+      "모험",
+      "성장",
+      "야마다 카네히토 / 아베 츠카사",
+      "야마다카네히토/아베츠카사",
+      "장송의 프리렌",
+      "장송의프리렌",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Frieren",
+      "ko": "장송의 프리렌"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000323",
     "title": "장송의 프리렌",
     "shardId": "manga_1c",
@@ -9743,39 +9832,6 @@
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
     "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
-    "workId": "wk_000000193",
-    "title": "장송의 프리렌",
-    "shardId": "animation_c0",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "야마다 카네히토 / 아베 츠카사",
-    "tags": [
-      "판타지",
-      "모험",
-      "감동",
-      "성장"
-    ],
-    "searchTokens": [
-      "Frieren",
-      "frieren",
-      "감동",
-      "모험",
-      "성장",
-      "야마다 카네히토 / 아베 츠카사",
-      "야마다카네히토/아베츠카사",
-      "장송의 프리렌",
-      "장송의프리렌",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Frieren",
-      "ko": "장송의 프리렌"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
-    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -10042,8 +10098,8 @@
       "ja": "終わりのセラフ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000203",
@@ -10077,8 +10133,8 @@
       "ja": "ジョジョの奇妙な冒険"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000339",
@@ -10112,39 +10168,7 @@
       "ja": "ジョジョの奇妙な冒険"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000204",
-    "title": "주술회전",
-    "shardId": "animation_37",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "MAPPA",
-    "tags": [
-      "액션",
-      "초자연",
-      "학원",
-      "다크"
-    ],
-    "searchTokens": [
-      "Jujutsu Kaisen",
-      "MAPPA",
-      "jujutsukaisen",
-      "mappa",
-      "다크",
-      "액션",
-      "주술회전",
-      "초자연",
-      "학원"
-    ],
-    "titles": {
-      "en": "Jujutsu Kaisen",
-      "ko": "주술회전"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
-    "qualityScore": 80,
+    "qualityScore": 90,
     "qualityTier": 4
   },
   {
@@ -10170,6 +10194,38 @@
       "액션",
       "주술",
       "주술회전"
+    ],
+    "titles": {
+      "en": "Jujutsu Kaisen",
+      "ko": "주술회전"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000204",
+    "title": "주술회전",
+    "shardId": "animation_37",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "tags": [
+      "액션",
+      "초자연",
+      "학원",
+      "다크"
+    ],
+    "searchTokens": [
+      "Jujutsu Kaisen",
+      "MAPPA",
+      "jujutsukaisen",
+      "mappa",
+      "다크",
+      "액션",
+      "주술회전",
+      "초자연",
+      "학원"
     ],
     "titles": {
       "en": "Jujutsu Kaisen",
@@ -10209,38 +10265,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000335",
-    "title": "지옥락",
-    "shardId": "manga_9c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "가쿠 쿠지",
-    "tags": [
-      "액션",
-      "닌자",
-      "판타지",
-      "서바이벌"
-    ],
-    "searchTokens": [
-      "Hells Paradise",
-      "hellsparadise",
-      "가쿠 쿠지",
-      "가쿠쿠지",
-      "닌자",
-      "서바이벌",
-      "액션",
-      "지옥락",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Hells Paradise",
-      "ko": "지옥락"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000200",
     "title": "지옥락",
     "shardId": "animation_d5",
@@ -10275,37 +10299,35 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000381",
-    "title": "진격의 거인",
-    "shardId": "manga_e3",
+    "workId": "wk_000000335",
+    "title": "지옥락",
+    "shardId": "manga_9c",
     "category": "manga",
     "domain": "subculture",
-    "creator": "이사야마 하지메 (Hajime Isayama)",
+    "creator": "가쿠 쿠지",
     "tags": [
-      "SF",
-      "전쟁",
-      "자유",
-      "반전"
+      "액션",
+      "닌자",
+      "판타지",
+      "서바이벌"
     ],
     "searchTokens": [
-      "SF",
-      "Shingeki NO Kyojin",
-      "sf",
-      "shingekinokyojin",
-      "반전",
-      "이사야마 하지메 (Hajime Isayama)",
-      "이사야마하지메(hajimeisayama)",
-      "자유",
-      "전쟁",
-      "진격의 거인",
-      "진격의거인"
+      "Hells Paradise",
+      "hellsparadise",
+      "가쿠 쿠지",
+      "가쿠쿠지",
+      "닌자",
+      "서바이벌",
+      "액션",
+      "지옥락",
+      "판타지"
     ],
     "titles": {
-      "en": "Shingeki NO Kyojin",
-      "ko": "진격의 거인"
+      "en": "Hells Paradise",
+      "ko": "지옥락"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
-    "qualityScore": 90,
+    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -10339,6 +10361,40 @@
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
     "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000381",
+    "title": "진격의 거인",
+    "shardId": "manga_e3",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "이사야마 하지메 (Hajime Isayama)",
+    "tags": [
+      "SF",
+      "전쟁",
+      "자유",
+      "반전"
+    ],
+    "searchTokens": [
+      "SF",
+      "Shingeki NO Kyojin",
+      "sf",
+      "shingekinokyojin",
+      "반전",
+      "이사야마 하지메 (Hajime Isayama)",
+      "이사야마하지메(hajimeisayama)",
+      "자유",
+      "전쟁",
+      "진격의 거인",
+      "진격의거인"
+    ],
+    "titles": {
+      "en": "Shingeki NO Kyojin",
+      "ko": "진격의 거인"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
+    "qualityScore": 90,
     "qualityTier": 4
   },
   {
@@ -10405,8 +10461,8 @@
       "ja": "本好きの下剋上"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000197",
@@ -10505,39 +10561,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000308",
-    "title": "체인소 맨",
-    "shardId": "manga_ed",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
-    "tags": [
-      "액션",
-      "다크",
-      "악마",
-      "카오스"
-    ],
-    "searchTokens": [
-      "Chainsaw MAN",
-      "chainsawman",
-      "다크",
-      "악마",
-      "액션",
-      "체인소 맨",
-      "체인소맨",
-      "카오스",
-      "후지모토 타츠키 (Tatsuki Fujimoto)",
-      "후지모토타츠키(tatsukifujimoto)"
-    ],
-    "titles": {
-      "en": "Chainsaw MAN",
-      "ko": "체인소 맨"
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000180",
     "title": "체인소 맨",
     "shardId": "animation_90",
@@ -10561,6 +10584,39 @@
       "체인소 맨",
       "체인소맨",
       "카오스"
+    ],
+    "titles": {
+      "en": "Chainsaw MAN",
+      "ko": "체인소 맨"
+    },
+    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000308",
+    "title": "체인소 맨",
+    "shardId": "manga_ed",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "후지모토 타츠키 (Tatsuki Fujimoto)",
+    "tags": [
+      "액션",
+      "다크",
+      "악마",
+      "카오스"
+    ],
+    "searchTokens": [
+      "Chainsaw MAN",
+      "chainsawman",
+      "다크",
+      "악마",
+      "액션",
+      "체인소 맨",
+      "체인소맨",
+      "카오스",
+      "후지모토 타츠키 (Tatsuki Fujimoto)",
+      "후지모토타츠키(tatsukifujimoto)"
     ],
     "titles": {
       "en": "Chainsaw MAN",
@@ -10690,8 +10746,8 @@
       "ko": "최후의 생还자 Part I"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000353",
@@ -10756,38 +10812,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000341",
-    "title": "카구야님은 고백받고 싶어",
-    "shardId": "manga_95",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아카사카 아카",
-    "tags": [
-      "로맨스",
-      "코미디",
-      "학원",
-      "두뇌전"
-    ],
-    "searchTokens": [
-      "Kaguya Sama",
-      "kaguyasama",
-      "두뇌전",
-      "로맨스",
-      "아카사카 아카",
-      "아카사카아카",
-      "카구야님은 고백받고 싶어",
-      "카구야님은고백받고싶어",
-      "코미디",
-      "학원"
-    ],
-    "titles": {
-      "en": "Kaguya Sama",
-      "ko": "카구야님은 고백받고 싶어"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
-  },
-  {
     "workId": "wk_000000205",
     "title": "카구야님은 고백받고 싶어",
     "shardId": "animation_2b",
@@ -10817,6 +10841,38 @@
       "ko": "카구야님은 고백받고 싶어",
       "en": "Kaguya-sama: Love Is War",
       "ja": "かぐや様は告らせたい"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000341",
+    "title": "카구야님은 고백받고 싶어",
+    "shardId": "manga_95",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "두뇌전"
+    ],
+    "searchTokens": [
+      "Kaguya Sama",
+      "kaguyasama",
+      "두뇌전",
+      "로맨스",
+      "아카사카 아카",
+      "아카사카아카",
+      "카구야님은 고백받고 싶어",
+      "카구야님은고백받고싶어",
+      "코미디",
+      "학원"
+    ],
+    "titles": {
+      "en": "Kaguya Sama",
+      "ko": "카구야님은 고백받고 싶어"
     },
     "qualityScore": 45,
     "qualityTier": 2
@@ -10920,8 +10976,8 @@
       "ko": "카운터 스트라이크 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000305",
@@ -10955,8 +11011,8 @@
       "ja": "キャプテン翼"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000089",
@@ -10986,8 +11042,8 @@
       "ko": "컵헤드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000183",
@@ -11085,8 +11141,8 @@
       "ko": "콜 오브 듀티: MW II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000037",
@@ -11117,8 +11173,8 @@
       "ko": "크루세이더 킹즈 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000181",
@@ -11182,39 +11238,8 @@
       "ja": "キルラキル"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000344",
-    "title": "킹덤",
-    "shardId": "manga_af",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "하라 야스히사",
-    "tags": [
-      "역사",
-      "전쟁",
-      "전략",
-      "성장"
-    ],
-    "searchTokens": [
-      "Kingdom",
-      "kingdom",
-      "성장",
-      "역사",
-      "전략",
-      "전쟁",
-      "킹덤",
-      "하라 야스히사",
-      "하라야스히사"
-    ],
-    "titles": {
-      "en": "Kingdom",
-      "ko": "킹덤"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000208",
@@ -11247,8 +11272,8 @@
       "ja": "キングダム"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000020",
@@ -11273,6 +11298,37 @@
       "좀비",
       "킹덤",
       "한국드라마"
+    ],
+    "titles": {
+      "en": "Kingdom",
+      "ko": "킹덤"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000344",
+    "title": "킹덤",
+    "shardId": "manga_af",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "tags": [
+      "역사",
+      "전쟁",
+      "전략",
+      "성장"
+    ],
+    "searchTokens": [
+      "Kingdom",
+      "kingdom",
+      "성장",
+      "역사",
+      "전략",
+      "전쟁",
+      "킹덤",
+      "하라 야스히사",
+      "하라야스히사"
     ],
     "titles": {
       "en": "Kingdom",
@@ -11310,8 +11366,8 @@
       "ko": "킹덤 컴 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1771300/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000101",
@@ -11342,8 +11398,8 @@
       "ko": "킹덤 컴: 딜리버런스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379430/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000027",
@@ -11375,8 +11431,8 @@
       "ko": "테라리아"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000394",
@@ -11410,8 +11466,8 @@
       "ja": "うさぎドロップ"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/w9aOvcN09KRNDmsuHEYS00Td285.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000392",
@@ -11475,8 +11531,8 @@
       "ja": "とらドラ！"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/2StXCVS3mm09HwRBWsee3QCz3TM.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000169",
@@ -11536,8 +11592,8 @@
       "ko": "토탈 워: 삼국"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/594650/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000032",
@@ -11568,8 +11624,8 @@
       "ko": "토탈 워: 워해머 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000245",
@@ -11664,8 +11720,8 @@
       "ko": "팀 포트리스 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000270",
@@ -11765,6 +11821,236 @@
     "qualityTier": 2
   },
   {
+    "workId": "sub_game_pilot-h1-supply-b1a_2026",
+    "title": "파일럿 H1 공급 배치1A",
+    "shardId": "game_c7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 1A",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch1a",
+      "supply",
+      "파일럿 H1 공급 배치1A",
+      "파일럿h1공급배치1a"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치1A",
+      "en": "Pilot H1 Supply Batch 1A"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_movie_pilot-h1-supply-b1b_2026",
+    "title": "파일럿 H1 공급 배치1B",
+    "shardId": "movie_23",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 1B",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch1b",
+      "supply",
+      "파일럿 H1 공급 배치1B",
+      "파일럿h1공급배치1b"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치1B",
+      "en": "Pilot H1 Supply Batch 1B"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_drama_pilot-h1-supply-b2a_2026",
+    "title": "파일럿 H1 공급 배치2A",
+    "shardId": "drama_6b",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 2A",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch2a",
+      "supply",
+      "파일럿 H1 공급 배치2A",
+      "파일럿h1공급배치2a"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치2A",
+      "en": "Pilot H1 Supply Batch 2A"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_book_pilot-h1-supply-b2b_2026",
+    "title": "파일럿 H1 공급 배치2B",
+    "shardId": "book_e2",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 2B",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch2b",
+      "supply",
+      "파일럿 H1 공급 배치2B",
+      "파일럿h1공급배치2b"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치2B",
+      "en": "Pilot H1 Supply Batch 2B"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_animation_pilot-h1-supply-b3a_2026",
+    "title": "파일럿 H1 공급 배치3A",
+    "shardId": "animation_4e",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 3A",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch3a",
+      "supply",
+      "파일럿 H1 공급 배치3A",
+      "파일럿h1공급배치3a"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치3A",
+      "en": "Pilot H1 Supply Batch 3A"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_manga_pilot-h1-supply-b3b_2026",
+    "title": "파일럿 H1 공급 배치3B",
+    "shardId": "manga_93",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "searchTokens": [
+      "A5 Pilot Maintainer",
+      "Pilot H1 Supply Batch 3B",
+      "a5pilotmaintainer",
+      "pilot",
+      "piloth1supplybatch3b",
+      "supply",
+      "파일럿 H1 공급 배치3B",
+      "파일럿h1공급배치3b"
+    ],
+    "titles": {
+      "ko": "파일럿 H1 공급 배치3B",
+      "en": "Pilot H1 Supply Batch 3B"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_book_pilot-h2-smoke-beta_2026",
+    "title": "파일럿 H2 스모크 베타",
+    "shardId": "book_9b",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "A5 Pilot",
+    "tags": [
+      "pilot",
+      "smoke"
+    ],
+    "searchTokens": [
+      "A5 Pilot",
+      "Pilot H2 Smoke Beta",
+      "a5pilot",
+      "pilot",
+      "piloth2smokebeta",
+      "smoke",
+      "パイロットH2スモークベータ",
+      "パイロットh2スモークベータ",
+      "파일럿 H2 스모크 베타",
+      "파일럿h2스모크베타"
+    ],
+    "titles": {
+      "ko": "파일럿 H2 스모크 베타",
+      "en": "Pilot H2 Smoke Beta",
+      "ja": "パイロットH2スモークベータ"
+    },
+    "qualityScore": 40,
+    "qualityTier": 2
+  },
+  {
+    "workId": "sub_animation_pilot-h2-smoke-alpha_2026",
+    "title": "파일럿 H2 스모크 알파",
+    "shardId": "animation_6d",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A5 Pilot",
+    "tags": [
+      "pilot",
+      "smoke"
+    ],
+    "searchTokens": [
+      "A5 Pilot",
+      "Pilot H2 Smoke Alpha",
+      "a5pilot",
+      "pilot",
+      "piloth2smokealpha",
+      "smoke",
+      "パイロットH2スモークアルファ",
+      "パイロットh2スモークアルファ",
+      "파일럿 H2 스모크 알파",
+      "파일럿h2스모크알파"
+    ],
+    "titles": {
+      "ko": "파일럿 H2 스모크 알파",
+      "en": "Pilot H2 Smoke Alpha",
+      "ja": "パイロットH2スモークアルファ"
+    },
+    "qualityScore": 40,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000055",
     "title": "팔월드",
     "shardId": "game_de",
@@ -11792,8 +12078,8 @@
       "ko": "팔월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000107",
@@ -11823,8 +12109,8 @@
       "ko": "팩토리오"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000013",
@@ -11987,8 +12273,8 @@
       "ja": "FAIRY TAIL 100年クエスト"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg",
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000269",
@@ -12084,8 +12370,8 @@
       "ko": "페이퍼스, 플리즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000155",
@@ -12144,8 +12430,8 @@
       "ko": "포털"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000143",
@@ -12210,8 +12496,8 @@
       "ko": "폴아웃 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000100",
@@ -12242,8 +12528,8 @@
       "ko": "폴아웃 4"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000071",
@@ -12274,8 +12560,8 @@
       "ko": "폴아웃: 뉴 베가스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000281",
@@ -12339,8 +12625,8 @@
       "ko": "프로젝트 좀보이드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000074",
@@ -12371,8 +12657,8 @@
       "ko": "프리즌 아키텍트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233450/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000280",
@@ -12437,8 +12723,8 @@
       "ko": "플래닛 코스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493340/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000046",
@@ -12469,8 +12755,8 @@
       "ko": "플래닛 코스터 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284190/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000369",
@@ -12561,8 +12847,8 @@
       "ko": "하데스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000198",
@@ -12659,8 +12945,8 @@
       "ko": "하트 오브 아이언 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000138",
@@ -12694,8 +12980,8 @@
       "ko": "하프라이프 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000006",
@@ -12731,6 +13017,34 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000337",
+    "title": "헌터×헌터",
+    "shardId": "manga_fb",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토가시 요시히로",
+    "tags": [
+      "모험",
+      "배틀",
+      "우정",
+      "판타지"
+    ],
+    "searchTokens": [
+      "모험",
+      "배틀",
+      "우정",
+      "토가시 요시히로",
+      "토가시요시히로",
+      "판타지",
+      "헌터×헌터"
+    ],
+    "titles": {
+      "ko": "헌터×헌터"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000202",
     "title": "헌터×헌터",
     "shardId": "animation_06",
@@ -12761,36 +13075,8 @@
       "ja": "ハンター×ハンター"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000337",
-    "title": "헌터×헌터",
-    "shardId": "manga_fb",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "토가시 요시히로",
-    "tags": [
-      "모험",
-      "배틀",
-      "우정",
-      "판타지"
-    ],
-    "searchTokens": [
-      "모험",
-      "배틀",
-      "우정",
-      "토가시 요시히로",
-      "토가시요시히로",
-      "판타지",
-      "헌터×헌터"
-    ],
-    "titles": {
-      "ko": "헌터×헌터"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000008",
@@ -12880,8 +13166,8 @@
       "ko": "호그와트 레거시"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000036",
@@ -12912,8 +13198,8 @@
       "ko": "호라이즌 제로 던"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151640/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000079",
@@ -12944,39 +13230,8 @@
       "ko": "호라이즌 포비든 웨스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
-  },
-  {
-    "workId": "wk_000000336",
-    "title": "호리미야",
-    "shardId": "manga_a6",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "하기와라 히로",
-    "tags": [
-      "로맨스",
-      "학원",
-      "코미디",
-      "일상"
-    ],
-    "searchTokens": [
-      "Horimiya",
-      "horimiya",
-      "로맨스",
-      "일상",
-      "코미디",
-      "하기와라 히로",
-      "하기와라히로",
-      "학원",
-      "호리미야"
-    ],
-    "titles": {
-      "en": "Horimiya",
-      "ko": "호리미야"
-    },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000201",
@@ -13012,6 +13267,37 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000336",
+    "title": "호리미야",
+    "shardId": "manga_a6",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하기와라 히로",
+    "tags": [
+      "로맨스",
+      "학원",
+      "코미디",
+      "일상"
+    ],
+    "searchTokens": [
+      "Horimiya",
+      "horimiya",
+      "로맨스",
+      "일상",
+      "코미디",
+      "하기와라 히로",
+      "하기와라히로",
+      "학원",
+      "호리미야"
+    ],
+    "titles": {
+      "en": "Horimiya",
+      "ko": "호리미야"
+    },
+    "qualityScore": 45,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000098",
     "title": "홀로우 나이트",
     "shardId": "game_59",
@@ -13041,8 +13327,8 @@
       "ko": "홀로우 나이트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_600x900.jpg",
-    "qualityScore": 50,
-    "qualityTier": 2
+    "qualityScore": 85,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000389",

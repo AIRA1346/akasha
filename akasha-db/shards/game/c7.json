@@ -1,0 +1,19 @@
+{
+  "sub_game_pilot-h1-supply-b1a_2026": {
+    "workId": "sub_game_pilot-h1-supply-b1a_2026",
+    "title": "파일럿 H1 공급 배치1A",
+    "titles": {
+      "ko": "파일럿 H1 공급 배치1A",
+      "en": "Pilot H1 Supply Batch 1A"
+    },
+    "category": "game",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "releaseYear": 2026,
+    "description": "H1 supply path repeatability test — batch insert.",
+    "tags": [
+      "pilot",
+      "supply"
+    ]
+  }
+}

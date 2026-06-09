@@ -42,11 +42,20 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "4기"
+      "latestSeason": "4기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg",
     "legacyIds": [
       "sub_animation_golden-kamuy_2018"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "74061"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

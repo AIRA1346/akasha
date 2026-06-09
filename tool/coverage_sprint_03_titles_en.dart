@@ -13,6 +13,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import 'coverage_quality.dart';
 import 'dedupe_utils.dart';
 import 'poster_verification.dart';
 
@@ -309,7 +310,7 @@ Future<_EnrichResult> _enrichWork(
     if (page != null) {
       final en = _extractEnglishFromTmdb(page);
       if (en != null &&
-          _isValidEnTitle(en) &&
+          isValidEnTitle(en) &&
           (titlesMatchWork(work, page) || _plausibleEn(work, en))) {
         return _EnrichResult(
           success: true,
@@ -325,7 +326,7 @@ Future<_EnrichResult> _enrichWork(
   final steamAppId = _resolveSteamAppId(work);
   if (steamAppId != null) {
     final name = await _fetchSteamStoreTitle(client, steamAppId);
-    if (name != null && _isValidEnTitle(name)) {
+    if (name != null && isValidEnTitle(name)) {
       return _EnrichResult(
         success: true,
         method: 'steam_fetch',
@@ -395,21 +396,13 @@ Future<_EnrichResult> _enrichWork(
 String? _extractEnglishFromTmdb(String page) {
   final parts = page.split(' | ').map((s) => s.trim()).where((s) => s.isNotEmpty).toList();
   for (final part in parts) {
-    if (!_isValidEnTitle(part)) continue;
+    if (!isValidEnTitle(part)) continue;
     if (_isMostlyLatin(part)) return part;
   }
   for (final part in parts) {
-    if (_isValidEnTitle(part)) return part;
+    if (isValidEnTitle(part)) return part;
   }
   return null;
-}
-
-bool _isValidEnTitle(String s) {
-  final t = s.trim();
-  if (t.length < 2) return false;
-  if (t.contains('#=') || t.contains('{{') || t.contains('dataItem')) return false;
-  if (RegExp(r'[\u3131-\uD79D]').hasMatch(t)) return false;
-  return true;
 }
 
 bool _isAsciiCanonicalTitle(String s) {
@@ -526,7 +519,7 @@ void _primePeerEnCache(Directory root) {
       final titles = w['titles'];
       if (titles is Map) {
         final en = titles['en']?.toString().trim();
-        if (en != null && en.isNotEmpty && _isValidEnTitle(en)) _peerEnCache[id] = en;
+        if (en != null && en.isNotEmpty && isValidEnTitle(en)) _peerEnCache[id] = en;
       }
     }
   }
@@ -562,7 +555,7 @@ bool _hasEn(Map<String, dynamic> work) {
   final titles = work['titles'];
   if (titles is! Map) return false;
   final en = titles['en']?.toString().trim();
-  return en != null && en.isNotEmpty && _isValidEnTitle(en);
+  return en != null && en.isNotEmpty && isValidEnTitle(en);
 }
 
 List<_CohortItem> _selectRemediateCohort(Directory root) {
@@ -598,7 +591,7 @@ List<_CohortItem> _selectRemediateCohort(Directory root) {
       }
       if (sprint03) {
         final en = (work['titles'] as Map)['en']?.toString() ?? '';
-        if (!_isValidEnTitle(en)) {
+        if (!isValidEnTitle(en)) {
           items.add(
             _CohortItem(
               workId: workId,

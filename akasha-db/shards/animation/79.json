@@ -27,11 +27,20 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg",
     "legacyIds": [
       "sub_animation_kill-la-kill_2013"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "51663"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }
