@@ -62,12 +62,12 @@ class MarkdownParser {
     final buffer = StringBuffer();
     buffer.writeln('---');
     buffer.writeln('work_id: "${item.workId}"');
-    buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // 옵시디언 파일 리딩용 제목
+    buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // YAML title (외부 편집기 호환)
     buffer.writeln('category: ${item.category.name}');
     buffer.writeln('domain: ${item.domain.name}');
     buffer.writeln('rating: ${item.rating}');
     
-    // 작품 상태 및 나의 상태 저장 (Obsidian 호환성 극대화)
+    // 작품 상태 및 나의 상태 저장 (Sanctum vault 호환성 극대화)
     buffer.writeln('work_status: "${item.workStatusLabel}"');
     buffer.writeln('status: "${item.myStatusLabel}"');
     buffer.writeln('my_status: "${item.myStatusLabel}"');

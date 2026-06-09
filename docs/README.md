@@ -9,7 +9,7 @@
 |:----:|------|------|
 | 1 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로·마일스톤·병행 트랙 |
 | 2 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry·프로그램 **운영 SSOT** |
-| 3 | [sprint-05-candidate-backlog.md](sprint-05-candidate-backlog.md) | 다음 작업 후보 (우선순위 미확정) |
+| 3 | [sprint-05-charter.md](sprint-05-charter.md) | **현재 Sprint** — M2 Steam Launch |
 
 ---
 
@@ -22,7 +22,9 @@
 | [a5-scale-observation-log.md](a5-scale-observation-log.md) | 관측 일지 — O3 checkpoint **2026-07-09** |
 | [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) | SD1~SD4 운영 수치 |
 | [a5-scale-expansion-cohort-plan.md](a5-scale-expansion-cohort-plan.md) | Expansion cohort 전략 |
-| [sprint-05-candidate-backlog.md](sprint-05-candidate-backlog.md) | Sprint 05 후보 백로그 |
+| [sprint-05-charter.md](sprint-05-charter.md) | **Sprint 05** — M2 Steam Launch + v1 Polish |
+| [m2-steam-store-page.md](m2-steam-store-page.md) | Steam 스토어 copy·스크린샷·IAP 가이드 |
+| [sprint-05-candidate-backlog.md](sprint-05-candidate-backlog.md) | Sprint 05 후보 백로그 (참고) |
 
 ### 운영 도구 (로컬)
 

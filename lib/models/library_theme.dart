@@ -37,9 +37,9 @@ class LibraryTheme {
     requiresIap: true,
   );
 
-  static const LibraryTheme obsidian = LibraryTheme(
-    id: 'obsidian',
-    name: '옵시디언 (IAP)',
+  static const LibraryTheme amethyst = LibraryTheme(
+    id: 'amethyst',
+    name: '자수정 (IAP)',
     backgroundColor: Color(0xFF1A1A1A),
     accentColor: Color(0xFFB39DDB),
     requiresIap: true,
@@ -49,12 +49,13 @@ class LibraryTheme {
     classic,
     midnight,
     sakura,
-    obsidian,
+    amethyst,
   ];
 
   static LibraryTheme? byId(String id) {
+    final normalized = id == 'obsidian' ? 'amethyst' : id;
     for (final theme in all) {
-      if (theme.id == id) return theme;
+      if (theme.id == normalized) return theme;
     }
     return null;
   }

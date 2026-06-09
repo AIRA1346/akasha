@@ -39,7 +39,7 @@ Future<void> showVaultSettingsDialog(
               Text(
                 path != null
                     ? '현재 연동된 폴더:\n$path'
-                    : '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Obsidian Vault 폴더를 연동해 주세요.',
+                    : '연동된 폴더가 없습니다. 마크다운 파일로 영속적으로 기록하려면 Sanctum Vault 폴더를 연동해 주세요.',
                 style: const TextStyle(fontSize: 13),
               ),
               if (path != null) ...[

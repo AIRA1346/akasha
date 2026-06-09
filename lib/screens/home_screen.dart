@@ -49,10 +49,12 @@ import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/browse_pipeline.dart';
 import '../models/browse_card.dart';
+import '../models/library_theme.dart';
+import '../services/entitlement_service.dart';
+import '../services/library_theme_preferences.dart';
+import '../widgets/library_theme_picker.dart';
 import 'detail_screen.dart';
-
-// ════════════════════════════════════════════════════════════════
-//  메인 홈 대시보드 (옵시디언 스타일 그리드)
+//  메인 홈 대시보드 (Sanctum vault 스타일 그리드)
 // ════════════════════════════════════════════════════════════════
 
 class HomeScreen extends StatefulWidget {
@@ -83,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
   StreamSubscription<void>? _vaultUpdateSubscription;
   Timer? _vaultReloadDebounce;
   late final HomeRegistrySync _registrySync;
+  LibraryTheme _libraryTheme = LibraryTheme.classic;
 
   @override
   void initState() {
@@ -137,6 +140,8 @@ class _HomeScreenState extends State<HomeScreen> {
     _displayName = await UserPreferences.getDisplayName();
     _autoArchiveRegistry = await UserPreferences.isAutoArchiveRegistryEnabled();
     await UserRegistryPreferences.instance.load();
+    await EntitlementService.instance.load();
+    _libraryTheme = await LibraryThemePreferences.load();
     await _loadItems();
 
     if (service.vaultPath != null && _autoArchiveRegistry) {
@@ -434,7 +439,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 vaultLinked
                     ? '검색으로 작품을 추가하거나 「새 작품」으로 등록해 보세요.'
-                    : '홈 상단에서 Obsidian 볼트 폴더를 연동해 주세요.',
+                    : '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.',
                 style: TextStyle(color: Colors.grey[500], height: 1.5),
                 textAlign: TextAlign.center,
               ),
@@ -596,6 +601,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Future<void> _showLibraryThemePicker() async {
+    final picked =
+        await showLibraryThemePicker(context, current: _libraryTheme);
+    if (picked != null && mounted) {
+      setState(() => _libraryTheme = picked);
+    }
+  }
+
   // ── 빌드 ──────────────────────────────────
 
   bool get _isPersonalLibraryMode =>
@@ -644,10 +657,25 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Focus(
         autofocus: true,
-        child: Scaffold(
-          appBar: HomeAppBar(
-            isSidebarOpen: _isSidebarOpen,
-            isSyncing: _isSyncing,
+        child: Theme(
+          data: _isPersonalLibraryMode
+              ? Theme.of(context).copyWith(
+                  scaffoldBackgroundColor: _libraryTheme.backgroundColor,
+                  colorScheme: Theme.of(context).colorScheme.copyWith(
+                        secondary: _libraryTheme.accentColor,
+                      ),
+                )
+              : Theme.of(context),
+          child: Scaffold(
+            backgroundColor: _isPersonalLibraryMode
+                ? _libraryTheme.backgroundColor
+                : null,
+            appBar: HomeAppBar(
+              isSidebarOpen: _isSidebarOpen,
+              isSyncing: _isSyncing,
+              showLibraryThemeButton: _isPersonalLibraryMode,
+              onLibraryTheme: _showLibraryThemePicker,
+              libraryThemeAccent: _libraryTheme.accentColor,
             onToggleSidebar: () {
               setState(() {
                 _isSidebarOpen = !_isSidebarOpen;
@@ -690,18 +718,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     if (AkashaFileService().vaultPath == null)
                       HomeVaultBanner(onConnectVault: _selectVaultFolder),
-                    FilterSection(
-                      selectedDomain: _filterCtrl.domain,
-                      selectedCategories: _filterCtrl.categories,
-                      selectedWorkStatuses: _filterCtrl.workStatuses,
-                      selectedMyStatuses: _filterCtrl.myStatuses,
-                      onDomainChanged: _onDomainChanged,
-                      onToggleCategory: _toggleCategory,
-                      onClearCategories: _clearCategories,
-                      onToggleWorkStatus: _toggleWorkStatus,
-                      onToggleMyStatus: _toggleMyStatus,
-                    ),
-                    const Divider(height: 1),
+                    if (!_isPersonalLibraryMode)
+                      FilterSection(
+                        selectedDomain: _filterCtrl.domain,
+                        selectedCategories: _filterCtrl.categories,
+                        selectedWorkStatuses: _filterCtrl.workStatuses,
+                        selectedMyStatuses: _filterCtrl.myStatuses,
+                        onDomainChanged: _onDomainChanged,
+                        onToggleCategory: _toggleCategory,
+                        onClearCategories: _clearCategories,
+                        onToggleWorkStatus: _toggleWorkStatus,
+                        onToggleMyStatus: _toggleMyStatus,
+                      ),
+                    if (!_isPersonalLibraryMode) const Divider(height: 1),
                     if (!_isPersonalLibraryMode && _isCatalogLoading)
                       const LinearProgressIndicator(minHeight: 2),
 
@@ -785,9 +814,14 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () => _showAddDialog(context),
           icon: const Icon(Icons.add),
           label: const Text('새 작품'),
+          backgroundColor: _isPersonalLibraryMode
+              ? _libraryTheme.accentColor.withValues(alpha: 0.85)
+              : null,
         ),
       ),
-    ));
+    ),
+  ),
+);
   }
 
   // ── 포스터 카드 그리드 ──

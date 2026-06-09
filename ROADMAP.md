@@ -38,7 +38,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 ### ✅ 핵심 (구현·유지)
 
-- [x] Obsidian 볼트 연동 (폴더 생성, watch, 원자적 저장)
+- [x] Sanctum 볼트 연동 (폴더 생성, watch, 원자적 저장)
 - [x] 글로벌 사전 샤딩 v2 + GitHub sync
 - [x] IP 1카드 그리드 + 매체 칩
 - [x] 작품 검색 (로컬 + 사전 + 직접 등록)

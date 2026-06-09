@@ -13,7 +13,7 @@ class AkashaFileService {
     'posters',
     'node_modules',
     '.git',
-    '.obsidian',
+    '.obsidian', // 외부 노트 앱 설정 폴더 — 스캔 제외
     '.trash',
     '.cursor',
   };

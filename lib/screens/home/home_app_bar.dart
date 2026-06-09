@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/dashboard_sidebar.dart';
 import '../../services/file_service.dart';
 
 /// 홈 화면 AppBar (검색·동기화·볼트·AI 도구)
@@ -16,6 +17,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onClearRegistryCache;
   final VoidCallback? onCatalogInbox;
   final int catalogContributionCount;
+  final bool showLibraryThemeButton;
+  final VoidCallback? onLibraryTheme;
+  final Color? libraryThemeAccent;
 
   const HomeAppBar({
     super.key,
@@ -31,6 +35,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onClearRegistryCache,
     this.onCatalogInbox,
     this.catalogContributionCount = 0,
+    this.showLibraryThemeButton = false,
+    this.onLibraryTheme,
+    this.libraryThemeAccent,
   });
 
   @override
@@ -56,6 +63,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
+        if (showLibraryThemeButton && onLibraryTheme != null)
+          IconButton(
+            icon: Icon(
+              Icons.palette_outlined,
+              color: libraryThemeAccent ?? DashboardSidebar.personalAccent,
+            ),
+            tooltip: '서재 테마',
+            onPressed: onLibraryTheme,
+          ),
         IconButton(
           icon: const Icon(Icons.search),
           tooltip: '검색',

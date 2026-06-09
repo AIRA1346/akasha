@@ -2,7 +2,7 @@
 
 > **세상 모든 작품을 기억하고, 추억하며, 다음 여정을 찾아가는 개인 미디어 아카이브 공간**
 
-AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 사랑하고 영접한 **세상의 모든 작품들**(만화, 게임, 애니메이션, 책, 영화, 드라마 등)을 Obsidian 호환 로컬 마크다운으로 축적하고, 글로벌 작품 사전과 조인해 전시하는 **통합 미디어 아카이빙 플랫폼**입니다.
+AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 사랑하고 영접한 **세상의 모든 작품들**(만화, 게임, 애니메이션, 책, 영화, 드라마 등)을 Sanctum vault 호환 로컬 마크다운으로 축적하고, 글로벌 작품 사전과 조인해 전시하는 **통합 미디어 아카이빙 플랫폼**입니다.
 
 **1차 출시 목표:** Steam (Windows) · **v1 목표 시점:** 2026년 3분기
 
@@ -16,7 +16,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 | 영역 | 설명 |
 |------|------|
-| **Obsidian 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
+| **Sanctum 볼트** | 로컬 `.md` + YAML front-matter, 폴더 연동·자동 감시 |
 | **엄선 작품 사전** | GitHub raw sync (`akasha-db`), 샤딩·온디맨드 로드 |
 | **IP 1카드 그리드** | 같은 IP는 카드 1장, 매체는 하단 칩으로 전부 표시 |
 | **나의 서재** *(신규 구현)* | 아카이브한 작품 전용 뷰(기본 무료) + 테마·꾸미기(IAP) |
@@ -88,7 +88,7 @@ https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
 ### 1. 📂 지능적인 다형성 기록 (Archive & Write) — **v1 ✅**
 
 - 매체별 상태·평점·명대사를 유연한 다형성 구조로 수용
-- 모든 개인 기록은 로컬 `.md`에 Obsidian 양식으로 보존 (100% 개인 소유)
+- 모든 개인 기록은 로컬 `.md`에 Sanctum vault 양식으로 보존 (100% 개인 소유)
 
 ### 2. 👑 감동의 실시간 회상 (Remind & Relive) — **v1 이후**
 
@@ -110,7 +110,7 @@ flowchart LR
         DB["akasha-db<br/>manifest + shards"]
     end
     subgraph Tier2["Tier 2 — 개인 기록"]
-        Vault["Obsidian 볼트<br/>.md + posters/"]
+        Vault["Sanctum 볼트<br/>.md + posters/"]
     end
     DB -->|work_id 조인| Fusion["UI Fusion"]
     Vault --> Fusion
@@ -137,7 +137,7 @@ flowchart LR
 
 ---
 
-## 📂 Obsidian Vault 연동
+## 📂 Sanctum Vault 연동
 
 앱에서 **폴더 연동** 시 아래 구조가 자동 생성됩니다.
 
@@ -170,7 +170,7 @@ flowchart LR
 
 ### 외부 편집
 
-Obsidian에서 `.md`를 수정하면 앱이 **약 0.4초 후** 자동 반영합니다. 앱 저장 시 **원자적 쓰기**(임시 파일 → rename)로 손상을 방지합니다.
+Sanctum vault 폴더에서 `.md`를 수정하면 앱이 **약 0.4초 후** 자동 반영합니다. 앱 저장 시 **원자적 쓰기**(임시 파일 → rename)로 손상을 방지합니다.
 
 ---
 

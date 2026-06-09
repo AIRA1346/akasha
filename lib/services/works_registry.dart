@@ -3,6 +3,7 @@ import '../models/enums.dart';
 import '../models/external_ids.dart';
 import '../models/work_id_codec.dart';
 import '../models/work_titles.dart';
+import '../utils/registry_catalog_filter.dart';
 import '../utils/registry_search_utils.dart';
 import '../utils/work_title_resolver.dart';
 import 'registry_shard_loader.dart';
@@ -248,6 +249,7 @@ class WorksRegistry {
     final q = normalizeRegistryQuery(query);
     final results = <String, RegistryWork>{};
     for (final work in _uniqueWorks()) {
+      if (isMaintainerCatalogProbe(work)) continue;
       if (_workMatchesQuery(work, q)) {
         results[work.workId] = work;
       }
@@ -289,6 +291,7 @@ class WorksRegistry {
   }) async {
     await _loader.ensureShardsForFilters(domain: domain, category: category);
     return _uniqueWorks().where((work) {
+      if (isMaintainerCatalogProbe(work)) return false;
       if (domain != null && work.domain != domain) return false;
       if (category != null && work.category != category) return false;
       return true;
@@ -301,6 +304,7 @@ class WorksRegistry {
     MediaCategory? category,
   }) {
     return _uniqueWorks().where((work) {
+      if (isMaintainerCatalogProbe(work)) return false;
       if (domain != null && work.domain != domain) return false;
       if (category != null && work.category != category) return false;
       return true;

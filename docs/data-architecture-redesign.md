@@ -13,7 +13,7 @@
 
 ### 0.1 최종 비전
 
-**AKASHA = IMDb + OpenLibrary + 개인 Obsidian 볼트**
+**AKASHA = IMDb + OpenLibrary + 개인 Sanctum 볼트**
 
 | 축 | 역할 |
 |----|------|
@@ -55,7 +55,7 @@
 │  · posterUrl + externalIds (검색·카드 표시용 — DB에 저장)          │
 │  · GitHub → Cloudflare → 앱 sync / 번들                           │
 ├──────────────────────────────────────────────────────────────────┤
-│  Tier 2 — User Archive        Obsidian 볼트 (사용자만, 희소)        │
+│  Tier 2 — User Archive        Sanctum 볼트 (사용자만, 희소)        │
 │  · 아카이브·기록한 작품만 .md 생성                                 │
 │  · 평점, 감상, 명대사, 나의 상태, (선택) 로컬 포스터               │
 │  · 레지스트리 전체의 md 파일 ❌                                   │

@@ -9,7 +9,7 @@ import 'poster_image.dart';
 import 'star_rating.dart';
 
 // ════════════════════════════════════════════════════════════════
-//  포스터 카드 위젯 (옵시디언 대시보드 스타일)
+//  포스터 카드 위젯 (AKASHA 대시보드 스타일)
 // ════════════════════════════════════════════════════════════════
 
 class PosterCard extends StatefulWidget {
@@ -135,7 +135,7 @@ class _PosterCardState extends State<PosterCard> {
                         top: 8,
                         right: 8,
                         child: Tooltip(
-                          message: 'Obsidian 아카이브 연동됨',
+                          message: 'Sanctum vault 연동됨',
                           child: Semantics(
                             label: '아카이브됨',
                             child: Container(

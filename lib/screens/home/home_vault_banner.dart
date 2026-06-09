@@ -18,7 +18,7 @@ class HomeVaultBanner extends StatelessWidget {
           const SizedBox(width: 10),
           const Expanded(
             child: Text(
-              '현재 데모용 샘플 데이터를 보고 있습니다. 로컬 폴더(Obsidian Vault)를 연동하여 마크다운 파일로 실제 아카이빙을 시작해 보세요!',
+              '현재 데모용 샘플 데이터를 보고 있습니다. 로컬 폴더(Sanctum Vault)를 연동하여 마크다운 파일로 실제 아카이빙을 시작해 보세요!',
               style: TextStyle(fontSize: 12, color: Colors.amber),
             ),
           ),

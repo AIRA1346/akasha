@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/akasha_item.dart';
-import '../models/browse_card.dart';
-import '../models/library_theme.dart';
-import '../services/entitlement_service.dart';
-import '../services/file_service.dart';
-import '../services/my_library_pipeline.dart';
-import '../utils/helpers.dart';
-import '../widgets/browse_poster_grid.dart';
-import '../widgets/poster_card.dart';
+import '../../models/library_theme.dart';
+import '../../services/entitlement_service.dart';
+import '../../services/file_service.dart';
+import '../../services/library_theme_preferences.dart';
+import '../../services/my_library_pipeline.dart';
+import '../../utils/helpers.dart';
+import '../../widgets/browse_poster_grid.dart';
+import '../../widgets/library_theme_picker.dart';
+import '../../widgets/poster_card.dart';
 import 'detail_screen.dart';
 
+/// @deprecated v1 통합 홈(`HomeScreen` 나만의 서재 모드)으로 대체. QA·레거시 참조용.
 /// 나의 서재 — 볼트에 아카이브한 작품만 모아 보는 전용 화면 (v1 무료)
 class MyLibraryScreen extends StatefulWidget {
   const MyLibraryScreen({super.key});
@@ -21,8 +21,6 @@ class MyLibraryScreen extends StatefulWidget {
 }
 
 class _MyLibraryScreenState extends State<MyLibraryScreen> {
-  static const _themePrefsKey = 'akasha_library_theme_id';
-
   List<AkashaItem> _items = [];
   bool _isLoading = true;
   SortCriteria _sortCriteria = SortCriteria.titleAsc;
@@ -36,21 +34,9 @@ class _MyLibraryScreenState extends State<MyLibraryScreen> {
 
   Future<void> _bootstrap() async {
     await EntitlementService.instance.load();
-    await _loadThemePreference();
+    _theme = await LibraryThemePreferences.load();
     await _loadItems();
-  }
-
-  Future<void> _loadThemePreference() async {
-    final prefs = await SharedPreferences.getInstance();
-    final savedId = prefs.getString(_themePrefsKey);
-    final theme = LibraryTheme.byId(savedId ?? '') ?? LibraryTheme.classic;
-    if (mounted) setState(() => _theme = theme);
-  }
-
-  Future<void> _saveTheme(LibraryTheme theme) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_themePrefsKey, theme.id);
-    if (mounted) setState(() => _theme = theme);
+    if (mounted) setState(() {});
   }
 
   Future<void> _loadItems() async {
@@ -92,100 +78,8 @@ class _MyLibraryScreenState extends State<MyLibraryScreen> {
   }
 
   Future<void> _showThemePicker() async {
-    final entitlements = EntitlementService.instance;
-    await showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: const Color(0xFF1E1E2E),
-      builder: (ctx) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  '서재 테마',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '기본 테마는 무료 · 프리미엄 테마는 Steam IAP (출시 예정)',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-                ),
-                const SizedBox(height: 12),
-                ...LibraryTheme.all.map((theme) {
-                  final locked = !entitlements.canUseTheme(theme);
-                  final selected = _theme.id == theme.id;
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: theme.backgroundColor,
-                      child: Icon(
-                        locked ? Icons.lock_outline : Icons.palette_outlined,
-                        color: theme.accentColor,
-                        size: 18,
-                      ),
-                    ),
-                    title: Text(theme.name),
-                    trailing: selected
-                        ? Icon(Icons.check, color: theme.accentColor)
-                        : null,
-                    onTap: () async {
-                      if (locked) {
-                        Navigator.pop(ctx);
-                        await _promptIapPurchase(theme);
-                        return;
-                      }
-                      await _saveTheme(theme);
-                      if (ctx.mounted) Navigator.pop(ctx);
-                    },
-                  );
-                }),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Future<void> _promptIapPurchase(LibraryTheme theme) async {
-    final bought = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('프리미엄 서재 테마'),
-        content: Text(
-          '「${theme.name}」 테마는 서재 꾸미기 팩(IAP)에 포함됩니다.\n'
-          'Steam 출시 시 인앱 구매로 해제됩니다.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('닫기'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('구매 (준비 중)'),
-          ),
-        ],
-      ),
-    );
-
-    if (bought != true || !mounted) return;
-
-    final success = await EntitlementService.instance
-        .purchase(EntitlementService.libraryThemePackId);
-    if (!mounted) return;
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          success
-              ? '구매가 완료되었습니다.'
-              : 'Steam IAP 연동 전입니다. 출시 빌드에서 활성화됩니다.',
-        ),
-      ),
-    );
+    final picked = await showLibraryThemePicker(context, current: _theme);
+    if (picked != null && mounted) setState(() => _theme = picked);
   }
 
   @override
@@ -254,7 +148,7 @@ class _MyLibraryScreenState extends State<MyLibraryScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              'Obsidian 볼트에 저장한 작품만 이곳에 모입니다.\n'
+              'Sanctum 볼트에 저장한 작품만 이곳에 모입니다.\n'
               '홈 화면에서 폴더를 연동해 주세요.',
               style: TextStyle(color: Colors.grey[500], height: 1.5),
               textAlign: TextAlign.center,

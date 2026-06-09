@@ -30,14 +30,11 @@ void main() {
       expect(solo.posterPath, startsWith('http'));
     });
 
-    test('webtoon category filter returns wk_ pair plus scale stubs', () async {
+    test('webtoon category filter returns wk_ pair (probes hidden)', () async {
       final works = await WorksRegistry.getFilteredWorks(
         category: MediaCategory.webtoon,
       );
-      expect(works.length, 5);
-      // 정식 카탈로그 2작 (솔로 레벨링 · 신의 탑) — 나머지는 A5 Scale sub_* 스텁
-      final canonical = works.where((w) => w.workId.startsWith('wk_'));
-      expect(canonical.length, 2);
+      expect(works.length, 2);
     });
   });
 }

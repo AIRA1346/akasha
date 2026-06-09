@@ -25,7 +25,7 @@ void main() {
 
       await svc.grantEntitlement(EntitlementService.libraryThemePackId);
       expect(svc.canUseTheme(LibraryTheme.sakura), isTrue);
-      expect(svc.canUseTheme(LibraryTheme.obsidian), isTrue);
+      expect(svc.canUseTheme(LibraryTheme.amethyst), isTrue);
     });
 
     test('purchase stub returns false before Steam integration', () async {
