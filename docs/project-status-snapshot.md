@@ -112,7 +112,7 @@
 | R1 | ~~미커밋·미 push~~ | — | **해소** (2026-06-09) |
 | R2 | **batch3/4/seed_expansion** v3·gate 없음 | **높** | 실행 금지 — [expansion-tool-grading.md](expansion-tool-grading.md) |
 | R3 | maintainer `sub_*` **28건** (wk_ 미할당) | 낮 | ci 예외 · 장기 wk_ 할당 검토 |
-| R4 | **CI/GitHub Actions 없음** | 중 | `preflight_check`로 부분 완화 |
+| R4 | CI **보강** | 낮 | `registry_check` + `scale_hold_check` · preflight 추가 |
 | R5 | Expansion batch5/6 **Net-new 0** | 정보 | batch7 A유형으로 **해소** |
 
 ---
@@ -125,8 +125,9 @@
 | 2 | **done** | `project-status-snapshot` @430 갱신 |
 | 3 | **done** | `docs/README` SD4·도구 인덱스 |
 | 4 | **hold** | SD2.6 — insert 중단 → **2026-07-09** |
-| 5 | **next** | O3 checkpoint · Maintainer rate vs G2 |
-| 6 | **next** | 5k 마일스톤 — O12·O8 재관측 |
+| 5 | **prep** | O3 checkpoint 도구 · hold 관측 **Scale 12** |
+| 6 | **next** | **2026-07-09** O3 rate vs G2 |
+| 7 | **next** | 5k 마일스톤 — O12·O8 재관측 |
 
 ---
 
@@ -138,3 +139,4 @@
 | 2026-06-09 | Scale 2–5 (412→416) · ci 정리 |
 | 2026-06-09 | Scale 7–11: batch7 + supply b4–6 → **430** · O8–O12 · SD4 |
 | 2026-06-09 | Git 정리 — `f6299d0` push · snapshot/README 동기화 |
+| 2026-06-09 | Scale 12 — hold 관측 · O3 prep · CI `scale_hold_check` |

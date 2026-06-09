@@ -14,7 +14,7 @@ import 'package:path/path.dart' as p;
 const _minutesPerCluster = 15.0;
 
 void main(List<String> args) {
-  final apply = args.contains('--apply');
+  final apply = args.contains('--apply') || args.contains('--report');
   final minMembers = _readMinMembers(args);
   final root = _root();
 

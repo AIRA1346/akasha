@@ -46,6 +46,8 @@
 | `a5_scale_governance_observation.dart` | O8 governance 번들 wall |
 | `a5_scale_semantic_spotcheck.dart` | O9 semantic cohort 20 |
 | `a5_scale_franchise_queue.dart` | O12 franchise 큐 스냅샷 |
+| `a5_scale_hold_observation.dart` | SD2.6 hold 정기 관측 번들 |
+| `a5_scale_o3_checkpoint.dart` | O3 G2 throughput checkpoint |
 | `coverage_sprint_02_economics.dart` | registry-wide Economics (O6) |
 | `preflight_check.dart` | 4종 gate 일괄 |
 

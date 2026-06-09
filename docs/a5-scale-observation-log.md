@@ -450,10 +450,34 @@
 
 ---
 
+## Scale 12 — SD2.6 hold 정기 관측 · O3 prep
+
+**목적:** insert **없이** O8·O9·O12·O7 **재확인** · O3 checkpoint **도구화**.
+
+| 도구 | 결과 |
+|------|------|
+| `a5_scale_hold_observation.dart` | **PASS** · wall **8923 ms** |
+| `a5_scale_o3_checkpoint.dart` | elapsed **0** · rate **pending** · checkpoint **30d** |
+
+### Hold bundle
+
+| 관측 | 결과 |
+|------|------|
+| O8 governance | **PASS** |
+| O9 semantic (20) | **PASS** · flagged **0** |
+| O12 franchise | 큐 **0** |
+| O7 ja backlog | **0** · SD3.5 Pause **미충족** |
+| titles_en | **92.09%** PASS |
+
+**CI:** `.github/workflows/scale_hold_check.yml` — 주 1회 + `preflight_check`  
+**산출:** `scale_hold_observation.json` · `scale_o3_checkpoint.json`
+
+---
+
 ## 다음 Scale 관측 (후속)
 
 | 우선 | 항목 |
 |:----:|------|
 | 1 | **SD2.6 hold** 유지 → **2026-07-09** |
-| 2 | O3 checkpoint — Maintainer **+12** / 30일 rate vs G2 가설 |
+| 2 | O3 checkpoint — `--as-of 2026-07-09` rate vs G2 |
 | 3 | franchise 큐 **5k 마일스톤** 재관측 |

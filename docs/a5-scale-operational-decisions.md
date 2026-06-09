@@ -78,8 +78,10 @@
 | SD4.3 | O12 franchise **분 단가** | **15 min / cluster** (Sprint 03 maintainer-minutes 가정) |
 | SD4.4 | O8·O12 **5k/50k 추정** | 현재 works 대비 **선형 extrapolation** (가설 — checkpoint 후 보정) |
 | SD4.5 | franchise_linter **FAIL** | O8 번들 내 **정보** — 큐 존재 신호 (O12 연동) |
+| SD4.6 | hold 구간 **정기 관측** | `a5_scale_hold_observation` — **주 1회** (CI) |
+| SD4.7 | O3 checkpoint 명령 | `a5_scale_o3_checkpoint --as-of 2026-07-09` |
 
-**도구:** `a5_scale_governance_observation.dart` · `a5_scale_semantic_spotcheck.dart` · `a5_scale_franchise_queue.dart`
+**도구:** `a5_scale_governance_observation.dart` · `a5_scale_semantic_spotcheck.dart` · `a5_scale_franchise_queue.dart` · `a5_scale_hold_observation.dart` · `a5_scale_o3_checkpoint.dart`
 
 ---
 

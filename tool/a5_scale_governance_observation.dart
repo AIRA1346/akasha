@@ -11,7 +11,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 void main(List<String> args) {
-  final apply = args.contains('--apply');
+  final apply = args.contains('--apply') || args.contains('--report');
   final root = _root();
   final manifest = jsonDecode(
     File(p.join(root.path, 'akasha-db', 'manifest.json')).readAsStringSync(),

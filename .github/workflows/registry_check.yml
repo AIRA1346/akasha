@@ -24,5 +24,8 @@ jobs:
         with:
           sdk: stable
 
+      - name: Preflight gates
+        run: dart run tool/preflight_check.dart
+
       - name: Validate registry shards and franchise groups
         run: dart run tool/ci_registry_check.dart

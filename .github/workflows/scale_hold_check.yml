@@ -1,0 +1,30 @@
+name: Scale Hold Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    # SD2.6 hold 구간 — 주 1회 (월요일 00:00 UTC)
+    - cron: '0 0 * * 1'
+  push:
+    paths:
+      - 'tool/a5_scale_*.dart'
+      - '.github/workflows/scale_hold_check.yml'
+
+jobs:
+  hold-observation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Preflight gates
+        run: dart run tool/preflight_check.dart
+
+      - name: SD2.6 hold observation (O8·O9·O12·O7)
+        run: dart run tool/a5_scale_hold_observation.dart --apply
+
+      - name: O3 checkpoint snapshot
+        run: dart run tool/a5_scale_o3_checkpoint.dart --apply

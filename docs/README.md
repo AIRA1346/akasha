@@ -51,6 +51,8 @@
 | `dart run tool/a5_scale_governance_observation.dart --apply` | **O8** governance 번들 wall |
 | `dart run tool/a5_scale_semantic_spotcheck.dart --apply` | **O9** semantic cohort 20 |
 | `dart run tool/a5_scale_franchise_queue.dart --apply` | **O12** franchise 큐 스냅샷 |
+| `dart run tool/a5_scale_hold_observation.dart --apply` | SD2.6 hold 번들 (O8·O9·O12·O7) |
+| `dart run tool/a5_scale_o3_checkpoint.dart --apply` | **O3** rate 산출 (`--as-of` 지원) |
 | [akasha-db-policy.md](akasha-db-policy.md) | 데이터 정책 |
 | [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md) | 5k/50k 리스크 |
 

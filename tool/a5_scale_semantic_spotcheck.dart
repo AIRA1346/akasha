@@ -84,7 +84,7 @@ SemanticJaFinding? checkSemanticJa(Map<String, dynamic> work) {
 }
 
 void main(List<String> args) {
-  final apply = args.contains('--apply');
+  final apply = args.contains('--apply') || args.contains('--report');
   final root = _root();
   final works = loadRegistryWorkMaps(root);
   final byId = {for (final w in works) w['workId']?.toString() ?? '': w};
