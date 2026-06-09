@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "gen_animation_my-neighbor-totoro_1988"
-    ]
+    ],
+    "titles": {
+      "en": "MY Neighbor Totoro",
+      "ko": "이웃집 토토로"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000213": {
     "workId": "wk_000000213",
@@ -71,6 +78,13 @@
     ],
     "legacyIds": [
       "sub_animation_steinsgate_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Steinsgate",
+      "ko": "슈타인즈 게이트"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

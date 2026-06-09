@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_true-detective_2014"
-    ]
+    ],
+    "titles": {
+      "en": "True Detective",
+      "ko": "트루 디텍티브"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

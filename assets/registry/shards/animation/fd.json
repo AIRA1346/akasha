@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_overlord_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Overlord",
+      "ko": "오버로드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

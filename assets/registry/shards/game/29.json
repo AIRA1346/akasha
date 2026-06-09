@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg",
     "legacyIds": [
       "sub_game_love-live-all-stars_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Love Live ALL Stars",
+      "ko": "러브라이브! 올스타즈"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

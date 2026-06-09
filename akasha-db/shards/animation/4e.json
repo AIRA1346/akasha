@@ -53,6 +53,13 @@
     ],
     "legacyIds": [
       "sub_animation_psycho-pass_2012"
-    ]
+    ],
+    "titles": {
+      "en": "Psycho Pass",
+      "ko": "사이코 패스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

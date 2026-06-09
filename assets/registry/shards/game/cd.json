@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493340/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid493340_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Planet Coaster",
+      "ko": "플래닛 코스터"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

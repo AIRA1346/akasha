@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_rurouni-kenshin_1994"
-    ]
+    ],
+    "titles": {
+      "en": "Rurouni Kenshin",
+      "ko": "루론검심"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

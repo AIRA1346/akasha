@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048862579-L.jpg",
     "legacyIds": [
       "sub_book_spice-and-wolf_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Spice AND Wolf",
+      "ko": "늑대와 향신료"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

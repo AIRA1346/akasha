@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/594650/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid594650_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Save 60% on Hunt: Showdown 1896",
+      "ko": "토탈 워: 삼국"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -46,6 +46,13 @@
     ],
     "legacyIds": [
       "sub_manga_86-eighty-six_2017"
-    ]
+    ],
+    "titles": {
+      "en": "86 Eighty SIX",
+      "ko": "86 -에이티식스-"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1086940_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Baldur's Gate 3",
+      "ko": "발할라: 신들의 황혼"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

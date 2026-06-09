@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid952060_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Save 80% on Resident Evil 3",
+      "ko": "Resident Evil 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

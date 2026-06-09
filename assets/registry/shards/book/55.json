@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
     "legacyIds": [
       "sub_book_sword-art-online_2009"
-    ]
+    ],
+    "titles": {
+      "en": "Sword ART Online",
+      "ko": "소드 아트 온라인"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

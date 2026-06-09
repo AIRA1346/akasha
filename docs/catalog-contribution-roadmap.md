@@ -1,7 +1,7 @@
 # 카탈로그 기여·확장 로드맵
 
 > **기준일:** 2026-06-08  
-> **관련:** [akasha-db/contributions/README.md](../akasha-db/contributions/README.md) · [catalog-ownership.md](catalog-ownership.md)
+> **관련:** [akasha-db/contributions/README.md](../akasha-db/contributions/README.md) · [catalog-ownership.md](catalog-ownership.md) · [registry-growth-strategy.md](registry-growth-strategy.md) · [contribution-model-strategy.md](contribution-model-strategy.md)
 
 ---
 

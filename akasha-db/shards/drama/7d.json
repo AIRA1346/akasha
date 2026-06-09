@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_the-witcher_2019"
-    ]
+    ],
+    "titles": {
+      "en": "THE Witcher",
+      "ko": "위쳐"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

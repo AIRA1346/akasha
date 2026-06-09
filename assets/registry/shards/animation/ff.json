@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_lycoris-recoil_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Lycoris Recoil",
+      "ko": "리코리스 리코일"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_trigun_1998"
-    ]
+    ],
+    "titles": {
+      "en": "Trigun",
+      "ko": "트라이건"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

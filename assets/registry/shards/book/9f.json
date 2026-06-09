@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
     "legacyIds": [
       "gen_book_da-vinci-code_2003"
-    ]
+    ],
+    "titles": {
+      "en": "DA Vinci Code",
+      "ko": "다빈치 코드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

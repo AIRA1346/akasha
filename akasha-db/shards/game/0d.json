@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440900/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid440900_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Conan Exiles Enhanced",
+      "ko": "오버쿡드 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

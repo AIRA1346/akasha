@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1817070_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Marvel’s Spider-Man Remastered",
+      "ko": "마블 스파이더맨 리마스터"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "sub_manga_kaguya-sama_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Kaguya Sama",
+      "ko": "카구야님은 고백받고 싶어"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000395": {
     "workId": "wk_000000395",
@@ -33,6 +40,13 @@
     ],
     "legacyIds": [
       "sub_manga_vagabond_1998"
-    ]
+    ],
+    "titles": {
+      "en": "Vagabond",
+      "ko": "바감동"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

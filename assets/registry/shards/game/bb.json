@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1938090_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Call of Duty®",
+      "ko": "콜 오브 듀티: MW II"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

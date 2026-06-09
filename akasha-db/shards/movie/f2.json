@@ -15,6 +15,15 @@
     ],
     "legacyIds": [
       "gen_movie_lord-of-the-rings-fellowship_2001"
+    ],
+    "titles": {
+      "ko": "반지의 제왕: 반지 원정대",
+      "en": "The Lord of the Rings: The Fellowship of the Ring"
+    },
+    "aliases": [
+      "Lord of the Rings",
+      "The Fellowship of the Ring",
+      "The Lord of the Rings"
     ]
   }
 }

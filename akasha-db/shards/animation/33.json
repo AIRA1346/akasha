@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_monogatari_2009"
-    ]
+    ],
+    "titles": {
+      "en": "Monogatari",
+      "ko": "바케모노가타리"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

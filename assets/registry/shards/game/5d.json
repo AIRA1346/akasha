@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1466860_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Save 65% on Age of Empires IV: Anniversary Edition",
+      "ko": "Age of Empires IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

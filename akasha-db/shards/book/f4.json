@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
     "legacyIds": [
       "sub_book_overlord-light-novel_2012"
-    ]
+    ],
+    "titles": {
+      "en": "Overlord",
+      "ko": "오버로드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_gintama_2003"
-    ]
+    ],
+    "titles": {
+      "en": "Gintama",
+      "ko": "은혼"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://image.yes24.com/goods/2301053/L",
     "legacyIds": [
       "gen_manga_math-thief_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Math Thief",
+      "ko": "수학도둑"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

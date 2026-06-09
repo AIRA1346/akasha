@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_bocchi-the-rock_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Bocchi THE Rock",
+      "ko": "봇치 더 록!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

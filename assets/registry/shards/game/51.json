@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1326470/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1326470_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Save 70% on Sons Of The Forest",
+      "ko": "Sons of the Forest"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

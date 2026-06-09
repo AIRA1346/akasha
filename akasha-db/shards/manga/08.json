@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_oshi-no-ko_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Oshi NO KO",
+      "ko": "최애의 아이"
+    }
   }
 }

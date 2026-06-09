@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_chihayafuru_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Chihayafuru",
+      "ko": "치하야후루"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

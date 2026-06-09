@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1627720_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Lies of P",
+      "ko": "Lies of P"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000130": {
     "workId": "wk_000000130",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid949230_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Cities: Skylines II",
+      "ko": "Cities Skylines II"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

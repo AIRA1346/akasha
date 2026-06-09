@@ -17,6 +17,13 @@
     "legacyIds": [
       "gen_game_appid230410_2013",
       "gen_game_appid236390_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Warframe",
+      "ko": "워프레임"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg",
     "legacyIds": [
       "sub_book_konosuba-light-novel_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Konosuba",
+      "ko": "이 멋진 세계에 축복을!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

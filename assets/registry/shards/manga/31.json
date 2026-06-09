@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_vinland-saga_2005"
-    ]
+    ],
+    "titles": {
+      "en": "Vinland Saga",
+      "ko": "빈란드 사가"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

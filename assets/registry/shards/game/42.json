@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid359550_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Tom Clancy's Rainbow Six Siege",
+      "ko": "레인보우 식스 시즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000105": {
     "workId": "wk_000000105",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid400_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Portal",
+      "ko": "포털"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -23,6 +23,16 @@
     },
     "legacyIds": [
       "sub_manga_dandadan_2021"
+    ],
+    "titles": {
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
+    },
+    "aliases": [
+      "Dandadan",
+      "ダンダダン"
     ]
   }
 }

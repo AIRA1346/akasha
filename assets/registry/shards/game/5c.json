@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2218500/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid2218500_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Vector Wave",
+      "ko": "Ghost of Tsushima"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_promised-neverland_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Promised Neverland",
+      "ko": "약속의 네버랜드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

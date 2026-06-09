@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548570/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid548570_2017"
-    ]
+    ],
+    "titles": {
+      "en": "RAGE 2",
+      "ko": "레인월드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000287": {
     "workId": "wk_000000287",
@@ -34,6 +41,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k5k.jpg",
     "legacyIds": [
       "sub_game_wuthering-waves_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Wuthering Waves",
+      "ko": "명조: 워더링 웨이브"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

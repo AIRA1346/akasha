@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_animation_neon-genesis-evangelion_1995"
-    ]
+    ],
+    "titles": {
+      "en": "Neon Genesis Evangelion",
+      "ko": "신세기 에반게리온"
+    }
   }
 }

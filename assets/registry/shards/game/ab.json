@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900.jpg",
     "legacyIds": [
       "sub_game_celeste_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Save 75% on Celeste",
+      "ko": "셀레스테"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

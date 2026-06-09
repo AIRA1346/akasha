@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
     "legacyIds": [
       "gen_game_diablo-4_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Diablo® IV",
+      "ko": "디아블로 IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

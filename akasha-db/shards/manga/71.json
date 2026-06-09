@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_gabriel-dropout_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Gabriel Dropout",
+      "ko": "가브릴 드롭아웃"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

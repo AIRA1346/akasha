@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg",
     "legacyIds": [
       "gen_book_percy-jackson_2005"
-    ]
+    ],
+    "titles": {
+      "en": "Percy Jackson",
+      "ko": "퍼시 잭슨과 번개 도둑"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

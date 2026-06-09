@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_chainsaw-man_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Chainsaw MAN",
+      "ko": "체인소 맨"
+    }
   },
   "wk_000000385": {
     "workId": "wk_000000385",

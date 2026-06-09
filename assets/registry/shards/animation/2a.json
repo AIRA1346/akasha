@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_fate-zero_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Fate Zero",
+      "ko": "페이트/제로"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

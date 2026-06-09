@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
     "legacyIds": [
       "sub_game_honkai-star-rail_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Honkai Star Rail",
+      "ko": "붕괴: 스타레일"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

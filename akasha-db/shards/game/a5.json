@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2kgk.jpg",
     "legacyIds": [
       "sub_game_project-sekai_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Project Sekai",
+      "ko": "프로젝트 세카이"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000074": {
     "workId": "wk_000000074",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233450/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid233450_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Prison Architect",
+      "ko": "프리즌 아키텍트"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

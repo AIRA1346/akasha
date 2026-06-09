@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg",
     "legacyIds": [
       "sub_game_touhou-lost-word_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Touhou Lost Word",
+      "ko": "동방 로스트 워드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

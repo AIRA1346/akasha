@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid4000_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Save 50% on Garry's Mod",
+      "ko": "가라오케 파티"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

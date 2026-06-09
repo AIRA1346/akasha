@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534380/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid534380_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Dying Light 2 Stay Human: Reloaded Edition",
+      "ko": "Dying Light 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

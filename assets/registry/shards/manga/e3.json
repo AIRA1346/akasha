@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_my-hero-academia_2014"
-    ]
+    ],
+    "titles": {
+      "en": "MY Hero Academia",
+      "ko": "나의 히어로 아카데미아"
+    }
   },
   "wk_000000381": {
     "workId": "wk_000000381",
@@ -45,10 +50,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_shingeki-no-kyojin_2009"
-    ]
+    ],
+    "titles": {
+      "en": "Shingeki NO Kyojin",
+      "ko": "진격의 거인"
+    }
   }
 }

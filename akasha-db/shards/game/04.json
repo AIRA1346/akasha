@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1145350_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Hades II",
+      "ko": "Hades II"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000077": {
     "workId": "wk_000000077",
@@ -33,7 +40,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid236850_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Europa Universalis IV",
+      "ko": "유로파 유니버설리스 IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000082": {
     "workId": "wk_000000082",
@@ -51,6 +65,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid251570_2016"
-    ]
+    ],
+    "titles": {
+      "en": "7 Days to Die",
+      "ko": "7 Days to Die"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

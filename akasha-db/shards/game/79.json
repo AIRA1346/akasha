@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/library_600x900.jpg",
     "legacyIds": [
       "sub_game_nier-automata_2017"
-    ]
+    ],
+    "titles": {
+      "en": "NieR:Automata™",
+      "ko": "니어: 오토마타"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

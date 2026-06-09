@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid550_2009"
-    ]
+    ],
+    "titles": {
+      "en": "Left 4 Dead 2",
+      "ko": "레프트 4 데드 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

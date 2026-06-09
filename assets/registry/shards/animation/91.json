@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_black-lagoon_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Black Lagoon",
+      "ko": "블랙 라군"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

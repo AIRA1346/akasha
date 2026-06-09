@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_silent-voice_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Silent Voice",
+      "ko": "목소리의 형태"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

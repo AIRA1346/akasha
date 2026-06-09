@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548430/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid548430_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Deep Rock Galactic",
+      "ko": "딥 락 갤럭틱"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

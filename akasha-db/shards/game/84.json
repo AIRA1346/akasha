@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1328670/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1328670_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Mass Effect™ Legendary Edition",
+      "ko": "미스트워커"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

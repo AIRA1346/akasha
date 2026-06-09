@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg",
     "legacyIds": [
       "sub_book_monogatari-light-novel_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Monogatari",
+      "ko": "바케모노가타리"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

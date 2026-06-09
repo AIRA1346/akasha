@@ -5,7 +5,8 @@
     "titles": {
       "ko": "데스노트",
       "en": "Death Note",
-      "ja": "DEATH NOTE"
+      "ja": "DEATH NOTE",
+      "zh": "死亡笔记"
     },
     "category": "animation",
     "domain": "subculture",
@@ -36,6 +37,9 @@
     },
     "legacyIds": [
       "sub_animation_death-note_2006"
+    ],
+    "aliases": [
+      "死亡笔记"
     ]
   },
   "wk_000000237": {
@@ -54,6 +58,13 @@
     ],
     "legacyIds": [
       "sub_animation_slime-anime_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Slime",
+      "ko": "전생 슬라임"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

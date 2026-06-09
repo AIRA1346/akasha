@@ -23,6 +23,16 @@
     },
     "legacyIds": [
       "sub_manga_fullmetal-alchemist_2001"
+    ],
+    "titles": {
+      "ko": "강철의 연금술사",
+      "en": "Fullmetal Alchemist",
+      "ja": "鋼の錬金術師",
+      "romaji": "Hagane no Renkinjutsushi"
+    },
+    "aliases": [
+      "FMA",
+      "Fullmetal Alchemist"
     ]
   }
 }

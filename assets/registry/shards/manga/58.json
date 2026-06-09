@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_mushishi_1999"
-    ]
+    ],
+    "titles": {
+      "en": "Mushishi",
+      "ko": "충사"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

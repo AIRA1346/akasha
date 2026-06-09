@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg",
     "legacyIds": [
       "gen_book_harry-potter-philosophers-stone_1997"
-    ]
+    ],
+    "titles": {
+      "en": "Harry Potter Philosophers Stone",
+      "ko": "해리 포터와 마법사의 돌"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

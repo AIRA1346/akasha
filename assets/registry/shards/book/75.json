@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
     "legacyIds": [
       "gen_book_norwegian-wood_1987"
-    ]
+    ],
+    "titles": {
+      "en": "Norwegian Wood",
+      "ko": "노르웨이의 숲"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

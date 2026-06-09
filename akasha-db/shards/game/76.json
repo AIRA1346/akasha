@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid440_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Team Fortress 2",
+      "ko": "팀 포트리스 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

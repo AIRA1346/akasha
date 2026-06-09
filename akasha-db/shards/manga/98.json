@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_shigatsu-wa-kimi-no-uso_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Shigatsu WA Kimi NO USO",
+      "ko": "4월은 너의 거짓말"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -23,6 +23,17 @@
     },
     "legacyIds": [
       "sub_manga_kimetsu-no-yaiba_2016"
+    ],
+    "titles": {
+      "ko": "귀멸의 칼날",
+      "en": "Demon Slayer: Kimetsu no Yaiba",
+      "ja": "鬼滅の刃",
+      "zh": "鬼灭之刃",
+      "romaji": "Kimetsu no Yaiba"
+    },
+    "aliases": [
+      "Demon Slayer",
+      "Kimetsu no Yaiba"
     ]
   }
 }

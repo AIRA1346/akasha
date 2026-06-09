@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_game-of-thrones_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Game OF Thrones",
+      "ko": "왕좌의 게임"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

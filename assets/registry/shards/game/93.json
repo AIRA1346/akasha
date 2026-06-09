@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774361/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid774361_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Blasphemous",
+      "ko": "블러드본"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,7 +15,8 @@
     ],
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
     "externalIds": {
@@ -23,6 +24,10 @@
     },
     "legacyIds": [
       "sub_manga_march-comes-in-like-a-lion_2007"
-    ]
+    ],
+    "titles": {
+      "en": "March Comes IN Like A Lion",
+      "ko": "3월의 라이온"
+    }
   }
 }

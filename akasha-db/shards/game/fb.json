@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid374320_2016"
-    ]
+    ],
+    "titles": {
+      "en": "DARK SOULS™ III",
+      "ko": "다크 소울 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000125": {
     "workId": "wk_000000125",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid782330_2020"
-    ]
+    ],
+    "titles": {
+      "en": "DOOM Eternal",
+      "ko": "도타 언더로드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

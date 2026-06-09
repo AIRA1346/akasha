@@ -148,6 +148,10 @@
 > **Search Workload Profile:** ✅ 가정 v0 — [docs/search-workload-profile.md](docs/search-workload-profile.md)
 > **SW1 Global Search Validation:** 🔶 계획·스위트 ✅ — [docs/global-search-validation-plan.md](docs/global-search-validation-plan.md)
 > **URV Universal Registry Validation:** 🔶 계획 ✅ — [docs/universal-registry-validation.md](docs/universal-registry-validation.md)
+> **Registry Growth Strategy:** ✅ — [docs/registry-growth-strategy.md](docs/registry-growth-strategy.md)
+> **Contribution Model Strategy:** ✅ — [docs/contribution-model-strategy.md](docs/contribution-model-strategy.md)
+> **Baseline v1 (고정):** ✅ ADR-001~006·SW1·URV·Growth·Contribution — [docs/baseline-v1.md](docs/baseline-v1.md)
+> **5k Risk Analysis:** ✅ Top3=수집·dedupe·alias — [docs/scale-5k-risk-analysis.md](docs/scale-5k-risk-analysis.md)
 > **Search Index Refactor:** ⏸ SW1 게이트 + POC + ADR 전까지 보류
 
 - [x] **[Validation P0] Search Index Bottleneck** — 파일·메모리·parse·latency 실측
@@ -155,11 +159,14 @@
 - [x] **[Validation P0c] Search Workload Profile** — 유형·비율 가정 v0
 - [x] **[Validation P1] SW1 Global Search Validation** — 계획·쿼리 스위트 95건·recall 기준 ([global-search-validation-plan.md](docs/global-search-validation-plan.md))
 - [x] **[Validation P1] URV Universal Registry Validation** — Work/Franchise·canonical·alias·series·dedupe ([universal-registry-validation.md](docs/universal-registry-validation.md))
-- [ ] **[Validation P1] SW1-A / URV-A 402 baseline** — recall + registry consistency 수동 실행
+- [x] **[Baseline v1 고정]** ADR-001~006·SW1·URV·Growth·Contribution ([docs/baseline-v1.md](docs/baseline-v1.md))
 - [x] **[Validation P1] ADR-001 Dual-layer** — Work + Franchise 승인 ([docs/adr/ADR-001-dual-layer-entity-model.md](docs/adr/ADR-001-dual-layer-entity-model.md))
-- [ ] **[Validation P1] ADR-005 최소 기록 단위** — 매체별 Work 표 (대부분 승인) ([ADR-005](docs/adr/ADR-005-minimum-recordable-unit.md))
-- [ ] **[Validation P1] ADR-006 Franchise 계층** — 경계·깊이·IP 1카드 ([ADR-006](docs/adr/ADR-006-franchise-boundary-hierarchy.md)) — URV-A 선행
-- [ ] **[Validation P1] ADR-002 A/B 결정** — B안(곡=Work) 가중 ([ADR-002](docs/adr/ADR-002-music-registry-model.md))
+- [x] **[Validation P1] ADR-006 Franchise 계층** — F1·depth≤3·IP 1카드 **승인** ([ADR-006](docs/adr/ADR-006-franchise-boundary-hierarchy.md))
+- [x] **[Validation P1] ADR-005 최소 기록 단위** — 비음악 매체 승인 ([ADR-005](docs/adr/ADR-005-minimum-recordable-unit.md))
+- [ ] **[Validation P1] ADR-002 A/B 결정** — B안(곡=Work) 가중 · 음악 도입 전 확정 ([ADR-002](docs/adr/ADR-002-music-registry-model.md))
+- [ ] **[Validation P1] URV-A 402 baseline** — 정체성·관계·dedupe 수동 실행
+- [ ] **[Validation P1] SW1-A 402 baseline** — recall@10/@20 수동 실행
+- [ ] **[Validation P1] 5k 시뮬레이션 SIM-A/B/C** — 수집·dedupe·alias Top3 ([scale-5k-risk-analysis.md](docs/scale-5k-risk-analysis.md))
 - [ ] **[Validation P1] Architecture Options POC** — Workload 기준 · A / B / E1 벤치
 - [ ] **[Validation P1] shardBits 임계 실측** — 8/12/14 bits별 shard당 작품 수·로드 비용 비교
 - [ ] **[Validation P1] quality 재빌드 실측** — 전량 rebuild vs 증분

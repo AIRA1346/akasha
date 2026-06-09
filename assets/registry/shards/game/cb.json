@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid12120_2004"
-    ]
+    ],
+    "titles": {
+      "en": "Grand Theft Auto: San Andreas",
+      "ko": "GTA San Andreas"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000067": {
     "workId": "wk_000000067",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219740/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid219740_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Don't Starve",
+      "ko": "Don't Starve"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

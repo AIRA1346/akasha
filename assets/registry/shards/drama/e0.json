@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_drama_one-piece-live-action_2023"
-    ]
+    ],
+    "titles": {
+      "en": "ONE Piece Live Action",
+      "ko": "원피스 (실사)"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

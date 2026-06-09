@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "sub_animation_hajime-no-ippo_2000"
-    ]
+    ],
+    "titles": {
+      "en": "Hajime NO Ippo",
+      "ko": "첫걸음"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000220": {
     "workId": "wk_000000220",

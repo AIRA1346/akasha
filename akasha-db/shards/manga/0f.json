@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_tokyo-revengers_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Tokyo Revengers",
+      "ko": "도쿄 리벤저스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

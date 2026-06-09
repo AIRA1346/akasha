@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_ao-ashi_2015"
-    ]
+    ],
+    "titles": {
+      "en": "AO Ashi",
+      "ko": "아오아시"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

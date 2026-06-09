@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1203220_2023"
-    ]
+    ],
+    "titles": {
+      "en": "NARAKA: BLADEPOINT",
+      "ko": "엑스칼리버"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

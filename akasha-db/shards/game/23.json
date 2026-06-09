@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid427520_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Factorio",
+      "ko": "팩토리오"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

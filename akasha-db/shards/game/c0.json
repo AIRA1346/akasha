@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid346110_2017"
-    ]
+    ],
+    "titles": {
+      "en": "ARK: Survival Evolved",
+      "ko": "아크: 서바이벌 이볼브드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid22300_2008"
-    ]
+    ],
+    "titles": {
+      "en": "Fallout 3",
+      "ko": "폴아웃 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

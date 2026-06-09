@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
     "legacyIds": [
       "gen_game_zelda-breath-of-the-wild_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Zelda Breath OF THE Wild",
+      "ko": "젤다의 전설 브레스 오브 더 와일드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

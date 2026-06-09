@@ -55,6 +55,13 @@
     ],
     "legacyIds": [
       "sub_animation_made-in-abyss_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Made IN Abyss",
+      "ko": "메이드 인 어비스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

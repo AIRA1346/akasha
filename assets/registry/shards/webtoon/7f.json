@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_webtoon_solo-leveling_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Solo Leveling",
+      "ko": "나 혼자만 레벨업"
+    }
   }
 }

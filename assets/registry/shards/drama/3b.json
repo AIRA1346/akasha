@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_breaking-bad_2008"
-    ]
+    ],
+    "titles": {
+      "en": "Breaking BAD",
+      "ko": "브레이킹 배드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

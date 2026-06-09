@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/485510/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid485510_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Save 85% on Nioh: Complete Edition",
+      "ko": "Nioh"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

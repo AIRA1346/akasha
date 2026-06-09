@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_gintama_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Gintama",
+      "ko": "은혼"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

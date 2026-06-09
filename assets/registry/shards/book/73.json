@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg",
     "legacyIds": [
       "gen_book_sherlock-holmes_1887"
-    ]
+    ],
+    "titles": {
+      "en": "Sherlock Holmes",
+      "ko": "셜록 홈즈: 단홍색 연구"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

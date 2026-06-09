@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1623730_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Save 25% on Palworld",
+      "ko": "팔월드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

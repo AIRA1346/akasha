@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid377160_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Fallout 4",
+      "ko": "폴아웃 4"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000132": {
     "workId": "wk_000000132",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid960090_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Bloons TD 6",
+      "ko": "슬라임 랜처"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_animation_attack-on-titan_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Attack ON Titan",
+      "ko": "진격의 거인"
+    }
   }
 }

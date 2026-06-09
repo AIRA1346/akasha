@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_code-geass_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Code Geass",
+      "ko": "코드 기어스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

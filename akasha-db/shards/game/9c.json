@@ -16,7 +16,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1091500_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Cyberpunk 2077",
+      "ko": "사이버펑크 2077"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000039": {
     "workId": "wk_000000039",
@@ -36,7 +43,14 @@
     "legacyIds": [
       "gen_game_appid1174180_2018",
       "gen_game_appid1174180_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Red Dead Redemption 2",
+      "ko": "레드 데드 리뎀션 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000113": {
     "workId": "wk_000000113",
@@ -54,6 +68,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid526870_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Satisfactory",
+      "ko": "새티스팩토리"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

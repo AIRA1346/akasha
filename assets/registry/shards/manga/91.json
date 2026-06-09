@@ -61,6 +61,13 @@
     ],
     "legacyIds": [
       "sub_manga_tensura_2014"
-    ]
+    ],
+    "titles": {
+      "en": "Tensura",
+      "ko": "전생했더니 슬라임이었던 건"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_webtoon_tower-of-god_2010"
-    ]
+    ],
+    "titles": {
+      "en": "Tower OF GOD",
+      "ko": "신의 탑"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

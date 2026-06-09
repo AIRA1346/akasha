@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_blue-lock_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Blue Lock",
+      "ko": "블루 록"
+    }
   },
   "wk_000000311": {
     "workId": "wk_000000311",
@@ -45,11 +50,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_death-note_2003"
-    ]
+    ],
+    "titles": {
+      "en": "Death Note",
+      "ko": "데스노트"
+    }
   },
   "wk_000000374": {
     "workId": "wk_000000374",

@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg",
     "legacyIds": [
       "sub_game_arknights_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Arknights",
+      "ko": "명일방주"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000064": {
     "workId": "wk_000000064",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1966720_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Lethal Company",
+      "ko": "레딧 리데임"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

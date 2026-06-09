@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_bocchi-the-rock_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Bocchi THE Rock",
+      "ko": "봇치 더 록!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

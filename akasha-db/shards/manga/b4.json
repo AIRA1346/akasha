@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_haikyuu_2012"
-    ]
+    ],
+    "titles": {
+      "en": "Haikyuu",
+      "ko": "하이큐!!"
+    }
   },
   "wk_000000346": {
     "workId": "wk_000000346",

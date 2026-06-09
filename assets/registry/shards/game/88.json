@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg",
     "legacyIds": [
       "sub_game_princess-connect_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Princess Connect",
+      "ko": "프린세스 커넥트"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000119": {
     "workId": "wk_000000119",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid578080_2017"
-    ]
+    ],
+    "titles": {
+      "en": "PUBG: BATTLEGROUNDS",
+      "ko": "배틀그라운드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

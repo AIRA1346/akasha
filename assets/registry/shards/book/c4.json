@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040681412-L.jpg",
     "legacyIds": [
       "sub_book_86-light-novel_2016"
-    ]
+    ],
+    "titles": {
+      "en": "86 -Eighty-Six-",
+      "ko": "86 -에이티식스-"
+    },
+    "extensions": {
+      "coverageSprint03": "curated_manual"
+    }
   }
 }

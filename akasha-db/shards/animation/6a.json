@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_konosuba_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Konosuba",
+      "ko": "이 멋진 세계에 축복을!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

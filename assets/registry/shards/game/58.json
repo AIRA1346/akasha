@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.jpg",
     "legacyIds": [
       "sub_game_fire-emblem-three-houses_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Fire Emblem Three Houses",
+      "ko": "파이어 엠블렘: 풍화설월"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000102": {
     "workId": "wk_000000102",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid381210_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Dead by Daylight",
+      "ko": "데드 바이 데이라이트"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

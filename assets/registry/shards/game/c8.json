@@ -15,6 +15,13 @@
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
     "legacyIds": [
       "gen_game_axiom_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Axiom Verge",
+      "ko": "엑시옴"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

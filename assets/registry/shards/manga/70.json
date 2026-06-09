@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "sub_manga_fruits-basket_1998"
-    ]
+    ],
+    "titles": {
+      "en": "Fruits Basket",
+      "ko": "후르츠 바스켓"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000375": {
     "workId": "wk_000000375",
@@ -41,6 +48,17 @@
     },
     "legacyIds": [
       "sub_manga_rezero_2014"
+    ],
+    "titles": {
+      "ko": "Re:제로부터 시작하는 이세계 생활",
+      "en": "Re:Zero − Starting Life in Another World",
+      "ja": "Re:ゼロから始める異世界生活",
+      "romaji": "Re:Zero"
+    },
+    "aliases": [
+      "Re Zero",
+      "Re:Zero",
+      "Re:ゼロ"
     ]
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/921570/library_600x900.jpg",
     "legacyIds": [
       "sub_game_octopath-traveler_2018"
-    ]
+    ],
+    "titles": {
+      "en": "OCTOPATH TRAVELER™",
+      "ko": "옥토패스 트래블러"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_cyberpunk-edgerunners_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Cyberpunk Edgerunners",
+      "ko": "사이버펑크: 엣지러너"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

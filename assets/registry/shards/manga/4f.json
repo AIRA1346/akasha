@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_detective-conan_1994"
-    ]
+    ],
+    "titles": {
+      "en": "Detective Conan",
+      "ko": "명탐정 코난"
+    }
   }
 }

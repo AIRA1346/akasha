@@ -16,7 +16,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/library_600x900.jpg",
     "legacyIds": [
       "gen_game_bioshock_2007"
-    ]
+    ],
+    "titles": {
+      "en": "BioShock™",
+      "ko": "바이오쇼크"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000277": {
     "workId": "wk_000000277",
@@ -35,7 +42,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
     "legacyIds": [
       "sub_game_nikke_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Black Myth: Wukong",
+      "ko": "승리의 여신: 니케"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000087": {
     "workId": "wk_000000087",
@@ -53,6 +67,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255710/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid255710_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Cities: Skylines",
+      "ko": "시티즈: 스카이라인"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

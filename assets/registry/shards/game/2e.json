@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1142710_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Total War: WARHAMMER III",
+      "ko": "토탈 워: 워해머 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

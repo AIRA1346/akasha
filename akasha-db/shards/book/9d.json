@@ -16,6 +16,13 @@
     "posterPath": "https://image.yes24.com/goods/18063773/L",
     "legacyIds": [
       "gen_book_laplace-novel_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Laplace Novel",
+      "ko": "라플라스의 마녀"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

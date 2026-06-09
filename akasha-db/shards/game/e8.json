@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/892970/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid892970_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Valheim",
+      "ko": "발헤임"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

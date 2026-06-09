@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_horimiya_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Horimiya",
+      "ko": "호리미야"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

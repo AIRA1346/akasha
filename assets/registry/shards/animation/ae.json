@@ -23,6 +23,17 @@
     },
     "legacyIds": [
       "sub_animation_rezero-anime_2016"
+    ],
+    "titles": {
+      "ko": "Re:제로",
+      "en": "Re:Zero − Starting Life in Another World",
+      "ja": "Re:ゼロから始める異世界生活",
+      "romaji": "Re:Zero"
+    },
+    "aliases": [
+      "Re Zero",
+      "Re:Zero",
+      "Re:ゼロ"
     ]
   }
 }

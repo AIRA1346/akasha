@@ -22,7 +22,8 @@
       "조지오웰"
     ],
     "titles": {
-      "en": "1984"
+      "en": "1984",
+      "ko": "1984"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
     "qualityScore": 50,
@@ -42,6 +43,9 @@
       "명작"
     ],
     "searchTokens": [
+      "20th Century Boys",
+      "20thcenturyboys",
+      "20世紀少年",
       "20세기 소년",
       "20세기소년",
       "SF",
@@ -53,7 +57,10 @@
       "음모"
     ],
     "titles": {
-      "ko": "20세기 소년"
+      "ko": "20세기 소년",
+      "en": "20th Century Boys",
+      "ja": "20世紀少年",
+      "romaji": "20th Century Boys"
     },
     "qualityScore": 40,
     "qualityTier": 2
@@ -74,6 +81,8 @@
     "searchTokens": [
       "3월의 라이온",
       "3월의라이온",
+      "March Comes IN Like A Lion",
+      "marchcomesinlikealion",
       "드라마",
       "성장",
       "우메자와 하토",
@@ -82,6 +91,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
@@ -139,6 +149,8 @@
     "searchTokens": [
       "4월은 너의 거짓말",
       "4월은너의거짓말",
+      "Shigatsu WA Kimi NO USO",
+      "shigatsuwakiminouso",
       "감동",
       "아라카와 나오시 (Naoshi Arakawa)",
       "아라카와나오시(naoshiarakawa)",
@@ -147,6 +159,7 @@
       "피아노"
     ],
     "titles": {
+      "en": "Shigatsu WA Kimi NO USO",
       "ko": "4월은 너의 거짓말"
     },
     "qualityScore": 55,
@@ -168,6 +181,8 @@
     "searchTokens": [
       "5등분의 신부",
       "5등분의신부",
+      "Quintessential Quintuplets",
+      "quintessentialquintuplets",
       "로맨스",
       "코미디",
       "하렘",
@@ -176,6 +191,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Quintessential Quintuplets",
       "ko": "5등분의 신부"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/uIn2eTUDGFLZ2D9vEHzuHuqFEIc.jpg",
@@ -205,7 +221,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "7 Days to Die"
+      "en": "7 Days to Die",
+      "ko": "7 Days to Die"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/library_600x900.jpg",
     "qualityScore": 50,
@@ -225,7 +242,9 @@
       "드라마"
     ],
     "searchTokens": [
+      "86 -Eighty-Six-",
       "86 -에이티식스-",
+      "86-eighty-six-",
       "86-에이티식스-",
       "SF",
       "sf",
@@ -236,6 +255,7 @@
       "전쟁"
     ],
     "titles": {
+      "en": "86 -Eighty-Six-",
       "ko": "86 -에이티식스-"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040681412-L.jpg",
@@ -257,7 +277,9 @@
     ],
     "searchTokens": [
       "86 -에이티식스-",
+      "86 Eighty SIX",
       "86-에이티식스-",
+      "86eightysix",
       "SF",
       "sf",
       "밀리터리",
@@ -267,6 +289,7 @@
       "차별"
     ],
     "titles": {
+      "en": "86 Eighty SIX",
       "ko": "86 -에이티식스-"
     },
     "qualityScore": 45,
@@ -287,15 +310,18 @@
     "searchTokens": [
       "Age of Empires II DE",
       "Forgotten Empires",
+      "Save 65% on Age of Empires II: Definitive Edition",
       "Steam",
       "ageofempiresiide",
       "forgottenempires",
+      "save65%onageofempiresii:definitiveedition",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Age of Empires II DE"
+      "en": "Save 65% on Age of Empires II: Definitive Edition",
+      "ko": "Age of Empires II DE"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813780/library_600x900.jpg",
     "qualityScore": 50,
@@ -316,15 +342,18 @@
     "searchTokens": [
       "Age of Empires IV",
       "Relic",
+      "Save 65% on Age of Empires IV: Anniversary Edition",
       "Steam",
       "ageofempiresiv",
       "relic",
+      "save65%onageofempiresiv:anniversaryedition",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Age of Empires IV"
+      "en": "Save 65% on Age of Empires IV: Anniversary Edition",
+      "ko": "Age of Empires IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/library_600x900.jpg",
     "qualityScore": 50,
@@ -343,17 +372,20 @@
       "대중문화"
     ],
     "searchTokens": [
+      "ARMORED CORE™ VI FIRES OF RUBICON™",
       "Armored Core VI",
       "FromSoftware",
       "Steam",
       "armoredcorevi",
+      "armoredcore™vifiresofrubicon™",
       "fromsoftware",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Armored Core VI"
+      "en": "ARMORED CORE™ VI FIRES OF RUBICON™",
+      "ko": "Armored Core VI"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg",
     "qualityScore": 50,
@@ -383,7 +415,8 @@
       "학원"
     ],
     "titles": {
-      "en": "BEASTARS"
+      "en": "BEASTARS",
+      "ko": "BEASTARS"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
     "qualityScore": 80,
@@ -435,8 +468,10 @@
     ],
     "searchTokens": [
       "Cities Skylines II",
+      "Cities: Skylines II",
       "Colossal Order",
       "Steam",
+      "cities:skylinesii",
       "citiesskylinesii",
       "colossalorder",
       "steam",
@@ -444,7 +479,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Cities Skylines II"
+      "en": "Cities: Skylines II",
+      "ko": "Cities Skylines II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/library_600x900.jpg",
     "qualityScore": 50,
@@ -505,7 +541,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Don't Starve"
+      "en": "Don't Starve",
+      "ko": "Don't Starve"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219740/library_600x900.jpg",
     "qualityScore": 50,
@@ -534,7 +571,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Don't Starve Together"
+      "en": "Don't Starve Together",
+      "ko": "Don't Starve Together"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322330/library_600x900.jpg",
     "qualityScore": 50,
@@ -564,7 +602,8 @@
       "서바이벌"
     ],
     "titles": {
-      "en": "Dr.STONE"
+      "en": "Dr.STONE",
+      "ko": "Dr.STONE"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
     "qualityScore": 80,
@@ -626,7 +665,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Dying Light"
+      "en": "Dying Light",
+      "ko": "Dying Light"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/library_600x900.jpg",
     "qualityScore": 50,
@@ -646,16 +686,19 @@
     ],
     "searchTokens": [
       "Dying Light 2",
+      "Dying Light 2 Stay Human: Reloaded Edition",
       "Steam",
       "Techland",
       "dyinglight2",
+      "dyinglight2stayhuman:reloadededition",
       "steam",
       "techland",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Dying Light 2"
+      "en": "Dying Light 2 Stay Human: Reloaded Edition",
+      "ko": "Dying Light 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534380/library_600x900.jpg",
     "qualityScore": 50,
@@ -675,8 +718,10 @@
     ],
     "searchTokens": [
       "GTA IV",
+      "Grand Theft Auto IV: The Complete Edition",
       "Rockstar",
       "Steam",
+      "grandtheftautoiv:thecompleteedition",
       "gtaiv",
       "rockstar",
       "steam",
@@ -684,7 +729,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "GTA IV"
+      "en": "Grand Theft Auto IV: The Complete Edition",
+      "ko": "GTA IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/library_600x900.jpg",
     "qualityScore": 50,
@@ -704,8 +750,10 @@
     ],
     "searchTokens": [
       "GTA San Andreas",
+      "Grand Theft Auto: San Andreas",
       "Rockstar",
       "Steam",
+      "grandtheftauto:sanandreas",
       "gtasanandreas",
       "rockstar",
       "steam",
@@ -713,7 +761,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "GTA San Andreas"
+      "en": "Grand Theft Auto: San Andreas",
+      "ko": "GTA San Andreas"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/library_600x900.jpg",
     "qualityScore": 50,
@@ -769,14 +818,17 @@
       "Ghost of Tsushima",
       "Steam",
       "Sucker Punch",
+      "Vector Wave",
       "ghostoftsushima",
       "steam",
       "suckerpunch",
+      "vectorwave",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Ghost of Tsushima"
+      "en": "Vector Wave",
+      "ko": "Ghost of Tsushima"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2218500/library_600x900.jpg",
     "qualityScore": 50,
@@ -796,16 +848,19 @@
     ],
     "searchTokens": [
       "Grand Theft Auto III",
+      "Grand Theft Auto V Enhanced",
       "Rockstar",
       "Steam",
       "grandtheftautoiii",
+      "grandtheftautovenhanced",
       "rockstar",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Grand Theft Auto III"
+      "en": "Grand Theft Auto V Enhanced",
+      "ko": "Grand Theft Auto III"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/library_600x900.jpg",
     "qualityScore": 50,
@@ -834,7 +889,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Hades II"
+      "en": "Hades II",
+      "ko": "Hades II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/library_600x900.jpg",
     "qualityScore": 50,
@@ -863,7 +919,8 @@
       "대중문화"
     ],
     "titles": {
-      "en": "Lies of P"
+      "en": "Lies of P",
+      "ko": "Lies of P"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/library_600x900.jpg",
     "qualityScore": 50,
@@ -912,16 +969,19 @@
     ],
     "searchTokens": [
       "Nioh",
+      "Save 85% on Nioh: Complete Edition",
       "Steam",
       "Team Ninja",
       "nioh",
+      "save85%onnioh:completeedition",
       "steam",
       "teamninja",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Nioh"
+      "en": "Save 85% on Nioh: Complete Edition",
+      "ko": "Nioh"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/485510/library_600x900.jpg",
     "qualityScore": 50,
@@ -941,16 +1001,19 @@
     ],
     "searchTokens": [
       "Nioh 2",
+      "Save 60% on Nioh 2 – The Complete Edition",
       "Steam",
       "Team Ninja",
       "nioh2",
+      "save60%onnioh2–thecompleteedition",
       "steam",
       "teamninja",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Nioh 2"
+      "en": "Save 60% on Nioh 2 – The Complete Edition",
+      "ko": "Nioh 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1325200/library_600x900.jpg",
     "qualityScore": 50,
@@ -980,7 +1043,8 @@
       "이노우에다케히코"
     ],
     "titles": {
-      "en": "REAL"
+      "en": "REAL",
+      "ko": "REAL"
     },
     "qualityScore": 40,
     "qualityTier": 2
@@ -999,9 +1063,19 @@
       "드라마"
     ],
     "searchTokens": [
+      "Re Zero",
+      "Re:Zero",
+      "Re:Zero − Starting Life in Another World",
+      "Re:ゼロ",
+      "Re:ゼロから始める異世界生活",
       "Re:제로",
       "WHITE FOX",
+      "re:zero",
+      "re:zero−startinglifeinanotherworld",
+      "re:ゼロ",
+      "re:ゼロから始める異世界生活",
       "re:제로",
+      "rezero",
       "whitefox",
       "드라마",
       "루프",
@@ -1009,7 +1083,10 @@
       "판타지"
     ],
     "titles": {
-      "ko": "Re:제로"
+      "ko": "Re:제로",
+      "en": "Re:Zero − Starting Life in Another World",
+      "ja": "Re:ゼロから始める異世界生活",
+      "romaji": "Re:Zero"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
     "qualityScore": 80,
@@ -1030,7 +1107,9 @@
     ],
     "searchTokens": [
       "Re:제로 라이트노벨",
+      "Rezero",
       "re:제로라이트노벨",
+      "rezero",
       "나가츠키 탓페이",
       "나가츠키탓페이",
       "라이트노벨",
@@ -1039,6 +1118,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Rezero",
       "ko": "Re:제로 라이트노벨"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg",
@@ -1059,8 +1139,18 @@
       "드라마"
     ],
     "searchTokens": [
+      "Re Zero",
+      "Re:Zero",
+      "Re:Zero − Starting Life in Another World",
+      "Re:ゼロ",
+      "Re:ゼロから始める異世界生活",
       "Re:제로부터 시작하는 이세계 생활",
+      "re:zero",
+      "re:zero−startinglifeinanotherworld",
+      "re:ゼロ",
+      "re:ゼロから始める異世界生活",
       "re:제로부터시작하는이세계생활",
+      "rezero",
       "나가츠키 탓페이",
       "나가츠키탓페이",
       "드라마",
@@ -1069,7 +1159,10 @@
       "판타지"
     ],
     "titles": {
-      "ko": "Re:제로부터 시작하는 이세계 생활"
+      "ko": "Re:제로부터 시작하는 이세계 생활",
+      "en": "Re:Zero − Starting Life in Another World",
+      "ja": "Re:ゼロから始める異世界生活",
+      "romaji": "Re:Zero"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
     "qualityScore": 80,
@@ -1090,15 +1183,18 @@
     "searchTokens": [
       "Capcom",
       "Resident Evil 2",
+      "Save 80% on Resident Evil 2",
       "Steam",
       "capcom",
       "residentevil2",
+      "save80%onresidentevil2",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Resident Evil 2"
+      "en": "Save 80% on Resident Evil 2",
+      "ko": "Resident Evil 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_600x900.jpg",
     "qualityScore": 50,
@@ -1119,15 +1215,18 @@
     "searchTokens": [
       "Capcom",
       "Resident Evil 3",
+      "Save 80% on Resident Evil 3",
       "Steam",
       "capcom",
       "residentevil3",
+      "save80%onresidentevil3",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Resident Evil 3"
+      "en": "Save 80% on Resident Evil 3",
+      "ko": "Resident Evil 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/library_600x900.jpg",
     "qualityScore": 50,
@@ -1148,15 +1247,18 @@
     "searchTokens": [
       "Capcom",
       "Resident Evil 4",
+      "Save 75% on Resident Evil 4",
       "Steam",
       "capcom",
       "residentevil4",
+      "save75%onresidentevil4",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Resident Evil 4"
+      "en": "Save 75% on Resident Evil 4",
+      "ko": "Resident Evil 4"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_600x900.jpg",
     "qualityScore": 50,
@@ -1177,15 +1279,18 @@
     "searchTokens": [
       "Capcom",
       "Resident Evil Village",
+      "Save 75% on Resident Evil Village",
       "Steam",
       "capcom",
       "residentevilvillage",
+      "save75%onresidentevilvillage",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Resident Evil Village"
+      "en": "Save 75% on Resident Evil Village",
+      "ko": "Resident Evil Village"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/library_600x900.jpg",
     "qualityScore": 50,
@@ -1205,16 +1310,19 @@
     ],
     "searchTokens": [
       "Endnight",
+      "Save 70% on Sons Of The Forest",
       "Sons of the Forest",
       "Steam",
       "endnight",
+      "save70%onsonsoftheforest",
       "sonsoftheforest",
       "steam",
       "게임",
       "대중문화"
     ],
     "titles": {
-      "en": "Sons of the Forest"
+      "en": "Save 70% on Sons Of The Forest",
+      "ko": "Sons of the Forest"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1326470/library_600x900.jpg",
     "qualityScore": 50,
@@ -1233,8 +1341,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Save 50% on Garry's Mod",
       "Steam",
       "Valve",
+      "save50%ongarry'smod",
       "steam",
       "valve",
       "가라오케 파티",
@@ -1243,6 +1353,7 @@
       "대중문화"
     ],
     "titles": {
+      "en": "Save 50% on Garry's Mod",
       "ko": "가라오케 파티"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/library_600x900.jpg",
@@ -1263,6 +1374,8 @@
       "악마"
     ],
     "searchTokens": [
+      "Gabriel Dropout",
+      "gabrieldropout",
       "가브릴 드롭아웃",
       "가브릴드롭아웃",
       "악마",
@@ -1273,6 +1386,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Gabriel Dropout",
       "ko": "가브릴 드롭아웃"
     },
     "qualityScore": 40,
@@ -1325,7 +1439,9 @@
       "명작"
     ],
     "searchTokens": [
+      "God of War",
       "Santa Monica Studio",
+      "godofwar",
       "santamonicastudio",
       "갓 오브 워",
       "갓오브워",
@@ -1335,6 +1451,7 @@
       "액션"
     ],
     "titles": {
+      "en": "God of War",
       "ko": "갓 오브 워"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
@@ -1355,6 +1472,13 @@
       "형제"
     ],
     "searchTokens": [
+      "FMA",
+      "Fullmetal Alchemist",
+      "Hagane no Renkinjutsushi",
+      "fma",
+      "fullmetalalchemist",
+      "haganenorenkinjutsushi",
+      "鋼の錬金術師",
       "강철의 연금술사",
       "강철의연금술사",
       "아라카와 히로",
@@ -1365,7 +1489,10 @@
       "형제"
     ],
     "titles": {
-      "ko": "강철의 연금술사"
+      "ko": "강철의 연금술사",
+      "en": "Fullmetal Alchemist",
+      "ja": "鋼の錬金術師",
+      "romaji": "Hagane no Renkinjutsushi"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
     "qualityScore": 75,
@@ -1386,7 +1513,19 @@
     ],
     "searchTokens": [
       "BONES",
+      "Brotherhood",
+      "FMA",
+      "Fullmetal Alchemist",
+      "Fullmetal Alchemist: Brotherhood",
+      "Hagane no Renkinjutsushi",
       "bones",
+      "brotherhood",
+      "fma",
+      "fullmetalalchemist",
+      "fullmetalalchemist:brotherhood",
+      "haganenorenkinjutsushi",
+      "鋼の錬金術師 FULLMETAL ALCHEMIST",
+      "鋼の錬金術師fullmetalalchemist",
       "강철의 연금술사 BROTHERHOOD",
       "강철의연금술사brotherhood",
       "명작",
@@ -1395,7 +1534,10 @@
       "형제"
     ],
     "titles": {
-      "ko": "강철의 연금술사 BROTHERHOOD"
+      "ko": "강철의 연금술사 BROTHERHOOD",
+      "en": "Fullmetal Alchemist: Brotherhood",
+      "ja": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+      "romaji": "Hagane no Renkinjutsushi"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
     "qualityScore": 75,
@@ -1450,6 +1592,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Golden Kamuy",
+      "goldenkamuy",
       "골든 카무이",
       "골든카무이",
       "나츠미 소이치",
@@ -1460,6 +1604,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Golden Kamuy",
       "ko": "골든 카무이"
     },
     "qualityScore": 45,
@@ -1514,6 +1659,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Kaiju NO 8",
+      "kaijuno8",
       "괴수",
       "괴수 8호",
       "괴수8호",
@@ -1524,6 +1671,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Kaiju NO 8",
       "ko": "괴수 8호"
     },
     "qualityScore": 45,
@@ -1601,6 +1749,14 @@
       "다이쇼"
     ],
     "searchTokens": [
+      "Demon Slayer",
+      "Demon Slayer: Kimetsu no Yaiba",
+      "Kimetsu no Yaiba",
+      "demonslayer",
+      "demonslayer:kimetsunoyaiba",
+      "kimetsunoyaiba",
+      "鬼滅の刃",
+      "鬼灭之刃",
       "가족애",
       "고토게 코요하루 (Koyoharu Gotouge)",
       "고토게코요하루(koyoharugotouge)",
@@ -1611,7 +1767,11 @@
       "액션"
     ],
     "titles": {
-      "ko": "귀멸의 칼날"
+      "ko": "귀멸의 칼날",
+      "en": "Demon Slayer: Kimetsu no Yaiba",
+      "ja": "鬼滅の刃",
+      "zh": "鬼灭之刃",
+      "romaji": "Kimetsu no Yaiba"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
     "qualityScore": 80,
@@ -1631,7 +1791,15 @@
       "명작"
     ],
     "searchTokens": [
+      "Demon Slayer",
+      "Demon Slayer: Kimetsu no Yaiba",
+      "Kimetsu no Yaiba",
+      "demonslayer",
+      "demonslayer:kimetsunoyaiba",
+      "kimetsunoyaiba",
       "ufotable",
+      "鬼滅の刃",
+      "鬼灭之刃",
       "가족",
       "귀멸의 칼날",
       "귀멸의칼날",
@@ -1640,7 +1808,11 @@
       "액션"
     ],
     "titles": {
-      "ko": "귀멸의 칼날"
+      "ko": "귀멸의 칼날",
+      "en": "Demon Slayer: Kimetsu no Yaiba",
+      "ja": "鬼滅の刃",
+      "zh": "鬼灭之刃",
+      "romaji": "Kimetsu no Yaiba"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
     "qualityScore": 80,
@@ -1722,7 +1894,9 @@
       "멀티"
     ],
     "searchTokens": [
+      "Grand Theft Auto V Legacy",
       "Rockstar Games",
+      "grandtheftautovlegacy",
       "rockstargames",
       "그랜드 테프트 오토 V",
       "그랜드테프트오토v",
@@ -1732,6 +1906,7 @@
       "오픈월드"
     ],
     "titles": {
+      "en": "Grand Theft Auto V Legacy",
       "ko": "그랜드 테프트 오토 V"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg",
@@ -1753,7 +1928,9 @@
     ],
     "searchTokens": [
       "SF",
+      "Stranger Things",
       "sf",
+      "strangerthings",
       "기묘한 이야기",
       "기묘한이야기",
       "더퍼 형제 (The Duffer Brothers)",
@@ -1763,6 +1940,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Stranger Things",
       "ko": "기묘한 이야기"
     },
     "qualityScore": 40,
@@ -1782,7 +1960,9 @@
       "액션"
     ],
     "searchTokens": [
+      "Parasyte",
       "SF",
+      "parasyte",
       "sf",
       "기생수",
       "액션",
@@ -1792,6 +1972,7 @@
       "호러"
     ],
     "titles": {
+      "en": "Parasyte",
       "ko": "기생수"
     },
     "qualityScore": 45,
@@ -1873,6 +2054,8 @@
       "액션"
     ],
     "searchTokens": [
+      "Solo Leveling",
+      "sololeveling",
       "나 혼자만 레벨업",
       "나혼자만레벨업",
       "성장",
@@ -1883,6 +2066,7 @@
       "헌터"
     ],
     "titles": {
+      "en": "Solo Leveling",
       "ko": "나 혼자만 레벨업"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
@@ -1937,6 +2121,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Naruto",
+      "naruto",
       "나루토",
       "닌자",
       "성장",
@@ -1946,6 +2132,7 @@
       "키시모토마사시(masashikishimoto)"
     ],
     "titles": {
+      "en": "Naruto",
       "ko": "나루토"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
@@ -1969,6 +2156,7 @@
       "NARUTO",
       "Naruto",
       "naruto",
+      "火影忍者",
       "나루토",
       "닌자",
       "성장",
@@ -1980,7 +2168,8 @@
     "titles": {
       "ko": "나루토",
       "en": "Naruto",
-      "ja": "NARUTO"
+      "ja": "NARUTO",
+      "zh": "火影忍者"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
     "qualityScore": 90,
@@ -2034,6 +2223,8 @@
       "액션"
     ],
     "searchTokens": [
+      "MY Hero Academia",
+      "myheroacademia",
       "나의 히어로 아카데미아",
       "나의히어로아카데미아",
       "성장",
@@ -2044,6 +2235,7 @@
       "히어로"
     ],
     "titles": {
+      "en": "MY Hero Academia",
       "ko": "나의 히어로 아카데미아"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg",
@@ -2065,7 +2257,9 @@
     ],
     "searchTokens": [
       "CoMix Wave Films",
+      "Weathering With YOU",
       "comixwavefilms",
+      "weatheringwithyou",
       "날씨의 아이",
       "날씨의아이",
       "로맨스",
@@ -2074,6 +2268,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Weathering With YOU",
       "ko": "날씨의 아이"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg",
@@ -2173,6 +2368,8 @@
       "감동"
     ],
     "searchTokens": [
+      "Your Name",
+      "yourname",
       "감동",
       "너의 이름은.",
       "너의이름은.",
@@ -2183,6 +2380,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Your Name",
       "ko": "너의 이름은."
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg",
@@ -2203,6 +2401,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "NO Game NO Life",
+      "nogamenolife",
       "게임",
       "노 게임 노 라이프",
       "노게임노라이프",
@@ -2212,6 +2412,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "NO Game NO Life",
       "ko": "노 게임 노 라이프"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg",
@@ -2334,7 +2535,9 @@
     ],
     "searchTokens": [
       "BONES",
+      "Noragami",
       "bones",
+      "noragami",
       "노라가미",
       "신",
       "액션",
@@ -2342,6 +2545,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Noragami",
       "ko": "노라가미"
     },
     "qualityScore": 45,
@@ -2361,6 +2565,8 @@
       "일본"
     ],
     "searchTokens": [
+      "Norwegian Wood",
+      "norwegianwood",
       "노르웨이의 숲",
       "노르웨이의숲",
       "로맨스",
@@ -2371,6 +2577,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Norwegian Wood",
       "ko": "노르웨이의 숲"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
@@ -2391,6 +2598,8 @@
       "로맨스"
     ],
     "searchTokens": [
+      "Spice AND Wolf",
+      "spiceandwolf",
       "경제",
       "늑대와 향신료",
       "늑대와향신료",
@@ -2401,6 +2610,7 @@
       "히세키아야"
     ],
     "titles": {
+      "en": "Spice AND Wolf",
       "ko": "늑대와 향신료"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048862579-L.jpg",
@@ -2421,6 +2631,8 @@
       "하렘"
     ],
     "searchTokens": [
+      "Nisekoi",
+      "nisekoi",
       "니세코이",
       "로맨스",
       "칸노 코스키",
@@ -2430,6 +2642,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Nisekoi",
       "ko": "니세코이"
     },
     "qualityScore": 40,
@@ -2449,8 +2662,10 @@
       "명작"
     ],
     "searchTokens": [
+      "NieR:Automata™",
       "PlatinumGames",
       "SF",
+      "nier:automata™",
       "platinumgames",
       "sf",
       "니어: 오토마타",
@@ -2460,6 +2675,7 @@
       "철학"
     ],
     "titles": {
+      "en": "NieR:Automata™",
       "ko": "니어: 오토마타"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/library_600x900.jpg",
@@ -2480,6 +2696,8 @@
       "베스트셀러"
     ],
     "searchTokens": [
+      "DA Vinci Code",
+      "davincicode",
       "다빈치 코드",
       "다빈치코드",
       "댄 브라운",
@@ -2490,6 +2708,7 @@
       "음모"
     ],
     "titles": {
+      "en": "DA Vinci Code",
       "ko": "다빈치 코드"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
@@ -2538,8 +2757,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Dishonored",
       "FromSoftware",
       "Steam",
+      "dishonored",
       "fromsoftware",
       "steam",
       "게임",
@@ -2548,6 +2769,7 @@
       "대중문화"
     ],
     "titles": {
+      "en": "Dishonored",
       "ko": "다크 소울"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205100/library_600x900.jpg",
@@ -2567,8 +2789,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "DARK SOULS™ III",
       "FromSoftware",
       "Steam",
+      "darksouls™iii",
       "fromsoftware",
       "steam",
       "게임",
@@ -2577,6 +2801,7 @@
       "대중문화"
     ],
     "titles": {
+      "en": "DARK SOULS™ III",
       "ko": "다크 소울 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/library_600x900.jpg",
@@ -2597,7 +2822,9 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Save 50% on Danganronpa: Trigger Happy Havoc",
       "Spike Chunsoft",
+      "save50%ondanganronpa:triggerhappyhavoc",
       "spikechunsoft",
       "단간론파",
       "미스터리",
@@ -2606,6 +2833,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Save 50% on Danganronpa: Trigger Happy Havoc",
       "ko": "단간론파"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413410/library_600x900.jpg",
@@ -2626,8 +2854,11 @@
       "청춘"
     ],
     "searchTokens": [
+      "Dandadan",
       "Science SARU",
+      "dandadan",
       "sciencesaru",
+      "ダンダダン",
       "단다단",
       "액션",
       "오컬트",
@@ -2635,7 +2866,10 @@
       "코미디"
     ],
     "titles": {
-      "ko": "단다단"
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
     "qualityScore": 80,
@@ -2655,6 +2889,9 @@
       "로맨스"
     ],
     "searchTokens": [
+      "Dandadan",
+      "dandadan",
+      "ダンダダン",
       "단다단",
       "로맨스",
       "액션",
@@ -2664,7 +2901,10 @@
       "타츠타유키"
     ],
     "titles": {
-      "ko": "단다단"
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
     "qualityScore": 80,
@@ -2714,8 +2954,10 @@
     "searchTokens": [
       "Jon Favreau",
       "SF",
+      "THE Mandalorian",
       "jonfavreau",
       "sf",
+      "themandalorian",
       "더 만달로리안",
       "더만달로리안",
       "모험",
@@ -2723,6 +2965,7 @@
       "스타워즈"
     ],
     "titles": {
+      "en": "THE Mandalorian",
       "ko": "더 만달로리안"
     },
     "qualityScore": 40,
@@ -2769,8 +3012,10 @@
     "searchTokens": [
       "Bethesda",
       "RPG",
+      "The Elder Scrolls V: Skyrim Special Edition",
       "bethesda",
       "rpg",
+      "theelderscrollsv:skyrimspecialedition",
       "더 엘더스크롤 V: 스카이림",
       "더엘더스크롤v:스카이림",
       "명작",
@@ -2778,6 +3023,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "The Elder Scrolls V: Skyrim Special Edition",
       "ko": "더 엘더스크롤 V: 스카이림"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
@@ -2799,7 +3045,9 @@
     ],
     "searchTokens": [
       "Greg Daniels",
+      "THE Office US",
       "gregdaniels",
+      "theofficeus",
       "더 오피스",
       "더오피스",
       "명작",
@@ -2808,6 +3056,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "THE Office US",
       "ko": "더 오피스"
     },
     "qualityScore": 40,
@@ -2829,8 +3078,10 @@
     "searchTokens": [
       "CD PROJEKT RED",
       "RPG",
+      "The Witcher 3: Wild Hunt",
       "cdprojektred",
       "rpg",
+      "thewitcher3:wildhunt",
       "더 위처 3: 와일드 헌트",
       "더위처3:와일드헌트",
       "명작",
@@ -2838,6 +3089,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "The Witcher 3: Wild Hunt",
       "ko": "더 위처 3: 와일드 헌트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg",
@@ -2858,8 +3110,10 @@
     ],
     "searchTokens": [
       "Endnight",
+      "Save 78% on The Forest",
       "Steam",
       "endnight",
+      "save78%ontheforest",
       "steam",
       "게임",
       "대중문화",
@@ -2867,6 +3121,7 @@
       "더포레스트"
     ],
     "titles": {
+      "en": "Save 78% on The Forest",
       "ko": "더 포레스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/library_600x900.jpg",
@@ -2995,8 +3250,10 @@
     ],
     "searchTokens": [
       "Behaviour",
+      "Dead by Daylight",
       "Steam",
       "behaviour",
+      "deadbydaylight",
       "steam",
       "게임",
       "대중문화",
@@ -3004,6 +3261,7 @@
       "데드바이데이라이트"
     ],
     "titles": {
+      "en": "Dead by Daylight",
       "ko": "데드 바이 데이라이트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/library_600x900.jpg",
@@ -3024,6 +3282,8 @@
       "다크"
     ],
     "searchTokens": [
+      "Death Note",
+      "deathnote",
       "다크",
       "데스노트",
       "스릴러",
@@ -3033,6 +3293,7 @@
       "초자연"
     ],
     "titles": {
+      "en": "Death Note",
       "ko": "데스노트"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
@@ -3056,6 +3317,7 @@
       "DEATH NOTE",
       "Death Note",
       "deathnote",
+      "死亡笔记",
       "데스노트",
       "미스터리",
       "스릴러",
@@ -3067,7 +3329,8 @@
     "titles": {
       "ko": "데스노트",
       "en": "Death Note",
-      "ja": "DEATH NOTE"
+      "ja": "DEATH NOTE",
+      "zh": "死亡笔记"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
     "qualityScore": 90,
@@ -3088,9 +3351,11 @@
     ],
     "searchTokens": [
       "Bungie",
+      "Destiny 2",
       "MMO",
       "SF",
       "bungie",
+      "destiny2",
       "mmo",
       "sf",
       "데스티니 가디언즈",
@@ -3099,6 +3364,7 @@
       "협동"
     ],
     "titles": {
+      "en": "Destiny 2",
       "ko": "데스티니 가디언즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/library_600x900.jpg",
@@ -3217,6 +3483,8 @@
       "서울"
     ],
     "searchTokens": [
+      "Tokyo Ghoul",
+      "tokyoghoul",
       "다크",
       "도쿄 구울",
       "도쿄구울",
@@ -3227,6 +3495,7 @@
       "호러"
     ],
     "titles": {
+      "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
@@ -3247,6 +3516,8 @@
       "액션"
     ],
     "searchTokens": [
+      "Tokyo Revengers",
+      "tokyorevengers",
       "갱",
       "도쿄 리벤저스",
       "도쿄리벤저스",
@@ -3257,6 +3528,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Tokyo Revengers",
       "ko": "도쿄 리벤저스"
     },
     "qualityScore": 45,
@@ -3311,9 +3583,11 @@
       "전략"
     ],
     "searchTokens": [
+      "Dota 2",
       "MOBA",
       "PvP",
       "Valve",
+      "dota2",
       "e스포츠",
       "moba",
       "pvp",
@@ -3323,6 +3597,7 @@
       "전략"
     ],
     "titles": {
+      "en": "Dota 2",
       "ko": "도타 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg",
@@ -3342,8 +3617,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "DOOM Eternal",
       "Steam",
       "Valve",
+      "doometernal",
       "steam",
       "valve",
       "게임",
@@ -3352,6 +3629,7 @@
       "도타언더로드"
     ],
     "titles": {
+      "en": "DOOM Eternal",
       "ko": "도타 언더로드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/library_600x900.jpg",
@@ -3373,7 +3651,9 @@
     ],
     "searchTokens": [
       "Team Shanghai Alice",
+      "Touhou Lost Word",
       "teamshanghaialice",
+      "touhoulostword",
       "동방",
       "동방 로스트 워드",
       "동방로스트워드",
@@ -3382,6 +3662,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Touhou Lost Word",
       "ko": "동방 로스트 워드"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg",
@@ -3426,7 +3707,9 @@
       "명작"
     ],
     "searchTokens": [
+      "Dune",
       "SF",
+      "dune",
       "sf",
       "고전",
       "듄",
@@ -3436,6 +3719,7 @@
       "프랭크허버트"
     ],
     "titles": {
+      "en": "Dune",
       "ko": "듄"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
@@ -3491,8 +3775,10 @@
     ],
     "searchTokens": [
       "Blizzard",
+      "Diablo® IV",
       "RPG",
       "blizzard",
+      "diablo®iv",
       "rpg",
       "다크",
       "디아블로 IV",
@@ -3501,6 +3787,7 @@
       "핵앤슬래시"
     ],
     "titles": {
+      "en": "Diablo® IV",
       "ko": "디아블로 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
@@ -3520,8 +3807,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Deep Rock Galactic",
       "Ghost Ship",
       "Steam",
+      "deeprockgalactic",
       "ghostship",
       "steam",
       "게임",
@@ -3530,6 +3819,7 @@
       "딥락갤럭틱"
     ],
     "titles": {
+      "en": "Deep Rock Galactic",
       "ko": "딥 락 갤럭틱"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548430/library_600x900.jpg",
@@ -3551,14 +3841,17 @@
     "searchTokens": [
       "Naughty Dog",
       "Steam",
+      "The Last of Us™ Part II Remastered",
       "naughtydog",
       "steam",
+      "thelastofus™partiiremastered",
       "게임",
       "대중문화",
       "라스트 오브 어스 Part II",
       "라스트오브어스partii"
     ],
     "titles": {
+      "en": "The Last of Us™ Part II Remastered",
       "ko": "라스트 오브 어스 Part II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/library_600x900.jpg",
@@ -3579,7 +3872,9 @@
       "히가시노게이고"
     ],
     "searchTokens": [
+      "Laplace Novel",
       "SF",
+      "laplacenovel",
       "sf",
       "라플라스의 마녀",
       "라플라스의마녀",
@@ -3590,6 +3885,7 @@
       "히가시노게이고(keigohigashino)"
     ],
     "titles": {
+      "en": "Laplace Novel",
       "ko": "라플라스의 마녀"
     },
     "posterPath": "https://image.yes24.com/goods/18063773/L",
@@ -3646,7 +3942,9 @@
     ],
     "searchTokens": [
       "KLab",
+      "Love Live ALL Stars",
       "klab",
+      "loveliveallstars",
       "러브라이브! 올스타즈",
       "러브라이브!올스타즈",
       "리듬",
@@ -3655,6 +3953,7 @@
       "아이돌"
     ],
     "titles": {
+      "en": "Love Live ALL Stars",
       "ko": "러브라이브! 올스타즈"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg",
@@ -3677,14 +3976,17 @@
     "searchTokens": [
       "Facepunch Studios",
       "PvP",
+      "Rust",
       "facepunchstudios",
       "pvp",
+      "rust",
       "러스트",
       "샌드박스",
       "서바이벌",
       "하드코어"
     ],
     "titles": {
+      "en": "Rust",
       "ko": "러스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg",
@@ -3705,7 +4007,9 @@
       "스토리"
     ],
     "searchTokens": [
+      "Red Dead Redemption 2",
       "Rockstar Games",
+      "reddeadredemption2",
       "rockstargames",
       "레드 데드 리뎀션 2",
       "레드데드리뎀션2",
@@ -3715,6 +4019,7 @@
       "오픈월드"
     ],
     "titles": {
+      "en": "Red Dead Redemption 2",
       "ko": "레드 데드 리뎀션 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900.jpg",
@@ -3735,8 +4040,10 @@
     ],
     "searchTokens": [
       "Digixart",
+      "Lethal Company",
       "Steam",
       "digixart",
+      "lethalcompany",
       "steam",
       "게임",
       "대중문화",
@@ -3744,6 +4051,7 @@
       "레딧리데임"
     ],
     "titles": {
+      "en": "Lethal Company",
       "ko": "레딧 리데임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/library_600x900.jpg",
@@ -3764,8 +4072,10 @@
     ],
     "searchTokens": [
       "Steam",
+      "Tom Clancy's Rainbow Six Siege",
       "Ubisoft",
       "steam",
+      "tomclancy'srainbowsixsiege",
       "ubisoft",
       "게임",
       "대중문화",
@@ -3773,6 +4083,7 @@
       "레인보우식스시즈"
     ],
     "titles": {
+      "en": "Tom Clancy's Rainbow Six Siege",
       "ko": "레인보우 식스 시즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/library_600x900.jpg",
@@ -3792,8 +4103,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "RAGE 2",
       "Steam",
       "Videocult",
+      "rage2",
       "steam",
       "videocult",
       "게임",
@@ -3801,6 +4114,7 @@
       "레인월드"
     ],
     "titles": {
+      "en": "RAGE 2",
       "ko": "레인월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548570/library_600x900.jpg",
@@ -3820,8 +4134,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Left 4 Dead 2",
       "Steam",
       "Valve",
+      "left4dead2",
       "steam",
       "valve",
       "게임",
@@ -3830,6 +4146,7 @@
       "레프트4데드2"
     ],
     "titles": {
+      "en": "Left 4 Dead 2",
       "ko": "레프트 4 데드 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/library_600x900.jpg",
@@ -3884,8 +4201,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Site Error",
       "Smilegate",
       "Steam",
+      "siteerror",
       "smilegate",
       "steam",
       "게임",
@@ -3894,6 +4213,7 @@
       "로스트아크"
     ],
     "titles": {
+      "en": "Site Error",
       "ko": "로스트 아크"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg",
@@ -3914,8 +4234,10 @@
     ],
     "searchTokens": [
       "Psyonix",
+      "Rocket League®",
       "Steam",
       "psyonix",
+      "rocketleague®",
       "steam",
       "게임",
       "대중문화",
@@ -3923,6 +4245,7 @@
       "로켓리그"
     ],
     "titles": {
+      "en": "Rocket League®",
       "ko": "로켓 리그"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252950/library_600x900.jpg",
@@ -3943,6 +4266,8 @@
       "로맨스"
     ],
     "searchTokens": [
+      "Rurouni Kenshin",
+      "rurounikenshin",
       "로맨스",
       "루론검심",
       "사무라이",
@@ -3952,6 +4277,7 @@
       "와츠키노부히로"
     ],
     "titles": {
+      "en": "Rurouni Kenshin",
       "ko": "루론검심"
     },
     "qualityScore": 40,
@@ -3974,15 +4300,18 @@
       "MOBA",
       "PvP",
       "Riot Games",
+      "Ruined King: A League of Legends Story™",
       "e스포츠",
       "moba",
       "pvp",
       "riotgames",
+      "ruinedking:aleagueoflegendsstory™",
       "리그 오브 레전드",
       "리그오브레전드",
       "팀전"
     ],
     "titles": {
+      "en": "Ruined King: A League of Legends Story™",
       "ko": "리그 오브 레전드"
     },
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
@@ -4004,7 +4333,9 @@
     ],
     "searchTokens": [
       "A-1 Pictures",
+      "Lycoris Recoil",
       "a-1pictures",
+      "lycorisrecoil",
       "리코리스 리코일",
       "리코리스리코일",
       "배틀",
@@ -4013,6 +4344,7 @@
       "총기"
     ],
     "titles": {
+      "en": "Lycoris Recoil",
       "ko": "리코리스 리코일"
     },
     "qualityScore": 40,
@@ -4031,8 +4363,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Assassin’s Creed® IV Black Flag™",
       "Steam",
       "Tarsier",
+      "assassin’screed®ivblackflag™",
       "steam",
       "tarsier",
       "게임",
@@ -4041,6 +4375,7 @@
       "리틀나이트메어"
     ],
     "titles": {
+      "en": "Assassin’s Creed® IV Black Flag™",
       "ko": "리틀 나이트메어"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242050/library_600x900.jpg",
@@ -4060,8 +4395,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Rhythm Doctor",
       "Steam",
       "Supermassive",
+      "rhythmdoctor",
       "steam",
       "supermassive",
       "게임",
@@ -4070,6 +4407,7 @@
       "리틀나이트메어2"
     ],
     "titles": {
+      "en": "Rhythm Doctor",
       "ko": "리틀 나이트메어 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774181/library_600x900.jpg",
@@ -4090,14 +4428,17 @@
     ],
     "searchTokens": [
       "Ludeon",
+      "RimWorld",
       "Steam",
       "ludeon",
+      "rimworld",
       "steam",
       "게임",
       "대중문화",
       "림월드"
     ],
     "titles": {
+      "en": "RimWorld",
       "ko": "림월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294100/library_600x900.jpg",
@@ -4118,8 +4459,10 @@
     ],
     "searchTokens": [
       "Insomniac",
+      "Marvel’s Spider-Man Remastered",
       "Steam",
       "insomniac",
+      "marvel’sspider-manremastered",
       "steam",
       "게임",
       "대중문화",
@@ -4127,6 +4470,7 @@
       "마블스파이더맨리마스터"
     ],
     "titles": {
+      "en": "Marvel’s Spider-Man Remastered",
       "ko": "마블 스파이더맨 리마스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/library_600x900.jpg",
@@ -4215,7 +4559,9 @@
       "멀티플레이"
     ],
     "searchTokens": [
+      "Geometry Dash",
       "Mojang Studios",
+      "geometrydash",
       "mojangstudios",
       "마인크래프트",
       "멀티플레이",
@@ -4224,6 +4570,7 @@
       "크래프팅"
     ],
     "titles": {
+      "en": "Geometry Dash",
       "ko": "마인크래프트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322170/library_600x900_2x.jpg",
@@ -4245,9 +4592,11 @@
     ],
     "searchTokens": [
       "BioWare",
+      "Mass Effect 2 (2010 Edition)",
       "RPG",
       "SF",
       "bioware",
+      "masseffect2(2010edition)",
       "rpg",
       "sf",
       "매스 이펙트 2",
@@ -4256,6 +4605,7 @@
       "스토리"
     ],
     "titles": {
+      "en": "Mass Effect 2 (2010 Edition)",
       "ko": "매스 이펙트 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
@@ -4341,7 +4691,9 @@
     ],
     "searchTokens": [
       "Kinema Citrus",
+      "Made IN Abyss",
       "kinemacitrus",
+      "madeinabyss",
       "다크",
       "메이드 인 어비스",
       "메이드인어비스",
@@ -4350,6 +4702,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Made IN Abyss",
       "ko": "메이드 인 어비스"
     },
     "qualityScore": 45,
@@ -4369,8 +4722,10 @@
       "수집"
     ],
     "searchTokens": [
+      "Arknights",
       "Hypergryph",
       "SF",
+      "arknights",
       "hypergryph",
       "sf",
       "명일방주",
@@ -4379,6 +4734,7 @@
       "타워디펜스"
     ],
     "titles": {
+      "en": "Arknights",
       "ko": "명일방주"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg",
@@ -4401,8 +4757,10 @@
     "searchTokens": [
       "Kuro Games",
       "SF",
+      "Wuthering Waves",
       "kurogames",
       "sf",
+      "wutheringwaves",
       "명조: 워더링 웨이브",
       "명조:워더링웨이브",
       "서브컬처",
@@ -4410,6 +4768,7 @@
       "오픈월드"
     ],
     "titles": {
+      "en": "Wuthering Waves",
       "ko": "명조: 워더링 웨이브"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k5k.jpg",
@@ -4430,6 +4789,8 @@
       "장수작"
     ],
     "searchTokens": [
+      "Detective Conan",
+      "detectiveconan",
       "럽코",
       "명탐정 코난",
       "명탐정코난",
@@ -4440,6 +4801,7 @@
       "추리"
     ],
     "titles": {
+      "en": "Detective Conan",
       "ko": "명탐정 코난"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
@@ -4460,7 +4822,9 @@
       "액션"
     ],
     "searchTokens": [
+      "MOB Psycho 100",
       "ONE",
+      "mobpsycho100",
       "one",
       "모브 사이코 100",
       "모브사이코100",
@@ -4470,6 +4834,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
@@ -4491,7 +4856,9 @@
     ],
     "searchTokens": [
       "BONES",
+      "MOB Psycho 100",
       "bones",
+      "mobpsycho100",
       "모브 사이코 100",
       "모브사이코100",
       "성장",
@@ -4500,6 +4867,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
@@ -4521,7 +4889,9 @@
     ],
     "searchTokens": [
       "Kyoto Animation",
+      "Silent Voice",
       "kyotoanimation",
+      "silentvoice",
       "감동",
       "목소리의 형태",
       "목소리의형태",
@@ -4530,6 +4900,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Silent Voice",
       "ko": "목소리의 형태"
     },
     "qualityScore": 40,
@@ -4578,7 +4949,9 @@
     ],
     "searchTokens": [
       "CAPCOM",
+      "Save 74% on Monster Hunter: World",
       "capcom",
+      "save74%onmonsterhunter:world",
       "몬스터 헌터: 월드",
       "몬스터헌터:월드",
       "액션",
@@ -4587,6 +4960,7 @@
       "협동"
     ],
     "titles": {
+      "en": "Save 74% on Monster Hunter: World",
       "ko": "몬스터 헌터: 월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/library_600x900.jpg",
@@ -4607,7 +4981,9 @@
       "마법"
     ],
     "searchTokens": [
+      "Mushoku Tensei",
       "Studio Bind",
+      "mushokutensei",
       "studiobind",
       "마법",
       "무직전생",
@@ -4616,6 +4992,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Mushoku Tensei",
       "ko": "무직전생"
     },
     "qualityScore": 45,
@@ -4635,6 +5012,13 @@
       "성장"
     ],
     "searchTokens": [
+      "Jobless Reincarnation",
+      "Mushoku Tensei",
+      "Mushoku Tensei: Jobless Reincarnation",
+      "joblessreincarnation",
+      "mushokutensei",
+      "mushokutensei:joblessreincarnation",
+      "無職転生",
       "라이트노벨",
       "리덕션",
       "무직전생",
@@ -4643,7 +5027,10 @@
       "판타지"
     ],
     "titles": {
-      "ko": "무직전생"
+      "ko": "무직전생",
+      "en": "Mushoku Tensei: Jobless Reincarnation",
+      "ja": "無職転生",
+      "romaji": "Mushoku Tensei"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg",
     "qualityScore": 55,
@@ -4663,6 +5050,13 @@
       "마법"
     ],
     "searchTokens": [
+      "Jobless Reincarnation",
+      "Mushoku Tensei",
+      "Mushoku Tensei: Jobless Reincarnation",
+      "joblessreincarnation",
+      "mushokutensei",
+      "mushokutensei:joblessreincarnation",
+      "無職転生",
       "리덕션 / 후지카와 유카",
       "리덕션/후지카와유카",
       "마법",
@@ -4672,7 +5066,10 @@
       "판타지"
     ],
     "titles": {
-      "ko": "무직전생"
+      "ko": "무직전생",
+      "en": "Mushoku Tensei: Jobless Reincarnation",
+      "ja": "無職転生",
+      "romaji": "Mushoku Tensei"
     },
     "qualityScore": 45,
     "qualityTier": 2
@@ -4692,7 +5089,9 @@
     ],
     "searchTokens": [
       "BONES",
+      "Bungo Stray Dogs",
       "bones",
+      "bungostraydogs",
       "문학",
       "문호 스트레이 독스",
       "문호스트레이독스",
@@ -4701,6 +5100,7 @@
       "초능력"
     ],
     "titles": {
+      "en": "Bungo Stray Dogs",
       "ko": "문호 스트레이 독스"
     },
     "qualityScore": 40,
@@ -4719,8 +5119,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Mass Effect™ Legendary Edition",
       "Square Enix",
       "Steam",
+      "masseffect™legendaryedition",
       "squareenix",
       "steam",
       "게임",
@@ -4728,6 +5130,7 @@
       "미스트워커"
     ],
     "titles": {
+      "en": "Mass Effect™ Legendary Edition",
       "ko": "미스트워커"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1328670/library_600x900.jpg",
@@ -4748,6 +5151,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Vagabond",
+      "vagabond",
       "무도",
       "바감동",
       "사무라이",
@@ -4757,6 +5162,7 @@
       "이노우에다케히코"
     ],
     "titles": {
+      "en": "Vagabond",
       "ko": "바감동"
     },
     "qualityScore": 40,
@@ -4833,9 +5239,11 @@
       "명작"
     ],
     "searchTokens": [
+      "BioShock™",
       "FPS",
       "Irrational Games",
       "SF",
+      "bioshock™",
       "fps",
       "irrationalgames",
       "sf",
@@ -4844,6 +5252,7 @@
       "철학"
     ],
     "titles": {
+      "en": "BioShock™",
       "ko": "바이오쇼크"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/library_600x900.jpg",
@@ -4865,7 +5274,9 @@
     ],
     "searchTokens": [
       "Kyoto Animation",
+      "Violet Evergarden",
       "kyotoanimation",
+      "violetevergarden",
       "감동",
       "드라마",
       "바이올렛 에버가든",
@@ -4874,6 +5285,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "Violet Evergarden",
       "ko": "바이올렛 에버가든"
     },
     "qualityScore": 40,
@@ -4893,6 +5305,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Monogatari",
+      "monogatari",
       "니시오 이시인",
       "니시오이시인",
       "대화",
@@ -4902,6 +5316,7 @@
       "초자연"
     ],
     "titles": {
+      "en": "Monogatari",
       "ko": "바케모노가타리"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg",
@@ -4922,7 +5337,9 @@
       "명작"
     ],
     "searchTokens": [
+      "Monogatari",
       "SHAFT",
+      "monogatari",
       "shaft",
       "대화",
       "로맨스",
@@ -4931,6 +5348,7 @@
       "초자연"
     ],
     "titles": {
+      "en": "Monogatari",
       "ko": "바케모노가타리"
     },
     "qualityScore": 45,
@@ -4950,6 +5368,14 @@
       "서사"
     ],
     "searchTokens": [
+      "Lord of the Rings",
+      "The Fellowship of the Ring",
+      "The Lord of the Rings",
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "lordoftherings",
+      "thefellowshipofthering",
+      "thelordoftherings",
+      "thelordoftherings:thefellowshipofthering",
       "명작",
       "모험",
       "반지의 제왕: 반지 원정대",
@@ -4960,7 +5386,8 @@
       "피터잭슨"
     ],
     "titles": {
-      "ko": "반지의 제왕: 반지 원정대"
+      "ko": "반지의 제왕: 반지 원정대",
+      "en": "The Lord of the Rings: The Fellowship of the Ring"
     },
     "qualityScore": 45,
     "qualityTier": 2
@@ -4980,7 +5407,15 @@
     ],
     "searchTokens": [
       "J.R.R. 톨킨",
+      "Lord of the Rings",
+      "The Fellowship of the Ring",
+      "The Lord of the Rings",
+      "The Lord of the Rings: The Fellowship of the Ring",
       "j.r.r.톨킨",
+      "lordoftherings",
+      "thefellowshipofthering",
+      "thelordoftherings",
+      "thelordoftherings:thefellowshipofthering",
       "명작",
       "모험",
       "반지의 제왕: 반지 원정대",
@@ -4989,7 +5424,8 @@
       "판타지"
     ],
     "titles": {
-      "ko": "반지의 제왕: 반지 원정대"
+      "ko": "반지의 제왕: 반지 원정대",
+      "en": "The Lord of the Rings: The Fellowship of the Ring"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
     "qualityScore": 55,
@@ -5008,8 +5444,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Baldur's Gate 3",
       "Steam",
       "Ubisoft",
+      "baldur'sgate3",
       "steam",
       "ubisoft",
       "게임",
@@ -5018,6 +5456,7 @@
       "발할라:신들의황혼"
     ],
     "titles": {
+      "en": "Baldur's Gate 3",
       "ko": "발할라: 신들의 황혼"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/library_600x900.jpg",
@@ -5039,13 +5478,16 @@
     "searchTokens": [
       "Iron Gate",
       "Steam",
+      "Valheim",
       "irongate",
       "steam",
+      "valheim",
       "게임",
       "대중문화",
       "발헤임"
     ],
     "titles": {
+      "en": "Valheim",
       "ko": "발헤임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/892970/library_600x900.jpg",
@@ -5067,7 +5509,9 @@
     ],
     "searchTokens": [
       "Kinema Citrus",
+      "Shield Hero",
       "kinemacitrus",
+      "shieldhero",
       "방패 용사 성공담",
       "방패용사성공담",
       "복수",
@@ -5076,6 +5520,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Shield Hero",
       "ko": "방패 용사 성공담"
     },
     "qualityScore": 40,
@@ -5095,14 +5540,17 @@
     ],
     "searchTokens": [
       "KRAFTON",
+      "PUBG: BATTLEGROUNDS",
       "Steam",
       "krafton",
+      "pubg:battlegrounds",
       "steam",
       "게임",
       "대중문화",
       "배틀그라운드"
     ],
     "titles": {
+      "en": "PUBG: BATTLEGROUNDS",
       "ko": "배틀그라운드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/library_600x900.jpg",
@@ -5122,8 +5570,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Battlefield™ 2042",
       "DICE",
       "Steam",
+      "battlefield™2042",
       "dice",
       "steam",
       "게임",
@@ -5132,6 +5582,7 @@
       "배틀필드2042"
     ],
     "titles": {
+      "en": "Battlefield™ 2042",
       "ko": "배틀필드 2042"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517290/library_600x900.jpg",
@@ -5152,6 +5603,8 @@
       "잔혹"
     ],
     "searchTokens": [
+      "Berserk",
+      "berserk",
       "다크판타지",
       "미우라 켄트",
       "미우라켄트",
@@ -5161,6 +5614,7 @@
       "중세"
     ],
     "titles": {
+      "en": "Berserk",
       "ko": "베르세르크"
     },
     "qualityScore": 40,
@@ -5216,6 +5670,8 @@
       "밴드"
     ],
     "searchTokens": [
+      "Bocchi THE Rock",
+      "bocchitherock",
       "밴드",
       "봇치 더 록!",
       "봇치더록!",
@@ -5226,6 +5682,7 @@
       "하마다쿠키"
     ],
     "titles": {
+      "en": "Bocchi THE Rock",
       "ko": "봇치 더 록!"
     },
     "qualityScore": 45,
@@ -5245,7 +5702,9 @@
       "성장"
     ],
     "searchTokens": [
+      "Bocchi THE Rock",
       "CloverWorks",
+      "bocchitherock",
       "cloverworks",
       "밴드",
       "봇치 더 록!",
@@ -5255,6 +5714,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Bocchi THE Rock",
       "ko": "봇치 더 록!"
     },
     "qualityScore": 45,
@@ -5274,6 +5734,8 @@
       "다크"
     ],
     "searchTokens": [
+      "Fire Force",
+      "fireforce",
       "다크",
       "불꽃 소방대",
       "불꽃소방대",
@@ -5284,6 +5746,7 @@
       "초능력"
     ],
     "titles": {
+      "en": "Fire Force",
       "ko": "불꽃 소방대"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
@@ -5341,7 +5804,9 @@
     ],
     "searchTokens": [
       "HoYoverse",
+      "Honkai Star Rail",
       "SF",
+      "honkaistarrail",
       "hoyoverse",
       "sf",
       "붕괴: 스타레일",
@@ -5352,6 +5817,7 @@
       "턴제"
     ],
     "titles": {
+      "en": "Honkai Star Rail",
       "ko": "붕괴: 스타레일"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
@@ -5372,6 +5838,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Breaking BAD",
+      "breakingbad",
       "드라마",
       "명작",
       "범죄",
@@ -5382,6 +5850,7 @@
       "스릴러"
     ],
     "titles": {
+      "en": "Breaking BAD",
       "ko": "브레이킹 배드"
     },
     "qualityScore": 40,
@@ -5401,7 +5870,9 @@
       "성인"
     ],
     "searchTokens": [
+      "Black Lagoon",
       "MADHOUSE",
+      "blacklagoon",
       "madhouse",
       "블랙 라군",
       "블랙라군",
@@ -5411,6 +5882,7 @@
       "총기"
     ],
     "titles": {
+      "en": "Black Lagoon",
       "ko": "블랙 라군"
     },
     "qualityScore": 40,
@@ -5429,8 +5901,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Black Myth: Wukong",
       "Blizzard",
       "Steam",
+      "blackmyth:wukong",
       "blizzard",
       "steam",
       "게임",
@@ -5439,6 +5913,7 @@
       "블랙미스"
     ],
     "titles": {
+      "en": "Black Myth: Wukong",
       "ko": "블랙 미스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
@@ -5493,6 +5968,8 @@
       "우정"
     ],
     "searchTokens": [
+      "Black Clover",
+      "blackclover",
       "마법",
       "블랙 클로버",
       "블랙클로버",
@@ -5503,6 +5980,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Black Clover",
       "ko": "블랙 클로버"
     },
     "qualityScore": 45,
@@ -5521,8 +5999,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Blasphemous",
       "FromSoftware",
       "Steam",
+      "blasphemous",
       "fromsoftware",
       "steam",
       "게임",
@@ -5530,6 +6010,7 @@
       "블러드본"
     ],
     "titles": {
+      "en": "Blasphemous",
       "ko": "블러드본"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774361/library_600x900.jpg",
@@ -5585,6 +6066,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Blue Lock",
+      "bluelock",
       "무인치 혼",
       "무인치혼",
       "블루 록",
@@ -5595,6 +6078,7 @@
       "축구"
     ],
     "titles": {
+      "en": "Blue Lock",
       "ko": "블루 록"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
@@ -5617,8 +6101,10 @@
     "searchTokens": [
       "NEXON Games",
       "OST",
+      "Save 30% on Songs of Conquest - Roots",
       "nexongames",
       "ost",
+      "save30%onsongsofconquest-roots",
       "블루 아카이브",
       "블루아카이브",
       "수집형RPG",
@@ -5627,6 +6113,7 @@
       "학원물"
     ],
     "titles": {
+      "en": "Save 30% on Songs of Conquest - Roots",
       "ko": "블루 아카이브"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3511790/library_600x900.jpg",
@@ -5647,6 +6134,8 @@
       "드라마"
     ],
     "searchTokens": [
+      "Blue Period",
+      "blueperiod",
       "드라마",
       "미술",
       "블루 피리어드",
@@ -5656,6 +6145,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Blue Period",
       "ko": "블루 피리어드"
     },
     "qualityScore": 40,
@@ -5772,6 +6262,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Vinland Saga",
+      "vinlandsaga",
       "복수",
       "빈란드 사가",
       "빈란드사가",
@@ -5781,6 +6273,7 @@
       "역사"
     ],
     "titles": {
+      "en": "Vinland Saga",
       "ko": "빈란드 사가"
     },
     "qualityScore": 45,
@@ -5801,7 +6294,9 @@
     ],
     "searchTokens": [
       "Manglobe",
+      "Samurai Champloo",
       "manglobe",
+      "samuraichamploo",
       "로드무비",
       "사무라이",
       "사무라이 참프루",
@@ -5810,6 +6305,7 @@
       "힙합"
     ],
     "titles": {
+      "en": "Samurai Champloo",
       "ko": "사무라이 참프루"
     },
     "qualityScore": 40,
@@ -5830,9 +6326,11 @@
     ],
     "searchTokens": [
       "CD PROJEKT RED",
+      "Cyberpunk 2077",
       "RPG",
       "SF",
       "cdprojektred",
+      "cyberpunk2077",
       "rpg",
       "sf",
       "사이버펑크",
@@ -5841,6 +6339,7 @@
       "오픈월드"
     ],
     "titles": {
+      "en": "Cyberpunk 2077",
       "ko": "사이버펑크 2077"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
@@ -5861,8 +6360,10 @@
       "다크"
     ],
     "searchTokens": [
+      "Cyberpunk Edgerunners",
       "SF",
       "Studio Trigger",
+      "cyberpunkedgerunners",
       "sf",
       "studiotrigger",
       "다크",
@@ -5872,6 +6373,7 @@
       "액션"
     ],
     "titles": {
+      "en": "Cyberpunk Edgerunners",
       "ko": "사이버펑크: 엣지러너"
     },
     "qualityScore": 40,
@@ -5892,8 +6394,10 @@
     ],
     "searchTokens": [
       "Production I.G",
+      "Psycho Pass",
       "SF",
       "productioni.g",
+      "psychopass",
       "sf",
       "디스토피아",
       "사이코 패스",
@@ -5902,6 +6406,7 @@
       "스릴러"
     ],
     "titles": {
+      "en": "Psycho Pass",
       "ko": "사이코 패스"
     },
     "qualityScore": 40,
@@ -5956,6 +6461,8 @@
       "가족"
     ],
     "searchTokens": [
+      "Sakamoto Days",
+      "sakamotodays",
       "가족",
       "사카모토 데이즈",
       "사카모토데이즈",
@@ -5966,6 +6473,7 @@
       "킬러"
     ],
     "titles": {
+      "en": "Sakamoto Days",
       "ko": "사카모토 데이즈"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
@@ -6020,14 +6528,17 @@
     ],
     "searchTokens": [
       "Coffee Stain",
+      "Satisfactory",
       "Steam",
       "coffeestain",
+      "satisfactory",
       "steam",
       "게임",
       "대중문화",
       "새티스팩토리"
     ],
     "titles": {
+      "en": "Satisfactory",
       "ko": "새티스팩토리"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg",
@@ -6083,14 +6594,17 @@
     ],
     "searchTokens": [
       "FromSoftware",
+      "Sekiro™: Shadows Die Twice - GOTY Edition",
       "Steam",
       "fromsoftware",
+      "sekiro™:shadowsdietwice-gotyedition",
       "steam",
       "게임",
       "대중문화",
       "세키로"
     ],
     "titles": {
+      "en": "Sekiro™: Shadows Die Twice - GOTY Edition",
       "ko": "세키로"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/library_600x900.jpg",
@@ -6141,7 +6655,9 @@
     ],
     "searchTokens": [
       "Maddy Makes Games",
+      "Save 75% on Celeste",
       "maddymakesgames",
+      "save75%onceleste",
       "난이도",
       "셀레스테",
       "인디",
@@ -6149,6 +6665,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "Save 75% on Celeste",
       "ko": "셀레스테"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900.jpg",
@@ -6169,6 +6686,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Sherlock Holmes",
+      "sherlockholmes",
       "고전",
       "명작",
       "미스터리",
@@ -6179,6 +6698,7 @@
       "추리"
     ],
     "titles": {
+      "en": "Sherlock Holmes",
       "ko": "셜록 홈즈: 단홍색 연구"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg",
@@ -6237,6 +6757,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Sword ART Online",
+      "swordartonline",
       "게임판타지",
       "데스게임",
       "라이트노벨",
@@ -6247,6 +6769,7 @@
       "카와하라레키(rekikawahara)"
     ],
     "titles": {
+      "en": "Sword ART Online",
       "ko": "소드 아트 온라인"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
@@ -6301,6 +6824,8 @@
       "메이플"
     ],
     "searchTokens": [
+      "Math Thief",
+      "maththief",
       "메이플",
       "모험",
       "송도수 / 서정은",
@@ -6310,6 +6835,7 @@
       "학습만화"
     ],
     "titles": {
+      "en": "Math Thief",
       "ko": "수학도둑"
     },
     "posterPath": "https://image.yes24.com/goods/2301053/L",
@@ -6331,8 +6857,10 @@
     ],
     "searchTokens": [
       "SF",
+      "Steinsgate",
       "WHITE FOX",
       "sf",
+      "steinsgate",
       "whitefox",
       "감동",
       "서스펜스",
@@ -6341,6 +6869,7 @@
       "시간여행"
     ],
     "titles": {
+      "en": "Steinsgate",
       "ko": "슈타인즈 게이트"
     },
     "qualityScore": 40,
@@ -6359,8 +6888,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Cookie Clicker",
       "Steam",
       "Team Cherry",
+      "cookieclicker",
       "steam",
       "teamcherry",
       "게임",
@@ -6369,6 +6900,7 @@
       "슈퍼러버런"
     ],
     "titles": {
+      "en": "Cookie Clicker",
       "ko": "슈퍼 러버런"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1454400/library_600x900.jpg",
@@ -6390,14 +6922,17 @@
     "searchTokens": [
       "Bethesda",
       "Steam",
+      "The Elder Scrolls V: Skyrim Special Edition",
       "bethesda",
       "steam",
+      "theelderscrollsv:skyrimspecialedition",
       "게임",
       "대중문화",
       "스카이림 SE",
       "스카이림se"
     ],
     "titles": {
+      "en": "The Elder Scrolls V: Skyrim Special Edition",
       "ko": "스카이림 SE"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
@@ -6482,7 +7017,9 @@
     ],
     "searchTokens": [
       "ConcernedApe",
+      "Stardew Valley",
       "concernedape",
+      "stardewvalley",
       "농사",
       "샌드박스",
       "스타듀 밸리",
@@ -6491,6 +7028,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "Stardew Valley",
       "ko": "스타듀 밸리"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg",
@@ -6511,8 +7049,10 @@
     ],
     "searchTokens": [
       "Blizzard",
+      "Call of Duty®: Warzone™",
       "Steam",
       "blizzard",
+      "callofduty®:warzone™",
       "steam",
       "게임",
       "대중문화",
@@ -6520,6 +7060,7 @@
       "스타크래프트리마스터"
     ],
     "titles": {
+      "en": "Call of Duty®: Warzone™",
       "ko": "스타크래프트 리마스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962663/library_600x900.jpg",
@@ -6540,14 +7081,17 @@
     ],
     "searchTokens": [
       "Bethesda",
+      "Fallout 76",
       "Steam",
       "bethesda",
+      "fallout76",
       "steam",
       "게임",
       "대중문화",
       "스타필드"
     ],
     "titles": {
+      "en": "Fallout 76",
       "ko": "스타필드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151340/library_600x900.jpg",
@@ -6569,13 +7113,16 @@
     "searchTokens": [
       "Paradox",
       "Steam",
+      "Stellaris",
       "paradox",
       "steam",
+      "stellaris",
       "게임",
       "대중문화",
       "스텔라리스"
     ],
     "titles": {
+      "en": "Stellaris",
       "ko": "스텔라리스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/281990/library_600x900.jpg",
@@ -6596,7 +7143,13 @@
       "액션"
     ],
     "searchTokens": [
+      "SPY×FAMILY",
+      "Spy Family",
+      "Spy x Family",
       "WIT STUDIO / CloverWorks",
+      "spyfamily",
+      "spyxfamily",
+      "spy×family",
       "witstudio/cloverworks",
       "가족",
       "스파이",
@@ -6606,7 +7159,10 @@
       "코미디"
     ],
     "titles": {
-      "ko": "스파이 패밀리"
+      "ko": "스파이 패밀리",
+      "en": "Spy x Family",
+      "ja": "SPY×FAMILY",
+      "romaji": "Spy x Family"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
     "qualityScore": 80,
@@ -6626,6 +7182,12 @@
       "액션"
     ],
     "searchTokens": [
+      "SPY×FAMILY",
+      "Spy Family",
+      "Spy x Family",
+      "spyfamily",
+      "spyxfamily",
+      "spy×family",
       "가족",
       "스파이",
       "스파이 패밀리",
@@ -6636,7 +7198,10 @@
       "타카야스기타"
     ],
     "titles": {
-      "ko": "스파이 패밀리"
+      "ko": "스파이 패밀리",
+      "en": "Spy x Family",
+      "ja": "SPY×FAMILY",
+      "romaji": "Spy x Family"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
     "qualityScore": 80,
@@ -6655,8 +7220,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Ghost of Tsushima DIRECTOR'S CUT",
       "Insomniac",
       "Steam",
+      "ghostoftsushimadirector'scut",
       "insomniac",
       "steam",
       "게임",
@@ -6665,6 +7232,7 @@
       "스파이더맨2"
     ],
     "titles": {
+      "en": "Ghost of Tsushima DIRECTOR'S CUT",
       "ko": "스파이더맨 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_600x900.jpg",
@@ -6711,7 +7279,9 @@
     ],
     "searchTokens": [
       "Nintendo",
+      "Splatoon 3",
       "nintendo",
+      "splatoon3",
       "서브컬처",
       "슈터",
       "스플래툰 3",
@@ -6720,6 +7290,7 @@
       "팀전"
     ],
     "titles": {
+      "en": "Splatoon 3",
       "ko": "스플래툰 3"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5k1z.jpg",
@@ -6739,8 +7310,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Bloons TD 6",
       "Monomi Park",
       "Steam",
+      "bloonstd6",
       "monomipark",
       "steam",
       "게임",
@@ -6749,6 +7322,7 @@
       "슬라임랜처"
     ],
     "titles": {
+      "en": "Bloons TD 6",
       "ko": "슬라임 랜처"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
@@ -6797,8 +7371,10 @@
       "SF"
     ],
     "searchTokens": [
+      "Black Myth: Wukong",
       "SF",
       "Shift Up",
+      "blackmyth:wukong",
       "sf",
       "shiftup",
       "건슈팅",
@@ -6809,6 +7385,7 @@
       "포스트아포칼립스"
     ],
     "titles": {
+      "en": "Black Myth: Wukong",
       "ko": "승리의 여신: 니케"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
@@ -6828,8 +7405,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Cities: Skylines",
       "Colossal Order",
       "Steam",
+      "cities:skylines",
       "colossalorder",
       "steam",
       "게임",
@@ -6838,6 +7417,7 @@
       "시티즈:스카이라인"
     ],
     "titles": {
+      "en": "Cities: Skylines",
       "ko": "시티즈: 스카이라인"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255710/library_600x900.jpg",
@@ -6893,8 +7473,10 @@
     ],
     "searchTokens": [
       "GAINAX / khara",
+      "Neon Genesis Evangelion",
       "SF",
       "gainax/khara",
+      "neongenesisevangelion",
       "sf",
       "메카",
       "명작",
@@ -6903,6 +7485,7 @@
       "심리"
     ],
     "titles": {
+      "en": "Neon Genesis Evangelion",
       "ko": "신세기 에반게리온"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg",
@@ -6924,7 +7507,9 @@
     ],
     "searchTokens": [
       "SIU",
+      "Tower OF GOD",
       "siu",
+      "towerofgod",
       "모험",
       "미스터리",
       "신의 탑",
@@ -6933,6 +7518,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Tower OF GOD",
       "ko": "신의 탑"
     },
     "qualityScore": 40,
@@ -7020,6 +7606,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "AO Ashi",
+      "aoashi",
       "성장",
       "스포츠",
       "아오아시",
@@ -7029,6 +7617,7 @@
       "축구"
     ],
     "titles": {
+      "en": "AO Ashi",
       "ko": "아오아시"
     },
     "qualityScore": 40,
@@ -7048,8 +7637,10 @@
       "레트로"
     ],
     "searchTokens": [
+      "Ready Player ONE",
       "SF",
       "VR",
+      "readyplayerone",
       "sf",
       "vr",
       "게임",
@@ -7060,6 +7651,7 @@
       "언스트어니스트클라인"
     ],
     "titles": {
+      "en": "Ready Player ONE",
       "ko": "아이언 레디 플레이어 원"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg",
@@ -7079,8 +7671,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "ARK: Survival Evolved",
       "Steam",
       "Studio Wildcard",
+      "ark:survivalevolved",
       "steam",
       "studiowildcard",
       "게임",
@@ -7089,6 +7683,7 @@
       "아크:서바이벌이볼브드"
     ],
     "titles": {
+      "en": "ARK: Survival Evolved",
       "ko": "아크: 서바이벌 이볼브드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/library_600x900.jpg",
@@ -7212,6 +7807,8 @@
       "다크"
     ],
     "searchTokens": [
+      "Promised Neverland",
+      "promisedneverland",
       "다크",
       "미스터리",
       "스릴러",
@@ -7222,6 +7819,7 @@
       "탈출"
     ],
     "titles": {
+      "en": "Promised Neverland",
       "ko": "약속의 네버랜드"
     },
     "qualityScore": 40,
@@ -7273,8 +7871,10 @@
     ],
     "searchTokens": [
       "RPG",
+      "Save 75% on Undertale",
       "Toby Fox",
       "rpg",
+      "save75%onundertale",
       "tobyfox",
       "명작",
       "선택",
@@ -7282,6 +7882,7 @@
       "인디"
     ],
     "titles": {
+      "en": "Save 75% on Undertale",
       "ko": "언더테일"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg",
@@ -7303,7 +7904,9 @@
     ],
     "searchTokens": [
       "SF",
+      "Undead Unluck",
       "sf",
+      "undeadunluck",
       "액션",
       "언데드 언럭",
       "언데드언럭",
@@ -7313,6 +7916,7 @@
       "토가시토시히사"
     ],
     "titles": {
+      "en": "Undead Unluck",
       "ko": "언데드 언럭"
     },
     "qualityScore": 45,
@@ -7368,14 +7972,17 @@
     "searchTokens": [
       "Naughty Dog",
       "Steam",
+      "UNCHARTED™: Legacy of Thieves Collection",
       "naughtydog",
       "steam",
+      "uncharted™:legacyofthievescollection",
       "게임",
       "대중문화",
       "언차티드: 도적들과 유산",
       "언차티드:도적들과유산"
     ],
     "titles": {
+      "en": "UNCHARTED™: Legacy of Thieves Collection",
       "ko": "언차티드: 도적들과 유산"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_600x900.jpg",
@@ -7457,9 +8064,11 @@
       "SF"
     ],
     "searchTokens": [
+      "Apex Legends™",
       "FPS",
       "Respawn Entertainment",
       "SF",
+      "apexlegends™",
       "fps",
       "respawnentertainment",
       "sf",
@@ -7469,6 +8078,7 @@
       "팀플레이"
     ],
     "titles": {
+      "en": "Apex Legends™",
       "ko": "에이펙스 레전드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/library_600x900.jpg",
@@ -7488,8 +8098,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "NARAKA: BLADEPOINT",
       "Square Enix",
       "Steam",
+      "naraka:bladepoint",
       "squareenix",
       "steam",
       "게임",
@@ -7497,6 +8109,7 @@
       "엑스칼리버"
     ],
     "titles": {
+      "en": "NARAKA: BLADEPOINT",
       "ko": "엑스칼리버"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/library_600x900.jpg",
@@ -7516,7 +8129,9 @@
       "SF"
     ],
     "searchTokens": [
+      "Axiom Verge",
       "SF",
+      "axiomverge",
       "sf",
       "얼리액세스",
       "엑시옴",
@@ -7525,6 +8140,7 @@
       "인디제작사"
     ],
     "titles": {
+      "en": "Axiom Verge",
       "ko": "엑시옴"
     },
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
@@ -7545,7 +8161,9 @@
       "음악"
     ],
     "searchTokens": [
+      "Angel Beats",
       "P.A.Works",
+      "angelbeats",
       "p.a.works",
       "감동",
       "엔젤 비츠!",
@@ -7555,6 +8173,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Angel Beats",
       "ko": "엔젤 비츠!"
     },
     "qualityScore": 40,
@@ -7574,8 +8193,10 @@
       "다크판타지"
     ],
     "searchTokens": [
+      "ELDEN RING",
       "FromSoftware",
       "RPG",
+      "eldenring",
       "fromsoftware",
       "rpg",
       "다크판타지",
@@ -7585,6 +8206,7 @@
       "오픈월드"
     ],
     "titles": {
+      "en": "ELDEN RING",
       "ko": "엘든 링"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
@@ -7640,6 +8262,8 @@
       "포와로"
     ],
     "searchTokens": [
+      "Murder ON Orient Express",
+      "murderonorientexpress",
       "고전",
       "미스터리",
       "아가사 크리스티",
@@ -7650,6 +8274,7 @@
       "포와로"
     ],
     "titles": {
+      "en": "Murder ON Orient Express",
       "ko": "오리엔트 특급 살인"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg",
@@ -7670,8 +8295,10 @@
     ],
     "searchTokens": [
       "Moon Studios",
+      "Mount &amp; Blade II: Bannerlord",
       "Steam",
       "moonstudios",
+      "mount&amp;bladeii:bannerlord",
       "steam",
       "게임",
       "대중문화",
@@ -7679,6 +8306,7 @@
       "오리와먹구름"
     ],
     "titles": {
+      "en": "Mount &amp; Blade II: Bannerlord",
       "ko": "오리와 먹구름"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261550/library_600x900.jpg",
@@ -7700,7 +8328,9 @@
     ],
     "searchTokens": [
       "MADHOUSE",
+      "Overlord",
       "madhouse",
+      "overlord",
       "악역",
       "오버로드",
       "이세계",
@@ -7708,6 +8338,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Overlord",
       "ko": "오버로드"
     },
     "qualityScore": 45,
@@ -7761,6 +8392,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Overlord",
+      "overlord",
       "라이트노벨",
       "서브컬처",
       "오버로드",
@@ -7769,6 +8402,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Overlord",
       "ko": "오버로드"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
@@ -7791,9 +8425,11 @@
     "searchTokens": [
       "Blizzard",
       "FPS",
+      "Overwatch®",
       "PvP",
       "blizzard",
       "fps",
+      "overwatch®",
       "pvp",
       "오버워치 2",
       "오버워치2",
@@ -7801,6 +8437,7 @@
       "히어로"
     ],
     "titles": {
+      "en": "Overwatch®",
       "ko": "오버워치 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/library_600x900.jpg",
@@ -7820,8 +8457,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Conan Exiles Enhanced",
       "Steam",
       "Team17",
+      "conanexilesenhanced",
       "steam",
       "team17",
       "게임",
@@ -7830,6 +8469,7 @@
       "오버쿡드2"
     ],
     "titles": {
+      "en": "Conan Exiles Enhanced",
       "ko": "오버쿡드 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440900/library_600x900.jpg",
@@ -7850,6 +8490,8 @@
       "넷플릭스"
     ],
     "searchTokens": [
+      "Squid Game",
+      "squidgame",
       "넷플릭스",
       "데스게임",
       "서바이벌",
@@ -7860,6 +8502,7 @@
       "황동혁(hwangdong-hyuk)"
     ],
     "titles": {
+      "en": "Squid Game",
       "ko": "오징어 게임"
     },
     "qualityScore": 40,
@@ -7905,9 +8548,11 @@
     "searchTokens": [
       "HD-2D",
       "JRPG",
+      "OCTOPATH TRAVELER™",
       "Square Enix",
       "hd-2d",
       "jrpg",
+      "octopathtraveler™",
       "squareenix",
       "서브컬처",
       "옥토패스 트래블러",
@@ -7915,6 +8560,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "OCTOPATH TRAVELER™",
       "ko": "옥토패스 트래블러"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/921570/library_600x900.jpg",
@@ -7971,7 +8617,9 @@
     ],
     "searchTokens": [
       "DB Weiss / David Benioff",
+      "Game OF Thrones",
       "dbweiss/davidbenioff",
+      "gameofthrones",
       "서사",
       "왕좌의 게임",
       "왕좌의게임",
@@ -7980,6 +8628,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Game OF Thrones",
       "ko": "왕좌의 게임"
     },
     "qualityScore": 40,
@@ -8033,7 +8682,9 @@
     ],
     "searchTokens": [
       "Ryu Ga Gotoku Studio",
+      "Yakuza 0",
       "ryugagotokustudio",
+      "yakuza0",
       "스토리",
       "액션",
       "야쿠자",
@@ -8042,6 +8693,7 @@
       "일본"
     ],
     "titles": {
+      "en": "Yakuza 0",
       "ko": "용과 같이 0"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638970/library_600x900.jpg",
@@ -8062,6 +8714,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Classroom OF THE Elite",
+      "classroomoftheelite",
       "라이트노벨",
       "서브컬처",
       "쇼고 키누가사",
@@ -8072,6 +8726,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Classroom OF THE Elite",
       "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg",
@@ -8093,7 +8748,9 @@
     ],
     "searchTokens": [
       "Cygames",
+      "Umamusume",
       "cygames",
+      "umamusume",
       "경마",
       "서브컬처",
       "수집",
@@ -8101,6 +8758,7 @@
       "육성"
     ],
     "titles": {
+      "en": "Umamusume",
       "ko": "우마무스메"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2z.jpg",
@@ -8124,14 +8782,17 @@
       "Digital Extremes",
       "F2P",
       "SF",
+      "Warframe",
       "digitalextremes",
       "f2p",
       "sf",
+      "warframe",
       "액션",
       "워프레임",
       "협동"
     ],
     "titles": {
+      "en": "Warframe",
       "ko": "워프레임"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/library_600x900.jpg",
@@ -8152,7 +8813,9 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Genshin Impact",
       "HoYoverse",
+      "genshinimpact",
       "hoyoverse",
       "서브컬처",
       "수집형RPG",
@@ -8162,6 +8825,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Genshin Impact",
       "ko": "원신"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg",
@@ -8217,7 +8881,9 @@
     ],
     "searchTokens": [
       "MADHOUSE",
+      "ONE Punch MAN",
       "madhouse",
+      "onepunchman",
       "액션",
       "원펀맨",
       "코미디",
@@ -8225,6 +8891,7 @@
       "히어로"
     ],
     "titles": {
+      "en": "ONE Punch MAN",
       "ko": "원펀맨"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
@@ -8279,6 +8946,8 @@
       "대하"
     ],
     "searchTokens": [
+      "ONE Piece",
+      "onepiece",
       "대하",
       "모험",
       "오다 에이이치로 (Eiichiro Oda)",
@@ -8288,6 +8957,7 @@
       "해적"
     ],
     "titles": {
+      "en": "ONE Piece",
       "ko": "원피스"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
@@ -8309,7 +8979,9 @@
     ],
     "searchTokens": [
       "Matt Owens / Steven Maeda",
+      "ONE Piece Live Action",
       "mattowens/stevenmaeda",
+      "onepieceliveaction",
       "모험",
       "서브컬처",
       "실사",
@@ -8318,6 +8990,7 @@
       "해적"
     ],
     "titles": {
+      "en": "ONE Piece Live Action",
       "ko": "원피스 (실사)"
     },
     "qualityScore": 40,
@@ -8373,7 +9046,9 @@
     ],
     "searchTokens": [
       "Lauren Schmidt Hissrich",
+      "THE Witcher",
       "laurenschmidthissrich",
+      "thewitcher",
       "넷플릭스",
       "모험",
       "액션",
@@ -8381,6 +9056,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "THE Witcher",
       "ko": "위쳐"
     },
     "qualityScore": 40,
@@ -8467,8 +9143,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Euro Truck Simulator 2",
       "SCS Software",
       "Steam",
+      "eurotrucksimulator2",
       "scssoftware",
       "steam",
       "게임",
@@ -8477,6 +9155,7 @@
       "유로트럭시뮬레이터2"
     ],
     "titles": {
+      "en": "Euro Truck Simulator 2",
       "ko": "유로 트럭 시뮬레이터 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/library_600x900.jpg",
@@ -8496,8 +9175,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Europa Universalis IV",
       "Paradox",
       "Steam",
+      "europauniversalisiv",
       "paradox",
       "steam",
       "게임",
@@ -8506,6 +9187,7 @@
       "유로파유니버설리스iv"
     ],
     "titles": {
+      "en": "Europa Universalis IV",
       "ko": "유로파 유니버설리스 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/library_600x900.jpg",
@@ -8526,6 +9208,8 @@
       "명작"
     ],
     "searchTokens": [
+      "YU YU Hakusho",
+      "yuyuhakusho",
       "명작",
       "액션",
       "요괴",
@@ -8535,6 +9219,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "YU YU Hakusho",
       "ko": "유유백서"
     },
     "qualityScore": 40,
@@ -8554,7 +9239,9 @@
       "우주"
     ],
     "searchTokens": [
+      "Hitchhiker Guide",
       "SF",
+      "hitchhikerguide",
       "sf",
       "고전",
       "더글러스 애덤스",
@@ -8565,6 +9252,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Hitchhiker Guide",
       "ko": "은하수를 여행하는 히치하이커를 위한 안내서"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg",
@@ -8585,7 +9273,9 @@
       "패러디"
     ],
     "searchTokens": [
+      "Gintama",
       "SF",
+      "gintama",
       "sf",
       "사무라이",
       "소라타히로",
@@ -8594,6 +9284,7 @@
       "패러디"
     ],
     "titles": {
+      "en": "Gintama",
       "ko": "은혼"
     },
     "qualityScore": 45,
@@ -8613,8 +9304,10 @@
       "패러디"
     ],
     "searchTokens": [
+      "Gintama",
       "SF",
       "SUNRISE",
+      "gintama",
       "sf",
       "sunrise",
       "사무라이",
@@ -8623,6 +9316,7 @@
       "패러디"
     ],
     "titles": {
+      "en": "Gintama",
       "ko": "은혼"
     },
     "qualityScore": 45,
@@ -8642,6 +9336,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Konosuba",
+      "konosuba",
       "라이트노벨",
       "서브컬처",
       "아카츠키 나츠메",
@@ -8652,6 +9348,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Konosuba",
       "ko": "이 멋진 세계에 축복을!"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg",
@@ -8672,7 +9369,9 @@
       "패러디"
     ],
     "searchTokens": [
+      "Konosuba",
       "Studio Deen",
+      "konosuba",
       "studiodeen",
       "이 멋진 세계에 축복을!",
       "이멋진세계에축복을!",
@@ -8682,6 +9381,7 @@
       "패러디"
     ],
     "titles": {
+      "en": "Konosuba",
       "ko": "이 멋진 세계에 축복을!"
     },
     "qualityScore": 45,
@@ -8803,6 +9503,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Extraordinary Attorney WOO",
+      "extraordinaryattorneywoo",
       "법정",
       "성장",
       "유인식",
@@ -8812,6 +9514,7 @@
       "휴먼"
     ],
     "titles": {
+      "en": "Extraordinary Attorney WOO",
       "ko": "이상한 변호사 우영우"
     },
     "qualityScore": 40,
@@ -8831,6 +9534,8 @@
       "힐링"
     ],
     "searchTokens": [
+      "MY Neighbor Totoro",
+      "myneighbortotoro",
       "가족",
       "미야자키 하야오 (Hayao Miyazaki)",
       "미야자키하야오(hayaomiyazaki)",
@@ -8841,6 +9546,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "MY Neighbor Totoro",
       "ko": "이웃집 토토로"
     },
     "qualityScore": 40,
@@ -8986,6 +9692,8 @@
       "다크"
     ],
     "searchTokens": [
+      "Goodnight Punpun",
+      "goodnightpunpun",
       "다크",
       "드라마",
       "심리",
@@ -8996,6 +9704,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Goodnight Punpun",
       "ko": "잘 자 뚱뚱이"
     },
     "qualityScore": 40,
@@ -9050,6 +9759,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Frieren",
+      "frieren",
       "감동",
       "모험",
       "성장",
@@ -9060,6 +9771,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Frieren",
       "ko": "장송의 프리렌"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
@@ -9081,6 +9793,8 @@
     ],
     "searchTokens": [
       "8bit",
+      "Slime",
+      "slime",
       "건국",
       "슬라임",
       "이세계",
@@ -9089,6 +9803,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Slime",
       "ko": "전생 슬라임"
     },
     "qualityScore": 45,
@@ -9108,6 +9823,8 @@
       "건국"
     ],
     "searchTokens": [
+      "Slime",
+      "slime",
       "건국",
       "라이트노벨",
       "슬라임",
@@ -9117,6 +9834,7 @@
       "후세이"
     ],
     "titles": {
+      "en": "Slime",
       "ko": "전생 슬라임"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040702279-L.jpg",
@@ -9137,6 +9855,8 @@
       "건국"
     ],
     "searchTokens": [
+      "Tensura",
+      "tensura",
       "건국",
       "슬라임",
       "이세계",
@@ -9147,6 +9867,7 @@
       "후세이/미와타리"
     ],
     "titles": {
+      "en": "Tensura",
       "ko": "전생했더니 슬라임이었던 건"
     },
     "qualityScore": 40,
@@ -9169,15 +9890,18 @@
       "JRPG",
       "Monolith Soft",
       "SF",
+      "Xenoblade 3",
       "jrpg",
       "monolithsoft",
       "sf",
+      "xenoblade3",
       "서브컬처",
       "제노블레이드 3",
       "제노블레이드3",
       "판타지"
     ],
     "titles": {
+      "en": "Xenoblade 3",
       "ko": "제노블레이드 3"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
@@ -9200,8 +9924,10 @@
     "searchTokens": [
       "HoYoverse",
       "SF",
+      "Zenless Zone Zero",
       "hoyoverse",
       "sf",
+      "zenlesszonezero",
       "도시",
       "서브컬처",
       "액션",
@@ -9209,6 +9935,7 @@
       "젠레스존제로"
     ],
     "titles": {
+      "en": "Zenless Zone Zero",
       "ko": "젠레스 존 제로"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg",
@@ -9230,7 +9957,9 @@
     ],
     "searchTokens": [
       "Nintendo",
+      "Zelda Breath OF THE Wild",
       "nintendo",
+      "zeldabreathofthewild",
       "닌텐도",
       "명작",
       "어드벤처",
@@ -9239,6 +9968,7 @@
       "젤다의전설브레스오브더와일드"
     ],
     "titles": {
+      "en": "Zelda Breath OF THE Wild",
       "ko": "젤다의 전설 브레스 오브 더 와일드"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
@@ -9399,7 +10129,9 @@
       "다크"
     ],
     "searchTokens": [
+      "Jujutsu Kaisen",
       "MAPPA",
+      "jujutsukaisen",
       "mappa",
       "다크",
       "액션",
@@ -9408,6 +10140,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
@@ -9428,6 +10161,8 @@
       "배틀"
     ],
     "searchTokens": [
+      "Jujutsu Kaisen",
+      "jujutsukaisen",
       "다크판타지",
       "배틀",
       "아쿠타미 게게 (Gege Akutami)",
@@ -9437,6 +10172,7 @@
       "주술회전"
     ],
     "titles": {
+      "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
@@ -9486,6 +10222,8 @@
       "서바이벌"
     ],
     "searchTokens": [
+      "Hells Paradise",
+      "hellsparadise",
       "가쿠 쿠지",
       "가쿠쿠지",
       "닌자",
@@ -9495,6 +10233,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Hells Paradise",
       "ko": "지옥락"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
@@ -9550,7 +10289,9 @@
     ],
     "searchTokens": [
       "SF",
+      "Shingeki NO Kyojin",
       "sf",
+      "shingekinokyojin",
       "반전",
       "이사야마 하지메 (Hajime Isayama)",
       "이사야마하지메(hajimeisayama)",
@@ -9560,6 +10301,7 @@
       "진격의거인"
     ],
     "titles": {
+      "en": "Shingeki NO Kyojin",
       "ko": "진격의 거인"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
@@ -9580,7 +10322,9 @@
       "명작"
     ],
     "searchTokens": [
+      "Attack ON Titan",
       "WIT STUDIO / MAPPA",
+      "attackontitan",
       "witstudio/mappa",
       "다크",
       "명작",
@@ -9590,6 +10334,7 @@
       "진격의거인"
     ],
     "titles": {
+      "en": "Attack ON Titan",
       "ko": "진격의 거인"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
@@ -9610,6 +10355,8 @@
       "장수작"
     ],
     "searchTokens": [
+      "Crayon Shin Chan",
+      "crayonshinchan",
       "가족",
       "우스이 요시토 (Yoshito Usui)",
       "우스이요시토(yoshitousui)",
@@ -9620,6 +10367,7 @@
       "코미디"
     ],
     "titles": {
+      "en": "Crayon Shin Chan",
       "ko": "짱구는 못말려"
     },
     "qualityScore": 40,
@@ -9708,7 +10456,9 @@
       "청춘"
     ],
     "searchTokens": [
+      "Hajime NO Ippo",
       "MADHOUSE",
+      "hajimenoippo",
       "madhouse",
       "복싱",
       "성장",
@@ -9717,6 +10467,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Hajime NO Ippo",
       "ko": "첫걸음"
     },
     "qualityScore": 40,
@@ -9736,7 +10487,9 @@
       "미니시리즈"
     ],
     "searchTokens": [
+      "Chernobyl",
       "Craig Mazin",
+      "chernobyl",
       "craigmazin",
       "드라마",
       "미니시리즈",
@@ -9745,6 +10498,7 @@
       "체르노빌"
     ],
     "titles": {
+      "en": "Chernobyl",
       "ko": "체르노빌"
     },
     "qualityScore": 40,
@@ -9764,6 +10518,8 @@
       "카오스"
     ],
     "searchTokens": [
+      "Chainsaw MAN",
+      "chainsawman",
       "다크",
       "악마",
       "액션",
@@ -9774,6 +10530,7 @@
       "후지모토타츠키(tatsukifujimoto)"
     ],
     "titles": {
+      "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
@@ -9794,7 +10551,9 @@
       "카오스"
     ],
     "searchTokens": [
+      "Chainsaw MAN",
       "MAPPA",
+      "chainsawman",
       "mappa",
       "다크",
       "악마",
@@ -9804,6 +10563,7 @@
       "카오스"
     ],
     "titles": {
+      "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
@@ -9849,6 +10609,8 @@
       "복수"
     ],
     "searchTokens": [
+      "Oshi NO KO",
+      "oshinoko",
       "드라마",
       "미스터리",
       "복수",
@@ -9859,6 +10621,7 @@
       "최애의아이"
     ],
     "titles": {
+      "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
@@ -9880,7 +10643,9 @@
     ],
     "searchTokens": [
       "Doga Kobo",
+      "Oshi NO KO",
       "dogakobo",
+      "oshinoko",
       "드라마",
       "미스터리",
       "복수",
@@ -9889,6 +10654,7 @@
       "최애의아이"
     ],
     "titles": {
+      "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
@@ -9910,14 +10676,17 @@
     "searchTokens": [
       "Naughty Dog",
       "Steam",
+      "The Last of Us™ Part I",
       "naughtydog",
       "steam",
+      "thelastofus™parti",
       "게임",
       "대중문화",
       "최후의 생还자 Part I",
       "최후의생还자parti"
     ],
     "titles": {
+      "en": "The Last of Us™ Part I",
       "ko": "최후의 생还자 Part I"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/library_600x900.jpg",
@@ -9938,6 +10707,8 @@
       "힐링"
     ],
     "searchTokens": [
+      "Mushishi",
+      "mushishi",
       "단편",
       "오컬트",
       "요시나가 루리",
@@ -9947,6 +10718,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "Mushishi",
       "ko": "충사"
     },
     "qualityScore": 40,
@@ -9966,6 +10738,8 @@
       "로맨스"
     ],
     "searchTokens": [
+      "Chihayafuru",
+      "chihayafuru",
       "로맨스",
       "스에마스 치카",
       "스에마스치카",
@@ -9975,6 +10749,7 @@
       "카루타"
     ],
     "titles": {
+      "en": "Chihayafuru",
       "ko": "치하야후루"
     },
     "qualityScore": 40,
@@ -9994,6 +10769,8 @@
       "두뇌전"
     ],
     "searchTokens": [
+      "Kaguya Sama",
+      "kaguyasama",
       "두뇌전",
       "로맨스",
       "아카사카 아카",
@@ -10004,6 +10781,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Kaguya Sama",
       "ko": "카구야님은 고백받고 싶어"
     },
     "qualityScore": 45,
@@ -10058,6 +10836,8 @@
     ],
     "searchTokens": [
       "CLAMP",
+      "Cardcaptor Sakura",
+      "cardcaptorsakura",
       "clamp",
       "마법",
       "소녀",
@@ -10067,6 +10847,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Cardcaptor Sakura",
       "ko": "카드캡터 체리"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
@@ -10087,8 +10868,10 @@
       "액션"
     ],
     "searchTokens": [
+      "Cowboy Bebop",
       "SF",
       "SUNRISE",
+      "cowboybebop",
       "sf",
       "sunrise",
       "느와르",
@@ -10098,6 +10881,7 @@
       "카우보이비밥"
     ],
     "titles": {
+      "en": "Cowboy Bebop",
       "ko": "카우보이 비밥"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg",
@@ -10118,9 +10902,11 @@
       "전술"
     ],
     "searchTokens": [
+      "Counter-Strike 2",
       "FPS",
       "PvP",
       "Valve",
+      "counter-strike2",
       "e스포츠",
       "fps",
       "pvp",
@@ -10130,6 +10916,7 @@
       "카운터스트라이크2"
     ],
     "titles": {
+      "en": "Counter-Strike 2",
       "ko": "카운터 스트라이크 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
@@ -10184,8 +10971,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Save 40% on Cuphead",
       "Steam",
       "Studio MDHR",
+      "save40%oncuphead",
       "steam",
       "studiomdhr",
       "게임",
@@ -10193,6 +10982,7 @@
       "컵헤드"
     ],
     "titles": {
+      "en": "Save 40% on Cuphead",
       "ko": "컵헤드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/library_600x900.jpg",
@@ -10213,8 +11003,10 @@
       "SF"
     ],
     "searchTokens": [
+      "Code Geass",
       "SF",
       "SUNRISE",
+      "codegeass",
       "sf",
       "sunrise",
       "메카",
@@ -10224,6 +11016,7 @@
       "코드기어스"
     ],
     "titles": {
+      "en": "Code Geass",
       "ko": "코드 기어스"
     },
     "qualityScore": 40,
@@ -10276,8 +11069,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Call of Duty®",
       "Infinity Ward",
       "Steam",
+      "callofduty®",
       "infinityward",
       "steam",
       "게임",
@@ -10286,6 +11081,7 @@
       "콜오브듀티:mwii"
     ],
     "titles": {
+      "en": "Call of Duty®",
       "ko": "콜 오브 듀티: MW II"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/library_600x900.jpg",
@@ -10305,8 +11101,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Crusader Kings III",
       "Paradox",
       "Steam",
+      "crusaderkingsiii",
       "paradox",
       "steam",
       "게임",
@@ -10315,6 +11113,7 @@
       "크루세이더킹즈3"
     ],
     "titles": {
+      "en": "Crusader Kings III",
       "ko": "크루세이더 킹즈 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/library_600x900.jpg",
@@ -10335,7 +11134,9 @@
       "로맨스"
     ],
     "searchTokens": [
+      "Clannad",
       "Kyoto Animation",
+      "clannad",
       "kyotoanimation",
       "가족",
       "감동",
@@ -10344,6 +11145,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Clannad",
       "ko": "클라나드"
     },
     "qualityScore": 40,
@@ -10397,6 +11199,8 @@
       "성장"
     ],
     "searchTokens": [
+      "Kingdom",
+      "kingdom",
       "성장",
       "역사",
       "전략",
@@ -10406,6 +11210,7 @@
       "하라야스히사"
     ],
     "titles": {
+      "en": "Kingdom",
       "ko": "킹덤"
     },
     "qualityScore": 45,
@@ -10459,6 +11264,8 @@
       "한국드라마"
     ],
     "searchTokens": [
+      "Kingdom",
+      "kingdom",
       "김성훈 / 김은희",
       "김성훈/김은희",
       "사극",
@@ -10468,6 +11275,7 @@
       "한국드라마"
     ],
     "titles": {
+      "en": "Kingdom",
       "ko": "킹덤"
     },
     "qualityScore": 45,
@@ -10486,8 +11294,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Save 50% on Kingdom Come: Deliverance II",
       "Steam",
       "Warhorse",
+      "save50%onkingdomcome:deliveranceii",
       "steam",
       "warhorse",
       "게임",
@@ -10496,6 +11306,7 @@
       "킹덤컴2"
     ],
     "titles": {
+      "en": "Save 50% on Kingdom Come: Deliverance II",
       "ko": "킹덤 컴 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1771300/library_600x900.jpg",
@@ -10515,8 +11326,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Save 80% on Kingdom Come: Deliverance",
       "Steam",
       "Warhorse",
+      "save80%onkingdomcome:deliverance",
       "steam",
       "warhorse",
       "게임",
@@ -10525,6 +11338,7 @@
       "킹덤컴:딜리버런스"
     ],
     "titles": {
+      "en": "Save 80% on Kingdom Come: Deliverance",
       "ko": "킹덤 컴: 딜리버런스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379430/library_600x900.jpg",
@@ -10548,13 +11362,16 @@
       "2D",
       "2d",
       "Re-Logic",
+      "Terraria",
       "re-logic",
+      "terraria",
       "샌드박스",
       "인디",
       "테라리아",
       "협동"
     ],
     "titles": {
+      "en": "Terraria",
       "ko": "테라리아"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
@@ -10610,6 +11427,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "Toradora",
+      "toradora",
       "로맨스",
       "청춘",
       "코미디",
@@ -10619,6 +11438,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Toradora",
       "ko": "토라도라!"
     },
     "qualityScore": 45,
@@ -10701,8 +11521,10 @@
     ],
     "searchTokens": [
       "Creative Assembly",
+      "Save 60% on Hunt: Showdown 1896",
       "Steam",
       "creativeassembly",
+      "save60%onhunt:showdown1896",
       "steam",
       "게임",
       "대중문화",
@@ -10710,6 +11532,7 @@
       "토탈워:삼국"
     ],
     "titles": {
+      "en": "Save 60% on Hunt: Showdown 1896",
       "ko": "토탈 워: 삼국"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/594650/library_600x900.jpg",
@@ -10731,14 +11554,17 @@
     "searchTokens": [
       "Creative Assembly",
       "Steam",
+      "Total War: WARHAMMER III",
       "creativeassembly",
       "steam",
+      "totalwar:warhammeriii",
       "게임",
       "대중문화",
       "토탈 워: 워해머 3",
       "토탈워:워해머3"
     ],
     "titles": {
+      "en": "Total War: WARHAMMER III",
       "ko": "토탈 워: 워해머 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/library_600x900.jpg",
@@ -10761,14 +11587,17 @@
     "searchTokens": [
       "MADHOUSE",
       "SF",
+      "Trigun",
       "madhouse",
       "sf",
+      "trigun",
       "명작",
       "액션",
       "코미디",
       "트라이건"
     ],
     "titles": {
+      "en": "Trigun",
       "ko": "트라이건"
     },
     "qualityScore": 40,
@@ -10789,7 +11618,9 @@
     ],
     "searchTokens": [
       "Nic Pizzolatto",
+      "True Detective",
       "nicpizzolatto",
+      "truedetective",
       "미스터리",
       "범죄",
       "스릴러",
@@ -10798,6 +11629,7 @@
       "트루디텍티브"
     ],
     "titles": {
+      "en": "True Detective",
       "ko": "트루 디텍티브"
     },
     "qualityScore": 40,
@@ -10817,8 +11649,10 @@
     ],
     "searchTokens": [
       "Steam",
+      "Team Fortress 2",
       "Valve",
       "steam",
+      "teamfortress2",
       "valve",
       "게임",
       "대중문화",
@@ -10826,6 +11660,7 @@
       "팀포트리스2"
     ],
     "titles": {
+      "en": "Team Fortress 2",
       "ko": "팀 포트리스 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/library_600x900.jpg",
@@ -10847,8 +11682,10 @@
     ],
     "searchTokens": [
       "MMORPG",
+      "Site Error",
       "Square Enix",
       "mmorpg",
+      "siteerror",
       "squareenix",
       "스토리",
       "파이널 판타지 XIV",
@@ -10857,6 +11694,7 @@
       "협동"
     ],
     "titles": {
+      "en": "Site Error",
       "ko": "파이널 판타지 XIV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39210/library_600x900.jpg",
@@ -10877,8 +11715,10 @@
       "판타지"
     ],
     "searchTokens": [
+      "Fire Emblem Three Houses",
       "Intelligent Systems",
       "SRPG",
+      "fireemblemthreehouses",
       "intelligentsystems",
       "srpg",
       "전술",
@@ -10888,6 +11728,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Fire Emblem Three Houses",
       "ko": "파이어 엠블렘: 풍화설월"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.jpg",
@@ -10937,14 +11778,17 @@
     ],
     "searchTokens": [
       "Pocketpair",
+      "Save 25% on Palworld",
       "Steam",
       "pocketpair",
+      "save25%onpalworld",
       "steam",
       "게임",
       "대중문화",
       "팔월드"
     ],
     "titles": {
+      "en": "Save 25% on Palworld",
       "ko": "팔월드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/library_600x900.jpg",
@@ -10964,8 +11808,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Factorio",
       "Steam",
       "Wube Software",
+      "factorio",
       "steam",
       "wubesoftware",
       "게임",
@@ -10973,6 +11819,7 @@
       "팩토리오"
     ],
     "titles": {
+      "en": "Factorio",
       "ko": "팩토리오"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg",
@@ -10993,6 +11840,8 @@
       "모험"
     ],
     "searchTokens": [
+      "Percy Jackson",
+      "percyjackson",
       "릭 리오던",
       "릭리오던",
       "모험",
@@ -11003,6 +11852,7 @@
       "퍼시잭슨과번개도둑"
     ],
     "titles": {
+      "en": "Percy Jackson",
       "ko": "퍼시 잭슨과 번개 도둑"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg",
@@ -11054,8 +11904,10 @@
     "searchTokens": [
       "Atlus",
       "JRPG",
+      "Persona 5 Royal",
       "atlus",
       "jrpg",
+      "persona5royal",
       "서브컬처",
       "스타일",
       "페르소나 5 로열",
@@ -11063,6 +11915,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Persona 5 Royal",
       "ko": "페르소나 5 로열"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900.jpg",
@@ -11083,6 +11936,8 @@
       "우정"
     ],
     "searchTokens": [
+      "Fairy Tail",
+      "fairytail",
       "길드",
       "마법",
       "마시마 히로",
@@ -11093,6 +11948,7 @@
       "페어리테일"
     ],
     "titles": {
+      "en": "Fairy Tail",
       "ko": "페어리 테일"
     },
     "qualityScore": 40,
@@ -11148,7 +12004,9 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Fate Grand Order",
       "TYPE-MOON / Aniplex",
+      "fategrandorder",
       "type-moon/aniplex",
       "서번트",
       "서브컬처",
@@ -11159,6 +12017,7 @@
       "페이트/그랜드오더"
     ],
     "titles": {
+      "en": "Fate Grand Order",
       "ko": "페이트/그랜드 오더"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
@@ -11179,6 +12038,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Fate Zero",
+      "fatezero",
       "ufotable",
       "마술",
       "명작",
@@ -11187,6 +12048,7 @@
       "페이트/제로"
     ],
     "titles": {
+      "en": "Fate Zero",
       "ko": "페이트/제로"
     },
     "qualityScore": 40,
@@ -11207,7 +12069,9 @@
     ],
     "searchTokens": [
       "Lucas Pope",
+      "Papers, Please",
       "lucaspope",
+      "papers,please",
       "명작",
       "시뮬",
       "인디",
@@ -11216,6 +12080,7 @@
       "페이퍼스,플리즈"
     ],
     "titles": {
+      "en": "Papers, Please",
       "ko": "페이퍼스, 플리즈"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
@@ -11264,8 +12129,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Portal",
       "Steam",
       "Valve",
+      "portal",
       "steam",
       "valve",
       "게임",
@@ -11273,6 +12140,7 @@
       "포털"
     ],
     "titles": {
+      "en": "Portal",
       "ko": "포털"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg",
@@ -11293,8 +12161,10 @@
       "명작"
     ],
     "searchTokens": [
+      "Portal 2",
       "SF",
       "Valve",
+      "portal2",
       "sf",
       "valve",
       "명작",
@@ -11304,6 +12174,7 @@
       "포털2"
     ],
     "titles": {
+      "en": "Portal 2",
       "ko": "포털 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
@@ -11324,8 +12195,10 @@
     ],
     "searchTokens": [
       "Bethesda",
+      "Fallout 3",
       "Steam",
       "bethesda",
+      "fallout3",
       "steam",
       "게임",
       "대중문화",
@@ -11333,6 +12206,7 @@
       "폴아웃3"
     ],
     "titles": {
+      "en": "Fallout 3",
       "ko": "폴아웃 3"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/library_600x900.jpg",
@@ -11353,8 +12227,10 @@
     ],
     "searchTokens": [
       "Bethesda",
+      "Fallout 4",
       "Steam",
       "bethesda",
+      "fallout4",
       "steam",
       "게임",
       "대중문화",
@@ -11362,6 +12238,7 @@
       "폴아웃4"
     ],
     "titles": {
+      "en": "Fallout 4",
       "ko": "폴아웃 4"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/library_600x900.jpg",
@@ -11381,8 +12258,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Fallout: New Vegas",
       "Obsidian",
       "Steam",
+      "fallout:newvegas",
       "obsidian",
       "steam",
       "게임",
@@ -11391,6 +12270,7 @@
       "폴아웃:뉴베가스"
     ],
     "titles": {
+      "en": "Fallout: New Vegas",
       "ko": "폴아웃: 뉴 베가스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg",
@@ -11412,7 +12292,9 @@
     ],
     "searchTokens": [
       "Colorful Palette / SEGA",
+      "Project Sekai",
       "colorfulpalette/sega",
+      "projectsekai",
       "리듬",
       "보컬로이드",
       "서브컬처",
@@ -11421,6 +12303,7 @@
       "프로젝트세카이"
     ],
     "titles": {
+      "en": "Project Sekai",
       "ko": "프로젝트 세카이"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2kgk.jpg",
@@ -11440,8 +12323,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Project Zomboid",
       "Steam",
       "The Indie Stone",
+      "projectzomboid",
       "steam",
       "theindiestone",
       "게임",
@@ -11450,6 +12335,7 @@
       "프로젝트좀보이드"
     ],
     "titles": {
+      "en": "Project Zomboid",
       "ko": "프로젝트 좀보이드"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_600x900.jpg",
@@ -11470,8 +12356,10 @@
     ],
     "searchTokens": [
       "Introversion",
+      "Prison Architect",
       "Steam",
       "introversion",
+      "prisonarchitect",
       "steam",
       "게임",
       "대중문화",
@@ -11479,6 +12367,7 @@
       "프리즌아키텍트"
     ],
     "titles": {
+      "en": "Prison Architect",
       "ko": "프리즌 아키텍트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233450/library_600x900.jpg",
@@ -11500,7 +12389,9 @@
     ],
     "searchTokens": [
       "Cygames",
+      "Princess Connect",
       "cygames",
+      "princessconnect",
       "서브컬처",
       "수집형RPG",
       "수집형rpg",
@@ -11510,6 +12401,7 @@
       "프린세스커넥트"
     ],
     "titles": {
+      "en": "Princess Connect",
       "ko": "프린세스 커넥트"
     },
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg",
@@ -11530,8 +12422,10 @@
     ],
     "searchTokens": [
       "Frontier",
+      "Planet Coaster",
       "Steam",
       "frontier",
+      "planetcoaster",
       "steam",
       "게임",
       "대중문화",
@@ -11539,6 +12433,7 @@
       "플래닛코스터"
     ],
     "titles": {
+      "en": "Planet Coaster",
       "ko": "플래닛 코스터"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493340/library_600x900.jpg",
@@ -11559,8 +12454,10 @@
     ],
     "searchTokens": [
       "Frontier",
+      "Save 40% on The Planet Crafter",
       "Steam",
       "frontier",
+      "save40%ontheplanetcrafter",
       "steam",
       "게임",
       "대중문화",
@@ -11568,6 +12465,7 @@
       "플래닛코스터2"
     ],
     "titles": {
+      "en": "Save 40% on The Planet Crafter",
       "ko": "플래닛 코스터 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284190/library_600x900.jpg",
@@ -11617,7 +12515,9 @@
       "드라마"
     ],
     "searchTokens": [
+      "Ping Pong",
       "TMS",
+      "pingpong",
       "tms",
       "드라마",
       "스포츠",
@@ -11626,6 +12526,7 @@
       "핑퐁"
     ],
     "titles": {
+      "en": "Ping Pong",
       "ko": "핑퐁"
     },
     "qualityScore": 40,
@@ -11645,7 +12546,9 @@
       "그리스신화"
     ],
     "searchTokens": [
+      "Hades",
       "Supergiant Games",
+      "hades",
       "supergiantgames",
       "그리스신화",
       "로그라이크",
@@ -11654,6 +12557,7 @@
       "하데스"
     ],
     "titles": {
+      "en": "Hades",
       "ko": "하데스"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg",
@@ -11708,6 +12612,8 @@
       "팀워크"
     ],
     "searchTokens": [
+      "Haikyuu",
+      "haikyuu",
       "배구",
       "스포츠",
       "청춘",
@@ -11717,6 +12623,7 @@
       "후루다테하루이치"
     ],
     "titles": {
+      "en": "Haikyuu",
       "ko": "하이큐!!"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
@@ -11736,8 +12643,10 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Hearts of Iron IV",
       "Paradox",
       "Steam",
+      "heartsofironiv",
       "paradox",
       "steam",
       "게임",
@@ -11746,6 +12655,7 @@
       "하트오브아이언iv"
     ],
     "titles": {
+      "en": "Hearts of Iron IV",
       "ko": "하트 오브 아이언 IV"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
@@ -11767,9 +12677,11 @@
     ],
     "searchTokens": [
       "FPS",
+      "Half-Life 2",
       "SF",
       "Valve",
       "fps",
+      "half-life2",
       "sf",
       "valve",
       "명작",
@@ -11778,6 +12690,7 @@
       "하프라이프2"
     ],
     "titles": {
+      "en": "Half-Life 2",
       "ko": "하프라이프 2"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
@@ -11798,7 +12711,9 @@
       "호그와트"
     ],
     "searchTokens": [
+      "Harry Potter Philosophers Stone",
       "J.K. 롤링 (J.K. Rowling)",
+      "harrypotterphilosophersstone",
       "j.k.롤링(j.k.rowling)",
       "마법",
       "소설",
@@ -11808,6 +12723,7 @@
       "호그와트"
     ],
     "titles": {
+      "en": "Harry Potter Philosophers Stone",
       "ko": "해리 포터와 마법사의 돌"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg",
@@ -11890,7 +12806,9 @@
       "반란"
     ],
     "searchTokens": [
+      "Hunger Games",
       "SF",
+      "hungergames",
       "sf",
       "반란",
       "서바이벌",
@@ -11901,6 +12819,7 @@
       "헝거게임"
     ],
     "titles": {
+      "en": "Hunger Games",
       "ko": "헝거 게임"
     },
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
@@ -11946,8 +12865,10 @@
     ],
     "searchTokens": [
       "Avalanche",
+      "Hogwarts Legacy",
       "Steam",
       "avalanche",
+      "hogwartslegacy",
       "steam",
       "게임",
       "대중문화",
@@ -11955,6 +12876,7 @@
       "호그와트레거시"
     ],
     "titles": {
+      "en": "Hogwarts Legacy",
       "ko": "호그와트 레거시"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/library_600x900.jpg",
@@ -11975,8 +12897,10 @@
     ],
     "searchTokens": [
       "Guerrilla",
+      "Horizon Zero Dawn™ Complete Edition",
       "Steam",
       "guerrilla",
+      "horizonzerodawn™completeedition",
       "steam",
       "게임",
       "대중문화",
@@ -11984,6 +12908,7 @@
       "호라이즌제로던"
     ],
     "titles": {
+      "en": "Horizon Zero Dawn™ Complete Edition",
       "ko": "호라이즌 제로 던"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151640/library_600x900.jpg",
@@ -12004,8 +12929,10 @@
     ],
     "searchTokens": [
       "Guerrilla",
+      "Horizon Forbidden West™ Complete Edition",
       "Steam",
       "guerrilla",
+      "horizonforbiddenwest™completeedition",
       "steam",
       "게임",
       "대중문화",
@@ -12013,6 +12940,7 @@
       "호라이즌포비든웨스트"
     ],
     "titles": {
+      "en": "Horizon Forbidden West™ Complete Edition",
       "ko": "호라이즌 포비든 웨스트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg",
@@ -12033,6 +12961,8 @@
       "일상"
     ],
     "searchTokens": [
+      "Horimiya",
+      "horimiya",
       "로맨스",
       "일상",
       "코미디",
@@ -12042,6 +12972,7 @@
       "호리미야"
     ],
     "titles": {
+      "en": "Horimiya",
       "ko": "호리미야"
     },
     "qualityScore": 45,
@@ -12094,7 +13025,9 @@
       "액션"
     ],
     "searchTokens": [
+      "Hollow Knight",
       "Team Cherry",
+      "hollowknight",
       "teamcherry",
       "다크판타지",
       "메트로바니아",
@@ -12104,6 +13037,7 @@
       "홀로우나이트"
     ],
     "titles": {
+      "en": "Hollow Knight",
       "ko": "홀로우 나이트"
     },
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_600x900.jpg",
@@ -12157,6 +13091,8 @@
       "가족"
     ],
     "searchTokens": [
+      "Fruits Basket",
+      "fruitsbasket",
       "가족",
       "로맨스",
       "타카야 나츠키",
@@ -12167,6 +13103,7 @@
       "힐링"
     ],
     "titles": {
+      "en": "Fruits Basket",
       "ko": "후르츠 바스켓"
     },
     "qualityScore": 40,

@@ -17,7 +17,14 @@
     "legacyIds": [
       "gen_game_appid252490_2013",
       "gen_game_appid252490_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Rust",
+      "ko": "러스트"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000123": {
     "workId": "wk_000000123",
@@ -35,6 +42,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774181/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid774181_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Rhythm Doctor",
+      "ko": "리틀 나이트메어 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

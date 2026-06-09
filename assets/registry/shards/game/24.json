@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid105600_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Terraria",
+      "ko": "테라리아"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

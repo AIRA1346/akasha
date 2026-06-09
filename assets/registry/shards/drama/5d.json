@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_kingdom_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Kingdom",
+      "ko": "킹덤"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

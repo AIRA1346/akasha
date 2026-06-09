@@ -23,6 +23,16 @@
     },
     "legacyIds": [
       "sub_manga_spy-x-family_2018"
+    ],
+    "titles": {
+      "ko": "스파이 패밀리",
+      "en": "Spy x Family",
+      "ja": "SPY×FAMILY",
+      "romaji": "Spy x Family"
+    },
+    "aliases": [
+      "SPY×FAMILY",
+      "Spy Family"
     ]
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/library_600x900.jpg",
     "legacyIds": [
       "gen_game_overwatch-2_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Overwatch®",
+      "ko": "오버워치 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

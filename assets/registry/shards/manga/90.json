@@ -15,6 +15,15 @@
     ],
     "legacyIds": [
       "sub_manga_20th-century-boys_1999"
+    ],
+    "titles": {
+      "ko": "20세기 소년",
+      "en": "20th Century Boys",
+      "ja": "20世紀少年",
+      "romaji": "20th Century Boys"
+    },
+    "aliases": [
+      "20th Century Boys"
     ]
   }
 }

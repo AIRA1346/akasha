@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg",
     "legacyIds": [
       "sub_book_no-game-no-life_2011"
-    ]
+    ],
+    "titles": {
+      "en": "NO Game NO Life",
+      "ko": "노 게임 노 라이프"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

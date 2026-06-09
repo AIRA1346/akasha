@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_squid-game_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Squid Game",
+      "ko": "오징어 게임"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

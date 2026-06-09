@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_sakamoto-days_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Sakamoto Days",
+      "ko": "사카모토 데이즈"
+    }
   }
 }

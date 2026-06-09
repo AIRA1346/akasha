@@ -42,6 +42,13 @@
     ],
     "legacyIds": [
       "sub_manga_nisekoi_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Nisekoi",
+      "ko": "니세코이"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

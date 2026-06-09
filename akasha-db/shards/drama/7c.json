@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_extraordinary-attorney-woo_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Extraordinary Attorney WOO",
+      "ko": "이상한 변호사 우영우"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

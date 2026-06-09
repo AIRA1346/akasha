@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
     "legacyIds": [
       "gen_book_dune_1965"
-    ]
+    ],
+    "titles": {
+      "en": "Dune",
+      "ko": "듄"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid2050650_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Save 75% on Resident Evil 4",
+      "ko": "Resident Evil 4"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000090": {
     "workId": "wk_000000090",
@@ -35,6 +42,13 @@
     "legacyIds": [
       "gen_game_appid271590_2013",
       "gen_game_appid271590_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Grand Theft Auto V Legacy",
+      "ko": "그랜드 테프트 오토 V"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

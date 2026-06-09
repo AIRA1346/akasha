@@ -3,7 +3,7 @@
 유저·운영자 제안은 **GitHub akasha-db 안**에서만 상태를 관리합니다 (서버비 0원).  
 앱은 Cloudflare CDN으로 `contributions/status.json` 만 **읽기** (v2+).
 
-> 장기 로드맵: [docs/catalog-contribution-roadmap.md](../../docs/catalog-contribution-roadmap.md)
+> 장기 로드맵: [docs/catalog-contribution-roadmap.md](../../docs/catalog-contribution-roadmap.md) · [docs/contribution-model-strategy.md](../../docs/contribution-model-strategy.md)
 
 ## 두 파이프라인
 

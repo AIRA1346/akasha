@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1196590_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Save 75% on Resident Evil Village",
+      "ko": "Resident Evil Village"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

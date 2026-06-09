@@ -19,10 +19,15 @@
         "PC",
         "콘솔"
       ],
-      "steamAppId": "322170"
+      "steamAppId": "322170",
+      "coverageSprint03": "steam_fetch"
     },
     "legacyIds": [
       "gen_game_minecraft_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Geometry Dash",
+      "ko": "마인크래프트"
+    }
   }
 }

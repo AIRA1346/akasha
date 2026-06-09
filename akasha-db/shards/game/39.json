@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid12210_2008"
-    ]
+    ],
+    "titles": {
+      "en": "Grand Theft Auto IV: The Complete Edition",
+      "ko": "GTA IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000080": {
     "workId": "wk_000000080",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242050/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid242050_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Assassin’s Creed® IV Black Flag™",
+      "ko": "리틀 나이트메어"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "sub_manga_berserk_1989"
-    ]
+    ],
+    "titles": {
+      "en": "Berserk",
+      "ko": "베르세르크"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000362": {
     "workId": "wk_000000362",

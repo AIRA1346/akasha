@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_goodnight-punpun_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Goodnight Punpun",
+      "ko": "잘 자 뚱뚱이"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

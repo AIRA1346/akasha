@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
     "legacyIds": [
       "sub_game_xenoblade-3_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Xenoblade 3",
+      "ko": "제노블레이드 3"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

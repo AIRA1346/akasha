@@ -12,7 +12,8 @@
 선행·병행 문서:
 
 - [global-search-validation-plan.md](global-search-validation-plan.md) — SW1 recall@10/@20
-- [adr/README.md](adr/README.md) — ADR-001~004 (URV-A 선행)
+- [adr/README.md](adr/README.md) — ADR-001~006 (URV-A 선행)
+- [registry-growth-strategy.md](registry-growth-strategy.md) — **데이터 확보** (ADR는 작품 존재 후)
 - [canonicalization-policy.md](canonicalization-policy.md) — dedupe·franchise·edition 규칙
 - [locale-catalog-policy.md](locale-catalog-policy.md) — titles·aliases·표시 fallback
 - [catalog-ownership.md](catalog-ownership.md) — Tier 0 Identity · Tier 1 Registry

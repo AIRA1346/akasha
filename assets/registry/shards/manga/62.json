@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_fairy-tail_2006"
-    ]
+    ],
+    "titles": {
+      "en": "Fairy Tail",
+      "ko": "페어리 테일"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

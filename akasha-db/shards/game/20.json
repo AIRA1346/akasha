@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg",
     "legacyIds": [
       "sub_game_undertale_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Save 75% on Undertale",
+      "ko": "언더테일"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -16,7 +16,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1085660_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Destiny 2",
+      "ko": "데스티니 가디언즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000072": {
     "workId": "wk_000000072",
@@ -34,7 +41,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid227300_2012"
-    ]
+    ],
+    "titles": {
+      "en": "Euro Truck Simulator 2",
+      "ko": "유로 트럭 시뮬레이터 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000093": {
     "workId": "wk_000000093",
@@ -52,6 +66,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294100/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid294100_2018"
-    ]
+    ],
+    "titles": {
+      "en": "RimWorld",
+      "ko": "림월드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

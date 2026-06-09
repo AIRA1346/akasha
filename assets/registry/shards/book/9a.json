@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg",
     "legacyIds": [
       "sub_book_classroom-of-the-elite_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Classroom OF THE Elite",
+      "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

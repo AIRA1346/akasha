@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_animation_weathering-with-you_2019"
-    ]
+    ],
+    "titles": {
+      "en": "Weathering With YOU",
+      "ko": "날씨의 아이"
+    }
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg",
     "legacyIds": [
       "gen_book_murder-on-orient-express_1934"
-    ]
+    ],
+    "titles": {
+      "en": "Murder ON Orient Express",
+      "ko": "오리엔트 특급 살인"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

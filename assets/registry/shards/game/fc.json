@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517290/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1517290_2021"
-    ]
+    ],
+    "titles": {
+      "en": "Battlefield™ 2042",
+      "ko": "배틀필드 2042"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

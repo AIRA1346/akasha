@@ -23,6 +23,16 @@
     },
     "legacyIds": [
       "sub_animation_dandadan-anime_2024"
+    ],
+    "titles": {
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
+    },
+    "aliases": [
+      "Dandadan",
+      "ダンダダン"
     ]
   }
 }

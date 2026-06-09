@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
     "legacyIds": [
       "gen_game_skyrim_2011"
-    ]
+    ],
+    "titles": {
+      "en": "The Elder Scrolls V: Skyrim Special Edition",
+      "ko": "더 엘더스크롤 V: 스카이림"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

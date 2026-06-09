@@ -18,7 +18,14 @@
       "gen_game_appid413150_2016",
       "gen_game_stardew-valley_2016",
       "sub_game_stardew-valley-sub_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Stardew Valley",
+      "ko": "스타듀 밸리"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000289": {
     "workId": "wk_000000289",
@@ -37,6 +44,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638970/library_600x900.jpg",
     "legacyIds": [
       "sub_game_yakuza-0_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Yakuza 0",
+      "ko": "용과 같이 0"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -16,6 +16,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid239030_2013"
-    ]
+    ],
+    "titles": {
+      "en": "Papers, Please",
+      "ko": "페이퍼스, 플리즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

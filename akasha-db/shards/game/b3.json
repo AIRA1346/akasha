@@ -16,7 +16,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1245620_2022"
-    ]
+    ],
+    "titles": {
+      "en": "ELDEN RING",
+      "ko": "엘든 링"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000101": {
     "workId": "wk_000000101",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379430/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid379430_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Save 80% on Kingdom Come: Deliverance",
+      "ko": "킹덤 컴: 딜리버런스"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

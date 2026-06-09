@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
     "legacyIds": [
       "sub_game_fate-grand-order_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Fate Grand Order",
+      "ko": "페이트/그랜드 오더"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000094": {
     "workId": "wk_000000094",
@@ -34,6 +41,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322330/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid322330_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Don't Starve Together",
+      "ko": "Don't Starve Together"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

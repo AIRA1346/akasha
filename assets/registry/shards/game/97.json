@@ -15,7 +15,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid239140_2015"
-    ]
+    ],
+    "titles": {
+      "en": "Dying Light",
+      "ko": "Dying Light"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000086": {
     "workId": "wk_000000086",
@@ -33,6 +40,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid2531310_2024"
-    ]
+    ],
+    "titles": {
+      "en": "The Last of Us™ Part II Remastered",
+      "ko": "라스트 오브 어스 Part II"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

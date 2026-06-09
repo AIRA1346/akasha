@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
     "legacyIds": [
       "gen_book_1984_1949"
-    ]
+    ],
+    "titles": {
+      "en": "1984",
+      "ko": "1984"
+    },
+    "extensions": {
+      "coverageSprint03": "latin_title"
+    }
   }
 }

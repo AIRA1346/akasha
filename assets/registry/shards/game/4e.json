@@ -17,6 +17,13 @@
     "legacyIds": [
       "gen_game_appid730_2012",
       "gen_game_appid730_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Counter-Strike 2",
+      "ko": "카운터 스트라이크 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

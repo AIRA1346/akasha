@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_samurai-champloo_2004"
-    ]
+    ],
+    "titles": {
+      "en": "Samurai Champloo",
+      "ko": "사무라이 참프루"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

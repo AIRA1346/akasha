@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_manga_undead-unluck_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Undead Unluck",
+      "ko": "언데드 언럭"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

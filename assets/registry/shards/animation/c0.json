@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_animation_frieren_2023"
-    ]
+    ],
+    "titles": {
+      "en": "Frieren",
+      "ko": "장송의 프리렌"
+    }
   },
   "wk_000000210": {
     "workId": "wk_000000210",

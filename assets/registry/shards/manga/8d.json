@@ -15,7 +15,14 @@
     ],
     "legacyIds": [
       "gen_manga_crayon-shin-chan_1990"
-    ]
+    ],
+    "titles": {
+      "en": "Crayon Shin Chan",
+      "ko": "짱구는 못말려"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000347": {
     "workId": "wk_000000347",

@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1158310_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Crusader Kings III",
+      "ko": "크루세이더 킹즈 3"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_violet-evergarden_2018"
-    ]
+    ],
+    "titles": {
+      "en": "Violet Evergarden",
+      "ko": "바이올렛 에버가든"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

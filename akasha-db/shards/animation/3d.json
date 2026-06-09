@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_ping-pong_2014"
-    ]
+    ],
+    "titles": {
+      "en": "Ping Pong",
+      "ko": "핑퐁"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1599340_2022"
-    ]
+    ],
+    "titles": {
+      "en": "Site Error",
+      "ko": "로스트 아크"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

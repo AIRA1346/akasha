@@ -19,10 +19,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
       "sub_manga_one-piece_1997"
-    ]
+    ],
+    "titles": {
+      "en": "ONE Piece",
+      "ko": "원피스"
+    }
   }
 }

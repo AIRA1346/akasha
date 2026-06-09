@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg",
     "legacyIds": [
       "gen_book_ready-player-one_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Ready Player ONE",
+      "ko": "아이언 레디 플레이어 원"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -17,5 +17,6 @@
 
 관련:
 
-- [universal-registry-validation.md](../universal-registry-validation.md)
+- [universal-registry-validation.md](../universal-registry-validation.md) — 작품 **존재 후** 정체성
+- [registry-growth-strategy.md](../registry-growth-strategy.md) — 작품 **확보** (장기 1순위 리스크)
 - [canonicalization-policy.md](../canonicalization-policy.md)

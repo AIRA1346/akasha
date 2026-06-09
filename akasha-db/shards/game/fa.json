@@ -16,6 +16,13 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg",
     "legacyIds": [
       "sub_game_zenless-zone-zero_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Zenless Zone Zero",
+      "ko": "젠레스 존 제로"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

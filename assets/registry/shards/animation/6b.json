@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_bungo-stray-dogs_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Bungo Stray Dogs",
+      "ko": "문호 스트레이 독스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

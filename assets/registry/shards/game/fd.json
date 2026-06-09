@@ -16,7 +16,14 @@
     "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
     "legacyIds": [
       "gen_game_league-of-legends_2009"
-    ]
+    ],
+    "titles": {
+      "en": "Ruined King: A League of Legends Story™",
+      "ko": "리그 오브 레전드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000140": {
     "workId": "wk_000000140",
@@ -35,7 +42,14 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
     "legacyIds": [
       "gen_game_mass-effect-2_2010"
-    ]
+    ],
+    "titles": {
+      "en": "Mass Effect 2 (2010 Edition)",
+      "ko": "매스 이펙트 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   },
   "wk_000000103": {
     "workId": "wk_000000103",
@@ -53,6 +67,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid394360_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Hearts of Iron IV",
+      "ko": "하트 오브 아이언 IV"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

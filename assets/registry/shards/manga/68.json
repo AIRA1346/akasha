@@ -19,11 +19,16 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "latin_title"
     },
     "legacyIds": [
       "sub_manga_beastars_2016"
-    ]
+    ],
+    "titles": {
+      "en": "BEASTARS",
+      "ko": "BEASTARS"
+    }
   },
   "wk_000000314": {
     "workId": "wk_000000314",
@@ -68,6 +73,13 @@
     ],
     "legacyIds": [
       "sub_manga_toradora_2007"
-    ]
+    ],
+    "titles": {
+      "en": "Toradora",
+      "ko": "토라도라!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

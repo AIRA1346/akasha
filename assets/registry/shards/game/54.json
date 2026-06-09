@@ -16,7 +16,14 @@
     "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg",
     "legacyIds": [
       "sub_game_genshin-impact_2020"
-    ]
+    ],
+    "titles": {
+      "en": "Genshin Impact",
+      "ko": "원신"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   },
   "wk_000000143": {
     "workId": "wk_000000143",
@@ -35,6 +42,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
     "legacyIds": [
       "gen_game_portal-2_2011"
-    ]
+    ],
+    "titles": {
+      "en": "Portal 2",
+      "ko": "포털 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

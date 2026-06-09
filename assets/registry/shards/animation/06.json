@@ -40,7 +40,8 @@
     "titles": {
       "ko": "나루토",
       "en": "Naruto",
-      "ja": "NARUTO"
+      "ja": "NARUTO",
+      "zh": "火影忍者"
     },
     "category": "animation",
     "domain": "subculture",
@@ -71,6 +72,9 @@
     },
     "legacyIds": [
       "sub_animation_naruto_2002"
+    ],
+    "aliases": [
+      "火影忍者"
     ]
   }
 }

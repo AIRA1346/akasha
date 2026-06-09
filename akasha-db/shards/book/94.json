@@ -16,6 +16,13 @@
     "posterPath": "https://covers.openlibrary.org/b/isbn/9784040702279-L.jpg",
     "legacyIds": [
       "sub_book_slime-light-novel_2014"
-    ]
+    ],
+    "titles": {
+      "en": "Slime",
+      "ko": "전생 슬라임"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

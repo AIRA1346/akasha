@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1888160_2023"
-    ]
+    ],
+    "titles": {
+      "en": "ARMORED CORE™ VI FIRES OF RUBICON™",
+      "ko": "Armored Core VI"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

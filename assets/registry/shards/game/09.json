@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid2420110_2024"
-    ]
+    ],
+    "titles": {
+      "en": "Horizon Forbidden West™ Complete Edition",
+      "ko": "호라이즌 포비든 웨스트"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

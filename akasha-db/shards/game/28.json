@@ -15,6 +15,13 @@
     "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid22380_2010"
-    ]
+    ],
+    "titles": {
+      "en": "Fallout: New Vegas",
+      "ko": "폴아웃: 뉴 베가스"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch"
+    }
   }
 }

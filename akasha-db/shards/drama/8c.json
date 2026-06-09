@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "gen_drama_stranger-things_2016"
-    ]
+    ],
+    "titles": {
+      "en": "Stranger Things",
+      "ko": "기묘한 이야기"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }

@@ -23,6 +23,17 @@
     },
     "legacyIds": [
       "sub_animation_fullmetal-alchemist-brotherhood_2009"
+    ],
+    "titles": {
+      "ko": "강철의 연금술사 BROTHERHOOD",
+      "en": "Fullmetal Alchemist: Brotherhood",
+      "ja": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+      "romaji": "Hagane no Renkinjutsushi"
+    },
+    "aliases": [
+      "Brotherhood",
+      "FMA",
+      "Fullmetal Alchemist"
     ]
   }
 }

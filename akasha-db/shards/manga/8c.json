@@ -46,10 +46,15 @@
     },
     "extensions": {
       "posterSource": "tmdb",
-      "posterVerified": true
+      "posterVerified": true,
+      "coverageSprint03": "latin_title"
     },
     "legacyIds": [
       "sub_manga_dr-stone_2017"
-    ]
+    ],
+    "titles": {
+      "en": "Dr.STONE",
+      "ko": "Dr.STONE"
+    }
   }
 }

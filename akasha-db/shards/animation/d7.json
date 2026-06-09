@@ -15,6 +15,13 @@
     ],
     "legacyIds": [
       "sub_animation_angel-beats_2010"
-    ]
+    ],
+    "titles": {
+      "en": "Angel Beats",
+      "ko": "엔젤 비츠!"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug"
+    }
   }
 }
