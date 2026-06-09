@@ -9,6 +9,15 @@
 
 **Charter 연계:** [phase2-charter.md](phase2-charter.md) §5 **#4** — externalId coverage **≥ 50% (G2)** · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) **Q2**.
 
+### Sprint 04 레이어 (R1 / R2)
+
+| 레이어 | 기준 Registry | 내용 | SSOT |
+|--------|:-------------:|------|------|
+| **04-R1** | **402작** | 1차 externalId apply (+141) · Economics·G2 **@402 달성** | [sprint-04-final-review.md](sprint-04-final-review.md) *(superseded · 아카이브)* |
+| **04-R2** | **430작** | Scale 이후 재기준선 · Phase A baseline · Phase B 품질 감사 · 잔여 15건 | [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) · [sprint-04-baseline-report.md](sprint-04-baseline-report.md) |
+
+**현재 운영·수치:** **04-R2** (@430 · externalId **46.74%**) — 본 Charter의 **402작 수치는 04-R1 착수 정의**이며 R2 SSOT가 **아님**.
+
 ---
 
 ## Executive Summary
