@@ -4,7 +4,7 @@
 /// Usage:
 ///   dart run tool/a5_scale_enrich_batch.dart --batch 1 [--apply]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_enrich_b1.json
+/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_enrich_bN.json
 
 import 'dart:convert';
 import 'dart:io';
@@ -16,11 +16,15 @@ const _minutesManual = 15.0;
 
 void main(List<String> args) {
   final apply = args.contains('--apply');
+  final batch = int.parse(_argValue(args, '--batch') ?? '1');
   final root = _root();
-  final plans = _plansForBatch(1);
+  final plans = _plansForBatch(batch);
   final shardsRoot = Directory(p.join(root.path, 'akasha-db', 'shards'));
 
-  print('=== Scale enrich batch 1 (${plans.length} works) ===');
+  final insertFree = batch == 4;
+  print(
+    '=== Scale enrich batch $batch (${plans.length} works)${insertFree ? " [insert-free]" : ""} ===',
+  );
   final sw = Stopwatch()..start();
   var enriched = 0;
   var skipped = 0;
@@ -39,7 +43,8 @@ void main(List<String> args) {
     final titles = Map<String, dynamic>.from(
       (work['titles'] as Map?)?.cast<String, dynamic>() ?? {},
     );
-    if (titles.containsKey(plan.axis) && titles[plan.axis]?.toString().isNotEmpty == true) {
+    if (titles.containsKey(plan.axis) &&
+        titles[plan.axis]?.toString().isNotEmpty == true) {
       print('SKIP $workId (${plan.axis} already set)');
       skipped++;
       continue;
@@ -50,7 +55,7 @@ void main(List<String> args) {
     final ext = Map<String, dynamic>.from(
       (work['extensions'] as Map?)?.cast<String, dynamic>() ?? {},
     );
-    ext['coverageScaleEnrich'] = 'batch1_${plan.axis}';
+    ext['coverageScaleEnrich'] = 'batch${batch}_${plan.axis}';
     work['extensions'] = ext;
 
     if (apply) {
@@ -71,18 +76,30 @@ void main(List<String> args) {
   }
 
   sw.stop();
+  final supplyAdded = 2;
+  final cumulativeInsert = batch * 2;
+  final cumulativeEnrich = switch (batch) {
+    1 => 2,
+    2 => 4,
+    3 => 8,
+    _ => enriched,
+  };
   final report = {
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
-    'batch': 1,
+    'batch': batch,
     'axis': 'titles.ja',
     'enriched': enriched,
     'skipped': skipped,
     'wallMs': sw.elapsedMilliseconds,
     'estimatedMinutesTotal': enriched * _minutesManual,
     'insertBacklogContext': {
-      'scaleSupplyBatch1Added': 2,
-      'enrichBatch1Done': enriched,
-      'note': 'O7 — insert:enrich 2:2 same session',
+      'scaleSupplyBatchAdded': supplyAdded,
+      'enrichBatchDone': enriched,
+      'sessionInsertEnrichRatio': '$supplyAdded:$enriched',
+      'cumulativeScaleInsertFrom410': cumulativeInsert,
+      'cumulativeScaleEnrichJa': cumulativeEnrich,
+      if (batch == 3) 'pilotJaBacklogBefore': 6,
+      if (batch == 3) 'pilotJaBacklogAfter': 4,
     },
     'works': details,
   };
@@ -91,7 +108,7 @@ void main(List<String> args) {
     p.join(root.path, 'akasha-db', 'pipeline', 'artifacts', 'coverage_dashboard'),
   );
   outDir.createSync(recursive: true);
-  final outFile = File(p.join(outDir.path, 'scale_enrich_b1.json'));
+  final outFile = File(p.join(outDir.path, 'scale_enrich_b$batch.json'));
   if (apply) {
     outFile.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(report)}\n');
     print('\nWrote ${outFile.path}');
@@ -99,7 +116,9 @@ void main(List<String> args) {
   } else {
     print('\nDry-run — pass --apply to write shards + report');
   }
-  print('Batch 1: $enriched enriched, $skipped skipped, wall ${sw.elapsedMilliseconds}ms');
+  print(
+    'Batch $batch: $enriched enriched, $skipped skipped, wall ${sw.elapsedMilliseconds}ms',
+  );
 }
 
 class _EnrichPlan {
@@ -122,8 +141,48 @@ List<_EnrichPlan> _plansForBatch(int n) => switch (n) {
             'スケール供給バッチ1B',
           ),
         ],
-      _ => throw ArgumentError('batch must be 1'),
+      2 => const [
+          _EnrichPlan(
+            'sub_movie_scale-supply-b2a_2026',
+            'ja',
+            'スケール供給バッチ2A',
+          ),
+          _EnrichPlan(
+            'sub_drama_scale-supply-b2b_2026',
+            'ja',
+            'スケール供給バッチ2B',
+          ),
+        ],
+      3 => const [
+          _EnrichPlan(
+            'sub_book_scale-supply-b3a_2026',
+            'ja',
+            'スケール供給バッチ3A',
+          ),
+          _EnrichPlan(
+            'sub_animation_scale-supply-b3b_2026',
+            'ja',
+            'スケール供給バッチ3B',
+          ),
+          _EnrichPlan(
+            'sub_game_pilot-h1-supply-b1a_2026',
+            'ja',
+            'パイロットH1供給バッチ1A',
+          ),
+          _EnrichPlan(
+            'sub_movie_pilot-h1-supply-b1b_2026',
+            'ja',
+            'パイロットH1供給バッチ1B',
+          ),
+        ],
+      _ => throw ArgumentError('batch must be 1, 2, or 3'),
     };
+
+String? _argValue(List<String> args, String name) {
+  final i = args.indexOf(name);
+  if (i < 0 || i + 1 >= args.length) return null;
+  return args[i + 1];
+}
 
 class _Located {
   _Located(this.file, this.shard, this.work);

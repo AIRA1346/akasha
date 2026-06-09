@@ -2,7 +2,7 @@
 /// A5 Scale — Maintainer Net-new 소규모 공급 (pre-insert gate + v4 shard).
 ///
 /// Usage:
-///   dart run tool/a5_scale_supply_batch.dart --batch 1 [--apply]
+///   dart run tool/a5_scale_supply_batch.dart --batch 1|2|3 [--apply]
 
 import 'dart:convert';
 import 'dart:io';
@@ -63,7 +63,9 @@ void main(List<String> args) {
 
 List<Map<String, dynamic>> _seedsForBatch(int n) => switch (n) {
       1 => _batch1(),
-      _ => throw ArgumentError('batch must be 1'),
+      2 => _batch2(),
+      3 => _batch3(),
+      _ => throw ArgumentError('batch must be 1, 2, or 3'),
     };
 
 List<Map<String, dynamic>> _batch1() => [
@@ -79,6 +81,40 @@ List<Map<String, dynamic>> _batch1() => [
         titleKo: '스케일 공급 배치1B',
         titleEn: 'Scale Supply Batch 1B',
         category: 'game',
+        year: 2026,
+      ),
+    ];
+
+List<Map<String, dynamic>> _batch2() => [
+      _e(
+        workId: 'sub_movie_scale-supply-b2a_2026',
+        titleKo: '스케일 공급 배치2A',
+        titleEn: 'Scale Supply Batch 2A',
+        category: 'movie',
+        year: 2026,
+      ),
+      _e(
+        workId: 'sub_drama_scale-supply-b2b_2026',
+        titleKo: '스케일 공급 배치2B',
+        titleEn: 'Scale Supply Batch 2B',
+        category: 'drama',
+        year: 2026,
+      ),
+    ];
+
+List<Map<String, dynamic>> _batch3() => [
+      _e(
+        workId: 'sub_book_scale-supply-b3a_2026',
+        titleKo: '스케일 공급 배치3A',
+        titleEn: 'Scale Supply Batch 3A',
+        category: 'book',
+        year: 2026,
+      ),
+      _e(
+        workId: 'sub_animation_scale-supply-b3b_2026',
+        titleKo: '스케일 공급 배치3B',
+        titleEn: 'Scale Supply Batch 3B',
+        category: 'animation',
         year: 2026,
       ),
     ];

@@ -10,7 +10,7 @@
 
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **412 works** · 339 v4 hex shards · dedupe **0** |
+| **Registry** | **416 works** · 343 v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **ci_registry_check** | **PASS** (전 단계) |
 | **프로그램** | Phase 2 **COMPLETE** · A5 Pilot **SUCCESS** · Scale **1차 관측** |
@@ -19,7 +19,7 @@
 
 ---
 
-## 1. Gate 실행 결과 (@412)
+## 1. Gate 실행 결과 (@416)
 
 | 도구 | 결과 | 비고 |
 |------|:----:|------|
@@ -155,3 +155,5 @@
 |------|------|
 | 2026-06-09 | Phase 0 스냅샷 — gate 일괄 · Git · 위험 목록 |
 | 2026-06-09 | ci 정리 · Scale 2 Net-new +2 (412작) |
+| 2026-06-09 | Scale 4 supply+enrich batch 2 (414작 · O7 4:4) |
+| 2026-06-09 | Scale 5 O7 pressure insert 2 enrich 4 (416작) |

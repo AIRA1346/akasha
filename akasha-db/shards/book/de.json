@@ -1,0 +1,23 @@
+{
+  "sub_book_scale-supply-b3a_2026": {
+    "workId": "sub_book_scale-supply-b3a_2026",
+    "title": "스케일 공급 배치3A",
+    "titles": {
+      "ko": "스케일 공급 배치3A",
+      "en": "Scale Supply Batch 3A",
+      "ja": "スケール供給バッチ3A"
+    },
+    "category": "book",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "releaseYear": 2026,
+    "description": "Scale Net-new insert — Maintainer anchor (Expansion cohort B-type).",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch3_ja"
+    }
+  }
+}

@@ -4,7 +4,8 @@
     "title": "파일럿 H1 공급 배치1B",
     "titles": {
       "ko": "파일럿 H1 공급 배치1B",
-      "en": "Pilot H1 Supply Batch 1B"
+      "en": "Pilot H1 Supply Batch 1B",
+      "ja": "パイロットH1供給バッチ1B"
     },
     "category": "movie",
     "domain": "subculture",
@@ -14,6 +15,9 @@
     "tags": [
       "pilot",
       "supply"
-    ]
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch3_ja"
+    }
   }
 }
