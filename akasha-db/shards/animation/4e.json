@@ -4,7 +4,8 @@
     "title": "파일럿 H1 공급 배치3A",
     "titles": {
       "ko": "파일럿 H1 공급 배치3A",
-      "en": "Pilot H1 Supply Batch 3A"
+      "en": "Pilot H1 Supply Batch 3A",
+      "ja": "パイロットH1供給バッチ3A"
     },
     "category": "animation",
     "domain": "subculture",
@@ -14,7 +15,10 @@
     "tags": [
       "pilot",
       "supply"
-    ]
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch4_ja"
+    }
   },
   "wk_000000201": {
     "workId": "wk_000000201",

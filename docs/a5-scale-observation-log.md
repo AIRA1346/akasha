@@ -220,10 +220,55 @@
 
 ---
 
+## Scale 6 — enrich-only (pilot ja backlog 소진)
+
+**목적:** insert **없이** enrich만 — O7 backlog **0** 목표.
+
+**도구:** `a5_scale_enrich_batch.dart` `--batch 4 --apply` **[insert-free]**
+
+| workId | enrich |
+|--------|--------|
+| `sub_drama_pilot-h1-supply-b2a_2026` | titles.ja |
+| `sub_book_pilot-h1-supply-b2b_2026` | titles.ja |
+| `sub_animation_pilot-h1-supply-b3a_2026` | titles.ja |
+| `sub_manga_pilot-h1-supply-b3b_2026` | titles.ja |
+
+| 항목 | 값 |
+|------|-----|
+| insert | **0** |
+| enrich | **4** |
+| 세션 insert:enrich | **0:4** |
+| pilot ja backlog | **4 → 0** |
+| works | **416** (변동 없음) |
+| wall | **200 ms** |
+| gate | **PASS** |
+
+**O7:** H1 pilot+scale maintainer stub ja backlog **전량 소진** — SD3.5 Pause 조건 **미충족**.
+
+---
+
+## SD1 · Expansion cohort (2026-06-09 확정)
+
+| 문서 | 내용 |
+|------|------|
+| [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) | SD1~SD3 수치 |
+| [a5-scale-expansion-cohort-plan.md](a5-scale-expansion-cohort-plan.md) | A유형 · batch7 원칙 |
+
+### O3 (SD1 적용)
+
+| 필드 | 값 |
+|------|-----|
+| Clock 시작 | **2026-06-09** |
+| 1차 checkpoint | **2026-07-09** |
+| Scale net insert (day 0) | **+6** (410→416) |
+| 월 환산 rate | **checkpoint까지 보류** |
+
+---
+
 ## 다음 Scale 관측 (후속)
 
 | 우선 | 항목 |
 |:----:|------|
-| 1 | pilot ja backlog **4건** 소진 또는 insert **일시 중단** 후 enrich 우선 |
-| 2 | O3 **기간 윈도** (SD1) 확정 |
-| 3 | Expansion **신규 A유형 cohort** |
+| 1 | **batch7** Net-new Expansion 구현 · dry-run |
+| 2 | O3 **2026-07-09** checkpoint — insert rate 산출 |
+| 3 | O8·O9·O12 관측 착수 |

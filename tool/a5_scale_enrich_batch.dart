@@ -76,18 +76,20 @@ void main(List<String> args) {
   }
 
   sw.stop();
-  final supplyAdded = 2;
-  final cumulativeInsert = batch * 2;
+  final supplyAdded = insertFree ? 0 : 2;
+  final cumulativeInsert = insertFree ? 6 : batch * 2;
   final cumulativeEnrich = switch (batch) {
     1 => 2,
     2 => 4,
     3 => 8,
+    4 => 12,
     _ => enriched,
   };
   final report = {
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
     'batch': batch,
     'axis': 'titles.ja',
+    'insertFree': insertFree,
     'enriched': enriched,
     'skipped': skipped,
     'wallMs': sw.elapsedMilliseconds,
@@ -100,6 +102,8 @@ void main(List<String> args) {
       'cumulativeScaleEnrichJa': cumulativeEnrich,
       if (batch == 3) 'pilotJaBacklogBefore': 6,
       if (batch == 3) 'pilotJaBacklogAfter': 4,
+      if (batch == 4) 'pilotJaBacklogBefore': 4,
+      if (batch == 4) 'pilotJaBacklogAfter': 0,
     },
     'works': details,
   };
@@ -175,7 +179,29 @@ List<_EnrichPlan> _plansForBatch(int n) => switch (n) {
             'パイロットH1供給バッチ1B',
           ),
         ],
-      _ => throw ArgumentError('batch must be 1, 2, or 3'),
+      4 => const [
+          _EnrichPlan(
+            'sub_drama_pilot-h1-supply-b2a_2026',
+            'ja',
+            'パイロットH1供給バッチ2A',
+          ),
+          _EnrichPlan(
+            'sub_book_pilot-h1-supply-b2b_2026',
+            'ja',
+            'パイロットH1供給バッチ2B',
+          ),
+          _EnrichPlan(
+            'sub_animation_pilot-h1-supply-b3a_2026',
+            'ja',
+            'パイロットH1供給バッチ3A',
+          ),
+          _EnrichPlan(
+            'sub_manga_pilot-h1-supply-b3b_2026',
+            'ja',
+            'パイロットH1供給バッチ3B',
+          ),
+        ],
+      _ => throw ArgumentError('batch must be 1, 2, 3, or 4'),
     };
 
 String? _argValue(List<String> args, String name) {

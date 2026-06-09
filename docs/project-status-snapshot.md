@@ -144,8 +144,9 @@
 | 1 | **2** | Git 커밋 묶음(C1~C4) 확정 — **요청 시** 실행 |
 | 2 | **3** | `docs/README.md` 인덱스 |
 | 3 | **4** | Scale 2차: Net-new insert 경로 결정 |
-| 4 | **2** | Git 커밋 묶음(C1~C4) — **요청 시** |
-| 5 | **4** | Scale enrich 병행 (O7·O6) |
+| 4 | **done** | Git 커밋 (Scale 4~5) |
+| 5 | **done** | enrich-only batch 4 · SD1~SD3 · Expansion cohort plan |
+| 6 | **next** | batch7 구현 · O3 checkpoint 2026-07-09 |
 
 ---
 

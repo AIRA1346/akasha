@@ -4,7 +4,8 @@
     "title": "파일럿 H1 공급 배치2B",
     "titles": {
       "ko": "파일럿 H1 공급 배치2B",
-      "en": "Pilot H1 Supply Batch 2B"
+      "en": "Pilot H1 Supply Batch 2B",
+      "ja": "パイロットH1供給バッチ2B"
     },
     "category": "book",
     "domain": "subculture",
@@ -14,6 +15,9 @@
     "tags": [
       "pilot",
       "supply"
-    ]
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch4_ja"
+    }
   }
 }

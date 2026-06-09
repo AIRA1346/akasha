@@ -2,7 +2,7 @@
   "version": 4,
   "shardBits": 8,
   "entryCount": 416,
-  "generatedAt": "2026-06-09T10:48:58.120587Z",
+  "generatedAt": "2026-06-09T10:52:24.735870Z",
   "shards": [
     {
       "id": "animation_03",
@@ -202,7 +202,7 @@
       "path": "shards/animation/4e.json",
       "eager": false,
       "entryCount": 3,
-      "sha256": "01b719afcb92fb723ddebe4a77e42c6b0e13526556a0e41670b728f153f1a042"
+      "sha256": "bda9b80b5bca1c4718d62f03bbd87c38aa3f7eaddb0d6ce8bac04316323239e6"
     },
     {
       "id": "animation_50",
@@ -786,7 +786,7 @@
       "path": "shards/book/e2.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "027e747ceba2daf55075a7d5d53fec4b3acbf804c9fb6bcbc2905f17d97d47a6"
+      "sha256": "ac13be98d5d79f4e94a85a8123959874ba8b401e2ad1bd51955ac0304bbc8d4b"
     },
     {
       "id": "book_ea",
@@ -874,7 +874,7 @@
       "path": "shards/drama/6b.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "fc9a516f9ad2d516cb03ab1d6d5e11f9fefa4c1219d3cff39892c086e21cf736"
+      "sha256": "3d54478d51935d1f8ac88cc2e56d4df3fd341c76b19447de5bd6bd5af8be6ed8"
     },
     {
       "id": "drama_7a",
@@ -2202,7 +2202,7 @@
       "path": "shards/manga/93.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "c3869cfd2defa450247fa16e5a66329c39bf5b7bf6495aa57db195a343e81394"
+      "sha256": "214a9913e77b50d8055380b40b866c08e573076c4f830105d357cfa6cc9004b3"
     },
     {
       "id": "manga_94",

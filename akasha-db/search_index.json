@@ -12030,12 +12030,15 @@
       "pilot",
       "piloth1supplybatch2a",
       "supply",
+      "パイロットH1供給バッチ2A",
+      "パイロットh1供給バッチ2a",
       "파일럿 H1 공급 배치2A",
       "파일럿h1공급배치2a"
     ],
     "titles": {
       "ko": "파일럿 H1 공급 배치2A",
-      "en": "Pilot H1 Supply Batch 2A"
+      "en": "Pilot H1 Supply Batch 2A",
+      "ja": "パイロットH1供給バッチ2A"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -12058,12 +12061,15 @@
       "pilot",
       "piloth1supplybatch2b",
       "supply",
+      "パイロットH1供給バッチ2B",
+      "パイロットh1供給バッチ2b",
       "파일럿 H1 공급 배치2B",
       "파일럿h1공급배치2b"
     ],
     "titles": {
       "ko": "파일럿 H1 공급 배치2B",
-      "en": "Pilot H1 Supply Batch 2B"
+      "en": "Pilot H1 Supply Batch 2B",
+      "ja": "パイロットH1供給バッチ2B"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -12086,12 +12092,15 @@
       "pilot",
       "piloth1supplybatch3a",
       "supply",
+      "パイロットH1供給バッチ3A",
+      "パイロットh1供給バッチ3a",
       "파일럿 H1 공급 배치3A",
       "파일럿h1공급배치3a"
     ],
     "titles": {
       "ko": "파일럿 H1 공급 배치3A",
-      "en": "Pilot H1 Supply Batch 3A"
+      "en": "Pilot H1 Supply Batch 3A",
+      "ja": "パイロットH1供給バッチ3A"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -12114,12 +12123,15 @@
       "pilot",
       "piloth1supplybatch3b",
       "supply",
+      "パイロットH1供給バッチ3B",
+      "パイロットh1供給バッチ3b",
       "파일럿 H1 공급 배치3B",
       "파일럿h1공급배치3b"
     ],
     "titles": {
       "ko": "파일럿 H1 공급 배치3B",
-      "en": "Pilot H1 Supply Batch 3B"
+      "en": "Pilot H1 Supply Batch 3B",
+      "ja": "パイロットH1供給バッチ3B"
     },
     "qualityScore": 50,
     "qualityTier": 2

@@ -35,6 +35,8 @@
 
 - [a5-scale-plan.md](a5-scale-plan.md)
 - [a5-scale-observation-log.md](a5-scale-observation-log.md)
+- [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) — SD1~SD3
+- [a5-scale-expansion-cohort-plan.md](a5-scale-expansion-cohort-plan.md)
 
 ---
 
