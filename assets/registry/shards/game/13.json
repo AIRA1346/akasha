@@ -22,7 +22,16 @@
       "ko": "디아블로 IV"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
+    },
+    "externalIds": {
+      "steam": "2344520"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

@@ -21,7 +21,16 @@
       "ko": "콜 오브 듀티: MW II"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
+    },
+    "externalIds": {
+      "steam": "1938090"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

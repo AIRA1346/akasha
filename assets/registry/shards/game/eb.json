@@ -21,7 +21,16 @@
       "ko": "발할라: 신들의 황혼"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
+    },
+    "externalIds": {
+      "steam": "1086940"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

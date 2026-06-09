@@ -19,11 +19,20 @@
       "성장"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/w9aOvcN09KRNDmsuHEYS00Td285.jpg",
     "legacyIds": [
       "sub_manga_usagi-drop_2005"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "42598"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

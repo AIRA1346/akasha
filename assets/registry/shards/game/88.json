@@ -47,7 +47,16 @@
       "ko": "배틀그라운드"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
+    },
+    "externalIds": {
+      "steam": "578080"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

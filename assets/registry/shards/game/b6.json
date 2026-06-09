@@ -21,7 +21,16 @@
       "ko": "스타크래프트 리마스터"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
+    },
+    "externalIds": {
+      "steam": "1962663"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

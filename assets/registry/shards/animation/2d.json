@@ -27,11 +27,20 @@
           "episodes": 120
         }
       ],
-      "latestSeason": "1~5기"
+      "latestSeason": "1~5기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg",
     "legacyIds": [
       "sub_animation_kingdom_2012"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "72408"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

@@ -61,6 +61,7 @@ const allowedExtensionsKeys = {
   // Sprint / Scale 감사 흔적 (Phase 2 · A5)
   'coverageSprint03',
   'coverageSprint04ExternalId',
+  'coverageSprint04R2Fix',
   'coverageScaleEnrich',
 };
 

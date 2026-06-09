@@ -19,11 +19,39 @@
       "탐험"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ofjHLIGpQP0VscNPkq5CKQvMcQH.jpg",
     "legacyIds": [
       "sub_manga_made-in-abyss_2012"
+    ],
+    "externalIds": {
+      "tmdb": "74112"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
+  },
+  "sub_manga_scale-exp-b7-probe-beta_2026": {
+    "workId": "sub_manga_scale-exp-b7-probe-beta_2026",
+    "title": "스케일 확장 프로브 베타",
+    "titles": {
+      "ko": "스케일 확장 프로브 베타",
+      "en": "Scale Expansion Probe Beta",
+      "ja": "スケール拡張プローブベータ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "A5 Scale Expansion",
+    "releaseYear": 2026,
+    "description": "Scale A-type Expansion probe — Net-new cohort for gate validation.",
+    "tags": [
+      "scale",
+      "expansion",
+      "batch7"
     ]
   }
 }

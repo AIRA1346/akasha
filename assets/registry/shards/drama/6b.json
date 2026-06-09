@@ -1,0 +1,23 @@
+{
+  "sub_drama_pilot-h1-supply-b2a_2026": {
+    "workId": "sub_drama_pilot-h1-supply-b2a_2026",
+    "title": "파일럿 H1 공급 배치2A",
+    "titles": {
+      "ko": "파일럿 H1 공급 배치2A",
+      "en": "Pilot H1 Supply Batch 2A",
+      "ja": "パイロットH1供給バッチ2A"
+    },
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "releaseYear": 2026,
+    "description": "H1 supply path repeatability test — batch insert.",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch4_ja"
+    }
+  }
+}

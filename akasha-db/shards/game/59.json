@@ -18,11 +18,21 @@
       "sub_game_ffxiv_2013"
     ],
     "titles": {
-      "en": "Site Error",
+      "en": "FINAL FANTASY XIV Online",
       "ko": "파이널 판타지 XIV"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W4_ffxiv"
+    },
+    "externalIds": {
+      "steam": "39210"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   },
   "wk_000000098": {

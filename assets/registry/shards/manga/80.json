@@ -19,12 +19,21 @@
       "교육"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg",
     "legacyIds": [
       "sub_manga_gto_1997"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "42701"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000360": {
     "workId": "wk_000000360",

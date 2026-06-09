@@ -24,7 +24,17 @@
       "ko": "스타듀 밸리"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review"
+    },
+    "externalIds": {
+      "steam": "413150"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   },
   "wk_000000289": {
@@ -50,7 +60,17 @@
       "ko": "용과 같이 0"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review"
+    },
+    "externalIds": {
+      "steam": "638970"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

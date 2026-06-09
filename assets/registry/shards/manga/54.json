@@ -19,12 +19,21 @@
       "판타지"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg",
     "legacyIds": [
       "sub_manga_ranma-half_1987"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "2607"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000377": {
     "workId": "wk_000000377",
@@ -46,11 +55,20 @@
       "성장"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg",
     "legacyIds": [
       "sub_manga_saint-seiya_1985"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "42414"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

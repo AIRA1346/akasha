@@ -1,0 +1,21 @@
+{
+  "sub_animation_scale-exp-b7-probe-theta_2026": {
+    "workId": "sub_animation_scale-exp-b7-probe-theta_2026",
+    "title": "스케일 확장 프로브 세타",
+    "titles": {
+      "ko": "스케일 확장 프로브 세타",
+      "en": "Scale Expansion Probe Theta",
+      "ja": "スケール拡張プローブシータ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A5 Scale Expansion",
+    "releaseYear": 2026,
+    "description": "Scale A-type Expansion probe — Net-new cohort for gate validation.",
+    "tags": [
+      "scale",
+      "expansion",
+      "batch7"
+    ]
+  }
+}

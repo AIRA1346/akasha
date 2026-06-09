@@ -19,11 +19,20 @@
       "SF"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg",
     "legacyIds": [
       "sub_manga_seraph-of-the-end_2012"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "62444"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

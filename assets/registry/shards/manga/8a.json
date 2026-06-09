@@ -19,11 +19,20 @@
       "청춘"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg",
     "legacyIds": [
       "sub_manga_captain-tsubasa_1981"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "28248"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

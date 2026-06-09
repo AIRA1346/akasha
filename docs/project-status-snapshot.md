@@ -13,8 +13,9 @@
 | **Registry** | **430 works** · 351 v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **ci_registry_check** | **PASS** (전 단계) |
+| **externalId G2** | **달성** — **215/430 (50.00%)** · [sprint-04-e1-resolution.md](sprint-04-e1-resolution.md) |
 | **프로그램** | Phase 2 **COMPLETE** · A5 Pilot **SUCCESS** · Scale **SD2.6 도달** · O8–O12 **1차** |
-| **Git** | `main` @ `f6299d0` · **origin 동기화** · 작업 트리 **clean** |
+| **Git** | `main` · **origin 동기화** |
 | **Scale 차단** | **SD2.6 hold** — insert 중단 · O3 checkpoint **2026-07-09** |
 
 ---
@@ -26,13 +27,14 @@
 | `registry_builder` | **PASS** | 430 works · 351 shards |
 | `dedupe_linter` | **PASS** | 0 duplicate · franchise_groups OK |
 | `quality_gate --strict` | **PASS** | invalid_en **0** · source_breakage **0** |
-| `coverage_dashboard` | **PASS**† | titles_en **92.09%** ≥0.9 |
+| `coverage_dashboard` | **PASS**† | titles_en **92.09%** ≥0.9 · external_id **50.00%** G2 |
 | `sw1_a_validation` | **PASS** | recall@10 **1.0** (87/87) |
-| `urv_a_validation` | **PASS** | 5축 PASS |
+| `urv_a_validation` | **PASS** | 5축 PASS · exactId 215/215 |
 | `franchise_linter` | **PASS** | uncovered cluster **0** |
 | `ci_registry_check` | **PASS** | maintainer stub **28건** 예외 |
+| `flutter test` | **PASS** | 160/160 |
 
-† Charter KPI: titles_en PASS. external_id **46.74%** · ja/zh 등 Phase 2 Open Question.
+† Charter KPI: titles_en PASS · external_id **G2 달성** (2026-06-10). ja/zh 등 Phase 2 Open Question.
 
 ### Coverage Dashboard (요약)
 
@@ -40,7 +42,7 @@
 |----|-----|:------:|
 | titles_en | 396/430 (92.09%) | PASS |
 | titles_ja | 126/430 (29.30%) | FAIL |
-| external_id | 201/430 (46.74%) | FAIL |
+| external_id | **215/430 (50.00%)** | **G2 PASS** |
 | invalid_en | 0/396 | PASS |
 | gap_panel | 16/16 | PASS |
 
@@ -140,3 +142,5 @@
 | 2026-06-09 | Scale 7–11: batch7 + supply b4–6 → **430** · O8–O12 · SD4 |
 | 2026-06-09 | Git 정리 — `f6299d0` push · snapshot/README 동기화 |
 | 2026-06-09 | Scale 12 — hold 관측 · O3 prep · CI `scale_hold_check` |
+| 2026-06-10 | 검색 정규화 구분자 처리 · Sprint 04 R1/R2 SSOT 문서 정리 push |
+| 2026-06-10 | **E1 15건 resolution — G2 50.00% 달성** ([sprint-04-e1-resolution.md](sprint-04-e1-resolution.md)) · 번들 테스트 핀 430 갱신 |

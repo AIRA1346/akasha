@@ -18,11 +18,21 @@
       "sub_game_danganronpa_2010"
     ],
     "titles": {
-      "en": "Save 50% on Danganronpa: Trigger Happy Havoc",
+      "en": "Danganronpa: Trigger Happy Havoc",
       "ko": "단간론파"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W2_e2_title_fix"
+    },
+    "externalIds": {
+      "steam": "413410"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

@@ -19,12 +19,21 @@
       "책"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg",
     "legacyIds": [
       "sub_manga_ascendance-of-a-bookworm_2013"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "94664"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000316": {
     "workId": "wk_000000316",

@@ -20,7 +20,8 @@
         "콘솔"
       ],
       "steamAppId": "322170",
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam"
     },
     "legacyIds": [
       "gen_game_minecraft_2011"
@@ -28,6 +29,14 @@
     "titles": {
       "en": "Geometry Dash",
       "ko": "마인크래프트"
+    },
+    "externalIds": {
+      "steam": "322170"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

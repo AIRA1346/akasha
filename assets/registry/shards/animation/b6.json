@@ -32,12 +32,21 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg",
     "legacyIds": [
       "sub_animation_ranking-of-kings_2021"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "99557"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000247": {
     "workId": "wk_000000247",
@@ -72,11 +81,20 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
     "legacyIds": [
       "sub_animation_vinland-saga_2019"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "37606"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   }
 }

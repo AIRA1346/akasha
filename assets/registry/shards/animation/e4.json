@@ -32,12 +32,21 @@
           "episodes": 26
         }
       ],
-      "latestSeason": "천년혈전"
+      "latestSeason": "천년혈전",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg",
     "legacyIds": [
       "sub_animation_bleach_2004"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "30936"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000212": {
     "workId": "wk_000000212",

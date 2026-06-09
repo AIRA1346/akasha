@@ -50,12 +50,21 @@
       "일상"
     ],
     "extensions": {
-      "posterSource": "tmdb"
+      "posterSource": "tmdb",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg",
     "legacyIds": [
       "sub_manga_doraemon_1969"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "65751"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000392": {
     "workId": "wk_000000392",

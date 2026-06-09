@@ -1,4 +1,25 @@
 {
+  "sub_animation_pilot-h1-supply-b3a_2026": {
+    "workId": "sub_animation_pilot-h1-supply-b3a_2026",
+    "title": "파일럿 H1 공급 배치3A",
+    "titles": {
+      "ko": "파일럿 H1 공급 배치3A",
+      "en": "Pilot H1 Supply Batch 3A",
+      "ja": "パイロットH1供給バッチ3A"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "releaseYear": 2026,
+    "description": "H1 supply path repeatability test — batch insert.",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch4_ja"
+    }
+  },
   "wk_000000201": {
     "workId": "wk_000000201",
     "title": "호리미야",

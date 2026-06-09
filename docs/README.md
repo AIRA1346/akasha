@@ -28,7 +28,7 @@
 
 | 레이어 | 설명 | 문서 |
 |--------|------|------|
-| **04-R2** *(active)* | @430 재기준선 · Phase A baseline · Phase B 품질 감사 | [sprint-04-charter.md](sprint-04-charter.md) (정의) · [sprint-04-baseline-report.md](sprint-04-baseline-report.md) · [sprint-04-e1-audit.md](sprint-04-e1-audit.md) → [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) → [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) → [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) |
+| **04-R2** *(G2 달성)* | @430 재기준선 · Phase A baseline · Phase B 품질 감사 · Phase C resolution | [sprint-04-charter.md](sprint-04-charter.md) (정의) · [sprint-04-baseline-report.md](sprint-04-baseline-report.md) · [sprint-04-e1-audit.md](sprint-04-e1-audit.md) → [sprint-04-high-risk-disposition.md](sprint-04-high-risk-disposition.md) → [sprint-04-e1-post-gate-audit.md](sprint-04-e1-post-gate-audit.md) → [sprint-04-e4-effectiveness-review.md](sprint-04-e4-effectiveness-review.md) → **[sprint-04-e1-resolution.md](sprint-04-e1-resolution.md)** (G2 **50.00%**) |
 | **04-R1** *(archive)* | @402 1차 apply (+141) · G2 달성 기록 | [sprint-04-final-review.md](sprint-04-final-review.md) *(superseded)* · [sprint-04-readiness-review.md](sprint-04-readiness-review.md) |
 
 ### A5 Discovery · Pilot (동결)

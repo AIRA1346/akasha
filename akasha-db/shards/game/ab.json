@@ -18,11 +18,21 @@
       "sub_game_celeste_2018"
     ],
     "titles": {
-      "en": "Save 75% on Celeste",
+      "en": "Celeste",
       "ko": "셀레스테"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W2_e2_title_fix"
+    },
+    "externalIds": {
+      "steam": "504230"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

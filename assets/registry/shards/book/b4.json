@@ -26,5 +26,26 @@
       "The Fellowship of the Ring",
       "The Lord of the Rings"
     ]
+  },
+  "sub_book_scale-supply-b6a_2026": {
+    "workId": "sub_book_scale-supply-b6a_2026",
+    "title": "스케일 공급 배치6A",
+    "titles": {
+      "ko": "스케일 공급 배치6A",
+      "en": "Scale Supply Batch 6A",
+      "ja": "スケール供給バッチ6A"
+    },
+    "category": "book",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "releaseYear": 2026,
+    "description": "Scale Net-new insert — Maintainer anchor (Expansion cohort B-type).",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch8_ja"
+    }
   }
 }

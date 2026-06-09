@@ -1,4 +1,25 @@
 {
+  "sub_manga_pilot-h1-supply-b3b_2026": {
+    "workId": "sub_manga_pilot-h1-supply-b3b_2026",
+    "title": "파일럿 H1 공급 배치3B",
+    "titles": {
+      "ko": "파일럿 H1 공급 배치3B",
+      "en": "Pilot H1 Supply Batch 3B",
+      "ja": "パイロットH1供給バッチ3B"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "A5 Pilot Maintainer",
+    "releaseYear": 2026,
+    "description": "H1 supply path repeatability test — batch insert.",
+    "tags": [
+      "pilot",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch4_ja"
+    }
+  },
   "wk_000000313": {
     "workId": "wk_000000313",
     "title": "D.Gray-man",

@@ -63,12 +63,21 @@
           "episodes": 25
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "coverageSprint04ExternalId": "tmdb"
     },
     "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
     "legacyIds": [
       "sub_animation_log-horizon_2013"
-    ]
+    ],
+    "externalIds": {
+      "tmdb": "57706"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
+    }
   },
   "wk_000000236": {
     "workId": "wk_000000236",

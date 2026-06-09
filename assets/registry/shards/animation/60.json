@@ -1,0 +1,23 @@
+{
+  "sub_animation_scale-supply-b3b_2026": {
+    "workId": "sub_animation_scale-supply-b3b_2026",
+    "title": "스케일 공급 배치3B",
+    "titles": {
+      "ko": "스케일 공급 배치3B",
+      "en": "Scale Supply Batch 3B",
+      "ja": "スケール供給バッチ3B"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "releaseYear": 2026,
+    "description": "Scale Net-new insert — Maintainer anchor (Expansion cohort B-type).",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch3_ja"
+    }
+  }
+}

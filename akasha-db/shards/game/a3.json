@@ -18,11 +18,21 @@
       "sub_game_monster-hunter-world_2018"
     ],
     "titles": {
-      "en": "Save 74% on Monster Hunter: World",
+      "en": "Monster Hunter: World",
       "ko": "몬스터 헌터: 월드"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W2_e2_title_fix"
+    },
+    "externalIds": {
+      "steam": "582010"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   }
 }

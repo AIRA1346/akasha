@@ -48,7 +48,17 @@
       "ko": "포털 2"
     },
     "extensions": {
-      "coverageSprint03": "steam_fetch"
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review"
+    },
+    "externalIds": {
+      "steam": "620"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true,
+      "hasPoster": true,
+      "hasDescription": true
     }
   },
   "sub_game_scale-exp-b7-probe-gamma_2026": {
