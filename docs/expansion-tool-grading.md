@@ -41,6 +41,8 @@
 | `ci_registry_check.dart` | 통합 점검 |
 | `franchise_linter.dart` | franchise 큐 |
 | `sw1_a_validation.dart` · `urv_a_validation.dart` | 회귀 |
+| `a5_scale_enrich_batch.dart` | Scale 소량 enrich (O6·O7) |
+| `coverage_sprint_02_economics.dart` | registry-wide Economics (O6) |
 
 ---
 

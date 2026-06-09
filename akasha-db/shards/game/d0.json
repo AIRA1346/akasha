@@ -4,7 +4,8 @@
     "title": "스케일 공급 배치1B",
     "titles": {
       "ko": "스케일 공급 배치1B",
-      "en": "Scale Supply Batch 1B"
+      "en": "Scale Supply Batch 1B",
+      "ja": "スケール供給バッチ1B"
     },
     "category": "game",
     "domain": "subculture",
@@ -14,6 +15,9 @@
     "tags": [
       "scale",
       "supply"
-    ]
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch1_ja"
+    }
   }
 }

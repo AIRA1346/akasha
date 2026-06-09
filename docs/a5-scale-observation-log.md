@@ -100,10 +100,41 @@
 
 ---
 
+## Scale 3 — enrich 병행 (O6 · O7)
+
+**목적:** insert와 enrich **동시 부하** 첫 관측 — Scale Plan O7 · O6.
+
+**도구:** `tool/a5_scale_enrich_batch.dart` (`--batch 1 --apply`)
+
+| workId | enrich | wall |
+|--------|--------|------|
+| `sub_webtoon_scale-supply-b1a_2026` | titles.**ja** | — |
+| `sub_game_scale-supply-b1b_2026` | titles.**ja** | — |
+
+| 항목 | 값 |
+|------|-----|
+| enriched | **2** |
+| wall | **237 ms** |
+| estimatedMinutes (O6) | **30** (15 min/work × 2) |
+| insert:enrich (동일 세션) | **2:2** (Scale supply batch 1 대비) |
+| 산출 | `scale_enrich_b1.json` |
+
+**Economics (@412):** `coverage_sprint_02_economics.dart` — registry-wide 추정 갱신 (`sprint_02_economics.json`).
+
+| 검증 | 결과 |
+|------|------|
+| `registry_builder` | **PASS** (412) |
+| `preflight_check` | **PASS** |
+| titles_en | **PASS** 유지 |
+
+**O7 초기 신호:** insert 2 + enrich 2 **동일 세션** — backlog **追越 없음** (stub 2건 ja 보강 완료).
+
+---
+
 ## 다음 Scale 관측 (후속)
 
 | 우선 | 항목 |
 |:----:|------|
-| 1 | enrich **병행** 시작 → O7 · O6 |
-| 2 | G1 구간 insert **누적** → O3 |
-| 3 | Expansion **신규 A유형 cohort** 설계 (batch5/6는 B유형 전수) |
+| 1 | insert **누적** + enrich **반복** → O7 시계열 |
+| 2 | G1 구간 throughput → O3 |
+| 3 | Expansion **신규 A유형 cohort** 설계 |

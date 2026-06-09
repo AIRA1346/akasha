@@ -2,7 +2,7 @@
   "version": 4,
   "shardBits": 8,
   "entryCount": 412,
-  "generatedAt": "2026-06-09T10:35:45.557627Z",
+  "generatedAt": "2026-06-09T10:40:23.623944Z",
   "shards": [
     {
       "id": "animation_03",
@@ -1618,7 +1618,7 @@
       "path": "shards/game/d0.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "dda009dfbbd95469faba4592a3da0ab387be5bffb42bbbb81ba7c885bb863442"
+      "sha256": "d9138e74144e480871cda60aa55e51b60681f2d70f4f81e93c1302539a4f9339"
     },
     {
       "id": "game_d3",
@@ -2706,7 +2706,7 @@
       "path": "shards/webtoon/48.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "1b11fc3d46a9dedaaee3489208817d9ac871125995a32daf028578ca3c6d421c"
+      "sha256": "1761136b89ff65b52e11ec399e28b6238da40fd7f74a40dc6f2a8d17e502012c"
     },
     {
       "id": "webtoon_7f",

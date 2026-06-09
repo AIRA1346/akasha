@@ -6957,12 +6957,15 @@
       "scale",
       "scalesupplybatch1a",
       "supply",
+      "スケール供給バッチ1A",
+      "スケール供給バッチ1a",
       "스케일 공급 배치1A",
       "스케일공급배치1a"
     ],
     "titles": {
       "ko": "스케일 공급 배치1A",
-      "en": "Scale Supply Batch 1A"
+      "en": "Scale Supply Batch 1A",
+      "ja": "スケール供給バッチ1A"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -6985,12 +6988,15 @@
       "scale",
       "scalesupplybatch1b",
       "supply",
+      "スケール供給バッチ1B",
+      "スケール供給バッチ1b",
       "스케일 공급 배치1B",
       "스케일공급배치1b"
     ],
     "titles": {
       "ko": "스케일 공급 배치1B",
-      "en": "Scale Supply Batch 1B"
+      "en": "Scale Supply Batch 1B",
+      "ja": "スケール供給バッチ1B"
     },
     "qualityScore": 50,
     "qualityTier": 2
