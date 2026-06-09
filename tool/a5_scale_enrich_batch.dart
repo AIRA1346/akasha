@@ -21,7 +21,7 @@ void main(List<String> args) {
   final plans = _plansForBatch(batch);
   final shardsRoot = Directory(p.join(root.path, 'akasha-db', 'shards'));
 
-  final insertFree = batch == 4;
+  final insertFree = batch == 4 || batch == 7;
   print(
     '=== Scale enrich batch $batch (${plans.length} works)${insertFree ? " [insert-free]" : ""} ===',
   );
@@ -77,12 +77,27 @@ void main(List<String> args) {
 
   sw.stop();
   final supplyAdded = insertFree ? 0 : 2;
-  final cumulativeInsert = insertFree ? 6 : batch * 2;
+  final maintainerInsert = switch (batch) {
+    5 => 8,
+    6 => 10,
+    7 => 10,
+    8 => 12,
+    _ => batch * 2,
+  };
+  final cumulativeInsert = switch (batch) {
+    4 => 6,
+    7 => 12,
+    _ => maintainerInsert,
+  };
   final cumulativeEnrich = switch (batch) {
     1 => 2,
     2 => 4,
     3 => 8,
     4 => 12,
+    5 => 16,
+    6 => 20,
+    7 => 24,
+    8 => 26,
     _ => enriched,
   };
   final report = {
@@ -201,7 +216,85 @@ List<_EnrichPlan> _plansForBatch(int n) => switch (n) {
             'パイロットH1供給バッチ3B',
           ),
         ],
-      _ => throw ArgumentError('batch must be 1, 2, 3, or 4'),
+      5 => const [
+          _EnrichPlan(
+            'sub_manga_scale-supply-b4a_2026',
+            'ja',
+            'スケール供給バッチ4A',
+          ),
+          _EnrichPlan(
+            'sub_webtoon_scale-supply-b4b_2026',
+            'ja',
+            'スケール供給バッチ4B',
+          ),
+          _EnrichPlan(
+            'sub_animation_scale-exp-b7-probe-alpha_2026',
+            'ja',
+            'スケール拡張B7プローブα',
+          ),
+          _EnrichPlan(
+            'sub_manga_scale-exp-b7-probe-beta_2026',
+            'ja',
+            'スケール拡張B7プローブβ',
+          ),
+        ],
+      6 => const [
+          _EnrichPlan(
+            'sub_movie_scale-supply-b5a_2026',
+            'ja',
+            'スケール供給バッチ5A',
+          ),
+          _EnrichPlan(
+            'sub_drama_scale-supply-b5b_2026',
+            'ja',
+            'スケール供給バッチ5B',
+          ),
+          _EnrichPlan(
+            'sub_game_scale-exp-b7-probe-gamma_2026',
+            'ja',
+            'スケール拡張B7プローブγ',
+          ),
+          _EnrichPlan(
+            'sub_movie_scale-exp-b7-probe-delta_2026',
+            'ja',
+            'スケール拡張B7プローブδ',
+          ),
+        ],
+      7 => const [
+          _EnrichPlan(
+            'sub_drama_scale-exp-b7-probe-epsilon_2026',
+            'ja',
+            'スケール拡張B7プローブε',
+          ),
+          _EnrichPlan(
+            'sub_book_scale-exp-b7-probe-zeta_2026',
+            'ja',
+            'スケール拡張B7プローブζ',
+          ),
+          _EnrichPlan(
+            'sub_webtoon_scale-exp-b7-probe-eta_2026',
+            'ja',
+            'スケール拡張B7プローブη',
+          ),
+          _EnrichPlan(
+            'sub_animation_scale-exp-b7-probe-theta_2026',
+            'ja',
+            'スケール拡張B7プローブθ',
+          ),
+        ],
+      8 => const [
+          _EnrichPlan(
+            'sub_book_scale-supply-b6a_2026',
+            'ja',
+            'スケール供給バッチ6A',
+          ),
+          _EnrichPlan(
+            'sub_game_scale-supply-b6b_2026',
+            'ja',
+            'スケール供給バッチ6B',
+          ),
+        ],
+      _ => throw ArgumentError('batch must be 1–8'),
     };
 
 String? _argValue(List<String> args, String name) {

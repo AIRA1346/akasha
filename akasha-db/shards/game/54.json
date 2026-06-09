@@ -50,5 +50,24 @@
     "extensions": {
       "coverageSprint03": "steam_fetch"
     }
+  },
+  "sub_game_scale-exp-b7-probe-gamma_2026": {
+    "workId": "sub_game_scale-exp-b7-probe-gamma_2026",
+    "title": "스케일 확장 프로브 감마",
+    "titles": {
+      "ko": "스케일 확장 프로브 감마",
+      "en": "Scale Expansion Probe Gamma",
+      "ja": "スケール拡張プローブガンマ"
+    },
+    "category": "game",
+    "domain": "subculture",
+    "creator": "A5 Scale Expansion",
+    "releaseYear": 2026,
+    "description": "Scale A-type Expansion probe — Net-new cohort for gate validation.",
+    "tags": [
+      "scale",
+      "expansion",
+      "batch7"
+    ]
   }
 }

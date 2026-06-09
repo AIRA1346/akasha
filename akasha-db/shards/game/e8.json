@@ -32,5 +32,26 @@
       "hasPoster": true,
       "hasDescription": true
     }
+  },
+  "sub_game_scale-supply-b6b_2026": {
+    "workId": "sub_game_scale-supply-b6b_2026",
+    "title": "스케일 공급 배치6B",
+    "titles": {
+      "ko": "스케일 공급 배치6B",
+      "en": "Scale Supply Batch 6B",
+      "ja": "スケール供給バッチ6B"
+    },
+    "category": "game",
+    "domain": "subculture",
+    "creator": "A5 Scale Maintainer",
+    "releaseYear": 2026,
+    "description": "Scale Net-new insert — Maintainer anchor (Expansion cohort B-type).",
+    "tags": [
+      "scale",
+      "supply"
+    ],
+    "extensions": {
+      "coverageScaleEnrich": "batch8_ja"
+    }
   }
 }

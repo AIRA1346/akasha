@@ -265,10 +265,195 @@
 
 ---
 
+## Scale 7 — Expansion batch7 A유형 apply
+
+**목적:** [a5-scale-expansion-cohort-plan.md](a5-scale-expansion-cohort-plan.md) — **Net-new** Expansion 경로 **첫 apply**.
+
+**도구:** `seed_expansion_batch7.dart`
+
+| 단계 | 결과 |
+|------|------|
+| dry-run (8 seeds) | **8 WOULD_ADD** · **0 BLOCK** |
+| `--apply` (default max-add 2) | **+2** |
+
+| workId | shard |
+|--------|-------|
+| `sub_animation_scale-exp-b7-probe-alpha_2026` | `animation/ae.json` |
+| `sub_manga_scale-exp-b7-probe-beta_2026` | `manga/d6.json` |
+
+| 항목 | 값 |
+|------|-----|
+| works | 416 → **418** |
+| 경로 | **Expansion** (Maintainer 아님) |
+| gate | **PASS** · dedupe **0** |
+
+### O3 누적 (@410 · SD1)
+
+| 경로 | net insert |
+|------|----------:|
+| Maintainer (`a5_scale_supply_batch`) | **+6** |
+| Expansion (batch7) | **+2** |
+| **합계** | **+8** → **418** |
+
+---
+
+## Scale 8 — Expansion batch7 cohort 완료
+
+**도구:** `seed_expansion_batch7.dart` · `--apply` ×3 (각 `--max-add 2`)
+
+| round | ADD | works |
+|:-----:|----:|------:|
+| 2 | gamma · delta (game · movie) | 418→**420** |
+| 3 | epsilon · zeta (drama · book) | 420→**422** |
+| 4 | eta · theta (webtoon · animation) | 422→**424** |
+
+| 항목 | 값 |
+|------|-----|
+| batch7 cohort | **8/8** · BLOCK **0** |
+| Expansion net | **+8** (416→424) |
+| gate | **PASS** · dedupe **0** |
+
+### O3 누적 갱신 (@410 · SD1)
+
+| 경로 | net insert |
+|------|----------:|
+| Maintainer | **+6** |
+| Expansion (batch7) | **+8** |
+| **합계** | **+14** → **424** |
+| SD2.6 잔여 상한 | ~~6~~ → **0** (Scale 9에서 소진) |
+
+---
+
+## Scale 9 — Maintainer supply b4–b6 (SD2.6 상한 도달)
+
+**도구:** `a5_scale_supply_batch.dart` · `a5_scale_enrich_batch.dart`
+
+| 세션 | supply | enrich | works |
+|------|--------|--------|------:|
+| A | batch **4** (+2) | batch **5** (2 ja†) | 424→**426** |
+| B | batch **5** (+2) | batch **6** (2 ja) | 426→**428** |
+| C | batch **6** (+2) | batch **8** (2 ja) | 428→**430** |
+| D | — | batch **7** insert-free (0‡) | **430** |
+
+† batch7 probe는 seed에 **ja 내장** — enrich SKIP.  
+‡ epsilon–theta 동일.
+
+| 항목 | 값 |
+|------|-----|
+| Maintainer net (b4–6) | **+6** |
+| **SD2.6** | 410→430 **상한 도달** |
+| gate | **PASS** · dedupe **0** |
+
+### O3 누적 최종 (@410 · day 0 세션)
+
+| 경로 | net insert |
+|------|----------:|
+| Maintainer (b1–6) | **+12** |
+| Expansion (batch7) | **+8** |
+| **합계** | **+20** → **430** |
+
+**O3 rate:** Maintainer **+12**만 측정 대상 (SD1.3) — 월 환산은 **2026-07-09** checkpoint.
+
+---
+
+## Scale 10 — O8·O9·O12 관측 착수 (@430)
+
+**목적:** SD2.6 insert **hold** 구간 — SC3·SC5 **거버넌스·플랫폼** 관측.
+
+**SD4:** [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) 확정.
+
+### O8 — governance bundle
+
+**도구:** `a5_scale_governance_observation.dart`
+
+| 도구 | wall | status |
+|------|-----:|:------:|
+| registry_builder | 1584 ms | PASS |
+| dedupe_linter | 1274 ms | PASS |
+| quality_gate --strict | 1348 ms | PASS |
+| coverage_dashboard | 1536 ms | PASS |
+| sw1_a_validation | 1325 ms | PASS |
+| urv_a_validation | 1412 ms | PASS |
+| franchise_linter | 895 ms | PASS |
+| **번들 합계** | **9374 ms** (~0.16 min) | **PASS** |
+
+| 선형 추정 (SD4.4) | 5k | 50k |
+|-------------------|----:|----:|
+| bundle wall | ~**1.8 min** | ~**18 min** |
+
+산출: `scale_governance_o8.json`
+
+### O9 — semantic spot-check
+
+**도구:** `a5_scale_semantic_spotcheck.dart` · cohort **20** (supply b1–6 + batch7)
+
+| 항목 | 값 |
+|------|-----|
+| flagged | **0** / 20 |
+| errorRate | **0%** |
+| status | **PASS** |
+
+산출: `scale_semantic_o9.json`
+
+### O12 — franchise 수동 큐
+
+**도구:** `a5_scale_franchise_queue.dart`
+
+| 항목 | 값 |
+|------|-----|
+| queue clusters | **0** |
+| uncovered members | **0** |
+| estimated minutes | **0** |
+| 50k 선형 추정 | **0 min** (현재 큐 비어 있음) |
+
+산출: `scale_franchise_o12.json`
+
+**해석:** @430에서 franchise_linter **미커버 클러스터 없음** — O12 부담 **가시화 완료** · 5k+에서 **재관측** 필요.
+
+---
+
+## Scale 11 — O6·O11·O13 platform (@430)
+
+### O6 — Coverage Economics
+
+**도구:** `coverage_sprint_02_economics.dart`
+
+| 항목 | @430 |
+|------|------|
+| titles.en rate | **92.09%** (396/430) · ≥90% **PASS** |
+| titles.en 90% 잔여 | **0** works |
+| external_id | **49%** 대역 — 5k extrapolation **유효** |
+| 산출 | `sprint_02_economics.json` |
+
+### O11 · O13 — rebuild·index
+
+| 항목 | @402 (Pilot) | @430 (Scale) |
+|------|-------------:|-------------:|
+| `registry_builder` wall | 1873 ms | **2059 ms** |
+| `search_index.json` | 298,034 B | **318,244 B** |
+| shard files | 333 | **351** |
+
+**해석:** +28 works 대비 rebuild **+10%** wall — 50k 선형 추정 **보수적** (O8 번들 50k ~18 min 참조).
+
+---
+
+## O3 checkpoint 대기 (SD1.2)
+
+| 필드 | 값 |
+|------|-----|
+| Clock 시작 | 2026-06-09 |
+| Checkpoint | **2026-07-09** |
+| Maintainer net (@410) | **+12** |
+| Expansion net (@410) | **+8** (O3 **제외**) |
+| day-0 세션 rate | **미산출** — elapsed **0** |
+| SD2.6 | **hold** — insert **중단** |
+
+---
+
 ## 다음 Scale 관측 (후속)
 
 | 우선 | 항목 |
 |:----:|------|
-| 1 | **batch7** Net-new Expansion 구현 · dry-run |
-| 2 | O3 **2026-07-09** checkpoint — insert rate 산출 |
-| 3 | O8·O9·O12 관측 착수 |
+| 1 | **SD2.6 hold** 유지 → **2026-07-09** |
+| 2 | O3 checkpoint — Maintainer **+12** / 30일 rate vs G2 가설 |
+| 3 | franchise 큐 **5k 마일스톤** 재관측 |

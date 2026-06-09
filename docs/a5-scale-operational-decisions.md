@@ -15,6 +15,7 @@
 | **SD1** | 관측 기간 · O3 윈도 | **예** |
 | **SD2** | 배치 규모 | **예** |
 | **SD3** | Pause 임계 (O7·Coverage) | **예** |
+| **SD4** | O8·O9·O12 관측 규모 | **예** |
 
 ---
 
@@ -33,8 +34,10 @@
 | 필드 | 값 |
 |------|-----|
 | Baseline | **410** works |
-| Scale net insert | **+6** → **416** |
-| elapsed_days | **0** (단일 세션) |
+| Maintainer net insert | **+12** (b1–6) |
+| Expansion net (O3 제외) | **+8** (batch7) |
+| Registry | **430** (SD2.6 상한) |
+| elapsed_days | **0** (day-0 세션) |
 | 월 환산 rate | **미산출** — checkpoint **2026-07-09**에 확정 |
 | 문서 가설 (G2) | ~3k–5k/월 — **비교는 checkpoint 이후** |
 
@@ -66,8 +69,23 @@
 
 ---
 
+## SD4 — O8·O9·O12 관측 규모
+
+| # | 항목 | 값 |
+|---|------|-----|
+| SD4.1 | O8 governance **번들** | `registry_builder` · `dedupe_linter` · `quality_gate --strict` · `coverage_dashboard` · SW1 · URV · `franchise_linter` — **release마다** |
+| SD4.2 | O9 semantic **spot-check** | **20 works** — Scale supply b1–6 + batch7 probe (**고정 cohort**) |
+| SD4.3 | O12 franchise **분 단가** | **15 min / cluster** (Sprint 03 maintainer-minutes 가정) |
+| SD4.4 | O8·O12 **5k/50k 추정** | 현재 works 대비 **선형 extrapolation** (가설 — checkpoint 후 보정) |
+| SD4.5 | franchise_linter **FAIL** | O8 번들 내 **정보** — 큐 존재 신호 (O12 연동) |
+
+**도구:** `a5_scale_governance_observation.dart` · `a5_scale_semantic_spotcheck.dart` · `a5_scale_franchise_queue.dart`
+
+---
+
 ## 문서 이력
 
 | 일자 | 변경 |
 |------|------|
 | 2026-06-09 | SD1~SD3 초안 확정 — O3 checkpoint 30일 |
+| 2026-06-09 | SD4 확정 — O8·O9·O12 Scale 10 관측 |

@@ -1,0 +1,21 @@
+{
+  "sub_movie_scale-exp-b7-probe-delta_2026": {
+    "workId": "sub_movie_scale-exp-b7-probe-delta_2026",
+    "title": "스케일 확장 프로브 델타",
+    "titles": {
+      "ko": "스케일 확장 프로브 델타",
+      "en": "Scale Expansion Probe Delta",
+      "ja": "スケール拡張プローブデルタ"
+    },
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "A5 Scale Expansion",
+    "releaseYear": 2026,
+    "description": "Scale A-type Expansion probe — Net-new cohort for gate validation.",
+    "tags": [
+      "scale",
+      "expansion",
+      "batch7"
+    ]
+  }
+}

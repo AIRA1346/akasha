@@ -2,7 +2,7 @@
 /// A5 Scale — Maintainer Net-new 소규모 공급 (pre-insert gate + v4 shard).
 ///
 /// Usage:
-///   dart run tool/a5_scale_supply_batch.dart --batch 1|2|3 [--apply]
+///   dart run tool/a5_scale_supply_batch.dart --batch 1|2|3|4|5|6 [--apply]
 
 import 'dart:convert';
 import 'dart:io';
@@ -65,7 +65,10 @@ List<Map<String, dynamic>> _seedsForBatch(int n) => switch (n) {
       1 => _batch1(),
       2 => _batch2(),
       3 => _batch3(),
-      _ => throw ArgumentError('batch must be 1, 2, or 3'),
+      4 => _batch4(),
+      5 => _batch5(),
+      6 => _batch6(),
+      _ => throw ArgumentError('batch must be 1–6'),
     };
 
 List<Map<String, dynamic>> _batch1() => [
@@ -115,6 +118,57 @@ List<Map<String, dynamic>> _batch3() => [
         titleKo: '스케일 공급 배치3B',
         titleEn: 'Scale Supply Batch 3B',
         category: 'animation',
+        year: 2026,
+      ),
+    ];
+
+List<Map<String, dynamic>> _batch4() => [
+      _e(
+        workId: 'sub_manga_scale-supply-b4a_2026',
+        titleKo: '스케일 공급 배치4A',
+        titleEn: 'Scale Supply Batch 4A',
+        category: 'manga',
+        year: 2026,
+      ),
+      _e(
+        workId: 'sub_webtoon_scale-supply-b4b_2026',
+        titleKo: '스케일 공급 배치4B',
+        titleEn: 'Scale Supply Batch 4B',
+        category: 'webtoon',
+        year: 2026,
+      ),
+    ];
+
+List<Map<String, dynamic>> _batch5() => [
+      _e(
+        workId: 'sub_movie_scale-supply-b5a_2026',
+        titleKo: '스케일 공급 배치5A',
+        titleEn: 'Scale Supply Batch 5A',
+        category: 'movie',
+        year: 2026,
+      ),
+      _e(
+        workId: 'sub_drama_scale-supply-b5b_2026',
+        titleKo: '스케일 공급 배치5B',
+        titleEn: 'Scale Supply Batch 5B',
+        category: 'drama',
+        year: 2026,
+      ),
+    ];
+
+List<Map<String, dynamic>> _batch6() => [
+      _e(
+        workId: 'sub_book_scale-supply-b6a_2026',
+        titleKo: '스케일 공급 배치6A',
+        titleEn: 'Scale Supply Batch 6A',
+        category: 'book',
+        year: 2026,
+      ),
+      _e(
+        workId: 'sub_game_scale-supply-b6b_2026',
+        titleKo: '스케일 공급 배치6B',
+        titleEn: 'Scale Supply Batch 6B',
+        category: 'game',
         year: 2026,
       ),
     ];

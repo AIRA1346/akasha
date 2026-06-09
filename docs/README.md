@@ -1,6 +1,6 @@
 # AKASHA Docs Index
 
-> **갱신:** 2026-06-09 · [project-status-snapshot.md](project-status-snapshot.md) 참고
+> **갱신:** 2026-06-09 · [project-status-snapshot.md](project-status-snapshot.md) 참고 · Registry **430 works**
 
 ---
 
@@ -35,18 +35,22 @@
 
 - [a5-scale-plan.md](a5-scale-plan.md)
 - [a5-scale-observation-log.md](a5-scale-observation-log.md)
-- [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) — SD1~SD3
+- [a5-scale-operational-decisions.md](a5-scale-operational-decisions.md) — SD1~**SD4**
 - [a5-scale-expansion-cohort-plan.md](a5-scale-expansion-cohort-plan.md)
 
 ---
 
 ## 운영 · 점검
 
-| 문서 | 용도 |
-|------|------|
-| [project-status-snapshot.md](project-status-snapshot.md) | Gate · Git · 위험 **기준선** |
+| 문서 / 도구 | 용도 |
+|-------------|------|
+| [project-status-snapshot.md](project-status-snapshot.md) | Gate · Git · 위험 **기준선** (@430) |
 | [expansion-tool-grading.md](expansion-tool-grading.md) | insert 도구 A/B/D 등급 |
 | `dart run tool/preflight_check.dart` | 4종 gate 일괄 (로컬) |
+| `dart run tool/ci_registry_check.dart` | 통합 registry 점검 |
+| `dart run tool/a5_scale_governance_observation.dart --apply` | **O8** governance 번들 wall |
+| `dart run tool/a5_scale_semantic_spotcheck.dart --apply` | **O9** semantic cohort 20 |
+| `dart run tool/a5_scale_franchise_queue.dart --apply` | **O12** franchise 큐 스냅샷 |
 | [akasha-db-policy.md](akasha-db-policy.md) | 데이터 정책 |
 | [scale-5k-risk-analysis.md](scale-5k-risk-analysis.md) | 5k/50k 리스크 |
 

@@ -22,6 +22,7 @@
 | `pre_insert_dedupe_gate.dart` | — | — | — | 선행 검사 라이브러리 |
 | `seed_expansion_batch5.dart` | **예** | **예** | implicit | `--max-add` · cohort 45 (현재 **전부 BLOCK**) |
 | `seed_expansion_batch6.dart` | **예** | **예** | implicit | `--max-add` · cohort 40 (현재 **전부 BLOCK**) |
+| `seed_expansion_batch7.dart` | **예** | **예** | implicit | **A유형** Net-new · default `--max-add 2` |
 | `a5_pilot_supply_batch.dart` | **예** | **예** | `--apply` 없으면 WOULD_ADD | Pilot Maintainer 소량 |
 | `a5_scale_supply_batch.dart` | **예** | **예** | `--apply` 없으면 WOULD_ADD | Scale Net-new anchor |
 
@@ -42,7 +43,11 @@
 | `franchise_linter.dart` | franchise 큐 |
 | `sw1_a_validation.dart` · `urv_a_validation.dart` | 회귀 |
 | `a5_scale_enrich_batch.dart` | Scale 소량 enrich (O6·O7) |
+| `a5_scale_governance_observation.dart` | O8 governance 번들 wall |
+| `a5_scale_semantic_spotcheck.dart` | O9 semantic cohort 20 |
+| `a5_scale_franchise_queue.dart` | O12 franchise 큐 스냅샷 |
 | `coverage_sprint_02_economics.dart` | registry-wide Economics (O6) |
+| `preflight_check.dart` | 4종 gate 일괄 |
 
 ---
 
@@ -66,8 +71,9 @@
 |--------|------:|----:|------:|------|
 | batch6 | 40 | 0 | 40 | legacyIds→wk_ |
 | batch5 | 45 | 0 | 45 | legacyIds→wk_ |
+| batch7 | 8 | **8** | 0 | **A유형 Net-new** · cohort **완료** |
 
-Net-new insert는 **A급 Maintainer** 또는 **신규 A유형 cohort** 필요.
+Net-new insert: **batch7** · **Maintainer** `a5_scale_supply_batch`.
 
 ---
 

@@ -92,11 +92,11 @@
 
 | # | 작업 |
 |---|------|
-| 1 | `seed_expansion_batch7.dart` — Net-new seeds + gate (구현) |
-| 2 | dry-run → ADD 건수 확인 |
-| 3 | apply `--max-add 2` · Scale 6+ 관측 |
+| 1 | `seed_expansion_batch7.dart` — Net-new seeds + gate | **완료** |
+| 2 | dry-run → ADD **8** · BLOCK **0** | **완료** |
+| 3 | apply `--max-add 2` ×4 · Scale 7–8 | **완료** (+8 → 424) |
 
-**현재:** Maintainer 경로 **가동** · batch7 **설계만** — 구현 **후속**.
+**batch7:** cohort **8/8** 완료 · BLOCK **0** · A유형 **검증됨**.
 
 ---
 
