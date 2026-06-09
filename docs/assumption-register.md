@@ -37,7 +37,7 @@
 |----|------|------|------|
 | **A1** | **Supported** | SIM-A | 5k 공급 가능 · maintainer burden은 운영 과제 |
 | **A2** | **Supported** | SIM-C + SW1-A | stub-first 유지 · token collision·enrich 감시 |
-| **A3** | **Supported (Operational Dependency)** | Sprint 01 + URV-A + SW1-A | Coverage KPI 유지 전제 · §10 |
+| **A3** | **Supported (Operational Dependency)** | Sprint 01~03 + [phase2-mid-review](phase2-mid-review.md) | Coverage KPI·품질 가드 유지 전제 · §10 |
 | **A4** | **Supported** | SIM-D | ADR-006 지연 생성 |
 | **A5** | 미검증 | — | 50k 범위 밖 |
 | **A6** | **장기 과제** | — | 음악·SW2 |
@@ -50,7 +50,7 @@
 |----|-------------|--------------|-----------|---------|
 | **A1** | 5k 공급 가능 | **Supported** | SIM-A throughput ~2,104/월 | G1 실측 insert |
 | **A2** | Stub-first가 SW1을 무너뜨리지 않음 | **Supported** | SIM-C · SW1-A 81.6% | enrich SLA 감시 |
-| **A3** | Canonical Identity | **Supported (Operational Dependency)** | Sprint 01: 구조 변경 없이 SW1/URV 100% | [Coverage Economics](canonical-identity-coverage-dashboard.md) |
+| **A3** | Canonical Identity | **Supported (Operational Dependency)** | Sprint 01~03 · [phase2-mid-review](phase2-mid-review.md) | zh · externalId · 품질 가드 |
 | **A4** | Franchise 지연 생성 | **Supported** | SIM-D PASS | franchise 큐 운영 |
 | **A5** | Contribution 없이 50k | **미검증** | 5k SIM 범위 밖 | G2+ |
 | **A6** | 곡=Work(B안) 장기 규모 | **장기 과제** | 음악 0건 · SW2 미착수 | 음악 도입 시 |
@@ -90,10 +90,10 @@
 
 | | 내용 |
 |---|------|
-| **근거** | Phase 1: 구조 Supported (exactId 100% · B-2 100%). **Sprint 01:** 구조/ADR 변경 없이 최소 enrich만으로 SW1·URV **81.6%→100%** · GAP **0%→100%** (§10). |
-| **판정** | **Supported (Operational Dependency)** — Identity 모델은 성립. **운영 의존:** Coverage enrich·KPI 감시 없으면 품질 하락 재현 가능 (B-3/B-4). |
-| **실패 영향** | Coverage KPI 미달 시 SW1/URV 회귀 — **구조 붕괴가 아닌 운영 실패**. |
-| **검증 실험** | Coverage Sprint · `coverage_dashboard` · SW1-A/URV-A 회귀 · Sprint 02 Economics (§10) |
+| **근거** | Phase 1: 구조 Supported. **Sprint 01~03** ([phase2-mid-review](phase2-mid-review.md)): enrich만으로 SW1/URV/GAP **100%** · titles.en **91.5%** · 구조 무변경. |
+| **판정** | **Supported (Operational Dependency)** — Identity 모델 성립. **운영 의존:** KPI·품질 가드·Economics 없으면 품질·비용 리스크 재현. |
+| **실패 영향** | Coverage KPI 미달·auto enrich QA 공백 시 SW1/URV 회귀 — **구조 붕괴가 아닌 운영 실패**. |
+| **검증 실험** | Coverage Sprint 01~04 · `coverage_dashboard` · SW1/URV 회귀 · Economics 실측 (§10) |
 
 ---
 
@@ -161,14 +161,15 @@
 
 ---
 
-## 5. 다음 행동 (Phase 2)
+## 5. 다음 행동 (Phase 2 · Mid-Review 이후)
 
 | 순위 | 작업 | 본 문서와의 관계 |
 |------|------|------------------|
-| 1 | **Coverage Economics** | Sprint 02 ✅ · §10.3 |
-| 2 | **Registry-wide enrich (Sprint 03+)** | titles.en 50%→75%→90% |
-| 3 | **Coverage Dashboard + 회귀** | KPI 유지 (A3 전제) |
-| 4 | B-1 KPI 교정 | scale_5k_sim (후순위) |
+| 1 | ~~**Coverage Economics (titles.en)**~~ | Sprint 02~03 ✅ · §10.3–10.4 · [phase2-mid-review](phase2-mid-review.md) |
+| 2 | **Sprint 04 (재정의)** | zh · externalId · composite Economics |
+| 3 | **auto enrich 품질 가드** | TMDB fallback · CI (§10.4 품질 사고) |
+| 4 | **Coverage Dashboard + 회귀** | KPI 유지 (A3 전제) |
+| 5 | B-1 KPI 교정 | scale_5k_sim (후순위) |
 
 ---
 
@@ -408,7 +409,10 @@ eval **87건** (SW1-A와 동일 스위트 · NOT_IN_REGISTRY 제외)
 
 ---
 
-## 10. A3 재평가 · Coverage Sprint 01–02 (2026-06-09)
+## 10. A3 재평가 · Coverage Sprint 01–03 (2026-06-09)
+
+> **최신 의사결정 기록:** [phase2-mid-review.md](phase2-mid-review.md)  
+> **Phase 2 Charter:** [phase2-charter.md](phase2-charter.md) §1.1
 
 ### 10.1 Sprint 01 — 구조 vs Coverage 증거
 
@@ -421,13 +425,15 @@ eval **87건** (SW1-A와 동일 스위트 · NOT_IN_REGISTRY 제외)
 
 → A3 핵심 문제는 **구조가 아니라 Coverage**였음을 **실측으로 확인**.
 
-### 10.2 A3 최종 등급
+### 10.2 A3 최종 등급 (Mid-Review 기준)
 
 | 항목 | 판정 |
 |------|------|
-| **A3** | **Supported (Operational Dependency)** |
-| **전제** | Coverage Dashboard KPI 유지 · SW1/URV 회귀 게이트 |
-| **실패 시** | 운영·enrich 실패 (구조 반박 아님) |
+| **A3** | **Supported (Operational Dependency)** — **유지** |
+| **최신 근거** | [phase2-mid-review.md](phase2-mid-review.md) — Sprint 01~03 실측 |
+| **전제** | Coverage Dashboard KPI 유지 · SW1/URV 회귀 게이트 · **auto enrich 품질 가드** |
+| **실패 시** | 운영·enrich·QA 실패 (구조 반박 아님) |
+| **미해결 질문** | *「Coverage 가능한가?」* → **해소** · *「어떤 품질 관리 체계로 유지할 것인가?」* → **Phase 2 후반 핵심** |
 
 ### 10.3 Sprint 02 — Coverage Economics (402)
 
@@ -446,6 +452,33 @@ eval **87건** (SW1-A와 동일 스위트 · NOT_IN_REGISTRY 제외)
 
 **축별 90% 잔여 (작업량):** romanized +238 · zh +358 · alias +345 · externalId +302 · season +36 (80% target).
 
-**Phase 2 다음 리스크:** 아키텍처가 아니라 **Coverage Economics** — 특히 externalId·zh는 자동화율 낮음.
+**Phase 2 다음 리스크 (Sprint 02 시점):** **Coverage Economics** — 특히 externalId·zh는 자동화율 낮음.
 
-> **한 줄:** GAP panel은 해소됨. Registry-wide 90%는 **~60h+ maintainer labor** (binding: titles.en) — 운영 투자 문제.
+### 10.4 Sprint 03 — Economics 실측 · Mid-Review
+
+> 실행: `dart run tool/coverage_sprint_03_titles_en.dart` (`--apply` · `--remediate`)  
+> 분석: [phase2-mid-review.md](phase2-mid-review.md)
+
+**질문:** Sprint 02 추정(50% · **22.9h**)이 실측과 얼마나 다른가?
+
+| # | 측정 | Sprint 02 추정 | Sprint 03 실측 |
+|---|------|----------------|----------------|
+| 1 | **titles.en** | 24.9% → 50% (+101) | **24.9%→91.5%** (368/402) |
+| 2 | **50% 마일스톤 비용** | **22.9h** (1,372분) | wall **~1분** · human-eq **~11.6h** |
+| 3 | **자동화 (titles.en)** | **~11%** auto · **~89%** manual | auto+semi **100%** (성공작) |
+| 4 | **회귀** | — | SW1 · URV · GAP **100%** 유지 |
+| 5 | **품질 사고** | — | TMDB 파싱 **31건** — remediate·fallback 필수 |
+
+**Mid-Review 합의 (검증됨):**
+
+| 항목 | 판정 |
+|------|------|
+| Coverage 리스크 존재 | ✅ |
+| enrich로 해결 가능 | ✅ |
+| 구조 변경 불필요 | ✅ |
+| Economics 과대추정 (manual 상한) | ✅ |
+| 자동화 실효성 (titles.en 축) | ✅ |
+
+**Sprint 04 재정의:** titles.en 연장 ❌ → **zh · externalId · composite Economics** ([phase2-mid-review](phase2-mid-review.md) §7).
+
+> **한 줄 (Mid-Review):** Coverage **가능성**은 확인됨. Phase 2 게이트는 **품질 관리 체계·잔여 축 Economics** 이다. Sprint 02 **60.1h** composite는 titles.en binding이 **Sprint 03으로 완화** — 잔여는 **zh · externalId**.
