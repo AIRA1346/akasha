@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "TYPE-MOON / Aniplex",
     "releaseYear": 2015,
-    "description": "성배전쟁을 둘러싼 서번트 수집형 RPG.",
     "tags": [
       "수집형RPG",
       "판타지",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "Klei",
     "releaseYear": 2016,
-    "description": "Don't Starve Together — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -52,8 +50,7 @@
       "steam": "322330"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

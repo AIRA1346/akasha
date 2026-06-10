@@ -1,7 +1,8 @@
 # AKASHA Data Policy — 데이터 권리·저장 정책
 
-> **상태:** v1 (2026-06-08)  
+> **상태:** v1.1 (2026-06-10)  
 > **지위:** Discovery·Expansion·Registry 설계의 **최상위 정책**  
+> **제품 SSOT:** [product-vision.md](product-vision.md)  
 > **전제:** AKASHA 목표는 **「작품 발견」** 이지 **「외부 DB 복제」** 가 아니다.
 
 **이 문서보다 하위:** [akasha-db-policy.md](akasha-db-policy.md) · [discovery-policy.md](discovery-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [canonicalization-policy.md](canonicalization-policy.md)
@@ -73,8 +74,8 @@ Discovery Signal (일회성, Git X)
 | `legacyIds` | Fact | ✅ | AKASHA 내부 |
 | `aliases` | Fact / UGC | ✅ | 통용 별칭; 외부 synonyms **복붙 금지** → AKASHA 선별 |
 | `tags` | Copyright Risk | ⚠️ | 외부 장르 태그 복제 지양; AKASHA·Enrich·유저 작성 |
-| `description` | Copyright Risk | ⚠️ | **AKASHA 자체 1~3문장만**; 외부 시놉·overview **복제 금지** |
-| `posterPath` | **Tier 2 only** | ❌ | **v1: Tier 1 금지** — 유저 Sanctum vault만 ([§0.3](#03-tier-1-포스터-미제공-v1-steam)) |
+| `description` | **Tier 2 only** | ❌ | **v1: Tier 1 금지** — 유저 Sanctum vault Markdown/YAML만 |
+| `posterPath` | **Tier 2 only** | ❌ | **v1: Tier 1 금지** — 유저 Sanctum vault만 ([§0.3](#03-tier-1-포스터설명-미제공-v1-steam)) |
 | `qualitySignals` | Fact (AKASHA) | ✅ | 검증 상태 원본; score/tier는 파생 |
 | `searchTokens` | Fact (파생) | ❌ shard | 빌드 산출만 |
 | raw API JSON | Copyright Risk | ❌ | 절대 저장 금지 |
@@ -83,14 +84,14 @@ Discovery Signal (일회성, Git X)
 | cover/poster **바이너리** | Copyright Risk | ❌ | repo·번들 금지 |
 | Tier 1 **`posterPath` URL** | — | ❌ | **v1 Steam: AKASHA 미제공** |
 
-### 0.3 Tier 1 포스터 미제공 (v1 Steam)
+### 0.3 Tier 1 포스터·설명 미제공 (v1 Steam)
 
-AKASHA는 **글로벌 작품 사전(Tier 1)에 이미지 URL을 저장·배포·표시하지 않는다.**
+AKASHA는 **글로벌 작품 사전(Tier 1)에 이미지 URL·description을 저장·배포·표시하지 않는다.**
 
-| 계층 | 포스터 |
-|------|--------|
-| **Tier 1 — akasha-db** | `posterPath` **금지** (CI `tier1_poster`) · 카드는 텍스트·플레이스홀더 |
-| **Tier 2 — Sanctum vault** | 유저가 YAML `poster:` 또는 `posters/` 로 **직접** 제공 |
+| 계층 | 포스터 | 설명·감상 |
+|------|--------|-----------|
+| **Tier 1 — akasha-db** | `posterPath` **금지** (CI `tier1_poster`) | `description` **금지** — Fact만 |
+| **Tier 2 — Sanctum vault** | YAML `poster:` · `posters/` | Markdown 본문 + YAML 자유 |
 
 **앱 동작:** `WorksRegistry.resolvePosterPath()`는 v1에서 **항상 null**. `PosterImage`는 **유저 아이템**의 URL/로컬만 표시.
 
@@ -98,7 +99,7 @@ AKASHA는 **글로벌 작품 사전(Tier 1)에 이미지 URL을 저장·배포·
 
 **유저 책임:** 권리 없는 URL·파일 사용 금지 — 이용약관·About에 명시.
 
-**정리 도구:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets`
+**정리 도구:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets` · `dart run tool/strip_tier1_descriptions.dart --apply --sync-assets`
 
 코드 SSOT: `lib/config/catalog_poster_policy.dart` · `CatalogPosterPolicy.tier1RegistryPostersEnabled = false`
 
@@ -127,7 +128,7 @@ AKASHA는 **글로벌 작품 사전(Tier 1)에 이미지 URL을 저장·배포·
 | `releaseYear` | ⚠️ | ✅ (`externalId`로 대체 가능) |
 | `creator` | ⚠️ | ✅ |
 | `externalIds` | ⚠️ | ✅ (최소 하나 권장) |
-| `description` | — | ✅ **없어도 됨** |
+| `description` | — | ❌ **Tier 1 금지** (Tier 2만) |
 | `tags` | — | ✅ |
 | `posterPath` | — | ✅ **null 허용** |
 | `titles` / `aliases` | — | ✅ |
@@ -203,7 +204,7 @@ Rule Normalize (Facts) → Registry Minimal Core
 | `production_companies` | Fact | ✅ | ⚠️ `creator` | |
 | `overview` | **Copyright Risk** | ✅ 참고 | ❌ | TMDB·권리자 표현 — **복제 금지** |
 | `tagline` | **Copyright Risk** | ✅ | ❌ | |
-| `poster_path` / `backdrop_path` | Licensed | ✅ | ⚠️ `posterPath` | `image.tmdb.org` **URL만**; [POSTER_POLICY](../akasha-db/POSTER_POLICY.md); API bulk URL 수집 금지 |
+| `poster_path` / `backdrop_path` | Licensed | ✅ | ❌ | Signal·수동 참고만; Tier 1 `posterPath` **금지** ([§0.3](#03-tier-1-포스터-미제공-v1-steam)) |
 | `vote_average` / `popularity` | Fact (집계) | ✅ | ❌ | |
 | `imdb_id` / `external_ids` | Fact | ✅ | ✅ `externalIds` | |
 | `belongs_to_collection` | Fact | ✅ | ❌ | franchise 힌트 |
@@ -225,7 +226,7 @@ Rule Normalize (Facts) → Registry Minimal Core
 | `languages` | Fact | ✅ | ❌ | |
 | `publishers` | Fact | ✅ | ❌ | |
 | `number_of_pages` | Fact | ✅ | ❌ | |
-| `covers` (OL cover URL) | Licensed | ✅ | ⚠️ `posterPath` | `covers.openlibrary.org`; 링크만 |
+| `covers` (OL cover URL) | Licensed | ✅ | ❌ | Tier 1 저장 금지; 유저 vault만 |
 | `description` (IA/Wikipedia 유래) | **Copyright Risk** | ✅ 참고 | ❌ | **복제 금지** |
 | **OL dump 전체 Git 적재** | Copyright Risk | ❌ | ❌ | cursor·선별 ingest만 |
 
@@ -238,7 +239,7 @@ Rule Normalize (Facts) → Registry Minimal Core
 | `release_date.date` | Fact | ✅ | ✅ `releaseYear` | |
 | `developers` / `publishers` | Fact | ✅ | ✅ `creator` | |
 | `genres` / `categories` | Fact | ✅ | ⚠️ `tags` | |
-| `header_image` / `capsule_image` | Licensed | ✅ | ⚠️ `posterPath` | `store_item_assets` URL; 링크만 |
+| `header_image` / `capsule_image` | Licensed | ✅ | ❌ | Tier 1 저장 금지; 유저 vault만 |
 | `short_description` | **Copyright Risk** | ✅ 참고 | ❌ | Valve/퍼블리셔 문구 — **복제 금지** |
 | `detailed_description` | **Copyright Risk** | ✅ 참고 | ❌ | HTML 마케팅 — **복제 금지** |
 | `reviews` (텍스트) | UGC | ✅ | ❌ | |
@@ -333,7 +334,7 @@ Discovery 채널 확장 **전에** 아래를 확정한다.
 |:----:|------|------|
 | **1** | **Data Policy** (본 문서) | ✅ v1 |
 | **2** | Registry Minimal Core + SCHEMA | ✅ [SCHEMA.md](../akasha-db/SCHEMA.md) |
-| **3** | Legal-safe Field Matrix + CI gate | 🔶 poster denylist만; description 복제 검사 미구현 |
+| **3** | Legal-safe Field Matrix + CI gate | ✅ `tier1_poster` · `tier1_description` |
 | **4** | Quality (`qualitySignals` → score) | 🔶 구현 중 |
 | **5** | Canonicalization (franchise·edition) | 🔶 문서·linter |
 | **6** | Discovery — **AniList cursor 1채널** | ⏳ |
@@ -374,6 +375,7 @@ dart run tool/cleanup_poster_source.dart --apply --sync-assets
 | `description_html` | description 내 HTML (Steam/TMDB 복붙 탐지) |
 | `poster_url` | denylist, self-hosted, http(s) only (**posterPath 없을 때만**) |
 | `tier1_poster` | shard·search_index에 `posterPath` **금지** (v1) |
+| `tier1_description` | shard에 `description` **금지** (v1) |
 | `provenance` | posterSource, registeredVia, qualitySignals 키 검증 |
 | `provenance_warn` | posterSource 있는데 posterPath 없음 — 레거시 정리 완료, CI는 **`--strict`** 로 실행 (0건) |
 | `build_artifact` | shard 내 searchTokens 금지 |

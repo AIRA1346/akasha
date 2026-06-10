@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Team17",
     "releaseYear": 2018,
-    "description": "오버쿡드 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "440900"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

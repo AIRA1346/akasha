@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Obsidian",
     "releaseYear": 2010,
-    "description": "폴아웃: 뉴 베가스 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "22380"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

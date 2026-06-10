@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Endnight",
     "releaseYear": 2023,
-    "description": "Sons of the Forest — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1326470"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

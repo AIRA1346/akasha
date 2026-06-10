@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2009,
-    "description": "레프트 4 데드 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "550"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

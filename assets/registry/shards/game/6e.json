@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Psyonix",
     "releaseYear": 2015,
-    "description": "로켓 리그 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "252950"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

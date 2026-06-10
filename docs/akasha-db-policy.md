@@ -6,7 +6,7 @@
 > **필드·소스·법무 최상위:** [data-policy.md](data-policy.md) §0.3
 
 **상태:** v2 방향 (2026-06)  
-**현재 규모:** **~410작** 엄선 (Steam v1)  
+**현재 규모:** **430작** 엄선 (Steam v1)  
 **장기 비전:** 세상의 **모든 작품 사전** — [data-architecture-redesign.md](data-architecture-redesign.md)
 
 ---
@@ -31,7 +31,7 @@
 | 온디맨드 API로 메타 **빌려오기** | 자체 DB 철학과 불일치; 없으면 사용자 등록 |
 | **self-hosted** — 포스터 이미지를 `akasha-db`에 커밋 | 복제·공중송신의 **직접 주체**가 됨 |
 | 사전 **전 작품**에 볼트 `.md` 생성 | 아카이브한 작품만 `.md` (희소) |
-| 외부 시놉시스·설명 **복제** | 메타는 자체 1~2문장만 |
+| 외부 시놉시스·설명 **복제** | Tier 1 `description` **금지** — Sanctum vault만 |
 | flat `works/manga.json` 단일 파일 | 규모 커지면 재작업 — **샤딩 유지** |
 
 ---
@@ -40,7 +40,8 @@
 
 ### 3.1 메타데이터 (Tier 1 — 사전)
 
-- **직접 작성:** 제목(`title` / `titles`), 연도, 카테고리, 짧은 설명(1~2문장), 태그
+- **직접 작성:** 제목(`title` / `titles`), 연도, 카테고리, `aliases`, `tags`(선택)
+- **금지 필드:** `description`, `posterPath` (v1 CI)
 - **식별 참조:** `externalIds` (steam, tmdb, isbn 등) — **중복 탐지** (포스터 URL attach **금지**)
 - **추가 경로:**
   1. 수동 큐레이션 PR — [CONTRIBUTING.md](../akasha-db/CONTRIBUTING.md)
@@ -69,11 +70,11 @@
 
 ## 4. 포스터 (v1)
 
-상세: [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)
+상세: [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [data-policy.md §0.3](data-policy.md#03-tier-1-포스터설명-미제공-v1-steam)
 
 - **akasha-db PR:** `posterPath` **추가·유지 금지**
 - **유저:** Sanctum vault에 URL 또는 `posters/` 파일
-- **정리:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets`
+- **정리:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets` · `dart run tool/strip_tier1_descriptions.dart --apply --sync-assets`
 
 ---
 
@@ -81,11 +82,11 @@
 
 ```
 Tier 0 — Identity     wk_ (불변) + legacy_aliases
-Tier 1 — AKASHA Meta  title, titles, 연도, description, posterPath(URL), tags
-Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소)
+Tier 1 — AKASHA Meta  title, titles, 연도, externalIds, tags (**description·posterPath v1 금지**)
+Tier 2 — User Archive 볼트 YAML·posters/·Markdown (아카이브한 작품만, 희소)
 ```
 
-- 사전 500k 작품 = **가상 카드** (md 없음, 검색·포스터 즉시)
+- 사전 500k 작품 = **가상 카드** (md 없음, 검색 · 플레이스홀더)
 - 아카이브 시에만 `.md` 생성
 - Tier 2가 Tier 1을 **덮어쓰지 않음** (사전은 공용, 볼트는 개인)
 
@@ -106,8 +107,8 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 
 | 시점 | 규모 |
 |------|------|
-| Steam v1 (2026) | **엄선 ~410작** (현재) |
-| v4 해시 샤드 | 동일 410작, 인프라 전환 |
+| Steam v1 (2026) | **엄선 430작** (현재) |
+| v4 해시 샤드 | 동일 430작, 인프라 전환 ✅ |
 | 2027 Pipeline | 1k~10k/일 ingest |
 | 장기 | **전 작품 사전** (수백만) — API borrow 아님 |
 
@@ -123,8 +124,9 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 | [v4-migration-plan.md](v4-migration-plan.md) | **Steam 전 v4 실행 계획** |
 | [canonicalization-policy.md](canonicalization-policy.md) | identity·dedupe |
 | [catalog-ownership.md](catalog-ownership.md) | 소유권·3계층 |
-| [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | 포스터 URL |
-| [SCHEMA.md](../akasha-db/SCHEMA.md) | v3 현재 · v4 계획 |
+| [product-vision.md](product-vision.md) | **제품·Tier 1/2 SSOT** |
+| [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | v1 no-poster |
+| [SCHEMA.md](../akasha-db/SCHEMA.md) | v4 `wk_`·해시 샤드 |
 | [CONTRIBUTING.md](../akasha-db/CONTRIBUTING.md) | PR 절차 |
 
 ---
@@ -132,10 +134,6 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 ## 9. 구현·백로그
 
 - [x] CI denylist, AniList bulk 제거
-- [x] ~410작 엄선, `posterPath` in DB, M1 dogfood
-- [ ] **Steam 게이트** — [v4-migration-plan.md](v4-migration-plan.md) Phase A~D
-  - [ ] `assign_wk_ids.dart` + `id_registry.json`
-  - [ ] 앱·볼트 `wk_` 호환
-  - [ ] dedupe CI
-  - [ ] 해시 샤딩 v4
+- [x] 430작 엄선, Tier 1 `posterPath` 제거, M1 dogfood
+- [x] **Steam 게이트** — [v4-migration-plan.md](v4-migration-plan.md) Phase A~D ✅
 - [ ] Registry Pipeline · AI 수집 (출시 후)

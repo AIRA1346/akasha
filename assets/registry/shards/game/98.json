@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Bungie",
     "releaseYear": 2019,
-    "description": "우주 SF 세계관의 루트 슈터 MMO 액션.",
     "tags": [
       "루트슈터",
       "MMO",
@@ -28,8 +27,7 @@
       "steam": "1085660"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000072": {
@@ -39,7 +37,6 @@
     "domain": "generalCulture",
     "creator": "SCS Software",
     "releaseYear": 2012,
-    "description": "유로 트럭 시뮬레이터 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -60,8 +57,7 @@
       "steam": "227300"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000093": {
@@ -71,7 +67,6 @@
     "domain": "generalCulture",
     "creator": "Ludeon",
     "releaseYear": 2018,
-    "description": "림월드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -92,8 +87,7 @@
       "steam": "294100"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

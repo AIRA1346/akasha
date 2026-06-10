@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Naughty Dog",
     "releaseYear": 2023,
-    "description": "최후의 생还자 Part I — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1888930"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

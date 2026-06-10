@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "야기 노리코",
     "releaseYear": 2018,
-    "description": "전쟁에서 돌아온 사찌와 아이누 소년 아시리파가 황금 보물을 찾아 홋카이도를 가로지르는 모험.",
     "tags": [
       "모험",
       "역사",
@@ -51,8 +50,7 @@
       "tmdb": "74061"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

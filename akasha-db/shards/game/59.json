@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Square Enix",
     "releaseYear": 2013,
-    "description": "에오르제아 대륙을 배경으로 한 대규모 MMORPG.",
     "tags": [
       "MMORPG",
       "판타지",
@@ -29,8 +28,7 @@
       "steam": "39210"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000098": {
@@ -40,7 +38,6 @@
     "domain": "generalCulture",
     "creator": "Team Cherry",
     "releaseYear": 2017,
-    "description": "버섯 왕국을 탐험하는 2D 메트로바니아 액션.",
     "tags": [
       "메트로바니아",
       "인디",
@@ -62,8 +59,7 @@
       "steam": "367520"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "CD PROJEKT RED",
     "releaseYear": 2015,
-    "description": "괴물 사냥꾼 게롤트의 오픈월드 판타지 RPG.",
     "tags": [
       "오픈월드",
       "RPG",
@@ -29,8 +28,7 @@
       "steam": "292030"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "후루다테 하루이치",
     "releaseYear": 2012,
-    "description": "작은 키의 소년이 배구를 통해 성장하는 청춘 스포츠 만화.",
     "tags": [
       "스포츠",
       "배구",
@@ -39,7 +38,6 @@
     "domain": "subculture",
     "creator": "아카츠키 나츠메",
     "releaseYear": 2014,
-    "description": "카즈마와 개그 넘치는 파티가 이세계에서 모험과 빚을 떠안는 코미디 판타지.",
     "tags": [
       "이세계",
       "코미디",
@@ -56,8 +54,7 @@
       "tmdb": "70864"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

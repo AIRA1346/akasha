@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Cygames",
     "releaseYear": 2018,
-    "description": "왕녀와 동료를 모아 모험하는 수집형 RPG.",
     "tags": [
       "수집형RPG",
       "판타지",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "KRAFTON",
     "releaseYear": 2017,
-    "description": "배틀그라운드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -52,8 +50,7 @@
       "steam": "578080"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -25,6 +25,9 @@
 | [a5-duplicate-resolution-review.md](a5-duplicate-resolution-review.md) | Pilot fuzzyTitle 중복 판단 |
 | [a5-pilot-final-review.md](a5-pilot-final-review.md) | **Pilot 최종 — SUCCESS · 동결** |
 
+| [externalid-economics-plan.md](externalid-economics-plan.md) | Sprint 04 Economics 계획 (@402) |
+| [catalog-expansion-plan.md](catalog-expansion-plan.md) | v1 엄선 확장 (포스터 큐레이션 **역사**) |
+
 ## Sprint 04 — externalId G2 (완결 · 2026-06-10)
 
 > 최종 결과: [sprint-04-e1-resolution.md](../sprint-04-e1-resolution.md) — G2 **50.00%** 달성.

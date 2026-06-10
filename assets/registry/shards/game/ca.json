@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Ghost Ship",
     "releaseYear": 2020,
-    "description": "딥 락 갤럭틱 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "548430"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

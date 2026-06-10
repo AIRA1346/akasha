@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Lucas Pope",
     "releaseYear": 2013,
-    "description": "국경 검문소 공무원이 되어 서류를 심사하는 독립 퍼즐 게임.",
     "tags": [
       "퍼즐",
       "인디",
@@ -28,8 +27,7 @@
       "steam": "239030"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

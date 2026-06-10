@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "아라키 히로히코",
     "releaseYear": 1987,
-    "description": "죠스타 가문과 디오의 대립이 세대를 넘어 이어지는 스탠드 배틀 액션 만화.",
     "tags": [
       "액션",
       "초능력",
@@ -28,8 +27,7 @@
       "tmdb": "46393"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

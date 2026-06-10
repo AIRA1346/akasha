@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Rockstar",
     "releaseYear": 2004,
-    "description": "GTA San Andreas — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "12120"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000067": {
@@ -38,7 +36,6 @@
     "domain": "generalCulture",
     "creator": "Klei",
     "releaseYear": 2013,
-    "description": "Don't Starve — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -59,8 +56,7 @@
       "steam": "219740"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

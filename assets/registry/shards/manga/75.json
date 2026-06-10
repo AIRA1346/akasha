@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "토리야마 아키라",
     "releaseYear": 1984,
-    "description": "손오공이 드래곤볼을 모으며 성장하고 강적과 맞서는 액션 모험 만화.",
     "tags": [
       "액션",
       "모험",
@@ -28,8 +27,7 @@
       "tmdb": "30979"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

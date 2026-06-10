@@ -5,30 +5,17 @@ import '../tool/quality_score_utils.dart';
 
 void main() {
   group('resolveQualitySignals', () {
-    test('derives hasPoster and hasDescription from work fields', () {
+    test('externalIdVerified requires stored flag and externalIds', () {
       final signals = resolveQualitySignals(
         {
           'title': '테스트',
-          'posterPath': 'https://example.com/p.jpg',
-          'description': 'a' * qualityDescriptionMinChars,
+          'externalIds': {'mal': '13'},
+          'qualitySignals': {'externalIdVerified': true},
         },
         franchiseMember: false,
       );
-      expect(signals.hasPoster, isTrue);
-      expect(signals.hasDescription, isTrue);
-      expect(signals.posterVerified, isFalse);
-    });
-
-    test('stored posterVerified overrides extensions', () {
-      final signals = resolveQualitySignals(
-        {
-          'title': '테스트',
-          'qualitySignals': {'posterVerified': true},
-          'extensions': {'posterVerified': false},
-        },
-        franchiseMember: false,
-      );
-      expect(signals.posterVerified, isTrue);
+      expect(signals.externalIdVerified, isTrue);
+      expect(signals.franchiseVerified, isFalse);
     });
 
     test('franchiseMember sets franchiseVerified when not stored', () {
@@ -41,7 +28,7 @@ void main() {
   });
 
   group('computeQualityScore', () {
-    test('minimal stub scores tier 0 range', () {
+    test('minimal stub scores tier 1 range', () {
       final work = {'title': 'Stub'};
       final signals = resolveQualitySignals(work, franchiseMember: false);
       final score = computeQualityScore(work, signals);
@@ -54,13 +41,9 @@ void main() {
         'title': '완성',
         'creator': '작가',
         'releaseYear': 2020,
-        'posterPath': 'https://example.com/p.jpg',
-        'description': 'a' * qualityDescriptionMinChars,
         'externalIds': {'anilist': '1'},
         'qualitySignals': {
-          'posterVerified': true,
           'externalIdVerified': true,
-          'descriptionVerified': true,
         },
       };
       final signals = resolveQualitySignals(work, franchiseMember: true);

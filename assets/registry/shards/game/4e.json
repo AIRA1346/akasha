@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2012,
-    "description": "전술 FPS의 대표작으로 팀워크와 에임이 승부를 가른다.",
     "tags": [
       "FPS",
       "PvP",
@@ -29,8 +28,7 @@
       "steam": "730"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

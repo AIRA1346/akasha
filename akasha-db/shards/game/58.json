@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Intelligent Systems",
     "releaseYear": 2019,
-    "description": "전술 SRPG로 학원에서 세 가지 학급의 운명을 이끈다.",
     "tags": [
       "SRPG",
       "전술",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "Behaviour",
     "releaseYear": 2016,
-    "description": "데드 바이 데이라이트 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -52,8 +50,7 @@
       "steam": "381210"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

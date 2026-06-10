@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "우스이 요시토 (Yoshito Usui)",
     "releaseYear": 1990,
-    "description": "떡잎마을의 장난꾸러기 신짱구와 가족의 코믹 일상.",
     "tags": [
       "코미디",
       "일상",
@@ -36,7 +35,6 @@
     "domain": "subculture",
     "creator": "이치카와 하루코",
     "releaseYear": 2012,
-    "description": "보석로 변한 인간들이 월인과 싸우며 정체성과 기억을 잃어가는 독특한 SF 판타지.",
     "tags": [
       "SF",
       "판타지",
@@ -53,8 +51,7 @@
       "tmdb": "74204"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

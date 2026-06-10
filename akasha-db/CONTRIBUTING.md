@@ -2,7 +2,7 @@
 
 Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
-> **현재:** v4 해시 샤드, **402작** 엄선  
+> **현재:** v4 해시 샤드, **430작** 엄선  
 > **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)  
 > **마스터 정책:** [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 
@@ -35,8 +35,7 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 
 - [ ] `workId`가 기존 항목과 **중복되지 않음** (동일 작품·externalId 재확인)
 - [ ] `category` / `domain` enum 값 준수
-- [ ] `description`은 2~3문장 요약 (장문 복제 금지)
-- [ ] **`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md))
+- [ ] **`description`·`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md) · [product-vision.md](../docs/product-vision.md))
 - [ ] 같은 IP의 다른 매체는 `franchise_groups.json` 확인
 - [ ] `registry_builder` + `ci_registry_check` 통과
 
@@ -60,6 +59,6 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 
 ## 저작권
 
-- 메타데이터(제목, 작가, 태그, **자체 1~2문장 요약**)만 기록합니다.
-- 포스터는 **외부 URL 링크 참조**만 (`posterPath`). 이미지 파일을 이 레포에 커밋하지 마세요.
-- AniList/TMDB API로 메타·이미지를 **자동 bulk 수집**하지 마세요. (장기 Pipeline은 dedupe·CI 게이트 후)
+- Tier 1 메타데이터: **Fact만** (제목, 작가, 연도, ID, aliases, tags).
+- **`description`·포스터:** Tier 1 금지 — 유저 Sanctum vault에만.
+- AniList/TMDB API로 메타·이미지를 **자동 bulk 수집**하지 마세요.

@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "와카이 켄",
     "releaseYear": 2021,
-    "description": "한타케 타케미치가 과거로 돌아가 양아치 조직과 운명을 바꾸려는 시간여행 액션.",
     "tags": [
       "액션",
       "시간여행",
@@ -41,8 +40,7 @@
       "tmdb": "95481"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

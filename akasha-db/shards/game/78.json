@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2013,
-    "description": "전 세계적으로 사랑받는 5대5 MOBA 대전 게임.",
     "tags": [
       "MOBA",
       "PvP",
@@ -28,8 +27,7 @@
       "steam": "570"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

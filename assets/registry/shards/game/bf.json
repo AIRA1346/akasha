@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Team Ninja",
     "releaseYear": 2017,
-    "description": "Nioh — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "485510"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

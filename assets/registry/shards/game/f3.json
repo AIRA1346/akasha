@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Frontier",
     "releaseYear": 2021,
-    "description": "플래닛 코스터 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1284190"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

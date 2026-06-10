@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Digital Extremes",
     "releaseYear": 2013,
-    "description": "우주 닌자가 되어 협동 미션을 수행하는 F2P 액션.",
     "tags": [
       "F2P",
       "협동",
@@ -29,8 +28,7 @@
       "steam": "230410"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

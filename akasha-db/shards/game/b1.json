@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "NEXON Games",
     "releaseYear": 2021,
-    "description": "학원 도시 키보토스의 선생님이 되어 학생들을 이끄는 수집형 RPG.",
     "tags": [
       "학원물",
       "수집형RPG",
@@ -29,8 +28,7 @@
       "steam": "3557620"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000111": {
@@ -40,7 +38,6 @@
     "domain": "generalCulture",
     "creator": "Bethesda",
     "releaseYear": 2016,
-    "description": "스카이림 SE — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -61,8 +58,7 @@
       "steam": "489830"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

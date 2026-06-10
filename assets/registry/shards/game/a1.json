@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Atlus",
     "releaseYear": 2020,
-    "description": "마스크를 쓴 도둑단이 심장의 궁전을 훔치는 JRPG.",
     "tags": [
       "JRPG",
       "학원",
@@ -29,8 +28,7 @@
       "steam": "1687950"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Nintendo",
     "releaseYear": 2022,
-    "description": "먹물 슈터로 팀 대전을 즐기는 액션 게임.",
     "tags": [
       "슈터",
       "액션",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "Blizzard",
     "releaseYear": 2024,
-    "description": "블랙 미스 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -52,8 +50,7 @@
       "steam": "2358720"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Naughty Dog",
     "releaseYear": 2022,
-    "description": "언차티드: 도적들과 유산 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1659420"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

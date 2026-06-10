@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Creative Assembly",
     "releaseYear": 2019,
-    "description": "토탈 워: 삼국 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "594650"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

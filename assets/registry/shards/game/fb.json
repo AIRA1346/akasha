@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "FromSoftware",
     "releaseYear": 2016,
-    "description": "다크 소울 3 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "374320"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000125": {
@@ -38,7 +36,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2020,
-    "description": "도타 언더로드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -59,8 +56,7 @@
       "steam": "782330"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

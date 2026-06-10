@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "야마다 카네히토 / 아베 츠카사",
     "releaseYear": 2023,
-    "description": "마왕을 물리친 후 동료들의 죽음 이후 여행을 떠나는 프리렌의 판타지.",
     "tags": [
       "판타지",
       "모험",
@@ -39,7 +38,6 @@
     "domain": "subculture",
     "creator": "마메타와 마모루",
     "releaseYear": 2013,
-    "description": "MMORPG에 갇힌 플레이어들이 세계 규칙을 분석하며 새 사회를 만들어가는 이세계 드라마.",
     "tags": [
       "이세계",
       "게임",
@@ -69,8 +67,7 @@
       "tmdb": "57706"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000236": {
@@ -85,7 +82,6 @@
     "domain": "subculture",
     "creator": "타케모토 아유",
     "releaseYear": 2023,
-    "description": "시골에서 도쿄의 명문 학교로 진학한 미츠미의 성장과 친구들과의 청춘 이야기.",
     "tags": [
       "청춘",
       "학원",

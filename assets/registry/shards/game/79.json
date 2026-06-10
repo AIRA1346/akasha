@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "PlatinumGames",
     "releaseYear": 2017,
-    "description": "안드로이드 전투원이 인류를 위해 싸우는 액션 RPG.",
     "tags": [
       "액션",
       "SF",
@@ -29,8 +28,7 @@
       "steam": "524220"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

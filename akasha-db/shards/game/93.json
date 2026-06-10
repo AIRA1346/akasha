@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "FromSoftware",
     "releaseYear": 2015,
-    "description": "블러드본 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "774361"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Techland",
     "releaseYear": 2022,
-    "description": "Dying Light 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "534380"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Studio Wildcard",
     "releaseYear": 2017,
-    "description": "아크: 서바이벌 이볼브드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "346110"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Blizzard",
     "releaseYear": 2017,
-    "description": "스타크래프트 리마스터 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1962663"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

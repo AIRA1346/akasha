@@ -57,7 +57,7 @@
 | 파일 | 의미 | 상태 | externalId gate 충돌 |
 |------|------|:----:|:--------------------:|
 | [sprint-04-charter.md](sprint-04-charter.md) | E1 Steam · E2 TMDB · E3 잔여 · E4 초과 | **active**† | **E1·E2·E3·E4** |
-| [externalid-economics-plan.md](externalid-economics-plan.md) | Economics tier E1~E4 표 | **active**† | **E1~E4** |
+| [externalid-economics-plan.md](archive/externalid-economics-plan.md) | Economics tier E1~E4 표 | **active**† | **E1~E4** |
 | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) | E1/E2 cohort 수 · 예상 coverage | **active** | **E1·E2** |
 | [sprint-04-final-review.md](archive/sprint-04-final-review.md) | E1/E2 **배치** apply 110+31 | **superseded** | **E1·E2** |
 | [sprint-04-e1-audit.md](archive/sprint-04-e1-audit.md) | **E1 Steam cohort** 15건 감사 | **active** | **E1‡** |

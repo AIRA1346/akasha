@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Endnight",
     "releaseYear": 2018,
-    "description": "더 포레스트 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "242760"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

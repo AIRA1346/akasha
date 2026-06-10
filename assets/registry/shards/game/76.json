@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2007,
-    "description": "팀 포트리스 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "440"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

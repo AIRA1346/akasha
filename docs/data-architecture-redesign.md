@@ -1,9 +1,8 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (402작 · 331 해시 샤드)  
-> **기준일:** 2026-06-08  
-> **한 줄:** **세상의 모든 작품 사전**이 최종 목표다. **Steam v1 출시 전에 v4 런타임**(wk_·해시 샤드)을 완료한다.  
-> **실행 계획:** [v4-migration-plan.md](v4-migration-plan.md)
+> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (430작 · 331 해시 샤드)  
+> **기준일:** 2026-06-10  
+> **제품·포스터 SSOT:** [product-vision.md](product-vision.md) · [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)
 
 관련: [akasha-db-policy.md](akasha-db-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [ROADMAP.md](../ROADMAP.md)
 
@@ -20,27 +19,28 @@
 | **글로벌 작품 사전** | 세상의 모든 작품을 검색·발견할 수 있는 레지스트리 (장기 목표) |
 | **개인 아카이브** | 사용자가 **선택한** 작품만 `.md`로 감상·평가 기록 (볼트) |
 
-**현재 데이터 양(~410작)은 시작점일 뿐이다.**  
+**현재 데이터 양(430작)은 시작점일 뿐이다.**  
 아키텍처 판단은 「지금 몇 개냐」가 아니라 **「5년 뒤 50만 개일 때 갈아엎지 않느냐」**로 한다.
 
 ### 0.2 규모 로드맵 (목표)
 
 | 시점 | 레지스트리 작품 수 | 운영 모델 |
 |------|-------------------|-----------|
-| **2026** (Steam v1) | ~410 | v4 런타임(`wk_`·해시 샤드) + 엄선 |
+| **2026** (Steam v1) | ~430 | v4 런타임(`wk_`·해시 샤드) + 엄선 |
 | **2027** | ~5,000 | 배치 + AI 보조 파이프라인 도입 |
 | **2028** | ~50,000 | Registry Pipeline 본격화 |
 | **2030** | ~500,000 | Git 소스 + CDN/R2 read, 검색 인덱스 분리 |
 
-### 0.3 잘못 이해했던 점 (v1 문서 정정)
+### 0.3 v1 정책 정정 (2026-06-10)
 
-| v1 문서 (틀림) | v2 (맞음) |
-|----------------|-----------|
-| 「엄선 레지스트리」가 최종 정체성 | **전 작품 사전**이 목표, 엄선은 **현재 단계** |
-| 410작이면 flat JSON이 낫다 | **지금 샤딩 인프라를 유지·강화** — 나중에 구조 갈아엎기 방지 |
-| `posterPath` 제거, ID만 저장 | **DB에 `posterUrl` 필수** — 검색 즉시 카드 표시 |
-| 모든 작품이 볼트 `.md` | **아카이브한 작품만** `.md` 생성 (희소) |
-| 수동 큐레이션만 | **장기: AI Registry Pipeline** (하루 수천~수만 건) |
+| 이전 설계 (폐기) | v1 Steam (현행) |
+|------------------|-----------------|
+| Tier 1 `posterPath` / `posterUrl` DB 저장 | **Tier 1 포스터 금지** — CI `tier1_poster`, 플레이스홀더 UI |
+| Tier 1 `description` 큐레이션 | **Tier 1 description 금지** — 감상·요약은 Tier 2 Sanctum vault만 |
+| Pipeline이 TMDB URL resolve → shard | Pipeline은 **Fact만** — 이미지·시놉은 유저 vault |
+| 「엄선 레지스트리」= 최종 정체성 | **전 작품 사전**이 목표, 430작은 **현재 단계** |
+
+인프라(샤딩·`wk_`·search_index)는 유지. **콘텐츠·이미지 호스팅**만 Tier 2로 이동 — [product-vision.md](product-vision.md).
 
 ---
 
@@ -51,42 +51,41 @@
 │  Tier 0 — Identity          wk_00001234 (영구 불변)               │
 ├──────────────────────────────────────────────────────────────────┤
 │  Tier 1 — Global Registry     akasha-db (모든 유저 공유)            │
-│  · 제목, 카테고리, searchTokens, franchise                        │
-│  · posterUrl + externalIds (검색·카드 표시용 — DB에 저장)          │
+│  · 제목, 카테고리, searchTokens, franchise, externalIds (Fact)      │
+│  · posterPath·description **없음** (v1)                             │
 │  · GitHub → Cloudflare → 앱 sync / 번들                           │
 ├──────────────────────────────────────────────────────────────────┤
 │  Tier 2 — User Archive        Sanctum 볼트 (사용자만, 희소)        │
 │  · 아카이브·기록한 작품만 .md 생성                                 │
-│  · 평점, 감상, 명대사, 나의 상태, (선택) 로컬 포스터               │
+│  · 평점, 감상, 명대사, poster URL/로컬, 본문 Markdown              │
 │  · 레지스트리 전체의 md 파일 ❌                                   │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
-### 1.1 Tier 1 vs Tier 2 — 포스터
+### 1.1 Tier 1 vs Tier 2 — 포스터·설명 (v1)
 
 | | Tier 1 (사전) | Tier 2 (볼트) |
 |--|---------------|---------------|
-| **포스터** | `posterPath` / `posterUrl` **DB에 저장** → 검색·그리드 즉시 표시 | 사용자가 **직접 넣은** `posters/` 파일만 (선택) |
-| **역할** | 「원피스 검색 → 카드에 포스터」 | 「내가 쓴 감상 + 내가 바꾼 커버」 |
-| **기본** | 사전 URL이 **기본 표시** | 볼트 로컬 포스터가 있으면 **그 작품만** 덮어씀 |
+| **포스터** | ❌ **미제공** — 플레이스홀더 | YAML `poster:` · `posters/` |
+| **설명·감상** | ❌ **미제공** | Markdown 본문 + YAML 자유 |
+| **역할** | 「원피스 검색 → Fact 카드」 | 「내가 쓴 기록 + 내 커버」 |
 
-**검색 서비스 관점:** 매 검색마다 TMDB/Steam/OpenLibrary를 조회하면 성능이 무너진다.  
-대형 서비스처럼 **둘 다 저장**한다.
+**검색 서비스 관점:** Tier 1은 **텍스트 Fact + searchTokens**만 CDN에 둔다.  
+이미지·창작 표현은 AKASHA가 **호스팅·큐레이션하지 않음** — [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam).
 
 ```json
 {
-  "externalIds": { "tmdb": "37854" },
-  "posterPath": "https://image.tmdb.org/t/p/w500/....",
-  "extensions": {
-    "posterSource": "tmdb",
-    "posterVerified": true
-  }
+  "workId": "wk_00001234",
+  "title": "원피스",
+  "category": "manga",
+  "releaseYear": 1997,
+  "creator": "오다 에이치로",
+  "externalIds": { "mal": "13", "tmdb": "37854" }
 }
 ```
 
-- `externalIds.tmdb` — 영구 참조·재검증·URL 갱신용  
-- `posterPath` — **캐시 URL**, 클라이언트는 이걸로 `Image.network` (즉시 표시)  
-- URL 깨지면 파이프라인이 `externalIds`로 **재생성** (배치), 앱은 여전히 URL만 읽음
+- `externalIds.*` — 영구 참조·dedupe·Contribution 대조용 (**자동 fetch·attach 금지**)
+- `posterPath` / `description` — **shard·search_index에 없음** (v1)
 
 ### 1.2 Tier 2 — `.md`는 희소(sparse)
 
@@ -250,21 +249,18 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
   "domain": "subculture",
   "creator": "오다 에이치로",
   "releaseYear": 1997,
-  "description": "자체 작성 2~3문장.",
   "tags": ["모험", "해적"],
   "externalIds": { "tmdb": "37854", "mal": "13" },
-  "posterPath": "https://image.tmdb.org/t/p/w500/....",
   "searchTokens": [
     "원피스", "원조", "one piece", "ワンピース", "op"
   ],
-  "extensions": {
-    "posterSource": "tmdb",
-    "posterVerified": true
+  "qualitySignals": {
+    "externalIdVerified": true
   }
 }
 ```
 
-**search_index.json** (빌드 산출): `workId`, `title`, `category`, `searchTokens`, `posterPath` (검색 결과 즉시 렌더)
+**search_index.json** (빌드 산출): `workId`, `title`, `category`, `searchTokens` — **`posterPath` 없음** (v1)
 
 ---
 
@@ -277,30 +273,29 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 ┌─────────┐    ┌─────────────┐    ┌────────┐    ┌────────────┐    ┌──────────┐
 │ Source  │───►│ AI Extract  │───►│ Dedupe │───►│ WorkEntry  │───►│ Shard    │
 │ lists   │    │ + validate  │    │ + merge│    │ + wk_ assign│    │ batch    │
-│ feeds   │    │             │    │        │    │ + posterUrl │    │ + commit │
+│ feeds   │    │             │    │        │    │ + wk_ assign│    │ + commit │
 └─────────┘    └─────────────┘    └────────┘    └────────────┘    └──────────┘
 ```
 
 | 단계 | 내용 |
 |------|------|
 | **Source** | 공개 메타 목록, 라이선스 허용 소스, 엄선 시드 리스트 |
-| **AI Extract** | 제목·연도·카테고리·**자체 요약 2~3문장**·searchTokens 초안 |
+| **AI Extract** | 제목·연도·카테고리·searchTokens 초안 (**시놉·포스터 제외**) |
 | **Dedupe** | `wk_` / fuzzy title / `externalIds` 교차검증 |
-| **Poster** | TMDB/Steam/OL ID → **URL resolve → DB 저장** (배치, 런타임 아님) |
 | **Shard** | `hash(wk_) % 256` 버킷에 insert |
-| **CI** | denylist URL, duplicate, franchise_linter |
+| **CI** | `tier1_poster`, duplicate, franchise_linter |
 | **Git** | 자동 PR 또는 bot commit |
 
-### 6.1 「API bulk 금지」 재정의
+### 6.1 「API bulk 금지」 (유지)
 
-| 금지 (유지) | 허용 (확장) |
-|-------------|-------------|
-| AniList 응답 **그대로** Git에 영구 저장 (시놉 복붙) | Pipeline이 **가공·요약·검증** 후 저장 |
-| `anilistcdn` 등 denylist CDN | `image.tmdb.org`, Steam, Open Library |
-| 런타임 API로 사용자 검색마다 fetch | **빌드 시** poster URL resolve → DB |
+| 금지 | 허용 |
+|------|------|
+| AniList/TMDB 응답 **그대로** Git 영구 저장 | Pipeline이 **Fact만** 가공·검증 후 저장 |
+| Tier 1 `posterPath`·`description` | Tier 2 유저 vault |
+| `anilistcdn` 등 denylist CDN | — |
 | 검증 없는 68만작 일괄 시드 | **Dedupe + CI** 통과 분만 merge |
 
-**핵심:** borrow가 아니라 **AKASHA 소유 메타로 가공해 적재**하는 파이프라인.
+**핵심:** AKASHA는 **Fact index**만 배포. 이미지·창작 텍스트는 유저 Sanctum vault.
 
 ---
 
@@ -311,22 +306,22 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 **지금 (2026):** `seed_expansion_batchN.dart` + 수동 JSON + PR  
 **이후:** Registry Pipeline (§6)
 
-→ **모든 유저**가 검색·가상 카드·포스터에서 사용.
+→ **모든 유저**가 검색·가상 카드(플레이스홀더)에서 사용.
 
 ### 7.2 사용자 아카이브 (볼트 `.md`)
 
 **트리거:** 아카이브, 직접 등록, 자동 아카이빙, AI 가져오기  
 **결과:** 해당 `work_id`에 대한 `.md` **1파일** (없으면 파일 없음)
 
-**저장 내용:** 평점, 감상, 명대사, 나의/작품 상태, HoF, 태그  
-**저장 안 함:** 사전 `posterPath` (YAML 중복 금지 — 기 구현)
+**저장 내용:** 평점, 감상, 명대사, poster, 본문 Markdown  
+**Tier 1 미복제:** 사전 `posterPath`·`description` — vault만
 
 ### 7.3 UI Fusion (조인)
 
 | 사전 | 볼트 `.md` | UI |
 |------|------------|-----|
-| ✅ | ❌ | 가상 카드 (사전 메타·포스터) |
-| ✅ | ✅ | 아카이브 카드 (Tier2 + Tier1 fusion) |
+| ✅ | ❌ | 가상 카드 (Fact + 플레이스홀더) |
+| ✅ | ✅ | 아카이브 카드 (Tier 2 poster·본문) |
 | ❌ | ✅ | custom 작품 (볼트만) |
 
 ### 7.4 중복·프랜차이즈
@@ -368,14 +363,14 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ### Phase 0 — v3 기반·M1 ✅
 
-- [x] v3 슬러그 샤드 + lazy sync + `posterPath` in DB  
-- [x] ~410작 엄선 · dogfood 통과 · `master_archive`  
+- [x] v4 해시 샤드 + lazy sync · Tier 1 **posterPath 제거** (2026-06-10)  
+- [x] 430작 엄선 · dogfood 통과 · `master_archive`  
 - [x] 설계 v2 문서 · 정책 정렬  
 
 ### Phase A — `wk_` 영구 ID ✅
 
 - [x] `assign_wk_ids.dart` (dry-run / `--apply`)  
-- [x] `id_registry.json` — 410작 전역 순번  
+- [x] `id_registry.json` — 430작 전역 순번  
 - [x] `legacy_aliases` 전량 매핑  
 - [x] 샤드 `workId` → `wk_` + `legacyIds`  
 - [x] CI: `id_registry_check.dart`  
@@ -392,7 +387,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 - [x] [canonicalization-policy.md](canonicalization-policy.md) 문서  
 - [x] `dedupe_linter.dart` — 후보 제시만, 자동 merge 금지  
-- [x] `retire_work_ids.dart` — 중복 8건 병합 (402작)  
+- [x] `retire_work_ids.dart` — 중복 병합 (430작)  
 - [x] `franchise_groups` = `wk_` members 검증  
 
 ### Phase D — 해시 샤딩 v4 ✅
@@ -424,7 +419,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 |---|------|------|
 | D1 | 최종 목표 = **전 작품 사전** | 제품 비전 |
 | D2 | **샤딩 유지** + 해시 키로 전환 | 50만~100만, 지금 인프라 재사용 |
-| D3 | `posterPath` **DB 유지** + `externalIds` | 검색 즉시 표시 + URL 갱신 |
+| D3 | Tier 1 **`posterPath`·`description` 금지** (v1) | Fact index + 유저 vault — [product-vision.md](product-vision.md) |
 | D4 | 볼트 `.md` **희소** | 아카이브한 작품만 |
 | D5 | `wk_` 영구 ID | 메타 변경 시 조인 유지 |
 | D6 | 장기 **Registry Pipeline** + AI | 수만 작품 인간 불가 |
@@ -437,6 +432,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 | 문서 | 내용 |
 |------|------|
+| [product-vision.md](product-vision.md) | **제품·Tier 1/2 SSOT** |
 | [README.md](../README.md) | 「전 작품 사전」목표, 현재 엄선 단계 |
 | [ROADMAP.md](../ROADMAP.md) | 출시·데이터 백로그 |
 | [akasha-db-policy.md](akasha-db-policy.md) | 구축·운영·법무 마스터 |
@@ -447,4 +443,4 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ---
 
-*이전 v1 초안(엄선 레지스트리 한정·flat JSON·poster URL 제거)은 폐기했다. 본 v2가 제품 비전과 일치하는 기준선이다.*
+*2026-06-10: Tier 1 poster·description 제거로 [product-vision.md](product-vision.md)와 정렬. 인프라(v4·샤딩·`wk_`)는 본 문서 기준 유지.*

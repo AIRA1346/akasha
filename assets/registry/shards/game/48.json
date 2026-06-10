@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Rockstar",
     "releaseYear": 2001,
-    "description": "Grand Theft Auto III — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "3240220"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

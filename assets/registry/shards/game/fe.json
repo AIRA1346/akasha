@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Blizzard",
     "releaseYear": 2022,
-    "description": "영웅 기반 팀 대전 슈터.",
     "tags": [
       "FPS",
       "팀전",
@@ -28,8 +27,7 @@
       "steam": "2357570"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

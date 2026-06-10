@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Re-Logic",
     "releaseYear": 2011,
-    "description": "2D 샌드박스에서 탐험·건축·보스전을 즐기는 인디 명작.",
     "tags": [
       "샌드박스",
       "2D",
@@ -28,8 +27,7 @@
       "steam": "105600"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

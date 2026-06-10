@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "마시마 히로",
     "releaseYear": 2018,
-    "description": "나츠 일행이 백년 퀘스트를 수행하며 새로운 적과 마법 대륙을 마주하는 후속 모험.",
     "tags": [
       "판타지",
       "마법",
@@ -28,8 +27,7 @@
       "tmdb": "83121"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "토가시 요시히로",
     "releaseYear": 2011,
-    "description": "헌터 시험에 도전하는 곤이 아버지를 찾으며 겪는 모험과 넨 배틀 이야기.",
     "tags": [
       "액션",
       "모험",
@@ -36,8 +35,7 @@
       "tmdb": "46298"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000218": {
@@ -53,7 +51,6 @@
     "domain": "subculture",
     "creator": "키시모토 마사시",
     "releaseYear": 2002,
-    "description": "닌자 호카게를 꿈꾸는 나루토가 동료와 함께 수행과 전투를 겪으며 성장하는 이야기.",
     "tags": [
       "닌자",
       "액션",

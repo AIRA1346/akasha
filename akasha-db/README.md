@@ -21,11 +21,12 @@ akasha-db/
 └── shards/{category}/{hh}.json   # hash(wk_)%256 — manga·animation·game·book·movie·drama·webtoon
 ```
 
-> **v4:** `wk_000000042`(9자리 불변 ID) · `titles` / `aliases` / `externalIds` / `posterPath` / `searchTokens`.  
-> 구 슬러그 ID(`sub_manga_one-piece_1997` 등)는 `legacy_aliases.json`으로만 해석 — 신규 발급 금지.
+> **v4:** `wk_000000042`(9자리 불변 ID) · `titles` / `aliases` / `externalIds` / `searchTokens`.  
+> **v1 Fact only:** `posterPath`·`description` **금지** — Sanctum vault만 ([POSTER_POLICY.md](POSTER_POLICY.md)).
 
-**API bulk 금지** — 확장은 수동 PR + (장기) Registry Pipeline + 사용자 직접 등록.  
-**v1 포스터:** Tier 1 `posterPath` **금지** — 유저 Sanctum vault만 ([POSTER_POLICY.md](POSTER_POLICY.md)).
+구 슬러그 ID(`sub_manga_one-piece_1997` 등)는 `legacy_aliases.json`으로만 해석 — 신규 발급 금지.
+
+**API bulk 금지** — 확장은 수동 PR + (장기) Registry Pipeline + 사용자 직접 등록.
 
 ## 앱 동기화
 

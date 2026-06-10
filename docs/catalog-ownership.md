@@ -11,14 +11,14 @@
 
 | ✅ 우리가 하는 것 | ❌ 하지 않는 것 |
 |------------------|----------------|
-| 사실 메타 직접 작성 (제목, 연도, 카테고리, 작가) | AniList/TMDB 등 API **대량 수집·Git 영구 저장** |
-| 짧은 **자체 요약** (2~3문장) | 외부 시놉시스·설명 **복제** |
-| 수동 PR·Pipeline·큐레이션으로 사전 확장 | 온디맨드 API로 메타 **빌려오기** |
-| 없으면 **사용자 직접 등록** | 제3자 DB를 백업/스토리지로 사용 |
+| 사실 메타 직접 작성 (제목, 연도, 카테고리, 작가, ID) | AniList/TMDB 등 API **대량 수집·Git 영구 저장** |
+| 수동 PR·Pipeline·큐레이션으로 사전 확장 | Tier 1 `description`·`posterPath` |
+| 없으면 **사용자 직접 등록** | 온디맨드 API로 메타 **빌려오기** |
 | 사용자 볼트 `.md`·`posters/` (아카이브한 작품만) | 사전 전 작품에 `.md` 일괄 생성 |
 
 | **externalIds** (`steam`, `tmdb`, …) | Fact — 식별·중복 탐지용 (**포스터 URL attach 금지**) |
-외부 시놉시스·설명 **복제**는 금지.
+
+**감상·설명·포스터**는 Tier 2 Sanctum vault만 — [product-vision.md](product-vision.md).
 
 ---
 
@@ -26,7 +26,7 @@
 
 ```
 Tier 0 — Identity     wk_ (불변) + legacy_aliases
-Tier 1 — AKASHA Meta  title, titles, 연도, description, tags (**posterPath v1 금지**)
+Tier 1 — AKASHA Meta  title, titles, 연도, externalIds, tags (**description·posterPath v1 금지**)
 Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소)
 ```
 

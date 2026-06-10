@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Blizzard",
     "releaseYear": 2023,
-    "description": "어둠의 세계에서 악마를 토벌하는 핵앤슬래시 RPG.",
     "tags": [
       "핵앤슬래시",
       "RPG",
@@ -28,8 +27,7 @@
       "steam": "2344520"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

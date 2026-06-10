@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Square Enix",
     "releaseYear": 2024,
-    "description": "미스트워커 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1328670"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

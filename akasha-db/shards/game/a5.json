@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Colorful Palette / SEGA",
     "releaseYear": 2020,
-    "description": "버추얼 싱어와 함께 음악과 스토리를 즐기는 리듬 RPG.",
     "tags": [
       "리듬",
       "음악",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "Introversion",
     "releaseYear": 2015,
-    "description": "프리즌 아키텍트 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -52,8 +50,7 @@
       "steam": "233450"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

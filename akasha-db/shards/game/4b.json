@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Bethesda",
     "releaseYear": 2011,
-    "description": "드래곤과 용맹한 자의 전설을 쓰는 오픈월드 RPG.",
     "tags": [
       "오픈월드",
       "RPG",
@@ -29,8 +28,7 @@
       "steam": "72850"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

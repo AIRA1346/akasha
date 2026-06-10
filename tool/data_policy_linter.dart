@@ -235,18 +235,17 @@ List<DataPolicyViolation> _scanContributions(Directory root) {
                 ),
               );
             }
-            if (key == 'description') {
-              final text = entry.value?.toString() ?? '';
-              if (text.length > dataPolicyMaxDescriptionChars) {
-                issues.add(
-                  DataPolicyViolation(
-                    workId: map['id']?.toString() ?? 'fix',
-                    relativePath: relative,
-                    rule: 'text_length',
-                    detail: 'fixWork description too long (${text.length})',
-                  ),
-                );
-              }
+            if (key == 'description' || key == 'posterPath') {
+              issues.add(
+                DataPolicyViolation(
+                  workId: map['id']?.toString() ?? 'fix',
+                  relativePath: relative,
+                  rule: key == 'description'
+                      ? 'tier1_description'
+                      : 'tier1_poster',
+                  detail: 'fixWork.fields must not set Tier 1 "$key" (v1)',
+                ),
+              );
             }
           }
         }

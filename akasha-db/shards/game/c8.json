@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "인디 제작사",
     "releaseYear": 2024,
-    "description": "공상과학 우주 테마 인디 메트로배니아 기대작.",
     "tags": [
       "인디",
       "얼리액세스",
@@ -27,8 +26,7 @@
       "steam": "332200"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

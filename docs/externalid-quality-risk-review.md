@@ -2,7 +2,7 @@
 
 > **목적:** externalId **확대 시** 품질·신뢰 리스크를 평가한다.  
 > **질문:** *「externalId를 늘릴 수 있는가?」* (Economics) 가 아니라 *「externalId를 늘려도 **신뢰할 수 있는가?」***  
-> **전제:** [externalid-economics-plan.md](externalid-economics-plan.md) · [quality-gate-mvp.md](quality-gate-mvp.md) · Sprint 03 이후  
+> **전제:** [externalid-economics-plan.md](archive/externalid-economics-plan.md) · [quality-gate-mvp.md](quality-gate-mvp.md) · Sprint 03 이후  
 > **기준일:** 2026-06-09 · Registry **402작**
 
 **금지:** enrich · 실험 실행 · 구조 변경 · 신규 ADR.
@@ -24,7 +24,7 @@
 
 ## 1. externalId 오류 유형
 
-> 확인 근거: Sprint 01~03 · `poster_verification.dart` · `urv_a_validation.dart` · [externalid-economics-plan.md](externalid-economics-plan.md) · franchise 정책(ADR-006).
+> 확인 근거: Sprint 01~03 · `poster_verification.dart` · `urv_a_validation.dart` · [externalid-economics-plan.md](archive/externalid-economics-plan.md) · franchise 정책(ADR-006).
 
 ### 1.1 잘못된 Steam appId
 
@@ -126,7 +126,7 @@
 
 ## 4. spot-check 필요 영역
 
-[coverage-quality-governance.md](coverage-quality-governance.md) M1–M7 · [externalid-economics-plan.md](externalid-economics-plan.md) cohort 기준.
+[coverage-quality-governance.md](coverage-quality-governance.md) M1–M7 · [externalid-economics-plan.md](archive/externalid-economics-plan.md) cohort 기준.
 
 | 우선순위 | 영역 | 대상 규모 | spot-check 초점 |
 |:--------:|------|:---------:|-----------------|
@@ -149,7 +149,7 @@
 
 ## 5. Sprint 04 최소 감사 샘플 규모
 
-**전제:** [externalid-economics-plan.md](externalid-economics-plan.md) — G2 50% **+141작** · E1+E2 poster 우선.
+**전제:** [externalid-economics-plan.md](archive/externalid-economics-plan.md) — G2 50% **+141작** · E1+E2 poster 우선.
 
 ### 5.1 최소선 (통계·거버넌스)
 
@@ -246,7 +246,7 @@ Economics Plan **In scope**에 더해, Quality **게이트 없이 착수 금지*
 | 문서 | 역할 |
 |------|------|
 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) | **본 문서** — 신뢰 리스크 |
-| [externalid-economics-plan.md](externalid-economics-plan.md) | Economics · cohort |
+| [externalid-economics-plan.md](archive/externalid-economics-plan.md) | Economics · cohort |
 | [quality-gate-mvp.md](quality-gate-mvp.md) | 현재 자동 게이트 |
 | [coverage-quality-governance.md](coverage-quality-governance.md) | spot-check SLA |
 

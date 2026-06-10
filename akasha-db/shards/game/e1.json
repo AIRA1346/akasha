@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Spike Chunsoft",
     "releaseYear": 2010,
-    "description": "학원에서 벌어지는 학급재판 미스터리 어드벤처.",
     "tags": [
       "미스터리",
       "어드벤처",
@@ -29,8 +28,7 @@
       "steam": "413410"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

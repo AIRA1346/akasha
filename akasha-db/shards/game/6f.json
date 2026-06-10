@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Capcom",
     "releaseYear": 2020,
-    "description": "Resident Evil 3 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "952060"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

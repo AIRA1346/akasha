@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "우노 요미",
     "releaseYear": 2005,
-    "description": "다이키치가 혼외손녀 리온을 키우며 가족의 의미를 배우는 힐링 드라마.",
     "tags": [
       "힐링",
       "가족",
@@ -28,8 +27,7 @@
       "tmdb": "42598"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

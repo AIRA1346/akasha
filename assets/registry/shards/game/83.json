@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Respawn Entertainment",
     "releaseYear": 2020,
-    "description": "영웅 기반 능력을 활용하는 배틀로얄 슈터.",
     "tags": [
       "배틀로얄",
       "FPS",
@@ -28,8 +27,7 @@
       "steam": "1172470"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

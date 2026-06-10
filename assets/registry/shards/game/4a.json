@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Insomniac",
     "releaseYear": 2023,
-    "description": "스파이더맨 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "2215430"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000285": {
@@ -38,7 +36,6 @@
     "domain": "subculture",
     "creator": "Cygames",
     "releaseYear": 2021,
-    "description": "레이스마를 육성하는 수집형 육성 시뮬레이션.",
     "tags": [
       "육성",
       "경마",

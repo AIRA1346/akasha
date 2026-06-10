@@ -7,6 +7,7 @@
 
 | 순서 | 문서 | 내용 |
 |:----:|------|------|
+| 0 | [product-vision.md](product-vision.md) | **제품 북극성** — Fact index + Sanctum vault |
 | 1 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로·마일스톤·병행 트랙 |
 | 2 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry·프로그램 **운영 SSOT** |
 | 3 | [sprint-05-charter.md](sprint-05-charter.md) | **현재 Sprint** — M2 Steam Launch |
@@ -42,6 +43,7 @@
 | 문서 | 범위 |
 |------|------|
 | [data-policy.md](data-policy.md) | 데이터 필드·provenance **최상위 정책** |
+| [product-vision.md](product-vision.md) | 제품·Tier 1/2 **북극성** |
 | [akasha-db-policy.md](akasha-db-policy.md) | 사전 구축·포스터·ID 운영 마스터 정책 |
 | [discovery-policy.md](discovery-policy.md) | Discovery ≠ Mirroring · 수집 경계 |
 | [catalog-ownership.md](catalog-ownership.md) | Tier 0~2 소유·추가 경로 |
@@ -61,7 +63,7 @@
 |------|------|
 | [my-library-design.md](my-library-design.md) | 나의 서재 UI 설계 (v1 구현 완료·잔여 UX) |
 | [commerce-boundary.md](commerce-boundary.md) | Steam IAP vs 제휴 커머스 경계 |
-| [catalog-expansion-plan.md](catalog-expansion-plan.md) | v1 엄선 카탈로그 확장 (완료) |
+| [archive/catalog-expansion-plan.md](archive/catalog-expansion-plan.md) | v1 엄선 확장 (**완료·역사**) |
 | [v4-migration-plan.md](v4-migration-plan.md) | v4 마이그레이션 Phase A~E (**완료**) |
 | [akasha-db-implementation-plan.md](akasha-db-implementation-plan.md) | 사전 CI·앱 구현 체크리스트 |
 | [data-architecture-redesign.md](data-architecture-redesign.md) | 데이터 아키텍처 장기 비전 |
@@ -114,7 +116,7 @@
 | [sprint-04-charter.md](sprint-04-charter.md) | 정의 (R1/R2 레이어) |
 | [sprint-04-baseline-report.md](sprint-04-baseline-report.md) | @430 Phase A baseline |
 | [sprint-04-document-reconciliation.md](sprint-04-document-reconciliation.md) | 문서 SSOT 계층 정리 |
-| [externalid-economics-plan.md](externalid-economics-plan.md) | Economics 계획 |
+| [externalid-economics-plan.md](archive/externalid-economics-plan.md) | Economics 계획 (**역사** — @402 시점) |
 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) | 품질 리스크 검토 |
 | [rule-id-collision-analysis.md](rule-id-collision-analysis.md) | Rule ID namespace 분석 (Sprint 05 EG 후보 입력) |
 
@@ -138,4 +140,4 @@
 
 ## 8. Archive
 
-완료 프로그램의 과정 기록(리뷰·관측 로그·감사 체인) **21건** — [archive/README.md](archive/README.md)
+완료 프로그램의 과정 기록(리뷰·관측 로그·감사 체인) **23건** — [archive/README.md](archive/README.md)

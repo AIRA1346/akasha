@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "아라키 코세이",
     "releaseYear": 2014,
-    "description": "피아노를 떠났던 코세이가 바이올리니스트 카오리를 만나 음악과 상처를 치유하는 청춘 드라마.",
     "tags": [
       "음악",
       "청춘",
@@ -36,8 +35,7 @@
       "tmdb": "61677"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

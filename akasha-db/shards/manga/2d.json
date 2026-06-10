@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "마시마 히로",
     "releaseYear": 2018,
-    "description": "시키가 에덴스 제로 호를 타고 우주를 떠돌며 마블리와 친구들을 찾는 우주 모험.",
     "tags": [
       "SF",
       "모험",
@@ -28,8 +27,7 @@
       "tmdb": "97525"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Wube Software",
     "releaseYear": 2020,
-    "description": "팩토리오 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "427520"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

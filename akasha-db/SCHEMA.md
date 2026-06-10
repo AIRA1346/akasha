@@ -4,7 +4,7 @@
 
 `manifest.json` → `"version": 4`, `"shardBits": 8`  
 샤딩: **해시 기반** (`shards/{category}/{hh}.json`, `hash(wk_)%256`)  
-규모: **402작** / **331 sparse 버킷** (Steam v1 엄선)
+규모: **430작** / **331 sparse 버킷** (Steam v1 엄선)
 
 데이터 권리 (최상위): [docs/data-policy.md](../docs/data-policy.md)  
 상세 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)  
@@ -13,7 +13,7 @@
 ### Registry Minimal Core (등록 최소)
 
 `workId` + `title` + `category` + (`releaseYear` 또는 `externalIds`) + (`creator` 권장).  
-`description`·`tags`·`posterPath`는 **필수 아님**. 상세: [data-policy.md §1.2](../docs/data-policy.md#12-registry-minimal-core-필수-영구-저장)
+`tags`는 선택. **`description`·`posterPath`는 Tier 1 금지** (v1, null만 허용·신규 추가 ❌). 상세: [data-policy.md §1.2](../docs/data-policy.md#12-registry-minimal-core-필수-영구-저장)
 
 ### Work entry (shard JSON)
 
@@ -24,7 +24,8 @@
 | `title` | ✅* | 레거시 단일 제목 (*`titles`만 있어도 됨) |
 | `titles` | | `{ "ko", "en", "ja", "romaji", "native", "zh" }` |
 | `aliases` | | 검색용 별칭 배열 |
-| `posterPath` | | `https://...` URL 또는 `null` |
+| `posterPath` | | **v1 Tier 1 금지** — `null`만 (CI `tier1_poster`) |
+| `description` | | **v1 Tier 1 금지** — Sanctum vault Markdown만 |
 | `externalIds` | | `{ "anilist", "steam", "tmdb", "isbn", ... }` |
 | `category` | ✅ | manga · animation · game · book · movie · drama · webtoon |
 | `domain` | ✅ | subculture · generalCulture |
@@ -38,21 +39,18 @@
   "qualitySignals": {
     "hasPoster": false,
     "hasDescription": false,
-    "posterVerified": false,
     "externalIdVerified": false,
-    "descriptionVerified": false,
     "franchiseVerified": false
   }
 }
 ```
 
-- `hasPoster` / `hasDescription`: 생략 시 빌드가 `posterPath`·`description`에서 유도
-- `posterVerified`: TMDB 등 검증 통과 시 `true` (또는 레거시 `extensions.posterVerified`)
-- `externalIdVerified` / `descriptionVerified`: 파이프라인·Contribution merge 시 설정
+- `hasPoster` / `hasDescription`: **v1 deprecated** — Tier 1에 poster·description 없음
+- `externalIdVerified`: 파이프라인·Contribution merge 시 설정
 - `franchiseVerified`: 생략 시 `franchise_groups` 멤버십으로 유도 가능
 - **`qualityScore` / `qualityTier`는 shard에 저장하지 않음** — `registry_builder`가 계산
 
-점수 (0–100, 파생): 제목 20 · 연도 10 · creator 10 · 포스터 10 · 설명 10 · externalId 20 · 검증 20 (verified 신호 4×5)
+점수 (0–100, 파생): 제목 25 · 연도 15 · creator 15 · externalId 25 · 검증 20 (verified 신호 4×5)
 
 tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 95+→5
 
@@ -94,8 +92,7 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 
 - **AniList API bulk 시드 금지**
 - 신규 작품: 수동 PR + (장기) Registry Pipeline
-- 설명: **자체 1~2문장**; 외부 시놉시스 복제 금지
-- 포스터: URL 링크만 — [POSTER_POLICY.md](POSTER_POLICY.md)
+- **`description`·`posterPath`:** Tier 1 **금지** — [POSTER_POLICY.md](POSTER_POLICY.md) · [product-vision.md](../docs/product-vision.md)
 - 중복: [canonicalization-policy.md](../docs/canonicalization-policy.md)
 
 ---

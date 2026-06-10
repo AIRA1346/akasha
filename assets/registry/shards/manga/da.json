@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "카가미 타카히로",
     "releaseYear": 2012,
-    "description": "바이러스로 인류가 사라진 뒤 뱀파이어와 싸우는 유우와 동료들의 다크 액션.",
     "tags": [
       "다크",
       "액션",
@@ -28,8 +27,7 @@
       "tmdb": "62444"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

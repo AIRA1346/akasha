@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Santa Monica Studio",
     "releaseYear": 2022,
-    "description": "크라토스와 아트레우스의 북유럽 신화 여정을 그린 액션 어드벤처.",
     "tags": [
       "액션",
       "신화",
@@ -28,8 +27,7 @@
       "steam": "1593500"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000089": {
@@ -39,7 +37,6 @@
     "domain": "generalCulture",
     "creator": "Studio MDHR",
     "releaseYear": 2017,
-    "description": "컵헤드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -60,8 +57,7 @@
       "steam": "268910"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

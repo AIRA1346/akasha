@@ -81,13 +81,13 @@
 
 ## Phase 5 — 카탈로그 확장 (애니·만화 우선)
 
-> 상세 계획: [catalog-expansion-plan.md](catalog-expansion-plan.md)  
+> 상세 계획 (역사): [archive/catalog-expansion-plan.md](archive/catalog-expansion-plan.md)  
 > **법무:** 메타 직접 작성 · 포스터 URL만 · API bulk·anilistcdn 신규 금지
 
 | 마일스톤 | manga + animation | 총 카탈로그 | 상태 |
 |----------|-------------------|------------|------|
 | AM1 | 115 → **180** (+45) | **370** | ✅ |
-| AM2 | 180 → **220** (+40) | ~410 | 🔲 |
+| AM2 | 180 → **220** (+40) | **430** ✅ | 완료 |
 | AM3 | 220 → **250** (+30) | ~450 | 🔲 |
 
 | 작업 | 우선순위 |

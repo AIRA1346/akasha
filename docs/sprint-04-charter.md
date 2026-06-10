@@ -2,7 +2,7 @@
 
 > **목적:** Sprint 04 **시작 여부 최종 결정**을 위한 Sprint 정의.  
 > **범위:** externalId **14.9% → G2 50%** — Economics·Quality **동시 검증**.  
-> **전제:** Sprint 01~03 완료 · [externalid-economics-plan.md](externalid-economics-plan.md) · [externalid-quality-risk-review.md](externalid-quality-risk-review.md)  
+> **전제:** Sprint 01~03 완료 · [externalid-economics-plan.md](archive/externalid-economics-plan.md) · [externalid-quality-risk-review.md](externalid-quality-risk-review.md)  
 > **기준일:** 2026-06-09 · Registry **402작**
 
 **금지 (본 문서 작성 시점):** enrich 실행 · 실험 실행 · 구조 변경 · 신규 provider.
@@ -71,7 +71,7 @@
 
 ### 2.1 In scope — cohort 전략
 
-[externalid-economics-plan.md](externalid-economics-plan.md) §4.2 실행 순서.
+[externalid-economics-plan.md](archive/externalid-economics-plan.md) §4.2 실행 순서.
 
 | Phase | cohort | 모집단 | 예상 규모 | 공급원 | attach 방식 |
 |:-----:|--------|--------|:---------:|--------|-------------|
@@ -204,7 +204,7 @@ Sprint 04 **종료 보고** (Mid-Review Sprint 03 형식)에 포함.
 | wall clock | 미측정 | 스크립트·배치 타이밍 |
 | Δ (추정 vs 실측) | — | **문서화 필수** |
 
-**가설 (검증 대상):** poster-priority **4.7–12h** human-eq ([externalid-economics-plan.md](externalid-economics-plan.md) §5.2).
+**가설 (검증 대상):** poster-priority **4.7–12h** human-eq ([externalid-economics-plan.md](archive/externalid-economics-plan.md) §5.2).
 
 ### 6.2 Automation 비율
 
@@ -238,7 +238,7 @@ Sprint 04 **종료 보고** (Mid-Review Sprint 03 형식)에 포함.
 | # | 전제 | 상태 |
 |---|------|:----:|
 | P1 | Sprint 01~03 · titles.en Economics **검증** | ✅ |
-| P2 | [externalid-economics-plan.md](externalid-economics-plan.md) — G2 경로 **존재** | ✅ |
+| P2 | [externalid-economics-plan.md](archive/externalid-economics-plan.md) — G2 경로 **존재** | ✅ |
 | P3 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) — blind spot·감사 **정의** | ✅ |
 | P4 | Quality Gate MVP · `quality_gate --strict` **PASS** (현 registry) | ✅ |
 | P5 | Phase 2 **구조 변경 금지** 합의 | ✅ |
@@ -283,7 +283,7 @@ Sprint 04 **종료 보고** (Mid-Review Sprint 03 형식)에 포함.
 | 문서 | 역할 |
 |------|------|
 | [sprint-04-charter.md](sprint-04-charter.md) | **본 문서** — Sprint 정의·GO/NO-GO |
-| [externalid-economics-plan.md](externalid-economics-plan.md) | cohort · 비용 가설 |
+| [externalid-economics-plan.md](archive/externalid-economics-plan.md) | cohort · 비용 가설 |
 | [externalid-quality-risk-review.md](externalid-quality-risk-review.md) | 리스크 · 감사 규모 |
 | [coverage-quality-governance.md](coverage-quality-governance.md) | E/I/R 게이트 |
 | [quality-gate-mvp.md](quality-gate-mvp.md) | `--strict` · release |

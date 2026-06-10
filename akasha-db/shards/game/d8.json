@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Facepunch Studios",
     "releaseYear": 2013,
-    "description": "야생 서버에서 생존·기지 건설·PvP가 공존하는 하드코어 서바이벌.",
     "tags": [
       "서바이벌",
       "PvP",
@@ -29,8 +28,7 @@
       "steam": "252490"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000123": {
@@ -40,7 +38,6 @@
     "domain": "generalCulture",
     "creator": "Supermassive",
     "releaseYear": 2021,
-    "description": "리틀 나이트메어 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -61,8 +58,7 @@
       "steam": "774181"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

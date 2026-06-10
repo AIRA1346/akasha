@@ -166,7 +166,7 @@ flowchart LR
 | `is_hall_of_fame` | S-Tier 명예의 전당 |
 | `poster` | `posters/` 상대경로 또는 커스텀 URL (Registry CDN URL은 YAML에 저장하지 않음) |
 
-본문에는 **명대사·감상문**만 기록합니다. 설명은 글로벌 사전에서 UI fusion · **포스터는 유저가 Sanctum vault에 직접** 넣습니다.
+본문에는 **명대사·감상·메모** 등 자유롭게 기록합니다. **Tier 1 사전에는 Fact만** — 설명·포스터는 유저 Sanctum vault에 직접 넣습니다. ([product-vision.md](docs/product-vision.md))
 
 ### 외부 편집
 
@@ -199,6 +199,7 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 
 ## 📄 관련 문서
 
+- [docs/product-vision.md](docs/product-vision.md) — **제품 북극성** (Fact index + Sanctum vault)
 - [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
 - [docs/akasha-db-policy.md](docs/akasha-db-policy.md) — **사전 구축·포스터·CI 마스터 정책**
 - [docs/akasha-db-implementation-plan.md](docs/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태

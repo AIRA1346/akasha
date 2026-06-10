@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Capcom",
     "releaseYear": 2019,
-    "description": "Resident Evil 2 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "883710"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

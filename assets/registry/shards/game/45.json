@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Irrational Games",
     "releaseYear": 2007,
-    "description": "수중 도시 루테르시아의 비밀을 파헤치는 SF FPS.",
     "tags": [
       "FPS",
       "SF",
@@ -28,8 +27,7 @@
       "steam": "7670"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000277": {
@@ -39,7 +37,6 @@
     "domain": "subculture",
     "creator": "Shift Up",
     "releaseYear": 2022,
-    "description": "황폐해진 지상에서 외계 기계 병기에 맞서 싸우는 건슈팅 RPG.",
     "tags": [
       "포스트아포칼립스",
       "건슈팅",
@@ -56,9 +53,6 @@
     "extensions": {
       "coverageSprint03": "steam_fetch",
       "coverageSprint04R2Fix": "W6_nikke_identity"
-    },
-    "qualitySignals": {
-      "hasDescription": true
     }
   },
   "wk_000000087": {
@@ -68,7 +62,6 @@
     "domain": "generalCulture",
     "creator": "Colossal Order",
     "releaseYear": 2015,
-    "description": "시티즈: 스카이라인 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -89,8 +82,7 @@
       "steam": "255710"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

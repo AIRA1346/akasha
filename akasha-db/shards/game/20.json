@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Toby Fox",
     "releaseYear": 2015,
-    "description": "선택에 따라 결말이 달라지는 인디 RPG 명작.",
     "tags": [
       "인디",
       "RPG",
@@ -29,8 +28,7 @@
       "steam": "391540"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

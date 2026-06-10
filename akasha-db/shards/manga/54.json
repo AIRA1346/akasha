@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "타카하시 루미코",
     "releaseYear": 1987,
-    "description": "물에 닿으면 성별이 바뀌는 란마를 둘러싼 무술 도장과 연애가 뒤엉킨 코미디.",
     "tags": [
       "코미디",
       "무술",
@@ -28,8 +27,7 @@
       "tmdb": "2607"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000377": {
@@ -44,7 +42,6 @@
     "domain": "subculture",
     "creator": "쿠로다 마사미",
     "releaseYear": 1985,
-    "description": "청소년 성斗士들이 성衣를 입고 황금십이궁과 싸우는 신화 액션.",
     "tags": [
       "액션",
       "신화",
@@ -61,8 +58,7 @@
       "tmdb": "42414"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Iron Gate",
     "releaseYear": 2021,
-    "description": "발헤임 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "892970"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "sub_game_scale-supply-b6b_2026": {
@@ -43,7 +41,6 @@
     "domain": "subculture",
     "creator": "A5 Scale Maintainer",
     "releaseYear": 2026,
-    "description": "Scale Net-new insert — Maintainer anchor (Expansion cohort B-type).",
     "tags": [
       "scale",
       "supply"

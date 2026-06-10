@@ -6,7 +6,7 @@
 
 **금지:** 새 분석 · 새 실험 · 새 구조 논의 · enrich 실행.
 
-**근거 문서만 사용:** [sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](../externalid-economics-plan.md) · [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) · [phase2-governance-review.md](../phase2-governance-review.md) · [quality-gate-mvp.md](../quality-gate-mvp.md) · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) · [phase2-charter.md](../phase2-charter.md) · [coverage-quality-governance.md](../coverage-quality-governance.md) · [phase2-mid-review.md](phase2-mid-review.md).
+**근거 문서만 사용:** [sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](externalid-economics-plan.md) · [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) · [phase2-governance-review.md](../phase2-governance-review.md) · [quality-gate-mvp.md](../quality-gate-mvp.md) · [phase2-late-stage-plan.md](phase2-late-stage-plan.md) · [phase2-charter.md](../phase2-charter.md) · [coverage-quality-governance.md](../coverage-quality-governance.md) · [phase2-mid-review.md](phase2-mid-review.md).
 
 ---
 
@@ -32,7 +32,7 @@ Sprint 04는 **계획 단계를 종료**하고 **실행 대기**로 전환한다
 | # | 항목 | 근거 | 상태 |
 |---|------|------|:----:|
 | R1 | Sprint 04 **목표** — externalId **14.9% → 50%** (+141) | [sprint-04-charter.md](../sprint-04-charter.md) §1 | ✅ |
-| R2 | **범위** — E1 Steam · E2 TMDB poster cohort | Charter §2 · [externalid-economics-plan.md](../externalid-economics-plan.md) §4.2 | ✅ |
+| R2 | **범위** — E1 Steam · E2 TMDB poster cohort | Charter §2 · [externalid-economics-plan.md](externalid-economics-plan.md) §4.2 | ✅ |
 | R3 | **제외** — titles.en · zh · 신규 provider · 구조 변경 | Charter §3 | ✅ |
 | R4 | **성공·실패 조건** — G2 · 회귀 · Quality · 감사 | Charter §4–§5 | ✅ |
 | R5 | **종료 평가** — Economics 실측 · automation · quality 이슈 | Charter §6 | ✅ |
@@ -171,14 +171,14 @@ Sprint 04 **Day 0** — enrich **전** 확인.
 ### 5.1 승인·전제 (완료 확인)
 
 - [x] [sprint-04-charter.md](../sprint-04-charter.md) 검토·승인
-- [x] [externalid-economics-plan.md](../externalid-economics-plan.md) 검토 완료
+- [x] [externalid-economics-plan.md](externalid-economics-plan.md) 검토 완료
 - [x] [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) 검토 완료
 - [x] Governance P0 **G1–G5** ([phase2-governance-review.md](../phase2-governance-review.md) §7.1)
 - [x] `quality_gate --strict` **PASS** (현 registry baseline)
 
 ### 5.2 실행 착수 (Day 1 — 문서 순서)
 
-- [ ] `coverage_sprint_04_external_id.dart` (가칭) **`--dry-run`** — E1+E2 cohort 선정 ([Economics Plan §8.3](../externalid-economics-plan.md))
+- [ ] `coverage_sprint_04_external_id.dart` (가칭) **`--dry-run`** — E1+E2 cohort 선정 ([Economics Plan §8.3](externalid-economics-plan.md))
 - [ ] **E2 TMDB** — ≤31작 attach 계획 확정 · **전수 감사** 체크리스트 준비 (Quality Risk A1–A5)
 - [ ] **E1 Steam** — +141까지 attach 계획 · **100% spot-check** 일정 (Charter §5.2)
 - [ ] 배치 워크플로 확인 — builder → dashboard → SW1 → URV → `quality_gate --strict` (Governance §5)
@@ -216,7 +216,7 @@ Sprint 04 **Day 0** — enrich **전** 확인.
 |------|----------------|
 | [sprint-04-readiness-review.md](sprint-04-readiness-review.md) | **본 문서** — 착수 승인 |
 | [sprint-04-charter.md](../sprint-04-charter.md) | Sprint 정의·실행 순서 |
-| [externalid-economics-plan.md](../externalid-economics-plan.md) | cohort · 비용 |
+| [externalid-economics-plan.md](externalid-economics-plan.md) | cohort · 비용 |
 | [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) | 리스크 · 감사 |
 | [phase2-governance-review.md](../phase2-governance-review.md) | P0 · 워크플로 |
 

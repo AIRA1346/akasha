@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "The Indie Stone",
     "releaseYear": 2013,
-    "description": "프로젝트 좀보이드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "108600"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000066": {
@@ -38,7 +36,6 @@
     "domain": "generalCulture",
     "creator": "FromSoftware",
     "releaseYear": 2012,
-    "description": "다크 소울 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -59,8 +56,7 @@
       "steam": "205100"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000126": {
@@ -70,7 +66,6 @@
     "domain": "generalCulture",
     "creator": "Forgotten Empires",
     "releaseYear": 2019,
-    "description": "Age of Empires II DE — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -91,8 +86,7 @@
       "steam": "813780"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

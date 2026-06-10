@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "트리거",
     "releaseYear": 2013,
-    "description": "전투복을 입은 류코가 학원 지배 체제에 맞서 복수와 진실을 쫓는 과장된 액션.",
     "tags": [
       "액션",
       "코미디",
@@ -36,8 +35,7 @@
       "tmdb": "51663"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

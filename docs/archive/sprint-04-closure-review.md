@@ -25,7 +25,7 @@
 
 ### 1.1 원래 Sprint 04 목표
 
-[sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](../externalid-economics-plan.md) 기준.
+[sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](externalid-economics-plan.md) 기준.
 
 | # | 목표 |
 |---|------|

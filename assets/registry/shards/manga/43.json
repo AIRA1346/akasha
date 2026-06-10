@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "미우라 켄트",
     "releaseYear": 1989,
-    "description": "거대한 검을 휘두르는 전사 가츠의 복수와 어두운 판타지 세계.",
     "tags": [
       "다크판타지",
       "복수",
@@ -36,7 +35,6 @@
     "domain": "subculture",
     "creator": "아다치로",
     "releaseYear": 2010,
-    "description": "신이 되고 싶은 빈신 야토와 히요리가 요괴와 신들의 세계를 오가는 액션.",
     "tags": [
       "액션",
       "신화",
@@ -53,8 +51,7 @@
       "tmdb": "60865"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

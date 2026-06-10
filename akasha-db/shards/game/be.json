@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Capcom",
     "releaseYear": 2023,
-    "description": "Resident Evil 4 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "2050650"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000090": {
@@ -38,7 +36,6 @@
     "domain": "generalCulture",
     "creator": "Rockstar Games",
     "releaseYear": 2013,
-    "description": "로스 산토스를 배경으로 한 오픈월드 액션 어드벤처.",
     "tags": [
       "오픈월드",
       "액션",
@@ -61,8 +58,7 @@
       "steam": "271590"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

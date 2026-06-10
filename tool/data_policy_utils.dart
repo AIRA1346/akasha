@@ -3,7 +3,7 @@ library;
 
 import 'poster_url_policy.dart';
 
-/// AKASHA 자체 설명 상한 (1~3문장; 시놉 복제 탐지)
+/// Tier 1 WorkEntry — description·posterPath 금지 (v1 Fact only)
 const dataPolicyMaxDescriptionChars = 500;
 
 const dataPolicyMaxTitleChars = 200;
@@ -24,7 +24,6 @@ const allowedWorkTopLevelKeys = {
   'domain',
   'creator',
   'releaseYear',
-  'description',
   'tags',
   'posterPath',
   'externalIds',
@@ -164,9 +163,6 @@ class DataPolicyViolation {
   @override
   String toString() => '$relativePath/$workId [$rule] $detail';
 }
-
-final _htmlTagPattern = RegExp(r'<[a-z][\s\S]*?>', caseSensitive: false);
-
 /// WorkEntry 1건 검사
 List<DataPolicyViolation> lintWorkEntry({
   required String workId,
@@ -207,15 +203,10 @@ List<DataPolicyViolation> lintWorkEntry({
 
   final description = work['description']?.toString() ?? '';
   if (description.isNotEmpty) {
-    if (description.length > dataPolicyMaxDescriptionChars) {
-      add(
-        'text_length',
-        'description length ${description.length} > $dataPolicyMaxDescriptionChars',
-      );
-    }
-    if (_htmlTagPattern.hasMatch(description)) {
-      add('description_html', 'description contains HTML markup');
-    }
+    add(
+      'tier1_description',
+      'Tier 1 description forbidden — user Sanctum vault only (v1)',
+    );
   }
 
   final title = work['title']?.toString() ?? '';

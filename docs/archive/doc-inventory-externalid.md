@@ -60,7 +60,7 @@
 | 22 | [canonical-identity-coverage-dashboard.md](../canonical-identity-coverage-dashboard.md) | Coverage KPI·패널 정의 |
 | 23 | [canonicalization-policy.md](../canonicalization-policy.md) | Identity·dedupe 정책 초안 |
 | 24 | [catalog-contribution-roadmap.md](../catalog-contribution-roadmap.md) | Contribution 로드맵 |
-| 25 | [catalog-expansion-plan.md](../catalog-expansion-plan.md) | 카탈로그 확장 계획 |
+| 25 | [catalog-expansion-plan.md](catalog-expansion-plan.md) | 카탈로그 확장 계획 |
 | 26 | [catalog-ownership.md](../catalog-ownership.md) | Tier 0/1 소유권 |
 | 27 | [commerce-boundary.md](../commerce-boundary.md) | 커머스 경계 |
 | 28 | [contribution-model-strategy.md](../contribution-model-strategy.md) | Contribution 모델 |
@@ -69,7 +69,7 @@
 | 31 | [data-policy.md](../data-policy.md) | 데이터 정책 (필드 분류) |
 | 32 | [discovery-policy.md](../discovery-policy.md) | Discovery 정책 |
 | 33 | [expansion-tool-grading.md](../expansion-tool-grading.md) | insert 도구 등급 |
-| 34 | [externalid-economics-plan.md](../externalid-economics-plan.md) | externalId G2 Economics |
+| 34 | [externalid-economics-plan.md](externalid-economics-plan.md) | externalId G2 Economics |
 | 35 | [externalid-quality-gate-rules.md](../externalid-quality-gate-rules.md) | externalId attach Rule E1–E5 **초안** |
 | 36 | [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) | externalId 품질 리스크 |
 | 37 | [global-search-query-set.md](../global-search-query-set.md) | SW1 쿼리 세트 |
@@ -167,7 +167,7 @@
 | [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) | Steam/TMDB attach **오류 유형** | **active** | 낮음 |
 | [coverage-quality-governance.md](../coverage-quality-governance.md) §4.1 | **I2** externalId 선검증 · **I3** poster–ID | **active** | 중간 |
 | [sprint-04-e1-audit.md](sprint-04-e1-audit.md) | E1 cohort **수동 감사** | **draft** (측정) | 낮음 |
-| [externalid-economics-plan.md](../externalid-economics-plan.md) | attach **대상·규모** (Economics) | **active** | 낮음 |
+| [externalid-economics-plan.md](externalid-economics-plan.md) | attach **대상·규모** (Economics) | **active** | 낮음 |
 
 **도구 (문서화):** `tool/poster_verification.dart` · `tool/coverage_sprint_04_external_id.dart` — **attach runner** · gate **미통합**
 
@@ -213,7 +213,7 @@
 |------|------|:----:|:---------:|
 | [sprint-04-charter.md](../sprint-04-charter.md) | Sprint 정의 @402 | **active** (charter) | **예** — @430 재기준선 |
 | [sprint-04-readiness-review.md](sprint-04-readiness-review.md) | 착수 승인 | **active** (historical) | 낮음 |
-| [externalid-economics-plan.md](../externalid-economics-plan.md) | Economics @402 | **active** | **예** — 수치 |
+| [externalid-economics-plan.md](externalid-economics-plan.md) | Economics @402 | **active** | **예** — 수치 |
 | [externalid-quality-risk-review.md](../externalid-quality-risk-review.md) | Quality 리스크 @402 | **active** | 중간 |
 | [sprint-04-final-review.md](sprint-04-final-review.md) | **141건 apply 완료** @402 · G2 달성 | **deprecated†** | **예** — Phase B와 **모순** |
 | [sprint-04-baseline-report.md](../sprint-04-baseline-report.md) | Phase A @430 | **draft** (측정) | 낮음 |
@@ -264,7 +264,7 @@
 | P1 | [coverage-quality-governance.md](../coverage-quality-governance.md) | Rule ID **충돌** 해소 · attach gate **참조** |
 | P1 | [docs/README.md](../README.md) | Sprint 04 Phase B·본 inventory **링크** |
 | P2 | [phase2-governance-review.md](../phase2-governance-review.md) | @430 · externalId gate **한 줄** |
-| P2 | [sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](../externalid-economics-plan.md) | G2 **215/430** 재기준선 |
+| P2 | [sprint-04-charter.md](../sprint-04-charter.md) · [externalid-economics-plan.md](externalid-economics-plan.md) | G2 **215/430** 재기준선 |
 
 **구현·apply·ADR:** 본 인벤토리 **범위 외**.
 

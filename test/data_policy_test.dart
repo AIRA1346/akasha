@@ -58,7 +58,7 @@ void main() {
       expect(issues.any((i) => i.rule == 'api_blob'), isTrue);
     });
 
-    test('rejects long description', () {
+    test('rejects tier1 description', () {
       final issues = lintWorkEntry(
         workId: 'wk_000000004',
         work: {
@@ -66,11 +66,11 @@ void main() {
           'title': '테스트',
           'category': 'manga',
           'domain': 'subculture',
-          'description': 'a' * (dataPolicyMaxDescriptionChars + 1),
+          'description': 'AKASHA 자체 요약',
         },
         relativePath: 'shards/manga/03.json',
       );
-      expect(issues.any((i) => i.rule == 'text_length'), isTrue);
+      expect(issues.any((i) => i.rule == 'tier1_description'), isTrue);
     });
 
     test('rejects invalid posterSource', () {

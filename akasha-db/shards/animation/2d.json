@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "하라 야스히사",
     "releaseYear": 2012,
-    "description": "전국시대를 배경으로 신이 왕국 통일을 꿈꾸며 전장에서 성장하는 소년의 이야기.",
     "tags": [
       "역사",
       "전쟁",
@@ -36,8 +35,7 @@
       "tmdb": "72408"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

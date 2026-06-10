@@ -29,7 +29,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
 | 사전 규모 | **최종: 전 작품 사전** · 현재 **430작** · **v4 운영** (`wk_` 영구 ID·해시 샤드) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
-| 포스터 | URL 링크만 (self-hosted ❌), CI denylist |
+| 포스터 | **v1: Tier 1 미제공** — Sanctum vault만 ([data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)) |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
 
 ---
@@ -77,7 +77,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 - [x] v1 체크리스트 (Steam depot 제외)
 - [x] `flutter test` 94/94 · `ci_registry_check` green
-- [x] 번들 smoke (`steam_v1_bundle_test` — ~410작·웹툰 이관)
+- [x] 번들 smoke (`steam_v1_bundle_test` — 430작·웹툰 이관)
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
 - [x] **akasha-db GitHub push** — ~410작 엄선 카탈로그 반영
 - [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test 96/96 · ci_registry_check)

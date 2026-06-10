@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Videocult",
     "releaseYear": 2017,
-    "description": "레인월드 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "548570"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000287": {
@@ -38,7 +36,6 @@
     "domain": "subculture",
     "creator": "Kuro Games",
     "releaseYear": 2024,
-    "description": "잔향을 수집하며 모험하는 오픈월드 액션 RPG.",
     "tags": [
       "오픈월드",
       "액션",

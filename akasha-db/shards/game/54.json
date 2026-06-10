@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "HoYoverse",
     "releaseYear": 2020,
-    "description": "티바트 대륙을 탐험하는 오픈월드 어드벤처 RPG.",
     "tags": [
       "오픈월드",
       "수집형RPG",
@@ -31,7 +30,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2011,
-    "description": "포털 건으로 퍼즐을 푸는 SF 코미디 명작.",
     "tags": [
       "퍼즐",
       "SF",
@@ -54,8 +52,7 @@
       "steam": "620"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "sub_game_scale-exp-b7-probe-gamma_2026": {
@@ -70,7 +67,6 @@
     "domain": "subculture",
     "creator": "A5 Scale Expansion",
     "releaseYear": 2026,
-    "description": "Scale A-type Expansion probe — Net-new cohort for gate validation.",
     "tags": [
       "scale",
       "expansion",

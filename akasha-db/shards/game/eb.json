@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Ubisoft",
     "releaseYear": 2020,
-    "description": "발할라: 신들의 황혼 — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1086940"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

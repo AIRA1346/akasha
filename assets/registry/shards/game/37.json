@@ -6,7 +6,6 @@
     "domain": "subculture",
     "creator": "Square Enix",
     "releaseYear": 2018,
-    "description": "여덟 여행자의 HD-2D 판타지 여정.",
     "tags": [
       "JRPG",
       "판타지",
@@ -29,8 +28,7 @@
       "steam": "921570"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

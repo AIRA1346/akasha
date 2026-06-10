@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Mojang Studios",
     "releaseYear": 2011,
-    "description": "무한한 복셀 세계에서 자원을 채취하고 건축하는 샌드박스 게임.",
     "tags": [
       "샌드박스",
       "서바이벌",
@@ -33,8 +32,7 @@
       "steam": "322170"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

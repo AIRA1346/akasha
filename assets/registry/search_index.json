@@ -25,7 +25,7 @@
       "en": "1984",
       "ko": "1984"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -61,7 +61,7 @@
       "ja": "20世紀少年",
       "romaji": "20th Century Boys"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -93,8 +93,8 @@
       "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000380",
@@ -125,8 +125,8 @@
       "en": "Shigatsu WA Kimi NO USO",
       "ko": "4월은 너의 거짓말"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000234",
@@ -159,8 +159,8 @@
       "en": "Your Lie in April",
       "ja": "四月は君の嘘"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000371",
@@ -191,8 +191,8 @@
       "en": "Quintessential Quintuplets",
       "ko": "5등분의 신부"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000082",
@@ -220,8 +220,8 @@
       "en": "7 Days to Die",
       "ko": "7 Days to Die"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000292",
@@ -253,8 +253,8 @@
       "en": "86 Eighty SIX",
       "ko": "86 -에이티식스-"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000253",
@@ -286,8 +286,8 @@
       "en": "86 -Eighty-Six-",
       "ko": "86 -에이티식스-"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000126",
@@ -317,8 +317,8 @@
       "en": "Save 65% on Age of Empires II: Definitive Edition",
       "ko": "Age of Empires II DE"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000051",
@@ -348,8 +348,8 @@
       "en": "Save 65% on Age of Empires IV: Anniversary Edition",
       "ko": "Age of Empires IV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000060",
@@ -379,8 +379,8 @@
       "en": "ARMORED CORE™ VI FIRES OF RUBICON™",
       "ko": "Armored Core VI"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000173",
@@ -410,8 +410,8 @@
       "en": "BEASTARS",
       "ja": "BEASTARS"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000298",
@@ -440,8 +440,8 @@
       "en": "BEASTARS",
       "ko": "BEASTARS"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000130",
@@ -470,8 +470,8 @@
       "en": "Cities: Skylines II",
       "ko": "Cities Skylines II"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000313",
@@ -503,7 +503,7 @@
       "en": "D.Gray-man",
       "ja": "ディー・グレイマン"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -532,8 +532,8 @@
       "en": "Don't Starve",
       "ko": "Don't Starve"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000094",
@@ -561,8 +561,8 @@
       "en": "Don't Starve Together",
       "ko": "Don't Starve Together"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000189",
@@ -594,8 +594,8 @@
       "en": "Dr. Stone",
       "ja": "Dr.STONE"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000316",
@@ -624,8 +624,8 @@
       "en": "Dr.STONE",
       "ko": "Dr.STONE"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000078",
@@ -653,8 +653,8 @@
       "en": "Dying Light",
       "ko": "Dying Light"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000114",
@@ -684,8 +684,8 @@
       "en": "Dying Light 2 Stay Human: Reloaded Edition",
       "ko": "Dying Light 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000044",
@@ -715,8 +715,8 @@
       "en": "Grand Theft Auto IV: The Complete Edition",
       "ko": "GTA IV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000043",
@@ -746,8 +746,8 @@
       "en": "Grand Theft Auto: San Andreas",
       "ko": "GTA San Andreas"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000333",
@@ -779,8 +779,8 @@
       "en": "Great Teacher Onizuka",
       "ja": "GTO"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000069",
@@ -810,8 +810,8 @@
       "en": "Vector Wave",
       "ko": "Ghost of Tsushima"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000095",
@@ -841,8 +841,8 @@
       "en": "Grand Theft Auto V Enhanced",
       "ko": "Grand Theft Auto III"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000033",
@@ -870,8 +870,8 @@
       "en": "Hades II",
       "ko": "Hades II"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000056",
@@ -899,8 +899,8 @@
       "en": "Lies of P",
       "ko": "Lies of P"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000357",
@@ -928,7 +928,7 @@
     "titles": {
       "en": "NANA"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -959,8 +959,8 @@
       "en": "Save 85% on Nioh: Complete Edition",
       "ko": "Nioh"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000047",
@@ -990,8 +990,8 @@
       "en": "Save 60% on Nioh 2 – The Complete Edition",
       "ko": "Nioh 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000373",
@@ -1020,7 +1020,7 @@
       "en": "REAL",
       "ko": "REAL"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1061,8 +1061,8 @@
       "ja": "Re:ゼロから始める異世界生活",
       "romaji": "Re:Zero"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000260",
@@ -1093,8 +1093,8 @@
       "en": "Rezero",
       "ko": "Re:제로 라이트노벨"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000375",
@@ -1134,8 +1134,8 @@
       "ja": "Re:ゼロから始める異世界生活",
       "romaji": "Re:Zero"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000128",
@@ -1165,8 +1165,8 @@
       "en": "Save 80% on Resident Evil 2",
       "ko": "Resident Evil 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000131",
@@ -1196,8 +1196,8 @@
       "en": "Save 80% on Resident Evil 3",
       "ko": "Resident Evil 3"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000065",
@@ -1227,8 +1227,8 @@
       "en": "Save 75% on Resident Evil 4",
       "ko": "Resident Evil 4"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000041",
@@ -1258,8 +1258,8 @@
       "en": "Save 75% on Resident Evil Village",
       "ko": "Resident Evil Village"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000048",
@@ -1289,8 +1289,8 @@
       "en": "Save 70% on Sons Of The Forest",
       "ko": "Sons of the Forest"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000104",
@@ -1320,8 +1320,8 @@
       "en": "Save 50% on Garry's Mod",
       "ko": "가라오케 파티"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000326",
@@ -1352,7 +1352,7 @@
       "en": "Gabriel Dropout",
       "ko": "가브릴 드롭아웃"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1385,7 +1385,7 @@
       "en": "Gachiakuta",
       "ja": "ガチアクタ"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1417,8 +1417,8 @@
       "en": "God of War",
       "ko": "갓 오브 워"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000325",
@@ -1456,8 +1456,8 @@
       "ja": "鋼の錬金術師",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000194",
@@ -1500,8 +1500,8 @@
       "ja": "鋼の錬金術師 FULLMETAL ALCHEMIST",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000329",
@@ -1534,8 +1534,8 @@
       "en": "Goblin Slayer",
       "ja": "ゴブリンスレイヤー"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000330",
@@ -1566,8 +1566,8 @@
       "en": "Golden Kamuy",
       "ko": "골든 카무이"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000196",
@@ -1600,8 +1600,8 @@
       "en": "Golden Kamuy",
       "ja": "ゴールデンカムイ"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000206",
@@ -1634,8 +1634,8 @@
       "en": "Kaiju No. 8",
       "ja": "怪獣8号"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000342",
@@ -1666,8 +1666,8 @@
       "en": "Kaiju NO 8",
       "ko": "괴수 8호"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000405",
@@ -1690,7 +1690,7 @@
     "titles": {
       "ko": "귀멸 칼날 무한열차"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1731,8 +1731,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000188",
@@ -1771,8 +1771,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000404",
@@ -1799,7 +1799,7 @@
     "titles": {
       "ko": "귀멸의 칼날: 무한열차편"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1833,7 +1833,7 @@
       "en": "Grand Blue Dreaming",
       "ja": "ぐらんぶる"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1865,8 +1865,8 @@
       "en": "Grand Theft Auto V Legacy",
       "ko": "그랜드 테프트 오토 V"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000022",
@@ -1898,7 +1898,7 @@
       "en": "Stranger Things",
       "ko": "기묘한 이야기"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -1933,8 +1933,8 @@
       "en": "Parasyte: The Maxim",
       "ja": "寄生獣 セイの格率"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000368",
@@ -1965,8 +1965,8 @@
       "en": "Parasyte",
       "ko": "기생수"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000161",
@@ -1992,7 +1992,7 @@
     "titles": {
       "ko": "기생충"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2024,8 +2024,8 @@
       "en": "Solo Leveling",
       "ko": "나 혼자만 레벨업"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000238",
@@ -2058,8 +2058,8 @@
       "en": "Solo Leveling",
       "ja": "俺だけレベルアップな件"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000358",
@@ -2089,8 +2089,8 @@
       "en": "Naruto",
       "ko": "나루토"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000218",
@@ -2124,8 +2124,8 @@
       "ja": "NARUTO",
       "zh": "火影忍者"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000217",
@@ -2158,8 +2158,8 @@
       "en": "My Hero Academia",
       "ja": "僕のヒーローアカデミア"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000355",
@@ -2190,8 +2190,8 @@
       "en": "MY Hero Academia",
       "ko": "나의 히어로 아카데미아"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000407",
@@ -2215,8 +2215,8 @@
     "titles": {
       "ko": "날씨의 아이"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000249",
@@ -2247,8 +2247,8 @@
       "en": "Weathering With YOU",
       "ko": "날씨의 아이"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000365",
@@ -2276,7 +2276,7 @@
     "titles": {
       "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2301,7 +2301,7 @@
     "titles": {
       "ko": "너의 이름은."
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2333,8 +2333,8 @@
       "en": "Your Name",
       "ko": "너의 이름은."
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000258",
@@ -2364,8 +2364,8 @@
       "en": "NO Game NO Life",
       "ko": "노 게임 노 라이프"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000220",
@@ -2399,8 +2399,8 @@
       "en": "No Game No Life",
       "ja": "ノーゲーム・ノーライフ"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000361",
@@ -2433,7 +2433,7 @@
       "en": "Nodame Cantabile",
       "ja": "のだめカンタービレ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2464,8 +2464,8 @@
       "en": "Noragami",
       "ko": "노라가미"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000362",
@@ -2496,8 +2496,8 @@
       "en": "Noragami",
       "ja": "ノラガミ"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000012",
@@ -2528,7 +2528,7 @@
       "en": "Norwegian Wood",
       "ko": "노르웨이의 숲"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2560,7 +2560,7 @@
       "en": "Spice AND Wolf",
       "ko": "늑대와 향신료"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2591,7 +2591,7 @@
       "en": "Nisekoi",
       "ko": "니세코이"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2624,8 +2624,8 @@
       "en": "NieR:Automata™",
       "ko": "니어: 오토마타"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000004",
@@ -2656,7 +2656,7 @@
       "en": "DA Vinci Code",
       "ko": "다빈치 코드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2685,7 +2685,7 @@
     "titles": {
       "ko": "다크 나이트"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2716,8 +2716,8 @@
       "en": "Dishonored",
       "ko": "다크 소울"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000099",
@@ -2747,8 +2747,8 @@
       "en": "DARK SOULS™ III",
       "ko": "다크 소울 3"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000268",
@@ -2778,8 +2778,8 @@
       "en": "Danganronpa: Trigger Happy Havoc",
       "ko": "단간론파"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000310",
@@ -2812,8 +2812,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000185",
@@ -2846,8 +2846,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000167",
@@ -2874,7 +2874,7 @@
     "titles": {
       "ko": "대부"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2907,7 +2907,7 @@
       "en": "THE Mandalorian",
       "ko": "더 만달로리안"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2932,7 +2932,7 @@
     "titles": {
       "ko": "더 배트맨"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -2965,8 +2965,8 @@
       "en": "The Elder Scrolls V: Skyrim",
       "ko": "더 엘더스크롤 V: 스카이림"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000024",
@@ -2997,7 +2997,7 @@
       "en": "THE Office US",
       "ko": "더 오피스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3030,8 +3030,8 @@
       "en": "The Witcher 3: Wild Hunt",
       "ko": "더 위처 3: 와일드 헌트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000081",
@@ -3061,8 +3061,8 @@
       "en": "Save 78% on The Forest",
       "ko": "더 포레스트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000190",
@@ -3097,8 +3097,8 @@
       "ja": "ダンジョン飯",
       "romaji": "Dungeon Meshi"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000318",
@@ -3130,8 +3130,8 @@
       "en": "Delicious in Dungeon",
       "ja": "ダンジョン飯"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000186",
@@ -3167,7 +3167,7 @@
       "ja": "ダンジョンに出会いを求めるのは間違っているだろうか",
       "romaji": "DanMachi"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3198,8 +3198,8 @@
       "en": "Dead by Daylight",
       "ko": "데드 바이 데이라이트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000311",
@@ -3229,8 +3229,8 @@
       "en": "Death Note",
       "ko": "데스노트"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000187",
@@ -3264,8 +3264,8 @@
       "ja": "DEATH NOTE",
       "zh": "死亡笔记"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000028",
@@ -3298,8 +3298,8 @@
       "en": "Destiny 2",
       "ko": "데스티니 가디언즈"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000314",
@@ -3332,8 +3332,8 @@
       "en": "Doraemon",
       "ja": "ドラえもん"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000315",
@@ -3360,7 +3360,7 @@
     "titles": {
       "ko": "도로헤도로"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3392,8 +3392,8 @@
       "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000242",
@@ -3426,8 +3426,8 @@
       "en": "Tokyo Ghoul",
       "ja": "東京喰種トーキョーグール"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000391",
@@ -3458,8 +3458,8 @@
       "en": "Tokyo Revengers",
       "ko": "도쿄 리벤저스"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000243",
@@ -3492,8 +3492,8 @@
       "en": "Tokyo Revengers",
       "ja": "東京卍リベンジャーズ"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000118",
@@ -3526,8 +3526,8 @@
       "en": "Dota 2",
       "ko": "도타 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000125",
@@ -3557,8 +3557,8 @@
       "en": "DOOM Eternal",
       "ko": "도타 언더로드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000284",
@@ -3589,7 +3589,7 @@
       "en": "Touhou Lost Word",
       "ko": "동방 로스트 워드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3621,7 +3621,7 @@
       "en": "Dune",
       "ko": "듄"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3645,7 +3645,7 @@
     "titles": {
       "ko": "듄"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3678,8 +3678,8 @@
       "en": "Dragon Ball",
       "ja": "ドラゴンボール"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000137",
@@ -3711,8 +3711,8 @@
       "en": "Diablo® IV",
       "ko": "디아블로 IV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000115",
@@ -3742,8 +3742,8 @@
       "en": "Deep Rock Galactic",
       "ko": "딥 락 갤럭틱"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000086",
@@ -3773,8 +3773,8 @@
       "en": "The Last of Us™ Part II Remastered",
       "ko": "라스트 오브 어스 Part II"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000009",
@@ -3806,7 +3806,7 @@
       "en": "Laplace Novel",
       "ko": "라플라스의 마녀"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3841,8 +3841,8 @@
       "en": "Ranma ½",
       "ja": "らんま1/2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000274",
@@ -3873,7 +3873,7 @@
       "en": "Love Live ALL Stars",
       "ko": "러브라이브! 올스타즈"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -3905,8 +3905,8 @@
       "en": "Rust",
       "ko": "러스트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000039",
@@ -3937,8 +3937,8 @@
       "en": "Red Dead Redemption 2",
       "ko": "레드 데드 리뎀션 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000064",
@@ -3968,8 +3968,8 @@
       "en": "Lethal Company",
       "ko": "레딧 리데임"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000097",
@@ -3999,8 +3999,8 @@
       "en": "Tom Clancy's Rainbow Six Siege",
       "ko": "레인보우 식스 시즈"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000116",
@@ -4029,8 +4029,8 @@
       "en": "RAGE 2",
       "ko": "레인월드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000117",
@@ -4060,8 +4060,8 @@
       "en": "Left 4 Dead 2",
       "ko": "레프트 4 데드 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000210",
@@ -4095,8 +4095,8 @@
       "en": "Log Horizon",
       "ja": "ログ・ホライズン"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000054",
@@ -4126,8 +4126,8 @@
       "en": "Site Error",
       "ko": "로스트 아크"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000085",
@@ -4157,8 +4157,8 @@
       "en": "Rocket League®",
       "ko": "로켓 리그"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000376",
@@ -4188,7 +4188,7 @@
       "en": "Rurouni Kenshin",
       "ko": "루론검심"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4222,8 +4222,8 @@
       "en": "Ruined King: A League of Legends Story™",
       "ko": "리그 오브 레전드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000211",
@@ -4254,7 +4254,7 @@
       "en": "Lycoris Recoil",
       "ko": "리코리스 리코일"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4285,8 +4285,8 @@
       "en": "Assassin’s Creed® IV Black Flag™",
       "ko": "리틀 나이트메어"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000123",
@@ -4316,8 +4316,8 @@
       "en": "Rhythm Doctor",
       "ko": "리틀 나이트메어 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000093",
@@ -4346,8 +4346,8 @@
       "en": "RimWorld",
       "ko": "림월드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000059",
@@ -4377,8 +4377,8 @@
       "en": "Marvel’s Spider-Man Remastered",
       "ko": "마블 스파이더맨 리마스터"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000350",
@@ -4411,8 +4411,8 @@
       "en": "Mashle: Magic and Muscles",
       "ja": "マッシュル-MASHLE-"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000213",
@@ -4445,8 +4445,8 @@
       "en": "Mashle: Magic and Muscles",
       "ja": "マッシュル-MASHLE-"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000141",
@@ -4476,8 +4476,8 @@
       "en": "Geometry Dash",
       "ko": "마인크래프트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000140",
@@ -4510,8 +4510,8 @@
       "en": "Mass Effect 2 (2010 Edition)",
       "ko": "매스 이펙트 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000168",
@@ -4539,7 +4539,7 @@
     "titles": {
       "ko": "매트릭스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4571,8 +4571,8 @@
       "en": "Made IN Abyss",
       "ko": "메이드 인 어비스"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000348",
@@ -4605,8 +4605,8 @@
       "en": "Made in Abyss",
       "ja": "メイドインアビス"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000265",
@@ -4637,7 +4637,7 @@
       "en": "Arknights",
       "ko": "명일방주"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4670,7 +4670,7 @@
       "en": "Wuthering Waves",
       "ko": "명조: 워더링 웨이브"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4702,8 +4702,8 @@
       "en": "Detective Conan",
       "ko": "명탐정 코난"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000214",
@@ -4734,8 +4734,8 @@
       "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000351",
@@ -4766,8 +4766,8 @@
       "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000235",
@@ -4798,7 +4798,7 @@
       "en": "Silent Voice",
       "ko": "목소리의 형태"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4826,7 +4826,7 @@
     "titles": {
       "ko": "몬스터"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -4858,8 +4858,8 @@
       "en": "Monster Hunter: World",
       "ko": "몬스터 헌터: 월드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000257",
@@ -4895,8 +4895,8 @@
       "ja": "無職転生",
       "romaji": "Mushoku Tensei"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000216",
@@ -4926,8 +4926,8 @@
       "en": "Mushoku Tensei",
       "ko": "무직전생"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000354",
@@ -4964,8 +4964,8 @@
       "ja": "無職転生",
       "romaji": "Mushoku Tensei"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000179",
@@ -4996,7 +4996,7 @@
       "en": "Bungo Stray Dogs",
       "ko": "문호 스트레이 독스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5026,8 +5026,8 @@
       "en": "Mass Effect™ Legendary Edition",
       "ko": "미스트워커"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000395",
@@ -5057,7 +5057,7 @@
       "en": "Vagabond",
       "ko": "바감동"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5090,7 +5090,7 @@
       "en": "Barakamon",
       "ja": "ばらかもん"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5114,7 +5114,7 @@
     "titles": {
       "ko": "바비"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5147,8 +5147,8 @@
       "en": "BioShock™",
       "ko": "바이오쇼크"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000248",
@@ -5179,7 +5179,7 @@
       "en": "Violet Evergarden",
       "ko": "바이올렛 에버가든"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5210,8 +5210,8 @@
       "en": "Monogatari",
       "ko": "바케모노가타리"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000215",
@@ -5241,8 +5241,8 @@
       "en": "Monogatari",
       "ko": "바케모노가타리"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000158",
@@ -5279,8 +5279,8 @@
       "ko": "반지의 제왕: 반지 원정대",
       "en": "The Lord of the Rings: The Fellowship of the Ring"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000010",
@@ -5317,8 +5317,8 @@
       "ko": "반지의 제왕: 반지 원정대",
       "en": "The Lord of the Rings: The Fellowship of the Ring"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000030",
@@ -5348,8 +5348,8 @@
       "en": "Baldur's Gate 3",
       "ko": "발할라: 신들의 황혼"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000129",
@@ -5378,8 +5378,8 @@
       "en": "Valheim",
       "ko": "발헤임"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000233",
@@ -5410,7 +5410,7 @@
       "en": "Shield Hero",
       "ko": "방패 용사 성공담"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5440,8 +5440,8 @@
       "en": "PUBG: BATTLEGROUNDS",
       "ko": "배틀그라운드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000052",
@@ -5471,8 +5471,8 @@
       "en": "Battlefield™ 2042",
       "ko": "배틀필드 2042"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000299",
@@ -5502,7 +5502,7 @@
       "en": "Berserk",
       "ko": "베르세르크"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5537,8 +5537,8 @@
       "en": "Land of the Lustrous",
       "ja": "宝石の国"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000178",
@@ -5569,8 +5569,8 @@
       "en": "Bocchi THE Rock",
       "ko": "봇치 더 록!"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000304",
@@ -5601,8 +5601,8 @@
       "en": "Bocchi THE Rock",
       "ko": "봇치 더 록!"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000192",
@@ -5636,8 +5636,8 @@
       "en": "Fire Force",
       "ja": "炎炎ノ消防隊"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000322",
@@ -5668,8 +5668,8 @@
       "en": "Fire Force",
       "ko": "불꽃 소방대"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000273",
@@ -5702,7 +5702,7 @@
       "en": "Honkai Star Rail",
       "ko": "붕괴: 스타레일"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5734,7 +5734,7 @@
       "en": "Breaking BAD",
       "ko": "브레이킹 배드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5766,7 +5766,7 @@
       "en": "Black Lagoon",
       "ko": "블랙 라군"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -5797,8 +5797,8 @@
       "en": "Black Myth: Wukong",
       "ko": "블랙 미스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000174",
@@ -5831,8 +5831,8 @@
       "en": "Black Clover",
       "ja": "ブラッククローバー"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000300",
@@ -5863,8 +5863,8 @@
       "en": "Black Clover",
       "ko": "블랙 클로버"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000124",
@@ -5893,8 +5893,8 @@
       "en": "Blasphemous",
       "ko": "블러드본"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000177",
@@ -5927,8 +5927,8 @@
       "en": "Blue Lock",
       "ja": "ブルーロック"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000302",
@@ -5959,8 +5959,8 @@
       "en": "Blue Lock",
       "ko": "블루 록"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000266",
@@ -5993,8 +5993,8 @@
       "en": "Blue Archive",
       "ko": "블루 아카이브"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000303",
@@ -6024,7 +6024,7 @@
       "en": "Blue Period",
       "ko": "블루 피리어드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6057,8 +6057,8 @@
       "en": "Bleach",
       "ja": "BLEACH"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000301",
@@ -6085,8 +6085,8 @@
     "titles": {
       "ko": "블리치"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000396",
@@ -6116,8 +6116,8 @@
       "en": "Vinland Saga",
       "ko": "빈란드 사가"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000247",
@@ -6151,8 +6151,8 @@
       "en": "Vinland Saga",
       "ja": "ヴィンランド・サガ"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000232",
@@ -6183,7 +6183,7 @@
       "en": "Samurai Champloo",
       "ko": "사무라이 참프루"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6217,8 +6217,8 @@
       "en": "Cyberpunk 2077",
       "ko": "사이버펑크 2077"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000184",
@@ -6250,7 +6250,7 @@
       "en": "Cyberpunk Edgerunners",
       "ko": "사이버펑크: 엣지러너"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6283,7 +6283,7 @@
       "en": "Psycho Pass",
       "ko": "사이코 패스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6315,8 +6315,8 @@
       "en": "Sakamoto Days",
       "ko": "사카모토 데이즈"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000231",
@@ -6349,8 +6349,8 @@
       "en": "Sakamoto Days",
       "ja": "SAKAMOTO DAYS"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000399",
@@ -6383,7 +6383,7 @@
       "en": "Yona of the Dawn",
       "ja": "暁のヨナ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6413,8 +6413,8 @@
       "en": "Satisfactory",
       "ko": "새티스팩토리"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000377",
@@ -6447,8 +6447,8 @@
       "en": "Saint Seiya",
       "ja": "聖闘士星矢"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000127",
@@ -6477,8 +6477,8 @@
       "en": "Sekiro™: Shadows Die Twice - GOTY Edition",
       "ko": "세키로"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000164",
@@ -6506,7 +6506,7 @@
     "titles": {
       "ko": "센과 치히로의 행방불명"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6537,8 +6537,8 @@
       "en": "Celeste",
       "ko": "셀레스테"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000015",
@@ -6569,7 +6569,7 @@
       "en": "Sherlock Holmes",
       "ko": "셜록 홈즈: 단홍색 연구"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6601,8 +6601,8 @@
       "en": "Sword ART Online",
       "ko": "소드 아트 온라인"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000241",
@@ -6640,8 +6640,8 @@
       "ja": "ソードアート・オンライン",
       "romaji": "SAO"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000386",
@@ -6674,7 +6674,7 @@
       "en": "Soul Eater",
       "ja": "ソウルイーター"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6705,7 +6705,7 @@
       "en": "Math Thief",
       "ko": "수학도둑"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6738,7 +6738,7 @@
       "en": "Steinsgate",
       "ko": "슈타인즈 게이트"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6769,8 +6769,8 @@
       "en": "Cookie Clicker",
       "ko": "슈퍼 러버런"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000111",
@@ -6800,8 +6800,8 @@
       "en": "The Elder Scrolls V: Skyrim Special Edition",
       "ko": "스카이림 SE"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "sub_webtoon_scale-supply-b1a_2026",
@@ -6831,7 +6831,7 @@
       "en": "Scale Supply Batch 1A",
       "ja": "スケール供給バッチ1A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6862,7 +6862,7 @@
       "en": "Scale Supply Batch 1B",
       "ja": "スケール供給バッチ1B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6893,7 +6893,7 @@
       "en": "Scale Supply Batch 2A",
       "ja": "スケール供給バッチ2A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6924,7 +6924,7 @@
       "en": "Scale Supply Batch 2B",
       "ja": "スケール供給バッチ2B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6955,7 +6955,7 @@
       "en": "Scale Supply Batch 3A",
       "ja": "スケール供給バッチ3A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -6986,7 +6986,7 @@
       "en": "Scale Supply Batch 3B",
       "ja": "スケール供給バッチ3B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7017,7 +7017,7 @@
       "en": "Scale Supply Batch 4A",
       "ja": "スケール供給バッチ4A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7048,7 +7048,7 @@
       "en": "Scale Supply Batch 4B",
       "ja": "スケール供給バッチ4B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7079,7 +7079,7 @@
       "en": "Scale Supply Batch 5A",
       "ja": "スケール供給バッチ5A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7110,7 +7110,7 @@
       "en": "Scale Supply Batch 5B",
       "ja": "スケール供給バッチ5B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7141,7 +7141,7 @@
       "en": "Scale Supply Batch 6A",
       "ja": "スケール供給バッチ6A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7172,7 +7172,7 @@
       "en": "Scale Supply Batch 6B",
       "ja": "スケール供給バッチ6B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7204,7 +7204,7 @@
       "en": "Scale Expansion Probe Gamma",
       "ja": "スケール拡張プローブガンマ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7236,7 +7236,7 @@
       "en": "Scale Expansion Probe Delta",
       "ja": "スケール拡張プローブデルタ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7268,7 +7268,7 @@
       "en": "Scale Expansion Probe Beta",
       "ja": "スケール拡張プローブベータ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7300,7 +7300,7 @@
       "en": "Scale Expansion Probe Theta",
       "ja": "スケール拡張プローブシータ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7332,7 +7332,7 @@
       "en": "Scale Expansion Probe Alpha",
       "ja": "スケール拡張プローブアルファ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7364,7 +7364,7 @@
       "en": "Scale Expansion Probe Eta",
       "ja": "スケール拡張プローブイータ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7396,7 +7396,7 @@
       "en": "Scale Expansion Probe Epsilon",
       "ja": "スケール拡張プローブイプシロン"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7428,7 +7428,7 @@
       "en": "Scale Expansion Probe Zeta",
       "ja": "スケール拡張プローブゼータ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7462,8 +7462,8 @@
       "en": "Skip and Loafer",
       "ja": "スキップとローファー"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000384",
@@ -7491,8 +7491,8 @@
     "titles": {
       "ko": "스킵과 로퍼"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000145",
@@ -7523,8 +7523,8 @@
       "en": "Stardew Valley",
       "ko": "스타듀 밸리"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000063",
@@ -7554,8 +7554,8 @@
       "en": "Call of Duty®: Warzone™",
       "ko": "스타크래프트 리마스터"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000035",
@@ -7584,8 +7584,8 @@
       "en": "Fallout 76",
       "ko": "스타필드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000092",
@@ -7614,8 +7614,8 @@
       "en": "Stellaris",
       "ko": "스텔라리스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000239",
@@ -7651,8 +7651,8 @@
       "ja": "SPY×FAMILY",
       "romaji": "Spy x Family"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000387",
@@ -7688,8 +7688,8 @@
       "ja": "SPY×FAMILY",
       "romaji": "Spy x Family"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000068",
@@ -7719,8 +7719,8 @@
       "en": "Ghost of Tsushima DIRECTOR'S CUT",
       "ko": "스파이더맨 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000163",
@@ -7744,7 +7744,7 @@
     "titles": {
       "ko": "스파이더맨: 노 웨이 홈"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7776,7 +7776,7 @@
       "en": "Splatoon 3",
       "ko": "스플래툰 3"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7807,8 +7807,8 @@
       "en": "Bloons TD 6",
       "ko": "슬라임 랜처"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000385",
@@ -7835,7 +7835,7 @@
     "titles": {
       "ko": "슬램덩크"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7869,7 +7869,7 @@
       "en": "GODDESS OF VICTORY: NIKKE",
       "ko": "승리의 여신: 니케"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7900,8 +7900,8 @@
       "en": "Cities: Skylines",
       "ko": "시티즈: 스카이라인"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000382",
@@ -7934,7 +7934,7 @@
       "en": "Food Wars!: Shokugeki no Soma",
       "ja": "食戟のソーマ"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -7967,8 +7967,8 @@
       "en": "Neon Genesis Evangelion",
       "ko": "신세기 에반게리온"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000410",
@@ -7999,7 +7999,7 @@
       "en": "Tower OF GOD",
       "ko": "신의 탑"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8033,8 +8033,8 @@
       "en": "Classroom of the Elite",
       "ja": "ようこそ実力至上主義の教室へ"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000383",
@@ -8067,7 +8067,7 @@
       "en": "Silver Spoon",
       "ja": "銀の匙"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8098,7 +8098,7 @@
       "en": "AO Ashi",
       "ko": "아오아시"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8132,7 +8132,7 @@
       "en": "Ready Player ONE",
       "ko": "아이언 레디 플레이어 원"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8163,8 +8163,8 @@
       "en": "ARK: Survival Evolved",
       "ko": "아크: 서바이벌 이볼브드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000296",
@@ -8196,7 +8196,7 @@
       "en": "Assassination Classroom",
       "ja": "暗殺教室"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8230,8 +8230,8 @@
       "en": "The Apothecary Diaries",
       "ja": "薬屋のひとりごと"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000171",
@@ -8264,8 +8264,8 @@
       "en": "The Apothecary Diaries",
       "ja": "薬屋のひとりごと"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000370",
@@ -8296,7 +8296,7 @@
       "en": "Promised Neverland",
       "ko": "약속의 네버랜드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8327,7 +8327,7 @@
     "titles": {
       "ko": "어벤져스: 엔드게임"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8359,8 +8359,8 @@
       "en": "UNDERTALE",
       "ko": "언더테일"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000393",
@@ -8392,8 +8392,8 @@
       "en": "Undead Unluck",
       "ko": "언데드 언럭"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000246",
@@ -8427,8 +8427,8 @@
       "en": "Undead Unluck",
       "ja": "アンデッドアンラック"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000057",
@@ -8458,8 +8458,8 @@
       "en": "UNCHARTED™: Legacy of Thieves Collection",
       "ko": "언차티드: 도적들과 유산"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000319",
@@ -8493,8 +8493,8 @@
       "en": "Edens Zero",
       "ja": "EDENS ZERO"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000153",
@@ -8518,7 +8518,7 @@
     "titles": {
       "ko": "에브리씽 에브리웨어"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8552,8 +8552,8 @@
       "en": "Apex Legends™",
       "ko": "에이펙스 레전드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000042",
@@ -8582,8 +8582,8 @@
       "en": "NARAKA: BLADEPOINT",
       "ko": "엑스칼리버"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000135",
@@ -8612,8 +8612,8 @@
       "en": "Axiom Verge",
       "ko": "엑시옴"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000170",
@@ -8644,7 +8644,7 @@
       "en": "Angel Beats",
       "ko": "엔젤 비츠!"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8677,8 +8677,8 @@
       "en": "ELDEN RING",
       "ko": "엘든 링"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000374",
@@ -8711,8 +8711,8 @@
       "en": "Rent-a-Girlfriend",
       "ja": "彼女、お借りします"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000011",
@@ -8743,7 +8743,7 @@
       "en": "Murder ON Orient Express",
       "ko": "오리엔트 특급 살인"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8774,8 +8774,8 @@
       "en": "Mount &amp; Blade II: Bannerlord",
       "ko": "오리와 먹구름"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000259",
@@ -8804,8 +8804,8 @@
       "en": "Overlord",
       "ko": "오버로드"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000367",
@@ -8837,8 +8837,8 @@
       "en": "Overlord",
       "ja": "オーバーロード"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000225",
@@ -8868,8 +8868,8 @@
       "en": "Overlord",
       "ko": "오버로드"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000142",
@@ -8902,8 +8902,8 @@
       "en": "Overwatch®",
       "ko": "오버워치 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000108",
@@ -8933,8 +8933,8 @@
       "en": "Conan Exiles Enhanced",
       "ko": "오버쿡드 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000021",
@@ -8965,7 +8965,7 @@
       "en": "Squid Game",
       "ko": "오징어 게임"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -8989,7 +8989,7 @@
     "titles": {
       "ko": "오펜하이머"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9023,8 +9023,8 @@
       "en": "OCTOPATH TRAVELER™",
       "ko": "옥토패스 트래블러"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000229",
@@ -9057,8 +9057,8 @@
       "en": "Ranking of Kings",
       "ja": "王様ランキング"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000019",
@@ -9089,7 +9089,7 @@
       "en": "Game OF Thrones",
       "ko": "왕좌의 게임"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9122,7 +9122,7 @@
       "en": "Yotsuba&!",
       "ja": "よつばと!"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9154,8 +9154,8 @@
       "en": "Yakuza 0",
       "ko": "용과 같이 0"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000254",
@@ -9186,8 +9186,8 @@
       "en": "Classroom OF THE Elite",
       "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000285",
@@ -9217,7 +9217,7 @@
       "en": "Umamusume",
       "ko": "우마무스메"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9250,8 +9250,8 @@
       "en": "Warframe",
       "ko": "워프레임"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000272",
@@ -9282,7 +9282,7 @@
       "en": "Genshin Impact",
       "ko": "원신"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9313,8 +9313,8 @@
       "en": "ONE Punch MAN",
       "ko": "원펀맨"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000364",
@@ -9346,8 +9346,8 @@
       "en": "One-Punch Man",
       "ja": "ワンパンマン"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000222",
@@ -9379,8 +9379,8 @@
       "en": "One Piece",
       "ja": "ONE PIECE"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000363",
@@ -9410,8 +9410,8 @@
       "en": "ONE Piece",
       "ko": "원피스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000264",
@@ -9442,7 +9442,7 @@
       "en": "ONE Piece Live Action",
       "ko": "원피스 (실사)"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9477,7 +9477,7 @@
       "en": "World Trigger",
       "ja": "ワールドトリガー"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9508,7 +9508,7 @@
       "en": "THE Witcher",
       "ko": "위쳐"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9542,8 +9542,8 @@
       "en": "Wind Breaker",
       "ja": "WIND BREAKER"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000397",
@@ -9576,8 +9576,8 @@
       "en": "Wind Breaker",
       "ja": "WIND BREAKER"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000072",
@@ -9607,8 +9607,8 @@
       "en": "Euro Truck Simulator 2",
       "ko": "유로 트럭 시뮬레이터 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000077",
@@ -9638,8 +9638,8 @@
       "en": "Europa Universalis IV",
       "ko": "유로파 유니버설리스 IV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000401",
@@ -9669,7 +9669,7 @@
       "en": "YU YU Hakusho",
       "ko": "유유백서"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9702,7 +9702,7 @@
       "en": "Hitchhiker Guide",
       "ko": "은하수를 여행하는 히치하이커를 위한 안내서"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9733,8 +9733,8 @@
       "en": "Gintama",
       "ko": "은혼"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000195",
@@ -9765,8 +9765,8 @@
       "en": "Gintama",
       "ko": "은혼"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000209",
@@ -9797,8 +9797,8 @@
       "en": "Konosuba",
       "ko": "이 멋진 세계에 축복을!"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000255",
@@ -9829,8 +9829,8 @@
       "en": "Konosuba",
       "ko": "이 멋진 세계에 축복을!"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000346",
@@ -9863,8 +9863,8 @@
       "en": "KonoSuba",
       "ja": "この素晴らしい世界に祝福を！"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000338",
@@ -9896,7 +9896,7 @@
       "en": "Inuyasha",
       "ja": "犬夜叉"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9930,7 +9930,7 @@
       "en": "Don't Toy with Me, Miss Nagatoro",
       "ja": "イジらないで、長瀬さん"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9961,7 +9961,7 @@
       "en": "Extraordinary Attorney WOO",
       "ko": "이상한 변호사 우영우"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -9993,7 +9993,7 @@
       "en": "MY Neighbor Totoro",
       "ko": "이웃집 토토로"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10022,7 +10022,7 @@
     "titles": {
       "ko": "인셉션"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10051,7 +10051,7 @@
     "titles": {
       "ko": "인터스텔라"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10083,7 +10083,7 @@
       "en": "Nichijou - My Ordinary Life",
       "ja": "日常"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10118,7 +10118,7 @@
       "en": "Cells at Work!",
       "ja": "はたらく細胞"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10150,7 +10150,7 @@
       "en": "Goodnight Punpun",
       "ko": "잘 자 뚱뚱이"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10182,8 +10182,8 @@
       "en": "Frieren",
       "ko": "장송의 프리렌"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000323",
@@ -10216,8 +10216,8 @@
       "en": "Frieren: Beyond Journey's End",
       "ja": "葬送のフリーレン"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000261",
@@ -10247,8 +10247,8 @@
       "en": "Slime",
       "ko": "전생 슬라임"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000237",
@@ -10278,8 +10278,8 @@
       "en": "Slime",
       "ko": "전생 슬라임"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000388",
@@ -10310,7 +10310,7 @@
       "en": "Tensura",
       "ko": "전생했더니 슬라임이었던 건"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10344,7 +10344,7 @@
       "en": "Xenoblade 3",
       "ko": "제노블레이드 3"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10377,7 +10377,7 @@
       "en": "Zenless Zone Zero",
       "ko": "젠레스 존 제로"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10409,7 +10409,7 @@
       "en": "Zelda Breath OF THE Wild",
       "ko": "젤다의 전설 브레스 오브 더 와일드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10443,7 +10443,7 @@
       "en": "Zom 100: Bucket List of the Dead",
       "ja": "ゾンビ100～ゾンビになるまでにしたい100のこと～"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10478,8 +10478,8 @@
       "en": "Seraph of the End",
       "ja": "終わりのセラフ"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000339",
@@ -10512,8 +10512,8 @@
       "en": "JoJo's Bizarre Adventure",
       "ja": "ジョジョの奇妙な冒険"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000203",
@@ -10546,8 +10546,8 @@
       "en": "JoJo's Bizarre Adventure",
       "ja": "ジョジョの奇妙な冒険"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000204",
@@ -10577,8 +10577,8 @@
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000340",
@@ -10608,8 +10608,8 @@
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000406",
@@ -10637,7 +10637,7 @@
     "titles": {
       "ko": "주술회전 0"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10668,8 +10668,8 @@
       "en": "Hells Paradise",
       "ko": "지옥락"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000200",
@@ -10701,8 +10701,8 @@
       "en": "Hell's Paradise",
       "ja": "地獄楽"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000381",
@@ -10734,8 +10734,8 @@
       "en": "Shingeki NO Kyojin",
       "ko": "진격의 거인"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000172",
@@ -10766,8 +10766,8 @@
       "en": "Attack ON Titan",
       "ko": "진격의 거인"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000148",
@@ -10798,7 +10798,7 @@
       "en": "Crayon Shin Chan",
       "ko": "짱구는 못말려"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10832,8 +10832,8 @@
       "en": "Ascendance of a Bookworm",
       "ja": "本好きの下剋上"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000197",
@@ -10866,7 +10866,7 @@
       "en": "Gurren Lagann",
       "ja": "天元突破グレンラガン"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10897,7 +10897,7 @@
       "en": "Hajime NO Ippo",
       "ko": "첫걸음"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10928,7 +10928,7 @@
       "en": "Chernobyl",
       "ko": "체르노빌"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -10960,8 +10960,8 @@
       "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000308",
@@ -10992,8 +10992,8 @@
       "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000403",
@@ -11017,7 +11017,7 @@
     "titles": {
       "ko": "체인소 맨 레제편"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11049,8 +11049,8 @@
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000366",
@@ -11081,8 +11081,8 @@
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000061",
@@ -11112,8 +11112,8 @@
       "en": "The Last of Us™ Part I",
       "ko": "최후의 생还자 Part I"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000353",
@@ -11143,7 +11143,7 @@
       "en": "Mushishi",
       "ko": "충사"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11174,7 +11174,7 @@
       "en": "Chihayafuru",
       "ko": "치하야후루"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11208,8 +11208,8 @@
       "en": "Kaguya-sama: Love Is War",
       "ja": "かぐや様は告らせたい"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000341",
@@ -11240,8 +11240,8 @@
       "en": "Kaguya Sama",
       "ko": "카구야님은 고백받고 싶어"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000306",
@@ -11272,8 +11272,8 @@
       "en": "Cardcaptor Sakura",
       "ko": "카드캡터 체리"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000001",
@@ -11305,8 +11305,8 @@
       "en": "Cowboy Bebop",
       "ko": "카우보이 비밥"
     },
-    "qualityScore": 60,
-    "qualityTier": 3
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000121",
@@ -11339,8 +11339,8 @@
       "en": "Counter-Strike 2",
       "ko": "카운터 스트라이크 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000305",
@@ -11373,8 +11373,8 @@
       "en": "Captain Tsubasa",
       "ja": "キャプテン翼"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000089",
@@ -11403,8 +11403,8 @@
       "en": "Save 40% on Cuphead",
       "ko": "컵헤드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000183",
@@ -11436,7 +11436,7 @@
       "en": "Code Geass",
       "ko": "코드 기어스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11470,7 +11470,7 @@
       "en": "Komi Can't Communicate",
       "ja": "古見さんは、コミュ症です。"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11501,8 +11501,8 @@
       "en": "Call of Duty®",
       "ko": "콜 오브 듀티: MW II"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000037",
@@ -11532,8 +11532,8 @@
       "en": "Crusader Kings III",
       "ko": "크루세이더 킹즈 3"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000181",
@@ -11563,7 +11563,7 @@
       "en": "Clannad",
       "ko": "클라나드"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11596,8 +11596,8 @@
       "en": "Kill la Kill",
       "ja": "キルラキル"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000020",
@@ -11627,8 +11627,8 @@
       "en": "Kingdom",
       "ko": "킹덤"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000344",
@@ -11658,8 +11658,8 @@
       "en": "Kingdom",
       "ko": "킹덤"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000208",
@@ -11691,8 +11691,8 @@
       "en": "Kingdom",
       "ja": "キングダム"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000058",
@@ -11722,8 +11722,8 @@
       "en": "Save 50% on Kingdom Come: Deliverance II",
       "ko": "킹덤 컴 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000101",
@@ -11753,8 +11753,8 @@
       "en": "Save 80% on Kingdom Come: Deliverance",
       "ko": "킹덤 컴: 딜리버런스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000027",
@@ -11785,8 +11785,8 @@
       "en": "Terraria",
       "ko": "테라리아"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000394",
@@ -11819,8 +11819,8 @@
       "en": "Bunny Drop",
       "ja": "うさぎドロップ"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000392",
@@ -11850,8 +11850,8 @@
       "en": "Toradora",
       "ko": "토라도라!"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000244",
@@ -11883,8 +11883,8 @@
       "en": "Toradora!",
       "ja": "とらドラ！"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000169",
@@ -11912,7 +11912,7 @@
     "titles": {
       "ko": "토이 스토리"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -11943,8 +11943,8 @@
       "en": "Save 60% on Hunt: Showdown 1896",
       "ko": "토탈 워: 삼국"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000032",
@@ -11974,8 +11974,8 @@
       "en": "Total War: WARHAMMER III",
       "ko": "토탈 워: 워해머 3"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000245",
@@ -12006,7 +12006,7 @@
       "en": "Trigun",
       "ko": "트라이건"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12038,7 +12038,7 @@
       "en": "True Detective",
       "ko": "트루 디텍티브"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12069,8 +12069,8 @@
       "en": "Team Fortress 2",
       "ko": "팀 포트리스 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000270",
@@ -12102,8 +12102,8 @@
       "en": "FINAL FANTASY XIV Online",
       "ko": "파이널 판타지 XIV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000271",
@@ -12135,7 +12135,7 @@
       "en": "Fire Emblem Three Houses",
       "ko": "파이어 엠블렘: 풍화설월"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12164,7 +12164,7 @@
     "titles": {
       "ko": "파이트 클럽"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12195,7 +12195,7 @@
       "en": "Pilot H1 Supply Batch 1A",
       "ja": "パイロットH1供給バッチ1A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12226,7 +12226,7 @@
       "en": "Pilot H1 Supply Batch 1B",
       "ja": "パイロットH1供給バッチ1B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12257,7 +12257,7 @@
       "en": "Pilot H1 Supply Batch 2A",
       "ja": "パイロットH1供給バッチ2A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12288,7 +12288,7 @@
       "en": "Pilot H1 Supply Batch 2B",
       "ja": "パイロットH1供給バッチ2B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12319,7 +12319,7 @@
       "en": "Pilot H1 Supply Batch 3A",
       "ja": "パイロットH1供給バッチ3A"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12350,7 +12350,7 @@
       "en": "Pilot H1 Supply Batch 3B",
       "ja": "パイロットH1供給バッチ3B"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12381,7 +12381,7 @@
       "en": "Pilot H2 Smoke Beta",
       "ja": "パイロットH2スモークベータ"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12412,7 +12412,7 @@
       "en": "Pilot H2 Smoke Alpha",
       "ja": "パイロットH2スモークアルファ"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12442,8 +12442,8 @@
       "en": "Save 25% on Palworld",
       "ko": "팔월드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000107",
@@ -12472,8 +12472,8 @@
       "en": "Factorio",
       "ko": "팩토리오"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000013",
@@ -12504,7 +12504,7 @@
       "en": "Percy Jackson",
       "ko": "퍼시 잭슨과 번개 도둑"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12533,7 +12533,7 @@
     "titles": {
       "ko": "펄프 픽션"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12566,8 +12566,8 @@
       "en": "Persona 5 Royal",
       "ko": "페르소나 5 로열"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000321",
@@ -12598,7 +12598,7 @@
       "en": "Fairy Tail",
       "ko": "페어리 테일"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12633,8 +12633,8 @@
       "en": "Fairy Tail: 100 Years Quest",
       "ja": "FAIRY TAIL 100年クエスト"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000269",
@@ -12666,7 +12666,7 @@
       "en": "Fate Grand Order",
       "ko": "페이트/그랜드 오더"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12697,7 +12697,7 @@
       "en": "Fate Zero",
       "ko": "페이트/제로"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12729,8 +12729,8 @@
       "en": "Papers, Please",
       "ko": "페이퍼스, 플리즈"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000155",
@@ -12758,7 +12758,7 @@
     "titles": {
       "ko": "포레스트 검프"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12788,8 +12788,8 @@
       "en": "Portal",
       "ko": "포털"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000143",
@@ -12821,8 +12821,8 @@
       "en": "Portal 2",
       "ko": "포털 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000070",
@@ -12852,8 +12852,8 @@
       "en": "Fallout 3",
       "ko": "폴아웃 3"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000100",
@@ -12883,8 +12883,8 @@
       "en": "Fallout 4",
       "ko": "폴아웃 4"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000071",
@@ -12914,8 +12914,8 @@
       "en": "Fallout: New Vegas",
       "ko": "폴아웃: 뉴 베가스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000281",
@@ -12946,7 +12946,7 @@
       "en": "Project Sekai",
       "ko": "프로젝트 세카이"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -12977,8 +12977,8 @@
       "en": "Project Zomboid",
       "ko": "프로젝트 좀보이드"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000074",
@@ -13008,8 +13008,8 @@
       "en": "Prison Architect",
       "ko": "프리즌 아키텍트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000280",
@@ -13041,7 +13041,7 @@
       "en": "Princess Connect",
       "ko": "프린세스 커넥트"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13072,8 +13072,8 @@
       "en": "Planet Coaster",
       "ko": "플래닛 코스터"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000046",
@@ -13103,8 +13103,8 @@
       "en": "Save 40% on The Planet Crafter",
       "ko": "플래닛 코스터 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000369",
@@ -13132,7 +13132,7 @@
     "titles": {
       "ko": "플루토"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13163,7 +13163,7 @@
       "en": "Ping Pong",
       "ko": "핑퐁"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13194,8 +13194,8 @@
       "en": "Hades",
       "ko": "하데스"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000198",
@@ -13227,8 +13227,8 @@
       "en": "Haikyu!!",
       "ja": "ハイキュー!!"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000334",
@@ -13258,8 +13258,8 @@
       "en": "Haikyuu",
       "ko": "하이큐!!"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000103",
@@ -13289,8 +13289,8 @@
       "en": "Hearts of Iron IV",
       "ko": "하트 오브 아이언 IV"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000138",
@@ -13323,8 +13323,8 @@
       "en": "Half-Life 2",
       "ko": "하프라이프 2"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000006",
@@ -13355,7 +13355,7 @@
       "en": "Harry Potter Philosophers Stone",
       "ko": "해리 포터와 마법사의 돌"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13384,8 +13384,8 @@
     "titles": {
       "ko": "헌터×헌터"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000202",
@@ -13419,8 +13419,8 @@
       "en": "Hunter x Hunter",
       "ja": "ハンター×ハンター"
     },
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000008",
@@ -13452,7 +13452,7 @@
       "en": "Hunger Games",
       "ko": "헝거 게임"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13477,7 +13477,7 @@
     "titles": {
       "ko": "형색의 보이스"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13508,8 +13508,8 @@
       "en": "Hogwarts Legacy",
       "ko": "호그와트 레거시"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000036",
@@ -13539,8 +13539,8 @@
       "en": "Horizon Zero Dawn™ Complete Edition",
       "ko": "호라이즌 제로 던"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000079",
@@ -13570,8 +13570,8 @@
       "en": "Horizon Forbidden West™ Complete Edition",
       "ko": "호라이즌 포비든 웨스트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000201",
@@ -13603,8 +13603,8 @@
       "en": "Horimiya",
       "ja": "ホリミヤ"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000336",
@@ -13634,8 +13634,8 @@
       "en": "Horimiya",
       "ko": "호리미야"
     },
-    "qualityScore": 45,
-    "qualityTier": 2
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000098",
@@ -13666,8 +13666,8 @@
       "en": "Hollow Knight",
       "ko": "홀로우 나이트"
     },
-    "qualityScore": 75,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000389",
@@ -13699,7 +13699,7 @@
       "en": "Toilet-Bound Hanako-kun",
       "ja": "地縛少年花子くん"
     },
-    "qualityScore": 50,
+    "qualityScore": 55,
     "qualityTier": 2
   },
   {
@@ -13731,7 +13731,7 @@
       "en": "Fruits Basket",
       "ko": "후르츠 바스켓"
     },
-    "qualityScore": 40,
+    "qualityScore": 55,
     "qualityTier": 2
   }
 ]

@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Sucker Punch",
     "releaseYear": 2024,
-    "description": "Ghost of Tsushima — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "2218500"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

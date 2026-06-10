@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Valve",
     "releaseYear": 2004,
-    "description": "억압 체제에 맞서는 SF FPS 명작.",
     "tags": [
       "FPS",
       "SF",
@@ -28,8 +27,7 @@
       "steam": "220"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000034": {
@@ -39,7 +37,6 @@
     "domain": "generalCulture",
     "creator": "Supergiant Games",
     "releaseYear": 2020,
-    "description": "저승에서 탈출을 시도하는 로그라이크 액션 RPG.",
     "tags": [
       "로그라이크",
       "액션",
@@ -61,8 +58,7 @@
       "steam": "1145360"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

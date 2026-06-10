@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "미나츠키 미즈카",
     "releaseYear": 2013,
-    "description": "책을 사랑한 소녀가 이세계 귀족 아기로 환생해 인쇄와 지식을 퍼뜨리려는 판타지.",
     "tags": [
       "이세계",
       "판타지",
@@ -28,8 +27,7 @@
       "tmdb": "94664"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   },
   "wk_000000316": {
@@ -39,7 +37,6 @@
     "domain": "subculture",
     "creator": "보이치",
     "releaseYear": 2017,
-    "description": "인류가 석화된 뒤 과학으로 문명을 재건하려는 소년의 모험.",
     "tags": [
       "SF",
       "과학",

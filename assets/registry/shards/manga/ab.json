@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "마루야마 쿠가네",
     "releaseYear": 2012,
-    "description": "게임이 끝나지 않은 세계에 남은 모모onga가 언데드 마왕으로 군주가 되어가는 이세계 판타지.",
     "tags": [
       "이세계",
       "판타지",
@@ -28,8 +27,7 @@
       "tmdb": "64199"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

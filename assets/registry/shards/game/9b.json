@@ -6,7 +6,6 @@
     "domain": "generalCulture",
     "creator": "Capcom",
     "releaseYear": 2021,
-    "description": "Resident Evil Village — Steam 인기 게임.",
     "tags": [
       "게임",
       "Steam",
@@ -27,8 +26,7 @@
       "steam": "1196590"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }

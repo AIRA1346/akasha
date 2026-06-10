@@ -11,7 +11,6 @@
     "domain": "subculture",
     "creator": "타카하시 요이치",
     "releaseYear": 1981,
-    "description": "오자와 츠바사가 드리블과 슈팅으로 세계를 향해 성장하는 축구 만화.",
     "tags": [
       "스포츠",
       "축구",
@@ -28,8 +27,7 @@
       "tmdb": "28248"
     },
     "qualitySignals": {
-      "externalIdVerified": true,
-      "hasDescription": true
+      "externalIdVerified": true
     }
   }
 }
