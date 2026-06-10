@@ -304,24 +304,27 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       children: [
         WorkbenchResizablePanel(
           width: widget.infoPanelWidth,
-          minWidth: 240,
-          maxWidth: 480,
+          minWidth: 220,
+          maxWidth: 400,
           locked: widget.infoPanelLocked,
           onWidthChanged: widget.onInfoWidthChanged,
           onToggleLock: widget.onToggleInfoLock,
           child: Container(
             color: const Color(0xFF1A1A28),
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.fromLTRB(8, 8, 8, 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   if (!vaultLinked)
                     Card(
                       color: Colors.amber.withValues(alpha: 0.12),
-                      margin: const EdgeInsets.only(bottom: 12),
+                      margin: const EdgeInsets.only(bottom: 8),
                       child: const ListTile(
                         dense: true,
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                         leading: Icon(Icons.folder_off_outlined,
                             color: Colors.amber, size: 20),
                         title: Text('볼트 미연동', style: TextStyle(fontSize: 12)),
@@ -331,32 +334,27 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                         ),
                       ),
                     ),
-                  Center(
-                    child: GestureDetector(
-                      onTap: _openPosterCorrection,
-                      child: Container(
-                        width: 120,
-                        height: 168,
+                  GestureDetector(
+                    onTap: _openPosterCorrection,
+                    child: AspectRatio(
+                      aspectRatio: 2 / 3,
+                      child: DecoratedBox(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          gradient: LinearGradient(
-                            colors: gradColors,
-                          ),
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(colors: gradColors),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(6),
                           child: PosterImage(
                             key: ValueKey(_posterUrlCtrl.text),
                             item: preview,
                             fit: BoxFit.cover,
-                            width: 120,
-                            height: 168,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   TextField(
                     controller: _titleCtrl,
                     onChanged: (_) => _markDirty(),

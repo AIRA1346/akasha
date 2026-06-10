@@ -109,7 +109,7 @@ class WorkbenchController extends ChangeNotifier {
   }
 
   void setInfoPanelWidth(double width) {
-    layout.infoPanelWidth = width.clamp(240, 480);
+    layout.infoPanelWidth = width.clamp(220, 400);
     layout.save();
     notifyListeners();
   }
