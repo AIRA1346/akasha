@@ -118,6 +118,38 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000380",
+    "title": "4월은 너의 거짓말",
+    "shardId": "manga_98",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아라카와 나오시 (Naoshi Arakawa)",
+    "tags": [
+      "감동",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
+    "searchTokens": [
+      "4월은 너의 거짓말",
+      "4월은너의거짓말",
+      "Shigatsu WA Kimi NO USO",
+      "shigatsuwakiminouso",
+      "감동",
+      "아라카와 나오시 (Naoshi Arakawa)",
+      "아라카와나오시(naoshiarakawa)",
+      "음악",
+      "청춘",
+      "피아노"
+    ],
+    "titles": {
+      "en": "Shigatsu WA Kimi NO USO",
+      "ko": "4월은 너의 거짓말"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000234",
     "title": "4월은 너의 거짓말",
     "shardId": "animation_e5",
@@ -150,38 +182,6 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
-  },
-  {
-    "workId": "wk_000000380",
-    "title": "4월은 너의 거짓말",
-    "shardId": "manga_98",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "아라카와 나오시 (Naoshi Arakawa)",
-    "tags": [
-      "감동",
-      "음악",
-      "청춘",
-      "피아노"
-    ],
-    "searchTokens": [
-      "4월은 너의 거짓말",
-      "4월은너의거짓말",
-      "Shigatsu WA Kimi NO USO",
-      "shigatsuwakiminouso",
-      "감동",
-      "아라카와 나오시 (Naoshi Arakawa)",
-      "아라카와나오시(naoshiarakawa)",
-      "음악",
-      "청춘",
-      "피아노"
-    ],
-    "titles": {
-      "en": "Shigatsu WA Kimi NO USO",
-      "ko": "4월은 너의 거짓말"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
   },
   {
     "workId": "wk_000000371",
@@ -245,39 +245,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000253",
-    "title": "86 -에이티식스-",
-    "shardId": "book_c4",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "아사토 아사토",
-    "tags": [
-      "라이트노벨",
-      "SF",
-      "전쟁",
-      "드라마"
-    ],
-    "searchTokens": [
-      "86 -Eighty-Six-",
-      "86 -에이티식스-",
-      "86eightysix",
-      "86에이티식스",
-      "SF",
-      "sf",
-      "드라마",
-      "라이트노벨",
-      "아사토 아사토",
-      "아사토아사토",
-      "전쟁"
-    ],
-    "titles": {
-      "en": "86 -Eighty-Six-",
-      "ko": "86 -에이티식스-"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
     "workId": "wk_000000292",
     "title": "86 -에이티식스-",
     "shardId": "manga_2f",
@@ -305,6 +272,39 @@
     ],
     "titles": {
       "en": "86 Eighty SIX",
+      "ko": "86 -에이티식스-"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000253",
+    "title": "86 -에이티식스-",
+    "shardId": "book_c4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "아사토 아사토",
+    "tags": [
+      "라이트노벨",
+      "SF",
+      "전쟁",
+      "드라마"
+    ],
+    "searchTokens": [
+      "86 -Eighty-Six-",
+      "86 -에이티식스-",
+      "86eightysix",
+      "86에이티식스",
+      "SF",
+      "sf",
+      "드라마",
+      "라이트노벨",
+      "아사토 아사토",
+      "아사토아사토",
+      "전쟁"
+    ],
+    "titles": {
+      "en": "86 -Eighty-Six-",
       "ko": "86 -에이티식스-"
     },
     "qualityScore": 65,
@@ -422,67 +422,6 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
-  },
-  {
-    "workId": "wk_000000298",
-    "title": "BEASTARS",
-    "shardId": "manga_68",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "이토 파루",
-    "tags": [
-      "학원",
-      "드라마",
-      "동물",
-      "로맨스"
-    ],
-    "searchTokens": [
-      "BEASTARS",
-      "beastars",
-      "동물",
-      "드라마",
-      "로맨스",
-      "이토 파루",
-      "이토파루",
-      "학원"
-    ],
-    "titles": {
-      "en": "BEASTARS",
-      "ko": "BEASTARS"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
-    "workId": "wk_000000173",
-    "title": "BEASTARS",
-    "shardId": "animation_78",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "이토 파루",
-    "tags": [
-      "드라마",
-      "학원",
-      "로맨스",
-      "사회"
-    ],
-    "searchTokens": [
-      "BEASTARS",
-      "beastars",
-      "드라마",
-      "로맨스",
-      "사회",
-      "이토 파루",
-      "이토파루",
-      "학원"
-    ],
-    "titles": {
-      "ko": "BEASTARS",
-      "en": "BEASTARS",
-      "ja": "BEASTARS"
-    },
-    "qualityScore": 100,
-    "qualityTier": 5
   },
   {
     "workId": "wk_000000431",
@@ -644,69 +583,6 @@
     "titles": {
       "en": "Don't Starve Together",
       "ko": "Don't Starve Together"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
-    "workId": "wk_000000189",
-    "title": "Dr.STONE",
-    "shardId": "animation_1a",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "이노우에 료",
-    "tags": [
-      "SF",
-      "과학",
-      "모험",
-      "코미디"
-    ],
-    "searchTokens": [
-      "Dr. Stone",
-      "Dr.STONE",
-      "SF",
-      "dr.stone",
-      "sf",
-      "과학",
-      "모험",
-      "이노우에 료",
-      "이노우에료",
-      "코미디"
-    ],
-    "titles": {
-      "ko": "Dr.STONE",
-      "en": "Dr. Stone",
-      "ja": "Dr.STONE"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000316",
-    "title": "Dr.STONE",
-    "shardId": "manga_8c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "보이치",
-    "tags": [
-      "SF",
-      "과학",
-      "서바이벌",
-      "개그"
-    ],
-    "searchTokens": [
-      "Dr.STONE",
-      "SF",
-      "dr.stone",
-      "sf",
-      "개그",
-      "과학",
-      "보이치",
-      "서바이벌"
-    ],
-    "titles": {
-      "en": "Dr.STONE",
-      "ko": "Dr.STONE"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -2512,6 +2388,38 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000000330",
+    "title": "골든 카무이",
+    "shardId": "manga_79",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "나츠미 소이치",
+    "tags": [
+      "역사",
+      "모험",
+      "서바이벌",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Golden Kamuy",
+      "goldenkamuy",
+      "골든 카무이",
+      "골든카무이",
+      "나츠미 소이치",
+      "나츠미소이치",
+      "모험",
+      "서바이벌",
+      "역사",
+      "코미디"
+    ],
+    "titles": {
+      "en": "Golden Kamuy",
+      "ko": "골든 카무이"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000196",
     "title": "골든 카무이",
     "shardId": "animation_05",
@@ -2544,38 +2452,6 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
-  },
-  {
-    "workId": "wk_000000330",
-    "title": "골든 카무이",
-    "shardId": "manga_79",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "나츠미 소이치",
-    "tags": [
-      "역사",
-      "모험",
-      "서바이벌",
-      "코미디"
-    ],
-    "searchTokens": [
-      "Golden Kamuy",
-      "goldenkamuy",
-      "골든 카무이",
-      "골든카무이",
-      "나츠미 소이치",
-      "나츠미소이치",
-      "모험",
-      "서바이벌",
-      "역사",
-      "코미디"
-    ],
-    "titles": {
-      "en": "Golden Kamuy",
-      "ko": "골든 카무이"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
   },
   {
     "workId": "wk_000000342",
@@ -3045,38 +2921,6 @@
     "qualityTier": 3
   },
   {
-    "workId": "wk_000000409",
-    "title": "나 혼자만 레벨업",
-    "shardId": "webtoon_7f",
-    "category": "webtoon",
-    "domain": "subculture",
-    "creator": "추공 / DUBU",
-    "tags": [
-      "판타지",
-      "헌터",
-      "성장",
-      "액션"
-    ],
-    "searchTokens": [
-      "Solo Leveling",
-      "sololeveling",
-      "나 혼자만 레벨업",
-      "나혼자만레벨업",
-      "성장",
-      "액션",
-      "추공 / DUBU",
-      "추공dubu",
-      "판타지",
-      "헌터"
-    ],
-    "titles": {
-      "en": "Solo Leveling",
-      "ko": "나 혼자만 레벨업"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000238",
     "title": "나 혼자만 레벨업",
     "shardId": "animation_f0",
@@ -3106,6 +2950,38 @@
       "ko": "나 혼자만 레벨업",
       "en": "Solo Leveling",
       "ja": "俺だけレベルアップな件"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000409",
+    "title": "나 혼자만 레벨업",
+    "shardId": "webtoon_7f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "추공 / DUBU",
+    "tags": [
+      "판타지",
+      "헌터",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "Solo Leveling",
+      "sololeveling",
+      "나 혼자만 레벨업",
+      "나혼자만레벨업",
+      "성장",
+      "액션",
+      "추공 / DUBU",
+      "추공dubu",
+      "판타지",
+      "헌터"
+    ],
+    "titles": {
+      "en": "Solo Leveling",
+      "ko": "나 혼자만 레벨업"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -3177,6 +3053,38 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000355",
+    "title": "나의 히어로 아카데미아",
+    "shardId": "manga_e3",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "호리코시 코헤이",
+    "tags": [
+      "히어로",
+      "학원",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "MY Hero Academia",
+      "myheroacademia",
+      "나의 히어로 아카데미아",
+      "나의히어로아카데미아",
+      "성장",
+      "액션",
+      "학원",
+      "호리코시 코헤이",
+      "호리코시코헤이",
+      "히어로"
+    ],
+    "titles": {
+      "en": "MY Hero Academia",
+      "ko": "나의 히어로 아카데미아"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000217",
     "title": "나의 히어로 아카데미아",
     "shardId": "animation_ad",
@@ -3209,38 +3117,6 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000355",
-    "title": "나의 히어로 아카데미아",
-    "shardId": "manga_e3",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "호리코시 코헤이",
-    "tags": [
-      "히어로",
-      "학원",
-      "성장",
-      "액션"
-    ],
-    "searchTokens": [
-      "MY Hero Academia",
-      "myheroacademia",
-      "나의 히어로 아카데미아",
-      "나의히어로아카데미아",
-      "성장",
-      "액션",
-      "학원",
-      "호리코시 코헤이",
-      "호리코시코헤이",
-      "히어로"
-    ],
-    "titles": {
-      "en": "MY Hero Academia",
-      "ko": "나의 히어로 아카데미아"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
   },
   {
     "workId": "wk_000000423",
@@ -3410,37 +3286,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000258",
-    "title": "노 게임 노 라이프",
-    "shardId": "book_25",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "카무라",
-    "tags": [
-      "라이트노벨",
-      "판타지",
-      "게임",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "NO Game NO Life",
-      "nogamenolife",
-      "게임",
-      "노 게임 노 라이프",
-      "노게임노라이프",
-      "라이트노벨",
-      "서브컬처",
-      "카무라",
-      "판타지"
-    ],
-    "titles": {
-      "en": "NO Game NO Life",
-      "ko": "노 게임 노 라이프"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
     "workId": "wk_000000220",
     "title": "노 게임 노 라이프",
     "shardId": "animation_7d",
@@ -3471,6 +3316,37 @@
       "ko": "노 게임 노 라이프",
       "en": "No Game No Life",
       "ja": "ノーゲーム・ノーライフ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000258",
+    "title": "노 게임 노 라이프",
+    "shardId": "book_25",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카무라",
+    "tags": [
+      "라이트노벨",
+      "판타지",
+      "게임",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "NO Game NO Life",
+      "nogamenolife",
+      "게임",
+      "노 게임 노 라이프",
+      "노게임노라이프",
+      "라이트노벨",
+      "서브컬처",
+      "카무라",
+      "판타지"
+    ],
+    "titles": {
+      "en": "NO Game NO Life",
+      "ko": "노 게임 노 라이프"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -3824,6 +3700,75 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000316",
+    "title": "닥터 스톤",
+    "shardId": "manga_8c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "보이치",
+    "tags": [
+      "SF",
+      "과학",
+      "서바이벌",
+      "개그"
+    ],
+    "searchTokens": [
+      "Dr. Stone",
+      "Dr.STONE",
+      "SF",
+      "dr.stone",
+      "sf",
+      "개그",
+      "과학",
+      "닥터 스톤",
+      "닥터스톤",
+      "보이치",
+      "서바이벌"
+    ],
+    "titles": {
+      "en": "Dr. Stone",
+      "ja": "Dr.STONE",
+      "ko": "닥터 스톤"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000189",
+    "title": "닥터 스톤",
+    "shardId": "animation_1a",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이노우에 료",
+    "tags": [
+      "SF",
+      "과학",
+      "모험",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Dr. Stone",
+      "Dr.STONE",
+      "SF",
+      "dr.stone",
+      "sf",
+      "과학",
+      "닥터 스톤",
+      "닥터스톤",
+      "모험",
+      "이노우에 료",
+      "이노우에료",
+      "코미디"
+    ],
+    "titles": {
+      "ko": "닥터 스톤",
+      "en": "Dr. Stone",
+      "ja": "Dr.STONE"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000268",
     "title": "단간론파",
     "shardId": "game_e1",
@@ -3855,40 +3800,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000185",
-    "title": "단다단",
-    "shardId": "animation_a7",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Science SARU",
-    "tags": [
-      "오컬트",
-      "코미디",
-      "액션",
-      "청춘"
-    ],
-    "searchTokens": [
-      "Dandadan",
-      "Science SARU",
-      "dandadan",
-      "sciencesaru",
-      "ダンダダン",
-      "단다단",
-      "액션",
-      "오컬트",
-      "청춘",
-      "코미디"
-    ],
-    "titles": {
-      "ko": "단다단",
-      "en": "Dandadan",
-      "ja": "ダンダダン",
-      "romaji": "Dandadan"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000310",
     "title": "단다단",
     "shardId": "manga_a9",
@@ -3912,6 +3823,40 @@
       "코미디",
       "타츠타 유키",
       "타츠타유키"
+    ],
+    "titles": {
+      "ko": "단다단",
+      "en": "Dandadan",
+      "ja": "ダンダダン",
+      "romaji": "Dandadan"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000185",
+    "title": "단다단",
+    "shardId": "animation_a7",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Science SARU",
+    "tags": [
+      "오컬트",
+      "코미디",
+      "액션",
+      "청춘"
+    ],
+    "searchTokens": [
+      "Dandadan",
+      "Science SARU",
+      "dandadan",
+      "sciencesaru",
+      "ダンダダン",
+      "단다단",
+      "액션",
+      "오컬트",
+      "청춘",
+      "코미디"
     ],
     "titles": {
       "ko": "단다단",
@@ -4138,39 +4083,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000318",
-    "title": "던전밥",
-    "shardId": "manga_1c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "오오토마 록코",
-    "tags": [
-      "판타지",
-      "요리",
-      "모험",
-      "코미디"
-    ],
-    "searchTokens": [
-      "Delicious in Dungeon",
-      "deliciousindungeon",
-      "ダンジョン飯",
-      "던전밥",
-      "모험",
-      "오오토마 록코",
-      "오오토마록코",
-      "요리",
-      "코미디",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "던전밥",
-      "en": "Delicious in Dungeon",
-      "ja": "ダンジョン飯"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
     "workId": "wk_000000190",
     "title": "던전밥",
     "shardId": "animation_49",
@@ -4202,6 +4114,39 @@
       "en": "Delicious in Dungeon",
       "ja": "ダンジョン飯",
       "romaji": "Dungeon Meshi"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000318",
+    "title": "던전밥",
+    "shardId": "manga_1c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오오토마 록코",
+    "tags": [
+      "판타지",
+      "요리",
+      "모험",
+      "코미디"
+    ],
+    "searchTokens": [
+      "Delicious in Dungeon",
+      "deliciousindungeon",
+      "ダンジョン飯",
+      "던전밥",
+      "모험",
+      "오오토마 록코",
+      "오오토마록코",
+      "요리",
+      "코미디",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "던전밥",
+      "en": "Delicious in Dungeon",
+      "ja": "ダンジョン飯"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -4275,6 +4220,37 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000311",
+    "title": "데스노트",
+    "shardId": "manga_5a",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "오바 타케시",
+    "tags": [
+      "스릴러",
+      "초자연",
+      "정의",
+      "다크"
+    ],
+    "searchTokens": [
+      "Death Note",
+      "deathnote",
+      "다크",
+      "데스노트",
+      "스릴러",
+      "오바 타케시",
+      "오바타케시",
+      "정의",
+      "초자연"
+    ],
+    "titles": {
+      "en": "Death Note",
+      "ko": "데스노트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000187",
     "title": "데스노트",
     "shardId": "animation_5e",
@@ -4305,37 +4281,6 @@
       "en": "Death Note",
       "ja": "DEATH NOTE",
       "zh": "死亡笔记"
-    },
-    "qualityScore": 90,
-    "qualityTier": 4
-  },
-  {
-    "workId": "wk_000000311",
-    "title": "데스노트",
-    "shardId": "manga_5a",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "오바 타케시",
-    "tags": [
-      "스릴러",
-      "초자연",
-      "정의",
-      "다크"
-    ],
-    "searchTokens": [
-      "Death Note",
-      "deathnote",
-      "다크",
-      "데스노트",
-      "스릴러",
-      "오바 타케시",
-      "오바타케시",
-      "정의",
-      "초자연"
-    ],
-    "titles": {
-      "en": "Death Note",
-      "ko": "데스노트"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -5639,6 +5584,38 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000212",
+    "title": "메이드 인 어비스",
+    "shardId": "animation_e4",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kinema Citrus",
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "명작"
+    ],
+    "searchTokens": [
+      "Kinema Citrus",
+      "Made IN Abyss",
+      "kinemacitrus",
+      "madeinabyss",
+      "다크",
+      "메이드 인 어비스",
+      "메이드인어비스",
+      "명작",
+      "모험",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Made IN Abyss",
+      "ko": "메이드 인 어비스"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000348",
     "title": "메이드 인 어비스",
     "shardId": "manga_d6",
@@ -5671,38 +5648,6 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
-  },
-  {
-    "workId": "wk_000000212",
-    "title": "메이드 인 어비스",
-    "shardId": "animation_e4",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "Kinema Citrus",
-    "tags": [
-      "판타지",
-      "모험",
-      "다크",
-      "명작"
-    ],
-    "searchTokens": [
-      "Kinema Citrus",
-      "Made IN Abyss",
-      "kinemacitrus",
-      "madeinabyss",
-      "다크",
-      "메이드 인 어비스",
-      "메이드인어비스",
-      "명작",
-      "모험",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Made IN Abyss",
-      "ko": "메이드 인 어비스"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
   },
   {
     "workId": "wk_000000265",
@@ -5984,6 +5929,44 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000000354",
+    "title": "무직전생",
+    "shardId": "manga_0c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "리덕션 / 후지카와 유카",
+    "tags": [
+      "이세계",
+      "판타지",
+      "성장",
+      "마법"
+    ],
+    "searchTokens": [
+      "Jobless Reincarnation",
+      "Mushoku Tensei",
+      "Mushoku Tensei: Jobless Reincarnation",
+      "joblessreincarnation",
+      "mushokutensei",
+      "mushokutenseijoblessreincarnation",
+      "無職転生",
+      "리덕션 / 후지카와 유카",
+      "리덕션후지카와유카",
+      "마법",
+      "무직전생",
+      "성장",
+      "이세계",
+      "판타지"
+    ],
+    "titles": {
+      "ko": "무직전생",
+      "en": "Mushoku Tensei: Jobless Reincarnation",
+      "ja": "無職転生",
+      "romaji": "Mushoku Tensei"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000257",
     "title": "무직전생",
     "shardId": "book_d8",
@@ -6047,44 +6030,6 @@
     "titles": {
       "en": "Mushoku Tensei",
       "ko": "무직전생"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
-    "workId": "wk_000000354",
-    "title": "무직전생",
-    "shardId": "manga_0c",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "리덕션 / 후지카와 유카",
-    "tags": [
-      "이세계",
-      "판타지",
-      "성장",
-      "마법"
-    ],
-    "searchTokens": [
-      "Jobless Reincarnation",
-      "Mushoku Tensei",
-      "Mushoku Tensei: Jobless Reincarnation",
-      "joblessreincarnation",
-      "mushokutensei",
-      "mushokutenseijoblessreincarnation",
-      "無職転生",
-      "리덕션 / 후지카와 유카",
-      "리덕션후지카와유카",
-      "마법",
-      "무직전생",
-      "성장",
-      "이세계",
-      "판타지"
-    ],
-    "titles": {
-      "ko": "무직전생",
-      "en": "Mushoku Tensei: Jobless Reincarnation",
-      "ja": "無職転生",
-      "romaji": "Mushoku Tensei"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -6688,38 +6633,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000178",
-    "title": "봇치 더 록!",
-    "shardId": "animation_a4",
-    "category": "animation",
-    "domain": "subculture",
-    "creator": "CloverWorks",
-    "tags": [
-      "음악",
-      "코미디",
-      "밴드",
-      "성장"
-    ],
-    "searchTokens": [
-      "Bocchi THE Rock",
-      "CloverWorks",
-      "bocchitherock",
-      "cloverworks",
-      "밴드",
-      "봇치 더 록!",
-      "봇치더록!",
-      "성장",
-      "음악",
-      "코미디"
-    ],
-    "titles": {
-      "en": "Bocchi THE Rock",
-      "ko": "봇치 더 록!"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
     "workId": "wk_000000304",
     "title": "봇치 더 록!",
     "shardId": "manga_1b",
@@ -6743,6 +6656,38 @@
       "코미디",
       "하마다 쿠키",
       "하마다쿠키"
+    ],
+    "titles": {
+      "en": "Bocchi THE Rock",
+      "ko": "봇치 더 록!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000178",
+    "title": "봇치 더 록!",
+    "shardId": "animation_a4",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "CloverWorks",
+    "tags": [
+      "음악",
+      "코미디",
+      "밴드",
+      "성장"
+    ],
+    "searchTokens": [
+      "Bocchi THE Rock",
+      "CloverWorks",
+      "bocchitherock",
+      "cloverworks",
+      "밴드",
+      "봇치 더 록!",
+      "봇치더록!",
+      "성장",
+      "음악",
+      "코미디"
     ],
     "titles": {
       "en": "Bocchi THE Rock",
@@ -6948,38 +6893,6 @@
     "qualityTier": 4
   },
   {
-    "workId": "wk_000000300",
-    "title": "블랙 클로버",
-    "shardId": "manga_97",
-    "category": "manga",
-    "domain": "subculture",
-    "creator": "타바타 유키",
-    "tags": [
-      "판타지",
-      "마법",
-      "액션",
-      "우정"
-    ],
-    "searchTokens": [
-      "Black Clover",
-      "blackclover",
-      "마법",
-      "블랙 클로버",
-      "블랙클로버",
-      "액션",
-      "우정",
-      "타바타 유키",
-      "타바타유키",
-      "판타지"
-    ],
-    "titles": {
-      "en": "Black Clover",
-      "ko": "블랙 클로버"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
     "workId": "wk_000000174",
     "title": "블랙 클로버",
     "shardId": "animation_97",
@@ -7009,6 +6922,38 @@
       "ko": "블랙 클로버",
       "en": "Black Clover",
       "ja": "ブラッククローバー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000300",
+    "title": "블랙 클로버",
+    "shardId": "manga_97",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "타바타 유키",
+    "tags": [
+      "판타지",
+      "마법",
+      "액션",
+      "우정"
+    ],
+    "searchTokens": [
+      "Black Clover",
+      "blackclover",
+      "마법",
+      "블랙 클로버",
+      "블랙클로버",
+      "액션",
+      "우정",
+      "타바타 유키",
+      "타바타유키",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Black Clover",
+      "ko": "블랙 클로버"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -7198,6 +7143,34 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000000301",
+    "title": "블리치",
+    "shardId": "manga_89",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "tags": [
+      "액션",
+      "사신",
+      "초자연",
+      "우정"
+    ],
+    "searchTokens": [
+      "블리치",
+      "사신",
+      "액션",
+      "우정",
+      "초자연",
+      "쿠보 타이토",
+      "쿠보타이토"
+    ],
+    "titles": {
+      "ko": "블리치"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000176",
     "title": "블리치",
     "shardId": "animation_e4",
@@ -7231,32 +7204,68 @@
     "qualityTier": 5
   },
   {
-    "workId": "wk_000000301",
-    "title": "블리치",
-    "shardId": "manga_89",
+    "workId": "wk_000000298",
+    "title": "비스타즈",
+    "shardId": "manga_68",
     "category": "manga",
     "domain": "subculture",
-    "creator": "쿠보 타이토",
+    "creator": "이토 파루",
     "tags": [
-      "액션",
-      "사신",
-      "초자연",
-      "우정"
+      "학원",
+      "드라마",
+      "동물",
+      "로맨스"
     ],
     "searchTokens": [
-      "블리치",
-      "사신",
-      "액션",
-      "우정",
-      "초자연",
-      "쿠보 타이토",
-      "쿠보타이토"
+      "BEASTARS",
+      "beastars",
+      "동물",
+      "드라마",
+      "로맨스",
+      "비스타즈",
+      "이토 파루",
+      "이토파루",
+      "학원"
     ],
     "titles": {
-      "ko": "블리치"
+      "en": "BEASTARS",
+      "ja": "BEASTARS",
+      "ko": "비스타즈"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000173",
+    "title": "비스타즈",
+    "shardId": "animation_78",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이토 파루",
+    "tags": [
+      "드라마",
+      "학원",
+      "로맨스",
+      "사회"
+    ],
+    "searchTokens": [
+      "BEASTARS",
+      "beastars",
+      "드라마",
+      "로맨스",
+      "비스타즈",
+      "사회",
+      "이토 파루",
+      "이토파루",
+      "학원"
+    ],
+    "titles": {
+      "ko": "비스타즈",
+      "en": "BEASTARS",
+      "ja": "BEASTARS"
+    },
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000247",
@@ -7743,38 +7752,6 @@
     "qualityTier": 2
   },
   {
-    "workId": "wk_000000263",
-    "title": "소드 아트 온라인",
-    "shardId": "book_55",
-    "category": "book",
-    "domain": "subculture",
-    "creator": "카와하라 레키 (Reki Kawahara)",
-    "tags": [
-      "라이트노벨",
-      "게임판타지",
-      "데스게임",
-      "서브컬처"
-    ],
-    "searchTokens": [
-      "Sword ART Online",
-      "swordartonline",
-      "게임판타지",
-      "데스게임",
-      "라이트노벨",
-      "서브컬처",
-      "소드 아트 온라인",
-      "소드아트온라인",
-      "카와하라 레키 (Reki Kawahara)",
-      "카와하라레키(rekikawahara)"
-    ],
-    "titles": {
-      "en": "Sword ART Online",
-      "ko": "소드 아트 온라인"
-    },
-    "qualityScore": 65,
-    "qualityTier": 3
-  },
-  {
     "workId": "wk_000000241",
     "title": "소드 아트 온라인",
     "shardId": "animation_31",
@@ -7809,6 +7786,38 @@
       "en": "Sword Art Online",
       "ja": "ソードアート・オンライン",
       "romaji": "SAO"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000263",
+    "title": "소드 아트 온라인",
+    "shardId": "book_55",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "카와하라 레키 (Reki Kawahara)",
+    "tags": [
+      "라이트노벨",
+      "게임판타지",
+      "데스게임",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Sword ART Online",
+      "swordartonline",
+      "게임판타지",
+      "데스게임",
+      "라이트노벨",
+      "서브컬처",
+      "소드 아트 온라인",
+      "소드아트온라인",
+      "카와하라 레키 (Reki Kawahara)",
+      "카와하라레키(rekikawahara)"
+    ],
+    "titles": {
+      "en": "Sword ART Online",
+      "ko": "소드 아트 온라인"
     },
     "qualityScore": 65,
     "qualityTier": 3

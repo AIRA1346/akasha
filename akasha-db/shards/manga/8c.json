@@ -32,7 +32,7 @@
   },
   "wk_000000316": {
     "workId": "wk_000000316",
-    "title": "Dr.STONE",
+    "title": "닥터 스톤",
     "category": "manga",
     "domain": "subculture",
     "creator": "보이치",
@@ -53,8 +53,9 @@
       "sub_manga_dr-stone_2017"
     ],
     "titles": {
-      "en": "Dr.STONE",
-      "ko": "Dr.STONE"
+      "en": "Dr. Stone",
+      "ja": "Dr.STONE",
+      "ko": "닥터 스톤"
     }
   }
 }

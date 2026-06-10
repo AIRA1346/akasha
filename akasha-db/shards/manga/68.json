@@ -1,7 +1,7 @@
 {
   "wk_000000298": {
     "workId": "wk_000000298",
-    "title": "BEASTARS",
+    "title": "비스타즈",
     "category": "manga",
     "domain": "subculture",
     "creator": "이토 파루",
@@ -23,7 +23,8 @@
     ],
     "titles": {
       "en": "BEASTARS",
-      "ko": "BEASTARS"
+      "ja": "BEASTARS",
+      "ko": "비스타즈"
     }
   },
   "wk_000000314": {
