@@ -16,6 +16,7 @@ class PosterCard extends StatefulWidget {
   final AkashaItem item;
   final List<FormatSlot> formatSlots;
   final String? franchiseId;
+  final bool showPoster;
   final VoidCallback? onTap;
   final VoidCallback? onHideFromRegistry;
   final VoidCallback? onHideFranchise;
@@ -26,6 +27,7 @@ class PosterCard extends StatefulWidget {
     required this.item,
     this.formatSlots = const [],
     this.franchiseId,
+    this.showPoster = true,
     this.onTap,
     this.onHideFromRegistry,
     this.onHideFranchise,
@@ -112,144 +114,9 @@ class _PosterCardState extends State<PosterCard> {
                     ),
                   ],
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 5,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(10),
-                      ),
-                      child: PosterImage(
-                        item: item,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    ),
-                    if (showArchivedBadge)
-                      Positioned(
-                        top: 8,
-                        right: 8,
-                        child: Tooltip(
-                          message: 'Sanctum vault 연동됨',
-                          child: Semantics(
-                            label: '아카이브됨',
-                            child: Container(
-                              width: 24,
-                              height: 24,
-                              decoration: BoxDecoration(
-                                color: Colors.black.withValues(alpha: 0.55),
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: const Color(0xFFCCCCCC),
-                                  width: 1,
-                                ),
-                              ),
-                              child: const Icon(
-                                Icons.description_outlined,
-                                size: 14,
-                                color: Color(0xFFCCCCCC),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        item.title,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w700,
-                          height: 1.2,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 3),
-                      if (item.creator.isNotEmpty)
-                        Text(
-                          item.creator,
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: Colors.grey[400],
-                            height: 1.2,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      const Spacer(),
-                      if (item.rating > 0)
-                        StarRating(rating: item.rating, size: 14)
-                      else
-                        const Row(
-                          children: [
-                            Text(
-                              '⏳ 평가 대기',
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.amber,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      const SizedBox(height: 5),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              _getStatusTextWithEmoji(item),
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.grey[300],
-                                fontWeight: FontWeight.w500,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 5),
-                      if (item.releaseYear != null)
-                        Row(
-                          children: [
-                            Text(
-                              '🗓️ ${item.releaseYear}년',
-                              style: TextStyle(
-                                fontSize: 10,
-                                color: Colors.grey[400],
-                              ),
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
-                ),
-              ),
-              if (widget.formatSlots.isNotEmpty)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-                  child: FormatChipRow(
-                    slots: widget.formatSlots,
-                    onHideSlot: widget.onHideFormatSlot,
-                  ),
-                ),
-            ],
-          ),
+          child: widget.showPoster
+              ? _buildPosterLayout(item, showArchivedBadge)
+              : _buildCompactLayout(item, showArchivedBadge),
         ),
       ),
     );
@@ -300,4 +167,188 @@ class _PosterCardState extends State<PosterCard> {
 
   String _getStatusTextWithEmoji(AkashaItem item) =>
       watchlistStatusEmojiLabel(item);
+
+  Widget _buildArchivedBadge() {
+    return Tooltip(
+      message: 'Sanctum vault 연동됨',
+      child: Semantics(
+        label: '아카이브됨',
+        child: Container(
+          width: 24,
+          height: 24,
+          decoration: BoxDecoration(
+            color: Colors.black.withValues(alpha: 0.55),
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: const Color(0xFFCCCCCC),
+              width: 1,
+            ),
+          ),
+          child: const Icon(
+            Icons.description_outlined,
+            size: 14,
+            color: Color(0xFFCCCCCC),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCardMeta(AkashaItem item, {required bool compact}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          item.title,
+          style: TextStyle(
+            fontSize: compact ? 14 : 13,
+            fontWeight: FontWeight.w700,
+            height: 1.2,
+          ),
+          maxLines: compact ? 3 : 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        const SizedBox(height: 3),
+        if (item.creator.isNotEmpty)
+          Text(
+            item.creator,
+            style: TextStyle(
+              fontSize: compact ? 12 : 11,
+              color: Colors.grey[400],
+              height: 1.2,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        if (compact) ...[
+          const SizedBox(height: 6),
+          Chip(
+            avatar: Icon(item.category.icon, size: 14),
+            label: Text(
+              item.category.label,
+              style: const TextStyle(fontSize: 10),
+            ),
+            visualDensity: VisualDensity.compact,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            padding: EdgeInsets.zero,
+          ),
+        ],
+        if (!compact) const Spacer(),
+        if (compact) const SizedBox(height: 8),
+        if (item.rating > 0)
+          StarRating(rating: item.rating, size: compact ? 13 : 14)
+        else if (!compact)
+          const Row(
+            children: [
+              Text(
+                '⏳ 평가 대기',
+                style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.amber,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+        if (!compact) const SizedBox(height: 5),
+        if (compact) const SizedBox(height: 6),
+        Text(
+          _getStatusTextWithEmoji(item),
+          style: TextStyle(
+            fontSize: compact ? 11 : 11,
+            color: Colors.grey[300],
+            fontWeight: FontWeight.w500,
+          ),
+          maxLines: compact ? 2 : 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        if (item.releaseYear != null) ...[
+          SizedBox(height: compact ? 4 : 5),
+          Text(
+            '🗓️ ${item.releaseYear}년',
+            style: TextStyle(
+              fontSize: compact ? 10 : 10,
+              color: Colors.grey[400],
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildFormatSlotsRow() {
+    if (widget.formatSlots.isEmpty) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+      child: FormatChipRow(
+        slots: widget.formatSlots,
+        onHideSlot: widget.onHideFormatSlot,
+      ),
+    );
+  }
+
+  Widget _buildPosterLayout(AkashaItem item, bool showArchivedBadge) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          flex: 5,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(10),
+                ),
+                child: PosterImage(
+                  item: item,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                ),
+              ),
+              if (showArchivedBadge)
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: _buildArchivedBadge(),
+                ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 3,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+            child: _buildCardMeta(item, compact: false),
+          ),
+        ),
+        _buildFormatSlotsRow(),
+      ],
+    );
+  }
+
+  Widget _buildCompactLayout(AkashaItem item, bool showArchivedBadge) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
+            child: Stack(
+              children: [
+                _buildCardMeta(item, compact: true),
+                if (showArchivedBadge)
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: _buildArchivedBadge(),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        _buildFormatSlotsRow(),
+      ],
+    );
+  }
 }

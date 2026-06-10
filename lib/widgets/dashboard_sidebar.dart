@@ -4,7 +4,7 @@ import '../models/dashboard_config.dart';
 import '../models/personal_library_config.dart';
 import '../screens/home/home_personal_library_controller.dart';
 
-/// 대시보드 서재 + 나만의 서재 사이드바
+/// 나만의 서재 + 대시보드 서재 사이드바 (나만의 서재 상단)
 class DashboardSidebar extends StatelessWidget {
   static const Color dashboardAccent = Colors.tealAccent;
   static const Color personalAccent = Colors.amberAccent;
@@ -59,6 +59,42 @@ class DashboardSidebar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _SectionHeader(
+                  icon: Icons.collections_bookmark_outlined,
+                  iconColor: personalAccent,
+                  title: '나만의 서재',
+                  onAdd: onAddPersonalLibrary,
+                  addTooltip: '나만의 서재 추가',
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                Expanded(
+                  flex: 3,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    itemCount: personalLibraries.length,
+                    itemBuilder: (context, index) {
+                      final lib = personalLibraries[index];
+                      final isActive = selectionMode ==
+                              SidebarSelectionMode.personalLibrary &&
+                          lib.id == activePersonalLibraryId;
+                      return SidebarItemWidget(
+                        name: lib.name,
+                        icon: lib.categories.length == 1
+                            ? lib.categories.first.icon
+                            : Icons.inventory_2_outlined,
+                        isActive: isActive,
+                        accentColor: personalAccent,
+                        canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,
+                        canDelete: lib.id != PersonalLibraryConfig.masterArchiveId,
+                        editTooltip: '서재 설정',
+                        onTap: () => onSelectPersonalLibrary(lib.id),
+                        onEdit: () => onEditPersonalLibrary(lib),
+                        onDelete: () => onDeletePersonalLibrary(lib.id),
+                      );
+                    },
+                  ),
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                _SectionHeader(
                   icon: Icons.library_books,
                   iconColor: dashboardAccent,
                   title: '대시보드 서재',
@@ -90,42 +126,6 @@ class DashboardSidebar extends StatelessWidget {
                         onTap: () => onSelectDashboard(dash.id),
                         onEdit: () => onEditDashboard(dash),
                         onDelete: () => onDeleteDashboard(dash.id),
-                      );
-                    },
-                  ),
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                _SectionHeader(
-                  icon: Icons.collections_bookmark_outlined,
-                  iconColor: personalAccent,
-                  title: '나만의 서재',
-                  onAdd: onAddPersonalLibrary,
-                  addTooltip: '나만의 서재 추가',
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                Expanded(
-                  flex: 3,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    itemCount: personalLibraries.length,
-                    itemBuilder: (context, index) {
-                      final lib = personalLibraries[index];
-                      final isActive = selectionMode ==
-                              SidebarSelectionMode.personalLibrary &&
-                          lib.id == activePersonalLibraryId;
-                      return SidebarItemWidget(
-                        name: lib.name,
-                        icon: lib.categories.length == 1
-                            ? lib.categories.first.icon
-                            : Icons.inventory_2_outlined,
-                        isActive: isActive,
-                        accentColor: personalAccent,
-                        canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,
-                        canDelete: lib.id != PersonalLibraryConfig.masterArchiveId,
-                        editTooltip: '서재 설정',
-                        onTap: () => onSelectPersonalLibrary(lib.id),
-                        onEdit: () => onEditPersonalLibrary(lib),
-                        onDelete: () => onDeletePersonalLibrary(lib.id),
                       );
                     },
                   ),

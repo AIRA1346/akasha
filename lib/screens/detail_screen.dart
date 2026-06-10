@@ -145,7 +145,7 @@ class _DetailScreenState extends State<DetailScreen> {
               const Divider(height: 32),
             ],
             if (item.description.isNotEmpty) ...[
-              detailSectionTitle('📝', '작품 특징'),
+              detailSectionTitle('📋', '시놉시스'),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: MarkdownBody(
@@ -209,7 +209,7 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
             const Divider(height: 32),
-            detailSectionTitle('📖', '감상문'),
+            detailSectionTitle('📝', '메모'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: item.review.isEmpty
@@ -217,7 +217,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '아직 감상문이 작성되지 않았습니다.',
+                          '아직 메모가 작성되지 않았습니다.',
                           style: TextStyle(
                             fontSize: 13,
                             color: Colors.grey[600],
@@ -228,7 +228,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         OutlinedButton.icon(
                           onPressed: () => _showEditReviewDialog(context),
                           icon: const Icon(Icons.rate_review, size: 18),
-                          label: const Text('감상문 작성'),
+                          label: const Text('메모 작성'),
                         ),
                       ],
                     )
@@ -265,7 +265,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             onPressed: () => _showEditReviewDialog(context),
                             icon: const Icon(Icons.edit, size: 16),
                             label: const Text(
-                              '감상문 편집',
+                              '메모 편집',
                               style: TextStyle(fontSize: 12),
                             ),
                           ),

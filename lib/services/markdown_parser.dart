@@ -65,6 +65,12 @@ class MarkdownParser {
     buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // YAML title (외부 편집기 호환)
     buffer.writeln('category: ${item.category.name}');
     buffer.writeln('domain: ${item.domain.name}');
+    buffer.writeln('# poster: "https://..." 또는 "posters/파일명.jpg"');
+    if (shouldPersistPosterToYaml(item)) {
+      buffer.writeln('poster: "${item.posterPath!.replaceAll('"', '\\"')}"');
+    } else {
+      buffer.writeln('poster: ""');
+    }
     buffer.writeln('rating: ${item.rating}');
     
     // 작품 상태 및 나의 상태 저장 (Sanctum vault 호환성 극대화)
@@ -79,9 +85,6 @@ class MarkdownParser {
     if (item.releaseYear != null) {
       buffer.writeln('release_year: ${item.releaseYear}');
     }
-    if (shouldPersistPosterToYaml(item)) {
-      buffer.writeln('poster: "${item.posterPath!.replaceAll('"', '\\"')}"');
-    }
     
     if (item.tags.isNotEmpty) {
       buffer.writeln('tags: [${item.tags.map((t) => '"${t.replaceAll('"', '\\"')}"').join(', ')}]');
@@ -93,16 +96,24 @@ class MarkdownParser {
     buffer.writeln('---');
     buffer.writeln();
     
-    // 유저 개인의 기록(명대사, 감상문)만 본문에 남깁니다. (공통 설명 description 등은 DB에 있으므로 저장 생략)
+    // 유저 개인의 기록(시놉·명대사·메모)만 본문에 남깁니다.
+    if (item.description.trim().isNotEmpty) {
+      buffer.writeln('# 📋 시놉시스');
+      buffer.writeln(item.description.trim());
+      buffer.writeln();
+    }
+
     buffer.writeln('# 🎬 명장면 & 명대사');
     for (final quote in item.memorableQuotes) {
       buffer.writeln('> $quote');
       buffer.writeln();
     }
-    
-    buffer.writeln('# 📖 감상문');
-    buffer.writeln(item.review.trim());
-    buffer.writeln();
+
+    if (item.review.trim().isNotEmpty) {
+      buffer.writeln('# 📝 메모');
+      buffer.writeln(item.review.trim());
+      buffer.writeln();
+    }
     
     return buffer.toString();
   }
@@ -209,6 +220,7 @@ class MarkdownParser {
     // 마크다운 바디 파싱 (유저 기록 파싱)
     final bodyLines = lines.sublist(bodyStartLine);
     final List<String> quotes = [];
+    final synopsisBuffer = StringBuffer();
     final reviewBuffer = StringBuffer();
 
     String currentSection = 'none';
@@ -221,6 +233,10 @@ class MarkdownParser {
         final heading = trimmedLine.substring(2).toLowerCase();
         if (heading.contains('명대사') || heading.contains('명장면') || heading.contains('quote')) {
           currentSection = 'quotes';
+        } else if (heading.contains('시놉') || heading.contains('synopsis')) {
+          currentSection = 'synopsis';
+        } else if (heading.contains('메모') || heading.contains('memo')) {
+          currentSection = 'memo';
         } else if (heading.contains('감상문') || heading.contains('review')) {
           currentSection = 'review';
         } else {
@@ -230,7 +246,9 @@ class MarkdownParser {
       }
 
       // 섹션별 데이터 수집
-      if (currentSection == 'review') {
+      if (currentSection == 'synopsis') {
+        synopsisBuffer.writeln(line);
+      } else if (currentSection == 'review' || currentSection == 'memo') {
         reviewBuffer.writeln(line);
       } else if (currentSection == 'quotes') {
         if (trimmedLine.startsWith('>')) {
@@ -247,6 +265,7 @@ class MarkdownParser {
     }
 
     final review = reviewBuffer.toString().trim();
+    final userSynopsis = synopsisBuffer.toString().trim();
 
     // ── UI Fusion: 공통 사전 DB 조인 ──
     String creator = yamlMap['creator']?.toString() ?? '';
@@ -283,6 +302,10 @@ class MarkdownParser {
           tags.add(tag);
         }
       }
+    }
+
+    if (userSynopsis.isNotEmpty) {
+      description = userSynopsis;
     }
 
     final item = createItem(

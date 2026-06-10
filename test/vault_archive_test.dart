@@ -59,6 +59,7 @@ void main() {
         MarkdownParser.serialize(original),
         'fallback',
       );
+      final serialized = MarkdownParser.serialize(original);
 
       expect(restored.workId, original.workId);
       expect(restored.title, original.title);
@@ -69,6 +70,9 @@ void main() {
       expect(restored.memorableQuotes, contains('"명대사 테스트"'));
       expect(restored.review, '감상문 본문입니다.');
       expect(restored.tags, containsAll(['테스트', '판타지']));
+      expect(serialized, contains('poster: ""'));
+      expect(serialized, contains('# 📝 메모'));
+      expect(serialized.indexOf('poster:'), lessThan(serialized.indexOf('rating:')));
     });
 
     test('ensureWorkId assigns master id from registry title match', () {

@@ -29,7 +29,6 @@ import 'home/home_registry_hide_actions.dart';
 import 'home/home_section_preferences.dart';
 import 'home/home_app_bar.dart';
 import 'home/home_vault_banner.dart';
-import 'home/home_registry_archive.dart';
 import 'home/dialogs/registry_sync_dialog.dart';
 import 'home/dialogs/vault_settings_dialog.dart';
 import 'home/dialogs/dashboard_edit_dialog.dart';
@@ -54,6 +53,7 @@ import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
 import '../widgets/library_theme_picker.dart';
 import 'detail_screen.dart';
+import 'detail/archive_create_screen.dart';
 //  메인 홈 대시보드 (Sanctum vault 스타일 그리드)
 // ════════════════════════════════════════════════════════════════
 
@@ -518,12 +518,44 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void _openBrowseItem(AkashaItem item) {
+    final service = AkashaFileService();
+    final isArchived = service.isArchivedInVault(item);
+    final openCreateFlow = !_isPersonalLibraryMode && !isArchived;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => openCreateFlow
+            ? ArchiveCreateScreen(item: item)
+            : DetailScreen(item: item),
+      ),
+    ).then((result) async {
+      await _loadItems();
+      if (!mounted) return;
+
+      if (result is AkashaItem) {
+        _navigateToDetail(result);
+        return;
+      }
+
+      if (result == true) {
+        setState(() {
+          _items.removeWhere((e) =>
+              (item.workId.isNotEmpty && e.workId == item.workId) ||
+              (e.title == item.title && e.category == item.category));
+        });
+      }
+    });
+  }
+
   Widget _buildPosterCard(BrowseCard card) {
     return PosterCard(
       item: card.item,
       formatSlots: card.formatSlots,
       franchiseId: card.franchiseId,
-      onTap: () => _navigateToDetail(card.item),
+      showPoster: _isPersonalLibraryMode,
+      onTap: () => _openBrowseItem(card.item),
       onHideFromRegistry: _hideActions.registryHideActionFor(card.item),
       onHideFranchise: _hideActions.franchiseHideActionFor(card),
       onHideFormatSlot: _hideActions.formatSlotHideActionFor(card),
@@ -741,7 +773,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (dailyRecall != null)
                   TodayRecallCard(
                     recall: dailyRecall,
-                    onTap: () => _navigateToDetail(dailyRecall.item),
+                    onTap: () => _openBrowseItem(dailyRecall.item),
                   ),
                 Expanded(
                   child: !_isPersonalLibraryMode && _isCatalogLoading
@@ -830,6 +862,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return BrowsePosterGrid(
       cards: cards,
       cardBuilder: _buildPosterCard,
+      childAspectRatio: _isPersonalLibraryMode ? 0.48 : 1.35,
     );
   }
 
@@ -840,8 +873,8 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (ctx) => FusionSearchDialog(
         localItems: _items,
-        onSelectLocal: _navigateToDetail,
-        onSelectRemote: _archiveAndOpenRegistryWork,
+        onSelectLocal: _openBrowseItem,
+        onSelectRemote: _openRegistryWorkForArchive,
         onCustomAdd: (query) => _showAddDialog(context, initialTitle: query),
         onCatalogPropose: FeatureFlags.catalogContributions
             ? (query) => _proposeCatalogAdd(context, query)
@@ -881,19 +914,10 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  /// 원격 사전 작품 탭 → 로컬 .md 자동 아카이빙 후 상세 화면 이동
-  Future<void> _archiveAndOpenRegistryWork(RegistryWork work) async {
-    final newItem = await HomeRegistryArchive.persistRegistryWork(
-      work,
-      reloadItems: _loadItems,
-      onDemoAdd: (item) => setState(() => _items.add(item)),
-    );
-
+  /// 원격 사전 작품 탭 → 아카이브 생성 화면으로 이동
+  Future<void> _openRegistryWorkForArchive(RegistryWork work) async {
     if (!mounted) return;
-    _navigateToDetail(newItem);
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('"${work.title}" 사전에서 아카이브에 추가되었습니다.')),
-    );
+    _openBrowseItem(HomeAutoArchive.itemFromRegistryWork(work));
   }
 
   // ── 신규 등록 다이얼로그 ──

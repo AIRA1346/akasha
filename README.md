@@ -65,7 +65,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 | **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
 | **규모 목표** | 2026 ~430(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
 | **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~E ✅) |
-| **포스터** | **v1: Tier 1 미제공** — 유저 Sanctum vault `poster:` / `posters/` 만 |
+| **포스터** | **대시보드 서재 미표시** · 나만의 서재에서만 유저 Sanctum vault `poster:` / `posters/` 표시 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
 | **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
@@ -118,7 +118,8 @@ flowchart LR
 ```
 
 - **work_id:** `wk_` + 9자리 영구 ID (예: `wk_000000111`) — 작품명과 무관한 불변 키. 구 슬러그 ID(`{sub|gen}_{category}_{slug}_{year}`)는 `legacy_aliases`로 자동 해석
-- **그리드:** IP당 1카드 (`FranchiseDisplayPolicy`)
+- **대시보드 서재:** IP당 1카드 (`FranchiseDisplayPolicy`) · 포스터 없는 Fact 카드
+- **나만의 서재:** 아카이브된 `.md`만 표시 · 유저 `poster:` / `posters/` 이미지 표시
 - **검색:** 로컬 + 사전 + 가상 항목; 같은 IP는 검색에서만 매체별 노출 가능
 
 ---
@@ -160,11 +161,11 @@ flowchart LR
 | `title` | 작품 제목 (파일명과 동기화) |
 | `category` | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
 | `domain` | `subculture` · `generalCulture` |
+| `poster` | `posters/` 상대경로 또는 커스텀 URL — 나만의 서재 카드에 표시 |
+| `rating` | 0.0~5.0 |
 | `status` / `my_status` | 나의 상태 |
 | `work_status` | 작품 상태 (완결, 출시됨 등) |
-| `rating` | 0.0~5.0 |
 | `is_hall_of_fame` | S-Tier 명예의 전당 |
-| `poster` | `posters/` 상대경로 또는 커스텀 URL (Registry CDN URL은 YAML에 저장하지 않음) |
 
 본문에는 **명대사·감상·메모** 등 자유롭게 기록합니다. **Tier 1 사전에는 Fact만** — 설명·포스터는 유저 Sanctum vault에 직접 넣습니다. ([product-vision.md](docs/product-vision.md))
 
