@@ -304,184 +304,187 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                       ],
                     ),
                   ),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return _buildInfoPoster(
+                      panelWidth: constraints.maxWidth,
+                      preview: preview,
+                      gradColors: gradColors,
+                    );
+                  },
+                ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: _openPosterCorrection,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: const Color(0xFF12121A),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            gradColors.first.withValues(alpha: 0.35),
-                            const Color(0xFF12121A),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 4,
+                          runSpacing: 4,
+                          children: [
+                            _metaChip(
+                              icon: _item.domain.icon,
+                              label: _item.domain.label,
+                            ),
+                            _metaChip(
+                              icon: _item.category.icon,
+                              label: _item.category.label,
+                            ),
                           ],
                         ),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: PosterImage(
-                          key: ValueKey(_posterUrlCtrl.text),
-                          item: preview,
-                          fit: BoxFit.contain,
+                        const SizedBox(height: 6),
+                        TextField(
+                          controller: _titleCtrl,
+                          onChanged: (_) => _markDirty(),
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            height: 1.2,
+                          ),
+                          decoration: const InputDecoration(
+                            isDense: true,
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 8,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Wrap(
-                  spacing: 4,
-                  runSpacing: 4,
-                  children: [
-                    _metaChip(
-                      icon: _item.domain.icon,
-                      label: _item.domain.label,
-                    ),
-                    _metaChip(
-                      icon: _item.category.icon,
-                      label: _item.category.label,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 6),
-                TextField(
-                  controller: _titleCtrl,
-                  onChanged: (_) => _markDirty(),
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w800,
-                    height: 1.2,
-                  ),
-                  decoration: const InputDecoration(
-                    isDense: true,
-                    border: OutlineInputBorder(),
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                  ),
-                ),
-                if (metaLine.isNotEmpty) ...[
-                  const SizedBox(height: 4),
-                  Text(
-                    metaLine,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                  ),
-                ],
-                const SizedBox(height: 6),
-                Row(
-                  children: [
-                    InteractiveStarRating(
-                      rating: _draftRating,
-                      size: 18,
-                      onChanged: (v) {
-                        setState(() => _draftRating = v);
-                        _markDirty();
-                      },
-                    ),
-                    const Spacer(),
-                    SizedBox(
-                      height: 28,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Switch(
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                          value: _draftHallOfFame,
-                          onChanged: (v) {
-                            setState(() => _draftHallOfFame = v);
-                            _markDirty();
-                          },
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'HoF',
-                      style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 6),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: _statusDropdown(
-                        label: '작품',
-                        value: _draftWorkStatus,
-                        options: _item.workStatusOptions,
-                        onChanged: (v) {
-                          setState(() => _draftWorkStatus = v);
-                          _markDirty();
-                        },
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    Expanded(
-                      child: _statusDropdown(
-                        label: '나의',
-                        value: _draftMyStatus,
-                        options: _item.myStatusOptions,
-                        onChanged: (v) {
-                          setState(() => _draftMyStatus = v);
-                          _markDirty();
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 6),
-                TextField(
-                  controller: _tagsCtrl,
-                  onChanged: (_) => _markDirty(),
-                  style: const TextStyle(fontSize: 11),
-                  decoration: const InputDecoration(
-                    hintText: '태그',
-                    isDense: true,
-                    border: OutlineInputBorder(),
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton(
-                        onPressed: _resetToDefaults,
-                        style: OutlinedButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          textStyle: const TextStyle(fontSize: 11),
-                        ),
-                        child: const Text('기본값'),
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    Expanded(
-                      flex: 2,
-                      child: FilledButton(
-                        onPressed: _isSaving ? null : _saveArchive,
-                        style: FilledButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          textStyle: const TextStyle(fontSize: 11),
-                        ),
-                        child: _isSaving
-                            ? const SizedBox(
-                                width: 14,
-                                height: 14,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
+                        if (metaLine.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            metaLine,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.grey[500],
+                            ),
+                          ),
+                        ],
+                        const SizedBox(height: 6),
+                        Row(
+                          children: [
+                            InteractiveStarRating(
+                              rating: _draftRating,
+                              size: 18,
+                              onChanged: (v) {
+                                setState(() => _draftRating = v);
+                                _markDirty();
+                              },
+                            ),
+                            const Spacer(),
+                            SizedBox(
+                              height: 28,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Switch(
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  value: _draftHallOfFame,
+                                  onChanged: (v) {
+                                    setState(() => _draftHallOfFame = v);
+                                    _markDirty();
+                                  },
                                 ),
-                              )
-                            : Text(_isArchived ? 'md 저장' : 'md 생성'),
-                      ),
+                              ),
+                            ),
+                            Text(
+                              'HoF',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.grey[500],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: _statusDropdown(
+                                label: '작품',
+                                value: _draftWorkStatus,
+                                options: _item.workStatusOptions,
+                                onChanged: (v) {
+                                  setState(() => _draftWorkStatus = v);
+                                  _markDirty();
+                                },
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            Expanded(
+                              child: _statusDropdown(
+                                label: '나의',
+                                value: _draftMyStatus,
+                                options: _item.myStatusOptions,
+                                onChanged: (v) {
+                                  setState(() => _draftMyStatus = v);
+                                  _markDirty();
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        TextField(
+                          controller: _tagsCtrl,
+                          onChanged: (_) => _markDirty(),
+                          style: const TextStyle(fontSize: 11),
+                          decoration: const InputDecoration(
+                            hintText: '태그',
+                            isDense: true,
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 6,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: OutlinedButton(
+                                onPressed: _resetToDefaults,
+                                style: OutlinedButton.styleFrom(
+                                  visualDensity: VisualDensity.compact,
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8),
+                                  textStyle: const TextStyle(fontSize: 11),
+                                ),
+                                child: const Text('기본값'),
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            Expanded(
+                              flex: 2,
+                              child: FilledButton(
+                                onPressed: _isSaving ? null : _saveArchive,
+                                style: FilledButton.styleFrom(
+                                  visualDensity: VisualDensity.compact,
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8),
+                                  textStyle: const TextStyle(fontSize: 11),
+                                ),
+                                child: _isSaving
+                                    ? const SizedBox(
+                                        width: 14,
+                                        height: 14,
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                        ),
+                                      )
+                                    : Text(_isArchived ? 'md 저장' : 'md 생성'),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
@@ -504,6 +507,46 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           ),
         ),
       ],
+    );
+  }
+
+  /// 세로 포스터(2:3) 비율 — 패널 너비에 맞추고 잘리지 않게 contain.
+  Widget _buildInfoPoster({
+    required double panelWidth,
+    required AkashaItem preview,
+    required List<Color> gradColors,
+  }) {
+    final posterHeight = (panelWidth * 1.5).clamp(168.0, 320.0);
+    return SizedBox(
+      height: posterHeight,
+      width: double.infinity,
+      child: GestureDetector(
+        onTap: _openPosterCorrection,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6),
+            color: const Color(0xFF12121A),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                gradColors.first.withValues(alpha: 0.35),
+                const Color(0xFF12121A),
+              ],
+            ),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: PosterImage(
+              key: ValueKey(_posterUrlCtrl.text),
+              item: preview,
+              fit: BoxFit.contain,
+              width: panelWidth,
+              height: posterHeight,
+            ),
+          ),
+        ),
+      ),
     );
   }
 
