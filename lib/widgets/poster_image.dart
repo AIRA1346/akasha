@@ -167,6 +167,9 @@ class _PosterImageState extends State<PosterImage> {
             image: Image.network(
               url,
               key: ValueKey(url),
+              fit: widget.fit,
+              width: width,
+              height: height,
               headers: _networkImageHeaders,
               gaplessPlayback: true,
               errorBuilder: (_, error, stackTrace) {
@@ -217,18 +220,14 @@ class _PosterImageState extends State<PosterImage> {
     );
   }
 
-  /// contain + bounded 박스 — FittedBox로 ClipRRect 넘침·cover식 잘림 방지
+  /// bounded 박스 — Image.fit=contain으로 레터박스 (FittedBox 이중 스케일 금지)
   Widget _boundedImage({
     required double? width,
     required double? height,
     required Widget placeholder,
     required Widget image,
   }) {
-    if (width == null ||
-        height == null ||
-        width <= 0 ||
-        height <= 0 ||
-        widget.fit != BoxFit.contain) {
+    if (width == null || height == null || width <= 0 || height <= 0) {
       return image;
     }
     return SizedBox(
@@ -236,11 +235,7 @@ class _PosterImageState extends State<PosterImage> {
       height: height,
       child: ColoredBox(
         color: const Color(0xFF12121A),
-        child: FittedBox(
-          fit: BoxFit.contain,
-          clipBehavior: Clip.none,
-          child: image,
-        ),
+        child: image,
       ),
     );
   }

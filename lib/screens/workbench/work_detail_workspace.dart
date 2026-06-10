@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/akasha_item.dart';
@@ -326,23 +327,34 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                     ),
                   ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 4),
-                    child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        return _buildInfoPoster(
-                          maxWidth: constraints.maxWidth,
-                          maxHeight: constraints.maxHeight,
-                          preview: preview,
-                          gradColors: gradColors,
-                        );
-                      },
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 8, 8, 4),
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              return _buildInfoPoster(
+                                maxWidth: constraints.maxWidth,
+                                maxHeight: constraints.maxHeight,
+                                preview: preview,
+                                gradColors: gradColors,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: SingleChildScrollView(
+                          padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                          child: _buildInfoForm(metaLine: metaLine),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
-                  child: _buildInfoForm(metaLine: metaLine),
                 ),
               ],
             ),
@@ -518,19 +530,19 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  /// 2:3 포스터 — Expanded가 남긴 높이 전부 사용, contain (148px·cover 금지).
+  /// 할당된 직사각형 전체에 contain — 2:3·148px·cover 금지.
   Widget _buildInfoPoster({
     required double maxWidth,
     required double maxHeight,
     required AkashaItem preview,
     required List<Color> gradColors,
   }) {
-    var height = maxHeight;
-    var width = height * 2 / 3;
-    if (width > maxWidth) {
-      width = maxWidth;
-      height = width * 3 / 2;
-    }
+    final bounds = infoPosterDisplayBounds(
+      maxWidth: maxWidth,
+      maxHeight: maxHeight,
+    );
+    final width = bounds.width;
+    final height = bounds.height;
 
     return Center(
       child: GestureDetector(
@@ -622,4 +634,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       },
     );
   }
+}
+
+/// 작품정보 패널 포스터 — LayoutBuilder가 준 bounds 전체 사용 (비율 강제 없음).
+@visibleForTesting
+({double width, double height}) infoPosterDisplayBounds({
+  required double maxWidth,
+  required double maxHeight,
+}) {
+  if (maxWidth <= 0 || maxHeight <= 0) {
+    return (width: 0, height: 0);
+  }
+  return (width: maxWidth, height: maxHeight);
 }
