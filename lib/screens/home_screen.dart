@@ -675,6 +675,7 @@ class _HomeScreenState extends State<HomeScreen> {
       categoryGroups = BrowseCategoryGroups.fromCards(
         catalogCards,
         _sectionPrefs.librarySort,
+        restrictToCategories: _filterCtrl.categories,
       );
     }
 

@@ -3,10 +3,11 @@
 /// | 영역 | 규칙 |
 /// |------|------|
 /// | 그리드(홈·대시보드) | IP당 카드 **1장 고정** (`FranchiseFusionService`) |
-/// | 검색 | `tracksMultipleFormats` 토글 시 매체 버전 **개별 행** 가능 |
+/// | 매체 섹션 | 동일 카드를 포함 매체마다 배치 (`BrowseCategoryGroups`) |
+/// | 검색 | IP당 **1행** — 형제 매체 중 하나라도 매칭되면 노출 |
 ///
 /// 그리드 경로에서는 `RegistryVisibilityService.shouldMaterializeVirtual`이
-/// 항상 형제 매체 가상 카드를 억제합니다. 검색 힌트·dedupe만 토글을 따릅니다.
+/// 항상 형제 매체 가상 카드를 억제합니다.
 class FranchiseDisplayPolicy {
   FranchiseDisplayPolicy._();
 

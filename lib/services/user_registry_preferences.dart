@@ -2,18 +2,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'franchise_registry.dart';
 import 'works_registry.dart';
 
-/// 사전(Registry) 표시 관련 사용자 설정 — 숨김·다중 매체 추적
+/// 사전(Registry) 표시 관련 사용자 설정 — 숨김
 class UserRegistryPreferences {
   static const String hiddenWorkIdsKey = 'akasha_hidden_registry_ids';
-  static const String multiFormatFranchisesKey =
-      'akasha_multi_format_franchises';
 
   static final UserRegistryPreferences instance =
       UserRegistryPreferences._internal();
   UserRegistryPreferences._internal();
 
   final Set<String> _hiddenWorkIds = {};
-  final Set<String> _multiFormatFranchiseIds = {};
   bool _loaded = false;
 
   bool get isLoaded => _loaded;
@@ -24,9 +21,6 @@ class UserRegistryPreferences {
     _hiddenWorkIds
       ..clear()
       ..addAll(prefs.getStringList(hiddenWorkIdsKey) ?? const []);
-    _multiFormatFranchiseIds
-      ..clear()
-      ..addAll(prefs.getStringList(multiFormatFranchisesKey) ?? const []);
     _loaded = true;
   }
 
@@ -35,10 +29,6 @@ class UserRegistryPreferences {
     final resolved = WorksRegistry.resolveWorkId(workId);
     return _hiddenWorkIds.contains(workId) ||
         (resolved.isNotEmpty && _hiddenWorkIds.contains(resolved));
-  }
-
-  bool tracksMultipleFormats(String franchiseId) {
-    return _multiFormatFranchiseIds.contains(franchiseId);
   }
 
   Future<void> hideWork(String workId) async {
@@ -71,23 +61,6 @@ class UserRegistryPreferences {
     _hiddenWorkIds.remove(workId);
     if (resolved.isNotEmpty) _hiddenWorkIds.remove(resolved);
     await _persistHidden();
-  }
-
-  Future<void> setTracksMultipleFormats(
-    String franchiseId, {
-    required bool enabled,
-  }) async {
-    if (franchiseId.isEmpty) return;
-    if (enabled) {
-      _multiFormatFranchiseIds.add(franchiseId);
-    } else {
-      _multiFormatFranchiseIds.remove(franchiseId);
-    }
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setStringList(
-      multiFormatFranchisesKey,
-      _multiFormatFranchiseIds.toList(),
-    );
   }
 
   Future<void> _persistHidden() async {

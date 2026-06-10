@@ -2,9 +2,7 @@ import '../models/akasha_item.dart';
 import '../models/franchise_group.dart';
 import 'file_service.dart';
 import 'franchise_registry.dart';
-import 'user_registry_preferences.dart';
 import 'works_registry.dart';
-
 /// 프랜차이즈 IP당 대표 item 선택 + 로컬 검색 dedupe (단일 규칙)
 class FranchiseRepresentativePicker {
   /// 아카이브 우선 → primary workId → 최근 추가 순
@@ -57,7 +55,7 @@ class FranchiseRepresentativePicker {
     return pickBest(candidates, group, vault: vault);
   }
 
-  /// 로컬 검색 결과 — IP당 1행 (다중 매체 추적 설정 시 개별 유지)
+  /// 로컬 검색 결과 — IP당 1행
   static List<AkashaItem> dedupeLocalByFranchise(List<AkashaItem> items) {
     final emittedFranchises = <String>{};
     final result = <AkashaItem>[];
@@ -65,11 +63,6 @@ class FranchiseRepresentativePicker {
     for (final item in items) {
       final group = FranchiseRegistry.groupFor(item.workId);
       if (group == null) {
-        result.add(item);
-        continue;
-      }
-
-      if (UserRegistryPreferences.instance.tracksMultipleFormats(group.id)) {
         result.add(item);
         continue;
       }

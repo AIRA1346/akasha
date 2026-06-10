@@ -152,12 +152,6 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
         continue;
       }
 
-      if (UserRegistryPreferences.instance.tracksMultipleFormats(group.id)) {
-        if (localFranchiseIds.contains(group.id)) continue;
-        result.add(entry);
-        continue;
-      }
-
       if (localFranchiseIds.contains(group.id)) continue;
       if (emittedFranchises.contains(group.id)) continue;
       emittedFranchises.add(group.id);

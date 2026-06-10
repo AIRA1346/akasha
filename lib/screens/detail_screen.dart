@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../models/akasha_item.dart';
-import '../models/format_slot.dart';
 import '../services/file_service.dart';
-import '../services/franchise_fusion_service.dart';
-import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import 'home/dialogs/catalog_fix_contribution_dialog.dart';
 import 'detail/detail_archive_save.dart';
-import 'detail/detail_franchise_section.dart';
 import 'detail/detail_profile_section.dart';
 import 'detail/detail_section_title.dart';
 import 'detail/dialogs/detail_delete_dialog.dart';
@@ -30,8 +26,6 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   late AkashaItem item;
   bool _isSaving = false;
-  bool _registryPrefsReady = false;
-  List<FormatSlot> _formatSlots = const [];
 
   late double _draftRating;
   late String _draftWorkStatus;
@@ -48,7 +42,6 @@ class _DetailScreenState extends State<DetailScreen> {
     super.initState();
     item = widget.item;
     _loadFieldsFromItem();
-    _loadRegistryPrefs();
   }
 
   void _loadFieldsFromItem() {
@@ -98,34 +91,6 @@ class _DetailScreenState extends State<DetailScreen> {
           .inMemoryCache
           .containsKey(AkashaFileService.cacheKeyFor(item));
 
-  Future<void> _loadRegistryPrefs() async {
-    if (!UserRegistryPreferences.instance.isLoaded) {
-      await UserRegistryPreferences.instance.load();
-    }
-    await _loadFormatSlots();
-  }
-
-  Future<void> _loadFormatSlots() async {
-    final service = AkashaFileService();
-    List<AkashaItem> allItems;
-    if (service.vaultPath != null) {
-      allItems = await service.loadAllItems();
-    } else {
-      allItems = service.inMemoryCache.values.toList();
-    }
-
-    final slots = FranchiseFusionService.formatSlotsForWorkId(
-      item.workId,
-      allUserItems: allItems,
-    );
-
-    if (!mounted) return;
-    setState(() {
-      _registryPrefsReady = true;
-      _formatSlots = slots;
-    });
-  }
-
   Future<void> _proposeCatalogFix(BuildContext context) async {
     final saved = await showCatalogFixContributionDialog(context, item: item);
     if (saved == true && mounted) {
@@ -169,7 +134,6 @@ class _DetailScreenState extends State<DetailScreen> {
             ? '"${saved.title}" md 파일을 저장했습니다.'
             : '"${saved.title}"을(를) 임시 저장했습니다.',
       );
-      await _loadFormatSlots();
     } catch (e) {
       if (mounted) _showSnack('저장 실패: $e');
     } finally {
@@ -239,16 +203,6 @@ class _DetailScreenState extends State<DetailScreen> {
               onHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
             ),
             const Divider(height: 32),
-            if (_registryPrefsReady) ...[
-              DetailFranchiseSection(
-                item: item,
-                formatSlots: _formatSlots,
-                onPreferencesChanged: () => setState(() {}),
-                onReloadFormatSlots: _loadFormatSlots,
-                showSnackBar: _showSnack,
-              ),
-              const Divider(height: 32),
-            ],
             detailSectionTitle('📋', '시놉시스'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),

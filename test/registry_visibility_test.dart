@@ -38,11 +38,8 @@ void main() {
       );
     });
 
-    test('grid always hides franchise siblings even when multi-format search on',
-        () async {
+    test('grid always hides franchise siblings', () {
       const userIds = {'sub_manga_86-eighty-six_2017'};
-      await UserRegistryPreferences.instance
-          .setTracksMultipleFormats('franchise_86', enabled: true);
 
       expect(
         RegistryVisibilityService.shouldMaterializeVirtual(
@@ -50,20 +47,6 @@ void main() {
           userWorkIds: userIds,
         ),
         isFalse,
-      );
-    });
-
-    test('search hint still respects multi-format tracking', () async {
-      const userIds = {'sub_manga_86-eighty-six_2017'};
-      await UserRegistryPreferences.instance
-          .setTracksMultipleFormats('franchise_86', enabled: true);
-
-      expect(
-        RegistryVisibilityService.remoteSearchHint(
-          workId: 'sub_book_86-light-novel_2016',
-          userWorkIds: userIds,
-        ),
-        RegistryRemoteHint.available,
       );
     });
 

@@ -24,7 +24,7 @@ class RegistryVisibilityService {
     final prefs = UserRegistryPreferences.instance;
     if (prefs.isHidden(workId)) return false;
 
-    // 그리드: IP 1카드 고정 — 검색용 tracksMultipleFormats와 무관하게 형제 억제
+    // 그리드: IP 1카드 고정 — 형제 매체 가상 카드 억제
     final group = FranchiseRegistry.groupFor(workId);
     if (group != null &&
         FranchiseRegistry.isSiblingCovered(workId, userWorkIds)) {
@@ -66,10 +66,9 @@ class RegistryVisibilityService {
     if (prefs.isHidden(workId)) return RegistryRemoteHint.hidden;
 
     final group = FranchiseRegistry.groupFor(workId);
-    if (group != null && !prefs.tracksMultipleFormats(group.id)) {
-      if (FranchiseRegistry.isSiblingCovered(workId, userWorkIds)) {
-        return RegistryRemoteHint.siblingTracked;
-      }
+    if (group != null &&
+        FranchiseRegistry.isSiblingCovered(workId, userWorkIds)) {
+      return RegistryRemoteHint.siblingTracked;
     }
 
     return RegistryRemoteHint.available;
