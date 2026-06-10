@@ -123,7 +123,10 @@ class _DetailScreenState extends State<DetailScreen> {
       ),
     );
     if (selected != null) {
-      setState(() => _posterUrlCtrl.text = selected);
+      setState(() {
+        _posterUrlCtrl.text = selected;
+        _applyFieldsToItem();
+      });
     }
   }
 

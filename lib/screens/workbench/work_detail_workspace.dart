@@ -195,8 +195,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       ),
     );
     if (selected != null) {
-      setState(() => _posterUrlCtrl.text = selected);
-      _markDirty();
+      setState(() {
+        _posterUrlCtrl.text = selected;
+        _applyDraft();
+      });
+      widget.onDirtyChanged(true);
     }
   }
 
@@ -343,6 +346,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: PosterImage(
+                            key: ValueKey(_posterUrlCtrl.text),
                             item: preview,
                             fit: BoxFit.cover,
                             width: 120,

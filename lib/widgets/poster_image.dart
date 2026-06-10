@@ -100,21 +100,32 @@ class PosterImage extends StatefulWidget {
 class _PosterImageState extends State<PosterImage> {
   late List<String> _networkCandidates;
   int _candidateIndex = 0;
+  String? _trackedPosterPath;
+  String _trackedWorkId = '';
 
   @override
   void initState() {
     super.initState();
+    _trackedPosterPath = widget.item.posterPath;
+    _trackedWorkId = widget.item.workId;
     _networkCandidates = _buildNetworkCandidates();
   }
 
   @override
   void didUpdateWidget(PosterImage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.item.posterPath != widget.item.posterPath ||
-        oldWidget.item.workId != widget.item.workId) {
-      _candidateIndex = 0;
-      _networkCandidates = _buildNetworkCandidates();
-    }
+    _reloadIfPosterSourceChanged();
+  }
+
+  /// item 객체가 in-place로 바뀌어도 posterPath 변경을 감지
+  void _reloadIfPosterSourceChanged() {
+    final path = widget.item.posterPath;
+    final workId = widget.item.workId;
+    if (path == _trackedPosterPath && workId == _trackedWorkId) return;
+    _trackedPosterPath = path;
+    _trackedWorkId = workId;
+    _candidateIndex = 0;
+    _networkCandidates = _buildNetworkCandidates();
   }
 
   List<String> _buildNetworkCandidates() {

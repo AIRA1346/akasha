@@ -451,7 +451,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 8),
               Text(
                 vaultLinked
-                    ? '검색으로 작품을 추가하거나 「새 작품」으로 등록해 보세요.'
+                    ? '검색으로 작품을 추가해 보세요.'
                     : '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.',
                 style: TextStyle(color: Colors.grey[500], height: 1.5),
                 textAlign: TextAlign.center,
@@ -878,14 +878,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ],
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => _showAddDialog(context),
-          icon: const Icon(Icons.add),
-          label: const Text('새 작품'),
-          backgroundColor: _isPersonalLibraryMode
-              ? _libraryTheme.accentColor.withValues(alpha: 0.85)
-              : null,
         ),
       ),
     ),
