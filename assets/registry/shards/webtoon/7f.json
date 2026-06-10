@@ -13,13 +13,10 @@
       "성장",
       "액션"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
     "externalIds": {
       "tmdb": "127532"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

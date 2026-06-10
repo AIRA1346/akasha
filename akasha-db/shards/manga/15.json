@@ -41,11 +41,6 @@
       "히어로",
       "패러디"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
     "externalIds": {
       "tmdb": "63926"
     },

@@ -13,13 +13,10 @@
       "미스터리",
       "복수"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
     "externalIds": {
       "tmdb": "203737"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

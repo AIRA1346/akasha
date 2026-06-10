@@ -13,13 +13,10 @@
       "재즈",
       "액션"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg",
     "externalIds": {
       "tmdb": "30991"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

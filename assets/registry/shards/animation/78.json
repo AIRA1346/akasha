@@ -19,7 +19,6 @@
       "사회"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -40,7 +39,6 @@
       "latestSeason": "3기",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
     "legacyIds": [
       "sub_animation_beastars_2019"
     ],
@@ -49,7 +47,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

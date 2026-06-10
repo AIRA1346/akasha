@@ -1,4 +1,5 @@
 import '../config/catalog_locale.dart';
+import '../config/catalog_poster_policy.dart';
 import '../models/enums.dart';
 import '../models/external_ids.dart';
 import '../models/work_id_codec.dart';
@@ -399,8 +400,9 @@ class WorksRegistry {
     return false;
   }
 
-  /// 검증된 샤드 → search_index → 미검증 샤드 순으로 포스터 URL을 반환합니다.
+  /// Tier 1 registry 포스터 URL (v1: 비활성 — 유저 볼트만).
   static String? resolvePosterPath(String workId) {
+    if (!CatalogPosterPolicy.tier1RegistryPostersEnabled) return null;
     if (workId.isEmpty) return null;
     final resolved = _loader.resolveWorkId(workId);
     final work = getWorkById(resolved);

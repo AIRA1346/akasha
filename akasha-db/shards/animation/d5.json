@@ -19,7 +19,6 @@
       "다크"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -32,10 +31,8 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "2기",
-      "posterVerified": true
+      "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
     "externalIds": {
       "tmdb": "117465"
     },

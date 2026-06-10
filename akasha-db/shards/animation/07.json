@@ -13,13 +13,10 @@
       "미스터리",
       "명작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
     "externalIds": {
       "tmdb": "1429"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

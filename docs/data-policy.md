@@ -74,13 +74,35 @@ Discovery Signal (일회성, Git X)
 | `aliases` | Fact / UGC | ✅ | 통용 별칭; 외부 synonyms **복붙 금지** → AKASHA 선별 |
 | `tags` | Copyright Risk | ⚠️ | 외부 장르 태그 복제 지양; AKASHA·Enrich·유저 작성 |
 | `description` | Copyright Risk | ⚠️ | **AKASHA 자체 1~3문장만**; 외부 시놉·overview **복제 금지** |
-| `posterPath` | Licensed / Copyright | ⚠️ | **URL 문자열만**; [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md); 바이너리·self-hosted 금지 |
+| `posterPath` | **Tier 2 only** | ❌ | **v1: Tier 1 금지** — 유저 Sanctum vault만 ([§0.3](#03-tier-1-포스터-미제공-v1-steam)) |
 | `qualitySignals` | Fact (AKASHA) | ✅ | 검증 상태 원본; score/tier는 파생 |
 | `searchTokens` | Fact (파생) | ❌ shard | 빌드 산출만 |
 | raw API JSON | Copyright Risk | ❌ | 절대 저장 금지 |
 | `synopsis` / `overview` / `plot` | Copyright Risk | ❌ | Signal에서만 참고 후 폐기 |
 | `review` / `rating text` | UGC | ❌ | Tier 2 볼트만 |
 | cover/poster **바이너리** | Copyright Risk | ❌ | repo·번들 금지 |
+| Tier 1 **`posterPath` URL** | — | ❌ | **v1 Steam: AKASHA 미제공** |
+
+### 0.3 Tier 1 포스터 미제공 (v1 Steam)
+
+AKASHA는 **글로벌 작품 사전(Tier 1)에 이미지 URL을 저장·배포·표시하지 않는다.**
+
+| 계층 | 포스터 |
+|------|--------|
+| **Tier 1 — akasha-db** | `posterPath` **금지** (CI `tier1_poster`) · 카드는 텍스트·플레이스홀더 |
+| **Tier 2 — Sanctum vault** | 유저가 YAML `poster:` 또는 `posters/` 로 **직접** 제공 |
+
+**앱 동작:** `WorksRegistry.resolvePosterPath()`는 v1에서 **항상 null**. `PosterImage`는 **유저 아이템**의 URL/로컬만 표시.
+
+**개발사 포지션:** AKASHA는 포스터·이미지를 **호스팅·큐레이션하지 않는** 개인 아카이브 도구. 이미지는 사용자가 개인 기록용으로 Sanctum vault에 넣는다.
+
+**유저 책임:** 권리 없는 URL·파일 사용 금지 — 이용약관·About에 명시.
+
+**정리 도구:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets`
+
+코드 SSOT: `lib/config/catalog_poster_policy.dart` · `CatalogPosterPolicy.tier1RegistryPostersEnabled = false`
+
+---
 
 ### 1.2 Registry Minimal Core (필수 영구 저장)
 
@@ -350,7 +372,8 @@ dart run tool/cleanup_poster_source.dart --apply --sync-assets
 | `api_blob` | AniList/TMDB형 중첩 객체 (averageScore+favourites 등) |
 | `text_length` | description ≤500자, title/creator/tags 상한 |
 | `description_html` | description 내 HTML (Steam/TMDB 복붙 탐지) |
-| `poster_url` | denylist, self-hosted, http(s) only |
+| `poster_url` | denylist, self-hosted, http(s) only (**posterPath 없을 때만**) |
+| `tier1_poster` | shard·search_index에 `posterPath` **금지** (v1) |
 | `provenance` | posterSource, registeredVia, qualitySignals 키 검증 |
 | `provenance_warn` | posterSource 있는데 posterPath 없음 — 레거시 정리 완료, CI는 **`--strict`** 로 실행 (0건) |
 | `build_artifact` | shard 내 searchTokens 금지 |

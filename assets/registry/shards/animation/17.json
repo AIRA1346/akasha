@@ -19,7 +19,6 @@
       "약학"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -32,10 +31,8 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "2기",
-      "posterVerified": true
+      "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
     "externalIds": {
       "tmdb": "220542"
     },

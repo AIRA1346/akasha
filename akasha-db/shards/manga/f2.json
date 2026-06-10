@@ -13,13 +13,10 @@
       "해적",
       "대하"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
     "externalIds": {
       "tmdb": "37854"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

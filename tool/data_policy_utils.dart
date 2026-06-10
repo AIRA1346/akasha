@@ -274,9 +274,16 @@ List<DataPolicyViolation> lintWorkEntry({
   }
 
   final poster = work['posterPath']?.toString();
-  final posterError = validatePosterUrlForShard(poster);
-  if (posterError != null) {
-    add('poster_url', posterError);
+  if (poster != null && poster.isNotEmpty) {
+    add(
+      'tier1_poster',
+      'Tier 1 posterPath forbidden — user Sanctum vault only (v1)',
+    );
+  } else {
+    final posterError = validatePosterUrlForShard(poster);
+    if (posterError != null) {
+      add('poster_url', posterError);
+    }
   }
 
   final extensions = work['extensions'];

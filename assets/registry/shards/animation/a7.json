@@ -13,13 +13,8 @@
       "액션",
       "청춘"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
     "externalIds": {
       "tmdb": "240411"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
     },
     "legacyIds": [
       "sub_animation_dandadan-anime_2024"

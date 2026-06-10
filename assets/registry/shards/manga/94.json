@@ -13,13 +13,10 @@
       "소녀",
       "순정"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
     "externalIds": {
       "tmdb": "35790"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

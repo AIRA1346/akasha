@@ -13,13 +13,8 @@
       "가족",
       "명작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
     "externalIds": {
       "tmdb": "85937"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
     },
     "legacyIds": [
       "sub_animation_demon-slayer_2019"

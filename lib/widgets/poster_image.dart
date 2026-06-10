@@ -4,14 +4,13 @@ import 'package:path/path.dart' as p;
 import '../models/akasha_item.dart';
 import '../models/enums.dart';
 import '../services/file_service.dart';
-import '../services/works_registry.dart';
 import 'safe_local_image.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  포스터 이미지 뷰어 (링크 참조 + 사용자 로컬 이미지 2출처 정책)
 //  - HTTP URL: Image.network 자체 캐싱만 사용 (디스크 다운로드 금지)
 //  - 로컬: vault/posters/ 상대경로 또는 사용자 파일
-//  - 실패 시: 사전 registry 포스터로 fallback → 플레이스홀더
+//  - Tier 1 registry 포스터 없음 — 유저 URL/로컬만, 실패 시 플레이스홀더
 // ════════════════════════════════════════════════════════════════
 
 const _networkImageHeaders = {
@@ -123,15 +122,6 @@ class _PosterImageState extends State<PosterImage> {
     final path = widget.item.posterPath;
     if (path != null && path.isNotEmpty && _isNetworkUrl(path)) {
       candidates.add(path);
-    }
-    if (widget.item.workId.isNotEmpty) {
-      final registry = WorksRegistry.resolvePosterPath(widget.item.workId);
-      if (registry != null &&
-          registry.isNotEmpty &&
-          _isNetworkUrl(registry) &&
-          !candidates.contains(registry)) {
-        candidates.add(registry);
-      }
     }
     return candidates;
   }

@@ -19,7 +19,6 @@
       "청춘"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -35,7 +34,6 @@
       "latestSeason": "2기",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg",
     "legacyIds": [
       "sub_animation_tokyo-revengers_2021"
     ],
@@ -44,7 +42,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

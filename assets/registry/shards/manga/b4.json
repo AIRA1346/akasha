@@ -13,13 +13,10 @@
       "청춘",
       "팀워크"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
     "externalIds": {
       "tmdb": "60863"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
@@ -50,10 +47,8 @@
       "파티"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg",
     "legacyIds": [
       "sub_manga_konosuba_2014"
     ],
@@ -62,7 +57,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

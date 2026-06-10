@@ -13,13 +13,10 @@
       "킬러",
       "가족"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
     "externalIds": {
       "tmdb": "207332"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

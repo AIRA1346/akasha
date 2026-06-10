@@ -38,11 +38,6 @@
       "판타지",
       "드라마"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
     "externalIds": {
       "tmdb": "65942"
     },

@@ -19,7 +19,6 @@
       "정체성"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -32,10 +31,8 @@
           "episodes": 24
         }
       ],
-      "latestSeason": ":re",
-      "posterVerified": true
+      "latestSeason": ":re"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
     "externalIds": {
       "tmdb": "61374"
     },

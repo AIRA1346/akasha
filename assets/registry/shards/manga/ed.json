@@ -13,13 +13,10 @@
       "악마",
       "카오스"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
     "externalIds": {
       "tmdb": "114410"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

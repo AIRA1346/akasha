@@ -19,10 +19,8 @@
       "교육"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg",
     "legacyIds": [
       "sub_manga_gto_1997"
     ],
@@ -31,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },

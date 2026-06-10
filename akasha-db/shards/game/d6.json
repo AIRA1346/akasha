@@ -13,7 +13,6 @@
       "시뮬",
       "명작"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid239030_2013"
     ],
@@ -30,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

@@ -13,7 +13,6 @@
       "명작",
       "스토리"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
     "legacyIds": [
       "gen_game_half-life-2_2004"
     ],
@@ -30,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },
@@ -48,7 +46,6 @@
       "인디",
       "그리스신화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid1145360_2020"
     ],
@@ -65,7 +62,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

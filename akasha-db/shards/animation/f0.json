@@ -19,7 +19,6 @@
       "성장"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -32,10 +31,8 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "2기",
-      "posterVerified": true
+      "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
     "externalIds": {
       "tmdb": "127532"
     },

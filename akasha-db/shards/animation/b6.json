@@ -19,7 +19,6 @@
       "감동"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -35,7 +34,6 @@
       "latestSeason": "2기",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg",
     "legacyIds": [
       "sub_animation_ranking-of-kings_2021"
     ],
@@ -44,7 +42,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },
@@ -68,7 +65,6 @@
       "성장"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -84,7 +80,6 @@
       "latestSeason": "2기",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
     "legacyIds": [
       "sub_animation_vinland-saga_2019"
     ],
@@ -93,7 +88,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

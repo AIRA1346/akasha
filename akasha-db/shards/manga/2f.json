@@ -18,11 +18,6 @@
       "궁중",
       "약학"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
     "externalIds": {
       "tmdb": "220542"
     },

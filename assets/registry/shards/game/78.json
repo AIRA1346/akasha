@@ -13,7 +13,6 @@
       "e스포츠",
       "전략"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid570_2013"
     ],
@@ -30,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

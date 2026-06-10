@@ -19,10 +19,8 @@
       "다크"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
     "legacyIds": [
       "sub_manga_jojo-bizarre-adventure_1987"
     ],
@@ -31,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

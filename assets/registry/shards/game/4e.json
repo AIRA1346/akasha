@@ -13,7 +13,6 @@
       "e스포츠",
       "전술"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid730_2012",
       "gen_game_appid730_2023"
@@ -31,7 +30,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

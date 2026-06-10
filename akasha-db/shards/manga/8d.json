@@ -44,10 +44,8 @@
       "철학"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg",
     "legacyIds": [
       "sub_manga_land-of-the-lustrous_2012"
     ],
@@ -56,7 +54,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

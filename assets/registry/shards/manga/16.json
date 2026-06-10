@@ -13,13 +13,10 @@
       "호러",
       "서울"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
     "externalIds": {
       "tmdb": "61374"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

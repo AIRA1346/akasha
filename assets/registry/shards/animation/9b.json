@@ -13,13 +13,10 @@
       "판타지",
       "감동"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg",
     "externalIds": {
       "tmdb": "372058"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

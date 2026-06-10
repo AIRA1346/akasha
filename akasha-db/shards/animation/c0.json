@@ -13,13 +13,10 @@
       "감동",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
     "externalIds": {
       "tmdb": "209867"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
@@ -50,7 +47,6 @@
       "판타지"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -66,7 +62,6 @@
       "latestSeason": "2기",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
     "legacyIds": [
       "sub_animation_log-horizon_2013"
     ],
@@ -75,7 +70,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },

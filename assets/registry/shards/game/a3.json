@@ -13,7 +13,6 @@
       "헌팅",
       "판타지"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/library_600x900.jpg",
     "legacyIds": [
       "sub_game_monster-hunter-world_2018"
     ],
@@ -31,7 +30,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

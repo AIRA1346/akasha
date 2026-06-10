@@ -13,13 +13,10 @@
       "코미디",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
     "externalIds": {
       "tmdb": "67075"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

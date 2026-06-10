@@ -13,13 +13,10 @@
       "학원",
       "하렘"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/uIn2eTUDGFLZ2D9vEHzuHuqFEIc.jpg",
     "externalIds": {
       "tmdb": "84669"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

@@ -25,8 +25,7 @@
       "en": "1984",
       "ko": "1984"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -94,8 +93,7 @@
       "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -161,8 +159,7 @@
       "en": "Your Lie in April",
       "ja": "四月は君の嘘"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/yTI2M0SVtDcBJwklSpwwPLRaqg.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -194,8 +191,7 @@
       "en": "Quintessential Quintuplets",
       "ko": "5등분의 신부"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/uIn2eTUDGFLZ2D9vEHzuHuqFEIc.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -224,9 +220,8 @@
       "en": "7 Days to Die",
       "ko": "7 Days to Die"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000292",
@@ -291,8 +286,7 @@
       "en": "86 -Eighty-Six-",
       "ko": "86 -에이티식스-"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040681412-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -323,9 +317,8 @@
       "en": "Save 65% on Age of Empires II: Definitive Edition",
       "ko": "Age of Empires II DE"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813780/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000051",
@@ -355,9 +348,8 @@
       "en": "Save 65% on Age of Empires IV: Anniversary Edition",
       "ko": "Age of Empires IV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000060",
@@ -387,9 +379,8 @@
       "en": "ARMORED CORE™ VI FIRES OF RUBICON™",
       "ko": "Armored Core VI"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888160/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000173",
@@ -419,8 +410,7 @@
       "en": "BEASTARS",
       "ja": "BEASTARS"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -450,9 +440,8 @@
       "en": "BEASTARS",
       "ko": "BEASTARS"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/lQwFRcAhtzFzMCx66RC0tRJxpZr.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000130",
@@ -481,9 +470,8 @@
       "en": "Cities: Skylines II",
       "ko": "Cities Skylines II"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000313",
@@ -544,9 +532,8 @@
       "en": "Don't Starve",
       "ko": "Don't Starve"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/219740/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000094",
@@ -574,9 +561,8 @@
       "en": "Don't Starve Together",
       "ko": "Don't Starve Together"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322330/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000189",
@@ -638,9 +624,8 @@
       "en": "Dr.STONE",
       "ko": "Dr.STONE"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/cu341PWYpVPplqPbsHZ0kaFPiQd.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000078",
@@ -668,9 +653,8 @@
       "en": "Dying Light",
       "ko": "Dying Light"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000114",
@@ -700,9 +684,8 @@
       "en": "Dying Light 2 Stay Human: Reloaded Edition",
       "ko": "Dying Light 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534380/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000044",
@@ -732,9 +715,8 @@
       "en": "Grand Theft Auto IV: The Complete Edition",
       "ko": "GTA IV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000043",
@@ -764,9 +746,8 @@
       "en": "Grand Theft Auto: San Andreas",
       "ko": "GTA San Andreas"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000333",
@@ -798,9 +779,8 @@
       "en": "Great Teacher Onizuka",
       "ja": "GTO"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/uO6zhXw2UJpxFFM9XAn4Wq03Mi4.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000069",
@@ -830,9 +810,8 @@
       "en": "Vector Wave",
       "ko": "Ghost of Tsushima"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2218500/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000095",
@@ -862,9 +841,8 @@
       "en": "Grand Theft Auto V Enhanced",
       "ko": "Grand Theft Auto III"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000033",
@@ -892,9 +870,8 @@
       "en": "Hades II",
       "ko": "Hades II"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000056",
@@ -922,9 +899,8 @@
       "en": "Lies of P",
       "ko": "Lies of P"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000357",
@@ -983,9 +959,8 @@
       "en": "Save 85% on Nioh: Complete Edition",
       "ko": "Nioh"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/485510/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000047",
@@ -1015,9 +990,8 @@
       "en": "Save 60% on Nioh 2 – The Complete Edition",
       "ko": "Nioh 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1325200/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000373",
@@ -1087,9 +1061,8 @@
       "ja": "Re:ゼロから始める異世界生活",
       "romaji": "Re:Zero"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000260",
@@ -1120,8 +1093,7 @@
       "en": "Rezero",
       "ko": "Re:제로 라이트노벨"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040701104-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -1162,9 +1134,8 @@
       "ja": "Re:ゼロから始める異世界生活",
       "romaji": "Re:Zero"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/i7rka8OksNjM0BXjTmz8zwEDfO1.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000128",
@@ -1194,9 +1165,8 @@
       "en": "Save 80% on Resident Evil 2",
       "ko": "Resident Evil 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000131",
@@ -1226,9 +1196,8 @@
       "en": "Save 80% on Resident Evil 3",
       "ko": "Resident Evil 3"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000065",
@@ -1258,9 +1227,8 @@
       "en": "Save 75% on Resident Evil 4",
       "ko": "Resident Evil 4"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000041",
@@ -1290,9 +1258,8 @@
       "en": "Save 75% on Resident Evil Village",
       "ko": "Resident Evil Village"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000048",
@@ -1322,9 +1289,8 @@
       "en": "Save 70% on Sons Of The Forest",
       "ko": "Sons of the Forest"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1326470/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000104",
@@ -1354,9 +1320,8 @@
       "en": "Save 50% on Garry's Mod",
       "ko": "가라오케 파티"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000326",
@@ -1452,9 +1417,8 @@
       "en": "God of War",
       "ko": "갓 오브 워"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000325",
@@ -1492,8 +1456,7 @@
       "ja": "鋼の錬金術師",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -1537,8 +1500,7 @@
       "ja": "鋼の錬金術師 FULLMETAL ALCHEMIST",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/9SkrxQDka8JAk8tUwb396prUR9J.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -1572,9 +1534,8 @@
       "en": "Goblin Slayer",
       "ja": "ゴブリンスレイヤー"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/kxl2oSN8h0SxdqrFH14snPlQx5A.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000330",
@@ -1639,8 +1600,7 @@
       "en": "Golden Kamuy",
       "ja": "ゴールデンカムイ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tL8m70e9ALdbGIsG2VROvp1qi7l.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -1771,9 +1731,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000188",
@@ -1812,9 +1771,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/iR6T6QxSJpSQi1S4GGjGWLQkSva.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000404",
@@ -1907,9 +1865,8 @@
       "en": "Grand Theft Auto V Legacy",
       "ko": "그랜드 테프트 오토 V"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000022",
@@ -2067,9 +2024,8 @@
       "en": "Solo Leveling",
       "ko": "나 혼자만 레벨업"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000238",
@@ -2102,9 +2058,8 @@
       "en": "Solo Leveling",
       "ja": "俺だけレベルアップな件"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/5gR5oCQufzZ6tPcFoHb61ckiwiP.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000358",
@@ -2134,9 +2089,8 @@
       "en": "Naruto",
       "ko": "나루토"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000218",
@@ -2170,9 +2124,8 @@
       "ja": "NARUTO",
       "zh": "火影忍者"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000217",
@@ -2237,9 +2190,8 @@
       "en": "MY Hero Academia",
       "ko": "나의 히어로 아카데미아"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/wiXNjJaSSpnhPPa4N6APqpyVNBy.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000407",
@@ -2295,9 +2247,8 @@
       "en": "Weathering With YOU",
       "ko": "날씨의 아이"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000365",
@@ -2382,8 +2333,7 @@
       "en": "Your Name",
       "ko": "너의 이름은."
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/2DJCufz3Oa703PbLjNX1pM6MCG2.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -2414,8 +2364,7 @@
       "en": "NO Game NO Life",
       "ko": "노 게임 노 라이프"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048667951-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -2547,8 +2496,7 @@
       "en": "Noragami",
       "ja": "ノラガミ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/oOReMl2ELJky9IFJrIFQXEINXRJ.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -2580,8 +2528,7 @@
       "en": "Norwegian Wood",
       "ko": "노르웨이의 숲"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -2613,8 +2560,7 @@
       "en": "Spice AND Wolf",
       "ko": "늑대와 향신료"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048862579-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -2678,9 +2624,8 @@
       "en": "NieR:Automata™",
       "ko": "니어: 오토마타"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000004",
@@ -2711,8 +2656,7 @@
       "en": "DA Vinci Code",
       "ko": "다빈치 코드"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -2772,9 +2716,8 @@
       "en": "Dishonored",
       "ko": "다크 소울"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205100/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000099",
@@ -2804,9 +2747,8 @@
       "en": "DARK SOULS™ III",
       "ko": "다크 소울 3"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000268",
@@ -2836,9 +2778,8 @@
       "en": "Danganronpa: Trigger Happy Havoc",
       "ko": "단간론파"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413410/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000310",
@@ -2871,9 +2812,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000185",
@@ -2906,9 +2846,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ztR1BJbFx5XZgbtX2Ii2y7jjT9X.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000167",
@@ -3026,9 +2965,8 @@
       "en": "The Elder Scrolls V: Skyrim",
       "ko": "더 엘더스크롤 V: 스카이림"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/72850/library_600x900.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000024",
@@ -3092,9 +3030,8 @@
       "en": "The Witcher 3: Wild Hunt",
       "ko": "더 위처 3: 와일드 헌트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000081",
@@ -3124,9 +3061,8 @@
       "en": "Save 78% on The Forest",
       "ko": "더 포레스트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000190",
@@ -3161,9 +3097,8 @@
       "ja": "ダンジョン飯",
       "romaji": "Dungeon Meshi"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000318",
@@ -3195,9 +3130,8 @@
       "en": "Delicious in Dungeon",
       "ja": "ダンジョン飯"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000186",
@@ -3264,9 +3198,8 @@
       "en": "Dead by Daylight",
       "ko": "데드 바이 데이라이트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000311",
@@ -3296,9 +3229,8 @@
       "en": "Death Note",
       "ko": "데스노트"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000187",
@@ -3332,9 +3264,8 @@
       "ja": "DEATH NOTE",
       "zh": "死亡笔记"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000028",
@@ -3367,9 +3298,8 @@
       "en": "Destiny 2",
       "ko": "데스티니 가디언즈"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085660/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000314",
@@ -3402,9 +3332,8 @@
       "en": "Doraemon",
       "ja": "ドラえもん"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/6O9Of12GfVNDix9nmZpxJQletbr.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000315",
@@ -3463,9 +3392,8 @@
       "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000242",
@@ -3498,9 +3426,8 @@
       "en": "Tokyo Ghoul",
       "ja": "東京喰種トーキョーグール"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/nkDtqLGG7J7L7YoodfCSWFUT65l.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000391",
@@ -3565,8 +3492,7 @@
       "en": "Tokyo Revengers",
       "ja": "東京卍リベンジャーズ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/w44zgr4Gd2havUhtUYGncZUsQI6.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -3600,9 +3526,8 @@
       "en": "Dota 2",
       "ko": "도타 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000125",
@@ -3632,9 +3557,8 @@
       "en": "DOOM Eternal",
       "ko": "도타 언더로드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/782330/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000284",
@@ -3665,8 +3589,7 @@
       "en": "Touhou Lost Word",
       "ko": "동방 로스트 워드"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcz.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -3698,8 +3621,7 @@
       "en": "Dune",
       "ko": "듄"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -3756,9 +3678,8 @@
       "en": "Dragon Ball",
       "ja": "ドラゴンボール"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/1WGRX9mvcycn3PgNap0clEy0KgJ.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000137",
@@ -3790,9 +3711,8 @@
       "en": "Diablo® IV",
       "ko": "디아블로 IV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000115",
@@ -3822,9 +3742,8 @@
       "en": "Deep Rock Galactic",
       "ko": "딥 락 갤럭틱"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548430/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000086",
@@ -3854,9 +3773,8 @@
       "en": "The Last of Us™ Part II Remastered",
       "ko": "라스트 오브 어스 Part II"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000009",
@@ -3888,8 +3806,7 @@
       "en": "Laplace Novel",
       "ko": "라플라스의 마녀"
     },
-    "posterPath": "https://image.yes24.com/goods/18063773/L",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -3924,9 +3841,8 @@
       "en": "Ranma ½",
       "ja": "らんま1/2"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/k5Ax6s2XbTdtUHdwU7K5MzzQ6ag.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000274",
@@ -3957,8 +3873,7 @@
       "en": "Love Live ALL Stars",
       "ko": "러브라이브! 올스타즈"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k8k.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -3990,9 +3905,8 @@
       "en": "Rust",
       "ko": "러스트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000039",
@@ -4023,9 +3937,8 @@
       "en": "Red Dead Redemption 2",
       "ko": "레드 데드 리뎀션 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000064",
@@ -4055,9 +3968,8 @@
       "en": "Lethal Company",
       "ko": "레딧 리데임"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000097",
@@ -4087,9 +3999,8 @@
       "en": "Tom Clancy's Rainbow Six Siege",
       "ko": "레인보우 식스 시즈"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/359550/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000116",
@@ -4118,9 +4029,8 @@
       "en": "RAGE 2",
       "ko": "레인월드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548570/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000117",
@@ -4150,9 +4060,8 @@
       "en": "Left 4 Dead 2",
       "ko": "레프트 4 데드 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000210",
@@ -4186,9 +4095,8 @@
       "en": "Log Horizon",
       "ja": "ログ・ホライズン"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qb1R5iLZcjIgdDIfXFQXmJadQPI.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000054",
@@ -4218,9 +4126,8 @@
       "en": "Site Error",
       "ko": "로스트 아크"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1599340/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000085",
@@ -4250,9 +4157,8 @@
       "en": "Rocket League®",
       "ko": "로켓 리그"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252950/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000376",
@@ -4316,9 +4222,8 @@
       "en": "Ruined King: A League of Legends Story™",
       "ko": "리그 오브 레전드"
     },
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000211",
@@ -4380,9 +4285,8 @@
       "en": "Assassin’s Creed® IV Black Flag™",
       "ko": "리틀 나이트메어"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242050/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000123",
@@ -4412,9 +4316,8 @@
       "en": "Rhythm Doctor",
       "ko": "리틀 나이트메어 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774181/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000093",
@@ -4443,9 +4346,8 @@
       "en": "RimWorld",
       "ko": "림월드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/294100/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000059",
@@ -4475,9 +4377,8 @@
       "en": "Marvel’s Spider-Man Remastered",
       "ko": "마블 스파이더맨 리마스터"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000350",
@@ -4575,9 +4476,8 @@
       "en": "Geometry Dash",
       "ko": "마인크래프트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322170/library_600x900_2x.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000140",
@@ -4610,9 +4510,8 @@
       "en": "Mass Effect 2 (2010 Edition)",
       "ko": "매스 이펙트 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000168",
@@ -4706,8 +4605,7 @@
       "en": "Made in Abyss",
       "ja": "メイドインアビス"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ofjHLIGpQP0VscNPkq5CKQvMcQH.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -4739,8 +4637,7 @@
       "en": "Arknights",
       "ko": "명일방주"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -4773,8 +4670,7 @@
       "en": "Wuthering Waves",
       "ko": "명조: 워더링 웨이브"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k5k.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -4806,8 +4702,7 @@
       "en": "Detective Conan",
       "ko": "명탐정 코난"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -4839,9 +4734,8 @@
       "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000351",
@@ -4872,9 +4766,8 @@
       "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/krBHtLnl6zLSmriYp8f7lpLlIoG.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000235",
@@ -4965,9 +4858,8 @@
       "en": "Monster Hunter: World",
       "ko": "몬스터 헌터: 월드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000257",
@@ -5003,8 +4895,7 @@
       "ja": "無職転生",
       "romaji": "Mushoku Tensei"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040685373-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -5135,9 +5026,8 @@
       "en": "Mass Effect™ Legendary Edition",
       "ko": "미스트워커"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1328670/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000395",
@@ -5257,9 +5147,8 @@
       "en": "BioShock™",
       "ko": "바이오쇼크"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7670/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000248",
@@ -5321,8 +5210,7 @@
       "en": "Monogatari",
       "ko": "바케모노가타리"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784044740626-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -5429,8 +5317,7 @@
       "ko": "반지의 제왕: 반지 원정대",
       "en": "The Lord of the Rings: The Fellowship of the Ring"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -5461,9 +5348,8 @@
       "en": "Baldur's Gate 3",
       "ko": "발할라: 신들의 황혼"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000129",
@@ -5492,9 +5378,8 @@
       "en": "Valheim",
       "ko": "발헤임"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/892970/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000233",
@@ -5555,9 +5440,8 @@
       "en": "PUBG: BATTLEGROUNDS",
       "ko": "배틀그라운드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000052",
@@ -5587,9 +5471,8 @@
       "en": "Battlefield™ 2042",
       "ko": "배틀필드 2042"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517290/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000299",
@@ -5654,9 +5537,8 @@
       "en": "Land of the Lustrous",
       "ja": "宝石の国"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dW3LxhCQyHWFzDB8vDtABvintET.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000178",
@@ -5754,9 +5636,8 @@
       "en": "Fire Force",
       "ja": "炎炎ノ消防隊"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000322",
@@ -5787,9 +5668,8 @@
       "en": "Fire Force",
       "ko": "불꽃 소방대"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000273",
@@ -5822,8 +5702,7 @@
       "en": "Honkai Star Rail",
       "ko": "붕괴: 스타레일"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -5918,9 +5797,8 @@
       "en": "Black Myth: Wukong",
       "ko": "블랙 미스"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000174",
@@ -6015,9 +5893,8 @@
       "en": "Blasphemous",
       "ko": "블러드본"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/774361/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000177",
@@ -6050,9 +5927,8 @@
       "en": "Blue Lock",
       "ja": "ブルーロック"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000302",
@@ -6083,9 +5959,8 @@
       "en": "Blue Lock",
       "ko": "블루 록"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000266",
@@ -6182,8 +6057,7 @@
       "en": "Bleach",
       "ja": "BLEACH"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/j6JR5ULnc5bNIRX1zUUzdGCzaET.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -6277,8 +6151,7 @@
       "en": "Vinland Saga",
       "ja": "ヴィンランド・サガ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/VYnnyA2hyxi3VUPgCA71mMtt69.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -6344,9 +6217,8 @@
       "en": "Cyberpunk 2077",
       "ko": "사이버펑크 2077"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000184",
@@ -6443,9 +6315,8 @@
       "en": "Sakamoto Days",
       "ko": "사카모토 데이즈"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000231",
@@ -6478,9 +6349,8 @@
       "en": "Sakamoto Days",
       "ja": "SAKAMOTO DAYS"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ftasBbzJ2OBCVAN5iMwf6JN8vCJ.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000399",
@@ -6543,9 +6413,8 @@
       "en": "Satisfactory",
       "ko": "새티스팩토리"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000377",
@@ -6578,9 +6447,8 @@
       "en": "Saint Seiya",
       "ja": "聖闘士星矢"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ixC9mNfY9PhFda4RaE1mLTGRcgm.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000127",
@@ -6609,9 +6477,8 @@
       "en": "Sekiro™: Shadows Die Twice - GOTY Edition",
       "ko": "세키로"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000164",
@@ -6670,9 +6537,8 @@
       "en": "Celeste",
       "ko": "셀레스테"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000015",
@@ -6703,8 +6569,7 @@
       "en": "Sherlock Holmes",
       "ko": "셜록 홈즈: 단홍색 연구"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780141037439-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -6736,9 +6601,8 @@
       "en": "Sword ART Online",
       "ko": "소드 아트 온라인"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784048869004-L.jpg",
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 55,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000241",
@@ -6841,8 +6705,7 @@
       "en": "Math Thief",
       "ko": "수학도둑"
     },
-    "posterPath": "https://image.yes24.com/goods/2301053/L",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -6906,9 +6769,8 @@
       "en": "Cookie Clicker",
       "ko": "슈퍼 러버런"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1454400/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000111",
@@ -6938,9 +6800,8 @@
       "en": "The Elder Scrolls V: Skyrim Special Edition",
       "ko": "스카이림 SE"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "sub_webtoon_scale-supply-b1a_2026",
@@ -7662,9 +7523,8 @@
       "en": "Stardew Valley",
       "ko": "스타듀 밸리"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000063",
@@ -7694,9 +7554,8 @@
       "en": "Call of Duty®: Warzone™",
       "ko": "스타크래프트 리마스터"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962663/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000035",
@@ -7725,9 +7584,8 @@
       "en": "Fallout 76",
       "ko": "스타필드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151340/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000092",
@@ -7756,9 +7614,8 @@
       "en": "Stellaris",
       "ko": "스텔라리스"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/281990/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000239",
@@ -7794,9 +7651,8 @@
       "ja": "SPY×FAMILY",
       "romaji": "Spy x Family"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000387",
@@ -7832,9 +7688,8 @@
       "ja": "SPY×FAMILY",
       "romaji": "Spy x Family"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000068",
@@ -7864,9 +7719,8 @@
       "en": "Ghost of Tsushima DIRECTOR'S CUT",
       "ko": "스파이더맨 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000163",
@@ -7922,8 +7776,7 @@
       "en": "Splatoon 3",
       "ko": "스플래툰 3"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5k1z.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -7954,9 +7807,8 @@
       "en": "Bloons TD 6",
       "ko": "슬라임 랜처"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960090/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000385",
@@ -8048,9 +7900,8 @@
       "en": "Cities: Skylines",
       "ko": "시티즈: 스카이라인"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/255710/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000382",
@@ -8116,8 +7967,7 @@
       "en": "Neon Genesis Evangelion",
       "ko": "신세기 에반게리온"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -8282,8 +8132,7 @@
       "en": "Ready Player ONE",
       "ko": "아이언 레디 플레이어 원"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780307887443-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -8314,9 +8163,8 @@
       "en": "ARK: Survival Evolved",
       "ko": "아크: 서바이벌 이볼브드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000296",
@@ -8382,9 +8230,8 @@
       "en": "The Apothecary Diaries",
       "ja": "薬屋のひとりごと"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000171",
@@ -8417,9 +8264,8 @@
       "en": "The Apothecary Diaries",
       "ja": "薬屋のひとりごと"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/vy9rMVergbppBCflHJyT78dz7mz.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000370",
@@ -8513,9 +8359,8 @@
       "en": "UNDERTALE",
       "ko": "언더테일"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000393",
@@ -8613,9 +8458,8 @@
       "en": "UNCHARTED™: Legacy of Thieves Collection",
       "ko": "언차티드: 도적들과 유산"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000319",
@@ -8649,9 +8493,8 @@
       "en": "Edens Zero",
       "ja": "EDENS ZERO"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000153",
@@ -8709,9 +8552,8 @@
       "en": "Apex Legends™",
       "ko": "에이펙스 레전드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000042",
@@ -8740,9 +8582,8 @@
       "en": "NARAKA: BLADEPOINT",
       "ko": "엑스칼리버"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203220/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000135",
@@ -8771,9 +8612,8 @@
       "en": "Axiom Verge",
       "ko": "엑시옴"
     },
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000170",
@@ -8837,9 +8677,8 @@
       "en": "ELDEN RING",
       "ko": "엘든 링"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000374",
@@ -8872,8 +8711,7 @@
       "en": "Rent-a-Girlfriend",
       "ja": "彼女、お借りします"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/uLrEqu1JkSMe4AN7IMMBEfhFAXE.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -8905,8 +8743,7 @@
       "en": "Murder ON Orient Express",
       "ko": "오리엔트 특급 살인"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780062073495-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -8937,9 +8774,8 @@
       "en": "Mount &amp; Blade II: Bannerlord",
       "ko": "오리와 먹구름"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261550/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000259",
@@ -8968,8 +8804,7 @@
       "en": "Overlord",
       "ko": "오버로드"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040661637-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -9002,8 +8837,7 @@
       "en": "Overlord",
       "ja": "オーバーロード"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/nNpcea9lLHI4iv8QpOIvHveVnT9.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -9068,9 +8902,8 @@
       "en": "Overwatch®",
       "ko": "오버워치 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000108",
@@ -9100,9 +8933,8 @@
       "en": "Conan Exiles Enhanced",
       "ko": "오버쿡드 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440900/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000021",
@@ -9191,9 +9023,8 @@
       "en": "OCTOPATH TRAVELER™",
       "ko": "옥토패스 트래블러"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/921570/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000229",
@@ -9226,9 +9057,8 @@
       "en": "Ranking of Kings",
       "ja": "王様ランキング"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tQ6al7XrSl25aVkRvSg3DKf1yCl.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000019",
@@ -9324,9 +9154,8 @@
       "en": "Yakuza 0",
       "ko": "용과 같이 0"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/638970/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000254",
@@ -9357,8 +9186,7 @@
       "en": "Classroom OF THE Elite",
       "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015025-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -9389,8 +9217,7 @@
       "en": "Umamusume",
       "ko": "우마무스메"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2z.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -9423,9 +9250,8 @@
       "en": "Warframe",
       "ko": "워프레임"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/230410/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000272",
@@ -9456,8 +9282,7 @@
       "en": "Genshin Impact",
       "ko": "원신"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -9488,9 +9313,8 @@
       "en": "ONE Punch MAN",
       "ko": "원펀맨"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000364",
@@ -9522,9 +9346,8 @@
       "en": "One-Punch Man",
       "ja": "ワンパンマン"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sV5D7lM4isMmK1gNSv2SglqYnni.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000222",
@@ -9556,9 +9379,8 @@
       "en": "One Piece",
       "ja": "ONE PIECE"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000363",
@@ -9588,9 +9410,8 @@
       "en": "ONE Piece",
       "ko": "원피스"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000264",
@@ -9786,9 +9607,8 @@
       "en": "Euro Truck Simulator 2",
       "ko": "유로 트럭 시뮬레이터 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000077",
@@ -9818,9 +9638,8 @@
       "en": "Europa Universalis IV",
       "ko": "유로파 유니버설리스 IV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000401",
@@ -9883,8 +9702,7 @@
       "en": "Hitchhiker Guide",
       "ko": "은하수를 여행하는 히치하이커를 위한 안내서"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -10011,8 +9829,7 @@
       "en": "Konosuba",
       "ko": "이 멋진 세계에 축복을!"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784041015780-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -10046,8 +9863,7 @@
       "en": "KonoSuba",
       "ja": "この素晴らしい世界に祝福を！"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/txwSoTks8fmtonBPp2YKIcSRY3r.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -10235,8 +10051,7 @@
     "titles": {
       "ko": "인터스텔라"
     },
-    "posterPath": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -10367,9 +10182,8 @@
       "en": "Frieren",
       "ko": "장송의 프리렌"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000323",
@@ -10402,9 +10216,8 @@
       "en": "Frieren: Beyond Journey's End",
       "ja": "葬送のフリーレン"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000261",
@@ -10434,8 +10247,7 @@
       "en": "Slime",
       "ko": "전생 슬라임"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9784040702279-L.jpg",
-    "qualityScore": 55,
+    "qualityScore": 45,
     "qualityTier": 2
   },
   {
@@ -10532,8 +10344,7 @@
       "en": "Xenoblade 3",
       "ko": "제노블레이드 3"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5s52.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -10566,8 +10377,7 @@
       "en": "Zenless Zone Zero",
       "ko": "젠레스 존 제로"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7j43.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -10599,8 +10409,7 @@
       "en": "Zelda Breath OF THE Wild",
       "ko": "젤다의 전설 브레스 오브 더 와일드"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -10669,9 +10478,8 @@
       "en": "Seraph of the End",
       "ja": "終わりのセラフ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/k8gvlJLmGNoXr1iwEHXegffJANv.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000339",
@@ -10704,8 +10512,7 @@
       "en": "JoJo's Bizarre Adventure",
       "ja": "ジョジョの奇妙な冒険"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -10739,8 +10546,7 @@
       "en": "JoJo's Bizarre Adventure",
       "ja": "ジョジョの奇妙な冒険"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/dgjo0nFXKoOJ5y8NBMjYfsSdMmI.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -10771,9 +10577,8 @@
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000340",
@@ -10803,9 +10608,8 @@
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/pnn223i9v5kfYku6TbqdSbPePJp.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000406",
@@ -10864,9 +10668,8 @@
       "en": "Hells Paradise",
       "ko": "지옥락"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000200",
@@ -10898,9 +10701,8 @@
       "en": "Hell's Paradise",
       "ja": "地獄楽"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000381",
@@ -10932,9 +10734,8 @@
       "en": "Shingeki NO Kyojin",
       "ko": "진격의 거인"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000172",
@@ -10965,9 +10766,8 @@
       "en": "Attack ON Titan",
       "ko": "진격의 거인"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/kTYFXRdvo7GZWULKjeD4YZ929NC.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000148",
@@ -11032,9 +10832,8 @@
       "en": "Ascendance of a Bookworm",
       "ja": "本好きの下剋上"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/bKGRbhv6ivalbt9sMniyxLVGnUZ.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000197",
@@ -11161,9 +10960,8 @@
       "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000308",
@@ -11194,9 +10992,8 @@
       "en": "Chainsaw MAN",
       "ko": "체인소 맨"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eblIShqBgVPmRt86f4e02ouDNhE.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000403",
@@ -11252,9 +11049,8 @@
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000366",
@@ -11285,9 +11081,8 @@
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/zim3SB5YPcS6Hl2uLScJeW5bLIz.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000061",
@@ -11317,9 +11112,8 @@
       "en": "The Last of Us™ Part I",
       "ko": "최후의 생还자 Part I"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000353",
@@ -11478,8 +11272,7 @@
       "en": "Cardcaptor Sakura",
       "ko": "카드캡터 체리"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/8jbo0LZ4cVrPI3IagPlizIwY7YT.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -11512,8 +11305,7 @@
       "en": "Cowboy Bebop",
       "ko": "카우보이 비밥"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/xDiXDfZwC6XYC6fxHI1jl3A3Ill.jpg",
-    "qualityScore": 75,
+    "qualityScore": 60,
     "qualityTier": 3
   },
   {
@@ -11547,9 +11339,8 @@
       "en": "Counter-Strike 2",
       "ko": "카운터 스트라이크 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000305",
@@ -11582,9 +11373,8 @@
       "en": "Captain Tsubasa",
       "ja": "キャプテン翼"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/ljPNGJb8tp4x7ttu02NrBkw3K2g.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000089",
@@ -11613,9 +11403,8 @@
       "en": "Save 40% on Cuphead",
       "ko": "컵헤드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000183",
@@ -11712,9 +11501,8 @@
       "en": "Call of Duty®",
       "ko": "콜 오브 듀티: MW II"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000037",
@@ -11744,9 +11532,8 @@
       "en": "Crusader Kings III",
       "ko": "크루세이더 킹즈 3"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000181",
@@ -11809,9 +11596,8 @@
       "en": "Kill la Kill",
       "ja": "キルラキル"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/y33Ktl5E6ShOVUBlv6PWkmPoGZC.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000020",
@@ -11905,8 +11691,7 @@
       "en": "Kingdom",
       "ja": "キングダム"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/a0qB0WtBjNbAtPuKmeKEUYELh7T.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -11937,9 +11722,8 @@
       "en": "Save 50% on Kingdom Come: Deliverance II",
       "ko": "킹덤 컴 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1771300/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000101",
@@ -11969,9 +11753,8 @@
       "en": "Save 80% on Kingdom Come: Deliverance",
       "ko": "킹덤 컴: 딜리버런스"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379430/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000027",
@@ -12002,9 +11785,8 @@
       "en": "Terraria",
       "ko": "테라리아"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000394",
@@ -12037,9 +11819,8 @@
       "en": "Bunny Drop",
       "ja": "うさぎドロップ"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/w9aOvcN09KRNDmsuHEYS00Td285.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000392",
@@ -12102,8 +11883,7 @@
       "en": "Toradora!",
       "ja": "とらドラ！"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/2StXCVS3mm09HwRBWsee3QCz3TM.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -12163,9 +11943,8 @@
       "en": "Save 60% on Hunt: Showdown 1896",
       "ko": "토탈 워: 삼국"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/594650/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000032",
@@ -12195,9 +11974,8 @@
       "en": "Total War: WARHAMMER III",
       "ko": "토탈 워: 워해머 3"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1142710/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000245",
@@ -12291,9 +12069,8 @@
       "en": "Team Fortress 2",
       "ko": "팀 포트리스 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000270",
@@ -12325,9 +12102,8 @@
       "en": "FINAL FANTASY XIV Online",
       "ko": "파이널 판타지 XIV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39210/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000271",
@@ -12359,8 +12135,7 @@
       "en": "Fire Emblem Three Houses",
       "ko": "파이어 엠블렘: 풍화설월"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co49wj.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -12667,9 +12442,8 @@
       "en": "Save 25% on Palworld",
       "ko": "팔월드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1623730/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000107",
@@ -12698,9 +12472,8 @@
       "en": "Factorio",
       "ko": "팩토리오"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000013",
@@ -12731,8 +12504,7 @@
       "en": "Percy Jackson",
       "ko": "퍼시 잭슨과 번개 도둑"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -12794,9 +12566,8 @@
       "en": "Persona 5 Royal",
       "ko": "페르소나 5 로열"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000321",
@@ -12862,9 +12633,8 @@
       "en": "Fairy Tail: 100 Years Quest",
       "ja": "FAIRY TAIL 100年クエスト"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/urzSiR7IiImAzyq2VyOJ1BtNChY.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000269",
@@ -12896,8 +12666,7 @@
       "en": "Fate Grand Order",
       "ko": "페이트/그랜드 오더"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -12960,9 +12729,8 @@
       "en": "Papers, Please",
       "ko": "페이퍼스, 플리즈"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000155",
@@ -13020,9 +12788,8 @@
       "en": "Portal",
       "ko": "포털"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000143",
@@ -13054,9 +12821,8 @@
       "en": "Portal 2",
       "ko": "포털 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000070",
@@ -13086,9 +12852,8 @@
       "en": "Fallout 3",
       "ko": "폴아웃 3"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000100",
@@ -13118,9 +12883,8 @@
       "en": "Fallout 4",
       "ko": "폴아웃 4"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/377160/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000071",
@@ -13150,9 +12914,8 @@
       "en": "Fallout: New Vegas",
       "ko": "폴아웃: 뉴 베가스"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22380/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000281",
@@ -13183,8 +12946,7 @@
       "en": "Project Sekai",
       "ko": "프로젝트 세카이"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2kgk.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -13215,9 +12977,8 @@
       "en": "Project Zomboid",
       "ko": "프로젝트 좀보이드"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000074",
@@ -13247,9 +13008,8 @@
       "en": "Prison Architect",
       "ko": "프리즌 아키텍트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/233450/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000280",
@@ -13281,8 +13041,7 @@
       "en": "Princess Connect",
       "ko": "프린세스 커넥트"
     },
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -13313,9 +13072,8 @@
       "en": "Planet Coaster",
       "ko": "플래닛 코스터"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493340/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000046",
@@ -13345,9 +13103,8 @@
       "en": "Save 40% on The Planet Crafter",
       "ko": "플래닛 코스터 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284190/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000369",
@@ -13437,9 +13194,8 @@
       "en": "Hades",
       "ko": "하데스"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000198",
@@ -13471,9 +13227,8 @@
       "en": "Haikyu!!",
       "ja": "ハイキュー!!"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000334",
@@ -13503,9 +13258,8 @@
       "en": "Haikyuu",
       "ko": "하이큐!!"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
-    "qualityScore": 80,
-    "qualityTier": 4
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000103",
@@ -13535,9 +13289,8 @@
       "en": "Hearts of Iron IV",
       "ko": "하트 오브 아이언 IV"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000138",
@@ -13570,9 +13323,8 @@
       "en": "Half-Life 2",
       "ko": "하프라이프 2"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000006",
@@ -13603,8 +13355,7 @@
       "en": "Harry Potter Philosophers Stone",
       "ko": "해리 포터와 마법사의 돌"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -13668,8 +13419,7 @@
       "en": "Hunter x Hunter",
       "ja": "ハンター×ハンター"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/8YKlXBit3PlVTXf9A1ohccCf9lQ.jpg",
-    "qualityScore": 90,
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -13702,8 +13452,7 @@
       "en": "Hunger Games",
       "ko": "헝거 게임"
     },
-    "posterPath": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
-    "qualityScore": 50,
+    "qualityScore": 40,
     "qualityTier": 2
   },
   {
@@ -13759,9 +13508,8 @@
       "en": "Hogwarts Legacy",
       "ko": "호그와트 레거시"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000036",
@@ -13791,9 +13539,8 @@
       "en": "Horizon Zero Dawn™ Complete Edition",
       "ko": "호라이즌 제로 던"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151640/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000079",
@@ -13823,9 +13570,8 @@
       "en": "Horizon Forbidden West™ Complete Edition",
       "ko": "호라이즌 포비든 웨스트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000201",
@@ -13920,9 +13666,8 @@
       "en": "Hollow Knight",
       "ko": "홀로우 나이트"
     },
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/library_600x900.jpg",
-    "qualityScore": 85,
-    "qualityTier": 4
+    "qualityScore": 75,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000389",

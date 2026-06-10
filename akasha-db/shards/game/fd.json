@@ -13,7 +13,6 @@
       "e스포츠",
       "팀전"
     ],
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/1276790/header.jpg",
     "legacyIds": [
       "gen_game_league-of-legends_2009"
     ],
@@ -30,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },
@@ -48,7 +46,6 @@
       "스토리",
       "선택"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24980/library_600x900.jpg",
     "legacyIds": [
       "gen_game_mass-effect-2_2010"
     ],
@@ -65,7 +62,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },
@@ -82,7 +78,6 @@
       "Steam",
       "대중문화"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/394360/library_600x900.jpg",
     "legacyIds": [
       "gen_game_appid394360_2016"
     ],
@@ -99,7 +94,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

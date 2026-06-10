@@ -19,7 +19,6 @@
       "경쟁"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -32,10 +31,8 @@
           "episodes": 14
         }
       ],
-      "latestSeason": "2기",
-      "posterVerified": true
+      "latestSeason": "2기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
     "externalIds": {
       "tmdb": "131041"
     },

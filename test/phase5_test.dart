@@ -57,11 +57,26 @@ is_hall_of_fame: true
       expect(item.review, '정말 재미있다.');
     });
 
-    test('MarkdownParser does not persist registry default CDN URL to YAML', () {
+    test('deserialize without poster does not fuse Tier 1 registry poster', () {
+      const masterId = 'sub_manga_shigatsu-wa-kimi-no-uso_2011';
+      const yaml = '''
+---
+work_id: "$masterId"
+title: "4월은 너의 거짓말"
+category: manga
+domain: subculture
+---
+
+# 감상
+좋았다.
+''';
+      final item = MarkdownParser.deserialize(yaml, '4월은 너의 거짓말');
+      expect(item.posterPath, isNull);
+    });
+
+    test('user custom URL persists to YAML', () {
       const masterId = 'sub_manga_detective-conan_1994';
-      final registry = WorksRegistry.getWorkById(masterId);
-      expect(registry, isNotNull);
-      expect(registry!.posterPath, startsWith('http'));
+      const registryCdn = 'https://example.com/registry-default.jpg';
 
       final item = createItem(
         workId: masterId,
@@ -71,34 +86,29 @@ is_hall_of_fame: true
         workStatus: '완결',
         myStatus: '전부 봄',
         rating: 5.0,
-        posterPath: registry.posterPath,
+        posterPath: registryCdn,
         memorableQuotes: [],
         review: 'Great.',
         isHallOfFame: true,
         tags: [],
       );
 
-      expect(MarkdownParser.shouldPersistPosterToYaml(item), isFalse);
+      expect(MarkdownParser.shouldPersistPosterToYaml(item), isTrue);
 
       final serialized = MarkdownParser.serialize(item);
-      expect(serialized, isNot(contains('poster:')));
+      expect(serialized, contains('poster: "$registryCdn"'));
     });
 
-    test('legacy work_id resolves and still blocks default poster persistence', () {
-      final registry = WorksRegistry.getWorkById('sub_manga_detective-conan_1994');
-      expect(registry, isNotNull);
-
-      final item = createItem(
-        workId: 'sub_manga_detective-conan_1994',
-        title: '명탐정 코난',
-        category: MediaCategory.manga,
-        domain: AppDomain.subculture,
-        posterPath: registry!.posterPath,
-        memorableQuotes: [],
-        review: '',
-      );
-
-      expect(MarkdownParser.shouldPersistPosterToYaml(item), isFalse);
+    test('legacy work_id resolves without Tier 1 poster fusion', () {
+      const yaml = '''
+---
+work_id: "sub_manga_detective-conan_1994"
+title: "명탐정 코난"
+category: manga
+---
+''';
+      final item = MarkdownParser.deserialize(yaml, '명탐정 코난');
+      expect(item.posterPath, isNull);
     });
 
     test('MarkdownParser persists user-customized URL and posters/ relative path', () {

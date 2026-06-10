@@ -14,11 +14,8 @@
       "드라마"
     ],
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/sokReNdjEwG2TkdUzJcVnD6sChT.jpg",
     "externalIds": {
       "tmdb": "65336"
     },

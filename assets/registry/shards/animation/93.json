@@ -19,7 +19,6 @@
       "미스터리"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -37,10 +36,8 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "3기",
-      "posterVerified": true
+      "latestSeason": "3기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/eDoqgCOBc7leLpxMKBfu5xP3WIf.jpg",
     "externalIds": {
       "tmdb": "88046"
     },

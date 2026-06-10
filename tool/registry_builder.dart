@@ -140,7 +140,6 @@ void main(List<String> args) {
   final searchIndex = allWorks.entries.map((entry) {
     final workId = entry.key;
     final work = entry.value;
-    final poster = work['posterPath'];
     final title = work['title']?.toString() ?? '';
     var titles = parseTitlesJson(work['titles']);
     if (titles.isEmpty && title.isNotEmpty) {
@@ -176,11 +175,7 @@ void main(List<String> args) {
     if (titles.isNotEmpty) {
       map['titles'] = titles;
     }
-    if (poster is String &&
-        poster.isNotEmpty &&
-        poster.startsWith('http')) {
-      map['posterPath'] = poster;
-    }
+    // v1: Tier 1 posterPath — search_index에 복제하지 않음 (유저 볼트만)
 
     final qualitySignals = resolveQualitySignals(
       work,

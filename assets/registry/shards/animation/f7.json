@@ -19,7 +19,6 @@
       "우정"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "TV",
@@ -27,10 +26,8 @@
           "episodes": 1100
         }
       ],
-      "latestSeason": "TV",
-      "posterVerified": true
+      "latestSeason": "TV"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/qHjXsSUuolEtbgvYPzRjAuB1VHE.jpg",
     "externalIds": {
       "tmdb": "37854"
     },

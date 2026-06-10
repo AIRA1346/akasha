@@ -13,13 +13,10 @@
       "서바이벌",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tqiDHyR3YoIq4h0taoodUwp78Uz.jpg",
     "externalIds": {
       "tmdb": "131041"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
@@ -44,13 +41,10 @@
       "정의",
       "다크"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg",
     "externalIds": {
       "tmdb": "13916"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [
@@ -80,11 +74,6 @@
       "대학",
       "연애"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/uLrEqu1JkSMe4AN7IMMBEfhFAXE.jpg",
     "externalIds": {
       "tmdb": "96316"
     },

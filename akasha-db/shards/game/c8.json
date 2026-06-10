@@ -12,7 +12,6 @@
       "얼리액세스",
       "SF"
     ],
-    "posterPath": "https://steamcdn-a.akamaihd.net/steam/apps/332200/header.jpg",
     "legacyIds": [
       "gen_game_axiom_2024"
     ],
@@ -29,7 +28,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

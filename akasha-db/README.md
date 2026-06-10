@@ -25,7 +25,7 @@ akasha-db/
 > 구 슬러그 ID(`sub_manga_one-piece_1997` 등)는 `legacy_aliases.json`으로만 해석 — 신규 발급 금지.
 
 **API bulk 금지** — 확장은 수동 PR + (장기) Registry Pipeline + 사용자 직접 등록.  
-포스터: **`posterPath` URL만** (이미지 파일 커밋 금지).
+**v1 포스터:** Tier 1 `posterPath` **금지** — 유저 Sanctum vault만 ([POSTER_POLICY.md](POSTER_POLICY.md)).
 
 ## 앱 동기화
 

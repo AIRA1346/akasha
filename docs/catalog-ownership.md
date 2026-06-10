@@ -17,7 +17,7 @@
 | 없으면 **사용자 직접 등록** | 제3자 DB를 백업/스토리지로 사용 |
 | 사용자 볼트 `.md`·`posters/` (아카이브한 작품만) | 사전 전 작품에 `.md` 일괄 생성 |
 
-**외부 ID** (`externalIds`)는 식별·중복 탐지·포스터 URL 확보에 쓸 수 있다.  
+| **externalIds** (`steam`, `tmdb`, …) | Fact — 식별·중복 탐지용 (**포스터 URL attach 금지**) |
 외부 시놉시스·설명 **복제**는 금지.
 
 ---
@@ -26,11 +26,11 @@
 
 ```
 Tier 0 — Identity     wk_ (불변) + legacy_aliases
-Tier 1 — AKASHA Meta  title, titles, 연도, description, posterPath(URL), tags
+Tier 1 — AKASHA Meta  title, titles, 연도, description, tags (**posterPath v1 금지**)
 Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소)
 ```
 
-- 사전: 수십만 작품도 **가상 카드** (md 없이 검색·포스터 표시)
+- 사전: 수십만 작품도 **가상 카드** (md 없이 검색 · **플레이스홀더**)
 - 아카이브: 사용자가 선택한 작품만 `.md` 생성
 - 앱 UI fusion: Tier 2가 Tier 1을 **덮어쓰지 않음**
 
@@ -57,12 +57,10 @@ Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소
 
 ---
 
-## 5. posterPath (사전)
+## 5. 포스터 (v1 — Tier 2만)
 
-- **링크만 저장** (`posterPath` = URL). repo·번들에 이미지 **없음**
-- 상세: [akasha-db-policy.md](akasha-db-policy.md), [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md)
-- 신규 PR: 금지 CDN **추가 금지** (CI)
-- 사용자 볼트 `posters/` (UGC)가 registry URL보다 **우선**
+- **Tier 1 (akasha-db):** `posterPath` **금지** — [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)
+- **Tier 2 (Sanctum vault):** YAML `poster:` · `posters/` — [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md)
 
 ---
 

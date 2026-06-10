@@ -65,7 +65,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 | **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
 | **규모 목표** | 2026 ~430(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
 | **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~E ✅) |
-| **포스터** | **`posterPath` URL을 DB에 저장** (검색 즉시 표시) + `externalIds`로 재검증 |
+| **포스터** | **v1: Tier 1 미제공** — 유저 Sanctum vault `poster:` / `posters/` 만 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
 | **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
@@ -166,7 +166,7 @@ flowchart LR
 | `is_hall_of_fame` | S-Tier 명예의 전당 |
 | `poster` | `posters/` 상대경로 또는 커스텀 URL (Registry CDN URL은 YAML에 저장하지 않음) |
 
-본문에는 **명대사·감상문**만 기록합니다. 설명·기본 포스터는 글로벌 사전에서 UI fusion 됩니다.
+본문에는 **명대사·감상문**만 기록합니다. 설명은 글로벌 사전에서 UI fusion · **포스터는 유저가 Sanctum vault에 직접** 넣습니다.
 
 ### 외부 편집
 

@@ -2,9 +2,8 @@
 
 > **AKASHA는 남의 데이터베이스를 빌려 쓰지 않습니다.**  
 > `akasha-db`는 Rune Atelier가 **직접 구축·검수**하는 작품 메타데이터이며,  
-> 포스터는 **URL 링크 참조만** 사용합니다. (이미지 파일을 repo에 넣지 않음)
-
-> **필드·소스·법무 최상위:** [data-policy.md](data-policy.md) — Discovery ≠ DB Mirroring, Registry Minimal Core, 소스별 필드 분류
+> **v1 Steam:** Tier 1(akasha-db)에는 **포스터 URL 없음** — 이미지는 유저 Sanctum vault만.  
+> **필드·소스·법무 최상위:** [data-policy.md](data-policy.md) §0.3
 
 **상태:** v2 방향 (2026-06)  
 **현재 규모:** **~410작** 엄선 (Steam v1)  
@@ -17,7 +16,7 @@
 | 항목 | 방침 |
 |------|------|
 | 메타데이터 | AKASHA가 직접 작성·큐레이션 (장기: Registry Pipeline) |
-| 포스터 | `posterPath`에 **https URL만** 저장 (hotlink) |
+| 포스터 | **v1: Tier 1 미제공** · 유저 Sanctum vault만 |
 | ID | **`wk_` 영구 불변** + `legacy_aliases` (전환 예정) |
 | 확장 | 수동 PR + Pipeline + 사용자 직접 등록 |
 | 금지 | API bulk → Git 영구 저장, Git 이미지 호스팅, 외부 DB 미러 |
@@ -42,19 +41,17 @@
 ### 3.1 메타데이터 (Tier 1 — 사전)
 
 - **직접 작성:** 제목(`title` / `titles`), 연도, 카테고리, 짧은 설명(1~2문장), 태그
-- **식별 참조:** `externalIds` (steam, tmdb, isbn 등) — **중복 탐지·포스터 URL 확보**에 활용 가능
+- **식별 참조:** `externalIds` (steam, tmdb, isbn 등) — **중복 탐지** (포스터 URL attach **금지**)
 - **추가 경로:**
   1. 수동 큐레이션 PR — [CONTRIBUTING.md](../akasha-db/CONTRIBUTING.md)
   2. Registry Pipeline (장기) — extract → dedupe → shard → Git
   3. 사용자 직접 등록 — 앱 볼트 `.md` (아카이브한 작품만)
 
-### 3.2 포스터 (링크만)
+### 3.2 포스터 (v1 — Tier 2 Sanctum vault만)
 
-- JSON 필드: **`posterPath`** — `https://...` URL 문자열 또는 `null`
-- **repo·앱 번들에 이미지 바이너리 없음** (`Image.network`로만 표시)
-- 카테고리마다 **같은 필드·같은 규칙**
-- 링크 실패 시 앱 **placeholder**
-- 사용자 볼트 `posters/`는 **개인 UGC**로 최우선 표시
+- **Tier 1:** `posterPath` **저장·표시 안 함** — CI `tier1_poster`
+- **Tier 2:** 유저 YAML `poster:` · vault `posters/` (개인 UGC)
+- 앱: 사전 카드 = **플레이스홀더** · 아카이브 작품만 유저 이미지
 
 ### 3.3 작품 정체성 (최우선 과제)
 
@@ -70,31 +67,13 @@
 
 ---
 
-## 4. 포스터 URL — 실무 규칙
+## 4. 포스터 (v1)
 
-상세 체크리스트: [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md)
+상세: [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)
 
-### 4.1 우선 사용 (티어 A~B)
-
-| 출처 | 예시 | 비고 |
-|------|------|------|
-| 공식 스토어·홍보 | Steam `store_item_assets` | 게임 |
-| ISBN 메타 | Open Library 커버 | 도서 |
-| TMDB poster path | `image.tmdb.org` | 애니·영화 (링크만) |
-| 공식 보도·홍보 URL | 배급사·출판사 press | 확인된 경우만 |
-
-### 4.2 피할 것
-
-| 구분 | 처리 |
-|------|------|
-| **신규 PR** | `justwatch`, AniList bulk 파이프라인 URL **금지** |
-| **신규 PR** | `anilistcdn` 등 **금지 CDN** 추가 금지 (CI) |
-| 불확실·깨진 링크 | `posterPath: null` |
-
-### 4.3 법무 인식 (비변호사 의견)
-
-- **링크만 저장** ≠ 저작권 면책. UI 표시는 여전히 회색 지대일 수 있음
-- **이미지를 repo에 복제하지 않음**으로 self-hosted 대비 리스크 완화
+- **akasha-db PR:** `posterPath` **추가·유지 금지**
+- **유저:** Sanctum vault에 URL 또는 `posters/` 파일
+- **정리:** `dart run tool/strip_tier1_posters.dart --apply --sync-assets`
 
 ---
 

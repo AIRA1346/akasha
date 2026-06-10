@@ -19,7 +19,6 @@
       "팀워크"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -42,10 +41,8 @@
           "episodes": 25
         }
       ],
-      "latestSeason": "4기",
-      "posterVerified": true
+      "latestSeason": "4기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/3hbEgDctBcvM15uIH1RHR4cvWIv.jpg",
     "externalIds": {
       "tmdb": "60863"
     },

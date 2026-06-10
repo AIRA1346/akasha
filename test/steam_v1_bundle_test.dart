@@ -27,7 +27,6 @@ void main() {
       expect(solo, isNotNull);
       expect(solo!.workId, startsWith('wk_'));
       expect(solo.category, MediaCategory.webtoon);
-      expect(solo.posterPath, startsWith('http'));
     });
 
     test('webtoon category filter returns wk_ pair (probes hidden)', () async {

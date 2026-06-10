@@ -20,7 +20,6 @@
       "요리"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "seasons": [
         {
           "label": "1기",
@@ -28,10 +27,8 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "1기",
-      "posterVerified": true
+      "latestSeason": "1기"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg",
     "externalIds": {
       "tmdb": "207784"
     },

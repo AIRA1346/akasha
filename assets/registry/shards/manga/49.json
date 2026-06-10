@@ -13,13 +13,10 @@
       "우정",
       "성장"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/5llYnYzA2oiTxxSi9d7RSanrwR8.jpg",
     "externalIds": {
       "tmdb": "46260"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

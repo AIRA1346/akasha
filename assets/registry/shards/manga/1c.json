@@ -18,11 +18,6 @@
       "모험",
       "코미디"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/caU0EaqHlpWVK7NYwjv4FBmzfcB.jpg",
     "externalIds": {
       "tmdb": "207784"
     },
@@ -49,11 +44,6 @@
       "감동",
       "엘프"
     ],
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
-    },
-    "posterPath": "https://image.tmdb.org/t/p/w500/mnj30hYDVAbL9BOA0f4HrKubAGF.jpg",
     "externalIds": {
       "tmdb": "209867"
     },

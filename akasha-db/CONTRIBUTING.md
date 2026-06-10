@@ -36,8 +36,7 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 - [ ] `workId`가 기존 항목과 **중복되지 않음** (동일 작품·externalId 재확인)
 - [ ] `category` / `domain` enum 값 준수
 - [ ] `description`은 2~3문장 요약 (장문 복제 금지)
-- [ ] `posterPath`는 **https URL만** — [POSTER_POLICY.md](POSTER_POLICY.md)
-- [ ] **justwatch·anilistcdn** URL 사용 금지 (CI)
+- [ ] **`posterPath` 추가 금지** (v1 — [POSTER_POLICY.md](POSTER_POLICY.md))
 - [ ] 같은 IP의 다른 매체는 `franchise_groups.json` 확인
 - [ ] `registry_builder` + `ci_registry_check` 통과
 

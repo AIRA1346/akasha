@@ -13,13 +13,10 @@
       "심리",
       "명작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/k3NQ7gVfnNPWbdCgg0x0Tv8CNNN.jpg",
     "externalIds": {
       "tmdb": "890"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

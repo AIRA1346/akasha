@@ -13,13 +13,10 @@
       "럽코",
       "장수작"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/tg5Gya0yv7mScUMIX8CSXZzLCVd.jpg",
     "externalIds": {
       "tmdb": "30983"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

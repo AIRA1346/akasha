@@ -242,13 +242,5 @@ List<AkashaItem> buildSampleData() {
         review: '뇌과학과 기상물리학을 영리하게 결합한 히가시노 게이고 특유의 흡인력 있는 미스터리.',
       ),
   ];
-  for (final item in list) {
-    if (item.workId.isNotEmpty) {
-      final registryWork = WorksRegistry.getWorkById(item.workId);
-      if (registryWork != null) {
-        item.posterPath ??= WorksRegistry.resolvePosterPath(item.workId);
-      }
-    }
-  }
   return list;
 }

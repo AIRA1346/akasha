@@ -13,13 +13,10 @@
       "판타지",
       "서바이벌"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/d5hzkYaO1h7UjH3Q0MRfyGVXjLi.jpg",
     "externalIds": {
       "tmdb": "117465"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

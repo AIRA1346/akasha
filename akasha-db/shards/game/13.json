@@ -13,7 +13,6 @@
       "다크",
       "온라인"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900.jpg",
     "legacyIds": [
       "gen_game_diablo-4_2023"
     ],
@@ -30,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

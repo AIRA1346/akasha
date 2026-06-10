@@ -13,13 +13,8 @@
       "가족",
       "액션"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/rikBBQHmCTOiZ7YoJVkYcKdXgNx.jpg",
     "externalIds": {
       "tmdb": "120089"
-    },
-    "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true
     },
     "legacyIds": [
       "sub_animation_spy-x-family_2022"

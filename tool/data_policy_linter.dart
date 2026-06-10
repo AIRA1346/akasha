@@ -154,6 +154,18 @@ List<DataPolicyViolation> _scanSearchIndex(File file) {
           );
         }
       }
+
+      final poster = map['posterPath']?.toString() ?? '';
+      if (poster.isNotEmpty) {
+        issues.add(
+          DataPolicyViolation(
+            workId: workId,
+            relativePath: 'search_index.json',
+            rule: 'tier1_poster',
+            detail: 'search_index must not contain posterPath (v1)',
+          ),
+        );
+      }
     }
   } catch (e) {
     issues.add(

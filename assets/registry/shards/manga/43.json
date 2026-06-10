@@ -44,10 +44,8 @@
       "초자연"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/oOReMl2ELJky9IFJrIFQXEINXRJ.jpg",
     "legacyIds": [
       "sub_manga_noragami_2010"
     ],
@@ -56,7 +54,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

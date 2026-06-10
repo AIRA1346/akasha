@@ -13,7 +13,6 @@
       "판타지",
       "서브컬처"
     ],
-    "posterPath": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n7y.jpg",
     "legacyIds": [
       "sub_game_genshin-impact_2020"
     ],
@@ -39,7 +38,6 @@
       "코미디",
       "명작"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/library_600x900.jpg",
     "legacyIds": [
       "gen_game_portal-2_2011"
     ],
@@ -57,7 +55,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   },

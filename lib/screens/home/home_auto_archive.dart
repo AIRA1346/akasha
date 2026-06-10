@@ -85,7 +85,6 @@ class HomeAutoArchive {
       creator: work.creator,
       releaseYear: work.releaseYear,
       rating: 0.0,
-      posterPath: WorksRegistry.resolvePosterPath(work.workId),
       description: work.description,
       tags: work.tags,
     );

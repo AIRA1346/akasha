@@ -19,10 +19,8 @@
       "우정"
     ],
     "extensions": {
-      "posterSource": "tmdb",
       "coverageSprint04ExternalId": "tmdb"
     },
-    "posterPath": "https://image.tmdb.org/t/p/w500/gM80dPt22btCRv1OcaQnhCfLq9v.jpg",
     "legacyIds": [
       "sub_manga_edens-zero_2018"
     ],
@@ -31,7 +29,6 @@
     },
     "qualitySignals": {
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

@@ -13,7 +13,6 @@
       "판타지",
       "명작"
     ],
-    "posterPath": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/72850/library_600x900.jpg",
     "legacyIds": [
       "gen_game_skyrim_2011"
     ],
@@ -30,9 +29,7 @@
       "steam": "72850"
     },
     "qualitySignals": {
-      "posterVerified": true,
       "externalIdVerified": true,
-      "hasPoster": true,
       "hasDescription": true
     }
   }

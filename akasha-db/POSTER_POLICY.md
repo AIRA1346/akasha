@@ -1,53 +1,63 @@
-# AKASHA 포스터 URL 정책
+# AKASHA 포스터 정책 (v1 Steam)
 
-> 마스터 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
+> **마스터 정책:** [docs/data-policy.md](../docs/data-policy.md) §0.3  
+> **코드 SSOT:** `lib/config/catalog_poster_policy.dart`
 
-AKASHA 레지스트리(`akasha-db`)와 앱은 **이미지 바이너리를 저장·배포하지 않습니다.**  
-포스터는 항상 **외부 URL 링크 참조**만 사용합니다. (Steam·앱스토어 배포 정책과 동일)
+## v1 핵심
 
-**self-hosted 금지:** `akasha-db/posters/` 등에 이미지를 커밋하지 않습니다.
+**AKASHA(Tier 1)는 포스터 URL을 제공하지 않습니다.**
 
-## 채택하지 않음
+| 계층 | 포스터 |
+|------|--------|
+| **글로벌 사전 (akasha-db)** | `posterPath` **금지** · CI `tier1_poster` |
+| **Sanctum vault (유저)** | YAML `poster:` (https URL) · `posters/` 로컬 파일 |
 
-- 구글 이미지 검색 결과를 **자동 수집·등록**하는 방식
-- 이 레포 또는 앱 번들에 포스터 파일 커밋·호스팅 (**self-hosted**)
-- `posterProvenance` 전수 장부 (v1 필수 아님; `extensions.posterSource` 태그만 선택)
-- 출처를 확인하지 않은 임의 핫링크
-- **신규 PR:** JustWatch, AniList bulk 파이프라인, `anilistcdn` 등 [금지 CDN](../docs/akasha-db-policy.md#42-v1에서-피할-것)
+앱은 Tier 1 카드를 **카테고리 플레이스홀더**로 표시합니다.  
+아카이브한 작품만 유저가 넣은 이미지가 보입니다.
 
-구글 검색은 **찾기 도구**로만 사용하고, 최종 URL은 아래 티어에 맞는 공식·메타데이터 소스로 **교차 확인**합니다.
+## 유저 볼트 (Tier 2)
 
-## 출처 티어 (우선순위)
+- **로컬:** `{Vault}/posters/` — 사용자 업로드 (YAML `poster: posters/...`)
+- **URL:** 사용자가 직접 입력한 `https://...` (개인 기록용)
+- Registry 기본 URL은 YAML에 **저장하지 않음** (`MarkdownParser.shouldPersistPosterToYaml`)
 
-| 티어 | 용도 | 허용 CDN 예 |
-|------|------|-------------|
-| **A** | 공식 홍보·스토어 | Steam `store_item_assets`, Nintendo/eShop 공식 (URL 검증 시) |
-| **B** | 작품 매칭 메타 DB | [AniList](https://anilist.co) (만화·애니), [TMDB](https://www.themoviedb.org) (영화·드라마), [IGDB](https://www.igdb.com) (게임), [Open Library](https://openlibrary.org) (도서 ISBN) |
-| **C** | 라이선스 명시 위키 | Wikimedia Commons·en.wikipedia **공정 이용** 포스터 (영화 등, URL·라이선스 확인) |
-| **—** | 불확실 | `posterPath: null` 유지 (플레이스홀더 표시) |
+**유저 책임:** 권리를 보유한 이미지만 사용. AKASHA는 이미지를 호스팅·큐레이션하지 않습니다.
 
-매체에 맞는 소스를 사용합니다. (예: 만화 작품에 애니 커버 ID 사용 금지)
+## Tier 1에서 하지 않는 것
 
-## 기여자·사용자
+- TMDB / AniList / Steam CDN URL을 `akasha-db` shard·`search_index`에 저장
+- `registry_builder`가 search_index에 `posterPath` 복제
+- 앱이 `WorksRegistry.resolvePosterPath()`로 Tier 1 포스터 fusion
 
-- **크라우드 기여**: 샤드 JSON의 `posterPath`에 티어 A~C URL을 **수동 등록**
-- **사용자 UGC**: 앱에서 커스텀 URL 또는 vault `posters/` 로컬 경로 허용
-- Registry 기본 CDN URL은 vault 마크다운에 **저장하지 않음** (런타임 UI Fusion)
+## CI·도구
 
-## search_index와 lazy 샤드
+```bash
+dart run tool/strip_tier1_posters.dart --apply --sync-assets
+dart run tool/data_policy_linter.dart --strict
+dart run tool/registry_builder.dart --sync-assets
+```
 
-`registry_builder`는 유효한 `posterPath`를 `search_index.json`에 복제합니다.  
-lazy 샤드가 아직 로드되지 않아도 앱이 포스터 URL을 알 수 있게 하기 위함입니다.
+| rule | 내용 |
+|------|------|
+| `tier1_poster` | shard·search_index에 `posterPath` 있으면 **error** |
 
-## URL 등록 체크리스트
+## search_index
 
-- [ ] 작품·매체와 일치하는 메타 DB ID로 확인했는가?
-- [ ] URL이 `http://` 또는 `https://`로 시작하는가?
-- [ ] 앱에서 로드 실패 시 `null`로 되돌릴 수 있는가? (깨진 링크는 PR에서 수정)
-- [ ] 불확실하면 `null` — 플레이스홀더가 더 낫습니다
+v1부터 `search_index.json` 항목에 **`posterPath` 필드 없음** (lazy load 시에도 Tier 1 포스터 미사용).
 
-## 앱 동작 요약
+## 앱 동작
 
-- `Image.network`로만 외부 URL 표시 (디스크 다운로드 없음)
-- `WorksRegistry.resolvePosterPath(workId)` — 로드된 샤드 → search_index 순으로 해석
-- 사용자 지정 `poster:` YAML 값이 registry 기본값보다 우선
+- `Image.network` — **유저 아이템** URL만
+- `SafeLocalImage` — vault `posters/` 상대경로
+- 실패·미설정 → `CategoryPosterPlaceholder` (제목·카테고리 아이콘)
+
+## 기여자 (akasha-db PR)
+
+- 신규·수정 PR에 **`posterPath` 추가 금지**
+- `externalIds` (tmdb, steam, mal 등)는 **Fact** — 포스터 URL attach **하지 않음**
+
+## 문서 이력
+
+| 일자 | 변경 |
+|------|------|
+| 2026-06-10 | v1 Steam — Tier 1 포스터 전면 미제공, 유저 Sanctum vault 전용 |

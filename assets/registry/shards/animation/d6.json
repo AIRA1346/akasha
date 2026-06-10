@@ -13,13 +13,10 @@
       "영화",
       "신카이"
     ],
-    "posterPath": "https://image.tmdb.org/t/p/w500/t6r33klGbbZZjbEkHqsfZ9yahRy.jpg",
     "externalIds": {
       "tmdb": "568160"
     },
     "extensions": {
-      "posterSource": "tmdb",
-      "posterVerified": true,
       "coverageSprint03": "legacy_slug"
     },
     "legacyIds": [

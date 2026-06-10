@@ -275,7 +275,7 @@ class MarkdownParser {
       releaseYear = releaseYear ?? registryWork.releaseYear;
       posterPath = (posterPath != null && posterPath.isNotEmpty)
           ? posterPath
-          : WorksRegistry.resolvePosterPath(workId);
+          : null;
       description = registryWork.description;
       // 유저가 설정한 태그 외에 사전의 공통 장르 태그도 함께 노출되도록 머지합니다.
       for (final tag in registryWork.tags) {
