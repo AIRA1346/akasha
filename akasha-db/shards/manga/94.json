@@ -28,7 +28,7 @@
   },
   "wk_000000442": {
     "workId": "wk_000000442",
-    "title": "Rainbows After Storms",
+    "title": "꽃에게 폭풍",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -36,7 +36,8 @@
     },
     "titles": {
       "en": "Rainbows After Storms",
-      "ja": "はなにあらし"
+      "ja": "はなにあらし",
+      "ko": "꽃에게 폭풍"
     },
     "creator": "Ruka Kobachi",
     "extensions": {

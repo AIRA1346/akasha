@@ -54,6 +54,32 @@ String inferTitleLocaleTag(String title) {
   return 'en';
 }
 
+/// ko-primary 카탈로그 — shard `title`·정렬 키 (locale-catalog-policy §2)
+String resolveRegistryPrimaryTitle({
+  Map<String, String> titles = const {},
+  String legacyTitle = '',
+}) {
+  final ko = titles['ko']?.trim() ?? '';
+  if (ko.isNotEmpty) return ko;
+
+  if (legacyTitle.isNotEmpty && inferTitleLocaleTag(legacyTitle) == 'ko') {
+    return legacyTitle;
+  }
+
+  for (final tag in const ['ja', 'en', 'romaji', 'native', 'zh']) {
+    final value = titles[tag]?.trim() ?? '';
+    if (value.isNotEmpty) return value;
+  }
+
+  if (legacyTitle.isNotEmpty) return legacyTitle;
+
+  for (final value in titles.values) {
+    final trimmed = value.trim();
+    if (trimmed.isNotEmpty) return trimmed;
+  }
+  return '';
+}
+
 Map<String, String> inferTitlesFromLegacyTitle(String title) {
   if (title.isEmpty) return {};
   return {inferTitleLocaleTag(title): title};

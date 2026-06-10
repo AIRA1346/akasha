@@ -31,7 +31,7 @@
   },
   "wk_000000423": {
     "workId": "wk_000000423",
-    "title": "Rakka Ryūsui",
+    "title": "낙화유수",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -39,7 +39,8 @@
     },
     "titles": {
       "en": "Rakka Ryūsui",
-      "ja": "落花流水"
+      "ja": "落花流水",
+      "ko": "낙화유수"
     },
     "releaseYear": 2005,
     "creator": "Ikki Sanada",

@@ -1,7 +1,7 @@
 {
   "wk_000000455": {
     "workId": "wk_000000455",
-    "title": "My Master Has No Tail",
+    "title": "우리 스승님은 꼬리가 없다",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "My Master Has No Tail",
-      "ja": "うちの師匠はしっぽがない"
+      "ja": "うちの師匠はしっぽがない",
+      "ko": "우리 스승님은 꼬리가 없다"
     },
     "creator": "TNSK",
     "extensions": {

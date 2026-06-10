@@ -17,16 +17,20 @@ const akashaDiscoveryUserAgent =
 
 /// `instance of` manga (Q21198342)
 String mangaSeriesSparql({required int limit, required int offset}) => '''
-SELECT ?item ?itemLabel ?authorLabel ?startYear ?itemLabelJa WHERE {
+SELECT ?item ?itemLabel ?itemLabelKo ?authorLabel ?startYear ?itemLabelJa WHERE {
   ?item wdt:P31 wd:Q21198342 .
   OPTIONAL {
     ?item wdt:P50 ?author .
     ?author rdfs:label ?authorLabel .
-    FILTER(LANG(?authorLabel) IN ("en", "ja"))
+    FILTER(LANG(?authorLabel) IN ("en", "ja", "ko"))
   }
   OPTIONAL {
     ?item wdt:P577 ?startTime .
     BIND(YEAR(?startTime) AS ?startYear)
+  }
+  OPTIONAL {
+    ?item rdfs:label ?itemLabelKo .
+    FILTER(LANG(?itemLabelKo) = "ko")
   }
   OPTIONAL {
     ?item rdfs:label ?itemLabelJa .

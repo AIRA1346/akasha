@@ -32,7 +32,7 @@
   },
   "wk_000000425": {
     "workId": "wk_000000425",
-    "title": "Naisho no Tsubomi",
+    "title": "ないしょのつぼみ",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -50,7 +50,7 @@
   },
   "wk_000000429": {
     "workId": "wk_000000429",
-    "title": "Boruto",
+    "title": "보루토",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -58,7 +58,8 @@
     },
     "titles": {
       "en": "Boruto",
-      "ja": "BORUTO-ボルト- -NARUTO NEXT GENERATIONS-"
+      "ja": "BORUTO-ボルト- -NARUTO NEXT GENERATIONS-",
+      "ko": "보루토"
     },
     "creator": "Mikio Ikemoto",
     "extensions": {

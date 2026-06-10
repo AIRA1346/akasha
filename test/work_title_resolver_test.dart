@@ -18,16 +18,16 @@ void main() {
         '귀멸의 칼날',
       );
 
-      final enOnly = WorkTitles({
+      final jaFallback = WorkTitles({
         'en': 'Demon Slayer',
         'ja': '鬼滅の刃',
       });
       expect(
-        enOnly.resolveForLocale(CatalogLocale.ko, legacyTitle: '레거시'),
-        'Demon Slayer',
+        jaFallback.resolveForLocale(CatalogLocale.ko, legacyTitle: '레거시'),
+        '鬼滅の刃',
       );
       expect(
-        enOnly.resolveForLocale(CatalogLocale.en, legacyTitle: ''),
+        jaFallback.resolveForLocale(CatalogLocale.en, legacyTitle: ''),
         'Demon Slayer',
       );
     });

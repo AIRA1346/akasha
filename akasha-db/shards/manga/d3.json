@@ -1,7 +1,7 @@
 {
   "wk_000000444": {
     "workId": "wk_000000444",
-    "title": "A Terrified Teacher at Ghoul School!",
+    "title": "요괴 학교 선생님이 되었습니다!",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "A Terrified Teacher at Ghoul School!",
-      "ja": "妖怪学校の先生はじめました!"
+      "ja": "妖怪学校の先生はじめました!",
+      "ko": "요괴 학교 선생님이 되었습니다!"
     },
     "releaseYear": 2014,
     "extensions": {

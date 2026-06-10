@@ -32,7 +32,7 @@
   },
   "wk_000000449": {
     "workId": "wk_000000449",
-    "title": "The Idaten Deities Know Only Peace",
+    "title": "평온세대의 위타천들",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -40,7 +40,8 @@
     },
     "titles": {
       "en": "The Idaten Deities Know Only Peace",
-      "ja": "平穏世代の韋駄天達"
+      "ja": "平穏世代の韋駄天達",
+      "ko": "평온세대의 위타천들"
     },
     "releaseYear": 2018,
     "creator": "Amahara",

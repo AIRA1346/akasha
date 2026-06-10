@@ -1,6 +1,7 @@
 /// Wikidata SPARQL binding → Discovery Facts (CC0 structured data only).
 library;
 
+import '../registry_v3_utils.dart';
 import 'discovery_types.dart';
 
 String? qidFromWikidataUri(String? uri) {
@@ -37,12 +38,18 @@ Map<String, dynamic> wikidataBindingToNode(
 }) {
   final qid = qidFromWikidataUri(_bindingValue(binding, 'item')) ?? '';
   final enLabel = _bindingValue(binding, 'itemLabel');
+  final koLabel = _bindingValue(binding, 'itemLabelKo');
   final jaLabel = _bindingValue(binding, 'itemLabelJa');
-  final title = enLabel.isNotEmpty ? enLabel : jaLabel;
 
   final titles = <String, String>{};
+  if (koLabel.isNotEmpty) titles['ko'] = koLabel;
   if (enLabel.isNotEmpty) titles['en'] = enLabel;
   if (jaLabel.isNotEmpty) titles['ja'] = jaLabel;
+
+  final title = resolveRegistryPrimaryTitle(
+    titles: titles,
+    legacyTitle: enLabel.isNotEmpty ? enLabel : jaLabel,
+  );
 
   return {
     'qid': qid,
@@ -65,8 +72,14 @@ DiscoveryFacts extractWikidataFacts(Map<String, dynamic> node) {
     });
   }
 
+  final legacyTitle = node['title']?.toString().trim() ?? '';
+  final title = resolveRegistryPrimaryTitle(
+    titles: titles,
+    legacyTitle: legacyTitle,
+  );
+
   return DiscoveryFacts(
-    title: node['title']?.toString().trim() ?? '',
+    title: title,
     titles: titles,
     releaseYear: _yearFromBinding(node['releaseYear']),
     creator: node['creator']?.toString().trim() ?? '',

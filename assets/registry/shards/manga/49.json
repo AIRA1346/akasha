@@ -28,7 +28,7 @@
   },
   "wk_000000432": {
     "workId": "wk_000000432",
-    "title": "Gon",
+    "title": "곤",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -36,7 +36,8 @@
     },
     "titles": {
       "en": "Gon",
-      "ja": "ゴン"
+      "ja": "ゴン",
+      "ko": "곤"
     },
     "creator": "Masashi Tanaka",
     "extensions": {
@@ -46,7 +47,7 @@
   },
   "wk_000000433": {
     "workId": "wk_000000433",
-    "title": "The Faraway Paladin",
+    "title": "最果てのパラディン",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {

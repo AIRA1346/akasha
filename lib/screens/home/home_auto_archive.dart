@@ -77,7 +77,7 @@ class HomeAutoArchive {
 
     return createItem(
       workId: work.workId,
-      title: work.title,
+      title: work.displayTitle(),
       category: work.category,
       domain: work.domain,
       myStatus: defaultMyStatus,

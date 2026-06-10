@@ -2,7 +2,7 @@
   "version": 4,
   "shardBits": 8,
   "entryCount": 490,
-  "generatedAt": "2026-06-10T11:11:50.778613Z",
+  "generatedAt": "2026-06-10T12:37:48.081331Z",
   "shards": [
     {
       "id": "animation_03",
@@ -1826,7 +1826,7 @@
       "path": "shards/manga/0a.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "630fe74ff43897a35c91caa40312bff267affe141d0a394cd75b1f5972fe6f72"
+      "sha256": "e60d44332889abb8ffa3425e191f4c23b8c0b1121d0d1a6f091df2481de9be85"
     },
     {
       "id": "manga_0c",
@@ -1850,7 +1850,7 @@
       "path": "shards/manga/0f.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "9e52cde4b3609824c6fb22441cbdd6e531d01f79a8b723743069e0c8fa5c5f62"
+      "sha256": "f9d5b1ecaf7b6ec4f5875fa9f5234b608e2f97b040fd251177a2bfcb7b0b78ce"
     },
     {
       "id": "manga_11",
@@ -1866,7 +1866,7 @@
       "path": "shards/manga/12.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "dbeaef02f8d6ceb5d845b85e9f649e16590f6a016b9ee2ccaf79e5d2b5e75631"
+      "sha256": "b34253e058c9222a259587a97f94a825cd2ad3d62fd93ee8e6cb30699733699c"
     },
     {
       "id": "manga_15",
@@ -1874,7 +1874,7 @@
       "path": "shards/manga/15.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "220a112c52c8ba960755d5feb8c8284c0e73d20005685be86f82c9394370e1f0"
+      "sha256": "3041003e10aa6e4399603fd03751660e83708357885018fc8c0954589c5f0ad1"
     },
     {
       "id": "manga_16",
@@ -1882,7 +1882,7 @@
       "path": "shards/manga/16.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "b083a7ed546a479262a4c56ec9f295dc07947e77010c0284fa5bf1c6a8fa9e95"
+      "sha256": "174d53f250ab5d4518019eb41d66eeb03a861ccfff39b92a84931fd7df26472f"
     },
     {
       "id": "manga_1a",
@@ -1890,7 +1890,7 @@
       "path": "shards/manga/1a.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "66888fe3ba95f64d8c1eeddf8f62c6d3fc6b28afbd9eabdc22449a1b99a6d600"
+      "sha256": "84afdc43c4c84df6141ff1072f4b57ffcd698118b26d0ec8bd5b4ce350e6d5d2"
     },
     {
       "id": "manga_1b",
@@ -1898,7 +1898,7 @@
       "path": "shards/manga/1b.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "07f977b66563b31502d7bf696f823e004e5e896cf890c1d744bd8e55742b06da"
+      "sha256": "d9063b577caf7b34a119d376df69e1aeb7be994dc707f3c5b5ee2b18a37715f7"
     },
     {
       "id": "manga_1c",
@@ -1906,7 +1906,7 @@
       "path": "shards/manga/1c.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "c034f6ac667663917e8c17c1b37e3c4daaf02be2caf0ee7422088bcf0346868e"
+      "sha256": "d107b5febc149bc2929c8f5bd1e2741f871a72a5ed857c7514b32031ebbef3ab"
     },
     {
       "id": "manga_1d",
@@ -1922,7 +1922,7 @@
       "path": "shards/manga/1f.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "ce7d601ac72a5397d85133b220cb01fe5328d969d33a6684e5592eca0380e764"
+      "sha256": "3a96e9d4dd5e1593bf1a21ce68ce8fabea72052b06e20f69c1be65ff3f6f8de4"
     },
     {
       "id": "manga_22",
@@ -1930,7 +1930,7 @@
       "path": "shards/manga/22.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "2985478d8ecbe415cd6a754431c805ff4577ba7b34db3bf665ba9f78a86b471b"
+      "sha256": "e8c937d72f3af2c09ca7900915fc3c0486c187e2b1e486610f23f8d679687eed"
     },
     {
       "id": "manga_25",
@@ -1954,7 +1954,7 @@
       "path": "shards/manga/2e.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "33971fc78beb57c5c5ce5660fffa0b31769db36329a9a10cf538647ef4638466"
+      "sha256": "945f462917e8638d3e78fd0c9456c091e142e954a3b87c7559f5466866d6f919"
     },
     {
       "id": "manga_2f",
@@ -1970,7 +1970,7 @@
       "path": "shards/manga/30.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "598ad5eaa0a46699220bb524285205b417e6df30f06156f853a9bdcc6176490c"
+      "sha256": "cb284db52eb09bbad48febd1550f0e3959d1b8b499682fb90252c7edb094952a"
     },
     {
       "id": "manga_31",
@@ -1994,7 +1994,7 @@
       "path": "shards/manga/36.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "fb348bb71acf6394ee0c60076735a771ff0ee7ac99699cbfc16acfe28987d121"
+      "sha256": "ee0c074f942702e8d48ef92ccbe70d2446956b49dcf24b63d9c5be7522d0478e"
     },
     {
       "id": "manga_38",
@@ -2042,7 +2042,7 @@
       "path": "shards/manga/45.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "7811311b5ce6dc4840812ef6d3453c6a2c5851bb6e5e0e4c9d1c5ab5350f28ac"
+      "sha256": "7a0af282ef9f6f139de0909cbfbc50061fef8a8443746c2165026bedd034e0b6"
     },
     {
       "id": "manga_48",
@@ -2058,7 +2058,7 @@
       "path": "shards/manga/49.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "bde7286c1de19f2cf44c9f0fcc73b2b8acac54ca7992a40eca92856d1526d8a2"
+      "sha256": "32a94fdf48200445d8c7b60533be544fcc7f98e747bb2e7ba9aaa7ce46cb3616"
     },
     {
       "id": "manga_4e",
@@ -2090,7 +2090,7 @@
       "path": "shards/manga/52.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "3d214b6d43c213e70c0619a250e26acade88d06d6c70c217f67fa63909fb0b9f"
+      "sha256": "eb80cebb6a023f81291d8a8e85bcbdc1a26e776dca47bebaabbd2af7c3225679"
     },
     {
       "id": "manga_54",
@@ -2098,7 +2098,7 @@
       "path": "shards/manga/54.json",
       "eager": false,
       "entryCount": 3,
-      "sha256": "f088fe6fed0afae7ec1b3deed9f8895099363b2cd6ce8888fc8643bc7e9598cf"
+      "sha256": "4c2a1b66fceb26d6c61e4cc3663b797e5e7a068122f3516552aefa248cf5d033"
     },
     {
       "id": "manga_56",
@@ -2106,7 +2106,7 @@
       "path": "shards/manga/56.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "714cdcf1ad90b6fabb13e7dbb9ca3af465eb5dbcb1ea96f480cbfef3c7305794"
+      "sha256": "bd48665eff739ebb9891fb7dec9b1b424c2570aa1cb9cbd67fea42ae1d13470e"
     },
     {
       "id": "manga_58",
@@ -2122,7 +2122,7 @@
       "path": "shards/manga/5a.json",
       "eager": true,
       "entryCount": 4,
-      "sha256": "9d732f1bcae5fb5646d7aa50d7c732d5d480121d2e21d159b0314c9f29c7467b"
+      "sha256": "c2fa02a8949ea62f71e1402b683fc5b56e83f6294300fc09aea3af4a69639908"
     },
     {
       "id": "manga_5b",
@@ -2130,7 +2130,7 @@
       "path": "shards/manga/5b.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "7d9ae555ecc6581c324c0a39450e765ea546b4246c5fe719f41d68a7c24d36ff"
+      "sha256": "11b469cdaa0859da2f3e0f2f1b84e57e3c77189752d2d2099e860ea154158de7"
     },
     {
       "id": "manga_5f",
@@ -2138,7 +2138,7 @@
       "path": "shards/manga/5f.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "1537e3d2d7de3206be90881db30b134975ecd99aa8ee7f52074acc07720a19a3"
+      "sha256": "28cb0665c956a76a476083b6c66ee28c96087c303d78f5c7090143240ea02ae4"
     },
     {
       "id": "manga_62",
@@ -2186,7 +2186,7 @@
       "path": "shards/manga/6d.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "bdbdf02ee9584e194353b8015f3594dbd73512ff6a03f1df66b53fedc6561dd6"
+      "sha256": "6ef9d4f67f11306ce012a1eebd2757b38962d4b3b3ff2b6759ebdb19ba4aa12c"
     },
     {
       "id": "manga_6f",
@@ -2218,7 +2218,7 @@
       "path": "shards/manga/72.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "914567a71600ad15833a32edb6d54c60f192ab551edba2ae98b382ff02e40e83"
+      "sha256": "7168d050fbaafbde237e1f2d65262f5cb00d6dc7c893cd914598c193045e531a"
     },
     {
       "id": "manga_73",
@@ -2234,7 +2234,7 @@
       "path": "shards/manga/75.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "d23356359a9b201c4dae4cce6578c26cc04e5855802af7e5eec4fd58dab0bb6d"
+      "sha256": "c7f7870d855662eefd7e2bd5112a41188ae62cac30447f13cfc69645ac94fea3"
     },
     {
       "id": "manga_79",
@@ -2250,7 +2250,7 @@
       "path": "shards/manga/7e.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "306bf60cbbbc4499fe05164f97c586938a879161c017c6a76e4b33db143a69bb"
+      "sha256": "6bd02723f796491385d6cef8f619c68b986bea1604560e5174780346ca1eaf77"
     },
     {
       "id": "manga_80",
@@ -2258,7 +2258,7 @@
       "path": "shards/manga/80.json",
       "eager": false,
       "entryCount": 3,
-      "sha256": "8f94993993cad0ea9835a39017ccdcf997ca40b48eee74d363df343c507709ca"
+      "sha256": "0a868c6d07f4ce12f496fbedfe8e25b5787e99da6556e972e744b16ce51d2101"
     },
     {
       "id": "manga_82",
@@ -2266,7 +2266,7 @@
       "path": "shards/manga/82.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "eacf76944546179ed8f03fb58e89399be71345a1395846a75e1e9c2c24cd4ef7"
+      "sha256": "46b17bd647c9762ee738ae07571b2915aa5c4bbd7b702c2587792439e7dbea97"
     },
     {
       "id": "manga_87",
@@ -2274,7 +2274,7 @@
       "path": "shards/manga/87.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "9d6812d8d75453b404d85ac5295d1b3178995397b62d15bd879c2968ff92b384"
+      "sha256": "be0eed7f2f25344bcc288e65647da66dda8dd6fe7eb0d8fad65661e18e8b57ce"
     },
     {
       "id": "manga_89",
@@ -2322,7 +2322,7 @@
       "path": "shards/manga/90.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "bed3b05df61f9da0c451f54b89158013caf58578df562f474bd4feaebff8f92e"
+      "sha256": "f67fb5c5039fcd54ae9558f59b1c9c0b6410d76fd25663bccccf7800a39df0c4"
     },
     {
       "id": "manga_91",
@@ -2346,7 +2346,7 @@
       "path": "shards/manga/94.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "581cdd3f51996443c057122db53e4aca9ad599cb96542e0bd4b71cfc7838f0ef"
+      "sha256": "8bebe47725b7454cceeb8e17acf4ce6696e2c82c2758fc70098971604bb12381"
     },
     {
       "id": "manga_95",
@@ -2354,7 +2354,7 @@
       "path": "shards/manga/95.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "8c3b846e5690dec3321bdd23b8ecdf9e5c6efcea97aabf744d0171801ee404f3"
+      "sha256": "8ed503870bf62005ac1b29b456e0acb528f6872bd54655919c7b490c13d29600"
     },
     {
       "id": "manga_97",
@@ -2378,7 +2378,7 @@
       "path": "shards/manga/9b.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "c70516ac374a34ebe69664428ca93916902eea5612f754d671933bdfd95087d7"
+      "sha256": "ffa1f1a4e62108fe6085293bd95174205b78789bbaea25369810d0b1e09bcbf3"
     },
     {
       "id": "manga_9c",
@@ -2426,7 +2426,7 @@
       "path": "shards/manga/a9.json",
       "eager": true,
       "entryCount": 2,
-      "sha256": "3865661b266f25b36d53060a1c2dd30e72126670263bd95d4686eaea8d59b563"
+      "sha256": "1b161eac455a33e4bb779c8bd79252051c20f5b0fd259b14c6085515b8d595c4"
     },
     {
       "id": "manga_aa",
@@ -2434,7 +2434,7 @@
       "path": "shards/manga/aa.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "a0660c33a9676e2d05c9f08b2d4694b5e62a078d0f81acaa7afb2dc8b29f1059"
+      "sha256": "8a44490038dc586b29885dc1ef320988b49cd63bf591ba8b8033591df794a741"
     },
     {
       "id": "manga_ab",
@@ -2442,7 +2442,7 @@
       "path": "shards/manga/ab.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "8b6ae801075114460a2067fcc2a90f0f1d152cbec560f600e9c3d69f2944d4ea"
+      "sha256": "3e61f21d850ed53a3870b9998e19edacc02ee8223562f294b149357a80987d20"
     },
     {
       "id": "manga_ac",
@@ -2466,7 +2466,7 @@
       "path": "shards/manga/ae.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "ff3bdb87704109821cb9fd990433fb6caf9a455d382db0ccd0df25bfa1c0adce"
+      "sha256": "ab0ecb123b5c80a9fe9c3b797d1003e5357421a030a98b66ff76287bffb290c4"
     },
     {
       "id": "manga_af",
@@ -2490,7 +2490,7 @@
       "path": "shards/manga/b2.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "7c64f3534211c6602d8ba5463c2a15719617b490448ff753fcbd472ff9423b43"
+      "sha256": "00ccb6c9936b1f1738059686ace4d3cc095a597862cbc77e37ba4138f736c806"
     },
     {
       "id": "manga_b4",
@@ -2498,7 +2498,7 @@
       "path": "shards/manga/b4.json",
       "eager": true,
       "entryCount": 3,
-      "sha256": "208aa28b5095e8c38ab57a1a25f8243955f71bb0defb91859e41c73fcf24d790"
+      "sha256": "fa53ce6fd9223844dc136e07f1e633928c6d25dadc800a3c1f70cf48d7e4347b"
     },
     {
       "id": "manga_b7",
@@ -2506,7 +2506,7 @@
       "path": "shards/manga/b7.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "a5920390329850c749d1f771c5a4c4fa21c4e26513d645cc736b914fff4005f5"
+      "sha256": "1268fd66c478a5f157819454b5d4a24048b25ad8ef7e45dc26115e5128f8650b"
     },
     {
       "id": "manga_b8",
@@ -2522,7 +2522,7 @@
       "path": "shards/manga/ba.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "a64c5443c302ea4f11248cb22b9e82d137c84ae6b13b92a68f555a7029ab5ea7"
+      "sha256": "90ec1040c51e21037bdd8d73fb4c3a1d121a4906bace19447fad9737442e08ed"
     },
     {
       "id": "manga_bb",
@@ -2530,7 +2530,7 @@
       "path": "shards/manga/bb.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "946cb5cf35135d75e4fecc6ae011a6cafa9861cb6fec5f84841143ffff5c6120"
+      "sha256": "c41ed7c6651de2bb2605609be7fbd63548010d265f80243a26bda9b33eacb03f"
     },
     {
       "id": "manga_bc",
@@ -2570,7 +2570,7 @@
       "path": "shards/manga/c4.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "abe2ab0b6a14f37f610fc5866812a55eebf366ad28951afa9bf7bbbe54e3039b"
+      "sha256": "4571509f53c31286b2d3d793e447bfc916bcd22b63145d4c73a7080ca3ca60a2"
     },
     {
       "id": "manga_c6",
@@ -2610,7 +2610,7 @@
       "path": "shards/manga/d1.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "eb670ef72bdc6e1d4d00a2ac8d85fdbf57c1b17a1545d2a1b515f21312363a46"
+      "sha256": "d6f0286f3ac4376ef5396f7882c3f41903a3da1eeca51cfd8211cdab8102b5df"
     },
     {
       "id": "manga_d3",
@@ -2618,7 +2618,7 @@
       "path": "shards/manga/d3.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "56ea43bfb84419d29906dbbd440a177baef467ddd38c374985d32db0c6b1d314"
+      "sha256": "0aa38af7dc4e281b74447280fd181a3e0fc03c8c8a7d2adc9f3f673532a716ff"
     },
     {
       "id": "manga_d5",
@@ -2626,7 +2626,7 @@
       "path": "shards/manga/d5.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "7620ccf0ea5450f01ab1ee0a6c9e0a59816cf326f211812310fbcf665516b152"
+      "sha256": "5564260d310578c8532e65566b67c8e09c655e0fe4af012b86493cad85c61924"
     },
     {
       "id": "manga_d6",
@@ -2642,7 +2642,7 @@
       "path": "shards/manga/d8.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "80b281bd730a503b2fb83d3ffb05700b816bf71ef8d287ba596f4028e56329f2"
+      "sha256": "a289b1d5a4b026131caa701f43b1f7ea29f47eb5ac5ad4baf1d66cb0b37e6a7d"
     },
     {
       "id": "manga_d9",
@@ -2650,7 +2650,7 @@
       "path": "shards/manga/d9.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "75cf10a8a36b070e0c59ba68b03c6fb2de94024493df21d0b4f20c55041bc199"
+      "sha256": "a3c46f5b76034494d7186ddee4838dc35583dd9a32293c83db6ed360c17a3f87"
     },
     {
       "id": "manga_da",
@@ -2658,7 +2658,7 @@
       "path": "shards/manga/da.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "fe3ce2fd6ab0f07f7cb4bb229d08a2da812d4ccdf49901cb990ed4f7af19b36c"
+      "sha256": "ceca68aa72610ebbc461c792f07c18869dada1261abd054c4f5c3661270abf2e"
     },
     {
       "id": "manga_dc",
@@ -2682,7 +2682,7 @@
       "path": "shards/manga/e0.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "938113ffe353f5ee0729c80f94f204caee2d00335754481a666b0233d7807d1c"
+      "sha256": "9eb1a8ce83352aea15c0cd2220b61512d5b3b0c28e7cb080cb8fd010d7bd6f48"
     },
     {
       "id": "manga_e3",
@@ -2698,7 +2698,7 @@
       "path": "shards/manga/e6.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "d41cc601cd80c3d415af000d74c6e2a3ba78da0702f9711a744ff49e1859037e"
+      "sha256": "1c77b766fd9adad22cbb6612040a6a5389cade2deb3016efe83c47c58ee5d586"
     },
     {
       "id": "manga_e7",
@@ -2730,7 +2730,7 @@
       "path": "shards/manga/ea.json",
       "eager": false,
       "entryCount": 2,
-      "sha256": "2d690ebd53c2121a81f43498183aa71353ad7e3a7337083d82063968e50a6131"
+      "sha256": "89685f23289745b283726fa49843c57eed1d3d21549e997bcb403729aa1cc8e0"
     },
     {
       "id": "manga_ed",
@@ -2746,7 +2746,7 @@
       "path": "shards/manga/ee.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "dd7872c26324f35cfe9411778207632899c57c6cb547701a05e1368b1341047e"
+      "sha256": "f15a47d3736067da62c7579864296e75fd0f19ea64ced2380c185afea6210521"
     },
     {
       "id": "manga_f0",
@@ -2770,7 +2770,7 @@
       "path": "shards/manga/f6.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "70bd4c220e184fc391e8537157e7921fcc538c45660300384b697eda14fdc064"
+      "sha256": "1dd08ea22fb85ae6c106611416e077ec0ac246496fcac92ad343550495c640cc"
     },
     {
       "id": "manga_f9",
@@ -2794,7 +2794,7 @@
       "path": "shards/manga/fc.json",
       "eager": false,
       "entryCount": 1,
-      "sha256": "e78cc9f6cf768d5e3419b54d54208b318b4c49c3aacda3018b23fbab7ff3be46"
+      "sha256": "befa3eb76c10cced73f75d580c739c0d0a7a3a71fe6855cbfa5e46e6e1201e62"
     },
     {
       "id": "movie_0f",

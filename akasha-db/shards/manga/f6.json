@@ -1,7 +1,7 @@
 {
   "wk_000000412": {
     "workId": "wk_000000412",
-    "title": "Say Hello to Black Jack",
+    "title": "블랙잭에게 안부를",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "Say Hello to Black Jack",
-      "ja": "ブラックジャックによろしく"
+      "ja": "ブラックジャックによろしく",
+      "ko": "블랙잭에게 안부를"
     },
     "extensions": {
       "ingestChannel": "wikidata_manga",

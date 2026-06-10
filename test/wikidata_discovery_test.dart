@@ -13,17 +13,29 @@ import '../tool/discovery/wikidata_q_validation.dart';
 
 void main() {
   group('wikidata_facts', () {
-    test('binding to node extracts qid and title', () {
+    test('binding to node extracts qid and ko-primary title', () {
       final node = wikidataBindingToNode({
         'item': {'value': 'http://www.wikidata.org/entity/Q1048'},
         'itemLabel': {'value': 'One Piece'},
+        'itemLabelKo': {'value': '원피스'},
         'itemLabelJa': {'value': 'ワンピース'},
         'authorLabel': {'value': 'Eiichiro Oda'},
         'startYear': {'value': '1997'},
       });
       expect(node['qid'], 'Q1048');
-      expect(node['title'], 'One Piece');
+      expect(node['title'], '원피스');
+      final titles = node['titles'] as Map;
+      expect(titles['ko'], '원피스');
+      expect(titles['en'], 'One Piece');
       expect(node['releaseYear'], 1997);
+    });
+
+    test('binding falls back to en when ko absent', () {
+      final node = wikidataBindingToNode({
+        'item': {'value': 'http://www.wikidata.org/entity/Q1'},
+        'itemLabel': {'value': 'Test Manga'},
+      });
+      expect(node['title'], 'Test Manga');
     });
   });
 

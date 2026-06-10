@@ -28,7 +28,7 @@
   },
   "wk_000000456": {
     "workId": "wk_000000456",
-    "title": "I Can't Say No to the Lonely Girl",
+    "title": "론리 걸에게 거역할 수 없어",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -36,7 +36,8 @@
     },
     "titles": {
       "en": "I Can't Say No to the Lonely Girl",
-      "ja": "ロンリーガールに逆らえない"
+      "ja": "ロンリーガールに逆らえない",
+      "ko": "론리 걸에게 거역할 수 없어"
     },
     "extensions": {
       "ingestChannel": "wikidata_manga",

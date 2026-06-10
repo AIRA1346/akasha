@@ -1,7 +1,7 @@
 {
   "wk_000000434": {
     "workId": "wk_000000434",
-    "title": "Kageki Shojo!!",
+    "title": "가극 소녀!!",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "Kageki Shojo!!",
-      "ja": "かげきしょうじょ!"
+      "ja": "かげきしょうじょ!",
+      "ko": "가극 소녀!!"
     },
     "releaseYear": 2012,
     "creator": "Kumiko Saiki",
