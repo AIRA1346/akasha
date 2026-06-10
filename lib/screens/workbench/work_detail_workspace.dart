@@ -305,37 +305,49 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                   ),
                 ),
                 const Divider(height: 1, color: Color(0xFF2D2D44)),
+                if (!vaultLinked)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
+                    child: Row(
+                      children: [
+                        Icon(Icons.folder_off_outlined,
+                            size: 14, color: Colors.amber[700]),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            '볼트 미연동 · 임시 저장만',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.amber[700],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 Expanded(
+                  flex: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 4),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return _buildInfoPoster(
+                          maxWidth: constraints.maxWidth,
+                          maxHeight: constraints.maxHeight,
+                          preview: preview,
+                          gradColors: gradColors,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                    padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        if (!vaultLinked)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: Row(
-                              children: [
-                                Icon(Icons.folder_off_outlined,
-                                    size: 14, color: Colors.amber[700]),
-                                const SizedBox(width: 6),
-                                Expanded(
-                                  child: Text(
-                                    '볼트 미연동 · 임시 저장만',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Colors.amber[700],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        _buildInfoPoster(
-                          preview: preview,
-                          gradColors: gradColors,
-                        ),
-                        const SizedBox(height: 8),
                         Wrap(
                           spacing: 4,
                           runSpacing: 4,
@@ -527,34 +539,49 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  /// 세로 포스터(2:3) — 스크롤 영역 안에서 전체가 보이도록 contain.
+  /// 2:3 포스터를 할당된 영역 안에 맞추고 contain — ClipRRect 없음(잘림 원인).
   Widget _buildInfoPoster({
+    required double maxWidth,
+    required double maxHeight,
     required AkashaItem preview,
     required List<Color> gradColors,
   }) {
-    return AspectRatio(
-      aspectRatio: 2 / 3,
+    var height = maxHeight;
+    var width = height * 2 / 3;
+    if (width > maxWidth) {
+      width = maxWidth;
+      height = width * 3 / 2;
+    }
+
+    return Center(
       child: GestureDetector(
         onTap: _openPosterCorrection,
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
             color: const Color(0xFF12121A),
+            border: Border.all(color: const Color(0xFF2D2D44)),
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                gradColors.first.withValues(alpha: 0.35),
+                gradColors.first.withValues(alpha: 0.25),
                 const Color(0xFF12121A),
               ],
             ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(6),
-            child: PosterImage(
-              key: ValueKey(_posterUrlCtrl.text),
-              item: preview,
-              fit: BoxFit.contain,
+            child: SizedBox(
+              width: width,
+              height: height,
+              child: PosterImage(
+                key: ValueKey(_posterUrlCtrl.text),
+                item: preview,
+                fit: BoxFit.contain,
+                width: width,
+                height: height,
+              ),
             ),
           ),
         ),

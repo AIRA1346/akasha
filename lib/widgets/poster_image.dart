@@ -144,61 +144,102 @@ class _PosterImageState extends State<PosterImage> {
 
   @override
   Widget build(BuildContext context) {
-    final placeholder = CategoryPosterPlaceholder(
-      item: widget.item,
-      fit: widget.fit,
-      width: widget.width,
-      height: widget.height,
-    );
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = widget.width ??
+            (constraints.hasBoundedWidth ? constraints.maxWidth : null);
+        final height = widget.height ??
+            (constraints.hasBoundedHeight ? constraints.maxHeight : null);
 
-    if (_networkCandidates.isNotEmpty) {
-      final url = _networkCandidates[_candidateIndex];
-      return Image.network(
-        url,
-        key: ValueKey(url),
-        fit: widget.fit,
-        width: widget.width,
-        height: widget.height,
-        headers: _networkImageHeaders,
-        gaplessPlayback: true,
-        errorBuilder: (_, error, stackTrace) {
-          debugPrint(
-            '[PosterImage] NETWORK ERROR for ${widget.item.title} ($url): $error',
-          );
-          if (_candidateIndex + 1 < _networkCandidates.length) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (mounted) _tryNextCandidate();
-            });
-          }
-          return placeholder;
-        },
-        loadingBuilder: (context, child, loadingProgress) {
-          if (loadingProgress == null) return child;
-          return placeholder;
-        },
-      );
-    }
-
-    final path = widget.item.posterPath;
-    if (path != null && path.isNotEmpty) {
-      final localFile = _resolveLocalFile(path);
-      if (localFile != null) {
-        return SafeLocalImage(
-          file: localFile,
+        final placeholder = CategoryPosterPlaceholder(
+          item: widget.item,
           fit: widget.fit,
-          width: widget.width,
-          height: widget.height,
-          errorBuilder: (_, error, stackTrace) {
-            debugPrint(
-              '[PosterImage] LOCAL ERROR for ${widget.item.title}: $error\n$stackTrace',
-            );
-            return placeholder;
-          },
+          width: width,
+          height: height,
         );
-      }
-    }
 
-    return placeholder;
+        Widget frame(Widget image) => _frameImage(
+              image: image,
+              width: width,
+              height: height,
+              placeholder: placeholder,
+            );
+
+        if (_networkCandidates.isNotEmpty) {
+          final url = _networkCandidates[_candidateIndex];
+          return frame(
+            Image.network(
+              url,
+              key: ValueKey(url),
+              fit: widget.fit,
+              width: width,
+              height: height,
+              alignment: Alignment.center,
+              headers: _networkImageHeaders,
+              gaplessPlayback: true,
+              errorBuilder: (_, error, stackTrace) {
+                debugPrint(
+                  '[PosterImage] NETWORK ERROR for ${widget.item.title} ($url): $error',
+                );
+                if (_candidateIndex + 1 < _networkCandidates.length) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    if (mounted) _tryNextCandidate();
+                  });
+                }
+                return placeholder;
+              },
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) return child;
+                return placeholder;
+              },
+            ),
+          );
+        }
+
+        final path = widget.item.posterPath;
+        if (path != null && path.isNotEmpty) {
+          final localFile = _resolveLocalFile(path);
+          if (localFile != null) {
+            return frame(
+              SafeLocalImage(
+                file: localFile,
+                fit: widget.fit,
+                width: width,
+                height: height,
+                errorBuilder: (_, error, stackTrace) {
+                  debugPrint(
+                    '[PosterImage] LOCAL ERROR for ${widget.item.title}: $error\n$stackTrace',
+                  );
+                  return placeholder;
+                },
+              ),
+            );
+          }
+        }
+
+        return placeholder;
+      },
+    );
+  }
+
+  /// bounded 부모 안에서 contain 시 이미지가 박스 밖으로 넘치며 clip 되는 것을 방지
+  Widget _frameImage({
+    required Widget image,
+    required double? width,
+    required double? height,
+    required Widget placeholder,
+  }) {
+    if (width == null || height == null || widget.fit != BoxFit.contain) {
+      return image;
+    }
+    return SizedBox(
+      width: width,
+      height: height,
+      child: ColoredBox(
+        color: const Color(0xFF12121A),
+        child: Center(child: image),
+      ),
+    );
   }
 
   bool _isNetworkUrl(String path) =>
