@@ -6,15 +6,12 @@ import '../../services/file_service.dart';
 import '../../services/markdown_body_merger.dart';
 import '../../services/markdown_parser.dart';
 import '../../services/work_info_defaults.dart';
-import '../../services/works_registry.dart';
 import '../../widgets/poster_image.dart';
 import '../../widgets/sanctum_page_panel.dart';
 import '../../widgets/star_rating.dart';
 import '../../widgets/web_image_search_dialog.dart';
 import '../../widgets/workbench_resizable_panel.dart';
 import '../detail/detail_archive_save.dart';
-import '../detail/dialogs/detail_delete_dialog.dart';
-import '../home/dialogs/catalog_fix_contribution_dialog.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
 class WorkDetailWorkspace extends StatefulWidget {
@@ -255,34 +252,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     }
   }
 
-  Future<void> _confirmDelete() async {
-    final service = AkashaFileService();
-    final hasVault = service.vaultPath != null;
-    final confirmed = await showDetailDeleteConfirmDialog(
-      context,
-      title: _item.title,
-      hasVault: hasVault,
-    );
-    if (!confirmed || !mounted) return;
-
-    final deleted = await service.deleteAkashaItem(_item);
-    if (!mounted) return;
-
-    if (hasVault && !deleted) {
-      _showSnack('삭제할 파일을 찾지 못했습니다.');
-      return;
-    }
-    _showSnack('"${_item.title}" 작품이 삭제되었습니다.');
-    widget.onDeleted();
-  }
-
-  Future<void> _proposeCatalogFix() async {
-    final saved = await showCatalogFixContributionDialog(context, item: _item);
-    if (saved == true && mounted) {
-      _showSnack('사전 수정 제안이 저장되었습니다.');
-    }
-  }
-
   void _showSnack(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
@@ -294,10 +263,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final preview = _applyDraft();
     final gradColors = categoryGradient(_item.category);
     final vaultLinked = AkashaFileService().vaultPath != null;
-    final hasRegistry = WorksRegistry.getWorkById(
-          WorksRegistry.resolveWorkId(_item.workId),
-        ) !=
-        null;
+    final metaLine = [
+      if (_item.creator.isNotEmpty) _item.creator,
+      if (_item.releaseYear != null) '${_item.releaseYear}',
+    ].join(' · ');
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -311,172 +280,195 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           onToggleLock: widget.onToggleInfoLock,
           child: Container(
             color: const Color(0xFF1A1A28),
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(8, 8, 8, 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (!vaultLinked)
-                    Card(
-                      color: Colors.amber.withValues(alpha: 0.12),
-                      margin: const EdgeInsets.only(bottom: 8),
-                      child: const ListTile(
-                        dense: true,
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                        leading: Icon(Icons.folder_off_outlined,
-                            color: Colors.amber, size: 20),
-                        title: Text('볼트 미연동', style: TextStyle(fontSize: 12)),
-                        subtitle: Text(
-                          'md 생성·저장은 임시 저장만 됩니다.',
-                          style: TextStyle(fontSize: 10),
+            padding: const EdgeInsets.fromLTRB(8, 6, 8, 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (!vaultLinked)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      children: [
+                        Icon(Icons.folder_off_outlined,
+                            size: 14, color: Colors.amber[700]),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            '볼트 미연동 · 임시 저장만',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.amber[700],
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                  GestureDetector(
-                    onTap: _openPosterCorrection,
-                    child: AspectRatio(
-                      aspectRatio: 2 / 3,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(colors: gradColors),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(6),
-                          child: PosterImage(
-                            key: ValueKey(_posterUrlCtrl.text),
-                            item: preview,
-                            fit: BoxFit.cover,
+                  ),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    final posterH =
+                        (constraints.maxWidth * 0.52).clamp(112.0, 148.0);
+                    return GestureDetector(
+                      onTap: _openPosterCorrection,
+                      child: SizedBox(
+                        height: posterH,
+                        width: double.infinity,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            gradient: LinearGradient(colors: gradColors),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: PosterImage(
+                              key: ValueKey(_posterUrlCtrl.text),
+                              item: preview,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 8),
+                TextField(
+                  controller: _titleCtrl,
+                  onChanged: (_) => _markDirty(),
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                    height: 1.2,
+                  ),
+                  decoration: const InputDecoration(
+                    isDense: true,
+                    border: OutlineInputBorder(),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  ),
+                ),
+                if (metaLine.isNotEmpty) ...[
+                  const SizedBox(height: 4),
+                  Text(
+                    metaLine,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                  ),
+                ],
+                const SizedBox(height: 6),
+                Row(
+                  children: [
+                    InteractiveStarRating(
+                      rating: _draftRating,
+                      size: 18,
+                      onChanged: (v) {
+                        setState(() => _draftRating = v);
+                        _markDirty();
+                      },
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextField(
-                    controller: _titleCtrl,
-                    onChanged: (_) => _markDirty(),
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w800,
-                    ),
-                    decoration: const InputDecoration(
-                      labelText: '제목',
-                      border: OutlineInputBorder(),
-                      isDense: true,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  if (_item.creator.isNotEmpty)
-                    Text(
-                      _item.creator,
-                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-                    ),
-                  if (_item.releaseYear != null)
-                    Text(
-                      '${_item.releaseYear}년',
-                      style: TextStyle(fontSize: 11, color: Colors.grey[600]),
-                    ),
-                  const SizedBox(height: 10),
-                  InteractiveStarRating(
-                    rating: _draftRating,
-                    size: 22,
-                    onChanged: (v) {
-                      setState(() => _draftRating = v);
-                      _markDirty();
-                    },
-                  ),
-                  const SizedBox(height: 10),
-                  _statusDropdown(
-                    label: '작품 상태',
-                    value: _draftWorkStatus,
-                    options: _item.workStatusOptions,
-                    onChanged: (v) {
-                      setState(() => _draftWorkStatus = v);
-                      _markDirty();
-                    },
-                  ),
-                  const SizedBox(height: 8),
-                  _statusDropdown(
-                    label: '나의 상태',
-                    value: _draftMyStatus,
-                    options: _item.myStatusOptions,
-                    onChanged: (v) {
-                      setState(() => _draftMyStatus = v);
-                      _markDirty();
-                    },
-                  ),
-                  const SizedBox(height: 8),
-                  SwitchListTile(
-                    contentPadding: EdgeInsets.zero,
-                    dense: true,
-                    title: const Text('👑 Hall of Fame',
-                        style: TextStyle(fontSize: 12)),
-                    value: _draftHallOfFame,
-                    onChanged: (v) {
-                      setState(() => _draftHallOfFame = v);
-                      _markDirty();
-                    },
-                  ),
-                  TextField(
-                    controller: _tagsCtrl,
-                    onChanged: (_) => _markDirty(),
-                    decoration: const InputDecoration(
-                      labelText: '태그 (쉼표 구분)',
-                      border: OutlineInputBorder(),
-                      isDense: true,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  if (_item.workId.isNotEmpty)
-                    Text(
-                      'work_id: ${_item.workId}',
-                      style: TextStyle(
-                        fontSize: 9,
-                        fontFamily: 'monospace',
-                        color: Colors.grey[600],
+                    const Spacer(),
+                    SizedBox(
+                      height: 28,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Switch(
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          value: _draftHallOfFame,
+                          onChanged: (v) {
+                            setState(() => _draftHallOfFame = v);
+                            _markDirty();
+                          },
+                        ),
                       ),
                     ),
-                  const SizedBox(height: 12),
-                  OutlinedButton.icon(
-                    onPressed: _resetToDefaults,
-                    icon: const Icon(Icons.restore, size: 16),
-                    label: const Text('기본값으로'),
-                  ),
-                  const SizedBox(height: 8),
-                  FilledButton.icon(
-                    onPressed: _isSaving ? null : _saveArchive,
-                    icon: _isSaving
-                        ? const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Icon(Icons.description_outlined, size: 18),
-                    label: Text(_isArchived ? 'md 저장' : 'md 생성'),
-                  ),
-                  if (hasRegistry) ...[
-                    const SizedBox(height: 6),
-                    TextButton.icon(
-                      onPressed: _proposeCatalogFix,
-                      icon: const Icon(Icons.flag_outlined, size: 16),
-                      label: const Text('사전 수정 제안'),
+                    Text(
+                      'HoF',
+                      style: TextStyle(fontSize: 10, color: Colors.grey[500]),
                     ),
                   ],
-                  if (_isArchived) ...[
-                    const SizedBox(height: 4),
-                    TextButton.icon(
-                      onPressed: _confirmDelete,
-                      icon: const Icon(Icons.delete_outline,
-                          size: 16, color: Colors.redAccent),
-                      label: const Text('삭제',
-                          style: TextStyle(color: Colors.redAccent)),
+                ),
+                const SizedBox(height: 6),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: _statusDropdown(
+                        label: '작품',
+                        value: _draftWorkStatus,
+                        options: _item.workStatusOptions,
+                        onChanged: (v) {
+                          setState(() => _draftWorkStatus = v);
+                          _markDirty();
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: _statusDropdown(
+                        label: '나의',
+                        value: _draftMyStatus,
+                        options: _item.myStatusOptions,
+                        onChanged: (v) {
+                          setState(() => _draftMyStatus = v);
+                          _markDirty();
+                        },
+                      ),
                     ),
                   ],
-                ],
-              ),
+                ),
+                const SizedBox(height: 6),
+                TextField(
+                  controller: _tagsCtrl,
+                  onChanged: (_) => _markDirty(),
+                  style: const TextStyle(fontSize: 11),
+                  decoration: const InputDecoration(
+                    hintText: '태그',
+                    isDense: true,
+                    border: OutlineInputBorder(),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                  ),
+                ),
+                const Spacer(),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: _resetToDefaults,
+                        style: OutlinedButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          textStyle: const TextStyle(fontSize: 11),
+                        ),
+                        child: const Text('기본값'),
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      flex: 2,
+                      child: FilledButton(
+                        onPressed: _isSaving ? null : _saveArchive,
+                        style: FilledButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          textStyle: const TextStyle(fontSize: 11),
+                        ),
+                        child: _isSaving
+                            ? const SizedBox(
+                                width: 14,
+                                height: 14,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : Text(_isArchived ? 'md 저장' : 'md 생성'),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
@@ -506,28 +498,30 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     required List<String> options,
     required ValueChanged<String> onChanged,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: TextStyle(fontSize: 10, color: Colors.grey[500])),
-        const SizedBox(height: 4),
-        DropdownButtonFormField<String>(
-          initialValue: value,
-          isExpanded: true,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            isDense: true,
-            contentPadding:
-                EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-          ),
-          items: options
-              .map((s) => DropdownMenuItem(value: s, child: Text(s)))
-              .toList(),
-          onChanged: (v) {
-            if (v != null) onChanged(v);
-          },
-        ),
-      ],
+    return DropdownButtonFormField<String>(
+      initialValue: value,
+      isExpanded: true,
+      isDense: true,
+      style: const TextStyle(fontSize: 10, height: 1.1),
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(fontSize: 10, color: Colors.grey[500]),
+        border: const OutlineInputBorder(),
+        isDense: true,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+      ),
+      items: options
+          .map(
+            (s) => DropdownMenuItem(
+              value: s,
+              child: Text(s, maxLines: 1, overflow: TextOverflow.ellipsis),
+            ),
+          )
+          .toList(),
+      onChanged: (v) {
+        if (v != null) onChanged(v);
+      },
     );
   }
 }
