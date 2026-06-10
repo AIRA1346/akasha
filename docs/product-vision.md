@@ -39,12 +39,12 @@
     ↓
 아카이브 — 앱이 work_id 연결 .md 생성 (poster/rating/status YAML 템플릿)
     ↓
-이후 전부 유저 — Obsidian·Typora·메모장 등 자유 편집
-    · poster: https://…  또는  posters/파일
-    · rating, status, 명대사, 감상, 커스텀 YAML
-    · Markdown 본문 — 무궁무진 (링크, 헤딩, 표, 임베드)
+감상·기록 — **AKASHA 앱 안에서** Sanctum 페이지 본문 편집 + `.md` 파일 편집 + md 저장
+    · 포스터·별점·상태: 3열 작품정보
+    · Markdown 본문: 4열 「본문」·「.md」 탭
+    · (선택) 외부 에디터와 **같은 볼트 파일** 동기화 — Obsidian 필수 아님
     ↓
-앱 — 볼트 watch · 그리드/상세/나만의 서재 **뷰어 + 입력 보조**
+앱 — 찾기 · 아카이빙 · 감상 · 편집 **완결** (볼트 watch · 그리드/워크벤치)
 ```
 
 ---
@@ -77,6 +77,7 @@
 - 작품 검색 (사전 + 볼트 + 신규) — 대시보드 서재는 **포스터 없는 Fact 카드**
 - 아카이브 → `.md` 생성
 - YAML front-matter 템플릿 (`poster`, `rating`, `status`, `my_status`, …)
+- **워크벤치 4열:** Sanctum 페이지 **미리보기 · 본문 편집 · .md 파일 편집**
 - AI YAML 붙여넣기 (신규 작품)
 - 대시보드 · IP 1카드 · 나만의 서재 · 테마(IAP)
 

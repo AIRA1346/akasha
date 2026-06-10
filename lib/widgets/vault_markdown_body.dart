@@ -27,7 +27,7 @@ class VaultMarkdownBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         child: Text(
           'Sanctum 페이지가 비어 있습니다.\n'
-          '아래 빠른 편집으로 기록하거나, Obsidian 등에서 .md 본문을 자유롭게 작성해 보세요.',
+          '「본문」 또는 「.md」 탭에서 감상·메모를 작성해 보세요.',
           style: TextStyle(fontSize: 13, color: Colors.grey[500], height: 1.5),
         ),
       );

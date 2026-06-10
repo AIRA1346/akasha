@@ -12,9 +12,11 @@ class WorkbenchController extends ChangeNotifier {
   String? activeTabId;
   WorkbenchLayoutPrefs layout = WorkbenchLayoutPrefs.defaults();
   bool _prefsLoaded = false;
+  bool _workViewVisible = false;
 
   bool get prefsLoaded => _prefsLoaded;
-  bool get hasOpenWork => activeTabId != null && activeTab != null;
+  /// 작품 상세(3·4열)가 메인에 표시 중인지
+  bool get hasOpenWork => _workViewVisible && activeTabId != null && activeTab != null;
   bool get hasTabs => tabs.isNotEmpty;
 
   WorkTab? get activeTab {
@@ -45,12 +47,21 @@ class WorkbenchController extends ChangeNotifier {
       activeTabId = id;
     }
     layout.tabRailCollapsed = false;
+    _workViewVisible = true;
+    notifyListeners();
+  }
+
+  /// 서재·대시보드 탐색으로 돌아갈 때 — 탭은 유지, 작품 상세 패널만 숨김
+  void showBrowse() {
+    if (!_workViewVisible) return;
+    _workViewVisible = false;
     notifyListeners();
   }
 
   void selectTab(String id) {
     if (tabs.any((t) => t.id == id)) {
       activeTabId = id;
+      _workViewVisible = true;
       notifyListeners();
     }
   }
@@ -59,6 +70,7 @@ class WorkbenchController extends ChangeNotifier {
     tabs.removeWhere((t) => t.id == id);
     if (activeTabId == id) {
       activeTabId = tabs.isEmpty ? null : tabs.last.id;
+      if (tabs.isEmpty) _workViewVisible = false;
     }
     notifyListeners();
   }

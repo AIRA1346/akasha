@@ -4,11 +4,12 @@ import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
 import '../../services/file_service.dart';
 import '../../services/markdown_body_merger.dart';
+import '../../services/markdown_parser.dart';
 import '../../services/work_info_defaults.dart';
 import '../../services/works_registry.dart';
 import '../../widgets/poster_image.dart';
+import '../../widgets/sanctum_page_panel.dart';
 import '../../widgets/star_rating.dart';
-import '../../widgets/vault_markdown_body.dart';
 import '../../widgets/web_image_search_dialog.dart';
 import '../../widgets/workbench_resizable_panel.dart';
 import '../detail/detail_archive_save.dart';
@@ -56,6 +57,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   late TextEditingController _titleCtrl;
   late TextEditingController _tagsCtrl;
   late TextEditingController _posterUrlCtrl;
+  late TextEditingController _bodyCtrl;
+  late TextEditingController _fileCtrl;
+  SanctumPageView _pageView = SanctumPageView.preview;
 
   @override
   void initState() {
@@ -64,7 +68,18 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _titleCtrl = TextEditingController(text: _item.title);
     _tagsCtrl = TextEditingController(text: _item.tags.join(', '));
     _posterUrlCtrl = TextEditingController(text: _item.posterPath ?? '');
+    _bodyCtrl = TextEditingController(text: _initialBodyMarkdown());
+    _fileCtrl = TextEditingController();
     _loadDraftFromItem();
+  }
+
+  String _initialBodyMarkdown() {
+    if (_item.bodyRaw.trim().isNotEmpty) return _item.bodyRaw;
+    return MarkdownBodyMerger.buildDefaultBody(
+      synopsis: _item.description,
+      quotes: _item.memorableQuotes,
+      memo: _item.review,
+    );
   }
 
   @override
@@ -75,8 +90,24 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       _titleCtrl.text = _item.title;
       _tagsCtrl.text = _item.tags.join(', ');
       _posterUrlCtrl.text = _item.posterPath ?? '';
+      _bodyCtrl.text = _initialBodyMarkdown();
+      _pageView = SanctumPageView.preview;
       _loadDraftFromItem();
     }
+  }
+
+  void _syncBodyFromEditor() {
+    _item.bodyRaw = _bodyCtrl.text.trimRight();
+    final slots = MarkdownBodyMerger.parseSlots(_item.bodyRaw);
+    _item.description = slots.synopsis;
+    _item.memorableQuotes = List<String>.from(slots.quotes);
+    _item.review = slots.memo;
+  }
+
+  void _refreshFullFileEditor() {
+    _syncBodyFromEditor();
+    final draft = _applyDraft();
+    _fileCtrl.text = MarkdownParser.serialize(draft);
   }
 
   void _loadDraftFromItem() {
@@ -91,6 +122,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _titleCtrl.dispose();
     _tagsCtrl.dispose();
     _posterUrlCtrl.dispose();
+    _bodyCtrl.dispose();
+    _fileCtrl.dispose();
     super.dispose();
   }
 
@@ -107,6 +140,32 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         .toList();
   }
 
+  AkashaItem _buildSaveDraft() {
+    if (_pageView == SanctumPageView.file) {
+      final preservedPath = _item.filePath;
+      final titleFallback = _titleCtrl.text.trim().isNotEmpty
+          ? _titleCtrl.text.trim()
+          : _item.title;
+      final parsed =
+          MarkdownParser.deserialize(_fileCtrl.text, titleFallback);
+      parsed.filePath = preservedPath;
+      return parsed;
+    }
+    _syncBodyFromEditor();
+    return _applyDraft();
+  }
+
+  String get _previewBodyMarkdown {
+    if (_pageView == SanctumPageView.body) _syncBodyFromEditor();
+    final draft = _applyDraft();
+    return MarkdownBodyMerger.mergeBody(
+      bodyRaw: draft.bodyRaw,
+      synopsis: draft.description,
+      quotes: draft.memorableQuotes,
+      memo: draft.review,
+    );
+  }
+
   AkashaItem _applyDraft() {
     final poster = _posterUrlCtrl.text.trim();
     _item.title = _titleCtrl.text.trim().isNotEmpty
@@ -119,16 +178,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _item.isHallOfFame = _draftHallOfFame;
     _item.tags = _parseTags(_tagsCtrl.text);
     return _item;
-  }
-
-  String get _previewBodyMarkdown {
-    final draft = _applyDraft();
-    return MarkdownBodyMerger.mergeBody(
-      bodyRaw: draft.bodyRaw,
-      synopsis: draft.description,
-      quotes: draft.memorableQuotes,
-      memo: draft.review,
-    );
   }
 
   bool get _isArchived =>
@@ -156,6 +205,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _titleCtrl.text = _item.title;
     _tagsCtrl.text = _item.tags.join(', ');
     _posterUrlCtrl.text = _item.posterPath ?? '';
+    _bodyCtrl.text = _initialBodyMarkdown();
     _loadDraftFromItem();
     _markDirty();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -170,7 +220,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     if (_isSaving) return;
     setState(() => _isSaving = true);
     try {
-      final draft = _applyDraft();
+      final draft = _buildSaveDraft();
       final saved = await DetailArchiveSave.save(draft);
       if (!mounted) return;
       setState(() {
@@ -178,6 +228,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _titleCtrl.text = saved.title;
         _tagsCtrl.text = saved.tags.join(', ');
         _posterUrlCtrl.text = saved.posterPath ?? '';
+        _bodyCtrl.text = saved.bodyRaw.trim().isNotEmpty
+            ? saved.bodyRaw
+            : MarkdownBodyMerger.buildDefaultBody(
+                synopsis: saved.description,
+                quotes: saved.memorableQuotes,
+                memo: saved.review,
+              );
+        _pageView = SanctumPageView.preview;
         _loadDraftFromItem();
       });
       widget.onDirtyChanged(false);
@@ -423,37 +481,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         Expanded(
           child: ColoredBox(
             color: const Color(0xFF12121A),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.menu_book_outlined,
-                          size: 18, color: Colors.tealAccent),
-                      const SizedBox(width: 8),
-                      Text(
-                        'Sanctum 페이지',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey[300],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.only(bottom: 24),
-                    child: VaultMarkdownBody(
-                      data: _previewBodyMarkdown,
-                      mdFilePath: _item.filePath,
-                    ),
-                  ),
-                ),
-              ],
+            child: SanctumPagePanel(
+              view: _pageView,
+              onViewChanged: (v) => setState(() => _pageView = v),
+              previewMarkdown: _previewBodyMarkdown,
+              mdFilePath: _item.filePath,
+              bodyController: _bodyCtrl,
+              fileController: _fileCtrl,
+              onBodyChanged: _markDirty,
+              onFileChanged: _markDirty,
+              onOpenFileView: _refreshFullFileEditor,
             ),
           ),
         ),

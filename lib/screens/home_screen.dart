@@ -302,6 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _dashboardCtrl.select(id);
       _personalLibCtrl.selectDashboardMode();
       _applyDashboardFilters(_dashboardCtrl.activeFilterSnapshot);
+      _workbench.showBrowse();
     });
     await _prefetchRegistryForCurrentFilters();
   }
@@ -310,6 +311,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _personalLibCtrl.selectPersonal(id);
       _applyPersonalLibraryFilterSnapshot(_personalLibCtrl.activeLibrary);
+      _workbench.showBrowse();
     });
   }
 

@@ -94,7 +94,7 @@
 
 즉: **「md 내용을 앱 UI로 잘 보여준다」** + 저장 시 vault `.md`와 **동일한 내용**이 되도록 merge.
 
-- Quick edit TextField **기본 UI 없음** — 본문은 md(Obsidian) 또는 추후 원문 편집
+- Quick edit TextField **기본 UI 없음** — 4열 「본문」「.md」 탭에서 편집
 - 3열 `md 저장` → YAML + merge된 본문을 vault에 기록
 
 ### 3.5 미아카이브 (사전-only, md 없음)

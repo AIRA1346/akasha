@@ -1,13 +1,15 @@
 # Sanctum `.md` 작품 페이지 커스터마이징
 
-> **상태:** Sprint 구현 중 (P0·P1)  
+> **상태:** Sprint 구현 중 (P0·P1·P3 본문/파일 편집)  
 > **SSOT:** [product-vision.md](product-vision.md) §5 Tier 2
 
 ---
 
 ## 1. 목표
 
-유저 Sanctum vault의 `.md`로 **작품 상세 페이지를 자유롭게 꾸미되**, 앱 메타(별점·상태·포스터)와 공존한다.
+유저 Sanctum vault의 `.md`로 **작품 상세 페이지를 꾸미되**, 앱 메타(별점·상태·포스터)와 공존한다.
+
+**편집은 AKASHA 앱 안에서 완결** — 찾기 → 아카이빙 → 감상 기록까지 외부 Obsidian에 의존하지 않는다. (같은 볼트를 외부에서 열어도 되지만 필수 아님)
 
 | 계층 | 역할 | 예 |
 |------|------|-----|
@@ -40,10 +42,10 @@ serialize(item)
   → MarkdownBodyMerger.mergeBody(bodyRaw, slots)
   → YAML + merged body
 
-상세 UI
-  → 프로필 (구조화)
-  → VaultMarkdownBody(mergeBody(...))  ← Sanctum 페이지
-  → 빠른 편집 (슬롯 TextField)
+상세 UI (워크벤치 4열)
+  → SanctumPagePanel: 보기 | 본문 편집 | .md 파일 편집
+  → VaultMarkdownBody(mergeBody(...))  ← 미리보기
+  → 3열 md 저장 → vault 기록
 ```
 
 ---
@@ -53,9 +55,9 @@ serialize(item)
 | Phase | 내용 | 상태 |
 |-------|------|------|
 | **P0** | `bodyRaw` + `MarkdownBodyMerger` round-trip | ✅ 이번 스프린트 |
-| **P1** | `VaultMarkdownBody` 상세 렌더 (이미지·링크) | ✅ 이번 스프린트 |
+| **P1** | `VaultMarkdownBody` 상세 렌더 (이미지·링크) | ✅ |
 | **P2** | 볼트 watch → 상세 live reload | 예정 |
-| **P3** | 원문 편집 탭 / OS 편집기 열기 | 예정 |
+| **P3** | 4열 본문·`.md` 파일 in-app 편집 | ✅ 워크벤치 |
 | **P4** | `::: block` 확장·layout YAML | 예정 |
 
 ---
