@@ -158,23 +158,15 @@ class _PosterImageState extends State<PosterImage> {
           height: height,
         );
 
-        Widget frame(Widget image) => _frameImage(
-              image: image,
-              width: width,
-              height: height,
-              placeholder: placeholder,
-            );
-
         if (_networkCandidates.isNotEmpty) {
           final url = _networkCandidates[_candidateIndex];
-          return frame(
-            Image.network(
+          return _boundedImage(
+            width: width,
+            height: height,
+            placeholder: placeholder,
+            image: Image.network(
               url,
               key: ValueKey(url),
-              fit: widget.fit,
-              width: width,
-              height: height,
-              alignment: Alignment.center,
               headers: _networkImageHeaders,
               gaplessPlayback: true,
               errorBuilder: (_, error, stackTrace) {
@@ -200,8 +192,11 @@ class _PosterImageState extends State<PosterImage> {
         if (path != null && path.isNotEmpty) {
           final localFile = _resolveLocalFile(path);
           if (localFile != null) {
-            return frame(
-              SafeLocalImage(
+            return _boundedImage(
+              width: width,
+              height: height,
+              placeholder: placeholder,
+              image: SafeLocalImage(
                 file: localFile,
                 fit: widget.fit,
                 width: width,
@@ -222,14 +217,18 @@ class _PosterImageState extends State<PosterImage> {
     );
   }
 
-  /// bounded 부모 안에서 contain 시 이미지가 박스 밖으로 넘치며 clip 되는 것을 방지
-  Widget _frameImage({
-    required Widget image,
+  /// contain + bounded 박스 — FittedBox로 ClipRRect 넘침·cover식 잘림 방지
+  Widget _boundedImage({
     required double? width,
     required double? height,
     required Widget placeholder,
+    required Widget image,
   }) {
-    if (width == null || height == null || widget.fit != BoxFit.contain) {
+    if (width == null ||
+        height == null ||
+        width <= 0 ||
+        height <= 0 ||
+        widget.fit != BoxFit.contain) {
       return image;
     }
     return SizedBox(
@@ -237,7 +236,11 @@ class _PosterImageState extends State<PosterImage> {
       height: height,
       child: ColoredBox(
         color: const Color(0xFF12121A),
-        child: Center(child: image),
+        child: FittedBox(
+          fit: BoxFit.contain,
+          clipBehavior: Clip.none,
+          child: image,
+        ),
       ),
     );
   }

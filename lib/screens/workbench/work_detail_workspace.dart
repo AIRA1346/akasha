@@ -326,7 +326,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                     ),
                   ),
                 Expanded(
-                  flex: 5,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 8, 8, 4),
                     child: LayoutBuilder(
@@ -341,179 +340,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 5,
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Wrap(
-                          spacing: 4,
-                          runSpacing: 4,
-                          children: [
-                            _metaChip(
-                              icon: _item.domain.icon,
-                              label: _item.domain.label,
-                            ),
-                            _metaChip(
-                              icon: _item.category.icon,
-                              label: _item.category.label,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 6),
-                        TextField(
-                          controller: _titleCtrl,
-                          onChanged: (_) => _markDirty(),
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w800,
-                            height: 1.2,
-                          ),
-                          decoration: const InputDecoration(
-                            isDense: true,
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 8,
-                            ),
-                          ),
-                        ),
-                        if (metaLine.isNotEmpty) ...[
-                          const SizedBox(height: 4),
-                          Text(
-                            metaLine,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.grey[500],
-                            ),
-                          ),
-                        ],
-                        const SizedBox(height: 6),
-                        Row(
-                          children: [
-                            InteractiveStarRating(
-                              rating: _draftRating,
-                              size: 18,
-                              onChanged: (v) {
-                                setState(() => _draftRating = v);
-                                _markDirty();
-                              },
-                            ),
-                            const Spacer(),
-                            SizedBox(
-                              height: 28,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Switch(
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  value: _draftHallOfFame,
-                                  onChanged: (v) {
-                                    setState(() => _draftHallOfFame = v);
-                                    _markDirty();
-                                  },
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'HoF',
-                              style: TextStyle(
-                                fontSize: 10,
-                                color: Colors.grey[500],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 6),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: _statusDropdown(
-                                label: '작품',
-                                value: _draftWorkStatus,
-                                options: _item.workStatusOptions,
-                                onChanged: (v) {
-                                  setState(() => _draftWorkStatus = v);
-                                  _markDirty();
-                                },
-                              ),
-                            ),
-                            const SizedBox(width: 6),
-                            Expanded(
-                              child: _statusDropdown(
-                                label: '나의',
-                                value: _draftMyStatus,
-                                options: _item.myStatusOptions,
-                                onChanged: (v) {
-                                  setState(() => _draftMyStatus = v);
-                                  _markDirty();
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 6),
-                        TextField(
-                          controller: _tagsCtrl,
-                          onChanged: (_) => _markDirty(),
-                          style: const TextStyle(fontSize: 11),
-                          decoration: const InputDecoration(
-                            hintText: '태그',
-                            isDense: true,
-                            border: OutlineInputBorder(),
-                            contentPadding: EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 6,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: OutlinedButton(
-                                onPressed: _resetToDefaults,
-                                style: OutlinedButton.styleFrom(
-                                  visualDensity: VisualDensity.compact,
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8),
-                                  textStyle: const TextStyle(fontSize: 11),
-                                ),
-                                child: const Text('기본값'),
-                              ),
-                            ),
-                            const SizedBox(width: 6),
-                            Expanded(
-                              flex: 2,
-                              child: FilledButton(
-                                onPressed: _isSaving ? null : _saveArchive,
-                                style: FilledButton.styleFrom(
-                                  visualDensity: VisualDensity.compact,
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8),
-                                  textStyle: const TextStyle(fontSize: 11),
-                                ),
-                                child: _isSaving
-                                    ? const SizedBox(
-                                        width: 14,
-                                        height: 14,
-                                        child: CircularProgressIndicator(
-                                          strokeWidth: 2,
-                                        ),
-                                      )
-                                    : Text(_isArchived ? 'md 저장' : 'md 생성'),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
+                  child: _buildInfoForm(metaLine: metaLine),
                 ),
               ],
             ),
@@ -539,7 +368,157 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  /// 2:3 포스터를 할당된 영역 안에 맞추고 contain — ClipRRect 없음(잘림 원인).
+  /// 스크롤 없이 하단 고정 — bba7b13의 148px·cover 패턴 대체.
+  Widget _buildInfoForm({required String metaLine}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Wrap(
+          spacing: 4,
+          runSpacing: 4,
+          children: [
+            _metaChip(icon: _item.domain.icon, label: _item.domain.label),
+            _metaChip(icon: _item.category.icon, label: _item.category.label),
+          ],
+        ),
+        const SizedBox(height: 6),
+        TextField(
+          controller: _titleCtrl,
+          onChanged: (_) => _markDirty(),
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w800,
+            height: 1.2,
+          ),
+          decoration: const InputDecoration(
+            isDense: true,
+            border: OutlineInputBorder(),
+            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          ),
+        ),
+        if (metaLine.isNotEmpty) ...[
+          const SizedBox(height: 4),
+          Text(
+            metaLine,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+          ),
+        ],
+        const SizedBox(height: 6),
+        Row(
+          children: [
+            InteractiveStarRating(
+              rating: _draftRating,
+              size: 18,
+              onChanged: (v) {
+                setState(() => _draftRating = v);
+                _markDirty();
+              },
+            ),
+            const Spacer(),
+            SizedBox(
+              height: 28,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Switch(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  value: _draftHallOfFame,
+                  onChanged: (v) {
+                    setState(() => _draftHallOfFame = v);
+                    _markDirty();
+                  },
+                ),
+              ),
+            ),
+            Text(
+              'HoF',
+              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: _statusDropdown(
+                label: '작품',
+                value: _draftWorkStatus,
+                options: _item.workStatusOptions,
+                onChanged: (v) {
+                  setState(() => _draftWorkStatus = v);
+                  _markDirty();
+                },
+              ),
+            ),
+            const SizedBox(width: 6),
+            Expanded(
+              child: _statusDropdown(
+                label: '나의',
+                value: _draftMyStatus,
+                options: _item.myStatusOptions,
+                onChanged: (v) {
+                  setState(() => _draftMyStatus = v);
+                  _markDirty();
+                },
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        TextField(
+          controller: _tagsCtrl,
+          onChanged: (_) => _markDirty(),
+          style: const TextStyle(fontSize: 11),
+          decoration: const InputDecoration(
+            hintText: '태그',
+            isDense: true,
+            border: OutlineInputBorder(),
+            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            Expanded(
+              child: OutlinedButton(
+                onPressed: _resetToDefaults,
+                style: OutlinedButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  textStyle: const TextStyle(fontSize: 11),
+                ),
+                child: const Text('기본값'),
+              ),
+            ),
+            const SizedBox(width: 6),
+            Expanded(
+              flex: 2,
+              child: FilledButton(
+                onPressed: _isSaving ? null : _saveArchive,
+                style: FilledButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  textStyle: const TextStyle(fontSize: 11),
+                ),
+                child: _isSaving
+                    ? const SizedBox(
+                        width: 14,
+                        height: 14,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Text(_isArchived ? 'md 저장' : 'md 생성'),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  /// 2:3 포스터 — Expanded가 남긴 높이 전부 사용, contain (148px·cover 금지).
   Widget _buildInfoPoster({
     required double maxWidth,
     required double maxHeight,
