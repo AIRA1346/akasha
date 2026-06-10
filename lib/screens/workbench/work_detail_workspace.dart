@@ -278,46 +278,63 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           locked: widget.infoPanelLocked,
           onWidthChanged: widget.onInfoWidthChanged,
           onToggleLock: widget.onToggleInfoLock,
-          child: Container(
+          child: ColoredBox(
             color: const Color(0xFF1A1A28),
-            padding: const EdgeInsets.fromLTRB(8, 6, 8, 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                if (!vaultLinked)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 6),
-                    child: Row(
-                      children: [
-                        Icon(Icons.folder_off_outlined,
-                            size: 14, color: Colors.amber[700]),
-                        const SizedBox(width: 6),
-                        Expanded(
-                          child: Text(
-                            '볼트 미연동 · 임시 저장만',
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.amber[700],
-                            ),
-                          ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 8, 10, 4),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.info_outline,
+                        size: 18,
+                        color: Colors.tealAccent,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '작품 정보',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[300],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    return _buildInfoPoster(
-                      panelWidth: constraints.maxWidth,
-                      preview: preview,
-                      gradColors: gradColors,
-                    );
-                  },
                 ),
+                const Divider(height: 1, color: Color(0xFF2D2D44)),
                 Expanded(
                   child: SingleChildScrollView(
+                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                        if (!vaultLinked)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: Row(
+                              children: [
+                                Icon(Icons.folder_off_outlined,
+                                    size: 14, color: Colors.amber[700]),
+                                const SizedBox(width: 6),
+                                Expanded(
+                                  child: Text(
+                                    '볼트 미연동 · 임시 저장만',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Colors.amber[700],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        _buildInfoPoster(
+                          preview: preview,
+                          gradColors: gradColors,
+                        ),
                         const SizedBox(height: 8),
                         Wrap(
                           spacing: 4,
@@ -510,16 +527,13 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  /// 세로 포스터(2:3) 비율 — 패널 너비에 맞추고 잘리지 않게 contain.
+  /// 세로 포스터(2:3) — 스크롤 영역 안에서 전체가 보이도록 contain.
   Widget _buildInfoPoster({
-    required double panelWidth,
     required AkashaItem preview,
     required List<Color> gradColors,
   }) {
-    final posterHeight = (panelWidth * 1.5).clamp(168.0, 320.0);
-    return SizedBox(
-      height: posterHeight,
-      width: double.infinity,
+    return AspectRatio(
+      aspectRatio: 2 / 3,
       child: GestureDetector(
         onTap: _openPosterCorrection,
         child: DecoratedBox(
@@ -541,8 +555,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               key: ValueKey(_posterUrlCtrl.text),
               item: preview,
               fit: BoxFit.contain,
-              width: panelWidth,
-              height: posterHeight,
             ),
           ),
         ),

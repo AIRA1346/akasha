@@ -772,7 +772,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     if (AkashaFileService().vaultPath == null)
                       HomeVaultBanner(onConnectVault: _selectVaultFolder),
-                    if (!_isPersonalLibraryMode)
+                    if (!_isPersonalLibraryMode && !_workbench.hasOpenWork)
                       FilterSection(
                         selectedDomain: _filterCtrl.domain,
                         selectedCategories: _filterCtrl.categories,
@@ -784,8 +784,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         onToggleWorkStatus: _toggleWorkStatus,
                         onToggleMyStatus: _toggleMyStatus,
                       ),
-                    if (!_isPersonalLibraryMode) const Divider(height: 1),
-                    if (!_isPersonalLibraryMode && _isCatalogLoading)
+                    if (!_isPersonalLibraryMode && !_workbench.hasOpenWork)
+                      const Divider(height: 1),
+                    if (!_isPersonalLibraryMode &&
+                        !_workbench.hasOpenWork &&
+                        _isCatalogLoading)
                       const LinearProgressIndicator(minHeight: 2),
 
           // ━━━ 스크롤 가능한 메인 콘텐츠 ━━━
