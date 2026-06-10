@@ -7,10 +7,16 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('infoPosterDisplayBounds', () {
-    test('uses full allocated rectangle (no 2:3 crop box)', () {
-      final bounds = infoPosterDisplayBounds(maxWidth: 280, maxHeight: 135);
+    test('fits 2:3 frame within max (width-first)', () {
+      final bounds = infoPosterDisplayBounds(maxWidth: 280, maxHeight: 500);
       expect(bounds.width, 280);
-      expect(bounds.height, 135);
+      expect(bounds.height, 420);
+    });
+
+    test('clamps height and narrows width when vertical budget is tight', () {
+      final bounds = infoPosterDisplayBounds(maxWidth: 280, maxHeight: 300);
+      expect(bounds.height, 300);
+      expect(bounds.width, closeTo(200, 0.01));
     });
 
     test('returns zero for non-positive constraints', () {
@@ -55,9 +61,10 @@ void main() {
     expect(posterFinder, findsOneWidget);
 
     final posterSize = tester.getSize(posterFinder);
-    // flex 3:2 + 헤더 제외 시 포스터 영역은 ~300px 이상이어야 함 (구 ~130px 잘림 방지)
-    expect(posterSize.height, greaterThan(200));
-    expect(posterSize.width, greaterThan(200));
+    // 55% 예산·2:3 프레임 — 잘리지 않으면서 과도한 세로 여백 없음
+    expect(posterSize.height, greaterThan(180));
+    expect(posterSize.height, lessThan(400));
+    expect(posterSize.width, greaterThan(180));
 
     final poster = tester.widget<PosterImage>(posterFinder);
     expect(poster.fit, BoxFit.contain);

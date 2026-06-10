@@ -327,33 +327,33 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                     ),
                   ),
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 8, 8, 4),
-                          child: LayoutBuilder(
-                            builder: (context, constraints) {
-                              return _buildInfoPoster(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      final posterMaxHeight = constraints.maxHeight * 0.55;
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(8, 6, 8, 2),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: _buildInfoPoster(
                                 maxWidth: constraints.maxWidth,
-                                maxHeight: constraints.maxHeight,
+                                maxHeight: posterMaxHeight,
                                 preview: preview,
                                 gradColors: gradColors,
-                              );
-                            },
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: SingleChildScrollView(
-                          padding: const EdgeInsets.fromLTRB(8, 4, 8, 8),
-                          child: _buildInfoForm(metaLine: metaLine),
-                        ),
-                      ),
-                    ],
+                          Expanded(
+                            child: SingleChildScrollView(
+                              padding: const EdgeInsets.fromLTRB(8, 2, 8, 8),
+                              child: _buildInfoForm(metaLine: metaLine),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ],
@@ -530,7 +530,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  /// 할당된 직사각형 전체에 contain — 2:3·148px·cover 금지.
+  /// 2:3 프레임 + contain — 전체 높이 채우기·148px·cover 금지.
   Widget _buildInfoPoster({
     required double maxWidth,
     required double maxHeight,
@@ -544,8 +544,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final width = bounds.width;
     final height = bounds.height;
 
-    return Center(
-      child: GestureDetector(
+    return GestureDetector(
         onTap: _openPosterCorrection,
         child: DecoratedBox(
           decoration: BoxDecoration(
@@ -576,7 +575,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             ),
           ),
         ),
-      ),
     );
   }
 
@@ -636,7 +634,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 }
 
-/// 작품정보 패널 포스터 — LayoutBuilder가 준 bounds 전체 사용 (비율 강제 없음).
+/// 작품정보 패널 포스터 — 2:3 프레임을 max 안에 맞춤 (빈 세로 여백 최소화).
 @visibleForTesting
 ({double width, double height}) infoPosterDisplayBounds({
   required double maxWidth,
@@ -645,5 +643,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   if (maxWidth <= 0 || maxHeight <= 0) {
     return (width: 0, height: 0);
   }
-  return (width: maxWidth, height: maxHeight);
+  var width = maxWidth;
+  var height = width * 3 / 2;
+  if (height > maxHeight) {
+    height = maxHeight;
+    width = height * 2 / 3;
+  }
+  return (width: width, height: height);
 }
