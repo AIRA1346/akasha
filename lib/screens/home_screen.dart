@@ -53,7 +53,9 @@ import '../models/library_theme.dart';
 import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
 import '../widgets/library_theme_picker.dart';
-import 'detail_screen.dart';
+import '../workbench/workbench_controller.dart';
+import '../workbench/work_tab.dart';
+import 'workbench/workbench_shell.dart';
 //  메인 홈 대시보드 (Sanctum vault 스타일 그리드)
 // ════════════════════════════════════════════════════════════════
 
@@ -86,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Timer? _vaultReloadDebounce;
   late final HomeRegistrySync _registrySync;
   LibraryTheme _libraryTheme = LibraryTheme.classic;
+  final WorkbenchController _workbench = WorkbenchController();
 
   @override
   void initState() {
@@ -121,10 +124,18 @@ class _HomeScreenState extends State<HomeScreen> {
     if (FeatureFlags.catalogContributions) {
       _refreshCatalogContributionCount();
     }
+    _workbench.addListener(_onWorkbenchChanged);
+    _workbench.loadPrefs();
+  }
+
+  void _onWorkbenchChanged() {
+    if (mounted) setState(() {});
   }
 
   @override
   void dispose() {
+    _workbench.removeListener(_onWorkbenchChanged);
+    _workbench.dispose();
     _vaultReloadDebounce?.cancel();
     _vaultUpdateSubscription?.cancel();
     super.dispose();
@@ -502,38 +513,39 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void _navigateToDetail(AkashaItem item) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
-    ).then((result) async {
-      if (result == true && mounted) {
-        setState(() {
-          _items.removeWhere((e) =>
-              (item.workId.isNotEmpty && e.workId == item.workId) ||
-              (e.title == item.title && e.category == item.category));
-        });
+  AkashaItem _resolveItemForOpen(AkashaItem item) {
+    for (final existing in _items) {
+      if (item.workId.isNotEmpty && existing.workId == item.workId) {
+        return existing;
       }
-      await _loadItems();
-    });
+      if (existing.title == item.title &&
+          existing.category == item.category) {
+        return existing;
+      }
+    }
+    return item;
   }
 
   void _openBrowseItem(AkashaItem item) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
-    ).then((result) async {
-      await _loadItems();
-      if (!mounted) return;
+    _workbench.openWork(_resolveItemForOpen(item));
+  }
 
-      if (result == true) {
-        setState(() {
-          _items.removeWhere((e) =>
-              (item.workId.isNotEmpty && e.workId == item.workId) ||
-              (e.title == item.title && e.category == item.category));
-        });
-      }
-    });
+  Future<void> _onWorkbenchWorkSaved(AkashaItem saved) async {
+    await _loadItems();
+    if (!mounted) return;
+    _workbench.updateTabItem(WorkTab.idFor(saved), saved, dirty: false);
+  }
+
+  Future<void> _onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
+    _workbench.closeTab(tabId);
+    if (mounted) {
+      setState(() {
+        _items.removeWhere((e) =>
+            (item.workId.isNotEmpty && e.workId == item.workId) ||
+            (e.title == item.title && e.category == item.category));
+      });
+    }
+    await _loadItems();
   }
 
   Widget _buildPosterCard(BrowseCard card) {
@@ -778,71 +790,84 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: Column(
               children: [
-                if (dailyRecall != null)
+                if (dailyRecall != null && !_workbench.hasOpenWork)
                   TodayRecallCard(
                     recall: dailyRecall,
                     onTap: () => _openBrowseItem(dailyRecall.item),
                   ),
                 Expanded(
-                  child: !_isPersonalLibraryMode && _isCatalogLoading
-                      ? const Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(
-                                width: 28,
-                                height: 28,
-                                child: CircularProgressIndicator(strokeWidth: 2),
-                              ),
-                              SizedBox(height: 12),
-                              Text(
-                                '글로벌 작품 사전 불러오는 중…',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                        )
-                      : filtered.isEmpty
-                          ? _buildEmptyMainContent()
-                          : BrowseDashboardSections(
-                              hofCards: hofCards,
-                              libraryCards: catalogCards,
-                              watchlistCards: watchlistCards,
-                              yearGroups: yearGroups,
-                              categoryGroups: categoryGroups,
-                              displayName: _displayName,
-                              isPersonalLibraryMode: _isPersonalLibraryMode,
-                              showHallOfFame: _isPersonalLibraryMode,
-                              hofExpanded: _sectionPrefs.hofExpanded,
-                              libraryExpanded: _sectionPrefs.libraryExpanded,
-                              yearlyExpanded: _sectionPrefs.yearlyExpanded,
-                              watchlistExpanded: _sectionPrefs.watchlistExpanded,
-                              hofSortCriteria: _sectionPrefs.hofSort,
-                              librarySortCriteria: _sectionPrefs.librarySort,
-                              yearlySortCriteria: _sectionPrefs.yearlySort,
-                              watchlistSortCriteria:
-                                  _sectionPrefs.watchlistSort,
-                              onHofExpandedChanged: (v) => _sectionPrefs
-                                  .setHofExpanded(v, () => setState(() {})),
-                              onLibraryExpandedChanged: (v) => _sectionPrefs
-                                  .setLibraryExpanded(
-                                      v, () => setState(() {})),
-                              onYearlyExpandedChanged: (v) => _sectionPrefs
-                                  .setYearlyExpanded(v, () => setState(() {})),
-                              onWatchlistExpandedChanged: (v) => _sectionPrefs
-                                  .setWatchlistExpanded(
-                                      v, () => setState(() {})),
-                              onHofSortChanged: (val) => _sectionPrefs
-                                  .setHofSort(val, () => setState(() {})),
-                              onLibrarySortChanged: (val) => _sectionPrefs
-                                  .setLibrarySort(val, () => setState(() {})),
-                              onYearlySortChanged: (val) => _sectionPrefs
-                                  .setYearlySort(val, () => setState(() {})),
-                              onWatchlistSortChanged: (val) => _sectionPrefs
-                                  .setWatchlistSort(val, () => setState(() {})),
-                              posterCardBuilder: _buildPosterCard,
-                              gridBuilder: _buildGrid,
+                  child: WorkbenchShell(
+                    controller: _workbench,
+                    onWorkSaved: _onWorkbenchWorkSaved,
+                    onWorkDeleted: _onWorkbenchWorkDeleted,
+                    browseContent: !_isPersonalLibraryMode && _isCatalogLoading
+                        ? const Center(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(
+                                  width: 28,
+                                  height: 28,
+                                  child: CircularProgressIndicator(
+                                      strokeWidth: 2),
+                                ),
+                                SizedBox(height: 12),
+                                Text(
+                                  '글로벌 작품 사전 불러오는 중…',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ],
                             ),
+                          )
+                        : filtered.isEmpty
+                            ? _buildEmptyMainContent()
+                            : BrowseDashboardSections(
+                                hofCards: hofCards,
+                                libraryCards: catalogCards,
+                                watchlistCards: watchlistCards,
+                                yearGroups: yearGroups,
+                                categoryGroups: categoryGroups,
+                                displayName: _displayName,
+                                isPersonalLibraryMode: _isPersonalLibraryMode,
+                                showHallOfFame: _isPersonalLibraryMode,
+                                hofExpanded: _sectionPrefs.hofExpanded,
+                                libraryExpanded:
+                                    _sectionPrefs.libraryExpanded,
+                                yearlyExpanded: _sectionPrefs.yearlyExpanded,
+                                watchlistExpanded:
+                                    _sectionPrefs.watchlistExpanded,
+                                hofSortCriteria: _sectionPrefs.hofSort,
+                                librarySortCriteria:
+                                    _sectionPrefs.librarySort,
+                                yearlySortCriteria: _sectionPrefs.yearlySort,
+                                watchlistSortCriteria:
+                                    _sectionPrefs.watchlistSort,
+                                onHofExpandedChanged: (v) => _sectionPrefs
+                                    .setHofExpanded(v, () => setState(() {})),
+                                onLibraryExpandedChanged: (v) =>
+                                    _sectionPrefs.setLibraryExpanded(
+                                        v, () => setState(() {})),
+                                onYearlyExpandedChanged: (v) => _sectionPrefs
+                                    .setYearlyExpanded(
+                                        v, () => setState(() {})),
+                                onWatchlistExpandedChanged: (v) =>
+                                    _sectionPrefs.setWatchlistExpanded(
+                                        v, () => setState(() {})),
+                                onHofSortChanged: (val) => _sectionPrefs
+                                    .setHofSort(val, () => setState(() {})),
+                                onLibrarySortChanged: (val) => _sectionPrefs
+                                    .setLibrarySort(
+                                        val, () => setState(() {})),
+                                onYearlySortChanged: (val) => _sectionPrefs
+                                    .setYearlySort(
+                                        val, () => setState(() {})),
+                                onWatchlistSortChanged: (val) =>
+                                    _sectionPrefs.setWatchlistSort(
+                                        val, () => setState(() {})),
+                                posterCardBuilder: _buildPosterCard,
+                                gridBuilder: _buildGrid,
+                              ),
+                  ),
                 ),
               ],
             ),
