@@ -32,7 +32,7 @@
   },
   "wk_000000438": {
     "workId": "wk_000000438",
-    "title": "ギャラクシーエンジェル2nd",
+    "title": "갤럭시 엔젤 2nd",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -40,7 +40,8 @@
     },
     "titles": {
       "en": "Galaxy Angel 2nd",
-      "ja": "ギャラクシーエンジェル2nd"
+      "ja": "ギャラクシーエンジェル2nd",
+      "ko": "갤럭시 엔젤 2nd"
     },
     "creator": "大月悠祐子",
     "extensions": {

@@ -66,7 +66,7 @@ String resolveRegistryPrimaryTitle({
     return legacyTitle;
   }
 
-  for (final tag in const ['ja', 'en', 'romaji', 'native', 'zh']) {
+  for (final tag in const ['en', 'ja', 'romaji', 'native', 'zh']) {
     final value = titles[tag]?.trim() ?? '';
     if (value.isNotEmpty) return value;
   }

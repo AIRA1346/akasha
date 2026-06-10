@@ -22,8 +22,7 @@ enum CatalogLocale {
   List<String> get titleFallbackTags {
     switch (this) {
       case CatalogLocale.ko:
-        // Wikidata·일본 원작 — ko 없을 때 en보다 ja 우선 (Steam v1 한국 UI)
-        return const ['ko', 'ja', 'en', 'romaji', 'native', 'zh'];
+        return const ['ko', 'en', 'ja', 'romaji', 'native', 'zh'];
       case CatalogLocale.en:
         return const ['en', 'romaji', 'ja', 'native', 'ko', 'zh'];
       case CatalogLocale.ja:

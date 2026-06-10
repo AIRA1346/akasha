@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print
-/// Wikidata Q-id 작품 — `titles.ko`·`ja` 백필 + `title` ko-primary 동기화.
+/// Wikidata Q-id 작품 — `titles.ko` 백필 (label·alias·kowiki) + `title` 동기화.
 ///
 /// Usage:
 ///   dart run tool/wikidata_titles_ko_enrich.dart              # dry-run
 ///   dart run tool/wikidata_titles_ko_enrich.dart --apply      # shard 갱신
-///   dart run tool/wikidata_titles_ko_enrich.dart --apply --all  # 라벨 재동기화
+///   dart run tool/wikidata_titles_ko_enrich.dart --apply --all
 
 import 'dart:convert';
 import 'dart:io';
@@ -12,6 +12,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import 'discovery/wikidata_entity_labels.dart';
+import 'discovery/wikidata_ko_sparql.dart';
 import 'registry_v3_utils.dart';
 
 void main(List<String> args) async {
@@ -37,8 +38,7 @@ void main(List<String> args) async {
 
       final titles = parseTitlesJson(work['titles']);
       final hasKo = titles['ko']?.trim().isNotEmpty ?? false;
-      final hasJa = titles['ja']?.trim().isNotEmpty ?? false;
-      if (!resyncAll && hasKo && hasJa) continue;
+      if (!resyncAll && hasKo) continue;
 
       targets.add(
         _LocaleEnrichTarget(
@@ -53,37 +53,67 @@ void main(List<String> args) async {
   }
 
   print('wikidata_titles_ko_enrich');
-  print('  targets: ${targets.length}');
+  print('  targets (missing ko): ${targets.length}');
   if (targets.isEmpty) {
     print('Nothing to enrich.');
     return;
   }
 
   final qids = targets.map((t) => t.qid).toSet().toList();
-  print('  fetching labels for ${qids.length} Q-ids...');
-  final labelsByQid = await fetchWikidataEntityLabels(qids: qids);
+  print('  fetching Wikidata facts for ${qids.length} Q-ids...');
+  final factsByQid = await fetchWikidataEntityLocaleFacts(qids: qids);
+  print('  fetching related kowiki (SPARQL 1-hop)...');
+  final relatedKoByQid = await fetchRelatedKowikiTitles(qids: qids);
 
   var wouldUpdate = 0;
-  var koFound = 0;
-  var jaFound = 0;
+  var koByLabel = 0;
+  var koByAlias = 0;
+  var koByKowiki = 0;
+  var koByRelated = 0;
+  var koUnresolved = 0;
   var unchanged = 0;
   final report = <Map<String, dynamic>>[];
 
   for (final target in targets) {
-    final labels = labelsByQid[target.qid] ?? const {};
+    final facts = factsByQid[target.qid] ?? const WikidataEntityLocaleFacts();
     final mergedTitles = Map<String, String>.from(target.titles);
 
-    if (labels['ko']?.isNotEmpty == true) {
-      mergedTitles['ko'] = labels['ko']!.trim();
-      koFound++;
+    var koSource = pickKoTitle(facts);
+    if (koSource.ko == null) {
+      final related = relatedKoByQid[target.qid];
+      if (related != null && related.isNotEmpty) {
+        koSource = (
+          ko: disambiguateRelatedKoTitle(
+            relatedKo: related,
+            titles: mergedTitles,
+          ),
+          source: 'related',
+        );
+      }
     }
-    if (labels['ja']?.isNotEmpty == true) {
-      mergedTitles['ja'] = labels['ja']!.trim();
-      jaFound++;
+
+    if (koSource.ko == null) {
+      koUnresolved++;
+      unchanged++;
+      report.add({
+        'workId': target.workId,
+        'qid': target.qid,
+        'status': 'no_ko_source',
+        'title': target.currentTitle,
+      });
+      continue;
     }
-    if (labels['en']?.isNotEmpty == true &&
-        (mergedTitles['en']?.isEmpty ?? true)) {
-      mergedTitles['en'] = labels['en']!.trim();
+
+    mergedTitles['ko'] = koSource.ko!;
+    switch (koSource.source) {
+      case 'label':
+        koByLabel++;
+      case 'alias':
+        koByAlias++;
+      case 'kowiki':
+        koByKowiki++;
+      case 'related':
+        koByRelated++;
     }
 
     final newTitle = resolveRegistryPrimaryTitle(
@@ -91,16 +121,13 @@ void main(List<String> args) async {
       legacyTitle: target.currentTitle,
     );
 
-    final changed = !_titlesEqual(mergedTitles, target.titles) ||
-        newTitle != target.currentTitle;
-
-    if (!changed) {
+    if (mergedTitles['ko'] == target.titles['ko'] && newTitle == target.currentTitle) {
       unchanged++;
       report.add({
         'workId': target.workId,
         'qid': target.qid,
         'status': 'unchanged',
-        'title': target.currentTitle,
+        'ko': koSource.ko,
       });
       continue;
     }
@@ -111,7 +138,7 @@ void main(List<String> args) async {
       'qid': target.qid,
       'status': 'update',
       'ko': mergedTitles['ko'],
-      'ja': mergedTitles['ja'],
+      'koSource': koSource.source,
       'titleBefore': target.currentTitle,
       'titleAfter': newTitle,
     });
@@ -139,16 +166,22 @@ void main(List<String> args) async {
       'generatedAt': DateTime.now().toUtc().toIso8601String(),
       'apply': apply,
       'targets': targets.length,
-      'koLabelsFetched': koFound,
-      'jaLabelsFetched': jaFound,
+      'koByLabel': koByLabel,
+      'koByAlias': koByAlias,
+      'koByKowiki': koByKowiki,
+      'koByRelated': koByRelated,
+      'koUnresolved': koUnresolved,
       'unchanged': unchanged,
       'updated': wouldUpdate,
       'items': report,
     })}\n',
   );
 
-  print('  ko labels in API response: $koFound');
-  print('  ja labels in API response: $jaFound');
+  print('  ko by label: $koByLabel');
+  print('  ko by alias: $koByAlias');
+  print('  ko by kowiki: $koByKowiki');
+  print('  ko by related: $koByRelated');
+  print('  ko unresolved: $koUnresolved');
   print('  unchanged: $unchanged');
   print('  would update: $wouldUpdate');
   print('  report: ${reportFile.path}');

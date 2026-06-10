@@ -1,7 +1,7 @@
 {
   "wk_000000430": {
     "workId": "wk_000000430",
-    "title": "電影少女",
+    "title": "전영소녀",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "Video Girl Ai",
-      "ja": "電影少女"
+      "ja": "電影少女",
+      "ko": "전영소녀"
     },
     "creator": "Masakazu Katsura",
     "extensions": {

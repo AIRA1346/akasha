@@ -23,7 +23,7 @@
   },
   "wk_000000437": {
     "workId": "wk_000000437",
-    "title": "ギャラクシーエンジェル",
+    "title": "갤럭시 엔젤",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -31,7 +31,8 @@
     },
     "titles": {
       "en": "Galaxy Angel",
-      "ja": "ギャラクシーエンジェル"
+      "ja": "ギャラクシーエンジェル",
+      "ko": "갤럭시 엔젤"
     },
     "releaseYear": 2001,
     "creator": "大月悠祐子",

@@ -1,7 +1,7 @@
 {
   "wk_000000417": {
     "workId": "wk_000000417",
-    "title": "Strawberry Panic!",
+    "title": "스트로베리 패닉!",
     "category": "manga",
     "domain": "subculture",
     "externalIds": {
@@ -9,7 +9,8 @@
     },
     "titles": {
       "en": "Strawberry Panic!",
-      "ja": "Strawberry Panic!"
+      "ja": "Strawberry Panic!",
+      "ko": "스트로베리 패닉!"
     },
     "releaseYear": 2005,
     "creator": "Sakurako Kimino",
