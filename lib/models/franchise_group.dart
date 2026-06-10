@@ -1,10 +1,12 @@
 import '../config/catalog_locale.dart';
+import 'external_ids.dart';
 import '../utils/work_title_resolver.dart';
 
 class FranchiseGroup {
   final String id;
   final String displayName;
   final Map<String, String> displayNames;
+  final ExternalIds externalIds;
   final List<String> members;
   final String primaryWorkId;
 
@@ -12,9 +14,12 @@ class FranchiseGroup {
     required this.id,
     required this.displayName,
     this.displayNames = const {},
+    this.externalIds = const ExternalIds(),
     required this.members,
     required this.primaryWorkId,
   });
+
+  String? get wikidataQid => externalIds['wikidata'];
 
   String localizedDisplayName([CatalogLocale? locale]) {
     return resolveFranchiseDisplayName(
@@ -45,6 +50,7 @@ class FranchiseGroup {
       id: id,
       displayName: json['displayName']?.toString() ?? id,
       displayNames: names,
+      externalIds: ExternalIds.fromJson(json['externalIds']),
       members: members,
       primaryWorkId: json['primaryWorkId']?.toString() ?? members.first,
     );

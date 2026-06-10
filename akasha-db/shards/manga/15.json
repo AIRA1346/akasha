@@ -45,5 +45,22 @@
     "legacyIds": [
       "sub_manga_one-punch-man_2012"
     ]
+  },
+  "wk_000000426": {
+    "workId": "wk_000000426",
+    "title": "Oretama",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1005595"
+    },
+    "titles": {
+      "en": "Oretama",
+      "ja": "オレたま 〜オレが地球を救うって!?〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

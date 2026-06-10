@@ -16,7 +16,7 @@ import 'dart:math';
 import 'package:path/path.dart' as p;
 
 import 'dedupe_utils.dart';
-import 'discovery/anilist_client.dart';
+import 'discovery/discovery_source_fetch.dart';
 import 'discovery/contract_test_runner.dart';
 import 'discovery/discovery_types.dart';
 import 'discovery/registry_snapshot.dart';
@@ -101,16 +101,16 @@ void main(List<String> args) async {
 }
 
 Future<Map<String, dynamic>> runSimA(Directory root, Random rng) async {
-  const channelId = 'anilist_animation';
+  const channelId = 'wikidata_manga';
   const config = DiscoveryChannelConfig(
     id: channelId,
-    source: 'anilist',
-    category: 'animation',
+    source: 'wikidata',
+    category: 'manga',
     domain: 'subculture',
     enabled: false,
     dailyLimit: 500,
     trialBatchSize: 100,
-    cursorPath: 'pipeline/discovery/cursors/anilist_animation.json',
+    cursorPath: 'pipeline/discovery/cursors/wikidata_manga.json',
   );
 
   final contract = ContractTestRunner.fromProject(
@@ -119,17 +119,33 @@ Future<Map<String, dynamic>> runSimA(Directory root, Random rng) async {
     projectRoot: root,
   );
 
-  var source = 'live_anilist';
+  var source = 'live_wikidata';
   List<Map<String, dynamic>> nodes;
   try {
-    nodes = await fetchAnilistAnimationBatch(batchSize: _simABatchSize);
+    nodes = await fetchDiscoveryBatch(
+      config: DiscoveryChannelConfig(
+        id: config.id,
+        source: config.source,
+        category: config.category,
+        domain: config.domain,
+        enabled: config.enabled,
+        dailyLimit: config.dailyLimit,
+        trialBatchSize: _simABatchSize,
+        cursorPath: config.cursorPath,
+      ),
+      projectRoot: root,
+    );
     if (nodes.length < 100) {
       throw StateError('insufficient live nodes: ${nodes.length}');
     }
   } catch (e) {
     source = 'synthetic_fallback';
     stderr.writeln('SIM-A live fetch failed ($e) — synthetic fallback');
-    nodes = _syntheticAnilistNodes(rng, _simABatchSize, contract.registryAnilistIds);
+    nodes = _syntheticWikidataNodes(
+      rng,
+      _simABatchSize,
+      contract.registryExternalIds,
+    );
   }
 
   final contractKpi = contract.runOnNodes(nodes);
@@ -539,6 +555,39 @@ List<Map<String, dynamic>> _syntheticAnilistNodes(
       },
       'startDate': {'year': 2015},
       'studios': {'nodes': [{'name': 'Studio X'}]},
+    });
+  }
+  return nodes.take(count).toList();
+}
+
+List<Map<String, dynamic>> _syntheticWikidataNodes(
+  Random rng,
+  int count,
+  Set<String> registryWikidataIds,
+) {
+  final nodes = <Map<String, dynamic>>[];
+  for (var i = 0; i < count; i++) {
+    final qid = 'Q${950000 + i}';
+    if (registryWikidataIds.contains(qid)) continue;
+    nodes.add({
+      'qid': qid,
+      'title': 'Simu Manga $qid',
+      'titles': {
+        'en': 'Simu Manga $qid',
+        if (rng.nextDouble() < 0.5) 'ja': 'シミュ漫画$i',
+      },
+      'releaseYear': 2000 + (i % 25),
+      'creator': 'Mangaka ${i % 40}',
+      'category': 'manga',
+    });
+  }
+  while (nodes.length < count) {
+    final qid = 'Q${960000 + nodes.length}';
+    nodes.add({
+      'qid': qid,
+      'title': 'Extra Simu $qid',
+      'releaseYear': 2015,
+      'category': 'manga',
     });
   }
   return nodes.take(count).toList();

@@ -22,5 +22,23 @@
     "extensions": {
       "coverageSprint03": "legacy_slug"
     }
+  },
+  "wk_000000467": {
+    "workId": "wk_000000467",
+    "title": "Blue Thermal",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101443296"
+    },
+    "titles": {
+      "en": "Blue Thermal",
+      "ja": "ブルーサーマル -青凪大学体育会航空部-"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

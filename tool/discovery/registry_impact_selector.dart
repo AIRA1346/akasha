@@ -39,7 +39,7 @@ class ImpactSelectionScore {
   });
 
   Map<String, dynamic> toJson() => {
-        'anilistId': item.externalId,
+        'sourceExternalId': item.externalId,
         'title': item.title,
         'shadowWorkId': item.shadowWorkId,
         'userValueTier': userValue.tier.name,

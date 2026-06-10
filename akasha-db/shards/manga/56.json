@@ -1,0 +1,21 @@
+{
+  "wk_000000466": {
+    "workId": "wk_000000466",
+    "title": "Kawaii dake ja Nai Shikimori-san",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101442924"
+    },
+    "titles": {
+      "en": "Kawaii dake ja Nai Shikimori-san",
+      "ja": "可愛いだけじゃない式守さん"
+    },
+    "releaseYear": 2018,
+    "creator": "Keigo Maki",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

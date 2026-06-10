@@ -8,7 +8,8 @@
 
 데이터 권리 (최상위): [docs/data-policy.md](../docs/data-policy.md)  
 상세 정책: [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)  
-아키텍처 로드맵: [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
+아키텍처 로드맵: [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)  
+**Wikidata spine:** [docs/strategy/wikidata-spine-plan.md](../docs/strategy/wikidata-spine-plan.md)
 
 ### Registry Minimal Core (등록 최소)
 
@@ -26,11 +27,39 @@
 | `aliases` | | 검색용 별칭 배열 |
 | `posterPath` | | **v1 Tier 1 금지** — `null`만 (CI `tier1_poster`) |
 | `description` | | **v1 Tier 1 금지** — Sanctum vault Markdown만 |
-| `externalIds` | | `{ "anilist", "steam", "tmdb", "isbn", ... }` |
+| `externalIds` | | **`wikidata` (spine, 권장)** · `steam` · `tmdb` · `mal` · `isbn` … (`anilist` 신규 ❌) |
+| `wikidataRelations` | | `[{ "p": "P144", "target": "Q24862683" }]` — P-id·Q-id만 |
 | `category` | ✅ | manga · animation · game · book · movie · drama · webtoon |
 | `domain` | ✅ | subculture · generalCulture |
-| `extensions` | | 레거시 확장 (`externalIds`로 승격 권장) |
+| `extensions` | | 레거시 확장 · **`seasons[]`** (애니 시즌 Q-id 메타) |
 | `qualitySignals` | | **원본** 품질 신호만 저장 (`tier`·`score` 저장 금지) |
+
+#### Wikidata spine (v4.1)
+
+```json
+{
+  "externalIds": { "wikidata": "Q24862683" },
+  "wikidataRelations": [
+    { "p": "P144", "target": "Q24862683" }
+  ],
+  "extensions": {
+    "seasons": [
+      { "label": "season 1", "releaseYear": 2019, "wikidata": "Q105847391" }
+    ]
+  }
+}
+```
+
+- Q-id 형식: `Q` + 10진수 (`^Q\d+$`) · CI `data_policy_linter`
+- 시즌별 `wk_` 기본 **금지** — [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
+
+#### franchise_groups v2+
+
+| 필드 | 설명 |
+|------|------|
+| `externalIds.wikidata` | media franchise Q (예: 귀멨 Q105037706) |
+| `displayNames` | IP 다국어 명 |
+| `members` | 매체별 `wk_` |
 
 #### qualitySignals (shard — 원본만)
 
@@ -54,7 +83,7 @@
 
 tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 95+→5
 
-**Canonicalization**(franchise·edition·dedupe)은 Quality와 **독립 축** — [canonicalization-policy.md](../docs/canonicalization-policy.md)
+**Canonicalization**(franchise·edition·dedupe)은 Quality와 **독립 축** — [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
 
 ### search_index.json (빌드 산출)
 
@@ -73,7 +102,7 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 | **샤드 키** | 슬러그 첫 글자·연대 | **`sha256(wk_)[0] % 256`** → `{hh}.json` |
 | **manifest** | `version: 3` | `version: 4`, `shardBits: 8`, per-shard `sha256` |
 
-전환 기록: [docs/v4-migration-plan.md](../docs/v4-migration-plan.md)
+전환 기록: [docs/archive/v4-migration-plan.md](../docs/archive/v4-migration-plan.md)
 
 ### id_registry.json
 
@@ -93,7 +122,7 @@ tier (파생): 0–19→0, 20–39→1, 40–59→2, 60–79→3, 80–94→4, 9
 - **AniList API bulk 시드 금지**
 - 신규 작품: 수동 PR + (장기) Registry Pipeline
 - **`description`·`posterPath`:** Tier 1 **금지** — [POSTER_POLICY.md](POSTER_POLICY.md) · [product-vision.md](../docs/product-vision.md)
-- 중복: [canonicalization-policy.md](../docs/canonicalization-policy.md)
+- 중복: [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
 
 ---
 

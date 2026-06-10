@@ -74,10 +74,10 @@ class RegistryImpactReport {
         'mergeCandidates': mergeCandidates
             .map(
               (m) => {
-                'anilistId': m.externalId,
+                'sourceExternalId': m.externalId,
                 'title': m.title,
                 'linkToWorkId': m.matchedWorkId,
-                'note': 'externalIds.anilist 연결 후보 — 신규 wk_ 아님',
+                'note': 'externalIds.wikidata 연결 후보 — 신규 wk_ 아님',
               },
             )
             .toList(),
@@ -159,7 +159,7 @@ String formatRegistryImpactMarkdown(RegistryImpactReport report) {
   buf.writeln('| **선정 (Impact Test)** | **${k.selectedCount}** |');
   buf.writeln('| Gap fill | ${k.gapFillsCount} / ${k.selectedCount} |');
   buf.writeln('| 신규 searchTokens | ${k.totalNovelSearchTokens} |');
-  buf.writeln('| mergeCandidate (anilist 링크) | ${k.mergeCandidateCount} |');
+  buf.writeln('| mergeCandidate (wikidata 링크) | ${k.mergeCandidateCount} |');
   buf.writeln('| coverageDelta (gap ratio) | ${k.coverageDelta.toStringAsFixed(2)} |');
   buf.writeln('| searchQualityImproves | **${k.searchQualityImproves}** |');
   buf.writeln('| coverageIncreases | **${k.coverageIncreases}** |');
@@ -183,7 +183,7 @@ String formatRegistryImpactMarkdown(RegistryImpactReport report) {
     buf.writeln('| | |');
     buf.writeln('|--|--|');
     buf.writeln('| shadow wk_ | `${s.item.shadowWorkId}` |');
-    buf.writeln('| anilist (참조) | `${s.item.externalId}` |');
+    buf.writeln('| wikidata (spine) | `${s.item.externalId}` |');
     buf.writeln('| User Value | ${s.userValue.tier.name} |');
     buf.writeln('| impactScore | ${s.impactScore} |');
     buf.writeln('| axes | ${s.axes.map((a) => a.name).join(', ')} |');
@@ -206,13 +206,13 @@ String formatRegistryImpactMarkdown(RegistryImpactReport report) {
   }
 
   if (report.mergeCandidates.isNotEmpty) {
-    buf.writeln('## mergeCandidate — externalIds.anilist 연결 후보');
+    buf.writeln('## mergeCandidate — externalIds.wikidata 연결 후보');
     buf.writeln();
-    buf.writeln('신규 `wk_` **아님**. 기존 Registry 작품에 AniList 참조만 연결.');
+    buf.writeln('신규 `wk_` **아님**. 기존 Registry 작품에 wikidata spine만 연결.');
     buf.writeln();
     for (final m in report.mergeCandidates) {
       buf.writeln(
-        '- anilist:${m.externalId} "${m.title}" → `${m.matchedWorkId}`',
+        '- wikidata:${m.externalId} "${m.title}" → `${m.matchedWorkId}`',
       );
     }
     buf.writeln();

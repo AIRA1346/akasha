@@ -53,5 +53,23 @@
     "extensions": {
       "coverageSprint03": "legacy_slug"
     }
+  },
+  "wk_000000464": {
+    "workId": "wk_000000464",
+    "title": "Le Chevalier D'Eon",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101424703"
+    },
+    "titles": {
+      "en": "Le Chevalier D'Eon",
+      "ja": "シュヴァリエ"
+    },
+    "creator": "Tow Ubukata",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

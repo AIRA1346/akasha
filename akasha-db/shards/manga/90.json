@@ -24,5 +24,22 @@
     "aliases": [
       "20th Century Boys"
     ]
+  },
+  "wk_000000454": {
+    "workId": "wk_000000454",
+    "title": "Misetagari no Tsuyuno-chan",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244600"
+    },
+    "titles": {
+      "en": "Misetagari no Tsuyuno-chan",
+      "ja": "見せたがりの露乃ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

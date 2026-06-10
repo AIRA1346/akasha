@@ -29,5 +29,41 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000425": {
+    "workId": "wk_000000425",
+    "title": "Naisho no Tsubomi",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1005417"
+    },
+    "titles": {
+      "en": "Naisho no Tsubomi",
+      "ja": "ないしょのつぼみ"
+    },
+    "creator": "Yuu Yabuuchi",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000429": {
+    "workId": "wk_000000429",
+    "title": "Boruto",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100774936"
+    },
+    "titles": {
+      "en": "Boruto",
+      "ja": "BORUTO-ボルト- -NARUTO NEXT GENERATIONS-"
+    },
+    "creator": "Mikio Ikemoto",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

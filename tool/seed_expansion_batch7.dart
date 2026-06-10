@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 /// Batch 7: Scale A-type Net-new Expansion cohort (gate + v4 hex).
-/// Policy: [docs/a5-scale-expansion-cohort-plan.md](../docs/a5-scale-expansion-cohort-plan.md)
+/// Policy: [docs/programs/a5-scale-expansion-cohort-plan.md](../docs/programs/a5-scale-expansion-cohort-plan.md)
 ///
 /// Usage:
 ///   dart run tool/seed_expansion_batch7.dart              # dry-run

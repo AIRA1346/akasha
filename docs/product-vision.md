@@ -1,7 +1,8 @@
 # AKASHA Product Vision — Fact Index + Sanctum Archive
 
 > **지위:** 제품·데이터 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)  
-> **갱신:** 2026-06-10 · Registry **430 works** · Steam v1 Q3 2026  
+> **갱신:** 2026-06-10 · Registry **430→G1 확장** · Steam v1 Q3 2026  
+> **확장:** [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) — 430작은 출시 **최소선 아님**
 > **법무:** [data-policy.md](data-policy.md) · **구현:** [catalog_poster_policy.dart](../lib/config/catalog_poster_policy.dart)
 
 ---
@@ -139,9 +140,9 @@
 |------|------|
 | **본 문서** | 제품 북극성 |
 | [data-policy.md](data-policy.md) | 필드·법무·CI |
-| [catalog-ownership.md](catalog-ownership.md) | 3계층 소유 |
+| [catalog-ownership.md](../policy/catalog-ownership.md) | 3계층 소유 |
 | [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | v1 no-poster |
-| [data-architecture-redesign.md](data-architecture-redesign.md) | 인프라·규모 (§1 poster는 본 문서 우선) |
+| [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) | 인프라·규모 (§1 poster는 본 문서 우선) |
 | [ROADMAP.md](../ROADMAP.md) | 마일스톤 |
 
 ---

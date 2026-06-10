@@ -1,0 +1,21 @@
+{
+  "wk_000000447": {
+    "workId": "wk_000000447",
+    "title": "Golden Time",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101112850"
+    },
+    "titles": {
+      "en": "Golden Time",
+      "ja": "ゴールデンタイム"
+    },
+    "releaseYear": 2011,
+    "creator": "Yuyuko Takemiya",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

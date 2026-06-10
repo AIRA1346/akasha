@@ -22,5 +22,24 @@
     "extensions": {
       "coverageSprint03": "legacy_slug"
     }
+  },
+  "wk_000000418": {
+    "workId": "wk_000000418",
+    "title": "I Think I Turned My Childhood Friend into a Girl",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100281147"
+    },
+    "titles": {
+      "en": "I Think I Turned My Childhood Friend into a Girl",
+      "ja": "恋する(おとめ)の作り方"
+    },
+    "releaseYear": 2019,
+    "creator": "Azusa Banjō",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

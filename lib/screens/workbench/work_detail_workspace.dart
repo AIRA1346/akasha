@@ -304,34 +304,49 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                       ],
                     ),
                   ),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    final posterH =
-                        (constraints.maxWidth * 0.52).clamp(112.0, 148.0);
-                    return GestureDetector(
-                      onTap: _openPosterCorrection,
-                      child: SizedBox(
-                        height: posterH,
-                        width: double.infinity,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            gradient: LinearGradient(colors: gradColors),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(6),
-                            child: PosterImage(
-                              key: ValueKey(_posterUrlCtrl.text),
-                              item: preview,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: _openPosterCorrection,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: const Color(0xFF12121A),
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            gradColors.first.withValues(alpha: 0.35),
+                            const Color(0xFF12121A),
+                          ],
                         ),
                       ),
-                    );
-                  },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(6),
+                        child: PosterImage(
+                          key: ValueKey(_posterUrlCtrl.text),
+                          item: preview,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 8),
+                Wrap(
+                  spacing: 4,
+                  runSpacing: 4,
+                  children: [
+                    _metaChip(
+                      icon: _item.domain.icon,
+                      label: _item.domain.label,
+                    ),
+                    _metaChip(
+                      icon: _item.category.icon,
+                      label: _item.category.label,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
                 TextField(
                   controller: _titleCtrl,
                   onChanged: (_) => _markDirty(),
@@ -431,7 +446,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                         EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   ),
                 ),
-                const Spacer(),
+                const SizedBox(height: 8),
                 Row(
                   children: [
                     Expanded(
@@ -489,6 +504,28 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _metaChip({required IconData icon, required String label}) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+      decoration: BoxDecoration(
+        color: const Color(0xFF252538),
+        borderRadius: BorderRadius.circular(4),
+        border: Border.all(color: const Color(0xFF3A3A52)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 11, color: Colors.tealAccent),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+          ),
+        ],
+      ),
     );
   }
 

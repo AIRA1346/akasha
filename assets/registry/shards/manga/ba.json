@@ -29,5 +29,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000438": {
+    "workId": "wk_000000438",
+    "title": "Galaxy Angel 2nd",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101015812"
+    },
+    "titles": {
+      "en": "Galaxy Angel 2nd",
+      "ja": "ギャラクシーエンジェル2nd"
+    },
+    "creator": "大月悠祐子",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

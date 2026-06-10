@@ -8,8 +8,9 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
+import 'discovery_source_fetch.dart';
 import 'discovery_manifest.dart';
 import 'product_value_review.dart';
 import 'registry_coverage_utils.dart';
@@ -36,29 +37,30 @@ void main(List<String> args) async {
     exit(64);
   }
 
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final root = _findProjectRoot();
   final manifest = DiscoveryManifest.load(root);
-  final config = manifest.channel('anilist_animation');
+  final config = manifest.channel(channelId);
   if (config == null) {
-    stderr.writeln('ERROR: anilist_animation channel missing');
+    stderr.writeln('ERROR: unknown channel $channelId');
     exit(1);
   }
 
-  print('product_value_review — 5b 보류 / Product gate');
-  print('  question: AniList 존재 vs AKASHA 사용자 가치');
+  print('product_value_review — $channelId — 5b 보류 / Product gate');
+  print('  question: 외부 spine 존재 vs AKASHA 사용자 가치');
   print('');
 
   final contractRunner = ContractTestRunner.fromProject(
-    channelId: 'anilist_animation',
+    channelId: channelId,
     config: config,
     projectRoot: root,
   );
 
   final nodes = offline
-      ? _fixtures(config.trialBatchSize)
-      : await fetchAnilistAnimationBatch(
-          batchSize: config.trialBatchSize,
-          requiredCategory: config.category,
+      ? contractFixturesForChannel(config, config.trialBatchSize)
+      : await fetchDiscoveryBatch(
+          config: config,
+          projectRoot: root,
         );
 
   final registry = RegistrySnapshot.load(root);
@@ -139,24 +141,6 @@ void main(List<String> args) async {
     exit(1);
   }
   print('\nOK: Product Value auto-gate passed — 수동 Review 후 5b 검토');
-}
-
-List<Map<String, dynamic>> _fixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 900000 + i;
-    return {
-      'id': id,
-      'format': 'TV',
-      'title': {'english': 'Product Unique $id'},
-      'synonyms': ['PU-$id'],
-      'seasonYear': 2001,
-      'studios': {
-        'nodes': [
-          {'name': 'Studio'},
-        ],
-      },
-    };
-  });
 }
 
 String? _argValue(List<String> args, String name) {

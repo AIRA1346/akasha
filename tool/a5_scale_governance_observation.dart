@@ -75,7 +75,7 @@ void main(List<String> args) {
     'extrapolationLinear': [extrapolate(5000), extrapolate(50000)],
     'cadenceHypothesis': {
       'releaseBlock': 'preflight_check + SW1 + URV per registry release',
-      'sd4Reference': 'docs/a5-scale-operational-decisions.md SD4.1',
+      'sd4Reference': 'docs/programs/a5-scale-operational-decisions.md SD4.1',
     },
   };
 

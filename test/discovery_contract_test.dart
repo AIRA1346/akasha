@@ -1,39 +1,37 @@
 import 'package:flutter_test/flutter_test.dart';
 
 // ignore: avoid_relative_lib_imports
-import '../tool/discovery/anilist_facts.dart';
-// ignore: avoid_relative_lib_imports
 import '../tool/discovery/contract_test_runner.dart';
 // ignore: avoid_relative_lib_imports
 import '../tool/discovery/discovery_types.dart';
 
 void main() {
   const config = DiscoveryChannelConfig(
-    id: 'anilist_animation',
-    source: 'anilist',
-    category: 'animation',
+    id: 'wikidata_manga',
+    source: 'wikidata',
+    category: 'manga',
     domain: 'subculture',
     enabled: false,
     dailyLimit: 500,
     trialBatchSize: 100,
-    cursorPath: 'pipeline/discovery/cursors/anilist_animation.json',
+    cursorPath: 'pipeline/discovery/cursors/wikidata_manga.json',
   );
 
   group('ContractTestRunner', () {
-    test('animation fixtures produce 100 minimal core drafts offline', () {
+    test('wikidata manga fixtures produce 100 minimal core drafts offline', () {
       final nodes = List.generate(100, (i) {
         return {
-          'id': 300000 + i,
-          'format': 'TV',
-          'title': {'english': 'Anime $i'},
-          'seasonYear': 2010,
+          'qid': 'Q${700000 + i}',
+          'title': 'Manga $i',
+          'releaseYear': 2010,
+          'category': 'manga',
         };
       });
 
       final runner = ContractTestRunner(
-        channelId: 'anilist_animation',
+        channelId: 'wikidata_manga',
         config: config,
-        registryAnilistIds: const {},
+        registryExternalIds: const {},
       );
       final kpi = runner.runOnNodes(nodes);
 
@@ -46,11 +44,21 @@ void main() {
       expect(kpi.contractPassed, isTrue);
     });
 
-    test('manga format rejected for animation channel', () {
+    test('anilist source channel rejects all nodes', () {
+      const anilistConfig = DiscoveryChannelConfig(
+        id: 'anilist_manga',
+        source: 'anilist',
+        category: 'manga',
+        domain: 'subculture',
+        enabled: false,
+        dailyLimit: 500,
+        trialBatchSize: 100,
+        cursorPath: 'pipeline/discovery/cursors/anilist_manga.json',
+      );
       final runner = ContractTestRunner(
-        channelId: 'anilist_animation',
-        config: config,
-        registryAnilistIds: const {},
+        channelId: 'anilist_manga',
+        config: anilistConfig,
+        registryExternalIds: const {},
       );
       final outcome = runner.processNode({
         'id': 101922,
@@ -61,56 +69,34 @@ void main() {
       expect(outcome, ContractNodeOutcome.policyRejected);
     });
 
-    test('registry anilist id counts as dedupe candidate', () {
+    test('registry wikidata id counts as dedupe candidate', () {
       final runner = ContractTestRunner(
-        channelId: 'anilist_animation',
+        channelId: 'wikidata_manga',
         config: config,
-        registryAnilistIds: {'1535'},
+        registryExternalIds: {'Q1048'},
       );
       final outcome = runner.processNode({
-        'id': 1535,
-        'format': 'TV',
-        'title': {'english': 'Death Note'},
-        'seasonYear': 2006,
+        'qid': 'Q1048',
+        'title': 'One Piece',
+        'releaseYear': 1997,
+        'category': 'manga',
       });
       expect(outcome, ContractNodeOutcome.dedupeCandidate);
     });
 
     test('missing title classified separately', () {
       final runner = ContractTestRunner(
-        channelId: 'anilist_animation',
+        channelId: 'wikidata_manga',
         config: config,
-        registryAnilistIds: const {},
+        registryExternalIds: const {},
       );
       final outcome = runner.processNode({
-        'id': 999,
-        'format': 'TV',
-        'title': {'english': '', 'romaji': ''},
-        'seasonYear': 2020,
+        'qid': 'Q999',
+        'title': '',
+        'releaseYear': 2020,
+        'category': 'manga',
       });
       expect(outcome, ContractNodeOutcome.missingTitle);
-    });
-
-    test('facts never contain forbidden keys from polluted API node', () {
-      final runner = ContractTestRunner(
-        channelId: 'anilist_animation',
-        config: config,
-        registryAnilistIds: const {},
-      );
-      final kpi = runner.runOnNodes([
-        {
-          'id': 1,
-          'format': 'TV',
-          'title': {'english': 'Clean Anime'},
-          'seasonYear': 2020,
-          'description': 'must be ignored',
-          'coverImage': {'large': 'https://example.com/x.jpg'},
-          'tags': [{'name': 'Action'}],
-        },
-      ]);
-      expect(kpi.policyRejected, 0);
-      expect(kpi.minimalCoreDrafts, 1);
-      expect(findForbiddenKeysInMap({'title': 'Clean Anime'}), isEmpty);
     });
   });
 }

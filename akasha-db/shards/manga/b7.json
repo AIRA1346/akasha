@@ -1,0 +1,20 @@
+{
+  "wk_000000414": {
+    "workId": "wk_000000414",
+    "title": "2.43: Seiin High School Boys Volleyball Team",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100256359"
+    },
+    "titles": {
+      "en": "2.43: Seiin High School Boys Volleyball Team",
+      "ja": "2.43 清陰高校男子バレー部"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

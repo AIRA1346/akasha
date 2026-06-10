@@ -20,5 +20,21 @@
     "legacyIds": [
       "sub_manga_barakamon_2009"
     ]
+  },
+  "wk_000000443": {
+    "workId": "wk_000000443",
+    "title": "Futari no Renai Shoka",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101084798"
+    },
+    "titles": {
+      "en": "Futari no Renai Shoka"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

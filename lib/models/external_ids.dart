@@ -32,6 +32,7 @@ class ExternalIds {
       if (id.isNotEmpty) merged[provider] = id;
     }
 
+    put('wikidata', extensions['wikidataId'] ?? extensions['wikidata']);
     put('anilist', extensions['anilistId'] ?? extensions['anilist']);
     put('steam', extensions['steamAppId'] ?? extensions['steam']);
     put('isbn', extensions['isbn']);

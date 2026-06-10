@@ -1,0 +1,21 @@
+{
+  "wk_000000419": {
+    "workId": "wk_000000419",
+    "title": "Bottom-tier Character Tomozaki",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100331978"
+    },
+    "titles": {
+      "en": "Bottom-tier Character Tomozaki",
+      "ja": "弱キャラ友崎くん"
+    },
+    "releaseYear": 2017,
+    "creator": "Yūki Yaku",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

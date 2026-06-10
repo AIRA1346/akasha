@@ -29,11 +29,12 @@ void main(List<String> args) async {
 
   final root = _findProjectRoot();
   final manifest = DiscoveryManifest.load(root);
-  final config = manifest.channel('anilist_animation');
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
+  final config = manifest.channel(channelId);
   if (config == null) exit(1);
 
-  print('anilist_removal_test — Independence gate');
-  print('  strip: externalIds.anilist + AniList ingest');
+  print('source_independence_test — Registry identity gate');
+  print('  channel: $channelId (no AniList ingest)');
   print('  5b: ON HOLD');
   print('');
 
@@ -46,6 +47,7 @@ void main(List<String> args) async {
   final pipeline = await runDiscoveryPipeline(
     projectRoot: root,
     nodes: nodes,
+    channelId: channelId,
   );
 
   if (pipeline.selected.isEmpty) {

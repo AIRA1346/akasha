@@ -3,7 +3,7 @@
 Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
 > **현재:** v4 해시 샤드, **430작** 엄선  
-> **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)  
+> **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)  
 > **마스터 정책:** [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 
 ## 빠른 시작
@@ -55,7 +55,7 @@ dart run tool/apply_catalog_contributions.dart --import path/to/bundle.json
 ## 중복·정체성
 
 - 동일 `externalIds`·유사 제목이 있으면 **새 workId 추가 전** 기존 항목 확인
-- 자세한 규칙: [docs/canonicalization-policy.md](../docs/canonicalization-policy.md)
+- 자세한 규칙: [docs/policy/canonicalization-policy.md](../docs/policy/canonicalization-policy.md)
 
 ## 저작권
 

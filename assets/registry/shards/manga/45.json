@@ -20,5 +20,24 @@
     "legacyIds": [
       "sub_manga_soul-eater_2004"
     ]
+  },
+  "wk_000000437": {
+    "workId": "wk_000000437",
+    "title": "Galaxy Angel",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101015670"
+    },
+    "titles": {
+      "en": "Galaxy Angel",
+      "ja": "ギャラクシーエンジェル"
+    },
+    "releaseYear": 2001,
+    "creator": "大月悠祐子",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

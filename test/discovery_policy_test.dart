@@ -6,6 +6,8 @@ import '../tool/discovery/anilist_facts.dart';
 import '../tool/discovery/discovery_types.dart';
 // ignore: avoid_relative_lib_imports
 import '../tool/discovery/signal_gate.dart';
+// ignore: avoid_relative_lib_imports
+import '../tool/discovery/wikidata_facts.dart';
 
 void main() {
   final sampleMedia = {
@@ -41,6 +43,47 @@ void main() {
       expect(json.containsKey('tags'), isFalse);
       expect(json.containsKey('popularity'), isFalse);
       expect(findForbiddenKeysInMap(json), isEmpty);
+    });
+
+    test('picks manga creator from staff role', () {
+      final facts = extractAnilistFacts({
+        'id': 1,
+        'format': 'MANGA',
+        'title': {'english': 'Test Manga'},
+        'startDate': {'year': 2020},
+        'staff': {
+          'edges': [
+            {
+              'role': 'Story & Art',
+              'node': {
+                'name': {'full': 'Test Mangaka'},
+              },
+            },
+          ],
+        },
+      });
+      expect(facts.creator, 'Test Mangaka');
+    });
+
+    test('wikidata node produces minimal core draft', () {
+      final signal = wikidataNodeToSignal(
+        channelId: 'wikidata_manga',
+        node: {
+          'qid': 'Q1048',
+          'title': 'One Piece',
+          'titles': {'en': 'One Piece', 'ja': 'ワンピース'},
+          'releaseYear': 1997,
+          'creator': 'Eiichiro Oda',
+          'category': 'manga',
+        },
+      );
+      final draft = signalToMinimalCoreDraft(
+        signal: signal,
+        workId: 'wk_000000001',
+      );
+      expect(draft['externalIds'], {'wikidata': 'Q1048'});
+      expect(draft['category'], 'manga');
+      expect(findForbiddenKeysInMap(draft), isEmpty);
     });
 
     test('format maps to category via signal', () {

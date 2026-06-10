@@ -46,5 +46,24 @@
     "extensions": {
       "coverageSprint03": "legacy_slug"
     }
+  },
+  "wk_000000424": {
+    "workId": "wk_000000424",
+    "title": "Superior",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1005239"
+    },
+    "titles": {
+      "en": "Superior",
+      "ja": "シューピアリア"
+    },
+    "releaseYear": 2004,
+    "creator": "Ichtys",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

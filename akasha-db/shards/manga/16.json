@@ -25,5 +25,22 @@
       "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
     }
+  },
+  "wk_000000428": {
+    "workId": "wk_000000428",
+    "title": "Puella Magi Madoka Magica",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100773077"
+    },
+    "titles": {
+      "en": "Puella Magi Madoka Magica",
+      "ja": "魔法少女まどか☆マギカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

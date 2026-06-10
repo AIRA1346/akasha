@@ -25,5 +25,22 @@
       "en": "Fire Force",
       "ko": "불꽃 소방대"
     }
+  },
+  "wk_000000445": {
+    "workId": "wk_000000445",
+    "title": "Kouza Animal Ethics",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101107846"
+    },
+    "titles": {
+      "en": "Kouza Animal Ethics",
+      "ja": "講座あにまるえしっくす"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

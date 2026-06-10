@@ -60,5 +60,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000468": {
+    "workId": "wk_000000468",
+    "title": "Ask Dr. Rin!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1014605"
+    },
+    "titles": {
+      "en": "Ask Dr. Rin!",
+      "ja": "Dr.リンにきいてみて!"
+    },
+    "creator": "Kiyoko Arai",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

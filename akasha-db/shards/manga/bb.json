@@ -1,0 +1,20 @@
+{
+  "wk_000000439": {
+    "workId": "wk_000000439",
+    "title": "Galaxy Angel 3rd",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101015944"
+    },
+    "titles": {
+      "en": "Galaxy Angel 3rd",
+      "ja": "ギャラクシーエンジェル3rd"
+    },
+    "creator": "Yūko Ōtsuki",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

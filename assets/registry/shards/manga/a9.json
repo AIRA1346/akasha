@@ -28,5 +28,24 @@
       "Dandadan",
       "ダンダダン"
     ]
+  },
+  "wk_000000423": {
+    "workId": "wk_000000423",
+    "title": "Rakka Ryūsui",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004281"
+    },
+    "titles": {
+      "en": "Rakka Ryūsui",
+      "ja": "落花流水"
+    },
+    "releaseYear": 2005,
+    "creator": "Ikki Sanada",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

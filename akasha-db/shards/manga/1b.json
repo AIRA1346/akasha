@@ -22,5 +22,24 @@
     "extensions": {
       "coverageSprint03": "legacy_slug"
     }
+  },
+  "wk_000000422": {
+    "workId": "wk_000000422",
+    "title": "Celestial Method",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100400879"
+    },
+    "titles": {
+      "en": "Celestial Method",
+      "ja": "天体のメソッド"
+    },
+    "releaseYear": 2014,
+    "creator": "Naoki Hisaya",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

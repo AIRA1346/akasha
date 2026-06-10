@@ -1,0 +1,21 @@
+{
+  "wk_000000434": {
+    "workId": "wk_000000434",
+    "title": "Kageki Shojo!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100957206"
+    },
+    "titles": {
+      "en": "Kageki Shojo!!",
+      "ja": "かげきしょうじょ!"
+    },
+    "releaseYear": 2012,
+    "creator": "Kumiko Saiki",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

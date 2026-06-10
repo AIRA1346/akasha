@@ -48,7 +48,7 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
   - 나의 서재 **테마·꾸미기** (배경, 진열 방식 등)
   - 비주얼 테마·서재 꾸미기 팩
   - 서포터 팩
-- **작품 구매·감상 (장기):** 플랫폼 제휴·웹결제 — Steam 수수료 회피 ([commerce-boundary.md](docs/commerce-boundary.md))
+- **작품 구매·감상 (장기):** 플랫폼 제휴·웹결제 — Steam 수수료 회피 ([commerce-boundary.md](docs/policy/commerce-boundary.md))
 
 나의 서재 **기본 뷰**(내 아카이브 모아 보기)는 무료로 제공합니다.
 
@@ -57,19 +57,19 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 ## 📚 글로벌 작품 사전 (akasha-db)
 
 > **최종 목표:** 세상의 모든 작품 사전 (IMDb + OpenLibrary급)  
-> **현재 단계:** 엄선 **430작** · **v4 운영 중** (`wk_` 영구 ID · 해시 샤드 · externalId G2 **50%**) — [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
+> **현재 단계:** **430작** → **G1 병행 확장** · v4 운영 — SD2.6 hold **해제** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md))
 
 | 항목 | 정책 |
 |------|------|
 | **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
 | **규모 목표** | 2026 ~430(v4) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
-| **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~E ✅) |
+| **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/archive/v4-migration-plan.md) Phase A~E ✅) |
 | **포스터** | **대시보드 서재 미표시** · 나만의 서재에서만 유저 Sanctum vault `poster:` / `posters/` 표시 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
 | **장기 확장** | **Registry Pipeline** (AI extract → dedupe → shard → Git) |
 | **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
-| **글로벌화** | `searchTokens` · [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
+| **글로벌화** | `searchTokens` · [locale-catalog-policy.md](docs/policy/locale-catalog-policy.md) |
 
 동기화 base URL:
 
@@ -203,10 +203,10 @@ Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 - [docs/product-vision.md](docs/product-vision.md) — **제품 북극성** (Fact index + Sanctum vault)
 - [ROADMAP.md](ROADMAP.md) — 마일스톤·백로그·구현 상태 (프로젝트 TODO)
 - [docs/akasha-db-policy.md](docs/akasha-db-policy.md) — **사전 구축·포스터·CI 마스터 정책**
-- [docs/akasha-db-implementation-plan.md](docs/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
+- [docs/archive/akasha-db-implementation-plan.md](docs/archive/akasha-db-implementation-plan.md) — 사전 구현 계획·진행 상태
 - [akasha-db/SCHEMA.md](akasha-db/SCHEMA.md) — 사전 v4 필드 규격 (`wk_`·해시 샤드)
 - [docs/project-status-snapshot.md](docs/project-status-snapshot.md) — Gate·Registry·프로그램 현황 스냅샷
-- [docs/locale-catalog-policy.md](docs/locale-catalog-policy.md) — 언어·작품명·검색 정책
-- [docs/commerce-boundary.md](docs/commerce-boundary.md) — Steam IAP vs 제휴 커머스
+- [docs/policy/locale-catalog-policy.md](docs/policy/locale-catalog-policy.md) — 언어·작품명·검색 정책
+- [docs/policy/commerce-boundary.md](docs/policy/commerce-boundary.md) — Steam IAP vs 제휴 커머스
 - [akasha-db/README.md](akasha-db/README.md) — 사전 기여·샤딩 규칙
 - `tool/ci_registry_check.dart` — 레지스트리·프랜차이즈·포스터 denylist CI

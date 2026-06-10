@@ -84,9 +84,11 @@ String _pickCreator(Map<String, dynamic> media) {
       for (final edge in edges) {
         if (edge is! Map) continue;
         final role = edge['role']?.toString().toLowerCase() ?? '';
-        if (!role.contains('director') && !role.contains('original')) {
-          continue;
-        }
+        final isCreatorRole = role.contains('director') ||
+            role.contains('original') ||
+            role.contains('story') ||
+            role.contains('art');
+        if (!isCreatorRole) continue;
         final node = edge['node'];
         if (node is Map) {
           final name = node['name']?['full']?.toString().trim() ?? '';

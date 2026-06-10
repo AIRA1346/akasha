@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print
-/// A5 Scale — SD2.6 hold 구간 정기 관측 (insert 없음).
+/// A5 Scale — 거버넌스·O8/O9/O12 정기 스냅샷 (insert 후에도 실행).
 ///
 /// O8 · O9 · O12 · O7(ja backlog) · coverage 스냅샷.
 ///
@@ -19,7 +19,7 @@ void main(List<String> args) {
   final root = _root();
   final sw = Stopwatch()..start();
 
-  print('=== Scale hold observation (SD2.6 — no insert) ===\n');
+  print('=== Scale governance observation (post-SD2.6) ===\n');
 
   final steps = <Map<String, dynamic>>[];
   var failed = false;
@@ -72,7 +72,7 @@ void main(List<String> args) {
 
   final report = {
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
-    'phase': 'SD2.6_hold',
+    'phase': 'continuous_growth',
     'insertAllowed': false,
     'works': manifest['entryCount'],
     'wallMsTotal': sw.elapsedMilliseconds,

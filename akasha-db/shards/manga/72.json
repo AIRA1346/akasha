@@ -20,5 +20,24 @@
     "legacyIds": [
       "sub_manga_mashle_2018"
     ]
+  },
+  "wk_000000452": {
+    "workId": "wk_000000452",
+    "title": "Usami-san wa Kamawaretai!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244580"
+    },
+    "titles": {
+      "en": "Usami-san wa Kamawaretai!",
+      "ja": "うさみさんは構われたい!"
+    },
+    "releaseYear": 2018,
+    "creator": "Shunsuke Hibaru",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

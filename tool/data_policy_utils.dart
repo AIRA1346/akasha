@@ -27,9 +27,25 @@ const allowedWorkTopLevelKeys = {
   'tags',
   'posterPath',
   'externalIds',
+  'wikidataRelations',
   'extensions',
   'qualitySignals',
 };
+
+/// Wikidata Q-id (`Q123`) · P-id (`P31`)
+final wikidataQidPattern = RegExp(r'^Q\d+$');
+final wikidataPropertyPattern = RegExp(r'^P\d+$');
+
+const allowedSeasonEntryKeys = {
+  'label',
+  'releaseYear',
+  'year',
+  'wikidata',
+  'seriesQid',
+  'episodes',
+};
+
+const allowedWikidataRelationKeys = {'p', 'target'};
 
 /// extensions 내 허용 키 (레거시·provenance)
 const allowedExtensionsKeys = {
@@ -46,6 +62,8 @@ const allowedExtensionsKeys = {
   'steamAppId',
   'mal',
   'malId',
+  'wikidata',
+  'wikidataId',
   'isbn',
   'igdb',
   'igdbId',
@@ -342,7 +360,76 @@ List<DataPolicyViolation> lintWorkEntry({
     );
   }
 
+  _lintWikidataSpineFields(work, add);
+
   return issues;
+}
+
+void _lintWikidataSpineFields(
+  Map<String, dynamic> work,
+  void Function(String rule, String detail) add,
+) {
+  final extIds = work['externalIds'];
+  if (extIds is Map) {
+    final wd = extIds['wikidata']?.toString().trim() ?? '';
+    if (wd.isNotEmpty && !wikidataQidPattern.hasMatch(wd)) {
+      add('wikidata_format', 'externalIds.wikidata invalid: "$wd"');
+    }
+  }
+
+  final relations = work['wikidataRelations'];
+  if (relations is List) {
+    for (var i = 0; i < relations.length; i++) {
+      final row = relations[i];
+      if (row is! Map) {
+        add('wikidata_relations', 'wikidataRelations[$i] must be object');
+        continue;
+      }
+      for (final key in row.keys) {
+        if (!allowedWikidataRelationKeys.contains(key.toString())) {
+          add('wikidata_relations', 'wikidataRelations[$i].$key not allowed');
+        }
+      }
+      final p = row['p']?.toString().trim() ?? '';
+      final target = row['target']?.toString().trim() ?? '';
+      if (p.isNotEmpty && !wikidataPropertyPattern.hasMatch(p)) {
+        add('wikidata_relations', 'wikidataRelations[$i].p invalid: "$p"');
+      }
+      if (target.isNotEmpty && !wikidataQidPattern.hasMatch(target)) {
+        add('wikidata_relations', 'wikidataRelations[$i].target invalid: "$target"');
+      }
+    }
+  }
+
+  final extensions = work['extensions'];
+  if (extensions is Map) {
+    final seasons = extensions['seasons'];
+    if (seasons is List) {
+      for (var i = 0; i < seasons.length; i++) {
+        final row = seasons[i];
+        if (row is! Map) {
+          add('wikidata_seasons', 'extensions.seasons[$i] must be object');
+          continue;
+        }
+        for (final key in row.keys) {
+          if (!allowedSeasonEntryKeys.contains(key.toString())) {
+            add('wikidata_seasons', 'extensions.seasons[$i].$key not allowed');
+          }
+        }
+        final q = row['wikidata']?.toString().trim() ?? '';
+        if (q.isNotEmpty && !wikidataQidPattern.hasMatch(q)) {
+          add('wikidata_seasons', 'extensions.seasons[$i].wikidata invalid: "$q"');
+        }
+        final seriesQ = row['seriesQid']?.toString().trim() ?? '';
+        if (seriesQ.isNotEmpty && !wikidataQidPattern.hasMatch(seriesQ)) {
+          add(
+            'wikidata_seasons',
+            'extensions.seasons[$i].seriesQid invalid: "$seriesQ"',
+          );
+        }
+      }
+    }
+  }
 }
 
 void _walkForbiddenKeys(

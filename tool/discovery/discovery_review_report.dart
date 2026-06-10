@@ -29,7 +29,7 @@ class DiscoveryReviewEntry {
   final String whyNew;
   final List<String> storedFields;
   final List<String> policyRisks;
-  final IdentityWithoutAnilist identityCheck;
+  final IdentityWithoutExternalSpine identityCheck;
   final SearchValueAssessment searchValue;
   final UserValueAssessment userValue;
 
@@ -46,28 +46,28 @@ class DiscoveryReviewEntry {
 
   Map<String, dynamic> toJson() => {
         'index': index,
-        'anilistId': item.externalId,
+        'sourceExternalId': item.externalId,
         'title': item.title,
         'shadowWorkId': item.shadowWorkId,
         'whyNew': whyNew,
         'storedFields': storedFields,
         'storedDraft': item.draft,
         'policyRisks': policyRisks,
-        'identityWithoutAnilist': identityCheck.toJson(),
+        'identityWithoutExternalSpine': identityCheck.toJson(),
         'searchValue': searchValue.toJson(),
         'userValue': userValue.toJson(),
       };
 }
 
-class IdentityWithoutAnilist {
+class IdentityWithoutExternalSpine {
   final bool akashaIdentitySufficient;
-  final Map<String, dynamic> draftWithoutAnilist;
+  final Map<String, dynamic> draftWithoutSpine;
   final List<String> retainedKeys;
   final List<String> notes;
 
-  const IdentityWithoutAnilist({
+  const IdentityWithoutExternalSpine({
     required this.akashaIdentitySufficient,
-    required this.draftWithoutAnilist,
+    required this.draftWithoutSpine,
     required this.retainedKeys,
     required this.notes,
   });
@@ -75,7 +75,7 @@ class IdentityWithoutAnilist {
   Map<String, dynamic> toJson() => {
         'akashaIdentitySufficient': akashaIdentitySufficient,
         'retainedKeys': retainedKeys,
-        'draftWithoutAnilist': draftWithoutAnilist,
+        'draftWithoutSpine': draftWithoutSpine,
         'notes': notes,
       };
 }
@@ -209,7 +209,7 @@ DiscoveryReviewEntry _reviewEntry({
       .toList()
     ..sort();
 
-  final identity = _assessIdentityWithoutAnilist(draft, workId);
+  final identity = _assessIdentityWithoutExternalSpine(draft, workId);
   final search = _assessSearchValue(draft, registry);
   final userValue = assessUserValue(
     draft: draft,
@@ -271,7 +271,7 @@ String _whyNew(Map<String, dynamic> draft, RegistrySnapshot registry) {
   return parts.join('; ');
 }
 
-IdentityWithoutAnilist _assessIdentityWithoutAnilist(
+IdentityWithoutExternalSpine _assessIdentityWithoutExternalSpine(
   Map<String, dynamic> draft,
   String workId,
 ) {
@@ -288,13 +288,13 @@ IdentityWithoutAnilist _assessIdentityWithoutAnilist(
   var sufficient = workId.startsWith('wk_') && title.isNotEmpty && category.isNotEmpty;
 
   if (year == null) {
-    notes.add('releaseYear 없음 — externalIds 제거 시 연도 식별 불가');
+    notes.add('releaseYear 없음 — wikidata spine 제거 시 연도 식별 불가');
     sufficient = sufficient && title.length >= 4;
   } else {
-    notes.add('releaseYear=$year — AniList 없이도 title+category+year로 식별 가능');
+    notes.add('releaseYear=$year — spine 없이도 title+category+year로 식별 가능');
   }
 
-  notes.add('canonical identity = $workId (AniList는 참조값만)');
+  notes.add('canonical identity = $workId (wikidata Q-id는 spine 참조만)');
 
   final nonMinimal = without.keys.where((k) => !minimalCoreFieldKeys.contains(k)).toList();
   if (nonMinimal.isNotEmpty) {
@@ -303,9 +303,9 @@ IdentityWithoutAnilist _assessIdentityWithoutAnilist(
     notes.add('저장 필드 = Minimal Core 수준 (description/poster/tags 없음)');
   }
 
-  return IdentityWithoutAnilist(
+  return IdentityWithoutExternalSpine(
     akashaIdentitySufficient: sufficient,
-    draftWithoutAnilist: without,
+    draftWithoutSpine: without,
     retainedKeys: without.keys.map((k) => k.toString()).toList()..sort(),
     notes: notes,
   );
@@ -411,7 +411,7 @@ String formatReviewReportMarkdown(DiscoveryReviewReport report) {
     buf.writeln();
     buf.writeln('| | |');
     buf.writeln('|--|--|');
-    buf.writeln('| anilist (참조) | `${s.item.externalId}` |');
+    buf.writeln('| wikidata (spine) | `${s.item.externalId}` |');
     buf.writeln('| shadow wk_ | `${s.item.shadowWorkId}` |');
     buf.writeln('| shard | `${s.item.targetShard}` |');
     buf.writeln('| qualityScore | ${s.item.qualityScore} (tier ${s.item.qualityTier}) |');
@@ -434,7 +434,7 @@ String formatReviewReportMarkdown(DiscoveryReviewReport report) {
       }
     }
     buf.writeln();
-    buf.writeln('### 4. AniList 제거 후 Registry 정체성');
+    buf.writeln('### 4. 외부 spine 제거 후 Registry 정체성');
     buf.writeln(
       '- akashaIdentitySufficient: **${s.identityCheck.akashaIdentitySufficient}**',
     );
@@ -444,7 +444,7 @@ String formatReviewReportMarkdown(DiscoveryReviewReport report) {
     buf.writeln('```json');
     buf.writeln(
       const JsonEncoder.withIndent('  ')
-          .convert(s.identityCheck.draftWithoutAnilist),
+          .convert(s.identityCheck.draftWithoutSpine),
     );
     buf.writeln('```');
     buf.writeln();
@@ -482,7 +482,7 @@ String formatReviewReportMarkdown(DiscoveryReviewReport report) {
   buf.writeln('## 검증 체크리스트 (수동)');
   buf.writeln();
   buf.writeln('1. [ ] 96건이 AKASHA에 **필요한** 신규 작품인가?');
-  buf.writeln('2. [ ] AniList 없이 `wk_`+title+category+year로 정체성 유지되는가?');
+  buf.writeln('2. [ ] wikidata spine 없이 `wk_`+title+category+year로 정체성 유지되는가?');
   buf.writeln('3. [ ] Minimal Core만으로 Registry 품질 기준을 만족하는가?');
   buf.writeln('4. [ ] 유저 검색 시 **가치 있는** 작품인가?');
   buf.writeln('5. [ ] 외부 DB 미러링이 아닌 **존재 신호 → Identity** 흐름인가?');
@@ -495,7 +495,7 @@ String formatReviewReportMarkdown(DiscoveryReviewReport report) {
   buf.writeln('- Manual Review + User Value **수동 확인** 후 진행');
   buf.writeln('- `dart run tool/discovery/registry_impact_test.dart --live`');
   buf.writeln('- 선정: Gap·Core·Franchise 축 5~10건 — **Coverage KPI 우선**');
-  buf.writeln('- `mergeCandidate` = 기존 `wk_`에 anilist **링크 후보** (신규 등록 아님)');
+  buf.writeln('- `mergeCandidate` = 기존 `wk_`에 wikidata **링크 후보** (신규 등록 아님)');
   buf.writeln();
   return buf.toString();
 }

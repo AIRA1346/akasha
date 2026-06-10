@@ -10,9 +10,10 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
 import 'discovery_manifest.dart';
+import 'discovery_source_fetch.dart';
 import 'registry_coverage_utils.dart';
 import 'registry_diff_compare.dart';
 import 'registry_diff_report.dart';
@@ -24,7 +25,7 @@ import 'shadow_write_runner.dart';
 void main(List<String> args) async {
   final offline = args.contains('--offline');
   final live = args.contains('--live');
-  final channelId = _argValue(args, '--channel') ?? 'anilist_animation';
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final outputPath =
       _argValue(args, '--output') ??
       'akasha-db/pipeline/artifacts/registry_diff_report.md';
@@ -59,10 +60,10 @@ void main(List<String> args) async {
   );
 
   final nodes = offline
-      ? _fixtures(config.trialBatchSize)
-      : await fetchAnilistAnimationBatch(
-          batchSize: config.trialBatchSize,
-          requiredCategory: config.category,
+      ? contractFixturesForChannel(config, config.trialBatchSize)
+      : await fetchDiscoveryBatch(
+          config: config,
+          projectRoot: root,
         );
 
   final registry = RegistrySnapshot.load(root);
@@ -139,24 +140,6 @@ void main(List<String> args) async {
   }
   print('\nOK: Registry Improvement (기술) — 다음: Product Value Review');
   print('  5b patch: ON HOLD (제품·정책 게이트)');
-}
-
-List<Map<String, dynamic>> _fixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 800000 + i;
-    return {
-      'id': id,
-      'format': 'TV',
-      'title': {'english': 'Diff Unique $id', 'romaji': 'Diff$id'},
-      'synonyms': ['DU-$id'],
-      'seasonYear': 1998,
-      'studios': {
-        'nodes': [
-          {'name': 'Diff Studio'},
-        ],
-      },
-    };
-  });
 }
 
 String? _argValue(List<String> args, String name) {

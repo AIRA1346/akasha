@@ -1,4 +1,4 @@
-/// Registry in-memory dedupe index (read-only, anilist externalIds).
+/// Registry in-memory dedupe index (read-only, externalIds by source).
 library;
 
 import 'dart:convert';
@@ -6,9 +6,11 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-/// `anilist` source → external id set (read-only snapshot).
-Set<String> loadRegistryAnilistIds(Directory projectRoot) {
+/// `externalIds.{source}` → id set (read-only snapshot).
+Set<String> loadRegistryExternalIds(Directory projectRoot, String source) {
   final ids = <String>{};
+  if (source.isEmpty) return ids;
+
   final shardsRoot = Directory(p.join(projectRoot.path, 'akasha-db', 'shards'));
   if (!shardsRoot.existsSync()) return ids;
 
@@ -22,9 +24,13 @@ Set<String> loadRegistryAnilistIds(Directory projectRoot) {
       final work = Map<String, dynamic>.from(entry.value as Map);
       final ext = work['externalIds'];
       if (ext is! Map) continue;
-      final anilist = ext['anilist']?.toString().trim() ?? '';
-      if (anilist.isNotEmpty) ids.add(anilist);
+      final value = ext[source]?.toString().trim() ?? '';
+      if (value.isNotEmpty) ids.add(value);
     }
   }
   return ids;
 }
+
+/// @deprecated AniList ingest removed — existing shard ids only.
+Set<String> loadRegistryAnilistIds(Directory projectRoot) =>
+    loadRegistryExternalIds(projectRoot, 'anilist');

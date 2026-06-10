@@ -13,14 +13,14 @@ import '../tool/discovery/shadow_write_runner.dart';
 
 void main() {
   const config = DiscoveryChannelConfig(
-    id: 'anilist_animation',
-    source: 'anilist',
-    category: 'animation',
+    id: 'wikidata_manga',
+    source: 'wikidata',
+    category: 'manga',
     domain: 'subculture',
     enabled: false,
     dailyLimit: 500,
     trialBatchSize: 100,
-    cursorPath: 'pipeline/discovery/cursors/anilist_animation.json',
+    cursorPath: 'pipeline/discovery/cursors/wikidata_manga.json',
   );
 
   RegistrySnapshot emptyRegistry() =>
@@ -52,7 +52,7 @@ void main() {
             'category': 'animation',
             'domain': 'subculture',
             'releaseYear': 2020,
-            'externalIds': {'anilist': '900001'},
+            'externalIds': {'wikidata': 'Q900001'},
           },
         ),
       ]);
@@ -66,14 +66,14 @@ void main() {
       expect(result.kpi.shadowPassed, isTrue);
     });
 
-    test('wouldMerge when anilist id already in registry', () {
+    test('wouldMerge when wikidata id already in registry', () {
       final registry = RegistrySnapshot.fromWorks([
         RegistryWorkEntry(
           workId: 'wk_000000010',
           title: 'Existing Anime',
           category: 'animation',
           releaseYear: 2010,
-          externalIds: {'anilist': '1535'},
+          externalIds: {'wikidata': 'Q1535'},
           legacyIds: const [],
           normalizedTitles: const {'existinganime'},
           work: const {
@@ -81,7 +81,7 @@ void main() {
             'title': 'Existing Anime',
             'category': 'animation',
             'domain': 'subculture',
-            'externalIds': {'anilist': '1535'},
+            'externalIds': {'wikidata': 'Q1535'},
           },
         ),
       ]);
@@ -89,7 +89,7 @@ void main() {
       final result = runner(registry: registry).run([
         ShadowDraftInput(
           contractOutcome: ContractNodeOutcome.minimalCoreDraft,
-          externalId: '1535',
+          externalId: 'Q1535',
           title: 'Death Note',
           draft: {
             'workId': 'wk_CONTRACT_DRAFT',
@@ -97,7 +97,7 @@ void main() {
             'category': 'animation',
             'domain': 'subculture',
             'releaseYear': 2006,
-            'externalIds': {'anilist': '1535'},
+            'externalIds': {'wikidata': 'Q1535'},
           },
         ),
       ]);
@@ -153,21 +153,17 @@ void main() {
 
     test('quality scores are not all tier 0-1 for minimal core batch', () {
       final contractRunner = ContractTestRunner(
-        channelId: 'anilist_animation',
+        channelId: 'wikidata_manga',
         config: config,
-        registryAnilistIds: const {},
+        registryExternalIds: const {},
       );
       final nodes = List.generate(10, (i) {
         return {
-          'id': 500000 + i,
-          'format': 'TV',
-          'title': {'english': 'Score Test $i'},
-          'seasonYear': 2015,
-          'studios': {
-            'nodes': [
-              {'name': 'Studio $i'},
-            ],
-          },
+          'qid': 'Q${500000 + i}',
+          'title': 'Score Test $i',
+          'releaseYear': 2015,
+          'creator': 'Mangaka $i',
+          'category': 'manga',
         };
       });
       final inputs = shadowInputsFromNodes(contractRunner, nodes);

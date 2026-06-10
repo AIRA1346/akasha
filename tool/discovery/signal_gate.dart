@@ -3,6 +3,7 @@ library;
 
 import 'anilist_facts.dart';
 import 'discovery_types.dart';
+import 'wikidata_facts.dart';
 
 /// Signal이 Registry Minimal Core 등록 조건을 만족하는지
 List<String> validateDiscoverySignal(DiscoverySignal signal) {
@@ -74,7 +75,34 @@ Map<String, dynamic> signalToMinimalCoreDraft({
   return draft;
 }
 
-/// AniList raw 노드 → DiscoverySignal (fetch 직후 1회, raw는 호출자가 폐기)
+/// Facts → DiscoverySignal (소스 무관).
+DiscoverySignal factsToSignal({
+  required String channelId,
+  required String source,
+  required String externalId,
+  required String category,
+  required DiscoveryFacts facts,
+  String domain = 'subculture',
+}) {
+  final signal = DiscoverySignal(
+    channelId: channelId,
+    source: source,
+    externalId: externalId,
+    category: category,
+    domain: domain,
+    facts: facts,
+    discoveredAt: DateTime.now().toUtc(),
+  );
+
+  final errors = validateDiscoverySignal(signal);
+  if (errors.isNotEmpty) {
+    throw StateError('discovery signal invalid: ${errors.join('; ')}');
+  }
+
+  return signal;
+}
+
+/// AniList raw 노드 → DiscoverySignal (레거시 테스트·기존 shard 해석용).
 DiscoverySignal anilistNodeToSignal({
   required String channelId,
   required Map<String, dynamic> media,
@@ -85,20 +113,32 @@ DiscoverySignal anilistNodeToSignal({
   final category = anilistFormatToCategory(format) ?? 'animation';
   final facts = extractAnilistFacts(media);
 
-  final signal = DiscoverySignal(
+  return factsToSignal(
     channelId: channelId,
     source: 'anilist',
     externalId: id,
     category: category,
     domain: domain,
     facts: facts,
-    discoveredAt: DateTime.now().toUtc(),
   );
+}
 
-  final errors = validateDiscoverySignal(signal);
-  if (errors.isNotEmpty) {
-    throw StateError('anilist signal invalid: ${errors.join('; ')}');
-  }
+/// Wikidata normalized node → DiscoverySignal.
+DiscoverySignal wikidataNodeToSignal({
+  required String channelId,
+  required Map<String, dynamic> node,
+  String domain = 'subculture',
+}) {
+  final qid = node['qid']?.toString().trim() ?? '';
+  final category = node['category']?.toString() ?? 'manga';
+  final facts = extractWikidataFacts(node);
 
-  return signal;
+  return factsToSignal(
+    channelId: channelId,
+    source: 'wikidata',
+    externalId: qid,
+    category: category,
+    domain: domain,
+    facts: facts,
+  );
 }

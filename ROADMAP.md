@@ -9,15 +9,17 @@
 
 **M1 기능 동결 ✅ → M-v4 데이터 아키텍처 ✅ (Phase E 포함, 2026-06-10) → M2 Steam 제출 준비 ← 현재 → M3 출시 (Q3)**
 
-### 병행 트랙 (2026-06-10 확정)
+### 병행 트랙 (2026-06-10 갱신 — SD2.6 **해제**)
 
 | 트랙 | 다음 작업 | 상태 |
 |------|-----------|------|
-| **제품 (M2)** | Steamworks 앱 등록 → 빌드 업로드 → 스토어 페이지 → IAP 등록 | **다음 마일스톤** |
-| **데이터 — A5 Scale** | SD2.6 hold (insert 중단 @430) · **O3 checkpoint 2026-07-09** | hold 관측 중 |
-| **데이터 — Sprint 05** | [후보 백로그](docs/sprint-05-candidate-backlog.md) — My Library UX·Search Quality 등 (우선순위 미확정) | 후보만 |
+| **제품 (M2)** | Steamworks 앱 등록 → 빌드 업로드 → 스토어 페이지 → IAP 등록 | **진행** |
+| **데이터 — Catalog G1** | [catalog-growth-charter](docs/programs/catalog-growth-charter.md) — Wikidata manga trial · Maintainer supply **병행** | **진행** |
+| **데이터 — 아키텍처** | insert마다 search_index·dedupe·O8 관측 — **전 작품 규모** 검증 | **병행** |
 
-externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/sprint-04-e1-resolution.md)) — Phase 2 Coverage 프로그램 완결.
+> **결정:** 430작은 Steam **서비스 수준 미달**. O3는 insert 스위치가 아니라 **텔레메트리**.
+
+externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/archive/sprint-04-e1-resolution.md)) — Phase 2 Coverage 프로그램 완결.
 
 ---
 
@@ -27,7 +29,8 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | **최종: 전 작품 사전** · 현재 **430작** · **v4 운영** (`wk_` 영구 ID·해시 샤드) |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 **430작** → **G1(~5k) 병행 확장** · v4 운영 |
+| 출시 전제 | 430 **고정 출시 아님** — 카탈로그 깊이·검색 가치 **동시 달성** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md)) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | **v1: Tier 1 미제공** — Sanctum vault만 ([data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)) |
 | Steam 모델 | 무료 + IAP (서재 꾸미기, 테마, 서포터 팩) |
@@ -86,7 +89,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 ### M-v4 — 데이터 아키텍처 v4 (Steam 출시 **게이트**)
 
-> 상세: [v4-migration-plan.md](docs/v4-migration-plan.md) · 설계: [data-architecture-redesign.md](docs/data-architecture-redesign.md)
+> 상세: [v4-migration-plan.md](docs/archive/v4-migration-plan.md) · 설계: [data-architecture-redesign.md](docs/strategy/data-architecture-redesign.md)
 
 - [x] **Phase A** — `assign_wk_ids.dart` + `id_registry.json` + `legacy_aliases`
 - [x] **Phase B** — `WorkIdCodec`·loader·볼트 `wk_` 해석
@@ -113,9 +116,9 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 | 기능 | 상태 | 메모 |
 |------|------|------|
-| **글로벌 i18n (UI)** | 스키마만 | `CatalogLocale` · ARB `ko`/`en` — [locale-catalog-policy.md](docs/locale-catalog-policy.md) |
+| **글로벌 i18n (UI)** | 스키마만 | `CatalogLocale` · ARB `ko`/`en` — [locale-catalog-policy.md](docs/policy/locale-catalog-policy.md) |
 | **다국어 카탈로그** | v3 스키마 ✅ | `titles`/`aliases`/`searchTokens` · 샤드 마이그레이션 `migrate_registry_v3` |
-| **제휴 커머스** | entitlement 분리 ✅ | cosmetic(Steam) vs content(제휴) — [commerce-boundary.md](docs/commerce-boundary.md) |
+| **제휴 커머스** | entitlement 분리 ✅ | cosmetic(Steam) vs content(제휴) — [commerce-boundary.md](docs/policy/commerce-boundary.md) |
 | 오늘의 회상 카드 | 코드 있음 | v1에서 제외, v1.1에 스토어 노출 |
 | 타임라인 / 완성 캘린더 | 미구현 | 철학 2번 축 |
 | 취향 기반 추천 (Discover) | 미구현 | 철학 3번 축, 규칙 기반 MVP 설계됨 |
@@ -127,8 +130,8 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 ## 데이터·인프라 백로그
 
-> **Steam 게이트:** [v4-migration-plan.md](docs/v4-migration-plan.md) Phase A~D  
-> **비전:** [data-architecture-redesign.md](docs/data-architecture-redesign.md)
+> **Steam 게이트:** [v4-migration-plan.md](docs/archive/v4-migration-plan.md) Phase A~D  
+> **비전:** [data-architecture-redesign.md](docs/strategy/data-architecture-redesign.md)
 
 ### Steam 전 (v4 게이트) ✅
 
@@ -140,7 +143,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 ### Steam 후 — 카탈로그 운영 (우선순위 상단)
 
-> 상세: [docs/catalog-contribution-roadmap.md](docs/catalog-contribution-roadmap.md)  
+> 상세: [docs/policy/catalog-contribution-roadmap.md](docs/policy/catalog-contribution-roadmap.md)  
 > **장기:** 유저 Contribution = **보조** · **Catalog Expansion Pipeline** = 주력 (작품 확보 속도)
 
 **확정 구현 순서:** ① status → ② contribution 커밋 → ③ add/fix 분리 → ④ AI validation → ⑤ catalog expansion
@@ -157,32 +160,32 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/spri
 
 ### Steam 후 — 인프라·확장
 
-> **Registry Stress Review (선행 게이트):** Discovery 확장 전 Registry 그릇 검증 — [docs/registry-scaling-review.md](docs/registry-scaling-review.md)
-> **Bottleneck Validation:** ✅ search_index = 첫 병목 (실측) — [docs/registry-bottleneck-validation-report.md](docs/registry-bottleneck-validation-report.md)
-> **Search Index Validation:** ✅ 10k/100k/300k/1M synthetic — [docs/search-index-validation-plan.md](docs/search-index-validation-plan.md)
-> **Architecture Options:** ✅ 후보 비교 — [docs/search-index-architecture-options.md](docs/search-index-architecture-options.md)
-> **Search Workload Profile:** ✅ 가정 v0 — [docs/search-workload-profile.md](docs/search-workload-profile.md)
-> **SW1 Global Search Validation:** 🔶 계획·스위트 ✅ — [docs/global-search-validation-plan.md](docs/global-search-validation-plan.md)
-> **URV Universal Registry Validation:** 🔶 계획 ✅ — [docs/universal-registry-validation.md](docs/universal-registry-validation.md)
-> **Registry Growth Strategy:** ✅ — [docs/registry-growth-strategy.md](docs/registry-growth-strategy.md)
-> **Contribution Model Strategy:** ✅ — [docs/contribution-model-strategy.md](docs/contribution-model-strategy.md)
-> **Baseline v1 (고정):** ✅ ADR-001~006·SW1·URV·Growth·Contribution — [docs/baseline-v1.md](docs/baseline-v1.md)
-> **5k Risk Analysis:** ✅ Top3=수집·dedupe·alias — [docs/scale-5k-risk-analysis.md](docs/scale-5k-risk-analysis.md)
+> **Registry Stress Review (선행 게이트):** Discovery 확장 전 Registry 그릇 검증 — [docs/validation/registry-scaling-review.md](docs/validation/registry-scaling-review.md)
+> **Bottleneck Validation:** ✅ search_index = 첫 병목 (실측) — [docs/validation/registry-bottleneck-validation-report.md](docs/validation/registry-bottleneck-validation-report.md)
+> **Search Index Validation:** ✅ 10k/100k/300k/1M synthetic — [docs/validation/search-index-validation-plan.md](docs/validation/search-index-validation-plan.md)
+> **Architecture Options:** ✅ 후보 비교 — [docs/validation/search-index-architecture-options.md](docs/validation/search-index-architecture-options.md)
+> **Search Workload Profile:** ✅ 가정 v0 — [docs/validation/search-workload-profile.md](docs/validation/search-workload-profile.md)
+> **SW1 Global Search Validation:** 🔶 계획·스위트 ✅ — [docs/validation/global-search-validation-plan.md](docs/validation/global-search-validation-plan.md)
+> **URV Universal Registry Validation:** 🔶 계획 ✅ — [docs/validation/universal-registry-validation.md](docs/validation/universal-registry-validation.md)
+> **Registry Growth Strategy:** ✅ — [docs/strategy/registry-growth-strategy.md](docs/strategy/registry-growth-strategy.md)
+> **Contribution Model Strategy:** ✅ — [docs/policy/contribution-model-strategy.md](docs/policy/contribution-model-strategy.md)
+> **Baseline v1 (고정):** ✅ ADR-001~006·SW1·URV·Growth·Contribution — [docs/strategy/baseline-v1.md](docs/strategy/baseline-v1.md)
+> **5k Risk Analysis:** ✅ Top3=수집·dedupe·alias — [docs/validation/scale-5k-risk-analysis.md](docs/validation/scale-5k-risk-analysis.md)
 > **Search Index Refactor:** ⏸ SW1 게이트 + POC + ADR 전까지 보류
 
 - [x] **[Validation P0] Search Index Bottleneck** — 파일·메모리·parse·latency 실측
 - [x] **[Validation P0b] Architecture Options** — 후보 비교 문서
 - [x] **[Validation P0c] Search Workload Profile** — 유형·비율 가정 v0
-- [x] **[Validation P1] SW1 Global Search Validation** — 계획·쿼리 스위트 95건·recall 기준 ([global-search-validation-plan.md](docs/global-search-validation-plan.md))
-- [x] **[Validation P1] URV Universal Registry Validation** — Work/Franchise·canonical·alias·series·dedupe ([universal-registry-validation.md](docs/universal-registry-validation.md))
-- [x] **[Baseline v1 고정]** ADR-001~006·SW1·URV·Growth·Contribution ([docs/baseline-v1.md](docs/baseline-v1.md))
+- [x] **[Validation P1] SW1 Global Search Validation** — 계획·쿼리 스위트 95건·recall 기준 ([global-search-validation-plan.md](docs/validation/global-search-validation-plan.md))
+- [x] **[Validation P1] URV Universal Registry Validation** — Work/Franchise·canonical·alias·series·dedupe ([universal-registry-validation.md](docs/validation/universal-registry-validation.md))
+- [x] **[Baseline v1 고정]** ADR-001~006·SW1·URV·Growth·Contribution ([docs/strategy/baseline-v1.md](docs/strategy/baseline-v1.md))
 - [x] **[Validation P1] ADR-001 Dual-layer** — Work + Franchise 승인 ([docs/adr/ADR-001-dual-layer-entity-model.md](docs/adr/ADR-001-dual-layer-entity-model.md))
 - [x] **[Validation P1] ADR-006 Franchise 계층** — F1·depth≤3·IP 1카드 **승인** ([ADR-006](docs/adr/ADR-006-franchise-boundary-hierarchy.md))
 - [x] **[Validation P1] ADR-005 최소 기록 단위** — 비음악 매체 승인 ([ADR-005](docs/adr/ADR-005-minimum-recordable-unit.md))
 - [ ] **[Validation P1] ADR-002 A/B 결정** — B안(곡=Work) 가중 · 음악 도입 전 확정 ([ADR-002](docs/adr/ADR-002-music-registry-model.md))
 - [ ] **[Validation P1] URV-A 402 baseline** — 정체성·관계·dedupe 수동 실행
 - [ ] **[Validation P1] SW1-A 402 baseline** — recall@10/@20 수동 실행
-- [ ] **[Validation P1] 5k 시뮬레이션 SIM-A/B/C** — 수집·dedupe·alias Top3 ([scale-5k-risk-analysis.md](docs/scale-5k-risk-analysis.md))
+- [ ] **[Validation P1] 5k 시뮬레이션 SIM-A/B/C** — 수집·dedupe·alias Top3 ([scale-5k-risk-analysis.md](docs/validation/scale-5k-risk-analysis.md))
 - [ ] **[Validation P1] Architecture Options POC** — Workload 기준 · A / B / E1 벤치
 - [ ] **[Validation P1] shardBits 임계 실측** — 8/12/14 bits별 shard당 작품 수·로드 비용 비교
 - [ ] **[Validation P1] quality 재빌드 실측** — 전량 rebuild vs 증분

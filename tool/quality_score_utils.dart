@@ -76,6 +76,8 @@ bool _hasExternalId(Map<String, dynamic> work) {
   final extensions = work['extensions'];
   if (extensions is Map) {
     for (final key in [
+      'wikidata',
+      'wikidataId',
       'anilist',
       'anilistId',
       'tmdb',

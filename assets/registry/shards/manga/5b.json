@@ -25,5 +25,23 @@
       "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
     }
+  },
+  "wk_000000453": {
+    "workId": "wk_000000453",
+    "title": "Hitomi-chan wa Hito Mishiri",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244593"
+    },
+    "titles": {
+      "en": "Hitomi-chan wa Hito Mishiri",
+      "ja": "瞳ちゃんは人見知り"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

@@ -25,5 +25,22 @@
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
     }
+  },
+  "wk_000000469": {
+    "workId": "wk_000000469",
+    "title": "AIKa TRIAL 0",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101530460"
+    },
+    "titles": {
+      "en": "AIKa TRIAL 0"
+    },
+    "creator": "Ayumi Konomichi",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

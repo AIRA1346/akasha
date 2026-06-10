@@ -119,7 +119,7 @@ class ShadowWriteRunner {
             outcome: ShadowWriteOutcome.wouldMerge,
             externalId: input.externalId,
             title: input.title,
-            reason: 'contract:anilist_already_in_registry',
+            reason: 'contract:external_id_already_in_registry',
           ),
         );
         continue;

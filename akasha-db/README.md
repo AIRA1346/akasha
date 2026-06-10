@@ -3,7 +3,7 @@
 AKASHA 앱의 **글로벌 작품 메타데이터 사전** (Tier 1 Registry).
 
 **현재:** Steam v1 엄선 **430작** · **v4** — `wk_` 영구 ID · 해시 샤드 (351개)  
-**장기:** 세상의 모든 작품 사전 — [docs/data-architecture-redesign.md](../docs/data-architecture-redesign.md)
+**장기:** 세상의 모든 작품 사전 — [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)
 
 ## 구조 (v4 — 해시 샤딩)
 
@@ -44,4 +44,4 @@ dart run tool/registry_builder.dart --sync-assets
 dart run tool/ci_registry_check.dart
 ```
 
-[CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md) · [canonicalization-policy.md](../docs/canonicalization-policy.md)
+[CONTRIBUTING.md](CONTRIBUTING.md) · [POSTER_POLICY.md](POSTER_POLICY.md) · [canonicalization-policy.md](../docs/policy/canonicalization-policy.md)

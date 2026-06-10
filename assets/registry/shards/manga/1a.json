@@ -1,0 +1,38 @@
+{
+  "wk_000000415": {
+    "workId": "wk_000000415",
+    "title": "Karakuri Circus",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002695"
+    },
+    "titles": {
+      "en": "Karakuri Circus",
+      "ja": "からくりサーカス"
+    },
+    "creator": "Kazuhiro Fujita",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000416": {
+    "workId": "wk_000000416",
+    "title": "Haifuri",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100271377"
+    },
+    "titles": {
+      "en": "Haifuri",
+      "ja": "はいふり"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

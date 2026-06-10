@@ -13,8 +13,9 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
+import 'discovery_source_fetch.dart';
 import 'discovery_manifest.dart';
 import 'shadow_write_kpi.dart';
 import 'shadow_write_runner.dart';
@@ -22,18 +23,14 @@ import 'shadow_write_runner.dart';
 void main(List<String> args) async {
   final offline = args.contains('--offline');
   final live = args.contains('--live');
-  final channelId = _argValue(args, '--channel') ?? 'anilist_animation';
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
 
   if (!offline && !live) {
     stderr.writeln(
-      'Usage: dart run tool/discovery/shadow_write.dart --offline | --live',
+      'Usage: dart run tool/discovery/shadow_write.dart --offline | --live '
+      '[--channel wikidata_manga]',
     );
     exit(64);
-  }
-
-  if (channelId != 'anilist_animation') {
-    stderr.writeln('ERROR: shadow write supports anilist_animation only');
-    exit(1);
   }
 
   final root = _findProjectRoot();
@@ -59,12 +56,14 @@ void main(List<String> args) async {
 
   final List<Map<String, dynamic>> nodes;
   if (offline) {
-    nodes = _contractFixtures(config.trialBatchSize);
+    nodes = contractFixturesForChannel(config, config.trialBatchSize);
   } else {
-    print('fetching AniList (${config.trialBatchSize} animation nodes)...');
-    nodes = await fetchAnilistAnimationBatch(
-      batchSize: config.trialBatchSize,
-      requiredCategory: config.category,
+    print(
+      'fetching ${config.source} (${config.trialBatchSize} ${config.category} nodes)...',
+    );
+    nodes = await fetchDiscoveryBatch(
+      config: config,
+      projectRoot: root,
     );
   }
 
@@ -78,7 +77,9 @@ void main(List<String> args) async {
     var shown = 0;
     for (final item in result.items) {
       if (item.outcome != ShadowWriteOutcome.mergeCandidate) continue;
-      print('  - anilist:${item.externalId} ${item.title} → ${item.matchedWorkId}');
+      print(
+        '  - ${config.source}:${item.externalId} ${item.title} → ${item.matchedWorkId}',
+      );
       if (++shown >= 5) break;
     }
   }
@@ -88,7 +89,7 @@ void main(List<String> args) async {
     var shown = 0;
     for (final item in result.items) {
       if (item.outcome != ShadowWriteOutcome.wouldReject) continue;
-      print('  - anilist:${item.externalId} ${item.title}');
+      print('  - ${config.source}:${item.externalId} ${item.title}');
       print('    reason: ${item.reason}');
       if (++shown >= 5) break;
     }
@@ -100,7 +101,7 @@ void main(List<String> args) async {
     for (final item in result.items) {
       if (item.outcome != ShadowWriteOutcome.wouldCreate) continue;
       print(
-        '  - ${item.shadowWorkId} anilist:${item.externalId} '
+        '  - ${item.shadowWorkId} ${config.source}:${item.externalId} '
         'score=${item.qualityScore} tier=${item.qualityTier} '
         'shard=${item.targetShard}',
       );
@@ -135,26 +136,6 @@ void _printKpi(ShadowWriteKpi kpi) {
   print('  registrySimulation: ${kpi.registrySimulation.durationMs}ms '
       '${kpi.registrySimulation.existingEntryCount} → '
       '${kpi.registrySimulation.projectedEntryCount} entries');
-}
-
-List<Map<String, dynamic>> _contractFixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 400000 + i;
-    return {
-      'id': id,
-      'format': 'TV',
-      'title': {
-        'english': 'Shadow Fixture $id',
-        'romaji': 'Shadow Fixture $id',
-      },
-      'seasonYear': 2000 + (i % 25),
-      'studios': {
-        'nodes': [
-          {'name': 'Shadow Studio'},
-        ],
-      },
-    };
-  });
 }
 
 String? _argValue(List<String> args, String name) {

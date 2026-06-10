@@ -48,5 +48,24 @@
     "legacyIds": [
       "sub_manga_frieren_2020"
     ]
+  },
+  "wk_000000459": {
+    "workId": "wk_000000459",
+    "title": "Bestiarius",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101247262"
+    },
+    "titles": {
+      "en": "Bestiarius",
+      "ja": "闘獣士 ベスティアリウス"
+    },
+    "releaseYear": 2011,
+    "creator": "Masasumi Kakizaki",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

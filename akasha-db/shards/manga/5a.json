@@ -77,5 +77,23 @@
     "legacyIds": [
       "sub_manga_rent-a-girlfriend_2017"
     ]
+  },
+  "wk_000000431": {
+    "workId": "wk_000000431",
+    "title": "Blassreiter: Genetic",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100821716"
+    },
+    "titles": {
+      "en": "Blassreiter: Genetic",
+      "ja": "BLASSREITER -genetic-"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

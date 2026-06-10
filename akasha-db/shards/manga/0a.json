@@ -1,0 +1,21 @@
+{
+  "wk_000000436": {
+    "workId": "wk_000000436",
+    "title": "Captain Earth",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101001288"
+    },
+    "titles": {
+      "en": "Captain Earth",
+      "ja": "キャプテン・アース"
+    },
+    "releaseYear": 2014,
+    "creator": "Hiroshi Nakanishi",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

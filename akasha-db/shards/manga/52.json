@@ -1,0 +1,21 @@
+{
+  "wk_000000435": {
+    "workId": "wk_000000435",
+    "title": "Attack No. 1",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100996676"
+    },
+    "titles": {
+      "en": "Attack No. 1",
+      "ja": "アタックNo.1"
+    },
+    "releaseYear": 1968,
+    "creator": "Chikako Urano",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

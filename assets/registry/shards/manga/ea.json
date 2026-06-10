@@ -25,5 +25,22 @@
       "en": "Quintessential Quintuplets",
       "ko": "5등분의 신부"
     }
+  },
+  "wk_000000456": {
+    "workId": "wk_000000456",
+    "title": "I Can't Say No to the Lonely Girl",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244815"
+    },
+    "titles": {
+      "en": "I Can't Say No to the Lonely Girl",
+      "ja": "ロンリーガールに逆らえない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
   }
 }

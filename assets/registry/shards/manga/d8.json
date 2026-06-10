@@ -1,0 +1,21 @@
+{
+  "wk_000000427": {
+    "workId": "wk_000000427",
+    "title": "Our Last Crusade or the Rise of a New World",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100770689"
+    },
+    "titles": {
+      "en": "Our Last Crusade or the Rise of a New World",
+      "ja": "キミと僕の最後の戦場、あるいは世界が始まる聖戦"
+    },
+    "releaseYear": 2018,
+    "creator": "Kei Sazane",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

@@ -1,16 +1,18 @@
-/// Discovery Contract Test Runner — AniList → Facts → Signal Gate → Minimal Core.
+/// Discovery Contract Test Runner — Source → Facts → Signal Gate → Minimal Core.
 ///
 /// Raw JSON·candidate·Registry 쓰기 금지. KPI만 반환.
 library;
 
 import 'dart:io';
 
-import 'anilist_client.dart';
 import 'anilist_facts.dart';
 import 'discovery_contract_kpi.dart';
+import 'discovery_source_fetch.dart';
 import 'discovery_types.dart';
 import 'registry_dedupe_index.dart';
 import 'signal_gate.dart';
+import 'wikidata_facts.dart';
+import 'wikidata_q_validation.dart';
 
 const contractDraftWorkId = 'wk_CONTRACT_DRAFT';
 
@@ -26,12 +28,12 @@ enum ContractNodeOutcome {
 class ContractTestRunner {
   final String channelId;
   final DiscoveryChannelConfig config;
-  final Set<String> registryAnilistIds;
+  final Set<String> registryExternalIds;
 
   const ContractTestRunner({
     required this.channelId,
     required this.config,
-    required this.registryAnilistIds,
+    required this.registryExternalIds,
   });
 
   factory ContractTestRunner.fromProject({
@@ -42,11 +44,12 @@ class ContractTestRunner {
     return ContractTestRunner(
       channelId: channelId,
       config: config,
-      registryAnilistIds: loadRegistryAnilistIds(projectRoot),
+      registryExternalIds:
+          loadRegistryExternalIds(projectRoot, config.source),
     );
   }
 
-  /// GraphQL fetch 없이 노드 목록으로 계약 검증 (CI·오프라인).
+  /// Fetch 없이 노드 목록으로 계약 검증 (CI·오프라인).
   DiscoveryContractKpi runOnNodes(List<Map<String, dynamic>> nodes) {
     var policyRejected = 0;
     var dedupeCandidates = 0;
@@ -79,84 +82,130 @@ class ContractTestRunner {
     );
   }
 
-  /// AniList HTTP → in-memory pipeline. 디스크 쓰기 없음.
+  /// HTTP fetch → in-memory pipeline. 디스크 쓰기 없음.
   Future<DiscoveryContractKpi> runLive({
     int? batchSize,
+    Directory? projectRoot,
     HttpClient? httpClient,
     Future<List<Map<String, dynamic>>> Function({
-      required int batchSize,
-      String requiredCategory,
+      required DiscoveryChannelConfig config,
+      Directory? projectRoot,
+      int? offset,
       HttpClient? client,
     })? fetchBatch,
   }) async {
     final size = batchSize ?? config.trialBatchSize;
-    final fetcher = fetchBatch ?? fetchAnilistAnimationBatch;
+    final sizedConfig = DiscoveryChannelConfig(
+      id: config.id,
+      source: config.source,
+      category: config.category,
+      domain: config.domain,
+      enabled: config.enabled,
+      dailyLimit: config.dailyLimit,
+      trialBatchSize: size,
+      cursorPath: config.cursorPath,
+    );
+    final fetcher = fetchBatch ?? fetchDiscoveryBatch;
     final nodes = await fetcher(
-      batchSize: size,
-      requiredCategory: config.category,
+      config: sizedConfig,
+      projectRoot: projectRoot,
       client: httpClient,
     );
     return runOnNodes(nodes);
   }
 
-  ContractNodeOutcome processNode(Map<String, dynamic> media) {
-    return classifyNode(media).outcome;
+  ContractNodeOutcome processNode(Map<String, dynamic> node) {
+    return classifyNode(node).outcome;
   }
 
-  ContractNodeRecord classifyNode(Map<String, dynamic> media) {
-    final externalId = media['id']?.toString().trim() ?? '';
-    final format = media['format']?.toString();
-    final category = anilistFormatToCategory(format);
+  ContractNodeRecord classifyNode(Map<String, dynamic> node) {
+    if (config.source == 'anilist') {
+      return const ContractNodeRecord(
+        outcome: ContractNodeOutcome.policyRejected,
+        externalId: '',
+      );
+    }
+    if (config.source == 'wikidata') {
+      return _classifyWikidata(node);
+    }
+    return ContractNodeRecord(
+      outcome: ContractNodeOutcome.policyRejected,
+      externalId: node['qid']?.toString() ?? node['id']?.toString() ?? '',
+    );
+  }
 
-    if (category != config.category) {
+  ContractNodeRecord _classifyWikidata(Map<String, dynamic> node) {
+    final qid = node['qid']?.toString().trim() ?? '';
+    final nodeCategory = node['category']?.toString() ?? config.category;
+
+    if (nodeCategory != config.category) {
       return ContractNodeRecord(
         outcome: ContractNodeOutcome.policyRejected,
-        externalId: externalId,
+        externalId: qid,
       );
     }
 
-    final facts = extractAnilistFacts(media);
+    final p31Raw = node['entityP31'];
+    final p31Set = p31Raw is List
+        ? p31Raw.map((e) => e.toString()).toSet()
+        : (p31Raw?.toString().trim().isNotEmpty == true
+            ? {p31Raw.toString()}
+            : null);
+
+    // V4 (registry duplicate Q)는 아래 dedupeCandidate 분기에서 처리 — 여기서 BLOCK 하지 않음
+    final qValidation = validateWikidataQidForIngest(
+      qid: qid,
+      category: config.category,
+      title: node['title']?.toString() ?? '',
+      entityP31Qids: p31Set,
+      entityEnLabel: node['entityEnLabel']?.toString(),
+    );
+    if (qValidation.verdict == WikidataQValidationVerdict.block) {
+      return ContractNodeRecord(
+        outcome: ContractNodeOutcome.policyRejected,
+        externalId: qid,
+        title: node['title']?.toString() ?? '',
+      );
+    }
+
+    final facts = extractWikidataFacts(node);
     final factsJson = facts.toJson();
     if (findForbiddenKeysInMap(factsJson).isNotEmpty) {
       return ContractNodeRecord(
         outcome: ContractNodeOutcome.policyRejected,
-        externalId: externalId,
+        externalId: qid,
       );
     }
 
     if (facts.title.isEmpty) {
       return ContractNodeRecord(
         outcome: ContractNodeOutcome.missingTitle,
-        externalId: externalId,
+        externalId: qid,
       );
     }
 
     final hasYear = facts.releaseYear != null;
-    final hasExternal = externalId.isNotEmpty;
+    final hasExternal = qid.isNotEmpty;
     if (!hasYear && !hasExternal) {
       return ContractNodeRecord(
         outcome: ContractNodeOutcome.missingYearOrExternalId,
-        externalId: externalId,
+        externalId: qid,
         title: facts.title,
       );
     }
 
     try {
-      final signal = DiscoverySignal(
+      final signal = wikidataNodeToSignal(
         channelId: channelId,
-        source: 'anilist',
-        externalId: externalId,
-        category: category!,
+        node: node,
         domain: config.domain,
-        facts: facts,
-        discoveredAt: DateTime.now().toUtc(),
       );
 
       final gateErrors = validateDiscoverySignal(signal);
       if (gateErrors.isNotEmpty) {
         return ContractNodeRecord(
           outcome: ContractNodeOutcome.policyRejected,
-          externalId: externalId,
+          externalId: qid,
           title: facts.title,
         );
       }
@@ -168,18 +217,18 @@ class ContractTestRunner {
       if (findForbiddenKeysInMap(draft).isNotEmpty) {
         return ContractNodeRecord(
           outcome: ContractNodeOutcome.policyRejected,
-          externalId: externalId,
+          externalId: qid,
           title: facts.title,
         );
       }
 
-      final outcome = registryAnilistIds.contains(externalId)
+      final outcome = registryExternalIds.contains(qid)
           ? ContractNodeOutcome.dedupeCandidate
           : ContractNodeOutcome.minimalCoreDraft;
 
       return ContractNodeRecord(
         outcome: outcome,
-        externalId: externalId,
+        externalId: qid,
         title: facts.title,
         draft: draft,
         signal: signal,
@@ -187,13 +236,13 @@ class ContractTestRunner {
     } catch (_) {
       return ContractNodeRecord(
         outcome: ContractNodeOutcome.policyRejected,
-        externalId: externalId,
+        externalId: qid,
       );
     }
   }
 
-  DiscoverySignal buildSignal(Map<String, dynamic> media) {
-    final record = classifyNode(media);
+  DiscoverySignal buildSignal(Map<String, dynamic> node) {
+    final record = classifyNode(node);
     if (record.signal == null) {
       throw StateError('cannot build signal: ${record.outcome.name}');
     }

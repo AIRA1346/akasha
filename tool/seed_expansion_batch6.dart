@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 /// Batch 6: AM2 애니·만화 엄선 추가 (+40작 목표)
-/// Policy: [docs/catalog-expansion-plan.md](../docs/catalog-expansion-plan.md)
+/// Policy: [docs/catalog-expansion-plan.md](../docs/archive/catalog-expansion-plan.md)
 ///
 /// Usage:
 ///   dart run tool/seed_expansion_batch6.dart --fetch-posters --apply

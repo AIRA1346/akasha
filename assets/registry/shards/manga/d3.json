@@ -1,0 +1,20 @@
+{
+  "wk_000000444": {
+    "workId": "wk_000000444",
+    "title": "A Terrified Teacher at Ghoul School!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101100537"
+    },
+    "titles": {
+      "en": "A Terrified Teacher at Ghoul School!",
+      "ja": "妖怪学校の先生はじめました!"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

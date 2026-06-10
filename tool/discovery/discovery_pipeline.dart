@@ -3,8 +3,9 @@ library;
 
 import 'dart:io';
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
+import 'discovery_source_fetch.dart';
 import 'discovery_manifest.dart';
 import 'discovery_types.dart';
 import 'registry_coverage_utils.dart';
@@ -39,7 +40,7 @@ Future<DiscoveryPipelineResult> runDiscoveryPipeline({
   required List<Map<String, dynamic>> nodes,
   int minSelect = 5,
   int maxSelect = 10,
-  String channelId = 'anilist_animation',
+  String channelId = 'wikidata_manga',
 }) async {
   final manifest = DiscoveryManifest.load(projectRoot);
   final config = manifest.channel(channelId);
@@ -111,24 +112,18 @@ Future<List<Map<String, dynamic>>> fetchPipelineNodes({
   required int fixtureOffset,
 }) async {
   if (offline) {
-    return List.generate(config.trialBatchSize, (i) {
-      final id = fixtureOffset + i;
-      return {
-        'id': id,
-        'format': 'TV',
-        'title': {'english': 'Pipeline Fixture $id', 'romaji': 'PF$id'},
-        'synonyms': ['PF-$id'],
-        'seasonYear': 1998 + (i % 25),
-        'studios': {
-          'nodes': [
-            {'name': 'Fixture Studio'},
-          ],
-        },
-      };
-    });
+    final fixtures = contractFixturesForChannel(config, config.trialBatchSize);
+    return fixtures
+        .map((node) {
+          final copy = Map<String, dynamic>.from(node);
+          final id = fixtureOffset + (copy['id'] as num).toInt();
+          copy['id'] = id;
+          return copy;
+        })
+        .toList(growable: false);
   }
-  return fetchAnilistAnimationBatch(
-    batchSize: config.trialBatchSize,
-    requiredCategory: config.category,
+  return fetchDiscoveryBatch(
+    config: config,
+    offset: fixtureOffset,
   );
 }

@@ -1,13 +1,21 @@
 {
-  "version": 1,
+  "version": 2,
   "policyDoc": "docs/discovery-policy.md",
   "dataPolicyDoc": "docs/data-policy.md",
-  "generatedAt": "2026-06-08T00:00:00.000Z",
+  "generatedAt": "2026-06-10T12:00:00.000Z",
+  "growthCharterDoc": "docs/programs/catalog-growth-charter.md",
+  "legalBaselineDoc": "docs/policy/discovery-legal-baseline.md",
+  "wikidataSpinePlanDoc": "docs/strategy/wikidata-spine-plan.md",
   "principles": {
     "notDatabaseMirroring": true,
     "signalEphemeral": true,
     "canonicalIdentity": "wk_",
-    "anilistIsReferenceOnly": true
+    "dataSpine": "wikidata",
+    "qValidationRequired": true,
+    "anilistIngestDeprecated": true,
+    "sd26HoldRevoked": true,
+    "continuousCatalogGrowth": true,
+    "preferredSources": ["wikidata", "manual", "openlibrary"]
   },
   "kpiDefinition": {
     "primary": "userValueCoverage",
@@ -26,21 +34,21 @@
     ],
     "independence": [
       "independentRegistryValue",
-      "percentWorksJustifiedWithoutAniList"
+      "percentWorksJustifiedWithoutExternalSource"
     ],
-    "secondary": ["dedupePassRate", "policyViolationsZero"],
+    "secondary": ["dedupePassRate", "policyViolationsZero", "wikidata_coverage"],
     "notPrimary": ["signalsFetched", "wouldCreateAlone"],
     "patchGate": [
       "recommend5bPatch",
       "productReviewApproved",
-      "anilistRemovalTestPassed"
+      "sourceLicenseReviewPassed"
     ],
-    "patchStatus": "on_hold"
+    "patchStatus": "active_trial"
   },
   "channels": {
-    "anilist_animation": {
-      "source": "anilist",
-      "category": "animation",
+    "wikidata_manga": {
+      "source": "wikidata",
+      "category": "manga",
       "domain": "subculture",
       "enabled": false,
       "dailyLimit": 500,
@@ -51,7 +59,6 @@
         "titles",
         "releaseYear",
         "creator",
-        "format",
         "aliases"
       ],
       "forbiddenFacts": [
@@ -65,8 +72,39 @@
         "score",
         "rawResponse"
       ],
-      "cursorPath": "pipeline/discovery/cursors/anilist_animation.json",
-      "lastRun": null
+      "cursorPath": "pipeline/discovery/cursors/wikidata_manga.json",
+      "lastRun": null,
+      "notes": "Phase 1 — graph fields (wikidataRelations, seasons) ingest Phase 2"
+    },
+    "wikidata_anime": {
+      "source": "wikidata",
+      "category": "animation",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 500,
+      "trialBatchSize": 100,
+      "allowedFacts": [
+        "externalId",
+        "title",
+        "titles",
+        "releaseYear",
+        "creator",
+        "aliases"
+      ],
+      "forbiddenFacts": [
+        "description",
+        "synopsis",
+        "tags",
+        "coverImage",
+        "bannerImage",
+        "characters",
+        "popularity",
+        "score",
+        "rawResponse"
+      ],
+      "cursorPath": "pipeline/discovery/cursors/wikidata_anime.json",
+      "lastRun": null,
+      "notes": "Phase 3 stub — anime television series SPARQL (not live yet)"
     }
   }
 }

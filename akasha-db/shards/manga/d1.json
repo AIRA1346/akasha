@@ -1,0 +1,21 @@
+{
+  "wk_000000470": {
+    "workId": "wk_000000470",
+    "title": "Boys Run the Riot",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101568449"
+    },
+    "titles": {
+      "en": "Boys Run the Riot",
+      "ja": "ボーイズ・ラン・ザ・ライオット"
+    },
+    "releaseYear": 2021,
+    "creator": "Keito Gaku",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

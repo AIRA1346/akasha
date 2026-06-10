@@ -15,9 +15,10 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
 import 'discovery_manifest.dart';
+import 'discovery_source_fetch.dart';
 import 'registry_coverage_utils.dart';
 import 'registry_impact_report.dart';
 import 'registry_impact_selector.dart';
@@ -27,7 +28,7 @@ import 'shadow_write_runner.dart';
 void main(List<String> args) async {
   final offline = args.contains('--offline');
   final live = args.contains('--live');
-  final channelId = _argValue(args, '--channel') ?? 'anilist_animation';
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final outputPath = _argValue(args, '--output');
   final maxSelect = int.tryParse(_argValue(args, '--max') ?? '') ?? 10;
   final minSelect = int.tryParse(_argValue(args, '--min') ?? '') ?? 5;
@@ -62,10 +63,10 @@ void main(List<String> args) async {
   );
 
   final nodes = offline
-      ? _fixtures(config.trialBatchSize)
-      : await fetchAnilistAnimationBatch(
-          batchSize: config.trialBatchSize,
-          requiredCategory: config.category,
+      ? contractFixturesForChannel(config, config.trialBatchSize)
+      : await fetchDiscoveryBatch(
+          config: config,
+          projectRoot: root,
         );
 
   final registry = RegistrySnapshot.load(root);
@@ -128,27 +129,6 @@ void main(List<String> args) async {
     exit(1);
   }
   print('\nOK: Registry Impact Report generated');
-}
-
-List<Map<String, dynamic>> _fixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 700000 + i;
-    return {
-      'id': id,
-      'format': 'TV',
-      'title': {
-        'english': 'Impact Fixture $id',
-        'romaji': 'Impact $id',
-      },
-      'synonyms': ['IF-$id', 'Fixture $id'],
-      'seasonYear': 1995 + (i % 30),
-      'studios': {
-        'nodes': [
-          {'name': 'Impact Studio'},
-        ],
-      },
-    };
-  });
 }
 
 String? _argValue(List<String> args, String name) {

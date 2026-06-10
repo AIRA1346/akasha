@@ -9,10 +9,10 @@ import 'registry_diff_compare.dart';
 import 'registry_impact_selector.dart';
 import 'user_value_assessment.dart';
 
-/// 등록 동기 — AniList 존재 vs 사용자 가치
+/// 등록 동기 — 외부 spine 존재 vs 사용자 가치
 enum AdditionDriver {
   userGap,
-  anilistPresence,
+  externalSpineOnly,
   both,
   unclear,
 }
@@ -21,7 +21,7 @@ class ProductValueReviewEntry {
   final ImpactSelectionScore selection;
   final bool resolvesUserSearchGap;
   final bool improvesRelationNetwork;
-  final bool survivesWithoutAnilist;
+  final bool survivesWithoutExternalSpine;
   final bool lowMirroringRisk;
   final bool userValueBasedPriority;
   final AdditionDriver additionDriver;
@@ -33,7 +33,7 @@ class ProductValueReviewEntry {
     required this.selection,
     required this.resolvesUserSearchGap,
     required this.improvesRelationNetwork,
-    required this.survivesWithoutAnilist,
+    required this.survivesWithoutExternalSpine,
     required this.lowMirroringRisk,
     required this.userValueBasedPriority,
     required this.additionDriver,
@@ -45,10 +45,10 @@ class ProductValueReviewEntry {
   Map<String, dynamic> toJson() => {
         'title': selection.item.title,
         'shadowWorkId': selection.item.shadowWorkId,
-        'anilistRef': selection.item.externalId,
+        'sourceExternalId': selection.item.externalId,
         'resolvesUserSearchGap': resolvesUserSearchGap,
         'improvesRelationNetwork': improvesRelationNetwork,
-        'survivesWithoutAnilist': survivesWithoutAnilist,
+        'survivesWithoutExternalSpine': survivesWithoutExternalSpine,
         'lowMirroringRisk': lowMirroringRisk,
         'userValueBasedPriority': userValueBasedPriority,
         'additionDriver': additionDriver.name,
@@ -117,7 +117,7 @@ ProductValueReviewReport buildProductValueReview({
     entries.add(entry);
     if (entry.productValuePassed) passed++;
     if (entry.resolvesUserSearchGap) gapResolved++;
-    if (entry.survivesWithoutAnilist) independent++;
+    if (entry.survivesWithoutExternalSpine) independent++;
     if (s.userValue.tier == UserValueTier.high) highUv++;
   }
 
@@ -160,7 +160,7 @@ ProductValueReviewEntry _reviewEntry(
 
   final userValuePriority = s.userValue.tier == UserValueTier.high &&
       s.axes.isNotEmpty &&
-      !s.reasons.any((r) => r.contains('AniList'));
+      !s.reasons.any((r) => r.toLowerCase().contains('anilist'));
 
   final driver = _additionDriver(
     selection: s,
@@ -169,7 +169,7 @@ ProductValueReviewEntry _reviewEntry(
   );
 
   final policyNotes = <String>[
-    'Discovery ≠ Mirroring: Minimal Core만, AniList=참조',
+    'Discovery ≠ Mirroring: Minimal Core만, wikidata=spine',
     '동기: ${driver.name} — ${_driverLabel(driver)}',
   ];
   if (lowMirroring) {
@@ -181,7 +181,7 @@ ProductValueReviewEntry _reviewEntry(
   final manualQuestions = <String>[
     ProductReviewQuestions.searchGap,
     ProductReviewQuestions.relationNetwork,
-    ProductReviewQuestions.survivesWithoutAnilist,
+    ProductReviewQuestions.survivesWithoutExternalSpine,
     ProductReviewQuestions.mirroringPerception,
     ProductReviewQuestions.userValuePriority,
   ];
@@ -190,13 +190,13 @@ ProductValueReviewEntry _reviewEntry(
       survives &&
       lowMirroring &&
       userValuePriority &&
-      driver != AdditionDriver.anilistPresence;
+      driver != AdditionDriver.externalSpineOnly;
 
   return ProductValueReviewEntry(
     selection: s,
     resolvesUserSearchGap: resolvesGap,
     improvesRelationNetwork: improvesNetwork,
-    survivesWithoutAnilist: survives,
+    survivesWithoutExternalSpine: survives,
     lowMirroringRisk: lowMirroring,
     userValueBasedPriority: userValuePriority,
     additionDriver: driver,
@@ -211,12 +211,12 @@ class ProductReviewQuestions {
       '이 작품은 현재 사용자 검색 Gap을 해결하는가?';
   static const relationNetwork =
       'AKASHA 내부 추천/관계망 품질을 높이는가?';
-  static const survivesWithoutAnilist =
-      'AniList가 사라져도 AKASHA에 남아야 하는가?';
+  static const survivesWithoutExternalSpine =
+      'Wikidata spine 없이도 AKASHA에 남아야 하는가?';
   static const mirroringPerception =
       '외부 DB 복제라고 오해받지 않는가?';
   static const userValuePriority =
-      '등록 우선순위가 User Value 기반인가? (AniList 존재 때문이 아님)';
+      '등록 우선순위가 User Value 기반인가? (외부 DB 존재 때문이 아님)';
 }
 
 AdditionDriver _additionDriver({
@@ -224,20 +224,20 @@ AdditionDriver _additionDriver({
   required bool resolvesGap,
   required bool survives,
 }) {
-  final anilistSignal = selection.item.externalId.isNotEmpty;
-  if (resolvesGap && survives && anilistSignal) {
+  final spineSignal = selection.item.externalId.isNotEmpty;
+  if (resolvesGap && survives && spineSignal) {
     return AdditionDriver.both;
   }
   if (resolvesGap && survives) return AdditionDriver.userGap;
-  if (anilistSignal && !resolvesGap) return AdditionDriver.anilistPresence;
+  if (spineSignal && !resolvesGap) return AdditionDriver.externalSpineOnly;
   return AdditionDriver.unclear;
 }
 
 String _driverLabel(AdditionDriver d) => switch (d) {
-      AdditionDriver.userGap => '사용자 Gap·AKASHA 가치 (AniList는 발견 채널)',
-      AdditionDriver.anilistPresence => 'AniList 존재 위주 — 5b 부적합',
+      AdditionDriver.userGap => '사용자 Gap·AKASHA 가치 (wikidata는 spine)',
+      AdditionDriver.externalSpineOnly => '외부 spine 존재 위주 — 5b 부적합',
       AdditionDriver.both =>
-        'Gap 해소 + AKASHA 정체성; AniList는 참조(source)만',
+        'Gap 해소 + AKASHA 정체성; wikidata는 spine 참조만',
       AdditionDriver.unclear => '수동 판단 필요',
     };
 
@@ -282,7 +282,7 @@ String formatProductValueMarkdown(ProductValueReviewReport report) {
   buf.writeln('# Product Value Review');
   buf.writeln();
   buf.writeln('> **5b Patch 보류** — 기술 검증 완료, 제품·정책 검증 단계');
-  buf.writeln('> 핵심: AniList에 **존재해서** 추가 ≠ 사용자에게 **가치 있어서** 추가');
+  buf.writeln('> 핵심: 외부 DB에 **존재해서** 추가 ≠ 사용자에게 **가치 있어서** 추가');
   buf.writeln();
   buf.writeln('## Discovery KPI (Product)');
   buf.writeln();
@@ -298,7 +298,7 @@ String formatProductValueMarkdown(ProductValueReviewReport report) {
   );
   buf.writeln(
     '| independentRegistryValue | ${(k.independentRegistryValue * 100).toStringAsFixed(1)}% | '
-    'AniList 없이 AKASHA 가치 (${k.independentValueCount}/${k.selectedCount}) |',
+    'spine 없이 AKASHA 가치 (${k.independentValueCount}/${k.selectedCount}) |',
   );
   buf.writeln('| recommend5bPatch | **${k.recommend5bPatch}** | Product 통과 후 patch |');
   buf.writeln();
@@ -315,7 +315,7 @@ String formatProductValueMarkdown(ProductValueReviewReport report) {
     buf.writeln('| | |');
     buf.writeln('|--|--|');
     buf.writeln('| wk_ (shadow) | `${s.item.shadowWorkId}` |');
-    buf.writeln('| anilist (참조만) | `${s.item.externalId}` |');
+    buf.writeln('| wikidata (spine) | `${s.item.externalId}` |');
     buf.writeln('| additionDriver | **${e.additionDriver.name}** |');
     buf.writeln('| productValuePassed | **${e.productValuePassed}** |');
     buf.writeln();
@@ -332,7 +332,7 @@ String formatProductValueMarkdown(ProductValueReviewReport report) {
       '| ${ProductReviewQuestions.relationNetwork} | ${e.improvesRelationNetwork} |',
     );
     buf.writeln(
-      '| ${ProductReviewQuestions.survivesWithoutAnilist} | ${e.survivesWithoutAnilist} |',
+      '| ${ProductReviewQuestions.survivesWithoutExternalSpine} | ${e.survivesWithoutExternalSpine} |',
     );
     buf.writeln(
       '| ${ProductReviewQuestions.mirroringPerception} | ${e.lowMirroringRisk} |',
@@ -359,8 +359,8 @@ String formatProductValueMarkdown(ProductValueReviewReport report) {
   buf.writeln();
   buf.writeln('- **현재: 보류** (기술 문제 아님, 제품·정책 문제)');
   buf.writeln('- patch 조건: 본 Product Value Review **수동 통과**');
-  buf.writeln('- `mergeCandidate` → anilist **링크 큐** (신규 wk_ 아님)');
-  buf.writeln('- AKASHA ≠ AniList 미러링; 정체성 = `wk_` Registry');
+  buf.writeln('- `mergeCandidate` → wikidata **링크 큐** (신규 wk_ 아님)');
+  buf.writeln('- AKASHA ≠ Wikidata 미러링; 정체성 = `wk_` Registry');
   buf.writeln();
 
   if (!k.recommend5bPatch) {

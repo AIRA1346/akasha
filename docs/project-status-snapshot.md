@@ -1,8 +1,8 @@
 # Project Status Snapshot
 
-> **생성:** 2026-06-09  
-> **목적:** Phase 0 정리·점검 기준선 — Registry · Gate · Git · 프로그램 상태  
-> **다음:** [expansion-tool-grading.md](expansion-tool-grading.md) · [a5-scale-observation-log.md](a5-scale-observation-log.md)
+> **갱신:** 2026-06-10  
+> **목적:** Gate·Registry·프로그램 **운영 SSOT**  
+> **확장:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) — **SD2.6 hold 해제**
 
 ---
 
@@ -12,136 +12,66 @@
 |------|------|
 | **Registry** | **430 works** · 351 v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
-| **ci_registry_check** | **PASS** (전 단계) |
-| **externalId G2** | **달성** — **215/430 (50.00%)** · [sprint-04-e1-resolution.md](sprint-04-e1-resolution.md) |
-| **프로그램** | Phase 2 **COMPLETE** · A5 Pilot **SUCCESS** · Scale **SD2.6 도달** · O8–O12 **1차** |
-| **Git** | `main` · **origin 동기화** |
-| **Scale 차단** | **SD2.6 hold** — insert 중단 · O3 checkpoint **2026-07-09** |
+| **externalId G2** | **215/430 (50.00%)** |
+| **Scale** | SD2.6 hold **해제** — **병행 확장** 모드 |
+| **Steam** | M2 제출 + **카탈로그 G1** 동시 진행 |
+| **Discovery** | `patchStatus: active_trial` · Wikidata manga |
 
 ---
 
-## 1. Gate 실행 결과 (@430)
+## 1. 운영 결정 (2026-06-10)
 
-| 도구 | 결과 | 비고 |
-|------|:----:|------|
-| `registry_builder` | **PASS** | 430 works · 351 shards |
-| `dedupe_linter` | **PASS** | 0 duplicate · franchise_groups OK |
-| `quality_gate --strict` | **PASS** | invalid_en **0** · source_breakage **0** |
-| `coverage_dashboard` | **PASS**† | titles_en **92.09%** ≥0.9 · external_id **50.00%** G2 |
-| `sw1_a_validation` | **PASS** | recall@10 **1.0** (87/87) |
-| `urv_a_validation` | **PASS** | 5축 PASS · exactId 215/215 |
-| `franchise_linter` | **PASS** | uncovered cluster **0** |
-| `ci_registry_check` | **PASS** | maintainer stub **28건** 예외 |
-| `flutter test` | **PASS** | 160/160 |
+**430작은 Steam 출시에 충분하지 않다.**  
+insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** search_index·dedupe·gate 부담을 검증하는 **아키텍처 주도 성장**으로 전환한다.
 
-† Charter KPI: titles_en PASS · external_id **G2 달성** (2026-06-10). ja/zh 등 Phase 2 Open Question.
-
-### Coverage Dashboard (요약)
-
-| 축 | 값 | status |
-|----|-----|:------:|
-| titles_en | 396/430 (92.09%) | PASS |
-| titles_ja | 126/430 (29.30%) | FAIL |
-| external_id | **215/430 (50.00%)** | **G2 PASS** |
-| invalid_en | 0/396 | PASS |
-| gap_panel | 16/16 | PASS |
-
----
-
-## 2. Registry · 샤드 무결성
-
-| 점검 | 결과 |
+| 유지 | 폐기 |
 |------|------|
-| v4 hex 샤드 파일 | **351** |
-| non-hex (v3) 샤드 | **0** |
-| 카테고리 | animation · book · drama · game · manga · movie · webtoon |
-| `manifest v4` | 351 shards · **430** works · shardBits=8 |
-
-### Scale @410 누적 insert
-
-| 경로 | net |
-|------|----:|
-| Maintainer (`a5_scale_supply_batch` b1–6) | **+12** |
-| Expansion (`seed_expansion_batch7`) | **+8** |
-| **합계** | **+20** → **430** (SD2.6 상한) |
+| `pre_insert_dedupe_gate` · A급 도구 | SD2.6 **+20 상한** |
+| SD3 Pause (품질·dedupe 회귀 시 감속) | O3를 insert **스위치**로 쓰기 |
+| Fact-only · Wikidata 법무 경계 | 430 **고정 출시** 가정 |
 
 ---
 
-## 3. ci_registry_check · 정리 (2026-06-09)
+## 2. Gate (@430)
 
-| 조치 | 결과 |
+| 도구 | 결과 |
+|------|:----:|
+| `registry_builder` | PASS |
+| `dedupe_linter` | PASS |
+| `quality_gate --strict` | PASS |
+| `coverage_dashboard` | titles_en 92% · external_id G2 |
+| `sw1_a_validation` | recall@10 1.0 |
+| `urv_a_validation` | PASS |
+| `ci_registry_check` | PASS |
+
+---
+
+## 3. 병행 트랙
+
+| 트랙 | 다음 |
 |------|------|
-| `allowedExtensionsKeys` + Sprint 03/04 | data_policy **0** error |
-| `cleanup_poster_source --apply` | pilot stub posterSource 제거 |
-| `id_registry_check` maintainer stub 예외 | `sub_*` **28건** 스킵 |
-| `preflight_check.dart` | 4종 gate 일괄 래퍼 |
-| O8·O9·O12 관측 도구 | SD4 확정 · Scale 10–11 기록 |
-
-**현재:** `ci_registry_check` **전 단계 PASS**.
+| **M2 Steam** | 스토어·depot·IAP — [m2-steam-store-page](programs/m2-steam-store-page.md) |
+| **Catalog G1** | Wikidata manga trial · Maintainer supply — [catalog-growth-charter](programs/catalog-growth-charter.md) |
+| **아키텍처** | search_index 1k/5k 재측정 · dedupe at scale |
 
 ---
 
-## 4. Git 인벤토리
+## 4. 다음 권장 작업
 
-| 구분 | 상태 |
-|------|------|
-| **브랜치** | `main` @ `f6299d0` |
-| **remote** | `origin/main` **동기화** (push 완료) |
-| **작업 트리** | **clean** |
-
-**최신 커밋:** `feat(a5): reach SD2.6 cap at 430 with batch7 and O8-O12 tooling` (28 files)
-
----
-
-## 5. 프로그램 · 문서 타임라인
-
-| 단계 | 상태 | 대표 문서 |
-|------|:----:|-----------|
-| Phase 1 | **동결** | `phase1-final-review.md` |
-| Phase 2 | **COMPLETE** | `phase2-summary.md` · `phase2-final-review.md` |
-| A5 Discovery | **닫힘** | `a5-discovery-charter.md` |
-| A5 Pilot | **SUCCESS · 동결** | `a5-pilot-final-review.md` |
-| A5 Scale | **진행** | `a5-scale-plan.md` · `a5-scale-observation-log.md` |
-| SD1~SD4 | **확정** | O3 checkpoint **2026-07-09** |
-| Assumption A5 | **Deferred** | S1·S3·S4 Scale 확정 대기 |
+| # | 작업 |
+|---|------|
+| 1 | `shadow_write --live --channel wikidata_manga` |
+| 2 | trial batch insert (gate 통과분) |
+| 3 | `a5_scale_supply_batch` 재개 |
+| 4 | M2 Release 빌드·스토어 페이지 |
+| 5 | O8 governance 번들 — insert 후 **매 배치** |
 
 ---
 
-## 6. 위험 · 알려진 이슈
-
-| # | 이슈 | 심각도 | Scale 영향 |
-|---|------|:------:|:----------:|
-| R1 | ~~미커밋·미 push~~ | — | **해소** (2026-06-09) |
-| R2 | **batch3/4/seed_expansion** v3·gate 없음 | **높** | 실행 금지 — [expansion-tool-grading.md](expansion-tool-grading.md) |
-| R3 | maintainer `sub_*` **28건** (wk_ 미할당) | 낮 | ci 예외 · 장기 wk_ 할당 검토 |
-| R4 | CI **보강** | 낮 | `registry_check` + `scale_hold_check` · preflight 추가 |
-| R5 | Expansion batch5/6 **Net-new 0** | 정보 | batch7 A유형으로 **해소** |
-
----
-
-## 7. 다음 권장 작업
-
-| 순서 | 상태 | 작업 |
-|:----:|:----:|------|
-| 1 | **done** | externalId **G2 50% 달성** — [sprint-04-e1-resolution.md](sprint-04-e1-resolution.md) |
-| 2 | **done** | **Phase E** — akasha-db 원격 push (CDN @430 현행화) |
-| 3 | **done** | 문서 IA 정리 — `docs/archive/` 분리 · 인덱스 재작성 |
-| 4 | **next** | **M2** Steam 제출 준비 — Steamworks 등록·스토어 페이지 ([ROADMAP](../ROADMAP.md)) |
-| 5 | **hold** | SD2.6 — insert 중단 → **2026-07-09** O3 rate vs G2 |
-| 6 | **next** | Sprint 05 우선순위 확정 ([후보 백로그](sprint-05-candidate-backlog.md)) |
-| 7 | **next** | 5k 마일스톤 — O12·O8 재관측 |
-
----
-
-## 8. 문서 이력
+## 5. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-09 | Phase 0 스냅샷 — gate · Git · 위험 |
-| 2026-06-09 | Scale 2–5 (412→416) · ci 정리 |
-| 2026-06-09 | Scale 7–11: batch7 + supply b4–6 → **430** · O8–O12 · SD4 |
-| 2026-06-09 | Git 정리 — `f6299d0` push · snapshot/README 동기화 |
-| 2026-06-09 | Scale 12 — hold 관측 · O3 prep · CI `scale_hold_check` |
-| 2026-06-10 | 검색 정규화 구분자 처리 · Sprint 04 R1/R2 SSOT 문서 정리 push |
-| 2026-06-10 | **E1 15건 resolution — G2 50.00% 달성** ([sprint-04-e1-resolution.md](sprint-04-e1-resolution.md)) · 번들 테스트 핀 430 갱신 |
-| 2026-06-10 | **Phase E** akasha-db push (CDN @430) · 문서 IA 정리 (`archive/` 21건·인덱스 재작성·v4 표기 현행화) |
+| 2026-06-09 | Phase 0 baseline @430 |
+| 2026-06-10 | G2 50% · 문서 IA 재편 |
+| 2026-06-10 | **SD2.6 해제** · catalog-growth-charter · 병행 확장 |

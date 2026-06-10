@@ -17,12 +17,13 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
 import 'discovery_contract_kpi.dart';
 import 'discovery_manifest.dart';
 import 'discovery_types.dart';
 
 void main(List<String> args) async {
-  final channelId = _argValue(args, '--channel') ?? 'anilist_animation';
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final sample = args.contains('--sample');
   final contractTest = args.contains('--contract-test');
   final offline = args.contains('--offline');
@@ -40,11 +41,6 @@ void main(List<String> args) async {
   final config = manifest.channel(channelId);
   if (config == null) {
     stderr.writeln('ERROR: unknown channel $channelId');
-    exit(1);
-  }
-
-  if (channelId != 'anilist_animation') {
-    stderr.writeln('ERROR: contract test supports anilist_animation only');
     exit(1);
   }
 
@@ -85,10 +81,15 @@ Future<void> _runContractTest({
   final DiscoveryContractKpi kpi;
   if (offline) {
     print('offline: fixture batch (${config.trialBatchSize} nodes)');
-    kpi = runner.runOnNodes(_contractFixtures(config.trialBatchSize));
+    kpi = runner.runOnNodes(
+      contractFixturesForChannel(config, config.trialBatchSize),
+    );
   } else {
-    print('live: AniList GraphQL (${config.trialBatchSize} nodes, no disk write)');
-    kpi = await runner.runLive(batchSize: config.trialBatchSize);
+    print('live: ${config.source} (${config.trialBatchSize} nodes, no disk write)');
+    kpi = await runner.runLive(
+      batchSize: config.trialBatchSize,
+      projectRoot: projectRoot,
+    );
   }
 
   print('');
@@ -116,77 +117,19 @@ void _runSample({
   final runner = ContractTestRunner(
     channelId: channelId,
     config: config,
-    registryAnilistIds: const {},
+    registryExternalIds: const {},
   );
-  final kpi = runner.runOnNodes(_sampleAnilistNodes());
+  final sampleNodes = sampleNodesForChannel(config);
+  final kpi = runner.runOnNodes(sampleNodes);
   print('Contract KPI (sample): ${json.encode(kpi.toJson())}');
-  for (final node in _sampleAnilistNodes().take(3)) {
-    final title = (node['title'] as Map?)?['english'] ?? node['id'];
-    print('  - anilist:${node['id']} $title');
+  for (final node in sampleNodes.take(3)) {
+    final title = node['title']?.toString() ?? '';
+    final extId = node['qid']?.toString() ?? node['id']?.toString() ?? '';
+    print('  - ${config.source}:$extId $title');
   }
   if (!kpi.contractPassed) exit(1);
   print('\nOK: official_sync sample (dry-run)');
 }
-
-/// 오프라인 계약 검증용 animation fixture (100건 고정 가능).
-List<Map<String, dynamic>> _contractFixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 200000 + i;
-    final format = switch (i % 5) {
-      0 => 'TV',
-      1 => 'OVA',
-      2 => 'ONA',
-      3 => 'SPECIAL',
-      _ => 'TV_SHORT',
-    };
-    final node = <String, dynamic>{
-      'id': id,
-      'format': format,
-      'title': {
-        'english': 'Contract Fixture $id',
-        'romaji': 'Contract Fixture $id',
-      },
-      'seasonYear': 1990 + (i % 35),
-      'studios': {
-        'nodes': [
-          {'name': 'Fixture Studio'},
-        ],
-      },
-    };
-    if (i.isEven) {
-      node['synonyms'] = ['CF-$id'];
-    }
-    return node;
-  });
-}
-
-List<Map<String, dynamic>> _sampleAnilistNodes() => [
-      {
-        'id': 1535,
-        'format': 'TV',
-        'title': {
-          'romaji': 'Death Note',
-          'english': 'Death Note',
-          'native': 'デスノート',
-        },
-        'seasonYear': 2006,
-        'studios': {
-          'nodes': [{'name': 'Madhouse'}],
-        },
-        // fetch 응답에 섞일 수 있으나 Facts·draft에는 남지 않아야 함
-        'description': 'MUST NOT APPEAR IN DRAFT',
-        'coverImage': {'large': 'https://anilistcdn.example/x.jpg'},
-      },
-      {
-        'id': 16498,
-        'format': 'TV',
-        'title': {
-          'romaji': 'Shingeki no Kyojin',
-          'english': 'Attack on Titan',
-        },
-        'startDate': {'year': 2013},
-      },
-    ];
 
 String? _argValue(List<String> args, String name) {
   final idx = args.indexOf(name);

@@ -11,9 +11,10 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'anilist_client.dart';
 import 'contract_test_runner.dart';
+import 'discovery_fixtures.dart';
 import 'discovery_manifest.dart';
+import 'discovery_source_fetch.dart';
 import 'discovery_review_report.dart';
 import 'registry_snapshot.dart';
 import 'shadow_write_runner.dart';
@@ -21,7 +22,7 @@ import 'shadow_write_runner.dart';
 void main(List<String> args) async {
   final offline = args.contains('--offline');
   final live = args.contains('--live');
-  final channelId = _argValue(args, '--channel') ?? 'anilist_animation';
+  final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final outputPath = _argValue(args, '--output');
   final sampleSize =
       int.tryParse(_argValue(args, '--sample') ?? '') ?? 10;
@@ -56,12 +57,12 @@ void main(List<String> args) async {
 
   final List<Map<String, dynamic>> nodes;
   if (offline) {
-    nodes = _fixtures(config.trialBatchSize);
+    nodes = contractFixturesForChannel(config, config.trialBatchSize);
   } else {
-    print('fetching AniList (${config.trialBatchSize} nodes)...');
-    nodes = await fetchAnilistAnimationBatch(
-      batchSize: config.trialBatchSize,
-      requiredCategory: config.category,
+    print('fetching ${config.source} (${config.trialBatchSize} nodes)...');
+    nodes = await fetchDiscoveryBatch(
+      config: config,
+      projectRoot: root,
     );
   }
 
@@ -83,7 +84,7 @@ void main(List<String> args) async {
         .where((i) => i.outcome == ShadowWriteOutcome.mergeCandidate)
         .take(5)) {
       print(
-        '  - anilist:${item.externalId} "${item.title}" → ${item.matchedWorkId}',
+        '  - ${config.source}:${item.externalId} "${item.title}" → ${item.matchedWorkId}',
       );
     }
     print('');
@@ -125,23 +126,6 @@ void main(List<String> args) async {
     exit(1);
   }
   print('\nOK: review report generated (auto gates passed)');
-}
-
-List<Map<String, dynamic>> _fixtures(int count) {
-  return List.generate(count, (i) {
-    final id = 600000 + i;
-    return {
-      'id': id,
-      'format': 'TV',
-      'title': {'english': 'Review Fixture $id', 'romaji': 'Review $id'},
-      'seasonYear': 2005 + (i % 20),
-      'studios': {
-        'nodes': [
-          {'name': 'Review Studio'},
-        ],
-      },
-    };
-  });
 }
 
 String? _argValue(List<String> args, String name) {

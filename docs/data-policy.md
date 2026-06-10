@@ -5,7 +5,7 @@
 > **제품 SSOT:** [product-vision.md](product-vision.md)  
 > **전제:** AKASHA 목표는 **「작품 발견」** 이지 **「외부 DB 복제」** 가 아니다.
 
-**이 문서보다 하위:** [akasha-db-policy.md](akasha-db-policy.md) · [discovery-policy.md](discovery-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [canonicalization-policy.md](canonicalization-policy.md)
+**이 문서보다 하위:** [akasha-db-policy.md](akasha-db-policy.md) · [discovery-policy.md](discovery-policy.md) · [catalog-ownership.md](../policy/catalog-ownership.md) · [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) · [canonicalization-policy.md](../policy/canonicalization-policy.md)
 
 > 아래는 **변호사 자문이 아닌** 1인 스튜디오 실무 판단입니다. Steam 상업 배포·대규모 ingest 전 현지 IP 전문가 검토를 권장합니다.
 
@@ -171,7 +171,11 @@ Rule Normalize (Facts) → Registry Minimal Core
 
 각 소스에서 **가져올 수 있는 것** · **Registry에 남길 수 있는 것** · **Signal만 쓰고 폐기할 것**.
 
-### 3.1 AniList (GraphQL / REST)
+### 3.1 AniList (GraphQL / REST) — **API ingest 폐기**
+
+> **2026-06-10:** AniList API → Git bulk ingest **전면 폐기**.  
+> 근거: [discovery-source-decision.md](discovery-source-decision.md)  
+> 아래 표는 **레거시 `externalIds.anilist` 참조**·Removal Test용 필드 분류만 유지한다. **신규 live fetch 없음.**
 
 | AniList 필드 | 분류 | Discovery Signal | Registry 저장 | 비고 |
 |--------------|------|:----------------:|:-------------:|------|
@@ -266,7 +270,10 @@ Rule Normalize (Facts) → Registry Minimal Core
 | `rating` / `votes` | UGC (집계) | ✅ | ❌ | |
 | `extlinks` | Fact | ✅ | ❌ | evidence |
 
-### 3.6 Wikidata (SPARQL / Entity)
+### 3.6 Wikidata (SPARQL / Entity) — **만화 Discovery 1차 소스**
+
+> **2026-06-10:** `wikidata_manga` 채널 — CC0 Facts · User-Agent · rate limit.  
+> 구현: [sprint-05-manga-expansion.md](../programs/sprint-05-manga-expansion.md)
 
 | Wikidata 필드 | 분류 | Discovery Signal | Registry 저장 | 비고 |
 |---------------|------|:----------------:|:-------------:|------|
@@ -388,8 +395,8 @@ dart run tool/cleanup_poster_source.dart --apply --sync-assets
 |------|------|
 | **본 문서** | 필드·소스·법무 **최상위** |
 | [akasha-db-policy.md](akasha-db-policy.md) | 운영·구축 방침 |
-| [catalog-ownership.md](catalog-ownership.md) | 3계층 소유권 |
-| [canonicalization-policy.md](canonicalization-policy.md) | identity·franchise (Quality와 독립) |
+| [catalog-ownership.md](../policy/catalog-ownership.md) | 3계층 소유권 |
+| [canonicalization-policy.md](../policy/canonicalization-policy.md) | identity·franchise (Quality와 독립) |
 | [SCHEMA.md](../akasha-db/SCHEMA.md) | WorkEntry 스키마 |
 | [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | 포스터 URL |
 
