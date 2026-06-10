@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/enums.dart';
+import '../services/file_service.dart';
 import '../utils/helpers.dart';
 
 class WebImageSearchDialog extends StatefulWidget {
@@ -70,6 +72,24 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
   void _stopClipboardMonitoring() {
     _clipboardTimer?.cancel();
     _clipboardTimer = null;
+  }
+
+  Future<void> _pickLocalImage() async {
+    final fileResult = await FilePicker.pickFiles(type: FileType.image);
+    if (fileResult == null || fileResult.files.single.path == null) return;
+
+    final path = fileResult.files.single.path!;
+    final service = AkashaFileService();
+    if (!mounted) return;
+
+    if (service.vaultPath != null) {
+      final relativePath = await service.importPosterImage(path);
+      if (relativePath != null && mounted) {
+        Navigator.pop(context, relativePath);
+      }
+    } else {
+      Navigator.pop(context, path);
+    }
   }
 
   /// 시스템 브라우저를 띄워 검색 수행
@@ -309,7 +329,13 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                       ),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              onPressed: _pickLocalImage,
+              icon: const Icon(Icons.folder_open, size: 18),
+              label: const Text('로컬 이미지 선택'),
+            ),
+            const SizedBox(height: 12),
 
             // 수동 입력창 (폴백용)
             Row(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
@@ -8,18 +7,15 @@ import '../services/franchise_fusion_service.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import 'home/dialogs/catalog_fix_contribution_dialog.dart';
-import 'detail/detail_archive_setup.dart';
-import 'detail/detail_archive_setup_panel.dart';
+import 'detail/detail_archive_save.dart';
 import 'detail/detail_franchise_section.dart';
 import 'detail/detail_profile_section.dart';
 import 'detail/detail_section_title.dart';
 import 'detail/dialogs/detail_delete_dialog.dart';
-import 'detail/dialogs/detail_edit_dialog.dart';
-import 'detail/dialogs/detail_quote_dialog.dart';
-import 'detail/dialogs/detail_review_dialog.dart';
+import '../widgets/web_image_search_dialog.dart';
 
 // ════════════════════════════════════════════════════════════════
-//  작품 상세 페이지 (Detail Screen)
+//  작품 상세 페이지 — 항상 동일한 인라인 편집 레이아웃
 // ════════════════════════════════════════════════════════════════
 
 class DetailScreen extends StatefulWidget {
@@ -33,17 +29,74 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late AkashaItem item;
-  late bool _showArchiveSetup;
+  bool _isSaving = false;
   bool _registryPrefsReady = false;
   List<FormatSlot> _formatSlots = const [];
+
+  late double _draftRating;
+  late String _draftWorkStatus;
+  late String _draftMyStatus;
+  late bool _draftHallOfFame;
+
+  final _posterUrlCtrl = TextEditingController();
+  final _quotesCtrl = TextEditingController();
+  final _synopsisCtrl = TextEditingController();
+  final _memoCtrl = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     item = widget.item;
-    _showArchiveSetup = DetailArchiveSetup.needsSetup(item);
+    _loadFieldsFromItem();
     _loadRegistryPrefs();
   }
+
+  void _loadFieldsFromItem() {
+    _draftRating = item.rating;
+    _draftWorkStatus = item.workStatusLabel;
+    _draftMyStatus = item.myStatusLabel;
+    _draftHallOfFame = item.isHallOfFame;
+    _posterUrlCtrl.text = item.posterPath ?? '';
+    _quotesCtrl.text = item.memorableQuotes.join('\n');
+    _synopsisCtrl.text = item.description;
+    _memoCtrl.text = item.review;
+  }
+
+  @override
+  void dispose() {
+    _posterUrlCtrl.dispose();
+    _quotesCtrl.dispose();
+    _synopsisCtrl.dispose();
+    _memoCtrl.dispose();
+    super.dispose();
+  }
+
+  List<String> _parseQuotes(String raw) {
+    return raw
+        .split('\n')
+        .map((line) => line.trim())
+        .where((line) => line.isNotEmpty)
+        .toList();
+  }
+
+  AkashaItem _applyFieldsToItem() {
+    final poster = _posterUrlCtrl.text.trim();
+    item.rating = _draftRating;
+    item.posterPath = poster.isNotEmpty ? poster : null;
+    item.setWorkStatus(_draftWorkStatus);
+    item.setMyStatus(_draftMyStatus);
+    item.isHallOfFame = _draftHallOfFame;
+    item.description = _synopsisCtrl.text.trim();
+    item.review = _memoCtrl.text.trim();
+    item.memorableQuotes = _parseQuotes(_quotesCtrl.text);
+    return item;
+  }
+
+  bool get _isArchived =>
+      AkashaFileService().isArchivedInVault(item) ||
+      AkashaFileService()
+          .inMemoryCache
+          .containsKey(AkashaFileService.cacheKeyFor(item));
 
   Future<void> _loadRegistryPrefs() async {
     if (!UserRegistryPreferences.instance.isLoaded) {
@@ -86,59 +139,49 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 
-  Future<void> _persistItem(BuildContext context) async {
+  Future<void> _openPosterCorrection() async {
+    final selected = await showDialog<String>(
+      context: context,
+      builder: (searchCtx) => WebImageSearchDialog(
+        initialQuery: item.title,
+        category: item.category,
+      ),
+    );
+    if (selected != null) {
+      setState(() => _posterUrlCtrl.text = selected);
+    }
+  }
+
+  Future<void> _saveArchive() async {
+    if (_isSaving) return;
+    setState(() => _isSaving = true);
+
     try {
-      await AkashaFileService().saveItem(item);
-      if (!context.mounted) return;
+      final draft = _applyFieldsToItem();
+      final saved = await DetailArchiveSave.save(draft);
+      if (!mounted) return;
+      setState(() {
+        item = saved;
+        _loadFieldsFromItem();
+      });
       _showSnack(
         AkashaFileService().vaultPath != null
-            ? '마크다운 아카이브에 저장되었습니다.'
-            : '변경 사항이 저장되었습니다. (볼트 연동 시 .md로 기록됩니다)',
+            ? '"${saved.title}" md 파일을 저장했습니다.'
+            : '"${saved.title}"을(를) 임시 저장했습니다.',
       );
       await _loadFormatSlots();
     } catch (e) {
-      if (!context.mounted) return;
-      _showSnack('저장 실패: $e');
+      if (mounted) _showSnack('저장 실패: $e');
+    } finally {
+      if (mounted) setState(() => _isSaving = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
-
-    if (_showArchiveSetup) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(item.title),
-          actions: [
-            if (WorksRegistry.getWorkById(
-                  WorksRegistry.resolveWorkId(item.workId),
-                ) !=
-                null)
-              IconButton(
-                icon: const Icon(Icons.flag_outlined),
-                tooltip: '글로벌 사전 정보 수정 제안',
-                onPressed: () => _proposeCatalogFix(context),
-              ),
-          ],
-        ),
-        body: DetailArchiveSetupPanel(
-          item: item,
-          onCreated: (saved) {
-            setState(() {
-              item = saved;
-              _showArchiveSetup = false;
-            });
-            _showSnack(
-              AkashaFileService().vaultPath != null
-                  ? '"${saved.title}" md 파일을 저장했습니다.'
-                  : '"${saved.title}"을(를) 임시 저장했습니다.',
-            );
-            _loadFormatSlots();
-          },
-        ),
-      );
-    }
+    final vaultLinked = AkashaFileService().vaultPath != null;
+    final previewItem = _applyFieldsToItem();
 
     return Scaffold(
       appBar: AppBar(
@@ -153,24 +196,48 @@ class _DetailScreenState extends State<DetailScreen> {
               tooltip: '글로벌 사전 정보 수정 제안',
               onPressed: () => _proposeCatalogFix(context),
             ),
-          IconButton(
-            icon: const Icon(Icons.edit),
-            tooltip: '편집',
-            onPressed: () => _showEditDialog(context),
-          ),
-          IconButton(
-            icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
-            tooltip: '작품 삭제',
-            onPressed: () => _confirmDelete(context),
-          ),
+          if (_isArchived)
+            IconButton(
+              icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
+              tooltip: '작품 삭제',
+              onPressed: () => _confirmDelete(context),
+            ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 32),
+        padding: const EdgeInsets.only(bottom: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DetailProfileSection(item: item),
+            if (!vaultLinked)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+                child: Card(
+                  color: Colors.amber.withValues(alpha: 0.12),
+                  child: const ListTile(
+                    leading:
+                        Icon(Icons.folder_off_outlined, color: Colors.amber),
+                    title: Text('Sanctum 볼트 미연동'),
+                    subtitle: Text(
+                      '볼트를 연동하면 .md 파일로 저장됩니다. '
+                      '지금은 임시 저장만 가능합니다.',
+                    ),
+                  ),
+                ),
+              ),
+            DetailProfileSection(
+              item: previewItem,
+              editable: true,
+              rating: _draftRating,
+              onRatingChanged: (v) => setState(() => _draftRating = v),
+              workStatus: _draftWorkStatus,
+              myStatus: _draftMyStatus,
+              onWorkStatusChanged: (v) => setState(() => _draftWorkStatus = v),
+              onMyStatusChanged: (v) => setState(() => _draftMyStatus = v),
+              onPosterTap: _openPosterCorrection,
+              isHallOfFame: _draftHallOfFame,
+              onHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
+            ),
             const Divider(height: 32),
             if (_registryPrefsReady) ...[
               DetailFranchiseSection(
@@ -182,24 +249,20 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
               const Divider(height: 32),
             ],
-            if (item.description.isNotEmpty) ...[
-              detailSectionTitle('📋', '시놉시스'),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: MarkdownBody(
-                  data: item.description,
-                  styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context))
-                      .copyWith(
-                    p: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey[300],
-                      height: 1.6,
-                    ),
-                  ),
+            detailSectionTitle('📋', '시놉시스'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                controller: _synopsisCtrl,
+                maxLines: 5,
+                decoration: const InputDecoration(
+                  hintText: '줄거리·소개를 적어 주세요',
+                  border: OutlineInputBorder(),
+                  alignLabelWithHint: true,
                 ),
               ),
-              const Divider(height: 32),
-            ],
+            ),
+            const Divider(height: 32),
             if (item.tags.isNotEmpty) ...[
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -224,168 +287,59 @@ class _DetailScreenState extends State<DetailScreen> {
               const SizedBox(height: 16),
             ],
             detailSectionTitle('🎬', '명장면 & 명대사'),
-            if (item.memorableQuotes.isEmpty)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  '아직 등록된 명대사가 없습니다.',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey[600],
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              )
-            else
-              ...item.memorableQuotes.map((quote) => _buildQuoteCard(quote, cs)),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              child: OutlinedButton.icon(
-                onPressed: () => _showAddQuoteDialog(context),
-                icon: const Icon(Icons.add, size: 18),
-                label: const Text('명대사 추가'),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                controller: _quotesCtrl,
+                maxLines: 4,
+                decoration: const InputDecoration(
+                  hintText: '한 줄에 한 문장씩 입력',
+                  border: OutlineInputBorder(),
+                  alignLabelWithHint: true,
+                ),
               ),
             ),
             const Divider(height: 32),
             detailSectionTitle('📝', '메모'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: item.review.isEmpty
-                  ? Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '아직 메모가 작성되지 않았습니다.',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.grey[600],
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        OutlinedButton.icon(
-                          onPressed: () => _showEditReviewDialog(context),
-                          icon: const Icon(Icons.rate_review, size: 18),
-                          label: const Text('메모 작성'),
-                        ),
-                      ],
-                    )
-                  : Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF1E1E2E),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Colors.grey.withValues(alpha: 0.15),
-                            ),
-                          ),
-                          child: MarkdownBody(
-                            data: item.review,
-                            styleSheet:
-                                MarkdownStyleSheet.fromTheme(Theme.of(context))
-                                    .copyWith(
-                              p: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey[300],
-                                height: 1.7,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton.icon(
-                            onPressed: () => _showEditReviewDialog(context),
-                            icon: const Icon(Icons.edit, size: 16),
-                            label: const Text(
-                              '메모 편집',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              child: TextField(
+                controller: _memoCtrl,
+                maxLines: 5,
+                decoration: const InputDecoration(
+                  hintText: '감상·메모를 자유롭게 적어 주세요',
+                  border: OutlineInputBorder(),
+                  alignLabelWithHint: true,
+                ),
+              ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 24),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildQuoteCard(String quote, ColorScheme cs) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: const Color(0xFF1E1E2E),
-          borderRadius: BorderRadius.circular(10),
-          border: Border(
-            left: BorderSide(
-              color: cs.primary.withValues(alpha: 0.6),
-              width: 3,
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+          child: FilledButton.icon(
+            onPressed: _isSaving ? null : _saveArchive,
+            icon: _isSaving
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.description_outlined),
+            label: Text(
+              _isSaving
+                  ? '저장 중…'
+                  : _isArchived
+                      ? 'md 저장'
+                      : 'md 생성',
             ),
-          ),
-        ),
-        child: Text(
-          quote,
-          style: TextStyle(
-            fontSize: 13,
-            color: Colors.grey[300],
-            height: 1.5,
-            fontStyle: FontStyle.italic,
           ),
         ),
       ),
     );
-  }
-
-  Future<void> _showEditDialog(BuildContext context) async {
-    final oldTitle = item.title;
-    final result = await showDetailEditDialog(context, item);
-
-    if (result != null) {
-      final newTitle = result['title'] as String;
-      setState(() {
-        item.title = newTitle;
-        item.setWorkStatus(result['work'] as String);
-        item.setMyStatus(result['my'] as String);
-        item.rating = result['rating'] as double;
-        item.isHallOfFame = result['hof'] as bool;
-        item.posterPath = result['poster'] as String?;
-      });
-      try {
-        await AkashaFileService().saveItem(
-          item,
-          oldTitle: newTitle != oldTitle ? oldTitle : null,
-        );
-        if (!context.mounted) return;
-        _showSnack(
-          AkashaFileService().vaultPath != null
-              ? '마크다운 아카이브에 저장되었습니다.'
-              : '변경 사항이 저장되었습니다.',
-        );
-        await _loadFormatSlots();
-      } catch (e) {
-        if (!context.mounted) return;
-        _showSnack('저장 실패: $e');
-      }
-    }
-  }
-
-  Future<void> _showAddQuoteDialog(BuildContext context) async {
-    final result = await showAddQuoteDialog(context);
-    if (result != null) {
-      setState(() => item.memorableQuotes.add(result));
-      await _persistItem(context);
-    }
   }
 
   Future<void> _confirmDelete(BuildContext context) async {
@@ -412,17 +366,6 @@ class _DetailScreenState extends State<DetailScreen> {
     } else {
       Navigator.pop(context, true);
       _showSnack('"${item.title}" 이(가) 목록에서 제거되었습니다.');
-    }
-  }
-
-  Future<void> _showEditReviewDialog(BuildContext context) async {
-    final result = await showEditReviewDialog(
-      context,
-      initialReview: item.review,
-    );
-    if (result != null) {
-      setState(() => item.review = result);
-      await _persistItem(context);
     }
   }
 }
