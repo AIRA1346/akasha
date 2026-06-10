@@ -19,8 +19,8 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: SizedBox(
-            width: 180,
-            height: 140,
+            width: 176,
+            height: 226,
             child: PosterCard(item: item, showPoster: false),
           ),
         ),

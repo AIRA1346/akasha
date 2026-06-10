@@ -49,16 +49,19 @@ class _PosterCardState extends State<PosterCard> {
 
     final isNotStarted = isWatchlistItem(item);
     final isFinished = isFinishedItem(item);
+    final categoryAccent = _categoryAccent(item.category);
 
     Border cardBorder;
     Color glowColor;
 
     if (isNotStarted) {
       cardBorder = Border.all(
-        color: Colors.white.withValues(alpha: 0.12),
+        color: widget.showPoster
+            ? Colors.white.withValues(alpha: 0.12)
+            : categoryAccent.withValues(alpha: 0.35),
         width: 1.5,
       );
-      glowColor = gradColors[0];
+      glowColor = widget.showPoster ? gradColors[0] : categoryAccent;
     } else if (isFinished) {
       cardBorder = Border.all(
         color: const Color(0xFF9D4EDD).withValues(alpha: 0.7),
@@ -115,8 +118,8 @@ class _PosterCardState extends State<PosterCard> {
                   ],
           ),
           child: widget.showPoster
-              ? _buildPosterLayout(item, showArchivedBadge)
-              : _buildCompactLayout(item, showArchivedBadge),
+              ? _buildPosterLayout(item, showArchivedBadge, gradColors)
+              : _buildFactCardLayout(item, showArchivedBadge),
         ),
       ),
     );
@@ -168,14 +171,33 @@ class _PosterCardState extends State<PosterCard> {
   String _getStatusTextWithEmoji(AkashaItem item) =>
       watchlistStatusEmojiLabel(item);
 
-  Widget _buildArchivedBadge() {
+  Color _categoryAccent(MediaCategory category) {
+    switch (category) {
+      case MediaCategory.manga:
+        return const Color(0xFF818CF8);
+      case MediaCategory.webtoon:
+        return const Color(0xFF34D399);
+      case MediaCategory.animation:
+        return const Color(0xFFF472B6);
+      case MediaCategory.game:
+        return const Color(0xFF4ADE80);
+      case MediaCategory.book:
+        return const Color(0xFFFBBF24);
+      case MediaCategory.movie:
+        return const Color(0xFF60A5FA);
+      case MediaCategory.drama:
+        return const Color(0xFFA78BFA);
+    }
+  }
+
+  Widget _buildArchivedBadge({double size = 24}) {
     return Tooltip(
       message: 'Sanctum vault 연동됨',
       child: Semantics(
         label: '아카이브됨',
         child: Container(
-          width: 24,
-          height: 24,
+          width: size,
+          height: size,
           decoration: BoxDecoration(
             color: Colors.black.withValues(alpha: 0.55),
             shape: BoxShape.circle,
@@ -184,28 +206,28 @@ class _PosterCardState extends State<PosterCard> {
               width: 1,
             ),
           ),
-          child: const Icon(
+          child: Icon(
             Icons.description_outlined,
-            size: 14,
-            color: Color(0xFFCCCCCC),
+            size: size * 0.58,
+            color: const Color(0xFFCCCCCC),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildCardMeta(AkashaItem item, {required bool compact}) {
+  Widget _buildCardMeta(AkashaItem item) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           item.title,
-          style: TextStyle(
-            fontSize: compact ? 14 : 13,
+          style: const TextStyle(
+            fontSize: 13,
             fontWeight: FontWeight.w700,
             height: 1.2,
           ),
-          maxLines: compact ? 3 : 2,
+          maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 3),
@@ -213,31 +235,17 @@ class _PosterCardState extends State<PosterCard> {
           Text(
             item.creator,
             style: TextStyle(
-              fontSize: compact ? 12 : 11,
+              fontSize: 11,
               color: Colors.grey[400],
               height: 1.2,
             ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-        if (compact) ...[
-          const SizedBox(height: 6),
-          Chip(
-            avatar: Icon(item.category.icon, size: 14),
-            label: Text(
-              item.category.label,
-              style: const TextStyle(fontSize: 10),
-            ),
-            visualDensity: VisualDensity.compact,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            padding: EdgeInsets.zero,
-          ),
-        ],
-        if (!compact) const Spacer(),
-        if (compact) const SizedBox(height: 8),
+        const Spacer(),
         if (item.rating > 0)
-          StarRating(rating: item.rating, size: compact ? 13 : 14)
-        else if (!compact)
+          StarRating(rating: item.rating, size: 14)
+        else
           const Row(
             children: [
               Text(
@@ -250,29 +258,88 @@ class _PosterCardState extends State<PosterCard> {
               ),
             ],
           ),
-        if (!compact) const SizedBox(height: 5),
-        if (compact) const SizedBox(height: 6),
+        const SizedBox(height: 5),
         Text(
           _getStatusTextWithEmoji(item),
           style: TextStyle(
-            fontSize: compact ? 11 : 11,
+            fontSize: 11,
             color: Colors.grey[300],
             fontWeight: FontWeight.w500,
           ),
-          maxLines: compact ? 2 : 1,
+          maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         if (item.releaseYear != null) ...[
-          SizedBox(height: compact ? 4 : 5),
+          const SizedBox(height: 5),
           Text(
             '🗓️ ${item.releaseYear}년',
             style: TextStyle(
-              fontSize: compact ? 10 : 10,
+              fontSize: 10,
               color: Colors.grey[400],
             ),
           ),
         ],
       ],
+    );
+  }
+
+  Widget _buildFactCardFooter(AkashaItem item, Color accent) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (item.rating > 0) ...[
+          StarRating(rating: item.rating, size: 13),
+          const SizedBox(height: 8),
+        ],
+        Wrap(
+          spacing: 6,
+          runSpacing: 6,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            if (item.releaseYear != null)
+              _metaPill(
+                '🗓 ${item.releaseYear}',
+                accent.withValues(alpha: 0.18),
+                accent.withValues(alpha: 0.85),
+              ),
+            _metaPill(
+              item.workStatusLabel,
+              Colors.white.withValues(alpha: 0.06),
+              Colors.grey[300]!,
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Text(
+          _getStatusTextWithEmoji(item),
+          style: TextStyle(
+            fontSize: 10,
+            color: Colors.grey[500],
+            fontWeight: FontWeight.w500,
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
+
+  Widget _metaPill(String label, Color bg, Color fg) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: fg.withValues(alpha: 0.25)),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.w600,
+          color: fg,
+        ),
+      ),
     );
   }
 
@@ -287,7 +354,11 @@ class _PosterCardState extends State<PosterCard> {
     );
   }
 
-  Widget _buildPosterLayout(AkashaItem item, bool showArchivedBadge) {
+  Widget _buildPosterLayout(
+    AkashaItem item,
+    bool showArchivedBadge,
+    List<Color> gradColors,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -319,7 +390,7 @@ class _PosterCardState extends State<PosterCard> {
           flex: 3,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
-            child: _buildCardMeta(item, compact: false),
+            child: _buildCardMeta(item),
           ),
         ),
         _buildFormatSlotsRow(),
@@ -327,22 +398,115 @@ class _PosterCardState extends State<PosterCard> {
     );
   }
 
-  Widget _buildCompactLayout(AkashaItem item, bool showArchivedBadge) {
+  Widget _buildFactCardLayout(AkashaItem item, bool showArchivedBadge) {
+    final accent = _categoryAccent(item.category);
+
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        SizedBox(
+          height: 58,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned.fill(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        accent.withValues(alpha: 0.42),
+                        const Color(0xFF252536),
+                      ],
+                    ),
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(9),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 6,
+                bottom: -6,
+                child: Icon(
+                  item.category.icon,
+                  size: 56,
+                  color: Colors.white.withValues(alpha: 0.08),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(11, 10, 11, 8),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.22),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.12),
+                        ),
+                      ),
+                      child: Icon(
+                        item.category.icon,
+                        size: 16,
+                        color: Colors.white.withValues(alpha: 0.92),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        item.category.label,
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white.withValues(alpha: 0.9),
+                          letterSpacing: 0.15,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    if (showArchivedBadge)
+                      _buildArchivedBadge(size: 22),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
-            child: Stack(
+            padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildCardMeta(item, compact: true),
-                if (showArchivedBadge)
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: _buildArchivedBadge(),
+                Text(
+                  item.title,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                    height: 1.25,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 5),
+                if (item.creator.isNotEmpty)
+                  Text(
+                    item.creator,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.grey[400],
+                      height: 1.2,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                const Spacer(),
+                _buildFactCardFooter(item, accent),
               ],
             ),
           ),

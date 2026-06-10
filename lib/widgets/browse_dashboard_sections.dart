@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import '../models/browse_card.dart';
+import '../utils/browse_category_groups.dart';
 import '../utils/browse_year_groups.dart';
+import '../models/enums.dart';
 import '../utils/helpers.dart';
 import 'section_header.dart';
 import 'section_sort_dropdown.dart';
 
-/// 홈 대시보드 browse 섹션 (HoF · 라이브러리 · 연도별 · watchlist)
+/// 홈 대시보드 browse 섹션 (카탈로그 · 연도별 · watchlist)
 class BrowseDashboardSections extends StatelessWidget {
   final List<BrowseCard> hofCards;
   final List<BrowseCard> libraryCards;
   final List<BrowseCard> watchlistCards;
   final BrowseYearGroups yearGroups;
+  final BrowseCategoryGroups? categoryGroups;
   final String displayName;
 
+  final bool showHallOfFame;
   final bool hofExpanded;
   final bool libraryExpanded;
   final bool yearlyExpanded;
@@ -43,7 +47,9 @@ class BrowseDashboardSections extends StatelessWidget {
     required this.libraryCards,
     required this.watchlistCards,
     required this.yearGroups,
+    this.categoryGroups,
     required this.displayName,
+    this.showHallOfFame = true,
     required this.hofExpanded,
     required this.libraryExpanded,
     required this.yearlyExpanded,
@@ -70,7 +76,7 @@ class BrowseDashboardSections extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.only(bottom: 80),
       children: [
-        if (hofCards.isNotEmpty) ...[
+        if (showHallOfFame && hofCards.isNotEmpty) ...[
           _sectionHeader(
             emoji: '👑',
             title: 'S-Tier 인생 명작 컬렉션 (Hall of Fame)',
@@ -109,13 +115,48 @@ class BrowseDashboardSections extends StatelessWidget {
                 : const Color(0xFFF09819),
             subtitle: isPersonalLibraryMode
                 ? '${libraryCards.length}개 아카이브 작품'
-                : '${libraryCards.length}개 표시 · 엄선 아카이브는 사이드바 「나만의 서재」를 이용하세요.',
+                : categoryGroups != null
+                    ? '${libraryCards.length}개 표시 · 매체별로 정렬 · 아카이브된 작품은 카드에 표시됩니다'
+                    : '${libraryCards.length}개 표시 · 엄선 아카이브는 사이드바 「나만의 서재」를 이용하세요.',
             expanded: libraryExpanded,
             onExpandedChanged: onLibraryExpandedChanged,
             sortCriteria: librarySortCriteria,
             onSortChanged: onLibrarySortChanged,
           ),
-          if (libraryExpanded) gridBuilder(libraryCards),
+          if (libraryExpanded) ...[
+            if (categoryGroups != null)
+              for (final category in categoryGroups!.orderedCategories) ...[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(28, 12, 16, 4),
+                  child: Row(
+                    children: [
+                      Icon(
+                        category.icon,
+                        size: 18,
+                        color: Colors.orangeAccent.withValues(alpha: 0.9),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        category.label,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orangeAccent,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '(${categoryGroups!.byCategory[category]!.length}개 작품)',
+                        style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                      ),
+                    ],
+                  ),
+                ),
+                gridBuilder(categoryGroups!.byCategory[category]!),
+              ]
+            else
+              gridBuilder(libraryCards),
+          ],
           const SizedBox(height: 16),
         ],
         if (libraryCards.isNotEmpty) ...[

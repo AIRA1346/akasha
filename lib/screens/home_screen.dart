@@ -13,6 +13,7 @@ import '../services/works_registry.dart';
 import '../services/registry_sync_service.dart';
 import '../utils/helpers.dart';
 import '../utils/browse_section_filters.dart';
+import '../utils/browse_category_groups.dart';
 import '../widgets/filter_section.dart';
 import '../widgets/poster_card.dart';
 import '../widgets/browse_dashboard_sections.dart';
@@ -53,7 +54,6 @@ import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
 import '../widgets/library_theme_picker.dart';
 import 'detail_screen.dart';
-import 'detail/archive_create_screen.dart';
 //  메인 홈 대시보드 (Sanctum vault 스타일 그리드)
 // ════════════════════════════════════════════════════════════════
 
@@ -519,25 +519,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _openBrowseItem(AkashaItem item) {
-    final service = AkashaFileService();
-    final isArchived = service.isArchivedInVault(item);
-    final openCreateFlow = !_isPersonalLibraryMode && !isArchived;
-
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => openCreateFlow
-            ? ArchiveCreateScreen(item: item)
-            : DetailScreen(item: item),
-      ),
+      MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
     ).then((result) async {
       await _loadItems();
       if (!mounted) return;
-
-      if (result is AkashaItem) {
-        _navigateToDetail(result);
-        return;
-      }
 
       if (result == true) {
         setState(() {
@@ -658,21 +645,41 @@ class _HomeScreenState extends State<HomeScreen> {
     final dailyRecall = FeatureFlags.showRecallCard && !_isPersonalLibraryMode
         ? RecallPicker.pickDailyRecall(_items)
         : null;
-    final hofCards = sortBrowseCards(
-      filtered.where((c) => c.item.isHallOfFame).toList(),
-      _sectionPrefs.hofSort,
-    );
-    final watchlistCards = sortBrowseCards(
-      filterWatchlistCards(filtered, _items),
-      _sectionPrefs.watchlistSort,
-    );
-    final libraryCards = sortBrowseCards(
-      filterLibraryCards(filtered, _items),
-      _sectionPrefs.librarySort,
-    );
+
+    final List<BrowseCard> catalogCards;
+    final List<BrowseCard> hofCards;
+    final List<BrowseCard> watchlistCards;
+    final BrowseCategoryGroups? categoryGroups;
+
+    if (_isPersonalLibraryMode) {
+      catalogCards = sortBrowseCards(
+        filterLibraryCards(filtered, _items),
+        _sectionPrefs.librarySort,
+      );
+      hofCards = sortBrowseCards(
+        filtered.where((c) => c.item.isHallOfFame).toList(),
+        _sectionPrefs.hofSort,
+      );
+      watchlistCards = sortBrowseCards(
+        filterWatchlistCards(filtered, _items),
+        _sectionPrefs.watchlistSort,
+      );
+      categoryGroups = null;
+    } else {
+      catalogCards = sortBrowseCards(filtered, _sectionPrefs.librarySort);
+      hofCards = const [];
+      watchlistCards = sortBrowseCards(
+        filterWatchlistCards(filtered, _items),
+        _sectionPrefs.watchlistSort,
+      );
+      categoryGroups = BrowseCategoryGroups.fromCards(
+        catalogCards,
+        _sectionPrefs.librarySort,
+      );
+    }
 
     final yearGroups = BrowseYearGroups.fromLibraryCards(
-      libraryCards,
+      _isPersonalLibraryMode ? catalogCards : filtered,
       _sectionPrefs.yearlySort,
     );
 
@@ -798,11 +805,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ? _buildEmptyMainContent()
                           : BrowseDashboardSections(
                               hofCards: hofCards,
-                              libraryCards: libraryCards,
+                              libraryCards: catalogCards,
                               watchlistCards: watchlistCards,
                               yearGroups: yearGroups,
+                              categoryGroups: categoryGroups,
                               displayName: _displayName,
                               isPersonalLibraryMode: _isPersonalLibraryMode,
+                              showHallOfFame: _isPersonalLibraryMode,
                               hofExpanded: _sectionPrefs.hofExpanded,
                               libraryExpanded: _sectionPrefs.libraryExpanded,
                               yearlyExpanded: _sectionPrefs.yearlyExpanded,
@@ -862,7 +871,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return BrowsePosterGrid(
       cards: cards,
       cardBuilder: _buildPosterCard,
-      childAspectRatio: _isPersonalLibraryMode ? 0.48 : 1.35,
+      cardMinWidth: _isPersonalLibraryMode ? 170 : 176,
+      childAspectRatio: _isPersonalLibraryMode ? 0.48 : 0.78,
     );
   }
 

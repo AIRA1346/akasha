@@ -8,6 +8,8 @@ import '../services/franchise_fusion_service.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import 'home/dialogs/catalog_fix_contribution_dialog.dart';
+import 'detail/detail_archive_setup.dart';
+import 'detail/detail_archive_setup_panel.dart';
 import 'detail/detail_franchise_section.dart';
 import 'detail/detail_profile_section.dart';
 import 'detail/detail_section_title.dart';
@@ -31,6 +33,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late AkashaItem item;
+  late bool _showArchiveSetup;
   bool _registryPrefsReady = false;
   List<FormatSlot> _formatSlots = const [];
 
@@ -38,6 +41,7 @@ class _DetailScreenState extends State<DetailScreen> {
   void initState() {
     super.initState();
     item = widget.item;
+    _showArchiveSetup = DetailArchiveSetup.needsSetup(item);
     _loadRegistryPrefs();
   }
 
@@ -101,6 +105,40 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+
+    if (_showArchiveSetup) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(item.title),
+          actions: [
+            if (WorksRegistry.getWorkById(
+                  WorksRegistry.resolveWorkId(item.workId),
+                ) !=
+                null)
+              IconButton(
+                icon: const Icon(Icons.flag_outlined),
+                tooltip: '글로벌 사전 정보 수정 제안',
+                onPressed: () => _proposeCatalogFix(context),
+              ),
+          ],
+        ),
+        body: DetailArchiveSetupPanel(
+          item: item,
+          onCreated: (saved) {
+            setState(() {
+              item = saved;
+              _showArchiveSetup = false;
+            });
+            _showSnack(
+              AkashaFileService().vaultPath != null
+                  ? '"${saved.title}" md 파일을 저장했습니다.'
+                  : '"${saved.title}"을(를) 임시 저장했습니다.',
+            );
+            _loadFormatSlots();
+          },
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
