@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../models/akasha_item.dart';
 import '../services/file_service.dart';
+import '../services/markdown_body_merger.dart';
 import '../services/works_registry.dart';
+import '../widgets/vault_markdown_body.dart';
+import '../widgets/web_image_search_dialog.dart';
 import 'home/dialogs/catalog_fix_contribution_dialog.dart';
 import 'detail/detail_archive_save.dart';
 import 'detail/detail_profile_section.dart';
 import 'detail/detail_section_title.dart';
 import 'detail/dialogs/detail_delete_dialog.dart';
-import '../widgets/web_image_search_dialog.dart';
 
 // ════════════════════════════════════════════════════════════════
-//  작품 상세 페이지 — 항상 동일한 인라인 편집 레이아웃
+//  작품 상세 페이지 — 프로필 + Sanctum md 페이지 + 빠른 편집
 // ════════════════════════════════════════════════════════════════
 
 class DetailScreen extends StatefulWidget {
@@ -31,6 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
   late String _draftWorkStatus;
   late String _draftMyStatus;
   late bool _draftHallOfFame;
+  bool _quickEditExpanded = false;
 
   final _posterUrlCtrl = TextEditingController();
   final _quotesCtrl = TextEditingController();
@@ -84,6 +87,13 @@ class _DetailScreenState extends State<DetailScreen> {
     item.memorableQuotes = _parseQuotes(_quotesCtrl.text);
     return item;
   }
+
+  String get _previewBodyMarkdown => MarkdownBodyMerger.mergeBody(
+        bodyRaw: item.bodyRaw,
+        synopsis: _synopsisCtrl.text.trim(),
+        quotes: _parseQuotes(_quotesCtrl.text),
+        memo: _memoCtrl.text.trim(),
+      );
 
   bool get _isArchived =>
       AkashaFileService().isArchivedInVault(item) ||
@@ -203,20 +213,6 @@ class _DetailScreenState extends State<DetailScreen> {
               onHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
             ),
             const Divider(height: 32),
-            detailSectionTitle('📋', '시놉시스'),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                controller: _synopsisCtrl,
-                maxLines: 5,
-                decoration: const InputDecoration(
-                  hintText: '줄거리·소개를 적어 주세요',
-                  border: OutlineInputBorder(),
-                  alignLabelWithHint: true,
-                ),
-              ),
-            ),
-            const Divider(height: 32),
             if (item.tags.isNotEmpty) ...[
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -240,31 +236,72 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
               const SizedBox(height: 16),
             ],
-            detailSectionTitle('🎬', '명장면 & 명대사'),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                controller: _quotesCtrl,
-                maxLines: 4,
-                decoration: const InputDecoration(
-                  hintText: '한 줄에 한 문장씩 입력',
-                  border: OutlineInputBorder(),
-                  alignLabelWithHint: true,
-                ),
-              ),
+            detailSectionTitle('📖', 'Sanctum 페이지'),
+            VaultMarkdownBody(
+              data: _previewBodyMarkdown,
+              mdFilePath: item.filePath,
             ),
             const Divider(height: 32),
-            detailSectionTitle('📝', '메모'),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                controller: _memoCtrl,
-                maxLines: 5,
-                decoration: const InputDecoration(
-                  hintText: '감상·메모를 자유롭게 적어 주세요',
-                  border: OutlineInputBorder(),
-                  alignLabelWithHint: true,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: ExpansionTile(
+                initiallyExpanded: _quickEditExpanded,
+                onExpansionChanged: (v) =>
+                    setState(() => _quickEditExpanded = v),
+                title: const Text(
+                  '빠른 편집',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                 ),
+                subtitle: Text(
+                  '시놉·명대사·메모 — md 저장 시 Sanctum 페이지에 반영됩니다',
+                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        detailSectionTitle('📋', '시놉시스'),
+                        TextField(
+                          controller: _synopsisCtrl,
+                          maxLines: 5,
+                          onChanged: (_) => setState(() {}),
+                          decoration: const InputDecoration(
+                            hintText: '줄거리·소개를 적어 주세요',
+                            border: OutlineInputBorder(),
+                            alignLabelWithHint: true,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        detailSectionTitle('🎬', '명장면 & 명대사'),
+                        TextField(
+                          controller: _quotesCtrl,
+                          maxLines: 4,
+                          onChanged: (_) => setState(() {}),
+                          decoration: const InputDecoration(
+                            hintText: '한 줄에 한 문장씩 입력',
+                            border: OutlineInputBorder(),
+                            alignLabelWithHint: true,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        detailSectionTitle('📝', '메모'),
+                        TextField(
+                          controller: _memoCtrl,
+                          maxLines: 5,
+                          onChanged: (_) => setState(() {}),
+                          decoration: const InputDecoration(
+                            hintText: '감상·메모를 자유롭게 적어 주세요',
+                            border: OutlineInputBorder(),
+                            alignLabelWithHint: true,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 24),

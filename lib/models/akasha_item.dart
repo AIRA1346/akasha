@@ -27,6 +27,8 @@ abstract class AkashaItem {
   bool isHallOfFame;
   List<String> tags;
   DateTime addedAt;
+  /// frontmatter 이후 마크다운 원문 (커스텀 섹션 round-trip)
+  String bodyRaw;
 
   AkashaItem({
     required this.workId,
@@ -43,6 +45,7 @@ abstract class AkashaItem {
     this.isHallOfFame = false,
     List<String>? tags,
     DateTime? addedAt,
+    this.bodyRaw = '',
   })  : memorableQuotes = memorableQuotes ?? [],
         tags = tags ?? [],
         addedAt = addedAt ?? DateTime.now();
@@ -98,6 +101,7 @@ class ContentItem extends AkashaItem {
     super.isHallOfFame,
     super.tags,
     super.addedAt,
+    super.bodyRaw,
   }) : assert(CategoryRegistry.isContentType(category),
             '콘텐츠 아이템에 게임 카테고리를 할당할 수 없습니다.');
 
@@ -148,6 +152,7 @@ class GameItem extends AkashaItem {
     super.isHallOfFame,
     super.tags,
     super.addedAt,
+    super.bodyRaw,
   }) : super(category: MediaCategory.game);
 
   @override

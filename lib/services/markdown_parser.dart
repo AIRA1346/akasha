@@ -3,6 +3,7 @@ import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/work_id_codec.dart';
 import '../utils/helpers.dart';
+import 'markdown_body_merger.dart';
 import 'works_registry.dart';
 
 class MarkdownParser {
@@ -95,26 +96,19 @@ class MarkdownParser {
     buffer.writeln('added_at: "${item.addedAt.toIso8601String()}"');
     buffer.writeln('---');
     buffer.writeln();
-    
-    // 유저 개인의 기록(시놉·명대사·메모)만 본문에 남깁니다.
-    if (item.description.trim().isNotEmpty) {
-      buffer.writeln('# 📋 시놉시스');
-      buffer.writeln(item.description.trim());
+
+    final mergedBody = MarkdownBodyMerger.mergeBody(
+      bodyRaw: item.bodyRaw,
+      synopsis: item.description,
+      quotes: item.memorableQuotes,
+      memo: item.review,
+    );
+    item.bodyRaw = mergedBody;
+    if (mergedBody.isNotEmpty) {
+      buffer.writeln(mergedBody);
       buffer.writeln();
     }
 
-    buffer.writeln('# 🎬 명장면 & 명대사');
-    for (final quote in item.memorableQuotes) {
-      buffer.writeln('> $quote');
-      buffer.writeln();
-    }
-
-    if (item.review.trim().isNotEmpty) {
-      buffer.writeln('# 📝 메모');
-      buffer.writeln(item.review.trim());
-      buffer.writeln();
-    }
-    
     return buffer.toString();
   }
 
@@ -217,55 +211,12 @@ class MarkdownParser {
       addedAt = DateTime.tryParse(yamlMap['added_at'].toString()) ?? DateTime.now();
     }
 
-    // 마크다운 바디 파싱 (유저 기록 파싱)
-    final bodyLines = lines.sublist(bodyStartLine);
-    final List<String> quotes = [];
-    final synopsisBuffer = StringBuffer();
-    final reviewBuffer = StringBuffer();
-
-    String currentSection = 'none';
-
-    for (var line in bodyLines) {
-      final trimmedLine = line.trim();
-      
-      // 대메뉴 제목 감지 (# )
-      if (trimmedLine.startsWith('# ')) {
-        final heading = trimmedLine.substring(2).toLowerCase();
-        if (heading.contains('명대사') || heading.contains('명장면') || heading.contains('quote')) {
-          currentSection = 'quotes';
-        } else if (heading.contains('시놉') || heading.contains('synopsis')) {
-          currentSection = 'synopsis';
-        } else if (heading.contains('메모') || heading.contains('memo')) {
-          currentSection = 'memo';
-        } else if (heading.contains('감상문') || heading.contains('review')) {
-          currentSection = 'review';
-        } else {
-          currentSection = 'none';
-        }
-        continue;
-      }
-
-      // 섹션별 데이터 수집
-      if (currentSection == 'synopsis') {
-        synopsisBuffer.writeln(line);
-      } else if (currentSection == 'review' || currentSection == 'memo') {
-        reviewBuffer.writeln(line);
-      } else if (currentSection == 'quotes') {
-        if (trimmedLine.startsWith('>')) {
-          var quoteText = trimmedLine.substring(1).trim();
-          if (quoteText.isNotEmpty) {
-            quotes.add(quoteText);
-          }
-        } else if (trimmedLine.isNotEmpty) {
-          if (!trimmedLine.startsWith('#') && !trimmedLine.startsWith('---')) {
-            quotes.add(trimmedLine);
-          }
-        }
-      }
-    }
-
-    final review = reviewBuffer.toString().trim();
-    final userSynopsis = synopsisBuffer.toString().trim();
+    // 마크다운 바디 — 원문 보존 + 슬롯 필드 추출
+    final bodyRaw = lines.sublist(bodyStartLine).join('\n').trimRight();
+    final slots = MarkdownBodyMerger.parseSlots(bodyRaw);
+    final quotes = slots.quotes;
+    final userSynopsis = slots.synopsis;
+    final review = slots.memo;
 
     // ── UI Fusion: 공통 사전 DB 조인 ──
     String creator = yamlMap['creator']?.toString() ?? '';
@@ -326,6 +277,7 @@ class MarkdownParser {
       tags: tags,
     );
     item.addedAt = addedAt;
+    item.bodyRaw = bodyRaw;
     if (workId.isEmpty || !WorkIdCodec.isMasterFormat(workId)) {
       item.workId = ensureWorkId(item);
     }

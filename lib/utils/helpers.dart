@@ -24,6 +24,7 @@ AkashaItem createItem({
   String review = '',
   bool isHallOfFame = false,
   List<String>? tags,
+  String bodyRaw = '',
 }) {
   final resolvedDomain = domain ?? AppDomain.subculture;
   if (CategoryRegistry.isContentType(category)) {
@@ -41,6 +42,7 @@ AkashaItem createItem({
       review: review,
       isHallOfFame: isHallOfFame,
       tags: tags,
+      bodyRaw: bodyRaw,
     );
     if (workStatus != null) item.setWorkStatus(workStatus);
     if (myStatus != null) item.setMyStatus(myStatus);
@@ -59,6 +61,7 @@ AkashaItem createItem({
       review: review,
       isHallOfFame: isHallOfFame,
       tags: tags,
+      bodyRaw: bodyRaw,
     );
     if (workStatus != null) item.setWorkStatus(workStatus);
     if (myStatus != null) item.setMyStatus(myStatus);
