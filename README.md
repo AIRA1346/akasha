@@ -71,13 +71,13 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 | **기술** | GitHub → Cloudflare CDN → 앱 (서버 비용 0) |
 | **글로벌화** | `searchTokens` · [locale-catalog-policy.md](docs/policy/locale-catalog-policy.md) |
 
-동기화 base URL:
+동기화 base URL (CDN read):
 
 ```
-https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
+https://akasha-db.pages.dev/
 ```
 
-레포: [akasha-db](https://github.com/AIRA1346/akasha-db) (앱 저장소 내 `akasha-db/` 서브모듈/미러)
+소스(Git): [akasha-db](https://github.com/AIRA1346/akasha-db) — push 시 Pages 자동 배포
 
 ---
 

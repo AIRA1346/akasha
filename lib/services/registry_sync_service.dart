@@ -17,8 +17,8 @@ class RegistrySyncService {
   static const String _prefLastSyncKey = 'akasha_last_sync_time';
   static const String _prefCustomUrlKey = 'akasha_custom_db_url';
 
-  static const String defaultDbBaseUrl =
-      'https://raw.githubusercontent.com/AIRA1346/akasha-db/main/';
+  /// Read path: Cloudflare Pages (GitHub akasha-db push → auto deploy).
+  static const String defaultDbBaseUrl = 'https://akasha-db.pages.dev/';
 
   static const String defaultLegacyDbUrl =
       '${defaultDbBaseUrl}works_registry.json';

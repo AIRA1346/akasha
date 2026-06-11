@@ -30,9 +30,8 @@ akasha-db/
 
 ## 앱 동기화
 
-```
-https://raw.githubusercontent.com/AIRA1346/akasha-db/main/
-```
+**Read (CDN):** `https://akasha-db.pages.dev/`  
+**Write (Git):** 이 저장소 `main` — push 시 Cloudflare Pages 자동 배포
 
 동기화 순서: `manifest.json` → `search_index.json` → `eager` 샤드 → (검색 시) 온디맨드 샤드
 
