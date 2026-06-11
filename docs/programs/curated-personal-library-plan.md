@@ -1,6 +1,6 @@
 # Curated Personal Library — 나만의 서재 큐레이션 설계
 
-> **상태:** 설계 확정 · 구현 전 검토 반영 (2026-06-10)  
+> **상태:** v1 + v1.1 구현 완료 (2026-06-10) · polish·테스트·Case D 잔여  
 > **기준일:** 2026-06-10  
 > **지위:** `PersonalLibraryConfig` · `MyLibraryPipeline` 확장 SSOT  
 > **상위:** [product-vision.md](../product-vision.md) · [ROADMAP.md](../../ROADMAP.md) M1 나만의 서재
@@ -588,12 +588,26 @@ onAccept(libraryId, payload)
 - **Scoped fusion 카드** 1장 = order 항목 1개 (대표 `workId` 기준).
 - 필터로 숨겨진 id는 order에서 **유지** (필터 해제 시 원래 순서).
 
-**v1.1 — DnD-B (그리드 내 reorder)**
+**v1.1 — DnD-B (그리드 내 reorder)** ✅
 
-- 활성 curated 그리드에서 **전용 ⠿ 핸들**로만 시작 (DnD-A ⠿ 핸들과 동일 패턴, 제스처 충돌 방지).
+- 활성 curated 그리드에서 **좌측 `swap_vert` 핸들**(teal)로만 시작 · 우측 amber 핸들은 DnD-A(담기) 전용.
 - E9와 **같은 `memberOrder` SSOT** — 한 곳만 바꿔도 일치.
+- **직접 배치 순** 정렬 모드에서만 그리드 reorder 활성 (§7.13.4b).
 
-#### 7.13.5 DnD-C — 빼기 (v1.1)
+#### 7.13.4b 정렬 2계층 (v1.1.1) ✅
+
+curated 메인 그리드 정렬 드롭다운:
+
+| 옵션 | `memberOrder` | 그리드 DnD-B | 비고 |
+|------|:-------------:|:------------:|------|
+| **직접 배치 순** | 읽기·쓰기 SSOT | ✅ | 기본값 (filter→curated 진입 시) |
+| 작품명·별점·연도·최근 | **변경 없음** | ❌ | `sortBrowseCards` 보기용만 |
+| E9 멤버 리스트 | 읽기·쓰기 | — | 정렬 모드와 무관하게 항상 편집 |
+
+- filter·`master_archive` · 대시보드 카탈로그: 직접 배치 순 **옵션 없음** (기존 4종).
+- 저장: `memberOrder` → `{vault}/.akasha/personal_libraries.json` (신규 필드 없음).
+
+#### 7.13.5 DnD-C — 빼기 (v1.1) ✅
 
 - curated 그리드 하단 또는 사이드바 **「서재에서 제거」** 휴지통 DropTarget.
 - `onAccept` → `removeWork(activeLibraryId, workId)` · md는 유지.
@@ -720,11 +734,13 @@ static List<BrowseCard> build(
 
 ### Phase 4 — (v1.1) polish
 
-| # | 작업 |
-|---|------|
-| 4.1 | **DnD-B** 그리드 reorder · **DnD-C** 휴지통 drop · 드래그 중 자동 스크롤 |
-| 4.2 | 서재별 테마 (기존 `LibraryTheme` 연동 검토) |
-| 4.3 | dogfood · Steam 스크린샷 “드래그로 서재 담기” |
+| # | 작업 | 상태 |
+|---|------|:----:|
+| 4.1 | **DnD-B** 그리드 reorder · **DnD-C** 휴지통 drop | ✅ |
+| 4.1b | **직접 배치 순** 정렬 2계층 (§7.13.4b) | ✅ |
+| 4.1c | 드래그 중 자동 스크롤 | ⬜ |
+| 4.2 | 서재별 테마 (기존 `LibraryTheme` 연동 검토) | ⬜ |
+| 4.3 | dogfood · Steam 스크린샷 “드래그로 서재 담기” | ⬜ |
 
 ---
 
@@ -771,4 +787,5 @@ static List<BrowseCard> build(
 | 2026-06-10 | 초안 — D1~D5 확정 · scoped fusion · vault 저장 |
 | 2026-06-10 | §7.3~7.12 담기 진입점 · 상태 머신 · UI 시트 · 진입점별 시퀀스 |
 | 2026-06-10 | D6 · §7.13 드래그 앤 드롭 (담기 1순위 · 순서 정렬 · v1.1 제거) |
+| 2026-06-10 | v1.1 구현 반영 — DnD-B/C · §7.13.4b 직접 배치 순 · Phase 4 상태 |
 | 2026-06-10 | 구현 전 검토 반영 — D7~D8 · `memberOrder` SSOT · filter 레거시 · DnD-A/E9 분리 · D8 prefs 정리 · Case B `myStatus` |

@@ -562,6 +562,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showPersonalLibraryEditDialog(
     PersonalLibraryConfig config,
   ) async {
+    final memberOrderBefore = config.isCurated
+        ? List<String>.from(config.memberOrder)
+        : const <String>[];
     final updated = await showPersonalLibraryEditDialog(
       context,
       config: config,
@@ -580,6 +583,30 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
     await _personalLibCtrl.save();
+
+    final memberOrderChanged =
+        memberOrderBefore.length != updated.memberOrder.length ||
+            !_memberOrderListsEqual(memberOrderBefore, updated.memberOrder);
+    if (updated.isCurated &&
+        !_sectionPrefs.librarySort.isManualOrder &&
+        memberOrderChanged) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            '멤버 순서를 저장했습니다. 그리드에서는 「직접 배치 순」으로 확인하세요.',
+          ),
+        ),
+      );
+    }
+  }
+
+  bool _memberOrderListsEqual(List<String> a, List<String> b) {
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
   }
 
   void _deleteDashboard(String id) {
