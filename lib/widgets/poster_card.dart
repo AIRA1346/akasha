@@ -21,6 +21,7 @@ class PosterCard extends StatefulWidget {
   final VoidCallback? onHideFromRegistry;
   final VoidCallback? onHideFranchise;
   final void Function(FormatSlot slot)? onHideFormatSlot;
+  final VoidCallback? onAddToLibrary;
 
   const PosterCard({
     super.key,
@@ -32,6 +33,7 @@ class PosterCard extends StatefulWidget {
     this.onHideFromRegistry,
     this.onHideFranchise,
     this.onHideFormatSlot,
+    this.onAddToLibrary,
   });
 
   @override
@@ -82,14 +84,8 @@ class _PosterCardState extends State<PosterCard> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
-        onSecondaryTap: (widget.onHideFromRegistry != null ||
-                widget.onHideFranchise != null)
-            ? () => _showRegistryContextMenu(context)
-            : null,
-        onLongPress: (widget.onHideFromRegistry != null ||
-                widget.onHideFranchise != null)
-            ? () => _showRegistryContextMenu(context)
-            : null,
+        onSecondaryTap: _hasContextMenu ? () => _showCardContextMenu(context) : null,
+        onLongPress: _hasContextMenu ? () => _showCardContextMenu(context) : null,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOut,
@@ -125,10 +121,16 @@ class _PosterCardState extends State<PosterCard> {
     );
   }
 
-  void _showRegistryContextMenu(BuildContext context) {
+  bool get _hasContextMenu =>
+      widget.onHideFromRegistry != null ||
+      widget.onHideFranchise != null ||
+      widget.onAddToLibrary != null;
+
+  void _showCardContextMenu(BuildContext context) {
     final hide = widget.onHideFromRegistry;
     final hideFranchise = widget.onHideFranchise;
-    if (hide == null && hideFranchise == null) return;
+    final addToLibrary = widget.onAddToLibrary;
+    if (!_hasContextMenu) return;
 
     showModalBottomSheet<void>(
       context: context,
@@ -140,6 +142,15 @@ class _PosterCardState extends State<PosterCard> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            if (addToLibrary != null)
+              ListTile(
+                leading: const Icon(Icons.collections_bookmark_outlined),
+                title: const Text('서재에 담기'),
+                onTap: () {
+                  Navigator.pop(ctx);
+                  addToLibrary();
+                },
+              ),
             if (hideFranchise != null)
               ListTile(
                 leading: const Icon(Icons.layers_clear_outlined),

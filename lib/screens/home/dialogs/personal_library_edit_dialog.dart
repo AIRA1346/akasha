@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/personal_library_config.dart';
+import '../../../services/works_registry.dart';
 import '../../../utils/helpers.dart';
+
+String _memberTitle(String workId, List<AkashaItem> vaultItems) {
+  for (final item in vaultItems) {
+    if (item.workId == workId ||
+        WorksRegistry.resolveWorkId(item.workId) ==
+            WorksRegistry.resolveWorkId(workId)) {
+      return item.title;
+    }
+  }
+  final work = WorksRegistry.getWorkById(workId);
+  if (work != null) return work.displayTitle();
+  return workId;
+}
 
 /// 나만의 서재 추가·설정 수정 (대시보드 설정과 동일한 필터 UI)
 Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
   BuildContext context, {
   PersonalLibraryConfig? config,
+  List<AkashaItem> vaultItems = const [],
 }) async {
   final isNew = config == null;
   final isMasterArchive =
@@ -20,6 +36,9 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
       config != null ? Set.from(config.myStatuses) : {};
   final Set<String> tempWorkStatuses =
       config != null ? Set.from(config.workStatuses) : {};
+  var tempMemberOrder = config != null && config.isCurated
+      ? List<String>.from(config.memberOrder)
+      : <String>[];
 
   final result = await showDialog<PersonalLibraryConfig>(
     context: context,
@@ -71,6 +90,64 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                       helperMaxLines: 2,
                     ),
                   ),
+                  if (!isNew && config!.isCurated) ...[
+                    const SizedBox(height: 16),
+                    Text(
+                      '담긴 작품 (${tempMemberOrder.length})',
+                      style: const TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    if (tempMemberOrder.isEmpty)
+                      Text(
+                        '아직 담긴 작품이 없습니다.',
+                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                      )
+                    else
+                      ReorderableListView(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        onReorder: (oldIndex, newIndex) {
+                          setD(() {
+                            if (newIndex > oldIndex) newIndex -= 1;
+                            final id = tempMemberOrder.removeAt(oldIndex);
+                            tempMemberOrder.insert(newIndex, id);
+                          });
+                        },
+                        children: [
+                          for (var i = 0; i < tempMemberOrder.length; i++)
+                            ListTile(
+                              key: ValueKey(tempMemberOrder[i]),
+                              dense: true,
+                              leading: const Icon(Icons.drag_handle, size: 18),
+                              title: Text(
+                                _memberTitle(tempMemberOrder[i], vaultItems),
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                              subtitle: Text(
+                                tempMemberOrder[i],
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                              trailing: IconButton(
+                                icon: const Icon(
+                                  Icons.close,
+                                  size: 16,
+                                  color: Colors.redAccent,
+                                ),
+                                onPressed: () => setD(() {
+                                  tempMemberOrder.removeAt(i);
+                                }),
+                              ),
+                            ),
+                        ],
+                      ),
+                  ],
                   const SizedBox(height: 16),
                   const Text(
                     '대분류 (도메인) 필터',
@@ -225,6 +302,12 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                   config.categories = tempCategories;
                   config.workStatuses = tempWorkStatuses;
                   config.myStatuses = tempMyStatuses;
+                  if (config.isCurated) {
+                    config.memberOrder =
+                        PersonalLibraryConfig.normalizeMemberOrder(
+                      tempMemberOrder,
+                    );
+                  }
                   Navigator.pop(ctx, config);
                 }
               },

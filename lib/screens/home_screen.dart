@@ -44,7 +44,13 @@ import '../widgets/today_recall_card.dart';
 import '../utils/recall_picker.dart';
 import 'home/home_personal_library_controller.dart';
 import 'home/dialogs/personal_library_edit_dialog.dart';
+import 'home/dialogs/archive_then_add_dialog.dart';
+import 'home/dialogs/add_to_library_sheet.dart';
+import '../models/work_drag_payload.dart';
 import '../services/my_library_pipeline.dart';
+import '../services/markdown_parser.dart';
+import '../services/personal_library_membership_service.dart';
+import '../widgets/work_draggable_card.dart';
 import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/browse_pipeline.dart';
@@ -77,6 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final HomeDashboardController _dashboardCtrl = HomeDashboardController();
   final HomePersonalLibraryController _personalLibCtrl =
       HomePersonalLibraryController();
+  late final PersonalLibraryMembershipService _libraryMembership =
+      PersonalLibraryMembershipService(_personalLibCtrl);
   HomeSectionPreferences _sectionPrefs = HomeSectionPreferences();
   late final HomeRegistryHideActions _hideActions;
   bool _isSidebarOpen = true;
@@ -315,8 +323,116 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  bool get _canAddToLibrary =>
+      AkashaFileService().vaultPath != null &&
+      _personalLibCtrl.libraries.any((l) => l.isCurated);
+
+  void _onLibraryDragStarted() {
+    if (!_isSidebarOpen) {
+      setState(() => _isSidebarOpen = true);
+      _saveSidebarState(true);
+    }
+  }
+
+  Future<void> _onDropWorkToLibrary(
+    String libraryId,
+    WorkDragPayload payload,
+  ) async {
+    await _addWorkToLibrary(
+      libraryId: libraryId,
+      item: payload.item,
+      switchToLibrary: true,
+    );
+  }
+
+  Future<void> _addWorkToLibrary({
+    required String libraryId,
+    required AkashaItem item,
+    bool switchToLibrary = false,
+  }) async {
+    final fileService = AkashaFileService();
+    if (fileService.vaultPath == null) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('볼트 연결 후 서재에 담을 수 있습니다.')),
+        );
+      }
+      return;
+    }
+
+    var workItem = _resolveItemForOpen(item);
+    if (!fileService.isArchivedInVault(workItem)) {
+      final ok = await showArchiveThenAddDialog(context, draft: workItem);
+      if (!ok || !mounted) return;
+      await _loadItems();
+      workItem = _resolveItemForOpen(item);
+    }
+
+    final workId = MarkdownParser.ensureWorkId(workItem);
+    PersonalLibraryConfig? lib;
+    for (final l in _personalLibCtrl.libraries) {
+      if (l.id == libraryId) {
+        lib = l;
+        break;
+      }
+    }
+    if (lib == null || !lib.isCurated) return;
+
+    final already = _libraryMembership.containsWork(lib, workId);
+    await _libraryMembership.addWork(libraryId, workId);
+    if (!mounted) return;
+
+    setState(() {});
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          already ? '이미 「${lib.name}」에 담긴 작품입니다.' : '「${lib.name}」에 담았습니다.',
+        ),
+        action: switchToLibrary
+            ? SnackBarAction(
+                label: '보기',
+                onPressed: () => _selectPersonalLibrary(libraryId),
+              )
+            : null,
+      ),
+    );
+  }
+
+  Future<void> _showAddToLibraryForCard(AkashaItem item) async {
+    final fileService = AkashaFileService();
+    if (fileService.vaultPath == null) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('볼트 연결 후 서재에 담을 수 있습니다.')),
+        );
+      }
+      return;
+    }
+
+    var workItem = _resolveItemForOpen(item);
+    if (!fileService.isArchivedInVault(workItem)) {
+      final ok = await showArchiveThenAddDialog(context, draft: workItem);
+      if (!ok || !mounted) return;
+      await _loadItems();
+      workItem = _resolveItemForOpen(item);
+    }
+
+    final workId = MarkdownParser.ensureWorkId(workItem);
+    await showAddToLibrarySheet(
+      context,
+      workId: workId,
+      displayTitle: workItem.title,
+      membership: _libraryMembership,
+      activeLibraryId: _personalLibCtrl.activeLibraryId,
+    );
+    if (mounted) setState(() {});
+  }
+
   Future<void> _showPersonalLibraryAddDialog() async {
-    final config = await showPersonalLibraryEditDialog(context);
+    final config = await showPersonalLibraryEditDialog(
+      context,
+      vaultItems: _items,
+    );
     if (config == null || !mounted) return;
     setState(() {
       _personalLibCtrl.add(config);
@@ -357,7 +473,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _showPersonalLibraryEditDialog(
     PersonalLibraryConfig config,
   ) async {
-    final updated = await showPersonalLibraryEditDialog(context, config: config);
+    final updated = await showPersonalLibraryEditDialog(
+      context,
+      config: config,
+      vaultItems: _items,
+    );
     if (updated == null || !mounted) return;
     setState(() {
       if (_personalLibCtrl.activeLibraryId == updated.id) {
@@ -471,13 +591,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 !vaultLinked
                     ? '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.'
                     : isCuratedEmpty
-                        ? '검색으로 작품을 추가하거나, 카드를 서재 이름으로 끌어다 놓으세요.'
+                        ? '검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.'
                         : hasMembersButFiltered
                             ? '상단 필터를 조정해 보세요.'
                             : '검색으로 작품을 추가해 보세요.',
                 style: TextStyle(color: Colors.grey[500], height: 1.5),
                 textAlign: TextAlign.center,
               ),
+              if (vaultLinked && isCuratedEmpty) ...[
+                const SizedBox(height: 16),
+                FilledButton.icon(
+                  onPressed: () => _showSearchDialog(context),
+                  icon: const Icon(Icons.search, size: 18),
+                  label: const Text('작품 검색'),
+                ),
+              ],
             ],
           ),
         ),
@@ -573,16 +701,38 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildPosterCard(BrowseCard card) {
-    return PosterCard(
-      item: card.item,
+    final item = card.item;
+    final canCurate = _canAddToLibrary;
+
+    Widget poster = PosterCard(
+      item: item,
       formatSlots: card.formatSlots,
       franchiseId: card.franchiseId,
       showPoster: _isPersonalLibraryMode,
-      onTap: () => _openBrowseItem(card.item),
-      onHideFromRegistry: _hideActions.registryHideActionFor(card.item),
+      onTap: () => _openBrowseItem(item),
+      onHideFromRegistry: _hideActions.registryHideActionFor(item),
       onHideFranchise: _hideActions.franchiseHideActionFor(card),
       onHideFormatSlot: _hideActions.formatSlotHideActionFor(card),
+      onAddToLibrary: canCurate ? () => _showAddToLibraryForCard(item) : null,
     );
+
+    if (canCurate) {
+      final workId =
+          item.workId.isNotEmpty ? item.workId : MarkdownParser.ensureWorkId(item);
+      poster = WorkDraggableCard(
+        payload: WorkDragPayload(
+          workId: workId,
+          item: item,
+          source: _isPersonalLibraryMode
+              ? WorkDragSource.libraryGrid
+              : WorkDragSource.catalogGrid,
+        ),
+        onDragStarted: _onLibraryDragStarted,
+        child: poster,
+      );
+    }
+
+    return poster;
   }
 
   // ── 글로벌 작품 사전 동기화 메소드 ──
@@ -793,6 +943,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onSelectPersonalLibrary: _selectPersonalLibrary,
                 onEditPersonalLibrary: _showPersonalLibraryEditDialog,
                 onDeletePersonalLibrary: _deletePersonalLibrary,
+                onDropWorkToLibrary:
+                    _canAddToLibrary ? _onDropWorkToLibrary : null,
+                onLibraryDragStarted:
+                    _canAddToLibrary ? _onLibraryDragStarted : null,
               ),
               Expanded(
                 child: Column(

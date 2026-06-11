@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../models/dashboard_config.dart';
 import '../models/personal_library_config.dart';
+import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
+import 'personal_library_drop_target.dart';
 
 /// 나만의 서재 + 대시보드 서재 사이드바 (나만의 서재 상단)
 class DashboardSidebar extends StatelessWidget {
@@ -23,6 +25,8 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
   final void Function(String id) onDeletePersonalLibrary;
+  final void Function(String libraryId, WorkDragPayload payload)? onDropWorkToLibrary;
+  final VoidCallback? onLibraryDragStarted;
 
   const DashboardSidebar({
     super.key,
@@ -40,6 +44,8 @@ class DashboardSidebar extends StatelessWidget {
     required this.onSelectPersonalLibrary,
     required this.onEditPersonalLibrary,
     required this.onDeletePersonalLibrary,
+    this.onDropWorkToLibrary,
+    this.onLibraryDragStarted,
   });
 
   @override
@@ -76,7 +82,7 @@ class DashboardSidebar extends StatelessWidget {
                       final isActive = selectionMode ==
                               SidebarSelectionMode.personalLibrary &&
                           lib.id == activePersonalLibraryId;
-                      return SidebarItemWidget(
+                      Widget row = SidebarItemWidget(
                         name: lib.isCurated && lib.memberOrder.isNotEmpty
                             ? '${lib.name} (${lib.memberOrder.length})'
                             : lib.name,
@@ -94,6 +100,17 @@ class DashboardSidebar extends StatelessWidget {
                         onEdit: () => onEditPersonalLibrary(lib),
                         onDelete: () => onDeletePersonalLibrary(lib.id),
                       );
+                      if (lib.isCurated && onDropWorkToLibrary != null) {
+                        row = PersonalLibraryDropTarget(
+                          accentColor: personalAccent,
+                          onAccept: (payload) {
+                            onLibraryDragStarted?.call();
+                            onDropWorkToLibrary!(lib.id, payload);
+                          },
+                          child: row,
+                        );
+                      }
+                      return row;
                     },
                   ),
                 ),
