@@ -25,6 +25,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final void Function(AkashaItem saved) onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
+  final Future<void> Function(AkashaItem item)? onAddToLibrary;
 
   const WorkDetailWorkspace({
     super.key,
@@ -37,6 +38,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     required this.onSaved,
     required this.onDeleted,
     required this.onDirtyChanged,
+    this.onAddToLibrary,
   });
 
   @override
@@ -215,6 +217,18 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         duration: Duration(seconds: 2),
       ),
     );
+  }
+
+  Future<void> _handleAddToLibrary() async {
+    if (widget.onAddToLibrary == null) return;
+    if (AkashaFileService().vaultPath == null) {
+      _showSnack('볼트 연결 후 서재에 담을 수 있습니다.');
+      return;
+    }
+    if (!_isArchived) {
+      await _saveArchive();
+    }
+    await widget.onAddToLibrary!(_item);
   }
 
   Future<void> _saveArchive() async {
@@ -492,6 +506,22 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           ),
         ),
         const SizedBox(height: 8),
+        if (widget.onAddToLibrary != null) ...[
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: _handleAddToLibrary,
+              icon: const Icon(Icons.collections_bookmark_outlined, size: 16),
+              label: Text(_isArchived ? '서재에 담기' : '저장하고 서재에 담기'),
+              style: OutlinedButton.styleFrom(
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                textStyle: const TextStyle(fontSize: 11),
+              ),
+            ),
+          ),
+          const SizedBox(height: 6),
+        ],
         Row(
           children: [
             Expanded(

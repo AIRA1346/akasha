@@ -86,11 +86,13 @@ class DashboardSidebar extends StatelessWidget {
                         name: lib.isCurated && lib.memberOrder.isNotEmpty
                             ? '${lib.name} (${lib.memberOrder.length})'
                             : lib.name,
-                        icon: lib.isCurated
-                            ? Icons.collections_bookmark_outlined
-                            : lib.categories.length == 1
-                                ? lib.categories.first.icon
-                                : Icons.inventory_2_outlined,
+                        icon: lib.isMasterArchive
+                            ? Icons.inventory_2_outlined
+                            : lib.isCurated
+                                ? Icons.collections_bookmark_outlined
+                                : lib.categories.length == 1
+                                    ? lib.categories.first.icon
+                                    : Icons.filter_list_outlined,
                         isActive: isActive,
                         accentColor: personalAccent,
                         canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,

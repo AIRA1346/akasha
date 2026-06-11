@@ -398,6 +398,42 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Future<void> _addRegistryWorkToLibrary(RegistryWork work) async {
+    if (!_canAddToLibrary) return;
+    final draft = HomeAutoArchive.itemFromRegistryWork(work);
+    final fileService = AkashaFileService();
+    AkashaItem? existing;
+    for (final i in _items) {
+      if (WorksRegistry.setContainsWorkId({work.workId}, i.workId)) {
+        existing = i;
+        break;
+      }
+    }
+
+    if (existing != null && fileService.isArchivedInVault(existing)) {
+      await showAddToLibrarySheet(
+        context,
+        workId: MarkdownParser.ensureWorkId(existing),
+        displayTitle: existing.title,
+        membership: _libraryMembership,
+        activeLibraryId: _personalLibCtrl.activeLibraryId,
+      );
+    } else {
+      final ok = await showArchiveThenAddDialog(context, draft: draft);
+      if (!ok || !mounted) return;
+      await _loadItems();
+      final saved = _resolveItemForOpen(draft);
+      await showAddToLibrarySheet(
+        context,
+        workId: MarkdownParser.ensureWorkId(saved),
+        displayTitle: saved.title,
+        membership: _libraryMembership,
+        activeLibraryId: _personalLibCtrl.activeLibraryId,
+      );
+    }
+    if (mounted) setState(() {});
+  }
+
   Future<void> _showAddToLibraryForCard(AkashaItem item) async {
     final fileService = AkashaFileService();
     if (fileService.vaultPath == null) {
@@ -986,6 +1022,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller: _workbench,
                     onWorkSaved: _onWorkbenchWorkSaved,
                     onWorkDeleted: _onWorkbenchWorkDeleted,
+                    onAddToLibrary: _canAddToLibrary
+                        ? _showAddToLibraryForCard
+                        : null,
                     browseContent: !_isPersonalLibraryMode && _isCatalogLoading
                         ? const Center(
                             child: Column(
@@ -1093,6 +1132,10 @@ class _HomeScreenState extends State<HomeScreen> {
         onCatalogPropose: FeatureFlags.catalogContributions
             ? (query) => _proposeCatalogAdd(context, query)
             : null,
+        onAddLocalToLibrary:
+            _canAddToLibrary ? _showAddToLibraryForCard : null,
+        onAddRemoteToLibrary:
+            _canAddToLibrary ? _addRegistryWorkToLibrary : null,
       ),
     );
   }

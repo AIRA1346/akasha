@@ -4,6 +4,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/personal_library_config.dart';
 import '../../../services/works_registry.dart';
+import '../../../utils/archived_works_query.dart';
 import '../../../utils/helpers.dart';
 
 String _memberTitle(String workId, List<AkashaItem> vaultItems) {
@@ -54,6 +55,11 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
 
         tempWorkStatuses.retainAll(availableWorkOpts);
         tempMyStatuses.retainAll(availableMyOpts);
+
+        final archivedIds = ArchivedWorksQuery.archivedWorkIds(vaultItems);
+        final orphanCount = tempMemberOrder
+            .where((id) => !WorksRegistry.setContainsWorkId(archivedIds, id))
+            .length;
 
         return AlertDialog(
           title: Text(isNew ? '➕ 나만의 서재 추가' : '⚙️ 나만의 서재 설정'),
@@ -147,6 +153,27 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                             ),
                         ],
                       ),
+                    if (orphanCount > 0) ...[
+                      const SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextButton.icon(
+                          onPressed: () => setD(() {
+                            tempMemberOrder = tempMemberOrder
+                                .where(
+                                  (id) => WorksRegistry.setContainsWorkId(
+                                    archivedIds,
+                                    id,
+                                  ),
+                                )
+                                .toList();
+                          }),
+                          icon: const Icon(Icons.cleaning_services_outlined,
+                              size: 16),
+                          label: Text('고아 ID 정리 ($orphanCount건)'),
+                        ),
+                      ),
+                    ],
                   ],
                   const SizedBox(height: 16),
                   const Text(

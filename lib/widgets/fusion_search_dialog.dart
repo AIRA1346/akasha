@@ -17,6 +17,8 @@ class FusionSearchDialog extends StatefulWidget {
   final Future<void> Function(RegistryWork work) onSelectRemote;
   final void Function(String query) onCustomAdd;
   final void Function(String query)? onCatalogPropose;
+  final Future<void> Function(AkashaItem item)? onAddLocalToLibrary;
+  final Future<void> Function(RegistryWork work)? onAddRemoteToLibrary;
 
   const FusionSearchDialog({
     super.key,
@@ -25,6 +27,8 @@ class FusionSearchDialog extends StatefulWidget {
     required this.onSelectRemote,
     required this.onCustomAdd,
     this.onCatalogPropose,
+    this.onAddLocalToLibrary,
+    this.onAddRemoteToLibrary,
   });
 
   @override
@@ -396,7 +400,19 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
         subtitle,
         style: const TextStyle(fontSize: 11),
       ),
-      trailing: StarRating(rating: item.rating, size: 11),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (widget.onAddLocalToLibrary != null)
+            IconButton(
+              icon: const Icon(Icons.collections_bookmark_outlined, size: 18),
+              tooltip: '서재에 담기',
+              visualDensity: VisualDensity.compact,
+              onPressed: () => widget.onAddLocalToLibrary!(item),
+            ),
+          StarRating(rating: item.rating, size: 11),
+        ],
+      ),
       onTap: () {
         Navigator.pop(context);
         widget.onSelectLocal(item);
@@ -453,19 +469,35 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                     : null,
           ),
         ),
-        trailing: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-          decoration: BoxDecoration(
-            color: Colors.blue.withValues(alpha: dimmed ? 0.08 : 0.15),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: Text(
-            hint == RegistryRemoteHint.available ? '사전' : '주의',
-            style: TextStyle(
-              fontSize: 10,
-              color: dimmed ? Colors.grey[500] : Colors.lightBlueAccent,
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (widget.onAddRemoteToLibrary != null &&
+                hint == RegistryRemoteHint.available)
+              TextButton(
+                onPressed: () => widget.onAddRemoteToLibrary!(work),
+                style: TextButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  minimumSize: Size.zero,
+                ),
+                child: const Text('담기', style: TextStyle(fontSize: 11)),
+              ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              decoration: BoxDecoration(
+                color: Colors.blue.withValues(alpha: dimmed ? 0.08 : 0.15),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                hint == RegistryRemoteHint.available ? '사전' : '주의',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: dimmed ? Colors.grey[500] : Colors.lightBlueAccent,
+                ),
+              ),
             ),
-          ),
+          ],
         ),
         onTap: () => _handleRemoteTap(entry),
       ),

@@ -12,6 +12,7 @@ class WorkbenchShell extends StatelessWidget {
   final Widget browseContent;
   final void Function(AkashaItem saved) onWorkSaved;
   final void Function(String tabId, AkashaItem item) onWorkDeleted;
+  final Future<void> Function(AkashaItem item)? onAddToLibrary;
 
   const WorkbenchShell({
     super.key,
@@ -19,6 +20,7 @@ class WorkbenchShell extends StatelessWidget {
     required this.browseContent,
     required this.onWorkSaved,
     required this.onWorkDeleted,
+    this.onAddToLibrary,
   });
 
   @override
@@ -71,6 +73,7 @@ class WorkbenchShell extends StatelessWidget {
                     final id = controller.activeTab!.id;
                     controller.markDirty(id, dirty: dirty);
                   },
+                  onAddToLibrary: onAddToLibrary,
                 )
               : browseContent,
         ),
