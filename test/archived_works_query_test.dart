@@ -48,7 +48,10 @@ void main() {
         title: 'Archived',
       );
       archived.filePath = '/vault/manga/archived.md';
-      final cards = MyLibraryPipeline.build([archived]);
+      final cards = MyLibraryPipeline.build(
+        [archived],
+        library: PersonalLibraryConfig.masterArchive(),
+      );
       expect(cards, hasLength(1));
       expect(cards.first.item.title, 'Archived');
     });
@@ -65,6 +68,7 @@ void main() {
       movie.filePath = '/vault/movie/b.md';
       final cards = MyLibraryPipeline.build(
         [manga, movie],
+        library: PersonalLibraryConfig.masterArchive(),
         filters: const BrowseFilterState(
           categories: {MediaCategory.manga},
         ),
@@ -85,6 +89,7 @@ void main() {
       movie.filePath = '/vault/movie/b.md';
       final cards = MyLibraryPipeline.build(
         [manga, movie],
+        library: PersonalLibraryConfig.masterArchive(),
         filters: const BrowseFilterState(
           categories: {MediaCategory.manga},
         ),

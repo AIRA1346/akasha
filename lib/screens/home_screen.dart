@@ -423,7 +423,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildEmptyMainContent() {
     if (_isPersonalLibraryMode) {
       final vaultLinked = AkashaFileService().vaultPath != null;
-      final libName = _personalLibCtrl.activeLibrary?.name ?? '나만의 서재';
+      final library = _personalLibCtrl.activeLibrary;
+      final libName = library?.name ?? '나만의 서재';
+      final isCuratedEmpty =
+          library != null && library.isCurated && library.memberOrder.isEmpty;
+      final isFilterEmpty = library != null && !library.isCurated;
+      final hasMembersButFiltered =
+          library != null &&
+              library.isCurated &&
+              library.memberOrder.isNotEmpty &&
+              vaultLinked;
+
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(32),
@@ -432,16 +442,24 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Icon(
                 vaultLinked
-                    ? Icons.inventory_2_outlined
+                    ? (isCuratedEmpty
+                        ? Icons.collections_bookmark_outlined
+                        : Icons.inventory_2_outlined)
                     : Icons.folder_off_outlined,
                 size: 48,
                 color: Colors.grey[700],
               ),
               const SizedBox(height: 12),
               Text(
-                vaultLinked
-                    ? '$libName에 표시할 아카이브 작품이 없습니다.'
-                    : '볼트를 연동하면 나만의 서재가 열립니다',
+                !vaultLinked
+                    ? '볼트를 연동하면 나만의 서재가 열립니다'
+                    : isCuratedEmpty
+                        ? '작품을 담아 서재를 채워 보세요'
+                        : hasMembersButFiltered
+                            ? '필터 조건에 맞는 작품이 없습니다'
+                            : isFilterEmpty
+                                ? '$libName에 표시할 아카이브 작품이 없습니다'
+                                : '$libName에 표시할 작품이 없습니다',
                 style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
@@ -450,9 +468,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                vaultLinked
-                    ? '검색으로 작품을 추가해 보세요.'
-                    : '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.',
+                !vaultLinked
+                    ? '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.'
+                    : isCuratedEmpty
+                        ? '검색으로 작품을 추가하거나, 카드를 서재 이름으로 끌어다 놓으세요.'
+                        : hasMembersButFiltered
+                            ? '상단 필터를 조정해 보세요.'
+                            : '검색으로 작품을 추가해 보세요.',
                 style: TextStyle(color: Colors.grey[500], height: 1.5),
                 textAlign: TextAlign.center,
               ),
@@ -647,10 +669,15 @@ class _HomeScreenState extends State<HomeScreen> {
   bool get _isPersonalLibraryMode =>
       _personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary;
 
-  List<BrowseCard> get _personalBrowseCards => MyLibraryPipeline.build(
-        _items,
-        filters: _filterCtrl.filterState,
-      );
+  List<BrowseCard> get _personalBrowseCards {
+    final library = _personalLibCtrl.activeLibrary;
+    if (library == null) return const [];
+    return MyLibraryPipeline.build(
+      _items,
+      library: library,
+      filters: _filterCtrl.filterState,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -973,6 +1000,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final selectedDirectory = await FilePicker.getDirectoryPath();
       if (selectedDirectory != null) {
         await AkashaFileService().setVaultPath(selectedDirectory);
+        await _loadPersonalLibraries();
         await _loadItems();
         await _autoArchiveRegistryWorks();
       }
@@ -994,7 +1022,10 @@ class _HomeScreenState extends State<HomeScreen> {
       onAutoArchiveChanged: (enabled) =>
           setState(() => _autoArchiveRegistry = enabled),
       runAutoArchive: _autoArchiveRegistryWorks,
-      reloadItems: _loadItems,
+      reloadItems: () async {
+        await _loadPersonalLibraries();
+        await _loadItems();
+      },
       selectVaultFolder: _selectVaultFolder,
       onRegistryVisibilityChanged: () {
         if (mounted) setState(() {});

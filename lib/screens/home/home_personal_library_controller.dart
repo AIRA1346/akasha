@@ -1,23 +1,27 @@
-import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../models/enums.dart';
 import '../../models/personal_library_config.dart';
+import '../../services/personal_library_storage_service.dart';
 import 'home_dashboard_controller.dart';
 
 enum SidebarSelectionMode { dashboard, personalLibrary }
 
-/// 나만의 서재 목록·활성 ID·SharedPreferences 영속화
+/// 나만의 서재 목록·활성 ID·영속화 (볼트 `.akasha/` 우선)
 class HomePersonalLibraryController {
-  static const _librariesKey = 'akasha_personal_libraries';
   static const _activeIdKey = 'akasha_active_personal_library_id';
   static const _sidebarModeKey = 'akasha_active_sidebar_mode';
+
+  final PersonalLibraryStorageService _storage;
 
   List<PersonalLibraryConfig> libraries = [];
   String? activeLibraryId;
   SidebarSelectionMode sidebarMode = SidebarSelectionMode.dashboard;
+
+  HomePersonalLibraryController({
+    PersonalLibraryStorageService? storage,
+  }) : _storage = storage ?? PersonalLibraryStorageService();
 
   PersonalLibraryConfig? get activeLibrary {
     if (activeLibraryId == null || libraries.isEmpty) return null;
@@ -43,28 +47,13 @@ class HomePersonalLibraryController {
   Future<void> load() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final jsonStr = prefs.getString(_librariesKey);
       final activeId = prefs.getString(_activeIdKey);
       final modeStr = prefs.getString(_sidebarModeKey);
 
-      var needsSave = false;
-
-      if (jsonStr != null) {
-        final decoded = jsonDecode(jsonStr) as List;
-        final loaded = decoded
-            .map(
-              (e) => PersonalLibraryConfig.fromJson(e as Map<String, dynamic>),
-            )
-            .toList();
-        final normalized = PersonalLibraryConfig.normalizeLibraries(loaded);
-        if (_librariesChanged(loaded, normalized)) {
-          needsSave = true;
-        }
-        libraries = normalized;
-      } else {
-        libraries = PersonalLibraryConfig.defaultLibraries();
-        needsSave = true;
-      }
+      final loaded = await _storage.load();
+      final normalized = PersonalLibraryConfig.normalizeLibraries(loaded);
+      var needsSave = _librariesChanged(loaded, normalized);
+      libraries = normalized;
 
       final migratedActive =
           PersonalLibraryConfig.migrateActiveId(activeId, libraries);
@@ -78,7 +67,7 @@ class HomePersonalLibraryController {
           : SidebarSelectionMode.dashboard;
 
       if (needsSave) {
-        await _saveLibrariesInternal(prefs);
+        await _storage.save(libraries);
         if (migratedActive != null) {
           await prefs.setString(_activeIdKey, migratedActive);
         }
@@ -97,22 +86,17 @@ class HomePersonalLibraryController {
     if (before.length != after.length) return true;
     for (var i = 0; i < before.length; i++) {
       if (before[i].id != after[i].id) return true;
+      if (before[i].mode != after[i].mode) return true;
     }
     return false;
   }
 
   Future<void> save() async {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await _saveLibrariesInternal(prefs);
+      await _storage.save(libraries);
     } catch (e) {
       debugPrint('Error saving personal libraries: $e');
     }
-  }
-
-  Future<void> _saveLibrariesInternal(SharedPreferences prefs) async {
-    final encoded = jsonEncode(libraries.map((e) => e.toJson()).toList());
-    await prefs.setString(_librariesKey, encoded);
   }
 
   Future<void> saveActiveState() async {

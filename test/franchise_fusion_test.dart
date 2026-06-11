@@ -110,5 +110,62 @@ void main() {
       expect(rezero.first.item.title, 'Re:제로부터 시작하는 이세계 생활');
       expect(rezero.first.formatSlots, hasLength(3));
     });
+
+    test('fuseScoped emits single manga card when only manga is member', () {
+      final manga = createItem(
+        workId: 'sub_manga_rezero_2014',
+        title: 'Re:제로부터 시작하는 이세계 생활',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        myStatus: ContentMyStatus.notStarted.label,
+        workStatus: ContentWorkStatus.completed.label,
+        rating: 0.0,
+      );
+      manga.filePath = '/vault/manga/rezero.md';
+
+      final cards = FranchiseFusionService.fuseScoped(
+        memberItems: [manga],
+        allUserItems: [manga],
+        selectedCategories: {},
+      );
+
+      expect(cards, hasLength(1));
+      expect(cards.first.franchiseId, isNull);
+      expect(cards.first.formatSlots, hasLength(1));
+      expect(cards.first.formatSlots.first.shortLabel, '만화');
+    });
+
+    test('fuseScoped fuses when two franchise members are in scope', () {
+      final manga = createItem(
+        workId: 'sub_manga_rezero_2014',
+        title: 'Re:제로 만화',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+        myStatus: ContentMyStatus.notStarted.label,
+        workStatus: ContentWorkStatus.completed.label,
+        rating: 0.0,
+      );
+      manga.filePath = '/vault/manga/rezero.md';
+      final anime = createItem(
+        workId: 'sub_animation_rezero-anime_2016',
+        title: 'Re:제로 애니',
+        category: MediaCategory.animation,
+        domain: AppDomain.subculture,
+        myStatus: ContentMyStatus.notStarted.label,
+        workStatus: ContentWorkStatus.completed.label,
+        rating: 0.0,
+      );
+      anime.filePath = '/vault/animation/rezero.md';
+
+      final cards = FranchiseFusionService.fuseScoped(
+        memberItems: [manga, anime],
+        allUserItems: [manga, anime],
+        selectedCategories: {},
+      );
+
+      expect(cards, hasLength(1));
+      expect(cards.first.franchiseId, 'franchise_rezero');
+      expect(cards.first.formatSlots, hasLength(2));
+    });
   });
 }

@@ -77,10 +77,14 @@ class DashboardSidebar extends StatelessWidget {
                               SidebarSelectionMode.personalLibrary &&
                           lib.id == activePersonalLibraryId;
                       return SidebarItemWidget(
-                        name: lib.name,
-                        icon: lib.categories.length == 1
-                            ? lib.categories.first.icon
-                            : Icons.inventory_2_outlined,
+                        name: lib.isCurated && lib.memberOrder.isNotEmpty
+                            ? '${lib.name} (${lib.memberOrder.length})'
+                            : lib.name,
+                        icon: lib.isCurated
+                            ? Icons.collections_bookmark_outlined
+                            : lib.categories.length == 1
+                                ? lib.categories.first.icon
+                                : Icons.inventory_2_outlined,
                         isActive: isActive,
                         accentColor: personalAccent,
                         canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,

@@ -147,6 +147,103 @@ class FranchiseFusionService {
     return cards;
   }
 
+  /// 큐레이션 서재 — 멤버십 집합 안에서만 franchise 그룹핑
+  static List<BrowseCard> fuseScoped({
+    required List<AkashaItem> memberItems,
+    required List<AkashaItem> allUserItems,
+    required Set<MediaCategory> selectedCategories,
+  }) {
+    if (memberItems.isEmpty) return const [];
+
+    final trackedWorkIds = _archivedWorkIds(allUserItems);
+    final memberWorkIds = memberItems
+        .map((e) => e.workId)
+        .where((id) => id.isNotEmpty)
+        .toSet();
+
+    final byFranchise = <String, List<AkashaItem>>{};
+    final standalone = <AkashaItem>[];
+
+    for (final item in memberItems) {
+      final group = FranchiseRegistry.groupFor(item.workId);
+      if (group == null) {
+        standalone.add(item);
+        continue;
+      }
+      byFranchise.putIfAbsent(group.id, () => []).add(item);
+    }
+
+    final cards = <BrowseCard>[];
+
+    for (final entry in byFranchise.entries) {
+      final group = FranchiseRegistry.groupFor(entry.value.first.workId);
+      if (group == null) {
+        standalone.addAll(entry.value);
+        continue;
+      }
+
+      final members = entry.value;
+      if (members.length >= 2) {
+        final representative =
+            FranchiseRepresentativePicker.pickForGroup(group, members) ??
+                members.first;
+        cards.add(
+          BrowseCard(
+            item: _franchiseCardItem(representative, group),
+            formatSlots: _buildFormatSlotsForMemberIds(
+              group,
+              memberWorkIds: memberWorkIds,
+              trackedWorkIds: trackedWorkIds,
+              selectedCategories: selectedCategories,
+            ),
+            franchiseId: group.id,
+          ),
+        );
+      } else {
+        standalone.add(members.first);
+      }
+    }
+
+    for (final item in standalone) {
+      cards.add(
+        BrowseCard(
+          item: item,
+          formatSlots: _singleSlotFromItem(
+            item,
+            trackedWorkIds: trackedWorkIds,
+            selectedCategories: selectedCategories,
+          ),
+        ),
+      );
+    }
+
+    return cards;
+  }
+
+  static List<FormatSlot> _buildFormatSlotsForMemberIds(
+    FranchiseGroup group, {
+    required Set<String> memberWorkIds,
+    required Set<String> trackedWorkIds,
+    required Set<MediaCategory> selectedCategories,
+  }) {
+    final slots = <FormatSlot>[];
+    for (final memberId in group.members) {
+      if (!WorksRegistry.setContainsWorkId(memberWorkIds, memberId)) continue;
+      final slot = _slotForWorkId(
+        memberId,
+        trackedWorkIds: trackedWorkIds,
+        selectedCategories: selectedCategories,
+      );
+      if (slot != null) slots.add(slot);
+    }
+    slots.sort(
+      (a, b) => categorySortOrder(a.category).compareTo(
+        categorySortOrder(b.category),
+      ),
+    );
+    return _disambiguateSlotLabels(slots);
+  }
+
   static bool _franchiseInScope(
     FranchiseGroup group,
     List<RegistryWork> registryWorks,

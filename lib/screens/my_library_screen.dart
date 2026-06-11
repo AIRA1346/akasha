@@ -4,6 +4,7 @@ import '../../models/library_theme.dart';
 import '../../services/entitlement_service.dart';
 import '../../services/file_service.dart';
 import '../../services/library_theme_preferences.dart';
+import '../../models/personal_library_config.dart';
 import '../../services/my_library_pipeline.dart';
 import '../../utils/helpers.dart';
 import '../../widgets/browse_poster_grid.dart';
@@ -57,7 +58,10 @@ class _MyLibraryScreenState extends State<MyLibraryScreen> {
   }
 
   List<BrowseCard> get _libraryCards {
-    final cards = MyLibraryPipeline.build(_items);
+    final cards = MyLibraryPipeline.build(
+      _items,
+      library: PersonalLibraryConfig.masterArchive(),
+    );
     return sortBrowseCards(cards, _sortCriteria);
   }
 

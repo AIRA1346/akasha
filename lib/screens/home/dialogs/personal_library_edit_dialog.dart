@@ -63,7 +63,11 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                       isDense: true,
                       helperText: isMasterArchive
                           ? 'master_archive 이름은 변경할 수 없습니다.'
-                          : '볼트에 아카이브된 작품만 표시됩니다.',
+                          : isNew
+                              ? '새 서재는 작품을 담아 채웁니다. 필터는 설정에서 조정할 수 있습니다.'
+                              : config!.isCurated
+                                  ? '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.'
+                                  : '볼트에 아카이브된 작품만 필터로 표시됩니다.',
                       helperMaxLines: 2,
                     ),
                   ),
@@ -208,6 +212,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     PersonalLibraryConfig(
                       id: 'personal_${DateTime.now().millisecondsSinceEpoch}',
                       name: name,
+                      mode: PersonalLibraryMode.curated,
                       domain: tempDomain,
                       categories: tempCategories,
                       workStatuses: tempWorkStatuses,

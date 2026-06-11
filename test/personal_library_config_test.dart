@@ -69,6 +69,39 @@ void main() {
       expect(restored.workStatuses, original.workStatuses);
       expect(restored.myStatuses, original.myStatuses);
       expect(restored.inclusionRules, ['archived']);
+      expect(restored.mode, PersonalLibraryMode.filter);
+      expect(restored.memberOrder, isEmpty);
+    });
+
+    test('memberOrder is SSOT and dedupes', () {
+      final lib = PersonalLibraryConfig(
+        id: 'lib',
+        name: '테스트',
+        mode: PersonalLibraryMode.curated,
+        memberOrder: ['wk_a', 'wk_b', 'wk_a'],
+      );
+      expect(lib.memberOrder, ['wk_a', 'wk_b']);
+      expect(lib.memberWorkIds, {'wk_a', 'wk_b'});
+    });
+
+    test('fromJson migrates legacy memberWorkIds to memberOrder', () {
+      final restored = PersonalLibraryConfig.fromJson({
+        'id': 'lib',
+        'name': '레거시',
+        'memberWorkIds': ['wk_1', 'wk_2'],
+      });
+      expect(restored.memberOrder, ['wk_1', 'wk_2']);
+      expect(restored.mode, PersonalLibraryMode.filter);
+    });
+
+    test('new curated config defaults to curated mode', () {
+      final lib = PersonalLibraryConfig(
+        id: 'personal_new',
+        name: '인생 명작',
+        mode: PersonalLibraryMode.curated,
+      );
+      expect(lib.isCurated, isTrue);
+      expect(lib.isFilterMode, isFalse);
     });
   });
 }
