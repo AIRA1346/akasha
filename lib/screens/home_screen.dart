@@ -46,7 +46,8 @@ import 'home/home_personal_library_controller.dart';
 import 'home/dialogs/personal_library_edit_dialog.dart';
 import 'home/dialogs/personal_library_name_dialog.dart';
 import 'home/dialogs/archive_then_add_dialog.dart';
-import 'home/dialogs/add_to_library_sheet.dart';
+import 'home/dialogs/work_library_menu.dart';
+import '../models/membership_apply_result.dart';
 import '../models/work_drag_payload.dart';
 import '../services/my_library_pipeline.dart';
 import '../services/markdown_parser.dart';
@@ -56,7 +57,6 @@ import '../services/franchise_fusion_service.dart';
 import '../services/franchise_registry.dart';
 import '../widgets/work_draggable_card.dart';
 import '../widgets/curated_reorder_grid.dart';
-import '../widgets/library_remove_drop_zone.dart';
 import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/browse_pipeline.dart';
@@ -457,28 +457,81 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     if (existing != null && fileService.isArchivedInVault(existing)) {
-      await showAddToLibrarySheet(
-        context,
-        workIds: [MarkdownParser.ensureWorkId(existing)],
-        displayTitle: existing.title,
-        membership: _libraryMembership,
-        activeLibraryId: _personalLibCtrl.activeLibraryId,
-        onCreateLibrary: _promptCreateCuratedLibrary,
-      );
+      await _showAddToLibraryForItem(existing);
     } else {
       final ok = await showArchiveThenAddDialog(context, draft: draft);
       if (!ok || !mounted) return;
       await _loadItems();
       final saved = _resolveItemForOpen(draft);
-      await showAddToLibrarySheet(
-        context,
-        workIds: [MarkdownParser.ensureWorkId(saved)],
-        displayTitle: saved.title,
-        membership: _libraryMembership,
-        activeLibraryId: _personalLibCtrl.activeLibraryId,
-        onCreateLibrary: _promptCreateCuratedLibrary,
-      );
+      await _showAddToLibraryForItem(saved);
     }
+    if (mounted) setState(() {});
+  }
+
+  WorkLibraryMenuRequest _workLibraryMenuRequest(
+    BrowseCard card,
+    AkashaItem workItem, {
+    required bool includeLibraryActions,
+  }) {
+    final singleIds = FranchiseLibraryScope.workIdsForSingleFormat(card);
+    final ipOption = includeLibraryActions &&
+        FranchiseLibraryScope.offersEntireIpOption(card, _items);
+    return WorkLibraryMenuRequest(
+      displayTitle: workItem.title,
+      singleWorkIds: singleIds,
+      entireIpWorkIds: ipOption
+          ? FranchiseLibraryScope.archivedWorkIdsForEntireIp(card, _items)
+          : singleIds,
+      showIpScopeOption: ipOption,
+      membership: _libraryMembership,
+      activeLibraryId:
+          _isCuratedLibraryActive ? _personalLibCtrl.activeLibraryId : null,
+      onCreateLibrary: includeLibraryActions ? _promptCreateCuratedLibrary : null,
+      onHideFromRegistry: _hideActions.registryHideActionFor(workItem),
+      onHideFranchise: _hideActions.franchiseHideActionFor(card),
+    );
+  }
+
+  void _showMembershipApplySnackBar(MembershipApplyResult? result) {
+    if (result == null || !mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(result.toSnackBarMessage())),
+    );
+  }
+
+  Future<void> _openWorkLibraryMenu(BrowseCard card, Offset anchor) async {
+    final canCurate = _canAddToLibrary;
+    final hasHide = _hideActions.registryHideActionFor(card.item) != null ||
+        _hideActions.franchiseHideActionFor(card) != null;
+    if (!canCurate && !hasHide) return;
+
+    final fileService = AkashaFileService();
+    if (canCurate && fileService.vaultPath == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('볼트 연결 후 서재에 담을 수 있습니다.')),
+      );
+      return;
+    }
+
+    var workItem = _resolveItemForOpen(card.item);
+    if (canCurate && !fileService.isArchivedInVault(workItem)) {
+      final ok = await showArchiveThenAddDialog(context, draft: workItem);
+      if (!ok || !mounted) return;
+      await _loadItems();
+      workItem = _resolveItemForOpen(card.item);
+    }
+
+    if (!mounted) return;
+    final result = await showWorkLibraryPopover(
+      context,
+      anchor: anchor,
+      request: _workLibraryMenuRequest(
+        card,
+        workItem,
+        includeLibraryActions: canCurate,
+      ),
+    );
+    _showMembershipApplySnackBar(result);
     if (mounted) setState(() {});
   }
 
@@ -515,20 +568,16 @@ class _HomeScreenState extends State<HomeScreen> {
       workItem = _resolveItemForOpen(card.item);
     }
 
-    final singleIds = FranchiseLibraryScope.workIdsForSingleFormat(card);
-    final ipOption = FranchiseLibraryScope.offersEntireIpOption(card, _items);
-    await showAddToLibrarySheet(
+    if (!mounted) return;
+    final result = await showWorkLibraryDialog(
       context,
-      workIds: singleIds,
-      displayTitle: workItem.title,
-      membership: _libraryMembership,
-      activeLibraryId: _personalLibCtrl.activeLibraryId,
-      onCreateLibrary: _promptCreateCuratedLibrary,
-      showIpScopeOption: ipOption,
-      entireIpWorkIds: ipOption
-          ? FranchiseLibraryScope.archivedWorkIdsForEntireIp(card, _items)
-          : null,
+      request: _workLibraryMenuRequest(
+        card,
+        workItem,
+        includeLibraryActions: true,
+      ),
     );
+    _showMembershipApplySnackBar(result);
     if (mounted) setState(() {});
   }
 
@@ -853,6 +902,10 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         : 0;
 
+    final hideRegistry = _hideActions.registryHideActionFor(item);
+    final hideFranchise = _hideActions.franchiseHideActionFor(card);
+    final canOpenMenu = canCurate || hideRegistry != null || hideFranchise != null;
+
     Widget poster = PosterCard(
       item: item,
       formatSlots: card.formatSlots,
@@ -860,10 +913,9 @@ class _HomeScreenState extends State<HomeScreen> {
       showPoster: _isPersonalLibraryMode,
       curatedLibraryCount: libraryBadgeCount,
       onTap: () => _openBrowseItem(item),
-      onHideFromRegistry: _hideActions.registryHideActionFor(item),
-      onHideFranchise: _hideActions.franchiseHideActionFor(card),
+      onOpenLibraryMenu:
+          canOpenMenu ? (pos) => _openWorkLibraryMenu(card, pos) : null,
       onHideFormatSlot: _hideActions.formatSlotHideActionFor(card),
-      onAddToLibrary: canCurate ? () => _showAddToLibraryForCard(card) : null,
     );
 
     if (canCurate) {
@@ -1218,11 +1270,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   cards,
                                   mainCatalogCards: catalogCards,
                                 ),
-                                librarySectionFooter: _isCuratedLibraryActive
-                                    ? LibraryRemoveDropZone(
-                                        onRemove: _onRemoveFromCuratedLibrary,
-                                      )
-                                    : null,
                               ),
                   ),
                 ),
@@ -1292,22 +1339,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     await _libraryMembership.setMemberOrder(lib.id, newOrder);
     if (mounted) setState(() {});
-  }
-
-  Future<void> _onRemoveFromCuratedLibrary(WorkDragPayload payload) async {
-    final lib = _personalLibCtrl.activeLibrary;
-    if (lib == null || !lib.isCurated) return;
-
-    final workId = payload.workId.isNotEmpty
-        ? payload.workId
-        : MarkdownParser.ensureWorkId(payload.item);
-
-    await _libraryMembership.removeWork(lib.id, workId);
-    if (!mounted) return;
-    setState(() {});
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('「${lib.name}」에서 제거했습니다 (볼트 기록 유지)')),
-    );
   }
 
   // ── 3중 퓨전 검색 다이얼로그 ──

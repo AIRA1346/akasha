@@ -1,4 +1,5 @@
 import '../models/personal_library_config.dart';
+import '../models/membership_apply_result.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import 'works_registry.dart';
 
@@ -102,6 +103,59 @@ class PersonalLibraryMembershipService {
       ids.addAll(librariesContaining(workId));
     }
     return ids.length;
+  }
+
+  int countContainedWorkIds(PersonalLibraryConfig library, List<String> workIds) {
+    var n = 0;
+    for (final id in workIds) {
+      if (containsWork(library, id)) n++;
+    }
+    return n;
+  }
+
+  /// 체크리스트 diff — ON=담기 · OFF=제거 (Case D `workIds` 일괄)
+  Future<MembershipApplyResult> applyCheckboxDiff({
+    required List<String> workIds,
+    required Map<String, bool> desiredChecked,
+    required Map<String, bool> initialChecked,
+  }) async {
+    if (workIds.isEmpty) {
+      return const MembershipApplyResult();
+    }
+
+    final addedNames = <String>[];
+    final removedNames = <String>[];
+
+    for (final lib in curatedLibraries) {
+      final want = desiredChecked[lib.id] ?? false;
+      final had = initialChecked[lib.id] ?? false;
+      if (want == had) continue;
+
+      if (want) {
+        final missing =
+            workIds.where((w) => !containsWork(lib, w)).toList(growable: false);
+        if (missing.isNotEmpty) {
+          await addWorks(lib.id, missing);
+          addedNames.add(lib.name);
+        }
+      } else {
+        var removedAny = false;
+        for (final w in workIds) {
+          if (containsWork(lib, w)) {
+            await removeWork(lib.id, w);
+            removedAny = true;
+          }
+        }
+        if (removedAny) removedNames.add(lib.name);
+      }
+    }
+
+    return MembershipApplyResult(
+      addedLibraryCount: addedNames.length,
+      removedLibraryCount: removedNames.length,
+      addedLibraryNames: addedNames,
+      removedLibraryNames: removedNames,
+    );
   }
 
   Future<void> applyMembershipChanges({

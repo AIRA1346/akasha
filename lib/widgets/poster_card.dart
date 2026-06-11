@@ -18,10 +18,8 @@ class PosterCard extends StatefulWidget {
   final String? franchiseId;
   final bool showPoster;
   final VoidCallback? onTap;
-  final VoidCallback? onHideFromRegistry;
-  final VoidCallback? onHideFranchise;
+  final void Function(Offset globalPosition)? onOpenLibraryMenu;
   final void Function(FormatSlot slot)? onHideFormatSlot;
-  final VoidCallback? onAddToLibrary;
   final int curatedLibraryCount;
 
   const PosterCard({
@@ -32,10 +30,8 @@ class PosterCard extends StatefulWidget {
     this.showPoster = true,
     this.curatedLibraryCount = 0,
     this.onTap,
-    this.onHideFromRegistry,
-    this.onHideFranchise,
+    this.onOpenLibraryMenu,
     this.onHideFormatSlot,
-    this.onAddToLibrary,
   });
 
   @override
@@ -86,8 +82,10 @@ class _PosterCardState extends State<PosterCard> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
-        onSecondaryTap: _hasContextMenu ? () => _showCardContextMenu(context) : null,
-        onLongPress: _hasContextMenu ? () => _showCardContextMenu(context) : null,
+        onSecondaryTapDown: _hasContextMenu
+            ? (d) => _openContextMenu(d.globalPosition)
+            : null,
+        onLongPress: _hasContextMenu ? () => _openContextMenu(_cardCenterGlobal()) : null,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOut,
@@ -123,62 +121,16 @@ class _PosterCardState extends State<PosterCard> {
     );
   }
 
-  bool get _hasContextMenu =>
-      widget.onHideFromRegistry != null ||
-      widget.onHideFranchise != null ||
-      widget.onAddToLibrary != null;
+  bool get _hasContextMenu => widget.onOpenLibraryMenu != null;
 
-  void _showCardContextMenu(BuildContext context) {
-    final hide = widget.onHideFromRegistry;
-    final hideFranchise = widget.onHideFranchise;
-    final addToLibrary = widget.onAddToLibrary;
-    if (!_hasContextMenu) return;
+  Offset _cardCenterGlobal() {
+    final box = context.findRenderObject() as RenderBox?;
+    if (box == null || !box.hasSize) return Offset.zero;
+    return box.localToGlobal(box.size.center(Offset.zero));
+  }
 
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: const Color(0xFF1E1E2E),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
-      ),
-      builder: (ctx) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (addToLibrary != null)
-              ListTile(
-                leading: const Icon(Icons.collections_bookmark_outlined),
-                title: const Text('서재에 담기'),
-                onTap: () {
-                  Navigator.pop(ctx);
-                  addToLibrary();
-                },
-              ),
-            if (hideFranchise != null)
-              ListTile(
-                leading: const Icon(Icons.layers_clear_outlined),
-                title: const Text('이 작품(IP) 전체 숨기기'),
-                subtitle: const Text('모든 매체 버전을 그리드에서 숨깁니다'),
-                onTap: () {
-                  Navigator.pop(ctx);
-                  hideFranchise();
-                },
-              ),
-            if (hide != null)
-              ListTile(
-                leading: const Icon(Icons.visibility_off_outlined),
-                title: Text(
-                  hideFranchise != null ? '대표 매체만 숨기기' : '이 매체 버전 숨기기',
-                ),
-                subtitle: const Text('그리드에서 이 사전 항목을 표시하지 않습니다'),
-                onTap: () {
-                  Navigator.pop(ctx);
-                  hide();
-                },
-              ),
-          ],
-        ),
-      ),
-    );
+  void _openContextMenu(Offset globalPosition) {
+    widget.onOpenLibraryMenu?.call(globalPosition);
   }
 
   String _getStatusTextWithEmoji(AkashaItem item) =>
@@ -318,42 +270,15 @@ class _PosterCardState extends State<PosterCard> {
   }
 
   Widget _buildFactCardFooter(AkashaItem item, Color accent) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        if (item.rating > 0) ...[
-          StarRating(rating: item.rating, size: 13),
-          const SizedBox(height: 8),
-        ],
-        Wrap(
-          spacing: 6,
-          runSpacing: 6,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            if (item.releaseYear != null)
-              _metaPill(
-                '🗓 ${item.releaseYear}',
-                accent.withValues(alpha: 0.18),
-                accent.withValues(alpha: 0.85),
-              ),
-            _metaPill(
-              item.workStatusLabel,
-              Colors.white.withValues(alpha: 0.06),
-              Colors.grey[300]!,
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Text(
+        _metaPill(
           _getStatusTextWithEmoji(item),
-          style: TextStyle(
-            fontSize: 10,
-            color: Colors.grey[500],
-            fontWeight: FontWeight.w500,
-          ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+          accent.withValues(alpha: 0.2),
+          accent,
         ),
+        const Spacer(),
+        if (item.rating > 0) StarRating(rating: item.rating, size: 12),
       ],
     );
   }
