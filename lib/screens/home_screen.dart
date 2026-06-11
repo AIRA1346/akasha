@@ -44,6 +44,7 @@ import '../widgets/today_recall_card.dart';
 import '../utils/recall_picker.dart';
 import 'home/home_personal_library_controller.dart';
 import 'home/dialogs/personal_library_edit_dialog.dart';
+import 'home/dialogs/personal_library_name_dialog.dart';
 import 'home/dialogs/archive_then_add_dialog.dart';
 import 'home/dialogs/add_to_library_sheet.dart';
 import '../models/work_drag_payload.dart';
@@ -417,6 +418,7 @@ class _HomeScreenState extends State<HomeScreen> {
         displayTitle: existing.title,
         membership: _libraryMembership,
         activeLibraryId: _personalLibCtrl.activeLibraryId,
+        onCreateLibrary: _promptCreateCuratedLibrary,
       );
     } else {
       final ok = await showArchiveThenAddDialog(context, draft: draft);
@@ -429,6 +431,7 @@ class _HomeScreenState extends State<HomeScreen> {
         displayTitle: saved.title,
         membership: _libraryMembership,
         activeLibraryId: _personalLibCtrl.activeLibraryId,
+        onCreateLibrary: _promptCreateCuratedLibrary,
       );
     }
     if (mounted) setState(() {});
@@ -460,21 +463,29 @@ class _HomeScreenState extends State<HomeScreen> {
       displayTitle: workItem.title,
       membership: _libraryMembership,
       activeLibraryId: _personalLibCtrl.activeLibraryId,
+      onCreateLibrary: _promptCreateCuratedLibrary,
     );
     if (mounted) setState(() {});
   }
 
-  Future<void> _showPersonalLibraryAddDialog() async {
-    final config = await showPersonalLibraryEditDialog(
-      context,
-      vaultItems: _items,
+  Future<PersonalLibraryConfig?> _promptCreateCuratedLibrary() async {
+    final name = await showPersonalLibraryNameDialog(context);
+    if (name == null || !mounted) return null;
+    final config = PersonalLibraryConfig(
+      id: 'personal_${DateTime.now().millisecondsSinceEpoch}',
+      name: name,
+      mode: PersonalLibraryMode.curated,
     );
-    if (config == null || !mounted) return;
     setState(() {
       _personalLibCtrl.add(config);
       _applyPersonalLibraryFilterSnapshot(config);
     });
     await _personalLibCtrl.save();
+    return config;
+  }
+
+  Future<void> _showPersonalLibraryAddDialog() async {
+    await _promptCreateCuratedLibrary();
   }
 
   void _deletePersonalLibrary(String id) {
@@ -513,6 +524,12 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       config: config,
       vaultItems: _items,
+      onAddWorks: config.isCurated && _canAddToLibrary
+          ? () async {
+              await _showSearchDialog(context);
+              await _loadItems();
+            }
+          : null,
     );
     if (updated == null || !mounted) return;
     setState(() {
@@ -989,7 +1006,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     if (AkashaFileService().vaultPath == null)
                       HomeVaultBanner(onConnectVault: _selectVaultFolder),
-                    if (!_isPersonalLibraryMode && !_workbench.hasOpenWork)
+                    if (!_workbench.hasOpenWork) ...[
                       FilterSection(
                         selectedDomain: _filterCtrl.domain,
                         selectedCategories: _filterCtrl.categories,
@@ -1001,8 +1018,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         onToggleWorkStatus: _toggleWorkStatus,
                         onToggleMyStatus: _toggleMyStatus,
                       ),
-                    if (!_isPersonalLibraryMode && !_workbench.hasOpenWork)
                       const Divider(height: 1),
+                    ],
                     if (!_isPersonalLibraryMode &&
                         !_workbench.hasOpenWork &&
                         _isCatalogLoading)

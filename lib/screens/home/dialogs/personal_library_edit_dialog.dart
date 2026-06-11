@@ -20,24 +20,20 @@ String _memberTitle(String workId, List<AkashaItem> vaultItems) {
   return workId;
 }
 
-/// 나만의 서재 추가·설정 수정 (대시보드 설정과 동일한 필터 UI)
+/// 나만의 서재 설정 수정 (필터·멤버 관리)
 Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
   BuildContext context, {
-  PersonalLibraryConfig? config,
+  required PersonalLibraryConfig config,
   List<AkashaItem> vaultItems = const [],
+  Future<void> Function()? onAddWorks,
 }) async {
-  final isNew = config == null;
-  final isMasterArchive =
-      config?.id == PersonalLibraryConfig.masterArchiveId;
-  final nameCtrl = TextEditingController(text: config?.name ?? '');
-  AppDomain? tempDomain = config?.domain;
-  final Set<MediaCategory> tempCategories =
-      config != null ? Set.from(config.categories) : {};
-  final Set<String> tempMyStatuses =
-      config != null ? Set.from(config.myStatuses) : {};
-  final Set<String> tempWorkStatuses =
-      config != null ? Set.from(config.workStatuses) : {};
-  var tempMemberOrder = config != null && config.isCurated
+  final isMasterArchive = config.id == PersonalLibraryConfig.masterArchiveId;
+  final nameCtrl = TextEditingController(text: config.name);
+  AppDomain? tempDomain = config.domain;
+  final Set<MediaCategory> tempCategories = Set.from(config.categories);
+  final Set<String> tempMyStatuses = Set.from(config.myStatuses);
+  final Set<String> tempWorkStatuses = Set.from(config.workStatuses);
+  var tempMemberOrder = config.isCurated
       ? List<String>.from(config.memberOrder)
       : <String>[];
 
@@ -62,7 +58,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
             .length;
 
         return AlertDialog(
-          title: Text(isNew ? '➕ 나만의 서재 추가' : '⚙️ 나만의 서재 설정'),
+          title: const Text('⚙️ 나만의 서재 설정'),
           content: SizedBox(
             width: 460,
             child: SingleChildScrollView(
@@ -88,16 +84,30 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                       isDense: true,
                       helperText: isMasterArchive
                           ? 'master_archive 이름은 변경할 수 없습니다.'
-                          : isNew
-                              ? '새 서재는 작품을 담아 채웁니다. 필터는 설정에서 조정할 수 있습니다.'
-                              : config!.isCurated
-                                  ? '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.'
-                                  : '볼트에 아카이브된 작품만 필터로 표시됩니다.',
+                          : config.isCurated
+                              ? '담긴 작품만 표시됩니다. 필터는 2차로 좁힙니다.'
+                              : '볼트에 아카이브된 작품만 필터로 표시됩니다.',
                       helperMaxLines: 2,
                     ),
                   ),
-                  if (!isNew && config!.isCurated) ...[
+                  if (config.isCurated) ...[
                     const SizedBox(height: 16),
+                    if (onAddWorks != null)
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: OutlinedButton.icon(
+                          onPressed: () async {
+                            await onAddWorks();
+                            setD(() {
+                              tempMemberOrder =
+                                  List<String>.from(config.memberOrder);
+                            });
+                          },
+                          icon: const Icon(Icons.search, size: 16),
+                          label: const Text('작품 추가 (검색)'),
+                        ),
+                      ),
+                    if (onAddWorks != null) const SizedBox(height: 8),
                     Text(
                       '담긴 작품 (${tempMemberOrder.length})',
                       style: const TextStyle(
@@ -310,33 +320,17 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                 final name = nameCtrl.text.trim();
                 if (name.isEmpty) return;
 
-                if (isNew) {
-                  Navigator.pop(
-                    ctx,
-                    PersonalLibraryConfig(
-                      id: 'personal_${DateTime.now().millisecondsSinceEpoch}',
-                      name: name,
-                      mode: PersonalLibraryMode.curated,
-                      domain: tempDomain,
-                      categories: tempCategories,
-                      workStatuses: tempWorkStatuses,
-                      myStatuses: tempMyStatuses,
-                    ),
+                config.name = name;
+                config.domain = tempDomain;
+                config.categories = tempCategories;
+                config.workStatuses = tempWorkStatuses;
+                config.myStatuses = tempMyStatuses;
+                if (config.isCurated) {
+                  config.memberOrder = PersonalLibraryConfig.normalizeMemberOrder(
+                    tempMemberOrder,
                   );
-                } else {
-                  config!.name = name;
-                  config.domain = tempDomain;
-                  config.categories = tempCategories;
-                  config.workStatuses = tempWorkStatuses;
-                  config.myStatuses = tempMyStatuses;
-                  if (config.isCurated) {
-                    config.memberOrder =
-                        PersonalLibraryConfig.normalizeMemberOrder(
-                      tempMemberOrder,
-                    );
-                  }
-                  Navigator.pop(ctx, config);
                 }
+                Navigator.pop(ctx, config);
               },
               child: const Text('저장'),
             ),
