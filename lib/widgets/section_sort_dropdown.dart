@@ -5,15 +5,20 @@ import '../utils/helpers.dart';
 class SectionSortDropdown extends StatelessWidget {
   final SortCriteria currentCriteria;
   final ValueChanged<SortCriteria> onChanged;
+  final List<SortCriteria> options;
 
   const SectionSortDropdown({
     super.key,
     required this.currentCriteria,
     required this.onChanged,
+    this.options = SortCriteria.standardViewCriteria,
   });
 
   @override
   Widget build(BuildContext context) {
+    final effectiveValue =
+        options.contains(currentCriteria) ? currentCriteria : options.first;
+
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -24,12 +29,12 @@ class SectionSortDropdown extends StatelessWidget {
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<SortCriteria>(
-            value: currentCriteria,
+            value: effectiveValue,
             isDense: true,
             icon: const Icon(Icons.sort, size: 14, color: Colors.grey),
             style: const TextStyle(fontSize: 11, color: Colors.grey),
             dropdownColor: const Color(0xFF2A2A3E),
-            items: SortCriteria.values
+            items: options
                 .map(
                   (c) => DropdownMenuItem(
                     value: c,

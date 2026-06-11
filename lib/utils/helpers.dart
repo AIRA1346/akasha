@@ -87,6 +87,8 @@ List<String> myStatusOptionsFor(MediaCategory category) {
 
 /// 정렬 기준 열거형
 enum SortCriteria {
+  /// curated 서재 — `memberOrder` SSOT (DnD-B·E9와 동일)
+  manualOrder('직접 배치 순'),
   titleAsc('작품/제목명 순'),
   ratingDesc('별점 높은 순'),
   recentlyAdded('최근 추가 순'),
@@ -94,12 +96,33 @@ enum SortCriteria {
 
   final String label;
   const SortCriteria(this.label);
+
+  bool get isManualOrder => this == SortCriteria.manualOrder;
+
+  /// filter·대시보드 카탈로그 (직접 배치 순 제외)
+  static const List<SortCriteria> standardViewCriteria = [
+    titleAsc,
+    ratingDesc,
+    recentlyAdded,
+    yearDesc,
+  ];
+
+  /// curated 서재 메인 그리드
+  static const List<SortCriteria> curatedLibraryCriteria = [
+    manualOrder,
+    titleAsc,
+    ratingDesc,
+    recentlyAdded,
+    yearDesc,
+  ];
 }
 
 /// 정렬 기준에 따라 아이템 리스트를 정렬하여 반환
 List<AkashaItem> sortItems(List<AkashaItem> items, SortCriteria criteria) {
   final sorted = List<AkashaItem>.from(items);
   switch (criteria) {
+    case SortCriteria.manualOrder:
+      break;
     case SortCriteria.titleAsc:
       sorted.sort((a, b) => a.title.compareTo(b.title));
     case SortCriteria.ratingDesc:
@@ -117,6 +140,8 @@ List<BrowseCard> sortBrowseCards(List<BrowseCard> cards, SortCriteria criteria) 
   final sorted = List<BrowseCard>.from(cards);
   int compare(AkashaItem a, AkashaItem b) {
     switch (criteria) {
+      case SortCriteria.manualOrder:
+        return 0;
       case SortCriteria.titleAsc:
         return a.title.compareTo(b.title);
       case SortCriteria.ratingDesc:

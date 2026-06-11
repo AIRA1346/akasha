@@ -40,6 +40,7 @@ class BrowseDashboardSections extends StatelessWidget {
   final Widget Function(BrowseCard card) posterCardBuilder;
   final Widget Function(List<BrowseCard> cards) gridBuilder;
   final bool isPersonalLibraryMode;
+  final bool curatedLibrarySort;
   final Widget? librarySectionFooter;
 
   const BrowseDashboardSections({
@@ -70,6 +71,7 @@ class BrowseDashboardSections extends StatelessWidget {
     required this.posterCardBuilder,
     required this.gridBuilder,
     this.isPersonalLibraryMode = false,
+    this.curatedLibrarySort = false,
     this.librarySectionFooter,
   });
 
@@ -124,6 +126,9 @@ class BrowseDashboardSections extends StatelessWidget {
             onExpandedChanged: onLibraryExpandedChanged,
             sortCriteria: librarySortCriteria,
             onSortChanged: onLibrarySortChanged,
+            sortOptions: curatedLibrarySort
+                ? SortCriteria.curatedLibraryCriteria
+                : SortCriteria.standardViewCriteria,
           ),
           if (libraryExpanded) ...[
             if (categoryGroups != null)
@@ -293,6 +298,7 @@ class BrowseDashboardSections extends StatelessWidget {
     required ValueChanged<bool> onExpandedChanged,
     required SortCriteria sortCriteria,
     required ValueChanged<SortCriteria> onSortChanged,
+    List<SortCriteria> sortOptions = SortCriteria.standardViewCriteria,
   }) {
     return GestureDetector(
       onTap: () => onExpandedChanged(!expanded),
@@ -303,8 +309,11 @@ class BrowseDashboardSections extends StatelessWidget {
         subtitle: subtitle,
         isExpanded: expanded,
         trailing: SectionSortDropdown(
-          currentCriteria: sortCriteria,
+          currentCriteria: sortOptions.contains(sortCriteria)
+              ? sortCriteria
+              : sortOptions.first,
           onChanged: onSortChanged,
+          options: sortOptions,
         ),
       ),
     );

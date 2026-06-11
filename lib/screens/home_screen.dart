@@ -304,6 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await _personalLibCtrl.load();
     if (_personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary) {
       _applyPersonalLibraryFilterSnapshot(_personalLibCtrl.activeLibrary);
+      _sanitizeLibrarySortForActiveLibrary();
     }
     if (mounted) setState(() {});
   }
@@ -314,16 +315,55 @@ class _HomeScreenState extends State<HomeScreen> {
       _personalLibCtrl.selectDashboardMode();
       _applyDashboardFilters(_dashboardCtrl.activeFilterSnapshot);
       _workbench.showBrowse();
+      _sanitizeLibrarySortForActiveLibrary();
     });
     await _prefetchRegistryForCurrentFilters();
   }
 
   void _selectPersonalLibrary(String id) {
+    final wasCurated = _isCuratedLibraryActive;
+    PersonalLibraryConfig? target;
+    for (final lib in _personalLibCtrl.libraries) {
+      if (lib.id == id) {
+        target = lib;
+        break;
+      }
+    }
+    final willBeCurated = target?.isCurated ?? false;
+
     setState(() {
       _personalLibCtrl.selectPersonal(id);
       _applyPersonalLibraryFilterSnapshot(_personalLibCtrl.activeLibrary);
       _workbench.showBrowse();
+      _syncLibrarySortOnPersonalLibraryChange(
+        wasCurated: wasCurated,
+        nowCurated: willBeCurated,
+      );
     });
+  }
+
+  /// filter·대시보드에서는 직접 배치 순 옵션 비활성
+  void _sanitizeLibrarySortForActiveLibrary() {
+    if (_isCuratedLibraryActive) return;
+    if (_sectionPrefs.librarySort.isManualOrder) {
+      _sectionPrefs.librarySort = SortCriteria.titleAsc;
+      _sectionPrefs.saveSort('library', SortCriteria.titleAsc);
+    }
+  }
+
+  /// curated 진입 시 직접 배치 순 기본 · filter/master 이탈 시 정리
+  void _syncLibrarySortOnPersonalLibraryChange({
+    required bool wasCurated,
+    required bool nowCurated,
+  }) {
+    if (nowCurated) {
+      if (!wasCurated) {
+        _sectionPrefs.librarySort = SortCriteria.manualOrder;
+        _sectionPrefs.saveSort('library', SortCriteria.manualOrder);
+      }
+      return;
+    }
+    _sanitizeLibrarySortForActiveLibrary();
   }
 
   bool get _canAddToLibrary =>
@@ -904,9 +944,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (_isPersonalLibraryMode) {
       final libraryFiltered = filterLibraryCards(filtered, _items);
-      catalogCards = _isCuratedLibraryActive
-          ? libraryFiltered
-          : sortBrowseCards(libraryFiltered, _sectionPrefs.librarySort);
+      if (_isCuratedLibraryActive) {
+        catalogCards = _sectionPrefs.librarySort.isManualOrder
+            ? libraryFiltered
+            : sortBrowseCards(libraryFiltered, _sectionPrefs.librarySort);
+      } else {
+        catalogCards = sortBrowseCards(libraryFiltered, _sectionPrefs.librarySort);
+      }
       hofCards = sortBrowseCards(
         filtered.where((c) => c.item.isHallOfFame).toList(),
         _sectionPrefs.hofSort,
@@ -1078,6 +1122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 categoryGroups: categoryGroups,
                                 displayName: _displayName,
                                 isPersonalLibraryMode: _isPersonalLibraryMode,
+                                curatedLibrarySort: _isCuratedLibraryActive,
                                 showHallOfFame: _isPersonalLibraryMode,
                                 hofExpanded: _sectionPrefs.hofExpanded,
                                 libraryExpanded:
@@ -1147,6 +1192,7 @@ class _HomeScreenState extends State<HomeScreen> {
     List<BrowseCard>? mainCatalogCards,
   }) {
     if (_isCuratedLibraryActive &&
+        _sectionPrefs.librarySort.isManualOrder &&
         mainCatalogCards != null &&
         identical(cards, mainCatalogCards) &&
         cards.length > 1) {
