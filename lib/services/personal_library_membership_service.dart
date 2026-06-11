@@ -81,6 +81,29 @@ class PersonalLibraryMembershipService {
     await _controller.save();
   }
 
+  Future<void> addWorks(String libraryId, Iterable<String> workIds) async {
+    for (final workId in workIds) {
+      await addWork(libraryId, workId);
+    }
+  }
+
+  Set<String> librariesContainingAll(List<String> workIds) {
+    if (workIds.isEmpty) return {};
+    var result = librariesContaining(workIds.first);
+    for (var i = 1; i < workIds.length; i++) {
+      result = result.intersection(librariesContaining(workIds[i]));
+    }
+    return result;
+  }
+
+  int countLibrariesContainingAny(Iterable<String> workIds) {
+    final ids = <String>{};
+    for (final workId in workIds) {
+      ids.addAll(librariesContaining(workId));
+    }
+    return ids.length;
+  }
+
   Future<void> applyMembershipChanges({
     required String workId,
     required Set<String> addToLibraryIds,
@@ -91,6 +114,20 @@ class PersonalLibraryMembershipService {
     }
     for (final id in removeFromLibraryIds) {
       await removeWork(id, workId);
+    }
+  }
+
+  Future<void> applyMembershipChangesForWorks({
+    required List<String> workIds,
+    required Set<String> addToLibraryIds,
+    required Set<String> removeFromLibraryIds,
+  }) async {
+    for (final workId in workIds) {
+      await applyMembershipChanges(
+        workId: workId,
+        addToLibraryIds: addToLibraryIds,
+        removeFromLibraryIds: removeFromLibraryIds,
+      );
     }
   }
 

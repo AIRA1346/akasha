@@ -3,22 +3,19 @@ import 'package:flutter/material.dart';
 import '../../../models/personal_library_config.dart';
 import '../../../services/personal_library_membership_service.dart';
 
-/// E1 — 여러 curated 서재에 동시 담기/제거
+/// E1 — 여러 curated 서재에 동시 담기/제거 (Case D: IP 전체 옵션)
 Future<void> showAddToLibrarySheet(
   BuildContext context, {
-  required String workId,
   required String displayTitle,
   required PersonalLibraryMembershipService membership,
+  required List<String> workIds,
   String? activeLibraryId,
   Future<PersonalLibraryConfig?> Function()? onCreateLibrary,
+  bool showIpScopeOption = false,
+  List<String>? entireIpWorkIds,
 }) async {
-  var curated = membership.curatedLibraries;
-  if (curated.isEmpty && onCreateLibrary == null) return;
-
-  final initiallyIn = membership.librariesContaining(workId);
-  final checked = <String, bool>{
-    for (final lib in curated) lib.id: initiallyIn.contains(lib.id),
-  };
+  if (workIds.isEmpty && onCreateLibrary == null) return;
+  final ipIds = entireIpWorkIds ?? workIds;
 
   if (!context.mounted) return;
 
@@ -30,6 +27,23 @@ Future<void> showAddToLibrarySheet(
     ),
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setS) {
+        var useEntireIp = false;
+
+        List<String> effectiveIds() =>
+            showIpScopeOption && useEntireIp ? ipIds : workIds;
+
+        final checked = <String, bool>{
+          for (final lib in membership.curatedLibraries)
+            lib.id: membership.librariesContainingAll(workIds).contains(lib.id),
+        };
+
+        void syncCheckedFromMembership() {
+          final inLibs = membership.librariesContainingAll(effectiveIds());
+          for (final lib in membership.curatedLibraries) {
+            checked[lib.id] = inLibs.contains(lib.id);
+          }
+        }
+
         List<PersonalLibraryConfig> sortedLibs() {
           final list = List<PersonalLibraryConfig>.from(
             membership.curatedLibraries,
@@ -53,8 +67,10 @@ Future<void> showAddToLibrarySheet(
             }
           }
         }
-        final activeContains =
-            activeLib != null && (checked[activeLib.id] ?? false);
+        final ids = effectiveIds();
+        final activeHasAll = activeLib != null &&
+            ids.isNotEmpty &&
+            ids.every((w) => membership.containsWork(activeLib!, w));
 
         return SafeArea(
           child: Padding(
@@ -70,11 +86,35 @@ Future<void> showAddToLibrarySheet(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                if (activeLib != null && !activeContains) ...[
+                if (showIpScopeOption) ...[
+                  const SizedBox(height: 12),
+                  SegmentedButton<bool>(
+                    segments: [
+                      ButtonSegment<bool>(
+                        value: false,
+                        label: Text(
+                          workIds.length == 1 ? '이 매체만' : '선택 매체',
+                        ),
+                      ),
+                      ButtonSegment<bool>(
+                        value: true,
+                        label: Text('IP 전체 (${ipIds.length})'),
+                      ),
+                    ],
+                    selected: {useEntireIp},
+                    onSelectionChanged: (selected) {
+                      setS(() {
+                        useEntireIp = selected.first;
+                        syncCheckedFromMembership();
+                      });
+                    },
+                  ),
+                ],
+                if (activeLib != null && !activeHasAll) ...[
                   const SizedBox(height: 10),
                   FilledButton.tonalIcon(
                     onPressed: () async {
-                      await membership.addWork(activeLib!.id, workId);
+                      await membership.addWorks(activeLib!.id, ids);
                       if (ctx.mounted) Navigator.pop(ctx);
                     },
                     icon: const Icon(Icons.bookmark_add_outlined, size: 18),
@@ -136,19 +176,28 @@ Future<void> showAddToLibrarySheet(
                       onPressed: sorted.isEmpty
                           ? null
                           : () async {
-                              final add = <String>{};
-                              final remove = <String>{};
+                              final targetIds = effectiveIds();
                               for (final lib in membership.curatedLibraries) {
                                 final want = checked[lib.id] ?? false;
-                                final had = initiallyIn.contains(lib.id);
-                                if (want && !had) add.add(lib.id);
-                                if (!want && had) remove.add(lib.id);
+                                if (targetIds.isEmpty) continue;
+
+                                if (want) {
+                                  final missing = targetIds
+                                      .where(
+                                        (w) => !membership.containsWork(lib, w),
+                                      )
+                                      .toList();
+                                  if (missing.isNotEmpty) {
+                                    await membership.addWorks(lib.id, missing);
+                                  }
+                                } else {
+                                  for (final w in targetIds) {
+                                    if (membership.containsWork(lib, w)) {
+                                      await membership.removeWork(lib.id, w);
+                                    }
+                                  }
+                                }
                               }
-                              await membership.applyMembershipChanges(
-                                workId: workId,
-                                addToLibraryIds: add,
-                                removeFromLibraryIds: remove,
-                              );
                               if (ctx.mounted) Navigator.pop(ctx);
                             },
                       child: const Text('적용'),

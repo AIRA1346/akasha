@@ -51,6 +51,9 @@ import '../models/work_drag_payload.dart';
 import '../services/my_library_pipeline.dart';
 import '../services/markdown_parser.dart';
 import '../services/personal_library_membership_service.dart';
+import '../services/franchise_library_scope.dart';
+import '../services/franchise_fusion_service.dart';
+import '../services/franchise_registry.dart';
 import '../widgets/work_draggable_card.dart';
 import '../widgets/curated_reorder_grid.dart';
 import '../widgets/library_remove_drop_zone.dart';
@@ -456,7 +459,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (existing != null && fileService.isArchivedInVault(existing)) {
       await showAddToLibrarySheet(
         context,
-        workId: MarkdownParser.ensureWorkId(existing),
+        workIds: [MarkdownParser.ensureWorkId(existing)],
         displayTitle: existing.title,
         membership: _libraryMembership,
         activeLibraryId: _personalLibCtrl.activeLibraryId,
@@ -469,7 +472,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final saved = _resolveItemForOpen(draft);
       await showAddToLibrarySheet(
         context,
-        workId: MarkdownParser.ensureWorkId(saved),
+        workIds: [MarkdownParser.ensureWorkId(saved)],
         displayTitle: saved.title,
         membership: _libraryMembership,
         activeLibraryId: _personalLibCtrl.activeLibraryId,
@@ -479,7 +482,21 @@ class _HomeScreenState extends State<HomeScreen> {
     if (mounted) setState(() {});
   }
 
-  Future<void> _showAddToLibraryForCard(AkashaItem item) async {
+  Future<void> _showAddToLibraryForItem(AkashaItem item) async {
+    final group = FranchiseRegistry.groupFor(item.workId);
+    await _showAddToLibraryForCard(
+      BrowseCard(
+        item: item,
+        formatSlots: FranchiseFusionService.formatSlotsForWorkId(
+          item.workId,
+          allUserItems: _items,
+        ),
+        franchiseId: group?.id,
+      ),
+    );
+  }
+
+  Future<void> _showAddToLibraryForCard(BrowseCard card) async {
     final fileService = AkashaFileService();
     if (fileService.vaultPath == null) {
       if (mounted) {
@@ -490,22 +507,27 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
 
-    var workItem = _resolveItemForOpen(item);
+    var workItem = _resolveItemForOpen(card.item);
     if (!fileService.isArchivedInVault(workItem)) {
       final ok = await showArchiveThenAddDialog(context, draft: workItem);
       if (!ok || !mounted) return;
       await _loadItems();
-      workItem = _resolveItemForOpen(item);
+      workItem = _resolveItemForOpen(card.item);
     }
 
-    final workId = MarkdownParser.ensureWorkId(workItem);
+    final singleIds = FranchiseLibraryScope.workIdsForSingleFormat(card);
+    final ipOption = FranchiseLibraryScope.offersEntireIpOption(card, _items);
     await showAddToLibrarySheet(
       context,
-      workId: workId,
+      workIds: singleIds,
       displayTitle: workItem.title,
       membership: _libraryMembership,
       activeLibraryId: _personalLibCtrl.activeLibraryId,
       onCreateLibrary: _promptCreateCuratedLibrary,
+      showIpScopeOption: ipOption,
+      entireIpWorkIds: ipOption
+          ? FranchiseLibraryScope.archivedWorkIdsForEntireIp(card, _items)
+          : null,
     );
     if (mounted) setState(() {});
   }
@@ -825,17 +847,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildPosterCard(BrowseCard card) {
     final item = card.item;
     final canCurate = _canAddToLibrary;
+    final libraryBadgeCount = canCurate
+        ? _libraryMembership.countLibrariesContainingAny(
+            FranchiseLibraryScope.relatedWorkIds(card, _items),
+          )
+        : 0;
 
     Widget poster = PosterCard(
       item: item,
       formatSlots: card.formatSlots,
       franchiseId: card.franchiseId,
       showPoster: _isPersonalLibraryMode,
+      curatedLibraryCount: libraryBadgeCount,
       onTap: () => _openBrowseItem(item),
       onHideFromRegistry: _hideActions.registryHideActionFor(item),
       onHideFranchise: _hideActions.franchiseHideActionFor(card),
       onHideFormatSlot: _hideActions.formatSlotHideActionFor(card),
-      onAddToLibrary: canCurate ? () => _showAddToLibraryForCard(item) : null,
+      onAddToLibrary: canCurate ? () => _showAddToLibraryForCard(card) : null,
     );
 
     if (canCurate) {
@@ -1118,7 +1146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onWorkSaved: _onWorkbenchWorkSaved,
                     onWorkDeleted: _onWorkbenchWorkDeleted,
                     onAddToLibrary: _canAddToLibrary
-                        ? _showAddToLibraryForCard
+                        ? _showAddToLibraryForItem
                         : null,
                     browseContent: !_isPersonalLibraryMode && _isCatalogLoading
                         ? const Center(
@@ -1296,7 +1324,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ? (query) => _proposeCatalogAdd(context, query)
             : null,
         onAddLocalToLibrary:
-            _canAddToLibrary ? _showAddToLibraryForCard : null,
+            _canAddToLibrary ? _showAddToLibraryForItem : null,
         onAddRemoteToLibrary:
             _canAddToLibrary ? _addRegistryWorkToLibrary : null,
       ),

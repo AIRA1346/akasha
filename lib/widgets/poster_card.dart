@@ -22,6 +22,7 @@ class PosterCard extends StatefulWidget {
   final VoidCallback? onHideFranchise;
   final void Function(FormatSlot slot)? onHideFormatSlot;
   final VoidCallback? onAddToLibrary;
+  final int curatedLibraryCount;
 
   const PosterCard({
     super.key,
@@ -29,6 +30,7 @@ class PosterCard extends StatefulWidget {
     this.formatSlots = const [],
     this.franchiseId,
     this.showPoster = true,
+    this.curatedLibraryCount = 0,
     this.onTap,
     this.onHideFromRegistry,
     this.onHideFranchise,
@@ -199,6 +201,27 @@ class _PosterCardState extends State<PosterCard> {
       case MediaCategory.drama:
         return const Color(0xFFA78BFA);
     }
+  }
+
+  Widget _buildLibraryCountBadge() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.62),
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(
+          color: Colors.amberAccent.withValues(alpha: 0.55),
+        ),
+      ),
+      child: Text(
+        '★${widget.curatedLibraryCount}',
+        style: const TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.w700,
+          color: Colors.amberAccent,
+        ),
+      ),
+    );
   }
 
   Widget _buildArchivedBadge({double size = 24}) {
@@ -388,6 +411,12 @@ class _PosterCardState extends State<PosterCard> {
                   width: double.infinity,
                 ),
               ),
+              if (widget.curatedLibraryCount > 0)
+                Positioned(
+                  top: 8,
+                  left: 8,
+                  child: _buildLibraryCountBadge(),
+                ),
               if (showArchivedBadge)
                 Positioned(
                   top: 8,
@@ -480,6 +509,10 @@ class _PosterCardState extends State<PosterCard> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
+                    if (widget.curatedLibraryCount > 0) ...[
+                      _buildLibraryCountBadge(),
+                      const SizedBox(width: 6),
+                    ],
                     if (showArchivedBadge)
                       _buildArchivedBadge(size: 22),
                   ],
