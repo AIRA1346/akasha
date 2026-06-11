@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
@@ -36,6 +37,10 @@ class PosterCard extends StatefulWidget {
 
   @override
   State<PosterCard> createState() => _PosterCardState();
+}
+
+class _OpenLibraryMenuIntent extends Intent {
+  const _OpenLibraryMenuIntent();
 }
 
 class _PosterCardState extends State<PosterCard> {
@@ -76,17 +81,14 @@ class _PosterCardState extends State<PosterCard> {
       glowColor = Colors.greenAccent;
     }
 
-    return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: widget.onTap,
-        onSecondaryTapDown: _hasContextMenu
-            ? (d) => _openContextMenu(d.globalPosition)
-            : null,
-        onLongPress: _hasContextMenu ? () => _openContextMenu(_cardCenterGlobal()) : null,
-        child: AnimatedContainer(
+    final cardBody = GestureDetector(
+      onTap: widget.onTap,
+      onSecondaryTapDown: _hasContextMenu
+          ? (d) => _openContextMenu(d.globalPosition)
+          : null,
+      onLongPress:
+          _hasContextMenu ? () => _openContextMenu(_cardCenterGlobal()) : null,
+      child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeOut,
           transform: _isHovered
@@ -116,6 +118,39 @@ class _PosterCardState extends State<PosterCard> {
           child: widget.showPoster
               ? _buildPosterLayout(item, showArchivedBadge, gradColors)
               : _buildFactCardLayout(item, showArchivedBadge),
+        ),
+      );
+
+    if (!_hasContextMenu) {
+      return MouseRegion(
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        cursor: SystemMouseCursors.click,
+        child: cardBody,
+      );
+    }
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      cursor: SystemMouseCursors.click,
+      child: Shortcuts(
+        shortcuts: const {
+          SingleActivator(LogicalKeyboardKey.f10, shift: true):
+              _OpenLibraryMenuIntent(),
+        },
+        child: Actions(
+          actions: {
+            _OpenLibraryMenuIntent: CallbackAction<_OpenLibraryMenuIntent>(
+              onInvoke: (_) {
+                _openContextMenu(_cardCenterGlobal());
+                return null;
+              },
+            ),
+          },
+          child: Focus(
+            child: cardBody,
+          ),
         ),
       ),
     );

@@ -45,8 +45,8 @@ class WorkLibraryPanel extends StatefulWidget {
 
 class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
   var _useEntireIp = false;
-  late Map<String, bool> _checked;
-  late Map<String, bool> _initialChecked;
+  late Map<String, bool?> _checked;
+  late Map<String, bool?> _initialChecked;
   var _applying = false;
   var _hideExpanded = false;
 
@@ -61,13 +61,21 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
           ? widget.entireIpWorkIds
           : widget.singleWorkIds;
 
-  void _syncCheckedFromMembership() {
+  bool? _membershipCheckState(PersonalLibraryConfig lib) {
     final ids = _effectiveIds;
+    if (ids.isEmpty) return false;
+    final contained = widget.membership.countContainedWorkIds(lib, ids);
+    if (contained == 0) return false;
+    if (contained >= ids.length) return true;
+    return null;
+  }
+
+  void _syncCheckedFromMembership() {
     _initialChecked = {
       for (final lib in widget.membership.curatedLibraries)
-        lib.id: widget.membership.librariesContainingAll(ids).contains(lib.id),
+        lib.id: _membershipCheckState(lib),
     };
-    _checked = Map<String, bool>.from(_initialChecked);
+    _checked = Map<String, bool?>.from(_initialChecked);
   }
 
   List<PersonalLibraryConfig> get _sortedLibraries {
@@ -86,7 +94,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
 
   bool get _hasDiff {
     for (final lib in widget.membership.curatedLibraries) {
-      if ((_checked[lib.id] ?? false) != (_initialChecked[lib.id] ?? false)) {
+      if (_checked[lib.id] != _initialChecked[lib.id]) {
         return true;
       }
     }
@@ -211,12 +219,11 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                       children: [
                         for (final lib in libraries)
                           CheckboxListTile(
-                            value: _checked[lib.id] ?? false,
+                            tristate: _effectiveIds.length > 1,
+                            value: _checked[lib.id],
                             onChanged: _applying
                                 ? null
-                                : (v) => setState(
-                                      () => _checked[lib.id] = v ?? false,
-                                    ),
+                                : (v) => setState(() => _checked[lib.id] = v),
                             title: Row(
                               children: [
                                 Expanded(

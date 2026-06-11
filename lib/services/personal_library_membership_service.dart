@@ -114,10 +114,11 @@ class PersonalLibraryMembershipService {
   }
 
   /// 체크리스트 diff — ON=담기 · OFF=제거 (Case D `workIds` 일괄)
+  /// `initialChecked`/`desiredChecked`의 `null` = IP 부분 담김(indeterminate)
   Future<MembershipApplyResult> applyCheckboxDiff({
     required List<String> workIds,
-    required Map<String, bool> desiredChecked,
-    required Map<String, bool> initialChecked,
+    required Map<String, bool?> desiredChecked,
+    required Map<String, bool?> initialChecked,
   }) async {
     if (workIds.isEmpty) {
       return const MembershipApplyResult();
@@ -127,18 +128,18 @@ class PersonalLibraryMembershipService {
     final removedNames = <String>[];
 
     for (final lib in curatedLibraries) {
-      final want = desiredChecked[lib.id] ?? false;
-      final had = initialChecked[lib.id] ?? false;
+      final want = desiredChecked[lib.id];
+      final had = initialChecked[lib.id];
       if (want == had) continue;
 
-      if (want) {
+      if (want == true) {
         final missing =
             workIds.where((w) => !containsWork(lib, w)).toList(growable: false);
         if (missing.isNotEmpty) {
           await addWorks(lib.id, missing);
           addedNames.add(lib.name);
         }
-      } else {
+      } else if (want == false && (had == true || had == null)) {
         var removedAny = false;
         for (final w in workIds) {
           if (containsWork(lib, w)) {

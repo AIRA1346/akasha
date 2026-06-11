@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../screens/home/dialogs/work_library_menu.dart';
 import '../models/browse_card.dart';
 import '../utils/browse_category_groups.dart';
 import '../utils/browse_year_groups.dart';
@@ -75,7 +77,14 @@ class BrowseDashboardSections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return NotificationListener<ScrollNotification>(
+      onNotification: (notification) {
+        if (isWorkLibraryMenuOpen && notification is UserScrollNotification) {
+          Navigator.of(context, rootNavigator: true).maybePop();
+        }
+        return false;
+      },
+      child: ListView(
       padding: const EdgeInsets.only(bottom: 80),
       children: [
         if (showHallOfFame && hofCards.isNotEmpty) ...[
@@ -282,6 +291,7 @@ class BrowseDashboardSections extends StatelessWidget {
             gridBuilder(watchlistCards),
         ],
       ],
+    ),
     );
   }
 

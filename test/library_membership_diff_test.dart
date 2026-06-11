@@ -60,5 +60,16 @@ void main() {
       );
       expect(result.hasChanges, isFalse);
     });
+
+    test('T24 partial IP uncheck removes contained works', () async {
+      await membership.addWork('a', 'wk_1');
+      final result = await membership.applyCheckboxDiff(
+        workIds: ['wk_1', 'wk_2', 'wk_3'],
+        desiredChecked: {'a': false},
+        initialChecked: {'a': null},
+      );
+      expect(result.removedLibraryCount, 1);
+      expect(membership.librariesContaining('wk_1'), isEmpty);
+    });
   });
 }

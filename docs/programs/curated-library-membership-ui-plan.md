@@ -248,8 +248,8 @@
 | A2 E1 popover·PosterCard | ✅ |
 | A3 숨기기 ExpansionTile | ✅ |
 | B1 E2/E3 dialog | ✅ |
-| B2 scroll dismiss | ⬜ |
-| C1~C3 polish·widget test | ⬜ |
+| B2 scroll dismiss | ✅ |
+| C1~C3 polish·widget test | ✅ |
 
 ---
 
