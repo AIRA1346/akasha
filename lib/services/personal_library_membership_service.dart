@@ -36,6 +36,41 @@ class PersonalLibraryMembershipService {
     await _controller.save();
   }
 
+  /// 보이는 카드 순서 변경 — 필터로 숨긴 id는 `memberOrder`에 유지
+  static List<String> reorderVisibleInOrder({
+    required List<String> fullOrder,
+    required List<String> visibleWorkIds,
+    required int oldIndex,
+    required int newIndex,
+  }) {
+    if (visibleWorkIds.isEmpty) return fullOrder;
+    final reordered = List<String>.from(visibleWorkIds);
+    final moved = reordered.removeAt(oldIndex);
+    final insertAt = newIndex.clamp(0, reordered.length);
+    reordered.insert(insertAt, moved);
+
+    final visibleSet = visibleWorkIds.toSet();
+    final result = <String>[];
+    var vi = 0;
+    for (final id in fullOrder) {
+      if (WorksRegistry.setContainsWorkId(visibleSet, id)) {
+        if (vi < reordered.length) {
+          result.add(reordered[vi++]);
+        }
+      } else {
+        result.add(id);
+      }
+    }
+    return PersonalLibraryConfig.normalizeMemberOrder(result);
+  }
+
+  Future<void> setMemberOrder(String libraryId, List<String> order) async {
+    final lib = _libraryById(libraryId);
+    if (lib == null || !lib.isCurated) return;
+    lib.memberOrder = PersonalLibraryConfig.normalizeMemberOrder(order);
+    await _controller.save();
+  }
+
   Future<void> removeWork(String libraryId, String workId) async {
     final lib = _libraryById(libraryId);
     if (lib == null || !lib.isCurated || workId.isEmpty) return;

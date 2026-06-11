@@ -52,6 +52,8 @@ import '../services/my_library_pipeline.dart';
 import '../services/markdown_parser.dart';
 import '../services/personal_library_membership_service.dart';
 import '../widgets/work_draggable_card.dart';
+import '../widgets/curated_reorder_grid.dart';
+import '../widgets/library_remove_drop_zone.dart';
 import '../services/user_preferences.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/browse_pipeline.dart';
@@ -872,6 +874,11 @@ class _HomeScreenState extends State<HomeScreen> {
   bool get _isPersonalLibraryMode =>
       _personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary;
 
+  bool get _isCuratedLibraryActive {
+    final lib = _personalLibCtrl.activeLibrary;
+    return _isPersonalLibraryMode && lib != null && lib.isCurated;
+  }
+
   List<BrowseCard> get _personalBrowseCards {
     final library = _personalLibCtrl.activeLibrary;
     if (library == null) return const [];
@@ -896,10 +903,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final BrowseCategoryGroups? categoryGroups;
 
     if (_isPersonalLibraryMode) {
-      catalogCards = sortBrowseCards(
-        filterLibraryCards(filtered, _items),
-        _sectionPrefs.librarySort,
-      );
+      final libraryFiltered = filterLibraryCards(filtered, _items);
+      catalogCards = _isCuratedLibraryActive
+          ? libraryFiltered
+          : sortBrowseCards(libraryFiltered, _sectionPrefs.librarySort);
       hofCards = sortBrowseCards(
         filtered.where((c) => c.item.isHallOfFame).toList(),
         _sectionPrefs.hofSort,
@@ -1107,7 +1114,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     _sectionPrefs.setWatchlistSort(
                                         val, () => setState(() {})),
                                 posterCardBuilder: _buildPosterCard,
-                                gridBuilder: _buildGrid,
+                                gridBuilder: (cards) => _buildGrid(
+                                  cards,
+                                  mainCatalogCards: catalogCards,
+                                ),
+                                librarySectionFooter: _isCuratedLibraryActive
+                                    ? LibraryRemoveDropZone(
+                                        onRemove: _onRemoveFromCuratedLibrary,
+                                      )
+                                    : null,
                               ),
                   ),
                 ),
@@ -1127,12 +1142,70 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // ── 포스터 카드 그리드 ──
 
-  Widget _buildGrid(List<BrowseCard> cards) {
+  Widget _buildGrid(
+    List<BrowseCard> cards, {
+    List<BrowseCard>? mainCatalogCards,
+  }) {
+    if (_isCuratedLibraryActive &&
+        mainCatalogCards != null &&
+        identical(cards, mainCatalogCards) &&
+        cards.length > 1) {
+      return CuratedReorderGrid(
+        cards: cards,
+        cardBuilder: _buildPosterCard,
+        cardMinWidth: 170,
+        childAspectRatio: 0.48,
+        onReorder: (oldIndex, newIndex) =>
+            _onCuratedGridReorder(cards, oldIndex, newIndex),
+      );
+    }
+
     return BrowsePosterGrid(
       cards: cards,
       cardBuilder: _buildPosterCard,
       cardMinWidth: _isPersonalLibraryMode ? 170 : 176,
       childAspectRatio: _isPersonalLibraryMode ? 0.48 : 0.78,
+    );
+  }
+
+  Future<void> _onCuratedGridReorder(
+    List<BrowseCard> visibleCards,
+    int oldIndex,
+    int newIndex,
+  ) async {
+    final lib = _personalLibCtrl.activeLibrary;
+    if (lib == null || !lib.isCurated) return;
+
+    final visibleIds = visibleCards
+        .map((c) => c.item.workId.isNotEmpty
+            ? c.item.workId
+            : MarkdownParser.ensureWorkId(c.item))
+        .toList();
+
+    final newOrder = PersonalLibraryMembershipService.reorderVisibleInOrder(
+      fullOrder: List<String>.from(lib.memberOrder),
+      visibleWorkIds: visibleIds,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+
+    await _libraryMembership.setMemberOrder(lib.id, newOrder);
+    if (mounted) setState(() {});
+  }
+
+  Future<void> _onRemoveFromCuratedLibrary(WorkDragPayload payload) async {
+    final lib = _personalLibCtrl.activeLibrary;
+    if (lib == null || !lib.isCurated) return;
+
+    final workId = payload.workId.isNotEmpty
+        ? payload.workId
+        : MarkdownParser.ensureWorkId(payload.item);
+
+    await _libraryMembership.removeWork(lib.id, workId);
+    if (!mounted) return;
+    setState(() {});
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('「${lib.name}」에서 제거했습니다 (볼트 기록 유지)')),
     );
   }
 

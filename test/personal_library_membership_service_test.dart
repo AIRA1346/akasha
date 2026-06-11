@@ -66,5 +66,40 @@ void main() {
       await membership.removeWork('lib_a', 'wk_000000001');
       expect(controller.libraries[1].memberOrder, ['wk_000000002']);
     });
+
+    test('setMemberOrder replaces curated order', () async {
+      await membership.addWork('lib_a', 'wk_000000001');
+      await membership.addWork('lib_a', 'wk_000000002');
+      await membership.setMemberOrder(
+        'lib_a',
+        ['wk_000000002', 'wk_000000001'],
+      );
+      expect(controller.libraries[1].memberOrder,
+          ['wk_000000002', 'wk_000000001']);
+    });
+
+    test('reorderVisibleInOrder keeps hidden ids in place', () {
+      const full = ['wk_a', 'wk_b', 'wk_c', 'wk_d'];
+      const visible = ['wk_a', 'wk_c'];
+      final result = PersonalLibraryMembershipService.reorderVisibleInOrder(
+        fullOrder: full,
+        visibleWorkIds: visible,
+        oldIndex: 0,
+        newIndex: 1,
+      );
+      expect(result, ['wk_c', 'wk_b', 'wk_a', 'wk_d']);
+    });
+
+    test('reorderVisibleInOrder moves visible item forward', () {
+      const full = ['wk_a', 'wk_b', 'wk_c'];
+      const visible = ['wk_a', 'wk_b', 'wk_c'];
+      final result = PersonalLibraryMembershipService.reorderVisibleInOrder(
+        fullOrder: full,
+        visibleWorkIds: visible,
+        oldIndex: 0,
+        newIndex: 2,
+      );
+      expect(result, ['wk_b', 'wk_c', 'wk_a']);
+    });
   });
 }
