@@ -52,6 +52,7 @@ import '../models/work_drag_payload.dart';
 import '../services/my_library_pipeline.dart';
 import '../services/markdown_parser.dart';
 import '../services/personal_library_membership_service.dart';
+import '../services/library_membership_apply.dart';
 import '../services/franchise_library_scope.dart';
 import '../services/franchise_fusion_service.dart';
 import '../services/franchise_registry.dart';
@@ -468,16 +469,51 @@ class _HomeScreenState extends State<HomeScreen> {
     if (mounted) setState(() {});
   }
 
+  Future<MembershipApplyResult> _applyWorkLibraryPanel(
+    BrowseCard card, {
+    required AkashaItem draft,
+    required WorkLibraryPanelApplyInput input,
+  }) {
+    return LibraryMembershipApply.applyPanel(
+      draft: draft,
+      input: input,
+      membership: _libraryMembership,
+      reloadItems: _loadItems,
+      resolveWorkIds: (useEntireIp) {
+        final ipOption =
+            FranchiseLibraryScope.offersEntireIpOption(card, _items);
+        if (ipOption && useEntireIp) {
+          return FranchiseLibraryScope.archivedWorkIdsForEntireIp(card, _items);
+        }
+        final resolved = _resolveItemForOpen(draft);
+        return FranchiseLibraryScope.workIdsForSingleFormat(
+          BrowseCard(
+            item: resolved,
+            formatSlots: card.formatSlots,
+            franchiseId: card.franchiseId,
+          ),
+        );
+      },
+    );
+  }
+
   WorkLibraryMenuRequest _workLibraryMenuRequest(
     BrowseCard card,
     AkashaItem workItem, {
     required bool includeLibraryActions,
   }) {
+    final fileService = AkashaFileService();
     final singleIds = FranchiseLibraryScope.workIdsForSingleFormat(card);
     final ipOption = includeLibraryActions &&
         FranchiseLibraryScope.offersEntireIpOption(card, _items);
+    final needsTitle =
+        includeLibraryActions && !fileService.isArchivedInVault(workItem);
     return WorkLibraryMenuRequest(
       displayTitle: workItem.title,
+      draftItem: workItem,
+      showTitleEditor: needsTitle,
+      draftMetaLine:
+          needsTitle ? '${workItem.myStatusLabel} · ${workItem.category.label}' : null,
       singleWorkIds: singleIds,
       entireIpWorkIds: ipOption
           ? FranchiseLibraryScope.archivedWorkIdsForEntireIp(card, _items)
@@ -489,6 +525,13 @@ class _HomeScreenState extends State<HomeScreen> {
       onCreateLibrary: includeLibraryActions ? _promptCreateCuratedLibrary : null,
       onHideFromRegistry: _hideActions.registryHideActionFor(workItem),
       onHideFranchise: _hideActions.franchiseHideActionFor(card),
+      onApply: includeLibraryActions
+          ? (input) => _applyWorkLibraryPanel(
+                card,
+                draft: workItem,
+                input: input,
+              )
+          : null,
     );
   }
 
@@ -513,13 +556,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
 
-    var workItem = _resolveItemForOpen(card.item);
-    if (canCurate && !fileService.isArchivedInVault(workItem)) {
-      final ok = await showArchiveThenAddDialog(context, draft: workItem);
-      if (!ok || !mounted) return;
-      await _loadItems();
-      workItem = _resolveItemForOpen(card.item);
-    }
+    final workItem = _resolveItemForOpen(card.item);
 
     if (!mounted) return;
     final result = await showWorkLibraryPopover(
@@ -560,13 +597,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
 
-    var workItem = _resolveItemForOpen(card.item);
-    if (!fileService.isArchivedInVault(workItem)) {
-      final ok = await showArchiveThenAddDialog(context, draft: workItem);
-      if (!ok || !mounted) return;
-      await _loadItems();
-      workItem = _resolveItemForOpen(card.item);
-    }
+    final workItem = _resolveItemForOpen(card.item);
 
     if (!mounted) return;
     final result = await showWorkLibraryDialog(

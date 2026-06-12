@@ -3,11 +3,15 @@ import 'package:flutter/services.dart';
 
 import '../models/membership_apply_result.dart';
 import '../models/personal_library_config.dart';
+import '../services/library_membership_apply.dart';
 import '../services/personal_library_membership_service.dart';
 
 /// 서재 멤버십 체크리스트 + (선택) 표시 숨기기 — popover/dialog 공통 본문
 class WorkLibraryPanel extends StatefulWidget {
   final String displayTitle;
+  final bool showTitleEditor;
+  final String initialTitle;
+  final String? draftMetaLine;
   final List<String> singleWorkIds;
   final List<String> entireIpWorkIds;
   final bool showIpScopeOption;
@@ -16,12 +20,16 @@ class WorkLibraryPanel extends StatefulWidget {
   final Future<PersonalLibraryConfig?> Function()? onCreateLibrary;
   final VoidCallback? onHideFromRegistry;
   final VoidCallback? onHideFranchise;
+  final WorkLibraryPanelApplyCallback? onApply;
   final void Function(MembershipApplyResult result)? onApplied;
   final VoidCallback? onCancel;
 
   const WorkLibraryPanel({
     super.key,
     required this.displayTitle,
+    this.showTitleEditor = false,
+    this.initialTitle = '',
+    this.draftMetaLine,
     required this.singleWorkIds,
     required this.entireIpWorkIds,
     required this.showIpScopeOption,
@@ -30,6 +38,7 @@ class WorkLibraryPanel extends StatefulWidget {
     this.onCreateLibrary,
     this.onHideFromRegistry,
     this.onHideFranchise,
+    this.onApply,
     this.onApplied,
     this.onCancel,
   });
@@ -49,11 +58,20 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
   late Map<String, bool?> _initialChecked;
   var _applying = false;
   var _hideExpanded = false;
+  late final TextEditingController _titleCtrl;
 
   @override
   void initState() {
     super.initState();
+    _titleCtrl = TextEditingController(text: widget.initialTitle);
+    _titleCtrl.addListener(() => setState(() {}));
     _syncCheckedFromMembership();
+  }
+
+  @override
+  void dispose() {
+    _titleCtrl.dispose();
+    super.dispose();
   }
 
   List<String> get _effectiveIds =>
@@ -101,17 +119,46 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
     return false;
   }
 
+  bool get _hasAddDiff {
+    for (final lib in widget.membership.curatedLibraries) {
+      if (_checked[lib.id] == true && _checked[lib.id] != _initialChecked[lib.id]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool get _canApply {
+    if (!_hasDiff || _applying) return false;
+    if (widget.showTitleEditor && _hasAddDiff) {
+      return _titleCtrl.text.trim().isNotEmpty;
+    }
+    return true;
+  }
+
   Future<void> _apply() async {
-    if (_applying || !_hasDiff) return;
+    if (!_canApply) return;
+    final onApply = widget.onApply;
+    if (onApply == null) return;
+
     setState(() => _applying = true);
     try {
-      final result = await widget.membership.applyCheckboxDiff(
-        workIds: _effectiveIds,
-        desiredChecked: _checked,
-        initialChecked: _initialChecked,
+      final result = await onApply(
+        WorkLibraryPanelApplyInput(
+          titleOverride:
+              widget.showTitleEditor ? _titleCtrl.text.trim() : null,
+          useEntireIp: _useEntireIp,
+          desiredChecked: _checked,
+          initialChecked: _initialChecked,
+        ),
       );
       if (!mounted) return;
       widget.onApplied?.call(result);
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('적용 실패: $e')),
+      );
     } finally {
       if (mounted) setState(() => _applying = false);
     }
@@ -166,6 +213,28 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
+                if (widget.showTitleEditor) ...[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                    child: TextField(
+                      controller: _titleCtrl,
+                      enabled: !_applying,
+                      decoration: const InputDecoration(
+                        labelText: '제목',
+                        border: OutlineInputBorder(),
+                        isDense: true,
+                      ),
+                    ),
+                  ),
+                  if (widget.draftMetaLine != null)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 6, 16, 0),
+                      child: Text(
+                        widget.draftMetaLine!,
+                        style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                      ),
+                    ),
+                ],
                 if (widget.hasLibrarySection) ...[
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
@@ -357,7 +426,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                       const SizedBox(width: 8),
                       if (widget.hasLibrarySection)
                         FilledButton(
-                          onPressed: _applying || !_hasDiff ? null : _apply,
+                          onPressed: _canApply ? _apply : null,
                           child: _applying
                               ? const SizedBox(
                                   width: 18,

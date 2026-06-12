@@ -1,8 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../../../models/akasha_item.dart';
 import '../../../models/membership_apply_result.dart';
 import '../../../models/personal_library_config.dart';
+import '../../../services/library_membership_apply.dart';
 import '../../../services/personal_library_membership_service.dart';
 import '../../../widgets/work_library_panel.dart';
 
@@ -22,6 +24,9 @@ Future<T?> _withMenuOpen<T>(Future<T?> Function() show) async {
 /// E1 — 카드 근처 popover · E2/E3 중앙 dialog
 class WorkLibraryMenuRequest {
   final String displayTitle;
+  final AkashaItem draftItem;
+  final bool showTitleEditor;
+  final String? draftMetaLine;
   final List<String> singleWorkIds;
   final List<String> entireIpWorkIds;
   final bool showIpScopeOption;
@@ -30,9 +35,13 @@ class WorkLibraryMenuRequest {
   final Future<PersonalLibraryConfig?> Function()? onCreateLibrary;
   final VoidCallback? onHideFromRegistry;
   final VoidCallback? onHideFranchise;
+  final WorkLibraryPanelApplyCallback? onApply;
 
   const WorkLibraryMenuRequest({
     required this.displayTitle,
+    required this.draftItem,
+    required this.showTitleEditor,
+    this.draftMetaLine,
     required this.singleWorkIds,
     required this.entireIpWorkIds,
     required this.showIpScopeOption,
@@ -41,6 +50,7 @@ class WorkLibraryMenuRequest {
     this.onCreateLibrary,
     this.onHideFromRegistry,
     this.onHideFranchise,
+    this.onApply,
   });
 }
 
@@ -69,7 +79,7 @@ Future<MembershipApplyResult?> showWorkLibraryPopover(
   required Offset anchor,
   required WorkLibraryMenuRequest request,
 }) {
-  const panelSize = Size(320, 420);
+  const panelSize = Size(320, 480);
 
   return _withMenuOpen(
     () => showGeneralDialog<MembershipApplyResult>(
@@ -145,6 +155,9 @@ Widget _buildPanel(
 ) {
   return WorkLibraryPanel(
     displayTitle: request.displayTitle,
+    showTitleEditor: request.showTitleEditor,
+    initialTitle: request.draftItem.title,
+    draftMetaLine: request.draftMetaLine,
     singleWorkIds: request.singleWorkIds,
     entireIpWorkIds: request.entireIpWorkIds,
     showIpScopeOption: request.showIpScopeOption,
@@ -153,6 +166,7 @@ Widget _buildPanel(
     onCreateLibrary: request.onCreateLibrary,
     onHideFromRegistry: request.onHideFromRegistry,
     onHideFranchise: request.onHideFranchise,
+    onApply: request.onApply,
     onApplied: onApplied,
     onCancel: onCancel,
   );
@@ -190,9 +204,12 @@ class _ScrollDismissOverlay extends StatelessWidget {
   }
 }
 
-/// @deprecated `showWorkLibraryDialog` 사용
+/// @deprecated `showWorkLibraryDialog` + `WorkLibraryMenuRequest` 사용
+@Deprecated('Use showWorkLibraryDialog with full WorkLibraryMenuRequest')
 Future<void> showAddToLibrarySheet(
   BuildContext context, {
+  required AkashaItem draftItem,
+  required WorkLibraryPanelApplyCallback onApply,
   required String displayTitle,
   required PersonalLibraryMembershipService membership,
   required List<String> workIds,
@@ -200,17 +217,21 @@ Future<void> showAddToLibrarySheet(
   Future<PersonalLibraryConfig?> Function()? onCreateLibrary,
   bool showIpScopeOption = false,
   List<String>? entireIpWorkIds,
+  bool showTitleEditor = false,
 }) async {
   await showWorkLibraryDialog(
     context,
     request: WorkLibraryMenuRequest(
       displayTitle: displayTitle,
+      draftItem: draftItem,
+      showTitleEditor: showTitleEditor,
       singleWorkIds: workIds,
       entireIpWorkIds: entireIpWorkIds ?? workIds,
       showIpScopeOption: showIpScopeOption,
       membership: membership,
       activeLibraryId: activeLibraryId,
       onCreateLibrary: onCreateLibrary,
+      onApply: onApply,
     ),
   );
 }

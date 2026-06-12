@@ -7,8 +7,24 @@ import 'package:akasha/models/membership_apply_result.dart';
 import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/dialogs/work_library_menu.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
+import 'package:akasha/services/library_membership_apply.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 import 'package:akasha/widgets/work_library_panel.dart';
+
+WorkLibraryPanelApplyCallback _diffOnlyApply(
+  PersonalLibraryMembershipService membership,
+  List<String> singleIds, {
+  List<String>? entireIpIds,
+}) {
+  return (input) {
+    final ids = input.useEntireIp ? (entireIpIds ?? singleIds) : singleIds;
+    return membership.applyCheckboxDiff(
+      workIds: ids,
+      desiredChecked: input.desiredChecked,
+      initialChecked: input.initialChecked,
+    );
+  };
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +69,7 @@ void main() {
             showIpScopeOption: false,
             membership: membership,
             activeLibraryId: 'active',
+            onApply: _diffOnlyApply(membership, const ['wk_remove']),
             onApplied: (r) => applied = r,
           ),
         ),
@@ -83,6 +100,7 @@ void main() {
             entireIpWorkIds: const ['wk_multi'],
             showIpScopeOption: false,
             membership: membership,
+            onApply: _diffOnlyApply(membership, const ['wk_multi']),
             onApplied: (r) => applied = r,
           ),
         ),
@@ -113,6 +131,11 @@ void main() {
             entireIpWorkIds: const ['wk_a', 'wk_b'],
             showIpScopeOption: true,
             membership: membership,
+            onApply: _diffOnlyApply(
+              membership,
+              const ['wk_a'],
+              entireIpIds: const ['wk_a', 'wk_b'],
+            ),
             onApplied: (r) => applied = r,
           ),
         ),
@@ -156,6 +179,31 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.textContaining('1/2 매체'), findsOneWidget);
+    });
+  });
+
+  group('T27 title editor', () {
+    testWidgets('showTitleEditor shows inline title field', (tester) async {
+      await tester.pumpWidget(
+        _wrap(
+          WorkLibraryPanel(
+            displayTitle: '사전 작품',
+            showTitleEditor: true,
+            initialTitle: '기본 제목',
+            draftMetaLine: '볼 예정 · 만화',
+            singleWorkIds: const ['wk_new'],
+            entireIpWorkIds: const ['wk_new'],
+            showIpScopeOption: false,
+            membership: membership,
+            onApply: _diffOnlyApply(membership, const ['wk_new']),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('기본 제목'), findsOneWidget);
+      expect(find.text('볼 예정 · 만화'), findsOneWidget);
+      expect(find.text('기록 만들고 담기'), findsNothing);
     });
   });
 

@@ -45,6 +45,13 @@ class _OpenLibraryMenuIntent extends Intent {
 
 class _PosterCardState extends State<PosterCard> {
   bool _isHovered = false;
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,16 +96,18 @@ class _PosterCardState extends State<PosterCard> {
       onLongPress:
           _hasContextMenu ? () => _openContextMenu(_cardCenterGlobal()) : null,
       child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOut,
-          transform: _isHovered
-              ? (Matrix4.identity()..translate(0.0, -4.0))
-              : Matrix4.identity(),
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E1E2E),
-            borderRadius: BorderRadius.circular(10),
-            border: cardBorder,
-            boxShadow: _isHovered
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+        transform: _isHovered
+            ? (Matrix4.identity()..translate(0.0, -4.0))
+            : Matrix4.identity(),
+        decoration: BoxDecoration(
+          color: const Color(0xFF1E1E2E),
+          borderRadius: BorderRadius.circular(10),
+          border: _focusNode.hasFocus
+              ? Border.all(color: Colors.amberAccent.withValues(alpha: 0.85), width: 2)
+              : cardBorder,
+          boxShadow: _isHovered
                 ? [
                     BoxShadow(
                       color:
@@ -149,6 +158,8 @@ class _PosterCardState extends State<PosterCard> {
             ),
           },
           child: Focus(
+            focusNode: _focusNode,
+            onFocusChange: (_) => setState(() {}),
             child: cardBody,
           ),
         ),
