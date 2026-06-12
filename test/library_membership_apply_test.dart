@@ -77,4 +77,33 @@ void main() {
       );
     });
   });
+
+  group('ensureVaultMd (DnD-A)', () {
+    late Directory vaultDir;
+
+    setUp(() async {
+      SharedPreferences.setMockInitialValues({});
+      vaultDir = await Directory.systemTemp.createTemp('akasha_md_test');
+      await AkashaFileService().setVaultPath(vaultDir.path);
+    });
+
+    tearDown(() async {
+      await AkashaFileService().setVaultPath('');
+      if (await vaultDir.exists()) {
+        await vaultDir.delete(recursive: true);
+      }
+    });
+
+    test('T34 saves md with default title', () async {
+      final draft = createItem(
+        workId: 'wk_drop',
+        title: '드롭 작품',
+        category: MediaCategory.manga,
+      );
+
+      final saved = await LibraryMembershipApply.ensureVaultMd(draft: draft);
+      expect(saved.filePath, isNotNull);
+      expect(File(saved.filePath!).existsSync(), isTrue);
+    });
+  });
 }

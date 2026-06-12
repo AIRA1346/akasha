@@ -45,7 +45,6 @@ import '../utils/recall_picker.dart';
 import 'home/home_personal_library_controller.dart';
 import 'home/dialogs/personal_library_edit_dialog.dart';
 import 'home/dialogs/personal_library_name_dialog.dart';
-import 'home/dialogs/archive_then_add_dialog.dart';
 import 'home/dialogs/work_library_menu.dart';
 import '../models/membership_apply_result.dart';
 import '../models/work_drag_payload.dart';
@@ -392,6 +391,18 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  BrowseCard _browseCardForItem(AkashaItem item) {
+    final group = FranchiseRegistry.groupFor(item.workId);
+    return BrowseCard(
+      item: item,
+      formatSlots: FranchiseFusionService.formatSlotsForWorkId(
+        item.workId,
+        allUserItems: _items,
+      ),
+      franchiseId: group?.id,
+    );
+  }
+
   Future<void> _addWorkToLibrary({
     required String libraryId,
     required AkashaItem item,
@@ -409,10 +420,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
     var workItem = _resolveItemForOpen(item);
     if (!fileService.isArchivedInVault(workItem)) {
-      final ok = await showArchiveThenAddDialog(context, draft: workItem);
-      if (!ok || !mounted) return;
-      await _loadItems();
-      workItem = _resolveItemForOpen(item);
+      try {
+        await LibraryMembershipApply.ensureVaultMd(draft: workItem);
+        await _loadItems();
+        workItem = _resolveItemForOpen(item);
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('기록 생성 실패: $e')),
+          );
+        }
+        return;
+      }
     }
 
     final workId = MarkdownParser.ensureWorkId(workItem);
@@ -447,8 +466,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _addRegistryWorkToLibrary(RegistryWork work) async {
     if (!_canAddToLibrary) return;
-    final draft = HomeAutoArchive.itemFromRegistryWork(work);
-    final fileService = AkashaFileService();
+
     AkashaItem? existing;
     for (final i in _items) {
       if (WorksRegistry.setContainsWorkId({work.workId}, i.workId)) {
@@ -457,15 +475,10 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     }
 
-    if (existing != null && fileService.isArchivedInVault(existing)) {
-      await _showAddToLibraryForItem(existing);
-    } else {
-      final ok = await showArchiveThenAddDialog(context, draft: draft);
-      if (!ok || !mounted) return;
-      await _loadItems();
-      final saved = _resolveItemForOpen(draft);
-      await _showAddToLibraryForItem(saved);
-    }
+    final item = existing != null
+        ? _resolveItemForOpen(existing)
+        : HomeAutoArchive.itemFromRegistryWork(work);
+    await _showAddToLibraryForCard(_browseCardForItem(item));
     if (mounted) setState(() {});
   }
 
@@ -573,17 +586,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _showAddToLibraryForItem(AkashaItem item) async {
-    final group = FranchiseRegistry.groupFor(item.workId);
-    await _showAddToLibraryForCard(
-      BrowseCard(
-        item: item,
-        formatSlots: FranchiseFusionService.formatSlotsForWorkId(
-          item.workId,
-          allUserItems: _items,
-        ),
-        franchiseId: group?.id,
-      ),
-    );
+    await _showAddToLibraryForCard(_browseCardForItem(item));
   }
 
   Future<void> _showAddToLibraryForCard(BrowseCard card) async {

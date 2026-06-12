@@ -1,6 +1,6 @@
 # 서재 담기 1단계 통합 — Popover 우선 · md 자동 생성
 
-> **상태:** Phase 1 구현 중 (2026-06-10)  
+> **상태:** Phase 2 완료 (2026-06-10) · Phase 3 polish 잔여  
 > **지위:** Case A/B/C · E1 · `ArchiveThenAddDialog` 대체 SSOT  
 > **상위:** [curated-personal-library-plan.md](./curated-personal-library-plan.md) §7.5 · [curated-library-membership-ui-plan.md](./curated-library-membership-ui-plan.md)  
 > **대체 예정 API:** 상위 §7.9 `ensureVaultMdThenAdd` (설계만 존재 · 코드 미구현) → 본 계획 `ensureVaultMd` + `applyLibraryPanel`
@@ -240,19 +240,19 @@ final Future<MembershipApplyResult> Function({
 | 1.3 | S1·S2 선행 `ArchiveThenAdd` 제거 |
 | 1.4 | Shift+F10 포커스 UX |
 | 1.5 | T27~T31 · T33 |
-| 1.6 | 상위 plan §7.5.2/E1 최소 갱신 |
+| 1.6 | 상위 plan §7.5.2/E1 최소 갱신 | ⬜ |
 
-**Phase 1 DoD:** E1 우클릭 1패널 · 적용 시 md+member · Shift+F10 popover · hide-only 회귀.
+**Phase 1 DoD:** ✅
 
 ### Phase 2 — call site 0 (1d) · **「통합 완료」 필수**
 
-| # | 작업 |
-|---|------|
-| 2.1 | S3 · S4 → `ensureVaultMd` / panel / shared helper |
-| 2.2 | `archive_then_add_dialog.dart` deprecated · import 0 |
-| 2.3 | T34 (DnD) · E3 widget/integration |
+| # | 작업 | 상태 |
+|---|------|:----:|
+| 2.1 | S3 · S4 → `ensureVaultMd` / panel / shared helper | ✅ |
+| 2.2 | `archive_then_add_dialog.dart` deprecated · import 0 | ✅ |
+| 2.3 | T34 (DnD) · E3 panel 통합 | ✅ |
 
-**Phase 2 DoD:** §2.3 네 call site에서 `showArchiveThenAddDialog` **0**.
+**Phase 2 DoD:** ✅
 
 ### Phase 3 — polish
 
@@ -329,12 +329,12 @@ flowchart TD
 
 ## 11. 완료 정의 (Release checklist)
 
-- [ ] §2.3 S1~S4 `showArchiveThenAddDialog` **0**
-- [ ] E1: 1패널 · 적용 = md + member
-- [ ] Shift+F10 = 우클릭 (T29)
-- [ ] hide-only (T33)
+- [x] §2.3 S1~S4 `showArchiveThenAddDialog` **0**
+- [x] E1: 1패널 · 적용 = md + member
+- [x] Shift+F10 = 우클릭 (T29)
+- [x] hide-only (T33)
 - [ ] 상위 §7.5.2/E1 문구 일치
-- [ ] T27~T34 PASS
+- [x] T27~T34 PASS (T29 widget optional)
 
 ---
 
@@ -344,3 +344,4 @@ flowchart TD
 |------|------|
 | 2026-06-10 | v1 초안 |
 | 2026-06-10 | v2 — call site·coordinator·reload·Shift+F10 재현·DoD·테스트·Q5 보강 |
+| 2026-06-10 | Phase 1·2 구현 — E1/dialog/DnD/E3 통합 |

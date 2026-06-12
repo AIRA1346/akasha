@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
-/// Case B — md 없을 때 아카이브 생성 후 서재 담기
+/// Case B — md 없을 때 아카이브 생성 (deprecated: `WorkLibraryPanel` + `ensureVaultMd`)
+@Deprecated('Use WorkLibraryPanel with LibraryMembershipApply.ensureVaultMd')
 Future<bool> showArchiveThenAddDialog(
   BuildContext context, {
   required AkashaItem draft,
