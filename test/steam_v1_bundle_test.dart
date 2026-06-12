@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/enums.dart';
@@ -18,8 +21,12 @@ void main() {
   });
 
   group('Steam v1 bundle smoke (dogfood pre-check)', () {
-    test('bundled catalog exposes 430 works after prefetch', () {
-      expect(WorksRegistry.allWorks.length, 430);
+    test('bundled catalog matches manifest entryCount after prefetch', () {
+      final manifestFile = File('akasha-db/manifest.json');
+      expect(manifestFile.existsSync(), isTrue);
+      final manifest = json.decode(manifestFile.readAsStringSync()) as Map;
+      final entryCount = manifest['entryCount'] as int;
+      expect(WorksRegistry.allWorks.length, entryCount);
     });
 
     test('legacy sub_* resolves to wk_ via legacy_aliases', () {

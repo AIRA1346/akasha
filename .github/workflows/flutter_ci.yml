@@ -30,5 +30,8 @@ jobs:
       - name: Test
         run: flutter test
 
+      - name: Quality gate (strict)
+        run: dart run tool/quality_gate.dart --strict
+
       - name: Registry check
         run: dart run tool/ci_registry_check.dart

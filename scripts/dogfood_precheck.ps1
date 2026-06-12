@@ -21,6 +21,16 @@ $Dart = Join-Path $FlutterRoot 'bin\dart.bat'
 & $Dart run tool/ci_registry_check.dart
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
+Write-Host ''
+Write-Host '==> preflight_check'
+& $Dart run tool/preflight_check.dart
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+Write-Host ''
+Write-Host '==> quality_gate --release'
+& $Dart run tool/quality_gate.dart --release
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
 if ($Build) {
   Write-Host ''
   Write-Host '==> windows release build'

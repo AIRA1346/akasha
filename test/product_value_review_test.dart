@@ -93,7 +93,7 @@ void main() {
       final report = buildProductValueReview(selected: selected, diff: diff);
       expect(report.entries.first.additionDriver, AdditionDriver.both);
       expect(report.entries.first.resolvesUserSearchGap, isTrue);
-      expect(report.entries.first.survivesWithoutAnilist, isTrue);
+      expect(report.entries.first.survivesWithoutExternalSpine, isTrue);
       expect(report.kpi.userSearchGapResolved, 1.0);
     });
 
@@ -156,7 +156,7 @@ void main() {
       );
 
       final report = buildProductValueReview(selected: selected, diff: diff);
-      expect(report.entries.first.additionDriver, AdditionDriver.anilistPresence);
+      expect(report.entries.first.additionDriver, AdditionDriver.externalSpineOnly);
       expect(report.entries.first.productValuePassed, isFalse);
       expect(report.kpi.recommend5bPatch, isFalse);
     });

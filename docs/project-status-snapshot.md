@@ -2,6 +2,7 @@
 
 > **갱신:** 2026-06-10  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
+> **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **확장:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) — **SD2.6 hold 해제**
 
 ---
@@ -10,10 +11,12 @@
 
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **430 works** · 351 v4 hex shards · dedupe **0** |
+| **Registry** | **490 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
-| **externalId G2** | **215/430 (50.00%)** |
-| **Scale** | SD2.6 hold **해제** — **병행 확장** 모드 |
+| **externalId** | **275/490 (56.1%)** |
+| **flutter test** | **254/254 PASS** |
+| **Release readiness** | G-AUTO ✅ · G-QA ⏳ · G-STEAM ⏳ |
+| **Scale** | SD2.6 hold **해제** — **병행 확장** |
 | **Steam** | M2 제출 + **카탈로그 G1** 동시 진행 |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
 
@@ -32,46 +35,61 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ---
 
-## 2. Gate (@430)
+## 2. Gate (@490)
 
 | 도구 | 결과 |
 |------|:----:|
+| `flutter test` | **250/250 PASS** |
 | `registry_builder` | PASS |
-| `dedupe_linter` | PASS |
+| `dedupe_linter` | PASS (490 works) |
 | `quality_gate --strict` | PASS |
-| `coverage_dashboard` | titles_en 92% · external_id G2 |
-| `sw1_a_validation` | recall@10 1.0 |
-| `urv_a_validation` | PASS |
+| `quality_gate --release` | PASS |
+| `coverage_dashboard` | titles_en 93% · invalid_en 0 |
 | `ci_registry_check` | PASS |
+| `preflight_check` | PASS |
 
 ---
 
-## 3. 병행 트랙
+## 3. Release Readiness (2026-06-10 audit)
+
+| 게이트 | 상태 | 비고 |
+|--------|:----:|------|
+| **G-AUTO** | ✅ | test 254 · analyze 0 error · **Release build OK** |
+| **G-QA** | 🔶 | P0 auto 4건 · **수동 0/12** |
+| **G-STEAM** | ⏳ | depot·스토어·IAP |
+| **G-CATALOG** | 🔶 | 490작 · 스토어 카피 일치 |
+| **G-COPY** | 🔶 | Privacy doc ✅ · Steam URL pending |
+
+---
+
+## 4. 병행 트랙
 
 | 트랙 | 다음 |
 |------|------|
-| **M2 Steam** | 스토어·depot·IAP — [m2-steam-store-page](programs/m2-steam-store-page.md) |
+| **M2 Steam** | P0 QA → depot → 스토어 — [release-readiness-checklist](release-readiness-checklist.md) |
 | **Catalog G1** | Wikidata manga trial · Maintainer supply — [catalog-growth-charter](programs/catalog-growth-charter.md) |
 | **아키텍처** | search_index 1k/5k 재측정 · dedupe at scale |
 
 ---
 
-## 4. 다음 권장 작업
+## 5. 다음 권장 작업
 
 | # | 작업 |
 |---|------|
-| 1 | `shadow_write --live --channel wikidata_manga` |
-| 2 | trial batch insert (gate 통과분) |
-| 3 | `a5_scale_supply_batch` 재개 |
-| 4 | M2 Release 빌드·스토어 페이지 |
-| 5 | O8 governance 번들 — insert 후 **매 배치** |
+| 1 | **P0 QA 12건** Release 빌드로 실행 |
+| 2 | **Steam Playtest** depot 1회 업로드 |
+| 3 | m2 스토어 카피 **490+** 반영 |
+| 4 | `quality_gate --strict` CI 연동 |
+| 5 | Privacy policy URL |
+| 6 | Wikidata trial batch insert (gate 통과분) |
 
 ---
 
-## 5. 문서 이력
+## 6. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
 | 2026-06-09 | Phase 0 baseline @430 |
 | 2026-06-10 | G2 50% · 문서 IA 재편 |
 | 2026-06-10 | **SD2.6 해제** · catalog-growth-charter · 병행 확장 |
+| 2026-06-10 | **Release audit** — 490작 · test 250 · release-readiness-checklist |

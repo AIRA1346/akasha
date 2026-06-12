@@ -77,7 +77,7 @@ void main() {
       expect(report.samples.length, 1);
       expect(report.samples.first.identityCheck.akashaIdentitySufficient, isTrue);
       expect(
-        report.samples.first.identityCheck.draftWithoutAnilist.containsKey(
+        report.samples.first.identityCheck.draftWithoutSpine.containsKey(
           'externalIds',
         ),
         isFalse,
