@@ -1,7 +1,7 @@
 # Curated 서재 멤버십 UI 개편 — 카드 컨텍스트 통합
 
-> **상태:** Phase A~C 구현 완료 (2026-06-10) · **후속:** [unified-library-add-flow-plan.md](./unified-library-add-flow-plan.md)  
-> **지위:** E1 · DnD-C · `AddToLibrarySheet` UX 개편 SSOT  
+> **상태:** Phase A~C + [1단 통합](./unified-library-add-flow-plan.md) **완료** (2026-06-10)  
+> **지위:** E1 · DnD-C · `WorkLibraryPanel` UX SSOT  
 > **상위:** [curated-personal-library-plan.md](./curated-personal-library-plan.md) §7.3~7.5 · §7.13.5
 
 ---

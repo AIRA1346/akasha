@@ -156,8 +156,16 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
       widget.onApplied?.call(result);
     } catch (e) {
       if (!mounted) return;
+      final message = e is LibraryApplyException
+          ? e.message
+          : '적용 실패: $e';
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('적용 실패: $e')),
+        SnackBar(
+          content: Text(message),
+          duration: Duration(
+            seconds: e is LibraryApplyException && e.vaultMdCreated ? 5 : 3,
+          ),
+        ),
       );
     } finally {
       if (mounted) setState(() => _applying = false);
@@ -428,12 +436,19 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                         FilledButton(
                           onPressed: _canApply ? _apply : null,
                           child: _applying
-                              ? const SizedBox(
-                                  width: 18,
-                                  height: 18,
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  ),
+                              ? const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(
+                                      width: 18,
+                                      height: 18,
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Text('적용 중…'),
+                                  ],
                                 )
                               : const Text('적용'),
                         ),

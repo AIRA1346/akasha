@@ -1,6 +1,6 @@
 # 서재 담기 1단계 통합 — Popover 우선 · md 자동 생성
 
-> **상태:** Phase 2 완료 (2026-06-10) · Phase 3 polish 잔여  
+> **상태:** **완료** (Phase 1~3 · 2026-06-10)  
 > **지위:** Case A/B/C · E1 · `ArchiveThenAddDialog` 대체 SSOT  
 > **상위:** [curated-personal-library-plan.md](./curated-personal-library-plan.md) §7.5 · [curated-library-membership-ui-plan.md](./curated-library-membership-ui-plan.md)  
 > **대체 예정 API:** 상위 §7.9 `ensureVaultMdThenAdd` (설계만 존재 · 코드 미구현) → 본 계획 `ensureVaultMd` + `applyLibraryPanel`
@@ -240,7 +240,7 @@ final Future<MembershipApplyResult> Function({
 | 1.3 | S1·S2 선행 `ArchiveThenAdd` 제거 |
 | 1.4 | Shift+F10 포커스 UX |
 | 1.5 | T27~T31 · T33 |
-| 1.6 | 상위 plan §7.5.2/E1 최소 갱신 | ⬜ |
+| 1.6 | 상위 plan §7.5.2/E1 최소 갱신 | ✅ |
 
 **Phase 1 DoD:** ✅
 
@@ -256,10 +256,10 @@ final Future<MembershipApplyResult> Function({
 
 ### Phase 3 — polish
 
-| # | 작업 |
-|---|------|
-| 3.1 | 적용 중 로딩 · member 실패 스낵바 (Q5) |
-| 3.2 | membership UI plan 교차 링크 |
+| # | 작업 | 상태 |
+|---|------|:----:|
+| 3.1 | 적용 중 로딩 · member 실패 스낵바 (Q5) | ✅ |
+| 3.2 | membership UI · parent plan 교차 갱신 | ✅ |
 
 ---
 
@@ -333,8 +333,8 @@ flowchart TD
 - [x] E1: 1패널 · 적용 = md + member
 - [x] Shift+F10 = 우클릭 (T29)
 - [x] hide-only (T33)
-- [ ] 상위 §7.5.2/E1 문구 일치
-- [x] T27~T34 PASS (T29 widget optional)
+- [x] 상위 §7.5.2/E1 문구 일치
+- [x] T27~T34 PASS
 
 ---
 
@@ -344,4 +344,4 @@ flowchart TD
 |------|------|
 | 2026-06-10 | v1 초안 |
 | 2026-06-10 | v2 — call site·coordinator·reload·Shift+F10 재현·DoD·테스트·Q5 보강 |
-| 2026-06-10 | Phase 1·2 구현 — E1/dialog/DnD/E3 통합 |
+| 2026-06-10 | Phase 3 — Q5 스낵바 · parent plan §7.5 갱신 |

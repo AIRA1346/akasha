@@ -252,9 +252,11 @@ Step 4 — 정렬
 
 ---
 
-### 7.4 담기 UI — `AddToLibrarySheet` (공통 컴포넌트)
+### 7.4 담기 UI — `WorkLibraryPanel` (공통 컴포넌트)
 
-모든 진입점(E1~E6)은 **동일 바텀시트/다이얼로그**를 연다.
+> UI SSOT: [curated-library-membership-ui-plan.md](./curated-library-membership-ui-plan.md) · apply: [unified-library-add-flow-plan.md](./unified-library-add-flow-plan.md)
+
+모든 진입점(E1~E6)은 **동일 panel** (popover · dialog).
 
 ```
 ┌─────────────────────────────────────────┐
@@ -304,14 +306,14 @@ Step 4 — 정렬
               └──────────────┬──────────────┘
                     yes      │      no
                      ▼       │       ▼
-         ┌─────────┴─────────┐   ArchiveThenAddDialog
-         │ 진입점?            │        → saveItem (md)
-    E0 (DnD) │ E1~ (시트)     │             │
-         ▼     │     ▼         │             │
-  addWork 즉시 │ AddToLibrarySheet            │
-  (대상 서재   │ (멀티 서재)    │             │
-   고정)       │                │             │
-         └─────┴────────────────┴─────────────┘
+         ┌─────────┴─────────┐   WorkLibraryPanel
+         │ 진입점?            │   「적용」→ ensureVaultMd
+    E0 (DnD) │ E1~ (panel)    │        → applyCheckboxDiff
+         ▼     │     ▼         │
+  ensureVaultMd│ panel 즉시     │
+  + addWork    │ (멀티 서재)    │
+  (서재 고정)  │                │
+         └─────┴────────────────┘
                            ▼
                  memberOrder 갱신 · save
 ```
@@ -321,35 +323,34 @@ Step 4 — 정렬
 | 진입점 | 동작 |
 |--------|------|
 | **E0 (DnD)** | `addWork(targetLibraryId)` **즉시** — 시트 생략 |
-| **E1/E2/E4/E6** | `AddToLibrarySheet` → 체크 후 `적용` |
+| **E1/E2/E4/E6** | `WorkLibraryPanel` (popover/dialog) → 체크 후 **「적용」** |
 
 공통: **md 내용·상태는 변경하지 않음**
 
 #### 7.5.2 Case B — md **없음** (사전·검색·미아카이브)
 
-**`ArchiveThenAddDialog`** (2단계, 한 화면에서 처리 가능)
+> **SSOT:** [unified-library-add-flow-plan.md](./unified-library-add-flow-plan.md) · `ArchiveThenAddDialog` **deprecated**
+
+**`WorkLibraryPanel` 1단** — 별도 AlertDialog 없음. md 없으면 panel 상단 **제목**(기본값) + **「적용」** 시 `ensureVaultMd` → `applyCheckboxDiff`.
 
 | 필드 | 기본값 | 비고 |
 |------|--------|------|
-| 제목 | Registry `displayTitle()` | 수정 가능 |
-| 카테고리 | 사전 Fact | 읽기 전용 |
-| **작품 상태** (`workStatus`) | 카테고리별 Fact (완결·출시됨 등) | `HomeAutoArchive`와 동일 · 예정으로 오버라이드 안 함 |
-| **내 상태** (`myStatus`) | **읽을 예정 / not started** | D1 핵심 · 담기 UX의 “아직 안 봄” 표현 |
-| 포스터 URL | 비움 | 선택 입력 |
-| 본문 Markdown | 빈 템플릿 또는 한 줄 메모 | 최소 생성 |
+| 제목 | Registry `displayTitle()` / 카드 제목 | panel inline · 수정 가능 |
+| 카테고리 | 사전 Fact | 읽기 전용 메타 라인 |
+| **작품 상태** (`workStatus`) | 카테고리별 Fact | `HomeAutoArchive`와 동일 |
+| **내 상태** (`myStatus`) | **읽을 예정 / not started** | D1 |
+| 포스터 URL | 비움 | |
+| 본문 Markdown | 빈 템플릿 | 최소 생성 |
 
-버튼:
+**「적용」:** `LibraryMembershipApply.ensureVaultMd` → `_loadItems()` → `applyCheckboxDiff`  
+**실패 (Q5):** md 생성 성공 · member 실패 → **md 유지** + 스낵바 재적용 안내
 
-- **`기록 만들고 담기`** — `AkashaFileService.saveItem` → `addWork` → 시트 닫기
-- **`취소`** — 아무 것도 안 함
-
-**재사용 코드:** `HomeAutoArchive.itemFromRegistryWork` 그대로 (`myStatus` = 볼 예정).  
-사전 탭 시 기존 `_openRegistryWorkForArchive`와 통합 검토 (워크벤치만 vs 담기 직행).
+**재사용 코드:** `HomeAutoArchive.itemFromRegistryWork`
 
 #### 7.5.3 Case C — 직접 등록 작품 (`wk_` 없거나 로컬만)
 
 1. `showAddWorkDialog`로 작품 생성·md 저장 (기존)
-2. 저장 성공 후 **선택:** `AddToLibrarySheet` 자동 오픈 (“어느 서재에 넣을까요?”)
+2. 저장 성공 후 **선택:** `WorkLibraryPanel` dialog 자동 오픈
 3. `workId` 발급·정규화 후 `memberOrder`에 추가
 
 #### 7.5.4 Case D — IP 1카드 (franchise 카드)에서 담기
@@ -369,9 +370,9 @@ Step 4 — 정렬
 #### E0 · 드래그 앤 드롭 (1순위)
 
 ```
-카드 LongPress/드래그 핸들 → 사이드바 「인생 명작」에 드롭
+카드 ⠿ 드래그 → 사이드바 curated 행에 드롭
   → [md 있음] addWork(targetLibraryId) 즉시
-  → [md 없음] ArchiveThenAddDialog (대상 서재 고정) → saveItem → addWork
+  → [md 없음] ensureVaultMd(제목 기본값) → addWork — panel 없음 (D6)
 ```
 
 드롭 성공 시: 서재 행 하이라이트 · 스낵바 · (선택) 해당 서재로 전환.  
@@ -380,9 +381,10 @@ Step 4 — 정렬
 #### E1 · 포스터 카드 (보조)
 
 ```
-우클릭 → 서재에 담기
-  → [md 있음] AddToLibrarySheet
-  → [md 없음] ArchiveThenAddDialog → saveItem → addWork (시트에서 이미 선택했으면 생략)
+우클릭 / Shift+F10 / long-press
+  → WorkLibraryPopover (즉시)
+  → [md 없음] panel 제목 행 · 「적용」 시 ensureVaultMd + member diff
+  → [md 있음] 서재 체크만
 ```
 
 카드 배지 (선택): 담긴 서재 수 `★2` — `librariesContaining(workId).length`  
@@ -393,18 +395,17 @@ Step 4 — 정렬
 ```
 AppBar [☆] 탭
   → md 없으면 상단 배너: "볼트에 저장된 뒤 서재에 담을 수 있습니다" + [저장하고 담기]
-  → md 있으면 AddToLibrarySheet
+  → md 있으면 WorkLibraryPanel
 ```
 
-**`저장하고 담기`:** `_saveArchive()` 성공 콜백 → `AddToLibrarySheet`.
+**`저장하고 담기`:** `_saveArchive()` 성공 콜백 → `WorkLibraryPanel`.
 
 #### E3 · 검색 · 사전 결과
 
 ```
 행 [담기]
-  → ArchiveThenAddDialog (workId from RegistryWork)
-  → 기록 만들고 담기
-  → (선택) 해당 서재로 홈 전환 + 스낵바
+  → WorkLibraryPanel dialog (Case B 제목 행)
+  → 「적용」 → ensureVaultMd + member diff
 ```
 
 검색 다이얼로그는 닫지 않고 체크만 갱신해도 됨 (연속 담기).
@@ -412,7 +413,7 @@ AppBar [☆] 탭
 #### E4 · 검색 · 볼트 결과
 
 ```
-행 [서재에 담기] → AddToLibrarySheet (Case A)
+행 [서재에 담기] → WorkLibraryPanel (Case A)
 ```
 
 #### E5 · 빈 curated 서재
@@ -441,7 +442,7 @@ EmptyState
 
 | 방법 | 동작 |
 |------|------|
-| `AddToLibrarySheet` 체크 해제 | `removeWork` |
+| `WorkLibraryPanel` 체크 해제 | `removeWork` |
 | 서재 설정 멤버 `×` | 동일 |
 | **E10** 카드를 그리드 **밖·휴지통**에 드롭 (v1.1) | 활성 curated에서 `removeWork` |
 | **md 파일 삭제** | 서재 목록에 **고아** 남음 → 설정 배너 · prune |
@@ -465,24 +466,28 @@ EmptyState
 ### 7.9 서비스 API (담기 전용)
 
 ```dart
-// PersonalLibraryMembershipService
+// lib/services/library_membership_apply.dart
 
-Future<void> applyMembershipChanges({
-  required String workId,
-  required Set<String> addToLibraryIds,
-  required Set<String> removeFromLibraryIds,
-});
-
-Future<ArchiveAddResult> ensureVaultMdThenAdd({
+Future<AkashaItem> ensureVaultMd({
   required AkashaItem draft,
-  required Set<String> targetLibraryIds,
-  ArchiveDefaults defaults = ArchiveDefaults.planned,
+  String? titleOverride,
 });
 
+Future<MembershipApplyResult> applyPanel({
+  required AkashaItem draft,
+  required WorkLibraryPanelApplyInput input,
+  required PersonalLibraryMembershipService membership,
+  required Future<void> Function() reloadItems,
+  required List<String> Function(bool useEntireIp) resolveWorkIds,
+});
+
+// PersonalLibraryMembershipService
+Future<MembershipApplyResult> applyCheckboxDiff({...});
 Set<String> librariesContaining(String workId);
 ```
 
-`ensureVaultMdThenAdd`: Case B 전용 — md 생성 + 멤버 append 원자적 처리 (중간 실패 시 롤백: md만 생기고 멤버 실패 → 스낵바 + 재시도).
+`applyPanel`: Case B/E1/E3 — md 생성 + member diff.  
+**Q5:** member 실패 시 md **유지** · `LibraryApplyException(vaultMdCreated: true)` + 재적용 스낵바.
 
 ---
 
@@ -491,7 +496,7 @@ Set<String> librariesContaining(String workId);
 | ID | 시나리오 |
 |----|----------|
 | T9 | 볼트 없음 → 담기 비활성 안내 |
-| T10 | 사전 검색 → ArchiveThenAdd → 1개 서재 체크 |
+| T10 | 사전 검색 → WorkLibraryPanel → 1개 서재 check |
 | T11 | 시트에서 2개 서재 동시 체크 |
 | T12 | 체크 해제 → removeWork |
 | T13 | 워크벤치 “저장하고 담기” |
@@ -571,7 +576,7 @@ class WorkDragPayload {
 ```
 onAccept(libraryId, payload)
   → vault 없음 ? 볼트 안내
-  → md 없음 ? ArchiveThenAddDialog(targetLibraryIds: {libraryId})
+  → md 없음 ? ensureVaultMd(제목 기본값) → addWork(libraryId)
   → md 있음 ? addWork(libraryId, workId)
   → save · 스낵바 · [해당 서재 보기]
 ```
@@ -718,9 +723,9 @@ static List<BrowseCard> build(
 |---|------|
 | 2.1 | `PersonalLibraryMembershipService` + `applyMembershipChanges` |
 | 2.2 | **DnD-A** `WorkDraggableCard` + `PersonalLibraryDropTarget` (E0) |
-| 2.3 | `ArchiveThenAddDialog` — drop 시 `targetLibraryId` 고정 (Case B) |
+| 2.3 | `LibraryMembershipApply.ensureVaultMd` — DnD Case B | ✅ |
 | 2.4 | **E9** 서재 설정 멤버 리스트 reorder (`memberOrder`) — DnD-B는 v1.1 |
-| 2.5 | `AddToLibrarySheet` (E1 멀티 서재 보조) |
+| 2.5 | `WorkLibraryPanel` (E1 멀티 서재) | ✅ |
 | 2.6 | E2 워크벤치 · E3/E4 검색 · E6 설정 · E5 빈 상태 |
 | 2.7 | 담기 후 스낵바 · 사이드바 접힘 시 auto-expand · T9~T21 테스트 |
 

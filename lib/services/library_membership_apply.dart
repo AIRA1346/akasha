@@ -23,6 +23,22 @@ typedef WorkLibraryPanelApplyCallback = Future<MembershipApplyResult> Function(
   WorkLibraryPanelApplyInput input,
 );
 
+/// panel 적용 실패 — [vaultMdCreated] 시 md는 유지 (Q5)
+class LibraryApplyException implements Exception {
+  final String message;
+  final bool vaultMdCreated;
+  final Object? cause;
+
+  const LibraryApplyException(
+    this.message, {
+    this.vaultMdCreated = false,
+    this.cause,
+  });
+
+  @override
+  String toString() => message;
+}
+
 /// E1 · dialog 「적용」 — ensureVaultMd → reload → applyCheckboxDiff
 class LibraryMembershipApply {
   LibraryMembershipApply._();
@@ -51,7 +67,7 @@ class LibraryMembershipApply {
   }) async {
     final fileService = AkashaFileService();
     if (fileService.vaultPath == null) {
-      throw StateError('볼트가 연결되지 않았습니다.');
+      throw LibraryApplyException('볼트가 연결되지 않았습니다.');
     }
     if (fileService.isArchivedInVault(draft)) {
       return draft;
@@ -59,7 +75,7 @@ class LibraryMembershipApply {
 
     final title = (titleOverride ?? draft.title).trim();
     if (title.isEmpty) {
-      throw StateError('제목을 입력하세요.');
+      throw LibraryApplyException('제목을 입력하세요.');
     }
 
     draft.title = title;
@@ -77,30 +93,44 @@ class LibraryMembershipApply {
   }) async {
     final fileService = AkashaFileService();
     if (fileService.vaultPath == null) {
-      throw StateError('볼트가 연결되지 않았습니다.');
+      throw LibraryApplyException('볼트가 연결되지 않았습니다.');
     }
 
-    if (needsVaultMd(
-      draft: draft,
-      desired: input.desiredChecked,
-      initial: input.initialChecked,
-    )) {
-      await ensureVaultMd(
+    var vaultMdCreated = false;
+    try {
+      if (needsVaultMd(
         draft: draft,
-        titleOverride: input.titleOverride,
+        desired: input.desiredChecked,
+        initial: input.initialChecked,
+      )) {
+        await ensureVaultMd(
+          draft: draft,
+          titleOverride: input.titleOverride,
+        );
+        vaultMdCreated = true;
+        await reloadItems();
+      }
+
+      final workIds = resolveWorkIds(input.useEntireIp);
+      if (workIds.isEmpty) {
+        return const MembershipApplyResult();
+      }
+
+      return await membership.applyCheckboxDiff(
+        workIds: workIds,
+        desiredChecked: input.desiredChecked,
+        initialChecked: input.initialChecked,
       );
-      await reloadItems();
+    } catch (e) {
+      if (vaultMdCreated && e is! LibraryApplyException) {
+        throw LibraryApplyException(
+          '볼트 기록은 만들어졌으나 서재 반영에 실패했습니다. 다시 「적용」해 주세요.',
+          vaultMdCreated: true,
+          cause: e,
+        );
+      }
+      if (e is LibraryApplyException) rethrow;
+      throw LibraryApplyException('적용 실패: $e', cause: e);
     }
-
-    final workIds = resolveWorkIds(input.useEntireIp);
-    if (workIds.isEmpty) {
-      return const MembershipApplyResult();
-    }
-
-    return membership.applyCheckboxDiff(
-      workIds: workIds,
-      desiredChecked: input.desiredChecked,
-      initialChecked: input.initialChecked,
-    );
   }
 }
