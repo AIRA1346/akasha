@@ -203,35 +203,3 @@ class _ScrollDismissOverlay extends StatelessWidget {
     );
   }
 }
-
-/// @deprecated `showWorkLibraryDialog` + `WorkLibraryMenuRequest` 사용
-@Deprecated('Use showWorkLibraryDialog with full WorkLibraryMenuRequest')
-Future<void> showAddToLibrarySheet(
-  BuildContext context, {
-  required AkashaItem draftItem,
-  required WorkLibraryPanelApplyCallback onApply,
-  required String displayTitle,
-  required PersonalLibraryMembershipService membership,
-  required List<String> workIds,
-  String? activeLibraryId,
-  Future<PersonalLibraryConfig?> Function()? onCreateLibrary,
-  bool showIpScopeOption = false,
-  List<String>? entireIpWorkIds,
-  bool showTitleEditor = false,
-}) async {
-  await showWorkLibraryDialog(
-    context,
-    request: WorkLibraryMenuRequest(
-      displayTitle: displayTitle,
-      draftItem: draftItem,
-      showTitleEditor: showTitleEditor,
-      singleWorkIds: workIds,
-      entireIpWorkIds: entireIpWorkIds ?? workIds,
-      showIpScopeOption: showIpScopeOption,
-      membership: membership,
-      activeLibraryId: activeLibraryId,
-      onCreateLibrary: onCreateLibrary,
-      onApply: onApply,
-    ),
-  );
-}

@@ -360,7 +360,7 @@ class WorksRegistry {
     if (!hasDomain && !hasCategories) return;
 
     if (hasCategories) {
-      for (final category in categories!) {
+      for (final category in categories) {
         await _prefetchSingleFilter(domain: domain, category: category);
       }
       return;

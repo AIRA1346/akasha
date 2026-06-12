@@ -80,7 +80,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<AkashaItem> _items = [];
-  bool _isLoading = false;
   bool _isSyncing = false;
   bool _isCatalogLoading = false;
   DateTime? _lastSyncTime;
@@ -188,7 +187,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadItems() async {
-    setState(() => _isLoading = true);
     final service = AkashaFileService();
     List<AkashaItem> loadedItems = [];
     if (service.vaultPath != null) {
@@ -213,7 +211,6 @@ class _HomeScreenState extends State<HomeScreen> {
     if (mounted) {
       setState(() {
         _items = loadedItems;
-        _isLoading = false;
       });
     }
   }

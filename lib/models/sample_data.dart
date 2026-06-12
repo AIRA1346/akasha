@@ -1,6 +1,5 @@
 import 'enums.dart';
 import 'akasha_item.dart';
-import '../services/works_registry.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 초기 샘플 데이터 (대분류 동적 도메인 속성 반영 버전)

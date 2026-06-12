@@ -1,12 +1,23 @@
 # 나만의 서재 — UI·역할 설계 (v1 재정의)
 
-> **상태:** v1 구현 완료 (2026-06-07)  
-> **기준일:** 2026-06-07  
-> **관련 코드:** `dashboard_sidebar.dart`, `home_screen.dart`, `my_library_screen.dart`, `browse_dashboard_sections.dart`
+> **상태:** v1 구현 완료 (2026-06-07) · **2026-06 통합 홈** (`HomeScreen` 나만의 서재 모드)  
+> **기준일:** 2026-06-12  
+> **관련 코드:** `dashboard_sidebar.dart`, `home_screen.dart`, `browse_dashboard_sections.dart`  
+> **레거시:** ~~`MyLibraryScreen`~~ — 삭제됨 (별도 `Navigator.push` 화면 폐기)
 
 ---
 
-## 1. 문제 인식 (현재 As-Is)
+## 0. 구현 현황 (2026-06-12)
+
+| 항목 | 상태 |
+|------|------|
+| 사이드바 「나만의 서재」 섹션 | ✅ `dashboard_sidebar.dart` |
+| 메인 패널 모드 전환 | ✅ `_isPersonalLibraryMode` (`home_screen.dart`) |
+| 별도 `MyLibraryScreen` | ❌ **제거** — To-Be §2와 일치 |
+
+---
+
+## 1. 문제 인식 (과거 As-Is · 2026-06-07)
 
 ### 사이드바 구조 (잘못된 배치)
 

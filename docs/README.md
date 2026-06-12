@@ -1,6 +1,6 @@
 # AKASHA Docs
 
-> **갱신:** 2026-06-10 · Registry **430** · [ROADMAP](../ROADMAP.md)
+> **갱신:** 2026-06-12 · Registry **490** · [ROADMAP](../ROADMAP.md)
 
 문서는 **루트 7개 + 하위 폴더**로 정리했다. 완료된 스프린트·리뷰·일회성 조사는 **`archive/`** (44건).
 

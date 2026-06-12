@@ -1,6 +1,6 @@
 # Curated Personal Library — 나만의 서재 큐레이션 설계
 
-> **상태:** v1 + v1.1 구현 완료 (2026-06-10) · polish·테스트·Case D 잔여  
+> **상태:** v1 curated **구현 완료** (2026-06-10) · v1.1 백로그: E2 워크벤치 polish · Case D 잔여  
 > **기준일:** 2026-06-10  
 > **지위:** `PersonalLibraryConfig` · `MyLibraryPipeline` 확장 SSOT  
 > **상위:** [product-vision.md](../product-vision.md) · [ROADMAP.md](../../ROADMAP.md) M1 나만의 서재

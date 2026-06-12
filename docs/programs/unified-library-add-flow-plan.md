@@ -3,7 +3,7 @@
 > **상태:** **완료** (Phase 1~3 · 2026-06-10)  
 > **지위:** Case A/B/C · E1 · `ArchiveThenAddDialog` 대체 SSOT  
 > **상위:** [curated-personal-library-plan.md](./curated-personal-library-plan.md) §7.5 · [curated-library-membership-ui-plan.md](./curated-library-membership-ui-plan.md)  
-> **대체 예정 API:** 상위 §7.9 `ensureVaultMdThenAdd` (설계만 존재 · 코드 미구현) → 본 계획 `ensureVaultMd` + `applyLibraryPanel`
+> **대체 예정 API:** 상위 §7.9 `ensureVaultMdThenAdd` → **`ensureVaultMd` + `applyPanel`** (구현 완료)
 
 ---
 
@@ -16,6 +16,9 @@
 ---
 
 ## 2. 배경
+
+> **Historical (2026-06-10 이전)** — §2.2~2.3은 개편 **전** As-Is 기록.  
+> **2026-06-12:** `ArchiveThenAddDialog` 파일 삭제 · call site **0** · `LibraryMembershipApply.applyPanel` SSOT.
 
 ### 2.1 사용자 제기 (2026-06-10)
 

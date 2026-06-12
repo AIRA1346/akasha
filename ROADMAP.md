@@ -29,7 +29,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 |------|------|
 | 1차 출시 | Steam (Windows) |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | **최종: 전 작품 사전** · 현재 **430작** → **G1(~5k) 병행 확장** · v4 운영 |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 **490작** → **G1(~5k) 병행 확장** · v4 운영 |
 | 출시 전제 | 430 **고정 출시 아님** — 카탈로그 깊이·검색 가치 **동시 달성** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md)) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | **v1: Tier 1 미제공** — Sanctum vault만 ([data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)) |
@@ -52,7 +52,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 ### 🔨 v1 신규 구현
 
 - [x] **나의 서재 — 기본 뷰 (무료)**
-  - [x] 아카이브한 작품만 모아 보는 전용 화면/탭 (`MyLibraryScreen`)
+  - [x] 아카이브한 작품만 모아 보는 전용 뷰 (`HomeScreen` 나만의 서재 모드)
   - [x] 대시보드 「카탈로그」와 역할 분리·네이밍 정리
   - [x] 빈 상태·정렬 UX (필터는 v1.1)
 - [x] **나의 서재 — 꾸미기 (IAP 스텁)**
@@ -83,7 +83,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 - [x] 번들 smoke (`steam_v1_bundle_test` — 430작·웹툰 이관)
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
 - [x] **akasha-db GitHub push** — ~410작 엄선 카탈로그 반영
-- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test 96/96 · ci_registry_check)
+- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test **254/254** · ci_registry_check · 2026-06-12)
 - [x] 내부 dogfood (본인 볼트 + 동기화 검증)
 - [x] 나만의 서재 `master_archive` (대시보드 `master_index`와 대응)
 

@@ -105,10 +105,6 @@ class FranchiseFusionService {
       final group = FranchiseRegistry.groupFor(item.workId);
       if (group != null && emittedFranchises.contains(group.id)) continue;
 
-      final key = item.workId.isNotEmpty
-          ? item.workId
-          : '${item.category.name}::${item.title}';
-
       cards.add(
         BrowseCard(
           item: item,
@@ -332,7 +328,6 @@ class FranchiseFusionService {
     final work = WorksRegistry.getWorkById(workId);
     if (work == null) return null;
 
-    final resolved = WorksRegistry.resolveWorkId(workId);
     final prefs = UserRegistryPreferences.instance;
 
     FormatSlotState state;

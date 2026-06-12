@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
 import '../../services/works_registry.dart';
-import '../../utils/helpers.dart';
 import '../../utils/registry_extension_labels.dart';
 import '../../widgets/poster_image.dart';
 import '../../widgets/star_rating.dart';

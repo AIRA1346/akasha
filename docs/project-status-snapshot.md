@@ -3,6 +3,7 @@
 > **갱신:** 2026-06-10  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
+> **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
 > **확장:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) — **SD2.6 hold 해제**
 
 ---
@@ -39,7 +40,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **250/250 PASS** |
+| `flutter test` | **254/254 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (490 works) |
 | `quality_gate --strict` | PASS |

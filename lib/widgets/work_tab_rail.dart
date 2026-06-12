@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/akasha_item.dart';
 import '../workbench/work_tab.dart';
 import '../widgets/poster_image.dart';
 

@@ -4,7 +4,6 @@ import '../screens/home/dialogs/work_library_menu.dart';
 import '../models/browse_card.dart';
 import '../utils/browse_category_groups.dart';
 import '../utils/browse_year_groups.dart';
-import '../models/enums.dart';
 import '../utils/helpers.dart';
 import 'section_header.dart';
 import 'section_sort_dropdown.dart';

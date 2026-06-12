@@ -91,9 +91,6 @@ class EntitlementService {
     return false;
   }
 
-  @Deprecated('Use purchaseCosmetic')
-  Future<bool> purchase(String productId) => purchaseCosmetic(productId);
-
   Future<void> grantCosmeticEntitlement(String productId) async {
     await load();
     _owned.add(productId);

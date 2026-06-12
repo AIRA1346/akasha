@@ -1,8 +1,8 @@
 # AKASHA Product Vision — Fact Index + Sanctum Archive
 
 > **지위:** 제품·데이터 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)  
-> **갱신:** 2026-06-10 · Registry **430→G1 확장** · Steam v1 Q3 2026  
-> **확장:** [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) — 430작은 출시 **최소선 아님**
+> **갱신:** 2026-06-12 · Registry **490** · G1 확장 · Steam v1 Q3 2026  
+> **확장:** [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) — @430 시점 「출시 최소선 아님」 결정
 > **법무:** [data-policy.md](data-policy.md) · **구현:** [catalog_poster_policy.dart](../lib/config/catalog_poster_policy.dart)
 
 ---
@@ -114,7 +114,7 @@
 
 | In | Out |
 |----|-----|
-| 430+ Fact 사전 · 검색 · 플레이스홀더 그리드 | Tier 1 포스터 |
+| 490+ Fact 사전 · 검색 · 플레이스홀더 그리드 | Tier 1 포스터 |
 | Sanctum 연동 · 아카이브 `.md` | 앱 이미지 큐레이션 |
 | YAML 기본 · 나만의 서재 · IAP 테마 | Discover · Timeline · Recall (v1.1) |
 
@@ -126,7 +126,7 @@
 
 | 시점 | Tier 1 | Tier 2 |
 |------|--------|--------|
-| 2026 v1 | 430 · Fact only | Sanctum |
+| 2026 v1 | 490 · Fact only | Sanctum |
 | 2027~ | 5k · Facts 확장 | 동일 |
 | 2030~ | 500k · Pipeline | 동일 |
 
