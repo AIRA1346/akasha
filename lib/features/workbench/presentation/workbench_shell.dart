@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../models/akasha_item.dart';
-import '../../workbench/workbench_controller.dart';
-import '../../widgets/work_tab_rail.dart';
-import '../../widgets/workbench_resizable_panel.dart';
+import '../../../models/akasha_item.dart';
+import '../data/workbench_controller.dart';
+import '../../../widgets/work_tab_rail.dart';
+import '../../../widgets/workbench_resizable_panel.dart';
 import 'work_detail_workspace.dart';
 
 /// 워크벤치 메인 영역 — 탭 레일 + (작업 뷰 | 브라우즈 콘텐츠)

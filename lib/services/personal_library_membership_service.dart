@@ -1,13 +1,14 @@
+import '../core/ports/registry_port.dart';
 import '../models/personal_library_config.dart';
 import '../models/membership_apply_result.dart';
 import '../screens/home/home_personal_library_controller.dart';
-import 'works_registry.dart';
 
 /// curated 서재 멤버십 (`memberOrder`) 변경
 class PersonalLibraryMembershipService {
-  PersonalLibraryMembershipService(this._controller);
+  PersonalLibraryMembershipService(this._controller, this._registryPort);
 
   final HomePersonalLibraryController _controller;
+  final RegistryPort _registryPort;
 
   List<PersonalLibraryConfig> get curatedLibraries => _controller.libraries
       .where((l) => l.isCurated && l.id != PersonalLibraryConfig.masterArchiveId)
@@ -15,7 +16,7 @@ class PersonalLibraryMembershipService {
 
   bool containsWork(PersonalLibraryConfig library, String workId) {
     if (!library.isCurated || workId.isEmpty) return false;
-    return WorksRegistry.setContainsWorkId(library.memberWorkIds, workId);
+    return _registryPort.setContainsWorkId(library.memberWorkIds, workId);
   }
 
   Set<String> librariesContaining(String workId) {
@@ -31,14 +32,14 @@ class PersonalLibraryMembershipService {
     if (lib == null || !lib.isCurated || workId.isEmpty) return;
     if (containsWork(lib, workId)) return;
 
-    final resolved = WorksRegistry.resolveWorkId(workId);
+    final resolved = _registryPort.resolveWorkId(workId);
     final stored = resolved.isNotEmpty ? resolved : workId;
     lib.memberOrder = [...lib.memberOrder, stored];
     await _controller.save();
   }
 
   /// 보이는 카드 순서 변경 — 필터로 숨긴 id는 `memberOrder`에 유지
-  static List<String> reorderVisibleInOrder({
+  List<String> reorderVisibleInOrder({
     required List<String> fullOrder,
     required List<String> visibleWorkIds,
     required int oldIndex,
@@ -54,7 +55,7 @@ class PersonalLibraryMembershipService {
     final result = <String>[];
     var vi = 0;
     for (final id in fullOrder) {
-      if (WorksRegistry.setContainsWorkId(visibleSet, id)) {
+      if (_registryPort.setContainsWorkId(visibleSet, id)) {
         if (vi < reordered.length) {
           result.add(reordered[vi++]);
         }
@@ -77,7 +78,7 @@ class PersonalLibraryMembershipService {
     if (lib == null || !lib.isCurated || workId.isEmpty) return;
 
     lib.memberOrder = lib.memberOrder
-        .where((id) => !WorksRegistry.setContainsWorkId({workId}, id))
+        .where((id) => !_registryPort.setContainsWorkId({workId}, id))
         .toList();
     await _controller.save();
   }
@@ -193,7 +194,7 @@ class PersonalLibraryMembershipService {
     if (!library.isCurated) return 0;
     final before = library.memberOrder.length;
     library.memberOrder = library.memberOrder
-        .where((id) => WorksRegistry.setContainsWorkId(archivedWorkIds, id))
+        .where((id) => _registryPort.setContainsWorkId(archivedWorkIds, id))
         .toList();
     final removed = before - library.memberOrder.length;
     if (removed > 0) await _controller.save();

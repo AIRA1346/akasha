@@ -9,6 +9,8 @@ import 'package:akasha/services/franchise_library_scope.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 import 'package:akasha/utils/helpers.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -36,7 +38,7 @@ void main() {
         mode: PersonalLibraryMode.curated,
       );
       controller.libraries = [PersonalLibraryConfig.masterArchive(), lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.addWork('lib', 'wk_a');
       expect(membership.librariesContainingAll(['wk_a']), {'lib'});
@@ -62,7 +64,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
       await membership.addWork('a', 'wk_1');
       await membership.addWork('b', 'wk_2');
 

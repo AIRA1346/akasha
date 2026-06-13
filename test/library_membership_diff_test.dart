@@ -4,6 +4,8 @@ import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -26,7 +28,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      membership = PersonalLibraryMembershipService(controller);
+      membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
     });
 
     test('adds to multiple libraries', () async {

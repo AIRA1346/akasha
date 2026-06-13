@@ -1,0 +1,12 @@
+"DepotBuild"
+{
+	"DepotID" "4677561"
+	"ContentRoot" "C:\\Users\\rkdwl\\RuneAtelier\\akasha\\build\\windows\\x64\\runner\\Release"
+	"FileMapping"
+	{
+		"LocalPath" "*"
+		"DepotPath" "."
+		"Recursive" "1"
+	}
+	"FileExclusion" "*.pdb"
+}

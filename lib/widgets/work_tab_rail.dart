@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../workbench/work_tab.dart';
+import '../features/workbench/presentation/work_tab.dart';
 import '../widgets/poster_image.dart';
 
 /// 열린 작품 탭 레일 (2열)

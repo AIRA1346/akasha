@@ -1,5 +1,5 @@
 import 'package:akasha/models/enums.dart';
-import 'package:akasha/screens/workbench/work_detail_workspace.dart';
+import 'package:akasha/features/workbench/presentation/work_detail_workspace.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:akasha/widgets/poster_image.dart';
 import 'package:flutter/material.dart';

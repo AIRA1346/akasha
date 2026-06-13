@@ -1,3 +1,4 @@
+import '../core/ports/registry_port.dart';
 import '../models/akasha_item.dart';
 import '../models/browse_card.dart';
 import '../models/enums.dart';
@@ -21,7 +22,11 @@ class BrowseFilterState {
 
 /// userFiltered → registry → fuse → status filter 파이프라인
 class BrowsePipeline {
-  static List<BrowseCard> build({
+  const BrowsePipeline(this._registryPort);
+
+  final RegistryPort _registryPort;
+
+  List<BrowseCard> build({
     required List<AkashaItem> allUserItems,
     required BrowseFilterState filters,
   }) {
@@ -36,13 +41,13 @@ class BrowsePipeline {
     return applyStatusFilters(fused, filters);
   }
 
-  static List<BrowseCard> applyStatusFilters(
+  List<BrowseCard> applyStatusFilters(
     List<BrowseCard> cards,
     BrowseFilterState filters,
   ) =>
       _applyStatusFilters(cards, filters);
 
-  static List<AkashaItem> _filterUserItems(
+  List<AkashaItem> _filterUserItems(
     List<AkashaItem> items,
     BrowseFilterState filters,
   ) {
@@ -58,9 +63,9 @@ class BrowsePipeline {
     }).toList();
   }
 
-  static List<RegistryWork> _resolveRegistryWorks(BrowseFilterState filters) {
+  List<RegistryWork> _resolveRegistryWorks(BrowseFilterState filters) {
     if (filters.categories.isEmpty) {
-      return WorksRegistry.getFilteredWorksSync(
+      return _registryPort.getFilteredWorksSync(
         domain: filters.domain,
         category: null,
       );
@@ -69,7 +74,7 @@ class BrowsePipeline {
     final works = <RegistryWork>[];
     for (final cat in filters.categories) {
       works.addAll(
-        WorksRegistry.getFilteredWorksSync(
+        _registryPort.getFilteredWorksSync(
           domain: filters.domain,
           category: cat,
         ),
@@ -78,7 +83,7 @@ class BrowsePipeline {
     return works;
   }
 
-  static List<BrowseCard> _applyStatusFilters(
+  List<BrowseCard> _applyStatusFilters(
     List<BrowseCard> cards,
     BrowseFilterState filters,
   ) {

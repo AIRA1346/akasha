@@ -1,0 +1,236 @@
+import 'package:flutter/material.dart';
+
+import '../../../models/akasha_item.dart';
+import '../../../models/personal_library_config.dart';
+import '../../../services/file_service.dart';
+import '../../../services/markdown_parser.dart';
+import '../../../services/personal_library_membership_service.dart';
+import '../../../utils/browse_section_filters.dart';
+import '../../../utils/browse_year_groups.dart';
+import '../../../utils/helpers.dart';
+import '../../../widgets/browse_dashboard_sections.dart';
+import '../../../widgets/browse_poster_grid.dart';
+import '../../../widgets/curated_reorder_grid.dart';
+import '../home_personal_library_controller.dart';
+import '../home_section_preferences.dart';
+import '../../../models/browse_card.dart';
+
+/// 개인 서재 그리드·curated reorder·섹션 prefs 연동
+class PersonalLibraryView extends StatelessWidget {
+  const PersonalLibraryView({
+    super.key,
+    required this.filteredCards,
+    required this.allItems,
+    required this.sectionPrefs,
+    required this.displayName,
+    required this.isCuratedLibraryActive,
+    required this.activeLibrary,
+    required this.posterCardBuilder,
+    required this.onStateChanged,
+    required this.onCuratedReorder,
+    required this.onSearch,
+  });
+
+  final List<BrowseCard> filteredCards;
+  final List<AkashaItem> allItems;
+  final HomeSectionPreferences sectionPrefs;
+  final String displayName;
+  final bool isCuratedLibraryActive;
+  final PersonalLibraryConfig? activeLibrary;
+  final Widget Function(BrowseCard card) posterCardBuilder;
+  final VoidCallback onStateChanged;
+  final Future<void> Function(
+    List<BrowseCard> visibleCards,
+    int oldIndex,
+    int newIndex,
+  ) onCuratedReorder;
+  final VoidCallback onSearch;
+
+  static Future<void> applyCuratedGridReorder({
+    required PersonalLibraryMembershipService membership,
+    required HomePersonalLibraryController personalLibCtrl,
+    required List<BrowseCard> visibleCards,
+    required int oldIndex,
+    required int newIndex,
+  }) async {
+    final lib = personalLibCtrl.activeLibrary;
+    if (lib == null || !lib.isCurated) return;
+
+    final visibleIds = visibleCards
+        .map((c) => c.item.workId.isNotEmpty
+            ? c.item.workId
+            : MarkdownParser.ensureWorkId(c.item))
+        .toList();
+
+    final newOrder = membership.reorderVisibleInOrder(
+      fullOrder: List<String>.from(lib.memberOrder),
+      visibleWorkIds: visibleIds,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+
+    await membership.setMemberOrder(lib.id, newOrder);
+  }
+
+  Widget _buildGrid(
+    List<BrowseCard> cards, {
+    List<BrowseCard>? mainCatalogCards,
+  }) {
+    if (isCuratedLibraryActive &&
+        sectionPrefs.librarySort.isManualOrder &&
+        mainCatalogCards != null &&
+        identical(cards, mainCatalogCards) &&
+        cards.length > 1) {
+      return CuratedReorderGrid(
+        cards: cards,
+        cardBuilder: posterCardBuilder,
+        cardMinWidth: 170,
+        childAspectRatio: 0.48,
+        onReorder: (oldIndex, newIndex) =>
+            onCuratedReorder(cards, oldIndex, newIndex),
+      );
+    }
+
+    return BrowsePosterGrid(
+      cards: cards,
+      cardBuilder: posterCardBuilder,
+      cardMinWidth: 170,
+      childAspectRatio: 0.48,
+    );
+  }
+
+  Widget _buildEmptyContent() {
+    final vaultLinked = AkashaFileService().vaultPath != null;
+    final library = activeLibrary;
+    final libName = library?.name ?? '나만의 서재';
+    final isCuratedEmpty =
+        library != null && library.isCurated && library.memberOrder.isEmpty;
+    final isFilterEmpty = library != null && !library.isCurated;
+    final hasMembersButFiltered = library != null &&
+        library.isCurated &&
+        library.memberOrder.isNotEmpty &&
+        vaultLinked;
+
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              vaultLinked
+                  ? (isCuratedEmpty
+                      ? Icons.collections_bookmark_outlined
+                      : Icons.inventory_2_outlined)
+                  : Icons.folder_off_outlined,
+              size: 48,
+              color: Colors.grey[700],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              !vaultLinked
+                  ? '볼트를 연동하면 나만의 서재가 열립니다'
+                  : isCuratedEmpty
+                      ? '작품을 담아 서재를 채워 보세요'
+                      : hasMembersButFiltered
+                          ? '필터 조건에 맞는 작품이 없습니다'
+                          : isFilterEmpty
+                              ? '$libName에 표시할 아카이브 작품이 없습니다'
+                              : '$libName에 표시할 작품이 없습니다',
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              !vaultLinked
+                  ? '홈 상단에서 Sanctum 볼트 폴더를 연동해 주세요.'
+                  : isCuratedEmpty
+                      ? '검색으로 작품을 추가하거나, 카드 ⠿ 핸들을 서재로 끌어다 놓으세요.'
+                      : hasMembersButFiltered
+                          ? '상단 필터를 조정해 보세요.'
+                          : '검색으로 작품을 추가해 보세요.',
+              style: TextStyle(color: Colors.grey[500], height: 1.5),
+              textAlign: TextAlign.center,
+            ),
+            if (vaultLinked && isCuratedEmpty) ...[
+              const SizedBox(height: 16),
+              FilledButton.icon(
+                onPressed: onSearch,
+                icon: const Icon(Icons.search, size: 18),
+                label: const Text('작품 검색'),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (filteredCards.isEmpty) {
+      return _buildEmptyContent();
+    }
+
+    final libraryFiltered = filterLibraryCards(filteredCards, allItems);
+    final catalogCards = isCuratedLibraryActive &&
+            sectionPrefs.librarySort.isManualOrder
+        ? libraryFiltered
+        : sortBrowseCards(libraryFiltered, sectionPrefs.librarySort);
+    final hofCards = sortBrowseCards(
+      filteredCards.where((c) => c.item.isHallOfFame).toList(),
+      sectionPrefs.hofSort,
+    );
+    final watchlistCards = sortBrowseCards(
+      filterWatchlistCards(filteredCards, allItems),
+      sectionPrefs.watchlistSort,
+    );
+    final yearGroups = BrowseYearGroups.fromLibraryCards(
+      catalogCards,
+      sectionPrefs.yearlySort,
+    );
+
+    return BrowseDashboardSections(
+      hofCards: hofCards,
+      libraryCards: catalogCards,
+      watchlistCards: watchlistCards,
+      yearGroups: yearGroups,
+      categoryGroups: null,
+      displayName: displayName,
+      isPersonalLibraryMode: true,
+      curatedLibrarySort: isCuratedLibraryActive,
+      showHallOfFame: true,
+      hofExpanded: sectionPrefs.hofExpanded,
+      libraryExpanded: sectionPrefs.libraryExpanded,
+      yearlyExpanded: sectionPrefs.yearlyExpanded,
+      watchlistExpanded: sectionPrefs.watchlistExpanded,
+      hofSortCriteria: sectionPrefs.hofSort,
+      librarySortCriteria: sectionPrefs.librarySort,
+      yearlySortCriteria: sectionPrefs.yearlySort,
+      watchlistSortCriteria: sectionPrefs.watchlistSort,
+      onHofExpandedChanged: (v) =>
+          sectionPrefs.setHofExpanded(v, onStateChanged),
+      onLibraryExpandedChanged: (v) =>
+          sectionPrefs.setLibraryExpanded(v, onStateChanged),
+      onYearlyExpandedChanged: (v) =>
+          sectionPrefs.setYearlyExpanded(v, onStateChanged),
+      onWatchlistExpandedChanged: (v) =>
+          sectionPrefs.setWatchlistExpanded(v, onStateChanged),
+      onHofSortChanged: (val) => sectionPrefs.setHofSort(val, onStateChanged),
+      onLibrarySortChanged: (val) =>
+          sectionPrefs.setLibrarySort(val, onStateChanged),
+      onYearlySortChanged: (val) =>
+          sectionPrefs.setYearlySort(val, onStateChanged),
+      onWatchlistSortChanged: (val) =>
+          sectionPrefs.setWatchlistSort(val, onStateChanged),
+      posterCardBuilder: posterCardBuilder,
+      gridBuilder: (cards) => _buildGrid(
+        cards,
+        mainCatalogCards: catalogCards,
+      ),
+    );
+  }
+}

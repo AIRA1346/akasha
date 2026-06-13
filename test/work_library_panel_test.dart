@@ -11,6 +11,8 @@ import 'package:akasha/services/library_membership_apply.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 import 'package:akasha/widgets/work_library_panel.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 WorkLibraryPanelApplyCallback _diffOnlyApply(
   PersonalLibraryMembershipService membership,
   List<String> singleIds, {
@@ -48,7 +50,7 @@ void main() {
         mode: PersonalLibraryMode.curated,
       ),
     ];
-    membership = PersonalLibraryMembershipService(controller);
+    membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
   });
 
   Widget _wrap(Widget child) {

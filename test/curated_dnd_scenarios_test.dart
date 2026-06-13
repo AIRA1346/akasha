@@ -7,6 +7,8 @@ import 'package:akasha/models/browse_card.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/helpers.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 BrowseCard _card(String title) => BrowseCard(
       item: createItem(
         workId: 'wk_$title',
@@ -70,7 +72,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      membership = PersonalLibraryMembershipService(controller);
+      membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
     });
 
     test('T11 add to two libraries at once', () async {
@@ -103,7 +105,7 @@ void main() {
         mode: PersonalLibraryMode.curated,
       );
       controller.libraries = [PersonalLibraryConfig.masterArchive(), lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.addWork('lib', 'wk_000000001');
       expect(lib.memberOrder, ['wk_000000001']);
@@ -118,7 +120,7 @@ void main() {
         memberOrder: ['wk_dup'],
       );
       controller.libraries = [lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.addWork('lib', 'wk_dup');
       expect(lib.memberOrder, ['wk_dup']);
@@ -165,7 +167,7 @@ void main() {
         memberOrder: ['wk_a', 'wk_b', 'wk_c'],
       );
       controller.libraries = [lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.setMemberOrder('lib', ['wk_c', 'wk_a', 'wk_b']);
       expect(lib.memberOrder, ['wk_c', 'wk_a', 'wk_b']);
@@ -182,7 +184,7 @@ void main() {
         memberOrder: ['wk_keep', 'wk_drop'],
       );
       controller.libraries = [lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.removeWork('lib', 'wk_drop');
       expect(lib.memberOrder, ['wk_keep']);

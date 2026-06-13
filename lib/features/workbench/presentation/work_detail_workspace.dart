@@ -1,18 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/akasha_item.dart';
-import '../../models/enums.dart';
-import '../../services/file_service.dart';
-import '../../services/markdown_body_merger.dart';
-import '../../services/markdown_parser.dart';
-import '../../services/work_info_defaults.dart';
-import '../../widgets/poster_image.dart';
-import '../../widgets/sanctum_page_panel.dart';
-import '../../widgets/star_rating.dart';
-import '../../widgets/web_image_search_dialog.dart';
-import '../../widgets/workbench_resizable_panel.dart';
-import '../detail/detail_archive_save.dart';
+import '../../../models/akasha_item.dart';
+import '../../../models/enums.dart';
+import '../../../services/file_service.dart';
+import '../../../services/markdown_body_merger.dart';
+import '../../../services/markdown_parser.dart';
+import '../../../services/work_info_defaults.dart';
+import '../../../widgets/poster_image.dart';
+import '../../../widgets/sanctum_page_panel.dart';
+import '../../../widgets/star_rating.dart';
+import '../../../widgets/web_image_search_dialog.dart';
+import '../../../widgets/workbench_resizable_panel.dart';
+import '../../../screens/detail/detail_archive_save.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
 class WorkDetailWorkspace extends StatefulWidget {

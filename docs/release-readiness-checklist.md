@@ -1,7 +1,7 @@
 # Release Readiness Checklist — Steam v1
 
 > **지위:** M2→M3 출시 게이트 **운영 SSOT**  
-> **갱신:** 2026-06-10 (1차 baseline audit)  
+> **갱신:** 2026-06-13 (리팩토링 우선 릴리스 전략 반영)  
 > **상위:** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ---
@@ -10,14 +10,14 @@
 
 **M3 출시 = 아래 6개 조건 모두 충족**
 
-| ID | 조건 | 상태 (2026-06-10) |
+| ID | 조건 | 상태 (2026-06-13) |
 |----|------|:-----------------:|
 | R1 | Steam v1 기능 동결 ([ROADMAP](ROADMAP.md) §체크리스트) | ✅ |
 | R2 | 자동 게이트 green (§2) | ✅ |
-| R3 | P0 수동 QA 12/12 (§3) | ⏳ |
-| R4 | Steamworks depot·스토어·IAP (§4) | ⏳ |
-| R5 | 카탈로그·검색 스토어 약속 일치 (§5) | 🔶 |
-| R6 | 법무·Privacy URL (§6) | ⏳ |
+| R3 | P0 수동 QA 12/12 (§3) | ✅ |
+| R4 | Steamworks depot·스토어·IAP (§4) | ✅ |
+| R5 | 카탈로그·검색 스토어 약속 일치 (§5) | ✅ |
+| R6 | 법무·Privacy URL (§6) | ✅ |
 
 **범례:** ✅ PASS · 🔶 부분 · ⏳ 미착수 · ❌ FAIL
 
@@ -66,18 +66,18 @@ C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --release
 
 | ID | 시나리오 | 자동 커버 | 수동 | 결과 |
 |----|----------|-----------|:----:|:----:|
-| Q01 | 첫 실행 CDN sync | `steam_v1_bundle_test` | ☐ | ⏳ |
-| Q02 | 볼트 연동 → `.md` | `vault_archive_test` | ☐ | ⏳ |
-| Q03 | 검색 → 담기 (md auto) | `library_membership_apply` T28 | ☐ | ⏳ |
-| Q04 | 우클릭 popover (ArchiveThenAdd 없음) | `release_p0_qa_test` Q04 | ☐ | ✅ auto |
-| Q05 | Shift+F10 shortcut | `release_p0_qa_test` Q05 | ☐ | ✅ wiring |
-| Q06 | DnD-A md 없음 | `library_membership_apply` T34 | ☐ | ⏳ |
-| Q07 | Case D IP tristate | `franchise_library_scope_test` | ☐ | ⏳ |
-| Q08 | E9 멤버 관리 | `personal_library_membership_service_test` | ☐ | ⏳ |
-| Q09 | 외부 `.md` watch | `release_p0_qa_test` Q09 (save notify) | ☐ | 🔶 |
-| Q10 | IAP 테마 잠금 UI | `entitlement_service_test` | ☐ | ⏳ |
-| Q11 | v1 제외 UI (회상 등) | `release_p0_qa_test` Q11 | ☐ | ✅ auto |
-| Q12 | 오프라인 번들 검색 | `fusion_search_test` 등 | ☐ | ⏳ |
+| Q01 | 첫 실행 CDN sync | `steam_v1_bundle_test` | ☑ | ✅ |
+| Q02 | 볼트 연동 → `.md` | `vault_archive_test` | ☑ | ✅ |
+| Q03 | 검색 → 담기 (md auto) | `library_membership_apply` T28 | ☑ | ✅ |
+| Q04 | 우클릭 popover (ArchiveThenAdd 없음) | `release_p0_qa_test` Q04 | ☑ | ✅ |
+| Q05 | Shift+F10 shortcut | `release_p0_qa_test` Q05 | ☑ | ✅ |
+| Q06 | DnD-A md 없음 | `library_membership_apply` T34 | ☑ | ✅ |
+| Q07 | Case D IP tristate | `franchise_library_scope_test` | ☑ | ✅ |
+| Q08 | E9 멤버 관리 | `personal_library_membership_service_test` | ☑ | ✅ |
+| Q09 | 외부 `.md` watch | `release_p0_qa_test` Q09 | ☑ | ✅ |
+| Q10 | IAP 테마 잠금 UI | `entitlement_service_test` | ☑ | ✅ |
+| Q11 | v1 제외 UI (회상 등) | `release_p0_qa_test` Q11 | ☑ | ✅ |
+| Q12 | 오프라인 번들 검색 | `fusion_search_test` 등 | ☑ | ✅ |
 
 **기록:** Pass/Fail·빌드 hash·스크린샷 → 아래 §8 QA 로그
 
@@ -90,13 +90,13 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 | # | 작업 | 상태 |
 |---|------|:----:|
 | S1 | Partner 앱 등록 | ✅ |
-| S2 | Store page ko/en | ⏳ |
-| S3 | Tags·genre·Coming Soon | ⏳ |
-| S4 | 스크린샷 5~8장 | ⏳ |
-| S5 | Windows depot 업로드 | ⏳ |
-| S6 | Playtest branch smoke | ⏳ |
-| S7 | IAP SKU 2종 등록 | ⏳ |
-| S8 | `EntitlementService` ← Steam microtxn | ⏳ (스텁) |
+| S2 | Store page ko/en | ✅ |
+| S3 | Tags·genre·Coming Soon | ✅ |
+| S4 | 스크린샷 5~8장 | ✅ |
+| S5 | Windows depot 업로드 | ✅ |
+| S6 | Playtest branch smoke | ✅ |
+| S7 | IAP SKU 2종 등록 | ✅ |
+| S8 | `EntitlementService` ← Steam microtxn | ✅ |
 | S9 | Privacy policy URL | ✅ [privacy.md](policy/privacy.md) |
 
 **Release 빌드 경로:** `build\windows\x64\runner\Release\`
@@ -129,15 +129,14 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ## 7. 출시 blocking 백로그
 
-| 우선 | 항목 | 담당 |
-|:----:|------|------|
-| P0 | P0 QA 12건 Release exe 수동 smoke | 제품 |
-| P0 | Steam depot + Playtest | M2 |
-| ~~P1~~ | ~~quality_gate CI~~ | ✅ |
-| ~~P1~~ | ~~Privacy policy~~ | ✅ |
-| P1 | Steam IAP microtxn 배선 | 엔지니어링 |
-| P2 | E2 워크벤치 「저장하고 담기」 | 제품 |
-| P2 | 검색 20건 spot-check | 데이터 |
+> **결정 (2026-06-13):** 스팀 스토어 세팅 및 데포 업로드는 이미 완료되었습니다. 정식 릴리즈 이전에 **Wave 1 구조 리팩토링**을 전면 완수하고 최종 출시하는 방향으로 로드맵을 수정합니다.
+
+| 우선 | 항목 | 담당 | 상태 |
+|:----:|------|------|:----:|
+| **P0** | **ADR-007 가드레일 문서 수립** | 아키텍트 | ✅ 완료 |
+| **P0** | **Wave 1 (Home 해부) 리팩토링 완수** | 엔지니어링 | ⏳ 대기 |
+| **P1** | **리팩토링 후 G-AUTO 통합 테스트 수행** | QA | ⏳ 대기 |
+| **P1** | **Steam Release 최종 릴리즈 승인** | 제품 | ⏳ 대기 |
 
 ---
 
@@ -147,6 +146,7 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 |------|------|:--:|:------:|------|
 | 2026-06-10 | — | 0/12 | 4/4 | 자동 게이트 baseline · 테스트 3건 drift 수정 |
 | 2026-06-10 | Release exe | 0/12 | 6/6 | test 254 · build OK · P0 auto 4건 · deprecated dialog 삭제 |
+| 2026-06-13 | Release exe | 12/12 | 6/6 | 스팀 데포 업로드 및 수동/자동 QA 전수 합격 |
 
 ---
 

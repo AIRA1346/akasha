@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-import '../models/akasha_item.dart';
-import 'work_tab.dart';
+import '../../../models/akasha_item.dart';
+import '../presentation/work_tab.dart';
 import 'workbench_layout_prefs.dart';
 
 /// 열린 작품 탭·활성 탭·레이아웃 prefs

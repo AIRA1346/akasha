@@ -7,7 +7,11 @@ import 'package:akasha/services/browse_pipeline.dart';
 import 'package:akasha/services/my_library_pipeline.dart';
 import 'package:akasha/utils/archived_works_query.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
+  final pipeline = MyLibraryPipeline(FakeRegistryPort());
+
   group('ArchivedWorksQuery', () {
     ContentItem userItem({
       required String workId,
@@ -48,7 +52,7 @@ void main() {
         title: 'Archived',
       );
       archived.filePath = '/vault/manga/archived.md';
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [archived],
         library: PersonalLibraryConfig.masterArchive(),
       );
@@ -66,7 +70,7 @@ void main() {
         domain: AppDomain.generalCulture,
       );
       movie.filePath = '/vault/movie/b.md';
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, movie],
         library: PersonalLibraryConfig.masterArchive(),
         filters: const BrowseFilterState(
@@ -87,7 +91,7 @@ void main() {
         domain: AppDomain.generalCulture,
       );
       movie.filePath = '/vault/movie/b.md';
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, movie],
         library: PersonalLibraryConfig.masterArchive(),
         filters: const BrowseFilterState(

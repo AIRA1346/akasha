@@ -5,6 +5,8 @@ import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -13,7 +15,7 @@ void main() {
       SharedPreferences.setMockInitialValues({});
       final controller = HomePersonalLibraryController();
       controller.libraries = [PersonalLibraryConfig.masterArchive()];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       final lib = PersonalLibraryConfig(
         id: 'lib_new',
@@ -44,7 +46,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       await membership.applyMembershipChanges(
         workId: 'wk_x',
@@ -69,7 +71,7 @@ void main() {
         memberOrder: ['wk_keep', 'wk_gone'],
       );
       controller.libraries = [PersonalLibraryConfig.masterArchive(), lib];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
 
       final removed = await membership.pruneOrphans(lib, {'wk_keep'});
       expect(removed, 1);

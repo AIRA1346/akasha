@@ -1,3 +1,4 @@
+import '../core/ports/registry_port.dart';
 import '../models/akasha_item.dart';
 import '../models/browse_card.dart';
 import '../models/personal_library_config.dart';
@@ -5,11 +6,16 @@ import 'browse_pipeline.dart';
 import 'franchise_fusion_service.dart';
 import '../utils/archived_works_query.dart';
 import 'franchise_registry.dart';
-import 'works_registry.dart';
 
 /// 나만의 서재 전용 파이프라인 — 사전 가상 카드 없이 아카이브 작품만 IP 1카드로 표시
 class MyLibraryPipeline {
-  static List<BrowseCard> build(
+  MyLibraryPipeline(this._registryPort)
+      : _browsePipeline = BrowsePipeline(_registryPort);
+
+  final RegistryPort _registryPort;
+  final BrowsePipeline _browsePipeline;
+
+  List<BrowseCard> build(
     List<AkashaItem> allUserItems, {
     required PersonalLibraryConfig library,
     BrowseFilterState filters = const BrowseFilterState(),
@@ -20,7 +26,7 @@ class MyLibraryPipeline {
     return _buildFilterMode(allUserItems, filters: filters);
   }
 
-  static List<BrowseCard> _buildFilterMode(
+  List<BrowseCard> _buildFilterMode(
     List<AkashaItem> allUserItems, {
     required BrowseFilterState filters,
   }) {
@@ -47,10 +53,10 @@ class MyLibraryPipeline {
       selectedCategories: filters.categories,
     );
 
-    return BrowsePipeline.applyStatusFilters(fused, filters);
+    return _browsePipeline.applyStatusFilters(fused, filters);
   }
 
-  static List<BrowseCard> _buildCurated(
+  List<BrowseCard> _buildCurated(
     List<AkashaItem> allUserItems, {
     required PersonalLibraryConfig library,
     required BrowseFilterState filters,
@@ -60,7 +66,7 @@ class MyLibraryPipeline {
     final memberIds = library.memberWorkIds;
     var members = ArchivedWorksQuery.archivedItems(allUserItems).where((item) {
       if (item.workId.isEmpty) return false;
-      return WorksRegistry.setContainsWorkId(memberIds, item.workId);
+      return _registryPort.setContainsWorkId(memberIds, item.workId);
     }).toList();
 
     if (filters.domain != null) {
@@ -82,18 +88,18 @@ class MyLibraryPipeline {
       selectedCategories: filters.categories,
     );
 
-    final filtered = BrowsePipeline.applyStatusFilters(fused, filters);
+    final filtered = _browsePipeline.applyStatusFilters(fused, filters);
     return _sortByMemberOrder(filtered, library.memberOrder);
   }
 
-  static List<BrowseCard> _sortByMemberOrder(
+  List<BrowseCard> _sortByMemberOrder(
     List<BrowseCard> cards,
     List<String> memberOrder,
   ) {
     final orderIndex = <String, int>{};
     for (var i = 0; i < memberOrder.length; i++) {
       orderIndex[memberOrder[i]] = i;
-      final resolved = WorksRegistry.resolveWorkId(memberOrder[i]);
+      final resolved = _registryPort.resolveWorkId(memberOrder[i]);
       if (resolved.isNotEmpty) {
         orderIndex.putIfAbsent(resolved, () => i);
       }
@@ -106,7 +112,7 @@ class MyLibraryPipeline {
         if (workId.isEmpty) return;
         final direct = orderIndex[workId];
         if (direct != null) indices.add(direct);
-        final resolved = WorksRegistry.resolveWorkId(workId);
+        final resolved = _registryPort.resolveWorkId(workId);
         if (resolved.isNotEmpty) {
           final resolvedIndex = orderIndex[resolved];
           if (resolvedIndex != null) indices.add(resolvedIndex);

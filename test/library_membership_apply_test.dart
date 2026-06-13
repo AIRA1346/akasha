@@ -10,6 +10,8 @@ import 'package:akasha/services/personal_library_membership_service.dart';
 import 'package:akasha/services/library_membership_apply.dart';
 import 'package:akasha/utils/helpers.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -136,7 +138,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      final membership = PersonalLibraryMembershipService(controller);
+      final membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
       final draft = createItem(
         workId: 'wk_new_panel',
         title: '패널 담기',

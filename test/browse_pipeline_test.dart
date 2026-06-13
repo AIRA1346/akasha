@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/data/adapters/works_registry_adapter.dart';
 import 'package:akasha/services/browse_pipeline.dart';
 import 'package:akasha/services/franchise_registry.dart';
 import 'package:akasha/services/user_registry_preferences.dart';
@@ -22,6 +23,7 @@ void main() {
   });
 
   test('build fuses rezero siblings and applies myStatus filter', () {
+    final pipeline = BrowsePipeline(WorksRegistryAdapter());
     final manga = createItem(
       workId: 'sub_manga_rezero_2014',
       title: 'Re:제로부터 시작하는 이세계 생활',
@@ -39,7 +41,7 @@ void main() {
       workStatus: ContentWorkStatus.completed.label,
     );
 
-    final allCards = BrowsePipeline.build(
+    final allCards = pipeline.build(
       allUserItems: [manga, anime],
       filters: const BrowseFilterState(),
     );
@@ -47,7 +49,7 @@ void main() {
         allCards.where((c) => c.franchiseId == 'franchise_rezero').toList();
     expect(rezero, hasLength(1));
 
-    final watchlistOnly = BrowsePipeline.build(
+    final watchlistOnly = pipeline.build(
       allUserItems: [anime],
       filters: BrowseFilterState(
         myStatuses: {ContentMyStatus.notStarted.label},

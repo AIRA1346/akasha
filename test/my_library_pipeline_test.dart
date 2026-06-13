@@ -6,6 +6,7 @@ import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/services/browse_pipeline.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/franchise_registry.dart';
+import 'package:akasha/data/adapters/works_registry_adapter.dart';
 import 'package:akasha/services/my_library_pipeline.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -38,6 +39,12 @@ void main() {
   }
 
   group('MyLibraryPipeline', () {
+    late MyLibraryPipeline pipeline;
+
+    setUp(() {
+      pipeline = MyLibraryPipeline(WorksRegistryAdapter());
+    });
+
     test('filter mode matches archived vault items with fusion', () {
       final manga = archivedItem(
         workId: 'sub_manga_rezero_2014',
@@ -51,7 +58,7 @@ void main() {
       );
 
       final library = PersonalLibraryConfig.masterArchive();
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, anime],
         library: library,
       );
@@ -84,7 +91,7 @@ void main() {
         memberOrder: [manga.workId, other.workId],
       );
 
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, anime, other],
         library: library,
       );
@@ -114,7 +121,7 @@ void main() {
         memberOrder: [manga.workId, anime.workId],
       );
 
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, anime],
         library: library,
       );
@@ -131,7 +138,7 @@ void main() {
         mode: PersonalLibraryMode.curated,
       );
       expect(
-        MyLibraryPipeline.build(const [], library: library),
+        pipeline.build(const [], library: library),
         isEmpty,
       );
     });
@@ -155,7 +162,7 @@ void main() {
         memberOrder: [manga.workId, other.workId],
       );
 
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [manga, other],
         library: library,
         filters: const BrowseFilterState(
@@ -185,7 +192,7 @@ void main() {
         memberOrder: [second.workId, first.workId],
       );
 
-      final cards = MyLibraryPipeline.build(
+      final cards = pipeline.build(
         [first, second],
         library: library,
       );

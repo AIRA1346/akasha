@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'screens/home/home_shell.dart';
 
 import 'services/franchise_registry.dart';
-import 'services/works_registry.dart';
+import 'data/adapters/works_registry_adapter.dart';
+import 'data/adapters/markdown_vault_adapter.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
@@ -12,8 +13,9 @@ import 'services/works_registry.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // 샤딩 레지스트리 초기화 (번들 + 캐시 + 레거시 병합)
-  await WorksRegistry.init();
+  // 어댑터를 통한 글로벌 사전 및 볼트 초기화
+  await WorksRegistryAdapter().init();
+  await MarkdownVaultAdapter().init();
   await FranchiseRegistry.init();
   // cold start: search_index + eager 샤드만 (전체 카탈로그는 master_index 진입 시 prefetch)
 
@@ -48,7 +50,7 @@ class AkashaApp extends StatelessWidget {
           color: Colors.grey.withValues(alpha: 0.15),
         ),
       ),
-      home: const HomeScreen(),
+      home: const HomeShell(),
     );
   }
 }

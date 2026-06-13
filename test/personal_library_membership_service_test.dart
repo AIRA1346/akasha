@@ -4,6 +4,8 @@ import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/services/personal_library_membership_service.dart';
 
+import 'fakes/fake_registry_port.dart';
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -27,7 +29,7 @@ void main() {
           mode: PersonalLibraryMode.curated,
         ),
       ];
-      membership = PersonalLibraryMembershipService(controller);
+      membership = PersonalLibraryMembershipService(controller, FakeRegistryPort());
     });
 
     test('addWork appends to memberOrder', () async {
@@ -81,7 +83,7 @@ void main() {
     test('reorderVisibleInOrder keeps hidden ids in place', () {
       const full = ['wk_a', 'wk_b', 'wk_c', 'wk_d'];
       const visible = ['wk_a', 'wk_c'];
-      final result = PersonalLibraryMembershipService.reorderVisibleInOrder(
+      final result = membership.reorderVisibleInOrder(
         fullOrder: full,
         visibleWorkIds: visible,
         oldIndex: 0,
@@ -93,7 +95,7 @@ void main() {
     test('reorderVisibleInOrder moves visible item forward', () {
       const full = ['wk_a', 'wk_b', 'wk_c'];
       const visible = ['wk_a', 'wk_b', 'wk_c'];
-      final result = PersonalLibraryMembershipService.reorderVisibleInOrder(
+      final result = membership.reorderVisibleInOrder(
         fullOrder: full,
         visibleWorkIds: visible,
         oldIndex: 0,

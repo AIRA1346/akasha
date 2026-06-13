@@ -1,5 +1,5 @@
-import '../models/akasha_item.dart';
-import '../services/file_service.dart';
+import '../../../models/akasha_item.dart';
+import '../../../services/file_service.dart';
 
 /// 워크벤치에 열린 작품 탭
 class WorkTab {
