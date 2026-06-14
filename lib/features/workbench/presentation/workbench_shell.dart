@@ -56,6 +56,7 @@ class WorkbenchShell extends StatelessWidget {
                   key: ValueKey(controller.activeTab!.id),
                   tabId: controller.activeTab!.id,
                   item: controller.activeTab!.item,
+                  isDirty: controller.activeTab!.isDirty,
                   infoPanelWidth: layout.infoPanelWidth,
                   infoPanelLocked: layout.infoPanelLocked,
                   onInfoWidthChanged: controller.setInfoPanelWidth,

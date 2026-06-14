@@ -96,6 +96,56 @@ class WorkbenchController extends ChangeNotifier {
     }
   }
 
+  /// 볼트 재로드 후 디스크 내용을 열린 탭에 반영 (편집 중 탭은 유지).
+  void syncFromVaultItems(List<AkashaItem> vaultItems) {
+    var changed = false;
+    for (final tab in tabs) {
+      if (tab.isDirty) continue;
+      final match = _matchVaultItem(tab.item, vaultItems);
+      if (match == null) continue;
+      if (_sameItemSnapshot(tab.item, match)) continue;
+      tab.item = match;
+      changed = true;
+    }
+    if (changed) notifyListeners();
+  }
+
+  static AkashaItem? _matchVaultItem(
+    AkashaItem tabItem,
+    List<AkashaItem> vaultItems,
+  ) {
+    final path = tabItem.filePath;
+    if (path != null && path.isNotEmpty) {
+      for (final item in vaultItems) {
+        if (item.filePath == path) return item;
+      }
+    }
+    if (tabItem.workId.isNotEmpty) {
+      for (final item in vaultItems) {
+        if (item.workId == tabItem.workId) return item;
+      }
+    }
+    for (final item in vaultItems) {
+      if (item.title == tabItem.title && item.category == tabItem.category) {
+        return item;
+      }
+    }
+    return null;
+  }
+
+  static bool _sameItemSnapshot(AkashaItem a, AkashaItem b) {
+    return a.workId == b.workId &&
+        a.title == b.title &&
+        a.rating == b.rating &&
+        a.posterPath == b.posterPath &&
+        a.bodyRaw == b.bodyRaw &&
+        a.description == b.description &&
+        a.review == b.review &&
+        a.myStatusLabel == b.myStatusLabel &&
+        a.workStatusLabel == b.workStatusLabel &&
+        a.isHallOfFame == b.isHallOfFame;
+  }
+
   void toggleTabRailCollapsed() {
     layout.tabRailCollapsed = !layout.tabRailCollapsed;
     layout.save();

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
@@ -39,19 +38,8 @@ class PosterCard extends StatefulWidget {
   State<PosterCard> createState() => _PosterCardState();
 }
 
-class _OpenLibraryMenuIntent extends Intent {
-  const _OpenLibraryMenuIntent();
-}
-
 class _PosterCardState extends State<PosterCard> {
   bool _isHovered = false;
-  final FocusNode _focusNode = FocusNode();
-
-  @override
-  void dispose() {
-    _focusNode.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,9 +92,7 @@ class _PosterCardState extends State<PosterCard> {
         decoration: BoxDecoration(
           color: const Color(0xFF1E1E2E),
           borderRadius: BorderRadius.circular(10),
-          border: _focusNode.hasFocus
-              ? Border.all(color: Colors.amberAccent.withValues(alpha: 0.85), width: 2)
-              : cardBorder,
+          border: cardBorder,
           boxShadow: _isHovered
                 ? [
                     BoxShadow(
@@ -130,40 +116,11 @@ class _PosterCardState extends State<PosterCard> {
         ),
       );
 
-    if (!_hasContextMenu) {
-      return MouseRegion(
-        onEnter: (_) => setState(() => _isHovered = true),
-        onExit: (_) => setState(() => _isHovered = false),
-        cursor: SystemMouseCursors.click,
-        child: cardBody,
-      );
-    }
-
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       cursor: SystemMouseCursors.click,
-      child: Shortcuts(
-        shortcuts: const {
-          SingleActivator(LogicalKeyboardKey.f10, shift: true):
-              _OpenLibraryMenuIntent(),
-        },
-        child: Actions(
-          actions: {
-            _OpenLibraryMenuIntent: CallbackAction<_OpenLibraryMenuIntent>(
-              onInvoke: (_) {
-                _openContextMenu(_cardCenterGlobal());
-                return null;
-              },
-            ),
-          },
-          child: Focus(
-            focusNode: _focusNode,
-            onFocusChange: (_) => setState(() {}),
-            child: cardBody,
-          ),
-        ),
-      ),
+      child: cardBody,
     );
   }
 

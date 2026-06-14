@@ -18,6 +18,7 @@ import '../../../screens/detail/detail_archive_save.dart';
 class WorkDetailWorkspace extends StatefulWidget {
   final AkashaItem item;
   final String tabId;
+  final bool isDirty;
   final double infoPanelWidth;
   final bool infoPanelLocked;
   final ValueChanged<double>? onInfoWidthChanged;
@@ -31,6 +32,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     super.key,
     required this.item,
     required this.tabId,
+    this.isDirty = false,
     required this.infoPanelWidth,
     this.infoPanelLocked = false,
     this.onInfoWidthChanged,
@@ -64,13 +66,49 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   @override
   void initState() {
     super.initState();
-    _item = widget.item;
-    _titleCtrl = TextEditingController(text: _item.title);
-    _tagsCtrl = TextEditingController(text: _item.tags.join(', '));
-    _posterUrlCtrl = TextEditingController(text: _item.posterPath ?? '');
-    _bodyCtrl = TextEditingController(text: _initialBodyMarkdown());
+    _titleCtrl = TextEditingController();
+    _tagsCtrl = TextEditingController();
+    _posterUrlCtrl = TextEditingController();
+    _bodyCtrl = TextEditingController();
     _fileCtrl = TextEditingController();
+    _applyItem(widget.item, resetPageView: true);
+  }
+
+  void _applyItem(AkashaItem item, {required bool resetPageView}) {
+    _item = item;
+    _titleCtrl.text = _item.title;
+    _tagsCtrl.text = _item.tags.join(', ');
+    _posterUrlCtrl.text = _item.posterPath ?? '';
+    _bodyCtrl.text = _initialBodyMarkdown();
+    if (resetPageView) _pageView = SanctumPageView.preview;
     _loadDraftFromItem();
+    _refreshFullFileEditor();
+  }
+
+  bool _sameItemSnapshot(AkashaItem a, AkashaItem b) {
+    return a.workId == b.workId &&
+        a.title == b.title &&
+        a.rating == b.rating &&
+        a.posterPath == b.posterPath &&
+        a.bodyRaw == b.bodyRaw &&
+        a.description == b.description &&
+        a.review == b.review &&
+        a.myStatusLabel == b.myStatusLabel &&
+        a.workStatusLabel == b.workStatusLabel &&
+        a.isHallOfFame == b.isHallOfFame;
+  }
+
+  @override
+  void didUpdateWidget(WorkDetailWorkspace oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.tabId != widget.tabId) {
+      _applyItem(widget.item, resetPageView: true);
+      return;
+    }
+    if (!widget.isDirty &&
+        !_sameItemSnapshot(oldWidget.item, widget.item)) {
+      _applyItem(widget.item, resetPageView: false);
+    }
   }
 
   String _initialBodyMarkdown() {
@@ -80,20 +118,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       quotes: _item.memorableQuotes,
       memo: _item.review,
     );
-  }
-
-  @override
-  void didUpdateWidget(WorkDetailWorkspace oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.tabId != widget.tabId) {
-      _item = widget.item;
-      _titleCtrl.text = _item.title;
-      _tagsCtrl.text = _item.tags.join(', ');
-      _posterUrlCtrl.text = _item.posterPath ?? '';
-      _bodyCtrl.text = _initialBodyMarkdown();
-      _pageView = SanctumPageView.preview;
-      _loadDraftFromItem();
-    }
   }
 
   void _syncBodyFromEditor() {

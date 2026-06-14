@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/config/feature_flags.dart';
 import 'package:akasha/models/enums.dart';
@@ -14,11 +14,11 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('P0 release QA (automated)', () {
-    testWidgets('Q05 PosterCard registers Shift+F10 library menu shortcut',
+    testWidgets('Q05 PosterCard has no keyboard shortcut for library menu',
         (tester) async {
       final item = createItem(
-        workId: 'wk_p0_shift_f10',
-        title: 'Shift F10 Test',
+        workId: 'wk_p0_no_shortcut',
+        title: 'No Shortcut Test',
         category: MediaCategory.manga,
       );
 
@@ -38,15 +38,7 @@ void main() {
         of: find.byType(PosterCard),
         matching: find.byType(Shortcuts),
       );
-      expect(cardShortcuts, findsOneWidget);
-      final shortcutsWidget = tester.widget<Shortcuts>(cardShortcuts);
-      final hasShiftF10 = shortcutsWidget.shortcuts.keys.any(
-        (activator) =>
-            activator is SingleActivator &&
-            activator.trigger == LogicalKeyboardKey.f10 &&
-            activator.shift == true,
-      );
-      expect(hasShiftF10, isTrue);
+      expect(cardShortcuts, findsNothing);
     });
 
     test('Q11 recall card disabled for v1', () {
@@ -74,6 +66,37 @@ void main() {
       expect(notifyCount, greaterThan(baseline));
       expect(await service.loadAllItems(), hasLength(1));
       expect(File(item.filePath!).existsSync(), isTrue);
+
+      await sub.cancel();
+      await service.setVaultPath('');
+      await vaultDir.delete(recursive: true);
+    });
+
+    test('Q09 external md edit triggers vault reload via poll', () async {
+      SharedPreferences.setMockInitialValues({});
+      final vaultDir = await Directory.systemTemp.createTemp('akasha_p0_ext');
+      final mangaDir = Directory(p.join(vaultDir.path, 'manga'))
+        ..createSync(recursive: true);
+      final mdFile = File(p.join(mangaDir.path, 'external_edit.md'));
+
+      final service = AkashaFileService();
+      AkashaFileService.vaultPollInterval = const Duration(milliseconds: 50);
+      addTearDown(() {
+        AkashaFileService.vaultPollInterval = const Duration(seconds: 2);
+      });
+
+      await service.setVaultPath('');
+      await service.setVaultPath(vaultDir.path);
+      await Future<void>.delayed(const Duration(milliseconds: 80));
+
+      var notifyCount = 0;
+      final sub = service.onVaultUpdated.listen((_) => notifyCount++);
+
+      await mdFile.writeAsString('---\ntitle: External\nwork_id: wk_ext\n---\n');
+      await Future<void>.delayed(const Duration(milliseconds: 200));
+
+      expect(notifyCount, greaterThan(0));
+      expect(await service.loadAllItems(), hasLength(1));
 
       await sub.cancel();
       await service.setVaultPath('');

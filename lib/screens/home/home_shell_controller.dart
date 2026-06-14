@@ -211,7 +211,9 @@ class HomeShellController {
 
   Future<void> loadItems() async {
     final loadedItems = await HomeVaultLoader.loadItems();
-    if (host.mounted) host.scheduleRebuild(() => items = loadedItems);
+    if (!host.mounted) return;
+    host.scheduleRebuild(() => items = loadedItems);
+    workbench.syncFromVaultItems(loadedItems);
   }
 
   Future<void> prefetchRegistryForCurrentFilters() async {

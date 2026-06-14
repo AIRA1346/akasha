@@ -70,7 +70,7 @@ C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --release
 | Q02 | 볼트 연동 → `.md` | `vault_archive_test` | ☑ | ✅ |
 | Q03 | 검색 → 담기 (md auto) | `library_membership_apply` T28 | ☑ | ✅ |
 | Q04 | 우클릭 popover (ArchiveThenAdd 없음) | `release_p0_qa_test` Q04 | ☑ | ✅ |
-| Q05 | Shift+F10 shortcut | `release_p0_qa_test` Q05 | ☑ | ✅ |
+| Q05 | 카드 우클릭 메뉴 (키보드 단축키 v1.1로 연기) | `release_p0_qa_test` Q05 | ☑ | ✅ 우클릭 · 단축키 제거 |
 | Q06 | DnD-A md 없음 | `library_membership_apply` T34 | ☑ | ✅ |
 | Q07 | Case D IP tristate | `franchise_library_scope_test` | ☑ | ✅ |
 | Q08 | E9 멤버 관리 | `personal_library_membership_service_test` | ☑ | ✅ |

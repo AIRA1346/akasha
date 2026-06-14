@@ -27,7 +27,12 @@ class AkashaFileService {
   StreamController<void>? _vaultUpdateController;
   StreamSubscription<FileSystemEvent>? _watcherSubscription;
   Timer? _watchDebounce;
+  Timer? _pollTimer;
+  String? _lastVaultFingerprint;
   final Map<String, AkashaItem> _inMemoryCache = {};
+
+  /// 외부 편집 감지 폴링 간격 (Windows·클라우드 드라이브 watch 보조).
+  static Duration vaultPollInterval = const Duration(seconds: 2);
 
   /// 메모리 캐시 반환 (데모 모드 지원용)
   Map<String, AkashaItem> get inMemoryCache => _inMemoryCache;
@@ -81,6 +86,7 @@ class AkashaFileService {
       await _ensureFolderStructure();
       _startWatching();
     }
+    await _refreshVaultFingerprint();
     _notifyVaultUpdated();
   }
 
@@ -101,7 +107,50 @@ class AkashaFileService {
 
   void _scheduleVaultUpdateNotification() {
     _watchDebounce?.cancel();
-    _watchDebounce = Timer(const Duration(milliseconds: 400), _notifyVaultUpdated);
+    _watchDebounce = Timer(const Duration(milliseconds: 400), () async {
+      await _refreshVaultFingerprint();
+      _notifyVaultUpdated();
+    });
+  }
+
+  Future<void> _refreshVaultFingerprint() async {
+    _lastVaultFingerprint = await _computeVaultFingerprint();
+  }
+
+  Future<String> _computeVaultFingerprint() async {
+    if (_vaultPath == null) return '';
+
+    final parts = <String>[];
+    try {
+      final dir = Directory(_vaultPath!);
+      if (!await dir.exists()) return '';
+
+      await for (final entity in dir.list(recursive: true, followLinks: false)) {
+        if (entity is! File || !entity.path.endsWith('.md')) continue;
+        if (_shouldSkipPath(entity.path)) continue;
+        final stat = await entity.stat();
+        parts.add(
+          '${entity.path}|${stat.modified.millisecondsSinceEpoch}|${stat.size}',
+        );
+      }
+    } catch (e) {
+      print('[AkashaFileService] fingerprint error: $e');
+    }
+    parts.sort();
+    return parts.join('\n');
+  }
+
+  Future<void> _pollVaultChanges() async {
+    if (_vaultPath == null) return;
+    final fp = await _computeVaultFingerprint();
+    if (_lastVaultFingerprint == null) {
+      _lastVaultFingerprint = fp;
+      return;
+    }
+    if (fp != _lastVaultFingerprint) {
+      _lastVaultFingerprint = fp;
+      _notifyVaultUpdated();
+    }
   }
 
   /// 볼트의 마크다운 파일 변경 감지를 위한 파일 감시를 시작합니다.
@@ -115,7 +164,7 @@ class AkashaFileService {
     try {
       _watcherSubscription = dir.watch(recursive: true).listen(
         (event) {
-          if (event.path.endsWith('.md') && !_shouldSkipPath(event.path)) {
+          if (_shouldNotifyForWatchEvent(event.path)) {
             _scheduleVaultUpdateNotification();
           }
         },
@@ -126,6 +175,33 @@ class AkashaFileService {
     } catch (e) {
       print('[AkashaFileService] Failed to start directory watch: $e');
     }
+
+    _startPolling();
+  }
+
+  bool _shouldNotifyForWatchEvent(String path) {
+    if (_shouldSkipPath(path)) return false;
+    final lower = path.toLowerCase();
+    if (lower.endsWith('.md')) return true;
+    // 에디터 atomic save 임시 파일
+    if (lower.contains('.akasha_') || lower.endsWith('.tmp')) return true;
+    return false;
+  }
+
+  void _startPolling() {
+    _pollTimer?.cancel();
+    if (_vaultPath == null) return;
+    _lastVaultFingerprint = null;
+    _pollTimer = Timer.periodic(vaultPollInterval, (_) {
+      _pollVaultChanges();
+    });
+    _pollVaultChanges();
+  }
+
+  void _stopPolling() {
+    _pollTimer?.cancel();
+    _pollTimer = null;
+    _lastVaultFingerprint = null;
   }
 
   void _stopWatching() {
@@ -133,6 +209,7 @@ class AkashaFileService {
     _watchDebounce = null;
     _watcherSubscription?.cancel();
     _watcherSubscription = null;
+    _stopPolling();
   }
 
   bool _shouldSkipPath(String filePath) {
@@ -268,6 +345,7 @@ class AkashaFileService {
     _stopWatching();
     try {
       await _writeAtomic(targetPath, content);
+      await _refreshVaultFingerprint();
       _notifyVaultUpdated();
     } finally {
       _startWatching();
