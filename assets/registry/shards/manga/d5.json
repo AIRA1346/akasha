@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001607": {
+    "workId": "wk_000001607",
+    "title": "그래도 세계는 아름다워",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270634"
+    },
+    "titles": {
+      "ko": "그래도 세계는 아름다워",
+      "en": "The World is Still Beautiful",
+      "ja": "それでも世界は美しい"
+    },
+    "creator": "Dai Shiina",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

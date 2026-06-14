@@ -1,0 +1,21 @@
+{
+  "wk_000001528": {
+    "workId": "wk_000001528",
+    "title": "황금 당나귀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044767"
+    },
+    "titles": {
+      "ko": "황금 당나귀",
+      "en": "The Golden Ass",
+      "ja": "黄金のロバ"
+    },
+    "creator": "Apuleius",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

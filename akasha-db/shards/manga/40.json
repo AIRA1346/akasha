@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001608": {
+    "workId": "wk_000001608",
+    "title": "태양의 집",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270742"
+    },
+    "titles": {
+      "ko": "태양의 집",
+      "en": "House of the Sun",
+      "ja": "たいようのいえ"
+    },
+    "creator": "Taamo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

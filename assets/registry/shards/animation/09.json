@@ -1,0 +1,20 @@
+{
+  "wk_000001763": {
+    "workId": "wk_000001763",
+    "title": "핀치와 펀치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11331668"
+    },
+    "titles": {
+      "ko": "핀치와 펀치",
+      "en": "Pinch to Punch",
+      "ja": "ピンチとパンチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

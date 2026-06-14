@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001512": {
+    "workId": "wk_000001512",
+    "title": "프라이데이 나이트 펑킨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105731119"
+    },
+    "titles": {
+      "ko": "프라이데이 나이트 펑킨",
+      "en": "Friday Night Funkin'",
+      "ja": "フライデーナイトファンキン"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

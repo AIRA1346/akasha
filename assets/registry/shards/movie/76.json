@@ -1,0 +1,21 @@
+{
+  "wk_000001525": {
+    "workId": "wk_000001525",
+    "title": "해리 포터와 비밀의 방",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102244"
+    },
+    "titles": {
+      "ko": "해리 포터와 비밀의 방",
+      "en": "Harry Potter and the Chamber of Secrets",
+      "ja": "ハリー・ポッターと秘密の部屋"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

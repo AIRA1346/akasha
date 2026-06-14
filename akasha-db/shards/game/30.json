@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001505": {
+    "workId": "wk_000001505",
+    "title": "포켓몬스터 브릴리언트 다이아몬드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105690885"
+    },
+    "titles": {
+      "ko": "포켓몬스터 브릴리언트 다이아몬드",
+      "en": "Pokémon Brilliant Diamond",
+      "ja": "ポケットモンスター ブリリアントダイヤモンド"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

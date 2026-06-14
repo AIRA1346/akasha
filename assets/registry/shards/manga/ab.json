@@ -69,5 +69,44 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001612": {
+    "workId": "wk_000001612",
+    "title": "도키리 마이크론",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273809"
+    },
+    "titles": {
+      "ko": "도키리 마이크론",
+      "en": "Dokkiri Micron",
+      "ja": "どっきりマイクローン"
+    },
+    "releaseYear": 1987,
+    "creator": "Masao Imanishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001723": {
+    "workId": "wk_000001723",
+    "title": "우리집의 욕조 사정",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11292890"
+    },
+    "titles": {
+      "ko": "우리집의 욕조 사정",
+      "en": "Merman in My Tub",
+      "ja": "オレん家のフロ事情"
+    },
+    "creator": "Itokichi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -43,5 +43,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001705": {
+    "workId": "wk_000001705",
+    "title": "늑대의 제국",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1031257"
+    },
+    "titles": {
+      "ko": "늑대의 제국",
+      "en": "Empire of the Wolves",
+      "ja": "エンパイア・オブ・ザ・ウルフ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

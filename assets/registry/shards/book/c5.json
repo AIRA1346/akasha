@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001778": {
+    "workId": "wk_000001778",
+    "title": "연방주의자 논문 제10호",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049689"
+    },
+    "titles": {
+      "ko": "연방주의자 논문 제10호",
+      "en": "Federalist No. 10"
+    },
+    "releaseYear": 1787,
+    "creator": "James Madison",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001713": {
+    "workId": "wk_000001713",
+    "title": "반마취 상태",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104867871"
+    },
+    "titles": {
+      "ko": "반마취 상태",
+      "en": "Twilight Sleep"
+    },
+    "releaseYear": 1927,
+    "creator": "이디스 워튼",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

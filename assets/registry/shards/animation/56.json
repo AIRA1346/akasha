@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001588": {
+    "workId": "wk_000001588",
+    "title": "더 펭귄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111189743"
+    },
+    "titles": {
+      "ko": "더 펭귄",
+      "en": "The Penguin",
+      "ja": "ペンギン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001702": {
+    "workId": "wk_000001702",
+    "title": "사자에상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11304591"
+    },
+    "titles": {
+      "ko": "사자에상",
+      "en": "Sazae-san",
+      "ja": "サザエさん"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

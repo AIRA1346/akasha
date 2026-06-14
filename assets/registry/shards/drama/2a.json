@@ -1,0 +1,20 @@
+{
+  "wk_000001493": {
+    "workId": "wk_000001493",
+    "title": "Night Doctor",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106631213"
+    },
+    "titles": {
+      "ko": "Night Doctor",
+      "en": "Night Doctor",
+      "ja": "ナイト・ドクター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

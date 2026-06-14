@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001664": {
+    "workId": "wk_000001664",
+    "title": "아파치 야구군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284508"
+    },
+    "titles": {
+      "ko": "아파치 야구군",
+      "en": "Apache Yakyūgun",
+      "ja": "アパッチ野球軍"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

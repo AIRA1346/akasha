@@ -48,5 +48,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001545": {
+    "workId": "wk_000001545",
+    "title": "전국방방쿡쿡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106764076"
+    },
+    "titles": {
+      "ko": "전국방방쿡쿡",
+      "en": "National Bang Bang Cook Cook"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

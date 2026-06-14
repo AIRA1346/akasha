@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001549": {
+    "workId": "wk_000001549",
+    "title": "미 페카도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068083"
+    },
+    "titles": {
+      "ko": "미 페카도",
+      "en": "Mi pecado"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

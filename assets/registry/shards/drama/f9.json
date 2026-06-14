@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001676": {
+    "workId": "wk_000001676",
+    "title": "바라던 바다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985624"
+    },
+    "titles": {
+      "ko": "바라던 바다",
+      "en": "Sea of Hope",
+      "ja": "パラドンバダ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

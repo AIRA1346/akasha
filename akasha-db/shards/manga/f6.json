@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001609": {
+    "workId": "wk_000001609",
+    "title": "지오와 황금과 금지된 마법",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272644"
+    },
+    "titles": {
+      "ko": "지오와 황금과 금지된 마법",
+      "en": "Q11272644",
+      "ja": "ジオと黄金と禁じられた魔法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

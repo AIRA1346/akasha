@@ -17,5 +17,44 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001573": {
+    "workId": "wk_000001573",
+    "title": "소악마 머랭",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266119"
+    },
+    "titles": {
+      "ko": "소악마 머랭",
+      "en": "Koakuma Meringue",
+      "ja": "こあくまメレンゲ"
+    },
+    "creator": "Atto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001726": {
+    "workId": "wk_000001726",
+    "title": "쓰레기의 본망",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11298673"
+    },
+    "titles": {
+      "ko": "쓰레기의 본망",
+      "en": "Scum's Wish",
+      "ja": "クズの本懐"
+    },
+    "releaseYear": 2012,
+    "creator": "Mengo Yokoyari",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000001535": {
+    "workId": "wk_000001535",
+    "title": "연애 디스토션",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11260152"
+    },
+    "titles": {
+      "ko": "연애 디스토션",
+      "en": "Q11260152",
+      "ja": "恋愛ディストーション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000001719": {
+    "workId": "wk_000001719",
+    "title": "시라노 드 베르주라크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048916"
+    },
+    "titles": {
+      "ko": "시라노 드 베르주라크",
+      "en": "Cyrano de Bergerac",
+      "ja": "シラノ・ド・ベルジュラック"
+    },
+    "releaseYear": 1897,
+    "creator": "Edmond Rostand",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

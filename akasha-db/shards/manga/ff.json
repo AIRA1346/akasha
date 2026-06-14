@@ -1,0 +1,41 @@
+{
+  "wk_000001610": {
+    "workId": "wk_000001610",
+    "title": "천재 유교수의 생활",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273580"
+    },
+    "titles": {
+      "ko": "천재 유교수의 생활",
+      "en": "The Life of Genius Professor Yanagizawa",
+      "ja": "天才柳沢教授の生活"
+    },
+    "creator": "Kazumi Yamashita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001629": {
+    "workId": "wk_000001629",
+    "title": "후타가시하",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277106"
+    },
+    "titles": {
+      "ko": "후타가시하",
+      "en": "Futagashira",
+      "ja": "ふたがしら"
+    },
+    "releaseYear": 2011,
+    "creator": "Natsume Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

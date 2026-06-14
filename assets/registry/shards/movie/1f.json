@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001769": {
+    "workId": "wk_000001769",
+    "title": "스피드 존",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033497"
+    },
+    "titles": {
+      "ko": "스피드 존",
+      "en": "Speed Zone!",
+      "ja": "キャノンボール3 新しき挑戦者たち"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

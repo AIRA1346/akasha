@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001628": {
+    "workId": "wk_000001628",
+    "title": "파지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276038"
+    },
+    "titles": {
+      "ko": "파지",
+      "en": "Paji",
+      "ja": "ぱじ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

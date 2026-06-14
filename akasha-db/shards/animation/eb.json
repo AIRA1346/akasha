@@ -1,0 +1,21 @@
+{
+  "wk_000001654": {
+    "workId": "wk_000001654",
+    "title": "아리아 : 더 베네디지오네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112624552"
+    },
+    "titles": {
+      "ko": "아리아 : 더 베네디지오네",
+      "en": "Aria the Benedizione",
+      "ja": "ARIA The BENEDIZIONE"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

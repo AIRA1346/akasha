@@ -1,0 +1,20 @@
+{
+  "wk_000001657": {
+    "workId": "wk_000001657",
+    "title": "아키바 메이드 전쟁",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112685445"
+    },
+    "titles": {
+      "ko": "아키바 메이드 전쟁",
+      "en": "Akiba Maid War",
+      "ja": "アキバ冥途戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

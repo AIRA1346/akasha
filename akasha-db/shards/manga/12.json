@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001605": {
+    "workId": "wk_000001605",
+    "title": "서바게부!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268213"
+    },
+    "titles": {
+      "ko": "서바게부!",
+      "en": "Sabagebu!",
+      "ja": "さばげぶっ!"
+    },
+    "creator": "Hidekichi Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001720": {
+    "workId": "wk_000001720",
+    "title": "엘프17",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11291096"
+    },
+    "titles": {
+      "ko": "엘프17",
+      "en": "Elf 17",
+      "ja": "エルフ・17"
+    },
+    "creator": "Atsuji Yamamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

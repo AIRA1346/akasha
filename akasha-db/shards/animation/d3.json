@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001697": {
+    "workId": "wk_000001697",
+    "title": "마리 & 갈리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11296412"
+    },
+    "titles": {
+      "ko": "마리 & 갈리",
+      "en": "Marie & Gali",
+      "ja": "マリー&ガリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

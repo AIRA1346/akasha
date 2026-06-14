@@ -35,5 +35,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001486": {
+    "workId": "wk_000001486",
+    "title": "당신의 것은 그만큼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257908"
+    },
+    "titles": {
+      "ko": "당신의 것은 그만큼",
+      "en": "Anata no koto wa sorehodo",
+      "ja": "あなたのことはそれほど"
+    },
+    "creator": "Ryo Ikuemi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

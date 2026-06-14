@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001675": {
+    "workId": "wk_000001675",
+    "title": "그녀는 예뻤다 (일본의 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107968985"
+    },
+    "titles": {
+      "ko": "그녀는 예뻤다 (일본의 드라마)",
+      "en": "Kanojo wa Kirei datta",
+      "ja": "彼女はキレイだった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

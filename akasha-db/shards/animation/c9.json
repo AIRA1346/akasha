@@ -1,0 +1,20 @@
+{
+  "wk_000001754": {
+    "workId": "wk_000001754",
+    "title": "제로 테스터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315015"
+    },
+    "titles": {
+      "ko": "제로 테스터",
+      "en": "Zero Tester",
+      "ja": "ゼロテスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

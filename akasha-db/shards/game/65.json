@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001638": {
+    "workId": "wk_000001638",
+    "title": "팩맨 99",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106401115"
+    },
+    "titles": {
+      "ko": "팩맨 99",
+      "en": "Pac-Man 99",
+      "ja": "PAC-MAN 99"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

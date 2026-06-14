@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001729": {
+    "workId": "wk_000001729",
+    "title": "교씨네 아들 딸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108117520"
+    },
+    "titles": {
+      "ko": "교씨네 아들 딸",
+      "en": "The Bond"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

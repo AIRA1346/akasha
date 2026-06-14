@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001695": {
+    "workId": "wk_000001695",
+    "title": "RWBY 빙설제국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112876230"
+    },
+    "titles": {
+      "ko": "RWBY 빙설제국",
+      "en": "RWBY: Ice Queendom",
+      "ja": "RWBY 氷雪帝国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

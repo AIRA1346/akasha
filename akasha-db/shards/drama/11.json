@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001495": {
+    "workId": "wk_000001495",
+    "title": "플래시포인트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066334"
+    },
+    "titles": {
+      "ko": "플래시포인트",
+      "en": "Flashpoint",
+      "ja": "フラッシュポイント -特殊機動隊SRU-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

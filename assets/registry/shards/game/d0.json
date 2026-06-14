@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000001502": {
+    "workId": "wk_000001502",
+    "title": "포켓몬스터 브릴리언트 다이아몬드・샤이닝 펄",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105688759"
+    },
+    "titles": {
+      "ko": "포켓몬스터 브릴리언트 다이아몬드・샤이닝 펄",
+      "en": "Pokémon Brilliant Diamond and Shining Pearl",
+      "ja": "ポケットモンスター ブリリアントダイヤモンド・シャイニングパール"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

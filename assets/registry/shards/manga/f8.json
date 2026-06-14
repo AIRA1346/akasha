@@ -1,0 +1,22 @@
+{
+  "wk_000001602": {
+    "workId": "wk_000001602",
+    "title": "일본인과 천황",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267802"
+    },
+    "titles": {
+      "ko": "일본인과 천황",
+      "en": "Manga Nihonjin to Tennō",
+      "ja": "マンガ日本人と天皇"
+    },
+    "releaseYear": 2000,
+    "creator": "Tetsu Kariya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001749": {
+    "workId": "wk_000001749",
+    "title": "HIGHSPEED Étoile",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113110749"
+    },
+    "titles": {
+      "ko": "HIGHSPEED Étoile",
+      "en": "Highspeed Etoile",
+      "ja": "HIGHSPEED Étoile"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

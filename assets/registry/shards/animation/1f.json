@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001758": {
+    "workId": "wk_000001758",
+    "title": "나나마루 산바츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323928"
+    },
+    "titles": {
+      "ko": "나나마루 산바츠",
+      "en": "Nana Maru San Batsu",
+      "ja": "ナナマル サンバツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

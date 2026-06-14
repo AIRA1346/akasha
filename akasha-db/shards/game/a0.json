@@ -1,0 +1,21 @@
+{
+  "wk_000001557": {
+    "workId": "wk_000001557",
+    "title": "뿌요뿌요 피버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058179"
+    },
+    "titles": {
+      "ko": "뿌요뿌요 피버",
+      "en": "Puyo Pop Fever",
+      "ja": "ぷよぷよフィーバー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

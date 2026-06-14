@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001501": {
+    "workId": "wk_000001501",
+    "title": "독수리 목걸이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106707218"
+    },
+    "titles": {
+      "ko": "독수리 목걸이",
+      "en": "Agimat ng Agila",
+      "ja": "イーグルネックレス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

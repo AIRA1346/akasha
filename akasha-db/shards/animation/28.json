@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001616": {
+    "workId": "wk_000001616",
+    "title": "쿠보 양은 나를 내버려두지 않아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111986637"
+    },
+    "titles": {
+      "ko": "쿠보 양은 나를 내버려두지 않아",
+      "en": "Kubo Won't Let Me Be Invisible",
+      "ja": "久保さんは僕を許さない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

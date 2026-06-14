@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001580": {
+    "workId": "wk_000001580",
+    "title": "시노비의 잇토키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111007972"
+    },
+    "titles": {
+      "ko": "시노비의 잇토키",
+      "en": "Shinobi no Ittoki",
+      "ja": "忍の一時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001582": {
+    "workId": "wk_000001582",
+    "title": "오니팡!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111040699"
+    },
+    "titles": {
+      "ko": "오니팡!",
+      "en": "Onipan!",
+      "ja": "おにぱん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

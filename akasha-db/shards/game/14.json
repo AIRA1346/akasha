@@ -1,0 +1,21 @@
+{
+  "wk_000001558": {
+    "workId": "wk_000001558",
+    "title": "걸☆건 리턴즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105829546"
+    },
+    "titles": {
+      "ko": "걸☆건 리턴즈",
+      "en": "Gal*Gun Returns",
+      "ja": "ぎゃる☆がん りたーんず"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

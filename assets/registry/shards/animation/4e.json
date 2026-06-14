@@ -112,5 +112,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001520": {
+    "workId": "wk_000001520",
+    "title": "돼지의 간은 가열해라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110060930"
+    },
+    "titles": {
+      "ko": "돼지의 간은 가열해라",
+      "en": "Heat the Pig Liver",
+      "ja": "豚のレバーは加熱しろ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

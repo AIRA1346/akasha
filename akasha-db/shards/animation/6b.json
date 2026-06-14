@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001583": {
+    "workId": "wk_000001583",
+    "title": "날아라 호빵맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11109042"
+    },
+    "titles": {
+      "ko": "날아라 호빵맨",
+      "en": "Anyway!Anpanman",
+      "ja": "それいけ!アンパンマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -62,6 +62,31 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001777",
+    "title": "90억 가지 신의 이름",
+    "shardId": "book_13",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Arthur C. Clarke",
+    "tags": [],
+    "searchTokens": [
+      "90億の神の御名",
+      "90억 가지 신의 이름",
+      "90억가지신의이름",
+      "Arthur C. Clarke",
+      "The Nine Billion Names of God",
+      "arthurc.clarke",
+      "theninebillionnamesofgod"
+    ],
+    "titles": {
+      "ko": "90억 가지 신의 이름",
+      "en": "The Nine Billion Names of God",
+      "ja": "90億の神の御名"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000260",
     "title": "Re:제로 라이트노벨",
     "shardId": "book_ea",
@@ -282,6 +307,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001716",
+    "title": "과부와 앵무새",
+    "shardId": "book_cd",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ヴァージニア・ウルフ",
+    "tags": [],
+    "searchTokens": [
+      "The Widow and the Parrot",
+      "thewidowandtheparrot",
+      "ヴァージニアウルフ",
+      "ヴァージニア・ウルフ",
+      "과부와 앵무새",
+      "과부와앵무새"
+    ],
+    "titles": {
+      "ko": "과부와 앵무새",
+      "en": "The Widow and the Parrot"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001284",
     "title": "관내분실",
     "shardId": "book_17",
@@ -422,6 +470,31 @@
       "ko": "나이트 워치",
       "en": "Night Watch",
       "ja": "ナイト・ウォッチ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001772",
+    "title": "나트의 강령술",
+    "shardId": "book_28",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "クラーク・アシュトン・スミス",
+    "tags": [],
+    "searchTokens": [
+      "Necromancy in Naat",
+      "necromancyinnaat",
+      "クラークアシュトンスミス",
+      "クラーク・アシュトン・スミス",
+      "ナートの降霊術",
+      "나트의 강령술",
+      "나트의강령술"
+    ],
+    "titles": {
+      "ko": "나트의 강령술",
+      "en": "Necromancy in Naat",
+      "ja": "ナートの降霊術"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -717,6 +790,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001530",
+    "title": "도쿄 우에노역",
+    "shardId": "book_6f",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "유미리",
+    "tags": [],
+    "searchTokens": [
+      "JR上野駅公園口",
+      "Tokyo Ueno Station",
+      "jr上野駅公園口",
+      "tokyouenostation",
+      "도쿄 우에노역",
+      "도쿄우에노역",
+      "유미리"
+    ],
+    "titles": {
+      "ko": "도쿄 우에노역",
+      "en": "Tokyo Ueno Station",
+      "ja": "JR上野駅公園口"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000005",
     "title": "듄",
     "shardId": "book_f0",
@@ -923,6 +1021,32 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001718",
+    "title": "목요 살인 클럽",
+    "shardId": "book_1e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "리처드 오스먼",
+    "tags": [],
+    "searchTokens": [
+      "The Thursday Murder Club",
+      "thethursdaymurderclub",
+      "木曜殺人クラブ (小説)",
+      "木曜殺人クラブ(小説)",
+      "리처드 오스먼",
+      "리처드오스먼",
+      "목요 살인 클럽",
+      "목요살인클럽"
+    ],
+    "titles": {
+      "ko": "목요 살인 클럽",
+      "en": "The Thursday Murder Club",
+      "ja": "木曜殺人クラブ (小説)"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000808",
     "title": "무기의 그늘",
     "shardId": "book_31",
@@ -1073,6 +1197,54 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001531",
+    "title": "미학 강의",
+    "shardId": "book_e9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Georg Wilhelm Friedrich Hegel",
+    "tags": [],
+    "searchTokens": [
+      "Georg Wilhelm Friedrich Hegel",
+      "Lectures on Aesthetics",
+      "georgwilhelmfriedrichhegel",
+      "lecturesonaesthetics",
+      "미학 강의",
+      "미학강의"
+    ],
+    "titles": {
+      "ko": "미학 강의",
+      "en": "Lectures on Aesthetics"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001527",
+    "title": "밀물을 타고",
+    "shardId": "book_b7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Agatha Christie",
+    "tags": [],
+    "searchTokens": [
+      "Agatha Christie",
+      "Taken at the Flood",
+      "agathachristie",
+      "takenattheflood",
+      "満潮に乗って",
+      "밀물을 타고",
+      "밀물을타고"
+    ],
+    "titles": {
+      "ko": "밀물을 타고",
+      "en": "Taken at the Flood",
+      "ja": "満潮に乗って"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000752",
     "title": "바벨의 기억",
     "shardId": "book_8b",
@@ -1125,6 +1297,29 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001713",
+    "title": "반마취 상태",
+    "shardId": "book_48",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "이디스 워튼",
+    "tags": [],
+    "searchTokens": [
+      "Twilight Sleep",
+      "twilightsleep",
+      "반마취 상태",
+      "반마취상태",
+      "이디스 워튼",
+      "이디스워튼"
+    ],
+    "titles": {
+      "ko": "반마취 상태",
+      "en": "Twilight Sleep"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000010",
@@ -1442,6 +1637,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001775",
+    "title": "섭대승론본",
+    "shardId": "book_a9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Asanga",
+    "tags": [],
+    "searchTokens": [
+      "Asanga",
+      "Xuanzang’s Translation of the Mahāyāna-samgraha",
+      "asanga",
+      "xuanzang’stranslationofthemahāyānasamgraha",
+      "摂大乗論本",
+      "섭대승론본"
+    ],
+    "titles": {
+      "ko": "섭대승론본",
+      "en": "Xuanzang’s Translation of the Mahāyāna-samgraha",
+      "ja": "摂大乗論本"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001136",
     "title": "성 베르나르두",
     "shardId": "book_3d",
@@ -1485,6 +1704,29 @@
       "ko": "성 정치학",
       "en": "Sexual Politics",
       "ja": "性の政治学"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001717",
+    "title": "세상을 뒤로 하고",
+    "shardId": "book_03",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Rumaan Alam",
+    "tags": [],
+    "searchTokens": [
+      "Leave the World Behind",
+      "Rumaan Alam",
+      "leavetheworldbehind",
+      "rumaanalam",
+      "세상을 뒤로 하고",
+      "세상을뒤로하고"
+    ],
+    "titles": {
+      "ko": "세상을 뒤로 하고",
+      "en": "Leave the World Behind"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1720,6 +1962,32 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001719",
+    "title": "시라노 드 베르주라크",
+    "shardId": "book_d0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Edmond Rostand",
+    "tags": [],
+    "searchTokens": [
+      "Cyrano de Bergerac",
+      "Edmond Rostand",
+      "cyranodebergerac",
+      "edmondrostand",
+      "シラノドベルジュラック",
+      "シラノ・ド・ベルジュラック",
+      "시라노 드 베르주라크",
+      "시라노드베르주라크"
+    ],
+    "titles": {
+      "ko": "시라노 드 베르주라크",
+      "en": "Cyrano de Bergerac",
+      "ja": "シラノ・ド・ベルジュラック"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001029",
     "title": "신국제백과사전",
     "shardId": "book_9f",
@@ -1857,6 +2125,29 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001774",
+    "title": "아비달마 계신족론",
+    "shardId": "book_07",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q104941374",
+      "q104941374",
+      "阿毘達磨界身足論",
+      "아비달마 계신족론",
+      "아비달마계신족론"
+    ],
+    "titles": {
+      "ko": "아비달마 계신족론",
+      "en": "Q104941374",
+      "ja": "阿毘達磨界身足論"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000632",
@@ -2053,6 +2344,29 @@
     "titles": {
       "ko": "여우가 잠든 숲",
       "en": "In The Forest"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001778",
+    "title": "연방주의자 논문 제10호",
+    "shardId": "book_c5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "James Madison",
+    "tags": [],
+    "searchTokens": [
+      "Federalist No. 10",
+      "James Madison",
+      "federalistno.10",
+      "jamesmadison",
+      "연방주의자 논문 제10호",
+      "연방주의자논문제10호"
+    ],
+    "titles": {
+      "ko": "연방주의자 논문 제10호",
+      "en": "Federalist No. 10"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -2502,6 +2816,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001529",
+    "title": "일인칭 단수",
+    "shardId": "book_61",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Haruki Murakami",
+    "tags": [],
+    "searchTokens": [
+      "First Person Singular",
+      "Haruki Murakami",
+      "firstpersonsingular",
+      "harukimurakami",
+      "一人称単数",
+      "일인칭 단수",
+      "일인칭단수"
+    ],
+    "titles": {
+      "ko": "일인칭 단수",
+      "en": "First Person Singular",
+      "ja": "一人称単数"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000987",
     "title": "자본의 시대",
     "shardId": "book_cd",
@@ -2523,6 +2862,29 @@
       "ko": "자본의 시대",
       "en": "The Age of Capital: 1848–1875",
       "ja": "資本の時代 1848-1875（1・2）"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001714",
+    "title": "자비의 시간",
+    "shardId": "book_d3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Grisham",
+    "tags": [],
+    "searchTokens": [
+      "A Time for Mercy",
+      "John Grisham",
+      "atimeformercy",
+      "johngrisham",
+      "자비의 시간",
+      "자비의시간"
+    ],
+    "titles": {
+      "ko": "자비의 시간",
+      "en": "A Time for Mercy"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -2749,6 +3111,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001773",
+    "title": "침략자들",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Luke Rhinehart",
+    "tags": [],
+    "searchTokens": [
+      "Invasion",
+      "Luke Rhinehart",
+      "invasion",
+      "lukerhinehart",
+      "침략자들"
+    ],
+    "titles": {
+      "ko": "침략자들",
+      "en": "Invasion"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000628",
     "title": "침묵",
     "shardId": "book_2b",
@@ -2840,6 +3224,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001776",
+    "title": "태상황정중경경",
+    "shardId": "book_0d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Middle Scenery of the Yellow Court Classic",
+      "middlesceneryoftheyellowcourtclassic",
+      "黄庭中景経",
+      "태상황정중경경"
+    ],
+    "titles": {
+      "ko": "태상황정중경경",
+      "en": "Middle Scenery of the Yellow Court Classic",
+      "ja": "黄庭中景経"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000810",
     "title": "태을금화종지",
     "shardId": "book_11",
@@ -2906,6 +3312,29 @@
       "ko": "트로이 전쟁은 일어나지 않으리",
       "en": "The Trojan War Will Not Take Place",
       "ja": "トロイ戦争は起こらないだろう"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001715",
+    "title": "트리스탄 스트롱 시리즈",
+    "shardId": "book_69",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kwame Mbalia",
+    "tags": [],
+    "searchTokens": [
+      "Kwame Mbalia",
+      "Tristan Strong series",
+      "kwamembalia",
+      "tristanstrongseries",
+      "트리스탄 스트롱 시리즈",
+      "트리스탄스트롱시리즈"
+    ],
+    "titles": {
+      "ko": "트리스탄 스트롱 시리즈",
+      "en": "Tristan Strong series"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -3142,6 +3571,31 @@
       "ko": "환우통지",
       "en": "Hwan-u Tongji",
       "zh": "寰宇通志"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001528",
+    "title": "황금 당나귀",
+    "shardId": "book_6e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Apuleius",
+    "tags": [],
+    "searchTokens": [
+      "Apuleius",
+      "The Golden Ass",
+      "apuleius",
+      "thegoldenass",
+      "黄金のロバ",
+      "황금 당나귀",
+      "황금당나귀"
+    ],
+    "titles": {
+      "ko": "황금 당나귀",
+      "en": "The Golden Ass",
+      "ja": "黄金のロバ"
     },
     "qualityScore": 65,
     "qualityTier": 3

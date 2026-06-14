@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001518": {
+    "workId": "wk_000001518",
+    "title": "짱구는 못말려 극장판: 모노노케 닌자 진풍전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110028346"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 모노노케 닌자 진풍전",
+      "en": "Crayon Shin-chan: Mononoke Ninja Chinpūden",
+      "ja": "クレヨンしんちゃん もののけニンジャ珍風伝"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

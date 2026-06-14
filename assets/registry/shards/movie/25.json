@@ -1,0 +1,21 @@
+{
+  "wk_000001523": {
+    "workId": "wk_000001523",
+    "title": "크.레.이.지",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1022379"
+    },
+    "titles": {
+      "ko": "크.레.이.지",
+      "en": "C.R.A.Z.Y.",
+      "ja": "C.R.A.Z.Y."
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

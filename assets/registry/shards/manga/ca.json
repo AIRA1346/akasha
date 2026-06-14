@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001631": {
+    "workId": "wk_000001631",
+    "title": "푸치마스! -PETIT IDOLM@STER-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277522"
+    },
+    "titles": {
+      "ko": "푸치마스! -PETIT IDOLM@STER-",
+      "en": "Puchimas! Petit Idolmaster",
+      "ja": "ぷちます! -PETIT IDOLM@STER-"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

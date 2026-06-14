@@ -16,5 +16,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001578": {
+    "workId": "wk_000001578",
+    "title": "Extreme Hearts",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110899083"
+    },
+    "titles": {
+      "ko": "Extreme Hearts",
+      "en": "Extreme Hearts",
+      "ja": "Extreme Hearts"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001647": {
+    "workId": "wk_000001647",
+    "title": "신-맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243225"
+    },
+    "titles": {
+      "ko": "신-맨",
+      "en": "Shin-Men",
+      "ja": "SHIN-MEN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001696": {
+    "workId": "wk_000001696",
+    "title": "도라에몽 노비타와 하늘의 유토피아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112933606"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 하늘의 유토피아",
+      "en": "Doraemon: Nobita's Sky Utopia",
+      "ja": "映画ドラえもん のび太と空の理想郷"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

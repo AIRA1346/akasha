@@ -1,0 +1,19 @@
+{
+  "wk_000001737": {
+    "workId": "wk_000001737",
+    "title": "아메리카 퍼니스트 홈 비디오: 동물 에디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108292848"
+    },
+    "titles": {
+      "ko": "아메리카 퍼니스트 홈 비디오: 동물 에디션",
+      "en": "America's Funniest Home Videos: Animal Edition"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

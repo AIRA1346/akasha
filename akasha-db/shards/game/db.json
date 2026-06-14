@@ -1,0 +1,21 @@
+{
+  "wk_000001748": {
+    "workId": "wk_000001748",
+    "title": "레고 해리 포터: 이어스 1-4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067207"
+    },
+    "titles": {
+      "ko": "레고 해리 포터: 이어스 1-4",
+      "en": "Lego Harry Potter: Years 1–4",
+      "ja": "レゴ ハリー・ポッター 第1章-第4章"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

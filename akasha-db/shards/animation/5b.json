@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001565": {
+    "workId": "wk_000001565",
+    "title": "블러디 이스케이프: 지옥의 도주극",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110644889"
+    },
+    "titles": {
+      "ko": "블러디 이스케이프: 지옥의 도주극",
+      "en": "Bloody Escape: Jigoku no Tōsō Geki",
+      "ja": "BLOODY ESCAPE -地獄の逃走劇-"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001651": {
+    "workId": "wk_000001651",
+    "title": "3월의 라이온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112573940"
+    },
+    "titles": {
+      "ko": "3월의 라이온",
+      "en": "March Comes In Like a Lion",
+      "ja": "3月のライオン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

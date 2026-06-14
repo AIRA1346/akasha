@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001708": {
+    "workId": "wk_000001708",
+    "title": "캉캉",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1031821"
+    },
+    "titles": {
+      "ko": "캉캉",
+      "en": "Can-Can",
+      "ja": "カンカン"
+    },
+    "releaseYear": 1960,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001740": {
+    "workId": "wk_000001740",
+    "title": "수당연의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831289"
+    },
+    "titles": {
+      "ko": "수당연의",
+      "en": "Heroes in Sui and Tang Dynasties",
+      "ja": "隋唐演義 〜集いし46人の英雄と滅びゆく帝国〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

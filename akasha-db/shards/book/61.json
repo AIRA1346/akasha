@@ -49,5 +49,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001529": {
+    "workId": "wk_000001529",
+    "title": "일인칭 단수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104520732"
+    },
+    "titles": {
+      "ko": "일인칭 단수",
+      "en": "First Person Singular",
+      "ja": "一人称単数"
+    },
+    "releaseYear": 2020,
+    "creator": "Haruki Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

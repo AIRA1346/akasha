@@ -1,0 +1,21 @@
+{
+  "wk_000001524": {
+    "workId": "wk_000001524",
+    "title": "더티 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1022401"
+    },
+    "titles": {
+      "ko": "더티 맨",
+      "en": "The Super",
+      "ja": "ニューヨークのいたずら"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

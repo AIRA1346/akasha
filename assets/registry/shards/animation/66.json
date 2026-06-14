@@ -1,0 +1,39 @@
+{
+  "wk_000001620": {
+    "workId": "wk_000001620",
+    "title": "새 엄마가 데려온 딸이 전 여친이었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112191929"
+    },
+    "titles": {
+      "ko": "새 엄마가 데려온 딸이 전 여친이었다",
+      "en": "My Stepmom's Daughter Is My Ex",
+      "ja": "継母の連れ子が元カノだった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001648": {
+    "workId": "wk_000001648",
+    "title": "쇼트피스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243303"
+    },
+    "titles": {
+      "ko": "쇼트피스",
+      "en": "Short Peace",
+      "ja": "SHORT PEACE"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

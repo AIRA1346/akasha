@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001766": {
+    "workId": "wk_000001766",
+    "title": "전쟁의 선언",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033136"
+    },
+    "titles": {
+      "ko": "전쟁의 선언",
+      "en": "Declaration of War",
+      "ja": "わたしたちの宣戦布告"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

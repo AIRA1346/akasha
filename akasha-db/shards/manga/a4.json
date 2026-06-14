@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001632": {
+    "workId": "wk_000001632",
+    "title": "동글동글 해롱이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277616"
+    },
+    "titles": {
+      "ko": "동글동글 해롱이",
+      "en": "Q11277616",
+      "ja": "へろへろくん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

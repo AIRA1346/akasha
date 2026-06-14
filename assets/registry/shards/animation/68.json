@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001590": {
+    "workId": "wk_000001590",
+    "title": "유레이데코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111231823"
+    },
+    "titles": {
+      "ko": "유레이데코",
+      "en": "Yurei Deco",
+      "ja": "ユーレイデコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

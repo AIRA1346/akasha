@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001777": {
+    "workId": "wk_000001777",
+    "title": "90억 가지 신의 이름",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049684"
+    },
+    "titles": {
+      "ko": "90억 가지 신의 이름",
+      "en": "The Nine Billion Names of God",
+      "ja": "90億の神の御名"
+    },
+    "releaseYear": 1953,
+    "creator": "Arthur C. Clarke",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

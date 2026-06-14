@@ -1,0 +1,40 @@
+{
+  "wk_000001584": {
+    "workId": "wk_000001584",
+    "title": "디모: 벚꽃의 소리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111098003"
+    },
+    "titles": {
+      "ko": "디모: 벚꽃의 소리",
+      "en": "Deemo: Memorial Keys",
+      "ja": "DEEMO サクラノオト -あなたの奏でた音が、今も響く-"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001750": {
+    "workId": "wk_000001750",
+    "title": "IT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131225"
+    },
+    "titles": {
+      "ko": "IT",
+      "en": "It",
+      "ja": "IT"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -15,5 +15,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001487": {
+    "workId": "wk_000001487",
+    "title": "SD 건담",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066126"
+    },
+    "titles": {
+      "ko": "SD 건담",
+      "en": "SD Gundam",
+      "ja": "SDガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001671": {
+    "workId": "wk_000001671",
+    "title": "구경이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107817259"
+    },
+    "titles": {
+      "ko": "구경이",
+      "en": "Inspector Koo",
+      "ja": "調査官ク・ギョンイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

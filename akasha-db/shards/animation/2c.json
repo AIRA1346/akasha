@@ -1,0 +1,21 @@
+{
+  "wk_000001596": {
+    "workId": "wk_000001596",
+    "title": "극장판 장난을 잘 치는 타카기 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111512826"
+    },
+    "titles": {
+      "ko": "극장판 장난을 잘 치는 타카기 양",
+      "en": "Teasing Master Takagi-san: The Movie",
+      "ja": "劇場版 からかい上手の高木さん"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

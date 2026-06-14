@@ -1,0 +1,20 @@
+{
+  "wk_000001770": {
+    "workId": "wk_000001770",
+    "title": "시간과 바람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10339864"
+    },
+    "titles": {
+      "ko": "시간과 바람",
+      "en": "Time and the Wind"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -361,7 +361,14 @@ void _sanitizeTitlesEn(Map<String, dynamic> draft) {
   final en = titles['en']?.toString().trim() ?? '';
   if (en.isEmpty || isValidEnTitle(en)) return;
 
-  if (validateEnTitle(en).reason != InvalidEnReason.hangulInEn) return;
+  final validation = validateEnTitle(en);
+  if (validation.reason != InvalidEnReason.hangulInEn) {
+    if (validation.reason == InvalidEnReason.tooShort) {
+      titles.remove('en');
+      draft['titles'] = titles;
+    }
+    return;
+  }
 
   final zh = titles['zh']?.toString().trim() ?? '';
   if (zh.isEmpty) titles['zh'] = en;

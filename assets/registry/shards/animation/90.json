@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001581": {
+    "workId": "wk_000001581",
+    "title": "유녀전기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111017057"
+    },
+    "titles": {
+      "ko": "유녀전기",
+      "en": "The Saga of Tanya the Evil",
+      "ja": "幼女戦記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001503": {
+    "workId": "wk_000001503",
+    "title": "Pokémon LEGENDS 아르세우스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105688771"
+    },
+    "titles": {
+      "ko": "Pokémon LEGENDS 아르세우스",
+      "en": "Pokémon Legends: Arceus",
+      "ja": "Pokémon LEGENDS アルセウス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001559": {
+    "workId": "wk_000001559",
+    "title": "극상 파로디우스 -과거의 영광을 찾아서-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058736"
+    },
+    "titles": {
+      "ko": "극상 파로디우스 -과거의 영광을 찾아서-",
+      "en": "Gokujo Parodius",
+      "ja": "極上パロディウス 〜過去の栄光を求めて〜"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

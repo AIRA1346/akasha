@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001572": {
+    "workId": "wk_000001572",
+    "title": "빙속성 남자와 쿨한 동료 여자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112659286"
+    },
+    "titles": {
+      "ko": "빙속성 남자와 쿨한 동료 여자",
+      "en": "The Ice Guy and His Cool Female Colleague",
+      "ja": "氷属性男子とクールな同僚女子"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

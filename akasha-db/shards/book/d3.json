@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001714": {
+    "workId": "wk_000001714",
+    "title": "자비의 시간",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104875432"
+    },
+    "titles": {
+      "ko": "자비의 시간",
+      "en": "A Time for Mercy"
+    },
+    "releaseYear": 2020,
+    "creator": "John Grisham",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001775": {
+    "workId": "wk_000001775",
+    "title": "섭대승론본",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104941400"
+    },
+    "titles": {
+      "ko": "섭대승론본",
+      "en": "Xuanzang’s Translation of the Mahāyāna-samgraha",
+      "ja": "摂大乗論本"
+    },
+    "creator": "Asanga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

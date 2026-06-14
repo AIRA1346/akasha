@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001743": {
+    "workId": "wk_000001743",
+    "title": "그노시아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106624394"
+    },
+    "titles": {
+      "ko": "그노시아",
+      "en": "Gnosia",
+      "ja": "GNOSIA"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

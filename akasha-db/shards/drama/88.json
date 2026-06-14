@@ -1,0 +1,20 @@
+{
+  "wk_000001738": {
+    "workId": "wk_000001738",
+    "title": "펫키지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108297169"
+    },
+    "titles": {
+      "ko": "펫키지",
+      "en": "Petkage",
+      "ja": "ペットケージ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

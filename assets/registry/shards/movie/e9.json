@@ -1,0 +1,21 @@
+{
+  "wk_000001709": {
+    "workId": "wk_000001709",
+    "title": "전국자위대",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1032603"
+    },
+    "titles": {
+      "ko": "전국자위대",
+      "en": "G.I. Samurai",
+      "ja": "戦国自衛隊"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

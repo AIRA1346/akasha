@@ -53,5 +53,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001575": {
+    "workId": "wk_000001575",
+    "title": "여름색 기적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107521"
+    },
+    "titles": {
+      "ko": "여름색 기적",
+      "en": "Natsuiro Kiseki",
+      "ja": "夏色キセキ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001577": {
+    "workId": "wk_000001577",
+    "title": "꿈의 라이브 프리즘스톤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11088406"
+    },
+    "titles": {
+      "ko": "꿈의 라이브 프리즘스톤",
+      "en": "Pretty Rhythm Rainbow Live",
+      "ja": "プリティーリズム・レインボーライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001562": {
+    "workId": "wk_000001562",
+    "title": "영화 오드 택시 인 더 우즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110300680"
+    },
+    "titles": {
+      "ko": "영화 오드 택시 인 더 우즈",
+      "en": "Odd Taxi: In the Woods",
+      "ja": "オッドタクシー イン・ザ・ウッズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

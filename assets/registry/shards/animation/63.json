@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001623": {
+    "workId": "wk_000001623",
+    "title": "극장판 후르츠 바스켓: 프렐류드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112235726"
+    },
+    "titles": {
+      "ko": "극장판 후르츠 바스켓: 프렐류드",
+      "en": "Fruits Basket: Prelude",
+      "ja": "フルーツバスケット -prelude-"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001753": {
+    "workId": "wk_000001753",
+    "title": "수지와 마빈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11313613"
+    },
+    "titles": {
+      "ko": "수지와 마빈",
+      "en": "Susie and Marvy",
+      "ja": "スージーちゃんとマービー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

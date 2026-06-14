@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001689": {
+    "workId": "wk_000001689",
+    "title": "얼굴없는 달",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065959"
+    },
+    "titles": {
+      "ko": "얼굴없는 달",
+      "en": "Moonlight Lady",
+      "ja": "顔のない月"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

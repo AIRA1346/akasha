@@ -1,0 +1,20 @@
+{
+  "wk_000001537": {
+    "workId": "wk_000001537",
+    "title": "연모합니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263104"
+    },
+    "titles": {
+      "ko": "연모합니다",
+      "en": "Q11263104",
+      "ja": "お慕い申し上げます"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

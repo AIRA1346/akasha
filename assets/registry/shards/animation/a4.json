@@ -84,5 +84,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001514": {
+    "workId": "wk_000001514",
+    "title": "불안한 사람들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109658712"
+    },
+    "titles": {
+      "ko": "불안한 사람들",
+      "en": "Anxious People",
+      "ja": "不機嫌な人々"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

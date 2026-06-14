@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001621": {
+    "workId": "wk_000001621",
+    "title": "프린세스 프린서플 크라운 핸들러 제2장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112194600"
+    },
+    "titles": {
+      "ko": "프린세스 프린서플 크라운 핸들러 제2장",
+      "en": "Princess Principal: Crown Handler – Chapter 2",
+      "ja": "プリンセス・プリンシパル Crown Handler 第2章"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

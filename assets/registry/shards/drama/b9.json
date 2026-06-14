@@ -1,0 +1,20 @@
+{
+  "wk_000001494": {
+    "workId": "wk_000001494",
+    "title": "스탠드 오프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066317"
+    },
+    "titles": {
+      "ko": "스탠드 오프",
+      "en": "Standoff",
+      "ja": "交渉人 Standoff"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001541": {
+    "workId": "wk_000001541",
+    "title": "빨강구두",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106729015"
+    },
+    "titles": {
+      "ko": "빨강구두",
+      "en": "Red Shoes",
+      "ja": "赤い靴 (2021年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

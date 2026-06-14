@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001553": {
+    "workId": "wk_000001553",
+    "title": "케리다 에네미가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068166"
+    },
+    "titles": {
+      "ko": "케리다 에네미가",
+      "en": "Querida Enemiga"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

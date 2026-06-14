@@ -1,0 +1,20 @@
+{
+  "wk_000001649": {
+    "workId": "wk_000001649",
+    "title": "신비한 별의 쌍둥이 공주 꼬옥!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255027"
+    },
+    "titles": {
+      "ko": "신비한 별의 쌍둥이 공주 꼬옥!",
+      "en": "Fushigiboshi no Futagohime Gyu!",
+      "ja": "ふしぎ星の☆ふたご姫 Gyu!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "wk_000001522": {
+    "workId": "wk_000001522",
+    "title": "스즈메의 문단속",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110126272"
+    },
+    "titles": {
+      "ko": "스즈메의 문단속",
+      "en": "Suzume",
+      "ja": "すずめの戸締まり"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001574": {
+    "workId": "wk_000001574",
+    "title": "네이마르: 더 퍼펙트 카오스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110710110"
+    },
+    "titles": {
+      "ko": "네이마르: 더 퍼펙트 카오스",
+      "en": "Neymar: The Perfect Chaos",
+      "ja": "ネイマール: パーフェクト・カオス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

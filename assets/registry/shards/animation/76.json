@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001619": {
+    "workId": "wk_000001619",
+    "title": "야무진 고양이는 오늘도 우울",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112173737"
+    },
+    "titles": {
+      "ko": "야무진 고양이는 오늘도 우울",
+      "en": "The Masterful Cat Is Depressed Again Today",
+      "ja": "デキる猫は今日も憂鬱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

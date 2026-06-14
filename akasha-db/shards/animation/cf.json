@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001564": {
+    "workId": "wk_000001564",
+    "title": "대설해의 카이나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110640048"
+    },
+    "titles": {
+      "ko": "대설해의 카이나",
+      "en": "Kaina of the Great Snow Sea",
+      "ja": "大雪海のカイナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001491": {
+    "workId": "wk_000001491",
+    "title": "마코 머메이드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066246"
+    },
+    "titles": {
+      "ko": "마코 머메이드",
+      "en": "Mako: Island of Secrets"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

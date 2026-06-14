@@ -1,0 +1,21 @@
+{
+  "wk_000001530": {
+    "workId": "wk_000001530",
+    "title": "도쿄 우에노역",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104526013"
+    },
+    "titles": {
+      "ko": "도쿄 우에노역",
+      "en": "Tokyo Ueno Station",
+      "ja": "JR上野駅公園口"
+    },
+    "creator": "유미리",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

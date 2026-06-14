@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001741": {
+    "workId": "wk_000001741",
+    "title": "민족과 운명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831745"
+    },
+    "titles": {
+      "ko": "민족과 운명",
+      "en": "Nation and Destiny",
+      "ja": "民族と運命"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

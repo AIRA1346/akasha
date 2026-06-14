@@ -1,0 +1,22 @@
+{
+  "wk_000001772": {
+    "workId": "wk_000001772",
+    "title": "나트의 강령술",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902596"
+    },
+    "titles": {
+      "ko": "나트의 강령술",
+      "en": "Necromancy in Naat",
+      "ja": "ナートの降霊術"
+    },
+    "releaseYear": 1936,
+    "creator": "クラーク・アシュトン・スミス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

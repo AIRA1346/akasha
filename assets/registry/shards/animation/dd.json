@@ -1,0 +1,21 @@
+{
+  "wk_000001759": {
+    "workId": "wk_000001759",
+    "title": "닌자 슬레이어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11325066"
+    },
+    "titles": {
+      "ko": "닌자 슬레이어",
+      "en": "Ninja Slayer",
+      "ja": "ニンジャスレイヤー"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001604": {
+    "workId": "wk_000001604",
+    "title": "귀멸의 칼날: 도공 마을편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111915590"
+    },
+    "titles": {
+      "ko": "귀멸의 칼날: 도공 마을편",
+      "en": "Demon Slayer: Kimetsu no Yaiba – To the Swordsmith Village",
+      "ja": "「鬼滅の刃」上弦集結、そして刀鍛冶の里へ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001622": {
+    "workId": "wk_000001622",
+    "title": "NINJA KAMUI",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112225652"
+    },
+    "titles": {
+      "ko": "NINJA KAMUI",
+      "en": "Ninja Kamui",
+      "ja": "NINJA KAMUI"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001746": {
+    "workId": "wk_000001746",
+    "title": "아이스 클라이머",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066657"
+    },
+    "titles": {
+      "ko": "아이스 클라이머",
+      "en": "Ice Climber",
+      "ja": "アイスクライマー"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

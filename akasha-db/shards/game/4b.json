@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001685": {
+    "workId": "wk_000001685",
+    "title": "셔플!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065670"
+    },
+    "titles": {
+      "ko": "셔플!",
+      "en": "Shuffle!",
+      "ja": "SHUFFLE!"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

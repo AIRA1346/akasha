@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001643": {
+    "workId": "wk_000001643",
+    "title": "로도스도 전기: 디드리트 인 원더 라비린스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106472348"
+    },
+    "titles": {
+      "ko": "로도스도 전기: 디드리트 인 원더 라비린스",
+      "en": "Record of Lodoss War: Deedlit in Wonder Labyrinth",
+      "ja": "ロードス島戦記 -ディードリット・イン・ワンダーラビリンス-"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001765": {
+    "workId": "wk_000001765",
+    "title": "캔디맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033108"
+    },
+    "titles": {
+      "ko": "캔디맨",
+      "en": "Candyman",
+      "ja": "キャンディマン"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001555": {
+    "workId": "wk_000001555",
+    "title": "엔더 릴리즈: 콰이터스 오브 더 나이츠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105768610"
+    },
+    "titles": {
+      "ko": "엔더 릴리즈: 콰이터스 오브 더 나이츠",
+      "en": "Ender Lilies: Quietus of the Knights",
+      "ja": "ENDER LILIES: Quietus of the Knights"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001634": {
+    "workId": "wk_000001634",
+    "title": "슈퍼 마리오 RPG",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063119"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 RPG",
+      "en": "Super Mario RPG",
+      "ja": "スーパーマリオRPG"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

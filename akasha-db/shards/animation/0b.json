@@ -1,0 +1,20 @@
+{
+  "wk_000001515": {
+    "workId": "wk_000001515",
+    "title": "딜리셔스 파티♡프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109749083"
+    },
+    "titles": {
+      "ko": "딜리셔스 파티♡프리큐어",
+      "en": "Delicious Party Pretty Cure",
+      "ja": "デリシャスパーティ♡プリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

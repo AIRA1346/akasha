@@ -32,5 +32,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001532": {
+    "workId": "wk_000001532",
+    "title": "오타쿠 엘프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112582120"
+    },
+    "titles": {
+      "ko": "오타쿠 엘프",
+      "en": "Otaku Elf",
+      "ja": "江戸前エルフ"
+    },
+    "releaseYear": 2019,
+    "creator": "樋口彰彦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001724": {
+    "workId": "wk_000001724",
+    "title": "갸하하 삼총사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11298170"
+    },
+    "titles": {
+      "ko": "갸하하 삼총사",
+      "en": "Q11298170",
+      "ja": "ギャハハ三銃士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

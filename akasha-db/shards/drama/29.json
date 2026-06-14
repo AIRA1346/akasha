@@ -1,0 +1,20 @@
+{
+  "wk_000001680": {
+    "workId": "wk_000001680",
+    "title": "블리피",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108031224"
+    },
+    "titles": {
+      "ko": "블리피",
+      "en": "Blippi",
+      "ja": "Blippi"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

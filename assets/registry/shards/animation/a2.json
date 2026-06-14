@@ -83,5 +83,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001576": {
+    "workId": "wk_000001576",
+    "title": "사운드트랙 #1",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110831610"
+    },
+    "titles": {
+      "ko": "사운드트랙 #1",
+      "en": "Soundtrack #1",
+      "ja": "サウンドトラック ＃1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

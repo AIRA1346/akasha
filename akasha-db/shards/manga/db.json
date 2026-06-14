@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001663": {
+    "workId": "wk_000001663",
+    "title": "플레이 플레이 소녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283461"
+    },
+    "titles": {
+      "ko": "플레이 플레이 소녀",
+      "en": "Q11283461",
+      "ja": "フレフレ少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

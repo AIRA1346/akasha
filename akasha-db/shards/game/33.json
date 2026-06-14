@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001510": {
+    "workId": "wk_000001510",
+    "title": "동방홍룡동 ~ Unconnected Marketeers.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105707774"
+    },
+    "titles": {
+      "ko": "동방홍룡동 ~ Unconnected Marketeers.",
+      "en": "Touhou Kouryuudou ~ Unconnected Marketeers",
+      "ja": "東方虹龍洞 〜 Unconnected Marketeers."
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

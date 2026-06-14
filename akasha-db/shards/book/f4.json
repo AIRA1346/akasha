@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001773": {
+    "workId": "wk_000001773",
+    "title": "침략자들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902769"
+    },
+    "titles": {
+      "ko": "침략자들",
+      "en": "Invasion"
+    },
+    "creator": "Luke Rhinehart",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

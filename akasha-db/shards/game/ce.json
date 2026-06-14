@@ -1,0 +1,21 @@
+{
+  "wk_000001682": {
+    "workId": "wk_000001682",
+    "title": "F1 2021",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106510749"
+    },
+    "titles": {
+      "ko": "F1 2021",
+      "en": "F1 2021",
+      "ja": "F1 2021"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

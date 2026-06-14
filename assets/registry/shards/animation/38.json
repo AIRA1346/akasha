@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001646": {
+    "workId": "wk_000001646",
+    "title": "Engage Kiss",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112313215"
+    },
+    "titles": {
+      "ko": "Engage Kiss",
+      "en": "Engage Kiss",
+      "ja": "Engage Kiss"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

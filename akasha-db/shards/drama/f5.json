@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001677": {
+    "workId": "wk_000001677",
+    "title": "드라마 「집, 따라 가서 좋은거야?」",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985707"
+    },
+    "titles": {
+      "ko": "드라마 「집, 따라 가서 좋은거야?」",
+      "en": "drama \"ie, tsuiteitte iidesuka?\"",
+      "ja": "ドラマ「家、ついて行ってイイですか?」"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001731": {
+    "workId": "wk_000001731",
+    "title": "아이언하트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108124282"
+    },
+    "titles": {
+      "ko": "아이언하트",
+      "en": "Ironheart",
+      "ja": "アイアンハート (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

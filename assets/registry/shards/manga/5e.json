@@ -1,0 +1,21 @@
+{
+  "wk_000001536": {
+    "workId": "wk_000001536",
+    "title": "우국의 라스푸틴",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263071"
+    },
+    "titles": {
+      "ko": "우국의 라스푸틴",
+      "en": "Rasputin the Patriot",
+      "ja": "憂国のラスプーチン"
+    },
+    "creator": "Takashi Nagasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

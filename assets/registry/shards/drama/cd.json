@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001544": {
+    "workId": "wk_000001544",
+    "title": "데스티란도 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067609"
+    },
+    "titles": {
+      "ko": "데스티란도 아모르",
+      "en": "Destilando Amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

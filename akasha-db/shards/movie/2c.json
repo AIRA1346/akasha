@@ -1,0 +1,21 @@
+{
+  "wk_000001526": {
+    "workId": "wk_000001526",
+    "title": "싱글 인 서울",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102273941"
+    },
+    "titles": {
+      "ko": "싱글 인 서울",
+      "en": "Single in Seoul",
+      "ja": "シングル・イン・ソウル"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

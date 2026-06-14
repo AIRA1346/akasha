@@ -1,0 +1,21 @@
+{
+  "wk_000001531": {
+    "workId": "wk_000001531",
+    "title": "미학 강의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045336"
+    },
+    "titles": {
+      "ko": "미학 강의",
+      "en": "Lectures on Aesthetics"
+    },
+    "releaseYear": 1835,
+    "creator": "Georg Wilhelm Friedrich Hegel",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

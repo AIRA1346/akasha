@@ -1,0 +1,21 @@
+{
+  "wk_000001694": {
+    "workId": "wk_000001694",
+    "title": "만화 이솝이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278657"
+    },
+    "titles": {
+      "ko": "만화 이솝이야기",
+      "en": "The Aesop's Fables",
+      "ja": "まんがイソップ物語"
+    },
+    "releaseYear": 1983,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

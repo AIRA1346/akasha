@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001570": {
+    "workId": "wk_000001570",
+    "title": "큐, 큐, 큐트!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265019"
+    },
+    "titles": {
+      "ko": "큐, 큐, 큐트!",
+      "en": "Q11265019",
+      "ja": "きゅーきゅーキュート!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

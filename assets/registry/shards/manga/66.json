@@ -1,0 +1,20 @@
+{
+  "wk_000001722": {
+    "workId": "wk_000001722",
+    "title": "숲 속의 곰, 동면 중.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112921143"
+    },
+    "titles": {
+      "ko": "숲 속의 곰, 동면 중.",
+      "en": "Caressing the Nipples of My Hibernating Bear",
+      "ja": "森のくまさん、冬眠中。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001730": {
+    "workId": "wk_000001730",
+    "title": "도전! 골든벨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10811958"
+    },
+    "titles": {
+      "ko": "도전! 골든벨",
+      "en": "Golden Bell Challenge",
+      "ja": "挑戦! ゴールデンベル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

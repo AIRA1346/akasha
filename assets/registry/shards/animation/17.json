@@ -44,5 +44,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001561": {
+    "workId": "wk_000001561",
+    "title": "어셔가의 몰락",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110156249"
+    },
+    "titles": {
+      "ko": "어셔가의 몰락",
+      "en": "The Fall of the House of Usher",
+      "ja": "アッシャー家の崩壊 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

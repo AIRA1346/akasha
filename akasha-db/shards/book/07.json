@@ -1,0 +1,20 @@
+{
+  "wk_000001774": {
+    "workId": "wk_000001774",
+    "title": "아비달마 계신족론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104941374"
+    },
+    "titles": {
+      "ko": "아비달마 계신족론",
+      "en": "Q104941374",
+      "ja": "阿毘達磨界身足論"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

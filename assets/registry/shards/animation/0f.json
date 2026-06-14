@@ -1,0 +1,21 @@
+{
+  "wk_000001593": {
+    "workId": "wk_000001593",
+    "title": "샬럿 왕비: 브리저튼 외전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111360692"
+    },
+    "titles": {
+      "ko": "샬럿 왕비: 브리저튼 외전",
+      "en": "Queen Charlotte: A Bridgerton Story",
+      "ja": "クイーン・シャーロット 〜ブリジャートン家外伝〜"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

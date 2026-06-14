@@ -1,0 +1,21 @@
+{
+  "wk_000001644": {
+    "workId": "wk_000001644",
+    "title": "말랑말랑 두뇌교실",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064769"
+    },
+    "titles": {
+      "ko": "말랑말랑 두뇌교실",
+      "en": "Big Brain Academy",
+      "ja": "やわらかあたま塾"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

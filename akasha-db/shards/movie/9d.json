@@ -1,0 +1,21 @@
+{
+  "wk_000001767": {
+    "workId": "wk_000001767",
+    "title": "파라다이스 러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033185"
+    },
+    "titles": {
+      "ko": "파라다이스 러브",
+      "en": "Paradise: Love",
+      "ja": "パラダイス：愛"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

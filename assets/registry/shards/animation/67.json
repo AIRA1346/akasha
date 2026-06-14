@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001603": {
+    "workId": "wk_000001603",
+    "title": "Opus.COLORs",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111914385"
+    },
+    "titles": {
+      "ko": "Opus.COLORs",
+      "en": "Opus Colors",
+      "ja": "Opus.COLORs"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

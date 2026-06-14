@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001755": {
+    "workId": "wk_000001755",
+    "title": "데스 퍼레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320614"
+    },
+    "titles": {
+      "ko": "데스 퍼레이드",
+      "en": "Death Parade",
+      "ja": "デス・ビリヤード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

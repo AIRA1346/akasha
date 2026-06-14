@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001517": {
+    "workId": "wk_000001517",
+    "title": "버블",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109965531"
+    },
+    "titles": {
+      "ko": "버블",
+      "en": "Bubble",
+      "ja": "バブル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

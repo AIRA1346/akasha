@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001683": {
+    "workId": "wk_000001683",
+    "title": "월풍마전: 불멸의 달",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106513294"
+    },
+    "titles": {
+      "ko": "월풍마전: 불멸의 달",
+      "en": "Getsu Fūma Den: Undying Moon",
+      "ja": "GetsuFumaDen: Undying Moon"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

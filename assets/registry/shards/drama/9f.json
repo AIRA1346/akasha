@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001499": {
+    "workId": "wk_000001499",
+    "title": "화이트 로투스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106679014"
+    },
+    "titles": {
+      "ko": "화이트 로투스",
+      "en": "The White Lotus",
+      "ja": "ザ・ホワイト・ロータス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001633": {
+    "workId": "wk_000001633",
+    "title": "순백의 소리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278237"
+    },
+    "titles": {
+      "ko": "순백의 소리",
+      "en": "Those Snow White Notes",
+      "ja": "ましろのおと"
+    },
+    "creator": "Marimo Ragawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

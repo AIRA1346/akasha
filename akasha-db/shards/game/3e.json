@@ -1,0 +1,21 @@
+{
+  "wk_000001742": {
+    "workId": "wk_000001742",
+    "title": "페르시아의 왕자 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066134"
+    },
+    "titles": {
+      "ko": "페르시아의 왕자 3D",
+      "en": "Prince of Persia 3D",
+      "ja": "プリンス・オブ・ペルシャ3D"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

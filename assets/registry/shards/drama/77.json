@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001548": {
+    "workId": "wk_000001548",
+    "title": "목표가 생겼다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106801134"
+    },
+    "titles": {
+      "ko": "목표가 생겼다",
+      "en": "Here's My Plan"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

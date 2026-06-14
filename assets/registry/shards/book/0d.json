@@ -1,0 +1,20 @@
+{
+  "wk_000001776": {
+    "workId": "wk_000001776",
+    "title": "태상황정중경경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104941544"
+    },
+    "titles": {
+      "ko": "태상황정중경경",
+      "en": "Middle Scenery of the Yellow Court Classic",
+      "ja": "黄庭中景経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

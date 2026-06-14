@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "entryCount": 1447,
-  "generatedAt": "2026-06-14T13:09:27.095210Z",
+  "entryCount": 1735,
+  "generatedAt": "2026-06-14T15:04:25.745572Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 293,
-      "sha256": "ea194067d3711f045fdd517064ed00f9a1f593cfa4ae734c883e23ebbb7c38b7"
+      "entryCount": 385,
+      "sha256": "accf108b17faf5a3419d92162ff86febb8d011a5faa09a3507ccbb323dcf55db"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 126,
-      "sha256": "baa2b2e6b6b267f56cb972cd0f24a551e755461241b5c533847060493481fd3e"
+      "entryCount": 145,
+      "sha256": "360b64e268074a0b32734e5e26c9ec0169e03b1f30c720ae3c888508ef053003"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 269,
-      "sha256": "27658a99fe6dd4fbe3b27eb62400162d52b0e4d2ba982d92dbb4794b98a00477"
+      "entryCount": 329,
+      "sha256": "c25604491455263adc420d651bccb9ccc004e28cd3253dc2deb34ecf1cc03cbf"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 285,
-      "sha256": "747af627321ba88b7e5094aa5648271f8e5601d0e7ccb1719e2d1df624a5f6c4"
+      "entryCount": 329,
+      "sha256": "cc38ea00aa5a4a16817084867e1ddc65bb52203cfc362ae5bb4853c4d904051f"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 308,
-      "sha256": "cfb093deb11ab03a58c55374bb2871ffe71f0ef8c7f322b0d73410f6a4972380"
+      "entryCount": 359,
+      "sha256": "13883df1e3bb0d82aa5dad5ffc6f07dc2c70a9adc32869f12e1a080d6027798f"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 117,
-      "sha256": "ba2705a2b6e7ac91e6f93e267fbb62f283e0ec4b9e1e6e81f52b0d351da46b3d"
+      "entryCount": 139,
+      "sha256": "07f53daa16f6e6116684f8a62dd2c646f990754b4c3a549703dd862a51d4323d"
     },
     {
       "category": "webtoon",

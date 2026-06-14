@@ -81,5 +81,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001504": {
+    "workId": "wk_000001504",
+    "title": "파이널 판타지 VII: 에버 크라이시스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105689376"
+    },
+    "titles": {
+      "ko": "파이널 판타지 VII: 에버 크라이시스",
+      "en": "Final Fantasy VII: Ever Crisis",
+      "ja": "ファイナルファンタジーVII エバークライシス"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

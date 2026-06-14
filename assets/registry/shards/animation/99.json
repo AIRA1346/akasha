@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001658": {
+    "workId": "wk_000001658",
+    "title": "쥐라기 월드컵",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272376"
+    },
+    "titles": {
+      "ko": "쥐라기 월드컵",
+      "en": "Dragon League",
+      "ja": "ドラゴンリーグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

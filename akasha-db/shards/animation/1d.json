@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001624": {
+    "workId": "wk_000001624",
+    "title": "아오아시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112299509"
+    },
+    "titles": {
+      "ko": "아오아시",
+      "en": "Aoashi",
+      "ja": "アオアシ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

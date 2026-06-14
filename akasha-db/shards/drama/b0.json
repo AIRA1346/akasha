@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001672": {
+    "workId": "wk_000001672",
+    "title": "악의 마음을 읽는 자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107864287"
+    },
+    "titles": {
+      "ko": "악의 마음을 읽는 자들",
+      "en": "Through the Darkness",
+      "ja": "悪の心を読む者たち（原題）"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001516": {
+    "workId": "wk_000001516",
+    "title": "명탐정 코난: 할로윈의 신부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109844247"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 할로윈의 신부",
+      "en": "Detective Conan: The Bride of Halloween",
+      "ja": "名探偵コナン ハロウィンの花嫁"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

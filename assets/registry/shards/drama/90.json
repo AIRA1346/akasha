@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001732": {
+    "workId": "wk_000001732",
+    "title": "콘티고 시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108168338"
+    },
+    "titles": {
+      "ko": "콘티고 시",
+      "en": "Contigo sí",
+      "ja": "コンティゴ・シ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

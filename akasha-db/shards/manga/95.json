@@ -81,5 +81,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001660": {
+    "workId": "wk_000001660",
+    "title": "아임 홈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282015"
+    },
+    "titles": {
+      "ko": "아임 홈",
+      "en": "I'm Home",
+      "ja": "アイ'ム ホーム"
+    },
+    "creator": "Kei Ishizaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

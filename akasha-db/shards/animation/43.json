@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001701": {
+    "workId": "wk_000001701",
+    "title": "극장판 딜리셔스 파티♡프리큐어 꿈꾸는♡어린이 런치!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113022213"
+    },
+    "titles": {
+      "ko": "극장판 딜리셔스 파티♡프리큐어 꿈꾸는♡어린이 런치!",
+      "en": "Delicious Party Pretty Cure the Movie: Dreaming Children's Lunch!",
+      "ja": "映画 デリシャスパーティ♡プリキュア 夢みる♡お子さまランチ!"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

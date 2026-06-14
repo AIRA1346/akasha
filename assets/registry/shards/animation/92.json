@@ -1,0 +1,20 @@
+{
+  "wk_000001618": {
+    "workId": "wk_000001618",
+    "title": "이 멋진 세계에 폭염을!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112172500"
+    },
+    "titles": {
+      "ko": "이 멋진 세계에 폭염을!",
+      "en": "KonoSuba: An Explosion on This Wonderful World!",
+      "ja": "この素晴らしい世界に爆焔を！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

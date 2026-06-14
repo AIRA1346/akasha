@@ -1,0 +1,19 @@
+{
+  "wk_000001733": {
+    "workId": "wk_000001733",
+    "title": "슈퍼주니어의 선견지명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10822166"
+    },
+    "titles": {
+      "ko": "슈퍼주니어의 선견지명",
+      "en": "Q10822166"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

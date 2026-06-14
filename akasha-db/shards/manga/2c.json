@@ -1,0 +1,21 @@
+{
+  "wk_000001721": {
+    "workId": "wk_000001721",
+    "title": "꼬마 양",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11292021"
+    },
+    "titles": {
+      "ko": "꼬마 양",
+      "en": "The Diary of Ochibi-san",
+      "ja": "オチビサン"
+    },
+    "creator": "安野モヨコ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

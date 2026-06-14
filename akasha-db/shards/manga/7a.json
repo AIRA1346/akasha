@@ -1,0 +1,21 @@
+{
+  "wk_000001538": {
+    "workId": "wk_000001538",
+    "title": "저승사자입니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263477"
+    },
+    "titles": {
+      "ko": "저승사자입니다",
+      "en": "Omukae desu",
+      "ja": "お迎えです。"
+    },
+    "creator": "Meca Tanaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001626": {
+    "workId": "wk_000001626",
+    "title": "하나캇파",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11275662"
+    },
+    "titles": {
+      "ko": "하나캇파",
+      "en": "Hana Kappa",
+      "ja": "はなかっぱ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

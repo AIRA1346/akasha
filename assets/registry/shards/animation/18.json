@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001757": {
+    "workId": "wk_000001757",
+    "title": "작은 아씨들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132231"
+    },
+    "titles": {
+      "ko": "작은 아씨들",
+      "en": "Little Women",
+      "ja": "若草物語"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

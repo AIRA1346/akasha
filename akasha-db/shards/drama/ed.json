@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001667": {
+    "workId": "wk_000001667",
+    "title": "가면라이더 리바이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107657377"
+    },
+    "titles": {
+      "ko": "가면라이더 리바이스",
+      "en": "Kamen Rider Revice",
+      "ja": "仮面ライダーリバイス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

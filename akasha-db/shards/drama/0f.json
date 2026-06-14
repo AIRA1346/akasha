@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001679": {
+    "workId": "wk_000001679",
+    "title": "박하지하 : 민트의 여름",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108012978"
+    },
+    "titles": {
+      "ko": "박하지하 : 민트의 여름",
+      "en": "Q108012978"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

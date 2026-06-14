@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001511": {
+    "workId": "wk_000001511",
+    "title": "네가 바라는 영원",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057155"
+    },
+    "titles": {
+      "ko": "네가 바라는 영원",
+      "en": "Kimi ga Nozomu Eien",
+      "ja": "君が望む永遠"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

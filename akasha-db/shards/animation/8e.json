@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001594": {
+    "workId": "wk_000001594",
+    "title": "연애 플롭스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111367751"
+    },
+    "titles": {
+      "ko": "연애 플롭스",
+      "en": "Renai Flops",
+      "ja": "恋愛フロップス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -91,5 +91,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001521": {
+    "workId": "wk_000001521",
+    "title": "극장판 페이트/그랜드 오더 신성원탁영역 카멜롯 완더링; 아가트람",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114319"
+    },
+    "titles": {
+      "ko": "극장판 페이트/그랜드 오더 신성원탁영역 카멜롯 완더링; 아가트람",
+      "en": "Fate/Grand Order the Movie: Divine Realm of the Round Table: Camelot",
+      "ja": "劇場版 Fate/Grand Order -神聖円卓領域キャメロット-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

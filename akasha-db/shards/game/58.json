@@ -81,5 +81,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001639": {
+    "workId": "wk_000001639",
+    "title": "메달 오브 아너: 언더그라운드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064176"
+    },
+    "titles": {
+      "ko": "메달 오브 아너: 언더그라운드",
+      "en": "Medal of Honor: Underground",
+      "ja": "メダル・オブ・オナー アンダーグラウンド"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

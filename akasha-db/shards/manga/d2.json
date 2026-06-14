@@ -1,0 +1,22 @@
+{
+  "wk_000001484": {
+    "workId": "wk_000001484",
+    "title": "루리 드래곤",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112570313"
+    },
+    "titles": {
+      "ko": "루리 드래곤",
+      "en": "RuriDragon",
+      "ja": "ルリドラゴン"
+    },
+    "releaseYear": 2025,
+    "creator": "Masaoki Shindō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

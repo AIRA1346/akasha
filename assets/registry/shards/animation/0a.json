@@ -1,0 +1,20 @@
+{
+  "wk_000001614": {
+    "workId": "wk_000001614",
+    "title": "영구소년 Eternal Boys",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111937696"
+    },
+    "titles": {
+      "ko": "영구소년 Eternal Boys",
+      "en": "Eternal Boys",
+      "ja": "永久少年 Eternal Boys"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

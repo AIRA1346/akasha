@@ -379,6 +379,30 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001771",
+    "title": "내 사랑 신디",
+    "shardId": "movie_ab",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Can't Buy Me Love",
+      "can'tbuymelove",
+      "キャントバイミーラブ",
+      "キャント・バイ・ミー・ラブ",
+      "내 사랑 신디",
+      "내사랑신디"
+    ],
+    "titles": {
+      "ko": "내 사랑 신디",
+      "en": "Can't Buy Me Love",
+      "ja": "キャント・バイ・ミー・ラブ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000408",
     "title": "너의 이름은.",
     "shardId": "movie_3f",
@@ -402,6 +426,52 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001705",
+    "title": "늑대의 제국",
+    "shardId": "movie_b3",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Empire of the Wolves",
+      "empireofthewolves",
+      "エンパイアオブザウルフ",
+      "エンパイア・オブ・ザ・ウルフ",
+      "늑대의 제국",
+      "늑대의제국"
+    ],
+    "titles": {
+      "ko": "늑대의 제국",
+      "en": "Empire of the Wolves",
+      "ja": "エンパイア・オブ・ザ・ウルフ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001703",
+    "title": "닉크",
+    "shardId": "movie_29",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ricochet",
+      "ricochet",
+      "リコシェ",
+      "닉크"
+    ],
+    "titles": {
+      "ko": "닉크",
+      "en": "Ricochet",
+      "ja": "リコシェ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000166",
@@ -531,6 +601,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001524",
+    "title": "더티 맨",
+    "shardId": "movie_fd",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Super",
+      "thesuper",
+      "ニューヨークのいたずら",
+      "더티 맨",
+      "더티맨"
+    ],
+    "titles": {
+      "ko": "더티 맨",
+      "en": "The Super",
+      "ja": "ニューヨークのいたずら"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001436",
     "title": "데드풀과 울버린",
     "shardId": "movie_03",
@@ -549,6 +642,30 @@
       "ko": "데드풀과 울버린",
       "en": "Deadpool & Wolverine",
       "ja": "デッドプール&ウルヴァリン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001768",
+    "title": "데스 레이스",
+    "shardId": "movie_0a",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Death Race",
+      "deathrace",
+      "デスレース",
+      "デス・レース",
+      "데스 레이스",
+      "데스레이스"
+    ],
+    "titles": {
+      "ko": "데스 레이스",
+      "en": "Death Race",
+      "ja": "デス・レース"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -1445,6 +1562,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001710",
+    "title": "사랑은 방울방울",
+    "shardId": "movie_a2",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Love Me, Love My Money",
+      "loveme,lovemymoney",
+      "ラブイズマネー",
+      "ラブ・イズ・マネー",
+      "사랑은 방울방울",
+      "사랑은방울방울"
+    ],
+    "titles": {
+      "ko": "사랑은 방울방울",
+      "en": "Love Me, Love My Money",
+      "ja": "ラブ・イズ・マネー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000980",
     "title": "살육 호텔",
     "shardId": "movie_89",
@@ -1615,6 +1756,98 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001769",
+    "title": "스피드 존",
+    "shardId": "movie_1f",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Speed Zone!",
+      "speedzone!",
+      "キャノンボール3 新しき挑戦者たち",
+      "キャノンボール3新しき挑戦者たち",
+      "스피드 존",
+      "스피드존"
+    ],
+    "titles": {
+      "ko": "스피드 존",
+      "en": "Speed Zone!",
+      "ja": "キャノンボール3 新しき挑戦者たち"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001770",
+    "title": "시간과 바람",
+    "shardId": "movie_f3",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Time and the Wind",
+      "timeandthewind",
+      "시간과 바람",
+      "시간과바람"
+    ],
+    "titles": {
+      "ko": "시간과 바람",
+      "en": "Time and the Wind"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001526",
+    "title": "싱글 인 서울",
+    "shardId": "movie_2c",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Single in Seoul",
+      "singleinseoul",
+      "シングルインソウル",
+      "シングル・イン・ソウル",
+      "싱글 인 서울",
+      "싱글인서울"
+    ],
+    "titles": {
+      "ko": "싱글 인 서울",
+      "en": "Single in Seoul",
+      "ja": "シングル・イン・ソウル"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001711",
+    "title": "아니, 아니, 지휘의 헛된 영광",
+    "shardId": "movie_6c",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "No, or the Vain Glory of Command",
+      "no,orthevaingloryofcommand",
+      "ノン、あるいは支配の空しい栄光",
+      "아니, 아니, 지휘의 헛된 영광",
+      "아니,아니,지휘의헛된영광"
+    ],
+    "titles": {
+      "ko": "아니, 아니, 지휘의 헛된 영광",
+      "en": "No, or the Vain Glory of Command",
+      "ja": "ノン、あるいは支配の空しい栄光"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000679",
@@ -2110,6 +2343,51 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001709",
+    "title": "전국자위대",
+    "shardId": "movie_e9",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "G.I. Samurai",
+      "g.i.samurai",
+      "戦国自衛隊",
+      "전국자위대"
+    ],
+    "titles": {
+      "ko": "전국자위대",
+      "en": "G.I. Samurai",
+      "ja": "戦国自衛隊"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001766",
+    "title": "전쟁의 선언",
+    "shardId": "movie_e7",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Declaration of War",
+      "declarationofwar",
+      "わたしたちの宣戦布告",
+      "전쟁의 선언",
+      "전쟁의선언"
+    ],
+    "titles": {
+      "ko": "전쟁의 선언",
+      "en": "Declaration of War",
+      "ja": "わたしたちの宣戦布告"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001474",
     "title": "접변",
     "shardId": "movie_9c",
@@ -2299,6 +2577,73 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001708",
+    "title": "캉캉",
+    "shardId": "movie_8f",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Can-Can",
+      "cancan",
+      "カンカン",
+      "캉캉"
+    ],
+    "titles": {
+      "ko": "캉캉",
+      "en": "Can-Can",
+      "ja": "カンカン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001765",
+    "title": "캔디맨",
+    "shardId": "movie_4d",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Candyman",
+      "candyman",
+      "キャンディマン",
+      "캔디맨"
+    ],
+    "titles": {
+      "ko": "캔디맨",
+      "en": "Candyman",
+      "ja": "キャンディマン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001764",
+    "title": "캔디맨 2",
+    "shardId": "movie_34",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Candyman: Farewell to the Flesh",
+      "candymanfarewelltotheflesh",
+      "キャンディマン2",
+      "캔디맨 2",
+      "캔디맨2"
+    ],
+    "titles": {
+      "ko": "캔디맨 2",
+      "en": "Candyman: Farewell to the Flesh",
+      "ja": "キャンディマン2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001077",
     "title": "컨버세이션",
     "shardId": "movie_56",
@@ -2381,6 +2726,51 @@
     "titles": {
       "ko": "큐어드",
       "en": "Cured"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001523",
+    "title": "크.레.이.지",
+    "shardId": "movie_25",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "C.R.A.Z.Y.",
+      "c.r.a.z.y.",
+      "크.레.이.지"
+    ],
+    "titles": {
+      "ko": "크.레.이.지",
+      "en": "C.R.A.Z.Y.",
+      "ja": "C.R.A.Z.Y."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001707",
+    "title": "클럽 진주군",
+    "shardId": "movie_fc",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Out of This World",
+      "outofthisworld",
+      "この世の外へ クラブ進駐軍",
+      "この世の外へクラブ進駐軍",
+      "클럽 진주군",
+      "클럽진주군"
+    ],
+    "titles": {
+      "ko": "클럽 진주군",
+      "en": "Out of This World",
+      "ja": "この世の外へ クラブ進駐軍"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2482,6 +2872,30 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001767",
+    "title": "파라다이스 러브",
+    "shardId": "movie_9d",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Paradise: Love",
+      "paradiselove",
+      "パラダイス愛",
+      "パラダイス：愛",
+      "파라다이스 러브",
+      "파라다이스러브"
+    ],
+    "titles": {
+      "ko": "파라다이스 러브",
+      "en": "Paradise: Love",
+      "ja": "パラダイス：愛"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000981",
@@ -2615,6 +3029,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001712",
+    "title": "프리 윌리 3",
+    "shardId": "movie_74",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Free Willy 3: The Rescue",
+      "freewilly3therescue",
+      "フリーウィリー3",
+      "フリー・ウィリー3",
+      "프리 윌리 3",
+      "프리윌리3"
+    ],
+    "titles": {
+      "ko": "프리 윌리 3",
+      "en": "Free Willy 3: The Rescue",
+      "ja": "フリー・ウィリー3"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000805",
     "title": "프리퀀시",
     "shardId": "movie_5e",
@@ -2701,6 +3139,77 @@
       "ko": "해리 포터와 불의 잔",
       "en": "Harry Potter and the Goblet of Fire",
       "ja": "ハリー・ポッターと炎のゴブレット"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001525",
+    "title": "해리 포터와 비밀의 방",
+    "shardId": "movie_76",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Harry Potter and the Chamber of Secrets",
+      "harrypotterandthechamberofsecrets",
+      "ハリーポッターと秘密の部屋",
+      "ハリー・ポッターと秘密の部屋",
+      "해리 포터와 비밀의 방",
+      "해리포터와비밀의방"
+    ],
+    "titles": {
+      "ko": "해리 포터와 비밀의 방",
+      "en": "Harry Potter and the Chamber of Secrets",
+      "ja": "ハリー・ポッターと秘密の部屋"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001704",
+    "title": "헝거 게임: 더 파이널",
+    "shardId": "movie_aa",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Hunger Games: Mockingjay – Part 2",
+      "thehungergamesmockingjaypart2",
+      "ハンガーゲームfinalレボリューション",
+      "ハンガー・ゲーム FINAL: レボリューション",
+      "헝거 게임: 더 파이널",
+      "헝거게임더파이널"
+    ],
+    "titles": {
+      "ko": "헝거 게임: 더 파이널",
+      "en": "The Hunger Games: Mockingjay – Part 2",
+      "ja": "ハンガー・ゲーム FINAL: レボリューション"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001706",
+    "title": "헬레이저 4 브러드라인",
+    "shardId": "movie_a4",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hellraiser: Bloodline",
+      "hellraiserbloodline",
+      "ヘルレイザー4",
+      "헬레이저 4 브러드라인",
+      "헬레이저4브러드라인"
+    ],
+    "titles": {
+      "ko": "헬레이저 4 브러드라인",
+      "en": "Hellraiser: Bloodline",
+      "ja": "ヘルレイザー4"
     },
     "qualityScore": 65,
     "qualityTier": 3

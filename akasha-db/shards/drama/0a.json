@@ -1,0 +1,20 @@
+{
+  "wk_000001489": {
+    "workId": "wk_000001489",
+    "title": "하트스토퍼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106623586"
+    },
+    "titles": {
+      "ko": "하트스토퍼",
+      "en": "Heartstopper",
+      "ja": "HEARTSTOPPER ハートストッパー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

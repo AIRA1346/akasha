@@ -1,0 +1,21 @@
+{
+  "wk_000001717": {
+    "workId": "wk_000001717",
+    "title": "세상을 뒤로 하고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104880303"
+    },
+    "titles": {
+      "ko": "세상을 뒤로 하고",
+      "en": "Leave the World Behind"
+    },
+    "releaseYear": 2020,
+    "creator": "Rumaan Alam",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

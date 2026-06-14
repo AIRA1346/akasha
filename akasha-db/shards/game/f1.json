@@ -1,0 +1,20 @@
+{
+  "wk_000001636": {
+    "workId": "wk_000001636",
+    "title": "Mad TV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063640"
+    },
+    "titles": {
+      "ko": "Mad TV",
+      "en": "Mad TV"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

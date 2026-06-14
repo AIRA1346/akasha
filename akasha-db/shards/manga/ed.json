@@ -116,5 +116,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001585": {
+    "workId": "wk_000001585",
+    "title": "이 소리에 모여!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266796"
+    },
+    "titles": {
+      "ko": "이 소리에 모여!",
+      "en": "Kono Oto Tomare! Sounds of Life",
+      "ja": "この音とまれ!"
+    },
+    "releaseYear": 2012,
+    "creator": "Amyu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

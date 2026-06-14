@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001653": {
+    "workId": "wk_000001653",
+    "title": "맡겨줘 스크랩퍼즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262421"
+    },
+    "titles": {
+      "ko": "맡겨줘 스크랩퍼즈",
+      "en": "Omakase Scrappers",
+      "ja": "おまかせスクラッパーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001670": {
+    "workId": "wk_000001670",
+    "title": "록키",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078084"
+    },
+    "titles": {
+      "ko": "록키",
+      "en": "Rocky",
+      "ja": "ロッキー"
+    },
+    "releaseYear": 1976,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

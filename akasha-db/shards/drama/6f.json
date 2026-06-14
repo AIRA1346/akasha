@@ -32,5 +32,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001551": {
+    "workId": "wk_000001551",
+    "title": "검은 태양",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106812593"
+    },
+    "titles": {
+      "ko": "검은 태양",
+      "en": "The Veil",
+      "ja": "黒い太陽～コードネーム：アムネシア～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

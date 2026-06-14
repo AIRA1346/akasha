@@ -1,0 +1,21 @@
+{
+  "wk_000001652": {
+    "workId": "wk_000001652",
+    "title": "낙제마녀 후우카와 어둠의 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112596306"
+    },
+    "titles": {
+      "ko": "낙제마녀 후우카와 어둠의 마녀",
+      "en": "Rakudai Majo: Fūka to Yami no Majo",
+      "ja": "らくだい魔女 フウカと闇の魔女"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

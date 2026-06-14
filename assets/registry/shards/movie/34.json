@@ -1,0 +1,21 @@
+{
+  "wk_000001764": {
+    "workId": "wk_000001764",
+    "title": "캔디맨 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033094"
+    },
+    "titles": {
+      "ko": "캔디맨 2",
+      "en": "Candyman: Farewell to the Flesh",
+      "ja": "キャンディマン2"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

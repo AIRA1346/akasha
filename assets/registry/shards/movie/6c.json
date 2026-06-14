@@ -1,0 +1,21 @@
+{
+  "wk_000001711": {
+    "workId": "wk_000001711",
+    "title": "아니, 아니, 지휘의 헛된 영광",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1032727"
+    },
+    "titles": {
+      "ko": "아니, 아니, 지휘의 헛된 영광",
+      "en": "No, or the Vain Glory of Command",
+      "ja": "ノン、あるいは支配の空しい栄光"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

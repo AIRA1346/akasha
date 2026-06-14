@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001589": {
+    "workId": "wk_000001589",
+    "title": "꼬박 치비 마루코 짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11122495"
+    },
+    "titles": {
+      "ko": "꼬박 치비 마루코 짱",
+      "en": "Chibi Maruko-chan",
+      "ja": "まるまるちびまる子ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
