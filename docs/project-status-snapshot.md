@@ -19,7 +19,8 @@
 | **flutter test** | **271/271 PASS** |
 | **Release readiness** | G-AUTO ✅ (2026-06-14) · G-QA ✅ · G-STEAM ✅ |
 | **Sprint A1** | test **271/271** · analyze **0 error** · Release exe ✅ |
-| **Sprint A2** | Dogfood E2E 수동 — [§8](programs/phase1-work-e2e-plan.md) | ⏳ |
+| **Sprint A2** | Dogfood E2E ✅ (2026-06-14) |
+| **Sprint A3** | **Steam Release 최종 승인** ← **다음** |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
@@ -83,9 +84,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint |
 |---|------|:------:|
-| 1 | **Dogfood E2E** 수동 §8 — 10작+ ①~④ | A2 |
-| 2 | friction log → 확인된 것만 수정 | A4 |
-| 3 | **M3** Steam Release 최종 승인 | A3 |
+| 1 | **M3** Steam Release 최종 승인 | A3 |
+| 2 | friction log (없음 — Dogfood OK) | — |
 | 5 | G1 trial batch + **관측** (fix는 병목 확인 후) | C |
 
 ---
@@ -103,4 +103,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-14 | Wave 1 3차 — UI glue 분리 · shell 710 · test 268 |
 | 2026-06-14 | Wave 1 4차 — controller·scaffold · shell **40줄** · test 271 |
 | 2026-06-14 | **phase1-work-e2e-plan** — E2E 우선 · Scale/Core 보류 |
-| 2026-06-14 | Sprint **A1** G-AUTO ✅ |
+| 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |

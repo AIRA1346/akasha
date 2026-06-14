@@ -65,8 +65,8 @@
 | # | 작업 | Exit | 상태 |
 |:-:|------|------|:----:|
 | A1 | **G-AUTO** 전체 (`flutter test` · ci_registry · preflight · quality_gate --release · Release build) | 0 fail | ✅ 2026-06-14 |
-| A2 | **Dogfood E2E** — 본인 볼트로 ①~④ 10작 이상 (아래 §8) | 체크리스트 Pass | ⏳ |
-| A3 | **M3** Steam Release 최종 승인 · (필요 시) depot 재업로드 | R1~R6 ✅ | ⏳ |
+| A2 | **Dogfood E2E** — 본인 볼트로 ①~④ 10작 이상 (아래 §8) | 체크리스트 Pass | ✅ 2026-06-14 |
+| A3 | **M3** Steam Release 최종 승인 · (필요 시) depot 재업로드 | R1~R6 ✅ | ⏳ **다음** |
 | A4 | friction log — ①~④ 중 **끊긴 UX만** 이슈 등록 | 목록 0~N | ⏳ |
 
 ### Sprint B — 출시 직후 (1~2주)
@@ -125,6 +125,7 @@
 |------|------|
 | 2026-06-14 | 초판 — E2E 우선 · Scale/Core 보류 · Sprint A~D |
 | 2026-06-14 | Sprint **A1** G-AUTO ✅ — test 271 · analyze 0 error · Release exe |
+| 2026-06-14 | Sprint **A2** Dogfood E2E ✅ — 사용자 확인 |
 
 ---
 
