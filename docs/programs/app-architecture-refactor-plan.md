@@ -176,7 +176,7 @@ abstract class AiImportPort {
 |---|------|------|:----:|
 | 0.1 | **ADR-007 앱 레이어링·가드레일 수립** | `docs/adr/ADR-007-app-layering.md` | ✅ 완료 |
 | 0.2 | **M2 출시 과제 (데포 업로드·QA 등)** | [release-readiness](../release-readiness-checklist.md) | ✅ 완료 |
-| 0.3 | **Wave 1 리팩토링 실행 (출시 전)** | `screens/home/` 분할 | ⏳ 대기 |
+| 0.3 | **Wave 1 리팩토링 실행 (출시 전)** | `screens/home/` 분할 | 🔶 **1차~2차 진행** (2026-06-14) |
 
 **허용:** 정식 릴리즈 전 `home_screen.dart` 대규모 분할 및 Coordinator 추출 전면 허용.
 
@@ -188,29 +188,33 @@ abstract class AiImportPort {
 
 #### Sprint 1.1 — Membership (MVR Should-fix #1, #2)
 
-| PR | 내용 | 경로 |
-|----|------|------|
-| W1-1 | `HomeMembershipCoordinator` | `screens/home/coordinators/home_membership_coordinator.dart` |
-| W1-2 | `_addWorkToLibrary` · `_applyWorkLibraryPanel` 이전 | coordinator가 `LibraryMembershipApply` 호출 |
-| W1-3 | unit test + curated 담기 smoke `testWidgets` | `test/coordinators/home_membership_coordinator_test.dart` |
-| W1-4 | `home_screen`에서 membership 메서드 제거 | diff ~200줄↓ |
+| PR | 내용 | 경로 | 상태 |
+|----|------|------|:----:|
+| W1-1 | `HomeMembershipCoordinator` | `screens/home/coordinators/home_membership_coordinator.dart` | ✅ |
+| W1-2 | `_addWorkToLibrary` · `_applyWorkLibraryPanel` 이전 | coordinator가 `LibraryMembershipApply` 호출 | ✅ |
+| W1-3 | unit test + curated 담기 smoke `testWidgets` | `test/coordinators/home_membership_coordinator_test.dart` | ✅ |
+| W1-4 | membership 메서드 shell 축소 | `HomeLibraryMenuBuilder` · menu request 분리 | 🔶 |
 
-**DoD:** `rg "_applyWorkLibraryPanel" lib/screens/home_screen.dart` → **0**
+**DoD:** `rg "_applyWorkLibraryPanel" lib/screens/home_screen.dart` → **0** ✅ (home_screen 삭제됨)
 
-#### Sprint 1.2 — Browse · View
+#### Sprint 1.2 — Browse · View · Coordinator
 
-| PR | 내용 |
-|----|------|
-| W1-5 | `BrowseView` 추출 (그리드·정렬·`MyLibraryPipeline` 연동) |
-| W1-6 | `PersonalLibraryView` 추출 |
-| W1-7 | `HomeDialogs` facade (vault/sync/clipboard 진입만) |
+| PR | 내용 | 상태 |
+|----|------|:----:|
+| W1-5 | `BrowseView` 추출 | ✅ |
+| W1-6 | `PersonalLibraryView` 추출 | ✅ |
+| W1-7 | `HomeDialogs` facade | ✅ |
+| W1-7b | `HomeFilterCoordinator` · `HomeSidebarCoordinator` | ✅ 2026-06-14 |
+| W1-7c | `HomeBrowseCardBuilder` · `HomeLibraryMenuBuilder` | ✅ 2026-06-14 |
 
 #### Sprint 1.3 — Shell
 
-| PR | 내용 |
-|----|------|
-| W1-8 | `HomeShell` — coordinator 조립 · `main.dart` → `HomeShell` |
-| W1-9 | `home_screen.dart` 삭제 (move-only·동작 동일) |
+| PR | 내용 | 상태 |
+|----|------|:----:|
+| W1-8 | `HomeShell` — coordinator 조립 · `main.dart` → `HomeShell` | ✅ |
+| W1-8b | `HomeShellBody` (Scaffold body 분리) | ✅ 2026-06-14 |
+| W1-9 | `home_shell.dart` ≤250줄 (ADR-007) | ✅ **40줄** — `HomeShellController` · `HomeShellScaffold` |
+| W1-9 | `home_screen.dart` 삭제 | ✅ |
 
 **유지 (Keep — 이름·로직 변경 없음):** `HomeRegistrySync` · `LibraryMembershipApply` · `MyLibraryPipeline` · `FranchiseLibraryScope`
 
@@ -381,3 +385,5 @@ gantt
 |------|------|
 | 2026-06-12 | v1 — 초안 (대화) |
 | 2026-06-12 | **v1 저장** — 검토 10건 반영 · MVR 매핑 · 점진 폴더 · Port 2종 · workbench 통합 |
+| 2026-06-14 | Wave 1 3차 — dialog·library·registry UI glue · shell 710줄 · test 268 |
+| 2026-06-14 | Wave 1 4차 — controller·scaffold · shell 40줄 · test 268 |

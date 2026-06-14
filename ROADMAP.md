@@ -1,20 +1,20 @@
 # AKASHA Roadmap
 
 > 목표: **2026 Q3** Steam (Windows) v1 출시  
-> 기준일: **2026-06-10** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
+> 기준일: **2026-06-14** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
 
 ---
 
 ## 현재 위치 → 출시 경로
 
-**M1 기능 동결 ✅ → M-v4 데이터 아키텍처 ✅ (Phase E 포함, 2026-06-10) → M2 Steam 제출 준비 ← 현재 → M3 출시 (Q3)**
+**M1 ✅ → M-v4 ✅ → M2 Steam 제출 ✅ (2026-06-13) → Wave 1 Home 해부 ← 현재 → M3 정식 출시 (Q3)**
 
-### 병행 트랙 (2026-06-10 갱신 — SD2.6 **해제**)
+### 병행 트랙 (2026-06-14)
 
 | 트랙 | 다음 작업 | 상태 |
 |------|-----------|------|
-| **제품 (M2)** | Steamworks 앱 등록 → 빌드 업로드 → 스토어 페이지 → IAP 등록 | **진행** |
-| **데이터 — Catalog G1** | [catalog-growth-charter](docs/programs/catalog-growth-charter.md) — Wikidata manga trial · Maintainer supply **병행** | **진행** |
+| **제품 (Wave 1)** | shell ≤250줄 — dialog·vault glue 분리 (3차) | **진행** |
+| **데이터 — Catalog G1** | [catalog-growth-charter](docs/programs/catalog-growth-charter.md) — Wikidata manga trial · Maintainer supply | **병행** |
 | **데이터 — 아키텍처** | insert마다 search_index·dedupe·O8 관측 — **전 작품 규모** 검증 | **병행** |
 
 > **결정:** 430작은 Steam **서비스 수준 미달**. O3는 insert 스위치가 아니라 **텔레메트리**.
@@ -64,7 +64,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 
 - [x] 회상 카드 UI 숨김 또는 플래그 off (`FeatureFlags.showRecallCard = false`)
 - [x] Windows 앱 메타 (`Runner.rc` — Rune Atelier / AKASHA)
-- [ ] Steam depot / 인스톨러 / 스토어 페이지 에셋 — **M2 (Steamworks 등록 후)**
+- [x] Steam depot / 인스톨러 / 스토어 페이지 에셋 — **M2 ✅ (2026-06-13)**
 - [x] AniList bulk 시드 **제거** (684작 삭제 → 엄선 카탈로그, `purge_anilist_bulk`)
 - [x] **만화/웹툰 분리** (`MediaCategory.webtoon`, 2작 이관 + legacy_aliases)
 - [x] TMDB 포스터 검증·오매핑 제거 (`poster_validate_tmdb`, `poster_fixup_tmdb`)
@@ -83,7 +83,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 - [x] 번들 smoke (`steam_v1_bundle_test` — 430작·웹툰 이관)
 - [x] Windows release 빌드 (`.\scripts\build_release.ps1`)
 - [x] **akasha-db GitHub push** — ~410작 엄선 카탈로그 반영
-- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test **254/254** · ci_registry_check · 2026-06-12)
+- [x] dogfood 자동 사전 검증 (`scripts/dogfood_precheck.ps1` — test **265/265** · ci_registry_check · 2026-06-12)
 - [x] 내부 dogfood (본인 볼트 + 동기화 검증)
 - [x] 나만의 서재 `master_archive` (대시보드 `master_index`와 대응)
 
@@ -98,12 +98,20 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 - [x] v4 dogfood (`110/110` tests · `ci_registry_check` green)
 - [x] **Phase E** — akasha-db GitHub push (2026-06-10 · 430작·G2 50% CDN 반영)
 
-### M2 — Steam 제출 준비 (현재 마일스톤 · ~Q3)
+### M2 — Steam 제출 준비 ✅ (2026-06-13)
 
 - [x] `main` push (akasha + akasha-db) — 2026-06-10
-- [ ] Steamworks 앱 등록, 빌드 업로드
-- [ ] 스토어 페이지 (스크린샷, 태그, 한/영 설명)
-- [ ] IAP 상품 등록 (서재 테마, 서포터 팩)
+- [x] Steamworks 앱 등록, 빌드 업로드
+- [x] 스토어 페이지 (스크린샷, 태그, 한/영 설명)
+- [x] IAP 상품 등록 (서재 테마, 서포터 팩)
+
+### Wave 1 — Home 해부 (정식 릴리즈 전 blocking · 진행 중)
+
+- [x] `HomeFilterCoordinator` · `HomeSidebarCoordinator`
+- [x] `HomeLibraryMenuBuilder` · `HomeBrowseCardBuilder`
+- [x] `HomeShellBody` (Scaffold body)
+- [ ] membership·dialog glue shell에서 분리
+- [ ] `home_shell.dart` ≤250줄 (현재 **710**)
 
 ### M3 — Steam v1 출시 (2026 Q3)
 
@@ -213,7 +221,8 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 ## 코드 품질·리팩터 (우선순위 낮음)
 
 - [ ] `fusion_search` 서비스 추출
-- [ ] `home_screen.dart` 추가 분할 (필요 시)
+- [x] `home_shell.dart` 1차 분할 (`home_vault_loader`, `home_poster_card_factory`, `home_sidebar_preferences`)
+- [ ] `home_shell.dart` 추가 분할 (membership·dialog)
 - [ ] RegistrySyncService 통합 테스트 확대
 
 ---

@@ -16,7 +16,12 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host ''
 Write-Host '==> ci_registry_check'
-$FlutterRoot = (Get-Content (Join-Path $Root 'tool\flutter_sdk.path') -Raw).Trim()
+$SdkFile = Join-Path $Root 'tool\flutter_sdk.path'
+if (Test-Path $SdkFile) {
+  $FlutterRoot = (Get-Content $SdkFile -Raw).Trim()
+} else {
+  $FlutterRoot = 'C:\src\flutter'
+}
 $Dart = Join-Path $FlutterRoot 'bin\dart.bat'
 & $Dart run tool/ci_registry_check.dart
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

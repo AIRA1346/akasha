@@ -5,8 +5,10 @@ import '../../../config/feature_flags.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
+import '../../../models/library_theme.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/fusion_search_dialog.dart';
+import '../../../widgets/library_theme_picker.dart';
 import 'add_work_dialog.dart';
 import 'catalog_add_contribution_dialog.dart';
 import 'catalog_contributions_inbox_dialog.dart';
@@ -143,6 +145,13 @@ class HomeDialogsFacade {
 
   static Future<void> showPromptTemplates(BuildContext context) async {
     await showPromptTemplatesDialog(context);
+  }
+
+  static Future<LibraryTheme?> pickLibraryTheme(
+    BuildContext context, {
+    required LibraryTheme current,
+  }) {
+    return showLibraryThemePicker(context, current: current);
   }
 
   static Future<void> refreshCatalogContributionCount({
