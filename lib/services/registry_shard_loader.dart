@@ -303,6 +303,13 @@ class RegistryShardLoader {
     }
   }
 
+  /// 번들·캐시에 있는 manifest 전체 shard 적재 (소규모 카탈로그 browse용)
+  Future<void> ensureAllManifestShardsLoaded() async {
+    final shards = _manifest?.shards ?? const [];
+    if (shards.isEmpty) return;
+    await Future.wait(shards.map((s) => ensureShardLoaded(s.id)));
+  }
+
   Future<void> ensureShardLoaded(String shardId) async {
     if (shardId.isEmpty || _loadedShardIds.contains(shardId)) return;
     final meta = _manifest?.shardById(shardId);

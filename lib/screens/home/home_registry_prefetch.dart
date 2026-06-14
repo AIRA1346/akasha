@@ -37,7 +37,12 @@ Future<void> prefetchRegistryForFilters({
       offset: browseOffset,
       limit: WorksRegistry.browsePrefetchWindowSize,
     );
-    _emitCatalogWindowState(filters, browseOffset, onCatalogWindowState);
+    _emitCatalogWindowState(
+      filters,
+      browseOffset,
+      onCatalogWindowState,
+      fullCatalogAtOffsetZero: !append && browseOffset == 0,
+    );
     if (!append && isMounted()) {
       onCatalogLoadingChanged(false);
     }
@@ -76,16 +81,24 @@ Future<void> prefetchRegistryForFilters({
 void _emitCatalogWindowState(
   HomeBrowseFilterController filters,
   int browseOffset,
-  void Function(CatalogWindowState state)? onCatalogWindowState,
-) {
+  void Function(CatalogWindowState state)? onCatalogWindowState, {
+  bool fullCatalogAtOffsetZero = false,
+}) {
   if (onCatalogWindowState == null) return;
   final limit = WorksRegistry.browsePrefetchWindowSize;
   final total = WorksRegistry.catalogIndexEntryCount(
     domain: filters.domain,
     category: filters.categories.length == 1 ? filters.categories.first : null,
   );
+  final useFullCatalog = fullCatalogAtOffsetZero &&
+      filters.domain == null &&
+      filters.categories.isEmpty &&
+      total > 0 &&
+      total <= WorksRegistry.browseFullCatalogThreshold;
   onCatalogWindowState((
-    browseOffset: (browseOffset + limit).clamp(0, total),
+    browseOffset: useFullCatalog
+        ? total
+        : (browseOffset + limit).clamp(0, total),
     totalEntries: total,
   ));
 }

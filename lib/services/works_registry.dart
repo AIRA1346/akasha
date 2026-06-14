@@ -329,6 +329,9 @@ class WorksRegistry {
   /// browse 첫 화면에 로드할 search_index 윈도우 (Phase 2.2)
   static const int browsePrefetchWindowSize = 48;
 
+  /// 이하이면 master_index 첫 prefetch 시 번들 전체 shard 적재 (lazy window 생략)
+  static const int browseFullCatalogThreshold = 2500;
+
   /// master_index·무필터 browse — search_index 품질순 윈도우만 prefetch
   /// [fetchRemote] true면 윈도우 shard만 원격 갱신 (전 카테고리 bulk fetch 없음)
   static Future<void> prefetchBrowseWindow({
@@ -338,6 +341,25 @@ class WorksRegistry {
     int limit = browsePrefetchWindowSize,
     bool fetchRemote = false,
   }) async {
+    final total = catalogIndexEntryCount(domain: domain, category: category);
+    final useFullBundledCatalog = domain == null &&
+        category == null &&
+        offset == 0 &&
+        total > 0 &&
+        total <= browseFullCatalogThreshold;
+
+    if (useFullBundledCatalog) {
+      await _loader.ensureSearchIndexLoaded();
+      await _loader.ensureAllManifestShardsLoaded();
+      if (fetchRemote) {
+        final shardIds = _loader.manifest?.shards.map((s) => s.id).toSet() ??
+            const {};
+        await RegistrySyncService().syncShardsByIds(shardIds);
+        await _loader.ensureAllManifestShardsLoaded();
+      }
+      return;
+    }
+
     await _loader.ensureShardsForBrowseWindow(
       domain: domain,
       category: category,
