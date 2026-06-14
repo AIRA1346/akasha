@@ -1,0 +1,22 @@
+{
+  "wk_000001284": {
+    "workId": "wk_000001284",
+    "title": "관내분실",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103899155"
+    },
+    "titles": {
+      "ko": "관내분실",
+      "en": "Irretrievable",
+      "ja": "館内紛失"
+    },
+    "releaseYear": 2018,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

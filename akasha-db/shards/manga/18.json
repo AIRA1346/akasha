@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001197": {
+    "workId": "wk_000001197",
+    "title": "반딧불이의 숲으로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1116103"
+    },
+    "titles": {
+      "ko": "반딧불이의 숲으로",
+      "en": "Hotarubi no Mori e",
+      "ja": "蛍火の杜へ"
+    },
+    "creator": "Yuki Midorikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

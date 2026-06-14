@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001325": {
+    "workId": "wk_000001325",
+    "title": "건드레스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855162"
+    },
+    "titles": {
+      "ko": "건드레스",
+      "en": "Gundress",
+      "ja": "ガンドレス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

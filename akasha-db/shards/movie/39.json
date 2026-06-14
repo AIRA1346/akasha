@@ -25,5 +25,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001344": {
+    "workId": "wk_000001344",
+    "title": "바이 바이 버디",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018487"
+    },
+    "titles": {
+      "ko": "바이 바이 버디",
+      "en": "Bye Bye Birdie",
+      "ja": "バイ・バイ・バーディー"
+    },
+    "releaseYear": 1963,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

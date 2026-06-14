@@ -40,5 +40,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001228": {
+    "workId": "wk_000001228",
+    "title": "금색의 코르다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107533884"
+    },
+    "titles": {
+      "ko": "금색의 코르다",
+      "en": "La Corda d'Oro",
+      "ja": "金色のコルダ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

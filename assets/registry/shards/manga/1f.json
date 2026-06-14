@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001355": {
+    "workId": "wk_000001355",
+    "title": "롤리포 언리미티드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237812"
+    },
+    "titles": {
+      "ko": "롤리포 언리미티드",
+      "en": "Q11237812",
+      "ja": "ろりぽ∞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

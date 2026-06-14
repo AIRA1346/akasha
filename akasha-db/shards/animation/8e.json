@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001422": {
+    "workId": "wk_000001422",
+    "title": "극장판 요괴워치♪: 케이타와 나의 만남편이다냥♪ 저, 저도~♪♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109599287"
+    },
+    "titles": {
+      "ko": "극장판 요괴워치♪: 케이타와 나의 만남편이다냥♪ 저, 저도~♪♪",
+      "en": "Q109599287",
+      "ja": "映画 妖怪ウォッチ♪ ケータとオレっちの出会い編だニャン♪ワ、ワタクシも〜♪♪"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

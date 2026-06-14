@@ -30,5 +30,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001241": {
+    "workId": "wk_000001241",
+    "title": "우리가 빛의 속도로 갈 수 없다면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103899013"
+    },
+    "titles": {
+      "ko": "우리가 빛의 속도로 갈 수 없다면",
+      "en": "If We Can’t Go at the Speed of Light",
+      "ja": "わたしたちが光の速さで進めないなら"
+    },
+    "releaseYear": 2018,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001345": {
+    "workId": "wk_000001345",
+    "title": "겨울",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103936491"
+    },
+    "titles": {
+      "ko": "겨울",
+      "en": "Winter"
+    },
+    "creator": "Ali Smith",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

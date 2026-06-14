@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001212": {
+    "workId": "wk_000001212",
+    "title": "웬즈데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105553568"
+    },
+    "titles": {
+      "ko": "웬즈데이",
+      "en": "Wednesday",
+      "ja": "ウェンズデー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

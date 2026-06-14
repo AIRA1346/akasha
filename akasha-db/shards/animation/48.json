@@ -1,0 +1,21 @@
+{
+  "wk_000001323": {
+    "workId": "wk_000001323",
+    "title": "랜드스케이퍼스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108471031"
+    },
+    "titles": {
+      "ko": "랜드스케이퍼스",
+      "en": "Landscapers",
+      "ja": "ランドスケイパーズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

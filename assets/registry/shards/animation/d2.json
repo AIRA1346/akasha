@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001413": {
+    "workId": "wk_000001413",
+    "title": "야마토여 영원히",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093707"
+    },
+    "titles": {
+      "ko": "야마토여 영원히",
+      "en": "Be Forever Yamato",
+      "ja": "ヤマトよ永遠に"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

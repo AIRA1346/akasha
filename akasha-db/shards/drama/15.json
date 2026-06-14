@@ -1,0 +1,20 @@
+{
+  "wk_000001462": {
+    "workId": "wk_000001462",
+    "title": "라이어 게임 (2007년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106590122"
+    },
+    "titles": {
+      "ko": "라이어 게임 (2007년 드라마)",
+      "en": "Liar Game",
+      "ja": "ライアーゲーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

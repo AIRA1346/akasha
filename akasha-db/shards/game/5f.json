@@ -1,0 +1,21 @@
+{
+  "wk_000001265": {
+    "workId": "wk_000001265",
+    "title": "1941: 카운터 어택",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053093"
+    },
+    "titles": {
+      "ko": "1941: 카운터 어택",
+      "en": "1941: Counter Attack",
+      "ja": "1941 Counter Attack"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

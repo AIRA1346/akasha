@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001340": {
+    "workId": "wk_000001340",
+    "title": "버터 러버",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018042"
+    },
+    "titles": {
+      "ko": "버터 러버",
+      "en": "Butter",
+      "ja": "カワイイ私の作り方 全米バター細工選手権!"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

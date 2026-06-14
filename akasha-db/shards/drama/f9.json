@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001304": {
+    "workId": "wk_000001304",
+    "title": "대박부동산",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105943258"
+    },
+    "titles": {
+      "ko": "대박부동산",
+      "en": "Sell Your Haunted House",
+      "ja": "テバク不動産"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

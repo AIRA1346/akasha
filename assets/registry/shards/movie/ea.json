@@ -1,0 +1,21 @@
+{
+  "wk_000001475": {
+    "workId": "wk_000001475",
+    "title": "해리 포터와 불의 잔",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102225"
+    },
+    "titles": {
+      "ko": "해리 포터와 불의 잔",
+      "en": "Harry Potter and the Goblet of Fire",
+      "ja": "ハリー・ポッターと炎のゴブレット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

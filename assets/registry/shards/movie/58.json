@@ -1,0 +1,21 @@
+{
+  "wk_000001339": {
+    "workId": "wk_000001339",
+    "title": "더 길티",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101666960"
+    },
+    "titles": {
+      "ko": "더 길티",
+      "en": "The Guilty",
+      "ja": "THE GUILTY／ギルティ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

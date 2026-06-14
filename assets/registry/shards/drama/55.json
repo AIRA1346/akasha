@@ -1,0 +1,20 @@
+{
+  "wk_000001302": {
+    "workId": "wk_000001302",
+    "title": "뉴스 금요일 5시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105940494"
+    },
+    "titles": {
+      "ko": "뉴스 금요일 5시",
+      "en": "Q105940494",
+      "ja": "ニュース きん5時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

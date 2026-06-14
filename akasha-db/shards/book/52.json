@@ -1,0 +1,22 @@
+{
+  "wk_000001347": {
+    "workId": "wk_000001347",
+    "title": "트로이 전쟁은 일어나지 않으리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040297"
+    },
+    "titles": {
+      "ko": "트로이 전쟁은 일어나지 않으리",
+      "en": "The Trojan War Will Not Take Place",
+      "ja": "トロイ戦争は起こらないだろう"
+    },
+    "releaseYear": 1935,
+    "creator": "Jean Giraudoux",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

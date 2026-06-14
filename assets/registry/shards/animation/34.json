@@ -1,0 +1,20 @@
+{
+  "wk_000001384": {
+    "workId": "wk_000001384",
+    "title": "스즈미야 하루히의 우울",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10913555"
+    },
+    "titles": {
+      "ko": "스즈미야 하루히의 우울",
+      "en": "The Melancholy of Haruhi Suzumiya",
+      "ja": "涼宮ハルヒの憂鬱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000001440": {
+    "workId": "wk_000001440",
+    "title": "나이트 워치",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042011"
+    },
+    "titles": {
+      "ko": "나이트 워치",
+      "en": "Night Watch",
+      "ja": "ナイト・ウォッチ"
+    },
+    "releaseYear": 1998,
+    "creator": "Sergey Lukyanenko",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

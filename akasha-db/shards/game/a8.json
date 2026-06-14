@@ -1,0 +1,21 @@
+{
+  "wk_000001222": {
+    "workId": "wk_000001222",
+    "title": "길 잃은 바이킹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052386"
+    },
+    "titles": {
+      "ko": "길 잃은 바이킹",
+      "en": "The Lost Vikings",
+      "ja": "バイキングの大迷惑"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

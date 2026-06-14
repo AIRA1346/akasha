@@ -1,40 +1,34 @@
-# Catalog Scale Baseline @1164
+# Catalog Scale Baseline @1447
 
-> **2026-06-14** · **1164작** · preflight ✅ · G1 ~23%
+> **2026-06-14** · **1447작** · preflight ✅ · G1 ~29%
 
 ## 측정
 
 | 항목 | 값 |
 |------|-----|
-| entryCount | **1164** |
-| shard files | 811 |
-| search_index v1 parse | 5–15 ms |
-| search_index v2 manifest parse | 0 ms |
-| assets total | ~644 KB (~0.63 MB) |
+| entryCount | **1447** |
+| shard files | 937 |
+| search_index parse | 8–14 ms |
+| assets total | ~773 KB (~0.75 MB) |
 
-| Phase 2 트리거 | 상태 |
-|----------------|------|
-| entryCount >1000 | ✅ |
-| search_index parse >50ms | ❌ (5–15ms) |
-| APK >15MB | ❌ |
+## Discovery (1164 → 1447, +283)
 
-## Discovery (1006 → 1164, +158)
+배치 offset 195~280 · drama 255/265 일부 0건 (ko 풀 구간)
 
-배치 8–10 · offset 150대~180대 · webtoon **165/180 = 0건** (ko 풀 소진 구간)
+## ingest
 
-품질 수정: wk_1080 `Myeongtonggam` + zh 분리 (CJK in en)
+- `trial_apply._sanitizeTitlesEn` — CJK in `titles.en` → `zh` + entityEnLabel 또는 en 생략
 
-## 앱 (Phase 2.2)
+## 앱
 
-- `loadMoreCatalog` append 시 **fetchRemote await** — 원격 shard 누락 방지
+- ≤2500작: master_index **전체 번들 shard** 적재 (`browseFullCatalogThreshold`)
 
 ## 다음 offset
 
-manga 750 · drama 195 · game 195 · animation 205 · movie 180 · book 180 · webtoon TBD
+manga 840 · drama 285 · game 285 · animation 295 · movie 270 · book 270
 
 ## 후속
 
-1. 실기기 dogfood @1164 (master_index 윈도우)
-2. Discovery → G1 5k
-3. merge backfill · webtoon 소스/offset 재조사
-4. ingest 시 CJK→en 자동 romanization (quality gate 예방)
+1. Discovery → G1 5k
+2. merge backfill
+3. drama/game 소진 구간 offset probe

@@ -1,0 +1,20 @@
+{
+  "wk_000001234": {
+    "workId": "wk_000001234",
+    "title": "데지 미츠 걸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107704661"
+    },
+    "titles": {
+      "ko": "데지 미츠 걸",
+      "en": "\"Deji\" Meets Girl",
+      "ja": "でーじミーツガール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

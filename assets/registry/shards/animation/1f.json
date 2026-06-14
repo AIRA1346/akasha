@@ -66,5 +66,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001326": {
+    "workId": "wk_000001326",
+    "title": "극장판 머나먼 시공 속에서 무일야",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855670"
+    },
+    "titles": {
+      "ko": "극장판 머나먼 시공 속에서 무일야",
+      "en": "Harukanaru Toki no Naka de: Maihitoyo",
+      "ja": "劇場版 遙かなる時空の中で 舞一夜"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001235": {
+    "workId": "wk_000001235",
+    "title": "팬티 앤드 스타킹 위드 가터벨트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077331"
+    },
+    "titles": {
+      "ko": "팬티 앤드 스타킹 위드 가터벨트",
+      "en": "Panty & Stocking with Garterbelt",
+      "ja": "パンティ&ストッキングwithガーターベルト"
+    },
+    "creator": "Jun Sasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

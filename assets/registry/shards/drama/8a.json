@@ -50,5 +50,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001203": {
+    "workId": "wk_000001203",
+    "title": "시 노스 데한",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438971"
+    },
+    "titles": {
+      "ko": "시 노스 데한",
+      "en": "Si nos dejan"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

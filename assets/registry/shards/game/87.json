@@ -1,0 +1,21 @@
+{
+  "wk_000001317": {
+    "workId": "wk_000001317",
+    "title": "오카미전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054901"
+    },
+    "titles": {
+      "ko": "오카미전",
+      "en": "Ōkamiden",
+      "ja": "大神伝 〜小さき太陽〜"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

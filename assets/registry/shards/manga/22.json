@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001245": {
+    "workId": "wk_000001245",
+    "title": "BAR 레몬 하트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190870"
+    },
+    "titles": {
+      "ko": "BAR 레몬 하트",
+      "en": "BAR Lemon Heart",
+      "ja": "BARレモン・ハート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001406": {
+    "workId": "wk_000001406",
+    "title": "바우 와우",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242963"
+    },
+    "titles": {
+      "ko": "바우 와우",
+      "en": "Bow",
+      "ja": "バウ"
+    },
+    "releaseYear": 1992,
+    "creator": "Terry Yamamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

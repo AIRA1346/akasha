@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001452": {
+    "workId": "wk_000001452",
+    "title": "쌍둥이 에디슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065288"
+    },
+    "titles": {
+      "ko": "쌍둥이 에디슨",
+      "en": "The Edison Twins"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

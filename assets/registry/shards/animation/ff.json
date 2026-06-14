@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001229": {
+    "workId": "wk_000001229",
+    "title": "메이지 도쿄 연가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107546495"
+    },
+    "titles": {
+      "ko": "메이지 도쿄 연가",
+      "en": "Meiji Tokyo Renka",
+      "ja": "明治東亰恋伽"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

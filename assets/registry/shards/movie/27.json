@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001425": {
+    "workId": "wk_000001425",
+    "title": "'신'데렐라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036276"
+    },
+    "titles": {
+      "ko": "'신'데렐라",
+      "en": "Sneakerella",
+      "ja": "スニーカーシンデレラ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

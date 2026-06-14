@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001300": {
+    "workId": "wk_000001300",
+    "title": "다크홀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105883276"
+    },
+    "titles": {
+      "ko": "다크홀",
+      "en": "Dark Hole",
+      "ja": "ダークホール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

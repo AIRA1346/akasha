@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001392": {
+    "workId": "wk_000001392",
+    "title": "우주전함 야마토 2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093267"
+    },
+    "titles": {
+      "ko": "우주전함 야마토 2",
+      "en": "Space Battleship Yamato II",
+      "ja": "宇宙戦艦ヤマト2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001444": {
+    "workId": "wk_000001444",
+    "title": "수호캐릭터짱!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11252993"
+    },
+    "titles": {
+      "ko": "수호캐릭터짱!",
+      "en": "Q11252993",
+      "ja": "しゅごキャラちゃん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

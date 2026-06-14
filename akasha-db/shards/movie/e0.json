@@ -1,0 +1,21 @@
+{
+  "wk_000001431": {
+    "workId": "wk_000001431",
+    "title": "스테이지 도어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1020603"
+    },
+    "titles": {
+      "ko": "스테이지 도어",
+      "en": "Stage Door",
+      "ja": "ステージ・ドア"
+    },
+    "releaseYear": 1937,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

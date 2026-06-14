@@ -15,5 +15,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001210": {
+    "workId": "wk_000001210",
+    "title": "오케이 광자매",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105502084"
+    },
+    "titles": {
+      "ko": "오케이 광자매",
+      "en": "Revolutionary Sisters",
+      "ja": "オーケー! グァン姉妹"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001301": {
+    "workId": "wk_000001301",
+    "title": "마인:MINE (2021년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105940076"
+    },
+    "titles": {
+      "ko": "마인:MINE (2021년 드라마)",
+      "en": "Mine",
+      "ja": "Mine (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001455": {
+    "workId": "wk_000001455",
+    "title": "39 계단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106541549"
+    },
+    "titles": {
+      "ko": "39 계단",
+      "en": "The 39 Steps"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

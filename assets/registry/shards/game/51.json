@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001376": {
+    "workId": "wk_000001376",
+    "title": "레고 크리에이터: 해리 포터와 비밀의 방",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10556421"
+    },
+    "titles": {
+      "ko": "레고 크리에이터: 해리 포터와 비밀의 방",
+      "en": "Lego Creator: Harry Potter and the Chamber of Secrets"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

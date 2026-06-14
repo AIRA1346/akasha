@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001308": {
+    "workId": "wk_000001308",
+    "title": "스테이 클로즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105972947"
+    },
+    "titles": {
+      "ko": "스테이 클로즈",
+      "en": "Stay Close",
+      "ja": "ステイ・クロース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

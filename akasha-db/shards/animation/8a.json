@@ -1,0 +1,40 @@
+{
+  "wk_000001383": {
+    "workId": "wk_000001383",
+    "title": "홍련의 봉래도",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090645"
+    },
+    "titles": {
+      "ko": "홍련의 봉래도",
+      "en": "Inuyasha the Movie: Fire on the Mystic Island",
+      "ja": "犬夜叉　紅蓮の蓬莱島"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001420": {
+    "workId": "wk_000001420",
+    "title": "걸즈 앤 판처 최종장 제3화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547372"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 최종장 제3화",
+      "en": "Girls und Panzer das Finale: Part 3",
+      "ja": "ガールズ＆パンツァー 最終章 第3話"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

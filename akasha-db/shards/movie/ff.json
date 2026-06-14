@@ -1,0 +1,21 @@
+{
+  "wk_000001334": {
+    "workId": "wk_000001334",
+    "title": "턴 레프트, 턴 라이트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1015884"
+    },
+    "titles": {
+      "ko": "턴 레프트, 턴 라이트",
+      "en": "Turn Left, Turn Right",
+      "ja": "ターンレフト・ターンライト"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001428": {
+    "workId": "wk_000001428",
+    "title": "케빈 하트: 그러거나 말거나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102039384"
+    },
+    "titles": {
+      "ko": "케빈 하트: 그러거나 말거나",
+      "en": "Kevin Hart: Zero Fucks Given",
+      "ja": "ケヴィン・ハートのもう知らねえ!"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

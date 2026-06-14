@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001365": {
+    "workId": "wk_000001365",
+    "title": "너는 나의 봄",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106143854"
+    },
+    "titles": {
+      "ko": "너는 나의 봄",
+      "en": "You Are My Spring",
+      "ja": "君は私の春"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

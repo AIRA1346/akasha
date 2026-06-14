@@ -1,0 +1,20 @@
+{
+  "wk_000001331": {
+    "workId": "wk_000001331",
+    "title": "성검학원의 마검사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109025546"
+    },
+    "titles": {
+      "ko": "성검학원의 마검사",
+      "en": "The Demon Sword Master of Excalibur Academy",
+      "ja": "聖剣学院の魔剣使い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

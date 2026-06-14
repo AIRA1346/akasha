@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001324": {
+    "workId": "wk_000001324",
+    "title": "180초로 너의 귀를 행복하게 할 수 있을까?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108535293"
+    },
+    "titles": {
+      "ko": "180초로 너의 귀를 행복하게 할 수 있을까?",
+      "en": "180-Byō de Kimi no Mimi o Shiwase ni Dekiru ka?",
+      "ja": "180秒で君の耳を幸せにできるか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

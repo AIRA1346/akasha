@@ -1,0 +1,20 @@
+{
+  "wk_000001280": {
+    "workId": "wk_000001280",
+    "title": "저, 능력은 평균치로 해달라고 말했잖아요!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108125019"
+    },
+    "titles": {
+      "ko": "저, 능력은 평균치로 해달라고 말했잖아요!",
+      "en": "Didn't I Say to Make My Abilities Average in the Next Life?!",
+      "ja": "私、能力は平均値でって言ったよね!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

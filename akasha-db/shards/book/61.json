@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001401": {
+    "workId": "wk_000001401",
+    "title": "속일본후기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041301"
+    },
+    "titles": {
+      "ko": "속일본후기",
+      "en": "Shoku Nihon Kōki",
+      "ja": "続日本後紀"
+    },
+    "creator": "후지와라노 요시후사",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

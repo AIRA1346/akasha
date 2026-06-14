@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001225": {
+    "workId": "wk_000001225",
+    "title": "린의 날개",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075226"
+    },
+    "titles": {
+      "ko": "린의 날개",
+      "en": "The Wings of Rean",
+      "ja": "リーンの翼"
+    },
+    "creator": "Yoshiyuki Tomino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

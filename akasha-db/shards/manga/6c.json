@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001195": {
+    "workId": "wk_000001195",
+    "title": "아카네 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111437353"
+    },
+    "titles": {
+      "ko": "아카네 이야기",
+      "en": "Akane-banashi",
+      "ja": "あかね噺"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

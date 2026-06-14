@@ -1,0 +1,20 @@
+{
+  "wk_000001442": {
+    "workId": "wk_000001442",
+    "title": "UTOPIA 마지막 세계대전",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11252155"
+    },
+    "titles": {
+      "ko": "UTOPIA 마지막 세계대전",
+      "en": "Q11252155",
+      "ja": "UTOPIA 最後の世界大戦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

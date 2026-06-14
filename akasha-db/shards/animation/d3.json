@@ -1,0 +1,20 @@
+{
+  "wk_000001274": {
+    "workId": "wk_000001274",
+    "title": "DARKER THAN BLACK -유성의 쌍둥이-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078566"
+    },
+    "titles": {
+      "ko": "DARKER THAN BLACK -유성의 쌍둥이-",
+      "en": "Darker than Black: Gemini of the Meteor",
+      "ja": "DARKER THAN BLACK -流星の双子-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

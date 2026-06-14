@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001279": {
+    "workId": "wk_000001279",
+    "title": "이세계 식당",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108091569"
+    },
+    "titles": {
+      "ko": "이세계 식당",
+      "en": "Restaurant to Another World",
+      "ja": "異世界食堂"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001224": {
+    "workId": "wk_000001224",
+    "title": "워페이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052646"
+    },
+    "titles": {
+      "ko": "워페이스",
+      "en": "Warface: Clutch",
+      "ja": "Warface: Clutch"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

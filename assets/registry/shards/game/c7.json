@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001312": {
+    "workId": "wk_000001312",
+    "title": "에이스 오브 스페이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053797"
+    },
+    "titles": {
+      "ko": "에이스 오브 스페이드",
+      "en": "Ace of Spades"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

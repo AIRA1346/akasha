@@ -1,0 +1,21 @@
+{
+  "wk_000001292": {
+    "workId": "wk_000001292",
+    "title": "매리지 톡신",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112114773"
+    },
+    "titles": {
+      "ko": "매리지 톡신",
+      "en": "Marriagetoxin",
+      "ja": "マリッジトキシン"
+    },
+    "creator": "Jōmyaku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

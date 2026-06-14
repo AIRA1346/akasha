@@ -1,0 +1,21 @@
+{
+  "wk_000001196": {
+    "workId": "wk_000001196",
+    "title": "내일, 나는 누군가의 여자친구",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111514537"
+    },
+    "titles": {
+      "ko": "내일, 나는 누군가의 여자친구",
+      "en": "Ashita, Watashi wa Dareka no Kanojo",
+      "ja": "明日、私は誰かのカノジョ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

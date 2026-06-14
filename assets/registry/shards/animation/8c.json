@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001231": {
+    "workId": "wk_000001231",
+    "title": "뱅드림! 로젤리아 에피소드 II : Song I am.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107638267"
+    },
+    "titles": {
+      "ko": "뱅드림! 로젤리아 에피소드 II : Song I am.",
+      "en": "Bang Dream Episode Of Roselia Ii Song I Am"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

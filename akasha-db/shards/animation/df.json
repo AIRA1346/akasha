@@ -1,0 +1,20 @@
+{
+  "wk_000001394": {
+    "workId": "wk_000001394",
+    "title": "야다몽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093416"
+    },
+    "titles": {
+      "ko": "야다몽",
+      "en": "Yadamon",
+      "ja": "ヤダモン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001415": {
+    "workId": "wk_000001415",
+    "title": "그 비스크 돌은 사랑을 한다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109426380"
+    },
+    "titles": {
+      "ko": "그 비스크 돌은 사랑을 한다",
+      "en": "My Dress-Up Darling",
+      "ja": "その着せ替え人形は恋をする"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

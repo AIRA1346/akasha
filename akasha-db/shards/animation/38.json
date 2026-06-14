@@ -1,0 +1,21 @@
+{
+  "wk_000001226": {
+    "workId": "wk_000001226",
+    "title": "극장판 트로피컬 루즈! 프리큐어 눈의 프린세스와 기적의 반지!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107525122"
+    },
+    "titles": {
+      "ko": "극장판 트로피컬 루즈! 프리큐어 눈의 프린세스와 기적의 반지!",
+      "en": "Tropical-Rouge! Pretty Cure the Movie: The Snow Princess and the Miraculous Ring!",
+      "ja": "映画 トロピカル〜ジュ!プリキュア 雪のプリンセスと奇跡の指輪!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

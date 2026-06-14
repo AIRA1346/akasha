@@ -68,5 +68,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001316": {
+    "workId": "wk_000001316",
+    "title": "철권 8",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105486599"
+    },
+    "titles": {
+      "ko": "철권 8",
+      "en": "Tekken 8",
+      "ja": "鉄拳8"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001374": {
+    "workId": "wk_000001374",
+    "title": "마리오 골프 슈퍼 러시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105552962"
+    },
+    "titles": {
+      "ko": "마리오 골프 슈퍼 러시",
+      "en": "Mario Golf: Super Rush",
+      "ja": "マリオゴルフ スーパーラッシュ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

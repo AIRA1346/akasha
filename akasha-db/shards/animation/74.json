@@ -1,0 +1,20 @@
+{
+  "wk_000001320": {
+    "workId": "wk_000001320",
+    "title": "포켓몬 에볼루션즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108383955"
+    },
+    "titles": {
+      "ko": "포켓몬 에볼루션즈",
+      "en": "Pokémon Evolutions",
+      "ja": "Pokémon Evolutions"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

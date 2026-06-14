@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001198": {
+    "workId": "wk_000001198",
+    "title": "무라이의 사랑",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111620829"
+    },
+    "titles": {
+      "ko": "무라이의 사랑",
+      "en": "Murai no Koi",
+      "ja": "村井の恋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

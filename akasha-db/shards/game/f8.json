@@ -1,0 +1,21 @@
+{
+  "wk_000001217": {
+    "workId": "wk_000001217",
+    "title": "동굴 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051853"
+    },
+    "titles": {
+      "ko": "동굴 이야기",
+      "en": "Cave Story",
+      "ja": "洞窟物語"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

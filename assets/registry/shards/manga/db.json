@@ -1,0 +1,21 @@
+{
+  "wk_000001249": {
+    "workId": "wk_000001249",
+    "title": "Lv1 마왕과 원룸 용사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111945836"
+    },
+    "titles": {
+      "ko": "Lv1 마왕과 원룸 용사",
+      "en": "Level 1 Demon Lord and One Room Hero",
+      "ja": "Lv1魔王とワンルーム勇者"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

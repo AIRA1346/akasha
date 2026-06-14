@@ -1,0 +1,21 @@
+{
+  "wk_000001385": {
+    "workId": "wk_000001385",
+    "title": "극장판 유루캠△",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109171859"
+    },
+    "titles": {
+      "ko": "극장판 유루캠△",
+      "en": "Laid-Back Camp Movie",
+      "ja": "映画 ゆるキャン△"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

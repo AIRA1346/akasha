@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001460": {
+    "workId": "wk_000001460",
+    "title": "경찰수업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106582948"
+    },
+    "titles": {
+      "ko": "경찰수업",
+      "en": "Police University",
+      "ja": "警察授業"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

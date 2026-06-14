@@ -1,0 +1,20 @@
+{
+  "wk_000001318": {
+    "workId": "wk_000001318",
+    "title": "레인보우 식스: 크리티컬 아워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054951"
+    },
+    "titles": {
+      "ko": "레인보우 식스: 크리티컬 아워",
+      "en": "Tom Clancy's Rainbow Six: Critical Hour"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001252": {
+    "workId": "wk_000001252",
+    "title": "헬프스터즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105612347"
+    },
+    "titles": {
+      "ko": "헬프스터즈",
+      "en": "Helpsters",
+      "ja": "Helpsters 〜お助けモンスターズ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

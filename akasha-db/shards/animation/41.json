@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001276": {
+    "workId": "wk_000001276",
+    "title": "마브러브 얼터너티브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985959"
+    },
+    "titles": {
+      "ko": "마브러브 얼터너티브",
+      "en": "Muv-Luv Alternative",
+      "ja": "マブラヴ オルタネイティヴ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001387": {
+    "workId": "wk_000001387",
+    "title": "얏타맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092074"
+    },
+    "titles": {
+      "ko": "얏타맨",
+      "en": "Yatterman",
+      "ja": "ヤッターマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

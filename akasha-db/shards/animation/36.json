@@ -1,0 +1,21 @@
+{
+  "wk_000001416": {
+    "workId": "wk_000001416",
+    "title": "요수도시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10943025"
+    },
+    "titles": {
+      "ko": "요수도시",
+      "en": "Wicked City",
+      "ja": "妖獣都市"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

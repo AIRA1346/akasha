@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001380": {
+    "workId": "wk_000001380",
+    "title": "루퍼스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105597521"
+    },
+    "titles": {
+      "ko": "루퍼스",
+      "en": "Loopers",
+      "ja": "Loopers"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

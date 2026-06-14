@@ -1,0 +1,39 @@
+{
+  "wk_000001349": {
+    "workId": "wk_000001349",
+    "title": "금색의 마비노기온 -아서 왕의 누이-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112223352"
+    },
+    "titles": {
+      "ko": "금색의 마비노기온 -아서 왕의 누이-",
+      "en": "Kin'iro no Mabinogion: Arthur Ō no Imōto-hime",
+      "ja": "金色のマビノギオン -アーサー王の妹姫-"
+    },
+    "creator": "Nanpei Yamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001404": {
+    "workId": "wk_000001404",
+    "title": "pop'n music -두근두근! 팝픈 만화-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11239790"
+    },
+    "titles": {
+      "ko": "pop'n music -두근두근! 팝픈 만화-",
+      "en": "Q11239790",
+      "ja": "pop'n music -わくわく! ポップンマンガ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

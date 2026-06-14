@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001267": {
+    "workId": "wk_000001267",
+    "title": "톰 클랜시의 스플린터 셀: 판도라 투머로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053110"
+    },
+    "titles": {
+      "ko": "톰 클랜시의 스플린터 셀: 판도라 투머로",
+      "en": "Tom Clancy's Splinter Cell: Pandora Tomorrow",
+      "ja": "スプリンターセル パンドラトゥモロー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

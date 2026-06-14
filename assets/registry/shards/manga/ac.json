@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001246": {
+    "workId": "wk_000001246",
+    "title": "옆자리의 노부쿠니 양은 나를 좋아하는 것 같아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111944266"
+    },
+    "titles": {
+      "ko": "옆자리의 노부쿠니 양은 나를 좋아하는 것 같아",
+      "en": "I Get the Feeling That Nobukuni-san Likes Me",
+      "ja": "となりの信國さんは俺のことが好きな気がする"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

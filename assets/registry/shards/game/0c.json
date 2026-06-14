@@ -1,0 +1,20 @@
+{
+  "wk_000001469": {
+    "workId": "wk_000001469",
+    "title": "신스라이더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105624201"
+    },
+    "titles": {
+      "ko": "신스라이더",
+      "en": "Synth Riders"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

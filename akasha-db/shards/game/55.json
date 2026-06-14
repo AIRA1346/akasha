@@ -1,0 +1,21 @@
+{
+  "wk_000001221": {
+    "workId": "wk_000001221",
+    "title": "팩맨 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052174"
+    },
+    "titles": {
+      "ko": "팩맨 2",
+      "en": "Pac-Man 2: The New Adventures",
+      "ja": "ハロー!パックマン"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

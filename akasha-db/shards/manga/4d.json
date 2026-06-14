@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001354": {
+    "workId": "wk_000001354",
+    "title": "OH! MY 콘부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237135"
+    },
+    "titles": {
+      "ko": "OH! MY 콘부",
+      "en": "Oh! My Konbu",
+      "ja": "OH!MYコンブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

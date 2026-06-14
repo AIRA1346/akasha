@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001441": {
+    "workId": "wk_000001441",
+    "title": "사나이 오이동",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248140"
+    },
+    "titles": {
+      "ko": "사나이 오이동",
+      "en": "Otoko Oidon",
+      "ja": "男おいどん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

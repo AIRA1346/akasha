@@ -1,0 +1,22 @@
+{
+  "wk_000001240": {
+    "workId": "wk_000001240",
+    "title": "공생 가설",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103898967"
+    },
+    "titles": {
+      "ko": "공생 가설",
+      "en": "Symbiosis Theory",
+      "ja": "共生仮設"
+    },
+    "releaseYear": 2019,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

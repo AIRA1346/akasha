@@ -1,0 +1,20 @@
+{
+  "wk_000001358": {
+    "workId": "wk_000001358",
+    "title": "라켓소년단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105987655"
+    },
+    "titles": {
+      "ko": "라켓소년단",
+      "en": "Racket Boys",
+      "ja": "ラケット少年団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

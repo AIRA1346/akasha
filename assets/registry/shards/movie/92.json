@@ -1,0 +1,21 @@
+{
+  "wk_000001335": {
+    "workId": "wk_000001335",
+    "title": "최가박당 3 - 여황밀령",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1015901"
+    },
+    "titles": {
+      "ko": "최가박당 3 - 여황밀령",
+      "en": "Aces Go Places 3",
+      "ja": "皇帝密使"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

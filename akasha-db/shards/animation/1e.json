@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001412": {
+    "workId": "wk_000001412",
+    "title": "세계명작동화 백조의 호수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093555"
+    },
+    "titles": {
+      "ko": "세계명작동화 백조의 호수",
+      "en": "Swan Lake",
+      "ja": "世界名作童話 白鳥の湖"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

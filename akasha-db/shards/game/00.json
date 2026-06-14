@@ -1,0 +1,21 @@
+{
+  "wk_000001375": {
+    "workId": "wk_000001375",
+    "title": "트라이앵글 스트래티지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105561171"
+    },
+    "titles": {
+      "ko": "트라이앵글 스트래티지",
+      "en": "Triangle Strategy",
+      "ja": "トライアングルストラテジー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001430": {
+    "workId": "wk_000001430",
+    "title": "벨로시랩터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102047812"
+    },
+    "titles": {
+      "ko": "벨로시랩터",
+      "en": "Velociraptor"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

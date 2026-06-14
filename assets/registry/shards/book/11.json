@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001399": {
+    "workId": "wk_000001399",
+    "title": "지금, 만나러 갑니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104119645"
+    },
+    "titles": {
+      "ko": "지금, 만나러 갑니다",
+      "en": "Be with You",
+      "ja": "いま、会いにゆきます"
+    },
+    "releaseYear": 2003,
+    "creator": "Takuji Ichikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

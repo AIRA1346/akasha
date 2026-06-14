@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001367": {
+    "workId": "wk_000001367",
+    "title": "MUSIC BLOOD",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106171336"
+    },
+    "titles": {
+      "ko": "MUSIC BLOOD",
+      "en": "MUSIC BLOOD",
+      "ja": "MUSIC BLOOD"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000001295": {
+    "workId": "wk_000001295",
+    "title": "뮤즈의 거울",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058051"
+    },
+    "titles": {
+      "ko": "뮤즈의 거울",
+      "en": "Muse no Kagami",
+      "ja": "ミューズの鏡"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

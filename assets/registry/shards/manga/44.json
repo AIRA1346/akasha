@@ -1,0 +1,21 @@
+{
+  "wk_000001199": {
+    "workId": "wk_000001199",
+    "title": "쿨하고 바보 같은 남자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111693578"
+    },
+    "titles": {
+      "ko": "쿨하고 바보 같은 남자",
+      "en": "Play It Cool, Guys",
+      "ja": "クールドジ男子"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

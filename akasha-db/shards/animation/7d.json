@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001321": {
+    "workId": "wk_000001321",
+    "title": "헤이케모노가타리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108393516"
+    },
+    "titles": {
+      "ko": "헤이케모노가타리",
+      "en": "The Heike Story",
+      "ja": "平家物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

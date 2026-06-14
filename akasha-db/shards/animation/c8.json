@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001332": {
+    "workId": "wk_000001332",
+    "title": "리맨즈 클럽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109026316"
+    },
+    "titles": {
+      "ko": "리맨즈 클럽",
+      "en": "Salaryman's Club",
+      "ja": "リーマンズクラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

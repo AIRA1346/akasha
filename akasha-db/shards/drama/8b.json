@@ -1,0 +1,19 @@
+{
+  "wk_000001296": {
+    "workId": "wk_000001296",
+    "title": "뭉쳐야 쏜다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105840531"
+    },
+    "titles": {
+      "ko": "뭉쳐야 쏜다",
+      "en": "Q105840531"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

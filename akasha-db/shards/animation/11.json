@@ -1,0 +1,21 @@
+{
+  "wk_000001414": {
+    "workId": "wk_000001414",
+    "title": "세느강의 별",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093846"
+    },
+    "titles": {
+      "ko": "세느강의 별",
+      "en": "La Seine no Hoshi",
+      "ja": "ラ・セーヌの星"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

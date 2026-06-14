@@ -1,0 +1,21 @@
+{
+  "wk_000001480": {
+    "workId": "wk_000001480",
+    "title": "우리 중 하나가 다음이다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104375062"
+    },
+    "titles": {
+      "ko": "우리 중 하나가 다음이다",
+      "en": "One of Us Is Next"
+    },
+    "releaseYear": 2020,
+    "creator": "Karen M. McManus",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001436": {
+    "workId": "wk_000001436",
+    "title": "데드풀과 울버린",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102180106"
+    },
+    "titles": {
+      "ko": "데드풀과 울버린",
+      "en": "Deadpool & Wolverine",
+      "ja": "デッドプール&ウルヴァリン"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

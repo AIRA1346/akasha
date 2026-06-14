@@ -1,0 +1,22 @@
+{
+  "wk_000001290": {
+    "workId": "wk_000001290",
+    "title": "도원암귀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111987662"
+    },
+    "titles": {
+      "ko": "도원암귀",
+      "en": "Tougen Anki",
+      "ja": "桃源暗鬼"
+    },
+    "releaseYear": 2020,
+    "creator": "Yura Urushibara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

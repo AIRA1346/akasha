@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001211": {
+    "workId": "wk_000001211",
+    "title": "속아도 꿈결",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105530974"
+    },
+    "titles": {
+      "ko": "속아도 꿈결",
+      "en": "Be My Dream Family",
+      "ja": "だまされても夢心地"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

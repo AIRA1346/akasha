@@ -1,0 +1,21 @@
+{
+  "wk_000001478": {
+    "workId": "wk_000001478",
+    "title": "모데란",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104205667"
+    },
+    "titles": {
+      "ko": "모데란",
+      "en": "Moderan"
+    },
+    "releaseYear": 1971,
+    "creator": "David R. Bunch",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001464": {
+    "workId": "wk_000001464",
+    "title": "전국무쌍 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105608598"
+    },
+    "titles": {
+      "ko": "전국무쌍 5",
+      "en": "Samurai Warriors 5",
+      "ja": "戦国無双5"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

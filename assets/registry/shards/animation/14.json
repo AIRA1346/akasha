@@ -1,0 +1,20 @@
+{
+  "wk_000001275": {
+    "workId": "wk_000001275",
+    "title": "다이쇼 소녀 전래동화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985898"
+    },
+    "titles": {
+      "ko": "다이쇼 소녀 전래동화",
+      "en": "Taisho Otome Fairy Tale",
+      "ja": "大正処女御伽話"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

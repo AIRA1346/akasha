@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001202": {
+    "workId": "wk_000001202",
+    "title": "사이키 쿠스오의 재난",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11180148"
+    },
+    "titles": {
+      "ko": "사이키 쿠스오의 재난",
+      "en": "The Disastrous Life of Saiki K.",
+      "ja": "斉木楠雄のΨ難"
+    },
+    "creator": "麻生周一",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000001285": {
+    "workId": "wk_000001285",
+    "title": "나의 우주 영웅에 관하여",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103899217"
+    },
+    "titles": {
+      "ko": "나의 우주 영웅에 관하여",
+      "en": "My Space Heroine",
+      "ja": "わたしのスペースヒーローについて"
+    },
+    "releaseYear": 2019,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

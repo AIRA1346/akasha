@@ -1,0 +1,21 @@
+{
+  "wk_000001341": {
+    "workId": "wk_000001341",
+    "title": "나비효과: 레버레이션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018109"
+    },
+    "titles": {
+      "ko": "나비효과: 레버레이션",
+      "en": "The Butterfly Effect 3: Revelations",
+      "ja": "バタフライ・エフェクト3/最後の選択"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

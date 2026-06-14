@@ -1,0 +1,38 @@
+{
+  "wk_000001303": {
+    "workId": "wk_000001303",
+    "title": "페리아: 가장 어두운 빛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105942762"
+    },
+    "titles": {
+      "ko": "페리아: 가장 어두운 빛",
+      "en": "Feria: The Darkest Light",
+      "ja": "フェリア - 深き闇の光 -"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001461": {
+    "workId": "wk_000001461",
+    "title": "치욕! 꽃미남 아롱사태",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106584368"
+    },
+    "titles": {
+      "ko": "치욕! 꽃미남 아롱사태",
+      "en": "Humiliating Flower Boys"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

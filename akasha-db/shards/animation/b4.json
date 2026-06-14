@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001272": {
+    "workId": "wk_000001272",
+    "title": "존 드로리안: 디트로이트의 왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107766578"
+    },
+    "titles": {
+      "ko": "존 드로리안: 디트로이트의 왕",
+      "en": "Myth & Mogul: John DeLorean",
+      "ja": "ジョン・デロリアン: 世界を魅了した伝説の男"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

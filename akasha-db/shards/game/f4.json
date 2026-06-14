@@ -1,0 +1,21 @@
+{
+  "wk_000001378": {
+    "workId": "wk_000001378",
+    "title": "스쿨데이즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055893"
+    },
+    "titles": {
+      "ko": "스쿨데이즈",
+      "en": "School Days",
+      "ja": "School Days"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

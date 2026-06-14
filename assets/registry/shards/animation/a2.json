@@ -65,5 +65,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001391": {
+    "workId": "wk_000001391",
+    "title": "BIRDIE WING -Golf Girls' Story-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109295346"
+    },
+    "titles": {
+      "ko": "BIRDIE WING -Golf Girls' Story-",
+      "en": "Birdie Wing: Golf Girls' Story",
+      "ja": "BIRDIE WING -Golf Girls' Story-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

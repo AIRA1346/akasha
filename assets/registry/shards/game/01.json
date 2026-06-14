@@ -1,0 +1,21 @@
+{
+  "wk_000001465": {
+    "workId": "wk_000001465",
+    "title": "슈퍼로봇대전 D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056097"
+    },
+    "titles": {
+      "ko": "슈퍼로봇대전 D",
+      "en": "Super Robot Wars Destiny",
+      "ja": "スーパーロボット大戦D"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

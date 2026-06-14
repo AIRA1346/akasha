@@ -1,0 +1,21 @@
+{
+  "wk_000001437": {
+    "workId": "wk_000001437",
+    "title": "유년의 뜰",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104180621"
+    },
+    "titles": {
+      "ko": "유년의 뜰",
+      "en": "Q104180621"
+    },
+    "releaseYear": 1981,
+    "creator": "Oh Jung-hee",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

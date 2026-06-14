@@ -30,5 +30,22 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001360": {
+    "workId": "wk_000001360",
+    "title": "독립만세",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106010831"
+    },
+    "titles": {
+      "ko": "독립만세",
+      "en": "Long Live Independence"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

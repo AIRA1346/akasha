@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001201": {
+    "workId": "wk_000001201",
+    "title": "밤은 고양이와 함께",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111782517"
+    },
+    "titles": {
+      "ko": "밤은 고양이와 함께",
+      "en": "Nights with a Cat",
+      "ja": "夜は猫といっしょ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

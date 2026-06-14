@@ -1,0 +1,20 @@
+{
+  "wk_000001369": {
+    "workId": "wk_000001369",
+    "title": "타임 보칸 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061811"
+    },
+    "titles": {
+      "ko": "타임 보칸 시리즈",
+      "en": "Time Bokan series",
+      "ja": "タイムボカンシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

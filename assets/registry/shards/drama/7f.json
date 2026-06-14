@@ -52,5 +52,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001307": {
+    "workId": "wk_000001307",
+    "title": "라 데살마다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105966650"
+    },
+    "titles": {
+      "ko": "라 데살마다",
+      "en": "La desalmada"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001362": {
+    "workId": "wk_000001362",
+    "title": "알고있지만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106091446"
+    },
+    "titles": {
+      "ko": "알고있지만",
+      "en": "Nevertheless",
+      "ja": "わかっていても"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

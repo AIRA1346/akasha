@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001353": {
+    "workId": "wk_000001353",
+    "title": "Ns '아오이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236939"
+    },
+    "titles": {
+      "ko": "Ns '아오이",
+      "en": "Ns' Aoi",
+      "ja": "Ns'あおい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

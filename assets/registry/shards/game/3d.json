@@ -1,0 +1,21 @@
+{
+  "wk_000001466": {
+    "workId": "wk_000001466",
+    "title": "오모리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105618699"
+    },
+    "titles": {
+      "ko": "오모리",
+      "en": "Omori",
+      "ja": "OMORI"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

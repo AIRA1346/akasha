@@ -1,0 +1,21 @@
+{
+  "wk_000001395": {
+    "workId": "wk_000001395",
+    "title": "금옥만당",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018729"
+    },
+    "titles": {
+      "ko": "금옥만당",
+      "en": "The Chinese Feast",
+      "ja": "金玉満堂/決戦!炎の料理人"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

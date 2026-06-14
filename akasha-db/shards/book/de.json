@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000001438": {
+    "workId": "wk_000001438",
+    "title": "중국인 거리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104180699"
+    },
+    "titles": {
+      "ko": "중국인 거리",
+      "en": "Q104180699"
+    },
+    "releaseYear": 1979,
+    "creator": "Oh Jung-hee",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

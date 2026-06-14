@@ -1,0 +1,20 @@
+{
+  "wk_000001364": {
+    "workId": "wk_000001364",
+    "title": "여고추리반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106136508"
+    },
+    "titles": {
+      "ko": "여고추리반",
+      "en": "Q106136508",
+      "ja": "女子高推理部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

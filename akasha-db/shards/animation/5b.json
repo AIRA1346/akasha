@@ -1,0 +1,21 @@
+{
+  "wk_000001329": {
+    "workId": "wk_000001329",
+    "title": "점선을 따라 찢어라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108852813"
+    },
+    "titles": {
+      "ko": "점선을 따라 찢어라",
+      "en": "Tear Along the Dotted Line",
+      "ja": "点線に沿って切り取る"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001251": {
+    "workId": "wk_000001251",
+    "title": "디멘션W",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11196859"
+    },
+    "titles": {
+      "ko": "디멘션W",
+      "en": "Dimension W",
+      "ja": "Dimension W"
+    },
+    "creator": "Yūji Iwahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001393": {
+    "workId": "wk_000001393",
+    "title": "우주전함 야마토 3",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093397"
+    },
+    "titles": {
+      "ko": "우주전함 야마토 3",
+      "en": "Space Battleship Yamato III",
+      "ja": "宇宙戦艦ヤマトIII"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

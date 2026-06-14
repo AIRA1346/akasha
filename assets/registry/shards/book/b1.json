@@ -1,0 +1,40 @@
+{
+  "wk_000001439": {
+    "workId": "wk_000001439",
+    "title": "눈보라 체이스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104189504"
+    },
+    "titles": {
+      "ko": "눈보라 체이스",
+      "en": "Q104189504",
+      "ja": "雪煙チェイス"
+    },
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001483": {
+    "workId": "wk_000001483",
+    "title": "지성개선론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044508"
+    },
+    "titles": {
+      "ko": "지성개선론",
+      "en": "Tractatus de Intellectus Emendatione"
+    },
+    "releaseYear": 1677,
+    "creator": "Benedictus de Spinoza",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "wk_000001333": {
+    "workId": "wk_000001333",
+    "title": "도학위룡 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1015816"
+    },
+    "titles": {
+      "ko": "도학위룡 3",
+      "en": "Fight Back to School III",
+      "ja": "ファイト・バック・トゥ・スクール３　秘密指令は氷の微笑"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001477": {
+    "workId": "wk_000001477",
+    "title": "해리 포터와 불사조 기사단",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102235"
+    },
+    "titles": {
+      "ko": "해리 포터와 불사조 기사단",
+      "en": "Harry Potter and the Order of the Phoenix",
+      "ja": "ハリー・ポッターと不死鳥の騎士団"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001351": {
+    "workId": "wk_000001351",
+    "title": "돌격! 빠빠라대",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235427"
+    },
+    "titles": {
+      "ko": "돌격! 빠빠라대",
+      "en": "Totsugeki! Pappara-tai",
+      "ja": "突撃!パッパラ隊"
+    },
+    "creator": "Natsuki Matsuzawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

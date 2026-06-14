@@ -1,0 +1,20 @@
+{
+  "wk_000001281": {
+    "workId": "wk_000001281",
+    "title": "천국의 깃발 아래",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108166770"
+    },
+    "titles": {
+      "ko": "천국의 깃발 아래",
+      "en": "Under the Banner of Heaven",
+      "ja": "アンダー・ザ・ヘブン 信仰の真実"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

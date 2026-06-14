@@ -1,0 +1,21 @@
+{
+  "wk_000001337": {
+    "workId": "wk_000001337",
+    "title": "버크 앤 헤어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1016369"
+    },
+    "titles": {
+      "ko": "버크 앤 헤어",
+      "en": "Burke & Hare",
+      "ja": "バーク アンド ヘア"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

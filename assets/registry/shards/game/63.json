@@ -1,0 +1,20 @@
+{
+  "wk_000001314": {
+    "workId": "wk_000001314",
+    "title": "아랑전설: 퍼스트 컨택트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105435312"
+    },
+    "titles": {
+      "ko": "아랑전설: 퍼스트 컨택트",
+      "en": "Fatal Fury: First Contact",
+      "ja": "餓狼伝説ファーストコンタクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

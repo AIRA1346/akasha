@@ -1,0 +1,20 @@
+{
+  "wk_000001418": {
+    "workId": "wk_000001418",
+    "title": "철야의 노래",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109523881"
+    },
+    "titles": {
+      "ko": "철야의 노래",
+      "en": "Call of the Night",
+      "ja": "よふかしのうた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

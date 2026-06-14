@@ -1,0 +1,19 @@
+{
+  "wk_000001262": {
+    "workId": "wk_000001262",
+    "title": "나의 판타집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105783098"
+    },
+    "titles": {
+      "ko": "나의 판타집",
+      "en": "Q105783098"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

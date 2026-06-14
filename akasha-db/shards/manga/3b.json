@@ -1,0 +1,21 @@
+{
+  "wk_000001357": {
+    "workId": "wk_000001357",
+    "title": "페리도트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11238596"
+    },
+    "titles": {
+      "ko": "페리도트",
+      "en": "Peridot",
+      "ja": "PERIDOT"
+    },
+    "creator": "Hiyoko Kobayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001386": {
+    "workId": "wk_000001386",
+    "title": "도쿄 24구",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109183058"
+    },
+    "titles": {
+      "ko": "도쿄 24구",
+      "en": "Tokyo 24th Ward",
+      "ja": "東京24区"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

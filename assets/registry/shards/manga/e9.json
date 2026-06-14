@@ -66,5 +66,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001405": {
+    "workId": "wk_000001405",
+    "title": "SABER CATS",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242374"
+    },
+    "titles": {
+      "ko": "SABER CATS",
+      "en": "Q11242374",
+      "ja": "SABER CATS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

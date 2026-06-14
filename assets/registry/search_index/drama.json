@@ -1,5 +1,26 @@
 [
   {
+    "workId": "wk_000001455",
+    "title": "39 계단",
+    "shardId": "drama_7e",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "39 계단",
+      "39계단",
+      "The 39 Steps",
+      "the39steps"
+    ],
+    "titles": {
+      "ko": "39 계단",
+      "en": "The 39 Steps"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000646",
     "title": "CTV 내셔널 뉴스",
     "shardId": "drama_7f",
@@ -46,6 +67,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001207",
+    "title": "Donkey Hodie",
+    "shardId": "drama_3c",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Donkey Hodie",
+      "donkeyhodie"
+    ],
+    "titles": {
+      "ko": "Donkey Hodie",
+      "en": "Donkey Hodie",
+      "ja": "Donkey Hodie"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000484",
     "title": "F4 Thailand: Boys Over Flowers",
     "shardId": "drama_b0",
@@ -63,6 +104,30 @@
       "ko": "F4 Thailand: Boys Over Flowers",
       "en": "lF4 Thailand: Boys Over Fowers",
       "ja": "F4 Thailand: Boys Over Flowers"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001298",
+    "title": "FNS 가요제",
+    "shardId": "drama_08",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "FNS Music Festival",
+      "FNS 가요제",
+      "FNS歌謡祭",
+      "fnsmusicfestival",
+      "fns歌謡祭",
+      "fns가요제"
+    ],
+    "titles": {
+      "ko": "FNS 가요제",
+      "en": "FNS Music Festival",
+      "ja": "FNS歌謡祭"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -90,6 +155,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001367",
+    "title": "MUSIC BLOOD",
+    "shardId": "drama_d0",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "MUSIC BLOOD",
+      "musicblood"
+    ],
+    "titles": {
+      "ko": "MUSIC BLOOD",
+      "en": "MUSIC BLOOD",
+      "ja": "MUSIC BLOOD"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000591",
     "title": "Mariah Carey's Magical Christmas Special",
     "shardId": "drama_53",
@@ -112,6 +197,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001206",
+    "title": "Q10",
+    "shardId": "drama_01",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q10",
+      "q10"
+    ],
+    "titles": {
+      "ko": "Q10",
+      "en": "Q10",
+      "ja": "Q10"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000776",
     "title": "SMAP×SMAP",
     "shardId": "drama_df",
@@ -127,6 +232,27 @@
       "ko": "SMAP×SMAP",
       "en": "SMAP×SMAP",
       "ja": "SMAP×SMAP"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001370",
+    "title": "SOS 메 에스토이 에나모란도",
+    "shardId": "drama_02",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "SOS me estoy enamorando",
+      "SOS 메 에스토이 에나모란도",
+      "sosmeestoyenamorando",
+      "sos메에스토이에나모란도"
+    ],
+    "titles": {
+      "ko": "SOS 메 에스토이 에나모란도",
+      "en": "SOS me estoy enamorando"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -192,6 +318,26 @@
       "ko": "간 떨어지는 동거",
       "en": "My Roommate is a Gumiho",
       "ja": "九尾の狐とキケンな同居"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001372",
+    "title": "강철부대",
+    "shardId": "drama_3f",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Steel Troops",
+      "steeltroops",
+      "강철부대"
+    ],
+    "titles": {
+      "ko": "강철부대",
+      "en": "Steel Troops"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -287,6 +433,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001460",
+    "title": "경찰수업",
+    "shardId": "drama_53",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Police University",
+      "policeuniversity",
+      "警察授業",
+      "경찰수업"
+    ],
+    "titles": {
+      "ko": "경찰수업",
+      "en": "Police University",
+      "ja": "警察授業"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000589",
     "title": "고양이",
     "shardId": "drama_59",
@@ -328,6 +496,75 @@
       "ko": "고요의 바다",
       "en": "The Silent Sea",
       "ja": "静かなる海"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001368",
+    "title": "그들",
+    "shardId": "drama_f7",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Them",
+      "them",
+      "ゼム (2021年のテレビドラマ)",
+      "ゼム(2021年のテレビドラマ)",
+      "그들"
+    ],
+    "titles": {
+      "ko": "그들",
+      "en": "Them",
+      "ja": "ゼム (2021年のテレビドラマ)"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001257",
+    "title": "그때 키스해 두었더라면",
+    "shardId": "drama_ac",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q105740455",
+      "q105740455",
+      "あのときキスしておけば",
+      "그때 키스해 두었더라면",
+      "그때키스해두었더라면"
+    ],
+    "titles": {
+      "ko": "그때 키스해 두었더라면",
+      "en": "Q105740455",
+      "ja": "あのときキスしておけば"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001363",
+    "title": "그로잉 페인즈",
+    "shardId": "drama_77",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Growing Pains",
+      "growingpains",
+      "愉快なシーバー家",
+      "그로잉 페인즈",
+      "그로잉페인즈"
+    ],
+    "titles": {
+      "ko": "그로잉 페인즈",
+      "en": "Growing Pains",
+      "ja": "愉快なシーバー家"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -434,6 +671,27 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001262",
+    "title": "나의 판타집",
+    "shardId": "drama_07",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q105783098",
+      "q105783098",
+      "나의 판타집",
+      "나의판타집"
+    ],
+    "titles": {
+      "ko": "나의 판타집",
+      "en": "Q105783098"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000483",
     "title": "날아라 개천용",
     "shardId": "drama_75",
@@ -522,6 +780,29 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001365",
+    "title": "너는 나의 봄",
+    "shardId": "drama_7d",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "You Are My Spring",
+      "youaremyspring",
+      "君は私の春",
+      "너는 나의 봄",
+      "너는나의봄"
+    ],
+    "titles": {
+      "ko": "너는 나의 봄",
+      "en": "You Are My Spring",
+      "ja": "君は私の春"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000892",
@@ -614,6 +895,50 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001305",
+    "title": "노는언니",
+    "shardId": "drama_dd",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q105949888",
+      "q105949888",
+      "노는언니"
+    ],
+    "titles": {
+      "ko": "노는언니",
+      "en": "Q105949888"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001302",
+    "title": "뉴스 금요일 5시",
+    "shardId": "drama_55",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q105940494",
+      "q105940494",
+      "ニュース きん5時",
+      "ニュースきん5時",
+      "뉴스 금요일 5시",
+      "뉴스금요일5시"
+    ],
+    "titles": {
+      "ko": "뉴스 금요일 5시",
+      "en": "Q105940494",
+      "ja": "ニュース きん5時"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000593",
     "title": "뉴스 워치 9",
     "shardId": "drama_80",
@@ -632,6 +957,51 @@
       "ko": "뉴스 워치 9",
       "en": "News Watch 9",
       "ja": "ニュースウオッチ9"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001215",
+    "title": "뉴욕 특수수사대",
+    "shardId": "drama_dc",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "LAW & ORDER:犯罪心理捜査班",
+      "Law & Order: Criminal Intent",
+      "law&ordercriminalintent",
+      "law&order犯罪心理捜査班",
+      "뉴욕 특수수사대",
+      "뉴욕특수수사대"
+    ],
+    "titles": {
+      "ko": "뉴욕 특수수사대",
+      "en": "Law & Order: Criminal Intent",
+      "ja": "LAW & ORDER:犯罪心理捜査班"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001451",
+    "title": "니냐 니뇨",
+    "shardId": "drama_f3",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Niña Niño",
+      "niñaniño",
+      "니냐 니뇨",
+      "니냐니뇨"
+    ],
+    "titles": {
+      "ko": "니냐 니뇨",
+      "en": "Niña Niño"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -679,6 +1049,50 @@
       "ko": "다섯 손가락",
       "en": "Five Fingers",
       "ja": "蒼のピアニスト"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001300",
+    "title": "다크홀",
+    "shardId": "drama_ee",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dark Hole",
+      "darkhole",
+      "ダークホール",
+      "다크홀"
+    ],
+    "titles": {
+      "ko": "다크홀",
+      "en": "Dark Hole",
+      "ja": "ダークホール"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001304",
+    "title": "대박부동산",
+    "shardId": "drama_f9",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sell Your Haunted House",
+      "sellyourhauntedhouse",
+      "テバク不動産",
+      "대박부동산"
+    ],
+    "titles": {
+      "ko": "대박부동산",
+      "en": "Sell Your Haunted House",
+      "ja": "テバク不動産"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -884,6 +1298,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001360",
+    "title": "독립만세",
+    "shardId": "drama_5d",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Long Live Independence",
+      "longliveindependence",
+      "독립만세"
+    ],
+    "titles": {
+      "ko": "독립만세",
+      "en": "Long Live Independence"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000582",
     "title": "돕식: 약물의 늪",
     "shardId": "drama_9e",
@@ -974,6 +1408,27 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001307",
+    "title": "라 데살마다",
+    "shardId": "drama_7f",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "La desalmada",
+      "ladesalmada",
+      "라 데살마다",
+      "라데살마다"
+    ],
+    "titles": {
+      "ko": "라 데살마다",
+      "en": "La desalmada"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001047",
     "title": "라 비다 레나",
     "shardId": "drama_47",
@@ -1014,6 +1469,51 @@
       "ko": "라 팔로마",
       "en": "La Paloma",
       "ja": "ラ・パロマ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001462",
+    "title": "라이어 게임 (2007년 드라마)",
+    "shardId": "drama_15",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Liar Game",
+      "liargame",
+      "ライアーゲーム",
+      "라이어 게임 (2007년 드라마)",
+      "라이어게임(2007년드라마)"
+    ],
+    "titles": {
+      "ko": "라이어 게임 (2007년 드라마)",
+      "en": "Liar Game",
+      "ja": "ライアーゲーム"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001358",
+    "title": "라켓소년단",
+    "shardId": "drama_04",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Racket Boys",
+      "racketboys",
+      "ラケット少年団",
+      "라켓소년단"
+    ],
+    "titles": {
+      "ko": "라켓소년단",
+      "en": "Racket Boys",
+      "ja": "ラケット少年団"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1192,6 +1692,50 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001214",
+    "title": "롱 곤 걸치",
+    "shardId": "drama_45",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Long Gone Gulch",
+      "longgonegulch",
+      "롱 곤 걸치",
+      "롱곤걸치"
+    ],
+    "titles": {
+      "ko": "롱 곤 걸치",
+      "en": "Long Gone Gulch"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001216",
+    "title": "롱 웨이 라운드",
+    "shardId": "drama_cc",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "Charley Boorman",
+    "tags": [],
+    "searchTokens": [
+      "Charley Boorman",
+      "Long Way Round",
+      "charleyboorman",
+      "longwayround",
+      "롱 웨이 라운드",
+      "롱웨이라운드"
+    ],
+    "titles": {
+      "ko": "롱 웨이 라운드",
+      "en": "Long Way Round"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000777",
     "title": "료불기적아과의생",
     "shardId": "drama_8a",
@@ -1255,6 +1799,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001454",
+    "title": "링컨 차를 타는 변호사",
+    "shardId": "drama_62",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Lincoln Lawyer",
+      "thelincolnlawyer",
+      "リンカーン弁護士",
+      "링컨 차를 타는 변호사",
+      "링컨차를타는변호사"
+    ],
+    "titles": {
+      "ko": "링컨 차를 타는 변호사",
+      "en": "The Lincoln Lawyer",
+      "ja": "リンカーン弁護士"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001002",
     "title": "마라슐르",
     "shardId": "drama_0d",
@@ -1270,6 +1837,28 @@
     "titles": {
       "ko": "마라슐르",
       "en": "Maraşlı"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001456",
+    "title": "마리마르",
+    "shardId": "drama_db",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Marimar",
+      "marimar",
+      "マリマール",
+      "마리마르"
+    ],
+    "titles": {
+      "ko": "마리마르",
+      "en": "Marimar",
+      "ja": "マリマール"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1341,6 +1930,74 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001263",
+    "title": "마블 원샷츠",
+    "shardId": "drama_a8",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Marvel One-Shots",
+      "marveloneshots",
+      "マーベルワンショット",
+      "マーベル・ワンショット",
+      "마블 원샷츠",
+      "마블원샷츠"
+    ],
+    "titles": {
+      "ko": "마블 원샷츠",
+      "en": "Marvel One-Shots",
+      "ja": "マーベル・ワンショット"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001359",
+    "title": "마수미예트",
+    "shardId": "drama_d2",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Masumiyet",
+      "masumiyet",
+      "마수미예트"
+    ],
+    "titles": {
+      "ko": "마수미예트",
+      "en": "Masumiyet"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001253",
+    "title": "마이 네임",
+    "shardId": "drama_cd",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "My Name",
+      "myname",
+      "マイネーム: 偽りと復讐",
+      "マイネーム偽りと復讐",
+      "마이 네임",
+      "마이네임"
+    ],
+    "titles": {
+      "ko": "마이 네임",
+      "en": "My Name",
+      "ja": "マイネーム: 偽りと復讐"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000486",
     "title": "마이티 익스프레스",
     "shardId": "drama_0d",
@@ -1360,6 +2017,30 @@
       "ko": "마이티 익스프레스",
       "en": "Mighty Express",
       "ja": "マイティ・エクスプレス"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001301",
+    "title": "마인:MINE (2021년 드라마)",
+    "shardId": "drama_7e",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mine",
+      "Mine (テレビドラマ)",
+      "mine",
+      "mine(テレビドラマ)",
+      "마인:MINE (2021년 드라마)",
+      "마인mine(2021년드라마)"
+    ],
+    "titles": {
+      "ko": "마인:MINE (2021년 드라마)",
+      "en": "Mine",
+      "ja": "Mine (テレビドラマ)"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1466,6 +2147,50 @@
     "titles": {
       "ko": "무인도에서 탈출하는 방법",
       "en": "The Great Escapists"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001296",
+    "title": "뭉쳐야 쏜다",
+    "shardId": "drama_8b",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q105840531",
+      "q105840531",
+      "뭉쳐야 쏜다",
+      "뭉쳐야쏜다"
+    ],
+    "titles": {
+      "ko": "뭉쳐야 쏜다",
+      "en": "Q105840531"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001295",
+    "title": "뮤즈의 거울",
+    "shardId": "drama_d1",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Muse no Kagami",
+      "musenokagami",
+      "ミューズの鏡",
+      "뮤즈의 거울",
+      "뮤즈의거울"
+    ],
+    "titles": {
+      "ko": "뮤즈의 거울",
+      "en": "Muse no Kagami",
+      "ja": "ミューズの鏡"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1644,6 +2369,29 @@
       "ko": "베이사이드 얄개들",
       "en": "Saved by the Bell",
       "ja": "セイヴド・バイ・ザ・ベル"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001361",
+    "title": "보쌈 - 운명을 훔치다",
+    "shardId": "drama_ac",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bossam: Steal the Fate",
+      "bossamstealthefate",
+      "ポッサム〜愛と運命を盗んだ男〜",
+      "보쌈 - 운명을 훔치다",
+      "보쌈운명을훔치다"
+    ],
+    "titles": {
+      "ko": "보쌈 - 운명을 훔치다",
+      "en": "Bossam: Steal the Fate",
+      "ja": "ポッサム〜愛と運命を盗んだ男〜"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1860,6 +2608,51 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001255",
+    "title": "사키 가케 온가쿠 반즈케 !",
+    "shardId": "drama_3a",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sakigake! Ongaku Bandzuke",
+      "sakigake!ongakubandzuke",
+      "魁!音楽番付",
+      "사키 가케 온가쿠 반즈케 !",
+      "사키가케온가쿠반즈케!"
+    ],
+    "titles": {
+      "ko": "사키 가케 온가쿠 반즈케 !",
+      "en": "Sakigake! Ongaku Bandzuke",
+      "ja": "魁!音楽番付"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001258",
+    "title": "산하령",
+    "shardId": "drama_f2",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Word of Honor",
+      "wordofhonor",
+      "山河令",
+      "산하령"
+    ],
+    "titles": {
+      "ko": "산하령",
+      "en": "Word of Honor",
+      "ja": "山河令"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000766",
     "title": "상어",
     "shardId": "drama_06",
@@ -1944,6 +2737,29 @@
       "ko": "세브란스: 단절",
       "en": "Severance",
       "ja": "セヴェランス"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001211",
+    "title": "속아도 꿈결",
+    "shardId": "drama_1a",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Be My Dream Family",
+      "bemydreamfamily",
+      "だまされても夢心地",
+      "속아도 꿈결",
+      "속아도꿈결"
+    ],
+    "titles": {
+      "ko": "속아도 꿈결",
+      "en": "Be My Dream Family",
+      "ja": "だまされても夢心地"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2059,6 +2875,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001308",
+    "title": "스테이 클로즈",
+    "shardId": "drama_06",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Stay Close",
+      "stayclose",
+      "ステイクロース",
+      "ステイ・クロース",
+      "스테이 클로즈",
+      "스테이클로즈"
+    ],
+    "titles": {
+      "ko": "스테이 클로즈",
+      "en": "Stay Close",
+      "ja": "ステイ・クロース"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001041",
     "title": "슬로 호시스",
     "shardId": "drama_3b",
@@ -2077,6 +2917,27 @@
       "ko": "슬로 호시스",
       "en": "Slow Horses",
       "ja": "窓際のスパイ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001203",
+    "title": "시 노스 데한",
+    "shardId": "drama_8a",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Si nos dejan",
+      "sinosdejan",
+      "시 노스 데한",
+      "시노스데한"
+    ],
+    "titles": {
+      "ko": "시 노스 데한",
+      "en": "Si nos dejan"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2121,6 +2982,27 @@
     "titles": {
       "ko": "싱어게인",
       "en": "Sing Again"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001452",
+    "title": "쌍둥이 에디슨",
+    "shardId": "drama_bb",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Edison Twins",
+      "theedisontwins",
+      "쌍둥이 에디슨",
+      "쌍둥이에디슨"
+    ],
+    "titles": {
+      "ko": "쌍둥이 에디슨",
+      "en": "The Edison Twins"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2236,6 +3118,27 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001366",
+    "title": "아모르 파티 - 사랑하라, 지금",
+    "shardId": "drama_d5",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Amor Fati",
+      "amorfati",
+      "아모르 파티 - 사랑하라, 지금",
+      "아모르파티사랑하라,지금"
+    ],
+    "titles": {
+      "ko": "아모르 파티 - 사랑하라, 지금",
+      "en": "Amor Fati"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000949",
     "title": "아미 오브 더 데드: 로스트 베가스",
     "shardId": "drama_03",
@@ -2299,6 +3202,27 @@
       "ko": "아이 톨드 선셋 어바웃 유",
       "en": "I Told Sunset About You",
       "ja": "アイ・トールド・サンセット・アバウト・ユー"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001254",
+    "title": "아직 낫서른",
+    "shardId": "drama_fc",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Not Yet Thirty",
+      "notyetthirty",
+      "아직 낫서른",
+      "아직낫서른"
+    ],
+    "titles": {
+      "ko": "아직 낫서른",
+      "en": "Not Yet Thirty"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2396,6 +3320,28 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001362",
+    "title": "알고있지만",
+    "shardId": "drama_7f",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Nevertheless",
+      "nevertheless",
+      "わかっていても",
+      "알고있지만"
+    ],
+    "titles": {
+      "ko": "알고있지만",
+      "en": "Nevertheless",
+      "ja": "わかっていても"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000496",
@@ -2505,6 +3451,27 @@
       "ko": "어느 날 우리 집 현관으로 멸망이 들어왔다",
       "en": "Doom at Your Service",
       "ja": "ある日、私の家の玄関に滅亡が入ってきた"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001260",
+    "title": "어쩌다 사장",
+    "shardId": "drama_30",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Unexpected Business",
+      "unexpectedbusiness",
+      "어쩌다 사장",
+      "어쩌다사장"
+    ],
+    "titles": {
+      "ko": "어쩌다 사장",
+      "en": "Unexpected Business"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2623,6 +3590,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001364",
+    "title": "여고추리반",
+    "shardId": "drama_72",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q106136508",
+      "q106136508",
+      "女子高推理部",
+      "여고추리반"
+    ],
+    "titles": {
+      "ko": "여고추리반",
+      "en": "Q106136508",
+      "ja": "女子高推理部"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000487",
     "title": "역사 미궁으로부터의 탈출",
     "shardId": "drama_7c",
@@ -2719,6 +3708,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001208",
+    "title": "오월의 청춘",
+    "shardId": "drama_00",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Youth of May",
+      "youthofmay",
+      "五月の青春",
+      "오월의 청춘",
+      "오월의청춘"
+    ],
+    "titles": {
+      "ko": "오월의 청춘",
+      "en": "Youth of May",
+      "ja": "五月の青春"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000021",
     "title": "오징어 게임",
     "shardId": "drama_5b",
@@ -2749,6 +3761,52 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001210",
+    "title": "오케이 광자매",
+    "shardId": "drama_7e",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Revolutionary Sisters",
+      "revolutionarysisters",
+      "オーケー! グァン姉妹",
+      "オーケー!グァン姉妹",
+      "오케이 광자매",
+      "오케이광자매"
+    ],
+    "titles": {
+      "ko": "오케이 광자매",
+      "en": "Revolutionary Sisters",
+      "ja": "オーケー! グァン姉妹"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001297",
+    "title": "오하스타",
+    "shardId": "drama_a1",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Oha Suta",
+      "ohasuta",
+      "おはスタ",
+      "오하스타"
+    ],
+    "titles": {
+      "ko": "오하스타",
+      "en": "Oha Suta",
+      "ja": "おはスタ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001045",
@@ -2984,6 +4042,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001299",
+    "title": "울트라맨",
+    "shardId": "drama_12",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ultraman",
+      "ultraman",
+      "ウルトラマン",
+      "울트라맨"
+    ],
+    "titles": {
+      "ko": "울트라맨",
+      "en": "Ultraman",
+      "ja": "ウルトラマン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000955",
     "title": "워리어스",
     "shardId": "drama_2d",
@@ -3084,6 +4164,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001205",
+    "title": "월간 집",
+    "shardId": "drama_c7",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Monthly Magazine Home",
+      "monthlymagazinehome",
+      "月刊家",
+      "월간 집",
+      "월간집"
+    ],
+    "titles": {
+      "ko": "월간 집",
+      "en": "Monthly Magazine Home",
+      "ja": "月刊家"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000888",
     "title": "월랜더",
     "shardId": "drama_ed",
@@ -3101,6 +4204,28 @@
       "ko": "월랜더",
       "en": "Wallander",
       "ja": "刑事ヴァランダー"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001212",
+    "title": "웬즈데이",
+    "shardId": "drama_4f",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Wednesday",
+      "wednesday",
+      "ウェンズデー",
+      "웬즈데이"
+    ],
+    "titles": {
+      "ko": "웬즈데이",
+      "en": "Wednesday",
+      "ja": "ウェンズデー"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3312,6 +4437,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001261",
+    "title": "이상조요중국",
+    "shardId": "drama_3d",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Faith Makes Great",
+      "faithmakesgreat",
+      "이상조요중국"
+    ],
+    "titles": {
+      "ko": "이상조요중국",
+      "en": "Faith Makes Great"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000018",
     "title": "이상한 변호사 우영우",
     "shardId": "drama_7c",
@@ -3341,6 +4486,28 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001450",
+    "title": "이지파생활",
+    "shardId": "drama_21",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Rational Life",
+      "therationallife",
+      "理性的な人生",
+      "이지파생활"
+    ],
+    "titles": {
+      "ko": "이지파생활",
+      "en": "The Rational Life",
+      "ja": "理性的な人生"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001009",
@@ -3383,6 +4550,29 @@
     "titles": {
       "ko": "잇츠 어 신",
       "en": "It's a Sin"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001213",
+    "title": "자유형 교사",
+    "shardId": "drama_c2",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Freestyle teacher",
+      "freestyleteacher",
+      "フリースタイルティーチャー",
+      "자유형 교사",
+      "자유형교사"
+    ],
+    "titles": {
+      "ko": "자유형 교사",
+      "en": "Freestyle teacher",
+      "ja": "フリースタイルティーチャー"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3499,6 +4689,27 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001457",
+    "title": "존 윅",
+    "shardId": "drama_94",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "John Wick",
+      "johnwick",
+      "존 윅",
+      "존윅"
+    ],
+    "titles": {
+      "ko": "존 윅",
+      "en": "John Wick"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000769",
     "title": "주니어 유로비전 송 콘테스트",
     "shardId": "drama_7b",
@@ -3608,6 +4819,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001459",
+    "title": "천사들의 합창",
+    "shardId": "drama_49",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Carrusel",
+      "carrusel",
+      "カルーセル",
+      "천사들의 합창",
+      "천사들의합창"
+    ],
+    "titles": {
+      "ko": "천사들의 합창",
+      "en": "Carrusel",
+      "ja": "カルーセル"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000489",
     "title": "철인왕후",
     "shardId": "drama_1a",
@@ -3680,6 +4914,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001461",
+    "title": "치욕! 꽃미남 아롱사태",
+    "shardId": "drama_76",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Humiliating Flower Boys",
+      "humiliatingflowerboys",
+      "치욕! 꽃미남 아롱사태",
+      "치욕!꽃미남아롱사태"
+    ],
+    "titles": {
+      "ko": "치욕! 꽃미남 아롱사태",
+      "en": "Humiliating Flower Boys"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000587",
@@ -3934,6 +5189,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001369",
+    "title": "타임 보칸 시리즈",
+    "shardId": "drama_58",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Time Bokan series",
+      "timebokanseries",
+      "タイムボカンシリーズ",
+      "타임 보칸 시리즈",
+      "타임보칸시리즈"
+    ],
+    "titles": {
+      "ko": "타임 보칸 시리즈",
+      "en": "Time Bokan series",
+      "ja": "タイムボカンシリーズ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001003",
     "title": "타임즈 (드라마)",
     "shardId": "drama_46",
@@ -3958,6 +5236,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001259",
+    "title": "터미널 리스트",
+    "shardId": "drama_22",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Terminal List",
+      "theterminallist",
+      "ターミナルリスト",
+      "ターミナル・リスト",
+      "터미널 리스트",
+      "터미널리스트"
+    ],
+    "titles": {
+      "ko": "터미널 리스트",
+      "en": "The Terminal List",
+      "ja": "ターミナル・リスト"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000488",
     "title": "테 아쿠에르다스 데 미",
     "shardId": "drama_99",
@@ -3977,6 +5279,28 @@
       "ko": "테 아쿠에르다스 데 미",
       "en": "¿Te acuerdas de mí?",
       "ja": "テ・アクエルダス・デ・ミ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001453",
+    "title": "테레사",
+    "shardId": "drama_e9",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Teresa",
+      "teresa",
+      "テレサ",
+      "테레사"
+    ],
+    "titles": {
+      "ko": "테레사",
+      "en": "Teresa",
+      "ja": "テレサ"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4059,6 +5383,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001209",
+    "title": "파트너",
+    "shardId": "drama_0b",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "AIBOU: Tokyo Detective Duo",
+      "aiboutokyodetectiveduo",
+      "相棒",
+      "파트너"
+    ],
+    "titles": {
+      "ko": "파트너",
+      "en": "AIBOU: Tokyo Detective Duo",
+      "ja": "相棒"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001004",
     "title": "파티 오브 파이브",
     "shardId": "drama_af",
@@ -4124,6 +5470,74 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001463",
+    "title": "팸 & 토미",
+    "shardId": "drama_9a",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pam & Tommy",
+      "pam&tommy",
+      "パム&トミー",
+      "팸 & 토미",
+      "팸&토미"
+    ],
+    "titles": {
+      "ko": "팸 & 토미",
+      "en": "Pam & Tommy",
+      "ja": "パム&トミー"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001303",
+    "title": "페리아: 가장 어두운 빛",
+    "shardId": "drama_76",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Feria: The Darkest Light",
+      "feriathedarkestlight",
+      "フェリア - 深き闇の光 -",
+      "フェリア深き闇の光",
+      "페리아: 가장 어두운 빛",
+      "페리아가장어두운빛"
+    ],
+    "titles": {
+      "ko": "페리아: 가장 어두운 빛",
+      "en": "Feria: The Darkest Light",
+      "ja": "フェリア - 深き闇の光 -"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001458",
+    "title": "페이퍼 걸스",
+    "shardId": "drama_3a",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Paper Girls",
+      "papergirls",
+      "페이퍼 걸스",
+      "페이퍼걸스"
+    ],
+    "titles": {
+      "ko": "페이퍼 걸스",
+      "en": "Paper Girls"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000956",
     "title": "펜트하우스 2",
     "shardId": "drama_26",
@@ -4142,6 +5556,29 @@
       "ko": "펜트하우스 2",
       "en": "The Penthouse 2: War in Life",
       "ja": "ペントハウス2"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001306",
+    "title": "펜트하우스 3",
+    "shardId": "drama_c7",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Penthouse 3: War in Life",
+      "thepenthouse3warinlife",
+      "ペントハウス3",
+      "펜트하우스 3",
+      "펜트하우스3"
+    ],
+    "titles": {
+      "ko": "펜트하우스 3",
+      "en": "The Penthouse 3: War in Life",
+      "ja": "ペントハウス3"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4277,6 +5714,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001256",
+    "title": "프렌즈",
+    "shardId": "drama_51",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Friends",
+      "friends",
+      "프렌즈"
+    ],
+    "titles": {
+      "ko": "프렌즈",
+      "en": "Friends"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000595",
     "title": "프린세사스",
     "shardId": "drama_e1",
@@ -4314,6 +5771,28 @@
       "ko": "피스메이커",
       "en": "Peacemaker",
       "ja": "ピースメーカー"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001371",
+    "title": "피타고라스위치",
+    "shardId": "drama_c7",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "PythagoraSwitch",
+      "pythagoraswitch",
+      "ピタゴラスイッチ",
+      "피타고라스위치"
+    ],
+    "titles": {
+      "ko": "피타고라스위치",
+      "en": "PythagoraSwitch",
+      "ja": "ピタゴラスイッチ"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4404,6 +5883,29 @@
       "ko": "헬's 키친",
       "en": "Hell's Kitchen",
       "ja": "ヘルズ・キッチン〜地獄の厨房"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001252",
+    "title": "헬프스터즈",
+    "shardId": "drama_7b",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Helpsters",
+      "Helpsters 〜お助けモンスターズ〜",
+      "helpsters",
+      "helpsters〜お助けモンスターズ〜",
+      "헬프스터즈"
+    ],
+    "titles": {
+      "ko": "헬프스터즈",
+      "en": "Helpsters",
+      "ja": "Helpsters 〜お助けモンスターズ〜"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4561,6 +6063,29 @@
     "titles": {
       "ko": "희망과 신념",
       "en": "Hope & Faith"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001204",
+    "title": "힘내서 갑시다",
+    "shardId": "drama_b7",
+    "category": "drama",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ganbatte Ikimasshoi",
+      "ganbatteikimasshoi",
+      "がんばっていきまっしょい",
+      "힘내서 갑시다",
+      "힘내서갑시다"
+    ],
+    "titles": {
+      "ko": "힘내서 갑시다",
+      "en": "Ganbatte Ikimasshoi",
+      "ja": "がんばっていきまっしょい"
     },
     "qualityScore": 50,
     "qualityTier": 2

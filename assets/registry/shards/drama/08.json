@@ -1,0 +1,20 @@
+{
+  "wk_000001298": {
+    "workId": "wk_000001298",
+    "title": "FNS 가요제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058471"
+    },
+    "titles": {
+      "ko": "FNS 가요제",
+      "en": "FNS Music Festival",
+      "ja": "FNS歌謡祭"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

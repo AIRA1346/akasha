@@ -78,5 +78,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001445": {
+    "workId": "wk_000001445",
+    "title": "술래잡기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253097"
+    },
+    "titles": {
+      "ko": "술래잡기",
+      "en": "Oni-gokko",
+      "ja": "鬼ごっこ"
+    },
+    "releaseYear": 2006,
+    "creator": "Shisei Kuromasa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001446": {
+    "workId": "wk_000001446",
+    "title": "사토라레",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256156"
+    },
+    "titles": {
+      "ko": "사토라레",
+      "en": "Q11256156",
+      "ja": "サトラレ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

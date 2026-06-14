@@ -14,8 +14,8 @@ import 'package:path/path.dart' as p;
 
 import '../data_policy_utils.dart';
 import '../dedupe_utils.dart';
+import '../coverage_quality.dart';
 import '../registry_hash_utils.dart';
-import '../registry_v3_utils.dart';
 import '../wk_id_utils.dart';
 import 'contract_test_runner.dart';
 import 'discovery_fixtures.dart';
@@ -162,6 +162,7 @@ void main(List<String> args) async {
     }
 
     _enrichProvenance(draft, channelId, config.source);
+    _sanitizeTitlesEn(draft);
     final category = draft['category']?.toString() ?? config.category;
     final hex = shardHexForWorkId(wk);
     final relPath = v4ShardPath(category, hex);
@@ -350,6 +351,28 @@ void _enrichProvenance(
   extensions['ingestChannel'] = channelId;
   extensions['ingestSource'] = source;
   draft['extensions'] = extensions;
+}
+
+/// CJK·한글이 titles.en에 들어오면 zh/ja로 분리하고 en은 Wikidata en 또는 생략.
+void _sanitizeTitlesEn(Map<String, dynamic> draft) {
+  final titlesRaw = draft['titles'];
+  if (titlesRaw is! Map) return;
+  final titles = Map<String, dynamic>.from(titlesRaw);
+  final en = titles['en']?.toString().trim() ?? '';
+  if (en.isEmpty || isValidEnTitle(en)) return;
+
+  if (validateEnTitle(en).reason != InvalidEnReason.hangulInEn) return;
+
+  final zh = titles['zh']?.toString().trim() ?? '';
+  if (zh.isEmpty) titles['zh'] = en;
+
+  final entityEn = draft['entityEnLabel']?.toString().trim() ?? '';
+  if (entityEn.isNotEmpty && isValidEnTitle(entityEn)) {
+    titles['en'] = entityEn;
+  } else {
+    titles.remove('en');
+  }
+  draft['titles'] = titles;
 }
 
 Map<String, String> _readExternalIdsFromShard(Directory dbRoot, String workId) {

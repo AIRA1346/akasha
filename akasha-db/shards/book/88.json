@@ -1,0 +1,22 @@
+{
+  "wk_000001287": {
+    "workId": "wk_000001287",
+    "title": "내 방 여행하는 법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10392559"
+    },
+    "titles": {
+      "ko": "내 방 여행하는 법",
+      "en": "Voyage Around My Room",
+      "ja": "わが部屋をめぐる旅"
+    },
+    "releaseYear": 1794,
+    "creator": "Xavier de Maistre",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

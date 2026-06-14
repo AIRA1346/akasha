@@ -1,0 +1,20 @@
+{
+  "wk_000001215": {
+    "workId": "wk_000001215",
+    "title": "뉴욕 특수수사대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055728"
+    },
+    "titles": {
+      "ko": "뉴욕 특수수사대",
+      "en": "Law & Order: Criminal Intent",
+      "ja": "LAW & ORDER:犯罪心理捜査班"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

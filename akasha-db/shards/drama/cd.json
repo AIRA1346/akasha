@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001253": {
+    "workId": "wk_000001253",
+    "title": "마이 네임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105619096"
+    },
+    "titles": {
+      "ko": "마이 네임",
+      "en": "My Name",
+      "ja": "マイネーム: 偽りと復讐"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

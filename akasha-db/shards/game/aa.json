@@ -1,0 +1,21 @@
+{
+  "wk_000001373": {
+    "workId": "wk_000001373",
+    "title": "용호의 권 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055377"
+    },
+    "titles": {
+      "ko": "용호의 권 2",
+      "en": "Art of Fighting 2",
+      "ja": "龍虎の拳2"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

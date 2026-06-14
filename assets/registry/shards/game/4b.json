@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001266": {
+    "workId": "wk_000001266",
+    "title": "리얼 바우트 아랑전설 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053098"
+    },
+    "titles": {
+      "ko": "리얼 바우트 아랑전설 2",
+      "en": "Real Bout Fatal Fury 2: The Newcomers",
+      "ja": "リアルバウト餓狼伝説2 THE NEWCOMERS"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

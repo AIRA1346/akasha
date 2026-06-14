@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001309": {
+    "workId": "wk_000001309",
+    "title": "센티피드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053648"
+    },
+    "titles": {
+      "ko": "센티피드",
+      "en": "Centipede",
+      "ja": "Centipede (ゲーム)"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

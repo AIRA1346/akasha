@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001273": {
+    "workId": "wk_000001273",
+    "title": "그리자이아의 과실",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107797059"
+    },
+    "titles": {
+      "ko": "그리자이아의 과실",
+      "en": "The Fruit of Grisaia",
+      "ja": "グリザイアの果実"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

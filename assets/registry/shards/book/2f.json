@@ -1,0 +1,22 @@
+{
+  "wk_000001403": {
+    "workId": "wk_000001403",
+    "title": "지옥변",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041621"
+    },
+    "titles": {
+      "ko": "지옥변",
+      "en": "Hell Screen",
+      "ja": "地獄変"
+    },
+    "releaseYear": 1918,
+    "creator": "Ryūnosuke Akutagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

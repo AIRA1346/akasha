@@ -1,0 +1,22 @@
+{
+  "wk_000001238": {
+    "workId": "wk_000001238",
+    "title": "순례자들은 왜 돌아오지 않는가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103898910"
+    },
+    "titles": {
+      "ko": "순례자들은 왜 돌아오지 않는가",
+      "en": "Why don't the pilgrims return?",
+      "ja": "巡礼者たちはなぜ帰らない"
+    },
+    "releaseYear": 2019,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

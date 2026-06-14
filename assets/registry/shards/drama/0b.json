@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001209": {
+    "workId": "wk_000001209",
+    "title": "파트너",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054879"
+    },
+    "titles": {
+      "ko": "파트너",
+      "en": "AIBOU: Tokyo Detective Duo",
+      "ja": "相棒"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

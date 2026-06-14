@@ -1,0 +1,21 @@
+{
+  "wk_000001338": {
+    "workId": "wk_000001338",
+    "title": "버마 VJ",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1016657"
+    },
+    "titles": {
+      "ko": "버마 VJ",
+      "en": "Burma VJ",
+      "ja": "ビルマVJ 消された革命"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001286": {
+    "workId": "wk_000001286",
+    "title": "벌레 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103920800"
+    },
+    "titles": {
+      "ko": "벌레 이야기",
+      "en": "Q103920800"
+    },
+    "releaseYear": 1985,
+    "creator": "Yi Chong-jun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

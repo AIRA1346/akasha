@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001232": {
+    "workId": "wk_000001232",
+    "title": "경계전기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107641020"
+    },
+    "titles": {
+      "ko": "경계전기",
+      "en": "Kyōkai Senki",
+      "ja": "境界戦機"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

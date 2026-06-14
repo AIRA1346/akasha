@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001214": {
+    "workId": "wk_000001214",
+    "title": "롱 곤 걸치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105571964"
+    },
+    "titles": {
+      "ko": "롱 곤 걸치",
+      "en": "Long Gone Gulch"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

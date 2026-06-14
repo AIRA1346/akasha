@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001423": {
+    "workId": "wk_000001423",
+    "title": "표류단지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109602795"
+    },
+    "titles": {
+      "ko": "표류단지",
+      "en": "Drifting home",
+      "ja": "雨を告げる漂流団地"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

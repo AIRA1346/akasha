@@ -1,0 +1,21 @@
+{
+  "wk_000001426": {
+    "workId": "wk_000001426",
+    "title": "엽문 리부트 2020",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036298"
+    },
+    "titles": {
+      "ko": "엽문 리부트 2020",
+      "en": "Ip Man: Kung Fu Master",
+      "ja": "イップ・マン 宗師"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

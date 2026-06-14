@@ -1,0 +1,38 @@
+{
+  "wk_000001257": {
+    "workId": "wk_000001257",
+    "title": "그때 키스해 두었더라면",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105740455"
+    },
+    "titles": {
+      "ko": "그때 키스해 두었더라면",
+      "en": "Q105740455",
+      "ja": "あのときキスしておけば"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001361": {
+    "workId": "wk_000001361",
+    "title": "보쌈 - 운명을 훔치다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106026062"
+    },
+    "titles": {
+      "ko": "보쌈 - 운명을 훔치다",
+      "en": "Bossam: Steal the Fate",
+      "ja": "ポッサム〜愛と運命を盗んだ男〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

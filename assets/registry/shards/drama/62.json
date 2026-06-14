@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001454": {
+    "workId": "wk_000001454",
+    "title": "링컨 차를 타는 변호사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106536181"
+    },
+    "titles": {
+      "ko": "링컨 차를 타는 변호사",
+      "en": "The Lincoln Lawyer",
+      "ja": "リンカーン弁護士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

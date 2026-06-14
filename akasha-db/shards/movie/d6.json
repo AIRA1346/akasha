@@ -1,0 +1,21 @@
+{
+  "wk_000001398": {
+    "workId": "wk_000001398",
+    "title": "어메이징 모리스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036265"
+    },
+    "titles": {
+      "ko": "어메이징 모리스",
+      "en": "The Amazing Maurice",
+      "ja": "天才ねこモーリスとゆかいな仲間たち"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

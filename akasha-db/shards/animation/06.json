@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001278": {
+    "workId": "wk_000001278",
+    "title": "어떤 과학의 일방통행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108085843"
+    },
+    "titles": {
+      "ko": "어떤 과학의 일방통행",
+      "en": "A Certain Scientific Accelerator",
+      "ja": "とある科学の一方通行"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

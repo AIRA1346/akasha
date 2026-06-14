@@ -1,0 +1,21 @@
+{
+  "wk_000001396": {
+    "workId": "wk_000001396",
+    "title": "사기도 리콜이 되나요",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101955517"
+    },
+    "titles": {
+      "ko": "사기도 리콜이 되나요",
+      "en": "The Con-Heartist",
+      "ja": "愛しい詐欺師"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001448": {
+    "workId": "wk_000001448",
+    "title": "아이러브 트레인",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256752"
+    },
+    "titles": {
+      "ko": "아이러브 트레인",
+      "en": "Q11256752",
+      "ja": "名物!たびてつ友の会"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

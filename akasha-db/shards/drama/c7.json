@@ -51,5 +51,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001205": {
+    "workId": "wk_000001205",
+    "title": "월간 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105453557"
+    },
+    "titles": {
+      "ko": "월간 집",
+      "en": "Monthly Magazine Home",
+      "ja": "月刊家"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001306": {
+    "workId": "wk_000001306",
+    "title": "펜트하우스 3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105955009"
+    },
+    "titles": {
+      "ko": "펜트하우스 3",
+      "en": "The Penthouse 3: War in Life",
+      "ja": "ペントハウス3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001371": {
+    "workId": "wk_000001371",
+    "title": "피타고라스위치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062644"
+    },
+    "titles": {
+      "ko": "피타고라스위치",
+      "en": "PythagoraSwitch",
+      "ja": "ピタゴラスイッチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

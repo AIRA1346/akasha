@@ -1,0 +1,37 @@
+{
+  "wk_000001255": {
+    "workId": "wk_000001255",
+    "title": "사키 가케 온가쿠 반즈케 !",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10566904"
+    },
+    "titles": {
+      "ko": "사키 가케 온가쿠 반즈케 !",
+      "en": "Sakigake! Ongaku Bandzuke",
+      "ja": "魁!音楽番付"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001458": {
+    "workId": "wk_000001458",
+    "title": "페이퍼 걸스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106547128"
+    },
+    "titles": {
+      "ko": "페이퍼 걸스",
+      "en": "Paper Girls"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001390": {
+    "workId": "wk_000001390",
+    "title": "기동전사 건담 섬광의 하사웨이 (영화)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109289213"
+    },
+    "titles": {
+      "ko": "기동전사 건담 섬광의 하사웨이 (영화)",
+      "en": "Mobile Suit Gundam: Hathaway",
+      "ja": "機動戦士ガンダム 閃光のハサウェイ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

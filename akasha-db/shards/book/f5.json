@@ -1,0 +1,22 @@
+{
+  "wk_000001400": {
+    "workId": "wk_000001400",
+    "title": "렉서스와 올리브나무",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041237"
+    },
+    "titles": {
+      "ko": "렉서스와 올리브나무",
+      "en": "The Lexus and the Olive Tree",
+      "ja": "レクサスとオリーブの木"
+    },
+    "releaseYear": 1999,
+    "creator": "Thomas Friedman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001379": {
+    "workId": "wk_000001379",
+    "title": "디아블로 II: 레저렉션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105592900"
+    },
+    "titles": {
+      "ko": "디아블로 II: 레저렉션",
+      "en": "Diablo II: Resurrected",
+      "ja": "ディアブロ II リザレクテッド"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

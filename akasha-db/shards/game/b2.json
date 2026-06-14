@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001268": {
+    "workId": "wk_000001268",
+    "title": "코튼 2: 매지컬 나이트 드림즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105334695"
+    },
+    "titles": {
+      "ko": "코튼 2: 매지컬 나이트 드림즈",
+      "en": "Cotton 2: Magical Night Dreams",
+      "ja": "コットン2"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

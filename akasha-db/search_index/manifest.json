@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "entryCount": 1164,
-  "generatedAt": "2026-06-14T12:42:28.531101Z",
+  "entryCount": 1447,
+  "generatedAt": "2026-06-14T13:09:31.155843Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 229,
-      "sha256": "58c5062368fe74fdfec7140bb0c39142ca2c52ff8d47cb5055ec582fbdb30ba6"
+      "entryCount": 293,
+      "sha256": "ea194067d3711f045fdd517064ed00f9a1f593cfa4ae734c883e23ebbb7c38b7"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 96,
-      "sha256": "d6f1b6b9c99ee1666f8fa03ee5e1bc229932ea8d97cc640b0edf2146b388b31c"
+      "entryCount": 126,
+      "sha256": "baa2b2e6b6b267f56cb972cd0f24a551e755461241b5c533847060493481fd3e"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 200,
-      "sha256": "3d85811c7dbcb1568f54dbe79b7cf64c0a5a804499bedb768271f4945cdde2ef"
+      "entryCount": 269,
+      "sha256": "27658a99fe6dd4fbe3b27eb62400162d52b0e4d2ba982d92dbb4794b98a00477"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 247,
-      "sha256": "20733c196408ca6b5bd9b12559a993db9842f2c44a8fb2cbb26d6d59ef28c4d2"
+      "entryCount": 285,
+      "sha256": "747af627321ba88b7e5094aa5648271f8e5601d0e7ccb1719e2d1df624a5f6c4"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 259,
-      "sha256": "ea99a5e92e0327d7e7343dce6502d34968e21374eec7bf2e7b408a361462d5d8"
+      "entryCount": 308,
+      "sha256": "cfb093deb11ab03a58c55374bb2871ffe71f0ef8c7f322b0d73410f6a4972380"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 84,
-      "sha256": "23aaed0088354f5109bdbfd5d6baa2aca1a7cdbb77f313535f2fa779e3ceda6b"
+      "entryCount": 117,
+      "sha256": "ba2705a2b6e7ac91e6f93e267fbb62f283e0ec4b9e1e6e81f52b0d351da46b3d"
     },
     {
       "category": "webtoon",

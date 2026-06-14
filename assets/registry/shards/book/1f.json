@@ -1,0 +1,22 @@
+{
+  "wk_000001481": {
+    "workId": "wk_000001481",
+    "title": "카르밀라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043792"
+    },
+    "titles": {
+      "ko": "카르밀라",
+      "en": "Carmilla",
+      "ja": "カーミラ"
+    },
+    "releaseYear": 1872,
+    "creator": "Sheridan Le Fanu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

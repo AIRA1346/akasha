@@ -23,5 +23,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001397": {
+    "workId": "wk_000001397",
+    "title": "리커리쉬 피자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036245"
+    },
+    "titles": {
+      "ko": "리커리쉬 피자",
+      "en": "Licorice Pizza",
+      "ja": "リコリス・ピザ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001472": {
+    "workId": "wk_000001472",
+    "title": "적나고양",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1021977"
+    },
+    "titles": {
+      "ko": "적나고양",
+      "en": "Naked Killer",
+      "ja": "香港淫殺倶楽部/ポイズン・ガールズ あぶないカ・ラ・ダ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

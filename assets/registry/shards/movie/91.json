@@ -1,0 +1,20 @@
+{
+  "wk_000001342": {
+    "workId": "wk_000001342",
+    "title": "나의 크리스마스 왕자님",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101839259"
+    },
+    "titles": {
+      "ko": "나의 크리스마스 왕자님",
+      "en": "My Christmas Prince"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

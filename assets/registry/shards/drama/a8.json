@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001263": {
+    "workId": "wk_000001263",
+    "title": "마블 원샷츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057993"
+    },
+    "titles": {
+      "ko": "마블 원샷츠",
+      "en": "Marvel One-Shots",
+      "ja": "マーベル・ワンショット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
