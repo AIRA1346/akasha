@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001902": {
+    "workId": "wk_000001902",
+    "title": "TBS 목요일 9시 연속 드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852868"
+    },
+    "titles": {
+      "ko": "TBS 목요일 9시 연속 드라마",
+      "en": "TBS Thursday 9:00 Drama",
+      "ja": "TBS木曜9時枠の連続ドラマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

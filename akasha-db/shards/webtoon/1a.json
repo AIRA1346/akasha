@@ -1,0 +1,21 @@
+{
+  "wk_000001882": {
+    "workId": "wk_000001882",
+    "title": "도깨비언덕에 왜 왔니?",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107401781"
+    },
+    "titles": {
+      "ko": "도깨비언덕에 왜 왔니?",
+      "en": "Goblin Hill",
+      "ja": "トッケビの丘になぜ来たの？"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

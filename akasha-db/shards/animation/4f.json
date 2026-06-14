@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002038": {
+    "workId": "wk_000002038",
+    "title": "아르스의 거수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114607905"
+    },
+    "titles": {
+      "ko": "아르스의 거수",
+      "en": "Giant Beasts of Ars",
+      "ja": "アルスの巨獣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

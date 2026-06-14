@@ -106,5 +106,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001820": {
+    "workId": "wk_000001820",
+    "title": "몽쉐리CoCo",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344687"
+    },
+    "titles": {
+      "ko": "몽쉐리CoCo",
+      "en": "Mon Chéri CoCo",
+      "ja": "モンシェリCoCo"
+    },
+    "creator": "Waki Yamato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

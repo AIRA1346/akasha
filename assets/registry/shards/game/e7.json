@@ -1,0 +1,21 @@
+{
+  "wk_000001804": {
+    "workId": "wk_000001804",
+    "title": "루니아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067578"
+    },
+    "titles": {
+      "ko": "루니아",
+      "en": "Lunia: Record of Lunia War",
+      "ja": "ルニア戦記"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

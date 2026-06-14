@@ -1,0 +1,20 @@
+{
+  "wk_000001797": {
+    "workId": "wk_000001797",
+    "title": "터닝 포인트: 9/11 그리고 테러와의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108453646"
+    },
+    "titles": {
+      "ko": "터닝 포인트: 9/11 그리고 테러와의 전쟁",
+      "en": "Turning Point: 9/11 and the War on Terror",
+      "ja": "ターニング・ポイント: 9・11と対テロ戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

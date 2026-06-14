@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001989": {
+    "workId": "wk_000001989",
+    "title": "서울 트레인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10376668"
+    },
+    "titles": {
+      "ko": "서울 트레인",
+      "en": "Seoul Train",
+      "ja": "ソウル・トレイン"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

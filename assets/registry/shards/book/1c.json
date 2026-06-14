@@ -1,0 +1,22 @@
+{
+  "wk_000001998": {
+    "workId": "wk_000001998",
+    "title": "니노미야 군에게 애도를",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051427"
+    },
+    "titles": {
+      "ko": "니노미야 군에게 애도를",
+      "en": "Good Luck! Ninomiya-kun",
+      "ja": "ご愁傷さま二ノ宮くん"
+    },
+    "releaseYear": 2004,
+    "creator": "Daisuke Suzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,49 +1,49 @@
 {
   "version": 1,
-  "entryCount": 1735,
-  "generatedAt": "2026-06-14T15:04:29.649889Z",
+  "entryCount": 2008,
+  "generatedAt": "2026-06-14T21:15:10.090917Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 385,
-      "sha256": "accf108b17faf5a3419d92162ff86febb8d011a5faa09a3507ccbb323dcf55db"
+      "entryCount": 446,
+      "sha256": "3467553563e7c9a78929915dac1f954e7c76a5fe7f9458779967e297901a121a"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 145,
-      "sha256": "360b64e268074a0b32734e5e26c9ec0169e03b1f30c720ae3c888508ef053003"
+      "entryCount": 169,
+      "sha256": "e6ba11e8b8d9fe21c0e494597e375fb41a8bd38c25b68ed0509a2834f2d837d2"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 329,
-      "sha256": "c25604491455263adc420d651bccb9ccc004e28cd3253dc2deb34ecf1cc03cbf"
+      "entryCount": 401,
+      "sha256": "69602b79227879d89593ddbc135fd9ed66951e0c9b05d0c305b0d4d387fd4a82"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 329,
-      "sha256": "cc38ea00aa5a4a16817084867e1ddc65bb52203cfc362ae5bb4853c4d904051f"
+      "entryCount": 359,
+      "sha256": "82e64da47718a13cf55b755dabe277dd51dba2f69ce0c9aa6447cd6241cbd251"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 359,
-      "sha256": "13883df1e3bb0d82aa5dad5ffc6f07dc2c70a9adc32869f12e1a080d6027798f"
+      "entryCount": 395,
+      "sha256": "f2852c95b64eed55680acc65c0303ad410b743fb2d0162ad0b52b2f017e039c7"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 139,
-      "sha256": "07f53daa16f6e6116684f8a62dd2c646f990754b4c3a549703dd862a51d4323d"
+      "entryCount": 167,
+      "sha256": "bb2de6f2794a9af245a02b51eff0c851cebd49d115e90cdc2bf294a58b068f93"
     },
     {
       "category": "webtoon",
       "path": "search_index/webtoon.json",
-      "entryCount": 49,
-      "sha256": "26d310169f21727ea3fe0ceede97f3d52ab5ad8a0c238a5c6399e9533cbebb60"
+      "entryCount": 71,
+      "sha256": "888c6330371286d8fe3cb45200310e0f46023c7dc0fad854dbc1a5eca1b9c34a"
     }
   ]
 }

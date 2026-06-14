@@ -121,5 +121,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001825": {
+    "workId": "wk_000001825",
+    "title": "원피스 - 저주받은 성검",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134641"
+    },
+    "titles": {
+      "ko": "원피스 - 저주받은 성검",
+      "en": "One Piece: The Cursed Holy Sword",
+      "ja": "ONE PIECE 呪われた聖剣"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

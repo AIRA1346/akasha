@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001784": {
+    "workId": "wk_000001784",
+    "title": "쇼콜라의 마법",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11308148"
+    },
+    "titles": {
+      "ko": "쇼콜라의 마법",
+      "en": "The Magic of Chocolate",
+      "ja": "ショコラの魔法"
+    },
+    "creator": "Rino Mizuho",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001806": {
+    "workId": "wk_000001806",
+    "title": "로스트 저지먼트: 심판받지 않은 기억",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106764284"
+    },
+    "titles": {
+      "ko": "로스트 저지먼트: 심판받지 않은 기억",
+      "en": "Lost Judgment",
+      "ja": "LOST JUDGMENT：裁かれざる記憶"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

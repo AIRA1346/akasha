@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002017": {
+    "workId": "wk_000002017",
+    "title": "눈으로 말해요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856238"
+    },
+    "titles": {
+      "ko": "눈으로 말해요",
+      "en": "Say It with Your Eyes",
+      "ja": "目で話します"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

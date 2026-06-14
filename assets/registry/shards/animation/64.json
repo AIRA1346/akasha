@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001985": {
+    "workId": "wk_000001985",
+    "title": "나이트 위저드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143991"
+    },
+    "titles": {
+      "ko": "나이트 위저드",
+      "en": "Night Wizard!",
+      "ja": "ナイトウィザード"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

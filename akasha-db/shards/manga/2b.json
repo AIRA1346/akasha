@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002051": {
+    "workId": "wk_000002051",
+    "title": "피스 오브 케이크",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11331730"
+    },
+    "titles": {
+      "ko": "피스 오브 케이크",
+      "en": "Piece of Cake",
+      "ja": "ピース オブ ケイク"
+    },
+    "releaseYear": 2015,
+    "creator": "George Asakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

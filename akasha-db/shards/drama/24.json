@@ -1,0 +1,19 @@
+{
+  "wk_000001855": {
+    "workId": "wk_000001855",
+    "title": "빌려드립니다 바퀴 달린 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108506728"
+    },
+    "titles": {
+      "ko": "빌려드립니다 바퀴 달린 집",
+      "en": "Q108506728"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

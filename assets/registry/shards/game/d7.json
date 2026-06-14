@@ -1,0 +1,40 @@
+{
+  "wk_000002027": {
+    "workId": "wk_000002027",
+    "title": "건스타 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069752"
+    },
+    "titles": {
+      "ko": "건스타 히어로즈",
+      "en": "Gunstar Heroes",
+      "ja": "ガンスターヒーローズ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002035": {
+    "workId": "wk_000002035",
+    "title": "007 퀀텀 오브 솔러스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070821"
+    },
+    "titles": {
+      "ko": "007 퀀텀 오브 솔러스",
+      "en": "007: Quantum of Solace",
+      "ja": "007 慰めの報酬"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

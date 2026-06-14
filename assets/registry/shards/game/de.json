@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002025": {
+    "workId": "wk_000002025",
+    "title": "씨 오브 스타즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106974937"
+    },
+    "titles": {
+      "ko": "씨 오브 스타즈",
+      "en": "Sea of Stars"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

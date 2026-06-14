@@ -62,5 +62,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001785": {
+    "workId": "wk_000001785",
+    "title": "실버 가면",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11308404"
+    },
+    "titles": {
+      "ko": "실버 가면",
+      "en": "Q11308404",
+      "ja": "シルバー仮面"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

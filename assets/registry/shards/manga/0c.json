@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001843": {
+    "workId": "wk_000001843",
+    "title": "소라해나!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187502"
+    },
+    "titles": {
+      "ko": "소라해나!",
+      "en": "Sora & Haena"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001844": {
+    "workId": "wk_000001844",
+    "title": "이지러진 달과 도넛",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187803"
+    },
+    "titles": {
+      "ko": "이지러진 달과 도넛",
+      "en": "Doughnuts Under a Crescent Moon",
+      "ja": "欠けた月とドーナッツ"
+    },
+    "releaseYear": 2020,
+    "creator": "Shio Usui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001928": {
+    "workId": "wk_000001928",
+    "title": "카라밧지오",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035443"
+    },
+    "titles": {
+      "ko": "카라밧지오",
+      "en": "Caravaggio",
+      "ja": "カラヴァッジオ"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

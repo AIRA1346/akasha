@@ -1,0 +1,22 @@
+{
+  "wk_000001981": {
+    "workId": "wk_000001981",
+    "title": "동경 BABYLON",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142102"
+    },
+    "titles": {
+      "ko": "동경 BABYLON",
+      "en": "Tokyo Babylon",
+      "ja": "東京BABYLON"
+    },
+    "releaseYear": 1993,
+    "creator": "Clamp",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

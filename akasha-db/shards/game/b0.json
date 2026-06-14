@@ -83,5 +83,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001812": {
+    "workId": "wk_000001812",
+    "title": "별하늘 철도와 시로의 여행",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106859276"
+    },
+    "titles": {
+      "ko": "별하늘 철도와 시로의 여행",
+      "en": "Hoshizora Tetsudou to Shiro no Tabi",
+      "ja": "星空鉄道とシロの旅"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

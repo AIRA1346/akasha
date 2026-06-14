@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001850": {
+    "workId": "wk_000001850",
+    "title": "미 포르투나 에스 아마르테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108485809"
+    },
+    "titles": {
+      "ko": "미 포르투나 에스 아마르테",
+      "en": "Mi fortuna es amarte",
+      "ja": "ミ・フォルトゥナ・エス・アマルテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

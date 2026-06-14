@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001824": {
+    "workId": "wk_000001824",
+    "title": "겐지 이야기 천년기 Genji",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134579"
+    },
+    "titles": {
+      "ko": "겐지 이야기 천년기 Genji",
+      "en": "Genji Monogatari Sennenki",
+      "ja": "源氏物語千年紀 Genji"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

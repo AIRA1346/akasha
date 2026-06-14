@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001860": {
+    "workId": "wk_000001860",
+    "title": "소닉 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068962"
+    },
+    "titles": {
+      "ko": "소닉 히어로즈",
+      "en": "Q1068962",
+      "ja": "ソニック ヒーローズ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

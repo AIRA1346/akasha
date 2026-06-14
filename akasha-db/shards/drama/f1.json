@@ -68,5 +68,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001895": {
+    "workId": "wk_000001895",
+    "title": "게릴라 콘서트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851530"
+    },
+    "titles": {
+      "ko": "게릴라 콘서트",
+      "en": "Q10851530"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000002057": {
+    "workId": "wk_000002057",
+    "title": "멋진 징조들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052459"
+    },
+    "titles": {
+      "ko": "멋진 징조들",
+      "en": "Good Omens",
+      "ja": "グッド・オーメンズ"
+    },
+    "releaseYear": 1990,
+    "creator": "Terry Pratchett",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

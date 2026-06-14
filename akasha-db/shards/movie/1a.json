@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001874": {
+    "workId": "wk_000001874",
+    "title": "캡틴 뉴먼, M.D.",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035124"
+    },
+    "titles": {
+      "ko": "캡틴 뉴먼, M.D.",
+      "en": "Captain Newman, M.D.",
+      "ja": "ニューマンという男"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

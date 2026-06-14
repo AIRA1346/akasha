@@ -1,0 +1,20 @@
+{
+  "wk_000001915": {
+    "workId": "wk_000001915",
+    "title": "백성녀와 흑목사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113645560"
+    },
+    "titles": {
+      "ko": "백성녀와 흑목사",
+      "en": "Saint Cecilia and Pastor Lawrence",
+      "ja": "白聖女と黒牧師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

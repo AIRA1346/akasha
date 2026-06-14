@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002023": {
+    "workId": "wk_000002023",
+    "title": "메달 오브 아너",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069537"
+    },
+    "titles": {
+      "ko": "메달 오브 아너",
+      "en": "Q1069537",
+      "ja": "メダル・オブ・オナー"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

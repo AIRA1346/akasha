@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001862": {
+    "workId": "wk_000001862",
+    "title": "짱구는 못말려 극장판: 헨더랜드의 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134775"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 헨더랜드의 대모험",
+      "en": "Crayon Shin-chan: Great Adventure in Henderland",
+      "ja": "クレヨンしんちゃん ヘンダーランドの大冒険"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

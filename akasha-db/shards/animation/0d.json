@@ -57,5 +57,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001976": {
+    "workId": "wk_000001976",
+    "title": "극장판 헌터X헌터 : 팬텀루즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11398237"
+    },
+    "titles": {
+      "ko": "극장판 헌터X헌터 : 팬텀루즈",
+      "en": "Hunter × Hunter: Phantom Rouge",
+      "ja": "劇場版 HUNTER×HUNTER 緋色の幻影"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

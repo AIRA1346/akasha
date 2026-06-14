@@ -56,5 +56,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002056": {
+    "workId": "wk_000002056",
+    "title": "핫 로드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11337801"
+    },
+    "titles": {
+      "ko": "핫 로드",
+      "en": "Hot Road",
+      "ja": "ホットロード"
+    },
+    "creator": "紡木たく",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

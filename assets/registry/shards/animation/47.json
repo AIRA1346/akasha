@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002042": {
+    "workId": "wk_000002042",
+    "title": "내가 사랑했던 모든 너에게 (영화)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114872690"
+    },
+    "titles": {
+      "ko": "내가 사랑했던 모든 너에게 (영화)",
+      "en": "To Every You I've Loved Before",
+      "ja": "僕が愛したすべての君へ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

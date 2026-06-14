@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001938": {
+    "workId": "wk_000001938",
+    "title": "진화의 열매 ~모르는 사이 성공한 인생~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105104596"
+    },
+    "titles": {
+      "ko": "진화의 열매 ~모르는 사이 성공한 인생~",
+      "en": "The Fruit of Evolution",
+      "ja": "進化の実〜知らないうちに勝ち組人生〜"
+    },
+    "releaseYear": 2014,
+    "creator": "Miku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

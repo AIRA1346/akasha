@@ -45,5 +45,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001888": {
+    "workId": "wk_000001888",
+    "title": "테쓰본",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11319290"
+    },
+    "titles": {
+      "ko": "테쓰본",
+      "en": "Tetsubon",
+      "ja": "テツぼん"
+    },
+    "creator": "Kiyoshi Nagamatsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

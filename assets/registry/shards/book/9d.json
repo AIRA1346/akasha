@@ -30,5 +30,44 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001876": {
+    "workId": "wk_000001876",
+    "title": "우리 몫의 밤",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105016342"
+    },
+    "titles": {
+      "ko": "우리 몫의 밤",
+      "en": "Our share of the night",
+      "ja": "秘儀"
+    },
+    "releaseYear": 2019,
+    "creator": "Mariana Enriquez",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001940": {
+    "workId": "wk_000001940",
+    "title": "이위공문대",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051352"
+    },
+    "titles": {
+      "ko": "이위공문대",
+      "en": "Questions and Replies between Tang Taizong and Li Weigong",
+      "ja": "李衛公問対"
+    },
+    "creator": "太宗",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

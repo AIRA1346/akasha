@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001980": {
+    "workId": "wk_000001980",
+    "title": "크러시기어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142076"
+    },
+    "titles": {
+      "ko": "크러시기어",
+      "en": "Crush Gear Turbo",
+      "ja": "激闘!クラッシュギアTURBO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

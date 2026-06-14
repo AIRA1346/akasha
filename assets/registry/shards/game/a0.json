@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002032": {
+    "workId": "wk_000002032",
+    "title": "크루세이더 킹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070633"
+    },
+    "titles": {
+      "ko": "크루세이더 킹",
+      "en": "Crusader Kings",
+      "ja": "Crusader Kings"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000002004": {
+    "workId": "wk_000002004",
+    "title": "이번 생도 잘 부탁해",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110116049"
+    },
+    "titles": {
+      "ko": "이번 생도 잘 부탁해",
+      "en": "See You in My 19th Life",
+      "ja": "生まれ変わってもよろしく"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

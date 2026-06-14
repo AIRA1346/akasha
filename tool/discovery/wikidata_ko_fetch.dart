@@ -27,13 +27,26 @@ List<String> p31QidsForCategory(String category) {
   return set.toList()..sort();
 }
 
+/// SPARQL fetch용 P31 — webtoon은 manga series(Q21198342) 제외해 dedupe-only 구간 방지.
+const sparqlP31ByAkashaCategory = {
+  'webtoon': {'Q60496358', 'Q7978994', 'Q74262765'},
+};
+
+List<String> p31QidsForSparql(String category) {
+  final narrow = sparqlP31ByAkashaCategory[category];
+  if (narrow != null && narrow.isNotEmpty) {
+    return narrow.toList()..sort();
+  }
+  return p31QidsForCategory(category);
+}
+
 /// 한국어 라벨이 있는 항목만 — category별 P31 필터.
 String wikidataKoLabelSparql({
   required String category,
   required int limit,
   required int offset,
 }) {
-  final p31Values = p31QidsForCategory(category)
+  final p31Values = p31QidsForSparql(category)
       .map((q) => 'wd:$q')
       .join(' ');
 

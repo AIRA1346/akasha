@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001961": {
+    "workId": "wk_000001961",
+    "title": "NNN 뉴스 리얼타임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854755"
+    },
+    "titles": {
+      "ko": "NNN 뉴스 리얼타임",
+      "en": "NNN News REALTIME",
+      "ja": "NNN Newsリアルタイム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

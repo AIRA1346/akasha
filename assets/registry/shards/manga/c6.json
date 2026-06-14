@@ -56,5 +56,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001838": {
+    "workId": "wk_000001838",
+    "title": "칸논지 스이렌의 고뇌",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159278"
+    },
+    "titles": {
+      "ko": "칸논지 스이렌의 고뇌",
+      "en": "Kannonji Suiren no Kunō",
+      "ja": "観音寺睡蓮の苦悩"
+    },
+    "creator": "KaeruDX",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

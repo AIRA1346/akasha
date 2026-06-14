@@ -1,0 +1,22 @@
+{
+  "wk_000001892": {
+    "workId": "wk_000001892",
+    "title": "토일렛 박사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11321003"
+    },
+    "titles": {
+      "ko": "토일렛 박사",
+      "en": "Toilet Hakase",
+      "ja": "トイレット博士"
+    },
+    "releaseYear": 1970,
+    "creator": "Kazuyoshi Torii",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

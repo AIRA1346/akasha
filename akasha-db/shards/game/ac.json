@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001859": {
+    "workId": "wk_000001859",
+    "title": "소닉 더 헤지혹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068669"
+    },
+    "titles": {
+      "ko": "소닉 더 헤지혹",
+      "en": "Sonic the Hedgehog",
+      "ja": "ソニック・ザ・ヘッジホッグ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

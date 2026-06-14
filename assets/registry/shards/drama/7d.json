@@ -83,5 +83,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001845": {
+    "workId": "wk_000001845",
+    "title": "8월에 내리는 눈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846224"
+    },
+    "titles": {
+      "ko": "8월에 내리는 눈",
+      "en": "Snow in August",
+      "ja": "8月に降る雪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

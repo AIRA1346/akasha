@@ -51,5 +51,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001851": {
+    "workId": "wk_000001851",
+    "title": "할 수 있다고!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108486292"
+    },
+    "titles": {
+      "ko": "할 수 있다고!",
+      "en": "Q108486292"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001868": {
+    "workId": "wk_000001868",
+    "title": "이바라드 시간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135153"
+    },
+    "titles": {
+      "ko": "이바라드 시간",
+      "en": "Iblard Jikan",
+      "ja": "イバラード時間"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

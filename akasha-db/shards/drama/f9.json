@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001966": {
+    "workId": "wk_000001966",
+    "title": "걸즈 어 고고! 미소녀 클럽 31",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855165"
+    },
+    "titles": {
+      "ko": "걸즈 어 고고! 미소녀 클럽 31",
+      "en": "Q10855165",
+      "ja": "GIRLS A GOGO!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

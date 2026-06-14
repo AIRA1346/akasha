@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001858": {
+    "workId": "wk_000001858",
+    "title": "조커 용서받지 못한 수사관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851151"
+    },
+    "titles": {
+      "ko": "조커 용서받지 못한 수사관",
+      "en": "Joker: Yurusarezaru Sousakan",
+      "ja": "ジョーカー 許されざる捜査官"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

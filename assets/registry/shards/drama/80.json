@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001848": {
+    "workId": "wk_000001848",
+    "title": "라디오 빙빙 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846534"
+    },
+    "titles": {
+      "ko": "라디오 빙빙 이야기",
+      "en": "Q10846534",
+      "ja": "びんびんシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

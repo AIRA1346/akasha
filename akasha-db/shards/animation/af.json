@@ -1,0 +1,20 @@
+{
+  "wk_000001822": {
+    "workId": "wk_000001822",
+    "title": "데드 링거",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113450305"
+    },
+    "titles": {
+      "ko": "데드 링거",
+      "en": "Dead Ringers",
+      "ja": "戦慄の絆 (2023年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002059": {
+    "workId": "wk_000002059",
+    "title": "일본삼대실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052981"
+    },
+    "titles": {
+      "ko": "일본삼대실록",
+      "en": "Nihon Sandai Jitsuroku",
+      "ja": "日本三代実録"
+    },
+    "creator": "菅原道真",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

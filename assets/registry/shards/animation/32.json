@@ -1,0 +1,20 @@
+{
+  "wk_000001916": {
+    "workId": "wk_000001916",
+    "title": "신 없는 세계의 신 활동",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113645567"
+    },
+    "titles": {
+      "ko": "신 없는 세계의 신 활동",
+      "en": "KamiKatsu",
+      "ja": "神無き世界のカミサマ活動"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

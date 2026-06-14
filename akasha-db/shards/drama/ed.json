@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001791": {
+    "workId": "wk_000001791",
+    "title": "KBS 뉴스월드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108366180"
+    },
+    "titles": {
+      "ko": "KBS 뉴스월드",
+      "en": "KBS News World"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002016": {
+    "workId": "wk_000002016",
+    "title": "눈사람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856237"
+    },
+    "titles": {
+      "ko": "눈사람",
+      "en": "Snowman",
+      "ja": "雪だるま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

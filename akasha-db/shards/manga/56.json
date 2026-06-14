@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001839": {
+    "workId": "wk_000001839",
+    "title": "추젠지 선생님의 모노노케 강의록 선생님이 수수께끼를 풀어버리니까.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159284"
+    },
+    "titles": {
+      "ko": "추젠지 선생님의 모노노케 강의록 선생님이 수수께끼를 풀어버리니까.",
+      "en": "The Mononoke Lecture Logs of Chuzenji-sensei",
+      "ja": "中禅寺先生物怪講義録 先生が謎を解いてしまうから。"
+    },
+    "creator": "Aki Shimizu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

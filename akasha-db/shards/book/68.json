@@ -1,0 +1,21 @@
+{
+  "wk_000001937": {
+    "workId": "wk_000001937",
+    "title": "그림자 왕",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105081971"
+    },
+    "titles": {
+      "ko": "그림자 왕",
+      "en": "The Shadow King"
+    },
+    "releaseYear": 2019,
+    "creator": "Maaza Mengiste",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000002019": {
+    "workId": "wk_000002019",
+    "title": "늦게 피는 해바라기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856260"
+    },
+    "titles": {
+      "ko": "늦게 피는 해바라기",
+      "en": "Osozaki no Himawari: Boku no Jinsei, Rinyūaru",
+      "ja": "遅咲きのヒマワリ〜ボクの人生、リニューアル〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

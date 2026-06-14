@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001923": {
+    "workId": "wk_000001923",
+    "title": "홈런왕 강속구",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11397867"
+    },
+    "titles": {
+      "ko": "홈런왕 강속구",
+      "en": "Go-Q-Chōji Ikkiman",
+      "ja": "剛Q超児イッキマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

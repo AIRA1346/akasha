@@ -1,0 +1,21 @@
+{
+  "wk_000001925": {
+    "workId": "wk_000001925",
+    "title": "4.4.4.",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035180"
+    },
+    "titles": {
+      "ko": "4.4.4.",
+      "en": "Captivity",
+      "ja": "キャプティビティ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

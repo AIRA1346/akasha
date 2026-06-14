@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001799": {
+    "workId": "wk_000001799",
+    "title": "사일로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108456738"
+    },
+    "titles": {
+      "ko": "사일로",
+      "en": "Silo",
+      "ja": "サイロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

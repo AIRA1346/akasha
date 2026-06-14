@@ -47,5 +47,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001789": {
+    "workId": "wk_000001789",
+    "title": "베이크 스쿼드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108325764"
+    },
+    "titles": {
+      "ko": "베이크 스쿼드",
+      "en": "Bake Squad",
+      "ja": "ベイク・スクワッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

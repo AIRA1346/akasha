@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001901": {
+    "workId": "wk_000001901",
+    "title": "탱크 톱 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852865"
+    },
+    "titles": {
+      "ko": "탱크 톱 파이터",
+      "en": "TANK-TOP FIGHTER",
+      "ja": "タンクトップファイター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

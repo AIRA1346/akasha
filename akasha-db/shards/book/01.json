@@ -1,0 +1,21 @@
+{
+  "wk_000002002": {
+    "workId": "wk_000002002",
+    "title": "미드나이트 선",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052268"
+    },
+    "titles": {
+      "ko": "미드나이트 선",
+      "en": "Midnight Sun"
+    },
+    "releaseYear": 2020,
+    "creator": "Stephenie Meyer",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

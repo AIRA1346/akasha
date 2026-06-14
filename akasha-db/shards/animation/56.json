@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002040": {
+    "workId": "wk_000002040",
+    "title": "우리 회사의 작은 선배 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114708215"
+    },
+    "titles": {
+      "ko": "우리 회사의 작은 선배 이야기",
+      "en": "My Tiny Senpai",
+      "ja": "うちの会社の小さい先輩の話"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

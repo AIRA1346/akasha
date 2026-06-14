@@ -1,0 +1,21 @@
+{
+  "wk_000001952": {
+    "workId": "wk_000001952",
+    "title": "결혼한다는 게, 정말인가요",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113298050"
+    },
+    "titles": {
+      "ko": "결혼한다는 게, 정말인가요",
+      "en": "365 Days to the Wedding",
+      "ja": "結婚するって、本当ですか"
+    },
+    "creator": "Tamiki Wakaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -52,5 +52,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001867": {
+    "workId": "wk_000001867",
+    "title": "로자리오와 뱀파이어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11350257"
+    },
+    "titles": {
+      "ko": "로자리오와 뱀파이어",
+      "en": "Rosario + Vampire",
+      "ja": "ロザリオとバンパイア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002044": {
+    "workId": "wk_000002044",
+    "title": "REVENGER",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114888419"
+    },
+    "titles": {
+      "ko": "REVENGER",
+      "en": "Revenger",
+      "ja": "REVENGER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

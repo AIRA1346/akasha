@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001950": {
+    "workId": "wk_000001950",
+    "title": "백마왕자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326298"
+    },
+    "titles": {
+      "ko": "백마왕자",
+      "en": "Hakuba no Ōji-sama",
+      "ja": "ハクバノ王子サマ"
+    },
+    "creator": "Yukizou Saku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

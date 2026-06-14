@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001978": {
+    "workId": "wk_000001978",
+    "title": "극장판 프리큐어 올스타즈 DX 모두 친구☆기적의 전원 대집합!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113993527"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 올스타즈 DX 모두 친구☆기적의 전원 대집합!",
+      "en": "Pretty Cure All Stars DX: Everyone's Friends☆the Collection of Miracles!",
+      "ja": "映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001987": {
+    "workId": "wk_000001987",
+    "title": "천재? Dr. 하맥스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11442611"
+    },
+    "titles": {
+      "ko": "천재? Dr. 하맥스",
+      "en": "Genius? Dr. Hamax",
+      "ja": "天才? Dr.ハマックス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

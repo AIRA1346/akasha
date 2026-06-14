@@ -1,0 +1,20 @@
+{
+  "wk_000001986": {
+    "workId": "wk_000001986",
+    "title": "SHY",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114422701"
+    },
+    "titles": {
+      "ko": "SHY",
+      "en": "Shy",
+      "ja": "SHY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

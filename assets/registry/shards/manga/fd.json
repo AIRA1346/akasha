@@ -1,0 +1,40 @@
+{
+  "wk_000001840": {
+    "workId": "wk_000001840",
+    "title": "푸니르는 귀여운 슬라임",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159304"
+    },
+    "titles": {
+      "ko": "푸니르는 귀여운 슬라임",
+      "en": "Puniru Is a Cute Slime",
+      "ja": "ぷにるはかわいいスライム"
+    },
+    "creator": "Maedakun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001842": {
+    "workId": "wk_000001842",
+    "title": "KATSU!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131859"
+    },
+    "titles": {
+      "ko": "KATSU!",
+      "en": "Katsu!",
+      "ja": "KATSU!"
+    },
+    "creator": "Mitsuru Adachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

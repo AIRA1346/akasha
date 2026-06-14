@@ -1,0 +1,21 @@
+{
+  "wk_000001994": {
+    "workId": "wk_000001994",
+    "title": "바람의 검심 최종장: 더 파이널",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103820244"
+    },
+    "titles": {
+      "ko": "바람의 검심 최종장: 더 파이널",
+      "en": "Rurouni Kenshin: The Final",
+      "ja": "るろうに剣心 最終章 The Final"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

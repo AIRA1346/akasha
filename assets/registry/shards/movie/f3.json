@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001934": {
+    "workId": "wk_000001934",
+    "title": "자산어보",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103742243"
+    },
+    "titles": {
+      "ko": "자산어보",
+      "en": "The Book of Fish",
+      "ja": "茲山魚譜"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

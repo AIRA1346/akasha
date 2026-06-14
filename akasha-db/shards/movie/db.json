@@ -1,0 +1,21 @@
+{
+  "wk_000001828": {
+    "workId": "wk_000001828",
+    "title": "용루각: 비정도시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103412263"
+    },
+    "titles": {
+      "ko": "용루각: 비정도시",
+      "en": "Dragon Inn Part 1: The City of Sadness",
+      "ja": "龍楼閣 非情都市"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

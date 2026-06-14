@@ -1,0 +1,20 @@
+{
+  "wk_000001944": {
+    "workId": "wk_000001944",
+    "title": "가타부타타",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546976"
+    },
+    "titles": {
+      "ko": "가타부타타",
+      "en": "Rumor Has It",
+      "ja": "恋愛エトセトラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

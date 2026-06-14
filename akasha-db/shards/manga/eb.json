@@ -1,0 +1,21 @@
+{
+  "wk_000001949": {
+    "workId": "wk_000001949",
+    "title": "원오페 조커",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113249123"
+    },
+    "titles": {
+      "ko": "원오페 조커",
+      "en": "Joker: One Operation Joker",
+      "ja": "ワンオペJOKER"
+    },
+    "creator": "Satoshi Miyagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

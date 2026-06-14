@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001815": {
+    "workId": "wk_000001815",
+    "title": "이누×보쿠SS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113364550"
+    },
+    "titles": {
+      "ko": "이누×보쿠SS",
+      "en": "Inu × Boku SS",
+      "ja": "妖狐×僕SS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

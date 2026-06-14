@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001805": {
+    "workId": "wk_000001805",
+    "title": "와리오 랜드: 흔들어!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067581"
+    },
+    "titles": {
+      "ko": "와리오 랜드: 흔들어!",
+      "en": "Wario Land: Shake It!",
+      "ja": "ワリオランドシェイク"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

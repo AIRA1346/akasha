@@ -1,0 +1,39 @@
+{
+  "wk_000001932": {
+    "workId": "wk_000001932",
+    "title": "스왈로우테일 버터플라이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036921"
+    },
+    "titles": {
+      "ko": "스왈로우테일 버터플라이",
+      "en": "Swallowtail",
+      "ja": "スワロウテイル"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001935": {
+    "workId": "wk_000001935",
+    "title": "바젠다 스토리즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103757495"
+    },
+    "titles": {
+      "ko": "바젠다 스토리즈",
+      "en": "Vagenda Stories"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

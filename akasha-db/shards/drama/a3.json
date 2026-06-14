@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001965": {
+    "workId": "wk_000001965",
+    "title": "가요무대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855043"
+    },
+    "titles": {
+      "ko": "가요무대",
+      "en": "Golden Oldies (TV program)",
+      "ja": "歌謡舞台"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

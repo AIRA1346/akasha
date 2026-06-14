@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001970": {
+    "workId": "wk_000001970",
+    "title": "소닉 제너레이션즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106921080"
+    },
+    "titles": {
+      "ko": "소닉 제너레이션즈",
+      "en": "Sonic Generations",
+      "ja": "ソニック ジェネレーションズ 青の冒険"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001800": {
+    "workId": "wk_000001800",
+    "title": "21세기 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10845996"
+    },
+    "titles": {
+      "ko": "21세기 가족",
+      "en": "Q10845996",
+      "ja": "21世紀家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

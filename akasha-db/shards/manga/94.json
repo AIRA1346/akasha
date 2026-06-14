@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001954": {
+    "workId": "wk_000001954",
+    "title": "수염과 모음",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329976"
+    },
+    "titles": {
+      "ko": "수염과 모음",
+      "en": "Hige To Boin",
+      "ja": "ヒゲとボイン"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

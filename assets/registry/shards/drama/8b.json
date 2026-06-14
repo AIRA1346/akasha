@@ -32,5 +32,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002009": {
+    "workId": "wk_000002009",
+    "title": "그것이 답이다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855646"
+    },
+    "titles": {
+      "ko": "그것이 답이다!",
+      "en": "Q10855646",
+      "ja": "それが答えだ!"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002010": {
+    "workId": "wk_000002010",
+    "title": "그대는 별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855647"
+    },
+    "titles": {
+      "ko": "그대는 별",
+      "en": "You are a Star",
+      "ja": "あなたは星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

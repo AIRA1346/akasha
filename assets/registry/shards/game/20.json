@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002031": {
+    "workId": "wk_000002031",
+    "title": "파퓰러스: 더 비기닝",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070478"
+    },
+    "titles": {
+      "ko": "파퓰러스: 더 비기닝",
+      "en": "Populous: The Beginning",
+      "ja": "ポピュラス ザ・ビギニング"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,5 +1,28 @@
 [
   {
+    "workId": "wk_000001883",
+    "title": "D.P 개의 날",
+    "shardId": "webtoon_82",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kim Bo-tong",
+    "tags": [],
+    "searchTokens": [
+      "D.P 개의 날",
+      "D.P: Dog Days",
+      "Kim Bo-tong",
+      "d.pdogdays",
+      "d.p개의날",
+      "kimbotong"
+    ],
+    "titles": {
+      "ko": "D.P 개의 날",
+      "en": "D.P: Dog Days"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000620",
     "title": "HG를 사랑하는 두 사람",
     "shardId": "webtoon_c0",
@@ -50,6 +73,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001944",
+    "title": "가타부타타",
+    "shardId": "webtoon_5c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Rumor Has It",
+      "rumorhasit",
+      "恋愛エトセトラ",
+      "가타부타타"
+    ],
+    "titles": {
+      "ko": "가타부타타",
+      "en": "Rumor Has It",
+      "ja": "恋愛エトセトラ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000853",
     "title": "경이로운 소문",
     "shardId": "webtoon_0f",
@@ -96,6 +141,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001885",
+    "title": "그녀의 심청",
+    "shardId": "webtoon_1d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Her Tale of Shim Chong",
+      "hertaleofshimchong",
+      "그녀의 심청",
+      "그녀의심청"
+    ],
+    "titles": {
+      "ko": "그녀의 심청",
+      "en": "Her Tale of Shim Chong"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000409",
     "title": "나 혼자만 레벨업",
     "shardId": "webtoon_7f",
@@ -126,6 +192,29 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001943",
+    "title": "나노리스트",
+    "shardId": "webtoon_54",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "민송아",
+    "tags": [],
+    "searchTokens": [
+      "Nano List",
+      "nanolist",
+      "ナノリスト",
+      "나노리스트",
+      "민송아"
+    ],
+    "titles": {
+      "ko": "나노리스트",
+      "en": "Nano List",
+      "ja": "ナノリスト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000741",
@@ -202,6 +291,29 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001882",
+    "title": "도깨비언덕에 왜 왔니?",
+    "shardId": "webtoon_1a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Goblin Hill",
+      "goblinhill",
+      "トッケビの丘になぜ来たの？",
+      "도깨비언덕에 왜 왔니?",
+      "도깨비언덕에왜왔니?"
+    ],
+    "titles": {
+      "ko": "도깨비언덕에 왜 왔니?",
+      "en": "Goblin Hill",
+      "ja": "トッケビの丘になぜ来たの？"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000798",
@@ -327,6 +439,26 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001779",
+    "title": "모럴센스",
+    "shardId": "webtoon_00",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Love and Leashes",
+      "loveandleashes",
+      "모럴센스"
+    ],
+    "titles": {
+      "ko": "모럴센스",
+      "en": "Love and Leashes"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000736",
     "title": "벌 원 다이버",
     "shardId": "webtoon_99",
@@ -398,6 +530,26 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001945",
+    "title": "사냥개들",
+    "shardId": "webtoon_65",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bloodhounds",
+      "bloodhounds",
+      "사냥개들"
+    ],
+    "titles": {
+      "ko": "사냥개들",
+      "en": "Bloodhounds"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001025",
@@ -496,6 +648,80 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001881",
+    "title": "새비지 가든",
+    "shardId": "webtoon_97",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "이현숙",
+    "tags": [],
+    "searchTokens": [
+      "Savage Garden",
+      "savagegarden",
+      "새비지 가든",
+      "새비지가든",
+      "이현숙"
+    ],
+    "titles": {
+      "ko": "새비지 가든",
+      "en": "Savage Garden"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001947",
+    "title": "설민석의 세계사 대모험",
+    "shardId": "webtoon_6a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Seol Min-seok",
+    "tags": [],
+    "searchTokens": [
+      "Seol Min-seok",
+      "Sol Min-seok's World History Adventure",
+      "seolminseok",
+      "solminseok'sworldhistoryadventure",
+      "ソルミンソクの世界史大冒険",
+      "ソル・ミンソクの世界史大冒険",
+      "설민석의 세계사 대모험",
+      "설민석의세계사대모험"
+    ],
+    "titles": {
+      "ko": "설민석의 세계사 대모험",
+      "en": "Sol Min-seok's World History Adventure",
+      "ja": "ソル・ミンソクの世界史大冒険"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001887",
+    "title": "설민석의 한국사 대모험",
+    "shardId": "webtoon_9b",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Seol Min-seok",
+    "tags": [],
+    "searchTokens": [
+      "Seol Min-seok",
+      "Sol Min-seok's Great Adventure in Korean History",
+      "seolminseok",
+      "solminseok'sgreatadventureinkoreanhistory",
+      "ソルミンソクの韓国史大冒険",
+      "ソル・ミンソクの韓国史大冒険",
+      "설민석의 한국사 대모험",
+      "설민석의한국사대모험"
+    ],
+    "titles": {
+      "ko": "설민석의 한국사 대모험",
+      "en": "Sol Min-seok's Great Adventure in Korean History",
+      "ja": "ソル・ミンソクの韓国史大冒険"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000926",
     "title": "소라닌",
     "shardId": "webtoon_12",
@@ -565,6 +791,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000002007",
+    "title": "신과함께",
+    "shardId": "webtoon_74",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Joo Ho-min",
+    "tags": [],
+    "searchTokens": [
+      "Along with the Gods",
+      "Joo Ho-min",
+      "alongwiththegods",
+      "joohomin",
+      "神と一緒に",
+      "신과함께"
+    ],
+    "titles": {
+      "ko": "신과함께",
+      "en": "Along with the Gods",
+      "ja": "神と一緒に"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000410",
     "title": "신의 탑",
     "shardId": "webtoon_03",
@@ -597,6 +847,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000002003",
+    "title": "싸움독학",
+    "shardId": "webtoon_9e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "박태준",
+    "tags": [],
+    "searchTokens": [
+      "Viral Hit",
+      "viralhit",
+      "喧嘩独学",
+      "박태준",
+      "싸움독학"
+    ],
+    "titles": {
+      "ko": "싸움독학",
+      "en": "Viral Hit",
+      "ja": "喧嘩独学"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001024",
     "title": "아라타 칸가타리",
     "shardId": "webtoon_60",
@@ -621,6 +894,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000002006",
+    "title": "아무도 모른다",
+    "shardId": "webtoon_70",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Nobody Knows",
+      "nobodyknows",
+      "아무도 모른다",
+      "아무도모른다"
+    ],
+    "titles": {
+      "ko": "아무도 모른다",
+      "en": "Nobody Knows"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000802",
@@ -694,6 +988,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001946",
+    "title": "안나라수마나라",
+    "shardId": "webtoon_a4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Ha Il-kwon",
+    "tags": [],
+    "searchTokens": [
+      "Annarasumanara",
+      "Ha Il-kwon",
+      "annarasumanara",
+      "hailkwon",
+      "안나라수마나라"
+    ],
+    "titles": {
+      "ko": "안나라수마나라",
+      "en": "Annarasumanara"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000738",
     "title": "앨버트가의 영애는 몰락을 소망합니다",
     "shardId": "webtoon_4d",
@@ -715,6 +1031,31 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001780",
+    "title": "어느 날 공주가 되어버렸다",
+    "shardId": "webtoon_ae",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Plutus",
+    "tags": [],
+    "searchTokens": [
+      "Plutus",
+      "Who Made Me a Princess",
+      "plutus",
+      "whomademeaprincess",
+      "ある日、お姫様になってしまった件について",
+      "어느 날 공주가 되어버렸다",
+      "어느날공주가되어버렸다"
+    ],
+    "titles": {
+      "ko": "어느 날 공주가 되어버렸다",
+      "en": "Who Made Me a Princess",
+      "ja": "ある日、お姫様になってしまった件について"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000001026",
@@ -910,6 +1251,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000002004",
+    "title": "이번 생도 잘 부탁해",
+    "shardId": "webtoon_7e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "See You in My 19th Life",
+      "seeyouinmy19thlife",
+      "生まれ変わってもよろしく",
+      "이번 생도 잘 부탁해",
+      "이번생도잘부탁해"
+    ],
+    "titles": {
+      "ko": "이번 생도 잘 부탁해",
+      "en": "See You in My 19th Life",
+      "ja": "生まれ変わってもよろしく"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000920",
     "title": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
     "shardId": "webtoon_f1",
@@ -958,6 +1322,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001941",
+    "title": "일렉시드",
+    "shardId": "webtoon_92",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Eleceed",
+      "eleceed",
+      "エレキシード",
+      "일렉시드"
+    ],
+    "titles": {
+      "ko": "일렉시드",
+      "en": "Eleceed",
+      "ja": "エレキシード"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000854",
     "title": "죽은 소녀를 위한 파반",
     "shardId": "webtoon_4f",
@@ -981,6 +1367,27 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001886",
+    "title": "중증외상센터 : 골든 아워",
+    "shardId": "webtoon_db",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Trauma Center: Golden Hour",
+      "traumacentergoldenhour",
+      "중증외상센터 : 골든 아워",
+      "중증외상센터골든아워"
+    ],
+    "titles": {
+      "ko": "중증외상센터 : 골든 아워",
+      "en": "Trauma Center: Golden Hour"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000538",
@@ -1102,6 +1509,26 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000002005",
+    "title": "택배기사",
+    "shardId": "webtoon_ca",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Delivery Knight",
+      "deliveryknight",
+      "택배기사"
+    ],
+    "titles": {
+      "ko": "택배기사",
+      "en": "Delivery Knight"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000742",
     "title": "푸른 오케스트라",
     "shardId": "webtoon_36",
@@ -1122,6 +1549,27 @@
       "ko": "푸른 오케스트라",
       "en": "Blue Orchestra",
       "ja": "青のオーケストラ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001837",
+    "title": "플레이, 플리",
+    "shardId": "webtoon_27",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Secret Playlist",
+      "secretplaylist",
+      "플레이, 플리",
+      "플레이,플리"
+    ],
+    "titles": {
+      "ko": "플레이, 플리",
+      "en": "Secret Playlist"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -1197,6 +1645,49 @@
       "ko": "학원 앨리스",
       "en": "Gakuen Alice",
       "ja": "学園アリス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001942",
+    "title": "호랑이 들어와요",
+    "shardId": "webtoon_97",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tiger Coming In",
+      "tigercomingin",
+      "호랑이 들어와요",
+      "호랑이들어와요"
+    ],
+    "titles": {
+      "ko": "호랑이 들어와요",
+      "en": "Tiger Coming In"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001884",
+    "title": "후레자식",
+    "shardId": "webtoon_ca",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bastard",
+      "bastard",
+      "不肖の息子",
+      "후레자식"
+    ],
+    "titles": {
+      "ko": "후레자식",
+      "en": "Bastard",
+      "ja": "不肖の息子"
     },
     "qualityScore": 65,
     "qualityTier": 3

@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002048": {
+    "workId": "wk_000002048",
+    "title": "드래곤볼 Z: 신들의 전쟁",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150595"
+    },
+    "titles": {
+      "ko": "드래곤볼 Z: 신들의 전쟁",
+      "en": "Dragon Ball Z: Battle of Gods",
+      "ja": "ドラゴンボールZ 神と神"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

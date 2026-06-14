@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001832": {
+    "workId": "wk_000001832",
+    "title": "망각의 땅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1034984"
+    },
+    "titles": {
+      "ko": "망각의 땅",
+      "en": "The Land That Time Forgot",
+      "ja": "恐竜の島"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

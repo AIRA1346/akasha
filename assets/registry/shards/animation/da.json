@@ -1,0 +1,21 @@
+{
+  "wk_000001819": {
+    "workId": "wk_000001819",
+    "title": "원피스 - 사막의 공주와 해적들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134372"
+    },
+    "titles": {
+      "ko": "원피스 - 사막의 공주와 해적들",
+      "en": "One Piece Movie: The Desert Princess and the Pirates: Adventures in Alabasta",
+      "ja": "ONE PIECE エピソードオブアラバスタ 砂漠の王女と海賊たち"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

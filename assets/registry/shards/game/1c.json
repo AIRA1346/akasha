@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001802": {
+    "workId": "wk_000001802",
+    "title": "차근차근 게임 코딩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106725413"
+    },
+    "titles": {
+      "ko": "차근차근 게임 코딩",
+      "en": "Game Builder Garage",
+      "ja": "ナビつき！つくってわかる　はじめてゲームプログラミング"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

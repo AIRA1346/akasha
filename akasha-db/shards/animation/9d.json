@@ -1,0 +1,20 @@
+{
+  "wk_000001818": {
+    "workId": "wk_000001818",
+    "title": "사신 짱 드롭킥",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113434592"
+    },
+    "titles": {
+      "ko": "사신 짱 드롭킥",
+      "en": "Dropkick on My Devil!",
+      "ja": "邪神ちゃんドロップキック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

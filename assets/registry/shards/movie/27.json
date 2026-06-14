@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001990": {
+    "workId": "wk_000001990",
+    "title": "럭키 몬스터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103812870"
+    },
+    "titles": {
+      "ko": "럭키 몬스터",
+      "en": "Lucky Monster"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

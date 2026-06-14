@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001816": {
+    "workId": "wk_000001816",
+    "title": "만화로 배우는 심신의학",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11341509"
+    },
+    "titles": {
+      "ko": "만화로 배우는 심신의학",
+      "en": "Comical Psychosomatic Medicine",
+      "ja": "マンガで分かる心療内科"
+    },
+    "creator": "Yū Yūki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

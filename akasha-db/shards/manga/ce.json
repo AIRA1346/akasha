@@ -1,0 +1,22 @@
+{
+  "wk_000001782": {
+    "workId": "wk_000001782",
+    "title": "리코리스 리코일",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113013493"
+    },
+    "titles": {
+      "ko": "리코리스 리코일",
+      "en": "Lycoris Recoil",
+      "ja": "リコリス・リコイル"
+    },
+    "releaseYear": 2022,
+    "creator": "Yasunori Bizen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

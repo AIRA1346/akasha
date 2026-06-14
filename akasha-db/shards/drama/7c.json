@@ -48,5 +48,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001854": {
+    "workId": "wk_000001854",
+    "title": "쓰리 파인즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108502761"
+    },
+    "titles": {
+      "ko": "쓰리 파인즈",
+      "en": "Three Pines"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

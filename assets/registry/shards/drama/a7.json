@@ -33,5 +33,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001857": {
+    "workId": "wk_000001857",
+    "title": "해피 엔딩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10850890"
+    },
+    "titles": {
+      "ko": "해피 엔딩",
+      "en": "Happy Ending",
+      "ja": "ハッピー・エンディング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001962": {
+    "workId": "wk_000001962",
+    "title": "Run Run LAN!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854810"
+    },
+    "titles": {
+      "ko": "Run Run LAN!",
+      "en": "Q10854810",
+      "ja": "Run Run LAN!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

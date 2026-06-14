@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001971": {
+    "workId": "wk_000001971",
+    "title": "세계수와 불가사의 던전 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106923314"
+    },
+    "titles": {
+      "ko": "세계수와 불가사의 던전 2",
+      "en": "Etrian Mystery Dungeon 2",
+      "ja": "世界樹と不思議のダンジョン2"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

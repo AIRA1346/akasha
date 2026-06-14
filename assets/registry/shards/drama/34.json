@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001907": {
+    "workId": "wk_000001907",
+    "title": "10년 후에도 너를 사랑해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854270"
+    },
+    "titles": {
+      "ko": "10년 후에도 너를 사랑해",
+      "en": "Q10854270",
+      "ja": "10年先も君に恋して"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

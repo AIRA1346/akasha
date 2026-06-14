@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001964": {
+    "workId": "wk_000001964",
+    "title": "VJ특공대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854897"
+    },
+    "titles": {
+      "ko": "VJ특공대",
+      "en": "Q10854897",
+      "ja": "VJ特攻隊"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

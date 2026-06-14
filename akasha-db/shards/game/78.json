@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001974": {
+    "workId": "wk_000001974",
+    "title": "터미네이터 2: 체스 전쟁",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10693359"
+    },
+    "titles": {
+      "ko": "터미네이터 2: 체스 전쟁",
+      "en": "Terminator 2: Judgment Day - Chess Wars"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -87,5 +87,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002024": {
+    "workId": "wk_000002024",
+    "title": "네크로문다: 하이어 건",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106967650"
+    },
+    "titles": {
+      "ko": "네크로문다: 하이어 건",
+      "en": "Necromunda: Hired Gun"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

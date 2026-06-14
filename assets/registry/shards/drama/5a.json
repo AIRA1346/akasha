@@ -1,0 +1,20 @@
+{
+  "wk_000001969": {
+    "workId": "wk_000001969",
+    "title": "궁중잔혹사: 꽃들의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855627"
+    },
+    "titles": {
+      "ko": "궁중잔혹사: 꽃들의 전쟁",
+      "en": "Blooded Palace: The War of Flowers",
+      "ja": "花たちの戦い -宮廷残酷史-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

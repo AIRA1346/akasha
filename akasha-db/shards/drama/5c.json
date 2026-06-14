@@ -1,0 +1,20 @@
+{
+  "wk_000001906": {
+    "workId": "wk_000001906",
+    "title": "왓츠업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10853296"
+    },
+    "titles": {
+      "ko": "왓츠업",
+      "en": "What's Up",
+      "ja": "What's Up"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

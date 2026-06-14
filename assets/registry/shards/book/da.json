@@ -1,0 +1,22 @@
+{
+  "wk_000002000": {
+    "workId": "wk_000002000",
+    "title": "처형 소녀의 살아가는 길",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105163658"
+    },
+    "titles": {
+      "ko": "처형 소녀의 살아가는 길",
+      "en": "The Executioner and Her Way of Life",
+      "ja": "処刑少女の生きる道"
+    },
+    "releaseYear": 2019,
+    "creator": "Mato Satō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

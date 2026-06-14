@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001841": {
+    "workId": "wk_000001841",
+    "title": "빅X",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131848"
+    },
+    "titles": {
+      "ko": "빅X",
+      "en": "Big X",
+      "ja": "ビッグX"
+    },
+    "creator": "Osamu Tezuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

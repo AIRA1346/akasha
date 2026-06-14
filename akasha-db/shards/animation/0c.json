@@ -91,5 +91,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001869": {
+    "workId": "wk_000001869",
+    "title": "방과후의 플레이아데스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135343"
+    },
+    "titles": {
+      "ko": "방과후의 플레이아데스",
+      "en": "Wish Upon the Pleiades",
+      "ja": "放課後のプレアデス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

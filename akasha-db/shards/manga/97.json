@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001889": {
+    "workId": "wk_000001889",
+    "title": "디아즈 폴리스 이방 경찰",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11319956"
+    },
+    "titles": {
+      "ko": "디아즈 폴리스 이방 경찰",
+      "en": "Diaz Police Ihō Keisatsu",
+      "ja": "ディアスポリス 異邦警察"
+    },
+    "creator": "Takashi Nagasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

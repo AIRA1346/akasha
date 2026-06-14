@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002058": {
+    "workId": "wk_000002058",
+    "title": "일본문덕천황실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052905"
+    },
+    "titles": {
+      "ko": "일본문덕천황실록",
+      "en": "Nihon Montoku Tennō Jitsuroku",
+      "ja": "日本文徳天皇実録"
+    },
+    "creator": "Fujiwara no Mototsune",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

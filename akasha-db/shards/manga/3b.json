@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002054": {
+    "workId": "wk_000002054",
+    "title": "후지 산타로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11333310"
+    },
+    "titles": {
+      "ko": "후지 산타로",
+      "en": "Fuji Santarо̄",
+      "ja": "フジ三太郎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

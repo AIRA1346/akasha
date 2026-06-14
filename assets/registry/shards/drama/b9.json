@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002013": {
+    "workId": "wk_000002013",
+    "title": "남북의 창",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856067"
+    },
+    "titles": {
+      "ko": "남북의 창",
+      "en": "Q10856067",
+      "ja": "南北の窓"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

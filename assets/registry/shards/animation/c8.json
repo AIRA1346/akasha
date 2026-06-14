@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001918": {
+    "workId": "wk_000001918",
+    "title": "요괴인간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138428"
+    },
+    "titles": {
+      "ko": "요괴인간",
+      "en": "Yōkai Ningen Bem",
+      "ja": "妖怪人間ベム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

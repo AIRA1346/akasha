@@ -1,0 +1,21 @@
+{
+  "wk_000001788": {
+    "workId": "wk_000001788",
+    "title": "타임 워커 제로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315756"
+    },
+    "titles": {
+      "ko": "타임 워커 제로",
+      "en": "Time Walker Zero",
+      "ja": "タイムウォーカー零"
+    },
+    "creator": "Yūki Hidaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

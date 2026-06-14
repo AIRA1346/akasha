@@ -1,0 +1,19 @@
+{
+  "wk_000001885": {
+    "workId": "wk_000001885",
+    "title": "그녀의 심청",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109308563"
+    },
+    "titles": {
+      "ko": "그녀의 심청",
+      "en": "Her Tale of Shim Chong"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

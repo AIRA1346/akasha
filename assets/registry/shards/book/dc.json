@@ -1,0 +1,41 @@
+{
+  "wk_000001878": {
+    "workId": "wk_000001878",
+    "title": "유희 충동",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105020486"
+    },
+    "titles": {
+      "ko": "유희 충동",
+      "en": "Gaming Instinct"
+    },
+    "releaseYear": 2004,
+    "creator": "Juli Zeh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001999": {
+    "workId": "wk_000001999",
+    "title": "쥐덫",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051472"
+    },
+    "titles": {
+      "ko": "쥐덫",
+      "en": "The Mousetrap",
+      "ja": "ねずみとり"
+    },
+    "releaseYear": 1945,
+    "creator": "Agatha Christie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

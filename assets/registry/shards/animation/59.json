@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001982": {
+    "workId": "wk_000001982",
+    "title": "플레이리스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114357209"
+    },
+    "titles": {
+      "ko": "플레이리스트",
+      "en": "The Playlist",
+      "ja": "ザ・プレイリスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

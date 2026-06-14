@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001783": {
+    "workId": "wk_000001783",
+    "title": "화장의 마법",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11302089"
+    },
+    "titles": {
+      "ko": "화장의 마법",
+      "en": "Make-up Magic",
+      "ja": "コスメの魔法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001793": {
+    "workId": "wk_000001793",
+    "title": "메이어 오브 킹스타운",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108392632"
+    },
+    "titles": {
+      "ko": "메이어 오브 킹스타운",
+      "en": "Mayor of Kingstown",
+      "ja": "メイヤー・オブ・キングスタウン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002020": {
+    "workId": "wk_000002020",
+    "title": "달콤한 인생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856450"
+    },
+    "titles": {
+      "ko": "달콤한 인생",
+      "en": "La Dolce Vita",
+      "ja": "甘い人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

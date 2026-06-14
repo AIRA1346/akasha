@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001847": {
+    "workId": "wk_000001847",
+    "title": "Answer~ 경시청 검증 수사관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846453"
+    },
+    "titles": {
+      "ko": "Answer~ 경시청 검증 수사관",
+      "en": "Answer",
+      "ja": "Answer〜警視庁検証捜査官"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001852": {
+    "workId": "wk_000001852",
+    "title": "사내맞선",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108486931"
+    },
+    "titles": {
+      "ko": "사내맞선",
+      "en": "Business Proposal",
+      "ja": "社内お見合い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

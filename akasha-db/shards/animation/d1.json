@@ -1,0 +1,20 @@
+{
+  "wk_000001921": {
+    "workId": "wk_000001921",
+    "title": "아스트로 강가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139704"
+    },
+    "titles": {
+      "ko": "아스트로 강가",
+      "en": "Astroganger",
+      "ja": "アストロガンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

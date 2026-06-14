@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001968": {
+    "workId": "wk_000001968",
+    "title": "국희",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855609"
+    },
+    "titles": {
+      "ko": "국희",
+      "en": "Kuk Hee",
+      "ja": "クッキ 〜菊熙〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

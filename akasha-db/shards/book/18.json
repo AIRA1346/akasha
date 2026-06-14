@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001936": {
+    "workId": "wk_000001936",
+    "title": "무와타",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050556"
+    },
+    "titles": {
+      "ko": "무와타",
+      "en": "al-Muwaṭṭaʼ",
+      "ja": "ムワッター"
+    },
+    "creator": "말리크 이븐 아나스",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000001887": {
+    "workId": "wk_000001887",
+    "title": "설민석의 한국사 대모험",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458715"
+    },
+    "titles": {
+      "ko": "설민석의 한국사 대모험",
+      "en": "Sol Min-seok's Great Adventure in Korean History",
+      "ja": "ソル・ミンソクの韓国史大冒険"
+    },
+    "releaseYear": 2017,
+    "creator": "Seol Min-seok",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

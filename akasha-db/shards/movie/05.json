@@ -1,0 +1,20 @@
+{
+  "wk_000001930": {
+    "workId": "wk_000001930",
+    "title": "언더 더 쎄임 문",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036420"
+    },
+    "titles": {
+      "ko": "언더 더 쎄임 문",
+      "en": "Under the Same Moon"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

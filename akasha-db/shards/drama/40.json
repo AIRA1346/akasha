@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001967": {
+    "workId": "wk_000001967",
+    "title": "검은 여교사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855167"
+    },
+    "titles": {
+      "ko": "검은 여교사",
+      "en": "Kuro no Onna Kyōshi",
+      "ja": "黒の女教師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

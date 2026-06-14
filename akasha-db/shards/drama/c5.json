@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001959": {
+    "workId": "wk_000001959",
+    "title": "JNN 뉴스 22 프라임타임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854597"
+    },
+    "titles": {
+      "ko": "JNN 뉴스 22 프라임타임",
+      "en": "JNN NEWS22 PRIME TIME",
+      "ja": "JNNニュース22プライムタイム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

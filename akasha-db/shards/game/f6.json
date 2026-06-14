@@ -1,0 +1,21 @@
+{
+  "wk_000001803": {
+    "workId": "wk_000001803",
+    "title": "Cities XL",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067441"
+    },
+    "titles": {
+      "ko": "Cities XL",
+      "en": "Cities XL",
+      "ja": "シティーズXL"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

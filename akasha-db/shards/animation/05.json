@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002039": {
+    "workId": "wk_000002039",
+    "title": "옆자리 괴물군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114665393"
+    },
+    "titles": {
+      "ko": "옆자리 괴물군",
+      "en": "My Little Monster",
+      "ja": "となりの怪物くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

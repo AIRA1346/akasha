@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001904": {
+    "workId": "wk_000001904",
+    "title": "더 바이러스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10853022"
+    },
+    "titles": {
+      "ko": "더 바이러스",
+      "en": "The Virus",
+      "ja": "ザ・ウイルス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

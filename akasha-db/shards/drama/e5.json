@@ -1,0 +1,20 @@
+{
+  "wk_000001856": {
+    "workId": "wk_000001856",
+    "title": "HUNTER ~ 그 여자들, 현상금 사냥꾼 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10850879"
+    },
+    "titles": {
+      "ko": "HUNTER ~ 그 여자들, 현상금 사냥꾼 ~",
+      "en": "Q10850879",
+      "ja": "HUNTER〜その女たち、賞金稼ぎ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

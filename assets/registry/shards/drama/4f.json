@@ -33,5 +33,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002008": {
+    "workId": "wk_000002008",
+    "title": "그 햇살이 나에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855645"
+    },
+    "titles": {
+      "ko": "그 햇살이 나에게",
+      "en": "Sunlight Upon Me",
+      "ja": "その陽射が私に…"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -18,5 +18,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001834": {
+    "workId": "wk_000001834",
+    "title": "망량의 상자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049831"
+    },
+    "titles": {
+      "ko": "망량의 상자",
+      "en": "Mōryō no Hako",
+      "ja": "魍魎の匣"
+    },
+    "releaseYear": 2007,
+    "creator": "京極夏彦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001875": {
+    "workId": "wk_000001875",
+    "title": "어떤 소송",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105010193"
+    },
+    "titles": {
+      "ko": "어떤 소송",
+      "en": "The Method"
+    },
+    "releaseYear": 2009,
+    "creator": "Juli Zeh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002047": {
+    "workId": "wk_000002047",
+    "title": "극장판 PSYCHO-PASS PROVIDENCE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115040005"
+    },
+    "titles": {
+      "ko": "극장판 PSYCHO-PASS PROVIDENCE",
+      "en": "Psycho-Pass Providence",
+      "ja": "劇場版 PSYCHO-PASS サイコパス PROVIDENCE"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

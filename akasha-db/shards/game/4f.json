@@ -1,0 +1,21 @@
+{
+  "wk_000002030": {
+    "workId": "wk_000002030",
+    "title": "에너미 테리토리: 퀘이크 워즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070466"
+    },
+    "titles": {
+      "ko": "에너미 테리토리: 퀘이크 워즈",
+      "en": "Enemy Territory: Quake Wars",
+      "ja": "Enemy Territory: Quake Wars"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001893": {
+    "workId": "wk_000001893",
+    "title": "토쿠보우 아사쿠라 소헤이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11321176"
+    },
+    "titles": {
+      "ko": "토쿠보우 아사쿠라 소헤이",
+      "en": "Tokubou Asakura Sōhei",
+      "ja": "トクボウ 朝倉草平"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

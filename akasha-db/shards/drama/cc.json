@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001795": {
+    "workId": "wk_000001795",
+    "title": "스트릿 우먼 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108428378"
+    },
+    "titles": {
+      "ko": "스트릿 우먼 파이터",
+      "en": "Street Woman Fighter"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001958": {
+    "workId": "wk_000001958",
+    "title": "H2~너와 있던 날들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854562"
+    },
+    "titles": {
+      "ko": "H2~너와 있던 날들",
+      "en": "H2: Kimi to Ita Hibi",
+      "ja": "H2〜君といた日々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

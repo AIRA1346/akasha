@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001865": {
+    "workId": "wk_000001865",
+    "title": "루돌프와 많이있어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11348976"
+    },
+    "titles": {
+      "ko": "루돌프와 많이있어",
+      "en": "Rudolf and Ippaiattena",
+      "ja": "ルドルフとイッパイアッテナ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

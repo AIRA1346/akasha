@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001973": {
+    "workId": "wk_000001973",
+    "title": "터미네이터 2: 심판의 날",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10693357"
+    },
+    "titles": {
+      "ko": "터미네이터 2: 심판의 날",
+      "en": "Terminator 2: Judgment Day",
+      "ja": "ターミネーター2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "wk_000002037": {
+    "workId": "wk_000002037",
+    "title": "말랑쁘니",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114580283"
+    },
+    "titles": {
+      "ko": "말랑쁘니",
+      "en": "PuniRunes",
+      "ja": "ぷにるんず"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002045": {
+    "workId": "wk_000002045",
+    "title": "연희†무쌍",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492028"
+    },
+    "titles": {
+      "ko": "연희†무쌍",
+      "en": "Koihime Musō",
+      "ja": "恋姫†無双"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

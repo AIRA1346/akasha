@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001903": {
+    "workId": "wk_000001903",
+    "title": "더 베스트텐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852992"
+    },
+    "titles": {
+      "ko": "더 베스트텐",
+      "en": "The Best Ten",
+      "ja": "ザ・ベストテン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

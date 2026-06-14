@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001863": {
+    "workId": "wk_000001863",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 장엄한 전설의 전투",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134782"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 장엄한 전설의 전투",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Battle of the Warring States",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ アッパレ!戦国大合戦"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

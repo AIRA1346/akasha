@@ -57,5 +57,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001813": {
+    "workId": "wk_000001813",
+    "title": "파브르 선생은 명탐정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11332350"
+    },
+    "titles": {
+      "ko": "파브르 선생은 명탐정",
+      "en": "Fabre-sensei wa Meitantei",
+      "ja": "ファーブル先生は名探偵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002012": {
+    "workId": "wk_000002012",
+    "title": "꼭지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855936"
+    },
+    "titles": {
+      "ko": "꼭지",
+      "en": "Tough Guy's Love",
+      "ja": "コッチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

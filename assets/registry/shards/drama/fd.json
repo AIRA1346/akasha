@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001801": {
+    "workId": "wk_000001801",
+    "title": "33 분 탐정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846057"
+    },
+    "titles": {
+      "ko": "33 분 탐정",
+      "en": "33 Minutes Detective",
+      "ja": "33分探偵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

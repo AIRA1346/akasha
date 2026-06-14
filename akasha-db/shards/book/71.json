@@ -1,0 +1,22 @@
+{
+  "wk_000001835": {
+    "workId": "wk_000001835",
+    "title": "파운데이션과 지구",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050014"
+    },
+    "titles": {
+      "ko": "파운데이션과 지구",
+      "en": "Foundation and Earth",
+      "ja": "ファウンデーションと地球"
+    },
+    "releaseYear": 1986,
+    "creator": "Isaac Asimov",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

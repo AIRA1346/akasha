@@ -109,5 +109,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001917": {
+    "workId": "wk_000001917",
+    "title": "냥파이어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136615"
+    },
+    "titles": {
+      "ko": "냥파이어",
+      "en": "Nyanpire",
+      "ja": "にゃんぱいあ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

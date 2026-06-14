@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001955": {
+    "workId": "wk_000001955",
+    "title": "ANN 뉴스 세븐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854426"
+    },
+    "titles": {
+      "ko": "ANN 뉴스 세븐",
+      "en": "Q10854426",
+      "ja": "ANNニュースセブン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

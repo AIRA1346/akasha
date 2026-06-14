@@ -1,0 +1,21 @@
+{
+  "wk_000001991": {
+    "workId": "wk_000001991",
+    "title": "크라이 마초",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103817549"
+    },
+    "titles": {
+      "ko": "크라이 마초",
+      "en": "Cry Macho",
+      "ja": "クライ・マッチョ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

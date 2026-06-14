@@ -1,0 +1,21 @@
+{
+  "wk_000002015": {
+    "workId": "wk_000002015",
+    "title": "네프리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856134"
+    },
+    "titles": {
+      "ko": "네프리그",
+      "en": "NEP LEAGUE",
+      "ja": "ネプリーグ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001877": {
+    "workId": "wk_000001877",
+    "title": "형사 실프와 평행 우주의 인생들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105019592"
+    },
+    "titles": {
+      "ko": "형사 실프와 평행 우주의 인생들",
+      "en": "In free fall"
+    },
+    "releaseYear": 2007,
+    "creator": "Juli Zeh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

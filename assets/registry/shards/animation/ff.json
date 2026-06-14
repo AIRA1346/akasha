@@ -66,5 +66,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001983": {
+    "workId": "wk_000001983",
+    "title": "마법소녀 리리컬 나노하",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143644"
+    },
+    "titles": {
+      "ko": "마법소녀 리리컬 나노하",
+      "en": "Magical Girl Lyrical Nanoha",
+      "ja": "魔法少女リリカルなのは"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002043": {
+    "workId": "wk_000002043",
+    "title": "너를 사랑했던 한 사람의 나에게 (영화)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114873551"
+    },
+    "titles": {
+      "ko": "너를 사랑했던 한 사람의 나에게 (영화)",
+      "en": "To Me, the One Who Loved You",
+      "ja": "君を愛したひとりの僕へ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

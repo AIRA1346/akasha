@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001872": {
+    "workId": "wk_000001872",
+    "title": "플라토닉 섹스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10350429"
+    },
+    "titles": {
+      "ko": "플라토닉 섹스",
+      "en": "Platonic Sex",
+      "ja": "プラトニック・セックス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

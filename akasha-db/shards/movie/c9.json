@@ -1,0 +1,40 @@
+{
+  "wk_000001831": {
+    "workId": "wk_000001831",
+    "title": "2001: 스페이스 오디세이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103474"
+    },
+    "titles": {
+      "ko": "2001: 스페이스 오디세이",
+      "en": "2001: A Space Odyssey",
+      "ja": "2001年宇宙の旅"
+    },
+    "releaseYear": 1968,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001924": {
+    "workId": "wk_000001924",
+    "title": "캡틴 론",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035137"
+    },
+    "titles": {
+      "ko": "캡틴 론",
+      "en": "Captain Ron",
+      "ja": "キャプテン・ロン"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

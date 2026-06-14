@@ -1,0 +1,21 @@
+{
+  "wk_000001997": {
+    "workId": "wk_000001997",
+    "title": "사마법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051357"
+    },
+    "titles": {
+      "ko": "사마법",
+      "en": "The Methods of the Sima",
+      "ja": "司馬法"
+    },
+    "creator": "Sima Rangju",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

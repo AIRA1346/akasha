@@ -1,0 +1,21 @@
+{
+  "wk_000001972": {
+    "workId": "wk_000001972",
+    "title": "빅토리아 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106928099"
+    },
+    "titles": {
+      "ko": "빅토리아 3",
+      "en": "Victoria 3",
+      "ja": "Victoria 3"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

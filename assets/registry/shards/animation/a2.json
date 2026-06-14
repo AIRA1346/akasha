@@ -101,5 +101,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001911": {
+    "workId": "wk_000001911",
+    "title": "북두의 권",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11362502"
+    },
+    "titles": {
+      "ko": "북두의 권",
+      "en": "Fist of the North Star",
+      "ja": "北斗の拳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

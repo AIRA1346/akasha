@@ -84,5 +84,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001787": {
+    "workId": "wk_000001787",
+    "title": "고교 데뷔",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131397"
+    },
+    "titles": {
+      "ko": "고교 데뷔",
+      "en": "High School Debut",
+      "ja": "高校デビュー"
+    },
+    "releaseYear": 2011,
+    "creator": "Kazune Kawahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
