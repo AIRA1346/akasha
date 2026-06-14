@@ -20,6 +20,7 @@ void main() {
   outDir.createSync(recursive: true);
 
   final index = _loadIndex(root);
+  final entryCount = index.length;
   final queries = _loadQueries(root);
   final eval = queries.where((q) => !q.excludeFromRecall && q.expectedWorkIds.isNotEmpty).toList();
 
@@ -75,7 +76,7 @@ void main() {
 
   final report = {
     'generatedAt': DateTime.now().toUtc().toIso8601String(),
-    'registry': '402',
+    'registry': '$entryCount',
     'indexPath': 'akasha-db/search_index.json',
     'overall': overallHits,
     'byBucket': byBucket,
@@ -91,7 +92,7 @@ void main() {
   final outFile = File(p.join(outDir.path, 'sw1_a_report.json'));
   outFile.writeAsStringSync(const JsonEncoder.withIndent('  ').convert(report));
 
-  print('SW1-A — 402 baseline recall@10');
+  print('SW1-A — $entryCount baseline recall@10');
   print('  eval: ${eval.length} queries');
   print('  overall recall@10: ${(overallHits['recallAt10'] as double).toStringAsFixed(4)} '
       '(${overallHits['hits']}/${overallHits['evalCount']})');
@@ -264,7 +265,7 @@ List<Map<String, dynamic>> _loadIndex(Directory root) {
 }
 
 List<GsQuery> _loadQueries(Directory root) {
-  final path = File(p.join(root.path, 'docs', 'global-search-query-set.md'));
+  final path = File(p.join(root.path, 'docs', 'validation', 'global-search-query-set.md'));
   final lines = path.readAsLinesSync();
   final out = <GsQuery>[];
 

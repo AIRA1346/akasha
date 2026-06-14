@@ -20,7 +20,7 @@
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
-| **다음** | Phase 4.4b Entity link · 리빌드 |
+| **다음** | Sprint B — 작품 `.md` 실사용 · friction · M3 Ready |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
@@ -64,7 +64,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **G-AUTO** | ✅ | test 265 · analyze 0 error · Release build OK |
 | **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
 | **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
-| **G-CATALOG** | 🔶 | 490작 · recall@10 ⏳ |
+| **G-CATALOG** | ✅ | 490작 · recall@10 **87/87** (@490 SW1-A) |
 | **G-COPY** | ✅ | Privacy doc · 스토어 카피 정합 |
 
 ---
@@ -85,7 +85,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint |
 |---|------|:------:|
-| 1 | **Phase 4.4** — Timeline axis · Dogfood | 4 |
+| 1 | **Sprint B1** — 작품 `.md` 지속 dogfood | B |
 | 2 | friction 있으면 §2 기준 수정 | B |
 | 3 | **M3** — Ready 시 Steam Release | ⏸️ |
 

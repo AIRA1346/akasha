@@ -41,7 +41,7 @@
 
 | # | 단계 | 구현 | 자동 테스트 | P0 수동 | 남은 일 |
 |:-:|------|:----:|:-----------:|:-------:|---------|
-| ① | **발견** | ✅ | `fusion_search_test` 등 | Q01·Q12 ✅ | C4 recall@10 ⏳ (스토어 약속) |
+| ① | **발견** | ✅ | `fusion_search_test` 등 | Q01·Q12 ✅ | C4 recall@10 ✅ (@490 87/87) |
 | ② | **아카이브** | ✅ | `vault_archive_test` | Q02·Q03 ✅ | auto-archive 정책 dogfood 확인 |
 | ③ | **기록** | ✅ | `workbench_controller_test` | Q09 ✅ | — |
 | ④ | **큐레이션** | ✅ | `library_membership_*` | Q06~Q08·Q10 ✅ | v1.1: 그리드 밀도 등 |
