@@ -135,7 +135,8 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 |:----:|------|------|:----:|
 | **P0** | **ADR-007 가드레일 문서 수립** | 아키텍트 | ✅ 완료 |
 | **P0** | **Wave 1 (Home 해부) 리팩토링** — shell **40줄** (목표 ≤250) | 엔지니어링 | ✅ 완료 |
-| **P1** | **Steam Release 최종 릴리즈 승인** | 제품 | ⏳ **다음** |
+| **P1** | **Sprint B** — 품질 다듬기 ([phase1-work-e2e-plan](programs/phase1-work-e2e-plan.md)) | 제품 | **진행** |
+| — | **M3 Steam Release** | 제품 | ⏸️ **보류** — 품질 Ready 시 |
 
 ---
 

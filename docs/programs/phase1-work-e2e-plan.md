@@ -2,8 +2,8 @@
 
 > **지위:** **현재 실행 SSOT** (2026-06-14~)  
 > **북극성:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) — Phase 1 Entity Archive (**작품**)  
-> **출시:** [release-readiness-checklist.md](../release-readiness-checklist.md) · [ROADMAP.md](../../ROADMAP.md) M3  
-> **보류:** 50k/500k 대비 · Entity 일반화 · Timeline · Memory Core(SQLite/MCP/ledger) · 신규 Scale ADR
+> **출시:** M3 Steam — **사용자 품질 기준 충족 시** (일정 고정 아님)  
+> **보류:** 50k/500k 대비 · Entity 일반화 · Timeline · Memory Core · Scale ADR · **M3 Release**
 
 ---
 
@@ -60,22 +60,23 @@
 
 ## 4. 실행 순서 (차근차근)
 
-### Sprint A — 출시 마무리 (지금)
+### Sprint A — E2E 검증 ✅
 
 | # | 작업 | Exit | 상태 |
 |:-:|------|------|:----:|
-| A1 | **G-AUTO** 전체 (`flutter test` · ci_registry · preflight · quality_gate --release · Release build) | 0 fail | ✅ 2026-06-14 |
-| A2 | **Dogfood E2E** — 본인 볼트로 ①~④ 10작 이상 (아래 §8) | 체크리스트 Pass | ✅ 2026-06-14 |
-| A3 | **M3** Steam Release 최종 승인 · (필요 시) depot 재업로드 | R1~R6 ✅ | ⏳ **다음** |
-| A4 | friction log — ①~④ 중 **끊긴 UX만** 이슈 등록 | 목록 0~N | ⏳ |
+| A1 | **G-AUTO** 전체 | 0 fail | ✅ 2026-06-14 |
+| A2 | **Dogfood E2E** ①~④ | Pass | ✅ 2026-06-14 |
+| A3 | **M3** Steam Release | R1~R6 | ⏸️ **보류** — 원하는 품질 될 때 |
+| A4 | friction log | 0~N | — (없음) |
 
-### Sprint B — 출시 직후 (1~2주)
+### Sprint B — 품질 다듬기 ← **현재**
 
 | # | 작업 | Exit |
 |:-:|------|------|
-| B1 | 실사용 dogfood · 외부 md·볼트 sync 재확인 | — |
-| B2 | **확인된 버그만** 수정 (판단 기준 §2) | E2E 회귀 없음 |
-| B3 | C4 recall@10 — 대표 20쿼리 (있으면) | ≥0.8 또는 스토어 카피 조정 |
+| B1 | **지속 dogfood** — 본인 볼트 실사용 | 습관 |
+| B2 | friction **메모 → 확인된 것만** 수정 (§2) | E2E 회귀 없음 |
+| B3 | **출시 품질** 자가 점검 (원할 때 §9) | 본인 Ready 판단 |
+| B4 | C4 recall@10 · 검색 체감 (선택) | 스토어 정합 |
 
 ### Sprint C — Catalog G1 (병행 · 측정만)
 
@@ -103,7 +104,8 @@
 | manifest-only bundle | APK 또는 fetch **실측** 문제 |
 | Entity 일반화 (인물·사건·개념) | Phase 1 dogfood **충분히** 검증 |
 | Timeline Archive (일기·생각) | Phase 3~4 ([ultimate-archiving](../product/ultimate-archiving-vision.md) §10) |
-| SQLite · MCP · event_ledger | v1 ship + Phase 1 E2E **통과 후** PoC |
+| SQLite · MCP · event_ledger | Phase 1 E2E + **출시 후** PoC |
+| **M3 Steam Release** | 사용자 **품질 만족** + §9 체크 (일정 아님) |
 | 신규 Scale ADR | 위 보류 항목 **착수 시** |
 
 ---
@@ -125,34 +127,36 @@
 |------|------|
 | 2026-06-14 | 초판 — E2E 우선 · Scale/Core 보류 · Sprint A~D |
 | 2026-06-14 | Sprint **A1** G-AUTO ✅ — test 271 · analyze 0 error · Release exe |
-| 2026-06-14 | Sprint **A2** Dogfood E2E ✅ — 사용자 확인 |
+| 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |
+| 2026-06-14 | **M3 보류** — Sprint **B** 품질 다듬기로 전환 |
 
 ---
 
-## 8. Dogfood E2E 수동 체크리스트 (Sprint A2)
+## 8. Dogfood E2E (Sprint A2 — ✅ 완료)
 
-**빌드:** `build\windows\x64\runner\Release\akasha.exe`  
-**자동 선행:** `.\scripts\dogfood_precheck.ps1` (또는 `-Build`)
+사용자 Dogfood OK (2026-06-14). 참고용 체크리스트:
 
-| # | ① 발견 | Pass |
-|:-:|--------|:----:|
-| D1 | 검색으로 작품 3건 찾기 (한/영 혼합 1건) | ☐ |
-| D2 | master_index 또는 카테고리 그리드에서 작품 탐색 | ☐ |
+| # | ① 발견 | |
+|:-:|--------|:--:|
+| D1 | 검색 3건 | ✅ |
+| D2 | 그리드 탐색 | ✅ |
 
-| # | ② 아카이브 | Pass |
-|:-:|-----------|:----:|
-| D3 | 검색 결과 → 아카이브 → `.md` 생성 확인 | ☐ |
-| D4 | 나만의 서재 「담기」→ md 자동 생성 (Case A) | ☐ |
+| # | ②~④ | |
+|:-:|-----|:--:|
+| D3~D9 | 아카이브 · 기록 · 큐레이션 | ✅ |
 
-| # | ③ 기록 | Pass |
-|:-:|--------|:----:|
-| D5 | 워크벤치 4열 — 별점·본문·`.md` 탭 저장 | ☐ |
-| D6 | 외부 에디터로 `.md` 수정 → 2~3초 내 앱 반영 | ☐ |
+---
 
-| # | ④ 큐레이션 | Pass |
-|:-:|-----------|:----:|
-| D7 | 나만의 서재에서 5작 이상 열람·정렬 | ☐ |
-| D8 | 테마 피커 (IAP 잠금 UI 확인) | ☐ |
-| D9 | 서재에서 제거 · 우클릭 메뉴 | ☐ |
+## 9. 출시 품질 자가 점검 (원할 때 · M3 전)
 
-**목표:** 최소 **10작** ①~④ 한 바퀴. 문제는 §A4 friction log에만 기록 (즉시 대규모 리팩터 금지).
+**「이 정도면 Steam Release」** — 전부 ✅일 필요 없음. **본인 기준**으로 판단.
+
+| # | 질문 | 메모 |
+|:-:|------|------|
+| Q1 | ①~④가 **매끄럽게** 이어지는가? | |
+| Q2 | 본인 볼트로 **2주 이상** 실사용했는가? | |
+| Q3 | **friction**이 남아 있어도 출시해도 되는 수준인가? | |
+| Q4 | 카탈로그 **490+** · 검색 **체감** OK? | C4 선택 |
+| Q5 | 스토어 페이지·스크린샷이 **현재 앱**과 맞는가? | |
+
+Ready면 → M3 (Steamworks Release). 아니면 Sprint B 계속.

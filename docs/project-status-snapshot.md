@@ -19,8 +19,8 @@
 | **flutter test** | **271/271 PASS** |
 | **Release readiness** | G-AUTO ✅ (2026-06-14) · G-QA ✅ · G-STEAM ✅ |
 | **Sprint A1** | test **271/271** · analyze **0 error** · Release exe ✅ |
-| **Sprint A2** | Dogfood E2E ✅ (2026-06-14) |
-| **Sprint A3** | **Steam Release 최종 승인** ← **다음** |
+| **Sprint B** | 품질 다듬기 ← **현재** — [phase1-work-e2e-plan §4](programs/phase1-work-e2e-plan.md) |
+| **M3 Release** | ⏸️ 품질 Ready 시 |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
@@ -73,10 +73,11 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 트랙 | 다음 | 우선 |
 |------|------|:----:|
-| **Phase 1 E2E** | Sprint A — G-AUTO · dogfood · M3 | **P0** |
+| **Sprint B** | 품질 다듬기 ← **현재** | **P0** |
 | **Wave 1 Home** | ✅ shell **40줄** | — |
-| **Catalog G1** | Sprint C — trial insert · **관측만** | P2 |
-| **Scale/Core** | search/browse/bundle · SQLite/MCP | **보류** |
+| **Catalog G1** | Sprint C · **관측만** | P2 |
+| **M3 Release** | ⏸️ 품질 Ready 시 | — |
+| **Scale/Core** | **보류** | — |
 
 ---
 
@@ -84,9 +85,9 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint |
 |---|------|:------:|
-| 1 | **M3** Steam Release 최종 승인 | A3 |
-| 2 | friction log (없음 — Dogfood OK) | — |
-| 5 | G1 trial batch + **관측** (fix는 병목 확인 후) | C |
+| 1 | **Sprint B** — 실사용 · friction 있으면 알려주기 | B |
+| 2 | (선택) 카탈로그 G1 trial · 관측 | C |
+| 3 | **M3** — 본인 Ready 시 Steam Release | ⏸️ |
 
 ---
 
@@ -104,3 +105,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-14 | Wave 1 4차 — controller·scaffold · shell **40줄** · test 271 |
 | 2026-06-14 | **phase1-work-e2e-plan** — E2E 우선 · Scale/Core 보류 |
 | 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |
+| 2026-06-14 | **M3 보류** → Sprint **B** |
