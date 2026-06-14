@@ -37,7 +37,7 @@
 
 | 폴더 | 내용 | 대표 문서 |
 |------|------|-----------|
-| **[programs/](programs/)** | **진행 중** 스프린트·확장 | [catalog-growth-charter](programs/catalog-growth-charter.md) · [sprint-05-manga-expansion](programs/sprint-05-manga-expansion.md) · [m2-steam-store-page](programs/m2-steam-store-page.md) |
+| **[programs/](programs/)** | **진행 중** 스프린트·확장 | [phase1-work-e2e-plan](programs/phase1-work-e2e-plan.md) · [catalog-growth-charter](programs/catalog-growth-charter.md) |
 | **[policy/](policy/)** | 규격·게이트·**법무** | [discovery-legal-baseline](policy/discovery-legal-baseline.md) · [expansion-tool-grading](policy/expansion-tool-grading.md) |
 | **[strategy/](strategy/)** | 장기 성장·아키텍처 | [registry-growth-strategy](strategy/registry-growth-strategy.md) · [data-architecture-redesign](strategy/data-architecture-redesign.md) |
 | **[validation/](validation/)** | SW1·URV·search_index 검증 | [global-search-validation-plan](validation/global-search-validation-plan.md) · [universal-registry-validation](validation/universal-registry-validation.md) |
@@ -66,3 +66,4 @@ dart run tool/discovery_manifest_check.dart
 | 2026-06-10 | **SD2.6 해제** — catalog-growth-charter |
 | 2026-06-14 | **product/ultimate-archiving-vision** SSOT · Sanctum·워크벤치 `product/` 이동 |
 | 2026-06-14 | ultimate v2 — Entity+Timeline · Phase 1~4 · Core/제품 분리 |
+| 2026-06-14 | **phase1-work-e2e-plan** — 현재 실행 SSOT |

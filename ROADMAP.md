@@ -1,23 +1,24 @@
 # AKASHA Roadmap
 
 > 목표: **2026 Q3** Steam (Windows) v1 출시  
-> 기준일: **2026-06-14** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)
+> 기준일: **2026-06-14** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)  
+> **현재 실행 SSOT:** [docs/programs/phase1-work-e2e-plan.md](docs/programs/phase1-work-e2e-plan.md)
 
 ---
 
 ## 현재 위치 → 출시 경로
 
-**M1 ✅ → M-v4 ✅ → M2 Steam 제출 ✅ (2026-06-13) → Wave 1 Home 해부 ← 현재 → M3 정식 출시 (Q3)**
+**M1 ✅ → M-v4 ✅ → M2 Steam 제출 ✅ → Wave 1 ✅ → Phase 1 E2E Sprint A ← 현재 → M3 정식 출시 (Q3)**
 
 ### 병행 트랙 (2026-06-14)
 
-| 트랙 | 다음 작업 | 상태 |
-|------|-----------|------|
-| **제품 (Wave 1)** | shell ≤250줄 — dialog·vault glue 분리 (3차) | **진행** |
-| **데이터 — Catalog G1** | [catalog-growth-charter](docs/programs/catalog-growth-charter.md) — Wikidata manga trial · Maintainer supply | **병행** |
-| **데이터 — 아키텍처** | insert마다 search_index·dedupe·O8 관측 — **전 작품 규모** 검증 | **병행** |
+| 트랙 | 다음 작업 | 우선 |
+|------|-----------|:----:|
+| **Phase 1 E2E** | ①~④ 완성·dogfood · G-AUTO · M3 — [phase1-work-e2e-plan](docs/programs/phase1-work-e2e-plan.md) | **P0** |
+| **데이터 — Catalog G1** | trial insert · **관측만** (병목 확인 전 fix 금지) | P2 |
+| ~~데이터 — 50k 아키텍처~~ | search_index · bundle · browse | **보류** |
 
-> **결정:** 430작은 Steam **서비스 수준 미달**. O3는 insert 스위치가 아니라 **텔레메트리**.
+> **결정 (2026-06-14):** 지금은 **구조 추가·50k 대비 설계**가 아니라 **작품 아카이빙 E2E 완성·검증**. Scale/Core는 **측정 후에만** 수정.
 
 externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/archive/sprint-04-e1-resolution.md)) — Phase 2 Coverage 프로그램 완결.
 
@@ -105,13 +106,21 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 - [x] 스토어 페이지 (스크린샷, 태그, 한/영 설명)
 - [x] IAP 상품 등록 (서재 테마, 서포터 팩)
 
-### Wave 1 — Home 해부 (정식 릴리즈 전 blocking · 진행 중)
+### Wave 1 — Home 해부 ✅ (2026-06-14)
 
 - [x] `HomeFilterCoordinator` · `HomeSidebarCoordinator`
 - [x] `HomeLibraryMenuBuilder` · `HomeBrowseCardBuilder`
-- [x] `HomeShellBody` (Scaffold body)
-- [ ] membership·dialog glue shell에서 분리
-- [ ] `home_shell.dart` ≤250줄 (현재 **710**)
+- [x] `HomeShellBody` · `HomeShellController` · `HomeShellScaffold`
+- [x] `home_shell.dart` **40줄** (목표 ≤250)
+
+### Phase 1 E2E — 작품 아카이빙 (진행 중)
+
+> SSOT: [phase1-work-e2e-plan.md](docs/programs/phase1-work-e2e-plan.md)
+
+- [x] ① 발견 · ② 아카이브 · ③ 기록 · ④ 큐레이션 — **구현 + P0 QA 12/12**
+- [ ] **Sprint A** — G-AUTO 재실행 · dogfood 10작+ · M3 Release
+- [ ] **Sprint B** — friction log · 확인된 버그만
+- [ ] **Sprint C** — G1 trial · 관측 (fix는 병목 확인 후)
 
 ### M3 — Steam v1 출시 (2026 Q3)
 

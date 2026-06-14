@@ -1,6 +1,7 @@
 # Project Status Snapshot
 
 > **갱신:** 2026-06-14  
+> **현재 실행:** [programs/phase1-work-e2e-plan.md](programs/phase1-work-e2e-plan.md)  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -15,9 +16,10 @@
 | **Registry** | **490 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **275/490 (56.1%)** |
-| **flutter test** | **268/268 PASS** |
+| **flutter test** | **271/271 PASS** |
 | **Release readiness** | G-AUTO ✅ · G-QA ✅ · G-STEAM ✅ |
-| **Scale** | SD2.6 hold **해제** — **병행 확장** |
+| **현재 포커스** | **Phase 1 작품 E2E** — [phase1-work-e2e-plan](programs/phase1-work-e2e-plan.md) Sprint A |
+| **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
 
@@ -67,23 +69,24 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ## 4. 병행 트랙
 
-| 트랙 | 다음 |
-|------|------|
-| **Wave 1 Home** | ✅ shell **40줄** · controller·scaffold 분리 (ADR-007) |
-| **Catalog G1** | Wikidata manga trial · Maintainer supply — [catalog-growth-charter](programs/catalog-growth-charter.md) |
-| **아키텍처** | search_index 1k/5k 재측정 · dedupe at scale |
+| 트랙 | 다음 | 우선 |
+|------|------|:----:|
+| **Phase 1 E2E** | Sprint A — G-AUTO · dogfood · M3 | **P0** |
+| **Wave 1 Home** | ✅ shell **40줄** | — |
+| **Catalog G1** | Sprint C — trial insert · **관측만** | P2 |
+| **Scale/Core** | search/browse/bundle · SQLite/MCP | **보류** |
 
 ---
 
 ## 5. 다음 권장 작업
 
-| # | 작업 |
-|---|------|
-| 1 | **M3** Steam Release 최종 승인 |
-| 2 | **G-AUTO** 통합 테스트 (Wave 1 완료 후) |
-| 3 | Wikidata trial batch insert (gate 통과분) |
-| 4 | C4 recall@10 스토어 약속 검증 |
-| 5 | Wave 2 Port 주입 (coordinator singleton 제거) |
+| # | 작업 | Sprint |
+|---|------|:------:|
+| 1 | **G-AUTO** 통합 (test · analyze · Release build) | A |
+| 2 | **Dogfood E2E** 10작+ (`dogfood_precheck.ps1`) | A |
+| 3 | **M3** Steam Release 최종 승인 | A |
+| 4 | friction log → 확인된 것만 수정 | B |
+| 5 | G1 trial batch + **관측** (fix는 병목 확인 후) | C |
 
 ---
 
@@ -98,4 +101,5 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-13 | Steam depot·P0 QA 12/12 — [release-readiness-checklist](release-readiness-checklist.md) |
 | 2026-06-14 | Wave 1 2차 — coordinator·HomeShellBody · shell 1004줄 |
 | 2026-06-14 | Wave 1 3차 — UI glue 분리 · shell 710 · test 268 |
-| 2026-06-14 | Wave 1 4차 — controller·scaffold · shell **40줄** · test 268 |
+| 2026-06-14 | Wave 1 4차 — controller·scaffold · shell **40줄** · test 271 |
+| 2026-06-14 | **phase1-work-e2e-plan** — E2E 우선 · Scale/Core 보류 |

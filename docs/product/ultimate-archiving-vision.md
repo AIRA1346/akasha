@@ -267,3 +267,19 @@ Appreciation은 **회상 연출**이 아니라 **축적된 Record를 미학적�
 |------|------|
 | 2026-06-14 | 초판 — Entity-Journal·Sanctum **단일 SSOT** |
 | 2026-06-14 | **v2** — 회상 중심 → **궁극의 아카이빙** · Entity+Timeline 이축 · Phase 1~4 · Core/제품 분리 |
+| 2026-06-14 | **실행 SSOT** → [phase1-work-e2e-plan.md](../programs/phase1-work-e2e-plan.md) (Phase 1 E2E · Scale 보류) |
+
+---
+
+## 16. 현재 실행 포커스 (2026-06-14~)
+
+**지금 하는 일 = Phase 1 작품 ①~④ E2E 완성·검증.**  
+상세 Sprint A~D: **[phase1-work-e2e-plan.md](../programs/phase1-work-e2e-plan.md)**
+
+| 지금 | 보류 |
+|------|------|
+| G-AUTO · dogfood · M3 | search_index · manifest-only bundle |
+| friction 기반 수정 | Entity/Timeline 일반화 |
+| G1 insert **관측** | SQLite · MCP · event_ledger |
+
+**판단 기준:** 「이 변경이 지금 작품 아카이빙 ①~④를 완성하는가?」

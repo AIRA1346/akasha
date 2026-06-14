@@ -135,8 +135,8 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 |:----:|------|------|:----:|
 | **P0** | **ADR-007 가드레일 문서 수립** | 아키텍트 | ✅ 완료 |
 | **P0** | **Wave 1 (Home 해부) 리팩토링** — shell **40줄** (목표 ≤250) | 엔지니어링 | ✅ 완료 |
-| **P1** | **리팩토링 후 G-AUTO 통합 테스트 수행** | QA | ⏳ 대기 |
-| **P1** | **Steam Release 최종 릴리즈 승인** | 제품 | ⏳ 대기 |
+| **P1** | **Phase 1 E2E Sprint A** — G-AUTO · dogfood · M3 ([phase1-work-e2e-plan](programs/phase1-work-e2e-plan.md)) | 엔지니어링 | ⏳ |
+| **P1** | **Steam Release 최종 릴리즈 승인** | 제품 | ⏳ |
 
 ---
 

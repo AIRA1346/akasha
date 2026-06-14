@@ -10,6 +10,7 @@
 
 | # | 문서 | 내용 |
 |:-:|------|------|
+| 0 | [programs/phase1-work-e2e-plan.md](../programs/phase1-work-e2e-plan.md) | **현재 실행** — Phase 1 E2E Sprint A~D |
 | 1 | [ultimate-archiving-vision.md](ultimate-archiving-vision.md) | **궁극적 아카이빙** — Entity+Timeline · Phase 1~4 |
 | 2 | [../product-vision.md](../product-vision.md) | Fact 사전 + Sanctum · v1 범위 |
 | 3 | [sanctum-md-customization.md](sanctum-md-customization.md) | `.md` YAML·슬롯·편집 |
