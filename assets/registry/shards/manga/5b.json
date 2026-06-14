@@ -13,10 +13,13 @@
       "드라마"
     ],
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "65336"
+      "tmdb": "65336",
+      "wikidata": "Q4049046"
     },
     "legacyIds": [
       "sub_manga_march-comes-in-like-a-lion_2007"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000453": {

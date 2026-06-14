@@ -30,10 +30,18 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_kaiju-no-8_2024"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q115777186"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

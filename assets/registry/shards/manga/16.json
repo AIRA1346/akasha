@@ -13,10 +13,13 @@
       "서울"
     ],
     "externalIds": {
-      "tmdb": "61374"
+      "tmdb": "61374",
+      "wikidata": "Q11102941"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
     },
     "legacyIds": [
       "sub_manga_tokyo-ghoul_2011"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000428": {

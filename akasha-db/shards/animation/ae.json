@@ -13,7 +13,8 @@
       "드라마"
     ],
     "externalIds": {
-      "tmdb": "65942"
+      "tmdb": "65942",
+      "wikidata": "Q65086934"
     },
     "legacyIds": [
       "sub_animation_rezero-anime_2016"
@@ -28,7 +29,14 @@
       "Re Zero",
       "Re:Zero",
       "Re:ゼロ"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "sub_animation_scale-exp-b7-probe-alpha_2026": {
     "workId": "sub_animation_scale-exp-b7-probe-alpha_2026",

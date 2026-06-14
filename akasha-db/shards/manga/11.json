@@ -18,13 +18,16 @@
       "성장"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
     },
     "legacyIds": [
       "sub_manga_usagi-drop_2005"
     ],
     "externalIds": {
-      "tmdb": "42598"
+      "tmdb": "42598",
+      "wikidata": "Q1070567"
     },
     "qualitySignals": {
       "externalIdVerified": true

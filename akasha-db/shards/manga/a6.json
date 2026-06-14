@@ -20,7 +20,15 @@
       "ko": "호리미야"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "externalIds": {
+      "wikidata": "Q111341807"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

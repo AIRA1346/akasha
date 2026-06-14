@@ -13,10 +13,13 @@
       "가족"
     ],
     "externalIds": {
-      "tmdb": "207332"
+      "tmdb": "207332",
+      "wikidata": "Q105087026"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
     },
     "legacyIds": [
       "sub_manga_sakamoto-days_2020"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Sakamoto Days",
       "ko": "사카모토 데이즈"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

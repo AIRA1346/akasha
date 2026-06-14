@@ -18,13 +18,16 @@
       "교육"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_gto_1997"
     ],
     "externalIds": {
-      "tmdb": "42701"
+      "tmdb": "42701",
+      "wikidata": "Q457981"
     },
     "qualitySignals": {
       "externalIdVerified": true

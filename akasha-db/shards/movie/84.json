@@ -15,6 +15,16 @@
     "legacyIds": [
       "gen_movie_parasite-2019_2019",
       "gen_movie_parasite_2019"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q61448040"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

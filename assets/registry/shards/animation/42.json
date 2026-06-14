@@ -13,7 +13,8 @@
       "명작"
     ],
     "externalIds": {
-      "tmdb": "85937"
+      "tmdb": "85937",
+      "wikidata": "Q63350570"
     },
     "legacyIds": [
       "sub_animation_demon-slayer_2019"
@@ -28,6 +29,13 @@
     "aliases": [
       "Demon Slayer",
       "Kimetsu no Yaiba"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

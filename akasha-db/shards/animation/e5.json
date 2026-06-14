@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "1기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_shigatsu-wa-kimi-no-uso_2011"
     ],
     "externalIds": {
-      "tmdb": "61677"
+      "tmdb": "61677",
+      "wikidata": "Q91333870"
     },
     "qualitySignals": {
       "externalIdVerified": true

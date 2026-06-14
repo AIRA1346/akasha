@@ -18,13 +18,16 @@
       "던전"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_goblin-slayer_2016"
     ],
     "externalIds": {
-      "tmdb": "82307"
+      "tmdb": "82307",
+      "wikidata": "Q63435666"
     },
     "qualitySignals": {
       "externalIdVerified": true

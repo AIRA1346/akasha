@@ -13,7 +13,8 @@
       "로맨스"
     ],
     "externalIds": {
-      "tmdb": "240411"
+      "tmdb": "240411",
+      "wikidata": "Q108069627"
     },
     "legacyIds": [
       "sub_manga_dandadan_2021"
@@ -27,7 +28,14 @@
     "aliases": [
       "Dandadan",
       "ダンダダン"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000423": {
     "workId": "wk_000000423",

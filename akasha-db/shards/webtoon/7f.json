@@ -13,10 +13,13 @@
       "액션"
     ],
     "externalIds": {
-      "tmdb": "127532"
+      "tmdb": "127532",
+      "wikidata": "Q65551313"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_webtoon_solo-leveling_2018"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Solo Leveling",
       "ko": "나 혼자만 레벨업"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

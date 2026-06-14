@@ -42,13 +42,16 @@
       "초자연"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
     },
     "legacyIds": [
       "sub_manga_noragami_2010"
     ],
     "externalIds": {
-      "tmdb": "60865"
+      "tmdb": "60865",
+      "wikidata": "Q11147846"
     },
     "qualitySignals": {
       "externalIdVerified": true

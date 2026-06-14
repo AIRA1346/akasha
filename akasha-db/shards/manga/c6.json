@@ -13,7 +13,8 @@
       "다이쇼"
     ],
     "externalIds": {
-      "tmdb": "85937"
+      "tmdb": "85937",
+      "wikidata": "Q24862683"
     },
     "legacyIds": [
       "sub_manga_kimetsu-no-yaiba_2016"
@@ -28,6 +29,13 @@
     "aliases": [
       "Demon Slayer",
       "Kimetsu no Yaiba"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

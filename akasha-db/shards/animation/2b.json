@@ -67,10 +67,18 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_parasyte_2014"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q137808011"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

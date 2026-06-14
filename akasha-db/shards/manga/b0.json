@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_nodame-cantabile_2001"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q1046959"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

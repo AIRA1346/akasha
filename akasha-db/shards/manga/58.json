@@ -20,7 +20,15 @@
       "ko": "충사"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "externalIds": {
+      "wikidata": "Q1055370"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

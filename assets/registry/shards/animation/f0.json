@@ -30,13 +30,19 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "127532"
+      "tmdb": "127532",
+      "wikidata": "Q112898063"
     },
     "legacyIds": [
       "sub_animation_solo-leveling_2024"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

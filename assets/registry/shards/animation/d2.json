@@ -13,7 +13,8 @@
       "명작"
     ],
     "externalIds": {
-      "tmdb": "31911"
+      "tmdb": "31911",
+      "wikidata": "Q437808"
     },
     "legacyIds": [
       "sub_animation_fullmetal-alchemist-brotherhood_2009"
@@ -28,6 +29,13 @@
       "Brotherhood",
       "FMA",
       "Fullmetal Alchemist"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

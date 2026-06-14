@@ -82,8 +82,8 @@
       "ja": "20世紀少年",
       "romaji": "20th Century Boys"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000349",
@@ -114,7 +114,7 @@
       "en": "March Comes IN Like A Lion",
       "ko": "3월의 라이온"
     },
-    "qualityScore": 80,
+    "qualityScore": 90,
     "qualityTier": 4
   },
   {
@@ -526,8 +526,8 @@
       "en": "D.Gray-man",
       "ja": "ディー・グレイマン"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000067",
@@ -1083,8 +1083,8 @@
       "ja": "Re:ゼロから始める異世界生活",
       "romaji": "Re:Zero"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000260",
@@ -2151,8 +2151,8 @@
       "en": "Gabriel Dropout",
       "ko": "가브릴 드롭아웃"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000327",
@@ -2184,8 +2184,8 @@
       "en": "Gachiakuta",
       "ja": "ガチアクタ"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000053",
@@ -2255,7 +2255,7 @@
       "ja": "鋼の錬金術師",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "qualityScore": 80,
+    "qualityScore": 90,
     "qualityTier": 4
   },
   {
@@ -2299,7 +2299,7 @@
       "ja": "鋼の錬金術師 FULLMETAL ALCHEMIST",
       "romaji": "Hagane no Renkinjutsushi"
     },
-    "qualityScore": 80,
+    "qualityScore": 90,
     "qualityTier": 4
   },
   {
@@ -2471,8 +2471,8 @@
       "en": "Golden Kamuy",
       "ko": "골든 카무이"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000206",
@@ -2505,8 +2505,8 @@
       "en": "Kaiju No. 8",
       "ja": "怪獣8号"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000342",
@@ -2537,8 +2537,8 @@
       "en": "Kaiju NO 8",
       "ko": "괴수 8호"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000405",
@@ -2601,8 +2601,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000343",
@@ -2642,8 +2642,8 @@
       "zh": "鬼灭之刃",
       "romaji": "Kimetsu no Yaiba"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000404",
@@ -2729,8 +2729,8 @@
       "en": "Grand Blue Dreaming",
       "ja": "ぐらんぶる"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000090",
@@ -2794,8 +2794,8 @@
       "en": "Stranger Things",
       "ko": "기묘한 이야기"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000226",
@@ -2829,8 +2829,8 @@
       "en": "Parasyte: The Maxim",
       "ja": "寄生獣 セイの格率"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000368",
@@ -2861,8 +2861,8 @@
       "en": "Parasyte",
       "ko": "기생수"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000161",
@@ -2888,8 +2888,8 @@
     "titles": {
       "ko": "기생충"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000415",
@@ -2970,8 +2970,8 @@
       "en": "Solo Leveling",
       "ko": "나 혼자만 레벨업"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000238",
@@ -3004,8 +3004,8 @@
       "en": "Solo Leveling",
       "ja": "俺だけレベルアップな件"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000218",
@@ -3403,8 +3403,8 @@
       "en": "Nodame Cantabile",
       "ja": "のだめカンタービレ"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000221",
@@ -3885,8 +3885,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000167",
@@ -4431,8 +4431,8 @@
       "en": "Tokyo Ghoul",
       "ko": "도쿄 구울"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000242",
@@ -7515,8 +7515,8 @@
       "en": "Sakamoto Days",
       "ko": "사카모토 데이즈"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000231",
@@ -9512,8 +9512,8 @@
       "en": "The Apothecary Diaries",
       "ja": "薬屋のひとりごと"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000370",
@@ -10872,8 +10872,8 @@
       "en": "Wind Breaker",
       "ja": "WIND BREAKER"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000072",
@@ -12463,8 +12463,8 @@
       "en": "Mushishi",
       "ko": "충사"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000309",
@@ -12980,8 +12980,8 @@
       "en": "Kingdom",
       "ko": "킹덤"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000020",
@@ -14946,8 +14946,8 @@
       "en": "Horimiya",
       "ko": "호리미야"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000201",

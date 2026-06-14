@@ -18,11 +18,19 @@
       "약학"
     ],
     "externalIds": {
-      "tmdb": "220542"
+      "tmdb": "220542",
+      "wikidata": "Q106090656"
     },
     "legacyIds": [
       "sub_manga_apothecary-diaries_2016"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000292": {
     "workId": "wk_000000292",

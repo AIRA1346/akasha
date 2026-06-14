@@ -13,7 +13,8 @@
       "형제"
     ],
     "externalIds": {
-      "tmdb": "31911"
+      "tmdb": "31911",
+      "wikidata": "Q189562"
     },
     "legacyIds": [
       "sub_manga_fullmetal-alchemist_2001"
@@ -27,6 +28,13 @@
     "aliases": [
       "FMA",
       "Fullmetal Alchemist"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

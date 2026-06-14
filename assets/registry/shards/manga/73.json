@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_wind-breaker_2021"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q107040899"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

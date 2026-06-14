@@ -20,7 +20,15 @@
       "ko": "기묘한 이야기"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q19798734"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

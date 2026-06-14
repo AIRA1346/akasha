@@ -19,7 +19,17 @@
     ],
     "legacyIds": [
       "sub_manga_gachiakuta_2022"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q112874546"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000332": {
     "workId": "wk_000000332",
@@ -41,7 +51,17 @@
     ],
     "legacyIds": [
       "sub_manga_grand-blue_2014"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q20044054"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000388": {
     "workId": "wk_000000388",

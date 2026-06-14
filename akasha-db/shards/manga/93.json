@@ -39,6 +39,16 @@
     ],
     "legacyIds": [
       "sub_manga_dgray-man_2004"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q170019"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

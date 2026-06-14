@@ -23,7 +23,17 @@
     },
     "aliases": [
       "20th Century Boys"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q91458"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000454": {
     "workId": "wk_000000454",

@@ -20,7 +20,15 @@
       "ko": "가브릴 드롭아웃"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q26212900"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }
