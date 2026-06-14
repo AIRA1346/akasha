@@ -1,0 +1,21 @@
+{
+  "wk_000000478": {
+    "workId": "wk_000000478",
+    "title": "강철의 연금술사: 미로스의 성스러운 별",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004318"
+    },
+    "titles": {
+      "ko": "강철의 연금술사: 미로스의 성스러운 별",
+      "en": "Fullmetal Alchemist: The Sacred Star of Milos",
+      "ja": "鋼の錬金術師 嘆きの丘の聖なる星"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

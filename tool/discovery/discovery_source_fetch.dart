@@ -6,6 +6,7 @@ import 'dart:io';
 import 'discovery_manifest.dart';
 import 'discovery_types.dart';
 import 'wikidata_client.dart';
+import 'wikidata_ko_fetch.dart';
 
 /// 채널 설정에 맞는 외부 소스에서 Fact 노드 fetch.
 ///
@@ -38,6 +39,18 @@ Future<List<Map<String, dynamic>>> fetchDiscoveryBatch({
       }
       throw ArgumentError(
         'wikidata source unsupported category: ${config.category}',
+      );
+    case 'wikidata_ko':
+      var sparqlOffset = offset ?? 0;
+      if (projectRoot != null && offset == null) {
+        final cursor = readCursor(projectRoot, config.cursorPath);
+        sparqlOffset = int.tryParse(cursor['offset']?.toString() ?? '') ?? 0;
+      }
+      return fetchWikidataKoBatch(
+        category: config.category,
+        batchSize: config.trialBatchSize,
+        offset: sparqlOffset,
+        client: client,
       );
     case 'anilist':
       throw UnsupportedError(

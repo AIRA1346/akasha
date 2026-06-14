@@ -1,0 +1,20 @@
+{
+  "wk_000000479": {
+    "workId": "wk_000000479",
+    "title": "주문은 토끼입니까?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100471038"
+    },
+    "titles": {
+      "ko": "주문은 토끼입니까?",
+      "en": "Is the Order a Rabbit?",
+      "ja": "ご注文はうさぎですか？"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

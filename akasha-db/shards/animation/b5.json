@@ -1,0 +1,20 @@
+{
+  "wk_000000475": {
+    "workId": "wk_000000475",
+    "title": "아이돌즈!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100255605"
+    },
+    "titles": {
+      "ko": "아이돌즈!",
+      "en": "Idolls!",
+      "ja": "アイドールズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

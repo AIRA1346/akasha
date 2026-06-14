@@ -105,6 +105,76 @@
       "cursorPath": "pipeline/discovery/cursors/wikidata_anime.json",
       "lastRun": null,
       "notes": "Phase 3 stub — anime television series SPARQL (not live yet)"
+    },
+    "wikidata_ko_manga": {
+      "source": "wikidata_ko",
+      "category": "manga",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_manga.json",
+      "notes": "한국어 라벨 필수 — manga P31"
+    },
+    "wikidata_ko_webtoon": {
+      "source": "wikidata_ko",
+      "category": "webtoon",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_webtoon.json",
+      "notes": "한국어 라벨 필수 — webtoon P31"
+    },
+    "wikidata_ko_animation": {
+      "source": "wikidata_ko",
+      "category": "animation",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_animation.json",
+      "notes": "한국어 라벨 필수 — anime TV/film P31"
+    },
+    "wikidata_ko_game": {
+      "source": "wikidata_ko",
+      "category": "game",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_game.json",
+      "notes": "한국어 라벨 필수 — video game P31"
+    },
+    "wikidata_ko_book": {
+      "source": "wikidata_ko",
+      "category": "book",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_book.json",
+      "notes": "한국어 라벨 필수 — novel/light novel P31"
+    },
+    "wikidata_ko_movie": {
+      "source": "wikidata_ko",
+      "category": "movie",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_movie.json",
+      "notes": "한국어 라벨 필수 — film P31"
+    },
+    "wikidata_ko_drama": {
+      "source": "wikidata_ko",
+      "category": "drama",
+      "domain": "subculture",
+      "enabled": false,
+      "dailyLimit": 200,
+      "trialBatchSize": 20,
+      "cursorPath": "pipeline/discovery/cursors/wikidata_ko_drama.json",
+      "notes": "한국어 라벨 필수 — TV series P31"
     }
   }
 }

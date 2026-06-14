@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "nextWorkId": 472,
+  "nextWorkId": 482,
   "byWk": {
     "wk_000000001": {
       "category": "animation",
@@ -2664,6 +2664,46 @@
     },
     "wk_000000471": {
       "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000000472": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000473": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000474": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000475": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000476": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000477": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000478": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000479": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000480": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000000481": {
+      "category": "animation",
       "legacyIds": []
     }
   },

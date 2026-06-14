@@ -41,11 +41,13 @@ class ContractTestRunner {
     required DiscoveryChannelConfig config,
     required Directory projectRoot,
   }) {
+    final externalSource =
+        config.source == 'wikidata_ko' ? 'wikidata' : config.source;
     return ContractTestRunner(
       channelId: channelId,
       config: config,
       registryExternalIds:
-          loadRegistryExternalIds(projectRoot, config.source),
+          loadRegistryExternalIds(projectRoot, externalSource),
     );
   }
 
@@ -125,7 +127,7 @@ class ContractTestRunner {
         externalId: '',
       );
     }
-    if (config.source == 'wikidata') {
+    if (config.source == 'wikidata' || config.source == 'wikidata_ko') {
       return _classifyWikidata(node);
     }
     return ContractNodeRecord(
@@ -143,6 +145,20 @@ class ContractTestRunner {
         outcome: ContractNodeOutcome.policyRejected,
         externalId: qid,
       );
+    }
+
+    if (config.source == 'wikidata_ko') {
+      final titlesRaw = node['titles'];
+      final ko = titlesRaw is Map
+          ? titlesRaw['ko']?.toString().trim() ?? ''
+          : '';
+      if (ko.isEmpty) {
+        return ContractNodeRecord(
+          outcome: ContractNodeOutcome.policyRejected,
+          externalId: qid,
+          title: node['title']?.toString() ?? '',
+        );
+      }
     }
 
     final p31Raw = node['entityP31'];

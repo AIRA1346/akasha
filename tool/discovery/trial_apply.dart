@@ -19,6 +19,7 @@ import 'contract_test_runner.dart';
 import 'discovery_fixtures.dart';
 import 'discovery_manifest.dart';
 import 'discovery_source_fetch.dart';
+import 'discovery_types.dart';
 import 'registry_snapshot.dart';
 import 'shadow_write_runner.dart';
 
@@ -31,12 +32,13 @@ void main(List<String> args) async {
   final channelId = _argValue(args, '--channel') ?? 'wikidata_manga';
   final maxCreate = int.tryParse(_argValue(args, '--max-create') ?? '');
   final fetchOffset = int.tryParse(_argValue(args, '--offset') ?? '');
+  final batchSizeOverride = int.tryParse(_argValue(args, '--batch-size') ?? '');
 
   if (!offline && !live) {
     stderr.writeln(
       'Usage: dart run tool/discovery/trial_apply.dart --offline | --live '
       '[--channel wikidata_manga] [--apply] [--skip-merge] [--merge-only] '
-      '[--max-create N] [--offset N]',
+      '[--max-create N] [--offset N] [--batch-size N]',
     );
     exit(64);
   }
@@ -44,11 +46,23 @@ void main(List<String> args) async {
   final root = _findProjectRoot();
   final dbRoot = Directory(p.join(root.path, 'akasha-db'));
   final manifest = DiscoveryManifest.load(root);
-  final config = manifest.channel(channelId);
-  if (config == null) {
+  final configRaw = manifest.channel(channelId);
+  if (configRaw == null) {
     stderr.writeln('ERROR: unknown channel $channelId');
     exit(1);
   }
+  final config = batchSizeOverride != null
+      ? DiscoveryChannelConfig(
+          id: configRaw.id,
+          source: configRaw.source,
+          category: configRaw.category,
+          domain: configRaw.domain,
+          enabled: configRaw.enabled,
+          dailyLimit: configRaw.dailyLimit,
+          trialBatchSize: batchSizeOverride,
+          cursorPath: configRaw.cursorPath,
+        )
+      : configRaw;
 
   print('trial_apply — $channelId');
   print('  mode: ${offline ? 'offline' : 'live'}');

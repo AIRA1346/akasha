@@ -1,0 +1,21 @@
+{
+  "wk_000000481": {
+    "workId": "wk_000000481",
+    "title": "은혼 더 파이널",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100595898"
+    },
+    "titles": {
+      "ko": "은혼 더 파이널",
+      "en": "Gintama: The Final",
+      "ja": "銀魂 THE FINAL"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

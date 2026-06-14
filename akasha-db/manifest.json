@@ -1,8 +1,8 @@
 {
   "version": 4,
   "shardBits": 8,
-  "entryCount": 491,
-  "generatedAt": "2026-06-14T08:22:58.930622Z",
+  "entryCount": 473,
+  "generatedAt": "2026-06-14T09:11:09.577763Z",
   "shards": [
     {
       "id": "animation_03",
@@ -25,8 +25,8 @@
       "category": "animation",
       "path": "shards/animation/06.json",
       "eager": false,
-      "entryCount": 2,
-      "sha256": "eee368a5bc30cdf0469329b379af02b8e4454f303512a9db5f22350e323af404"
+      "entryCount": 3,
+      "sha256": "3efbe5e5da2e945832c14359f2749804c0017e147b9776f335466ec53bcdbdda"
     },
     {
       "id": "animation_07",
@@ -35,6 +35,14 @@
       "eager": false,
       "entryCount": 1,
       "sha256": "064fb6210ede16cd8a8681e37f89613d46e4ecb66440c95ce129f1b76f717f80"
+    },
+    {
+      "id": "animation_08",
+      "category": "animation",
+      "path": "shards/animation/08.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "9c49af92cf3ddb52d1ebbad1ce3ce46a9493b48ac023e65c112b8466058bfe70"
     },
     {
       "id": "animation_0d",
@@ -85,6 +93,14 @@
       "sha256": "4291794ac4eb314df4884c56b7aa1ea820045f3a5f3060df8c5104b3251fa68d"
     },
     {
+      "id": "animation_23",
+      "category": "animation",
+      "path": "shards/animation/23.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "1a57a2573ae7926e0101bc753a248a8c71a5b48ee6ff23b552149d04cf548f9c"
+    },
+    {
       "id": "animation_2a",
       "category": "animation",
       "path": "shards/animation/2a.json",
@@ -107,6 +123,14 @@
       "eager": false,
       "entryCount": 1,
       "sha256": "8625d4ddcce1ad31d004ce7f0e8d8144932661f173000a5fd91830b17801b00a"
+    },
+    {
+      "id": "animation_30",
+      "category": "animation",
+      "path": "shards/animation/30.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "3c2851d1440877d96143089d930b5f73104e588d9248f24120ccd97a5eccaee1"
     },
     {
       "id": "animation_31",
@@ -201,8 +225,8 @@
       "category": "animation",
       "path": "shards/animation/4e.json",
       "eager": false,
-      "entryCount": 3,
-      "sha256": "b589efd64ac2d493a25ed62b307a735f05ce87f8539ec9af7d63bde5b9aac088"
+      "entryCount": 2,
+      "sha256": "f748feda4dd41f64008e31208c2489a2b6ad91e5dec2e5d3e1538133159d9e24"
     },
     {
       "id": "animation_50",
@@ -211,6 +235,14 @@
       "eager": false,
       "entryCount": 1,
       "sha256": "d22fce21d474f0fed525d22c202d130351161394f5dbe61ca3f352bd2c14099d"
+    },
+    {
+      "id": "animation_51",
+      "category": "animation",
+      "path": "shards/animation/51.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "847246cb4659a2f12a915f5bf6d39c40e44f6e9dd8f28acc84dfe668cb6b464c"
     },
     {
       "id": "animation_5a",
@@ -241,8 +273,8 @@
       "category": "animation",
       "path": "shards/animation/60.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "574447f5d9fbdd64fbb57965d514dc5838185762796e8b04a0d47ba177fad718"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "animation_62",
@@ -281,8 +313,8 @@
       "category": "animation",
       "path": "shards/animation/6d.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "9adca1680c9e5f44ab07d27ed4dbac2d313ea47a3c2469b195644ce66ed338b1"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "animation_71",
@@ -365,6 +397,14 @@
       "sha256": "3c06bcc95030d85d9983f9ae8dcb949ef8dce5932f5d58666ce07ac8c7c5a455"
     },
     {
+      "id": "animation_98",
+      "category": "animation",
+      "path": "shards/animation/98.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "90f4555b65489c80a71d3e166c4d969cd9b05305208318cba112109d3205eb5d"
+    },
+    {
       "id": "animation_9b",
       "category": "animation",
       "path": "shards/animation/9b.json",
@@ -401,8 +441,8 @@
       "category": "animation",
       "path": "shards/animation/ac.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "f70f142d592b312656985952978f00f30cbde605dc921f1f4d72fbf8d1876f6d"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "animation_ad",
@@ -417,8 +457,8 @@
       "category": "animation",
       "path": "shards/animation/ae.json",
       "eager": false,
-      "entryCount": 2,
-      "sha256": "f251cd3a65d5f43d6d80e983f31890f05d48cf2793bc417ef46ebdfd2bf8933d"
+      "entryCount": 1,
+      "sha256": "c3f2f9474a77bd5d5c268916ab033a49f5284e4aba1f5dda6671c8649bd926fb"
     },
     {
       "id": "animation_b1",
@@ -443,6 +483,14 @@
       "eager": false,
       "entryCount": 1,
       "sha256": "c65575a31f32a6fdd6f4cc6fe30bfa254176b47beeb34ee79764dc5c4bd6394d"
+    },
+    {
+      "id": "animation_b5",
+      "category": "animation",
+      "path": "shards/animation/b5.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "109babc3647bb44c8e002930e422a8c8d25aba36fd0519021a8fc1e18e3b6fb4"
     },
     {
       "id": "animation_b6",
@@ -497,8 +545,8 @@
       "category": "animation",
       "path": "shards/animation/c8.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "ee4f12e68191b1c6d9fcfb94f98397c1662eaa019da7e5afd289700dd34bd34a"
+      "entryCount": 2,
+      "sha256": "f46f3158fd1456a86dafde0aa7bd449c1beb1ee77b522b66cde3d42ea3c460a3"
     },
     {
       "id": "animation_cd",
@@ -557,6 +605,14 @@
       "sha256": "14739d6fbe26743e9640361314c1ec6a2059bae16426b6eb3b9e28a4a7fddd51"
     },
     {
+      "id": "animation_dc",
+      "category": "animation",
+      "path": "shards/animation/dc.json",
+      "eager": false,
+      "entryCount": 1,
+      "sha256": "218f09bbf54c57779943d3e5e27de536c9e755ab4525c63b5ef9b6e146efb832"
+    },
+    {
       "id": "animation_e2",
       "category": "animation",
       "path": "shards/animation/e2.json",
@@ -601,8 +657,8 @@
       "category": "animation",
       "path": "shards/animation/f7.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "0d89d67ee67b53b1ffa395c9e8c968fbb3f7057e8b91ebff605740029aea6ade"
+      "entryCount": 2,
+      "sha256": "b74df9317604d1cc316205dd73193696a0fc216b632acbc7cc1fe25460586cab"
     },
     {
       "id": "animation_fd",
@@ -697,8 +753,8 @@
       "category": "book",
       "path": "shards/book/9b.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "8725dcc65529a4e1b722c22e1e307ab631ca227bce88040fcf7e2e90f398c679"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "book_9d",
@@ -729,8 +785,8 @@
       "category": "book",
       "path": "shards/book/b4.json",
       "eager": true,
-      "entryCount": 2,
-      "sha256": "514d6ca8d6caefb07116aa0c00dce28badafab1e4b289cad6c95aa1a6c44b035"
+      "entryCount": 1,
+      "sha256": "ecdbd3d547389d7d2930b7bda121f6ba363d9a004b445bbb1cb6227da0c80ddf"
     },
     {
       "id": "book_bd",
@@ -777,8 +833,8 @@
       "category": "book",
       "path": "shards/book/de.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "55ad6702e784781ee08538f8d0c73fa60928c8846744525355c54eb69d4b207e"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "book_df",
@@ -793,16 +849,16 @@
       "category": "book",
       "path": "shards/book/e2.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "d249eb5b5470dc637e92f7b07deda878a4de99f8d3ef540a474eac7cb6381385"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "book_e7",
       "category": "book",
       "path": "shards/book/e7.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "edbd2e8634560007683ec01050ca7b0b53061c997cb1cbf86280fa61e2c9429d"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "book_ea",
@@ -881,16 +937,16 @@
       "category": "drama",
       "path": "shards/drama/65.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "e251afbbd36b9ee1e827b1b663502c62f51794b6ad172d797b0045c4075f4318"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "drama_6b",
       "category": "drama",
       "path": "shards/drama/6b.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "b41086ad312ec06630e03f0c593bd0faae862e6a6c27fa436a2dcefd817d1b44"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "drama_7a",
@@ -945,8 +1001,8 @@
       "category": "drama",
       "path": "shards/drama/e0.json",
       "eager": false,
-      "entryCount": 2,
-      "sha256": "2c27e6e42765a2e084de07de24c391119d827bb4ef65251ec41dafe7e42530d3"
+      "entryCount": 1,
+      "sha256": "a686f7575789f8021920e0f01305133bb64c61c98f89fc09e5475eb07471ca7d"
     },
     {
       "id": "drama_e9",
@@ -961,8 +1017,8 @@
       "category": "drama",
       "path": "shards/drama/fc.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "e60bb2100e3564dc25dd24006c479be2a0b1578162230ba487b259ff2458b343"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "game_04",
@@ -1225,8 +1281,8 @@
       "category": "game",
       "path": "shards/game/54.json",
       "eager": false,
-      "entryCount": 3,
-      "sha256": "0ddc5cf0b21017d75f59e8663cc289ed45921ecc14a5d013103198812f3f30bd"
+      "entryCount": 2,
+      "sha256": "c838d27c92348fe8e22377f11e664b1da2edb9e044effdbd39215815d3c46c11"
     },
     {
       "id": "game_58",
@@ -1625,8 +1681,8 @@
       "category": "game",
       "path": "shards/game/c7.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "ca6f8df7e805392d7c5bedee48c5de492c8b4d1a65c424b226a3db0b3b4ce4b0"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "game_c8",
@@ -1665,8 +1721,8 @@
       "category": "game",
       "path": "shards/game/d0.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "a3302779600324ad21f59ec6041e2e994d805ced9067c133ce26542294b78620"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "game_d3",
@@ -1721,8 +1777,8 @@
       "category": "game",
       "path": "shards/game/e8.json",
       "eager": false,
-      "entryCount": 2,
-      "sha256": "8a419c99cb7c57272203e018226256aee220efb4e046badf644029c835365f84"
+      "entryCount": 1,
+      "sha256": "937b0d0efd91e19ddab9893d1c95ec9a2e6c5ec87af365a9f581615c1076d4df"
     },
     {
       "id": "game_ea",
@@ -2345,8 +2401,8 @@
       "category": "manga",
       "path": "shards/manga/93.json",
       "eager": false,
-      "entryCount": 2,
-      "sha256": "21514fccd5652a2afc0faa4cad9792956be6e57df945398a090a1b0b3f3390b2"
+      "entryCount": 1,
+      "sha256": "c60b14f1f82ccbea8fc1f4e387477290a2c76a0b06a15d42c4514d4be96a8d59"
     },
     {
       "id": "manga_94",
@@ -2401,8 +2457,8 @@
       "category": "manga",
       "path": "shards/manga/a3.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "7bd8ac4a31fdf9852aaf383184705528c157b4719aa7526dbc40b55a3520d7a7"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "manga_a5",
@@ -2641,8 +2697,8 @@
       "category": "manga",
       "path": "shards/manga/d6.json",
       "eager": true,
-      "entryCount": 2,
-      "sha256": "e400dd1f75d2eb7e66881429e1049780c5b45e9de2ca5c007a3b3b3126a0c7c4"
+      "entryCount": 1,
+      "sha256": "e30f691d8a602f66b6d6b4f03bda994225b4a93aefc9a9dd308c7eda21032126"
     },
     {
       "id": "manga_d8",
@@ -2825,8 +2881,8 @@
       "category": "movie",
       "path": "shards/movie/23.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "8d32ce968d1f3a26193689290fd972732fa474cc264a9a2b42423340f1a1e2ca"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "movie_2a",
@@ -2857,8 +2913,8 @@
       "category": "movie",
       "path": "shards/movie/37.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "d51443155890e545b2a7ef416d9d5b67000156331ba8b58f0ebcacd2c88a35e5"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "movie_39",
@@ -2921,8 +2977,8 @@
       "category": "movie",
       "path": "shards/movie/7b.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "78b3f611c18fcbba19b02a0951a21689dbd7f3c3f2c6870257d62881a0682598"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "movie_84",
@@ -2953,8 +3009,8 @@
       "category": "movie",
       "path": "shards/movie/a1.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "47e170dbe86b67cd6d1d66e0dc3b859a0b338a5e3938b1b3ffcb11a199b8ea02"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "movie_b2",
@@ -3041,16 +3097,16 @@
       "category": "webtoon",
       "path": "shards/webtoon/30.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "17e989ab114bd64dc53653fbe72ec80fde70e9cff3c6550e2a52fae4b1c99984"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "webtoon_48",
       "category": "webtoon",
       "path": "shards/webtoon/48.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "b49fbad71bd9c3ac67aac0baa61c4b89f7ebac668b7d1b321a817c8dfac848b1"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     },
     {
       "id": "webtoon_7f",
@@ -3065,8 +3121,8 @@
       "category": "webtoon",
       "path": "shards/webtoon/9f.json",
       "eager": false,
-      "entryCount": 1,
-      "sha256": "a6ae716caf543ebf8f4a5addd8517c33a6ca89ad8484e2227696443eca35f948"
+      "entryCount": 0,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
     }
   ]
 }
