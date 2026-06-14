@@ -46,13 +46,16 @@
       "일상"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_doraemon_1969"
     ],
     "externalIds": {
-      "tmdb": "65751"
+      "tmdb": "65751",
+      "wikidata": "Q235311"
     },
     "qualitySignals": {
       "externalIdVerified": true

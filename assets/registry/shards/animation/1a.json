@@ -35,10 +35,18 @@
           "episodes": 22
         }
       ],
-      "latestSeason": "3기"
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_dr-stone_2019"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q61041618"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

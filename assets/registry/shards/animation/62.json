@@ -54,11 +54,19 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_mashle_2023"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q115754239"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000240": {
     "workId": "wk_000000240",

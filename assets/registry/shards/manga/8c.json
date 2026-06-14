@@ -44,10 +44,13 @@
       "개그"
     ],
     "externalIds": {
-      "tmdb": "86031"
+      "tmdb": "86031",
+      "wikidata": "Q38275959"
     },
     "extensions": {
-      "coverageSprint03": "latin_title"
+      "coverageSprint03": "latin_title",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_dr-stone_2017"
@@ -56,6 +59,9 @@
       "en": "Dr. Stone",
       "ja": "Dr.STONE",
       "ko": "닥터 스톤"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

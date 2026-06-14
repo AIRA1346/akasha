@@ -26,17 +26,23 @@
           "episodes": 37
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "13916"
+      "tmdb": "13916",
+      "wikidata": "Q718624"
     },
     "legacyIds": [
       "sub_animation_death-note_2006"
     ],
     "aliases": [
       "死亡笔记"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000237": {
     "workId": "wk_000000237",

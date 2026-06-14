@@ -20,7 +20,15 @@
       "ko": "다빈치 코드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q81689"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

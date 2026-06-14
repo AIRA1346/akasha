@@ -19,7 +19,17 @@
     ],
     "legacyIds": [
       "sub_manga_mashle_2018"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q96106641"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000452": {
     "workId": "wk_000000452",

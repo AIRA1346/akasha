@@ -20,7 +20,15 @@
       "ko": "더 만달로리안"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q56876444"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -55,10 +55,18 @@
           "episodes": 21
         }
       ],
-      "latestSeason": "7기"
+      "latestSeason": "7기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_my-hero-academia_2016"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q63686324"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "리코리스 리코일"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q110361884"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

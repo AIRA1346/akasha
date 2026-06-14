@@ -3104,8 +3104,8 @@
       "en": "My Hero Academia",
       "ja": "僕のヒーローアカデミア"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000355",
@@ -3136,8 +3136,8 @@
       "en": "MY Hero Academia",
       "ko": "나의 히어로 아카데미아"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000423",
@@ -3338,8 +3338,8 @@
       "en": "No Game No Life",
       "ja": "ノーゲーム・ノーライフ"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000258",
@@ -3434,8 +3434,8 @@
       "en": "Noragami",
       "ko": "노라가미"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000362",
@@ -3498,8 +3498,8 @@
       "en": "Norwegian Wood",
       "ko": "노르웨이의 숲"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000262",
@@ -3561,8 +3561,8 @@
       "en": "Nisekoi",
       "ko": "니세코이"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000276",
@@ -3626,8 +3626,8 @@
       "en": "DA Vinci Code",
       "ko": "다빈치 코드"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000166",
@@ -3751,8 +3751,8 @@
       "ja": "Dr.STONE",
       "ko": "닥터 스톤"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000189",
@@ -3786,8 +3786,8 @@
       "en": "Dr. Stone",
       "ja": "Dr.STONE"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000268",
@@ -3851,8 +3851,8 @@
       "ja": "ダンダダン",
       "romaji": "Dandadan"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000310",
@@ -3913,8 +3913,8 @@
     "titles": {
       "ko": "대부"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000023",
@@ -3946,8 +3946,8 @@
       "en": "THE Mandalorian",
       "ko": "더 만달로리안"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000165",
@@ -4036,8 +4036,8 @@
       "en": "THE Office US",
       "ko": "더 오피스"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000146",
@@ -4136,8 +4136,8 @@
       "ja": "ダンジョン飯",
       "romaji": "Dungeon Meshi"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000318",
@@ -4169,8 +4169,8 @@
       "en": "Delicious in Dungeon",
       "ja": "ダンジョン飯"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000186",
@@ -4206,8 +4206,8 @@
       "ja": "ダンジョンに出会いを求めるのは間違っているだろうか",
       "romaji": "DanMachi"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000102",
@@ -4272,8 +4272,8 @@
       "ja": "DEATH NOTE",
       "zh": "死亡笔记"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000311",
@@ -4303,8 +4303,8 @@
       "en": "Death Note",
       "ko": "데스노트"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000028",
@@ -4465,8 +4465,8 @@
       "en": "Tokyo Ghoul",
       "ja": "東京喰種トーキョーグール"
     },
-    "qualityScore": 90,
-    "qualityTier": 4
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000243",
@@ -4531,8 +4531,8 @@
       "en": "Tokyo Revengers",
       "ko": "도쿄 리벤저스"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000118",
@@ -4628,8 +4628,8 @@
       "en": "Touhou Lost Word",
       "ko": "동방 로스트 워드"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000152",
@@ -4652,8 +4652,8 @@
     "titles": {
       "ko": "듄"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000005",
@@ -5250,8 +5250,8 @@
       "en": "Rurouni Kenshin",
       "ko": "루론검심"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000139",
@@ -5316,8 +5316,8 @@
       "en": "Lycoris Recoil",
       "ko": "리코리스 리코일"
     },
-    "qualityScore": 55,
-    "qualityTier": 2
+    "qualityScore": 90,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000080",
@@ -5473,8 +5473,8 @@
       "en": "Mashle: Magic and Muscles",
       "ja": "マッシュル-MASHLE-"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000213",
@@ -5507,8 +5507,8 @@
       "en": "Mashle: Magic and Muscles",
       "ja": "マッシュル-MASHLE-"
     },
-    "qualityScore": 65,
-    "qualityTier": 3
+    "qualityScore": 100,
+    "qualityTier": 5
   },
   {
     "workId": "wk_000000141",

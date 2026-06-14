@@ -30,13 +30,19 @@
           "episodes": 24
         }
       ],
-      "latestSeason": ":re"
+      "latestSeason": ":re",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "61374"
+      "tmdb": "61374",
+      "wikidata": "Q40239998"
     },
     "legacyIds": [
       "sub_animation_tokyo-ghoul_2014"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

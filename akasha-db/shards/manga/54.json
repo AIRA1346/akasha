@@ -18,13 +18,16 @@
       "판타지"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_ranma-half_1987"
     ],
     "externalIds": {
-      "tmdb": "2607"
+      "tmdb": "2607",
+      "wikidata": "Q272015"
     },
     "qualitySignals": {
       "externalIdVerified": true

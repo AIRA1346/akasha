@@ -19,7 +19,9 @@
       ],
       "steamAppId": "322170",
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "gen_game_minecraft_2011"
@@ -29,7 +31,8 @@
       "ko": "마인크래프트"
     },
     "externalIds": {
-      "steam": "322170"
+      "steam": "322170",
+      "wikidata": "Q49740"
     },
     "qualitySignals": {
       "externalIdVerified": true

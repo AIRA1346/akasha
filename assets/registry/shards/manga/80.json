@@ -54,7 +54,15 @@
       "ko": "니세코이"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q2757796"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000464": {

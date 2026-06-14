@@ -58,13 +58,16 @@
         }
       ],
       "latestSeason": "2기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_log-horizon_2013"
     ],
     "externalIds": {
-      "tmdb": "57706"
+      "tmdb": "57706",
+      "wikidata": "Q123022280"
     },
     "qualitySignals": {
       "externalIdVerified": true

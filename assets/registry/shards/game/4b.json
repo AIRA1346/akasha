@@ -22,10 +22,13 @@
     "extensions": {
       "coverageSprint03": "steam_fetch",
       "coverageSprint04ExternalId": "steam",
-      "coverageSprint04R2Fix": "W5_skyrim_split"
+      "coverageSprint04R2Fix": "W5_skyrim_split",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "72850"
+      "steam": "72850",
+      "wikidata": "Q323862"
     },
     "qualitySignals": {
       "externalIdVerified": true

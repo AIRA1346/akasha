@@ -13,7 +13,8 @@
       "청춘"
     ],
     "externalIds": {
-      "tmdb": "240411"
+      "tmdb": "240411",
+      "wikidata": "Q123564285"
     },
     "legacyIds": [
       "sub_animation_dandadan-anime_2024"
@@ -27,6 +28,13 @@
     "aliases": [
       "Dandadan",
       "ダンダダン"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -15,6 +15,7 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import 'data_policy_utils.dart';
+import 'dedupe_utils.dart';
 import 'discovery/registry_snapshot.dart';
 import 'discovery/wikidata_client.dart';
 import 'discovery/wikidata_q_validation.dart';
@@ -114,7 +115,7 @@ Future<void> _runAuto({
       continue;
     }
 
-    final hits = await _searchWikidata(query, language: 'en', limit: 3);
+    final hits = await _searchWikidata(query, language: 'en', limit: 8);
     if (hits.isEmpty) {
       print('SKIP ${target.workId} ${target.title} — no search hits for "$query"');
       skipped++;
@@ -123,6 +124,7 @@ Future<void> _runAuto({
 
     var linkedThis = false;
     for (final hit in hits) {
+      if (!_searchLabelMatchesQuery(hit.label, query)) continue;
       final candidateQ = hit.qid;
       print(
         'TRY ${target.workId} ${target.title} ← $candidateQ (${hit.label})',
@@ -437,13 +439,38 @@ List<_MissingWork> _collectMissing(
 
 String? _pickSearchQuery(_MissingWork w) {
   final en = w.titles['en']?.trim() ?? '';
-  if (en.isNotEmpty) return en;
+  if (en.isNotEmpty) return _sanitizeSearchQuery(en);
   final ja = w.titles['ja']?.trim() ?? '';
-  if (ja.isNotEmpty) return ja;
+  if (ja.isNotEmpty) return _sanitizeSearchQuery(ja);
   final ko = w.titles['ko']?.trim() ?? '';
-  if (ko.isNotEmpty) return ko;
+  if (ko.isNotEmpty) return _sanitizeSearchQuery(ko);
   final title = w.title.trim();
-  return title.isNotEmpty ? title : null;
+  return title.isNotEmpty ? _sanitizeSearchQuery(title) : null;
+}
+
+/// Steam 스토어 제목·에디션 접미어 정리
+String _sanitizeSearchQuery(String raw) {
+  var q = raw.trim();
+  q = q.replaceAll('™', '').replaceAll('®', '');
+  final savePrefix = RegExp(r'^Save\s+\d+%\s+on\s+', caseSensitive: false);
+  q = q.replaceFirst(savePrefix, '');
+  final editionSuffix = RegExp(
+    r'\s*[:\-–—]\s*(The\s+)?(Complete|Definitive|Anniversary|Reloaded|Enhanced|Legacy|Edition).*$',
+    caseSensitive: false,
+  );
+  q = q.replaceFirst(editionSuffix, '').trim();
+  return q;
+}
+
+bool _searchLabelMatchesQuery(String hitLabel, String query) {
+  final a = normalizeTitle(hitLabel);
+  final b = normalizeTitle(query);
+  if (a.isEmpty || b.isEmpty) return false;
+  if (a.contains(b) || b.contains(a)) return true;
+  final ta = a.split(RegExp(r'\s+')).where((t) => t.length >= 2).toSet();
+  final tb = b.split(RegExp(r'\s+')).where((t) => t.length >= 2).toSet();
+  if (ta.isEmpty || tb.isEmpty) return a == b;
+  return ta.intersection(tb).length / ta.union(tb).length >= 0.4;
 }
 
 Map<String, String> _titlesFromWork(Map<String, dynamic> work) {

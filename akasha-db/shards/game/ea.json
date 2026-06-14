@@ -20,7 +20,15 @@
       "ko": "동방 로스트 워드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q105533904"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

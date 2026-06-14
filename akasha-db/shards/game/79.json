@@ -22,10 +22,13 @@
     "extensions": {
       "coverageSprint03": "steam_fetch",
       "coverageSprint04ExternalId": "steam",
-      "coverageSprint04R2Fix": "W1_review"
+      "coverageSprint04R2Fix": "W1_review",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "524220"
+      "steam": "524220",
+      "wikidata": "Q21078985"
     },
     "qualitySignals": {
       "externalIdVerified": true

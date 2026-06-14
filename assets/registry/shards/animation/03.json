@@ -41,10 +41,18 @@
           "episodes": 22
         }
       ],
-      "latestSeason": "4기"
+      "latestSeason": "4기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_danmachi_2015"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q102175392"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -49,10 +49,18 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_no-game-no-life_2014"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q47469861"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -18,11 +18,19 @@
       "코미디"
     ],
     "externalIds": {
-      "tmdb": "207784"
+      "tmdb": "207784",
+      "wikidata": "Q20016948"
     },
     "legacyIds": [
       "sub_manga_dungeon-meshi_2014"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000323": {
     "workId": "wk_000000323",

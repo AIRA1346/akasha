@@ -26,13 +26,19 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "207784"
+      "tmdb": "207784",
+      "wikidata": "Q118692115"
     },
     "legacyIds": [
       "sub_animation_dungeon-meshi_2024"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

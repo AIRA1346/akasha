@@ -18,13 +18,16 @@
       "코미디"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_dragon-ball_1984"
     ],
     "externalIds": {
-      "tmdb": "30979"
+      "tmdb": "30979",
+      "wikidata": "Q15051307"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "gen_movie_dune-2021_2021"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q60834962"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

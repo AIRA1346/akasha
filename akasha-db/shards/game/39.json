@@ -20,10 +20,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "12210"
+      "steam": "12210",
+      "wikidata": "Q94797"
     },
     "qualitySignals": {
       "externalIdVerified": true
@@ -50,10 +53,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "242050"
+      "steam": "242050",
+      "wikidata": "Q28861509"
     },
     "qualitySignals": {
       "externalIdVerified": true

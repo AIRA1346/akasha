@@ -13,10 +13,13 @@
       "액션"
     ],
     "externalIds": {
-      "tmdb": "65930"
+      "tmdb": "65930",
+      "wikidata": "Q18047903"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_my-hero-academia_2014"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "MY Hero Academia",
       "ko": "나의 히어로 아카데미아"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000381": {
