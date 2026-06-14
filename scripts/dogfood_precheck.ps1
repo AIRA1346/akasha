@@ -32,6 +32,11 @@ Write-Host '==> preflight_check'
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 Write-Host ''
+Write-Host '==> sw1_a_validation (recall@10)'
+& $Dart run tool/sw1_a_validation.dart
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+Write-Host ''
 Write-Host '==> quality_gate --release'
 & $Dart run tool/quality_gate.dart --release
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -16,7 +16,7 @@
 | **Registry** | **490 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **275/490 (56.1%)** |
-| **flutter test** | **283/283 PASS** |
+| **flutter test** | **286/286 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |

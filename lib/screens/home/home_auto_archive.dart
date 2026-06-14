@@ -31,17 +31,11 @@ class HomeAutoArchive {
     final localKeys = onDisk.map((e) => AkashaFileService.cacheKeyFor(e)).toSet();
 
     final allRegistryWorks = WorksRegistry.getFilteredWorksSync();
-    final pending = allRegistryWorks.where((work) {
-      if (localWorkIds.contains(work.workId)) return false;
-      final key = work.workId.isNotEmpty
-          ? work.workId
-          : '${work.category.name}::${work.title}';
-      if (localKeys.contains(key)) return false;
-      return RegistryVisibilityService.shouldAutoArchiveRegistryWork(
-        workId: work.workId,
-        userWorkIds: localWorkIds,
-      );
-    }).toList();
+    final pending = pendingRegistryWorks(
+      registryWorks: allRegistryWorks,
+      localWorkIds: localWorkIds,
+      localKeys: localKeys,
+    );
 
     if (pending.isEmpty) {
       if (showFeedback) {
@@ -65,6 +59,26 @@ class HomeAutoArchive {
     }
 
     return createdCount;
+  }
+
+  /// 자동 아카이빙 대상 필터 — franchise·hidden 정책 ([RegistryVisibilityService]).
+  @visibleForTesting
+  static List<RegistryWork> pendingRegistryWorks({
+    required Iterable<RegistryWork> registryWorks,
+    required Set<String> localWorkIds,
+    required Set<String> localKeys,
+  }) {
+    return registryWorks.where((work) {
+      if (localWorkIds.contains(work.workId)) return false;
+      final key = work.workId.isNotEmpty
+          ? work.workId
+          : '${work.category.name}::${work.title}';
+      if (localKeys.contains(key)) return false;
+      return RegistryVisibilityService.shouldAutoArchiveRegistryWork(
+        workId: work.workId,
+        userWorkIds: localWorkIds,
+      );
+    }).toList(growable: false);
   }
 
   static AkashaItem itemFromRegistryWork(RegistryWork work) {
