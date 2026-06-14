@@ -10,7 +10,7 @@
 
 | # | 문서 | 내용 |
 |:-:|------|------|
-| 0 | [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md) | **궁극적 아카이빙** — 존재 축적·연결 (v1=작품) |
+| 0 | [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) | **실행 SSOT** — Phase 0~6 |
 | 1 | [product-vision.md](product-vision.md) | Tier 1/2 · Steam v1 |
 | 2 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로 |
 | 3 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry **운영 SSOT** |

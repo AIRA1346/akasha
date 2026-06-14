@@ -2,24 +2,29 @@
 
 > 목표: Steam (Windows) v1 — **품질 기준 충족 시 출시** (Q3 목표 · 일정 고정 아님)  
 > 기준일: **2026-06-14** · 현황: [docs/project-status-snapshot.md](docs/project-status-snapshot.md)  
-> **현재 실행 SSOT:** [docs/programs/phase1-work-e2e-plan.md](docs/programs/phase1-work-e2e-plan.md)
+> **현재 실행 SSOT:** [architecture-evolution-phases.md](programs/architecture-evolution-phases.md) (Phase 0~6)  
+> **Phase 0 E2E:** [phase1-work-e2e-plan.md](programs/phase1-work-e2e-plan.md)
 
 ---
 
 ## 현재 위치 → 출시 경로
 
-**M1 ✅ → M-v4 ✅ → M2 ✅ → Wave 1 ✅ → Sprint A ✅ → Sprint B ← 현재 → M3 ⏸️ (품질 Ready 시)**
+**M1 ✅ → … → Phase 0 ✅ → Phase 1 Record Foundation ← 현재 → Phase 2~6**
 
-### 병행 트랙
+### 실행 트랙 (일정 없음)
 
-| 트랙 | 다음 작업 | 우선 |
-|------|-----------|:----:|
-| **Sprint B** | 실사용 · friction 수정 · §9 출시 품질 (원할 때) | **P0** |
-| **Catalog G1** | trial insert · **관측만** | P2 |
-| **M3 Release** | Steamworks Release | ⏸️ **사용자 결정** |
-| ~~50k 아키텍처~~ | search_index · bundle | **보류** |
+| Phase | 내용 | 상태 |
+|:-----:|------|:----:|
+| **0** | 작품 E2E | ✅ |
+| **1** | Record · Entity · Time · Link | **진행** |
+| **2** | Catalog scale | 대기 |
+| **3** | Entity types | 대기 |
+| **4** | Timeline Archive | 대기 |
+| **5** | Connection | 대기 |
+| **6** | Memory Core PoC | 대기 |
+| **M3** | Steam Release | ⏸️ 품질 Ready |
 
-> **결정 (2026-06-14):** M3 **보류** — 원하는 품질 될 때까지 Sprint B. Scale/Core는 측정 후에만.
+상세: [architecture-evolution-phases.md](docs/programs/architecture-evolution-phases.md)
 
 externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/archive/sprint-04-e1-resolution.md)) — Phase 2 Coverage 프로그램 완결.
 

@@ -1,6 +1,6 @@
 # Phase 1 — 작품 아카이빙 E2E 완성 계획
 
-> **지위:** **현재 실행 SSOT** (2026-06-14~)  
+> **지위:** Phase 0 완료 기록 · **실행 SSOT는** [architecture-evolution-phases.md](architecture-evolution-phases.md)  
 > **북극성:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) — Phase 1 Entity Archive (**작품**)  
 > **출시:** M3 Steam — **사용자 품질 기준 충족 시** (일정 고정 아님)  
 > **보류:** 50k/500k 대비 · Entity 일반화 · Timeline · Memory Core · Scale ADR · **M3 Release**

@@ -1,7 +1,7 @@
 # Project Status Snapshot
 
 > **갱신:** 2026-06-14  
-> **현재 실행:** [programs/phase1-work-e2e-plan.md](programs/phase1-work-e2e-plan.md)  
+> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **1**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -16,11 +16,9 @@
 | **Registry** | **490 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **275/490 (56.1%)** |
-| **flutter test** | **271/271 PASS** |
-| **Release readiness** | G-AUTO ✅ (2026-06-14) · G-QA ✅ · G-STEAM ✅ |
-| **Sprint A1** | test **271/271** · analyze **0 error** · Release exe ✅ |
-| **Sprint B** | 품질 다듬기 ← **현재** — [phase1-work-e2e-plan §4](programs/phase1-work-e2e-plan.md) |
-| **M3 Release** | ⏸️ 품질 Ready 시 |
+| **flutter test** | **273/273 PASS** |
+| **Phase 1** | Record Foundation ✅ (ADR-008 · core/archiving) |
+| **Phase 2** | Catalog Scale ← **다음** |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
@@ -85,9 +83,9 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint |
 |---|------|:------:|
-| 1 | **Sprint B** — 실사용 · friction 있으면 알려주기 | B |
-| 2 | (선택) 카탈로그 G1 trial · 관측 | C |
-| 3 | **M3** — 본인 Ready 시 Steam Release | ⏸️ |
+| 1 | **Phase 1** — Record Port 어댑터 · vault 연동 | 1 |
+| 2 | friction 있으면 §2 기준 수정 | B |
+| 3 | **M3** — Ready 시 Steam Release | ⏸️ |
 
 ---
 
