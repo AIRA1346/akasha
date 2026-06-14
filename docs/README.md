@@ -1,6 +1,6 @@
 # AKASHA Docs
 
-> **갱신:** 2026-06-12 · Registry **490** · [ROADMAP](../ROADMAP.md)
+> **갱신:** 2026-06-14 · Registry **490** · [ROADMAP](../ROADMAP.md)
 
 문서는 **루트 7개 + 하위 폴더**로 정리했다. 완료된 스프린트·리뷰·일회성 조사는 **`archive/`** (44건).
 
@@ -10,11 +10,11 @@
 
 | # | 문서 | 내용 |
 |:-:|------|------|
-| 0 | [product-vision.md](product-vision.md) | 제품 북극성 |
-| 1 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로 |
-| 2 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry **운영 SSOT** |
-| 3 | [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) | **SD2.6 해제** · 병행 확장 SSOT |
-| 4 | [programs/sprint-05-charter.md](programs/sprint-05-charter.md) | M2 Steam + Catalog G1 |
+| 0 | [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md) | **궁극적 아카이빙** — 존재 축적·연결 (v1=작품) |
+| 1 | [product-vision.md](product-vision.md) | Tier 1/2 · Steam v1 |
+| 2 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로 |
+| 3 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry **운영 SSOT** |
+| 4 | [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) | **카탈로그 확장** (별 트랙) |
 
 ---
 
@@ -27,7 +27,8 @@
 | [discovery-source-decision.md](discovery-source-decision.md) | 소스 결정 요약 |
 | [policy/discovery-legal-baseline.md](policy/discovery-legal-baseline.md) | **Discovery 법무 SSOT** (코드·ToS 검토) |
 | [akasha-db-policy.md](akasha-db-policy.md) | 사전 구축·ID·포스터 |
-| [product-vision.md](product-vision.md) | Tier 1/2 제품 방향 |
+| [product-vision.md](product-vision.md) | Tier 1/2 · Steam v1 |
+| [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md) | **궁극적 아카이빙 SSOT** |
 | [project-status-snapshot.md](project-status-snapshot.md) | 현재 상태 스냅샷 |
 
 ---
@@ -40,7 +41,7 @@
 | **[policy/](policy/)** | 규격·게이트·**법무** | [discovery-legal-baseline](policy/discovery-legal-baseline.md) · [expansion-tool-grading](policy/expansion-tool-grading.md) |
 | **[strategy/](strategy/)** | 장기 성장·아키텍처 | [registry-growth-strategy](strategy/registry-growth-strategy.md) · [data-architecture-redesign](strategy/data-architecture-redesign.md) |
 | **[validation/](validation/)** | SW1·URV·search_index 검증 | [global-search-validation-plan](validation/global-search-validation-plan.md) · [universal-registry-validation](validation/universal-registry-validation.md) |
-| **[product/](product/)** | 제품 UI 설계 | [my-library-design](product/my-library-design.md) |
+| **[product/](product/)** | **제품·아카이빙** 설계 | [ultimate-archiving-vision](product/ultimate-archiving-vision.md) · [sanctum-md-customization](product/sanctum-md-customization.md) |
 | **[adr/](adr/)** | 아키텍처 결정 | [adr/README](adr/README.md) |
 | **[archive/](archive/)** | 완료 프로그램·리뷰·감사 | [archive/README](archive/README.md) |
 
@@ -63,3 +64,5 @@ dart run tool/discovery_manifest_check.dart
 |------|------|
 | 2026-06-10 | IA 재편 — 루트 58→7 |
 | 2026-06-10 | **SD2.6 해제** — catalog-growth-charter |
+| 2026-06-14 | **product/ultimate-archiving-vision** SSOT · Sanctum·워크벤치 `product/` 이동 |
+| 2026-06-14 | ultimate v2 — Entity+Timeline · Phase 1~4 · Core/제품 분리 |

@@ -1,7 +1,8 @@
 # AKASHA Product Vision — Fact Index + Sanctum Archive
 
 > **지위:** 제품·데이터 **최상위 SSOT** (정책·ROADMAP·스토어 카피의 북극성)  
-> **갱신:** 2026-06-12 · Registry **490** · G1 확장 · Steam v1 Q3 2026  
+> **갱신:** 2026-06-14 · Registry **490** · G1 확장 · Steam v1 Q3 2026  
+> **아카이빙 북극성:** [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md)  
 > **확장:** [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) — @430 시점 「출시 최소선 아님」 결정
 > **법무:** [data-policy.md](data-policy.md) · **구현:** [catalog_poster_policy.dart](../lib/config/catalog_poster_policy.dart)
 
@@ -9,9 +10,11 @@
 
 ## 1. 한 줄
 
-**AKASHA = 텍스트 Fact 사전(찾기) + Sanctum vault(유저가 무한히 꾸미는 개인 아카이브)**
+**AKASHA = 개인의 궁극의 아카이빙 시스템** — [ultimate-archiving-vision.md](product/ultimate-archiving-vision.md)
 
-트래커·포스터 호스팅·미디어 DB가 아니다.
+**Steam v1 구현:** 텍스트 Fact 사전(찾기) + Sanctum vault(작품 아카이브) — **시작점**이지 전체 목표가 아님.
+
+트래커·포스터 호스팅·미디어 DB·회상 전용 앱이 아니다.
 
 ---
 
@@ -46,6 +49,8 @@
     · (선택) 외부 에디터와 **같은 볼트 파일** 동기화 — Obsidian 필수 아님
     ↓
 앱 — 찾기 · 아카이빙 · 감상 · 편집 **완결** (볼트 watch · 그리드/워크벤치)
+    ↓
+(장기) Timeline · Entity 연결 · Appreciation — [product/ultimate-archiving-vision.md §10](product/ultimate-archiving-vision.md)
 ```
 
 ---
@@ -138,7 +143,9 @@
 
 | 문서 | 역할 |
 |------|------|
-| **본 문서** | 제품 북극성 |
+| **본 문서** | Tier 1/2 · Steam v1 In/Out |
+| [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md) | **궁극적 아카이빙** — Entity+Timeline · Phase 1~4 |
+| [product/README.md](product/README.md) | 제품 설계 문서 색인 |
 | [data-policy.md](data-policy.md) | 필드·법무·CI |
 | [catalog-ownership.md](../policy/catalog-ownership.md) | 3계층 소유 |
 | [POSTER_POLICY.md](../akasha-db/POSTER_POLICY.md) | v1 no-poster |
@@ -152,3 +159,4 @@
 | 일자 | 변경 |
 |------|------|
 | 2026-06-10 | 초안 — Fact-only Tier 1 + Sanctum user archive SSOT |
+| 2026-06-14 | ultimate-archiving-vision SSOT 링크 · 유저 여정 장기 축 |

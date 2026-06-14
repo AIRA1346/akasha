@@ -1,9 +1,8 @@
 # 나만의 서재 — UI·역할 설계 (v1 재정의)
 
-> **상태:** v1 구현 완료 (2026-06-07) · **2026-06 통합 홈** (`HomeScreen` 나만의 서재 모드)  
-> **기준일:** 2026-06-12  
-> **관련 코드:** `dashboard_sidebar.dart`, `home_screen.dart`, `browse_dashboard_sections.dart`  
-> **레거시:** ~~`MyLibraryScreen`~~ — 삭제됨 (별도 `Navigator.push` 화면 폐기)
+> **상태:** v1 구현 완료 (2026-06-07) · **2026-06 통합 홈** (`HomeShell` 나만의 서재 모드)  
+> **북극성:** [ultimate-archiving-vision.md](ultimate-archiving-vision.md) · **화면 역할:** §12  
+> **관련 코드:** `dashboard_sidebar.dart`, `home_shell.dart`, `browse_dashboard_sections.dart`
 
 ---
 

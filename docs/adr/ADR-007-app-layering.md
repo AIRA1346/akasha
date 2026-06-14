@@ -3,7 +3,7 @@
 * **상태:** 승인 (Accepted)  
 * **날짜:** 2026-06-13  
 * **상위 계획:** [app-architecture-refactor-plan.md](../programs/app-architecture-refactor-plan.md)  
-* **관련:** [data-architecture-redesign.md](../strategy/data-architecture-redesign.md)
+* **관련:** [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) · [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)
 
 ---
 
@@ -11,7 +11,9 @@
 
 AKASHA v1 Steam 출시 준비 과정에서 `home_screen.dart`가 1,385줄의 거대 개체(God Object)로 성장하여 UI, 로컬 파일 I/O(Sanctum vault), 글로벌 작품 사전(WorksRegistry), 그리고 스팀웍스 API 호출의 비즈니스 로직들이 복잡하게 얽히는 결합도(D1) 문제가 발생했습니다.
 
-특히 궁극적인 목표인 **"엔티티-저널(Entity-Journal) 아카이빙 모델"** (객관적 실체인 작품/인물/사건을 닻으로 삼고, 주관적 생각/장면/기억은 일기 형식 본문으로 서술)을 지탱하고, 사용자가 축적한 추억과 기록들을 **"시각적으로 예쁘게 감상하는 뷰(Timeline, Album, Carousel 등)"**를 기존 코드 훼손 없이 유연하게 교체 및 확장하기 위해서는 **레이어 경계를 강제하고 비즈니스 로직을 UI로부터 완벽하게 단절시키는 아키텍처적 가드레일**이 즉시 필요합니다.
+특히 궁극적인 목표인 **「엔티티-저널(Entity-Journal) 아카이빙 모델」** (객관적 실체인 작품/인물/사건을 닻으로 삼고, 주관적 생각/장면/기억은 일기 형식 본문으로 서술)을 지탱하고, 사용자가 축적한 추억과 기록들을 **「시각적으로 예쁘게 감상하는 뷰(Timeline, Album, Carousel 등)」**를 기존 코드 훼손 없이 유연하게 교체 및 확장하기 위해서는 **레이어 경계를 강제하고 비즈니스 로직을 UI로부터 완벽하게 단절시키는 아키텍처적 가드레일**이 즉시 필요합니다.
+
+> **제품 SSOT:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) — Entity Archive(Phase 1) + Timeline(장기)
 
 ---
 

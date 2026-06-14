@@ -2,7 +2,7 @@
 
 > **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (430작 · 331 해시 샤드)  
 > **기준일:** 2026-06-10  
-> **제품·포스터 SSOT:** [product-vision.md]](../product-vision.md) · [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)
+> **제품·포스터 SSOT:** [product-vision.md](../product-vision.md) · **아카이빙 북극성:** [product/ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)
 
 관련: [akasha-db-policy.md]](../akasha-db-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [ROADMAP.md](../ROADMAP.md)
 
@@ -11,6 +11,8 @@
 ## 0. 제품 정체성 (정정)
 
 ### 0.1 최종 비전
+
+> **제품 SSOT:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
 
 **AKASHA = 지식 정보(Entity Anchor) + 나만의 일기(Subjective Journal) + 시각적 감상(Appreciation) + AI 친화적 지식 그래프**
 
@@ -301,6 +303,8 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 ---
 
 ## 7. 엔티티 및 저널이 「저장」되는 경로 (감상 융합)
+
+> **제품·로드맵 SSOT:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) §3–§6
 
 ### 7.1 레지스트리에 추가 (공식 사전 - 객체 닻)
 
