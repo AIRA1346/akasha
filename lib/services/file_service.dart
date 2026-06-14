@@ -11,6 +11,7 @@ class AkashaFileService {
 
   static final Set<String> _skipDirNames = {
     'posters',
+    'timeline', // Phase 4.1 — ArchiveRecord 전용, AkashaItem 스캔 제외
     'node_modules',
     '.git',
     '.obsidian', // 외부 노트 앱 설정 폴더 — 스캔 제외

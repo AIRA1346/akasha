@@ -3,6 +3,7 @@ import '../../services/file_service.dart';
 import 'archive_record.dart';
 import 'entity_anchor.dart';
 import 'record_kind.dart';
+import 'timeline_entry.dart';
 
 /// Phase 0 [AkashaItem] ↔ Phase 1 [ArchiveRecord] ([ADR-008]).
 abstract final class ArchiveRecordMapper {
@@ -33,5 +34,27 @@ abstract final class ArchiveRecordMapper {
       return item.filePath!;
     }
     return AkashaFileService.cacheKeyFor(item);
+  }
+
+  static ArchiveRecord fromTimelineEntry(TimelineEntry entry) {
+    EntityAnchor? entity;
+    final entityId = entry.entityId?.trim();
+    if (entityId != null && entityId.isNotEmpty) {
+      entity = EntityAnchor(
+        entityId: entityId,
+        type: entityId.startsWith('wk_')
+            ? EntityAnchorType.work
+            : EntityAnchorType.custom,
+      );
+    }
+
+    return ArchiveRecord(
+      recordId: entry.recordId,
+      kind: RecordKind.timelineEntry,
+      entity: entity,
+      timeAnchor: entry.occurredAt,
+      storagePath: entry.storagePath,
+      title: entry.title,
+    );
   }
 }
