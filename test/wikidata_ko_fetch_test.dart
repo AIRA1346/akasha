@@ -1,4 +1,4 @@
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 import '../tool/discovery/wikidata_ko_fetch.dart';
 
@@ -14,6 +14,18 @@ void main() {
       expect(q, contains('wd:Q21198342'));
       expect(q, contains('LIMIT 10'));
       expect(q, contains('OFFSET 0'));
+    });
+
+    test('webtoon SPARQL excludes manga series P31', () {
+      final q = wikidataKoLabelSparql(
+        category: 'webtoon',
+        limit: 10,
+        offset: 0,
+      );
+      expect(q, isNot(contains('wd:Q21198342')));
+      expect(q, contains('wd:Q60496358'));
+      expect(q, contains('wd:Q7978994'));
+      expect(q, contains('wd:Q74262765'));
     });
 
     test('animation includes multiple P31 values', () {
@@ -38,6 +50,7 @@ void main() {
   group('wikidataKoSupportedCategories', () {
     test('covers all main media types', () {
       expect(wikidataKoSupportedCategories, contains('manga'));
+      expect(wikidataKoSupportedCategories, contains('webtoon'));
       expect(wikidataKoSupportedCategories, contains('animation'));
       expect(wikidataKoSupportedCategories, contains('movie'));
       expect(wikidataKoSupportedCategories, contains('book'));

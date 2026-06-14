@@ -1,7 +1,7 @@
 # Project Status Snapshot
 
-> **갱신:** 2026-06-14  
-> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **1**  
+> **갱신:** 2026-06-14 (@2008)  
+> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **1** + **2 Scale 진행**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -13,17 +13,18 @@
 
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **490 works** · v4 hex shards · dedupe **0** |
+| **Registry** | **2008 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
-| **externalId** | **275/490 (56.1%)** |
-| **flutter test** | **286/286 PASS** |
+| **externalId** | **2008/2008 (100%)** |
+| **flutter test** | **291/291 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
 | **다음** | Sprint B — 작품 `.md` 실사용 · friction · M3 Ready |
-| **Scale / Core** | **보류** — 측정 후에만 (§5) |
+| **Scale / Core** | **Phase 2 진행** — @2008 · G1 ~40% ([baseline](programs/catalog-scale-baseline-490.md)) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
-| **Discovery** | `patchStatus: active_trial` · Wikidata manga |
+| **Discovery** | `patchStatus: active_trial` · Wikidata ko (7 categories) |
+| **CDN** | akasha-db.pages.dev **2008** — deploy `21670b3` (2026-06-14) |
 
 ---
 
@@ -42,13 +43,13 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ---
 
-## 2. Gate (@490)
+## 2. Gate (@2008)
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **265/265 PASS** |
+| `flutter test` | **291/291 PASS** |
 | `registry_builder` | PASS |
-| `dedupe_linter` | PASS (490 works) |
+| `dedupe_linter` | PASS (2008 works) |
 | `quality_gate --strict` | PASS |
 | `quality_gate --release` | PASS |
 | `coverage_dashboard` | titles_en 93% · invalid_en 0 |
@@ -64,7 +65,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **G-AUTO** | ✅ | test 265 · analyze 0 error · Release build OK |
 | **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
 | **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
-| **G-CATALOG** | ✅ | 490작 · recall@10 **87/87** (@490 SW1-A) |
+| **G-CATALOG** | ✅ | **2008작** · recall@10 **87/87** (@490 SW1-A) |
 | **G-COPY** | ✅ | Privacy doc · 스토어 카피 정합 |
 
 ---

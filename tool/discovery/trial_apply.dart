@@ -321,10 +321,11 @@ void main(List<String> args) async {
     print('id_registry nextWorkId -> ${highestSeq! + 1}');
   }
 
-  if (!mergeOnly && fetchOffset == null) {
+  if (!mergeOnly) {
     final cursor = readCursor(root, config.cursorPath);
     final oldOffset = int.tryParse(cursor['offset']?.toString() ?? '') ?? 0;
-    final newOffset = oldOffset + nodes.length;
+    final baseOffset = fetchOffset ?? oldOffset;
+    final newOffset = baseOffset + nodes.length;
     final lastQid = nodes.isNotEmpty ? nodes.last['qid']?.toString() : null;
     writeCursor(root, config.cursorPath, {
       ...cursor,

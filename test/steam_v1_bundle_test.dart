@@ -36,11 +36,12 @@ void main() {
       expect(solo.category, MediaCategory.webtoon);
     });
 
-    test('webtoon category filter returns wk_ pair (probes hidden)', () async {
+    test('webtoon category filter returns wk_ works (probes hidden)', () async {
       final works = await WorksRegistry.getFilteredWorks(
         category: MediaCategory.webtoon,
       );
-      expect(works.length, 2);
+      expect(works.length, greaterThanOrEqualTo(2));
+      expect(works.every((w) => w.workId.startsWith('wk_')), isTrue);
     });
   });
 }

@@ -69,7 +69,10 @@ void main() {
       final fetchedUrls = <String>[];
       RegistrySyncService.setTextFetcherForTesting((url) async {
         fetchedUrls.add(url);
-        if (url.endsWith('manifest.json')) {
+        if (url.endsWith('search_index/manifest.json')) {
+          return null;
+        }
+        if (url.endsWith('manifest.json') && !url.contains('search_index/')) {
           return jsonEncode({
             'version': localManifest!.version,
             'generatedAt': '2099-01-01T00:00:00.000Z',
@@ -114,7 +117,10 @@ void main() {
       final fetchedUrls = <String>[];
       RegistrySyncService.setTextFetcherForTesting((url) async {
         fetchedUrls.add(url);
-        if (url.endsWith('manifest.json')) {
+        if (url.endsWith('search_index/manifest.json')) {
+          return null;
+        }
+        if (url.endsWith('manifest.json') && !url.contains('search_index/')) {
           return jsonEncode({
             'version': localManifest!.version,
             'generatedAt': localManifest.generatedAt,
