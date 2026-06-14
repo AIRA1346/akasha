@@ -13,10 +13,13 @@
       "명작"
     ],
     "externalIds": {
-      "tmdb": "1429"
+      "tmdb": "1429",
+      "wikidata": "Q22126305"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_attack-on-titan_2013"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Attack ON Titan",
       "ko": "진격의 거인"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

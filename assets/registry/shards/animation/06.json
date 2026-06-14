@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "2011판",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_hunter-x-hunter_2011"
     ],
     "externalIds": {
-      "tmdb": "46298"
+      "tmdb": "46298",
+      "wikidata": "Q70209136"
     },
     "qualitySignals": {
       "externalIdVerified": true
@@ -65,16 +68,22 @@
           "episodes": 220
         }
       ],
-      "latestSeason": "1부"
+      "latestSeason": "1부",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "46260"
+      "tmdb": "46260",
+      "wikidata": "Q25929253"
     },
     "legacyIds": [
       "sub_animation_naruto_2002"
     ],
     "aliases": [
       "火影忍者"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

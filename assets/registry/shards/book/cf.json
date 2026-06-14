@@ -20,7 +20,15 @@
       "ko": "해리 포터와 마법사의 돌"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q8337"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

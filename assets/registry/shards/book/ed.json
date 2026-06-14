@@ -20,7 +20,15 @@
       "ko": "퍼시 잭슨과 번개 도둑"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q213167"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

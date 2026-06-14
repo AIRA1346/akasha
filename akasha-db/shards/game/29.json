@@ -20,7 +20,15 @@
       "ko": "러브라이브! 올스타즈"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q15838335"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

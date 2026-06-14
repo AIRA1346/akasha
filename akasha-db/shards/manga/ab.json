@@ -18,13 +18,16 @@
       "전략"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_overlord_2012"
     ],
     "externalIds": {
-      "tmdb": "64199"
+      "tmdb": "64199",
+      "wikidata": "Q117350371"
     },
     "qualitySignals": {
       "externalIdVerified": true

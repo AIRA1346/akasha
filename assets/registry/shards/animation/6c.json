@@ -20,7 +20,15 @@
       "ko": "사이버펑크: 엣지러너"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q96677963"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

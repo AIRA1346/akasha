@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "gen_movie_spider-man-nwh_2021"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q63466944"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

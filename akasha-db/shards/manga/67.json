@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_shokugeki-no-soma_2012"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q8376373"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_toilet-bound-hanako-kun_2014"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q28684168"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "셜록 홈즈: 단홍색 연구"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q2316684"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

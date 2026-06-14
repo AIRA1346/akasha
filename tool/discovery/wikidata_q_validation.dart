@@ -8,10 +8,12 @@ final wikidataPropertyPattern = RegExp(r'^P\d+$');
 /// AKASHA category → 허용 Wikidata P31 (instance of) Q-id
 const expectedP31ByAkashaCategory = {
   'manga': {'Q21198342'}, // manga series
-  'animation': {'Q63952888', 'Q2485346'}, // anime television series, anime series
-  'game': {'Q7889'}, // video game
-  'book': {'Q7725634', 'Q8261'}, // literary work, comic book (fallback)
-  'movie': {'Q11424', 'Q20650540'}, // film, anime film
+  'webtoon': {'Q60496358', 'Q21198342', 'Q1004', 'Q7978994', 'Q74262765'}, // webtoon, manga series, comics
+  'animation': {'Q63952888', 'Q2485346', 'Q20650540', 'Q113671041', 'Q1259759'}, // anime TV, anime series, anime film
+  'game': {'Q7889'},
+  'book': {'Q7725634', 'Q8261', 'Q1667921', 'Q104213567'}, // literary work, novel series, light novel
+  'movie': {'Q11424', 'Q20650540'},
+  'drama': {'Q5398426', 'Q15416', 'Q24856'}, // television series
 };
 
 /// SPARQL·문서 검증용 귀멨 SSOT (2026-06 live)

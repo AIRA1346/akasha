@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_assassination-classroom_2012"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q3277067"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

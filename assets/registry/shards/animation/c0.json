@@ -13,10 +13,13 @@
       "성장"
     ],
     "externalIds": {
-      "tmdb": "209867"
+      "tmdb": "209867",
+      "wikidata": "Q115792176"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_frieren_2023"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Frieren",
       "ko": "장송의 프리렌"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000210": {
@@ -99,10 +105,18 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_skip-and-loafer_2023"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q109651922"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

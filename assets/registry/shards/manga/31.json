@@ -20,7 +20,15 @@
       "ko": "빈란드 사가"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q930990"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

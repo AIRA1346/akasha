@@ -13,10 +13,13 @@
       "서바이벌"
     ],
     "externalIds": {
-      "tmdb": "117465"
+      "tmdb": "117465",
+      "wikidata": "Q65256469"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_hells-paradise_2018"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Hells Paradise",
       "ko": "지옥락"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

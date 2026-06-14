@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "sub_movie_your-name-2016_2016"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q27016930"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

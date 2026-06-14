@@ -18,13 +18,16 @@
       "SF"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_seraph-of-the-end_2012"
     ],
     "externalIds": {
-      "tmdb": "62444"
+      "tmdb": "62444",
+      "wikidata": "Q11606274"
     },
     "qualitySignals": {
       "externalIdVerified": true

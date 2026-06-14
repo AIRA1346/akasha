@@ -13,10 +13,13 @@
       "복수"
     ],
     "externalIds": {
-      "tmdb": "203737"
+      "tmdb": "203737",
+      "wikidata": "Q97310775"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_oshi-no-ko_2020"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Oshi NO KO",
       "ko": "최애의 아이"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000469": {

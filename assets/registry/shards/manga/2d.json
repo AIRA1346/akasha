@@ -18,13 +18,16 @@
       "우정"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_edens-zero_2018"
     ],
     "externalIds": {
-      "tmdb": "97525"
+      "tmdb": "97525",
+      "wikidata": "Q54667228"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -20,7 +20,15 @@
       "ko": "체르노빌"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q111377804"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

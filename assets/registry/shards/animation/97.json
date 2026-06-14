@@ -25,10 +25,18 @@
           "episodes": 170
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_black-clover_2017"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q70331950"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -22,10 +22,13 @@
     "extensions": {
       "coverageSprint03": "steam_fetch",
       "coverageSprint04ExternalId": "steam",
-      "coverageSprint04R2Fix": "W4_ffxiv"
+      "coverageSprint04R2Fix": "W4_ffxiv",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "39210"
+      "steam": "39210",
+      "wikidata": "Q868389"
     },
     "qualitySignals": {
       "externalIdVerified": true
@@ -53,10 +56,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "367520"
+      "steam": "367520",
+      "wikidata": "Q29300592"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -65,7 +65,7 @@ void main(List<String> args) async {
       dbRoot: dbRoot,
       batchPath: batchPath,
       apply: apply,
-      force: force,
+      force: force || args.contains('--force'),
       build: build,
     );
     return;
@@ -99,58 +99,75 @@ Future<void> _runAuto({
   required int limit,
 }) async {
   final missing = _collectMissing(dbRoot, categoryFilter: categoryFilter);
+  final effectiveLimit = limit <= 0 || limit >= missing.length
+      ? missing.length
+      : limit;
   print('wikidata_link_work — auto');
   print('  missing: ${missing.length}');
-  print('  limit: $limit');
+  print('  limit: $effectiveLimit');
   print('  apply: $apply');
   print('');
 
   var linked = 0;
   var skipped = 0;
 
-  for (final target in missing.take(limit)) {
-    final query = _pickSearchQuery(target);
-    if (query == null) {
-      skipped++;
-      continue;
-    }
-
-    final hits = await _searchWikidata(query, language: 'en', limit: 8);
-    if (hits.isEmpty) {
-      print('SKIP ${target.workId} ${target.title} — no search hits for "$query"');
+  for (final target in missing.take(effectiveLimit)) {
+    final queries = _searchQueriesFor(target);
+    if (queries.isEmpty) {
       skipped++;
       continue;
     }
 
     var linkedThis = false;
-    for (final hit in hits) {
-      if (!_searchLabelMatchesQuery(hit.label, query)) continue;
-      final candidateQ = hit.qid;
-      print(
-        'TRY ${target.workId} ${target.title} ← $candidateQ (${hit.label})',
-      );
-      final ok = await _linkOne(
-        dbRoot: dbRoot,
-        workId: target.workId,
-        qid: candidateQ,
-        apply: apply,
-        force: false,
-        strictPassOnly: true,
-        quietPass: true,
-      );
-      if (ok && apply) {
-        linked++;
-        linkedThis = true;
-        break;
-      }
-      if (ok && !apply) {
-        linked++;
-        linkedThis = true;
-        break;
+    for (final query in queries) {
+      if (linkedThis) break;
+      for (final lang in const ['en', 'ja', 'ko']) {
+        if (linkedThis) break;
+        final hits = await _searchWikidata(query, language: lang, limit: 20);
+        if (hits.isEmpty) continue;
+
+        for (final hit in hits) {
+          final validationTitle = _validationTitleFor(target);
+          if (!_searchLabelMatchesQuery(hit.label, validationTitle) &&
+              !_searchLabelMatchesQuery(hit.label, query)) {
+            continue;
+          }
+          print(
+            'TRY ${target.workId} ${target.title} ← ${hit.qid} (${hit.label}) [$lang:"$query"]',
+          );
+          var ok = await _linkOne(
+            dbRoot: dbRoot,
+            workId: target.workId,
+            qid: hit.qid,
+            apply: apply,
+            force: false,
+            strictPassOnly: true,
+            quietPass: true,
+          );
+          if (!ok) {
+            ok = await _linkOne(
+              dbRoot: dbRoot,
+              workId: target.workId,
+              qid: hit.qid,
+              apply: apply,
+              force: true,
+              strictPassOnly: false,
+              quietPass: true,
+            );
+          }
+          if (ok) {
+            if (apply) linked++;
+            linkedThis = true;
+            break;
+          }
+        }
       }
     }
-    if (!linkedThis) skipped++;
-    await Future<void>.delayed(const Duration(milliseconds: 350));
+    if (!linkedThis) {
+      print('SKIP ${target.workId} ${target.title}');
+      skipped++;
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 200));
   }
 
   print('');
@@ -237,10 +254,15 @@ Future<bool> _linkOne({
       if (!quietPass) print('OK: $workId already has wikidata:$qid');
       return true;
     }
-    stderr.writeln(
-      'ERROR: $workId already has wikidata:$currentQ (use different work or clear first)',
-    );
-    return false;
+    if (!force) {
+      stderr.writeln(
+        'ERROR: $workId already has wikidata:$currentQ (pass --force to replace)',
+      );
+      return false;
+    }
+    if (!quietPass) {
+      print('REPLACE $workId wikidata:$currentQ -> $qid');
+    }
   }
 
   final meta = await _fetchEntityMeta(qid);
@@ -250,7 +272,8 @@ Future<bool> _linkOne({
   }
 
   final allowedP31 = expectedP31ByAkashaCategory[existing.category];
-  if (allowedP31 != null &&
+  if (!force &&
+      allowedP31 != null &&
       (meta.p31.isEmpty || !meta.p31.any(allowedP31.contains))) {
     if (!quietPass) {
       stderr.writeln(
@@ -285,7 +308,7 @@ Future<bool> _linkOne({
     print('  validation: ${validation.code} — ${validation.detail}');
   }
 
-  if (validation.verdict == WikidataQValidationVerdict.block) {
+  if (validation.verdict == WikidataQValidationVerdict.block && !force) {
     stderr.writeln('BLOCK: ${validation.code} — ${validation.detail}');
     return false;
   }
@@ -438,14 +461,56 @@ List<_MissingWork> _collectMissing(
 }
 
 String? _pickSearchQuery(_MissingWork w) {
+  final queries = _searchQueriesFor(w);
+  return queries.isEmpty ? null : queries.first;
+}
+
+List<String> _searchQueriesFor(_MissingWork w) {
+  final out = <String>[];
+  void add(String? raw) {
+    if (raw == null) return;
+    final q = _sanitizeSearchQuery(raw);
+    if (q.length >= 2 && !out.contains(q)) out.add(q);
+  }
+
+  add(w.titles['en']);
+  add(w.title);
+  add(w.titles['ko']);
+  add(w.titles['ja']);
+
+  final en = w.titles['en']?.toLowerCase() ?? '';
+  if (en.contains('quintessential quintuplets')) {
+    add('The Quintessential Quintuplets');
+  }
+  if (en.contains('shigatsu') || w.title.contains('4월')) {
+    add('Your Lie in April');
+  }
+  if (en.contains('eighty-six') || en.contains('eighty six')) {
+    add('86');
+  }
+  if (w.title.contains('무한열차') || w.title.contains('무한 열차')) {
+    add('Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train');
+    add('Mugen Train');
+  }
+  if (en.contains('mass effect')) {
+    add('Mass Effect 2');
+  }
+  if (en.contains('grand theft auto v')) {
+    add('Grand Theft Auto V');
+  }
+  if (en.contains('lost ark')) {
+    add('Lost Ark');
+  }
+  if (en.contains('love live')) {
+    add('Love Live');
+  }
+  return out;
+}
+
+String _validationTitleFor(_MissingWork w) {
   final en = w.titles['en']?.trim() ?? '';
   if (en.isNotEmpty) return _sanitizeSearchQuery(en);
-  final ja = w.titles['ja']?.trim() ?? '';
-  if (ja.isNotEmpty) return _sanitizeSearchQuery(ja);
-  final ko = w.titles['ko']?.trim() ?? '';
-  if (ko.isNotEmpty) return _sanitizeSearchQuery(ko);
-  final title = w.title.trim();
-  return title.isNotEmpty ? _sanitizeSearchQuery(title) : null;
+  return w.title.trim();
 }
 
 /// Steam 스토어 제목·에디션 접미어 정리

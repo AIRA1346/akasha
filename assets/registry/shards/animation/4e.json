@@ -50,11 +50,19 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "피스"
+      "latestSeason": "피스",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_horimiya_2021"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q104815263"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000228": {
     "workId": "wk_000000228",
@@ -77,7 +85,15 @@
       "ko": "사이코 패스"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q1315951"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "아이언 레디 플레이어 원"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q3906523"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

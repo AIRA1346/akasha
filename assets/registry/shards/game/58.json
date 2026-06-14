@@ -20,7 +20,15 @@
       "ko": "파이어 엠블렘: 풍화설월"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q54960673"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000102": {

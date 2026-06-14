@@ -25,10 +25,18 @@
           "episodes": 27
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_gurren-lagann_2007"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q4277"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

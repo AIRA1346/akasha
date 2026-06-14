@@ -20,7 +20,15 @@
       "ko": "1984"
     },
     "extensions": {
-      "coverageSprint03": "latin_title"
+      "coverageSprint03": "latin_title",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q208460"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

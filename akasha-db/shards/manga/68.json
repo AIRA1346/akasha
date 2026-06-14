@@ -13,10 +13,13 @@
       "로맨스"
     ],
     "externalIds": {
-      "tmdb": "90937"
+      "tmdb": "90937",
+      "wikidata": "Q30924292"
     },
     "extensions": {
-      "coverageSprint03": "latin_title"
+      "coverageSprint03": "latin_title",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_beastars_2016"
@@ -25,6 +28,9 @@
       "en": "BEASTARS",
       "ja": "BEASTARS",
       "ko": "비스타즈"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000314": {
@@ -82,7 +88,15 @@
       "ko": "토라도라!"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61401892"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

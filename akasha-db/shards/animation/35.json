@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "1~6부",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_jojo-bizarre-adventure_2012"
     ],
     "externalIds": {
-      "tmdb": "46393"
+      "tmdb": "46393",
+      "wikidata": "Q28930028"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -30,13 +30,19 @@
           "episodes": 14
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "131041"
+      "tmdb": "131041",
+      "wikidata": "Q108059214"
     },
     "legacyIds": [
       "sub_animation_blue-lock_2022"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

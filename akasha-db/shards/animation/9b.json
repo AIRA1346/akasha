@@ -13,10 +13,13 @@
       "감동"
     ],
     "externalIds": {
-      "tmdb": "372058"
+      "tmdb": "372058",
+      "wikidata": "Q21697406"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_your-name_2016"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Your Name",
       "ko": "너의 이름은."
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

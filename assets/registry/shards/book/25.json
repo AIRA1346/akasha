@@ -20,7 +20,15 @@
       "ko": "노 게임 노 라이프"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q11325839"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "Re:제로 라이트노벨"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q20718351"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -46,10 +46,13 @@
       "반전"
     ],
     "externalIds": {
-      "tmdb": "1429"
+      "tmdb": "1429",
+      "wikidata": "Q586025"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_shingeki-no-kyojin_2009"
@@ -57,6 +60,9 @@
     "titles": {
       "en": "Shingeki NO Kyojin",
       "ko": "진격의 거인"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

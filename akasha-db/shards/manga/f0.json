@@ -14,7 +14,17 @@
     ],
     "legacyIds": [
       "sub_manga_nana_2000"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q423658"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000398": {
     "workId": "wk_000000398",
@@ -36,6 +46,16 @@
     ],
     "legacyIds": [
       "sub_manga_world-trigger_2006"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q14645935"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

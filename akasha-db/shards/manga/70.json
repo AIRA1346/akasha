@@ -20,7 +20,15 @@
       "ko": "후르츠 바스켓"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q216204"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000375": {
@@ -37,7 +45,8 @@
       "드라마"
     ],
     "externalIds": {
-      "tmdb": "65942"
+      "tmdb": "65942",
+      "wikidata": "Q38277622"
     },
     "legacyIds": [
       "sub_manga_rezero_2014"
@@ -52,6 +61,13 @@
       "Re Zero",
       "Re:Zero",
       "Re:ゼロ"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

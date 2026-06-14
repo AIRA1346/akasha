@@ -13,10 +13,13 @@
       "성장"
     ],
     "externalIds": {
-      "tmdb": "131041"
+      "tmdb": "131041",
+      "wikidata": "Q62414782"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_blue-lock_2018"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Blue Lock",
       "ko": "블루 록"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000311": {
@@ -78,11 +84,19 @@
       "연애"
     ],
     "externalIds": {
-      "tmdb": "96316"
+      "tmdb": "96316",
+      "wikidata": "Q55695988"
     },
     "legacyIds": [
       "sub_manga_rent-a-girlfriend_2017"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000431": {
     "workId": "wk_000000431",

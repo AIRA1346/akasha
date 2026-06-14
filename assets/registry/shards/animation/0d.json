@@ -25,10 +25,18 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_wind-breaker_2024"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q117336999"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

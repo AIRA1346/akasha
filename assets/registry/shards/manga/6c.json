@@ -20,7 +20,15 @@
       "ko": "잘 자 뚱뚱이"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q2910245"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

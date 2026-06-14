@@ -20,7 +20,15 @@
       "ko": "오징어 게임"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q106582931"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

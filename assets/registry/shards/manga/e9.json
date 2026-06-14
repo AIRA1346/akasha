@@ -19,7 +19,17 @@
     ],
     "legacyIds": [
       "sub_manga_barakamon_2009"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q6579725"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000443": {
     "workId": "wk_000000443",

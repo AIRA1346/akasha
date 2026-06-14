@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "gen_movie_barbie-2023_2023"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q55637037"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

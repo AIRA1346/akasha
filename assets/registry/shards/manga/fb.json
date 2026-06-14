@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "sub_manga_hunter-x-hunter_1998"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q696071"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

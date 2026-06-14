@@ -13,10 +13,13 @@
       "하렘"
     ],
     "externalIds": {
-      "tmdb": "84669"
+      "tmdb": "84669",
+      "wikidata": "Q38277250"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_quintessential-quintuplets_2017"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Quintessential Quintuplets",
       "ko": "5등분의 신부"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000456": {

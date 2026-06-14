@@ -20,7 +20,15 @@
       "ko": "클라나드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q1037699"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

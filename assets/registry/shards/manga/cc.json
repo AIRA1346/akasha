@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_yotsubato_2003"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q390279"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

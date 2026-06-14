@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "gen_movie_pulp-fiction_1994"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q104123"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

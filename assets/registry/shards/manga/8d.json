@@ -20,7 +20,15 @@
       "ko": "짱구는 못말려"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q120300"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000347": {
@@ -42,13 +50,16 @@
       "철학"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_land-of-the-lustrous_2012"
     ],
     "externalIds": {
-      "tmdb": "74204"
+      "tmdb": "74204",
+      "wikidata": "Q17217234"
     },
     "qualitySignals": {
       "externalIdVerified": true

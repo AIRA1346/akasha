@@ -20,7 +20,15 @@
       "ko": "이 멋진 세계에 축복을!"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q19750843"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "1기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_kill-la-kill_2013"
     ],
     "externalIds": {
-      "tmdb": "51663"
+      "tmdb": "51663",
+      "wikidata": "Q13637192"
     },
     "qualitySignals": {
       "externalIdVerified": true

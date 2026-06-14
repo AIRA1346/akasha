@@ -20,7 +20,15 @@
       "ko": "신의 탑"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q487202"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

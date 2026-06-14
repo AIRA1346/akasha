@@ -13,7 +13,8 @@
       "액션"
     ],
     "externalIds": {
-      "tmdb": "120089"
+      "tmdb": "120089",
+      "wikidata": "Q65231576"
     },
     "legacyIds": [
       "sub_manga_spy-x-family_2018"
@@ -27,6 +28,13 @@
     "aliases": [
       "SPY×FAMILY",
       "Spy Family"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

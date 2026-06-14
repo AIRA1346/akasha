@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "sub_movie_jujutsu-kaisen-0_2021"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q109914608"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

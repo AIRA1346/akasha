@@ -20,7 +20,15 @@
       "ko": "오리엔트 특급 살인"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q1622789"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

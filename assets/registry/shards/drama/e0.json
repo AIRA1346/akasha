@@ -20,7 +20,15 @@
       "ko": "원피스 (실사)"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q121052381"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "sub_drama_scale-exp-b7-probe-epsilon_2026": {

@@ -25,13 +25,19 @@
           "episodes": 11
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "207332"
+      "tmdb": "207332",
+      "wikidata": "Q126127689"
     },
     "legacyIds": [
       "sub_animation_sakamoto-days_2025"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

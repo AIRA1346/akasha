@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "gen_movie_the-matrix_1999"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q83495"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

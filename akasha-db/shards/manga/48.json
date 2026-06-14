@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_cells-at-work_2015"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q22123892"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -25,10 +25,18 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_zom-100_2023"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q118289307"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

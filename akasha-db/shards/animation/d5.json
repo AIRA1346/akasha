@@ -30,13 +30,19 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "117465"
+      "tmdb": "117465",
+      "wikidata": "Q105293782"
     },
     "legacyIds": [
       "sub_animation_hells-paradise_2023"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

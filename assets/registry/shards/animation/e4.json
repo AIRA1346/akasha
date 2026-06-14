@@ -31,13 +31,16 @@
         }
       ],
       "latestSeason": "천년혈전",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_bleach_2004"
     ],
     "externalIds": {
-      "tmdb": "30936"
+      "tmdb": "30936",
+      "wikidata": "Q5362638"
     },
     "qualitySignals": {
       "externalIdVerified": true
@@ -64,7 +67,15 @@
       "ko": "메이드 인 어비스"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61853333"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

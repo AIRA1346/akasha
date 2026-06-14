@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "1~5기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_kingdom_2012"
     ],
     "externalIds": {
-      "tmdb": "72408"
+      "tmdb": "72408",
+      "wikidata": "Q103970675"
     },
     "qualitySignals": {
       "externalIdVerified": true

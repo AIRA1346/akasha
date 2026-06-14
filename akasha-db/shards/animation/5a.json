@@ -26,13 +26,16 @@
         }
       ],
       "latestSeason": "1기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_toradora_2008"
     ],
     "externalIds": {
-      "tmdb": "65334"
+      "tmdb": "65334",
+      "wikidata": "Q61400349"
     },
     "qualitySignals": {
       "externalIdVerified": true

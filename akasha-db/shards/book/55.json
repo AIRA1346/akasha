@@ -20,7 +20,15 @@
       "ko": "소드 아트 온라인"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q27863"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

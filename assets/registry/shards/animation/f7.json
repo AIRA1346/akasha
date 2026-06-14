@@ -25,13 +25,19 @@
           "episodes": 1100
         }
       ],
-      "latestSeason": "TV"
+      "latestSeason": "TV",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "37854"
+      "tmdb": "37854",
+      "wikidata": "Q710324"
     },
     "legacyIds": [
       "sub_animation_one-piece-anime_1999"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

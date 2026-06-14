@@ -53,7 +53,15 @@
       "ko": "86 -에이티식스-"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q88295103"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

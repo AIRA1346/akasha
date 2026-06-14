@@ -13,10 +13,13 @@
       "다크"
     ],
     "externalIds": {
-      "tmdb": "88046"
+      "tmdb": "88046",
+      "wikidata": "Q24636973"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_fire-force_2015"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Fire Force",
       "ko": "불꽃 소방대"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000445": {

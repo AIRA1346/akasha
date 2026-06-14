@@ -23,7 +23,17 @@
       "Lord of the Rings",
       "The Fellowship of the Ring",
       "The Lord of the Rings"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q208002"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "sub_book_scale-supply-b6a_2026": {
     "workId": "sub_book_scale-supply-b6a_2026",

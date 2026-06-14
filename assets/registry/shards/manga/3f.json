@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_komi-san_2016"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q28068926"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "무직전생"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q102126892"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

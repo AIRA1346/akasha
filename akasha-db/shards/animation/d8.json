@@ -20,7 +20,15 @@
       "ko": "바이올렛 에버가든"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q57390937"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

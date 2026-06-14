@@ -13,10 +13,13 @@
       "다크"
     ],
     "externalIds": {
-      "tmdb": "95479"
+      "tmdb": "95479",
+      "wikidata": "Q98836216"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_jujutsu-kaisen_2020"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "sub_movie_chainsaw-man-movie_2025"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q124010840"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

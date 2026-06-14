@@ -35,13 +35,19 @@
           "episodes": 12
         }
       ],
-      "latestSeason": "3기"
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "88046"
+      "tmdb": "88046",
+      "wikidata": "Q66091988"
     },
     "legacyIds": [
       "sub_animation_fire-force_2019"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

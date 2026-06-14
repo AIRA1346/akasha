@@ -18,13 +18,16 @@
       "청춘"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_captain-tsubasa_1981"
     ],
     "externalIds": {
-      "tmdb": "28248"
+      "tmdb": "28248",
+      "wikidata": "Q647486"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -35,11 +35,19 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "3기"
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_kaguya-sama_2019"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q62017594"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000226": {
     "workId": "wk_000000226",

@@ -53,7 +53,15 @@
       "ko": "명조: 워더링 웨이브"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q117750031"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

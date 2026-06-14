@@ -13,10 +13,13 @@
       "액션"
     ],
     "externalIds": {
-      "tmdb": "30991"
+      "tmdb": "30991",
+      "wikidata": "Q101244908"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "gen_animation_cowboy-bebop_1998"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Cowboy Bebop",
       "ko": "카우보이 비밥"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

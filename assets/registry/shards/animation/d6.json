@@ -13,10 +13,13 @@
       "신카이"
     ],
     "externalIds": {
-      "tmdb": "568160"
+      "tmdb": "568160",
+      "wikidata": "Q59692464"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_weathering-with-you_2019"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Weathering With YOU",
       "ko": "날씨의 아이"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

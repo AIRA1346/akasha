@@ -20,7 +20,15 @@
       "ko": "페이트/제로"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q10378707"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

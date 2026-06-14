@@ -20,7 +20,15 @@
       "ko": "이웃집 토토로"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q39571"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000213": {
@@ -89,7 +97,15 @@
       "ko": "슈타인즈 게이트"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q20590069"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

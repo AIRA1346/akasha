@@ -12,7 +12,17 @@
     ],
     "legacyIds": [
       "gen_movie_everything-everywhere_2022"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q83879543"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000169": {
     "workId": "wk_000000169",
@@ -29,6 +39,16 @@
     ],
     "legacyIds": [
       "gen_movie_toy-story_1995"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q171223"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

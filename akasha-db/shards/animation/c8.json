@@ -13,10 +13,13 @@
       "패러디"
     ],
     "externalIds": {
-      "tmdb": "63926"
+      "tmdb": "63926",
+      "wikidata": "Q22341674"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_one-punch-man_2015"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "ONE Punch MAN",
       "ko": "원펀맨"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

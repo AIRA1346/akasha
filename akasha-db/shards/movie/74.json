@@ -12,7 +12,17 @@
     ],
     "legacyIds": [
       "sub_movie_a-silent-voice_2016"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q2740501"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000167": {
     "workId": "wk_000000167",

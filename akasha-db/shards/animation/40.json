@@ -25,10 +25,18 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "1기"
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_undead-unluck_2023"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q115734731"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

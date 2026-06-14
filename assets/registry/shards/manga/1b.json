@@ -20,7 +20,15 @@
       "ko": "봇치 더 록!"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q65235667"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000422": {

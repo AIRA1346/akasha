@@ -20,7 +20,15 @@
       "ko": "86 -에이티식스-"
     },
     "extensions": {
-      "coverageSprint03": "curated_manual"
+      "coverageSprint03": "curated_manual",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q30942824"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

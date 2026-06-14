@@ -36,13 +36,16 @@
         }
       ],
       "latestSeason": "3기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_beastars_2019"
     ],
     "externalIds": {
-      "tmdb": "90937"
+      "tmdb": "90937",
+      "wikidata": "Q62583787"
     },
     "qualitySignals": {
       "externalIdVerified": true

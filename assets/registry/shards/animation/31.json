@@ -36,10 +36,18 @@
           "episodes": 47
         }
       ],
-      "latestSeason": "アリシゼーション"
+      "latestSeason": "アリシゼーション",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_sword-art-online_2012"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q63348493"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

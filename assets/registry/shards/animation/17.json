@@ -30,13 +30,19 @@
           "episodes": 24
         }
       ],
-      "latestSeason": "2기"
+      "latestSeason": "2기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "220542"
+      "tmdb": "220542",
+      "wikidata": "Q116787865"
     },
     "legacyIds": [
       "sub_animation_apothecary-diaries_2023"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

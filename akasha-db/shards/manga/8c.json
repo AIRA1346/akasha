@@ -18,13 +18,16 @@
       "책"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_ascendance-of-a-bookworm_2013"
     ],
     "externalIds": {
-      "tmdb": "94664"
+      "tmdb": "94664",
+      "wikidata": "Q61998244"
     },
     "qualitySignals": {
       "externalIdVerified": true

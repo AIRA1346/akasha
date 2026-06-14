@@ -31,13 +31,16 @@
         }
       ],
       "latestSeason": "2기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_ranking-of-kings_2021"
     ],
     "externalIds": {
-      "tmdb": "99557"
+      "tmdb": "99557",
+      "wikidata": "Q101230845"
     },
     "qualitySignals": {
       "externalIdVerified": true
@@ -75,13 +78,16 @@
         }
       ],
       "latestSeason": "2기",
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_vinland-saga_2019"
     ],
     "externalIds": {
-      "tmdb": "37606"
+      "tmdb": "37606",
+      "wikidata": "Q64063188"
     },
     "qualitySignals": {
       "externalIdVerified": true

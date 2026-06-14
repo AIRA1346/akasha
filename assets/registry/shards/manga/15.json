@@ -19,7 +19,17 @@
     ],
     "legacyIds": [
       "sub_manga_inuyasha_1996"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q182056"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000364": {
     "workId": "wk_000000364",
@@ -40,11 +50,19 @@
       "패러디"
     ],
     "externalIds": {
-      "tmdb": "63926"
+      "tmdb": "63926",
+      "wikidata": "Q22341676"
     },
     "legacyIds": [
       "sub_manga_one-punch-man_2012"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000426": {
     "workId": "wk_000000426",

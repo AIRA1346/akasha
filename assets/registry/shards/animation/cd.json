@@ -20,7 +20,15 @@
       "ko": "코드 기어스"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q4384067"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -13,10 +13,13 @@
       "액션"
     ],
     "externalIds": {
-      "tmdb": "67075"
+      "tmdb": "67075",
+      "wikidata": "Q11344543"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_mob-psycho-100_2012"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "MOB Psycho 100",
       "ko": "모브 사이코 100"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

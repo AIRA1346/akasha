@@ -84,7 +84,15 @@
       "ko": "전생했더니 슬라임이었던 건"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61779948"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

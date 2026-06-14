@@ -13,10 +13,13 @@
       "대하"
     ],
     "externalIds": {
-      "tmdb": "37854"
+      "tmdb": "37854",
+      "wikidata": "Q28667972"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_one-piece_1997"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "ONE Piece",
       "ko": "원피스"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

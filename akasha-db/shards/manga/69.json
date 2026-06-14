@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_nagatoro_2017"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q55075088"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

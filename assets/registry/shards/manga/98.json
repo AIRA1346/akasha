@@ -20,7 +20,15 @@
       "ko": "4월은 너의 거짓말"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q11419997"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

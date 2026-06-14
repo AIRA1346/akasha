@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "sub_manga_pluto_2003"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q726235"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

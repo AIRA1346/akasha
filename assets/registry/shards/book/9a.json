@@ -20,7 +20,15 @@
       "ko": "우등생의 즐거운 육아 생활… 아니 학교생활"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q24874162"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "듄"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q190192"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

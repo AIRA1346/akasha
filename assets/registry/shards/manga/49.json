@@ -13,10 +13,13 @@
       "성장"
     ],
     "externalIds": {
-      "tmdb": "46260"
+      "tmdb": "46260",
+      "wikidata": "Q26971382"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_naruto_1999"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Naruto",
       "ko": "나루토"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000432": {

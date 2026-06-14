@@ -20,7 +20,15 @@
       "ko": "블루 피리어드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q74458180"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000342": {

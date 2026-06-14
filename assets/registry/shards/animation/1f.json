@@ -35,10 +35,18 @@
           "episodes": 13
         }
       ],
-      "latestSeason": "3기"
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_classroom-of-the-elite_2017"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q61648728"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

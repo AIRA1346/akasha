@@ -52,13 +52,16 @@
       "성장"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_saint-seiya_1985"
     ],
     "externalIds": {
-      "tmdb": "42414"
+      "tmdb": "42414",
+      "wikidata": "Q275956"
     },
     "qualitySignals": {
       "externalIdVerified": true

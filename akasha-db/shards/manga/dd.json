@@ -13,10 +13,13 @@
       "배틀"
     ],
     "externalIds": {
-      "tmdb": "95479"
+      "tmdb": "95479",
+      "wikidata": "Q55522899"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_jujutsu-kaisen_2018"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Jujutsu Kaisen",
       "ko": "주술회전"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

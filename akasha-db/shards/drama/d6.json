@@ -20,7 +20,15 @@
       "ko": "트루 디텍티브"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q7847400"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

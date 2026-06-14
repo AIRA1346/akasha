@@ -13,10 +13,13 @@
       "카오스"
     ],
     "externalIds": {
-      "tmdb": "114410"
+      "tmdb": "114410",
+      "wikidata": "Q104211858"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_animation_chainsaw-man_2022"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Chainsaw MAN",
       "ko": "체인소 맨"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

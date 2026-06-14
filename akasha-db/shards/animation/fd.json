@@ -20,7 +20,15 @@
       "ko": "오버로드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q50308776"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

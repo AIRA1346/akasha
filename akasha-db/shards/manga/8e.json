@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_nichijou_2006"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q483120"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

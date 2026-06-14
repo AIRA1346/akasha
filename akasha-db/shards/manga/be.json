@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_silver-spoon_2011"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q2626587"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -20,7 +20,15 @@
       "ko": "젤다의 전설 브레스 오브 더 와일드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q17185964"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

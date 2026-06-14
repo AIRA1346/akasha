@@ -13,10 +13,13 @@
       "장수작"
     ],
     "externalIds": {
-      "tmdb": "30983"
+      "tmdb": "30983",
+      "wikidata": "Q3853685"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_detective-conan_1994"
@@ -24,6 +27,9 @@
     "titles": {
       "en": "Detective Conan",
       "ko": "명탐정 코난"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

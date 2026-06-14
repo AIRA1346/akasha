@@ -18,13 +18,16 @@
       "탐험"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_made-in-abyss_2012"
     ],
     "externalIds": {
-      "tmdb": "74112"
+      "tmdb": "74112",
+      "wikidata": "Q18335422"
     },
     "qualitySignals": {
       "externalIdVerified": true

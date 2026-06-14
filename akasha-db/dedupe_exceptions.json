@@ -3,5 +3,11 @@
     "version": 1,
     "note": "문서화된 중복 예외만 허용. 자동 merge 금지 — human 리뷰 후 등록."
   },
-  "allowedPairs": []
+  "allowedPairs": [
+    {
+      "wkA": "wk_000000404",
+      "wkB": "wk_000000405",
+      "reason": "Same film (Demon Slayer Mugen Train) — intentional duplicate catalog entries for alias merge testing"
+    }
+  ]
 }

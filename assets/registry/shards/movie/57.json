@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "sub_movie_demon-slayer-mugen_2020"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q96376192"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

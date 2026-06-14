@@ -20,7 +20,15 @@
       "ko": "프로젝트 세카이"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q104851989"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000074": {
@@ -44,10 +52,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "233450"
+      "steam": "233450",
+      "wikidata": "Q7245729"
     },
     "qualitySignals": {
       "externalIdVerified": true

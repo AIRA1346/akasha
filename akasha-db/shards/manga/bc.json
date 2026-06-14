@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "sub_manga_oregairu_2011"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q63225139"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

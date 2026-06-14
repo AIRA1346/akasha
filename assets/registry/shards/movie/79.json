@@ -12,6 +12,16 @@
     ],
     "legacyIds": [
       "gen_movie_the-batman_2022"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q61117344"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -40,13 +40,19 @@
           "episodes": 25
         }
       ],
-      "latestSeason": "4기"
+      "latestSeason": "4기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "tmdb": "60863"
+      "tmdb": "60863",
+      "wikidata": "Q67144604"
     },
     "legacyIds": [
       "sub_animation_haikyuu_2014"
-    ]
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

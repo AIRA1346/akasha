@@ -19,6 +19,16 @@
     ],
     "legacyIds": [
       "sub_manga_yona-of-the-dawn_2009"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q11514831"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

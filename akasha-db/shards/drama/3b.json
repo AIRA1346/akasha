@@ -20,7 +20,15 @@
       "ko": "브레이킹 배드"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q1079"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

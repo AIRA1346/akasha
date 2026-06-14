@@ -51,11 +51,19 @@
       "엘프"
     ],
     "externalIds": {
-      "tmdb": "209867"
+      "tmdb": "209867",
+      "wikidata": "Q98642652"
     },
     "legacyIds": [
       "sub_manga_frieren_2020"
-    ]
+    ],
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   },
   "wk_000000459": {
     "workId": "wk_000000459",

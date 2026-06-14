@@ -20,7 +20,15 @@
       "ko": "사무라이 참프루"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q143276"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

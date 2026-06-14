@@ -20,7 +20,15 @@
       "ko": "첫걸음"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q115019882"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000220": {

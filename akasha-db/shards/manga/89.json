@@ -14,6 +14,16 @@
     ],
     "legacyIds": [
       "sub_manga_bleach_2001"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q190002"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }

@@ -54,10 +54,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "268910"
+      "steam": "268910",
+      "wikidata": "Q18149495"
     },
     "qualitySignals": {
       "externalIdVerified": true

@@ -20,7 +20,15 @@
       "ko": "방패 용사 성공담"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q65369069"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   }
 }

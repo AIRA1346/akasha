@@ -18,13 +18,16 @@
       "우정"
     ],
     "extensions": {
-      "coverageSprint04ExternalId": "tmdb"
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "legacyIds": [
       "sub_manga_fairy-tail-100-years-quest_2018"
     ],
     "externalIds": {
-      "tmdb": "83121"
+      "tmdb": "83121",
+      "wikidata": "Q55919001"
     },
     "qualitySignals": {
       "externalIdVerified": true

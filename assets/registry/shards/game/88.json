@@ -20,7 +20,15 @@
       "ko": "프린세스 커넥트"
     },
     "extensions": {
-      "coverageSprint03": "legacy_slug"
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61740575"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
     }
   },
   "wk_000000119": {
@@ -44,10 +52,13 @@
     },
     "extensions": {
       "coverageSprint03": "steam_fetch",
-      "coverageSprint04ExternalId": "steam"
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
     },
     "externalIds": {
-      "steam": "578080"
+      "steam": "578080",
+      "wikidata": "Q28937399"
     },
     "qualitySignals": {
       "externalIdVerified": true
