@@ -73,6 +73,7 @@ class HomeShellController {
   late final HomeRegistryHideActions hideActions;
   bool isSidebarOpen = true;
   int catalogContributionCount = 0;
+  int timelineReloadToken = 0;
 
   String displayName = UserPreferences.defaultDisplayName;
   bool autoArchiveRegistry = false;
@@ -202,7 +203,10 @@ class HomeShellController {
     vaultUpdateSubscription = service.onVaultUpdated.listen((_) {
       vaultReloadDebounce?.cancel();
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
-        if (host.mounted) loadItems();
+        if (host.mounted) {
+          loadItems();
+          host.scheduleRebuild(() => timelineReloadToken++);
+        }
       });
     });
 
@@ -504,6 +508,15 @@ class HomeShellController {
 
   bool get isPersonalLibraryMode => sidebarCoordinator.isPersonalLibraryMode;
 
+  bool get isTimelineMode => filterCoordinator.isTimelineMode;
+
+  void selectTimeline() {
+    host.scheduleRebuild(() {
+      sidebarCoordinator.selectTimeline();
+      workbench.showBrowse();
+    });
+  }
+
   bool get isCuratedLibraryActive => sidebarCoordinator.isCuratedLibraryActive;
 
   List<BrowseCard> get personalBrowseCards {
@@ -551,7 +564,7 @@ class HomeShellController {
   }
 
   Future<void> openTimelineQuickCapture() async {
-    await HomeDialogsFacade.showTimelineQuickCapture(
+    final saved = await HomeDialogsFacade.showTimelineQuickCapture(
       context: host.context,
       localItems: items,
       showMessage: (msg) {
@@ -561,6 +574,13 @@ class HomeShellController {
         );
       },
     );
+    if (saved && host.mounted) {
+      host.scheduleRebuild(() {
+        timelineReloadToken++;
+        sidebarCoordinator.selectTimeline();
+        workbench.showBrowse();
+      });
+    }
   }
 
   Future<void> selectVaultFolder() async {

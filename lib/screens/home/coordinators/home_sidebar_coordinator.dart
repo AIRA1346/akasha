@@ -75,6 +75,10 @@ class HomeSidebarCoordinator {
     );
   }
 
+  void selectTimeline() {
+    personalLibCtrl.selectTimelineMode();
+  }
+
   void sanitizeLibrarySortForActiveLibrary() {
     if (isCuratedLibraryActive) return;
     if (sectionPrefs.librarySort.isManualOrder) {

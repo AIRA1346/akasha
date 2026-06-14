@@ -18,8 +18,9 @@
 | **externalId** | **275/490 (56.1%)** |
 | **flutter test** | **283/283 PASS** |
 | **Phase 1** | Record Foundation ✅ |
-| **Phase 4.3** | Quick capture UI ✅ |
-| **다음** | Phase 4.4 Timeline axis · Dogfood |
+| **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
+| **Phase 4.4a** | Timeline list ✅ |
+| **다음** | Phase 4.4b Entity link · 리빌드 |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |

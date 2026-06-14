@@ -108,8 +108,9 @@ Phase 0 ✅ → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phas
 |:-:|------|
 | 4.1 | Timeline entry 저장 (`vault/timeline/*.md`) | ✅ read path |
 | 4.2 | `ArchiveRecordPort` **쓰기·삭제** | ✅ timeline |
-| 4.3 | Timeline Quick capture UI | ✅ |
-| 4.4 | Timeline axis 뷰 · Entity Journal Link | ⏳ |
+| 4.3 | Timeline Quick capture UI | ✅ · Dogfood ✅ |
+| 4.4a | Timeline list (사이드바 · 시간순) | ✅ |
+| 4.4b | Entity Journal Link 표면화 | ⏳ |
 
 **전제:** Phase 1 Record/Link.
 
@@ -177,8 +178,8 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0~1 · 2.0 baseline · Phase 4.1~**4.3** Quick capture |
-| **진행** | Phase 4.4 Timeline axis · Sprint B friction |
+| **완료** | Phase 0~1 · 2.0 baseline · Phase 4.1~**4.4a** |
+| **진행** | Phase 4.4b Entity link · Sprint B friction |
 | **보류** | Phase 2.1~2.3 (baseline trigger 전) · M3 |
 
 ---

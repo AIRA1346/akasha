@@ -23,11 +23,13 @@ import 'home_section_preferences.dart';
 import 'home_vault_banner.dart';
 import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
+import 'views/timeline_view.dart';
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
   final bool isSidebarOpen;
   final bool isPersonalLibraryMode;
+  final bool isTimelineMode;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
   final bool canAddToLibrary;
@@ -48,6 +50,7 @@ class HomeShellBody extends StatelessWidget {
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
   final VoidCallback onAddPersonalLibrary;
+  final VoidCallback onSelectTimeline;
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
   final void Function(String id) onDeletePersonalLibrary;
@@ -70,11 +73,14 @@ class HomeShellBody extends StatelessWidget {
     int newIndex,
   ) onCuratedReorder;
   final VoidCallback onSearch;
+  final VoidCallback onNewTimelineEntry;
+  final int timelineReloadToken;
 
   const HomeShellBody({
     super.key,
     required this.isSidebarOpen,
     required this.isPersonalLibraryMode,
+    required this.isTimelineMode,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
     required this.canAddToLibrary,
@@ -95,6 +101,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onEditDashboard,
     required this.onDeleteDashboard,
     required this.onAddPersonalLibrary,
+    required this.onSelectTimeline,
     required this.onSelectPersonalLibrary,
     required this.onEditPersonalLibrary,
     required this.onDeletePersonalLibrary,
@@ -112,11 +119,15 @@ class HomeShellBody extends StatelessWidget {
     this.onAddToLibrary,
     required this.onCuratedReorder,
     required this.onSearch,
+    required this.onNewTimelineEntry,
+    required this.timelineReloadToken,
   });
 
   @override
   Widget build(BuildContext context) {
-    final dailyRecall = FeatureFlags.showRecallCard && !isPersonalLibraryMode
+    final dailyRecall = FeatureFlags.showRecallCard &&
+            !isPersonalLibraryMode &&
+            !isTimelineMode
         ? RecallPicker.pickDailyRecall(items)
         : null;
 
@@ -134,6 +145,7 @@ class HomeShellBody extends StatelessWidget {
           onEditDashboard: onEditDashboard,
           onDeleteDashboard: onDeleteDashboard,
           onAddPersonalLibrary: onAddPersonalLibrary,
+          onSelectTimeline: onSelectTimeline,
           onSelectPersonalLibrary: onSelectPersonalLibrary,
           onEditPersonalLibrary: onEditPersonalLibrary,
           onDeletePersonalLibrary: onDeletePersonalLibrary,
@@ -146,20 +158,22 @@ class HomeShellBody extends StatelessWidget {
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
               if (!workbench.hasOpenWork) ...[
-                FilterSection(
-                  selectedDomain: filterCtrl.domain,
-                  selectedCategories: filterCtrl.categories,
-                  selectedWorkStatuses: filterCtrl.workStatuses,
-                  selectedMyStatuses: filterCtrl.myStatuses,
-                  onDomainChanged: onDomainChanged,
-                  onToggleCategory: onToggleCategory,
-                  onClearCategories: onClearCategories,
-                  onToggleWorkStatus: onToggleWorkStatus,
-                  onToggleMyStatus: onToggleMyStatus,
-                ),
-                const Divider(height: 1),
+                if (!isTimelineMode)
+                  FilterSection(
+                    selectedDomain: filterCtrl.domain,
+                    selectedCategories: filterCtrl.categories,
+                    selectedWorkStatuses: filterCtrl.workStatuses,
+                    selectedMyStatuses: filterCtrl.myStatuses,
+                    onDomainChanged: onDomainChanged,
+                    onToggleCategory: onToggleCategory,
+                    onClearCategories: onClearCategories,
+                    onToggleWorkStatus: onToggleWorkStatus,
+                    onToggleMyStatus: onToggleMyStatus,
+                  ),
+                if (!isTimelineMode) const Divider(height: 1),
               ],
               if (!isPersonalLibraryMode &&
+                  !isTimelineMode &&
                   !workbench.hasOpenWork &&
                   isCatalogLoading)
                 const LinearProgressIndicator(minHeight: 2),
@@ -177,7 +191,14 @@ class HomeShellBody extends StatelessWidget {
                         onWorkSaved: onWorkbenchWorkSaved,
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onAddToLibrary: onAddToLibrary,
-                        browseContent: isPersonalLibraryMode
+                        browseContent: isTimelineMode
+                            ? TimelineView(
+                                vaultItems: items,
+                                onOpenWork: onOpenBrowseItem,
+                                onNewEntry: onNewTimelineEntry,
+                                reloadToken: timelineReloadToken,
+                              )
+                            : isPersonalLibraryMode
                             ? PersonalLibraryView(
                                 filteredCards: filteredCards,
                                 allItems: items,

@@ -19,6 +19,9 @@ class HomeFilterCoordinator {
   bool get isPersonalLibraryMode =>
       personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary;
 
+  bool get isTimelineMode =>
+      personalLibCtrl.sidebarMode == SidebarSelectionMode.timeline;
+
   void applyDashboardFilters(DashboardFilterSnapshot snap) {
     filterCtrl.applySnapshot(snap);
   }

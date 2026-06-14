@@ -22,6 +22,7 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
   final VoidCallback onAddPersonalLibrary;
+  final VoidCallback onSelectTimeline;
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
   final void Function(String id) onDeletePersonalLibrary;
@@ -41,6 +42,7 @@ class DashboardSidebar extends StatelessWidget {
     required this.onEditDashboard,
     required this.onDeleteDashboard,
     required this.onAddPersonalLibrary,
+    required this.onSelectTimeline,
     required this.onSelectPersonalLibrary,
     required this.onEditPersonalLibrary,
     required this.onDeletePersonalLibrary,
@@ -115,6 +117,18 @@ class DashboardSidebar extends StatelessWidget {
                       return row;
                     },
                   ),
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                SidebarItemWidget(
+                  name: '타임라인',
+                  icon: Icons.timeline,
+                  isActive: selectionMode == SidebarSelectionMode.timeline,
+                  accentColor: Colors.lightBlueAccent,
+                  canEdit: false,
+                  canDelete: false,
+                  onTap: onSelectTimeline,
+                  onEdit: () {},
+                  onDelete: () {},
                 ),
                 const Divider(color: Color(0xFF2D2D44), height: 1),
                 _SectionHeader(

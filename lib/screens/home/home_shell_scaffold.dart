@@ -69,6 +69,7 @@ class HomeShellScaffold extends StatelessWidget {
             body: HomeShellBody(
               isSidebarOpen: controller.isSidebarOpen,
               isPersonalLibraryMode: controller.isPersonalLibraryMode,
+              isTimelineMode: controller.isTimelineMode,
               isCuratedLibraryActive: controller.isCuratedLibraryActive,
               isCatalogLoading: controller.isCatalogLoading,
               canAddToLibrary: controller.canAddToLibrary,
@@ -105,6 +106,9 @@ class HomeShellScaffold extends StatelessWidget {
                 controller.host.context,
                 setState: controller.wrapSetState,
               ),
+              onSelectTimeline: controller.selectTimeline,
+              onNewTimelineEntry: controller.openTimelineQuickCapture,
+              timelineReloadToken: controller.timelineReloadToken,
               onSelectPersonalLibrary: controller.selectPersonalLibrary,
               onEditPersonalLibrary: (lib) =>
                   controller.personalLibraryUi.showEditDialog(
