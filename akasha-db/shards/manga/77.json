@@ -1,0 +1,20 @@
+{
+  "wk_000000759": {
+    "workId": "wk_000000759",
+    "title": "완전승리 다이테이오",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10918197"
+    },
+    "titles": {
+      "ko": "완전승리 다이테이오",
+      "en": "Kanzen Shouri Daiteioh",
+      "ja": "完全勝利ダイテイオー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

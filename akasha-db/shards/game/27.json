@@ -1,0 +1,21 @@
+{
+  "wk_000000838": {
+    "workId": "wk_000000838",
+    "title": "크리스 테일즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104413475"
+    },
+    "titles": {
+      "ko": "크리스 테일즈",
+      "en": "Cris Tales",
+      "ja": "Cris Tales"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "wk_000000491": {
+    "workId": "wk_000000491",
+    "title": "허쉬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100709236"
+    },
+    "titles": {
+      "ko": "허쉬",
+      "en": "Hush",
+      "ja": "ハッシュ～沈黙注意報～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000588": {
+    "workId": "wk_000000588",
+    "title": "수호전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1017709"
+    },
+    "titles": {
+      "ko": "수호전",
+      "en": "The Water Margin",
+      "ja": "水滸伝〜永遠なる梁山泊"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

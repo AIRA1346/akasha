@@ -1,0 +1,20 @@
+{
+  "wk_000000936": {
+    "workId": "wk_000000936",
+    "title": "아름다운 아이 샬롯 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102331825"
+    },
+    "titles": {
+      "ko": "아름다운 아이 샬롯 이야기",
+      "en": "Shingaling: A Wonder Story"
+    },
+    "creator": "R. J. Palacio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

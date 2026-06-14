@@ -1,0 +1,19 @@
+{
+  "wk_000000954": {
+    "workId": "wk_000000954",
+    "title": "코요테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104651297"
+    },
+    "titles": {
+      "ko": "코요테",
+      "en": "Coyote"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

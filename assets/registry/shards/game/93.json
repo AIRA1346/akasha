@@ -31,5 +31,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000784": {
+    "workId": "wk_000000784",
+    "title": "트릭스터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041815"
+    },
+    "titles": {
+      "ko": "트릭스터",
+      "en": "Trickster Online",
+      "ja": "トリックスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

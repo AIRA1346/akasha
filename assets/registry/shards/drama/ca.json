@@ -1,0 +1,20 @@
+{
+  "wk_000000958": {
+    "workId": "wk_000000958",
+    "title": "윤스테이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104727208"
+    },
+    "titles": {
+      "ko": "윤스테이",
+      "en": "Youn's Stay"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

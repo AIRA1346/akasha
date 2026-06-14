@@ -1,0 +1,19 @@
+{
+  "wk_000000482": {
+    "workId": "wk_000000482",
+    "title": "사다카트시즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100200874"
+    },
+    "titles": {
+      "ko": "사다카트시즈",
+      "en": "Sadakatsiz"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

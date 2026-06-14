@@ -1,0 +1,20 @@
+{
+  "wk_000000707": {
+    "workId": "wk_000000707",
+    "title": "카낭가 두 자파오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10313728"
+    },
+    "titles": {
+      "ko": "카낭가 두 자파오",
+      "en": "Kananga do Japão"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

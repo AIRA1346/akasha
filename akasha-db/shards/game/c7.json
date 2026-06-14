@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000000716": {
+    "workId": "wk_000000716",
+    "title": "프론트 라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040033"
+    },
+    "titles": {
+      "ko": "프론트 라인",
+      "en": "Front Line",
+      "ja": "フロントライン"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

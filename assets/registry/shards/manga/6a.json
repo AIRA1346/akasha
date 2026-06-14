@@ -1,0 +1,22 @@
+{
+  "wk_000000531": {
+    "workId": "wk_000000531",
+    "title": "입어주세요, 타카미네 양",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107335348"
+    },
+    "titles": {
+      "ko": "입어주세요, 타카미네 양",
+      "en": "Please Put Them On, Takamine-san",
+      "ja": "履いてください、鷹峰さん"
+    },
+    "releaseYear": 2019,
+    "creator": "Yūichi Hiiragi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

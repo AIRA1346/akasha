@@ -1,0 +1,20 @@
+{
+  "wk_000000582": {
+    "workId": "wk_000000582",
+    "title": "돕식: 약물의 늪",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101420707"
+    },
+    "titles": {
+      "ko": "돕식: 약물의 늪",
+      "en": "Dopesick",
+      "ja": "DOPESICK アメリカを蝕むオピオイド危機"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

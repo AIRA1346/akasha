@@ -1,0 +1,21 @@
+{
+  "wk_000000514": {
+    "workId": "wk_000000514",
+    "title": "붉은 집 살인사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100235248"
+    },
+    "titles": {
+      "ko": "붉은 집 살인사건",
+      "en": "Q100235248"
+    },
+    "releaseYear": 2010,
+    "creator": "Do Jin-ki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

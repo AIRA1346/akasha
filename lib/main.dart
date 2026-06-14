@@ -17,7 +17,7 @@ void main() async {
   await WorksRegistryAdapter().init();
   await MarkdownVaultAdapter().init();
   await FranchiseRegistry.init();
-  // cold start: search_index + eager 샤드만 (전체 카탈로그는 master_index 진입 시 prefetch)
+  // cold start: manifest + eager 샤드만 (browse는 search_index 윈도우 lazy load)
 
   runApp(const AkashaApp());
 }

@@ -1,0 +1,40 @@
+{
+  "wk_000000622": {
+    "workId": "wk_000000622",
+    "title": "버팔로 66",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002142"
+    },
+    "titles": {
+      "ko": "버팔로 66",
+      "en": "Buffalo '66",
+      "ja": "バッファロー'66"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000928": {
+    "workId": "wk_000000928",
+    "title": "맨 인 더 다크 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100701374"
+    },
+    "titles": {
+      "ko": "맨 인 더 다크 2",
+      "en": "Don't Breathe 2",
+      "ja": "ドント・ブリーズ2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

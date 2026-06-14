@@ -1,0 +1,21 @@
+{
+  "wk_000000983": {
+    "workId": "wk_000000983",
+    "title": "돈 워리 달링",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100801718"
+    },
+    "titles": {
+      "ko": "돈 워리 달링",
+      "en": "Don't Worry Darling",
+      "ja": "ドント・ウォーリー・ダーリング"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

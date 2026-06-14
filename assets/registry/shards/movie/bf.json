@@ -1,0 +1,21 @@
+{
+  "wk_000000860": {
+    "workId": "wk_000000860",
+    "title": "불리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004657"
+    },
+    "titles": {
+      "ko": "불리",
+      "en": "Bully",
+      "ja": "BULLY ブリー"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "wk_000000748": {
+    "workId": "wk_000000748",
+    "title": "스틸 미",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101241686"
+    },
+    "titles": {
+      "ko": "스틸 미",
+      "en": "Still Me"
+    },
+    "creator": "Jojo Moyes",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000986": {
+    "workId": "wk_000000986",
+    "title": "무척추동물의 사랑과 성",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102674290"
+    },
+    "titles": {
+      "ko": "무척추동물의 사랑과 성",
+      "en": "Love and Sex Among the Invertebrates"
+    },
+    "releaseYear": 1990,
+    "creator": "Pat Murphy",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001028": {
+    "workId": "wk_000001028",
+    "title": "보건교사 안은영",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102948197"
+    },
+    "titles": {
+      "ko": "보건교사 안은영",
+      "en": "School Nurse An Eunyoung",
+      "ja": "保健室のアン・ウニョン先生"
+    },
+    "releaseYear": 2015,
+    "creator": "Chung Serang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

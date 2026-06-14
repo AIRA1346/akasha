@@ -1,0 +1,20 @@
+{
+  "wk_000000997": {
+    "workId": "wk_000000997",
+    "title": "푸에고 아르디엔테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104767388"
+    },
+    "titles": {
+      "ko": "푸에고 아르디엔테",
+      "en": "Fuego ardiente",
+      "ja": "フエゴ・アルディエンテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

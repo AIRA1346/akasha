@@ -37,5 +37,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000669": {
+    "workId": "wk_000000669",
+    "title": "하얀 모래의 아쿠아토프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104843562"
+    },
+    "titles": {
+      "ko": "하얀 모래의 아쿠아토프",
+      "en": "The Aquatope on White Sand",
+      "ja": "白い砂のアクアトープ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

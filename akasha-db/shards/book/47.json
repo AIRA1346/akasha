@@ -1,0 +1,21 @@
+{
+  "wk_000000516": {
+    "workId": "wk_000000516",
+    "title": "여우가 잠든 숲",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100266059"
+    },
+    "titles": {
+      "ko": "여우가 잠든 숲",
+      "en": "In The Forest"
+    },
+    "releaseYear": 2016,
+    "creator": "Nele Neuhaus",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

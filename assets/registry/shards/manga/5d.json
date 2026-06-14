@@ -1,0 +1,41 @@
+{
+  "wk_000000545": {
+    "workId": "wk_000000545",
+    "title": "리아데일의 대지에서",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107994302"
+    },
+    "titles": {
+      "ko": "리아데일의 대지에서",
+      "en": "In the Land of Leadale",
+      "ja": "リアデイルの大地にて"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000813": {
+    "workId": "wk_000000813",
+    "title": "모두! 초능력자야!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10934561"
+    },
+    "titles": {
+      "ko": "모두! 초능력자야!",
+      "en": "Minna! Esper da yo!",
+      "ja": "みんな!エスパーだよ!"
+    },
+    "releaseYear": 2009,
+    "creator": "Kiminori Wakasugi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

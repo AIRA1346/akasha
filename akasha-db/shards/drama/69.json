@@ -1,0 +1,20 @@
+{
+  "wk_000000559": {
+    "workId": "wk_000000559",
+    "title": "카우보이 비밥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101252448"
+    },
+    "titles": {
+      "ko": "카우보이 비밥",
+      "en": "Cowboy Bebop",
+      "ja": "カウボーイビバップ (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

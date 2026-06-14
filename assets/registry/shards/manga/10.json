@@ -1,0 +1,22 @@
+{
+  "wk_000000991": {
+    "workId": "wk_000000991",
+    "title": "뱀파이어 남자 기숙사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110243604"
+    },
+    "titles": {
+      "ko": "뱀파이어 남자 기숙사",
+      "en": "Vampire Dormitory",
+      "ja": "ヴァンパイア男子寮"
+    },
+    "releaseYear": 2018,
+    "creator": "Ema Tōyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

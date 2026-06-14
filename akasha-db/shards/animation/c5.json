@@ -1,0 +1,39 @@
+{
+  "wk_000000607": {
+    "workId": "wk_000000607",
+    "title": "태양의 용자 파이버드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037662"
+    },
+    "titles": {
+      "ko": "태양의 용자 파이버드",
+      "en": "The Brave Fighter of Sun Fighbird",
+      "ja": "太陽の勇者ファイバード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000842": {
+    "workId": "wk_000000842",
+    "title": "명탐정 코난: 비색의 부재증명",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105714852"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 비색의 부재증명",
+      "en": "Detective Conan: The Scarlet Alibi",
+      "ja": "名探偵コナン 緋色の不在証明"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

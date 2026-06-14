@@ -1,0 +1,54 @@
+{
+  "wk_000000777": {
+    "workId": "wk_000000777",
+    "title": "료불기적아과의생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103916805"
+    },
+    "titles": {
+      "ko": "료불기적아과의생",
+      "en": "Healer of Children"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000820": {
+    "workId": "wk_000000820",
+    "title": "미쓰백 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103928223"
+    },
+    "titles": {
+      "ko": "미쓰백 (텔레비전 프로그램)",
+      "en": "Miss Back"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001009": {
+    "workId": "wk_000001009",
+    "title": "일본 침몰-희망의 사람-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104879228"
+    },
+    "titles": {
+      "ko": "일본 침몰-희망의 사람-",
+      "en": "Japan Sinks: People of Hope",
+      "ja": "日本沈没-希望のひと-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

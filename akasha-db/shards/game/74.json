@@ -1,0 +1,40 @@
+{
+  "wk_000000718": {
+    "workId": "wk_000000718",
+    "title": "마이니치 잇쇼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041243"
+    },
+    "titles": {
+      "ko": "마이니치 잇쇼",
+      "en": "Mainichi Issho",
+      "ja": "まいにちいっしょ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000834": {
+    "workId": "wk_000000834",
+    "title": "갤러가",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043534"
+    },
+    "titles": {
+      "ko": "갤러가",
+      "en": "Galaga",
+      "ja": "ギャラガ"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

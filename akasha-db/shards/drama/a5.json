@@ -1,0 +1,36 @@
+{
+  "wk_000000709": {
+    "workId": "wk_000000709",
+    "title": "마리아 벨렌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10325741"
+    },
+    "titles": {
+      "ko": "마리아 벨렌",
+      "en": "María Belén"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000772": {
+    "workId": "wk_000000772",
+    "title": "애적리미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103845805"
+    },
+    "titles": {
+      "ko": "애적리미",
+      "en": "The Centimeter of Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

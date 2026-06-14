@@ -31,5 +31,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000654": {
+    "workId": "wk_000000654",
+    "title": "히어로즈 오브 마이트 앤 매직 III: 쉐도우 오브 데스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035703"
+    },
+    "titles": {
+      "ko": "히어로즈 오브 마이트 앤 매직 III: 쉐도우 오브 데스",
+      "en": "Heroes of Might and Magic III: The Shadow of Death"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000000761": {
+    "workId": "wk_000000761",
+    "title": "아다마스의 마녀들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109259300"
+    },
+    "titles": {
+      "ko": "아다마스의 마녀들",
+      "en": "The Witches of Adamas",
+      "ja": "アダマスの魔女たち"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

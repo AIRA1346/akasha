@@ -1,0 +1,40 @@
+{
+  "wk_000000500": {
+    "workId": "wk_000000500",
+    "title": "인리스티드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100394553"
+    },
+    "titles": {
+      "ko": "인리스티드",
+      "en": "Enlisted",
+      "ja": "エンリステッド"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000786": {
+    "workId": "wk_000000786",
+    "title": "동방요요몽 ~ Perfect Cherry Blossom",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042119"
+    },
+    "titles": {
+      "ko": "동방요요몽 ~ Perfect Cherry Blossom",
+      "en": "Touhou Youyoumu ~ Perfect Cherry Blossom",
+      "ja": "東方妖々夢 〜 Perfect Cherry Blossom."
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

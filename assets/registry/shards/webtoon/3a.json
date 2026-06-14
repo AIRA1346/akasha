@@ -1,0 +1,21 @@
+{
+  "wk_000000803": {
+    "workId": "wk_000000803",
+    "title": "메탈파이트 베이블레이드 ZEROG",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1034238"
+    },
+    "titles": {
+      "ko": "메탈파이트 베이블레이드 ZEROG",
+      "en": "Beyblade: Shogun Steel",
+      "ja": "メタルファイト ベイブレード ZEROG"
+    },
+    "creator": "Takafumi Adachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

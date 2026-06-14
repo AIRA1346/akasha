@@ -1,0 +1,40 @@
+{
+  "wk_000000758": {
+    "workId": "wk_000000758",
+    "title": "츄-브라!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091195"
+    },
+    "titles": {
+      "ko": "츄-브라!!",
+      "en": "Chu-Bra!!",
+      "ja": "ちゅーぶら!!"
+    },
+    "creator": "Yumi Nakata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000938": {
+    "workId": "wk_000000938",
+    "title": "나의 행복한 결혼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109521724"
+    },
+    "titles": {
+      "ko": "나의 행복한 결혼",
+      "en": "My Happy Marriage",
+      "ja": "わたしの幸せな結婚"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

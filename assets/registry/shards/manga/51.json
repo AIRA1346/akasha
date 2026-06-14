@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000539": {
+    "workId": "wk_000000539",
+    "title": "치즈 스위트 홈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075127"
+    },
+    "titles": {
+      "ko": "치즈 스위트 홈",
+      "en": "Chi's Sweet Home",
+      "ja": "チーズスイートホーム"
+    },
+    "creator": "Kanata Konami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

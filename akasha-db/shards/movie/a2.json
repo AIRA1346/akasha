@@ -1,0 +1,21 @@
+{
+  "wk_000000985": {
+    "workId": "wk_000000985",
+    "title": "리오 브라보",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1008351"
+    },
+    "titles": {
+      "ko": "리오 브라보",
+      "en": "Rio Bravo",
+      "ja": "リオ・ブラボー"
+    },
+    "releaseYear": 1959,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

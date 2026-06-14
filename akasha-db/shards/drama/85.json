@@ -1,0 +1,38 @@
+{
+  "wk_000000829": {
+    "workId": "wk_000000829",
+    "title": "뤼팽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104082429"
+    },
+    "titles": {
+      "ko": "뤼팽",
+      "en": "Lupin",
+      "ja": "ルパン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000998": {
+    "workId": "wk_000000998",
+    "title": "원숭이 군단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104772029"
+    },
+    "titles": {
+      "ko": "원숭이 군단",
+      "en": "Saru No Gundan",
+      "ja": "SFドラマ 猿の軍団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

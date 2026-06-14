@@ -44,5 +44,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000844": {
+    "workId": "wk_000000844",
+    "title": "앱솔루트 듀오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105758758"
+    },
+    "titles": {
+      "ko": "앱솔루트 듀오",
+      "en": "Absolute Duo",
+      "ja": "アブソリュート・デュオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

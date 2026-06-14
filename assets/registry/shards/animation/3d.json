@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000794": {
+    "workId": "wk_000000794",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 나와 우주의 프린세스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055108"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 나와 우주의 프린세스",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! Me and the Space Princess",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ!オラと宇宙のプリンセス"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

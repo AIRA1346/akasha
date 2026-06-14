@@ -1,0 +1,20 @@
+{
+  "wk_000000989": {
+    "workId": "wk_000000989",
+    "title": "도인경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10286283"
+    },
+    "titles": {
+      "ko": "도인경",
+      "en": "Duren Jing",
+      "ja": "度人経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

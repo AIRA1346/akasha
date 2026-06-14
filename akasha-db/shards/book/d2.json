@@ -1,0 +1,22 @@
+{
+  "wk_000000630": {
+    "workId": "wk_000000630",
+    "title": "앨리스 죽이기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100593718"
+    },
+    "titles": {
+      "ko": "앨리스 죽이기",
+      "en": "Q100593718",
+      "ja": "アリス殺し"
+    },
+    "releaseYear": 2013,
+    "creator": "小林泰三",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

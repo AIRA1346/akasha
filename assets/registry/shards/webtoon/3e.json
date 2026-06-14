@@ -1,0 +1,20 @@
+{
+  "wk_000000798": {
+    "workId": "wk_000000798",
+    "title": "라그나 크림슨",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102254282"
+    },
+    "titles": {
+      "ko": "라그나 크림슨",
+      "en": "Ragna Crimson",
+      "ja": "ラグナクリムゾン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

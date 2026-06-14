@@ -1,0 +1,21 @@
+{
+  "wk_000000578": {
+    "workId": "wk_000000578",
+    "title": "거울 속의 몽환성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1026730"
+    },
+    "titles": {
+      "ko": "거울 속의 몽환성",
+      "en": "Inuyasha the Movie: The Castle Beyond the Looking Glass",
+      "ja": "映画犬夜叉 鏡の中の夢幻城"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

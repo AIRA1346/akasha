@@ -1,0 +1,21 @@
+{
+  "wk_000000744": {
+    "workId": "wk_000000744",
+    "title": "호접비",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1003106"
+    },
+    "titles": {
+      "ko": "호접비",
+      "en": "Linger",
+      "ja": "僕は君のために蝶になる"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

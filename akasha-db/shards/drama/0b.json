@@ -1,0 +1,20 @@
+{
+  "wk_000000558": {
+    "workId": "wk_000000558",
+    "title": "도시남녀의 사랑법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101243720"
+    },
+    "titles": {
+      "ko": "도시남녀의 사랑법",
+      "en": "Lovestruck in the City",
+      "ja": "都会の男女の恋愛法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

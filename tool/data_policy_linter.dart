@@ -31,6 +31,17 @@ void main(List<String> args) {
     issues.addAll(_scanSearchIndex(searchIndex));
   }
 
+  final shardedIndexDir = Directory('${root.path}/akasha-db/search_index');
+  if (shardedIndexDir.existsSync()) {
+    for (final file in shardedIndexDir.listSync(recursive: true).whereType<File>()) {
+      if (!file.path.endsWith('.json')) continue;
+      if (file.path.replaceAll('\\', '/').split('/').last == 'manifest.json') {
+        continue;
+      }
+      issues.addAll(_scanSearchIndex(file));
+    }
+  }
+
   if (scanContributions) {
     issues.addAll(
       _scanContributions(Directory('${root.path}/akasha-db/contributions')),

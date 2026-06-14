@@ -1,0 +1,37 @@
+{
+  "wk_000000584": {
+    "workId": "wk_000000584",
+    "title": "엘 시드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101541477"
+    },
+    "titles": {
+      "ko": "엘 시드",
+      "en": "El Cid",
+      "ja": "エル・シッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000947": {
+    "workId": "wk_000000947",
+    "title": "밥이 되어라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104549455"
+    },
+    "titles": {
+      "ko": "밥이 되어라",
+      "en": "A Good Supper"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

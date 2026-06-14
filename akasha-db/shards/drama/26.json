@@ -1,0 +1,75 @@
+{
+  "wk_000000552": {
+    "workId": "wk_000000552",
+    "title": "아이 톨드 선셋 어바웃 유",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101094826"
+    },
+    "titles": {
+      "ko": "아이 톨드 선셋 어바웃 유",
+      "en": "I Told Sunset About You",
+      "ja": "アイ・トールド・サンセット・アバウト・ユー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000892": {
+    "workId": "wk_000000892",
+    "title": "너와 세계가 끝나는 날에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104369607"
+    },
+    "titles": {
+      "ko": "너와 세계가 끝나는 날에",
+      "en": "Love You as the World Ends",
+      "ja": "君と世界が終わる日に"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000946": {
+    "workId": "wk_000000946",
+    "title": "우리 집 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104519504"
+    },
+    "titles": {
+      "ko": "우리 집 이야기",
+      "en": "Story of My Family!!!",
+      "ja": "俺の家の話"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000956": {
+    "workId": "wk_000000956",
+    "title": "펜트하우스 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104698851"
+    },
+    "titles": {
+      "ko": "펜트하우스 2",
+      "en": "The Penthouse 2: War in Life",
+      "ja": "ペントハウス2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

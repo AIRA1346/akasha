@@ -30,5 +30,25 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000749": {
+    "workId": "wk_000000749",
+    "title": "위험한 비너스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101251566"
+    },
+    "titles": {
+      "ko": "위험한 비너스",
+      "en": "Kiken na Venus",
+      "ja": "危険なビーナス"
+    },
+    "releaseYear": 2016,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

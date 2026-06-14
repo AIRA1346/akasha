@@ -1,0 +1,22 @@
+{
+  "wk_000000882": {
+    "workId": "wk_000000882",
+    "title": "행복 트리밍",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512225"
+    },
+    "titles": {
+      "ko": "행복 트리밍",
+      "en": "Shiawase Trimming",
+      "ja": "しあわせ鳥見んぐ"
+    },
+    "releaseYear": 2020,
+    "creator": "わらびもちきなこ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

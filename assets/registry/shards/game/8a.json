@@ -1,0 +1,20 @@
+{
+  "wk_000000657": {
+    "workId": "wk_000000657",
+    "title": "챔피언쉽 매니저 2002 K-리그",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037535"
+    },
+    "titles": {
+      "ko": "챔피언쉽 매니저 2002 K-리그",
+      "en": "Championship Manager: Season 01/02"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

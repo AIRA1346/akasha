@@ -1,0 +1,20 @@
+{
+  "wk_000000652": {
+    "workId": "wk_000000652",
+    "title": "베이사이드 얄개들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1026823"
+    },
+    "titles": {
+      "ko": "베이사이드 얄개들",
+      "en": "Saved by the Bell",
+      "ja": "セイヴド・バイ・ザ・ベル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

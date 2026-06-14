@@ -1,0 +1,20 @@
+{
+  "wk_000000861": {
+    "workId": "wk_000000861",
+    "title": "버머",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004801"
+    },
+    "titles": {
+      "ko": "버머",
+      "en": "Bumer"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

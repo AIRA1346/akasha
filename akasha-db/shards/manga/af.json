@@ -62,5 +62,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000940": {
+    "workId": "wk_000000940",
+    "title": "미요리의 숲",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1096677"
+    },
+    "titles": {
+      "ko": "미요리의 숲",
+      "en": "Miyori no Mori",
+      "ja": "ミヨリの森"
+    },
+    "creator": "Hideji Oda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

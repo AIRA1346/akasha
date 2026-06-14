@@ -1,0 +1,38 @@
+{
+  "wk_000000999": {
+    "workId": "wk_000000999",
+    "title": "결혼작사 이혼작곡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104772941"
+    },
+    "titles": {
+      "ko": "결혼작사 이혼작곡",
+      "en": "Love (ft. Marriage and Divorce)",
+      "ja": "結婚作詞 離婚作曲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001007": {
+    "workId": "wk_000001007",
+    "title": "후와그 캉 망암바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104865289"
+    },
+    "titles": {
+      "ko": "후와그 캉 망암바",
+      "en": "Huwag Kang Mangamba",
+      "ja": "フワグ・カング・マンアムバ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

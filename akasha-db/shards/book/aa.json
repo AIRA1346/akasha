@@ -1,0 +1,21 @@
+{
+  "wk_000000811": {
+    "workId": "wk_000000811",
+    "title": "불의 후계자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101984807"
+    },
+    "titles": {
+      "ko": "불의 후계자",
+      "en": "Heir of Fire"
+    },
+    "releaseYear": 2014,
+    "creator": "Sarah J. Maas",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

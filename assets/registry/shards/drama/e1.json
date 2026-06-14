@@ -1,0 +1,19 @@
+{
+  "wk_000000595": {
+    "workId": "wk_000000595",
+    "title": "프린세사스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102241851"
+    },
+    "titles": {
+      "ko": "프린세사스",
+      "en": "Princesas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

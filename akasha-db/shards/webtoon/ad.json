@@ -1,0 +1,21 @@
+{
+  "wk_000000856": {
+    "workId": "wk_000000856",
+    "title": "공태랑 나가신다!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041581"
+    },
+    "titles": {
+      "ko": "공태랑 나가신다!",
+      "en": "Kōtarō Makaritōru!",
+      "ja": "コータローまかりとおる!"
+    },
+    "creator": "Tatsuya Hiruta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

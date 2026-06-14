@@ -38,5 +38,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000518": {
+    "workId": "wk_000000518",
+    "title": "고스트 바둑왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100606348"
+    },
+    "titles": {
+      "ko": "고스트 바둑왕",
+      "en": "Hikaru no Go",
+      "ja": "ヒカルの碁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

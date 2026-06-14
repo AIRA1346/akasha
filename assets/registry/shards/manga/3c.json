@@ -1,0 +1,40 @@
+{
+  "wk_000000812": {
+    "workId": "wk_000000812",
+    "title": "대사 각하의 요리사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10933566"
+    },
+    "titles": {
+      "ko": "대사 각하의 요리사",
+      "en": "Taishikakka no Ryōrinin",
+      "ja": "大使閣下の料理人"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000939": {
+    "workId": "wk_000000939",
+    "title": "하이가쿠라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10957553"
+    },
+    "titles": {
+      "ko": "하이가쿠라",
+      "en": "Haigakura",
+      "ja": "ハイガクラ"
+    },
+    "creator": "Shinobu Takayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000644": {
+    "workId": "wk_000000644",
+    "title": "호보 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102405516"
+    },
+    "titles": {
+      "ko": "호보 (드라마)",
+      "en": "The Littlest Hobo",
+      "ja": "名犬ロンドン物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

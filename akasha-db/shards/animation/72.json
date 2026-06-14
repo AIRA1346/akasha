@@ -1,0 +1,21 @@
+{
+  "wk_000000662": {
+    "workId": "wk_000000662",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 영광의 불고기 로드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044745"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 영광의 불고기 로드",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! Yakiniku Road of Honor",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ 栄光のヤキニクロード"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

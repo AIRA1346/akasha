@@ -1,0 +1,20 @@
+{
+  "wk_000000795": {
+    "workId": "wk_000000795",
+    "title": "세계 최고의 암살자, 이세계 귀족으로 전생하다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105523561"
+    },
+    "titles": {
+      "ko": "세계 최고의 암살자, 이세계 귀족으로 전생하다",
+      "en": "The World's Finest Assassin Gets Reincarnated in a Different World as an Aristocrat",
+      "ja": "世界最高の暗殺者、異世界貴族に転生する"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

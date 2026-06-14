@@ -1,0 +1,19 @@
+{
+  "wk_000000797": {
+    "workId": "wk_000000797",
+    "title": "아쿠아맨: 아틀란티스의 왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105676187"
+    },
+    "titles": {
+      "ko": "아쿠아맨: 아틀란티스의 왕",
+      "en": "Aquaman: King of Atlantis"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

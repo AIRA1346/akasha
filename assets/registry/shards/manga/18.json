@@ -1,0 +1,40 @@
+{
+  "wk_000000691": {
+    "workId": "wk_000000691",
+    "title": "꽃의 이름",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855938"
+    },
+    "titles": {
+      "ko": "꽃의 이름",
+      "en": "Hana no Namae",
+      "ja": "花の名前"
+    },
+    "creator": "Ken Saitō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000814": {
+    "workId": "wk_000000814",
+    "title": "쿠로이와 메다카에게 내 귀여움이 통하지 않아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109368327"
+    },
+    "titles": {
+      "ko": "쿠로이와 메다카에게 내 귀여움이 통하지 않아",
+      "en": "Medaka Kuroiwa Is Impervious to My Charms",
+      "ja": "黒岩メダカに私の可愛いが通じない"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

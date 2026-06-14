@@ -1,0 +1,21 @@
+{
+  "wk_000000638": {
+    "workId": "wk_000000638",
+    "title": "강철의 여자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855143"
+    },
+    "titles": {
+      "ko": "강철의 여자",
+      "en": "Hagane no Onna",
+      "ja": "ハガネの女"
+    },
+    "creator": "Kahoru Fukaya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

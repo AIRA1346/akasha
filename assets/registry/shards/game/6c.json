@@ -1,0 +1,21 @@
+{
+  "wk_000000506": {
+    "workId": "wk_000000506",
+    "title": "버거타임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1014915"
+    },
+    "titles": {
+      "ko": "버거타임",
+      "en": "BurgerTime",
+      "ja": "バーガータイム"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

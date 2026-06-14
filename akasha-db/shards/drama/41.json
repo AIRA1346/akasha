@@ -1,0 +1,38 @@
+{
+  "wk_000000822": {
+    "workId": "wk_000000822",
+    "title": "아리스 인 보더랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103967305"
+    },
+    "titles": {
+      "ko": "아리스 인 보더랜드",
+      "en": "Alice in Borderland",
+      "ja": "今際の国のアリス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000827": {
+    "workId": "wk_000000827",
+    "title": "언페어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040535"
+    },
+    "titles": {
+      "ko": "언페어",
+      "en": "Unfair",
+      "ja": "アンフェア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

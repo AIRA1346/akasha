@@ -1,0 +1,22 @@
+{
+  "wk_000000944": {
+    "workId": "wk_000000944",
+    "title": "다윈 사변",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110128384"
+    },
+    "titles": {
+      "ko": "다윈 사변",
+      "en": "The Darwin Incident",
+      "ja": "ダーウィン事変"
+    },
+    "releaseYear": 2020,
+    "creator": "Shun Umezawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

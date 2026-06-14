@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000688": {
+    "workId": "wk_000000688",
+    "title": "고, 보이즈!: 마지막 잎새 사수 프로젝트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855258"
+    },
+    "titles": {
+      "ko": "고, 보이즈!: 마지막 잎새 사수 프로젝트",
+      "en": "Ike! Danshi Kōkō Engekibu",
+      "ja": "行け!男子高校演劇部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

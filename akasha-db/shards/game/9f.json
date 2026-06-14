@@ -1,0 +1,21 @@
+{
+  "wk_000000783": {
+    "workId": "wk_000000783",
+    "title": "칼리스토 프로토콜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104172915"
+    },
+    "titles": {
+      "ko": "칼리스토 프로토콜",
+      "en": "The Callisto Protocol",
+      "ja": "カリストプロトコル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

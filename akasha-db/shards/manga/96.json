@@ -1,0 +1,21 @@
+{
+  "wk_000000941": {
+    "workId": "wk_000000941",
+    "title": "카미쿠즈☆아이돌",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109747744"
+    },
+    "titles": {
+      "ko": "카미쿠즈☆아이돌",
+      "en": "Phantom of the Idol",
+      "ja": "神クズ☆アイドル"
+    },
+    "creator": "Hiziki Isoflavon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000508": {
+    "workId": "wk_000000508",
+    "title": "잔 다라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1000825"
+    },
+    "titles": {
+      "ko": "잔 다라",
+      "en": "Jan Dara"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000690": {
+    "workId": "wk_000000690",
+    "title": "괴물 부리는 츠나",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855466"
+    },
+    "titles": {
+      "ko": "괴물 부리는 츠나",
+      "en": "Kaibutsu-zukai Tsuna!",
+      "ja": "怪物づかいツナ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -15,5 +15,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000996": {
+    "workId": "wk_000000996",
+    "title": "텟펜!!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110517109"
+    },
+    "titles": {
+      "ko": "텟펜!!!",
+      "en": "Teppen—!!!",
+      "ja": "てっぺんっ!!!"
+    },
+    "releaseYear": 2021,
+    "creator": "Inujun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

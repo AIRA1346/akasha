@@ -1,0 +1,20 @@
+{
+  "wk_000000649": {
+    "workId": "wk_000000649",
+    "title": "형사 블루 건물",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10265746"
+    },
+    "titles": {
+      "ko": "형사 블루 건물",
+      "en": "Detectives Blue Building"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000000633": {
+    "workId": "wk_000000633",
+    "title": "4TEEN",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846111"
+    },
+    "titles": {
+      "ko": "4TEEN",
+      "en": "4TEEN",
+      "ja": "4TEEN"
+    },
+    "releaseYear": 2003,
+    "creator": "石田衣良",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

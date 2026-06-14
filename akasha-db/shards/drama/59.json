@@ -1,0 +1,20 @@
+{
+  "wk_000000589": {
+    "workId": "wk_000000589",
+    "title": "고양이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102055710"
+    },
+    "titles": {
+      "ko": "고양이",
+      "en": "Q102055710",
+      "ja": "猫 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

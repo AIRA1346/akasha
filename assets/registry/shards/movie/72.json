@@ -1,0 +1,21 @@
+{
+  "wk_000000511": {
+    "workId": "wk_000000511",
+    "title": "버팔로 빌과 인디언들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1001943"
+    },
+    "titles": {
+      "ko": "버팔로 빌과 인디언들",
+      "en": "Buffalo Bill and the Indians, or Sitting Bull's History Lesson",
+      "ja": "ビッグ・アメリカン"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

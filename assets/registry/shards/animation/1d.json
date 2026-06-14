@@ -1,0 +1,38 @@
+{
+  "wk_000000606": {
+    "workId": "wk_000000606",
+    "title": "우주교향시 메텔",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037014"
+    },
+    "titles": {
+      "ko": "우주교향시 메텔",
+      "en": "Space Symphony Maetel",
+      "ja": "宇宙交響詩メーテル 銀河鉄道999外伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000726": {
+    "workId": "wk_000000726",
+    "title": "학생회의 일존 Lv.2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105094554"
+    },
+    "titles": {
+      "ko": "학생회의 일존 Lv.2",
+      "en": "Seitokai no Ichizon Lv.2",
+      "ja": "生徒会の一存 Lv.2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

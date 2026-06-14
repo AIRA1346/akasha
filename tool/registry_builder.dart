@@ -13,6 +13,7 @@ import 'poster_url_policy.dart';
 import 'quality_score_utils.dart';
 import 'registry_hash_utils.dart';
 import 'registry_v3_utils.dart';
+import 'search_index_shard_utils.dart';
 import 'wk_id_utils.dart';
 
 final _masterPatternWithYear = RegExp(
@@ -42,6 +43,7 @@ const _validDomains = {'subculture', 'generalCulture'};
 
 void main(List<String> args) {
   final syncAssets = args.contains('--sync-assets');
+  final bundleEagerOnly = args.contains('--bundle-eager-only');
   final projectRoot = _findProjectRoot();
   final dbRoot = Directory('${projectRoot.path}/akasha-db');
   final shardsRoot = Directory('${dbRoot.path}/shards');
@@ -189,12 +191,20 @@ void main(List<String> args) {
   }).toList()
     ..sort((a, b) => (a['title'] as String).compareTo(b['title'] as String));
 
+  final generatedAt = manifest['generatedAt'] as String;
+
   _writeJson('${dbRoot.path}/manifest.json', manifest);
   _writeJson('${dbRoot.path}/search_index.json', searchIndex);
+  _writeShardedSearchIndex(
+    dbRoot: dbRoot,
+    searchIndex: searchIndex,
+    generatedAt: generatedAt,
+  );
 
   print('OK: ${allWorks.length} works across ${shardMetas.length} shards');
   print('  → ${dbRoot.path}/manifest.json');
   print('  → ${dbRoot.path}/search_index.json');
+  print('  → ${dbRoot.path}/search_index/ (v2 sharded)');
 
   if (syncAssets) {
     final assetsRoot = Directory('${projectRoot.path}/assets/registry');
@@ -202,16 +212,18 @@ void main(List<String> args) {
       dbRoot: dbRoot,
       assetsRoot: assetsRoot,
       shardMetas: shardMetas,
+      eagerOnly: bundleEagerOnly,
     );
     print('  → synced to ${assetsRoot.path}');
   }
 }
 
-/// 앱 번들에는 메타 + **전체 샤드** 포함 (GitHub 옛 데이터 덮어쓰기 방지)
+/// 앱 번들: 메타 + search_index + (기본) 전체 샤드 · [--bundle-eager-only] eager만
 void _syncAssetsRegistry({
   required Directory dbRoot,
   required Directory assetsRoot,
   required List<Map<String, dynamic>> shardMetas,
+  bool eagerOnly = false,
 }) {
   if (!assetsRoot.existsSync()) assetsRoot.createSync(recursive: true);
 
@@ -228,12 +240,23 @@ void _syncAssetsRegistry({
     }
   }
 
+  final searchIndexDir = Directory('${dbRoot.path}/search_index');
+  if (searchIndexDir.existsSync()) {
+    _copyDirectory(searchIndexDir, Directory('${assetsRoot.path}/search_index'));
+  }
+
   final allPaths = <String>{
     for (final meta in shardMetas) meta['path'] as String,
   };
+  final bundlePaths = eagerOnly
+      ? <String>{
+          for (final meta in shardMetas)
+            if (meta['eager'] == true) meta['path'] as String,
+        }
+      : allPaths;
 
   var copied = 0;
-  for (final relativePath in allPaths) {
+  for (final relativePath in bundlePaths) {
     final src = File('${dbRoot.path}/$relativePath');
     if (!src.existsSync()) continue;
 
@@ -243,9 +266,15 @@ void _syncAssetsRegistry({
     copied++;
   }
 
-  _pruneOrphanAssetShards(assetsRoot, allPaths);
+  _pruneOrphanAssetShards(assetsRoot, bundlePaths);
 
-  print('  → bundle shards: $copied total (full catalog)');
+  if (eagerOnly) {
+    print(
+      '  → bundle shards: $copied eager (${allPaths.length} total in akasha-db)',
+    );
+  } else {
+    print('  → bundle shards: $copied total (full catalog)');
+  }
 }
 
 Set<String> _loadFranchisePrimaryWorkIds(Directory dbRoot) {
@@ -376,6 +405,60 @@ void _validateWork(
 void _writeJson(String path, Object data) {
   final encoder = const JsonEncoder.withIndent('  ');
   File(path).writeAsStringSync('${encoder.convert(data)}\n');
+}
+
+/// Phase 2.1 — 카테고리별 search_index + manifest (ADR-009)
+void _writeShardedSearchIndex({
+  required Directory dbRoot,
+  required List<Map<String, dynamic>> searchIndex,
+  required String generatedAt,
+}) {
+  final searchDir = Directory('${dbRoot.path}/search_index');
+  searchDir.createSync(recursive: true);
+
+  final byCategory = <String, List<Map<String, dynamic>>>{};
+  for (final entry in searchIndex) {
+    final cat = entry['category']?.toString() ?? 'manga';
+    byCategory.putIfAbsent(cat, () => []).add(entry);
+  }
+
+  final shardMetas = <Map<String, dynamic>>[];
+  for (final cat in byCategory.keys.toList()..sort()) {
+    final entries = byCategory[cat]!
+      ..sort(
+        (a, b) => (a['title'] as String? ?? '')
+            .compareTo(b['title'] as String? ?? ''),
+      );
+    final relativePath = 'search_index/$cat.json';
+    _writeJson('${dbRoot.path}/$relativePath', entries);
+    final encoded = const JsonEncoder().convert(entries);
+    shardMetas.add({
+      'category': cat,
+      'path': relativePath,
+      'entryCount': entries.length,
+      'sha256': sha256HexUtf8(encoded),
+    });
+  }
+
+  _writeJson(
+    '${searchDir.path}/manifest.json',
+    buildSearchIndexManifest(
+      entryCount: searchIndex.length,
+      generatedAt: generatedAt,
+      shards: shardMetas,
+    ),
+  );
+
+  for (final entity in searchDir.listSync()) {
+    if (entity is! File || !entity.path.endsWith('.json')) continue;
+    final name = p.basenameWithoutExtension(entity.path);
+    if (name == 'manifest') continue;
+    if (!byCategory.containsKey(name)) {
+      try {
+        entity.deleteSync();
+      } catch (_) {}
+    }
+  }
 }
 
 Directory _findProjectRoot() {

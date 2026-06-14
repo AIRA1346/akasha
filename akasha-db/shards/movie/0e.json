@@ -1,0 +1,21 @@
+{
+  "wk_000000625": {
+    "workId": "wk_000000625",
+    "title": "마더링 선데이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100249839"
+    },
+    "titles": {
+      "ko": "마더링 선데이",
+      "en": "Mothering Sunday",
+      "ja": "マザリング・サンデー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

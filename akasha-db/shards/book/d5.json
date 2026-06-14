@@ -1,0 +1,22 @@
+{
+  "wk_000000809": {
+    "workId": "wk_000000809",
+    "title": "송원학안",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10185150"
+    },
+    "titles": {
+      "ko": "송원학안",
+      "en": "Sung-Yuan Hsueh-an",
+      "ja": "宋元学案"
+    },
+    "releaseYear": 1838,
+    "creator": "Huang Zongxi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

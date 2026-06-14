@@ -1,0 +1,21 @@
+{
+  "wk_000000980": {
+    "workId": "wk_000000980",
+    "title": "살육 호텔",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100761458"
+    },
+    "titles": {
+      "ko": "살육 호텔",
+      "en": "Cadaver",
+      "ja": "殺人ホテル"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../services/works_registry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../utils/browse_category_groups.dart';
@@ -20,6 +21,11 @@ class BrowseView extends StatelessWidget {
     required this.sectionPrefs,
     required this.filterCategories,
     required this.isCatalogLoading,
+    this.isCatalogLoadingMore = false,
+    this.catalogHasMore = false,
+    this.catalogLoadedThrough = 0,
+    this.catalogTotalEntries = 0,
+    this.onLoadMoreCatalog,
     required this.displayName,
     required this.posterCardBuilder,
     required this.onStateChanged,
@@ -30,6 +36,11 @@ class BrowseView extends StatelessWidget {
   final HomeSectionPreferences sectionPrefs;
   final Set<MediaCategory> filterCategories;
   final bool isCatalogLoading;
+  final bool isCatalogLoadingMore;
+  final bool catalogHasMore;
+  final int catalogLoadedThrough;
+  final int catalogTotalEntries;
+  final VoidCallback? onLoadMoreCatalog;
   final String displayName;
   final Widget Function(BrowseCard card) posterCardBuilder;
   final VoidCallback onStateChanged;
@@ -127,6 +138,64 @@ class BrowseView extends StatelessWidget {
         cardBuilder: posterCardBuilder,
         cardMinWidth: 176,
         childAspectRatio: 0.78,
+      ),
+      catalogFooter: catalogUsesWindowedFooter
+          ? _CatalogWindowFooter(
+              loadedThrough: catalogLoadedThrough,
+              totalEntries: catalogTotalEntries,
+              hasMore: catalogHasMore,
+              isLoadingMore: isCatalogLoadingMore,
+              onLoadMore: onLoadMoreCatalog,
+            )
+          : null,
+    );
+  }
+
+  bool get catalogUsesWindowedFooter =>
+      catalogTotalEntries > 0 && onLoadMoreCatalog != null;
+}
+
+class _CatalogWindowFooter extends StatelessWidget {
+  const _CatalogWindowFooter({
+    required this.loadedThrough,
+    required this.totalEntries,
+    required this.hasMore,
+    required this.isLoadingMore,
+    this.onLoadMore,
+  });
+
+  final int loadedThrough;
+  final int totalEntries;
+  final bool hasMore;
+  final bool isLoadingMore;
+  final VoidCallback? onLoadMore;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+      child: Column(
+        children: [
+          Text(
+            '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
+            style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+          ),
+          if (hasMore) ...[
+            const SizedBox(height: 8),
+            FilledButton.tonal(
+              onPressed: isLoadingMore ? null : onLoadMore,
+              child: isLoadingMore
+                  ? const SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Text(
+                      '더 불러오기 (+${WorksRegistry.browsePrefetchWindowSize})',
+                    ),
+            ),
+          ],
+        ],
       ),
     );
   }

@@ -1,0 +1,20 @@
+{
+  "wk_000000489": {
+    "workId": "wk_000000489",
+    "title": "철인왕후",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100605045"
+    },
+    "titles": {
+      "ko": "철인왕후",
+      "en": "Mr. Queen",
+      "ja": "哲仁王后"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

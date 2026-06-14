@@ -1,0 +1,38 @@
+{
+  "wk_000000734": {
+    "workId": "wk_000000734",
+    "title": "알기 쉬운 현대마법",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105336732"
+    },
+    "titles": {
+      "ko": "알기 쉬운 현대마법",
+      "en": "Modern Magic Made Simple",
+      "ja": "よくわかる現代魔法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000846": {
+    "workId": "wk_000000846",
+    "title": "RE-MAIN",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105771102"
+    },
+    "titles": {
+      "ko": "RE-MAIN",
+      "en": "Re-Main",
+      "ja": "RE-MAIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000857": {
+    "workId": "wk_000000857",
+    "title": "LA 캅스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004433"
+    },
+    "titles": {
+      "ko": "LA 캅스",
+      "en": "Bulletproof",
+      "ja": "ダーティ・ボーイズ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

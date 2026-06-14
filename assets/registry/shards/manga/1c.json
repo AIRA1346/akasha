@@ -83,5 +83,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000993": {
+    "workId": "wk_000000993",
+    "title": "야마다와 7명의 마녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11046402"
+    },
+    "titles": {
+      "ko": "야마다와 7명의 마녀",
+      "en": "Yamada-kun and the Seven Witches",
+      "ja": "山田くんと7人の魔女"
+    },
+    "creator": "Miki Yoshikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

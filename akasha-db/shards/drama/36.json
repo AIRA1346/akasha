@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000889": {
+    "workId": "wk_000000889",
+    "title": "아름다웠던 우리에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104192712"
+    },
+    "titles": {
+      "ko": "아름다웠던 우리에게",
+      "en": "A Love So Beautiful",
+      "ja": "美しかった私たちへ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

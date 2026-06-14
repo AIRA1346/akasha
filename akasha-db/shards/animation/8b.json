@@ -1,0 +1,21 @@
+{
+  "wk_000000968": {
+    "workId": "wk_000000968",
+    "title": "조제, 호랑이 그리고 물고기들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106452140"
+    },
+    "titles": {
+      "ko": "조제, 호랑이 그리고 물고기들",
+      "en": "Josee, the Tiger and the Fish",
+      "ja": "ジョゼと虎と魚たち"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000001025": {
+    "workId": "wk_000001025",
+    "title": "사랑해 스즈키",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049862"
+    },
+    "titles": {
+      "ko": "사랑해 스즈키",
+      "en": "Suki Desu Suzuki-kun!!",
+      "ja": "好きです鈴木くん!!"
+    },
+    "releaseYear": 2009,
+    "creator": "Gō Ikeyamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

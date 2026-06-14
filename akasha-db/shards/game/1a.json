@@ -1,0 +1,21 @@
+{
+  "wk_000000503": {
+    "workId": "wk_000000503",
+    "title": "진심으로 날 사랑해라!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1010585"
+    },
+    "titles": {
+      "ko": "진심으로 날 사랑해라!",
+      "en": "Majikoi! Love Me Seriously!",
+      "ja": "真剣で私に恋しなさい!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

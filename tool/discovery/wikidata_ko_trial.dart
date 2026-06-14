@@ -3,7 +3,7 @@
 ///
 /// Usage:
 ///   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 10
-///   dart run tool/discovery/wikidata_ko_trial.dart --category animation --limit 5 --apply --build
+///   dart run tool/discovery/wikidata_ko_trial.dart --category manga --limit 15 --offset 500 --apply --build
 ///   dart run tool/discovery/wikidata_ko_trial.dart --category all --limit 3
 ///
 /// Categories: manga, webtoon, animation, game, book, movie, drama, all
@@ -19,6 +19,7 @@ void main(List<String> args) async {
   final build = args.contains('--build');
   final categoryArg = _argValue(args, '--category') ?? 'manga';
   final limit = int.tryParse(_argValue(args, '--limit') ?? '') ?? 20;
+  final offset = int.tryParse(_argValue(args, '--offset') ?? '');
 
   if (limit <= 0) {
     stderr.writeln('ERROR: --limit must be > 0');
@@ -43,6 +44,7 @@ void main(List<String> args) async {
   final dart = Platform.resolvedExecutable;
 
   print('wikidata_ko_trial — categories=${categories.join(", ")} limit=$limit');
+  if (offset != null) print('  offset: $offset');
   print('  apply: $apply  build: $build');
   print('');
 
@@ -64,6 +66,9 @@ void main(List<String> args) async {
       '$limit',
     ];
     if (apply) trialArgs.add('--apply');
+    if (offset != null) {
+      trialArgs.addAll(['--offset', '$offset']);
+    }
 
     final result = await Process.run(
       dart,

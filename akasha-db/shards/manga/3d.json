@@ -1,0 +1,22 @@
+{
+  "wk_000000942": {
+    "workId": "wk_000000942",
+    "title": "두더지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110029700"
+    },
+    "titles": {
+      "ko": "두더지",
+      "en": "Himizu",
+      "ja": "ヒミズ"
+    },
+    "releaseYear": 2001,
+    "creator": "Minoru Furuya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

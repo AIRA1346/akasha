@@ -1,0 +1,22 @@
+{
+  "wk_000000631": {
+    "workId": "wk_000000631",
+    "title": "사양",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1007788"
+    },
+    "titles": {
+      "ko": "사양",
+      "en": "The Setting Sun",
+      "ja": "斜陽"
+    },
+    "releaseYear": 1947,
+    "creator": "太宰治",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

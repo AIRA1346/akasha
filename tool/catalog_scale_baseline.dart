@@ -52,22 +52,59 @@ void _reportManifest(Directory db, Directory assets) {
 void _reportSearchIndex(Directory db, Directory assets) {
   for (final label in ['akasha-db', 'assets/registry']) {
     final dir = label == 'akasha-db' ? db : assets;
-    final file = File('${dir.path}/search_index.json');
-    if (!file.existsSync()) {
-      print('[search_index] $label: missing');
-      continue;
-    }
-    final bytes = file.lengthSync();
-    final raw = file.readAsStringSync();
-    final sw = Stopwatch()..start();
-    final decoded = jsonDecode(raw);
-    sw.stop();
-    final count = decoded is List ? decoded.length : 0;
-    print('[search_index] $label');
-    print('  entries: $count');
-    print('  file size: ${_kb(bytes)} KB');
-    print('  json parse: ${sw.elapsedMilliseconds} ms');
+    _reportMonolithicSearchIndex(dir, label);
+    _reportShardedSearchIndex(dir, label);
   }
+}
+
+void _reportMonolithicSearchIndex(Directory dir, String label) {
+  final file = File('${dir.path}/search_index.json');
+  if (!file.existsSync()) {
+    print('[search_index] $label (monolithic): missing');
+    return;
+  }
+  final bytes = file.lengthSync();
+  final raw = file.readAsStringSync();
+  final sw = Stopwatch()..start();
+  final decoded = jsonDecode(raw);
+  sw.stop();
+  final count = decoded is List ? decoded.length : 0;
+  print('[search_index] $label (monolithic v1)');
+  print('  entries: $count');
+  print('  file size: ${_kb(bytes)} KB');
+  print('  json parse: ${sw.elapsedMilliseconds} ms');
+}
+
+void _reportShardedSearchIndex(Directory dir, String label) {
+  final manifestFile = File('${dir.path}/search_index/manifest.json');
+  if (!manifestFile.existsSync()) {
+    print('[search_index] $label (sharded v2): missing');
+    return;
+  }
+  final manifestRaw = manifestFile.readAsStringSync();
+  final sw = Stopwatch()..start();
+  final manifest = jsonDecode(manifestRaw) as Map<String, dynamic>;
+  sw.stop();
+  final entryCount = manifest['entryCount'];
+  final shards = manifest['shards'];
+  final shardList = shards is List ? shards : const [];
+  print('[search_index] $label (sharded v2 manifest)');
+  print('  entryCount: $entryCount');
+  print('  category shards: ${shardList.length}');
+  print('  manifest parse: ${sw.elapsedMilliseconds} ms');
+  print('  manifest size: ${_kb(manifestRaw.length)} KB');
+
+  var totalBytes = 0;
+  for (final shard in shardList) {
+    if (shard is! Map) continue;
+    final path = shard['path']?.toString();
+    if (path == null || path.isEmpty) continue;
+    final shardFile = File('${dir.path}/$path');
+    if (shardFile.existsSync()) {
+      totalBytes += shardFile.lengthSync();
+    }
+  }
+  print('  category files total: ${_kb(totalBytes)} KB');
 }
 
 void _reportShards(Directory db, Directory assets) {

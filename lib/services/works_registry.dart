@@ -326,28 +326,51 @@ class WorksRegistry {
     }
   }
 
-  /// master_index용: 번들/캐시에서 전체 카탈로그 즉시 로드 (카테고리 병렬)
-  /// [fetchRemote] true면 로컬 로드 후 원격 샤드도 백그라운드 갱신합니다.
-  static Future<void> prefetchMasterCatalog({bool fetchRemote = false}) async {
-    await Future.wait(
-      MediaCategory.values.map(
-        (category) => _loader.ensureShardsForFilters(
-          domain: null,
-          category: category,
-        ),
-      ),
+  /// browse 첫 화면에 로드할 search_index 윈도우 (Phase 2.2)
+  static const int browsePrefetchWindowSize = 48;
+
+  /// master_index·무필터 browse — search_index 품질순 윈도우만 prefetch
+  /// [fetchRemote] true면 윈도우 shard만 원격 갱신 (전 카테고리 bulk fetch 없음)
+  static Future<void> prefetchBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int limit = browsePrefetchWindowSize,
+    bool fetchRemote = false,
+  }) async {
+    await _loader.ensureShardsForBrowseWindow(
+      domain: domain,
+      category: category,
+      offset: offset,
+      limit: limit,
     );
 
     if (!fetchRemote) return;
 
-    for (final category in MediaCategory.values) {
-      await RegistrySyncService().syncShardsForFilters(
-        domain: null,
-        category: category,
-      );
-      await _loader.ensureShardsForFilters(domain: null, category: category);
-    }
+    final shardIds = _loader.resolveShardIdsForBrowseWindow(
+      domain: domain,
+      category: category,
+      offset: offset,
+      limit: limit,
+    );
+    await RegistrySyncService().syncShardsByIds(shardIds);
+    await _loader.ensureShardsForBrowseWindow(
+      domain: domain,
+      category: category,
+      offset: offset,
+      limit: limit,
+    );
   }
+
+  /// @deprecated Phase 2.2 — [prefetchBrowseWindow] 사용. 하위 호환 alias.
+  static Future<void> prefetchMasterCatalog({bool fetchRemote = false}) =>
+      prefetchBrowseWindow(fetchRemote: fetchRemote);
+
+  static int catalogIndexEntryCount({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) =>
+      _loader.countIndexEntries(domain: domain, category: category);
 
   /// 필터 범위 샤드 온디맨드 프리페치 (원격 fetch → 캐시/번들 로드)
   /// domain·categories 모두 비어 있으면 no-op (전체 샤드 bulk fetch 방지)

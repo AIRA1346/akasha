@@ -1,0 +1,39 @@
+{
+  "wk_000000519": {
+    "workId": "wk_000000519",
+    "title": "미나미 카마쿠라 고교 여자 자전거부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100743087"
+    },
+    "titles": {
+      "ko": "미나미 카마쿠라 고교 여자 자전거부",
+      "en": "Minami Kamakura High School Girls Cycling Club",
+      "ja": "南鎌倉高校女子自転車部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000791": {
+    "workId": "wk_000000791",
+    "title": "극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105424646"
+    },
+    "titles": {
+      "ko": "극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아",
+      "en": "Sword Art Online Progressive: Aria of a Starless Night",
+      "ja": "劇場版 ソードアート・オンライン -プログレッシブ- 星なき夜のアリア"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

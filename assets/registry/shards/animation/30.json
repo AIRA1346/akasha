@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000000526": {
+    "workId": "wk_000000526",
+    "title": "이 소리에 모여!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101219687"
+    },
+    "titles": {
+      "ko": "이 소리에 모여!",
+      "en": "Kono Oto Tomare! Sounds of Life",
+      "ja": "この音とまれ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

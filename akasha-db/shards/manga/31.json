@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000693": {
+    "workId": "wk_000000693",
+    "title": "다운로드 애플리걸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856354"
+    },
+    "titles": {
+      "ko": "다운로드 애플리걸",
+      "en": "Otoshite↓Appli Girl",
+      "ja": "おとして↓アプリガール"
+    },
+    "creator": "Kako Mochizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

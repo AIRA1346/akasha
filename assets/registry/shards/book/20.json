@@ -1,0 +1,21 @@
+{
+  "wk_000000684": {
+    "workId": "wk_000000684",
+    "title": "행성",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101003953"
+    },
+    "titles": {
+      "ko": "행성",
+      "en": "The Planet of Cats"
+    },
+    "releaseYear": 2020,
+    "creator": "Bernard Werber",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

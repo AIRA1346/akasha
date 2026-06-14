@@ -1,0 +1,38 @@
+{
+  "wk_000000555": {
+    "workId": "wk_000000555",
+    "title": "제발 그 남자 만나지 마요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101208250"
+    },
+    "titles": {
+      "ko": "제발 그 남자 만나지 마요",
+      "en": "Please Don't Date Him",
+      "ja": "どうかその男と会わないで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000891": {
+    "workId": "wk_000000891",
+    "title": "코라손 살바헤",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042321"
+    },
+    "titles": {
+      "ko": "코라손 살바헤",
+      "en": "Corazón Salvaje",
+      "ja": "ワイルドな心"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000517": {
+    "workId": "wk_000000517",
+    "title": "잔혹한 어머니의 날",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100266060"
+    },
+    "titles": {
+      "ko": "잔혹한 어머니의 날",
+      "en": "Mother's Day"
+    },
+    "releaseYear": 2018,
+    "creator": "Nele Neuhaus",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

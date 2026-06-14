@@ -1,0 +1,39 @@
+{
+  "wk_000000493": {
+    "workId": "wk_000000493",
+    "title": "대시 & 릴리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100893315"
+    },
+    "titles": {
+      "ko": "대시 & 릴리",
+      "en": "Dash & Lily",
+      "ja": "ダッシュ&リリー"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000768": {
+    "workId": "wk_000000768",
+    "title": "본키커스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036337"
+    },
+    "titles": {
+      "ko": "본키커스",
+      "en": "Bonekickers",
+      "ja": "ボーンキッカーズ 考古学調査班"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

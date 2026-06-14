@@ -1,0 +1,21 @@
+{
+  "wk_000000621": {
+    "workId": "wk_000000621",
+    "title": "안나 성당의 기적",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002100"
+    },
+    "titles": {
+      "ko": "안나 성당의 기적",
+      "en": "Miracle at St. Anna",
+      "ja": "セントアンナの奇跡"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

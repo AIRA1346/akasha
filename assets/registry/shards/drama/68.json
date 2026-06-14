@@ -1,0 +1,20 @@
+{
+  "wk_000000550": {
+    "workId": "wk_000000550",
+    "title": "고요의 바다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101083996"
+    },
+    "titles": {
+      "ko": "고요의 바다",
+      "en": "The Silent Sea",
+      "ja": "静かなる海"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

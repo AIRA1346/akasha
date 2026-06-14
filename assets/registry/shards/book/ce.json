@@ -1,0 +1,20 @@
+{
+  "wk_000000754": {
+    "workId": "wk_000000754",
+    "title": "부초",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101579994"
+    },
+    "titles": {
+      "ko": "부초",
+      "en": "Q101579994"
+    },
+    "creator": "Han Su-san",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

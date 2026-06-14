@@ -1,0 +1,21 @@
+{
+  "wk_000000808": {
+    "workId": "wk_000000808",
+    "title": "무기의 그늘",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101580103"
+    },
+    "titles": {
+      "ko": "무기의 그늘",
+      "en": "The Shadow Of Arms"
+    },
+    "releaseYear": 1988,
+    "creator": "Hwang Sok-yong",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

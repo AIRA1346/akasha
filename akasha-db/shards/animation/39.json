@@ -31,5 +31,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000727": {
+    "workId": "wk_000000727",
+    "title": "친구 여동생이 나한테만 짜증나게 군다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105156949"
+    },
+    "titles": {
+      "ko": "친구 여동생이 나한테만 짜증나게 군다",
+      "en": "My Friend's Little Sister Has It In for Me!",
+      "ja": "友達の妹が俺にだけウザい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

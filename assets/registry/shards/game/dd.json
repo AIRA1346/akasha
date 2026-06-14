@@ -1,0 +1,21 @@
+{
+  "wk_000000567": {
+    "workId": "wk_000000567",
+    "title": "마리오의 슈퍼 피크로스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1026590"
+    },
+    "titles": {
+      "ko": "마리오의 슈퍼 피크로스",
+      "en": "Mario's Super Picross",
+      "ja": "マリオのスーパーピクロス"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

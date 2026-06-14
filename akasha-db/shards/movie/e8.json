@@ -1,0 +1,21 @@
+{
+  "wk_000000679": {
+    "workId": "wk_000000679",
+    "title": "아담스 패밀리 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100292318"
+    },
+    "titles": {
+      "ko": "아담스 패밀리 2",
+      "en": "The Addams Family 2",
+      "ja": "アダムス・ファミリー2 アメリカ横断旅行!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

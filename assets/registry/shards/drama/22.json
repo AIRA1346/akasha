@@ -1,0 +1,20 @@
+{
+  "wk_000000702": {
+    "workId": "wk_000000702",
+    "title": "이나이 이나이 바앗!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10301854"
+    },
+    "titles": {
+      "ko": "이나이 이나이 바앗!",
+      "en": "Inai Inai Baa!",
+      "ja": "いないいないばあっ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

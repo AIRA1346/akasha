@@ -1,0 +1,40 @@
+{
+  "wk_000000546": {
+    "workId": "wk_000000546",
+    "title": "원댄스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101955070"
+    },
+    "titles": {
+      "ko": "원댄스",
+      "en": "Wandance",
+      "ja": "ワンダンス"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000855": {
+    "workId": "wk_000000855",
+    "title": "빵빵녀와 절벽녀",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041541"
+    },
+    "titles": {
+      "ko": "빵빵녀와 절벽녀",
+      "en": "Yama Onna Kabe Onna",
+      "ja": "山おんな壁おんな"
+    },
+    "creator": "Atsuko Takakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

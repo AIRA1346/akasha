@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000000796": {
+    "workId": "wk_000000796",
+    "title": "탐정은 이미 죽었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105602572"
+    },
+    "titles": {
+      "ko": "탐정은 이미 죽었다",
+      "en": "The Detective Is Already Dead",
+      "ja": "探偵はもう、死んでいる。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

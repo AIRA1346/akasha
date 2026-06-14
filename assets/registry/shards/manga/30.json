@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000816": {
+    "workId": "wk_000000816",
+    "title": "비와 너와",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109409625"
+    },
+    "titles": {
+      "ko": "비와 너와",
+      "en": "With You and the Rain",
+      "ja": "雨と君と"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

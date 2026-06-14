@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000762": {
+    "workId": "wk_000000762",
+    "title": "히메가사키 사쿠라코는 오늘도 딱하면서 귀여워",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109269133"
+    },
+    "titles": {
+      "ko": "히메가사키 사쿠라코는 오늘도 딱하면서 귀여워",
+      "en": "Himegasaki Sakurako Is a Hot Mess",
+      "ja": "姫ヶ崎櫻子は今日も不憫可愛い"
+    },
+    "creator": "Kōsuke Yasuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

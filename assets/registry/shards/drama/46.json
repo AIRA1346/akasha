@@ -1,0 +1,20 @@
+{
+  "wk_000001003": {
+    "workId": "wk_000001003",
+    "title": "타임즈 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104786320"
+    },
+    "titles": {
+      "ko": "타임즈 (드라마)",
+      "en": "Times",
+      "ja": "タイムズ (2021年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

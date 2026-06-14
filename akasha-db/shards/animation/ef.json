@@ -1,0 +1,38 @@
+{
+  "wk_000000574": {
+    "workId": "wk_000000574",
+    "title": "SD 건담 월드 히어로즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102221747"
+    },
+    "titles": {
+      "ko": "SD 건담 월드 히어로즈",
+      "en": "SD Gundam World Heroes",
+      "ja": "SDガンダムワールド ヒーローズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000728": {
+    "workId": "wk_000000728",
+    "title": "출격! 머신로보 레스큐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051871"
+    },
+    "titles": {
+      "ko": "출격! 머신로보 레스큐",
+      "en": "Machine Robo Rescue",
+      "ja": "出撃!マシンロボレスキュー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

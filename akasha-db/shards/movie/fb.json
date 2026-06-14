@@ -1,0 +1,21 @@
+{
+  "wk_000000624": {
+    "workId": "wk_000000624",
+    "title": "엄마",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100233511"
+    },
+    "titles": {
+      "ko": "엄마",
+      "en": "Umma",
+      "ja": "オンマ/呪縛"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

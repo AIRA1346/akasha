@@ -25,5 +25,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000678": {
+    "workId": "wk_000000678",
+    "title": "침묵의 숲",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100270990"
+    },
+    "titles": {
+      "ko": "침묵의 숲",
+      "en": "The Silent Forest",
+      "ja": "無聲 The Silent Forest"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

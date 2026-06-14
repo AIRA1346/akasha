@@ -1,0 +1,22 @@
+{
+  "wk_000000689": {
+    "workId": "wk_000000689",
+    "title": "관희의 챠이카",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855446"
+    },
+    "titles": {
+      "ko": "관희의 챠이카",
+      "en": "Chaika: The Coffin Princess",
+      "ja": "棺姫のチャイカ"
+    },
+    "releaseYear": 2010,
+    "creator": "Ichirō Sakaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

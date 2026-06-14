@@ -1,0 +1,19 @@
+{
+  "wk_000000949": {
+    "workId": "wk_000000949",
+    "title": "아미 오브 더 데드: 로스트 베가스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104590280"
+    },
+    "titles": {
+      "ko": "아미 오브 더 데드: 로스트 베가스",
+      "en": "Army of the Dead: Lost Vegas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000859": {
+    "workId": "wk_000000859",
+    "title": "브로드웨이를 쏴라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004531"
+    },
+    "titles": {
+      "ko": "브로드웨이를 쏴라",
+      "en": "Bullets Over Broadway",
+      "ja": "ブロードウェイと銃弾"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

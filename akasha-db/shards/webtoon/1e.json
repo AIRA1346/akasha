@@ -1,0 +1,22 @@
+{
+  "wk_000000619": {
+    "workId": "wk_000000619",
+    "title": "새 엄마가 데려온 딸이 전 여친이었다",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102021740"
+    },
+    "titles": {
+      "ko": "새 엄마가 데려온 딸이 전 여친이었다",
+      "en": "My Stepmom's Daughter Is My Ex",
+      "ja": "継母の連れ子が元カノだった"
+    },
+    "releaseYear": 2019,
+    "creator": "紙城境介",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

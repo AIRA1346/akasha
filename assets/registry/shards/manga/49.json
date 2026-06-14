@@ -67,5 +67,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000995": {
+    "workId": "wk_000000995",
+    "title": "괴이와 소녀와 행방불명",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110516999"
+    },
+    "titles": {
+      "ko": "괴이와 소녀와 행방불명",
+      "en": "Mysterious Disappearances",
+      "ja": "怪異と乙女と神隠し"
+    },
+    "releaseYear": 2019,
+    "creator": "Nujima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000000683": {
+    "workId": "wk_000000683",
+    "title": "셔기 베인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100997892"
+    },
+    "titles": {
+      "ko": "셔기 베인",
+      "en": "Shuggie Bain"
+    },
+    "releaseYear": 2020,
+    "creator": "Douglas Stuart",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

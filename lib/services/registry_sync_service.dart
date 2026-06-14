@@ -135,9 +135,34 @@ class RegistrySyncService {
     await clearLegacyRegistryCache();
     success = await loader.cacheRemoteManifest(manifestContent);
 
-    final indexContent = await _fetchText('${baseUrl}search_index.json');
-    if (indexContent != null) {
-      success = (await loader.cacheRemoteSearchIndex(indexContent)) || success;
+    final indexManifestContent =
+        await _fetchText('${baseUrl}search_index/manifest.json');
+    if (indexManifestContent != null) {
+      success =
+          (await loader.cacheRemoteSearchIndexManifest(indexManifestContent)) ||
+              success;
+      try {
+        final indexManifest = RegistrySearchIndexManifest.fromJson(
+          json.decode(indexManifestContent) as Map<String, dynamic>,
+        );
+        for (final shard in indexManifest.shards) {
+          final shardContent = await _fetchText('${baseUrl}${shard.path}');
+          if (shardContent != null) {
+            success = (await loader.cacheRemoteSearchIndexShard(
+                  shard.path,
+                  shardContent,
+                )) ||
+                success;
+          }
+        }
+      } catch (e) {
+        print('Error syncing sharded search index: $e');
+      }
+    } else {
+      final indexContent = await _fetchText('${baseUrl}search_index.json');
+      if (indexContent != null) {
+        success = (await loader.cacheRemoteSearchIndex(indexContent)) || success;
+      }
     }
 
     final eagerShards = remoteManifest.eagerShards();
@@ -254,9 +279,17 @@ class RegistrySyncService {
     if (query.trim().isEmpty) return false;
     if (!await _remoteManifestIsNewerThanLocal()) return false;
     final loader = WorksRegistry.loader;
+    await loader.ensureSearchIndexLoaded();
     final shardIds = loader.resolveShardIdsForQuery(query);
-    if (shardIds.isEmpty) return false;
+    return syncShardsByIds(shardIds);
+  }
 
+  /// 지정 shardId 집합만 원격 fetch (browse window · query 공용)
+  Future<bool> syncShardsByIds(Set<String> shardIds) async {
+    if (shardIds.isEmpty) return false;
+    if (!await _remoteManifestIsNewerThanLocal()) return false;
+
+    final loader = WorksRegistry.loader;
     var success = false;
     for (final shardId in shardIds) {
       if (loader.isShardLoaded(shardId)) continue;

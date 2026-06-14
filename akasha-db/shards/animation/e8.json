@@ -1,0 +1,20 @@
+{
+  "wk_000000735": {
+    "workId": "wk_000000735",
+    "title": "성녀의 마력은 만능입니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105336863"
+    },
+    "titles": {
+      "ko": "성녀의 마력은 만능입니다",
+      "en": "The Saint's Magic Power is Omnipotent",
+      "ja": "聖女の魔力は万能です"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

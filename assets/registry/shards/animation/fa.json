@@ -1,0 +1,20 @@
+{
+  "wk_000000843": {
+    "workId": "wk_000000843",
+    "title": "어둠의 실력자가 되고 싶어서!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105751950"
+    },
+    "titles": {
+      "ko": "어둠의 실력자가 되고 싶어서!",
+      "en": "The Eminence in Shadow",
+      "ja": "陰の実力者になりたくて！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

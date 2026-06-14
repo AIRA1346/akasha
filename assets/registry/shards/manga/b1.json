@@ -1,0 +1,21 @@
+{
+  "wk_000000880": {
+    "workId": "wk_000000880",
+    "title": "아슬아슬 아웃",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512202"
+    },
+    "titles": {
+      "ko": "아슬아슬 아웃",
+      "en": "Girigiri Out",
+      "ja": "ギリギリアウト"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

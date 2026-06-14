@@ -1,0 +1,20 @@
+{
+  "wk_000000660": {
+    "workId": "wk_000000660",
+    "title": "마이 심즈 심들의 왕국",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037628"
+    },
+    "titles": {
+      "ko": "마이 심즈 심들의 왕국",
+      "en": "MySims Kingdom"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

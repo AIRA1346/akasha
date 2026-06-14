@@ -1,0 +1,21 @@
+{
+  "wk_000000674": {
+    "workId": "wk_000000674",
+    "title": "친구 여동생이 나한테만 짜증나게 군다",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102124713"
+    },
+    "titles": {
+      "ko": "친구 여동생이 나한테만 짜증나게 군다",
+      "en": "My Friend's Little Sister Has It In for Me!",
+      "ja": "友達の妹が俺にだけウザい"
+    },
+    "creator": "Ghost Mikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

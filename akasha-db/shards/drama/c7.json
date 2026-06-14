@@ -1,0 +1,38 @@
+{
+  "wk_000000643": {
+    "workId": "wk_000000643",
+    "title": "위 아 더 챔피언",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102396788"
+    },
+    "titles": {
+      "ko": "위 아 더 챔피언",
+      "en": "We Are the Champions",
+      "ja": "型破り! なんでもチャンピオンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000763": {
+    "workId": "wk_000000763",
+    "title": "선배 그 립스틱 바르지 마요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103306641"
+    },
+    "titles": {
+      "ko": "선배 그 립스틱 바르지 마요",
+      "en": "She Would Never Know",
+      "ja": "先輩、その口紅塗らないで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

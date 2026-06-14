@@ -1,0 +1,21 @@
+{
+  "wk_000000805": {
+    "workId": "wk_000000805",
+    "title": "프리퀀시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1003845"
+    },
+    "titles": {
+      "ko": "프리퀀시",
+      "en": "Frequency",
+      "ja": "オーロラの彼方へ"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

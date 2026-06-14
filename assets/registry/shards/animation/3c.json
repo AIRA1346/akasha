@@ -1,0 +1,21 @@
+{
+  "wk_000000672": {
+    "workId": "wk_000000672",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 황금 스파이 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048726"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 황금 스파이 대작전",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! Operation Golden Spy",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ黄金のスパイ大作戦"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

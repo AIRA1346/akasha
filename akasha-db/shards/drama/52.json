@@ -1,0 +1,20 @@
+{
+  "wk_000000830": {
+    "workId": "wk_000000830",
+    "title": "아네고",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041250"
+    },
+    "titles": {
+      "ko": "아네고",
+      "en": "Anego",
+      "ja": "anego"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

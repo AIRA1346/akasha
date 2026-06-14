@@ -1,0 +1,56 @@
+{
+  "wk_000000577": {
+    "workId": "wk_000000577",
+    "title": "트로피컬 루즈! 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102368919"
+    },
+    "titles": {
+      "ko": "트로피컬 루즈! 프리큐어",
+      "en": "Tropical-Rouge! Pretty Cure",
+      "ja": "トロピカル〜ジュ！プリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000851": {
+    "workId": "wk_000000851",
+    "title": "총황무진의 파프니르",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106007098"
+    },
+    "titles": {
+      "ko": "총황무진의 파프니르",
+      "en": "Unlimited Fafnir",
+      "ja": "銃皇無尽のファフニール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000914": {
+    "workId": "wk_000000914",
+    "title": "비주얼 프리즌",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106299335"
+    },
+    "titles": {
+      "ko": "비주얼 프리즌",
+      "en": "Visual Prison",
+      "ja": "ヴィジュアルプリズン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

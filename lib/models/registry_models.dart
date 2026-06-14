@@ -81,6 +81,70 @@ class RegistryManifest {
       shards.where((s) => s.eager).toList();
 }
 
+class RegistrySearchIndexShardMeta {
+  final MediaCategory category;
+  final String path;
+  final int entryCount;
+  final String? sha256;
+
+  const RegistrySearchIndexShardMeta({
+    required this.category,
+    required this.path,
+    this.entryCount = 0,
+    this.sha256,
+  });
+
+  factory RegistrySearchIndexShardMeta.fromJson(Map<String, dynamic> json) {
+    final categoryStr = json['category']?.toString() ?? 'manga';
+    final sha = json['sha256']?.toString();
+    return RegistrySearchIndexShardMeta(
+      category: MediaCategory.values.firstWhere(
+        (e) => e.name == categoryStr,
+        orElse: () => MediaCategory.manga,
+      ),
+      path: json['path']?.toString() ?? '',
+      entryCount: int.tryParse(json['entryCount']?.toString() ?? '') ?? 0,
+      sha256: sha != null && sha.isNotEmpty ? sha : null,
+    );
+  }
+}
+
+class RegistrySearchIndexManifest {
+  final int version;
+  final int entryCount;
+  final String? generatedAt;
+  final List<RegistrySearchIndexShardMeta> shards;
+
+  const RegistrySearchIndexManifest({
+    required this.version,
+    required this.entryCount,
+    this.generatedAt,
+    required this.shards,
+  });
+
+  factory RegistrySearchIndexManifest.fromJson(Map<String, dynamic> json) {
+    final shardList = (json['shards'] as List?) ?? const [];
+    return RegistrySearchIndexManifest(
+      version: int.tryParse(json['version']?.toString() ?? '') ?? 1,
+      entryCount: int.tryParse(json['entryCount']?.toString() ?? '') ?? 0,
+      generatedAt: json['generatedAt']?.toString(),
+      shards: shardList
+          .whereType<Map>()
+          .map((e) =>
+              RegistrySearchIndexShardMeta.fromJson(Map<String, dynamic>.from(e)))
+          .where((s) => s.path.isNotEmpty)
+          .toList(),
+    );
+  }
+
+  RegistrySearchIndexShardMeta? shardForCategory(MediaCategory category) {
+    for (final shard in shards) {
+      if (shard.category == category) return shard;
+    }
+    return null;
+  }
+}
+
 class RegistrySearchIndexEntry {
   final String workId;
   final String title;

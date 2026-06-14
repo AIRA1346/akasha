@@ -25,5 +25,25 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000533": {
+    "workId": "wk_000000533",
+    "title": "GA 예술과 아트 디자인 클래스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074213"
+    },
+    "titles": {
+      "ko": "GA 예술과 아트 디자인 클래스",
+      "en": "GA Geijutsuka Art Design Class",
+      "ja": "GA 芸術科アートデザインクラス"
+    },
+    "releaseYear": 2004,
+    "creator": "Satoko Kiyuduki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

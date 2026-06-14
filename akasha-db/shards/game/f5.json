@@ -1,0 +1,21 @@
+{
+  "wk_000000599": {
+    "workId": "wk_000000599",
+    "title": "골든 액스: 더 듀얼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10290397"
+    },
+    "titles": {
+      "ko": "골든 액스: 더 듀얼",
+      "en": "Golden Axe: The Duel",
+      "ja": "ゴールデンアックス・ザ・デュエル"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000840": {
+    "workId": "wk_000000840",
+    "title": "요란 THE PRINCESS OF SNOW AND BLOOD",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105698193"
+    },
+    "titles": {
+      "ko": "요란 THE PRINCESS OF SNOW AND BLOOD",
+      "en": "Joran: The Princess of Snow and Blood",
+      "ja": "擾乱 THE PRINCESS OF SNOW AND BLOOD"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

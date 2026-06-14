@@ -1,0 +1,40 @@
+{
+  "wk_000000656": {
+    "workId": "wk_000000656",
+    "title": "히트맨 2: 사일런트 어쌔신",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037042"
+    },
+    "titles": {
+      "ko": "히트맨 2: 사일런트 어쌔신",
+      "en": "Hitman 2: Silent Assassin",
+      "ja": "Hitman2: Silent Assassin"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000962": {
+    "workId": "wk_000000962",
+    "title": "슈퍼 마리오 요시 아일랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045765"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 요시 아일랜드",
+      "en": "Super Mario World 2: Yoshi's Island",
+      "ja": "スーパーマリオ ヨッシーアイランド"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

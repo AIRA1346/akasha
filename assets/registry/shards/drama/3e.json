@@ -1,0 +1,20 @@
+{
+  "wk_000000553": {
+    "workId": "wk_000000553",
+    "title": "세브란스: 단절",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101096725"
+    },
+    "titles": {
+      "ko": "세브란스: 단절",
+      "en": "Severance",
+      "ja": "セヴェランス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

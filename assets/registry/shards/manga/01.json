@@ -1,0 +1,21 @@
+{
+  "wk_000000756": {
+    "workId": "wk_000000756",
+    "title": "아름다운 그대에게",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087824"
+    },
+    "titles": {
+      "ko": "아름다운 그대에게",
+      "en": "Hana-Kimi",
+      "ja": "花ざかりの君たちへ"
+    },
+    "creator": "Hisaya Nakajo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -72,6 +72,13 @@ class HomeShellScaffold extends StatelessWidget {
               isTimelineMode: controller.isTimelineMode,
               isCuratedLibraryActive: controller.isCuratedLibraryActive,
               isCatalogLoading: controller.isCatalogLoading,
+              isCatalogLoadingMore: controller.isCatalogLoadingMore,
+              catalogHasMore: controller.catalogHasMore,
+              catalogLoadedThrough: controller.catalogLoadedThrough,
+              catalogTotalEntries: controller.catalogTotalEntries,
+              onLoadMoreCatalog: controller.catalogUsesWindowedPrefetch
+                  ? controller.loadMoreCatalog
+                  : null,
               canAddToLibrary: controller.canAddToLibrary,
               libraryTheme: controller.libraryTheme,
               displayName: controller.displayName,

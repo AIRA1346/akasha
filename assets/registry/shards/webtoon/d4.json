@@ -1,0 +1,21 @@
+{
+  "wk_000000923": {
+    "workId": "wk_000000923",
+    "title": "하트 커넥트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104253727"
+    },
+    "titles": {
+      "ko": "하트 커넥트",
+      "en": "Kokoro Connect",
+      "ja": "ココロコネクト"
+    },
+    "creator": "Sadanatsu Anda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

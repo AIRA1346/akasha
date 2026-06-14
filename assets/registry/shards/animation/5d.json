@@ -1,0 +1,20 @@
+{
+  "wk_000000908": {
+    "workId": "wk_000000908",
+    "title": "은하에 킥오프!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060695"
+    },
+    "titles": {
+      "ko": "은하에 킥오프!!",
+      "en": "Galaxy Kickoff!!",
+      "ja": "銀河へキックオフ!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

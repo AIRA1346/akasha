@@ -1,0 +1,57 @@
+{
+  "wk_000000576": {
+    "workId": "wk_000000576",
+    "title": "썬더일레븐 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102283726"
+    },
+    "titles": {
+      "ko": "썬더일레븐 (애니메이션)",
+      "en": "Inazuma Eleven",
+      "ja": "イナズマイレブン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000671": {
+    "workId": "wk_000000671",
+    "title": "원피스 - 에피소드 오브 쵸파 플러스 겨울에 피는 기적의 벚꽃",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048722"
+    },
+    "titles": {
+      "ko": "원피스 - 에피소드 오브 쵸파 플러스 겨울에 피는 기적의 벚꽃",
+      "en": "One Piece Movie 9: Episode of Chopper Plus - Fuyu ni Saku, Kiseki no Sakura",
+      "ja": "ONE PIECE THE MOVIE エピソードオブチョッパー+ 冬に咲く、奇跡の桜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000792": {
+    "workId": "wk_000000792",
+    "title": "하느님의 메모장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105427062"
+    },
+    "titles": {
+      "ko": "하느님의 메모장",
+      "en": "Heaven's Memo Pad",
+      "ja": "神様のメモ帳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

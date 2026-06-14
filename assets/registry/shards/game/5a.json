@@ -1,0 +1,21 @@
+{
+  "wk_000000655": {
+    "workId": "wk_000000655",
+    "title": "에밀 크로니클 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036659"
+    },
+    "titles": {
+      "ko": "에밀 크로니클 온라인",
+      "en": "Emil Chronicle Online",
+      "ja": "エミル・クロニクル・オンライン"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

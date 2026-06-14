@@ -1,0 +1,20 @@
+{
+  "wk_000000948": {
+    "workId": "wk_000000948",
+    "title": "우주대모험 1999",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045743"
+    },
+    "titles": {
+      "ko": "우주대모험 1999",
+      "en": "Space: 1999",
+      "ja": "スペース1999"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

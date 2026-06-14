@@ -1,0 +1,40 @@
+{
+  "wk_000000745": {
+    "workId": "wk_000000745",
+    "title": "퓨리오사",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100361125"
+    },
+    "titles": {
+      "ko": "퓨리오사",
+      "en": "Furiosa: A Mad Max Saga",
+      "ja": "マッドマックス:フュリオサ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000806": {
+    "workId": "wk_000000806",
+    "title": "매란방",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004392"
+    },
+    "titles": {
+      "ko": "매란방",
+      "en": "Forever Enthralled",
+      "ja": "花の生涯〜梅蘭芳〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

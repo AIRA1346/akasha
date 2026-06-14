@@ -1,0 +1,21 @@
+{
+  "wk_000000866": {
+    "workId": "wk_000000866",
+    "title": "영웅왕, 극한의 무를 위해 전생하다 ~그리고 세계 최강의 견습기사가 되다♀~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036026"
+    },
+    "titles": {
+      "ko": "영웅왕, 극한의 무를 위해 전생하다 ~그리고 세계 최강의 견습기사가 되다♀~",
+      "en": "Reborn to Master the Blade: From Hero-King to Extraordinary Squire",
+      "ja": "英雄王、武を極めるため転生す 〜そして、世界最強の見習い騎士♀〜"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

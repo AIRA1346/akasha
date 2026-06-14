@@ -1,0 +1,59 @@
+{
+  "wk_000000597": {
+    "workId": "wk_000000597",
+    "title": "DayZ",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10279881"
+    },
+    "titles": {
+      "ko": "DayZ",
+      "en": "DayZ",
+      "ja": "DayZ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000780": {
+    "workId": "wk_000000780",
+    "title": "파라다이스 킬러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104161755"
+    },
+    "titles": {
+      "ko": "파라다이스 킬러",
+      "en": "Paradise Killer",
+      "ja": "パラダイスキラー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000785": {
+    "workId": "wk_000000785",
+    "title": "아이돌마스터 팝 링크스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104210521"
+    },
+    "titles": {
+      "ko": "아이돌마스터 팝 링크스",
+      "en": "The Idolmaster Poplinks",
+      "ja": "アイドルマスター ポップリンクス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

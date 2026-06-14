@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000899": {
+    "workId": "wk_000000899",
+    "title": "천지를 먹다 2-적벽대전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045002"
+    },
+    "titles": {
+      "ko": "천지를 먹다 2-적벽대전",
+      "en": "Warriors of Fate",
+      "ja": "天地を喰らう2・赤壁の戦い"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

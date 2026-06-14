@@ -1,0 +1,21 @@
+{
+  "wk_000000760": {
+    "workId": "wk_000000760",
+    "title": "구구는 고양이다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10921722"
+    },
+    "titles": {
+      "ko": "구구는 고양이다",
+      "en": "Gū-Gū Datte Neko de Aru",
+      "ja": "グーグーだって猫である"
+    },
+    "creator": "Yumiko Ōshima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

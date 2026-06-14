@@ -1,0 +1,20 @@
+{
+  "wk_000000951": {
+    "workId": "wk_000000951",
+    "title": "더 리퍼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104621358"
+    },
+    "titles": {
+      "ko": "더 리퍼",
+      "en": "The Ripper",
+      "ja": "ヨークシャー・リッパー: 猟奇殺人事件の真相"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

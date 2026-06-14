@@ -76,9 +76,9 @@ Phase 0 ✅ → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phas
 | # | 작업 | 근거 | 상태 |
 |:-:|------|------|:----:|
 | 2.0 | Baseline 측정 | 490→N 비교 | ✅ |
-| 2.1 | search_index lazy / 분할 | parse ms · file MB | ⏳ trigger |
-| 2.2 | Browse pagination · master_index 제거 | 체감 | ⏳ |
-| 2.3 | manifest-only / eager bundle | APK MB | ⏳ |
+| 2.1 | search_index lazy / 분할 | parse ms · file MB | ✅ ADR-009 |
+| 2.2 | Browse pagination · master_index prefetch 완화 | 체감 | ✅ window + UI |
+| 2.3 | manifest-only / eager bundle | APK MB | 🔄 ADR-010 |
 | 2.4 | `RegistryPort` page API | Phase 3+ | ⏳ |
 
 **Exit:** 5k 시나리오 **측정** 통과 (문서: [registry-scaling-review](../validation/registry-scaling-review.md)).
@@ -178,9 +178,9 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0~1 · 2.0 baseline · Phase 4.1~**4.4a** |
-| **진행** | Phase 4.4b Entity link · Sprint B friction |
-| **보류** | Phase 2.1~2.3 (baseline trigger 전) · M3 |
+| **완료** | Phase 0~1 · 2.0~**2.2** · Phase 4.1~**4.4a** |
+| **진행** | Discovery G1 insert · **Phase 2.3** bundle flag · Phase 4.4b |
+| **다음** | Phase 2.3 manifest-only bundle |
 
 ---
 

@@ -1,0 +1,40 @@
+{
+  "wk_000000608": {
+    "workId": "wk_000000608",
+    "title": "케로로 더 무비: 드래곤 워리어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1039018"
+    },
+    "titles": {
+      "ko": "케로로 더 무비: 드래곤 워리어",
+      "en": "Keroro Gunso the Super Movie 4: Gekishin Dragon Warriors",
+      "ja": "超劇場版ケロロ軍曹 撃侵ドラゴンウォリアーズであります!"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001016": {
+    "workId": "wk_000001016",
+    "title": "신이 있는 달의 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106645541"
+    },
+    "titles": {
+      "ko": "신이 있는 달의 아이",
+      "en": "Child of Kamiari Month",
+      "ja": "神在月のこども"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000000932": {
+    "workId": "wk_000000932",
+    "title": "신분장",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102164402"
+    },
+    "titles": {
+      "ko": "신분장",
+      "en": "Q102164402",
+      "ja": "身分帳"
+    },
+    "releaseYear": 1990,
+    "creator": "Ryūzō Saki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

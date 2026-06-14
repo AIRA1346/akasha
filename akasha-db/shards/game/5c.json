@@ -31,5 +31,41 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000782": {
+    "workId": "wk_000000782",
+    "title": "이블 데드: 더 게임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104172911"
+    },
+    "titles": {
+      "ko": "이블 데드: 더 게임",
+      "en": "Evil Dead: The Game"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000902": {
+    "workId": "wk_000000902",
+    "title": "데이 오브 디피트: 소스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045397"
+    },
+    "titles": {
+      "ko": "데이 오브 디피트: 소스",
+      "en": "Day of Defeat: Source"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

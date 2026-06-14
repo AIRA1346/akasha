@@ -32,5 +32,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000720": {
+    "workId": "wk_000000720",
+    "title": "베이스볼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041292"
+    },
+    "titles": {
+      "ko": "베이스볼",
+      "en": "Baseball",
+      "ja": "ベースボール"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

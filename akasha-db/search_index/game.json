@@ -1,0 +1,6069 @@
+[
+  {
+    "workId": "wk_000000562",
+    "title": "007 퍼스트 라이트",
+    "shardId": "game_df",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "007 First Light",
+      "007 퍼스트 라이트",
+      "007firstlight",
+      "007퍼스트라이트"
+    ],
+    "titles": {
+      "ko": "007 퍼스트 라이트",
+      "en": "007 First Light"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000907",
+    "title": "428 ~봉쇄된 시부야에서~",
+    "shardId": "game_c9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "428 ~봉쇄된 시부야에서~",
+      "428 〜封鎖された渋谷で〜",
+      "428: Shibuya Scramble",
+      "428shibuyascramble",
+      "428~봉쇄된시부야에서~",
+      "428〜封鎖された渋谷で〜"
+    ],
+    "titles": {
+      "ko": "428 ~봉쇄된 시부야에서~",
+      "en": "428: Shibuya Scramble",
+      "ja": "428 〜封鎖された渋谷で〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000082",
+    "title": "7 Days to Die",
+    "shardId": "game_04",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "The Fun Pimps",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "7 Days to Die",
+      "7daystodie",
+      "Steam",
+      "The Fun Pimps",
+      "steam",
+      "thefunpimps",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "7 Days to Die",
+      "ko": "7 Days to Die"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000126",
+    "title": "Age of Empires II DE",
+    "shardId": "game_c2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Forgotten Empires",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Age of Empires II DE",
+      "Forgotten Empires",
+      "Save 65% on Age of Empires II: Definitive Edition",
+      "Steam",
+      "ageofempiresiide",
+      "forgottenempires",
+      "save65%onageofempiresiidefinitiveedition",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 65% on Age of Empires II: Definitive Edition",
+      "ko": "Age of Empires II DE"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000051",
+    "title": "Age of Empires IV",
+    "shardId": "game_5d",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Relic",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Age of Empires IV",
+      "Relic",
+      "Save 65% on Age of Empires IV: Anniversary Edition",
+      "Steam",
+      "ageofempiresiv",
+      "relic",
+      "save65%onageofempiresivanniversaryedition",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 65% on Age of Empires IV: Anniversary Edition",
+      "ko": "Age of Empires IV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000060",
+    "title": "Armored Core VI",
+    "shardId": "game_6a",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "ARMORED CORE™ VI FIRES OF RUBICON™",
+      "Armored Core VI",
+      "FromSoftware",
+      "Steam",
+      "armoredcorevi",
+      "armoredcore™vifiresofrubicon™",
+      "fromsoftware",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "ARMORED CORE™ VI FIRES OF RUBICON™",
+      "ko": "Armored Core VI"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000130",
+    "title": "Cities Skylines II",
+    "shardId": "game_b0",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Colossal Order",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Cities Skylines II",
+      "Cities: Skylines II",
+      "Colossal Order",
+      "Steam",
+      "citiesskylinesii",
+      "colossalorder",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Cities: Skylines II",
+      "ko": "Cities Skylines II"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000901",
+    "title": "DNF 듀얼",
+    "shardId": "game_b0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DNF Duel",
+      "DNF 듀얼",
+      "dnfduel",
+      "dnf듀얼"
+    ],
+    "titles": {
+      "ko": "DNF 듀얼",
+      "en": "DNF Duel",
+      "ja": "DNF Duel"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000597",
+    "title": "DayZ",
+    "shardId": "game_1c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DayZ",
+      "dayz"
+    ],
+    "titles": {
+      "ko": "DayZ",
+      "en": "DayZ",
+      "ja": "DayZ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000067",
+    "title": "Don't Starve",
+    "shardId": "game_cb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Klei",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Don't Starve",
+      "Klei",
+      "Steam",
+      "don'tstarve",
+      "klei",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Don't Starve",
+      "ko": "Don't Starve"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000094",
+    "title": "Don't Starve Together",
+    "shardId": "game_53",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Klei",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Don't Starve Together",
+      "Klei",
+      "Steam",
+      "don'tstarvetogether",
+      "klei",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Don't Starve Together",
+      "ko": "Don't Starve Together"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000078",
+    "title": "Dying Light",
+    "shardId": "game_97",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Techland",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Dying Light",
+      "Steam",
+      "Techland",
+      "dyinglight",
+      "steam",
+      "techland",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Dying Light",
+      "ko": "Dying Light"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000114",
+    "title": "Dying Light 2",
+    "shardId": "game_96",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Techland",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Dying Light 2",
+      "Dying Light 2 Stay Human: Reloaded Edition",
+      "Steam",
+      "Techland",
+      "dyinglight2",
+      "dyinglight2stayhumanreloadededition",
+      "steam",
+      "techland",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Dying Light 2 Stay Human: Reloaded Edition",
+      "ko": "Dying Light 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000044",
+    "title": "GTA IV",
+    "shardId": "game_39",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "GTA IV",
+      "Grand Theft Auto IV: The Complete Edition",
+      "Rockstar",
+      "Steam",
+      "grandtheftautoivthecompleteedition",
+      "gtaiv",
+      "rockstar",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Grand Theft Auto IV: The Complete Edition",
+      "ko": "GTA IV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000043",
+    "title": "GTA San Andreas",
+    "shardId": "game_cb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "GTA San Andreas",
+      "Grand Theft Auto: San Andreas",
+      "Rockstar",
+      "Steam",
+      "grandtheftautosanandreas",
+      "gtasanandreas",
+      "rockstar",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Grand Theft Auto: San Andreas",
+      "ko": "GTA San Andreas"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000069",
+    "title": "Ghost of Tsushima",
+    "shardId": "game_5c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Sucker Punch",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Ghost of Tsushima",
+      "Steam",
+      "Sucker Punch",
+      "Vector Wave",
+      "ghostoftsushima",
+      "steam",
+      "suckerpunch",
+      "vectorwave",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Vector Wave",
+      "ko": "Ghost of Tsushima"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000095",
+    "title": "Grand Theft Auto III",
+    "shardId": "game_48",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Grand Theft Auto III",
+      "Grand Theft Auto V Enhanced",
+      "Rockstar",
+      "Steam",
+      "grandtheftautoiii",
+      "grandtheftautovenhanced",
+      "rockstar",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Grand Theft Auto V Enhanced",
+      "ko": "Grand Theft Auto III"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000033",
+    "title": "Hades II",
+    "shardId": "game_04",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Supergiant",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Hades II",
+      "Steam",
+      "Supergiant",
+      "hadesii",
+      "steam",
+      "supergiant",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Hades II",
+      "ko": "Hades II"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000056",
+    "title": "Lies of P",
+    "shardId": "game_b0",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Neowiz",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Lies of P",
+      "Neowiz",
+      "Steam",
+      "liesofp",
+      "neowiz",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Lies of P",
+      "ko": "Lies of P"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000566",
+    "title": "NEO: 더 월드 엔즈 위드 유",
+    "shardId": "game_42",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "NEO: The World Ends With You",
+      "NEO: 더 월드 엔즈 위드 유",
+      "neotheworldendswithyou",
+      "neo더월드엔즈위드유",
+      "新すばらしきこのせかい"
+    ],
+    "titles": {
+      "ko": "NEO: 더 월드 엔즈 위드 유",
+      "en": "NEO: The World Ends With You",
+      "ja": "新すばらしきこのせかい"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000110",
+    "title": "Nioh",
+    "shardId": "game_bf",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Ninja",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Nioh",
+      "Save 85% on Nioh: Complete Edition",
+      "Steam",
+      "Team Ninja",
+      "nioh",
+      "save85%onniohcompleteedition",
+      "steam",
+      "teamninja",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 85% on Nioh: Complete Edition",
+      "ko": "Nioh"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000047",
+    "title": "Nioh 2",
+    "shardId": "game_d3",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Ninja",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Nioh 2",
+      "Save 60% on Nioh 2 – The Complete Edition",
+      "Steam",
+      "Team Ninja",
+      "nioh2",
+      "save60%onnioh2thecompleteedition",
+      "steam",
+      "teamninja",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 60% on Nioh 2 – The Complete Edition",
+      "ko": "Nioh 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000128",
+    "title": "Resident Evil 2",
+    "shardId": "game_50",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Capcom",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Capcom",
+      "Resident Evil 2",
+      "Save 80% on Resident Evil 2",
+      "Steam",
+      "capcom",
+      "residentevil2",
+      "save80%onresidentevil2",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 80% on Resident Evil 2",
+      "ko": "Resident Evil 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000131",
+    "title": "Resident Evil 3",
+    "shardId": "game_6f",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Capcom",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Capcom",
+      "Resident Evil 3",
+      "Save 80% on Resident Evil 3",
+      "Steam",
+      "capcom",
+      "residentevil3",
+      "save80%onresidentevil3",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 80% on Resident Evil 3",
+      "ko": "Resident Evil 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000065",
+    "title": "Resident Evil 4",
+    "shardId": "game_be",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Capcom",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Capcom",
+      "Resident Evil 4",
+      "Save 75% on Resident Evil 4",
+      "Steam",
+      "capcom",
+      "residentevil4",
+      "save75%onresidentevil4",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 75% on Resident Evil 4",
+      "ko": "Resident Evil 4"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000041",
+    "title": "Resident Evil Village",
+    "shardId": "game_9b",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Capcom",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Capcom",
+      "Resident Evil Village",
+      "Save 75% on Resident Evil Village",
+      "Steam",
+      "capcom",
+      "residentevilvillage",
+      "save75%onresidentevilvillage",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 75% on Resident Evil Village",
+      "ko": "Resident Evil Village"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000604",
+    "title": "Sneaky Sasquatch",
+    "shardId": "game_75",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sneaky Sasquatch",
+      "sneakysasquatch"
+    ],
+    "titles": {
+      "ko": "Sneaky Sasquatch",
+      "en": "Sneaky Sasquatch",
+      "ja": "Sneaky Sasquatch"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000048",
+    "title": "Sons of the Forest",
+    "shardId": "game_51",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Endnight",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Endnight",
+      "Save 70% on Sons Of The Forest",
+      "Sons of the Forest",
+      "Steam",
+      "endnight",
+      "save70%onsonsoftheforest",
+      "sonsoftheforest",
+      "steam",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 70% on Sons Of The Forest",
+      "ko": "Sons of the Forest"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000605",
+    "title": "가디언 테일즈",
+    "shardId": "game_65",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Guardian Tales",
+      "guardiantales",
+      "ガーディアンテイルズ",
+      "가디언 테일즈",
+      "가디언테일즈"
+    ],
+    "titles": {
+      "ko": "가디언 테일즈",
+      "en": "Guardian Tales",
+      "ja": "ガーディアンテイルズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000104",
+    "title": "가라오케 파티",
+    "shardId": "game_b2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Save 50% on Garry's Mod",
+      "Steam",
+      "Valve",
+      "save50%ongarry'smod",
+      "steam",
+      "valve",
+      "가라오케 파티",
+      "가라오케파티",
+      "게임",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Save 50% on Garry's Mod",
+      "ko": "가라오케 파티"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000053",
+    "title": "갓 오브 워",
+    "shardId": "game_2c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Santa Monica Studio",
+    "tags": [
+      "액션",
+      "신화",
+      "스토리",
+      "명작"
+    ],
+    "searchTokens": [
+      "God of War",
+      "Santa Monica Studio",
+      "godofwar",
+      "santamonicastudio",
+      "갓 오브 워",
+      "갓오브워",
+      "명작",
+      "스토리",
+      "신화",
+      "액션"
+    ],
+    "titles": {
+      "en": "God of War",
+      "ko": "갓 오브 워"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000834",
+    "title": "갤러가",
+    "shardId": "game_74",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Galaga",
+      "galaga",
+      "ギャラガ",
+      "갤러가"
+    ],
+    "titles": {
+      "ko": "갤러가",
+      "en": "Galaga",
+      "ja": "ギャラガ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001013",
+    "title": "골든 액스",
+    "shardId": "game_4b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Golden Axe",
+      "goldenaxe",
+      "ゴールデンアックス",
+      "골든 액스",
+      "골든액스"
+    ],
+    "titles": {
+      "ko": "골든 액스",
+      "en": "Golden Axe",
+      "ja": "ゴールデンアックス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000599",
+    "title": "골든 액스: 더 듀얼",
+    "shardId": "game_f5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Golden Axe: The Duel",
+      "goldenaxetheduel",
+      "ゴールデンアックスザデュエル",
+      "ゴールデンアックス・ザ・デュエル",
+      "골든 액스: 더 듀얼",
+      "골든액스더듀얼"
+    ],
+    "titles": {
+      "ko": "골든 액스: 더 듀얼",
+      "en": "Golden Axe: The Duel",
+      "ja": "ゴールデンアックス・ザ・デュエル"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000090",
+    "title": "그랜드 테프트 오토 V",
+    "shardId": "game_be",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar Games",
+    "tags": [
+      "오픈월드",
+      "액션",
+      "범죄",
+      "멀티"
+    ],
+    "searchTokens": [
+      "Grand Theft Auto V Legacy",
+      "Rockstar Games",
+      "grandtheftautovlegacy",
+      "rockstargames",
+      "그랜드 테프트 오토 V",
+      "그랜드테프트오토v",
+      "멀티",
+      "범죄",
+      "액션",
+      "오픈월드"
+    ],
+    "titles": {
+      "en": "Grand Theft Auto V Legacy",
+      "ko": "그랜드 테프트 오토 V"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000965",
+    "title": "기노모 소드",
+    "shardId": "game_09",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ginormo Sword",
+      "ginormosword",
+      "太くて長いオレの○○ 2",
+      "太くて長いオレの○○2",
+      "기노모 소드",
+      "기노모소드"
+    ],
+    "titles": {
+      "ko": "기노모 소드",
+      "en": "Ginormo Sword",
+      "ja": "太くて長いオレの○○ 2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000276",
+    "title": "니어: 오토마타",
+    "shardId": "game_79",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "PlatinumGames",
+    "tags": [
+      "액션",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "searchTokens": [
+      "NieR:Automata™",
+      "PlatinumGames",
+      "SF",
+      "nierautomata™",
+      "platinumgames",
+      "sf",
+      "니어: 오토마타",
+      "니어오토마타",
+      "명작",
+      "액션",
+      "철학"
+    ],
+    "titles": {
+      "en": "NieR:Automata™",
+      "ko": "니어: 오토마타"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000066",
+    "title": "다크 소울",
+    "shardId": "game_c2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Dishonored",
+      "FromSoftware",
+      "Steam",
+      "dishonored",
+      "fromsoftware",
+      "steam",
+      "게임",
+      "다크 소울",
+      "다크소울",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "Dishonored",
+      "ko": "다크 소울"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000099",
+    "title": "다크 소울 3",
+    "shardId": "game_fb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "DARK SOULS™ III",
+      "FromSoftware",
+      "Steam",
+      "darksouls™iii",
+      "fromsoftware",
+      "steam",
+      "게임",
+      "다크 소울 3",
+      "다크소울3",
+      "대중문화"
+    ],
+    "titles": {
+      "en": "DARK SOULS™ III",
+      "ko": "다크 소울 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000268",
+    "title": "단간론파",
+    "shardId": "game_e1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Spike Chunsoft",
+    "tags": [
+      "미스터리",
+      "어드벤처",
+      "학원",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Danganronpa: Trigger Happy Havoc",
+      "Spike Chunsoft",
+      "danganronpatriggerhappyhavoc",
+      "spikechunsoft",
+      "단간론파",
+      "미스터리",
+      "서브컬처",
+      "어드벤처",
+      "학원"
+    ],
+    "titles": {
+      "en": "Danganronpa: Trigger Happy Havoc",
+      "ko": "단간론파"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000144",
+    "title": "더 엘더스크롤 V: 스카이림",
+    "shardId": "game_4b",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "tags": [
+      "오픈월드",
+      "RPG",
+      "판타지",
+      "명작"
+    ],
+    "searchTokens": [
+      "Bethesda",
+      "RPG",
+      "The Elder Scrolls V: Skyrim",
+      "bethesda",
+      "rpg",
+      "theelderscrollsvskyrim",
+      "더 엘더스크롤 V: 스카이림",
+      "더엘더스크롤v스카이림",
+      "명작",
+      "오픈월드",
+      "판타지"
+    ],
+    "titles": {
+      "en": "The Elder Scrolls V: Skyrim",
+      "ko": "더 엘더스크롤 V: 스카이림"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000146",
+    "title": "더 위처 3: 와일드 헌트",
+    "shardId": "game_26",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "CD PROJEKT RED",
+    "tags": [
+      "오픈월드",
+      "RPG",
+      "판타지",
+      "명작"
+    ],
+    "searchTokens": [
+      "CD PROJEKT RED",
+      "RPG",
+      "The Witcher 3: Wild Hunt",
+      "cdprojektred",
+      "rpg",
+      "thewitcher3wildhunt",
+      "더 위처 3: 와일드 헌트",
+      "더위처3와일드헌트",
+      "명작",
+      "오픈월드",
+      "판타지"
+    ],
+    "titles": {
+      "en": "The Witcher 3: Wild Hunt",
+      "ko": "더 위처 3: 와일드 헌트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000711",
+    "title": "더 킹 오브 파이터즈 '98 얼티밋 매치",
+    "shardId": "game_83",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The King of Fighters '98 Ultimate Match",
+      "thekingoffighters'98ultimatematch",
+      "더 킹 오브 파이터즈 '98 얼티밋 매치",
+      "더킹오브파이터즈'98얼티밋매치"
+    ],
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 '98 얼티밋 매치",
+      "en": "The King of Fighters '98 Ultimate Match"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000081",
+    "title": "더 포레스트",
+    "shardId": "game_70",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Endnight",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Endnight",
+      "Save 78% on The Forest",
+      "Steam",
+      "endnight",
+      "save78%ontheforest",
+      "steam",
+      "게임",
+      "대중문화",
+      "더 포레스트",
+      "더포레스트"
+    ],
+    "titles": {
+      "en": "Save 78% on The Forest",
+      "ko": "더 포레스트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000102",
+    "title": "데드 바이 데이라이트",
+    "shardId": "game_58",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Behaviour",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Behaviour",
+      "Dead by Daylight",
+      "Steam",
+      "behaviour",
+      "deadbydaylight",
+      "steam",
+      "게임",
+      "대중문화",
+      "데드 바이 데이라이트",
+      "데드바이데이라이트"
+    ],
+    "titles": {
+      "en": "Dead by Daylight",
+      "ko": "데드 바이 데이라이트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000028",
+    "title": "데스티니 가디언즈",
+    "shardId": "game_98",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bungie",
+    "tags": [
+      "루트슈터",
+      "MMO",
+      "SF",
+      "협동"
+    ],
+    "searchTokens": [
+      "Bungie",
+      "Destiny 2",
+      "MMO",
+      "SF",
+      "bungie",
+      "destiny2",
+      "mmo",
+      "sf",
+      "데스티니 가디언즈",
+      "데스티니가디언즈",
+      "루트슈터",
+      "협동"
+    ],
+    "titles": {
+      "en": "Destiny 2",
+      "ko": "데스티니 가디언즈"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000902",
+    "title": "데이 오브 디피트: 소스",
+    "shardId": "game_5c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Day of Defeat: Source",
+      "dayofdefeatsource",
+      "데이 오브 디피트: 소스",
+      "데이오브디피트소스"
+    ],
+    "titles": {
+      "ko": "데이 오브 디피트: 소스",
+      "en": "Day of Defeat: Source"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000118",
+    "title": "도타 2",
+    "shardId": "game_78",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "전략"
+    ],
+    "searchTokens": [
+      "Dota 2",
+      "MOBA",
+      "PvP",
+      "Valve",
+      "dota2",
+      "e스포츠",
+      "moba",
+      "pvp",
+      "valve",
+      "도타 2",
+      "도타2",
+      "전략"
+    ],
+    "titles": {
+      "en": "Dota 2",
+      "ko": "도타 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000125",
+    "title": "도타 언더로드",
+    "shardId": "game_fb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "DOOM Eternal",
+      "Steam",
+      "Valve",
+      "doometernal",
+      "steam",
+      "valve",
+      "게임",
+      "대중문화",
+      "도타 언더로드",
+      "도타언더로드"
+    ],
+    "titles": {
+      "en": "DOOM Eternal",
+      "ko": "도타 언더로드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000284",
+    "title": "동방 로스트 워드",
+    "shardId": "game_ea",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Team Shanghai Alice",
+    "tags": [
+      "슈팅",
+      "동방",
+      "판타지",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Team Shanghai Alice",
+      "Touhou Lost Word",
+      "teamshanghaialice",
+      "touhoulostword",
+      "동방",
+      "동방 로스트 워드",
+      "동방로스트워드",
+      "서브컬처",
+      "슈팅",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Touhou Lost Word",
+      "ko": "동방 로스트 워드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000787",
+    "title": "동방영야초 ~ Imperishable Night",
+    "shardId": "game_88",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Touhou Eiyashou ~ Imperishable Night",
+      "touhoueiyashou~imperishablenight",
+      "東方永夜抄 〜 Imperishable Night.",
+      "東方永夜抄〜imperishablenight.",
+      "동방영야초 ~ Imperishable Night",
+      "동방영야초~imperishablenight"
+    ],
+    "titles": {
+      "ko": "동방영야초 ~ Imperishable Night",
+      "en": "Touhou Eiyashou ~ Imperishable Night",
+      "ja": "東方永夜抄 〜 Imperishable Night."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000786",
+    "title": "동방요요몽 ~ Perfect Cherry Blossom",
+    "shardId": "game_30",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Touhou Youyoumu ~ Perfect Cherry Blossom",
+      "touhouyouyoumu~perfectcherryblossom",
+      "東方妖々夢 〜 Perfect Cherry Blossom.",
+      "東方妖々夢〜perfectcherryblossom.",
+      "동방요요몽 ~ Perfect Cherry Blossom",
+      "동방요요몽~perfectcherryblossom"
+    ],
+    "titles": {
+      "ko": "동방요요몽 ~ Perfect Cherry Blossom",
+      "en": "Touhou Youyoumu ~ Perfect Cherry Blossom",
+      "ja": "東方妖々夢 〜 Perfect Cherry Blossom."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000961",
+    "title": "동방풍신록 ~ Mountain of Faith",
+    "shardId": "game_e5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Touhou Fuujinroku ~ Mountain of Faith",
+      "touhoufuujinroku~mountainoffaith",
+      "東方風神録 〜 Mountain of Faith.",
+      "東方風神録〜mountainoffaith.",
+      "동방풍신록 ~ Mountain of Faith",
+      "동방풍신록~mountainoffaith"
+    ],
+    "titles": {
+      "ko": "동방풍신록 ~ Mountain of Faith",
+      "en": "Touhou Fuujinroku ~ Mountain of Faith",
+      "ja": "東方風神録 〜 Mountain of Faith."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000568",
+    "title": "동키콩 Jr.의 산수놀이",
+    "shardId": "game_ac",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Donkey Kong Jr. Math",
+      "donkeykongjr.math",
+      "ドンキーコングJR.の算数遊び",
+      "ドンキーコングjr.の算数遊び",
+      "동키콩 Jr.의 산수놀이",
+      "동키콩jr.의산수놀이"
+    ],
+    "titles": {
+      "ko": "동키콩 Jr.의 산수놀이",
+      "en": "Donkey Kong Jr. Math",
+      "ja": "ドンキーコングJR.の算数遊び"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000570",
+    "title": "드라이브클럽",
+    "shardId": "game_67",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DRIVECLUB",
+      "Driveclub",
+      "driveclub",
+      "드라이브클럽"
+    ],
+    "titles": {
+      "ko": "드라이브클럽",
+      "en": "Driveclub",
+      "ja": "DRIVECLUB"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001012",
+    "title": "드래곤 에이지: 더 베일가드",
+    "shardId": "game_59",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dragon Age: The Veilguard",
+      "dragonagetheveilguard",
+      "드래곤 에이지: 더 베일가드",
+      "드래곤에이지더베일가드"
+    ],
+    "titles": {
+      "ko": "드래곤 에이지: 더 베일가드",
+      "en": "Dragon Age: The Veilguard"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000137",
+    "title": "디아블로 IV",
+    "shardId": "game_13",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "tags": [
+      "핵앤슬래시",
+      "RPG",
+      "다크",
+      "온라인"
+    ],
+    "searchTokens": [
+      "Blizzard",
+      "Diablo® IV",
+      "RPG",
+      "blizzard",
+      "diablo®iv",
+      "rpg",
+      "다크",
+      "디아블로 IV",
+      "디아블로iv",
+      "온라인",
+      "핵앤슬래시"
+    ],
+    "titles": {
+      "en": "Diablo® IV",
+      "ko": "디아블로 IV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000115",
+    "title": "딥 락 갤럭틱",
+    "shardId": "game_ca",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Ghost Ship",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Deep Rock Galactic",
+      "Ghost Ship",
+      "Steam",
+      "deeprockgalactic",
+      "ghostship",
+      "steam",
+      "게임",
+      "대중문화",
+      "딥 락 갤럭틱",
+      "딥락갤럭틱"
+    ],
+    "titles": {
+      "en": "Deep Rock Galactic",
+      "ko": "딥 락 갤럭틱"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000086",
+    "title": "라스트 오브 어스 Part II",
+    "shardId": "game_97",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Naughty Dog",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Naughty Dog",
+      "Steam",
+      "The Last of Us™ Part II Remastered",
+      "naughtydog",
+      "steam",
+      "thelastofus™partiiremastered",
+      "게임",
+      "대중문화",
+      "라스트 오브 어스 Part II",
+      "라스트오브어스partii"
+    ],
+    "titles": {
+      "en": "The Last of Us™ Part II Remastered",
+      "ko": "라스트 오브 어스 Part II"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000713",
+    "title": "라이자의 아틀리에 2 ~잃어버린 전승과 비밀의 요정~",
+    "shardId": "game_c8",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Atelier Ryza 2: Lost Legends & the Secret Fairy",
+      "atelierryza2lostlegends&thesecretfairy",
+      "ライザのアトリエ2 〜失われた伝承と秘密の妖精〜",
+      "ライザのアトリエ2〜失われた伝承と秘密の妖精〜",
+      "라이자의 아틀리에 2 ~잃어버린 전승과 비밀의 요정~",
+      "라이자의아틀리에2~잃어버린전승과비밀의요정~"
+    ],
+    "titles": {
+      "ko": "라이자의 아틀리에 2 ~잃어버린 전승과 비밀의 요정~",
+      "en": "Atelier Ryza 2: Lost Legends & the Secret Fairy",
+      "ja": "ライザのアトリエ2 〜失われた伝承と秘密の妖精〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000714",
+    "title": "락 레벌루션",
+    "shardId": "game_46",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Rock Revolution",
+      "rockrevolution",
+      "락 레벌루션",
+      "락레벌루션"
+    ],
+    "titles": {
+      "ko": "락 레벌루션",
+      "en": "Rock Revolution"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000601",
+    "title": "랜드매스",
+    "shardId": "game_6e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Landmass",
+      "landmass",
+      "랜드매스"
+    ],
+    "titles": {
+      "ko": "랜드매스",
+      "en": "Landmass"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000274",
+    "title": "러브라이브! 올스타즈",
+    "shardId": "game_29",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "KLab",
+    "tags": [
+      "리듬",
+      "아이돌",
+      "수집",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "KLab",
+      "Love Live ALL Stars",
+      "klab",
+      "loveliveallstars",
+      "러브라이브! 올스타즈",
+      "러브라이브!올스타즈",
+      "리듬",
+      "서브컬처",
+      "수집",
+      "아이돌"
+    ],
+    "titles": {
+      "en": "Love Live ALL Stars",
+      "ko": "러브라이브! 올스타즈"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000083",
+    "title": "러스트",
+    "shardId": "game_d8",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Facepunch Studios",
+    "tags": [
+      "서바이벌",
+      "PvP",
+      "샌드박스",
+      "하드코어"
+    ],
+    "searchTokens": [
+      "Facepunch Studios",
+      "PvP",
+      "Rust",
+      "facepunchstudios",
+      "pvp",
+      "rust",
+      "러스트",
+      "샌드박스",
+      "서바이벌",
+      "하드코어"
+    ],
+    "titles": {
+      "en": "Rust",
+      "ko": "러스트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000039",
+    "title": "레드 데드 리뎀션 2",
+    "shardId": "game_9c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar Games",
+    "tags": [
+      "오픈월드",
+      "서부",
+      "액션",
+      "스토리"
+    ],
+    "searchTokens": [
+      "Red Dead Redemption 2",
+      "Rockstar Games",
+      "reddeadredemption2",
+      "rockstargames",
+      "레드 데드 리뎀션 2",
+      "레드데드리뎀션2",
+      "서부",
+      "스토리",
+      "액션",
+      "오픈월드"
+    ],
+    "titles": {
+      "en": "Red Dead Redemption 2",
+      "ko": "레드 데드 리뎀션 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000064",
+    "title": "레딧 리데임",
+    "shardId": "game_92",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Digixart",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Digixart",
+      "Lethal Company",
+      "Steam",
+      "digixart",
+      "lethalcompany",
+      "steam",
+      "게임",
+      "대중문화",
+      "레딧 리데임",
+      "레딧리데임"
+    ],
+    "titles": {
+      "en": "Lethal Company",
+      "ko": "레딧 리데임"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000097",
+    "title": "레인보우 식스 시즈",
+    "shardId": "game_42",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Ubisoft",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Steam",
+      "Tom Clancy's Rainbow Six Siege",
+      "Ubisoft",
+      "steam",
+      "tomclancy'srainbowsixsiege",
+      "ubisoft",
+      "게임",
+      "대중문화",
+      "레인보우 식스 시즈",
+      "레인보우식스시즈"
+    ],
+    "titles": {
+      "en": "Tom Clancy's Rainbow Six Siege",
+      "ko": "레인보우 식스 시즈"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000116",
+    "title": "레인월드",
+    "shardId": "game_c3",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Videocult",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "RAGE 2",
+      "Steam",
+      "Videocult",
+      "rage2",
+      "steam",
+      "videocult",
+      "게임",
+      "대중문화",
+      "레인월드"
+    ],
+    "titles": {
+      "en": "RAGE 2",
+      "ko": "레인월드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000117",
+    "title": "레프트 4 데드 2",
+    "shardId": "game_94",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Left 4 Dead 2",
+      "Steam",
+      "Valve",
+      "left4dead2",
+      "steam",
+      "valve",
+      "게임",
+      "대중문화",
+      "레프트 4 데드 2",
+      "레프트4데드2"
+    ],
+    "titles": {
+      "en": "Left 4 Dead 2",
+      "ko": "레프트 4 데드 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000054",
+    "title": "로스트 아크",
+    "shardId": "game_31",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Smilegate",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Site Error",
+      "Smilegate",
+      "Steam",
+      "siteerror",
+      "smilegate",
+      "steam",
+      "게임",
+      "대중문화",
+      "로스트 아크",
+      "로스트아크"
+    ],
+    "titles": {
+      "en": "Site Error",
+      "ko": "로스트 아크"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000085",
+    "title": "로켓 리그",
+    "shardId": "game_6e",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Psyonix",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Psyonix",
+      "Rocket League®",
+      "Steam",
+      "psyonix",
+      "rocketleague®",
+      "steam",
+      "게임",
+      "대중문화",
+      "로켓 리그",
+      "로켓리그"
+    ],
+    "titles": {
+      "en": "Rocket League®",
+      "ko": "로켓 리그"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000498",
+    "title": "록맨 X2",
+    "shardId": "game_4c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mega Man X2",
+      "megamanx2",
+      "ロックマンX2",
+      "ロックマンx2",
+      "록맨 X2",
+      "록맨x2"
+    ],
+    "titles": {
+      "ko": "록맨 X2",
+      "en": "Mega Man X2",
+      "ja": "ロックマンX2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000603",
+    "title": "록맨 월드 5",
+    "shardId": "game_b5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mega Man V",
+      "megamanv",
+      "ロックマンワールド5",
+      "록맨 월드 5",
+      "록맨월드5"
+    ],
+    "titles": {
+      "ko": "록맨 월드 5",
+      "en": "Mega Man V",
+      "ja": "ロックマンワールド5"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000139",
+    "title": "리그 오브 레전드",
+    "shardId": "game_fd",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Riot Games",
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "팀전"
+    ],
+    "searchTokens": [
+      "MOBA",
+      "PvP",
+      "Riot Games",
+      "Ruined King: A League of Legends Story™",
+      "e스포츠",
+      "moba",
+      "pvp",
+      "riotgames",
+      "ruinedkingaleagueoflegendsstory™",
+      "리그 오브 레전드",
+      "리그오브레전드",
+      "팀전"
+    ],
+    "titles": {
+      "en": "Ruined King: A League of Legends Story™",
+      "ko": "리그 오브 레전드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000080",
+    "title": "리틀 나이트메어",
+    "shardId": "game_39",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Tarsier",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Assassin’s Creed® IV Black Flag™",
+      "Steam",
+      "Tarsier",
+      "assassin’screed®ivblackflag™",
+      "steam",
+      "tarsier",
+      "게임",
+      "대중문화",
+      "리틀 나이트메어",
+      "리틀나이트메어"
+    ],
+    "titles": {
+      "en": "Assassin’s Creed® IV Black Flag™",
+      "ko": "리틀 나이트메어"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000123",
+    "title": "리틀 나이트메어 2",
+    "shardId": "game_d8",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Supermassive",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Rhythm Doctor",
+      "Steam",
+      "Supermassive",
+      "rhythmdoctor",
+      "steam",
+      "supermassive",
+      "게임",
+      "대중문화",
+      "리틀 나이트메어 2",
+      "리틀나이트메어2"
+    ],
+    "titles": {
+      "en": "Rhythm Doctor",
+      "ko": "리틀 나이트메어 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000093",
+    "title": "림월드",
+    "shardId": "game_98",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Ludeon",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Ludeon",
+      "RimWorld",
+      "Steam",
+      "ludeon",
+      "rimworld",
+      "steam",
+      "게임",
+      "대중문화",
+      "림월드"
+    ],
+    "titles": {
+      "en": "RimWorld",
+      "ko": "림월드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000602",
+    "title": "마다가스카: 펭귄 대작전",
+    "shardId": "game_89",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Madagascar: Operation Penguin",
+      "madagascaroperationpenguin",
+      "마다가스카: 펭귄 대작전",
+      "마다가스카펭귄대작전"
+    ],
+    "titles": {
+      "ko": "마다가스카: 펭귄 대작전",
+      "en": "Madagascar: Operation Penguin"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001014",
+    "title": "마리오 카트 64",
+    "shardId": "game_17",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mario Kart 64",
+      "mariokart64",
+      "マリオカート64",
+      "마리오 카트 64",
+      "마리오카트64"
+    ],
+    "titles": {
+      "ko": "마리오 카트 64",
+      "en": "Mario Kart 64",
+      "ja": "マリオカート64"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000567",
+    "title": "마리오의 슈퍼 피크로스",
+    "shardId": "game_dd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mario's Super Picross",
+      "mario'ssuperpicross",
+      "マリオのスーパーピクロス",
+      "마리오의 슈퍼 피크로스",
+      "마리오의슈퍼피크로스"
+    ],
+    "titles": {
+      "ko": "마리오의 슈퍼 피크로스",
+      "en": "Mario's Super Picross",
+      "ja": "マリオのスーパーピクロス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000059",
+    "title": "마블 스파이더맨 리마스터",
+    "shardId": "game_af",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Insomniac",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Insomniac",
+      "Marvel’s Spider-Man Remastered",
+      "Steam",
+      "insomniac",
+      "marvel’sspidermanremastered",
+      "steam",
+      "게임",
+      "대중문화",
+      "마블 스파이더맨 리마스터",
+      "마블스파이더맨리마스터"
+    ],
+    "titles": {
+      "en": "Marvel’s Spider-Man Remastered",
+      "ko": "마블 스파이더맨 리마스터"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000564",
+    "title": "마사 이즈 데드",
+    "shardId": "game_a4",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Martha Is Dead",
+      "marthaisdead",
+      "마사 이즈 데드",
+      "마사이즈데드"
+    ],
+    "titles": {
+      "ko": "마사 이즈 데드",
+      "en": "Martha Is Dead"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000660",
+    "title": "마이 심즈 심들의 왕국",
+    "shardId": "game_66",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "MySims Kingdom",
+      "mysimskingdom",
+      "마이 심즈 심들의 왕국",
+      "마이심즈심들의왕국"
+    ],
+    "titles": {
+      "ko": "마이 심즈 심들의 왕국",
+      "en": "MySims Kingdom"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000718",
+    "title": "마이니치 잇쇼",
+    "shardId": "game_74",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mainichi Issho",
+      "mainichiissho",
+      "まいにちいっしょ",
+      "마이니치 잇쇼",
+      "마이니치잇쇼"
+    ],
+    "titles": {
+      "ko": "마이니치 잇쇼",
+      "en": "Mainichi Issho",
+      "ja": "まいにちいっしょ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000141",
+    "title": "마인크래프트",
+    "shardId": "game_69",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Mojang Studios",
+    "tags": [
+      "샌드박스",
+      "서바이벌",
+      "크래프팅",
+      "멀티플레이"
+    ],
+    "searchTokens": [
+      "Geometry Dash",
+      "Mojang Studios",
+      "geometrydash",
+      "mojangstudios",
+      "마인크래프트",
+      "멀티플레이",
+      "샌드박스",
+      "서바이벌",
+      "크래프팅"
+    ],
+    "titles": {
+      "en": "Geometry Dash",
+      "ko": "마인크래프트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000140",
+    "title": "매스 이펙트 2",
+    "shardId": "game_fd",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "BioWare",
+    "tags": [
+      "SF",
+      "RPG",
+      "스토리",
+      "선택"
+    ],
+    "searchTokens": [
+      "BioWare",
+      "Mass Effect 2 (2010 Edition)",
+      "RPG",
+      "SF",
+      "bioware",
+      "masseffect2(2010edition)",
+      "rpg",
+      "sf",
+      "매스 이펙트 2",
+      "매스이펙트2",
+      "선택",
+      "스토리"
+    ],
+    "titles": {
+      "en": "Mass Effect 2 (2010 Edition)",
+      "ko": "매스 이펙트 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000659",
+    "title": "머나먼 시공 속에서",
+    "shardId": "game_07",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Haruka: Beyond the Stream of Time",
+      "harukabeyondthestreamoftime",
+      "遙かなる時空の中で",
+      "머나먼 시공 속에서",
+      "머나먼시공속에서"
+    ],
+    "titles": {
+      "ko": "머나먼 시공 속에서",
+      "en": "Haruka: Beyond the Stream of Time",
+      "ja": "遙かなる時空の中で"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000265",
+    "title": "명일방주",
+    "shardId": "game_92",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Hypergryph",
+    "tags": [
+      "타워디펜스",
+      "전략",
+      "SF",
+      "수집"
+    ],
+    "searchTokens": [
+      "Arknights",
+      "Hypergryph",
+      "SF",
+      "arknights",
+      "hypergryph",
+      "sf",
+      "명일방주",
+      "수집",
+      "전략",
+      "타워디펜스"
+    ],
+    "titles": {
+      "en": "Arknights",
+      "ko": "명일방주"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000287",
+    "title": "명조: 워더링 웨이브",
+    "shardId": "game_c3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Kuro Games",
+    "tags": [
+      "오픈월드",
+      "액션",
+      "SF",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Kuro Games",
+      "SF",
+      "Wuthering Waves",
+      "kurogames",
+      "sf",
+      "wutheringwaves",
+      "명조: 워더링 웨이브",
+      "명조워더링웨이브",
+      "서브컬처",
+      "액션",
+      "오픈월드"
+    ],
+    "titles": {
+      "en": "Wuthering Waves",
+      "ko": "명조: 워더링 웨이브"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000275",
+    "title": "몬스터 헌터: 월드",
+    "shardId": "game_a3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "CAPCOM",
+    "tags": [
+      "액션",
+      "협동",
+      "헌팅",
+      "판타지"
+    ],
+    "searchTokens": [
+      "CAPCOM",
+      "Monster Hunter: World",
+      "capcom",
+      "monsterhunterworld",
+      "몬스터 헌터: 월드",
+      "몬스터헌터월드",
+      "액션",
+      "판타지",
+      "헌팅",
+      "협동"
+    ],
+    "titles": {
+      "en": "Monster Hunter: World",
+      "ko": "몬스터 헌터: 월드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000596",
+    "title": "문명: 콜 투 파워",
+    "shardId": "game_c3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Civilization: Call to Power",
+      "civilizationcalltopower",
+      "문명: 콜 투 파워",
+      "문명콜투파워"
+    ],
+    "titles": {
+      "ko": "문명: 콜 투 파워",
+      "en": "Civilization: Call to Power"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000049",
+    "title": "미스트워커",
+    "shardId": "game_84",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Square Enix",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Mass Effect™ Legendary Edition",
+      "Square Enix",
+      "Steam",
+      "masseffect™legendaryedition",
+      "squareenix",
+      "steam",
+      "게임",
+      "대중문화",
+      "미스트워커"
+    ],
+    "titles": {
+      "en": "Mass Effect™ Legendary Edition",
+      "ko": "미스트워커"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000136",
+    "title": "바이오쇼크",
+    "shardId": "game_45",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Irrational Games",
+    "tags": [
+      "FPS",
+      "SF",
+      "철학",
+      "명작"
+    ],
+    "searchTokens": [
+      "BioShock™",
+      "FPS",
+      "Irrational Games",
+      "SF",
+      "bioshock™",
+      "fps",
+      "irrationalgames",
+      "sf",
+      "명작",
+      "바이오쇼크",
+      "철학"
+    ],
+    "titles": {
+      "en": "BioShock™",
+      "ko": "바이오쇼크"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000030",
+    "title": "발할라: 신들의 황혼",
+    "shardId": "game_eb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Ubisoft",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Baldur's Gate 3",
+      "Steam",
+      "Ubisoft",
+      "baldur'sgate3",
+      "steam",
+      "ubisoft",
+      "게임",
+      "대중문화",
+      "발할라: 신들의 황혼",
+      "발할라신들의황혼"
+    ],
+    "titles": {
+      "en": "Baldur's Gate 3",
+      "ko": "발할라: 신들의 황혼"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000129",
+    "title": "발헤임",
+    "shardId": "game_e8",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Iron Gate",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Iron Gate",
+      "Steam",
+      "Valheim",
+      "irongate",
+      "steam",
+      "valheim",
+      "게임",
+      "대중문화",
+      "발헤임"
+    ],
+    "titles": {
+      "en": "Valheim",
+      "ko": "발헤임"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000600",
+    "title": "배트맨: 망토 두른 십자군",
+    "shardId": "game_bc",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Batman: The Caped Crusader",
+      "batmanthecapedcrusader",
+      "배트맨: 망토 두른 십자군",
+      "배트맨망토두른십자군"
+    ],
+    "titles": {
+      "ko": "배트맨: 망토 두른 십자군",
+      "en": "Batman: The Caped Crusader"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000119",
+    "title": "배틀그라운드",
+    "shardId": "game_88",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "KRAFTON",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "KRAFTON",
+      "PUBG: BATTLEGROUNDS",
+      "Steam",
+      "krafton",
+      "pubgbattlegrounds",
+      "steam",
+      "게임",
+      "대중문화",
+      "배틀그라운드"
+    ],
+    "titles": {
+      "en": "PUBG: BATTLEGROUNDS",
+      "ko": "배틀그라운드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000052",
+    "title": "배틀필드 2042",
+    "shardId": "game_fc",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "DICE",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Battlefield™ 2042",
+      "DICE",
+      "Steam",
+      "battlefield™2042",
+      "dice",
+      "steam",
+      "게임",
+      "대중문화",
+      "배틀필드 2042",
+      "배틀필드2042"
+    ],
+    "titles": {
+      "en": "Battlefield™ 2042",
+      "ko": "배틀필드 2042"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000788",
+    "title": "백 4 블러드",
+    "shardId": "game_bc",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Back 4 Blood",
+      "back4blood",
+      "백 4 블러드",
+      "백4블러드"
+    ],
+    "titles": {
+      "ko": "백 4 블러드",
+      "en": "Back 4 Blood"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000506",
+    "title": "버거타임",
+    "shardId": "game_6c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "BurgerTime",
+      "burgertime",
+      "バーガータイム",
+      "버거타임"
+    ],
+    "titles": {
+      "ko": "버거타임",
+      "en": "BurgerTime",
+      "ja": "バーガータイム"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000561",
+    "title": "번아웃 파라다이스",
+    "shardId": "game_76",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Burnout Paradise",
+      "burnoutparadise",
+      "バーンアウト パラダイス",
+      "バーンアウトパラダイス",
+      "번아웃 파라다이스",
+      "번아웃파라다이스"
+    ],
+    "titles": {
+      "ko": "번아웃 파라다이스",
+      "en": "Burnout Paradise",
+      "ja": "バーンアウト パラダイス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000720",
+    "title": "베이스볼",
+    "shardId": "game_d6",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Baseball",
+      "baseball",
+      "ベースボール",
+      "베이스볼"
+    ],
+    "titles": {
+      "ko": "베이스볼",
+      "en": "Baseball",
+      "ja": "ベースボール"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000273",
+    "title": "붕괴: 스타레일",
+    "shardId": "game_bd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "tags": [
+      "턴제",
+      "SF",
+      "수집형RPG",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "HoYoverse",
+      "Honkai Star Rail",
+      "SF",
+      "honkaistarrail",
+      "hoyoverse",
+      "sf",
+      "붕괴: 스타레일",
+      "붕괴스타레일",
+      "서브컬처",
+      "수집형RPG",
+      "수집형rpg",
+      "턴제"
+    ],
+    "titles": {
+      "en": "Honkai Star Rail",
+      "ko": "붕괴: 스타레일"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000964",
+    "title": "브루스윅 프로 볼링",
+    "shardId": "game_04",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Brunswick Pro Bowling",
+      "brunswickprobowling",
+      "브루스윅 프로 볼링",
+      "브루스윅프로볼링"
+    ],
+    "titles": {
+      "ko": "브루스윅 프로 볼링",
+      "en": "Brunswick Pro Bowling"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000075",
+    "title": "블랙 미스",
+    "shardId": "game_7d",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Black Myth: Wukong",
+      "Blizzard",
+      "Steam",
+      "blackmythwukong",
+      "blizzard",
+      "steam",
+      "게임",
+      "대중문화",
+      "블랙 미스",
+      "블랙미스"
+    ],
+    "titles": {
+      "en": "Black Myth: Wukong",
+      "ko": "블랙 미스"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000124",
+    "title": "블러드본",
+    "shardId": "game_93",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Blasphemous",
+      "FromSoftware",
+      "Steam",
+      "blasphemous",
+      "fromsoftware",
+      "steam",
+      "게임",
+      "대중문화",
+      "블러드본"
+    ],
+    "titles": {
+      "en": "Blasphemous",
+      "ko": "블러드본"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000266",
+    "title": "블루 아카이브",
+    "shardId": "game_b1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "NEXON Games",
+    "tags": [
+      "학원물",
+      "수집형RPG",
+      "청춘",
+      "OST"
+    ],
+    "searchTokens": [
+      "Blue Archive",
+      "NEXON Games",
+      "OST",
+      "bluearchive",
+      "nexongames",
+      "ost",
+      "블루 아카이브",
+      "블루아카이브",
+      "수집형RPG",
+      "수집형rpg",
+      "청춘",
+      "학원물"
+    ],
+    "titles": {
+      "en": "Blue Archive",
+      "ko": "블루 아카이브"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000031",
+    "title": "사이버펑크 2077",
+    "shardId": "game_9c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "CD PROJEKT RED",
+    "tags": [
+      "SF",
+      "오픈월드",
+      "RPG",
+      "사이버펑크"
+    ],
+    "searchTokens": [
+      "CD PROJEKT RED",
+      "Cyberpunk 2077",
+      "RPG",
+      "SF",
+      "cdprojektred",
+      "cyberpunk2077",
+      "rpg",
+      "sf",
+      "사이버펑크",
+      "사이버펑크 2077",
+      "사이버펑크2077",
+      "오픈월드"
+    ],
+    "titles": {
+      "en": "Cyberpunk 2077",
+      "ko": "사이버펑크 2077"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000499",
+    "title": "삼국지 11",
+    "shardId": "game_26",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Romance of the Three Kingdoms XI",
+      "romanceofthethreekingdomsxi",
+      "三國志11",
+      "삼국지 11",
+      "삼국지11"
+    ],
+    "titles": {
+      "ko": "삼국지 11",
+      "en": "Romance of the Three Kingdoms XI",
+      "ja": "三國志11"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000113",
+    "title": "새티스팩토리",
+    "shardId": "game_9c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Coffee Stain",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Coffee Stain",
+      "Satisfactory",
+      "Steam",
+      "coffeestain",
+      "satisfactory",
+      "steam",
+      "게임",
+      "대중문화",
+      "새티스팩토리"
+    ],
+    "titles": {
+      "en": "Satisfactory",
+      "ko": "새티스팩토리"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000839",
+    "title": "선검기협전 7",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Legend of Sword and Fairy 7",
+      "thelegendofswordandfairy7",
+      "仙剣奇侠伝七",
+      "선검기협전 7",
+      "선검기협전7"
+    ],
+    "titles": {
+      "ko": "선검기협전 7",
+      "en": "The Legend of Sword and Fairy 7",
+      "ja": "仙剣奇侠伝七"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000127",
+    "title": "세키로",
+    "shardId": "game_6d",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "FromSoftware",
+      "Sekiro™: Shadows Die Twice - GOTY Edition",
+      "Steam",
+      "fromsoftware",
+      "sekiro™shadowsdietwicegotyedition",
+      "steam",
+      "게임",
+      "대중문화",
+      "세키로"
+    ],
+    "titles": {
+      "en": "Sekiro™: Shadows Die Twice - GOTY Edition",
+      "ko": "세키로"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000267",
+    "title": "셀레스테",
+    "shardId": "game_ab",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Maddy Makes Games",
+    "tags": [
+      "인디",
+      "플랫포머",
+      "난이도",
+      "힐링"
+    ],
+    "searchTokens": [
+      "Celeste",
+      "Maddy Makes Games",
+      "celeste",
+      "maddymakesgames",
+      "난이도",
+      "셀레스테",
+      "인디",
+      "플랫포머",
+      "힐링"
+    ],
+    "titles": {
+      "en": "Celeste",
+      "ko": "셀레스테"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000658",
+    "title": "소드 아트 온라인: 인피니티 모멘트",
+    "shardId": "game_84",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sword Art Online: Infinity Moment",
+      "swordartonlineinfinitymoment",
+      "ソードアートオンラインインフィニティモーメント",
+      "ソードアート・オンライン -インフィニティ・モーメント",
+      "소드 아트 온라인: 인피니티 모멘트",
+      "소드아트온라인인피니티모멘트"
+    ],
+    "titles": {
+      "ko": "소드 아트 온라인: 인피니티 모멘트",
+      "en": "Sword Art Online: Infinity Moment",
+      "ja": "ソードアート・オンライン -インフィニティ・モーメント"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000050",
+    "title": "슈퍼 러버런",
+    "shardId": "game_67",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Cherry",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Cookie Clicker",
+      "Steam",
+      "Team Cherry",
+      "cookieclicker",
+      "steam",
+      "teamcherry",
+      "게임",
+      "대중문화",
+      "슈퍼 러버런",
+      "슈퍼러버런"
+    ],
+    "titles": {
+      "en": "Cookie Clicker",
+      "ko": "슈퍼 러버런"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000962",
+    "title": "슈퍼 마리오 요시 아일랜드",
+    "shardId": "game_c1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Super Mario World 2: Yoshi's Island",
+      "supermarioworld2yoshi'sisland",
+      "スーパーマリオ ヨッシーアイランド",
+      "スーパーマリオヨッシーアイランド",
+      "슈퍼 마리오 요시 아일랜드",
+      "슈퍼마리오요시아일랜드"
+    ],
+    "titles": {
+      "ko": "슈퍼 마리오 요시 아일랜드",
+      "en": "Super Mario World 2: Yoshi's Island",
+      "ja": "スーパーマリオ ヨッシーアイランド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000900",
+    "title": "스윙 골프 팡야",
+    "shardId": "game_cc",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Super Swing Golf",
+      "superswinggolf",
+      "スイングゴルフ パンヤ",
+      "スイングゴルフパンヤ",
+      "스윙 골프 팡야",
+      "스윙골프팡야"
+    ],
+    "titles": {
+      "ko": "스윙 골프 팡야",
+      "en": "Super Swing Golf",
+      "ja": "スイングゴルフ パンヤ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000111",
+    "title": "스카이림 SE",
+    "shardId": "game_b1",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Bethesda",
+      "Steam",
+      "The Elder Scrolls V: Skyrim Special Edition",
+      "bethesda",
+      "steam",
+      "theelderscrollsvskyrimspecialedition",
+      "게임",
+      "대중문화",
+      "스카이림 SE",
+      "스카이림se"
+    ],
+    "titles": {
+      "en": "The Elder Scrolls V: Skyrim Special Edition",
+      "ko": "스카이림 SE"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000145",
+    "title": "스타듀 밸리",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "ConcernedApe",
+    "tags": [
+      "농사",
+      "힐링",
+      "인디",
+      "샌드박스"
+    ],
+    "searchTokens": [
+      "ConcernedApe",
+      "Stardew Valley",
+      "concernedape",
+      "stardewvalley",
+      "농사",
+      "샌드박스",
+      "스타듀 밸리",
+      "스타듀밸리",
+      "인디",
+      "힐링"
+    ],
+    "titles": {
+      "en": "Stardew Valley",
+      "ko": "스타듀 밸리"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000063",
+    "title": "스타크래프트 리마스터",
+    "shardId": "game_b6",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Blizzard",
+      "Call of Duty®: Warzone™",
+      "Steam",
+      "blizzard",
+      "callofduty®warzone™",
+      "steam",
+      "게임",
+      "대중문화",
+      "스타크래프트 리마스터",
+      "스타크래프트리마스터"
+    ],
+    "titles": {
+      "en": "Call of Duty®: Warzone™",
+      "ko": "스타크래프트 리마스터"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000035",
+    "title": "스타필드",
+    "shardId": "game_ed",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Bethesda",
+      "Fallout 76",
+      "Steam",
+      "bethesda",
+      "fallout76",
+      "steam",
+      "게임",
+      "대중문화",
+      "스타필드"
+    ],
+    "titles": {
+      "en": "Fallout 76",
+      "ko": "스타필드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000092",
+    "title": "스텔라리스",
+    "shardId": "game_ff",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Paradox",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Paradox",
+      "Steam",
+      "Stellaris",
+      "paradox",
+      "steam",
+      "stellaris",
+      "게임",
+      "대중문화",
+      "스텔라리스"
+    ],
+    "titles": {
+      "en": "Stellaris",
+      "ko": "스텔라리스"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000068",
+    "title": "스파이더맨 2",
+    "shardId": "game_4a",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Insomniac",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Ghost of Tsushima DIRECTOR'S CUT",
+      "Insomniac",
+      "Steam",
+      "ghostoftsushimadirector'scut",
+      "insomniac",
+      "steam",
+      "게임",
+      "대중문화",
+      "스파이더맨 2",
+      "스파이더맨2"
+    ],
+    "titles": {
+      "en": "Ghost of Tsushima DIRECTOR'S CUT",
+      "ko": "스파이더맨 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000282",
+    "title": "스플래툰 3",
+    "shardId": "game_7d",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Nintendo",
+    "tags": [
+      "슈터",
+      "액션",
+      "팀전",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Nintendo",
+      "Splatoon 3",
+      "nintendo",
+      "splatoon3",
+      "서브컬처",
+      "슈터",
+      "스플래툰 3",
+      "스플래툰3",
+      "액션",
+      "팀전"
+    ],
+    "titles": {
+      "en": "Splatoon 3",
+      "ko": "스플래툰 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000132",
+    "title": "슬라임 랜처",
+    "shardId": "game_e5",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Monomi Park",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Bloons TD 6",
+      "Monomi Park",
+      "Steam",
+      "bloonstd6",
+      "monomipark",
+      "steam",
+      "게임",
+      "대중문화",
+      "슬라임 랜처",
+      "슬라임랜처"
+    ],
+    "titles": {
+      "en": "Bloons TD 6",
+      "ko": "슬라임 랜처"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000277",
+    "title": "승리의 여신: 니케",
+    "shardId": "game_45",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Shift Up",
+    "tags": [
+      "포스트아포칼립스",
+      "건슈팅",
+      "수집형RPG",
+      "SF"
+    ],
+    "searchTokens": [
+      "GODDESS OF VICTORY: NIKKE",
+      "SF",
+      "Shift Up",
+      "goddessofvictorynikke",
+      "sf",
+      "shiftup",
+      "건슈팅",
+      "수집형RPG",
+      "수집형rpg",
+      "승리의 여신: 니케",
+      "승리의여신니케",
+      "포스트아포칼립스"
+    ],
+    "titles": {
+      "en": "GODDESS OF VICTORY: NIKKE",
+      "ko": "승리의 여신: 니케"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000087",
+    "title": "시티즈: 스카이라인",
+    "shardId": "game_45",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Colossal Order",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Cities: Skylines",
+      "Colossal Order",
+      "Steam",
+      "citiesskylines",
+      "colossalorder",
+      "steam",
+      "게임",
+      "대중문화",
+      "시티즈: 스카이라인",
+      "시티즈스카이라인"
+    ],
+    "titles": {
+      "en": "Cities: Skylines",
+      "ko": "시티즈: 스카이라인"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000789",
+    "title": "아가레스트 전기",
+    "shardId": "game_fa",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Record of Agarest War",
+      "recordofagarestwar",
+      "アガレスト戦記",
+      "아가레스트 전기",
+      "아가레스트전기"
+    ],
+    "titles": {
+      "ko": "아가레스트 전기",
+      "en": "Record of Agarest War",
+      "ja": "アガレスト戦記"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000785",
+    "title": "아이돌마스터 팝 링크스",
+    "shardId": "game_1c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Idolmaster Poplinks",
+      "theidolmasterpoplinks",
+      "アイドルマスター ポップリンクス",
+      "アイドルマスターポップリンクス",
+      "아이돌마스터 팝 링크스",
+      "아이돌마스터팝링크스"
+    ],
+    "titles": {
+      "ko": "아이돌마스터 팝 링크스",
+      "en": "The Idolmaster Poplinks",
+      "ja": "アイドルマスター ポップリンクス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000563",
+    "title": "아칼라베스: 파멸의 세계",
+    "shardId": "game_45",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Akalabeth: World of Doom",
+      "akalabethworldofdoom",
+      "아칼라베스: 파멸의 세계",
+      "아칼라베스파멸의세계"
+    ],
+    "titles": {
+      "ko": "아칼라베스: 파멸의 세계",
+      "en": "Akalabeth: World of Doom"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000096",
+    "title": "아크: 서바이벌 이볼브드",
+    "shardId": "game_c0",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Studio Wildcard",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "ARK: Survival Evolved",
+      "Steam",
+      "Studio Wildcard",
+      "arksurvivalevolved",
+      "steam",
+      "studiowildcard",
+      "게임",
+      "대중문화",
+      "아크: 서바이벌 이볼브드",
+      "아크서바이벌이볼브드"
+    ],
+    "titles": {
+      "en": "ARK: Survival Evolved",
+      "ko": "아크: 서바이벌 이볼브드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000286",
+    "title": "언더테일",
+    "shardId": "game_20",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Toby Fox",
+    "tags": [
+      "인디",
+      "RPG",
+      "선택",
+      "명작"
+    ],
+    "searchTokens": [
+      "RPG",
+      "Toby Fox",
+      "UNDERTALE",
+      "rpg",
+      "tobyfox",
+      "undertale",
+      "명작",
+      "선택",
+      "언더테일",
+      "인디"
+    ],
+    "titles": {
+      "en": "UNDERTALE",
+      "ko": "언더테일"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000057",
+    "title": "언차티드: 도적들과 유산",
+    "shardId": "game_3a",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Naughty Dog",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Naughty Dog",
+      "Steam",
+      "UNCHARTED™: Legacy of Thieves Collection",
+      "naughtydog",
+      "steam",
+      "uncharted™legacyofthievescollection",
+      "게임",
+      "대중문화",
+      "언차티드: 도적들과 유산",
+      "언차티드도적들과유산"
+    ],
+    "titles": {
+      "en": "UNCHARTED™: Legacy of Thieves Collection",
+      "ko": "언차티드: 도적들과 유산"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000655",
+    "title": "에밀 크로니클 온라인",
+    "shardId": "game_5a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Emil Chronicle Online",
+      "emilchronicleonline",
+      "エミルクロニクルオンライン",
+      "エミル・クロニクル・オンライン",
+      "에밀 크로니클 온라인",
+      "에밀크로니클온라인"
+    ],
+    "titles": {
+      "ko": "에밀 크로니클 온라인",
+      "en": "Emil Chronicle Online",
+      "ja": "エミル・クロニクル・オンライン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000505",
+    "title": "에어울프",
+    "shardId": "game_57",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Airwolf",
+      "airwolf",
+      "에어울프"
+    ],
+    "titles": {
+      "ko": "에어울프",
+      "en": "Airwolf"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000038",
+    "title": "에이펙스 레전드",
+    "shardId": "game_83",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Respawn Entertainment",
+    "tags": [
+      "배틀로얄",
+      "FPS",
+      "팀플레이",
+      "SF"
+    ],
+    "searchTokens": [
+      "Apex Legends™",
+      "FPS",
+      "Respawn Entertainment",
+      "SF",
+      "apexlegends™",
+      "fps",
+      "respawnentertainment",
+      "sf",
+      "배틀로얄",
+      "에이펙스 레전드",
+      "에이펙스레전드",
+      "팀플레이"
+    ],
+    "titles": {
+      "en": "Apex Legends™",
+      "ko": "에이펙스 레전드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000042",
+    "title": "엑스칼리버",
+    "shardId": "game_77",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Square Enix",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "NARAKA: BLADEPOINT",
+      "Square Enix",
+      "Steam",
+      "narakabladepoint",
+      "squareenix",
+      "steam",
+      "게임",
+      "대중문화",
+      "엑스칼리버"
+    ],
+    "titles": {
+      "en": "NARAKA: BLADEPOINT",
+      "ko": "엑스칼리버"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000135",
+    "title": "엑시옴",
+    "shardId": "game_c8",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "인디 제작사",
+    "tags": [
+      "인디",
+      "얼리액세스",
+      "SF"
+    ],
+    "searchTokens": [
+      "Axiom Verge",
+      "SF",
+      "axiomverge",
+      "sf",
+      "얼리액세스",
+      "엑시옴",
+      "인디",
+      "인디 제작사",
+      "인디제작사"
+    ],
+    "titles": {
+      "en": "Axiom Verge",
+      "ko": "엑시옴"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000045",
+    "title": "엘든 링",
+    "shardId": "game_b3",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "FromSoftware",
+    "tags": [
+      "소울라이크",
+      "오픈월드",
+      "RPG",
+      "다크판타지"
+    ],
+    "searchTokens": [
+      "ELDEN RING",
+      "FromSoftware",
+      "RPG",
+      "eldenring",
+      "fromsoftware",
+      "rpg",
+      "다크판타지",
+      "소울라이크",
+      "엘든 링",
+      "엘든링",
+      "오픈월드"
+    ],
+    "titles": {
+      "en": "ELDEN RING",
+      "ko": "엘든 링"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000715",
+    "title": "영웅전설 V 바다의 함가",
+    "shardId": "game_57",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Legend of Heroes III: Song of the Ocean",
+      "thelegendofheroesiiisongoftheocean",
+      "英雄伝説V 海の檻歌",
+      "英雄伝説v海の檻歌",
+      "영웅전설 V 바다의 함가",
+      "영웅전설v바다의함가"
+    ],
+    "titles": {
+      "ko": "영웅전설 V 바다의 함가",
+      "en": "The Legend of Heroes III: Song of the Ocean",
+      "ja": "英雄伝説V 海の檻歌"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000898",
+    "title": "영웅전설 여의 궤적",
+    "shardId": "game_07",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Legend of Heroes: Trails through Daybreak",
+      "thelegendofheroestrailsthroughdaybreak",
+      "英雄伝説 黎の軌跡",
+      "英雄伝説黎の軌跡",
+      "영웅전설 여의 궤적",
+      "영웅전설여의궤적"
+    ],
+    "titles": {
+      "ko": "영웅전설 여의 궤적",
+      "en": "The Legend of Heroes: Trails through Daybreak",
+      "ja": "英雄伝説 黎の軌跡"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000088",
+    "title": "오리와 먹구름",
+    "shardId": "game_0b",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Moon Studios",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Moon Studios",
+      "Mount &amp; Blade II: Bannerlord",
+      "Steam",
+      "moonstudios",
+      "mount&amp;bladeiibannerlord",
+      "steam",
+      "게임",
+      "대중문화",
+      "오리와 먹구름",
+      "오리와먹구름"
+    ],
+    "titles": {
+      "en": "Mount &amp; Blade II: Bannerlord",
+      "ko": "오리와 먹구름"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000142",
+    "title": "오버워치 2",
+    "shardId": "game_fe",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "tags": [
+      "FPS",
+      "팀전",
+      "히어로",
+      "PvP"
+    ],
+    "searchTokens": [
+      "Blizzard",
+      "FPS",
+      "Overwatch®",
+      "PvP",
+      "blizzard",
+      "fps",
+      "overwatch®",
+      "pvp",
+      "오버워치 2",
+      "오버워치2",
+      "팀전",
+      "히어로"
+    ],
+    "titles": {
+      "en": "Overwatch®",
+      "ko": "오버워치 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000108",
+    "title": "오버쿡드 2",
+    "shardId": "game_0d",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team17",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Conan Exiles Enhanced",
+      "Steam",
+      "Team17",
+      "conanexilesenhanced",
+      "steam",
+      "team17",
+      "게임",
+      "대중문화",
+      "오버쿡드 2",
+      "오버쿡드2"
+    ],
+    "titles": {
+      "en": "Conan Exiles Enhanced",
+      "ko": "오버쿡드 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000278",
+    "title": "옥토패스 트래블러",
+    "shardId": "game_37",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Square Enix",
+    "tags": [
+      "JRPG",
+      "판타지",
+      "HD-2D",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "HD-2D",
+      "JRPG",
+      "OCTOPATH TRAVELER™",
+      "Square Enix",
+      "hd2d",
+      "jrpg",
+      "octopathtraveler™",
+      "squareenix",
+      "서브컬처",
+      "옥토패스 트래블러",
+      "옥토패스트래블러",
+      "판타지"
+    ],
+    "titles": {
+      "en": "OCTOPATH TRAVELER™",
+      "ko": "옥토패스 트래블러"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000289",
+    "title": "용과 같이 0",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Ryu Ga Gotoku Studio",
+    "tags": [
+      "액션",
+      "야쿠자",
+      "스토리",
+      "일본"
+    ],
+    "searchTokens": [
+      "Ryu Ga Gotoku Studio",
+      "Yakuza 0",
+      "ryugagotokustudio",
+      "yakuza0",
+      "스토리",
+      "액션",
+      "야쿠자",
+      "용과 같이 0",
+      "용과같이0",
+      "일본"
+    ],
+    "titles": {
+      "en": "Yakuza 0",
+      "ko": "용과 같이 0"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000285",
+    "title": "우마무스메",
+    "shardId": "game_4a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Cygames",
+    "tags": [
+      "육성",
+      "경마",
+      "수집",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Cygames",
+      "Umamusume",
+      "cygames",
+      "umamusume",
+      "경마",
+      "서브컬처",
+      "수집",
+      "우마무스메",
+      "육성"
+    ],
+    "titles": {
+      "en": "Umamusume",
+      "ko": "우마무스메"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000837",
+    "title": "울티마 온라인",
+    "shardId": "game_c9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ultima Online",
+      "ultimaonline",
+      "ウルティマオンライン",
+      "울티마 온라인",
+      "울티마온라인"
+    ],
+    "titles": {
+      "ko": "울티마 온라인",
+      "en": "Ultima Online",
+      "ja": "ウルティマオンライン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000076",
+    "title": "워프레임",
+    "shardId": "game_10",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Digital Extremes",
+    "tags": [
+      "F2P",
+      "협동",
+      "SF",
+      "액션"
+    ],
+    "searchTokens": [
+      "Digital Extremes",
+      "F2P",
+      "SF",
+      "Warframe",
+      "digitalextremes",
+      "f2p",
+      "sf",
+      "warframe",
+      "액션",
+      "워프레임",
+      "협동"
+    ],
+    "titles": {
+      "en": "Warframe",
+      "ko": "워프레임"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000272",
+    "title": "원신",
+    "shardId": "game_54",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "tags": [
+      "오픈월드",
+      "수집형RPG",
+      "판타지",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Genshin Impact",
+      "HoYoverse",
+      "genshinimpact",
+      "hoyoverse",
+      "서브컬처",
+      "수집형RPG",
+      "수집형rpg",
+      "오픈월드",
+      "원신",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Genshin Impact",
+      "ko": "원신"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000966",
+    "title": "월희 -A piece of blue glass moon-",
+    "shardId": "game_42",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Kinoko Nasu",
+    "tags": [],
+    "searchTokens": [
+      "Kinoko Nasu",
+      "Tsukihime: A piece of blue glass moon",
+      "kinokonasu",
+      "tsukihimeapieceofblueglassmoon",
+      "月姫 -A piece of blue glass moon-",
+      "月姫apieceofblueglassmoon",
+      "월희 -A piece of blue glass moon-",
+      "월희apieceofblueglassmoon"
+    ],
+    "titles": {
+      "ko": "월희 -A piece of blue glass moon-",
+      "en": "Tsukihime: A piece of blue glass moon",
+      "ja": "月姫 -A piece of blue glass moon-"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000497",
+    "title": "유그드라 유니온",
+    "shardId": "game_fe",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Yggdra Union",
+      "yggdraunion",
+      "ユグドラユニオン",
+      "ユグドラ・ユニオン",
+      "유그드라 유니온",
+      "유그드라유니온"
+    ],
+    "titles": {
+      "ko": "유그드라 유니온",
+      "en": "Yggdra Union",
+      "ja": "ユグドラ・ユニオン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000072",
+    "title": "유로 트럭 시뮬레이터 2",
+    "shardId": "game_98",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "SCS Software",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Euro Truck Simulator 2",
+      "SCS Software",
+      "Steam",
+      "eurotrucksimulator2",
+      "scssoftware",
+      "steam",
+      "게임",
+      "대중문화",
+      "유로 트럭 시뮬레이터 2",
+      "유로트럭시뮬레이터2"
+    ],
+    "titles": {
+      "en": "Euro Truck Simulator 2",
+      "ko": "유로 트럭 시뮬레이터 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000077",
+    "title": "유로파 유니버설리스 IV",
+    "shardId": "game_04",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Paradox",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Europa Universalis IV",
+      "Paradox",
+      "Steam",
+      "europauniversalisiv",
+      "paradox",
+      "steam",
+      "게임",
+      "대중문화",
+      "유로파 유니버설리스 IV",
+      "유로파유니버설리스iv"
+    ],
+    "titles": {
+      "en": "Europa Universalis IV",
+      "ko": "유로파 유니버설리스 IV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000782",
+    "title": "이블 데드: 더 게임",
+    "shardId": "game_5c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Evil Dead: The Game",
+      "evildeadthegame",
+      "이블 데드: 더 게임",
+      "이블데드더게임"
+    ],
+    "titles": {
+      "ko": "이블 데드: 더 게임",
+      "en": "Evil Dead: The Game"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000960",
+    "title": "이블 웨스트",
+    "shardId": "game_7c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Evil West",
+      "evilwest",
+      "이블 웨스트",
+      "이블웨스트"
+    ],
+    "titles": {
+      "ko": "이블 웨스트",
+      "en": "Evil West"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000778",
+    "title": "이삭의 구속",
+    "shardId": "game_3f",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Binding of Isaac",
+      "thebindingofisaac",
+      "ザバインディングオブアイザック",
+      "ザ・バインディング・オブ・アイザック",
+      "이삭의 구속",
+      "이삭의구속"
+    ],
+    "titles": {
+      "ko": "이삭의 구속",
+      "en": "The Binding of Isaac",
+      "ja": "ザ・バインディング・オブ・アイザック"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000905",
+    "title": "이터널 리턴",
+    "shardId": "game_9a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Eternal Return: Black Survival",
+      "eternalreturnblacksurvival",
+      "エターナルリターン (ゲーム)",
+      "エターナルリターン(ゲーム)",
+      "이터널 리턴",
+      "이터널리턴"
+    ],
+    "titles": {
+      "ko": "이터널 리턴",
+      "en": "Eternal Return: Black Survival",
+      "ja": "エターナルリターン (ゲーム)"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000500",
+    "title": "인리스티드",
+    "shardId": "game_30",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Enlisted",
+      "enlisted",
+      "エンリステッド",
+      "인리스티드"
+    ],
+    "titles": {
+      "ko": "인리스티드",
+      "en": "Enlisted",
+      "ja": "エンリステッド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000288",
+    "title": "제노블레이드 3",
+    "shardId": "game_81",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Monolith Soft",
+    "tags": [
+      "JRPG",
+      "SF",
+      "판타지",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "JRPG",
+      "Monolith Soft",
+      "SF",
+      "Xenoblade 3",
+      "jrpg",
+      "monolithsoft",
+      "sf",
+      "xenoblade3",
+      "서브컬처",
+      "제노블레이드 3",
+      "제노블레이드3",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Xenoblade 3",
+      "ko": "제노블레이드 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000290",
+    "title": "젠레스 존 제로",
+    "shardId": "game_fa",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "tags": [
+      "액션",
+      "SF",
+      "도시",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "HoYoverse",
+      "SF",
+      "Zenless Zone Zero",
+      "hoyoverse",
+      "sf",
+      "zenlesszonezero",
+      "도시",
+      "서브컬처",
+      "액션",
+      "젠레스 존 제로",
+      "젠레스존제로"
+    ],
+    "titles": {
+      "en": "Zenless Zone Zero",
+      "ko": "젠레스 존 제로"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000147",
+    "title": "젤다의 전설 브레스 오브 더 와일드",
+    "shardId": "game_64",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Nintendo",
+    "tags": [
+      "오픈월드",
+      "어드벤처",
+      "닌텐도",
+      "명작"
+    ],
+    "searchTokens": [
+      "Nintendo",
+      "Zelda Breath OF THE Wild",
+      "nintendo",
+      "zeldabreathofthewild",
+      "닌텐도",
+      "명작",
+      "어드벤처",
+      "오픈월드",
+      "젤다의 전설 브레스 오브 더 와일드",
+      "젤다의전설브레스오브더와일드"
+    ],
+    "titles": {
+      "en": "Zelda Breath OF THE Wild",
+      "ko": "젤다의 전설 브레스 오브 더 와일드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000503",
+    "title": "진심으로 날 사랑해라!",
+    "shardId": "game_1a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Majikoi! Love Me Seriously!",
+      "majikoi!lovemeseriously!",
+      "真剣で私に恋しなさい!",
+      "진심으로 날 사랑해라!",
+      "진심으로날사랑해라!"
+    ],
+    "titles": {
+      "ko": "진심으로 날 사랑해라!",
+      "en": "Majikoi! Love Me Seriously!",
+      "ja": "真剣で私に恋しなさい!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000657",
+    "title": "챔피언쉽 매니저 2002 K-리그",
+    "shardId": "game_8a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Championship Manager: Season 01/02",
+      "championshipmanagerseason0102",
+      "챔피언쉽 매니저 2002 K-리그",
+      "챔피언쉽매니저2002k리그"
+    ],
+    "titles": {
+      "ko": "챔피언쉽 매니저 2002 K-리그",
+      "en": "Championship Manager: Season 01/02"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000899",
+    "title": "천지를 먹다 2-적벽대전",
+    "shardId": "game_51",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Warriors of Fate",
+      "warriorsoffate",
+      "天地を喰らう2・赤壁の戦い",
+      "天地を喰らう2赤壁の戦い",
+      "천지를 먹다 2-적벽대전",
+      "천지를먹다2적벽대전"
+    ],
+    "titles": {
+      "ko": "천지를 먹다 2-적벽대전",
+      "en": "Warriors of Fate",
+      "ja": "天地を喰らう2・赤壁の戦い"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000061",
+    "title": "최후의 생还자 Part I",
+    "shardId": "game_61",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Naughty Dog",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Naughty Dog",
+      "Steam",
+      "The Last of Us™ Part I",
+      "naughtydog",
+      "steam",
+      "thelastofus™parti",
+      "게임",
+      "대중문화",
+      "최후의 생还자 Part I",
+      "최후의생还자parti"
+    ],
+    "titles": {
+      "en": "The Last of Us™ Part I",
+      "ko": "최후의 생还자 Part I"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000121",
+    "title": "카운터 스트라이크 2",
+    "shardId": "game_4e",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "FPS",
+      "PvP",
+      "e스포츠",
+      "전술"
+    ],
+    "searchTokens": [
+      "Counter-Strike 2",
+      "FPS",
+      "PvP",
+      "Valve",
+      "counterstrike2",
+      "e스포츠",
+      "fps",
+      "pvp",
+      "valve",
+      "전술",
+      "카운터 스트라이크 2",
+      "카운터스트라이크2"
+    ],
+    "titles": {
+      "en": "Counter-Strike 2",
+      "ko": "카운터 스트라이크 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000783",
+    "title": "칼리스토 프로토콜",
+    "shardId": "game_9f",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Callisto Protocol",
+      "thecallistoprotocol",
+      "カリストプロトコル",
+      "칼리스토 프로토콜",
+      "칼리스토프로토콜"
+    ],
+    "titles": {
+      "ko": "칼리스토 프로토콜",
+      "en": "The Callisto Protocol",
+      "ja": "カリストプロトコル"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000790",
+    "title": "캐슬바니아",
+    "shardId": "game_c2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Castlevania",
+      "castlevania",
+      "悪魔城ドラキュラ",
+      "캐슬바니아"
+    ],
+    "titles": {
+      "ko": "캐슬바니아",
+      "en": "Castlevania",
+      "ja": "悪魔城ドラキュラ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001011",
+    "title": "컴퍼니 오브 히어로즈 온라인",
+    "shardId": "game_33",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Company of Heroes Online",
+      "companyofheroesonline",
+      "컴퍼니 오브 히어로즈 온라인",
+      "컴퍼니오브히어로즈온라인"
+    ],
+    "titles": {
+      "ko": "컴퍼니 오브 히어로즈 온라인",
+      "en": "Company of Heroes Online"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000089",
+    "title": "컵헤드",
+    "shardId": "game_2c",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Studio MDHR",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Save 40% on Cuphead",
+      "Steam",
+      "Studio MDHR",
+      "save40%oncuphead",
+      "steam",
+      "studiomdhr",
+      "게임",
+      "대중문화",
+      "컵헤드"
+    ],
+    "titles": {
+      "en": "Save 40% on Cuphead",
+      "ko": "컵헤드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000062",
+    "title": "콜 오브 듀티: MW II",
+    "shardId": "game_bb",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Infinity Ward",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Call of Duty®",
+      "Infinity Ward",
+      "Steam",
+      "callofduty®",
+      "infinityward",
+      "steam",
+      "게임",
+      "대중문화",
+      "콜 오브 듀티: MW II",
+      "콜오브듀티mwii"
+    ],
+    "titles": {
+      "en": "Call of Duty®",
+      "ko": "콜 오브 듀티: MW II"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000779",
+    "title": "크라이시스 존",
+    "shardId": "game_1b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Crisis Zone",
+      "crisiszone",
+      "クライシスゾーン",
+      "크라이시스 존",
+      "크라이시스존"
+    ],
+    "titles": {
+      "ko": "크라이시스 존",
+      "en": "Crisis Zone",
+      "ja": "クライシスゾーン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000037",
+    "title": "크루세이더 킹즈 3",
+    "shardId": "game_1b",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Paradox",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Crusader Kings III",
+      "Paradox",
+      "Steam",
+      "crusaderkingsiii",
+      "paradox",
+      "steam",
+      "게임",
+      "대중문화",
+      "크루세이더 킹즈 3",
+      "크루세이더킹즈3"
+    ],
+    "titles": {
+      "en": "Crusader Kings III",
+      "ko": "크루세이더 킹즈 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000838",
+    "title": "크리스 테일즈",
+    "shardId": "game_27",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Cris Tales",
+      "cristales",
+      "크리스 테일즈",
+      "크리스테일즈"
+    ],
+    "titles": {
+      "ko": "크리스 테일즈",
+      "en": "Cris Tales",
+      "ja": "Cris Tales"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000565",
+    "title": "클락워크 아쿠아리오",
+    "shardId": "game_38",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Clockwork Aquario",
+      "clockworkaquario",
+      "時計じかけのアクワリオ",
+      "클락워크 아쿠아리오",
+      "클락워크아쿠아리오"
+    ],
+    "titles": {
+      "ko": "클락워크 아쿠아리오",
+      "en": "Clockwork Aquario",
+      "ja": "時計じかけのアクワリオ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000058",
+    "title": "킹덤 컴 2",
+    "shardId": "game_ba",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Warhorse",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Save 50% on Kingdom Come: Deliverance II",
+      "Steam",
+      "Warhorse",
+      "save50%onkingdomcomedeliveranceii",
+      "steam",
+      "warhorse",
+      "게임",
+      "대중문화",
+      "킹덤 컴 2",
+      "킹덤컴2"
+    ],
+    "titles": {
+      "en": "Save 50% on Kingdom Come: Deliverance II",
+      "ko": "킹덤 컴 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000101",
+    "title": "킹덤 컴: 딜리버런스",
+    "shardId": "game_b3",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Warhorse",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Save 80% on Kingdom Come: Deliverance",
+      "Steam",
+      "Warhorse",
+      "save80%onkingdomcomedeliverance",
+      "steam",
+      "warhorse",
+      "게임",
+      "대중문화",
+      "킹덤 컴: 딜리버런스",
+      "킹덤컴딜리버런스"
+    ],
+    "titles": {
+      "en": "Save 80% on Kingdom Come: Deliverance",
+      "ko": "킹덤 컴: 딜리버런스"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000027",
+    "title": "테라리아",
+    "shardId": "game_24",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Re-Logic",
+    "tags": [
+      "샌드박스",
+      "2D",
+      "인디",
+      "협동"
+    ],
+    "searchTokens": [
+      "2D",
+      "2d",
+      "Re-Logic",
+      "Terraria",
+      "relogic",
+      "terraria",
+      "샌드박스",
+      "인디",
+      "테라리아",
+      "협동"
+    ],
+    "titles": {
+      "en": "Terraria",
+      "ko": "테라리아"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000120",
+    "title": "토탈 워: 삼국",
+    "shardId": "game_43",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Creative Assembly",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Creative Assembly",
+      "Save 60% on Hunt: Showdown 1896",
+      "Steam",
+      "creativeassembly",
+      "save60%onhuntshowdown1896",
+      "steam",
+      "게임",
+      "대중문화",
+      "토탈 워: 삼국",
+      "토탈워삼국"
+    ],
+    "titles": {
+      "en": "Save 60% on Hunt: Showdown 1896",
+      "ko": "토탈 워: 삼국"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000032",
+    "title": "토탈 워: 워해머 3",
+    "shardId": "game_2e",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Creative Assembly",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Creative Assembly",
+      "Steam",
+      "Total War: WARHAMMER III",
+      "creativeassembly",
+      "steam",
+      "totalwarwarhammeriii",
+      "게임",
+      "대중문화",
+      "토탈 워: 워해머 3",
+      "토탈워워해머3"
+    ],
+    "titles": {
+      "en": "Total War: WARHAMMER III",
+      "ko": "토탈 워: 워해머 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000784",
+    "title": "트릭스터",
+    "shardId": "game_93",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Trickster Online",
+      "tricksteronline",
+      "トリックスター",
+      "트릭스터"
+    ],
+    "titles": {
+      "ko": "트릭스터",
+      "en": "Trickster Online",
+      "ja": "トリックスター"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000109",
+    "title": "팀 포트리스 2",
+    "shardId": "game_76",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Steam",
+      "Team Fortress 2",
+      "Valve",
+      "steam",
+      "teamfortress2",
+      "valve",
+      "게임",
+      "대중문화",
+      "팀 포트리스 2",
+      "팀포트리스2"
+    ],
+    "titles": {
+      "en": "Team Fortress 2",
+      "ko": "팀 포트리스 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000780",
+    "title": "파라다이스 킬러",
+    "shardId": "game_1c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Paradise Killer",
+      "paradisekiller",
+      "パラダイスキラー",
+      "파라다이스 킬러",
+      "파라다이스킬러"
+    ],
+    "titles": {
+      "ko": "파라다이스 킬러",
+      "en": "Paradise Killer",
+      "ja": "パラダイスキラー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000270",
+    "title": "파이널 판타지 XIV",
+    "shardId": "game_59",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Square Enix",
+    "tags": [
+      "MMORPG",
+      "판타지",
+      "스토리",
+      "협동"
+    ],
+    "searchTokens": [
+      "FINAL FANTASY XIV Online",
+      "MMORPG",
+      "Square Enix",
+      "finalfantasyxivonline",
+      "mmorpg",
+      "squareenix",
+      "스토리",
+      "파이널 판타지 XIV",
+      "파이널판타지xiv",
+      "판타지",
+      "협동"
+    ],
+    "titles": {
+      "en": "FINAL FANTASY XIV Online",
+      "ko": "파이널 판타지 XIV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000271",
+    "title": "파이어 엠블렘: 풍화설월",
+    "shardId": "game_58",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Intelligent Systems",
+    "tags": [
+      "SRPG",
+      "전술",
+      "학원",
+      "판타지"
+    ],
+    "searchTokens": [
+      "Fire Emblem Three Houses",
+      "Intelligent Systems",
+      "SRPG",
+      "fireemblemthreehouses",
+      "intelligentsystems",
+      "srpg",
+      "전술",
+      "파이어 엠블렘: 풍화설월",
+      "파이어엠블렘풍화설월",
+      "판타지",
+      "학원"
+    ],
+    "titles": {
+      "en": "Fire Emblem Three Houses",
+      "ko": "파이어 엠블렘: 풍화설월"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000598",
+    "title": "파이터스 클럽",
+    "shardId": "game_10",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Fighter's Club",
+      "fighter'sclub",
+      "파이터스 클럽",
+      "파이터스클럽"
+    ],
+    "titles": {
+      "ko": "파이터스 클럽",
+      "en": "Fighter's Club"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000501",
+    "title": "파티 애니멀즈",
+    "shardId": "game_10",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Party Animals",
+      "partyanimals",
+      "파티 애니멀즈",
+      "파티애니멀즈"
+    ],
+    "titles": {
+      "ko": "파티 애니멀즈",
+      "en": "Party Animals",
+      "ja": "Party Animals"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000055",
+    "title": "팔월드",
+    "shardId": "game_de",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Pocketpair",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Pocketpair",
+      "Save 25% on Palworld",
+      "Steam",
+      "pocketpair",
+      "save25%onpalworld",
+      "steam",
+      "게임",
+      "대중문화",
+      "팔월드"
+    ],
+    "titles": {
+      "en": "Save 25% on Palworld",
+      "ko": "팔월드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000107",
+    "title": "팩토리오",
+    "shardId": "game_23",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Wube Software",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Factorio",
+      "Steam",
+      "Wube Software",
+      "factorio",
+      "steam",
+      "wubesoftware",
+      "게임",
+      "대중문화",
+      "팩토리오"
+    ],
+    "titles": {
+      "en": "Factorio",
+      "ko": "팩토리오"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000279",
+    "title": "페르소나 5 로열",
+    "shardId": "game_a1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Atlus",
+    "tags": [
+      "JRPG",
+      "학원",
+      "스타일",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Atlus",
+      "JRPG",
+      "Persona 5 Royal",
+      "atlus",
+      "jrpg",
+      "persona5royal",
+      "서브컬처",
+      "스타일",
+      "페르소나 5 로열",
+      "페르소나5로열",
+      "학원"
+    ],
+    "titles": {
+      "en": "Persona 5 Royal",
+      "ko": "페르소나 5 로열"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000269",
+    "title": "페이트/그랜드 오더",
+    "shardId": "game_53",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "TYPE-MOON / Aniplex",
+    "tags": [
+      "수집형RPG",
+      "판타지",
+      "서번트",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Fate Grand Order",
+      "TYPE-MOON / Aniplex",
+      "fategrandorder",
+      "typemoonaniplex",
+      "서번트",
+      "서브컬처",
+      "수집형RPG",
+      "수집형rpg",
+      "판타지",
+      "페이트/그랜드 오더",
+      "페이트그랜드오더"
+    ],
+    "titles": {
+      "en": "Fate Grand Order",
+      "ko": "페이트/그랜드 오더"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000133",
+    "title": "페이퍼스, 플리즈",
+    "shardId": "game_d6",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Lucas Pope",
+    "tags": [
+      "퍼즐",
+      "인디",
+      "시뮬",
+      "명작"
+    ],
+    "searchTokens": [
+      "Lucas Pope",
+      "Papers, Please",
+      "lucaspope",
+      "papers,please",
+      "명작",
+      "시뮬",
+      "인디",
+      "퍼즐",
+      "페이퍼스, 플리즈",
+      "페이퍼스,플리즈"
+    ],
+    "titles": {
+      "en": "Papers, Please",
+      "ko": "페이퍼스, 플리즈"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000105",
+    "title": "포털",
+    "shardId": "game_42",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Portal",
+      "Steam",
+      "Valve",
+      "portal",
+      "steam",
+      "valve",
+      "게임",
+      "대중문화",
+      "포털"
+    ],
+    "titles": {
+      "en": "Portal",
+      "ko": "포털"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000143",
+    "title": "포털 2",
+    "shardId": "game_54",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "퍼즐",
+      "SF",
+      "코미디",
+      "명작"
+    ],
+    "searchTokens": [
+      "Portal 2",
+      "SF",
+      "Valve",
+      "portal2",
+      "sf",
+      "valve",
+      "명작",
+      "코미디",
+      "퍼즐",
+      "포털 2",
+      "포털2"
+    ],
+    "titles": {
+      "en": "Portal 2",
+      "ko": "포털 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000070",
+    "title": "폴아웃 3",
+    "shardId": "game_c5",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Bethesda",
+      "Fallout 3",
+      "Steam",
+      "bethesda",
+      "fallout3",
+      "steam",
+      "게임",
+      "대중문화",
+      "폴아웃 3",
+      "폴아웃3"
+    ],
+    "titles": {
+      "en": "Fallout 3",
+      "ko": "폴아웃 3"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000100",
+    "title": "폴아웃 4",
+    "shardId": "game_e5",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Bethesda",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Bethesda",
+      "Fallout 4",
+      "Steam",
+      "bethesda",
+      "fallout4",
+      "steam",
+      "게임",
+      "대중문화",
+      "폴아웃 4",
+      "폴아웃4"
+    ],
+    "titles": {
+      "en": "Fallout 4",
+      "ko": "폴아웃 4"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000071",
+    "title": "폴아웃: 뉴 베가스",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Obsidian",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Fallout: New Vegas",
+      "Obsidian",
+      "Steam",
+      "falloutnewvegas",
+      "obsidian",
+      "steam",
+      "게임",
+      "대중문화",
+      "폴아웃: 뉴 베가스",
+      "폴아웃뉴베가스"
+    ],
+    "titles": {
+      "en": "Fallout: New Vegas",
+      "ko": "폴아웃: 뉴 베가스"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000281",
+    "title": "프로젝트 세카이",
+    "shardId": "game_a5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Colorful Palette / SEGA",
+    "tags": [
+      "리듬",
+      "음악",
+      "보컬로이드",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Colorful Palette / SEGA",
+      "Project Sekai",
+      "colorfulpalettesega",
+      "projectsekai",
+      "리듬",
+      "보컬로이드",
+      "서브컬처",
+      "음악",
+      "프로젝트 세카이",
+      "프로젝트세카이"
+    ],
+    "titles": {
+      "en": "Project Sekai",
+      "ko": "프로젝트 세카이"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000029",
+    "title": "프로젝트 좀보이드",
+    "shardId": "game_c2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "The Indie Stone",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Project Zomboid",
+      "Steam",
+      "The Indie Stone",
+      "projectzomboid",
+      "steam",
+      "theindiestone",
+      "게임",
+      "대중문화",
+      "프로젝트 좀보이드",
+      "프로젝트좀보이드"
+    ],
+    "titles": {
+      "en": "Project Zomboid",
+      "ko": "프로젝트 좀보이드"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000716",
+    "title": "프론트 라인",
+    "shardId": "game_c7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Front Line",
+      "frontline",
+      "フロントライン",
+      "프론트 라인",
+      "프론트라인"
+    ],
+    "titles": {
+      "ko": "프론트 라인",
+      "en": "Front Line",
+      "ja": "フロントライン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000074",
+    "title": "프리즌 아키텍트",
+    "shardId": "game_a5",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Introversion",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Introversion",
+      "Prison Architect",
+      "Steam",
+      "introversion",
+      "prisonarchitect",
+      "steam",
+      "게임",
+      "대중문화",
+      "프리즌 아키텍트",
+      "프리즌아키텍트"
+    ],
+    "titles": {
+      "en": "Prison Architect",
+      "ko": "프리즌 아키텍트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000280",
+    "title": "프린세스 커넥트",
+    "shardId": "game_88",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Cygames",
+    "tags": [
+      "수집형RPG",
+      "판타지",
+      "코미디",
+      "서브컬처"
+    ],
+    "searchTokens": [
+      "Cygames",
+      "Princess Connect",
+      "cygames",
+      "princessconnect",
+      "서브컬처",
+      "수집형RPG",
+      "수집형rpg",
+      "코미디",
+      "판타지",
+      "프린세스 커넥트",
+      "프린세스커넥트"
+    ],
+    "titles": {
+      "en": "Princess Connect",
+      "ko": "프린세스 커넥트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000112",
+    "title": "플래닛 코스터",
+    "shardId": "game_cd",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Frontier",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Frontier",
+      "Planet Coaster",
+      "Steam",
+      "frontier",
+      "planetcoaster",
+      "steam",
+      "게임",
+      "대중문화",
+      "플래닛 코스터",
+      "플래닛코스터"
+    ],
+    "titles": {
+      "en": "Planet Coaster",
+      "ko": "플래닛 코스터"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000046",
+    "title": "플래닛 코스터 2",
+    "shardId": "game_f3",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Frontier",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Frontier",
+      "Save 40% on The Planet Crafter",
+      "Steam",
+      "frontier",
+      "save40%ontheplanetcrafter",
+      "steam",
+      "게임",
+      "대중문화",
+      "플래닛 코스터 2",
+      "플래닛코스터2"
+    ],
+    "titles": {
+      "en": "Save 40% on The Planet Crafter",
+      "ko": "플래닛 코스터 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000034",
+    "title": "하데스",
+    "shardId": "game_16",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Supergiant Games",
+    "tags": [
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화"
+    ],
+    "searchTokens": [
+      "Hades",
+      "Supergiant Games",
+      "hades",
+      "supergiantgames",
+      "그리스신화",
+      "로그라이크",
+      "액션",
+      "인디",
+      "하데스"
+    ],
+    "titles": {
+      "en": "Hades",
+      "ko": "하데스"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000103",
+    "title": "하트 오브 아이언 IV",
+    "shardId": "game_fd",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Paradox",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Hearts of Iron IV",
+      "Paradox",
+      "Steam",
+      "heartsofironiv",
+      "paradox",
+      "steam",
+      "게임",
+      "대중문화",
+      "하트 오브 아이언 IV",
+      "하트오브아이언iv"
+    ],
+    "titles": {
+      "en": "Hearts of Iron IV",
+      "ko": "하트 오브 아이언 IV"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000138",
+    "title": "하프라이프 2",
+    "shardId": "game_16",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "tags": [
+      "FPS",
+      "SF",
+      "명작",
+      "스토리"
+    ],
+    "searchTokens": [
+      "FPS",
+      "Half-Life 2",
+      "SF",
+      "Valve",
+      "fps",
+      "halflife2",
+      "sf",
+      "valve",
+      "명작",
+      "스토리",
+      "하프라이프 2",
+      "하프라이프2"
+    ],
+    "titles": {
+      "en": "Half-Life 2",
+      "ko": "하프라이프 2"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000134",
+    "title": "호그와트 레거시",
+    "shardId": "game_0f",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Avalanche",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Avalanche",
+      "Hogwarts Legacy",
+      "Steam",
+      "avalanche",
+      "hogwartslegacy",
+      "steam",
+      "게임",
+      "대중문화",
+      "호그와트 레거시",
+      "호그와트레거시"
+    ],
+    "titles": {
+      "en": "Hogwarts Legacy",
+      "ko": "호그와트 레거시"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000036",
+    "title": "호라이즌 제로 던",
+    "shardId": "game_3f",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Guerrilla",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Guerrilla",
+      "Horizon Zero Dawn™ Complete Edition",
+      "Steam",
+      "guerrilla",
+      "horizonzerodawn™completeedition",
+      "steam",
+      "게임",
+      "대중문화",
+      "호라이즌 제로 던",
+      "호라이즌제로던"
+    ],
+    "titles": {
+      "en": "Horizon Zero Dawn™ Complete Edition",
+      "ko": "호라이즌 제로 던"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000079",
+    "title": "호라이즌 포비든 웨스트",
+    "shardId": "game_09",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Guerrilla",
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "searchTokens": [
+      "Guerrilla",
+      "Horizon Forbidden West™ Complete Edition",
+      "Steam",
+      "guerrilla",
+      "horizonforbiddenwest™completeedition",
+      "steam",
+      "게임",
+      "대중문화",
+      "호라이즌 포비든 웨스트",
+      "호라이즌포비든웨스트"
+    ],
+    "titles": {
+      "en": "Horizon Forbidden West™ Complete Edition",
+      "ko": "호라이즌 포비든 웨스트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000098",
+    "title": "홀로우 나이트",
+    "shardId": "game_59",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Cherry",
+    "tags": [
+      "메트로바니아",
+      "인디",
+      "다크판타지",
+      "액션"
+    ],
+    "searchTokens": [
+      "Hollow Knight",
+      "Team Cherry",
+      "hollowknight",
+      "teamcherry",
+      "다크판타지",
+      "메트로바니아",
+      "액션",
+      "인디",
+      "홀로우 나이트",
+      "홀로우나이트"
+    ],
+    "titles": {
+      "en": "Hollow Knight",
+      "ko": "홀로우 나이트"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000654",
+    "title": "히어로즈 오브 마이트 앤 매직 III: 쉐도우 오브 데스",
+    "shardId": "game_23",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Heroes of Might and Magic III: The Shadow of Death",
+      "heroesofmightandmagiciiitheshadowofdeath",
+      "히어로즈 오브 마이트 앤 매직 III: 쉐도우 오브 데스",
+      "히어로즈오브마이트앤매직iii쉐도우오브데스"
+    ],
+    "titles": {
+      "ko": "히어로즈 오브 마이트 앤 매직 III: 쉐도우 오브 데스",
+      "en": "Heroes of Might and Magic III: The Shadow of Death"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000656",
+    "title": "히트맨 2: 사일런트 어쌔신",
+    "shardId": "game_c1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hitman 2: Silent Assassin",
+      "Hitman2: Silent Assassin",
+      "hitman2silentassassin",
+      "히트맨 2: 사일런트 어쌔신",
+      "히트맨2사일런트어쌔신"
+    ],
+    "titles": {
+      "ko": "히트맨 2: 사일런트 어쌔신",
+      "en": "Hitman 2: Silent Assassin",
+      "ja": "Hitman2: Silent Assassin"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  }
+]

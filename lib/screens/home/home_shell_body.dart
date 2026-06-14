@@ -32,6 +32,11 @@ class HomeShellBody extends StatelessWidget {
   final bool isTimelineMode;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
+  final bool isCatalogLoadingMore;
+  final bool catalogHasMore;
+  final int catalogLoadedThrough;
+  final int catalogTotalEntries;
+  final VoidCallback? onLoadMoreCatalog;
   final bool canAddToLibrary;
   final LibraryTheme libraryTheme;
   final String displayName;
@@ -83,6 +88,11 @@ class HomeShellBody extends StatelessWidget {
     required this.isTimelineMode,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
+    this.isCatalogLoadingMore = false,
+    this.catalogHasMore = false,
+    this.catalogLoadedThrough = 0,
+    this.catalogTotalEntries = 0,
+    this.onLoadMoreCatalog,
     required this.canAddToLibrary,
     required this.libraryTheme,
     required this.displayName,
@@ -217,6 +227,11 @@ class HomeShellBody extends StatelessWidget {
                                 sectionPrefs: sectionPrefs,
                                 filterCategories: filterCtrl.categories,
                                 isCatalogLoading: isCatalogLoading,
+                                isCatalogLoadingMore: isCatalogLoadingMore,
+                                catalogHasMore: catalogHasMore,
+                                catalogLoadedThrough: catalogLoadedThrough,
+                                catalogTotalEntries: catalogTotalEntries,
+                                onLoadMoreCatalog: onLoadMoreCatalog,
                                 displayName: displayName,
                                 posterCardBuilder: posterCardBuilder,
                                 onStateChanged: onStateChanged,

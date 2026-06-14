@@ -1,0 +1,21 @@
+{
+  "wk_000000750": {
+    "workId": "wk_000000750",
+    "title": "겨울의 약혼자들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101444549"
+    },
+    "titles": {
+      "ko": "겨울의 약혼자들",
+      "en": "A Winter's Promise"
+    },
+    "releaseYear": 2013,
+    "creator": "Christelle Dabos",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

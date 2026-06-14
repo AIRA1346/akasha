@@ -1,0 +1,20 @@
+{
+  "wk_000000922": {
+    "workId": "wk_000000922",
+    "title": "아후가니스탄",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042411"
+    },
+    "titles": {
+      "ko": "아후가니스탄",
+      "en": "Afghanis-tan",
+      "ja": "あふがにすタン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

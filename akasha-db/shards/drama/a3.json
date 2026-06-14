@@ -1,0 +1,38 @@
+{
+  "wk_000000651": {
+    "workId": "wk_000000651",
+    "title": "다빈치 디몬스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1026696"
+    },
+    "titles": {
+      "ko": "다빈치 디몬스",
+      "en": "Da Vinci's Demons",
+      "ja": "ダ・ヴィンチと禁断の謎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001006": {
+    "workId": "wk_000001006",
+    "title": "후루하타 닌자부로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048605"
+    },
+    "titles": {
+      "ko": "후루하타 닌자부로",
+      "en": "Furuhata Ninzaburō",
+      "ja": "古畑任三郎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

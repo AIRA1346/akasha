@@ -1,0 +1,37 @@
+{
+  "wk_000000483": {
+    "workId": "wk_000000483",
+    "title": "날아라 개천용",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100231189"
+    },
+    "titles": {
+      "ko": "날아라 개천용",
+      "en": "Delayed Justice"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000556": {
+    "workId": "wk_000000556",
+    "title": "헬's 키친",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1012139"
+    },
+    "titles": {
+      "ko": "헬's 키친",
+      "en": "Hell's Kitchen",
+      "ja": "ヘルズ・キッチン〜地獄の厨房"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

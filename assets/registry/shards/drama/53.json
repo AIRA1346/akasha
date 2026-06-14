@@ -1,0 +1,20 @@
+{
+  "wk_000000591": {
+    "workId": "wk_000000591",
+    "title": "Mariah Carey's Magical Christmas Special",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102104892"
+    },
+    "titles": {
+      "ko": "Mariah Carey's Magical Christmas Special",
+      "en": "Mariah Carey's Magical Christmas Special",
+      "ja": "マライア・キャリー:マジカル クリスマス スペシャル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "entryCount": 1006,
+  "generatedAt": "2026-06-14T11:06:50.685522Z",
+  "shards": [
+    {
+      "category": "animation",
+      "path": "search_index/animation.json",
+      "entryCount": 201,
+      "sha256": "4b5d303946af28187e707f238bf60607924772242655a18ee4954e5db5ed2b5d"
+    },
+    {
+      "category": "book",
+      "path": "search_index/book.json",
+      "entryCount": 78,
+      "sha256": "7ceb1ac975db168ceb777b5322e9a0e438e9b43ca2720e12d99c1baad0e985c3"
+    },
+    {
+      "category": "drama",
+      "path": "search_index/drama.json",
+      "entryCount": 158,
+      "sha256": "ae39847b94a388187aadcb675f858b822cd9b2a65191969117addc06b4fc17a5"
+    },
+    {
+      "category": "game",
+      "path": "search_index/game.json",
+      "entryCount": 214,
+      "sha256": "6b8ce2086a2171e6a4bee004fa95ecc5664f68dbe87b97934cdc6d546785be3b"
+    },
+    {
+      "category": "manga",
+      "path": "search_index/manga.json",
+      "entryCount": 240,
+      "sha256": "e2413919a535e3dd4cc3ea11c74d50fabebc467d23c888343846d760505589cb"
+    },
+    {
+      "category": "movie",
+      "path": "search_index/movie.json",
+      "entryCount": 66,
+      "sha256": "8f683036b0719042fd07b42c819486edd4dcd4c42cadb2074ea8dfd3c3533e35"
+    },
+    {
+      "category": "webtoon",
+      "path": "search_index/webtoon.json",
+      "entryCount": 49,
+      "sha256": "26d310169f21727ea3fe0ceede97f3d52ab5ad8a0c238a5c6399e9533cbebb60"
+    }
+  ]
+}

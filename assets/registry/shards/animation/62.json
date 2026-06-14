@@ -107,5 +107,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001019": {
+    "workId": "wk_000001019",
+    "title": "공각기동대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066948"
+    },
+    "titles": {
+      "ko": "공각기동대",
+      "en": "Ghost in the Shell",
+      "ja": "GHOST IN THE SHELL / 攻殻機動隊"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

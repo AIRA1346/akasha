@@ -1,0 +1,21 @@
+{
+  "wk_000000663": {
+    "workId": "wk_000000663",
+    "title": "케로로 더 무비: 기적의 사차원섬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044964"
+    },
+    "titles": {
+      "ko": "케로로 더 무비: 기적의 사차원섬",
+      "en": "Keroro Gunso the Super Movie: Creation! Ultimate Keroro, Wonder Space-Time Island",
+      "ja": "超劇場版ケロロ軍曹 誕生!究極ケロロ 奇跡の時空島であります!!"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

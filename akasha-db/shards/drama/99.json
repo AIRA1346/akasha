@@ -1,0 +1,54 @@
+{
+  "wk_000000488": {
+    "workId": "wk_000000488",
+    "title": "테 아쿠에르다스 데 미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100502032"
+    },
+    "titles": {
+      "ko": "테 아쿠에르다스 데 미",
+      "en": "¿Te acuerdas de mí?",
+      "ja": "テ・アクエルダス・デ・ミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000594": {
+    "workId": "wk_000000594",
+    "title": "런웨이 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102239947"
+    },
+    "titles": {
+      "ko": "런웨이 (텔레비전 프로그램)",
+      "en": "Learn Way"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000641": {
+    "workId": "wk_000000641",
+    "title": "우리 이혼했어요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102354245"
+    },
+    "titles": {
+      "ko": "우리 이혼했어요",
+      "en": "We Got Divorced"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

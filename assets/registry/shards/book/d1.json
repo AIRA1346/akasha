@@ -1,0 +1,21 @@
+{
+  "wk_000000935": {
+    "workId": "wk_000000935",
+    "title": "아름다운 아이 크리스 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102293120"
+    },
+    "titles": {
+      "ko": "아름다운 아이 크리스 이야기",
+      "en": "Pluto: A Wonder Story"
+    },
+    "releaseYear": 2015,
+    "creator": "R. J. Palacio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

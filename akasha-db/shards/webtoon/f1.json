@@ -1,0 +1,20 @@
+{
+  "wk_000000920": {
+    "workId": "wk_000000920",
+    "title": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104173653"
+    },
+    "titles": {
+      "ko": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+      "en": "My One-Hit Kill Sister",
+      "ja": "異世界ワンターンキル姉さん〜姉同伴の異世界生活はじめました〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

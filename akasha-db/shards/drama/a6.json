@@ -1,0 +1,55 @@
+{
+  "wk_000000548": {
+    "workId": "wk_000000548",
+    "title": "학교 잖아 배우지 않으며!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1010471"
+    },
+    "titles": {
+      "ko": "학교 잖아 배우지 않으며!",
+      "en": "Gakko ja Oshierarenai!",
+      "ja": "学校じゃ教えられない!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000706": {
+    "workId": "wk_000000706",
+    "title": "초인 플래시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1031248"
+    },
+    "titles": {
+      "ko": "초인 플래시",
+      "en": "The Flash"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000710": {
+    "workId": "wk_000000710",
+    "title": "케 레 파사 아 미 파밀리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103303848"
+    },
+    "titles": {
+      "ko": "케 레 파사 아 미 파밀리아",
+      "en": "¿Qué le pasa a mi familia?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

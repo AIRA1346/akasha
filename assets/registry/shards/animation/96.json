@@ -1,0 +1,21 @@
+{
+  "wk_000000967": {
+    "workId": "wk_000000967",
+    "title": "극장판 바이올렛 에버가든",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106434135"
+    },
+    "titles": {
+      "ko": "극장판 바이올렛 에버가든",
+      "en": "Violet Evergarden: The Movie",
+      "ja": "劇場版 ヴァイオレット・エヴァーガーデン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "wk_000000698": {
+    "workId": "wk_000000698",
+    "title": "멘티르 파라 비비르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1029183"
+    },
+    "titles": {
+      "ko": "멘티르 파라 비비르",
+      "en": "Mentir para vivir"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

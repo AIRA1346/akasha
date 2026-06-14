@@ -1,0 +1,19 @@
+{
+  "wk_000000774": {
+    "workId": "wk_000000774",
+    "title": "우나 루스 엔 엘 카미노",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10387591"
+    },
+    "titles": {
+      "ko": "우나 루스 엔 엘 카미노",
+      "en": "Una luz en el camino"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,1204 @@
+[
+  {
+    "workId": "wk_000000620",
+    "title": "HG를 사랑하는 두 사람",
+    "shardId": "webtoon_c0",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Makoto Kudō",
+    "tags": [],
+    "searchTokens": [
+      "HG ni Koisuru Futari",
+      "HGに恋するふたり",
+      "HG를 사랑하는 두 사람",
+      "Makoto Kudō",
+      "hgnikoisurufutari",
+      "hgに恋するふたり",
+      "hg를사랑하는두사람",
+      "makotokudō"
+    ],
+    "titles": {
+      "ko": "HG를 사랑하는 두 사람",
+      "en": "HG ni Koisuru Futari",
+      "ja": "HGに恋するふたり"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001021",
+    "title": "TAKE MOON",
+    "shardId": "webtoon_a0",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Eri Takenashi",
+    "tags": [],
+    "searchTokens": [
+      "Carnival Phantasm",
+      "Eri Takenashi",
+      "TAKE MOON",
+      "carnivalphantasm",
+      "eritakenashi",
+      "takemoon"
+    ],
+    "titles": {
+      "ko": "TAKE MOON",
+      "en": "Carnival Phantasm",
+      "ja": "TAKE MOON"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000853",
+    "title": "경이로운 소문",
+    "shardId": "webtoon_0f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Amazing Rumor",
+      "amazingrumor",
+      "경이로운 소문",
+      "경이로운소문"
+    ],
+    "titles": {
+      "ko": "경이로운 소문",
+      "en": "Amazing Rumor"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000856",
+    "title": "공태랑 나가신다!",
+    "shardId": "webtoon_ad",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Tatsuya Hiruta",
+    "tags": [],
+    "searchTokens": [
+      "Kōtarō Makaritōru!",
+      "Tatsuya Hiruta",
+      "kōtarōmakaritōru!",
+      "tatsuyahiruta",
+      "コータローまかりとおる!",
+      "공태랑 나가신다!",
+      "공태랑나가신다!"
+    ],
+    "titles": {
+      "ko": "공태랑 나가신다!",
+      "en": "Kōtarō Makaritōru!",
+      "ja": "コータローまかりとおる!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000409",
+    "title": "나 혼자만 레벨업",
+    "shardId": "webtoon_7f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "추공 / DUBU",
+    "tags": [
+      "판타지",
+      "헌터",
+      "성장",
+      "액션"
+    ],
+    "searchTokens": [
+      "Solo Leveling",
+      "sololeveling",
+      "나 혼자만 레벨업",
+      "나혼자만레벨업",
+      "성장",
+      "액션",
+      "추공 / DUBU",
+      "추공dubu",
+      "판타지",
+      "헌터"
+    ],
+    "titles": {
+      "en": "Solo Leveling",
+      "ko": "나 혼자만 레벨업"
+    },
+    "qualityScore": 100,
+    "qualityTier": 5
+  },
+  {
+    "workId": "wk_000000741",
+    "title": "나와 로보코",
+    "shardId": "webtoon_d9",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Shūhei Miyazaki",
+    "tags": [],
+    "searchTokens": [
+      "Me & Roboco",
+      "Shūhei Miyazaki",
+      "me&roboco",
+      "shūheimiyazaki",
+      "僕とロボコ",
+      "나와 로보코",
+      "나와로보코"
+    ],
+    "titles": {
+      "ko": "나와 로보코",
+      "en": "Me & Roboco",
+      "ja": "僕とロボコ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000676",
+    "title": "던전에서 만남을 추구하면 안 되는 걸까",
+    "shardId": "webtoon_47",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Fujino Ōmori",
+    "tags": [],
+    "searchTokens": [
+      "Fujino Ōmori",
+      "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+      "fujinoōmori",
+      "isitwrongtotrytopickupgirlsinadungeon?",
+      "ダンジョンに出会いを求めるのは間違っているだろうか",
+      "던전에서 만남을 추구하면 안 되는 걸까",
+      "던전에서만남을추구하면안되는걸까"
+    ],
+    "titles": {
+      "ko": "던전에서 만남을 추구하면 안 되는 걸까",
+      "en": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+      "ja": "ダンジョンに出会いを求めるのは間違っているだろうか"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000743",
+    "title": "데드 마운트 데스 플레이",
+    "shardId": "webtoon_84",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Ryohgo Narita",
+    "tags": [],
+    "searchTokens": [
+      "Dead Mount Death Play",
+      "Ryohgo Narita",
+      "deadmountdeathplay",
+      "ryohgonarita",
+      "デッドマウントデスプレイ",
+      "デッドマウント・デスプレイ",
+      "데드 마운트 데스 플레이",
+      "데드마운트데스플레이"
+    ],
+    "titles": {
+      "ko": "데드 마운트 데스 플레이",
+      "en": "Dead Mount Death Play",
+      "ja": "デッドマウント・デスプレイ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000798",
+    "title": "라그나 크림슨",
+    "shardId": "webtoon_3e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ragna Crimson",
+      "ragnacrimson",
+      "ラグナクリムゾン",
+      "라그나 크림슨",
+      "라그나크림슨"
+    ],
+    "titles": {
+      "ko": "라그나 크림슨",
+      "en": "Ragna Crimson",
+      "ja": "ラグナクリムゾン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000677",
+    "title": "러브로마",
+    "shardId": "webtoon_bc",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Minoru Toyoda",
+    "tags": [],
+    "searchTokens": [
+      "Love Roma",
+      "Minoru Toyoda",
+      "loveroma",
+      "minorutoyoda",
+      "ラブロマ",
+      "러브로마"
+    ],
+    "titles": {
+      "ko": "러브로마",
+      "en": "Love Roma",
+      "ja": "ラブロマ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001023",
+    "title": "러브팬텀",
+    "shardId": "webtoon_7b",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kako Mitsuki",
+    "tags": [],
+    "searchTokens": [
+      "Kako Mitsuki",
+      "Love Phantom",
+      "kakomitsuki",
+      "lovephantom",
+      "ラブファントム",
+      "러브팬텀"
+    ],
+    "titles": {
+      "ko": "러브팬텀",
+      "en": "Love Phantom",
+      "ja": "ラブファントム"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000803",
+    "title": "메탈파이트 베이블레이드 ZEROG",
+    "shardId": "webtoon_3a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Takafumi Adachi",
+    "tags": [],
+    "searchTokens": [
+      "Beyblade: Shogun Steel",
+      "Takafumi Adachi",
+      "beybladeshogunsteel",
+      "takafumiadachi",
+      "メタルファイト ベイブレード ZEROG",
+      "メタルファイトベイブレードzerog",
+      "메탈파이트 베이블레이드 ZEROG",
+      "메탈파이트베이블레이드zerog"
+    ],
+    "titles": {
+      "ko": "메탈파이트 베이블레이드 ZEROG",
+      "en": "Beyblade: Shogun Steel",
+      "ja": "メタルファイト ベイブレード ZEROG"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000921",
+    "title": "명탐정 코난 경찰학원편",
+    "shardId": "webtoon_a8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Gosho Aoyama",
+    "tags": [],
+    "searchTokens": [
+      "Detective Conan: Wild Police Story",
+      "Gosho Aoyama",
+      "detectiveconanwildpolicestory",
+      "goshoaoyama",
+      "名探偵コナン 警察学校編 Wild Police Story",
+      "名探偵コナン警察学校編wildpolicestory",
+      "명탐정 코난 경찰학원편",
+      "명탐정코난경찰학원편"
+    ],
+    "titles": {
+      "ko": "명탐정 코난 경찰학원편",
+      "en": "Detective Conan: Wild Police Story",
+      "ja": "名探偵コナン 警察学校編 Wild Police Story"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000736",
+    "title": "벌 원 다이버",
+    "shardId": "webtoon_99",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Yokusaru Shibata",
+    "tags": [],
+    "searchTokens": [
+      "81diver",
+      "Yokusaru Shibata",
+      "yokusarushibata",
+      "ハチワンダイバー",
+      "벌 원 다이버",
+      "벌원다이버"
+    ],
+    "titles": {
+      "ko": "벌 원 다이버",
+      "en": "81diver",
+      "ja": "ハチワンダイバー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000977",
+    "title": "보이!",
+    "shardId": "webtoon_42",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Takako Yamazaki",
+    "tags": [],
+    "searchTokens": [
+      "Ppoi!",
+      "Takako Yamazaki",
+      "ppoi!",
+      "takakoyamazaki",
+      "っポイ!",
+      "보이!"
+    ],
+    "titles": {
+      "ko": "보이!",
+      "en": "Ppoi!",
+      "ja": "っポイ!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000855",
+    "title": "빵빵녀와 절벽녀",
+    "shardId": "webtoon_ce",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Atsuko Takakura",
+    "tags": [],
+    "searchTokens": [
+      "Atsuko Takakura",
+      "Yama Onna Kabe Onna",
+      "atsukotakakura",
+      "yamaonnakabeonna",
+      "山おんな壁おんな",
+      "빵빵녀와 절벽녀",
+      "빵빵녀와절벽녀"
+    ],
+    "titles": {
+      "ko": "빵빵녀와 절벽녀",
+      "en": "Yama Onna Kabe Onna",
+      "ja": "山おんな壁おんな"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001025",
+    "title": "사랑해 스즈키",
+    "shardId": "webtoon_e6",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Gō Ikeyamada",
+    "tags": [],
+    "searchTokens": [
+      "Gō Ikeyamada",
+      "Suki Desu Suzuki-kun!!",
+      "gōikeyamada",
+      "sukidesusuzukikun!!",
+      "好きです鈴木くん!!",
+      "사랑해 스즈키",
+      "사랑해스즈키"
+    ],
+    "titles": {
+      "ko": "사랑해 스즈키",
+      "en": "Suki Desu Suzuki-kun!!",
+      "ja": "好きです鈴木くん!!"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000675",
+    "title": "사사키와 미야노",
+    "shardId": "webtoon_95",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Shō Harusono",
+    "tags": [],
+    "searchTokens": [
+      "Sasaki and Miyano",
+      "Shō Harusono",
+      "sasakiandmiyano",
+      "shōharusono",
+      "佐々木と宮野",
+      "사사키와 미야노",
+      "사사키와미야노"
+    ],
+    "titles": {
+      "ko": "사사키와 미야노",
+      "en": "Sasaki and Miyano",
+      "ja": "佐々木と宮野"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000925",
+    "title": "살애",
+    "shardId": "webtoon_f3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Love of Kill",
+      "loveofkill",
+      "殺し愛",
+      "살애"
+    ],
+    "titles": {
+      "ko": "살애",
+      "en": "Love of Kill",
+      "ja": "殺し愛"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000619",
+    "title": "새 엄마가 데려온 딸이 전 여친이었다",
+    "shardId": "webtoon_1e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "紙城境介",
+    "tags": [],
+    "searchTokens": [
+      "My Stepmom's Daughter Is My Ex",
+      "mystepmom'sdaughterismyex",
+      "紙城境介",
+      "継母の連れ子が元カノだった",
+      "새 엄마가 데려온 딸이 전 여친이었다",
+      "새엄마가데려온딸이전여친이었다"
+    ],
+    "titles": {
+      "ko": "새 엄마가 데려온 딸이 전 여친이었다",
+      "en": "My Stepmom's Daughter Is My Ex",
+      "ja": "継母の連れ子が元カノだった"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000926",
+    "title": "소라닌",
+    "shardId": "webtoon_12",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Inio Asano",
+    "tags": [],
+    "searchTokens": [
+      "Inio Asano",
+      "Solanin",
+      "inioasano",
+      "solanin",
+      "ソラニン",
+      "소라닌"
+    ],
+    "titles": {
+      "ko": "소라닌",
+      "en": "Solanin",
+      "ja": "ソラニン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000852",
+    "title": "스위트홈",
+    "shardId": "webtoon_b7",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sweet Home",
+      "sweethome",
+      "스위트홈"
+    ],
+    "titles": {
+      "ko": "스위트홈",
+      "en": "Sweet Home"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000739",
+    "title": "시간 정지 용사",
+    "shardId": "webtoon_a4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Yasunori Mitsunaga",
+    "tags": [],
+    "searchTokens": [
+      "Time Stop Brave",
+      "Yasunori Mitsunaga",
+      "timestopbrave",
+      "yasunorimitsunaga",
+      "時間停止勇者",
+      "시간 정지 용사",
+      "시간정지용사"
+    ],
+    "titles": {
+      "ko": "시간 정지 용사",
+      "en": "Time Stop Brave",
+      "ja": "時間停止勇者"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000410",
+    "title": "신의 탑",
+    "shardId": "webtoon_03",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "SIU",
+    "tags": [
+      "판타지",
+      "모험",
+      "웹툰",
+      "미스터리"
+    ],
+    "searchTokens": [
+      "SIU",
+      "Tower OF GOD",
+      "siu",
+      "towerofgod",
+      "모험",
+      "미스터리",
+      "신의 탑",
+      "신의탑",
+      "웹툰",
+      "판타지"
+    ],
+    "titles": {
+      "en": "Tower OF GOD",
+      "ko": "신의 탑"
+    },
+    "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001024",
+    "title": "아라타 칸가타리",
+    "shardId": "webtoon_60",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Yuu Watase",
+    "tags": [],
+    "searchTokens": [
+      "Arata: The Legend",
+      "Yuu Watase",
+      "aratathelegend",
+      "yuuwatase",
+      "アラタ カンガタリ〜革神語〜",
+      "アラタカンガタリ〜革神語〜",
+      "아라타 칸가타리",
+      "아라타칸가타리"
+    ],
+    "titles": {
+      "ko": "아라타 칸가타리",
+      "en": "Arata: The Legend",
+      "ja": "アラタ カンガタリ〜革神語〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000802",
+    "title": "아오하라이드",
+    "shardId": "webtoon_a1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Io Sakisaka",
+    "tags": [],
+    "searchTokens": [
+      "Ao Haru Ride",
+      "Io Sakisaka",
+      "aoharuride",
+      "iosakisaka",
+      "アオハライド",
+      "아오하라이드"
+    ],
+    "titles": {
+      "ko": "아오하라이드",
+      "en": "Ao Haru Ride",
+      "ja": "アオハライド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000922",
+    "title": "아후가니스탄",
+    "shardId": "webtoon_3c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Afghanis-tan",
+      "afghanistan",
+      "あふがにすタン",
+      "아후가니스탄"
+    ],
+    "titles": {
+      "ko": "아후가니스탄",
+      "en": "Afghanis-tan",
+      "ja": "あふがにすタン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000979",
+    "title": "악마의 엄마",
+    "shardId": "webtoon_43",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kuzushiro",
+    "tags": [],
+    "searchTokens": [
+      "Akuma no Mama",
+      "Kuzushiro",
+      "akumanomama",
+      "kuzushiro",
+      "あくまのまま",
+      "악마의 엄마",
+      "악마의엄마"
+    ],
+    "titles": {
+      "ko": "악마의 엄마",
+      "en": "Akuma no Mama",
+      "ja": "あくまのまま"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000738",
+    "title": "앨버트가의 영애는 몰락을 소망합니다",
+    "shardId": "webtoon_4d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Albert-ke no Reijō wa Botsuraku o Goshomō desu",
+      "albertkenoreijōwabotsurakuogoshomōdesu",
+      "アルバート家の令嬢は没落をご所望です",
+      "앨버트가의 영애는 몰락을 소망합니다",
+      "앨버트가의영애는몰락을소망합니다"
+    ],
+    "titles": {
+      "ko": "앨버트가의 영애는 몰락을 소망합니다",
+      "en": "Albert-ke no Reijō wa Botsuraku o Goshomō desu",
+      "ja": "アルバート家の令嬢は没落をご所望です"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001026",
+    "title": "에도모아젤",
+    "shardId": "webtoon_d7",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Edomoiselle",
+      "edomoiselle",
+      "江戸モアゼル",
+      "에도모아젤"
+    ],
+    "titles": {
+      "ko": "에도모아젤",
+      "en": "Edomoiselle",
+      "ja": "江戸モアゼル"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000799",
+    "title": "에포토란스! 마이",
+    "shardId": "webtoon_31",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Yuu Watase",
+    "tags": [],
+    "searchTokens": [
+      "Epotoransu! Mai",
+      "Yuu Watase",
+      "epotoransu!mai",
+      "yuuwatase",
+      "エポトランス!舞",
+      "에포토란스! 마이",
+      "에포토란스!마이"
+    ],
+    "titles": {
+      "ko": "에포토란스! 마이",
+      "en": "Epotoransu! Mai",
+      "ja": "エポトランス!舞"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001022",
+    "title": "오오쿠",
+    "shardId": "webtoon_75",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Fumi Yoshinaga",
+    "tags": [],
+    "searchTokens": [
+      "Fumi Yoshinaga",
+      "fumiyoshinaga",
+      "Ōoku: The Inner Chambers",
+      "ōokutheinnerchambers",
+      "大奥",
+      "오오쿠"
+    ],
+    "titles": {
+      "ko": "오오쿠",
+      "en": "Ōoku: The Inner Chambers",
+      "ja": "大奥"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000976",
+    "title": "우리 회사의 작은 선배 이야기",
+    "shardId": "webtoon_b9",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Itsuki Hajime",
+    "tags": [],
+    "searchTokens": [
+      "Itsuki Hajime",
+      "My Tiny Senpai",
+      "itsukihajime",
+      "mytinysenpai",
+      "うちの会社の小さい先輩の話",
+      "우리 회사의 작은 선배 이야기",
+      "우리회사의작은선배이야기"
+    ],
+    "titles": {
+      "ko": "우리 회사의 작은 선배 이야기",
+      "en": "My Tiny Senpai",
+      "ja": "うちの会社の小さい先輩の話"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000924",
+    "title": "우마무스메 신데렐라 그레이",
+    "shardId": "webtoon_61",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Masafumi Sugiura",
+    "tags": [],
+    "searchTokens": [
+      "Masafumi Sugiura",
+      "Umamusume: Cinderella Gray",
+      "masafumisugiura",
+      "umamusumecinderellagray",
+      "ウマ娘 シンデレラグレイ",
+      "ウマ娘シンデレラグレイ",
+      "우마무스메 신데렐라 그레이",
+      "우마무스메신데렐라그레이"
+    ],
+    "titles": {
+      "ko": "우마무스메 신데렐라 그레이",
+      "en": "Umamusume: Cinderella Gray",
+      "ja": "ウマ娘 シンデレラグレイ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000800",
+    "title": "울트라매니악",
+    "shardId": "webtoon_4e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Wataru Yoshizumi",
+    "tags": [],
+    "searchTokens": [
+      "Ultra Maniac",
+      "Wataru Yoshizumi",
+      "ultramaniac",
+      "wataruyoshizumi",
+      "ウルトラマニアック",
+      "울트라매니악"
+    ],
+    "titles": {
+      "ko": "울트라매니악",
+      "en": "Ultra Maniac",
+      "ja": "ウルトラマニアック"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000546",
+    "title": "원댄스",
+    "shardId": "webtoon_ce",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Wandance",
+      "wandance",
+      "ワンダンス",
+      "원댄스"
+    ],
+    "titles": {
+      "ko": "원댄스",
+      "en": "Wandance",
+      "ja": "ワンダンス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000801",
+    "title": "이나중 탁구부",
+    "shardId": "webtoon_42",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Minoru Furuya",
+    "tags": [],
+    "searchTokens": [
+      "Minoru Furuya",
+      "The Ping-Pong Club",
+      "minorufuruya",
+      "thepingpongclub",
+      "行け!稲中卓球部",
+      "이나중 탁구부",
+      "이나중탁구부"
+    ],
+    "titles": {
+      "ko": "이나중 탁구부",
+      "en": "The Ping-Pong Club",
+      "ja": "行け!稲中卓球部"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000920",
+    "title": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+    "shardId": "webtoon_f1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "My One-Hit Kill Sister",
+      "myonehitkillsister",
+      "異世界ワンターンキル姉さん〜姉同伴の異世界生活はじめました〜",
+      "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+      "이세계원턴킬누나~누나동반이세계생활시작했습니다~"
+    ],
+    "titles": {
+      "ko": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+      "en": "My One-Hit Kill Sister",
+      "ja": "異世界ワンターンキル姉さん〜姉同伴の異世界生活はじめました〜"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000673",
+    "title": "일곱 개의 마검이 지배한다",
+    "shardId": "webtoon_eb",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Bokuto Uno",
+    "tags": [],
+    "searchTokens": [
+      "Bokuto Uno",
+      "Reign of the Seven Spellblades",
+      "bokutouno",
+      "reignofthesevenspellblades",
+      "七つの魔剣が支配する",
+      "일곱 개의 마검이 지배한다",
+      "일곱개의마검이지배한다"
+    ],
+    "titles": {
+      "ko": "일곱 개의 마검이 지배한다",
+      "en": "Reign of the Seven Spellblades",
+      "ja": "七つの魔剣が支配する"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000854",
+    "title": "죽은 소녀를 위한 파반",
+    "shardId": "webtoon_4f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Koge-Donbo",
+    "tags": [],
+    "searchTokens": [
+      "Koge-Donbo",
+      "Pavane for a Dead Girl",
+      "kogedonbo",
+      "pavaneforadeadgirl",
+      "亡き少女の為のパヴァーヌ",
+      "죽은 소녀를 위한 파반",
+      "죽은소녀를위한파반"
+    ],
+    "titles": {
+      "ko": "죽은 소녀를 위한 파반",
+      "en": "Pavane for a Dead Girl",
+      "ja": "亡き少女の為のパヴァーヌ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000538",
+    "title": "지젤 씨의 피",
+    "shardId": "webtoon_42",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Blood of Madame Giselle",
+      "thebloodofmadamegiselle",
+      "지젤 씨의 피",
+      "지젤씨의피"
+    ],
+    "titles": {
+      "ko": "지젤 씨의 피",
+      "en": "The Blood of Madame Giselle"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000978",
+    "title": "초인 로크",
+    "shardId": "webtoon_55",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Locke the Superman",
+      "lockethesuperman",
+      "超人ロック",
+      "초인 로크",
+      "초인로크"
+    ],
+    "titles": {
+      "ko": "초인 로크",
+      "en": "Locke the Superman",
+      "ja": "超人ロック"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000000975",
+    "title": "쵸콧토 시스터",
+    "shardId": "webtoon_e2",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "雑破業",
+    "tags": [],
+    "searchTokens": [
+      "Chocotto Sister",
+      "chocottosister",
+      "ちょこッとSister",
+      "ちょこッとsister",
+      "雑破業",
+      "쵸콧토 시스터",
+      "쵸콧토시스터"
+    ],
+    "titles": {
+      "ko": "쵸콧토 시스터",
+      "en": "Chocotto Sister",
+      "ja": "ちょこッとSister"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000674",
+    "title": "친구 여동생이 나한테만 짜증나게 군다",
+    "shardId": "webtoon_e8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Ghost Mikawa",
+    "tags": [],
+    "searchTokens": [
+      "Ghost Mikawa",
+      "My Friend's Little Sister Has It In for Me!",
+      "ghostmikawa",
+      "myfriend'slittlesisterhasitinforme!",
+      "友達の妹が俺にだけウザい",
+      "친구 여동생이 나한테만 짜증나게 군다",
+      "친구여동생이나한테만짜증나게군다"
+    ],
+    "titles": {
+      "ko": "친구 여동생이 나한테만 짜증나게 군다",
+      "en": "My Friend's Little Sister Has It In for Me!",
+      "ja": "友達の妹が俺にだけウザい"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000740",
+    "title": "쿠보 양은 나를 내버려두지 않아",
+    "shardId": "webtoon_e4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Nene Yukimori",
+    "tags": [],
+    "searchTokens": [
+      "Kubo Won't Let Me Be Invisible",
+      "Nene Yukimori",
+      "kubowon'tletmebeinvisible",
+      "neneyukimori",
+      "久保さんは僕を許さない",
+      "쿠보 양은 나를 내버려두지 않아",
+      "쿠보양은나를내버려두지않아"
+    ],
+    "titles": {
+      "ko": "쿠보 양은 나를 내버려두지 않아",
+      "en": "Kubo Won't Let Me Be Invisible",
+      "ja": "久保さんは僕を許さない"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000000742",
+    "title": "푸른 오케스트라",
+    "shardId": "webtoon_36",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Makoto Akui",
+    "tags": [],
+    "searchTokens": [
+      "Blue Orchestra",
+      "Makoto Akui",
+      "blueorchestra",
+      "makotoakui",
+      "青のオーケストラ",
+      "푸른 오케스트라",
+      "푸른오케스트라"
+    ],
+    "titles": {
+      "ko": "푸른 오케스트라",
+      "en": "Blue Orchestra",
+      "ja": "青のオーケストラ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000737",
+    "title": "하나노이군과 상사병",
+    "shardId": "webtoon_b5",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Megumi Morino",
+    "tags": [],
+    "searchTokens": [
+      "A Condition Called Love",
+      "Megumi Morino",
+      "aconditioncalledlove",
+      "megumimorino",
+      "花野井くんと恋の病",
+      "하나노이군과 상사병",
+      "하나노이군과상사병"
+    ],
+    "titles": {
+      "ko": "하나노이군과 상사병",
+      "en": "A Condition Called Love",
+      "ja": "花野井くんと恋の病"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000000923",
+    "title": "하트 커넥트",
+    "shardId": "webtoon_d4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Sadanatsu Anda",
+    "tags": [],
+    "searchTokens": [
+      "Kokoro Connect",
+      "Sadanatsu Anda",
+      "kokoroconnect",
+      "sadanatsuanda",
+      "ココロコネクト",
+      "하트 커넥트",
+      "하트커넥트"
+    ],
+    "titles": {
+      "ko": "하트 커넥트",
+      "en": "Kokoro Connect",
+      "ja": "ココロコネクト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001027",
+    "title": "학원 앨리스",
+    "shardId": "webtoon_0c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Tachibana Higuchi",
+    "tags": [],
+    "searchTokens": [
+      "Gakuen Alice",
+      "Tachibana Higuchi",
+      "gakuenalice",
+      "tachibanahiguchi",
+      "学園アリス",
+      "학원 앨리스",
+      "학원앨리스"
+    ],
+    "titles": {
+      "ko": "학원 앨리스",
+      "en": "Gakuen Alice",
+      "ja": "学園アリス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  }
+]

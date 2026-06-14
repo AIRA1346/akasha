@@ -1,0 +1,21 @@
+{
+  "wk_000000994": {
+    "workId": "wk_000000994",
+    "title": "DOG SIGNAL",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110496194"
+    },
+    "titles": {
+      "ko": "DOG SIGNAL",
+      "en": "Dog Signal",
+      "ja": "DOG SIGNAL"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

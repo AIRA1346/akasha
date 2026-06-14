@@ -1,0 +1,22 @@
+{
+  "wk_000000681": {
+    "workId": "wk_000000681",
+    "title": "영원의 제로",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100816056"
+    },
+    "titles": {
+      "ko": "영원의 제로",
+      "en": "The Eternal Zero",
+      "ja": "永遠の0"
+    },
+    "releaseYear": 2006,
+    "creator": "Naoki Hyakuta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

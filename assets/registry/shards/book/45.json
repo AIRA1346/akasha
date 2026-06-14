@@ -1,0 +1,21 @@
+{
+  "wk_000000934": {
+    "workId": "wk_000000934",
+    "title": "여성향 게임 세계는 모브에게 가혹한 세계입니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102245803"
+    },
+    "titles": {
+      "ko": "여성향 게임 세계는 모브에게 가혹한 세계입니다",
+      "en": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs",
+      "ja": "乙女ゲー世界はモブに厳しい世界です"
+    },
+    "creator": "三嶋与夢",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

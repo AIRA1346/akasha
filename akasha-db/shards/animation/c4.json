@@ -1,0 +1,38 @@
+{
+  "wk_000000915": {
+    "workId": "wk_000000915",
+    "title": "MUTEKING THE Dancing HERO",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106362554"
+    },
+    "titles": {
+      "ko": "MUTEKING THE Dancing HERO",
+      "en": "Muteking the Dancing Hero",
+      "ja": "MUTEKING THE Dancing HERO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000917": {
+    "workId": "wk_000000917",
+    "title": "가루가쿠.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106392494"
+    },
+    "titles": {
+      "ko": "가루가쿠.",
+      "en": "Garugaku.: Sei Girls Square Gakuin",
+      "ja": "ガル学. ~聖ガールズスクエア学院~"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

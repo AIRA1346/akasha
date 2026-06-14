@@ -1,0 +1,21 @@
+{
+  "wk_000000532": {
+    "workId": "wk_000000532",
+    "title": "워르테니아 전기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107402179"
+    },
+    "titles": {
+      "ko": "워르테니아 전기",
+      "en": "Record of Wortenia War",
+      "ja": "ウォルテニア戦記"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

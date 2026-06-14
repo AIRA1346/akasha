@@ -1,0 +1,20 @@
+{
+  "wk_000000724": {
+    "workId": "wk_000000724",
+    "title": "Vivy -Fluorite Eye’s Song-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105086938"
+    },
+    "titles": {
+      "ko": "Vivy -Fluorite Eye’s Song-",
+      "en": "Vivy: Fluorite Eye’s Song",
+      "ja": "ヴィヴィ -フローライトアイズソング-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

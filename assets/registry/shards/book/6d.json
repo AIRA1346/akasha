@@ -1,0 +1,21 @@
+{
+  "wk_000001031": {
+    "workId": "wk_000001031",
+    "title": "문관사림",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10301350"
+    },
+    "titles": {
+      "ko": "문관사림",
+      "en": "Wenguan Cilin",
+      "ja": "文館詞林"
+    },
+    "releaseYear": 658,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

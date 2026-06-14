@@ -1,0 +1,20 @@
+{
+  "wk_000000738": {
+    "workId": "wk_000000738",
+    "title": "앨버트가의 영애는 몰락을 소망합니다",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102244777"
+    },
+    "titles": {
+      "ko": "앨버트가의 영애는 몰락을 소망합니다",
+      "en": "Albert-ke no Reijō wa Botsuraku o Goshomō desu",
+      "ja": "アルバート家の令嬢は没落をご所望です"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

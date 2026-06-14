@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000815": {
+    "workId": "wk_000000815",
+    "title": "온에어 할 수 없어!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109405491"
+    },
+    "titles": {
+      "ko": "온에어 할 수 없어!",
+      "en": "On Air Dekinai!",
+      "ja": "オンエアできない!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

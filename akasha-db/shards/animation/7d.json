@@ -70,5 +70,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000731": {
+    "workId": "wk_000000731",
+    "title": "무사 쥬베이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052531"
+    },
+    "titles": {
+      "ko": "무사 쥬베이",
+      "en": "Ninja Scroll",
+      "ja": "獣兵衛忍風帖"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

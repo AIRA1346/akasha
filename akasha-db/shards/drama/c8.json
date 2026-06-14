@@ -1,0 +1,38 @@
+{
+  "wk_000000496": {
+    "workId": "wk_000000496",
+    "title": "암행어사: 조선비밀수사단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101011917"
+    },
+    "titles": {
+      "ko": "암행어사: 조선비밀수사단",
+      "en": "Royal Secret Agent",
+      "ja": "暗行御史：朝鮮秘密捜査団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000549": {
+    "workId": "wk_000000549",
+    "title": "조선구마사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101060442"
+    },
+    "titles": {
+      "ko": "조선구마사",
+      "en": "Joseon Exorcist",
+      "ja": "朝鮮駆魔師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

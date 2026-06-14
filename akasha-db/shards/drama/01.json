@@ -1,0 +1,20 @@
+{
+  "wk_000000585": {
+    "workId": "wk_000000585",
+    "title": "네 번째 재판",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101542406"
+    },
+    "titles": {
+      "ko": "네 번째 재판",
+      "en": "Trial 4",
+      "ja": "4度目の公判: ボストン警官殺人事件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

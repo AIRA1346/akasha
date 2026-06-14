@@ -1,0 +1,20 @@
+{
+  "wk_000000884": {
+    "workId": "wk_000000884",
+    "title": "아소카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104153367"
+    },
+    "titles": {
+      "ko": "아소카",
+      "en": "Ahsoka",
+      "ja": "アソーカ (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

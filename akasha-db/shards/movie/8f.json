@@ -1,0 +1,21 @@
+{
+  "wk_000000804": {
+    "workId": "wk_000000804",
+    "title": "드림",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100377303"
+    },
+    "titles": {
+      "ko": "드림",
+      "en": "Dream",
+      "ja": "ドリーム"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000572": {
+    "workId": "wk_000000572",
+    "title": "조이드 제네시스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1022078"
+    },
+    "titles": {
+      "ko": "조이드 제네시스",
+      "en": "Zoids: Genesis",
+      "ja": "ゾイドジェネシス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

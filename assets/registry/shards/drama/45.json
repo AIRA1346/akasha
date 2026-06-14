@@ -1,0 +1,20 @@
+{
+  "wk_000001005": {
+    "workId": "wk_000001005",
+    "title": "어느 날 우리 집 현관으로 멸망이 들어왔다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104846829"
+    },
+    "titles": {
+      "ko": "어느 날 우리 집 현관으로 멸망이 들어왔다",
+      "en": "Doom at Your Service",
+      "ja": "ある日、私の家の玄関に滅亡が入ってきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

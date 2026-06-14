@@ -80,5 +80,42 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000535": {
+    "workId": "wk_000000535",
+    "title": "호타루의 빛",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074509"
+    },
+    "titles": {
+      "ko": "호타루의 빛",
+      "en": "Hotaru no Hikari",
+      "ja": "ホタルノヒカリ"
+    },
+    "creator": "Satoru Hiura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000757": {
+    "workId": "wk_000000757",
+    "title": "카바치타레!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10884427"
+    },
+    "titles": {
+      "ko": "카바치타레!",
+      "en": "Kabachitare!",
+      "ja": "カバチタレ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

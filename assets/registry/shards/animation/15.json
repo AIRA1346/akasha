@@ -1,0 +1,39 @@
+{
+  "wk_000000732": {
+    "workId": "wk_000000732",
+    "title": "용자지령 다그온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052588"
+    },
+    "titles": {
+      "ko": "용자지령 다그온",
+      "en": "Brave Command Dagwon",
+      "ja": "勇者指令ダグオン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000847": {
+    "workId": "wk_000000847",
+    "title": "이노센스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058469"
+    },
+    "titles": {
+      "ko": "이노센스",
+      "en": "Ghost in the Shell 2: Innocence",
+      "ja": "イノセンス"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

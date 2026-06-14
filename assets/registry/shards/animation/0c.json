@@ -1,0 +1,39 @@
+{
+  "wk_000000581": {
+    "workId": "wk_000000581",
+    "title": "모래요정 바람돌이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036951"
+    },
+    "titles": {
+      "ko": "모래요정 바람돌이",
+      "en": "Onegai! Samia-don",
+      "ja": "おねがい!サミアどん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000919": {
+    "workId": "wk_000000919",
+    "title": "야스케",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106404099"
+    },
+    "titles": {
+      "ko": "야스케",
+      "en": "Yasuke",
+      "ja": "YASUKE －ヤスケ－"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

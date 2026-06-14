@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/registry/manifest.json
     - assets/registry/search_index.json
+    - assets/registry/search_index/
     - assets/registry/legacy_aliases.json
     - assets/registry/franchise_groups.json
     - assets/registry/shards/manga/

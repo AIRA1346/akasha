@@ -1,0 +1,40 @@
+{
+  "wk_000000837": {
+    "workId": "wk_000000837",
+    "title": "울티마 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043550"
+    },
+    "titles": {
+      "ko": "울티마 온라인",
+      "en": "Ultima Online",
+      "ja": "ウルティマオンライン"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000907": {
+    "workId": "wk_000000907",
+    "title": "428 ~봉쇄된 시부야에서~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045444"
+    },
+    "titles": {
+      "ko": "428 ~봉쇄된 시부야에서~",
+      "en": "428: Shibuya Scramble",
+      "ja": "428 〜封鎖された渋谷で〜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

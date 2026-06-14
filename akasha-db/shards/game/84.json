@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000658": {
+    "workId": "wk_000000658",
+    "title": "소드 아트 온라인: 인피니티 모멘트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10375414"
+    },
+    "titles": {
+      "ko": "소드 아트 온라인: 인피니티 모멘트",
+      "en": "Sword Art Online: Infinity Moment",
+      "ja": "ソードアート・オンライン -インフィニティ・モーメント"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000789": {
+    "workId": "wk_000000789",
+    "title": "아가레스트 전기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042365"
+    },
+    "titles": {
+      "ko": "아가레스트 전기",
+      "en": "Record of Agarest War",
+      "ja": "アガレスト戦記"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

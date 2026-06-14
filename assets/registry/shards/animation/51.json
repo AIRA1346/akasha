@@ -17,5 +17,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000000524": {
+    "workId": "wk_000000524",
+    "title": "괴롭히지 말아요, 나가토로 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101155037"
+    },
+    "titles": {
+      "ko": "괴롭히지 말아요, 나가토로 양",
+      "en": "Don't Toy With Me, Miss Nagatoro",
+      "ja": "イジらないで、長瀞さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000525": {
+    "workId": "wk_000000525",
+    "title": "바쿠텐!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101209749"
+    },
+    "titles": {
+      "ko": "바쿠텐!!",
+      "en": "Backflip!!",
+      "ja": "バクテン!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

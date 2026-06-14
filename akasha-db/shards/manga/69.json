@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000943": {
+    "workId": "wk_000000943",
+    "title": "돼지의 간은 가열해라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110060929"
+    },
+    "titles": {
+      "ko": "돼지의 간은 가열해라",
+      "en": "Heat the Pig Liver",
+      "ja": "豚のレバーは加熱しろ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

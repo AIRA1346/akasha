@@ -1,0 +1,20 @@
+{
+  "wk_000000825": {
+    "workId": "wk_000000825",
+    "title": "아파트 이웃들이 수상해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104007235"
+    },
+    "titles": {
+      "ko": "아파트 이웃들이 수상해",
+      "en": "Only Murders in the Building",
+      "ja": "マーダーズ・イン・ビルディング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

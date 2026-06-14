@@ -67,5 +67,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001012": {
+    "workId": "wk_000001012",
+    "title": "드래곤 에이지: 더 베일가드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104651901"
+    },
+    "titles": {
+      "ko": "드래곤 에이지: 더 베일가드",
+      "en": "Dragon Age: The Veilguard"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

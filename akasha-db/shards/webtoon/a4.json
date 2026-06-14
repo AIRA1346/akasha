@@ -1,0 +1,21 @@
+{
+  "wk_000000739": {
+    "workId": "wk_000000739",
+    "title": "시간 정지 용사",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102248931"
+    },
+    "titles": {
+      "ko": "시간 정지 용사",
+      "en": "Time Stop Brave",
+      "ja": "時間停止勇者"
+    },
+    "creator": "Yasunori Mitsunaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

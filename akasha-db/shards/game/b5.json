@@ -1,0 +1,21 @@
+{
+  "wk_000000603": {
+    "workId": "wk_000000603",
+    "title": "록맨 월드 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10328213"
+    },
+    "titles": {
+      "ko": "록맨 월드 5",
+      "en": "Mega Man V",
+      "ja": "ロックマンワールド5"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

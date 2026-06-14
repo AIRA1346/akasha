@@ -1,0 +1,21 @@
+{
+  "wk_000000862": {
+    "workId": "wk_000000862",
+    "title": "마리와 강아지 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1005361"
+    },
+    "titles": {
+      "ko": "마리와 강아지 이야기",
+      "en": "A Tale of Mari and Three Puppies",
+      "ja": "マリと子犬の物語"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "wk_000000755": {
+    "workId": "wk_000000755",
+    "title": "삼자삼엽",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866617"
+    },
+    "titles": {
+      "ko": "삼자삼엽",
+      "en": "Three Leaves, Three Colors",
+      "ja": "三者三葉"
+    },
+    "creator": "Cherry Arai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000945": {
+    "workId": "wk_000000945",
+    "title": "미기와 다리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110129624"
+    },
+    "titles": {
+      "ko": "미기와 다리",
+      "en": "Migi & Dali",
+      "ja": "ミギとダリ"
+    },
+    "releaseYear": 2017,
+    "creator": "Nami Sano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

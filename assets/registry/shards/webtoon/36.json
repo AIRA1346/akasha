@@ -1,0 +1,21 @@
+{
+  "wk_000000742": {
+    "workId": "wk_000000742",
+    "title": "푸른 오케스트라",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102253088"
+    },
+    "titles": {
+      "ko": "푸른 오케스트라",
+      "en": "Blue Orchestra",
+      "ja": "青のオーケストラ"
+    },
+    "creator": "Makoto Akui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

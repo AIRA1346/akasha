@@ -1,0 +1,21 @@
+{
+  "wk_000000937": {
+    "workId": "wk_000000937",
+    "title": "환우통지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10259811"
+    },
+    "titles": {
+      "ko": "환우통지",
+      "en": "Hwan-u Tongji",
+      "zh": "寰宇通志"
+    },
+    "creator": "Chen Xun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

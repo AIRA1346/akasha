@@ -44,5 +44,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000616": {
+    "workId": "wk_000000616",
+    "title": "플래티넘 엔드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104321788"
+    },
+    "titles": {
+      "ko": "플래티넘 엔드",
+      "en": "Platinum End",
+      "ja": "プラチナエンド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

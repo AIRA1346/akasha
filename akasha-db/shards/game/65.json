@@ -1,0 +1,21 @@
+{
+  "wk_000000605": {
+    "workId": "wk_000000605",
+    "title": "가디언 테일즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103474572"
+    },
+    "titles": {
+      "ko": "가디언 테일즈",
+      "en": "Guardian Tales",
+      "ja": "ガーディアンテイルズ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

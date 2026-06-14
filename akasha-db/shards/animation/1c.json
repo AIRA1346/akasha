@@ -1,0 +1,20 @@
+{
+  "wk_000000845": {
+    "workId": "wk_000000845",
+    "title": "그 여자의 집 건너편 창가에 웬 소녀가 있다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105760276"
+    },
+    "titles": {
+      "ko": "그 여자의 집 건너편 창가에 웬 소녀가 있다",
+      "en": "The Woman in the House Across the Street from the Girl in the Window",
+      "ja": "窓辺の女の向かいの家の女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

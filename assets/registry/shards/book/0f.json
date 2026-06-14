@@ -1,0 +1,40 @@
+{
+  "wk_000000870": {
+    "workId": "wk_000000870",
+    "title": "떠돌이기사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102127322"
+    },
+    "titles": {
+      "ko": "떠돌이기사",
+      "en": "The Hedge Knight"
+    },
+    "releaseYear": 1998,
+    "creator": "George R. R. Martin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001030": {
+    "workId": "wk_000001030",
+    "title": "문명소사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10300612"
+    },
+    "titles": {
+      "ko": "문명소사",
+      "en": "Wenming Xiaoshi"
+    },
+    "releaseYear": 1905,
+    "creator": "Li Boyuan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

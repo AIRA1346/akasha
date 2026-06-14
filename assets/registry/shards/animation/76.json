@@ -1,0 +1,21 @@
+{
+  "wk_000000613": {
+    "workId": "wk_000000613",
+    "title": "굴뚝마을의 푸펠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104212243"
+    },
+    "titles": {
+      "ko": "굴뚝마을의 푸펠",
+      "en": "Poupelle of Chimney Town",
+      "ja": "えんとつ町のプペル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

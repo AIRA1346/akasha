@@ -1,0 +1,20 @@
+{
+  "wk_000000929": {
+    "workId": "wk_000000929",
+    "title": "유랑북경",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100706042"
+    },
+    "titles": {
+      "ko": "유랑북경",
+      "en": "Bumming in Beijing: The Last Dreamers"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

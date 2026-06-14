@@ -1,0 +1,40 @@
+{
+  "wk_000000541": {
+    "workId": "wk_000000541",
+    "title": "내 옆에 은하",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107548123"
+    },
+    "titles": {
+      "ko": "내 옆에 은하",
+      "en": "A Galaxy Next Door",
+      "ja": "おとなりに銀河"
+    },
+    "releaseYear": 2020,
+    "creator": "Gido Amagakure",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000874": {
+    "workId": "wk_000000874",
+    "title": "굽고 있는 두 사람",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512131"
+    },
+    "titles": {
+      "ko": "굽고 있는 두 사람",
+      "en": "How to Grill Our Love",
+      "ja": "焼いてるふたり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

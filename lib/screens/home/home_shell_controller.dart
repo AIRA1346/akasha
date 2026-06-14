@@ -52,6 +52,9 @@ class HomeShellController {
   List<AkashaItem> items = [];
   bool isSyncing = false;
   bool isCatalogLoading = false;
+  bool isCatalogLoadingMore = false;
+  int catalogBrowseOffset = 0;
+  int catalogTotalEntries = 0;
   DateTime? lastSyncTime;
 
   final HomeBrowseFilterController filterCtrl = HomeBrowseFilterController();
@@ -220,7 +223,10 @@ class HomeShellController {
     workbench.syncFromVaultItems(loadedItems);
   }
 
-  Future<void> prefetchRegistryForCurrentFilters() async {
+  Future<void> prefetchRegistryForCurrentFilters({bool append = false}) async {
+    if (!append) {
+      host.scheduleRebuild(() => catalogBrowseOffset = 0);
+    }
     await prefetchRegistryForFilters(
       activeDashboardId: dashboardCtrl.activeDashboardId,
       filters: filterCtrl,
@@ -228,7 +234,24 @@ class HomeShellController {
           host.scheduleRebuild(() => isCatalogLoading = v),
       isMounted: () => host.mounted,
       onDataChanged: rebuild,
+      append: append,
+      browseOffset: append ? catalogBrowseOffset : 0,
+      onCatalogWindowState: (state) {
+        host.scheduleRebuild(() {
+          catalogBrowseOffset = state.browseOffset;
+          catalogTotalEntries = state.totalEntries;
+        });
+      },
     );
+  }
+
+  Future<void> loadMoreCatalog() async {
+    if (!catalogHasMore || isCatalogLoadingMore || isCatalogLoading) return;
+    host.scheduleRebuild(() => isCatalogLoadingMore = true);
+    await prefetchRegistryForCurrentFilters(append: true);
+    if (host.mounted) {
+      host.scheduleRebuild(() => isCatalogLoadingMore = false);
+    }
   }
 
   Future<void> autoArchiveRegistryWorks({bool showFeedback = false}) async {
@@ -251,6 +274,18 @@ class HomeShellController {
         allUserItems: items,
         filters: filterCtrl.filterState,
       );
+
+  bool get catalogUsesWindowedPrefetch =>
+      dashboardCtrl.activeDashboardId == 'master_index' &&
+      !isPersonalLibraryMode &&
+      filterCtrl.domain == null &&
+      filterCtrl.categories.isEmpty;
+
+  bool get catalogHasMore =>
+      catalogUsesWindowedPrefetch && catalogBrowseOffset < catalogTotalEntries;
+
+  int get catalogLoadedThrough =>
+      catalogBrowseOffset.clamp(0, catalogTotalEntries);
 
   Future<void> loadSidebarState() async {
     final open = await HomeSidebarPreferences.loadOpen();

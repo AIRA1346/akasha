@@ -1,0 +1,21 @@
+{
+  "wk_000000685": {
+    "workId": "wk_000000685",
+    "title": "어둠 속에서 헤엄치기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101167619"
+    },
+    "titles": {
+      "ko": "어둠 속에서 헤엄치기",
+      "en": "Swimming in the Dark"
+    },
+    "releaseYear": 2020,
+    "creator": "Tomasz Jedrowski",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

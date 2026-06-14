@@ -1,0 +1,20 @@
+{
+  "wk_000001001": {
+    "workId": "wk_000001001",
+    "title": "이미테이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104784097"
+    },
+    "titles": {
+      "ko": "이미테이션",
+      "en": "Imitation",
+      "ja": "イミテーション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

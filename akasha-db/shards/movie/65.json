@@ -1,0 +1,21 @@
+{
+  "wk_000000930": {
+    "workId": "wk_000000930",
+    "title": "듀얼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100724914"
+    },
+    "titles": {
+      "ko": "듀얼",
+      "en": "Dual",
+      "ja": "デュアル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

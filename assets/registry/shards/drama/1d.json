@@ -1,0 +1,20 @@
+{
+  "wk_000000490": {
+    "workId": "wk_000000490",
+    "title": "거기 돌면, 사쿠라자카?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100638334"
+    },
+    "titles": {
+      "ko": "거기 돌면, 사쿠라자카?",
+      "en": "Soko Magattara, Sakurazaka?",
+      "ja": "そこ曲がったら、櫻坂?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

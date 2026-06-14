@@ -1,0 +1,21 @@
+{
+  "wk_000000575": {
+    "workId": "wk_000000575",
+    "title": "극장판 힐링굿♥프리큐어 꿈의 마을에서 큥!하고 GoGo! 대변신!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102221749"
+    },
+    "titles": {
+      "ko": "극장판 힐링굿♥프리큐어 꿈의 마을에서 큥!하고 GoGo! 대변신!!",
+      "en": "Healin' Good Pretty Cure the Movie: GoGo! Big Transformation! The Town of Dreams",
+      "ja": "映画 ヒーリングっど♥プリキュア ゆめのまちでキュン!っとGoGo!大変身!!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

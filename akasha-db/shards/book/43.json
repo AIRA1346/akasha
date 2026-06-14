@@ -1,0 +1,21 @@
+{
+  "wk_000000687": {
+    "workId": "wk_000000687",
+    "title": "곶의 마요이가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101238421"
+    },
+    "titles": {
+      "ko": "곶의 마요이가",
+      "en": "Misaki no Mayoiga",
+      "ja": "岬のマヨイガ"
+    },
+    "creator": "Sachiko Kashiwaba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

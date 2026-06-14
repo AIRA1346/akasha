@@ -1,0 +1,21 @@
+{
+  "wk_000000512": {
+    "workId": "wk_000000512",
+    "title": "페로 사람들의 사가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1000933"
+    },
+    "titles": {
+      "ko": "페로 사람들의 사가",
+      "en": "Færeyinga Saga",
+      "ja": "フェロー諸島の人々のサガ"
+    },
+    "releaseYear": 1300,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

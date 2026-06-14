@@ -1,0 +1,21 @@
+{
+  "wk_000000867": {
+    "workId": "wk_000000867",
+    "title": "이세계 고문공주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102036089"
+    },
+    "titles": {
+      "ko": "이세계 고문공주",
+      "en": "Torture Princess: Fremd Torturchen",
+      "ja": "異世界拷問姫"
+    },
+    "creator": "Keishi Ayasato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

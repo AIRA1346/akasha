@@ -1,0 +1,22 @@
+{
+  "wk_000000854": {
+    "workId": "wk_000000854",
+    "title": "죽은 소녀를 위한 파반",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1038355"
+    },
+    "titles": {
+      "ko": "죽은 소녀를 위한 파반",
+      "en": "Pavane for a Dead Girl",
+      "ja": "亡き少女の為のパヴァーヌ"
+    },
+    "releaseYear": 2008,
+    "creator": "Koge-Donbo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000000522": {
+    "workId": "wk_000000522",
+    "title": "고지라 S.P: 싱귤러 포인트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100977481"
+    },
+    "titles": {
+      "ko": "고지라 S.P: 싱귤러 포인트",
+      "en": "Godzilla Singular Point",
+      "ja": "ゴジラ S.P"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

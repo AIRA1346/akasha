@@ -63,5 +63,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000875": {
+    "workId": "wk_000000875",
+    "title": "악역영애 전생 아저씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512165"
+    },
+    "titles": {
+      "ko": "악역영애 전생 아저씨",
+      "en": "From Bureaucrat to Villainess",
+      "ja": "悪役令嬢転生おじさん"
+    },
+    "creator": "Michiro Ueyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

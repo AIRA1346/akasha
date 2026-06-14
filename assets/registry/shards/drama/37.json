@@ -1,0 +1,39 @@
+{
+  "wk_000000883": {
+    "workId": "wk_000000883",
+    "title": "사랑하는 작고 예쁜 것들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104153320"
+    },
+    "titles": {
+      "ko": "사랑하는 작고 예쁜 것들",
+      "en": "Tiny Pretty Things",
+      "ja": "タイニー・プリティ・シングス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001010": {
+    "workId": "wk_000001010",
+    "title": "내일 지구가 망해버렸으면 좋겠어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104879322"
+    },
+    "titles": {
+      "ko": "내일 지구가 망해버렸으면 좋겠어",
+      "en": "So Not Worth It",
+      "ja": "ホント無理だから"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

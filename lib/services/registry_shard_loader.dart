@@ -17,22 +17,36 @@ import 'works_registry.dart';
 class RegistryShardLoader {
   static const String bundledManifestAsset = 'assets/registry/manifest.json';
   static const String bundledSearchIndexAsset = 'assets/registry/search_index.json';
+  static const String bundledSearchIndexManifestAsset =
+      'assets/registry/search_index/manifest.json';
   static const String bundledLegacyAliasesAsset = 'assets/registry/legacy_aliases.json';
 
   RegistryManifest? _manifest;
+  RegistrySearchIndexManifest? _searchIndexManifest;
   List<RegistrySearchIndexEntry> _searchIndex = [];
+  final Map<MediaCategory, List<RegistrySearchIndexEntry>> _searchIndexByCategory =
+      {};
+  bool _useShardedSearchIndex = false;
   final Map<String, String> _legacyAliases = {};
   final Set<String> _loadedShardIds = {};
 
   RegistryManifest? get manifest => _manifest;
+  RegistrySearchIndexManifest? get searchIndexManifest => _searchIndexManifest;
   List<RegistrySearchIndexEntry> get searchIndex => _searchIndex;
+  bool get usesShardedSearchIndex => _useShardedSearchIndex;
   Map<String, String> get legacyAliases => Map.unmodifiable(_legacyAliases);
 
   @visibleForTesting
   set manifestForTesting(RegistryManifest? value) => _manifest = value;
 
   @visibleForTesting
-  void resetLoadedShardsForTesting() => _loadedShardIds.clear();
+  void resetLoadedShardsForTesting() {
+    _loadedShardIds.clear();
+    _searchIndexByCategory.clear();
+    _searchIndex = [];
+    _searchIndexManifest = null;
+    _useShardedSearchIndex = false;
+  }
 
   bool isShardLoaded(String shardId) => _loadedShardIds.contains(shardId);
 
@@ -147,21 +161,120 @@ class RegistryShardLoader {
   }
 
   Future<void> _loadBundledSearchIndex() async {
+    if (await _tryLoadBundledSearchIndexManifest()) return;
+
     try {
       final raw = await rootBundle.loadString(bundledSearchIndexAsset);
-      final decoded = json.decode(raw);
-      if (decoded is List) {
-        _searchIndex = decoded
-            .whereType<Map>()
-            .map((e) => RegistrySearchIndexEntry.fromJson(
-                  Map<String, dynamic>.from(e),
-                ))
-            .where((e) => e.workId.isNotEmpty)
-            .toList();
-      }
+      _parseMonolithicSearchIndex(raw);
     } catch (e) {
       print('[RegistryShardLoader] Failed to load bundled search index: $e');
     }
+  }
+
+  Future<bool> _tryLoadBundledSearchIndexManifest() async {
+    try {
+      final raw = await rootBundle.loadString(bundledSearchIndexManifestAsset);
+      _searchIndexManifest = RegistrySearchIndexManifest.fromJson(
+        json.decode(raw) as Map<String, dynamic>,
+      );
+      _useShardedSearchIndex = true;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  void _parseMonolithicSearchIndex(String raw) {
+    final decoded = json.decode(raw);
+    if (decoded is List) {
+      _searchIndex = _parseSearchIndexList(decoded);
+      _useShardedSearchIndex = false;
+    }
+  }
+
+  List<RegistrySearchIndexEntry> _parseSearchIndexList(Object? decoded) {
+    if (decoded is! List) return const [];
+    return decoded
+        .whereType<Map>()
+        .map((e) => RegistrySearchIndexEntry.fromJson(
+              Map<String, dynamic>.from(e),
+            ))
+        .where((e) => e.workId.isNotEmpty)
+        .toList();
+  }
+
+  /// sharded search_index — manifest만 로드된 상태에서 category shard를 적재합니다.
+  Future<void> ensureSearchIndexLoaded({MediaCategory? category}) async {
+    if (!_useShardedSearchIndex || _searchIndexManifest == null) return;
+
+    if (category != null) {
+      await _ensureCategorySearchIndexLoaded(category, bundled: true);
+      _rebuildMergedSearchIndex();
+      return;
+    }
+
+    final expected = _searchIndexManifest!.entryCount;
+    if (_searchIndex.length >= expected && expected > 0) return;
+
+    await Future.wait(
+      _searchIndexManifest!.shards.map(
+        (shard) => _ensureCategorySearchIndexLoaded(shard.category, bundled: true),
+      ),
+    );
+    _rebuildMergedSearchIndex();
+  }
+
+  Future<void> _ensureCategorySearchIndexLoaded(
+    MediaCategory category, {
+    required bool bundled,
+  }) async {
+    if (_searchIndexByCategory.containsKey(category)) return;
+
+    final shard = _searchIndexManifest?.shardForCategory(category);
+    if (shard == null || shard.path.isEmpty) {
+      _searchIndexByCategory[category] = const [];
+      return;
+    }
+
+    String? raw;
+    if (bundled) {
+      try {
+        raw = await rootBundle.loadString('assets/registry/${shard.path}');
+      } catch (_) {}
+    }
+    raw ??= await _readCachedText(shard.path);
+
+    if (raw == null) {
+      _searchIndexByCategory[category] = const [];
+      return;
+    }
+
+    _searchIndexByCategory[category] = _parseSearchIndexList(json.decode(raw));
+  }
+
+  void _rebuildMergedSearchIndex() {
+    if (_searchIndexByCategory.isEmpty) return;
+    _searchIndex = _searchIndexByCategory.values.expand((e) => e).toList();
+  }
+
+  Iterable<RegistrySearchIndexEntry> _entriesForFilters({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) {
+    Iterable<RegistrySearchIndexEntry> entries;
+    if (_useShardedSearchIndex &&
+        category != null &&
+        _searchIndexByCategory.containsKey(category)) {
+      entries = _searchIndexByCategory[category] ?? const [];
+    } else {
+      entries = _searchIndex;
+    }
+
+    return entries.where((entry) {
+      if (domain != null && entry.domain != domain) return false;
+      if (category != null && entry.category != category) return false;
+      return true;
+    });
   }
 
   Future<void> _loadBundledLegacyAliases() async {
@@ -211,6 +324,7 @@ class RegistryShardLoader {
 
   Future<void> ensureShardsForQuery(String query) async {
     if (query.trim().isEmpty) return;
+    await ensureSearchIndexLoaded();
     for (final id in resolveShardIdsForQuery(query)) {
       await ensureShardLoaded(id);
     }
@@ -220,15 +334,83 @@ class RegistryShardLoader {
     AppDomain? domain,
     MediaCategory? category,
   }) async {
+    if (_useShardedSearchIndex && category != null) {
+      await ensureSearchIndexLoaded(category: category);
+    } else if (_useShardedSearchIndex) {
+      await ensureSearchIndexLoaded();
+    }
+
     final shardIds = <String>{};
-    for (final entry in _searchIndex) {
-      if (domain != null && entry.domain != domain) continue;
-      if (category != null && entry.category != category) continue;
+    for (final entry in _entriesForFilters(domain: domain, category: category)) {
       shardIds.add(entry.shardId);
     }
     for (final id in shardIds) {
       await ensureShardLoaded(id);
     }
+  }
+
+  /// Phase 2.2 — search_index 품질순 윈도우만 shard 로드 (전체 카탈로그 bulk prefetch 대체)
+  Future<void> ensureShardsForBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int limit = 48,
+  }) async {
+    if (limit <= 0) return;
+
+    if (_useShardedSearchIndex && category != null) {
+      await ensureSearchIndexLoaded(category: category);
+    } else {
+      await ensureSearchIndexLoaded();
+    }
+
+    final shardIds = resolveShardIdsForBrowseWindow(
+      domain: domain,
+      category: category,
+      offset: offset,
+      limit: limit,
+    );
+    await Future.wait(shardIds.map(ensureShardLoaded));
+  }
+
+  Set<String> resolveShardIdsForBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int limit = 48,
+  }) {
+    if (limit <= 0) return const {};
+
+    final entries = _entriesForFilters(domain: domain, category: category).toList()
+      ..sort((a, b) {
+        final score = b.qualityScore.compareTo(a.qualityScore);
+        if (score != 0) return score;
+        return a.title.compareTo(b.title);
+      });
+
+    final shardIds = <String>{};
+    for (final entry in entries.skip(offset).take(limit)) {
+      shardIds.add(entry.shardId);
+    }
+    return shardIds;
+  }
+
+  /// search_index 항목 수 (domain 필터는 index 로드 후 정확)
+  int countIndexEntries({AppDomain? domain, MediaCategory? category}) {
+    if (_useShardedSearchIndex && _searchIndexManifest != null) {
+      if (category != null) {
+        final loaded = _searchIndexByCategory[category];
+        if (loaded != null) {
+          return _entriesForFilters(domain: domain, category: category).length;
+        }
+        return _searchIndexManifest!.shardForCategory(category)?.entryCount ?? 0;
+      }
+      if (_searchIndex.isNotEmpty || _searchIndexByCategory.isNotEmpty) {
+        return _entriesForFilters(domain: domain, category: category).length;
+      }
+      if (domain == null) return _searchIndexManifest!.entryCount;
+    }
+    return _entriesForFilters(domain: domain, category: category).length;
   }
 
   Future<bool> cacheRemoteManifest(String content) async {
@@ -250,14 +432,11 @@ class RegistryShardLoader {
   Future<bool> cacheRemoteSearchIndex(String content) async {
     try {
       final decoded = json.decode(content);
+      if (decoded is Map<String, dynamic>) {
+        return await cacheRemoteSearchIndexManifest(content);
+      }
       if (decoded is List) {
-        _searchIndex = decoded
-            .whereType<Map>()
-            .map((e) => RegistrySearchIndexEntry.fromJson(
-                  Map<String, dynamic>.from(e),
-                ))
-            .where((e) => e.workId.isNotEmpty)
-            .toList();
+        _parseMonolithicSearchIndex(content);
         final file = await _cacheFile('search_index.json');
         await file.parent.create(recursive: true);
         await file.writeAsString(content);
@@ -265,6 +444,51 @@ class RegistryShardLoader {
       }
     } catch (e) {
       print('[RegistryShardLoader] Failed to cache remote search index: $e');
+    }
+    return false;
+  }
+
+  Future<bool> cacheRemoteSearchIndexManifest(String content) async {
+    try {
+      _searchIndexManifest = RegistrySearchIndexManifest.fromJson(
+        json.decode(content) as Map<String, dynamic>,
+      );
+      _useShardedSearchIndex = true;
+      _searchIndexByCategory.clear();
+      _searchIndex = [];
+      final file = await _cacheFile('search_index/manifest.json');
+      await file.parent.create(recursive: true);
+      await file.writeAsString(content);
+      return true;
+    } catch (e) {
+      print('[RegistryShardLoader] Failed to cache remote search index manifest: $e');
+    }
+    return false;
+  }
+
+  Future<bool> cacheRemoteSearchIndexShard(String relativePath, String content) async {
+    try {
+      final decoded = json.decode(content);
+      if (decoded is! List) return false;
+
+      final file = await _cacheFile(relativePath);
+      await file.parent.create(recursive: true);
+      await file.writeAsString(content);
+
+      if (_useShardedSearchIndex && _searchIndexManifest != null) {
+        final categoryName = p.basenameWithoutExtension(relativePath);
+        final category = MediaCategory.values.firstWhere(
+          (e) => e.name == categoryName,
+          orElse: () => MediaCategory.manga,
+        );
+        _searchIndexByCategory[category] = _parseSearchIndexList(decoded);
+        _rebuildMergedSearchIndex();
+      }
+      return true;
+    } catch (e) {
+      print(
+        '[RegistryShardLoader] Failed to cache remote search index shard $relativePath: $e',
+      );
     }
     return false;
   }
@@ -310,23 +534,48 @@ class RegistryShardLoader {
   }
 
   Future<void> _loadCachedSearchIndex() async {
+    if (await _tryLoadCachedSearchIndexManifest()) return;
+
     try {
       final file = await _cacheFile('search_index.json');
       if (await file.exists()) {
-        final decoded = json.decode(await file.readAsString());
-        if (decoded is List) {
-          _searchIndex = decoded
-              .whereType<Map>()
-              .map((e) => RegistrySearchIndexEntry.fromJson(
-                    Map<String, dynamic>.from(e),
-                  ))
-              .where((e) => e.workId.isNotEmpty)
-              .toList();
-        }
+        _parseMonolithicSearchIndex(await file.readAsString());
       }
     } catch (e) {
       print('[RegistryShardLoader] Failed to load cached search index: $e');
     }
+  }
+
+  Future<bool> _tryLoadCachedSearchIndexManifest() async {
+    try {
+      final file = await _cacheFile('search_index/manifest.json');
+      if (!await file.exists()) return false;
+      _searchIndexManifest = RegistrySearchIndexManifest.fromJson(
+        json.decode(await file.readAsString()) as Map<String, dynamic>,
+      );
+      _useShardedSearchIndex = true;
+
+      await Future.wait(
+        _searchIndexManifest!.shards.map(
+          (shard) => _ensureCategorySearchIndexLoaded(shard.category, bundled: false),
+        ),
+      );
+      _rebuildMergedSearchIndex();
+      return true;
+    } catch (e) {
+      print('[RegistryShardLoader] Failed to load cached search index manifest: $e');
+      return false;
+    }
+  }
+
+  Future<String?> _readCachedText(String relativePath) async {
+    try {
+      final file = await _cacheFile(relativePath);
+      if (await file.exists()) {
+        return await file.readAsString();
+      }
+    } catch (_) {}
+    return null;
   }
 
   /// 레거시 단일 JSON(works_registry.json) 병합 — 하위 호환

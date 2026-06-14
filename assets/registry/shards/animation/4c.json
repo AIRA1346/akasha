@@ -1,0 +1,57 @@
+{
+  "wk_000000909": {
+    "workId": "wk_000000909",
+    "title": "육화의 용사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106072129"
+    },
+    "titles": {
+      "ko": "육화의 용사",
+      "en": "Rokka no Yūsha",
+      "ja": "六花の勇者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000916": {
+    "workId": "wk_000000916",
+    "title": "견왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106365617"
+    },
+    "titles": {
+      "ko": "견왕",
+      "en": "Inu-Oh",
+      "ja": "犬王"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000970": {
+    "workId": "wk_000000970",
+    "title": "인피니트 스트라토스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106554273"
+    },
+    "titles": {
+      "ko": "인피니트 스트라토스",
+      "en": "Infinite Stratos",
+      "ja": "IS〈インフィニット・ストラトス〉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

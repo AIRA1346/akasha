@@ -1,0 +1,21 @@
+{
+  "wk_000001014": {
+    "workId": "wk_000001014",
+    "title": "마리오 카트 64",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046604"
+    },
+    "titles": {
+      "ko": "마리오 카트 64",
+      "en": "Mario Kart 64",
+      "ja": "マリオカート64"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

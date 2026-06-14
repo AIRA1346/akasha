@@ -1,0 +1,21 @@
+{
+  "wk_000000611": {
+    "workId": "wk_000000611",
+    "title": "용과 주근깨 공주",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104184744"
+    },
+    "titles": {
+      "ko": "용과 주근깨 공주",
+      "en": "Belle",
+      "ja": "竜とそばかすの姫"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

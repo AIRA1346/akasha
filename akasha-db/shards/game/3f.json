@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000778": {
+    "workId": "wk_000000778",
+    "title": "이삭의 구속",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041427"
+    },
+    "titles": {
+      "ko": "이삭의 구속",
+      "en": "The Binding of Isaac",
+      "ja": "ザ・バインディング・オブ・アイザック"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

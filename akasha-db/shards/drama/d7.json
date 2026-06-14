@@ -1,0 +1,38 @@
+{
+  "wk_000000592": {
+    "workId": "wk_000000592",
+    "title": "디어엠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102142297"
+    },
+    "titles": {
+      "ko": "디어엠",
+      "en": "Dear. M",
+      "ja": "Dear.M"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000896": {
+    "workId": "wk_000000896",
+    "title": "아내는 요술쟁이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044635"
+    },
+    "titles": {
+      "ko": "아내는 요술쟁이",
+      "en": "Bewitched",
+      "ja": "奥さまは魔女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000858": {
+    "workId": "wk_000000858",
+    "title": "킬 더 아이리쉬맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1004440"
+    },
+    "titles": {
+      "ko": "킬 더 아이리쉬맨",
+      "en": "Kill the Irishman",
+      "ja": "キル・ザ・ギャング 36回の爆破でも死ななかった男"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

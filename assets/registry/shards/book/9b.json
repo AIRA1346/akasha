@@ -1,1 +1,22 @@
-{}
+{
+  "wk_000000515": {
+    "workId": "wk_000000515",
+    "title": "신호수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002362"
+    },
+    "titles": {
+      "ko": "신호수",
+      "en": "The Signal-Man",
+      "ja": "The Signal-Man"
+    },
+    "releaseYear": 1866,
+    "creator": "チャールズ・ディケンズ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000000620": {
+    "workId": "wk_000000620",
+    "title": "HG를 사랑하는 두 사람",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102116512"
+    },
+    "titles": {
+      "ko": "HG를 사랑하는 두 사람",
+      "en": "HG ni Koisuru Futari",
+      "ja": "HGに恋するふたり"
+    },
+    "creator": "Makoto Kudō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -30,5 +30,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000534": {
+    "workId": "wk_000000534",
+    "title": "괴인 개발부의 쿠로이츠 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107445470"
+    },
+    "titles": {
+      "ko": "괴인 개발부의 쿠로이츠 씨",
+      "en": "Miss Kuroitsu from the Monster Development Department",
+      "ja": "怪人開発部の黒井津さん"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000881": {
+    "workId": "wk_000000881",
+    "title": "전생 악녀의 흑역사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512208"
+    },
+    "titles": {
+      "ko": "전생 악녀의 흑역사",
+      "en": "The Dark History of the Reincarnated Villainess",
+      "ja": "転生悪女の黒歴史"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

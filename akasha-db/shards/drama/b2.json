@@ -1,0 +1,38 @@
+{
+  "wk_000000639": {
+    "workId": "wk_000000639",
+    "title": "우린 제법 안 어울려요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102245805"
+    },
+    "titles": {
+      "ko": "우린 제법 안 어울려요",
+      "en": "Mismatched",
+      "ja": "ミスマッチな関係!?"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000957": {
+    "workId": "wk_000000957",
+    "title": "루카 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104706289"
+    },
+    "titles": {
+      "ko": "루카 (드라마)",
+      "en": "L.U.C.A.: The Beginning"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

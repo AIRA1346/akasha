@@ -1,0 +1,20 @@
+{
+  "wk_000000536": {
+    "workId": "wk_000000536",
+    "title": "당한 쪽의 비극",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107460381"
+    },
+    "titles": {
+      "ko": "당한 쪽의 비극",
+      "en": "Q107460381",
+      "ja": "サレタガワのブルー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000000740": {
+    "workId": "wk_000000740",
+    "title": "쿠보 양은 나를 내버려두지 않아",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102249010"
+    },
+    "titles": {
+      "ko": "쿠보 양은 나를 내버려두지 않아",
+      "en": "Kubo Won't Let Me Be Invisible",
+      "ja": "久保さんは僕を許さない"
+    },
+    "releaseYear": 2019,
+    "creator": "Nene Yukimori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

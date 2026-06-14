@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000000670": {
+    "workId": "wk_000000670",
+    "title": "마테를링크의 파랑새: 틸틸과 미틸의 모험 여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048557"
+    },
+    "titles": {
+      "ko": "마테를링크의 파랑새: 틸틸과 미틸의 모험 여행",
+      "en": "Maeterlinck's Blue Bird: Tyltyl and Mytyl's Adventurous Journey",
+      "ja": "メーテルリンクの青い鳥 チルチルミチルの冒険旅行"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

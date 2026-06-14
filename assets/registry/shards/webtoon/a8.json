@@ -1,0 +1,21 @@
+{
+  "wk_000000921": {
+    "workId": "wk_000000921",
+    "title": "명탐정 코난 경찰학원편",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104181129"
+    },
+    "titles": {
+      "ko": "명탐정 코난 경찰학원편",
+      "en": "Detective Conan: Wild Police Story",
+      "ja": "名探偵コナン 警察学校編 Wild Police Story"
+    },
+    "creator": "Gosho Aoyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

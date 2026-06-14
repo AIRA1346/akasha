@@ -1,0 +1,37 @@
+{
+  "wk_000000586": {
+    "workId": "wk_000000586",
+    "title": "에토스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101542419"
+    },
+    "titles": {
+      "ko": "에토스",
+      "en": "Ethos",
+      "ja": "イスタンブールの8人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001000": {
+    "workId": "wk_000001000",
+    "title": "손 야즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104775921"
+    },
+    "titles": {
+      "ko": "손 야즈",
+      "en": "Son Yaz"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

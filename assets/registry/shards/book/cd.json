@@ -1,0 +1,22 @@
+{
+  "wk_000000987": {
+    "workId": "wk_000000987",
+    "title": "자본의 시대",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10273497"
+    },
+    "titles": {
+      "ko": "자본의 시대",
+      "en": "The Age of Capital: 1848–1875",
+      "ja": "資本の時代 1848-1875（1・2）"
+    },
+    "releaseYear": 1975,
+    "creator": "Eric Hobsbawm",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

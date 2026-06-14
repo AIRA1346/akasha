@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000839": {
+    "workId": "wk_000000839",
+    "title": "선검기협전 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104415519"
+    },
+    "titles": {
+      "ko": "선검기협전 7",
+      "en": "The Legend of Sword and Fairy 7",
+      "ja": "仙剣奇侠伝七"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

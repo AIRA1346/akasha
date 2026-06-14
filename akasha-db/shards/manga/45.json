@@ -50,5 +50,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000000818": {
+    "workId": "wk_000000818",
+    "title": "클램프 학원 탐정단",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1094906"
+    },
+    "titles": {
+      "ko": "클램프 학원 탐정단",
+      "en": "Clamp School Detectives",
+      "ja": "CLAMP学園探偵団"
+    },
+    "releaseYear": 1992,
+    "creator": "CLAMP",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

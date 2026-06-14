@@ -1,0 +1,40 @@
+{
+  "wk_000000659": {
+    "workId": "wk_000000659",
+    "title": "머나먼 시공 속에서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037613"
+    },
+    "titles": {
+      "ko": "머나먼 시공 속에서",
+      "en": "Haruka: Beyond the Stream of Time",
+      "ja": "遙かなる時空の中で"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000898": {
+    "workId": "wk_000000898",
+    "title": "영웅전설 여의 궤적",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104416383"
+    },
+    "titles": {
+      "ko": "영웅전설 여의 궤적",
+      "en": "The Legend of Heroes: Trails through Daybreak",
+      "ja": "英雄伝説 黎の軌跡"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

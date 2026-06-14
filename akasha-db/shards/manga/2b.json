@@ -1,0 +1,22 @@
+{
+  "wk_000000540": {
+    "workId": "wk_000000540",
+    "title": "돌격! 남자훈련소",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075436"
+    },
+    "titles": {
+      "ko": "돌격! 남자훈련소",
+      "en": "Sakigake!! Otokojuku",
+      "ja": "魁!!男塾"
+    },
+    "releaseYear": 1988,
+    "creator": "Akira Miyashita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

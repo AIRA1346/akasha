@@ -1,0 +1,20 @@
+{
+  "wk_000000831": {
+    "workId": "wk_000000831",
+    "title": "홍천기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104125947"
+    },
+    "titles": {
+      "ko": "홍천기",
+      "en": "Lovers of the Red Sky",
+      "ja": "ホンチョンギ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,1 +1,37 @@
-{}
+{
+  "wk_000000775": {
+    "workId": "wk_000000775",
+    "title": "비다스 엠 조구",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10390476"
+    },
+    "titles": {
+      "ko": "비다스 엠 조구",
+      "en": "Vidas em Jogo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000890": {
+    "workId": "wk_000000890",
+    "title": "시지프스 : the myth",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104216669"
+    },
+    "titles": {
+      "ko": "시지프스 : the myth",
+      "en": "Sisyphus: The Myth",
+      "ja": "シーシュポス: the myth"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

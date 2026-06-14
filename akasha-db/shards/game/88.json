@@ -63,5 +63,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000787": {
+    "workId": "wk_000000787",
+    "title": "동방영야초 ~ Imperishable Night",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042155"
+    },
+    "titles": {
+      "ko": "동방영야초 ~ Imperishable Night",
+      "en": "Touhou Eiyashou ~ Imperishable Night",
+      "ja": "東方永夜抄 〜 Imperishable Night."
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

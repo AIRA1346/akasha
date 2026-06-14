@@ -1,0 +1,37 @@
+{
+  "wk_000000557": {
+    "workId": "wk_000000557",
+    "title": "런 온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101219144"
+    },
+    "titles": {
+      "ko": "런 온",
+      "en": "Run On",
+      "ja": "それでも僕らは走り続ける"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000650": {
+    "workId": "wk_000000650",
+    "title": "생활비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10266459"
+    },
+    "titles": {
+      "ko": "생활비",
+      "en": "Dinheiro Vivo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

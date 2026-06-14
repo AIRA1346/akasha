@@ -1,0 +1,21 @@
+{
+  "wk_000000905": {
+    "workId": "wk_000000905",
+    "title": "이터널 리턴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104541176"
+    },
+    "titles": {
+      "ko": "이터널 리턴",
+      "en": "Eternal Return: Black Survival",
+      "ja": "エターナルリターン (ゲーム)"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

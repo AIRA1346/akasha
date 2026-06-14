@@ -42,6 +42,7 @@ class BrowseDashboardSections extends StatelessWidget {
   final Widget Function(List<BrowseCard> cards) gridBuilder;
   final bool isPersonalLibraryMode;
   final bool curatedLibrarySort;
+  final Widget? catalogFooter;
 
   const BrowseDashboardSections({
     super.key,
@@ -72,6 +73,7 @@ class BrowseDashboardSections extends StatelessWidget {
     required this.gridBuilder,
     this.isPersonalLibraryMode = false,
     this.curatedLibrarySort = false,
+    this.catalogFooter,
   });
 
   @override
@@ -169,6 +171,7 @@ class BrowseDashboardSections extends StatelessWidget {
               ]
             else
               gridBuilder(libraryCards),
+            if (catalogFooter != null) catalogFooter!,
           ],
           const SizedBox(height: 16),
         ],

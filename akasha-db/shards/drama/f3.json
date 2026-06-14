@@ -1,0 +1,20 @@
+{
+  "wk_000000583": {
+    "workId": "wk_000000583",
+    "title": "징벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101436639"
+    },
+    "titles": {
+      "ko": "징벌",
+      "en": "Possessions"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

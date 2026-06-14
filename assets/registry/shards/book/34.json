@@ -1,0 +1,21 @@
+{
+  "wk_000000682": {
+    "workId": "wk_000000682",
+    "title": "왕국의 사료편찬관",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100988192"
+    },
+    "titles": {
+      "ko": "왕국의 사료편찬관",
+      "en": "Q100988192"
+    },
+    "releaseYear": 2020,
+    "creator": "Maël Renouard",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

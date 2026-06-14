@@ -1,0 +1,21 @@
+{
+  "wk_000000628": {
+    "workId": "wk_000000628",
+    "title": "침묵",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100333537"
+    },
+    "titles": {
+      "ko": "침묵",
+      "en": "The Silence"
+    },
+    "releaseYear": 2020,
+    "creator": "Don DeLillo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "wk_000000661": {
+    "workId": "wk_000000661",
+    "title": "위쳐: 블러드 오리진",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104411188"
+    },
+    "titles": {
+      "ko": "위쳐: 블러드 오리진",
+      "en": "The Witcher: Blood Origin",
+      "ja": "ウィッチャー 血の起源"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000911": {
+    "workId": "wk_000000911",
+    "title": "정령환상기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106089972"
+    },
+    "titles": {
+      "ko": "정령환상기",
+      "en": "Seirei Gensouki: Spirit Chronicles",
+      "ja": "精霊幻想記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

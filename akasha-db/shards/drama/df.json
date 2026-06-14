@@ -1,0 +1,20 @@
+{
+  "wk_000000776": {
+    "workId": "wk_000000776",
+    "title": "SMAP×SMAP",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1039114"
+    },
+    "titles": {
+      "ko": "SMAP×SMAP",
+      "en": "SMAP×SMAP",
+      "ja": "SMAP×SMAP"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

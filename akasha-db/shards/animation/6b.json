@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001018": {
+    "workId": "wk_000001018",
+    "title": "힐러 걸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106687695"
+    },
+    "titles": {
+      "ko": "힐러 걸",
+      "en": "Healer Girl",
+      "ja": "ヒーラー・ガール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

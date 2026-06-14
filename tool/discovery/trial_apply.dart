@@ -13,7 +13,9 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 
 import '../data_policy_utils.dart';
+import '../dedupe_utils.dart';
 import '../registry_hash_utils.dart';
+import '../registry_v3_utils.dart';
 import '../wk_id_utils.dart';
 import 'contract_test_runner.dart';
 import 'discovery_fixtures.dart';
@@ -129,10 +131,13 @@ void main(List<String> args) async {
 
   final preApplySnap = RegistrySnapshot.load(root);
   final createdWks = <String>{};
+  final createdWikidataIds = <String>{};
   var created = 0;
   var merged = 0;
   var skippedMerge = 0;
+  var skippedDuplicateQid = 0;
   int? highestSeq;
+  final createdRegistryEntries = <Map<String, dynamic>>[];
 
   if (!mergeOnly) {
   for (var i = 0; i < createLimit; i++) {
@@ -142,6 +147,18 @@ void main(List<String> args) async {
     if (!isWkId(wk)) {
       stderr.writeln('ABORT: invalid workId for create ${item.externalId}');
       exit(1);
+    }
+
+    final qid = _externalIdsFromDraft(draft)['wikidata'];
+    if (qid != null && qid.isNotEmpty) {
+      final extKey = 'wikidata:$qid';
+      if (preApplySnap.byExternalKey.containsKey(extKey) ||
+          createdWikidataIds.contains(qid)) {
+        print('SKIP duplicate wikidata:$qid (${item.title})');
+        skippedDuplicateQid++;
+        continue;
+      }
+      createdWikidataIds.add(qid);
     }
 
     _enrichProvenance(draft, channelId, config.source);
@@ -180,6 +197,7 @@ void main(List<String> args) async {
     print('CREATE $wk ${config.source}:${item.externalId} -> $relPath');
     created++;
     createdWks.add(wk);
+    createdRegistryEntries.add({'workId': wk, 'category': category});
 
     final seq = parseWkSequence(wk);
     if (seq != null && (highestSeq == null || seq > highestSeq!)) {
@@ -190,9 +208,22 @@ void main(List<String> args) async {
 
   if (!skipMerge) {
     for (final item in merges) {
-      final targetId = item.matchedWorkId;
       final draft = item.draft;
-      if (targetId == null || draft == null) continue;
+      if (draft == null) continue;
+
+      var targetId = item.matchedWorkId;
+      if (targetId == null ||
+          (!preApplySnap.byWorkId.containsKey(targetId) &&
+              !createdWks.contains(targetId))) {
+        targetId = _resolveMergeTargetFromRegistry(preApplySnap, draft);
+      }
+      if (targetId == null) {
+        stderr.writeln(
+          'WARN: merge target missing ${item.matchedWorkId ?? "?"} — skip',
+        );
+        skippedMerge++;
+        continue;
+      }
 
       final inPreRegistry = preApplySnap.byWorkId.containsKey(targetId);
       final inBatch = createdWks.contains(targetId);
@@ -283,13 +314,7 @@ void main(List<String> args) async {
   if (!mergeOnly && created > 0 && highestSeq != null) {
     _patchIdRegistry(
       File(p.join(dbRoot.path, 'id_registry.json')),
-      creates.take(createLimit).map((item) {
-        final draft = item.draft ?? {};
-        return {
-          'workId': item.shadowWorkId ?? draft['workId'],
-          'category': draft['category']?.toString() ?? config.category,
-        };
-      }),
+      createdRegistryEntries,
       highestSeq! + 1,
     );
     print('id_registry nextWorkId -> ${highestSeq! + 1}');
@@ -310,7 +335,8 @@ void main(List<String> args) async {
     print('cursor offset $oldOffset -> $newOffset');
   }
 
-  print('\nDone: $created created, $merged merged, $skippedMerge merge skipped');
+  print('\nDone: $created created, $merged merged, $skippedMerge merge skipped'
+      '${skippedDuplicateQid > 0 ? ', $skippedDuplicateQid duplicate qid skipped' : ''}');
 }
 
 void _enrichProvenance(
@@ -345,6 +371,49 @@ Map<String, String> _externalIdsFromDraft(Map<String, dynamic> draft) {
   final ext = draft['externalIds'];
   if (ext is! Map) return {};
   return ext.map((k, v) => MapEntry(k.toString(), v.toString()));
+}
+
+/// shadow pending wk 대신 레지스트리 제목 매칭으로 merge 대상 복구
+String? _resolveMergeTargetFromRegistry(
+  RegistrySnapshot snap,
+  Map<String, dynamic> draft,
+) {
+  final category = draft['category']?.toString() ?? '';
+  final year = draft['releaseYear'] is int
+      ? draft['releaseYear'] as int
+      : int.tryParse(draft['releaseYear']?.toString() ?? '');
+
+  for (final norm in _normalizedTitlesFromDraft(draft)) {
+    if (norm.length < 2) continue;
+    final key = '$category::$norm';
+    for (final hit in snap.byTitleKey[key] ?? const []) {
+      if (!releaseYearsCompatible(year, hit.releaseYear)) continue;
+      return hit.workId;
+    }
+  }
+  return null;
+}
+
+Set<String> _normalizedTitlesFromDraft(Map<String, dynamic> draft) {
+  final norms = <String>{};
+  void add(String? t) {
+    if (t == null || t.isEmpty) return;
+    final n = normalizeTitle(t);
+    if (n.isNotEmpty) norms.add(n);
+  }
+
+  add(draft['title']?.toString());
+  final titles = draft['titles'];
+  if (titles is Map) {
+    titles.forEach((_, v) => add(v?.toString()));
+  }
+  final aliases = draft['aliases'];
+  if (aliases is List) {
+    for (final a in aliases) {
+      add(a?.toString());
+    }
+  }
+  return norms;
 }
 
 void _patchIdRegistry(

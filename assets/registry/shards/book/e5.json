@@ -1,0 +1,21 @@
+{
+  "wk_000000627": {
+    "workId": "wk_000000627",
+    "title": "페어워닝",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100324306"
+    },
+    "titles": {
+      "ko": "페어워닝",
+      "en": "Fair Warning"
+    },
+    "releaseYear": 2020,
+    "creator": "Michael Connelly",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

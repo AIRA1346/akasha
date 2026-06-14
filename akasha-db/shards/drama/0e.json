@@ -1,0 +1,19 @@
+{
+  "wk_000000547": {
+    "workId": "wk_000000547",
+    "title": "왈랑 항강 파알람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101033387"
+    },
+    "titles": {
+      "ko": "왈랑 항강 파알람",
+      "en": "Walang Hanggang Paalam"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

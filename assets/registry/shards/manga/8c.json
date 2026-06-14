@@ -66,5 +66,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000000530": {
+    "workId": "wk_000000530",
+    "title": "나츠메 아라타의 결혼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107335308"
+    },
+    "titles": {
+      "ko": "나츠메 아라타의 결혼",
+      "en": "Natsume Arata no Kekkon",
+      "ja": "夏目アラタの結婚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
