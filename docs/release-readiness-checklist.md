@@ -147,6 +147,7 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 | 2026-06-10 | — | 0/12 | 4/4 | 자동 게이트 baseline · 테스트 3건 drift 수정 |
 | 2026-06-10 | Release exe | 0/12 | 6/6 | test 254 · build OK · P0 auto 4건 · deprecated dialog 삭제 |
 | 2026-06-13 | Release exe | 12/12 | 6/6 | 스팀 데포 업로드 및 수동/자동 QA 전수 합격 |
+| 2026-06-14 | Release exe | — | 6/6 | Sprint A1 — test **271** · analyze 0 err · build OK |
 
 ---
 

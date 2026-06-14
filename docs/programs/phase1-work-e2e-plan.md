@@ -62,12 +62,12 @@
 
 ### Sprint A — 출시 마무리 (지금)
 
-| # | 작업 | Exit |
-|:-:|------|------|
-| A1 | **G-AUTO** 전체 (`flutter test` · ci_registry · preflight · quality_gate --release · Release build) | 0 fail |
-| A2 | **Dogfood E2E** — 본인 볼트로 ①~④ 10작 이상 (스크립트: `scripts/dogfood_precheck.ps1`) | 체크리스트 Pass |
-| A3 | **M3** Steam Release 최종 승인 · (필요 시) depot 재업로드 | R1~R6 ✅ |
-| A4 | friction log — ①~④ 중 **끊긴 UX만** 이슈 등록 | 목록 0~N |
+| # | 작업 | Exit | 상태 |
+|:-:|------|------|:----:|
+| A1 | **G-AUTO** 전체 (`flutter test` · ci_registry · preflight · quality_gate --release · Release build) | 0 fail | ✅ 2026-06-14 |
+| A2 | **Dogfood E2E** — 본인 볼트로 ①~④ 10작 이상 (아래 §8) | 체크리스트 Pass | ⏳ |
+| A3 | **M3** Steam Release 최종 승인 · (필요 시) depot 재업로드 | R1~R6 ✅ | ⏳ |
+| A4 | friction log — ①~④ 중 **끊긴 UX만** 이슈 등록 | 목록 0~N | ⏳ |
 
 ### Sprint B — 출시 직후 (1~2주)
 
@@ -124,3 +124,34 @@
 | 일자 | 변경 |
 |------|------|
 | 2026-06-14 | 초판 — E2E 우선 · Scale/Core 보류 · Sprint A~D |
+| 2026-06-14 | Sprint **A1** G-AUTO ✅ — test 271 · analyze 0 error · Release exe |
+
+---
+
+## 8. Dogfood E2E 수동 체크리스트 (Sprint A2)
+
+**빌드:** `build\windows\x64\runner\Release\akasha.exe`  
+**자동 선행:** `.\scripts\dogfood_precheck.ps1` (또는 `-Build`)
+
+| # | ① 발견 | Pass |
+|:-:|--------|:----:|
+| D1 | 검색으로 작품 3건 찾기 (한/영 혼합 1건) | ☐ |
+| D2 | master_index 또는 카테고리 그리드에서 작품 탐색 | ☐ |
+
+| # | ② 아카이브 | Pass |
+|:-:|-----------|:----:|
+| D3 | 검색 결과 → 아카이브 → `.md` 생성 확인 | ☐ |
+| D4 | 나만의 서재 「담기」→ md 자동 생성 (Case A) | ☐ |
+
+| # | ③ 기록 | Pass |
+|:-:|--------|:----:|
+| D5 | 워크벤치 4열 — 별점·본문·`.md` 탭 저장 | ☐ |
+| D6 | 외부 에디터로 `.md` 수정 → 2~3초 내 앱 반영 | ☐ |
+
+| # | ④ 큐레이션 | Pass |
+|:-:|-----------|:----:|
+| D7 | 나만의 서재에서 5작 이상 열람·정렬 | ☐ |
+| D8 | 테마 피커 (IAP 잠금 UI 확인) | ☐ |
+| D9 | 서재에서 제거 · 우클릭 메뉴 | ☐ |
+
+**목표:** 최소 **10작** ①~④ 한 바퀴. 문제는 §A4 friction log에만 기록 (즉시 대규모 리팩터 금지).

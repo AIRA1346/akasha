@@ -118,7 +118,9 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 > SSOT: [phase1-work-e2e-plan.md](docs/programs/phase1-work-e2e-plan.md)
 
 - [x] ① 발견 · ② 아카이브 · ③ 기록 · ④ 큐레이션 — **구현 + P0 QA 12/12**
-- [ ] **Sprint A** — G-AUTO 재실행 · dogfood 10작+ · M3 Release
+- [x] **Sprint A1** — G-AUTO (test 271 · gates · Release exe) — 2026-06-14
+- [ ] **Sprint A2** — Dogfood E2E 10작+ ([§8](docs/programs/phase1-work-e2e-plan.md))
+- [ ] **Sprint A3** — M3 Release
 - [ ] **Sprint B** — friction log · 확인된 버그만
 - [ ] **Sprint C** — G1 trial · 관측 (fix는 병목 확인 후)
 
