@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "nextWorkId": 471,
+  "nextWorkId": 472,
   "byWk": {
     "wk_000000001": {
       "category": "animation",
@@ -2659,6 +2659,10 @@
       "legacyIds": []
     },
     "wk_000000470": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000000471": {
       "category": "manga",
       "legacyIds": []
     }

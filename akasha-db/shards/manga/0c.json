@@ -24,6 +24,16 @@
     "aliases": [
       "Jobless Reincarnation",
       "Mushoku Tensei"
-    ]
+    ],
+    "externalIds": {
+      "wikidata": "Q102126884"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
   }
 }
