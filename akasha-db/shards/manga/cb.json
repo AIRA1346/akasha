@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002886": {
+    "workId": "wk_000002886",
+    "title": "월간순정 노자키 군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11515981"
+    },
+    "titles": {
+      "ko": "월간순정 노자키 군",
+      "en": "Monthly Girls' Nozaki-kun",
+      "ja": "月刊少女野崎くん"
+    },
+    "creator": "Izumi Tsubaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -58,5 +58,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002387": {
+    "workId": "wk_000002387",
+    "title": "아이돌마스터 밀리언 라이브!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116926868"
+    },
+    "titles": {
+      "ko": "아이돌마스터 밀리언 라이브!",
+      "en": "The Idolmaster Million Live!",
+      "ja": "アイドルマスター ミリオンライブ!"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

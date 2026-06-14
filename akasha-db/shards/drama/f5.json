@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002355": {
+    "workId": "wk_000002355",
+    "title": "네 거짓말",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10924523"
+    },
+    "titles": {
+      "ko": "네 거짓말",
+      "en": "Yottsunouso",
+      "ja": "四つの嘘"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

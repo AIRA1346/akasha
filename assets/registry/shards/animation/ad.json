@@ -105,5 +105,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002531": {
+    "workId": "wk_000002531",
+    "title": "천국대마경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117344872"
+    },
+    "titles": {
+      "ko": "천국대마경",
+      "en": "Heavenly Delusion",
+      "ja": "天国大魔境"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

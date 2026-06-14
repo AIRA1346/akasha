@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002127": {
+    "workId": "wk_000002127",
+    "title": "정반대의 너와 나",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113450307"
+    },
+    "titles": {
+      "ko": "정반대의 너와 나",
+      "en": "You and I Are Polar Opposites",
+      "ja": "正反対な君と僕"
+    },
+    "creator": "阿賀沢紅茶",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002516": {
+    "workId": "wk_000002516",
+    "title": "토모코의 경우",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11410307"
+    },
+    "titles": {
+      "ko": "토모코의 경우",
+      "en": "Q11410307",
+      "ja": "友子の場合"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

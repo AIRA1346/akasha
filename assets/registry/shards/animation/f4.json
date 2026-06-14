@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002302": {
+    "workId": "wk_000002302",
+    "title": "정령사의 검무",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116247591"
+    },
+    "titles": {
+      "ko": "정령사의 검무",
+      "en": "Bladedance of Elementalers",
+      "ja": "精霊使いの剣舞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

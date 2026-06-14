@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002700": {
+    "workId": "wk_000002700",
+    "title": "템빨",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140041695"
+    },
+    "titles": {
+      "ko": "템빨",
+      "en": "Overgeared"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

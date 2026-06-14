@@ -100,5 +100,60 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002322": {
+    "workId": "wk_000002322",
+    "title": "루핑",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107389581"
+    },
+    "titles": {
+      "ko": "루핑",
+      "en": "Looping"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002827": {
+    "workId": "wk_000002827",
+    "title": "노부나가의 야망 전국판",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856190"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 전국판",
+      "en": "Nobunaga's Ambition",
+      "ja": "信長の野望・全国版"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002917": {
+    "workId": "wk_000002917",
+    "title": "시리어스 샘 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087397"
+    },
+    "titles": {
+      "ko": "시리어스 샘 2",
+      "en": "Q1087397",
+      "ja": "シリアス・サム2"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002478": {
+    "workId": "wk_000002478",
+    "title": "스테이트 오브 테러",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105846897"
+    },
+    "titles": {
+      "ko": "스테이트 오브 테러",
+      "en": "State of Terror"
+    },
+    "releaseYear": 2021,
+    "creator": "Hillary Clinton",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

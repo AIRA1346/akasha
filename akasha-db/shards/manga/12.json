@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002689": {
+    "workId": "wk_000002689",
+    "title": "안드로이드는 경험인 수에 들어가나요??",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114612973"
+    },
+    "titles": {
+      "ko": "안드로이드는 경험인 수에 들어가나요??",
+      "en": "Does It Count If You Lose Your Virginity to an Android?",
+      "ja": "アンドロイドは経験人数に入りますか？？"
+    },
+    "releaseYear": 2022,
+    "creator": "Yakiniku Teishoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

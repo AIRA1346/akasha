@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002226": {
+    "workId": "wk_000002226",
+    "title": "요자쿠라 일가의 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115734787"
+    },
+    "titles": {
+      "ko": "요자쿠라 일가의 대작전",
+      "en": "Mission: Yozakura Family",
+      "ja": "夜桜さんちの大作戦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002311": {
+    "workId": "wk_000002311",
+    "title": "나의 행복한 결혼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116732285"
+    },
+    "titles": {
+      "ko": "나의 행복한 결혼",
+      "en": "My Happy Marriage",
+      "ja": "わたしの幸せな結婚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

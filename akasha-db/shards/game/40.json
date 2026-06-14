@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002234": {
+    "workId": "wk_000002234",
+    "title": "백일몽의 청사진",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107210102"
+    },
+    "titles": {
+      "ko": "백일몽의 청사진",
+      "en": "Cyanotype Daydream -The Girl Who Dreamed the World-",
+      "ja": "白昼夢の青写真"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002913": {
+    "workId": "wk_000002913",
+    "title": "택틱스 오거: 리본",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108649825"
+    },
+    "titles": {
+      "ko": "택틱스 오거: 리본",
+      "en": "Tactics Ogre: Wheel of Fortune",
+      "ja": "タクティクスオウガ 運命の輪"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

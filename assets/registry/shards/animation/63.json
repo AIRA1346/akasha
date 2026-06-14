@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002907": {
+    "workId": "wk_000002907",
+    "title": "극장판 도라에몽: 진구의 지구 교향악",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120379797"
+    },
+    "titles": {
+      "ko": "극장판 도라에몽: 진구의 지구 교향악",
+      "en": "Doraemon: Nobita's Earth Symphony",
+      "ja": "映画ドラえもん のび太の地球交響楽"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

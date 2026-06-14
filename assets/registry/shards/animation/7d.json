@@ -126,5 +126,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002815": {
+    "workId": "wk_000002815",
+    "title": "REC",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196550"
+    },
+    "titles": {
+      "ko": "REC",
+      "en": "Rec",
+      "ja": "REC"
+    },
+    "creator": "Q-taro Hanamizawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002899": {
+    "workId": "wk_000002899",
+    "title": "제로 데이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120142655"
+    },
+    "titles": {
+      "ko": "제로 데이",
+      "en": "Zero Day",
+      "ja": "ゼロデイ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002441": {
+    "workId": "wk_000002441",
+    "title": "뫼비우스 : 검은 태양",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109302022"
+    },
+    "titles": {
+      "ko": "뫼비우스 : 검은 태양",
+      "en": "Q109302022",
+      "ja": "メビウス：黒い太陽"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

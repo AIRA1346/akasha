@@ -17,5 +17,40 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002704": {
+    "workId": "wk_000002704",
+    "title": "열세번째 남자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16149991"
+    },
+    "titles": {
+      "ko": "열세번째 남자",
+      "en": "13th Boy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002710": {
+    "workId": "wk_000002710",
+    "title": "방과 후 전쟁활동",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16177292"
+    },
+    "titles": {
+      "ko": "방과 후 전쟁활동",
+      "en": "Duty After School"
+    },
+    "creator": "Ha Il-kwon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

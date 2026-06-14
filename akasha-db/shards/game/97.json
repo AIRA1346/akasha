@@ -83,5 +83,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002313": {
+    "workId": "wk_000002313",
+    "title": "와챠 프리마지!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107342519"
+    },
+    "titles": {
+      "ko": "와챠 프리마지!",
+      "en": "Waccha PriMagi!",
+      "ja": "ワッチャプリマジ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002473": {
+    "workId": "wk_000002473",
+    "title": "초프리프터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076255"
+    },
+    "titles": {
+      "ko": "초프리프터",
+      "en": "Choplifter",
+      "ja": "チョップリフター"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

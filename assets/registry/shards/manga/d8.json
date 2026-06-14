@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000002446": {
+    "workId": "wk_000002446",
+    "title": "우리는 모두 죽었다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387588"
+    },
+    "titles": {
+      "ko": "우리는 모두 죽었다",
+      "en": "Everyone Are Dead♪",
+      "ja": "僕らはみんな死んでいる♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002603": {
+    "workId": "wk_000002603",
+    "title": "죄수 리쿠",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11419532"
+    },
+    "titles": {
+      "ko": "죄수 리쿠",
+      "en": "Shūjin Riku",
+      "ja": "囚人リク"
+    },
+    "releaseYear": 2011,
+    "creator": "Shinobu Seguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

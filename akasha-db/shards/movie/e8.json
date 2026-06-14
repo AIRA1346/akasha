@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002341": {
+    "workId": "wk_000002341",
+    "title": "왕이 되려던 사나이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042931"
+    },
+    "titles": {
+      "ko": "왕이 되려던 사나이",
+      "en": "The Man Who Would Be King",
+      "ja": "王になろうとした男 (映画)"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

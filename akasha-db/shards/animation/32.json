@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002299": {
+    "workId": "wk_000002299",
+    "title": "외딴 곳의 살인 초대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116050906"
+    },
+    "titles": {
+      "ko": "외딴 곳의 살인 초대",
+      "en": "A Murder at the End of the World",
+      "ja": "マーダー・イン・ザ・ワールドエンド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

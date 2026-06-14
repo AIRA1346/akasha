@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002415": {
+    "workId": "wk_000002415",
+    "title": "소소한 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057575"
+    },
+    "titles": {
+      "ko": "소소한 이야기",
+      "en": "Le petit chose"
+    },
+    "releaseYear": 1868,
+    "creator": "Alphonse Daudet",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002567": {
+    "workId": "wk_000002567",
+    "title": "건담 센티넬",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059747"
+    },
+    "titles": {
+      "ko": "건담 센티넬",
+      "en": "Gundam Sentinel",
+      "ja": "ガンダム・センチネル"
+    },
+    "creator": "Masaya Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

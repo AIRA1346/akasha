@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002399": {
+    "workId": "wk_000002399",
+    "title": "16bit 센세이션 ANOTHER LAYER",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117303887"
+    },
+    "titles": {
+      "ko": "16bit 센세이션 ANOTHER LAYER",
+      "en": "16bit Sensation: Another Layer",
+      "ja": "16bitセンセーション ANOTHER LAYER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

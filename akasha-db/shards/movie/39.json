@@ -44,5 +44,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002574": {
+    "workId": "wk_000002574",
+    "title": "프린세스 다이어리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046295"
+    },
+    "titles": {
+      "ko": "프린세스 다이어리",
+      "en": "The Princess Diaries",
+      "ja": "プリティ・プリンセス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

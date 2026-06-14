@@ -1,0 +1,21 @@
+{
+  "wk_000002743": {
+    "workId": "wk_000002743",
+    "title": "굶주림",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062365"
+    },
+    "titles": {
+      "ko": "굶주림",
+      "en": "Hunger"
+    },
+    "releaseYear": 1890,
+    "creator": "Knut Hamsun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

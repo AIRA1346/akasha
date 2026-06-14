@@ -1,0 +1,20 @@
+{
+  "wk_000002288": {
+    "workId": "wk_000002288",
+    "title": "사건옥가업",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11371140"
+    },
+    "titles": {
+      "ko": "사건옥가업",
+      "en": "Trouble Is My Business",
+      "ja": "事件屋稼業 (漫画)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

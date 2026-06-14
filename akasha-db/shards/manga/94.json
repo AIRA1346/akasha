@@ -69,5 +69,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002363": {
+    "workId": "wk_000002363",
+    "title": "엠마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137447"
+    },
+    "titles": {
+      "ko": "엠마",
+      "en": "Emma",
+      "ja": "エマ"
+    },
+    "creator": "Kaoru Mori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002604": {
+    "workId": "wk_000002604",
+    "title": "지저국의 괴인",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11424317"
+    },
+    "titles": {
+      "ko": "지저국의 괴인",
+      "en": "The Mysterious Underground Men",
+      "ja": "地底国の怪人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002606": {
+    "workId": "wk_000002606",
+    "title": "피타텐",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143720"
+    },
+    "titles": {
+      "ko": "피타텐",
+      "en": "Pita-Ten",
+      "ja": "ぴたテン"
+    },
+    "creator": "こげどんぼ*",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

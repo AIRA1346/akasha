@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002514": {
+    "workId": "wk_000002514",
+    "title": "미나미 카마쿠라 고교 여자 자전거부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11408689"
+    },
+    "titles": {
+      "ko": "미나미 카마쿠라 고교 여자 자전거부",
+      "en": "Minami Kamakura High School Girls Cycling Club",
+      "ja": "南鎌倉高校女子自転車部"
+    },
+    "creator": "Noriyuki Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

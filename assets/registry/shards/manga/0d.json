@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002063": {
+    "workId": "wk_000002063",
+    "title": "섹시 보이스 앤 로보",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134035"
+    },
+    "titles": {
+      "ko": "섹시 보이스 앤 로보",
+      "en": "Sexy Voice and Robo",
+      "ja": "セクシーボイスアンドロボ"
+    },
+    "releaseYear": 2007,
+    "creator": "Iou Kuroda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002201": {
+    "workId": "wk_000002201",
+    "title": "주식회사 마지루미에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113549301"
+    },
+    "titles": {
+      "ko": "주식회사 마지루미에",
+      "en": "Magilumiere Co. Ltd.",
+      "ja": "株式会社マジルミエ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

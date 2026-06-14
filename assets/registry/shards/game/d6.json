@@ -51,5 +51,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002240": {
+    "workId": "wk_000002240",
+    "title": "마블의 가디언즈 오브 갤럭시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214964"
+    },
+    "titles": {
+      "ko": "마블의 가디언즈 오브 갤럭시",
+      "en": "Guardians of the Galaxy",
+      "ja": "ガーディアンズ・オブ・ザ・ギャラクシー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

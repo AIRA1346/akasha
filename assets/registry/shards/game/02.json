@@ -1,0 +1,58 @@
+{
+  "wk_000002166": {
+    "workId": "wk_000002166",
+    "title": "이터널 파이터 제로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071552"
+    },
+    "titles": {
+      "ko": "이터널 파이터 제로",
+      "en": "Eternal Fighter Zero",
+      "ja": "Eternal Fighter Zero"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002233": {
+    "workId": "wk_000002233",
+    "title": "아바타: 프론티어 오브 판도라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107208649"
+    },
+    "titles": {
+      "ko": "아바타: 프론티어 오브 판도라",
+      "en": "Q107208649"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002727": {
+    "workId": "wk_000002727",
+    "title": "미소녀 만화경 -신께서 내려주신 소녀들-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108542119"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -신께서 내려주신 소녀들-",
+      "en": "Bishoujo Mangekyou -Kami ga Tsukuritamouta Shoujo-tachi-",
+      "ja": "美少女万華鏡 -神が造りたもうた少女たち-"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

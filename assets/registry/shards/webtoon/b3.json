@@ -1,0 +1,20 @@
+{
+  "wk_000002292": {
+    "workId": "wk_000002292",
+    "title": "유쾌한 왕따",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123473988"
+    },
+    "titles": {
+      "ko": "유쾌한 왕따",
+      "en": "Yukwaehan Wangtta"
+    },
+    "creator": "Kim Sungnyung",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

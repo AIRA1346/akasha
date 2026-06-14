@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002304": {
+    "workId": "wk_000002304",
+    "title": "블루 아카이브 The Animation",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116291369"
+    },
+    "titles": {
+      "ko": "블루 아카이브 The Animation",
+      "en": "Blue Archive the Animation",
+      "ja": "ブルーアーカイブ The Animation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

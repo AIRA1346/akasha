@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002656": {
+    "workId": "wk_000002656",
+    "title": "킹 오브 파이터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046883"
+    },
+    "titles": {
+      "ko": "킹 오브 파이터",
+      "en": "The King of Fighters",
+      "ja": "ザ・キング・オブ・ファイターズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

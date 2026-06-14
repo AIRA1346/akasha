@@ -1,0 +1,22 @@
+{
+  "wk_000002842": {
+    "workId": "wk_000002842",
+    "title": "활짝 핀 벚나무 숲 아래",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106365552"
+    },
+    "titles": {
+      "ko": "활짝 핀 벚나무 숲 아래",
+      "en": "In the Forest, Under Cherries in Full Bloom",
+      "ja": "桜の森の満開の下"
+    },
+    "releaseYear": 1947,
+    "creator": "Ango Sakaguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -84,5 +84,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000002515": {
+    "workId": "wk_000002515",
+    "title": "제멋대로 카이조",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140901"
+    },
+    "titles": {
+      "ko": "제멋대로 카이조",
+      "en": "Katte ni Kaizō",
+      "ja": "かってに改蔵"
+    },
+    "creator": "Kōji Kumeta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

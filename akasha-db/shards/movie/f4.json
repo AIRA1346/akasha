@@ -1,0 +1,19 @@
+{
+  "wk_000002848": {
+    "workId": "wk_000002848",
+    "title": "벌룬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104850812"
+    },
+    "titles": {
+      "ko": "벌룬",
+      "en": "Balloon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

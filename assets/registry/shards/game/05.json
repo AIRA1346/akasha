@@ -1,0 +1,21 @@
+{
+  "wk_000002915": {
+    "workId": "wk_000002915",
+    "title": "스토커 2: 초르노빌의 심장부",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865101"
+    },
+    "titles": {
+      "ko": "스토커 2: 초르노빌의 심장부",
+      "en": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "ja": "S.T.A.L.K.E.R. 2: Heart of Chernobyl"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000002692": {
+    "workId": "wk_000002692",
+    "title": "시활사 여왕의 법의학",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11465714"
+    },
+    "titles": {
+      "ko": "시활사 여왕의 법의학",
+      "en": "Shikatsushi Joō no Hōigaku",
+      "ja": "屍活師 女王の法医学"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

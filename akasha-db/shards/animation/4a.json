@@ -16,5 +16,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002719": {
+    "workId": "wk_000002719",
+    "title": "세계 제일의 첫사랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193072"
+    },
+    "titles": {
+      "ko": "세계 제일의 첫사랑",
+      "en": "Sekai-ichi Hatsukoi",
+      "ja": "世界一初恋"
+    },
+    "releaseYear": 2011,
+    "creator": "Shungiku Nakamura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

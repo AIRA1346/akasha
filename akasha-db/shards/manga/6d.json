@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002454": {
+    "workId": "wk_000002454",
+    "title": "토미에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139780"
+    },
+    "titles": {
+      "ko": "토미에",
+      "en": "Tomie",
+      "ja": "富江"
+    },
+    "creator": "伊藤潤二",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

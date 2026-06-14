@@ -1,0 +1,20 @@
+{
+  "wk_000002270": {
+    "workId": "wk_000002270",
+    "title": "레인코트 킬러: 유영철을 추격하다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108935276"
+    },
+    "titles": {
+      "ko": "레인코트 킬러: 유영철을 추격하다",
+      "en": "The Raincoat Killer: Chasing a Predator in Korea",
+      "ja": "レインコートキラー: ソウル20人連続殺人事件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

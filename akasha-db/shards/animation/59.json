@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002390": {
+    "workId": "wk_000002390",
+    "title": "스쿨데이즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11703656"
+    },
+    "titles": {
+      "ko": "스쿨데이즈",
+      "en": "School Days",
+      "ja": "School Days"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

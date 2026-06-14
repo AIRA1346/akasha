@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002227": {
+    "workId": "wk_000002227",
+    "title": "남녀의 우정은 성립할까? (아니, 하지 않아!!)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115777153"
+    },
+    "titles": {
+      "ko": "남녀의 우정은 성립할까? (아니, 하지 않아!!)",
+      "en": "Can a Boy-Girl Friendship Survive?",
+      "ja": "男女の友情は成立する? (いや、しないっ!!)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

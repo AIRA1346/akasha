@@ -1,0 +1,39 @@
+{
+  "wk_000002471": {
+    "workId": "wk_000002471",
+    "title": "포르자 모터스포츠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107611729"
+    },
+    "titles": {
+      "ko": "포르자 모터스포츠",
+      "en": "Forza Motorsport",
+      "ja": "Forza Motorsport (2023)"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002546": {
+    "workId": "wk_000002546",
+    "title": "3D운전교실",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107753897"
+    },
+    "titles": {
+      "ko": "3D운전교실",
+      "en": "3D Driving class",
+      "ja": "3D運転教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000002205": {
+    "workId": "wk_000002205",
+    "title": "내 남편과 결혼해줘",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118186026"
+    },
+    "titles": {
+      "ko": "내 남편과 결혼해줘",
+      "en": "Marry My Husband"
+    },
+    "releaseYear": 2022,
+    "creator": "sungsojak",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

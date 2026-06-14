@@ -1,0 +1,21 @@
+{
+  "wk_000002777": {
+    "workId": "wk_000002777",
+    "title": "건어물 여동생! 우마루짱",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11481912"
+    },
+    "titles": {
+      "ko": "건어물 여동생! 우마루짱",
+      "en": "Himouto! Umaru-chan",
+      "ja": "干物妹!うまるちゃん"
+    },
+    "creator": "SankakuHead",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

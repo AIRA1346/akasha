@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002225": {
+    "workId": "wk_000002225",
+    "title": "포켓몬스터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115733264"
+    },
+    "titles": {
+      "ko": "포켓몬스터",
+      "en": "Pokémon Horizons: The Series",
+      "ja": "ポケットモンスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

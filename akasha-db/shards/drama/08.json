@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002765": {
+    "workId": "wk_000002765",
+    "title": "학원 본좌전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456312"
+    },
+    "titles": {
+      "ko": "학원 본좌전",
+      "en": "Q109456312"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

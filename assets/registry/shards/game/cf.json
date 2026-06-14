@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002910": {
+    "workId": "wk_000002910",
+    "title": "네모바지 스폰지밥: 코스믹 셰이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108579526"
+    },
+    "titles": {
+      "ko": "네모바지 스폰지밥: 코스믹 셰이크",
+      "en": "SpongeBob SquarePants: The Cosmic Shake",
+      "ja": "スポンジ・ボブ:ザ コズミック シェイク"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

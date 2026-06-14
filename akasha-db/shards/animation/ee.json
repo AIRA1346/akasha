@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002220": {
+    "workId": "wk_000002220",
+    "title": "전생귀족의 이세계 모험록 ~자중을 모르는 신들의 사도~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115620193"
+    },
+    "titles": {
+      "ko": "전생귀족의 이세계 모험록 ~자중을 모르는 신들의 사도~",
+      "en": "Chronicles of an Aristocrat Reborn in Another World",
+      "ja": "転生貴族の異世界冒険録 〜自重を知らない神々の使徒〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

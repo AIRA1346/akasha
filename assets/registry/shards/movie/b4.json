@@ -1,0 +1,21 @@
+{
+  "wk_000002749": {
+    "workId": "wk_000002749",
+    "title": "스파이 코드명 포춘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104822312"
+    },
+    "titles": {
+      "ko": "스파이 코드명 포춘",
+      "en": "Operation Fortune: Ruse de Guerre",
+      "ja": "オペレーション・フォーチュン:ルセ・ド・ゲール"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

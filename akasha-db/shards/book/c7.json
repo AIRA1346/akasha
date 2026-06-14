@@ -1,0 +1,21 @@
+{
+  "wk_000002931": {
+    "workId": "wk_000002931",
+    "title": "타나토노트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066371"
+    },
+    "titles": {
+      "ko": "타나토노트",
+      "en": "The Thanatonauts"
+    },
+    "releaseYear": 1994,
+    "creator": "베르나르 베르베르",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

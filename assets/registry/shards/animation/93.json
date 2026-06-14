@@ -68,5 +68,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002157": {
+    "workId": "wk_000002157",
+    "title": "성전사 단바인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154223"
+    },
+    "titles": {
+      "ko": "성전사 단바인",
+      "en": "Aura Battler Dunbine",
+      "ja": "聖戦士ダンバイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002389": {
+    "workId": "wk_000002389",
+    "title": "마이 마이 신코 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1169881"
+    },
+    "titles": {
+      "ko": "마이 마이 신코 이야기",
+      "en": "Mai Mai Miracle",
+      "ja": "マイマイ新子と千年の魔法"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

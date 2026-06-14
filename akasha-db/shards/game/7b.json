@@ -1,0 +1,21 @@
+{
+  "wk_000002246": {
+    "workId": "wk_000002246",
+    "title": "메탈슬러그 X",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072820"
+    },
+    "titles": {
+      "ko": "메탈슬러그 X",
+      "en": "Metal Slug X",
+      "ja": "メタルスラッグX"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

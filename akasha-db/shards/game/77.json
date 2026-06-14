@@ -31,5 +31,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002409": {
+    "workId": "wk_000002409",
+    "title": "컴퍼니 오브 히어로즈 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107518015"
+    },
+    "titles": {
+      "ko": "컴퍼니 오브 히어로즈 3",
+      "en": "Q107518015"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002559": {
+    "workId": "wk_000002559",
+    "title": "컬트 오브 더 램",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108273566"
+    },
+    "titles": {
+      "ko": "컬트 오브 더 램",
+      "en": "Cult of the Lamb",
+      "ja": "Cult of the Lamb"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

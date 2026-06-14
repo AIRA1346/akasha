@@ -1,0 +1,21 @@
+{
+  "wk_000002294": {
+    "workId": "wk_000002294",
+    "title": "데뷔 못 하면 죽는 병 걸림",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124496882"
+    },
+    "titles": {
+      "ko": "데뷔 못 하면 죽는 병 걸림",
+      "en": "Debut or Die",
+      "ja": "デビューできないと死ぬ病気にかかってしまいました"
+    },
+    "creator": "백덕수",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

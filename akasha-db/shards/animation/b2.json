@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002806": {
+    "workId": "wk_000002806",
+    "title": "디지몬 제볼루션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195683"
+    },
+    "titles": {
+      "ko": "디지몬 제볼루션",
+      "en": "Digital Monster X-Evolution",
+      "ja": "DIGITAL MONSTER X-evolution"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

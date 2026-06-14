@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002667": {
+    "workId": "wk_000002667",
+    "title": "트로트의 민족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455075"
+    },
+    "titles": {
+      "ko": "트로트의 민족",
+      "en": "Trot's Nation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

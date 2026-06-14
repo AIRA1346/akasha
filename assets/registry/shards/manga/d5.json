@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002365": {
+    "workId": "wk_000002365",
+    "title": "하렘 캠프!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113827402"
+    },
+    "titles": {
+      "ko": "하렘 캠프!",
+      "en": "Harem Camp!",
+      "ja": "ハーレムきゃんぷっ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -48,5 +48,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002370": {
+    "workId": "wk_000002370",
+    "title": "샷킨그",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387055"
+    },
+    "titles": {
+      "ko": "샷킨그",
+      "en": "Shocking",
+      "ja": "借王"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

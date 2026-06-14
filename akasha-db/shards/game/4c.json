@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002465": {
+    "workId": "wk_000002465",
+    "title": "니켈로디언 올스타 난투",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107530622"
+    },
+    "titles": {
+      "ko": "니켈로디언 올스타 난투",
+      "en": "Nickelodeon All-Star Brawl",
+      "ja": "ニコロデオン オールスター大乱闘"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

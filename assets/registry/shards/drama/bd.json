@@ -1,0 +1,19 @@
+{
+  "wk_000002860": {
+    "workId": "wk_000002860",
+    "title": "다채로운 아침",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456845"
+    },
+    "titles": {
+      "ko": "다채로운 아침",
+      "en": "Q109456845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

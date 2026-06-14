@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002629": {
+    "workId": "wk_000002629",
+    "title": "짱구는 못말려 극장판: 암흑마왕 대추적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186469"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 암흑마왕 대추적",
+      "en": "Crayon Shin-chan: Pursuit of the Balls of Darkness",
+      "ja": "クレヨンしんちゃん 暗黒タマタマ大追跡"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

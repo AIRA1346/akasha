@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002592": {
+    "workId": "wk_000002592",
+    "title": "사랑한다면 이들처럼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942963"
+    },
+    "titles": {
+      "ko": "사랑한다면 이들처럼",
+      "en": "If In Love... Like Them",
+      "ja": "愛するなら彼らのように"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

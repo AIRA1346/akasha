@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002812": {
+    "workId": "wk_000002812",
+    "title": "명탐정 코난: 은빛 날개의 마술사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195724"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 은빛 날개의 마술사",
+      "en": "Detective Conan: Magician of the Silver Sky",
+      "ja": "名探偵コナン 銀翼の奇術師"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

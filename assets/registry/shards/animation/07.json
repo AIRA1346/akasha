@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002627": {
+    "workId": "wk_000002627",
+    "title": "짱구는 못말려 극장판: 폭풍을 부르는 석양의 떡잎마을 방범대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186456"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 폭풍을 부르는 석양의 떡잎마을 방범대",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Kasukabe Boys of the Evening Sun",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ!夕陽のカスカベボーイズ"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

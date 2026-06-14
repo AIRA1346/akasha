@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002468": {
+    "workId": "wk_000002468",
+    "title": "솔로몬 키",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075814"
+    },
+    "titles": {
+      "ko": "솔로몬 키",
+      "en": "Solomon's Key",
+      "ja": "ソロモンの鍵"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

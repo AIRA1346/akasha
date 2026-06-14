@@ -50,5 +50,41 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002448": {
+    "workId": "wk_000002448",
+    "title": "AKB49: 연애금지조례",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139002"
+    },
+    "titles": {
+      "ko": "AKB49: 연애금지조례",
+      "en": "AKB49: Ren'ai Kinshi Jōrei",
+      "ja": "AKB49〜恋愛禁止条例〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002781": {
+    "workId": "wk_000002781",
+    "title": "막후인물 도쿠가와 이에야스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11488117"
+    },
+    "titles": {
+      "ko": "막후인물 도쿠가와 이에야스",
+      "en": "Kagemushatokugawaieyasu",
+      "ja": "影武者徳川家康"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

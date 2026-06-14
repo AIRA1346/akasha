@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002069": {
+    "workId": "wk_000002069",
+    "title": "우리는 매일매일",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187704"
+    },
+    "titles": {
+      "ko": "우리는 매일매일",
+      "en": "Day by Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

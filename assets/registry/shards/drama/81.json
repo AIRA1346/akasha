@@ -1,0 +1,19 @@
+{
+  "wk_000002774": {
+    "workId": "wk_000002774",
+    "title": "2021 설특집 아이돌스타 선수권대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456472"
+    },
+    "titles": {
+      "ko": "2021 설특집 아이돌스타 선수권대회",
+      "en": "Q109456472"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

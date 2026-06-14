@@ -1,0 +1,19 @@
+{
+  "wk_000002709": {
+    "workId": "wk_000002709",
+    "title": "가우스전자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16175883"
+    },
+    "titles": {
+      "ko": "가우스전자",
+      "en": "Gaus Electronics"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

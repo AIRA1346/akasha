@@ -1,0 +1,19 @@
+{
+  "wk_000002889": {
+    "workId": "wk_000002889",
+    "title": "더 게이머",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16978516"
+    },
+    "titles": {
+      "ko": "더 게이머",
+      "en": "The Gamer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

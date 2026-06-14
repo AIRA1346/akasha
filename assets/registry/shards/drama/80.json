@@ -52,5 +52,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002274": {
+    "workId": "wk_000002274",
+    "title": "형명사야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10896973"
+    },
+    "titles": {
+      "ko": "형명사야",
+      "en": "Q10896973"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002444": {
+    "workId": "wk_000002444",
+    "title": "아들과 딸들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093154"
+    },
+    "titles": {
+      "ko": "아들과 딸들",
+      "en": "Eight Is Enough"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

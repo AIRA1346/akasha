@@ -1,0 +1,22 @@
+{
+  "wk_000002742": {
+    "workId": "wk_000002742",
+    "title": "고도",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062201"
+    },
+    "titles": {
+      "ko": "고도",
+      "en": "The Old Capital",
+      "ja": "古都"
+    },
+    "releaseYear": 1962,
+    "creator": "Yasunari Kawabata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

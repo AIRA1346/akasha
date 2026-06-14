@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002876": {
+    "workId": "wk_000002876",
+    "title": "사랑이 열매 꼭지에서도 살아 있습니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491732"
+    },
+    "titles": {
+      "ko": "사랑이 열매 꼭지에서도 살아 있습니다",
+      "en": "Koi ga heta demo ikitemasu",
+      "ja": "恋がヘタでも生きてます"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

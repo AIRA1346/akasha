@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002271": {
+    "workId": "wk_000002271",
+    "title": "다시 너에게 프로포즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10894888"
+    },
+    "titles": {
+      "ko": "다시 너에게 프로포즈",
+      "en": "Q10894888",
+      "ja": "もう一度君に、プロポーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

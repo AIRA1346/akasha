@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002517": {
+    "workId": "wk_000002517",
+    "title": "명탐정 카게맨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11414698"
+    },
+    "titles": {
+      "ko": "명탐정 카게맨",
+      "en": "Q11414698",
+      "ja": "名たんていカゲマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

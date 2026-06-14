@@ -51,5 +51,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002677": {
+    "workId": "wk_000002677",
+    "title": "어쩌다 마주친 그 개",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455794"
+    },
+    "titles": {
+      "ko": "어쩌다 마주친 그 개",
+      "en": "Q109455794"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002745": {
+    "workId": "wk_000002745",
+    "title": "어린이의 비밀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106254567"
+    },
+    "titles": {
+      "ko": "어린이의 비밀",
+      "en": "The Secret of Childhood"
+    },
+    "releaseYear": 1936,
+    "creator": "マリア・モンテッソーリ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

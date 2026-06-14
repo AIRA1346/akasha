@@ -33,5 +33,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002496": {
+    "workId": "wk_000002496",
+    "title": "택군기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342826"
+    },
+    "titles": {
+      "ko": "택군기",
+      "en": "Choice Husband"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002497": {
+    "workId": "wk_000002497",
+    "title": "런닝맨: 뛰는 놈 위에 노는 놈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342872"
+    },
+    "titles": {
+      "ko": "런닝맨: 뛰는 놈 위에 노는 놈",
+      "en": "Running Man: The one who plays on top of the one who runs"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002598": {
+    "workId": "wk_000002598",
+    "title": "모두의 강연 가치 들어요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454302"
+    },
+    "titles": {
+      "ko": "모두의 강연 가치 들어요",
+      "en": "Listen to the value of everyone’s lecture"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002766": {
+    "workId": "wk_000002766",
+    "title": "풍류대장 - 힙한 소리꾼들의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456317"
+    },
+    "titles": {
+      "ko": "풍류대장 - 힙한 소리꾼들의 전쟁",
+      "en": "Q109456317"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

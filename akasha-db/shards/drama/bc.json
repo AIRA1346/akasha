@@ -51,5 +51,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002427": {
+    "workId": "wk_000002427",
+    "title": "명수사관 유용전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109257630"
+    },
+    "titles": {
+      "ko": "명수사관 유용전",
+      "en": "Q109257630"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "wk_000002297": {
+    "workId": "wk_000002297",
+    "title": "아크엔젤",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124587518"
+    },
+    "titles": {
+      "ko": "아크엔젤",
+      "en": "Ark Angels"
+    },
+    "releaseYear": 2007,
+    "creator": "Park Sang-seon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002696": {
+    "workId": "wk_000002696",
+    "title": "엄마중독",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139568082"
+    },
+    "titles": {
+      "ko": "엄마중독",
+      "en": "Addicted To My Stepmom",
+      "ja": "抜け出せない母親の沼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

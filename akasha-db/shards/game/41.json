@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002922": {
+    "workId": "wk_000002922",
+    "title": "크로노 크로스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088142"
+    },
+    "titles": {
+      "ko": "크로노 크로스",
+      "en": "Chrono Cross",
+      "ja": "クロノ・クロス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

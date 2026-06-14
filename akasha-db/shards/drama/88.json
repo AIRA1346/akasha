@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002190": {
+    "workId": "wk_000002190",
+    "title": "혐오스런 마츠코의 일생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10884463"
+    },
+    "titles": {
+      "ko": "혐오스런 마츠코의 일생",
+      "en": "Q10884463",
+      "ja": "嫌われ松子の一生 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002776": {
+    "workId": "wk_000002776",
+    "title": "배틀 코덕쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456512"
+    },
+    "titles": {
+      "ko": "배틀 코덕쇼",
+      "en": "Q109456512"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

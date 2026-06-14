@@ -1,0 +1,19 @@
+{
+  "wk_000002590": {
+    "workId": "wk_000002590",
+    "title": "여우의 집사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942780"
+    },
+    "titles": {
+      "ko": "여우의 집사",
+      "en": "Q10942780"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000002902": {
+    "workId": "wk_000002902",
+    "title": "기동전사 건담 복수의 레퀴엠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120231924"
+    },
+    "titles": {
+      "ko": "기동전사 건담 복수의 레퀴엠",
+      "en": "Gundam: Requiem For Vengeance",
+      "ja": "機動戦士ガンダム 復讐のレクイエム"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

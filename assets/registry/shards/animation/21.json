@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002543": {
+    "workId": "wk_000002543",
+    "title": "약혼 파기당한 영애를 주운 내가, 나쁜 짓을 가르치다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118293550"
+    },
+    "titles": {
+      "ko": "약혼 파기당한 영애를 주운 내가, 나쁜 짓을 가르치다",
+      "en": "I'm Giving the Disgraced Noble Lady I Rescued a Crash Course in Naughtiness",
+      "ja": "婚約破棄された令嬢を拾った俺が、イケナイことを教え込む"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

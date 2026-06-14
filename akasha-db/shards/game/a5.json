@@ -63,5 +63,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002401": {
+    "workId": "wk_000002401",
+    "title": "아랑전설 스페셜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074369"
+    },
+    "titles": {
+      "ko": "아랑전설 스페셜",
+      "en": "Fatal Fury Special",
+      "ja": "餓狼伝説スペシャル"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

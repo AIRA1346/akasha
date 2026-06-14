@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002291": {
+    "workId": "wk_000002291",
+    "title": "슈퍼스트링 -이세계 견문록-",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123091087"
+    },
+    "titles": {
+      "ko": "슈퍼스트링 -이세계 견문록-",
+      "en": "Super String: Marco Polo's Travel to Multiverse",
+      "ja": "スーパーストリング-異世界見聞録-"
+    },
+    "creator": "Youn In-wan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

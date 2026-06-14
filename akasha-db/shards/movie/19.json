@@ -1,0 +1,21 @@
+{
+  "wk_000002581": {
+    "workId": "wk_000002581",
+    "title": "CODA",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104686893"
+    },
+    "titles": {
+      "ko": "CODA",
+      "en": "CODA",
+      "ja": "コーダ あいのうた"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

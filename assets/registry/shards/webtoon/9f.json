@@ -1,1 +1,19 @@
-{}
+{
+  "wk_000002799": {
+    "workId": "wk_000002799",
+    "title": "귀귀 갤러리",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16261128"
+    },
+    "titles": {
+      "ko": "귀귀 갤러리",
+      "en": "Q16261128"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -35,5 +35,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002332": {
+    "workId": "wk_000002332",
+    "title": "육자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10566899"
+    },
+    "titles": {
+      "ko": "육자",
+      "en": "Book of Master Yu",
+      "ja": "鬻子"
+    },
+    "creator": "Yuxiong",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

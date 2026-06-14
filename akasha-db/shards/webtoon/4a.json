@@ -1,0 +1,20 @@
+{
+  "wk_000002701": {
+    "workId": "wk_000002701",
+    "title": "참교육",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140142968"
+    },
+    "titles": {
+      "ko": "참교육",
+      "en": "Get Schooled"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

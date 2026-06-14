@@ -1,0 +1,21 @@
+{
+  "wk_000002168": {
+    "workId": "wk_000002168",
+    "title": "패널로 퐁",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071730"
+    },
+    "titles": {
+      "ko": "패널로 퐁",
+      "en": "Panel de Pon",
+      "ja": "パネルでポン"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000002339": {
+    "workId": "wk_000002339",
+    "title": "눈물이 주룩주룩",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042731"
+    },
+    "titles": {
+      "ko": "눈물이 주룩주룩",
+      "en": "Nada Sōsō",
+      "ja": "涙そうそう"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

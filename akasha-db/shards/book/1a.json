@@ -1,0 +1,21 @@
+{
+  "wk_000002328": {
+    "workId": "wk_000002328",
+    "title": "리아데일의 대지에서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105627715"
+    },
+    "titles": {
+      "ko": "리아데일의 대지에서",
+      "en": "In the Land of Leadale",
+      "ja": "リアデイルの大地にて"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

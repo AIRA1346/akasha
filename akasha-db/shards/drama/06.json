@@ -52,5 +52,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002682": {
+    "workId": "wk_000002682",
+    "title": "작전남녀2 : 폭탄스캔들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455932"
+    },
+    "titles": {
+      "ko": "작전남녀2 : 폭탄스캔들",
+      "en": "Q109455932"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

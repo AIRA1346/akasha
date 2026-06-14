@@ -1,0 +1,21 @@
+{
+  "wk_000002855": {
+    "workId": "wk_000002855",
+    "title": "아이다 레드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104858854"
+    },
+    "titles": {
+      "ko": "아이다 레드",
+      "en": "Ida Red",
+      "ja": "デンジャラス・ガイズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

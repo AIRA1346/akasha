@@ -69,5 +69,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002184": {
+    "workId": "wk_000002184",
+    "title": "노기자카는 어디?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10877647"
+    },
+    "titles": {
+      "ko": "노기자카는 어디?",
+      "en": "Nogizaka tte, Doko?",
+      "ja": "乃木坂って、どこ?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002443": {
+    "workId": "wk_000002443",
+    "title": "왜 오수재인가?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109313772"
+    },
+    "titles": {
+      "ko": "왜 오수재인가?",
+      "en": "Why Her",
+      "ja": "なぜオ・スジェなのか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

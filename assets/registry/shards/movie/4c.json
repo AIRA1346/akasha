@@ -1,0 +1,21 @@
+{
+  "wk_000002754": {
+    "workId": "wk_000002754",
+    "title": "빛의 아버지: 파이널 판타지 XIV",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104832989"
+    },
+    "titles": {
+      "ko": "빛의 아버지: 파이널 판타지 XIV",
+      "en": "Brave Father Online: Our Story of Final Fantasy XIV",
+      "ja": "劇場版 ファイナルファンタジーXIV 光のお父さん"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

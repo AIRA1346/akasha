@@ -1,0 +1,21 @@
+{
+  "wk_000002573": {
+    "workId": "wk_000002573",
+    "title": "미니멀리즘 - 오늘도 비우는 사람들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104626604"
+    },
+    "titles": {
+      "ko": "미니멀리즘 - 오늘도 비우는 사람들",
+      "en": "The Minimalists: Less Is Now",
+      "ja": "今求められるミニマリズム"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

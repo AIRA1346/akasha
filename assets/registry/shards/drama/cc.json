@@ -51,5 +51,25 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002197": {
+    "workId": "wk_000002197",
+    "title": "탐정 클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888942"
+    },
+    "titles": {
+      "ko": "탐정 클럽",
+      "en": "Q10888942",
+      "ja": "探偵倶楽部"
+    },
+    "releaseYear": 1996,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

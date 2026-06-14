@@ -1,0 +1,21 @@
+{
+  "wk_000002412": {
+    "workId": "wk_000002412",
+    "title": "클라라와 태양",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105704813"
+    },
+    "titles": {
+      "ko": "클라라와 태양",
+      "en": "Klara and the Sun"
+    },
+    "releaseYear": 2021,
+    "creator": "Kazuo Ishiguro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

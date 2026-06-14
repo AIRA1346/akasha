@@ -93,5 +93,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002089": {
+    "workId": "wk_000002089",
+    "title": "퍼니싱: 그레이 레이븐",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107098508"
+    },
+    "titles": {
+      "ko": "퍼니싱: 그레이 레이븐",
+      "en": "Punishing: Gray Raven",
+      "ja": "パニシング:グレイレイヴン"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002323": {
+    "workId": "wk_000002323",
+    "title": "FBC: 파이어브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107398147"
+    },
+    "titles": {
+      "ko": "FBC: 파이어브레이크",
+      "en": "FBC: Firebreak"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

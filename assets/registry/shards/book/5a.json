@@ -1,0 +1,20 @@
+{
+  "wk_000002178": {
+    "workId": "wk_000002178",
+    "title": "배터리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055102"
+    },
+    "titles": {
+      "ko": "배터리",
+      "en": "Battery",
+      "ja": "バッテリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

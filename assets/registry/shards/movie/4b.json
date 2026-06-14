@@ -1,0 +1,21 @@
+{
+  "wk_000002580": {
+    "workId": "wk_000002580",
+    "title": "베니티 페어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046841"
+    },
+    "titles": {
+      "ko": "베니티 페어",
+      "en": "Vanity Fair",
+      "ja": "悪女"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

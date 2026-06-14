@@ -34,5 +34,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002586": {
+    "workId": "wk_000002586",
+    "title": "나홀로 이식당",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109415088"
+    },
+    "titles": {
+      "ko": "나홀로 이식당",
+      "en": "Q109415088"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002864": {
+    "workId": "wk_000002864",
+    "title": "카카오TV 모닝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457158"
+    },
+    "titles": {
+      "ko": "카카오TV 모닝",
+      "en": "Q109457158"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

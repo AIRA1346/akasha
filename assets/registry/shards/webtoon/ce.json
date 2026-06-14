@@ -36,5 +36,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002066": {
+    "workId": "wk_000002066",
+    "title": "열아홉스물하나",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187336"
+    },
+    "titles": {
+      "ko": "열아홉스물하나",
+      "en": "Yeol-Ahobseumulhana"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

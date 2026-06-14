@@ -1,0 +1,38 @@
+{
+  "wk_000002216": {
+    "workId": "wk_000002216",
+    "title": "메이저",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154274"
+    },
+    "titles": {
+      "ko": "메이저",
+      "en": "Major",
+      "ja": "メジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002903": {
+    "workId": "wk_000002903",
+    "title": "이세계 수어사이드 스쿼드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120253570"
+    },
+    "titles": {
+      "ko": "이세계 수어사이드 스쿼드",
+      "en": "Suicide Squad Isekai",
+      "ja": "異世界スーサイド・スクワッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

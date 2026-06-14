@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002476": {
+    "workId": "wk_000002476",
+    "title": "아이들 마피아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107676361"
+    },
+    "titles": {
+      "ko": "아이들 마피아",
+      "en": "Idle Mafia",
+      "ja": "放置マフィア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

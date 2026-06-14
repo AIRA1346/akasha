@@ -51,5 +51,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002273": {
+    "workId": "wk_000002273",
+    "title": "출생의 비밀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10896659"
+    },
+    "titles": {
+      "ko": "출생의 비밀",
+      "en": "The Secret of Birth",
+      "ja": "私の10年の秘密"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002489": {
+    "workId": "wk_000002489",
+    "title": "무빙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109317559"
+    },
+    "titles": {
+      "ko": "무빙",
+      "en": "Moving",
+      "ja": "ムービング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

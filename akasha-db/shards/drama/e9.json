@@ -65,5 +65,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002502": {
+    "workId": "wk_000002502",
+    "title": "새로운 열쇠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109357761"
+    },
+    "titles": {
+      "ko": "새로운 열쇠",
+      "en": "Atarashii Kagi",
+      "ja": "新しいカギ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002674": {
+    "workId": "wk_000002674",
+    "title": "최고다! 호기심딱지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455461"
+    },
+    "titles": {
+      "ko": "최고다! 호기심딱지",
+      "en": "Q109455461"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002816": {
+    "workId": "wk_000002816",
+    "title": "명탐정 코난: 베이커가의 망령",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196712"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 베이커가의 망령",
+      "en": "Case Closed: The Phantom of Baker Street",
+      "ja": "名探偵コナン ベイカー街の亡霊"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000002501": {
+    "workId": "wk_000002501",
+    "title": "설중한도행 : 왕의 길",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109349890"
+    },
+    "titles": {
+      "ko": "설중한도행 : 왕의 길",
+      "en": "Sword Snow Stride",
+      "ja": "雪中悍刀行〜徐鳳年、北椋王への道〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002558": {
+    "workId": "wk_000002558",
+    "title": "마블 미드나잇 선즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108273563"
+    },
+    "titles": {
+      "ko": "마블 미드나잇 선즈",
+      "en": "Midnight Suns",
+      "ja": "マーベル ミッドナイト・サンズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002824": {
+    "workId": "wk_000002824",
+    "title": "노부나가의 야망 열풍전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856187"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 열풍전",
+      "en": "Nobunaga's Ambition: Reppuden",
+      "ja": "信長の野望・烈風伝"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

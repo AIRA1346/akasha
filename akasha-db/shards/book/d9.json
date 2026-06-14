@@ -1,0 +1,21 @@
+{
+  "wk_000002653": {
+    "workId": "wk_000002653",
+    "title": "라이어 라이어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106126351"
+    },
+    "titles": {
+      "ko": "라이어 라이어",
+      "en": "Liar Liar",
+      "ja": "ライアー・ライアー"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -52,5 +52,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002346": {
+    "workId": "wk_000002346",
+    "title": "마스터셰프 US",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090807"
+    },
+    "titles": {
+      "ko": "마스터셰프 US",
+      "en": "Q1090807"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002582": {
+    "workId": "wk_000002582",
+    "title": "주니어 마스터셰프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093999"
+    },
+    "titles": {
+      "ko": "주니어 마스터셰프",
+      "en": "Junior MasterChef Australia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

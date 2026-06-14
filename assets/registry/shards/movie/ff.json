@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002419": {
+    "workId": "wk_000002419",
+    "title": "카르멘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043604"
+    },
+    "titles": {
+      "ko": "카르멘",
+      "en": "Carmen",
+      "ja": "カルメン"
+    },
+    "releaseYear": 1983,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

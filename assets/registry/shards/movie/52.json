@@ -1,0 +1,21 @@
+{
+  "wk_000002100": {
+    "workId": "wk_000002100",
+    "title": "괴짜들의 로맨스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104051129"
+    },
+    "titles": {
+      "ko": "괴짜들의 로맨스",
+      "en": "i WEiRDO",
+      "ja": "恋の病　～潔癖なふたりのビフォーアフター～"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

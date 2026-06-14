@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002717": {
+    "workId": "wk_000002717",
+    "title": "왕립우주군~오네아미스의 날개~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192981"
+    },
+    "titles": {
+      "ko": "왕립우주군~오네아미스의 날개~",
+      "en": "Royal Space Force: The Wings of Honnêamise",
+      "ja": "王立宇宙軍 オネアミスの翼"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

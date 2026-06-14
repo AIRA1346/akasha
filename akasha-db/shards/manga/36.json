@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000002065": {
+    "workId": "wk_000002065",
+    "title": "미라클 볼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11342804"
+    },
+    "titles": {
+      "ko": "미라클 볼",
+      "en": "Miracle Ball",
+      "ja": "ミラクルボール"
+    },
+    "creator": "Yasunari Nagatoshi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002881": {
+    "workId": "wk_000002881",
+    "title": "이 회사에 좋아하는 사람이 있습니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114981464"
+    },
+    "titles": {
+      "ko": "이 회사에 좋아하는 사람이 있습니다",
+      "en": "I Have a Crush at Work",
+      "ja": "この会社に好きな人がいます"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

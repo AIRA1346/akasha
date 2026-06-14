@@ -1,0 +1,21 @@
+{
+  "wk_000002752": {
+    "workId": "wk_000002752",
+    "title": "캐산",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048319"
+    },
+    "titles": {
+      "ko": "캐산",
+      "en": "Casshern",
+      "ja": "CASSHERN"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

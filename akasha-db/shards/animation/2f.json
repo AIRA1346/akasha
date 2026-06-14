@@ -1,0 +1,40 @@
+{
+  "wk_000002544": {
+    "workId": "wk_000002544",
+    "title": "BanG Dream! It's MyGO!!!!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118329914"
+    },
+    "titles": {
+      "ko": "BanG Dream! It's MyGO!!!!!",
+      "en": "BanG Dream! It's MyGO!!!!!",
+      "ja": "BanG Dream! It's MyGO!!!!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002714": {
+    "workId": "wk_000002714",
+    "title": "마이셀프 ; 유어셀프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191926"
+    },
+    "titles": {
+      "ko": "마이셀프 ; 유어셀프",
+      "en": "Myself ; Yourself",
+      "ja": "Myself ; Yourself"
+    },
+    "releaseYear": 2007,
+    "creator": "Takumi Nakazawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

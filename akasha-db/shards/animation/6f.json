@@ -1,0 +1,40 @@
+{
+  "wk_000002151": {
+    "workId": "wk_000002151",
+    "title": "걸즈 앤 판처 최종장 제4화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115300029"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 최종장 제4화",
+      "en": "Girls und Panzer das Finale: Part 4",
+      "ja": "ガールズ＆パンツァー 最終章 第4話"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002155": {
+    "workId": "wk_000002155",
+    "title": "구데타마: 엄마 찾아 뒹굴뒹굴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115351839"
+    },
+    "titles": {
+      "ko": "구데타마: 엄마 찾아 뒹굴뒹굴",
+      "en": "Gudetama: An Eggcellent Adventure",
+      "ja": "ぐでたま 〜母をたずねてどんくらい〜"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

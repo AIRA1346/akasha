@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002217": {
+    "workId": "wk_000002217",
+    "title": "펼쳐지는 스카이! 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115513752"
+    },
+    "titles": {
+      "ko": "펼쳐지는 스카이! 프리큐어",
+      "en": "Soaring Sky! Pretty Cure",
+      "ja": "ひろがるスカイ!プリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

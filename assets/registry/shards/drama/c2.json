@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002119": {
+    "workId": "wk_000002119",
+    "title": "뱀파이어 아카데미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108672912"
+    },
+    "titles": {
+      "ko": "뱀파이어 아카데미",
+      "en": "Vampire Academy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

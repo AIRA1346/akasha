@@ -70,5 +70,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002175": {
+    "workId": "wk_000002175",
+    "title": "비밀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054767"
+    },
+    "titles": {
+      "ko": "비밀",
+      "en": "Naoko",
+      "ja": "秘密"
+    },
+    "releaseYear": 1998,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002416": {
+    "workId": "wk_000002416",
+    "title": "인명입정리론의찬요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105763999"
+    },
+    "titles": {
+      "ko": "인명입정리론의찬요",
+      "en": "Q105763999",
+      "ja": "因明入正理論義纂要"
+    },
+    "creator": "Huizhao",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

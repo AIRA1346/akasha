@@ -101,5 +101,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002280": {
+    "workId": "wk_000002280",
+    "title": "Q.E.D. 증명종료",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135524"
+    },
+    "titles": {
+      "ko": "Q.E.D. 증명종료",
+      "en": "Q.E.D.",
+      "ja": "Q.E.D. 証明終了"
+    },
+    "creator": "Motohiro Katou",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002356": {
+    "workId": "wk_000002356",
+    "title": "해치지 않아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109255285"
+    },
+    "titles": {
+      "ko": "해치지 않아",
+      "en": "We Don't Bite: Villains in the Countryside"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002359": {
+    "workId": "wk_000002359",
+    "title": "소사득",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109257502"
+    },
+    "titles": {
+      "ko": "소사득",
+      "en": "A Love for Dilemma"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

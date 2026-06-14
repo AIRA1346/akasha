@@ -31,5 +31,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002159": {
+    "workId": "wk_000002159",
+    "title": "더 킹 오브 파이터즈 96",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071034"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 96",
+      "en": "The King of Fighters '96",
+      "ja": "ザ・キング・オブ・ファイターズ '96"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002556": {
+    "workId": "wk_000002556",
+    "title": "소닉 컬러즈: 얼티밋",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108254416"
+    },
+    "titles": {
+      "ko": "소닉 컬러즈: 얼티밋",
+      "en": "Sonic Colors: Ultimate",
+      "ja": "ソニックカラーズ アルティメット"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

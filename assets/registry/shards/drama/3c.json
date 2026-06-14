@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002108": {
+    "workId": "wk_000002108",
+    "title": "이웃의 치카라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108605562"
+    },
+    "titles": {
+      "ko": "이웃의 치카라",
+      "en": "Next Door",
+      "ja": "となりのチカラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002814": {
+    "workId": "wk_000002814",
+    "title": "이브의 시간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196541"
+    },
+    "titles": {
+      "ko": "이브의 시간",
+      "en": "Time of Eve",
+      "ja": "イヴの時間"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

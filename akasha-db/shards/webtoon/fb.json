@@ -1,0 +1,19 @@
+{
+  "wk_000002529": {
+    "workId": "wk_000002529",
+    "title": "약 파는 황태자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136344941"
+    },
+    "titles": {
+      "ko": "약 파는 황태자",
+      "en": "The Apothecary Prince"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

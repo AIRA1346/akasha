@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002083": {
+    "workId": "wk_000002083",
+    "title": "엔드 오브 에반게리온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151814"
+    },
+    "titles": {
+      "ko": "엔드 오브 에반게리온",
+      "en": "The End of Evangelion",
+      "ja": "新世紀エヴァンゲリオン劇場版 Air/まごころを、君に"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

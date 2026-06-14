@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002935": {
+    "workId": "wk_000002935",
+    "title": "호스텔 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048645"
+    },
+    "titles": {
+      "ko": "호스텔 2",
+      "en": "Hostel: Part II",
+      "ja": "ホステル2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002105": {
+    "workId": "wk_000002105",
+    "title": "미치도록 사랑해",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104145479"
+    },
+    "titles": {
+      "ko": "미치도록 사랑해",
+      "en": "Loco por ella",
+      "ja": "クレイジーなくらい君に夢中"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

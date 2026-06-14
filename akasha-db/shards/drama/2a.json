@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002868": {
+    "workId": "wk_000002868",
+    "title": "낭만닥터 김사부 3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457337"
+    },
+    "titles": {
+      "ko": "낭만닥터 김사부 3",
+      "en": "Dr. Romance 3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

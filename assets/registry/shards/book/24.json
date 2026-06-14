@@ -1,0 +1,21 @@
+{
+  "wk_000002090": {
+    "workId": "wk_000002090",
+    "title": "어떻게 지내요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105320057"
+    },
+    "titles": {
+      "ko": "어떻게 지내요",
+      "en": "What Are You Going Through"
+    },
+    "releaseYear": 2020,
+    "creator": "Sigrid Nunez",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

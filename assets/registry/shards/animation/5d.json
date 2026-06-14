@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002896": {
+    "workId": "wk_000002896",
+    "title": "철콘 근크리트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200944"
+    },
+    "titles": {
+      "ko": "철콘 근크리트",
+      "en": "Tekkonkinkreet",
+      "ja": "鉄コン筋クリート"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

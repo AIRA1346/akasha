@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002741": {
+    "workId": "wk_000002741",
+    "title": "갈리아 전기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106199"
+    },
+    "titles": {
+      "ko": "갈리아 전기",
+      "en": "Commentarii de Bello Gallico",
+      "ja": "ガリア戦記"
+    },
+    "creator": "Julius Caesar",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

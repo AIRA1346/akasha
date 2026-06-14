@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002898": {
+    "workId": "wk_000002898",
+    "title": "나츠메 우인장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120141279"
+    },
+    "titles": {
+      "ko": "나츠메 우인장",
+      "en": "Natsume's Book of Friends",
+      "ja": "夏目友人帳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000002153": {
+    "workId": "wk_000002153",
+    "title": "공중그네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153434"
+    },
+    "titles": {
+      "ko": "공중그네",
+      "en": "Kūchū Buranko",
+      "ja": "空中ブランコ"
+    },
+    "releaseYear": 2009,
+    "creator": "Hideo Okuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002317": {
+    "workId": "wk_000002317",
+    "title": "백야극광",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107359935"
+    },
+    "titles": {
+      "ko": "백야극광",
+      "en": "Alchemy Stars",
+      "ja": "白夜極光"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "wk_000002826": {
+    "workId": "wk_000002826",
+    "title": "노부나가의 야망 전국군웅전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856189"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 전국군웅전",
+      "en": "Nobunaga's Ambition: Sengoku Gunyuuden",
+      "ja": "信長の野望・戦国群雄伝"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002834": {
+    "workId": "wk_000002834",
+    "title": "노부나가의 야망 혁신",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856196"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 혁신",
+      "en": "Nobunaga's Ambition: Kakushin",
+      "ja": "信長の野望・革新"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

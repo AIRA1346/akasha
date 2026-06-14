@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002321": {
+    "workId": "wk_000002321",
+    "title": "퍼펙트! 슈퍼 몽키 볼 1&2 리메이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107377205"
+    },
+    "titles": {
+      "ko": "퍼펙트! 슈퍼 몽키 볼 1&2 리메이크",
+      "en": "Super Monkey Ball: Banana Mania"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

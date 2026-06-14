@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002284": {
+    "workId": "wk_000002284",
+    "title": "케메코 딜럭스!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136346"
+    },
+    "titles": {
+      "ko": "케메코 딜럭스!",
+      "en": "Kemeko Deluxe!",
+      "ja": "ケメコデラックス!"
+    },
+    "creator": "Shoichi Iwasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002367": {
+    "workId": "wk_000002367",
+    "title": "울퉁불퉁 마녀 모녀의 사정",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113860060"
+    },
+    "titles": {
+      "ko": "울퉁불퉁 마녀 모녀의 사정",
+      "en": "The Family Circumstances of the Irregular Witch",
+      "ja": "でこぼこ魔女の親子事情"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

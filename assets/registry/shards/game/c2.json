@@ -116,5 +116,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002169": {
+    "workId": "wk_000002169",
+    "title": "더 킹 오브 파이터즈 2003",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071749"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 2003",
+      "en": "The King of Fighters 2003",
+      "ja": "ザ・キング・オブ・ファイターズ 2003"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002640": {
+    "workId": "wk_000002640",
+    "title": "앨런 웨이크 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108417001"
+    },
+    "titles": {
+      "ko": "앨런 웨이크 2",
+      "en": "Q108417001",
+      "ja": "Alan Wake 2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

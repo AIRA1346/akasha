@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002318": {
+    "workId": "wk_000002318",
+    "title": "차륜의 나라, 해바라기의 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073632"
+    },
+    "titles": {
+      "ko": "차륜의 나라, 해바라기의 소녀",
+      "en": "Sharin no Kuni: The Girl Among the Sunflowers",
+      "ja": "車輪の国、向日葵の少女"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

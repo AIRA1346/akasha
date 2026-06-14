@@ -102,5 +102,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002694": {
+    "workId": "wk_000002694",
+    "title": "귀가부 활동 기록",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11481261"
+    },
+    "titles": {
+      "ko": "귀가부 활동 기록",
+      "en": "Chronicles of the Going Home Club",
+      "ja": "帰宅部活動記録"
+    },
+    "creator": "Kuroha",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

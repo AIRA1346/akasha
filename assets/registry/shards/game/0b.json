@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002820": {
+    "workId": "wk_000002820",
+    "title": "노부나가의 야망 Internet",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856180"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 Internet",
+      "en": "Q10856180",
+      "ja": "信長の野望Internet"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

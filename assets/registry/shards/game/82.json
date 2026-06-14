@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002238": {
+    "workId": "wk_000002238",
+    "title": "포르자 호라이즌 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214683"
+    },
+    "titles": {
+      "ko": "포르자 호라이즌 5",
+      "en": "Forza Horizon 5",
+      "ja": "Forza Horizon 5"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002406": {
+    "workId": "wk_000002406",
+    "title": "FIFA 23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107486489"
+    },
+    "titles": {
+      "ko": "FIFA 23",
+      "en": "FIFA 23",
+      "ja": "FIFA 23"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

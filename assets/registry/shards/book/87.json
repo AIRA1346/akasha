@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002329": {
+    "workId": "wk_000002329",
+    "title": "최애, 타오르다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105635918"
+    },
+    "titles": {
+      "ko": "최애, 타오르다",
+      "en": "Q105635918",
+      "ja": "推し、燃ゆ"
+    },
+    "creator": "Rin Usami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002334": {
+    "workId": "wk_000002334",
+    "title": "아무도 이런 이야기를 하지 않는다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105686775"
+    },
+    "titles": {
+      "ko": "아무도 이런 이야기를 하지 않는다",
+      "en": "No One Is Talking About This"
+    },
+    "releaseYear": 2021,
+    "creator": "Patricia Lockwood",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

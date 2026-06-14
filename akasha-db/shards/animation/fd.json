@@ -30,5 +30,60 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002085": {
+    "workId": "wk_000002085",
+    "title": "명탐정 코난: 흑철의 어영",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115182766"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 흑철의 어영",
+      "en": "Detective Conan: Black Iron Submarine",
+      "ja": "名探偵コナン 黒鉄の魚影"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002533": {
+    "workId": "wk_000002533",
+    "title": "스콧 필그림, 날아오르다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117351362"
+    },
+    "titles": {
+      "ko": "스콧 필그림, 날아오르다!",
+      "en": "Scott Pilgrim Takes Off",
+      "ja": "スコット・ピルグリム テイクス・オフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002619": {
+    "workId": "wk_000002619",
+    "title": "별나라 손오공",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185494"
+    },
+    "titles": {
+      "ko": "별나라 손오공",
+      "en": "Starzinger",
+      "ja": "SF西遊記スタージンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

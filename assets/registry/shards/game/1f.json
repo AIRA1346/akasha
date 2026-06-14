@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002475": {
+    "workId": "wk_000002475",
+    "title": "R.U.S.E.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076519"
+    },
+    "titles": {
+      "ko": "R.U.S.E.",
+      "en": "R.U.S.E.",
+      "ja": "R.U.S.E."
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

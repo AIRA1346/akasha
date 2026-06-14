@@ -1,0 +1,21 @@
+{
+  "wk_000002101": {
+    "workId": "wk_000002101",
+    "title": "스파이더헤드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104094034"
+    },
+    "titles": {
+      "ko": "스파이더헤드",
+      "en": "Spiderhead",
+      "ja": "エスケイプ・フロム・スパイダーヘッド"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

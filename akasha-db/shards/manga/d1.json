@@ -36,5 +36,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002685": {
+    "workId": "wk_000002685",
+    "title": "실연 쇼콜라티에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11444799"
+    },
+    "titles": {
+      "ko": "실연 쇼콜라티에",
+      "en": "Shitsuren Chocolatier",
+      "ja": "失恋ショコラティエ"
+    },
+    "creator": "Setona Mizushiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002882": {
+    "workId": "wk_000002882",
+    "title": "스켓 댄스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1149942"
+    },
+    "titles": {
+      "ko": "스켓 댄스",
+      "en": "Sket Dance",
+      "ja": "SKET DANCE"
+    },
+    "releaseYear": 2007,
+    "creator": "Kenta Shinohara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

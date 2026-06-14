@@ -1,0 +1,21 @@
+{
+  "wk_000002561": {
+    "workId": "wk_000002561",
+    "title": "테일즈 오브 루미나리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108274357"
+    },
+    "titles": {
+      "ko": "테일즈 오브 루미나리아",
+      "en": "Tales of Luminaria",
+      "ja": "テイルズ オブ ルミナリア"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

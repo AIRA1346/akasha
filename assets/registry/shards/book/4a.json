@@ -1,0 +1,79 @@
+{
+  "wk_000002479": {
+    "workId": "wk_000002479",
+    "title": "루바이야트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059358"
+    },
+    "titles": {
+      "ko": "루바이야트",
+      "en": "Rubáiyát of Omar Khayyám",
+      "ja": "ルバイヤート"
+    },
+    "creator": "Omar Khayyám",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002564": {
+    "workId": "wk_000002564",
+    "title": "맹약기사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105965358"
+    },
+    "titles": {
+      "ko": "맹약기사",
+      "en": "The Sworn Sword"
+    },
+    "releaseYear": 2003,
+    "creator": "ジョージ・R・R・マーティン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002566": {
+    "workId": "wk_000002566",
+    "title": "스키다마링크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105968802"
+    },
+    "titles": {
+      "ko": "스키다마링크",
+      "en": "Skidamarink"
+    },
+    "releaseYear": 2001,
+    "creator": "Guillaume Musso",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002648": {
+    "workId": "wk_000002648",
+    "title": "얼룩끈의 비밀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060471"
+    },
+    "titles": {
+      "ko": "얼룩끈의 비밀",
+      "en": "The Adventure of the Speckled Band",
+      "ja": "まだらの紐"
+    },
+    "releaseYear": 1891,
+    "creator": "Arthur Conan Doyle",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

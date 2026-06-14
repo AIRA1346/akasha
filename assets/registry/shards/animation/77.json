@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002621": {
+    "workId": "wk_000002621",
+    "title": "테카맨 블레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185522"
+    },
+    "titles": {
+      "ko": "테카맨 블레이드",
+      "en": "Tekkaman Blade",
+      "ja": "宇宙の騎士テッカマンブレード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

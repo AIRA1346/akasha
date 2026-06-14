@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002189": {
+    "workId": "wk_000002189",
+    "title": "유루캠△",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108816674"
+    },
+    "titles": {
+      "ko": "유루캠△",
+      "en": "Laid-Back Camp",
+      "ja": "ゆるキャン△"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

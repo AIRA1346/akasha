@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002646": {
+    "workId": "wk_000002646",
+    "title": "스파이더맨 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108479502"
+    },
+    "titles": {
+      "ko": "스파이더맨 2",
+      "en": "Q108479502",
+      "ja": "Marvel's Spider-Man 2"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

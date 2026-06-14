@@ -34,5 +34,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002194": {
+    "workId": "wk_000002194",
+    "title": "니야다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888321"
+    },
+    "titles": {
+      "ko": "니야다",
+      "en": "Ni Yada",
+      "ja": "倪亜達"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002433": {
+    "workId": "wk_000002433",
+    "title": "아모르 디비디도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109284712"
+    },
+    "titles": {
+      "ko": "아모르 디비디도",
+      "en": "Amor dividido"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002773": {
+    "workId": "wk_000002773",
+    "title": "컴백쇼 뮤톡 라이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456455"
+    },
+    "titles": {
+      "ko": "컴백쇼 뮤톡 라이브",
+      "en": "Q109456455"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002577": {
+    "workId": "wk_000002577",
+    "title": "맛있는 워킹걸",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104664854"
+    },
+    "titles": {
+      "ko": "맛있는 워킹걸",
+      "en": "Tasty Working Girl",
+      "ja": "最後のワーキングガール"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

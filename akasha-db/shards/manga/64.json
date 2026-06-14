@@ -37,5 +37,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002605": {
+    "workId": "wk_000002605",
+    "title": "대도쿄 토이 박스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11436112"
+    },
+    "titles": {
+      "ko": "대도쿄 토이 박스",
+      "en": "Giga Tokyo Toy Box",
+      "ja": "大東京トイボックス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

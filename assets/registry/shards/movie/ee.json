@@ -1,0 +1,21 @@
+{
+  "wk_000002751": {
+    "workId": "wk_000002751",
+    "title": "암스테르담",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104830968"
+    },
+    "titles": {
+      "ko": "암스테르담",
+      "en": "Amsterdam",
+      "ja": "アムステルダム (映画)"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

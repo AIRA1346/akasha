@@ -1,0 +1,21 @@
+{
+  "wk_000002576": {
+    "workId": "wk_000002576",
+    "title": "천국의 여인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104646669"
+    },
+    "titles": {
+      "ko": "천국의 여인",
+      "en": "The Lady of Heaven"
+    },
+    "releaseYear": 2021,
+    "creator": "Yasser Al-Habib",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

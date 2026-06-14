@@ -71,5 +71,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002357": {
+    "workId": "wk_000002357",
+    "title": "일견경심 : 첫눈에 반하다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109256659"
+    },
+    "titles": {
+      "ko": "일견경심 : 첫눈에 반하다",
+      "en": "Q109256659"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

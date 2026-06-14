@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002348": {
+    "workId": "wk_000002348",
+    "title": "MTV 언플러그드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10913761"
+    },
+    "titles": {
+      "ko": "MTV 언플러그드",
+      "en": "MTV Unplugged",
+      "ja": "MTVアンプラグド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,37 +1,39 @@
-# Catalog Scale Baseline @2008
+# Catalog Scale Baseline @2859
 
-> **2026-06-14** · **2008작** · preflight ✅ · G1 ~40% · **2000 milestone ✅**
+> **2026-06-14** · **2859작** · preflight ✅ · G1 ~57% · **2500 window 전환 ✅**
 
 ## 측정
 
 | 항목 | 값 |
 |------|-----|
-| entryCount | **2008** |
-| shard files | 1113 |
+| entryCount | **2859** |
+| shard files | 1351 |
 | search_index parse | watch (≤50ms) |
-| assets total | ~1.03 MB |
+| assets total | watch (~1.5 MB) |
 
 | Phase 2 트리거 | 상태 |
 |----------------|------|
 | entryCount >1000 | ✅ |
-| browse full load | ✅ (<2500 threshold) |
+| browse full load | ❌ **>2500 → window 모드** |
+| browse window prefetch | ✅ ~242 loaded @2859 |
 | APK >15MB | ❌ 여유 |
 
-## Discovery (1735 → 2008, +273)
+## Discovery (2008 → 2859, +851)
 
-- offset 420~490 + **webtoon 재개** (offset 0~60)
-- **webtoon fix**: SPARQL P31에서 manga series(Q21198342) 제외 → dedupe-only 구간 해소
+- 10+ rounds `wikidata_ko_trial --category all --limit 20 --apply`
+- drama·movie·webtoon 채널 고yield
 
 ## ingest
 
-- `_sanitizeTitlesEn`: CJK · too_short en
+- cursor 자동 갱신 (`--offset` 포함)
 
-## 다음 offset
+## 다음 offset (post-run cursors)
 
-webtoon 75 · manga 1050 · drama 495 · game 495 · animation 505 · movie 480 · book 480
+cursor 파일 SSOT — `akasha-db/pipeline/discovery/cursors/wikidata_ko_*.json`
 
 ## 후속
 
 1. Discovery → G1 5k
-2. **2500** 도달 시 browse 윈도우 모드 전환 검증
-3. merge backfill (Wikidata 안정 시)
+2. **browse window dogfood** @2859 (loadMore · 카테고리 필터)
+3. Phase 2.3 manifest-only / eager bundle (ADR-010)
+4. merge backfill (Wikidata 안정 시)

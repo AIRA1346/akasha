@@ -1,0 +1,22 @@
+{
+  "wk_000002840": {
+    "workId": "wk_000002840",
+    "title": "내 최애는 악역 영애.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106351848"
+    },
+    "titles": {
+      "ko": "내 최애는 악역 영애.",
+      "en": "I'm in Love with the Villainess",
+      "ja": "私の推しは悪役令嬢。"
+    },
+    "releaseYear": 2019,
+    "creator": "Inori.",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -32,5 +32,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002264": {
+    "workId": "wk_000002264",
+    "title": "풍기낙양",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108907878"
+    },
+    "titles": {
+      "ko": "풍기낙양",
+      "en": "Luoyang",
+      "ja": "風起洛陽"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "wk_000002672": {
+    "workId": "wk_000002672",
+    "title": "코리아 온 스테이지 - 남원 광한루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455365"
+    },
+    "titles": {
+      "ko": "코리아 온 스테이지 - 남원 광한루",
+      "en": "Q109455365"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002759": {
+    "workId": "wk_000002759",
+    "title": "아이엠셰프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456123"
+    },
+    "titles": {
+      "ko": "아이엠셰프",
+      "en": "Q109456123"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

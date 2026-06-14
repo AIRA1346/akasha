@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002351": {
+    "workId": "wk_000002351",
+    "title": "동창회 ~ 러브 어게인 증후군",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10917698"
+    },
+    "titles": {
+      "ko": "동창회 ~ 러브 어게인 증후군",
+      "en": "Q10917698",
+      "ja": "同窓会〜ラブ・アゲイン症候群"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

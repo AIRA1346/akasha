@@ -75,5 +75,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002786": {
+    "workId": "wk_000002786",
+    "title": "괴체진서 제로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491649"
+    },
+    "titles": {
+      "ko": "괴체진서 제로",
+      "en": "Q11491649",
+      "ja": "怪体真書0"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

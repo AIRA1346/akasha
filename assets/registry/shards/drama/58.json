@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002436": {
+    "workId": "wk_000002436",
+    "title": "친애하는 한이 아버님 님",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10929083"
+    },
+    "titles": {
+      "ko": "친애하는 한이 아버님 님",
+      "en": "Haikei, Chichiue-sama",
+      "ja": "拝啓、父上様"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

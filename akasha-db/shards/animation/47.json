@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002625": {
+    "workId": "wk_000002625",
+    "title": "퐁의 길",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118612313"
+    },
+    "titles": {
+      "ko": "퐁의 길",
+      "en": "Pon no Michi",
+      "ja": "ぽんのみち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002209": {
+    "workId": "wk_000002209",
+    "title": "내일 (만화)",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121409181"
+    },
+    "titles": {
+      "ko": "내일 (만화)",
+      "en": "Tomorrow"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

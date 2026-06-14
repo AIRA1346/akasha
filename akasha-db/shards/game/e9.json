@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002645": {
+    "workId": "wk_000002645",
+    "title": "마블 울버린",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108479474"
+    },
+    "titles": {
+      "ko": "마블 울버린",
+      "en": "Q108479474",
+      "ja": "ウルヴァリン"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

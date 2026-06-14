@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002485": {
+    "workId": "wk_000002485",
+    "title": "음양사: 청아집",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104489028"
+    },
+    "titles": {
+      "ko": "음양사: 청아집",
+      "en": "The Yin-Yang Master: Dream of Eternity",
+      "ja": "陰陽師：とこしえの夢"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

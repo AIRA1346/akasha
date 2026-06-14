@@ -1,0 +1,21 @@
+{
+  "wk_000002420": {
+    "workId": "wk_000002420",
+    "title": "지상의 별처럼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043614"
+    },
+    "titles": {
+      "ko": "지상의 별처럼",
+      "en": "Taare Zameen Par",
+      "ja": "地上の星たち"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

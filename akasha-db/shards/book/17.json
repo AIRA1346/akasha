@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002563": {
+    "workId": "wk_000002563",
+    "title": "「크크큭……. 놈은 사천왕 중에서도 최약이지」라고 해고된 나, 왠지 용사와 성녀의 스승이 되었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105955312"
+    },
+    "titles": {
+      "ko": "「크크큭……. 놈은 사천왕 중에서도 최약이지」라고 해고된 나, 왠지 용사와 성녀의 스승이 되었다",
+      "en": "\"Kukuku .... Yatsu wa Shitennō no Naka de mo Saijaku\" to Kaiko Sareta Ore, Naze ka Yūsha to Seijo no Shishō ni Naru",
+      "ja": "「ククク……。奴は四天王の中でも最弱」と解雇された俺、なぜか勇者と聖女の師匠になる"
+    },
+    "releaseYear": 2021,
+    "creator": "Masayuki Nobeno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

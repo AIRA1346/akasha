@@ -1,0 +1,22 @@
+{
+  "wk_000002092": {
+    "workId": "wk_000002092",
+    "title": "비극의 탄생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053359"
+    },
+    "titles": {
+      "ko": "비극의 탄생",
+      "en": "The Birth of Tragedy",
+      "ja": "悲劇の誕生"
+    },
+    "releaseYear": 1872,
+    "creator": "Friedrich Nietzsche",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

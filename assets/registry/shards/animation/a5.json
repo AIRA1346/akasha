@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002149": {
+    "workId": "wk_000002149",
+    "title": "인연의 알레르",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115233654"
+    },
+    "titles": {
+      "ko": "인연의 알레르",
+      "en": "Kizuna no Allele",
+      "ja": "絆のアリル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002215": {
+    "workId": "wk_000002215",
+    "title": "학원 헤븐 BOY'S LOVE SCRAMBLE!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154265"
+    },
+    "titles": {
+      "ko": "학원 헤븐 BOY'S LOVE SCRAMBLE!",
+      "en": "Gakuen Heaven",
+      "ja": "学園ヘヴン BOY'S LOVE SCRAMBLE!"
+    },
+    "creator": "You Higuri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002835": {
+    "workId": "wk_000002835",
+    "title": "노블 워크스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856198"
+    },
+    "titles": {
+      "ko": "노블 워크스",
+      "en": "Noble ☆ Works",
+      "ja": "のーぶる☆わーくす"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

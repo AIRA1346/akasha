@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002316": {
+    "workId": "wk_000002316",
+    "title": "철권 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073511"
+    },
+    "titles": {
+      "ko": "철권 4",
+      "en": "Tekken 4",
+      "ja": "鉄拳4"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002822": {
+    "workId": "wk_000002822",
+    "title": "노부나가의 야망 게임보이판",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856184"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 게임보이판",
+      "en": "Q10856184",
+      "ja": "信長の野望 ゲームボーイ版"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

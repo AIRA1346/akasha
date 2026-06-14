@@ -1,0 +1,22 @@
+{
+  "wk_000002877": {
+    "workId": "wk_000002877",
+    "title": "전국요호",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11496014"
+    },
+    "titles": {
+      "ko": "전국요호",
+      "en": "Sengoku Youko",
+      "ja": "戦国妖狐"
+    },
+    "releaseYear": 2007,
+    "creator": "Satoshi Mizukami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

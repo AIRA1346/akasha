@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002250": {
+    "workId": "wk_000002250",
+    "title": "세계 최고의 암살자, 이세계 귀족으로 전생하다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105519361"
+    },
+    "titles": {
+      "ko": "세계 최고의 암살자, 이세계 귀족으로 전생하다",
+      "en": "The World's Finest Assassin Gets Reincarnated in a Different World as an Aristocrat",
+      "ja": "世界最高の暗殺者、異世界貴族に転生する"
+    },
+    "releaseYear": 2024,
+    "creator": "Rui Tsukiyo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002711": {
+    "workId": "wk_000002711",
+    "title": "전뇌 코일",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1189698"
+    },
+    "titles": {
+      "ko": "전뇌 코일",
+      "en": "Den-noh Coil",
+      "ja": "電脳コイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

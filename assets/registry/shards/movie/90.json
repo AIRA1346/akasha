@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002575": {
+    "workId": "wk_000002575",
+    "title": "요괴대전쟁: 가디언즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104630023"
+    },
+    "titles": {
+      "ko": "요괴대전쟁: 가디언즈",
+      "en": "The Great Yokai War: Guardians",
+      "ja": "妖怪大戦争 ガーディアンズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

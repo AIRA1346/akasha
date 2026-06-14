@@ -1,0 +1,21 @@
+{
+  "wk_000002484": {
+    "workId": "wk_000002484",
+    "title": "코코 샤넬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044859"
+    },
+    "titles": {
+      "ko": "코코 샤넬",
+      "en": "Coco Before Chanel",
+      "ja": "ココ・アヴァン・シャネル"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

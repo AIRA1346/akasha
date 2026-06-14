@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002636": {
+    "workId": "wk_000002636",
+    "title": "킹덤 하츠 코디드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1083444"
+    },
+    "titles": {
+      "ko": "킹덤 하츠 코디드",
+      "en": "Kingdom Hearts Coded",
+      "ja": "キングダム ハーツ コーデッド"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

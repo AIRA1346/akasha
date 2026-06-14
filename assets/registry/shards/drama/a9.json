@@ -17,5 +17,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002442": {
+    "workId": "wk_000002442",
+    "title": "불가살",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109313195"
+    },
+    "titles": {
+      "ko": "불가살",
+      "en": "Bulgasal: Immortal Souls",
+      "ja": "不可殺"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002757": {
+    "workId": "wk_000002757",
+    "title": "여자들의 은밀한 파티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456061"
+    },
+    "titles": {
+      "ko": "여자들의 은밀한 파티",
+      "en": "women's secret party"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

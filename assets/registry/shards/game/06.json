@@ -1,0 +1,20 @@
+{
+  "wk_000002545": {
+    "workId": "wk_000002545",
+    "title": "아이들 택배 타이쿤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107688485"
+    },
+    "titles": {
+      "ko": "아이들 택배 타이쿤",
+      "en": "Idle Courier Tycoon",
+      "ja": "放置宅配便タイクーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

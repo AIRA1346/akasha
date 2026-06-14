@@ -86,5 +86,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002062": {
+    "workId": "wk_000002062",
+    "title": "라즈베리 타임즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340148"
+    },
+    "titles": {
+      "ko": "라즈베리 타임즈",
+      "en": "The Marshmallow Times",
+      "ja": "マシュマロ通信"
+    },
+    "releaseYear": 2004,
+    "creator": "Lun Lun Yamamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002785": {
+    "workId": "wk_000002785",
+    "title": "닌자 핫토리군+파만 초능력 워즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11490777"
+    },
+    "titles": {
+      "ko": "닌자 핫토리군+파만 초능력 워즈",
+      "en": "Ninja Hattori-kun Plus Perman: Chōnōryoku Wars",
+      "ja": "忍者ハットリくん+パーマン 超能力ウォーズ"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

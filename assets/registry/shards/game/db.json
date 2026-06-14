@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002557": {
+    "workId": "wk_000002557",
+    "title": "배트맨: 아캄 오리진스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10826261"
+    },
+    "titles": {
+      "ko": "배트맨: 아캄 오리진스",
+      "en": "Batman: Arkham Origins",
+      "ja": "バットマン アーカム・ビギンズ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

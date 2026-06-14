@@ -1,0 +1,20 @@
+{
+  "wk_000002307": {
+    "workId": "wk_000002307",
+    "title": "철인 28호 가오!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11649523"
+    },
+    "titles": {
+      "ko": "철인 28호 가오!",
+      "en": "Tetsujin 28-go Gao!",
+      "ja": "鉄人28号ガオ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

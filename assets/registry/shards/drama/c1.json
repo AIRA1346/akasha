@@ -1,0 +1,20 @@
+{
+  "wk_000002262": {
+    "workId": "wk_000002262",
+    "title": "겐로쿠 요란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10889787"
+    },
+    "titles": {
+      "ko": "겐로쿠 요란",
+      "en": "Genroku Ryoran",
+      "ja": "元禄繚乱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

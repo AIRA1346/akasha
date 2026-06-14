@@ -1,0 +1,59 @@
+{
+  "wk_000002260": {
+    "workId": "wk_000002260",
+    "title": "매스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104213702"
+    },
+    "titles": {
+      "ko": "매스",
+      "en": "Mass",
+      "ja": "マス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002663": {
+    "workId": "wk_000002663",
+    "title": "블랙 레인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048085"
+    },
+    "titles": {
+      "ko": "블랙 레인",
+      "en": "Black Rain",
+      "ja": "ブラック・レイン"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002851": {
+    "workId": "wk_000002851",
+    "title": "신의 손",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104856751"
+    },
+    "titles": {
+      "ko": "신의 손",
+      "en": "The Hand of God",
+      "ja": "Hand of God -神の手が触れた日-"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

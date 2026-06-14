@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002257": {
+    "workId": "wk_000002257",
+    "title": "작은 사랑의 기적",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041839"
+    },
+    "titles": {
+      "ko": "작은 사랑의 기적",
+      "en": "Better Off Dead",
+      "ja": "やぶれかぶれ　一発勝負！！"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

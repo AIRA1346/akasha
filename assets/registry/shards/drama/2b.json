@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002191": {
+    "workId": "wk_000002191",
+    "title": "런창샤",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10884765"
+    },
+    "titles": {
+      "ko": "런창샤",
+      "en": "Ren Changxia",
+      "ja": "任長霞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002507": {
+    "workId": "wk_000002507",
+    "title": "천명 (2013년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10939206"
+    },
+    "titles": {
+      "ko": "천명 (2013년 드라마)",
+      "en": "The Fugitive of Joseon",
+      "ja": "天命"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

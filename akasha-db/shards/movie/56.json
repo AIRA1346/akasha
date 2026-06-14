@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002421": {
+    "workId": "wk_000002421",
+    "title": "카르멘 존스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043659"
+    },
+    "titles": {
+      "ko": "카르멘 존스",
+      "en": "Carmen Jones",
+      "ja": "カルメン"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002852": {
+    "workId": "wk_000002852",
+    "title": "크랙의 시대 - 코카인에 물들다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104857399"
+    },
+    "titles": {
+      "ko": "크랙의 시대 - 코카인에 물들다",
+      "en": "Crack: Cocaine, Corruption & Conspiracy",
+      "ja": "クラック: コカインをめぐる腐敗と陰謀"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

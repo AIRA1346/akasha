@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002230": {
+    "workId": "wk_000002230",
+    "title": "너의 색",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115978240"
+    },
+    "titles": {
+      "ko": "너의 색",
+      "en": "The Colors Within",
+      "ja": "きみの色"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002901": {
+    "workId": "wk_000002901",
+    "title": "기동전사 건담 SEED FREEDOM",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120231658"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED FREEDOM",
+      "en": "Mobile Suit Gundam SEED Freedom",
+      "ja": "機動戦士ガンダムSEED FREEDOM"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

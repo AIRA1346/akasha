@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002879": {
+    "workId": "wk_000002879",
+    "title": "세스타스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11497871"
+    },
+    "titles": {
+      "ko": "세스타스",
+      "en": "Cestvs: The Roman Fighter",
+      "ja": "セスタスシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

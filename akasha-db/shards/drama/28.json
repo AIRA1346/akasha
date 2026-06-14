@@ -1,0 +1,19 @@
+{
+  "wk_000002859": {
+    "workId": "wk_000002859",
+    "title": "송민호의 파일럿",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456656"
+    },
+    "titles": {
+      "ko": "송민호의 파일럿",
+      "en": "Q109456656"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

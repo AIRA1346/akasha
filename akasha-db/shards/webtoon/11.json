@@ -1,0 +1,54 @@
+{
+  "wk_000002136": {
+    "workId": "wk_000002136",
+    "title": "비공식 로맨스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113209302"
+    },
+    "titles": {
+      "ko": "비공식 로맨스",
+      "en": "Bigongsik Romance"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002147": {
+    "workId": "wk_000002147",
+    "title": "재벌집 막내아들",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116205493"
+    },
+    "titles": {
+      "ko": "재벌집 막내아들",
+      "en": "Reborn Rich"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002520": {
+    "workId": "wk_000002520",
+    "title": "오늘 밤만 재워줘!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130643779"
+    },
+    "titles": {
+      "ko": "오늘 밤만 재워줘!",
+      "en": "Let Me Stay Over Tonight!"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

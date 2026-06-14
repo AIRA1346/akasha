@@ -1,0 +1,19 @@
+{
+  "wk_000002376": {
+    "workId": "wk_000002376",
+    "title": "달려라 하니",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12591010"
+    },
+    "titles": {
+      "ko": "달려라 하니",
+      "en": "Run Hani"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

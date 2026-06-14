@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002623": {
+    "workId": "wk_000002623",
+    "title": "유희왕 듀얼몬스터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186025"
+    },
+    "titles": {
+      "ko": "유희왕 듀얼몬스터즈",
+      "en": "Yu-Gi-Oh! Duel Monsters",
+      "ja": "遊☆戯☆王デュエルモンスターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

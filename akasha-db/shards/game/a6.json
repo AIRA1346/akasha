@@ -1,0 +1,21 @@
+{
+  "wk_000002170": {
+    "workId": "wk_000002170",
+    "title": "더 킹 오브 파이터즈 99",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071919"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 99",
+      "en": "The King of Fighters '99",
+      "ja": "ザ・キング・オブ・ファイターズ '99"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

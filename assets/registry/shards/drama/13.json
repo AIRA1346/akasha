@@ -1,0 +1,54 @@
+{
+  "wk_000002272": {
+    "workId": "wk_000002272",
+    "title": "얼음의 세계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10895482"
+    },
+    "titles": {
+      "ko": "얼음의 세계",
+      "en": "Koori no Sekai",
+      "ja": "氷の世界"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002499": {
+    "workId": "wk_000002499",
+    "title": "바닷길 선발대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109348351"
+    },
+    "titles": {
+      "ko": "바닷길 선발대",
+      "en": "K-Ocean Pathfinders"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002675": {
+    "workId": "wk_000002675",
+    "title": "100일의 도전 탑 디자이너 2014",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455530"
+    },
+    "titles": {
+      "ko": "100일의 도전 탑 디자이너 2014",
+      "en": "100 Day Challenge Top Designer 2014"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

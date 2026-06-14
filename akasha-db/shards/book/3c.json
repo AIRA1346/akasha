@@ -1,0 +1,20 @@
+{
+  "wk_000002094": {
+    "workId": "wk_000002094",
+    "title": "호랑이를 덫에 가두면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105409786"
+    },
+    "titles": {
+      "ko": "호랑이를 덫에 가두면",
+      "en": "When You Trap a Tiger"
+    },
+    "creator": "Tae Keller",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

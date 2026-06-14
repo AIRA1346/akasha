@@ -63,5 +63,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002158": {
+    "workId": "wk_000002158",
+    "title": "문명 IV: 콜로니제이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071001"
+    },
+    "titles": {
+      "ko": "문명 IV: 콜로니제이션",
+      "en": "Civilization IV: Colonization"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002831": {
+    "workId": "wk_000002831",
+    "title": "노부나가의 야망 창천록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856192"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 창천록",
+      "en": "Nobunaga's Ambition: Soutenroku",
+      "ja": "信長の野望・蒼天録"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002342": {
+    "workId": "wk_000002342",
+    "title": "호조 토키무네",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10903138"
+    },
+    "titles": {
+      "ko": "호조 토키무네",
+      "en": "Hōjō Tokimune",
+      "ja": "北条時宗"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

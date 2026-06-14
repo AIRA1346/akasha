@@ -15,5 +15,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002106": {
+    "workId": "wk_000002106",
+    "title": "10억",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041472"
+    },
+    "titles": {
+      "ko": "10억",
+      "en": "A Million",
+      "ja": "10億"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002755": {
+    "workId": "wk_000002755",
+    "title": "FBI 덴저러스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104834192"
+    },
+    "titles": {
+      "ko": "FBI 덴저러스",
+      "en": "Dangerous",
+      "ja": "デンジャラス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

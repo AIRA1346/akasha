@@ -1,0 +1,21 @@
+{
+  "wk_000002565": {
+    "workId": "wk_000002565",
+    "title": "신비기사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105965397"
+    },
+    "titles": {
+      "ko": "신비기사",
+      "en": "The Mystery Knight"
+    },
+    "releaseYear": 2010,
+    "creator": "ジョージ・R・R・マーティン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000002779": {
+    "workId": "wk_000002779",
+    "title": "명견 실버",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1148439"
+    },
+    "titles": {
+      "ko": "명견 실버",
+      "en": "Silver Fang",
+      "ja": "銀牙 -流れ星 銀-"
+    },
+    "creator": "Yoshihiro Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

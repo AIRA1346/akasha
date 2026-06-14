@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002638": {
+    "workId": "wk_000002638",
+    "title": "텐딩의 전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108387152"
+    },
+    "titles": {
+      "ko": "텐딩의 전설",
+      "en": "The Legend of Tianding",
+      "ja": "添丁の伝説"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

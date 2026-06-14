@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002075": {
+    "workId": "wk_000002075",
+    "title": "명탐정 번개",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150791"
+    },
+    "titles": {
+      "ko": "명탐정 번개",
+      "en": "Sherlock Hound",
+      "ja": "名探偵ホームズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

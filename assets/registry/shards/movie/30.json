@@ -1,0 +1,21 @@
+{
+  "wk_000002753": {
+    "workId": "wk_000002753",
+    "title": "비둘기, 가지에 앉아 존재를 성찰하다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10483256"
+    },
+    "titles": {
+      "ko": "비둘기, 가지에 앉아 존재를 성찰하다",
+      "en": "A Pigeon Sat on a Branch Reflecting on Existence",
+      "ja": "さよなら、人類"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

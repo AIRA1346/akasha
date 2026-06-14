@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002934": {
+    "workId": "wk_000002934",
+    "title": "숀 멘데즈 스토리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104864112"
+    },
+    "titles": {
+      "ko": "숀 멘데즈 스토리",
+      "en": "Shawn Mendes: In Wonder",
+      "ja": "ショーン・メンデス: ありのままの魅力"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002940": {
+    "workId": "wk_000002940",
+    "title": "암살자들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104870521"
+    },
+    "titles": {
+      "ko": "암살자들",
+      "en": "Assassins",
+      "ja": "わたしは金正男を殺してない"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

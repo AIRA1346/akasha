@@ -1,0 +1,21 @@
+{
+  "wk_000002258": {
+    "workId": "wk_000002258",
+    "title": "65",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104187039"
+    },
+    "titles": {
+      "ko": "65",
+      "en": "65",
+      "ja": "65/シックスティ・ファイブ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

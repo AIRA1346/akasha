@@ -105,5 +105,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002320": {
+    "workId": "wk_000002320",
+    "title": "미소녀 만화경 -죄와 벌의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107368516"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -죄와 벌의 소녀-",
+      "en": "Bishoujo Mangekyou -Tsumi to Batsu no Shoujo-",
+      "ja": "美少女万華鏡 -罪と罰の少女-"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

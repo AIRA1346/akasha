@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002286": {
+    "workId": "wk_000002286",
+    "title": "주로 울고 있습니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11368712"
+    },
+    "titles": {
+      "ko": "주로 울고 있습니다",
+      "en": "It is mainly crying",
+      "ja": "主に泣いてます"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002602": {
+    "workId": "wk_000002602",
+    "title": "회장님은 메이드 사마!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141838"
+    },
+    "titles": {
+      "ko": "회장님은 메이드 사마!",
+      "en": "Maid Sama!",
+      "ja": "会長はメイド様!"
+    },
+    "creator": "Hiro Fujiwara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

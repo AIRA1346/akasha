@@ -1,0 +1,22 @@
+{
+  "wk_000002687": {
+    "workId": "wk_000002687",
+    "title": "히카루가 죽은 여름",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114494831"
+    },
+    "titles": {
+      "ko": "히카루가 죽은 여름",
+      "en": "The Summer Hikaru Died",
+      "ja": "光が死んだ夏"
+    },
+    "releaseYear": 2021,
+    "creator": "Mokumokuren",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

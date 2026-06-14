@@ -53,5 +53,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002335": {
+    "workId": "wk_000002335",
+    "title": "퍼햅스 러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042145"
+    },
+    "titles": {
+      "ko": "퍼햅스 러브",
+      "en": "Perhaps Love",
+      "ja": "ウィンター・ソング"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002423": {
+    "workId": "wk_000002423",
+    "title": "실종: 사라진 사람들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104412858"
+    },
+    "titles": {
+      "ko": "실종: 사라진 사람들",
+      "en": "Let It Snow"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

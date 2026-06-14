@@ -1,0 +1,21 @@
+{
+  "wk_000002555": {
+    "workId": "wk_000002555",
+    "title": "파 어웨이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108178792"
+    },
+    "titles": {
+      "ko": "파 어웨이",
+      "en": "Far Away",
+      "ja": "彼方へ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

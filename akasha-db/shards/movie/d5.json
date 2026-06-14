@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002941": {
+    "workId": "wk_000002941",
+    "title": "미시즈 해리스 파리에 가다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104871482"
+    },
+    "titles": {
+      "ko": "미시즈 해리스 파리에 가다",
+      "en": "Mrs. Harris Goes to Paris",
+      "ja": "ミセス・ハリス、パリへ行く"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

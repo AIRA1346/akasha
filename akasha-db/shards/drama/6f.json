@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002193": {
+    "workId": "wk_000002193",
+    "title": "배드 앤 크레이지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108876770"
+    },
+    "titles": {
+      "ko": "배드 앤 크레이지",
+      "en": "Bad and Crazy",
+      "ja": "バッド・アンド・クレイジー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

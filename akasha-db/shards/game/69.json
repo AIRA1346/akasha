@@ -56,5 +56,22 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002723": {
+    "workId": "wk_000002723",
+    "title": "쌈박",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852674"
+    },
+    "titles": {
+      "ko": "쌈박",
+      "en": "Ssbak"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

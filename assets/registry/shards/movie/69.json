@@ -1,0 +1,21 @@
+{
+  "wk_000002102": {
+    "workId": "wk_000002102",
+    "title": "에이펙스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104127639"
+    },
+    "titles": {
+      "ko": "에이펙스",
+      "en": "Apex",
+      "ja": "Apex"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

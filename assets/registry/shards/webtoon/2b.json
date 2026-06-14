@@ -1,0 +1,20 @@
+{
+  "wk_000002295": {
+    "workId": "wk_000002295",
+    "title": "호텔 아프리카",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124586500"
+    },
+    "titles": {
+      "ko": "호텔 아프리카",
+      "en": "Hotel Africa"
+    },
+    "creator": "박희정",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

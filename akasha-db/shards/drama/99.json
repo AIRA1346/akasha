@@ -50,5 +50,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002768": {
+    "workId": "wk_000002768",
+    "title": "퀴즈쇼 인천상륙작전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456321"
+    },
+    "titles": {
+      "ko": "퀴즈쇼 인천상륙작전",
+      "en": "Q109456321"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002871": {
+    "workId": "wk_000002871",
+    "title": "Guys Make Wonder",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457672"
+    },
+    "titles": {
+      "ko": "Guys Make Wonder",
+      "en": "Q109457672"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

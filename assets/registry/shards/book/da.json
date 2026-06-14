@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002333": {
+    "workId": "wk_000002333",
+    "title": "헌신자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105670731"
+    },
+    "titles": {
+      "ko": "헌신자",
+      "en": "The Committed"
+    },
+    "releaseYear": 2021,
+    "creator": "Viet Thanh Nguyen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

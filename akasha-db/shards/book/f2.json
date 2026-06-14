@@ -1,0 +1,21 @@
+{
+  "wk_000002838": {
+    "workId": "wk_000002838",
+    "title": "추남, 미녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106292088"
+    },
+    "titles": {
+      "ko": "추남, 미녀",
+      "en": "Q106292088"
+    },
+    "releaseYear": 2016,
+    "creator": "Amélie Nothomb",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

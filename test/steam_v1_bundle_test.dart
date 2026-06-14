@@ -21,12 +21,21 @@ void main() {
   });
 
   group('Steam v1 bundle smoke (dogfood pre-check)', () {
-    test('bundled catalog matches manifest entryCount after prefetch', () {
+    test('bundled catalog prefetch respects browse window threshold', () {
       final manifestFile = File('akasha-db/manifest.json');
       expect(manifestFile.existsSync(), isTrue);
       final manifest = json.decode(manifestFile.readAsStringSync()) as Map;
       final entryCount = manifest['entryCount'] as int;
-      expect(WorksRegistry.allWorks.length, entryCount);
+      final loaded = WorksRegistry.allWorks.length;
+
+      expect(WorksRegistry.catalogIndexEntryCount(), entryCount);
+
+      if (entryCount <= WorksRegistry.browseFullCatalogThreshold) {
+        expect(loaded, entryCount);
+      } else {
+        expect(loaded, greaterThan(0));
+        expect(loaded, lessThan(entryCount));
+      }
     });
 
     test('legacy sub_* resolves to wk_ via legacy_aliases', () {

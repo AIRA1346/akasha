@@ -25,5 +25,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002103": {
+    "workId": "wk_000002103",
+    "title": "아메리칸 저스티스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104128132"
+    },
+    "titles": {
+      "ko": "아메리칸 저스티스",
+      "en": "American Siege"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002255": {
+    "workId": "wk_000002255",
+    "title": "인비저블 사인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041743"
+    },
+    "titles": {
+      "ko": "인비저블 사인",
+      "en": "An Invisible Sign",
+      "ja": "ジェシカ・アルバの“しあわせの方程式”"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

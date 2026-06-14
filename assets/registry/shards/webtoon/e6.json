@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002607": {
+    "workId": "wk_000002607",
+    "title": "도시정벌",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136700764"
+    },
+    "titles": {
+      "ko": "도시정벌",
+      "en": "Q136700764"
+    },
+    "creator": "Shin Hyung-bin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

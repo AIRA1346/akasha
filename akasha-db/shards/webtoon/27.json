@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002609": {
+    "workId": "wk_000002609",
+    "title": "달빛조각사",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136778500"
+    },
+    "titles": {
+      "ko": "달빛조각사",
+      "en": "Q136778500"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002308": {
+    "workId": "wk_000002308",
+    "title": "마하특급 델타트레인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11660261"
+    },
+    "titles": {
+      "ko": "마하특급 델타트레인",
+      "en": "Denkō Chō Tokkyū Hikarian",
+      "ja": "電光超特急ヒカリアン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002385": {
+    "workId": "wk_000002385",
+    "title": "흑집사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11678056"
+    },
+    "titles": {
+      "ko": "흑집사",
+      "en": "Black Butler",
+      "ja": "黒執事"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

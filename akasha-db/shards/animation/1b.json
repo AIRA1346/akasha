@@ -1,0 +1,20 @@
+{
+  "wk_000002396": {
+    "workId": "wk_000002396",
+    "title": "밤의 해파리는 헤엄칠 수 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117287200"
+    },
+    "titles": {
+      "ko": "밤의 해파리는 헤엄칠 수 없어",
+      "en": "Jellyfish Can't Swim in the Night",
+      "ja": "夜のクラゲは泳げない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000002091": {
+    "workId": "wk_000002091",
+    "title": "해방된 예루살렘",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053313"
+    },
+    "titles": {
+      "ko": "해방된 예루살렘",
+      "en": "Jerusalem Delivered",
+      "ja": "エルサレム解放"
+    },
+    "releaseYear": 1581,
+    "creator": "Torquato Tasso",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

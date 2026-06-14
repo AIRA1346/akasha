@@ -1,0 +1,37 @@
+{
+  "wk_000002195": {
+    "workId": "wk_000002195",
+    "title": "아이돌: 더 쿠데타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108887397"
+    },
+    "titles": {
+      "ko": "아이돌: 더 쿠데타",
+      "en": "Idol: The Coup",
+      "ja": "IDOL:THE COUP D'ETAT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002597": {
+    "workId": "wk_000002597",
+    "title": "해요와 해요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454299"
+    },
+    "titles": {
+      "ko": "해요와 해요",
+      "en": "Q109454299"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

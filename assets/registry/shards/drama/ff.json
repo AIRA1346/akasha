@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002683": {
+    "workId": "wk_000002683",
+    "title": "iTV 게임스페셜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456036"
+    },
+    "titles": {
+      "ko": "iTV 게임스페셜",
+      "en": "Q109456036"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

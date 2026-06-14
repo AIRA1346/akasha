@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002451": {
+    "workId": "wk_000002451",
+    "title": "똘똘이 탐험대",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11394970"
+    },
+    "titles": {
+      "ko": "똘똘이 탐험대",
+      "en": "Q11394970",
+      "ja": "冒険ガボテン島"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002688": {
+    "workId": "wk_000002688",
+    "title": "닌자와 암살자의 동거",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114592263"
+    },
+    "titles": {
+      "ko": "닌자와 암살자의 동거",
+      "en": "A Ninja and an Assassin Under One Roof",
+      "ja": "忍者と殺し屋のふたりぐらし"
+    },
+    "releaseYear": 2022,
+    "creator": "ハンバーガー",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

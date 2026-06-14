@@ -125,5 +125,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002392": {
+    "workId": "wk_000002392",
+    "title": "아야카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117167922"
+    },
+    "titles": {
+      "ko": "아야카",
+      "en": "Ayaka",
+      "ja": "AYAKA -あやか-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

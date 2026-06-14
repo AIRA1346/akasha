@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002802": {
+    "workId": "wk_000002802",
+    "title": "하트캐치 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194073"
+    },
+    "titles": {
+      "ko": "하트캐치 프리큐어!",
+      "en": "HeartCatch PreCure!",
+      "ja": "ハートキャッチプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

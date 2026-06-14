@@ -1,0 +1,21 @@
+{
+  "wk_000002488": {
+    "workId": "wk_000002488",
+    "title": "나이트 워치",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045388"
+    },
+    "titles": {
+      "ko": "나이트 워치",
+      "en": "Night Watch",
+      "ja": "ナイト・ウォッチ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

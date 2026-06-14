@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002647": {
+    "workId": "wk_000002647",
+    "title": "스텔라 블레이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108481438"
+    },
+    "titles": {
+      "ko": "스텔라 블레이드",
+      "en": "Q108481438"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

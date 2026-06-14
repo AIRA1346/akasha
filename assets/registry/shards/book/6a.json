@@ -1,0 +1,22 @@
+{
+  "wk_000002650": {
+    "workId": "wk_000002650",
+    "title": "여덟 번의 시계 종소리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060935"
+    },
+    "titles": {
+      "ko": "여덟 번의 시계 종소리",
+      "en": "The Eight Strokes of the Clock",
+      "ja": "八点鐘"
+    },
+    "releaseYear": 1923,
+    "creator": "モーリス・ルブラン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

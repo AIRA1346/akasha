@@ -34,5 +34,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002491": {
+    "workId": "wk_000002491",
+    "title": "대아환",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10933380"
+    },
+    "titles": {
+      "ko": "대아환",
+      "en": "Pretty Maid"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002874": {
+    "workId": "wk_000002874",
+    "title": "당천진우견애정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457840"
+    },
+    "titles": {
+      "ko": "당천진우견애정",
+      "en": "Q109457840"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

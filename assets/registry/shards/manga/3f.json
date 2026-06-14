@@ -49,5 +49,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002060": {
+    "workId": "wk_000002060",
+    "title": "우리들의 기적",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11338596"
+    },
+    "titles": {
+      "ko": "우리들의 기적",
+      "en": "Our Miracle",
+      "ja": "ボクラノキセキ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002787": {
+    "workId": "wk_000002787",
+    "title": "괴도 조커",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491698"
+    },
+    "titles": {
+      "ko": "괴도 조커",
+      "en": "Mysterious Joker",
+      "ja": "怪盗ジョーカー"
+    },
+    "creator": "Hideyasu Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

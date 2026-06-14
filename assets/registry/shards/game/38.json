@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002738": {
+    "workId": "wk_000002738",
+    "title": "그라디우스 네오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855648"
+    },
+    "titles": {
+      "ko": "그라디우스 네오",
+      "en": "Gradius NEO",
+      "ja": "グラディウスNEO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002919": {
+    "workId": "wk_000002919",
+    "title": "초코보 GP",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108749729"
+    },
+    "titles": {
+      "ko": "초코보 GP",
+      "en": "Chocobo GP",
+      "ja": "チョコボGP"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

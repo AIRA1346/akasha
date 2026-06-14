@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002801": {
+    "workId": "wk_000002801",
+    "title": "명탐정 코난: 14번째 표적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193711"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 14번째 표적",
+      "en": "Case Closed: The Fourteenth Target",
+      "ja": "名探偵コナン 14番目の標的"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

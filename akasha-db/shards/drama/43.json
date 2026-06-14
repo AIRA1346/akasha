@@ -1,0 +1,53 @@
+{
+  "wk_000002268": {
+    "workId": "wk_000002268",
+    "title": "더 리슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108919798"
+    },
+    "titles": {
+      "ko": "더 리슨",
+      "en": "The Listen: Wind Blows"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002358": {
+    "workId": "wk_000002358",
+    "title": "최미역행자: 가장 아름다운 역행자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109256671"
+    },
+    "titles": {
+      "ko": "최미역행자: 가장 아름다운 역행자",
+      "en": "Q109256671"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002669": {
+    "workId": "wk_000002669",
+    "title": "스타직찍",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455221"
+    },
+    "titles": {
+      "ko": "스타직찍",
+      "en": "Q109455221"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

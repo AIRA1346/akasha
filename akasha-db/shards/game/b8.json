@@ -1,0 +1,21 @@
+{
+  "wk_000002172": {
+    "workId": "wk_000002172",
+    "title": "동키콩 컨트리 2 딕시&디디",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072051"
+    },
+    "titles": {
+      "ko": "동키콩 컨트리 2 딕시&디디",
+      "en": "Donkey Kong Country 2: Diddy's Kong Quest",
+      "ja": "スーパードンキーコング2"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

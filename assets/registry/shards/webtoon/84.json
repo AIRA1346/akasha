@@ -18,5 +18,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002797": {
+    "workId": "wk_000002797",
+    "title": "소녀더와일즈",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16255700"
+    },
+    "titles": {
+      "ko": "소녀더와일즈",
+      "en": "Girls of the Wild's"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

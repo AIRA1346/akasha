@@ -1,0 +1,38 @@
+{
+  "wk_000002124": {
+    "workId": "wk_000002124",
+    "title": "러브 & 데스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108730457"
+    },
+    "titles": {
+      "ko": "러브 & 데스",
+      "en": "Love and Death",
+      "ja": "ラブ&デス (ミニシリーズ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002275": {
+    "workId": "wk_000002275",
+    "title": "총리라고 부르지마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10898259"
+    },
+    "titles": {
+      "ko": "총리라고 부르지마",
+      "en": "Sōri to Yobanai de",
+      "ja": "総理と呼ばないで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

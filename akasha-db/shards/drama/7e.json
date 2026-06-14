@@ -104,5 +104,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002266": {
+    "workId": "wk_000002266",
+    "title": "이 구역의 미친 X",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108916196"
+    },
+    "titles": {
+      "ko": "이 구역의 미친 X",
+      "en": "Mad For Each Other",
+      "ja": "このエリアのクレイジーX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

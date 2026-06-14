@@ -1,0 +1,21 @@
+{
+  "wk_000002236": {
+    "workId": "wk_000002236",
+    "title": "아이돌마스터 SideM 그로잉 스타즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107211042"
+    },
+    "titles": {
+      "ko": "아이돌마스터 SideM 그로잉 스타즈",
+      "en": "The Idolmaster SideM: Growing Stars",
+      "ja": "アイドルマスター SideM GROWING STARS"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

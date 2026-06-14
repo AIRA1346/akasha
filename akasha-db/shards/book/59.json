@@ -1,0 +1,60 @@
+{
+  "wk_000002093": {
+    "workId": "wk_000002093",
+    "title": "일본기략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053542"
+    },
+    "titles": {
+      "ko": "일본기략",
+      "en": "Nihon Kiryaku",
+      "ja": "日本紀略"
+    },
+    "releaseYear": 1100,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002417": {
+    "workId": "wk_000002417",
+    "title": "인명입정리론수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105764001"
+    },
+    "titles": {
+      "ko": "인명입정리론수",
+      "en": "Commentary on the Nyāyapraveśa",
+      "ja": "因明入正理論疏"
+    },
+    "creator": "基",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002483": {
+    "workId": "wk_000002483",
+    "title": "그리스인 조르바",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059553"
+    },
+    "titles": {
+      "ko": "그리스인 조르바",
+      "en": "Zorba the Greek",
+      "ja": "その男ゾルバ"
+    },
+    "releaseYear": 1946,
+    "creator": "Nikos Kazantzakis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002744": {
+    "workId": "wk_000002744",
+    "title": "유령의 쓴 책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062528"
+    },
+    "titles": {
+      "ko": "유령의 쓴 책",
+      "en": "Ghostwritten"
+    },
+    "releaseYear": 1999,
+    "creator": "데이비드 미첼",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

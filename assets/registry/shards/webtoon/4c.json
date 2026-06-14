@@ -1,0 +1,21 @@
+{
+  "wk_000002290": {
+    "workId": "wk_000002290",
+    "title": "역대급 영지 설계사",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122827852"
+    },
+    "titles": {
+      "ko": "역대급 영지 설계사",
+      "en": "The Greatest Estate Developer",
+      "ja": "史上最高の領地設計士"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

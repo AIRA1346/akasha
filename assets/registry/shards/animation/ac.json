@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002076": {
+    "workId": "wk_000002076",
+    "title": "버디 대디스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115087947"
+    },
+    "titles": {
+      "ko": "버디 대디스",
+      "en": "Buddy Daddies",
+      "ja": "Buddy Daddies"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002309": {
+    "workId": "wk_000002309",
+    "title": "청의 엑소시스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11661072"
+    },
+    "titles": {
+      "ko": "청의 엑소시스트",
+      "en": "Blue Exorcist",
+      "ja": "青の祓魔師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

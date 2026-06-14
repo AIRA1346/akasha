@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002278": {
+    "workId": "wk_000002278",
+    "title": "유류수사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10901927"
+    },
+    "titles": {
+      "ko": "유류수사",
+      "en": "CSI:Crime Scene Talks",
+      "ja": "遺留捜査"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002498": {
+    "workId": "wk_000002498",
+    "title": "큰입두두",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10934307"
+    },
+    "titles": {
+      "ko": "큰입두두",
+      "en": "Big Mouth Dudu",
+      "ja": "口の大きい嘟嘟"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002678": {
+    "workId": "wk_000002678",
+    "title": "모모랜드를 찾아서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455798"
+    },
+    "titles": {
+      "ko": "모모랜드를 찾아서",
+      "en": "Finding Momoland"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

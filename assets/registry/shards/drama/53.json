@@ -69,5 +69,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002873": {
+    "workId": "wk_000002873",
+    "title": "언제까지 어깨춤을 추게 할거야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457786"
+    },
+    "titles": {
+      "ko": "언제까지 어깨춤을 추게 할거야",
+      "en": "How long are you going to make me dance"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002487": {
+    "workId": "wk_000002487",
+    "title": "AK 대 AK",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104522006"
+    },
+    "titles": {
+      "ko": "AK 대 AK",
+      "en": "AK vs AK",
+      "ja": "AK vs AK"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

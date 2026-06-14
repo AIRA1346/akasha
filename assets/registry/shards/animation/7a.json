@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002384": {
+    "workId": "wk_000002384",
+    "title": "인콰이어리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1167685"
+    },
+    "titles": {
+      "ko": "인콰이어리",
+      "en": "The Inquiry"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002632": {
+    "workId": "wk_000002632",
+    "title": "7인의 나나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187440"
+    },
+    "titles": {
+      "ko": "7인의 나나",
+      "en": "Seven of Seven",
+      "ja": "七人のナナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002337": {
+    "workId": "wk_000002337",
+    "title": "어웨이크",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104231008"
+    },
+    "titles": {
+      "ko": "어웨이크",
+      "en": "Awake",
+      "ja": "AWAKE"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

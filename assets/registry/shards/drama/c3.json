@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002435": {
+    "workId": "wk_000002435",
+    "title": "사랑의 꽈배기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109286670"
+    },
+    "titles": {
+      "ko": "사랑의 꽈배기",
+      "en": "Love Twist",
+      "ja": "愛のプレッツェル"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "wk_000002455": {
+    "workId": "wk_000002455",
+    "title": "코믹 메이플스토리 오프라인 RPG",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12620580"
+    },
+    "titles": {
+      "ko": "코믹 메이플스토리 오프라인 RPG",
+      "en": "Comic Maple Story Off-line RPG"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002525": {
+    "workId": "wk_000002525",
+    "title": "입학용병",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134982735"
+    },
+    "titles": {
+      "ko": "입학용병",
+      "en": "Teenage Mercenary",
+      "ja": "入学傭兵"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

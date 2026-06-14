@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002617": {
+    "workId": "wk_000002617",
+    "title": "극장판 포켓몬스터 베스트위시: 큐레무 VS 성검사 케르디오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1184859"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 베스트위시: 큐레무 VS 성검사 케르디오",
+      "en": "Pokémon the Movie: Kyurem vs. the Sword of Justice",
+      "ja": "劇場版ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

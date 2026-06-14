@@ -1,0 +1,22 @@
+{
+  "wk_000002480": {
+    "workId": "wk_000002480",
+    "title": "블러드뮤직",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059371"
+    },
+    "titles": {
+      "ko": "블러드뮤직",
+      "en": "Blood Music",
+      "ja": "ブラッド・ミュージック"
+    },
+    "releaseYear": 1985,
+    "creator": "Greg Bear",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

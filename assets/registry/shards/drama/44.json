@@ -16,5 +16,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002428": {
+    "workId": "wk_000002428",
+    "title": "사등 (중국 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109260056"
+    },
+    "titles": {
+      "ko": "사등 (중국 드라마)",
+      "en": "Rattan (Chinese TV series)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002865": {
+    "workId": "wk_000002865",
+    "title": "MBC 바둑초대석",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457192"
+    },
+    "titles": {
+      "ko": "MBC 바둑초대석",
+      "en": "Q109457192"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

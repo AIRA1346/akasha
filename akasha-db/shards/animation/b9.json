@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002081": {
+    "workId": "wk_000002081",
+    "title": "해피니스!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151546"
+    },
+    "titles": {
+      "ko": "해피니스!",
+      "en": "Happiness!",
+      "ja": "はぴねす!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

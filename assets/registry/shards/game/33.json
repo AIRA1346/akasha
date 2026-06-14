@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002553": {
+    "workId": "wk_000002553",
+    "title": "콜 오브 듀티: 뱅가드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108054772"
+    },
+    "titles": {
+      "ko": "콜 오브 듀티: 뱅가드",
+      "en": "Q108054772",
+      "ja": "コール オブ デューティ ヴァンガード"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

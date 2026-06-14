@@ -1,0 +1,54 @@
+{
+  "wk_000002188": {
+    "workId": "wk_000002188",
+    "title": "키마이라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108811704"
+    },
+    "titles": {
+      "ko": "키마이라",
+      "en": "Chimera",
+      "ja": "キマイラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002676": {
+    "workId": "wk_000002676",
+    "title": "동요나라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455781"
+    },
+    "titles": {
+      "ko": "동요나라",
+      "en": "Q109455781"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002762": {
+    "workId": "wk_000002762",
+    "title": "2021 DIMF 뮤지컬 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456273"
+    },
+    "titles": {
+      "ko": "2021 DIMF 뮤지컬 스타",
+      "en": "Q109456273"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

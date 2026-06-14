@@ -33,5 +33,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002643": {
+    "workId": "wk_000002643",
+    "title": "픽셀 게임 메이커 MV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846413"
+    },
+    "titles": {
+      "ko": "픽셀 게임 메이커 MV",
+      "en": "Pixel Game Maker MV",
+      "ja": "アクションゲームツクール"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

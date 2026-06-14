@@ -17,5 +17,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002477": {
+    "workId": "wk_000002477",
+    "title": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105778319"
+    },
+    "titles": {
+      "ko": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
+      "en": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+      "ja": "史上最強の大魔王、村人Aに転生する"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002655": {
+    "workId": "wk_000002655",
+    "title": "즐거운 학문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061693"
+    },
+    "titles": {
+      "ko": "즐거운 학문",
+      "en": "Gay Science",
+      "ja": "悦ばしき知識"
+    },
+    "releaseYear": 1882,
+    "creator": "프리드리히 니체",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

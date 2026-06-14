@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002620": {
+    "workId": "wk_000002620",
+    "title": "마보로시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118552001"
+    },
+    "titles": {
+      "ko": "마보로시",
+      "en": "Maboroshi",
+      "ja": "アリスとテレスのまぼろし工場"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002716": {
+    "workId": "wk_000002716",
+    "title": "정의의 캐산",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192431"
+    },
+    "titles": {
+      "ko": "정의의 캐산",
+      "en": "Casshan",
+      "ja": "新造人間キャシャーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

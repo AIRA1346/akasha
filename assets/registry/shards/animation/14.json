@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002080": {
+    "workId": "wk_000002080",
+    "title": "종말 트레인은 어디로 향하나?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115152124"
+    },
+    "titles": {
+      "ko": "종말 트레인은 어디로 향하나?",
+      "en": "Train to the End of the World",
+      "ja": "終末トレインどこへいく？"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

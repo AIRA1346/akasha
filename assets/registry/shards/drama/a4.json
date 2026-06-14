@@ -1,0 +1,20 @@
+{
+  "wk_000002121": {
+    "workId": "wk_000002121",
+    "title": "소년심판",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108688881"
+    },
+    "titles": {
+      "ko": "소년심판",
+      "en": "Juvenile Justice",
+      "ja": "未成年裁判"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

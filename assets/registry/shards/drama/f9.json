@@ -88,5 +88,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002180": {
+    "workId": "wk_000002180",
+    "title": "어사와 조이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108764822"
+    },
+    "titles": {
+      "ko": "어사와 조이",
+      "en": "Secret Royal Inspector & Joy",
+      "ja": "御史とジョイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

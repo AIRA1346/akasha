@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002849": {
+    "workId": "wk_000002849",
+    "title": "아미 오브 더 데드: 도둑들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104854877"
+    },
+    "titles": {
+      "ko": "아미 오브 더 데드: 도둑들",
+      "en": "Army of Thieves",
+      "ja": "アーミー・オブ・シーヴス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

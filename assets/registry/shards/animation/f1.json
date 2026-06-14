@@ -44,5 +44,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002808": {
+    "workId": "wk_000002808",
+    "title": "명탐정 코난: 시한장치의 마천루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195711"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 시한장치의 마천루",
+      "en": "Case Closed: The Time Bombed Skyscraper",
+      "ja": "名探偵コナン 時計じかけの摩天楼"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

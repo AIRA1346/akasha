@@ -1,0 +1,39 @@
+{
+  "wk_000002736": {
+    "workId": "wk_000002736",
+    "title": "가녀린 그녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854968"
+    },
+    "titles": {
+      "ko": "가녀린 그녀",
+      "en": "Itaike na Kanojo",
+      "ja": "いたいけな彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002825": {
+    "workId": "wk_000002825",
+    "title": "노부나가의 야망 장성록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856188"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 장성록",
+      "en": "Nobunaga's Ambition: Shouseiroku",
+      "ja": "信長の野望・将星録"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

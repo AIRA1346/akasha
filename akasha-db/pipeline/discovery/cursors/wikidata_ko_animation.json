@@ -1,9 +1,10 @@
 {
   "lastPage": 0,
   "lastId": null,
-  "updatedAt": "2026-06-14T21:30:00.000Z",
+  "updatedAt": "2026-06-14T21:55:14.536820Z",
   "channelId": "wikidata_ko_animation",
   "source": "wikidata_ko",
-  "offset": 505,
-  "note": "synced from catalog-scale-baseline @2008"
+  "offset": 725,
+  "note": "synced from catalog-scale-baseline @2008",
+  "lastQid": "Q120379797"
 }

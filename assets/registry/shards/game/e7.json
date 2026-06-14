@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002470": {
+    "workId": "wk_000002470",
+    "title": "NBA 2K22",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107602058"
+    },
+    "titles": {
+      "ko": "NBA 2K22",
+      "en": "NBA 2K22",
+      "ja": "NBA 2K22"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

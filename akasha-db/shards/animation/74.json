@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002221": {
+    "workId": "wk_000002221",
+    "title": "월드 다이 스타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115623684"
+    },
+    "titles": {
+      "ko": "월드 다이 스타",
+      "en": "World Dai Star",
+      "ja": "ワールドダイスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002306": {
+    "workId": "wk_000002306",
+    "title": "디지몬 어드벤처 02 THE BEGINNING",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116486283"
+    },
+    "titles": {
+      "ko": "디지몬 어드벤처 02 THE BEGINNING",
+      "en": "Digimon Adventure 02: The Beginning",
+      "ja": "デジモンアドベンチャー02 THE BEGINNING"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

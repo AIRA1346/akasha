@@ -1,9 +1,10 @@
 {
   "lastPage": 0,
   "lastId": null,
-  "updatedAt": "2026-06-14T21:30:00.000Z",
+  "updatedAt": "2026-06-14T21:55:06.275955Z",
   "channelId": "wikidata_ko_manga",
   "source": "wikidata_ko",
-  "offset": 1050,
-  "note": "synced from catalog-scale-baseline @2008"
+  "offset": 1270,
+  "note": "synced from catalog-scale-baseline @2008",
+  "lastQid": "Q11515981"
 }

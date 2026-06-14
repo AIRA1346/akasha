@@ -1,0 +1,21 @@
+{
+  "wk_000002162": {
+    "workId": "wk_000002162",
+    "title": "노 모어 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071092"
+    },
+    "titles": {
+      "ko": "노 모어 히어로즈",
+      "en": "No More Heroes",
+      "ja": "ノーモア★ヒーローズ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

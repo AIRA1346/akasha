@@ -1,0 +1,20 @@
+{
+  "wk_000002906": {
+    "workId": "wk_000002906",
+    "title": "귀환자의 마법은 특별해야 합니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120282932"
+    },
+    "titles": {
+      "ko": "귀환자의 마법은 특별해야 합니다",
+      "en": "A Returner's Magic Should Be Special",
+      "ja": "帰還者の魔法は特別です"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

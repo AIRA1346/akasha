@@ -18,5 +18,22 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002569": {
+    "workId": "wk_000002569",
+    "title": "이집트 복음서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059964"
+    },
+    "titles": {
+      "ko": "이집트 복음서",
+      "en": "Holy Book of the Great Invisible Spirit"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

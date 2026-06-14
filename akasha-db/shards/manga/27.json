@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002371": {
+    "workId": "wk_000002371",
+    "title": "나에게는 아직 친구가없는",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387493"
+    },
+    "titles": {
+      "ko": "나에게는 아직 친구가없는",
+      "en": "I Don't Still Have Any Friends",
+      "ja": "僕にはまだ友だちがいない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

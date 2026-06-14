@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002583": {
+    "workId": "wk_000002583",
+    "title": "하늘과 땅과",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10940655"
+    },
+    "titles": {
+      "ko": "하늘과 땅과",
+      "en": "Ten to Chi to",
+      "ja": "天と地と"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

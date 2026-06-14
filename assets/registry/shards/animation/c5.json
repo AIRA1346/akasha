@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002394": {
+    "workId": "wk_000002394",
+    "title": "메탈릭 루쥬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117265081"
+    },
+    "titles": {
+      "ko": "메탈릭 루쥬",
+      "en": "Metallic Rouge",
+      "ja": "メタリックルージュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002395": {
+    "workId": "wk_000002395",
+    "title": "카미에라비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117271890"
+    },
+    "titles": {
+      "ko": "카미에라비",
+      "en": "KamiErabi GOD.app",
+      "ja": "カミエラビ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

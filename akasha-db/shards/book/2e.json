@@ -1,0 +1,22 @@
+{
+  "wk_000002652": {
+    "workId": "wk_000002652",
+    "title": "거울 속 외딴 성",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106103769"
+    },
+    "titles": {
+      "ko": "거울 속 외딴 성",
+      "en": "Lonely Castle in the Mirror",
+      "ja": "かがみの孤城"
+    },
+    "releaseYear": 2017,
+    "creator": "Mizuki Tsujimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000002845": {
+    "workId": "wk_000002845",
+    "title": "알로하! 오하나를 찾아서",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104844235"
+    },
+    "titles": {
+      "ko": "알로하! 오하나를 찾아서",
+      "en": "Finding 'Ohana",
+      "ja": "オハナ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

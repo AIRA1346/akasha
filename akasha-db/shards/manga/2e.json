@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002287": {
+    "workId": "wk_000002287",
+    "title": "아이돌마스터 신데렐라 걸즈 U149",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113706559"
+    },
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈 U149",
+      "en": "The Idolmaster Cinderella Girls U149",
+      "ja": "アイドルマスター シンデレラガールズ U149"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

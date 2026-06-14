@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002618": {
+    "workId": "wk_000002618",
+    "title": "스타 드라이버 빛의 타쿠토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185099"
+    },
+    "titles": {
+      "ko": "스타 드라이버 빛의 타쿠토",
+      "en": "Star Driver",
+      "ja": "STAR DRIVER 輝きのタクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

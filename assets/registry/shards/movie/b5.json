@@ -1,0 +1,21 @@
+{
+  "wk_000002756": {
+    "workId": "wk_000002756",
+    "title": "비지터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048360"
+    },
+    "titles": {
+      "ko": "비지터",
+      "en": "The Visitor",
+      "ja": "扉をたたく人"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

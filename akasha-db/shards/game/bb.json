@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002721": {
+    "workId": "wk_000002721",
+    "title": "마이크로소프트 솔리테어 컬렉션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851671"
+    },
+    "titles": {
+      "ko": "마이크로소프트 솔리테어 컬렉션",
+      "en": "Microsoft Solitaire Collection",
+      "ja": "Microsoft Solitaire Collection"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

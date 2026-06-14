@@ -1,0 +1,36 @@
+{
+  "wk_000002071": {
+    "workId": "wk_000002071",
+    "title": "1 더하기 1은",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187736"
+    },
+    "titles": {
+      "ko": "1 더하기 1은",
+      "en": "1 Plus 1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002707": {
+    "workId": "wk_000002707",
+    "title": "목욕의 신",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16166985"
+    },
+    "titles": {
+      "ko": "목욕의 신",
+      "en": "God of Bath"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

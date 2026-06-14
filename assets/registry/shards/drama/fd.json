@@ -35,5 +35,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002585": {
+    "workId": "wk_000002585",
+    "title": "행복도만가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109414956"
+    },
+    "titles": {
+      "ko": "행복도만가",
+      "en": "The Story of Xing Fu"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

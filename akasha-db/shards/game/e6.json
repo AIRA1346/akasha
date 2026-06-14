@@ -1,0 +1,21 @@
+{
+  "wk_000002921": {
+    "workId": "wk_000002921",
+    "title": "무쌍 오로치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087832"
+    },
+    "titles": {
+      "ko": "무쌍 오로치",
+      "en": "Warriors Orochi",
+      "ja": "無双OROCHI"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

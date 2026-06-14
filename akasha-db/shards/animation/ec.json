@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002150": {
+    "workId": "wk_000002150",
+    "title": "꿈꾸는 남자는 현실주의자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115269432"
+    },
+    "titles": {
+      "ko": "꿈꾸는 남자는 현실주의자",
+      "en": "The Dreaming Boy Is a Realist",
+      "ja": "夢見る男子は現実主義者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

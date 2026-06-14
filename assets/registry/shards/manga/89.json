@@ -43,5 +43,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002511": {
+    "workId": "wk_000002511",
+    "title": "고스트캣 앙주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11400680"
+    },
+    "titles": {
+      "ko": "고스트캣 앙주",
+      "en": "Ghost Cat Anzu",
+      "ja": "化け猫あんずちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

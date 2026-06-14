@@ -1,0 +1,21 @@
+{
+  "wk_000002097": {
+    "workId": "wk_000002097",
+    "title": "애덤 프로젝트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104033835"
+    },
+    "titles": {
+      "ko": "애덤 프로젝트",
+      "en": "The Adam Project",
+      "ja": "アダム・プロジェクト"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

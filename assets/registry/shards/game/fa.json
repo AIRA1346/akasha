@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002086": {
+    "workId": "wk_000002086",
+    "title": "보더 브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070977"
+    },
+    "titles": {
+      "ko": "보더 브레이크",
+      "en": "Border Break",
+      "ja": "ボーダーブレイク"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

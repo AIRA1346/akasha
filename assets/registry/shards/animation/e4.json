@@ -77,5 +77,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002229": {
+    "workId": "wk_000002229",
+    "title": "THE MARGINAL SERVICE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115802088"
+    },
+    "titles": {
+      "ko": "THE MARGINAL SERVICE",
+      "en": "The Marginal Service",
+      "ja": "THE MARGINAL SERVICE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002540": {
+    "workId": "wk_000002540",
+    "title": "코마다 위스키 패밀리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117997583"
+    },
+    "titles": {
+      "ko": "코마다 위스키 패밀리",
+      "en": "Komada: A Whisky Family",
+      "ja": "駒田蒸留所へようこそ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002897": {
+    "workId": "wk_000002897",
+    "title": "야마다와 7인의 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120104025"
+    },
+    "titles": {
+      "ko": "야마다와 7인의 마녀",
+      "en": "Yamada-kun and the Seven Witches",
+      "ja": "山田くんと7人の魔女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

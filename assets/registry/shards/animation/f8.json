@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002626": {
+    "workId": "wk_000002626",
+    "title": "원피스 - 네지마키 섬의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186160"
+    },
+    "titles": {
+      "ko": "원피스 - 네지마키 섬의 모험",
+      "en": "One Piece: Clockwork Island Adventure",
+      "ja": "ONE PIECE ねじまき島の冒険"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

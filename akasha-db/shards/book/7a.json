@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002651": {
+    "workId": "wk_000002651",
+    "title": "리빌드 월드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106103753"
+    },
+    "titles": {
+      "ko": "리빌드 월드",
+      "en": "Rebuild World",
+      "ja": "リビルドワールド"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002554": {
+    "workId": "wk_000002554",
+    "title": "스토리텔러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108140592"
+    },
+    "titles": {
+      "ko": "스토리텔러",
+      "en": "Storyteller",
+      "ja": "Storyteller (ゲーム)"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

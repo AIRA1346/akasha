@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002552": {
+    "workId": "wk_000002552",
+    "title": "도나도나 같이 나쁜 짓을 하자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108044051"
+    },
+    "titles": {
+      "ko": "도나도나 같이 나쁜 짓을 하자",
+      "en": "Dohna Dohna",
+      "ja": "ドーナドーナ いっしょにわるいことをしよう"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

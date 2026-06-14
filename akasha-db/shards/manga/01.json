@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002450": {
+    "workId": "wk_000002450",
+    "title": "슈퍼 뒤에서 담배 피우는 두 사람",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113945900"
+    },
+    "titles": {
+      "ko": "슈퍼 뒤에서 담배 피우는 두 사람",
+      "en": "Smoking Behind the Supermarket with You",
+      "ja": "スーパーの裏でヤニ吸うふたり"
+    },
+    "releaseYear": 2022,
+    "creator": "地主",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

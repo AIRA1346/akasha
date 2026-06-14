@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002411": {
+    "workId": "wk_000002411",
+    "title": "프눌과의 전쟁",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056887"
+    },
+    "titles": {
+      "ko": "프눌과의 전쟁",
+      "en": "The War with the Fnools"
+    },
+    "releaseYear": 1964,
+    "creator": "フィリップ・K・ディック",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

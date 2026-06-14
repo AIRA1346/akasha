@@ -1,0 +1,39 @@
+{
+  "wk_000002141": {
+    "workId": "wk_000002141",
+    "title": "비밀수업",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113900931"
+    },
+    "titles": {
+      "ko": "비밀수업",
+      "en": "Secret Class",
+      "ja": "秘密の授業"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002203": {
+    "workId": "wk_000002203",
+    "title": "외과의사 엘리제",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117100896"
+    },
+    "titles": {
+      "ko": "외과의사 엘리제",
+      "en": "Doctor Elise",
+      "ja": "外科医エリーゼ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

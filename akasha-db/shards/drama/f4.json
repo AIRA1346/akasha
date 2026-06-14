@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002439": {
+    "workId": "wk_000002439",
+    "title": "도시 사냥꾼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10929906"
+    },
+    "titles": {
+      "ko": "도시 사냥꾼",
+      "en": "The Dangerous City",
+      "ja": "都市·狩人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

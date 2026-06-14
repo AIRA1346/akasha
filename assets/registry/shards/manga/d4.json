@@ -17,5 +17,63 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002283": {
+    "workId": "wk_000002283",
+    "title": "센서티브 포르노그래프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135974"
+    },
+    "titles": {
+      "ko": "센서티브 포르노그래프",
+      "en": "Sensitive Pornograph",
+      "ja": "センシティブ・ポルノグラフ"
+    },
+    "creator": "Ashika Sakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002452": {
+    "workId": "wk_000002452",
+    "title": "동패",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11395415"
+    },
+    "titles": {
+      "ko": "동패",
+      "en": "Tōhai",
+      "ja": "凍牌"
+    },
+    "releaseYear": 2006,
+    "creator": "Kōji Shinasaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002782": {
+    "workId": "wk_000002782",
+    "title": "아마츠키",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1148856"
+    },
+    "titles": {
+      "ko": "아마츠키",
+      "en": "Amatsuki",
+      "ja": "あまつき"
+    },
+    "creator": "Shinobu Takayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

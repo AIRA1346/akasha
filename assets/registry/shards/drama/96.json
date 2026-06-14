@@ -1,0 +1,37 @@
+{
+  "wk_000002347": {
+    "workId": "wk_000002347",
+    "title": "말괄량이 마법학교: 캠퍼스 대소동",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091065"
+    },
+    "titles": {
+      "ko": "말괄량이 마법학교: 캠퍼스 대소동",
+      "en": "Weirdsister College",
+      "ja": "ウィアードシスターズ・カレッジ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002869": {
+    "workId": "wk_000002869",
+    "title": "MBC 일요큰잔치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457461"
+    },
+    "titles": {
+      "ko": "MBC 일요큰잔치",
+      "en": "Q109457461"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

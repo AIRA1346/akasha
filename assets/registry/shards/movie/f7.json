@@ -1,0 +1,40 @@
+{
+  "wk_000002425": {
+    "workId": "wk_000002425",
+    "title": "굿바이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044598"
+    },
+    "titles": {
+      "ko": "굿바이",
+      "en": "Departures",
+      "ja": "おくりびと"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002579": {
+    "workId": "wk_000002579",
+    "title": "아이스 로드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104681809"
+    },
+    "titles": {
+      "ko": "아이스 로드",
+      "en": "The Ice Road",
+      "ja": "アイス・ロード"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

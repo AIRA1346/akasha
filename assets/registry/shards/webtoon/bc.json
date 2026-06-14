@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002143": {
+    "workId": "wk_000002143",
+    "title": "루커피쳐",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114966643"
+    },
+    "titles": {
+      "ko": "루커피쳐",
+      "en": "Look a Picture"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

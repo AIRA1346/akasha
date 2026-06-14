@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002314": {
+    "workId": "wk_000002314",
+    "title": "미소녀 만화경 -이치와 미궁의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107343024"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -이치와 미궁의 소녀-",
+      "en": "Bishoujo Mangekyou -Kotowari to Meikyuu no Shoujo-",
+      "ja": "美少女万華鏡 -理と迷宮の少女-"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

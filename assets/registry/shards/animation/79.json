@@ -75,5 +75,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002152": {
+    "workId": "wk_000002152",
+    "title": "도라에몽 신 노비타의 우주개척사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153218"
+    },
+    "titles": {
+      "ko": "도라에몽 신 노비타의 우주개척사",
+      "en": "Doraemon: The Record of Nobita's Spaceblazer",
+      "ja": "ドラえもん 新・のび太の宇宙開拓史"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

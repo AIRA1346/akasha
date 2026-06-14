@@ -84,5 +84,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002244": {
+    "workId": "wk_000002244",
+    "title": "마리오 파티 슈퍼스타즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107250201"
+    },
+    "titles": {
+      "ko": "마리오 파티 슈퍼스타즈",
+      "en": "Mario Party Superstars",
+      "ja": "マリオパーティ スーパースターズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002823": {
+    "workId": "wk_000002823",
+    "title": "노부나가의 야망 람세기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856186"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 람세기",
+      "en": "Nobunaga's Ambition: Ranseiki",
+      "ja": "信長の野望・嵐世記"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

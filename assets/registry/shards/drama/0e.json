@@ -15,5 +15,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002263": {
+    "workId": "wk_000002263",
+    "title": "어른연습생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108899670"
+    },
+    "titles": {
+      "ko": "어른연습생",
+      "en": "Adult Trainee"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002343": {
+    "workId": "wk_000002343",
+    "title": "여의명비전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10904297"
+    },
+    "titles": {
+      "ko": "여의명비전",
+      "en": "The Imperial Doctress",
+      "ja": "女医明妃伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

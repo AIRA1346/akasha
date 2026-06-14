@@ -51,5 +51,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002506": {
+    "workId": "wk_000002506",
+    "title": "천사적행복",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10939104"
+    },
+    "titles": {
+      "ko": "천사적행복",
+      "en": "Angelo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002681": {
+    "workId": "wk_000002681",
+    "title": "댄스 배틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455910"
+    },
+    "titles": {
+      "ko": "댄스 배틀",
+      "en": "Q109455910"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -63,5 +63,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002729": {
+    "workId": "wk_000002729",
+    "title": "Bleach: 해방된 야망",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854458"
+    },
+    "titles": {
+      "ko": "Bleach: 해방된 야망",
+      "en": "Bleach: Hanatareshi Yabou",
+      "ja": "BLEACH 〜放たれし野望〜"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

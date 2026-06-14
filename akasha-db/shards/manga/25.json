@@ -49,5 +49,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002130": {
+    "workId": "wk_000002130",
+    "title": "엑소시스트를 타락시킬 수 없어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113493155"
+    },
+    "titles": {
+      "ko": "엑소시스트를 타락시킬 수 없어",
+      "en": "Make the Exorcist Fall in Love",
+      "ja": "エクソシストを堕とせない"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002784": {
+    "workId": "wk_000002784",
+    "title": "닌자 핫토리군+파만 닌자 괴수 짓포우 VS 미라클 타마고",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11490775"
+    },
+    "titles": {
+      "ko": "닌자 핫토리군+파만 닌자 괴수 짓포우 VS 미라클 타마고",
+      "en": "Q11490775",
+      "ja": "忍者ハットリくん+パーマン 忍者怪獣ジッポウVSミラクル卵"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

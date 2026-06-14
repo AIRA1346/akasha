@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002584": {
+    "workId": "wk_000002584",
+    "title": "태평기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10941476"
+    },
+    "titles": {
+      "ko": "태평기",
+      "en": "Taiheiki",
+      "ja": "太平記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

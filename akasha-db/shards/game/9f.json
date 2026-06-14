@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002548": {
+    "workId": "wk_000002548",
+    "title": "트래픽 자이언트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079127"
+    },
+    "titles": {
+      "ko": "트래픽 자이언트",
+      "en": "Traffic Giant",
+      "ja": "トラフィックジャイアント"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

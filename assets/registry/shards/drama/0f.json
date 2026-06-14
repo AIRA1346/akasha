@@ -33,5 +33,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002265": {
+    "workId": "wk_000002265",
+    "title": "킹 오브 체어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10891430"
+    },
+    "titles": {
+      "ko": "킹 오브 체어",
+      "en": "King of Chair",
+      "ja": "キングオブチェアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002269": {
+    "workId": "wk_000002269",
+    "title": "너와 나의 경찰수업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108933112"
+    },
+    "titles": {
+      "ko": "너와 나의 경찰수업",
+      "en": "Rookie Cops",
+      "ja": "キミと僕の警察学校"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002760": {
+    "workId": "wk_000002760",
+    "title": "사랑, 그리고 이별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456149"
+    },
+    "titles": {
+      "ko": "사랑, 그리고 이별",
+      "en": "Q109456149"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002763": {
+    "workId": "wk_000002763",
+    "title": "수퍼맘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456276"
+    },
+    "titles": {
+      "ko": "수퍼맘",
+      "en": "Q109456276"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

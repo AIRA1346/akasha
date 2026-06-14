@@ -87,5 +87,43 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002589": {
+    "workId": "wk_000002589",
+    "title": "여자 태합기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942730"
+    },
+    "titles": {
+      "ko": "여자 태합기",
+      "en": "Onna Taikōki",
+      "ja": "おんな太閤記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002591": {
+    "workId": "wk_000002591",
+    "title": "녀계가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942804"
+    },
+    "titles": {
+      "ko": "녀계가족",
+      "en": "Nyokeikazoku",
+      "ja": "女系家族"
+    },
+    "releaseYear": 1963,
+    "creator": "Toyoko Yamasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,19 @@
+{
+  "wk_000002256": {
+    "workId": "wk_000002256",
+    "title": "데드워터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104174957"
+    },
+    "titles": {
+      "ko": "데드워터",
+      "en": "Dead Water"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

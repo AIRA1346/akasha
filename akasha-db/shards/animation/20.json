@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002633": {
+    "workId": "wk_000002633",
+    "title": "용기폭발 뱅브레이번",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118868959"
+    },
+    "titles": {
+      "ko": "용기폭발 뱅브레이번",
+      "en": "Brave Bang Bravern!",
+      "ja": "勇気爆発バーンブレイバーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

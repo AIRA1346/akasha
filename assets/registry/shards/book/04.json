@@ -1,0 +1,59 @@
+{
+  "wk_000002414": {
+    "workId": "wk_000002414",
+    "title": "테익스칼란 제국",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105722626"
+    },
+    "titles": {
+      "ko": "테익스칼란 제국",
+      "en": "Teixcalaan"
+    },
+    "creator": "Arkady Martine",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002837": {
+    "workId": "wk_000002837",
+    "title": "리스본의 밤",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062814"
+    },
+    "titles": {
+      "ko": "리스본의 밤",
+      "en": "The Night in Lisbon"
+    },
+    "releaseYear": 1962,
+    "creator": "Erich Maria Remarque",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002841": {
+    "workId": "wk_000002841",
+    "title": "타이거! 타이거!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063587"
+    },
+    "titles": {
+      "ko": "타이거! 타이거!",
+      "en": "The Stars My Destination",
+      "ja": "虎よ、虎よ!"
+    },
+    "releaseYear": 1956,
+    "creator": "Alfred Bester",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

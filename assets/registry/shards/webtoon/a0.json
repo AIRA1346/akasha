@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002699": {
+    "workId": "wk_000002699",
+    "title": "붉은 여우",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139943575"
+    },
+    "titles": {
+      "ko": "붉은 여우",
+      "en": "Red Fox"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

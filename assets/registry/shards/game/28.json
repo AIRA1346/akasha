@@ -50,5 +50,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002243": {
+    "workId": "wk_000002243",
+    "title": "아카네 매니악스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072198"
+    },
+    "titles": {
+      "ko": "아카네 매니악스",
+      "en": "Akane Maniax",
+      "ja": "アカネマニアックス〜流れ星伝説剛田〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002731": {
+    "workId": "wk_000002731",
+    "title": "Filsnown",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854537"
+    },
+    "titles": {
+      "ko": "Filsnown",
+      "en": "Filsnown"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

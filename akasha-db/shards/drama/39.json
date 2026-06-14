@@ -15,5 +15,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002116": {
+    "workId": "wk_000002116",
+    "title": "일곱 친구",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10864483"
+    },
+    "titles": {
+      "ko": "일곱 친구",
+      "en": "Seven Friends",
+      "ja": "七つの友達"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002186": {
+    "workId": "wk_000002186",
+    "title": "스물다섯 스물하나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108809568"
+    },
+    "titles": {
+      "ko": "스물다섯 스물하나",
+      "en": "Twenty-Five Twenty-One",
+      "ja": "二十五、二十一"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002769": {
+    "workId": "wk_000002769",
+    "title": "이번 생은 선인장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456378"
+    },
+    "titles": {
+      "ko": "이번 생은 선인장",
+      "en": "Q109456378"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

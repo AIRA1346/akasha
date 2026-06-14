@@ -1,0 +1,40 @@
+{
+  "wk_000002254": {
+    "workId": "wk_000002254",
+    "title": "그 언덕에는 얼마나 많은 황금이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105561783"
+    },
+    "titles": {
+      "ko": "그 언덕에는 얼마나 많은 황금이",
+      "en": "How Much of These Hills Is Gold"
+    },
+    "releaseYear": 2020,
+    "creator": "C Pam Zhang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002929": {
+    "workId": "wk_000002929",
+    "title": "육질은 부드러워",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106610620"
+    },
+    "titles": {
+      "ko": "육질은 부드러워",
+      "en": "Tender Is the Flesh"
+    },
+    "releaseYear": 2012,
+    "creator": "Agustina Bazterrica",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

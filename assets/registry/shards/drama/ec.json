@@ -16,5 +16,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002113": {
+    "workId": "wk_000002113",
+    "title": "둘째 악장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10863570"
+    },
+    "titles": {
+      "ko": "둘째 악장",
+      "en": "Dainigakushō",
+      "ja": "第二楽章"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002350": {
+    "workId": "wk_000002350",
+    "title": "등려군 이야기 ~ 우리집은 산 너머",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10915552"
+    },
+    "titles": {
+      "ko": "등려군 이야기 ~ 우리집은 산 너머",
+      "en": "Teresa Teng Monogatari",
+      "ja": "テレサ・テン物語〜私の家は山の向こう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002664": {
+    "workId": "wk_000002664",
+    "title": "디자인 서바이벌 K-Design",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454804"
+    },
+    "titles": {
+      "ko": "디자인 서바이벌 K-Design",
+      "en": "Q109454804"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002775": {
+    "workId": "wk_000002775",
+    "title": "영재 육성 프로젝트 99%의 도전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456508"
+    },
+    "titles": {
+      "ko": "영재 육성 프로젝트 99%의 도전",
+      "en": "The 99% Challenge of the Gifted Development Project"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

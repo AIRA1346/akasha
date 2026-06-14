@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002279": {
+    "workId": "wk_000002279",
+    "title": "경시청 수사 일과 9 계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10902062"
+    },
+    "titles": {
+      "ko": "경시청 수사 일과 9 계",
+      "en": "Keishichō Sōsaikka 9 Kakari",
+      "ja": "警視庁捜査一課9係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002668": {
+    "workId": "wk_000002668",
+    "title": "친애적니재나리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455077"
+    },
+    "titles": {
+      "ko": "친애적니재나리",
+      "en": "Q109455077"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

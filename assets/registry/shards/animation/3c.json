@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002904": {
+    "workId": "wk_000002904",
+    "title": "스위트 프리큐어♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202553"
+    },
+    "titles": {
+      "ko": "스위트 프리큐어♪",
+      "en": "Suite PreCure",
+      "ja": "スイートプリキュア♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002177": {
+    "workId": "wk_000002177",
+    "title": "카틸리나 탄핵",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055008"
+    },
+    "titles": {
+      "ko": "카틸리나 탄핵",
+      "en": "Catiline Orations",
+      "ja": "カティリナ弾劾演説"
+    },
+    "creator": "Cicero",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002261": {
+    "workId": "wk_000002261",
+    "title": "프레이 포 더 데블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104214267"
+    },
+    "titles": {
+      "ko": "프레이 포 더 데블",
+      "en": "Prey for the Devil",
+      "ja": "プレイ･フォー･ザ･デビル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

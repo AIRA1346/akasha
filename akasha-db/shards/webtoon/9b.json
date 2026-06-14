@@ -18,5 +18,41 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002208": {
+    "workId": "wk_000002208",
+    "title": "열한번째 고양이",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1210711"
+    },
+    "titles": {
+      "ko": "열한번째 고양이",
+      "en": "11th Cat",
+      "ja": "11番目の猫"
+    },
+    "creator": "김미경",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002212": {
+    "workId": "wk_000002212",
+    "title": "여우는 뭐라고 하는가?",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121909122"
+    },
+    "titles": {
+      "ko": "여우는 뭐라고 하는가?",
+      "en": "What Does the Fox Say?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

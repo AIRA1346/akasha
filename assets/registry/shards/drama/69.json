@@ -16,5 +16,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002666": {
+    "workId": "wk_000002666",
+    "title": "G1 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455074"
+    },
+    "titles": {
+      "ko": "G1 뉴스특보",
+      "en": "Q109455074"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002758": {
+    "workId": "wk_000002758",
+    "title": "포커스 : Folk Us",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456119"
+    },
+    "titles": {
+      "ko": "포커스 : Folk Us",
+      "en": "Q109456119"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

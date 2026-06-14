@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002550": {
+    "workId": "wk_000002550",
+    "title": "마셜 챔피언",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079957"
+    },
+    "titles": {
+      "ko": "마셜 챔피언",
+      "en": "Martial Champion",
+      "ja": "マーシャルチャンピオン"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

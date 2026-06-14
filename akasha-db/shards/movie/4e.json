@@ -1,0 +1,21 @@
+{
+  "wk_000002748": {
+    "workId": "wk_000002748",
+    "title": "캐스퍼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048166"
+    },
+    "titles": {
+      "ko": "캐스퍼",
+      "en": "Casper",
+      "ja": "キャスパー"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

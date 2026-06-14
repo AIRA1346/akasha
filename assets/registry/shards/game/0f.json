@@ -50,5 +50,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002639": {
+    "workId": "wk_000002639",
+    "title": "리니지W",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108392147"
+    },
+    "titles": {
+      "ko": "리니지W",
+      "en": "Lineage W"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002642": {
+    "workId": "wk_000002642",
+    "title": "3D 커스텀 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846076"
+    },
+    "titles": {
+      "ko": "3D 커스텀 소녀",
+      "en": "3D CUSTOM GIRL",
+      "ja": "3Dカスタム少女"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

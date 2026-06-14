@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002926": {
+    "workId": "wk_000002926",
+    "title": "If Only It Were True",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064945"
+    },
+    "titles": {
+      "ko": "If Only It Were True",
+      "en": "If Only It Were True"
+    },
+    "releaseYear": 2000,
+    "creator": "Marc Levy",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

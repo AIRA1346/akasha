@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002128": {
+    "workId": "wk_000002128",
+    "title": "영 블랙 잭",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11345406"
+    },
+    "titles": {
+      "ko": "영 블랙 잭",
+      "en": "Young Black Jack",
+      "ja": "ヤング ブラック・ジャック"
+    },
+    "creator": "Yoshiaki Tabata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

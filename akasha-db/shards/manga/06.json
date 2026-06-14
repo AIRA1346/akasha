@@ -1,0 +1,22 @@
+{
+  "wk_000002362": {
+    "workId": "wk_000002362",
+    "title": "초겨울의 따뜻한 날씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137128"
+    },
+    "titles": {
+      "ko": "초겨울의 따뜻한 날씨",
+      "en": "Indian Summer",
+      "ja": "こはるびより"
+    },
+    "releaseYear": 2001,
+    "creator": "Takehito Mizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

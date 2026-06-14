@@ -30,5 +30,39 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002179": {
+    "workId": "wk_000002179",
+    "title": "처음부터 너야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108760338"
+    },
+    "titles": {
+      "ko": "처음부터 너야",
+      "en": "Forever Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002770": {
+    "workId": "wk_000002770",
+    "title": "신계숙의 맛터사이클 다이어리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456379"
+    },
+    "titles": {
+      "ko": "신계숙의 맛터사이클 다이어리",
+      "en": "Q109456379"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

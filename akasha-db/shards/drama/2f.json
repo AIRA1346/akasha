@@ -33,5 +33,25 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002118": {
+    "workId": "wk_000002118",
+    "title": "세 마리의 아저씨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865327"
+    },
+    "titles": {
+      "ko": "세 마리의 아저씨",
+      "en": "Q10865327",
+      "ja": "三匹のおっさん"
+    },
+    "releaseYear": 2009,
+    "creator": "Hiro Arikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

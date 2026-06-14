@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002927": {
+    "workId": "wk_000002927",
+    "title": "러시아문학 오디세이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106512295"
+    },
+    "titles": {
+      "ko": "러시아문학 오디세이",
+      "en": "Russian Literature, Ideals and Realities"
+    },
+    "releaseYear": 1901,
+    "creator": "Peter Kropotkin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

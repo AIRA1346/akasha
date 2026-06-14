@@ -1,0 +1,21 @@
+{
+  "wk_000002352": {
+    "workId": "wk_000002352",
+    "title": "후궁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10917879"
+    },
+    "titles": {
+      "ko": "후궁",
+      "en": "The Emperor's Harem",
+      "ja": "王の後宮"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

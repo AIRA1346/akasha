@@ -33,5 +33,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002670": {
+    "workId": "wk_000002670",
+    "title": "강호대결 중화대반점",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455273"
+    },
+    "titles": {
+      "ko": "강호대결 중화대반점",
+      "en": "Q109455273"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002673": {
+    "workId": "wk_000002673",
+    "title": "또깨비 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455460"
+    },
+    "titles": {
+      "ko": "또깨비 가족",
+      "en": "Q109455460"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

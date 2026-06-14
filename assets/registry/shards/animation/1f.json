@@ -121,5 +121,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002398": {
+    "workId": "wk_000002398",
+    "title": "결혼반지 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117291160"
+    },
+    "titles": {
+      "ko": "결혼반지 이야기",
+      "en": "Tales of Wedding Rings",
+      "ja": "結婚指輪物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

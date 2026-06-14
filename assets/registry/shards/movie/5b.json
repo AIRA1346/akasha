@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002658": {
+    "workId": "wk_000002658",
+    "title": "잠복근무",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1047663"
+    },
+    "titles": {
+      "ko": "잠복근무",
+      "en": "Stakeout",
+      "ja": "張り込み"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

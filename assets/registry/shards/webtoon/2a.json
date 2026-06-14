@@ -1,0 +1,19 @@
+{
+  "wk_000002378": {
+    "workId": "wk_000002378",
+    "title": "도깨비 신부",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12592951"
+    },
+    "titles": {
+      "ko": "도깨비 신부",
+      "en": "Dokebi Bride"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

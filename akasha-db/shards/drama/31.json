@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002114": {
+    "workId": "wk_000002114",
+    "title": "35세의 고교생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10863728"
+    },
+    "titles": {
+      "ko": "35세의 고교생",
+      "en": "No Dropping Out: Back to School at 35",
+      "ja": "35歳の高校生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002767": {
+    "workId": "wk_000002767",
+    "title": "뮤직박스 아름다운 세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456320"
+    },
+    "titles": {
+      "ko": "뮤직박스 아름다운 세상",
+      "en": "Q109456320"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

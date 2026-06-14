@@ -85,5 +85,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002161": {
+    "workId": "wk_000002161",
+    "title": "더 킹 오브 파이터즈 XII",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071062"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 XII",
+      "en": "The King of Fighters XII",
+      "ja": "ザ・キング・オブ・ファイターズ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

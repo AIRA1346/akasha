@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002807": {
+    "workId": "wk_000002807",
+    "title": "명탐정 코난: 미궁의 십자로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195701"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 미궁의 십자로",
+      "en": "Detective Conan: Crossroad in the Ancient Capital",
+      "ja": "名探偵コナン 迷宮の十字路"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

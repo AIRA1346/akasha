@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002107": {
+    "workId": "wk_000002107",
+    "title": "전부 아니면 무",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041689"
+    },
+    "titles": {
+      "ko": "전부 아니면 무",
+      "en": "All or Nothing",
+      "ja": "人生は、時々晴れ"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

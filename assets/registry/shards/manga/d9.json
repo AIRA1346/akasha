@@ -35,5 +35,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002783": {
+    "workId": "wk_000002783",
+    "title": "꿈꾸는 남자는 현실주의자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114905570"
+    },
+    "titles": {
+      "ko": "꿈꾸는 남자는 현실주의자",
+      "en": "The Dreaming Boy Is a Realist",
+      "ja": "夢見る男子は現実主義者"
+    },
+    "releaseYear": 2021,
+    "creator": "Okemaru",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

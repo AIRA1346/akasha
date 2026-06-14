@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002549": {
+    "workId": "wk_000002549",
+    "title": "싱귤래리티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079645"
+    },
+    "titles": {
+      "ko": "싱귤래리티",
+      "en": "Singularity",
+      "ja": "シンギュラリティ"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

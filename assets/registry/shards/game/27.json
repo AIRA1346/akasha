@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002410": {
+    "workId": "wk_000002410",
+    "title": "춤춰라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075246"
+    },
+    "titles": {
+      "ko": "춤춰라 메이드 인 와리오",
+      "en": "WarioWare: Smooth Moves",
+      "ja": "おどる メイド イン ワリオ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

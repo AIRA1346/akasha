@@ -1,0 +1,40 @@
+{
+  "wk_000002098": {
+    "workId": "wk_000002098",
+    "title": "테트리스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104044312"
+    },
+    "titles": {
+      "ko": "테트리스",
+      "en": "Tetris",
+      "ja": "テトリス"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002850": {
+    "workId": "wk_000002850",
+    "title": "뱅퀴시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104856354"
+    },
+    "titles": {
+      "ko": "뱅퀴시",
+      "en": "Vanquish",
+      "ja": "ヴァンキッシュ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002267": {
+    "workId": "wk_000002267",
+    "title": "대개조 !! 극적 비포 애프터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10891759"
+    },
+    "titles": {
+      "ko": "대개조 !! 극적 비포 애프터",
+      "en": "That'S a DRAMATIC CHANGE!",
+      "ja": "大改造!!劇的ビフォーアフター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

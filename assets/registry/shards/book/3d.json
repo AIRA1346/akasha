@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002740": {
+    "workId": "wk_000002740",
+    "title": "코끼리 탑",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061779"
+    },
+    "titles": {
+      "ko": "코끼리 탑",
+      "en": "The Tower of the Elephant"
+    },
+    "releaseYear": 1933,
+    "creator": "Robert E. Howard",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

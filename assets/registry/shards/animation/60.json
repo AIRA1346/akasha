@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000002538": {
+    "workId": "wk_000002538",
+    "title": "극장판 울려라! 유포니엄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117865951"
+    },
+    "titles": {
+      "ko": "극장판 울려라! 유포니엄",
+      "en": "Sound! Euphonium: The Movie – Welcome to the Kitauji High School Concert Band",
+      "ja": "劇場版 響け！ユーフォニアム ～北宇治高校吹奏楽部へようこそ～"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

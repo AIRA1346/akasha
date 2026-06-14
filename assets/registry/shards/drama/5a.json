@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002117": {
+    "workId": "wk_000002117",
+    "title": "미세스타운 남편이 죽었다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865218"
+    },
+    "titles": {
+      "ko": "미세스타운 남편이 죽었다",
+      "en": "Q10865218"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

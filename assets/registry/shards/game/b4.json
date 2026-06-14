@@ -1,0 +1,21 @@
+{
+  "wk_000002241": {
+    "workId": "wk_000002241",
+    "title": "스트레인저 오브 파라다이스: 파이널 판타지 오리진",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107216758"
+    },
+    "titles": {
+      "ko": "스트레인저 오브 파라다이스: 파이널 판타지 오리진",
+      "en": "Stranger of Paradise: Final Fantasy Origin",
+      "ja": "ストレンジャー オブ パラダイス ファイナルファンタジー オリジン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

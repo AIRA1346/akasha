@@ -1,0 +1,37 @@
+{
+  "wk_000002594": {
+    "workId": "wk_000002594",
+    "title": "손자대전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10944699"
+    },
+    "titles": {
+      "ko": "손자대전",
+      "en": "Q10944699",
+      "ja": "孫子《兵法》大伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002861": {
+    "workId": "wk_000002861",
+    "title": "I'm Your LolliGirl",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456887"
+    },
+    "titles": {
+      "ko": "I'm Your LolliGirl",
+      "en": "Q109456887"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

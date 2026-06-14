@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002438": {
+    "workId": "wk_000002438",
+    "title": "퍼스트 레이디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109299052"
+    },
+    "titles": {
+      "ko": "퍼스트 레이디",
+      "en": "First Lady"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

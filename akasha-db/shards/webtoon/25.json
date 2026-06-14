@@ -1,0 +1,21 @@
+{
+  "wk_000002892": {
+    "workId": "wk_000002892",
+    "title": "이웃사람",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18116770"
+    },
+    "titles": {
+      "ko": "이웃사람",
+      "en": "The Neighbor"
+    },
+    "releaseYear": 2008,
+    "creator": "Kang Full",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

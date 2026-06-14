@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002228": {
+    "workId": "wk_000002228",
+    "title": "유유시키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115786588"
+    },
+    "titles": {
+      "ko": "유유시키",
+      "en": "Yuyushiki",
+      "ja": "ゆゆ式"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

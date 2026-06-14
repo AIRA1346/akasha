@@ -1,0 +1,41 @@
+{
+  "wk_000002649": {
+    "workId": "wk_000002649",
+    "title": "오스카와 루신다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060522"
+    },
+    "titles": {
+      "ko": "오스카와 루신다",
+      "en": "Oscar and Lucinda"
+    },
+    "releaseYear": 1988,
+    "creator": "Peter Carey",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002925": {
+    "workId": "wk_000002925",
+    "title": "수학 귀신",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064934"
+    },
+    "titles": {
+      "ko": "수학 귀신",
+      "en": "The Number Devil",
+      "ja": "数の悪魔"
+    },
+    "releaseYear": 1997,
+    "creator": "Hans Magnus Enzensberger",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

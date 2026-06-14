@@ -61,5 +61,41 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002338": {
+    "workId": "wk_000002338",
+    "title": "아웃사이드 더 와이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104241071"
+    },
+    "titles": {
+      "ko": "아웃사이드 더 와이어",
+      "en": "Outside the Wire",
+      "ja": "デンジャー・ゾーン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002936": {
+    "workId": "wk_000002936",
+    "title": "프란체스코",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104865433"
+    },
+    "titles": {
+      "ko": "프란체스코",
+      "en": "Francesco"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

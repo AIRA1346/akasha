@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002486": {
+    "workId": "wk_000002486",
+    "title": "셰인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045165"
+    },
+    "titles": {
+      "ko": "셰인",
+      "en": "Shane",
+      "ja": "シェーン"
+    },
+    "releaseYear": 1953,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

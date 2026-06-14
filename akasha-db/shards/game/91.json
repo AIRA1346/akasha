@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002634": {
+    "workId": "wk_000002634",
+    "title": "건그레이브 G.O.R.E",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108326254"
+    },
+    "titles": {
+      "ko": "건그레이브 G.O.R.E",
+      "en": "Q108326254",
+      "ja": "ガングレイヴG.O.R.E"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

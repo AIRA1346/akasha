@@ -1,0 +1,21 @@
+{
+  "wk_000002578": {
+    "workId": "wk_000002578",
+    "title": "카사노바",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046790"
+    },
+    "titles": {
+      "ko": "카사노바",
+      "en": "Casanova 70",
+      "ja": "ゴールデン・ハンター"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

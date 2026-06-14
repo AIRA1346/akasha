@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002192": {
+    "workId": "wk_000002192",
+    "title": "별똥별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108869539"
+    },
+    "titles": {
+      "ko": "별똥별",
+      "en": "Sh**ting Stars",
+      "ja": "流れ星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

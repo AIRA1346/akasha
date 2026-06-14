@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002099": {
+    "workId": "wk_000002099",
+    "title": "세 전우",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040470"
+    },
+    "titles": {
+      "ko": "세 전우",
+      "en": "Three Comrades",
+      "ja": "三人の仲間"
+    },
+    "releaseYear": 1938,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

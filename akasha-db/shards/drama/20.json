@@ -15,5 +15,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002110": {
+    "workId": "wk_000002110",
+    "title": "하우 아이 멧 유어 파더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108619693"
+    },
+    "titles": {
+      "ko": "하우 아이 멧 유어 파더",
+      "en": "How I Met Your Father"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002495": {
+    "workId": "wk_000002495",
+    "title": "고스트 닥터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342743"
+    },
+    "titles": {
+      "ko": "고스트 닥터",
+      "en": "Ghost Doctor",
+      "ja": "ゴーストドクター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002599": {
+    "workId": "wk_000002599",
+    "title": "EBS 비즈니스 리뷰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454312"
+    },
+    "titles": {
+      "ko": "EBS 비즈니스 리뷰",
+      "en": "Q109454312"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

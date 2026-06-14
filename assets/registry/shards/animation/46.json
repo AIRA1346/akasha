@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002803": {
+    "workId": "wk_000002803",
+    "title": "헤이디스 바이러스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194087"
+    },
+    "titles": {
+      "ko": "헤이디스 바이러스",
+      "en": "Covert One: The Hades Factor"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

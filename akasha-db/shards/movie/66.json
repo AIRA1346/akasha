@@ -44,5 +44,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002932": {
+    "workId": "wk_000002932",
+    "title": "러브 하드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104858962"
+    },
+    "titles": {
+      "ko": "러브 하드",
+      "en": "Love Hard",
+      "ja": "ラブ・ハード"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

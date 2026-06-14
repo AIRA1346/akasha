@@ -1,0 +1,40 @@
+{
+  "wk_000002173": {
+    "workId": "wk_000002173",
+    "title": "해리건 씨의 전화기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105473786"
+    },
+    "titles": {
+      "ko": "해리건 씨의 전화기",
+      "en": "Mr. Harrigan's Phone"
+    },
+    "releaseYear": 2020,
+    "creator": "スティーヴン・キング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002331": {
+    "workId": "wk_000002331",
+    "title": "관 시리즈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10566272"
+    },
+    "titles": {
+      "ko": "관 시리즈",
+      "en": "The House Series",
+      "ja": "館シリーズ"
+    },
+    "creator": "Yukito Ayatsuji",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

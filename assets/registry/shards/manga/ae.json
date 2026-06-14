@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002126": {
+    "workId": "wk_000002126",
+    "title": "몽타주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344744"
+    },
+    "titles": {
+      "ko": "몽타주",
+      "en": "Montage",
+      "ja": "モンタージュ (漫画)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

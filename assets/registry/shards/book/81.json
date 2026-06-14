@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002839": {
+    "workId": "wk_000002839",
+    "title": "성검학원의 마검사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106316762"
+    },
+    "titles": {
+      "ko": "성검학원의 마검사",
+      "en": "The Demon Sword Master of Excalibur Academy",
+      "ja": "聖剣学院の魔剣使い"
+    },
+    "releaseYear": 2019,
+    "creator": "Yū Shimizu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

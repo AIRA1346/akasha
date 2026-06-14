@@ -56,5 +56,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002391": {
+    "workId": "wk_000002391",
+    "title": "신비와 금비의 도깨비 전래동화 깹",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117083349"
+    },
+    "titles": {
+      "ko": "신비와 금비의 도깨비 전래동화 깹",
+      "en": "Q117083349"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

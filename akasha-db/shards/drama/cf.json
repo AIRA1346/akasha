@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002344": {
+    "workId": "wk_000002344",
+    "title": "나니고레 진백경",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10904844"
+    },
+    "titles": {
+      "ko": "나니고레 진백경",
+      "en": "Nanikorechinhyakkei",
+      "ja": "ナニコレ珍百景"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002857": {
+    "workId": "wk_000002857",
+    "title": "EBS 고교필수특강 국어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456551"
+    },
+    "titles": {
+      "ko": "EBS 고교필수특강 국어",
+      "en": "Q109456551"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

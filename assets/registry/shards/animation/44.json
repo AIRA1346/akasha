@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002818": {
+    "workId": "wk_000002818",
+    "title": "세계명작극장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197782"
+    },
+    "titles": {
+      "ko": "세계명작극장",
+      "en": "World Masterpiece Theater",
+      "ja": "世界名作劇場"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

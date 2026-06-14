@@ -1,0 +1,21 @@
+{
+  "wk_000002509": {
+    "workId": "wk_000002509",
+    "title": "아가씨와 충견군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113988001"
+    },
+    "titles": {
+      "ko": "아가씨와 충견군",
+      "en": "A Girl & Her Guard Dog",
+      "ja": "お嬢と番犬くん"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,41 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002095": {
+    "workId": "wk_000002095",
+    "title": "척의 일생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105473478"
+    },
+    "titles": {
+      "ko": "척의 일생",
+      "en": "The Life of Chuck"
+    },
+    "creator": "スティーヴン・キング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002174": {
+    "workId": "wk_000002174",
+    "title": "피가 흐르는 곳에",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105473813"
+    },
+    "titles": {
+      "ko": "피가 흐르는 곳에",
+      "en": "If It Bleeds"
+    },
+    "creator": "スティーヴン・キング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

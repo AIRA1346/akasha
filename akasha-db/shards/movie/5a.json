@@ -1,0 +1,20 @@
+{
+  "wk_000002340": {
+    "workId": "wk_000002340",
+    "title": "베카스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10427785"
+    },
+    "titles": {
+      "ko": "베카스",
+      "en": "Bekas"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

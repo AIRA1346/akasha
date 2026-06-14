@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002386": {
+    "workId": "wk_000002386",
+    "title": "PLUTO",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116783101"
+    },
+    "titles": {
+      "ko": "PLUTO",
+      "en": "Pluto",
+      "ja": "PLUTO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

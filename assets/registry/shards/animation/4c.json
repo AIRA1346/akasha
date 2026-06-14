@@ -71,5 +71,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002301": {
+    "workId": "wk_000002301",
+    "title": "변변찮은 마술강사와 금기교전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116246446"
+    },
+    "titles": {
+      "ko": "변변찮은 마술강사와 금기교전",
+      "en": "Akashic Records of Bastard Magical Instructor",
+      "ja": "ロクでなし魔術講師と禁忌教典"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002715": {
+    "workId": "wk_000002715",
+    "title": "하나우쿄 메이드대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191955"
+    },
+    "titles": {
+      "ko": "하나우쿄 메이드대",
+      "en": "Hanaukyo Maid Team",
+      "ja": "花右京メイド隊"
+    },
+    "releaseYear": 2001,
+    "creator": "Morishige",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

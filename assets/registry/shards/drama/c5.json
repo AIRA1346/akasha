@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002122": {
+    "workId": "wk_000002122",
+    "title": "불량 커플",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10868930"
+    },
+    "titles": {
+      "ko": "불량 커플",
+      "en": "Bad Couple",
+      "ja": "不良カップル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002490": {
+    "workId": "wk_000002490",
+    "title": "야시장 생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10933240"
+    },
+    "titles": {
+      "ko": "야시장 생활",
+      "en": "Night Market Life",
+      "ja": "夜市人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

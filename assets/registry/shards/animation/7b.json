@@ -1,0 +1,22 @@
+{
+  "wk_000002077": {
+    "workId": "wk_000002077",
+    "title": "성계의 전기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151115"
+    },
+    "titles": {
+      "ko": "성계의 전기",
+      "en": "Banner of the Stars",
+      "ja": "星界の戦旗"
+    },
+    "releaseYear": 2005,
+    "creator": "Hiroyuki Morioka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

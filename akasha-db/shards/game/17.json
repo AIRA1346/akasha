@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002908": {
+    "workId": "wk_000002908",
+    "title": "프린스 오브 스트라이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108569501"
+    },
+    "titles": {
+      "ko": "프린스 오브 스트라이드",
+      "en": "Prince of Stride",
+      "ja": "プリンス・オブ・ストライド"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

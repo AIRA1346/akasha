@@ -16,5 +16,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002361": {
+    "workId": "wk_000002361",
+    "title": "슬기로운 산촌생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109257608"
+    },
+    "titles": {
+      "ko": "슬기로운 산촌생활",
+      "en": "Witty mountain village life"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002430": {
+    "workId": "wk_000002430",
+    "title": "약니안호평시청천",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109260183"
+    },
+    "titles": {
+      "ko": "약니안호평시청천",
+      "en": "Sunshine of My Life"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002679": {
+    "workId": "wk_000002679",
+    "title": "하늬바람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455829"
+    },
+    "titles": {
+      "ko": "하늬바람",
+      "en": "Q109455829"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002858": {
+    "workId": "wk_000002858",
+    "title": "EBS 구술 · 심층면접 실전편 자연계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456560"
+    },
+    "titles": {
+      "ko": "EBS 구술 · 심층면접 실전편 자연계",
+      "en": "Q109456560"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002933": {
+    "workId": "wk_000002933",
+    "title": "파리, 13구",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104862168"
+    },
+    "titles": {
+      "ko": "파리, 13구",
+      "en": "Paris, 13th District",
+      "ja": "パリ13区"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

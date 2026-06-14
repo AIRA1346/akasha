@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002539": {
+    "workId": "wk_000002539",
+    "title": "극장판 울려라! 유포니엄 ~전하고 싶은 멜로디~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117871469"
+    },
+    "titles": {
+      "ko": "극장판 울려라! 유포니엄 ~전하고 싶은 멜로디~",
+      "en": "Sound! Euphonium: The Movie – May the Melody Reach You!",
+      "ja": "劇場版 響け！ユーフォニアム ～届けたいメロディ～"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "wk_000002734": {
+    "workId": "wk_000002734",
+    "title": "Natural Another One",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854760"
+    },
+    "titles": {
+      "ko": "Natural Another One",
+      "en": "Natural Another One"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002737": {
+    "workId": "wk_000002737",
+    "title": "귀축 안경 R",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855639"
+    },
+    "titles": {
+      "ko": "귀축 안경 R",
+      "en": "Q10855639",
+      "ja": "鬼畜眼鏡R"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "wk_000002232": {
+    "workId": "wk_000002232",
+    "title": "마리오 + 래비드 반짝이는 희망",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107208619"
+    },
+    "titles": {
+      "ko": "마리오 + 래비드 반짝이는 희망",
+      "en": "Mario + Rabbids Sparks of Hope",
+      "ja": "マリオ+ラビッツ ギャラクシーバトル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002466": {
+    "workId": "wk_000002466",
+    "title": "Fate/EXTRA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075410"
+    },
+    "titles": {
+      "ko": "Fate/EXTRA",
+      "en": "Fate/Extra",
+      "ja": "Fate/EXTRA"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002641": {
+    "workId": "wk_000002641",
+    "title": "흠심 메트로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108421973"
+    },
+    "titles": {
+      "ko": "흠심 메트로",
+      "en": "Hmmsim Metro",
+      "ja": "Hmmsim Metro"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

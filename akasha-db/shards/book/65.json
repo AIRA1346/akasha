@@ -15,5 +15,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002330": {
+    "workId": "wk_000002330",
+    "title": "침구갑을경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10564086"
+    },
+    "titles": {
+      "ko": "침구갑을경",
+      "en": "AB Canon of Acupuncture and Moxibustion",
+      "ja": "鍼灸甲乙経"
+    },
+    "creator": "Huangfu Mi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002924": {
+    "workId": "wk_000002924",
+    "title": "젊은 개예술가의 초상",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10638035"
+    },
+    "titles": {
+      "ko": "젊은 개예술가의 초상",
+      "en": "Portrait of the Artist as a Young Dog"
+    },
+    "releaseYear": 1940,
+    "creator": "Dylan Thomas",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

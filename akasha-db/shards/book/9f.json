@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002568": {
+    "workId": "wk_000002568",
+    "title": "어메이징 브루클린",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105982224"
+    },
+    "titles": {
+      "ko": "어메이징 브루클린",
+      "en": "Deacon King Kong"
+    },
+    "releaseYear": 2020,
+    "creator": "James McBride",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

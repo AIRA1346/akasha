@@ -62,5 +62,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002393": {
+    "workId": "wk_000002393",
+    "title": "희망의 힘 ~어른 프리큐어'23~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117248288"
+    },
+    "titles": {
+      "ko": "희망의 힘 ~어른 프리큐어'23~",
+      "en": "Power of Hope: PreCure Full Bloom",
+      "ja": "キボウノチカラ〜オトナプリキュア'23〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

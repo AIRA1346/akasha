@@ -100,5 +100,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002368": {
+    "workId": "wk_000002368",
+    "title": "경험 많은 너와 경험 없는 내가 사귀게 된 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113861422"
+    },
+    "titles": {
+      "ko": "경험 많은 너와 경험 없는 내가 사귀게 된 이야기",
+      "en": "You Were Experienced, I Was Not: Our Dating Story",
+      "ja": "経験済みなキミと、経験ゼロなオレが、お付き合いする話。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

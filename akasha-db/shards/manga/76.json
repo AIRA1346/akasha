@@ -1,0 +1,20 @@
+{
+  "wk_000002778": {
+    "workId": "wk_000002778",
+    "title": "새끼 두시",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11484213"
+    },
+    "titles": {
+      "ko": "새끼 두시",
+      "en": "Yōjūmameshiba",
+      "ja": "幼獣マメシバ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

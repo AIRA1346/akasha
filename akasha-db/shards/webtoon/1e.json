@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002695": {
+    "workId": "wk_000002695",
+    "title": "전지적 독자 시점",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139567602"
+    },
+    "titles": {
+      "ko": "전지적 독자 시점",
+      "en": "Omniscient Reader's Viewpoint",
+      "ja": "全知的な読者の視点から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

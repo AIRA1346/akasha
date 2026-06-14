@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002383": {
+    "workId": "wk_000002383",
+    "title": "치즈인더트랩",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12620245"
+    },
+    "titles": {
+      "ko": "치즈인더트랩",
+      "en": "Cheese in the Trap",
+      "ja": "チーズ・イン・ザ・トラップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

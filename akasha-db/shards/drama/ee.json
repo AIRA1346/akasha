@@ -51,5 +51,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002426": {
+    "workId": "wk_000002426",
+    "title": "제시의 쇼!터뷰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109257617"
+    },
+    "titles": {
+      "ko": "제시의 쇼!터뷰",
+      "en": "Showterview with Jessi"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002445": {
+    "workId": "wk_000002445",
+    "title": "스폰서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109317306"
+    },
+    "titles": {
+      "ko": "스폰서",
+      "en": "Sponsor",
+      "ja": "スポンサー～破滅の足音～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002764": {
+    "workId": "wk_000002764",
+    "title": "베스트 아나테이너 선발대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456281"
+    },
+    "titles": {
+      "ko": "베스트 아나테이너 선발대회",
+      "en": "Q109456281"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

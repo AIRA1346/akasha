@@ -1,0 +1,22 @@
+{
+  "wk_000002134": {
+    "workId": "wk_000002134",
+    "title": "와일드 마운틴",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11351241"
+    },
+    "titles": {
+      "ko": "와일드 마운틴",
+      "en": "Wild Mountain",
+      "ja": "ワイルドマウンテン"
+    },
+    "releaseYear": 2003,
+    "creator": "Hideyasu Moto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

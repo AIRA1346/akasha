@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002535": {
+    "workId": "wk_000002535",
+    "title": "재와 환상의 그림갈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117449284"
+    },
+    "titles": {
+      "ko": "재와 환상의 그림갈",
+      "en": "Grimgar of Fantasy and Ash",
+      "ja": "灰と幻想のグリムガル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

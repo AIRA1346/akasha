@@ -17,5 +17,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002237": {
+    "workId": "wk_000002237",
+    "title": "플래그 테일: 레퀴엠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214641"
+    },
+    "titles": {
+      "ko": "플래그 테일: 레퀴엠",
+      "en": "A Plague Tale: Requiem",
+      "ja": "プレイグ テイル -レクイエム-"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002635": {
+    "workId": "wk_000002635",
+    "title": "솔트 앤 새크리파이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108327544"
+    },
+    "titles": {
+      "ko": "솔트 앤 새크리파이스",
+      "en": "Salt and Sacrifice"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002724": {
+    "workId": "wk_000002724",
+    "title": "파우더 토이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10853009"
+    },
+    "titles": {
+      "ko": "파우더 토이",
+      "en": "The Powder Toy"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

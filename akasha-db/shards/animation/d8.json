@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002541": {
+    "workId": "wk_000002541",
+    "title": "극장판 울려라! 유포니엄 ~맹세의 피날레~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118073462"
+    },
+    "titles": {
+      "ko": "극장판 울려라! 유포니엄 ~맹세의 피날레~",
+      "en": "Sound! Euphonium: The Movie – Our Promise: A Brand New Day",
+      "ja": "劇場版 響け！ユーフォニアム ～誓いのフィナーレ～"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

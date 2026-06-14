@@ -1,0 +1,20 @@
+{
+  "wk_000002142": {
+    "workId": "wk_000002142",
+    "title": "어비스 : 디 어나더 유니버스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113988374"
+    },
+    "titles": {
+      "ko": "어비스 : 디 어나더 유니버스",
+      "en": "Abyss: Another Universe"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000002789": {
+    "workId": "wk_000002789",
+    "title": "연애세포",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16177443"
+    },
+    "titles": {
+      "ko": "연애세포",
+      "en": "Love Cells",
+      "ja": "恋愛細胞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

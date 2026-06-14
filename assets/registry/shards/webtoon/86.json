@@ -1,0 +1,20 @@
+{
+  "wk_000002375": {
+    "workId": "wk_000002375",
+    "title": "닥터 프로스트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12590924"
+    },
+    "titles": {
+      "ko": "닥터 프로스트",
+      "en": "Dr. Frost",
+      "ja": "ドクター・プロスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

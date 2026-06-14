@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002872": {
+    "workId": "wk_000002872",
+    "title": "KBS배 쟁탈 전국노래자랑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457689"
+    },
+    "titles": {
+      "ko": "KBS배 쟁탈 전국노래자랑",
+      "en": "Q109457689"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

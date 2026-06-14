@@ -48,5 +48,44 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000002064": {
+    "workId": "wk_000002064",
+    "title": "너덜너덜한 엘프 씨를 행복하게 하는 약장수 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113404507"
+    },
+    "titles": {
+      "ko": "너덜너덜한 엘프 씨를 행복하게 하는 약장수 씨",
+      "en": "Dying Elf & Apothecary",
+      "ja": "ボロボロのエルフさんを幸せにする薬売りさん"
+    },
+    "releaseYear": 2021,
+    "creator": "Gibachan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002132": {
+    "workId": "wk_000002132",
+    "title": "검은 고양이와 마녀의 교실",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113507864"
+    },
+    "titles": {
+      "ko": "검은 고양이와 마녀의 교실",
+      "en": "The Classroom of a Black Cat and a Witch",
+      "ja": "黒猫と魔女の教室"
+    },
+    "creator": "Yōsuke Kaneda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

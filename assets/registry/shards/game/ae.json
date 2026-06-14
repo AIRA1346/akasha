@@ -16,5 +16,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002464": {
+    "workId": "wk_000002464",
+    "title": "페이퍼 마리오 RPG",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075255"
+    },
+    "titles": {
+      "ko": "페이퍼 마리오 RPG",
+      "en": "Paper Mario: The Thousand-Year Door",
+      "ja": "ペーパーマリオRPG"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002560": {
+    "workId": "wk_000002560",
+    "title": "UFL",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108273973"
+    },
+    "titles": {
+      "ko": "UFL",
+      "en": "UFL",
+      "ja": "UFL"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002637": {
+    "workId": "wk_000002637",
+    "title": "말랑말랑 두뇌학원",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108382102"
+    },
+    "titles": {
+      "ko": "말랑말랑 두뇌학원",
+      "en": "Big Brain Academy: Brain vs. Brain",
+      "ja": "やわらかあたま塾 いっしょにあたまのストレッチ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002732": {
+    "workId": "wk_000002732",
+    "title": "Hyper→Highspeed→Genius",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854582"
+    },
+    "titles": {
+      "ko": "Hyper→Highspeed→Genius",
+      "en": "Hyper→Highspeed→Genius"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

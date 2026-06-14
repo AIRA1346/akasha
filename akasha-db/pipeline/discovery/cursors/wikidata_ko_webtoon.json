@@ -1,9 +1,10 @@
 {
   "lastPage": 0,
   "lastId": null,
-  "updatedAt": "2026-06-14T21:30:00.000Z",
+  "updatedAt": "2026-06-14T21:55:09.836880Z",
   "channelId": "wikidata_ko_webtoon",
   "source": "wikidata_ko",
-  "offset": 75,
-  "note": "synced from catalog-scale-baseline @2008"
+  "offset": 295,
+  "note": "synced from catalog-scale-baseline @2008",
+  "lastQid": "Q18815844"
 }

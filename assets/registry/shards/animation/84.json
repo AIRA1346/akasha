@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002536": {
+    "workId": "wk_000002536",
+    "title": "유사 하렘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117482731"
+    },
+    "titles": {
+      "ko": "유사 하렘",
+      "en": "Pseudo Harem",
+      "ja": "疑似ハーレム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

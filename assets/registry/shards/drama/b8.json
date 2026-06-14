@@ -1,0 +1,19 @@
+{
+  "wk_000002771": {
+    "workId": "wk_000002771",
+    "title": "바닷가 사람들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456382"
+    },
+    "titles": {
+      "ko": "바닷가 사람들",
+      "en": "Q109456382"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000002379": {
+    "workId": "wk_000002379",
+    "title": "먼나라 이웃나라",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12595029"
+    },
+    "titles": {
+      "ko": "먼나라 이웃나라",
+      "en": "Faraway Neighboring Countries"
+    },
+    "creator": "이원복",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

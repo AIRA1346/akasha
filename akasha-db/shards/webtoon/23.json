@@ -1,0 +1,39 @@
+{
+  "wk_000002206": {
+    "workId": "wk_000002206",
+    "title": "신과함께 돌아온 기사왕님",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118793213"
+    },
+    "titles": {
+      "ko": "신과함께 돌아온 기사왕님",
+      "en": "The Knight King Who Returned with a God",
+      "ja": "神とともに帰った騎士王"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002461": {
+    "workId": "wk_000002461",
+    "title": "연의 편지",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129821158"
+    },
+    "titles": {
+      "ko": "연의 편지",
+      "en": "Your Letter"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -91,5 +91,22 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002310": {
+    "workId": "wk_000002310",
+    "title": "폭군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116634416"
+    },
+    "titles": {
+      "ko": "폭군",
+      "en": "The Tyrant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

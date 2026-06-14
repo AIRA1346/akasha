@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002349": {
+    "workId": "wk_000002349",
+    "title": "발칙한 여자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10913774"
+    },
+    "titles": {
+      "ko": "발칙한 여자들",
+      "en": "Outrageous Women",
+      "ja": "イヴの反乱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

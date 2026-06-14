@@ -15,5 +15,41 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002072": {
+    "workId": "wk_000002072",
+    "title": "백합은 일상",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187814"
+    },
+    "titles": {
+      "ko": "백합은 일상",
+      "en": "Everyday Lily"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002612": {
+    "workId": "wk_000002612",
+    "title": "릴리스 코드",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138325650"
+    },
+    "titles": {
+      "ko": "릴리스 코드",
+      "en": "Lilith's Cord",
+      "ja": "リリス・コード"
+    },
+    "creator": "쥬더",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

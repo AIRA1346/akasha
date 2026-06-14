@@ -1,0 +1,21 @@
+{
+  "wk_000002572": {
+    "workId": "wk_000002572",
+    "title": "마술의 신: 엉망진창 크리스마스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104609546"
+    },
+    "titles": {
+      "ko": "마술의 신: 엉망진창 크리스마스",
+      "en": "An Unremarkable Christmas",
+      "ja": "フアンキニのB級クリスマス"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

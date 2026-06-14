@@ -57,5 +57,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002156": {
+    "workId": "wk_000002156",
+    "title": "버드나무 마을 삼총사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11541546"
+    },
+    "titles": {
+      "ko": "버드나무 마을 삼총사",
+      "en": "Tanoshii Willow Town",
+      "ja": "楽しいウイロータウン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002300": {
+    "workId": "wk_000002300",
+    "title": "위대한 왕 세종",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116169297"
+    },
+    "titles": {
+      "ko": "위대한 왕 세종",
+      "en": "Sejong, the Great King",
+      "ja": "偉大な王・世宗"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002630": {
+    "workId": "wk_000002630",
+    "title": "30세의 보건 체육",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186775"
+    },
+    "titles": {
+      "ko": "30세의 보건 체육",
+      "en": "30-sai no Hoken Taiiku",
+      "ja": "30歳の保健体育"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

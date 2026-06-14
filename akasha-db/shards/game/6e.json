@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002467": {
+    "workId": "wk_000002467",
+    "title": "엑스디파이언트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107578877"
+    },
+    "titles": {
+      "ko": "엑스디파이언트",
+      "en": "XDefiant",
+      "ja": "エックスディファイアント"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

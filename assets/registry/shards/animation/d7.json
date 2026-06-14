@@ -66,5 +66,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002817": {
+    "workId": "wk_000002817",
+    "title": "요술공주 밍키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197198"
+    },
+    "titles": {
+      "ko": "요술공주 밍키",
+      "en": "Magical Princess Minky Momo",
+      "ja": "魔法のプリンセス ミンキーモモ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

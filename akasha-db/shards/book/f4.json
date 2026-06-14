@@ -48,5 +48,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002570": {
+    "workId": "wk_000002570",
+    "title": "코드 브레이커",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106008008"
+    },
+    "titles": {
+      "ko": "코드 브레이커",
+      "en": "The Code Breaker",
+      "ja": "コード・ブレーカー : 生命科学革命と人類の未来"
+    },
+    "releaseYear": 2021,
+    "creator": "월터 아이작슨",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

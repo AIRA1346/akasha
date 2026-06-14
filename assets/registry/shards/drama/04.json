@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002593": {
+    "workId": "wk_000002593",
+    "title": "아내의 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10943870"
+    },
+    "titles": {
+      "ko": "아내의 집",
+      "en": "Mom's House",
+      "ja": "妻の家"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

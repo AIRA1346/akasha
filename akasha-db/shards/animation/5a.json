@@ -58,5 +58,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002303": {
+    "workId": "wk_000002303",
+    "title": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116267851"
+    },
+    "titles": {
+      "ko": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "en": "VTuber Legend",
+      "ja": "VTuberなんだが配信切り忘れたら伝説になってた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002622": {
+    "workId": "wk_000002622",
+    "title": "마스터 키튼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185624"
+    },
+    "titles": {
+      "ko": "마스터 키튼",
+      "en": "Master Keaton",
+      "ja": "MASTERキートン"
+    },
+    "creator": "Naoki Urasawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002713": {
+    "workId": "wk_000002713",
+    "title": "무한의 리바이어스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191236"
+    },
+    "titles": {
+      "ko": "무한의 리바이어스",
+      "en": "Infinite Ryvius",
+      "ja": "無限のリヴァイアス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

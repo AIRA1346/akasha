@@ -1,0 +1,20 @@
+{
+  "wk_000002218": {
+    "workId": "wk_000002218",
+    "title": "베이비 레인디어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115516641"
+    },
+    "titles": {
+      "ko": "베이비 레인디어",
+      "en": "Baby Reindeer",
+      "ja": "私のトナカイちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

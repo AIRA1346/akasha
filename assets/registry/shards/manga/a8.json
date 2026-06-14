@@ -49,5 +49,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002372": {
+    "workId": "wk_000002372",
+    "title": "나는 여행을하는",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387555"
+    },
+    "titles": {
+      "ko": "나는 여행을하는",
+      "en": "I go to a journey.",
+      "ja": "僕は旅をする"
+    },
+    "creator": "Ichiko Ima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002518": {
+    "workId": "wk_000002518",
+    "title": "요술소녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141572"
+    },
+    "titles": {
+      "ko": "요술소녀",
+      "en": "Miracle Girls",
+      "ja": "ミラクル☆ガールズ"
+    },
+    "creator": "Nami Akimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

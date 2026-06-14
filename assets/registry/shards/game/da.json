@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002400": {
+    "workId": "wk_000002400",
+    "title": "아랑전설 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074309"
+    },
+    "titles": {
+      "ko": "아랑전설 3",
+      "en": "Fatal Fury 3: Road to the Final Victory",
+      "ja": "餓狼伝説3"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

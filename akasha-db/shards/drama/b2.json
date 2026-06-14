@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002862": {
+    "workId": "wk_000002862",
+    "title": "말달리자 환상의 짝꿍",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456937"
+    },
+    "titles": {
+      "ko": "말달리자 환상의 짝꿍",
+      "en": "Q109456937"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002916": {
+    "workId": "wk_000002916",
+    "title": "별의 커비 디스커버리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108670544"
+    },
+    "titles": {
+      "ko": "별의 커비 디스커버리",
+      "en": "Kirby and the Forgotten Land",
+      "ja": "星のカービィ ディスカバリー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

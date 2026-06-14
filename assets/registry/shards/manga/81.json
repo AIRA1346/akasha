@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002880": {
+    "workId": "wk_000002880",
+    "title": "부끄러워하는 널 보고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114981213"
+    },
+    "titles": {
+      "ko": "부끄러워하는 널 보고 싶어",
+      "en": "Hajirau Kimi ga Mitainda",
+      "ja": "恥じらう君が見たいんだ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

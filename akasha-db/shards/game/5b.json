@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002408": {
+    "workId": "wk_000002408",
+    "title": "동방홍마향 ~ the Embodiment of Scarlet Devil",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075123"
+    },
+    "titles": {
+      "ko": "동방홍마향 ~ the Embodiment of Scarlet Devil",
+      "en": "Touhou Koumakyou ~ The Embodiment of Scarlet Devil",
+      "ja": "東方紅魔郷 〜 the Embodiment of Scarlet Devil."
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

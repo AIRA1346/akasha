@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002680": {
+    "workId": "wk_000002680",
+    "title": "시사본색",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455904"
+    },
+    "titles": {
+      "ko": "시사본색",
+      "en": "Q109455904"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002407": {
+    "workId": "wk_000002407",
+    "title": "크라이 오브 피어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10750872"
+    },
+    "titles": {
+      "ko": "크라이 오브 피어",
+      "en": "Q10750872"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

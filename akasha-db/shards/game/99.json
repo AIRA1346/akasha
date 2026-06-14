@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002909": {
+    "workId": "wk_000002909",
+    "title": "미소녀 만화경 -물망초와 영원의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108573438"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 -물망초와 영원의 소녀-",
+      "en": "Bishoujo Mangekyou -Wasurenagusa to Eien no Shoujo-",
+      "ja": "美少女万華鏡 -忘れな草と永遠の少女-"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

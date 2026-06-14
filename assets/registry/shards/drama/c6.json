@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002595": {
+    "workId": "wk_000002595",
+    "title": "골 때리는 그녀들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109453365"
+    },
+    "titles": {
+      "ko": "골 때리는 그녀들",
+      "en": "Kick a Goal"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002761": {
+    "workId": "wk_000002761",
+    "title": "썰전 라이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456269"
+    },
+    "titles": {
+      "ko": "썰전 라이브",
+      "en": "Ssuljeon Live",
+      "ja": "舌戦ライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

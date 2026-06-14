@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002133": {
+    "workId": "wk_000002133",
+    "title": "선생님의 시간",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135110"
+    },
+    "titles": {
+      "ko": "선생님의 시간",
+      "en": "Doki Doki School Hours",
+      "ja": "せんせいのお時間"
+    },
+    "creator": "Tamami Momose",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

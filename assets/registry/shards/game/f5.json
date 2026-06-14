@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002562": {
+    "workId": "wk_000002562",
+    "title": "노바디 세이브 더 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108281964"
+    },
+    "titles": {
+      "ko": "노바디 세이브 더 월드",
+      "en": "Nobody Saves the World"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000002843": {
+    "workId": "wk_000002843",
+    "title": "플로베르의 앵무새",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063693"
+    },
+    "titles": {
+      "ko": "플로베르의 앵무새",
+      "en": "Flaubert's Parrot",
+      "ja": "フロベールの鸚鵡"
+    },
+    "releaseYear": 1984,
+    "creator": "Julian Barnes",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

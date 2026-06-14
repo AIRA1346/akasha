@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002928": {
+    "workId": "wk_000002928",
+    "title": "이상한 전생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106575080"
+    },
+    "titles": {
+      "ko": "이상한 전생",
+      "en": "Sweet Reincarnation",
+      "ja": "おかしな転生"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

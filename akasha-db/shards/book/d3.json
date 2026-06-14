@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002413": {
+    "workId": "wk_000002413",
+    "title": "평화란 이름의 폐허",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105722561"
+    },
+    "titles": {
+      "ko": "평화란 이름의 폐허",
+      "en": "A Desolation Called Peace",
+      "ja": "平和という名の廃墟"
+    },
+    "releaseYear": 2021,
+    "creator": "Arkady Martine",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

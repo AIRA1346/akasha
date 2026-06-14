@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002418": {
+    "workId": "wk_000002418",
+    "title": "협박은 나의 인생",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10430860"
+    },
+    "titles": {
+      "ko": "협박은 나의 인생",
+      "en": "Blackmail Is My Life",
+      "ja": "恐喝こそわが人生"
+    },
+    "releaseYear": 1968,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

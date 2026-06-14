@@ -1,0 +1,21 @@
+{
+  "wk_000002532": {
+    "workId": "wk_000002532",
+    "title": "극장판 오버로드 성왕국편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117350228"
+    },
+    "titles": {
+      "ko": "극장판 오버로드 성왕국편",
+      "en": "Overlord: The Sacred Kingdom",
+      "ja": "劇場版「オーバーロード」聖王国編"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

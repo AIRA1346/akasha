@@ -1,0 +1,21 @@
+{
+  "wk_000002087": {
+    "workId": "wk_000002087",
+    "title": "소닉 어드벤처 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070984"
+    },
+    "titles": {
+      "ko": "소닉 어드벤처 2",
+      "en": "Sonic Adventure 2",
+      "ja": "ソニックアドベンチャー2"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

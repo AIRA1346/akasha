@@ -50,5 +50,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002735": {
+    "workId": "wk_000002735",
+    "title": "STEAL!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854828"
+    },
+    "titles": {
+      "ko": "STEAL!",
+      "en": "Q10854828",
+      "ja": "STEAL!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002920": {
+    "workId": "wk_000002920",
+    "title": "소피의 아틀리에 2 ~신비한 꿈의 연금술사~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108773417"
+    },
+    "titles": {
+      "ko": "소피의 아틀리에 2 ~신비한 꿈의 연금술사~",
+      "en": "Atelier Sophie 2: The Alchemist of the Mysterious Dream",
+      "ja": "ソフィーのアトリエ2 ～不思議な夢の錬金術士～"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

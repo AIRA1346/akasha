@@ -18,5 +18,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002447": {
+    "workId": "wk_000002447",
+    "title": "우리들은 모두 카와이장",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387589"
+    },
+    "titles": {
+      "ko": "우리들은 모두 카와이장",
+      "en": "The Kawai Complex Guide to Manors and Hostel Behavior",
+      "ja": "僕らはみんな河合荘"
+    },
+    "creator": "Ruri Miyahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002600": {
+    "workId": "wk_000002600",
+    "title": "너와 종이비행기와.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11416153"
+    },
+    "titles": {
+      "ko": "너와 종이비행기와.",
+      "en": "Q11416153",
+      "ja": "君と紙ヒコーキと。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

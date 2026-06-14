@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002537": {
+    "workId": "wk_000002537",
+    "title": "어리석은 천사는 악마와 춤춘다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117841659"
+    },
+    "titles": {
+      "ko": "어리석은 천사는 악마와 춤춘다",
+      "en": "The Foolish Angel Dances with the Devil",
+      "ja": "愚かな天使は悪魔と踊る"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

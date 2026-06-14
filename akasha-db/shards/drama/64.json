@@ -33,5 +33,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002437": {
+    "workId": "wk_000002437",
+    "title": "아무나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109298133"
+    },
+    "titles": {
+      "ko": "아무나",
+      "en": "List of Amouna episodes"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002587": {
+    "workId": "wk_000002587",
+    "title": "체인지 데이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109415351"
+    },
+    "titles": {
+      "ko": "체인지 데이즈",
+      "en": "Q109415351"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

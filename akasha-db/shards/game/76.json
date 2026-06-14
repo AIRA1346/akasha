@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002326": {
+    "workId": "wk_000002326",
+    "title": "디지몬 세이버즈 어나더 미션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074021"
+    },
+    "titles": {
+      "ko": "디지몬 세이버즈 어나더 미션",
+      "en": "Digimon World Data Squad",
+      "ja": "デジモンセイバーズ アナザーミッション"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

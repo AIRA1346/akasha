@@ -83,5 +83,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002551": {
+    "workId": "wk_000002551",
+    "title": "미해결사건부",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107999617"
+    },
+    "titles": {
+      "ko": "미해결사건부",
+      "en": "Tears of Themis",
+      "ja": "未定事件簿"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002832": {
+    "workId": "wk_000002832",
+    "title": "노부나가의 야망 천상기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856194"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 천상기",
+      "en": "Nobunaga's Ambition: Tenshouki",
+      "ja": "信長の野望・天翔記"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

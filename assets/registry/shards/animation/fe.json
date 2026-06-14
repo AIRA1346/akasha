@@ -16,5 +16,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002082": {
+    "workId": "wk_000002082",
+    "title": "빛의 전사 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151646"
+    },
+    "titles": {
+      "ko": "빛의 전사 프리큐어",
+      "en": "Pretty Cure",
+      "ja": "ふたりはプリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002223": {
+    "workId": "wk_000002223",
+    "title": "신차원! 짱구는 못말려 THE MOVIE: 초능력 대결전 ~날아라 수제 김밥~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115657429"
+    },
+    "titles": {
+      "ko": "신차원! 짱구는 못말려 THE MOVIE: 초능력 대결전 ~날아라 수제 김밥~",
+      "en": "Shin Jigen! Crayon Shin-chan the Movie: Chounouryoku Daikessen - Tobe Tobe Temakizushi",
+      "ja": "しん次元! クレヨンしんちゃん THE MOVIE 超能力大決戦 〜とべとべ手巻き寿司〜"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002900": {
+    "workId": "wk_000002900",
+    "title": "프리!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12019559"
+    },
+    "titles": {
+      "ko": "프리!",
+      "en": "Free!",
+      "ja": "Free!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

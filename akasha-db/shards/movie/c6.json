@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002846": {
+    "workId": "wk_000002846",
+    "title": "태극권 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104844614"
+    },
+    "titles": {
+      "ko": "태극권 2",
+      "en": "Tai Chi Boxer",
+      "ja": "マスター・オブ・リアル・カンフー/大地無限2"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

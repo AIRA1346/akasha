@@ -1,0 +1,20 @@
+{
+  "wk_000002895": {
+    "workId": "wk_000002895",
+    "title": "반푼이라 불리던 전 영웅은, 친가에서 추방됐으므로 맘대로 살기로 했습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119791199"
+    },
+    "titles": {
+      "ko": "반푼이라 불리던 전 영웅은, 친가에서 추방됐으므로 맘대로 살기로 했습니다",
+      "en": "The Banished Former Hero Lives as He Pleases",
+      "ja": "出来損ないと呼ばれた元英雄は、実家から追放されたので好き勝手に生きることにした"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

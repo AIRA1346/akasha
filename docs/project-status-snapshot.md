@@ -13,15 +13,15 @@
 
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **2008 works** · v4 hex shards · dedupe **0** |
+| **Registry** | **2859 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
-| **externalId** | **2008/2008 (100%)** |
+| **externalId** | **2859/2859 (100%)** |
 | **flutter test** | **291/291 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
 | **다음** | Sprint B — 작품 `.md` 실사용 · friction · M3 Ready |
-| **Scale / Core** | **Phase 2 진행** — @2008 · G1 ~40% ([baseline](programs/catalog-scale-baseline-490.md)) |
+| **Scale / Core** | **Phase 2 진행** — @2859 · G1 ~57% · **window 모드** ([baseline](programs/catalog-scale-baseline-490.md)) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata ko (7 categories) |
 | **CDN** | akasha-db.pages.dev **2008** — deploy `21670b3` (2026-06-14) |

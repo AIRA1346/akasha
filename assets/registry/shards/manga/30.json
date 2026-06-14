@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002285": {
+    "workId": "wk_000002285",
+    "title": "중년 슈퍼맨 사에나이 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11364997"
+    },
+    "titles": {
+      "ko": "중년 슈퍼맨 사에나이 씨",
+      "en": "Chūnen Superman Saenai-shi",
+      "ja": "中年スーパーマン左江内氏"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002884": {
+    "workId": "wk_000002884",
+    "title": "낚시왕 강바다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151141"
+    },
+    "titles": {
+      "ko": "낚시왕 강바다",
+      "en": "Grander Musashi",
+      "ja": "スーパーフィッシング グランダー武蔵"
+    },
+    "creator": "Takashi Teshirogi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

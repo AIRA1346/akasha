@@ -1,0 +1,22 @@
+{
+  "wk_000002253": {
+    "workId": "wk_000002253",
+    "title": "휘어진 쟁기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105546412"
+    },
+    "titles": {
+      "ko": "휘어진 쟁기",
+      "en": "Crooked Plow",
+      "ja": "曲がった鋤"
+    },
+    "releaseYear": 2019,
+    "creator": "Itamar Vieira Junior",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

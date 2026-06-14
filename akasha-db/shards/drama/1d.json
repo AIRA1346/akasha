@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002856": {
+    "workId": "wk_000002856",
+    "title": "오늘 M",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456530"
+    },
+    "titles": {
+      "ko": "오늘 M",
+      "en": "Q109456530"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
