@@ -58,5 +58,25 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001036": {
+    "workId": "wk_000001036",
+    "title": "바람이 강하게 불고 있다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11069346"
+    },
+    "titles": {
+      "ko": "바람이 강하게 불고 있다",
+      "en": "Run with the Wind",
+      "ja": "風が強く吹いている"
+    },
+    "releaseYear": 2006,
+    "creator": "Shion Miura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

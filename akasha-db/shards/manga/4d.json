@@ -1,0 +1,21 @@
+{
+  "wk_000001037": {
+    "workId": "wk_000001037",
+    "title": "펭귄의 문제",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107025"
+    },
+    "titles": {
+      "ko": "펭귄의 문제",
+      "en": "A Penguin's Troubles",
+      "ja": "ペンギンの問題"
+    },
+    "creator": "Yūji Nagai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

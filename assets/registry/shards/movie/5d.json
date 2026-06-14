@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001187": {
+    "workId": "wk_000001187",
+    "title": "정글 속의 고릴라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1012216"
+    },
+    "titles": {
+      "ko": "정글 속의 고릴라",
+      "en": "Gorillas in the Mist",
+      "ja": "愛は霧のかなたに"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

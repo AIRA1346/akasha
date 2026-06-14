@@ -31,5 +31,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001062": {
+    "workId": "wk_000001062",
+    "title": "스컬: 더 히어로 슬레이어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104882978"
+    },
+    "titles": {
+      "ko": "스컬: 더 히어로 슬레이어",
+      "en": "Skul: The Hero Slayer",
+      "ja": "Skul: The Hero Slayer"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001164": {
+    "workId": "wk_000001164",
+    "title": "드림스케이퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105100762"
+    },
+    "titles": {
+      "ko": "드림스케이퍼",
+      "en": "Dreamscaper"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

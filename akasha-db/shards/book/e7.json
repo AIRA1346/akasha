@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001188": {
+    "workId": "wk_000001188",
+    "title": "법언 (책)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10379842"
+    },
+    "titles": {
+      "ko": "법언 (책)",
+      "en": "Fa yan",
+      "ja": "法言"
+    },
+    "creator": "Yang Xiong",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

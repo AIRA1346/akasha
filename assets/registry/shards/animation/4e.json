@@ -94,5 +94,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001068": {
+    "workId": "wk_000001068",
+    "title": "인류는 쇠퇴했습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106919090"
+    },
+    "titles": {
+      "ko": "인류는 쇠퇴했습니다",
+      "en": "Humanity Has Declined",
+      "ja": "人類は衰退しました"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001189": {
+    "workId": "wk_000001189",
+    "title": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103822236"
+    },
+    "titles": {
+      "ko": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+      "en": "Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!",
+      "ja": "究極進化したフルダイブRPGが現実よりもクソゲーだったら"
+    },
+    "creator": "土日月",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

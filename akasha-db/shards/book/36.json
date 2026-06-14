@@ -1,0 +1,21 @@
+{
+  "wk_000001081": {
+    "workId": "wk_000001081",
+    "title": "대심문관의 비망록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10323906"
+    },
+    "titles": {
+      "ko": "대심문관의 비망록",
+      "en": "The Inquisitors' Manual"
+    },
+    "releaseYear": 1996,
+    "creator": "António Lobo Antunes",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000001075": {
+    "workId": "wk_000001075",
+    "title": "초전동로보 철인 28호 FX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071017"
+    },
+    "titles": {
+      "ko": "초전동로보 철인 28호 FX",
+      "en": "Chō Dendō Robo Tetsujin 28-go FX",
+      "ja": "超電動ロボ 鉄人28号FX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001086": {
+    "workId": "wk_000001086",
+    "title": "별 내리는 왕국의 니나",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110936716"
+    },
+    "titles": {
+      "ko": "별 내리는 왕국의 니나",
+      "en": "Nina the Starry Bride",
+      "ja": "星降る王国のニナ"
+    },
+    "creator": "Rikachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

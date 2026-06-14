@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001142": {
+    "workId": "wk_000001142",
+    "title": "매지컬 타루루토군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114006"
+    },
+    "titles": {
+      "ko": "매지컬 타루루토군",
+      "en": "Magical Taluluto",
+      "ja": "まじかる☆タルるートくん"
+    },
+    "creator": "Tatsuya Egawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001056": {
+    "workId": "wk_000001056",
+    "title": "워록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1047460"
+    },
+    "titles": {
+      "ko": "워록",
+      "en": "War Rock",
+      "ja": "WarRock"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001112": {
+    "workId": "wk_000001112",
+    "title": "슈퍼 마리오 3D랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050298"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 3D랜드",
+      "en": "Super Mario 3D Land",
+      "ja": "スーパーマリオ 3Dランド"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

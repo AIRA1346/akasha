@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001089": {
+    "workId": "wk_000001089",
+    "title": "타쿠미 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11121497"
+    },
+    "titles": {
+      "ko": "타쿠미 시리즈",
+      "en": "Takumi-kun Series",
+      "ja": "タクミくんシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

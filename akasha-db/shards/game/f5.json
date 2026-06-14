@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001055": {
+    "workId": "wk_000001055",
+    "title": "슈퍼 스매시 플래시 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104743462"
+    },
+    "titles": {
+      "ko": "슈퍼 스매시 플래시 2",
+      "en": "Super Smash Flash 2",
+      "ja": "スーパースマッシュフラッシュ2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

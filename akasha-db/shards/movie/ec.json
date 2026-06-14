@@ -1,0 +1,20 @@
+{
+  "wk_000001179": {
+    "workId": "wk_000001179",
+    "title": "킬링 오브 투 러버스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101093703"
+    },
+    "titles": {
+      "ko": "킬링 오브 투 러버스",
+      "en": "The Killing of Two Lovers"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

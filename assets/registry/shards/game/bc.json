@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001113": {
+    "workId": "wk_000001113",
+    "title": "잇 테익스 투",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105038239"
+    },
+    "titles": {
+      "ko": "잇 테익스 투",
+      "en": "It Takes Two"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

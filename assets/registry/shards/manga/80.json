@@ -82,5 +82,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001088": {
+    "workId": "wk_000001088",
+    "title": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111190454"
+    },
+    "titles": {
+      "ko": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+      "en": "Vermeil in Gold",
+      "ja": "金装のヴェルメイユ〜崖っぷち魔術師は最強の厄災と魔法世界を突き進む〜"
+    },
+    "releaseYear": 2018,
+    "creator": "Kōta Amana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001140": {
+    "workId": "wk_000001140",
+    "title": "합법 드러그",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1112661"
+    },
+    "titles": {
+      "ko": "합법 드러그",
+      "en": "Legal Drug",
+      "ja": "合法ドラッグ"
+    },
+    "creator": "Clamp",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

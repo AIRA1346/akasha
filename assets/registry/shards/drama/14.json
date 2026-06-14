@@ -1,0 +1,19 @@
+{
+  "wk_000001157": {
+    "workId": "wk_000001157",
+    "title": "디세냔도 투 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438970"
+    },
+    "titles": {
+      "ko": "디세냔도 투 아모르",
+      "en": "Diseñando tu amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

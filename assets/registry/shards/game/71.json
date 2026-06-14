@@ -1,0 +1,21 @@
+{
+  "wk_000001058": {
+    "workId": "wk_000001058",
+    "title": "더 킹 오브 파이터즈 XV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104758868"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 XV",
+      "en": "The King of Fighters XV",
+      "ja": "The King of Fighters XV"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

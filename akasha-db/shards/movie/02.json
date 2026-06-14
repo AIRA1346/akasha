@@ -1,0 +1,21 @@
+{
+  "wk_000001180": {
+    "workId": "wk_000001180",
+    "title": "화이트 타이거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101098258"
+    },
+    "titles": {
+      "ko": "화이트 타이거",
+      "en": "The White Tiger",
+      "ja": "ザ・ホワイト・タイガー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

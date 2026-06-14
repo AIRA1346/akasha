@@ -1,0 +1,19 @@
+{
+  "wk_000001099": {
+    "workId": "wk_000001099",
+    "title": "이니트 사 마그다마그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105085614"
+    },
+    "titles": {
+      "ko": "이니트 사 마그다마그",
+      "en": "Init sa Magdamag"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

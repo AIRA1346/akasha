@@ -1,0 +1,21 @@
+{
+  "wk_000001083": {
+    "workId": "wk_000001083",
+    "title": "신장공기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1032897"
+    },
+    "titles": {
+      "ko": "신장공기",
+      "en": "Shinchō kōki",
+      "ja": "信長公記"
+    },
+    "creator": "Ōta Gyūichi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

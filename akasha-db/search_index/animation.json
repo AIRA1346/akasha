@@ -296,6 +296,47 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001063",
+    "title": "Sonny Boy",
+    "shardId": "animation_b4",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sonny Boy",
+      "sonnyboy"
+    ],
+    "titles": {
+      "ko": "Sonny Boy",
+      "en": "Sonny Boy",
+      "ja": "Sonny Boy"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001172",
+    "title": "Takt op.Destiny",
+    "shardId": "animation_4f",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Takt op.Destiny",
+      "takt op.Destiny",
+      "taktop.destiny"
+    ],
+    "titles": {
+      "ko": "Takt op.Destiny",
+      "en": "Takt op.Destiny",
+      "ja": "takt op.Destiny"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000573",
     "title": "VS기사 라무네 앤드 40염",
     "shardId": "animation_61",
@@ -1121,6 +1162,30 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001076",
+    "title": "나의 히어로 아카데미아 더 무비: 월드 히어로즈 미션",
+    "shardId": "animation_e3",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "My Hero Academia: World Heroes' Mission",
+      "myheroacademiaworldheroes'mission",
+      "僕のヒーローアカデミア THE MOVIE ワールド ヒーローズ ミッション",
+      "僕のヒーローアカデミアthemovieワールドヒーローズミッション",
+      "나의 히어로 아카데미아 더 무비: 월드 히어로즈 미션",
+      "나의히어로아카데미아더무비월드히어로즈미션"
+    ],
+    "titles": {
+      "ko": "나의 히어로 아카데미아 더 무비: 월드 히어로즈 미션",
+      "en": "My Hero Academia: World Heroes' Mission",
+      "ja": "僕のヒーローアカデミア THE MOVIE ワールド ヒーローズ ミッション"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000249",
     "title": "날씨의 아이",
     "shardId": "animation_d6",
@@ -1520,6 +1585,53 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001066",
+    "title": "동쪽의 에덴",
+    "shardId": "animation_2d",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Eden of the East",
+      "edenoftheeast",
+      "東のエデン",
+      "동쪽의 에덴",
+      "동쪽의에덴"
+    ],
+    "titles": {
+      "ko": "동쪽의 에덴",
+      "en": "Eden of the East",
+      "ja": "東のエデン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001123",
+    "title": "듄의 아이들",
+    "shardId": "animation_bf",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Frank Herbert's Children of Dune",
+      "frankherbert'schildrenofdune",
+      "デューン/砂の惑星II",
+      "デューン砂の惑星ii",
+      "듄의 아이들",
+      "듄의아이들"
+    ],
+    "titles": {
+      "ko": "듄의 아이들",
+      "en": "Frank Herbert's Children of Dune",
+      "ja": "デューン/砂の惑星II"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000729",
     "title": "드래곤, 집을 사다.",
     "shardId": "animation_d6",
@@ -1624,6 +1736,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001072",
+    "title": "루팡 3세 PART6",
+    "shardId": "animation_67",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Lupin the 3rd Part 6",
+      "lupinthe3rdpart6",
+      "ルパン三世 PART6",
+      "ルパン三世part6",
+      "루팡 3세 PART6",
+      "루팡3세part6"
+    ],
+    "titles": {
+      "ko": "루팡 3세 PART6",
+      "en": "Lupin the 3rd Part 6",
+      "ja": "ルパン三世 PART6"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000211",
     "title": "리코리스 리코일",
     "shardId": "animation_ff",
@@ -1711,6 +1847,30 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001122",
+    "title": "마야와 3인의 용사",
+    "shardId": "animation_42",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Maya and the Three",
+      "mayaandthethree",
+      "プリンセスマヤと3人の戦士たち",
+      "プリンセス・マヤと3人の戦士たち",
+      "마야와 3인의 용사",
+      "마야와3인의용사"
+    ],
+    "titles": {
+      "ko": "마야와 3인의 용사",
+      "en": "Maya and the Three",
+      "ja": "プリンセス・マヤと3人の戦士たち"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000670",
@@ -2012,6 +2172,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001073",
+    "title": "바보와 시험과 소환수",
+    "shardId": "animation_8c",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Baka and Test",
+      "bakaandtest",
+      "バカとテストと召喚獣",
+      "바보와 시험과 소환수",
+      "바보와시험과소환수"
+    ],
+    "titles": {
+      "ko": "바보와 시험과 소환수",
+      "en": "Baka and Test",
+      "ja": "バカとテストと召喚獣"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000248",
     "title": "바이올렛 에버가든",
     "shardId": "animation_d8",
@@ -2129,6 +2312,53 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001064",
+    "title": "뱅드림! 로젤리아 에피소드 I : 약속",
+    "shardId": "animation_98",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "BanG Dream! Episode of Roselia I : Promise",
+      "BanG Dream! Episode of Roselia I : 約束",
+      "bangdream!episodeofroseliaipromise",
+      "bangdream!episodeofroseliai約束",
+      "뱅드림! 로젤리아 에피소드 I : 약속",
+      "뱅드림!로젤리아에피소드i약속"
+    ],
+    "titles": {
+      "ko": "뱅드림! 로젤리아 에피소드 I : 약속",
+      "en": "BanG Dream! Episode of Roselia I : Promise",
+      "ja": "BanG Dream! Episode of Roselia I : 約束"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001124",
+    "title": "별을 쫓는 아이",
+    "shardId": "animation_5c",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Children Who Chase Lost Voices",
+      "childrenwhochaselostvoices",
+      "星を追う子ども",
+      "별을 쫓는 아이",
+      "별을쫓는아이"
+    ],
+    "titles": {
+      "ko": "별을 쫓는 아이",
+      "en": "Children Who Chase Lost Voices",
+      "ja": "星を追う子ども"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000178",
     "title": "봇치 더 록!",
     "shardId": "animation_a4",
@@ -2226,6 +2456,30 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001067",
+    "title": "블랙 버드",
+    "shardId": "animation_56",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Black Bird",
+      "blackbird",
+      "ブラックバード",
+      "ブラック・バード",
+      "블랙 버드",
+      "블랙버드"
+    ],
+    "titles": {
+      "ko": "블랙 버드",
+      "en": "Black Bird",
+      "ja": "ブラック・バード"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000174",
@@ -2379,6 +2633,29 @@
       "ko": "비주얼 프리즌",
       "en": "Visual Prison",
       "ja": "ヴィジュアルプリズン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001074",
+    "title": "비탄의 아리아",
+    "shardId": "animation_43",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Aria the Scarlet Ammo",
+      "ariathescarletammo",
+      "緋弾のアリア",
+      "비탄의 아리아",
+      "비탄의아리아"
+    ],
+    "titles": {
+      "ko": "비탄의 아리아",
+      "en": "Aria the Scarlet Ammo",
+      "ja": "緋弾のアリア"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2593,6 +2870,30 @@
       "ko": "사쿠라장의 애완 그녀",
       "en": "The Pet Girl of Sakurasou",
       "ja": "さくら荘のペットな彼女"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001125",
+    "title": "산 파트리냐노: 구원자의 죄",
+    "shardId": "animation_26",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "SanPa: Sins of the Savior",
+      "sanpasinsofthesavior",
+      "サンパトリニャーノの光と闇",
+      "サン・パトリニャーノの光と闇",
+      "산 파트리냐노: 구원자의 죄",
+      "산파트리냐노구원자의죄"
+    ],
+    "titles": {
+      "ko": "산 파트리냐노: 구원자의 죄",
+      "en": "SanPa: Sins of the Savior",
+      "ja": "サン・パトリニャーノの光と闇"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2857,6 +3158,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001121",
+    "title": "신무월의 무녀",
+    "shardId": "animation_0c",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kannazuki no Miko",
+      "kannazukinomiko",
+      "神無月の巫女",
+      "신무월의 무녀",
+      "신무월의무녀"
+    ],
+    "titles": {
+      "ko": "신무월의 무녀",
+      "en": "Kannazuki no Miko",
+      "ja": "神無月の巫女"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000219",
     "title": "신세기 에반게리온",
     "shardId": "animation_b9",
@@ -3013,6 +3337,29 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001176",
+    "title": "아이의 노랫소리를 들려줘",
+    "shardId": "animation_8e",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sing a Bit of Harmony",
+      "singabitofharmony",
+      "アイの歌声を聴かせて",
+      "아이의 노랫소리를 들려줘",
+      "아이의노랫소리를들려줘"
+    ],
+    "titles": {
+      "ko": "아이의 노랫소리를 들려줘",
+      "en": "Sing a Bit of Harmony",
+      "ja": "アイの歌声を聴かせて"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000797",
@@ -3433,6 +3780,52 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001173",
+    "title": "용의 전설 레전더",
+    "shardId": "animation_59",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Legendz",
+      "legendz",
+      "レジェンズ",
+      "용의 전설 레전더",
+      "용의전설레전더"
+    ],
+    "titles": {
+      "ko": "용의 전설 레전더",
+      "en": "Legendz",
+      "ja": "レジェンズ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001119",
+    "title": "용자왕 가오가이가",
+    "shardId": "animation_e9",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The King of Braves GaoGaiGar",
+      "thekingofbravesgaogaigar",
+      "勇者王ガオガイガー",
+      "용자왕 가오가이가",
+      "용자왕가오가이가"
+    ],
+    "titles": {
+      "ko": "용자왕 가오가이가",
+      "en": "The King of Braves GaoGaiGar",
+      "ja": "勇者王ガオガイガー"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000732",
     "title": "용자지령 다그온",
     "shardId": "animation_15",
@@ -3525,6 +3918,29 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001177",
+    "title": "워킹맨",
+    "shardId": "animation_cf",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "安野モヨコ",
+    "tags": [],
+    "searchTokens": [
+      "Hataraki Man",
+      "hatarakiman",
+      "働きマン",
+      "安野モヨコ",
+      "워킹맨"
+    ],
+    "titles": {
+      "ko": "워킹맨",
+      "en": "Hataraki Man",
+      "ja": "働きマン"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000473",
@@ -3902,6 +4318,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001069",
+    "title": "이것은 좀비입니까?",
+    "shardId": "animation_50",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Is This a Zombie?",
+      "isthisazombie?",
+      "これはゾンビですか？",
+      "이것은 좀비입니까?",
+      "이것은좀비입니까?"
+    ],
+    "titles": {
+      "ko": "이것은 좀비입니까?",
+      "en": "Is This a Zombie?",
+      "ja": "これはゾンビですか？"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000847",
     "title": "이노센스",
     "shardId": "animation_15",
@@ -3956,6 +4395,52 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001065",
+    "title": "익스플레인: 돈을 해설하다",
+    "shardId": "animation_1f",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "\"お金\"をダイジェスト",
+      "Money, Explained",
+      "money,explained",
+      "익스플레인: 돈을 해설하다",
+      "익스플레인돈을해설하다"
+    ],
+    "titles": {
+      "ko": "익스플레인: 돈을 해설하다",
+      "en": "Money, Explained",
+      "ja": "\"お金\"をダイジェスト"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001068",
+    "title": "인류는 쇠퇴했습니다",
+    "shardId": "animation_4e",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Humanity Has Declined",
+      "humanityhasdeclined",
+      "人類は衰退しました",
+      "인류는 쇠퇴했습니다",
+      "인류는쇠퇴했습니다"
+    ],
+    "titles": {
+      "ko": "인류는 쇠퇴했습니다",
+      "en": "Humanity Has Declined",
+      "ja": "人類は衰退しました"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000970",
     "title": "인피니트 스트라토스",
     "shardId": "animation_4c",
@@ -3975,6 +4460,29 @@
       "ko": "인피니트 스트라토스",
       "en": "Infinite Stratos",
       "ja": "IS〈インフィニット・ストラトス〉"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001120",
+    "title": "작은 눈의 요정 슈가",
+    "shardId": "animation_ff",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "A Little Snow Fairy Sugar",
+      "alittlesnowfairysugar",
+      "ちっちゃな雪使いシュガー",
+      "작은 눈의 요정 슈가",
+      "작은눈의요정슈가"
+    ],
+    "titles": {
+      "ko": "작은 눈의 요정 슈가",
+      "en": "A Little Snow Fairy Sugar",
+      "ja": "ちっちゃな雪使いシュガー"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4563,6 +5071,30 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001075",
+    "title": "초전동로보 철인 28호 FX",
+    "shardId": "animation_80",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chō Dendō Robo Tetsujin 28-go FX",
+      "chōdendōrobotetsujin28gofx",
+      "超電動ロボ 鉄人28号FX",
+      "超電動ロボ鉄人28号fx",
+      "초전동로보 철인 28호 FX",
+      "초전동로보철인28호fx"
+    ],
+    "titles": {
+      "ko": "초전동로보 철인 28호 FX",
+      "en": "Chō Dendō Robo Tetsujin 28-go FX",
+      "ja": "超電動ロボ 鉄人28号FX"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000851",
     "title": "총황무진의 파프니르",
     "shardId": "animation_04",
@@ -4903,6 +5435,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001175",
+    "title": "코바야시네 메이드래곤",
+    "shardId": "animation_ad",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Miss Kobayashi's Dragon Maid",
+      "misskobayashi'sdragonmaid",
+      "小林さんちのメイドラゴン",
+      "코바야시네 메이드래곤",
+      "코바야시네메이드래곤"
+    ],
+    "titles": {
+      "ko": "코바야시네 메이드래곤",
+      "en": "Miss Kobayashi's Dragon Maid",
+      "ja": "小林さんちのメイドラゴン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000181",
     "title": "클라나드",
     "shardId": "animation_18",
@@ -5158,6 +5713,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001174",
+    "title": "파이널 어프로치",
+    "shardId": "animation_7d",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Final Approach",
+      "finalapproach",
+      "Φなる・あぷろーち",
+      "φなるあぷろーち",
+      "파이널 어프로치",
+      "파이널어프로치"
+    ],
+    "titles": {
+      "ko": "파이널 어프로치",
+      "en": "Final Approach",
+      "ja": "Φなる・あぷろーち"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000191",
     "title": "페이트/제로",
     "shardId": "animation_2a",
@@ -5187,6 +5766,29 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001071",
+    "title": "프리티 올 프렌즈 셀렉션",
+    "shardId": "animation_16",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pretty All Friends Selection",
+      "prettyallfriendsselection",
+      "プリティーオールフレンズセレクション",
+      "프리티 올 프렌즈 셀렉션",
+      "프리티올프렌즈셀렉션"
+    ],
+    "titles": {
+      "ko": "프리티 올 프렌즈 셀렉션",
+      "en": "Pretty All Friends Selection",
+      "ja": "プリティーオールフレンズセレクション"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000616",
@@ -5392,6 +5994,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000001126",
+    "title": "항구의 니쿠코짱!",
+    "shardId": "animation_cb",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Fortune Favors Lady Nikuko",
+      "fortunefavorsladynikuko",
+      "漁港の肉子ちゃん",
+      "항구의 니쿠코짱!",
+      "항구의니쿠코짱!"
+    ],
+    "titles": {
+      "ko": "항구의 니쿠코짱!",
+      "en": "Fortune Favors Lady Nikuko",
+      "ja": "漁港の肉子ちゃん"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000664",
     "title": "항설백물어",
     "shardId": "animation_a2",
@@ -5449,6 +6074,29 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001070",
+    "title": "헤비 오브젝트",
+    "shardId": "animation_ae",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Heavy Object",
+      "heavyobject",
+      "ヘヴィーオブジェクト",
+      "헤비 오브젝트",
+      "헤비오브젝트"
+    ],
+    "titles": {
+      "ko": "헤비 오브젝트",
+      "en": "Heavy Object",
+      "ja": "ヘヴィーオブジェクト"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000201",

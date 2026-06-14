@@ -1,0 +1,20 @@
+{
+  "wk_000001163": {
+    "workId": "wk_000001163",
+    "title": "블리치 DS 2nd 흑의 나부끼는 진혼가",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050981"
+    },
+    "titles": {
+      "ko": "블리치 DS 2nd 흑의 나부끼는 진혼가",
+      "en": "Bleach: Dark Souls"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

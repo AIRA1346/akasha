@@ -1,0 +1,22 @@
+{
+  "wk_000001135": {
+    "workId": "wk_000001135",
+    "title": "헤르만과 도로테아",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035603"
+    },
+    "titles": {
+      "ko": "헤르만과 도로테아",
+      "en": "Hermann and Dorothea",
+      "ja": "ヘルマンとドロテーア"
+    },
+    "releaseYear": 1797,
+    "creator": "Johann Wolfgang von Goethe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

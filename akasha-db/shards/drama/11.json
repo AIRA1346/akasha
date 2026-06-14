@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001100": {
+    "workId": "wk_000001100",
+    "title": "미스 몬테크리스토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105097165"
+    },
+    "titles": {
+      "ko": "미스 몬테크리스토",
+      "en": "Miss Monte-Cristo",
+      "ja": "ミス・モンテ・クリスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

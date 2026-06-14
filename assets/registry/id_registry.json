@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "nextWorkId": 1034,
+  "nextWorkId": 1194,
   "byWk": {
     "wk_000000001": {
       "category": "animation",
@@ -4835,6 +4835,638 @@
       "legacyIds": []
     },
     "wk_000001033": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001034": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001035": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001036": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001037": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001038": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001039": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001040": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001041": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001042": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001043": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001044": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001045": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001046": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001047": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001048": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001049": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001050": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001051": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001052": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001053": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001054": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001055": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001056": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001057": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001058": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001059": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001060": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001061": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001062": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001063": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001064": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001065": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001066": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001067": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001068": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001069": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001070": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001071": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001072": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001073": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001074": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001075": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001076": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001077": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001078": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001079": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001080": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001081": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001082": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001083": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001084": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001085": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001086": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001087": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001088": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001089": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001090": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001091": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001092": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001093": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001094": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001095": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001096": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001097": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001098": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001099": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001100": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001101": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001102": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001103": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001104": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001105": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001106": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001107": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001108": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001109": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001110": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001111": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001112": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001113": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001114": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001115": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001116": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001118": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001119": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001120": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001121": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001122": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001123": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001124": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001125": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001126": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001127": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001128": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001129": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001130": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001131": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001132": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001133": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001134": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001135": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001136": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001137": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001138": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001139": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001140": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001141": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001142": {
+      "category": "manga",
+      "legacyIds": []
+    },
+    "wk_000001143": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001144": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001145": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001146": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001147": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001148": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001149": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001150": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001151": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001152": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001153": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001154": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001155": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001156": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001157": {
+      "category": "drama",
+      "legacyIds": []
+    },
+    "wk_000001158": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001159": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001160": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001161": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001162": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001163": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001164": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001166": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001167": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001168": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001169": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001170": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001171": {
+      "category": "game",
+      "legacyIds": []
+    },
+    "wk_000001172": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001173": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001174": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001175": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001176": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001177": {
+      "category": "animation",
+      "legacyIds": []
+    },
+    "wk_000001178": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001179": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001180": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001181": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001182": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001183": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001184": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001185": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001186": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001187": {
+      "category": "movie",
+      "legacyIds": []
+    },
+    "wk_000001188": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001189": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001190": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001191": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001192": {
+      "category": "book",
+      "legacyIds": []
+    },
+    "wk_000001193": {
       "category": "book",
       "legacyIds": []
     }

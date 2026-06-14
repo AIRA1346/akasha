@@ -1,0 +1,38 @@
+{
+  "wk_000001043": {
+    "workId": "wk_000001043",
+    "title": "창조영 2021",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104883373"
+    },
+    "titles": {
+      "ko": "창조영 2021",
+      "en": "Produce Camp 2021",
+      "ja": "創造営2021"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001146": {
+    "workId": "wk_000001146",
+    "title": "자정 클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105304384"
+    },
+    "titles": {
+      "ko": "자정 클럽",
+      "en": "The Midnight Club",
+      "ja": "ミッドナイト・クラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

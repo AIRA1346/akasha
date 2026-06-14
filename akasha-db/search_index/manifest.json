@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "entryCount": 1006,
-  "generatedAt": "2026-06-14T11:06:50.685522Z",
+  "entryCount": 1164,
+  "generatedAt": "2026-06-14T12:42:28.531101Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 201,
-      "sha256": "4b5d303946af28187e707f238bf60607924772242655a18ee4954e5db5ed2b5d"
+      "entryCount": 229,
+      "sha256": "58c5062368fe74fdfec7140bb0c39142ca2c52ff8d47cb5055ec582fbdb30ba6"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 78,
-      "sha256": "7ceb1ac975db168ceb777b5322e9a0e438e9b43ca2720e12d99c1baad0e985c3"
+      "entryCount": 96,
+      "sha256": "d6f1b6b9c99ee1666f8fa03ee5e1bc229932ea8d97cc640b0edf2146b388b31c"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 158,
-      "sha256": "ae39847b94a388187aadcb675f858b822cd9b2a65191969117addc06b4fc17a5"
+      "entryCount": 200,
+      "sha256": "3d85811c7dbcb1568f54dbe79b7cf64c0a5a804499bedb768271f4945cdde2ef"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 214,
-      "sha256": "6b8ce2086a2171e6a4bee004fa95ecc5664f68dbe87b97934cdc6d546785be3b"
+      "entryCount": 247,
+      "sha256": "20733c196408ca6b5bd9b12559a993db9842f2c44a8fb2cbb26d6d59ef28c4d2"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 240,
-      "sha256": "e2413919a535e3dd4cc3ea11c74d50fabebc467d23c888343846d760505589cb"
+      "entryCount": 259,
+      "sha256": "ea99a5e92e0327d7e7343dce6502d34968e21374eec7bf2e7b408a361462d5d8"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 66,
-      "sha256": "8f683036b0719042fd07b42c819486edd4dcd4c42cadb2074ea8dfd3c3533e35"
+      "entryCount": 84,
+      "sha256": "23aaed0088354f5109bdbfd5d6baa2aca1a7cdbb77f313535f2fa779e3ceda6b"
     },
     {
       "category": "webtoon",

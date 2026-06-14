@@ -1,0 +1,21 @@
+{
+  "wk_000001136": {
+    "workId": "wk_000001136",
+    "title": "성 베르나르두",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10366316"
+    },
+    "titles": {
+      "ko": "성 베르나르두",
+      "en": "Sao Bernardo"
+    },
+    "releaseYear": 1934,
+    "creator": "Graciliano Ramos",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

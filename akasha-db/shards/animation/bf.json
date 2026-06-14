@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001123": {
+    "workId": "wk_000001123",
+    "title": "듄의 아이들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072774"
+    },
+    "titles": {
+      "ko": "듄의 아이들",
+      "en": "Frank Herbert's Children of Dune",
+      "ja": "デューン/砂の惑星II"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

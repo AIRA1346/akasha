@@ -1,0 +1,21 @@
+{
+  "wk_000001192": {
+    "workId": "wk_000001192",
+    "title": "덕혜옹주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103845728"
+    },
+    "titles": {
+      "ko": "덕혜옹주",
+      "en": "Q103845728"
+    },
+    "releaseYear": 2009,
+    "creator": "Kwon Bee-young",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

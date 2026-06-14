@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001090": {
+    "workId": "wk_000001090",
+    "title": "기동전사 건담 SEED MSV",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11122081"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED MSV",
+      "en": "Mobile Suit Gundam SEED MSV",
+      "ja": "ガンダムSEED MSV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

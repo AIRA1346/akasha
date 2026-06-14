@@ -1,0 +1,21 @@
+{
+  "wk_000001161": {
+    "workId": "wk_000001161",
+    "title": "블랙 서지나이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105093727"
+    },
+    "titles": {
+      "ko": "블랙 서지나이트",
+      "en": "Black Surgenight",
+      "ja": "ブラック・サージナイト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

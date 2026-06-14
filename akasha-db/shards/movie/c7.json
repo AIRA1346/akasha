@@ -1,0 +1,21 @@
+{
+  "wk_000001129": {
+    "workId": "wk_000001129",
+    "title": "인생은 아름다워",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101001902"
+    },
+    "titles": {
+      "ko": "인생은 아름다워",
+      "en": "Life Is Beautiful",
+      "ja": "人生は、美しい"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

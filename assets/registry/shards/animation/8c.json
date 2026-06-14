@@ -1,0 +1,20 @@
+{
+  "wk_000001073": {
+    "workId": "wk_000001073",
+    "title": "바보와 시험과 소환수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107015800"
+    },
+    "titles": {
+      "ko": "바보와 시험과 소환수",
+      "en": "Baka and Test",
+      "ja": "バカとテストと召喚獣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

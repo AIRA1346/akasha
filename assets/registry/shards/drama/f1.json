@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001105": {
+    "workId": "wk_000001105",
+    "title": "유금세월",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105212144"
+    },
+    "titles": {
+      "ko": "유금세월",
+      "en": "My Best Friend's Story"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

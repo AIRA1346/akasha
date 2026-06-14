@@ -1,0 +1,22 @@
+{
+  "wk_000001137": {
+    "workId": "wk_000001137",
+    "title": "오브리 머투린 시리즈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10376289"
+    },
+    "titles": {
+      "ko": "오브리 머투린 시리즈",
+      "en": "Aubrey-Maturin series",
+      "ja": "オーブリー&マチュリンシリーズ"
+    },
+    "releaseYear": 1969,
+    "creator": "패트릭 오브라이언",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

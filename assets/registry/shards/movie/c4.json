@@ -1,0 +1,21 @@
+{
+  "wk_000001133": {
+    "workId": "wk_000001133",
+    "title": "레지던트 이블: 웰컴 투 라쿤 시티",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101069738"
+    },
+    "titles": {
+      "ko": "레지던트 이블: 웰컴 투 라쿤 시티",
+      "en": "Resident Evil: Welcome to Raccoon City",
+      "ja": "バイオハザード: ウェルカム・トゥ・ラクーンシティ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

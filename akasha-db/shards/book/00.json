@@ -1,0 +1,20 @@
+{
+  "wk_000001079": {
+    "workId": "wk_000001079",
+    "title": "조셉 스미스—마태",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10308605"
+    },
+    "titles": {
+      "ko": "조셉 스미스—마태",
+      "en": "Joseph Smith—Matthew",
+      "ja": "ジョセフ・スミス―マタイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

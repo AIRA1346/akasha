@@ -1,0 +1,37 @@
+{
+  "wk_000001147": {
+    "workId": "wk_000001147",
+    "title": "이상의 아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053156"
+    },
+    "titles": {
+      "ko": "이상의 아들",
+      "en": "Perfect Son",
+      "ja": "理想の息子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001148": {
+    "workId": "wk_000001148",
+    "title": "투 굿 투 비 트루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105320222"
+    },
+    "titles": {
+      "ko": "투 굿 투 비 트루",
+      "en": "2 Good 2 Be True"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

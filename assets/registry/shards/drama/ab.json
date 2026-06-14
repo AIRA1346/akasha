@@ -1,0 +1,19 @@
+{
+  "wk_000001154": {
+    "workId": "wk_000001154",
+    "title": "희망과 신념",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053983"
+    },
+    "titles": {
+      "ko": "희망과 신념",
+      "en": "Hope & Faith"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

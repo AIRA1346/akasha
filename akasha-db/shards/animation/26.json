@@ -1,0 +1,20 @@
+{
+  "wk_000001125": {
+    "workId": "wk_000001125",
+    "title": "산 파트리냐노: 구원자의 죄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107313388"
+    },
+    "titles": {
+      "ko": "산 파트리냐노: 구원자의 죄",
+      "en": "SanPa: Sins of the Savior",
+      "ja": "サン・パトリニャーノの光と闇"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

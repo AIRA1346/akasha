@@ -1,0 +1,20 @@
+{
+  "wk_000001048": {
+    "workId": "wk_000001048",
+    "title": "컬러 러쉬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902640"
+    },
+    "titles": {
+      "ko": "컬러 러쉬",
+      "en": "Color Rush",
+      "ja": "カラーラッシュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

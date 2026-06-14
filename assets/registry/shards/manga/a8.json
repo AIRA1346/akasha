@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001039": {
+    "workId": "wk_000001039",
+    "title": "타코피의 원죄",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110788072"
+    },
+    "titles": {
+      "ko": "타코피의 원죄",
+      "en": "Takopi's Original Sin",
+      "ja": "タコピーの原罪"
+    },
+    "creator": "Taizan 5",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

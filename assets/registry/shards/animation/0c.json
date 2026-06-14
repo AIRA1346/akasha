@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001121": {
+    "workId": "wk_000001121",
+    "title": "신무월의 무녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107209992"
+    },
+    "titles": {
+      "ko": "신무월의 무녀",
+      "en": "Kannazuki no Miko",
+      "ja": "神無月の巫女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

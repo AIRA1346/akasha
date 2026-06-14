@@ -48,5 +48,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001053": {
+    "workId": "wk_000001053",
+    "title": "포르 투 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049929"
+    },
+    "titles": {
+      "ko": "포르 투 아모르",
+      "en": "Por tu amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

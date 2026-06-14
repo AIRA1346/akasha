@@ -1,0 +1,21 @@
+{
+  "wk_000001059": {
+    "workId": "wk_000001059",
+    "title": "불과 얼음의 춤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104762097"
+    },
+    "titles": {
+      "ko": "불과 얼음의 춤",
+      "en": "A Dance of Fire and Ice",
+      "ja": "A Dance of Fire and Ice"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -43,16 +43,17 @@ Future<void> prefetchRegistryForFilters({
     }
     if (isMounted()) onDataChanged();
 
-    if (!append) {
-      unawaited(
-        WorksRegistry.prefetchBrowseWindow(
-          offset: browseOffset,
-          limit: WorksRegistry.browsePrefetchWindowSize,
-          fetchRemote: true,
-        ).then((_) {
-          if (isMounted()) onDataChanged();
-        }),
-      );
+    final remotePrefetch = WorksRegistry.prefetchBrowseWindow(
+      offset: browseOffset,
+      limit: WorksRegistry.browsePrefetchWindowSize,
+      fetchRemote: true,
+    ).then((_) {
+      if (isMounted()) onDataChanged();
+    });
+    if (append) {
+      await remotePrefetch;
+    } else {
+      unawaited(remotePrefetch);
     }
     return;
   }

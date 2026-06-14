@@ -1,0 +1,21 @@
+{
+  "wk_000001138": {
+    "workId": "wk_000001138",
+    "title": "주역참동계",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1037821"
+    },
+    "titles": {
+      "ko": "주역참동계",
+      "en": "Cantong qi",
+      "ja": "周易参同契"
+    },
+    "creator": "Wei Boyang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000001084": {
+    "workId": "wk_000001084",
+    "title": "성 정치학",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10351063"
+    },
+    "titles": {
+      "ko": "성 정치학",
+      "en": "Sexual Politics",
+      "ja": "性の政治学"
+    },
+    "releaseYear": 1970,
+    "creator": "Kate Millett",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

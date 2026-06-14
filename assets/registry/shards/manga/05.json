@@ -1,0 +1,21 @@
+{
+  "wk_000001092": {
+    "workId": "wk_000001092",
+    "title": "개가 되었더니 좋아하는 사람이 날 주웠다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111234587"
+    },
+    "titles": {
+      "ko": "개가 되었더니 좋아하는 사람이 날 주웠다.",
+      "en": "My Life as Inukai-san's Dog",
+      "ja": "犬になったら好きな人に拾われた。"
+    },
+    "creator": "古川五勢",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

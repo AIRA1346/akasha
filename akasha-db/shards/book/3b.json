@@ -1,0 +1,21 @@
+{
+  "wk_000001082": {
+    "workId": "wk_000001082",
+    "title": "복기정의론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10326578"
+    },
+    "titles": {
+      "ko": "복기정의론",
+      "en": "On the Essential Meaning of Ingesting Vital Breath",
+      "ja": "服気精義論"
+    },
+    "creator": "Sima Chengchen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

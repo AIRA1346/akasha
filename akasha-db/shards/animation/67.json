@@ -1,0 +1,20 @@
+{
+  "wk_000001072": {
+    "workId": "wk_000001072",
+    "title": "루팡 3세 PART6",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106984390"
+    },
+    "titles": {
+      "ko": "루팡 3세 PART6",
+      "en": "Lupin the 3rd Part 6",
+      "ja": "ルパン三世 PART6"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -32,5 +32,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001087": {
+    "workId": "wk_000001087",
+    "title": "부덕의 길드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111187955"
+    },
+    "titles": {
+      "ko": "부덕의 길드",
+      "en": "Immoral Guild",
+      "ja": "不徳のギルド"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

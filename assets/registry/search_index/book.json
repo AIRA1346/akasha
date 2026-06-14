@@ -139,6 +139,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001190",
+    "title": "고보덕",
+    "shardId": "book_56",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Thomas Norton",
+    "tags": [],
+    "searchTokens": [
+      "Gorboduc",
+      "Thomas Norton",
+      "gorboduc",
+      "thomasnorton",
+      "ゴーボダック",
+      "고보덕"
+    ],
+    "titles": {
+      "ko": "고보덕",
+      "en": "Gorboduc",
+      "ja": "ゴーボダック"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001033",
     "title": "고산자",
     "shardId": "book_70",
@@ -181,6 +205,31 @@
       "ko": "곶의 마요이가",
       "en": "Misaki no Mayoiga",
       "ja": "岬のマヨイガ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001189",
+    "title": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+    "shardId": "book_d3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "土日月",
+    "tags": [],
+    "searchTokens": [
+      "Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!",
+      "fulldivethisultimatenextgenfulldiverpgisevenshittierthanreallife!",
+      "土日月",
+      "究極進化したフルダイブRPGが現実よりもクソゲーだったら",
+      "究極進化したフルダイブrpgが現実よりもクソゲーだったら",
+      "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+      "궁극진화한풀다이브rpg가현실보다망겜이라면"
+    ],
+    "titles": {
+      "ko": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+      "en": "Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!",
+      "ja": "究極進化したフルダイブRPGが現実よりもクソゲーだったら"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -331,6 +380,51 @@
       "ko": "다빈치 코드"
     },
     "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001081",
+    "title": "대심문관의 비망록",
+    "shardId": "book_36",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "António Lobo Antunes",
+    "tags": [],
+    "searchTokens": [
+      "António Lobo Antunes",
+      "The Inquisitors' Manual",
+      "antónioloboantunes",
+      "theinquisitors'manual",
+      "대심문관의 비망록",
+      "대심문관의비망록"
+    ],
+    "titles": {
+      "ko": "대심문관의 비망록",
+      "en": "The Inquisitors' Manual"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001192",
+    "title": "덕혜옹주",
+    "shardId": "book_0e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kwon Bee-young",
+    "tags": [],
+    "searchTokens": [
+      "Kwon Bee-young",
+      "Q103845728",
+      "kwonbeeyoung",
+      "q103845728",
+      "덕혜옹주"
+    ],
+    "titles": {
+      "ko": "덕혜옹주",
+      "en": "Q103845728"
+    },
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {
@@ -488,6 +582,31 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001080",
+    "title": "명통감",
+    "shardId": "book_a8",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xia Xie",
+    "tags": [],
+    "searchTokens": [
+      "Myeongtonggam",
+      "Xia Xie",
+      "myeongtonggam",
+      "xiaxie",
+      "明通鑑",
+      "명통감"
+    ],
+    "titles": {
+      "ko": "명통감",
+      "en": "Myeongtonggam",
+      "ja": "明通鑑",
+      "zh": "明通鑑"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000808",
@@ -709,6 +828,31 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001188",
+    "title": "법언 (책)",
+    "shardId": "book_e7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yang Xiong",
+    "tags": [],
+    "searchTokens": [
+      "Fa yan",
+      "Yang Xiong",
+      "fayan",
+      "yangxiong",
+      "法言",
+      "법언 (책)",
+      "법언(책)"
+    ],
+    "titles": {
+      "ko": "법언 (책)",
+      "en": "Fa yan",
+      "ja": "法言"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001028",
     "title": "보건교사 안은영",
     "shardId": "book_f6",
@@ -733,6 +877,30 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001082",
+    "title": "복기정의론",
+    "shardId": "book_3b",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Sima Chengchen",
+    "tags": [],
+    "searchTokens": [
+      "On the Essential Meaning of Ingesting Vital Breath",
+      "Sima Chengchen",
+      "ontheessentialmeaningofingestingvitalbreath",
+      "simachengchen",
+      "服気精義論",
+      "복기정의론"
+    ],
+    "titles": {
+      "ko": "복기정의론",
+      "en": "On the Essential Meaning of Ingesting Vital Breath",
+      "ja": "服気精義論"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000754",
@@ -893,6 +1061,54 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001136",
+    "title": "성 베르나르두",
+    "shardId": "book_3d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Graciliano Ramos",
+    "tags": [],
+    "searchTokens": [
+      "Graciliano Ramos",
+      "Sao Bernardo",
+      "gracilianoramos",
+      "saobernardo",
+      "성 베르나르두",
+      "성베르나르두"
+    ],
+    "titles": {
+      "ko": "성 베르나르두",
+      "en": "Sao Bernardo"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001084",
+    "title": "성 정치학",
+    "shardId": "book_33",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kate Millett",
+    "tags": [],
+    "searchTokens": [
+      "Kate Millett",
+      "Sexual Politics",
+      "katemillett",
+      "sexualpolitics",
+      "性の政治学",
+      "성 정치학",
+      "성정치학"
+    ],
+    "titles": {
+      "ko": "성 정치학",
+      "en": "Sexual Politics",
+      "ja": "性の政治学"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000683",
     "title": "셔기 베인",
     "shardId": "book_a9",
@@ -978,6 +1194,29 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001078",
+    "title": "손빈병법",
+    "shardId": "book_ef",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "손빈",
+    "tags": [],
+    "searchTokens": [
+      "Sun Bin's Art of War",
+      "sunbin'sartofwar",
+      "孫臏兵法",
+      "손빈",
+      "손빈병법"
+    ],
+    "titles": {
+      "ko": "손빈병법",
+      "en": "Sun Bin's Art of War",
+      "ja": "孫臏兵法"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000809",
@@ -1071,6 +1310,30 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001083",
+    "title": "신장공기",
+    "shardId": "book_83",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Ōta Gyūichi",
+    "tags": [],
+    "searchTokens": [
+      "Shinchō kōki",
+      "shinchōkōki",
+      "Ōta Gyūichi",
+      "ōtagyūichi",
+      "信長公記",
+      "신장공기"
+    ],
+    "titles": {
+      "ko": "신장공기",
+      "en": "Shinchō kōki",
+      "ja": "信長公記"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000515",
@@ -1452,6 +1715,54 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001137",
+    "title": "오브리 머투린 시리즈",
+    "shardId": "book_e3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "패트릭 오브라이언",
+    "tags": [],
+    "searchTokens": [
+      "Aubrey-Maturin series",
+      "aubreymaturinseries",
+      "オーブリー&マチュリンシリーズ",
+      "오브리 머투린 시리즈",
+      "오브리머투린시리즈",
+      "패트릭 오브라이언",
+      "패트릭오브라이언"
+    ],
+    "titles": {
+      "ko": "오브리 머투린 시리즈",
+      "en": "Aubrey-Maturin series",
+      "ja": "オーブリー&マチュリンシリーズ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001193",
+    "title": "완벽하게 사라지는 방법",
+    "shardId": "book_b0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Mariana Enriquez",
+    "tags": [],
+    "searchTokens": [
+      "Cómo desaparecer completamente",
+      "Mariana Enriquez",
+      "cómodesaparecercompletamente",
+      "marianaenriquez",
+      "완벽하게 사라지는 방법",
+      "완벽하게사라지는방법"
+    ],
+    "titles": {
+      "ko": "완벽하게 사라지는 방법",
+      "en": "Cómo desaparecer completamente"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000682",
     "title": "왕국의 사료편찬관",
     "shardId": "book_34",
@@ -1724,6 +2035,54 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001079",
+    "title": "조셉 스미스—마태",
+    "shardId": "book_00",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Joseph Smith—Matthew",
+      "josephsmithmatthew",
+      "ジョセフスミス―マタイ",
+      "ジョセフ・スミス―マタイ",
+      "조셉 스미스—마태",
+      "조셉스미스마태"
+    ],
+    "titles": {
+      "ko": "조셉 스미스—마태",
+      "en": "Joseph Smith—Matthew",
+      "ja": "ジョセフ・スミス―マタイ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000001138",
+    "title": "주역참동계",
+    "shardId": "book_44",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Wei Boyang",
+    "tags": [],
+    "searchTokens": [
+      "Cantong qi",
+      "Wei Boyang",
+      "cantongqi",
+      "weiboyang",
+      "周易参同契",
+      "주역참동계"
+    ],
+    "titles": {
+      "ko": "주역참동계",
+      "en": "Cantong qi",
+      "ja": "周易参同契"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000628",
     "title": "침묵",
     "shardId": "book_2b",
@@ -1815,6 +2174,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001191",
+    "title": "터널",
+    "shardId": "book_2a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "So Jae-won",
+    "tags": [],
+    "searchTokens": [
+      "Q103845096",
+      "So Jae-won",
+      "q103845096",
+      "sojaewon",
+      "터널"
+    ],
+    "titles": {
+      "ko": "터널",
+      "en": "Q103845096"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000013",
     "title": "퍼시 잭슨과 번개 도둑",
     "shardId": "book_ed",
@@ -1890,6 +2271,29 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001134",
+    "title": "포로 (플라우투스)",
+    "shardId": "book_93",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Plautus",
+    "tags": [],
+    "searchTokens": [
+      "Captivi",
+      "Plautus",
+      "captivi",
+      "plautus",
+      "포로 (플라우투스)",
+      "포로(플라우투스)"
+    ],
+    "titles": {
+      "ko": "포로 (플라우투스)",
+      "en": "Captivi"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000006",
@@ -1976,6 +2380,31 @@
       "ko": "헝거 게임"
     },
     "qualityScore": 90,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001135",
+    "title": "헤르만과 도로테아",
+    "shardId": "book_98",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Johann Wolfgang von Goethe",
+    "tags": [],
+    "searchTokens": [
+      "Hermann and Dorothea",
+      "Johann Wolfgang von Goethe",
+      "hermannanddorothea",
+      "johannwolfgangvongoethe",
+      "ヘルマンとドロテーア",
+      "헤르만과 도로테아",
+      "헤르만과도로테아"
+    ],
+    "titles": {
+      "ko": "헤르만과 도로테아",
+      "en": "Hermann and Dorothea",
+      "ja": "ヘルマンとドロテーア"
+    },
+    "qualityScore": 80,
     "qualityTier": 4
   },
   {

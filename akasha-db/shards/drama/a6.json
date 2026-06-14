@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001145": {
+    "workId": "wk_000001145",
+    "title": "수학♥여자학원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052974"
+    },
+    "titles": {
+      "ko": "수학♥여자학원",
+      "en": "Sūgaku Joshi Gakuen",
+      "ja": "数学♥女子学園"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

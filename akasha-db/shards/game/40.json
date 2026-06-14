@@ -1,0 +1,21 @@
+{
+  "wk_000001111": {
+    "workId": "wk_000001111",
+    "title": "바이오하자드 코드: 베로니카",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050284"
+    },
+    "titles": {
+      "ko": "바이오하자드 코드: 베로니카",
+      "en": "Resident Evil – Code: Veronica",
+      "ja": "バイオハザード CODE:Veronica"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

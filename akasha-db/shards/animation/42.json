@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001122": {
+    "workId": "wk_000001122",
+    "title": "마야와 3인의 용사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214976"
+    },
+    "titles": {
+      "ko": "마야와 3인의 용사",
+      "en": "Maya and the Three",
+      "ja": "プリンセス・マヤと3人の戦士たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001034": {
+    "workId": "wk_000001034",
+    "title": "잃어버린 미래를 찾아서",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11054409"
+    },
+    "titles": {
+      "ko": "잃어버린 미래를 찾아서",
+      "en": "In Search of the Lost Future",
+      "ja": "失われた未来を求めて"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

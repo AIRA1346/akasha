@@ -1,0 +1,20 @@
+{
+  "wk_000001115": {
+    "workId": "wk_000001115",
+    "title": "프리셀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050614"
+    },
+    "titles": {
+      "ko": "프리셀",
+      "en": "FreeCell",
+      "ja": "フリーセル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

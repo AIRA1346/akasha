@@ -1,0 +1,21 @@
+{
+  "wk_000001185": {
+    "workId": "wk_000001185",
+    "title": "검은 우물",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101157418"
+    },
+    "titles": {
+      "ko": "검은 우물",
+      "en": "Kaali Khuhi",
+      "ja": "漆黒の井戸の底から"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001139": {
+    "workId": "wk_000001139",
+    "title": "바다를 달리는 엔딩 크레딧",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111250005"
+    },
+    "titles": {
+      "ko": "바다를 달리는 엔딩 크레딧",
+      "en": "Credits Roll Into the Sea",
+      "ja": "海が走るエンドロール"
+    },
+    "creator": "Jon Tarachine",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

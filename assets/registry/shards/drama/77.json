@@ -1,0 +1,20 @@
+{
+  "wk_000001153": {
+    "workId": "wk_000001153",
+    "title": "우리는: 브루클린 세인츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105394756"
+    },
+    "titles": {
+      "ko": "우리는: 브루클린 세인츠",
+      "en": "We Are: The Brooklyn Saints",
+      "ja": "We Are: ブルックリンセインツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

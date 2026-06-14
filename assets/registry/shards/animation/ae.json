@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001070": {
+    "workId": "wk_000001070",
+    "title": "헤비 오브젝트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106938259"
+    },
+    "titles": {
+      "ko": "헤비 오브젝트",
+      "en": "Heavy Object",
+      "ja": "ヘヴィーオブジェクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000001190": {
+    "workId": "wk_000001190",
+    "title": "고보덕",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1038249"
+    },
+    "titles": {
+      "ko": "고보덕",
+      "en": "Gorboduc",
+      "ja": "ゴーボダック"
+    },
+    "creator": "Thomas Norton",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

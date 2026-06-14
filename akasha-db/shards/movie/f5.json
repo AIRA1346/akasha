@@ -1,0 +1,21 @@
+{
+  "wk_000001181": {
+    "workId": "wk_000001181",
+    "title": "브루탈리스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101112656"
+    },
+    "titles": {
+      "ko": "브루탈리스트",
+      "en": "The Brutalist",
+      "ja": "ブルータリスト"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

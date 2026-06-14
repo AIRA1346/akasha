@@ -1,0 +1,21 @@
+{
+  "wk_000001186": {
+    "workId": "wk_000001186",
+    "title": "스크랫 미싱 어드벤쳐",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1011848"
+    },
+    "titles": {
+      "ko": "스크랫 미싱 어드벤쳐",
+      "en": "Gone Nutty",
+      "ja": "どんぐりとスクラット"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

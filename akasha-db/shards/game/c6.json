@@ -1,0 +1,21 @@
+{
+  "wk_000001108": {
+    "workId": "wk_000001108",
+    "title": "동방췌몽상 ~ Immaterial and Missing Power",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050071"
+    },
+    "titles": {
+      "ko": "동방췌몽상 ~ Immaterial and Missing Power",
+      "en": "Touhou Suimusou ~ Immaterial and Missing Power",
+      "ja": "東方萃夢想 〜 Immaterial and Missing Power."
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001126": {
+    "workId": "wk_000001126",
+    "title": "항구의 니쿠코짱!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107333474"
+    },
+    "titles": {
+      "ko": "항구의 니쿠코짱!",
+      "en": "Fortune Favors Lady Nikuko",
+      "ja": "漁港の肉子ちゃん"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

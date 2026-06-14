@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000001141": {
+    "workId": "wk_000001141",
+    "title": "내가 인기 없는 건 아무리 생각해도 너희들 탓이야!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1113182"
+    },
+    "titles": {
+      "ko": "내가 인기 없는 건 아무리 생각해도 너희들 탓이야!",
+      "en": "No Matter How I Look at It, It's You Guys' Fault I'm Not Popular!",
+      "ja": "私がモテないのはどう考えてもお前らが悪い!"
+    },
+    "creator": "Nico Tanigawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

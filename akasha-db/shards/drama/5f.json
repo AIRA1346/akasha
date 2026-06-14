@@ -1,0 +1,20 @@
+{
+  "wk_000001046": {
+    "workId": "wk_000001046",
+    "title": "베네딕트 비밀클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902314"
+    },
+    "titles": {
+      "ko": "베네딕트 비밀클럽",
+      "en": "The Mysterious Benedict Society",
+      "ja": "秘密結社ベネディクト団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

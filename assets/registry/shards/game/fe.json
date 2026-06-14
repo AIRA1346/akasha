@@ -51,5 +51,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001170": {
+    "workId": "wk_000001170",
+    "title": "동방신령묘 ~ Ten Desires",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051713"
+    },
+    "titles": {
+      "ko": "동방신령묘 ~ Ten Desires",
+      "en": "Touhou Shinreibyou ~ Ten Desires",
+      "ja": "東方神霊廟 〜 Ten Desires."
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

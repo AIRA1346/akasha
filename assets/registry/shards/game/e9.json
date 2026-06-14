@@ -1,0 +1,20 @@
+{
+  "wk_000001118": {
+    "workId": "wk_000001118",
+    "title": "사이버모프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050712"
+    },
+    "titles": {
+      "ko": "사이버모프",
+      "en": "Cybermorph"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

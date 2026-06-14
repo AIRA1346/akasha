@@ -89,5 +89,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001174": {
+    "workId": "wk_000001174",
+    "title": "파이널 어프로치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074073"
+    },
+    "titles": {
+      "ko": "파이널 어프로치",
+      "en": "Final Approach",
+      "ja": "Φなる・あぷろーち"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000001119": {
+    "workId": "wk_000001119",
+    "title": "용자왕 가오가이가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071984"
+    },
+    "titles": {
+      "ko": "용자왕 가오가이가",
+      "en": "The King of Braves GaoGaiGar",
+      "ja": "勇者王ガオガイガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

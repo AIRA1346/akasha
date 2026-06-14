@@ -1,0 +1,21 @@
+{
+  "wk_000001152": {
+    "workId": "wk_000001152",
+    "title": "어느 날",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105393718"
+    },
+    "titles": {
+      "ko": "어느 날",
+      "en": "One Ordinary Day",
+      "ja": "ある日～真実のベール"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

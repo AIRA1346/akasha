@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001171": {
+    "workId": "wk_000001171",
+    "title": "원시은하",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051809"
+    },
+    "titles": {
+      "ko": "원시은하",
+      "en": "ProtoGalaxy",
+      "ja": "原始銀河"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

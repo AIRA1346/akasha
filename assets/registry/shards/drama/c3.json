@@ -1,0 +1,54 @@
+{
+  "wk_000001051": {
+    "workId": "wk_000001051",
+    "title": "TNA 글로벌 임팩트!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049446"
+    },
+    "titles": {
+      "ko": "TNA 글로벌 임팩트!",
+      "en": "TNA Global Impact!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001102": {
+    "workId": "wk_000001102",
+    "title": "무인도에서 탈출하는 방법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105105826"
+    },
+    "titles": {
+      "ko": "무인도에서 탈출하는 방법",
+      "en": "The Great Escapists"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001103": {
+    "workId": "wk_000001103",
+    "title": "드라마 프리미어 10",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105107435"
+    },
+    "titles": {
+      "ko": "드라마 프리미어 10",
+      "en": "Drama Premier10",
+      "ja": "ドラマプレミア10"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

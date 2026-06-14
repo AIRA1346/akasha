@@ -1,0 +1,21 @@
+{
+  "wk_000001169": {
+    "workId": "wk_000001169",
+    "title": "미드타운 매드니스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051694"
+    },
+    "titles": {
+      "ko": "미드타운 매드니스",
+      "en": "Midtown Madness",
+      "ja": "Midtown Madness"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

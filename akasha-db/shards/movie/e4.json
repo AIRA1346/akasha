@@ -1,0 +1,20 @@
+{
+  "wk_000001128": {
+    "workId": "wk_000001128",
+    "title": "애비규환",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100989574"
+    },
+    "titles": {
+      "ko": "애비규환",
+      "en": "More Than Family"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001040": {
+    "workId": "wk_000001040",
+    "title": "이카리 신지 육성계획",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11080937"
+    },
+    "titles": {
+      "ko": "이카리 신지 육성계획",
+      "en": "Neon Genesis Evangelion: Shinji Ikari Raising Project",
+      "ja": "新世紀エヴァンゲリオン 碇シンジ育成計画 (漫画)"
+    },
+    "creator": "Osamu Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

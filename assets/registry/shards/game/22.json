@@ -1,0 +1,21 @@
+{
+  "wk_000001159": {
+    "workId": "wk_000001159",
+    "title": "동방화영총 ~ Phantasmagoria of Flower View",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050849"
+    },
+    "titles": {
+      "ko": "동방화영총 ~ Phantasmagoria of Flower View",
+      "en": "Touhou Kaeidzuka ~ Phantasmagoria of Flower View",
+      "ja": "東方花映塚 〜 Phantasmagoria of Flower View."
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

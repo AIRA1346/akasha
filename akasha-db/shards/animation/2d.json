@@ -40,5 +40,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000001066": {
+    "workId": "wk_000001066",
+    "title": "동쪽의 에덴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069002"
+    },
+    "titles": {
+      "ko": "동쪽의 에덴",
+      "en": "Eden of the East",
+      "ja": "東のエデン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

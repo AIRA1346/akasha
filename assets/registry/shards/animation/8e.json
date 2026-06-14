@@ -1,0 +1,21 @@
+{
+  "wk_000001176": {
+    "workId": "wk_000001176",
+    "title": "아이의 노랫소리를 들려줘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107463193"
+    },
+    "titles": {
+      "ko": "아이의 노랫소리를 들려줘",
+      "en": "Sing a Bit of Harmony",
+      "ja": "アイの歌声を聴かせて"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001078": {
+    "workId": "wk_000001078",
+    "title": "손빈병법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1030518"
+    },
+    "titles": {
+      "ko": "손빈병법",
+      "en": "Sun Bin's Art of War",
+      "ja": "孫臏兵法"
+    },
+    "creator": "손빈",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001130": {
+    "workId": "wk_000001130",
+    "title": "스카이라인 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101001959"
+    },
+    "titles": {
+      "ko": "스카이라인 3",
+      "en": "Skylines",
+      "ja": "スカイライン -逆襲-"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

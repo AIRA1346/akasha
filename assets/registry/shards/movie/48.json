@@ -1,0 +1,21 @@
+{
+  "wk_000001131": {
+    "workId": "wk_000001131",
+    "title": "겟 카터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1010099"
+    },
+    "titles": {
+      "ko": "겟 카터",
+      "en": "Get Carter",
+      "ja": "追撃者"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

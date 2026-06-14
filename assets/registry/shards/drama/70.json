@@ -1,0 +1,20 @@
+{
+  "wk_000001052": {
+    "workId": "wk_000001052",
+    "title": "오! 마이 걸 !!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049666"
+    },
+    "titles": {
+      "ko": "오! 마이 걸 !!",
+      "en": "Oh! My Girl!!",
+      "ja": "オー!マイ・ガール!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

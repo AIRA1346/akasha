@@ -1,0 +1,20 @@
+{
+  "wk_000001098": {
+    "workId": "wk_000001098",
+    "title": "며느라기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105084855"
+    },
+    "titles": {
+      "ko": "며느라기",
+      "en": "No, Thank You"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

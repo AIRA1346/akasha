@@ -1,0 +1,21 @@
+{
+  "wk_000001191": {
+    "workId": "wk_000001191",
+    "title": "터널",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103845096"
+    },
+    "titles": {
+      "ko": "터널",
+      "en": "Q103845096"
+    },
+    "releaseYear": 2013,
+    "creator": "So Jae-won",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000001178": {
+    "workId": "wk_000001178",
+    "title": "맨 프롬 토론토",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101091774"
+    },
+    "titles": {
+      "ko": "맨 프롬 토론토",
+      "en": "The Man from Toronto",
+      "ja": "トロントから来た男"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

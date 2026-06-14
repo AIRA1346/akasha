@@ -1,0 +1,21 @@
+{
+  "wk_000001193": {
+    "workId": "wk_000001193",
+    "title": "완벽하게 사라지는 방법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103855903"
+    },
+    "titles": {
+      "ko": "완벽하게 사라지는 방법",
+      "en": "Cómo desaparecer completamente"
+    },
+    "releaseYear": 2004,
+    "creator": "Mariana Enriquez",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

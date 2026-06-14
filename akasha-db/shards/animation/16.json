@@ -56,5 +56,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001071": {
+    "workId": "wk_000001071",
+    "title": "프리티 올 프렌즈 셀렉션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106943954"
+    },
+    "titles": {
+      "ko": "프리티 올 프렌즈 셀렉션",
+      "en": "Pretty All Friends Selection",
+      "ja": "プリティーオールフレンズセレクション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

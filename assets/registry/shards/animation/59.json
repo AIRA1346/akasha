@@ -1,0 +1,20 @@
+{
+  "wk_000001173": {
+    "workId": "wk_000001173",
+    "title": "용의 전설 레전더",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074041"
+    },
+    "titles": {
+      "ko": "용의 전설 레전더",
+      "en": "Legendz",
+      "ja": "レジェンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

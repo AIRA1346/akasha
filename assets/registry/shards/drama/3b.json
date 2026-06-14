@@ -47,5 +47,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000001041": {
+    "workId": "wk_000001041",
+    "title": "슬로 호시스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104880809"
+    },
+    "titles": {
+      "ko": "슬로 호시스",
+      "en": "Slow Horses",
+      "ja": "窓際のスパイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

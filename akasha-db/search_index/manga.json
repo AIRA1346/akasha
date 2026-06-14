@@ -347,6 +347,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001091",
+    "title": "FX 전사 쿠루미",
+    "shardId": "manga_e1",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "FX Senshi Kurumi-chan",
+      "FX 전사 쿠루미",
+      "FX戦士くるみちゃん",
+      "fxsenshikurumichan",
+      "fx戦士くるみちゃん",
+      "fx전사쿠루미"
+    ],
+    "titles": {
+      "ko": "FX 전사 쿠루미",
+      "en": "FX Senshi Kurumi-chan",
+      "ja": "FX戦士くるみちゃん"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000443",
     "title": "Futari no Renai Shoka",
     "shardId": "manga_e9",
@@ -1522,6 +1546,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001092",
+    "title": "개가 되었더니 좋아하는 사람이 날 주웠다.",
+    "shardId": "manga_05",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "古川五勢",
+    "tags": [],
+    "searchTokens": [
+      "My Life as Inukai-san's Dog",
+      "mylifeasinukaisan'sdog",
+      "古川五勢",
+      "犬になったら好きな人に拾われた。",
+      "개가 되었더니 좋아하는 사람이 날 주웠다.",
+      "개가되었더니좋아하는사람이날주웠다."
+    ],
+    "titles": {
+      "ko": "개가 되었더니 좋아하는 사람이 날 주웠다.",
+      "en": "My Life as Inukai-san's Dog",
+      "ja": "犬になったら好きな人に拾われた。"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000437",
     "title": "갤럭시 엔젤",
     "shardId": "manga_45",
@@ -1959,6 +2007,55 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001088",
+    "title": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+    "shardId": "manga_80",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kōta Amana",
+    "tags": [],
+    "searchTokens": [
+      "Kōta Amana",
+      "Vermeil in Gold",
+      "kōtaamana",
+      "vermeilingold",
+      "金装のヴェルメイユ〜崖っぷち魔術師は最強の厄災と魔法世界を突き進む〜",
+      "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+      "금장의벨메이유~벼랑끝마술사는최강의재액과마법세계를헤쳐나간다~"
+    ],
+    "titles": {
+      "ko": "금장의 벨메이유 ~벼랑 끝 마술사는 최강의 재액과 마법세계를 헤쳐나간다~",
+      "en": "Vermeil in Gold",
+      "ja": "金装のヴェルメイユ〜崖っぷち魔術師は最強の厄災と魔法世界を突き進む〜"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001090",
+    "title": "기동전사 건담 SEED MSV",
+    "shardId": "manga_97",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mobile Suit Gundam SEED MSV",
+      "mobilesuitgundamseedmsv",
+      "ガンダムSEED MSV",
+      "ガンダムseedmsv",
+      "기동전사 건담 SEED MSV",
+      "기동전사건담seedmsv"
+    ],
+    "titles": {
+      "ko": "기동전사 건담 SEED MSV",
+      "en": "Mobile Suit Gundam SEED MSV",
+      "ja": "ガンダムSEED MSV"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000368",
     "title": "기생수",
     "shardId": "manga_2e",
@@ -2272,6 +2369,31 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001141",
+    "title": "내가 인기 없는 건 아무리 생각해도 너희들 탓이야!",
+    "shardId": "manga_fc",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Nico Tanigawa",
+    "tags": [],
+    "searchTokens": [
+      "Nico Tanigawa",
+      "No Matter How I Look at It, It's You Guys' Fault I'm Not Popular!",
+      "nicotanigawa",
+      "nomatterhowilookatit,it'syouguys'faulti'mnotpopular!",
+      "私がモテないのはどう考えてもお前らが悪い!",
+      "내가 인기 없는 건 아무리 생각해도 너희들 탓이야!",
+      "내가인기없는건아무리생각해도너희들탓이야!"
+    ],
+    "titles": {
+      "ko": "내가 인기 없는 건 아무리 생각해도 너희들 탓이야!",
+      "en": "No Matter How I Look at It, It's You Guys' Fault I'm Not Popular!",
+      "ja": "私がモテないのはどう考えてもお前らが悪い!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000365",
@@ -3054,6 +3176,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000001142",
+    "title": "매지컬 타루루토군",
+    "shardId": "manga_ca",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Tatsuya Egawa",
+    "tags": [],
+    "searchTokens": [
+      "Magical Taluluto",
+      "Tatsuya Egawa",
+      "magicaltaluluto",
+      "tatsuyaegawa",
+      "まじかる☆タルるートくん",
+      "매지컬 타루루토군",
+      "매지컬타루루토군"
+    ],
+    "titles": {
+      "ko": "매지컬 타루루토군",
+      "en": "Magical Taluluto",
+      "ja": "まじかる☆タルるートくん"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000876",
     "title": "메이드 양은 먹기만 할 뿐",
     "shardId": "manga_f0",
@@ -3373,6 +3520,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001139",
+    "title": "바다를 달리는 엔딩 크레딧",
+    "shardId": "manga_e5",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Jon Tarachine",
+    "tags": [],
+    "searchTokens": [
+      "Credits Roll Into the Sea",
+      "Jon Tarachine",
+      "creditsrollintothesea",
+      "jontarachine",
+      "海が走るエンドロール",
+      "바다를 달리는 엔딩 크레딧",
+      "바다를달리는엔딩크레딧"
+    ],
+    "titles": {
+      "ko": "바다를 달리는 엔딩 크레딧",
+      "en": "Credits Roll Into the Sea",
+      "ja": "海が走るエンドロール"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000297",
     "title": "바라카몬",
     "shardId": "manga_e9",
@@ -3404,6 +3576,56 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001036",
+    "title": "바람이 강하게 불고 있다",
+    "shardId": "manga_ed",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Shion Miura",
+    "tags": [],
+    "searchTokens": [
+      "Run with the Wind",
+      "Shion Miura",
+      "runwiththewind",
+      "shionmiura",
+      "風が強く吹いている",
+      "바람이 강하게 불고 있다",
+      "바람이강하게불고있다"
+    ],
+    "titles": {
+      "ko": "바람이 강하게 불고 있다",
+      "en": "Run with the Wind",
+      "ja": "風が強く吹いている"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001085",
+    "title": "배드 걸",
+    "shardId": "manga_a6",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Nikumaru",
+    "tags": [],
+    "searchTokens": [
+      "Bad Girl",
+      "Nikumaru",
+      "badgirl",
+      "nikumaru",
+      "ばっどがーる",
+      "배드 걸",
+      "배드걸"
+    ],
+    "titles": {
+      "ko": "배드 걸",
+      "en": "Bad Girl",
+      "ja": "ばっどがーる"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000991",
@@ -3460,6 +3682,31 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000001086",
+    "title": "별 내리는 왕국의 니나",
+    "shardId": "manga_f2",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Rikachi",
+    "tags": [],
+    "searchTokens": [
+      "Nina the Starry Bride",
+      "Rikachi",
+      "ninathestarrybride",
+      "rikachi",
+      "星降る王国のニナ",
+      "별 내리는 왕국의 니나",
+      "별내리는왕국의니나"
+    ],
+    "titles": {
+      "ko": "별 내리는 왕국의 니나",
+      "en": "Nina the Starry Bride",
+      "ja": "星降る王国のニナ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000429",
@@ -3552,6 +3799,29 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001087",
+    "title": "부덕의 길드",
+    "shardId": "manga_11",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Immoral Guild",
+      "immoralguild",
+      "不徳のギルド",
+      "부덕의 길드",
+      "부덕의길드"
+    ],
+    "titles": {
+      "ko": "부덕의 길드",
+      "en": "Immoral Guild",
+      "ja": "不徳のギルド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000322",
@@ -4583,6 +4853,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001038",
+    "title": "여고생에게 살해당하고 싶어",
+    "shardId": "manga_8c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Usamaru Furuya",
+    "tags": [],
+    "searchTokens": [
+      "To Be Killed by a High School Girl",
+      "Usamaru Furuya",
+      "tobekilledbyahighschoolgirl",
+      "usamarufuruya",
+      "女子高生に殺されたい",
+      "여고생에게 살해당하고 싶어",
+      "여고생에게살해당하고싶어"
+    ],
+    "titles": {
+      "ko": "여고생에게 살해당하고 싶어",
+      "en": "To Be Killed by a High School Girl",
+      "ja": "女子高生に殺されたい"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000374",
     "title": "여친, 빌리겠습니다",
     "shardId": "manga_5a",
@@ -5119,6 +5414,32 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001040",
+    "title": "이카리 신지 육성계획",
+    "shardId": "manga_37",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Osamu Takahashi",
+    "tags": [],
+    "searchTokens": [
+      "Neon Genesis Evangelion: Shinji Ikari Raising Project",
+      "Osamu Takahashi",
+      "neongenesisevangelionshinjiikariraisingproject",
+      "osamutakahashi",
+      "新世紀エヴァンゲリオン 碇シンジ育成計画 (漫画)",
+      "新世紀エヴァンゲリオン碇シンジ育成計画(漫画)",
+      "이카리 신지 육성계획",
+      "이카리신지육성계획"
+    ],
+    "titles": {
+      "ko": "이카리 신지 육성계획",
+      "en": "Neon Genesis Evangelion: Shinji Ikari Raising Project",
+      "ja": "新世紀エヴァンゲリオン 碇シンジ育成計画 (漫画)"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000359",
     "title": "일상",
     "shardId": "manga_8e",
@@ -5211,6 +5532,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001034",
+    "title": "잃어버린 미래를 찾아서",
+    "shardId": "manga_4c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "In Search of the Lost Future",
+      "insearchofthelostfuture",
+      "失われた未来を求めて",
+      "잃어버린 미래를 찾아서",
+      "잃어버린미래를찾아서"
+    ],
+    "titles": {
+      "ko": "잃어버린 미래를 찾아서",
+      "en": "In Search of the Lost Future",
+      "ja": "失われた未来を求めて"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000531",
     "title": "입어주세요, 타카미네 양",
     "shardId": "manga_6a",
@@ -5300,6 +5644,31 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001035",
+    "title": "적등 엘레지",
+    "shardId": "manga_4f",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Takashi Kira",
+    "tags": [],
+    "searchTokens": [
+      "Sekitō Elegy",
+      "Takashi Kira",
+      "sekitōelegy",
+      "takashikira",
+      "赤灯えれじい",
+      "적등 엘레지",
+      "적등엘레지"
+    ],
+    "titles": {
+      "ko": "적등 엘레지",
+      "en": "Sekitō Elegy",
+      "ja": "赤灯えれじい"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000881",
@@ -6094,6 +6463,54 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000001039",
+    "title": "타코피의 원죄",
+    "shardId": "manga_a8",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Taizan 5",
+    "tags": [],
+    "searchTokens": [
+      "Taizan 5",
+      "Takopi's Original Sin",
+      "taizan5",
+      "takopi'soriginalsin",
+      "タコピーの原罪",
+      "타코피의 원죄",
+      "타코피의원죄"
+    ],
+    "titles": {
+      "ko": "타코피의 원죄",
+      "en": "Takopi's Original Sin",
+      "ja": "タコピーの原罪"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000001089",
+    "title": "타쿠미 시리즈",
+    "shardId": "manga_60",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Takumi-kun Series",
+      "takumikunseries",
+      "タクミくんシリーズ",
+      "타쿠미 시리즈",
+      "타쿠미시리즈"
+    ],
+    "titles": {
+      "ko": "타쿠미 시리즈",
+      "en": "Takumi-kun Series",
+      "ja": "タクミくんシリーズ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000996",
     "title": "텟펜!!!",
     "shardId": "manga_d9",
@@ -6275,6 +6692,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000001037",
+    "title": "펭귄의 문제",
+    "shardId": "manga_4d",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Yūji Nagai",
+    "tags": [],
+    "searchTokens": [
+      "A Penguin's Troubles",
+      "Yūji Nagai",
+      "apenguin'stroubles",
+      "yūjinagai",
+      "ペンギンの問題",
+      "펭귄의 문제",
+      "펭귄의문제"
+    ],
+    "titles": {
+      "ko": "펭귄의 문제",
+      "en": "A Penguin's Troubles",
+      "ja": "ペンギンの問題"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000449",
     "title": "평온세대의 위타천들",
     "shardId": "manga_75",
@@ -6406,6 +6848,31 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000001140",
+    "title": "합법 드러그",
+    "shardId": "manga_03",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Clamp",
+    "tags": [],
+    "searchTokens": [
+      "Clamp",
+      "Legal Drug",
+      "clamp",
+      "legaldrug",
+      "合法ドラッグ",
+      "합법 드러그",
+      "합법드러그"
+    ],
+    "titles": {
+      "ko": "합법 드러그",
+      "en": "Legal Drug",
+      "ja": "合法ドラッグ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000882",

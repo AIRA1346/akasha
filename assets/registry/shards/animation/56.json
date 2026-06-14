@@ -1,0 +1,20 @@
+{
+  "wk_000001067": {
+    "workId": "wk_000001067",
+    "title": "블랙 버드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106911884"
+    },
+    "titles": {
+      "ko": "블랙 버드",
+      "en": "Black Bird",
+      "ja": "ブラック・バード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

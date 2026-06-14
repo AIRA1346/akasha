@@ -1,0 +1,21 @@
+{
+  "wk_000001077": {
+    "workId": "wk_000001077",
+    "title": "컨버세이션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1009788"
+    },
+    "titles": {
+      "ko": "컨버세이션",
+      "en": "The Conversation",
+      "ja": "カンバセーション…盗聴…"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}
