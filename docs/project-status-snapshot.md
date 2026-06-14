@@ -16,10 +16,10 @@
 | **Registry** | **490 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **275/490 (56.1%)** |
-| **flutter test** | **277/277 PASS** |
+| **flutter test** | **283/283 PASS** |
 | **Phase 1** | Record Foundation ✅ |
-| **Phase 4.1** | Timeline read path ✅ |
-| **다음** | Phase 4.2 persist · Phase 2.1~2.3 trigger 대기 |
+| **Phase 4.3** | Quick capture UI ✅ |
+| **다음** | Phase 4.4 Timeline axis · Dogfood |
 | **Scale / Core** | **보류** — 측정 후에만 (§5) |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata manga |
@@ -84,7 +84,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint |
 |---|------|:------:|
-| 1 | **Phase 4.2** — Timeline persist · UI | 4 |
+| 1 | **Phase 4.4** — Timeline axis · Dogfood | 4 |
 | 2 | friction 있으면 §2 기준 수정 | B |
 | 3 | **M3** — Ready 시 Steam Release | ⏸️ |
 

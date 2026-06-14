@@ -4,17 +4,21 @@ import '../../core/archiving/record_kind.dart';
 import '../../core/ports/archive_record_port.dart';
 import '../../services/file_service.dart';
 import '../../services/timeline_vault_loader.dart';
+import '../../services/timeline_vault_store.dart';
 
-/// Sanctum vault → [ArchiveRecord] ([ADR-008] Phase 1 + Phase 4.1 timeline).
+/// Sanctum vault → [ArchiveRecord] ([ADR-008] Phase 1 + Phase 4 timeline).
 class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   VaultArchiveRecordAdapter({
     AkashaFileService? fileService,
     TimelineVaultLoader? timelineLoader,
+    TimelineVaultStore? timelineStore,
   })  : _fileService = fileService ?? AkashaFileService(),
-        _timelineLoader = timelineLoader ?? const TimelineVaultLoader();
+        _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
+        _timelineStore = timelineStore ?? const TimelineVaultStore();
 
   final AkashaFileService _fileService;
   final TimelineVaultLoader _timelineLoader;
+  final TimelineVaultStore _timelineStore;
 
   @override
   Future<List<ArchiveRecord>> listRecords({Set<RecordKind>? kinds}) async {
@@ -68,16 +72,44 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   }
 
   @override
-  Future<void> save(ArchiveRecord record, {String? bodyMarkdown}) {
-    throw UnsupportedError(
-      'Phase 1: persist via VaultPort/AkashaItem; ArchiveRecord save in Phase 4+',
+  Future<void> save(ArchiveRecord record, {String? bodyMarkdown}) async {
+    if (record.kind != RecordKind.timelineEntry) {
+      throw UnsupportedError(
+        'Phase 4.2: timelineEntry via ArchiveRecordPort; workJournal via VaultPort.saveItem',
+      );
+    }
+
+    final vaultPath = _fileService.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) {
+      throw StateError('Vault path not set');
+    }
+
+    await _timelineStore.save(
+      vaultPath: vaultPath,
+      record: record,
+      body: bodyMarkdown ?? '',
     );
+    await _fileService.signalVaultChanged();
   }
 
   @override
-  Future<void> delete(String recordId) {
-    throw UnsupportedError(
-      'Phase 1: delete via VaultPort; ArchiveRecord delete in Phase 4+',
-    );
+  Future<void> delete(String recordId) async {
+    if (recordId.isEmpty) return;
+
+    final vaultPath = _fileService.vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) {
+      throw StateError('Vault path not set');
+    }
+
+    final existing = await getById(recordId);
+    if (existing == null) return;
+    if (existing.kind != RecordKind.timelineEntry) {
+      throw UnsupportedError(
+        'Phase 4.2: timelineEntry only; workJournal via VaultPort',
+      );
+    }
+
+    await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
+    await _fileService.signalVaultChanged();
   }
 }

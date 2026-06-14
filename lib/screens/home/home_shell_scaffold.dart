@@ -53,6 +53,7 @@ class HomeShellScaffold extends StatelessWidget {
               libraryThemeAccent: controller.libraryTheme.accentColor,
               onToggleSidebar: controller.toggleSidebar,
               onSearch: controller.openSearchDialog,
+              onTimelineCapture: controller.openTimelineQuickCapture,
               onClipboardImport: controller.openClipboardImportDialog,
               onSync: controller.syncRegistry,
               onSyncSettings: controller.showCustomUrlDialog,

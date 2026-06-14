@@ -96,6 +96,7 @@ class AkashaFileService {
     if (_vaultPath == null) return;
 
     await Directory(p.join(_vaultPath!, 'posters')).create(recursive: true);
+    await Directory(p.join(_vaultPath!, 'timeline')).create(recursive: true);
 
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
@@ -104,6 +105,12 @@ class AkashaFileService {
 
   void _notifyVaultUpdated() {
     _vaultUpdateController?.add(null);
+  }
+
+  /// timeline 등 VaultPort 외 경로로 vault 파일이 바뀐 뒤 UI 갱신용.
+  Future<void> signalVaultChanged() async {
+    await _refreshVaultFingerprint();
+    _notifyVaultUpdated();
   }
 
   void _scheduleVaultUpdateNotification() {

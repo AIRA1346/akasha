@@ -10,6 +10,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onToggleSidebar;
   final VoidCallback onSearch;
   final VoidCallback onClipboardImport;
+  final VoidCallback? onTimelineCapture;
   final VoidCallback onSync;
   final VoidCallback onSyncSettings;
   final VoidCallback onPromptTemplates;
@@ -28,6 +29,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.onToggleSidebar,
     required this.onSearch,
     required this.onClipboardImport,
+    this.onTimelineCapture,
     required this.onSync,
     required this.onSyncSettings,
     required this.onPromptTemplates,
@@ -77,6 +79,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           tooltip: '검색',
           onPressed: onSearch,
         ),
+        if (vaultLinked && onTimelineCapture != null)
+          IconButton(
+            icon: const Icon(Icons.edit_note_outlined),
+            tooltip: '타임라인 기록',
+            onPressed: onTimelineCapture,
+          ),
         if (onCatalogInbox != null)
           IconButton(
             tooltip: '카탈로그 제안함',

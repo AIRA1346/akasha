@@ -107,9 +107,9 @@ Phase 0 ✅ → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phas
 | # | 작업 |
 |:-:|------|
 | 4.1 | Timeline entry 저장 (`vault/timeline/*.md`) | ✅ read path |
-| 4.2 | `RecordKind.timelineEntry` · `ArchiveRecordPort` **쓰기** | ⏳ |
-| 4.3 | Timeline UI (시간축) |
-| 4.4 | Entity Journal과 **소급·양방향 Link** |
+| 4.2 | `ArchiveRecordPort` **쓰기·삭제** | ✅ timeline |
+| 4.3 | Timeline Quick capture UI | ✅ |
+| 4.4 | Timeline axis 뷰 · Entity Journal Link | ⏳ |
 
 **전제:** Phase 1 Record/Link.
 
@@ -177,8 +177,8 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0 · Phase 1 · Phase 2.0 baseline · **Phase 4.1** read path |
-| **진행** | Phase 4.2 Timeline persist · Sprint B friction |
+| **완료** | Phase 0~1 · 2.0 baseline · Phase 4.1~**4.3** Quick capture |
+| **진행** | Phase 4.4 Timeline axis · Sprint B friction |
 | **보류** | Phase 2.1~2.3 (baseline trigger 전) · M3 |
 
 ---
@@ -220,8 +220,9 @@ flowchart LR
 
 1. `tool/catalog_scale_baseline.dart` ✅  
 2. **Phase 4.1** ✅ — `vault/timeline/*.md` · `TimelineEntryParser` · `ArchiveRecordPort` list/get  
-3. **Phase 4.2** — Timeline **쓰기** · UI (4.3)  
-4. Phase 2.2 — master_index prefetch **완화** (baseline 악화 시)
+4. **Phase 4.3** ✅ — Home AppBar quick capture  
+5. **Phase 4.4** — Timeline axis · Entity Link  
+6. Phase 2.2 — master_index prefetch **완화** (baseline 악화 시)
 
 ---
 

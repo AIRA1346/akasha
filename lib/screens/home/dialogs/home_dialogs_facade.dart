@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../config/feature_flags.dart';
+import '../../../core/archiving/archive_record.dart';
+import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/archiving/record_kind.dart';
+import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
+import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/fusion_search_dialog.dart';
@@ -15,6 +20,7 @@ import 'catalog_contributions_inbox_dialog.dart';
 import 'clipboard_import_dialog.dart';
 import 'prompt_templates_dialog.dart';
 import 'registry_sync_dialog.dart';
+import 'timeline_quick_capture_dialog.dart';
 import 'vault_settings_dialog.dart';
 
 /// 홈 화면 다이얼로그 진입점 — Presentation shell에서 static 호출
@@ -103,6 +109,55 @@ class HomeDialogsFacade {
       selectVaultFolder: selectVaultFolder,
       onRegistryVisibilityChanged: onRegistryVisibilityChanged,
     );
+  }
+
+  /// Phase 4.3 — Timeline quick capture → `vault/timeline/`.
+  static Future<bool> showTimelineQuickCapture({
+    required BuildContext context,
+    required List<AkashaItem> localItems,
+    required void Function(String message) showMessage,
+  }) async {
+    if (AkashaFileService().vaultPath == null) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return false;
+    }
+
+    final input = await showTimelineQuickCaptureDialog(
+      context,
+      linkedWorks: localItems,
+    );
+    if (input == null || !context.mounted) return false;
+
+    try {
+      EntityAnchor? entity;
+      final entityId = input.entityId?.trim();
+      if (entityId != null && entityId.isNotEmpty) {
+        entity = EntityAnchor(
+          entityId: entityId,
+          type: entityId.startsWith('wk_')
+              ? EntityAnchorType.work
+              : EntityAnchorType.custom,
+        );
+      }
+
+      final recordId = TimelineVaultStore.generateRecordId(input.occurredAt);
+      await VaultArchiveRecordAdapter().save(
+        ArchiveRecord(
+          recordId: recordId,
+          kind: RecordKind.timelineEntry,
+          title: input.title,
+          timeAnchor: input.occurredAt,
+          entity: entity,
+        ),
+        bodyMarkdown: input.body,
+      );
+
+      showMessage('타임라인에 저장했습니다.');
+      return true;
+    } catch (e) {
+      showMessage('타임라인 저장 실패: $e');
+      return false;
+    }
   }
 
   static Future<void> showClipboardImport({

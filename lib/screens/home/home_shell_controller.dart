@@ -550,6 +550,19 @@ class HomeShellController {
     );
   }
 
+  Future<void> openTimelineQuickCapture() async {
+    await HomeDialogsFacade.showTimelineQuickCapture(
+      context: host.context,
+      localItems: items,
+      showMessage: (msg) {
+        if (!host.mounted) return;
+        ScaffoldMessenger.of(host.context).showSnackBar(
+          SnackBar(content: Text(msg)),
+        );
+      },
+    );
+  }
+
   Future<void> selectVaultFolder() async {
     try {
       final selectedDirectory = await FilePicker.getDirectoryPath();
