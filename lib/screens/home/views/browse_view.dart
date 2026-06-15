@@ -109,6 +109,7 @@ class BrowseView extends StatelessWidget {
       isPersonalLibraryMode: false,
       curatedLibrarySort: false,
       showHallOfFame: false,
+      showWatchlist: false,
       hofExpanded: sectionPrefs.hofExpanded,
       libraryExpanded: sectionPrefs.libraryExpanded,
       yearlyExpanded: sectionPrefs.yearlyExpanded,
