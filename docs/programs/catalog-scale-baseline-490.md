@@ -23,9 +23,12 @@
 
 animation 1084 · drama 1213 · game 913 · manga 705 · book 490 · movie 475 · webtoon 301
 
+## browse window dogfood ✅
+
+- `test/browse_window_dogfood_test.dart` — 6 tests
+- 윈도우 prefetch · loadMore 누적 · webtoon 카테고리 · progress state
+
 ## 후속
 
-1. **commit / CDN deploy** — akasha + akasha-db push
-2. browse window dogfood @5k
-3. Phase 2.3 manifest-only / eager bundle (ADR-010)
-4. Discovery 소진 구간 관측 (yield 감소 시)
+1. **Phase 2.3** manifest-only / eager bundle (ADR-010)
+2. Discovery yield 관측 (채널별 소진)
