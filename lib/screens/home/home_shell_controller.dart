@@ -163,11 +163,12 @@ class HomeShellController {
       filterCoordinator: filterCoordinator,
     );
 
+    workbench.addListener(onWorkbenchChanged);
+
     await initVault();
     if (FeatureFlags.catalogContributions) {
       await syncCatalogContributionCount();
     }
-    workbench.addListener(onWorkbenchChanged);
     await workbench.loadPrefs();
   }
 
@@ -454,6 +455,7 @@ class HomeShellController {
 
   void openBrowseItem(AkashaItem item) {
     workbench.openWork(resolveItemForOpen(item));
+    if (host.mounted) rebuild();
   }
 
   Future<void> onWorkbenchWorkSaved(AkashaItem saved) async {

@@ -670,8 +670,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     required List<String> options,
     required ValueChanged<String> onChanged,
   }) {
+    final safeOptions = options.isEmpty ? [value] : options;
+    final resolved =
+        safeOptions.contains(value) ? value : safeOptions.first;
+
     return DropdownButtonFormField<String>(
-      initialValue: value,
+      initialValue: resolved,
       isExpanded: true,
       isDense: true,
       style: const TextStyle(fontSize: 10, height: 1.1),
@@ -683,7 +687,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
       ),
-      items: options
+      items: safeOptions
           .map(
             (s) => DropdownMenuItem(
               value: s,
