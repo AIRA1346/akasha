@@ -277,7 +277,6 @@ class RegistrySyncService {
   /// 검색어에 필요한 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
   Future<bool> syncShardsForQuery(String query) async {
     if (query.trim().isEmpty) return false;
-    if (!await _remoteManifestIsNewerThanLocal()) return false;
     final loader = WorksRegistry.loader;
     await loader.ensureSearchIndexLoaded();
     final shardIds = loader.resolveShardIdsForQuery(query);
@@ -287,7 +286,7 @@ class RegistrySyncService {
   /// 지정 shardId 집합만 원격 fetch (browse window · query 공용)
   Future<bool> syncShardsByIds(Set<String> shardIds) async {
     if (shardIds.isEmpty) return false;
-    if (!await _remoteManifestIsNewerThanLocal()) return false;
+    if (!await _shouldAllowRemoteShardFetch(shardIds)) return false;
 
     final loader = WorksRegistry.loader;
     var success = false;
@@ -306,31 +305,32 @@ class RegistrySyncService {
 
   /// 필터 범위에 해당하는 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
   /// 번들·캐시 manifest가 원격보다 최신이면 fetch 생략 (옛 GitHub 데이터로 덮어쓰기 방지)
+  /// ADR-010: 번들에 없는 shard는 manifest 동일 시에도 on-demand fetch 허용
   Future<bool> syncShardsForFilters({
     AppDomain? domain,
     MediaCategory? category,
   }) async {
-    if (!await _remoteManifestIsNewerThanLocal()) return false;
-
     final loader = WorksRegistry.loader;
     final shardIds = loader.resolveShardIdsForFilters(
       domain: domain,
       category: category,
     );
-    if (shardIds.isEmpty) return false;
+    return syncShardsByIds(shardIds);
+  }
 
-    var success = false;
+  /// 원격 manifest가 더 최신이거나, 번들에 없고 캐시도 없는 shard가 있으면 fetch
+  Future<bool> _shouldAllowRemoteShardFetch(Set<String> shardIds) async {
+    if (await _remoteManifestIsNewerThanLocal()) return true;
+
+    final loader = WorksRegistry.loader;
     for (final shardId in shardIds) {
       if (loader.isShardLoaded(shardId)) continue;
       final meta = loader.manifest?.shardById(shardId);
       if (meta == null) continue;
       if (await loader.hasBundledShard(meta.path)) continue;
-      final content = await _fetchText('${baseUrl}${meta.path}');
-      if (content != null) {
-        success = await loader.cacheRemoteShard(meta.path, content) || success;
-      }
+      if (!(await loader.isShardCached(meta.path))) return true;
     }
-    return success;
+    return false;
   }
 
   Future<bool> _remoteManifestIsNewerThanLocal() async {

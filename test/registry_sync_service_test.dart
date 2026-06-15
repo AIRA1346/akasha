@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:akasha/models/registry_models.dart';
 import 'package:akasha/services/registry_sync_service.dart';
 import 'package:akasha/services/works_registry.dart';
 
@@ -183,6 +184,58 @@ void main() {
       final service = RegistrySyncService();
       expect(await service.syncShardsForQuery(''), isFalse);
       expect(await service.syncShardsForQuery('   '), isFalse);
+    });
+
+    test('syncShardsByIds fetches unbundled shard when manifest matches local',
+        () async {
+      WorksRegistry.loader.resetLoadedShardsForTesting();
+      await WorksRegistry.clearDiskCacheAndReloadBundle();
+
+      final loader = WorksRegistry.loader;
+      final manifest = loader.manifest;
+      expect(manifest, isNotNull);
+
+      RegistryShardMeta? unbundled;
+      for (final s in manifest!.shards) {
+        if (s.eager) continue;
+        if (await loader.hasBundledShard(s.path)) continue;
+        unbundled = s;
+        break;
+      }
+      expect(unbundled, isNotNull);
+      final target = unbundled!;
+
+      final fetchedUrls = <String>[];
+      RegistrySyncService.setTextFetcherForTesting((url) async {
+        fetchedUrls.add(url);
+        if (url.endsWith('manifest.json') && !url.contains('search_index/')) {
+          return jsonEncode({
+            'version': manifest.version,
+            'generatedAt': manifest.generatedAt,
+            'shards': manifest.shards
+                .map(
+                  (s) => {
+                    'id': s.id,
+                    'category': s.category.name,
+                    'path': s.path,
+                    'eager': s.eager,
+                    'entryCount': s.entryCount,
+                  },
+                )
+                .toList(),
+          });
+        }
+        if (url.endsWith(target.path)) {
+          return jsonEncode({'wk_test_sync': {'workId': 'wk_test_sync'}});
+        }
+        return null;
+      });
+
+      final service = RegistrySyncService();
+      final ok = await service.syncShardsByIds({target.id});
+
+      expect(ok, isTrue);
+      expect(fetchedUrls.where((u) => u.endsWith(target.path)), isNotEmpty);
     });
   });
 }

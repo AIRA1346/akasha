@@ -1,10 +1,27 @@
+import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/screens/home/home_browse_filter_controller.dart';
 import 'package:akasha/screens/home/home_registry_prefetch.dart';
+import 'package:akasha/services/registry_sync_service.dart';
 import 'package:akasha/services/works_registry.dart';
+
+/// ADR-010 eager-only 번들: non-eager shard는 CDN mock으로 fetch
+void _mockAkashaDbShardFetcher() {
+  RegistrySyncService.setTextFetcherForTesting((url) async {
+    final uri = Uri.parse(url);
+    var path = uri.path;
+    if (path.startsWith('/')) path = path.substring(1);
+    if (path.startsWith('shards/')) {
+      final file = File('akasha-db/$path');
+      if (file.existsSync()) return file.readAsStringSync();
+    }
+    return null;
+  });
+}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +34,10 @@ void main() {
 
   setUpAll(() async {
     await WorksRegistry.init();
+  });
+
+  tearDown(() {
+    RegistrySyncService.setTextFetcherForTesting(null);
   });
 
   group('browse window dogfood @5181', () {
@@ -41,9 +62,10 @@ void main() {
       expect(loaded, lessThan(total));
     });
 
-    test('loadMore prefetch accumulates shard entries', () async {
+    test('loadMore prefetch accumulates shard entries (CDN fetch)', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
       await WorksRegistry.clearDiskCacheAndReloadBundle();
+      _mockAkashaDbShardFetcher();
 
       final total = WorksRegistry.catalogIndexEntryCount();
       const window = WorksRegistry.browsePrefetchWindowSize;
@@ -51,7 +73,11 @@ void main() {
       await WorksRegistry.prefetchBrowseWindow(offset: 0, limit: window);
       final afterFirst = WorksRegistry.allWorks.length;
 
-      await WorksRegistry.prefetchBrowseWindow(offset: window, limit: window);
+      await WorksRegistry.prefetchBrowseWindow(
+        offset: window,
+        limit: window,
+        fetchRemote: true,
+      );
       final afterSecond = WorksRegistry.allWorks.length;
 
       expect(afterFirst, greaterThan(0));
@@ -125,6 +151,8 @@ void main() {
         category: MediaCategory.webtoon,
       );
       expect(indexTotal, greaterThanOrEqualTo(2));
+
+      _mockAkashaDbShardFetcher();
 
       await WorksRegistry.prefetchForFilters(
         categories: {MediaCategory.webtoon},

@@ -78,7 +78,7 @@ Phase 0 ✅ → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phas
 | 2.0 | Baseline 측정 | 490→N 비교 | ✅ |
 | 2.1 | search_index lazy / 분할 | parse ms · file MB | ✅ ADR-009 |
 | 2.2 | Browse pagination · master_index prefetch 완화 | 체감 | ✅ window + UI |
-| 2.3 | manifest-only / eager bundle | APK MB | 🔄 ADR-010 |
+| 2.3 | manifest-only / eager bundle | APK MB | ✅ ADR-010 @5181 |
 | 2.4 | `RegistryPort` page API | Phase 3+ | ⏳ |
 
 **Exit:** 5k 시나리오 **측정** 통과 (문서: [registry-scaling-review](../validation/registry-scaling-review.md)).

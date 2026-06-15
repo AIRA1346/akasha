@@ -20,11 +20,14 @@ void main() {
   _reportManifest(db, assets);
   _reportSearchIndex(db, assets);
   _reportShards(db, assets);
+  _reportAssetsTotal(assets);
+  _reportBundleMode(db, assets);
 
   print('\n--- Phase 2 trigger (architecture-evolution-phases) ---');
   print('search_index parse > 50ms @490 → watch');
   print('entryCount > 1000 OR master_index 체감 지연 → Phase 2.1~2.2');
-  print('APK assets/registry > 15MB → Phase 2.3');
+  print('entryCount > 2500 OR assets/registry > 5MB → Phase 2.3 eager-only (ADR-010)');
+  print('APK assets/registry > 15MB → CI/release mandatory eager-only');
 }
 
 void _reportManifest(Directory db, Directory assets) {
@@ -126,6 +129,49 @@ void _reportShards(Directory db, Directory assets) {
     print('  shard files: $files');
     print('  total size: ${_kb(bytes)} KB (${_mb(bytes)} MB)');
   }
+}
+
+void _reportAssetsTotal(Directory assets) {
+  if (!assets.existsSync()) return;
+  var bytes = 0;
+  for (final entity in assets.listSync(recursive: true)) {
+    if (entity is File) bytes += entity.lengthSync();
+  }
+  print('[assets/registry] total');
+  print('  size: ${_kb(bytes)} KB (${_mb(bytes)} MB)');
+}
+
+void _reportBundleMode(Directory db, Directory assets) {
+  final manifestFile = File('${db.path}/manifest.json');
+  if (!manifestFile.existsSync()) return;
+  final manifest = jsonDecode(manifestFile.readAsStringSync()) as Map;
+  final shards = manifest['shards'];
+  if (shards is! List) return;
+
+  var eagerInManifest = 0;
+  for (final s in shards) {
+    if (s is Map && s['eager'] == true) eagerInManifest++;
+  }
+
+  var bundledShardFiles = 0;
+  final shardsRoot = Directory('${assets.path}/shards');
+  if (shardsRoot.existsSync()) {
+    for (final entity in shardsRoot.listSync(recursive: true)) {
+      if (entity is File && entity.path.endsWith('.json')) bundledShardFiles++;
+    }
+  }
+
+  final mode = bundledShardFiles == shards.length
+      ? 'full'
+      : bundledShardFiles == eagerInManifest
+          ? 'eager-only (ADR-010)'
+          : 'partial ($bundledShardFiles bundled)';
+
+  print('[bundle] mode');
+  print('  manifest shards: ${shards.length}');
+  print('  eager in manifest: $eagerInManifest');
+  print('  bundled shard files: $bundledShardFiles');
+  print('  mode: $mode');
 }
 
 String _kb(int bytes) => (bytes / 1024).toStringAsFixed(1);

@@ -21,7 +21,7 @@
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
 | **다음** | Sprint B — 작품 `.md` 실사용 · friction · M3 Ready |
-| **Scale / Core** | **Phase 2 진행** — @5181 · **G1 ✅** · window 모드 ([baseline](programs/catalog-scale-baseline-490.md)) |
+| **Scale / Core** | **Phase 2** — @5181 · G1 ✅ · eager bundle ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `patchStatus: active_trial` · Wikidata ko (7 categories) |
 | **CDN** | akasha-db.pages.dev — **5181 deploy 대기** (로컬 최신) |
