@@ -1,0 +1,21 @@
+{
+  "wk_000004389": {
+    "workId": "wk_000004389",
+    "title": "7번째 날",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105637496"
+    },
+    "titles": {
+      "ko": "7번째 날",
+      "en": "The Seventh Day",
+      "ja": "ザ・セブンス・デイ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

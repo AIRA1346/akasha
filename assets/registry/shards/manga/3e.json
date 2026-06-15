@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005133": {
+    "workId": "wk_000005133",
+    "title": "사랑하라, 거짓된 천사들이여",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124734890"
+    },
+    "titles": {
+      "ko": "사랑하라, 거짓된 천사들이여",
+      "en": "Fall in Love, You False Angels",
+      "ja": "恋せよまやかし天使ども"
+    },
+    "creator": "Coco Uzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

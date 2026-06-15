@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004591": {
+    "workId": "wk_000004591",
+    "title": "큐피드 비스트로!!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11330640"
+    },
+    "titles": {
+      "ko": "큐피드 비스트로!!",
+      "en": "Cupid Bistro!!",
+      "ja": "ビストロ・きゅーぴっと"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

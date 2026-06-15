@@ -1,0 +1,40 @@
+{
+  "wk_000003662": {
+    "workId": "wk_000003662",
+    "title": "히쇼의 새",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395411"
+    },
+    "titles": {
+      "ko": "히쇼의 새",
+      "en": "The Birds of Hisho",
+      "ja": "丕緒の鳥"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005156": {
+    "workId": "wk_000005156",
+    "title": "오동우",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10922803"
+    },
+    "titles": {
+      "ko": "오동우",
+      "en": "Tang Minghuang on an Autumn Night with Wutong Tree and Rain",
+      "ja": "梧桐雨"
+    },
+    "creator": "Bai Renfu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

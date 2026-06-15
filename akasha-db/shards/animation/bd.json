@@ -48,5 +48,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003363": {
+    "workId": "wk_000003363",
+    "title": "도게자로 부탁해봤다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123536965"
+    },
+    "titles": {
+      "ko": "도게자로 부탁해봤다",
+      "en": "Dogeza: I Tried Asking While Kowtowing",
+      "ja": "土下座で頼んでみた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004714": {
+    "workId": "wk_000004714",
+    "title": "앙상블 스타즈!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140056987"
+    },
+    "titles": {
+      "ko": "앙상블 스타즈!",
+      "en": "Ensemble Stars!",
+      "ja": "あんさんぶるスターズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -88,5 +88,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003835": {
+    "workId": "wk_000003835",
+    "title": "디 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109875642"
+    },
+    "titles": {
+      "ko": "디 아이돌",
+      "en": "The Idol"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004263": {
+    "workId": "wk_000004263",
+    "title": "정치를 한다면",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110116272"
+    },
+    "titles": {
+      "ko": "정치를 한다면",
+      "en": "Q110116272"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

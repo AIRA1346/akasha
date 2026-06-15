@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003111": {
+    "workId": "wk_000003111",
+    "title": "태양의 아이 에스테반",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1218397"
+    },
+    "titles": {
+      "ko": "태양의 아이 에스테반",
+      "en": "The Mysterious Cities of Gold",
+      "ja": "太陽の子エステバン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003842": {
+    "workId": "wk_000003842",
+    "title": "입어주세요, 타카미네 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128292443"
+    },
+    "titles": {
+      "ko": "입어주세요, 타카미네 양",
+      "en": "Please Put Them On, Takamine-san",
+      "ja": "履いてください、鷹峰さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "wk_000002982": {
+    "workId": "wk_000002982",
+    "title": "의매생활",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106690604"
+    },
+    "titles": {
+      "ko": "의매생활",
+      "en": "Days With My Stepsister",
+      "ja": "義妹生活"
+    },
+    "releaseYear": 2021,
+    "creator": "Ghost Mikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003048": {
+    "workId": "wk_000003048",
+    "title": "신의 수호자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106721874"
+    },
+    "titles": {
+      "ko": "신의 수호자",
+      "en": "Guardian of the God",
+      "ja": "神の守り人"
+    },
+    "releaseYear": 2003,
+    "creator": "우에하시 나호코",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

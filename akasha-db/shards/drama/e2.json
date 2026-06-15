@@ -32,5 +32,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005058": {
+    "workId": "wk_000005058",
+    "title": "8시다! 전원집합",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11188427"
+    },
+    "titles": {
+      "ko": "8시다! 전원집합",
+      "en": "Hachiji Da Yo! Zen'in Shugo",
+      "ja": "8時だョ!全員集合"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

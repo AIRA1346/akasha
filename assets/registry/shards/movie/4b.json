@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003058": {
+    "workId": "wk_000003058",
+    "title": "리유니언",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104882695"
+    },
+    "titles": {
+      "ko": "리유니언",
+      "en": "Reunion"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

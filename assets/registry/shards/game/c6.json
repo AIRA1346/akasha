@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003934": {
+    "workId": "wk_000003934",
+    "title": "미나 더 할로어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112228333"
+    },
+    "titles": {
+      "ko": "미나 더 할로어",
+      "en": "Mina the Hollower"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004897": {
+    "workId": "wk_000004897",
+    "title": "EXIT",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137071"
+    },
+    "titles": {
+      "ko": "EXIT",
+      "en": "Exit",
+      "ja": "EXIT"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

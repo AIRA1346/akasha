@@ -117,5 +117,64 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003177": {
+    "workId": "wk_000003177",
+    "title": "기동전사 건담 썬더볼트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11544427"
+    },
+    "titles": {
+      "ko": "기동전사 건담 썬더볼트",
+      "en": "Mobile Suit Gundam Thunderbolt",
+      "ja": "機動戦士ガンダム サンダーボルト"
+    },
+    "releaseYear": 2012,
+    "creator": "Yasuo Ōtagaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003429": {
+    "workId": "wk_000003429",
+    "title": "나와라! 코쿠리씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11608493"
+    },
+    "titles": {
+      "ko": "나와라! 코쿠리씨",
+      "en": "Gugure! Kokkuri-san",
+      "ja": "繰繰れ! コックリさん"
+    },
+    "releaseYear": 2011,
+    "creator": "Midori Endō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005207": {
+    "workId": "wk_000005207",
+    "title": "누가 공작의 춤을 보았나?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125843801"
+    },
+    "titles": {
+      "ko": "누가 공작의 춤을 보았나?",
+      "en": "Kujaku no Dance, Dare ga Mita?",
+      "ja": "クジャクのダンス、誰が見た?"
+    },
+    "creator": "Rito Asami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

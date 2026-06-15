@@ -1,0 +1,79 @@
+{
+  "wk_000003217": {
+    "workId": "wk_000003217",
+    "title": "넬라의 비밀 약방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106879969"
+    },
+    "titles": {
+      "ko": "넬라의 비밀 약방",
+      "en": "The Lost Apothecary: A Novel"
+    },
+    "releaseYear": 2021,
+    "creator": "Sarah Penner",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003736": {
+    "workId": "wk_000003736",
+    "title": "도둑 호첸플로츠",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107437994"
+    },
+    "titles": {
+      "ko": "도둑 호첸플로츠",
+      "en": "The Robber Hotzenplotz",
+      "ja": "大どろぼうホッツェンプロッツ"
+    },
+    "releaseYear": 1962,
+    "creator": "Otfried Preußler",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004456": {
+    "workId": "wk_000004456",
+    "title": "동문선",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10870286"
+    },
+    "titles": {
+      "ko": "동문선",
+      "en": "Q10870286",
+      "ja": "東文選"
+    },
+    "releaseYear": 1478,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004598": {
+    "workId": "wk_000004598",
+    "title": "사림광기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10879998"
+    },
+    "titles": {
+      "ko": "사림광기",
+      "en": "Shilin Guangji",
+      "ja": "事林広記"
+    },
+    "creator": "Chen Yuanjing",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

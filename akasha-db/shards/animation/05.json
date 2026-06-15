@@ -92,5 +92,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004639": {
+    "workId": "wk_000004639",
+    "title": "극장판 짱구는 못말려: 기기괴괴! 나의 요괴 베케이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137379883"
+    },
+    "titles": {
+      "ko": "극장판 짱구는 못말려: 기기괴괴! 나의 요괴 베케이션",
+      "en": "Crayon Shin-chan the Movie: Super Strange! My Yōkai Monster Vacation",
+      "ja": "クレヨンしんちゃん 奇々怪々!オラの妖怪バケ～ション"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004815": {
+    "workId": "wk_000004815",
+    "title": "제너레이션 킬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q154194"
+    },
+    "titles": {
+      "ko": "제너레이션 킬",
+      "en": "Generation Kill",
+      "ja": "ジェネレーション・キル 兵士たちのイラク戦争"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

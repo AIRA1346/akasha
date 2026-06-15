@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003446": {
+    "workId": "wk_000003446",
+    "title": "비질란테",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85980082"
+    },
+    "titles": {
+      "ko": "비질란테",
+      "en": "Vigilante"
+    },
+    "creator": "김규삼",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

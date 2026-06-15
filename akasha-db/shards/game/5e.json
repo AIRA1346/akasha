@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004512": {
+    "workId": "wk_000004512",
+    "title": "스카시카시판 맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11311301"
+    },
+    "titles": {
+      "ko": "스카시카시판 맨",
+      "en": "Sukashikashipan Man",
+      "ja": "スカシカシパンマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

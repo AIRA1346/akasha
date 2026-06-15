@@ -73,5 +73,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003541": {
+    "workId": "wk_000003541",
+    "title": "탐정학원 Q",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124570859"
+    },
+    "titles": {
+      "ko": "탐정학원 Q",
+      "en": "Detective School Q",
+      "ja": "探偵学園Q"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004069": {
+    "workId": "wk_000004069",
+    "title": "믿었던 동료들에게 던전 오지에서 살해당할 뻔했지만기프트 『무한 가챠』로레벨 9999의 동료들을 손에 넣어전 파티 멤버와 세계에 복수&『참교육!』합니다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131193473"
+    },
+    "titles": {
+      "ko": "믿었던 동료들에게 던전 오지에서 살해당할 뻔했지만기프트 『무한 가챠』로레벨 9999의 동료들을 손에 넣어전 파티 멤버와 세계에 복수&『참교육!』합니다!",
+      "en": "Backstabbed in a Backwater Dungeon",
+      "ja": "信じていた仲間達にダンジョン奥地で殺されかけたがギフト『無限ガチャ』でレベル9999の仲間達を手に入れて元パーティーメンバーと世界に復讐&『ざまぁ!』します!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004638": {
+    "workId": "wk_000004638",
+    "title": "레이와의 다라 씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137345898"
+    },
+    "titles": {
+      "ko": "레이와의 다라 씨",
+      "en": "Dara-san of Reiwa",
+      "ja": "令和のダラさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

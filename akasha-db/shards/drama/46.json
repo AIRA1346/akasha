@@ -34,5 +34,25 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004688": {
+    "workId": "wk_000004688",
+    "title": "쓰루카메 조산원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11087362"
+    },
+    "titles": {
+      "ko": "쓰루카메 조산원",
+      "en": "Q11087362",
+      "ja": "つるかめ助産院"
+    },
+    "releaseYear": 2010,
+    "creator": "Ogawa Ito",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

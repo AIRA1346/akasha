@@ -51,5 +51,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003165": {
+    "workId": "wk_000003165",
+    "title": "생방송 연금복권 720+",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459436"
+    },
+    "titles": {
+      "ko": "생방송 연금복권 720+",
+      "en": "Q109459436"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003407": {
+    "workId": "wk_000003407",
+    "title": "행복리적고사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461075"
+    },
+    "titles": {
+      "ko": "행복리적고사",
+      "en": "Q109461075"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004398": {
+    "workId": "wk_000004398",
+    "title": "MTV 무비 어워드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110145"
+    },
+    "titles": {
+      "ko": "MTV 무비 어워드",
+      "en": "MTV Movie & TV Awards",
+      "ja": "MTVムービー・アワード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004563": {
+    "workId": "wk_000004563",
+    "title": "환상의 공포",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110659944"
+    },
+    "titles": {
+      "ko": "환상의 공포",
+      "en": "Q110659944"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003832": {
+    "workId": "wk_000003832",
+    "title": "삼체 : 문명의 경계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109788700"
+    },
+    "titles": {
+      "ko": "삼체 : 문명의 경계",
+      "en": "Three-Body",
+      "ja": "三体"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003896": {
+    "workId": "wk_000003896",
+    "title": "친애적생명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110108097"
+    },
+    "titles": {
+      "ko": "친애적생명",
+      "en": "Q110108097"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005057": {
+    "workId": "wk_000005057",
+    "title": "845 가가와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11188358"
+    },
+    "titles": {
+      "ko": "845 가가와",
+      "en": "845 Kagawa",
+      "ja": "845かがわ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

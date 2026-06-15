@@ -68,5 +68,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003174": {
+    "workId": "wk_000003174",
+    "title": "쿵후보이 친미",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154217"
+    },
+    "titles": {
+      "ko": "쿵후보이 친미",
+      "en": "Ironfist Chinmi",
+      "ja": "鉄拳チンミ"
+    },
+    "creator": "Takeshi Maekawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003522": {
+    "workId": "wk_000003522",
+    "title": "꽃의 천사 탱탱군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11614965"
+    },
+    "titles": {
+      "ko": "꽃의 천사 탱탱군",
+      "en": "Hanasaka Tenshi Ten-Ten-kun",
+      "ja": "花さか天使テンテンくん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

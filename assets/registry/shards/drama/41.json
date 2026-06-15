@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005187": {
+    "workId": "wk_000005187",
+    "title": "트위스티드 메탈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112223638"
+    },
+    "titles": {
+      "ko": "트위스티드 메탈",
+      "en": "Twisted Metal",
+      "ja": "ツイステッド・メタル (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

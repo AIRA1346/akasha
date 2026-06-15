@@ -16,5 +16,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003805": {
+    "workId": "wk_000003805",
+    "title": "침묵의 퍼레이드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107541729"
+    },
+    "titles": {
+      "ko": "침묵의 퍼레이드",
+      "en": "Q107541729",
+      "ja": "沈黙のパレード"
+    },
+    "releaseYear": 2018,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

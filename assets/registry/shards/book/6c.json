@@ -1,0 +1,41 @@
+{
+  "wk_000003308": {
+    "workId": "wk_000003308",
+    "title": "야간비행",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070729"
+    },
+    "titles": {
+      "ko": "야간비행",
+      "en": "Night Flight",
+      "ja": "夜間飛行"
+    },
+    "releaseYear": 1931,
+    "creator": "Antoine de Saint-Exupéry",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004312": {
+    "workId": "wk_000004312",
+    "title": "내일은 맑음",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856112"
+    },
+    "titles": {
+      "ko": "내일은 맑음",
+      "en": "Q10856112",
+      "ja": "てるてるあした"
+    },
+    "creator": "Tomoko Kanō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

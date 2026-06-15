@@ -125,5 +125,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004949": {
+    "workId": "wk_000004949",
+    "title": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124329532"
+    },
+    "titles": {
+      "ko": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자.",
+      "en": "Reincarnated as the Daughter of the Legendary Hero and the Queen of Spirits",
+      "ja": "父は英雄、母は精霊、娘の私は転生者。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

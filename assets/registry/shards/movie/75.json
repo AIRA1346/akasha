@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004032": {
+    "workId": "wk_000004032",
+    "title": "쏘아올린 불꽃, 밑에서 볼까? 옆에서 볼까?",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054710"
+    },
+    "titles": {
+      "ko": "쏘아올린 불꽃, 밑에서 볼까? 옆에서 볼까?",
+      "en": "Fireworks, Should We See It from the Side or the Bottom?",
+      "ja": "打ち上げ花火、下から見るか? 横から見るか?"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

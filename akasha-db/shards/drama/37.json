@@ -53,5 +53,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005006": {
+    "workId": "wk_000005006",
+    "title": "TMI SHOW",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111812472"
+    },
+    "titles": {
+      "ko": "TMI SHOW",
+      "en": "Q111812472"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005254": {
+    "workId": "wk_000005254",
+    "title": "사랑, 그 어디쯤 : 아시진적애니",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112334830"
+    },
+    "titles": {
+      "ko": "사랑, 그 어디쯤 : 아시진적애니",
+      "en": "Love is True"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

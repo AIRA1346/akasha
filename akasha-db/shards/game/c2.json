@@ -135,5 +135,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004157": {
+    "workId": "wk_000004157",
+    "title": "와룡: 폴른 다이너스티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112566486"
+    },
+    "titles": {
+      "ko": "와룡: 폴른 다이너스티",
+      "en": "Q112566486"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004159": {
+    "workId": "wk_000004159",
+    "title": "FIFA 14",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256854"
+    },
+    "titles": {
+      "ko": "FIFA 14",
+      "en": "FIFA 14"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004522": {
+    "workId": "wk_000004522",
+    "title": "게으른 괴수 공주는 일하기 싫어!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113206563"
+    },
+    "titles": {
+      "ko": "게으른 괴수 공주는 일하기 싫어!",
+      "en": "Kaiju Princess",
+      "ja": "怠け怪獣姫は働きたくない"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004827": {
+    "workId": "wk_000004827",
+    "title": "아르네의 사건부",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113624228"
+    },
+    "titles": {
+      "ko": "아르네의 사건부",
+      "en": "The Case Book of Arne",
+      "ja": "アルネの事件簿"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

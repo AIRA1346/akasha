@@ -36,5 +36,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004435": {
+    "workId": "wk_000004435",
+    "title": "미궁의 시오리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135189759"
+    },
+    "titles": {
+      "ko": "미궁의 시오리",
+      "en": "Labyrinth",
+      "ja": "迷宮のしおり"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004497": {
+    "workId": "wk_000004497",
+    "title": "극장판 포켓몬스터 DP: 환영의 패왕 조로아크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1354560"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 DP: 환영의 패왕 조로아크",
+      "en": "Pokémon: Zoroark: Master of Illusions",
+      "ja": "劇場版ポケットモンスター ダイヤモンド&パール 幻影の覇者 ゾロアーク"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004893": {
+    "workId": "wk_000004893",
+    "title": "Selector Infected WIXOSS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15966468"
+    },
+    "titles": {
+      "ko": "Selector Infected WIXOSS",
+      "en": "Selector Infected WIXOSS",
+      "ja": "selector infected WIXOSS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

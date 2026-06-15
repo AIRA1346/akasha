@@ -86,5 +86,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003330": {
+    "workId": "wk_000003330",
+    "title": "힘내세요 사장님",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460859"
+    },
+    "titles": {
+      "ko": "힘내세요 사장님",
+      "en": "Q109460859"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

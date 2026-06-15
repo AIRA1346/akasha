@@ -115,5 +115,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003649": {
+    "workId": "wk_000003649",
+    "title": "더 코마 2: 비셔스 시스터즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111354525"
+    },
+    "titles": {
+      "ko": "더 코마 2: 비셔스 시스터즈",
+      "en": "The Coma 2: Vicious Sisters"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004585": {
+    "workId": "wk_000004585",
+    "title": "하피메아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326643"
+    },
+    "titles": {
+      "ko": "하피메아",
+      "en": "Hapymaher",
+      "ja": "ハピメア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004824": {
+    "workId": "wk_000004824",
+    "title": "불가사의 던전 떠돌이 시렌 외전: 여검사 아스카 등장!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361735"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 외전: 여검사 아스카 등장!",
+      "en": "Shiren the Wanderer Side Story: Swordswoman Asuka Arrives!",
+      "ja": "不思議のダンジョン 風来のシレン外伝 女剣士アスカ見参!"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

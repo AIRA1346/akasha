@@ -53,5 +53,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003915": {
+    "workId": "wk_000003915",
+    "title": "마에바시 위치스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130240193"
+    },
+    "titles": {
+      "ko": "마에바시 위치스",
+      "en": "Maebashi Witches",
+      "ja": "前橋ウィッチーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004348": {
+    "workId": "wk_000004348",
+    "title": "데드 어카운트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133269594"
+    },
+    "titles": {
+      "ko": "데드 어카운트",
+      "en": "Dead Account",
+      "ja": "デッドアカウント"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004424": {
+    "workId": "wk_000004424",
+    "title": "사랑하고 사랑받고, 차고 차이고",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134524981"
+    },
+    "titles": {
+      "ko": "사랑하고 사랑받고, 차고 차이고",
+      "en": "Love Me, Love Me Not",
+      "ja": "思い、思われ、ふり、ふられ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

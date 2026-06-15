@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003365": {
+    "workId": "wk_000003365",
+    "title": "별 내리는 왕국의 니나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123587062"
+    },
+    "titles": {
+      "ko": "별 내리는 왕국의 니나",
+      "en": "Nina the Starry Bride",
+      "ja": "星降る王国のニナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003708": {
+    "workId": "wk_000003708",
+    "title": "프린세션 오케스트라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126617193"
+    },
+    "titles": {
+      "ko": "프린세션 오케스트라",
+      "en": "Princession Orchestra",
+      "ja": "プリンセッション・オーケストラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

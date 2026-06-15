@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004073": {
+    "workId": "wk_000004073",
+    "title": "정반대의 너와 나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131316156"
+    },
+    "titles": {
+      "ko": "정반대의 너와 나",
+      "en": "You and I Are Polar Opposites",
+      "ja": "正反対な君と僕"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

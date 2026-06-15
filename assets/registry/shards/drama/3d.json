@@ -15,5 +15,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003510": {
+    "workId": "wk_000003510",
+    "title": "2008 챌린지 헤드윅",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464268"
+    },
+    "titles": {
+      "ko": "2008 챌린지 헤드윅",
+      "en": "Q109464268"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004997": {
+    "workId": "wk_000004997",
+    "title": "피타는 연애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111700920"
+    },
+    "titles": {
+      "ko": "피타는 연애",
+      "en": "My Military Valentine"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005320": {
+    "workId": "wk_000005320",
+    "title": "란포R",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236821"
+    },
+    "titles": {
+      "ko": "란포R",
+      "en": "Q11236821",
+      "ja": "乱歩R"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004791": {
+    "workId": "wk_000004791",
+    "title": "NCIS: 시드니",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111133839"
+    },
+    "titles": {
+      "ko": "NCIS: 시드니",
+      "en": "NCIS: Sydney",
+      "ja": "NCIS: シドニー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005267": {
+    "workId": "wk_000005267",
+    "title": "NHK 뉴스 오하이요 오카야마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235045"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하이요 오카야마",
+      "en": "NHK News Ohayo Okayama",
+      "ja": "NHKニュースおはよう岡山"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

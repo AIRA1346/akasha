@@ -15,5 +15,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003160": {
+    "workId": "wk_000003160",
+    "title": "생활상양광일양찬란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459215"
+    },
+    "titles": {
+      "ko": "생활상양광일양찬란",
+      "en": "Q109459215"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005192": {
+    "workId": "wk_000005192",
+    "title": "미세스 아메리칸 파이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112262014"
+    },
+    "titles": {
+      "ko": "미세스 아메리칸 파이",
+      "en": "Palm Royale",
+      "ja": "パーム・ロワイヤル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005328": {
+    "workId": "wk_000005328",
+    "title": "퓨어 소울: 네가 나를 잊어도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240092"
+    },
+    "titles": {
+      "ko": "퓨어 소울: 네가 나를 잊어도",
+      "en": "Q11240092",
+      "ja": "Pure Soul〜君が僕を忘れても〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

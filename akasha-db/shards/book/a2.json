@@ -1,0 +1,22 @@
+{
+  "wk_000003220": {
+    "workId": "wk_000003220",
+    "title": "경화연운",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069350"
+    },
+    "titles": {
+      "ko": "경화연운",
+      "en": "Moment in Peking",
+      "ja": "京華煙雲 Moment in Peking (北京好日)"
+    },
+    "releaseYear": 1939,
+    "creator": "Lin Yutang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

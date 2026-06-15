@@ -102,5 +102,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003655": {
+    "workId": "wk_000003655",
+    "title": "엠파이어 & 퍼즐",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111438725"
+    },
+    "titles": {
+      "ko": "엠파이어 & 퍼즐",
+      "en": "Empires & Puzzles"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

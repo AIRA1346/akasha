@@ -54,5 +54,62 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002944": {
+    "workId": "wk_000002944",
+    "title": "SANDA",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115191955"
+    },
+    "titles": {
+      "ko": "SANDA",
+      "en": "Sanda",
+      "ja": "SANDA"
+    },
+    "releaseYear": 2024,
+    "creator": "Paru Itagaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003430": {
+    "workId": "wk_000003430",
+    "title": "군청",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11609491"
+    },
+    "titles": {
+      "ko": "군청",
+      "en": "Gunjō",
+      "ja": "羣青"
+    },
+    "creator": "Chin Nakamura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005013": {
+    "workId": "wk_000005013",
+    "title": "마술 용사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124474735"
+    },
+    "titles": {
+      "ko": "마술 용사",
+      "en": "MamaYuyu",
+      "ja": "魔々勇々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -64,5 +64,81 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004648": {
+    "workId": "wk_000004648",
+    "title": "플랙 어택",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11333515"
+    },
+    "titles": {
+      "ko": "플랙 어택",
+      "en": "MX5000",
+      "ja": "フラックアタック"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004649": {
+    "workId": "wk_000004649",
+    "title": "시티 라이프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133782"
+    },
+    "titles": {
+      "ko": "시티 라이프",
+      "en": "City Life",
+      "ja": "シティー ライフ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004981": {
+    "workId": "wk_000004981",
+    "title": "마리오와 소닉 런던 올림픽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139375"
+    },
+    "titles": {
+      "ko": "마리오와 소닉 런던 올림픽",
+      "en": "Mario & Sonic at the London 2012 Olympic Games",
+      "ja": "マリオ&ソニック AT ロンドンオリンピック"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005229": {
+    "workId": "wk_000005229",
+    "title": "철권 태그 토너먼트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142527"
+    },
+    "titles": {
+      "ko": "철권 태그 토너먼트",
+      "en": "Tekken Tag Tournament",
+      "ja": "鉄拳タッグトーナメント"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

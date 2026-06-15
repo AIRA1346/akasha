@@ -16,5 +16,25 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003096": {
+    "workId": "wk_000003096",
+    "title": "갓 오브 하이스쿨",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3521063"
+    },
+    "titles": {
+      "ko": "갓 오브 하이스쿨",
+      "en": "The God of High School",
+      "ja": "ゴッド・オブ・ハイスクール"
+    },
+    "releaseYear": 2011,
+    "creator": "Park Yong-je",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

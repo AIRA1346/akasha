@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004005": {
+    "workId": "wk_000004005",
+    "title": "로얄 블러드Ⅱ ~디날왕국 연대기~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237621"
+    },
+    "titles": {
+      "ko": "로얄 블러드Ⅱ ~디날왕국 연대기~",
+      "en": "Q11237621",
+      "ja": "ロイヤルブラッドII 〜ディナール王国年代記〜"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

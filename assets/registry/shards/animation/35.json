@@ -40,5 +40,95 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003711": {
+    "workId": "wk_000003711",
+    "title": "헬로우 레이디 린",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12687634"
+    },
+    "titles": {
+      "ko": "헬로우 레이디 린",
+      "en": "Hello! Lady Lynn",
+      "ja": "ハロー!レディリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003775": {
+    "workId": "wk_000003775",
+    "title": "샐러리맨이 이세계에 갔더니 사천왕이 된 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127687361"
+    },
+    "titles": {
+      "ko": "샐러리맨이 이세계에 갔더니 사천왕이 된 이야기",
+      "en": "Headhunted to Another World",
+      "ja": "サラリーマンが異世界に行ったら四天王になった話"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004283": {
+    "workId": "wk_000004283",
+    "title": "앨리슨과 리리아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1325093"
+    },
+    "titles": {
+      "ko": "앨리슨과 리리아",
+      "en": "Allison & Lillia",
+      "ja": "アリソンとリリア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004572": {
+    "workId": "wk_000004572",
+    "title": "시마지로 헤소카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136378335"
+    },
+    "titles": {
+      "ko": "시마지로 헤소카",
+      "en": "Shimajirō Hesoka",
+      "ja": "しまじろう ヘソカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004632": {
+    "workId": "wk_000004632",
+    "title": "괴짜가족",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137002700"
+    },
+    "titles": {
+      "ko": "괴짜가족",
+      "en": "Super Radical Gag Family",
+      "ja": "浦安鉄筋家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

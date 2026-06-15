@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003825": {
+    "workId": "wk_000003825",
+    "title": "칭찬받고 싶은 나의 망상 밥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109595397"
+    },
+    "titles": {
+      "ko": "칭찬받고 싶은 나의 망상 밥",
+      "en": "My Imaginary Meal to be Praised",
+      "ja": "ホメられたい僕の妄想ごはん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

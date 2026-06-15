@@ -1,0 +1,22 @@
+{
+  "wk_000003393": {
+    "workId": "wk_000003393",
+    "title": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107122248"
+    },
+    "titles": {
+      "ko": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "en": "VTuber Legend",
+      "ja": "VTuberなんだが配信切り忘れたら伝説になってた"
+    },
+    "releaseYear": 2021,
+    "creator": "Nanato Nana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

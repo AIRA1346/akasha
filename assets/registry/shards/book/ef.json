@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004602": {
+    "workId": "wk_000004602",
+    "title": "오등회원",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10881971"
+    },
+    "titles": {
+      "ko": "오등회원",
+      "en": "A Compendium of the Five Lamps",
+      "ja": "五灯会元"
+    },
+    "releaseYear": 1252,
+    "creator": "Shi Puji",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

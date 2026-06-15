@@ -100,5 +100,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003211": {
+    "workId": "wk_000003211",
+    "title": "헨타이 프리즌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110072006"
+    },
+    "titles": {
+      "ko": "헨타이 프리즌",
+      "en": "Hentai Prison",
+      "ja": "ヘンタイ・プリズン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005098": {
+    "workId": "wk_000005098",
+    "title": "마리오와 소닉 베이징 올림픽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141627"
+    },
+    "titles": {
+      "ko": "마리오와 소닉 베이징 올림픽",
+      "en": "Mario & Sonic at the Olympic Games",
+      "ja": "マリオ&ソニック AT 北京オリンピック"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

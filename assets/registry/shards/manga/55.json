@@ -1,0 +1,21 @@
+{
+  "wk_000004194": {
+    "workId": "wk_000004194",
+    "title": "미스터리 극장 에지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187997"
+    },
+    "titles": {
+      "ko": "미스터리 극장 에지",
+      "en": "Psychometrer Eiji",
+      "ja": "サイコメトラーGAIJI"
+    },
+    "creator": "Shin Kibayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

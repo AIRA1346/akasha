@@ -1,0 +1,39 @@
+{
+  "wk_000004692": {
+    "workId": "wk_000004692",
+    "title": "가스가노쓰보네",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11088802"
+    },
+    "titles": {
+      "ko": "가스가노쓰보네",
+      "en": "Kasuga no Tsubone",
+      "ja": "春日局"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005179": {
+    "workId": "wk_000005179",
+    "title": "인간 vs 벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112078154"
+    },
+    "titles": {
+      "ko": "인간 vs 벌",
+      "en": "Man vs. Bee",
+      "ja": "ローワン・アトキンソンのヒトvsハチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -55,5 +55,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002977": {
+    "workId": "wk_000002977",
+    "title": "이 넓은 하늘에, 날개를 펼치고",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10928187"
+    },
+    "titles": {
+      "ko": "이 넓은 하늘에, 날개를 펼치고",
+      "en": "If My Heart Had Wings",
+      "ja": "この大空に、翼をひろげて"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003929": {
+    "workId": "wk_000003929",
+    "title": "동방야작식당 - Touhou Mystia's Izakaya",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112125305"
+    },
+    "titles": {
+      "ko": "동방야작식당 - Touhou Mystia's Izakaya",
+      "en": "Touhou Mystia's Izakaya",
+      "ja": "とうほう夜雀食堂"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004079": {
+    "workId": "wk_000004079",
+    "title": "택티컬 브리치 위저드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112435277"
+    },
+    "titles": {
+      "ko": "택티컬 브리치 위저드",
+      "en": "Tactical Breach Wizards"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004590": {
+    "workId": "wk_000004590",
+    "title": "파르페 -쇼콜라 세컨드 브루-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329455"
+    },
+    "titles": {
+      "ko": "파르페 -쇼콜라 세컨드 브루-",
+      "en": "Parfait ~Chocolat Second Brew~",
+      "ja": "パルフェ 〜ショコラ second brew〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

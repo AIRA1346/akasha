@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005036": {
+    "workId": "wk_000005036",
+    "title": "명색의 례희 ~조용히 사라지는 푸른산호의 숲~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11395069"
+    },
+    "titles": {
+      "ko": "명색의 례희 ~조용히 사라지는 푸른산호의 숲~",
+      "en": "Meishoku no Reiki ~Yuruyaka ni Shisuru Ao Sango no Mori~",
+      "ja": "冥色の隷姫 〜緩やかに廃滅する青珊瑚の森〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

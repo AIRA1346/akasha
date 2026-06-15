@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003125": {
+    "workId": "wk_000003125",
+    "title": "프란: 잃어버린 천사의 기억",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10941946"
+    },
+    "titles": {
+      "ko": "프란: 잃어버린 천사의 기억",
+      "en": "Lost Memory of Angel Frane",
+      "ja": "Lost Memory Of Angel Story Frane"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

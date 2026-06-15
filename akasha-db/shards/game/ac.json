@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004762": {
+    "workId": "wk_000004762",
+    "title": "어둠속에 나홀로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113510585"
+    },
+    "titles": {
+      "ko": "어둠속에 나홀로",
+      "en": "Q113510585",
+      "ja": "Alone in the Dark"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

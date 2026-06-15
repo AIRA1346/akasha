@@ -35,5 +35,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003640": {
+    "workId": "wk_000003640",
+    "title": "다윈 사변",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126013375"
+    },
+    "titles": {
+      "ko": "다윈 사변",
+      "en": "The Darwin Incident",
+      "ja": "ダーウィン事変"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003713": {
+    "workId": "wk_000003713",
+    "title": "황혼 호텔",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126897255"
+    },
+    "titles": {
+      "ko": "황혼 호텔",
+      "en": "Tasokare Hotel",
+      "ja": "誰ソ彼ホテル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004144": {
+    "workId": "wk_000004144",
+    "title": "샹피뇽의 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131437081"
+    },
+    "titles": {
+      "ko": "샹피뇽의 마녀",
+      "en": "Champignon Witch",
+      "ja": "シャンピニオンの魔女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

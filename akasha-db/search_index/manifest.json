@@ -1,49 +1,49 @@
 {
   "version": 1,
-  "entryCount": 2859,
-  "generatedAt": "2026-06-14T21:58:16.525678Z",
+  "entryCount": 5181,
+  "generatedAt": "2026-06-15T00:50:32.310413Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 577,
-      "sha256": "2d8af790a1f8c4f4e60649b3d95b07d313ca16e4691e40b8810d8e8b1969bda4"
+      "entryCount": 1084,
+      "sha256": "1898b4c49495727fcfd5eb674d3dfe3e0806498db3ebcee089af97163be28465"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 243,
-      "sha256": "945c0c1afa1b21b6ce716bec7f16955576a87da4edcd9661963364e411b7099d"
+      "entryCount": 490,
+      "sha256": "1ca121c4753bca340597b351d1178b4dd8edea0d3aaba4f1cb80d6f25ec87841"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 593,
-      "sha256": "604b85243299d81501b1a6ca027894f0d11b5977da8755c9e76811a72f6b5e5e"
+      "entryCount": 1213,
+      "sha256": "87f53701d1d9860acb19c4768a41076bc7b6244fc743d83f989566e72a973848"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 505,
-      "sha256": "ed454716bc3e23213dbebff7f8a90f00a13d00c3038ce6dae7344a611e07da10"
+      "entryCount": 913,
+      "sha256": "5cfee9eae435474ca65a75221b0f58649cfde55f882e01344a66e5681c0f986b"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 493,
-      "sha256": "f47d1248cd919dd194953a54ce4f7a96ff35c1571a244f5ac1227d1b223de363"
+      "entryCount": 705,
+      "sha256": "d123aabc5a2218faf61106c91dd06e155352574a64ea0a7e836e770a6211afad"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 254,
-      "sha256": "f6a9654a18377e7f52acce725e7a0233b2b63c006e9824af8cc24e2ccb74a058"
+      "entryCount": 475,
+      "sha256": "e01bf288cd6bd840160792de0be4ea612e855cae4ebc015bf874c81d070482f3"
     },
     {
       "category": "webtoon",
       "path": "search_index/webtoon.json",
-      "entryCount": 194,
-      "sha256": "eca3481c07f6e335982fc37869114c110d13d4b6987fab9a0e8485baa6341cbf"
+      "entryCount": 301,
+      "sha256": "65fc4ec29b7748ea3662a984677857b0d1b890933272ebbe13a35e7c389ea968"
     }
   ]
 }

@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003297": {
+    "workId": "wk_000003297",
+    "title": "클라나드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110607"
+    },
+    "titles": {
+      "ko": "클라나드",
+      "en": "Clannad",
+      "ja": "CLANNAD"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003301": {
+    "workId": "wk_000003301",
+    "title": "오프로드 드라이브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110716568"
+    },
+    "titles": {
+      "ko": "오프로드 드라이브",
+      "en": "Off-Road Drive"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

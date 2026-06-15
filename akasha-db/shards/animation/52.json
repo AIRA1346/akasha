@@ -73,5 +73,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004418": {
+    "workId": "wk_000004418",
+    "title": "백작과 요정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1343008"
+    },
+    "titles": {
+      "ko": "백작과 요정",
+      "en": "Hakushaku to Yōsei",
+      "ja": "伯爵と妖精"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004806": {
+    "workId": "wk_000004806",
+    "title": "극장판 헌터X헌터 : 더 라스트 미션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15205223"
+    },
+    "titles": {
+      "ko": "극장판 헌터X헌터 : 더 라스트 미션",
+      "en": "Hunter × Hunter: The Last Mission",
+      "ja": "劇場版 HUNTER×HUNTER -The LAST MISSION-"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004953": {
+    "workId": "wk_000004953",
+    "title": "알드노아. 제로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15980655"
+    },
+    "titles": {
+      "ko": "알드노아. 제로",
+      "en": "Aldnoah.Zero",
+      "ja": "アルドノア・ゼロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

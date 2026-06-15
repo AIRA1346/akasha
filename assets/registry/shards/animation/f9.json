@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003719": {
+    "workId": "wk_000003719",
+    "title": "미카도노 세 자매는 의외로 쉽다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126974198"
+    },
+    "titles": {
+      "ko": "미카도노 세 자매는 의외로 쉽다",
+      "en": "Dealing with Mikadono Sisters Is a Breeze",
+      "ja": "帝乃三姉妹は案外、チョロい。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004968": {
+    "workId": "wk_000004968",
+    "title": "대지진 10.5",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q163903"
+    },
+    "titles": {
+      "ko": "대지진 10.5",
+      "en": "10.5: Apocalypse"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "wk_000003103": {
+    "workId": "wk_000003103",
+    "title": "악마의 신부",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4315734"
+    },
+    "titles": {
+      "ko": "악마의 신부",
+      "en": "Devil's Bride"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003186": {
+    "workId": "wk_000003186",
+    "title": "위대한 캣츠비",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q484075"
+    },
+    "titles": {
+      "ko": "위대한 캣츠비",
+      "en": "The Great Catsby"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

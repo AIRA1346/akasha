@@ -52,5 +52,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004710": {
+    "workId": "wk_000004710",
+    "title": "영검산",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139567518"
+    },
+    "titles": {
+      "ko": "영검산",
+      "en": "Congqian Youzuo Lingjianshan",
+      "ja": "霊剣山"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005287": {
+    "workId": "wk_000005287",
+    "title": "괴물의 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18684117"
+    },
+    "titles": {
+      "ko": "괴물의 아이",
+      "en": "The Boy and the Beast",
+      "ja": "バケモノの子"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

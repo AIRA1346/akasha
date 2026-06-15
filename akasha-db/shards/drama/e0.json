@@ -64,5 +64,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003240": {
+    "workId": "wk_000003240",
+    "title": "아리수별곡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460164"
+    },
+    "titles": {
+      "ko": "아리수별곡",
+      "en": "Q109460164"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003246": {
+    "workId": "wk_000003246",
+    "title": "세계의 공영방송 가치+",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460385"
+    },
+    "titles": {
+      "ko": "세계의 공영방송 가치+",
+      "en": "Q109460385"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003836": {
+    "workId": "wk_000003836",
+    "title": "리처",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109901438"
+    },
+    "titles": {
+      "ko": "리처",
+      "en": "Reacher",
+      "ja": "ジャック・リーチャー -正義のアウトロー-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005317": {
+    "workId": "wk_000005317",
+    "title": "드래곤 청년단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235997"
+    },
+    "titles": {
+      "ko": "드래곤 청년단",
+      "en": "Dragon Braves",
+      "ja": "ドラゴン青年団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

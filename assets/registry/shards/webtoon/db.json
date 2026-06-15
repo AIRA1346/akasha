@@ -51,5 +51,24 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003091": {
+    "workId": "wk_000003091",
+    "title": "제로테이커",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q32979673"
+    },
+    "titles": {
+      "ko": "제로테이커",
+      "en": "Zero taker"
+    },
+    "releaseYear": 2002,
+    "creator": "Choi Yun-Yeol",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

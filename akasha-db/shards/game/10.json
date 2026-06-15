@@ -88,5 +88,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005040": {
+    "workId": "wk_000005040",
+    "title": "라이자의 아틀리에 3 ~종극의 연금술사와 비밀의 열쇠~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113957024"
+    },
+    "titles": {
+      "ko": "라이자의 아틀리에 3 ~종극의 연금술사와 비밀의 열쇠~",
+      "en": "Atelier Ryza 3: Alchemist of the End & the Secret Key",
+      "ja": "ライザのアトリエ3 ～終わりの錬金術士と秘密の鍵～"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005101": {
+    "workId": "wk_000005101",
+    "title": "화이트 앨범",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141878"
+    },
+    "titles": {
+      "ko": "화이트 앨범",
+      "en": "White Album",
+      "ja": "WHITE ALBUM"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

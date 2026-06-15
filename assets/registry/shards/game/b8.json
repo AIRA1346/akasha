@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004363": {
+    "workId": "wk_000004363",
+    "title": "L.A. 느와르",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129094"
+    },
+    "titles": {
+      "ko": "L.A. 느와르",
+      "en": "Q1129094",
+      "ja": "L.A.ノワール"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004587": {
+    "workId": "wk_000004587",
+    "title": "하봇",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327355"
+    },
+    "titles": {
+      "ko": "하봇",
+      "en": "Harbot",
+      "ja": "ハーボット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,90 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003517": {
+    "workId": "wk_000003517",
+    "title": "KNN 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464395"
+    },
+    "titles": {
+      "ko": "KNN 뉴스특보",
+      "en": "Q109464395"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003518": {
+    "workId": "wk_000003518",
+    "title": "TBC 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464396"
+    },
+    "titles": {
+      "ko": "TBC 뉴스특보",
+      "en": "Q109464396"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003680": {
+    "workId": "wk_000003680",
+    "title": "캠퍼스 꼭짓점 댄스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546019"
+    },
+    "titles": {
+      "ko": "캠퍼스 꼭짓점 댄스",
+      "en": "Q109546019"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004174": {
+    "workId": "wk_000004174",
+    "title": "스트릿 맨즈 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115457"
+    },
+    "titles": {
+      "ko": "스트릿 맨즈 파이터",
+      "en": "Street Man Fighter"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004867": {
+    "workId": "wk_000004867",
+    "title": "톨 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111286339"
+    },
+    "titles": {
+      "ko": "톨 걸",
+      "en": "Tall Girl"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

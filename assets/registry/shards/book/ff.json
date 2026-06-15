@@ -1,0 +1,41 @@
+{
+  "wk_000003222": {
+    "workId": "wk_000003222",
+    "title": "서리 거인의 딸",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069560"
+    },
+    "titles": {
+      "ko": "서리 거인의 딸",
+      "en": "The Frost-Giant's Daughter"
+    },
+    "releaseYear": 1953,
+    "creator": "Robert E. Howard",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003309": {
+    "workId": "wk_000003309",
+    "title": "배를 엮다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107092332"
+    },
+    "titles": {
+      "ko": "배를 엮다",
+      "en": "The Great Passage",
+      "ja": "舟を編む"
+    },
+    "releaseYear": 2011,
+    "creator": "Shion Miura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

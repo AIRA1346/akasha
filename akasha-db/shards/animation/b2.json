@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003544": {
+    "workId": "wk_000003544",
+    "title": "어차피, 사랑하고 만다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124660797"
+    },
+    "titles": {
+      "ko": "어차피, 사랑하고 만다.",
+      "en": "Anyway, I'm Falling in Love with You",
+      "ja": "どうせ、恋してしまうんだ。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

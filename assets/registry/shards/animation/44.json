@@ -35,5 +35,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003841": {
+    "workId": "wk_000003841",
+    "title": "리인카네이션의 꽃잎",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128214519"
+    },
+    "titles": {
+      "ko": "리인카네이션의 꽃잎",
+      "en": "Petals of Reincarnation",
+      "ja": "リィンカーネーションの花弁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004208": {
+    "workId": "wk_000004208",
+    "title": "마술사 쿠논은 보인다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131869722"
+    },
+    "titles": {
+      "ko": "마술사 쿠논은 보인다",
+      "en": "Kunon the Sorcerer Can See",
+      "ja": "魔術師クノンは見えている"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004574": {
+    "workId": "wk_000004574",
+    "title": "오타쿠에게 상냥한 갸루는 없다?!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136409697"
+    },
+    "titles": {
+      "ko": "오타쿠에게 상냥한 갸루는 없다?!",
+      "en": "Gals Can't Be Kind to Otaku!?",
+      "ja": "オタクに優しいギャルはいない！？"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

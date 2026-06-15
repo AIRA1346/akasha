@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004341": {
+    "workId": "wk_000004341",
+    "title": "와글와글 시장가요제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118353"
+    },
+    "titles": {
+      "ko": "와글와글 시장가요제",
+      "en": "Q110118353"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

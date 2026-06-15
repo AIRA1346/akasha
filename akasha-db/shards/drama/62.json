@@ -52,5 +52,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002998": {
+    "workId": "wk_000002998",
+    "title": "쉿! 그놈을 부탁해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458226"
+    },
+    "titles": {
+      "ko": "쉿! 그놈을 부탁해",
+      "en": "Q109458226"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003336": {
+    "workId": "wk_000003336",
+    "title": "사건기록 - 그날의 선택",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460929"
+    },
+    "titles": {
+      "ko": "사건기록 - 그날의 선택",
+      "en": "Q109460929"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

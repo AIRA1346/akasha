@@ -1,0 +1,58 @@
+{
+  "wk_000003611": {
+    "workId": "wk_000003611",
+    "title": "주마등 주식회사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636096"
+    },
+    "titles": {
+      "ko": "주마등 주식회사",
+      "en": "Sōmatō Kabushikigaisha",
+      "ja": "走馬灯株式会社"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003697": {
+    "workId": "wk_000003697",
+    "title": "마법소녀 오브 디 엔드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673806"
+    },
+    "titles": {
+      "ko": "마법소녀 오브 디 엔드",
+      "en": "Magical Girl Apocalypse",
+      "ja": "魔法少女・オブ・ジ・エンド"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004940": {
+    "workId": "wk_000004940",
+    "title": "반딧불이의 혼례",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123858009"
+    },
+    "titles": {
+      "ko": "반딧불이의 혼례",
+      "en": "Firefly Wedding",
+      "ja": "ホタルの嫁入り"
+    },
+    "creator": "Oreco Tachibana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

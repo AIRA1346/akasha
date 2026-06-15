@@ -1,0 +1,40 @@
+{
+  "wk_000003931": {
+    "workId": "wk_000003931",
+    "title": "에어가이츠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1121317"
+    },
+    "titles": {
+      "ko": "에어가이츠",
+      "en": "Ehrgeiz",
+      "ja": "エアガイツ"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004909": {
+    "workId": "wk_000004909",
+    "title": "Shooting Storm",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113875209"
+    },
+    "titles": {
+      "ko": "Shooting Storm",
+      "en": "Metal Torrent",
+      "ja": "あぁ無情 刹那"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

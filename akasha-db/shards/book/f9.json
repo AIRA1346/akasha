@@ -30,5 +30,25 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003392": {
+    "workId": "wk_000003392",
+    "title": "신자 0명 여신님과 시작하는 이세계 공략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107111325"
+    },
+    "titles": {
+      "ko": "신자 0명 여신님과 시작하는 이세계 공략",
+      "en": "Full Clearing Another World under a Goddess with Zero Believers",
+      "ja": "信者ゼロの女神サマと始める異世界攻略"
+    },
+    "releaseYear": 2019,
+    "creator": "Airu Ōsaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

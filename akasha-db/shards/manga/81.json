@@ -37,5 +37,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004876": {
+    "workId": "wk_000004876",
+    "title": "왕비 교육에서 도망치고 싶은 나",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123272328"
+    },
+    "titles": {
+      "ko": "왕비 교육에서 도망치고 싶은 나",
+      "en": "I Want to Escape from Princess Lessons",
+      "ja": "妃教育から逃げたい私"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004630": {
+    "workId": "wk_000004630",
+    "title": "초시공요새 마크로스 사랑・기억하고 있습니까",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368509"
+    },
+    "titles": {
+      "ko": "초시공요새 마크로스 사랑・기억하고 있습니까",
+      "en": "Macross: Do You Remember Love?",
+      "ja": "超時空要塞マクロス 愛・おぼえていますか"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

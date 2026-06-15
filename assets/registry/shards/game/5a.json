@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004652": {
+    "workId": "wk_000004652",
+    "title": "마테리얼 브레이브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340649"
+    },
+    "titles": {
+      "ko": "마테리얼 브레이브",
+      "en": "Material Brave",
+      "ja": "マテリアルブレイブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004829": {
+    "workId": "wk_000004829",
+    "title": "꿈의 일기 -DREAM DIARY-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113624296"
+    },
+    "titles": {
+      "ko": "꿈의 일기 -DREAM DIARY-",
+      "en": "Yume Nikki: Dream Diary",
+      "ja": "YUMENIKKI -DREAM DIARY-"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

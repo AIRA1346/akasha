@@ -18,5 +18,102 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003395": {
+    "workId": "wk_000003395",
+    "title": "그날 저녁의 불편함",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107140953"
+    },
+    "titles": {
+      "ko": "그날 저녁의 불편함",
+      "en": "The Discomfort of Evening"
+    },
+    "releaseYear": 2018,
+    "creator": "Lucas Rijneveld",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003804": {
+    "workId": "wk_000003804",
+    "title": "한비자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075382"
+    },
+    "titles": {
+      "ko": "한비자",
+      "en": "Han Feizi",
+      "ja": "韓非子"
+    },
+    "creator": "韓非",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004015": {
+    "workId": "wk_000004015",
+    "title": "스나크 사냥",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079681"
+    },
+    "titles": {
+      "ko": "스나크 사냥",
+      "en": "The Hunting of the Snark",
+      "ja": "スナーク狩り"
+    },
+    "releaseYear": 1876,
+    "creator": "Lewis Carroll",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004989": {
+    "workId": "wk_000004989",
+    "title": "남해기귀내법전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10908456"
+    },
+    "titles": {
+      "ko": "남해기귀내법전",
+      "en": "A Record of Buddhist Practices Sent Home from the Southern Sea",
+      "ja": "南海寄帰内法伝"
+    },
+    "creator": "의정",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005103": {
+    "workId": "wk_000005103",
+    "title": "외침",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10919784"
+    },
+    "titles": {
+      "ko": "외침",
+      "en": "Call to Arms",
+      "ja": "吶喊"
+    },
+    "releaseYear": 1922,
+    "creator": "魯迅",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

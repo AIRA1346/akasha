@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003115": {
+    "workId": "wk_000003115",
+    "title": "극장판 마법소녀 마도카☆마기카 <발푸르기스의 회천>",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122386776"
+    },
+    "titles": {
+      "ko": "극장판 마법소녀 마도카☆마기카 <발푸르기스의 회천>",
+      "en": "Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising",
+      "ja": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005026": {
+    "workId": "wk_000005026",
+    "title": "유루유리 나츠야스미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16830192"
+    },
+    "titles": {
+      "ko": "유루유리 나츠야스미",
+      "en": "YuruYuri Nachuyachumi!",
+      "ja": "ゆるゆり なちゅやちゅみ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

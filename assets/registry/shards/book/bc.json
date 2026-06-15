@@ -1,0 +1,21 @@
+{
+  "wk_000003881": {
+    "workId": "wk_000003881",
+    "title": "링 샤우트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107657822"
+    },
+    "titles": {
+      "ko": "링 샤우트",
+      "en": "Ring Shout; or, Hunting Ku Kluxes in the End Times"
+    },
+    "releaseYear": 2020,
+    "creator": "P. Djèlí Clark",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

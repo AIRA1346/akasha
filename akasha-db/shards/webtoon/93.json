@@ -35,5 +35,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003435": {
+    "workId": "wk_000003435",
+    "title": "남벌",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6961423"
+    },
+    "titles": {
+      "ko": "남벌",
+      "en": "Nambul: War Stories"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

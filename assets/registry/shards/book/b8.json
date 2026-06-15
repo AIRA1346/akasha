@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004837": {
+    "workId": "wk_000004837",
+    "title": "밤의 경비원",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108907129"
+    },
+    "titles": {
+      "ko": "밤의 경비원",
+      "en": "The Night Watchman"
+    },
+    "releaseYear": 2020,
+    "creator": "Louise Erdrich",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

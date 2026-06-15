@@ -88,5 +88,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004294": {
+    "workId": "wk_000004294",
+    "title": "튜브 패닉",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279423"
+    },
+    "titles": {
+      "ko": "튜브 패닉",
+      "en": "Tube Panic",
+      "ja": "チューブパニック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000004960": {
+    "workId": "wk_000004960",
+    "title": "전쟁과 평화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16170490"
+    },
+    "titles": {
+      "ko": "전쟁과 평화",
+      "en": "War and Peace",
+      "ja": "戦争と平和"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

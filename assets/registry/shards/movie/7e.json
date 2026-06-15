@@ -1,0 +1,21 @@
+{
+  "wk_000004673": {
+    "workId": "wk_000004673",
+    "title": "헌티드 힐",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057264"
+    },
+    "titles": {
+      "ko": "헌티드 힐",
+      "en": "House on Haunted Hill",
+      "ja": "TATARI タタリ"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

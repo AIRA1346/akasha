@@ -1,0 +1,40 @@
+{
+  "wk_000003263": {
+    "workId": "wk_000003263",
+    "title": "늑대의 입",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11571783"
+    },
+    "titles": {
+      "ko": "늑대의 입",
+      "en": "Wolfsmund",
+      "ja": "狼の口 〜ヴォルフスムント〜"
+    },
+    "creator": "久慈光久",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004870": {
+    "workId": "wk_000004870",
+    "title": "원룸, 햇볕 보통, 천사 딸림.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122932373"
+    },
+    "titles": {
+      "ko": "원룸, 햇볕 보통, 천사 딸림.",
+      "en": "Studio Apartment, Good Lighting, Angel Included",
+      "ja": "ワンルーム、日当たり普通、天使つき。"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

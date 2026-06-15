@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003617": {
+    "workId": "wk_000003617",
+    "title": "나가토 유키짱의 소실",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11654890"
+    },
+    "titles": {
+      "ko": "나가토 유키짱의 소실",
+      "en": "The Disappearance of Nagato Yuki-chan",
+      "ja": "長門有希ちゃんの消失"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004794": {
+    "workId": "wk_000004794",
+    "title": "펌프킨 나이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122234478"
+    },
+    "titles": {
+      "ko": "펌프킨 나이트",
+      "en": "Pumpkin Night",
+      "ja": "パンプキンナイト"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

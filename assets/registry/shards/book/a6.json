@@ -1,0 +1,22 @@
+{
+  "wk_000004726": {
+    "workId": "wk_000004726",
+    "title": "사명과 영혼의 경계",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10887054"
+    },
+    "titles": {
+      "ko": "사명과 영혼의 경계",
+      "en": "Q10887054",
+      "ja": "使命と魂のリミット"
+    },
+    "releaseYear": 2006,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

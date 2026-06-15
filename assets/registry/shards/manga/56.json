@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004490": {
+    "workId": "wk_000004490",
+    "title": "토리코",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200095"
+    },
+    "titles": {
+      "ko": "토리코",
+      "en": "Toriko",
+      "ja": "トリコ"
+    },
+    "creator": "Mitsutoshi Shimabukuro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

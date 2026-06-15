@@ -66,5 +66,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003081": {
+    "workId": "wk_000003081",
+    "title": "C.T.O 프로젝트 더 서바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458905"
+    },
+    "titles": {
+      "ko": "C.T.O 프로젝트 더 서바이벌",
+      "en": "Q109458905"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003763": {
+    "workId": "wk_000003763",
+    "title": "아주 각별한 기행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547011"
+    },
+    "titles": {
+      "ko": "아주 각별한 기행",
+      "en": "Q109547011"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002992": {
+    "workId": "wk_000002992",
+    "title": "대한민국 해양대탐험",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457976"
+    },
+    "titles": {
+      "ko": "대한민국 해양대탐험",
+      "en": "Q109457976"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004332": {
+    "workId": "wk_000004332",
+    "title": "나를알아줘 : 뽕카페",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118203"
+    },
+    "titles": {
+      "ko": "나를알아줘 : 뽕카페",
+      "en": "Q110118203"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004998": {
+    "workId": "wk_000004998",
+    "title": "아내의 복수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111730799"
+    },
+    "titles": {
+      "ko": "아내의 복수",
+      "en": "Dendam Seorang Isteri"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

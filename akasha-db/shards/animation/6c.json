@@ -48,5 +48,77 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003284": {
+    "workId": "wk_000003284",
+    "title": "왕비 교육에서 도망치고 싶은 나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123272329"
+    },
+    "titles": {
+      "ko": "왕비 교육에서 도망치고 싶은 나",
+      "en": "I Want to Escape from Princess Lessons",
+      "ja": "妃教育から逃げたい私"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003375": {
+    "workId": "wk_000003375",
+    "title": "악역영애 전생 아저씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124033818"
+    },
+    "titles": {
+      "ko": "악역영애 전생 아저씨",
+      "en": "From Bureaucrat to Villainess",
+      "ja": "悪役令嬢転生おじさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003844": {
+    "workId": "wk_000003844",
+    "title": "기계 인간 마리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128571810"
+    },
+    "titles": {
+      "ko": "기계 인간 마리",
+      "en": "Mechanical Marie",
+      "ja": "機械じかけのマリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004643": {
+    "workId": "wk_000004643",
+    "title": "신자 0명 여신님과 시작하는 이세계 공략",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137759469"
+    },
+    "titles": {
+      "ko": "신자 0명 여신님과 시작하는 이세계 공략",
+      "en": "Full Clearing Another World under a Goddess with Zero Believers",
+      "ja": "信者ゼロの女神サマと始める異世界攻略"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

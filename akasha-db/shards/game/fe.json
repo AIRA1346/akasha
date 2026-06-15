@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003208": {
+    "workId": "wk_000003208",
+    "title": "아크 레이더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110029330"
+    },
+    "titles": {
+      "ko": "아크 레이더스",
+      "en": "ARC Raiders"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

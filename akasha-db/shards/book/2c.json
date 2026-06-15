@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003483": {
+    "workId": "wk_000003483",
+    "title": "기적의 도시",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107169174"
+    },
+    "titles": {
+      "ko": "기적의 도시",
+      "en": "City of Miracles"
+    },
+    "releaseYear": 2017,
+    "creator": "Robert Jackson Bennett",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004373": {
+    "workId": "wk_000004373",
+    "title": "검은 황무지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108619501"
+    },
+    "titles": {
+      "ko": "검은 황무지",
+      "en": "Blacktop Wasteland"
+    },
+    "creator": "S. A. Cosby",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

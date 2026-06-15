@@ -50,5 +50,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003729": {
+    "workId": "wk_000003729",
+    "title": "메멘토 모리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111581791"
+    },
+    "titles": {
+      "ko": "메멘토 모리",
+      "en": "Memento Mori",
+      "ja": "メメントモリ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004527": {
+    "workId": "wk_000004527",
+    "title": "돈 덴 러버 Vol 1 〜흑백으로 정하자〜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323435"
+    },
+    "titles": {
+      "ko": "돈 덴 러버 Vol 1 〜흑백으로 정하자〜",
+      "en": "Don Den Lover Vol. 1: Let's Flip Some Discs",
+      "ja": "ドンデンラバー Vol.1 〜白黒つけよっ〜"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

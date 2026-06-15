@@ -67,5 +67,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003066": {
+    "workId": "wk_000003066",
+    "title": "운명에서 시작되는 사랑 -You are my Destiny-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458682"
+    },
+    "titles": {
+      "ko": "운명에서 시작되는 사랑 -You are my Destiny-",
+      "en": "Q109458682"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004555": {
+    "workId": "wk_000004555",
+    "title": "모범가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110637991"
+    },
+    "titles": {
+      "ko": "모범가족",
+      "en": "A Model Family",
+      "ja": "模範家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004932": {
+    "workId": "wk_000004932",
+    "title": "오늘부터 우리는",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111534290"
+    },
+    "titles": {
+      "ko": "오늘부터 우리는",
+      "en": "Woori the Virgin",
+      "ja": "私たちは今日から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005000": {
+    "workId": "wk_000005000",
+    "title": "소닉: 크라이시스 어드벤처",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111746906"
+    },
+    "titles": {
+      "ko": "소닉: 크라이시스 어드벤처",
+      "en": "Sonic: Crisis Legacy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

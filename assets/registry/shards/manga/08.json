@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000003527": {
+    "workId": "wk_000003527",
+    "title": "오늘은 여자친구가 없으니까",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116233964"
+    },
+    "titles": {
+      "ko": "오늘은 여자친구가 없으니까",
+      "en": "Kyō wa Kanojo ga Inai kara",
+      "ja": "今日はカノジョがいないから"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

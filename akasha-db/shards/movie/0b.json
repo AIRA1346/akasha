@@ -1,0 +1,59 @@
+{
+  "wk_000004247": {
+    "workId": "wk_000004247",
+    "title": "블러드 레드 스카이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105560342"
+    },
+    "titles": {
+      "ko": "블러드 레드 스카이",
+      "en": "Blood Red Sky",
+      "ja": "ブラッド・レッド・スカイ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004466": {
+    "workId": "wk_000004466",
+    "title": "모럴센스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105674145"
+    },
+    "titles": {
+      "ko": "모럴센스",
+      "en": "Love and Leashes",
+      "ja": "モラルセンス ～君はご主人様～"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004469": {
+    "workId": "wk_000004469",
+    "title": "화양연화",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056853"
+    },
+    "titles": {
+      "ko": "화양연화",
+      "en": "In the Mood for Love",
+      "ja": "花様年華"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

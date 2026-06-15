@@ -18,5 +18,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003437": {
+    "workId": "wk_000003437",
+    "title": "핑크레이디",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7196045"
+    },
+    "titles": {
+      "ko": "핑크레이디",
+      "en": "Pink Lady"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

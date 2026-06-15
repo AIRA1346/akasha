@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003016": {
+    "workId": "wk_000003016",
+    "title": "육식공주 예그리나",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q30895247"
+    },
+    "titles": {
+      "ko": "육식공주 예그리나",
+      "en": "Carnivorous Princess Yegrina"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

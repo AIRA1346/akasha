@@ -1,0 +1,58 @@
+{
+  "wk_000002971": {
+    "workId": "wk_000002971",
+    "title": "인스크립션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109051201"
+    },
+    "titles": {
+      "ko": "인스크립션",
+      "en": "Inscryption",
+      "ja": "Inscryption"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003124": {
+    "workId": "wk_000003124",
+    "title": "고인돌 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093995"
+    },
+    "titles": {
+      "ko": "고인돌 2",
+      "en": "Prehistorik 2"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004974": {
+    "workId": "wk_000004974",
+    "title": "슈퍼 포켓몬 대격돌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139231"
+    },
+    "titles": {
+      "ko": "슈퍼 포켓몬 대격돌",
+      "en": "Pokémon Rumble Blast",
+      "ja": "スーパーポケモンスクランブル"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

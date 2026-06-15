@@ -68,5 +68,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004181": {
+    "workId": "wk_000004181",
+    "title": "아이돌 리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115593"
+    },
+    "titles": {
+      "ko": "아이돌 리그",
+      "en": "Idol League"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004485": {
+    "workId": "wk_000004485",
+    "title": "랜턴즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110556821"
+    },
+    "titles": {
+      "ko": "랜턴즈",
+      "en": "Lanterns",
+      "ja": "ランタンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004615": {
+    "workId": "wk_000004615",
+    "title": "괴이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110732490"
+    },
+    "titles": {
+      "ko": "괴이",
+      "en": "Monstrous"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003465": {
+    "workId": "wk_000003465",
+    "title": "아순타 케이스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124538294"
+    },
+    "titles": {
+      "ko": "아순타 케이스",
+      "en": "The Asunta Case",
+      "ja": "アスンタ・バステラ事件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

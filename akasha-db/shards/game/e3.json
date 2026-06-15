@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005037": {
+    "workId": "wk_000005037",
+    "title": "피크민 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113956704"
+    },
+    "titles": {
+      "ko": "피크민 4",
+      "en": "Pikmin 4",
+      "ja": "ピクミン4"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

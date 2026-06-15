@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003659": {
+    "workId": "wk_000003659",
+    "title": "도남의 날개",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395295"
+    },
+    "titles": {
+      "ko": "도남의 날개",
+      "en": "The Aspired Wings",
+      "ja": "図南の翼"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003663": {
+    "workId": "wk_000003663",
+    "title": "백은의 언덕 검은 달",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395428"
+    },
+    "titles": {
+      "ko": "백은의 언덕 검은 달",
+      "en": "The Silver Ruins, The Black Moon",
+      "ja": "白銀の墟 玄の月"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

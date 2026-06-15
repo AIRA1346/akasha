@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003288": {
+    "workId": "wk_000003288",
+    "title": "디스맨틀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110391949"
+    },
+    "titles": {
+      "ko": "디스맨틀",
+      "en": "Dysmantle"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

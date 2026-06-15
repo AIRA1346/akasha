@@ -1,0 +1,21 @@
+{
+  "wk_000004659": {
+    "workId": "wk_000004659",
+    "title": "에버퀘스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134845"
+    },
+    "titles": {
+      "ko": "에버퀘스트",
+      "en": "EverQuest",
+      "ja": "エバークエスト"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

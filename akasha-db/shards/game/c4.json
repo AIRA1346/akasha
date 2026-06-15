@@ -1,0 +1,39 @@
+{
+  "wk_000003721": {
+    "workId": "wk_000003721",
+    "title": "엑스 아스트리스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111496481"
+    },
+    "titles": {
+      "ko": "엑스 아스트리스",
+      "en": "Ex Astris",
+      "ja": "エクス アストリス"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004087": {
+    "workId": "wk_000004087",
+    "title": "THE IDOLM@STER MILLION LIVE!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248865"
+    },
+    "titles": {
+      "ko": "THE IDOLM@STER MILLION LIVE!",
+      "en": "The Idolmaster Million Live!",
+      "ja": "THE IDOLM@STER MILLION LIVE!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

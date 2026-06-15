@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003018": {
+    "workId": "wk_000003018",
+    "title": "유미의 세포들 (웹툰)",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q31180765"
+    },
+    "titles": {
+      "ko": "유미의 세포들 (웹툰)",
+      "en": "Yumi's Cells (webtoon)",
+      "ja": "ユミの細胞たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

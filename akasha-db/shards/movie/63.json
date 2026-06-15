@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004676": {
+    "workId": "wk_000004676",
+    "title": "파이어 위드 파이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057433"
+    },
+    "titles": {
+      "ko": "파이어 위드 파이어",
+      "en": "Fire with Fire",
+      "ja": "ファイヤー・ウィズ・ファイヤー 炎の誓い"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

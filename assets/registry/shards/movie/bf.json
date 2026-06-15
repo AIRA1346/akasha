@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003949": {
+    "workId": "wk_000003949",
+    "title": "쁘띠 마망",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438136"
+    },
+    "titles": {
+      "ko": "쁘띠 마망",
+      "en": "Petite Maman",
+      "ja": "秘密の森の、その向こう"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

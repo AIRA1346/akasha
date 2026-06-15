@@ -71,5 +71,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003714": {
+    "workId": "wk_000003714",
+    "title": "원더풀 프리큐어! 더 무비! 두근두근♡게임 세계에서 대모험!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126901041"
+    },
+    "titles": {
+      "ko": "원더풀 프리큐어! 더 무비! 두근두근♡게임 세계에서 대모험!",
+      "en": "Wonderful Pretty Cure! The Movie!: A Grand Adventure in a Thrilling Game World!",
+      "ja": "わんだふるぷりきゅあ!ざ・むーびー! ドキドキ♡ゲームの世界で大冒険!"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004425": {
+    "workId": "wk_000004425",
+    "title": "노블레스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134619325"
+    },
+    "titles": {
+      "ko": "노블레스",
+      "en": "Noblesse",
+      "ja": "NOBLESSE -ノブレス-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005082": {
+    "workId": "wk_000005082",
+    "title": "흐린 하늘에 웃다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17224315"
+    },
+    "titles": {
+      "ko": "흐린 하늘에 웃다",
+      "en": "Laughing Under the Clouds",
+      "ja": "曇天に笑う"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004409": {
+    "workId": "wk_000004409",
+    "title": "더블 트러블 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110292124"
+    },
+    "titles": {
+      "ko": "더블 트러블 (텔레비전 프로그램)",
+      "en": "Q110292124",
+      "ja": "ダブルトラブル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,63 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003566": {
+    "workId": "wk_000003566",
+    "title": "Shin Hayarigami 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111148157"
+    },
+    "titles": {
+      "ko": "Shin Hayarigami 2",
+      "en": "Shin Hayarigami 2",
+      "ja": "真 流行り神2"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003656": {
+    "workId": "wk_000003656",
+    "title": "코믹 파티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114414"
+    },
+    "titles": {
+      "ko": "코믹 파티",
+      "en": "Comic Party",
+      "ja": "こみっくパーティー"
+    },
+    "releaseYear": 2005,
+    "creator": "Sekihiko Inui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004833": {
+    "workId": "wk_000004833",
+    "title": "리얼 바우트 아랑전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136894"
+    },
+    "titles": {
+      "ko": "리얼 바우트 아랑전설",
+      "en": "Real Bout Fatal Fury",
+      "ja": "リアルバウト餓狼伝説"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

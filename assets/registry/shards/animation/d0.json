@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003717": {
+    "workId": "wk_000003717",
+    "title": "극장판 귀멸의 칼날: 무한성편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126948105"
+    },
+    "titles": {
+      "ko": "극장판 귀멸의 칼날: 무한성편",
+      "en": "Demon Slayer: Kimetsu no Yaiba – Infinity Castle",
+      "ja": "劇場版「鬼滅の刃」無限城編"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004716": {
+    "workId": "wk_000004716",
+    "title": "로미오x줄리엣",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416758"
+    },
+    "titles": {
+      "ko": "로미오x줄리엣",
+      "en": "Romeo × Juliet",
+      "ja": "ロミオ×ジュリエット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

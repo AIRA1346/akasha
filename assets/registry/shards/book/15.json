@@ -1,0 +1,21 @@
+{
+  "wk_000004104": {
+    "workId": "wk_000004104",
+    "title": "고독한 늑대의 피",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108389587"
+    },
+    "titles": {
+      "ko": "고독한 늑대의 피",
+      "en": "Q108389587",
+      "ja": "孤狼の血"
+    },
+    "creator": "Yuko Yuzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

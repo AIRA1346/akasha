@@ -16,5 +16,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003898": {
+    "workId": "wk_000003898",
+    "title": "100인의 선택, 턴업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113662"
+    },
+    "titles": {
+      "ko": "100인의 선택, 턴업",
+      "en": "Q110113662"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004176": {
+    "workId": "wk_000004176",
+    "title": "심야괴담회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115537"
+    },
+    "titles": {
+      "ko": "심야괴담회",
+      "en": "Midnight Horror Story"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004271": {
+    "workId": "wk_000004271",
+    "title": "트로트2030 나를 알아줘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117964"
+    },
+    "titles": {
+      "ko": "트로트2030 나를 알아줘",
+      "en": "Q110117964"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

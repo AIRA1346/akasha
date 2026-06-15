@@ -1,0 +1,20 @@
+{
+  "wk_000003876": {
+    "workId": "wk_000003876",
+    "title": "디스라이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111995158"
+    },
+    "titles": {
+      "ko": "디스라이트",
+      "en": "Dislyte"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003737": {
+    "workId": "wk_000003737",
+    "title": "자본주의, 사회주의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074682"
+    },
+    "titles": {
+      "ko": "자본주의, 사회주의",
+      "en": "Capitalism, Socialism and Democracy",
+      "ja": "資本主義・社会主義・民主主義"
+    },
+    "releaseYear": 1949,
+    "creator": "Joseph Schumpeter",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004021": {
+    "workId": "wk_000004021",
+    "title": "인간 불신 모험가들이 세계를 구하는 듯합니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108106327"
+    },
+    "titles": {
+      "ko": "인간 불신 모험가들이 세계를 구하는 듯합니다",
+      "en": "Apparently, Disillusioned Adventurers Will Save the World",
+      "ja": "人間不信の冒険者たちが世界を救うようです"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

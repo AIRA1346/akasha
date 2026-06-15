@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004988": {
+    "workId": "wk_000004988",
+    "title": "십지경론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10904554"
+    },
+    "titles": {
+      "ko": "십지경론",
+      "en": "Commentary on the Ten Stages Sutra",
+      "ja": "十地経論"
+    },
+    "creator": "Vasubandhu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005301": {
+    "workId": "wk_000005301",
+    "title": "암병동",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093483"
+    },
+    "titles": {
+      "ko": "암병동",
+      "en": "Cancer Ward"
+    },
+    "releaseYear": 1967,
+    "creator": "Aleksandr Solzhenitsyn",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

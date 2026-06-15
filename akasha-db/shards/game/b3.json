@@ -122,5 +122,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003123": {
+    "workId": "wk_000003123",
+    "title": "스파이더맨: 친구 또는 적",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093923"
+    },
+    "titles": {
+      "ko": "스파이더맨: 친구 또는 적",
+      "en": "Spider-Man: Friend or Foe",
+      "ja": "スパイダーマン：友か敵か"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005154": {
+    "workId": "wk_000005154",
+    "title": "키드 이카루스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142493"
+    },
+    "titles": {
+      "ko": "키드 이카루스",
+      "en": "Kid Icarus",
+      "ja": "光神話 パルテナの鏡"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

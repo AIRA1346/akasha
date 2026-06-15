@@ -16,5 +16,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002997": {
+    "workId": "wk_000002997",
+    "title": "고래먼지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458176"
+    },
+    "titles": {
+      "ko": "고래먼지",
+      "en": "Q109458176"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003068": {
+    "workId": "wk_000003068",
+    "title": "취재파일",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458809"
+    },
+    "titles": {
+      "ko": "취재파일",
+      "en": "Q109458809"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003152": {
+    "workId": "wk_000003152",
+    "title": "브레이커스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458906"
+    },
+    "titles": {
+      "ko": "브레이커스",
+      "en": "Q109458906"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004930": {
+    "workId": "wk_000004930",
+    "title": "오밤중의 아이들 / 오밤아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11153180"
+    },
+    "titles": {
+      "ko": "오밤중의 아이들 / 오밤아",
+      "en": "Q11153180"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

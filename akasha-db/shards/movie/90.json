@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003887": {
+    "workId": "wk_000003887",
+    "title": "부베의 연인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053810"
+    },
+    "titles": {
+      "ko": "부베의 연인",
+      "en": "Bebo's Girl",
+      "ja": "ブーベの恋人"
+    },
+    "releaseYear": 1963,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

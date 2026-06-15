@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004910": {
+    "workId": "wk_000004910",
+    "title": "공손룡자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10892834"
+    },
+    "titles": {
+      "ko": "공손룡자",
+      "en": "Gongsun Longzi",
+      "ja": "公孫龍子"
+    },
+    "creator": "Gongsun Long",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

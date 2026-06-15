@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003001": {
+    "workId": "wk_000003001",
+    "title": "더 페이스테일 시즌1: 신대리야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458264"
+    },
+    "titles": {
+      "ko": "더 페이스테일 시즌1: 신대리야",
+      "en": "Q109458264"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

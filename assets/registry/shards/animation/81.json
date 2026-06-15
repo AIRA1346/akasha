@@ -34,5 +34,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003995": {
+    "workId": "wk_000003995",
+    "title": "프리! 더 파이널 스트로크 후편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130597889"
+    },
+    "titles": {
+      "ko": "프리! 더 파이널 스트로크 후편",
+      "en": "Q130597889",
+      "ja": "劇場版 Free!-the Final Stroke- 後編"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004070": {
+    "workId": "wk_000004070",
+    "title": "출입금지 모구라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131202208"
+    },
+    "titles": {
+      "ko": "출입금지 모구라",
+      "en": "Dekin no Mogura",
+      "ja": "出禁のモグラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

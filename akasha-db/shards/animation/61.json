@@ -54,5 +54,80 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004149": {
+    "workId": "wk_000004149",
+    "title": "스팀보이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1315185"
+    },
+    "titles": {
+      "ko": "스팀보이",
+      "en": "Steamboy",
+      "ja": "スチームボーイ"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004571": {
+    "workId": "wk_000004571",
+    "title": "발견 체험 너무 좋아! 시마지로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136378318"
+    },
+    "titles": {
+      "ko": "발견 체험 너무 좋아! 시마지로",
+      "en": "Hakken Taiken Daisuki! Shimajirō",
+      "ja": "はっけん たいけん だいすき! しまじろう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004717": {
+    "workId": "wk_000004717",
+    "title": "이웃집 야마다군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1418326"
+    },
+    "titles": {
+      "ko": "이웃집 야마다군",
+      "en": "My Neighbors the Yamadas",
+      "ja": "ホーホケキョ となりの山田くん"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005031": {
+    "workId": "wk_000005031",
+    "title": "인랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1689499"
+    },
+    "titles": {
+      "ko": "인랑",
+      "en": "Jin-Roh: The Wolf Brigade",
+      "ja": "人狼 JIN-ROH"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

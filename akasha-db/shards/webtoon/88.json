@@ -1,0 +1,20 @@
+{
+  "wk_000003014": {
+    "workId": "wk_000003014",
+    "title": "아마게돈",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2861697"
+    },
+    "titles": {
+      "ko": "아마게돈",
+      "en": "Armageddon"
+    },
+    "creator": "Lee Hyun-se",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -16,5 +16,79 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002961": {
+    "workId": "wk_000002961",
+    "title": "극장판 포켓몬스터 DP: 아르세우스 초극의 시공으로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204250"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 DP: 아르세우스 초극의 시공으로",
+      "en": "Pokémon: Arceus and the Jewel of Life",
+      "ja": "劇場版ポケットモンスター ダイヤモンド&パール アルセウス 超克の時空へ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004202": {
+    "workId": "wk_000004202",
+    "title": "도라에몽 노비타와 기적의 섬 ~애니멀 어드벤쳐~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1316493"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 기적의 섬 ~애니멀 어드벤쳐~",
+      "en": "Doraemon: Nobita and the Island of Miracles—Animal Adventure",
+      "ja": "映画ドラえもん のび太と奇跡の島 〜アニマル アドベンチャー〜"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004284": {
+    "workId": "wk_000004284",
+    "title": "암살자인 내 스테이터스가 용사보다도 훨씬 강한데요",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132510492"
+    },
+    "titles": {
+      "ko": "암살자인 내 스테이터스가 용사보다도 훨씬 강한데요",
+      "en": "My Status as an Assassin Obviously Exceeds the Hero's",
+      "ja": "暗殺者である俺のステータスが勇者よりも明らかに強いのだが"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004885": {
+    "workId": "wk_000004885",
+    "title": "중2병이라도 사랑이 하고 싶어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15846391"
+    },
+    "titles": {
+      "ko": "중2병이라도 사랑이 하고 싶어!",
+      "en": "Love, Chunibyo & Other Delusions",
+      "ja": "中二病でも恋がしたい！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

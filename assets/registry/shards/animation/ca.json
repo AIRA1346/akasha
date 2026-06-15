@@ -1,0 +1,20 @@
+{
+  "wk_000005081": {
+    "workId": "wk_000005081",
+    "title": "어떤 마술의 금서목록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17219196"
+    },
+    "titles": {
+      "ko": "어떤 마술의 금서목록",
+      "en": "A Certain Magical Index",
+      "ja": "とある魔術の禁書目録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

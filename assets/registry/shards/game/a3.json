@@ -52,5 +52,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004232": {
+    "workId": "wk_000004232",
+    "title": "탄트알",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278009"
+    },
+    "titles": {
+      "ko": "탄트알",
+      "en": "Puzzle & Action: Tant-R",
+      "ja": "タントアール"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004300": {
+    "workId": "wk_000004300",
+    "title": "프로야구 스피리츠 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283047"
+    },
+    "titles": {
+      "ko": "프로야구 스피리츠 6",
+      "en": "Professional Baseball Spirits 6",
+      "ja": "プロ野球スピリッツ6"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

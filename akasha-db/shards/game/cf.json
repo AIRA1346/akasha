@@ -36,5 +36,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003720": {
+    "workId": "wk_000003720",
+    "title": "픽스폭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111444174"
+    },
+    "titles": {
+      "ko": "픽스폭스",
+      "en": "FixFox"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005235": {
+    "workId": "wk_000005235",
+    "title": "철권",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142893"
+    },
+    "titles": {
+      "ko": "철권",
+      "en": "Tekken",
+      "ja": "鉄拳"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005300": {
+    "workId": "wk_000005300",
+    "title": "아이스윈드 데일 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143807"
+    },
+    "titles": {
+      "ko": "아이스윈드 데일 II",
+      "en": "Icewind Dale II"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

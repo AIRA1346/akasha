@@ -1,0 +1,40 @@
+{
+  "wk_000004131": {
+    "workId": "wk_000004131",
+    "title": "타다노 공고의 일상",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117769396"
+    },
+    "titles": {
+      "ko": "타다노 공고의 일상",
+      "en": "Tadano Kogyo Koko No Nichijo",
+      "ja": "只野工業高校の日常"
+    },
+    "creator": "Chisato Oga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004413": {
+    "workId": "wk_000004413",
+    "title": "빈곤자매 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193039"
+    },
+    "titles": {
+      "ko": "빈곤자매 이야기",
+      "en": "Binbō Shimai Monogatari",
+      "ja": "貧乏姉妹物語"
+    },
+    "creator": "Izumi Kazuto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

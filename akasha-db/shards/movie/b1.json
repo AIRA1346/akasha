@@ -1,0 +1,20 @@
+{
+  "wk_000003950": {
+    "workId": "wk_000003950",
+    "title": "마이 선",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438450"
+    },
+    "titles": {
+      "ko": "마이 선",
+      "en": "My Son"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

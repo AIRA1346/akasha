@@ -1,0 +1,71 @@
+{
+  "wk_000003909": {
+    "workId": "wk_000003909",
+    "title": "TV클리닉 당신의 건강은?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113986"
+    },
+    "titles": {
+      "ko": "TV클리닉 당신의 건강은?",
+      "en": "Q110113986"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004190": {
+    "workId": "wk_000004190",
+    "title": "오디션 트럭",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115841"
+    },
+    "titles": {
+      "ko": "오디션 트럭",
+      "en": "Q110115841"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004682": {
+    "workId": "wk_000004682",
+    "title": "신부 노렌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11082182"
+    },
+    "titles": {
+      "ko": "신부 노렌",
+      "en": "Hanayome Noren",
+      "ja": "花嫁のれん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004855": {
+    "workId": "wk_000004855",
+    "title": "러브 인 포티 데이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111169610"
+    },
+    "titles": {
+      "ko": "러브 인 포티 데이즈",
+      "en": "Love in 40 Days"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

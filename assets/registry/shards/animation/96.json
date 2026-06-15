@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002964": {
+    "workId": "wk_000002964",
+    "title": "퍼펙트 블루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205051"
+    },
+    "titles": {
+      "ko": "퍼펙트 블루",
+      "en": "Perfect Blue",
+      "ja": "パーフェクトブルー"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003275": {
+    "workId": "wk_000003275",
+    "title": "사쿠라다 리셋",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123022495"
+    },
+    "titles": {
+      "ko": "사쿠라다 리셋",
+      "en": "Sagrada Reset",
+      "ja": "サクラダリセット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

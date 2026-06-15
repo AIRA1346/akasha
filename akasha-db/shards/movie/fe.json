@@ -1,0 +1,40 @@
+{
+  "wk_000003948": {
+    "workId": "wk_000003948",
+    "title": "밤과 안개",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054369"
+    },
+    "titles": {
+      "ko": "밤과 안개",
+      "en": "Night and Fog",
+      "ja": "夜と霧 (2009年の映画)"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005307": {
+    "workId": "wk_000005307",
+    "title": "시그널 X: 영혼의 구역",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105952343"
+    },
+    "titles": {
+      "ko": "시그널 X: 영혼의 구역",
+      "en": "Demonic",
+      "ja": "デモニック"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

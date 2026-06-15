@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002959": {
+    "workId": "wk_000002959",
+    "title": "노을빛 아웃포커스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120402152"
+    },
+    "titles": {
+      "ko": "노을빛 아웃포커스",
+      "en": "Twilight Out of Focus",
+      "ja": "黄昏アウトフォーカス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004358": {
+    "workId": "wk_000004358",
+    "title": "카난 님은 초보 악마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133873393"
+    },
+    "titles": {
+      "ko": "카난 님은 초보 악마",
+      "en": "Mistress Kanan Is Devilishly Easy",
+      "ja": "カナン様はあくまでチョロい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

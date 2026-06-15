@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000005205": {
+    "workId": "wk_000005205",
+    "title": "카야는 무섭지 않아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125307594"
+    },
+    "titles": {
+      "ko": "카야는 무섭지 않아",
+      "en": "Kaya-chan Isn't Scary",
+      "ja": "カヤちゃんはコワくない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

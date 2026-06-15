@@ -68,5 +68,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003838": {
+    "workId": "wk_000003838",
+    "title": "금수저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109921573"
+    },
+    "titles": {
+      "ko": "금수저",
+      "en": "The Golden Spoon",
+      "ja": "ゴールデンスプーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004400": {
+    "workId": "wk_000004400",
+    "title": "BoysPlanet",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110190620"
+    },
+    "titles": {
+      "ko": "BoysPlanet",
+      "en": "Boys Planet",
+      "ja": "BOYS PLANET"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004612": {
+    "workId": "wk_000004612",
+    "title": "후궁견환전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11070218"
+    },
+    "titles": {
+      "ko": "후궁견환전",
+      "en": "The Legend of Zhen Huan",
+      "ja": "宮廷の諍い女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

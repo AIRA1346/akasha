@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003651": {
+    "workId": "wk_000003651",
+    "title": "골판지 전기 부스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111355354"
+    },
+    "titles": {
+      "ko": "골판지 전기 부스트",
+      "en": "Danball Senki Boost",
+      "ja": "ダンボール戦機 ブースト"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004223": {
+    "workId": "wk_000004223",
+    "title": "드레드 헝거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112655927"
+    },
+    "titles": {
+      "ko": "드레드 헝거",
+      "en": "Dread Hunger",
+      "ja": "ドレッドハンガー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

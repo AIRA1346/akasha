@@ -75,5 +75,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003182": {
+    "workId": "wk_000003182",
+    "title": "나가사와군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11550158"
+    },
+    "titles": {
+      "ko": "나가사와군",
+      "en": "Nagasawa Kun",
+      "ja": "永沢君"
+    },
+    "creator": "Momoko Sakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004878": {
+    "workId": "wk_000004878",
+    "title": "치히로는 나 중독.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123509735"
+    },
+    "titles": {
+      "ko": "치히로는 나 중독.",
+      "en": "Chihiro-kun Only Has Eyes for Me",
+      "ja": "千紘くんは、あたし中毒。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

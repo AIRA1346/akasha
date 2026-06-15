@@ -1,0 +1,20 @@
+{
+  "wk_000004986": {
+    "workId": "wk_000004986",
+    "title": "11문자 살인사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10904345"
+    },
+    "titles": {
+      "ko": "11문자 살인사건",
+      "en": "Q10904345",
+      "ja": "11文字の殺人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

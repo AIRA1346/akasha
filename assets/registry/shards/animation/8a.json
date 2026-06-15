@@ -72,5 +72,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003036": {
+    "workId": "wk_000003036",
+    "title": "어째서 내 세계를 아무도 기억하지 못하는가?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120830654"
+    },
+    "titles": {
+      "ko": "어째서 내 세계를 아무도 기억하지 못하는가?",
+      "en": "Why Does Nobody Remember Me in This World?",
+      "ja": "なぜ僕の世界を誰も覚えていないのか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004705": {
+    "workId": "wk_000004705",
+    "title": "선더 3",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138006359"
+    },
+    "titles": {
+      "ko": "선더 3",
+      "en": "Thunder 3",
+      "ja": "サンダー3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005289": {
+    "workId": "wk_000005289",
+    "title": "에토타마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18702126"
+    },
+    "titles": {
+      "ko": "에토타마",
+      "en": "Etotama",
+      "ja": "えとたま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -33,5 +33,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003170": {
+    "workId": "wk_000003170",
+    "title": "폐업요정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459604"
+    },
+    "titles": {
+      "ko": "폐업요정",
+      "en": "Q109459604"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003752": {
+    "workId": "wk_000003752",
+    "title": "월드 브리핑 톡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546156"
+    },
+    "titles": {
+      "ko": "월드 브리핑 톡",
+      "en": "Q109546156"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004119": {
+    "workId": "wk_000004119",
+    "title": "사이언스 탐정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115234"
+    },
+    "titles": {
+      "ko": "사이언스 탐정",
+      "en": "Science Detective",
+      "ja": "サイエンス探偵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004694": {
+    "workId": "wk_000004694",
+    "title": "보통의 연애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11089875"
+    },
+    "titles": {
+      "ko": "보통의 연애",
+      "en": "Just an Ordinary Love Story",
+      "ja": "普通の恋愛"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005128": {
+    "workId": "wk_000005128",
+    "title": "드래그 레이스 스웨덴",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112077488"
+    },
+    "titles": {
+      "ko": "드래그 레이스 스웨덴",
+      "en": "Drag Race Sverige"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

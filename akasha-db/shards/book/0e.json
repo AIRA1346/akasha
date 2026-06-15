@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003735": {
+    "workId": "wk_000003735",
+    "title": "기억되지 않는 여자, 애디 라뤼",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107404757"
+    },
+    "titles": {
+      "ko": "기억되지 않는 여자, 애디 라뤼",
+      "en": "The Invisible Life of Addie LaRue"
+    },
+    "releaseYear": 2020,
+    "creator": "V. E. Schwab",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

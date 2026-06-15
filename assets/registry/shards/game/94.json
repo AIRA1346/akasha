@@ -48,5 +48,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003204": {
+    "workId": "wk_000003204",
+    "title": "초탐정사건부: 레인 코드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109797152"
+    },
+    "titles": {
+      "ko": "초탐정사건부: 레인 코드",
+      "en": "Master Detective Archives: Rain Code",
+      "ja": "超探偵事件簿 レインコード"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003650": {
+    "workId": "wk_000003650",
+    "title": "골판지전기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111355181"
+    },
+    "titles": {
+      "ko": "골판지전기",
+      "en": "Danball Senki",
+      "ja": "ダンボール戦機"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004089": {
+    "workId": "wk_000004089",
+    "title": "성전사 전승 작탁의 기사",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251016"
+    },
+    "titles": {
+      "ko": "성전사 전승 작탁의 기사",
+      "en": "Q11251016",
+      "ja": "聖戦士伝承・雀卓の騎士"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

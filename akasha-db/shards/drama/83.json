@@ -1,0 +1,55 @@
+{
+  "wk_000002999": {
+    "workId": "wk_000002999",
+    "title": "EBS 수능특강 수리영역 수학 Ⅰ",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458231"
+    },
+    "titles": {
+      "ko": "EBS 수능특강 수리영역 수학 Ⅰ",
+      "en": "Q109458231"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004179": {
+    "workId": "wk_000004179",
+    "title": "싱싱 고향별곡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115545"
+    },
+    "titles": {
+      "ko": "싱싱 고향별곡",
+      "en": "Q110115545"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004625": {
+    "workId": "wk_000004625",
+    "title": "김승우의 승승장구",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11076389"
+    },
+    "titles": {
+      "ko": "김승우의 승승장구",
+      "en": "Win Win",
+      "ja": "キム・スンウの乗勝長駆"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

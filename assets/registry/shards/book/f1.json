@@ -1,0 +1,21 @@
+{
+  "wk_000004023": {
+    "workId": "wk_000004023",
+    "title": "지금 이 순간",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108167600"
+    },
+    "titles": {
+      "ko": "지금 이 순간",
+      "en": "Q108167600"
+    },
+    "releaseYear": 2015,
+    "creator": "Guillaume Musso",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

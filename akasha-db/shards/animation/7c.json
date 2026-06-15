@@ -1,0 +1,39 @@
+{
+  "wk_000003034": {
+    "workId": "wk_000003034",
+    "title": "REDLINE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207954"
+    },
+    "titles": {
+      "ko": "REDLINE",
+      "en": "Redline",
+      "ja": "REDLINE"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004077": {
+    "workId": "wk_000004077",
+    "title": "나가토 유키짱의 소실",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131360274"
+    },
+    "titles": {
+      "ko": "나가토 유키짱의 소실",
+      "en": "The Disappearance of Nagato Yuki-chan",
+      "ja": "長門有希ちゃんの消失"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

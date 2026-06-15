@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004436": {
+    "workId": "wk_000004436",
+    "title": "용사 파티에 귀여운 애가 있어서, 고백해봤다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135208556"
+    },
+    "titles": {
+      "ko": "용사 파티에 귀여운 애가 있어서, 고백해봤다.",
+      "en": "There Was a Cute Girl in the Hero's Party, So I Tried Confessing to Her",
+      "ja": "勇者パーティーにかわいい子がいたので、告白してみた。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

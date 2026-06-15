@@ -1,0 +1,40 @@
+{
+  "wk_000004220": {
+    "workId": "wk_000004220",
+    "title": "크라이시스 코어 파이널 판타지 7 리유니온",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112620598"
+    },
+    "titles": {
+      "ko": "크라이시스 코어 파이널 판타지 7 리유니온",
+      "en": "Crisis Core: Final Fantasy VII Reunion",
+      "ja": "CRISIS CORE –FINAL FANTASY VII– REUNION"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004595": {
+    "workId": "wk_000004595",
+    "title": "패밀리 서킷",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11332072"
+    },
+    "titles": {
+      "ko": "패밀리 서킷",
+      "en": "Family Circuit",
+      "ja": "ファミリーサーキット"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

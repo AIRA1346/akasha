@@ -15,5 +15,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003408": {
+    "workId": "wk_000003408",
+    "title": "악동클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461101"
+    },
+    "titles": {
+      "ko": "악동클럽",
+      "en": "Q109461101"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003757": {
+    "workId": "wk_000003757",
+    "title": "2020 DIMF 뮤지컬 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546438"
+    },
+    "titles": {
+      "ko": "2020 DIMF 뮤지컬 스타",
+      "en": "Q109546438"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004475": {
+    "workId": "wk_000004475",
+    "title": "산하련 미인무루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11046096"
+    },
+    "titles": {
+      "ko": "산하련 미인무루",
+      "en": "In Love with Power",
+      "ja": "宮廷の泪・山河の恋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005323": {
+    "workId": "wk_000005323",
+    "title": "로켓보이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237708"
+    },
+    "titles": {
+      "ko": "로켓보이",
+      "en": "Q11237708",
+      "ja": "ロケット・ボーイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -103,5 +103,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004697": {
+    "workId": "wk_000004697",
+    "title": "시운지 가의 아이들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336481"
+    },
+    "titles": {
+      "ko": "시운지 가의 아이들",
+      "en": "The Shiunji Family Children",
+      "ja": "紫雲寺家の子供たち"
+    },
+    "releaseYear": 2022,
+    "creator": "Reiji Miyajima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004800": {
+    "workId": "wk_000004800",
+    "title": "반에서 두 번째로 귀여운 여자애와 친구가 되었다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122794877"
+    },
+    "titles": {
+      "ko": "반에서 두 번째로 귀여운 여자애와 친구가 되었다",
+      "en": "I Made Friends with the Second Prettiest Girl in My Class",
+      "ja": "クラスで2番目に可愛い女の子と友だちになった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

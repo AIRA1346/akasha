@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004863": {
+    "workId": "wk_000004863",
+    "title": "모의천하",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11125885"
+    },
+    "titles": {
+      "ko": "모의천하",
+      "en": "The Queens",
+      "ja": "クィーンズ 長安、後宮の乱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004024": {
+    "workId": "wk_000004024",
+    "title": "시카다 3301",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438936"
+    },
+    "titles": {
+      "ko": "시카다 3301",
+      "en": "Dark Web: Cicada 3301",
+      "ja": "スパイ・コード：CICADA 3301"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

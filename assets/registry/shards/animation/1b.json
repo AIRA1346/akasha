@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003981": {
+    "workId": "wk_000003981",
+    "title": "공주기사는 야만인의 아내",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130416580"
+    },
+    "titles": {
+      "ko": "공주기사는 야만인의 아내",
+      "en": "The Warrior Princess and the Barbaric King",
+      "ja": "姫騎士は蛮族の嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004076": {
+    "workId": "wk_000004076",
+    "title": "명탐정 코난: 척안의 잔상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131358956"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 척안의 잔상",
+      "en": "Detective Conan: One-Eyed Flashback",
+      "ja": "名探偵コナン 隻眼の残像"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003886": {
+    "workId": "wk_000003886",
+    "title": "악인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053770"
+    },
+    "titles": {
+      "ko": "악인",
+      "en": "Villain",
+      "ja": "悪人"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

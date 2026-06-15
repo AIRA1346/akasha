@@ -1,0 +1,40 @@
+{
+  "wk_000003478": {
+    "workId": "wk_000003478",
+    "title": "소울 해커즈 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110981081"
+    },
+    "titles": {
+      "ko": "소울 해커즈 2",
+      "en": "Soul Hackers 2",
+      "ja": "ソウルハッカーズ2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004520": {
+    "workId": "wk_000004520",
+    "title": "불릿필리아들의 암시장 ~ 100th Black Market.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113195313"
+    },
+    "titles": {
+      "ko": "불릿필리아들의 암시장 ~ 100th Black Market.",
+      "en": "Barettofiriatachi no Yami-Ichiba ~ 100th Black Market",
+      "ja": "バレットフィリア達の闇市場 〜 100th Black Market."
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

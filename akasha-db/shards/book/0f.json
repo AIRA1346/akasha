@@ -36,5 +36,64 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003136": {
+    "workId": "wk_000003136",
+    "title": "달콤한 복수 주식회사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106839264"
+    },
+    "titles": {
+      "ko": "달콤한 복수 주식회사",
+      "en": "Sweet Sweet Revenge"
+    },
+    "releaseYear": 2020,
+    "creator": "Jonas Jonasson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004315": {
+    "workId": "wk_000004315",
+    "title": "파워 오브 도그",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108587556"
+    },
+    "titles": {
+      "ko": "파워 오브 도그",
+      "en": "The Power of the Dog",
+      "ja": "ザ・パワー・オブ・ザ・ドッグ"
+    },
+    "releaseYear": 1967,
+    "creator": "Thomas Savage",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004727": {
+    "workId": "wk_000004727",
+    "title": "매스커레이드 호텔",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888744"
+    },
+    "titles": {
+      "ko": "매스커레이드 호텔",
+      "en": "Masquerade Hotel",
+      "ja": "マスカレード・ホテル"
+    },
+    "releaseYear": 2011,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

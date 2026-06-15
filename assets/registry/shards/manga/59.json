@@ -1,0 +1,21 @@
+{
+  "wk_000005274": {
+    "workId": "wk_000005274",
+    "title": "5시부터 9시까지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126112946"
+    },
+    "titles": {
+      "ko": "5시부터 9시까지",
+      "en": "From Five to Nine",
+      "ja": "5時から9時まで"
+    },
+    "creator": "Miki Aihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "wk_000003621": {
+    "workId": "wk_000003621",
+    "title": "라멘 아카네코",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116648645"
+    },
+    "titles": {
+      "ko": "라멘 아카네코",
+      "en": "Red Cat Ramen",
+      "ja": "ラーメン赤猫"
+    },
+    "creator": "Angyaman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003700": {
+    "workId": "wk_000003700",
+    "title": "하나오리 양은 전생해서도 싸움이 하고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116890514"
+    },
+    "titles": {
+      "ko": "하나오리 양은 전생해서도 싸움이 하고 싶어",
+      "en": "Hanaori-san Still Wants to Fight in the Next Life",
+      "ja": "花織さんは転生しても喧嘩がしたい"
+    },
+    "creator": "Hekiru Hikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

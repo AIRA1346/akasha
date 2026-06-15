@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004020": {
+    "workId": "wk_000004020",
+    "title": "어른들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108053523"
+    },
+    "titles": {
+      "ko": "어른들",
+      "en": "Grown-ups"
+    },
+    "releaseYear": 2019,
+    "creator": "Marie Aubert",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005108": {
+    "workId": "wk_000005108",
+    "title": "당육전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10922554"
+    },
+    "titles": {
+      "ko": "당육전",
+      "en": "Six Statutes of the Tang Dynasty",
+      "ja": "唐六典"
+    },
+    "creator": "玄宗",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

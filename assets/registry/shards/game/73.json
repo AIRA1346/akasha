@@ -1,0 +1,58 @@
+{
+  "wk_000003298": {
+    "workId": "wk_000003298",
+    "title": "환린의 희장군 2 ~인도되는 혼의 계보~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11061586"
+    },
+    "titles": {
+      "ko": "환린의 희장군 2 ~인도되는 혼의 계보~",
+      "en": "Genrin no Kishougun 2 ~Michibikareshi Tamashii no Keifu~",
+      "ja": "幻燐の姫将軍2 〜導かれし魂の系譜〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003390": {
+    "workId": "wk_000003390",
+    "title": "와쿠와쿠 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1108679"
+    },
+    "titles": {
+      "ko": "와쿠와쿠 7",
+      "en": "Waku Waku 7",
+      "ja": "わくわく7"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003569": {
+    "workId": "wk_000003569",
+    "title": "Shin Hayarigami 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111148392"
+    },
+    "titles": {
+      "ko": "Shin Hayarigami 3",
+      "en": "Shin Hayarigami 3",
+      "ja": "真 流行り神3"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -84,5 +84,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003236": {
+    "workId": "wk_000003236",
+    "title": "대한민국 팔도 명물 인증쇼, 나야나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459789"
+    },
+    "titles": {
+      "ko": "대한민국 팔도 명물 인증쇼, 나야나",
+      "en": "Q109459789"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004126": {
+    "workId": "wk_000004126",
+    "title": "쇼 유어 페이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115410"
+    },
+    "titles": {
+      "ko": "쇼 유어 페이스",
+      "en": "Q110115410"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

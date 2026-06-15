@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003040": {
+    "workId": "wk_000003040",
+    "title": "방과 후 신데렐라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342556"
+    },
+    "titles": {
+      "ko": "방과 후 신데렐라",
+      "en": "Houkago Cinderella",
+      "ja": "放課後シンデレラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005234": {
+    "workId": "wk_000005234",
+    "title": "슈퍼 마리오 64 DS",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142888"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오 64 DS",
+      "en": "Super Mario 64 DS",
+      "ja": "スーパーマリオ64DS"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

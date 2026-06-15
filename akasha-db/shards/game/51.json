@@ -87,5 +87,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003936": {
+    "workId": "wk_000003936",
+    "title": "헬로, 굿바이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11223230"
+    },
+    "titles": {
+      "ko": "헬로, 굿바이",
+      "en": "Hello, Good-bye",
+      "ja": "Hello,good-bye"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

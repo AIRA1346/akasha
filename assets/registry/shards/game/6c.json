@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003047": {
+    "workId": "wk_000003047",
+    "title": "란스 퀘스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109359402"
+    },
+    "titles": {
+      "ko": "란스 퀘스트",
+      "en": "Rance Quest",
+      "ja": "ランス・クエスト"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

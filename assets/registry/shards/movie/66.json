@@ -63,5 +63,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003493": {
+    "workId": "wk_000003493",
+    "title": "해피 땡큐 유 모어 프리즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050720"
+    },
+    "titles": {
+      "ko": "해피 땡큐 유 모어 프리즈",
+      "en": "Happythankyoumoreplease",
+      "ja": "ハッピーサンキューモアプリーズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003667": {
+    "workId": "wk_000003667",
+    "title": "다이어리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051184"
+    },
+    "titles": {
+      "ko": "다이어리",
+      "en": "Diary",
+      "ja": "妄想 ｄｉａｒｙ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003815": {
+    "workId": "wk_000003815",
+    "title": "마이 폴리스맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105332215"
+    },
+    "titles": {
+      "ko": "마이 폴리스맨",
+      "en": "My Policeman",
+      "ja": "僕の巡査"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000003087": {
+    "workId": "wk_000003087",
+    "title": "도쿄도 키타구 아카바네",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11525269"
+    },
+    "titles": {
+      "ko": "도쿄도 키타구 아카바네",
+      "en": "Tōkyōtokitakuakabane",
+      "ja": "東京都北区赤羽"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

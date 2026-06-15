@@ -16,5 +16,74 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003692": {
+    "workId": "wk_000003692",
+    "title": "퀴즈아카데미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546139"
+    },
+    "titles": {
+      "ko": "퀴즈아카데미",
+      "en": "Q109546139"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003754": {
+    "workId": "wk_000003754",
+    "title": "아이돌집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546411"
+    },
+    "titles": {
+      "ko": "아이돌집",
+      "en": "Q109546411"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003969": {
+    "workId": "wk_000003969",
+    "title": "다큐 사건파일",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114621"
+    },
+    "titles": {
+      "ko": "다큐 사건파일",
+      "en": "Q110114621"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004472": {
+    "workId": "wk_000004472",
+    "title": "메다카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11040701"
+    },
+    "titles": {
+      "ko": "메다카",
+      "en": "Medaka",
+      "ja": "めだか (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

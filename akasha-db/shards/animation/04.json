@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004715": {
+    "workId": "wk_000004715",
+    "title": "건담 빌드 파이터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14092000"
+    },
+    "titles": {
+      "ko": "건담 빌드 파이터즈",
+      "en": "Gundam Build Fighters",
+      "ja": "ガンダムビルドファイターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

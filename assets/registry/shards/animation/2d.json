@@ -113,5 +113,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004426": {
+    "workId": "wk_000004426",
+    "title": "오니의 신부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134783546"
+    },
+    "titles": {
+      "ko": "오니의 신부",
+      "en": "The Ogre's Bride",
+      "ja": "鬼の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

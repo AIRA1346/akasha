@@ -34,5 +34,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003605": {
+    "workId": "wk_000003605",
+    "title": "MBN 뉴스와이드5",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109534406"
+    },
+    "titles": {
+      "ko": "MBN 뉴스와이드5",
+      "en": "Q109534406"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003839": {
+    "workId": "wk_000003839",
+    "title": "싱어게인2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109971786"
+    },
+    "titles": {
+      "ko": "싱어게인2",
+      "en": "Q109971786"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

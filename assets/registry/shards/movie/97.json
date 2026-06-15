@@ -1,0 +1,21 @@
+{
+  "wk_000004034": {
+    "workId": "wk_000004034",
+    "title": "피노키오",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105482844"
+    },
+    "titles": {
+      "ko": "피노키오",
+      "en": "Pinocchio",
+      "ja": "ピノキオ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

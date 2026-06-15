@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004911": {
+    "workId": "wk_000004911",
+    "title": "거짓말, 딱 한 개만 더",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10894885"
+    },
+    "titles": {
+      "ko": "거짓말, 딱 한 개만 더",
+      "en": "Q10894885",
+      "ja": "嘘をもうひとつだけ"
+    },
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

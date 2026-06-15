@@ -1,0 +1,20 @@
+{
+  "wk_000003020": {
+    "workId": "wk_000003020",
+    "title": "소녀의 세계",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q31180783"
+    },
+    "titles": {
+      "ko": "소녀의 세계",
+      "en": "Odd Girl Out",
+      "ja": "少女の世界"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

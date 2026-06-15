@@ -94,5 +94,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003371": {
+    "workId": "wk_000003371",
+    "title": "메르헨 메드헨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123930051"
+    },
+    "titles": {
+      "ko": "메르헨 메드헨",
+      "en": "Märchen Mädchen",
+      "ja": "メルヘン・メドヘン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004721": {
+    "workId": "wk_000004721",
+    "title": "수명",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886503"
+    },
+    "titles": {
+      "ko": "수명",
+      "en": "Yomei",
+      "ja": "余命 (小説)"
+    },
+    "releaseYear": 2006,
+    "creator": "Shiho Tanimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -84,5 +84,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004350": {
+    "workId": "wk_000004350",
+    "title": "한밤중 하트튠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133277799"
+    },
+    "titles": {
+      "ko": "한밤중 하트튠",
+      "en": "Tune In to the Midnight Heart",
+      "ja": "真夜中ハートチューン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004107": {
+    "workId": "wk_000004107",
+    "title": "그래도 내가 하지 않았어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055136"
+    },
+    "titles": {
+      "ko": "그래도 내가 하지 않았어",
+      "en": "I Just Didn't Do It",
+      "ja": "それでもボクはやってない"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

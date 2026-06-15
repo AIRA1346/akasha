@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003550": {
+    "workId": "wk_000003550",
+    "title": "몰락 예정인 귀족이지만, 한가하니까 마법에 열중해봤다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124846374"
+    },
+    "titles": {
+      "ko": "몰락 예정인 귀족이지만, 한가하니까 마법에 열중해봤다",
+      "en": "I'm a Noble on the Brink of Ruin, So I Might as Well Try Mastering Magic",
+      "ja": "没落予定の貴族だけど、暇だったから魔法を極めてみた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

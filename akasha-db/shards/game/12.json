@@ -1,0 +1,58 @@
+{
+  "wk_000002966": {
+    "workId": "wk_000002966",
+    "title": "이스 vs. 하늘의 궤적: 얼터너티브 사가",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10885101"
+    },
+    "titles": {
+      "ko": "이스 vs. 하늘의 궤적: 얼터너티브 사가",
+      "en": "Ys vs. Trails in the Sky",
+      "ja": "イースvs.空の軌跡 オルタナティブ・サーガ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002976": {
+    "workId": "wk_000002976",
+    "title": "파피 플레이타임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109278524"
+    },
+    "titles": {
+      "ko": "파피 플레이타임",
+      "en": "Poppy Playtime",
+      "ja": "Poppy Playtime"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004822": {
+    "workId": "wk_000004822",
+    "title": "불가사의 던전 떠돌이 시렌 GB2: 사막의 마성",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361734"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 GB2: 사막의 마성",
+      "en": "Shiren the Wanderer GB2: Magic Castle of the Desert",
+      "ja": "不思議のダンジョン 風来のシレンGB2 砂漠の魔城"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

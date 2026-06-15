@@ -56,5 +56,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004099": {
+    "workId": "wk_000004099",
+    "title": "선종영가집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10825210"
+    },
+    "titles": {
+      "ko": "선종영가집",
+      "en": "Essence of Zen Buddhism",
+      "ja": "禅宗永嘉集"
+    },
+    "creator": "Yongjia Xuanjue",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004991": {
+    "workId": "wk_000004991",
+    "title": "점성술 살인사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10909686"
+    },
+    "titles": {
+      "ko": "점성술 살인사건",
+      "en": "The Tokyo Zodiac Murders",
+      "ja": "占星術殺人事件"
+    },
+    "releaseYear": 1981,
+    "creator": "島田荘司",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

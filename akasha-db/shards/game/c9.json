@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003652": {
+    "workId": "wk_000003652",
+    "title": "컴뱃암즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1113555"
+    },
+    "titles": {
+      "ko": "컴뱃암즈",
+      "en": "Combat Arms",
+      "ja": "コンバットアームズ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

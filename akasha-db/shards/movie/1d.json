@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004392": {
+    "workId": "wk_000004392",
+    "title": "더 텐더 바",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105658212"
+    },
+    "titles": {
+      "ko": "더 텐더 바",
+      "en": "The Tender Bar",
+      "ja": "僕を育ててくれたテンダー・バー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

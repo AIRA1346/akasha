@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003196": {
+    "workId": "wk_000003196",
+    "title": "북극백화점의 안내원",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122776703"
+    },
+    "titles": {
+      "ko": "북극백화점의 안내원",
+      "en": "The Concierge at Hokkyoku Department Store",
+      "ja": "北極百貨店のコンシェルジュさん"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004152": {
+    "workId": "wk_000004152",
+    "title": "흘러가는 나날, 밥은 맛있어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131606570"
+    },
+    "titles": {
+      "ko": "흘러가는 나날, 밥은 맛있어",
+      "en": "Food for the Soul",
+      "ja": "日々は過ぎれど飯うまし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005223": {
+    "workId": "wk_000005223",
+    "title": "와카코 술",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18394334"
+    },
+    "titles": {
+      "ko": "와카코 술",
+      "en": "Wakakozake",
+      "ja": "ワカコ酒"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

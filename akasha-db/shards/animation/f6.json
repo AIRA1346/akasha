@@ -54,5 +54,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003110": {
+    "workId": "wk_000003110",
+    "title": "스노우 퀸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1216050"
+    },
+    "titles": {
+      "ko": "스노우 퀸",
+      "en": "Snow Queen",
+      "ja": "スノー・クイーン 〜雪の女王〜"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003919": {
+    "workId": "wk_000003919",
+    "title": "향기로운 꽃은 늠름하게 핀다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130305455"
+    },
+    "titles": {
+      "ko": "향기로운 꽃은 늠름하게 핀다",
+      "en": "The Fragrant Flower Blooms with Dignity",
+      "ja": "薫る花は凛と咲く"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004752": {
+    "workId": "wk_000004752",
+    "title": "포켓몬스터 THE ORIGIN",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14870116"
+    },
+    "titles": {
+      "ko": "포켓몬스터 THE ORIGIN",
+      "en": "Pokémon Origins",
+      "ja": "ポケットモンスター THE ORIGIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

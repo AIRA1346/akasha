@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003244": {
+    "workId": "wk_000003244",
+    "title": "시광여니별래무양",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460364"
+    },
+    "titles": {
+      "ko": "시광여니별래무양",
+      "en": "Q109460364"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003821": {
+    "workId": "wk_000003821",
+    "title": "클래리사 익스플레인스 잇 올",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1095618"
+    },
+    "titles": {
+      "ko": "클래리사 익스플레인스 잇 올",
+      "en": "Clarissa Explains It All",
+      "ja": "クラリッサ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

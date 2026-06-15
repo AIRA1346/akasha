@@ -1,0 +1,129 @@
+{
+  "wk_000003024": {
+    "workId": "wk_000003024",
+    "title": "에로망가 선생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120525525"
+    },
+    "titles": {
+      "ko": "에로망가 선생",
+      "en": "Eromanga Sensei",
+      "ja": "エロマンガ先生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003279": {
+    "workId": "wk_000003279",
+    "title": "BEYBLADE X",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123048898"
+    },
+    "titles": {
+      "ko": "BEYBLADE X",
+      "en": "Beyblade X",
+      "ja": "BEYBLADE X"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003459": {
+    "workId": "wk_000003459",
+    "title": "BEATLESS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124467250"
+    },
+    "titles": {
+      "ko": "BEATLESS",
+      "en": "Beatless",
+      "ja": "BEATLESS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003716": {
+    "workId": "wk_000003716",
+    "title": "마법의 자매 루루토리리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126936172"
+    },
+    "titles": {
+      "ko": "마법의 자매 루루토리리",
+      "en": "Magical Sisters LuluttoLilly",
+      "ja": "魔法の姉妹ルルットリリィ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003846": {
+    "workId": "wk_000003846",
+    "title": "전대 레드 이세계에서 모험가 되다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128787228"
+    },
+    "titles": {
+      "ko": "전대 레드 이세계에서 모험가 되다",
+      "en": "The Red Ranger Becomes an Adventurer in Another World",
+      "ja": "戦隊レッド 異世界で冒険者になる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004422": {
+    "workId": "wk_000004422",
+    "title": "악의 꽃",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134455838"
+    },
+    "titles": {
+      "ko": "악의 꽃",
+      "en": "The Flowers of Evil",
+      "ja": "惡の華"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004883": {
+    "workId": "wk_000004883",
+    "title": "마야 붕붕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1564651"
+    },
+    "titles": {
+      "ko": "마야 붕붕",
+      "en": "Maya the Honey Bee",
+      "ja": "みつばちマーヤの冒険"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -25,5 +25,44 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004343": {
+    "workId": "wk_000004343",
+    "title": "히스토리에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192726"
+    },
+    "titles": {
+      "ko": "히스토리에",
+      "en": "Historie",
+      "ja": "ヒストリエ"
+    },
+    "releaseYear": 2004,
+    "creator": "Hitoshi Iwaaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005203": {
+    "workId": "wk_000005203",
+    "title": "메가도쿄",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249504"
+    },
+    "titles": {
+      "ko": "메가도쿄",
+      "en": "Megatokyo",
+      "ja": "メガトーキョー"
+    },
+    "creator": "Fred Gallagher",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

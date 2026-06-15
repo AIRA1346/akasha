@@ -15,5 +15,41 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002947": {
+    "workId": "wk_000002947",
+    "title": "언터처블",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19854634"
+    },
+    "titles": {
+      "ko": "언터처블",
+      "en": "unTOUCHable"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003626": {
+    "workId": "wk_000003626",
+    "title": "좀비딸",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97420388"
+    },
+    "titles": {
+      "ko": "좀비딸",
+      "en": "My Daughter is a Zombie",
+      "ja": "ゾンビ娘"
+    },
+    "creator": "이윤창",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -18,5 +18,40 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004139": {
+    "workId": "wk_000004139",
+    "title": "그노시아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131367609"
+    },
+    "titles": {
+      "ko": "그노시아",
+      "en": "Gnosia",
+      "ja": "グノーシア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004357": {
+    "workId": "wk_000004357",
+    "title": "오만과 편견",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133861919"
+    },
+    "titles": {
+      "ko": "오만과 편견",
+      "en": "Pride and Prejudice"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

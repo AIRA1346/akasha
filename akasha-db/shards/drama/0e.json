@@ -50,5 +50,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003911": {
+    "workId": "wk_000003911",
+    "title": "갓파더 - 新가족관계증명서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114049"
+    },
+    "titles": {
+      "ko": "갓파더 - 新가족관계증명서",
+      "en": "Q110114049"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004268": {
+    "workId": "wk_000004268",
+    "title": "퀸덤 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117902"
+    },
+    "titles": {
+      "ko": "퀸덤 2",
+      "en": "Queendom 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -65,5 +65,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003162": {
+    "workId": "wk_000003162",
+    "title": "KBS 645 생활뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459359"
+    },
+    "titles": {
+      "ko": "KBS 645 생활뉴스",
+      "en": "Q109459359"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004495": {
+    "workId": "wk_000004495",
+    "title": "신의 정원이 딸린 쿠스노키 저택",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135315518"
+    },
+    "titles": {
+      "ko": "신의 정원이 딸린 쿠스노키 저택",
+      "en": "Kusunoki's Garden of Gods",
+      "ja": "神の庭付き楠木邸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005023": {
+    "workId": "wk_000005023",
+    "title": "폼포코 너구리 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q167206"
+    },
+    "titles": {
+      "ko": "폼포코 너구리 대작전",
+      "en": "Pom Poko",
+      "ja": "平成狸合戦ぽんぽこ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

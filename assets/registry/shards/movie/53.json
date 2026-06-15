@@ -1,0 +1,21 @@
+{
+  "wk_000004732": {
+    "workId": "wk_000004732",
+    "title": "노리코의 식탁",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057774"
+    },
+    "titles": {
+      "ko": "노리코의 식탁",
+      "en": "Noriko's Dinner Table",
+      "ja": "紀子の食卓"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

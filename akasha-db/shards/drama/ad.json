@@ -15,5 +15,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003514": {
+    "workId": "wk_000003514",
+    "title": "경제와이드 백브리핑 시시각각",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464383"
+    },
+    "titles": {
+      "ko": "경제와이드 백브리핑 시시각각",
+      "en": "Q109464383"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003597": {
+    "workId": "wk_000003597",
+    "title": "가화만사흥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10950793"
+    },
+    "titles": {
+      "ko": "가화만사흥",
+      "en": "Lee Family's Reunion"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003840": {
+    "workId": "wk_000003840",
+    "title": "소민가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109974682"
+    },
+    "titles": {
+      "ko": "소민가",
+      "en": "A Little Mood for Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004130": {
+    "workId": "wk_000004130",
+    "title": "스톡챔피언",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115454"
+    },
+    "titles": {
+      "ko": "스톡챔피언",
+      "en": "Q110115454"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

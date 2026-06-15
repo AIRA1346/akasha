@@ -1,0 +1,22 @@
+{
+  "wk_000003356": {
+    "workId": "wk_000003356",
+    "title": "요정 핑크",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61099589"
+    },
+    "titles": {
+      "ko": "요정 핑크",
+      "en": "Fairy Pink",
+      "ja": "妖精ピンク"
+    },
+    "releaseYear": 1985,
+    "creator": "Kim Donghwa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

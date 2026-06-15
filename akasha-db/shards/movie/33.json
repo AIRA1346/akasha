@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004842": {
+    "workId": "wk_000004842",
+    "title": "파리의 하늘 아래",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058218"
+    },
+    "titles": {
+      "ko": "파리의 하늘 아래",
+      "en": "Sous le ciel de Paris",
+      "ja": "巴里の空の下セーヌは流れる"
+    },
+    "releaseYear": 1951,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

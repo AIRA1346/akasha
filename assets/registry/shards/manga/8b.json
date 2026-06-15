@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003698": {
+    "workId": "wk_000003698",
+    "title": "타몬 군 지금 어느 쪽?!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116825658"
+    },
+    "titles": {
+      "ko": "타몬 군 지금 어느 쪽?!",
+      "en": "Tamon's B-Side",
+      "ja": "多聞くん今どっち!?"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

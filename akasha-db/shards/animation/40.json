@@ -56,5 +56,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003193": {
+    "workId": "wk_000003193",
+    "title": "BanG Dream! Ave Mujica",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122538117"
+    },
+    "titles": {
+      "ko": "BanG Dream! Ave Mujica",
+      "en": "BanG Dream! Ave Mujica",
+      "ja": "BanG Dream! Ave Mujica"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003777": {
+    "workId": "wk_000003777",
+    "title": "이 회사에 좋아하는 사람이 있습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127692579"
+    },
+    "titles": {
+      "ko": "이 회사에 좋아하는 사람이 있습니다",
+      "en": "I Have a Crush at Work",
+      "ja": "この会社に好きな人がいます"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003674": {
+    "workId": "wk_000003674",
+    "title": "언제나 제인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109535053"
+    },
+    "titles": {
+      "ko": "언제나 제인",
+      "en": "Always Jane"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003755": {
+    "workId": "wk_000003755",
+    "title": "오페라 스타 2011",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546420"
+    },
+    "titles": {
+      "ko": "오페라 스타 2011",
+      "en": "Q109546420"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004331": {
+    "workId": "wk_000004331",
+    "title": "한반도의 지금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118173"
+    },
+    "titles": {
+      "ko": "한반도의 지금",
+      "en": "Q110118173"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

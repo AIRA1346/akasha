@@ -86,5 +86,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003513": {
+    "workId": "wk_000003513",
+    "title": "경제현장 오늘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464382"
+    },
+    "titles": {
+      "ko": "경제현장 오늘",
+      "en": "Q109464382"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004186": {
+    "workId": "wk_000004186",
+    "title": "여고추리반2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115754"
+    },
+    "titles": {
+      "ko": "여고추리반2",
+      "en": "Q110115754"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004410": {
+    "workId": "wk_000004410",
+    "title": "배드 스포츠: 조작된 승부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110300658"
+    },
+    "titles": {
+      "ko": "배드 스포츠: 조작된 승부",
+      "en": "Bad Sport",
+      "ja": "スポーツ界の闇: 八百長に手を染める人々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

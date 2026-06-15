@@ -74,5 +74,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003528": {
+    "workId": "wk_000003528",
+    "title": "변변찮은 마술강사와 금기교전",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116246445"
+    },
+    "titles": {
+      "ko": "변변찮은 마술강사와 금기교전",
+      "en": "Akashic Records of Bastard Magical Instructor",
+      "ja": "ロクでなし魔術講師と禁忌教典"
+    },
+    "releaseYear": 2015,
+    "creator": "Taro Hitsuji",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005130": {
+    "workId": "wk_000005130",
+    "title": "Occultic;Nine",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124514534"
+    },
+    "titles": {
+      "ko": "Occultic;Nine",
+      "en": "Occultic;Nine",
+      "ja": "Occultic;Nine -オカルティック・ナイン-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

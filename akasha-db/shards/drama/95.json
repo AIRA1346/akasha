@@ -1,0 +1,55 @@
+{
+  "wk_000003591": {
+    "workId": "wk_000003591",
+    "title": "병아리 하이킥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464507"
+    },
+    "titles": {
+      "ko": "병아리 하이킥",
+      "en": "chick high kick"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005056": {
+    "workId": "wk_000005056",
+    "title": "5시부터 9시까지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11188068"
+    },
+    "titles": {
+      "ko": "5시부터 9시까지",
+      "en": "From Five to Nine",
+      "ja": "5時から9時まで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005120": {
+    "workId": "wk_000005120",
+    "title": "치얼업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111992856"
+    },
+    "titles": {
+      "ko": "치얼업",
+      "en": "Cheer Up",
+      "ja": "チアアップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

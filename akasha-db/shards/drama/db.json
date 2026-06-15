@@ -50,5 +50,91 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003075": {
+    "workId": "wk_000003075",
+    "title": "TJB 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458847"
+    },
+    "titles": {
+      "ko": "TJB 뉴스특보",
+      "en": "Q109458847"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004050": {
+    "workId": "wk_000004050",
+    "title": "미스트롯 2 7공주 스페셜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115002"
+    },
+    "titles": {
+      "ko": "미스트롯 2 7공주 스페셜",
+      "en": "Q110115002"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004616": {
+    "workId": "wk_000004616",
+    "title": "호텔리어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073270"
+    },
+    "titles": {
+      "ko": "호텔리어",
+      "en": "Hotelier",
+      "ja": "ホテリアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004689": {
+    "workId": "wk_000004689",
+    "title": "별처럼 빛나는 너에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110885119"
+    },
+    "titles": {
+      "ko": "별처럼 빛나는 너에게",
+      "en": "Shining for One Thing"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005070": {
+    "workId": "wk_000005070",
+    "title": "영안여몽 : 다시 쓰는 꿈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111946821"
+    },
+    "titles": {
+      "ko": "영안여몽 : 다시 쓰는 꿈",
+      "en": "Till the End of the Moon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

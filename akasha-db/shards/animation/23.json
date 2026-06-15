@@ -34,5 +34,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004420": {
+    "workId": "wk_000004420",
+    "title": "히로인? 성녀? 아니요, 올 워크스 메이드 입니다! (자랑)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134442789"
+    },
+    "titles": {
+      "ko": "히로인? 성녀? 아니요, 올 워크스 메이드 입니다! (자랑)",
+      "en": "Heroine? Saint? No, I'm an All-Works Maid (and Proud of It)!",
+      "ja": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004635": {
+    "workId": "wk_000004635",
+    "title": "세인트 세이야 오메가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1370881"
+    },
+    "titles": {
+      "ko": "세인트 세이야 오메가",
+      "en": "Saint Seiya Omega",
+      "ja": "聖闘士星矢Ω"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004749": {
+    "workId": "wk_000004749",
+    "title": "비밀결사 매발톱단",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1458106"
+    },
+    "titles": {
+      "ko": "비밀결사 매발톱단",
+      "en": "Eagle Talon",
+      "ja": "秘密結社鷹の爪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

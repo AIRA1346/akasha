@@ -37,5 +37,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004489": {
+    "workId": "wk_000004489",
+    "title": "소녀왕국 표류기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200040"
+    },
+    "titles": {
+      "ko": "소녀왕국 표류기",
+      "en": "Nagasarete Airantō",
+      "ja": "ながされて藍蘭島"
+    },
+    "creator": "Takeshi Fujishiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005016": {
+    "workId": "wk_000005016",
+    "title": "니트 쿠노이치와 어쩌다가 동거 시작했습니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124475034"
+    },
+    "titles": {
+      "ko": "니트 쿠노이치와 어쩌다가 동거 시작했습니다",
+      "en": "I'm Living with an Otaku NEET Kunoichi!?",
+      "ja": "ニートくノ一となぜか同棲はじめました"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003379": {
+    "workId": "wk_000003379",
+    "title": "전여신",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11075189"
+    },
+    "titles": {
+      "ko": "전여신",
+      "en": "Ikusa Megami",
+      "ja": "戦女神"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003939": {
+    "workId": "wk_000003939",
+    "title": "루드네스: 비타 섹슈얼리스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11228977"
+    },
+    "titles": {
+      "ko": "루드네스: 비타 섹슈얼리스",
+      "en": "LEWDNESS ～Vita sexualis～",
+      "ja": "LEWDNESS ～Vita sexualis～"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004229": {
+    "workId": "wk_000004229",
+    "title": "파스텔 차임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276045"
+    },
+    "titles": {
+      "ko": "파스텔 차임",
+      "en": "Pastel Chime",
+      "ja": "ぱすてるチャイム -恋のスキルアップ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004908": {
+    "workId": "wk_000004908",
+    "title": "2006 FIFA 월드컵",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138744"
+    },
+    "titles": {
+      "ko": "2006 FIFA 월드컵",
+      "en": "2006 FIFA World Cup",
+      "ja": "2006 FIFA ワールドカップ ドイツ大会"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

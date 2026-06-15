@@ -49,5 +49,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003523": {
+    "workId": "wk_000003523",
+    "title": "응석부리게 해줘, 히나모리!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116172772"
+    },
+    "titles": {
+      "ko": "응석부리게 해줘, 히나모리!",
+      "en": "Amaesasete Hinamori-san!",
+      "ja": "甘えさせて雛森さん！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005279": {
+    "workId": "wk_000005279",
+    "title": "종말 투어링",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126377424"
+    },
+    "titles": {
+      "ko": "종말 투어링",
+      "en": "Touring After the Apocalypse",
+      "ja": "終末ツーリング"
+    },
+    "creator": "さいとー栄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

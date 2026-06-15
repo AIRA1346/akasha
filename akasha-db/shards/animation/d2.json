@@ -74,5 +74,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003980": {
+    "workId": "wk_000003980",
+    "title": "도라에몽 노비타의 태엽도시 모험기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1304023"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 태엽도시 모험기",
+      "en": "Doraemon: Nobita and the Spiral City",
+      "ja": "ドラえもん のび太のねじ巻き都市冒険記"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004969": {
+    "workId": "wk_000004969",
+    "title": "진도 10.5 미국 침몰",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q163904"
+    },
+    "titles": {
+      "ko": "진도 10.5 미국 침몰",
+      "en": "10.5"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005034": {
+    "workId": "wk_000005034",
+    "title": "작은 아씨들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16996675"
+    },
+    "titles": {
+      "ko": "작은 아씨들",
+      "en": "Little Women",
+      "ja": "若草物語"
+    },
+    "releaseYear": 1950,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

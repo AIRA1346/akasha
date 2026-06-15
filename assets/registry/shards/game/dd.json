@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003388": {
+    "workId": "wk_000003388",
+    "title": "샌드박스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110845933"
+    },
+    "titles": {
+      "ko": "샌드박스",
+      "en": "Sandboxels",
+      "ja": "サンドボックセルズ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004443": {
+    "workId": "wk_000004443",
+    "title": "South Park: Chef's Luv Shack",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130193"
+    },
+    "titles": {
+      "ko": "South Park: Chef's Luv Shack",
+      "en": "South Park: Chef's Luv Shack"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

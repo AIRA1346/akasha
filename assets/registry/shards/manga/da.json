@@ -49,5 +49,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000003175": {
+    "workId": "wk_000003175",
+    "title": "밤을 걷는 고양이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115426721"
+    },
+    "titles": {
+      "ko": "밤을 걷는 고양이",
+      "en": "Yomawari Neko",
+      "ja": "夜廻り猫"
+    },
+    "releaseYear": 2015,
+    "creator": "Kahoru Fukaya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

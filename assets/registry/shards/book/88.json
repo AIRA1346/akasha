@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005165": {
+    "workId": "wk_000005165",
+    "title": "가죽스타킹 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092918"
+    },
+    "titles": {
+      "ko": "가죽스타킹 이야기",
+      "en": "Leatherstocking Tales",
+      "ja": "革脚絆物語"
+    },
+    "releaseYear": 1823,
+    "creator": "James Fenimore Cooper",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

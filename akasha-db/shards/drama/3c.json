@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005007": {
+    "workId": "wk_000005007",
+    "title": "별들에게 물어봐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111820593"
+    },
+    "titles": {
+      "ko": "별들에게 물어봐",
+      "en": "When the Stars Gossip",
+      "ja": "星がウワサするから"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

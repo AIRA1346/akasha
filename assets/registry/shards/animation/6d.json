@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003715": {
+    "workId": "wk_000003715",
+    "title": "배드 걸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126917607"
+    },
+    "titles": {
+      "ko": "배드 걸",
+      "en": "Bad Girl",
+      "ja": "ばっどがーる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005292": {
+    "workId": "wk_000005292",
+    "title": "포켓몬 더 무비 XY: 광륜의 초마신 후파",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18815806"
+    },
+    "titles": {
+      "ko": "포켓몬 더 무비 XY: 광륜의 초마신 후파",
+      "en": "Pokémon the Movie: Hoopa and the Clash of Ages",
+      "ja": "ポケモン・ザ・ムービーXY 光輪の超魔神 フーパ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

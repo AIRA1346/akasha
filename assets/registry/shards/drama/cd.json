@@ -87,5 +87,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005196": {
+    "workId": "wk_000005196",
+    "title": "L 드라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11230662"
+    },
+    "titles": {
+      "ko": "L 드라",
+      "en": "Q11230662",
+      "ja": "Lドラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005198": {
+    "workId": "wk_000005198",
+    "title": "연예인 매니저로 살아남기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112312662"
+    },
+    "titles": {
+      "ko": "연예인 매니저로 살아남기",
+      "en": "Behind Every Star",
+      "ja": "エージェントなお仕事"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

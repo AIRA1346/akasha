@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003616": {
+    "workId": "wk_000003616",
+    "title": "은 스푼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11649914"
+    },
+    "titles": {
+      "ko": "은 스푼",
+      "en": "Gin no Spoon",
+      "ja": "銀のスプーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004057": {
+    "workId": "wk_000004057",
+    "title": "EVOL",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117706632"
+    },
+    "titles": {
+      "ko": "EVOL",
+      "en": "EVOL",
+      "ja": "EVOL"
+    },
+    "releaseYear": 2020,
+    "creator": "Atsushi Kaneko",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004744": {
+    "workId": "wk_000004744",
+    "title": "달달하다 신데렐라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121303069"
+    },
+    "titles": {
+      "ko": "달달하다 신데렐라",
+      "en": "Amaama Cinderella",
+      "ja": "甘々シンデレラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

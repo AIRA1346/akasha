@@ -86,5 +86,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003826": {
+    "workId": "wk_000003826",
+    "title": "THE TIME,",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109595444"
+    },
+    "titles": {
+      "ko": "THE TIME,",
+      "en": "THE TIME,",
+      "ja": "THE TIME,"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004333": {
+    "workId": "wk_000004333",
+    "title": "해방타운",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118216"
+    },
+    "titles": {
+      "ko": "해방타운",
+      "en": "Q110118216"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,1 +1,40 @@
-{}
+{
+  "wk_000003748": {
+    "workId": "wk_000003748",
+    "title": "미션 파서블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105294011"
+    },
+    "titles": {
+      "ko": "미션 파서블",
+      "en": "Mission Possible",
+      "ja": "ミッションポッシブル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004537": {
+    "workId": "wk_000004537",
+    "title": "빛과 철",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105687100"
+    },
+    "titles": {
+      "ko": "빛과 철",
+      "en": "Back Light",
+      "ja": "光と鉄"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

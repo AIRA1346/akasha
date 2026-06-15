@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003346": {
+    "workId": "wk_000003346",
+    "title": "웃는 세일즈맨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11599582"
+    },
+    "titles": {
+      "ko": "웃는 세일즈맨",
+      "en": "The Laughing Salesman",
+      "ja": "笑ゥせぇるすまん"
+    },
+    "creator": "Fujiko Fujio A",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

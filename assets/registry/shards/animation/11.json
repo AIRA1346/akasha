@@ -17,5 +17,79 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003025": {
+    "workId": "wk_000003025",
+    "title": "창가의 토토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120544521"
+    },
+    "titles": {
+      "ko": "창가의 토토",
+      "en": "Totto-chan: The Little Girl at the Window",
+      "ja": "窓ぎわのトットちゃん"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003454": {
+    "workId": "wk_000003454",
+    "title": "외톨이의 이세계 공략",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124329534"
+    },
+    "titles": {
+      "ko": "외톨이의 이세계 공략",
+      "en": "Loner Life in Another World",
+      "ja": "ひとりぼっちの異世界攻略"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003850": {
+    "workId": "wk_000003850",
+    "title": "비와 너와",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129479947"
+    },
+    "titles": {
+      "ko": "비와 너와",
+      "en": "With You and the Rain",
+      "ja": "雨と君と"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003856": {
+    "workId": "wk_000003856",
+    "title": "명탐정 코난: 전율의 악보",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1300488"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 전율의 악보",
+      "en": "Detective Conan: Full Score of Fear",
+      "ja": "名探偵コナン 戦慄の楽譜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

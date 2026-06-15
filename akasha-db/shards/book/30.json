@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003576": {
+    "workId": "wk_000003576",
+    "title": "북조선실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107338275"
+    },
+    "titles": {
+      "ko": "북조선실록",
+      "en": "Q107338275",
+      "ja": "北朝鮮実録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000002967": {
+    "workId": "wk_000002967",
+    "title": "THE IDOLM@STER SP",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888947"
+    },
+    "titles": {
+      "ko": "THE IDOLM@STER SP",
+      "en": "The Idolmaster SP",
+      "ja": "THE IDOLM@STER SP"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

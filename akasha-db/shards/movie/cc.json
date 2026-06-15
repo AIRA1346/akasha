@@ -1,0 +1,40 @@
+{
+  "wk_000003316": {
+    "workId": "wk_000003316",
+    "title": "신들의 전쟁",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050528"
+    },
+    "titles": {
+      "ko": "신들의 전쟁",
+      "en": "Immortals",
+      "ja": "インモータルズ -神々の戦い-"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004843": {
+    "workId": "wk_000004843",
+    "title": "코카인 베어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105840301"
+    },
+    "titles": {
+      "ko": "코카인 베어",
+      "en": "Cocaine Bear",
+      "ja": "コカイン・ベア"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

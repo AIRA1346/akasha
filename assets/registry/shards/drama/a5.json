@@ -50,5 +50,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003072": {
+    "workId": "wk_000003072",
+    "title": "아적부혹청춘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458841"
+    },
+    "titles": {
+      "ko": "아적부혹청춘",
+      "en": "Q109458841"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003326": {
+    "workId": "wk_000003326",
+    "title": "황금의 펜타곤 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460815"
+    },
+    "titles": {
+      "ko": "황금의 펜타곤 2",
+      "en": "Q109460815"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003901": {
+    "workId": "wk_000003901",
+    "title": "EBS TV 고교 1학년 국어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113888"
+    },
+    "titles": {
+      "ko": "EBS TV 고교 1학년 국어",
+      "en": "Q110113888"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

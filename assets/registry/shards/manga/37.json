@@ -54,5 +54,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003339": {
+    "workId": "wk_000003339",
+    "title": "사나이 골목대장",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11578101"
+    },
+    "titles": {
+      "ko": "사나이 골목대장",
+      "en": "Otoko Ippiki Gaki Daishō",
+      "ja": "男一匹ガキ大将"
+    },
+    "releaseYear": 1968,
+    "creator": "Hiroshi Motomiya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "wk_000003228": {
+    "workId": "wk_000003228",
+    "title": "디스 민즈 워",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049480"
+    },
+    "titles": {
+      "ko": "디스 민즈 워",
+      "en": "This Means War",
+      "ja": "Black & White/ブラック & ホワイト"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003669": {
+    "workId": "wk_000003669",
+    "title": "캣츠 앤 독스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051315"
+    },
+    "titles": {
+      "ko": "캣츠 앤 독스",
+      "en": "Cats & Dogs",
+      "ja": "キャッツ & ドッグス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003884": {
+    "workId": "wk_000003884",
+    "title": "피어 스트리트 파트 2: 1978",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105369580"
+    },
+    "titles": {
+      "ko": "피어 스트리트 파트 2: 1978",
+      "en": "Fear Street Part 2: 1978",
+      "ja": "フィアー・ストリート Part 2: 1978"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

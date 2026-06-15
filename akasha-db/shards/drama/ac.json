@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004856": {
+    "workId": "wk_000004856",
+    "title": "노틸러스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111169891"
+    },
+    "titles": {
+      "ko": "노틸러스",
+      "en": "Nautilus"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005067": {
+    "workId": "wk_000005067",
+    "title": "CO 이식 코디네이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11193773"
+    },
+    "titles": {
+      "ko": "CO 이식 코디네이터",
+      "en": "CO transplant coordinator",
+      "ja": "CO 移植コーディネーター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

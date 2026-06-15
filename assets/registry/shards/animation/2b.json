@@ -143,5 +143,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003554": {
+    "workId": "wk_000003554",
+    "title": "전수.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125087128"
+    },
+    "titles": {
+      "ko": "전수.",
+      "en": "Zenshu",
+      "ja": "全修。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004204": {
+    "workId": "wk_000004204",
+    "title": "너와 넘어 사랑이 된다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131757167"
+    },
+    "titles": {
+      "ko": "너와 넘어 사랑이 된다",
+      "en": "With You, Our Love Will Make It Through",
+      "ja": "キミと越えて恋になる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004713": {
+    "workId": "wk_000004713",
+    "title": "네? 사내 시스템을 전부 혼자 관리하는 저를 해고한다구요?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140041679"
+    },
+    "titles": {
+      "ko": "네? 사내 시스템을 전부 혼자 관리하는 저를 해고한다구요?",
+      "en": "Fired? But I Maintain All the Software!",
+      "ja": "え、社内システム全てワンオペしている私を解雇ですか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

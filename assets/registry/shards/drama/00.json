@@ -51,5 +51,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003169": {
+    "workId": "wk_000003169",
+    "title": "아침마당",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459522"
+    },
+    "titles": {
+      "ko": "아침마당",
+      "en": "Q109459522"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003970": {
+    "workId": "wk_000003970",
+    "title": "달려라 한의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114623"
+    },
+    "titles": {
+      "ko": "달려라 한의",
+      "en": "Q110114623"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004042": {
+    "workId": "wk_000004042",
+    "title": "레만호에 지다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114827"
+    },
+    "titles": {
+      "ko": "레만호에 지다",
+      "en": "Q110114827"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

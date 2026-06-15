@@ -1,0 +1,21 @@
+{
+  "wk_000003135": {
+    "workId": "wk_000003135",
+    "title": "그가 나에게 말하지 않은 것",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106823028"
+    },
+    "titles": {
+      "ko": "그가 나에게 말하지 않은 것",
+      "en": "The Last Thing He Told Me"
+    },
+    "releaseYear": 2021,
+    "creator": "Laura Dave",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003746": {
+    "workId": "wk_000003746",
+    "title": "나의 멋진 친구들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10527257"
+    },
+    "titles": {
+      "ko": "나의 멋진 친구들",
+      "en": "The Importance of Tying Your Own Shoes"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

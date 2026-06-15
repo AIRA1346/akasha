@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005039": {
+    "workId": "wk_000005039",
+    "title": "옥토패스 트래블러 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113957001"
+    },
+    "titles": {
+      "ko": "옥토패스 트래블러 II",
+      "en": "Q113957001",
+      "ja": "オクトパストラベラーII"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

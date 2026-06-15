@@ -1,0 +1,76 @@
+{
+  "wk_000004913": {
+    "workId": "wk_000004913",
+    "title": "농상집요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10895110"
+    },
+    "titles": {
+      "ko": "농상집요",
+      "ja": "農桑輯要",
+      "zh": "農桑輯要"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004915": {
+    "workId": "wk_000004915",
+    "title": "지구 끝의 온실",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108960711"
+    },
+    "titles": {
+      "ko": "지구 끝의 온실",
+      "en": "Q108960711"
+    },
+    "releaseYear": 2021,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004982": {
+    "workId": "wk_000004982",
+    "title": "공명의 갈림길",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10900681"
+    },
+    "titles": {
+      "ko": "공명의 갈림길",
+      "en": "Kōmyō ga Tsuji",
+      "ja": "功名が辻"
+    },
+    "creator": "Ryōtarō Shiba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005163": {
+    "workId": "wk_000005163",
+    "title": "국풍",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10927454"
+    },
+    "titles": {
+      "ko": "국풍",
+      "en": "Airs of the States",
+      "ja": "国風"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

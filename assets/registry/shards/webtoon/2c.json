@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002952": {
+    "workId": "wk_000002952",
+    "title": "남과 여",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21824840"
+    },
+    "titles": {
+      "ko": "남과 여",
+      "en": "Man and Woman"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000005172": {
+    "workId": "wk_000005172",
+    "title": "아담의 부인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059199"
+    },
+    "titles": {
+      "ko": "아담의 부인",
+      "en": "Adam's Rib",
+      "ja": "アダム氏とマダム"
+    },
+    "releaseYear": 1949,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

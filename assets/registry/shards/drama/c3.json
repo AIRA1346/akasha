@@ -69,5 +69,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003245": {
+    "workId": "wk_000003245",
+    "title": "큰형수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460384"
+    },
+    "titles": {
+      "ko": "큰형수",
+      "en": "Q109460384"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004123": {
+    "workId": "wk_000004123",
+    "title": "성진대해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115337"
+    },
+    "titles": {
+      "ko": "성진대해",
+      "en": "StarOf Ocean"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004260": {
+    "workId": "wk_000004260",
+    "title": "KBS 2TV 뉴스 (1755)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115973"
+    },
+    "titles": {
+      "ko": "KBS 2TV 뉴스 (1755)",
+      "en": "KBS 2TV NEWS (1755)",
+      "ja": "KBS 2TV ニュース (1755)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003810": {
+    "workId": "wk_000003810",
+    "title": "씨 하우 데이 런",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105319897"
+    },
+    "titles": {
+      "ko": "씨 하우 데이 런",
+      "en": "See How They Run",
+      "ja": "ウエスト・エンド殺人事件"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

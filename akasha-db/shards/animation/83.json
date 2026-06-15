@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003198": {
+    "workId": "wk_000003198",
+    "title": "전학 간 학교의 청순가련한 미소녀가 옛날에 남자라고 생각해서 같이 놀던 소꿉친구였던 일",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122794948"
+    },
+    "titles": {
+      "ko": "전학 간 학교의 청순가련한 미소녀가 옛날에 남자라고 생각해서 같이 놀던 소꿉친구였던 일",
+      "en": "Tenkōsaki no Seiso Karen na Bishōjo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+      "ja": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004218": {
+    "workId": "wk_000004218",
+    "title": "재키와 머피",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1322487"
+    },
+    "titles": {
+      "ko": "재키와 머피",
+      "en": "The Bush Baby",
+      "ja": "大草原の小さな天使 ブッシュベイビー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

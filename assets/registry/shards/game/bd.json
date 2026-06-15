@@ -66,5 +66,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003038": {
+    "workId": "wk_000003038",
+    "title": "배틀필드 2: 모던 컴뱃",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092945"
+    },
+    "titles": {
+      "ko": "배틀필드 2: 모던 컴뱃",
+      "en": "Battlefield 2: Modern Combat",
+      "ja": "バトルフィールド2 モダンコンバット"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004583": {
+    "workId": "wk_000004583",
+    "title": "코어 워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132500"
+    },
+    "titles": {
+      "ko": "코어 워",
+      "en": "Core War",
+      "ja": "コア戦争"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

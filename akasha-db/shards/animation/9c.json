@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005080": {
+    "workId": "wk_000005080",
+    "title": "스쿨럼블",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17219051"
+    },
+    "titles": {
+      "ko": "스쿨럼블",
+      "en": "School Rumble",
+      "ja": "スクールランブル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

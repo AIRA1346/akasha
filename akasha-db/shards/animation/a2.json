@@ -119,5 +119,44 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004062": {
+    "workId": "wk_000004062",
+    "title": "도라에몽 노비타와 이상한 풍사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1309592"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 이상한 풍사",
+      "en": "Doraemon: Nobita and the Windmasters",
+      "ja": "ドラえもん のび太とふしぎ風使い"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004359": {
+    "workId": "wk_000004359",
+    "title": "엑셀 사가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1338812"
+    },
+    "titles": {
+      "ko": "엑셀 사가",
+      "en": "Excel Saga",
+      "ja": "エクセル・サーガ"
+    },
+    "releaseYear": 2001,
+    "creator": "Kōshi Rikudō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

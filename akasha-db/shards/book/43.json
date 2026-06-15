@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004720": {
+    "workId": "wk_000004720",
+    "title": "비행공포",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088550"
+    },
+    "titles": {
+      "ko": "비행공포",
+      "en": "Fear of Flying",
+      "ja": "飛ぶのが怖い"
+    },
+    "releaseYear": 1973,
+    "creator": "エリカ・ジョング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000004839": {
+    "workId": "wk_000004839",
+    "title": "전당문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10891444"
+    },
+    "titles": {
+      "ko": "전당문",
+      "en": "Quantangwen",
+      "ja": "全唐文"
+    },
+    "releaseYear": 1814,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

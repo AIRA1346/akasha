@@ -80,5 +80,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004215": {
+    "workId": "wk_000004215",
+    "title": "기절 용사와 암살 공주",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132160149"
+    },
+    "titles": {
+      "ko": "기절 용사와 암살 공주",
+      "en": "The Shy Hero and the Assassin Princesses",
+      "ja": "気絶勇者と暗殺姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004631": {
+    "workId": "wk_000004631",
+    "title": "두 남자와 룸쉐어 중입니다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136981494"
+    },
+    "titles": {
+      "ko": "두 남자와 룸쉐어 중입니다!",
+      "en": "Pardon the Intrusion, I'm Home!",
+      "ja": "ただいま、おじゃまされます!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

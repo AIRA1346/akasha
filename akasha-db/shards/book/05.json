@@ -1,0 +1,21 @@
+{
+  "wk_000005244": {
+    "workId": "wk_000005244",
+    "title": "이세계 소환은 두 번째입니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109297684"
+    },
+    "titles": {
+      "ko": "이세계 소환은 두 번째입니다",
+      "en": "Summoned to Another World... Again?",
+      "ja": "異世界召喚は二度目です"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

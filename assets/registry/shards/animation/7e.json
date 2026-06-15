@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003287": {
+    "workId": "wk_000003287",
+    "title": "명탐정 코난: 100만 달러의 오릉성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123354230"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 100만 달러의 오릉성",
+      "en": "Detective Conan: The Million-dollar Pentagram",
+      "ja": "名探偵コナン 100万ドルの五稜星"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004891": {
+    "workId": "wk_000004891",
+    "title": "하야테처럼!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15949405"
+    },
+    "titles": {
+      "ko": "하야테처럼!",
+      "en": "Hayate the Combat Butler",
+      "ja": "ハヤテのごとく!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000004696": {
+    "workId": "wk_000004696",
+    "title": "야노 군의 평범한 나날",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336473"
+    },
+    "titles": {
+      "ko": "야노 군의 평범한 나날",
+      "en": "Yano-kun's Ordinary Days",
+      "ja": "矢野くんの普通の日々"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003466": {
+    "workId": "wk_000003466",
+    "title": "전생 악녀의 흑역사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124570408"
+    },
+    "titles": {
+      "ko": "전생 악녀의 흑역사",
+      "en": "The Dark History of the Reincarnated Villainess",
+      "ja": "転生悪女の黒歴史"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004423": {
+    "workId": "wk_000004423",
+    "title": "일렉시드 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134488111"
+    },
+    "titles": {
+      "ko": "일렉시드 (애니메이션)",
+      "en": "Eleceed",
+      "ja": "エレキシード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

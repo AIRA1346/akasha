@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004365": {
+    "workId": "wk_000004365",
+    "title": "레고 배트맨 2: DC 슈퍼 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112912"
+    },
+    "titles": {
+      "ko": "레고 배트맨 2: DC 슈퍼 히어로즈",
+      "en": "Lego Batman 2: DC Super Heroes",
+      "ja": "レゴ バットマン2 DCスーパーヒーロー"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

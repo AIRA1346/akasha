@@ -16,5 +16,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003420": {
+    "workId": "wk_000003420",
+    "title": "꼬리에 꼬리를 무는 그날 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461491"
+    },
+    "titles": {
+      "ko": "꼬리에 꼬리를 무는 그날 이야기",
+      "en": "The story of the day when the tail was bitten"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003506": {
+    "workId": "wk_000003506",
+    "title": "애재성공하",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109463749"
+    },
+    "titles": {
+      "ko": "애재성공하",
+      "en": "Q109463749"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003833": {
+    "workId": "wk_000003833",
+    "title": "트레이서 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109804030"
+    },
+    "titles": {
+      "ko": "트레이서 (드라마)",
+      "en": "Tracer",
+      "ja": "トレーサー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -84,5 +84,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004222": {
+    "workId": "wk_000004222",
+    "title": "다운타운 스페셜: 쿠니오군의 시대극이다 전원집합!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265439"
+    },
+    "titles": {
+      "ko": "다운타운 스페셜: 쿠니오군의 시대극이다 전원집합!",
+      "en": "Downtown Special: Kunio-kun's Historical Period Drama!",
+      "ja": "ダウンタウンスペシャル くにおくんの時代劇だよ全員集合!"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

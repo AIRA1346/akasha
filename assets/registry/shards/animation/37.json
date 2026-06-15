@@ -31,5 +31,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000005019": {
+    "workId": "wk_000005019",
+    "title": "페어리 테일",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16510277"
+    },
+    "titles": {
+      "ko": "페어리 테일",
+      "en": "Fairy Tail",
+      "ja": "フェアリーテイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005142": {
+    "workId": "wk_000005142",
+    "title": "공각기동대 STAND ALONE COMPLEX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1776982"
+    },
+    "titles": {
+      "ko": "공각기동대 STAND ALONE COMPLEX",
+      "en": "Ghost in the Shell: Stand Alone Complex",
+      "ja": "攻殻機動隊 STAND ALONE COMPLEX"
+    },
+    "releaseYear": 2002,
+    "creator": "Kenji Kamiyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

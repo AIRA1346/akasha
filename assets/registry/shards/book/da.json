@@ -37,5 +37,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003741": {
+    "workId": "wk_000003741",
+    "title": "경화연",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075013"
+    },
+    "titles": {
+      "ko": "경화연",
+      "en": "Flowers in the Mirror",
+      "ja": "鏡花縁"
+    },
+    "creator": "Li Ruzhen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004840": {
+    "workId": "wk_000004840",
+    "title": "뱀파이어 아카데미",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089186"
+    },
+    "titles": {
+      "ko": "뱀파이어 아카데미",
+      "en": "Vampire Academy",
+      "ja": "ヴァンパイア・アカデミー"
+    },
+    "releaseYear": 2007,
+    "creator": "Richelle Mead",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

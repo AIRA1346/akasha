@@ -84,5 +84,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003511": {
+    "workId": "wk_000003511",
+    "title": "경제와이드 이슈&",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464380"
+    },
+    "titles": {
+      "ko": "경제와이드 이슈&",
+      "en": "Q109464380"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004558": {
+    "workId": "wk_000004558",
+    "title": "코라손 게레로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110643257"
+    },
+    "titles": {
+      "ko": "코라손 게레로",
+      "en": "Corazón guerrero"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005257": {
+    "workId": "wk_000005257",
+    "title": "어 패밀리 어페이어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112339414"
+    },
+    "titles": {
+      "ko": "어 패밀리 어페이어",
+      "en": "A Family Affair"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

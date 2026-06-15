@@ -34,5 +34,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004627": {
+    "workId": "wk_000004627",
+    "title": "오센",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11080552"
+    },
+    "titles": {
+      "ko": "오센",
+      "en": "Q11080552",
+      "ja": "おせん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005005": {
+    "workId": "wk_000005005",
+    "title": "불타 오르는듯한",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11180718"
+    },
+    "titles": {
+      "ko": "불타 오르는듯한",
+      "en": "Flamboyant",
+      "ja": "龍飛鳳舞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005055": {
+    "workId": "wk_000005055",
+    "title": "11PM",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11185217"
+    },
+    "titles": {
+      "ko": "11PM",
+      "en": "11PM",
+      "ja": "11PM"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

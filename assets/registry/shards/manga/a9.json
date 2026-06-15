@@ -56,5 +56,43 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000003974": {
+    "workId": "wk_000003974",
+    "title": "극락가",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117196094"
+    },
+    "titles": {
+      "ko": "극락가",
+      "en": "Gokurakugai",
+      "ja": "極楽街"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004275": {
+    "workId": "wk_000004275",
+    "title": "시공이방인 쿄코",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191694"
+    },
+    "titles": {
+      "ko": "시공이방인 쿄코",
+      "en": "Time Stranger Kyoko",
+      "ja": "時空異邦人KYOKO"
+    },
+    "releaseYear": 2000,
+    "creator": "Arina Tanemura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

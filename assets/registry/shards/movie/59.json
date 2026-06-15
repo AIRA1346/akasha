@@ -17,5 +17,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003744": {
+    "workId": "wk_000003744",
+    "title": "디 이터널 도터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105227223"
+    },
+    "titles": {
+      "ko": "디 이터널 도터",
+      "en": "The Eternal Daughter",
+      "ja": "エターナル・ドーター"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004025": {
+    "workId": "wk_000004025",
+    "title": "대마술사",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054393"
+    },
+    "titles": {
+      "ko": "대마술사",
+      "en": "The Great Magician",
+      "ja": "大魔術師\"X\"のダブル・トリック"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004544": {
+    "workId": "wk_000004544",
+    "title": "테이큰 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057015"
+    },
+    "titles": {
+      "ko": "테이큰 2",
+      "en": "Taken 2",
+      "ja": "96時間/リベンジ"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

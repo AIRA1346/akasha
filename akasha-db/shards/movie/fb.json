@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003231": {
+    "workId": "wk_000003231",
+    "title": "리틀 도쿄",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049906"
+    },
+    "titles": {
+      "ko": "리틀 도쿄",
+      "en": "Showdown in Little Tokyo",
+      "ja": "リトルトウキョー殺人課"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005310": {
+    "workId": "wk_000005310",
+    "title": "시저는 죽어야 한다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059540"
+    },
+    "titles": {
+      "ko": "시저는 죽어야 한다",
+      "en": "Caesar Must Die",
+      "ja": "塀の中のジュリアス・シーザー"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

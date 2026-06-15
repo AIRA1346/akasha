@@ -54,5 +54,58 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003703": {
+    "workId": "wk_000003703",
+    "title": "비전퀘스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126092795"
+    },
+    "titles": {
+      "ko": "비전퀘스트",
+      "en": "VisionQuest"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003851": {
+    "workId": "wk_000003851",
+    "title": "하여튼 요즘 탐정은",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129572513"
+    },
+    "titles": {
+      "ko": "하여튼 요즘 탐정은",
+      "en": "Detectives These Days Are Crazy!",
+      "ja": "まったく最近の探偵ときたら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005144": {
+    "workId": "wk_000005144",
+    "title": "건담 빌드 파이터즈 트라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18059408"
+    },
+    "titles": {
+      "ko": "건담 빌드 파이터즈 트라이",
+      "en": "Gundam Build Fighters Try",
+      "ja": "ガンダムビルドファイターズトライ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

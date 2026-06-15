@@ -67,5 +67,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003199": {
+    "workId": "wk_000003199",
+    "title": "원룸, 햇볕 보통, 천사 딸림.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122933438"
+    },
+    "titles": {
+      "ko": "원룸, 햇볕 보통, 천사 딸림.",
+      "en": "Studio Apartment, Good Lighting, Angel Included",
+      "ja": "ワンルーム、日当たり普通、天使つき。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005084": {
+    "workId": "wk_000005084",
+    "title": "극장판 프리티 리듬: 올스타 셀렉션 프리즘 쇼☆베스트 텐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17230137"
+    },
+    "titles": {
+      "ko": "극장판 프리티 리듬: 올스타 셀렉션 프리즘 쇼☆베스트 텐",
+      "en": "Pretty Rhythm All Star Selection: Prism Show☆Best Ten",
+      "ja": "劇場版 プリティーリズム・オールスターセレクション プリズムショー☆ベストテン"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

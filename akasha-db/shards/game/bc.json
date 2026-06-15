@@ -70,5 +70,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003801": {
+    "workId": "wk_000003801",
+    "title": "airy[F]airy ~Easter of Sant'Ariccia~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190099"
+    },
+    "titles": {
+      "ko": "airy[F]airy ~Easter of Sant'Ariccia~",
+      "en": "airy[F]airy ~Easter of Sant' Ariccia~",
+      "ja": "airy[F]airy ~Easter of Sant'Ariccia~"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005238": {
+    "workId": "wk_000005238",
+    "title": "오메가 스트라이커스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114313118"
+    },
+    "titles": {
+      "ko": "오메가 스트라이커스",
+      "en": "Omega Strikers",
+      "ja": "Omega Strikers"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

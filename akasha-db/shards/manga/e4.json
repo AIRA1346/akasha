@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003975": {
+    "workId": "wk_000003975",
+    "title": "옆집 누나를 좋아해",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117253540"
+    },
+    "titles": {
+      "ko": "옆집 누나를 좋아해",
+      "en": "I'm in Love with the Older Girl Next Door",
+      "ja": "隣のお姉さんが好き"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003291": {
+    "workId": "wk_000003291",
+    "title": "무스맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110419999"
+    },
+    "titles": {
+      "ko": "무스맨",
+      "en": "The Mooseman"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

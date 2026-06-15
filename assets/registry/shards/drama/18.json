@@ -1,0 +1,38 @@
+{
+  "wk_000005124": {
+    "workId": "wk_000005124",
+    "title": "BE:FIRST TV",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112054095"
+    },
+    "titles": {
+      "ko": "BE:FIRST TV",
+      "en": "BE:FIRST TV",
+      "ja": "BE:FIRST TV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005314": {
+    "workId": "wk_000005314",
+    "title": "NNN뉴스ZIP!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235772"
+    },
+    "titles": {
+      "ko": "NNN뉴스ZIP!",
+      "en": "Q11235772",
+      "ja": "NNNニュースZIP!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

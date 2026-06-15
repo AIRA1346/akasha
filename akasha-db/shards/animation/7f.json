@@ -15,5 +15,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003543": {
+    "workId": "wk_000003543",
+    "title": "도주중 그레이트 미션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124656790"
+    },
+    "titles": {
+      "ko": "도주중 그레이트 미션",
+      "en": "Run for Money: The Great Mission",
+      "ja": "逃走中 グレートミッション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004351": {
+    "workId": "wk_000004351",
+    "title": "카우보이 비밥 천국의 문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1334287"
+    },
+    "titles": {
+      "ko": "카우보이 비밥 천국의 문",
+      "en": "Cowboy Bebop: The Movie",
+      "ja": "カウボーイビバップ 天国の扉"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

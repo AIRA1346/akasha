@@ -15,5 +15,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003600": {
+    "workId": "wk_000003600",
+    "title": "한국에 산다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533785"
+    },
+    "titles": {
+      "ko": "한국에 산다",
+      "en": "Q109533785"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004559": {
+    "workId": "wk_000004559",
+    "title": "썸바디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110644233"
+    },
+    "titles": {
+      "ko": "썸바디",
+      "en": "Somebody",
+      "ja": "サムバディ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

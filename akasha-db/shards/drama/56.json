@@ -33,5 +33,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003321": {
+    "workId": "wk_000003321",
+    "title": "더 듀엣",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460769"
+    },
+    "titles": {
+      "ko": "더 듀엣",
+      "en": "The Duet"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004267": {
+    "workId": "wk_000004267",
+    "title": "칼의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117874"
+    },
+    "titles": {
+      "ko": "칼의 전쟁",
+      "en": "Q110117874"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004562": {
+    "workId": "wk_000004562",
+    "title": "아바타로전대 돈브라더즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110659846"
+    },
+    "titles": {
+      "ko": "아바타로전대 돈브라더즈",
+      "en": "Avataro Sentai Donbrothers",
+      "ja": "暴太郎戦隊ドンブラザーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004083": {
+    "workId": "wk_000004083",
+    "title": "스탈러스: 21세기 님포마니악스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244483"
+    },
+    "titles": {
+      "ko": "스탈러스: 21세기 님포마니악스",
+      "en": "STARLESS: Nymphomaniac's Paradise",
+      "ja": "STARLESS"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

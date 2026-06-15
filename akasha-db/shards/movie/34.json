@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004033": {
+    "workId": "wk_000004033",
+    "title": "우연과 상상",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105481082"
+    },
+    "titles": {
+      "ko": "우연과 상상",
+      "en": "Wheel of Fortune and Fantasy",
+      "ja": "偶然と想像"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004465": {
+    "workId": "wk_000004465",
+    "title": "퍼스트 러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056710"
+    },
+    "titles": {
+      "ko": "퍼스트 러브",
+      "en": "First Love",
+      "ja": "銀の靴"
+    },
+    "releaseYear": 1939,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

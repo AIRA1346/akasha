@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004163": {
+    "workId": "wk_000004163",
+    "title": "드래곤즈 도그마 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112609559"
+    },
+    "titles": {
+      "ko": "드래곤즈 도그마 2",
+      "en": "Dragon's Dogma II",
+      "ja": "ドラゴンズドグマ2"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005095": {
+    "workId": "wk_000005095",
+    "title": "트롬본 챔프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114071411"
+    },
+    "titles": {
+      "ko": "트롬본 챔프",
+      "en": "Trombone Champ",
+      "ja": "Trombone Champ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003054": {
+    "workId": "wk_000003054",
+    "title": "잇 위티스!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104878782"
+    },
+    "titles": {
+      "ko": "잇 위티스!",
+      "en": "Eat Wheaties!"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

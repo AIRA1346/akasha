@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004039": {
+    "workId": "wk_000004039",
+    "title": "드림 잡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114785"
+    },
+    "titles": {
+      "ko": "드림 잡",
+      "en": "Q110114785"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005326": {
+    "workId": "wk_000005326",
+    "title": "마이 리틀 쉐프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11239317"
+    },
+    "titles": {
+      "ko": "마이 리틀 쉐프",
+      "en": "My Little Chef",
+      "ja": "マイリトルシェフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000004460": {
+    "workId": "wk_000004460",
+    "title": "망내인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108731705"
+    },
+    "titles": {
+      "ko": "망내인",
+      "en": "Second Sister"
+    },
+    "releaseYear": 2017,
+    "creator": "Chan Ho-kei",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

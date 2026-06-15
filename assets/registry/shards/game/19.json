@@ -34,5 +34,81 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003731": {
+    "workId": "wk_000003731",
+    "title": "IDOLY PRIDE",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111614006"
+    },
+    "titles": {
+      "ko": "IDOLY PRIDE",
+      "en": "Idoly Pride",
+      "ja": "IDOLY PRIDE アイドリープライド"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004003": {
+    "workId": "wk_000004003",
+    "title": "둥지짓는 드래곤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235929"
+    },
+    "titles": {
+      "ko": "둥지짓는 드래곤",
+      "en": "Suzukuri Dragon",
+      "ja": "巣作りドラゴン"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004008": {
+    "workId": "wk_000004008",
+    "title": "퓨어메일",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240084"
+    },
+    "titles": {
+      "ko": "퓨어메일",
+      "en": "Pure Mail",
+      "ja": "PureMail -ピュアメール-"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004647": {
+    "workId": "wk_000004647",
+    "title": "패밀리 피싱",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11332095"
+    },
+    "titles": {
+      "ko": "패밀리 피싱",
+      "en": "Fishing Resort",
+      "ja": "ファミリーフィッシング"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

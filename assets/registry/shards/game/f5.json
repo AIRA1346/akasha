@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004094": {
+    "workId": "wk_000004094",
+    "title": "스즈미야 하루히의 약속",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253567"
+    },
+    "titles": {
+      "ko": "스즈미야 하루히의 약속",
+      "en": "The Promise of Haruhi Suzumiya",
+      "ja": "涼宮ハルヒの約束"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

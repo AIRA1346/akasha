@@ -35,5 +35,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005206": {
+    "workId": "wk_000005206",
+    "title": "너와 우주를 걷기 위하여",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125536048"
+    },
+    "titles": {
+      "ko": "너와 우주를 걷기 위하여",
+      "en": "Spacewalking With You",
+      "ja": "君と宇宙を歩くために"
+    },
+    "releaseYear": 2024,
+    "creator": "Inuhiko Doronoda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

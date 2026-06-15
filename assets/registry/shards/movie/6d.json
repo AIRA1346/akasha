@@ -1,0 +1,21 @@
+{
+  "wk_000003059": {
+    "workId": "wk_000003059",
+    "title": "썸 오브 올 피어스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048846"
+    },
+    "titles": {
+      "ko": "썸 오브 올 피어스",
+      "en": "The Sum of All Fears",
+      "ja": "トータル・フィアーズ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

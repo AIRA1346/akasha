@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004427": {
+    "workId": "wk_000004427",
+    "title": "빅쿠리맨 2000",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13479444"
+    },
+    "titles": {
+      "ko": "빅쿠리맨 2000",
+      "en": "Bikkuriman 2000",
+      "ja": "ビックリマン2000"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

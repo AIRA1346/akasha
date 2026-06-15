@@ -53,5 +53,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003509": {
+    "workId": "wk_000003509",
+    "title": "고향을 어찌 잊으리까",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464074"
+    },
+    "titles": {
+      "ko": "고향을 어찌 잊으리까",
+      "en": "Q109464074"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004778": {
+    "workId": "wk_000004778",
+    "title": "테일즈 오브 더 워킹 데드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110938096"
+    },
+    "titles": {
+      "ko": "테일즈 오브 더 워킹 데드",
+      "en": "Tales of the Walking Dead"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

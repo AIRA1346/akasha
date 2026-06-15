@@ -52,5 +52,77 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003595": {
+    "workId": "wk_000003595",
+    "title": "피비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109479658"
+    },
+    "titles": {
+      "ko": "피비",
+      "en": "Pibby",
+      "ja": "Pibby"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003607": {
+    "workId": "wk_000003607",
+    "title": "신장개업 운동맛집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109534683"
+    },
+    "titles": {
+      "ko": "신장개업 운동맛집",
+      "en": "New Biz - Exercise Restaurant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004265": {
+    "workId": "wk_000004265",
+    "title": "청춘스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117812"
+    },
+    "titles": {
+      "ko": "청춘스타",
+      "en": "Stars Awakening",
+      "ja": "青春スター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004553": {
+    "workId": "wk_000004553",
+    "title": "우리들의 블루스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110627977"
+    },
+    "titles": {
+      "ko": "우리들의 블루스",
+      "en": "Our Blues",
+      "ja": "私たちのブルース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

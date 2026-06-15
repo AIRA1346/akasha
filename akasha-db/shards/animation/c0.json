@@ -137,5 +137,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005219": {
+    "workId": "wk_000005219",
+    "title": "하나와 앨리스: 살인사건",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18389392"
+    },
+    "titles": {
+      "ko": "하나와 앨리스: 살인사건",
+      "en": "The Case of Hana & Alice",
+      "ja": "花とアリス殺人事件"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005228": {
+    "workId": "wk_000005228",
+    "title": "갑철성의 카바네리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18579178"
+    },
+    "titles": {
+      "ko": "갑철성의 카바네리",
+      "en": "Kabaneri of the Iron Fortress",
+      "ja": "甲鉄城のカバネリ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

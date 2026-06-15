@@ -100,5 +100,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003249": {
+    "workId": "wk_000003249",
+    "title": "비터스윗러브 시즌1 - 봄의 거짓말",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460548"
+    },
+    "titles": {
+      "ko": "비터스윗러브 시즌1 - 봄의 거짓말",
+      "en": "Q109460548"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004117": {
+    "workId": "wk_000004117",
+    "title": "빵카로드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115213"
+    },
+    "titles": {
+      "ko": "빵카로드",
+      "en": "Q110115213"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,58 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003858": {
+    "workId": "wk_000003858",
+    "title": "게임 센터 소녀와 이문화 교류",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130070506"
+    },
+    "titles": {
+      "ko": "게임 센터 소녀와 이문화 교류",
+      "en": "Cultural Exchange With a Game Centre Girl",
+      "ja": "ゲーセン少女と異文化交流"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004496": {
+    "workId": "wk_000004496",
+    "title": "Billy Joel: And So It Goes",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135321376"
+    },
+    "titles": {
+      "ko": "Billy Joel: And So It Goes",
+      "en": "Billy Joel: And So It Goes"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004633": {
+    "workId": "wk_000004633",
+    "title": "언제나! 괴짜가족",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137002702"
+    },
+    "titles": {
+      "ko": "언제나! 괴짜가족",
+      "en": "Always! Super Radical Gag Family",
+      "ja": "毎度！浦安鉄筋家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

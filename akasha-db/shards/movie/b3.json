@@ -62,5 +62,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004729": {
+    "workId": "wk_000004729",
+    "title": "극장판 울트라맨 우주 몬스터 대결전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057720"
+    },
+    "titles": {
+      "ko": "극장판 울트라맨 우주 몬스터 대결전",
+      "en": "Mega Monster Battle: Ultra Galaxy",
+      "ja": "大怪獣バトル ウルトラ銀河伝説 THE MOVIE"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005173": {
+    "workId": "wk_000005173",
+    "title": "제이니 존스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059303"
+    },
+    "titles": {
+      "ko": "제이니 존스",
+      "en": "Janie Jones"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

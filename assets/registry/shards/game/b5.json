@@ -17,5 +17,137 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003118": {
+    "workId": "wk_000003118",
+    "title": "하미다시 크리에이티브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109362373"
+    },
+    "titles": {
+      "ko": "하미다시 크리에이티브",
+      "en": "Hamidashi Creative",
+      "ja": "ハミダシクリエイティブ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003132": {
+    "workId": "wk_000003132",
+    "title": "Takt op. 운명은 새빨간 선율의 거리를",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109568605"
+    },
+    "titles": {
+      "ko": "Takt op. 운명은 새빨간 선율의 거리를",
+      "en": "takt op. Symphony",
+      "ja": "takt op. 運命は真紅き旋律の街を"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003723": {
+    "workId": "wk_000003723",
+    "title": "9-nine- 코코노츠코코노카코코노이로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541631"
+    },
+    "titles": {
+      "ko": "9-nine- 코코노츠코코노카코코노이로",
+      "en": "9-nine-:Episode 1"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003791": {
+    "workId": "wk_000003791",
+    "title": "마리오 카트 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1117024"
+    },
+    "titles": {
+      "ko": "마리오 카트 7",
+      "en": "Mario Kart 7",
+      "ja": "マリオカート7"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004370": {
+    "workId": "wk_000004370",
+    "title": "크레용 신짱 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299620"
+    },
+    "titles": {
+      "ko": "크레용 신짱 4",
+      "en": "Q11299620",
+      "ja": "クレヨンしんちゃん4 “オラのいたずら大変身”"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004586": {
+    "workId": "wk_000004586",
+    "title": "Starry☆Sky",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132696"
+    },
+    "titles": {
+      "ko": "Starry☆Sky",
+      "en": "Starry Sky",
+      "ja": "Starry☆Sky"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005094": {
+    "workId": "wk_000005094",
+    "title": "바이오하자드 오퍼레이션 라쿤시티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140712"
+    },
+    "titles": {
+      "ko": "바이오하자드 오퍼레이션 라쿤시티",
+      "en": "Resident Evil: Operation Raccoon City",
+      "ja": "バイオハザード オペレーション・ラクーンシティ"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

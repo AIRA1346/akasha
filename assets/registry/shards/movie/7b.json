@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000003750": {
+    "workId": "wk_000003750",
+    "title": "메타구",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105316858"
+    },
+    "titles": {
+      "ko": "메타구",
+      "en": "Methagu",
+      "ja": "メタグ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

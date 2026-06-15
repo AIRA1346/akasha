@@ -1,0 +1,37 @@
+{
+  "wk_000003689": {
+    "workId": "wk_000003689",
+    "title": "EBS TV 고교 2학년 국어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546120"
+    },
+    "titles": {
+      "ko": "EBS TV 고교 2학년 국어",
+      "en": "Q109546120"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004994": {
+    "workId": "wk_000004994",
+    "title": "에코",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111676994"
+    },
+    "titles": {
+      "ko": "에코",
+      "en": "Echo",
+      "ja": "エコー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

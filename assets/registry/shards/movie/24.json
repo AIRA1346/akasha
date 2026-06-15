@@ -1,0 +1,21 @@
+{
+  "wk_000004390": {
+    "workId": "wk_000004390",
+    "title": "레드 로켓",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105657351"
+    },
+    "titles": {
+      "ko": "레드 로켓",
+      "en": "Red Rocket",
+      "ja": "レッド・ロケット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

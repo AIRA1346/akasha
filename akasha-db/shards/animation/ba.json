@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003285": {
+    "workId": "wk_000003285",
+    "title": "ef - a tale of memories.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123340011"
+    },
+    "titles": {
+      "ko": "ef - a tale of memories.",
+      "en": "Ef: A Tale of Memories",
+      "ja": "ef - a tale of memories."
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

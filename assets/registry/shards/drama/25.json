@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004622": {
+    "workId": "wk_000004622",
+    "title": "우리 재산",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074753"
+    },
+    "titles": {
+      "ko": "우리 재산",
+      "en": "GUNG HAY FAT CHOY",
+      "ja": "我々は幸運"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

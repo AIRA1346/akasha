@@ -16,5 +16,62 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002985": {
+    "workId": "wk_000002985",
+    "title": "허공의 여행자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106721692"
+    },
+    "titles": {
+      "ko": "허공의 여행자",
+      "en": "Traveler of the Void",
+      "ja": "虚空の旅人"
+    },
+    "releaseYear": 2001,
+    "creator": "上橋菜穂子",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004461": {
+    "workId": "wk_000004461",
+    "title": "중국소설사략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10873657"
+    },
+    "titles": {
+      "ko": "중국소설사략",
+      "en": "A Brief History of Chinese Fiction"
+    },
+    "creator": "魯迅",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004665": {
+    "workId": "wk_000004665",
+    "title": "순례자의 길",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108837890"
+    },
+    "titles": {
+      "ko": "순례자의 길",
+      "en": "Pilgrims Way"
+    },
+    "releaseYear": 2025,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

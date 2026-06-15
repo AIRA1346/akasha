@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004902": {
+    "workId": "wk_000004902",
+    "title": "토이 스토리2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113793937"
+    },
+    "titles": {
+      "ko": "토이 스토리2",
+      "en": "Toy Story 2"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

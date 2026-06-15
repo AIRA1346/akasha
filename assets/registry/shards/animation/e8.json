@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003114": {
+    "workId": "wk_000003114",
+    "title": "ATRI -My Dear Moments-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122381959"
+    },
+    "titles": {
+      "ko": "ATRI -My Dear Moments-",
+      "en": "Atri: My Dear Moments",
+      "ja": "ATRI -My Dear Moments-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

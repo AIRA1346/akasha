@@ -65,5 +65,93 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003912": {
+    "workId": "wk_000003912",
+    "title": "강변가요제 레전드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114065"
+    },
+    "titles": {
+      "ko": "강변가요제 레전드",
+      "en": "Q110114065"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004782": {
+    "workId": "wk_000004782",
+    "title": "인사이더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110979919"
+    },
+    "titles": {
+      "ko": "인사이더",
+      "en": "Insider"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004783": {
+    "workId": "wk_000004783",
+    "title": "상식 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111008263"
+    },
+    "titles": {
+      "ko": "상식 (드라마)",
+      "en": "Royal Feast",
+      "ja": "尚食（しょうしょく）～美味なる恋は紫禁城で～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005184": {
+    "workId": "wk_000005184",
+    "title": "안티크~서양골동양과자점~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1121828"
+    },
+    "titles": {
+      "ko": "안티크~서양골동양과자점~",
+      "en": "Antique",
+      "ja": "アンティーク 〜西洋骨董洋菓子店〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005197": {
+    "workId": "wk_000005197",
+    "title": "힘쎈여자 강남순",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112307747"
+    },
+    "titles": {
+      "ko": "힘쎈여자 강남순",
+      "en": "Strong Girl Nam-soon",
+      "ja": "力の強い女 カン・ナムスン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

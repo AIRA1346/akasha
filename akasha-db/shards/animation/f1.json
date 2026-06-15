@@ -63,5 +63,79 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004060": {
+    "workId": "wk_000004060",
+    "title": "카야는 무섭지 않아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130747371"
+    },
+    "titles": {
+      "ko": "카야는 무섭지 않아",
+      "en": "Kaya-chan Isn't Scary",
+      "ja": "カヤちゃんはコワくない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004581": {
+    "workId": "wk_000004581",
+    "title": "웃는 아르스노토리아 킁!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136750100"
+    },
+    "titles": {
+      "ko": "웃는 아르스노토리아 킁!",
+      "en": "Smile of the Arsnotoria the Animation",
+      "ja": "咲う アルスノトリア すんっ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004636": {
+    "workId": "wk_000004636",
+    "title": "늑대아이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371768"
+    },
+    "titles": {
+      "ko": "늑대아이",
+      "en": "Wolf Children Ame and Yuki",
+      "ja": "おおかみこどもの雨と雪"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004954": {
+    "workId": "wk_000004954",
+    "title": "안녕 은하철도 999: 안드로메다 종착역",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16010633"
+    },
+    "titles": {
+      "ko": "안녕 은하철도 999: 안드로메다 종착역",
+      "en": "Adieu Galaxy Express 999",
+      "ja": "さよなら銀河鉄道999 アンドロメダ終着駅"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

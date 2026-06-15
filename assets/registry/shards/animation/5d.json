@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003192": {
+    "workId": "wk_000003192",
+    "title": "푸른 미부로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122489192"
+    },
+    "titles": {
+      "ko": "푸른 미부로",
+      "en": "Blue Miburo",
+      "ja": "青のミブロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004151": {
+    "workId": "wk_000004151",
+    "title": "톤데부링",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1315904"
+    },
+    "titles": {
+      "ko": "톤데부링",
+      "en": "Tonde Burin",
+      "ja": "とんでぶーりん"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

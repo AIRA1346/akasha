@@ -16,5 +16,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002953": {
+    "workId": "wk_000002953",
+    "title": "203호 저승사자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22971532"
+    },
+    "titles": {
+      "ko": "203호 저승사자",
+      "en": "203 Grim Reaper"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

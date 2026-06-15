@@ -17,5 +17,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003456": {
+    "workId": "wk_000003456",
+    "title": "한밤중 펀치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124359950"
+    },
+    "titles": {
+      "ko": "한밤중 펀치",
+      "en": "Mayonaka Punch",
+      "ja": "真夜中ぱんチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003923": {
+    "workId": "wk_000003923",
+    "title": "고릴라 신의 가호를 받은 영애는 왕립기사단의 사랑을 받는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130357999"
+    },
+    "titles": {
+      "ko": "고릴라 신의 가호를 받은 영애는 왕립기사단의 사랑을 받는다",
+      "en": "The Gorilla God's Go-To Girl",
+      "ja": "ゴリラの神から加護された令嬢は王立騎士団で可愛がられる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003924": {
+    "workId": "wk_000003924",
+    "title": "극장판 도라에몽: 진구의 그림 세계 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130370147"
+    },
+    "titles": {
+      "ko": "극장판 도라에몽: 진구의 그림 세계 이야기",
+      "en": "Doraemon: Nobita's Art World Tales",
+      "ja": "映画ドラえもん のび太の絵世界物語"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

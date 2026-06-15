@@ -67,5 +67,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003369": {
+    "workId": "wk_000003369",
+    "title": "후레루.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123857583"
+    },
+    "titles": {
+      "ko": "후레루.",
+      "en": "Fureru",
+      "ja": "ふれる。"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005088": {
+    "workId": "wk_000005088",
+    "title": "드래곤볼 Z: 부활의 F",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17476655"
+    },
+    "titles": {
+      "ko": "드래곤볼 Z: 부활의 F",
+      "en": "Dragon Ball Z: Resurrection 'F'",
+      "ja": "ドラゴンボールZ 復活の「F」"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

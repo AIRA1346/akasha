@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004386": {
+    "workId": "wk_000004386",
+    "title": "제로스 앤 원스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105616936"
+    },
+    "titles": {
+      "ko": "제로스 앤 원스",
+      "en": "Zeros and Ones"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004464": {
+    "workId": "wk_000004464",
+    "title": "뉴스보이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056698"
+    },
+    "titles": {
+      "ko": "뉴스보이",
+      "en": "Newsies",
+      "ja": "ニュージーズ"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005306": {
+    "workId": "wk_000005306",
+    "title": "부기맨 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059522"
+    },
+    "titles": {
+      "ko": "부기맨 3",
+      "en": "Boogeyman 3",
+      "ja": "ブギーマン3"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

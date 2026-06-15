@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003256": {
+    "workId": "wk_000003256",
+    "title": "인어 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156108"
+    },
+    "titles": {
+      "ko": "인어 시리즈",
+      "en": "Mermaid Saga",
+      "ja": "人魚シリーズ"
+    },
+    "creator": "Rumiko Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

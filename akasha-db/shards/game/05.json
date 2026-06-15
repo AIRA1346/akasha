@@ -17,5 +17,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004014": {
+    "workId": "wk_000004014",
+    "title": "펜티먼트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112432074"
+    },
+    "titles": {
+      "ko": "펜티먼트",
+      "en": "Pentiment"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004080": {
+    "workId": "wk_000004080",
+    "title": "Goat Simulator 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112435648"
+    },
+    "titles": {
+      "ko": "Goat Simulator 3",
+      "en": "Goat Simulator 3"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

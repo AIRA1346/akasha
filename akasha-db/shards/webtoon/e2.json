@@ -37,5 +37,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003623": {
+    "workId": "wk_000003623",
+    "title": "저녁 같이 드실래요?",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97338939"
+    },
+    "titles": {
+      "ko": "저녁 같이 드실래요?",
+      "en": "Shall We Have Dinner Tonight?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

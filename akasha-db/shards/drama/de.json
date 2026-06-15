@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004626": {
+    "workId": "wk_000004626",
+    "title": "그리스: 라이즈 오브 더 핑크 레이디스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110781924"
+    },
+    "titles": {
+      "ko": "그리스: 라이즈 오브 더 핑크 레이디스",
+      "en": "Grease: Rise of the Pink Ladies"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

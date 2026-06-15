@@ -54,5 +54,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003558": {
+    "workId": "wk_000003558",
+    "title": "우리들에게 날개는 없다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125637107"
+    },
+    "titles": {
+      "ko": "우리들에게 날개는 없다",
+      "en": "We Without Wings",
+      "ja": "俺たちに翼はない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004290": {
+    "workId": "wk_000004290",
+    "title": "만지지 마세요 코테사시군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132916183"
+    },
+    "titles": {
+      "ko": "만지지 마세요 코테사시군",
+      "en": "Hands Off: Sawaranaide Kotesashi-kun",
+      "ja": "さわらないで小手指くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

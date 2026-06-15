@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000004743": {
+    "workId": "wk_000004743",
+    "title": "섹시 타나카 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121074593"
+    },
+    "titles": {
+      "ko": "섹시 타나카 씨",
+      "en": "Sexy Tanaka-san",
+      "ja": "セクシー田中さん"
+    },
+    "creator": "Hinako Ashihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

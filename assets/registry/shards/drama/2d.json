@@ -34,5 +34,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003159": {
+    "workId": "wk_000003159",
+    "title": "워너비 포드 슈퍼모델",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459071"
+    },
+    "titles": {
+      "ko": "워너비 포드 슈퍼모델",
+      "en": "Q109459071"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004483": {
+    "workId": "wk_000004483",
+    "title": "써클하우스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110542947"
+    },
+    "titles": {
+      "ko": "써클하우스",
+      "en": "Circle House"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

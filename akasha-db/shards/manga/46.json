@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003085": {
+    "workId": "wk_000003085",
+    "title": "에이트맨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152416"
+    },
+    "titles": {
+      "ko": "에이트맨",
+      "en": "8 Man",
+      "ja": "8マン"
+    },
+    "creator": "Kazumasa Hirai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004056": {
+    "workId": "wk_000004056",
+    "title": "비 오는 밤의 달",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117478012"
+    },
+    "titles": {
+      "ko": "비 오는 밤의 달",
+      "en": "The Moon on a Rainy Night",
+      "ja": "雨夜の月"
+    },
+    "creator": "Kuzushiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

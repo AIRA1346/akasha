@@ -1,0 +1,20 @@
+{
+  "wk_000004385": {
+    "workId": "wk_000004385",
+    "title": "라스트 서바이버",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105605313"
+    },
+    "titles": {
+      "ko": "라스트 서바이버",
+      "en": "Last Survivors"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

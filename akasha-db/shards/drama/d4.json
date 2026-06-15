@@ -1,0 +1,53 @@
+{
+  "wk_000003238": {
+    "workId": "wk_000003238",
+    "title": "애적이상생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459865"
+    },
+    "titles": {
+      "ko": "애적이상생활",
+      "en": "Q109459865"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003416": {
+    "workId": "wk_000003416",
+    "title": "게임돌림픽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461384"
+    },
+    "titles": {
+      "ko": "게임돌림픽",
+      "en": "Q109461384"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004617": {
+    "workId": "wk_000004617",
+    "title": "정의",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073295"
+    },
+    "titles": {
+      "ko": "정의",
+      "en": "Friendship"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

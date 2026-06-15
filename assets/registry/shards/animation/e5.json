@@ -77,5 +77,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003986": {
+    "workId": "wk_000003986",
+    "title": "구룡 제네릭 로맨스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130483374"
+    },
+    "titles": {
+      "ko": "구룡 제네릭 로맨스",
+      "en": "Kowloon Generic Romance",
+      "ja": "九龍ジェネリックロマンス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005137": {
+    "workId": "wk_000005137",
+    "title": "트랜스포머 갤럭시 포스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1753555"
+    },
+    "titles": {
+      "ko": "트랜스포머 갤럭시 포스",
+      "en": "Transformers: Cybertron",
+      "ja": "トランスフォーマー ギャラクシーフォース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003469": {
+    "workId": "wk_000003469",
+    "title": "제노블레이드 크로니클스 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110875814"
+    },
+    "titles": {
+      "ko": "제노블레이드 크로니클스 3",
+      "en": "Xenoblade Chronicles 3",
+      "ja": "ゼノブレイド3"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005240": {
+    "workId": "wk_000005240",
+    "title": "AMBITIOUS MISSION",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114325728"
+    },
+    "titles": {
+      "ko": "AMBITIOUS MISSION",
+      "en": "Ambitious Mission",
+      "ja": "AMBITIOUS MISSION"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

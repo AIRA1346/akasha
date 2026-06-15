@@ -1,0 +1,21 @@
+{
+  "wk_000004847": {
+    "workId": "wk_000004847",
+    "title": "최면",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105851670"
+    },
+    "titles": {
+      "ko": "최면",
+      "en": "Hypnosis",
+      "ja": "ヒプノシス 催眠"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

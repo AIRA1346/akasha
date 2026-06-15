@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003141": {
+    "workId": "wk_000003141",
+    "title": "요가수트라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068646"
+    },
+    "titles": {
+      "ko": "요가수트라",
+      "en": "Yoga Sutras of Patanjali",
+      "ja": "ヨーガ・スートラ"
+    },
+    "creator": "Patanjali",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004841": {
+    "workId": "wk_000004841",
+    "title": "팔기통지초집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10892207"
+    },
+    "titles": {
+      "ko": "팔기통지초집",
+      "en": "Q10892207",
+      "ja": "八旗通志"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

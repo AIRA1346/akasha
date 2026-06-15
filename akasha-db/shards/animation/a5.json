@@ -53,5 +53,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003633": {
+    "workId": "wk_000003633",
+    "title": "담도백경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125854410"
+    },
+    "titles": {
+      "ko": "담도백경",
+      "en": "Scenes From Awajima",
+      "ja": "淡島百景"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003783": {
+    "workId": "wk_000003783",
+    "title": "마법소녀대 아루스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1280574"
+    },
+    "titles": {
+      "ko": "마법소녀대 아루스",
+      "en": "Tweeny Witches",
+      "ja": "魔法少女隊アルス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005288": {
+    "workId": "wk_000005288",
+    "title": "샤를로트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18692527"
+    },
+    "titles": {
+      "ko": "샤를로트",
+      "en": "Charlotte",
+      "ja": "Charlotte"
+    },
+    "creator": "Jun Maeda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

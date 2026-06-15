@@ -17,5 +17,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004115": {
+    "workId": "wk_000004115",
+    "title": "불혹지려",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115181"
+    },
+    "titles": {
+      "ko": "불혹지려",
+      "en": "Q110115181"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004614": {
+    "workId": "wk_000004614",
+    "title": "몬스터 페어렌트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11072743"
+    },
+    "titles": {
+      "ko": "몬스터 페어렌트",
+      "en": "Monster Parent",
+      "ja": "モンスターペアレント (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004933": {
+    "workId": "wk_000004933",
+    "title": "너의 시간 속으로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111534327"
+    },
+    "titles": {
+      "ko": "너의 시간 속으로",
+      "en": "A Time Called You",
+      "ja": "いつかの君に"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

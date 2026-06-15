@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003060": {
+    "workId": "wk_000003060",
+    "title": "위시 유: 나의 마음속 너의 멜로디",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104884970"
+    },
+    "titles": {
+      "ko": "위시 유: 나의 마음속 너의 멜로디",
+      "en": "Wish You",
+      "ja": "Wish you～僕の心の中、君のメロディー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

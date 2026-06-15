@@ -36,5 +36,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003405": {
+    "workId": "wk_000003405",
+    "title": "캐치 어 파이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050558"
+    },
+    "titles": {
+      "ko": "캐치 어 파이어",
+      "en": "Catch a Fire",
+      "ja": "輝く夜明けに向かって"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003820": {
+    "workId": "wk_000003820",
+    "title": "앤트맨과 와스프: 퀀터매니아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105359456"
+    },
+    "titles": {
+      "ko": "앤트맨과 와스프: 퀀터매니아",
+      "en": "Ant-Man and the Wasp: Quantumania",
+      "ja": "アントマン＆ワスプ：クアントマニア"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004733": {
+    "workId": "wk_000004733",
+    "title": "더 빅뱅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057794"
+    },
+    "titles": {
+      "ko": "더 빅뱅",
+      "en": "The Big Bang",
+      "ja": "ザ・ビッグバン！！"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

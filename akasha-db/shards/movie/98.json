@@ -97,5 +97,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003670": {
+    "workId": "wk_000003670",
+    "title": "다시 만난 날들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105132216"
+    },
+    "titles": {
+      "ko": "다시 만난 날들",
+      "en": "Da Capo"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

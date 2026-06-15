@@ -68,5 +68,95 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003547": {
+    "workId": "wk_000003547",
+    "title": "뿌리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247168"
+    },
+    "titles": {
+      "ko": "뿌리",
+      "en": "Roots",
+      "ja": "ルーツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003634": {
+    "workId": "wk_000003634",
+    "title": "언젠가 최강의 연금술사?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125857118"
+    },
+    "titles": {
+      "ko": "언젠가 최강의 연금술사?",
+      "en": "Possibly the Greatest Alchemist of All Time",
+      "ja": "いずれ最強の錬金術師?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004075": {
+    "workId": "wk_000004075",
+    "title": "너와 아이돌 프리큐어♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131352155"
+    },
+    "titles": {
+      "ko": "너와 아이돌 프리큐어♪",
+      "en": "You and Idol Pretty Cure",
+      "ja": "キミとアイドルプリキュア♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004804": {
+    "workId": "wk_000004804",
+    "title": "존 애덤스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1516431"
+    },
+    "titles": {
+      "ko": "존 애덤스",
+      "en": "John Adams",
+      "ja": "ジョン・アダムズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004958": {
+    "workId": "wk_000004958",
+    "title": "글라스립",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16062412"
+    },
+    "titles": {
+      "ko": "글라스립",
+      "en": "Glasslip",
+      "ja": "グラスリップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

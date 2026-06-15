@@ -1,0 +1,55 @@
+{
+  "wk_000003906": {
+    "workId": "wk_000003906",
+    "title": "NEW 솔드 아웃",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113949"
+    },
+    "titles": {
+      "ko": "NEW 솔드 아웃",
+      "en": "Q110113949"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004407": {
+    "workId": "wk_000004407",
+    "title": "그린마더스 클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110264048"
+    },
+    "titles": {
+      "ko": "그린마더스 클럽",
+      "en": "Green Mothers' Club",
+      "ja": "グリーン・マザーズ・クラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004861": {
+    "workId": "wk_000004861",
+    "title": "다케다 신겐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11124801"
+    },
+    "titles": {
+      "ko": "다케다 신겐",
+      "en": "Takeda Shingen",
+      "ja": "武田信玄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

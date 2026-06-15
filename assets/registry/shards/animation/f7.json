@@ -75,5 +75,95 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003551": {
+    "workId": "wk_000003551",
+    "title": "잘 가거라 용생, 어서 와라 인생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124852924"
+    },
+    "titles": {
+      "ko": "잘 가거라 용생, 어서 와라 인생",
+      "en": "Goodbye, Dragon Life",
+      "ja": "さようなら竜生、こんにちは人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004355": {
+    "workId": "wk_000004355",
+    "title": "소꿉친구와는 러브 코미디를 할 수 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133806776"
+    },
+    "titles": {
+      "ko": "소꿉친구와는 러브 코미디를 할 수 없어",
+      "en": "You Can't Be in a Rom-Com with Your Childhood Friends!",
+      "ja": "幼馴染とはラブコメにならない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004361": {
+    "workId": "wk_000004361",
+    "title": "성우전대 보이스톰7",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133893450"
+    },
+    "titles": {
+      "ko": "성우전대 보이스톰7",
+      "en": "Seiyuu Sentai Voicetorm 7",
+      "ja": "声優戦隊ボイストーム7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005029": {
+    "workId": "wk_000005029",
+    "title": "논논비요리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16878993"
+    },
+    "titles": {
+      "ko": "논논비요리",
+      "en": "Non Non Biyori",
+      "ja": "のんのんびより"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005075": {
+    "workId": "wk_000005075",
+    "title": "취성의 가르간티아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1707781"
+    },
+    "titles": {
+      "ko": "취성의 가르간티아",
+      "en": "Gargantia on the Verdurous Planet",
+      "ja": "翠星のガルガンティア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

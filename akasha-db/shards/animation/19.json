@@ -1,0 +1,57 @@
+{
+  "wk_000003779": {
+    "workId": "wk_000003779",
+    "title": "소년의 시간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127774333"
+    },
+    "titles": {
+      "ko": "소년의 시간",
+      "en": "Adolescence",
+      "ja": "アドレセンス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004210": {
+    "workId": "wk_000004210",
+    "title": "꼬마공주 유시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1319444"
+    },
+    "titles": {
+      "ko": "꼬마공주 유시",
+      "en": "Petite Princess Yucie",
+      "ja": "ぷちぷり*ユーシィ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005210": {
+    "workId": "wk_000005210",
+    "title": "이 세상의 한구석에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18125913"
+    },
+    "titles": {
+      "ko": "이 세상의 한구석에",
+      "en": "In This Corner of the World",
+      "ja": "この世界の片隅に"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

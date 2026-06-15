@@ -1,0 +1,39 @@
+{
+  "wk_000003457": {
+    "workId": "wk_000003457",
+    "title": "누키타시 THE ANIMATION",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124370198"
+    },
+    "titles": {
+      "ko": "누키타시 THE ANIMATION",
+      "en": "Nukitashi the Animation",
+      "ja": "ぬきたし THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004884": {
+    "workId": "wk_000004884",
+    "title": "시끌별 녀석들 2 - 뷰티풀 드리머",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1582185"
+    },
+    "titles": {
+      "ko": "시끌별 녀석들 2 - 뷰티풀 드리머",
+      "en": "Urusei Yatsura 2: Beautiful Dreamer",
+      "ja": "うる星やつら2 ビューティフル・ドリーマー"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -69,5 +69,108 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003002": {
+    "workId": "wk_000003002",
+    "title": "생방송 뉴스 따라잡기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458359"
+    },
+    "titles": {
+      "ko": "생방송 뉴스 따라잡기",
+      "en": "Q109458359"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003154": {
+    "workId": "wk_000003154",
+    "title": "백지연의 피플 INSIDE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459013"
+    },
+    "titles": {
+      "ko": "백지연의 피플 INSIDE",
+      "en": "Q109459013"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003241": {
+    "workId": "wk_000003241",
+    "title": "리얼드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460168"
+    },
+    "titles": {
+      "ko": "리얼드라마",
+      "en": "Q109460168"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003415": {
+    "workId": "wk_000003415",
+    "title": "스타일 웨이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461312"
+    },
+    "titles": {
+      "ko": "스타일 웨이브",
+      "en": "Q109461312"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003685": {
+    "workId": "wk_000003685",
+    "title": "익스트림 서바이벌 레이싱퀸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546040"
+    },
+    "titles": {
+      "ko": "익스트림 서바이벌 레이싱퀸",
+      "en": "Q109546040"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005315": {
+    "workId": "wk_000005315",
+    "title": "NNN 뉴스 플러스1",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235779"
+    },
+    "titles": {
+      "ko": "NNN 뉴스 플러스1",
+      "en": "NNN NEWS PLUS 1",
+      "ja": "NNNニュースプラス1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

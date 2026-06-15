@@ -69,5 +69,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003074": {
+    "workId": "wk_000003074",
+    "title": "kbc 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458846"
+    },
+    "titles": {
+      "ko": "kbc 뉴스특보",
+      "en": "Q109458846"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

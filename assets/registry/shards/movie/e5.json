@@ -1,0 +1,39 @@
+{
+  "wk_000003890": {
+    "workId": "wk_000003890",
+    "title": "스트리트 파이터: 전설의 귀환",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105391148"
+    },
+    "titles": {
+      "ko": "스트리트 파이터: 전설의 귀환",
+      "en": "Street Fighter: Assassin's Fist The Movie"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004318": {
+    "workId": "wk_000004318",
+    "title": "공조 2: 인터내셔날",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105584534"
+    },
+    "titles": {
+      "ko": "공조 2: 인터내셔날",
+      "en": "Confidential Assignment 2: International",
+      "ja": "コンフィデンシャル/共助2:インターナショナル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

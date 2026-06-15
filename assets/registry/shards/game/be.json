@@ -104,5 +104,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004166": {
+    "workId": "wk_000004166",
+    "title": "엑조프라이멀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112613269"
+    },
+    "titles": {
+      "ko": "엑조프라이멀",
+      "en": "Exoprimal",
+      "ja": "エグゾプライマル"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004519": {
+    "workId": "wk_000004519",
+    "title": "타이타닉 미스터리 푸른 전율",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315701"
+    },
+    "titles": {
+      "ko": "타이타닉 미스터리 푸른 전율",
+      "en": "Titanic Mystery: Ao no Senritsu",
+      "ja": "タイタニックミステリー"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004831": {
+    "workId": "wk_000004831",
+    "title": "어쌔신 크리드 미라지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113675008"
+    },
+    "titles": {
+      "ko": "어쌔신 크리드 미라지",
+      "en": "Assassin's Creed Mirage",
+      "ja": "アサシン クリード ミラージュ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

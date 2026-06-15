@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000003088": {
+    "workId": "wk_000003088",
+    "title": "시노노메 유우코는 단편소설을 사랑한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11528705"
+    },
+    "titles": {
+      "ko": "시노노메 유우코는 단편소설을 사랑한다",
+      "en": "Q11528705",
+      "ja": "東雲侑子は短編小説をあいしている"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

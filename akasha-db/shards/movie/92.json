@@ -36,5 +36,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003225": {
+    "workId": "wk_000003225",
+    "title": "푸틴을 위한 궁전: 가장 큰 뇌물 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104906978"
+    },
+    "titles": {
+      "ko": "푸틴을 위한 궁전: 가장 큰 뇌물 이야기",
+      "en": "Putin's Palace",
+      "ja": "プーチンのための宮殿 最大の賄賂の物語"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004031": {
+    "workId": "wk_000004031",
+    "title": "제폭: 범죄와의 전쟁",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105470889"
+    },
+    "titles": {
+      "ko": "제폭: 범죄와의 전쟁",
+      "en": "Caught in Time",
+      "ja": "オーヴァーヒート 最後の制裁"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004672": {
+    "workId": "wk_000004672",
+    "title": "그 여름, 파도가 일었다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105714284"
+    },
+    "titles": {
+      "ko": "그 여름, 파도가 일었다",
+      "en": "Sulla stessa onda",
+      "ja": "波の上のふたり"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

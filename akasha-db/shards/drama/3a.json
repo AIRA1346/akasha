@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003504": {
+    "workId": "wk_000003504",
+    "title": "광망",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461835"
+    },
+    "titles": {
+      "ko": "광망",
+      "en": "Q109461835"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004405": {
+    "workId": "wk_000004405",
+    "title": "나의 해방일지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110245384"
+    },
+    "titles": {
+      "ko": "나의 해방일지",
+      "en": "My Liberation Notes",
+      "ja": "私の解放日誌"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -37,5 +37,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003261": {
+    "workId": "wk_000003261",
+    "title": "화재조사관 (만화)",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11566936"
+    },
+    "titles": {
+      "ko": "화재조사관 (만화)",
+      "en": "Kasai Chōsakan (Manga)",
+      "ja": "火災調査官 (漫画)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004415": {
+    "workId": "wk_000004415",
+    "title": "누라리횬의 손자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194085"
+    },
+    "titles": {
+      "ko": "누라리횬의 손자",
+      "en": "Nura: Rise of the Yokai Clan",
+      "ja": "ぬらりひょんの孫"
+    },
+    "creator": "Hiroshi Shiibashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004871": {
+    "workId": "wk_000004871",
+    "title": "누에의 음양사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122962589"
+    },
+    "titles": {
+      "ko": "누에의 음양사",
+      "en": "Nue's Exorcist",
+      "ja": "鵺の陰陽師"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,79 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004288": {
+    "workId": "wk_000004288",
+    "title": "종말 투어링",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132731773"
+    },
+    "titles": {
+      "ko": "종말 투어링",
+      "en": "Touring After the Apocalypse",
+      "ja": "終末ツーリング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004346": {
+    "workId": "wk_000004346",
+    "title": "짱구아빠 노하라 히로시의 점심",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133262007"
+    },
+    "titles": {
+      "ko": "짱구아빠 노하라 히로시의 점심",
+      "en": "Nohara Hiroshi Hirumeshi no Ryūgi",
+      "ja": "野原ひろし 昼メシの流儀"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004803": {
+    "workId": "wk_000004803",
+    "title": "소년 사루토비 사스케",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1513926"
+    },
+    "titles": {
+      "ko": "소년 사루토비 사스케",
+      "en": "Magic Boy",
+      "ja": "少年猿飛佐助"
+    },
+    "releaseYear": 1959,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004805": {
+    "workId": "wk_000004805",
+    "title": "꼬마마녀 요요와 네네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15178574"
+    },
+    "titles": {
+      "ko": "꼬마마녀 요요와 네네",
+      "en": "Yoyo and Nene, the Little Witch Sisters",
+      "ja": "魔女っこ姉妹のヨヨとネネ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

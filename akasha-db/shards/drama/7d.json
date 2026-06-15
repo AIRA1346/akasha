@@ -101,5 +101,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003067": {
+    "workId": "wk_000003067",
+    "title": "치로와 친구들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458746"
+    },
+    "titles": {
+      "ko": "치로와 친구들",
+      "en": "Chiro and Friends"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003903": {
+    "workId": "wk_000003903",
+    "title": "KBS 가요드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113923"
+    },
+    "titles": {
+      "ko": "KBS 가요드라마",
+      "en": "Q110113923"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003953": {
+    "workId": "wk_000003953",
+    "title": "경이로운 세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114111"
+    },
+    "titles": {
+      "ko": "경이로운 세상",
+      "en": "Q110114111"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004866": {
+    "workId": "wk_000004866",
+    "title": "마오안잉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11126984"
+    },
+    "titles": {
+      "ko": "마오안잉",
+      "en": "Mao Anying",
+      "ja": "毛岸英"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

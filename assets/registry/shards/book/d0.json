@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003142": {
+    "workId": "wk_000003142",
+    "title": "내가 죽기를 바라는 자들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106869516"
+    },
+    "titles": {
+      "ko": "내가 죽기를 바라는 자들",
+      "en": "Those Who Wish Me Dead"
+    },
+    "releaseYear": 2014,
+    "creator": "Michael Koryta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

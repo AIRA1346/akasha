@@ -31,5 +31,62 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003039": {
+    "workId": "wk_000003039",
+    "title": "여름비",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10931841"
+    },
+    "titles": {
+      "ko": "여름비",
+      "en": "Natsu no Ame",
+      "ja": "夏ノ雨"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003044": {
+    "workId": "wk_000003044",
+    "title": "Legal Dungeon",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109358601"
+    },
+    "titles": {
+      "ko": "Legal Dungeon",
+      "en": "Legal Dungeon",
+      "ja": "Legal Dungeon"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003998": {
+    "workId": "wk_000003998",
+    "title": "미스 이치 아더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11231676"
+    },
+    "titles": {
+      "ko": "미스 이치 아더",
+      "en": "Miss Each Other",
+      "ja": "MISS EACH OTHER"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003334": {
+    "workId": "wk_000003334",
+    "title": "키친 파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460916"
+    },
+    "titles": {
+      "ko": "키친 파이터",
+      "en": "Kitchen Fighter"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

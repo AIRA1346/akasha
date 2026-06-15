@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003219": {
+    "workId": "wk_000003219",
+    "title": "더 레이디 인 더 밴",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106929894"
+    },
+    "titles": {
+      "ko": "더 레이디 인 더 밴",
+      "en": "The Lady in the Van"
+    },
+    "creator": "Alan Bennett",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003690": {
+    "workId": "wk_000003690",
+    "title": "동물메디컬 봉구네 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546135"
+    },
+    "titles": {
+      "ko": "동물메디컬 봉구네 집",
+      "en": "Q109546135"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004046": {
+    "workId": "wk_000004046",
+    "title": "맨 vs 차일드 코리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114912"
+    },
+    "titles": {
+      "ko": "맨 vs 차일드 코리아",
+      "en": "Q110114912"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004411": {
+    "workId": "wk_000004411",
+    "title": "소룡인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11035960"
+    },
+    "titles": {
+      "ko": "소룡인",
+      "en": "Xiao Long Ren"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004550": {
+    "workId": "wk_000004550",
+    "title": "블랙의 신부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110618833"
+    },
+    "titles": {
+      "ko": "블랙의 신부",
+      "en": "Remarriage & Desires",
+      "ja": "再婚ゲーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004681": {
+    "workId": "wk_000004681",
+    "title": "신병일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11081200"
+    },
+    "titles": {
+      "ko": "신병일기",
+      "en": "Rookies' Diary",
+      "ja": "新兵日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

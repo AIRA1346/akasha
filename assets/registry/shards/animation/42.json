@@ -109,5 +109,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004150": {
+    "workId": "wk_000004150",
+    "title": "끝이 없는 스칼렛",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131542846"
+    },
+    "titles": {
+      "ko": "끝이 없는 스칼렛",
+      "en": "Scarlet",
+      "ja": "果てしなきスカーレット"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005076": {
+    "workId": "wk_000005076",
+    "title": "마이크로맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17211716"
+    },
+    "titles": {
+      "ko": "마이크로맨",
+      "en": "Chiisana Kyōjin Microman",
+      "ja": "ミクロマン・マグネパワーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003062": {
+    "workId": "wk_000003062",
+    "title": "붐샤카라카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458616"
+    },
+    "titles": {
+      "ko": "붐샤카라카",
+      "en": "Q109458616"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004254": {
+    "workId": "wk_000004254",
+    "title": "워맨스가 필요해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115898"
+    },
+    "titles": {
+      "ko": "워맨스가 필요해",
+      "en": "Q110115898"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

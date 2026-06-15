@@ -69,5 +69,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003786": {
+    "workId": "wk_000003786",
+    "title": "Animal Revolt Battle Simulator",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111640718"
+    },
+    "titles": {
+      "ko": "Animal Revolt Battle Simulator",
+      "en": "Animal Revolt Battle Simulator",
+      "ja": "Animal Revolt Battle Simulator"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003788": {
+    "workId": "wk_000003788",
+    "title": "시간을 멈추는 피아노",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111650813"
+    },
+    "titles": {
+      "ko": "시간을 멈추는 피아노",
+      "en": "The Piano That Stops Time"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003789": {
+    "workId": "wk_000003789",
+    "title": "홈월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1116724"
+    },
+    "titles": {
+      "ko": "홈월드",
+      "en": "Homeworld",
+      "ja": "ホームワールド"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004442": {
+    "workId": "wk_000004442",
+    "title": "하이브스왑 프렌드심",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113005691"
+    },
+    "titles": {
+      "ko": "하이브스왑 프렌드심",
+      "en": "Hiveswap Friendsim"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

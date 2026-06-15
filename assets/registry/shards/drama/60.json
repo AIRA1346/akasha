@@ -16,5 +16,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004122": {
+    "workId": "wk_000004122",
+    "title": "설특집 트로트의 민족 갈라쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115329"
+    },
+    "titles": {
+      "ko": "설특집 트로트의 민족 갈라쇼",
+      "en": "Q110115329"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004323": {
+    "workId": "wk_000004323",
+    "title": "표리부동",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118018"
+    },
+    "titles": {
+      "ko": "표리부동",
+      "en": "Q110118018"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004564": {
+    "workId": "wk_000004564",
+    "title": "축복",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110659961"
+    },
+    "titles": {
+      "ko": "축복",
+      "en": "Q110659961"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

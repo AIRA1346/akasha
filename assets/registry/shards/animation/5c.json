@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005222": {
+    "workId": "wk_000005222",
+    "title": "플라스틱 메모리즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18392631"
+    },
+    "titles": {
+      "ko": "플라스틱 메모리즈",
+      "en": "Plastic Memories",
+      "ja": "プラスティック・メモリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

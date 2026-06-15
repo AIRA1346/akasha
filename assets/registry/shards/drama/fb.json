@@ -34,5 +34,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003007": {
+    "workId": "wk_000003007",
+    "title": "박세리의 내일은 영웅 - 꿈을 향해 스윙하라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458479"
+    },
+    "titles": {
+      "ko": "박세리의 내일은 영웅 - 꿈을 향해 스윙하라",
+      "en": "Q109458479"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003419": {
+    "workId": "wk_000003419",
+    "title": "누군들 축복을 원치 않으랴",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461403"
+    },
+    "titles": {
+      "ko": "누군들 축복을 원치 않으랴",
+      "en": "Q109461403"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

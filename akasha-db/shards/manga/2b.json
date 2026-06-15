@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004195": {
+    "workId": "wk_000004195",
+    "title": "정의의 아군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188879"
+    },
+    "titles": {
+      "ko": "정의의 아군",
+      "en": "Seigi no Mikata",
+      "ja": "正義の味方"
+    },
+    "creator": "Chiaki Hijiri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

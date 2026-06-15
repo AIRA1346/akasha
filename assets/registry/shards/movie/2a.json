@@ -25,5 +25,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003664": {
+    "workId": "wk_000003664",
+    "title": "선과 악의 학교",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105103910"
+    },
+    "titles": {
+      "ko": "선과 악의 학교",
+      "en": "The School for Good and Evil",
+      "ja": "スクール・フォー・グッド・アンド・イービル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

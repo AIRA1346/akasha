@@ -51,5 +51,90 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002991": {
+    "workId": "wk_000002991",
+    "title": "생방송 방과 후 듄듄",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457870"
+    },
+    "titles": {
+      "ko": "생방송 방과 후 듄듄",
+      "en": "After EBS EBS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003410": {
+    "workId": "wk_000003410",
+    "title": "시간을 달리는 세계사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461116"
+    },
+    "titles": {
+      "ko": "시간을 달리는 세계사",
+      "en": "Q109461116"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003412": {
+    "workId": "wk_000003412",
+    "title": "콘테스트M",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461127"
+    },
+    "titles": {
+      "ko": "콘테스트M",
+      "en": "Q109461127"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003589": {
+    "workId": "wk_000003589",
+    "title": "SBS 개국축하쇼 반갑습니다 여러분",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464436"
+    },
+    "titles": {
+      "ko": "SBS 개국축하쇼 반갑습니다 여러분",
+      "en": "Q109464436"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004324": {
+    "workId": "wk_000004324",
+    "title": "거치면 흥하리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118052"
+    },
+    "titles": {
+      "ko": "거치면 흥하리",
+      "en": "Q110118052"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

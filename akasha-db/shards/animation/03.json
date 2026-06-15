@@ -54,5 +54,41 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003037": {
+    "workId": "wk_000003037",
+    "title": "카와고에 보이즈 싱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121002567"
+    },
+    "titles": {
+      "ko": "카와고에 보이즈 싱",
+      "en": "Kawagoe Boys Sing",
+      "ja": "川越ボーイズ・シング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003707": {
+    "workId": "wk_000003707",
+    "title": "꽃은 피어난다, 수라와 같이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126531251"
+    },
+    "titles": {
+      "ko": "꽃은 피어난다, 수라와 같이",
+      "en": "Flower and Asura",
+      "ja": "花は咲く、修羅の如く"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

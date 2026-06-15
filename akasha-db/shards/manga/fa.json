@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004134": {
+    "workId": "wk_000004134",
+    "title": "야쿠자에게 처녀를 바치다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118218476"
+    },
+    "titles": {
+      "ko": "야쿠자에게 처녀를 바치다",
+      "en": "Q118218476",
+      "ja": "漣蒼士に処女を捧ぐ〜さあ、じっくり愛でましょうか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

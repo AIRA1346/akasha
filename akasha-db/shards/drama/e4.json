@@ -1,0 +1,87 @@
+{
+  "wk_000003078": {
+    "workId": "wk_000003078",
+    "title": "전설의 무대 아카이브K",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458872"
+    },
+    "titles": {
+      "ko": "전설의 무대 아카이브K",
+      "en": "Q109458872"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003413": {
+    "workId": "wk_000003413",
+    "title": "우리가 사랑한 그 노래 새가수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461308"
+    },
+    "titles": {
+      "ko": "우리가 사랑한 그 노래 새가수",
+      "en": "The song we loved, a new singer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003767": {
+    "workId": "wk_000003767",
+    "title": "설특집 주부가요 열창 - 여왕의 탄생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547062"
+    },
+    "titles": {
+      "ko": "설특집 주부가요 열창 - 여왕의 탄생",
+      "en": "Q109547062"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003954": {
+    "workId": "wk_000003954",
+    "title": "고디바SHOW",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114126"
+    },
+    "titles": {
+      "ko": "고디바SHOW",
+      "en": "Q110114126"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005072": {
+    "workId": "wk_000005072",
+    "title": "벤세르 라 아우센시아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111947988"
+    },
+    "titles": {
+      "ko": "벤세르 라 아우센시아",
+      "en": "Vencer la ausencia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003315": {
+    "workId": "wk_000003315",
+    "title": "블레이징 월드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105043951"
+    },
+    "titles": {
+      "ko": "블레이징 월드",
+      "en": "The Blazing World"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003885": {
+    "workId": "wk_000003885",
+    "title": "피어 스트리트 파트 3: 1666",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105373024"
+    },
+    "titles": {
+      "ko": "피어 스트리트 파트 3: 1666",
+      "en": "Fear Street Part 3: 1666",
+      "ja": "フィアー・ストリート Part 3: 1666"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

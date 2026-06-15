@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003266": {
+    "workId": "wk_000003266",
+    "title": "유레카",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5371743"
+    },
+    "titles": {
+      "ko": "유레카",
+      "en": "iD_ᴇNTITY"
+    },
+    "creator": "Son Hee-joon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003071": {
+    "workId": "wk_000003071",
+    "title": "미늘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458823"
+    },
+    "titles": {
+      "ko": "미늘",
+      "en": "Q109458823"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004044": {
+    "workId": "wk_000004044",
+    "title": "마우스2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114884"
+    },
+    "titles": {
+      "ko": "마우스2",
+      "en": "Q110114884"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004406": {
+    "workId": "wk_000004406",
+    "title": "작은 아씨들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110246392"
+    },
+    "titles": {
+      "ko": "작은 아씨들",
+      "en": "Little Women",
+      "ja": "新・若草物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004610": {
+    "workId": "wk_000004610",
+    "title": "눈동자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110659987"
+    },
+    "titles": {
+      "ko": "눈동자",
+      "en": "Q110659987"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

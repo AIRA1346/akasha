@@ -31,5 +31,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003032": {
+    "workId": "wk_000003032",
+    "title": "명탐정 코난: 칠흑의 추적자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207394"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 칠흑의 추적자",
+      "en": "Detective Conan: The Raven Chaser",
+      "ja": "名探偵コナン 漆黒の追跡者"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003853": {
+    "workId": "wk_000003853",
+    "title": "별의 소리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12971308"
+    },
+    "titles": {
+      "ko": "별의 소리",
+      "en": "Star's Echo",
+      "ja": "あなたに逢いたくて"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

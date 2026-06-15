@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003666": {
+    "workId": "wk_000003666",
+    "title": "웨이 다운",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105112819"
+    },
+    "titles": {
+      "ko": "웨이 다운",
+      "en": "The Vault",
+      "ja": "ザ・ヴォルト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004607": {
+    "workId": "wk_000004607",
+    "title": "런던 휴스: 남자 사냥꾼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105706958"
+    },
+    "titles": {
+      "ko": "런던 휴스: 남자 사냥꾼",
+      "en": "London Hughes: To Catch a D*ck",
+      "ja": "ロンドン・ヒューズのマンハンター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

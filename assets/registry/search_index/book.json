@@ -1,5 +1,28 @@
 [
   {
+    "workId": "wk_000004986",
+    "title": "11문자 살인사건",
+    "shardId": "book_4c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "11文字の殺人",
+      "11문자 살인사건",
+      "11문자살인사건",
+      "Q10904345",
+      "q10904345"
+    ],
+    "titles": {
+      "ko": "11문자 살인사건",
+      "en": "Q10904345",
+      "ja": "11文字の殺人"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000003",
     "title": "1984",
     "shardId": "book_61",
@@ -48,6 +71,79 @@
       "ko": "1억 년 버튼을 연타한 나는, 깨닫고 보니 최강이 되어 있었다 ~낙제 검사의 학원 무쌍~",
       "en": "I Kept Pressing the 100-Million Button and Came Out on Top",
       "ja": "一億年ボタンを連打した俺は、気付いたら最強になっていた 〜落第剣士の学院無双〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003578",
+    "title": "2034 미중전쟁",
+    "shardId": "book_9e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "James Stavridis",
+    "tags": [],
+    "searchTokens": [
+      "2034 米中戦争",
+      "2034 미중전쟁",
+      "2034: A Novel of the Next World War",
+      "2034anovelofthenextworldwar",
+      "2034米中戦争",
+      "2034미중전쟁",
+      "James Stavridis",
+      "jamesstavridis"
+    ],
+    "titles": {
+      "ko": "2034 미중전쟁",
+      "en": "2034: A Novel of the Next World War",
+      "ja": "2034 米中戦争"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003946",
+    "title": "30일의 밤",
+    "shardId": "book_e6",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Blake Crouch",
+    "tags": [],
+    "searchTokens": [
+      "30일의 밤",
+      "30일의밤",
+      "Blake Crouch",
+      "Dark Matter",
+      "blakecrouch",
+      "darkmatter"
+    ],
+    "titles": {
+      "ko": "30일의 밤",
+      "en": "Dark Matter"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003579",
+    "title": "7년의 밤",
+    "shardId": "book_5c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "정유정",
+    "tags": [],
+    "searchTokens": [
+      "7年の夜",
+      "7년의 밤",
+      "7년의밤",
+      "Seven Years of Darkness",
+      "sevenyearsofdarkness",
+      "정유정"
+    ],
+    "titles": {
+      "ko": "7년의 밤",
+      "en": "Seven Years of Darkness",
+      "ja": "7年の夜"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -106,6 +202,55 @@
       "ko": "90억 가지 신의 이름",
       "en": "The Nine Billion Names of God",
       "ja": "90億の神の御名"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004236",
+    "title": "A군(17)의 전쟁",
+    "shardId": "book_c7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Daisuke Satō",
+    "tags": [],
+    "searchTokens": [
+      "A君(17)の戦争",
+      "A군(17)의 전쟁",
+      "Daisuke Satō",
+      "Q10854437",
+      "a君(17)の戦争",
+      "a군(17)의전쟁",
+      "daisukesatō",
+      "q10854437"
+    ],
+    "titles": {
+      "ko": "A군(17)의 전쟁",
+      "en": "Q10854437",
+      "ja": "A君(17)の戦争"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003396",
+    "title": "H마트에서 울다",
+    "shardId": "book_02",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Michelle Zauner",
+    "tags": [],
+    "searchTokens": [
+      "Crying in H Mart",
+      "H마트에서 울다",
+      "Michelle Zauner",
+      "cryinginhmart",
+      "h마트에서울다",
+      "michellezauner"
+    ],
+    "titles": {
+      "ko": "H마트에서 울다",
+      "en": "Crying in H Mart"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -186,6 +331,32 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003393",
+    "title": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+    "shardId": "book_ae",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Nanato Nana",
+    "tags": [],
+    "searchTokens": [
+      "Nanato Nana",
+      "VTuber Legend",
+      "VTuberなんだが配信切り忘れたら伝説になってた",
+      "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "nanatonana",
+      "vtuberlegend",
+      "vtuberなんだが配信切り忘れたら伝説になってた",
+      "vtuber인데방송끄는걸깜빡했더니전설이되어있었다"
+    ],
+    "titles": {
+      "ko": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "en": "VTuber Legend",
+      "ja": "VTuberなんだが配信切り忘れたら伝説になってた"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002563",
     "title": "「크크큭……. 놈은 사천왕 중에서도 최약이지」라고 해고된 나, 왠지 용사와 성녀의 스승이 되었다",
     "shardId": "book_17",
@@ -206,6 +377,77 @@
       "ko": "「크크큭……. 놈은 사천왕 중에서도 최약이지」라고 해고된 나, 왠지 용사와 성녀의 스승이 되었다",
       "en": "\"Kukuku .... Yatsu wa Shitennō no Naka de mo Saijaku\" to Kaiko Sareta Ore, Naze ka Yūsha to Seijo no Shishō ni Naru",
       "ja": "「ククク……。奴は四天王の中でも最弱」と解雇された俺、なぜか勇者と聖女の師匠になる"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003394",
+    "title": "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+    "shardId": "book_1c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "SunSunSun",
+    "tags": [],
+    "searchTokens": [
+      "Alya Sometimes Hides Her Feelings in Russian",
+      "SunSunSun",
+      "alyasometimeshidesherfeelingsinrussian",
+      "sunsunsun",
+      "時々ボソッとロシア語でデレる隣のアーリャさん",
+      "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+      "가끔씩툭하고러시아어로부끄러워하는옆자리의아랴양"
+    ],
+    "titles": {
+      "ko": "가끔씩 툭하고 러시아어로 부끄러워하는 옆자리의 아랴 양",
+      "en": "Alya Sometimes Hides Her Feelings in Russian",
+      "ja": "時々ボソッとロシア語でデレる隣のアーリャさん"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004097",
+    "title": "가난한 사람들",
+    "shardId": "book_6a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ヴィクトル・ユーゴー",
+    "tags": [],
+    "searchTokens": [
+      "The Poor People",
+      "thepoorpeople",
+      "ヴィクトルユーゴー",
+      "ヴィクトル・ユーゴー",
+      "가난한 사람들",
+      "가난한사람들"
+    ],
+    "titles": {
+      "ko": "가난한 사람들",
+      "en": "The Poor People"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004168",
+    "title": "가장 아름다운 약속",
+    "shardId": "book_ee",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Eoin Colfer",
+    "tags": [],
+    "searchTokens": [
+      "Eoin Colfer",
+      "The Wish List",
+      "eoincolfer",
+      "thewishlist",
+      "가장 아름다운 약속",
+      "가장아름다운약속"
+    ],
+    "titles": {
+      "ko": "가장 아름다운 약속",
+      "en": "The Wish List"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -232,6 +474,79 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003305",
+    "title": "가장 파란 눈",
+    "shardId": "book_f0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Toni Morrison",
+    "tags": [],
+    "searchTokens": [
+      "The Bluest Eye",
+      "Toni Morrison",
+      "thebluesteye",
+      "tonimorrison",
+      "青い眼が欲しい",
+      "가장 파란 눈",
+      "가장파란눈"
+    ],
+    "titles": {
+      "ko": "가장 파란 눈",
+      "en": "The Bluest Eye",
+      "ja": "青い眼が欲しい"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005165",
+    "title": "가죽스타킹 이야기",
+    "shardId": "book_88",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "James Fenimore Cooper",
+    "tags": [],
+    "searchTokens": [
+      "James Fenimore Cooper",
+      "Leatherstocking Tales",
+      "jamesfenimorecooper",
+      "leatherstockingtales",
+      "革脚絆物語",
+      "가죽스타킹 이야기",
+      "가죽스타킹이야기"
+    ],
+    "titles": {
+      "ko": "가죽스타킹 이야기",
+      "en": "Leatherstocking Tales",
+      "ja": "革脚絆物語"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004237",
+    "title": "간지럼 씨",
+    "shardId": "book_ba",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Roger Hargreaves",
+    "tags": [],
+    "searchTokens": [
+      "Mr. Tickle",
+      "Roger Hargreaves",
+      "mr.tickle",
+      "rogerhargreaves",
+      "간지럼 씨",
+      "간지럼씨"
+    ],
+    "titles": {
+      "ko": "간지럼 씨",
+      "en": "Mr. Tickle"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000002741",
@@ -284,6 +599,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004533",
+    "title": "강각의 레기오스",
+    "shardId": "book_42",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Amagi Shusuke",
+    "tags": [],
+    "searchTokens": [
+      "Amagi Shusuke",
+      "Chrome Shelled Regios",
+      "amagishusuke",
+      "chromeshelledregios",
+      "鋼殻のレギオス",
+      "강각의 레기오스",
+      "강각의레기오스"
+    ],
+    "titles": {
+      "ko": "강각의 레기오스",
+      "en": "Chrome Shelled Regios",
+      "ja": "鋼殻のレギオス"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002652",
     "title": "거울 속 외딴 성",
     "shardId": "book_2e",
@@ -309,6 +649,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004911",
+    "title": "거짓말, 딱 한 개만 더",
+    "shardId": "book_44",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Q10894885",
+      "keigohigashino",
+      "q10894885",
+      "嘘をもうひとつだけ",
+      "거짓말, 딱 한 개만 더",
+      "거짓말,딱한개만더"
+    ],
+    "titles": {
+      "ko": "거짓말, 딱 한 개만 더",
+      "en": "Q10894885",
+      "ja": "嘘をもうひとつだけ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002567",
     "title": "건담 센티넬",
     "shardId": "book_33",
@@ -330,6 +695,54 @@
       "ko": "건담 센티넬",
       "en": "Gundam Sentinel",
       "ja": "ガンダム・センチネル"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004373",
+    "title": "검은 황무지",
+    "shardId": "book_2c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "S. A. Cosby",
+    "tags": [],
+    "searchTokens": [
+      "Blacktop Wasteland",
+      "S. A. Cosby",
+      "blacktopwasteland",
+      "s.a.cosby",
+      "검은 황무지",
+      "검은황무지"
+    ],
+    "titles": {
+      "ko": "검은 황무지",
+      "en": "Blacktop Wasteland"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003942",
+    "title": "게으름뱅이 반야의 모험",
+    "shardId": "book_47",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Otfried Preußler",
+    "tags": [],
+    "searchTokens": [
+      "Otfried Preußler",
+      "The Adventures of Strong Vanya",
+      "otfriedpreußler",
+      "theadventuresofstrongvanya",
+      "大力のワーニャ",
+      "게으름뱅이 반야의 모험",
+      "게으름뱅이반야의모험"
+    ],
+    "titles": {
+      "ko": "게으름뱅이 반야의 모험",
+      "en": "The Adventures of Strong Vanya",
+      "ja": "大力のワーニャ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -380,6 +793,79 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003741",
+    "title": "경화연",
+    "shardId": "book_da",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Li Ruzhen",
+    "tags": [],
+    "searchTokens": [
+      "Flowers in the Mirror",
+      "Li Ruzhen",
+      "flowersinthemirror",
+      "liruzhen",
+      "鏡花縁",
+      "경화연"
+    ],
+    "titles": {
+      "ko": "경화연",
+      "en": "Flowers in the Mirror",
+      "ja": "鏡花縁"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003220",
+    "title": "경화연운",
+    "shardId": "book_a2",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Lin Yutang",
+    "tags": [],
+    "searchTokens": [
+      "Lin Yutang",
+      "Moment in Peking",
+      "linyutang",
+      "momentinpeking",
+      "京華煙雲 Moment in Peking (北京好日)",
+      "京華煙雲momentinpeking(北京好日)",
+      "경화연운"
+    ],
+    "titles": {
+      "ko": "경화연운",
+      "en": "Moment in Peking",
+      "ja": "京華煙雲 Moment in Peking (北京好日)"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005050",
+    "title": "고금운회거요",
+    "shardId": "book_a9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Huang Gongshao",
+    "tags": [],
+    "searchTokens": [
+      "Gu jin yun hui ju yao",
+      "Huang Gongshao",
+      "gujinyunhuijuyao",
+      "huanggongshao",
+      "古今韻会挙要",
+      "고금운회거요"
+    ],
+    "titles": {
+      "ko": "고금운회거요",
+      "en": "Gu jin yun hui ju yao",
+      "ja": "古今韻会挙要"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002742",
     "title": "고도",
     "shardId": "book_80",
@@ -399,6 +885,99 @@
       "ko": "고도",
       "en": "The Old Capital",
       "ja": "古都"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004104",
+    "title": "고독한 늑대의 피",
+    "shardId": "book_15",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yuko Yuzuki",
+    "tags": [],
+    "searchTokens": [
+      "Q108389587",
+      "Yuko Yuzuki",
+      "q108389587",
+      "yukoyuzuki",
+      "孤狼の血",
+      "고독한 늑대의 피",
+      "고독한늑대의피"
+    ],
+    "titles": {
+      "ko": "고독한 늑대의 피",
+      "en": "Q108389587",
+      "ja": "孤狼の血"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004238",
+    "title": "고려사절요",
+    "shardId": "book_55",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Goryeosa Jeoryo",
+      "goryeosajeoryo",
+      "高麗史節要",
+      "고려사절요"
+    ],
+    "titles": {
+      "ko": "고려사절요",
+      "en": "Goryeosa Jeoryo",
+      "ja": "高麗史節要"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004239",
+    "title": "고문진보",
+    "shardId": "book_57",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "True Treasures of Ancient Writing",
+      "truetreasuresofancientwriting",
+      "古文真宝",
+      "고문진보"
+    ],
+    "titles": {
+      "ko": "고문진보",
+      "en": "True Treasures of Ancient Writing",
+      "ja": "古文真宝"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005104",
+    "title": "고백",
+    "shardId": "book_a4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kanae Minato",
+    "tags": [],
+    "searchTokens": [
+      "Confessions",
+      "Kanae Minato",
+      "confessions",
+      "kanaeminato",
+      "告白",
+      "고백"
+    ],
+    "titles": {
+      "ko": "고백",
+      "en": "Confessions",
+      "ja": "告白"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -450,6 +1029,56 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004240",
+    "title": "고양이의 지구의",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Mizuhito Akiyama",
+    "tags": [],
+    "searchTokens": [
+      "Mizuhito Akiyama",
+      "Q10855327",
+      "mizuhitoakiyama",
+      "q10855327",
+      "猫の地球儀",
+      "고양이의 지구의",
+      "고양이의지구의"
+    ],
+    "titles": {
+      "ko": "고양이의 지구의",
+      "en": "Q10855327",
+      "ja": "猫の地球儀"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004982",
+    "title": "공명의 갈림길",
+    "shardId": "book_54",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Ryōtarō Shiba",
+    "tags": [],
+    "searchTokens": [
+      "Kōmyō ga Tsuji",
+      "Ryōtarō Shiba",
+      "kōmyōgatsuji",
+      "ryōtarōshiba",
+      "功名が辻",
+      "공명의 갈림길",
+      "공명의갈림길"
+    ],
+    "titles": {
+      "ko": "공명의 갈림길",
+      "en": "Kōmyō ga Tsuji",
+      "ja": "功名が辻"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001240",
     "title": "공생 가설",
     "shardId": "book_e1",
@@ -470,6 +1099,56 @@
       "ko": "공생 가설",
       "en": "Symbiosis Theory",
       "ja": "共生仮設"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004910",
+    "title": "공손룡자",
+    "shardId": "book_41",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Gongsun Long",
+    "tags": [],
+    "searchTokens": [
+      "Gongsun Long",
+      "Gongsun Longzi",
+      "gongsunlong",
+      "gongsunlongzi",
+      "公孫龍子",
+      "공손룡자"
+    ],
+    "titles": {
+      "ko": "공손룡자",
+      "en": "Gongsun Longzi",
+      "ja": "公孫龍子"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004241",
+    "title": "공중과 그 문제",
+    "shardId": "book_50",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Dewey",
+    "tags": [],
+    "searchTokens": [
+      "John Dewey",
+      "The Public and its Problems",
+      "johndewey",
+      "thepublicanditsproblems",
+      "現代政治の基礎 - 公衆とその諸問題",
+      "現代政治の基礎公衆とその諸問題",
+      "공중과 그 문제",
+      "공중과그문제"
+    ],
+    "titles": {
+      "ko": "공중과 그 문제",
+      "en": "The Public and its Problems",
+      "ja": "現代政治の基礎 - 公衆とその諸問題"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -592,6 +1271,51 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000004984",
+    "title": "교황의 예언",
+    "shardId": "book_cb",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Prophecy of the Popes",
+      "prophecyofthepopes",
+      "全ての教皇に関する大司教聖マラキの預言",
+      "교황의 예언",
+      "교황의예언"
+    ],
+    "titles": {
+      "ko": "교황의 예언",
+      "en": "Prophecy of the Popes",
+      "ja": "全ての教皇に関する大司教聖マラキの預言"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005163",
+    "title": "국풍",
+    "shardId": "book_54",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Airs of the States",
+      "airsofthestates",
+      "国風",
+      "국풍"
+    ],
+    "titles": {
+      "ko": "국풍",
+      "en": "Airs of the States",
+      "ja": "国風"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002743",
     "title": "굶주림",
     "shardId": "book_4f",
@@ -639,6 +1363,51 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000004171",
+    "title": "귀인환등초",
+    "shardId": "book_8c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sword of the Demon Hunter: Kijin Gentōshō",
+      "swordofthedemonhunterkijingentōshō",
+      "鬼人幻燈抄",
+      "귀인환등초"
+    ],
+    "titles": {
+      "ko": "귀인환등초",
+      "en": "Sword of the Demon Hunter: Kijin Gentōshō",
+      "ja": "鬼人幻燈抄"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004018",
+    "title": "그 달은 일요일뿐이었다",
+    "shardId": "book_28",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Updike",
+    "tags": [],
+    "searchTokens": [
+      "A Month of Sundays",
+      "John Updike",
+      "amonthofsundays",
+      "johnupdike",
+      "그 달은 일요일뿐이었다",
+      "그달은일요일뿐이었다"
+    ],
+    "titles": {
+      "ko": "그 달은 일요일뿐이었다",
+      "en": "A Month of Sundays"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002254",
     "title": "그 언덕에는 얼마나 많은 황금이",
     "shardId": "book_5e",
@@ -657,6 +1426,100 @@
     "titles": {
       "ko": "그 언덕에는 얼마나 많은 황금이",
       "en": "How Much of These Hills Is Gold"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003135",
+    "title": "그가 나에게 말하지 않은 것",
+    "shardId": "book_14",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Laura Dave",
+    "tags": [],
+    "searchTokens": [
+      "Laura Dave",
+      "The Last Thing He Told Me",
+      "lauradave",
+      "thelastthinghetoldme",
+      "그가 나에게 말하지 않은 것",
+      "그가나에게말하지않은것"
+    ],
+    "titles": {
+      "ko": "그가 나에게 말하지 않은 것",
+      "en": "The Last Thing He Told Me"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003395",
+    "title": "그날 저녁의 불편함",
+    "shardId": "book_e4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Lucas Rijneveld",
+    "tags": [],
+    "searchTokens": [
+      "Lucas Rijneveld",
+      "The Discomfort of Evening",
+      "lucasrijneveld",
+      "thediscomfortofevening",
+      "그날 저녁의 불편함",
+      "그날저녁의불편함"
+    ],
+    "titles": {
+      "ko": "그날 저녁의 불편함",
+      "en": "The Discomfort of Evening"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004454",
+    "title": "그레이트 서클",
+    "shardId": "book_53",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Maggie Shipstead",
+    "tags": [],
+    "searchTokens": [
+      "Great Circle",
+      "Maggie Shipstead",
+      "greatcircle",
+      "maggieshipstead",
+      "그레이트 서클",
+      "그레이트서클"
+    ],
+    "titles": {
+      "ko": "그레이트 서클",
+      "en": "Great Circle"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004532",
+    "title": "그리스 항아리에 대한 송시",
+    "shardId": "book_d2",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Keats",
+    "tags": [],
+    "searchTokens": [
+      "John Keats",
+      "Ode on a Grecian Urn",
+      "johnkeats",
+      "odeonagrecianurn",
+      "ギリシャの壺に寄せるオード",
+      "그리스 항아리에 대한 송시",
+      "그리스항아리에대한송시"
+    ],
+    "titles": {
+      "ko": "그리스 항아리에 대한 송시",
+      "en": "Ode on a Grecian Urn",
+      "ja": "ギリシャの壺に寄せるオード"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -687,6 +1550,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004309",
+    "title": "그림 없는 그림책",
+    "shardId": "book_90",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ハンス・クリスチャン・アンデルセン",
+    "tags": [],
+    "searchTokens": [
+      "A Picture Book Without Pictures",
+      "apicturebookwithoutpictures",
+      "ハンスクリスチャンアンデルセン",
+      "ハンス・クリスチャン・アンデルセン",
+      "絵のない絵本",
+      "그림 없는 그림책",
+      "그림없는그림책"
+    ],
+    "titles": {
+      "ko": "그림 없는 그림책",
+      "en": "A Picture Book Without Pictures",
+      "ja": "絵のない絵本"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001937",
     "title": "그림자 왕",
     "shardId": "book_68",
@@ -705,6 +1593,32 @@
     "titles": {
       "ko": "그림자 왕",
       "en": "The Shadow King"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005247",
+    "title": "그림자를 판 사나이",
+    "shardId": "book_e1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Adelbert von Chamisso",
+    "tags": [],
+    "searchTokens": [
+      "Adelbert von Chamisso",
+      "Peter Schlemihl",
+      "adelbertvonchamisso",
+      "peterschlemihl",
+      "ペーターシュレミールの不思議な物語",
+      "ペーター・シュレミールの不思議な物語",
+      "그림자를 판 사나이",
+      "그림자를판사나이"
+    ],
+    "titles": {
+      "ko": "그림자를 판 사나이",
+      "en": "Peter Schlemihl",
+      "ja": "ペーター・シュレミールの不思議な物語"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -756,6 +1670,219 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004664",
+    "title": "그후의 삶",
+    "shardId": "book_d3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "Afterlives",
+      "abdulrazakgurnah",
+      "afterlives",
+      "그후의 삶",
+      "그후의삶"
+    ],
+    "titles": {
+      "ko": "그후의 삶",
+      "en": "Afterlives"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003735",
+    "title": "기억되지 않는 여자, 애디 라뤼",
+    "shardId": "book_0e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "V. E. Schwab",
+    "tags": [],
+    "searchTokens": [
+      "The Invisible Life of Addie LaRue",
+      "V. E. Schwab",
+      "theinvisiblelifeofaddielarue",
+      "v.e.schwab",
+      "기억되지 않는 여자, 애디 라뤼",
+      "기억되지않는여자,애디라뤼"
+    ],
+    "titles": {
+      "ko": "기억되지 않는 여자, 애디 라뤼",
+      "en": "The Invisible Life of Addie LaRue"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003483",
+    "title": "기적의 도시",
+    "shardId": "book_2c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Robert Jackson Bennett",
+    "tags": [],
+    "searchTokens": [
+      "City of Miracles",
+      "Robert Jackson Bennett",
+      "cityofmiracles",
+      "robertjacksonbennett",
+      "기적의 도시",
+      "기적의도시"
+    ],
+    "titles": {
+      "ko": "기적의 도시",
+      "en": "City of Miracles"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003391",
+    "title": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+    "shardId": "book_8d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "香坂マト",
+    "tags": [],
+    "searchTokens": [
+      "I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time",
+      "imaybeaguildreceptionist,buti'llsoloanybosstoclockoutontime",
+      "ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います",
+      "香坂マト",
+      "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+      "길드의접수원인데,야근이싫어서보스를혼자토벌하려고합니다"
+    ],
+    "titles": {
+      "ko": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+      "en": "I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time",
+      "ja": "ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000002984",
+    "title": "꿈의 수호자",
+    "shardId": "book_1a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "上橋菜穂子",
+    "tags": [],
+    "searchTokens": [
+      "Guardian of Dreams",
+      "guardianofdreams",
+      "上橋菜穂子",
+      "夢の守り人",
+      "꿈의 수호자",
+      "꿈의수호자"
+    ],
+    "titles": {
+      "ko": "꿈의 수호자",
+      "en": "Guardian of Dreams",
+      "ja": "夢の守り人"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003137",
+    "title": "나, 티투바, 세일럼의 검은 마녀",
+    "shardId": "book_9d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Maryse Condé",
+    "tags": [],
+    "searchTokens": [
+      "I, Tituba, black witch of Salem",
+      "Maryse Condé",
+      "i,tituba,blackwitchofsalem",
+      "marysecondé",
+      "나, 티투바, 세일럼의 검은 마녀",
+      "나,티투바,세일럼의검은마녀"
+    ],
+    "titles": {
+      "ko": "나, 티투바, 세일럼의 검은 마녀",
+      "en": "I, Tituba, black witch of Salem"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004310",
+    "title": "나나세 다시 한 번",
+    "shardId": "book_e5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yasutaka Tsutsui",
+    "tags": [],
+    "searchTokens": [
+      "Nanase Futatabi",
+      "Yasutaka Tsutsui",
+      "nanasefutatabi",
+      "yasutakatsutsui",
+      "七瀬ふたたび",
+      "나나세 다시 한 번",
+      "나나세다시한번"
+    ],
+    "titles": {
+      "ko": "나나세 다시 한 번",
+      "en": "Nanase Futatabi",
+      "ja": "七瀬ふたたび"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004311",
+    "title": "나와 그녀가 마왕과 용사로 학생회장",
+    "shardId": "book_b2",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Jō Aikawa",
+    "tags": [],
+    "searchTokens": [
+      "Jō Aikawa",
+      "Q10855993",
+      "jōaikawa",
+      "q10855993",
+      "俺と彼女が魔王と勇者で生徒会長",
+      "나와 그녀가 마왕과 용사로 학생회장",
+      "나와그녀가마왕과용사로학생회장"
+    ],
+    "titles": {
+      "ko": "나와 그녀가 마왕과 용사로 학생회장",
+      "en": "Q10855993",
+      "ja": "俺と彼女が魔王と勇者で生徒会長"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005157",
+    "title": "나의 몬티셀로",
+    "shardId": "book_aa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Jocelyn Nicole Johnson",
+    "tags": [],
+    "searchTokens": [
+      "Jocelyn Nicole Johnson",
+      "My Monticello",
+      "jocelynnicolejohnson",
+      "mymonticello",
+      "나의 몬티셀로",
+      "나의몬티셀로"
+    ],
+    "titles": {
+      "ko": "나의 몬티셀로",
+      "en": "My Monticello"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000001285",
@@ -855,6 +1982,52 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004989",
+    "title": "남해기귀내법전",
+    "shardId": "book_e4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "의정",
+    "tags": [],
+    "searchTokens": [
+      "A Record of Buddhist Practices Sent Home from the Southern Sea",
+      "arecordofbuddhistpracticessenthomefromthesouthernsea",
+      "南海寄帰内法伝",
+      "남해기귀내법전",
+      "의정"
+    ],
+    "titles": {
+      "ko": "남해기귀내법전",
+      "en": "A Record of Buddhist Practices Sent Home from the Southern Sea",
+      "ja": "南海寄帰内法伝"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004374",
+    "title": "내 눈물이 너를 베리라",
+    "shardId": "book_9e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "S. A. Cosby",
+    "tags": [],
+    "searchTokens": [
+      "Razorblade Tears",
+      "S. A. Cosby",
+      "razorbladetears",
+      "s.a.cosby",
+      "내 눈물이 너를 베리라",
+      "내눈물이너를베리라"
+    ],
+    "titles": {
+      "ko": "내 눈물이 너를 베리라",
+      "en": "Razorblade Tears"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001287",
     "title": "내 방 여행하는 법",
     "shardId": "book_88",
@@ -905,6 +2078,77 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003142",
+    "title": "내가 죽기를 바라는 자들",
+    "shardId": "book_d0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Michael Koryta",
+    "tags": [],
+    "searchTokens": [
+      "Michael Koryta",
+      "Those Who Wish Me Dead",
+      "michaelkoryta",
+      "thosewhowishmedead",
+      "내가 죽기를 바라는 자들",
+      "내가죽기를바라는자들"
+    ],
+    "titles": {
+      "ko": "내가 죽기를 바라는 자들",
+      "en": "Those Who Wish Me Dead"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004312",
+    "title": "내일은 맑음",
+    "shardId": "book_6c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Tomoko Kanō",
+    "tags": [],
+    "searchTokens": [
+      "Q10856112",
+      "Tomoko Kanō",
+      "q10856112",
+      "tomokokanō",
+      "てるてるあした",
+      "내일은 맑음",
+      "내일은맑음"
+    ],
+    "titles": {
+      "ko": "내일은 맑음",
+      "en": "Q10856112",
+      "ja": "てるてるあした"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003217",
+    "title": "넬라의 비밀 약방",
+    "shardId": "book_82",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Sarah Penner",
+    "tags": [],
+    "searchTokens": [
+      "Sarah Penner",
+      "The Lost Apothecary: A Novel",
+      "sarahpenner",
+      "thelostapothecaryanovel",
+      "넬라의 비밀 약방",
+      "넬라의비밀약방"
+    ],
+    "titles": {
+      "ko": "넬라의 비밀 약방",
+      "en": "The Lost Apothecary: A Novel"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000258",
     "title": "노 게임 노 라이프",
     "shardId": "book_25",
@@ -934,6 +2178,31 @@
     },
     "qualityScore": 100,
     "qualityTier": 5
+  },
+  {
+    "workId": "wk_000004022",
+    "title": "노란 코끼리",
+    "shardId": "book_d3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kanako Nishi",
+    "tags": [],
+    "searchTokens": [
+      "Kanako Nishi",
+      "Yellow elephant",
+      "kanakonishi",
+      "yellowelephant",
+      "きいろいゾウ",
+      "노란 코끼리",
+      "노란코끼리"
+    ],
+    "titles": {
+      "ko": "노란 코끼리",
+      "en": "Yellow elephant",
+      "ja": "きいろいゾウ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000012",
@@ -966,6 +2235,75 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004173",
+    "title": "노예들의 축제",
+    "shardId": "book_65",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Norman",
+    "tags": [],
+    "searchTokens": [
+      "Assassin of Gor",
+      "John Norman",
+      "assassinofgor",
+      "johnnorman",
+      "ゴルの暗殺者",
+      "노예들의 축제",
+      "노예들의축제"
+    ],
+    "titles": {
+      "ko": "노예들의 축제",
+      "en": "Assassin of Gor",
+      "ja": "ゴルの暗殺者"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003943",
+    "title": "녹색서",
+    "shardId": "book_f0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Muammar Gaddafi",
+    "tags": [],
+    "searchTokens": [
+      "Muammar Gaddafi",
+      "The Green Book",
+      "muammargaddafi",
+      "thegreenbook",
+      "緑の書",
+      "녹색서"
+    ],
+    "titles": {
+      "ko": "녹색서",
+      "en": "The Green Book",
+      "ja": "緑の書"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004913",
+    "title": "농상집요",
+    "shardId": "book_54",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "農桑輯要",
+      "농상집요"
+    ],
+    "titles": {
+      "ko": "농상집요",
+      "ja": "農桑輯要",
+      "zh": "農桑輯要"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001439",
@@ -1107,6 +2445,213 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005243",
+    "title": "닥터 화이트",
+    "shardId": "book_a0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shin Kibayashi",
+    "tags": [],
+    "searchTokens": [
+      "Dr. White",
+      "Shin Kibayashi",
+      "dr.white",
+      "shinkibayashi",
+      "ドクターホワイト",
+      "ドクター・ホワイト",
+      "닥터 화이트",
+      "닥터화이트"
+    ],
+    "titles": {
+      "ko": "닥터 화이트",
+      "en": "Dr. White",
+      "ja": "ドクター・ホワイト"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004378",
+    "title": "단칸방의 침략자!?",
+    "shardId": "book_58",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Invaders of the Rokujouma!?",
+      "invadersoftherokujouma!?",
+      "六畳間の侵略者!?",
+      "단칸방의 침략자!?",
+      "단칸방의침략자!?"
+    ],
+    "titles": {
+      "ko": "단칸방의 침략자!?",
+      "en": "Invaders of the Rokujouma!?",
+      "ja": "六畳間の侵略者!?"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003136",
+    "title": "달콤한 복수 주식회사",
+    "shardId": "book_0f",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Jonas Jonasson",
+    "tags": [],
+    "searchTokens": [
+      "Jonas Jonasson",
+      "Sweet Sweet Revenge",
+      "jonasjonasson",
+      "sweetsweetrevenge",
+      "달콤한 복수 주식회사",
+      "달콤한복수주식회사"
+    ],
+    "titles": {
+      "ko": "달콤한 복수 주식회사",
+      "en": "Sweet Sweet Revenge"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005155",
+    "title": "당대조령집",
+    "shardId": "book_02",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "唐大詔令集",
+      "당대조령집"
+    ],
+    "titles": {
+      "ko": "당대조령집",
+      "ja": "唐大詔令集",
+      "zh": "唐大詔令集"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005108",
+    "title": "당육전",
+    "shardId": "book_08",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "玄宗",
+    "tags": [],
+    "searchTokens": [
+      "Six Statutes of the Tang Dynasty",
+      "sixstatutesofthetangdynasty",
+      "唐六典",
+      "玄宗",
+      "당육전"
+    ],
+    "titles": {
+      "ko": "당육전",
+      "en": "Six Statutes of the Tang Dynasty",
+      "ja": "唐六典"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005250",
+    "title": "대당서역구법고승전",
+    "shardId": "book_80",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "의정",
+    "tags": [],
+    "searchTokens": [
+      "Great Tang Biographies of Eminent Monks Who Sought the Dharma in the Western Regions",
+      "greattangbiographiesofeminentmonkswhosoughtthedharmainthewesternregions",
+      "大唐西域求法高僧伝",
+      "대당서역구법고승전",
+      "의정"
+    ],
+    "titles": {
+      "ko": "대당서역구법고승전",
+      "en": "Great Tang Biographies of Eminent Monks Who Sought the Dharma in the Western Regions",
+      "ja": "大唐西域求法高僧伝"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005249",
+    "title": "대당창업기거주",
+    "shardId": "book_4d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Wen Daya",
+    "tags": [],
+    "searchTokens": [
+      "Wen Daya",
+      "wendaya",
+      "大唐創業起居注",
+      "대당창업기거주"
+    ],
+    "titles": {
+      "ko": "대당창업기거주",
+      "ja": "大唐創業起居注",
+      "zh": "大唐創業起居注"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005303",
+    "title": "대비로자나성불경소",
+    "shardId": "book_6e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "一行",
+    "tags": [],
+    "searchTokens": [
+      "Commentary on the Vairocana Sutra",
+      "commentaryonthevairocanasutra",
+      "一行",
+      "大日経疏",
+      "대비로자나성불경소"
+    ],
+    "titles": {
+      "ko": "대비로자나성불경소",
+      "en": "Commentary on the Vairocana Sutra",
+      "ja": "大日経疏"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005246",
+    "title": "대승의장",
+    "shardId": "book_fc",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Jingying Huiyuan",
+    "tags": [],
+    "searchTokens": [
+      "Essay on the Meaning of Mahāyāna",
+      "Jingying Huiyuan",
+      "essayonthemeaningofmahāyāna",
+      "jingyinghuiyuan",
+      "大乗義章",
+      "대승의장"
+    ],
+    "titles": {
+      "ko": "대승의장",
+      "en": "Essay on the Meaning of Mahāyāna",
+      "ja": "大乗義章"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001081",
     "title": "대심문관의 비망록",
     "shardId": "book_36",
@@ -1130,6 +2675,101 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005245",
+    "title": "대의각미록",
+    "shardId": "book_0d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yongzheng Emperor",
+    "tags": [],
+    "searchTokens": [
+      "Da yi jue mi lu",
+      "Yongzheng Emperor",
+      "dayijuemilu",
+      "yongzhengemperor",
+      "大義覚迷録",
+      "대의각미록"
+    ],
+    "titles": {
+      "ko": "대의각미록",
+      "en": "Da yi jue mi lu",
+      "ja": "大義覚迷録"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005302",
+    "title": "대자은사삼장법사전",
+    "shardId": "book_74",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yancong",
+    "tags": [],
+    "searchTokens": [
+      "A Biography of the Tripiṭaka Master of the Great Ci'en Monastery",
+      "Yancong",
+      "abiographyofthetripiṭakamasterofthegreatci'enmonastery",
+      "yancong",
+      "大慈恩寺三蔵法師伝",
+      "대자은사삼장법사전"
+    ],
+    "titles": {
+      "ko": "대자은사삼장법사전",
+      "en": "A Biography of the Tripiṭaka Master of the Great Ci'en Monastery",
+      "ja": "大慈恩寺三蔵法師伝"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003303",
+    "title": "대학",
+    "shardId": "book_7b",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Confucius",
+    "tags": [],
+    "searchTokens": [
+      "Confucius",
+      "Great Learning",
+      "confucius",
+      "greatlearning",
+      "大学",
+      "대학"
+    ],
+    "titles": {
+      "ko": "대학",
+      "en": "Great Learning",
+      "ja": "大学"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003219",
+    "title": "더 레이디 인 더 밴",
+    "shardId": "book_3e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Alan Bennett",
+    "tags": [],
+    "searchTokens": [
+      "Alan Bennett",
+      "The Lady in the Van",
+      "alanbennett",
+      "theladyinthevan",
+      "더 레이디 인 더 밴",
+      "더레이디인더밴"
+    ],
+    "titles": {
+      "ko": "더 레이디 인 더 밴",
+      "en": "The Lady in the Van"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001192",
     "title": "덕혜옹주",
     "shardId": "book_0e",
@@ -1147,6 +2787,56 @@
     "titles": {
       "ko": "덕혜옹주",
       "en": "Q103845728"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003659",
+    "title": "도남의 날개",
+    "shardId": "book_b0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuyumi Ono",
+    "tags": [],
+    "searchTokens": [
+      "Fuyumi Ono",
+      "The Aspired Wings",
+      "fuyumiono",
+      "theaspiredwings",
+      "図南の翼",
+      "도남의 날개",
+      "도남의날개"
+    ],
+    "titles": {
+      "ko": "도남의 날개",
+      "en": "The Aspired Wings",
+      "ja": "図南の翼"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003736",
+    "title": "도둑 호첸플로츠",
+    "shardId": "book_82",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Otfried Preußler",
+    "tags": [],
+    "searchTokens": [
+      "Otfried Preußler",
+      "The Robber Hotzenplotz",
+      "otfriedpreußler",
+      "therobberhotzenplotz",
+      "大どろぼうホッツェンプロッツ",
+      "도둑 호첸플로츠",
+      "도둑호첸플로츠"
+    ],
+    "titles": {
+      "ko": "도둑 호첸플로츠",
+      "en": "The Robber Hotzenplotz",
+      "ja": "大どろぼうホッツェンプロッツ"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1199,6 +2889,53 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000004667",
+    "title": "도티",
+    "shardId": "book_50",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "Dottie",
+      "abdulrazakgurnah",
+      "dottie",
+      "도티"
+    ],
+    "titles": {
+      "ko": "도티",
+      "en": "Dottie"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005046",
+    "title": "독서의 기술",
+    "shardId": "book_55",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Charles Van Doren",
+    "tags": [],
+    "searchTokens": [
+      "Charles Van Doren",
+      "Q1091079",
+      "charlesvandoren",
+      "q1091079",
+      "本を読む本",
+      "독서의 기술",
+      "독서의기술"
+    ],
+    "titles": {
+      "ko": "독서의 기술",
+      "en": "Q1091079",
+      "ja": "本を読む本"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001836",
     "title": "독수리와 천사",
     "shardId": "book_2a",
@@ -1220,6 +2957,75 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004456",
+    "title": "동문선",
+    "shardId": "book_82",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q10870286",
+      "q10870286",
+      "東文選",
+      "동문선"
+    ],
+    "titles": {
+      "ko": "동문선",
+      "en": "Q10870286",
+      "ja": "東文選"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004458",
+    "title": "동서양고",
+    "shardId": "book_65",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xie Zhang",
+    "tags": [],
+    "searchTokens": [
+      "Q10870955",
+      "Xie Zhang",
+      "q10870955",
+      "xiezhang",
+      "東西洋考",
+      "동서양고"
+    ],
+    "titles": {
+      "ko": "동서양고",
+      "en": "Q10870955",
+      "ja": "東西洋考"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005160",
+    "title": "돼지의 간은 가열해라",
+    "shardId": "book_20",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Heat the Pig Liver",
+      "heatthepigliver",
+      "豚のレバーは加熱しろ",
+      "돼지의 간은 가열해라",
+      "돼지의간은가열해라"
+    ],
+    "titles": {
+      "ko": "돼지의 간은 가열해라",
+      "en": "Heat the Pig Liver",
+      "ja": "豚のレバーは加熱しろ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000005",
@@ -1254,6 +3060,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004668",
+    "title": "떠남의 기억",
+    "shardId": "book_04",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "Memory of Departure",
+      "abdulrazakgurnah",
+      "memoryofdeparture",
+      "떠남의 기억",
+      "떠남의기억"
+    ],
+    "titles": {
+      "ko": "떠남의 기억",
+      "en": "Memory of Departure"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000870",
     "title": "떠돌이기사",
     "shardId": "book_0f",
@@ -1271,6 +3100,30 @@
     "titles": {
       "ko": "떠돌이기사",
       "en": "The Hedge Knight"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003882",
+    "title": "라쇼몽",
+    "shardId": "book_7c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Ryūnosuke Akutagawa",
+    "tags": [],
+    "searchTokens": [
+      "Rashōmon",
+      "Ryūnosuke Akutagawa",
+      "rashōmon",
+      "ryūnosukeakutagawa",
+      "羅生門",
+      "라쇼몽"
+    ],
+    "titles": {
+      "ko": "라쇼몽",
+      "en": "Rashōmon",
+      "ja": "羅生門"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1333,6 +3186,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004019",
+    "title": "러브 올 플레이",
+    "shardId": "book_db",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Love All Play",
+      "loveallplay",
+      "ラブオールプレー",
+      "러브 올 플레이",
+      "러브올플레이"
+    ],
+    "titles": {
+      "ko": "러브 올 플레이",
+      "en": "Love All Play",
+      "ja": "ラブオールプレー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002927",
     "title": "러시아문학 오디세이",
     "shardId": "book_16",
@@ -1351,6 +3227,29 @@
     "titles": {
       "ko": "러시아문학 오디세이",
       "en": "Russian Literature, Ideals and Realities"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003657",
+    "title": "레드 런던의 여행자: 마법의 그림자",
+    "shardId": "book_c7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "V. E. Schwab",
+    "tags": [],
+    "searchTokens": [
+      "A Darker Shade of Magic",
+      "V. E. Schwab",
+      "adarkershadeofmagic",
+      "v.e.schwab",
+      "레드 런던의 여행자: 마법의 그림자",
+      "레드런던의여행자마법의그림자"
+    ],
+    "titles": {
+      "ko": "레드 런던의 여행자: 마법의 그림자",
+      "en": "A Darker Shade of Magic"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1452,6 +3351,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003306",
+    "title": "루프 7회차 악역 영애는 적국에서 자유로운 신부 생활을 만끽한다",
+    "shardId": "book_22",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Touko Amekawa",
+    "tags": [],
+    "searchTokens": [
+      "7th Time Loop",
+      "7thtimeloop",
+      "Touko Amekawa",
+      "toukoamekawa",
+      "ループ7回目の悪役令嬢は、元敵国で自由気ままな花嫁生活を満喫する",
+      "루프 7회차 악역 영애는 적국에서 자유로운 신부 생활을 만끽한다",
+      "루프7회차악역영애는적국에서자유로운신부생활을만끽한다"
+    ],
+    "titles": {
+      "ko": "루프 7회차 악역 영애는 적국에서 자유로운 신부 생활을 만끽한다",
+      "en": "7th Time Loop",
+      "ja": "ループ7回目の悪役令嬢は、元敵国で自由気ままな花嫁生活を満喫する"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002651",
     "title": "리빌드 월드",
     "shardId": "book_7a",
@@ -1521,6 +3445,169 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003881",
+    "title": "링 샤우트",
+    "shardId": "book_bc",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "P. Djèlí Clark",
+    "tags": [],
+    "searchTokens": [
+      "P. Djèlí Clark",
+      "Ring Shout; or, Hunting Ku Kluxes in the End Times",
+      "p.djèlíclark",
+      "ringshout;or,huntingkukluxesintheendtimes",
+      "링 샤우트",
+      "링샤우트"
+    ],
+    "titles": {
+      "ko": "링 샤우트",
+      "en": "Ring Shout; or, Hunting Ku Kluxes in the End Times"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003580",
+    "title": "마르코의 복음서",
+    "shardId": "book_de",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "マルコ",
+    "tags": [],
+    "searchTokens": [
+      "Gospel of Mark",
+      "gospelofmark",
+      "マルコ",
+      "マルコによる福音書",
+      "마르코의 복음서",
+      "마르코의복음서"
+    ],
+    "titles": {
+      "ko": "마르코의 복음서",
+      "en": "Gospel of Mark",
+      "ja": "マルコによる福音書"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004101",
+    "title": "마법의 그림자",
+    "shardId": "book_72",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "V. E. Schwab",
+    "tags": [],
+    "searchTokens": [
+      "Shades of Magic",
+      "V. E. Schwab",
+      "shadesofmagic",
+      "v.e.schwab",
+      "마법의 그림자",
+      "마법의그림자"
+    ],
+    "titles": {
+      "ko": "마법의 그림자",
+      "en": "Shades of Magic"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003802",
+    "title": "마왕인 내가 노예 엘프를 신부로 삼았는데 어떻게 사랑하면 되지?",
+    "shardId": "book_f7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuminori Teshima",
+    "tags": [],
+    "searchTokens": [
+      "An Archdemon's Dilemma: How to Love Your Elf Bride",
+      "Fuminori Teshima",
+      "anarchdemon'sdilemmahowtoloveyourelfbride",
+      "fuminoriteshima",
+      "魔王の俺が奴隷エルフを嫁にしたんだが、どう愛でればいい？",
+      "마왕인 내가 노예 엘프를 신부로 삼았는데 어떻게 사랑하면 되지?",
+      "마왕인내가노예엘프를신부로삼았는데어떻게사랑하면되지?"
+    ],
+    "titles": {
+      "ko": "마왕인 내가 노예 엘프를 신부로 삼았는데 어떻게 사랑하면 되지?",
+      "en": "An Archdemon's Dilemma: How to Love Your Elf Bride",
+      "ja": "魔王の俺が奴隷エルフを嫁にしたんだが、どう愛でればいい？"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003880",
+    "title": "마지막 강의",
+    "shardId": "book_a9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Randy Pausch",
+    "tags": [],
+    "searchTokens": [
+      "Randy Pausch",
+      "The Last Lecture",
+      "randypausch",
+      "thelastlecture",
+      "마지막 강의",
+      "마지막강의"
+    ],
+    "titles": {
+      "ko": "마지막 강의",
+      "en": "The Last Lecture"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004663",
+    "title": "마지막 선물",
+    "shardId": "book_aa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "The Last Gift",
+      "abdulrazakgurnah",
+      "thelastgift",
+      "마지막 선물",
+      "마지막선물"
+    ],
+    "titles": {
+      "ko": "마지막 선물",
+      "en": "The Last Gift"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004460",
+    "title": "망내인",
+    "shardId": "book_8f",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Chan Ho-kei",
+    "tags": [],
+    "searchTokens": [
+      "Chan Ho-kei",
+      "Second Sister",
+      "chanhokei",
+      "secondsister",
+      "망내인"
+    ],
+    "titles": {
+      "ko": "망내인",
+      "en": "Second Sister"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001834",
     "title": "망량의 상자",
     "shardId": "book_e1",
@@ -1540,6 +3627,58 @@
       "ko": "망량의 상자",
       "en": "Mōryō no Hako",
       "ja": "魍魎の匣"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003052",
+    "title": "매스커레이드 나이트",
+    "shardId": "book_e9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Masquerade Night",
+      "keigohigashino",
+      "masqueradenight",
+      "マスカレードナイト",
+      "マスカレード・ナイト",
+      "매스커레이드 나이트",
+      "매스커레이드나이트"
+    ],
+    "titles": {
+      "ko": "매스커레이드 나이트",
+      "en": "Masquerade Night",
+      "ja": "マスカレード・ナイト"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004727",
+    "title": "매스커레이드 호텔",
+    "shardId": "book_0f",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Masquerade Hotel",
+      "keigohigashino",
+      "masqueradehotel",
+      "マスカレードホテル",
+      "マスカレード・ホテル",
+      "매스커레이드 호텔",
+      "매스커레이드호텔"
+    ],
+    "titles": {
+      "ko": "매스커레이드 호텔",
+      "en": "Masquerade Hotel",
+      "ja": "マスカレード・ホテル"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1640,6 +3779,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003945",
+    "title": "모자이혹론",
+    "shardId": "book_3c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Mouzi",
+    "tags": [],
+    "searchTokens": [
+      "Mouzi",
+      "Mouzi Lihuolun",
+      "mouzi",
+      "mouzilihuolun",
+      "牟氏理惑論",
+      "모자이혹론"
+    ],
+    "titles": {
+      "ko": "모자이혹론",
+      "en": "Mouzi Lihuolun",
+      "ja": "牟氏理惑論"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001718",
     "title": "목요 살인 클럽",
     "shardId": "book_1e",
@@ -1661,6 +3824,54 @@
       "ko": "목요 살인 클럽",
       "en": "The Thursday Murder Club",
       "ja": "木曜殺人クラブ (小説)"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003224",
+    "title": "몽계필담",
+    "shardId": "book_29",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shen Kuo",
+    "tags": [],
+    "searchTokens": [
+      "Dream Pool Essays",
+      "Shen Kuo",
+      "dreampoolessays",
+      "shenkuo",
+      "夢渓筆談",
+      "몽계필담"
+    ],
+    "titles": {
+      "ko": "몽계필담",
+      "en": "Dream Pool Essays",
+      "ja": "夢渓筆談"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003808",
+    "title": "묘성기",
+    "shardId": "book_0d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Lao She",
+    "tags": [],
+    "searchTokens": [
+      "Cat Country",
+      "Lao She",
+      "catcountry",
+      "laoshe",
+      "猫城記",
+      "묘성기"
+    ],
+    "titles": {
+      "ko": "묘성기",
+      "en": "Cat Country",
+      "ja": "猫城記"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1773,6 +3984,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005048",
+    "title": "무한공포",
+    "shardId": "book_6e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Zhttty",
+    "tags": [],
+    "searchTokens": [
+      "Terror Infinity",
+      "Zhttty",
+      "terrorinfinity",
+      "zhttty",
+      "무한공포"
+    ],
+    "titles": {
+      "ko": "무한공포",
+      "en": "Terror Infinity"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001031",
     "title": "문관사림",
     "shardId": "book_6d",
@@ -1863,6 +4096,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003053",
+    "title": "미드나잇 라이브러리",
+    "shardId": "book_c6",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "マット・ヘイグ",
+    "tags": [],
+    "searchTokens": [
+      "The Midnight Library",
+      "themidnightlibrary",
+      "マットヘイグ",
+      "マット・ヘイグ",
+      "미드나잇 라이브러리",
+      "미드나잇라이브러리"
+    ],
+    "titles": {
+      "ko": "미드나잇 라이브러리",
+      "en": "The Midnight Library"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001531",
     "title": "미학 강의",
     "shardId": "book_e9",
@@ -1906,6 +4162,28 @@
       "ko": "밀물을 타고",
       "en": "Taken at the Flood",
       "ja": "満潮に乗って"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004604",
+    "title": "바닷가에서",
+    "shardId": "book_a4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "アブドゥルラザク・グルナ",
+    "tags": [],
+    "searchTokens": [
+      "By the Sea",
+      "bythesea",
+      "アブドゥルラザクグルナ",
+      "アブドゥルラザク・グルナ",
+      "바닷가에서"
+    ],
+    "titles": {
+      "ko": "바닷가에서",
+      "en": "By the Sea"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -1965,6 +4243,31 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000003489",
+    "title": "박사가 사랑한 수식",
+    "shardId": "book_c0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yoko Ogawa",
+    "tags": [],
+    "searchTokens": [
+      "The Housekeeper and the Professor",
+      "Yoko Ogawa",
+      "thehousekeeperandtheprofessor",
+      "yokoogawa",
+      "博士の愛した数式",
+      "박사가 사랑한 수식",
+      "박사가사랑한수식"
+    ],
+    "titles": {
+      "ko": "박사가 사랑한 수식",
+      "en": "The Housekeeper and the Professor",
+      "ja": "博士の愛した数式"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001713",
     "title": "반마취 상태",
     "shardId": "book_48",
@@ -1986,6 +4289,76 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005049",
+    "title": "반삼국지연의",
+    "shardId": "book_a7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Zhou Dahuang",
+    "tags": [],
+    "searchTokens": [
+      "Anti-Romance of the Three Kingdoms",
+      "Zhou Dahuang",
+      "antiromanceofthethreekingdoms",
+      "zhoudahuang",
+      "反三国志演義",
+      "반삼국지연의"
+    ],
+    "titles": {
+      "ko": "반삼국지연의",
+      "en": "Anti-Romance of the Three Kingdoms",
+      "ja": "反三国志演義"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003397",
+    "title": "반야등론석",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "청변",
+    "tags": [],
+    "searchTokens": [
+      "The Lamp of Discernment",
+      "thelampofdiscernment",
+      "般若燈論釈",
+      "반야등론석",
+      "청변"
+    ],
+    "titles": {
+      "ko": "반야등론석",
+      "en": "The Lamp of Discernment",
+      "ja": "般若燈論釈"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004599",
+    "title": "반에서 가장 싫어하는 여자애와 결혼하게 되었다.",
+    "shardId": "book_c9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "I Got Married to the Girl I Hate Most in Class",
+      "igotmarriedtothegirlihatemostinclass",
+      "クラスの大嫌いな女子と結婚することになった。",
+      "반에서 가장 싫어하는 여자애와 결혼하게 되었다.",
+      "반에서가장싫어하는여자애와결혼하게되었다."
+    ],
+    "titles": {
+      "ko": "반에서 가장 싫어하는 여자애와 결혼하게 되었다.",
+      "en": "I Got Married to the Girl I Hate Most in Class",
+      "ja": "クラスの大嫌いな女子と結婚することになった。"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000010",
@@ -2026,6 +4399,102 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000004837",
+    "title": "밤의 경비원",
+    "shardId": "book_b8",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Louise Erdrich",
+    "tags": [],
+    "searchTokens": [
+      "Louise Erdrich",
+      "The Night Watchman",
+      "louiseerdrich",
+      "thenightwatchman",
+      "밤의 경비원",
+      "밤의경비원"
+    ],
+    "titles": {
+      "ko": "밤의 경비원",
+      "en": "The Night Watchman"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004600",
+    "title": "밤의 여행자들",
+    "shardId": "book_f3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yun Ko-eun",
+    "tags": [],
+    "searchTokens": [
+      "The Disaster Tourist",
+      "Yun Ko-eun",
+      "thedisastertourist",
+      "yunkoeun",
+      "밤의 여행자들",
+      "밤의여행자들"
+    ],
+    "titles": {
+      "ko": "밤의 여행자들",
+      "en": "The Disaster Tourist"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004914",
+    "title": "방금 떠나온 세계",
+    "shardId": "book_eb",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kim Choyeop",
+    "tags": [],
+    "searchTokens": [
+      "Kim Choyeop",
+      "The World We Just Left Behind",
+      "kimchoyeop",
+      "theworldwejustleftbehind",
+      "この世界からは出ていくけれど",
+      "방금 떠나온 세계",
+      "방금떠나온세계"
+    ],
+    "titles": {
+      "ko": "방금 떠나온 세계",
+      "en": "The World We Just Left Behind",
+      "ja": "この世界からは出ていくけれど"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003309",
+    "title": "배를 엮다",
+    "shardId": "book_ff",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shion Miura",
+    "tags": [],
+    "searchTokens": [
+      "Shion Miura",
+      "The Great Passage",
+      "shionmiura",
+      "thegreatpassage",
+      "舟を編む",
+      "배를 엮다",
+      "배를엮다"
+    ],
+    "titles": {
+      "ko": "배를 엮다",
+      "en": "The Great Passage",
+      "ja": "舟を編む"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002178",
     "title": "배터리",
     "shardId": "book_5a",
@@ -2046,6 +4515,58 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003663",
+    "title": "백은의 언덕 검은 달",
+    "shardId": "book_b0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuyumi Ono",
+    "tags": [],
+    "searchTokens": [
+      "Fuyumi Ono",
+      "The Silver Ruins, The Black Moon",
+      "fuyumiono",
+      "thesilverruins,theblackmoon",
+      "白銀の墟 玄の月",
+      "白銀の墟玄の月",
+      "백은의 언덕 검은 달",
+      "백은의언덕검은달"
+    ],
+    "titles": {
+      "ko": "백은의 언덕 검은 달",
+      "en": "The Silver Ruins, The Black Moon",
+      "ja": "白銀の墟 玄の月"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004840",
+    "title": "뱀파이어 아카데미",
+    "shardId": "book_da",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Richelle Mead",
+    "tags": [],
+    "searchTokens": [
+      "Richelle Mead",
+      "Vampire Academy",
+      "richellemead",
+      "vampireacademy",
+      "ヴァンパイアアカデミー",
+      "ヴァンパイア・アカデミー",
+      "뱀파이어 아카데미",
+      "뱀파이어아카데미"
+    ],
+    "titles": {
+      "ko": "뱀파이어 아카데미",
+      "en": "Vampire Academy",
+      "ja": "ヴァンパイア・アカデミー"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000001286",
@@ -2168,6 +4689,72 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000004985",
+    "title": "북계자의",
+    "shardId": "book_93",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Chun Chen",
+    "tags": [],
+    "searchTokens": [
+      "Běixī zìyì",
+      "Chun Chen",
+      "běixīzìyì",
+      "chunchen",
+      "북계자의"
+    ],
+    "titles": {
+      "ko": "북계자의",
+      "en": "Běixī zìyì"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003576",
+    "title": "북조선실록",
+    "shardId": "book_30",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q107338275",
+      "q107338275",
+      "北朝鮮実録",
+      "북조선실록"
+    ],
+    "titles": {
+      "ko": "북조선실록",
+      "en": "Q107338275",
+      "ja": "北朝鮮実録"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004313",
+    "title": "불",
+    "shardId": "book_5a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Maria Pourchet",
+    "tags": [],
+    "searchTokens": [
+      "Maria Pourchet",
+      "Q108570137",
+      "mariapourchet",
+      "q108570137",
+      "불"
+    ],
+    "titles": {
+      "ko": "불",
+      "en": "Q108570137"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000686",
     "title": "불 사냥의 왕",
     "shardId": "book_e2",
@@ -2186,6 +4773,28 @@
       "ko": "불 사냥의 왕",
       "en": "The Fire Hunter",
       "ja": "火狩りの王"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004724",
+    "title": "불설대집법문경",
+    "shardId": "book_33",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sūtra on the Great Assembly",
+      "sūtraonthegreatassembly",
+      "大集法門経",
+      "불설대집법문경"
+    ],
+    "titles": {
+      "ko": "불설대집법문경",
+      "en": "Sūtra on the Great Assembly",
+      "ja": "大集法門経"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2213,6 +4822,51 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000004723",
+    "title": "불설아미타경통찬소",
+    "shardId": "book_13",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "基",
+    "tags": [],
+    "searchTokens": [
+      "Commentary and Praise of the Amitābha Sūtra",
+      "commentaryandpraiseoftheamitābhasūtra",
+      "仏説阿弥陀経通賛疏",
+      "基",
+      "불설아미타경통찬소"
+    ],
+    "titles": {
+      "ko": "불설아미타경통찬소",
+      "en": "Commentary and Praise of the Amitābha Sūtra",
+      "ja": "仏説阿弥陀経通賛疏"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004725",
+    "title": "불수반열반약설교계경",
+    "shardId": "book_77",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bequeathed Teachings Sutra",
+      "bequeathedteachingssutra",
+      "仏垂般涅槃略説教誡経",
+      "불수반열반약설교계경"
+    ],
+    "titles": {
+      "ko": "불수반열반약설교계경",
+      "en": "Bequeathed Teachings Sutra",
+      "ja": "仏垂般涅槃略説教誡経"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000811",
     "title": "불의 후계자",
     "shardId": "book_aa",
@@ -2231,6 +4885,51 @@
     "titles": {
       "ko": "불의 후계자",
       "en": "Heir of Fire"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004722",
+    "title": "불조역대통재",
+    "shardId": "book_38",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Record of the Buddha and the Patriarchs of Various Dynasties",
+      "recordofthebuddhaandthepatriarchsofvariousdynasties",
+      "仏祖歴代通載",
+      "불조역대통재"
+    ],
+    "titles": {
+      "ko": "불조역대통재",
+      "en": "Record of the Buddha and the Patriarchs of Various Dynasties",
+      "ja": "仏祖歴代通載"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004102",
+    "title": "불타는 세계",
+    "shardId": "book_17",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Margaret Cavendish, Duchess of Newcastle-upon-Tyne",
+    "tags": [],
+    "searchTokens": [
+      "Margaret Cavendish, Duchess of Newcastle-upon-Tyne",
+      "The Blazing World",
+      "margaretcavendish,duchessofnewcastleupontyne",
+      "theblazingworld",
+      "불타는 세계",
+      "불타는세계"
+    ],
+    "titles": {
+      "ko": "불타는 세계",
+      "en": "The Blazing World"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -2284,6 +4983,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005304",
+    "title": "비극의 원흉이 되는 최강악역 최종보스 여왕은 국민을 위해 헌신합니다",
+    "shardId": "book_a1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Most Heretical Last Boss Queen",
+      "themosthereticallastbossqueen",
+      "悲劇の元凶となる最強外道ラスボス女王は民の為に尽くします。",
+      "비극의 원흉이 되는 최강악역 최종보스 여왕은 국민을 위해 헌신합니다",
+      "비극의원흉이되는최강악역최종보스여왕은국민을위해헌신합니다"
+    ],
+    "titles": {
+      "ko": "비극의 원흉이 되는 최강악역 최종보스 여왕은 국민을 위해 헌신합니다",
+      "en": "The Most Heretical Last Boss Queen",
+      "ja": "悲劇の元凶となる最強外道ラスボス女王は民の為に尽くします。"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002092",
     "title": "비극의 탄생",
     "shardId": "book_fd",
@@ -2304,6 +5026,31 @@
       "ko": "비극의 탄생",
       "en": "The Birth of Tragedy",
       "ja": "悲劇の誕生"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000002979",
+    "title": "비너스와 아도니스",
+    "shardId": "book_37",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "William Shakespeare",
+    "tags": [],
+    "searchTokens": [
+      "Venus and Adonis",
+      "William Shakespeare",
+      "venusandadonis",
+      "williamshakespeare",
+      "ヴィーナスとアドーニス",
+      "비너스와 아도니스",
+      "비너스와아도니스"
+    ],
+    "titles": {
+      "ko": "비너스와 아도니스",
+      "en": "Venus and Adonis",
+      "ja": "ヴィーナスとアドーニス"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -2333,6 +5080,77 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004720",
+    "title": "비행공포",
+    "shardId": "book_43",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "エリカ・ジョング",
+    "tags": [],
+    "searchTokens": [
+      "Fear of Flying",
+      "fearofflying",
+      "エリカジョング",
+      "エリカ・ジョング",
+      "飛ぶのが怖い",
+      "비행공포"
+    ],
+    "titles": {
+      "ko": "비행공포",
+      "en": "Fear of Flying",
+      "ja": "飛ぶのが怖い"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000002981",
+    "title": "사다리의 마지막 단",
+    "shardId": "book_1a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Stephen King",
+    "tags": [],
+    "searchTokens": [
+      "Stephen King",
+      "The Last Rung on the Ladder",
+      "stephenking",
+      "thelastrungontheladder",
+      "사다리의 마지막 단",
+      "사다리의마지막단"
+    ],
+    "titles": {
+      "ko": "사다리의 마지막 단",
+      "en": "The Last Rung on the Ladder"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004598",
+    "title": "사림광기",
+    "shardId": "book_82",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Chen Yuanjing",
+    "tags": [],
+    "searchTokens": [
+      "Chen Yuanjing",
+      "Shilin Guangji",
+      "chenyuanjing",
+      "shilinguangji",
+      "事林広記",
+      "사림광기"
+    ],
+    "titles": {
+      "ko": "사림광기",
+      "en": "Shilin Guangji",
+      "ja": "事林広記"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001997",
     "title": "사마법",
     "shardId": "book_c2",
@@ -2357,6 +5175,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000004726",
+    "title": "사명과 영혼의 경계",
+    "shardId": "book_a6",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Q10887054",
+      "keigohigashino",
+      "q10887054",
+      "使命と魂のリミット",
+      "사명과 영혼의 경계",
+      "사명과영혼의경계"
+    ],
+    "titles": {
+      "ko": "사명과 영혼의 경계",
+      "en": "Q10887054",
+      "ja": "使命と魂のリミット"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002477",
     "title": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
     "shardId": "book_aa",
@@ -2376,6 +5219,30 @@
       "ko": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
       "en": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
       "ja": "史上最強の大魔王、村人Aに転生する"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003658",
+    "title": "사신형사",
+    "shardId": "book_59",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Takahiro Ōkura",
+    "tags": [],
+    "searchTokens": [
+      "Q107391604",
+      "Takahiro Ōkura",
+      "q107391604",
+      "takahiroōkura",
+      "死神刑事",
+      "사신형사"
+    ],
+    "titles": {
+      "ko": "사신형사",
+      "en": "Q107391604",
+      "ja": "死神刑事"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2404,6 +5271,255 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005052",
+    "title": "사업가",
+    "shardId": "book_90",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Edgar Allan Poe",
+    "tags": [],
+    "searchTokens": [
+      "Edgar Allan Poe",
+      "The Business Man",
+      "edgarallanpoe",
+      "thebusinessman",
+      "사업가"
+    ],
+    "titles": {
+      "ko": "사업가",
+      "en": "The Business Man"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004098",
+    "title": "산중 문답",
+    "shardId": "book_a0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mountain Q&A",
+      "mountainq&a",
+      "산중 문답",
+      "산중문답"
+    ],
+    "titles": {
+      "ko": "산중 문답",
+      "en": "Mountain Q&A"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004379",
+    "title": "삼교원류수신대전",
+    "shardId": "book_75",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Comprehensive Collection of Deities from the Three Religions",
+      "comprehensivecollectionofdeitiesfromthethreereligions",
+      "三教源流捜神大全",
+      "삼교원류수신대전"
+    ],
+    "titles": {
+      "ko": "삼교원류수신대전",
+      "en": "Comprehensive Collection of Deities from the Three Religions",
+      "ja": "三教源流捜神大全"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004377",
+    "title": "삼국지평화",
+    "shardId": "book_1a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sanguozhi Pinghua",
+      "sanguozhipinghua",
+      "三国志平話",
+      "삼국지평화"
+    ],
+    "titles": {
+      "ko": "삼국지평화",
+      "en": "Sanguozhi Pinghua",
+      "ja": "三国志平話"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004381",
+    "title": "삼동주낭",
+    "shardId": "book_5c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Wang Xuanhe",
+    "tags": [],
+    "searchTokens": [
+      "A Bag of Pearls from the Three Caverns",
+      "Wang Xuanhe",
+      "abagofpearlsfromthethreecaverns",
+      "wangxuanhe",
+      "三洞珠囊",
+      "삼동주낭"
+    ],
+    "titles": {
+      "ko": "삼동주낭",
+      "en": "A Bag of Pearls from the Three Caverns",
+      "ja": "三洞珠囊"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004382",
+    "title": "삼보황도",
+    "shardId": "book_59",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Imperial Plan of the Three Capital Regions",
+      "imperialplanofthethreecapitalregions",
+      "三輔黄図",
+      "삼보황도"
+    ],
+    "titles": {
+      "ko": "삼보황도",
+      "en": "Imperial Plan of the Three Capital Regions",
+      "ja": "三輔黄図"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004380",
+    "title": "삼역",
+    "shardId": "book_13",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Three Books of Changes",
+      "threebooksofchanges",
+      "三易",
+      "삼역"
+    ],
+    "titles": {
+      "ko": "삼역",
+      "en": "Three Books of Changes",
+      "ja": "三易"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004384",
+    "title": "상궁기",
+    "shardId": "book_a7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Jōgūki",
+      "jōgūki",
+      "上宮記",
+      "상궁기"
+    ],
+    "titles": {
+      "ko": "상궁기",
+      "en": "Jōgūki",
+      "ja": "上宮記"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004169",
+    "title": "새들이 모조리 사라진다면",
+    "shardId": "book_aa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Richard Powers",
+    "tags": [],
+    "searchTokens": [
+      "Bewilderment",
+      "Richard Powers",
+      "bewilderment",
+      "richardpowers",
+      "새들이 모조리 사라진다면",
+      "새들이모조리사라진다면"
+    ],
+    "titles": {
+      "ko": "새들이 모조리 사라진다면",
+      "en": "Bewilderment"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004316",
+    "title": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+    "shardId": "book_6a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Haruki Murakami",
+    "tags": [],
+    "searchTokens": [
+      "Colorless Tsukuru Tazaki and His Years of Pilgrimage",
+      "Haruki Murakami",
+      "colorlesstsukurutazakiandhisyearsofpilgrimage",
+      "harukimurakami",
+      "色彩を持たない多崎つくると、彼の巡礼の年",
+      "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+      "색채가없는다자키쓰쿠루와그가순례를떠난해"
+    ],
+    "titles": {
+      "ko": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+      "en": "Colorless Tsukuru Tazaki and His Years of Pilgrimage",
+      "ja": "色彩を持たない多崎つくると、彼の巡礼の年"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005305",
+    "title": "생명의 정거장",
+    "shardId": "book_94",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "南杏子",
+    "tags": [],
+    "searchTokens": [
+      "Q109358340",
+      "q109358340",
+      "いのちの停車場",
+      "南杏子",
+      "생명의 정거장",
+      "생명의정거장"
+    ],
+    "titles": {
+      "ko": "생명의 정거장",
+      "en": "Q109358340",
+      "ja": "いのちの停車場"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001479",
     "title": "샤인",
     "shardId": "book_9a",
@@ -2423,6 +5539,53 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003222",
+    "title": "서리 거인의 딸",
+    "shardId": "book_ff",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Robert E. Howard",
+    "tags": [],
+    "searchTokens": [
+      "Robert E. Howard",
+      "The Frost-Giant's Daughter",
+      "roberte.howard",
+      "thefrostgiant'sdaughter",
+      "서리 거인의 딸",
+      "서리거인의딸"
+    ],
+    "titles": {
+      "ko": "서리 거인의 딸",
+      "en": "The Frost-Giant's Daughter"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004016",
+    "title": "서풍",
+    "shardId": "book_8a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "サマンサ・ハーヴィー",
+    "tags": [],
+    "searchTokens": [
+      "The Western Wind",
+      "thewesternwind",
+      "サマンサハーヴィー",
+      "サマンサ・ハーヴィー",
+      "西風",
+      "서풍"
+    ],
+    "titles": {
+      "ko": "서풍",
+      "en": "The Western Wind",
+      "ja": "西風"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000868",
@@ -2445,6 +5608,54 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004099",
+    "title": "선종영가집",
+    "shardId": "book_b1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yongjia Xuanjue",
+    "tags": [],
+    "searchTokens": [
+      "Essence of Zen Buddhism",
+      "Yongjia Xuanjue",
+      "essenceofzenbuddhism",
+      "yongjiaxuanjue",
+      "禅宗永嘉集",
+      "선종영가집"
+    ],
+    "titles": {
+      "ko": "선종영가집",
+      "en": "Essence of Zen Buddhism",
+      "ja": "禅宗永嘉集"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003487",
+    "title": "설문해자",
+    "shardId": "book_76",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xu Shen",
+    "tags": [],
+    "searchTokens": [
+      "Shuowen Jiezi",
+      "Xu Shen",
+      "shuowenjiezi",
+      "xushen",
+      "説文解字",
+      "설문해자"
+    ],
+    "titles": {
+      "ko": "설문해자",
+      "en": "Shuowen Jiezi",
+      "ja": "説文解字"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001775",
@@ -2773,6 +5984,55 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003138",
+    "title": "수경주",
+    "shardId": "book_7a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Li Daoyuan",
+    "tags": [],
+    "searchTokens": [
+      "Commentary on the Water Classic",
+      "Li Daoyuan",
+      "commentaryonthewaterclassic",
+      "lidaoyuan",
+      "水経注",
+      "수경주"
+    ],
+    "titles": {
+      "ko": "수경주",
+      "en": "Commentary on the Water Classic",
+      "ja": "水経注"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004721",
+    "title": "수명",
+    "shardId": "book_d1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shiho Tanimura",
+    "tags": [],
+    "searchTokens": [
+      "Shiho Tanimura",
+      "Yomei",
+      "shihotanimura",
+      "yomei",
+      "余命 (小説)",
+      "余命(小説)",
+      "수명"
+    ],
+    "titles": {
+      "ko": "수명",
+      "en": "Yomei",
+      "ja": "余命 (小説)"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002925",
     "title": "수학 귀신",
     "shardId": "book_4e",
@@ -2821,6 +6081,99 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004665",
+    "title": "순례자의 길",
+    "shardId": "book_fa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "Pilgrims Way",
+      "abdulrazakgurnah",
+      "pilgrimsway",
+      "순례자의 길",
+      "순례자의길"
+    ],
+    "titles": {
+      "ko": "순례자의 길",
+      "en": "Pilgrims Way"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003738",
+    "title": "숨겨진 건 죽음",
+    "shardId": "book_58",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Anthony Horowitz",
+    "tags": [],
+    "searchTokens": [
+      "Anthony Horowitz",
+      "The Sentence is Death",
+      "anthonyhorowitz",
+      "thesentenceisdeath",
+      "숨겨진 건 죽음",
+      "숨겨진건죽음"
+    ],
+    "titles": {
+      "ko": "숨겨진 건 죽음",
+      "en": "The Sentence is Death"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004015",
+    "title": "스나크 사냥",
+    "shardId": "book_e4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Lewis Carroll",
+    "tags": [],
+    "searchTokens": [
+      "Lewis Carroll",
+      "The Hunting of the Snark",
+      "lewiscarroll",
+      "thehuntingofthesnark",
+      "スナーク狩り",
+      "스나크 사냥",
+      "스나크사냥"
+    ],
+    "titles": {
+      "ko": "스나크 사냥",
+      "en": "The Hunting of the Snark",
+      "ja": "スナーク狩り"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004457",
+    "title": "스모크",
+    "shardId": "book_b7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "SMOKE",
+      "Smoke",
+      "smoke",
+      "스모크"
+    ],
+    "titles": {
+      "ko": "스모크",
+      "en": "Smoke",
+      "ja": "SMOKE"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002566",
@@ -3009,6 +6362,81 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005248",
+    "title": "신비의 제왕",
+    "shardId": "book_ac",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Cuttlefish That Loves Diving",
+    "tags": [],
+    "searchTokens": [
+      "Cuttlefish That Loves Diving",
+      "Lord of Mysteries",
+      "cuttlefishthatlovesdiving",
+      "lordofmysteries",
+      "詭秘の主",
+      "신비의 제왕",
+      "신비의제왕"
+    ],
+    "titles": {
+      "ko": "신비의 제왕",
+      "en": "Lord of Mysteries",
+      "ja": "詭秘の主"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003048",
+    "title": "신의 수호자",
+    "shardId": "book_ca",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "우에하시 나호코",
+    "tags": [],
+    "searchTokens": [
+      "Guardian of the God",
+      "guardianofthegod",
+      "神の守り人",
+      "신의 수호자",
+      "신의수호자",
+      "우에하시 나호코",
+      "우에하시나호코"
+    ],
+    "titles": {
+      "ko": "신의 수호자",
+      "en": "Guardian of the God",
+      "ja": "神の守り人"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003392",
+    "title": "신자 0명 여신님과 시작하는 이세계 공략",
+    "shardId": "book_f9",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Airu Ōsaki",
+    "tags": [],
+    "searchTokens": [
+      "Airu Ōsaki",
+      "Full Clearing Another World under a Goddess with Zero Believers",
+      "airuōsaki",
+      "fullclearinganotherworldunderagoddesswithzerobelievers",
+      "信者ゼロの女神サマと始める異世界攻略",
+      "신자 0명 여신님과 시작하는 이세계 공략",
+      "신자0명여신님과시작하는이세계공략"
+    ],
+    "titles": {
+      "ko": "신자 0명 여신님과 시작하는 이세계 공략",
+      "en": "Full Clearing Another World under a Goddess with Zero Believers",
+      "ja": "信者ゼロの女神サマと始める異世界攻略"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001083",
     "title": "신장공기",
     "shardId": "book_83",
@@ -3080,6 +6508,52 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004987",
+    "title": "십선업도경",
+    "shardId": "book_e1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sūtra of the Path of the Ten Virtues",
+      "sūtraofthepathofthetenvirtues",
+      "十善業道経",
+      "십선업도경"
+    ],
+    "titles": {
+      "ko": "십선업도경",
+      "en": "Sūtra of the Path of the Ten Virtues",
+      "ja": "十善業道経"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004988",
+    "title": "십지경론",
+    "shardId": "book_ad",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Vasubandhu",
+    "tags": [],
+    "searchTokens": [
+      "Commentary on the Ten Stages Sutra",
+      "Vasubandhu",
+      "commentaryonthetenstagessutra",
+      "vasubandhu",
+      "十地経論",
+      "십지경론"
+    ],
+    "titles": {
+      "ko": "십지경론",
+      "en": "Commentary on the Ten Stages Sutra",
+      "ja": "十地経論"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000936",
     "title": "아름다운 아이 샬롯 이야기",
     "shardId": "book_02",
@@ -3121,6 +6595,31 @@
     "titles": {
       "ko": "아름다운 아이 크리스 이야기",
       "en": "Pluto: A Wonder Story"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004912",
+    "title": "아무것도 남지 않은 남자",
+    "shardId": "book_c6",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Edgar Allan Poe",
+    "tags": [],
+    "searchTokens": [
+      "Edgar Allan Poe",
+      "The Man That Was Used Up",
+      "edgarallanpoe",
+      "themanthatwasusedup",
+      "使い果たされた男",
+      "아무것도 남지 않은 남자",
+      "아무것도남지않은남자"
+    ],
+    "titles": {
+      "ko": "아무것도 남지 않은 남자",
+      "en": "The Man That Was Used Up",
+      "ja": "使い果たされた男"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -3231,6 +6730,170 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005158",
+    "title": "아이언 위도우: 죽음을 삼킨 여자",
+    "shardId": "book_db",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xiran Jay Zhao",
+    "tags": [],
+    "searchTokens": [
+      "Iron Widow",
+      "Xiran Jay Zhao",
+      "ironwidow",
+      "xiranjayzhao",
+      "鋼鉄紅女",
+      "아이언 위도우: 죽음을 삼킨 여자",
+      "아이언위도우죽음을삼킨여자"
+    ],
+    "titles": {
+      "ko": "아이언 위도우: 죽음을 삼킨 여자",
+      "en": "Iron Widow",
+      "ja": "鋼鉄紅女"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004103",
+    "title": "아인 박사의 마지막 비행",
+    "shardId": "book_00",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Alice Bradley Sheldon",
+    "tags": [],
+    "searchTokens": [
+      "Alice Bradley Sheldon",
+      "The Last Flight of Dr. Ain",
+      "alicebradleysheldon",
+      "thelastflightofdr.ain",
+      "아인 박사의 마지막 비행",
+      "아인박사의마지막비행"
+    ],
+    "titles": {
+      "ko": "아인 박사의 마지막 비행",
+      "en": "The Last Flight of Dr. Ain"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004534",
+    "title": "아펜니노산맥에서 안데스산맥까지",
+    "shardId": "book_81",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Edmondo de Amicis",
+    "tags": [],
+    "searchTokens": [
+      "Edmondo de Amicis",
+      "From the Apennines to the Andes",
+      "edmondodeamicis",
+      "fromtheapenninestotheandes",
+      "아펜니노산맥에서 안데스산맥까지",
+      "아펜니노산맥에서안데스산맥까지"
+    ],
+    "titles": {
+      "ko": "아펜니노산맥에서 안데스산맥까지",
+      "en": "From the Apennines to the Andes"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003490",
+    "title": "악몽과 몽상",
+    "shardId": "book_00",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Stephen King",
+    "tags": [],
+    "searchTokens": [
+      "Nightmares & Dreamscapes",
+      "Stephen King",
+      "nightmares&dreamscapes",
+      "stephenking",
+      "악몽과 몽상",
+      "악몽과몽상"
+    ],
+    "titles": {
+      "ko": "악몽과 몽상",
+      "en": "Nightmares & Dreamscapes"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004597",
+    "title": "악부시집",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "郭茂倩",
+    "tags": [],
+    "searchTokens": [
+      "Collection of Yuefu Lyric Poems",
+      "collectionofyuefulyricpoems",
+      "楽府詩集",
+      "郭茂倩",
+      "악부시집"
+    ],
+    "titles": {
+      "ko": "악부시집",
+      "en": "Collection of Yuefu Lyric Poems",
+      "ja": "楽府詩集"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004838",
+    "title": "악역 영애이기 때문에 최종 보스를 길러보았습니다",
+    "shardId": "book_80",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Sarasa Nagase",
+    "tags": [],
+    "searchTokens": [
+      "I'm the Villainess, So I'm Taming the Final Boss",
+      "Sarasa Nagase",
+      "i'mthevillainess,soi'mtamingthefinalboss",
+      "sarasanagase",
+      "悪役令嬢なのでラスボスを飼ってみました",
+      "악역 영애이기 때문에 최종 보스를 길러보았습니다",
+      "악역영애이기때문에최종보스를길러보았습니다"
+    ],
+    "titles": {
+      "ko": "악역 영애이기 때문에 최종 보스를 길러보았습니다",
+      "en": "I'm the Villainess, So I'm Taming the Final Boss",
+      "ja": "悪役令嬢なのでラスボスを飼ってみました"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005301",
+    "title": "암병동",
+    "shardId": "book_ad",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Aleksandr Solzhenitsyn",
+    "tags": [],
+    "searchTokens": [
+      "Aleksandr Solzhenitsyn",
+      "Cancer Ward",
+      "aleksandrsolzhenitsyn",
+      "cancerward",
+      "암병동"
+    ],
+    "titles": {
+      "ko": "암병동",
+      "en": "Cancer Ward"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000630",
     "title": "앨리스 죽이기",
     "shardId": "book_d2",
@@ -3276,6 +6939,75 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003308",
+    "title": "야간비행",
+    "shardId": "book_6c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Antoine de Saint-Exupéry",
+    "tags": [],
+    "searchTokens": [
+      "Antoine de Saint-Exupéry",
+      "Night Flight",
+      "antoinedesaintexupéry",
+      "nightflight",
+      "夜間飛行",
+      "야간비행"
+    ],
+    "titles": {
+      "ko": "야간비행",
+      "en": "Night Flight",
+      "ja": "夜間飛行"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003878",
+    "title": "야생 조립체에 바치는 찬가",
+    "shardId": "book_79",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Becky Chambers",
+    "tags": [],
+    "searchTokens": [
+      "A Psalm for the Wild-Built",
+      "Becky Chambers",
+      "apsalmforthewildbuilt",
+      "beckychambers",
+      "야생 조립체에 바치는 찬가",
+      "야생조립체에바치는찬가"
+    ],
+    "titles": {
+      "ko": "야생 조립체에 바치는 찬가",
+      "en": "A Psalm for the Wild-Built"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004455",
+    "title": "약속",
+    "shardId": "book_f3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Damon Galgut",
+    "tags": [],
+    "searchTokens": [
+      "Damon Galgut",
+      "The Promise",
+      "damongalgut",
+      "thepromise",
+      "약속"
+    ],
+    "titles": {
+      "ko": "약속",
+      "en": "The Promise"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000685",
@@ -3342,6 +7074,28 @@
     "titles": {
       "ko": "어떻게 지내요",
       "en": "What Are You Going Through"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004020",
+    "title": "어른들",
+    "shardId": "book_08",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Marie Aubert",
+    "tags": [],
+    "searchTokens": [
+      "Grown-ups",
+      "Marie Aubert",
+      "grownups",
+      "marieaubert",
+      "어른들"
+    ],
+    "titles": {
+      "ko": "어른들",
+      "en": "Grown-ups"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -3418,6 +7172,51 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004376",
+    "title": "에다",
+    "shardId": "book_65",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Edda",
+      "edda",
+      "エッダ",
+      "에다"
+    ],
+    "titles": {
+      "ko": "에다",
+      "en": "Edda",
+      "ja": "エッダ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005159",
+    "title": "에리스의 성배",
+    "shardId": "book_64",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Holy Grail of Eris",
+      "theholygrailoferis",
+      "エリスの聖杯",
+      "에리스의 성배",
+      "에리스의성배"
+    ],
+    "titles": {
+      "ko": "에리스의 성배",
+      "en": "The Holy Grail of Eris",
+      "ja": "エリスの聖杯"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000753",
     "title": "에코의 폭풍",
     "shardId": "book_48",
@@ -3461,6 +7260,31 @@
       "ko": "여덟 번의 시계 종소리",
       "en": "The Eight Strokes of the Clock",
       "ja": "八点鐘"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003806",
+    "title": "여름을 향한 터널, 이별의 출구",
+    "shardId": "book_8a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Mei Hachimoku",
+    "tags": [],
+    "searchTokens": [
+      "Mei Hachimoku",
+      "The Tunnel to Summer, the Exit of Goodbye",
+      "meihachimoku",
+      "thetunneltosummer,theexitofgoodbye",
+      "夏へのトンネル、さよならの出口",
+      "여름을 향한 터널, 이별의 출구",
+      "여름을향한터널,이별의출구"
+    ],
+    "titles": {
+      "ko": "여름을 향한 터널, 이별의 출구",
+      "en": "The Tunnel to Summer, the Exit of Goodbye",
+      "ja": "夏へのトンネル、さよならの出口"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -3513,6 +7337,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005047",
+    "title": "역세진선체도통감",
+    "shardId": "book_64",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Daoyi Zhao",
+    "tags": [],
+    "searchTokens": [
+      "Daoyi Zhao",
+      "Mirror of the Way and Virtue: A Chronicle of True Immortals through the Ages",
+      "daoyizhao",
+      "mirrorofthewayandvirtueachronicleoftrueimmortalsthroughtheages",
+      "歴世真仙体道通鑑",
+      "역세진선체도통감"
+    ],
+    "titles": {
+      "ko": "역세진선체도통감",
+      "en": "Mirror of the Way and Virtue: A Chronicle of True Immortals through the Ages",
+      "ja": "歴世真仙体道通鑑"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001778",
     "title": "연방주의자 논문 제10호",
     "shardId": "book_c5",
@@ -3531,6 +7379,30 @@
     "titles": {
       "ko": "연방주의자 논문 제10호",
       "en": "Federalist No. 10"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004383",
+    "title": "영웅교실",
+    "shardId": "book_c8",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shin Araki",
+    "tags": [],
+    "searchTokens": [
+      "Classroom for Heroes",
+      "Shin Araki",
+      "classroomforheroes",
+      "shinaraki",
+      "英雄教室",
+      "영웅교실"
+    ],
+    "titles": {
+      "ko": "영웅교실",
+      "en": "Classroom for Heroes",
+      "ja": "英雄教室"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -3583,6 +7455,144 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004603",
+    "title": "오경산술",
+    "shardId": "book_32",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "五経算術",
+      "五經算術",
+      "오경산술"
+    ],
+    "titles": {
+      "ko": "오경산술",
+      "ja": "五経算術",
+      "zh": "五經算術"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004459",
+    "title": "오공입축기",
+    "shardId": "book_aa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q10872595",
+      "q10872595",
+      "悟空入竺記",
+      "오공입축기"
+    ],
+    "titles": {
+      "ko": "오공입축기",
+      "en": "Q10872595",
+      "ja": "悟空入竺記"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005156",
+    "title": "오동우",
+    "shardId": "book_95",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Bai Renfu",
+    "tags": [],
+    "searchTokens": [
+      "Bai Renfu",
+      "Tang Minghuang on an Autumn Night with Wutong Tree and Rain",
+      "bairenfu",
+      "tangminghuangonanautumnnightwithwutongtreeandrain",
+      "梧桐雨",
+      "오동우"
+    ],
+    "titles": {
+      "ko": "오동우",
+      "en": "Tang Minghuang on an Autumn Night with Wutong Tree and Rain",
+      "ja": "梧桐雨"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004602",
+    "title": "오등회원",
+    "shardId": "book_ef",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shi Puji",
+    "tags": [],
+    "searchTokens": [
+      "A Compendium of the Five Lamps",
+      "Shi Puji",
+      "acompendiumofthefivelamps",
+      "shipuji",
+      "五灯会元",
+      "오등회원"
+    ],
+    "titles": {
+      "ko": "오등회원",
+      "en": "A Compendium of the Five Lamps",
+      "ja": "五灯会元"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004170",
+    "title": "오래된 정원",
+    "shardId": "book_ee",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Hwang Sok-yong",
+    "tags": [],
+    "searchTokens": [
+      "Hwang Sok-yong",
+      "The Old Garden",
+      "hwangsokyong",
+      "theoldgarden",
+      "오래된 정원",
+      "오래된정원"
+    ],
+    "titles": {
+      "ko": "오래된 정원",
+      "en": "The Old Garden"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004601",
+    "title": "오륜서",
+    "shardId": "book_57",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xuande Emperor",
+    "tags": [],
+    "searchTokens": [
+      "Book of the Five Relationships",
+      "Xuande Emperor",
+      "bookofthefiverelationships",
+      "xuandeemperor",
+      "五倫書",
+      "오륜서"
+    ],
+    "titles": {
+      "ko": "오륜서",
+      "en": "Book of the Five Relationships",
+      "ja": "五倫書"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000011",
@@ -3695,6 +7705,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003304",
+    "title": "옥편",
+    "shardId": "book_c8",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Gu Yewang",
+    "tags": [],
+    "searchTokens": [
+      "Gu Yewang",
+      "Yupian",
+      "guyewang",
+      "yupian",
+      "玉篇",
+      "옥편"
+    ],
+    "titles": {
+      "ko": "옥편",
+      "en": "Yupian",
+      "ja": "玉篇"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001193",
     "title": "완벽하게 사라지는 방법",
     "shardId": "book_b0",
@@ -3739,6 +7773,125 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005103",
+    "title": "외침",
+    "shardId": "book_e4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "魯迅",
+    "tags": [],
+    "searchTokens": [
+      "Call to Arms",
+      "calltoarms",
+      "吶喊",
+      "魯迅",
+      "외침"
+    ],
+    "titles": {
+      "ko": "외침",
+      "en": "Call to Arms",
+      "ja": "吶喊"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003221",
+    "title": "외톨이의 이세계 공략",
+    "shardId": "book_7a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Loner Life in Another World",
+      "lonerlifeinanotherworld",
+      "ひとりぼっちの異世界攻略",
+      "외톨이의 이세계 공략",
+      "외톨이의이세계공략"
+    ],
+    "titles": {
+      "ko": "외톨이의 이세계 공략",
+      "en": "Loner Life in Another World",
+      "ja": "ひとりぼっちの異世界攻略"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003141",
+    "title": "요가수트라",
+    "shardId": "book_1d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Patanjali",
+    "tags": [],
+    "searchTokens": [
+      "Patanjali",
+      "Yoga Sutras of Patanjali",
+      "patanjali",
+      "yogasutrasofpatanjali",
+      "ヨーガスートラ",
+      "ヨーガ・スートラ",
+      "요가수트라"
+    ],
+    "titles": {
+      "ko": "요가수트라",
+      "en": "Yoga Sutras of Patanjali",
+      "ja": "ヨーガ・スートラ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003739",
+    "title": "요한의 양피지",
+    "shardId": "book_7e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Joseph Smith",
+    "tags": [],
+    "searchTokens": [
+      "Account of John",
+      "Joseph Smith",
+      "accountofjohn",
+      "josephsmith",
+      "ヨハネの羊皮紙",
+      "요한의 양피지",
+      "요한의양피지"
+    ],
+    "titles": {
+      "ko": "요한의 양피지",
+      "en": "Account of John",
+      "ja": "ヨハネの羊皮紙"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004983",
+    "title": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+    "shardId": "book_f4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "I'm Quitting Heroing",
+      "i'mquittingheroing",
+      "勇者、辞めます～次の職場は魔王城～",
+      "용사, 그만둡니다 ~다음 직장은 마왕성~",
+      "용사,그만둡니다~다음직장은마왕성~"
+    ],
+    "titles": {
+      "ko": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+      "en": "I'm Quitting Heroing",
+      "ja": "勇者、辞めます～次の職場は魔王城～"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000254",
@@ -3846,6 +7999,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005107",
+    "title": "울던 빨강오니",
+    "shardId": "book_b7",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Hirosuke Hamada",
+    "tags": [],
+    "searchTokens": [
+      "Hirosuke Hamada",
+      "Q10922429",
+      "hirosukehamada",
+      "q10922429",
+      "泣いた赤鬼",
+      "울던 빨강오니",
+      "울던빨강오니"
+    ],
+    "titles": {
+      "ko": "울던 빨강오니",
+      "en": "Q10922429",
+      "ja": "泣いた赤鬼"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001939",
     "title": "울요자",
     "shardId": "book_8d",
@@ -3863,6 +8041,76 @@
       "ko": "울요자",
       "en": "Wei Liaozi",
       "ja": "尉繚子"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003734",
+    "title": "워르테니아 전기",
+    "shardId": "book_5a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Record of Wortenia War",
+      "recordofworteniawar",
+      "ウォルテニア戦記",
+      "워르테니아 전기",
+      "워르테니아전기"
+    ],
+    "titles": {
+      "ko": "워르테니아 전기",
+      "en": "Record of Wortenia War",
+      "ja": "ウォルテニア戦記"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003807",
+    "title": "위대한 도시들",
+    "shardId": "book_32",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "N. K. Jemisin",
+    "tags": [],
+    "searchTokens": [
+      "Great Cities",
+      "N. K. Jemisin",
+      "greatcities",
+      "n.k.jemisin",
+      "위대한 도시들",
+      "위대한도시들"
+    ],
+    "titles": {
+      "ko": "위대한 도시들",
+      "en": "Great Cities"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003944",
+    "title": "위키백과:위키백과 중독",
+    "shardId": "book_a5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Wikipedia:Wikipediholic",
+      "Wikipedia:ウィキペディア中毒",
+      "wikipediawikipediholic",
+      "wikipediaウィキペディア中毒",
+      "위키백과:위키백과 중독",
+      "위키백과위키백과중독"
+    ],
+    "titles": {
+      "ko": "위키백과:위키백과 중독",
+      "en": "Wikipedia:Wikipediholic",
+      "ja": "Wikipedia:ウィキペディア中毒"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4086,6 +8334,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000002982",
+    "title": "의매생활",
+    "shardId": "book_ca",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Ghost Mikawa",
+    "tags": [],
+    "searchTokens": [
+      "Days With My Stepsister",
+      "Ghost Mikawa",
+      "dayswithmystepsister",
+      "ghostmikawa",
+      "義妹生活",
+      "의매생활"
+    ],
+    "titles": {
+      "ko": "의매생활",
+      "en": "Days With My Stepsister",
+      "ja": "義妹生活"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000000255",
     "title": "이 멋진 세계에 축복을!",
     "shardId": "book_91",
@@ -4166,6 +8438,52 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005244",
+    "title": "이세계 소환은 두 번째입니다",
+    "shardId": "book_05",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Summoned to Another World... Again?",
+      "summonedtoanotherworld...again?",
+      "異世界召喚は二度目です",
+      "이세계 소환은 두 번째입니다",
+      "이세계소환은두번째입니다"
+    ],
+    "titles": {
+      "ko": "이세계 소환은 두 번째입니다",
+      "en": "Summoned to Another World... Again?",
+      "ja": "異世界召喚は二度目です"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005162",
+    "title": "이수라",
+    "shardId": "book_ec",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "珪素",
+    "tags": [],
+    "searchTokens": [
+      "Ishura",
+      "ishura",
+      "珪素",
+      "異修羅",
+      "이수라"
+    ],
+    "titles": {
+      "ko": "이수라",
+      "en": "Ishura",
+      "ja": "異修羅"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001940",
     "title": "이위공문대",
     "shardId": "book_9d",
@@ -4233,6 +8551,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000004021",
+    "title": "인간 불신 모험가들이 세계를 구하는 듯합니다",
+    "shardId": "book_03",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Apparently, Disillusioned Adventurers Will Save the World",
+      "apparently,disillusionedadventurerswillsavetheworld",
+      "人間不信の冒険者たちが世界を救うようです",
+      "인간 불신 모험가들이 세계를 구하는 듯합니다",
+      "인간불신모험가들이세계를구하는듯합니다"
+    ],
+    "titles": {
+      "ko": "인간 불신 모험가들이 세계를 구하는 듯합니다",
+      "en": "Apparently, Disillusioned Adventurers Will Save the World",
+      "ja": "人間不信の冒険者たちが世界を救うようです"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002417",
     "title": "인명입정리론수",
     "shardId": "book_59",
@@ -4278,6 +8619,31 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004596",
+    "title": "인민을 위해 복무하라",
+    "shardId": "book_11",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yan Lianke",
+    "tags": [],
+    "searchTokens": [
+      "Serve the People!",
+      "Yan Lianke",
+      "servethepeople!",
+      "yanlianke",
+      "為人民服務",
+      "인민을 위해 복무하라",
+      "인민을위해복무하라"
+    ],
+    "titles": {
+      "ko": "인민을 위해 복무하라",
+      "en": "Serve the People!",
+      "ja": "為人民服務"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000002093",
@@ -4349,6 +8715,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003883",
+    "title": "일본후기",
+    "shardId": "book_47",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fujiwara no Yoshifusa",
+    "tags": [],
+    "searchTokens": [
+      "Fujiwara no Yoshifusa",
+      "Nihon Kōki",
+      "fujiwaranoyoshifusa",
+      "nihonkōki",
+      "日本後紀",
+      "일본후기"
+    ],
+    "titles": {
+      "ko": "일본후기",
+      "en": "Nihon Kōki",
+      "ja": "日本後紀"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001529",
     "title": "일인칭 단수",
     "shardId": "book_61",
@@ -4372,6 +8762,29 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003307",
+    "title": "잃어버린 희망",
+    "shardId": "book_6d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Colleen Hoover",
+    "tags": [],
+    "searchTokens": [
+      "Colleen Hoover",
+      "Hopeless",
+      "colleenhoover",
+      "hopeless",
+      "잃어버린 희망",
+      "잃어버린희망"
+    ],
+    "titles": {
+      "ko": "잃어버린 희망",
+      "en": "Hopeless"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000987",
@@ -4400,6 +8813,32 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003737",
+    "title": "자본주의, 사회주의",
+    "shardId": "book_03",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Joseph Schumpeter",
+    "tags": [],
+    "searchTokens": [
+      "Capitalism, Socialism and Democracy",
+      "Joseph Schumpeter",
+      "capitalism,socialismanddemocracy",
+      "josephschumpeter",
+      "資本主義・社会主義・民主主義",
+      "資本主義社会主義民主主義",
+      "자본주의, 사회주의",
+      "자본주의,사회주의"
+    ],
+    "titles": {
+      "ko": "자본주의, 사회주의",
+      "en": "Capitalism, Socialism and Democracy",
+      "ja": "資本主義・社会主義・民主主義"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001714",
     "title": "자비의 시간",
     "shardId": "book_d3",
@@ -4423,6 +8862,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004375",
+    "title": "작은 사건",
+    "shardId": "book_02",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "魯迅",
+    "tags": [],
+    "searchTokens": [
+      "A Small Incident",
+      "asmallincident",
+      "些細な事件",
+      "魯迅",
+      "작은 사건",
+      "작은사건"
+    ],
+    "titles": {
+      "ko": "작은 사건",
+      "en": "A Small Incident",
+      "ja": "些細な事件"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000517",
     "title": "잔혹한 어머니의 날",
     "shardId": "book_13",
@@ -4444,6 +8907,50 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003740",
+    "title": "장자",
+    "shardId": "book_34",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "荘子",
+    "tags": [],
+    "searchTokens": [
+      "Zhuangzi",
+      "zhuangzi",
+      "荘子",
+      "장자"
+    ],
+    "titles": {
+      "ko": "장자",
+      "en": "Zhuangzi",
+      "ja": "荘子"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004839",
+    "title": "전당문",
+    "shardId": "book_af",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Quantangwen",
+      "quantangwen",
+      "全唐文",
+      "전당문"
+    ],
+    "titles": {
+      "ko": "전당문",
+      "en": "Quantangwen",
+      "ja": "全唐文"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000261",
@@ -4477,6 +8984,31 @@
     "qualityTier": 5
   },
   {
+    "workId": "wk_000005161",
+    "title": "전생 왕녀와 천재 영애의 마법 혁명",
+    "shardId": "book_c1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Piero Karasu",
+    "tags": [],
+    "searchTokens": [
+      "Piero Karasu",
+      "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady",
+      "pierokarasu",
+      "themagicalrevolutionofthereincarnatedprincessandthegeniusyounglady",
+      "転生王女と天才令嬢の魔法革命",
+      "전생 왕녀와 천재 영애의 마법 혁명",
+      "전생왕녀와천재영애의마법혁명"
+    ],
+    "titles": {
+      "ko": "전생 왕녀와 천재 영애의 마법 혁명",
+      "en": "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady",
+      "ja": "転生王女と天才令嬢の魔法革命"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002001",
     "title": "전생현자의 이세계 라이프 ~제2의 직업을 얻어 세계최강이 되었습니다~",
     "shardId": "book_5b",
@@ -4503,6 +9035,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003485",
+    "title": "전학 간 학교의 청순가련한 미소녀가 옛날에 남자라고 생각해서 같이 놀던 소꿉친구였던 일",
+    "shardId": "book_ab",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Yu Hibari",
+    "tags": [],
+    "searchTokens": [
+      "Tenkōsaki no Seiso Karen na Bishōjo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+      "Yu Hibari",
+      "tenkōsakinoseisokarennabishōjoga,mukashidanshitoomotteisshoniasondaosananajimidattaken",
+      "yuhibari",
+      "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件",
+      "전학 간 학교의 청순가련한 미소녀가 옛날에 남자라고 생각해서 같이 놀던 소꿉친구였던 일",
+      "전학간학교의청순가련한미소녀가옛날에남자라고생각해서같이놀던소꿉친구였던일"
+    ],
+    "titles": {
+      "ko": "전학 간 학교의 청순가련한 미소녀가 옛날에 남자라고 생각해서 같이 놀던 소꿉친구였던 일",
+      "en": "Tenkōsaki no Seiso Karen na Bishōjo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken",
+      "ja": "転校先の清楚可憐な美少女が、昔男子と思って一緒に遊んだ幼馴染だった件"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002924",
     "title": "젊은 개예술가의 초상",
     "shardId": "book_65",
@@ -4521,6 +9078,75 @@
     "titles": {
       "ko": "젊은 개예술가의 초상",
       "en": "Portrait of the Artist as a Young Dog"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004991",
+    "title": "점성술 살인사건",
+    "shardId": "book_b1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "島田荘司",
+    "tags": [],
+    "searchTokens": [
+      "The Tokyo Zodiac Murders",
+      "thetokyozodiacmurders",
+      "占星術殺人事件",
+      "島田荘司",
+      "점성술 살인사건",
+      "점성술살인사건"
+    ],
+    "titles": {
+      "ko": "점성술 살인사건",
+      "en": "The Tokyo Zodiac Murders",
+      "ja": "占星術殺人事件"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004990",
+    "title": "점찰선악업보경",
+    "shardId": "book_29",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sutra of Detecting Good and Evil Karma and Requital",
+      "sutraofdetectinggoodandevilkarmaandrequital",
+      "占察善悪業報経済",
+      "점찰선악업보경"
+    ],
+    "titles": {
+      "ko": "점찰선악업보경",
+      "en": "Sutra of Detecting Good and Evil Karma and Requital",
+      "ja": "占察善悪業報経済"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003223",
+    "title": "정의가 잠든 사이에",
+    "shardId": "book_21",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ステイシー・エイブラムス",
+    "tags": [],
+    "searchTokens": [
+      "While Justice Sleeps",
+      "whilejusticesleeps",
+      "ステイシーエイブラムス",
+      "ステイシー・エイブラムス",
+      "정의가 잠든 사이에",
+      "정의가잠든사이에"
+    ],
+    "titles": {
+      "ko": "정의가 잠든 사이에",
+      "en": "While Justice Sleeps"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -4599,6 +9225,98 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000002983",
+    "title": "죽은 자들의 메아리",
+    "shardId": "book_de",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Johan Theorin",
+    "tags": [],
+    "searchTokens": [
+      "Johan Theorin",
+      "Q10670729",
+      "johantheorin",
+      "q10670729",
+      "죽은 자들의 메아리",
+      "죽은자들의메아리"
+    ],
+    "titles": {
+      "ko": "죽은 자들의 메아리",
+      "en": "Q10670729"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005051",
+    "title": "죽은 자들이여 일어나라",
+    "shardId": "book_68",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fred Vargas",
+    "tags": [],
+    "searchTokens": [
+      "Debout les morts",
+      "Fred Vargas",
+      "deboutlesmorts",
+      "fredvargas",
+      "죽은 자들이여 일어나라",
+      "죽은자들이여일어나라"
+    ],
+    "titles": {
+      "ko": "죽은 자들이여 일어나라",
+      "en": "Debout les morts"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004461",
+    "title": "중국소설사략",
+    "shardId": "book_fa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "魯迅",
+    "tags": [],
+    "searchTokens": [
+      "A Brief History of Chinese Fiction",
+      "abriefhistoryofchinesefiction",
+      "魯迅",
+      "중국소설사략"
+    ],
+    "titles": {
+      "ko": "중국소설사략",
+      "en": "A Brief History of Chinese Fiction"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004529",
+    "title": "중국의 몰락",
+    "shardId": "book_1a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Gordon G. Chang",
+    "tags": [],
+    "searchTokens": [
+      "Gordon G. Chang",
+      "The Coming Collapse of China",
+      "gordong.chang",
+      "thecomingcollapseofchina",
+      "中国即将崩溃",
+      "중국의 몰락",
+      "중국의몰락"
+    ],
+    "titles": {
+      "ko": "중국의 몰락",
+      "en": "The Coming Collapse of China",
+      "ja": "中国即将崩溃"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001438",
     "title": "중국인 거리",
     "shardId": "book_de",
@@ -4617,6 +9335,53 @@
     "titles": {
       "ko": "중국인 거리",
       "en": "Q104180699"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004531",
+    "title": "중산세보",
+    "shardId": "book_85",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Sai Taku",
+    "tags": [],
+    "searchTokens": [
+      "Chūzan Seifu",
+      "Sai Taku",
+      "chūzanseifu",
+      "saitaku",
+      "中山世譜",
+      "중산세보"
+    ],
+    "titles": {
+      "ko": "중산세보",
+      "en": "Chūzan Seifu",
+      "ja": "中山世譜"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003574",
+    "title": "중요한 건 살인",
+    "shardId": "book_bb",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Anthony Horowitz",
+    "tags": [],
+    "searchTokens": [
+      "Anthony Horowitz",
+      "The Word is Murder",
+      "anthonyhorowitz",
+      "thewordismurder",
+      "중요한 건 살인",
+      "중요한건살인"
+    ],
+    "titles": {
+      "ko": "중요한 건 살인",
+      "en": "The Word is Murder"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -4693,6 +9458,98 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004915",
+    "title": "지구 끝의 온실",
+    "shardId": "book_54",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Kim Choyeop",
+    "tags": [],
+    "searchTokens": [
+      "Kim Choyeop",
+      "Q108960711",
+      "kimchoyeop",
+      "q108960711",
+      "지구 끝의 온실",
+      "지구끝의온실"
+    ],
+    "titles": {
+      "ko": "지구 끝의 온실",
+      "en": "Q108960711"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004172",
+    "title": "지구에서 온 여자",
+    "shardId": "book_7e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "John Norman",
+    "tags": [],
+    "searchTokens": [
+      "Captive of Gor",
+      "John Norman",
+      "captiveofgor",
+      "johnnorman",
+      "지구에서 온 여자",
+      "지구에서온여자"
+    ],
+    "titles": {
+      "ko": "지구에서 온 여자",
+      "en": "Captive of Gor"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004023",
+    "title": "지금 이 순간",
+    "shardId": "book_f1",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Guillaume Musso",
+    "tags": [],
+    "searchTokens": [
+      "Guillaume Musso",
+      "Q108167600",
+      "guillaumemusso",
+      "q108167600",
+      "지금 이 순간",
+      "지금이순간"
+    ],
+    "titles": {
+      "ko": "지금 이 순간",
+      "en": "Q108167600"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003484",
+    "title": "지금 지구에 소행성이 돌진해 온다면",
+    "shardId": "book_25",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Florian Freistetter",
+    "tags": [],
+    "searchTokens": [
+      "Florian Freistetter",
+      "Krawumm! Ein Plädoyer für den Weltuntergang",
+      "florianfreistetter",
+      "krawumm!einplädoyerfürdenweltuntergang",
+      "지금 지구에 소행성이 돌진해 온다면",
+      "지금지구에소행성이돌진해온다면"
+    ],
+    "titles": {
+      "ko": "지금 지구에 소행성이 돌진해 온다면",
+      "en": "Krawumm! Ein Plädoyer für den Weltuntergang"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001399",
     "title": "지금, 만나러 갑니다",
     "shardId": "book_11",
@@ -4764,6 +9621,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005164",
+    "title": "지장십륜경",
+    "shardId": "book_29",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kṣitigarbha Ten Wheels Mahāyāna Sūtra",
+      "kṣitigarbhatenwheelsmahāyānasūtra",
+      "地蔵十輪経",
+      "지장십륜경"
+    ],
+    "titles": {
+      "ko": "지장십륜경",
+      "en": "Kṣitigarbha Ten Wheels Mahāyāna Sūtra",
+      "ja": "地蔵十輪経"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001938",
     "title": "진화의 열매 ~모르는 사이 성공한 인생~",
     "shardId": "book_3d",
@@ -4784,6 +9663,55 @@
       "ko": "진화의 열매 ~모르는 사이 성공한 인생~",
       "en": "The Fruit of Evolution",
       "ja": "進化の実〜知らないうちに勝ち組人生〜"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004834",
+    "title": "집에 갇힌 악당들",
+    "shardId": "book_04",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Robert E. Howard",
+    "tags": [],
+    "searchTokens": [
+      "Robert E. Howard",
+      "Rogues in the House",
+      "roberte.howard",
+      "roguesinthehouse",
+      "집에 갇힌 악당들",
+      "집에갇힌악당들"
+    ],
+    "titles": {
+      "ko": "집에 갇힌 악당들",
+      "en": "Rogues in the House"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003488",
+    "title": "차일드 헤럴드의 편력",
+    "shardId": "book_0c",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ジョージ・ゴードン・バイロン",
+    "tags": [],
+    "searchTokens": [
+      "Childe Harold's Pilgrimage",
+      "childeharold'spilgrimage",
+      "ジョージゴードンバイロン",
+      "ジョージ・ゴードン・バイロン",
+      "チャイルドハロルドの巡礼",
+      "チャイルド・ハロルドの巡礼",
+      "차일드 헤럴드의 편력",
+      "차일드헤럴드의편력"
+    ],
+    "titles": {
+      "ko": "차일드 헤럴드의 편력",
+      "en": "Childe Harold's Pilgrimage",
+      "ja": "チャイルド・ハロルドの巡礼"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -4837,6 +9765,52 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000004100",
+    "title": "첫 번째 피",
+    "shardId": "book_47",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Amélie Nothomb",
+    "tags": [],
+    "searchTokens": [
+      "Amélie Nothomb",
+      "Q108273219",
+      "amélienothomb",
+      "q108273219",
+      "첫 번째 피",
+      "첫번째피"
+    ],
+    "titles": {
+      "ko": "첫 번째 피",
+      "en": "Q108273219"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004314",
+    "title": "초보 연금술사의 점포경영",
+    "shardId": "book_6e",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Management of Novice Alchemist",
+      "managementofnovicealchemist",
+      "新米錬金術師の店舗経営",
+      "초보 연금술사의 점포경영",
+      "초보연금술사의점포경영"
+    ],
+    "titles": {
+      "ko": "초보 연금술사의 점포경영",
+      "en": "Management of Novice Alchemist",
+      "ja": "新米錬金術師の店舗経営"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002329",
     "title": "최애, 타오르다",
     "shardId": "book_87",
@@ -4880,6 +9854,76 @@
     "titles": {
       "ko": "추남, 미녀",
       "en": "Q106292088"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003218",
+    "title": "출사표",
+    "shardId": "book_52",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Zhuge Liang",
+    "tags": [],
+    "searchTokens": [
+      "Chu Shi Biao",
+      "Zhuge Liang",
+      "chushibiao",
+      "zhugeliang",
+      "出師表",
+      "출사표"
+    ],
+    "titles": {
+      "ko": "출사표",
+      "en": "Chu Shi Biao",
+      "ja": "出師表"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004916",
+    "title": "출삼장기집",
+    "shardId": "book_f3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "승우",
+    "tags": [],
+    "searchTokens": [
+      "Collected Records concerning the Tripitaka",
+      "collectedrecordsconcerningthetripitaka",
+      "出三蔵記集",
+      "승우",
+      "출삼장기집"
+    ],
+    "titles": {
+      "ko": "출삼장기집",
+      "en": "Collected Records concerning the Tripitaka",
+      "ja": "出三蔵記集"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003940",
+    "title": "친밀한 사이",
+    "shardId": "book_64",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Katie Kitamura",
+    "tags": [],
+    "searchTokens": [
+      "Intimacies",
+      "Katie Kitamura",
+      "intimacies",
+      "katiekitamura",
+      "친밀한 사이",
+      "친밀한사이"
+    ],
+    "titles": {
+      "ko": "친밀한 사이",
+      "en": "Intimacies"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -4953,6 +9997,54 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004666",
+    "title": "침묵을 기리며",
+    "shardId": "book_c0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Abdulrazak Gurnah",
+    "tags": [],
+    "searchTokens": [
+      "Abdulrazak Gurnah",
+      "Admiring Silence",
+      "abdulrazakgurnah",
+      "admiringsilence",
+      "침묵을 기리며",
+      "침묵을기리며"
+    ],
+    "titles": {
+      "ko": "침묵을 기리며",
+      "en": "Admiring Silence"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003805",
+    "title": "침묵의 퍼레이드",
+    "shardId": "book_e8",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Q107541729",
+      "keigohigashino",
+      "q107541729",
+      "沈黙のパレード",
+      "침묵의 퍼레이드",
+      "침묵의퍼레이드"
+    ],
+    "titles": {
+      "ko": "침묵의 퍼레이드",
+      "en": "Q107541729",
+      "ja": "沈黙のパレード"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001481",
     "title": "카르밀라",
     "shardId": "book_1f",
@@ -4975,6 +10067,28 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000002980",
+    "title": "카불리와라",
+    "shardId": "book_87",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Rabindranath Tagore",
+    "tags": [],
+    "searchTokens": [
+      "Kabuliwala",
+      "Rabindranath Tagore",
+      "kabuliwala",
+      "rabindranathtagore",
+      "카불리와라"
+    ],
+    "titles": {
+      "ko": "카불리와라",
+      "en": "Kabuliwala"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000002177",
@@ -5051,6 +10165,122 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003575",
+    "title": "콧수염",
+    "shardId": "book_bb",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Emmanuel Carrère",
+    "tags": [],
+    "searchTokens": [
+      "Emmanuel Carrère",
+      "The Moustache",
+      "emmanuelcarrère",
+      "themoustache",
+      "콧수염"
+    ],
+    "titles": {
+      "ko": "콧수염",
+      "en": "The Moustache"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004835",
+    "title": "쿠블라이 칸",
+    "shardId": "book_71",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Samuel Taylor Coleridge",
+    "tags": [],
+    "searchTokens": [
+      "Kubla Khan",
+      "Samuel Taylor Coleridge",
+      "kublakhan",
+      "samueltaylorcoleridge",
+      "クブラカーン",
+      "クブラ・カーン",
+      "쿠블라이 칸",
+      "쿠블라이칸"
+    ],
+    "titles": {
+      "ko": "쿠블라이 칸",
+      "en": "Kubla Khan",
+      "ja": "クブラ・カーン"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003803",
+    "title": "쿠콜리 형제들",
+    "shardId": "book_3a",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Aldo Palazzeschi",
+    "tags": [],
+    "searchTokens": [
+      "Aldo Palazzeschi",
+      "Q107530604",
+      "aldopalazzeschi",
+      "q107530604",
+      "쿠콜리 형제들",
+      "쿠콜리형제들"
+    ],
+    "titles": {
+      "ko": "쿠콜리 형제들",
+      "en": "Q107530604"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004462",
+    "title": "크로스로드",
+    "shardId": "book_ed",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "ジョナサン・フランゼン",
+    "tags": [],
+    "searchTokens": [
+      "Crossroads",
+      "crossroads",
+      "ジョナサンフランゼン",
+      "ジョナサン・フランゼン",
+      "크로스로드"
+    ],
+    "titles": {
+      "ko": "크로스로드",
+      "en": "Crossroads"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003879",
+    "title": "크리스마스 피그",
+    "shardId": "book_f5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "J・K・ローリング",
+    "tags": [],
+    "searchTokens": [
+      "J・K・ローリング",
+      "The Christmas Pig",
+      "jkローリング",
+      "thechristmaspig",
+      "크리스마스 피그",
+      "크리스마스피그"
+    ],
+    "titles": {
+      "ko": "크리스마스 피그",
+      "en": "The Christmas Pig"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002412",
     "title": "클라라와 태양",
     "shardId": "book_67",
@@ -5097,6 +10327,27 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003577",
+    "title": "키루스 대왕",
+    "shardId": "book_bd",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Cyrus the Great",
+      "cyrusthegreat",
+      "키루스 대왕",
+      "키루스대왕"
+    ],
+    "titles": {
+      "ko": "키루스 대왕",
+      "en": "Cyrus the Great"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002931",
     "title": "타나토노트",
     "shardId": "book_c7",
@@ -5117,6 +10368,32 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003139",
+    "title": "타라 덩컨",
+    "shardId": "book_0d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Sophie Andouin-Mamikonian",
+    "tags": [],
+    "searchTokens": [
+      "Sophie Andouin-Mamikonian",
+      "Tara Duncan",
+      "sophieandouinmamikonian",
+      "taraduncan",
+      "タラダンカン",
+      "タラ・ダンカン",
+      "타라 덩컨",
+      "타라덩컨"
+    ],
+    "titles": {
+      "ko": "타라 덩컨",
+      "en": "Tara Duncan",
+      "ja": "タラ・ダンカン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000002841",
@@ -5212,6 +10489,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003486",
+    "title": "태현경",
+    "shardId": "book_cc",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "揚雄",
+    "tags": [],
+    "searchTokens": [
+      "Taixuanjing",
+      "taixuanjing",
+      "太玄経",
+      "揚雄",
+      "태현경"
+    ],
+    "titles": {
+      "ko": "태현경",
+      "en": "Taixuanjing",
+      "ja": "太玄経"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001191",
     "title": "터널",
     "shardId": "book_2a",
@@ -5252,6 +10552,55 @@
     "titles": {
       "ko": "테익스칼란 제국",
       "en": "Teixcalaan"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003051",
+    "title": "토끼와 거북이",
+    "shardId": "book_28",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "アイソーポス",
+    "tags": [],
+    "searchTokens": [
+      "The Tortoise and the Hare",
+      "thetortoiseandthehare",
+      "アイソーポス",
+      "ウサギとカメ",
+      "토끼와 거북이",
+      "토끼와거북이"
+    ],
+    "titles": {
+      "ko": "토끼와 거북이",
+      "en": "The Tortoise and the Hare",
+      "ja": "ウサギとカメ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004096",
+    "title": "투명한 나선",
+    "shardId": "book_bb",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Keigo Higashino",
+    "tags": [],
+    "searchTokens": [
+      "Keigo Higashino",
+      "Spiral conquest",
+      "keigohigashino",
+      "spiralconquest",
+      "透明な螺旋",
+      "투명한 나선",
+      "투명한나선"
+    ],
+    "titles": {
+      "ko": "투명한 나선",
+      "en": "Spiral conquest",
+      "ja": "透明な螺旋"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5325,6 +10674,101 @@
       "ko": "파운데이션과 지구",
       "en": "Foundation and Earth",
       "ja": "ファウンデーションと地球"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004315",
+    "title": "파워 오브 도그",
+    "shardId": "book_0f",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Thomas Savage",
+    "tags": [],
+    "searchTokens": [
+      "The Power of the Dog",
+      "Thomas Savage",
+      "thepowerofthedog",
+      "thomassavage",
+      "ザパワーオブザドッグ",
+      "ザ・パワー・オブ・ザ・ドッグ",
+      "파워 오브 도그",
+      "파워오브도그"
+    ],
+    "titles": {
+      "ko": "파워 오브 도그",
+      "en": "The Power of the Dog",
+      "ja": "ザ・パワー・オブ・ザ・ドッグ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003941",
+    "title": "파이널 걸 서포트 그룹",
+    "shardId": "book_69",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Grady Hendrix",
+    "tags": [],
+    "searchTokens": [
+      "Grady Hendrix",
+      "The Final Girl Support Group",
+      "gradyhendrix",
+      "thefinalgirlsupportgroup",
+      "파이널 걸 서포트 그룹",
+      "파이널걸서포트그룹"
+    ],
+    "titles": {
+      "ko": "파이널 걸 서포트 그룹",
+      "en": "The Final Girl Support Group"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004841",
+    "title": "팔기통지초집",
+    "shardId": "book_1d",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q10892207",
+      "q10892207",
+      "八旗通志",
+      "팔기통지초집"
+    ],
+    "titles": {
+      "ko": "팔기통지초집",
+      "en": "Q10892207",
+      "ja": "八旗通志"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005053",
+    "title": "퍼레이드",
+    "shardId": "book_70",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Shuichi Yoshida",
+    "tags": [],
+    "searchTokens": [
+      "Q10917653",
+      "Shuichi Yoshida",
+      "q10917653",
+      "shuichiyoshida",
+      "パレード",
+      "퍼레이드"
+    ],
+    "titles": {
+      "ko": "퍼레이드",
+      "en": "Q10917653",
+      "ja": "パレード"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -5480,6 +10924,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003049",
+    "title": "푸른 길의 여행자",
+    "shardId": "book_63",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "우에하시 나호코",
+    "tags": [],
+    "searchTokens": [
+      "Traveler of the Indigo Road",
+      "traveleroftheindigoroad",
+      "蒼路の旅人",
+      "우에하시 나호코",
+      "우에하시나호코",
+      "푸른 길의 여행자",
+      "푸른길의여행자"
+    ],
+    "titles": {
+      "ko": "푸른 길의 여행자",
+      "en": "Traveler of the Indigo Road",
+      "ja": "蒼路の旅人"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002411",
     "title": "프눌과의 전쟁",
     "shardId": "book_25",
@@ -5498,6 +10967,32 @@
     "titles": {
       "ko": "프눌과의 전쟁",
       "en": "The War with the Fnools"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003140",
+    "title": "프로젝트 헤일메리",
+    "shardId": "book_09",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "アンディ・ウィアー",
+    "tags": [],
+    "searchTokens": [
+      "Project Hail Mary",
+      "projecthailmary",
+      "アンディウィアー",
+      "アンディ・ウィアー",
+      "プロジェクトヘイルメアリー",
+      "プロジェクト・ヘイル・メアリー",
+      "프로젝트 헤일메리",
+      "프로젝트헤일메리"
+    ],
+    "titles": {
+      "ko": "프로젝트 헤일메리",
+      "en": "Project Hail Mary",
+      "ja": "プロジェクト・ヘイル・メアリー"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -5546,6 +11041,123 @@
     "titles": {
       "ko": "피가 흐르는 곳에",
       "en": "If It Bleeds"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004017",
+    "title": "피피루 총동원",
+    "shardId": "book_e0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q107998747",
+      "q107998747",
+      "피피루 총동원",
+      "피피루총동원"
+    ],
+    "titles": {
+      "ko": "피피루 총동원",
+      "en": "Q107998747"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000004530",
+    "title": "핍의 살인 사건 안내서",
+    "shardId": "book_a0",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Holly Jackson",
+    "tags": [],
+    "searchTokens": [
+      "A Good Girl's Guide to Murder",
+      "Holly Jackson",
+      "agoodgirl'sguidetomurder",
+      "hollyjackson",
+      "핍의 살인 사건 안내서",
+      "핍의살인사건안내서"
+    ],
+    "titles": {
+      "ko": "핍의 살인 사건 안내서",
+      "en": "A Good Girl's Guide to Murder"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003050",
+    "title": "하늘과 땅의 수호자",
+    "shardId": "book_de",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "우에하시 나호코",
+    "tags": [],
+    "searchTokens": [
+      "Guardian of Heaven and Earth",
+      "guardianofheavenandearth",
+      "天と地の守り人",
+      "우에하시 나호코",
+      "우에하시나호코",
+      "하늘과 땅의 수호자",
+      "하늘과땅의수호자"
+    ],
+    "titles": {
+      "ko": "하늘과 땅의 수호자",
+      "en": "Guardian of Heaven and Earth",
+      "ja": "天と地の守り人"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005106",
+    "title": "하늘을 나는 홍보실",
+    "shardId": "book_f3",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Hiro Arikawa",
+    "tags": [],
+    "searchTokens": [
+      "Hiro Arikawa",
+      "Soratobu Kōhōshitsu",
+      "hiroarikawa",
+      "soratobukōhōshitsu",
+      "空飛ぶ広報室",
+      "하늘을 나는 홍보실",
+      "하늘을나는홍보실"
+    ],
+    "titles": {
+      "ko": "하늘을 나는 홍보실",
+      "en": "Soratobu Kōhōshitsu",
+      "ja": "空飛ぶ広報室"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003804",
+    "title": "한비자",
+    "shardId": "book_e4",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "韓非",
+    "tags": [],
+    "searchTokens": [
+      "Han Feizi",
+      "hanfeizi",
+      "韓非",
+      "韓非子",
+      "한비자"
+    ],
+    "titles": {
+      "ko": "한비자",
+      "en": "Han Feizi",
+      "ja": "韓非子"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5648,6 +11260,30 @@
     "titles": {
       "ko": "행성",
       "en": "The Planet of Cats"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000002985",
+    "title": "허공의 여행자",
+    "shardId": "book_fa",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "上橋菜穂子",
+    "tags": [],
+    "searchTokens": [
+      "Traveler of the Void",
+      "travelerofthevoid",
+      "上橋菜穂子",
+      "虚空の旅人",
+      "허공의 여행자",
+      "허공의여행자"
+    ],
+    "titles": {
+      "ko": "허공의 여행자",
+      "en": "Traveler of the Void",
+      "ja": "虚空の旅人"
     },
     "qualityScore": 80,
     "qualityTier": 4
@@ -5757,6 +11393,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000004669",
+    "title": "혐오스런 마츠코의 일생",
+    "shardId": "book_42",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Muneki Yamada",
+    "tags": [],
+    "searchTokens": [
+      "Muneki Yamada",
+      "Q10884462",
+      "munekiyamada",
+      "q10884462",
+      "嫌われ松子の一生",
+      "혐오스런 마츠코의 일생",
+      "혐오스런마츠코의일생"
+    ],
+    "titles": {
+      "ko": "혐오스런 마츠코의 일생",
+      "en": "Q10884462",
+      "ja": "嫌われ松子の一生"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001877",
     "title": "형사 실프와 평행 우주의 인생들",
     "shardId": "book_62",
@@ -5818,6 +11479,55 @@
     "titles": {
       "ko": "호랑이를 덫에 가두면",
       "en": "When You Trap a Tiger"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000004836",
+    "title": "호프:읽히지 않은 책과 읽히지 않은 인생",
+    "shardId": "book_c5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "HOPE",
+      "Q108906414",
+      "hope",
+      "q108906414",
+      "호프:읽히지 않은 책과 읽히지 않은 인생",
+      "호프읽히지않은책과읽히지않은인생"
+    ],
+    "titles": {
+      "ko": "호프:읽히지 않은 책과 읽히지 않은 인생",
+      "en": "Q108906414",
+      "ja": "HOPE"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003661",
+    "title": "화서의 꿈",
+    "shardId": "book_8b",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuyumi Ono",
+    "tags": [],
+    "searchTokens": [
+      "Fuyumi Ono",
+      "The Dream of Prosperity",
+      "fuyumiono",
+      "thedreamofprosperity",
+      "華胥の幽夢",
+      "화서의 꿈",
+      "화서의꿈"
+    ],
+    "titles": {
+      "ko": "화서의 꿈",
+      "en": "The Dream of Prosperity",
+      "ja": "華胥の幽夢"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5897,6 +11607,32 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003660",
+    "title": "황혼의 기슭 새벽의 하늘",
+    "shardId": "book_94",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuyumi Ono",
+    "tags": [],
+    "searchTokens": [
+      "Fuyumi Ono",
+      "The Shore at Twilight, The Sky at Daybreak",
+      "fuyumiono",
+      "theshoreattwilight,theskyatdaybreak",
+      "黄昏の岸 曉の天",
+      "黄昏の岸曉の天",
+      "황혼의 기슭 새벽의 하늘",
+      "황혼의기슭새벽의하늘"
+    ],
+    "titles": {
+      "ko": "황혼의 기슭 새벽의 하늘",
+      "en": "The Shore at Twilight, The Sky at Daybreak",
+      "ja": "黄昏の岸 曉の天"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000513",
     "title": "회색인",
     "shardId": "book_c0",
@@ -5917,6 +11653,53 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005102",
+    "title": "후궁견환전",
+    "shardId": "book_83",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Wu Xuelan",
+    "tags": [],
+    "searchTokens": [
+      "The Legend of Zhen Huan",
+      "Wu Xuelan",
+      "thelegendofzhenhuan",
+      "wuxuelan",
+      "後宮甄嬛伝",
+      "후궁견환전"
+    ],
+    "titles": {
+      "ko": "후궁견환전",
+      "en": "The Legend of Zhen Huan",
+      "ja": "後宮甄嬛伝"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005105",
+    "title": "후란강 이야기",
+    "shardId": "book_b5",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Xiao Hong",
+    "tags": [],
+    "searchTokens": [
+      "Tales of Hulan River",
+      "Xiao Hong",
+      "talesofhulanriver",
+      "xiaohong",
+      "후란강 이야기",
+      "후란강이야기"
+    ],
+    "titles": {
+      "ko": "후란강 이야기",
+      "en": "Tales of Hulan River"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000002253",
@@ -5942,5 +11725,52 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000004917",
+    "title": "흐드러지는 봉황의 색채",
+    "shardId": "book_80",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "이윤하",
+    "tags": [],
+    "searchTokens": [
+      "Phoenix Extravagant",
+      "phoenixextravagant",
+      "이윤하",
+      "흐드러지는 봉황의 색채",
+      "흐드러지는봉황의색채"
+    ],
+    "titles": {
+      "ko": "흐드러지는 봉황의 색채",
+      "en": "Phoenix Extravagant"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003662",
+    "title": "히쇼의 새",
+    "shardId": "book_95",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "Fuyumi Ono",
+    "tags": [],
+    "searchTokens": [
+      "Fuyumi Ono",
+      "The Birds of Hisho",
+      "fuyumiono",
+      "thebirdsofhisho",
+      "丕緒の鳥",
+      "히쇼의 새",
+      "히쇼의새"
+    ],
+    "titles": {
+      "ko": "히쇼의 새",
+      "en": "The Birds of Hisho",
+      "ja": "丕緒の鳥"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   }
 ]

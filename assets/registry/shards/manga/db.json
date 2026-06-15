@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003619": {
+    "workId": "wk_000003619",
+    "title": "전파교사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11660508"
+    },
+    "titles": {
+      "ko": "전파교사",
+      "en": "Ultimate Otaku Teacher",
+      "ja": "電波教師"
+    },
+    "creator": "東毅",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -100,5 +100,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005231": {
+    "workId": "wk_000005231",
+    "title": "그라디우스 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142748"
+    },
+    "titles": {
+      "ko": "그라디우스 2",
+      "en": "Nemesis 2",
+      "ja": "グラディウス2"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005295": {
+    "workId": "wk_000005295",
+    "title": "그라디우스 V",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143512"
+    },
+    "titles": {
+      "ko": "그라디우스 V",
+      "en": "Gradius V",
+      "ja": "グラディウスV"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

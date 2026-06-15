@@ -16,5 +16,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003489": {
+    "workId": "wk_000003489",
+    "title": "박사가 사랑한 수식",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072975"
+    },
+    "titles": {
+      "ko": "박사가 사랑한 수식",
+      "en": "The Housekeeper and the Professor",
+      "ja": "博士の愛した数式"
+    },
+    "releaseYear": 2003,
+    "creator": "Yoko Ogawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004666": {
+    "workId": "wk_000004666",
+    "title": "침묵을 기리며",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108837913"
+    },
+    "titles": {
+      "ko": "침묵을 기리며",
+      "en": "Admiring Silence"
+    },
+    "releaseYear": 1996,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

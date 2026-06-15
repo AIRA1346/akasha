@@ -34,5 +34,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002989": {
+    "workId": "wk_000002989",
+    "title": "EBS 수능포트리스 문학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457860"
+    },
+    "titles": {
+      "ko": "EBS 수능포트리스 문학",
+      "en": "Q109457860"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003168": {
+    "workId": "wk_000003168",
+    "title": "달려라 댕댕이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459515"
+    },
+    "titles": {
+      "ko": "달려라 댕댕이",
+      "en": "Q109459515"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004621": {
+    "workId": "wk_000004621",
+    "title": "욕망의 인생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074233"
+    },
+    "titles": {
+      "ko": "욕망의 인생",
+      "en": "Life of Desire",
+      "ja": "欲望の人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005116": {
+    "workId": "wk_000005116",
+    "title": "플라토닉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111982471"
+    },
+    "titles": {
+      "ko": "플라토닉",
+      "en": "Platonic",
+      "ja": "プラトニック (2023年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000003802": {
+    "workId": "wk_000003802",
+    "title": "마왕인 내가 노예 엘프를 신부로 삼았는데 어떻게 사랑하면 되지?",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107524719"
+    },
+    "titles": {
+      "ko": "마왕인 내가 노예 엘프를 신부로 삼았는데 어떻게 사랑하면 되지?",
+      "en": "An Archdemon's Dilemma: How to Love Your Elf Bride",
+      "ja": "魔王の俺が奴隷エルフを嫁にしたんだが、どう愛でればいい？"
+    },
+    "releaseYear": 2017,
+    "creator": "Fuminori Teshima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

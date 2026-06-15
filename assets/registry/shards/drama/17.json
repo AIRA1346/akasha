@@ -33,5 +33,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003319": {
+    "workId": "wk_000003319",
+    "title": "KBS 3분뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460720"
+    },
+    "titles": {
+      "ko": "KBS 3분뉴스",
+      "en": "Q109460720"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004112": {
+    "workId": "wk_000004112",
+    "title": "백종원의 미스터리 키친",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115115"
+    },
+    "titles": {
+      "ko": "백종원의 미스터리 키친",
+      "en": "Q110115115"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004124": {
+    "workId": "wk_000004124",
+    "title": "세바구니의 행복",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115345"
+    },
+    "titles": {
+      "ko": "세바구니의 행복",
+      "en": "Q110115345"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

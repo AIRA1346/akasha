@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005062": {
+    "workId": "wk_000005062",
+    "title": "BAZOOKA!!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190907"
+    },
+    "titles": {
+      "ko": "BAZOOKA!!!",
+      "en": "BAZOOKA!!!",
+      "ja": "BAZOOKA!!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005263": {
+    "workId": "wk_000005263",
+    "title": "NHK 뉴스 11",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235025"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 11",
+      "en": "NHK News 11",
+      "ja": "NHKニュース11"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

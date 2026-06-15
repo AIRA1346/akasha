@@ -36,5 +36,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003212": {
+    "workId": "wk_000003212",
+    "title": "무쌍 오로치 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1101241"
+    },
+    "titles": {
+      "ko": "무쌍 오로치 2",
+      "en": "Warriors Orochi 3",
+      "ja": "無双OROCHI 2"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003937": {
+    "workId": "wk_000003937",
+    "title": "컴퓨터 스페이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1122324"
+    },
+    "titles": {
+      "ko": "컴퓨터 스페이스",
+      "en": "Computer Space",
+      "ja": "コンピュータースペース"
+    },
+    "releaseYear": 1971,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004368": {
+    "workId": "wk_000004368",
+    "title": "킬존",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129775"
+    },
+    "titles": {
+      "ko": "킬존",
+      "en": "Killzone",
+      "ja": "KILLZONE"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "wk_000003049": {
+    "workId": "wk_000003049",
+    "title": "푸른 길의 여행자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106722153"
+    },
+    "titles": {
+      "ko": "푸른 길의 여행자",
+      "en": "Traveler of the Indigo Road",
+      "ja": "蒼路の旅人"
+    },
+    "releaseYear": 2005,
+    "creator": "우에하시 나호코",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

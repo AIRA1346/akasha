@@ -34,5 +34,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003552": {
+    "workId": "wk_000003552",
+    "title": "좋아해도 싫어하는",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124879766"
+    },
+    "titles": {
+      "ko": "좋아해도 싫어하는",
+      "en": "My Oni Girl",
+      "ja": "好きでも嫌いなあまのじゃく"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004059": {
+    "workId": "wk_000004059",
+    "title": "나를 먹고 싶은, 괴물",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130602579"
+    },
+    "titles": {
+      "ko": "나를 먹고 싶은, 괴물",
+      "en": "This Monster Wants to Eat Me",
+      "ja": "私を喰べたい、ひとでなし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004141": {
+    "workId": "wk_000004141",
+    "title": "요와요와 선생님",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131381808"
+    },
+    "titles": {
+      "ko": "요와요와 선생님",
+      "en": "Yowayowa Sensei",
+      "ja": "よわよわ先生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004576": {
+    "workId": "wk_000004576",
+    "title": "초능력 순경! 쵸죠 선배",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136484403"
+    },
+    "titles": {
+      "ko": "초능력 순경! 쵸죠 선배",
+      "en": "Super Psychic Policeman Chojo",
+      "ja": "超巡！超条先輩"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

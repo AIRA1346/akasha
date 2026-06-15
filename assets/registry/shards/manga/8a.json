@@ -32,5 +32,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003610": {
+    "workId": "wk_000003610",
+    "title": "아카도 스즈노스케",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635957"
+    },
+    "titles": {
+      "ko": "아카도 스즈노스케",
+      "en": "Akadō Suzunosuke",
+      "ja": "赤胴鈴之助"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

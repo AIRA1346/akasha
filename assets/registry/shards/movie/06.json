@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005166": {
+    "workId": "wk_000005166",
+    "title": "해피 해피 브레드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058904"
+    },
+    "titles": {
+      "ko": "해피 해피 브레드",
+      "en": "Bread of Happiness",
+      "ja": "しあわせのパン"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

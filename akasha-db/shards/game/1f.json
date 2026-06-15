@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004231": {
+    "workId": "wk_000004231",
+    "title": "키스와 마왕과 홍차",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277434"
+    },
+    "titles": {
+      "ko": "키스와 마왕과 홍차",
+      "en": "Kiss to Maou to Darjeeling",
+      "ja": "キスと魔王と紅茶"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004973": {
+    "workId": "wk_000004973",
+    "title": "니드 포 스피드 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139035"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 II",
+      "en": "Need for Speed II",
+      "ja": "ニード・フォー・スピードII"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

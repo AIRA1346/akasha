@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003200": {
+    "workId": "wk_000003200",
+    "title": "아마기 브릴리언트 파크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122999270"
+    },
+    "titles": {
+      "ko": "아마기 브릴리언트 파크",
+      "en": "Amagi Brilliant Park",
+      "ja": "甘城ブリリアントパーク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

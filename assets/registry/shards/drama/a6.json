@@ -125,5 +125,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004257": {
+    "workId": "wk_000004257",
+    "title": "I-1",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115951"
+    },
+    "titles": {
+      "ko": "I-1",
+      "en": "Q110115951"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004623": {
+    "workId": "wk_000004623",
+    "title": "아가유희",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074798"
+    },
+    "titles": {
+      "ko": "아가유희",
+      "en": "Home, Sweet Home"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

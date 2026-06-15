@@ -33,5 +33,96 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003709": {
+    "workId": "wk_000003709",
+    "title": "수 분간의 응원을",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126617482"
+    },
+    "titles": {
+      "ko": "수 분간의 응원을",
+      "en": "A Few Moments of Cheers",
+      "ja": "数分間のエールを"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003849": {
+    "workId": "wk_000003849",
+    "title": "아라포 남자의 이세계 통판 생활",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129193320"
+    },
+    "titles": {
+      "ko": "아라포 남자의 이세계 통판 생활",
+      "en": "The Daily Life of a Middle-Aged Online Shopper in Another World",
+      "ja": "アラフォー男の異世界通販"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003857": {
+    "workId": "wk_000003857",
+    "title": "명탐정 코난: 감벽의 관",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1300513"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 감벽의 관",
+      "en": "Detective Conan: Jolly Roger in the Deep Azure",
+      "ja": "名探偵コナン 紺碧の棺"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003979": {
+    "workId": "wk_000003979",
+    "title": "추젠지 선생님의 모노노케 강의록 선생님이 수수께끼를 풀어버리니까.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130391608"
+    },
+    "titles": {
+      "ko": "추젠지 선생님의 모노노케 강의록 선생님이 수수께끼를 풀어버리니까.",
+      "en": "The Mononoke Lecture Logs of Chuzenji-sensei",
+      "ja": "中禅寺先生物怪講義録 先生が謎を解いてしまうから。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004437": {
+    "workId": "wk_000004437",
+    "title": "피터팬: 전설의 시작",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1352415"
+    },
+    "titles": {
+      "ko": "피터팬: 전설의 시작",
+      "en": "Neverland"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "wk_000003581": {
+    "workId": "wk_000003581",
+    "title": "앰뷸런스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105095144"
+    },
+    "titles": {
+      "ko": "앰뷸런스",
+      "en": "Ambulance",
+      "ja": "アンビュランス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004029": {
+    "workId": "wk_000004029",
+    "title": "키사라기 미키짱",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054521"
+    },
+    "titles": {
+      "ko": "키사라기 미키짱",
+      "en": "Kisaragi",
+      "ja": "キサラギ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

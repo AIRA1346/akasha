@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004675": {
+    "workId": "wk_000004675",
+    "title": "내일도 우린 사랑하고 있을까",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105731009"
+    },
+    "titles": {
+      "ko": "내일도 우린 사랑하고 있을까",
+      "en": "I Remember"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

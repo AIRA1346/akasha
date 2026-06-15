@@ -52,5 +52,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004266": {
+    "workId": "wk_000004266",
+    "title": "초청특강 문화동행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117821"
+    },
+    "titles": {
+      "ko": "초청특강 문화동행",
+      "en": "Q110117821"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004325": {
+    "workId": "wk_000004325",
+    "title": "건강 TV, 안녕하십니까",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118054"
+    },
+    "titles": {
+      "ko": "건강 TV, 안녕하십니까",
+      "en": "Q110118054"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004396": {
+    "workId": "wk_000004396",
+    "title": "형사 25시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118451"
+    },
+    "titles": {
+      "ko": "형사 25시",
+      "en": "Q110118451"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

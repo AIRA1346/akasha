@@ -100,5 +100,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004004": {
+    "workId": "wk_000004004",
+    "title": "러브카미",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236959"
+    },
+    "titles": {
+      "ko": "러브카미",
+      "en": "LoveKami",
+      "ja": "恋神 -ラブカミ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004589": {
+    "workId": "wk_000004589",
+    "title": "쉬벌리: 미디벌 워페어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113289"
+    },
+    "titles": {
+      "ko": "쉬벌리: 미디벌 워페어",
+      "en": "Chivalry: Medieval Warfare"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

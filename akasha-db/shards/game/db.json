@@ -36,5 +36,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004588": {
+    "workId": "wk_000004588",
+    "title": "귀무자 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132810"
+    },
+    "titles": {
+      "ko": "귀무자 2",
+      "en": "Onimusha 2: Samurai's Destiny",
+      "ja": "鬼武者2"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005092": {
+    "workId": "wk_000005092",
+    "title": "쉽앤쉽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114018620"
+    },
+    "titles": {
+      "ko": "쉽앤쉽",
+      "en": "Q114018620"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "wk_000003151": {
+    "workId": "wk_000003151",
+    "title": "라이거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104904706"
+    },
+    "titles": {
+      "ko": "라이거",
+      "en": "Liger",
+      "ja": "Liger"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004737": {
+    "workId": "wk_000004737",
+    "title": "나폴레옹",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105806948"
+    },
+    "titles": {
+      "ko": "나폴레옹",
+      "en": "Napoleon",
+      "ja": "ナポレオン"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003710": {
+    "workId": "wk_000003710",
+    "title": "배트맨 닌자 대 야쿠자 리그",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126680699"
+    },
+    "titles": {
+      "ko": "배트맨 닌자 대 야쿠자 리그",
+      "en": "Batman Ninja vs. Yakuza League",
+      "ja": "ニンジャバットマン対ヤクザリーグ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

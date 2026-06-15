@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003661": {
+    "workId": "wk_000003661",
+    "title": "화서의 꿈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395394"
+    },
+    "titles": {
+      "ko": "화서의 꿈",
+      "en": "The Dream of Prosperity",
+      "ja": "華胥の幽夢"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

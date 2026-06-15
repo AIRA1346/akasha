@@ -67,5 +67,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003022": {
+    "workId": "wk_000003022",
+    "title": "별의 커비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205191"
+    },
+    "titles": {
+      "ko": "별의 커비",
+      "en": "Kirby: Right Back at Ya!",
+      "ja": "星のカービィ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003918": {
+    "workId": "wk_000003918",
+    "title": "키리오 팬클럽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130303270"
+    },
+    "titles": {
+      "ko": "키리오 팬클럽",
+      "en": "Kirio Fanclub",
+      "ja": "霧尾ファンクラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004146": {
+    "workId": "wk_000004146",
+    "title": "추방자 식당에 어서 오세요!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131448079"
+    },
+    "titles": {
+      "ko": "추방자 식당에 어서 오세요!",
+      "en": "Welcome to the Outcast's Restaurant!",
+      "ja": "追放者食堂へようこそ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004278": {
+    "workId": "wk_000004278",
+    "title": "에스퍼 마미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323883"
+    },
+    "titles": {
+      "ko": "에스퍼 마미",
+      "en": "Esper Mami",
+      "ja": "エスパー魔美"
+    },
+    "creator": "藤子不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

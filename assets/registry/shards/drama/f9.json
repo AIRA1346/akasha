@@ -106,5 +106,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002995": {
+    "workId": "wk_000002995",
+    "title": "뽀뽀뽀 좋아좋아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458070"
+    },
+    "titles": {
+      "ko": "뽀뽀뽀 좋아좋아",
+      "en": "Q109458070"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003079": {
+    "workId": "wk_000003079",
+    "title": "리플레이 : 다시 시작되는 순간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458873"
+    },
+    "titles": {
+      "ko": "리플레이 : 다시 시작되는 순간",
+      "en": "Q109458873"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003592": {
+    "workId": "wk_000003592",
+    "title": "백종원 클라쓰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464531"
+    },
+    "titles": {
+      "ko": "백종원 클라쓰",
+      "en": "Q109464531"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

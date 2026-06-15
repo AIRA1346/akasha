@@ -1,5 +1,26 @@
 [
   {
+    "workId": "wk_000003355",
+    "title": "060 특수부대",
+    "shardId": "webtoon_4c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "060 특수부대",
+      "060특수부대",
+      "Q61091553",
+      "q61091553"
+    ],
+    "titles": {
+      "ko": "060 특수부대",
+      "en": "Q61091553"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002071",
     "title": "1 더하기 1은",
     "shardId": "webtoon_c7",
@@ -16,6 +37,27 @@
     "titles": {
       "ko": "1 더하기 1은",
       "en": "1 Plus 1"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002953",
+    "title": "203호 저승사자",
+    "shardId": "webtoon_af",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "203 Grim Reaper",
+      "203grimreaper",
+      "203호 저승사자",
+      "203호저승사자"
+    ],
+    "titles": {
+      "ko": "203호 저승사자",
+      "en": "203 Grim Reaper"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -67,6 +109,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003351",
+    "title": "Ciel ~The Last Autumn Story~",
+    "shardId": "webtoon_34",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "임주연",
+    "tags": [],
+    "searchTokens": [
+      "Ciel",
+      "Ciel ~The Last Autumn Story~",
+      "ciel",
+      "ciel~thelastautumnstory~",
+      "임주연"
+    ],
+    "titles": {
+      "ko": "Ciel ~The Last Autumn Story~",
+      "en": "Ciel"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001883",
     "title": "D.P 개의 날",
     "shardId": "webtoon_82",
@@ -88,6 +152,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003445",
+    "title": "FFF급 관심용사",
+    "shardId": "webtoon_52",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "FFF-Class Trashero",
+      "FFF급 관심용사",
+      "fffclasstrashero",
+      "fff급관심용사"
+    ],
+    "titles": {
+      "ko": "FFF급 관심용사",
+      "en": "FFF-Class Trashero"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000620",
@@ -114,6 +199,46 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000002946",
+    "title": "Ho!",
+    "shardId": "webtoon_f6",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ho!",
+      "ho!"
+    ],
+    "titles": {
+      "ko": "Ho!",
+      "en": "Ho!"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003094",
+    "title": "Penguin loves Mev",
+    "shardId": "webtoon_2a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Penguin loves Mev",
+      "Q3374724",
+      "penguinlovesmev",
+      "q3374724"
+    ],
+    "titles": {
+      "ko": "Penguin loves Mev",
+      "en": "Q3374724"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002795",
@@ -181,6 +306,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003098",
+    "title": "XS엑세스",
+    "shardId": "webtoon_a8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "XS엑세스",
+      "Xs",
+      "xs",
+      "xs엑세스"
+    ],
+    "titles": {
+      "ko": "XS엑세스",
+      "en": "Xs"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002615",
     "title": "welcome to 미션마켓",
     "shardId": "webtoon_bf",
@@ -225,6 +371,26 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003012",
+    "title": "가물치전",
+    "shardId": "webtoon_6c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "이유정",
+    "tags": [],
+    "searchTokens": [
+      "0/6",
+      "가물치전",
+      "이유정"
+    ],
+    "titles": {
+      "ko": "가물치전",
+      "en": "0/6"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002709",
     "title": "가우스전자",
     "shardId": "webtoon_c1",
@@ -262,6 +428,53 @@
       "ko": "가타부타타",
       "en": "Rumor Has It",
       "ja": "恋愛エトセトラ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003096",
+    "title": "갓 오브 하이스쿨",
+    "shardId": "webtoon_01",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Park Yong-je",
+    "tags": [],
+    "searchTokens": [
+      "Park Yong-je",
+      "The God of High School",
+      "parkyongje",
+      "thegodofhighschool",
+      "ゴッドオブハイスクール",
+      "ゴッド・オブ・ハイスクール",
+      "갓 오브 하이스쿨",
+      "갓오브하이스쿨"
+    ],
+    "titles": {
+      "ko": "갓 오브 하이스쿨",
+      "en": "The God of High School",
+      "ja": "ゴッド・オブ・ハイスクール"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003534",
+    "title": "개를 낳았다",
+    "shardId": "webtoon_d2",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q97210672",
+      "q97210672",
+      "개를 낳았다",
+      "개를낳았다"
+    ],
+    "titles": {
+      "ko": "개를 낳았다",
+      "en": "Q97210672"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -334,6 +547,50 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003189",
+    "title": "궁",
+    "shardId": "webtoon_24",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "박소희",
+    "tags": [],
+    "searchTokens": [
+      "Goong",
+      "goong",
+      "らぶきょん LOVE in 景福宮",
+      "らぶきょんlovein景福宮",
+      "궁",
+      "박소희"
+    ],
+    "titles": {
+      "ko": "궁",
+      "en": "Goong",
+      "ja": "らぶきょん LOVE in 景福宮"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003100",
+    "title": "귀",
+    "shardId": "webtoon_50",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Gwi - The Spectre",
+      "gwithespectre",
+      "귀"
+    ],
+    "titles": {
+      "ko": "귀",
+      "en": "Gwi - The Spectre"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002799",
     "title": "귀귀 갤러리",
     "shardId": "webtoon_9f",
@@ -376,6 +633,29 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003535",
+    "title": "그녀가 공작저로 가야 했던 사정",
+    "shardId": "webtoon_50",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Why Raeliana Ended Up at the Duke's Mansion",
+      "whyraelianaendedupattheduke'smansion",
+      "彼女が公爵邸に行った理由",
+      "그녀가 공작저로 가야 했던 사정",
+      "그녀가공작저로가야했던사정"
+    ],
+    "titles": {
+      "ko": "그녀가 공작저로 가야 했던 사정",
+      "en": "Why Raeliana Ended Up at the Duke's Mansion",
+      "ja": "彼女が公爵邸に行った理由"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001885",
@@ -545,6 +825,71 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000002952",
+    "title": "남과 여",
+    "shardId": "webtoon_2c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Man and Woman",
+      "manandwoman",
+      "남과 여",
+      "남과여"
+    ],
+    "titles": {
+      "ko": "남과 여",
+      "en": "Man and Woman"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003435",
+    "title": "남벌",
+    "shardId": "webtoon_93",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Nambul: War Stories",
+      "nambulwarstories",
+      "남벌"
+    ],
+    "titles": {
+      "ko": "남벌",
+      "en": "Nambul: War Stories"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003019",
+    "title": "내 ID는 강남미인!",
+    "shardId": "webtoon_31",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "My ID is Gangnam Beauty",
+      "myidisgangnambeauty",
+      "私のIDはカンナム美人",
+      "私のidはカンナム美人",
+      "내 ID는 강남미인!",
+      "내id는강남미인!"
+    ],
+    "titles": {
+      "ko": "내 ID는 강남미인!",
+      "en": "My ID is Gangnam Beauty",
+      "ja": "私のIDはカンナム美人"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002205",
     "title": "내 남편과 결혼해줘",
     "shardId": "webtoon_c3",
@@ -648,6 +993,96 @@
     "titles": {
       "ko": "내일도 출근!",
       "en": "Going to Work Tomorrow Too!"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002948",
+    "title": "냄새를 보는 소녀",
+    "shardId": "webtoon_e1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Manchwi",
+    "tags": [],
+    "searchTokens": [
+      "A Girl Who Sees Smells",
+      "Manchwi",
+      "agirlwhoseessmells",
+      "manchwi",
+      "냄새를 보는 소녀",
+      "냄새를보는소녀"
+    ],
+    "titles": {
+      "ko": "냄새를 보는 소녀",
+      "en": "A Girl Who Sees Smells"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003436",
+    "title": "네피림존",
+    "shardId": "webtoon_63",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Ryu Kum-chel",
+    "tags": [],
+    "searchTokens": [
+      "Nephilim",
+      "Ryu Kum-chel",
+      "nephilim",
+      "ryukumchel",
+      "네피림존"
+    ],
+    "titles": {
+      "ko": "네피림존",
+      "en": "Nephilim"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003190",
+    "title": "노블레스",
+    "shardId": "webtoon_63",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Son Je-ho",
+    "tags": [],
+    "searchTokens": [
+      "Noblesse",
+      "Son Je-ho",
+      "noblesse",
+      "sonjeho",
+      "ノブレス",
+      "노블레스"
+    ],
+    "titles": {
+      "ko": "노블레스",
+      "en": "Noblesse",
+      "ja": "ノブレス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000002949",
+    "title": "다이스 (만화)",
+    "shardId": "webtoon_0c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DICE",
+      "dice",
+      "다이스 (만화)",
+      "다이스(만화)"
+    ],
+    "titles": {
+      "ko": "다이스 (만화)",
+      "en": "DICE"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -835,6 +1270,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003540",
+    "title": "도굴왕",
+    "shardId": "webtoon_7b",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tomb Raider King",
+      "tombraiderking",
+      "盗掘王",
+      "도굴왕"
+    ],
+    "titles": {
+      "ko": "도굴왕",
+      "en": "Tomb Raider King",
+      "ja": "盗掘王"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002378",
     "title": "도깨비 신부",
     "shardId": "webtoon_2a",
@@ -992,6 +1449,108 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003090",
+    "title": "레비쥬",
+    "shardId": "webtoon_4d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Les Bijoux",
+      "lesbijoux",
+      "레비쥬"
+    ],
+    "titles": {
+      "ko": "레비쥬",
+      "en": "Les Bijoux"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003102",
+    "title": "레이더스",
+    "shardId": "webtoon_a8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Raiders",
+      "raiders",
+      "레이더스"
+    ],
+    "titles": {
+      "ko": "레이더스",
+      "en": "Raiders"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003359",
+    "title": "레이디 디텍티브",
+    "shardId": "webtoon_d1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Lizzie Newton: Victorian Mysteries",
+      "lizzienewtonvictorianmysteries",
+      "레이디 디텍티브",
+      "레이디디텍티브"
+    ],
+    "titles": {
+      "ko": "레이디 디텍티브",
+      "en": "Lizzie Newton: Victorian Mysteries"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002956",
+    "title": "로맨스는 없다",
+    "shardId": "webtoon_f4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q24858303",
+      "q24858303",
+      "로맨스는 없다",
+      "로맨스는없다"
+    ],
+    "titles": {
+      "ko": "로맨스는 없다",
+      "en": "Q24858303"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003095",
+    "title": "루어",
+    "shardId": "webtoon_ac",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Rure",
+      "rure",
+      "루어"
+    ],
+    "titles": {
+      "ko": "루어",
+      "en": "Rure"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002143",
     "title": "루커피쳐",
     "shardId": "webtoon_bc",
@@ -1057,6 +1616,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003433",
+    "title": "마나",
+    "shardId": "webtoon_eb",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Lee Bin",
+    "tags": [],
+    "searchTokens": [
+      "Lee Bin",
+      "Mana",
+      "leebin",
+      "mana",
+      "マナ",
+      "마나"
+    ],
+    "titles": {
+      "ko": "마나",
+      "en": "Mana",
+      "ja": "マナ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002890",
     "title": "마녀사냥",
     "shardId": "webtoon_64",
@@ -1099,6 +1682,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003009",
+    "title": "마음의소리",
+    "shardId": "webtoon_ea",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Sound of Heart",
+      "thesoundofheart",
+      "心の声",
+      "마음의소리"
+    ],
+    "titles": {
+      "ko": "마음의소리",
+      "en": "The Sound of Heart",
+      "ja": "心の声"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002144",
     "title": "마지막 지수",
     "shardId": "webtoon_dd",
@@ -1115,6 +1720,26 @@
     "titles": {
       "ko": "마지막 지수",
       "en": "The Last Jisu"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003434",
+    "title": "마틴&존",
+    "shardId": "webtoon_9e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Martin & John",
+      "martin&john",
+      "마틴&존"
+    ],
+    "titles": {
+      "ko": "마틴&존",
+      "en": "Martin & John"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1140,6 +1765,26 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003538",
+    "title": "메모리스트",
+    "shardId": "webtoon_e3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Memorist",
+      "memorist",
+      "메모리스트"
+    ],
+    "titles": {
+      "ko": "메모리스트",
+      "en": "Memorist"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000803",
@@ -1257,6 +1902,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003011",
+    "title": "미래에서 온 소년",
+    "shardId": "webtoon_2e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Boy from the Future",
+      "theboyfromthefuture",
+      "미래에서 온 소년",
+      "미래에서온소년"
+    ],
+    "titles": {
+      "ko": "미래에서 온 소년",
+      "en": "The Boy from the Future"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002522",
     "title": "미성년(웹툰)",
     "shardId": "webtoon_6a",
@@ -1274,6 +1940,29 @@
       "ko": "미성년(웹툰)",
       "en": "Our Youth",
       "ja": "未成年〜未熟な俺たちは不器用に進行中〜"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003537",
+    "title": "바른연애 길잡이",
+    "shardId": "webtoon_48",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Romance 101",
+      "romance101",
+      "正しい恋の始めかた",
+      "바른연애 길잡이",
+      "바른연애길잡이"
+    ],
+    "titles": {
+      "ko": "바른연애 길잡이",
+      "en": "Romance 101",
+      "ja": "正しい恋の始めかた"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1318,6 +2007,26 @@
     "titles": {
       "ko": "백합은 일상",
       "en": "Everyday Lily"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003268",
+    "title": "버닝헬",
+    "shardId": "webtoon_49",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Burning Hell",
+      "burninghell",
+      "버닝헬"
+    ],
+    "titles": {
+      "ko": "버닝헬",
+      "en": "Burning Hell"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1370,6 +2079,26 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003441",
+    "title": "베리타스",
+    "shardId": "webtoon_cb",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Veritas",
+      "veritas",
+      "베리타스"
+    ],
+    "titles": {
+      "ko": "베리타스",
+      "en": "Veritas"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002608",
     "title": "별을 품은 소드마스터",
     "shardId": "webtoon_ed",
@@ -1417,6 +2146,87 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003354",
+    "title": "봉천동귀신",
+    "shardId": "webtoon_e0",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bongcheon-Dong Ghost",
+      "bongcheondongghost",
+      "봉천동귀신"
+    ],
+    "titles": {
+      "ko": "봉천동귀신",
+      "en": "Bongcheon-Dong Ghost"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002957",
+    "title": "부활남",
+    "shardId": "webtoon_9d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Reawakened Man",
+      "reawakenedman",
+      "부활남"
+    ],
+    "titles": {
+      "ko": "부활남",
+      "en": "Reawakened Man"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003089",
+    "title": "불멸의 레지스",
+    "shardId": "webtoon_a9",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Immortal Regis",
+      "immortalregis",
+      "불멸의 레지스",
+      "불멸의레지스"
+    ],
+    "titles": {
+      "ko": "불멸의 레지스",
+      "en": "Immortal Regis"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003358",
+    "title": "불문율",
+    "shardId": "webtoon_45",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Unwritten Law",
+      "unwrittenlaw",
+      "불문율"
+    ],
+    "titles": {
+      "ko": "불문율",
+      "en": "Unwritten Law"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002699",
     "title": "붉은 여우",
     "shardId": "webtoon_a0",
@@ -1433,6 +2243,26 @@
     "titles": {
       "ko": "붉은 여우",
       "en": "Red Fox"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003188",
+    "title": "브레이커",
+    "shardId": "webtoon_a5",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Breaker",
+      "thebreaker",
+      "브레이커"
+    ],
+    "titles": {
+      "ko": "브레이커",
+      "en": "The Breaker"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1500,6 +2330,47 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003446",
+    "title": "비질란테",
+    "shardId": "webtoon_b7",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "김규삼",
+    "tags": [],
+    "searchTokens": [
+      "Vigilante",
+      "vigilante",
+      "김규삼",
+      "비질란테"
+    ],
+    "titles": {
+      "ko": "비질란테",
+      "en": "Vigilante"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003097",
+    "title": "비타민",
+    "shardId": "webtoon_b3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Vitamin",
+      "vitamin",
+      "비타민"
+    ],
+    "titles": {
+      "ko": "비타민",
+      "en": "Vitamin"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002462",
@@ -1684,6 +2555,26 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003099",
+    "title": "살례탑",
+    "shardId": "webtoon_95",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Threads of Time",
+      "threadsoftime",
+      "살례탑"
+    ],
+    "titles": {
+      "ko": "살례탑",
+      "en": "Threads of Time"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002524",
     "title": "살아남기",
     "shardId": "webtoon_ca",
@@ -1849,6 +2740,26 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003439",
+    "title": "세이버",
+    "shardId": "webtoon_65",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Saver",
+      "saver",
+      "세이버"
+    ],
+    "titles": {
+      "ko": "세이버",
+      "en": "Saver"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002797",
     "title": "소녀더와일즈",
     "shardId": "webtoon_84",
@@ -1864,6 +2775,29 @@
     "titles": {
       "ko": "소녀더와일즈",
       "en": "Girls of the Wild's"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003020",
+    "title": "소녀의 세계",
+    "shardId": "webtoon_0d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Odd Girl Out",
+      "oddgirlout",
+      "少女の世界",
+      "소녀의 세계",
+      "소녀의세계"
+    ],
+    "titles": {
+      "ko": "소녀의 세계",
+      "en": "Odd Girl Out",
+      "ja": "少女の世界"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -1937,6 +2871,48 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003264",
+    "title": "쇼콜라",
+    "shardId": "webtoon_3f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chocolat",
+      "chocolat",
+      "쇼콜라"
+    ],
+    "titles": {
+      "ko": "쇼콜라",
+      "en": "Chocolat"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003360",
+    "title": "순정만화",
+    "shardId": "webtoon_e5",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kang Full",
+    "tags": [],
+    "searchTokens": [
+      "Kang Full",
+      "Love Story",
+      "kangfull",
+      "lovestory",
+      "순정만화"
+    ],
+    "titles": {
+      "ko": "순정만화",
+      "en": "Love Story"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002291",
     "title": "슈퍼스트링 -이세계 견문록-",
     "shardId": "webtoon_e2",
@@ -1961,6 +2937,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003440",
+    "title": "스노우 드롭",
+    "shardId": "webtoon_81",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Snow Drop",
+      "snowdrop",
+      "스노우 드롭",
+      "스노우드롭"
+    ],
+    "titles": {
+      "ko": "스노우 드롭",
+      "en": "Snow Drop"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000852",
@@ -2023,6 +3020,27 @@
       "ko": "스튜디오 짭쪼롬",
       "en": "Salty Studio",
       "ja": "スタジオ塩味"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002954",
+    "title": "스피릿 핑거스",
+    "shardId": "webtoon_3e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Spirit Fingers",
+      "spiritfingers",
+      "스피릿 핑거스",
+      "스피릿핑거스"
+    ],
+    "titles": {
+      "ko": "스피릿 핑거스",
+      "en": "Spirit Fingers"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2124,6 +3142,48 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003269",
+    "title": "신석기녀",
+    "shardId": "webtoon_11",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Neolithic Girl",
+      "neolithicgirl",
+      "신석기녀"
+    ],
+    "titles": {
+      "ko": "신석기녀",
+      "en": "Neolithic Girl"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003185",
+    "title": "신암행어사",
+    "shardId": "webtoon_16",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Blade of the Phantom Master",
+      "bladeofthephantommaster",
+      "新暗行御史",
+      "신암행어사"
+    ],
+    "titles": {
+      "ko": "신암행어사",
+      "en": "Blade of the Phantom Master",
+      "ja": "新暗行御史"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000410",
     "title": "신의 탑",
     "shardId": "webtoon_03",
@@ -2177,6 +3237,27 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003270",
+    "title": "심연의 하늘",
+    "shardId": "webtoon_6f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Distant Sky",
+      "distantsky",
+      "심연의 하늘",
+      "심연의하늘"
+    ],
+    "titles": {
+      "ko": "심연의 하늘",
+      "en": "Distant Sky"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002003",
     "title": "싸움독학",
     "shardId": "webtoon_9e",
@@ -2221,6 +3302,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003629",
+    "title": "아기공룡 둘리",
+    "shardId": "webtoon_ad",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dooly the Little Dinosaur",
+      "doolythelittledinosaur",
+      "赤ちゃん恐竜 ドゥーリー",
+      "赤ちゃん恐竜ドゥーリー",
+      "아기공룡 둘리",
+      "아기공룡둘리"
+    ],
+    "titles": {
+      "ko": "아기공룡 둘리",
+      "en": "Dooly the Little Dinosaur",
+      "ja": "赤ちゃん恐竜 ドゥーリー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002145",
     "title": "아내를 구하는 4가지 방법 (웹툰)",
     "shardId": "webtoon_0c",
@@ -2263,6 +3368,28 @@
       "ko": "아라타 칸가타리",
       "en": "Arata: The Legend",
       "ja": "アラタ カンガタリ〜革神語〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003014",
+    "title": "아마게돈",
+    "shardId": "webtoon_88",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Lee Hyun-se",
+    "tags": [],
+    "searchTokens": [
+      "Armageddon",
+      "Lee Hyun-se",
+      "armageddon",
+      "leehyunse",
+      "아마게돈"
+    ],
+    "titles": {
+      "ko": "아마게돈",
+      "en": "Armageddon"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2355,6 +3482,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003013",
+    "title": "아파트",
+    "shardId": "webtoon_3a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kang Full",
+    "tags": [],
+    "searchTokens": [
+      "Kang Full",
+      "Q2858631",
+      "kangfull",
+      "q2858631",
+      "아파트"
+    ],
+    "titles": {
+      "ko": "아파트",
+      "en": "Q2858631"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000922",
     "title": "아후가니스탄",
     "shardId": "webtoon_3c",
@@ -2372,6 +3521,27 @@
       "ko": "아후가니스탄",
       "en": "Afghanis-tan",
       "ja": "あふがにすタン"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003103",
+    "title": "악마의 신부",
+    "shardId": "webtoon_df",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Devil's Bride",
+      "devil'sbride",
+      "악마의 신부",
+      "악마의신부"
+    ],
+    "titles": {
+      "ko": "악마의 신부",
+      "en": "Devil's Bride"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2397,6 +3567,27 @@
       "ko": "악마의 엄마",
       "en": "Akuma no Mama",
       "ja": "あくまのまま"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003625",
+    "title": "악역의 엔딩은 죽음뿐",
+    "shardId": "webtoon_32",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Villains Are Destined to Die",
+      "villainsaredestinedtodie",
+      "악역의 엔딩은 죽음뿐",
+      "악역의엔딩은죽음뿐"
+    ],
+    "titles": {
+      "ko": "악역의 엔딩은 죽음뿐",
+      "en": "Villains Are Destined to Die"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2467,6 +3658,26 @@
       "ko": "앨버트가의 영애는 몰락을 소망합니다",
       "en": "Albert-ke no Reijō wa Botsuraku o Goshomō desu",
       "ja": "アルバート家の令嬢は没落をご所望です"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003353",
+    "title": "앵그리",
+    "shardId": "webtoon_b8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Angry",
+      "angry",
+      "앵그리"
+    ],
+    "titles": {
+      "ko": "앵그리",
+      "en": "Angry"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -2579,6 +3790,50 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003191",
+    "title": "언밸런스X2",
+    "shardId": "webtoon_68",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Unbalance Unbalance",
+      "unbalanceunbalance",
+      "アンバランス2",
+      "アンバランス×2",
+      "언밸런스X2",
+      "언밸런스x2"
+    ],
+    "titles": {
+      "ko": "언밸런스X2",
+      "en": "Unbalance Unbalance",
+      "ja": "アンバランス×2"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002947",
+    "title": "언터처블",
+    "shardId": "webtoon_a3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "unTOUCHable",
+      "untouchable",
+      "언터처블"
+    ],
+    "titles": {
+      "ko": "언터처블",
+      "en": "unTOUCHable"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002696",
     "title": "엄마중독",
     "shardId": "webtoon_93",
@@ -2643,6 +3898,71 @@
       "ko": "에포토란스! 마이",
       "en": "Epotoransu! Mai",
       "ja": "エポトランス!舞"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003183",
+    "title": "엔젤컵",
+    "shardId": "webtoon_c1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Angel Cup",
+      "angelcup",
+      "엔젤컵"
+    ],
+    "titles": {
+      "ko": "엔젤컵",
+      "en": "Angel Cup"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003539",
+    "title": "여신강림",
+    "shardId": "webtoon_d4",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "True Beauty",
+      "truebeauty",
+      "『女神降臨』",
+      "여신강림"
+    ],
+    "titles": {
+      "ko": "여신강림",
+      "en": "True Beauty",
+      "ja": "『女神降臨』"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003352",
+    "title": "여왕의 기사",
+    "shardId": "webtoon_3b",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kang-Won Kim",
+    "tags": [],
+    "searchTokens": [
+      "Kang-Won Kim",
+      "The Queen's Knight",
+      "kangwonkim",
+      "thequeen'sknight",
+      "여왕의 기사",
+      "여왕의기사"
+    ],
+    "titles": {
+      "ko": "여왕의 기사",
+      "en": "The Queen's Knight"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2777,6 +4097,26 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000002955",
+    "title": "열렙전사",
+    "shardId": "webtoon_e5",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hardcore Leveling Warrior",
+      "hardcorelevelingwarrior",
+      "열렙전사"
+    ],
+    "titles": {
+      "ko": "열렙전사",
+      "en": "Hardcore Leveling Warrior"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002704",
     "title": "열세번째 남자",
     "shardId": "webtoon_1a",
@@ -2840,6 +4180,26 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003017",
+    "title": "오!주예수여",
+    "shardId": "webtoon_7f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Oh! Holy",
+      "oh!holy",
+      "오!주예수여"
+    ],
+    "titles": {
+      "ko": "오!주예수여",
+      "en": "Oh! Holy"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002520",
@@ -2908,6 +4268,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003442",
+    "title": "와라! 편의점",
+    "shardId": "webtoon_36",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Welcome to Convenience Store",
+      "welcometoconveniencestore",
+      "おいでよ!コンビニ",
+      "와라! 편의점",
+      "와라!편의점"
+    ],
+    "titles": {
+      "ko": "와라! 편의점",
+      "en": "Welcome to Convenience Store",
+      "ja": "おいでよ!コンビニ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002203",
     "title": "외과의사 엘리제",
     "shardId": "webtoon_e0",
@@ -2929,6 +4312,53 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000002945",
+    "title": "외모지상주의",
+    "shardId": "webtoon_f1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Lookism",
+      "lookism",
+      "外見至上主義",
+      "외모지상주의"
+    ],
+    "titles": {
+      "ko": "외모지상주의",
+      "en": "Lookism",
+      "ja": "外見至上主義"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003356",
+    "title": "요정 핑크",
+    "shardId": "webtoon_07",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Kim Donghwa",
+    "tags": [],
+    "searchTokens": [
+      "Fairy Pink",
+      "Kim Donghwa",
+      "fairypink",
+      "kimdonghwa",
+      "妖精ピンク",
+      "요정 핑크",
+      "요정핑크"
+    ],
+    "titles": {
+      "ko": "요정 핑크",
+      "en": "Fairy Pink",
+      "ja": "妖精ピンク"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000002528",
@@ -3043,6 +4473,47 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003271",
+    "title": "우리사이느은",
+    "shardId": "webtoon_8b",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Something About Us",
+      "somethingaboutus",
+      "우리사이느은"
+    ],
+    "titles": {
+      "ko": "우리사이느은",
+      "en": "Something About Us"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003624",
+    "title": "우리집 우렁이는",
+    "shardId": "webtoon_e8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q97339029",
+      "q97339029",
+      "우리집 우렁이는",
+      "우리집우렁이는"
+    ],
+    "titles": {
+      "ko": "우리집 우렁이는",
+      "en": "Q97339029"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002068",
     "title": "우리집에 놀러와!",
     "shardId": "webtoon_69",
@@ -3114,6 +4585,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003093",
+    "title": "원",
+    "shardId": "webtoon_da",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Lee Bin",
+    "tags": [],
+    "searchTokens": [
+      "Lee Bin",
+      "One",
+      "leebin",
+      "one",
+      "원"
+    ],
+    "titles": {
+      "ko": "원",
+      "en": "One"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000546",
     "title": "원댄스",
     "shardId": "webtoon_ce",
@@ -3177,6 +4670,48 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003272",
+    "title": "웨스트우드 비브라토",
+    "shardId": "webtoon_66",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Westwood Vibrato",
+      "westwoodvibrato",
+      "웨스트우드 비브라토",
+      "웨스트우드비브라토"
+    ],
+    "titles": {
+      "ko": "웨스트우드 비브라토",
+      "en": "Westwood Vibrato"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003186",
+    "title": "위대한 캣츠비",
+    "shardId": "webtoon_df",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Great Catsby",
+      "thegreatcatsby",
+      "위대한 캣츠비",
+      "위대한캣츠비"
+    ],
+    "titles": {
+      "ko": "위대한 캣츠비",
+      "en": "The Great Catsby"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002135",
     "title": "위장여친",
     "shardId": "webtoon_c6",
@@ -3192,6 +4727,96 @@
     "titles": {
       "ko": "위장여친",
       "en": "My Princess Charming"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003267",
+    "title": "위치헌터",
+    "shardId": "webtoon_2d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Cho Jung-man",
+    "tags": [],
+    "searchTokens": [
+      "Cho Jung-man",
+      "Witch Hunter",
+      "chojungman",
+      "witchhunter",
+      "ウィッチハンター",
+      "위치헌터"
+    ],
+    "titles": {
+      "ko": "위치헌터",
+      "en": "Witch Hunter",
+      "ja": "ウィッチハンター"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000002951",
+    "title": "윙즈-영광을 위한 날개",
+    "shardId": "webtoon_48",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q21059729",
+      "q21059729",
+      "윙즈-영광을 위한 날개",
+      "윙즈영광을위한날개"
+    ],
+    "titles": {
+      "ko": "윙즈-영광을 위한 날개",
+      "en": "Q21059729"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003266",
+    "title": "유레카",
+    "shardId": "webtoon_ca",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Son Hee-joon",
+    "tags": [],
+    "searchTokens": [
+      "Son Hee-joon",
+      "iD_ᴇNTITY",
+      "id_ᴇntity",
+      "sonheejoon",
+      "유레카"
+    ],
+    "titles": {
+      "ko": "유레카",
+      "en": "iD_ᴇNTITY"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003018",
+    "title": "유미의 세포들 (웹툰)",
+    "shardId": "webtoon_d6",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Yumi's Cells (webtoon)",
+      "yumi'scells(webtoon)",
+      "ユミの細胞たち",
+      "유미의 세포들 (웹툰)",
+      "유미의세포들(웹툰)"
+    ],
+    "titles": {
+      "ko": "유미의 세포들 (웹툰)",
+      "en": "Yumi's Cells (webtoon)",
+      "ja": "ユミの細胞たち"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3218,6 +4843,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003016",
+    "title": "육식공주 예그리나",
+    "shardId": "webtoon_bc",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Carnivorous Princess Yegrina",
+      "carnivorousprincessyegrina",
+      "육식공주 예그리나",
+      "육식공주예그리나"
+    ],
+    "titles": {
+      "ko": "육식공주 예그리나",
+      "en": "Carnivorous Princess Yegrina"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002893",
@@ -3264,6 +4910,70 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003533",
+    "title": "이두나!",
+    "shardId": "webtoon_2f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "민송아",
+    "tags": [],
+    "searchTokens": [
+      "The Girl Downstairs (manhwa)",
+      "thegirldownstairs(manhwa)",
+      "下の階には澪がいる",
+      "민송아",
+      "이두나!"
+    ],
+    "titles": {
+      "ko": "이두나!",
+      "en": "The Girl Downstairs (manhwa)",
+      "ja": "下の階には澪がいる"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003021",
+    "title": "이드",
+    "shardId": "webtoon_96",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Id",
+      "id",
+      "이드"
+    ],
+    "titles": {
+      "ko": "이드",
+      "en": "Id"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003273",
+    "title": "이미테이션 (웹툰)",
+    "shardId": "webtoon_e1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Imitation",
+      "imitation",
+      "이미테이션 (웹툰)",
+      "이미테이션(웹툰)"
+    ],
+    "titles": {
+      "ko": "이미테이션 (웹툰)",
+      "en": "Imitation"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002004",
@@ -3352,6 +5062,47 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003447",
+    "title": "이태원 클라쓰",
+    "shardId": "webtoon_26",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Itaewon Class",
+      "itaewonclass",
+      "이태원 클라쓰",
+      "이태원클라쓰"
+    ],
+    "titles": {
+      "ko": "이태원 클라쓰",
+      "en": "Itaewon Class"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003015",
+    "title": "이터너티",
+    "shardId": "webtoon_3d",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Eternity",
+      "eternity",
+      "이터너티"
+    ],
+    "titles": {
+      "ko": "이터너티",
+      "en": "Eternity"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002210",
@@ -3445,6 +5196,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003630",
+    "title": "입시명문사립 정글고등학교",
+    "shardId": "webtoon_fb",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "김규삼",
+    "tags": [],
+    "searchTokens": [
+      "Q54879",
+      "q54879",
+      "김규삼",
+      "입시명문사립 정글고등학교",
+      "입시명문사립정글고등학교"
+    ],
+    "titles": {
+      "ko": "입시명문사립 정글고등학교",
+      "en": "Q54879"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002525",
     "title": "입학용병",
     "shardId": "webtoon_c4",
@@ -3506,6 +5279,27 @@
     "titles": {
       "ko": "재벌집 막내아들",
       "en": "Reborn Rich"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003623",
+    "title": "저녁 같이 드실래요?",
+    "shardId": "webtoon_e2",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Shall We Have Dinner Tonight?",
+      "shallwehavedinnertonight?",
+      "저녁 같이 드실래요?",
+      "저녁같이드실래요?"
+    ],
+    "titles": {
+      "ko": "저녁 같이 드실래요?",
+      "en": "Shall We Have Dinner Tonight?"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3574,6 +5368,72 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003444",
+    "title": "제로: 시작의 관",
+    "shardId": "webtoon_ef",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Zero",
+      "zero",
+      "제로: 시작의 관",
+      "제로시작의관"
+    ],
+    "titles": {
+      "ko": "제로: 시작의 관",
+      "en": "Zero"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003091",
+    "title": "제로테이커",
+    "shardId": "webtoon_db",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Choi Yun-Yeol",
+    "tags": [],
+    "searchTokens": [
+      "Choi Yun-Yeol",
+      "Zero taker",
+      "choiyunyeol",
+      "zerotaker",
+      "제로테이커"
+    ],
+    "titles": {
+      "ko": "제로테이커",
+      "en": "Zero taker"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
+    "workId": "wk_000003626",
+    "title": "좀비딸",
+    "shardId": "webtoon_a3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "이윤창",
+    "tags": [],
+    "searchTokens": [
+      "My Daughter is a Zombie",
+      "mydaughterisazombie",
+      "ゾンビ娘",
+      "이윤창",
+      "좀비딸"
+    ],
+    "titles": {
+      "ko": "좀비딸",
+      "en": "My Daughter is a Zombie",
+      "ja": "ゾンビ娘"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000854",
@@ -3689,6 +5549,47 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003627",
+    "title": "짜장면",
+    "shardId": "webtoon_c3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q97750127",
+      "q97750127",
+      "짜장면"
+    ],
+    "titles": {
+      "ko": "짜장면",
+      "en": "Q97750127"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003628",
+    "title": "차차차 (웹툰)",
+    "shardId": "webtoon_cb",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q98637297",
+      "q98637297",
+      "차차차 (웹툰)",
+      "차차차(웹툰)"
+    ],
+    "titles": {
+      "ko": "차차차 (웹툰)",
+      "en": "Q98637297"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002701",
     "title": "참교육",
     "shardId": "webtoon_4a",
@@ -3709,6 +5610,109 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003187",
+    "title": "천랑열전",
+    "shardId": "webtoon_cf",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "박성우",
+    "tags": [],
+    "searchTokens": [
+      "Chun Rhang Yul Jun",
+      "chunrhangyuljun",
+      "박성우",
+      "천랑열전"
+    ],
+    "titles": {
+      "ko": "천랑열전",
+      "en": "Chun Rhang Yul Jun"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003092",
+    "title": "천일야화",
+    "shardId": "webtoon_e7",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Han Seung-Hee",
+    "tags": [],
+    "searchTokens": [
+      "Han Seung-Hee",
+      "One Thousand and One Nights",
+      "hanseunghee",
+      "onethousandandonenights",
+      "천일야화"
+    ],
+    "titles": {
+      "ko": "천일야화",
+      "en": "One Thousand and One Nights"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003536",
+    "title": "천지해",
+    "shardId": "webtoon_19",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q97213325",
+      "q97213325",
+      "천지해"
+    ],
+    "titles": {
+      "ko": "천지해",
+      "en": "Q97213325"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003349",
+    "title": "천추",
+    "shardId": "webtoon_76",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chonchu – The Heir of the Devil's Stone",
+      "chonchutheheirofthedevil'sstone",
+      "천추"
+    ],
+    "titles": {
+      "ko": "천추",
+      "en": "Chonchu – The Heir of the Devil's Stone"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003184",
+    "title": "천행기",
+    "shardId": "webtoon_98",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Angel Diary",
+      "angeldiary",
+      "천행기"
+    ],
+    "titles": {
+      "ko": "천행기",
+      "en": "Angel Diary"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002073",
     "title": "청춘 블라썸",
     "shardId": "webtoon_4b",
@@ -3725,6 +5729,26 @@
     "titles": {
       "ko": "청춘 블라썸",
       "en": "Seasons of Blossom"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003438",
+    "title": "체인지가이",
+    "shardId": "webtoon_58",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Quantum Mistake",
+      "quantummistake",
+      "체인지가이"
+    ],
+    "titles": {
+      "ko": "체인지가이",
+      "en": "Quantum Mistake"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3826,6 +5850,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000003448",
+    "title": "캉타우",
+    "shardId": "webtoon_9e",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kangtawoo",
+      "kangtawoo",
+      "カンタウ",
+      "캉타우"
+    ],
+    "titles": {
+      "ko": "캉타우",
+      "en": "Kangtawoo",
+      "ja": "カンタウ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002146",
     "title": "커넥트",
     "shardId": "webtoon_71",
@@ -3916,6 +5962,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000003101",
+    "title": "킬링 스토킹",
+    "shardId": "webtoon_f6",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "쿠기",
+    "tags": [],
+    "searchTokens": [
+      "Killing Stalking",
+      "killingstalking",
+      "쿠기",
+      "킬링 스토킹",
+      "킬링스토킹"
+    ],
+    "titles": {
+      "ko": "킬링 스토킹",
+      "en": "Killing Stalking"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002457",
     "title": "타이밍",
     "shardId": "webtoon_35",
@@ -3953,6 +6021,28 @@
     "titles": {
       "ko": "택배기사",
       "en": "Delivery Knight"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003274",
+    "title": "테러맨",
+    "shardId": "webtoon_1f",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Terror Man",
+      "terrorman",
+      "テロマン（ウェブトゥーン）",
+      "테러맨"
+    ],
+    "titles": {
+      "ko": "테러맨",
+      "en": "Terror Man",
+      "ja": "テロマン（ウェブトゥーン）"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -3998,6 +6088,46 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003443",
+    "title": "트레이스",
+    "shardId": "webtoon_e3",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Trace",
+      "trace",
+      "트레이스"
+    ],
+    "titles": {
+      "ko": "트레이스",
+      "en": "Trace"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003265",
+    "title": "파검기",
+    "shardId": "webtoon_27",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chronicles of the Cursed Sword",
+      "chroniclesofthecursedsword",
+      "파검기"
+    ],
+    "titles": {
+      "ko": "파검기",
+      "en": "Chronicles of the Cursed Sword"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002293",
     "title": "파이게임",
     "shardId": "webtoon_05",
@@ -4039,6 +6169,27 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003010",
+    "title": "팬더 모니엄",
+    "shardId": "webtoon_c8",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pandemonium",
+      "pandemonium",
+      "팬더 모니엄",
+      "팬더모니엄"
+    ],
+    "titles": {
+      "ko": "팬더 모니엄",
+      "en": "Pandemonium"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000742",
@@ -4089,6 +6240,49 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003350",
+    "title": "프리스트",
+    "shardId": "webtoon_0c",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "Hyung Min-woo",
+    "tags": [],
+    "searchTokens": [
+      "Hyung Min-woo",
+      "Priest",
+      "hyungminwoo",
+      "priest",
+      "프리스트"
+    ],
+    "titles": {
+      "ko": "프리스트",
+      "en": "Priest"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000002950",
+    "title": "프린스의 왕자",
+    "shardId": "webtoon_f1",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Prince of Prince",
+      "princeofprince",
+      "프린스의 왕자",
+      "프린스의왕자"
+    ],
+    "titles": {
+      "ko": "프린스의 왕자",
+      "en": "Prince of Prince"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001837",
     "title": "플레이, 플리",
     "shardId": "webtoon_27",
@@ -4125,6 +6319,26 @@
     "titles": {
       "ko": "플로우",
       "en": "Flow"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000003437",
+    "title": "핑크레이디",
+    "shardId": "webtoon_d9",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pink Lady",
+      "pinklady",
+      "핑크레이디"
+    ],
+    "titles": {
+      "ko": "핑크레이디",
+      "en": "Pink Lady"
     },
     "qualityScore": 50,
     "qualityTier": 2
@@ -4197,6 +6411,26 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000003531",
+    "title": "하우스키퍼",
+    "shardId": "webtoon_f9",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Housekeeper",
+      "housekeeper",
+      "하우스키퍼"
+    ],
+    "titles": {
+      "ko": "하우스키퍼",
+      "en": "Housekeeper"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000923",
     "title": "하트 커넥트",
     "shardId": "webtoon_d4",
@@ -4245,6 +6479,26 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003532",
+    "title": "해치지않아",
+    "shardId": "webtoon_2a",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Unuzooal Zoo",
+      "unuzooalzoo",
+      "해치지않아"
+    ],
+    "titles": {
+      "ko": "해치지않아",
+      "en": "Unuzooal Zoo"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002894",
@@ -4328,6 +6582,27 @@
     "titles": {
       "ko": "호텔 아프리카",
       "en": "Hotel Africa"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000003357",
+    "title": "화양연화 pt.0 <SAVE ME>",
+    "shardId": "webtoon_41",
+    "category": "webtoon",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Save Me",
+      "saveme",
+      "화양연화 pt.0 <SAVE ME>",
+      "화양연화pt.0<saveme>"
+    ],
+    "titles": {
+      "ko": "화양연화 pt.0 <SAVE ME>",
+      "en": "Save Me"
     },
     "qualityScore": 65,
     "qualityTier": 3

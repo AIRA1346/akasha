@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003848": {
+    "workId": "wk_000003848",
+    "title": "칼리메로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128969"
+    },
+    "titles": {
+      "ko": "칼리메로",
+      "en": "Calimero",
+      "ja": "カリメロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

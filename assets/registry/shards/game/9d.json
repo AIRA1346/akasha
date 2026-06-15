@@ -17,5 +17,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004761": {
+    "workId": "wk_000004761",
+    "title": "로맨싱 사가: 민스트럴 송",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11350697"
+    },
+    "titles": {
+      "ko": "로맨싱 사가: 민스트럴 송",
+      "en": "Romancing SaGa: Minstrel Song",
+      "ja": "ロマンシング サガ -ミンストレルソング-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004772": {
+    "workId": "wk_000004772",
+    "title": "TNA 임팩트!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136162"
+    },
+    "titles": {
+      "ko": "TNA 임팩트!",
+      "en": "TNA Impact!"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

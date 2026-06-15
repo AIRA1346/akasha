@@ -93,5 +93,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003364": {
+    "workId": "wk_000003364",
+    "title": "주식회사 마지루미에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123574057"
+    },
+    "titles": {
+      "ko": "주식회사 마지루미에",
+      "en": "Magilumiere Co. Ltd.",
+      "ja": "株式会社マジルミエ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003983": {
+    "workId": "wk_000003983",
+    "title": "우에노 선배는 서툴러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130458175"
+    },
+    "titles": {
+      "ko": "우에노 선배는 서툴러",
+      "en": "How Clumsy You Are, Miss Ueno",
+      "ja": "上野さんは不器用"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004637": {
+    "workId": "wk_000004637",
+    "title": "듀얼마스터즈 LOST",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137322938"
+    },
+    "titles": {
+      "ko": "듀얼마스터즈 LOST",
+      "en": "Duel Masters LOST",
+      "ja": "Duel Masters LOST"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

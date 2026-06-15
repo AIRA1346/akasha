@@ -15,5 +15,78 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003164": {
+    "workId": "wk_000003164",
+    "title": "K트롯 서바이벌 골든마이크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459435"
+    },
+    "titles": {
+      "ko": "K트롯 서바이벌 골든마이크",
+      "en": "Q109459435"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004789": {
+    "workId": "wk_000004789",
+    "title": "비밀의 교정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11110268"
+    },
+    "titles": {
+      "ko": "비밀의 교정",
+      "en": "Secret Campus",
+      "ja": "秘密の校庭"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005001": {
+    "workId": "wk_000005001",
+    "title": "키킹 잇",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111756"
+    },
+    "titles": {
+      "ko": "키킹 잇",
+      "en": "Kickin' It",
+      "ja": "とび蹴りアチョ〜ズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005327": {
+    "workId": "wk_000005327",
+    "title": "망상수사: 구와가타 고이치 준교수의 스타일리시한 생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11239882"
+    },
+    "titles": {
+      "ko": "망상수사: 구와가타 고이치 준교수의 스타일리시한 생활",
+      "en": "Q11239882",
+      "ja": "桑潟幸一准教授のスタイリッシュな生活"
+    },
+    "releaseYear": 2011,
+    "creator": "Hikaru Okuizumi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

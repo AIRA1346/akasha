@@ -75,5 +75,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003262": {
+    "workId": "wk_000003262",
+    "title": "이누가미 양과 네코야마 양",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11571242"
+    },
+    "titles": {
+      "ko": "이누가미 양과 네코야마 양",
+      "en": "Inugami-san to Nekoyama-san",
+      "ja": "犬神さんと猫山さん"
+    },
+    "creator": "Kuzushiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

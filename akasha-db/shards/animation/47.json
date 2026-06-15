@@ -53,5 +53,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004506": {
+    "workId": "wk_000004506",
+    "title": "히든 카드가 많은 빅토리아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136230033"
+    },
+    "titles": {
+      "ko": "히든 카드가 많은 빅토리아",
+      "en": "Victoria of Many Faces",
+      "ja": "手札が多めのビクトリア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004963": {
+    "workId": "wk_000004963",
+    "title": "오즈 탐험대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1617715"
+    },
+    "titles": {
+      "ko": "오즈 탐험대",
+      "en": "The Wonderful Galaxy of Oz",
+      "ja": "スペースオズの冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005218": {
+    "workId": "wk_000005218",
+    "title": "도메스틱 그녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18339562"
+    },
+    "titles": {
+      "ko": "도메스틱 그녀",
+      "en": "Domestic Girlfriend",
+      "ja": "ドメスティックな彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

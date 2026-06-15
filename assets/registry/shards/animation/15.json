@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005073": {
+    "workId": "wk_000005073",
+    "title": "아이돌 마스터 무비 : 빛의 저편으로!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17042360"
+    },
+    "titles": {
+      "ko": "아이돌 마스터 무비 : 빛의 저편으로!",
+      "en": "The Idolmaster Movie: Beyond the Brilliant Future!",
+      "ja": "THE IDOLM@STER MOVIE 輝きの向こう側へ!"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004180": {
+    "workId": "wk_000004180",
+    "title": "아시안탑밴드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115589"
+    },
+    "titles": {
+      "ko": "아시안탑밴드",
+      "en": "Q110115589"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004329": {
+    "workId": "wk_000004329",
+    "title": "골든일레븐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118103"
+    },
+    "titles": {
+      "ko": "골든일레븐",
+      "en": "Q110118103"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004934": {
+    "workId": "wk_000004934",
+    "title": "바이트 씨스터즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541900"
+    },
+    "titles": {
+      "ko": "바이트 씨스터즈",
+      "en": "Bite Sisters"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

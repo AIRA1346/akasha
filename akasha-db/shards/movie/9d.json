@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004253": {
+    "workId": "wk_000004253",
+    "title": "롱 굿 프라이데이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055796"
+    },
+    "titles": {
+      "ko": "롱 굿 프라이데이",
+      "en": "The Long Good Friday",
+      "ja": "ロング・グッド・フライデー"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

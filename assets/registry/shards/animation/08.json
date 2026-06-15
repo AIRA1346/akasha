@@ -35,5 +35,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002960": {
+    "workId": "wk_000002960",
+    "title": "피노키오의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204125"
+    },
+    "titles": {
+      "ko": "피노키오의 모험",
+      "en": "Pinocchio: The Series",
+      "ja": "樫の木モック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004507": {
+    "workId": "wk_000004507",
+    "title": "극장판 너와 아이돌 프리큐어♪ 기다렸지! 너에게 전하는 키랏키라이브!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136260086"
+    },
+    "titles": {
+      "ko": "극장판 너와 아이돌 프리큐어♪ 기다렸지! 너에게 전하는 키랏키라이브!",
+      "en": "You and Idol Pretty Cure the Movie: For You! Our Kirakilala Concert!",
+      "ja": "映画 キミとアイドルプリキュア♪ お待たせ!キミに届けるキラッキライブ!"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004711": {
+    "workId": "wk_000004711",
+    "title": "아빠도, 하고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139568072"
+    },
+    "titles": {
+      "ko": "아빠도, 하고 싶어",
+      "en": "Papa Datte, Shitai",
+      "ja": "パパだって、したい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005024": {
+    "workId": "wk_000005024",
+    "title": "내 여동생이 이렇게 귀여울 리가 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16748950"
+    },
+    "titles": {
+      "ko": "내 여동생이 이렇게 귀여울 리가 없어",
+      "en": "Oreimo",
+      "ja": "俺の妹がこんなに可愛いわけない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

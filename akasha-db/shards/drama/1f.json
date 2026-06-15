@@ -16,5 +16,128 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003417": {
+    "workId": "wk_000003417",
+    "title": "게임돌림픽 2019 : 골든카드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461386"
+    },
+    "titles": {
+      "ko": "게임돌림픽 2019 : 골든카드",
+      "en": "Q109461386"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003960": {
+    "workId": "wk_000003960",
+    "title": "김성주의 모닝카페",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114396"
+    },
+    "titles": {
+      "ko": "김성주의 모닝카페",
+      "en": "Q110114396"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004853": {
+    "workId": "wk_000004853",
+    "title": "블라인드 (2022년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111148295"
+    },
+    "titles": {
+      "ko": "블라인드 (2022년 드라마)",
+      "en": "Blind"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004868": {
+    "workId": "wk_000004868",
+    "title": "영원의 1/2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11132795"
+    },
+    "titles": {
+      "ko": "영원의 1/2",
+      "en": "Eternally 1/2",
+      "ja": "永遠の1/2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004869": {
+    "workId": "wk_000004869",
+    "title": "호리미야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111342113"
+    },
+    "titles": {
+      "ko": "호리미야",
+      "en": "Horimiya",
+      "ja": "ホリミヤ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005262": {
+    "workId": "wk_000005262",
+    "title": "NHK 뉴스 10",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235024"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 10",
+      "en": "NHK News 10",
+      "ja": "NHKニュース10"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005324": {
+    "workId": "wk_000005324",
+    "title": "로펌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237751"
+    },
+    "titles": {
+      "ko": "로펌",
+      "en": "Law Firm",
+      "ja": "ロー・ファーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

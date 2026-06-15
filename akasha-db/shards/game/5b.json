@@ -74,5 +74,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003128": {
+    "workId": "wk_000003128",
+    "title": "플랜츠 vs. 좀비 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109439458"
+    },
+    "titles": {
+      "ko": "플랜츠 vs. 좀비 3",
+      "en": "Plants vs. Zombies 3: Evolved",
+      "ja": "Plants vs. Zombies 3"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004011": {
+    "workId": "wk_000004011",
+    "title": "미라클 노통",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242136"
+    },
+    "titles": {
+      "ko": "미라클 노통",
+      "en": "Miracle No-ton",
+      "ja": "みらくるのーとん"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004763": {
+    "workId": "wk_000004763",
+    "title": "비오라트의 아틀리에 ~그람나트의 연금술사 2~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11351989"
+    },
+    "titles": {
+      "ko": "비오라트의 아틀리에 ~그람나트의 연금술사 2~",
+      "en": "Atelier Violet: The Alchemist of Gramnad 2",
+      "ja": "ヴィオラートのアトリエ 〜グラムナートの錬金術士2〜"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

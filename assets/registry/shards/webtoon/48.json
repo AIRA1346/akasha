@@ -1,1 +1,37 @@
-{}
+{
+  "wk_000002951": {
+    "workId": "wk_000002951",
+    "title": "윙즈-영광을 위한 날개",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21059729"
+    },
+    "titles": {
+      "ko": "윙즈-영광을 위한 날개",
+      "en": "Q21059729"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003537": {
+    "workId": "wk_000003537",
+    "title": "바른연애 길잡이",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97216120"
+    },
+    "titles": {
+      "ko": "바른연애 길잡이",
+      "en": "Romance 101",
+      "ja": "正しい恋の始めかた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

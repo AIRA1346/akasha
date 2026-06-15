@@ -1,0 +1,39 @@
+{
+  "wk_000004063": {
+    "workId": "wk_000004063",
+    "title": "도라에몽 노비타와 로봇왕국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1309659"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 로봇왕국",
+      "en": "Doraemon: Nobita in the Robot Kingdom",
+      "ja": "ドラえもん のび太とロボット王国"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004575": {
+    "workId": "wk_000004575",
+    "title": "여기는 내게 맡기고 먼저 가라고 말한 지 10년이 지났더니 전설이 되어 있었다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136417251"
+    },
+    "titles": {
+      "ko": "여기는 내게 맡기고 먼저 가라고 말한 지 10년이 지났더니 전설이 되어 있었다.",
+      "en": "I Became a Legend after My 10 Year-Long Last Stand",
+      "ja": "ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

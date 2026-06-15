@@ -72,5 +72,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003031": {
+    "workId": "wk_000003031",
+    "title": "명탐정 코난: 수평선상의 음모",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207384"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 수평선상의 음모",
+      "en": "Detective Conan: Strategy Above the Depths",
+      "ja": "名探偵コナン 水平線上の陰謀"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003283": {
+    "workId": "wk_000003283",
+    "title": "시원찮은 그녀를 위한 육성방법",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123204376"
+    },
+    "titles": {
+      "ko": "시원찮은 그녀를 위한 육성방법",
+      "en": "Saekano",
+      "ja": "冴えない彼女の育てかた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003374": {
+    "workId": "wk_000003374",
+    "title": "일본에 어서 오세요 엘프 씨.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124033398"
+    },
+    "titles": {
+      "ko": "일본에 어서 오세요 엘프 씨.",
+      "en": "Welcome to Japan, Ms. Elf!",
+      "ja": "日本へようこそエルフさん。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005221": {
+    "workId": "wk_000005221",
+    "title": "Go! 프린세스 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18392373"
+    },
+    "titles": {
+      "ko": "Go! 프린세스 프리큐어",
+      "en": "Go! Princess Pretty Cure",
+      "ja": "Go!プリンセスプリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

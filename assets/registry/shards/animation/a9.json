@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004817": {
+    "workId": "wk_000004817",
+    "title": "퓨처 카드 버디파이트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15502589"
+    },
+    "titles": {
+      "ko": "퓨처 카드 버디파이트",
+      "en": "Future Card Buddyfight",
+      "ja": "フューチャーカード バディファイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

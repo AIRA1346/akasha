@@ -44,5 +44,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005273": {
+    "workId": "wk_000005273",
+    "title": "100미터.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126086643"
+    },
+    "titles": {
+      "ko": "100미터.",
+      "en": "100 Meters",
+      "ja": "ひゃくえむ。"
+    },
+    "creator": "Uoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

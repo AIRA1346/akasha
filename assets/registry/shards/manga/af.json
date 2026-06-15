@@ -101,5 +101,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004796": {
+    "workId": "wk_000004796",
+    "title": "ATRI -My Dear Moments-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122381957"
+    },
+    "titles": {
+      "ko": "ATRI -My Dear Moments-",
+      "en": "Atri: My Dear Moments",
+      "ja": "ATRI -My Dear Moments-"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

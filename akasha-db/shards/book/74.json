@@ -1,0 +1,21 @@
+{
+  "wk_000005302": {
+    "workId": "wk_000005302",
+    "title": "대자은사삼장법사전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10935464"
+    },
+    "titles": {
+      "ko": "대자은사삼장법사전",
+      "en": "A Biography of the Tripiṭaka Master of the Great Ci'en Monastery",
+      "ja": "大慈恩寺三蔵法師伝"
+    },
+    "creator": "Yancong",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

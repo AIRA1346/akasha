@@ -33,5 +33,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003069": {
+    "workId": "wk_000003069",
+    "title": "저취시생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458820"
+    },
+    "titles": {
+      "ko": "저취시생활",
+      "en": "Q109458820"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005010": {
+    "workId": "wk_000005010",
+    "title": "주식회사 세계충격영상사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11184719"
+    },
+    "titles": {
+      "ko": "주식회사 세계충격영상사",
+      "en": "THE WORLD IMPACT IMAGE COMPANY LTD.",
+      "ja": "(株)世界衝撃映像社"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005181": {
+    "workId": "wk_000005181",
+    "title": "하이재킹",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112131897"
+    },
+    "titles": {
+      "ko": "하이재킹",
+      "en": "Hijack",
+      "ja": "ハイジャック (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003150": {
+    "workId": "wk_000003150",
+    "title": "커밍 홈 인 더 다크",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104903238"
+    },
+    "titles": {
+      "ko": "커밍 홈 인 더 다크",
+      "en": "Coming Home in the Dark"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

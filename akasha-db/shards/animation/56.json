@@ -71,5 +71,80 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003632": {
+    "workId": "wk_000003632",
+    "title": "고스트캣 앙주",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125854371"
+    },
+    "titles": {
+      "ko": "고스트캣 앙주",
+      "en": "Ghost Cat Anzu",
+      "ja": "化け猫あんずちゃん"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004205": {
+    "workId": "wk_000004205",
+    "title": "아르마는 가족이 되고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131781729"
+    },
+    "titles": {
+      "ko": "아르마는 가족이 되고 싶어",
+      "en": "Alma-chan Wants to Be a Family!",
+      "ja": "アルマちゃんは家族になりたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004511": {
+    "workId": "wk_000004511",
+    "title": "화록청이 밝아오는 날에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136352585"
+    },
+    "titles": {
+      "ko": "화록청이 밝아오는 날에",
+      "en": "A New Dawn",
+      "ja": "花緑青が明ける日に"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004890": {
+    "workId": "wk_000004890",
+    "title": "극장판 프리큐어 올스타즈 뉴 스테이지 3 영원의 친구",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15911009"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 올스타즈 뉴 스테이지 3 영원의 친구",
+      "en": "Pretty Cure All Stars New Stage 3: Eternal Friends",
+      "ja": "映画 プリキュアオールスターズNewStage3 永遠のともだち"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

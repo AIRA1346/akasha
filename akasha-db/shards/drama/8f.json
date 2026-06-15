@@ -15,5 +15,90 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003602": {
+    "workId": "wk_000003602",
+    "title": "백련성강",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533884"
+    },
+    "titles": {
+      "ko": "백련성강",
+      "en": "Q109533884"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003604": {
+    "workId": "wk_000003604",
+    "title": "2020 추석특집 아이돌 멍멍 선수권대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109534094"
+    },
+    "titles": {
+      "ko": "2020 추석특집 아이돌 멍멍 선수권대회",
+      "en": "Q109534094"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004127": {
+    "workId": "wk_000004127",
+    "title": "슈퍼탤런트 메가 인플루언서 어워즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115442"
+    },
+    "titles": {
+      "ko": "슈퍼탤런트 메가 인플루언서 어워즈",
+      "en": "Q110115442"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004788": {
+    "workId": "wk_000004788",
+    "title": "서울임사부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11106066"
+    },
+    "titles": {
+      "ko": "서울임사부",
+      "en": "Q11106066"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004854": {
+    "workId": "wk_000004854",
+    "title": "아메리칸 본 차이니즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111169509"
+    },
+    "titles": {
+      "ko": "아메리칸 본 차이니즈",
+      "en": "Karate kid leyends"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

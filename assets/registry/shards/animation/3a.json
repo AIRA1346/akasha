@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004068": {
+    "workId": "wk_000004068",
+    "title": "비 오는 밤의 달",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131193463"
+    },
+    "titles": {
+      "ko": "비 오는 밤의 달",
+      "en": "The Moon on a Rainy Night",
+      "ja": "雨夜の月"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

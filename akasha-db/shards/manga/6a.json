@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003179": {
+    "workId": "wk_000003179",
+    "title": "올바른 사랑이란",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11545340"
+    },
+    "titles": {
+      "ko": "올바른 사랑이란",
+      "en": "Tadashi Ren'ai no Susume",
+      "ja": "正しい恋愛のススメ"
+    },
+    "creator": "Yukari Ichijo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

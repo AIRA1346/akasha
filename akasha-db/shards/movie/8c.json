@@ -1,0 +1,21 @@
+{
+  "wk_000004609": {
+    "workId": "wk_000004609",
+    "title": "철도원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057098"
+    },
+    "titles": {
+      "ko": "철도원",
+      "en": "The Railroad Man",
+      "ja": "鉄道員"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

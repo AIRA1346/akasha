@@ -69,5 +69,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004228": {
+    "workId": "wk_000004228",
+    "title": "스타워즈 제다이: 서바이버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112704136"
+    },
+    "titles": {
+      "ko": "스타워즈 제다이: 서바이버",
+      "en": "Star Wars Jedi: Survivor",
+      "ja": "Star Wars ジェダイ：サバイバー"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004771": {
+    "workId": "wk_000004771",
+    "title": "더 파이널스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113586393"
+    },
+    "titles": {
+      "ko": "더 파이널스",
+      "en": "The Finals",
+      "ja": "The Finals"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

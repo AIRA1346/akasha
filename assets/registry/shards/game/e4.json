@@ -1,0 +1,58 @@
+{
+  "wk_000003117": {
+    "workId": "wk_000003117",
+    "title": "귀축왕 란스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109359678"
+    },
+    "titles": {
+      "ko": "귀축왕 란스",
+      "en": "Kichikuou Rance",
+      "ja": "鬼畜王ランス"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004227": {
+    "workId": "wk_000004227",
+    "title": "전처녀발키리 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269691"
+    },
+    "titles": {
+      "ko": "전처녀발키리 2",
+      "en": "Ikusa Otome Valkyrie 2 \"Shu yo, Midara na Watashi o Oyurushi Kudasai...\"",
+      "ja": "戦乙女ヴァルキリー2「主よ、淫らな私をお許しください……」"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004451": {
+    "workId": "wk_000004451",
+    "title": "홀로큐어: 팬들을 지키자!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113098636"
+    },
+    "titles": {
+      "ko": "홀로큐어: 팬들을 지키자!",
+      "en": "HoloCure - Save the Fans!",
+      "ja": "HoloCure - Save the Fans!"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

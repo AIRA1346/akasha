@@ -1,0 +1,21 @@
+{
+  "wk_000004678": {
+    "workId": "wk_000004678",
+    "title": "나나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057558"
+    },
+    "titles": {
+      "ko": "나나",
+      "en": "Nana",
+      "ja": "女優ナナ"
+    },
+    "releaseYear": 1926,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

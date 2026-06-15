@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004235": {
+    "workId": "wk_000004235",
+    "title": "테크노모션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278617"
+    },
+    "titles": {
+      "ko": "테크노모션",
+      "en": "TechnoMotion"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

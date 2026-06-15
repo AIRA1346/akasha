@@ -52,5 +52,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003248": {
+    "workId": "wk_000003248",
+    "title": "시사토크 알고리줌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460466"
+    },
+    "titles": {
+      "ko": "시사토크 알고리줌",
+      "en": "Q109460466"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003900": {
+    "workId": "wk_000003900",
+    "title": "3840 유격대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113851"
+    },
+    "titles": {
+      "ko": "3840 유격대",
+      "en": "Q110113851"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004786": {
+    "workId": "wk_000004786",
+    "title": "이브 (2022년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111025790"
+    },
+    "titles": {
+      "ko": "이브 (2022년 드라마)",
+      "en": "Eve",
+      "ja": "イブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

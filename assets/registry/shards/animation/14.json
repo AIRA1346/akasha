@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003772": {
+    "workId": "wk_000003772",
+    "title": "미카구라 학원 조곡",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127123496"
+    },
+    "titles": {
+      "ko": "미카구라 학원 조곡",
+      "en": "Mikagura School Suite",
+      "ja": "ミカグラ学園組曲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

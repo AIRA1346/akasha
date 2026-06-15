@@ -35,5 +35,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004996": {
+    "workId": "wk_000004996",
+    "title": "키스 식스 센스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111696062"
+    },
+    "titles": {
+      "ko": "키스 식스 센스",
+      "en": "Kiss Sixth Sense"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

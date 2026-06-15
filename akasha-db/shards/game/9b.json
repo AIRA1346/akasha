@@ -106,5 +106,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003215": {
+    "workId": "wk_000003215",
+    "title": "워들",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110367996"
+    },
+    "titles": {
+      "ko": "워들",
+      "en": "Wordle",
+      "ja": "Wordle"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003300": {
+    "workId": "wk_000003300",
+    "title": "크라이시스 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110696546"
+    },
+    "titles": {
+      "ko": "크라이시스 4",
+      "en": "Crysis 4",
+      "ja": "Crysis 4"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003732": {
+    "workId": "wk_000003732",
+    "title": "스트레이 블레이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111620627"
+    },
+    "titles": {
+      "ko": "스트레이 블레이드",
+      "en": "Stray Blade",
+      "ja": "Stray Blade"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

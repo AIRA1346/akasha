@@ -66,5 +66,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004145": {
+    "workId": "wk_000004145",
+    "title": "푸드코트에서, 내일 또 봐.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131437504"
+    },
+    "titles": {
+      "ko": "푸드코트에서, 내일 또 봐.",
+      "en": "See You Tomorrow at the Food Court",
+      "ja": "フードコートで、また明日。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004509": {
+    "workId": "wk_000004509",
+    "title": "#좀비를 찾습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136332630"
+    },
+    "titles": {
+      "ko": "#좀비를 찾습니다",
+      "en": "#Zombie Sagashitemasu",
+      "ja": "#ゾンビさがしてます"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

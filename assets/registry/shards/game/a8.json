@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004234": {
+    "workId": "wk_000004234",
+    "title": "터프 터프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278422"
+    },
+    "titles": {
+      "ko": "터프 터프",
+      "en": "Tough Turf",
+      "ja": "タフターフ"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003235": {
+    "workId": "wk_000003235",
+    "title": "빅마우스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459739"
+    },
+    "titles": {
+      "ko": "빅마우스",
+      "en": "Big Mouth",
+      "ja": "ビッグマウス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004037": {
+    "workId": "wk_000004037",
+    "title": "대한민국 치킨대전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114699"
+    },
+    "titles": {
+      "ko": "대한민국 치킨대전",
+      "en": "Q110114699"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

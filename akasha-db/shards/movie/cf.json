@@ -1,0 +1,58 @@
+{
+  "wk_000003148": {
+    "workId": "wk_000003148",
+    "title": "노킹",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902956"
+    },
+    "titles": {
+      "ko": "노킹",
+      "en": "Knocking"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003888": {
+    "workId": "wk_000003888",
+    "title": "인디펜던스 데이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105387"
+    },
+    "titles": {
+      "ko": "인디펜던스 데이",
+      "en": "Independence Day",
+      "ja": "インデペンデンス・デイ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004244": {
+    "workId": "wk_000004244",
+    "title": "인피니트 스톰",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105555852"
+    },
+    "titles": {
+      "ko": "인피니트 스톰",
+      "en": "Infinite Storm",
+      "ja": "インフィニット・ストーム"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

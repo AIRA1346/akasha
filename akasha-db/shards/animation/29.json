@@ -35,5 +35,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003559": {
+    "workId": "wk_000003559",
+    "title": "극장판 닌자보이 란타로: 도쿠타케 닌자대 최강의 군사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125747019"
+    },
+    "titles": {
+      "ko": "극장판 닌자보이 란타로: 도쿠타케 닌자대 최강의 군사",
+      "en": "Nintama Rantarō: Invincible Master of the Dokutake Ninja",
+      "ja": "劇場版 忍たま乱太郎 ドクタケ忍者隊最強の軍師"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004289": {
+    "workId": "wk_000004289",
+    "title": "사모님은 여고생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132783253"
+    },
+    "titles": {
+      "ko": "사모님은 여고생",
+      "en": "Oku-sama wa Joshi Kōsei",
+      "ja": "おくさまは女子高生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004291": {
+    "workId": "wk_000004291",
+    "title": "내일의 나쟈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1330757"
+    },
+    "titles": {
+      "ko": "내일의 나쟈",
+      "en": "Ashita no Nadja",
+      "ja": "明日のナージャ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

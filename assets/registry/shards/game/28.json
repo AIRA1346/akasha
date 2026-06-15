@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003381": {
+    "workId": "wk_000003381",
+    "title": "예익의 유스티아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1107526"
+    },
+    "titles": {
+      "ko": "예익의 유스티아",
+      "en": "Aiyoku no Eustia",
+      "ja": "穢翼のユースティア"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003382": {
+    "workId": "wk_000003382",
+    "title": "디모 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110768068"
+    },
+    "titles": {
+      "ko": "디모 II",
+      "en": "Deemo II",
+      "ja": "Deemo II"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

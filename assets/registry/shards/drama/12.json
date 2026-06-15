@@ -50,5 +50,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004337": {
+    "workId": "wk_000004337",
+    "title": "화요일에 만나요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118279"
+    },
+    "titles": {
+      "ko": "화요일에 만나요",
+      "en": "Q110118279"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004695": {
+    "workId": "wk_000004695",
+    "title": "DOCTORS~ 최강의 명의 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11091752"
+    },
+    "titles": {
+      "ko": "DOCTORS~ 최강의 명의 ~",
+      "en": "The briliant medical doctor",
+      "ja": "DOCTORS〜最強の名医〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

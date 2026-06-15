@@ -105,5 +105,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004433": {
+    "workId": "wk_000004433",
+    "title": "고문 아르바이트의 일상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134992344"
+    },
+    "titles": {
+      "ko": "고문 아르바이트의 일상",
+      "en": "The Daily Life of a Part-time Torturer",
+      "ja": "拷問バイトくんの日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004966": {
+    "workId": "wk_000004966",
+    "title": "딱지왕 김태풍",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16351638"
+    },
+    "titles": {
+      "ko": "딱지왕 김태풍",
+      "en": "Gigant Big-Shot Tsukasa",
+      "ja": "超爆裂異次元メンコバトル ギガントシューター つかさ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

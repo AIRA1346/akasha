@@ -31,5 +31,62 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003563": {
+    "workId": "wk_000003563",
+    "title": "종말의 스텔라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111107323"
+    },
+    "titles": {
+      "ko": "종말의 스텔라",
+      "en": "Stella of The End",
+      "ja": "終のステラ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004305": {
+    "workId": "wk_000004305",
+    "title": "뿌요뿌요",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286214"
+    },
+    "titles": {
+      "ko": "뿌요뿌요",
+      "en": "Puyo Puyo",
+      "ja": "ぷよぷよ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004449": {
+    "workId": "wk_000004449",
+    "title": "시크릿 오브 에반게리온",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11308768"
+    },
+    "titles": {
+      "ko": "시크릿 오브 에반게리온",
+      "en": "Secret of Evangelion",
+      "ja": "シークレット オブ エヴァンゲリオン"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

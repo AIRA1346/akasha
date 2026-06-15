@@ -50,5 +50,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004340": {
+    "workId": "wk_000004340",
+    "title": "오페라 스타 2012",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118340"
+    },
+    "titles": {
+      "ko": "오페라 스타 2012",
+      "en": "Q110118340"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005117": {
+    "workId": "wk_000005117",
+    "title": "Eve의 모든",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11198522"
+    },
+    "titles": {
+      "ko": "Eve의 모든",
+      "en": "All of Eve",
+      "ja": "eveのすべて"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

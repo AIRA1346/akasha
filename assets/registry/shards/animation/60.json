@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003631": {
+    "workId": "wk_000003631",
+    "title": "도원암귀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125825227"
+    },
+    "titles": {
+      "ko": "도원암귀",
+      "en": "Tougen Anki",
+      "ja": "桃源暗鬼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

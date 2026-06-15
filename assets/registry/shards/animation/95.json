@@ -16,5 +16,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003277": {
+    "workId": "wk_000003277",
+    "title": "바이바이, 어스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123038864"
+    },
+    "titles": {
+      "ko": "바이바이, 어스",
+      "en": "Bye Bye, Earth",
+      "ja": "ばいばい、アース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003636": {
+    "workId": "wk_000003636",
+    "title": "숨겨! 마키나 양!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125865039"
+    },
+    "titles": {
+      "ko": "숨겨! 마키나 양!!",
+      "en": "Makina-san's a Love Bot?!",
+      "ja": "かくして！マキナさん！！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003773": {
+    "workId": "wk_000003773",
+    "title": "전지적 독자 시점",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127202248"
+    },
+    "titles": {
+      "ko": "전지적 독자 시점",
+      "en": "Omniscient Reader's Viewpoint",
+      "ja": "全知的な読者の視点から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

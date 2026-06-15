@@ -1,0 +1,41 @@
+{
+  "wk_000004019": {
+    "workId": "wk_000004019",
+    "title": "러브 올 플레이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108023612"
+    },
+    "titles": {
+      "ko": "러브 올 플레이",
+      "en": "Love All Play",
+      "ja": "ラブオールプレー"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005158": {
+    "workId": "wk_000005158",
+    "title": "아이언 위도우: 죽음을 삼킨 여자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109255097"
+    },
+    "titles": {
+      "ko": "아이언 위도우: 죽음을 삼킨 여자",
+      "en": "Iron Widow",
+      "ja": "鋼鉄紅女"
+    },
+    "releaseYear": 2021,
+    "creator": "Xiran Jay Zhao",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

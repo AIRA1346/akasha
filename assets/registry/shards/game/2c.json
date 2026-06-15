@@ -84,5 +84,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003874": {
+    "workId": "wk_000003874",
+    "title": "Ee'MALL",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11198223"
+    },
+    "titles": {
+      "ko": "Ee'MALL",
+      "en": "Ee'MALL 2nd avenue",
+      "ja": "ee'MALL"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004764": {
+    "workId": "wk_000004764",
+    "title": "Wii Sports Resort",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135241"
+    },
+    "titles": {
+      "ko": "Wii Sports Resort",
+      "en": "Wii Sports Resort",
+      "ja": "Wii Sports Resort"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003370": {
+    "workId": "wk_000003370",
+    "title": "극장판 체인소 맨: 레제편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123906765"
+    },
+    "titles": {
+      "ko": "극장판 체인소 맨: 레제편",
+      "en": "Chainsaw Man - The Movie: Reze Arc",
+      "ja": "劇場版「チェンソーマン レゼ篇」"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004211": {
+    "workId": "wk_000004211",
+    "title": "얼음 성벽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131984499"
+    },
+    "titles": {
+      "ko": "얼음 성벽",
+      "en": "The Ramparts of Ice",
+      "ja": "氷の城壁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

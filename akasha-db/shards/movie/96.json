@@ -17,5 +17,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002988": {
+    "workId": "wk_000002988",
+    "title": "베르네 부인의 장미정원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104876848"
+    },
+    "titles": {
+      "ko": "베르네 부인의 장미정원",
+      "en": "The Rose Maker",
+      "ja": "ローズメイカー　奇跡のバラ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004468": {
+    "workId": "wk_000004468",
+    "title": "두 낫 스플릿",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105683911"
+    },
+    "titles": {
+      "ko": "두 낫 스플릿",
+      "en": "Do Not Split",
+      "ja": "不割席"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004848": {
+    "workId": "wk_000004848",
+    "title": "로렌조 오일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058555"
+    },
+    "titles": {
+      "ko": "로렌조 오일",
+      "en": "Lorenzo's Oil",
+      "ja": "ロレンツォのオイル/命の詩"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

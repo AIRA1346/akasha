@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005202": {
+    "workId": "wk_000005202",
+    "title": "잘 가거라 용생, 어서 와라 인생",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124852923"
+    },
+    "titles": {
+      "ko": "잘 가거라 용생, 어서 와라 인생",
+      "en": "Goodbye, Dragon Life",
+      "ja": "さようなら竜生、こんにちは人生"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

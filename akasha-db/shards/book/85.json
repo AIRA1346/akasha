@@ -1,0 +1,22 @@
+{
+  "wk_000004531": {
+    "workId": "wk_000004531",
+    "title": "중산세보",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10875195"
+    },
+    "titles": {
+      "ko": "중산세보",
+      "en": "Chūzan Seifu",
+      "ja": "中山世譜"
+    },
+    "releaseYear": 1701,
+    "creator": "Sai Taku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

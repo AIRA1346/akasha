@@ -104,5 +104,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004327": {
+    "workId": "wk_000004327",
+    "title": "결혼작사 이혼작곡 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118083"
+    },
+    "titles": {
+      "ko": "결혼작사 이혼작곡 2",
+      "en": "Q110118083"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

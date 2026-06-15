@@ -1,1 +1,20 @@
-{}
+{
+  "wk_000003615": {
+    "workId": "wk_000003615",
+    "title": "노다와 다른합니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11645923"
+    },
+    "titles": {
+      "ko": "노다와 다른합니다",
+      "en": "Noda to mōshimasu",
+      "ja": "野田ともうします。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

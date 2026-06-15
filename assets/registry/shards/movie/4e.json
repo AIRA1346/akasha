@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005170": {
+    "workId": "wk_000005170",
+    "title": "고역열차",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059146"
+    },
+    "titles": {
+      "ko": "고역열차",
+      "en": "Kueki Ressha",
+      "ja": "苦役列車"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003916": {
+    "workId": "wk_000003916",
+    "title": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130244349"
+    },
+    "titles": {
+      "ko": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+      "en": "Yandere Dark Elf",
+      "ja": "ちょっとだけ愛が重いダークエルフが異世界から追いかけてきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

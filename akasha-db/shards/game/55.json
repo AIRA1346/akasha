@@ -17,5 +17,81 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002974": {
+    "workId": "wk_000002974",
+    "title": "해리포터: 깨어난 마법",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109256971"
+    },
+    "titles": {
+      "ko": "해리포터: 깨어난 마법",
+      "en": "Harry Potter: Magic Awakened",
+      "ja": "ハリー・ポッター:魔法の覚醒"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003653": {
+    "workId": "wk_000003653",
+    "title": "저스트 코즈 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114167"
+    },
+    "titles": {
+      "ko": "저스트 코즈 2",
+      "en": "Just Cause 2",
+      "ja": "Just Cause 2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004825": {
+    "workId": "wk_000004825",
+    "title": "세상에서 가장 NG인 사랑",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11362122"
+    },
+    "titles": {
+      "ko": "세상에서 가장 NG인 사랑",
+      "en": "Sekai de Ichiban Dame na Koi",
+      "ja": "世界でいちばんNGな恋"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005236": {
+    "workId": "wk_000005236",
+    "title": "땅거미 거리 탐험대",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11430271"
+    },
+    "titles": {
+      "ko": "땅거미 거리 탐험대",
+      "en": "Yuuyami Doori Tankentai",
+      "ja": "夕闇通り探検隊"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

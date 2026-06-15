@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004026": {
+    "workId": "wk_000004026",
+    "title": "나이트 레이더스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105439788"
+    },
+    "titles": {
+      "ko": "나이트 레이더스",
+      "en": "Night Raiders",
+      "ja": "ディストピア 2043 未知なる能力"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

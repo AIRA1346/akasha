@@ -1,0 +1,88 @@
+{
+  "wk_000003000": {
+    "workId": "wk_000003000",
+    "title": "EBS TV 고교 공통과학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458232"
+    },
+    "titles": {
+      "ko": "EBS TV 고교 공통과학",
+      "en": "Q109458232"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004038": {
+    "workId": "wk_000004038",
+    "title": "더솔져스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114740"
+    },
+    "titles": {
+      "ko": "더솔져스",
+      "en": "The Soldiers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004128": {
+    "workId": "wk_000004128",
+    "title": "슈퍼투어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115443"
+    },
+    "titles": {
+      "ko": "슈퍼투어",
+      "en": "Q110115443"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005064": {
+    "workId": "wk_000005064",
+    "title": "Produce 101 Philippines",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111914428"
+    },
+    "titles": {
+      "ko": "Produce 101 Philippines",
+      "en": "Produce 101 Philippines"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005189": {
+    "workId": "wk_000005189",
+    "title": "if 만약",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11224652"
+    },
+    "titles": {
+      "ko": "if 만약",
+      "en": "if if",
+      "ja": "if もしも"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

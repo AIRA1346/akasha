@@ -116,5 +116,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004092": {
+    "workId": "wk_000004092",
+    "title": "슈퍼로봇대전 컴플리트박스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253364"
+    },
+    "titles": {
+      "ko": "슈퍼로봇대전 컴플리트박스",
+      "en": "Q11253364",
+      "ja": "スーパーロボット大戦コンプリートボックス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

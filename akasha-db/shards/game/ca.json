@@ -31,5 +31,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004085": {
+    "workId": "wk_000004085",
+    "title": "섬머 라딧슈 베케이션!!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11247479"
+    },
+    "titles": {
+      "ko": "섬머 라딧슈 베케이션!!",
+      "en": "Summer Radish Vacation!!",
+      "ja": "Summerラディッシュバケーション!!シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004832": {
+    "workId": "wk_000004832",
+    "title": "푸른 뇌정 건볼트 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113679049"
+    },
+    "titles": {
+      "ko": "푸른 뇌정 건볼트 3",
+      "en": "Azure Striker Gunvolt 3",
+      "ja": "蒼き雷霆 ガンヴォルト 鎖環"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

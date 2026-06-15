@@ -50,5 +50,110 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003065": {
+    "workId": "wk_000003065",
+    "title": "창 밖에 부는 바람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458651"
+    },
+    "titles": {
+      "ko": "창 밖에 부는 바람",
+      "en": "Q109458651"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003320": {
+    "workId": "wk_000003320",
+    "title": "이상지성",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460733"
+    },
+    "titles": {
+      "ko": "이상지성",
+      "en": "Q109460733"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003823": {
+    "workId": "wk_000003823",
+    "title": "초등학생 클래스 대항 30 명 31 다리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958690"
+    },
+    "titles": {
+      "ko": "초등학생 클래스 대항 30 명 31 다리",
+      "en": "Shōgakusei kurasu taikō 30-ri 31 Kyaku",
+      "ja": "小学生クラス対抗30人31脚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003962": {
+    "workId": "wk_000003962",
+    "title": "나의 영어사춘기 100시간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114494"
+    },
+    "titles": {
+      "ko": "나의 영어사춘기 100시간",
+      "en": "Q110114494"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004547": {
+    "workId": "wk_000004547",
+    "title": "흔히있는 기적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11060678"
+    },
+    "titles": {
+      "ko": "흔히있는 기적",
+      "en": "Q11060678",
+      "ja": "ありふれた奇跡"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005122": {
+    "workId": "wk_000005122",
+    "title": "FNS의 날",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11199576"
+    },
+    "titles": {
+      "ko": "FNS의 날",
+      "en": "FNS Day",
+      "ja": "FNSの日"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003635": {
+    "workId": "wk_000003635",
+    "title": "이 푸른 하늘에 약속을 ~어서오세요 츠구미 기숙사에~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125859981"
+    },
+    "titles": {
+      "ko": "이 푸른 하늘에 약속을 ~어서오세요 츠구미 기숙사에~",
+      "en": "Kono Aozora ni Yakusoku o: Yōkoso Tsugumi Ryō e",
+      "ja": "この青空に約束を― 〜ようこそつぐみ寮へ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003991": {
+    "workId": "wk_000003991",
+    "title": "나는 성간 국가의 악덕 영주!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130581386"
+    },
+    "titles": {
+      "ko": "나는 성간 국가의 악덕 영주!",
+      "en": "I'm the Evil Lord of an Intergalactic Empire!",
+      "ja": "俺は星間国家の悪徳領主!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004810": {
+    "workId": "wk_000004810",
+    "title": "카논",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1528967"
+    },
+    "titles": {
+      "ko": "카논",
+      "en": "Kanon",
+      "ja": "Kanon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

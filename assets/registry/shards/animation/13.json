@@ -34,5 +34,98 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003372": {
+    "workId": "wk_000003372",
+    "title": "걸즈 밴드 크라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123937666"
+    },
+    "titles": {
+      "ko": "걸즈 밴드 크라이",
+      "en": "Girls Band Cry",
+      "ja": "ガールズバンドクライ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003555": {
+    "workId": "wk_000003555",
+    "title": "극장판 울려라! 유포니엄: 앙상블 콘테스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125505755"
+    },
+    "titles": {
+      "ko": "극장판 울려라! 유포니엄: 앙상블 콘테스트",
+      "en": "Sound! Euphonium: Ensemble Contest",
+      "ja": "特別編 響け!ユーフォニアム〜アンサンブルコンテスト〜"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004434": {
+    "workId": "wk_000004434",
+    "title": "영원한 황혼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135102970"
+    },
+    "titles": {
+      "ko": "영원한 황혼",
+      "en": "Dusk Beyond the End of the World",
+      "ja": "永久のユウグレ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004502": {
+    "workId": "wk_000004502",
+    "title": "극장판 도라에몽: 신 진구의 해저귀암성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136121463"
+    },
+    "titles": {
+      "ko": "극장판 도라에몽: 신 진구의 해저귀암성",
+      "en": "Doraemon: Nobita and the New Castle of the Undersea Devil",
+      "ja": "映画ドラえもん 新・のび太の海底鬼岩城"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005281": {
+    "workId": "wk_000005281",
+    "title": "명탐정 코난: 업화의 해바라기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18601583"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 업화의 해바라기",
+      "en": "Detective Conan: Sunflowers of Inferno",
+      "ja": "名探偵コナン 業火の向日葵"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

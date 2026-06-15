@@ -34,5 +34,134 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003286": {
+    "workId": "wk_000003286",
+    "title": "극장판 하이큐!! 쓰레기장의 결전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123354229"
+    },
+    "titles": {
+      "ko": "극장판 하이큐!! 쓰레기장의 결전",
+      "en": "Haikyu!! The Dumpster Battle",
+      "ja": "劇場版ハイキュー!! ゴミ捨て場の決戦"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003994": {
+    "workId": "wk_000003994",
+    "title": "뱅드림! 팝핀' 드림!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130597832"
+    },
+    "titles": {
+      "ko": "뱅드림! 팝핀' 드림!",
+      "en": "BanG Dream! Poppin'Dream!",
+      "ja": "BanG Dream! ぽっぴん'どりーむ！"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004067": {
+    "workId": "wk_000004067",
+    "title": "볼파크에서 붙잡아줘!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131178637"
+    },
+    "titles": {
+      "ko": "볼파크에서 붙잡아줘!",
+      "en": "Catch Me at the Ballpark!",
+      "ja": "ボールパークでつかまえて!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004147": {
+    "workId": "wk_000004147",
+    "title": "서투른 선배",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131452124"
+    },
+    "titles": {
+      "ko": "서투른 선배",
+      "en": "My Awkward Senpai",
+      "ja": "不器用な先輩。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004217": {
+    "workId": "wk_000004217",
+    "title": "태양보다 눈부신 별",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132189909"
+    },
+    "titles": {
+      "ko": "태양보다 눈부신 별",
+      "en": "A Star Brighter Than the Sun",
+      "ja": "太陽よりも眩しい星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004747": {
+    "workId": "wk_000004747",
+    "title": "극장판 은혼: 완결편 해결사여 영원하라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14542320"
+    },
+    "titles": {
+      "ko": "극장판 은혼: 완결편 해결사여 영원하라",
+      "en": "Gintama: The Movie: The Final Chapter: Be Forever Yorozuya",
+      "ja": "劇場版 銀魂 完結篇 万事屋よ永遠なれ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004964": {
+    "workId": "wk_000004964",
+    "title": "킹콩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1628294"
+    },
+    "titles": {
+      "ko": "킹콩",
+      "en": "The King Kong Show",
+      "ja": "キングコング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

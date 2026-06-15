@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004756": {
+    "workId": "wk_000004756",
+    "title": "대마법사 멀린",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1500095"
+    },
+    "titles": {
+      "ko": "대마법사 멀린",
+      "en": "Merlin",
+      "ja": "エクスカリバー 聖剣伝説"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005033": {
+    "workId": "wk_000005033",
+    "title": "작은 아씨들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16945629"
+    },
+    "titles": {
+      "ko": "작은 아씨들",
+      "en": "Little Women",
+      "ja": "若草物語"
+    },
+    "releaseYear": 1958,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

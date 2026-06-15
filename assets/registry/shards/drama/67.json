@@ -1,0 +1,54 @@
+{
+  "wk_000003756": {
+    "workId": "wk_000003756",
+    "title": "2019 DIMF 뮤지컬 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546437"
+    },
+    "titles": {
+      "ko": "2019 DIMF 뮤지컬 스타",
+      "en": "Q109546437"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004188": {
+    "workId": "wk_000004188",
+    "title": "열반제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115787"
+    },
+    "titles": {
+      "ko": "열반제",
+      "en": "Q110115787"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004927": {
+    "workId": "wk_000004927",
+    "title": "조선 정신과 의사 유세풍",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111459956"
+    },
+    "titles": {
+      "ko": "조선 정신과 의사 유세풍",
+      "en": "Poong, the Joseon Psychiatrist",
+      "ja": "朝鮮精神科医ユ・セプン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

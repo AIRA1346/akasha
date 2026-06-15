@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003267": {
+    "workId": "wk_000003267",
+    "title": "위치헌터",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q546371"
+    },
+    "titles": {
+      "ko": "위치헌터",
+      "en": "Witch Hunter",
+      "ja": "ウィッチハンター"
+    },
+    "creator": "Cho Jung-man",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

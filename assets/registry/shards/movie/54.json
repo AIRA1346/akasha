@@ -1,0 +1,21 @@
+{
+  "wk_000004540": {
+    "workId": "wk_000004540",
+    "title": "열쇠",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056946"
+    },
+    "titles": {
+      "ko": "열쇠",
+      "en": "Odd Obsession",
+      "ja": "鍵"
+    },
+    "releaseYear": 1959,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

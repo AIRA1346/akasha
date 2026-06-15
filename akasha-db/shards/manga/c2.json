@@ -1,0 +1,39 @@
+{
+  "wk_000003614": {
+    "workId": "wk_000003614",
+    "title": "유희왕 5D's",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640277"
+    },
+    "titles": {
+      "ko": "유희왕 5D's",
+      "en": "Q11640277",
+      "ja": "遊☆戯☆王5D's (漫画)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003977": {
+    "workId": "wk_000003977",
+    "title": "어리석은 천사는 악마와 춤춘다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117314412"
+    },
+    "titles": {
+      "ko": "어리석은 천사는 악마와 춤춘다",
+      "en": "The Foolish Angel Dances with the Devil",
+      "ja": "愚かな天使は悪魔と踊る"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

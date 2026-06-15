@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003774": {
+    "workId": "wk_000003774",
+    "title": "룩백",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127526724"
+    },
+    "titles": {
+      "ko": "룩백",
+      "en": "Look Back",
+      "ja": "ルックバック"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

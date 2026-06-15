@@ -102,5 +102,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003006": {
+    "workId": "wk_000003006",
+    "title": "TV를 말한다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458476"
+    },
+    "titles": {
+      "ko": "TV를 말한다",
+      "en": "Q109458476"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003155": {
+    "workId": "wk_000003155",
+    "title": "MBC 뉴스데스크 포항 경주 영덕 울진 울릉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459030"
+    },
+    "titles": {
+      "ko": "MBC 뉴스데스크 포항 경주 영덕 울진 울릉",
+      "en": "Q109459030"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003157": {
+    "workId": "wk_000003157",
+    "title": "DREAM STATION",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459066"
+    },
+    "titles": {
+      "ko": "DREAM STATION",
+      "en": "Q109459066"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003956": {
+    "workId": "wk_000003956",
+    "title": "국민 영수증",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114249"
+    },
+    "titles": {
+      "ko": "국민 영수증",
+      "en": "Q110114249"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

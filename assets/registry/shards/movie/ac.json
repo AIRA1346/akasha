@@ -1,0 +1,21 @@
+{
+  "wk_000004249": {
+    "workId": "wk_000004249",
+    "title": "이탈리아에서의 투쟁",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055616"
+    },
+    "titles": {
+      "ko": "이탈리아에서의 투쟁",
+      "en": "Struggle in Italy",
+      "ja": "イタリアにおける闘争"
+    },
+    "releaseYear": 1970,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003386": {
+    "workId": "wk_000003386",
+    "title": "태합입지전V",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11081014"
+    },
+    "titles": {
+      "ko": "태합입지전V",
+      "en": "Taikou Risshiden V",
+      "ja": "太閤立志伝V"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003926": {
+    "workId": "wk_000003926",
+    "title": "명일방주: 엔드필드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112049342"
+    },
+    "titles": {
+      "ko": "명일방주: 엔드필드",
+      "en": "Arknights: Endfield",
+      "ja": "アークナイツ:エンドフィールド"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

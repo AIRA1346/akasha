@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003893": {
+    "workId": "wk_000003893",
+    "title": "중앙역",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054036"
+    },
+    "titles": {
+      "ko": "중앙역",
+      "en": "Central Station",
+      "ja": "セントラル・ステーション"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

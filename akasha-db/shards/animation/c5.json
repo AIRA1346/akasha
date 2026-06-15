@@ -71,5 +71,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003984": {
+    "workId": "wk_000003984",
+    "title": "예수라 불리는 아이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1304716"
+    },
+    "titles": {
+      "ko": "예수라 불리는 아이",
+      "en": "A Child Called Jesus"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004754": {
+    "workId": "wk_000004754",
+    "title": "전국소녀 ~복숭아빛 파라독스~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1492841"
+    },
+    "titles": {
+      "ko": "전국소녀 ~복숭아빛 파라독스~",
+      "en": "Battle Girls: Time Paradox",
+      "ja": "戦国乙女〜桃色パラドックス〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005248": {
+    "workId": "wk_000005248",
+    "title": "신비의 제왕",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342457"
+    },
+    "titles": {
+      "ko": "신비의 제왕",
+      "en": "Lord of Mysteries",
+      "ja": "詭秘の主"
+    },
+    "releaseYear": 2020,
+    "creator": "Cuttlefish That Loves Diving",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

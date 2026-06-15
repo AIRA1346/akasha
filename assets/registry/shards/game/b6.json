@@ -50,5 +50,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003730": {
+    "workId": "wk_000003730",
+    "title": "루이지 맨션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111597000"
+    },
+    "titles": {
+      "ko": "루이지 맨션",
+      "en": "Luigi's Mansion",
+      "ja": "ルイージマンション"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005150": {
+    "workId": "wk_000005150",
+    "title": "기타프릭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142106"
+    },
+    "titles": {
+      "ko": "기타프릭스",
+      "en": "Guitar Freaks",
+      "ja": "GUITARFREAKS"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

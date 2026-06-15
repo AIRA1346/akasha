@@ -1,0 +1,19 @@
+{
+  "wk_000005011": {
+    "workId": "wk_000005011",
+    "title": "미려인생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111848256"
+    },
+    "titles": {
+      "ko": "미려인생",
+      "en": "Life is Beautiful"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

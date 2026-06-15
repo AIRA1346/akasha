@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003490": {
+    "workId": "wk_000003490",
+    "title": "악몽과 몽상",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073160"
+    },
+    "titles": {
+      "ko": "악몽과 몽상",
+      "en": "Nightmares & Dreamscapes"
+    },
+    "releaseYear": 1993,
+    "creator": "Stephen King",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004103": {
+    "workId": "wk_000004103",
+    "title": "아인 박사의 마지막 비행",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108329165"
+    },
+    "titles": {
+      "ko": "아인 박사의 마지막 비행",
+      "en": "The Last Flight of Dr. Ain"
+    },
+    "releaseYear": 1969,
+    "creator": "Alice Bradley Sheldon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

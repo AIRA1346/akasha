@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004941": {
+    "workId": "wk_000004941",
+    "title": "메르헨 메드헨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123930050"
+    },
+    "titles": {
+      "ko": "메르헨 메드헨",
+      "en": "Märchen Mädchen",
+      "ja": "メルヘン・メドヘン"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

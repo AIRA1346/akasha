@@ -47,5 +47,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003769": {
+    "workId": "wk_000003769",
+    "title": "아이넷 스타쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547611"
+    },
+    "titles": {
+      "ko": "아이넷 스타쇼",
+      "en": "Q109547611"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003967": {
+    "workId": "wk_000003967",
+    "title": "노는브로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114555"
+    },
+    "titles": {
+      "ko": "노는브로",
+      "en": "Q110114555"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

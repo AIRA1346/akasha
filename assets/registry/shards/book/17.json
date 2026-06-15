@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004102": {
+    "workId": "wk_000004102",
+    "title": "불타는 세계",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082871"
+    },
+    "titles": {
+      "ko": "불타는 세계",
+      "en": "The Blazing World"
+    },
+    "releaseYear": 1666,
+    "creator": "Margaret Cavendish, Duchess of Newcastle-upon-Tyne",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

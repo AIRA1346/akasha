@@ -1,0 +1,21 @@
+{
+  "wk_000003496": {
+    "workId": "wk_000003496",
+    "title": "할로윈 7: H20",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050815"
+    },
+    "titles": {
+      "ko": "할로윈 7: H20",
+      "en": "Halloween H20: 20 Years Later",
+      "ja": "ハロウィンH20"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

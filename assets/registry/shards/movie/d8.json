@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003745": {
+    "workId": "wk_000003745",
+    "title": "창문 넘어 도망친 100세 노인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10527185"
+    },
+    "titles": {
+      "ko": "창문 넘어 도망친 100세 노인",
+      "en": "The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared",
+      "ja": "100歳の華麗なる冒険 (映画)"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

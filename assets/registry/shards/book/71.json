@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004835": {
+    "workId": "wk_000004835",
+    "title": "쿠블라이 칸",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089037"
+    },
+    "titles": {
+      "ko": "쿠블라이 칸",
+      "en": "Kubla Khan",
+      "ja": "クブラ・カーン"
+    },
+    "releaseYear": 1816,
+    "creator": "Samuel Taylor Coleridge",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003694": {
+    "workId": "wk_000003694",
+    "title": "식킹",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11666011"
+    },
+    "titles": {
+      "ko": "식킹",
+      "en": "Shoku-King",
+      "ja": "食キング"
+    },
+    "releaseYear": 1999,
+    "creator": "Shigeru Tsuchiyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

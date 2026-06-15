@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003146": {
+    "workId": "wk_000003146",
+    "title": "그들이 타이론을 복제했다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902025"
+    },
+    "titles": {
+      "ko": "그들이 타이론을 복제했다",
+      "en": "They Cloned Tyrone",
+      "ja": "ゼイ・クローンド・タイロン"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003147": {
+    "workId": "wk_000003147",
+    "title": "저택",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902930"
+    },
+    "titles": {
+      "ko": "저택",
+      "en": "The Manor",
+      "ja": "呪われた老人の館"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

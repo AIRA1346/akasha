@@ -34,5 +34,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003827": {
+    "workId": "wk_000003827",
+    "title": "날아보자!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109597006"
+    },
+    "titles": {
+      "ko": "날아보자!",
+      "en": "Maiagare!",
+      "ja": "舞いあがれ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004036": {
+    "workId": "wk_000004036",
+    "title": "대한민국 아이디어리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114679"
+    },
+    "titles": {
+      "ko": "대한민국 아이디어리그",
+      "en": "Q110114679"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004624": {
+    "workId": "wk_000004624",
+    "title": "대만 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11075224"
+    },
+    "titles": {
+      "ko": "대만 이야기",
+      "en": "Taiwan Story",
+      "ja": "台湾物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

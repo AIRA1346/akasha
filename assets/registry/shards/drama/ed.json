@@ -87,5 +87,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003601": {
+    "workId": "wk_000003601",
+    "title": "오늘의 중요 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533869"
+    },
+    "titles": {
+      "ko": "오늘의 중요 뉴스",
+      "en": "Q109533869"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004269": {
+    "workId": "wk_000004269",
+    "title": "탑골 랩소디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117931"
+    },
+    "titles": {
+      "ko": "탑골 랩소디",
+      "en": "Q110117931"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005194": {
+    "workId": "wk_000005194",
+    "title": "졸업식에, 카미야 우타코가 없다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112293903"
+    },
+    "titles": {
+      "ko": "졸업식에, 카미야 우타코가 없다",
+      "en": "Sotsugyoshiki ni, Kamiya Utako ga Inai",
+      "ja": "卒業式に、神谷詩子がいない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

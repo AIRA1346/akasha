@@ -36,5 +36,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003644": {
+    "workId": "wk_000003644",
+    "title": "킬러 이즈 데드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11125803"
+    },
+    "titles": {
+      "ko": "킬러 이즈 데드",
+      "en": "Killer Is Dead",
+      "ja": "KILLER IS DEAD"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003728": {
+    "workId": "wk_000003728",
+    "title": "킹덤 하츠 IV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111550485"
+    },
+    "titles": {
+      "ko": "킹덤 하츠 IV",
+      "en": "Kingdom Hearts IV",
+      "ja": "キングダム ハーツIV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004297": {
+    "workId": "wk_000004297",
+    "title": "퍼즐앤드래곤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280991"
+    },
+    "titles": {
+      "ko": "퍼즐앤드래곤",
+      "en": "Puzzle & Dragons",
+      "ja": "パズル&ドラゴンズ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

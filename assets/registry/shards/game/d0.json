@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005298": {
+    "workId": "wk_000005298",
+    "title": "제이드 엠파이어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143738"
+    },
+    "titles": {
+      "ko": "제이드 엠파이어",
+      "en": "Jade Empire",
+      "ja": "ジェイド エンパイア 〜翡翠の帝国〜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

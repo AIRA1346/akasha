@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003818": {
+    "workId": "wk_000003818",
+    "title": "벚꽃동산",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105335850"
+    },
+    "titles": {
+      "ko": "벚꽃동산",
+      "en": "The Cherry Orchard",
+      "ja": "櫻の園"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,55 @@
+{
+  "wk_000003237": {
+    "workId": "wk_000003237",
+    "title": "포토다큐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459796"
+    },
+    "titles": {
+      "ko": "포토다큐",
+      "en": "Q109459796"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004618": {
+    "workId": "wk_000004618",
+    "title": "결혼하고 싶은 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073538"
+    },
+    "titles": {
+      "ko": "결혼하고 싶은 여자",
+      "en": "Q11073538",
+      "ja": "結婚したい女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004864": {
+    "workId": "wk_000004864",
+    "title": "아메 토크!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11125976"
+    },
+    "titles": {
+      "ko": "아메 토크!",
+      "en": "Ametalk",
+      "ja": "アメトーーク！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

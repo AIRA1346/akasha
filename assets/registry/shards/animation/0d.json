@@ -76,5 +76,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003847": {
+    "workId": "wk_000003847",
+    "title": "치토세 군은 라무네 병 속에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128795998"
+    },
+    "titles": {
+      "ko": "치토세 군은 라무네 병 속에",
+      "en": "Chitose Is in the Ramune Bottle",
+      "ja": "千歳くんはラムネ瓶のなか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004345": {
+    "workId": "wk_000004345",
+    "title": "소재 채취가의 이세계 여행기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133248810"
+    },
+    "titles": {
+      "ko": "소재 채취가의 이세계 여행기",
+      "en": "A Gatherer's Adventure in Isekai",
+      "ja": "素材採取家の異世界旅行記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

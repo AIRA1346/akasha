@@ -56,5 +56,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004022": {
+    "workId": "wk_000004022",
+    "title": "노란 코끼리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10813251"
+    },
+    "titles": {
+      "ko": "노란 코끼리",
+      "en": "Yellow elephant",
+      "ja": "きいろいゾウ"
+    },
+    "releaseYear": 2013,
+    "creator": "Kanako Nishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004664": {
+    "workId": "wk_000004664",
+    "title": "그후의 삶",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108830528"
+    },
+    "titles": {
+      "ko": "그후의 삶",
+      "en": "Afterlives"
+    },
+    "releaseYear": 2020,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

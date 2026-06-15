@@ -35,5 +35,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004201": {
+    "workId": "wk_000004201",
+    "title": "둘이서 솔로 캠프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131619952"
+    },
+    "titles": {
+      "ko": "둘이서 솔로 캠프",
+      "en": "Solo Camping for Two",
+      "ja": "ふたりソロキャンプ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004889": {
+    "workId": "wk_000004889",
+    "title": "프리티 리듬: 올스타 셀렉션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15898752"
+    },
+    "titles": {
+      "ko": "프리티 리듬: 올스타 셀렉션",
+      "en": "Pretty Rhythm: All Star Selection",
+      "ja": "プリティーリズム・オールスターセレクション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005284": {
+    "workId": "wk_000005284",
+    "title": "극장판 프리큐어 올스타즈 봄의 카니발♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18651615"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 올스타즈 봄의 카니발♪",
+      "en": "Pretty Cure All Stars: Carnival of Spring♪",
+      "ja": "映画 プリキュアオールスターズ 春のカーニバル♪"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

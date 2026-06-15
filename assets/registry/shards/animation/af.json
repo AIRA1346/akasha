@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003029": {
+    "workId": "wk_000003029",
+    "title": "용사형에 처함 징벌용사 9004부대 형무기록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120690571"
+    },
+    "titles": {
+      "ko": "용사형에 처함 징벌용사 9004부대 형무기록",
+      "en": "Sentenced to Be a Hero",
+      "ja": "勇者刑に処す 懲罰勇者9004隊刑務記録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004500": {
+    "workId": "wk_000004500",
+    "title": "창궁의 파프너",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1359740"
+    },
+    "titles": {
+      "ko": "창궁의 파프너",
+      "en": "Fafner in the Azure",
+      "ja": "蒼穹のファフナー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

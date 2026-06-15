@@ -54,5 +54,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002962": {
+    "workId": "wk_000002962",
+    "title": "우리들의 비 내리는 프로토콜",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120462069"
+    },
+    "titles": {
+      "ko": "우리들의 비 내리는 프로토콜",
+      "en": "Protocol: Rain",
+      "ja": "僕らの雨いろプロトコル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003464": {
+    "workId": "wk_000003464",
+    "title": "시운지 가의 아이들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124537398"
+    },
+    "titles": {
+      "ko": "시운지 가의 아이들",
+      "en": "The Shiunji Family Children",
+      "ja": "紫雲寺家の子供たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

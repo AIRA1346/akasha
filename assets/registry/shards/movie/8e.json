@@ -1,0 +1,21 @@
+{
+  "wk_000004671": {
+    "workId": "wk_000004671",
+    "title": "국제우주정거장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105710372"
+    },
+    "titles": {
+      "ko": "국제우주정거장",
+      "en": "I.S.S.",
+      "ja": "I.S.S. (映画)"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

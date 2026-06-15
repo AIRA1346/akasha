@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003988": {
+    "workId": "wk_000003988",
+    "title": "상성의 아쿠에리온 Myth of Emotions",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130547821"
+    },
+    "titles": {
+      "ko": "상성의 아쿠에리온 Myth of Emotions",
+      "en": "Aquarion: Myth of Emotions",
+      "ja": "想星のアクエリオン Myth of Emotions"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003341": {
+    "workId": "wk_000003341",
+    "title": "아크로 트립",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115812198"
+    },
+    "titles": {
+      "ko": "아크로 트립",
+      "en": "Acro Trip",
+      "ja": "アクロトリップ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

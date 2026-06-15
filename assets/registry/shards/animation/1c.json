@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003112": {
+    "workId": "wk_000003112",
+    "title": "모험대륙 아니아 킹덤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121842714"
+    },
+    "titles": {
+      "ko": "모험대륙 아니아 킹덤",
+      "en": "Bōken Tairiku Ania Kingdom",
+      "ja": "冒険大陸 アニアキングダム"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

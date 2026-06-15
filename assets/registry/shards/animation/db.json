@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004212": {
+    "workId": "wk_000004212",
+    "title": "좀비 랜드 사가: 유메긴가 파라다이스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131993712"
+    },
+    "titles": {
+      "ko": "좀비 랜드 사가: 유메긴가 파라다이스",
+      "en": "Zombie Land Saga: Yumeginga Paradise",
+      "ja": "ゾンビランドサガ ゆめぎんがパラダイス"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

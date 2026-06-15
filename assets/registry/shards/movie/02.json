@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004108": {
+    "workId": "wk_000004108",
+    "title": "무서운 영화 4",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055299"
+    },
+    "titles": {
+      "ko": "무서운 영화 4",
+      "en": "Scary Movie 4",
+      "ja": "最終絶叫計画4"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

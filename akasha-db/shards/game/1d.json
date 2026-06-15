@@ -1,0 +1,57 @@
+{
+  "wk_000003798": {
+    "workId": "wk_000003798",
+    "title": "엔젤 마기스터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11189400"
+    },
+    "titles": {
+      "ko": "엔젤 마기스터",
+      "en": "Angel Magister",
+      "ja": "ANGEL MAGISTER"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004158": {
+    "workId": "wk_000004158",
+    "title": "아이리스 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256755"
+    },
+    "titles": {
+      "ko": "아이리스 온라인",
+      "en": "Q11256755",
+      "ja": "アイリスオンライン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004160": {
+    "workId": "wk_000004160",
+    "title": "아카토킷!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256878"
+    },
+    "titles": {
+      "ko": "아카토킷!",
+      "en": "Akatoki! -Yume Koso Masare Koi no Mahou-",
+      "ja": "あかときっ!-夢こそまされ恋の魔砲-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

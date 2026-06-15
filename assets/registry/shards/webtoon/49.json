@@ -1,0 +1,19 @@
+{
+  "wk_000003268": {
+    "workId": "wk_000003268",
+    "title": "버닝헬",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55730270"
+    },
+    "titles": {
+      "ko": "버닝헬",
+      "en": "Burning Hell"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

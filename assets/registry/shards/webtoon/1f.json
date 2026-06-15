@@ -1,0 +1,20 @@
+{
+  "wk_000003274": {
+    "workId": "wk_000003274",
+    "title": "테러맨",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55735382"
+    },
+    "titles": {
+      "ko": "테러맨",
+      "en": "Terror Man",
+      "ja": "テロマン（ウェブトゥーン）"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -35,5 +35,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004216": {
+    "workId": "wk_000004216",
+    "title": "BanG Dream!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132166124"
+    },
+    "titles": {
+      "ko": "BanG Dream!",
+      "en": "BanG Dream!",
+      "ja": "BanG Dream!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004429": {
+    "workId": "wk_000004429",
+    "title": "소·라·노·오·토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348637"
+    },
+    "titles": {
+      "ko": "소·라·노·오·토",
+      "en": "Sound of the Sky",
+      "ja": "ソ・ラ・ノ・ヲ・ト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005141": {
+    "workId": "wk_000005141",
+    "title": "요르문간드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1771347"
+    },
+    "titles": {
+      "ko": "요르문간드",
+      "en": "Jormungand",
+      "ja": "ヨルムンガンド"
+    },
+    "creator": "Yōsuke Kuroda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

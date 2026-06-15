@@ -1,0 +1,22 @@
+{
+  "wk_000004138": {
+    "workId": "wk_000004138",
+    "title": "그래도 마을은 돌아간다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186554"
+    },
+    "titles": {
+      "ko": "그래도 마을은 돌아간다",
+      "en": "And Yet The Town Moves",
+      "ja": "それでも町は廻っている"
+    },
+    "releaseYear": 2006,
+    "creator": "Masakazu Ishiguro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003867": {
+    "workId": "wk_000003867",
+    "title": "어게인스트 더 스톰",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111962863"
+    },
+    "titles": {
+      "ko": "어게인스트 더 스톰",
+      "en": "Against the Storm"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

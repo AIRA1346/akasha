@@ -1,0 +1,41 @@
+{
+  "wk_000003699": {
+    "workId": "wk_000003699",
+    "title": "푸른 미부로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116865404"
+    },
+    "titles": {
+      "ko": "푸른 미부로",
+      "en": "The Blue Wolves of Mibu",
+      "ja": "青のミブロ"
+    },
+    "releaseYear": 2021,
+    "creator": "Tsuyoshi Yasuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004798": {
+    "workId": "wk_000004798",
+    "title": "카구라바치",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122713274"
+    },
+    "titles": {
+      "ko": "카구라바치",
+      "en": "Kagurabachi",
+      "ja": "カグラバチ"
+    },
+    "creator": "Takeru Hokazono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

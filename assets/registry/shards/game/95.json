@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003567": {
+    "workId": "wk_000003567",
+    "title": "Urban Legend: Shin Hayarigami",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111148177"
+    },
+    "titles": {
+      "ko": "Urban Legend: Shin Hayarigami",
+      "en": "Urban Legend: Shin Hayarigami",
+      "ja": "真 流行り神"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003925": {
+    "workId": "wk_000003925",
+    "title": "가넷 크레이들",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11200874"
+    },
+    "titles": {
+      "ko": "가넷 크레이들",
+      "en": "Garnet Cradle",
+      "ja": "GARNET CRADLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004156": {
+    "workId": "wk_000004156",
+    "title": "Zero Infinity -Devil of Maxwell-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255917"
+    },
+    "titles": {
+      "ko": "Zero Infinity -Devil of Maxwell-",
+      "en": "Zero Infinity -Devil of Maxwell-",
+      "ja": "Zero Infinity -Devil of Maxwell-"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

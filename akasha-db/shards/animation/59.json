@@ -52,5 +52,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003113": {
+    "workId": "wk_000003113",
+    "title": "은수저",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122173355"
+    },
+    "titles": {
+      "ko": "은수저",
+      "en": "Silver Spoon",
+      "ja": "銀の匙 Silver Spoon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003373": {
+    "workId": "wk_000003373",
+    "title": "더 에이트 쇼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124001145"
+    },
+    "titles": {
+      "ko": "더 에이트 쇼",
+      "en": "The 8 Show",
+      "ja": "The 8 Show ～極限のマネーショー～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004072": {
+    "workId": "wk_000004072",
+    "title": "앤 셜리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131292174"
+    },
+    "titles": {
+      "ko": "앤 셜리",
+      "en": "Anne Shirley",
+      "ja": "アン・シャーリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005211": {
+    "workId": "wk_000005211",
+    "title": "인 콜드 블러드 (미니시리즈)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18151024"
+    },
+    "titles": {
+      "ko": "인 콜드 블러드 (미니시리즈)",
+      "en": "In Cold Blood",
+      "ja": "冷血"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

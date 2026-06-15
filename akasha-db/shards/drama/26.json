@@ -88,5 +88,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005255": {
+    "workId": "wk_000005255",
+    "title": "더 뮤직아워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233702"
+    },
+    "titles": {
+      "ko": "더 뮤직아워",
+      "en": "THE MUSIC HOUR",
+      "ja": "ザ・ミュージックアワー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

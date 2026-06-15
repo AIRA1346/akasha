@@ -16,5 +16,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004148": {
+    "workId": "wk_000004148",
+    "title": "에브리데이 호스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131457029"
+    },
+    "titles": {
+      "ko": "에브리데이 호스트",
+      "en": "Everyday Host",
+      "ja": "えぶりでいホスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004645": {
+    "workId": "wk_000004645",
+    "title": "후우카(애니)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137797895"
+    },
+    "titles": {
+      "ko": "후우카(애니)",
+      "en": "Fūka",
+      "ja": "風夏"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005135": {
+    "workId": "wk_000005135",
+    "title": "크로스 앙쥬 천사와 용의 윤무",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17485025"
+    },
+    "titles": {
+      "ko": "크로스 앙쥬 천사와 용의 윤무",
+      "en": "Cross Ange",
+      "ja": "クロスアンジュ 天使と竜の輪舞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -128,5 +128,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002963": {
+    "workId": "wk_000002963",
+    "title": "명탐정 코난: 천공의 난파선",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204889"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 천공의 난파선",
+      "en": "Detective Conan: The Lost Ship in the Sky",
+      "ja": "名探偵コナン 天空の難破船"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

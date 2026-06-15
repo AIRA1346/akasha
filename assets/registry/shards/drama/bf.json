@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005325": {
+    "workId": "wk_000005325",
+    "title": "립스틱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11238653"
+    },
+    "titles": {
+      "ko": "립스틱",
+      "en": "Lipstick (TV Drama)",
+      "ja": "リップスティック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -52,5 +52,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003004": {
+    "workId": "wk_000003004",
+    "title": "창작의 신 : 국민 작곡가의 탄생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458425"
+    },
+    "titles": {
+      "ko": "창작의 신 : 국민 작곡가의 탄생",
+      "en": "Q109458425"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004049": {
+    "workId": "wk_000004049",
+    "title": "미남당",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114981"
+    },
+    "titles": {
+      "ko": "미남당",
+      "en": "Café Minamdang",
+      "ja": "美男堂-事件手帳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

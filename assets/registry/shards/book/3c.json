@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003945": {
+    "workId": "wk_000003945",
+    "title": "모자이혹론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10788077"
+    },
+    "titles": {
+      "ko": "모자이혹론",
+      "en": "Mouzi Lihuolun",
+      "ja": "牟氏理惑論"
+    },
+    "creator": "Mouzi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

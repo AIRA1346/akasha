@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004813": {
+    "workId": "wk_000004813",
+    "title": "극장판 포켓몬스터 XY: 파괴의 고치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15304052"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 XY: 파괴의 고치",
+      "en": "Pokémon the Movie: Diancie and the Cocoon of Destruction",
+      "ja": "ポケモン・ザ・ムービーXY 破壊の繭とディアンシー"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

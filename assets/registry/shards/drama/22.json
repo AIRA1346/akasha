@@ -68,5 +68,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003594": {
+    "workId": "wk_000003594",
+    "title": "함 사세요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464586"
+    },
+    "titles": {
+      "ko": "함 사세요",
+      "en": "Q109464586"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003831": {
+    "workId": "wk_000003831",
+    "title": "사냥개들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109767798"
+    },
+    "titles": {
+      "ko": "사냥개들",
+      "en": "Bloodhounds",
+      "ja": "ブラッドハウンド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004862": {
+    "workId": "wk_000004862",
+    "title": "무사시 MUSASHI",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11124871"
+    },
+    "titles": {
+      "ko": "무사시 MUSASHI",
+      "en": "Musashi",
+      "ja": "武蔵 MUSASHI"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

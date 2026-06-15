@@ -103,5 +103,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003765": {
+    "workId": "wk_000003765",
+    "title": "오! 마이 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547060"
+    },
+    "titles": {
+      "ko": "오! 마이 스타",
+      "en": "Q109547060"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

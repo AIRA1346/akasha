@@ -51,5 +51,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004183": {
+    "workId": "wk_000004183",
+    "title": "아재타향정호적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115599"
+    },
+    "titles": {
+      "ko": "아재타향정호적",
+      "en": "Q110115599"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004397": {
+    "workId": "wk_000004397",
+    "title": "1883",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110124251"
+    },
+    "titles": {
+      "ko": "1883",
+      "en": "1883",
+      "ja": "1883"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

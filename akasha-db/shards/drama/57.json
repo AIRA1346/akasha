@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005266": {
+    "workId": "wk_000005266",
+    "title": "NHK 뉴스 오하요 훗카이도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235044"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 훗카이도",
+      "en": "NHK News Ohayo Hokkaido",
+      "ja": "NHKニュースおはよう北海道"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

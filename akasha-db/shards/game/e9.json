@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004830": {
+    "workId": "wk_000004830",
+    "title": "블리치 The 3rd Phantom",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136366"
+    },
+    "titles": {
+      "ko": "블리치 The 3rd Phantom",
+      "en": "Bleach: The 3rd Phantom",
+      "ja": "BLEACH The 3rd Phantom"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

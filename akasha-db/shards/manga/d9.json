@@ -55,5 +55,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004565": {
+    "workId": "wk_000004565",
+    "title": "타임슬립 닥터 진",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202742"
+    },
+    "titles": {
+      "ko": "타임슬립 닥터 진",
+      "en": "Jin",
+      "ja": "JIN-仁-"
+    },
+    "creator": "Motoka Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005204": {
+    "workId": "wk_000005204",
+    "title": "야생의 라스트 보스가 나타났다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125246056"
+    },
+    "titles": {
+      "ko": "야생의 라스트 보스가 나타났다!",
+      "en": "A Wild Last Boss Appeared!",
+      "ja": "野生のラスボスが現れた!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

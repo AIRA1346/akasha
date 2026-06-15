@@ -17,5 +17,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003026": {
+    "workId": "wk_000003026",
+    "title": "극장판 프리큐어 올스타즈 F",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120576148"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 올스타즈 F",
+      "en": "Pretty Cure All Stars F",
+      "ja": "映画 プリキュアオールスターズF"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003704": {
+    "workId": "wk_000003704",
+    "title": "노랫소리는 밀푀유",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126118048"
+    },
+    "titles": {
+      "ko": "노랫소리는 밀푀유",
+      "en": "Harmony of Mille-Feuille",
+      "ja": "うたごえはミルフィーユ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004880": {
+    "workId": "wk_000004880",
+    "title": "여고생! 수다클럽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15574647"
+    },
+    "titles": {
+      "ko": "여고생! 수다클럽",
+      "en": "Tesagure! Bukatsu-mono",
+      "ja": "てさぐれ！部活もの"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

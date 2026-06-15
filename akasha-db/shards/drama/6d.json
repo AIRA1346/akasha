@@ -1,0 +1,71 @@
+{
+  "wk_000003328": {
+    "workId": "wk_000003328",
+    "title": "재난탈출 생존왕",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460820"
+    },
+    "titles": {
+      "ko": "재난탈출 생존왕",
+      "en": "Q109460820"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004040": {
+    "workId": "wk_000004040",
+    "title": "땅만빌리지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114797"
+    },
+    "titles": {
+      "ko": "땅만빌리지",
+      "en": "Q110114797"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004471": {
+    "workId": "wk_000004471",
+    "title": "판타나우",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110388189"
+    },
+    "titles": {
+      "ko": "판타나우",
+      "en": "Pantanal (2022)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005313": {
+    "workId": "wk_000005313",
+    "title": "동방의 빛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235608"
+    },
+    "titles": {
+      "ko": "동방의 빛",
+      "en": "Q11235608",
+      "ja": "東方の光"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

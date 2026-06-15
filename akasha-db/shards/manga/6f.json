@@ -80,5 +80,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005208": {
+    "workId": "wk_000005208",
+    "title": "언젠가 최강의 연금술사?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125857117"
+    },
+    "titles": {
+      "ko": "언젠가 최강의 연금술사?",
+      "en": "Possibly the Greatest Alchemist of All Time",
+      "ja": "いずれ最強の錬金術師?"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

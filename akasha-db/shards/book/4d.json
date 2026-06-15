@@ -1,0 +1,21 @@
+{
+  "wk_000005249": {
+    "workId": "wk_000005249",
+    "title": "대당창업기거주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10934280"
+    },
+    "titles": {
+      "ko": "대당창업기거주",
+      "ja": "大唐創業起居注",
+      "zh": "大唐創業起居注"
+    },
+    "creator": "Wen Daya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

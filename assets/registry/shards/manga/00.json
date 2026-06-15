@@ -1,0 +1,21 @@
+{
+  "wk_000004132": {
+    "workId": "wk_000004132",
+    "title": "유즈키네 사 형제",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117821855"
+    },
+    "titles": {
+      "ko": "유즈키네 사 형제",
+      "en": "The Yuzuki Family's Four Sons",
+      "ja": "柚木さんちの四兄弟。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -81,5 +81,132 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003453": {
+    "workId": "wk_000003453",
+    "title": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124329533"
+    },
+    "titles": {
+      "ko": "아빠는 영웅, 엄마는 정령, 딸인 나는 전생자.",
+      "en": "Reincarnated as the Daughter of the Legendary Hero and the Queen of Spirits",
+      "ja": "父は英雄、母は精霊、娘の私は転生者。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003553": {
+    "workId": "wk_000003553",
+    "title": "나루토 질풍전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12500134"
+    },
+    "titles": {
+      "ko": "나루토 질풍전",
+      "en": "Naruto: Shippūden",
+      "ja": "NARUTO -ナルト- 疾風伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003705": {
+    "workId": "wk_000003705",
+    "title": "캐릭캐릭 체인지 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12620450"
+    },
+    "titles": {
+      "ko": "캐릭캐릭 체인지 (애니메이션)",
+      "en": "Shugo Chara!",
+      "ja": "しゅごキャラ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004812": {
+    "workId": "wk_000004812",
+    "title": "추억의 마니",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15303700"
+    },
+    "titles": {
+      "ko": "추억의 마니",
+      "en": "When Marnie Was There",
+      "ja": "思い出のマーニー"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005077": {
+    "workId": "wk_000005077",
+    "title": "라인 타운",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17212088"
+    },
+    "titles": {
+      "ko": "라인 타운",
+      "en": "Line Town",
+      "ja": "LINE TOWN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005079": {
+    "workId": "wk_000005079",
+    "title": "진월담 월희",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17217313"
+    },
+    "titles": {
+      "ko": "진월담 월희",
+      "en": "Tsukihime, Lunar Legend",
+      "ja": "真月譚 月姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005136": {
+    "workId": "wk_000005136",
+    "title": "ONE OUTS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17502925"
+    },
+    "titles": {
+      "ko": "ONE OUTS",
+      "en": "One Outs",
+      "ja": "ONE OUTS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

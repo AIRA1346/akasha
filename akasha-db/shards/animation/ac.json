@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005220": {
+    "workId": "wk_000005220",
+    "title": "세인트 세이야 -Soul of Gold-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18391891"
+    },
+    "titles": {
+      "ko": "세인트 세이야 -Soul of Gold-",
+      "en": "Saint Seiya: Soul of Gold",
+      "ja": "聖闘士星矢 黄金魂 -soul of gold-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

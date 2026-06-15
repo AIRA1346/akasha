@@ -50,5 +50,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003593": {
+    "workId": "wk_000003593",
+    "title": "슈퍼모델 2018 서바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464542"
+    },
+    "titles": {
+      "ko": "슈퍼모델 2018 서바이벌",
+      "en": "Q109464542"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003766": {
+    "workId": "wk_000003766",
+    "title": "주부가요열창",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547061"
+    },
+    "titles": {
+      "ko": "주부가요열창",
+      "en": "Q109547061"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004784": {
+    "workId": "wk_000004784",
+    "title": "돼지의 왕",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111015162"
+    },
+    "titles": {
+      "ko": "돼지의 왕",
+      "en": "The King of Pigs",
+      "ja": "豚の王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005121": {
+    "workId": "wk_000005121",
+    "title": "FNN뉴스리포트23:30",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11199506"
+    },
+    "titles": {
+      "ko": "FNN뉴스리포트23:30",
+      "en": "FNN News Report 23:30",
+      "ja": "FNNニュースレポート23:30"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005190": {
+    "workId": "wk_000005190",
+    "title": "줄 서는 식당",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112254133"
+    },
+    "titles": {
+      "ko": "줄 서는 식당",
+      "en": "Q112254133"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

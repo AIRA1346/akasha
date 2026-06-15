@@ -50,5 +50,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004238": {
+    "workId": "wk_000004238",
+    "title": "고려사절요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855281"
+    },
+    "titles": {
+      "ko": "고려사절요",
+      "en": "Goryeosa Jeoryo",
+      "ja": "高麗史節要"
+    },
+    "releaseYear": 1452,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005046": {
+    "workId": "wk_000005046",
+    "title": "독서의 기술",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091079"
+    },
+    "titles": {
+      "ko": "독서의 기술",
+      "en": "Q1091079",
+      "ja": "本を読む本"
+    },
+    "releaseYear": 1940,
+    "creator": "Charles Van Doren",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

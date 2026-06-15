@@ -54,5 +54,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004503": {
+    "workId": "wk_000004503",
+    "title": "케오의 그림일기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136131461"
+    },
+    "titles": {
+      "ko": "케오의 그림일기",
+      "en": "Kay's Daily Doodles",
+      "ja": "ケーちゃんの絵日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005028": {
+    "workId": "wk_000005028",
+    "title": "오빠지만 사랑만 있으면 상관없잖아?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16878961"
+    },
+    "titles": {
+      "ko": "오빠지만 사랑만 있으면 상관없잖아?",
+      "en": "Oniichan dakedo Ai sae Areba Kankeinai yo ne!",
+      "ja": "お兄ちゃんだけど愛さえあれば関係ないよねっ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005212": {
+    "workId": "wk_000005212",
+    "title": "에반게리온: Q",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q182206"
+    },
+    "titles": {
+      "ko": "에반게리온: Q",
+      "en": "Evangelion: 3.0 You Can (Not) Redo",
+      "ja": "ヱヴァンゲリヲン新劇場版:Q"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

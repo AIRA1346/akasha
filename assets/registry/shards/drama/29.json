@@ -33,5 +33,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003899": {
+    "workId": "wk_000003899",
+    "title": "100인의 선택, 턴업 2019",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113663"
+    },
+    "titles": {
+      "ko": "100인의 선택, 턴업 2019",
+      "en": "Q110113663"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

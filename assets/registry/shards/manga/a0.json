@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004198": {
+    "workId": "wk_000004198",
+    "title": "베이블레이드 X",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118940775"
+    },
+    "titles": {
+      "ko": "베이블레이드 X",
+      "en": "Beyblade X",
+      "ja": "BEYBLADE X"
+    },
+    "creator": "Posuka Demizu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004703": {
+    "workId": "wk_000004703",
+    "title": "유어 포르마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120669647"
+    },
+    "titles": {
+      "ko": "유어 포르마",
+      "en": "Your Forma",
+      "ja": "ユア・フォルマ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

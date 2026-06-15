@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004658": {
+    "workId": "wk_000004658",
+    "title": "에일리언 솔저",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134672"
+    },
+    "titles": {
+      "ko": "에일리언 솔저",
+      "en": "Alien Soldier",
+      "ja": "エイリアンソルジャー"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

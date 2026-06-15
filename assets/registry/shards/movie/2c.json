@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004030": {
+    "workId": "wk_000004030",
+    "title": "마루사의 여자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054656"
+    },
+    "titles": {
+      "ko": "마루사의 여자",
+      "en": "A Taxing Woman",
+      "ja": "マルサの女"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002996": {
+    "workId": "wk_000002996",
+    "title": "주X말의 영화",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458174"
+    },
+    "titles": {
+      "ko": "주X말의 영화",
+      "en": "Q109458174"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004116": {
+    "workId": "wk_000004116",
+    "title": "빛과 사슬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115210"
+    },
+    "titles": {
+      "ko": "빛과 사슬",
+      "en": "Q110115210"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004690": {
+    "workId": "wk_000004690",
+    "title": "어둠 속의 감시자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110885430"
+    },
+    "titles": {
+      "ko": "어둠 속의 감시자",
+      "en": "The Watcher",
+      "ja": "ザ・ウォッチャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

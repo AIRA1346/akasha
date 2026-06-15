@@ -68,5 +68,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003253": {
+    "workId": "wk_000003253",
+    "title": "겨울 도화리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460661"
+    },
+    "titles": {
+      "ko": "겨울 도화리",
+      "en": "Q109460661"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004781": {
+    "workId": "wk_000004781",
+    "title": "NXT : 레벨 업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110977099"
+    },
+    "titles": {
+      "ko": "NXT : 레벨 업",
+      "en": "WWE NXT Level Up"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005188": {
+    "workId": "wk_000005188",
+    "title": "누군가는 알고 있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112241985"
+    },
+    "titles": {
+      "ko": "누군가는 알고 있다",
+      "en": "Disclaimer",
+      "ja": "ディスクレーマー 夏の沈黙"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

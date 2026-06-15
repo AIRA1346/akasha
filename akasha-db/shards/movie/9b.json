@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004677": {
+    "workId": "wk_000004677",
+    "title": "기기협",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057524"
+    },
+    "titles": {
+      "ko": "기기협",
+      "en": "Kung Fu Cyborg",
+      "ja": "カンフーサイボーグ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

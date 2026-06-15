@@ -1,0 +1,20 @@
+{
+  "wk_000004467": {
+    "workId": "wk_000004467",
+    "title": "희생양",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056797"
+    },
+    "titles": {
+      "ko": "희생양",
+      "en": "The Scapegoat"
+    },
+    "releaseYear": 1960,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

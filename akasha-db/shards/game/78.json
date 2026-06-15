@@ -88,5 +88,81 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003216": {
+    "workId": "wk_000003216",
+    "title": "타워 오브 판타지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110379107"
+    },
+    "titles": {
+      "ko": "타워 오브 판타지",
+      "en": "Tower of Fantasy",
+      "ja": "Tower of Fantasy（幻塔）"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003866": {
+    "workId": "wk_000003866",
+    "title": "ChuSingura46+1",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11194587"
+    },
+    "titles": {
+      "ko": "ChuSingura46+1",
+      "en": "ChuSingura46+1",
+      "ja": "ChuSingura46+1 -忠臣蔵46+1-"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004221": {
+    "workId": "wk_000004221",
+    "title": "우리들에게 날개는 없다 ~Prelude~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263159"
+    },
+    "titles": {
+      "ko": "우리들에게 날개는 없다 ~Prelude~",
+      "en": "Ore-tachi ni Tsubasa wa Nai ~Prelude~",
+      "ja": "俺たちに翼はない〜Prelude〜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004301": {
+    "workId": "wk_000004301",
+    "title": "프린세스 윗치즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283264"
+    },
+    "titles": {
+      "ko": "프린세스 윗치즈",
+      "en": "Princess Witches",
+      "ja": "プリンセスうぃっちぃず"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

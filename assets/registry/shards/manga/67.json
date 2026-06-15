@@ -86,5 +86,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003529": {
+    "workId": "wk_000003529",
+    "title": "정령사의 검무",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116247590"
+    },
+    "titles": {
+      "ko": "정령사의 검무",
+      "en": "Bladedance of Elementalers",
+      "ja": "精霊使いの剣舞"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003972": {
+    "workId": "wk_000003972",
+    "title": "암호학원의 이로하",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117019310"
+    },
+    "titles": {
+      "ko": "암호학원의 이로하",
+      "en": "Cipher Academy",
+      "ja": "暗号学園のいろは"
+    },
+    "releaseYear": 2022,
+    "creator": "Nisio Isin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

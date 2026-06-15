@@ -1,0 +1,60 @@
+{
+  "wk_000003259": {
+    "workId": "wk_000003259",
+    "title": "물에 빠진 나이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11564540"
+    },
+    "titles": {
+      "ko": "물에 빠진 나이프",
+      "en": "Drowning Love",
+      "ja": "溺れるナイフ"
+    },
+    "creator": "George Asakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003428": {
+    "workId": "wk_000003428",
+    "title": "미도리야마 고교",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11607817"
+    },
+    "titles": {
+      "ko": "미도리야마 고교",
+      "en": "Q11607817",
+      "ja": "緑山高校"
+    },
+    "creator": "Atsuo Kuwasawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005276": {
+    "workId": "wk_000005276",
+    "title": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126288021"
+    },
+    "titles": {
+      "ko": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "en": "VTuber Legend",
+      "ja": "VTuberなんだが配信切り忘れたら伝説になってた"
+    },
+    "releaseYear": 2023,
+    "creator": "Nanato Nana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

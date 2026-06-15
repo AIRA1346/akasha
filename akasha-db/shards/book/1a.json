@@ -17,5 +17,83 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002981": {
+    "workId": "wk_000002981",
+    "title": "사다리의 마지막 단",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10668916"
+    },
+    "titles": {
+      "ko": "사다리의 마지막 단",
+      "en": "The Last Rung on the Ladder"
+    },
+    "releaseYear": 1978,
+    "creator": "Stephen King",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002984": {
+    "workId": "wk_000002984",
+    "title": "꿈의 수호자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106721240"
+    },
+    "titles": {
+      "ko": "꿈의 수호자",
+      "en": "Guardian of Dreams",
+      "ja": "夢の守り人"
+    },
+    "releaseYear": 2000,
+    "creator": "上橋菜穂子",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004377": {
+    "workId": "wk_000004377",
+    "title": "삼국지평화",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865591"
+    },
+    "titles": {
+      "ko": "삼국지평화",
+      "en": "Sanguozhi Pinghua",
+      "ja": "三国志平話"
+    },
+    "releaseYear": 1320,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004529": {
+    "workId": "wk_000004529",
+    "title": "중국의 몰락",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10874462"
+    },
+    "titles": {
+      "ko": "중국의 몰락",
+      "en": "The Coming Collapse of China",
+      "ja": "中国即将崩溃"
+    },
+    "releaseYear": 2001,
+    "creator": "Gordon G. Chang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

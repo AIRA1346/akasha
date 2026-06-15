@@ -34,5 +34,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003327": {
+    "workId": "wk_000003327",
+    "title": "캐스팅 콜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460816"
+    },
+    "titles": {
+      "ko": "캐스팅 콜",
+      "en": "Q109460816"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003681": {
+    "workId": "wk_000003681",
+    "title": "우리가 응원한다! 청춘하라!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546022"
+    },
+    "titles": {
+      "ko": "우리가 응원한다! 청춘하라!",
+      "en": "Q109546022"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003895": {
+    "workId": "wk_000003895",
+    "title": "창란결",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110106538"
+    },
+    "titles": {
+      "ko": "창란결",
+      "en": "Love Between Fairy and Devil",
+      "ja": "蒼蘭訣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

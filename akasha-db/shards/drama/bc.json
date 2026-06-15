@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003073": {
+    "workId": "wk_000003073",
+    "title": "ubc 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458845"
+    },
+    "titles": {
+      "ko": "ubc 뉴스특보",
+      "en": "Q109458845",
+      "ja": "ubcニュース特報"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003828": {
+    "workId": "wk_000003828",
+    "title": "아바타: 아앙의 전설",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109608844"
+    },
+    "titles": {
+      "ko": "아바타: 아앙의 전설",
+      "en": "Avatar: The Last Airbender",
+      "ja": "アバター: 伝説の少年アン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

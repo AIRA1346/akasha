@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003362": {
+    "workId": "wk_000003362",
+    "title": "푸른 상자 애니메이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123484832"
+    },
+    "titles": {
+      "ko": "푸른 상자 애니메이션",
+      "en": "Blue Box",
+      "ja": "アオのハコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004282": {
+    "workId": "wk_000004282",
+    "title": "레 미제라블 소녀 코제트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324552"
+    },
+    "titles": {
+      "ko": "레 미제라블 소녀 코제트",
+      "en": "Les Misérables: Shōjo Cosette",
+      "ja": "レ・ミゼラブル 少女コゼット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

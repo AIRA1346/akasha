@@ -1,0 +1,21 @@
+{
+  "wk_000005083": {
+    "workId": "wk_000005083",
+    "title": "스쿨 걸즈 스트라이크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17228860"
+    },
+    "titles": {
+      "ko": "스쿨 걸즈 스트라이크",
+      "en": "Schoolgirl Strikers",
+      "ja": "スクールガールストライカーズ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

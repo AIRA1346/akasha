@@ -52,5 +52,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003718": {
+    "workId": "wk_000003718",
+    "title": "클레바테스 -마수왕과 아기와 시체 용사-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126959847"
+    },
+    "titles": {
+      "ko": "클레바테스 -마수왕과 아기와 시체 용사-",
+      "en": "Clevatess",
+      "ja": "クレバテス-魔獣の王と赤子と屍の勇者-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003917": {
+    "workId": "wk_000003917",
+    "title": "루리의 보석",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130272456"
+    },
+    "titles": {
+      "ko": "루리의 보석",
+      "en": "Ruri Rocks",
+      "ja": "瑠璃の宝石"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -85,5 +85,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004651": {
+    "workId": "wk_000004651",
+    "title": "마그나카르타 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340041"
+    },
+    "titles": {
+      "ko": "마그나카르타 2",
+      "en": "MagnaCarta II",
+      "ja": "マグナカルタ2"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

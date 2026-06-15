@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004510": {
+    "workId": "wk_000004510",
+    "title": "하나오리 양은 전생해서도 싸움이 하고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136343457"
+    },
+    "titles": {
+      "ko": "하나오리 양은 전생해서도 싸움이 하고 싶어",
+      "en": "Hanaori-san Still Wants to Fight in the Next Life",
+      "ja": "花織さんは転生しても喧嘩がしたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

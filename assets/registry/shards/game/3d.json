@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003787": {
+    "workId": "wk_000003787",
+    "title": "여름의 끝에 피는 꽃",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111650790"
+    },
+    "titles": {
+      "ko": "여름의 끝에 피는 꽃",
+      "en": "Flowers Blooming at the End of Summer"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004366": {
+    "workId": "wk_000004366",
+    "title": "갓 오브 워 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129452"
+    },
+    "titles": {
+      "ko": "갓 오브 워 3",
+      "en": "God of War III",
+      "ja": "ゴッド・オブ・ウォーIII"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

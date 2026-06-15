@@ -1,0 +1,19 @@
+{
+  "wk_000003438": {
+    "workId": "wk_000003438",
+    "title": "체인지가이",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7268998"
+    },
+    "titles": {
+      "ko": "체인지가이",
+      "en": "Quantum Mistake"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

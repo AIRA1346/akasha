@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004875": {
+    "workId": "wk_000004875",
+    "title": "풀 나이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123221346"
+    },
+    "titles": {
+      "ko": "풀 나이트",
+      "en": "Fool Night",
+      "ja": "フールナイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

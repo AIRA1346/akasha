@@ -66,5 +66,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003542": {
+    "workId": "wk_000003542",
+    "title": "로젠 메이든",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124649505"
+    },
+    "titles": {
+      "ko": "로젠 메이든",
+      "en": "Rozen Maiden",
+      "ja": "ローゼンメイデン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004349": {
+    "workId": "wk_000004349",
+    "title": "전생했더니 드래곤의 알이었다 ~최강이 아니면 목표로 하지 않아~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133277030"
+    },
+    "titles": {
+      "ko": "전생했더니 드래곤의 알이었다 ~최강이 아니면 목표로 하지 않아~",
+      "en": "Reincarnated as a Dragon Hatchling",
+      "ja": "転生したらドラゴンの卵だった 〜最強以外目指さねぇ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004759": {
+    "workId": "wk_000004759",
+    "title": "짱구는 못말려 극장판: 가친코! 역습의 로봇아빠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15059911"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 가친코! 역습의 로봇아빠",
+      "en": "Crayon Shin-chan: Serious Battle! Robot Dad Strikes Back",
+      "ja": "クレヨンしんちゃん ガチンコ!逆襲のロボとーちゃん"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

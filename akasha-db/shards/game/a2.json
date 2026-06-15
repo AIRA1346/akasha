@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004013": {
+    "workId": "wk_000004013",
+    "title": "마인크래프트 레전드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112430705"
+    },
+    "titles": {
+      "ko": "마인크래프트 레전드",
+      "en": "Minecraft Legends",
+      "ja": "Minecraft Legends"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

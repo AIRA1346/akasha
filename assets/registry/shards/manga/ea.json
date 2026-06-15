@@ -49,5 +49,62 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000004492": {
+    "workId": "wk_000004492",
+    "title": "학원특경 듀칼리온",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200652"
+    },
+    "titles": {
+      "ko": "학원특경 듀칼리온",
+      "en": "Duklyon: Clamp School Defenders",
+      "ja": "学園特警デュカリオン"
+    },
+    "creator": "Clamp",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004742": {
+    "workId": "wk_000004742",
+    "title": "목소리로 일하자!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1208940"
+    },
+    "titles": {
+      "ko": "목소리로 일하자!",
+      "en": "Koe de Oshigoto!",
+      "ja": "こえでおしごと!"
+    },
+    "creator": "Azure Konno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004745": {
+    "workId": "wk_000004745",
+    "title": "던전 안의 사람",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121535868"
+    },
+    "titles": {
+      "ko": "던전 안의 사람",
+      "en": "Dungeon People",
+      "ja": "ダンジョンの中のひと"
+    },
+    "creator": "Sui Futami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

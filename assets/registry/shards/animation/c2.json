@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003027": {
+    "workId": "wk_000003027",
+    "title": "유어 포르마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120669648"
+    },
+    "titles": {
+      "ko": "유어 포르마",
+      "en": "Your Forma",
+      "ja": "ユア・フォルマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

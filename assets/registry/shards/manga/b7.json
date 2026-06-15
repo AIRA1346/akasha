@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003431": {
+    "workId": "wk_000003431",
+    "title": "들려주오 사랑의 속삭임을",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11611181"
+    },
+    "titles": {
+      "ko": "들려주오 사랑의 속삭임을",
+      "en": "Kikaseto yo, Ai no Kotoba o",
+      "ja": "聞かせてよ愛の言葉を"
+    },
+    "creator": "Mutsumi Tsukumo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

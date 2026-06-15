@@ -82,5 +82,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003378": {
+    "workId": "wk_000003378",
+    "title": "연희",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074351"
+    },
+    "titles": {
+      "ko": "연희",
+      "en": "Koihime",
+      "ja": "恋姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004298": {
+    "workId": "wk_000004298",
+    "title": "포트리스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282014"
+    },
+    "titles": {
+      "ko": "포트리스",
+      "en": "Fortress",
+      "ja": "ポトリス"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

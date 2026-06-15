@@ -52,5 +52,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003250": {
+    "workId": "wk_000003250",
+    "title": "K팝스타 2 드림 스테이지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460595"
+    },
+    "titles": {
+      "ko": "K팝스타 2 드림 스테이지",
+      "en": "Q109460595"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003830": {
+    "workId": "wk_000003830",
+    "title": "황금돼지~회계 검사청 특별 조사과",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10976119"
+    },
+    "titles": {
+      "ko": "황금돼지~회계 검사청 특별 조사과",
+      "en": "Q10976119",
+      "ja": "黄金の豚-会計検査庁 特別調査課-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005059": {
+    "workId": "wk_000005059",
+    "title": "AD 부기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11188946"
+    },
+    "titles": {
+      "ko": "AD 부기",
+      "en": "AD Boogie",
+      "ja": "ADブギ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

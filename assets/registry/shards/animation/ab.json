@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003028": {
+    "workId": "wk_000003028",
+    "title": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120669696"
+    },
+    "titles": {
+      "ko": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+      "en": "I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time",
+      "ja": "ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005085": {
+    "workId": "wk_000005085",
+    "title": "샹그리라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17277591"
+    },
+    "titles": {
+      "ko": "샹그리라",
+      "en": "Shangri-La",
+      "ja": "シャングリ・ラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "wk_000003790": {
+    "workId": "wk_000003790",
+    "title": "F1 22",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111676993"
+    },
+    "titles": {
+      "ko": "F1 22",
+      "en": "F1 22",
+      "ja": "F1 22"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005042": {
+    "workId": "wk_000005042",
+    "title": "라이즈 오브 더 로닌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113961028"
+    },
+    "titles": {
+      "ko": "라이즈 오브 더 로닌",
+      "en": "Rise of the Ronin",
+      "ja": "Rise of the Ronin"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005099": {
+    "workId": "wk_000005099",
+    "title": "포켓몬 + 노부나가의 야망",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141794"
+    },
+    "titles": {
+      "ko": "포켓몬 + 노부나가의 야망",
+      "en": "Pokémon Conquest",
+      "ja": "ポケモン+ノブナガの野望"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

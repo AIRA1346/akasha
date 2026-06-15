@@ -34,5 +34,93 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003606": {
+    "workId": "wk_000003606",
+    "title": "행복충전 백세인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109534668"
+    },
+    "titles": {
+      "ko": "행복충전 백세인",
+      "en": "Q109534668"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004184": {
+    "workId": "wk_000004184",
+    "title": "언어의 온도 : 우리의 열아홉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115689"
+    },
+    "titles": {
+      "ko": "언어의 온도 : 우리의 열아홉",
+      "en": "Q110115689"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004258": {
+    "workId": "wk_000004258",
+    "title": "KBS 뉴스 (1000)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115970"
+    },
+    "titles": {
+      "ko": "KBS 뉴스 (1000)",
+      "en": "KBS NEWS (1000)",
+      "ja": "KBS ニュース (1000)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004548": {
+    "workId": "wk_000004548",
+    "title": "살인자의 쇼핑목록",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110608157"
+    },
+    "titles": {
+      "ko": "살인자의 쇼핑목록",
+      "en": "The Murderer's Shopping List",
+      "ja": "キラーズ・ショッピングリスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005071": {
+    "workId": "wk_000005071",
+    "title": "내가 예뻐진 그 여름",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111947659"
+    },
+    "titles": {
+      "ko": "내가 예뻐진 그 여름",
+      "en": "The Summer I Turned Pretty",
+      "ja": "私たちの青い夏"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

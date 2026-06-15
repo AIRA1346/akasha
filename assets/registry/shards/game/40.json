@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004896": {
+    "workId": "wk_000004896",
+    "title": "아랑전설 와일드 앰비션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137028"
+    },
+    "titles": {
+      "ko": "아랑전설 와일드 앰비션",
+      "en": "Fatal Fury: Wild Ambition",
+      "ja": "餓狼伝説 WILD AMBITION"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -33,5 +33,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003195": {
+    "workId": "wk_000003195",
+    "title": "대도서관의 양치기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122706296"
+    },
+    "titles": {
+      "ko": "대도서관의 양치기",
+      "en": "A Good Librarian Like a Good Shepherd",
+      "ja": "大図書館の羊飼い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003785": {
+    "workId": "wk_000003785",
+    "title": "고양이로 전생한 아저씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128130782"
+    },
+    "titles": {
+      "ko": "고양이로 전생한 아저씨",
+      "en": "Neko ni Tensei Shita Oji-san",
+      "ja": "ねこに転生したおじさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004895": {
+    "workId": "wk_000004895",
+    "title": "타마코 러브 스토리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15975680"
+    },
+    "titles": {
+      "ko": "타마코 러브 스토리",
+      "en": "Tamako Love Story",
+      "ja": "たまこラブストーリー"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

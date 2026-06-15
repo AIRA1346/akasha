@@ -15,5 +15,94 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004189": {
+    "workId": "wk_000004189",
+    "title": "오늘부터 무해하게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115834"
+    },
+    "titles": {
+      "ko": "오늘부터 무해하게",
+      "en": "Q110115834"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004404": {
+    "workId": "wk_000004404",
+    "title": "재벌집 막내아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110244733"
+    },
+    "titles": {
+      "ko": "재벌집 막내아들",
+      "en": "Reborn Rich",
+      "ja": "財閥家の末息子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004922": {
+    "workId": "wk_000004922",
+    "title": "안나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111415144"
+    },
+    "titles": {
+      "ko": "안나",
+      "en": "Anna",
+      "ja": "アンナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004931": {
+    "workId": "wk_000004931",
+    "title": "심궁첩영",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11153186"
+    },
+    "titles": {
+      "ko": "심궁첩영",
+      "en": "Mystery in the Palace",
+      "ja": "諍い女たちの後宮"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005268": {
+    "workId": "wk_000005268",
+    "title": "NHK 뉴스 오하요 간사이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235046"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 간사이",
+      "en": "NHK News Ohayo kansai",
+      "ja": "NHKニュースおはよう関西"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

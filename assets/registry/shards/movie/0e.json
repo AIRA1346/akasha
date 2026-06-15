@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003813": {
+    "workId": "wk_000003813",
+    "title": "CUBE 한번 들어가면 마지막",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105326306"
+    },
+    "titles": {
+      "ko": "CUBE 한번 들어가면 마지막",
+      "en": "Cube",
+      "ja": "CUBE 一度入ったら、最後"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003463": {
+    "workId": "wk_000003463",
+    "title": "Occultic;Nine",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124514496"
+    },
+    "titles": {
+      "ko": "Occultic;Nine",
+      "en": "Occultic;Nine",
+      "ja": "Occultic;Nine -オカルティック・ナイン-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003570": {
+    "workId": "wk_000003570",
+    "title": "PC 빌딩 시뮬레이터 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111171003"
+    },
+    "titles": {
+      "ko": "PC 빌딩 시뮬레이터 2",
+      "en": "PC Building Simulator 2",
+      "ja": "PC Building Simulator 2"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -48,5 +48,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003424": {
+    "workId": "wk_000003424",
+    "title": "실연박물관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461575"
+    },
+    "titles": {
+      "ko": "실연박물관",
+      "en": "Q109461575"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004114": {
+    "workId": "wk_000004114",
+    "title": "북으로 간 여배우",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115173"
+    },
+    "titles": {
+      "ko": "북으로 간 여배우",
+      "en": "Q110115173",
+      "ja": "北に行った女優"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

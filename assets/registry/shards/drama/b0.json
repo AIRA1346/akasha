@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004255": {
+    "workId": "wk_000004255",
+    "title": "월행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115933"
+    },
+    "titles": {
+      "ko": "월행",
+      "en": "Q110115933"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004780": {
+    "workId": "wk_000004780",
+    "title": "사바 돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11095448"
+    },
+    "titles": {
+      "ko": "사바 돌",
+      "en": "Saba Doll",
+      "ja": "さばドル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

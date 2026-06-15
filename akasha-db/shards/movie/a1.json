@@ -1,1 +1,21 @@
-{}
+{
+  "wk_000004387": {
+    "workId": "wk_000004387",
+    "title": "본 아이덴티티",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105624"
+    },
+    "titles": {
+      "ko": "본 아이덴티티",
+      "en": "The Bourne Identity",
+      "ja": "ボーン・アイデンティティー"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

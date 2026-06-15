@@ -51,5 +51,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003252": {
+    "workId": "wk_000003252",
+    "title": "너의 뺨에 입맞추리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460660"
+    },
+    "titles": {
+      "ko": "너의 뺨에 입맞추리",
+      "en": "Q109460660"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004403": {
+    "workId": "wk_000004403",
+    "title": "내과 박원장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110224034"
+    },
+    "titles": {
+      "ko": "내과 박원장",
+      "en": "Internal Medicine Park Won Jang"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004858": {
+    "workId": "wk_000004858",
+    "title": "마녀는 살아있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111183793"
+    },
+    "titles": {
+      "ko": "마녀는 살아있다",
+      "en": "The Witch Is Alive"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

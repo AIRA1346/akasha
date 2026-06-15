@@ -17,5 +17,63 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000004569": {
+    "workId": "wk_000004569",
+    "title": "꽃은 피어난다, 수라와 같이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336453"
+    },
+    "titles": {
+      "ko": "꽃은 피어난다, 수라와 같이",
+      "en": "Flower and Asura",
+      "ja": "花は咲く、修羅の如く"
+    },
+    "releaseYear": 2026,
+    "creator": "武田綾乃",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004700": {
+    "workId": "wk_000004700",
+    "title": "009-1",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1203945"
+    },
+    "titles": {
+      "ko": "009-1",
+      "en": "009-1",
+      "ja": "009ノ1"
+    },
+    "creator": "Shōtarō Ishinomori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005275": {
+    "workId": "wk_000005275",
+    "title": "공주기사는 야만인의 아내",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126193087"
+    },
+    "titles": {
+      "ko": "공주기사는 야만인의 아내",
+      "en": "The Barbarian's Bride",
+      "ja": "姫騎士は蛮族の嫁"
+    },
+    "creator": "コトバノリアキ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

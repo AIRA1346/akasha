@@ -1,0 +1,39 @@
+{
+  "wk_000003172": {
+    "workId": "wk_000003172",
+    "title": "미카도노 세 자매는 의외로 쉽다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115313656"
+    },
+    "titles": {
+      "ko": "미카도노 세 자매는 의외로 쉽다",
+      "en": "Dealing with Mikadono Sisters Is a Breeze",
+      "ja": "帝乃三姉妹は案外、チョロい。"
+    },
+    "creator": "Aya Hirakawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004701": {
+    "workId": "wk_000004701",
+    "title": "노을빛 아웃포커스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120402151"
+    },
+    "titles": {
+      "ko": "노을빛 아웃포커스",
+      "en": "Twilight Out of Focus",
+      "ja": "黄昏アウトフォーカス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

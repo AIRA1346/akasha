@@ -1,0 +1,58 @@
+{
+  "wk_000004224": {
+    "workId": "wk_000004224",
+    "title": "마녀의샘3 Re:Fine　＜인형 마녀 아이루디의 이야기＞",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112662688"
+    },
+    "titles": {
+      "ko": "마녀의샘3 Re:Fine　＜인형 마녀 아이루디의 이야기＞",
+      "en": "WitchSpring3 Re:Fine – The Story of Eirudy",
+      "ja": "魔女の泉3 Re:Fine　―人形魔女、『アイールディ』の物語―"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004903": {
+    "workId": "wk_000004903",
+    "title": "아이스윈드 데일",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137949"
+    },
+    "titles": {
+      "ko": "아이스윈드 데일",
+      "en": "Icewind Dale"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005096": {
+    "workId": "wk_000005096",
+    "title": "하야쿠 모노가타리 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11410927"
+    },
+    "titles": {
+      "ko": "하야쿠 모노가타리 2",
+      "en": "Koden Kōreijutsu: Hyaku Monogatari - Honto ni Atta Kowai Hanashi",
+      "ja": "古伝降霊術 百物語〜ほんとにあった怖い話〜"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

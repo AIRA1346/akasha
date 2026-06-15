@@ -52,5 +52,77 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003784": {
+    "workId": "wk_000003784",
+    "title": "네거포지 앵글러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128108290"
+    },
+    "titles": {
+      "ko": "네거포지 앵글러",
+      "en": "Negative Positive Angler",
+      "ja": "ネガポジアングラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003914": {
+    "workId": "wk_000003914",
+    "title": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130234756"
+    },
+    "titles": {
+      "ko": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+      "en": "I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!",
+      "ja": "Aランクパーティを離脱した俺は、元教え子たちと迷宮深部を目指す。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004281": {
+    "workId": "wk_000004281",
+    "title": "레플리카도, 사랑을 한다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132449475"
+    },
+    "titles": {
+      "ko": "레플리카도, 사랑을 한다.",
+      "en": "Even a Replica Can Fall in Love",
+      "ja": "レプリカだって、恋をする。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004644": {
+    "workId": "wk_000004644",
+    "title": "돌고래 요정 티코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1377929"
+    },
+    "titles": {
+      "ko": "돌고래 요정 티코",
+      "en": "Tico and Friends",
+      "ja": "七つの海のティコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

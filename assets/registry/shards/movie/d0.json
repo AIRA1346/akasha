@@ -1,0 +1,40 @@
+{
+  "wk_000003814": {
+    "workId": "wk_000003814",
+    "title": "기적",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053293"
+    },
+    "titles": {
+      "ko": "기적",
+      "en": "I Wish",
+      "ja": "奇跡"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003947": {
+    "workId": "wk_000003947",
+    "title": "인투 더 미러",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105429797"
+    },
+    "titles": {
+      "ko": "인투 더 미러",
+      "en": "Parallel",
+      "ja": "パラレル 多次元世界"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

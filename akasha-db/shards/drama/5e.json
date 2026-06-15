@@ -15,5 +15,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004476": {
+    "workId": "wk_000004476",
+    "title": "저녁전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11052161"
+    },
+    "titles": {
+      "ko": "저녁전",
+      "en": "Q11052161",
+      "ja": "夕餉前"
+    },
+    "releaseYear": 1940,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004546": {
+    "workId": "wk_000004546",
+    "title": "우리가 볼 수 없는 모든 빛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110602969"
+    },
+    "titles": {
+      "ko": "우리가 볼 수 없는 모든 빛",
+      "en": "All the Light We Cannot See",
+      "ja": "すべての見えない光"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005125": {
+    "workId": "wk_000005125",
+    "title": "뜨거운 씽어즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112061829"
+    },
+    "titles": {
+      "ko": "뜨거운 씽어즈",
+      "en": "Hot Singers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

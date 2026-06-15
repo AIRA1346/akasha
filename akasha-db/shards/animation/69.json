@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003368": {
+    "workId": "wk_000003368",
+    "title": "푸니르는 귀여운 슬라임",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123785621"
+    },
+    "titles": {
+      "ko": "푸니르는 귀여운 슬라임",
+      "en": "Puniru Is a Cute Slime",
+      "ja": "ぷにるはかわいいスライム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

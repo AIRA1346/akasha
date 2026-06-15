@@ -1,0 +1,21 @@
+{
+  "wk_000003742": {
+    "workId": "wk_000003742",
+    "title": "하이, 맘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105221616"
+    },
+    "titles": {
+      "ko": "하이, 맘",
+      "en": "Hi, Mom",
+      "ja": "こんにちは、私のお母さん"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -30,5 +30,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002965": {
+    "workId": "wk_000002965",
+    "title": "비하인드 더 프레임: 가장 아름다운 경치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108822896"
+    },
+    "titles": {
+      "ko": "비하인드 더 프레임: 가장 아름다운 경치",
+      "en": "Behind the Frame: The Finest Scenery",
+      "ja": "Behind the Frame 〜とっておきの景色を〜"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004226": {
+    "workId": "wk_000004226",
+    "title": "자영의 소나닐",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268424"
+    },
+    "titles": {
+      "ko": "자영의 소나닐",
+      "en": "Shiei no Sona-Nyl ~What a beautiful memories~",
+      "ja": "紫影のソナーニル -What a beautiful memories-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004214": {
+    "workId": "wk_000004214",
+    "title": "눈을 떴더니 최강 무장과 우주선을 가지고 있어서, 집 한채를 목표로 용병으로 자유롭게 살고 싶다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132153995"
+    },
+    "titles": {
+      "ko": "눈을 떴더니 최강 무장과 우주선을 가지고 있어서, 집 한채를 목표로 용병으로 자유롭게 살고 싶다",
+      "en": "Reborn as a Space Mercenary",
+      "ja": "目覚めたら最強装備と宇宙船持ちだったので、一戸建て目指して傭兵として自由に生きたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

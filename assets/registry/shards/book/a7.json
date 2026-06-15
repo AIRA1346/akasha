@@ -1,0 +1,39 @@
+{
+  "wk_000004384": {
+    "workId": "wk_000004384",
+    "title": "상궁기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10867356"
+    },
+    "titles": {
+      "ko": "상궁기",
+      "en": "Jōgūki",
+      "ja": "上宮記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005049": {
+    "workId": "wk_000005049",
+    "title": "반삼국지연의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10912652"
+    },
+    "titles": {
+      "ko": "반삼국지연의",
+      "en": "Anti-Romance of the Three Kingdoms",
+      "ja": "反三国志演義"
+    },
+    "creator": "Zhou Dahuang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

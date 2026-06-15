@@ -1,0 +1,20 @@
+{
+  "wk_000003803": {
+    "workId": "wk_000003803",
+    "title": "쿠콜리 형제들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107530604"
+    },
+    "titles": {
+      "ko": "쿠콜리 형제들",
+      "en": "Q107530604"
+    },
+    "creator": "Aldo Palazzeschi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

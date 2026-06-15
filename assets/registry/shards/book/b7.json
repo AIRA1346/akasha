@@ -57,5 +57,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004457": {
+    "workId": "wk_000004457",
+    "title": "스모크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108708035"
+    },
+    "titles": {
+      "ko": "스모크",
+      "en": "Smoke",
+      "ja": "SMOKE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005107": {
+    "workId": "wk_000005107",
+    "title": "울던 빨강오니",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10922429"
+    },
+    "titles": {
+      "ko": "울던 빨강오니",
+      "en": "Q10922429",
+      "ja": "泣いた赤鬼"
+    },
+    "creator": "Hirosuke Hamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -56,5 +56,80 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004169": {
+    "workId": "wk_000004169",
+    "title": "새들이 모조리 사라진다면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108439991"
+    },
+    "titles": {
+      "ko": "새들이 모조리 사라진다면",
+      "en": "Bewilderment"
+    },
+    "releaseYear": 2021,
+    "creator": "Richard Powers",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004459": {
+    "workId": "wk_000004459",
+    "title": "오공입축기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10872595"
+    },
+    "titles": {
+      "ko": "오공입축기",
+      "en": "Q10872595",
+      "ja": "悟空入竺記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004663": {
+    "workId": "wk_000004663",
+    "title": "마지막 선물",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108829378"
+    },
+    "titles": {
+      "ko": "마지막 선물",
+      "en": "The Last Gift"
+    },
+    "releaseYear": 2011,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005157": {
+    "workId": "wk_000005157",
+    "title": "나의 몬티셀로",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109254584"
+    },
+    "titles": {
+      "ko": "나의 몬티셀로",
+      "en": "My Monticello"
+    },
+    "releaseYear": 2021,
+    "creator": "Jocelyn Nicole Johnson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

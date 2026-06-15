@@ -32,5 +32,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004052": {
+    "workId": "wk_000004052",
+    "title": "바람소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115030"
+    },
+    "titles": {
+      "ko": "바람소리",
+      "en": "Q110115030"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004619": {
+    "workId": "wk_000004619",
+    "title": "애정의 조건",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073743"
+    },
+    "titles": {
+      "ko": "애정의 조건",
+      "en": "Terms of Endearment",
+      "ja": "愛情の条件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004921": {
+    "workId": "wk_000004921",
+    "title": "클리닝 업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111384306"
+    },
+    "titles": {
+      "ko": "클리닝 업",
+      "en": "Cleaning Up"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005110": {
+    "workId": "wk_000005110",
+    "title": "엑스오, 키티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111951059"
+    },
+    "titles": {
+      "ko": "엑스오, 키티",
+      "en": "XO, Kitty",
+      "ja": "愛をこめて、キティより"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

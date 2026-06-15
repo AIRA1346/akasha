@@ -15,5 +15,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003625": {
+    "workId": "wk_000003625",
+    "title": "악역의 엔딩은 죽음뿐",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97420049"
+    },
+    "titles": {
+      "ko": "악역의 엔딩은 죽음뿐",
+      "en": "Villains Are Destined to Die"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

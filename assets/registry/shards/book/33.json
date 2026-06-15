@@ -56,5 +56,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004724": {
+    "workId": "wk_000004724",
+    "title": "불설대집법문경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886825"
+    },
+    "titles": {
+      "ko": "불설대집법문경",
+      "en": "Sūtra on the Great Assembly",
+      "ja": "大集法門経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

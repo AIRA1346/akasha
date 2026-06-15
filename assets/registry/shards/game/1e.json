@@ -1,0 +1,57 @@
+{
+  "wk_000004656": {
+    "workId": "wk_000004656",
+    "title": "히어로즈 오브 마이트 앤 매직 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134618"
+    },
+    "titles": {
+      "ko": "히어로즈 오브 마이트 앤 매직 온라인",
+      "en": "Heroes of Might and Magic Online"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004900": {
+    "workId": "wk_000004900",
+    "title": "리얼 바우트 아랑전설 스페셜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137268"
+    },
+    "titles": {
+      "ko": "리얼 바우트 아랑전설 스페셜",
+      "en": "Real Bout Fatal Fury Special",
+      "ja": "リアルバウト餓狼伝説スペシャル"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005153": {
+    "workId": "wk_000005153",
+    "title": "슈퍼파워 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142343"
+    },
+    "titles": {
+      "ko": "슈퍼파워 2",
+      "en": "SuperPower 2"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

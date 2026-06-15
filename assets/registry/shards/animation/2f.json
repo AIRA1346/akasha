@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004200": {
+    "workId": "wk_000004200",
+    "title": "시도니아의 기사 : 사랑을 잣는 별",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131611441"
+    },
+    "titles": {
+      "ko": "시도니아의 기사 : 사랑을 잣는 별",
+      "en": "Knights of Sidonia: Love Woven in the Stars",
+      "ja": "シドニアの騎士 あいつむぐほし"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

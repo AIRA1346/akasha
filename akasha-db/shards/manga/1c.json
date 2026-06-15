@@ -102,5 +102,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003526": {
+    "workId": "wk_000003526",
+    "title": "푸른 강철의 아르페지오",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11621483"
+    },
+    "titles": {
+      "ko": "푸른 강철의 아르페지오",
+      "en": "Arpeggio of Blue Steel",
+      "ja": "蒼き鋼のアルペジオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005017": {
+    "workId": "wk_000005017",
+    "title": "배뱀배뱀뱀뱀파이어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124496845"
+    },
+    "titles": {
+      "ko": "배뱀배뱀뱀뱀파이어",
+      "en": "Baban Baban Ban Vampire",
+      "ja": "ババンババンバンバンパイア"
+    },
+    "releaseYear": 2021,
+    "creator": "Hiromasa Okushima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

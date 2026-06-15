@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003345": {
+    "workId": "wk_000003345",
+    "title": "하늘색 해안",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11597527"
+    },
+    "titles": {
+      "ko": "하늘색 해안",
+      "en": "Skyblue Shore",
+      "ja": "空色海岸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

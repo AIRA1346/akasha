@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004001": {
+    "workId": "wk_000004001",
+    "title": "대항해시대 외전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233579"
+    },
+    "titles": {
+      "ko": "대항해시대 외전",
+      "en": "Q11233579",
+      "ja": "大航海時代外伝"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

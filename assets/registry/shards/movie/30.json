@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003816": {
+    "workId": "wk_000003816",
+    "title": "Castle Falls",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105332658"
+    },
+    "titles": {
+      "ko": "Castle Falls",
+      "en": "Castle Falls",
+      "ja": "Castle Falls"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

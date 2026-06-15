@@ -1,0 +1,40 @@
+{
+  "wk_000003582": {
+    "workId": "wk_000003582",
+    "title": "첫눈에 반할 통계적 확률",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105095346"
+    },
+    "titles": {
+      "ko": "첫눈에 반할 통계적 확률",
+      "en": "Love at First Sight",
+      "ja": "カレとカノジョの確率"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004846": {
+    "workId": "wk_000004846",
+    "title": "런닝맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058512"
+    },
+    "titles": {
+      "ko": "런닝맨",
+      "en": "The Running Man",
+      "ja": "バトルランナー"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

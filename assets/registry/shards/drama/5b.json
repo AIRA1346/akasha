@@ -48,5 +48,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004051": {
+    "workId": "wk_000004051",
+    "title": "밀레니엄 탐험, 리얼 코리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115022"
+    },
+    "titles": {
+      "ko": "밀레니엄 탐험, 리얼 코리아",
+      "en": "Q110115022"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004121": {
+    "workId": "wk_000004121",
+    "title": "생방송 이슈＆이슈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115287"
+    },
+    "titles": {
+      "ko": "생방송 이슈＆이슈",
+      "en": "Q110115287"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005260": {
+    "workId": "wk_000005260",
+    "title": "NHK 뉴스라인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11234965"
+    },
+    "titles": {
+      "ko": "NHK 뉴스라인",
+      "en": "NHK Newsline",
+      "ja": "NHK NEWSLINE"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005311": {
+    "workId": "wk_000005311",
+    "title": "도쿄 타워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235210"
+    },
+    "titles": {
+      "ko": "도쿄 타워",
+      "en": "Q11235210",
+      "ja": "東京タワー 〜オカンとボクと、時々、オトン〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003290": {
+    "workId": "wk_000003290",
+    "title": "변덕쟁이 템프테이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110400392"
+    },
+    "titles": {
+      "ko": "변덕쟁이 템프테이션",
+      "en": "Kimagure Temptation",
+      "ja": "きまぐれテンプテーション"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

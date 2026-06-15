@@ -17,5 +17,62 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003883": {
+    "workId": "wk_000003883",
+    "title": "일본후기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077029"
+    },
+    "titles": {
+      "ko": "일본후기",
+      "en": "Nihon Kōki",
+      "ja": "日本後紀"
+    },
+    "creator": "Fujiwara no Yoshifusa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003942": {
+    "workId": "wk_000003942",
+    "title": "게으름뱅이 반야의 모험",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107749513"
+    },
+    "titles": {
+      "ko": "게으름뱅이 반야의 모험",
+      "en": "The Adventures of Strong Vanya",
+      "ja": "大力のワーニャ"
+    },
+    "creator": "Otfried Preußler",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004100": {
+    "workId": "wk_000004100",
+    "title": "첫 번째 피",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108273219"
+    },
+    "titles": {
+      "ko": "첫 번째 피",
+      "en": "Q108273219"
+    },
+    "releaseYear": 2021,
+    "creator": "Amélie Nothomb",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

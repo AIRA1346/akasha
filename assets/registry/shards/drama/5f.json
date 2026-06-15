@@ -34,5 +34,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003425": {
+    "workId": "wk_000003425",
+    "title": "G1 열린TV 시청자세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461594"
+    },
+    "titles": {
+      "ko": "G1 열린TV 시청자세상",
+      "en": "Q109461594"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004342": {
+    "workId": "wk_000004342",
+    "title": "요걸스 다이어리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118366"
+    },
+    "titles": {
+      "ko": "요걸스 다이어리",
+      "en": "Q110118366"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004554": {
+    "workId": "wk_000004554",
+    "title": "수리남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110633989"
+    },
+    "titles": {
+      "ko": "수리남",
+      "en": "Narco-Saints",
+      "ja": "スリナム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

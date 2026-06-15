@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003521": {
+    "workId": "wk_000003521",
+    "title": "뇌남",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11612273"
+    },
+    "titles": {
+      "ko": "뇌남",
+      "en": "Q11612273",
+      "ja": "脳男"
+    },
+    "releaseYear": 2000,
+    "creator": "Urio Shud?",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

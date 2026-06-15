@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003638": {
+    "workId": "wk_000003638",
+    "title": "안녕, 라라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125975705"
+    },
+    "titles": {
+      "ko": "안녕, 라라",
+      "en": "Goodbye, Lara",
+      "ja": "さよならララ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

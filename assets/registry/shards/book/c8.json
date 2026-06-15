@@ -1,0 +1,41 @@
+{
+  "wk_000003304": {
+    "workId": "wk_000003304",
+    "title": "옥편",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069894"
+    },
+    "titles": {
+      "ko": "옥편",
+      "en": "Yupian",
+      "ja": "玉篇"
+    },
+    "creator": "Gu Yewang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004383": {
+    "workId": "wk_000004383",
+    "title": "영웅교실",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108671386"
+    },
+    "titles": {
+      "ko": "영웅교실",
+      "en": "Classroom for Heroes",
+      "ja": "英雄教室"
+    },
+    "releaseYear": 2015,
+    "creator": "Shin Araki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

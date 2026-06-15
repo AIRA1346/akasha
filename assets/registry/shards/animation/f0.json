@@ -62,5 +62,22 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003367": {
+    "workId": "wk_000003367",
+    "title": "사운드트랙 2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123681502"
+    },
+    "titles": {
+      "ko": "사운드트랙 2",
+      "en": "Soundtrack #2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

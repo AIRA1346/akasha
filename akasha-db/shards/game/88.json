@@ -119,5 +119,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005090": {
+    "workId": "wk_000005090",
+    "title": "드래곤퀘스트X 오프라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113999532"
+    },
+    "titles": {
+      "ko": "드래곤퀘스트X 오프라인",
+      "en": "Dragon Quest X Offline",
+      "ja": "ドラゴンクエストX 目覚めし五つの種族 オフライン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

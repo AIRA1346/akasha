@@ -87,5 +87,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003127": {
+    "workId": "wk_000003127",
+    "title": "히메가리 던전 마이스터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10943650"
+    },
+    "titles": {
+      "ko": "히메가리 던전 마이스터",
+      "en": "Himegari Dungeon Meister",
+      "ja": "姫狩りダンジョンマイスター"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003129": {
+    "workId": "wk_000003129",
+    "title": "beatmania IIDX 27 HEROIC VERSE",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455500"
+    },
+    "titles": {
+      "ko": "beatmania IIDX 27 HEROIC VERSE",
+      "en": "Beatmania IIDX 27 HEROIC VERSE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003572": {
+    "workId": "wk_000003572",
+    "title": "디오필드 크로니클",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111175030"
+    },
+    "titles": {
+      "ko": "디오필드 크로니클",
+      "en": "The DioField Chronicle",
+      "ja": "The DioField Chronicle"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

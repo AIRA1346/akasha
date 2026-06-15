@@ -15,5 +15,91 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003063": {
+    "workId": "wk_000003063",
+    "title": "전국가요 신인스타쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458617"
+    },
+    "titles": {
+      "ko": "전국가요 신인스타쇼",
+      "en": "Q109458617"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003955": {
+    "workId": "wk_000003955",
+    "title": "교회행전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114223"
+    },
+    "titles": {
+      "ko": "교회행전",
+      "en": "Q110114223"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004787": {
+    "workId": "wk_000004787",
+    "title": "일가단원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111033479"
+    },
+    "titles": {
+      "ko": "일가단원",
+      "en": "Family Reunion"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005002": {
+    "workId": "wk_000005002",
+    "title": "삼명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111781601"
+    },
+    "titles": {
+      "ko": "삼명",
+      "en": "What if"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005180": {
+    "workId": "wk_000005180",
+    "title": "더 뉴 룩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112124715"
+    },
+    "titles": {
+      "ko": "더 뉴 룩",
+      "en": "The New Look",
+      "ja": "ニュールック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

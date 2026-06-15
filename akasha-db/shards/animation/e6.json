@@ -34,5 +34,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004959": {
+    "workId": "wk_000004959",
+    "title": "미소녀 전사 세일러문 Crystal",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16138249"
+    },
+    "titles": {
+      "ko": "미소녀 전사 세일러문 Crystal",
+      "en": "Sailor Moon Crystal",
+      "ja": "美少女戦士セーラームーンCrystal"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005020": {
+    "workId": "wk_000005020",
+    "title": "위대한 영국인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q165177"
+    },
+    "titles": {
+      "ko": "위대한 영국인",
+      "en": "Great Britons",
+      "ja": "100名の最も偉大な英国人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005078": {
+    "workId": "wk_000005078",
+    "title": "치루란 신센구미 진혼가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17214939"
+    },
+    "titles": {
+      "ko": "치루란 신센구미 진혼가",
+      "en": "Chiruran One-Half",
+      "ja": "ちるらん 新撰組鎮魂歌"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

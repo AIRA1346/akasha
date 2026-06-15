@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000003347": {
+    "workId": "wk_000003347",
+    "title": "Life 선상의 우리들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116025492"
+    },
+    "titles": {
+      "ko": "Life 선상의 우리들",
+      "en": "Life: Senjou no Bokura",
+      "ja": "Life 線上の僕ら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

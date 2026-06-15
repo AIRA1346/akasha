@@ -53,5 +53,63 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004173": {
+    "workId": "wk_000004173",
+    "title": "노예들의 축제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108528001"
+    },
+    "titles": {
+      "ko": "노예들의 축제",
+      "en": "Assassin of Gor",
+      "ja": "ゴルの暗殺者"
+    },
+    "releaseYear": 1970,
+    "creator": "John Norman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004376": {
+    "workId": "wk_000004376",
+    "title": "에다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108652"
+    },
+    "titles": {
+      "ko": "에다",
+      "en": "Edda",
+      "ja": "エッダ"
+    },
+    "releaseYear": 1270,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004458": {
+    "workId": "wk_000004458",
+    "title": "동서양고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10870955"
+    },
+    "titles": {
+      "ko": "동서양고",
+      "en": "Q10870955",
+      "ja": "東西洋考"
+    },
+    "creator": "Xie Zhang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

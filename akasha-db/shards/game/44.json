@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005232": {
+    "workId": "wk_000005232",
+    "title": "베트콩 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142758"
+    },
+    "titles": {
+      "ko": "베트콩 2",
+      "en": "Vietcong 2",
+      "ja": "ベトコン2"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

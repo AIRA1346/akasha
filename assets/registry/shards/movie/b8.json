@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003491": {
+    "workId": "wk_000003491",
+    "title": "라라와 크리스마스 요정",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105061531"
+    },
+    "titles": {
+      "ko": "라라와 크리스마스 요정",
+      "en": "Christmas at Cattle Hill"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

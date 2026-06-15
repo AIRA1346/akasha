@@ -87,5 +87,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004273": {
+    "workId": "wk_000004273",
+    "title": "마술사 쿠논은 보인다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119130950"
+    },
+    "titles": {
+      "ko": "마술사 쿠논은 보인다",
+      "en": "Kunon the Sorcerer Can See",
+      "ja": "魔術師クノンは見えている"
+    },
+    "releaseYear": 2022,
+    "creator": "Umikaze Minamino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004698": {
+    "workId": "wk_000004698",
+    "title": "어떻게 해야 소꿉친구의 여친이 될 수 있나요?!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336497"
+    },
+    "titles": {
+      "ko": "어떻게 해야 소꿉친구의 여친이 될 수 있나요?!",
+      "en": "How Do I Turn My Best Friend Into My Girlfriend?",
+      "ja": "どうしたら幼馴染の彼女になれますか!?"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

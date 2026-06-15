@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003045": {
+    "workId": "wk_000003045",
+    "title": "헤븐 번즈 레드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109359002"
+    },
+    "titles": {
+      "ko": "헤븐 번즈 레드",
+      "en": "Heaven Burns Red",
+      "ja": "Heaven Burns Red"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

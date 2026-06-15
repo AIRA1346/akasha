@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003380": {
+    "workId": "wk_000003380",
+    "title": "전여신 VERITA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11075190"
+    },
+    "titles": {
+      "ko": "전여신 VERITA",
+      "en": "Ikusa Megami Verita",
+      "ja": "戦女神VERITA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004447": {
+    "workId": "wk_000004447",
+    "title": "사쿠라의 시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11304518"
+    },
+    "titles": {
+      "ko": "사쿠라의 시",
+      "en": "Sakura no Uta",
+      "ja": "サクラノ詩"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

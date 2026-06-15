@@ -25,5 +25,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003889": {
+    "workId": "wk_000003889",
+    "title": "아이 미스 유",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10539097"
+    },
+    "titles": {
+      "ko": "아이 미스 유",
+      "en": "I Miss You",
+      "ja": "アイ・ミス・ユー"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

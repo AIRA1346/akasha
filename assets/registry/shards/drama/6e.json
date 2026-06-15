@@ -50,5 +50,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003751": {
+    "workId": "wk_000003751",
+    "title": "맥생적연인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546153"
+    },
+    "titles": {
+      "ko": "맥생적연인",
+      "en": "Q109546153"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004790": {
+    "workId": "wk_000004790",
+    "title": "아빠는 연애코치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1111300"
+    },
+    "titles": {
+      "ko": "아빠는 연애코치",
+      "en": "8 Simple Rules",
+      "ja": "パパにはヒ・ミ・ツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

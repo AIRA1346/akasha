@@ -72,5 +72,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003194": {
+    "workId": "wk_000003194",
+    "title": "월간 모상과학",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122705545"
+    },
+    "titles": {
+      "ko": "월간 모상과학",
+      "en": "Delusional Monthly Magazine",
+      "ja": "月刊モー想科学"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004881": {
+    "workId": "wk_000004881",
+    "title": "프로젝트 575",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15588417"
+    },
+    "titles": {
+      "ko": "프로젝트 575",
+      "en": "Project 575",
+      "ja": "project575"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

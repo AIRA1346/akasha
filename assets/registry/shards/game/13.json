@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003724": {
+    "workId": "wk_000003724",
+    "title": "9-nine- 소라이로소라우타소라노오토",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541635"
+    },
+    "titles": {
+      "ko": "9-nine- 소라이로소라우타소라노오토",
+      "en": "9-nine-:Episode 2"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

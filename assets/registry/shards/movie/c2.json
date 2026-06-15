@@ -1,0 +1,21 @@
+{
+  "wk_000004388": {
+    "workId": "wk_000004388",
+    "title": "도쿄 공원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056260"
+    },
+    "titles": {
+      "ko": "도쿄 공원",
+      "en": "Tokyo Park",
+      "ja": "東京公園"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "wk_000004165": {
+    "workId": "wk_000004165",
+    "title": "크게 휘두르며 진정한 에이스가 될 수 있을지도",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11261240"
+    },
+    "titles": {
+      "ko": "크게 휘두르며 진정한 에이스가 될 수 있을지도",
+      "en": "Q11261240",
+      "ja": "おおきく振りかぶって ホントのエースになれるかも"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004369": {
+    "workId": "wk_000004369",
+    "title": "크래킨 DJ",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11298985"
+    },
+    "titles": {
+      "ko": "크래킨 DJ",
+      "en": "Crackin' DJ",
+      "ja": "クラッキンDJ"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004444": {
+    "workId": "wk_000004444",
+    "title": "달에 다가가는 소녀의 작법",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113031716"
+    },
+    "titles": {
+      "ko": "달에 다가가는 소녀의 작법",
+      "en": "Tsuki ni Yorisou Otome no Sahou",
+      "ja": "月に寄りそう乙女の作法"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004516": {
+    "workId": "wk_000004516",
+    "title": "슈퍼 단간론파 2: 안녕히 절망학원",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11313768"
+    },
+    "titles": {
+      "ko": "슈퍼 단간론파 2: 안녕히 절망학원",
+      "en": "Danganronpa 2: Goodbye Despair",
+      "ja": "スーパーダンガンロンパ2 さよなら絶望学園"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

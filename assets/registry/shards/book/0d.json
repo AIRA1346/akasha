@@ -16,5 +16,63 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003139": {
+    "workId": "wk_000003139",
+    "title": "타라 덩컨",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068491"
+    },
+    "titles": {
+      "ko": "타라 덩컨",
+      "en": "Tara Duncan",
+      "ja": "タラ・ダンカン"
+    },
+    "creator": "Sophie Andouin-Mamikonian",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003808": {
+    "workId": "wk_000003808",
+    "title": "묘성기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075805"
+    },
+    "titles": {
+      "ko": "묘성기",
+      "en": "Cat Country",
+      "ja": "猫城記"
+    },
+    "releaseYear": 1932,
+    "creator": "Lao She",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005245": {
+    "workId": "wk_000005245",
+    "title": "대의각미록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10933424"
+    },
+    "titles": {
+      "ko": "대의각미록",
+      "en": "Da yi jue mi lu",
+      "ja": "大義覚迷録"
+    },
+    "creator": "Yongzheng Emperor",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003302": {
+    "workId": "wk_000003302",
+    "title": "니디 걸 오버도즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110722169"
+    },
+    "titles": {
+      "ko": "니디 걸 오버도즈",
+      "en": "Needy Streamer Overload",
+      "ja": "NEEDY GIRL OVERDOSE"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003877": {
+    "workId": "wk_000003877",
+    "title": "fortissimo//Akkord:Bsusvier",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11200422"
+    },
+    "titles": {
+      "ko": "fortissimo//Akkord:Bsusvier",
+      "en": "Fortissimo//Akkord:Bsusvier",
+      "ja": "fortissimo//Akkord:Bsusvier"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004513": {
+    "workId": "wk_000004513",
+    "title": "소울 링크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131234"
+    },
+    "titles": {
+      "ko": "소울 링크",
+      "en": "Soul Link",
+      "ja": "Soul Link"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

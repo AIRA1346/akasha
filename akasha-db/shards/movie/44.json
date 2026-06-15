@@ -1,0 +1,59 @@
+{
+  "wk_000003499": {
+    "workId": "wk_000003499",
+    "title": "엑시스텐즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050838"
+    },
+    "titles": {
+      "ko": "엑시스텐즈",
+      "en": "Existenz",
+      "ja": "イグジステンズ"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003665": {
+    "workId": "wk_000003665",
+    "title": "판타스틱 4: 새로운 출발",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105105219"
+    },
+    "titles": {
+      "ko": "판타스틱 4: 새로운 출발",
+      "en": "The Fantastic Four: First Steps",
+      "ja": "ファンタスティック・フォー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003671": {
+    "workId": "wk_000003671",
+    "title": "코어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051469"
+    },
+    "titles": {
+      "ko": "코어",
+      "en": "The Core",
+      "ja": "ザ・コア"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

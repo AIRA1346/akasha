@@ -1,0 +1,21 @@
+{
+  "wk_000003946": {
+    "workId": "wk_000003946",
+    "title": "30일의 밤",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107920499"
+    },
+    "titles": {
+      "ko": "30일의 밤",
+      "en": "Dark Matter"
+    },
+    "releaseYear": 2016,
+    "creator": "Blake Crouch",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

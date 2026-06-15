@@ -1,0 +1,38 @@
+{
+  "wk_000003314": {
+    "workId": "wk_000003314",
+    "title": "플레저",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105043940"
+    },
+    "titles": {
+      "ko": "플레저",
+      "en": "Pleasure"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005178": {
+    "workId": "wk_000005178",
+    "title": "나이트 게임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10594905"
+    },
+    "titles": {
+      "ko": "나이트 게임",
+      "en": "Night Games"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

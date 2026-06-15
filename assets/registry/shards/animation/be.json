@@ -1,0 +1,39 @@
+{
+  "wk_000003105": {
+    "workId": "wk_000003105",
+    "title": "망각 배터리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121095332"
+    },
+    "titles": {
+      "ko": "망각 배터리",
+      "en": "Oblivion Battery",
+      "ja": "忘却バッテリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004428": {
+    "workId": "wk_000004428",
+    "title": "초 로봇 생명체 트랜스포머 마이크론 전설",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348354"
+    },
+    "titles": {
+      "ko": "초 로봇 생명체 트랜스포머 마이크론 전설",
+      "en": "Transformers: Armada",
+      "ja": "超ロボット生命体トランスフォーマー マイクロン伝説"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

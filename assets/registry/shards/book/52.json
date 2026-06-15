@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003218": {
+    "workId": "wk_000003218",
+    "title": "출사표",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068836"
+    },
+    "titles": {
+      "ko": "출사표",
+      "en": "Chu Shi Biao",
+      "ja": "出師表"
+    },
+    "creator": "Zhuge Liang",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

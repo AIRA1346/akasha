@@ -1,0 +1,21 @@
+{
+  "wk_000003584": {
+    "workId": "wk_000003584",
+    "title": "더 그레이트 샤크",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105102351"
+    },
+    "titles": {
+      "ko": "더 그레이트 샤크",
+      "en": "Great White",
+      "ja": "グレート・ホワイト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

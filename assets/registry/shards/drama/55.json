@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003421": {
+    "workId": "wk_000003421",
+    "title": "나는 차였어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461496"
+    },
+    "titles": {
+      "ko": "나는 차였어",
+      "en": "Q109461496"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005065": {
+    "workId": "wk_000005065",
+    "title": "BS영배틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191808"
+    },
+    "titles": {
+      "ko": "BS영배틀",
+      "en": "BS Young Battle",
+      "ja": "BSヤングバトル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -15,5 +15,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003971": {
+    "workId": "wk_000003971",
+    "title": "당신이 혹하는 사이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114640"
+    },
+    "titles": {
+      "ko": "당신이 혹하는 사이",
+      "en": "Q110114640"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005318": {
+    "workId": "wk_000005318",
+    "title": "뉴스 에브리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236589"
+    },
+    "titles": {
+      "ko": "뉴스 에브리",
+      "en": "news every.",
+      "ja": "news every."
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

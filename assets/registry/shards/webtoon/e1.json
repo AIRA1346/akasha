@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002948": {
+    "workId": "wk_000002948",
+    "title": "냄새를 보는 소녀",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19939623"
+    },
+    "titles": {
+      "ko": "냄새를 보는 소녀",
+      "en": "A Girl Who Sees Smells"
+    },
+    "creator": "Manchwi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003273": {
+    "workId": "wk_000003273",
+    "title": "이미테이션 (웹툰)",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55733182"
+    },
+    "titles": {
+      "ko": "이미테이션 (웹툰)",
+      "en": "Imitation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

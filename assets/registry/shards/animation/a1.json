@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004213": {
+    "workId": "wk_000004213",
+    "title": "제대로 빨지 못하는 흡혈귀 짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132131318"
+    },
+    "titles": {
+      "ko": "제대로 빨지 못하는 흡혈귀 짱",
+      "en": "Li'l Miss Vampire Can't Suck Right",
+      "ja": "ちゃんと吸えない吸血鬼ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

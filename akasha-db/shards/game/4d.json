@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003643": {
+    "workId": "wk_000003643",
+    "title": "기기괴계: 검은 망토의 수수께끼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111211103"
+    },
+    "titles": {
+      "ko": "기기괴계: 검은 망토의 수수께끼",
+      "en": "Pocky & Rocky Reshrined"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

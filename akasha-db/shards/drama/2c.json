@@ -85,5 +85,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003693": {
+    "workId": "wk_000003693",
+    "title": "호녀호남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546145"
+    },
+    "titles": {
+      "ko": "호녀호남",
+      "en": "Q109546145"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004478": {
+    "workId": "wk_000004478",
+    "title": "크레이지 러브 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110531195"
+    },
+    "titles": {
+      "ko": "크레이지 러브 (드라마)",
+      "en": "Crazy Love"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004859": {
+    "workId": "wk_000004859",
+    "title": "비밀의 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111190615"
+    },
+    "titles": {
+      "ko": "비밀의 집",
+      "en": "Secret House",
+      "ja": "秘密の家～愛と復讐の迷宮～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

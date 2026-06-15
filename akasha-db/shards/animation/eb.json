@@ -35,5 +35,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003854": {
+    "workId": "wk_000003854",
+    "title": "포켓몬스터 썬&문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12971613"
+    },
+    "titles": {
+      "ko": "포켓몬스터 썬&문",
+      "en": "Pokémon the Series: Sun & Moon",
+      "ja": "ポケットモンスター サン&ムーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004579": {
+    "workId": "wk_000004579",
+    "title": "20세기 전기목록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136644014"
+    },
+    "titles": {
+      "ko": "20세기 전기목록",
+      "en": "Sparks of Tomorrow",
+      "ja": "二十世紀電氣目録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

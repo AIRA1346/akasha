@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003822": {
+    "workId": "wk_000003822",
+    "title": "아블라메 데 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10957741"
+    },
+    "titles": {
+      "ko": "아블라메 데 아모르",
+      "en": "Háblame de amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004935": {
+    "workId": "wk_000004935",
+    "title": "로맨스 맛집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111550329"
+    },
+    "titles": {
+      "ko": "로맨스 맛집",
+      "en": "Delicacies Destiny",
+      "ja": "恋する美食の宮廷記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

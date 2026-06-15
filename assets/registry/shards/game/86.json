@@ -1,0 +1,21 @@
+{
+  "wk_000003795": {
+    "workId": "wk_000003795",
+    "title": "산드~R",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11187499"
+    },
+    "titles": {
+      "ko": "산드~R",
+      "en": "Puzzle & Action: Treasure Hunt",
+      "ja": "2度あることはサンドア〜ル"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004946": {
+    "workId": "wk_000004946",
+    "title": "레이와의 다라 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124302291"
+    },
+    "titles": {
+      "ko": "레이와의 다라 씨",
+      "en": "Dara-san of Reiwa",
+      "ja": "令和のダラさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003131": {
+    "workId": "wk_000003131",
+    "title": "타임라이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109564597"
+    },
+    "titles": {
+      "ko": "타임라이",
+      "en": "Timelie",
+      "ja": "Timelie - タイムライ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004006": {
+    "workId": "wk_000004006",
+    "title": "툼레이더 III",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1123794"
+    },
+    "titles": {
+      "ko": "툼레이더 III",
+      "en": "Tomb Raider III"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005100": {
+    "workId": "wk_000005100",
+    "title": "테일즈 오브 베스페리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141823"
+    },
+    "titles": {
+      "ko": "테일즈 오브 베스페리아",
+      "en": "Tales of Vesperia",
+      "ja": "テイルズ オブ ヴェスペリア"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

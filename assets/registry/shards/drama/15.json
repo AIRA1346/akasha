@@ -16,5 +16,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003080": {
+    "workId": "wk_000003080",
+    "title": "헬로! 플레이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458886"
+    },
+    "titles": {
+      "ko": "헬로! 플레이트",
+      "en": "Q109458886"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004792": {
+    "workId": "wk_000004792",
+    "title": "시맨틱 에러: 더 무비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111137623"
+    },
+    "titles": {
+      "ko": "시맨틱 에러: 더 무비",
+      "en": "Semantic Error",
+      "ja": "セマンティックエラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

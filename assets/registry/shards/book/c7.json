@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003657": {
+    "workId": "wk_000003657",
+    "title": "레드 런던의 여행자: 마법의 그림자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107389244"
+    },
+    "titles": {
+      "ko": "레드 런던의 여행자: 마법의 그림자",
+      "en": "A Darker Shade of Magic"
+    },
+    "releaseYear": 2015,
+    "creator": "V. E. Schwab",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004236": {
+    "workId": "wk_000004236",
+    "title": "A군(17)의 전쟁",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854437"
+    },
+    "titles": {
+      "ko": "A군(17)의 전쟁",
+      "en": "Q10854437",
+      "ja": "A君(17)の戦争"
+    },
+    "creator": "Daisuke Satō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

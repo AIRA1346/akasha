@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005109": {
+    "workId": "wk_000005109",
+    "title": "블록버스터 살리기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111951047"
+    },
+    "titles": {
+      "ko": "블록버스터 살리기",
+      "en": "Blockbuster",
+      "ja": "わが愛しのブロックバスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

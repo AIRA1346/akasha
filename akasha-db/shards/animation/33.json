@@ -48,5 +48,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003451": {
+    "workId": "wk_000003451",
+    "title": "키타로 탄생 게게게의 수수께끼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124061483"
+    },
+    "titles": {
+      "ko": "키타로 탄생 게게게의 수수께끼",
+      "en": "Birth of Kitarō: The Mystery of GeGeGe",
+      "ja": "鬼太郎誕生 ゲゲゲの謎"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003990": {
+    "workId": "wk_000003990",
+    "title": "에리스의 성배",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130581123"
+    },
+    "titles": {
+      "ko": "에리스의 성배",
+      "en": "The Holy Grail of Eris",
+      "ja": "エリスの聖杯"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005025": {
+    "workId": "wk_000005025",
+    "title": "하늘 가는대로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16830179"
+    },
+    "titles": {
+      "ko": "하늘 가는대로",
+      "en": "Sora no Manimani",
+      "ja": "空のまにまに"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,77 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003639": {
+    "workId": "wk_000003639",
+    "title": "사백년의 꿈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12599737"
+    },
+    "titles": {
+      "ko": "사백년의 꿈",
+      "en": "Dream of 400 Years",
+      "ja": "400年の夢"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003776": {
+    "workId": "wk_000003776",
+    "title": "록은 숙녀의 소양이기에",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127691394"
+    },
+    "titles": {
+      "ko": "록은 숙녀의 소양이기에",
+      "en": "Rock Is a Lady's Modesty",
+      "ja": "ロックは淑女の嗜みでして"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004432": {
+    "workId": "wk_000004432",
+    "title": "마왕의 딸은 너무 친절해!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134986509"
+    },
+    "titles": {
+      "ko": "마왕의 딸은 너무 친절해!!",
+      "en": "The Daughter of the Demon Lord Is Too Kind!",
+      "ja": "魔王の娘は優しすぎる!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004634": {
+    "workId": "wk_000004634",
+    "title": "명탐정 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137043351"
+    },
+    "titles": {
+      "ko": "명탐정 프리큐어!",
+      "en": "Star Detective Precure!",
+      "ja": "名探偵プリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

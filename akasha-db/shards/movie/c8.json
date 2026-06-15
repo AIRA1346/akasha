@@ -1,0 +1,21 @@
+{
+  "wk_000004463": {
+    "workId": "wk_000004463",
+    "title": "미드나잇 스완",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105661959"
+    },
+    "titles": {
+      "ko": "미드나잇 스완",
+      "en": "Midnight Swan",
+      "ja": "ミッドナイトスワン"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

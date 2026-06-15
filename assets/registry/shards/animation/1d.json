@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003778": {
+    "workId": "wk_000003778",
+    "title": "어스시의 마법사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1277687"
+    },
+    "titles": {
+      "ko": "어스시의 마법사",
+      "en": "Earthsea",
+      "ja": "ゲド〜戦いのはじまり〜"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

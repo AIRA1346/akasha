@@ -50,5 +50,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003852": {
+    "workId": "wk_000003852",
+    "title": "야생의 라스트 보스가 나타났다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129676429"
+    },
+    "titles": {
+      "ko": "야생의 라스트 보스가 나타났다!",
+      "en": "A Wild Last Boss Appeared!",
+      "ja": "野生のラスボスが現れた!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004888": {
+    "workId": "wk_000004888",
+    "title": "텐카이 나이트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15883847"
+    },
+    "titles": {
+      "ko": "텐카이 나이트",
+      "en": "Tenkai Knights",
+      "ja": "テンカイナイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -107,5 +107,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003702": {
+    "workId": "wk_000003702",
+    "title": "향기로운 꽃은 늠름하게 핀다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117005561"
+    },
+    "titles": {
+      "ko": "향기로운 꽃은 늠름하게 핀다",
+      "en": "The Fragrant Flower Blooms with Dignity",
+      "ja": "薫る花は凛と咲く"
+    },
+    "releaseYear": 2026,
+    "creator": "Saka Mikami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005201": {
+    "workId": "wk_000005201",
+    "title": "고양이로 전생한 아저씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124815487"
+    },
+    "titles": {
+      "ko": "고양이로 전생한 아저씨",
+      "en": "Neko ni Tensei Shita Oji-san",
+      "ja": "ねこに転生したおじさん"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

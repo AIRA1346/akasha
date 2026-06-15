@@ -82,5 +82,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003467": {
+    "workId": "wk_000003467",
+    "title": "버블 심포니",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1108749"
+    },
+    "titles": {
+      "ko": "버블 심포니",
+      "en": "Bubble Symphony",
+      "ja": "バブルシンフォニー"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

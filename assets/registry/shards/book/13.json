@@ -37,5 +37,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004380": {
+    "workId": "wk_000004380",
+    "title": "삼역",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866092"
+    },
+    "titles": {
+      "ko": "삼역",
+      "en": "Three Books of Changes",
+      "ja": "三易"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004723": {
+    "workId": "wk_000004723",
+    "title": "불설아미타경통찬소",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886824"
+    },
+    "titles": {
+      "ko": "불설아미타경통찬소",
+      "en": "Commentary and Praise of the Amitābha Sūtra",
+      "ja": "仏説阿弥陀経通賛疏"
+    },
+    "creator": "基",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

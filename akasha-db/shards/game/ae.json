@@ -90,5 +90,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005089": {
+    "workId": "wk_000005089",
+    "title": "콜 오브 듀티: 워존 2.0",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113991290"
+    },
+    "titles": {
+      "ko": "콜 오브 듀티: 워존 2.0",
+      "en": "Call of Duty: Warzone 2.0",
+      "ja": "コール オブ デューティ ウォーゾーン 2.0"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005233": {
+    "workId": "wk_000005233",
+    "title": "이스 I: 에인션트 이스 배니시드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142839"
+    },
+    "titles": {
+      "ko": "이스 I: 에인션트 이스 배니시드",
+      "en": "Ys I: Ancient Ys Vanished",
+      "ja": "イースI"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

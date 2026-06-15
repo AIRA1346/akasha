@@ -1,0 +1,57 @@
+{
+  "wk_000003224": {
+    "workId": "wk_000003224",
+    "title": "몽계필담",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069875"
+    },
+    "titles": {
+      "ko": "몽계필담",
+      "en": "Dream Pool Essays",
+      "ja": "夢渓筆談"
+    },
+    "creator": "Shen Kuo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004990": {
+    "workId": "wk_000004990",
+    "title": "점찰선악업보경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10909678"
+    },
+    "titles": {
+      "ko": "점찰선악업보경",
+      "en": "Sutra of Detecting Good and Evil Karma and Requital",
+      "ja": "占察善悪業報経済"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005164": {
+    "workId": "wk_000005164",
+    "title": "지장십륜경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10928413"
+    },
+    "titles": {
+      "ko": "지장십륜경",
+      "en": "Kṣitigarbha Ten Wheels Mahāyāna Sūtra",
+      "ja": "地蔵十輪経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -67,5 +67,62 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003426": {
+    "workId": "wk_000003426",
+    "title": "두 사람의 이스케이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116055846"
+    },
+    "titles": {
+      "ko": "두 사람의 이스케이프",
+      "en": "Futari Escape",
+      "ja": "ふたりエスケープ"
+    },
+    "creator": "Shōichi Taguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004193": {
+    "workId": "wk_000004193",
+    "title": "너는 펫",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187383"
+    },
+    "titles": {
+      "ko": "너는 펫",
+      "en": "Tramps Like Us",
+      "ja": "きみはペット"
+    },
+    "creator": "Yayoi Ogawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004741": {
+    "workId": "wk_000004741",
+    "title": "카나메모",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207316"
+    },
+    "titles": {
+      "ko": "카나메모",
+      "en": "Kanamemo",
+      "ja": "かなめも"
+    },
+    "creator": "Shōko Iwami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

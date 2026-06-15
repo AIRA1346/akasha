@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003033": {
+    "workId": "wk_000003033",
+    "title": "미미의 컴퓨터 여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1207421"
+    },
+    "titles": {
+      "ko": "미미의 컴퓨터 여행",
+      "en": "Mīmu Iro Iro Yume no Tabi",
+      "ja": "ミームいろいろ夢の旅"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

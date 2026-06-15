@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004379": {
+    "workId": "wk_000004379",
+    "title": "삼교원류수신대전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866059"
+    },
+    "titles": {
+      "ko": "삼교원류수신대전",
+      "en": "Comprehensive Collection of Deities from the Three Religions",
+      "ja": "三教源流捜神大全"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

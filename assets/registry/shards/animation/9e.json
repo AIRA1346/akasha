@@ -1,0 +1,56 @@
+{
+  "wk_000003921": {
+    "workId": "wk_000003921",
+    "title": "트레모르에서의 마지막 밤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130316728"
+    },
+    "titles": {
+      "ko": "트레모르에서의 마지막 밤",
+      "en": "The Last Night at Tremore Beach",
+      "ja": "トレマーでの最後の夜に"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004353": {
+    "workId": "wk_000004353",
+    "title": "아군이 너무 약해 보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133453372"
+    },
+    "titles": {
+      "ko": "아군이 너무 약해 보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+      "en": "The Banished Court Magician Aims to Become the Strongest",
+      "ja": "味方が弱すぎて補助魔法に徹していた宮廷魔法師、追放されて最強を目指す"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005227": {
+    "workId": "wk_000005227",
+    "title": "펀치라인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18578769"
+    },
+    "titles": {
+      "ko": "펀치라인",
+      "en": "Punch Line",
+      "ja": "パンチライン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

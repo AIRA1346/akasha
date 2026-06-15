@@ -1,0 +1,56 @@
+{
+  "wk_000004641": {
+    "workId": "wk_000004641",
+    "title": "우주인 타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137580724"
+    },
+    "titles": {
+      "ko": "우주인 타로",
+      "en": "Taro the Space Alien",
+      "ja": "うちゅう人 田中太郎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004707": {
+    "workId": "wk_000004707",
+    "title": "뼈 드래곤의 귀한 딸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138566900"
+    },
+    "titles": {
+      "ko": "뼈 드래곤의 귀한 딸",
+      "en": "The Skull Dragon's Precious Daughter",
+      "ja": "骨ドラゴンのマナ娘"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004956": {
+    "workId": "wk_000004956",
+    "title": "카나메모",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16014776"
+    },
+    "titles": {
+      "ko": "카나메모",
+      "en": "Kanamemo",
+      "ja": "かなめも"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

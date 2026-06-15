@@ -90,5 +90,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004518": {
+    "workId": "wk_000004518",
+    "title": "슈퍼 철구 파이트!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11313994"
+    },
+    "titles": {
+      "ko": "슈퍼 철구 파이트!",
+      "en": "Super Tekkyu Fight!",
+      "ja": "スーパー鉄球ファイト!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

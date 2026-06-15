@@ -52,5 +52,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003677": {
+    "workId": "wk_000003677",
+    "title": "꽃미남 캐스팅, 오! 보이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546013"
+    },
+    "titles": {
+      "ko": "꽃미남 캐스팅, 오! 보이",
+      "en": "Q109546013"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004399": {
+    "workId": "wk_000004399",
+    "title": "알렘 다 일루상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110153067"
+    },
+    "titles": {
+      "ko": "알렘 다 일루상",
+      "en": "Além da Ilusão",
+      "ja": "幻想を超えて"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004779": {
+    "workId": "wk_000004779",
+    "title": "아다마스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110941718"
+    },
+    "titles": {
+      "ko": "아다마스",
+      "en": "Adamas",
+      "ja": "アダマス 失われたダイヤ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

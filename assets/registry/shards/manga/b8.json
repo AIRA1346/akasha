@@ -25,5 +25,25 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004568": {
+    "workId": "wk_000004568",
+    "title": "봄을 안고 있었다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1203306"
+    },
+    "titles": {
+      "ko": "봄을 안고 있었다",
+      "en": "Embracing Love",
+      "ja": "春を抱いていた"
+    },
+    "releaseYear": 2005,
+    "creator": "Youka Nitta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003497": {
+    "workId": "wk_000003497",
+    "title": "더 딥 하우스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105081740"
+    },
+    "titles": {
+      "ko": "더 딥 하우스",
+      "en": "The Deep House",
+      "ja": "ザ・ディープ・ハウス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

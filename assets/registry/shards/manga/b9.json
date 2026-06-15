@@ -1,0 +1,21 @@
+{
+  "wk_000004944": {
+    "workId": "wk_000004944",
+    "title": "모브부터 시작하는 탐색 영웅담",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124033981"
+    },
+    "titles": {
+      "ko": "모브부터 시작하는 탐색 영웅담",
+      "en": "A Nobody's Way Up to an Exploration Hero",
+      "ja": "モブから始まる探索英雄譚"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

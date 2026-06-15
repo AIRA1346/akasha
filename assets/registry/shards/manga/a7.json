@@ -1,0 +1,20 @@
+{
+  "wk_000003695": {
+    "workId": "wk_000003695",
+    "title": "도시락 혼자 여행",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11668207"
+    },
+    "titles": {
+      "ko": "도시락 혼자 여행",
+      "en": "Ekiben Hitoritabi",
+      "ja": "駅弁ひとり旅"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

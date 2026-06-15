@@ -15,5 +15,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003409": {
+    "workId": "wk_000003409",
+    "title": "리인심상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461105"
+    },
+    "titles": {
+      "ko": "리인심상",
+      "en": "Q109461105"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003508": {
+    "workId": "wk_000003508",
+    "title": "이산별곡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464072"
+    },
+    "titles": {
+      "ko": "이산별곡",
+      "en": "Q109464072"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004264": {
+    "workId": "wk_000004264",
+    "title": "조영구의 오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117656"
+    },
+    "titles": {
+      "ko": "조영구의 오디션",
+      "en": "Q110117656"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

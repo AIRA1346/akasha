@@ -50,5 +50,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003384": {
+    "workId": "wk_000003384",
+    "title": "태합입지전IV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11077703"
+    },
+    "titles": {
+      "ko": "태합입지전IV",
+      "en": "Taiko Risshiden IV",
+      "ja": "太閤立志伝IV"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004167": {
+    "workId": "wk_000004167",
+    "title": "파이널 판타지 7 리버스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112617712"
+    },
+    "titles": {
+      "ko": "파이널 판타지 7 리버스",
+      "en": "Final Fantasy VII Rebirth",
+      "ja": "ファイナルファンタジーVII リバース"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

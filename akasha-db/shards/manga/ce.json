@@ -18,5 +18,80 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003696": {
+    "workId": "wk_000003696",
+    "title": "호오즈키의 냉철",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673513"
+    },
+    "titles": {
+      "ko": "호오즈키의 냉철",
+      "en": "Hozuki's Coolheadedness",
+      "ja": "鬼灯の冷徹"
+    },
+    "creator": "Natsumi Eguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004133": {
+    "workId": "wk_000004133",
+    "title": "북극백화점의 안내원",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117841927"
+    },
+    "titles": {
+      "ko": "북극백화점의 안내원",
+      "en": "Hokkyoku Hyakkaten no Concierge-san",
+      "ja": "北極百貨店のコンシェルジュさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004197": {
+    "workId": "wk_000004197",
+    "title": "묵공",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1189273"
+    },
+    "titles": {
+      "ko": "묵공",
+      "en": "Bokkō",
+      "ja": "墨攻"
+    },
+    "creator": "Ken'ichi Sakemi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005272": {
+    "workId": "wk_000005272",
+    "title": "너구리가 되지 않을래?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125966071"
+    },
+    "titles": {
+      "ko": "너구리가 되지 않을래?",
+      "en": "Omae, Tanuki ni Naranee ka?",
+      "ja": "お前、タヌキにならねーか?"
+    },
+    "creator": "奈川トモ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

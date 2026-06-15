@@ -62,5 +62,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005143": {
+    "workId": "wk_000005143",
+    "title": "시로바코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17903715"
+    },
+    "titles": {
+      "ko": "시로바코",
+      "en": "Shirobako",
+      "ja": "SHIROBAKO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

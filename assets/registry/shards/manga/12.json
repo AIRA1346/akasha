@@ -75,5 +75,62 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004199": {
+    "workId": "wk_000004199",
+    "title": "에어리어의 기사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1189409"
+    },
+    "titles": {
+      "ko": "에어리어의 기사",
+      "en": "The Knight in the Area",
+      "ja": "エリアの騎士"
+    },
+    "creator": "Shin Kibayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004797": {
+    "workId": "wk_000004797",
+    "title": "학생회에도 구멍은 있다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122540255"
+    },
+    "titles": {
+      "ko": "학생회에도 구멍은 있다!",
+      "en": "Even the Student Council Has Its Holes!",
+      "ja": "生徒会にも穴はある！"
+    },
+    "creator": "Maro Muchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005015": {
+    "workId": "wk_000005015",
+    "title": "COSMOS",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124474832"
+    },
+    "titles": {
+      "ko": "COSMOS",
+      "en": "Cosmos",
+      "ja": "COSMOS"
+    },
+    "creator": "Ryūhei Tamura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

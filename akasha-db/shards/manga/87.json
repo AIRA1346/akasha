@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003609": {
+    "workId": "wk_000003609",
+    "title": "혈계전선",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625960"
+    },
+    "titles": {
+      "ko": "혈계전선",
+      "en": "Blood Blockade Battlefront",
+      "ja": "血界戦線"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005209": {
+    "workId": "wk_000005209",
+    "title": "숨겨! 마키나 양!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125865038"
+    },
+    "titles": {
+      "ko": "숨겨! 마키나 양!!",
+      "en": "Makina-san's a Love Bot?!",
+      "ja": "かくして！マキナさん！！"
+    },
+    "creator": "Yoshimi Sato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

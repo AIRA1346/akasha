@@ -71,5 +71,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004505": {
+    "workId": "wk_000004505",
+    "title": "리의 탐정사무소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136147704"
+    },
+    "titles": {
+      "ko": "리의 탐정사무소",
+      "en": "Lee's Detective Agency",
+      "ja": "リー探偵事務所"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004962": {
+    "workId": "wk_000004962",
+    "title": "은하철도 999: 이터널 판타지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16173685"
+    },
+    "titles": {
+      "ko": "은하철도 999: 이터널 판타지",
+      "en": "Galaxy Express 999 : Eternal Fantasy",
+      "ja": "銀河鉄道999 エターナル・ファンタジー"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

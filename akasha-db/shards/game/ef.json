@@ -1,0 +1,38 @@
+{
+  "wk_000003133": {
+    "workId": "wk_000003133",
+    "title": "플레이투게더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109594741"
+    },
+    "titles": {
+      "ko": "플레이투게더",
+      "en": "Play Together",
+      "ja": "一緒に遊ぼう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003873": {
+    "workId": "wk_000003873",
+    "title": "엑스트라바겐자 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11198047"
+    },
+    "titles": {
+      "ko": "엑스트라바겐자 (게임)",
+      "en": "Extravaganza ~Mushi Mederu Shoujo~",
+      "ja": "EXTRAVAGANZA 〜蟲愛でる少女〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

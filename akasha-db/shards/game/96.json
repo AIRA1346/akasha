@@ -49,5 +49,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004078": {
+    "workId": "wk_000004078",
+    "title": "디 올터스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112435027"
+    },
+    "titles": {
+      "ko": "디 올터스",
+      "en": "Q112435027"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004977": {
+    "workId": "wk_000004977",
+    "title": "루나 볼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139287"
+    },
+    "titles": {
+      "ko": "루나 볼",
+      "en": "Lunar Pool",
+      "ja": "ルナーボール"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

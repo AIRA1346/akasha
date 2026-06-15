@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004545": {
+    "workId": "wk_000004545",
+    "title": "닥터 스트레인지러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105702"
+    },
+    "titles": {
+      "ko": "닥터 스트레인지러브",
+      "en": "Dr. Strangelove",
+      "ja": "博士の異常な愛情 または私は如何にして心配するのを止めて水爆を愛するようになったか"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

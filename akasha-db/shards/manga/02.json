@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005278": {
+    "workId": "wk_000005278",
+    "title": "꽝 스킬 《나무 열매 마스터》 ～스킬의 열매(먹으면 죽음)를 무한히 먹을 수 있게 된 건에 대하여～",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126375428"
+    },
+    "titles": {
+      "ko": "꽝 스킬 《나무 열매 마스터》 ～스킬의 열매(먹으면 죽음)를 무한히 먹을 수 있게 된 건에 대하여～",
+      "en": "Bogus Skill \"Fruitmaster\"",
+      "ja": "外れスキル《木の実マスター》 ～スキルの実(食べたら死ぬ)を無限に食べられるようになった件について～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

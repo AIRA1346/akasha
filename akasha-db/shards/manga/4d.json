@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003620": {
+    "workId": "wk_000003620",
+    "title": "푸른하늘 옐",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11662667"
+    },
+    "titles": {
+      "ko": "푸른하늘 옐",
+      "en": "Aozora Yell",
+      "ja": "青空エール"
+    },
+    "creator": "Kazune Kawahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

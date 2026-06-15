@@ -42,5 +42,80 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003819": {
+    "workId": "wk_000003819",
+    "title": "호텔 하이비스커스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105335888"
+    },
+    "titles": {
+      "ko": "호텔 하이비스커스",
+      "en": "Hotel Hibiscus",
+      "ja": "ホテル・ハイビスカス"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004246": {
+    "workId": "wk_000004246",
+    "title": "블루 라인 (영화)",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105560278"
+    },
+    "titles": {
+      "ko": "블루 라인 (영화)",
+      "en": "The Assault"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004252": {
+    "workId": "wk_000004252",
+    "title": "신의 카르테",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055785"
+    },
+    "titles": {
+      "ko": "신의 카르테",
+      "en": "Kamisama no Karute",
+      "ja": "神様のカルテ"
+    },
+    "releaseYear": 2011,
+    "creator": "Sōsuke Natsukawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005169": {
+    "workId": "wk_000005169",
+    "title": "리카르도 가족으로 산다는 것",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105907125"
+    },
+    "titles": {
+      "ko": "리카르도 가족으로 산다는 것",
+      "en": "Being the Ricardos",
+      "ja": "愛すべき夫妻の秘密"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

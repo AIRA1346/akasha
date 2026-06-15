@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004525": {
+    "workId": "wk_000004525",
+    "title": "드래슬레 패밀리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11322994"
+    },
+    "titles": {
+      "ko": "드래슬레 패밀리",
+      "en": "Legacy of the Wizard",
+      "ja": "ドラゴンスレイヤーIV ドラスレファミリー"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

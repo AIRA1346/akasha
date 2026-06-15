@@ -16,5 +16,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004326": {
+    "workId": "wk_000004326",
+    "title": "건강버라이어티 올리브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118055"
+    },
+    "titles": {
+      "ko": "건강버라이어티 올리브",
+      "en": "Q110118055"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004685": {
+    "workId": "wk_000004685",
+    "title": "비밀의 현민 SHOW",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11086334"
+    },
+    "titles": {
+      "ko": "비밀의 현민 SHOW",
+      "en": "Himitsu no Kenmin Show",
+      "ja": "秘密のケンミンSHOW"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005182": {
+    "workId": "wk_000005182",
+    "title": "비프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112168983"
+    },
+    "titles": {
+      "ko": "비프",
+      "en": "Beef",
+      "ja": "BEEF/ビーフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

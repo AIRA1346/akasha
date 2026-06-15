@@ -124,5 +124,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003725": {
+    "workId": "wk_000003725",
+    "title": "9-nine- 하루이로하루코이하루노카제",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541645"
+    },
+    "titles": {
+      "ko": "9-nine- 하루이로하루코이하루노카제",
+      "en": "9-nine-:Episode 3"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

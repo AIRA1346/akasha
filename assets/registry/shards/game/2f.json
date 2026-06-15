@@ -1,0 +1,40 @@
+{
+  "wk_000004521": {
+    "workId": "wk_000004521",
+    "title": "데스스마일즈 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320577"
+    },
+    "titles": {
+      "ko": "데스스마일즈 II",
+      "en": "Deathsmiles II",
+      "ja": "デススマイルズII 魔界のメリークリスマス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004971": {
+    "workId": "wk_000004971",
+    "title": "아이언맨 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138903"
+    },
+    "titles": {
+      "ko": "아이언맨 2",
+      "en": "Iron Man 2",
+      "ja": "アイアンマン2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "wk_000005161": {
+    "workId": "wk_000005161",
+    "title": "전생 왕녀와 천재 영애의 마법 혁명",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109258665"
+    },
+    "titles": {
+      "ko": "전생 왕녀와 천재 영애의 마법 혁명",
+      "en": "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady",
+      "ja": "転生王女と天才令嬢の魔法革命"
+    },
+    "releaseYear": 2020,
+    "creator": "Piero Karasu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004765": {
+    "workId": "wk_000004765",
+    "title": "이하나시의 마녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113572868"
+    },
+    "titles": {
+      "ko": "이하나시의 마녀",
+      "en": "Tales from Toyotoki: Arrival of the Witch",
+      "ja": "イハナシの魔女"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

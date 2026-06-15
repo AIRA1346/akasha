@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005139": {
+    "workId": "wk_000005139",
+    "title": "유리쿠마 아라시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17602113"
+    },
+    "titles": {
+      "ko": "유리쿠마 아라시",
+      "en": "Yurikuma Arashi",
+      "ja": "ユリ熊嵐"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

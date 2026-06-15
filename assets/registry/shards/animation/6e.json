@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004286": {
+    "workId": "wk_000004286",
+    "title": "고양이와 용",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132651824"
+    },
+    "titles": {
+      "ko": "고양이와 용",
+      "en": "The Cat and the Dragon",
+      "ja": "猫と竜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004718": {
+    "workId": "wk_000004718",
+    "title": "타이타닉",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1426605"
+    },
+    "titles": {
+      "ko": "타이타닉",
+      "en": "Titanic",
+      "ja": "ザ・タイタニック"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

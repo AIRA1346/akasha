@@ -35,5 +35,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003213": {
+    "workId": "wk_000003213",
+    "title": "클라이브 바커의 언다잉",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1101863"
+    },
+    "titles": {
+      "ko": "클라이브 바커의 언다잉",
+      "en": "Clive Barker's Undying"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004438": {
+    "workId": "wk_000004438",
+    "title": "크로스 헌터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299749"
+    },
+    "titles": {
+      "ko": "크로스 헌터",
+      "en": "Cross Hunter",
+      "ja": "クロスハンター"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004769": {
+    "workId": "wk_000004769",
+    "title": "아틀라스 폴른",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113586084"
+    },
+    "titles": {
+      "ko": "아틀라스 폴른",
+      "en": "Atlas Fallen"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

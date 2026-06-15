@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004844": {
+    "workId": "wk_000004844",
+    "title": "소렐과 아들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058426"
+    },
+    "titles": {
+      "ko": "소렐과 아들",
+      "en": "Sorrell and Son",
+      "ja": "ソレルと其の子 (1927年の映画)"
+    },
+    "releaseYear": 1927,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

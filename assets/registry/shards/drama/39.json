@@ -68,5 +68,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003064": {
+    "workId": "wk_000003064",
+    "title": "꽃피는 둥지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458649"
+    },
+    "titles": {
+      "ko": "꽃피는 둥지",
+      "en": "Q109458649"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003686": {
+    "workId": "wk_000003686",
+    "title": "쿠킹올림픽 고추장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546041"
+    },
+    "titles": {
+      "ko": "쿠킹올림픽 고추장",
+      "en": "Q109546041"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003963": {
+    "workId": "wk_000003963",
+    "title": "내 전공은 힙합",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114537"
+    },
+    "titles": {
+      "ko": "내 전공은 힙합",
+      "en": "Q110114537"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005068": {
+    "workId": "wk_000005068",
+    "title": "피치 퍼펙트: 범퍼 인 베를린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111942695"
+    },
+    "titles": {
+      "ko": "피치 퍼펙트: 범퍼 인 베를린",
+      "en": "Pitch Perfect: Bumper in Berlin"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

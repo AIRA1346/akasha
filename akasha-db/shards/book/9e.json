@@ -1,0 +1,41 @@
+{
+  "wk_000003578": {
+    "workId": "wk_000003578",
+    "title": "2034 미중전쟁",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107358903"
+    },
+    "titles": {
+      "ko": "2034 미중전쟁",
+      "en": "2034: A Novel of the Next World War",
+      "ja": "2034 米中戦争"
+    },
+    "releaseYear": 2021,
+    "creator": "James Stavridis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004374": {
+    "workId": "wk_000004374",
+    "title": "내 눈물이 너를 베리라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108619623"
+    },
+    "titles": {
+      "ko": "내 눈물이 너를 베리라",
+      "en": "Razorblade Tears"
+    },
+    "releaseYear": 2021,
+    "creator": "S. A. Cosby",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

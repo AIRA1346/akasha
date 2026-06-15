@@ -1,0 +1,55 @@
+{
+  "wk_000003519": {
+    "workId": "wk_000003519",
+    "title": "JTV 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464397"
+    },
+    "titles": {
+      "ko": "JTV 뉴스특보",
+      "en": "Q109464397"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004611": {
+    "workId": "wk_000004611",
+    "title": "아이스 프린세스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110660012"
+    },
+    "titles": {
+      "ko": "아이스 프린세스",
+      "en": "Q110660012"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005061": {
+    "workId": "wk_000005061",
+    "title": "디 오리진 THE ORIGIN - A, B, Or What?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111907300"
+    },
+    "titles": {
+      "ko": "디 오리진 THE ORIGIN - A, B, Or What?",
+      "en": "The Origin – A, B, Or What?",
+      "ja": "THE ORIGIN - A, B, or What?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -49,5 +49,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004196": {
+    "workId": "wk_000004196",
+    "title": "원아웃",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188984"
+    },
+    "titles": {
+      "ko": "원아웃",
+      "en": "One Outs",
+      "ja": "ONE OUTS"
+    },
+    "creator": "Shinobu Kaitani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004566": {
+    "workId": "wk_000004566",
+    "title": "WORKING!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202916"
+    },
+    "titles": {
+      "ko": "WORKING!!",
+      "en": "Working!!",
+      "ja": "WORKING!!"
+    },
+    "creator": "Karino Takatsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

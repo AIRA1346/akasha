@@ -1,0 +1,22 @@
+{
+  "wk_000003488": {
+    "workId": "wk_000003488",
+    "title": "차일드 헤럴드의 편력",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072741"
+    },
+    "titles": {
+      "ko": "차일드 헤럴드의 편력",
+      "en": "Childe Harold's Pilgrimage",
+      "ja": "チャイルド・ハロルドの巡礼"
+    },
+    "releaseYear": 1812,
+    "creator": "ジョージ・ゴードン・バイロン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

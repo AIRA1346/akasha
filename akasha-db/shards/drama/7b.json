@@ -88,5 +88,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003077": {
+    "workId": "wk_000003077",
+    "title": "썰바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458871"
+    },
+    "titles": {
+      "ko": "썰바이벌",
+      "en": "Ser Vival"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003501": {
+    "workId": "wk_000003501",
+    "title": "화요청백전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461604"
+    },
+    "titles": {
+      "ko": "화요청백전",
+      "en": "Q109461604"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003761": {
+    "workId": "wk_000003761",
+    "title": "U스타 오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546600"
+    },
+    "titles": {
+      "ko": "U스타 오디션",
+      "en": "Q109546600"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004120": {
+    "workId": "wk_000004120",
+    "title": "생방송 뭐든지 해결단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115285"
+    },
+    "titles": {
+      "ko": "생방송 뭐든지 해결단",
+      "en": "Q110115285"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

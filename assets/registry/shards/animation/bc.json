@@ -16,5 +16,77 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003280": {
+    "workId": "wk_000003280",
+    "title": "건방진 천사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123050262"
+    },
+    "titles": {
+      "ko": "건방진 천사",
+      "en": "Cheeky Angel",
+      "ja": "天使な小生意気"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004578": {
+    "workId": "wk_000004578",
+    "title": "쾌걸 조로 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136643"
+    },
+    "titles": {
+      "ko": "쾌걸 조로 (애니메이션)",
+      "en": "The Legend of Zorro",
+      "ja": "快傑ゾロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004582": {
+    "workId": "wk_000004582",
+    "title": "악우: 천재인형",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136823850"
+    },
+    "titles": {
+      "ko": "악우: 천재인형",
+      "en": "Aguu: Genius Dolls",
+      "ja": "悪偶 -天才人形-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004760": {
+    "workId": "wk_000004760",
+    "title": "노부나가 더 풀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15139235"
+    },
+    "titles": {
+      "ko": "노부나가 더 풀",
+      "en": "Nobunaga the Fool",
+      "ja": "ノブナガ・ザ・フール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

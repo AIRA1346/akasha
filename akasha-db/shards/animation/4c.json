@@ -109,5 +109,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003548": {
+    "workId": "wk_000003548",
+    "title": "학생회 임원들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124749024"
+    },
+    "titles": {
+      "ko": "학생회 임원들",
+      "en": "Seitokai Yakuindomo",
+      "ja": "生徒会役員共"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004708": {
+    "workId": "wk_000004708",
+    "title": "펜과 수갑과 사실혼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139390978"
+    },
+    "titles": {
+      "ko": "펜과 수갑과 사실혼",
+      "en": "A Pen, Handcuffs, and a Common-Law Marriage",
+      "ja": "ペンと手錠と事実婚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

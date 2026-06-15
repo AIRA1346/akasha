@@ -35,5 +35,44 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003492": {
+    "workId": "wk_000003492",
+    "title": "새비지 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105062959"
+    },
+    "titles": {
+      "ko": "새비지 맨",
+      "en": "Savage Salvation",
+      "ja": "ワイルド・リベンジ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004606": {
+    "workId": "wk_000004606",
+    "title": "연을 쫓는 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057045"
+    },
+    "titles": {
+      "ko": "연을 쫓는 아이",
+      "en": "The Kite Runner",
+      "ja": "君のためなら千回でも"
+    },
+    "releaseYear": 2008,
+    "creator": "Khaled Hosseini",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

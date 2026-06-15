@@ -33,5 +33,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003318": {
+    "workId": "wk_000003318",
+    "title": "2020 추석특집 아이돌 e스포츠 선수권대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460664"
+    },
+    "titles": {
+      "ko": "2020 추석특집 아이돌 e스포츠 선수권대회",
+      "en": "Q109460664"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003952": {
+    "workId": "wk_000003952",
+    "title": "개승자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114090"
+    },
+    "titles": {
+      "ko": "개승자",
+      "en": "Q110114090"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005191": {
+    "workId": "wk_000005191",
+    "title": "JNN 뉴스데스크'88·'89",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11225905"
+    },
+    "titles": {
+      "ko": "JNN 뉴스데스크'88·'89",
+      "en": "JNN News Desk'88",
+      "ja": "JNNニュースデスク'88・'89"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003335": {
+    "workId": "wk_000003335",
+    "title": "류수영의 동물티비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460917"
+    },
+    "titles": {
+      "ko": "류수영의 동물티비",
+      "en": "Q109460917"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003503": {
+    "workId": "wk_000003503",
+    "title": "지혜의 한 수, 회초리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461753"
+    },
+    "titles": {
+      "ko": "지혜의 한 수, 회초리",
+      "en": "Q109461753"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003515": {
+    "workId": "wk_000003515",
+    "title": "생생경제 정보톡톡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464384"
+    },
+    "titles": {
+      "ko": "생생경제 정보톡톡",
+      "en": "Q109464384"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

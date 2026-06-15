@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005217": {
+    "workId": "wk_000005217",
+    "title": "Bonjour♪ 사랑맛 파티스리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18339316"
+    },
+    "titles": {
+      "ko": "Bonjour♪ 사랑맛 파티스리",
+      "en": "BONJOUR♪Sweet Love Patisserie",
+      "ja": "Bonjour♪恋味パティスリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,75 @@
+{
+  "wk_000003933": {
+    "workId": "wk_000003933",
+    "title": "웃는 아르스노토리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112224460"
+    },
+    "titles": {
+      "ko": "웃는 아르스노토리아",
+      "en": "Smile of the Arsnotoria",
+      "ja": "咲う アルスノトリア"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004303": {
+    "workId": "wk_000004303",
+    "title": "학원신선조",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284826"
+    },
+    "titles": {
+      "ko": "학원신선조",
+      "en": "Gakuen☆Shinsengumi! ~Otome Gokoro to Kyokuchuu Hatto~",
+      "ja": "学園☆新選組! 〜乙女ゴコロと局中法度〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004654": {
+    "workId": "wk_000004654",
+    "title": "몬스터 열전 오레카 배틀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344736"
+    },
+    "titles": {
+      "ko": "몬스터 열전 오레카 배틀",
+      "en": "Monster Retsuden Oreca Battle",
+      "ja": "モンスター烈伝 オレカバトル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005041": {
+    "workId": "wk_000005041",
+    "title": "딜리버 어스 마스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113958261"
+    },
+    "titles": {
+      "ko": "딜리버 어스 마스",
+      "en": "Deliver Us Mars"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

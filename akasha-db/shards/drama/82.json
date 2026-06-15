@@ -34,5 +34,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003687": {
+    "workId": "wk_000003687",
+    "title": "팔도밥상 플러스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546055"
+    },
+    "titles": {
+      "ko": "팔도밥상 플러스",
+      "en": "Q109546055"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004928": {
+    "workId": "wk_000004928",
+    "title": "악몽의 룸메이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111474833"
+    },
+    "titles": {
+      "ko": "악몽의 룸메이트",
+      "en": "Worst Roommate Ever",
+      "ja": "史上最悪のルームメイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

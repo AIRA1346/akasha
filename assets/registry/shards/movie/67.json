@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004319": {
+    "workId": "wk_000004319",
+    "title": "퍼펙트 게임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055906"
+    },
+    "titles": {
+      "ko": "퍼펙트 게임",
+      "en": "The Perfect Game",
+      "ja": "ザ・パーフェクトゲーム"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004539": {
+    "workId": "wk_000004539",
+    "title": "파라노말 액티비티 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056921"
+    },
+    "titles": {
+      "ko": "파라노말 액티비티 3",
+      "en": "Paranormal Activity 3",
+      "ja": "パラノーマル・アクティビティ3"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

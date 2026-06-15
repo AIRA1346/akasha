@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004230": {
+    "workId": "wk_000004230",
+    "title": "쓰르라미 울 적에 대상",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276162"
+    },
+    "titles": {
+      "ko": "쓰르라미 울 적에 대상",
+      "en": "Q11276162",
+      "ja": "ひぐらしのなく頃に大賞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005044": {
+    "workId": "wk_000005044",
+    "title": "대부",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139696"
+    },
+    "titles": {
+      "ko": "대부",
+      "en": "The Godfather",
+      "ja": "ゴッドファーザー"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005093": {
+    "workId": "wk_000005093",
+    "title": "섀도 더 헤지호그",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140411"
+    },
+    "titles": {
+      "ko": "섀도 더 헤지호그",
+      "en": "Q1140411",
+      "ja": "シャドウ・ザ・ヘッジホッグ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

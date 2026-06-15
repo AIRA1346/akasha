@@ -1,0 +1,20 @@
+{
+  "wk_000003495": {
+    "workId": "wk_000003495",
+    "title": "시간의 끝에서 널 기다려",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105080537"
+    },
+    "titles": {
+      "ko": "시간의 끝에서 널 기다려",
+      "en": "Love You Forever"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

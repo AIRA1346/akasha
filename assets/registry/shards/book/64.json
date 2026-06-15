@@ -18,5 +18,61 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003940": {
+    "workId": "wk_000003940",
+    "title": "친밀한 사이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107709857"
+    },
+    "titles": {
+      "ko": "친밀한 사이",
+      "en": "Intimacies"
+    },
+    "releaseYear": 2021,
+    "creator": "Katie Kitamura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005047": {
+    "workId": "wk_000005047",
+    "title": "역세진선체도통감",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10910842"
+    },
+    "titles": {
+      "ko": "역세진선체도통감",
+      "en": "Mirror of the Way and Virtue: A Chronicle of True Immortals through the Ages",
+      "ja": "歴世真仙体道通鑑"
+    },
+    "creator": "Daoyi Zhao",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005159": {
+    "workId": "wk_000005159",
+    "title": "에리스의 성배",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109258540"
+    },
+    "titles": {
+      "ko": "에리스의 성배",
+      "en": "The Holy Grail of Eris",
+      "ja": "エリスの聖杯"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

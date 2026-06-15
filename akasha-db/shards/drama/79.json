@@ -15,5 +15,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004336": {
+    "workId": "wk_000004336",
+    "title": "호호생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118245"
+    },
+    "titles": {
+      "ko": "호호생활",
+      "en": "Q110118245"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004339": {
+    "workId": "wk_000004339",
+    "title": "환멸을 찾아서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118285"
+    },
+    "titles": {
+      "ko": "환멸을 찾아서",
+      "en": "Q110118285"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

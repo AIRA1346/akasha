@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003013": {
+    "workId": "wk_000003013",
+    "title": "아파트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2858631"
+    },
+    "titles": {
+      "ko": "아파트",
+      "en": "Q2858631"
+    },
+    "creator": "Kang Full",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

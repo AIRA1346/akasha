@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003158": {
+    "workId": "wk_000003158",
+    "title": "톡킹 18금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459068"
+    },
+    "titles": {
+      "ko": "톡킹 18금",
+      "en": "Q109459068"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005112": {
+    "workId": "wk_000005112",
+    "title": "털사 킹",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111967146"
+    },
+    "titles": {
+      "ko": "털사 킹",
+      "en": "Tulsa King",
+      "ja": "タルサ・キング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

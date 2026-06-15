@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004182": {
+    "workId": "wk_000004182",
+    "title": "아이돌Pick크닉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115594"
+    },
+    "titles": {
+      "ko": "아이돌Pick크닉",
+      "en": "Q110115594"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004775": {
+    "workId": "wk_000004775",
+    "title": "목부풍운",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11092979"
+    },
+    "titles": {
+      "ko": "목부풍운",
+      "en": "Turbulence of the Mu Clan The Mu Saga",
+      "ja": "木府风云"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003549": {
+    "workId": "wk_000003549",
+    "title": "사슴 아이 어슬렁어슬렁 호시탐탐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124829372"
+    },
+    "titles": {
+      "ko": "사슴 아이 어슬렁어슬렁 호시탐탐",
+      "en": "My Deer Friend Nokotan",
+      "ja": "しかのこのこのここしたんたん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

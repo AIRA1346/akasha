@@ -50,5 +50,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003907": {
+    "workId": "wk_000003907",
+    "title": "OBS 아침애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113955"
+    },
+    "titles": {
+      "ko": "OBS 아침애",
+      "en": "Q110113955"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004394": {
+    "workId": "wk_000004394",
+    "title": "헬로트로트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118425"
+    },
+    "titles": {
+      "ko": "헬로트로트",
+      "en": "Q110118425"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

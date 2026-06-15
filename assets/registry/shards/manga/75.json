@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003082": {
+    "workId": "wk_000003082",
+    "title": "사정을 모르는 전학생이 거침없이 다가온다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115193845"
+    },
+    "titles": {
+      "ko": "사정을 모르는 전학생이 거침없이 다가온다.",
+      "en": "My Clueless First Friend",
+      "ja": "事情を知らない転校生がグイグイくる。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

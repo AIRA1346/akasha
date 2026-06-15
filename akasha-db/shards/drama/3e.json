@@ -16,5 +16,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004054": {
+    "workId": "wk_000004054",
+    "title": "배재성의 뉴스브리핑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115101"
+    },
+    "titles": {
+      "ko": "배재성의 뉴스브리핑",
+      "en": "Q110115101"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005319": {
+    "workId": "wk_000005319",
+    "title": "라이트 판타스틱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236660"
+    },
+    "titles": {
+      "ko": "라이트 판타스틱",
+      "en": "Light Fantastic"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

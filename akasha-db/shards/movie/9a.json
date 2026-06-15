@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004543": {
+    "workId": "wk_000004543",
+    "title": "오늘, 우리 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105699138"
+    },
+    "titles": {
+      "ko": "오늘, 우리 2",
+      "en": "Today, Together 2"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

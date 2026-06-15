@@ -33,5 +33,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003968": {
+    "workId": "wk_000003968",
+    "title": "뉴스 17",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114589"
+    },
+    "titles": {
+      "ko": "뉴스 17",
+      "en": "Q110114589"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004178": {
+    "workId": "wk_000004178",
+    "title": "십대의 세계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115544"
+    },
+    "titles": {
+      "ko": "십대의 세계",
+      "en": "Q110115544"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

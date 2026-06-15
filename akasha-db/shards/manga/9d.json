@@ -17,5 +17,63 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003427": {
+    "workId": "wk_000003427",
+    "title": "전원 옥쇄하라!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11607638"
+    },
+    "titles": {
+      "ko": "전원 옥쇄하라!",
+      "en": "Onward Towards Our Noble Deaths",
+      "ja": "総員玉砕せよ!"
+    },
+    "creator": "Shigeru Mizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003978": {
+    "workId": "wk_000003978",
+    "title": "이거 그리고 죽어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117462196"
+    },
+    "titles": {
+      "ko": "이거 그리고 죽어",
+      "en": "Draw This, Then Die!",
+      "ja": "これ描いて死ね"
+    },
+    "releaseYear": 2025,
+    "creator": "Minoru Toyoda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005014": {
+    "workId": "wk_000005014",
+    "title": "초능력 순경! 쵸죠 선배",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124474801"
+    },
+    "titles": {
+      "ko": "초능력 순경! 쵸죠 선배",
+      "en": "Super Psychic Policeman Chojo",
+      "ja": "超巡！超条先輩"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

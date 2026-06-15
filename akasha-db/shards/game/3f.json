@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004307": {
+    "workId": "wk_000004307",
+    "title": "레고 레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1128672"
+    },
+    "titles": {
+      "ko": "레고 레이서",
+      "en": "Lego Racers"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

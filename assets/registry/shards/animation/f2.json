@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004882": {
+    "workId": "wk_000004882",
+    "title": "유희왕 ARC-V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15633150"
+    },
+    "titles": {
+      "ko": "유희왕 ARC-V",
+      "en": "Yu-Gi-Oh! Arc-V",
+      "ja": "遊☆戯☆王ARC-V"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

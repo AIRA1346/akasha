@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004219": {
+    "workId": "wk_000004219",
+    "title": "키미키스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323695"
+    },
+    "titles": {
+      "ko": "키미키스",
+      "en": "KimiKiss",
+      "ja": "キミキス"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004712": {
+    "workId": "wk_000004712",
+    "title": "너구리가 되지 않을래?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139858017"
+    },
+    "titles": {
+      "ko": "너구리가 되지 않을래?",
+      "en": "Omae, Tanuki ni Naranee ka?",
+      "ja": "お前、タヌキにならねーか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

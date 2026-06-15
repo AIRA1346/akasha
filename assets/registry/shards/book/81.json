@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004534": {
+    "workId": "wk_000004534",
+    "title": "아펜니노산맥에서 안데스산맥까지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10877101"
+    },
+    "titles": {
+      "ko": "아펜니노산맥에서 안데스산맥까지",
+      "en": "From the Apennines to the Andes"
+    },
+    "releaseYear": 1886,
+    "creator": "Edmondo de Amicis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

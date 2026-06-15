@@ -1,0 +1,56 @@
+{
+  "wk_000004071": {
+    "workId": "wk_000004071",
+    "title": "마법사의 약속",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131279746"
+    },
+    "titles": {
+      "ko": "마법사의 약속",
+      "en": "Promise of Wizard",
+      "ja": "魔法使いの約束"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004421": {
+    "workId": "wk_000004421",
+    "title": "관희의 챠이카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134452212"
+    },
+    "titles": {
+      "ko": "관희의 챠이카",
+      "en": "Chaika: The Coffin Princess",
+      "ja": "棺姫のチャイカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004640": {
+    "workId": "wk_000004640",
+    "title": "전설의 마법 쿠루쿠루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1374301"
+    },
+    "titles": {
+      "ko": "전설의 마법 쿠루쿠루",
+      "en": "Magical Circle Guru Guru",
+      "ja": "魔法陣グルグル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

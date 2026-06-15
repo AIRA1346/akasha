@@ -63,5 +63,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004111": {
+    "workId": "wk_000004111",
+    "title": "던전 앤 드래곤: 도적들의 명예",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105554572"
+    },
+    "titles": {
+      "ko": "던전 앤 드래곤: 도적들의 명예",
+      "en": "Dungeons & Dragons: Honor Among Thieves",
+      "ja": "ダンジョンズ&ドラゴンズ/アウトローたちの誇り"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

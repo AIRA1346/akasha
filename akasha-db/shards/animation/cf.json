@@ -87,5 +87,133 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003108": {
+    "workId": "wk_000003108",
+    "title": "전국요호",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121337625"
+    },
+    "titles": {
+      "ko": "전국요호",
+      "en": "Sengoku Youko",
+      "ja": "戦国妖狐"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003845": {
+    "workId": "wk_000003845",
+    "title": "추방당한 전생 중기사는 게임 지식으로 무쌍한다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128758407"
+    },
+    "titles": {
+      "ko": "추방당한 전생 중기사는 게임 지식으로 무쌍한다",
+      "en": "The Exiled Heavy Knight Knows How to Game the System",
+      "ja": "追放された転生重騎士はゲーム知識で無双する"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004074": {
+    "workId": "wk_000004074",
+    "title": "우주인 무무",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131348649"
+    },
+    "titles": {
+      "ko": "우주인 무무",
+      "en": "Me and the Alien MuMu",
+      "ja": "宇宙人ムームー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004362": {
+    "workId": "wk_000004362",
+    "title": "루팡 3세 vs 명탐정 코난 THE MOVIE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13417248"
+    },
+    "titles": {
+      "ko": "루팡 3세 vs 명탐정 코난 THE MOVIE",
+      "en": "Lupin the 3rd vs. Detective Conan: The Movie",
+      "ja": "ルパン三世VS名探偵コナン THE MOVIE"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004751": {
+    "workId": "wk_000004751",
+    "title": "스페이드 댄디",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14831173"
+    },
+    "titles": {
+      "ko": "스페이드 댄디",
+      "en": "Space Dandy",
+      "ja": "スペース☆ダンディ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004753": {
+    "workId": "wk_000004753",
+    "title": "포켓몬스터 XY",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14880799"
+    },
+    "titles": {
+      "ko": "포켓몬스터 XY",
+      "en": "Pokémon the Series: XY",
+      "ja": "ポケットモンスター XY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004808": {
+    "workId": "wk_000004808",
+    "title": "명탐정 코난: 이차원의 저격수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15279283"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 이차원의 저격수",
+      "en": "Detective Conan: Dimensional Sniper",
+      "ja": "名探偵コナン 異次元の狙撃手"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004454": {
+    "workId": "wk_000004454",
+    "title": "그레이트 서클",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108675385"
+    },
+    "titles": {
+      "ko": "그레이트 서클",
+      "en": "Great Circle"
+    },
+    "releaseYear": 2021,
+    "creator": "Maggie Shipstead",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

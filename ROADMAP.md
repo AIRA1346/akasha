@@ -17,7 +17,7 @@
 |:-----:|------|:----:|
 | **0** | 작품 E2E | ✅ |
 | **1** | Record · Entity · Time · Link | ✅ |
-| **2** | Catalog scale | **진행** (@2859 · window 모드) |
+| **2** | Catalog scale | **진행** (@5181 · **G1 ✅**) |
 | **3** | Entity types | 대기 |
 | **4** | Timeline Archive | 대기 |
 | **5** | Connection | 대기 |
@@ -37,7 +37,7 @@ externalId **G2 50% 달성** (2026-06-10, [sprint-04-e1-resolution.md](docs/arch
 | 1차 출시 | Steam (Windows) — **품질 Ready 시** |
 | 출시 시점 | 일정 고정 아님 · M2 depot·스토어 **준비됨** |
 | v1 MVP | 볼트 + 글로벌 사전 + IP 1카드 그리드 + **나의 서재** |
-| 사전 규모 | **최종: 전 작품 사전** · 현재 **2859작** → **G1(~5k) 병행 확장** · v4 운영 |
+| 사전 규모 | **최종: 전 작품 사전** · 현재 **5181작** · **G1 ✅** · v4 운영 |
 | 출시 전제 | 430 **고정 출시 아님** — 카탈로그 깊이·검색 가치 **동시 달성** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md)) |
 | 사전 운영 | 자체 구축 + GitHub raw sync ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | 포스터 | **v1: Tier 1 미제공** — Sanctum vault만 ([data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam)) |

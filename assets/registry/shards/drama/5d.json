@@ -65,5 +65,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003764": {
+    "workId": "wk_000003764",
+    "title": "트롯파이터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547020"
+    },
+    "titles": {
+      "ko": "트롯파이터",
+      "en": "Q109547020"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003904": {
+    "workId": "wk_000003904",
+    "title": "KBS 월드 뉴스투데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113924"
+    },
+    "titles": {
+      "ko": "KBS 월드 뉴스투데이",
+      "en": "Q110113924"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003961": {
+    "workId": "wk_000003961",
+    "title": "나의 영어사춘기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114492"
+    },
+    "titles": {
+      "ko": "나의 영어사춘기",
+      "en": "Q110114492"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004552": {
+    "workId": "wk_000004552",
+    "title": "그리드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110627632"
+    },
+    "titles": {
+      "ko": "그리드",
+      "en": "Grid"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

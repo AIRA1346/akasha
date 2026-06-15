@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004801": {
+    "workId": "wk_000004801",
+    "title": "어떤 게 사랑인지 모르겠어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122810530"
+    },
+    "titles": {
+      "ko": "어떤 게 사랑인지 모르겠어",
+      "en": "I Don't Know Which Is Love",
+      "ja": "どれが恋かがわからない"
+    },
+    "creator": "Tamamushi Oku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004317": {
+    "workId": "wk_000004317",
+    "title": "블랙폰",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105584511"
+    },
+    "titles": {
+      "ko": "블랙폰",
+      "en": "The Black Phone",
+      "ja": "ブラック・フォン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005171": {
+    "workId": "wk_000005171",
+    "title": "골 2: 꿈을 향해 뛰어라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059164"
+    },
+    "titles": {
+      "ko": "골 2: 꿈을 향해 뛰어라",
+      "en": "Goal II: Living the Dream",
+      "ja": "GOAL!2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

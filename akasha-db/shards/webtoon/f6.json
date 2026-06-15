@@ -1,0 +1,38 @@
+{
+  "wk_000002946": {
+    "workId": "wk_000002946",
+    "title": "Ho!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19359809"
+    },
+    "titles": {
+      "ko": "Ho!",
+      "en": "Ho!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003101": {
+    "workId": "wk_000003101",
+    "title": "킬링 스토킹",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q39069885"
+    },
+    "titles": {
+      "ko": "킬링 스토킹",
+      "en": "Killing Stalking"
+    },
+    "releaseYear": 2016,
+    "creator": "쿠기",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

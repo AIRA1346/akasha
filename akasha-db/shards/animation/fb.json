@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003104": {
+    "workId": "wk_000003104",
+    "title": "LAZARUS 라자로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121095142"
+    },
+    "titles": {
+      "ko": "LAZARUS 라자로",
+      "en": "Lazarus",
+      "ja": "LAZARUS ラザロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004061": {
+    "workId": "wk_000004061",
+    "title": "이세계 사정은 사축 하기 나름",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130748787"
+    },
+    "titles": {
+      "ko": "이세계 사정은 사축 하기 나름",
+      "en": "The Other World's Books Depend on the Bean Counter",
+      "ja": "異世界の沙汰は社畜次第"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,63 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002983": {
+    "workId": "wk_000002983",
+    "title": "죽은 자들의 메아리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10670729"
+    },
+    "titles": {
+      "ko": "죽은 자들의 메아리",
+      "en": "Q10670729"
+    },
+    "releaseYear": 2007,
+    "creator": "Johan Theorin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003050": {
+    "workId": "wk_000003050",
+    "title": "하늘과 땅의 수호자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106722479"
+    },
+    "titles": {
+      "ko": "하늘과 땅의 수호자",
+      "en": "Guardian of Heaven and Earth",
+      "ja": "天と地の守り人"
+    },
+    "releaseYear": 2006,
+    "creator": "우에하시 나호코",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003580": {
+    "workId": "wk_000003580",
+    "title": "마르코의 복음서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107388"
+    },
+    "titles": {
+      "ko": "마르코의 복음서",
+      "en": "Gospel of Mark",
+      "ja": "マルコによる福音書"
+    },
+    "creator": "マルコ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

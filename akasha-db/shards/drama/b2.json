@@ -51,5 +51,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004113": {
+    "workId": "wk_000004113",
+    "title": "보이스킹",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115136"
+    },
+    "titles": {
+      "ko": "보이스킹",
+      "en": "Voice King"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004177": {
+    "workId": "wk_000004177",
+    "title": "십대가수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115543"
+    },
+    "titles": {
+      "ko": "십대가수",
+      "en": "Q110115543"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

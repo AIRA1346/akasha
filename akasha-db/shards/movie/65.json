@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003310": {
+    "workId": "wk_000003310",
+    "title": "불량 경찰 : 부정부패 소탕 작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050105"
+    },
+    "titles": {
+      "ko": "불량 경찰 : 부정부패 소탕 작전",
+      "en": "Torrente, the dumb arm of the law",
+      "ja": "トレンテ ハゲ！デブ！大酒飲みの女好き！超・肉食系スーパーコップ"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

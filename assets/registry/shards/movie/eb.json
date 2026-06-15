@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003500": {
+    "workId": "wk_000003500",
+    "title": "파이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105085668"
+    },
+    "titles": {
+      "ko": "파이어",
+      "en": "Both Sides of the Blade"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004027": {
+    "workId": "wk_000004027",
+    "title": "배드 럭 뱅잉 오어 루니 폰",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105441000"
+    },
+    "titles": {
+      "ko": "배드 럭 뱅잉 오어 루니 폰",
+      "en": "Bad Luck Banging or Loony Porn",
+      "ja": "アンラッキー・セックスまたはイカれたポルノ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004248": {
+    "workId": "wk_000004248",
+    "title": "우리 함께 아웃백으로!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105560479"
+    },
+    "titles": {
+      "ko": "우리 함께 아웃백으로!",
+      "en": "Back to the Outback",
+      "ja": "バック・トゥ・ザ・アウトバック ～めざせ! 母なる大地～"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

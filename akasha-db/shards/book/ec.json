@@ -1,0 +1,22 @@
+{
+  "wk_000005162": {
+    "workId": "wk_000005162",
+    "title": "이수라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109258837"
+    },
+    "titles": {
+      "ko": "이수라",
+      "en": "Ishura",
+      "ja": "異修羅"
+    },
+    "releaseYear": 2019,
+    "creator": "珪素",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

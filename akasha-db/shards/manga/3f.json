@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003178": {
+    "workId": "wk_000003178",
+    "title": "기수신세기 조이드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11544513"
+    },
+    "titles": {
+      "ko": "기수신세기 조이드",
+      "en": "Q11544513",
+      "ja": "機獣新世紀ZOIDS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

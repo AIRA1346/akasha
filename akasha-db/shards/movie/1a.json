@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003812": {
+    "workId": "wk_000003812",
+    "title": "폴 위의 그녀들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105321189"
+    },
+    "titles": {
+      "ko": "폴 위의 그녀들",
+      "en": "Strip Down, Rise Up",
+      "ja": "ストリップダウン&ライズアップ - ありのままの私 -"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

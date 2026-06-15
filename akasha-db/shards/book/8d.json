@@ -16,5 +16,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003391": {
+    "workId": "wk_000003391",
+    "title": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107110728"
+    },
+    "titles": {
+      "ko": "길드의 접수원인데, 야근이 싫어서 보스를 혼자 토벌하려고 합니다",
+      "en": "I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time",
+      "ja": "ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います"
+    },
+    "releaseYear": 2021,
+    "creator": "香坂マト",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

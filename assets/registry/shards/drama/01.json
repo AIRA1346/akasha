@@ -69,5 +69,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003251": {
+    "workId": "wk_000003251",
+    "title": "이선풍 저승 유람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460659"
+    },
+    "titles": {
+      "ko": "이선풍 저승 유람",
+      "en": "Q109460659"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003762": {
+    "workId": "wk_000003762",
+    "title": "웹 투나잇",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546984"
+    },
+    "titles": {
+      "ko": "웹 투나잇",
+      "en": "Q109546984"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004481": {
+    "workId": "wk_000004481",
+    "title": "징크스의 연인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110542352"
+    },
+    "titles": {
+      "ko": "징크스의 연인",
+      "en": "Jinx's Lover"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

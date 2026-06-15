@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004746": {
+    "workId": "wk_000004746",
+    "title": "야미시바이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14539183"
+    },
+    "titles": {
+      "ko": "야미시바이",
+      "en": "Yamishibai: Japanese Ghost Stories",
+      "ja": "闇芝居"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

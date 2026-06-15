@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004002": {
+    "workId": "wk_000004002",
+    "title": "돌아온 너구리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235477"
+    },
+    "titles": {
+      "ko": "돌아온 너구리",
+      "en": "Q11235477",
+      "ja": "帰って来た狸"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

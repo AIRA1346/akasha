@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004740": {
+    "workId": "wk_000004740",
+    "title": "틴토 브라스의 아모르",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058146"
+    },
+    "titles": {
+      "ko": "틴토 브라스의 아모르",
+      "en": "Monamour",
+      "ja": "ティント・ブラスの白日夢"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003859": {
+    "workId": "wk_000003859",
+    "title": "사망 유희로 밥을 먹는다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130214213"
+    },
+    "titles": {
+      "ko": "사망 유희로 밥을 먹는다.",
+      "en": "Playing Death Games to Put Food on the Table",
+      "ja": "死亡遊戯で飯を食う。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004065": {
+    "workId": "wk_000004065",
+    "title": "아르네의 사건부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130976529"
+    },
+    "titles": {
+      "ko": "아르네의 사건부",
+      "en": "The Case Book of Arne",
+      "ja": "アルネの事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004293": {
+    "workId": "wk_000004293",
+    "title": "토지마 탄자부로는 가면라이더가 되고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133138402"
+    },
+    "titles": {
+      "ko": "토지마 탄자부로는 가면라이더가 되고 싶어",
+      "en": "Tojima Wants to Be a Kamen Rider",
+      "ja": "東島丹三郎は仮面ライダーになりたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

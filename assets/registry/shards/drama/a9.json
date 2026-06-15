@@ -52,5 +52,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003153": {
+    "workId": "wk_000003153",
+    "title": "Devil's RUNWAY",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458907"
+    },
+    "titles": {
+      "ko": "Devil's RUNWAY",
+      "en": "Q109458907"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004185": {
+    "workId": "wk_000004185",
+    "title": "13세 소년",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115691"
+    },
+    "titles": {
+      "ko": "13세 소년",
+      "en": "Q110115691"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004192": {
+    "workId": "wk_000004192",
+    "title": "EBS TV 고교 공통사회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115889"
+    },
+    "titles": {
+      "ko": "EBS TV 고교 공통사회",
+      "en": "Q110115889"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004995": {
+    "workId": "wk_000004995",
+    "title": "원:아워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1116894"
+    },
+    "titles": {
+      "ko": "원:아워",
+      "en": "Eleventh Hour",
+      "ja": "イレブンス・アワー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005123": {
+    "workId": "wk_000005123",
+    "title": "Venue101",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112043482"
+    },
+    "titles": {
+      "ko": "Venue101",
+      "en": "Venue101",
+      "ja": "Venue101"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

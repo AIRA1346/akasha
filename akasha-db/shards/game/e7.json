@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002978": {
+    "workId": "wk_000002978",
+    "title": "피크민 블룸",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109285421"
+    },
+    "titles": {
+      "ko": "피크민 블룸",
+      "en": "Q109285421"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

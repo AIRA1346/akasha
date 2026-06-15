@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004097": {
+    "workId": "wk_000004097",
+    "title": "가난한 사람들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108195609"
+    },
+    "titles": {
+      "ko": "가난한 사람들",
+      "en": "The Poor People"
+    },
+    "creator": "ヴィクトル・ユーゴー",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004316": {
+    "workId": "wk_000004316",
+    "title": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10860215"
+    },
+    "titles": {
+      "ko": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+      "en": "Colorless Tsukuru Tazaki and His Years of Pilgrimage",
+      "ja": "色彩を持たない多崎つくると、彼の巡礼の年"
+    },
+    "releaseYear": 2013,
+    "creator": "Haruki Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

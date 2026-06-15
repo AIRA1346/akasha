@@ -51,5 +51,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003324": {
+    "workId": "wk_000003324",
+    "title": "내일은 국민가수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460797"
+    },
+    "titles": {
+      "ko": "내일은 국민가수",
+      "en": "Tomorrow is a national singer",
+      "ja": "明日は国民歌手"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003332": {
+    "workId": "wk_000003332",
+    "title": "노영하의 바둑이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460862"
+    },
+    "titles": {
+      "ko": "노영하의 바둑이야기",
+      "en": "Q109460862"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004684": {
+    "workId": "wk_000004684",
+    "title": "산꾼도시여자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110835020"
+    },
+    "titles": {
+      "ko": "산꾼도시여자들",
+      "en": "Q110835020"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005259": {
+    "workId": "wk_000005259",
+    "title": "도망자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11234938"
+    },
+    "titles": {
+      "ko": "도망자",
+      "en": "Q11234938",
+      "ja": "逃亡者 RUNAWAY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

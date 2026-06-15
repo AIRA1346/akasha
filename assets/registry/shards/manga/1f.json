@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003348": {
+    "workId": "wk_000003348",
+    "title": "순결의 마리아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11605445"
+    },
+    "titles": {
+      "ko": "순결의 마리아",
+      "en": "Maria the Virgin Witch",
+      "ja": "純潔のマリア"
+    },
+    "creator": "Masayuki Ishikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

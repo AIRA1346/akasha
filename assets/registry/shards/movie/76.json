@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004391": {
+    "workId": "wk_000004391",
+    "title": "얼어버린 시간 속에서",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105658120"
+    },
+    "titles": {
+      "ko": "얼어버린 시간 속에서",
+      "en": "Against The Ice",
+      "ja": "氷がすべてを隔てても"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

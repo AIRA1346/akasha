@@ -33,5 +33,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003683": {
+    "workId": "wk_000003683",
+    "title": "상상마당 MTV 스카우트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546033"
+    },
+    "titles": {
+      "ko": "상상마당 MTV 스카우트",
+      "en": "Q109546033"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003753": {
+    "workId": "wk_000003753",
+    "title": "굿모닝 OBS",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546165"
+    },
+    "titles": {
+      "ko": "굿모닝 OBS",
+      "en": "Q109546165"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004412": {
+    "workId": "wk_000004412",
+    "title": "소년사대명포",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11036371"
+    },
+    "titles": {
+      "ko": "소년사대명포",
+      "en": "The Four",
+      "ja": "四大名捕～都に舞う侠の花～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

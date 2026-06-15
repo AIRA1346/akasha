@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003843": {
+    "workId": "wk_000003843",
+    "title": "폭렬천사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1284240"
+    },
+    "titles": {
+      "ko": "폭렬천사",
+      "en": "Burst Angel",
+      "ja": "爆裂天使"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

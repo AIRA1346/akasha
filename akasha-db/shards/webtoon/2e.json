@@ -1,0 +1,19 @@
+{
+  "wk_000003011": {
+    "workId": "wk_000003011",
+    "title": "미래에서 온 소년",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27952898"
+    },
+    "titles": {
+      "ko": "미래에서 온 소년",
+      "en": "The Boy from the Future"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

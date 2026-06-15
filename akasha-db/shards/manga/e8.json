@@ -68,5 +68,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004951": {
+    "workId": "wk_000004951",
+    "title": "태양보다 눈부신 별",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124362501"
+    },
+    "titles": {
+      "ko": "태양보다 눈부신 별",
+      "en": "A Star Brighter Than the Sun",
+      "ja": "太陽よりも眩しい星"
+    },
+    "creator": "Kazune Kawahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005132": {
+    "workId": "wk_000005132",
+    "title": "로젠 메이든",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124649489"
+    },
+    "titles": {
+      "ko": "로젠 메이든",
+      "en": "Rozen Maiden",
+      "ja": "ローゼンメイデン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

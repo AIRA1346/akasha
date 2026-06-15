@@ -1,0 +1,39 @@
+{
+  "wk_000004728": {
+    "workId": "wk_000004728",
+    "title": "이스트 린",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057622"
+    },
+    "titles": {
+      "ko": "이스트 린",
+      "en": "East Lynne"
+    },
+    "releaseYear": 1931,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004730": {
+    "workId": "wk_000004730",
+    "title": "원 웨이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105773076"
+    },
+    "titles": {
+      "ko": "원 웨이",
+      "en": "One Way",
+      "ja": "ワイルド・ロード"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

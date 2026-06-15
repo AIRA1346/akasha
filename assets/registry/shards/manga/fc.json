@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004795": {
+    "workId": "wk_000004795",
+    "title": "현실도 가끔은 거짓말을 한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122338918"
+    },
+    "titles": {
+      "ko": "현실도 가끔은 거짓말을 한다",
+      "en": "Sometimes Even Reality Is a Lie!",
+      "ja": "現実もたまには嘘をつく"
+    },
+    "creator": "Niichi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

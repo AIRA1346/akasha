@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005134": {
+    "workId": "wk_000005134",
+    "title": "극장판 마법소녀 마도카☆마기카 [신편] 반역의 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17479150"
+    },
+    "titles": {
+      "ko": "극장판 마법소녀 마도카☆마기카 [신편] 반역의 이야기",
+      "en": "Puella Magi Madoka Magica: Rebellion",
+      "ja": "劇場版 魔法少女まどか☆マギカ［新編］叛逆の物語"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003134": {
+    "workId": "wk_000003134",
+    "title": "블루프로토콜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109596809"
+    },
+    "titles": {
+      "ko": "블루프로토콜",
+      "en": "Blue Protocol",
+      "ja": "Blue Protocol"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

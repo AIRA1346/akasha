@@ -109,5 +109,22 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003577": {
+    "workId": "wk_000003577",
+    "title": "키루스 대왕",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107354123"
+    },
+    "titles": {
+      "ko": "키루스 대왕",
+      "en": "Cyrus the Great"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

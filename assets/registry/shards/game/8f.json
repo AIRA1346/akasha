@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003481": {
+    "workId": "wk_000003481",
+    "title": "도검난무 무쌍",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111008389"
+    },
+    "titles": {
+      "ko": "도검난무 무쌍",
+      "en": "Touken Ranbu Warriors",
+      "ja": "刀剣乱舞無双"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

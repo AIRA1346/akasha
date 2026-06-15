@@ -1,0 +1,97 @@
+{
+  "wk_000003479": {
+    "workId": "wk_000003479",
+    "title": "스트리트 파이터 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110999026"
+    },
+    "titles": {
+      "ko": "스트리트 파이터 6",
+      "en": "Street Fighter 6",
+      "ja": "ストリートファイター6"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003642": {
+    "workId": "wk_000003642",
+    "title": "에이스 컴뱃 5: 디 언성 워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1112104"
+    },
+    "titles": {
+      "ko": "에이스 컴뱃 5: 디 언성 워",
+      "en": "Ace Combat 5: The Unsung War",
+      "ja": "エースコンバット5 ジ・アンサング・ウォー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003797": {
+    "workId": "wk_000003797",
+    "title": "AKIBA'S TRIP",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11189133"
+    },
+    "titles": {
+      "ko": "AKIBA'S TRIP",
+      "en": "Akiba's Trip",
+      "ja": "AKIBA'S TRIP"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004523": {
+    "workId": "wk_000004523",
+    "title": "도라에몽 너와 애완동물의 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11322840"
+    },
+    "titles": {
+      "ko": "도라에몽 너와 애완동물의 이야기",
+      "en": "Doraemon: Kimi to Pet no Monogatari",
+      "ja": "ドラえもん きみとペットの物語"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004906": {
+    "workId": "wk_000004906",
+    "title": "EA 스포츠 FC 24",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113835296"
+    },
+    "titles": {
+      "ko": "EA 스포츠 FC 24",
+      "en": "EA Sports FC 24",
+      "ja": "EA Sports FC 24"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

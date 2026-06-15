@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004309": {
+    "workId": "wk_000004309",
+    "title": "그림 없는 그림책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855663"
+    },
+    "titles": {
+      "ko": "그림 없는 그림책",
+      "en": "A Picture Book Without Pictures",
+      "ja": "絵のない絵本"
+    },
+    "creator": "ハンス・クリスチャン・アンデルセン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005052": {
+    "workId": "wk_000005052",
+    "title": "사업가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091634"
+    },
+    "titles": {
+      "ko": "사업가",
+      "en": "The Business Man"
+    },
+    "releaseYear": 1840,
+    "creator": "Edgar Allan Poe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

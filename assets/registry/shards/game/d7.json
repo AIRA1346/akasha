@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004662": {
+    "workId": "wk_000004662",
+    "title": "록맨 에그제 레전드 오브 네트워크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11350431"
+    },
+    "titles": {
+      "ko": "록맨 에그제 레전드 오브 네트워크",
+      "en": "Rockman EXE Legend of Network",
+      "ja": "ロックマンエグゼ レジェンド オブ ネットワーク"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

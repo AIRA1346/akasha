@@ -96,5 +96,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004136": {
+    "workId": "wk_000004136",
+    "title": "연애 에이전시",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118330055"
+    },
+    "titles": {
+      "ko": "연애 에이전시",
+      "en": "Renai Daikō",
+      "ja": "恋愛代行"
+    },
+    "creator": "Aka Akasaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004879": {
+    "workId": "wk_000004879",
+    "title": "사망 유희로 밥을 먹는다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123529113"
+    },
+    "titles": {
+      "ko": "사망 유희로 밥을 먹는다.",
+      "en": "Playing Death Games to Put Food on the Table",
+      "ja": "死亡遊戯で飯を食う。"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

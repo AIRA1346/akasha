@@ -1,0 +1,40 @@
+{
+  "wk_000003144": {
+    "workId": "wk_000003144",
+    "title": "스튜어트 리틀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048958"
+    },
+    "titles": {
+      "ko": "스튜어트 리틀",
+      "en": "Stuart Little",
+      "ja": "スチュアート・リトル"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004110": {
+    "workId": "wk_000004110",
+    "title": "하우스 오브 구찌",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105549749"
+    },
+    "titles": {
+      "ko": "하우스 오브 구찌",
+      "en": "House of Gucci",
+      "ja": "ハウス・オブ・グッチ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

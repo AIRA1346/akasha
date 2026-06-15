@@ -15,5 +15,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003183": {
+    "workId": "wk_000003183",
+    "title": "엔젤컵",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4762112"
+    },
+    "titles": {
+      "ko": "엔젤컵",
+      "en": "Angel Cup"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

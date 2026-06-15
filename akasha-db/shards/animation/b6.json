@@ -129,5 +129,22 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004140": {
+    "workId": "wk_000004140",
+    "title": "럭키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131378846"
+    },
+    "titles": {
+      "ko": "럭키",
+      "en": "Lucky"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

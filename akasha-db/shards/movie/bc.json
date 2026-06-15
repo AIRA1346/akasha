@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003743": {
+    "workId": "wk_000003743",
+    "title": "뉴욕의 연인들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052260"
+    },
+    "titles": {
+      "ko": "뉴욕의 연인들",
+      "en": "New Year's Eve",
+      "ja": "ニューイヤーズ・イブ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003951": {
+    "workId": "wk_000003951",
+    "title": "아임 유어 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438931"
+    },
+    "titles": {
+      "ko": "아임 유어 맨",
+      "en": "I'm Your Man",
+      "ja": "アイム・ユア・マン 恋人はアンドロイド"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

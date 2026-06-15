@@ -16,5 +16,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003562": {
+    "workId": "wk_000003562",
+    "title": "두근두근 문예부 플러스!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111051127"
+    },
+    "titles": {
+      "ko": "두근두근 문예부 플러스!",
+      "en": "Doki Doki Literature Club Plus!",
+      "ja": "ドキドキ文芸部プラス!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004371": {
+    "workId": "wk_000004371",
+    "title": "짱구는 못말려 부리부리 떡잎마을 대모험!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299624"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 부리부리 떡잎마을 대모험!",
+      "en": "Q11299624",
+      "ja": "クレヨンしんちゃん おバカ大忍伝 すすめ!カスカベ忍者隊!"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004767": {
+    "workId": "wk_000004767",
+    "title": "듄: 어웨이크닝",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113585920"
+    },
+    "titles": {
+      "ko": "듄: 어웨이크닝",
+      "en": "Q113585920"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005045": {
+    "workId": "wk_000005045",
+    "title": "마계전기 디스가이아 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113989175"
+    },
+    "titles": {
+      "ko": "마계전기 디스가이아 7",
+      "en": "Disgaea 7: Vows of the Virtueless",
+      "ja": "魔界戦記ディスガイア7"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

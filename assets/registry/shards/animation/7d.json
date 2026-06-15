@@ -164,5 +164,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003106": {
+    "workId": "wk_000003106",
+    "title": "타이거 마스크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1211572"
+    },
+    "titles": {
+      "ko": "타이거 마스크",
+      "en": "Tiger Mask",
+      "ja": "タイガーマスク"
+    },
+    "releaseYear": 1981,
+    "creator": "Ikki Kajiwara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003992": {
+    "workId": "wk_000003992",
+    "title": "완벽해서 귀여운 구석이 없다고 파혼당한 성녀는 이웃 나라에 팔린다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130581429"
+    },
+    "titles": {
+      "ko": "완벽해서 귀여운 구석이 없다고 파혼당한 성녀는 이웃 나라에 팔린다",
+      "en": "The Too-Perfect Saint",
+      "ja": "完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,73 @@
+{
+  "wk_000003958": {
+    "workId": "wk_000003958",
+    "title": "그 여름의 이틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114296"
+    },
+    "titles": {
+      "ko": "그 여름의 이틀",
+      "en": "Q110114296"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003965": {
+    "workId": "wk_000003965",
+    "title": "너에게 가는 속도 493KM",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114543"
+    },
+    "titles": {
+      "ko": "너에게 가는 속도 493KM",
+      "en": "Love All Play",
+      "ja": "時速493キロの恋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004560": {
+    "workId": "wk_000004560",
+    "title": "연애대전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110646204"
+    },
+    "titles": {
+      "ko": "연애대전",
+      "en": "Love to Hate You",
+      "ja": "その恋、断固お断りします"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005111": {
+    "workId": "wk_000005111",
+    "title": "빛나는 그대에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111966448"
+    },
+    "titles": {
+      "ko": "빛나는 그대에게",
+      "en": "Dear Radiance",
+      "ja": "光る君へ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000003498": {
+    "workId": "wk_000003498",
+    "title": "늑대와 빨간 재킷",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105081812"
+    },
+    "titles": {
+      "ko": "늑대와 빨간 재킷",
+      "en": "Hunted"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

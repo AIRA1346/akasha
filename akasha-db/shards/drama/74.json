@@ -51,5 +51,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003406": {
+    "workId": "wk_000003406",
+    "title": "생방송 이목집중",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460964"
+    },
+    "titles": {
+      "ko": "생방송 이목집중",
+      "en": "Q109460964"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

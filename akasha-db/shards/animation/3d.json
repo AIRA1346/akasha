@@ -49,5 +49,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005138": {
+    "workId": "wk_000005138",
+    "title": "시고후미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1754944"
+    },
+    "titles": {
+      "ko": "시고후미",
+      "en": "Shigofumi: Letters from the Departed",
+      "ja": "シゴフミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005285": {
+    "workId": "wk_000005285",
+    "title": "모노노케 히메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q186572"
+    },
+    "titles": {
+      "ko": "모노노케 히메",
+      "en": "Princess Mononoke",
+      "ja": "もののけ姫"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

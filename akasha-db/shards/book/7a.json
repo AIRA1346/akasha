@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003138": {
+    "workId": "wk_000003138",
+    "title": "수경주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068478"
+    },
+    "titles": {
+      "ko": "수경주",
+      "en": "Commentary on the Water Classic",
+      "ja": "水経注"
+    },
+    "creator": "Li Daoyuan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003221": {
+    "workId": "wk_000003221",
+    "title": "외톨이의 이세계 공략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106955945"
+    },
+    "titles": {
+      "ko": "외톨이의 이세계 공략",
+      "en": "Loner Life in Another World",
+      "ja": "ひとりぼっちの異世界攻略"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

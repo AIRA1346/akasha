@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003156": {
+    "workId": "wk_000003156",
+    "title": "개그사냥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459064"
+    },
+    "titles": {
+      "ko": "개그사냥",
+      "en": "Q109459064"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004865": {
+    "workId": "wk_000004865",
+    "title": "모리 모토나리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11126442"
+    },
+    "titles": {
+      "ko": "모리 모토나리",
+      "en": "Mōri Motonari",
+      "ja": "毛利元就"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004668": {
+    "workId": "wk_000004668",
+    "title": "떠남의 기억",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108840007"
+    },
+    "titles": {
+      "ko": "떠남의 기억",
+      "en": "Memory of Departure"
+    },
+    "releaseYear": 1987,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004834": {
+    "workId": "wk_000004834",
+    "title": "집에 갇힌 악당들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088946"
+    },
+    "titles": {
+      "ko": "집에 갇힌 악당들",
+      "en": "Rogues in the House"
+    },
+    "releaseYear": 1934,
+    "creator": "Robert E. Howard",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

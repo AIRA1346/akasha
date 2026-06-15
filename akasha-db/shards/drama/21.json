@@ -16,5 +16,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003596": {
+    "workId": "wk_000003596",
+    "title": "나는 듯이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10948769"
+    },
+    "titles": {
+      "ko": "나는 듯이",
+      "en": "As If in Flight",
+      "ja": "翔ぶが如く"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004272": {
+    "workId": "wk_000004272",
+    "title": "트롯 매직유랑단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117966"
+    },
+    "titles": {
+      "ko": "트롯 매직유랑단",
+      "en": "Trot Magic Wanderer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004793": {
+    "workId": "wk_000004793",
+    "title": "구미호뎐 1938",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111145272"
+    },
+    "titles": {
+      "ko": "구미호뎐 1938",
+      "en": "Tale of the Nine Tailed 1938",
+      "ja": "九尾狐伝1938"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005256": {
+    "workId": "wk_000005256",
+    "title": "뮤직 러버스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233878"
+    },
+    "titles": {
+      "ko": "뮤직 러버스",
+      "en": "Music Lovers DREAM LIVE 2009",
+      "ja": "Music Lovers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

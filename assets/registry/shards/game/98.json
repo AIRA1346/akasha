@@ -98,5 +98,98 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000002969": {
+    "workId": "wk_000002969",
+    "title": "리프트브레이커",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108908477"
+    },
+    "titles": {
+      "ko": "리프트브레이커",
+      "en": "Q108908477",
+      "ja": "リフトブレイカー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002973": {
+    "workId": "wk_000002973",
+    "title": "카운터-스트라이크 2D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090793"
+    },
+    "titles": {
+      "ko": "카운터-스트라이크 2D",
+      "en": "CS2D"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003648": {
+    "workId": "wk_000003648",
+    "title": "메루루의 아틀리에 ~알란드의 연금술사 3~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1113356"
+    },
+    "titles": {
+      "ko": "메루루의 아틀리에 ~알란드의 연금술사 3~",
+      "en": "Atelier Meruru: The Apprentice of Arland",
+      "ja": "メルルのアトリエ 〜アーランドの錬金術士3〜"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003862": {
+    "workId": "wk_000003862",
+    "title": "BUSHI청룡전~두 사람의 용사~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191904"
+    },
+    "titles": {
+      "ko": "BUSHI청룡전~두 사람의 용사~",
+      "en": "Bushi Seiryūden: Futari no Yūsha",
+      "ja": "BUSHI青龍伝〜二人の勇者〜"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003927": {
+    "workId": "wk_000003927",
+    "title": "숲속의 작은 마녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112052998"
+    },
+    "titles": {
+      "ko": "숲속의 작은 마녀",
+      "en": "Little Witch in the Woods"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

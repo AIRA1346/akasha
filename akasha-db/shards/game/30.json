@@ -55,5 +55,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003560": {
+    "workId": "wk_000003560",
+    "title": "포켓몬스터바이올렛",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111031687"
+    },
+    "titles": {
+      "ko": "포켓몬스터바이올렛",
+      "en": "Pokémon Violet",
+      "ja": "ポケットモンスター バイオレット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004161": {
+    "workId": "wk_000004161",
+    "title": "악튜러스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257297"
+    },
+    "titles": {
+      "ko": "악튜러스",
+      "en": "Q11257297",
+      "ja": "アークトゥルス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004162": {
+    "workId": "wk_000004162",
+    "title": "여름하늘의 페르세우스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259849"
+    },
+    "titles": {
+      "ko": "여름하늘의 페르세우스",
+      "en": "Natsuzora no Perseus",
+      "ja": "夏空のペルセウス"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004441": {
+    "workId": "wk_000004441",
+    "title": "젤다의 전설 신들의 트라이포스 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11300470"
+    },
+    "titles": {
+      "ko": "젤다의 전설 신들의 트라이포스 2",
+      "en": "The Legend of Zelda: A Link Between Worlds",
+      "ja": "ゼルダの伝説 神々のトライフォース2"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

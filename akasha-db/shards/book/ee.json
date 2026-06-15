@@ -36,5 +36,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004168": {
+    "workId": "wk_000004168",
+    "title": "가장 아름다운 약속",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1084201"
+    },
+    "titles": {
+      "ko": "가장 아름다운 약속",
+      "en": "The Wish List"
+    },
+    "releaseYear": 2000,
+    "creator": "Eoin Colfer",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004170": {
+    "workId": "wk_000004170",
+    "title": "오래된 정원",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108464841"
+    },
+    "titles": {
+      "ko": "오래된 정원",
+      "en": "The Old Garden"
+    },
+    "creator": "Hwang Sok-yong",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

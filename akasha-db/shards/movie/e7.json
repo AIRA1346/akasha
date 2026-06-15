@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004535": {
+    "workId": "wk_000004535",
+    "title": "골드핑거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105685552"
+    },
+    "titles": {
+      "ko": "골드핑거",
+      "en": "The Goldfinger",
+      "ja": "ゴールドフィンガー　巨大金融詐欺事件"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

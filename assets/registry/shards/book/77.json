@@ -1,0 +1,20 @@
+{
+  "wk_000004725": {
+    "workId": "wk_000004725",
+    "title": "불수반열반약설교계경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886832"
+    },
+    "titles": {
+      "ko": "불수반열반약설교계경",
+      "en": "Bequeathed Teachings Sutra",
+      "ja": "仏垂般涅槃略説教誡経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

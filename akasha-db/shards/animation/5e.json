@@ -75,5 +75,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003985": {
+    "workId": "wk_000003985",
+    "title": "온화한 귀족의 휴가의 권장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130474873"
+    },
+    "titles": {
+      "ko": "온화한 귀족의 휴가의 권장",
+      "en": "A Gentle Noble's Vacation Recommendation",
+      "ja": "穏やか貴族の休暇のすすめ。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

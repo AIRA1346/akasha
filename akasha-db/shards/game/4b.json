@@ -90,5 +90,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002970": {
+    "workId": "wk_000002970",
+    "title": "F1 레이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090190"
+    },
+    "titles": {
+      "ko": "F1 레이스",
+      "en": "F-1 Race",
+      "ja": "F1レース"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

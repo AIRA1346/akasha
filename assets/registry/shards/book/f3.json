@@ -1,0 +1,79 @@
+{
+  "wk_000004455": {
+    "workId": "wk_000004455",
+    "title": "약속",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108687101"
+    },
+    "titles": {
+      "ko": "약속",
+      "en": "The Promise"
+    },
+    "releaseYear": 2021,
+    "creator": "Damon Galgut",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004600": {
+    "workId": "wk_000004600",
+    "title": "밤의 여행자들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108810110"
+    },
+    "titles": {
+      "ko": "밤의 여행자들",
+      "en": "The Disaster Tourist"
+    },
+    "releaseYear": 2013,
+    "creator": "Yun Ko-eun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004916": {
+    "workId": "wk_000004916",
+    "title": "출삼장기집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10896623"
+    },
+    "titles": {
+      "ko": "출삼장기집",
+      "en": "Collected Records concerning the Tripitaka",
+      "ja": "出三蔵記集"
+    },
+    "creator": "승우",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005106": {
+    "workId": "wk_000005106",
+    "title": "하늘을 나는 홍보실",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10921956"
+    },
+    "titles": {
+      "ko": "하늘을 나는 홍보실",
+      "en": "Soratobu Kōhōshitsu",
+      "ja": "空飛ぶ広報室"
+    },
+    "releaseYear": 2012,
+    "creator": "Hiro Arikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

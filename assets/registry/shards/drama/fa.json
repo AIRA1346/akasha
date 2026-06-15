@@ -15,5 +15,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005004": {
+    "workId": "wk_000005004",
+    "title": "커튼콜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111792312"
+    },
+    "titles": {
+      "ko": "커튼콜",
+      "en": "Curtain Call"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005264": {
+    "workId": "wk_000005264",
+    "title": "NHK 뉴스 9",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235031"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 9",
+      "en": "NHK News 9",
+      "ja": "NHKニュース9"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

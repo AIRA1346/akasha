@@ -69,5 +69,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003993": {
+    "workId": "wk_000003993",
+    "title": "프리! 더 파이널 스트로크 전편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130597797"
+    },
+    "titles": {
+      "ko": "프리! 더 파이널 스트로크 전편",
+      "en": "Q130597797",
+      "ja": "劇場版 Free!-the Final Stroke- 前編"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004203": {
+    "workId": "wk_000004203",
+    "title": "명탐정 코난: 탐정들의 진혼가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317462"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 탐정들의 진혼가",
+      "en": "Detective Conan: The Private Eyes' Requiem",
+      "ja": "名探偵コナン 探偵たちの鎮魂歌"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004207": {
+    "workId": "wk_000004207",
+    "title": "이상한 나라에서 앨리스와 -Dive in Wonderland-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131795251"
+    },
+    "titles": {
+      "ko": "이상한 나라에서 앨리스와 -Dive in Wonderland-",
+      "en": "Fushigi no Kuni de Alice to: Dive in Wonderland",
+      "ja": "不思議の国でアリスと -Dive in Wonderland-"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

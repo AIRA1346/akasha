@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003780": {
+    "workId": "wk_000003780",
+    "title": "우주전함 티라미스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127958226"
+    },
+    "titles": {
+      "ko": "우주전함 티라미스",
+      "en": "Space Battleship Tiramisu",
+      "ja": "宇宙戦艦ティラミス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005086": {
+    "workId": "wk_000005086",
+    "title": "왕도둑 JING",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1742099"
+    },
+    "titles": {
+      "ko": "왕도둑 JING",
+      "en": "Jing: King of Bandits",
+      "ja": "王ドロボウJING"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

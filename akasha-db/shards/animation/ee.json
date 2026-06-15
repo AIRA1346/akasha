@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004499": {
+    "workId": "wk_000004499",
+    "title": "메이드 양은 먹기만 할 뿐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135963574"
+    },
+    "titles": {
+      "ko": "메이드 양은 먹기만 할 뿐",
+      "en": "The Food Diary of Miss Maid",
+      "ja": "メイドさんは食べるだけ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

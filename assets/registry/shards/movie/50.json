@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004245": {
+    "workId": "wk_000004245",
+    "title": "라이드 오어 다이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105560027"
+    },
+    "titles": {
+      "ko": "라이드 오어 다이",
+      "en": "Ride or Die",
+      "ja": "彼女"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

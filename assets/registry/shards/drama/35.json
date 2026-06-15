@@ -16,5 +16,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004401": {
+    "workId": "wk_000004401",
+    "title": "NRJ 뮤직 어워드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1102214"
+    },
+    "titles": {
+      "ko": "NRJ 뮤직 어워드",
+      "en": "NRJ Music Awards",
+      "ja": "NRJ ミュージック・アワード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004484": {
+    "workId": "wk_000004484",
+    "title": "비밀의 아라시짱!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11054478"
+    },
+    "titles": {
+      "ko": "비밀의 아라시짱!",
+      "en": "THE ARASHI SECRET TV SHOW",
+      "ja": "ひみつの嵐ちゃん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004924": {
+    "workId": "wk_000004924",
+    "title": "코믹 릴리프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114459"
+    },
+    "titles": {
+      "ko": "코믹 릴리프",
+      "en": "Comic Relief",
+      "ja": "コミック・リリーフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003556": {
+    "workId": "wk_000003556",
+    "title": "닌자와 암살자의 동거",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125569311"
+    },
+    "titles": {
+      "ko": "닌자와 암살자의 동거",
+      "en": "A Ninja and an Assassin Under One Roof",
+      "ja": "忍者と殺し屋のふたりぐらし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

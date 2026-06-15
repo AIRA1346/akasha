@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004818": {
+    "workId": "wk_000004818",
+    "title": "불가사의 던전 떠돌이 시렌 5: 포춘 타워와 운명의 주사위",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361732"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 5: 포춘 타워와 운명의 주사위",
+      "en": "Shiren the Wanderer: The Tower of Fortune and the Dice of Fate",
+      "ja": "不思議のダンジョン 風来のシレン5 フォーチュンタワーと運命のダイス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

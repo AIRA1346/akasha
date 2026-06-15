@@ -1,0 +1,21 @@
+{
+  "wk_000003223": {
+    "workId": "wk_000003223",
+    "title": "정의가 잠든 사이에",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106958107"
+    },
+    "titles": {
+      "ko": "정의가 잠든 사이에",
+      "en": "While Justice Sleeps"
+    },
+    "releaseYear": 2021,
+    "creator": "ステイシー・エイブラムス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

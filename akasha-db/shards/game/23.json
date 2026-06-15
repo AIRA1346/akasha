@@ -68,5 +68,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003474": {
+    "workId": "wk_000003474",
+    "title": "오션즈 하트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110904727"
+    },
+    "titles": {
+      "ko": "오션즈 하트",
+      "en": "Ocean's Heart",
+      "ja": "オーシャンズハート"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004768": {
+    "workId": "wk_000004768",
+    "title": "스트랜디드: 에일리언 던",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113586075"
+    },
+    "titles": {
+      "ko": "스트랜디드: 에일리언 던",
+      "en": "Stranded: Alien Dawn"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

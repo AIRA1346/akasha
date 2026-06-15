@@ -1,0 +1,55 @@
+{
+  "wk_000004270": {
+    "workId": "wk_000004270",
+    "title": "트로트 엑스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117962"
+    },
+    "titles": {
+      "ko": "트로트 엑스",
+      "en": "Q110117962"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004628": {
+    "workId": "wk_000004628",
+    "title": "우월한 하루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110811082"
+    },
+    "titles": {
+      "ko": "우월한 하루",
+      "en": "A Superior Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005312": {
+    "workId": "wk_000005312",
+    "title": "실크로드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235413"
+    },
+    "titles": {
+      "ko": "실크로드",
+      "en": "The Silk Road",
+      "ja": "NHK特集 シルクロード"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

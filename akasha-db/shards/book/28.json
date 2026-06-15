@@ -18,5 +18,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003051": {
+    "workId": "wk_000003051",
+    "title": "토끼와 거북이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067484"
+    },
+    "titles": {
+      "ko": "토끼와 거북이",
+      "en": "The Tortoise and the Hare",
+      "ja": "ウサギとカメ"
+    },
+    "creator": "アイソーポス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004018": {
+    "workId": "wk_000004018",
+    "title": "그 달은 일요일뿐이었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108005484"
+    },
+    "titles": {
+      "ko": "그 달은 일요일뿐이었다",
+      "en": "A Month of Sundays"
+    },
+    "releaseYear": 1975,
+    "creator": "John Updike",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

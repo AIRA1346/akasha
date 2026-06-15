@@ -67,5 +67,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003676": {
+    "workId": "wk_000003676",
+    "title": "모범형사 Part Ⅱ",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109537053"
+    },
+    "titles": {
+      "ko": "모범형사 Part Ⅱ",
+      "en": "The Good Detective 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

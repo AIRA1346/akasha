@@ -1,0 +1,40 @@
+{
+  "wk_000005216": {
+    "workId": "wk_000005216",
+    "title": "극장판 해피니스 차지 프리큐어! 인형 나라의 발레리나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18338868"
+    },
+    "titles": {
+      "ko": "극장판 해피니스 차지 프리큐어! 인형 나라의 발레리나",
+      "en": "HappinessCharge PreCure! the Movie: The Ballerina of the Land of Dolls",
+      "ja": "映画 ハピネスチャージプリキュア! 人形の国のバレリーナ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005282": {
+    "workId": "wk_000005282",
+    "title": "올리브 키터리지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18601923"
+    },
+    "titles": {
+      "ko": "올리브 키터리지",
+      "en": "Olive Kitteridge",
+      "ja": "オリーヴ・キタリッジ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004419": {
+    "workId": "wk_000004419",
+    "title": "29세 독신 중견 모험가의 일상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134350657"
+    },
+    "titles": {
+      "ko": "29세 독신 중견 모험가의 일상",
+      "en": "An Adventurer's Daily Grind at Age 29",
+      "ja": "29歳独身中堅冒険者の日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

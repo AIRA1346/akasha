@@ -50,5 +50,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003871": {
+    "workId": "wk_000003871",
+    "title": "와일드프로스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111968535"
+    },
+    "titles": {
+      "ko": "와일드프로스트",
+      "en": "Wildfrost"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004446": {
+    "workId": "wk_000004446",
+    "title": "사이버 사이클즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11304151"
+    },
+    "titles": {
+      "ko": "사이버 사이클즈",
+      "en": "Cyber Cycles",
+      "ja": "サイバーサイクルズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004528": {
+    "workId": "wk_000004528",
+    "title": "별의 커비 울트라 슈퍼 디럭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132456"
+    },
+    "titles": {
+      "ko": "별의 커비 울트라 슈퍼 디럭스",
+      "en": "Kirby Super Star Ultra",
+      "ja": "星のカービィ ウルトラスーパーデラックス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005241": {
+    "workId": "wk_000005241",
+    "title": "베어너클",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143285"
+    },
+    "titles": {
+      "ko": "베어너클",
+      "en": "Streets of Rage",
+      "ja": "ベア・ナックル"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

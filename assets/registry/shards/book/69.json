@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003941": {
+    "workId": "wk_000003941",
+    "title": "파이널 걸 서포트 그룹",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107723126"
+    },
+    "titles": {
+      "ko": "파이널 걸 서포트 그룹",
+      "en": "The Final Girl Support Group"
+    },
+    "releaseYear": 2021,
+    "creator": "Grady Hendrix",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

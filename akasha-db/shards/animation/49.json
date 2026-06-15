@@ -78,5 +78,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004719": {
+    "workId": "wk_000004719",
+    "title": "초속 5센티미터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q143513"
+    },
+    "titles": {
+      "ko": "초속 5센티미터",
+      "en": "5 Centimeters Per Second",
+      "ja": "秒速5センチメートル"
+    },
+    "releaseYear": 2007,
+    "creator": "新海誠",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004967": {
+    "workId": "wk_000004967",
+    "title": "우주선장 율리시스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1637108"
+    },
+    "titles": {
+      "ko": "우주선장 율리시스",
+      "en": "Ulysses 31",
+      "ja": "宇宙伝説ユリシーズ31"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005215": {
+    "workId": "wk_000005215",
+    "title": "나탈리 우드의 신비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1831165"
+    },
+    "titles": {
+      "ko": "나탈리 우드의 신비",
+      "en": "The Mystery of Natalie Wood",
+      "ja": "ナタリー・ウッドの謎"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

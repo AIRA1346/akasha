@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003083": {
+    "workId": "wk_000003083",
+    "title": "미확인으로 진행형",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11519613"
+    },
+    "titles": {
+      "ko": "미확인으로 진행형",
+      "en": "Engaged to the Unidentified",
+      "ja": "未確認で進行形"
+    },
+    "creator": "Cherry Arai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004799": {
+    "workId": "wk_000004799",
+    "title": "킬 블루",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122758750"
+    },
+    "titles": {
+      "ko": "킬 블루",
+      "en": "Kill Blue",
+      "ja": "キルアオ"
+    },
+    "creator": "Tadatoshi Fujimaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

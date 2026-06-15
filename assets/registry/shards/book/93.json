@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004985": {
+    "workId": "wk_000004985",
+    "title": "북계자의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10903720"
+    },
+    "titles": {
+      "ko": "북계자의",
+      "en": "Běixī zìyì"
+    },
+    "creator": "Chun Chen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

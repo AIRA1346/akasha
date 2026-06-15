@@ -1,0 +1,20 @@
+{
+  "wk_000005214": {
+    "workId": "wk_000005214",
+    "title": "닥터 슬럼프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18234002"
+    },
+    "titles": {
+      "ko": "닥터 슬럼프",
+      "en": "Dr. Slump",
+      "ja": "ドクタースランプ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

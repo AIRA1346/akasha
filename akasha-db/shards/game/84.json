@@ -69,5 +69,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003296": {
+    "workId": "wk_000003296",
+    "title": "큐빅 닌자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11058230"
+    },
+    "titles": {
+      "ko": "큐빅 닌자",
+      "en": "Cubic Ninja",
+      "ja": "キュービックニンジャ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004090": {
+    "workId": "wk_000004090",
+    "title": "Trans' ~나와 나의 경계선~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251364"
+    },
+    "titles": {
+      "ko": "Trans' ~나와 나의 경계선~",
+      "en": "Trans' ~Boku to Atashi no Kyoukaisen~",
+      "ja": "Trans' 〜僕とあたしの境界線〜"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004153": {
+    "workId": "wk_000004153",
+    "title": "엑스 오퍼레이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11254851"
+    },
+    "titles": {
+      "ko": "엑스 오퍼레이션",
+      "en": "X Operations",
+      "ja": "X operations"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004972": {
+    "workId": "wk_000004972",
+    "title": "니드 포 스피드 III: 핫 퍼슈트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139007"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 III: 핫 퍼슈트",
+      "en": "Need for Speed III: Hot Pursuit",
+      "ja": "ニード・フォー・スピードIII"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

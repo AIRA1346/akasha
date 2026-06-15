@@ -49,5 +49,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004086": {
+    "workId": "wk_000004086",
+    "title": "사라만다 포터블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248216"
+    },
+    "titles": {
+      "ko": "사라만다 포터블",
+      "en": "Salamander Portable",
+      "ja": "沙羅曼蛇 ポータブル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004821": {
+    "workId": "wk_000004821",
+    "title": "불가사의 던전 떠돌이 시렌 GB: 달빛마을의 괴물",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361733"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 GB: 달빛마을의 괴물",
+      "en": "Shiren the Wanderer GB: Moonlight Village Monster",
+      "ja": "不思議のダンジョン 風来のシレンGB 月影村の怪物"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003475": {
+    "workId": "wk_000003475",
+    "title": "드레곤 슬레이어: 영웅전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11091967"
+    },
+    "titles": {
+      "ko": "드레곤 슬레이어: 영웅전설",
+      "en": "Dragon Slayer: The Legend of Heroes",
+      "ja": "ドラゴンスレイヤー英雄伝説"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

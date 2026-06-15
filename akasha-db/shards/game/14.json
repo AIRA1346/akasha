@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003214": {
+    "workId": "wk_000003214",
+    "title": "콜 오브 듀티: 모던 워페어 II 2022",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110206584"
+    },
+    "titles": {
+      "ko": "콜 오브 듀티: 모던 워페어 II 2022",
+      "en": "Q110206584",
+      "ja": "コール オブ デューティ モダン・ウォーフェアⅡ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005296": {
+    "workId": "wk_000005296",
+    "title": "네모바지 스폰지밥: 집게리아 요리 콘테스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114354591"
+    },
+    "titles": {
+      "ko": "네모바지 스폰지밥: 집게리아 요리 콘테스트",
+      "en": "SpongeBob: Krusty Cook-Off",
+      "ja": "スポンジ・ボブ : カニカーニ・クックオフ"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

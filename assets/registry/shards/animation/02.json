@@ -1,0 +1,58 @@
+{
+  "wk_000003116": {
+    "workId": "wk_000003116",
+    "title": "디지몬 어드벤처 우리들의 워 게임!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1224659"
+    },
+    "titles": {
+      "ko": "디지몬 어드벤처 우리들의 워 게임!",
+      "en": "Digimon Adventure: Our War Game!",
+      "ja": "デジモンアドベンチャー ぼくらのウォーゲーム!"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004816": {
+    "workId": "wk_000004816",
+    "title": "버디 컴플렉스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15502387"
+    },
+    "titles": {
+      "ko": "버디 컴플렉스",
+      "en": "Buddy Complex",
+      "ja": "バディ・コンプレックス"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005027": {
+    "workId": "wk_000005027",
+    "title": "유루유리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16830194"
+    },
+    "titles": {
+      "ko": "유루유리",
+      "en": "YuruYuri",
+      "ja": "ゆるゆり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

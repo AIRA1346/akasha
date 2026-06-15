@@ -69,5 +69,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004007": {
+    "workId": "wk_000004007",
+    "title": "프린세스 파티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11239972"
+    },
+    "titles": {
+      "ko": "프린세스 파티",
+      "en": "Princess Party",
+      "ja": "Princess Party 〜プリンセスパーティー〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004653": {
+    "workId": "wk_000004653",
+    "title": "미라이다갓키",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11342771"
+    },
+    "titles": {
+      "ko": "미라이다갓키",
+      "en": "Future TomTom",
+      "ja": "ミライダガッキ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

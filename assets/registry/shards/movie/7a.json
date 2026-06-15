@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003811": {
+    "workId": "wk_000003811",
+    "title": "후레자식들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105320900"
+    },
+    "titles": {
+      "ko": "후레자식들",
+      "en": "Mother Schmuckers"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

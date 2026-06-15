@@ -1,0 +1,20 @@
+{
+  "wk_000004171": {
+    "workId": "wk_000004171",
+    "title": "귀인환등초",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108478846"
+    },
+    "titles": {
+      "ko": "귀인환등초",
+      "en": "Sword of the Demon Hunter: Kijin Gentōshō",
+      "ja": "鬼人幻燈抄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

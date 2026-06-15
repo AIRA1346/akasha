@@ -67,5 +67,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003701": {
+    "workId": "wk_000003701",
+    "title": "휴일의 악당",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116908965"
+    },
+    "titles": {
+      "ko": "휴일의 악당",
+      "en": "Mr. Villain's Day Off",
+      "ja": "休日のわるものさん"
+    },
+    "releaseYear": 2018,
+    "creator": "Yuu Morikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004873": {
+    "workId": "wk_000004873",
+    "title": "나는 성간 국가의 악덕 영주!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123052411"
+    },
+    "titles": {
+      "ko": "나는 성간 국가의 악덕 영주!",
+      "en": "I'm the Evil Lord of an Intergalactic Empire!",
+      "ja": "俺は星間国家の悪徳領主!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

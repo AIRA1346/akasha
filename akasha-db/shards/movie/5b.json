@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004670": {
+    "workId": "wk_000004670",
+    "title": "배틀 트랩",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105710029"
+    },
+    "titles": {
+      "ko": "배틀 트랩",
+      "en": "Kamp Holland"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

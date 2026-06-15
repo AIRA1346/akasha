@@ -16,5 +16,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003023": {
+    "workId": "wk_000003023",
+    "title": "프레시 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205226"
+    },
+    "titles": {
+      "ko": "프레시 프리큐어!",
+      "en": "Fresh Pretty Cure!",
+      "ja": "フレッシュプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003996": {
+    "workId": "wk_000003996",
+    "title": "우마무스메 PRETTY DERBY 새로운 시대의 문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130598211"
+    },
+    "titles": {
+      "ko": "우마무스메 PRETTY DERBY 새로운 시대의 문",
+      "en": "Umamusume: Pretty Derby - Beginning of a New Era",
+      "ja": "ウマ娘 プリティーダービー 新時代の扉"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005291": {
+    "workId": "wk_000005291",
+    "title": "그것이 성우!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18711417"
+    },
+    "titles": {
+      "ko": "그것이 성우!",
+      "en": "Seiyu's Life!",
+      "ja": "それが声優!"
+    },
+    "releaseYear": 2011,
+    "creator": "Masumi Asano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

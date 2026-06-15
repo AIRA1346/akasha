@@ -70,5 +70,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004335": {
+    "workId": "wk_000004335",
+    "title": "향양이생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118221"
+    },
+    "titles": {
+      "ko": "향양이생",
+      "en": "Q110118221"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004860": {
+    "workId": "wk_000004860",
+    "title": "으라차차 내 인생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111190707"
+    },
+    "titles": {
+      "ko": "으라차차 내 인생",
+      "en": "Bravo, My Life",
+      "ja": "ウラチャチャ私の人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005113": {
+    "workId": "wk_000005113",
+    "title": "dinner",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11196865"
+    },
+    "titles": {
+      "ko": "dinner",
+      "en": "dinner",
+      "ja": "dinner"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

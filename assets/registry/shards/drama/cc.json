@@ -71,5 +71,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003588": {
+    "workId": "wk_000003588",
+    "title": "JIBS 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464398"
+    },
+    "titles": {
+      "ko": "JIBS 뉴스특보",
+      "en": "Q109464398"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003675": {
+    "workId": "wk_000003675",
+    "title": "행복 부동산 연구소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109535361"
+    },
+    "titles": {
+      "ko": "행복 부동산 연구소",
+      "en": "Q109535361"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003966": {
+    "workId": "wk_000003966",
+    "title": "넥스트 히어로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114553"
+    },
+    "titles": {
+      "ko": "넥스트 히어로",
+      "en": "Q110114553"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

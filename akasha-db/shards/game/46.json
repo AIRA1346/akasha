@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003207": {
+    "workId": "wk_000003207",
+    "title": "다시 그리는 시간",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109971910"
+    },
+    "titles": {
+      "ko": "다시 그리는 시간",
+      "en": "For All Time"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004584": {
+    "workId": "wk_000004584",
+    "title": "네오스팀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11325247"
+    },
+    "titles": {
+      "ko": "네오스팀",
+      "en": "Neo Steam: The Shattered Continent",
+      "ja": "ネオスチーム"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

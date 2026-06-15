@@ -1,0 +1,21 @@
+{
+  "wk_000003458": {
+    "workId": "wk_000003458",
+    "title": "나의 히어로 아카데미아 더 무비: YOU'RE NEXT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124388041"
+    },
+    "titles": {
+      "ko": "나의 히어로 아카데미아 더 무비: YOU'RE NEXT",
+      "en": "My Hero Academia: You're Next",
+      "ja": "僕のヒーローアカデミア THE MOVIE ユアネクスト"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003673": {
+    "workId": "wk_000003673",
+    "title": "빌로우 제로 (2021년 영화)",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105165329"
+    },
+    "titles": {
+      "ko": "빌로우 제로 (2021년 영화)",
+      "en": "Below Zero",
+      "ja": "薄氷"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

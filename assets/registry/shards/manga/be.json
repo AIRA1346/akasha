@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003343": {
+    "workId": "wk_000003343",
+    "title": "고베 거주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11589841"
+    },
+    "titles": {
+      "ko": "고베 거주",
+      "en": "From Kobe",
+      "ja": "神戸在住"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

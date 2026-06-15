@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003935": {
+    "workId": "wk_000003935",
+    "title": "밀크 인사이드 어 백 오브 밀크 인사이드 어 백 오브 밀크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112230766"
+    },
+    "titles": {
+      "ko": "밀크 인사이드 어 백 오브 밀크 인사이드 어 백 오브 밀크",
+      "en": "Milk inside a bag of milk inside a bag of milk",
+      "ja": "Milk inside a bag of milk inside a bag of milk"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

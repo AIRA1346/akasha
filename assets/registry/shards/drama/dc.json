@@ -16,5 +16,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003905": {
+    "workId": "wk_000003905",
+    "title": "MBN 뉴스와이드12",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113941"
+    },
+    "titles": {
+      "ko": "MBN 뉴스와이드12",
+      "en": "Q110113941"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003957": {
+    "workId": "wk_000003957",
+    "title": "굿모닝 라이프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114267"
+    },
+    "titles": {
+      "ko": "굿모닝 라이프",
+      "en": "Q110114267"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004262": {
+    "workId": "wk_000004262",
+    "title": "일과 사람들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110116135"
+    },
+    "titles": {
+      "ko": "일과 사람들",
+      "en": "Q110116135"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

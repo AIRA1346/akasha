@@ -68,5 +68,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004118": {
+    "workId": "wk_000004118",
+    "title": "사이공 억류기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115228"
+    },
+    "titles": {
+      "ko": "사이공 억류기",
+      "en": "Q110115228"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004395": {
+    "workId": "wk_000004395",
+    "title": "현재는 아름다워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118449"
+    },
+    "titles": {
+      "ko": "현재는 아름다워",
+      "en": "It's Beautiful Now",
+      "ja": "ヒョンジェは美しい～ボクが結婚する理由（わけ）～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004919": {
+    "workId": "wk_000004919",
+    "title": "금소대하2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111370583"
+    },
+    "titles": {
+      "ko": "금소대하2",
+      "en": "Barrack O'Karma 1968",
+      "ja": "バラックオカルマ2/金宵大厦2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

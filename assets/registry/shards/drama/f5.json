@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004936": {
+    "workId": "wk_000004936",
+    "title": "선사시대: 공룡이 지배하던 지구",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111582387"
+    },
+    "titles": {
+      "ko": "선사시대: 공룡이 지배하던 지구",
+      "en": "Prehistoric Planet",
+      "ja": "太古の地球から よみがえる恐竜たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "wk_000003342": {
+    "workId": "wk_000003342",
+    "title": "신이 말하는 대로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11588621"
+    },
+    "titles": {
+      "ko": "신이 말하는 대로",
+      "en": "As the Gods Will",
+      "ja": "神さまの言うとおり"
+    },
+    "creator": "Muneyuki Kaneshiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003307": {
+    "workId": "wk_000003307",
+    "title": "잃어버린 희망",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107071877"
+    },
+    "titles": {
+      "ko": "잃어버린 희망",
+      "en": "Hopeless"
+    },
+    "creator": "Colleen Hoover",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

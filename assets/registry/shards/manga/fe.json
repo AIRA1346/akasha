@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004567": {
+    "workId": "wk_000004567",
+    "title": "수호천사 히마리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1203079"
+    },
+    "titles": {
+      "ko": "수호천사 히마리",
+      "en": "Omamori Himari",
+      "ja": "おまもりひまり"
+    },
+    "creator": "Milan Matra",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

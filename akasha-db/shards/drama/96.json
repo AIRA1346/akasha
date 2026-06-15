@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003678": {
+    "workId": "wk_000003678",
+    "title": "서바이벌 스타오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546016"
+    },
+    "titles": {
+      "ko": "서바이벌 스타오디션",
+      "en": "Q109546016"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004613": {
+    "workId": "wk_000004613",
+    "title": "도쿠가와 요시노부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11071641"
+    },
+    "titles": {
+      "ko": "도쿠가와 요시노부",
+      "en": "Tokugawa Yoshinobu",
+      "ja": "徳川慶喜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

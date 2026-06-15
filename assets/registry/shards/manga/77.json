@@ -16,5 +16,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003973": {
+    "workId": "wk_000003973",
+    "title": "비실비실 선생님",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117156949"
+    },
+    "titles": {
+      "ko": "비실비실 선생님",
+      "en": "Yowayowa Sensei",
+      "ja": "よわよわ先生"
+    },
+    "creator": "Fukuchi Kamio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004950": {
+    "workId": "wk_000004950",
+    "title": "어차피, 사랑하고 만다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124353176"
+    },
+    "titles": {
+      "ko": "어차피, 사랑하고 만다.",
+      "en": "Anyway, I'm Falling in Love with You",
+      "ja": "どうせ、恋してしまうんだ。"
+    },
+    "releaseYear": 2020,
+    "creator": "Haruka Mitsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004450": {
+    "workId": "wk_000004450",
+    "title": "커비의 드림 뷔페",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113088400"
+    },
+    "titles": {
+      "ko": "커비의 드림 뷔페",
+      "en": "Kirby's Dream Buffet",
+      "ja": "カービィのグルメフェス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004898": {
+    "workId": "wk_000004898",
+    "title": "리프트 오브 더 네크로댄서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113713963"
+    },
+    "titles": {
+      "ko": "리프트 오브 더 네크로댄서",
+      "en": "Q113713963"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005237": {
+    "workId": "wk_000005237",
+    "title": "마비노기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143121"
+    },
+    "titles": {
+      "ko": "마비노기",
+      "en": "Mabinogi",
+      "ja": "マビノギ"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

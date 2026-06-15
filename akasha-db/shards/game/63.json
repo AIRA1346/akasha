@@ -16,5 +16,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003202": {
+    "workId": "wk_000003202",
+    "title": "God Field",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109602707"
+    },
+    "titles": {
+      "ko": "God Field",
+      "en": "God Field",
+      "ja": "ゴッドフィールド"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003645": {
+    "workId": "wk_000003645",
+    "title": "노바 드리프트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111268293"
+    },
+    "titles": {
+      "ko": "노바 드리프트",
+      "en": "Nova Drift"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004164": {
+    "workId": "wk_000004164",
+    "title": "오메르타 ~침묵의 규칙~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11261208"
+    },
+    "titles": {
+      "ko": "오메르타 ~침묵의 규칙~",
+      "en": "Omertà ~Chinmoku no Okite~",
+      "ja": "オメルタ 〜沈黙の掟〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004907": {
+    "workId": "wk_000004907",
+    "title": "스트리트 파이터 EX",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138507"
+    },
+    "titles": {
+      "ko": "스트리트 파이터 EX",
+      "en": "Street Fighter EX",
+      "ja": "ストリートファイターEX"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

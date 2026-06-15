@@ -1,0 +1,22 @@
+{
+  "wk_000003882": {
+    "workId": "wk_000003882",
+    "title": "라쇼몽",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076912"
+    },
+    "titles": {
+      "ko": "라쇼몽",
+      "en": "Rashōmon",
+      "ja": "羅生門"
+    },
+    "releaseYear": 1915,
+    "creator": "Ryūnosuke Akutagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

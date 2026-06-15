@@ -1,0 +1,41 @@
+{
+  "wk_000003432": {
+    "workId": "wk_000003432",
+    "title": "목소리의 형태",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11611205"
+    },
+    "titles": {
+      "ko": "목소리의 형태",
+      "en": "A Silent Voice",
+      "ja": "聲の形"
+    },
+    "creator": "Yoshitoki Ōima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004877": {
+    "workId": "wk_000004877",
+    "title": "편리한 세미프렌드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123478356"
+    },
+    "titles": {
+      "ko": "편리한 세미프렌드",
+      "en": "Convenient Semi-Friend",
+      "ja": "好都合セミフレンド"
+    },
+    "releaseYear": 2024,
+    "creator": "Minori Chigusa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

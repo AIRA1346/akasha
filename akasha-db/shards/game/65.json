@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005038": {
+    "workId": "wk_000005038",
+    "title": "파이어 엠블렘 인게이지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113956929"
+    },
+    "titles": {
+      "ko": "파이어 엠블렘 인게이지",
+      "en": "Fire Emblem Engage",
+      "ja": "ファイアーエムブレム エンゲージ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

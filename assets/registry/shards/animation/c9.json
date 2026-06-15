@@ -16,5 +16,79 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003782": {
+    "workId": "wk_000003782",
+    "title": "극장판 프로젝트 세카이 부서진 세카이와 전해지지 않는 미쿠의 노래",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128041782"
+    },
+    "titles": {
+      "ko": "극장판 프로젝트 세카이 부서진 세카이와 전해지지 않는 미쿠의 노래",
+      "en": "Colorful Stage! The Movie: A Miku Who Can't Sing",
+      "ja": "劇場版プロジェクトセカイ 壊れたセカイと歌えないミク"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004498": {
+    "workId": "wk_000004498",
+    "title": "검은 고양이와 마녀의 교실",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135647140"
+    },
+    "titles": {
+      "ko": "검은 고양이와 마녀의 교실",
+      "en": "The Classroom of a Black Cat and a Witch",
+      "ja": "黒猫と魔女の教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004577": {
+    "workId": "wk_000004577",
+    "title": "하이스쿨! 기면조",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136522357"
+    },
+    "titles": {
+      "ko": "하이스쿨! 기면조",
+      "en": "High School! Kimengumi",
+      "ja": "ハイスクール!奇面組"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004757": {
+    "workId": "wk_000004757",
+    "title": "레지던트 이블: 댐내이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q150044"
+    },
+    "titles": {
+      "ko": "레지던트 이블: 댐내이션",
+      "en": "Resident Evil: Damnation",
+      "ja": "バイオハザード ダムネーション"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -69,5 +69,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004482": {
+    "workId": "wk_000004482",
+    "title": "법대로 사랑하라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110542489"
+    },
+    "titles": {
+      "ko": "법대로 사랑하라",
+      "en": "The Law Cafe",
+      "ja": "法に従って愛せ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005186": {
+    "workId": "wk_000005186",
+    "title": "G ★ 워즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11222009"
+    },
+    "titles": {
+      "ko": "G ★ 워즈",
+      "en": "G ★ Wars",
+      "ja": "G★ウォーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005269": {
+    "workId": "wk_000005269",
+    "title": "NHK  뉴스 오하이요 아오모리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235047"
+    },
+    "titles": {
+      "ko": "NHK  뉴스 오하이요 아오모리",
+      "en": "NHK News Ohayo Aomori",
+      "ja": "NHKニュースおはよう青森"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

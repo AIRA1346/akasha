@@ -103,5 +103,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003603": {
+    "workId": "wk_000003603",
+    "title": "수미산장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533929"
+    },
+    "titles": {
+      "ko": "수미산장",
+      "en": "Q109533929"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003824": {
+    "workId": "wk_000003824",
+    "title": "붉은 단심",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109589099"
+    },
+    "titles": {
+      "ko": "붉은 단심",
+      "en": "Bloody Heart",
+      "ja": "最愛の敵〜王たる宿命〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004486": {
+    "workId": "wk_000004486",
+    "title": "철도 오타쿠 미치코, 2만 킬로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110576942"
+    },
+    "titles": {
+      "ko": "철도 오타쿠 미치코, 2만 킬로",
+      "en": "Q110576942",
+      "ja": "鉄オタ道子、2万キロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005063": {
+    "workId": "wk_000005063",
+    "title": "당신이 소원을 말하면",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111910747"
+    },
+    "titles": {
+      "ko": "당신이 소원을 말하면",
+      "en": "If You Wish Upon Me",
+      "ja": "あなたの願いを言えば"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

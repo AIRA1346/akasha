@@ -50,5 +50,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002942": {
+    "workId": "wk_000002942",
+    "title": "만들고 싶은 여자와 먹고 싶은 여자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115170765"
+    },
+    "titles": {
+      "ko": "만들고 싶은 여자와 먹고 싶은 여자",
+      "en": "She Loves to Cook, and She Loves to Eat",
+      "ja": "作りたい女と食べたい女"
+    },
+    "releaseYear": 2021,
+    "creator": "Sakaomi Yuzaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005277": {
+    "workId": "wk_000005277",
+    "title": "들러리 캐릭터인 주제에, 슈퍼 달링 왕자의 총애를 받고 있습니다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126373624"
+    },
+    "titles": {
+      "ko": "들러리 캐릭터인 주제에, 슈퍼 달링 왕자의 총애를 받고 있습니다.",
+      "en": "The Perfect Prince Loves Me, His Rival?!",
+      "ja": "当て馬キャラのくせして、スパダリ王子に寵愛されています。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003807": {
+    "workId": "wk_000003807",
+    "title": "위대한 도시들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107567017"
+    },
+    "titles": {
+      "ko": "위대한 도시들",
+      "en": "Great Cities"
+    },
+    "releaseYear": 2020,
+    "creator": "N. K. Jemisin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004603": {
+    "workId": "wk_000004603",
+    "title": "오경산술",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10882073"
+    },
+    "titles": {
+      "ko": "오경산술",
+      "ja": "五経算術",
+      "zh": "五經算術"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

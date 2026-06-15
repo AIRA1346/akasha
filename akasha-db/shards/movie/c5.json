@@ -25,5 +25,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003313": {
+    "workId": "wk_000003313",
+    "title": "나 홀로 집에",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105031"
+    },
+    "titles": {
+      "ko": "나 홀로 집에",
+      "en": "Home Alone",
+      "ja": "ホーム・アローン"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003809": {
+    "workId": "wk_000003809",
+    "title": "상티넬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105318632"
+    },
+    "titles": {
+      "ko": "상티넬",
+      "en": "Sentinelle",
+      "ja": "サンティネル"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

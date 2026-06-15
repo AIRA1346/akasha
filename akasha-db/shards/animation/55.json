@@ -1,0 +1,39 @@
+{
+  "wk_000003922": {
+    "workId": "wk_000003922",
+    "title": "영화 코바야시네 메이드래곤 외로움쟁이 용",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130337103"
+    },
+    "titles": {
+      "ko": "영화 코바야시네 메이드래곤 외로움쟁이 용",
+      "en": "Miss Kobayashi's Dragon Maid: A Lonely Dragon Wants to be Loved",
+      "ja": "小林さんちのメイドラゴン さみしがりやの竜"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005225": {
+    "workId": "wk_000005225",
+    "title": "소울 이터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18553975"
+    },
+    "titles": {
+      "ko": "소울 이터",
+      "en": "Soul Eater",
+      "ja": "ソウルイーター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -36,5 +36,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003880": {
+    "workId": "wk_000003880",
+    "title": "마지막 강의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076533"
+    },
+    "titles": {
+      "ko": "마지막 강의",
+      "en": "The Last Lecture"
+    },
+    "creator": "Randy Pausch",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005050": {
+    "workId": "wk_000005050",
+    "title": "고금운회거요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10913052"
+    },
+    "titles": {
+      "ko": "고금운회거요",
+      "en": "Gu jin yun hui ju yao",
+      "ja": "古今韻会挙要"
+    },
+    "creator": "Huang Gongshao",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

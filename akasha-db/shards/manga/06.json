@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004488": {
+    "workId": "wk_000004488",
+    "title": "소년탐정 김전일",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197291"
+    },
+    "titles": {
+      "ko": "소년탐정 김전일",
+      "en": "The Kindaichi Case Files",
+      "ja": "金田一少年の事件簿"
+    },
+    "creator": "Yōzaburō Kanari",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

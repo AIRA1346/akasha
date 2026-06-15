@@ -16,5 +16,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003126": {
+    "workId": "wk_000003126",
+    "title": "여장산맥",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942810"
+    },
+    "titles": {
+      "ko": "여장산맥",
+      "en": "Tomgirls of the Mountains: Josou Sanmyaku",
+      "ja": "女装山脈"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003654": {
+    "workId": "wk_000003654",
+    "title": "닌자 용검전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114224"
+    },
+    "titles": {
+      "ko": "닌자 용검전",
+      "en": "Ninja Gaiden",
+      "ja": "忍者龍剣伝"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003793": {
+    "workId": "wk_000003793",
+    "title": "메달 오브 아너: 뱅가드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1117741"
+    },
+    "titles": {
+      "ko": "메달 오브 아너: 뱅가드",
+      "en": "Medal of Honor: Vanguard",
+      "ja": "メダル・オブ・オナー ヴァンガード"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003932": {
+    "workId": "wk_000003932",
+    "title": "체인드 에코즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112190822"
+    },
+    "titles": {
+      "ko": "체인드 에코즈",
+      "en": "Chained Echoes"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

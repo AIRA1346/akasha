@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003472": {
+    "workId": "wk_000003472",
+    "title": "파이어 엠블렘 무쌍 풍화설월",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110880629"
+    },
+    "titles": {
+      "ko": "파이어 엠블렘 무쌍 풍화설월",
+      "en": "Fire Emblem Warriors: Three Hopes",
+      "ja": "ファイアーエムブレム無双 風花雪月"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005091": {
+    "workId": "wk_000005091",
+    "title": "크렘린의 위기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140164"
+    },
+    "titles": {
+      "ko": "크렘린의 위기",
+      "en": "Crisis in the Kremlin"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

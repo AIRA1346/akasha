@@ -51,5 +51,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003076": {
+    "workId": "wk_000003076",
+    "title": "CJB 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458848"
+    },
+    "titles": {
+      "ko": "CJB 뉴스특보",
+      "en": "Q109458848"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005321": {
+    "workId": "wk_000005321",
+    "title": "O-PARTS〜오파츠〜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11237025"
+    },
+    "titles": {
+      "ko": "O-PARTS〜오파츠〜",
+      "en": "O-PARTS",
+      "ja": "O-PARTS〜オーパーツ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

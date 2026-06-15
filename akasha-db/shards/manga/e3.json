@@ -83,5 +83,41 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003340": {
+    "workId": "wk_000003340",
+    "title": "도시의자 점보 !!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11578219"
+    },
+    "titles": {
+      "ko": "도시의자 점보 !!",
+      "en": "Town Doctor Jumbo!!",
+      "ja": "町医者ジャンボ!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003608": {
+    "workId": "wk_000003608",
+    "title": "피투성이 스케 반 전기 톱",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625939"
+    },
+    "titles": {
+      "ko": "피투성이 스케 반 전기 톱",
+      "en": "Bloody Sukeban Chainsaw",
+      "ja": "血まみれスケバン・チェーンソー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

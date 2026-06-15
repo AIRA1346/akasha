@@ -51,5 +51,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003561": {
+    "workId": "wk_000003561",
+    "title": "프롭나이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111031775"
+    },
+    "titles": {
+      "ko": "프롭나이트",
+      "en": "Propnight",
+      "ja": "Propnight"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004308": {
+    "workId": "wk_000004308",
+    "title": "이치단트알",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286752"
+    },
+    "titles": {
+      "ko": "이치단트알",
+      "en": "Puzzle & Action: Ichidant-R",
+      "ja": "イチダントアール"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,61 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003396": {
+    "workId": "wk_000003396",
+    "title": "H마트에서 울다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107143229"
+    },
+    "titles": {
+      "ko": "H마트에서 울다",
+      "en": "Crying in H Mart"
+    },
+    "releaseYear": 2021,
+    "creator": "Michelle Zauner",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004375": {
+    "workId": "wk_000004375",
+    "title": "작은 사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10863811"
+    },
+    "titles": {
+      "ko": "작은 사건",
+      "en": "A Small Incident",
+      "ja": "些細な事件"
+    },
+    "creator": "魯迅",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005155": {
+    "workId": "wk_000005155",
+    "title": "당대조령집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10922648"
+    },
+    "titles": {
+      "ko": "당대조령집",
+      "ja": "唐大詔令集",
+      "zh": "唐大詔令集"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

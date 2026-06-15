@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000004274": {
+    "workId": "wk_000004274",
+    "title": "일기당천",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191681"
+    },
+    "titles": {
+      "ko": "일기당천",
+      "en": "Ikki Tousen",
+      "ja": "一騎当千"
+    },
+    "creator": "Yuji Shiozaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

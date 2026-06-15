@@ -52,5 +52,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002993": {
+    "workId": "wk_000002993",
+    "title": "블라인드 뮤지션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458032"
+    },
+    "titles": {
+      "ko": "블라인드 뮤지션",
+      "en": "Q109458032"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003505": {
+    "workId": "wk_000003505",
+    "title": "씨씨엠스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461881"
+    },
+    "titles": {
+      "ko": "씨씨엠스타",
+      "en": "Q109461881"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

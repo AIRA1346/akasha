@@ -68,5 +68,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003964": {
+    "workId": "wk_000003964",
+    "title": "내 친구 몬덕이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114538"
+    },
+    "titles": {
+      "ko": "내 친구 몬덕이",
+      "en": "Q110114538"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004334": {
+    "workId": "wk_000004334",
+    "title": "해피 뷰티 데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118217"
+    },
+    "titles": {
+      "ko": "해피 뷰티 데이",
+      "en": "Q110118217"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

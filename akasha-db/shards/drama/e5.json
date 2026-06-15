@@ -33,5 +33,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003166": {
+    "workId": "wk_000003166",
+    "title": "구미호 레시피",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459461"
+    },
+    "titles": {
+      "ko": "구미호 레시피",
+      "en": "Q109459461"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003337": {
+    "workId": "wk_000003337",
+    "title": "피의 게임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460947"
+    },
+    "titles": {
+      "ko": "피의 게임",
+      "en": "Game of Blood"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003908": {
+    "workId": "wk_000003908",
+    "title": "TV 외국인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113983"
+    },
+    "titles": {
+      "ko": "TV 외국인",
+      "en": "Q110113983"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004328": {
+    "workId": "wk_000004328",
+    "title": "결혼작사 이혼작곡 3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118085"
+    },
+    "titles": {
+      "ko": "결혼작사 이혼작곡 3",
+      "en": "Q110118085"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004402": {
+    "workId": "wk_000004402",
+    "title": "스타 트렉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1102217"
+    },
+    "titles": {
+      "ko": "스타 트렉",
+      "en": "Star Trek",
+      "ja": "スタートレックの映画作品"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

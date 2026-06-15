@@ -1,0 +1,40 @@
+{
+  "wk_000003473": {
+    "workId": "wk_000003473",
+    "title": "전설을 부르는 덤의 수도 쇼크칸",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11088500"
+    },
+    "titles": {
+      "ko": "전설을 부르는 덤의 수도 쇼크칸",
+      "en": "Crayon Shin-Chan: Densetsu o Yobu Omake no Miyako Shukkugaan!",
+      "ja": "クレヨンしんちゃん 伝説を呼ぶ オマケの都ショックガーン!"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004000": {
+    "workId": "wk_000004000",
+    "title": "대항해시대",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233573"
+    },
+    "titles": {
+      "ko": "대항해시대",
+      "en": "Uncharted Waters",
+      "ja": "大航海時代"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

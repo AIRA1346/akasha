@@ -145,5 +145,63 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003455": {
+    "workId": "wk_000003455",
+    "title": "내가 인기 있어서 어쩌자는 거야",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124343603"
+    },
+    "titles": {
+      "ko": "내가 인기 있어서 어쩌자는 거야",
+      "en": "Kiss Him, Not Me",
+      "ja": "私がモテてどうすんだ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003997": {
+    "workId": "wk_000003997",
+    "title": "극장판 : 기븐 히이라기 믹스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130598234"
+    },
+    "titles": {
+      "ko": "극장판 : 기븐 히이라기 믹스",
+      "en": "Q130598234",
+      "ja": "映画 ギヴン 柊mix"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004570": {
+    "workId": "wk_000004570",
+    "title": "기동전사 건담 역습의 샤아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1363770"
+    },
+    "titles": {
+      "ko": "기동전사 건담 역습의 샤아",
+      "en": "Mobile Suit Gundam: Char's Counterattack",
+      "ja": "機動戦士ガンダム 逆襲のシャア"
+    },
+    "releaseYear": 1988,
+    "creator": "Yoshiyuki Tomino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

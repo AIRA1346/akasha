@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003484": {
+    "workId": "wk_000003484",
+    "title": "지금 지구에 소행성이 돌진해 온다면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107185717"
+    },
+    "titles": {
+      "ko": "지금 지구에 소행성이 돌진해 온다면",
+      "en": "Krawumm! Ein Plädoyer für den Weltuntergang"
+    },
+    "releaseYear": 2012,
+    "creator": "Florian Freistetter",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

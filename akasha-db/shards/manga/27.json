@@ -54,5 +54,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003344": {
+    "workId": "wk_000003344",
+    "title": "디엔비엔푸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115959465"
+    },
+    "titles": {
+      "ko": "디엔비엔푸",
+      "en": "Điện Biên Phủ",
+      "ja": "ディエンビエンフー"
+    },
+    "releaseYear": 2006,
+    "creator": "Daisuke Nishijima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

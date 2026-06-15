@@ -37,5 +37,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003173": {
+    "workId": "wk_000003173",
+    "title": "극악 말괄량이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11541448"
+    },
+    "titles": {
+      "ko": "극악 말괄량이",
+      "en": "Gokuaku Ganbo",
+      "ja": "極悪がんぼ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003338": {
+    "workId": "wk_000003338",
+    "title": "남녀의 우정은 성립할까? (아니, 하지 않아!!)",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115777152"
+    },
+    "titles": {
+      "ko": "남녀의 우정은 성립할까? (아니, 하지 않아!!)",
+      "en": "Can a Boy-Girl Friendship Survive?",
+      "ja": "男女の友情は成立する? (いや、しないっ!!)"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

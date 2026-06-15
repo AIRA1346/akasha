@@ -30,5 +30,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004462": {
+    "workId": "wk_000004462",
+    "title": "크로스로드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108743629"
+    },
+    "titles": {
+      "ko": "크로스로드",
+      "en": "Crossroads"
+    },
+    "releaseYear": 2021,
+    "creator": "ジョナサン・フランゼン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

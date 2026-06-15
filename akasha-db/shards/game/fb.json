@@ -83,5 +83,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004975": {
+    "workId": "wk_000004975",
+    "title": "메트로이드 프라임 헌터즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139244"
+    },
+    "titles": {
+      "ko": "메트로이드 프라임 헌터즈",
+      "en": "Metroid Prime Hunters",
+      "ja": "メトロイドプライム ハンターズ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

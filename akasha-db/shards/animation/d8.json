@@ -87,5 +87,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004642": {
+    "workId": "wk_000004642",
+    "title": "일하는 세포 블랙",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137734143"
+    },
+    "titles": {
+      "ko": "일하는 세포 블랙",
+      "en": "Cells at Work! Code Black",
+      "ja": "はたらく細胞BLACK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004952": {
+    "workId": "wk_000004952",
+    "title": "잔향의 테러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15975972"
+    },
+    "titles": {
+      "ko": "잔향의 테러",
+      "en": "Terror in Resonance",
+      "ja": "残響のテロル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

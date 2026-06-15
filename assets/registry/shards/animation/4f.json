@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005087": {
+    "workId": "wk_000005087",
+    "title": "유우키 유우나는 용자다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17465338"
+    },
+    "titles": {
+      "ko": "유우키 유우나는 용자다",
+      "en": "Yuki Yuna is a Hero",
+      "ja": "結城友奈は勇者である"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

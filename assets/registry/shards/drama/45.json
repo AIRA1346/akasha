@@ -33,5 +33,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003897": {
+    "workId": "wk_000003897",
+    "title": "환승연애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110109454"
+    },
+    "titles": {
+      "ko": "환승연애",
+      "en": "Transit Love",
+      "ja": "乗り換え恋愛～新たな出会いの始まり～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004408": {
+    "workId": "wk_000004408",
+    "title": "지금부터, 쇼타임!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110270589"
+    },
+    "titles": {
+      "ko": "지금부터, 쇼타임!",
+      "en": "From Now On, Showtime!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004557": {
+    "workId": "wk_000004557",
+    "title": "택배기사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110638048"
+    },
+    "titles": {
+      "ko": "택배기사",
+      "en": "Black Knight",
+      "ja": "配達人 ～終末の救世主～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004920": {
+    "workId": "wk_000004920",
+    "title": "무헤르 데 나디에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111372385"
+    },
+    "titles": {
+      "ko": "무헤르 데 나디에",
+      "en": "Mujer de nadie"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -33,5 +33,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004470": {
+    "workId": "wk_000004470",
+    "title": "소림사전기 제3부: 대막영호",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11036568"
+    },
+    "titles": {
+      "ko": "소림사전기 제3부: 대막영호",
+      "en": "Q11036568"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005251": {
+    "workId": "wk_000005251",
+    "title": "프랭클린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112316871"
+    },
+    "titles": {
+      "ko": "프랭클린",
+      "en": "Franklin",
+      "ja": "フランクリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

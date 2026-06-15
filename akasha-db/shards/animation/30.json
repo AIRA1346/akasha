@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003452": {
+    "workId": "wk_000003452",
+    "title": "마왕군 최강의 마술사는 인간이었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124323658"
+    },
+    "titles": {
+      "ko": "마왕군 최강의 마술사는 인간이었다",
+      "en": "The Strongest Magician in the Demon Lord's Army Was a Human",
+      "ja": "魔王軍最強の魔術師は人間だった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

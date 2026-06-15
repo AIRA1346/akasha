@@ -1,0 +1,21 @@
+{
+  "wk_000004431": {
+    "workId": "wk_000004431",
+    "title": "매드랙스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1349108"
+    },
+    "titles": {
+      "ko": "매드랙스",
+      "en": "Madlax",
+      "ja": "MADLAX"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003276": {
+    "workId": "wk_000003276",
+    "title": "드래곤볼 DAIMA",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123022503"
+    },
+    "titles": {
+      "ko": "드래곤볼 DAIMA",
+      "en": "Dragon Ball Daima",
+      "ja": "ドラゴンボールDAIMA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004066": {
+    "workId": "wk_000004066",
+    "title": "호텔 인휴먼즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131048074"
+    },
+    "titles": {
+      "ko": "호텔 인휴먼즈",
+      "en": "Hotel Inhumans",
+      "ja": "ホテル・インヒューマンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

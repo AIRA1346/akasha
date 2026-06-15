@@ -35,5 +35,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003449": {
+    "workId": "wk_000003449",
+    "title": "모브부터 시작하는 탐색 영웅담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124033984"
+    },
+    "titles": {
+      "ko": "모브부터 시작하는 탐색 영웅담",
+      "en": "A Nobody's Way Up to an Exploration Hero",
+      "ja": "モブから始まる探索英雄譚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003641": {
+    "workId": "wk_000003641",
+    "title": "히카루가 죽은 여름",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126080512"
+    },
+    "titles": {
+      "ko": "히카루가 죽은 여름",
+      "en": "The Summer Hikaru Died",
+      "ja": "光が死んだ夏"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004352": {
+    "workId": "wk_000004352",
+    "title": "디지몬 비트브레이크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133443442"
+    },
+    "titles": {
+      "ko": "디지몬 비트브레이크",
+      "en": "Digimon Beatbreak",
+      "ja": "DIGIMON BEATBREAK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

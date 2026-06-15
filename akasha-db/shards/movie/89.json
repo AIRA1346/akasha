@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004735": {
+    "workId": "wk_000004735",
+    "title": "스타게이트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105801"
+    },
+    "titles": {
+      "ko": "스타게이트",
+      "en": "Stargate",
+      "ja": "スターゲイト"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005174": {
+    "workId": "wk_000005174",
+    "title": "아웃레이지 비욘드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059416"
+    },
+    "titles": {
+      "ko": "아웃레이지 비욘드",
+      "en": "Beyond Outrage",
+      "ja": "アウトレイジ ビヨンド"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

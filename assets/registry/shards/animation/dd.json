@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005074": {
+    "workId": "wk_000005074",
+    "title": "오버 더 가든 월 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17065414"
+    },
+    "titles": {
+      "ko": "오버 더 가든 월 (애니메이션)",
+      "en": "Over the Garden Wall",
+      "ja": "オーバー・ザ・ガーデンウォール"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005224": {
+    "workId": "wk_000005224",
+    "title": "미남고교 지구방위부 LOVE!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18459444"
+    },
+    "titles": {
+      "ko": "미남고교 지구방위부 LOVE!",
+      "en": "Cute High Earth Defense Club Love!",
+      "ja": "美男高校地球防衛部LOVE!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

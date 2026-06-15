@@ -33,5 +33,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004299": {
+    "workId": "wk_000004299",
+    "title": "포트리스 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282020"
+    },
+    "titles": {
+      "ko": "포트리스 2",
+      "en": "Fortress 2",
+      "ja": "ポトリス2"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003227": {
+    "workId": "wk_000003227",
+    "title": "스파이 게임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049139"
+    },
+    "titles": {
+      "ko": "스파이 게임",
+      "en": "Spy Game",
+      "ja": "スパイ・ゲーム"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

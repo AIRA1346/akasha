@@ -50,5 +50,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004593": {
+    "workId": "wk_000004593",
+    "title": "스트리트 파이터 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133204"
+    },
+    "titles": {
+      "ko": "스트리트 파이터 2",
+      "en": "Street Fighter II",
+      "ja": "ストリートファイターII"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004899": {
+    "workId": "wk_000004899",
+    "title": "원숭이 섬의 저주",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137217"
+    },
+    "titles": {
+      "ko": "원숭이 섬의 저주",
+      "en": "The Curse of Monkey Island",
+      "ja": "モンキーアイランド3"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005147": {
+    "workId": "wk_000005147",
+    "title": "스타폭스 64",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141963"
+    },
+    "titles": {
+      "ko": "스타폭스 64",
+      "en": "Star Fox 64",
+      "ja": "スターフォックス64"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

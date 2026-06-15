@@ -1,0 +1,20 @@
+{
+  "wk_000004206": {
+    "workId": "wk_000004206",
+    "title": "네기마!?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317932"
+    },
+    "titles": {
+      "ko": "네기마!?",
+      "en": "Negima!?",
+      "ja": "ネギま!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -68,5 +68,81 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003397": {
+    "workId": "wk_000003397",
+    "title": "반야등론석",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107154292"
+    },
+    "titles": {
+      "ko": "반야등론석",
+      "en": "The Lamp of Discernment",
+      "ja": "般若燈論釈"
+    },
+    "creator": "청변",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004240": {
+    "workId": "wk_000004240",
+    "title": "고양이의 지구의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855327"
+    },
+    "titles": {
+      "ko": "고양이의 지구의",
+      "en": "Q10855327",
+      "ja": "猫の地球儀"
+    },
+    "creator": "Mizuhito Akiyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004597": {
+    "workId": "wk_000004597",
+    "title": "악부시집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10878399"
+    },
+    "titles": {
+      "ko": "악부시집",
+      "en": "Collection of Yuefu Lyric Poems",
+      "ja": "楽府詩集"
+    },
+    "creator": "郭茂倩",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004983": {
+    "workId": "wk_000004983",
+    "title": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109018471"
+    },
+    "titles": {
+      "ko": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+      "en": "I'm Quitting Heroing",
+      "ja": "勇者、辞めます～次の職場は魔王城～"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

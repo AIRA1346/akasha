@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004802": {
+    "workId": "wk_000004802",
+    "title": "우스즈미의 끝",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122826929"
+    },
+    "titles": {
+      "ko": "우스즈미의 끝",
+      "en": "The Color of the End: Mission in the Apocalypse",
+      "ja": "ウスズミの果て"
+    },
+    "creator": "Haruo Iwamune",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

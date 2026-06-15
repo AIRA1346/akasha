@@ -16,5 +16,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003706": {
+    "workId": "wk_000003706",
+    "title": "타몬 군 지금 어느 쪽?!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126496647"
+    },
+    "titles": {
+      "ko": "타몬 군 지금 어느 쪽?!",
+      "en": "Tamon's B-Side",
+      "ja": "多聞くん今どっち!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004142": {
+    "workId": "wk_000004142",
+    "title": "기동전사 건담 GQuuuuuuX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131383827"
+    },
+    "titles": {
+      "ko": "기동전사 건담 GQuuuuuuX",
+      "en": "Mobile Suit Gundam GQuuuuuuX",
+      "ja": "機動戦士Gundam GQuuuuuuX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004285": {
+    "workId": "wk_000004285",
+    "title": "무책임 함장 테일러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326328"
+    },
+    "titles": {
+      "ko": "무책임 함장 테일러",
+      "en": "The Irresponsible Captain Tylor",
+      "ja": "無責任艦長タイラー"
+    },
+    "creator": "Kōichi Mashimo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

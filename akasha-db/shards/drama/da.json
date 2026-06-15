@@ -34,5 +34,143 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003414": {
+    "workId": "wk_000003414",
+    "title": "조선판스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461309"
+    },
+    "titles": {
+      "ko": "조선판스타",
+      "en": "Q109461309"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003507": {
+    "workId": "wk_000003507",
+    "title": "5월의 여행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464071"
+    },
+    "titles": {
+      "ko": "5월의 여행",
+      "en": "Q109464071"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003959": {
+    "workId": "wk_000003959",
+    "title": "글로벌 슈퍼 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114325"
+    },
+    "titles": {
+      "ko": "글로벌 슈퍼 아이돌",
+      "en": "Q110114325"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004053": {
+    "workId": "wk_000004053",
+    "title": "배니축풍비상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115096"
+    },
+    "titles": {
+      "ko": "배니축풍비상",
+      "en": "Q110115096"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004259": {
+    "workId": "wk_000004259",
+    "title": "KBS 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115972"
+    },
+    "titles": {
+      "ko": "KBS 뉴스",
+      "en": "KBS NEWS (1050)",
+      "ja": "KBSニュース (1050)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004556": {
+    "workId": "wk_000004556",
+    "title": "더 패뷸러스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110638016"
+    },
+    "titles": {
+      "ko": "더 패뷸러스",
+      "en": "The Fabulous",
+      "ja": "ザ・ファビュラス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004683": {
+    "workId": "wk_000004683",
+    "title": "캐시백 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110832980"
+    },
+    "titles": {
+      "ko": "캐시백 (텔레비전 프로그램)",
+      "en": "Q110832980"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004785": {
+    "workId": "wk_000004785",
+    "title": "라 에렌시아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111018941"
+    },
+    "titles": {
+      "ko": "라 에렌시아",
+      "en": "La herencia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

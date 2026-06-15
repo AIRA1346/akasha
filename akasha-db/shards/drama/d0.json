@@ -105,5 +105,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004620": {
+    "workId": "wk_000004620",
+    "title": "러브추격자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073755"
+    },
+    "titles": {
+      "ko": "러브추격자",
+      "en": "Love Chaser"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004693": {
+    "workId": "wk_000004693",
+    "title": "환혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110890248"
+    },
+    "titles": {
+      "ko": "환혼",
+      "en": "Alchemy of Souls",
+      "ja": "還魂"
+    },
+    "creator": "Hong sisters",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

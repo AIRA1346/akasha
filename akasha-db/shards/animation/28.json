@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003361": {
+    "workId": "wk_000003361",
+    "title": "나나레 하나나레",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123378755"
+    },
+    "titles": {
+      "ko": "나나레 하나나레",
+      "en": "Narenare: Cheer for You!",
+      "ja": "菜なれ花なれ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003545": {
+    "workId": "wk_000003545",
+    "title": "시도니아의 기사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124665184"
+    },
+    "titles": {
+      "ko": "시도니아의 기사",
+      "en": "Knights of Sidonia",
+      "ja": "シドニアの騎士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

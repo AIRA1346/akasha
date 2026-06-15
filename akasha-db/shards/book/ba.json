@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004237": {
+    "workId": "wk_000004237",
+    "title": "간지럼 씨",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855095"
+    },
+    "titles": {
+      "ko": "간지럼 씨",
+      "en": "Mr. Tickle"
+    },
+    "releaseYear": 1971,
+    "creator": "Roger Hargreaves",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

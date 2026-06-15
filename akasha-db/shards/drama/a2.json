@@ -34,5 +34,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003005": {
+    "workId": "wk_000003005",
+    "title": "글로벌 청년창업 오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458471"
+    },
+    "titles": {
+      "ko": "글로벌 청년창업 오디션",
+      "en": "Q109458471"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003590": {
+    "workId": "wk_000003590",
+    "title": "질문하는 기자들 Q",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464501"
+    },
+    "titles": {
+      "ko": "질문하는 기자들 Q",
+      "en": "Q109464501"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003759": {
+    "workId": "wk_000003759",
+    "title": "PLAY GUIDE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546576"
+    },
+    "titles": {
+      "ko": "PLAY GUIDE",
+      "en": "Q109546576"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004048": {
+    "workId": "wk_000004048",
+    "title": "뭐든지 베스트 셀러",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114974"
+    },
+    "titles": {
+      "ko": "뭐든지 베스트 셀러",
+      "en": "Q110114974"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

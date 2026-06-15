@@ -62,5 +62,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005177": {
+    "workId": "wk_000005177",
+    "title": "야곱 신부의 편지",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059450"
+    },
+    "titles": {
+      "ko": "야곱 신부의 편지",
+      "en": "Letters to Father Jacob",
+      "ja": "ヤコブへの手紙"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

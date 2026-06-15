@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004279": {
+    "workId": "wk_000004279",
+    "title": "아크 더 래드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324055"
+    },
+    "titles": {
+      "ko": "아크 더 래드",
+      "en": "Arc the Lad",
+      "ja": "アークザラッド"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

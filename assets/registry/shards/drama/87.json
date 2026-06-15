@@ -16,5 +16,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003243": {
+    "workId": "wk_000003243",
+    "title": "EBS 바둑교실",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460343"
+    },
+    "titles": {
+      "ko": "EBS 바둑교실",
+      "en": "Q109460343"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004256": {
+    "workId": "wk_000004256",
+    "title": "HOT SHOT",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115938"
+    },
+    "titles": {
+      "ko": "HOT SHOT",
+      "en": "Q110115938"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004929": {
+    "workId": "wk_000004929",
+    "title": "부침",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11149436"
+    },
+    "titles": {
+      "ko": "부침",
+      "en": "Q11149436"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

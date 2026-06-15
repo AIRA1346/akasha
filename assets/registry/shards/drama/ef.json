@@ -1,0 +1,37 @@
+{
+  "wk_000005069": {
+    "workId": "wk_000005069",
+    "title": "포커 페이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111944613"
+    },
+    "titles": {
+      "ko": "포커 페이스",
+      "en": "Poker Face",
+      "ja": "ポーカー・フェイス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005127": {
+    "workId": "wk_000005127",
+    "title": "더 윈체스터스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112075389"
+    },
+    "titles": {
+      "ko": "더 윈체스터스",
+      "en": "The Winchesters"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000004474": {
+    "workId": "wk_000004474",
+    "title": "군검사 도베르만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110443756"
+    },
+    "titles": {
+      "ko": "군검사 도베르만",
+      "en": "Military Prosecutor Doberman",
+      "ja": "軍検事ドーベルマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

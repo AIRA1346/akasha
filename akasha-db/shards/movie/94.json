@@ -1,0 +1,21 @@
+{
+  "wk_000003817": {
+    "workId": "wk_000003817",
+    "title": "왓츠 러브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105334186"
+    },
+    "titles": {
+      "ko": "왓츠 러브",
+      "en": "What's Love Got to Do With It?",
+      "ja": "きっと、それは愛じゃない"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

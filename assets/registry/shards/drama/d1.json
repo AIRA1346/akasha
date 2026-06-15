@@ -34,5 +34,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003003": {
+    "workId": "wk_000003003",
+    "title": "Target : Billboard - KILL BILL",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458416"
+    },
+    "titles": {
+      "ko": "Target : Billboard - KILL BILL",
+      "en": "Target: Billboard - KILL BILL"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003325": {
+    "workId": "wk_000003325",
+    "title": "배니일기장대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460798"
+    },
+    "titles": {
+      "ko": "배니일기장대",
+      "en": "Q109460798"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003834": {
+    "workId": "wk_000003834",
+    "title": "베를린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109850709"
+    },
+    "titles": {
+      "ko": "베를린",
+      "en": "Berlin",
+      "ja": "ベルリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

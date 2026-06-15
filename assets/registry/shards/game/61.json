@@ -50,5 +50,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003861": {
+    "workId": "wk_000003861",
+    "title": "Areas: 하늘에 비치는 너와의 세계",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190431"
+    },
+    "titles": {
+      "ko": "Areas: 하늘에 비치는 너와의 세계",
+      "en": "Areas: Sora Ni Utsusu Kimi To No Sekai",
+      "ja": "Areas〜空に映すキミとのセカイ〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,59 @@
+{
+  "wk_000003574": {
+    "workId": "wk_000003574",
+    "title": "중요한 건 살인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107323687"
+    },
+    "titles": {
+      "ko": "중요한 건 살인",
+      "en": "The Word is Murder"
+    },
+    "releaseYear": 2017,
+    "creator": "Anthony Horowitz",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003575": {
+    "workId": "wk_000003575",
+    "title": "콧수염",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107335486"
+    },
+    "titles": {
+      "ko": "콧수염",
+      "en": "The Moustache"
+    },
+    "releaseYear": 1986,
+    "creator": "Emmanuel Carrère",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004096": {
+    "workId": "wk_000004096",
+    "title": "투명한 나선",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108170152"
+    },
+    "titles": {
+      "ko": "투명한 나선",
+      "en": "Spiral conquest",
+      "ja": "透明な螺旋"
+    },
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

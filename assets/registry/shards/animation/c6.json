@@ -48,5 +48,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004886": {
+    "workId": "wk_000004886",
+    "title": "케이온!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15863567"
+    },
+    "titles": {
+      "ko": "케이온!",
+      "en": "K-On!",
+      "ja": "けいおん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004957": {
+    "workId": "wk_000004957",
+    "title": "쿠로사기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16029819"
+    },
+    "titles": {
+      "ko": "쿠로사기",
+      "en": "The Black Swindler",
+      "ja": "クロサギ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

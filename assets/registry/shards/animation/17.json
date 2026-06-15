@@ -99,5 +99,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003855": {
+    "workId": "wk_000003855",
+    "title": "아포칼립스 호텔",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129978638"
+    },
+    "titles": {
+      "ko": "아포칼립스 호텔",
+      "en": "Apocalypse Hotel",
+      "ja": "アポカリプスホテル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004748": {
+    "workId": "wk_000004748",
+    "title": "Wake Up, Girls!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14550419"
+    },
+    "titles": {
+      "ko": "Wake Up, Girls!",
+      "en": "Wake Up, Girls!",
+      "ja": "Wake Up, Girls!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

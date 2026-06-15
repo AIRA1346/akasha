@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003624": {
+    "workId": "wk_000003624",
+    "title": "우리집 우렁이는",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97339029"
+    },
+    "titles": {
+      "ko": "우리집 우렁이는",
+      "en": "Q97339029"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005051": {
+    "workId": "wk_000005051",
+    "title": "죽은 자들이여 일어나라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091320"
+    },
+    "titles": {
+      "ko": "죽은 자들이여 일어나라",
+      "en": "Debout les morts"
+    },
+    "releaseYear": 1995,
+    "creator": "Fred Vargas",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

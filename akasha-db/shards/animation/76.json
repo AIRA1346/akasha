@@ -71,5 +71,77 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003278": {
+    "workId": "wk_000003278",
+    "title": "공녀 전하의 가정교사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123043832"
+    },
+    "titles": {
+      "ko": "공녀 전하의 가정교사",
+      "en": "Private Tutor to the Duke's Daughter",
+      "ja": "公女殿下の家庭教師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004209": {
+    "workId": "wk_000004209",
+    "title": "경계의 저편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131927631"
+    },
+    "titles": {
+      "ko": "경계의 저편",
+      "en": "Beyond the Boundary",
+      "ja": "境界の彼方"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004750": {
+    "workId": "wk_000004750",
+    "title": "두 사람은 프리큐어 Splash Star",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1475446"
+    },
+    "titles": {
+      "ko": "두 사람은 프리큐어 Splash Star",
+      "en": "Futari wa Pretty Cure Splash Star",
+      "ja": "ふたりはプリキュア Splash☆Star"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004965": {
+    "workId": "wk_000004965",
+    "title": "천체의 메소드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16351615"
+    },
+    "titles": {
+      "ko": "천체의 메소드",
+      "en": "Celestial Method",
+      "ja": "天体のメソッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

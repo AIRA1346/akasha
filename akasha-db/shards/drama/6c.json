@@ -1,0 +1,36 @@
+{
+  "wk_000002994": {
+    "workId": "wk_000002994",
+    "title": "KBS 뮤직스테이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458033"
+    },
+    "titles": {
+      "ko": "KBS 뮤직스테이션",
+      "en": "Q109458033"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003691": {
+    "workId": "wk_000003691",
+    "title": "아침스포츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546137"
+    },
+    "titles": {
+      "ko": "아침스포츠",
+      "en": "Q109546137"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

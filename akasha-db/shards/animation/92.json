@@ -34,5 +34,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004292": {
+    "workId": "wk_000004292",
+    "title": "전생한 대성녀는 성녀임을 숨긴다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133075860"
+    },
+    "titles": {
+      "ko": "전생한 대성녀는 성녀임을 숨긴다",
+      "en": "A Tale of the Secret Saint",
+      "ja": "転生した大聖女は、聖女であることをひた隠す"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004354": {
+    "workId": "wk_000004354",
+    "title": "이거 그리고 죽어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133455035"
+    },
+    "titles": {
+      "ko": "이거 그리고 죽어",
+      "en": "Draw This, Then Die!",
+      "ja": "これ描いて死ね"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004580": {
+    "workId": "wk_000004580",
+    "title": "초(超) 가구야 공주!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136708889"
+    },
+    "titles": {
+      "ko": "초(超) 가구야 공주!",
+      "en": "Cosmic Princess Kaguya!",
+      "ja": "超かぐや姫!"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004709": {
+    "workId": "wk_000004709",
+    "title": "얀보우 닌보우 톤보우",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139553373"
+    },
+    "titles": {
+      "ko": "얀보우 닌보우 톤보우",
+      "en": "Yanbo, Ninbo and Tonbo",
+      "ja": "ヤンボウ ニンボウ トンボウ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

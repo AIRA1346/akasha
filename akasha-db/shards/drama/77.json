@@ -51,5 +51,94 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003512": {
+    "workId": "wk_000003512",
+    "title": "이슈& 직설",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464381"
+    },
+    "titles": {
+      "ko": "이슈& 직설",
+      "en": "Q109464381"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004479": {
+    "workId": "wk_000004479",
+    "title": "퍼핏 마스터: 최악의 사기꾼을 잡아라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110536072"
+    },
+    "titles": {
+      "ko": "퍼핏 마스터: 최악의 사기꾼을 잡아라",
+      "en": "The Puppet Master: Hunting the Ultimate Conman",
+      "ja": "究極のペテン師: 人を操る天才たちの実像"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004561": {
+    "workId": "wk_000004561",
+    "title": "삼체",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110652727"
+    },
+    "titles": {
+      "ko": "삼체",
+      "en": "3 Body Problem",
+      "ja": "三体 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005115": {
+    "workId": "wk_000005115",
+    "title": "사쿠사쿠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11198183"
+    },
+    "titles": {
+      "ko": "사쿠사쿠",
+      "en": "Sakusaku",
+      "ja": "saku saku"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005118": {
+    "workId": "wk_000005118",
+    "title": "슈룹",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111986155"
+    },
+    "titles": {
+      "ko": "슈룹",
+      "en": "Under the Queen's Umbrella",
+      "ja": "シュルプ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

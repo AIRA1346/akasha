@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004945": {
+    "workId": "wk_000004945",
+    "title": "얼음 성벽",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124048215"
+    },
+    "titles": {
+      "ko": "얼음 성벽",
+      "en": "The Ramparts of Ice",
+      "ja": "氷の城壁"
+    },
+    "creator": "阿賀沢紅茶",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

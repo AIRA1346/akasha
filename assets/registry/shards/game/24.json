@@ -51,5 +51,81 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003482": {
+    "workId": "wk_000003482",
+    "title": "포켓몬스터스칼렛",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111031670"
+    },
+    "titles": {
+      "ko": "포켓몬스터스칼렛",
+      "en": "Pokémon Scarlet",
+      "ja": "ポケットモンスター スカーレット"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003573": {
+    "workId": "wk_000003573",
+    "title": "발키리 엘리시움",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111200610"
+    },
+    "titles": {
+      "ko": "발키리 엘리시움",
+      "en": "Valkyrie Elysium",
+      "ja": "ヴァルキリーエリュシオン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004904": {
+    "workId": "wk_000004904",
+    "title": "프리프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138278"
+    },
+    "titles": {
+      "ko": "프리프",
+      "en": "Flyff",
+      "ja": "フリフオンライン"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005043": {
+    "workId": "wk_000005043",
+    "title": "초대 열혈경파 쿠니오군",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11396431"
+    },
+    "titles": {
+      "ko": "초대 열혈경파 쿠니오군",
+      "en": "Shodai Nekketsu Kouha Kunio-Kun",
+      "ja": "初代熱血硬派くにおくん"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

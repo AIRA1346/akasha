@@ -107,5 +107,95 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003282": {
+    "workId": "wk_000003282",
+    "title": "도서관 전쟁",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123151554"
+    },
+    "titles": {
+      "ko": "도서관 전쟁",
+      "en": "Library War",
+      "ja": "図書館戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003860": {
+    "workId": "wk_000003860",
+    "title": "사라왓 야이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13022632"
+    },
+    "titles": {
+      "ko": "사라왓 야이",
+      "en": "Sarawat Yai"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004356": {
+    "workId": "wk_000004356",
+    "title": "캐리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133852728"
+    },
+    "titles": {
+      "ko": "캐리",
+      "en": "Carrie"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005035": {
+    "workId": "wk_000005035",
+    "title": "은하순찰대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17005134"
+    },
+    "titles": {
+      "ko": "은하순찰대",
+      "en": "Galactic Patrol Lensman",
+      "ja": "GALACTIC PATROL レンズマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005283": {
+    "workId": "wk_000005283",
+    "title": "짱구는 못말려 극장판: 나의 이사 이야기 선인장 대습격",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18618791"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 나의 이사 이야기 선인장 대습격",
+      "en": "Crayon Shin-Chan: My Moving Story! Cactus Large Attack!",
+      "ja": "クレヨンしんちゃん オラの引越し物語 サボテン大襲撃"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

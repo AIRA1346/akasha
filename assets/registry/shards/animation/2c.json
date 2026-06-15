@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003197": {
+    "workId": "wk_000003197",
+    "title": "반에서 두 번째로 귀여운 여자애와 친구가 되었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122794879"
+    },
+    "titles": {
+      "ko": "반에서 두 번째로 귀여운 여자애와 친구가 되었다",
+      "en": "I Made Friends with the Second Prettiest Girl in My Class",
+      "ja": "クラスで2番目に可愛い女の子と友だちになった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

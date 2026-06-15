@@ -32,5 +32,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004702": {
+    "workId": "wk_000004702",
+    "title": "하나마루 유치원",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205030"
+    },
+    "titles": {
+      "ko": "하나마루 유치원",
+      "en": "Hanamaru Kindergarten",
+      "ja": "はなまる幼稚園"
+    },
+    "creator": "Yūto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

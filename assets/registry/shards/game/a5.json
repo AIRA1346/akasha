@@ -82,5 +82,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003209": {
+    "workId": "wk_000003209",
+    "title": "워해머 40,000: 스페이스 마린 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110055360"
+    },
+    "titles": {
+      "ko": "워해머 40,000: 스페이스 마린 II",
+      "en": "Warhammer 40,000: Space Marine II"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003470": {
+    "workId": "wk_000003470",
+    "title": "마리오 스트라이커즈 배틀 리그",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110876089"
+    },
+    "titles": {
+      "ko": "마리오 스트라이커즈 배틀 리그",
+      "en": "Mario Strikers: Battle League",
+      "ja": "マリオストライカーズ バトルリーグ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

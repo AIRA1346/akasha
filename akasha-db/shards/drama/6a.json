@@ -34,5 +34,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004338": {
+    "workId": "wk_000004338",
+    "title": "화요일은 밤이 좋아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118280"
+    },
+    "titles": {
+      "ko": "화요일은 밤이 좋아",
+      "en": "Q110118280"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

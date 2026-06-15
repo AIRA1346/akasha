@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004524": {
+    "workId": "wk_000004524",
+    "title": "드래곤 컬렉션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11322989"
+    },
+    "titles": {
+      "ko": "드래곤 컬렉션",
+      "en": "Dragon Collection",
+      "ja": "ドラゴンコレクション"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

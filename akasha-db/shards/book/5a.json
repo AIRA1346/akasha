@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003734": {
+    "workId": "wk_000003734",
+    "title": "워르테니아 전기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107402130"
+    },
+    "titles": {
+      "ko": "워르테니아 전기",
+      "en": "Record of Wortenia War",
+      "ja": "ウォルテニア戦記"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004313": {
+    "workId": "wk_000004313",
+    "title": "불",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108570137"
+    },
+    "titles": {
+      "ko": "불",
+      "en": "Q108570137"
+    },
+    "releaseYear": 2021,
+    "creator": "Maria Pourchet",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

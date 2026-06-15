@@ -1,1 +1,40 @@
-{}
+{
+  "wk_000003233": {
+    "workId": "wk_000003233",
+    "title": "REC 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050065"
+    },
+    "titles": {
+      "ko": "REC 2",
+      "en": "REC 2",
+      "ja": "REC/レック2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003317": {
+    "workId": "wk_000003317",
+    "title": "캐치 22",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050533"
+    },
+    "titles": {
+      "ko": "캐치 22",
+      "en": "Catch-22",
+      "ja": "キャッチ２２"
+    },
+    "releaseYear": 1970,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

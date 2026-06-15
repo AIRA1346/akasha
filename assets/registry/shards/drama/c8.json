@@ -86,5 +86,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004999": {
+    "workId": "wk_000004999",
+    "title": "장미맨션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111731763"
+    },
+    "titles": {
+      "ko": "장미맨션",
+      "en": "Rose Mansion",
+      "ja": "バラマンション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005066": {
+    "workId": "wk_000005066",
+    "title": "BS 열도 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191810"
+    },
+    "titles": {
+      "ko": "BS 열도 뉴스",
+      "en": "Q11191810",
+      "ja": "BS列島ニュース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

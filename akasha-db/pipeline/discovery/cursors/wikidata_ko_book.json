@@ -1,10 +1,10 @@
 {
   "lastPage": 0,
   "lastId": null,
-  "updatedAt": "2026-06-14T21:56:10.858085Z",
+  "updatedAt": "2026-06-15T00:49:44.375121Z",
   "channelId": "wikidata_ko_book",
   "source": "wikidata_ko",
-  "offset": 700,
+  "offset": 1340,
   "note": "synced from catalog-scale-baseline @2008",
-  "lastQid": "Q1066371"
+  "lastQid": "Q109358340"
 }

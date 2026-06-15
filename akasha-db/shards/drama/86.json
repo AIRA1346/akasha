@@ -50,5 +50,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004261": {
+    "workId": "wk_000004261",
+    "title": "OBS 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110116046"
+    },
+    "titles": {
+      "ko": "OBS 뉴스",
+      "en": "Q110116046"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004551": {
+    "workId": "wk_000004551",
+    "title": "내일",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110618862"
+    },
+    "titles": {
+      "ko": "내일",
+      "en": "Tomorrow",
+      "ja": "明日"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004926": {
+    "workId": "wk_000004926",
+    "title": "트롤리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111458428"
+    },
+    "titles": {
+      "ko": "트롤리",
+      "en": "Trolley",
+      "ja": "車輪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

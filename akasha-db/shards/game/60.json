@@ -1,0 +1,59 @@
+{
+  "wk_000003565": {
+    "workId": "wk_000003565",
+    "title": "크레용 신짱 대마왕의 역습",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11113131"
+    },
+    "titles": {
+      "ko": "크레용 신짱 대마왕의 역습",
+      "en": "Crayon Shin-Chan 2: Dai Maou no Gyakushuu",
+      "ja": "クレヨンしんちゃん2 大魔王の逆襲"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003733": {
+    "workId": "wk_000003733",
+    "title": "톰 클랜시의 레인보우 식스 모바일",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111634138"
+    },
+    "titles": {
+      "ko": "톰 클랜시의 레인보우 식스 모바일",
+      "en": "Tom Clancy's Rainbow Six Mobile",
+      "ja": "レインボーシックス モバイル"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004661": {
+    "workId": "wk_000004661",
+    "title": "레미니센스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11349910"
+    },
+    "titles": {
+      "ko": "레미니센스",
+      "en": "REMINISCENCE",
+      "ja": "レミニセンス (ゲーム)"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

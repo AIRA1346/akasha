@@ -122,5 +122,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005054": {
+    "workId": "wk_000005054",
+    "title": "100 자격을 가질 여자 ~ 두 사람의 이혼남 살인 수사 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11185051"
+    },
+    "titles": {
+      "ko": "100 자격을 가질 여자 ~ 두 사람의 이혼남 살인 수사 ~",
+      "en": "100 No shikaku o motsu on'na 〜 futari no Batsuichi satsujin sōsa 〜",
+      "ja": "100の資格を持つ女〜ふたりのバツイチ殺人捜査〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

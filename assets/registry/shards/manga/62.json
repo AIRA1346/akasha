@@ -48,5 +48,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003976": {
+    "workId": "wk_000003976",
+    "title": "마왕 2099",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117289666"
+    },
+    "titles": {
+      "ko": "마왕 2099",
+      "en": "Demon Lord 2099",
+      "ja": "魔王2099"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004135": {
+    "workId": "wk_000004135",
+    "title": "약혼 파기당한 영애를 주운 내가, 나쁜 짓을 가르치다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118293549"
+    },
+    "titles": {
+      "ko": "약혼 파기당한 영애를 주운 내가, 나쁜 짓을 가르치다",
+      "en": "I'm Giving the Disgraced Noble Lady I Rescued a Crash Course in Naughtiness",
+      "ja": "婚約破棄された令嬢を拾った俺が、イケナイことを教え込む"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

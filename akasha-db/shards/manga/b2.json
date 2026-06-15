@@ -36,5 +36,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003176": {
+    "workId": "wk_000003176",
+    "title": "기동전사 건담 SEED ASTRAY",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11544399"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED ASTRAY",
+      "en": "Q11544399",
+      "ja": "機動戦士ガンダムSEED ASTRAY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004417": {
+    "workId": "wk_000004417",
+    "title": "바키",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197213"
+    },
+    "titles": {
+      "ko": "바키",
+      "en": "Baki the Grappler",
+      "ja": "グラップラー刃牙"
+    },
+    "creator": "Keisuke Itagaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

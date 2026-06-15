@@ -34,5 +34,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004280": {
+    "workId": "wk_000004280",
+    "title": "엘도라도 (2010년 드라마)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324081"
+    },
+    "titles": {
+      "ko": "엘도라도 (2010년 드라마)",
+      "en": "El Dorado",
+      "ja": "ザ・レガシー"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004755": {
+    "workId": "wk_000004755",
+    "title": "킥-하트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14948574"
+    },
+    "titles": {
+      "ko": "킥-하트",
+      "en": "Kick-Heart",
+      "ja": "キックハート"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004758": {
+    "workId": "wk_000004758",
+    "title": "지니어스 파티",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1502268"
+    },
+    "titles": {
+      "ko": "지니어스 파티",
+      "en": "Genius Party",
+      "ja": "ジーニアス・パーティ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000003191": {
+    "workId": "wk_000003191",
+    "title": "언밸런스X2",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q495714"
+    },
+    "titles": {
+      "ko": "언밸런스X2",
+      "en": "Unbalance Unbalance",
+      "ja": "アンバランス×2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

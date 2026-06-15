@@ -17,5 +17,61 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004314": {
+    "workId": "wk_000004314",
+    "title": "초보 연금술사의 점포경영",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108581756"
+    },
+    "titles": {
+      "ko": "초보 연금술사의 점포경영",
+      "en": "Management of Novice Alchemist",
+      "ja": "新米錬金術師の店舗経営"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005048": {
+    "workId": "wk_000005048",
+    "title": "무한공포",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10910894"
+    },
+    "titles": {
+      "ko": "무한공포",
+      "en": "Terror Infinity"
+    },
+    "creator": "Zhttty",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005303": {
+    "workId": "wk_000005303",
+    "title": "대비로자나성불경소",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10935599"
+    },
+    "titles": {
+      "ko": "대비로자나성불경소",
+      "en": "Commentary on the Vairocana Sutra",
+      "ja": "大日経疏"
+    },
+    "creator": "一行",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -71,5 +71,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003781": {
+    "workId": "wk_000003781",
+    "title": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128037635"
+    },
+    "titles": {
+      "ko": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+      "en": "Betrothed to My Sister's Ex",
+      "ja": "ずたぼろ令嬢は姉の元婚約者に溺愛される"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004058": {
+    "workId": "wk_000004058",
+    "title": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130600180"
+    },
+    "titles": {
+      "ko": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+      "en": "Pass the Monster Meat, Milady!",
+      "ja": "悪食令嬢と狂血公爵 〜その魔物、私が美味しくいただきます！〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004430": {
+    "workId": "wk_000004430",
+    "title": "사랑해 게임을 끝내고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134880954"
+    },
+    "titles": {
+      "ko": "사랑해 게임을 끝내고 싶어",
+      "en": "I Want to End This Love Game",
+      "ja": "愛してるゲームを終わらせたい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

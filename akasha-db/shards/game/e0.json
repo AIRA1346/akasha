@@ -1,0 +1,20 @@
+{
+  "wk_000003727": {
+    "workId": "wk_000003727",
+    "title": "9-nine- 신장",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541748"
+    },
+    "titles": {
+      "ko": "9-nine- 신장",
+      "en": "9-nine-:NewEpisode"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

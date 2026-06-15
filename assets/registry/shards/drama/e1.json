@@ -50,5 +50,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003167": {
+    "workId": "wk_000003167",
+    "title": "뉴스매거진 M",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459469"
+    },
+    "titles": {
+      "ko": "뉴스매거진 M",
+      "en": "Q109459469"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003599": {
+    "workId": "wk_000003599",
+    "title": "TV 영어마을",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533713"
+    },
+    "titles": {
+      "ko": "TV 영어마을",
+      "en": "Q109533713"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003679": {
+    "workId": "wk_000003679",
+    "title": "드림 서바이벌 스카우트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546017"
+    },
+    "titles": {
+      "ko": "드림 서바이벌 스카우트",
+      "en": "Q109546017"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

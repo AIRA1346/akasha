@@ -72,5 +72,79 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003086": {
+    "workId": "wk_000003086",
+    "title": "디트로이트 메탈 시티",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152489"
+    },
+    "titles": {
+      "ko": "디트로이트 메탈 시티",
+      "en": "Detroit Metal City",
+      "ja": "デトロイト・メタル・シティ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003260": {
+    "workId": "wk_000003260",
+    "title": "단칸방의 침략자!?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115652204"
+    },
+    "titles": {
+      "ko": "단칸방의 침략자!?",
+      "en": "Invaders of the Rokujouma!?",
+      "ja": "六畳間の侵略者!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003524": {
+    "workId": "wk_000003524",
+    "title": "미즈키 선배의 사랑점",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116183352"
+    },
+    "titles": {
+      "ko": "미즈키 선배의 사랑점",
+      "en": "Mizuki-senpai no Koi Uranai",
+      "ja": "水姫先輩の恋占い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004938": {
+    "workId": "wk_000004938",
+    "title": "사랑했던 사람은, 여동생 대신 죽어달라고 말했다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123532091"
+    },
+    "titles": {
+      "ko": "사랑했던 사람은, 여동생 대신 죽어달라고 말했다.",
+      "en": "The Person I Loved Asked Me to Die in My Sister’s Stead",
+      "ja": "恋した人は、妹の代わりに死んでくれと言った。―妹と結婚した片思い相手がなぜ今さら私のもとに？と思ったら―@COMIC"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

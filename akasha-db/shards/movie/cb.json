@@ -1,0 +1,58 @@
+{
+  "wk_000004538": {
+    "workId": "wk_000004538",
+    "title": "오르페브르의 부두",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1056903"
+    },
+    "titles": {
+      "ko": "오르페브르의 부두",
+      "en": "Quai des Orfèvres",
+      "ja": "犯罪河岸"
+    },
+    "releaseYear": 1947,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004542": {
+    "workId": "wk_000004542",
+    "title": "인싸",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105699133"
+    },
+    "titles": {
+      "ko": "인싸",
+      "en": "Inssa"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005308": {
+    "workId": "wk_000005308",
+    "title": "몽키맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105952623"
+    },
+    "titles": {
+      "ko": "몽키맨",
+      "en": "Monkey Man",
+      "ja": "モンキー・マン"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

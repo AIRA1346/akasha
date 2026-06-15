@@ -31,5 +31,24 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000003794": {
+    "workId": "wk_000003794",
+    "title": "드래곤볼 Z 진무도회 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1118629"
+    },
+    "titles": {
+      "ko": "드래곤볼 Z 진무도회 2",
+      "en": "Dragon Ball Z: Shin Budokai 2",
+      "ja": "ドラゴンボールZ 真武道会2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

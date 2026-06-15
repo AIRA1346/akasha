@@ -31,5 +31,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000004088": {
+    "workId": "wk_000004088",
+    "title": "살아있는 영어로 강해지는 실전! DS 영어 삼매경",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11249172"
+    },
+    "titles": {
+      "ko": "살아있는 영어로 강해지는 실전! DS 영어 삼매경",
+      "en": "Q11249172",
+      "ja": "英語が苦手な大人のDSトレーニング もっとえいご漬け"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004453": {
+    "workId": "wk_000004453",
+    "title": "리틀 노아: 낙원의 후계자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113110615"
+    },
+    "titles": {
+      "ko": "리틀 노아: 낙원의 후계자",
+      "en": "Little Noah: Scion of Paradise",
+      "ja": "リトル ノア 楽園の後継者"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

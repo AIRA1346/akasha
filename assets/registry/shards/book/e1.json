@@ -57,5 +57,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004987": {
+    "workId": "wk_000004987",
+    "title": "십선업도경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10904544"
+    },
+    "titles": {
+      "ko": "십선업도경",
+      "en": "Sūtra of the Path of the Ten Virtues",
+      "ja": "十善業道経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005247": {
+    "workId": "wk_000005247",
+    "title": "그림자를 판 사나이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093419"
+    },
+    "titles": {
+      "ko": "그림자를 판 사나이",
+      "en": "Peter Schlemihl",
+      "ja": "ペーター・シュレミールの不思議な物語"
+    },
+    "releaseYear": 1814,
+    "creator": "Adelbert von Chamisso",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

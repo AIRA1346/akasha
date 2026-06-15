@@ -18,5 +18,41 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003738": {
+    "workId": "wk_000003738",
+    "title": "숨겨진 건 죽음",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107481441"
+    },
+    "titles": {
+      "ko": "숨겨진 건 죽음",
+      "en": "The Sentence is Death"
+    },
+    "creator": "Anthony Horowitz",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004378": {
+    "workId": "wk_000004378",
+    "title": "단칸방의 침략자!?",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865644"
+    },
+    "titles": {
+      "ko": "단칸방의 침략자!?",
+      "en": "Invaders of the Rokujouma!?",
+      "ja": "六畳間の侵略者!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

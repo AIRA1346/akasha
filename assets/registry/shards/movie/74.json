@@ -69,5 +69,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004845": {
+    "workId": "wk_000004845",
+    "title": "사다코 3D",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058489"
+    },
+    "titles": {
+      "ko": "사다코 3D",
+      "en": "Sadako 3D",
+      "ja": "貞子3D"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005167": {
+    "workId": "wk_000005167",
+    "title": "밤은 돌아오지 않는다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058934"
+    },
+    "titles": {
+      "ko": "밤은 돌아오지 않는다",
+      "en": "Tender Is the Night",
+      "ja": "夜は帰ってこない"
+    },
+    "releaseYear": 1962,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

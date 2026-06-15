@@ -1,0 +1,20 @@
+{
+  "wk_000004143": {
+    "workId": "wk_000004143",
+    "title": "네크로노미코의 코즈믹 호러 쇼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131430109"
+    },
+    "titles": {
+      "ko": "네크로노미코의 코즈믹 호러 쇼",
+      "en": "Necronomico and the Cosmic Horror Show",
+      "ja": "ネクロノミ子のコズミックホラーショウ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

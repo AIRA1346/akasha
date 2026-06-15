@@ -16,5 +16,109 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002990": {
+    "workId": "wk_000002990",
+    "title": "EBS 수능포트리스 국사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457861"
+    },
+    "titles": {
+      "ko": "EBS 수능포트리스 국사",
+      "en": "Q109457861"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003829": {
+    "workId": "wk_000003829",
+    "title": "연쇄살인범을 잡아라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109700395"
+    },
+    "titles": {
+      "ko": "연쇄살인범을 잡아라",
+      "en": "Catching Killers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003894": {
+    "workId": "wk_000003894",
+    "title": "엄마는 아이돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110007355"
+    },
+    "titles": {
+      "ko": "엄마는 아이돌",
+      "en": "Mama The Idol"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005009": {
+    "workId": "wk_000005009",
+    "title": "테디베어의 기적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111836949"
+    },
+    "titles": {
+      "ko": "테디베어의 기적",
+      "en": "The Miracle of Teddy Bear"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005060": {
+    "workId": "wk_000005060",
+    "title": "Asian Ace",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11190487"
+    },
+    "titles": {
+      "ko": "Asian Ace",
+      "en": "Asian Ace",
+      "ja": "Asian Ace"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005183": {
+    "workId": "wk_000005183",
+    "title": "오하요 아사히데스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11218035"
+    },
+    "titles": {
+      "ko": "오하요 아사히데스",
+      "en": "Q11218035",
+      "ja": "おはよう朝日です"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

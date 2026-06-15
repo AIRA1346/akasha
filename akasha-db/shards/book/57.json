@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004239": {
+    "workId": "wk_000004239",
+    "title": "고문진보",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855300"
+    },
+    "titles": {
+      "ko": "고문진보",
+      "en": "True Treasures of Ancient Writing",
+      "ja": "古文真宝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004601": {
+    "workId": "wk_000004601",
+    "title": "오륜서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10881511"
+    },
+    "titles": {
+      "ko": "오륜서",
+      "en": "Book of the Five Relationships",
+      "ja": "五倫書"
+    },
+    "creator": "Xuande Emperor",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

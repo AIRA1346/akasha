@@ -35,5 +35,40 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002949": {
+    "workId": "wk_000002949",
+    "title": "다이스 (만화)",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20893453"
+    },
+    "titles": {
+      "ko": "다이스 (만화)",
+      "en": "DICE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003350": {
+    "workId": "wk_000003350",
+    "title": "프리스트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q562405"
+    },
+    "titles": {
+      "ko": "프리스트",
+      "en": "Priest"
+    },
+    "creator": "Hyung Min-woo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -101,5 +101,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003322": {
+    "workId": "wk_000003322",
+    "title": "TOP CEO 3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460771"
+    },
+    "titles": {
+      "ko": "TOP CEO 3",
+      "en": "Q109460771"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

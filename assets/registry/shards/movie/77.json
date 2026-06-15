@@ -1,0 +1,21 @@
+{
+  "wk_000003143": {
+    "workId": "wk_000003143",
+    "title": "그레이 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104891260"
+    },
+    "titles": {
+      "ko": "그레이 맨",
+      "en": "The Gray Man",
+      "ja": "グレイマン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

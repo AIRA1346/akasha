@@ -121,5 +121,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003293": {
+    "workId": "wk_000003293",
+    "title": "호라이즌 콜 오브 더 마운틴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110422709"
+    },
+    "titles": {
+      "ko": "호라이즌 콜 오브 더 마운틴",
+      "en": "Horizon Call of the Mountain"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003799": {
+    "workId": "wk_000003799",
+    "title": "아쿠아 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11189516"
+    },
+    "titles": {
+      "ko": "아쿠아 (게임)",
+      "en": "AQUA",
+      "ja": "AQUA"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004448": {
+    "workId": "wk_000004448",
+    "title": "케인 앤 린치: 데드맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130541"
+    },
+    "titles": {
+      "ko": "케인 앤 린치: 데드맨",
+      "en": "Kane & Lynch: Dead Men",
+      "ja": "KANE&LYNCH: DEAD MEN"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

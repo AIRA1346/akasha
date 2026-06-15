@@ -71,5 +71,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005012": {
+    "workId": "wk_000005012",
+    "title": "아카바네 호네코의 보디가드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124421712"
+    },
+    "titles": {
+      "ko": "아카바네 호네코의 보디가드",
+      "en": "Honeko Akabane's Bodyguards",
+      "ja": "赤羽骨子のボディガード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005129": {
+    "workId": "wk_000005129",
+    "title": "카난 님은 초보 악마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124496871"
+    },
+    "titles": {
+      "ko": "카난 님은 초보 악마",
+      "en": "Mistress Kanan Is Devilishly Easy",
+      "ja": "カナン様はあくまでチョロい"
+    },
+    "creator": "nonco",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

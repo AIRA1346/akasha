@@ -15,5 +15,43 @@
       "ingestChannel": "wikidata_ko_webtoon",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003190": {
+    "workId": "wk_000003190",
+    "title": "노블레스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q493375"
+    },
+    "titles": {
+      "ko": "노블레스",
+      "en": "Noblesse",
+      "ja": "ノブレス"
+    },
+    "creator": "Son Je-ho",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003436": {
+    "workId": "wk_000003436",
+    "title": "네피림존",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6995067"
+    },
+    "titles": {
+      "ko": "네피림존",
+      "en": "Nephilim"
+    },
+    "releaseYear": 2007,
+    "creator": "Ryu Kum-chel",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

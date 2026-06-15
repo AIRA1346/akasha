@@ -53,5 +53,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003613": {
+    "workId": "wk_000003613",
+    "title": "근거리 연애",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11638361"
+    },
+    "titles": {
+      "ko": "근거리 연애",
+      "en": "Love's Reach",
+      "ja": "近キョリ恋愛"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004344": {
+    "workId": "wk_000004344",
+    "title": "사랑해 게임을 끝내고 싶어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119293137"
+    },
+    "titles": {
+      "ko": "사랑해 게임을 끝내고 싶어",
+      "en": "I Want to End This Love Game",
+      "ja": "愛してるゲームを終わらせたい"
+    },
+    "releaseYear": 2026,
+    "creator": "Yūki Dōmoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

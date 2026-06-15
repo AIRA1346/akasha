@@ -1,0 +1,39 @@
+{
+  "wk_000004302": {
+    "workId": "wk_000004302",
+    "title": "아틀리에 시리즈 (잘부르그 시리즈)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284014"
+    },
+    "titles": {
+      "ko": "아틀리에 시리즈 (잘부르그 시리즈)",
+      "en": "Q11284014",
+      "ja": "アトリエシリーズ (ザールブルグ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005242": {
+    "workId": "wk_000005242",
+    "title": "USS 엔터프라이즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143426"
+    },
+    "titles": {
+      "ko": "USS 엔터프라이즈",
+      "en": "Star Trek Online",
+      "ja": "Star Trek Online"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000002968": {
+    "workId": "wk_000002968",
+    "title": "THE IDOLM@STER SHINY FESTA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10888950"
+    },
+    "titles": {
+      "ko": "THE IDOLM@STER SHINY FESTA",
+      "en": "The Idolmaster Shiny Festa",
+      "ja": "THE IDOLM@STER SHINY FESTA"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005239": {
+    "workId": "wk_000005239",
+    "title": "다크 에이지 오브 카멜롯",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143206"
+    },
+    "titles": {
+      "ko": "다크 에이지 오브 카멜롯",
+      "en": "Dark Age of Camelot",
+      "ja": "ダークエイジオブキャメロット"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

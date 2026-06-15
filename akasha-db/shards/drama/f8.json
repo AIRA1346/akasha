@@ -52,5 +52,74 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003008": {
+    "workId": "wk_000003008",
+    "title": "얼짱 KING",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458483"
+    },
+    "titles": {
+      "ko": "얼짱 KING",
+      "en": "Ulzzang KING"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004129": {
+    "workId": "wk_000004129",
+    "title": "스타사관학교",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115450"
+    },
+    "titles": {
+      "ko": "스타사관학교",
+      "en": "Q110115450"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004187": {
+    "workId": "wk_000004187",
+    "title": "역사놀이패 아리아리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115764"
+    },
+    "titles": {
+      "ko": "역사놀이패 아리아리",
+      "en": "Q110115764"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005261": {
+    "workId": "wk_000005261",
+    "title": "NHK 아카이브스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11234987"
+    },
+    "titles": {
+      "ko": "NHK 아카이브스",
+      "en": "NHK Archives",
+      "ja": "NHKアーカイブス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

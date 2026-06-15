@@ -55,5 +55,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004296": {
+    "workId": "wk_000004296",
+    "title": "판타지 골프 팡야 포터블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280589"
+    },
+    "titles": {
+      "ko": "판타지 골프 팡야 포터블",
+      "en": "Pangya: Fantasy Golf",
+      "ja": "ファンタジーゴルフ パンヤ PORTABLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004826": {
+    "workId": "wk_000004826",
+    "title": "슈퍼피플",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113623675"
+    },
+    "titles": {
+      "ko": "슈퍼피플",
+      "en": "Super People 2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004905": {
+    "workId": "wk_000004905",
+    "title": "슈프림 커맨더 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138297"
+    },
+    "titles": {
+      "ko": "슈프림 커맨더 2",
+      "en": "Supreme Commander 2",
+      "ja": "スプリームコマンダー2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -51,5 +51,74 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003418": {
+    "workId": "wk_000003418",
+    "title": "대니적애흔미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461393"
+    },
+    "titles": {
+      "ko": "대니적애흔미",
+      "en": "Q109461393"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003516": {
+    "workId": "wk_000003516",
+    "title": "SBS Biz 뉴스 프리즘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464386"
+    },
+    "titles": {
+      "ko": "SBS Biz 뉴스 프리즘",
+      "en": "Q109464386"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003902": {
+    "workId": "wk_000003902",
+    "title": "EBS 수능포트리스 공통수학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113889"
+    },
+    "titles": {
+      "ko": "EBS 수능포트리스 공통수학",
+      "en": "Q110113889"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005258": {
+    "workId": "wk_000005258",
+    "title": "NEWS23 크로스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11234777"
+    },
+    "titles": {
+      "ko": "NEWS23 크로스",
+      "en": "Q11234777",
+      "ja": "NEWS23X"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

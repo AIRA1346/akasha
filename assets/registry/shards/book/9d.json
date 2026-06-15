@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003137": {
+    "workId": "wk_000003137",
+    "title": "나, 티투바, 세일럼의 검은 마녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106846924"
+    },
+    "titles": {
+      "ko": "나, 티투바, 세일럼의 검은 마녀",
+      "en": "I, Tituba, black witch of Salem"
+    },
+    "releaseYear": 1986,
+    "creator": "Maryse Condé",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

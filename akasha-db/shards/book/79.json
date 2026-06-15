@@ -1,0 +1,21 @@
+{
+  "wk_000003878": {
+    "workId": "wk_000003878",
+    "title": "야생 조립체에 바치는 찬가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107583553"
+    },
+    "titles": {
+      "ko": "야생 조립체에 바치는 찬가",
+      "en": "A Psalm for the Wild-Built"
+    },
+    "releaseYear": 2021,
+    "creator": "Becky Chambers",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

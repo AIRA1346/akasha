@@ -1,0 +1,21 @@
+{
+  "wk_000004852": {
+    "workId": "wk_000004852",
+    "title": "더 웨일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105883400"
+    },
+    "titles": {
+      "ko": "더 웨일",
+      "en": "The Whale",
+      "ja": "ザ・ホエール"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

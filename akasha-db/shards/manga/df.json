@@ -17,5 +17,62 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003254": {
+    "workId": "wk_000003254",
+    "title": "마호로매틱",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155222"
+    },
+    "titles": {
+      "ko": "마호로매틱",
+      "en": "Mahoromatic",
+      "ja": "まほろまてぃっく"
+    },
+    "releaseYear": 1998,
+    "creator": "Bunjūrō Nakayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004942": {
+    "workId": "wk_000004942",
+    "title": "선더 3",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124005523"
+    },
+    "titles": {
+      "ko": "선더 3",
+      "en": "Thunder 3",
+      "ja": "サンダー3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005131": {
+    "workId": "wk_000005131",
+    "title": "기분 나쁘니까 네가 좋아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124559082"
+    },
+    "titles": {
+      "ko": "기분 나쁘니까 네가 좋아",
+      "en": "Kimochi Warui kara Kimi ga Suki",
+      "ja": "きもちわるいから君がすき"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

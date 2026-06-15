@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004699": {
+    "workId": "wk_000004699",
+    "title": "카미이나 보탄, 취한 모습은 백합의 꽃",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336522"
+    },
+    "titles": {
+      "ko": "카미이나 보탄, 취한 모습은 백합의 꽃",
+      "en": "Botan Kamiina Fully Blossoms When Drunk",
+      "ja": "上伊那ぼたん、酔へる姿は百合の花"
+    },
+    "creator": "Hey",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

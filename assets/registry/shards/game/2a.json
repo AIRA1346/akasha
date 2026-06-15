@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000003863": {
+    "workId": "wk_000003863",
+    "title": "시티즌 슬리퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111926668"
+    },
+    "titles": {
+      "ko": "시티즌 슬리퍼",
+      "en": "Citizen Sleeper"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

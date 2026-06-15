@@ -33,5 +33,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004473": {
+    "workId": "wk_000004473",
+    "title": "닥터 로이어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110420048"
+    },
+    "titles": {
+      "ko": "닥터 로이어",
+      "en": "Doctor Lawyer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004937": {
+    "workId": "wk_000004937",
+    "title": "진검승부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111592240"
+    },
+    "titles": {
+      "ko": "진검승부",
+      "en": "Bad Prosecutor",
+      "ja": "真剣勝負 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005195": {
+    "workId": "wk_000005195",
+    "title": "남자가 울지 않는 밤은 없다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11230208"
+    },
+    "titles": {
+      "ko": "남자가 울지 않는 밤은 없다",
+      "en": "Q11230208",
+      "ja": "男が泣かない夜はない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005252": {
+    "workId": "wk_000005252",
+    "title": "대왕의 길",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11232449"
+    },
+    "titles": {
+      "ko": "대왕의 길",
+      "en": "Way of the Great King",
+      "ja": "大王の道"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

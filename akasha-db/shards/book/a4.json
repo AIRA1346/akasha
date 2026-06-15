@@ -18,5 +18,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000004604": {
+    "workId": "wk_000004604",
+    "title": "바닷가에서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108829372"
+    },
+    "titles": {
+      "ko": "바닷가에서",
+      "en": "By the Sea"
+    },
+    "releaseYear": 2001,
+    "creator": "アブドゥルラザク・グルナ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005104": {
+    "workId": "wk_000005104",
+    "title": "고백",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10920066"
+    },
+    "titles": {
+      "ko": "고백",
+      "en": "Confessions",
+      "ja": "告白"
+    },
+    "releaseYear": 2008,
+    "creator": "Kanae Minato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,41 @@
+{
+  "wk_000003739": {
+    "workId": "wk_000003739",
+    "title": "요한의 양피지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107482180"
+    },
+    "titles": {
+      "ko": "요한의 양피지",
+      "en": "Account of John",
+      "ja": "ヨハネの羊皮紙"
+    },
+    "releaseYear": 1829,
+    "creator": "Joseph Smith",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004172": {
+    "workId": "wk_000004172",
+    "title": "지구에서 온 여자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108527999"
+    },
+    "titles": {
+      "ko": "지구에서 온 여자",
+      "en": "Captive of Gor"
+    },
+    "releaseYear": 1972,
+    "creator": "John Norman",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}
