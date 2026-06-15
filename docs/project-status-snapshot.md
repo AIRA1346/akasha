@@ -16,7 +16,7 @@
 | **Registry** | **5181 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **5181/5181 (100%)** |
-| **flutter test** | **291/291 PASS** |
+| **flutter test** | **297/297 PASS** (browse window dogfood +6) |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
