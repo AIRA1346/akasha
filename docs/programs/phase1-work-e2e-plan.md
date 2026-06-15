@@ -67,7 +67,7 @@
 | A1 | **G-AUTO** 전체 | 0 fail | ✅ 2026-06-14 |
 | A2 | **Dogfood E2E** ①~④ | Pass | ✅ 2026-06-14 |
 | A3 | **M3** Steam Release | R1~R6 | ⏸️ **보류** — 원하는 품질 될 때 |
-| A4 | friction log | 0~N | — (없음) |
+| A4 | friction log | 0~N | — → [sprint-b-friction-log](sprint-b-friction-log.md) |
 
 ### Sprint B — 품질 다듬기 ← **현재**
 
@@ -80,11 +80,11 @@
 
 ### Sprint C — Catalog G1 (병행 · 측정만)
 
-| # | 작업 | Exit |
-|:-:|------|------|
-| C1 | Wikidata trial batch insert ([catalog-growth-charter](catalog-growth-charter.md)) | gate 통과분만 merge |
-| C2 | **관측만** — `entryCount` 1k/3k/5k 시 cold start ms · APK MB · master_index 체감 | 스프레드시트 기록 |
-| C3 | **문제 확인된 것만** 수정 — 추측 확장 금지 | — |
+| # | 작업 | Exit | 상태 |
+|:-:|------|------|:----:|
+| C1 | Wikidata trial batch insert ([catalog-growth-charter](catalog-growth-charter.md)) | gate 통과분만 merge | ✅ G1 @5181 |
+| C2 | **관측만** — `entryCount` 1k/3k/5k 시 cold start ms · APK MB · master_index 체감 | 스프레드시트 기록 | ✅ [catalog-scale-baseline-490](catalog-scale-baseline-490.md) |
+| C3 | **문제 확인된 것만** 수정 — 추측 확장 금지 | — | 진행 |
 
 ### Sprint D — v1.1 (E2E 피드백 기반)
 
@@ -129,6 +129,7 @@
 | 2026-06-14 | Sprint **A1** G-AUTO ✅ — test 271 · analyze 0 error · Release exe |
 | 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |
 | 2026-06-14 | **M3 보류** — Sprint **B** 품질 다듬기로 전환 |
+| 2026-06-15 | Sprint **C2** @5181 관측 ✅ · [sprint-b-friction-log](sprint-b-friction-log.md) 시작 |
 
 ---
 
