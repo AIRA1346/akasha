@@ -29,9 +29,9 @@
 
 | 시나리오 | 기대 | 확인 |
 |----------|------|:----:|
-| 오프라인 cold start | eager 53 shard + search_index 로드 | ☐ |
-| 온라인 browse `더 불러오기` | CDN shard on-demand | ✅ | |
-| franchise IP 카드 | 멤버 매체 칩 정상 | ☐ | |
+| 오프라인 cold start | eager 53 shard + search_index 로드 | ✅ | 2026-06-15 dogfood |
+| 온라인 browse `더 불러오기` | CDN shard on-demand | ✅ | 2026-06-15 dogfood |
+| franchise IP 카드 | 멤버 매체 칩 정상 | ✅ | 2026-06-15 dogfood |
 | 매체(만화·애니) 접기 | 대시보드 하위 섹션 | ✅ | |
 | 대시보드 watchlist 숨김 | 카탈로그·연도별만 | ✅ | |
 
@@ -58,5 +58,5 @@
 | Q1 | ①~④ 매끄러운가? | |
 | Q2 | 2주+ 실사용? | |
 | Q3 | 남은 friction 출시 가능 수준? | |
-| Q4 | 5181 · 검색 체감 OK? | |
-| Q5 | 스토어 스크린샷 = 현재 앱? | |
+| Q4 | 5181 · 검색 체감 OK? | ✅ |
+| Q5 | 스토어 스크린샷 = 현재 앱? | — (보류) |

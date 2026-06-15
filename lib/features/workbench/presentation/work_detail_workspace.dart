@@ -7,6 +7,8 @@ import '../../../services/file_service.dart';
 import '../../../services/markdown_body_merger.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
+import '../../../services/works_registry.dart';
+import '../../../widgets/editable_tag_chips.dart';
 import '../../../widgets/poster_image.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/star_rating.dart';
@@ -55,9 +57,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   late String _draftWorkStatus;
   late String _draftMyStatus;
   late bool _draftHallOfFame;
+  List<String> _draftTags = [];
+  Set<String> _registryTags = {};
 
   late TextEditingController _titleCtrl;
-  late TextEditingController _tagsCtrl;
   late TextEditingController _posterUrlCtrl;
   late TextEditingController _bodyCtrl;
   late TextEditingController _fileCtrl;
@@ -67,7 +70,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   void initState() {
     super.initState();
     _titleCtrl = TextEditingController();
-    _tagsCtrl = TextEditingController();
     _posterUrlCtrl = TextEditingController();
     _bodyCtrl = TextEditingController();
     _fileCtrl = TextEditingController();
@@ -77,7 +79,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   void _applyItem(AkashaItem item, {required bool resetPageView}) {
     _item = item;
     _titleCtrl.text = _item.title;
-    _tagsCtrl.text = _item.tags.join(', ');
+    _draftTags = List<String>.from(_item.tags);
+    _registryTags = _loadRegistryTags(_item.workId);
     _posterUrlCtrl.text = _item.posterPath ?? '';
     _bodyCtrl.text = _initialBodyMarkdown();
     if (resetPageView) _pageView = SanctumPageView.preview;
@@ -95,7 +98,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         a.review == b.review &&
         a.myStatusLabel == b.myStatusLabel &&
         a.workStatusLabel == b.workStatusLabel &&
-        a.isHallOfFame == b.isHallOfFame;
+        a.isHallOfFame == b.isHallOfFame &&
+        listEquals(a.tags, b.tags);
   }
 
   @override
@@ -144,7 +148,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   @override
   void dispose() {
     _titleCtrl.dispose();
-    _tagsCtrl.dispose();
     _posterUrlCtrl.dispose();
     _bodyCtrl.dispose();
     _fileCtrl.dispose();
@@ -156,12 +159,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     setState(() {});
   }
 
-  List<String> _parseTags(String raw) {
-    return raw
-        .split(',')
-        .map((t) => t.trim())
-        .where((t) => t.isNotEmpty)
-        .toList();
+  Set<String> _loadRegistryTags(String workId) {
+    final resolved = WorksRegistry.resolveWorkId(workId);
+    if (resolved.isEmpty) return {};
+    final work = WorksRegistry.getWorkById(resolved);
+    return work?.tags.toSet() ?? {};
   }
 
   AkashaItem _buildSaveDraft() {
@@ -200,7 +202,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _item.setWorkStatus(_draftWorkStatus);
     _item.setMyStatus(_draftMyStatus);
     _item.isHallOfFame = _draftHallOfFame;
-    _item.tags = _parseTags(_tagsCtrl.text);
+    _item.tags = List<String>.from(_draftTags);
     return _item;
   }
 
@@ -230,7 +232,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   void _resetToDefaults() {
     WorkInfoDefaults.applyRegistryDefaults(_item);
     _titleCtrl.text = _item.title;
-    _tagsCtrl.text = _item.tags.join(', ');
+    _draftTags = List<String>.from(_item.tags);
+    _registryTags = _loadRegistryTags(_item.workId);
     _posterUrlCtrl.text = _item.posterPath ?? '';
     _bodyCtrl.text = _initialBodyMarkdown();
     _loadDraftFromItem();
@@ -265,7 +268,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       setState(() {
         _item = saved;
         _titleCtrl.text = saved.title;
-        _tagsCtrl.text = saved.tags.join(', ');
+        _draftTags = List<String>.from(saved.tags);
+        _registryTags = _loadRegistryTags(saved.workId);
         _posterUrlCtrl.text = saved.posterPath ?? '';
         _bodyCtrl.text = saved.bodyRaw.trim().isNotEmpty
             ? saved.bodyRaw
@@ -518,16 +522,22 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           ],
         ),
         const SizedBox(height: 6),
-        TextField(
-          controller: _tagsCtrl,
-          onChanged: (_) => _markDirty(),
-          style: const TextStyle(fontSize: 11),
-          decoration: const InputDecoration(
-            hintText: '태그',
-            isDense: true,
-            border: OutlineInputBorder(),
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+        Text(
+          '태그',
+          style: TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
+            color: Colors.grey[500],
           ),
+        ),
+        const SizedBox(height: 4),
+        EditableTagChips(
+          tags: _draftTags,
+          registryTags: _registryTags,
+          onChanged: (tags) {
+            setState(() => _draftTags = tags);
+            _markDirty();
+          },
         ),
         const SizedBox(height: 8),
         if (widget.onAddToLibrary != null) ...[
