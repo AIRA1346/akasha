@@ -1,23 +1,17 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/utils/helpers.dart';
 
+import 'support/registry_test_harness.dart';
+
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  const channel = MethodChannel('plugins.flutter.io/path_provider');
-  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-      .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
-    return '.';
-  });
-
   setUpAll(() async {
-    await WorksRegistry.init();
-    await WorksRegistry.prefetchMasterCatalog();
+    await initRegistryForGameCategoryFixtures();
   });
+
+  tearDownAll(clearRegistryTestFetcher);
 
   group('Phase 6 — Global Library Autoloading & Status Borders Tests', () {
     test('On-Demand Fusion merges local vault items with registry templates correctly', () {

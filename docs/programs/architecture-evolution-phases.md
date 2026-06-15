@@ -178,9 +178,9 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0~1 · 2.0~**2.2** · Phase 4.1~**4.4a** |
-| **진행** | Discovery G1 insert · **Phase 2.3** bundle flag · Phase 4.4b |
-| **다음** | Phase 2.3 manifest-only bundle |
+| **완료** | Phase 0~1 · 2.0~**2.3** · Phase 4.1~**4.4a** · **Sprint C2** @5181 |
+| **진행** | **Sprint B** dogfood · Phase 4.4b |
+| **다음** | Sprint B friction → M3 Ready 판단 |
 
 ---
 

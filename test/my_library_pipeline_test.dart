@@ -11,14 +11,14 @@ import 'package:akasha/services/my_library_pipeline.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
-void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+import 'support/registry_test_harness.dart';
 
+void main() {
   setUpAll(() async {
-    await WorksRegistry.init();
-    await FranchiseRegistry.init();
-    await WorksRegistry.prefetchMasterCatalog();
+    await initRegistryForFranchiseFixtures();
   });
+
+  tearDownAll(clearRegistryTestFetcher);
 
   AkashaItem archivedItem({
     required String workId,

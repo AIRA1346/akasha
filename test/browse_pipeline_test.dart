@@ -8,14 +8,14 @@ import 'package:akasha/services/user_registry_preferences.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
-void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+import 'support/registry_test_harness.dart';
 
+void main() {
   setUpAll(() async {
-    await WorksRegistry.init();
-    await FranchiseRegistry.init();
-    await WorksRegistry.prefetchMasterCatalog();
+    await initRegistryForFranchiseFixtures();
   });
+
+  tearDownAll(clearRegistryTestFetcher);
 
   setUp(() async {
     SharedPreferences.setMockInitialValues({});

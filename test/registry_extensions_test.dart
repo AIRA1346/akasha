@@ -3,6 +3,8 @@ import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/registry_extension_labels.dart';
 
+import 'support/registry_test_harness.dart';
+
 void main() {
   test('RegistryWork parses extensions and formats game labels', () {
     final work = RegistryWork.fromJson({
@@ -23,11 +25,11 @@ void main() {
   });
 
   test('minecraft shard includes extensions after catalog load', () async {
-    TestWidgetsFlutterBinding.ensureInitialized();
+    installRegistryTestBindings();
     await WorksRegistry.init();
-    await WorksRegistry.prefetchForFilters(
-      categories: {MediaCategory.game},
-    );
+    mockAkashaDbShardFetcher();
+    await prefetchRegistryFixtureQueries(const ['minecraft', '마인크래프트']);
+    addTearDown(clearRegistryTestFetcher);
 
     final work = WorksRegistry.getWorkById('gen_game_minecraft_2011');
     expect(work, isNotNull);

@@ -1,7 +1,7 @@
 # Project Status Snapshot
 
-> **갱신:** 2026-06-15 (@5181)  
-> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **1** + **2 Scale 진행**  
+> **갱신:** 2026-06-15 (@5181 · C2 ✅)  
+> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **2** G1 달성 → **Sprint B**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -16,15 +16,15 @@
 | **Registry** | **5181 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **5181/5181 (100%)** |
-| **flutter test** | **297/297 PASS** (browse window dogfood +6) |
+| **flutter test** | **299/299 PASS** (G1 fixture harness +2) |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
 | **다음** | Sprint B — 작품 `.md` 실사용 · friction · M3 Ready |
-| **Scale / Core** | **Phase 2** — @5181 · G1 ✅ · eager bundle ✅ |
+| **Scale / Core** | **Phase 2.0~2.3** ✅ @5181 · G1 ✅ · C2 관측 ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
-| **Discovery** | `patchStatus: active_trial` · Wikidata ko (7 categories) |
-| **CDN** | akasha-db.pages.dev — **5181 deploy 대기** (로컬 최신) |
+| **Discovery** | `patchStatus: active_trial` · **insert 감속** (yield 관측) |
+| **CDN** | akasha-db.pages.dev — **5181 live** ✅ |
 
 ---
 

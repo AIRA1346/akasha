@@ -1,23 +1,20 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/helpers.dart';
 
+import 'support/registry_test_harness.dart';
+
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  const channel = MethodChannel('plugins.flutter.io/path_provider');
-  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-      .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
-    return '.';
-  });
-
   setUpAll(() async {
+    installRegistryTestBindings();
     await WorksRegistry.init();
-    await WorksRegistry.prefetchMasterCatalog();
+    mockAkashaDbShardFetcher();
+    await prefetchRegistryFixtureQueries(const ['엘든', 'elden']);
   });
+
+  tearDownAll(clearRegistryTestFetcher);
 
   group('Phase 5 — Reliability & Offline Completeness Tests', () {
     test('MarkdownParser rescues values from broken YAML front-matter', () {
