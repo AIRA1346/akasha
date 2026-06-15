@@ -132,6 +132,13 @@ class BrowseView extends StatelessWidget {
           sectionPrefs.setYearlySort(val, onStateChanged),
       onWatchlistSortChanged: (val) =>
           sectionPrefs.setWatchlistSort(val, onStateChanged),
+      catalogCategoryExpanded: sectionPrefs.isCatalogCategoryExpanded,
+      onCatalogCategoryExpandedChanged: (category, expanded) =>
+          sectionPrefs.setCatalogCategoryExpanded(
+            category,
+            expanded,
+            onStateChanged,
+          ),
       posterCardBuilder: posterCardBuilder,
       gridBuilder: (cards) => BrowsePosterGrid(
         cards: cards,

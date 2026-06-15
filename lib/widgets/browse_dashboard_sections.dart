@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../screens/home/dialogs/work_library_menu.dart';
 import '../models/browse_card.dart';
+import '../models/enums.dart';
 import '../utils/browse_category_groups.dart';
 import '../utils/browse_year_groups.dart';
 import '../utils/helpers.dart';
@@ -43,6 +44,9 @@ class BrowseDashboardSections extends StatelessWidget {
   final bool isPersonalLibraryMode;
   final bool curatedLibrarySort;
   final Widget? catalogFooter;
+  final bool Function(MediaCategory category)? catalogCategoryExpanded;
+  final void Function(MediaCategory category, bool expanded)?
+      onCatalogCategoryExpandedChanged;
 
   const BrowseDashboardSections({
     super.key,
@@ -74,6 +78,8 @@ class BrowseDashboardSections extends StatelessWidget {
     this.isPersonalLibraryMode = false,
     this.curatedLibrarySort = false,
     this.catalogFooter,
+    this.catalogCategoryExpanded,
+    this.onCatalogCategoryExpandedChanged,
   });
 
   @override
@@ -141,37 +147,13 @@ class BrowseDashboardSections extends StatelessWidget {
           if (libraryExpanded) ...[
             if (categoryGroups != null)
               for (final category in categoryGroups!.orderedCategories) ...[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(28, 12, 16, 4),
-                  child: Row(
-                    children: [
-                      Icon(
-                        category.icon,
-                        size: 18,
-                        color: Colors.orangeAccent.withValues(alpha: 0.9),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        category.label,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orangeAccent,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '(${categoryGroups!.byCategory[category]!.length}개 작품)',
-                        style: TextStyle(fontSize: 12, color: Colors.grey[400]),
-                      ),
-                    ],
-                  ),
-                ),
-                gridBuilder(categoryGroups!.byCategory[category]!),
+                _catalogCategoryHeader(category),
+                if (_isCatalogCategoryExpanded(category))
+                  gridBuilder(categoryGroups!.byCategory[category]!),
               ]
             else
               gridBuilder(libraryCards),
-            if (catalogFooter != null) catalogFooter!,
+            ?catalogFooter,
           ],
           const SizedBox(height: 16),
         ],
@@ -294,6 +276,58 @@ class BrowseDashboardSections extends StatelessWidget {
         ],
       ],
     ),
+    );
+  }
+
+  bool _isCatalogCategoryExpanded(MediaCategory category) {
+    if (catalogCategoryExpanded == null) return true;
+    return catalogCategoryExpanded!(category);
+  }
+
+  Widget _catalogCategoryHeader(MediaCategory category) {
+    final expanded = _isCatalogCategoryExpanded(category);
+    final count = categoryGroups!.byCategory[category]!.length;
+    return GestureDetector(
+      onTap: onCatalogCategoryExpandedChanged == null
+          ? null
+          : () => onCatalogCategoryExpandedChanged!(category, !expanded),
+      behavior: HitTestBehavior.opaque,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(28, 12, 16, 4),
+        child: Row(
+          children: [
+            if (onCatalogCategoryExpandedChanged != null) ...[
+              Icon(
+                expanded
+                    ? Icons.keyboard_arrow_down
+                    : Icons.keyboard_arrow_right,
+                size: 20,
+                color: Colors.grey[400],
+              ),
+              const SizedBox(width: 4),
+            ],
+            Icon(
+              category.icon,
+              size: 18,
+              color: Colors.orangeAccent.withValues(alpha: 0.9),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              category.label,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.orangeAccent,
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              '($count개 작품)',
+              style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

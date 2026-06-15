@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../utils/helpers.dart';
+import '../../models/enums.dart';
 
 /// 홈 섹션 정렬·접이식 상태 영속화
 class HomeSectionPreferences {
@@ -16,6 +17,9 @@ class HomeSectionPreferences {
   bool yearlyExpanded = true;
   bool watchlistExpanded = true;
 
+  /// 글로벌 카탈로그 매체(만화·애니 등) 하위 섹션 접기
+  final Set<MediaCategory> collapsedCatalogCategories = {};
+
   static Future<HomeSectionPreferences> load() async {
     final prefs = HomeSectionPreferences();
     try {
@@ -28,6 +32,7 @@ class HomeSectionPreferences {
       prefs.libraryExpanded = sp.getBool('akasha_expanded_library') ?? true;
       prefs.yearlyExpanded = sp.getBool('akasha_expanded_yearly') ?? true;
       prefs.watchlistExpanded = sp.getBool('akasha_expanded_watchlist') ?? true;
+      prefs._loadCollapsedCatalogCategories(sp);
     } catch (e) {
       debugPrint('Error loading section preferences: $e');
     }
@@ -83,6 +88,49 @@ class HomeSectionPreferences {
     watchlistExpanded = value;
     saveExpanded('watchlist', value);
     notify();
+  }
+
+  bool isCatalogCategoryExpanded(MediaCategory category) =>
+      !collapsedCatalogCategories.contains(category);
+
+  void setCatalogCategoryExpanded(
+    MediaCategory category,
+    bool expanded,
+    VoidCallback notify,
+  ) {
+    if (expanded) {
+      collapsedCatalogCategories.remove(category);
+    } else {
+      collapsedCatalogCategories.add(category);
+    }
+    _saveCollapsedCatalogCategories();
+    notify();
+  }
+
+  void _loadCollapsedCatalogCategories(SharedPreferences sp) {
+    collapsedCatalogCategories.clear();
+    final raw = sp.getString('akasha_collapsed_catalog_categories');
+    if (raw == null || raw.isEmpty) return;
+    for (final name in raw.split(',')) {
+      final trimmed = name.trim();
+      if (trimmed.isEmpty) continue;
+      for (final category in MediaCategory.values) {
+        if (category.name == trimmed) {
+          collapsedCatalogCategories.add(category);
+          break;
+        }
+      }
+    }
+  }
+
+  Future<void> _saveCollapsedCatalogCategories() async {
+    try {
+      final sp = await SharedPreferences.getInstance();
+      final raw = collapsedCatalogCategories.map((c) => c.name).join(',');
+      await sp.setString('akasha_collapsed_catalog_categories', raw);
+    } catch (e) {
+      debugPrint('Error saving collapsed catalog categories: $e');
+    }
   }
 
   void setHofSort(SortCriteria value, VoidCallback notify) {
