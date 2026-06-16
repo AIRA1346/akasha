@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/app_l10n.dart';
 import '../../widgets/dashboard_sidebar.dart';
 import '../../services/file_service.dart';
 
@@ -47,12 +48,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     final vaultLinked = AkashaFileService().vaultPath != null;
 
     return AppBar(
       leading: IconButton(
         icon: Icon(isSidebarOpen ? Icons.menu_open : Icons.menu),
-        tooltip: '사이드바 토글 (Tab)',
+        tooltip: l10n?.appBarToggleSidebar ?? '사이드바 토글 (Tab)',
         onPressed: onToggleSidebar,
       ),
       title: const Text(
@@ -71,23 +73,23 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.palette_outlined,
               color: libraryThemeAccent ?? DashboardSidebar.personalAccent,
             ),
-            tooltip: '서재 테마',
+            tooltip: l10n?.appBarLibraryTheme ?? '서재 테마',
             onPressed: onLibraryTheme,
           ),
         IconButton(
           icon: const Icon(Icons.search),
-          tooltip: '검색',
+          tooltip: l10n?.appBarSearch ?? '검색',
           onPressed: onSearch,
         ),
         if (vaultLinked && onTimelineCapture != null)
           IconButton(
             icon: const Icon(Icons.edit_note_outlined),
-            tooltip: '타임라인 기록',
+            tooltip: l10n?.appBarTimelineCapture ?? '타임라인 기록',
             onPressed: onTimelineCapture,
           ),
         if (onCatalogInbox != null)
           IconButton(
-            tooltip: '카탈로그 제안함',
+            tooltip: l10n?.appBarCatalogInbox ?? '카탈로그 제안함',
             onPressed: onCatalogInbox,
             icon: Badge(
               isLabelVisible: catalogContributionCount > 0,
@@ -97,7 +99,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         IconButton(
           icon: const Icon(Icons.smart_toy_outlined),
-          tooltip: 'AI 마크다운 가져오기',
+          tooltip: l10n?.appBarClipboardImport ?? 'AI 마크다운 가져오기',
           onPressed: onClipboardImport,
         ),
         if (isSyncing)
@@ -112,18 +114,20 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         else
           IconButton(
             icon: const Icon(Icons.sync),
-            tooltip: '글로벌 작품 사전 동기화 (길게 눌러 설정)',
+            tooltip:
+                l10n?.appBarSyncRegistry ?? '글로벌 작품 사전 동기화 (길게 눌러 설정)',
             onPressed: onSync,
             onLongPress: onSyncSettings,
           ),
         IconButton(
           icon: const Icon(Icons.copy_all),
-          tooltip: 'AI 프롬프트 템플릿 복사',
+          tooltip: l10n?.appBarPromptTemplates ?? 'AI 프롬프트 템플릿 복사',
           onPressed: onPromptTemplates,
         ),
         IconButton(
           icon: const Icon(Icons.delete_sweep_outlined),
-          tooltip: '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
+          tooltip: l10n?.appBarClearRegistryCache ??
+              '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)',
           onPressed: onClearRegistryCache,
         ),
         IconButton(
@@ -131,7 +135,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             vaultLinked ? Icons.folder : Icons.folder_open_outlined,
             color: vaultLinked ? Colors.tealAccent : null,
           ),
-          tooltip: '로컬 폴더(Vault) 설정',
+          tooltip: l10n?.appBarVaultSettings ?? '로컬 폴더(Vault) 설정',
           onPressed: onVaultSettings,
         ),
       ],

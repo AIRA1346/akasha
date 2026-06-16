@@ -127,7 +127,7 @@ E4 스케일 trigger 대비 (측정 후만)
 
 ---
 
-## E3 — 글로벌 v1.1 (Sprint D · [locale-catalog-policy](../policy/locale-catalog-policy.md)) · **진행**
+## E3 — 글로벌 v1.1 (Sprint D · [locale-catalog-policy](../policy/locale-catalog-policy.md)) · **✅**
 
 ### E3-A 앱 로케일
 
@@ -137,6 +137,7 @@ E4 스케일 trigger 대비 (측정 후만)
 | E3-A2 | Vault 설정 — 「표시 언어」`ko` / `en` (SharedPreferences) | ✅ |
 | E3-A3 | `l10n/` ARB · `lib/generated/l10n/` — **크롬만** | ✅ |
 | E3-A4 | BrowseView 로딩·빈 상태·footer 1차 이전 | ✅ |
+| E3-A5 | AppBar 툴팁 ARB 이전 | ✅ |
 
 **비목표:** 작품명 번역은 `titles` · UI 문자열만 ARB.
 
@@ -238,5 +239,6 @@ E4 스케일 trigger 대비 (측정 후만)
 
 | 일자 | 변경 |
 |------|------|
+| 2026-06-16 | E3-B ✅ · AppBar ARB 툴팁 |
 | 2026-06-16 | E2-4 coordinator 분리 완료 · E3-A1~A4 1차 구현 |
 | 2026-06-16 | E0 ✅ · E1-A/B 1차 구현 |

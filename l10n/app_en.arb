@@ -23,5 +23,15 @@
   },
   "settingsDisplayLanguage": "Display language",
   "localeKo": "Korean",
-  "localeEn": "English"
+  "localeEn": "English",
+  "appBarToggleSidebar": "Toggle sidebar (Tab)",
+  "appBarLibraryTheme": "Library theme",
+  "appBarSearch": "Search",
+  "appBarTimelineCapture": "Timeline note",
+  "appBarCatalogInbox": "Catalog suggestions inbox",
+  "appBarClipboardImport": "Import AI markdown",
+  "appBarSyncRegistry": "Sync global works catalog (long-press for settings)",
+  "appBarPromptTemplates": "Copy AI prompt templates",
+  "appBarClearRegistryCache": "Clear catalog JSON cache (not poster images)",
+  "appBarVaultSettings": "Local vault settings"
 }

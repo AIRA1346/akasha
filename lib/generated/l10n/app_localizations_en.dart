@@ -32,4 +32,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get localeEn => 'English';
+
+  @override
+  String get appBarToggleSidebar => 'Toggle sidebar (Tab)';
+
+  @override
+  String get appBarLibraryTheme => 'Library theme';
+
+  @override
+  String get appBarSearch => 'Search';
+
+  @override
+  String get appBarTimelineCapture => 'Timeline note';
+
+  @override
+  String get appBarCatalogInbox => 'Catalog suggestions inbox';
+
+  @override
+  String get appBarClipboardImport => 'Import AI markdown';
+
+  @override
+  String get appBarSyncRegistry =>
+      'Sync global works catalog (long-press for settings)';
+
+  @override
+  String get appBarPromptTemplates => 'Copy AI prompt templates';
+
+  @override
+  String get appBarClearRegistryCache =>
+      'Clear catalog JSON cache (not poster images)';
+
+  @override
+  String get appBarVaultSettings => 'Local vault settings';
 }

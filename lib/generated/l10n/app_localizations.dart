@@ -139,6 +139,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'English'**
   String get localeEn;
+
+  /// No description provided for @appBarToggleSidebar.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle sidebar (Tab)'**
+  String get appBarToggleSidebar;
+
+  /// No description provided for @appBarLibraryTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Library theme'**
+  String get appBarLibraryTheme;
+
+  /// No description provided for @appBarSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get appBarSearch;
+
+  /// No description provided for @appBarTimelineCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline note'**
+  String get appBarTimelineCapture;
+
+  /// No description provided for @appBarCatalogInbox.
+  ///
+  /// In en, this message translates to:
+  /// **'Catalog suggestions inbox'**
+  String get appBarCatalogInbox;
+
+  /// No description provided for @appBarClipboardImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Import AI markdown'**
+  String get appBarClipboardImport;
+
+  /// No description provided for @appBarSyncRegistry.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync global works catalog (long-press for settings)'**
+  String get appBarSyncRegistry;
+
+  /// No description provided for @appBarPromptTemplates.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy AI prompt templates'**
+  String get appBarPromptTemplates;
+
+  /// No description provided for @appBarClearRegistryCache.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear catalog JSON cache (not poster images)'**
+  String get appBarClearRegistryCache;
+
+  /// No description provided for @appBarVaultSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Local vault settings'**
+  String get appBarVaultSettings;
 }
 
 class _AppLocalizationsDelegate

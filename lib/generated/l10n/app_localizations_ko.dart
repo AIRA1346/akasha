@@ -32,4 +32,34 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get localeEn => 'English';
+
+  @override
+  String get appBarToggleSidebar => '사이드바 토글 (Tab)';
+
+  @override
+  String get appBarLibraryTheme => '서재 테마';
+
+  @override
+  String get appBarSearch => '검색';
+
+  @override
+  String get appBarTimelineCapture => '타임라인 기록';
+
+  @override
+  String get appBarCatalogInbox => '카탈로그 제안함';
+
+  @override
+  String get appBarClipboardImport => 'AI 마크다운 가져오기';
+
+  @override
+  String get appBarSyncRegistry => '글로벌 작품 사전 동기화 (길게 눌러 설정)';
+
+  @override
+  String get appBarPromptTemplates => 'AI 프롬프트 템플릿 복사';
+
+  @override
+  String get appBarClearRegistryCache => '글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)';
+
+  @override
+  String get appBarVaultSettings => '로컬 폴더(Vault) 설정';
 }

@@ -6,5 +6,15 @@
   "browseLoadMore": "더 불러오기 (+{count})",
   "settingsDisplayLanguage": "표시 언어",
   "localeKo": "한국어",
-  "localeEn": "English"
+  "localeEn": "English",
+  "appBarToggleSidebar": "사이드바 토글 (Tab)",
+  "appBarLibraryTheme": "서재 테마",
+  "appBarSearch": "검색",
+  "appBarTimelineCapture": "타임라인 기록",
+  "appBarCatalogInbox": "카탈로그 제안함",
+  "appBarClipboardImport": "AI 마크다운 가져오기",
+  "appBarSyncRegistry": "글로벌 작품 사전 동기화 (길게 눌러 설정)",
+  "appBarPromptTemplates": "AI 프롬프트 템플릿 복사",
+  "appBarClearRegistryCache": "글로벌 사전 JSON 캐시 삭제 (이미지 파일 아님)",
+  "appBarVaultSettings": "로컬 폴더(Vault) 설정"
 }
