@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
-import '../../../widgets/editable_tag_chips.dart';
-import '../../../widgets/poster_image.dart';
-import '../../../widgets/star_rating.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
-import 'work_detail_poster_layout.dart';
+import 'work_detail_info_form.dart';
+import 'work_detail_info_poster.dart';
 
 /// 워크벤치 좌측 작품정보 패널 (E2-6).
 class WorkDetailInfoPanel extends StatelessWidget {
@@ -144,18 +142,42 @@ class WorkDetailInfoPanel extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(8, 6, 8, 2),
                         child: Align(
                           alignment: Alignment.topCenter,
-                          child: _buildInfoPoster(
+                          child: WorkDetailInfoPoster(
+                            preview: preview,
+                            posterUrlCtrl: posterUrlCtrl,
+                            gradColors: gradColors,
                             maxWidth: constraints.maxWidth,
                             maxHeight: posterMaxHeight,
-                            preview: preview,
-                            gradColors: gradColors,
+                            onPosterTap: onPosterTap,
                           ),
                         ),
                       ),
                       Expanded(
                         child: SingleChildScrollView(
                           padding: const EdgeInsets.fromLTRB(8, 2, 8, 8),
-                          child: _buildInfoForm(metaLine: metaLine),
+                          child: WorkDetailInfoForm(
+                            item: item,
+                            metaLine: metaLine,
+                            titleCtrl: titleCtrl,
+                            draftRating: draftRating,
+                            draftWorkStatus: draftWorkStatus,
+                            draftMyStatus: draftMyStatus,
+                            draftHallOfFame: draftHallOfFame,
+                            draftTags: draftTags,
+                            registryTags: registryTags,
+                            isSaving: isSaving,
+                            isArchived: isArchived,
+                            showAddToLibrary: showAddToLibrary,
+                            onMarkDirty: onMarkDirty,
+                            onDraftRatingChanged: onDraftRatingChanged,
+                            onDraftWorkStatusChanged: onDraftWorkStatusChanged,
+                            onDraftMyStatusChanged: onDraftMyStatusChanged,
+                            onDraftHallOfFameChanged: onDraftHallOfFameChanged,
+                            onDraftTagsChanged: onDraftTagsChanged,
+                            onResetToDefaults: onResetToDefaults,
+                            onSaveArchive: onSaveArchive,
+                            onAddToLibrary: onAddToLibrary,
+                          ),
                         ),
                       ),
                     ],
@@ -166,283 +188,6 @@ class WorkDetailInfoPanel extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildInfoForm({required String metaLine}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Wrap(
-          spacing: 4,
-          runSpacing: 4,
-          children: [
-            _metaChip(icon: item.domain.icon, label: item.domain.label),
-            _metaChip(icon: item.category.icon, label: item.category.label),
-          ],
-        ),
-        const SizedBox(height: 6),
-        TextField(
-          controller: titleCtrl,
-          onChanged: (_) => onMarkDirty(),
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w800,
-            height: 1.2,
-          ),
-          decoration: const InputDecoration(
-            isDense: true,
-            border: OutlineInputBorder(),
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-          ),
-        ),
-        if (metaLine.isNotEmpty) ...[
-          const SizedBox(height: 4),
-          Text(
-            metaLine,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-          ),
-        ],
-        const SizedBox(height: 6),
-        Row(
-          children: [
-            InteractiveStarRating(
-              rating: draftRating,
-              size: 18,
-              onChanged: (v) {
-                onDraftRatingChanged(v);
-                onMarkDirty();
-              },
-            ),
-            const Spacer(),
-            SizedBox(
-              height: 28,
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Switch(
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  value: draftHallOfFame,
-                  onChanged: (v) {
-                    onDraftHallOfFameChanged(v);
-                    onMarkDirty();
-                  },
-                ),
-              ),
-            ),
-            Text(
-              'HoF',
-              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-            ),
-          ],
-        ),
-        const SizedBox(height: 6),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: _statusDropdown(
-                label: '작품',
-                value: draftWorkStatus,
-                options: item.workStatusOptions,
-                onChanged: (v) {
-                  onDraftWorkStatusChanged(v);
-                  onMarkDirty();
-                },
-              ),
-            ),
-            const SizedBox(width: 6),
-            Expanded(
-              child: _statusDropdown(
-                label: '나의',
-                value: draftMyStatus,
-                options: item.myStatusOptions,
-                onChanged: (v) {
-                  onDraftMyStatusChanged(v);
-                  onMarkDirty();
-                },
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 6),
-        Text(
-          '태그',
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey[500],
-          ),
-        ),
-        const SizedBox(height: 4),
-        EditableTagChips(
-          tags: draftTags,
-          registryTags: registryTags,
-          onChanged: (tags) {
-            onDraftTagsChanged(tags);
-            onMarkDirty();
-          },
-        ),
-        const SizedBox(height: 8),
-        if (showAddToLibrary) ...[
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton.icon(
-              onPressed: onAddToLibrary,
-              icon: const Icon(Icons.collections_bookmark_outlined, size: 16),
-              label: Text(isArchived ? '서재에 담기' : '저장하고 서재에 담기'),
-              style: OutlinedButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                textStyle: const TextStyle(fontSize: 11),
-              ),
-            ),
-          ),
-          const SizedBox(height: 6),
-        ],
-        Row(
-          children: [
-            Expanded(
-              child: OutlinedButton(
-                onPressed: onResetToDefaults,
-                style: OutlinedButton.styleFrom(
-                  visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  textStyle: const TextStyle(fontSize: 11),
-                ),
-                child: const Text('기본값'),
-              ),
-            ),
-            const SizedBox(width: 6),
-            Expanded(
-              flex: 2,
-              child: FilledButton(
-                onPressed: isSaving ? null : onSaveArchive,
-                style: FilledButton.styleFrom(
-                  visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  textStyle: const TextStyle(fontSize: 11),
-                ),
-                child: isSaving
-                    ? const SizedBox(
-                        width: 14,
-                        height: 14,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Text(isArchived ? 'md 저장' : 'md 생성'),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildInfoPoster({
-    required double maxWidth,
-    required double maxHeight,
-    required AkashaItem preview,
-    required List<Color> gradColors,
-  }) {
-    final bounds = infoPosterDisplayBounds(
-      maxWidth: maxWidth,
-      maxHeight: maxHeight,
-    );
-    final width = bounds.width;
-    final height = bounds.height;
-
-    return GestureDetector(
-      onTap: onPosterTap,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6),
-          color: const Color(0xFF12121A),
-          border: Border.all(color: const Color(0xFF2D2D44)),
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              gradColors.first.withValues(alpha: 0.25),
-              const Color(0xFF12121A),
-            ],
-          ),
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: SizedBox(
-            width: width,
-            height: height,
-            child: PosterImage(
-              key: ValueKey(posterUrlCtrl.text),
-              item: preview,
-              fit: BoxFit.contain,
-              width: width,
-              height: height,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _metaChip({required IconData icon, required String label}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-      decoration: BoxDecoration(
-        color: const Color(0xFF252538),
-        borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: const Color(0xFF3A3A52)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 11, color: Colors.tealAccent),
-          const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(fontSize: 10, color: Colors.grey[300]),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _statusDropdown({
-    required String label,
-    required String value,
-    required List<String> options,
-    required ValueChanged<String> onChanged,
-  }) {
-    final safeOptions = options.isEmpty ? [value] : options;
-    final resolved =
-        safeOptions.contains(value) ? value : safeOptions.first;
-
-    return DropdownButtonFormField<String>(
-      initialValue: resolved,
-      isExpanded: true,
-      isDense: true,
-      style: const TextStyle(fontSize: 10, height: 1.1),
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(fontSize: 10, color: Colors.grey[500]),
-        border: const OutlineInputBorder(),
-        isDense: true,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-      ),
-      items: safeOptions
-          .map(
-            (s) => DropdownMenuItem(
-              value: s,
-              child: Text(s, maxLines: 1, overflow: TextOverflow.ellipsis),
-            ),
-          )
-          .toList(),
-      onChanged: (v) {
-        if (v != null) onChanged(v);
-      },
     );
   }
 }
