@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/library_theme.dart';
 import '../../../services/entitlement_service.dart';
-import '../../../services/file_service.dart';
 import '../../../services/library_theme_preferences.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
@@ -15,12 +15,14 @@ import '../home_vault_loader.dart';
 /// 볼트·사용자 설정·auto-archive (E2-2).
 class HomeVaultCoordinator {
   HomeVaultCoordinator({
+    required this.vault,
     required this.isMounted,
     required this.scheduleRebuild,
     required this.onVaultItemsSynced,
     required this.prefetchRegistry,
   });
 
+  final VaultPort vault;
   final bool Function() isMounted;
   final void Function(void Function()) scheduleRebuild;
   final void Function(List<AkashaItem> items) onVaultItemsSynced;
@@ -35,7 +37,7 @@ class HomeVaultCoordinator {
   Timer? vaultReloadDebounce;
 
   Future<void> initService() async {
-    await AkashaFileService().init();
+    await vault.init();
   }
 
   Future<void> loadPreferences() async {
@@ -48,7 +50,7 @@ class HomeVaultCoordinator {
   }
 
   Future<void> loadItems() async {
-    final loadedItems = await HomeVaultLoader.loadItems();
+    final loadedItems = await HomeVaultLoader.loadItems(vault);
     if (!isMounted()) return;
     scheduleRebuild(() => items = loadedItems);
     onVaultItemsSynced(loadedItems);
@@ -67,15 +69,14 @@ class HomeVaultCoordinator {
   }
 
   Future<void> runStartupAutoArchiveIfNeeded() async {
-    if (AkashaFileService().vaultPath != null && autoArchiveRegistry) {
+    if (vault.vaultPath != null && autoArchiveRegistry) {
       await autoArchiveRegistryWorks();
     }
   }
 
   void bindVaultWatch({required VoidCallback onVaultChanged}) {
     vaultUpdateSubscription?.cancel();
-    vaultUpdateSubscription =
-        AkashaFileService().onVaultUpdated.listen((_) {
+    vaultUpdateSubscription = vault.onVaultUpdated.listen((_) {
       vaultReloadDebounce?.cancel();
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
         if (isMounted()) onVaultChanged();

@@ -5,6 +5,10 @@ import 'package:akasha/services/works_registry.dart';
 class FakeRegistryPort implements RegistryPort {
   final List<RegistryWork> _works = [];
 
+  int browsePrefetchWindowSizeValue = 48;
+  int browseFullCatalogThresholdValue = 2500;
+  int catalogIndexTotal = 0;
+
   void addWork(RegistryWork work) {
     _works.add(work);
   }
@@ -61,4 +65,44 @@ class FakeRegistryPort implements RegistryPort {
   bool setContainsWorkId(Set<String> ids, String workId) {
     return ids.contains(workId);
   }
+
+  @override
+  int get browsePrefetchWindowSize => browsePrefetchWindowSizeValue;
+
+  @override
+  int get browseFullCatalogThreshold => browseFullCatalogThresholdValue;
+
+  @override
+  Future<void> loadCachedRegistry() async {}
+
+  @override
+  Future<void> prefetchBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int? limit,
+    bool fetchRemote = false,
+  }) async {}
+
+  @override
+  Future<void> prefetchForFilters({
+    AppDomain? domain,
+    Set<MediaCategory>? categories,
+  }) async {}
+
+  @override
+  int catalogIndexEntryCount({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) {
+    if (catalogIndexTotal > 0) return catalogIndexTotal;
+    return _works.where((w) {
+      if (domain != null && w.domain != domain) return false;
+      if (category != null && w.category != category) return false;
+      return true;
+    }).length;
+  }
+
+  @override
+  Future<void> clearDiskCacheAndReloadBundle() async {}
 }

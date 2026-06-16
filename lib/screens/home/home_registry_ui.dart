@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../services/works_registry.dart';
+import '../../core/ports/registry_port.dart';
 import 'dialogs/clear_registry_cache_confirm_dialog.dart';
 import 'home_registry_prefetch.dart';
 import 'home_browse_filter_controller.dart';
@@ -12,6 +12,7 @@ class HomeRegistryUi {
 
   Future<void> clearDiskCacheAndReload(
     BuildContext context, {
+    required RegistryPort registry,
     required HomeDashboardController dashboardCtrl,
     required HomeBrowseFilterController filterCtrl,
     required void Function(bool loading) onCatalogLoadingChanged,
@@ -25,8 +26,9 @@ class HomeRegistryUi {
     onCatalogLoadingChanged(true);
     setState(() {});
     try {
-      await WorksRegistry.clearDiskCacheAndReloadBundle();
+      await registry.clearDiskCacheAndReloadBundle();
       await prefetchRegistryForFilters(
+        registry: registry,
         activeDashboardId: dashboardCtrl.activeDashboardId,
         filters: filterCtrl,
         onCatalogLoadingChanged: onCatalogLoadingChanged,

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:akasha/data/adapters/works_registry_adapter.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/screens/home/home_browse_filter_controller.dart';
 import 'package:akasha/screens/home/home_registry_prefetch.dart';
@@ -93,6 +94,7 @@ void main() {
       CatalogWindowState? state;
 
       await prefetchRegistryForFilters(
+        registry: WorksRegistryAdapter(),
         activeDashboardId: 'master_index',
         filters: filters,
         onCatalogLoadingChanged: (_) {},
@@ -116,6 +118,7 @@ void main() {
       CatalogWindowState? second;
 
       await prefetchRegistryForFilters(
+        registry: WorksRegistryAdapter(),
         activeDashboardId: 'master_index',
         filters: filters,
         onCatalogLoadingChanged: (_) {},
@@ -125,6 +128,7 @@ void main() {
       );
 
       await prefetchRegistryForFilters(
+        registry: WorksRegistryAdapter(),
         activeDashboardId: 'master_index',
         filters: filters,
         onCatalogLoadingChanged: (_) {},

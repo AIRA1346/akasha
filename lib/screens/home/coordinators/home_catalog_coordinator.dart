@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import '../../../services/registry_sync_service.dart';
+import '../../../core/ports/registry_port.dart';
+import '../../../core/ports/registry_sync_port.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../home_browse_filter_controller.dart';
 import '../home_dashboard_controller.dart';
@@ -10,6 +11,8 @@ import '../home_registry_sync.dart';
 /// 글로벌 카탈로그 prefetch·동기화·기여함 카운트 (E2-1).
 class HomeCatalogCoordinator {
   HomeCatalogCoordinator({
+    required this.registry,
+    required this.registrySyncPort,
     required this.isMounted,
     required this.scheduleRebuild,
     required this.filterCtrl,
@@ -21,6 +24,8 @@ class HomeCatalogCoordinator {
     required this.autoArchiveWorks,
   });
 
+  final RegistryPort registry;
+  final RegistrySyncPort registrySyncPort;
   final bool Function() isMounted;
   final void Function(void Function()) scheduleRebuild;
   final HomeBrowseFilterController filterCtrl;
@@ -44,6 +49,8 @@ class HomeCatalogCoordinator {
 
   void init() {
     registrySync = HomeRegistrySync(
+      registry: registry,
+      sync: registrySyncPort,
       isMounted: isMounted,
       onSyncingChanged: (v) => scheduleRebuild(() => isSyncing = v),
       refreshLastSyncTime: refreshLastSyncTime,
@@ -82,6 +89,7 @@ class HomeCatalogCoordinator {
       scheduleRebuild(() => catalogBrowseOffset = 0);
     }
     await prefetchRegistryForFilters(
+      registry: registry,
       activeDashboardId: dashboardCtrl.activeDashboardId,
       filters: filterCtrl,
       onCatalogLoadingChanged: (v) =>
@@ -109,10 +117,10 @@ class HomeCatalogCoordinator {
   }
 
   Future<void> refreshLastSyncTime() async {
-    await RegistrySyncService().init();
+    await registrySyncPort.init();
     if (!isMounted()) return;
     scheduleRebuild(
-      () => lastSyncTime = RegistrySyncService().lastSyncTime,
+      () => lastSyncTime = registrySyncPort.lastSyncTime,
     );
   }
 

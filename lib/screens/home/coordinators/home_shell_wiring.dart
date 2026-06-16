@@ -1,4 +1,4 @@
-import '../../../data/adapters/works_registry_adapter.dart';
+import '../../../core/ports/registry_port.dart';
 import '../../../services/browse_pipeline.dart';
 import '../../../services/my_library_pipeline.dart';
 import '../../../services/personal_library_membership_service.dart';
@@ -45,6 +45,7 @@ class HomeShellWiring {
   final HomeRegistryHideActions hideActions;
 
   factory HomeShellWiring.create({
+    required RegistryPort registry,
     required HomePersonalLibraryController personalLibCtrl,
     required HomeBrowseFilterController filterCtrl,
     required HomeDashboardController dashboardCtrl,
@@ -59,7 +60,7 @@ class HomeShellWiring {
       showMessage: showMessage,
     );
     final libraryMembership =
-        PersonalLibraryMembershipService(personalLibCtrl, WorksRegistryAdapter());
+        PersonalLibraryMembershipService(personalLibCtrl, registry);
     final membershipCoordinator = HomeMembershipCoordinator(
       personalLibraryController: personalLibCtrl,
       membership: libraryMembership,
@@ -100,8 +101,8 @@ class HomeShellWiring {
 
     return HomeShellWiring._(
       libraryMembership: libraryMembership,
-      browsePipeline: BrowsePipeline(WorksRegistryAdapter()),
-      myLibraryPipeline: MyLibraryPipeline(WorksRegistryAdapter()),
+      browsePipeline: BrowsePipeline(registry),
+      myLibraryPipeline: MyLibraryPipeline(registry),
       membershipCoordinator: membershipCoordinator,
       filterCoordinator: filterCoordinator,
       sidebarCoordinator: sidebarCoordinator,

@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import '../../core/ports/registry_port.dart';
 import '../../models/enums.dart';
-import '../../services/works_registry.dart';
 import 'home_browse_filter_controller.dart';
 
 /// 윈도우 prefetch 후 UI에 전달할 카탈로그 진행 상태
@@ -11,6 +11,7 @@ typedef CatalogWindowState = ({int browseOffset, int totalEntries});
 
 /// 필터·대시보드 범위에 맞는 lazy 샤드 프리페치
 Future<void> prefetchRegistryForFilters({
+  required RegistryPort registry,
   required String? activeDashboardId,
   required HomeBrowseFilterController filters,
   required void Function(bool loading) onCatalogLoadingChanged,
@@ -22,7 +23,7 @@ Future<void> prefetchRegistryForFilters({
 }) async {
   if (activeDashboardId == 'master_index') {
     if (filters.domain != null || filters.categories.isNotEmpty) {
-      await WorksRegistry.prefetchForFilters(
+      await registry.prefetchForFilters(
         domain: filters.domain,
         categories: filters.categories.isEmpty
             ? null
@@ -33,11 +34,12 @@ Future<void> prefetchRegistryForFilters({
     }
 
     if (!append && isMounted()) onCatalogLoadingChanged(true);
-    await WorksRegistry.prefetchBrowseWindow(
+    await registry.prefetchBrowseWindow(
       offset: browseOffset,
-      limit: WorksRegistry.browsePrefetchWindowSize,
+      limit: registry.browsePrefetchWindowSize,
     );
     _emitCatalogWindowState(
+      registry,
       filters,
       browseOffset,
       onCatalogWindowState,
@@ -48,11 +50,13 @@ Future<void> prefetchRegistryForFilters({
     }
     if (isMounted()) onDataChanged();
 
-    final remotePrefetch = WorksRegistry.prefetchBrowseWindow(
-      offset: browseOffset,
-      limit: WorksRegistry.browsePrefetchWindowSize,
-      fetchRemote: true,
-    ).then((_) {
+    final remotePrefetch = registry
+        .prefetchBrowseWindow(
+          offset: browseOffset,
+          limit: registry.browsePrefetchWindowSize,
+          fetchRemote: true,
+        )
+        .then((_) {
       if (isMounted()) onDataChanged();
     });
     if (append) {
@@ -68,7 +72,7 @@ Future<void> prefetchRegistryForFilters({
     return;
   }
 
-  await WorksRegistry.prefetchForFilters(
+  await registry.prefetchForFilters(
     domain: filters.domain,
     categories: filters.categories.isEmpty
         ? null
@@ -79,14 +83,15 @@ Future<void> prefetchRegistryForFilters({
 }
 
 void _emitCatalogWindowState(
+  RegistryPort registry,
   HomeBrowseFilterController filters,
   int browseOffset,
   void Function(CatalogWindowState state)? onCatalogWindowState, {
   bool fullCatalogAtOffsetZero = false,
 }) {
   if (onCatalogWindowState == null) return;
-  final limit = WorksRegistry.browsePrefetchWindowSize;
-  final total = WorksRegistry.catalogIndexEntryCount(
+  final limit = registry.browsePrefetchWindowSize;
+  final total = registry.catalogIndexEntryCount(
     domain: filters.domain,
     category: filters.categories.length == 1 ? filters.categories.first : null,
   );
@@ -94,7 +99,7 @@ void _emitCatalogWindowState(
       filters.domain == null &&
       filters.categories.isEmpty &&
       total > 0 &&
-      total <= WorksRegistry.browseFullCatalogThreshold;
+      total <= registry.browseFullCatalogThreshold;
   onCatalogWindowState((
     browseOffset: useFullCatalog
         ? total

@@ -37,4 +37,47 @@ class WorksRegistryAdapter implements RegistryPort {
   @override
   bool setContainsWorkId(Set<String> ids, String workId) =>
       WorksRegistry.setContainsWorkId(ids, workId);
+
+  @override
+  int get browsePrefetchWindowSize => WorksRegistry.browsePrefetchWindowSize;
+
+  @override
+  int get browseFullCatalogThreshold => WorksRegistry.browseFullCatalogThreshold;
+
+  @override
+  Future<void> loadCachedRegistry() => WorksRegistry.loadCachedRegistry();
+
+  @override
+  Future<void> prefetchBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int? limit,
+    bool fetchRemote = false,
+  }) =>
+      WorksRegistry.prefetchBrowseWindow(
+        domain: domain,
+        category: category,
+        offset: offset,
+        limit: limit ?? WorksRegistry.browsePrefetchWindowSize,
+        fetchRemote: fetchRemote,
+      );
+
+  @override
+  Future<void> prefetchForFilters({
+    AppDomain? domain,
+    Set<MediaCategory>? categories,
+  }) =>
+      WorksRegistry.prefetchForFilters(domain: domain, categories: categories);
+
+  @override
+  int catalogIndexEntryCount({
+    AppDomain? domain,
+    MediaCategory? category,
+  }) =>
+      WorksRegistry.catalogIndexEntryCount(domain: domain, category: category);
+
+  @override
+  Future<void> clearDiskCacheAndReloadBundle() =>
+      WorksRegistry.clearDiskCacheAndReloadBundle();
 }

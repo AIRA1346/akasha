@@ -1,8 +1,10 @@
-import '../../services/registry_sync_service.dart';
-import '../../services/works_registry.dart';
+import '../../core/ports/registry_port.dart';
+import '../../core/ports/registry_sync_port.dart';
 
 /// 홈 화면 글로벌 사전 동기화 오케스트레이션
 class HomeRegistrySync {
+  final RegistryPort registry;
+  final RegistrySyncPort sync;
   final bool Function() isMounted;
   final void Function(bool syncing) onSyncingChanged;
   final Future<void> Function() refreshLastSyncTime;
@@ -12,6 +14,8 @@ class HomeRegistrySync {
   final void Function(String message) showError;
 
   HomeRegistrySync({
+    required this.registry,
+    required this.sync,
     required this.isMounted,
     required this.onSyncingChanged,
     required this.refreshLastSyncTime,
@@ -35,13 +39,12 @@ class HomeRegistrySync {
   Future<void> refreshLastSync() => refreshLastSyncTime();
 
   Future<void> checkAutoSync() async {
-    final syncService = RegistrySyncService();
-    if (!await syncService.shouldAutoSync()) return;
+    if (!await sync.shouldAutoSync()) return;
 
     onSyncingChanged(true);
-    final success = await syncService.sync();
+    final success = await sync.sync();
     if (success) {
-      await WorksRegistry.loadCachedRegistry();
+      await registry.loadCachedRegistry();
       await reloadItems();
       await autoArchiveWorks();
     }
@@ -54,16 +57,15 @@ class HomeRegistrySync {
   Future<void> syncNow() async {
     onSyncingChanged(true);
 
-    final success = await RegistrySyncService().sync();
+    final success = await sync.sync();
     if (success) {
-      await WorksRegistry.loadCachedRegistry();
+      await registry.loadCachedRegistry();
       await reloadItems();
       await autoArchiveWorks();
       await refreshLastSyncTime();
       if (isMounted()) {
-        final last = RegistrySyncService().lastSyncTime;
         showSuccess(
-          '작품 사전 동기화 완료! (마지막: ${formatLastSyncTime(last)})',
+          '작품 사전 동기화 완료! (마지막: ${formatLastSyncTime(sync.lastSyncTime)})',
         );
       }
     } else if (isMounted()) {

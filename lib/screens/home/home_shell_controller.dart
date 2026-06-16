@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
+import '../../core/ports/registry_port.dart';
+import '../../core/ports/registry_sync_port.dart';
+import '../../data/adapters/markdown_vault_adapter.dart';
+import '../../data/adapters/registry_sync_adapter.dart';
+import '../../data/adapters/works_registry_adapter.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
@@ -33,6 +38,8 @@ class HomeShellController {
       HomePersonalLibraryController();
   final WorkbenchController workbench = WorkbenchController();
   final HomeRegistryUi registryUi = const HomeRegistryUi();
+  final RegistryPort registry = WorksRegistryAdapter();
+  final RegistrySyncPort registrySyncPort = RegistrySyncAdapter();
 
   late final HomeVaultCoordinator vault;
   late final HomeCatalogCoordinator catalog;
@@ -57,6 +64,7 @@ class HomeShellController {
 
   void _initCoordinators() {
     vault = HomeVaultCoordinator(
+      vault: MarkdownVaultAdapter(),
       isMounted: () => host.mounted,
       scheduleRebuild: host.scheduleRebuild,
       onVaultItemsSynced: workbench.syncFromVaultItems,
@@ -73,6 +81,7 @@ class HomeShellController {
     );
 
     wiring = HomeShellWiring.create(
+      registry: registry,
       personalLibCtrl: personalLibCtrl,
       filterCtrl: filterCtrl,
       dashboardCtrl: dashboardCtrl,
@@ -94,6 +103,8 @@ class HomeShellController {
     );
 
     catalog = HomeCatalogCoordinator(
+      registry: registry,
+      registrySyncPort: registrySyncPort,
       isMounted: () => host.mounted,
       scheduleRebuild: host.scheduleRebuild,
       filterCtrl: filterCtrl,
@@ -260,6 +271,7 @@ class HomeShellController {
   Future<void> syncRegistry() => catalog.syncRegistry();
   Future<void> clearRegistryCache() => registryUi.clearDiskCacheAndReload(
         host.context,
+        registry: registry,
         dashboardCtrl: dashboardCtrl,
         filterCtrl: filterCtrl,
         onCatalogLoadingChanged: (v) => catalog.isCatalogLoading = v,

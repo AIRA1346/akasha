@@ -16,4 +16,29 @@ abstract class RegistryPort {
   });
   String resolveWorkId(String workId);
   bool setContainsWorkId(Set<String> ids, String workId);
+
+  int get browsePrefetchWindowSize;
+  int get browseFullCatalogThreshold;
+
+  Future<void> loadCachedRegistry();
+
+  Future<void> prefetchBrowseWindow({
+    AppDomain? domain,
+    MediaCategory? category,
+    int offset = 0,
+    int? limit,
+    bool fetchRemote = false,
+  });
+
+  Future<void> prefetchForFilters({
+    AppDomain? domain,
+    Set<MediaCategory>? categories,
+  });
+
+  int catalogIndexEntryCount({
+    AppDomain? domain,
+    MediaCategory? category,
+  });
+
+  Future<void> clearDiskCacheAndReloadBundle();
 }
