@@ -82,6 +82,9 @@ class HomeShellController {
   bool autoArchiveRegistry = false;
   StreamSubscription<void>? vaultUpdateSubscription;
   Timer? vaultReloadDebounce;
+  Timer? _prefetchRebuildDebounce;
+  bool _lastWorkbenchShowsWork = false;
+  bool _lastWorkbenchHadTabs = false;
   late final HomeRegistrySync registrySync;
   LibraryTheme libraryTheme = LibraryTheme.classic;
   final WorkbenchController workbench = WorkbenchController();
@@ -170,17 +173,35 @@ class HomeShellController {
       await syncCatalogContributionCount();
     }
     await workbench.loadPrefs();
+    _lastWorkbenchShowsWork = workbench.hasOpenWork;
+    _lastWorkbenchHadTabs = workbench.hasTabs;
   }
 
   void dispose() {
     workbench.removeListener(onWorkbenchChanged);
     workbench.dispose();
     vaultReloadDebounce?.cancel();
+    _prefetchRebuildDebounce?.cancel();
     vaultUpdateSubscription?.cancel();
   }
 
+  void scheduleDebouncedPrefetchRebuild() {
+    _prefetchRebuildDebounce?.cancel();
+    _prefetchRebuildDebounce = Timer(const Duration(milliseconds: 300), () {
+      if (host.mounted) rebuild();
+    });
+  }
+
   void onWorkbenchChanged() {
-    if (host.mounted) rebuild();
+    if (!host.mounted) return;
+    final showsWork = workbench.hasOpenWork;
+    final hasTabs = workbench.hasTabs;
+    if (showsWork == _lastWorkbenchShowsWork && hasTabs == _lastWorkbenchHadTabs) {
+      return;
+    }
+    _lastWorkbenchShowsWork = showsWork;
+    _lastWorkbenchHadTabs = hasTabs;
+    rebuild();
   }
 
   Future<void> initVault() async {
@@ -234,7 +255,7 @@ class HomeShellController {
       onCatalogLoadingChanged: (v) =>
           host.scheduleRebuild(() => isCatalogLoading = v),
       isMounted: () => host.mounted,
-      onDataChanged: rebuild,
+      onDataChanged: scheduleDebouncedPrefetchRebuild,
       append: append,
       browseOffset: append ? catalogBrowseOffset : 0,
       onCatalogWindowState: (state) {

@@ -9,14 +9,12 @@ import '../../../utils/browse_section_filters.dart';
 import '../../../utils/browse_year_groups.dart';
 import '../../../utils/helpers.dart';
 import '../../../widgets/browse_dashboard_sections.dart';
-import '../../../widgets/browse_poster_grid.dart';
-import '../../../widgets/curated_reorder_grid.dart';
 import '../home_personal_library_controller.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
 
 /// 개인 서재 그리드·curated reorder·섹션 prefs 연동
-class PersonalLibraryView extends StatelessWidget {
+class PersonalLibraryView extends StatefulWidget {
   const PersonalLibraryView({
     super.key,
     required this.filteredCards,
@@ -46,6 +44,9 @@ class PersonalLibraryView extends StatelessWidget {
   ) onCuratedReorder;
   final VoidCallback onSearch;
 
+  @override
+  State<PersonalLibraryView> createState() => _PersonalLibraryViewState();
+
   static Future<void> applyCuratedGridReorder({
     required PersonalLibraryMembershipService membership,
     required HomePersonalLibraryController personalLibCtrl,
@@ -71,37 +72,26 @@ class PersonalLibraryView extends StatelessWidget {
 
     await membership.setMemberOrder(lib.id, newOrder);
   }
+}
 
-  Widget _buildGrid(
-    List<BrowseCard> cards, {
-    List<BrowseCard>? mainCatalogCards,
-  }) {
-    if (isCuratedLibraryActive &&
-        sectionPrefs.librarySort.isManualOrder &&
-        mainCatalogCards != null &&
-        identical(cards, mainCatalogCards) &&
-        cards.length > 1) {
-      return CuratedReorderGrid(
-        cards: cards,
-        cardBuilder: posterCardBuilder,
-        cardMinWidth: 170,
-        childAspectRatio: 0.48,
-        onReorder: (oldIndex, newIndex) =>
-            onCuratedReorder(cards, oldIndex, newIndex),
-      );
-    }
+class _PersonalLibraryViewState extends State<PersonalLibraryView> {
+  late final ScrollController _scrollController;
 
-    return BrowsePosterGrid(
-      cards: cards,
-      cardBuilder: posterCardBuilder,
-      cardMinWidth: 170,
-      childAspectRatio: 0.48,
-    );
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Widget _buildEmptyContent() {
     final vaultLinked = AkashaFileService().vaultPath != null;
-    final library = activeLibrary;
+    final library = widget.activeLibrary;
     final libName = library?.name ?? '나만의 서재';
     final isCuratedEmpty =
         library != null && library.isCurated && library.memberOrder.isEmpty;
@@ -158,7 +148,7 @@ class PersonalLibraryView extends StatelessWidget {
             if (vaultLinked && isCuratedEmpty) ...[
               const SizedBox(height: 16),
               FilledButton.icon(
-                onPressed: onSearch,
+                onPressed: widget.onSearch,
                 icon: const Icon(Icons.search, size: 18),
                 label: const Text('작품 검색'),
               ),
@@ -171,21 +161,23 @@ class PersonalLibraryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (filteredCards.isEmpty) {
+    if (widget.filteredCards.isEmpty) {
       return _buildEmptyContent();
     }
 
-    final libraryFiltered = filterLibraryCards(filteredCards, allItems);
-    final catalogCards = isCuratedLibraryActive &&
+    final sectionPrefs = widget.sectionPrefs;
+    final libraryFiltered =
+        filterLibraryCards(widget.filteredCards, widget.allItems);
+    final catalogCards = widget.isCuratedLibraryActive &&
             sectionPrefs.librarySort.isManualOrder
         ? libraryFiltered
         : sortBrowseCards(libraryFiltered, sectionPrefs.librarySort);
     final hofCards = sortBrowseCards(
-      filteredCards.where((c) => c.item.isHallOfFame).toList(),
+      widget.filteredCards.where((c) => c.item.isHallOfFame).toList(),
       sectionPrefs.hofSort,
     );
     final watchlistCards = sortBrowseCards(
-      filterWatchlistCards(filteredCards, allItems),
+      filterWatchlistCards(widget.filteredCards, widget.allItems),
       sectionPrefs.watchlistSort,
     );
     final yearGroups = BrowseYearGroups.fromLibraryCards(
@@ -193,16 +185,30 @@ class PersonalLibraryView extends StatelessWidget {
       sectionPrefs.yearlySort,
     );
 
+    final useCuratedReorder = widget.isCuratedLibraryActive &&
+        sectionPrefs.librarySort.isManualOrder &&
+        catalogCards.length > 1;
+
     return BrowseDashboardSections(
+      scrollController: _scrollController,
+      cardMinWidth: 170,
+      childAspectRatio: 0.48,
       hofCards: hofCards,
       libraryCards: catalogCards,
       watchlistCards: watchlistCards,
       yearGroups: yearGroups,
       categoryGroups: null,
-      displayName: displayName,
+      displayName: widget.displayName,
       isPersonalLibraryMode: true,
-      curatedLibrarySort: isCuratedLibraryActive,
+      curatedLibrarySort: widget.isCuratedLibraryActive,
+      useCuratedLibraryReorder: useCuratedReorder,
+      onCuratedLibraryReorder: useCuratedReorder
+          ? (oldIndex, newIndex) =>
+              widget.onCuratedReorder(catalogCards, oldIndex, newIndex)
+          : null,
       showHallOfFame: true,
+      showWatchlist: true,
+      showYearlySection: true,
       hofExpanded: sectionPrefs.hofExpanded,
       libraryExpanded: sectionPrefs.libraryExpanded,
       yearlyExpanded: sectionPrefs.yearlyExpanded,
@@ -212,25 +218,22 @@ class PersonalLibraryView extends StatelessWidget {
       yearlySortCriteria: sectionPrefs.yearlySort,
       watchlistSortCriteria: sectionPrefs.watchlistSort,
       onHofExpandedChanged: (v) =>
-          sectionPrefs.setHofExpanded(v, onStateChanged),
+          sectionPrefs.setHofExpanded(v, widget.onStateChanged),
       onLibraryExpandedChanged: (v) =>
-          sectionPrefs.setLibraryExpanded(v, onStateChanged),
+          sectionPrefs.setLibraryExpanded(v, widget.onStateChanged),
       onYearlyExpandedChanged: (v) =>
-          sectionPrefs.setYearlyExpanded(v, onStateChanged),
+          sectionPrefs.setYearlyExpanded(v, widget.onStateChanged),
       onWatchlistExpandedChanged: (v) =>
-          sectionPrefs.setWatchlistExpanded(v, onStateChanged),
-      onHofSortChanged: (val) => sectionPrefs.setHofSort(val, onStateChanged),
+          sectionPrefs.setWatchlistExpanded(v, widget.onStateChanged),
+      onHofSortChanged: (val) =>
+          sectionPrefs.setHofSort(val, widget.onStateChanged),
       onLibrarySortChanged: (val) =>
-          sectionPrefs.setLibrarySort(val, onStateChanged),
+          sectionPrefs.setLibrarySort(val, widget.onStateChanged),
       onYearlySortChanged: (val) =>
-          sectionPrefs.setYearlySort(val, onStateChanged),
+          sectionPrefs.setYearlySort(val, widget.onStateChanged),
       onWatchlistSortChanged: (val) =>
-          sectionPrefs.setWatchlistSort(val, onStateChanged),
-      posterCardBuilder: posterCardBuilder,
-      gridBuilder: (cards) => _buildGrid(
-        cards,
-        mainCatalogCards: catalogCards,
-      ),
+          sectionPrefs.setWatchlistSort(val, widget.onStateChanged),
+      posterCardBuilder: widget.posterCardBuilder,
     );
   }
 }

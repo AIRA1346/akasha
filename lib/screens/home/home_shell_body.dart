@@ -223,7 +223,6 @@ class HomeShellBody extends StatelessWidget {
                               )
                             : BrowseView(
                                 filteredCards: filteredCards,
-                                allItems: items,
                                 sectionPrefs: sectionPrefs,
                                 filterCategories: filterCtrl.categories,
                                 isCatalogLoading: isCatalogLoading,

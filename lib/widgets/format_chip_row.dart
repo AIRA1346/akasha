@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/format_slot.dart';
 
-/// 카드 하단 매체 칩 행
+/// 카드 하단 매체 칩 행 (비스크롤 Wrap — 중첩 Scrollable 방지)
 class FormatChipRow extends StatelessWidget {
   final List<FormatSlot> slots;
   final void Function(FormatSlot slot)? onHideSlot;
@@ -16,16 +16,18 @@ class FormatChipRow extends StatelessWidget {
   Widget build(BuildContext context) {
     if (slots.isEmpty) return const SizedBox.shrink();
 
-    return SizedBox(
-      height: 22,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: slots.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 4),
-        itemBuilder: (_, i) => _FormatChip(
-          slot: slots[i],
-          onHide: onHideSlot,
-        ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+      child: Wrap(
+        spacing: 4,
+        runSpacing: 4,
+        children: [
+          for (final slot in slots)
+            _FormatChip(
+              slot: slot,
+              onHide: onHideSlot,
+            ),
+        ],
       ),
     );
   }

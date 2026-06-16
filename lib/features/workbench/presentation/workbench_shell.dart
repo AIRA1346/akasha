@@ -25,66 +25,75 @@ class WorkbenchShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListenableBuilder(
-      listenable: controller,
-      builder: (context, _) {
-        final layout = controller.layout;
-        final tabRailWidth =
-            layout.tabRailCollapsed ? 52.0 : layout.tabRailWidth;
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        ListenableBuilder(
+          listenable: controller,
+          builder: (context, _) {
+            if (!controller.hasTabs) {
+              return const SizedBox.shrink();
+            }
+            final layout = controller.layout;
+            final tabRailWidth =
+                layout.tabRailCollapsed ? 52.0 : layout.tabRailWidth;
 
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            if (controller.hasTabs)
-              WorkbenchResizablePanel(
-                width: tabRailWidth,
-                minWidth: layout.tabRailCollapsed ? 52 : 120,
-                maxWidth: 320,
-                locked: layout.tabRailLocked,
-                onWidthChanged: layout.tabRailCollapsed
-                    ? null
-                    : controller.setTabRailWidth,
-                onToggleLock: controller.toggleTabRailLocked,
-                child: WorkTabRail(
-                  tabs: controller.tabs,
-                  activeTabId: controller.activeTabId,
-                  collapsed: layout.tabRailCollapsed,
-                  onToggleCollapsed: controller.toggleTabRailCollapsed,
-                  onSelect: controller.selectTab,
-                  onClose: controller.closeTab,
-                ),
+            return WorkbenchResizablePanel(
+              width: tabRailWidth,
+              minWidth: layout.tabRailCollapsed ? 52 : 120,
+              maxWidth: 320,
+              locked: layout.tabRailLocked,
+              onWidthChanged: layout.tabRailCollapsed
+                  ? null
+                  : controller.setTabRailWidth,
+              onToggleLock: controller.toggleTabRailLocked,
+              child: WorkTabRail(
+                tabs: controller.tabs,
+                activeTabId: controller.activeTabId,
+                collapsed: layout.tabRailCollapsed,
+                onToggleCollapsed: controller.toggleTabRailCollapsed,
+                onSelect: controller.selectTab,
+                onClose: controller.closeTab,
               ),
-            Expanded(
-              child: controller.hasOpenWork
-                  ? WorkDetailWorkspace(
-                      key: ValueKey(controller.activeTab!.id),
-                      tabId: controller.activeTab!.id,
-                      item: controller.activeTab!.item,
-                      isDirty: controller.activeTab!.isDirty,
-                      infoPanelWidth: layout.infoPanelWidth,
-                      infoPanelLocked: layout.infoPanelLocked,
-                      onInfoWidthChanged: controller.setInfoPanelWidth,
-                      onToggleInfoLock: controller.toggleInfoPanelLocked,
-                      onSaved: (saved) {
-                        final id = controller.activeTab!.id;
-                        controller.updateTabItem(id, saved, dirty: false);
-                        onWorkSaved(saved);
-                      },
-                      onDeleted: () {
-                        final tab = controller.activeTab!;
-                        onWorkDeleted(tab.id, tab.item);
-                      },
-                      onDirtyChanged: (dirty) {
-                        final id = controller.activeTab!.id;
-                        controller.markDirty(id, dirty: dirty);
-                      },
-                      onAddToLibrary: onAddToLibrary,
-                    )
-                  : browseContent,
-            ),
-          ],
-        );
-      },
+            );
+          },
+        ),
+        Expanded(
+          child: ListenableBuilder(
+            listenable: controller,
+            builder: (context, _) {
+              if (!controller.hasOpenWork) {
+                return browseContent;
+              }
+              final layout = controller.layout;
+              return WorkDetailWorkspace(
+                key: ValueKey(controller.activeTab!.id),
+                tabId: controller.activeTab!.id,
+                item: controller.activeTab!.item,
+                isDirty: controller.activeTab!.isDirty,
+                infoPanelWidth: layout.infoPanelWidth,
+                infoPanelLocked: layout.infoPanelLocked,
+                onInfoWidthChanged: controller.setInfoPanelWidth,
+                onToggleInfoLock: controller.toggleInfoPanelLocked,
+                onSaved: (saved) {
+                  final id = controller.activeTab!.id;
+                  controller.updateTabItem(id, saved, dirty: false);
+                  onWorkSaved(saved);
+                },
+                onDeleted: () {
+                  final tab = controller.activeTab!;
+                  onWorkDeleted(tab.id, tab.item);
+                },
+                onDirtyChanged: (dirty) {
+                  final id = controller.activeTab!.id;
+                  controller.markDirty(id, dirty: dirty);
+                },
+                onAddToLibrary: onAddToLibrary,
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }
