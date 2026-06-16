@@ -234,32 +234,7 @@ class _PosterCardState extends State<PosterCard> {
             overflow: TextOverflow.ellipsis,
           ),
         const Spacer(),
-        if (item.rating > 0)
-          StarRating(rating: item.rating, size: 14)
-        else
-          const Row(
-            children: [
-              Text(
-                '⏳ 평가 대기',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.amber,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        const SizedBox(height: 5),
-        Text(
-          _getStatusTextWithEmoji(item),
-          style: TextStyle(
-            fontSize: 11,
-            color: Colors.grey[300],
-            fontWeight: FontWeight.w500,
-          ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
+        _buildRatingStatusRow(item),
         if (item.releaseYear != null) ...[
           const SizedBox(height: 5),
           Text(
@@ -277,6 +252,40 @@ class _PosterCardState extends State<PosterCard> {
             onHideSlot: widget.onHideFormatSlot,
           ),
         ],
+      ],
+    );
+  }
+
+  /// 포스터 카드 — 평점(좌) · 나의 상태(우) 한 줄.
+  Widget _buildRatingStatusRow(AkashaItem item) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        if (item.rating > 0)
+          StarRating(rating: item.rating, size: 14)
+        else
+          const Text(
+            '⏳ 평가 대기',
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.amber,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Text(
+            _getStatusTextWithEmoji(item),
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.grey[300],
+              fontWeight: FontWeight.w500,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.end,
+          ),
+        ),
       ],
     );
   }

@@ -88,4 +88,41 @@ void main() {
     expect(tester.takeException(), isNull);
     expect(find.byType(FormatChipRow), findsOneWidget);
   });
+
+  testWidgets('PosterCard poster layout keeps rating and status on one row',
+      (tester) async {
+    final item = createItem(
+      workId: 'wk_rezero',
+      title: 'Re:제로부터 시작하는 이세계 생활',
+      category: MediaCategory.manga,
+      myStatus: ContentMyStatus.notStarted.label,
+    );
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: SizedBox(
+              width: 176,
+              height: 225,
+              child: PosterCard(
+                item: item,
+                showPoster: true,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('⏳ 평가 대기'), findsOneWidget);
+    expect(find.textContaining('볼 예정'), findsOneWidget);
+    final ratingRow = tester.element(find.text('⏳ 평가 대기')).findAncestorWidgetOfExactType<Row>();
+    final statusRow = tester
+        .element(find.textContaining('볼 예정'))
+        .findAncestorWidgetOfExactType<Row>();
+    expect(ratingRow, isNotNull);
+    expect(identical(ratingRow, statusRow), isTrue);
+  });
 }
