@@ -1,6 +1,6 @@
-# Extensibility Hardening Plan — 확장성·글로벌·Phase 3 대비
+﻿# Extensibility Hardening Plan — 확장성·글로벌·Phase 3 대비
 
-> **상태:** E0~E2 ✅ · **E3 진행** (2026-06-16)  
+> **상태:** E0~E3 ✅ · E1-A3b ✅ · E2-5/E2-6 ✅ (2026-06-16)  
 > **근거:** 전체 설계 점검 (2026-06-16) · [ADR-007](../adr/ADR-007-app-layering.md) · [locale-catalog-policy](../policy/locale-catalog-policy.md)  
 > **상위:** [app-architecture-refactor-plan.md](app-architecture-refactor-plan.md) Wave 2~4 · [architecture-evolution-phases.md](architecture-evolution-phases.md)  
 > **제품 게이트:** [phase1-work-e2e-plan.md](phase1-work-e2e-plan.md) §2 — 「①~④ E2E에 도움이 되는가?」
@@ -86,7 +86,7 @@ E4 스케일 trigger 대비 (측정 후만)
 | E1-A1 | `lib/models/registry_work.dart` | ✅ |
 | E1-A2 | `RegistryPort` → `models/` only | ✅ |
 | E1-A3 | `RegistryShardLoader` merger callback · loader↔registry 순환 제거 | ✅ |
-| E1-A3b | `registry_sync` ↔ `works_registry` 순환 | ⏳ E2 |
+| E1-A3b | `registry_sync` <-> `works_registry` 순환 | ✅ |
 
 **DoD:** `rg "import.*works_registry" lib/core/ports` → facade 타입만 · loader 순환 **0** ✅
 
@@ -120,10 +120,10 @@ E4 스케일 trigger 대비 (측정 후만)
 
 | PR | 내용 | 상태 |
 |----|------|:----:|
-| E2-5 | Port DI to coordinators | ⏳ |
-| E2-6 | `work_detail_workspace` 분리 | ⏳ |
+| E2-5 | Port DI to coordinators | ✅ |
+| E2-6 | `work_detail_workspace` 분리 | ✅ |
 
-**DoD:** `home_shell_controller.dart` ≤200줄 · coordinator unit test 각 ≥1 — **줄 수 미달** (283) · catalog coordinator test ✅
+**DoD:** `home_shell_controller.dart` ≤200줄 · coordinator unit test 각 ≥1 — **줄 수 미달** (295) · catalog/vault coordinator test ✅
 
 ---
 

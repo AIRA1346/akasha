@@ -1,6 +1,6 @@
-# Project Status Snapshot
+﻿# Project Status Snapshot
 
-> **갱신:** 2026-06-16 (@5181 · C2 ✅ · test 311 · E3-B ✅)  
+> **갱신:** 2026-06-16 (@5181 · E2-5/E2-6/E1-A3b ✅ · test 318)  
 > **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · **Sprint B** + [extensibility-hardening-plan.md](programs/extensibility-hardening-plan.md)  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
@@ -16,7 +16,7 @@
 | **Registry** | **5181 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **5181/5181 (100%)** |
-| **flutter test** | **311/311 PASS** |
+| **flutter test** | **318/318 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
@@ -112,3 +112,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |
 | 2026-06-14 | **M3 보류** → Sprint **B** |
 | 2026-06-16 | sliver grid 스크롤 · **extensibility-hardening-plan** · test **305** |
+| 2026-06-16 | E2-5 Port DI · E2-6 workspace 분리 · E1-A3b 순환 제거 · test 318 |
