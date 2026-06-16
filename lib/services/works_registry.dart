@@ -1,128 +1,20 @@
-import '../config/catalog_locale.dart';
 import '../config/catalog_poster_policy.dart';
 import '../models/enums.dart';
-import '../models/external_ids.dart';
+import '../models/registry_work.dart';
 import '../models/work_id_codec.dart';
-import '../models/work_titles.dart';
 import '../utils/registry_catalog_filter.dart';
 import '../utils/registry_search_utils.dart';
-import '../utils/work_title_resolver.dart';
 import 'registry_shard_loader.dart';
 import 'registry_sync_service.dart';
 
-/// 공통 작품 사전 모델 (Tier 1 - Metadata, akasha-db v4)
-class RegistryWork {
-  final String workId;
-  /// 레거시 단일 제목 — 하위 호환·정렬 키 (v3: `titles`와 동기화 권장)
-  final String title;
-  final WorkTitles titles;
-  final List<String> aliases;
-  final ExternalIds externalIds;
-  final MediaCategory category;
-  final AppDomain domain;
-  final String creator;
-  final int? releaseYear;
-  final String description;
-  final List<String> tags;
-  final String? posterPath;
-  final Map<String, dynamic> extensions;
-
-  const RegistryWork({
-    required this.workId,
-    required this.title,
-    this.titles = const WorkTitles(),
-    this.aliases = const [],
-    this.externalIds = const ExternalIds(),
-    required this.category,
-    required this.domain,
-    this.creator = '',
-    this.releaseYear,
-    this.description = '',
-    this.tags = const [],
-    this.posterPath,
-    this.extensions = const {},
-  });
-
-  /// UI·카드용 로케일 제목 (사용자 볼트 `AkashaItem.title`과 별개)
-  String displayTitle([CatalogLocale? locale]) {
-    return resolveWorkDisplayTitle(
-      legacyTitle: title,
-      titles: titles,
-      locale: locale ?? CatalogLocaleScope.current,
-    );
-  }
-
-  List<String> get searchTokens => buildWorkSearchTokens(
-        legacyTitle: title,
-        titles: titles,
-        aliases: aliases,
-        creator: creator,
-        tags: tags,
-      );
-
-  factory RegistryWork.fromJson(Map<String, dynamic> json) {
-    final workId = json['workId']?.toString() ?? '';
-    final title = json['title']?.toString() ?? '';
-
-    final categoryStr = json['category']?.toString() ?? 'manga';
-    final category = MediaCategory.values.firstWhere(
-      (e) => e.name == categoryStr,
-      orElse: () => MediaCategory.manga,
-    );
-
-    final domainStr = json['domain']?.toString() ?? 'subculture';
-    final domain = AppDomain.values.firstWhere(
-      (e) => e.name == domainStr,
-      orElse: () => AppDomain.subculture,
-    );
-
-    final extensions = <String, dynamic>{};
-    final rawExtensions = json['extensions'];
-    if (rawExtensions is Map) {
-      rawExtensions.forEach((key, value) {
-        if (key != null) extensions[key.toString()] = value;
-      });
-    }
-
-    var titles = WorkTitles.fromJson(json['titles']);
-    if (titles.isEmpty && title.isNotEmpty) {
-      titles = inferTitlesFromLegacyTitle(title);
-    }
-
-    final aliases = (json['aliases'] as List?)
-            ?.map((e) => e.toString().trim())
-            .where((e) => e.isNotEmpty)
-            .toList() ??
-        const <String>[];
-
-    final explicitIds = ExternalIds.fromJson(json['externalIds']);
-    final externalIds = ExternalIds.mergeFromExtensions(
-      extensions,
-      explicit: explicitIds,
-    );
-
-    return RegistryWork(
-      workId: workId,
-      title: title,
-      titles: titles,
-      aliases: aliases,
-      externalIds: externalIds,
-      category: category,
-      domain: domain,
-      creator: json['creator']?.toString() ?? '',
-      releaseYear: int.tryParse(json['releaseYear']?.toString() ?? ''),
-      description: json['description']?.toString() ?? '',
-      tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ?? const [],
-      posterPath: json['posterPath']?.toString(),
-      extensions: extensions,
-    );
-  }
-}
+export '../models/registry_work.dart';
 
 /// 샤딩 기반 글로벌 작품 사전 레지스트리
 class WorksRegistry {
   static final Map<String, RegistryWork> _registry = {};
-  static final RegistryShardLoader _loader = RegistryShardLoader();
+  static final RegistryShardLoader _loader = RegistryShardLoader(
+    shardEntriesMerger: mergeShardEntries,
+  );
   static bool _initialized = false;
 
   static RegistryShardLoader get loader => _loader;

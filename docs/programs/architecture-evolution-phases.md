@@ -178,9 +178,10 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0~1 · 2.0~**2.3** · Phase 4.1~**4.4a** · **Sprint C2** @5181 |
-| **진행** | **Sprint B** dogfood · Phase 4.4b |
-| **다음** | Sprint B friction → M3 Ready 판단 |
+| **완료** | Phase 0~1 · 2.0~**2.3** · Phase 4.1~**4.4a** · **Sprint C2** @5181 · Wave 1 Home 해부 |
+| **진행** | **Sprint B** dogfood · 대시보드 스크롤(sliver grid) ✅ |
+| **진행** | **E1** ✅ 1차 · **E2** controller 분할 다음 |
+| **이후** | Sprint B friction → E3 글로벌 → M3 Ready 판단 |
 
 ---
 

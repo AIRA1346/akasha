@@ -1,0 +1,198 @@
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+
+import '../../../models/akasha_item.dart';
+import '../../../models/library_theme.dart';
+import '../../../services/file_service.dart';
+import '../dialogs/home_dialogs_facade.dart';
+import '../home_auto_archive.dart';
+import 'home_catalog_coordinator.dart';
+import 'home_navigation_coordinator.dart';
+import 'home_shell_wiring.dart';
+import 'home_vault_coordinator.dart';
+import 'home_workbench_coordinator.dart';
+
+/// Home 다이얼로그·볼트 폴더 선택 (E2-4).
+class HomeDialogsCoordinator {
+  HomeDialogsCoordinator({
+    required this.hostContext,
+    required this.isMounted,
+    required this.scheduleRebuild,
+    required this.showMessage,
+    required this.wiring,
+    required this.vault,
+    required this.catalog,
+    required this.navigation,
+    required this.workbenchCoord,
+    required this.getItems,
+    required this.addItemInMemory,
+    required this.loadItems,
+    required this.loadPersonalLibraries,
+    required this.autoArchiveWorks,
+    required this.rebuild,
+    required this.wrapSetState,
+    required this.canAddToLibrary,
+  });
+
+  final BuildContext Function() hostContext;
+  final bool Function() isMounted;
+  final void Function(void Function()) scheduleRebuild;
+  final void Function(String message) showMessage;
+  final HomeShellWiring wiring;
+  final HomeVaultCoordinator vault;
+  final HomeCatalogCoordinator catalog;
+  final HomeNavigationCoordinator navigation;
+  final HomeWorkbenchCoordinator workbenchCoord;
+  final List<AkashaItem> Function() getItems;
+  final void Function(AkashaItem item) addItemInMemory;
+  final Future<void> Function() loadItems;
+  final Future<void> Function() loadPersonalLibraries;
+  final Future<void> Function({bool showFeedback}) autoArchiveWorks;
+  final void Function() rebuild;
+  final void Function(void Function()) wrapSetState;
+  final bool Function() canAddToLibrary;
+
+  bool get isSyncing => catalog.isSyncing;
+  DateTime? get lastSyncTime => catalog.lastSyncTime;
+  String get displayName => vault.displayName;
+  bool get autoArchiveRegistry => vault.autoArchiveRegistry;
+  LibraryTheme get libraryTheme => vault.libraryTheme;
+
+  Future<void> openSearchDialog() async {
+    final ctx = hostContext();
+    await HomeDialogsFacade.showSearchDialog(
+      context: ctx,
+      localItems: getItems(),
+      onSelectLocal: workbenchCoord.openBrowseItem,
+      onSelectRemote: (work) async {
+        if (!isMounted()) return;
+        workbenchCoord.openBrowseItem(
+          HomeAutoArchive.itemFromRegistryWork(work),
+        );
+      },
+      onCustomAdd: (query) => HomeDialogsFacade.showAddDialog(
+        context: ctx,
+        initialTitle: query,
+        onSavedToVault: (item) async {
+          await AkashaFileService().saveItem(item);
+          await loadItems();
+        },
+        onSavedInMemory: addItemInMemory,
+      ),
+      onCatalogPropose: HomeDialogsFacade.catalogProposeCallback(
+        context: ctx,
+        refreshContributionCount: catalog.syncCatalogContributionCount,
+        showMessage: showMessage,
+      ),
+      onAddLocalToLibrary: canAddToLibrary()
+          ? (item) => wiring.libraryUi.showAddToLibraryForItem(
+                ctx,
+                item: item,
+                isCuratedLibraryActive: navigation.isCuratedLibraryActive,
+                items: getItems(),
+                resolveItemForOpen: workbenchCoord.resolveItemForOpen,
+                setState: wrapSetState,
+                onCreateLibrary: () => wiring.libraryUi.promptCreateCuratedLibrary(
+                  ctx,
+                  setState: wrapSetState,
+                ),
+              )
+          : null,
+      onAddRemoteToLibrary: canAddToLibrary()
+          ? (work) => wiring.libraryUi.addRegistryWorkToLibrary(
+                ctx,
+                work: work,
+                isCuratedLibraryActive: navigation.isCuratedLibraryActive,
+                items: getItems(),
+                resolveItemForOpen: workbenchCoord.resolveItemForOpen,
+                setState: wrapSetState,
+                onCreateLibrary: () => wiring.libraryUi.promptCreateCuratedLibrary(
+                  ctx,
+                  setState: wrapSetState,
+                ),
+              )
+          : null,
+    );
+  }
+
+  Future<void> onAddWorksFromLibraryEdit() async {
+    await openSearchDialog();
+    await loadItems();
+  }
+
+  Future<void> showCustomUrlDialog() async {
+    await HomeDialogsFacade.showRegistrySync(
+      context: hostContext(),
+      isSyncing: isSyncing,
+      lastSyncTime: lastSyncTime,
+      onSyncNow: catalog.syncRegistry,
+      onUrlSaved: catalog.refreshLastSyncTime,
+    );
+  }
+
+  Future<void> showLibraryThemePicker() async {
+    final picked = await HomeDialogsFacade.pickLibraryTheme(
+      hostContext(),
+      current: libraryTheme,
+    );
+    if (picked != null && isMounted()) {
+      scheduleRebuild(() => vault.libraryTheme = picked);
+    }
+  }
+
+  Future<void> openCatalogContributionsInbox() async {
+    await HomeDialogsFacade.showCatalogContributionsInbox(hostContext());
+    await catalog.syncCatalogContributionCount();
+  }
+
+  Future<void> openVaultSettingsDialog() async {
+    await HomeDialogsFacade.showVaultSettings(
+      context: hostContext(),
+      displayName: displayName,
+      autoArchiveRegistry: autoArchiveRegistry,
+      onDisplayNameSaved: (name) =>
+          scheduleRebuild(() => vault.displayName = name),
+      onAutoArchiveChanged: (enabled) =>
+          scheduleRebuild(() => vault.autoArchiveRegistry = enabled),
+      runAutoArchive: autoArchiveWorks,
+      reloadItems: () async {
+        await loadPersonalLibraries();
+        await loadItems();
+      },
+      selectVaultFolder: selectVaultFolder,
+      onRegistryVisibilityChanged: rebuild,
+    );
+  }
+
+  Future<void> openClipboardImportDialog() async {
+    await HomeDialogsFacade.showClipboardImport(
+      context: hostContext(),
+      existingItems: getItems(),
+      onItemImportedToVault: (_) async => loadItems(),
+      onItemImportedInMemory: addItemInMemory,
+    );
+  }
+
+  Future<void> openTimelineQuickCapture() async {
+    final saved = await HomeDialogsFacade.showTimelineQuickCapture(
+      context: hostContext(),
+      localItems: getItems(),
+      showMessage: showMessage,
+    );
+    if (saved && isMounted()) navigation.onTimelineQuickCaptureSaved();
+  }
+
+  Future<void> selectVaultFolder() async {
+    try {
+      final selectedDirectory = await FilePicker.getDirectoryPath();
+      if (selectedDirectory != null) {
+        await AkashaFileService().setVaultPath(selectedDirectory);
+        await loadPersonalLibraries();
+        await loadItems();
+        await autoArchiveWorks();
+      }
+    } catch (e) {
+      if (isMounted()) showMessage('볼트 연결에 실패했습니다: $e');
+    }
+  }
+}

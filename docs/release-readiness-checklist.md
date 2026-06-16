@@ -1,7 +1,7 @@
 # Release Readiness Checklist — Steam v1
 
 > **지위:** M2→M3 출시 게이트 **운영 SSOT**  
-> **갱신:** 2026-06-13 (리팩토링 우선 릴리스 전략 반영)  
+> **갱신:** 2026-06-16 (extensibility E0~E1 진행)  
 > **상위:** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ---
@@ -48,7 +48,10 @@ C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --release
 | 항목 | 현재 | 목표 |
 |------|------|------|
 | `quality_gate --strict` in CI | ✅ | `flutter_ci.yml` |
-| `preflight_check` on registry PR | ❌ | registry workflow |
+| `preflight_check` on registry PR | ✅ `registry_check.yml` | — |
+| `flutter test` in CI | ✅ 305+ | `flutter_ci.yml` |
+| Windows Release build in CI | ❌ | 수동 `build_release.ps1` |
+| `sw1_a_validation` in CI | ❌ | `dogfood_precheck.ps1` |
 
 ### 2026-06-10 audit — 수정 완료
 

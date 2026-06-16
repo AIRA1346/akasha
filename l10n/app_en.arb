@@ -1,0 +1,27 @@
+{
+  "@@locale": "en",
+  "browseLoadingCatalog": "Loading global works catalog…",
+  "browseNoResults": "No works match your filters.",
+  "browseCatalogIndexed": "{loaded} / {total} works indexed",
+  "@browseCatalogIndexed": {
+    "placeholders": {
+      "loaded": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "browseLoadMore": "Load more (+{count})",
+  "@browseLoadMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDisplayLanguage": "Display language",
+  "localeKo": "Korean",
+  "localeEn": "English"
+}

@@ -1,0 +1,10 @@
+{
+  "@@locale": "ko",
+  "browseLoadingCatalog": "글로벌 작품 사전 불러오는 중…",
+  "browseNoResults": "조건에 맞는 작품이 없습니다.",
+  "browseCatalogIndexed": "글로벌 사전 {loaded} / {total} 작품 색인 로드됨",
+  "browseLoadMore": "더 불러오기 (+{count})",
+  "settingsDisplayLanguage": "표시 언어",
+  "localeKo": "한국어",
+  "localeEn": "English"
+}

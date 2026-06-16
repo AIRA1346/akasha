@@ -3,6 +3,7 @@ import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../services/file_service.dart';
+import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
 import 'format_chip_row.dart';
 import 'poster_image.dart';
@@ -206,11 +207,12 @@ class _PosterCardState extends State<PosterCard> {
   }
 
   Widget _buildCardMeta(AkashaItem item) {
+    final displayTitle = resolveCatalogDisplayTitle(item);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          item.title,
+          displayTitle,
           style: const TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w700,
@@ -456,7 +458,7 @@ class _PosterCardState extends State<PosterCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  item.title,
+                  resolveCatalogDisplayTitle(item),
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w800,

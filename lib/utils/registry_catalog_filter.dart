@@ -1,4 +1,4 @@
-import '../services/works_registry.dart';
+import '../models/registry_work.dart';
 
 /// A5 Scale maintainer probe — 사용자 카탈로그·검색에서 제외.
 bool isMaintainerCatalogProbe(RegistryWork work) {

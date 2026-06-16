@@ -8,7 +8,8 @@ import 'package:path_provider/path_provider.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
 import '../utils/registry_search_utils.dart';
-import 'works_registry.dart';
+
+typedef ShardEntriesMerger = void Function(Map<String, dynamic> entries);
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 샤딩 레지스트리 로더 (온디맨드 + 캐시)
@@ -29,6 +30,10 @@ class RegistryShardLoader {
   bool _useShardedSearchIndex = false;
   final Map<String, String> _legacyAliases = {};
   final Set<String> _loadedShardIds = {};
+  final ShardEntriesMerger? _shardEntriesMerger;
+
+  RegistryShardLoader({ShardEntriesMerger? shardEntriesMerger})
+      : _shardEntriesMerger = shardEntriesMerger;
 
   RegistryManifest? get manifest => _manifest;
   RegistrySearchIndexManifest? get searchIndexManifest => _searchIndexManifest;
@@ -324,7 +329,7 @@ class RegistryShardLoader {
     shardMap ??= await _readCachedShardMap(meta.path);
 
     if (shardMap != null) {
-      WorksRegistry.mergeShardEntries(shardMap);
+      _shardEntriesMerger?.call(shardMap);
       _loadedShardIds.add(shardId);
     }
   }
@@ -507,7 +512,7 @@ class RegistryShardLoader {
         final file = await _cacheFile(relativePath);
         await file.parent.create(recursive: true);
         await file.writeAsString(content);
-        WorksRegistry.mergeShardEntries(decoded);
+        _shardEntriesMerger?.call(decoded);
         final shardId = _manifest?.shards
             .where((s) => s.path == relativePath)
             .map((s) => s.id)
@@ -590,7 +595,7 @@ class RegistryShardLoader {
     try {
       final decoded = json.decode(jsonStr);
       if (decoded is Map<String, dynamic>) {
-        WorksRegistry.mergeShardEntries(decoded);
+        _shardEntriesMerger?.call(decoded);
       }
     } catch (e) {
       print('[RegistryShardLoader] Failed to merge legacy monolithic JSON: $e');

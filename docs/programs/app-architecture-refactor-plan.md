@@ -1,6 +1,6 @@
 # App Architecture Refactor Plan — 점진 개편 (확장·AI·유지보수)
 
-> **상태:** v1 리팩토링 우선 릴리스 노선 반영 (2026-06-13) · **ADR-007 수립 완료**  
+> **상태:** Wave 1 ✅ (2026-06-16) · Wave 2~ 실행 SSOT → [extensibility-hardening-plan.md](extensibility-hardening-plan.md)  
 > **목적:** 490 → 5k → 50k+ · AI 연동 · 기능 추가에도 **변경 지점 1~2곳**으로 수렴하는 구조  
 > **전제:** 리라이트 없음 · **스팀 M2 완료** · **정식 릴리즈 전 Wave 1(Home 해부) 완수 우선**  
 > **상위:** [data-architecture-redesign.md](../strategy/data-architecture-redesign.md) · [code-quality-review-plan.md](code-quality-review-plan.md) · [ROADMAP.md](../../ROADMAP.md)
@@ -222,15 +222,17 @@ abstract class AiImportPort {
 
 ### Wave 2 — Port · Feature 시드 (v1.1 · 6~8주)
 
-| PR | 내용 |
-|----|------|
-| W2-1 | `core/ports/registry_port.dart` + `WorksRegistryAdapter` |
-| W2-2 | `core/ports/vault_port.dart` + `VaultAdapter` (`AkashaFileService` 래핑) |
-| W2-3 | coordinator에 Port **생성자 주입** (global singleton 직접 호출 제거) |
-| W2-4 | `FusionSearchService` ← `fusion_search_dialog.dart` (MVR Should-fix #3) |
-| W2-5 | `features/ai_import/` — clipboard + `prompt_templates_dialog` 통합 |
-| W2-6 | `features/workbench/` — `lib/workbench/` + `screens/workbench/` 통합 |
-| W2-7 | `test/fakes/fake_registry_port.dart` · `fake_vault_port.dart` |
+> **실행 순서:** [extensibility-hardening-plan.md](extensibility-hardening-plan.md) E1~E3 (E0 SSOT 선행).
+
+| PR | 내용 | 상태 |
+|----|------|:----:|
+| W2-1 | `core/ports/registry_port.dart` + `WorksRegistryAdapter` | 🔶 골격만 |
+| W2-2 | `core/ports/vault_port.dart` + `VaultAdapter` (`AkashaFileService` 래핑) | 🔶 골격만 |
+| W2-3 | coordinator에 Port **생성자 주입** (global singleton 직접 호출 제거) | ⏳ |
+| W2-4 | `FusionSearchService` ← `fusion_search_dialog.dart` (MVR Should-fix #3) | ⏳ |
+| W2-5 | `features/ai_import/` — clipboard + `prompt_templates_dialog` 통합 | ⏳ |
+| W2-6 | `features/workbench/` — `lib/workbench/` + `screens/workbench/` 통합 | 🔶 부분 |
+| W2-7 | `test/fakes/fake_registry_port.dart` · `fake_vault_port.dart` | ⏳ |
 
 **W2 Port 추가 조건 (2종 이후):**
 

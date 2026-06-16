@@ -1,5 +1,5 @@
 import '../../models/enums.dart';
-import '../../services/works_registry.dart'; // RegistryWork 임포트
+import '../../models/registry_work.dart';
 
 abstract class RegistryPort {
   Future<void> init();

@@ -1,4 +1,6 @@
-/// 글로벌 카탈로그·UI 표시용 로케일 (Flutter i18n 도입 전 브리지)
+import 'package:flutter/foundation.dart';
+
+/// 글로벌 카탈로그·UI 표시용 로케일
 enum CatalogLocale {
   ko,
   en,
@@ -33,19 +35,21 @@ enum CatalogLocale {
   }
 }
 
-/// 앱 전역 카탈로그 로케일 (v1: ko 고정, v1.1+ 에서 설정·시스템 연동)
+/// 앱 전역 카탈로그 로케일 (v1.1: 설정·시스템 연동)
 class CatalogLocaleScope {
   CatalogLocaleScope._();
 
-  static CatalogLocale _current = CatalogLocale.ko;
+  static final ValueNotifier<CatalogLocale> localeListenable =
+      ValueNotifier(CatalogLocale.ko);
 
-  static CatalogLocale get current => _current;
+  static CatalogLocale get current => localeListenable.value;
 
   static void setCurrent(CatalogLocale locale) {
-    _current = locale;
+    if (localeListenable.value == locale) return;
+    localeListenable.value = locale;
   }
 
   static void setFromLanguageTag(String? tag) {
-    _current = CatalogLocale.fromLanguageTag(tag);
+    setCurrent(CatalogLocale.fromLanguageTag(tag));
   }
 }

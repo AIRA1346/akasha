@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../services/works_registry.dart';
+import '../../../utils/app_l10n.dart';
 import '../../../models/enums.dart';
 import '../../../utils/browse_category_groups.dart';
 import '../../../utils/helpers.dart';
@@ -60,20 +61,22 @@ class _BrowseViewState extends State<BrowseView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
+
     if (widget.isCatalogLoading) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
+            const SizedBox(
               width: 28,
               height: 28,
               child: CircularProgressIndicator(strokeWidth: 2),
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Text(
-              '글로벌 작품 사전 불러오는 중…',
-              style: TextStyle(color: Colors.grey),
+              l10n?.browseLoadingCatalog ?? '글로벌 작품 사전 불러오는 중…',
+              style: const TextStyle(color: Colors.grey),
             ),
           ],
         ),
@@ -88,7 +91,7 @@ class _BrowseViewState extends State<BrowseView> {
             Icon(Icons.search_off, size: 48, color: Colors.grey[700]),
             const SizedBox(height: 12),
             Text(
-              '조건에 맞는 작품이 없습니다.',
+              l10n?.browseNoResults ?? '조건에 맞는 작품이 없습니다.',
               style: TextStyle(color: Colors.grey[500]),
             ),
           ],
@@ -177,12 +180,15 @@ class _CatalogWindowFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = lookupAppL10n(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
       child: Column(
         children: [
           Text(
-            '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
+            l10n != null
+                ? l10n.browseCatalogIndexed(loadedThrough, totalEntries)
+                : '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
             style: TextStyle(fontSize: 12, color: Colors.grey[500]),
           ),
           if (hasMore) ...[
@@ -196,7 +202,11 @@ class _CatalogWindowFooter extends StatelessWidget {
                       child: CircularProgressIndicator(strokeWidth: 2),
                     )
                   : Text(
-                      '더 불러오기 (+${WorksRegistry.browsePrefetchWindowSize})',
+                      l10n != null
+                          ? l10n.browseLoadMore(
+                              WorksRegistry.browsePrefetchWindowSize,
+                            )
+                          : '더 불러오기 (+${WorksRegistry.browsePrefetchWindowSize})',
                     ),
             ),
           ],

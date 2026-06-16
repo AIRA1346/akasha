@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'screens/home/home_shell.dart';
 
-import 'services/franchise_registry.dart';
-import 'data/adapters/works_registry_adapter.dart';
+import 'config/catalog_locale.dart';
+import 'generated/l10n/app_localizations.dart';
 import 'data/adapters/markdown_vault_adapter.dart';
+import 'data/adapters/works_registry_adapter.dart';
+import 'screens/home/home_shell.dart';
+import 'services/catalog_locale_preferences.dart';
+import 'services/franchise_registry.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
@@ -12,7 +15,9 @@ import 'data/adapters/markdown_vault_adapter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
+  CatalogLocaleScope.setCurrent(await CatalogLocalePreferences.loadInitial());
+
   // 어댑터를 통한 글로벌 사전 및 볼트 초기화
   await WorksRegistryAdapter().init();
   await MarkdownVaultAdapter().init();
@@ -22,14 +27,38 @@ void main() async {
   runApp(const AkashaApp());
 }
 
-class AkashaApp extends StatelessWidget {
+class AkashaApp extends StatefulWidget {
   const AkashaApp({super.key});
+
+  @override
+  State<AkashaApp> createState() => _AkashaAppState();
+}
+
+class _AkashaAppState extends State<AkashaApp> {
+  @override
+  void initState() {
+    super.initState();
+    CatalogLocaleScope.localeListenable.addListener(_onLocaleChanged);
+  }
+
+  @override
+  void dispose() {
+    CatalogLocaleScope.localeListenable.removeListener(_onLocaleChanged);
+    super.dispose();
+  }
+
+  void _onLocaleChanged() => setState(() {});
+
+  Locale get _appLocale => Locale(CatalogLocaleScope.current.tag);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'AKASHA',
       debugShowCheckedModeBanner: false,
+      locale: _appLocale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData.dark(useMaterial3: true).copyWith(
         scaffoldBackgroundColor: const Color(0xFF13131D),
         colorScheme: ColorScheme.fromSeed(

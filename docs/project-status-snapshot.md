@@ -1,7 +1,7 @@
 # Project Status Snapshot
 
-> **갱신:** 2026-06-15 (@5181 · C2 ✅)  
-> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · Phase **2** G1 달성 → **Sprint B**  
+> **갱신:** 2026-06-16 (@5181 · C2 ✅ · test 305)  
+> **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · **Sprint B** + [extensibility-hardening-plan.md](programs/extensibility-hardening-plan.md)  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -16,7 +16,7 @@
 | **Registry** | **5181 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **5181/5181 (100%)** |
-| **flutter test** | **299/299 PASS** (G1 fixture harness +2) |
+| **flutter test** | **309/309 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
@@ -84,11 +84,14 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ## 5. 다음 권장 작업
 
-| # | 작업 | Sprint |
-|---|------|:------:|
-| 1 | **Sprint B1** — 작품 `.md` 지속 dogfood | B |
-| 2 | friction 있으면 §2 기준 수정 | B |
-| 3 | **M3** — Ready 시 Steam Release | ⏸️ |
+| # | 작업 | Sprint / Wave |
+|---|------|:-------------:|
+| 1 | **E0** — SSOT·friction log 갱신 | [extensibility-hardening](programs/extensibility-hardening-plan.md) |
+| 2 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | E1 |
+| 3 | **Sprint B1** — 작품 `.md` 지속 dogfood | B |
+| 4 | friction 있으면 §2 기준 수정 | B |
+| 5 | **E2~E3** — controller 분할 · 글로벌 locale | E2~E3 |
+| 6 | **M3** — Ready 시 Steam Release | ⏸️ |
 
 ---
 
@@ -107,3 +110,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-14 | **phase1-work-e2e-plan** — E2E 우선 · Scale/Core 보류 |
 | 2026-06-14 | Sprint **A2** Dogfood E2E ✅ |
 | 2026-06-14 | **M3 보류** → Sprint **B** |
+| 2026-06-16 | sliver grid 스크롤 · **extensibility-hardening-plan** · test **305** |

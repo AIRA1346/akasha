@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+
+import '../../../config/catalog_locale.dart';
+import '../../../utils/app_l10n.dart';
+import '../../../services/catalog_locale_preferences.dart';
 import '../../../services/file_service.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
@@ -23,6 +27,7 @@ Future<void> showVaultSettingsDialog(
       vaultValid && path != null ? await service.countMarkdownFiles() : 0;
   final nameCtrl = TextEditingController(text: displayName);
   var localAutoArchive = autoArchiveRegistry;
+  var localLocale = CatalogLocaleScope.current;
 
   if (!context.mounted) return;
 
@@ -30,12 +35,49 @@ Future<void> showVaultSettingsDialog(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setD) {
+        final l10n = lookupAppL10n(ctx);
         return AlertDialog(
           title: const Text('📂 로컬 볼트(Vault) 설정'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (l10n != null) ...[
+                Text(
+                  l10n.settingsDisplayLanguage,
+                  style: const TextStyle(
+                    fontSize: 11,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                DropdownButtonFormField<CatalogLocale>(
+                  value: localLocale,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    isDense: true,
+                  ),
+                  items: [
+                    DropdownMenuItem(
+                      value: CatalogLocale.ko,
+                      child: Text(l10n.localeKo),
+                    ),
+                    DropdownMenuItem(
+                      value: CatalogLocale.en,
+                      child: Text(l10n.localeEn),
+                    ),
+                  ],
+                  onChanged: (value) async {
+                    if (value == null) return;
+                    await CatalogLocalePreferences.save(value);
+                    CatalogLocaleScope.setCurrent(value);
+                    localLocale = value;
+                    setD(() {});
+                  },
+                ),
+                const SizedBox(height: 16),
+              ],
               Text(
                 path != null
                     ? '현재 연동된 폴더:\n$path'
