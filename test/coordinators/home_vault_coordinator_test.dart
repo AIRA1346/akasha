@@ -4,6 +4,7 @@ import 'package:akasha/screens/home/coordinators/home_vault_coordinator.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../fakes/fake_registry_port.dart';
 import '../fakes/fake_vault_port.dart';
 
 void main() {
@@ -21,6 +22,7 @@ void main() {
     var synced = <AkashaItem>[];
     final coordinator = HomeVaultCoordinator(
       vault: vault,
+      registry: FakeRegistryPort(),
       isMounted: () => true,
       scheduleRebuild: (mutate) => mutate(),
       onVaultItemsSynced: (items) => synced = items,
@@ -41,6 +43,7 @@ void main() {
     var changeCount = 0;
     final coordinator = HomeVaultCoordinator(
       vault: vault,
+      registry: FakeRegistryPort(),
       isMounted: () => true,
       scheduleRebuild: (_) {},
       onVaultItemsSynced: (_) {},

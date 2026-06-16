@@ -65,6 +65,7 @@ class HomeShellController {
   void _initCoordinators() {
     vault = HomeVaultCoordinator(
       vault: MarkdownVaultAdapter(),
+      registry: registry,
       isMounted: () => host.mounted,
       scheduleRebuild: host.scheduleRebuild,
       onVaultItemsSynced: workbench.syncFromVaultItems,

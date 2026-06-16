@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/library_theme.dart';
@@ -16,6 +17,7 @@ import '../home_vault_loader.dart';
 class HomeVaultCoordinator {
   HomeVaultCoordinator({
     required this.vault,
+    required this.registry,
     required this.isMounted,
     required this.scheduleRebuild,
     required this.onVaultItemsSynced,
@@ -23,6 +25,7 @@ class HomeVaultCoordinator {
   });
 
   final VaultPort vault;
+  final RegistryPort registry;
   final bool Function() isMounted;
   final void Function(void Function()) scheduleRebuild;
   final void Function(List<AkashaItem> items) onVaultItemsSynced;
@@ -61,6 +64,7 @@ class HomeVaultCoordinator {
     void Function(String message)? showMessage,
   }) async {
     final count = await HomeAutoArchive.run(
+      registry: registry,
       prefetchFilters: prefetchRegistry,
       showFeedback: showFeedback,
       showMessage: showMessage,

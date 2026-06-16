@@ -1,17 +1,19 @@
 import 'package:flutter/foundation.dart';
 
+import '../../core/ports/registry_port.dart';
 import '../../models/akasha_item.dart';
 import '../../models/enums.dart';
+import '../../models/registry_work.dart';
 import '../../services/file_service.dart';
 import '../../services/registry_visibility_service.dart';
 import '../../services/user_preferences.dart';
-import '../../services/works_registry.dart' show RegistryWork, WorksRegistry;
 import '../../utils/helpers.dart';
 
 /// 사전 작품 자동 .md 아카이빙
 class HomeAutoArchive {
   /// 생성된 .md 수. 0이면 신규 없음.
   static Future<int> run({
+    required RegistryPort registry,
     required Future<void> Function() prefetchFilters,
     bool showFeedback = false,
     void Function(String message)? showMessage,
@@ -30,7 +32,7 @@ class HomeAutoArchive {
         .toSet();
     final localKeys = onDisk.map((e) => AkashaFileService.cacheKeyFor(e)).toSet();
 
-    final allRegistryWorks = WorksRegistry.getFilteredWorksSync();
+    final allRegistryWorks = registry.getFilteredWorksSync();
     final pending = pendingRegistryWorks(
       registryWorks: allRegistryWorks,
       localWorkIds: localWorkIds,
