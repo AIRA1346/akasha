@@ -8,7 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
 import 'registry_shard_loader.dart';
-import 'works_registry.dart';
 
 typedef RegistryTextFetcher = Future<String?> Function(String url);
 
@@ -29,6 +28,28 @@ class RegistrySyncService {
 
   SharedPreferences? _prefs;
   static RegistryTextFetcher? _textFetcherOverride;
+
+  /// sync() 성공 후 레지스트리를 메모리에 재로드할 콜백 — WorksRegistry가 주입.
+  Future<void> Function()? _onSyncSuccess;
+
+  /// [WorksRegistry.init] 에서 한 번 등록. 이후 변경 없음.
+  void registerOnSyncSuccess(Future<void> Function() callback) {
+    _onSyncSuccess = callback;
+  }
+
+  RegistryShardLoader? _loader;
+
+  /// WorksRegistry가 init 시 한 번 주입. 이후 변경 없음.
+  void bindLoader(RegistryShardLoader loader) {
+    _loader = loader;
+  }
+
+  RegistryShardLoader get _effectiveLoader {
+    final l = _loader;
+    assert(l != null,
+        'RegistrySyncService: loader not bound. Call bindLoader() during WorksRegistry.init().');
+    return l!;
+  }
 
   @visibleForTesting
   static void setTextFetcherForTesting(RegistryTextFetcher? fetcher) {
@@ -107,7 +128,7 @@ class RegistrySyncService {
   /// 샤딩 메타데이터 + 검색 인덱스 + eager 샤드 동기화 (증분)
   Future<bool> sync() async {
     await init();
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     final previousManifest = loader.manifest;
     var success = false;
 
@@ -197,7 +218,7 @@ class RegistrySyncService {
     }
 
     if (success) {
-      await WorksRegistry.reloadAfterRemoteSync();
+      if (_onSyncSuccess != null) await _onSyncSuccess!();
       await _updateLastSyncTime();
     }
     return success;
@@ -277,7 +298,7 @@ class RegistrySyncService {
   /// 검색어에 필요한 샤드만 온디맨드 다운로드 (shardId dedupe, 미로드만 fetch)
   Future<bool> syncShardsForQuery(String query) async {
     if (query.trim().isEmpty) return false;
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     await loader.ensureSearchIndexLoaded();
     final shardIds = loader.resolveShardIdsForQuery(query);
     return syncShardsByIds(shardIds);
@@ -288,7 +309,7 @@ class RegistrySyncService {
     if (shardIds.isEmpty) return false;
     if (!await _shouldAllowRemoteShardFetch(shardIds)) return false;
 
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     var success = false;
     for (final shardId in shardIds) {
       if (loader.isShardLoaded(shardId)) continue;
@@ -310,7 +331,7 @@ class RegistrySyncService {
     AppDomain? domain,
     MediaCategory? category,
   }) async {
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     final shardIds = loader.resolveShardIdsForFilters(
       domain: domain,
       category: category,
@@ -322,7 +343,7 @@ class RegistrySyncService {
   Future<bool> _shouldAllowRemoteShardFetch(Set<String> shardIds) async {
     if (await _remoteManifestIsNewerThanLocal()) return true;
 
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     for (final shardId in shardIds) {
       if (loader.isShardLoaded(shardId)) continue;
       final meta = loader.manifest?.shardById(shardId);
@@ -334,7 +355,7 @@ class RegistrySyncService {
   }
 
   Future<bool> _remoteManifestIsNewerThanLocal() async {
-    final loader = WorksRegistry.loader;
+    final loader = _effectiveLoader;
     final localAt = _parseGeneratedAt(loader.manifest?.generatedAt) ??
         loader.bundledManifestGeneratedAt;
     if (localAt == null) return true;

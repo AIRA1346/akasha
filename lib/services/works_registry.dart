@@ -25,10 +25,14 @@ class WorksRegistry {
   /// 앱 시작 시 번들 샤드 + (유효한) 캐시 + 레거시 병합
   static Future<void> init() async {
     if (_initialized) return;
+    // E1-A3b: loader·reload 콜백을 sync service에 주입해 순환 import 제거
+    final syncService = RegistrySyncService();
+    syncService.bindLoader(_loader);
+    syncService.registerOnSyncSuccess(reloadAfterRemoteSync);
     await _loader.loadBundledBootstrap();
     if (await _loader.isDiskCacheStaleComparedToBundle()) {
       await _loader.clearDiskCache();
-      await RegistrySyncService().clearLegacyRegistryCache();
+      await syncService.clearLegacyRegistryCache();
     } else {
       await loadCachedRegistry();
     }
