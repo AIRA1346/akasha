@@ -1,4 +1,5 @@
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/features/workbench/presentation/work_detail_poster_layout.dart';
 import 'package:akasha/features/workbench/presentation/work_detail_workspace.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:akasha/widgets/poster_image.dart';
