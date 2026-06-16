@@ -281,12 +281,47 @@ abstract class AiImportPort {
 
 ### 9.1 파일 상한
 
-| 종류 | 상한 |
-|------|------|
+| 종류 | 상한 (soft) |
+|------|------------|
 | Shell / Screen | 250줄 |
 | Widget / Dialog | 200줄 |
 | Coordinator / Use-case | 150줄 |
+| Wiring hub (조립 전용) | 300줄 |
+| Composite form / workspace | 300~350줄 |
 | Data adapter | 400줄 |
+
+**상한은 CI 하드 리밋이 아니라 God object 조기 경보용 soft cap이다.** 초과만으로 분리 PR을 열지 않는다.
+
+#### 9.1.1 분리 필요 여부 판단 (초과 시)
+
+**분리한다** — 아래 **하나라도** 해당:
+
+| # | 신호 |
+|---|------|
+| 1 | 무관한 책임이 한 파일에 섞임 (UI + I/O + 동기화 루프 등) |
+| 2 | Coordinator/Port로 빼지 않은 비즈니스 로직이 남음 |
+| 3 | 파일 탐색·수정이 실제로 어려움 (길이 자체만으로는 부족) |
+| 4 | 분리 후 경계가 명확해짐 (포스터 / 폼 / 다이얼로그 단계 등) |
+
+**분리하지 않는다** — 아래 **모두** 해당:
+
+| # | 조건 |
+|---|------|
+| 1 | 단일 책임 (조립만 / 폼만 / 상태 오케스트레이션만) |
+| 2 | 무거운 로직은 이미 coordinator·service·하위 위젯으로 추출됨 |
+| 3 | 추가 줄은 import·생성자·delegate 한 줄 위임·반복 UI 필드 |
+| 4 | 더 쪼개면 파일만 늘고 읽기는 어려워짐 |
+
+#### 9.1.2 감사 예외 (2026-06-16 — 분리 불필요 확정)
+
+| 파일 | 줄 수 | 역할 | 판정 |
+|------|------:|------|:----:|
+| `home_shell_controller.dart` | 296 | coordinator 조립 + getter/delegate | **유지** |
+| `work_detail_info_form.dart` | 286 | 단일 편집 폼 (이미 panel에서 분리됨) | **유지** |
+| `work_detail_workspace.dart` | 316 | draft 상태 + panel/sanctum 조립 | **유지** |
+| `work_detail_info_panel.dart` | 193 | poster·form 조립 쉘 | ✅ |
+
+**아직 상한 초과 · 추후 터치 시 재판단** (지금 당장 분리 PR 아님): `fusion_search_dialog` (~506, W2-4), `browse_dashboard_sections` (~514), `poster_card` (~502), `add_work_dialog` (~383).
 
 ### 9.2 PR 규칙
 

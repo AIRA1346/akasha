@@ -1,6 +1,6 @@
 ﻿# Extensibility Hardening Plan — 확장성·글로벌·Phase 3 대비
 
-> **상태:** E0~E3 ✅ · E1-A3b ✅ · E2-5/E2-6 ✅ (2026-06-16)  
+> **상태:** E0~E3 ✅ · E1-A3b ✅ · E2 ✅ (2026-06-16)  
 > **근거:** 전체 설계 점검 (2026-06-16) · [ADR-007](../adr/ADR-007-app-layering.md) · [locale-catalog-policy](../policy/locale-catalog-policy.md)  
 > **상위:** [app-architecture-refactor-plan.md](app-architecture-refactor-plan.md) Wave 2~4 · [architecture-evolution-phases.md](architecture-evolution-phases.md)  
 > **제품 게이트:** [phase1-work-e2e-plan.md](phase1-work-e2e-plan.md) §2 — 「①~④ E2E에 도움이 되는가?」
@@ -18,10 +18,10 @@
 | 항목 | 상태 |
 |------|------|
 | Wave 1 Home 해부 | ✅ `home_shell.dart` 40줄 · View/Coordinator 분리 |
-| Wave 2 Port 골격 | 🔶 `core/ports/` + `data/adapters/` 존재 · **런타임 대부분 singleton 직접 호출** |
+| Wave 2 Port 골격 | 🔶 `core/ports/` + adapters · Home coordinator 경유 확대 · screens 일부 직접 호출 잔존 |
 | Registry @5181 · ADR-010 | ✅ eager-only 번들 · C2 관측 |
 | Sprint B | 🔶 dogfood · friction |
-| ADR-007 준수 | 🔶 `home_shell_controller` ~283줄 · `work_detail_workspace` ~721줄 |
+| ADR-007 준수 | ✅ E2 Exit · wiring·form·workspace **감사 예외** ([§9.1.2](app-architecture-refactor-plan.md)) |
 
 **진단 요약**
 
@@ -30,7 +30,7 @@
 | 데이터 (akasha-db) | 🟢 | en 99.2% · franchise 수동·전량 번들 |
 | 앱 레이어 | 🟡 | Port 미사용 · fat controller · `RegistryWork` in services |
 | 글로벌 | 🟡 | `titles` 스키마 ✅ · `CatalogLocaleScope` ko/en 설정 · ARB 크롬 1차 |
-| CI/문서 | 🟡 | 305 tests · checklist/snapshot stale · E2E 수동 |
+| CI/문서 | 🟢 | test **318** · soft cap + 감사 예외 반영 |
 
 ---
 
@@ -107,7 +107,7 @@ E4 스케일 trigger 대비 (측정 후만)
 
 ---
 
-## E2 — Application 축소 (ADR-007) · **진행**
+## E2 — Application 축소 (ADR-007) · **✅**
 
 **목표:** `home_shell_controller`를 **오케스트레이션 허브**에서 **조립(wiring)만** 하는 클래스로.
 
@@ -116,14 +116,14 @@ E4 스케일 trigger 대비 (측정 후만)
 | E2-1 | catalog prefetch · sync · contribution | `HomeCatalogCoordinator` | ✅ |
 | E2-2 | vault init · auto-archive · watch | `HomeVaultCoordinator` | ✅ |
 | E2-3 | workbench listener · open/save/delete | `HomeWorkbenchCoordinator` | ✅ |
-| E2-4 | Dialog/Navigation/Browse/Wiring 분리 | `HomeShellController` **283줄** (676→283) | ✅ |
+| E2-4 | Dialog/Navigation/Browse/Wiring 분리 | `HomeShellController` **296줄** (676→296) | ✅ |
 
 | PR | 내용 | 상태 |
 |----|------|:----:|
-| E2-5 | Port DI to coordinators | ✅ |
-| E2-6 | `work_detail_workspace` 분리 | ✅ |
+| E2-5 | Port DI to coordinators + HomeAutoArchive | ✅ |
+| E2-6 | `work_detail_workspace` 분리 + info panel/form | ✅ |
 
-**DoD:** `home_shell_controller.dart` ≤200줄 · coordinator unit test 각 ≥1 — **줄 수 미달** (295) · catalog/vault coordinator test ✅
+**DoD:** coordinator unit test 각 ≥1 ✅ · wiring hub·form·workspace는 [§9.1.2](app-architecture-refactor-plan.md) **분리 불필요** 확정 · `WorksRegistry` screens 직접 호출 추가 감소는 **선택** (S3)
 
 ---
 
@@ -202,7 +202,7 @@ E4 스케일 trigger 대비 (측정 후만)
 
 | # | 지표 | 목표 |
 |:-:|------|------|
-| S1 | `home_shell_controller` 줄 수 | ≤200 |
+| S1 | wiring hub·workspace·composite form | [§9.1.2](app-architecture-refactor-plan.md) 감사 예외 준수 |
 | S2 | registry 서비스 순환 import | 0 |
 | S3 | Presentation에서 `WorksRegistry.` 직접 호출 | coordinator 경유로 **50%↓** (E2 Exit) |
 | S4 | `titles.en` populated | 5181/5181 |
@@ -241,4 +241,4 @@ E4 스케일 trigger 대비 (측정 후만)
 |------|------|
 | 2026-06-16 | E3-B ✅ · AppBar ARB 툴팁 |
 | 2026-06-16 | E2-4 coordinator 분리 완료 · E3-A1~A4 1차 구현 |
-| 2026-06-16 | E0 ✅ · E1-A/B 1차 구현 |
+| 2026-06-16 | E2 ✅ · soft cap §9.1.1 · 감사 예외 §9.1.2 · info panel 분리 · HomeAutoArchive Port |

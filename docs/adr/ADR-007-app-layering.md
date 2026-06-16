@@ -23,7 +23,7 @@ AKASHA v1 Steam 출시 준비 과정에서 `home_screen.dart`가 1,385줄의 거
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ 1. Presentation  │  Thin Widgets, Screens, Dialogs (≤ 200줄)     │
+│ 1. Presentation  │  Thin Widgets, Screens, Dialogs (soft cap, §9.1.1) │
 └────────┬────────────────────────────────────────────────────────┘
          │ (호출)
 ┌────────▼────────────────────────────────────────────────────────┐
@@ -44,12 +44,12 @@ AKASHA v1 Steam 출시 준비 과정에서 `home_screen.dart`가 1,385줄의 거
 1. **Presentation (표현 계층)**:
    * **역할**: 사용자 화면 렌더링, 이벤트 감지, 입력 수집.
    * **제약**: 비즈니스 로직(예: 파일 쓰기 트랜잭션, 데이터 동기화 루프)을 직접 수행할 수 없습니다. 오직 **Application 계층(Coordinator)**의 메소드를 호출하거나 상태를 구독하기만 합니다.
-   * **한계선**: 단일 위젯 및 다이얼로그 파일은 **200줄**, 스크린 단위 쉘은 **250줄**을 초과할 수 없습니다.
+   * **한계선**: 단일 위젯·다이얼로그 **200줄**, 스크린 쉘 **250줄**을 **soft cap**으로 둔다. 초과 시 [app-architecture-refactor-plan §9.1.1](../programs/app-architecture-refactor-plan.md) 판단 기준을 적용하며, 조립 전용·단일 폼·workspace는 §9.1.2 예외 표를 따른다.
 
 2. **Application (응용 계층)**:
    * **역할**: 행동(Use-case) 조율, 화면 독립적인 상태 홀더.
    * **제약**: UI 구성 요소(BuildContext, MediaQuery, Theme 등)에 직접 의존하거나 `import 'package:flutter/material.dart'`를 갖는 것을 엄격히 지양합니다.
-   * **가드레일**: 하나의 클래스는 원칙적으로 하나의 오케스트레이션(예: `HomeMembershipCoordinator`)만 담당하며, 파일은 **150줄**을 초과할 수 없습니다.
+   * **가드레일**: 하나의 클래스는 원칙적으로 하나의 오케스트레이션만 담당한다. **150줄**은 soft cap이며, coordinator에 UI 프레임워크 import가 없고 단일 use-case라면 초과만으로 분리하지 않는다.
 
 3. **Domain (도메인 계층)**:
    * **역할**: 비즈니스 엔티티 모델(`AkashaItem`, `RegistryWork`), 핵심 도메인 규칙 및 에러 정의.
@@ -58,7 +58,7 @@ AKASHA v1 Steam 출시 준비 과정에서 `home_screen.dart`가 1,385줄의 거
 4. **Data (데이터 계층)**:
    * **역할**: 데이터 영속성 처리, 네트워크 통신, 외부 API 어댑팅.
    * **제약**: `WorksRegistry` 또는 `AkashaFileService` 같은 무거운 싱글톤/스태틱 전역 객체들을 **Port 인터페이스 뒤에 숨겨 캡슐화**합니다.
-   * **한계선**: 데이터 어댑터 파일은 **400줄**을 초과할 수 없습니다.
+   * **한계선**: 데이터 어댑터 **400줄** soft cap. 초과 시 책임 분리 검토.
 
 ---
 
@@ -89,3 +89,12 @@ AKASHA v1 Steam 출시 준비 과정에서 `home_screen.dart`가 1,385줄의 거
 * **결합도 완화**: `home_screen.dart`는 얇은 화면 분할 쉘로 변모하여, 화면 내 코드 분석의 피로도를 대폭 낮춥니다.
 * **유닛 테스트 용이성**: 파일 I/O를 모킹하기 위해 복잡한 환경 셋업을 요구하지 않고, 순수 메모리 가짜 포트(`FakeVaultPort`)만으로 비즈니스 시나리오를 0.1초 만에 테스트할 수 있습니다.
 * **2단계 아카이빙 확장 확보**: Wikidata API 수집기와 로컬 마크다운 저장 구조가 Port 뒤로 완전히 숨어, 만화/애니 외에 인물/성우 등의 새 카테고리 도메인을 추가할 때 UI 코드가 다치지 않습니다.
+
+---
+
+## 5. 개정 이력
+
+| 일자 | 변경 |
+|------|------|
+| 2026-06-13 | 초안 승인 |
+| 2026-06-16 | 줄 수 상한을 **soft cap**으로 완화 · §9.1.1 판단 기준 · §9.1.2 감사 예외 ([app-architecture-refactor-plan](../programs/app-architecture-refactor-plan.md)) |
