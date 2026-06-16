@@ -9,13 +9,15 @@
     },
     "titles": {
       "ko": "대당창업기거주",
+      "en": "Diary of the Founding of the Tang Dynasty",
       "ja": "大唐創業起居注",
       "zh": "大唐創業起居注"
     },
     "creator": "Wen Daya",
     "extensions": {
       "ingestChannel": "wikidata_ko_book",
-      "ingestSource": "wikidata_ko"
+      "ingestSource": "wikidata_ko",
+      "coverageSprint03": "e3_b2_curated"
     }
   }
 }

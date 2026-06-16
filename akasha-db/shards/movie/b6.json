@@ -20,10 +20,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Avengers Endgame",
+      "ko": "어벤져스: 엔드게임"
     }
   },
   "wk_000000984": {

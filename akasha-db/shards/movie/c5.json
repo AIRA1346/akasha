@@ -20,10 +20,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Pulp Fiction",
+      "ko": "펄프 픽션"
     }
   },
   "wk_000003313": {

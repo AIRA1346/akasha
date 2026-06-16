@@ -20,10 +20,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Fight Club",
+      "ko": "파이트 클럽"
     }
   },
   "wk_000003664": {

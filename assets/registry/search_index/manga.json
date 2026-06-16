@@ -889,7 +889,8 @@
       "청춘"
     ],
     "titles": {
-      "en": "NANA"
+      "en": "NANA",
+      "ko": "NANA"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -4129,6 +4130,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "Oregairu",
+      "oregairu",
       "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
       "내가친구가적은건아무래도내가멋진고양이인탓인가",
       "드라마",
@@ -4139,6 +4142,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Oregairu",
       "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
     },
     "qualityScore": 90,
@@ -5235,6 +5239,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Dorohedoro",
+      "dorohedoro",
       "다크",
       "도로헤도로",
       "액션",
@@ -5244,6 +5250,7 @@
       "하야시카이"
     ],
     "titles": {
+      "en": "Dorohedoro",
       "ko": "도로헤도로"
     },
     "qualityScore": 90,
@@ -7025,6 +7032,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Monster",
+      "monster",
       "명작",
       "몬스터",
       "범죄",
@@ -7034,6 +7043,7 @@
       "우라사와나오키"
     ],
     "titles": {
+      "en": "Monster",
       "ko": "몬스터"
     },
     "qualityScore": 90,
@@ -8550,6 +8560,8 @@
       "우정"
     ],
     "searchTokens": [
+      "Bleach",
+      "bleach",
       "블리치",
       "사신",
       "액션",
@@ -8559,6 +8571,7 @@
       "쿠보타이토"
     ],
     "titles": {
+      "en": "Bleach",
       "ko": "블리치"
     },
     "qualityScore": 100,
@@ -10029,6 +10042,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Skip AND Loafer",
+      "skipandloafer",
       "성장",
       "스킵과 로퍼",
       "스킵과로퍼",
@@ -10039,6 +10054,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Skip AND Loafer",
       "ko": "스킵과 로퍼"
     },
     "qualityScore": 100,
@@ -10143,6 +10159,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "Slam Dunk",
+      "slamdunk",
       "농구",
       "스포츠",
       "슬램덩크",
@@ -10152,6 +10170,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Slam Dunk",
       "ko": "슬램덩크"
     },
     "qualityScore": 90,
@@ -16742,7 +16761,9 @@
       "명작"
     ],
     "searchTokens": [
+      "Pluto",
       "SF",
+      "pluto",
       "sf",
       "로봇",
       "명작",
@@ -16752,6 +16773,7 @@
       "플루토"
     ],
     "titles": {
+      "en": "Pluto",
       "ko": "플루토"
     },
     "qualityScore": 90,
@@ -17263,6 +17285,8 @@
       "판타지"
     ],
     "searchTokens": [
+      "Hunter X Hunter",
+      "hunterxhunter",
       "모험",
       "배틀",
       "우정",
@@ -17273,6 +17297,7 @@
       "헌터헌터"
     ],
     "titles": {
+      "en": "Hunter X Hunter",
       "ko": "헌터×헌터"
     },
     "qualityScore": 100,

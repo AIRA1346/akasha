@@ -20,10 +20,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Bleach",
+      "ko": "블리치"
     }
   },
   "wk_000001569": {

@@ -18,10 +18,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Demon Slayer Mugen",
+      "ko": "귀멸 칼날 무한열차"
     }
   }
 }

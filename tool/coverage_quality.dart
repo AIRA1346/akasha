@@ -188,3 +188,70 @@ bool hasAutoSourceTrace(Map<String, dynamic> work) {
   }
   return false;
 }
+
+bool _nonEmptyStr(String? s) => s != null && s.trim().isNotEmpty;
+
+/// E3-B — `titles.ko` 또는 primary `title` 보유 (표시 fallback).
+bool hasKoDisplayTitle(Map<String, dynamic> work) {
+  final titles = work['titles'];
+  if (titles is Map && _nonEmptyStr(titles['ko']?.toString())) return true;
+  return _nonEmptyStr(work['title']?.toString());
+}
+
+bool hasPopulatedEnTitle(Map<String, dynamic> work) {
+  final titles = work['titles'];
+  if (titles is! Map) return false;
+  return isValidEnTitle(titles['en']?.toString());
+}
+
+/// 글로벌 v1.1 locale minimum — coverage 수치 (품질과 분리).
+class LocaleCoverageScanResult {
+  LocaleCoverageScanResult({
+    required this.workCount,
+    required this.titlesKoCount,
+    required this.titlesKoRate,
+    required this.titlesEnPopulated,
+    required this.titlesEnMissing,
+    required this.titlesEnRate,
+    required this.koStatus,
+    required this.enCoverageStatus,
+  });
+
+  final int workCount;
+  final int titlesKoCount;
+  final double titlesKoRate;
+  final int titlesEnPopulated;
+  final int titlesEnMissing;
+  final double titlesEnRate;
+  final String koStatus;
+  final String enCoverageStatus;
+
+  static const double koMinimumRate = 0.99;
+  static const double enMinimumRate = 1.0;
+
+  bool get passesMinimum =>
+      titlesKoRate >= koMinimumRate && titlesEnRate >= enMinimumRate;
+}
+
+LocaleCoverageScanResult scanLocaleCoverage(List<Map<String, dynamic>> works) {
+  final total = works.length;
+  var ko = 0;
+  var enPopulated = 0;
+  for (final work in works) {
+    if (hasKoDisplayTitle(work)) ko++;
+    if (hasPopulatedEnTitle(work)) enPopulated++;
+  }
+  final koRate = total == 0 ? 0.0 : ko / total;
+  final enRate = total == 0 ? 0.0 : enPopulated / total;
+  return LocaleCoverageScanResult(
+    workCount: total,
+    titlesKoCount: ko,
+    titlesKoRate: koRate,
+    titlesEnPopulated: enPopulated,
+    titlesEnMissing: total - enPopulated,
+    titlesEnRate: enRate,
+    koStatus: koRate >= LocaleCoverageScanResult.koMinimumRate ? 'PASS' : 'FAIL',
+    enCoverageStatus:
+        enRate >= LocaleCoverageScanResult.enMinimumRate ? 'PASS' : 'FAIL',
+  );
+}

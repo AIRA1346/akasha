@@ -1,6 +1,6 @@
 # Project Status Snapshot
 
-> **갱신:** 2026-06-16 (@5181 · C2 ✅ · test 305)  
+> **갱신:** 2026-06-16 (@5181 · C2 ✅ · test 311 · E3-B ✅)  
 > **현재 실행:** [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) · **Sprint B** + [extensibility-hardening-plan.md](programs/extensibility-hardening-plan.md)  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
@@ -16,7 +16,7 @@
 | **Registry** | **5181 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **5181/5181 (100%)** |
-| **flutter test** | **309/309 PASS** |
+| **flutter test** | **311/311 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
@@ -47,12 +47,13 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **291/291 PASS** |
+| `flutter test` | **311/311 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (2008 works) |
 | `quality_gate --strict` | PASS |
 | `quality_gate --release` | PASS |
-| `coverage_dashboard` | titles_en 93% · invalid_en 0 |
+| `coverage_dashboard` | titles_ko 100% · titles_en 100% · invalid_en 0 |
+| `quality_gate --locale-minimum` | PASS |
 | `ci_registry_check` | PASS |
 | `preflight_check` | PASS |
 

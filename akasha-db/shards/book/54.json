@@ -9,12 +9,14 @@
     },
     "titles": {
       "ko": "농상집요",
+      "en": "Essentials of Agriculture and Sericulture",
       "ja": "農桑輯要",
       "zh": "農桑輯要"
     },
     "extensions": {
       "ingestChannel": "wikidata_ko_book",
-      "ingestSource": "wikidata_ko"
+      "ingestSource": "wikidata_ko",
+      "coverageSprint03": "e3_b2_curated"
     }
   },
   "wk_000004915": {

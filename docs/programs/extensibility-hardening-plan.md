@@ -144,9 +144,9 @@ E4 스케일 trigger 대비 (측정 후만)
 
 | PR | 내용 |
 |----|------|
-| E3-B1 | `coverage_dashboard` — `titles_ko` KPI 추가 (`title` 또는 `titles.ko`) |
-| E3-B2 | `titles.en` 39건 remediate 배치 |
-| E3-B3 | `quality_gate` / release — ko+en **minimum** 문서화 (strict는 en 유지) |
+| E3-B1 | `coverage_dashboard` — `titles_ko` KPI 추가 (`title` 또는 `titles.ko`) | ✅ |
+| E3-B2 | `titles.en` 39건 remediate 배치 | ✅ 5181/5181 |
+| E3-B3 | `quality_gate --locale-minimum` · release ko+en minimum 문서화 | ✅ |
 
 **DoD:** en 100% · ko KPI PASS · en UI dogfood OK.
 

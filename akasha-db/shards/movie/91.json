@@ -27,12 +27,14 @@
     },
     "titles": {
       "ko": "X",
-      "ja": "X"
+      "ja": "X",
+      "en": "X (2022 film)"
     },
     "releaseYear": 2022,
     "extensions": {
       "ingestChannel": "wikidata_ko_movie",
-      "ingestSource": "wikidata_ko"
+      "ingestSource": "wikidata_ko",
+      "coverageSprint03": "e3_b2_curated"
     }
   },
   "wk_000004850": {

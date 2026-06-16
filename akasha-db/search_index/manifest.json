@@ -1,7 +1,7 @@
 {
   "version": 1,
   "entryCount": 5181,
-  "generatedAt": "2026-06-15T08:58:29.030521Z",
+  "generatedAt": "2026-06-16T10:41:08.007370Z",
   "shards": [
     {
       "category": "animation",
@@ -13,7 +13,7 @@
       "category": "book",
       "path": "search_index/book.json",
       "entryCount": 490,
-      "sha256": "1ca121c4753bca340597b351d1178b4dd8edea0d3aaba4f1cb80d6f25ec87841"
+      "sha256": "76d9d39d78ee9d6775690c689963335315f0e86af52ebbb74bcf1c34aa193eba"
     },
     {
       "category": "drama",
@@ -31,13 +31,13 @@
       "category": "manga",
       "path": "search_index/manga.json",
       "entryCount": 705,
-      "sha256": "d123aabc5a2218faf61106c91dd06e155352574a64ea0a7e836e770a6211afad"
+      "sha256": "17f589136179e42978ee4e4e3e304e38d339b8be5468f210271eda2eaf8a9133"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
       "entryCount": 475,
-      "sha256": "e01bf288cd6bd840160792de0be4ea612e855cae4ebc015bf874c81d070482f3"
+      "sha256": "fbf18047b52f505205e6690f5968b2ffb8c97e358f65d7bc40b9cec0ae0cd047"
     },
     {
       "category": "webtoon",

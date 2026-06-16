@@ -2294,11 +2294,14 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Essentials of Agriculture and Sericulture",
+      "essentialsofagricultureandsericulture",
       "農桑輯要",
       "농상집요"
     ],
     "titles": {
       "ko": "농상집요",
+      "en": "Essentials of Agriculture and Sericulture",
       "ja": "農桑輯要",
       "zh": "農桑輯要"
     },
@@ -2525,11 +2528,14 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Collected Edicts and Decrees of the Tang Dynasty",
+      "collectededictsanddecreesofthetangdynasty",
       "唐大詔令集",
       "당대조령집"
     ],
     "titles": {
       "ko": "당대조령집",
+      "en": "Collected Edicts and Decrees of the Tang Dynasty",
       "ja": "唐大詔令集",
       "zh": "唐大詔令集"
     },
@@ -2591,13 +2597,16 @@
     "creator": "Wen Daya",
     "tags": [],
     "searchTokens": [
+      "Diary of the Founding of the Tang Dynasty",
       "Wen Daya",
+      "diaryofthefoundingofthetangdynasty",
       "wendaya",
       "大唐創業起居注",
       "대당창업기거주"
     ],
     "titles": {
       "ko": "대당창업기거주",
+      "en": "Diary of the Founding of the Tang Dynasty",
       "ja": "大唐創業起居注",
       "zh": "大唐創業起居注"
     },
@@ -7465,12 +7474,15 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Arithmetic in the Five Classics",
+      "arithmeticinthefiveclassics",
       "五経算術",
       "五經算術",
       "오경산술"
     ],
     "titles": {
       "ko": "오경산술",
+      "en": "Arithmetic in the Five Classics",
       "ja": "五経算術",
       "zh": "五經算術"
     },

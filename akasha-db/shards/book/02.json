@@ -65,12 +65,14 @@
     },
     "titles": {
       "ko": "당대조령집",
+      "en": "Collected Edicts and Decrees of the Tang Dynasty",
       "ja": "唐大詔令集",
       "zh": "唐大詔令集"
     },
     "extensions": {
       "ingestChannel": "wikidata_ko_book",
-      "ingestSource": "wikidata_ko"
+      "ingestSource": "wikidata_ko",
+      "coverageSprint03": "e3_b2_curated"
     }
   }
 }

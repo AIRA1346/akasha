@@ -18,10 +18,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Chainsaw MAN Movie",
+      "ko": "체인소 맨 레제편"
     }
   },
   "wk_000002259": {

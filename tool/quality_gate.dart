@@ -6,6 +6,7 @@
 ///   dart run tool/quality_gate.dart --warn       # warnings, exit 0
 ///   dart run tool/quality_gate.dart --strict     # invalid > 0 → exit 1
 ///   dart run tool/quality_gate.dart --release    # release block rules
+///   dart run tool/quality_gate.dart --locale-minimum  # E3 ko+en coverage floor
 ///   dart run tool/quality_gate.dart --override   # bypass block (logged)
 
 import 'dart:convert';
@@ -19,6 +20,7 @@ void main(List<String> args) {
   final strict = args.contains('--strict');
   final release = args.contains('--release');
   final warn = args.contains('--warn');
+  final localeMinimum = args.contains('--locale-minimum');
   final override = args.contains('--override');
 
   final root = _findProjectRoot();
@@ -26,12 +28,15 @@ void main(List<String> args) {
   final overrideActive = override || _overrideFileActive(root);
 
   final scan = scanTitlesEnQuality(works);
-  _printReport(scan, overrideActive: overrideActive);
+  final localeScan = scanLocaleCoverage(works);
+  _printReport(scan, localeScan, overrideActive: overrideActive);
 
   final block = scan.invalidEnCount > 0 || scan.sourceBreakageCount > 0;
   if (block && overrideActive) {
     print('\nOVERRIDE: quality block bypassed (maintainer)');
   }
+
+  final localeBlock = localeMinimum && !localeScan.passesMinimum;
 
   if (strict || release) {
     if (block && !overrideActive) {
@@ -47,15 +52,48 @@ void main(List<String> args) {
       'source_breakage=${scan.sourceBreakageCount}',
     );
   }
+
+  if (localeMinimum) {
+    if (!localeScan.passesMinimum) {
+      stderr.writeln(
+        '\nLOCALE MINIMUM FAIL: titles_ko=${localeScan.titlesKoCount}/'
+        '${localeScan.workCount} (${(localeScan.titlesKoRate * 100).toStringAsFixed(2)}%) '
+        'titles_en_missing=${localeScan.titlesEnMissing}',
+      );
+      exit(1);
+    }
+  } else if (warn && !localeScan.passesMinimum) {
+    stderr.writeln(
+      '\nLOCALE MINIMUM WARN: titles_ko rate '
+      '${(localeScan.titlesKoRate * 100).toStringAsFixed(2)}% · '
+      'titles_en_missing=${localeScan.titlesEnMissing}',
+    );
+  }
 }
 
-void _printReport(QualityScanResult scan, {required bool overrideActive}) {
+void _printReport(
+  QualityScanResult scan,
+  LocaleCoverageScanResult localeScan, {
+  required bool overrideActive,
+}) {
   print('Quality Gate MVP — titles.en');
   print('  titles_en_populated: ${scan.titlesEnPopulated}');
   print('  invalid_en_count: ${scan.invalidEnCount}');
   print('  invalid_en_rate: ${scan.invalidEnRate.toStringAsFixed(4)}');
   print('  source_breakage_count: ${scan.sourceBreakageCount}');
   print('  status: ${scan.status}');
+  print('Locale minimum (E3-B — coverage, not syntax):');
+  print(
+    '  titles_ko: ${localeScan.titlesKoCount}/${localeScan.workCount} '
+    '(${(localeScan.titlesKoRate * 100).toStringAsFixed(2)}%) '
+    'target>=${(LocaleCoverageScanResult.koMinimumRate * 100).toStringAsFixed(0)}% '
+    'status=${localeScan.koStatus}',
+  );
+  print(
+    '  titles_en_coverage: ${localeScan.titlesEnPopulated}/'
+    '${localeScan.workCount} missing=${localeScan.titlesEnMissing} '
+    'target=100% status=${localeScan.enCoverageStatus}',
+  );
   if (overrideActive) print('  override: true');
   if (scan.byReason.isNotEmpty) {
     print('  by_reason: ${scan.byReason}');

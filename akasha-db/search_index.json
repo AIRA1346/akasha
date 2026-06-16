@@ -6400,7 +6400,8 @@
       "청춘"
     ],
     "titles": {
-      "en": "NANA"
+      "en": "NANA",
+      "ko": "NANA"
     },
     "qualityScore": 90,
     "qualityTier": 4
@@ -9571,11 +9572,14 @@
     "tags": [],
     "searchTokens": [
       "X",
-      "x"
+      "X (2022 film)",
+      "x",
+      "x(2022film)"
     ],
     "titles": {
       "ko": "X",
-      "ja": "X"
+      "ja": "X",
+      "en": "X (2022 film)"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -16457,6 +16461,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Demon Slayer Mugen",
+      "demonslayermugen",
       "ufotable",
       "귀멸 칼날 무한열차",
       "귀멸칼날무한열차",
@@ -16464,6 +16470,7 @@
       "영화"
     ],
     "titles": {
+      "en": "Demon Slayer Mugen",
       "ko": "귀멸 칼날 무한열차"
     },
     "qualityScore": 90,
@@ -16611,6 +16618,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Demon Slayer Mugen Train",
+      "demonslayermugentrain",
       "ufotable",
       "귀멸의 칼날: 무한열차편",
       "귀멸의칼날무한열차편",
@@ -16620,6 +16629,7 @@
       "액션"
     ],
     "titles": {
+      "en": "Demon Slayer Mugen Train",
       "ko": "귀멸의 칼날: 무한열차편"
     },
     "qualityScore": 90,
@@ -20140,6 +20150,8 @@
       "아카데미"
     ],
     "searchTokens": [
+      "Parasite 2019",
+      "parasite2019",
       "기생충",
       "봉준호",
       "사회비판",
@@ -20148,6 +20160,7 @@
       "한국영화"
     ],
     "titles": {
+      "en": "Parasite 2019",
       "ko": "기생충"
     },
     "qualityScore": 90,
@@ -22765,6 +22778,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Weathering With YOU",
+      "weatheringwithyou",
       "날씨의 아이",
       "날씨의아이",
       "서브컬처",
@@ -22773,6 +22788,7 @@
       "영화"
     ],
     "titles": {
+      "en": "Weathering With YOU",
       "ko": "날씨의 아이"
     },
     "qualityScore": 100,
@@ -23610,6 +23626,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "Oregairu",
+      "oregairu",
       "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
       "내가친구가적은건아무래도내가멋진고양이인탓인가",
       "드라마",
@@ -23620,6 +23638,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Oregairu",
       "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
     },
     "qualityScore": 90,
@@ -24415,6 +24434,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Your Name 2016",
+      "yourname2016",
       "너의 이름은.",
       "너의이름은.",
       "서브컬처",
@@ -24423,6 +24444,7 @@
       "영화"
     ],
     "titles": {
+      "en": "Your Name 2016",
       "ko": "너의 이름은."
     },
     "qualityScore": 90,
@@ -25968,11 +25990,14 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Essentials of Agriculture and Sericulture",
+      "essentialsofagricultureandsericulture",
       "農桑輯要",
       "농상집요"
     ],
     "titles": {
       "ko": "농상집요",
+      "en": "Essentials of Agriculture and Sericulture",
       "ja": "農桑輯要",
       "zh": "農桑輯要"
     },
@@ -27761,6 +27786,8 @@
       "명작"
     ],
     "searchTokens": [
+      "THE Dark Knight",
+      "thedarkknight",
       "다크 나이트",
       "다크나이트",
       "명작",
@@ -27771,6 +27798,7 @@
       "히어로"
     ],
     "titles": {
+      "en": "THE Dark Knight",
       "ko": "다크 나이트"
     },
     "qualityScore": 90,
@@ -28487,11 +28515,14 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Collected Edicts and Decrees of the Tang Dynasty",
+      "collectededictsanddecreesofthetangdynasty",
       "唐大詔令集",
       "당대조령집"
     ],
     "titles": {
       "ko": "당대조령집",
+      "en": "Collected Edicts and Decrees of the Tang Dynasty",
       "ja": "唐大詔令集",
       "zh": "唐大詔令集"
     },
@@ -28755,13 +28786,16 @@
     "creator": "Wen Daya",
     "tags": [],
     "searchTokens": [
+      "Diary of the Founding of the Tang Dynasty",
       "Wen Daya",
+      "diaryofthefoundingofthetangdynasty",
       "wendaya",
       "大唐創業起居注",
       "대당창업기거주"
     ],
     "titles": {
       "ko": "대당창업기거주",
+      "en": "Diary of the Founding of the Tang Dynasty",
       "ja": "大唐創業起居注",
       "zh": "大唐創業起居注"
     },
@@ -28942,6 +28976,8 @@
       "드라마"
     ],
     "searchTokens": [
+      "THE Godfather",
+      "thegodfather",
       "가족",
       "대부",
       "드라마",
@@ -28951,6 +28987,7 @@
       "프란시스포드코폴라"
     ],
     "titles": {
+      "en": "THE Godfather",
       "ko": "대부"
     },
     "qualityScore": 90,
@@ -29878,13 +29915,16 @@
     ],
     "searchTokens": [
       "Matt Reeves",
+      "THE Batman",
       "mattreeves",
+      "thebatman",
       "대중문화",
       "더 배트맨",
       "더배트맨",
       "영화"
     ],
     "titles": {
+      "en": "THE Batman",
       "ko": "더 배트맨"
     },
     "qualityScore": 90,
@@ -32122,6 +32162,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Dorohedoro",
+      "dorohedoro",
       "다크",
       "도로헤도로",
       "액션",
@@ -32131,6 +32173,7 @@
       "하야시카이"
     ],
     "titles": {
+      "en": "Dorohedoro",
       "ko": "도로헤도로"
     },
     "qualityScore": 90,
@@ -34382,12 +34425,15 @@
     ],
     "searchTokens": [
       "Denis Villeneuve",
+      "Dune 2021",
       "denisvilleneuve",
+      "dune2021",
       "대중문화",
       "듄",
       "영화"
     ],
     "titles": {
+      "en": "Dune 2021",
       "ko": "듄"
     },
     "qualityScore": 90,
@@ -43569,7 +43615,9 @@
     ],
     "searchTokens": [
       "SF",
+      "THE Matrix",
       "sf",
+      "thematrix",
       "매트릭스",
       "사이버펑크",
       "액션",
@@ -43578,6 +43626,7 @@
       "철학"
     ],
     "titles": {
+      "en": "THE Matrix",
       "ko": "매트릭스"
     },
     "qualityScore": 90,
@@ -46105,6 +46154,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Monster",
+      "monster",
       "명작",
       "몬스터",
       "범죄",
@@ -46114,6 +46165,7 @@
       "우라사와나오키"
     ],
     "titles": {
+      "en": "Monster",
       "ko": "몬스터"
     },
     "qualityScore": 90,
@@ -49066,13 +49118,16 @@
       "대중문화"
     ],
     "searchTokens": [
+      "Barbie 2023",
       "Greta Gerwig",
+      "barbie2023",
       "gretagerwig",
       "대중문화",
       "바비",
       "영화"
     ],
     "titles": {
+      "en": "Barbie 2023",
       "ko": "바비"
     },
     "qualityScore": 90,
@@ -55552,6 +55607,8 @@
       "우정"
     ],
     "searchTokens": [
+      "Bleach",
+      "bleach",
       "블리치",
       "사신",
       "액션",
@@ -55561,6 +55618,7 @@
       "쿠보타이토"
     ],
     "titles": {
+      "en": "Bleach",
       "ko": "블리치"
     },
     "qualityScore": 100,
@@ -61827,6 +61885,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Spirited Away",
+      "spiritedaway",
       "가족",
       "명작",
       "미야자키 하야오",
@@ -61837,6 +61897,7 @@
       "판타지"
     ],
     "titles": {
+      "en": "Spirited Away",
       "ko": "센과 치히로의 행방불명"
     },
     "qualityScore": 90,
@@ -65604,6 +65665,8 @@
       "코미디"
     ],
     "searchTokens": [
+      "Skip AND Loafer",
+      "skipandloafer",
       "성장",
       "스킵과 로퍼",
       "스킵과로퍼",
@@ -65614,6 +65677,7 @@
       "학원"
     ],
     "titles": {
+      "en": "Skip AND Loafer",
       "ko": "스킵과 로퍼"
     },
     "qualityScore": 100,
@@ -66789,13 +66853,16 @@
     ],
     "searchTokens": [
       "Jon Watts",
+      "Spider MAN NWH",
       "jonwatts",
+      "spidermannwh",
       "대중문화",
       "스파이더맨: 노 웨이 홈",
       "스파이더맨노웨이홈",
       "영화"
     ],
     "titles": {
+      "en": "Spider MAN NWH",
       "ko": "스파이더맨: 노 웨이 홈"
     },
     "qualityScore": 90,
@@ -67127,6 +67194,8 @@
       "청춘"
     ],
     "searchTokens": [
+      "Slam Dunk",
+      "slamdunk",
       "농구",
       "스포츠",
       "슬램덩크",
@@ -67136,6 +67205,7 @@
       "청춘"
     ],
     "titles": {
+      "en": "Slam Dunk",
       "ko": "슬램덩크"
     },
     "qualityScore": 90,
@@ -76175,8 +76245,10 @@
       "MCU"
     ],
     "searchTokens": [
+      "Avengers Endgame",
       "MCU",
       "SF",
+      "avengersendgame",
       "mcu",
       "sf",
       "루소 형제",
@@ -76187,6 +76259,7 @@
       "히어로"
     ],
     "titles": {
+      "en": "Avengers Endgame",
       "ko": "어벤져스: 엔드게임"
     },
     "qualityScore": 90,
@@ -77560,13 +77633,16 @@
     ],
     "searchTokens": [
       "Daniels",
+      "Everything Everywhere",
       "daniels",
+      "everythingeverywhere",
       "대중문화",
       "에브리씽 에브리웨어",
       "에브리씽에브리웨어",
       "영화"
     ],
     "titles": {
+      "en": "Everything Everywhere",
       "ko": "에브리씽 에브리웨어"
     },
     "qualityScore": 90,
@@ -80382,12 +80458,15 @@
     "creator": "",
     "tags": [],
     "searchTokens": [
+      "Arithmetic in the Five Classics",
+      "arithmeticinthefiveclassics",
       "五経算術",
       "五經算術",
       "오경산술"
     ],
     "titles": {
       "ko": "오경산술",
+      "en": "Arithmetic in the Five Classics",
       "ja": "五経算術",
       "zh": "五經算術"
     },
@@ -81686,12 +81765,15 @@
     ],
     "searchTokens": [
       "Christopher Nolan",
+      "Oppenheimer 2023",
       "christophernolan",
+      "oppenheimer2023",
       "대중문화",
       "영화",
       "오펜하이머"
     ],
     "titles": {
+      "en": "Oppenheimer 2023",
       "ko": "오펜하이머"
     },
     "qualityScore": 90,
@@ -90938,7 +91020,9 @@
       "액션"
     ],
     "searchTokens": [
+      "Inception",
       "SF",
+      "inception",
       "sf",
       "꿈",
       "스릴러",
@@ -90948,6 +91032,7 @@
       "크리스토퍼놀란"
     ],
     "titles": {
+      "en": "Inception",
       "ko": "인셉션"
     },
     "qualityScore": 90,
@@ -91146,7 +91231,9 @@
       "블랙홀"
     ],
     "searchTokens": [
+      "Interstellar",
       "SF",
+      "interstellar",
       "sf",
       "가족",
       "블랙홀",
@@ -91156,6 +91243,7 @@
       "크리스토퍼놀란(christophernolan)"
     ],
     "titles": {
+      "en": "Interstellar",
       "ko": "인터스텔라"
     },
     "qualityScore": 90,
@@ -96007,7 +96095,9 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Jujutsu Kaisen 0",
       "MAPPA",
+      "jujutsukaisen0",
       "mappa",
       "극장판",
       "서브컬처",
@@ -96017,6 +96107,7 @@
       "초자연"
     ],
     "titles": {
+      "en": "Jujutsu Kaisen 0",
       "ko": "주술회전 0"
     },
     "qualityScore": 90,
@@ -99394,7 +99485,9 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "Chainsaw MAN Movie",
       "MAPPA",
+      "chainsawmanmovie",
       "mappa",
       "서브컬처",
       "영화",
@@ -99402,6 +99495,7 @@
       "체인소맨레제편"
     ],
     "titles": {
+      "en": "Chainsaw MAN Movie",
       "ko": "체인소 맨 레제편"
     },
     "qualityScore": 90,
@@ -108623,6 +108717,8 @@
       "픽사"
     ],
     "searchTokens": [
+      "TOY Story",
+      "toystory",
       "가족",
       "애니메이션",
       "우정",
@@ -108633,6 +108729,7 @@
       "픽사"
     ],
     "titles": {
+      "en": "TOY Story",
       "ko": "토이 스토리"
     },
     "qualityScore": 90,
@@ -110519,6 +110616,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Fight Club",
+      "fightclub",
       "데이비드 핀처",
       "데이비드핀처",
       "명작",
@@ -110529,6 +110628,7 @@
       "파이트클럽"
     ],
     "titles": {
+      "en": "Fight Club",
       "ko": "파이트 클럽"
     },
     "qualityScore": 90,
@@ -111456,6 +111556,8 @@
       "비선형"
     ],
     "searchTokens": [
+      "Pulp Fiction",
+      "pulpfiction",
       "명작",
       "범죄",
       "비선형",
@@ -111466,6 +111568,7 @@
       "펄프픽션"
     ],
     "titles": {
+      "en": "Pulp Fiction",
       "ko": "펄프 픽션"
     },
     "qualityScore": 90,
@@ -112249,6 +112352,8 @@
       "명작"
     ],
     "searchTokens": [
+      "Forrest Gump",
+      "forrestgump",
       "감동",
       "드라마",
       "로버트 저메키스",
@@ -112259,6 +112364,7 @@
       "포레스트검프"
     ],
     "titles": {
+      "en": "Forrest Gump",
       "ko": "포레스트 검프"
     },
     "qualityScore": 90,
@@ -115143,7 +115249,9 @@
       "명작"
     ],
     "searchTokens": [
+      "Pluto",
       "SF",
+      "pluto",
       "sf",
       "로봇",
       "명작",
@@ -115153,6 +115261,7 @@
       "플루토"
     ],
     "titles": {
+      "en": "Pluto",
       "ko": "플루토"
     },
     "qualityScore": 90,
@@ -118344,6 +118453,8 @@
       "판타지"
     ],
     "searchTokens": [
+      "Hunter X Hunter",
+      "hunterxhunter",
       "모험",
       "배틀",
       "우정",
@@ -118354,6 +118465,7 @@
       "헌터헌터"
     ],
     "titles": {
+      "en": "Hunter X Hunter",
       "ko": "헌터×헌터"
     },
     "qualityScore": 100,
@@ -119182,6 +119294,8 @@
       "서브컬처"
     ],
     "searchTokens": [
+      "A Silent Voice",
+      "asilentvoice",
       "서브컬처",
       "야마다 나오코",
       "야마다나오코",
@@ -119190,6 +119304,7 @@
       "형색의보이스"
     ],
     "titles": {
+      "en": "A Silent Voice",
       "ko": "형색의 보이스"
     },
     "qualityScore": 90,

@@ -32,6 +32,8 @@ C:\src\flutter\bin\flutter.bat test
 C:\src\flutter\bin\dart.bat run tool/ci_registry_check.dart
 C:\src\flutter\bin\dart.bat run tool/preflight_check.dart
 C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --release
+C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --locale-minimum
+C:\src\flutter\bin\dart.bat run tool/coverage_dashboard.dart
 ```
 
 | # | 게이트 | Pass 기준 | 2026-06-10 |
@@ -40,6 +42,7 @@ C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --release
 | G2 | `ci_registry_check` | exit 0 | ✅ (490 works) |
 | G3 | `preflight_check` | 4 step OK | ✅ |
 | G4 | `quality_gate --release` | RB1·RB2 PASS | ✅ invalid_en=0 |
+| G4b | `quality_gate --locale-minimum` | ko≥99% · en 100% | ✅ 5181/5181 |
 | G5 | `flutter analyze lib/` | 0 error | ✅ (59 info/warn, 0 error) |
 | G6 | Release 빌드 | exe cold start | ✅ `build\windows\x64\runner\Release\akasha.exe` |
 

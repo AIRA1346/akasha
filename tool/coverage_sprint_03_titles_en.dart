@@ -101,7 +101,12 @@ void main(List<String> args) async {
 
   print('Running registry_builder...');
   final buildStart = DateTime.now();
-  final buildCode = await _runDart(root, ['run', 'tool/registry_builder.dart', '--sync-assets']);
+  final buildCode = await _runDart(root, [
+    'run',
+    'tool/registry_builder.dart',
+    '--sync-assets',
+    '--bundle-eager-only',
+  ]);
   final buildMs = DateTime.now().difference(buildStart).inMilliseconds;
   if (buildCode != 0) {
     stderr.writeln('registry_builder failed: $buildCode');
@@ -528,6 +533,11 @@ void _primePeerEnCache(Directory root) {
 /// Sprint 03 cohort 잔여 수동 매핑 (unresolved fallback).
 const _curatedTitlesEn = <String, String>{
   'wk_000000253': '86 -Eighty-Six-',
+  'wk_000004322': 'X (2022 film)',
+  'wk_000004603': 'Arithmetic in the Five Classics',
+  'wk_000004913': 'Essentials of Agriculture and Sericulture',
+  'wk_000005155': 'Collected Edicts and Decrees of the Tang Dynasty',
+  'wk_000005249': 'Diary of the Founding of the Tang Dynasty',
 };
 
 void _writeWork(Directory root, String shardRel, String workId, String en, String method) {

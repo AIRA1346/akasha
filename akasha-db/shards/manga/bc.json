@@ -20,10 +20,15 @@
     },
     "extensions": {
       "ingestChannel": "manual_wikidata",
-      "ingestSource": "manual"
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
     },
     "qualitySignals": {
       "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Oregairu",
+      "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
     }
   },
   "wk_000001951": {

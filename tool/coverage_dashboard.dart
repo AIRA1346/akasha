@@ -27,6 +27,7 @@ void main() {
 
   final total = works.length;
   var titlesEn = 0;
+  var titlesKo = 0;
   var titlesJa = 0;
   var titlesZh = 0;
   var titlesRomaji = 0;
@@ -44,6 +45,7 @@ void main() {
   for (final w in works) {
     final titles = w.titles;
     if (_nonEmpty(titles['en'])) titlesEn++;
+    if (_nonEmpty(titles['ko']) || _nonEmpty(w.title)) titlesKo++;
     if (_nonEmpty(titles['ja'])) titlesJa++;
     if (_nonEmpty(titles['zh'])) titlesZh++;
     if (_nonEmpty(titles['romaji'])) titlesRomaji++;
@@ -101,6 +103,7 @@ void main() {
   final qualityScan = scanTitlesEnQuality(loadRegistryWorkMaps(root));
 
   final kpis = <String, Map<String, dynamic>>{
+    'titles_ko': _kpi(titlesKo, total, target: 0.99),
     'titles_en': _kpi(titlesEn, total, target: 0.90),
     'titles_ja': _kpi(titlesJa, total, target: 0.85),
     'titles_zh': _kpi(titlesZh, total, target: 0.90),
@@ -158,6 +161,8 @@ void main() {
     'notes': {
       'romanized_alias':
           '분모=로마자 필요 작품(CJK primary 또는 titles.ja). 분자=romaji|en|latin alias',
+      'titles_ko':
+          '분자=titles.ko 또는 primary title 비어 있지 않음 (E3-B 글로벌 ko 표시 minimum)',
       'alias_surface': 'aliases[] 또는 titles.romaji 또는 latin 약칭형 alias',
       'alias_panel': '운영 게이트 — SW1 alias 버킷(81.8%)과 동일 축',
       'external_id_phaseTarget': 'G2 interim 50% · G3+ 90%',
