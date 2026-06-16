@@ -106,5 +106,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005630": {
+    "workId": "wk_000005630",
+    "title": "다크 콜로니",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151827"
+    },
+    "titles": {
+      "ko": "다크 콜로니",
+      "en": "Dark Colony"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

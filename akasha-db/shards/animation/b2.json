@@ -85,5 +85,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006035": {
+    "workId": "wk_000006035",
+    "title": "쿠로코의 농구 라스트 게임",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24868434"
+    },
+    "titles": {
+      "ko": "쿠로코의 농구 라스트 게임",
+      "en": "Kuroko's Basketball The Movie: Last Game",
+      "ja": "劇場版 黒子のバスケ LAST GAME"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006334": {
+    "workId": "wk_000006334",
+    "title": "무효와 로지의 마법률상담사무소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2671498"
+    },
+    "titles": {
+      "ko": "무효와 로지의 마법률상담사무소",
+      "en": "Muhyo & Roji's Bureau of Supernatural Investigation",
+      "ja": "ムヒョとロージーの魔法律相談事務所"
+    },
+    "creator": "Yoshiyuki Nishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

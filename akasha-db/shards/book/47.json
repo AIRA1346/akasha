@@ -74,5 +74,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006289": {
+    "workId": "wk_000006289",
+    "title": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110895870"
+    },
+    "titles": {
+      "ko": "오늘 밤, 세계에서 이 사랑이 사라진다 해도",
+      "en": "Even If This Love Disappears From the World Tonight",
+      "ja": "今夜、世界からこの恋が消えても"
+    },
+    "releaseYear": 2020,
+    "creator": "Misaki Ichijō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

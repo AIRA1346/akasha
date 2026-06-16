@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006127": {
+    "workId": "wk_000006127",
+    "title": "하이-파이 러시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116439515"
+    },
+    "titles": {
+      "ko": "하이-파이 러시",
+      "en": "Hi-Fi Rush",
+      "ja": "Hi-Fi RUSH"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

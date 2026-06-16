@@ -197,5 +197,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005416": {
+    "workId": "wk_000005416",
+    "title": "공각기동대 신극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20038326"
+    },
+    "titles": {
+      "ko": "공각기동대 신극장판",
+      "en": "Ghost in the Shell: The New Movie",
+      "ja": "攻殻機動隊 新劇場版"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005826": {
+    "workId": "wk_000005826",
+    "title": "알프스의 메아리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2339582"
+    },
+    "titles": {
+      "ko": "알프스의 메아리",
+      "en": "Trapp Family Story",
+      "ja": "トラップ一家物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

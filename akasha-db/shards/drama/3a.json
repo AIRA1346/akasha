@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005388": {
+    "workId": "wk_000005388",
+    "title": "shin-D",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246014"
+    },
+    "titles": {
+      "ko": "shin-D",
+      "en": "Q11246014",
+      "ja": "shin-D"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

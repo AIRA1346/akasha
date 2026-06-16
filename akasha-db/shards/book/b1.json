@@ -95,5 +95,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006213": {
+    "workId": "wk_000006213",
+    "title": "현밀원통성불심요집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11089061"
+    },
+    "titles": {
+      "ko": "현밀원통성불심요집",
+      "en": "Collection of Essentials for Becoming a Buddha Through the Perfect Penetration of the Exoteric and Esoteric",
+      "ja": "顕密円通成佛心要集"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

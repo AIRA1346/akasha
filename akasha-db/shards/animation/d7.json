@@ -102,5 +102,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005622": {
+    "workId": "wk_000005622",
+    "title": "극장판 요괴워치: 염라대왕과 5개의 이야기다냥!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21329154"
+    },
+    "titles": {
+      "ko": "극장판 요괴워치: 염라대왕과 5개의 이야기다냥!",
+      "en": "Yo-Kai Watch: Enma Daiō to Itsutsu no Monogatari da Nyan!",
+      "ja": "映画 妖怪ウォッチ エンマ大王と5つの物語だニャン!"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

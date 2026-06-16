@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005814": {
+    "workId": "wk_000005814",
+    "title": "피터 대제",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2267401"
+    },
+    "titles": {
+      "ko": "피터 대제",
+      "en": "Peter the Great",
+      "ja": "愛と戦いの日々 ロマノフ王朝 大帝ピョートルの生涯"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

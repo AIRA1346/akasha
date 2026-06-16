@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005691": {
+    "workId": "wk_000005691",
+    "title": "포켓몬 더 무비 XY&Z 2016",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21825325"
+    },
+    "titles": {
+      "ko": "포켓몬 더 무비 XY&Z 2016",
+      "en": "Pokémon the Movie: Volcanion and the Mechanical Marvel",
+      "ja": "ポケモン・ザ・ムービーXY&Z ボルケニオンと機巧のマギアナ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

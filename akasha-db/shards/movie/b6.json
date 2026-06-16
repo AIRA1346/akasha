@@ -48,5 +48,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006219": {
+    "workId": "wk_000006219",
+    "title": "여름날 우리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106551383"
+    },
+    "titles": {
+      "ko": "여름날 우리",
+      "en": "My Love"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

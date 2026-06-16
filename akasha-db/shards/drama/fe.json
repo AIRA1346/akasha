@@ -120,5 +120,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005385": {
+    "workId": "wk_000005385",
+    "title": "베리큐!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244819"
+    },
+    "titles": {
+      "ko": "베리큐!",
+      "en": "Q11244819",
+      "ja": "ベリキュー!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005524": {
+    "workId": "wk_000005524",
+    "title": "제일 좋은 아침",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257179"
+    },
+    "titles": {
+      "ko": "제일 좋은 아침",
+      "en": "Asagohan Daisuki!",
+      "ja": "あさごはん だいすき!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

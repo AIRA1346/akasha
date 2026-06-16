@@ -17,5 +17,63 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005440": {
+    "workId": "wk_000005440",
+    "title": "여학생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942790"
+    },
+    "titles": {
+      "ko": "여학생",
+      "en": "Schoolgirl",
+      "ja": "女生徒"
+    },
+    "releaseYear": 1939,
+    "creator": "Osamu Dazai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005503": {
+    "workId": "wk_000005503",
+    "title": "송고승전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10947880"
+    },
+    "titles": {
+      "ko": "송고승전",
+      "en": "The Song History of Great Monks",
+      "ja": "宋高僧伝"
+    },
+    "creator": "Zànníng",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006060": {
+    "workId": "wk_000006060",
+    "title": "책벌레 공주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110732263"
+    },
+    "titles": {
+      "ko": "책벌레 공주",
+      "en": "Bibliophile Princess",
+      "ja": "虫かぶり姫"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

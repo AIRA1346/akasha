@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006284": {
+    "workId": "wk_000006284",
+    "title": "용과 같이 8",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116980062"
+    },
+    "titles": {
+      "ko": "용과 같이 8",
+      "en": "Like a Dragon: Infinite Wealth",
+      "ja": "龍が如く8"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

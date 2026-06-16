@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005525": {
+    "workId": "wk_000005525",
+    "title": "아사이치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257248"
+    },
+    "titles": {
+      "ko": "아사이치",
+      "en": "asaichi",
+      "ja": "あさイチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

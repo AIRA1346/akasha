@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006367": {
+    "workId": "wk_000006367",
+    "title": "상실의 시대",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066749"
+    },
+    "titles": {
+      "ko": "상실의 시대",
+      "en": "Norwegian Wood",
+      "ja": "ノルウェイの森"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

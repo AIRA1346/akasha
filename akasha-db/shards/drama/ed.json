@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005785": {
+    "workId": "wk_000005785",
+    "title": "전국노래자랑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269295"
+    },
+    "titles": {
+      "ko": "전국노래자랑",
+      "en": "National Singing Contest",
+      "ja": "全国のど自慢"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005369": {
+    "workId": "wk_000005369",
+    "title": "데보션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105962551"
+    },
+    "titles": {
+      "ko": "데보션",
+      "en": "Devotion",
+      "ja": "デヴォーション"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

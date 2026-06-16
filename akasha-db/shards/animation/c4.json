@@ -89,5 +89,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005963": {
+    "workId": "wk_000005963",
+    "title": "기동전사 건담 AGE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2412759"
+    },
+    "titles": {
+      "ko": "기동전사 건담 AGE",
+      "en": "Mobile Suit Gundam AGE",
+      "ja": "機動戦士ガンダムAGE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006116": {
+    "workId": "wk_000006116",
+    "title": "모야시몬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2555837"
+    },
+    "titles": {
+      "ko": "모야시몬",
+      "en": "Moyashimon",
+      "ja": "もやしもん"
+    },
+    "releaseYear": 2012,
+    "creator": "Masayuki Ishikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

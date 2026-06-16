@@ -67,5 +67,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005376": {
+    "workId": "wk_000005376",
+    "title": "메리대구 공방전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240286"
+    },
+    "titles": {
+      "ko": "메리대구 공방전",
+      "en": "Merry Mary",
+      "ja": "メリー&テグ 恋のから騒ぎ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005732": {
+    "workId": "wk_000005732",
+    "title": "검은 고양이 루시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265740"
+    },
+    "titles": {
+      "ko": "검은 고양이 루시",
+      "en": "Q11265740",
+      "ja": "くろねこルーシー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

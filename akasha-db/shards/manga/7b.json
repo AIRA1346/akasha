@@ -1,0 +1,20 @@
+{
+  "wk_000005471": {
+    "workId": "wk_000005471",
+    "title": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130234755"
+    },
+    "titles": {
+      "ko": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+      "en": "I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!",
+      "ja": "Aランクパーティを離脱した俺は、元教え子たちと迷宮深部を目指す。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

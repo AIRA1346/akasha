@@ -75,5 +75,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005914": {
+    "workId": "wk_000005914",
+    "title": "제범",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11060125"
+    },
+    "titles": {
+      "ko": "제범",
+      "zh": "Difan 帝範"
+    },
+    "creator": "太宗",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

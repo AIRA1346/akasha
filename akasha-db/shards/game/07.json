@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005976": {
+    "workId": "wk_000005976",
+    "title": "불새 봉황편",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11566848"
+    },
+    "titles": {
+      "ko": "불새 봉황편",
+      "en": "Hi no Tori Hououhen",
+      "ja": "火の鳥 鳳凰編 (MSX)"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

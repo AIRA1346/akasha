@@ -75,5 +75,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005468": {
+    "workId": "wk_000005468",
+    "title": "약한 공주님은 살아남고 싶어! ~ 처형 위기는 공주님 플레이로 극복하겠습니다 ~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130192160"
+    },
+    "titles": {
+      "ko": "약한 공주님은 살아남고 싶어! ~ 처형 위기는 공주님 플레이로 극복하겠습니다 ~",
+      "en": "The Newbie Princess Doesn't Want a Game Over! Survive Through the Power of Simping",
+      "ja": "ザコ姫さまは生きのびたい! 〜処刑の危機は、姫プレイで乗り切ります〜"
+    },
+    "releaseYear": 2024,
+    "creator": "Tatsuki Haruma",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006099": {
+    "workId": "wk_000006099",
+    "title": "BTOOOM!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133532"
+    },
+    "titles": {
+      "ko": "BTOOOM!",
+      "en": "Btooom!",
+      "ja": "BTOOOM!"
+    },
+    "creator": "Jun'ya Inoue",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005704": {
+    "workId": "wk_000005704",
+    "title": "디렉티브 8020",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115249849"
+    },
+    "titles": {
+      "ko": "디렉티브 8020",
+      "en": "Directive 8020"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

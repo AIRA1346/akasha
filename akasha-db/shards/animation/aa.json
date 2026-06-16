@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005958": {
+    "workId": "wk_000005958",
+    "title": "꼬마 엘시드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2394592"
+    },
+    "titles": {
+      "ko": "꼬마 엘시드",
+      "en": "Ruy, the Little Cid",
+      "ja": "リトル・エル・シドの冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

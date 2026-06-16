@@ -69,5 +69,41 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005399": {
+    "workId": "wk_000005399",
+    "title": "운명의 역행사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128867811"
+    },
+    "titles": {
+      "ko": "운명의 역행사",
+      "en": "Fate Rewinder",
+      "ja": "運命の巻戻士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006250": {
+    "workId": "wk_000006250",
+    "title": "19번째 카르테 토쿠시게 아키라의 문진",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134879345"
+    },
+    "titles": {
+      "ko": "19번째 카르테 토쿠시게 아키라의 문진",
+      "en": "The 19th Medical Chart",
+      "ja": "19番目のカルテ 徳重晃の問診"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

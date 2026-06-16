@@ -91,5 +91,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005978": {
+    "workId": "wk_000005978",
+    "title": "언차티드: 새로운 모험의 시작",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156718"
+    },
+    "titles": {
+      "ko": "언차티드: 새로운 모험의 시작",
+      "en": "Uncharted: Golden Abyss",
+      "ja": "アンチャーテッド 地図なき冒険の始まり"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006125": {
+    "workId": "wk_000006125",
+    "title": "아득히 우러러본, 아름다운",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11642491"
+    },
+    "titles": {
+      "ko": "아득히 우러러본, 아름다운",
+      "en": "Haruka ni Aogi, Uruwashi no",
+      "ja": "遥かに仰ぎ、麗しの"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006357": {
+    "workId": "wk_000006357",
+    "title": "어쌔신 크리드 섀도우스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117716202"
+    },
+    "titles": {
+      "ko": "어쌔신 크리드 섀도우스",
+      "en": "Q117716202",
+      "ja": "アサシン クリード シャドウズ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006205": {
+    "workId": "wk_000006205",
+    "title": "용과 같이 1&2 HD EDITION",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11679165"
+    },
+    "titles": {
+      "ko": "용과 같이 1&2 HD EDITION",
+      "en": "Q11679165",
+      "ja": "龍が如く1&2 HD EDITION"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006353": {
+    "workId": "wk_000006353",
+    "title": "맥스 페인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1175156"
+    },
+    "titles": {
+      "ko": "맥스 페인",
+      "en": "Max Payne",
+      "ja": "マックスペイン"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

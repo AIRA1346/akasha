@@ -74,5 +74,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005434": {
+    "workId": "wk_000005434",
+    "title": "천주실의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10938822"
+    },
+    "titles": {
+      "ko": "천주실의",
+      "en": "True Meaning of the Lord of Heaven",
+      "ja": "天主実義"
+    },
+    "releaseYear": 1630,
+    "creator": "Matteo Ricci",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006295": {
+    "workId": "wk_000006295",
+    "title": "인간 요건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11097398"
+    },
+    "titles": {
+      "ko": "인간 요건",
+      "en": "The Human Factor",
+      "ja": "ヒューマン・ファクター"
+    },
+    "releaseYear": 1978,
+    "creator": "Graham Greene",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

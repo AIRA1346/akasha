@@ -105,5 +105,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005627": {
+    "workId": "wk_000005627",
+    "title": "명탐정 코난: 순흑의 악몽",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21600367"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 순흑의 악몽",
+      "en": "Detective Conan: The Darkest Nightmare",
+      "ja": "名探偵コナン 純黒の悪夢"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

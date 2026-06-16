@@ -54,5 +54,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005638": {
+    "workId": "wk_000005638",
+    "title": "와인즈버그, 오하이오",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958564"
+    },
+    "titles": {
+      "ko": "와인즈버그, 오하이오",
+      "en": "Winesburg, Ohio",
+      "ja": "ワインズバーグ・オハイオ"
+    },
+    "releaseYear": 1919,
+    "creator": "Sherwood Anderson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006138": {
+    "workId": "wk_000006138",
+    "title": "마하승기율",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11078484"
+    },
+    "titles": {
+      "ko": "마하승기율",
+      "en": "Q11078484",
+      "ja": "摩訶僧祇律"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

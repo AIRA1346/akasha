@@ -104,5 +104,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006320": {
+    "workId": "wk_000006320",
+    "title": "트러블맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11321818"
+    },
+    "titles": {
+      "ko": "트러블맨",
+      "en": "Q11321818",
+      "ja": "トラブルマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

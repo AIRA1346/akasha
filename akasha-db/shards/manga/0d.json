@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005608": {
+    "workId": "wk_000005608",
+    "title": "노아 선배는 친구.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131432636"
+    },
+    "titles": {
+      "ko": "노아 선배는 친구.",
+      "en": "Noa-senpai wa Tomodachi",
+      "ja": "のあ先輩はともだち。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005997": {
+    "workId": "wk_000005997",
+    "title": "두어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282605"
+    },
+    "titles": {
+      "ko": "두어",
+      "en": "The Outsiders",
+      "ja": "アウトサイダー〜闘魚〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006157": {
+    "workId": "wk_000006157",
+    "title": "월수금화목토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113042451"
+    },
+    "titles": {
+      "ko": "월수금화목토",
+      "en": "Love in Contract"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006168": {
+    "workId": "wk_000006168",
+    "title": "6월의 신부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11310485"
+    },
+    "titles": {
+      "ko": "6월의 신부",
+      "en": "June Bride",
+      "ja": "ジューン・ブライド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

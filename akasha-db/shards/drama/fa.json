@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006151": {
+    "workId": "wk_000006151",
+    "title": "쿠마로쿠!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11298804"
+    },
+    "titles": {
+      "ko": "쿠마로쿠!",
+      "en": "Kumaroku!",
+      "ja": "クマロク!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

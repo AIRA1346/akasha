@@ -140,5 +140,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005529": {
+    "workId": "wk_000005529",
+    "title": "당신 옆에 누군가있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257962"
+    },
+    "titles": {
+      "ko": "당신 옆에 누군가있다",
+      "en": "Anata no Tonari ni Dareka Iru",
+      "ja": "あなたの隣に誰かいる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005738": {
+    "workId": "wk_000005738",
+    "title": "범죄도시 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112671899"
+    },
+    "titles": {
+      "ko": "범죄도시 시리즈",
+      "en": "Crime City"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

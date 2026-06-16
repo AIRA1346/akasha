@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005890": {
+    "workId": "wk_000005890",
+    "title": "턴에이 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2352026"
+    },
+    "titles": {
+      "ko": "턴에이 건담",
+      "en": "Turn A Gundam",
+      "ja": "∀ガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

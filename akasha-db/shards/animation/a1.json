@@ -34,5 +34,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005689": {
+    "workId": "wk_000005689",
+    "title": "역전재판 ~그 「진실」, 이의 있소!~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21777274"
+    },
+    "titles": {
+      "ko": "역전재판 ~그 「진실」, 이의 있소!~",
+      "en": "Ace Attorney",
+      "ja": "逆転裁判 〜その「真実」、異議あり!〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005811": {
+    "workId": "wk_000005811",
+    "title": "천방지축 덩크슛",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2245919"
+    },
+    "titles": {
+      "ko": "천방지축 덩크슛",
+      "en": "Dash Kappei",
+      "ja": "ダッシュ勝平"
+    },
+    "releaseYear": 1981,
+    "creator": "Noboru Rokuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

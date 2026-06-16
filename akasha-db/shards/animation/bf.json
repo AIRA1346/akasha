@@ -90,5 +90,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005894": {
+    "workId": "wk_000005894",
+    "title": "클래시컬로이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23647043"
+    },
+    "titles": {
+      "ko": "클래시컬로이드",
+      "en": "Classicaloid",
+      "ja": "クラシカロイド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006258": {
+    "workId": "wk_000006258",
+    "title": "초전자로보 컴배틀러 V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2603402"
+    },
+    "titles": {
+      "ko": "초전자로보 컴배틀러 V",
+      "en": "Chōdenji Robo Combattler V",
+      "ja": "超電磁ロボ コン・バトラーV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

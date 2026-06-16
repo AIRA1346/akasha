@@ -88,5 +88,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006103": {
+    "workId": "wk_000006103",
+    "title": "종말의 이제타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24897610"
+    },
+    "titles": {
+      "ko": "종말의 이제타",
+      "en": "Izetta: The Last Witch",
+      "ja": "終末のイゼッタ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006266": {
+    "workId": "wk_000006266",
+    "title": "쥬얼 펫",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2634885"
+    },
+    "titles": {
+      "ko": "쥬얼 펫",
+      "en": "Jewelpet",
+      "ja": "ジュエルペット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

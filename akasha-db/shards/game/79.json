@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006277": {
+    "workId": "wk_000006277",
+    "title": "마녀의 샘",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116909148"
+    },
+    "titles": {
+      "ko": "마녀의 샘",
+      "en": "WitchSpring",
+      "ja": "魔女の泉"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

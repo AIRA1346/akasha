@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005761": {
+    "workId": "wk_000005761",
+    "title": "드래곤네스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153316"
+    },
+    "titles": {
+      "ko": "드래곤네스트",
+      "en": "Dragon Nest",
+      "ja": "ドラゴンネスト"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

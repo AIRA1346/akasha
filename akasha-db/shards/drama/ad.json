@@ -83,5 +83,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005847": {
+    "workId": "wk_000005847",
+    "title": "테라마사무네",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272724"
+    },
+    "titles": {
+      "ko": "테라마사무네",
+      "en": "Teremasa",
+      "ja": "てれまさむね"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005862": {
+    "workId": "wk_000005862",
+    "title": "남의 불행은 꿀맛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276308"
+    },
+    "titles": {
+      "ko": "남의 불행은 꿀맛",
+      "en": "The Misery of Others is as Sweet as Honey",
+      "ja": "ひとの不幸は蜜の味"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

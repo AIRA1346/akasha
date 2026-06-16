@@ -34,5 +34,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005687": {
+    "workId": "wk_000005687",
+    "title": "스파이 오브 바르샤바",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21738172"
+    },
+    "titles": {
+      "ko": "스파이 오브 바르샤바",
+      "en": "Spies of Warsaw"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005824": {
+    "workId": "wk_000005824",
+    "title": "빨간머리 앤 - 선생님이 된 앤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2322509"
+    },
+    "titles": {
+      "ko": "빨간머리 앤 - 선생님이 된 앤",
+      "en": "Anne of Green Gables: The Sequel",
+      "ja": "続・赤毛のアン/アンの青春"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006399": {
+    "workId": "wk_000006399",
+    "title": "반딧불의 묘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q274520"
+    },
+    "titles": {
+      "ko": "반딧불의 묘",
+      "en": "Grave of the Fireflies",
+      "ja": "火垂るの墓"
+    },
+    "releaseYear": 1988,
+    "creator": "Akiyuki Nosaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

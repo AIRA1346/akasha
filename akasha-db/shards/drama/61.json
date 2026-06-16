@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006166": {
+    "workId": "wk_000006166",
+    "title": "지팡구 아침 6",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11309554"
+    },
+    "titles": {
+      "ko": "지팡구 아침 6",
+      "en": "Zipangu Asa 6",
+      "ja": "ジパングあさ6"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006370": {
+    "workId": "wk_000006370",
+    "title": "드레미파 도넛!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323373"
+    },
+    "titles": {
+      "ko": "드레미파 도넛!",
+      "en": "Do-Re-Mi-Fa Donuts!",
+      "ja": "ドレミファ・どーなっつ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

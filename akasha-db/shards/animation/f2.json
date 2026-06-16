@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005479": {
+    "workId": "wk_000005479",
+    "title": "기동전사 건담 철혈의 오펀스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20668445"
+    },
+    "titles": {
+      "ko": "기동전사 건담 철혈의 오펀스",
+      "en": "Mobile Suit Gundam: Iron-Blooded Orphans",
+      "ja": "機動戦士ガンダム 鉄血のオルフェンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

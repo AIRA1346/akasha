@@ -170,5 +170,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005851": {
+    "workId": "wk_000005851",
+    "title": "천둥소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273522"
+    },
+    "titles": {
+      "ko": "천둥소리",
+      "en": "Roll of Thunder",
+      "ja": "ホ・ギュン 朝鮮王朝を揺るがした男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006310": {
+    "workId": "wk_000006310",
+    "title": "다이아몬드 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11316987"
+    },
+    "titles": {
+      "ko": "다이아몬드 걸",
+      "en": "Diamond Girl",
+      "ja": "ダイヤモンドガール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

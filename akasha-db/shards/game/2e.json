@@ -49,5 +49,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005562": {
+    "workId": "wk_000005562",
+    "title": "Wii Fit Plus",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151487"
+    },
+    "titles": {
+      "ko": "Wii Fit Plus",
+      "en": "Wii Fit Plus",
+      "ja": "Wii Fit Plus"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006047": {
+    "workId": "wk_000006047",
+    "title": "끝나는 세계와 버스데이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11606276"
+    },
+    "titles": {
+      "ko": "끝나는 세계와 버스데이",
+      "en": "Owaru Sekai to Birthday",
+      "ja": "終わる世界とバースデイ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006117": {
+    "workId": "wk_000006117",
+    "title": "창천의 저편",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11621510"
+    },
+    "titles": {
+      "ko": "창천의 저편",
+      "en": "Souten no Kanata",
+      "ja": "蒼天の彼方"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

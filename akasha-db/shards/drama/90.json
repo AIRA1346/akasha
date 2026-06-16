@@ -102,5 +102,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005517": {
+    "workId": "wk_000005517",
+    "title": "아빠! 어디가?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256374"
+    },
+    "titles": {
+      "ko": "아빠! 어디가?",
+      "en": "Dad! Where Are We Going?",
+      "ja": "パパ! どこ行くの?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005792": {
+    "workId": "wk_000005792",
+    "title": "공소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112704343"
+    },
+    "titles": {
+      "ko": "공소",
+      "en": "Prosecution Elite"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006449": {
+    "workId": "wk_000006449",
+    "title": "뷰티 7",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11330945"
+    },
+    "titles": {
+      "ko": "뷰티 7",
+      "en": "Beauty 7",
+      "ja": "ビューティ7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

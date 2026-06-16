@@ -136,5 +136,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005460": {
+    "workId": "wk_000005460",
+    "title": "USO !? 재팬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11252139"
+    },
+    "titles": {
+      "ko": "USO !? 재팬",
+      "en": "USO!?JAPAN",
+      "ja": "USO!?ジャパン"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

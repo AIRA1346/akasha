@@ -107,5 +107,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005750": {
+    "workId": "wk_000005750",
+    "title": "나치 영국 지부 SS-GB",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22115532"
+    },
+    "titles": {
+      "ko": "나치 영국 지부 SS-GB",
+      "en": "SS-GB",
+      "ja": "SS-GB ナチスが戦争に勝利した世界"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

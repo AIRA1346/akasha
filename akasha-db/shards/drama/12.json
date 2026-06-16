@@ -85,5 +85,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005662": {
+    "workId": "wk_000005662",
+    "title": "오하요 규슈 오키나와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262234"
+    },
+    "titles": {
+      "ko": "오하요 규슈 오키나와",
+      "en": "Q11262234",
+      "ja": "おはよう日本 九州沖縄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005739": {
+    "workId": "wk_000005739",
+    "title": "라 마드라스트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112672826"
+    },
+    "titles": {
+      "ko": "라 마드라스트라",
+      "en": "The Stepmom"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

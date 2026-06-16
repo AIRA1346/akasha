@@ -92,5 +92,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005809": {
+    "workId": "wk_000005809",
+    "title": "여성향 게임의 히로인으로 최강 서바이벌",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131722400"
+    },
+    "titles": {
+      "ko": "여성향 게임의 히로인으로 최강 서바이벌",
+      "en": "The Otome Heroine's Fight for Survival",
+      "ja": "乙女ゲームのヒロインで最強サバイバル＠COMIC"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006018": {
+    "workId": "wk_000006018",
+    "title": "빨간 망토 차차",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1329101"
+    },
+    "titles": {
+      "ko": "빨간 망토 차차",
+      "en": "Akazukin Chacha",
+      "ja": "赤ずきんチャチャ"
+    },
+    "creator": "Min Ayahana",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006393": {
+    "workId": "wk_000006393",
+    "title": "게게게의 기타로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368693"
+    },
+    "titles": {
+      "ko": "게게게의 기타로",
+      "en": "GeGeGe no Kitarō",
+      "ja": "ゲゲゲの鬼太郎"
+    },
+    "creator": "Shigeru Mizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

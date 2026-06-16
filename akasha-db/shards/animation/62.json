@@ -203,5 +203,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005339": {
+    "workId": "wk_000005339",
+    "title": "마크로스 7",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1883055"
+    },
+    "titles": {
+      "ko": "마크로스 7",
+      "en": "Macross 7",
+      "ja": "マクロス7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

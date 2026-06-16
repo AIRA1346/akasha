@@ -155,5 +155,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005523": {
+    "workId": "wk_000005523",
+    "title": "아타미의 수사관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257170"
+    },
+    "titles": {
+      "ko": "아타미의 수사관",
+      "en": "Q11257170",
+      "ja": "熱海の捜査官"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005848": {
+    "workId": "wk_000005848",
+    "title": "헛소리 히어로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272823"
+    },
+    "titles": {
+      "ko": "헛소리 히어로",
+      "en": "Detarame Hero",
+      "ja": "でたらめヒーロー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

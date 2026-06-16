@@ -138,5 +138,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006192": {
+    "workId": "wk_000006192",
+    "title": "피자 타워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116590057"
+    },
+    "titles": {
+      "ko": "피자 타워",
+      "en": "Pizza Tower",
+      "ja": "Pizza Tower"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006281": {
+    "workId": "wk_000006281",
+    "title": "컨트롤 레조넌트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116947317"
+    },
+    "titles": {
+      "ko": "컨트롤 레조넌트",
+      "en": "Q116947317"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

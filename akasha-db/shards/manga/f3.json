@@ -53,5 +53,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006249": {
+    "workId": "wk_000006249",
+    "title": "닌자의 왕",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348627"
+    },
+    "titles": {
+      "ko": "닌자의 왕",
+      "en": "Nabari no Ou",
+      "ja": "隠の王"
+    },
+    "releaseYear": 2004,
+    "creator": "Yuhki Kamatani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

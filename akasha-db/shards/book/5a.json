@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006210": {
+    "workId": "wk_000006210",
+    "title": "명태종실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11087772"
+    },
+    "titles": {
+      "ko": "명태종실록",
+      "en": "Q11087772",
+      "ja": "明太宗実録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

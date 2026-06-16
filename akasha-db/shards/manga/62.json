@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005612": {
+    "workId": "wk_000005612",
+    "title": "세토의 신부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1314524"
+    },
+    "titles": {
+      "ko": "세토의 신부",
+      "en": "My Bride Is a Mermaid",
+      "ja": "瀬戸の花嫁"
+    },
+    "creator": "Tahiko Kimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005803": {
+    "workId": "wk_000005803",
+    "title": "마녀와 용병",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131552475"
+    },
+    "titles": {
+      "ko": "마녀와 용병",
+      "en": "The Witch and the Mercenary",
+      "ja": "魔女と傭兵"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

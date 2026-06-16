@@ -53,5 +53,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006193": {
+    "workId": "wk_000006193",
+    "title": "다크 클라우드 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1166163"
+    },
+    "titles": {
+      "ko": "다크 클라우드 2",
+      "en": "Dark Chronicle",
+      "ja": "ダーククロニクル"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006346": {
+    "workId": "wk_000006346",
+    "title": "벅스 라이프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1171293"
+    },
+    "titles": {
+      "ko": "벅스 라이프",
+      "en": "A Bug's Life"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005988": {
+    "workId": "wk_000005988",
+    "title": "건강실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11065345"
+    },
+    "titles": {
+      "ko": "건강실록",
+      "en": "Veritable Records of Jiankang",
+      "ja": "建康実録"
+    },
+    "creator": "Xu Song",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

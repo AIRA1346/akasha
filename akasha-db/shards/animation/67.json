@@ -124,5 +124,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006335": {
+    "workId": "wk_000006335",
+    "title": "키즈모노가타리 II 열혈편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q26720465"
+    },
+    "titles": {
+      "ko": "키즈모노가타리 II 열혈편",
+      "en": "Kizumonogatari II: Nekketsu-hen",
+      "ja": "傷物語〈II 熱血篇〉"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

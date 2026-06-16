@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006132": {
+    "workId": "wk_000006132",
+    "title": "MLB 더 쇼 23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116564061"
+    },
+    "titles": {
+      "ko": "MLB 더 쇼 23",
+      "en": "Q116564061"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

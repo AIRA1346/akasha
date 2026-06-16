@@ -84,5 +84,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005747": {
+    "workId": "wk_000005747",
+    "title": "제멋대로 하이스펙",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22078423"
+    },
+    "titles": {
+      "ko": "제멋대로 하이스펙",
+      "en": "Wagamama High Spec",
+      "ja": "ワガママハイスペック"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006270": {
+    "workId": "wk_000006270",
+    "title": "별의 목소리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q264812"
+    },
+    "titles": {
+      "ko": "별의 목소리",
+      "en": "Voices of a Distant Star",
+      "ja": "ほしのこえ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

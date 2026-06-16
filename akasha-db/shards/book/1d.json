@@ -54,5 +54,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005775": {
+    "workId": "wk_000005775",
+    "title": "태양이 된 여자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109975974"
+    },
+    "titles": {
+      "ko": "태양이 된 여자",
+      "en": "She Who Became the Sun"
+    },
+    "releaseYear": 2021,
+    "creator": "Shelley Parker-Chan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006290": {
+    "workId": "wk_000006290",
+    "title": "백룸",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110904767"
+    },
+    "titles": {
+      "ko": "백룸",
+      "en": "The Backrooms",
+      "ja": "The Backrooms"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

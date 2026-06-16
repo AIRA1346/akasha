@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006070": {
+    "workId": "wk_000006070",
+    "title": "우리, 사랑해도 되나요?",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064838"
+    },
+    "titles": {
+      "ko": "우리, 사랑해도 되나요?",
+      "en": "The Family Stone",
+      "ja": "幸せのポートレート"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

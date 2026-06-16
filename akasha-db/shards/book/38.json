@@ -16,5 +16,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006141": {
+    "workId": "wk_000006141",
+    "title": "수술기유",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11079433"
+    },
+    "titles": {
+      "ko": "수술기유",
+      "en": "Shushu jiyi",
+      "ja": "数術記遺"
+    },
+    "releaseYear": 190,
+    "creator": "Xu Yue",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006294": {
+    "workId": "wk_000006294",
+    "title": "시계관의 살인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11095071"
+    },
+    "titles": {
+      "ko": "시계관의 살인",
+      "en": "The Clock Mansion Murders",
+      "ja": "時計館の殺人"
+    },
+    "releaseYear": 1991,
+    "creator": "Yukito Ayatsuji",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

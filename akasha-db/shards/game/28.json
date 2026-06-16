@@ -124,5 +124,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005431": {
+    "workId": "wk_000005431",
+    "title": "사일런트 힐 f",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114772020"
+    },
+    "titles": {
+      "ko": "사일런트 힐 f",
+      "en": "Q114772020",
+      "ja": "サイレントヒルf"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005487": {
+    "workId": "wk_000005487",
+    "title": "도돈파치 최대왕생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491465"
+    },
+    "titles": {
+      "ko": "도돈파치 최대왕생",
+      "en": "DoDonPachi Saidaioujou",
+      "ja": "怒首領蜂最大往生"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005493": {
+    "workId": "wk_000005493",
+    "title": "전여신 ZERO",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11496056"
+    },
+    "titles": {
+      "ko": "전여신 ZERO",
+      "en": "Sen megami ZERO",
+      "ja": "戦女神ZERO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005901": {
+    "workId": "wk_000005901",
+    "title": "아이돌마스터 신데렐라 걸즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115508"
+    },
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈",
+      "en": "The Idolmaster Cinderella Girls",
+      "ja": "アイドルマスター シンデレラガールズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

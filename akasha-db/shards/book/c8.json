@@ -37,5 +37,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005367": {
+    "workId": "wk_000005367",
+    "title": "인간들의 가장 은밀한 기억",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109375803"
+    },
+    "titles": {
+      "ko": "인간들의 가장 은밀한 기억",
+      "en": "The Most Secret Memory of Men",
+      "ja": "男性の最も秘密の記憶"
+    },
+    "releaseYear": 2021,
+    "creator": "Mohamed Mbougar Sarr",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

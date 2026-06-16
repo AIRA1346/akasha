@@ -1,0 +1,21 @@
+{
+  "wk_000005912": {
+    "workId": "wk_000005912",
+    "title": "클라우드 쿠쿠 랜드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110552625"
+    },
+    "titles": {
+      "ko": "클라우드 쿠쿠 랜드",
+      "en": "Q110552625"
+    },
+    "releaseYear": 2021,
+    "creator": "Anthony Doerr",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

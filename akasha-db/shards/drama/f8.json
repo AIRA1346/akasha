@@ -121,5 +121,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005850": {
+    "workId": "wk_000005850",
+    "title": "도치기 640",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273177"
+    },
+    "titles": {
+      "ko": "도치기 640",
+      "en": "Q11273177",
+      "ja": "とちぎ640"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005939": {
+    "workId": "wk_000005939",
+    "title": "구필수는 없다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112809817"
+    },
+    "titles": {
+      "ko": "구필수는 없다",
+      "en": "There is no Goo Pil Soo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

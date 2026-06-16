@@ -134,5 +134,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006435": {
+    "workId": "wk_000006435",
+    "title": "반장 진난서 아즈미 반장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327103"
+    },
+    "titles": {
+      "ko": "반장 진난서 아즈미 반장",
+      "en": "Q11327103",
+      "ja": "ハンチョウ〜神南署安積班〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

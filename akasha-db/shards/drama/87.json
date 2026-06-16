@@ -67,5 +67,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005458": {
+    "workId": "wk_000005458",
+    "title": "소년구락부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251717"
+    },
+    "titles": {
+      "ko": "소년구락부",
+      "en": "Shounen Club",
+      "ja": "ザ少年倶楽部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005877": {
+    "workId": "wk_000005877",
+    "title": "태양은 가득히",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278210"
+    },
+    "titles": {
+      "ko": "태양은 가득히",
+      "en": "Q11278210",
+      "ja": "太陽がいっぱい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006083": {
+    "workId": "wk_000006083",
+    "title": "19곰 테드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112957924"
+    },
+    "titles": {
+      "ko": "19곰 테드",
+      "en": "Ted",
+      "ja": "テッド ザ・シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005446": {
+    "workId": "wk_000005446",
+    "title": "나일 강의 죽음",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059914"
+    },
+    "titles": {
+      "ko": "나일 강의 죽음",
+      "en": "Death on the Nile",
+      "ja": "ナイル殺人事件"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

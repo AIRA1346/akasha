@@ -134,5 +134,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006165": {
+    "workId": "wk_000006165",
+    "title": "제너레이션 천국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11309278"
+    },
+    "titles": {
+      "ko": "제너레이션 천국",
+      "en": "Q11309278",
+      "ja": "ジェネレーション天国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

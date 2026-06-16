@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005795": {
+    "workId": "wk_000005795",
+    "title": "조광조",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270914"
+    },
+    "titles": {
+      "ko": "조광조",
+      "en": "Jo Gwang Jo",
+      "ja": "王朝の暁 〜趙光祖伝〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

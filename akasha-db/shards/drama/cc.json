@@ -122,5 +122,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006239": {
+    "workId": "wk_000006239",
+    "title": "줌인 아침!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11314090"
+    },
+    "titles": {
+      "ko": "줌인 아침!",
+      "en": "Zoom-in morning",
+      "ja": "ズームイン!!朝!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

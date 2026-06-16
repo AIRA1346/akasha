@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005923": {
+    "workId": "wk_000005923",
+    "title": "내가 날 부를 때",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106369815"
+    },
+    "titles": {
+      "ko": "내가 날 부를 때",
+      "en": "Sister",
+      "ja": "シスター 夏のわかれ道"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

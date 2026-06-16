@@ -87,5 +87,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006377": {
+    "workId": "wk_000006377",
+    "title": "뉴스  845 가고시마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324708"
+    },
+    "titles": {
+      "ko": "뉴스  845 가고시마",
+      "en": "News 845 Kagoshima",
+      "ja": "ニュース845かごしま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006445": {
+    "workId": "wk_000006445",
+    "title": "멀티버스 사가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113292798"
+    },
+    "titles": {
+      "ko": "멀티버스 사가",
+      "en": "The Multiverse Saga",
+      "ja": "ザ・マルティヴァース・サーガ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

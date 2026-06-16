@@ -146,5 +146,63 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005686": {
+    "workId": "wk_000005686",
+    "title": "우산을 갖지 않는 개미들은",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21710171"
+    },
+    "titles": {
+      "ko": "우산을 갖지 않는 개미들은",
+      "en": "Kasa wo Motanai Aritachi wa",
+      "ja": "傘をもたない蟻たちは"
+    },
+    "releaseYear": 2016,
+    "creator": "Shigeaki Katō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006105": {
+    "workId": "wk_000006105",
+    "title": "날아라! 호빵맨 극장판: 구하라! 코코링과 기적의 별",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2496658"
+    },
+    "titles": {
+      "ko": "날아라! 호빵맨 극장판: 구하라! 코코링과 기적의 별",
+      "en": "Soreike! Anpanman: Sukue! Kokorin to kiseki no hoshi",
+      "ja": "それいけ!アンパンマン すくえ! ココリンと奇跡の星"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006406": {
+    "workId": "wk_000006406",
+    "title": "혁명기 발브레이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2791605"
+    },
+    "titles": {
+      "ko": "혁명기 발브레이브",
+      "en": "Valvrave the Liberator",
+      "ja": "革命機ヴァルヴレイヴ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

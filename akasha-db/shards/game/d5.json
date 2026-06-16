@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006129": {
+    "workId": "wk_000006129",
+    "title": "원숭이 섬의 탈출",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1164863"
+    },
+    "titles": {
+      "ko": "원숭이 섬의 탈출",
+      "en": "Escape from Monkey Island"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

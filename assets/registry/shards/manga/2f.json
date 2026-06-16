@@ -120,5 +120,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005329": {
+    "workId": "wk_000005329",
+    "title": "그리게 된 이상",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126923434"
+    },
+    "titles": {
+      "ko": "그리게 된 이상",
+      "en": "Now That We Draw",
+      "ja": "描くなるうえは"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006424": {
+    "workId": "wk_000006424",
+    "title": "흠정수시통고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11122881"
+    },
+    "titles": {
+      "ko": "흠정수시통고",
+      "en": "A General Survey of Agriculture",
+      "ja": "欽定授時通考"
+    },
+    "creator": "Zhang Tingyu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

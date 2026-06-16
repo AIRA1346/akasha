@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005982": {
+    "workId": "wk_000005982",
+    "title": "짝사랑의 달",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11569817"
+    },
+    "titles": {
+      "ko": "짝사랑의 달",
+      "en": "Katakoi no Tsuki",
+      "ja": "片恋いの月"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

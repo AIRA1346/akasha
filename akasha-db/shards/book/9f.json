@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006063": {
+    "workId": "wk_000006063",
+    "title": "최강 음양사의 이세계 전생기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110735879"
+    },
+    "titles": {
+      "ko": "최강 음양사의 이세계 전생기",
+      "en": "The Reincarnation of the Strongest Exorcist in Another World",
+      "ja": "最強陰陽師の異世界転生記"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

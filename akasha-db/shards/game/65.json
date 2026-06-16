@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006199": {
+    "workId": "wk_000006199",
+    "title": "세포신곡",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116688358"
+    },
+    "titles": {
+      "ko": "세포신곡",
+      "en": "Cell of Empireo",
+      "ja": "細胞神曲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

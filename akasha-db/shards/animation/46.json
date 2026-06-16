@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006028": {
+    "workId": "wk_000006028",
+    "title": "울려라! 유포니엄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24861591"
+    },
+    "titles": {
+      "ko": "울려라! 유포니엄",
+      "en": "Sound! Euphonium",
+      "ja": "響け!ユーフォニアム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

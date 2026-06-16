@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005991": {
+    "workId": "wk_000005991",
+    "title": "귀장",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11069468"
+    },
+    "titles": {
+      "ko": "귀장",
+      "en": "Guicang",
+      "ja": "帰蔵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

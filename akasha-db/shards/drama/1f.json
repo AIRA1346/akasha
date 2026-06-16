@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006376": {
+    "workId": "wk_000006376",
+    "title": "닛폰 여행 × 여행 쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324549"
+    },
+    "titles": {
+      "ko": "닛폰 여행 × 여행 쇼",
+      "en": "Nippon tabi × tabi show",
+      "ja": "ニッポン旅×旅ショー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

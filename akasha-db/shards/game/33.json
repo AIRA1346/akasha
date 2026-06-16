@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006413": {
+    "workId": "wk_000006413",
+    "title": "데드 아일랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1180815"
+    },
+    "titles": {
+      "ko": "데드 아일랜드",
+      "en": "Dead Island",
+      "ja": "Dead Island"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

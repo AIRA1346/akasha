@@ -112,5 +112,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005956": {
+    "workId": "wk_000005956",
+    "title": "고양이와 용",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132245398"
+    },
+    "titles": {
+      "ko": "고양이와 용",
+      "en": "The Cat and the Dragon",
+      "ja": "猫と竜"
+    },
+    "creator": "アマラ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

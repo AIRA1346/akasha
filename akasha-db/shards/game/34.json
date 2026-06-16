@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006419": {
+    "workId": "wk_000006419",
+    "title": "동방수왕원 ~ Unfinished Dream of All Living Ghost.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118255366"
+    },
+    "titles": {
+      "ko": "동방수왕원 ~ Unfinished Dream of All Living Ghost.",
+      "en": "Touhou Juuouen ~ Unfinished Dream of All Living Ghost",
+      "ja": "東方獣王園 〜 Unfinished Dream of All Living Ghost."
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

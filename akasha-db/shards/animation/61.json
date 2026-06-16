@@ -129,5 +129,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005964": {
+    "workId": "wk_000005964",
+    "title": "마법의 스테이지 팬시라라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2418770"
+    },
+    "titles": {
+      "ko": "마법의 스테이지 팬시라라",
+      "en": "Fancy Lala",
+      "ja": "魔法のステージファンシーララ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

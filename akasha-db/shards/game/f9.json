@@ -89,5 +89,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005911": {
+    "workId": "wk_000005911",
+    "title": "트로피코 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156301"
+    },
+    "titles": {
+      "ko": "트로피코 4",
+      "en": "Tropico 4"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006053": {
+    "workId": "wk_000006053",
+    "title": "영국탐정 미스테리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11616903"
+    },
+    "titles": {
+      "ko": "영국탐정 미스테리아",
+      "en": "London Detective Mysteria",
+      "ja": "英国探偵ミステリア"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006121": {
+    "workId": "wk_000006121",
+    "title": "은의 시간의 코로나",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11637673"
+    },
+    "titles": {
+      "ko": "은의 시간의 코로나",
+      "en": "Kikōyoku Senki: Gin no Toki no Corona",
+      "ja": "輝光翼戦記 銀の刻のコロナ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006282": {
+    "workId": "wk_000006282",
+    "title": "앨빈과 슈퍼밴드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1169638"
+    },
+    "titles": {
+      "ko": "앨빈과 슈퍼밴드",
+      "en": "Alvin and the Chipmunks",
+      "ja": "アルビン/歌うシマリス3兄弟"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

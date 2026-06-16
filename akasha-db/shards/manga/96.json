@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005333": {
+    "workId": "wk_000005333",
+    "title": "샐러리맨이 이세계에 갔더니 사천왕이 된 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127687360"
+    },
+    "titles": {
+      "ko": "샐러리맨이 이세계에 갔더니 사천왕이 된 이야기",
+      "en": "Headhunted to Another World",
+      "ja": "サラリーマンが異世界に行ったら四天王になった話"
+    },
+    "creator": "Benigashira",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

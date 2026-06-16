@@ -50,5 +50,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005377": {
+    "workId": "wk_000005377",
+    "title": "REPLAY & DESTROY",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240822"
+    },
+    "titles": {
+      "ko": "REPLAY & DESTROY",
+      "en": "REPLAY & DESTROY",
+      "ja": "REPLAY & DESTROY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006322": {
+    "workId": "wk_000006322",
+    "title": "드라마 30",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323098"
+    },
+    "titles": {
+      "ko": "드라마 30",
+      "en": "Drama30",
+      "ja": "ドラマ30"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006446": {
+    "workId": "wk_000006446",
+    "title": "Sunny",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113296961"
+    },
+    "titles": {
+      "ko": "Sunny",
+      "en": "Sunny",
+      "ja": "サニー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

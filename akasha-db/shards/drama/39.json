@@ -136,5 +136,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005526": {
+    "workId": "wk_000005526",
+    "title": "내일이 있기에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257310"
+    },
+    "titles": {
+      "ko": "내일이 있기에",
+      "en": "Because There is Always Tomorrow",
+      "ja": "あしたがあるから"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005938": {
+    "workId": "wk_000005938",
+    "title": "청춘MT",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112807687"
+    },
+    "titles": {
+      "ko": "청춘MT",
+      "en": "Youth MT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

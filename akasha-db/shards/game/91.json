@@ -129,5 +129,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005357": {
+    "workId": "wk_000005357",
+    "title": "네오 봄버맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145282"
+    },
+    "titles": {
+      "ko": "네오 봄버맨",
+      "en": "Neo Bomberman",
+      "ja": "ネオ・ボンバーマン"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005432": {
+    "workId": "wk_000005432",
+    "title": "헤이세이 신 오니가시마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11482868"
+    },
+    "titles": {
+      "ko": "헤이세이 신 오니가시마",
+      "en": "Heisei Shin Onigashima",
+      "ja": "平成 新・鬼ヶ島"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

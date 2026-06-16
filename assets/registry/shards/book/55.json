@@ -89,5 +89,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005990": {
+    "workId": "wk_000005990",
+    "title": "해방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110656456"
+    },
+    "titles": {
+      "ko": "해방",
+      "en": "Freed: Fifty Shades Freed as Told by Christian"
+    },
+    "releaseYear": 2021,
+    "creator": "E. L. James",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006155": {
+    "workId": "wk_000006155",
+    "title": "클론 베이비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299919"
+    },
+    "titles": {
+      "ko": "클론 베이비",
+      "en": "Clone Babies",
+      "ja": "クローン ベイビー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

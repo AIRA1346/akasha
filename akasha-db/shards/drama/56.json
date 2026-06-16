@@ -85,5 +85,25 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006234": {
+    "workId": "wk_000006234",
+    "title": "스텝파더 스텝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11312272"
+    },
+    "titles": {
+      "ko": "스텝파더 스텝",
+      "en": "Q11312272",
+      "ja": "ステップファザー・ステップ"
+    },
+    "releaseYear": 1993,
+    "creator": "Miyuki Miyabe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

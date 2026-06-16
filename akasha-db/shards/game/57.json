@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005759": {
+    "workId": "wk_000005759",
+    "title": "전국 바사라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153197"
+    },
+    "titles": {
+      "ko": "전국 바사라",
+      "en": "Devil Kings",
+      "ja": "戦国BASARA"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

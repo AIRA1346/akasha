@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006101": {
+    "workId": "wk_000006101",
+    "title": "바나냐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24876611"
+    },
+    "titles": {
+      "ko": "바나냐",
+      "en": "Bananya",
+      "ja": "ばなにゃ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

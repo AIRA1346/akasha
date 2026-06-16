@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005788": {
+    "workId": "wk_000005788",
+    "title": "줄곧 당신을 사랑했어요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269967"
+    },
+    "titles": {
+      "ko": "줄곧 당신을 사랑했어요",
+      "en": "I've Loved You from the Start",
+      "ja": "ずっとあなたが好きだった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

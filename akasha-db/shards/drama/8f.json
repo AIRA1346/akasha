@@ -100,5 +100,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005733": {
+    "workId": "wk_000005733",
+    "title": "구~초코 란탄",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265778"
+    },
+    "titles": {
+      "ko": "구~초코 란탄",
+      "en": "Goo Choco Lantan",
+      "ja": "ぐ～チョコランタン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005869": {
+    "workId": "wk_000005869",
+    "title": "나를 사랑하지 않는 X에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112772221"
+    },
+    "titles": {
+      "ko": "나를 사랑하지 않는 X에게",
+      "en": "To X Who Doesn't Love Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

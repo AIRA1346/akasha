@@ -162,5 +162,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005491": {
+    "workId": "wk_000005491",
+    "title": "코이소라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492129"
+    },
+    "titles": {
+      "ko": "코이소라",
+      "en": "Koiiro Soramoyou",
+      "ja": "恋色空模様"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006040": {
+    "workId": "wk_000006040",
+    "title": "진 연희무쌍",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11582815"
+    },
+    "titles": {
+      "ko": "진 연희무쌍",
+      "en": "Shin Koihime Musō",
+      "ja": "真・恋姫†無双 〜乙女繚乱☆三国志演義〜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006191": {
+    "workId": "wk_000006191",
+    "title": "로코로코",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165849"
+    },
+    "titles": {
+      "ko": "로코로코",
+      "en": "LocoRoco",
+      "ja": "ロコロコ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

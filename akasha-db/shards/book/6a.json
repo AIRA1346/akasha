@@ -56,5 +56,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005843": {
+    "workId": "wk_000005843",
+    "title": "일본에 어서 오세요 엘프 씨.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110291441"
+    },
+    "titles": {
+      "ko": "일본에 어서 오세요 엘프 씨.",
+      "en": "Welcome to Japan, Ms. Elf!",
+      "ja": "日本へようこそエルフさん。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005915": {
+    "workId": "wk_000005915",
+    "title": "제감도설",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11060134"
+    },
+    "titles": {
+      "ko": "제감도설",
+      "en": "The Emperor's Mirror, Illustrated and Discussed"
+    },
+    "creator": "張居正",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

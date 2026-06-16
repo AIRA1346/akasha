@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006438": {
+    "workId": "wk_000006438",
+    "title": "스켈레톤 크루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113275091"
+    },
+    "titles": {
+      "ko": "스켈레톤 크루",
+      "en": "Star Wars: Skeleton Crew",
+      "ja": "スター・ウォーズ:スケルトン・クルー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

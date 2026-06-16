@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005768": {
+    "workId": "wk_000005768",
+    "title": "별의 커비 꿈의 샘 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154059"
+    },
+    "titles": {
+      "ko": "별의 커비 꿈의 샘 이야기",
+      "en": "Kirby's Adventure",
+      "ja": "星のカービィ 夢の泉の物語"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

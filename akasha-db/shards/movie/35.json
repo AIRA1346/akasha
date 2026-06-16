@@ -60,5 +60,24 @@
       "en": "TOY Story",
       "ko": "토이 스토리"
     }
+  },
+  "wk_000005920": {
+    "workId": "wk_000005920",
+    "title": "샌프란시스코에서 하룻밤",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063617"
+    },
+    "titles": {
+      "ko": "샌프란시스코에서 하룻밤",
+      "en": "Dogfight",
+      "ja": "恋のドッグファイト"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005634": {
+    "workId": "wk_000005634",
+    "title": "레이맨 엽기토끼 TV 파티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152102"
+    },
+    "titles": {
+      "ko": "레이맨 엽기토끼 TV 파티",
+      "en": "Rayman Raving Rabbids: TV Party"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -51,5 +51,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006002": {
+    "workId": "wk_000006002",
+    "title": "그것: 웰컴 투 데리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112845107"
+    },
+    "titles": {
+      "ko": "그것: 웰컴 투 데리",
+      "en": "It: Welcome to Derry"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006164": {
+    "workId": "wk_000006164",
+    "title": "관할 여자 ~ 신주쿠 니시서 · 형사과 강행범계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11308142"
+    },
+    "titles": {
+      "ko": "관할 여자 ~ 신주쿠 니시서 · 형사과 강행범계",
+      "en": "Shokatsu no On'na",
+      "ja": "ショカツの女〜新宿西署・刑事課強行犯係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

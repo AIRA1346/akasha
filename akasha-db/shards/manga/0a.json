@@ -56,5 +56,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005396": {
+    "workId": "wk_000005396",
+    "title": "텐구 퇴치 삼형제",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128580039"
+    },
+    "titles": {
+      "ko": "텐구 퇴치 삼형제",
+      "en": "Three Exorcism Siblings",
+      "ja": "天狗祓の三兄弟"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

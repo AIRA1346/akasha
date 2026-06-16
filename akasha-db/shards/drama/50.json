@@ -16,5 +16,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005852": {
+    "workId": "wk_000005852",
+    "title": "잠자리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273612"
+    },
+    "titles": {
+      "ko": "잠자리",
+      "en": "Tonbo",
+      "ja": "とんぼ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006087": {
+    "workId": "wk_000006087",
+    "title": "드래그 레이스 벨기에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112967616"
+    },
+    "titles": {
+      "ko": "드래그 레이스 벨기에",
+      "en": "Drag Race Belgium",
+      "ja": "ドラッグレース・ベルギー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

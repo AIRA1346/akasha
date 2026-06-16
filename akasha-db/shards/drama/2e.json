@@ -32,5 +32,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006163": {
+    "workId": "wk_000006163",
+    "title": "콜베어 리포트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130799"
+    },
+    "titles": {
+      "ko": "콜베어 리포트",
+      "en": "The Colbert Report",
+      "ja": "コルベア・リポート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006437": {
+    "workId": "wk_000006437",
+    "title": "한도쿠!!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327116"
+    },
+    "titles": {
+      "ko": "한도쿠!!!",
+      "en": "Q11327116",
+      "ja": "ハンドク!!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

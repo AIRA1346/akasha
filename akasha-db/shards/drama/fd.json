@@ -105,5 +105,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005595": {
+    "workId": "wk_000005595",
+    "title": "옥션하우스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11261970"
+    },
+    "titles": {
+      "ko": "옥션하우스",
+      "en": "Auction House",
+      "ja": "オークションハウス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005664": {
+    "workId": "wk_000005664",
+    "title": "NHK 뉴스 오하이요 아키타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262256"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하이요 아키타",
+      "en": "Q11262256",
+      "ja": "おはよう秋田"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006317": {
+    "workId": "wk_000006317",
+    "title": "백화점 여름 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320672"
+    },
+    "titles": {
+      "ko": "백화점 여름 이야기",
+      "en": "Department Store, Summer Story",
+      "ja": "デパート!夏物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

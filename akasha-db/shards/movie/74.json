@@ -117,5 +117,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006147": {
+    "workId": "wk_000006147",
+    "title": "콘크리트 유토피아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106514501"
+    },
+    "titles": {
+      "ko": "콘크리트 유토피아",
+      "en": "Concrete Utopia",
+      "ja": "コンクリート・ユートピア"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

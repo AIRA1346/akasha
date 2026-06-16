@@ -138,5 +138,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005565": {
+    "workId": "wk_000005565",
+    "title": "벤바",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115153436"
+    },
+    "titles": {
+      "ko": "벤바",
+      "en": "Venba"
+    },
+    "releaseYear": 2023,
+    "creator": "Abhijeeth Swaminathan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

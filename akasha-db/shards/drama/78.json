@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006230": {
+    "workId": "wk_000006230",
+    "title": "스위트드림",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11311146"
+    },
+    "titles": {
+      "ko": "스위트드림",
+      "en": "Sweets Dream",
+      "ja": "スイーツドリーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

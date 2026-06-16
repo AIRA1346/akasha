@@ -67,5 +67,78 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005455": {
+    "workId": "wk_000005455",
+    "title": "카지노",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112506131"
+    },
+    "titles": {
+      "ko": "카지노",
+      "en": "Big Bet",
+      "ja": "カジノ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005531": {
+    "workId": "wk_000005531",
+    "title": "오징어 게임: 더 챌린지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112587272"
+    },
+    "titles": {
+      "ko": "오징어 게임: 더 챌린지",
+      "en": "Squid Game: The Challenge",
+      "ja": "イカゲーム: ザ・チャレンジ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005743": {
+    "workId": "wk_000005743",
+    "title": "안녕 우리들의 유치원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268344"
+    },
+    "titles": {
+      "ko": "안녕 우리들의 유치원",
+      "en": "Q11268344",
+      "ja": "さよならぼくたちのようちえん (テレビドラマ)"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006324": {
+    "workId": "wk_000006324",
+    "title": "드라마 사랑의 시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323151"
+    },
+    "titles": {
+      "ko": "드라마 사랑의 시",
+      "en": "Drama Ai no Uta",
+      "ja": "ドラマ愛の詩"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -146,5 +146,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005895": {
+    "workId": "wk_000005895",
+    "title": "벼랑 위의 포뇨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q236728"
+    },
+    "titles": {
+      "ko": "벼랑 위의 포뇨",
+      "en": "Ponyo",
+      "ja": "崖の上のポニョ"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

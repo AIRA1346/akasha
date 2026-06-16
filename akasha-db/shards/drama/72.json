@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005381": {
+    "workId": "wk_000005381",
+    "title": "밤의 히트 스튜디오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243785"
+    },
+    "titles": {
+      "ko": "밤의 히트 스튜디오",
+      "en": "Yoru no Hit Studio",
+      "ja": "夜のヒットスタジオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

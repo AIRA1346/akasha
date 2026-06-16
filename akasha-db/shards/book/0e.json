@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005507": {
+    "workId": "wk_000005507",
+    "title": "내가 연인이 될 수 있을 리 없잖아, 무리무리! (※무리가 아니었다?!)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512237"
+    },
+    "titles": {
+      "ko": "내가 연인이 될 수 있을 리 없잖아, 무리무리! (※무리가 아니었다?!)",
+      "en": "There's No Freaking Way I'll be Your Lover! Unless...",
+      "ja": "わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?）"
+    },
+    "releaseYear": 2024,
+    "creator": "Teren Mikami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

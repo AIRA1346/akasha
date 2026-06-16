@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006216": {
+    "workId": "wk_000006216",
+    "title": "주말",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110894378"
+    },
+    "titles": {
+      "ko": "주말",
+      "en": "The Weekend"
+    },
+    "releaseYear": 2019,
+    "creator": "Charlotte Wood",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

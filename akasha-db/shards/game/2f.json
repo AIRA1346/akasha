@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006197": {
+    "workId": "wk_000006197",
+    "title": "바람의 전설 재너두",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11665323"
+    },
+    "titles": {
+      "ko": "바람의 전설 재너두",
+      "en": "The Legend of Xanadu",
+      "ja": "風の伝説ザナドゥ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006055": {
+    "workId": "wk_000006055",
+    "title": "어제 요선당 전집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110701937"
+    },
+    "titles": {
+      "ko": "어제 요선당 전집",
+      "en": "The Complete Works of the Imperial Le Shan Hall",
+      "ja": "楽善堂全集"
+    },
+    "releaseYear": 1737,
+    "creator": "Qianlong Emperor",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

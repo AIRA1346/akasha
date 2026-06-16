@@ -102,5 +102,78 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005380": {
+    "workId": "wk_000005380",
+    "title": "바닐라기분!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242776"
+    },
+    "titles": {
+      "ko": "바닐라기분!",
+      "en": "Q11242776",
+      "ja": "バニラ気分!"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005447": {
+    "workId": "wk_000005447",
+    "title": "테게테게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248499"
+    },
+    "titles": {
+      "ko": "테게테게",
+      "en": "TEGE2",
+      "ja": "てゲてゲ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005522": {
+    "workId": "wk_000005522",
+    "title": "아일랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256866"
+    },
+    "titles": {
+      "ko": "아일랜드",
+      "en": "Ireland",
+      "ja": "アイルランド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006084": {
+    "workId": "wk_000006084",
+    "title": "유리의 성",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129628"
+    },
+    "titles": {
+      "ko": "유리의 성",
+      "en": "City of Glass",
+      "ja": "ガラスの城"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

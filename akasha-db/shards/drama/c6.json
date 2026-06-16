@@ -121,5 +121,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005936": {
+    "workId": "wk_000005936",
+    "title": "유우 6 카가와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280629"
+    },
+    "titles": {
+      "ko": "유우 6 카가와",
+      "en": "Q11280629",
+      "ja": "ゆう6かがわ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

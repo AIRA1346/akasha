@@ -50,5 +50,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005330": {
+    "workId": "wk_000005330",
+    "title": "클레바테스 -마수왕과 아기와 시체 용사-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126959846"
+    },
+    "titles": {
+      "ko": "클레바테스 -마수왕과 아기와 시체 용사-",
+      "en": "Clevatess",
+      "ja": "クレバテス-魔獣の王と赤子と屍の勇者-"
+    },
+    "creator": "Yūji Iwahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005883": {
+    "workId": "wk_000005883",
+    "title": "암살자인 내 스테이터스가 용사보다도 훨씬 강한데요",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131758304"
+    },
+    "titles": {
+      "ko": "암살자인 내 스테이터스가 용사보다도 훨씬 강한데요",
+      "en": "My Status as an Assassin Obviously Exceeds the Hero's",
+      "ja": "暗殺者である俺のステータスが勇者よりも明らかに強いのだが"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006328": {
+    "workId": "wk_000006328",
+    "title": "펜과 수갑과 사실혼",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136149479"
+    },
+    "titles": {
+      "ko": "펜과 수갑과 사실혼",
+      "en": "A Pen, Handcuffs, and a Common-Law Marriage",
+      "ja": "ペンと手錠と事実婚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

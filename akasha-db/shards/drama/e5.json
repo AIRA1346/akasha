@@ -120,5 +120,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005516": {
+    "workId": "wk_000005516",
+    "title": "금혼령, 조선 혼인 금지령",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112563437"
+    },
+    "titles": {
+      "ko": "금혼령, 조선 혼인 금지령",
+      "en": "The Forbidden Marriage",
+      "ja": "禁婚令、朝鮮婚姻禁止令"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

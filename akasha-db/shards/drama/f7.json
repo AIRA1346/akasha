@@ -122,5 +122,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005386": {
+    "workId": "wk_000005386",
+    "title": "ST 경시청 과학 특수반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244855"
+    },
+    "titles": {
+      "ko": "ST 경시청 과학 특수반",
+      "en": "ST Keishichō Kagaku Tokusōhan",
+      "ja": "ST 警視庁科学特捜班"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006005": {
+    "workId": "wk_000006005",
+    "title": "여봉행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112861443"
+    },
+    "titles": {
+      "ko": "여봉행",
+      "en": "The Legend of Shen Li"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006374": {
+    "workId": "wk_000006374",
+    "title": "더 프랙티스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132439"
+    },
+    "titles": {
+      "ko": "더 프랙티스",
+      "en": "The Practice",
+      "ja": "ザ・プラクティス ボストン弁護士ファイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

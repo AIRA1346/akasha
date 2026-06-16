@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006092": {
+    "workId": "wk_000006092",
+    "title": "내가 본 미래",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133249809"
+    },
+    "titles": {
+      "ko": "내가 본 미래",
+      "en": "The Future I Saw",
+      "ja": "私が見た未来"
+    },
+    "creator": "Ryo Tatsuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

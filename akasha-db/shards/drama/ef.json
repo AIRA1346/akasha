@@ -33,5 +33,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005871": {
+    "workId": "wk_000005871",
+    "title": "호코x타테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277718"
+    },
+    "titles": {
+      "ko": "호코x타테",
+      "en": "hoko×Tate",
+      "ja": "ほこ×たて"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006010": {
+    "workId": "wk_000006010",
+    "title": "이브닝 신주(信州)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286989"
+    },
+    "titles": {
+      "ko": "이브닝 신주(信州)",
+      "en": "Q11286989",
+      "ja": "イブニング信州"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

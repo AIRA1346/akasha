@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006304": {
+    "workId": "wk_000006304",
+    "title": "비와 당신의 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106612798"
+    },
+    "titles": {
+      "ko": "비와 당신의 이야기",
+      "en": "Waiting for Rain",
+      "ja": "雨とあなたの物語"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

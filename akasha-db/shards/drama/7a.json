@@ -83,5 +83,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006228": {
+    "workId": "wk_000006228",
+    "title": "뉴스 라이브 저녁 5시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113107117"
+    },
+    "titles": {
+      "ko": "뉴스 라이브 저녁 5시",
+      "en": "News LIVE! Yu 5 o'clock",
+      "ja": "ニュースLIVE! ゆう5時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

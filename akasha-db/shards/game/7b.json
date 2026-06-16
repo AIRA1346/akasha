@@ -54,5 +54,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005701": {
+    "workId": "wk_000005701",
+    "title": "그란 투리스모",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152420"
+    },
+    "titles": {
+      "ko": "그란 투리스모",
+      "en": "Gran Turismo",
+      "ja": "グランツーリスモ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005904": {
+    "workId": "wk_000005904",
+    "title": "틱! 택!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155238"
+    },
+    "titles": {
+      "ko": "틱! 택!",
+      "en": "Tick! Tack!",
+      "ja": "Tick! Tack!"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

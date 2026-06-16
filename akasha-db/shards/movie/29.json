@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005571": {
+    "workId": "wk_000005571",
+    "title": "모래그릇",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060124"
+    },
+    "titles": {
+      "ko": "모래그릇",
+      "en": "Castle of Sand",
+      "ja": "砂の器"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

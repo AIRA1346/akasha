@@ -86,5 +86,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005764": {
+    "workId": "wk_000005764",
+    "title": "듄 2000",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153468"
+    },
+    "titles": {
+      "ko": "듄 2000",
+      "en": "Dune 2000"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005769": {
+    "workId": "wk_000005769",
+    "title": "전장의 발큐리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154150"
+    },
+    "titles": {
+      "ko": "전장의 발큐리아",
+      "en": "Valkyria Chronicles",
+      "ja": "戦場のヴァルキュリア"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

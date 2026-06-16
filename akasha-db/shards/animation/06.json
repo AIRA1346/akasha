@@ -194,5 +194,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005478": {
+    "workId": "wk_000005478",
+    "title": "도라에몽 신 노비타의 일본탄생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20654828"
+    },
+    "titles": {
+      "ko": "도라에몽 신 노비타의 일본탄생",
+      "en": "Doraemon: Nobita and the Birth of Japan 2016",
+      "ja": "映画ドラえもん 新・のび太の日本誕生"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005900": {
+    "workId": "wk_000005900",
+    "title": "배틀 스피리츠 더블 드라이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23802883"
+    },
+    "titles": {
+      "ko": "배틀 스피리츠 더블 드라이브",
+      "en": "Battle Spirits: Double Drive",
+      "ja": "バトルスピリッツ ダブルドライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

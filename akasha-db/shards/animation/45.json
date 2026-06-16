@@ -1,0 +1,20 @@
+{
+  "wk_000005753": {
+    "workId": "wk_000005753",
+    "title": "이로도리미도리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22126861"
+    },
+    "titles": {
+      "ko": "이로도리미도리",
+      "en": "Irodorimidori",
+      "ja": "イロドリミドリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

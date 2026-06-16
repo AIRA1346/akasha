@@ -104,5 +104,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005410": {
+    "workId": "wk_000005410",
+    "title": "극장판 마크로스 프론티어: 연리비익",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19833950"
+    },
+    "titles": {
+      "ko": "극장판 마크로스 프론티어: 연리비익",
+      "en": "Macross Frontier: The Wings of Farewell",
+      "ja": "劇場版 マクロスF 恋離飛翼 〜サヨナラノツバサ〜"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006031": {
+    "workId": "wk_000006031",
+    "title": "우주전함 야마토 2202: 사랑의 전사들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24864185"
+    },
+    "titles": {
+      "ko": "우주전함 야마토 2202: 사랑의 전사들",
+      "en": "Space Battleship Yamato 2202: Warriors of Love",
+      "ja": "宇宙戦艦ヤマト2202 愛の戦士たち"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

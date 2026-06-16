@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006059": {
+    "workId": "wk_000006059",
+    "title": "고산옥황심인경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11071970"
+    },
+    "titles": {
+      "ko": "고산옥황심인경",
+      "en": "Mind-Seal Scripture of the Exalted Jade Sovereign",
+      "ja": "高上玉皇心印経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

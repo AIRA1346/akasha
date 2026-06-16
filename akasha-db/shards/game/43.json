@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006206": {
+    "workId": "wk_000006206",
+    "title": "치킨 리틀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11680710"
+    },
+    "titles": {
+      "ko": "치킨 리틀",
+      "en": "Chicken Little",
+      "ja": "チキン・リトル"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

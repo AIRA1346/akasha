@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006022": {
+    "workId": "wk_000006022",
+    "title": "우주를 달리는 소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2472823"
+    },
+    "titles": {
+      "ko": "우주를 달리는 소녀",
+      "en": "The Girl Who Leapt Through Space",
+      "ja": "宇宙をかける少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

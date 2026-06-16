@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006045": {
+    "workId": "wk_000006045",
+    "title": "일곱 성인의 소환",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116031402"
+    },
+    "titles": {
+      "ko": "일곱 성인의 소환",
+      "en": "Genius Invokation TCG",
+      "ja": "七聖召喚"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

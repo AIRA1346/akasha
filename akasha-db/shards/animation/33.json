@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006036": {
+    "workId": "wk_000006036",
+    "title": "조조조 좀비군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24868758"
+    },
+    "titles": {
+      "ko": "조조조 좀비군",
+      "en": "Zo Zo Zo Zombie-kun",
+      "ja": "ゾゾゾ ゾンビ〜くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

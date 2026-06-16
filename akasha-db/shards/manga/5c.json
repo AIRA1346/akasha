@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006327": {
+    "workId": "wk_000006327",
+    "title": "해파리 공주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1360690"
+    },
+    "titles": {
+      "ko": "해파리 공주",
+      "en": "Princess Jellyfish",
+      "ja": "海月姫"
+    },
+    "creator": "Akiko Higashimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -121,5 +121,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006341": {
+    "workId": "wk_000006341",
+    "title": "천공전기 슈라토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2699007"
+    },
+    "titles": {
+      "ko": "천공전기 슈라토",
+      "en": "Legend of Heavenly Sphere Shurato",
+      "ja": "天空戦記シュラト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

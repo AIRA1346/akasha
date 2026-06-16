@@ -130,5 +130,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006260": {
+    "workId": "wk_000006260",
+    "title": "월면토병기 미나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2617126"
+    },
+    "titles": {
+      "ko": "월면토병기 미나",
+      "en": "Getsumento Heiki Mina",
+      "ja": "月面兎兵器ミーナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

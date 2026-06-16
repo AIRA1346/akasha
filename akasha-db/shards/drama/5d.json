@@ -133,5 +133,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005791": {
+    "workId": "wk_000005791",
+    "title": "그때 역사가 움직였다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270418"
+    },
+    "titles": {
+      "ko": "그때 역사가 움직였다",
+      "en": "And Then, the History Changed",
+      "ja": "その時歴史が動いた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

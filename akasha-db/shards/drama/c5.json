@@ -87,5 +87,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005590": {
+    "workId": "wk_000005590",
+    "title": "우타테 오도론파",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11260471"
+    },
+    "titles": {
+      "ko": "우타테 오도론파",
+      "en": "Utatte Odoronpa",
+      "ja": "うたっておどろんぱ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005730": {
+    "workId": "wk_000005730",
+    "title": "의가형제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265269"
+    },
+    "titles": {
+      "ko": "의가형제",
+      "en": "Q11265269",
+      "ja": "ドクターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006339": {
+    "workId": "wk_000006339",
+    "title": "명탐정 코난 에피소드 “원” 작아진 명탐정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q26916836"
+    },
+    "titles": {
+      "ko": "명탐정 코난 에피소드 “원” 작아진 명탐정",
+      "en": "Detective Conan Episode One: The Great Detective Turned Small",
+      "ja": "名探偵コナン エピソード“ONE” 小さくなった名探偵"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

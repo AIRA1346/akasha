@@ -67,5 +67,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005867": {
+    "workId": "wk_000005867",
+    "title": "히로시마 뉴스 845",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276753"
+    },
+    "titles": {
+      "ko": "히로시마 뉴스 845",
+      "en": "Q11276753",
+      "ja": "ひろしまニュース845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005944": {
+    "workId": "wk_000005944",
+    "title": "흥미진진 동물 세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11281770"
+    },
+    "titles": {
+      "ko": "흥미진진 동물 세상",
+      "en": "Wakuwaku Dōbutsu Land",
+      "ja": "わくわく動物ランド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006440": {
+    "workId": "wk_000006440",
+    "title": "배틀 캣츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327884"
+    },
+    "titles": {
+      "ko": "배틀 캣츠",
+      "en": "Battle Cats",
+      "ja": "バトルキャッツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

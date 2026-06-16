@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005663": {
+    "workId": "wk_000005663",
+    "title": "NHK 뉴스 오하이요 도카이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262245"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하이요 도카이",
+      "en": "Q11262245",
+      "ja": "おはよう東海"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

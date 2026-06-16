@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006198": {
+    "workId": "wk_000006198",
+    "title": "케이팝 댄스 페스티벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11667686"
+    },
+    "titles": {
+      "ko": "케이팝 댄스 페스티벌",
+      "en": "K-pop Dance Festival"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

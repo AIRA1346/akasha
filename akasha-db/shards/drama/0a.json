@@ -118,5 +118,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005727": {
+    "workId": "wk_000005727",
+    "title": "위험한 관계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11264131"
+    },
+    "titles": {
+      "ko": "위험한 관계",
+      "en": "Dangerous Liaisons",
+      "ja": "危険な関係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005731": {
+    "workId": "wk_000005731",
+    "title": "크림난토카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265625"
+    },
+    "titles": {
+      "ko": "크림난토카",
+      "en": "Cream Nantoka",
+      "ja": "くりぃむナントカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

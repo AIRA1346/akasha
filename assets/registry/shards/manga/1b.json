@@ -67,5 +67,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005534": {
+    "workId": "wk_000005534",
+    "title": "숨막힐 정도의 사랑을 줄게",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130336846"
+    },
+    "titles": {
+      "ko": "숨막힐 정도의 사랑을 줄게",
+      "en": "Choking on Love",
+      "ja": "むせるくらいの愛をあげる"
+    },
+    "creator": "Keiko Iwashita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006095": {
+    "workId": "wk_000006095",
+    "title": "시테의 꽃 - 노가쿠시 호가 코타로가 피워내는 법 -",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133450078"
+    },
+    "titles": {
+      "ko": "시테의 꽃 - 노가쿠시 호가 코타로가 피워내는 법 -",
+      "en": "Shite no Hana",
+      "ja": "シテの花 -能楽師・葉賀琥太朗の咲き方-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

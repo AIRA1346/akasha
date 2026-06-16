@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005609": {
+    "workId": "wk_000005609",
+    "title": "샹피뇽의 마녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131437080"
+    },
+    "titles": {
+      "ko": "샹피뇽의 마녀",
+      "en": "Champignon Witch",
+      "ja": "シャンピニオンの魔女"
+    },
+    "creator": "Tachibana Higuchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

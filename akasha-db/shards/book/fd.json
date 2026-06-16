@@ -18,5 +18,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005837": {
+    "workId": "wk_000005837",
+    "title": "순박한 마음",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110155358"
+    },
+    "titles": {
+      "ko": "순박한 마음",
+      "en": "A Simple Heart"
+    },
+    "creator": "Gustave Flaubert",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

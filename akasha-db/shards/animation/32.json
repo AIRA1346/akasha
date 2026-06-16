@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006272": {
+    "workId": "wk_000006272",
+    "title": "마인드 게임",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2660869"
+    },
+    "titles": {
+      "ko": "마인드 게임",
+      "en": "Mind Game",
+      "ja": "マインド・ゲーム"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

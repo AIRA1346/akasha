@@ -158,5 +158,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006407": {
+    "workId": "wk_000006407",
+    "title": "명탐정 코난: 진홍의 연가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27918415"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 진홍의 연가",
+      "en": "Detective Conan: Crimson Love Letter",
+      "ja": "名探偵コナン から紅の恋歌"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

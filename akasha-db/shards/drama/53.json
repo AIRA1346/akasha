@@ -123,5 +123,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005461": {
+    "workId": "wk_000005461",
+    "title": "속도위반 결혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11252165"
+    },
+    "titles": {
+      "ko": "속도위반 결혼",
+      "en": "Q11252165",
+      "ja": "できちゃった結婚(ドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006227": {
+    "workId": "wk_000006227",
+    "title": "잡툰 ～그 직업의 비밀을 털어놓습니다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11310672"
+    },
+    "titles": {
+      "ko": "잡툰 ～그 직업의 비밀을 털어놓습니다!",
+      "en": "JOB-TUNE",
+      "ja": "ジョブチューン アノ職業のヒミツぶっちゃけます!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

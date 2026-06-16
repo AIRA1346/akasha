@@ -172,5 +172,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005591": {
+    "workId": "wk_000005591",
+    "title": "노래하는 나무",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11260484"
+    },
+    "titles": {
+      "ko": "노래하는 나무",
+      "en": "Uta no Naru Ki",
+      "ja": "うたのなる木"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005798": {
+    "workId": "wk_000005798",
+    "title": "종합병원 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11271760"
+    },
+    "titles": {
+      "ko": "종합병원 2",
+      "en": "General Hospital 2",
+      "ja": "総合病院2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

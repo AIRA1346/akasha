@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005878": {
+    "workId": "wk_000005878",
+    "title": "태양은 지지 않는다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278212"
+    },
+    "titles": {
+      "ko": "태양은 지지 않는다",
+      "en": "The Sun Never Sets",
+      "ja": "太陽は沈まない"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

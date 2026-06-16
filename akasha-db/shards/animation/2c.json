@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006343": {
+    "workId": "wk_000006343",
+    "title": "풀 메탈 패닉? 후못후",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2704561"
+    },
+    "titles": {
+      "ko": "풀 메탈 패닉? 후못후",
+      "en": "Full Metal Panic? Fumoffu",
+      "ja": "フルメタル・パニック? ふもっふ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005335": {
+    "workId": "wk_000005335",
+    "title": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128037633"
+    },
+    "titles": {
+      "ko": "누더기 영애는 언니의 전 약혼자에게 익애받는다",
+      "en": "Betrothed to My Sister's Ex",
+      "ja": "ずたぼろ令嬢は姉の元婚約者に溺愛される"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

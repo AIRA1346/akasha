@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006263": {
+    "workId": "wk_000006263",
+    "title": "캣 수프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2629677"
+    },
+    "titles": {
+      "ko": "캣 수프",
+      "en": "Cat Soup",
+      "ja": "ねこぢる草"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

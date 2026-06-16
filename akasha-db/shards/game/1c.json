@@ -130,5 +130,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005561": {
+    "workId": "wk_000005561",
+    "title": "D.C. 다카포",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151363"
+    },
+    "titles": {
+      "ko": "D.C. 다카포",
+      "en": "Da Capo",
+      "ja": "D.C. 〜ダ・カーポ〜"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

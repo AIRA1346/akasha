@@ -88,5 +88,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005342": {
+    "workId": "wk_000005342",
+    "title": "핸드 메이드 메이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1902786"
+    },
+    "titles": {
+      "ko": "핸드 메이드 메이",
+      "en": "Hand Maid May",
+      "ja": "HAND MAID メイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006332": {
+    "workId": "wk_000006332",
+    "title": "동화 만화 캘린더",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2663963"
+    },
+    "titles": {
+      "ko": "동화 만화 캘린더",
+      "en": "Otogi Manga Calendar",
+      "ja": "おとぎマンガカレンダー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

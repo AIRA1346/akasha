@@ -102,5 +102,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005513": {
+    "workId": "wk_000005513",
+    "title": "ZIP! (방송 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255789"
+    },
+    "titles": {
+      "ko": "ZIP! (방송 프로그램)",
+      "en": "ZIP!",
+      "ja": "ZIP!"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005789": {
+    "workId": "wk_000005789",
+    "title": "세야넨!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270121"
+    },
+    "titles": {
+      "ko": "세야넨!",
+      "en": "Seyanen!",
+      "ja": "せやねん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

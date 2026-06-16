@@ -67,5 +67,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005797": {
+    "workId": "wk_000005797",
+    "title": "단란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11271643"
+    },
+    "titles": {
+      "ko": "단란",
+      "en": "Danran",
+      "ja": "だんらん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005870": {
+    "workId": "wk_000005870",
+    "title": "키스하마러닝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277437"
+    },
+    "titles": {
+      "ko": "키스하마러닝",
+      "en": "Q11277437",
+      "ja": "キス濱ラーニング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

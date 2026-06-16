@@ -18,5 +18,62 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005644": {
+    "workId": "wk_000005644",
+    "title": "어릿광대의 꽃",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109601859"
+    },
+    "titles": {
+      "ko": "어릿광대의 꽃",
+      "en": "The Flowers of Buffoonery",
+      "ja": "道化の華"
+    },
+    "creator": "太宰治",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005987": {
+    "workId": "wk_000005987",
+    "title": "광군방보",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11064813"
+    },
+    "titles": {
+      "ko": "광군방보",
+      "en": "Comprehensive Collection of Fragrant Plants",
+      "ja": "広群芳譜"
+    },
+    "releaseYear": 1708,
+    "creator": "Wang Hao",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006142": {
+    "workId": "wk_000006142",
+    "title": "문주사리불토엄정경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11080007"
+    },
+    "titles": {
+      "ko": "문주사리불토엄정경",
+      "en": "Sutra on the Adornments and Purity of the Buddha Land of Mañjuśrī",
+      "ja": "文殊師利仏土厳浄経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

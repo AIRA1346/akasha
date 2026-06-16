@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006368": {
+    "workId": "wk_000006368",
+    "title": "세인트루이스에서 만나요",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066873"
+    },
+    "titles": {
+      "ko": "세인트루이스에서 만나요",
+      "en": "Meet Me in St. Louis",
+      "ja": "若草の頃"
+    },
+    "releaseYear": 1944,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

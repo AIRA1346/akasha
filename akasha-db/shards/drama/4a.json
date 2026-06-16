@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006318": {
+    "workId": "wk_000006318",
+    "title": "백화점  가을 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320674"
+    },
+    "titles": {
+      "ko": "백화점  가을 이야기",
+      "en": "Department Store, Autumn Story",
+      "ja": "デパート!秋物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

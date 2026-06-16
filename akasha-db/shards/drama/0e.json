@@ -84,5 +84,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005786": {
+    "workId": "wk_000005786",
+    "title": "스즈가 준 소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269683"
+    },
+    "titles": {
+      "ko": "스즈가 준 소리",
+      "en": "Suzu's Gift",
+      "ja": "すずがくれた音"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

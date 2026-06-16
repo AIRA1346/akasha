@@ -18,5 +18,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005505": {
+    "workId": "wk_000005505",
+    "title": "옆자리가 된 미소녀가 반하게 하려고 얽혀오지만 어느샌가 역으로 반하게 하고 있었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512158"
+    },
+    "titles": {
+      "ko": "옆자리가 된 미소녀가 반하게 하려고 얽혀오지만 어느샌가 역으로 반하게 하고 있었다",
+      "en": "Tonari no Seki ni Natta Bishōjo ga Horesaseyō to Karakattekuru ga Itsunomanika Kaeriuchi ni Shiteita",
+      "ja": "隣の席になった美少女が惚れさせようとからかってくるがいつの間にか返り討ちにしていた"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005844": {
+    "workId": "wk_000005844",
+    "title": "플랜더스의 개",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11036624"
+    },
+    "titles": {
+      "ko": "플랜더스의 개",
+      "en": "A Dog of Flanders",
+      "ja": "フランダースの犬"
+    },
+    "releaseYear": 1872,
+    "creator": "Ouida",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "wk_000005476": {
+    "workId": "wk_000005476",
+    "title": "커피 문",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130308184"
+    },
+    "titles": {
+      "ko": "커피 문",
+      "en": "Coffee Moon",
+      "ja": "コーヒームーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005955": {
+    "workId": "wk_000005955",
+    "title": "마호라바",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1322197"
+    },
+    "titles": {
+      "ko": "마호라바",
+      "en": "Mahoraba",
+      "ja": "まほらば"
+    },
+    "releaseYear": 2000,
+    "creator": "Akira Kojima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

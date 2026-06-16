@@ -51,5 +51,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005518": {
+    "workId": "wk_000005518",
+    "title": "아이돌 군단의 떴다! 그녀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256738"
+    },
+    "titles": {
+      "ko": "아이돌 군단의 떴다! 그녀",
+      "en": "Idol Show"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006009": {
+    "workId": "wk_000006009",
+    "title": "이브닝 KOCHI",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286964"
+    },
+    "titles": {
+      "ko": "이브닝 KOCHI",
+      "en": "Q11286964",
+      "ja": "イブニングKOCHI"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006244": {
+    "workId": "wk_000006244",
+    "title": "앤오디션 더 하울링",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113164871"
+    },
+    "titles": {
+      "ko": "앤오디션 더 하울링",
+      "en": "&AUDITION - The Howling -",
+      "ja": "&AUDITION - The Howling -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

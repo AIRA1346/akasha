@@ -69,5 +69,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005496": {
+    "workId": "wk_000005496",
+    "title": "데이브 더 다이버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114995908"
+    },
+    "titles": {
+      "ko": "데이브 더 다이버",
+      "en": "Dave the Diver",
+      "ja": "デイヴ・ザ・ダイバー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005631": {
+    "workId": "wk_000005631",
+    "title": "라이거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151856"
+    },
+    "titles": {
+      "ko": "라이거",
+      "en": "Rygar",
+      "ja": "アルゴスの戦士"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006276": {
+    "workId": "wk_000006276",
+    "title": "댄스 마카브르",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116908875"
+    },
+    "titles": {
+      "ko": "댄스 마카브르",
+      "en": "Q116908875",
+      "ja": "ダンス・マカブル"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

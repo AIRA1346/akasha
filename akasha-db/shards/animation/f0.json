@@ -79,5 +79,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005825": {
+    "workId": "wk_000005825",
+    "title": "팬더와 친구들의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2338099"
+    },
+    "titles": {
+      "ko": "팬더와 친구들의 모험",
+      "en": "Panda! Go, Panda!",
+      "ja": "パンダコパンダ"
+    },
+    "releaseYear": 1972,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

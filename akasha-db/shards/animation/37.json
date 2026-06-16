@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006342": {
+    "workId": "wk_000006342",
+    "title": "BLOOD-C",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2699816"
+    },
+    "titles": {
+      "ko": "BLOOD-C",
+      "en": "Blood-C",
+      "ja": "BLOOD-C"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

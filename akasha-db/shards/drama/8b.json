@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006383": {
+    "workId": "wk_000006383",
+    "title": "뉴스센터 9시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324786"
+    },
+    "titles": {
+      "ko": "뉴스센터 9시",
+      "en": "NEWS CENTER 9",
+      "ja": "ニュースセンター9時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

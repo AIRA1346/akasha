@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005580": {
+    "workId": "wk_000005580",
+    "title": "소년우연대",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060500"
+    },
+    "titles": {
+      "ko": "소년우연대",
+      "en": "Young Thugs: Innocent Blood",
+      "ja": "岸和田少年愚連隊 血煙り純情篇"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

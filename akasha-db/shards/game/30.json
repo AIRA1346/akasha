@@ -130,5 +130,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005832": {
+    "workId": "wk_000005832",
+    "title": "리얼리? 리얼리!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154860"
+    },
+    "titles": {
+      "ko": "리얼리? 리얼리!",
+      "en": "Really? Really!",
+      "ja": "Really? Really!"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

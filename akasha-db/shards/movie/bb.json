@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005576": {
+    "workId": "wk_000005576",
+    "title": "달빛 속삭임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060299"
+    },
+    "titles": {
+      "ko": "달빛 속삭임",
+      "en": "Moonlight Whispers",
+      "ja": "月光の囁き"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

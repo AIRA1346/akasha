@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005765": {
+    "workId": "wk_000005765",
+    "title": "데몬즈 소울",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153708"
+    },
+    "titles": {
+      "ko": "데몬즈 소울",
+      "en": "Demon's Souls",
+      "ja": "Demon's Souls"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

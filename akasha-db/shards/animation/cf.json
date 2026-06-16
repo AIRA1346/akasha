@@ -215,5 +215,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005551": {
+    "workId": "wk_000005551",
+    "title": "배틀 스피리츠 소드 아이즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2081199"
+    },
+    "titles": {
+      "ko": "배틀 스피리츠 소드 아이즈",
+      "en": "Battle Spirits: Sword Eyes",
+      "ja": "バトルスピリッツ ソードアイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

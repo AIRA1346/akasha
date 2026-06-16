@@ -109,5 +109,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006344": {
+    "workId": "wk_000006344",
+    "title": "원탁의 기사 이야기 불타올라라 아서",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2705920"
+    },
+    "titles": {
+      "ko": "원탁의 기사 이야기 불타올라라 아서",
+      "en": "King Arthur",
+      "ja": "円卓の騎士物語 燃えろアーサー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

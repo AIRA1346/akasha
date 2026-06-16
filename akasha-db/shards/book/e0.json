@@ -15,5 +15,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005366": {
+    "workId": "wk_000005366",
+    "title": "작가 형사 부스지마",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109365523"
+    },
+    "titles": {
+      "ko": "작가 형사 부스지마",
+      "en": "Q109365523",
+      "ja": "作家刑事毒島"
+    },
+    "releaseYear": 2016,
+    "creator": "Shichiri Nakayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006402": {
+    "workId": "wk_000006402",
+    "title": "NG 기사 라무네 & 40",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2756865"
+    },
+    "titles": {
+      "ko": "NG 기사 라무네 & 40",
+      "en": "NG Knight Lamune & 40",
+      "ja": "NG騎士ラムネ&40"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

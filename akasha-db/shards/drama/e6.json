@@ -51,5 +51,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005453": {
+    "workId": "wk_000005453",
+    "title": "서궁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11250158"
+    },
+    "titles": {
+      "ko": "서궁",
+      "en": "West Palace",
+      "ja": "宮廷女官キム尚宮"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005512": {
+    "workId": "wk_000005512",
+    "title": "썸데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255636"
+    },
+    "titles": {
+      "ko": "썸데이",
+      "en": "Someday",
+      "ja": "サムデイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005996": {
+    "workId": "wk_000005996",
+    "title": "아이돌 맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282319"
+    },
+    "titles": {
+      "ko": "아이돌 맨",
+      "en": "Idle Man",
+      "ja": "アイドルマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

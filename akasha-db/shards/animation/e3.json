@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005415": {
+    "workId": "wk_000005415",
+    "title": "디지캐럿 뇨!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2002590"
+    },
+    "titles": {
+      "ko": "디지캐럿 뇨!",
+      "en": "Di Gi Charat Nyo!",
+      "ja": "デ・ジ・キャラットにょ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

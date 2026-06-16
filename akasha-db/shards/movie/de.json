@@ -15,5 +15,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006426": {
+    "workId": "wk_000006426",
+    "title": "틴 울프",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067125"
+    },
+    "titles": {
+      "ko": "틴 울프",
+      "en": "Teen Wolf",
+      "ja": "ティーン・ウルフ"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

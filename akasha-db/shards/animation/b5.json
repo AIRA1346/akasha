@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005340": {
+    "workId": "wk_000005340",
+    "title": "아이돌 사변",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18989784"
+    },
+    "titles": {
+      "ko": "아이돌 사변",
+      "en": "Idol Incidents",
+      "ja": "アイドル事変"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005968": {
+    "workId": "wk_000005968",
+    "title": "흑집사: 북 오브 더 아틀란틱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24238541"
+    },
+    "titles": {
+      "ko": "흑집사: 북 오브 더 아틀란틱",
+      "en": "Black Butler: Book of the Atlantic",
+      "ja": "劇場版「黒執事 Book of the Atlantic」"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

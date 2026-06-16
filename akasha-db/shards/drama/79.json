@@ -49,5 +49,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006082": {
+    "workId": "wk_000006082",
+    "title": "카운터의 두 사람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11293890"
+    },
+    "titles": {
+      "ko": "카운터의 두 사람",
+      "en": "Two of the counter",
+      "ja": "カウンターのふたり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006159": {
+    "workId": "wk_000006159",
+    "title": "선데이 모닝",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11305789"
+    },
+    "titles": {
+      "ko": "선데이 모닝",
+      "en": "Sunday Morning",
+      "ja": "サンデーモーニング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

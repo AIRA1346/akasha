@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005419": {
+    "workId": "wk_000005419",
+    "title": "비스트 워즈 세컨드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2017815"
+    },
+    "titles": {
+      "ko": "비스트 워즈 세컨드",
+      "en": "Beast Wars II",
+      "ja": "ビーストウォーズII 超生命体トランスフォーマー"
+    },
+    "creator": "Shōji Imaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005957": {
+    "workId": "wk_000005957",
+    "title": "미티어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2393174"
+    },
+    "titles": {
+      "ko": "미티어",
+      "en": "Meteor",
+      "ja": "流星"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

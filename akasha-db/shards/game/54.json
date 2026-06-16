@@ -103,5 +103,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005706": {
+    "workId": "wk_000005706",
+    "title": "시티 커넥션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153074"
+    },
+    "titles": {
+      "ko": "시티 커넥션",
+      "en": "City Connection",
+      "ja": "シティコネクション"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006130": {
+    "workId": "wk_000006130",
+    "title": "어번 테러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165046"
+    },
+    "titles": {
+      "ko": "어번 테러",
+      "en": "Urban Terror",
+      "ja": "Urban Terror"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006200": {
+    "workId": "wk_000006200",
+    "title": "술래잡기 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673371"
+    },
+    "titles": {
+      "ko": "술래잡기 (게임)",
+      "en": "Onigokko!",
+      "ja": "鬼ごっこ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

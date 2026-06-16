@@ -66,5 +66,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005679": {
+    "workId": "wk_000005679",
+    "title": "현대 사회에서 여성향 게임의 악역 영애를 하는 건 조금 큰일",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131455888"
+    },
+    "titles": {
+      "ko": "현대 사회에서 여성향 게임의 악역 영애를 하는 건 조금 큰일",
+      "en": "Modern Villainess",
+      "ja": "現代社会で乙女ゲームの悪役令嬢をするのはちょっと大変"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

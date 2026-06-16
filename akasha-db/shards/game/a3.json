@@ -89,5 +89,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005702": {
+    "workId": "wk_000005702",
+    "title": "아랑전설 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152450"
+    },
+    "titles": {
+      "ko": "아랑전설 2",
+      "en": "Fatal Fury 2",
+      "ja": "餓狼伝説2"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

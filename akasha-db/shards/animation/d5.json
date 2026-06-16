@@ -116,5 +116,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005827": {
+    "workId": "wk_000005827",
+    "title": "건담 F91",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2340234"
+    },
+    "titles": {
+      "ko": "건담 F91",
+      "en": "Mobile Suit Gundam F91",
+      "ja": "機動戦士ガンダムF91"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

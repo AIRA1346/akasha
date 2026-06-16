@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005647": {
+    "workId": "wk_000005647",
+    "title": "칩과 데일: 다람쥐 구조대",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106075513"
+    },
+    "titles": {
+      "ko": "칩과 데일: 다람쥐 구조대",
+      "en": "Chip 'n Dale: Rescue Rangers",
+      "ja": "チップとデールの大作戦 レスキュー・レンジャーズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

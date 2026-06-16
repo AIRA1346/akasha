@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005422": {
+    "workId": "wk_000005422",
+    "title": "대마인 아사기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11458276"
+    },
+    "titles": {
+      "ko": "대마인 아사기",
+      "en": "Taimanin Asagi",
+      "ja": "対魔忍アサギ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

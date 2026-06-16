@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006119": {
+    "workId": "wk_000006119",
+    "title": "공허의 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625325"
+    },
+    "titles": {
+      "ko": "공허의 소녀",
+      "en": "Kara no Shōjo - The Second Episode",
+      "ja": "虚ノ少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

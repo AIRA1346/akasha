@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006108": {
+    "workId": "wk_000006108",
+    "title": "몸을 긋는 소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25206010"
+    },
+    "titles": {
+      "ko": "몸을 긋는 소녀",
+      "en": "Sharp Objects",
+      "ja": "シャープ・オブジェクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

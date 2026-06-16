@@ -51,5 +51,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005807": {
+    "workId": "wk_000005807",
+    "title": "RTA 러너는 게임 세계에서 벗어날 수 없다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131701254"
+    },
+    "titles": {
+      "ko": "RTA 러너는 게임 세계에서 벗어날 수 없다",
+      "en": "Speedrunner cannot Return from the Game World",
+      "ja": "RTA走者はゲーム世界から帰れない"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005668": {
+    "workId": "wk_000005668",
+    "title": "어머니 선생의 진료일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262371"
+    },
+    "titles": {
+      "ko": "어머니 선생의 진료일기",
+      "en": "Ofukuro Sensei no Shinryō Nikki",
+      "ja": "おふくろ先生の診療日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005858": {
+    "workId": "wk_000005858",
+    "title": "니코니코푼이 찾아왔다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274738"
+    },
+    "titles": {
+      "ko": "니코니코푼이 찾아왔다",
+      "en": "Nico Nico Pun ga Yattekita",
+      "ja": "にこにこぷんがやってきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

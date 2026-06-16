@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005573": {
+    "workId": "wk_000005573",
+    "title": "염소를 잡아라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106019215"
+    },
+    "titles": {
+      "ko": "염소를 잡아라",
+      "en": "Get the Goat",
+      "ja": "ヤギを追跡せよ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005720": {
+    "workId": "wk_000005720",
+    "title": "그 여름의 일주일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106206127"
+    },
+    "titles": {
+      "ko": "그 여름의 일주일",
+      "en": "A Week Away",
+      "ja": "サマーキャンプ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

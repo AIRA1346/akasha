@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006026": {
+    "workId": "wk_000006026",
+    "title": "THE IDOLM@STER",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2480998"
+    },
+    "titles": {
+      "ko": "THE IDOLM@STER",
+      "en": "The Idolmaster",
+      "ja": "THE IDOLM@STER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

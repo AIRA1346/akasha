@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006091": {
+    "workId": "wk_000006091",
+    "title": "소꿉친구와는 러브 코미디를 할 수 없어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132994694"
+    },
+    "titles": {
+      "ko": "소꿉친구와는 러브 코미디를 할 수 없어",
+      "en": "You Can't Be in a Rom-Com with Your Childhood Friends!",
+      "ja": "幼馴染とはラブコメにならない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

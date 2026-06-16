@@ -139,5 +139,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005406": {
+    "workId": "wk_000005406",
+    "title": "VAMPIRE HOLMES",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19688552"
+    },
+    "titles": {
+      "ko": "VAMPIRE HOLMES",
+      "en": "Vampire Holmes",
+      "ja": "VAMPIRE HOLMES"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

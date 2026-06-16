@@ -120,5 +120,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006021": {
+    "workId": "wk_000006021",
+    "title": "B-PROJECT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24668320"
+    },
+    "titles": {
+      "ko": "B-PROJECT",
+      "en": "B-Project",
+      "ja": "B-PROJECT"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

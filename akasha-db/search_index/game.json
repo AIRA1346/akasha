@@ -541,6 +541,26 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006042",
+    "title": "Atari 50: The Anniversary Celebration",
+    "shardId": "game_e9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Atari 50: The Anniversary Celebration",
+      "atari50theanniversarycelebration"
+    ],
+    "titles": {
+      "ko": "Atari 50: The Anniversary Celebration",
+      "en": "Atari 50: The Anniversary Celebration",
+      "ja": "Atari 50: The Anniversary Celebration"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003862",
     "title": "BUSHI청룡전~두 사람의 용사~",
     "shardId": "game_98",
@@ -658,6 +678,30 @@
       "ko": "Cities XL",
       "en": "Cities XL",
       "ja": "シティーズXL"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005561",
+    "title": "D.C. 다카포",
+    "shardId": "game_1c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "D.C. 〜ダ・カーポ〜",
+      "D.C. 다카포",
+      "Da Capo",
+      "d.c.〜ダカーポ〜",
+      "d.c.다카포",
+      "dacapo"
+    ],
+    "titles": {
+      "ko": "D.C. 다카포",
+      "en": "Da Capo",
+      "ja": "D.C. 〜ダ・カーポ〜"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -972,6 +1016,25 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006415",
+    "title": "F1 23",
+    "shardId": "game_f0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "F1 23",
+      "f123"
+    ],
+    "titles": {
+      "ko": "F1 23",
+      "en": "F1 23"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002970",
     "title": "F1 레이스",
     "shardId": "game_4b",
@@ -991,6 +1054,30 @@
       "ko": "F1 레이스",
       "en": "F-1 Race",
       "ja": "F1レース"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006202",
+    "title": "FANTASY LIFE i: 빙글빙글 용과 시간을 훔치는 소녀",
+    "shardId": "game_1b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "FANTASY LIFE i: 빙글빙글 용과 시간을 훔치는 소녀",
+      "Fantasy Life i: The Girl Who Steals Time",
+      "fantasylifeithegirlwhostealstime",
+      "fantasylifei빙글빙글용과시간을훔치는소녀",
+      "ファンタジーライフｉ グルグルの竜と時をぬすむ少女",
+      "ファンタジーライフｉグルグルの竜と時をぬすむ少女"
+    ],
+    "titles": {
+      "ko": "FANTASY LIFE i: 빙글빙글 용과 시간을 훔치는 소녀",
+      "en": "Fantasy Life i: The Girl Who Steals Time",
+      "ja": "ファンタジーライフｉ グルグルの竜と時をぬすむ少女"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -1077,6 +1164,25 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006043",
+    "title": "Fate/Samurai Remnant",
+    "shardId": "game_d1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Fate/Samurai Remnant",
+      "fatesamurairemnant"
+    ],
+    "titles": {
+      "ko": "Fate/Samurai Remnant",
+      "en": "Fate/Samurai Remnant"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002731",
     "title": "Filsnown",
     "shardId": "game_28",
@@ -1091,6 +1197,51 @@
     "titles": {
       "ko": "Filsnown",
       "en": "Filsnown"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006273",
+    "title": "G 다리우스",
+    "shardId": "game_f3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "G 다리우스",
+      "G-Darius",
+      "Gダライアス",
+      "gdarius",
+      "gダライアス",
+      "g다리우스"
+    ],
+    "titles": {
+      "ko": "G 다리우스",
+      "en": "G-Darius",
+      "ja": "Gダライアス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006052",
+    "title": "GINKA",
+    "shardId": "game_e7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "GINKA",
+      "Ginka",
+      "ginka"
+    ],
+    "titles": {
+      "ko": "GINKA",
+      "en": "Ginka",
+      "ja": "GINKA"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -1465,6 +1616,27 @@
       "ko": "MLB 더 쇼 22",
       "en": "MLB: The Show 22",
       "ja": "MLB The Show 22 MVPエディション"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006132",
+    "title": "MLB 더 쇼 23",
+    "shardId": "game_4e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "MLB 더 쇼 23",
+      "Q116564061",
+      "mlb더쇼23",
+      "q116564061"
+    ],
+    "titles": {
+      "ko": "MLB 더 쇼 23",
+      "en": "Q116564061"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2205,6 +2377,45 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006122",
+    "title": "WWE 2K23",
+    "shardId": "game_5d",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "WWE 2K23",
+      "wwe2k23"
+    ],
+    "titles": {
+      "ko": "WWE 2K23",
+      "en": "WWE 2K23"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005562",
+    "title": "Wii Fit Plus",
+    "shardId": "game_2e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Wii Fit Plus",
+      "wiifitplus"
+    ],
+    "titles": {
+      "ko": "Wii Fit Plus",
+      "en": "Wii Fit Plus",
+      "ja": "Wii Fit Plus"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004764",
     "title": "Wii Sports Resort",
     "shardId": "game_2c",
@@ -2244,6 +2455,26 @@
       "ko": "Wii 리모컨플러스로 즐기는 버라이어티 게임 박스",
       "en": "Wii Play: Motion",
       "ja": "Wiiリモコンプラス バラエティ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005829",
+    "title": "XIII",
+    "shardId": "game_17",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "XIII",
+      "xiii"
+    ],
+    "titles": {
+      "ko": "XIII",
+      "en": "XIII",
+      "ja": "XIII"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -2668,6 +2899,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006279",
+    "title": "고양이와 스프",
+    "shardId": "game_5e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Cats & Soup",
+      "cats&soup",
+      "고양이와 스프",
+      "고양이와스프"
+    ],
+    "titles": {
+      "ko": "고양이와 스프",
+      "en": "Cats & Soup"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002836",
     "title": "고인돌",
     "shardId": "game_bf",
@@ -2802,6 +3054,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006119",
+    "title": "공허의 소녀",
+    "shardId": "game_66",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kara no Shōjo - The Second Episode",
+      "karanoshōjothesecondepisode",
+      "虚ノ少女",
+      "공허의 소녀",
+      "공허의소녀"
+    ],
+    "titles": {
+      "ko": "공허의 소녀",
+      "en": "Kara no Shōjo - The Second Episode",
+      "ja": "虚ノ少女"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002319",
     "title": "귀멸의 칼날 히노카미 혈풍담",
     "shardId": "game_2a",
@@ -2821,6 +3096,28 @@
       "ko": "귀멸의 칼날 히노카미 혈풍담",
       "en": "Demon Slayer: Kimetsu no Yaiba – The Hinokami Chronicles",
       "ja": "鬼滅の刃 ヒノカミ血風譚"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005353",
+    "title": "귀무자",
+    "shardId": "game_4f",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Onimusha: Warlords",
+      "onimushawarlords",
+      "鬼武者",
+      "귀무자"
+    ],
+    "titles": {
+      "ko": "귀무자",
+      "en": "Onimusha: Warlords",
+      "ja": "鬼武者"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -3013,6 +3310,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000005701",
+    "title": "그란 투리스모",
+    "shardId": "game_7b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Gran Turismo",
+      "granturismo",
+      "グランツーリスモ",
+      "그란 투리스모",
+      "그란투리스모"
+    ],
+    "titles": {
+      "ko": "그란 투리스모",
+      "en": "Gran Turismo",
+      "ja": "グランツーリスモ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000090",
     "title": "그랜드 테프트 오토 V",
     "shardId": "game_be",
@@ -3091,6 +3411,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005564",
+    "title": "극마계촌",
+    "shardId": "game_d0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ultimate Ghosts 'n Goblins",
+      "ultimateghosts'ngoblins",
+      "極魔界村",
+      "극마계촌"
+    ],
+    "titles": {
+      "ko": "극마계촌",
+      "en": "Ultimate Ghosts 'n Goblins",
+      "ja": "極魔界村"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001559",
     "title": "극상 파로디우스 -과거의 영광을 찾아서-",
     "shardId": "game_40",
@@ -3110,6 +3452,30 @@
       "ko": "극상 파로디우스 -과거의 영광을 찾아서-",
       "en": "Gokujo Parodius",
       "ja": "極上パロディウス 〜過去の栄光を求めて〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006275",
+    "title": "금빛 러브리체 -Golden Time-",
+    "shardId": "game_75",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kinkoi: Golden Time",
+      "kinkoigoldentime",
+      "金色ラブリッチェ -GOLDEN TIME-",
+      "金色ラブリッチェgoldentime",
+      "금빛 러브리체 -Golden Time-",
+      "금빛러브리체goldentime"
+    ],
+    "titles": {
+      "ko": "금빛 러브리체 -Golden Time-",
+      "en": "Kinkoi: Golden Time",
+      "ja": "金色ラブリッチェ -GOLDEN TIME-"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -3177,6 +3543,29 @@
       "ko": "기어즈 오브 워 3",
       "en": "Gears of War 3",
       "ja": "Gears of War 3"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006133",
+    "title": "기타 히어로",
+    "shardId": "game_82",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Guitar Hero",
+      "guitarhero",
+      "ギターヒーロー",
+      "기타 히어로",
+      "기타히어로"
+    ],
+    "titles": {
+      "ko": "기타 히어로",
+      "en": "Guitar Hero",
+      "ja": "ギターヒーロー"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -3297,6 +3686,52 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006047",
+    "title": "끝나는 세계와 버스데이",
+    "shardId": "game_2e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Owaru Sekai to Birthday",
+      "owarusekaitobirthday",
+      "終わる世界とバースデイ",
+      "끝나는 세계와 버스데이",
+      "끝나는세계와버스데이"
+    ],
+    "titles": {
+      "ko": "끝나는 세계와 버스데이",
+      "en": "Owaru Sekai to Birthday",
+      "ja": "終わる世界とバースデイ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006126",
+    "title": "나유타의 궤적",
+    "shardId": "game_ae",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11642803",
+      "q11642803",
+      "那由多の軌跡",
+      "나유타의 궤적",
+      "나유타의궤적"
+    ],
+    "titles": {
+      "ko": "나유타의 궤적",
+      "en": "Q11642803",
+      "ja": "那由多の軌跡"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002739",
     "title": "내 여자친구는 인간이 아니야",
     "shardId": "game_88",
@@ -3386,6 +3821,30 @@
       "ko": "네모바지 스폰지밥: 코스믹 셰이크",
       "en": "SpongeBob SquarePants: The Cosmic Shake",
       "ja": "スポンジ・ボブ:ザ コズミック シェイク"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005357",
+    "title": "네오 봄버맨",
+    "shardId": "game_91",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Neo Bomberman",
+      "neobomberman",
+      "ネオボンバーマン",
+      "ネオ・ボンバーマン",
+      "네오 봄버맨",
+      "네오봄버맨"
+    ],
+    "titles": {
+      "ko": "네오 봄버맨",
+      "en": "Neo Bomberman",
+      "ja": "ネオ・ボンバーマン"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -3953,6 +4412,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005354",
+    "title": "니드 포 스피드 언바운드",
+    "shardId": "game_bd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Need for Speed Unbound",
+      "needforspeedunbound",
+      "ニードフォースピードアンバウンド",
+      "ニード・フォー・スピード アンバウンド",
+      "니드 포 스피드 언바운드",
+      "니드포스피드언바운드"
+    ],
+    "titles": {
+      "ko": "니드 포 스피드 언바운드",
+      "en": "Need for Speed Unbound",
+      "ja": "ニード・フォー・スピード アンバウンド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003302",
     "title": "니디 걸 오버도즈",
     "shardId": "game_8b",
@@ -4210,6 +4693,27 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005984",
+    "title": "다크 앤 다커",
+    "shardId": "game_bf",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dark and Darker",
+      "darkanddarker",
+      "다크 앤 다커",
+      "다크앤다커"
+    ],
+    "titles": {
+      "ko": "다크 앤 다커",
+      "en": "Dark and Darker"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005239",
     "title": "다크 에이지 오브 카멜롯",
     "shardId": "game_1a",
@@ -4233,6 +4737,73 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005630",
+    "title": "다크 콜로니",
+    "shardId": "game_76",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dark Colony",
+      "darkcolony",
+      "다크 콜로니",
+      "다크콜로니"
+    ],
+    "titles": {
+      "ko": "다크 콜로니",
+      "en": "Dark Colony"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006194",
+    "title": "다크 클라우드",
+    "shardId": "game_9a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dark Cloud",
+      "darkcloud",
+      "ダーククラウド",
+      "다크 클라우드",
+      "다크클라우드"
+    ],
+    "titles": {
+      "ko": "다크 클라우드",
+      "en": "Dark Cloud",
+      "ja": "ダーククラウド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006193",
+    "title": "다크 클라우드 2",
+    "shardId": "game_38",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dark Chronicle",
+      "darkchronicle",
+      "ダーククロニクル",
+      "다크 클라우드 2",
+      "다크클라우드2"
+    ],
+    "titles": {
+      "ko": "다크 클라우드 2",
+      "en": "Dark Chronicle",
+      "ja": "ダーククロニクル"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001808",
     "title": "다크랜드",
     "shardId": "game_6e",
@@ -4248,6 +4819,29 @@
     "titles": {
       "ko": "다크랜드",
       "en": "Darklands"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006196",
+    "title": "다크사이더스",
+    "shardId": "game_da",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Darksiders",
+      "darksiders",
+      "ダークサイダーズ 〜審判の時〜",
+      "ダークサイダーズ〜審判の時〜",
+      "다크사이더스"
+    ],
+    "titles": {
+      "ko": "다크사이더스",
+      "en": "Darksiders",
+      "ja": "ダークサイダーズ 〜審判の時〜"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -4349,6 +4943,29 @@
       "ko": "대난투 스매시브라더스 DX",
       "en": "Super Smash Bros. Melee",
       "ja": "大乱闘スマッシュブラザーズDX"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005422",
+    "title": "대마인 아사기",
+    "shardId": "game_8a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Taimanin Asagi",
+      "taimaninasagi",
+      "対魔忍アサギ",
+      "대마인 아사기",
+      "대마인아사기"
+    ],
+    "titles": {
+      "ko": "대마인 아사기",
+      "en": "Taimanin Asagi",
+      "ja": "対魔忍アサギ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -4462,6 +5079,30 @@
       "ko": "대항해시대 외전",
       "en": "Q11233579",
       "ja": "大航海時代外伝"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006276",
+    "title": "댄스 마카브르",
+    "shardId": "game_6d",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q116908875",
+      "q116908875",
+      "ダンスマカブル",
+      "ダンス・マカブル",
+      "댄스 마카브르",
+      "댄스마카브르"
+    ],
+    "titles": {
+      "ko": "댄스 마카브르",
+      "en": "Q116908875",
+      "ja": "ダンス・マカブル"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -4839,6 +5480,29 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005358",
+    "title": "데드 라이징",
+    "shardId": "game_61",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dead Rising",
+      "deadrising",
+      "デッドライジング",
+      "데드 라이징",
+      "데드라이징"
+    ],
+    "titles": {
+      "ko": "데드 라이징",
+      "en": "Dead Rising",
+      "ja": "デッドライジング"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000102",
     "title": "데드 바이 데이라이트",
     "shardId": "game_58",
@@ -4888,6 +5552,97 @@
       "ko": "데드 스페이스",
       "en": "Dead Space",
       "ja": "デッドスペース"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006413",
+    "title": "데드 아일랜드",
+    "shardId": "game_33",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dead Island",
+      "deadisland",
+      "데드 아일랜드",
+      "데드아일랜드"
+    ],
+    "titles": {
+      "ko": "데드 아일랜드",
+      "en": "Dead Island",
+      "ja": "Dead Island"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006274",
+    "title": "데드 오어 얼라이브 5",
+    "shardId": "game_dd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dead or Alive 5",
+      "deadoralive5",
+      "デッド オア アライブ5",
+      "デッドオアアライブ5",
+      "데드 오어 얼라이브 5",
+      "데드오어얼라이브5"
+    ],
+    "titles": {
+      "ko": "데드 오어 얼라이브 5",
+      "en": "Dead or Alive 5",
+      "ja": "デッド オア アライブ5"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005765",
+    "title": "데몬즈 소울",
+    "shardId": "game_55",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Demon's Souls",
+      "demon'ssouls",
+      "데몬즈 소울",
+      "데몬즈소울"
+    ],
+    "titles": {
+      "ko": "데몬즈 소울",
+      "en": "Demon's Souls",
+      "ja": "Demon's Souls"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005973",
+    "title": "데스 스트랜딩 2: 온 더 비치",
+    "shardId": "game_e6",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DEATH STRANDING 2: ON THE BEACH",
+      "Death Stranding 2: On the Beach",
+      "deathstranding2onthebeach",
+      "데스 스트랜딩 2: 온 더 비치",
+      "데스스트랜딩2온더비치"
+    ],
+    "titles": {
+      "ko": "데스 스트랜딩 2: 온 더 비치",
+      "en": "Death Stranding 2: On the Beach",
+      "ja": "DEATH STRANDING 2: ON THE BEACH"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -4972,6 +5727,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005496",
+    "title": "데이브 더 다이버",
+    "shardId": "game_6d",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dave the Diver",
+      "davethediver",
+      "デイヴザダイバー",
+      "デイヴ・ザ・ダイバー",
+      "데이브 더 다이버",
+      "데이브더다이버"
+    ],
+    "titles": {
+      "ko": "데이브 더 다이버",
+      "en": "Dave the Diver",
+      "ja": "デイヴ・ザ・ダイバー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003481",
     "title": "도검난무 무쌍",
     "shardId": "game_8f",
@@ -5019,6 +5798,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005487",
+    "title": "도돈파치 최대왕생",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "DoDonPachi Saidaioujou",
+      "dodonpachisaidaioujou",
+      "怒首領蜂最大往生",
+      "도돈파치 최대왕생",
+      "도돈파치최대왕생"
+    ],
+    "titles": {
+      "ko": "도돈파치 최대왕생",
+      "en": "DoDonPachi Saidaioujou",
+      "ja": "怒首領蜂最大往生"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004523",
     "title": "도라에몽 너와 애완동물의 이야기",
     "shardId": "game_72",
@@ -5038,6 +5840,30 @@
       "ko": "도라에몽 너와 애완동물의 이야기",
       "en": "Doraemon: Kimi to Pet no Monogatari",
       "ja": "ドラえもん きみとペットの物語"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005356",
+    "title": "도라에몽 모두 놀자! 미니도라랜드",
+    "shardId": "game_ed",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Doraemon: Minna de Asobō! Minidorando",
+      "doraemonminnadeasobō!minidorando",
+      "ドラえもん みんなで遊ぼう!ミニドランド",
+      "ドラえもんみんなで遊ぼう!ミニドランド",
+      "도라에몽 모두 놀자! 미니도라랜드",
+      "도라에몽모두놀자!미니도라랜드"
+    ],
+    "titles": {
+      "ko": "도라에몽 모두 놀자! 미니도라랜드",
+      "en": "Doraemon: Minna de Asobō! Minidorando",
+      "ja": "ドラえもん みんなで遊ぼう!ミニドランド"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5201,6 +6027,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005492",
+    "title": "동물 식당",
+    "shardId": "game_a6",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Animal Restaurant",
+      "animalrestaurant",
+      "동물 식당",
+      "동물식당"
+    ],
+    "titles": {
+      "ko": "동물 식당",
+      "en": "Animal Restaurant"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000000284",
     "title": "동방 로스트 워드",
     "shardId": "game_ea",
@@ -5276,6 +6123,30 @@
       "ko": "동방비상천칙 ~ 초대형 기뇰의 수수께끼를 쫓아라",
       "en": "Touhou Hisoutensoku",
       "ja": "東方非想天則 〜 超弩級ギニョルの謎を追え"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006419",
+    "title": "동방수왕원 ~ Unfinished Dream of All Living Ghost.",
+    "shardId": "game_34",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Touhou Juuouen ~ Unfinished Dream of All Living Ghost",
+      "touhoujuuouen~unfinisheddreamofalllivingghost",
+      "東方獣王園 〜 Unfinished Dream of All Living Ghost.",
+      "東方獣王園〜unfinisheddreamofalllivingghost.",
+      "동방수왕원 ~ Unfinished Dream of All Living Ghost.",
+      "동방수왕원~unfinisheddreamofalllivingghost."
+    ],
+    "titles": {
+      "ko": "동방수왕원 ~ Unfinished Dream of All Living Ghost.",
+      "en": "Touhou Juuouen ~ Unfinished Dream of All Living Ghost",
+      "ja": "東方獣王園 〜 Unfinished Dream of All Living Ghost."
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5543,6 +6414,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006207",
+    "title": "두근두근 메모리얼 3: 약속의 그 장소에서",
+    "shardId": "game_60",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tokimeki Memorial 3: Yakusoku no Ano Basho de",
+      "tokimekimemorial3yakusokunoanobashode",
+      "ときめきメモリアル3 〜約束のあの場所で〜",
+      "ときめきメモリアル3〜約束のあの場所で〜",
+      "두근두근 메모리얼 3: 약속의 그 장소에서",
+      "두근두근메모리얼3약속의그장소에서"
+    ],
+    "titles": {
+      "ko": "두근두근 메모리얼 3: 약속의 그 장소에서",
+      "en": "Tokimeki Memorial 3: Yakusoku no Ano Basho de",
+      "ja": "ときめきメモリアル3 〜約束のあの場所で〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003562",
     "title": "두근두근 문예부 플러스!",
     "shardId": "game_06",
@@ -5566,6 +6461,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006131",
+    "title": "두들 점프",
+    "shardId": "game_26",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Doodle Jump",
+      "doodlejump",
+      "두들 점프",
+      "두들점프"
+    ],
+    "titles": {
+      "ko": "두들 점프",
+      "en": "Doodle Jump"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004003",
     "title": "둥지짓는 드래곤",
     "shardId": "game_19",
@@ -5584,6 +6500,27 @@
       "ko": "둥지짓는 드래곤",
       "en": "Suzukuri Dragon",
       "ja": "巣作りドラゴン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005764",
+    "title": "듄 2000",
+    "shardId": "game_96",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dune 2000",
+      "dune2000",
+      "듄 2000",
+      "듄2000"
+    ],
+    "titles": {
+      "ko": "듄 2000",
+      "en": "Dune 2000"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -5722,6 +6659,28 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005761",
+    "title": "드래곤네스트",
+    "shardId": "game_93",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Dragon Nest",
+      "dragonnest",
+      "ドラゴンネスト",
+      "드래곤네스트"
+    ],
+    "titles": {
+      "ko": "드래곤네스트",
+      "en": "Dragon Nest",
+      "ja": "ドラゴンネスト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000003794",
@@ -5901,6 +6860,27 @@
     "titles": {
       "ko": "디 올터스",
       "en": "Q112435027"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005704",
+    "title": "디렉티브 8020",
+    "shardId": "game_d6",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Directive 8020",
+      "directive8020",
+      "디렉티브 8020",
+      "디렉티브8020"
+    ],
+    "titles": {
+      "ko": "디렉티브 8020",
+      "en": "Directive 8020"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -6115,6 +7095,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006420",
+    "title": "디펜더",
+    "shardId": "game_23",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Defender",
+      "defender",
+      "ディフェンダー (ゲーム)",
+      "ディフェンダー(ゲーム)",
+      "디펜더"
+    ],
+    "titles": {
+      "ko": "디펜더",
+      "en": "Defender",
+      "ja": "ディフェンダー (ゲーム)"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005041",
     "title": "딜리버 어스 마스",
     "shardId": "game_6b",
@@ -6219,6 +7222,28 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005631",
+    "title": "라이거",
+    "shardId": "game_6d",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Rygar",
+      "rygar",
+      "アルゴスの戦士",
+      "라이거"
+    ],
+    "titles": {
+      "ko": "라이거",
+      "en": "Rygar",
+      "ja": "アルゴスの戦士"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000713",
@@ -6687,6 +7712,50 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005634",
+    "title": "레이맨 엽기토끼 TV 파티",
+    "shardId": "game_c7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Rayman Raving Rabbids: TV Party",
+      "raymanravingrabbidstvparty",
+      "레이맨 엽기토끼 TV 파티",
+      "레이맨엽기토끼tv파티"
+    ],
+    "titles": {
+      "ko": "레이맨 엽기토끼 TV 파티",
+      "en": "Rayman Raving Rabbids: TV Party"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006201",
+    "title": "레이튼 교수와 증기의 신세계",
+    "shardId": "game_2a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Professor Layton and the New World of Steam",
+      "professorlaytonandthenewworldofsteam",
+      "レイトン教授と蒸気の新世界",
+      "레이튼 교수와 증기의 신세계",
+      "레이튼교수와증기의신세계"
+    ],
+    "titles": {
+      "ko": "레이튼 교수와 증기의 신세계",
+      "en": "Professor Layton and the New World of Steam",
+      "ja": "レイトン教授と蒸気の新世界"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000097",
     "title": "레인보우 식스 시즈",
     "shardId": "game_42",
@@ -6716,6 +7785,30 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005486",
+    "title": "레인보우 식스: 베가스 2",
+    "shardId": "game_46",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tom Clancy's Rainbow Six: Vegas 2",
+      "tomclancy'srainbowsixvegas2",
+      "レインボーシックス ベガス 2",
+      "レインボーシックスベガス2",
+      "레인보우 식스: 베가스 2",
+      "레인보우식스베가스2"
+    ],
+    "titles": {
+      "ko": "레인보우 식스: 베가스 2",
+      "en": "Tom Clancy's Rainbow Six: Vegas 2",
+      "ja": "レインボーシックス ベガス 2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001318",
@@ -6956,6 +8049,28 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000006191",
+    "title": "로코로코",
+    "shardId": "game_9b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "LocoRoco",
+      "locoroco",
+      "ロコロコ",
+      "로코로코"
+    ],
+    "titles": {
+      "ko": "로코로코",
+      "en": "LocoRoco",
+      "ja": "ロコロコ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000498",
@@ -7353,6 +8468,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005832",
+    "title": "리얼리? 리얼리!",
+    "shardId": "game_30",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Really? Really!",
+      "really?really!",
+      "리얼리? 리얼리!",
+      "리얼리?리얼리!"
+    ],
+    "titles": {
+      "ko": "리얼리? 리얼리!",
+      "en": "Really? Really!",
+      "ja": "Really? Really!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000080",
     "title": "리틀 나이트메어",
     "shardId": "game_39",
@@ -7439,6 +8576,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006417",
+    "title": "리틀 키티, 빅 시티",
+    "shardId": "game_5e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Little Kitty, Big City",
+      "littlekitty,bigcity",
+      "리틀 키티, 빅 시티",
+      "리틀키티,빅시티"
+    ],
+    "titles": {
+      "ko": "리틀 키티, 빅 시티",
+      "en": "Little Kitty, Big City"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004898",
     "title": "리프트 오브 더 네크로댄서",
     "shardId": "game_aa",
@@ -7498,6 +8656,29 @@
     "titles": {
       "ko": "릴렌트리스: 트윈센의 모험",
       "en": "Little Big Adventure"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006283",
+    "title": "림버스 컴퍼니",
+    "shardId": "game_a6",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Limbus Company",
+      "limbuscompany",
+      "リンバスカンパニー",
+      "림버스 컴퍼니",
+      "림버스컴퍼니"
+    ],
+    "titles": {
+      "ko": "림버스 컴퍼니",
+      "en": "Limbus Company",
+      "ja": "リンバスカンパニー"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -7579,6 +8760,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006277",
+    "title": "마녀의 샘",
+    "shardId": "game_79",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "WitchSpring",
+      "witchspring",
+      "魔女の泉",
+      "마녀의 샘",
+      "마녀의샘"
+    ],
+    "titles": {
+      "ko": "마녀의 샘",
+      "en": "WitchSpring",
+      "ja": "魔女の泉"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004224",
     "title": "마녀의샘3 Re:Fine　＜인형 마녀 아이루디의 이야기＞",
     "shardId": "game_7f",
@@ -7622,6 +8826,30 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006204",
+    "title": "마도교각 ~어둠의 달여신은 도국에서 노래한다~",
+    "shardId": "game_36",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Madou Koukaku ~Yami no Tsuki Megami wa Doukoku de Utau~",
+      "madoukoukaku~yaminotsukimegamiwadoukokudeutau~",
+      "魔導巧殻 〜闇の月女神は導国で詠う〜",
+      "魔導巧殻〜闇の月女神は導国で詠う〜",
+      "마도교각 ~어둠의 달여신은 도국에서 노래한다~",
+      "마도교각~어둠의달여신은도국에서노래한다~"
+    ],
+    "titles": {
+      "ko": "마도교각 ~어둠의 달여신은 도국에서 노래한다~",
+      "en": "Madou Koukaku ~Yami no Tsuki Megami wa Doukoku de Utau~",
+      "ja": "魔導巧殻 〜闇の月女神は導国で詠う〜"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000002232",
@@ -7742,6 +8970,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005980",
+    "title": "마리오 파워 테니스",
+    "shardId": "game_f2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mario Power Tennis",
+      "mariopowertennis",
+      "マリオテニスGC",
+      "マリオテニスgc",
+      "마리오 파워 테니스",
+      "마리오파워테니스"
+    ],
+    "titles": {
+      "ko": "마리오 파워 테니스",
+      "en": "Mario Power Tennis",
+      "ja": "マリオテニスGC"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002244",
     "title": "마리오 파티 슈퍼스타즈",
     "shardId": "game_b3",
@@ -7832,6 +9084,27 @@
       "ko": "마리오의 슈퍼 피크로스",
       "en": "Mario's Super Picross",
       "ja": "マリオのスーパーピクロス"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006039",
+    "title": "마블 1943: 라이즈 오브 하이드라",
+    "shardId": "game_c0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Marvel 1943: Rise of Hydra",
+      "marvel1943riseofhydra",
+      "마블 1943: 라이즈 오브 하이드라",
+      "마블1943라이즈오브하이드라"
+    ],
+    "titles": {
+      "ko": "마블 1943: 라이즈 오브 하이드라",
+      "en": "Marvel 1943: Rise of Hydra"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -8005,6 +9278,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005908",
+    "title": "마스터 오브 오리온",
+    "shardId": "game_31",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Master of Orion",
+      "masteroforion",
+      "마스터 오브 오리온",
+      "마스터오브오리온"
+    ],
+    "titles": {
+      "ko": "마스터 오브 오리온",
+      "en": "Master of Orion"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000660",
     "title": "마이 심즈 심들의 왕국",
     "shardId": "game_66",
@@ -8092,6 +9386,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006356",
+    "title": "마이트 앤 매직 6",
+    "shardId": "game_b7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Might and Magic VI: The Mandate of Heaven",
+      "mightandmagicvithemandateofheaven",
+      "마이트 앤 매직 6",
+      "마이트앤매직6"
+    ],
+    "titles": {
+      "ko": "마이트 앤 매직 6",
+      "en": "Might and Magic VI: The Mandate of Heaven"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000141",
     "title": "마인크래프트",
     "shardId": "game_69",
@@ -8166,6 +9481,30 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005835",
+    "title": "만져라 메이드 인 와리오",
+    "shardId": "game_fe",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "WarioWare: Touched!",
+      "wariowaretouched!",
+      "さわるメイド イン ワリオ",
+      "さわるメイドインワリオ",
+      "만져라 메이드 인 와리오",
+      "만져라메이드인와리오"
+    ],
+    "titles": {
+      "ko": "만져라 메이드 인 와리오",
+      "en": "WarioWare: Touched!",
+      "ja": "さわるメイド イン ワリオ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001644",
@@ -8247,6 +9586,29 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000006353",
+    "title": "맥스 페인",
+    "shardId": "game_3b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Max Payne",
+      "maxpayne",
+      "マックスペイン",
+      "맥스 페인",
+      "맥스페인"
+    ],
+    "titles": {
+      "ko": "맥스 페인",
+      "en": "Max Payne",
+      "ja": "マックスペイン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000659",
@@ -8486,6 +9848,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005498",
+    "title": "메탈슬러그 컴플리트",
+    "shardId": "game_f4",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Metal Slug Anthology",
+      "metalsluganthology",
+      "메탈슬러그 컴플리트",
+      "메탈슬러그컴플리트"
+    ],
+    "titles": {
+      "ko": "메탈슬러그 컴플리트",
+      "en": "Metal Slug Anthology"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004975",
     "title": "메트로이드 프라임 헌터즈",
     "shardId": "game_fb",
@@ -8669,6 +10052,72 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006347",
+    "title": "모두의마블2: 메타월드",
+    "shardId": "game_69",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Meta World: My City",
+      "metaworldmycity",
+      "모두의마블2: 메타월드",
+      "모두의마블2메타월드"
+    ],
+    "titles": {
+      "ko": "모두의마블2: 메타월드",
+      "en": "Meta World: My City"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005831",
+    "title": "모랑난관",
+    "shardId": "game_25",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11547216",
+      "q11547216",
+      "母娘乱館",
+      "모랑난관"
+    ],
+    "titles": {
+      "ko": "모랑난관",
+      "en": "Q11547216",
+      "ja": "母娘乱館"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000006280",
+    "title": "모퉁이 뜨개방 with 카페",
+    "shardId": "game_1e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Little Corner Tea House",
+      "littlecornerteahouse",
+      "ようこそ！ぬいぐるみカフェ",
+      "모퉁이 뜨개방 with 카페",
+      "모퉁이뜨개방with카페"
+    ],
+    "titles": {
+      "ko": "모퉁이 뜨개방 with 카페",
+      "en": "Little Corner Tea House",
+      "ja": "ようこそ！ぬいぐるみカフェ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000004654",
     "title": "몬스터 열전 오레카 배틀",
     "shardId": "game_6b",
@@ -8723,6 +10172,28 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000006349",
+    "title": "무기미도",
+    "shardId": "game_cb",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Path to Nowhere",
+      "pathtonowhere",
+      "無期迷途",
+      "무기미도"
+    ],
+    "titles": {
+      "ko": "무기미도",
+      "en": "Path to Nowhere",
+      "ja": "無期迷途"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000003291",
@@ -8830,6 +10301,26 @@
     "titles": {
       "ko": "문명: 콜 투 파워",
       "en": "Civilization: Call to Power"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006044",
+    "title": "뮤제닉스",
+    "shardId": "game_fd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q116030507",
+      "q116030507",
+      "뮤제닉스"
+    ],
+    "titles": {
+      "ko": "뮤제닉스",
+      "en": "Q116030507"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -9163,6 +10654,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006197",
+    "title": "바람의 전설 재너두",
+    "shardId": "game_2f",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Legend of Xanadu",
+      "thelegendofxanadu",
+      "風の伝説ザナドゥ",
+      "바람의 전설 재너두",
+      "바람의전설재너두"
+    ],
+    "titles": {
+      "ko": "바람의 전설 재너두",
+      "en": "The Legend of Xanadu",
+      "ja": "風の伝説ザナドゥ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004012",
     "title": "바사라2",
     "shardId": "game_3c",
@@ -9180,6 +10694,30 @@
       "ko": "바사라2",
       "en": "Q11242914",
       "ja": "婆裟羅2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005760",
+    "title": "바이오니클 히어로즈",
+    "shardId": "game_0a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bionicle Heroes",
+      "bionicleheroes",
+      "バイオニクル ヒーローズ",
+      "バイオニクルヒーローズ",
+      "바이오니클 히어로즈",
+      "바이오니클히어로즈"
+    ],
+    "titles": {
+      "ko": "바이오니클 히어로즈",
+      "en": "Bionicle Heroes",
+      "ja": "バイオニクル ヒーローズ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -9241,6 +10779,54 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005705",
+    "title": "바이오하자드 다크사이드 크로니클즈",
+    "shardId": "game_21",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Resident Evil: The Darkside Chronicles",
+      "residentevilthedarksidechronicles",
+      "バイオハザード ダークサイド・クロニクルズ",
+      "バイオハザードダークサイドクロニクルズ",
+      "바이오하자드 다크사이드 크로니클즈",
+      "바이오하자드다크사이드크로니클즈"
+    ],
+    "titles": {
+      "ko": "바이오하자드 다크사이드 크로니클즈",
+      "en": "Resident Evil: The Darkside Chronicles",
+      "ja": "バイオハザード ダークサイド・クロニクルズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005360",
+    "title": "바이오하자드 더 머서너리즈 3D",
+    "shardId": "game_fc",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Resident Evil: The Mercenaries 3D",
+      "residentevilthemercenaries3d",
+      "バイオハザード ザ・マーセナリーズ 3D",
+      "バイオハザードザマーセナリーズ3d",
+      "바이오하자드 더 머서너리즈 3D",
+      "바이오하자드더머서너리즈3d"
+    ],
+    "titles": {
+      "ko": "바이오하자드 더 머서너리즈 3D",
+      "en": "Resident Evil: The Mercenaries 3D",
+      "ja": "バイオハザード ザ・マーセナリーズ 3D"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000004970",
@@ -9730,6 +11316,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006346",
+    "title": "벅스 라이프",
+    "shardId": "game_38",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "A Bug's Life",
+      "abug'slife",
+      "벅스 라이프",
+      "벅스라이프"
+    ],
+    "titles": {
+      "ko": "벅스 라이프",
+      "en": "A Bug's Life"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000561",
     "title": "번아웃 파라다이스",
     "shardId": "game_76",
@@ -9800,6 +11407,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005972",
+    "title": "베요네타 오리진: 세레자와 길을 잃은 악마",
+    "shardId": "game_cf",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bayonetta Origins: Cereza and the Lost Demon",
+      "bayonettaoriginscerezaandthelostdemon",
+      "ベヨネッタ オリジンズ: セレッサと迷子の悪魔",
+      "ベヨネッタオリジンズセレッサと迷子の悪魔",
+      "베요네타 오리진: 세레자와 길을 잃은 악마",
+      "베요네타오리진세레자와길을잃은악마"
+    ],
+    "titles": {
+      "ko": "베요네타 오리진: 세레자와 길을 잃은 악마",
+      "en": "Bayonetta Origins: Cereza and the Lost Demon",
+      "ja": "ベヨネッタ オリジンズ: セレッサと迷子の悪魔"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000720",
     "title": "베이스볼",
     "shardId": "game_d6",
@@ -9817,6 +11448,28 @@
       "ko": "베이스볼",
       "en": "Baseball",
       "ja": "ベースボール"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005907",
+    "title": "베트콩",
+    "shardId": "game_ab",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Vietcong",
+      "vietcong",
+      "ベトコン",
+      "베트콩"
+    ],
+    "titles": {
+      "ko": "베트콩",
+      "en": "Vietcong",
+      "ja": "ベトコン"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -9845,6 +11498,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005565",
+    "title": "벤바",
+    "shardId": "game_58",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Abhijeeth Swaminathan",
+    "tags": [],
+    "searchTokens": [
+      "Abhijeeth Swaminathan",
+      "Venba",
+      "abhijeethswaminathan",
+      "venba",
+      "벤바"
+    ],
+    "titles": {
+      "ko": "벤바",
+      "en": "Venba"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000003290",
     "title": "변덕쟁이 템프테이션",
     "shardId": "game_37",
@@ -9863,6 +11538,53 @@
       "ko": "변덕쟁이 템프테이션",
       "en": "Kimagure Temptation",
       "ja": "きまぐれテンプテーション"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005767",
+    "title": "별의 커비",
+    "shardId": "game_03",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kirby's Dream Land",
+      "kirby'sdreamland",
+      "星のカービィ",
+      "별의 커비",
+      "별의커비"
+    ],
+    "titles": {
+      "ko": "별의 커비",
+      "en": "Kirby's Dream Land",
+      "ja": "星のカービィ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005768",
+    "title": "별의 커비 꿈의 샘 이야기",
+    "shardId": "game_29",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kirby's Adventure",
+      "kirby'sadventure",
+      "星のカービィ 夢の泉の物語",
+      "星のカービィ夢の泉の物語",
+      "별의 커비 꿈의 샘 이야기",
+      "별의커비꿈의샘이야기"
+    ],
+    "titles": {
+      "ko": "별의 커비 꿈의 샘 이야기",
+      "en": "Kirby's Adventure",
+      "ja": "星のカービィ 夢の泉の物語"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -9957,6 +11679,29 @@
       "ko": "보더 브레이크",
       "en": "Border Break",
       "ja": "ボーダーブレイク"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005427",
+    "title": "봉우리 깊은 여울에 맴도는 노래",
+    "shardId": "game_f0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mine Fukaki Se ni Tayutau Uta",
+      "minefukakisenitayutauuta",
+      "峰深き瀬にたゆたう唄",
+      "봉우리 깊은 여울에 맴도는 노래",
+      "봉우리깊은여울에맴도는노래"
+    ],
+    "titles": {
+      "ko": "봉우리 깊은 여울에 맴도는 노래",
+      "en": "Mine Fukaki Se ni Tayutau Uta",
+      "ja": "峰深き瀬にたゆたう唄"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -10104,6 +11849,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005977",
+    "title": "불꽃의 임신 동급생",
+    "shardId": "game_ff",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Honō no Haramase Dōkyūsei",
+      "honōnoharamasedōkyūsei",
+      "炎の孕ませ同級生",
+      "불꽃의 임신 동급생",
+      "불꽃의임신동급생"
+    ],
+    "titles": {
+      "ko": "불꽃의 임신 동급생",
+      "en": "Honō no Haramase Dōkyūsei",
+      "ja": "炎の孕ませ同級生"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004520",
     "title": "불릿필리아들의 암시장 ~ 100th Black Market.",
     "shardId": "game_36",
@@ -10123,6 +11891,54 @@
       "ko": "불릿필리아들의 암시장 ~ 100th Black Market.",
       "en": "Barettofiriatachi no Yami-Ichiba ~ 100th Black Market",
       "ja": "バレットフィリア達の闇市場 〜 100th Black Market."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005976",
+    "title": "불새 봉황편",
+    "shardId": "game_07",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hi no Tori Hououhen",
+      "hinotorihououhen",
+      "火の鳥 鳳凰編 (MSX)",
+      "火の鳥鳳凰編(msx)",
+      "불새 봉황편",
+      "불새봉황편"
+    ],
+    "titles": {
+      "ko": "불새 봉황편",
+      "en": "Hi no Tori Hououhen",
+      "ja": "火の鳥 鳳凰編 (MSX)"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005495",
+    "title": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+    "shardId": "game_37",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2",
+      "moero!nekketsurhythmdamashiiosu!tatakae!ouendan2",
+      "燃えろ!熱血リズム魂 押忍!闘え!応援団2",
+      "燃えろ!熱血リズム魂押忍!闘え!応援団2",
+      "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+      "불타올라라!열혈리듬혼오쓰!싸워라!응원단2"
+    ],
+    "titles": {
+      "ko": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+      "en": "Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2",
+      "ja": "燃えろ!熱血リズム魂 押忍!闘え!応援団2"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -10162,6 +11978,47 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006286",
+    "title": "브램블: 산속의 왕",
+    "shardId": "game_36",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Bramble: The Mountain King",
+      "bramblethemountainking",
+      "브램블: 산속의 왕",
+      "브램블산속의왕"
+    ],
+    "titles": {
+      "ko": "브램블: 산속의 왕",
+      "en": "Bramble: The Mountain King"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005428",
+    "title": "브로테이토",
+    "shardId": "game_15",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Brotato",
+      "brotato",
+      "브로테이토"
+    ],
+    "titles": {
+      "ko": "브로테이토",
+      "en": "Brotato"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001167",
     "title": "브롤",
     "shardId": "game_8a",
@@ -10198,6 +12055,27 @@
     "titles": {
       "ko": "브루스윅 프로 볼링",
       "en": "Brunswick Pro Bowling"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006418",
+    "title": "블라스퍼머스 2",
+    "shardId": "game_08",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Blasphemous 2",
+      "blasphemous2",
+      "블라스퍼머스 2",
+      "블라스퍼머스2"
+    ],
+    "titles": {
+      "ko": "블라스퍼머스 2",
+      "en": "Blasphemous 2"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -10635,6 +12513,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000005490",
+    "title": "사랑은 아니지만",
+    "shardId": "game_90",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11491816",
+      "q11491816",
+      "恋ではなく―― It's not love, but so where near.",
+      "恋ではなく――it'snotlove,butsowherenear.",
+      "사랑은 아니지만",
+      "사랑은아니지만"
+    ],
+    "titles": {
+      "ko": "사랑은 아니지만",
+      "en": "Q11491816",
+      "ja": "恋ではなく―― It's not love, but so where near."
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004446",
     "title": "사이버 사이클즈",
     "shardId": "game_83",
@@ -10710,6 +12612,119 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005426",
+    "title": "사이베리아",
+    "shardId": "game_06",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q1147147",
+      "q1147147",
+      "サイベリア",
+      "사이베리아"
+    ],
+    "titles": {
+      "ko": "사이베리아",
+      "en": "Q1147147",
+      "ja": "サイベリア"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005429",
+    "title": "사일런트 힐 2",
+    "shardId": "game_0a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q114770599",
+      "q114770599",
+      "사일런트 힐 2",
+      "사일런트힐2"
+    ],
+    "titles": {
+      "ko": "사일런트 힐 2",
+      "en": "Q114770599"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005431",
+    "title": "사일런트 힐 f",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q114772020",
+      "q114772020",
+      "サイレントヒルf",
+      "사일런트 힐 f",
+      "사일런트힐f"
+    ],
+    "titles": {
+      "ko": "사일런트 힐 f",
+      "en": "Q114772020",
+      "ja": "サイレントヒルf"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005430",
+    "title": "사일런트 힐: 타운폴",
+    "shardId": "game_08",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q114771189",
+      "q114771189",
+      "サイレントヒル タウンフォール",
+      "サイレントヒルタウンフォール",
+      "사일런트 힐: 타운폴",
+      "사일런트힐타운폴"
+    ],
+    "titles": {
+      "ko": "사일런트 힐: 타운폴",
+      "en": "Q114771189",
+      "ja": "サイレントヒル タウンフォール"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006352",
+    "title": "사쿠라의 각",
+    "shardId": "game_0a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sakura no Toki",
+      "sakuranotoki",
+      "サクラノ刻",
+      "사쿠라의 각",
+      "사쿠라의각"
+    ],
+    "titles": {
+      "ko": "사쿠라의 각",
+      "en": "Sakura no Toki",
+      "ja": "サクラノ刻"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000004447",
@@ -10856,6 +12871,29 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005830",
+    "title": "새하얀 색 심포니",
+    "shardId": "game_22",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mashiroiro Symphony",
+      "mashiroirosymphony",
+      "ましろ色シンフォニー",
+      "새하얀 색 심포니",
+      "새하얀색심포니"
+    ],
+    "titles": {
+      "ko": "새하얀 색 심포니",
+      "en": "Mashiroiro Symphony",
+      "ja": "ましろ色シンフォニー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000003388",
@@ -11074,6 +13112,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006199",
+    "title": "세포신곡",
+    "shardId": "game_65",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Cell of Empireo",
+      "cellofempireo",
+      "細胞神曲",
+      "세포신곡"
+    ],
+    "titles": {
+      "ko": "세포신곡",
+      "en": "Cell of Empireo",
+      "ja": "細胞神曲"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001309",
     "title": "센티피드",
     "shardId": "game_27",
@@ -11197,6 +13257,54 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006350",
+    "title": "소닉 더 헤지혹 살인 사건",
+    "shardId": "game_dd",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Murder of Sonic the Hedgehog",
+      "themurderofsonicthehedgehog",
+      "ソニックザヘッジホッグ殺人事件",
+      "ソニック・ザ・ヘッジホッグ殺人事件",
+      "소닉 더 헤지혹 살인 사건",
+      "소닉더헤지혹살인사건"
+    ],
+    "titles": {
+      "ko": "소닉 더 헤지혹 살인 사건",
+      "en": "The Murder of Sonic the Hedgehog",
+      "ja": "ソニック・ザ・ヘッジホッグ殺人事件"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005558",
+    "title": "소닉 라이더즈: 제로 그래비티",
+    "shardId": "game_95",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sonic Riders: Zero Gravity",
+      "sonicriderszerogravity",
+      "ソニックライダーズ シューティングスターストーリー",
+      "ソニックライダーズシューティングスターストーリー",
+      "소닉 라이더즈: 제로 그래비티",
+      "소닉라이더즈제로그래비티"
+    ],
+    "titles": {
+      "ko": "소닉 라이더즈: 제로 그래비티",
+      "en": "Sonic Riders: Zero Gravity",
+      "ja": "ソニックライダーズ シューティングスターストーリー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001910",
     "title": "소닉 어드벤처",
     "shardId": "game_7c",
@@ -11238,6 +13346,30 @@
       "ko": "소닉 어드벤처 2",
       "en": "Sonic Adventure 2",
       "ja": "ソニックアドベンチャー2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005559",
+    "title": "소닉 언리쉬드",
+    "shardId": "game_1b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sonic Unleashed",
+      "sonicunleashed",
+      "ソニック ワールドアドベンチャー",
+      "ソニックワールドアドベンチャー",
+      "소닉 언리쉬드",
+      "소닉언리쉬드"
+    ],
+    "titles": {
+      "ko": "소닉 언리쉬드",
+      "en": "Sonic Unleashed",
+      "ja": "ソニック ワールドアドベンチャー"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -11538,6 +13670,29 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006200",
+    "title": "술래잡기 (게임)",
+    "shardId": "game_54",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Onigokko!",
+      "onigokko!",
+      "鬼ごっこ!",
+      "술래잡기 (게임)",
+      "술래잡기(게임)"
+    ],
+    "titles": {
+      "ko": "술래잡기 (게임)",
+      "en": "Onigokko!",
+      "ja": "鬼ごっこ!"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000003927",
@@ -11980,6 +14135,51 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005636",
+    "title": "스노우 브라더스",
+    "shardId": "game_20",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Snow Bros.: Nick and Tom",
+      "snowbros.nickandtom",
+      "スノーブラザーズ",
+      "스노우 브라더스",
+      "스노우브라더스"
+    ],
+    "titles": {
+      "ko": "스노우 브라더스",
+      "en": "Snow Bros.: Nick and Tom",
+      "ja": "スノーブラザーズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005633",
+    "title": "스와트 4",
+    "shardId": "game_c0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "SWAT 4",
+      "swat4",
+      "스와트 4",
+      "스와트4"
+    ],
+    "titles": {
+      "ko": "스와트 4",
+      "en": "SWAT 4",
+      "ja": "SWAT 4"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000900",
     "title": "스윙 골프 팡야",
     "shardId": "game_cc",
@@ -12165,6 +14365,27 @@
       "ko": "스쿨데이즈",
       "en": "School Days",
       "ja": "School Days"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006203",
+    "title": "스쿼드 버스터즈",
+    "shardId": "game_31",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Squad Busters",
+      "squadbusters",
+      "스쿼드 버스터즈",
+      "스쿼드버스터즈"
+    ],
+    "titles": {
+      "ko": "스쿼드 버스터즈",
+      "en": "Squad Busters"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -12432,6 +14653,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005420",
+    "title": "스트라이커즈 1945",
+    "shardId": "game_e5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Strikers 1945",
+      "strikers1945",
+      "ストライカーズ1945",
+      "스트라이커즈 1945",
+      "스트라이커즈1945"
+    ],
+    "titles": {
+      "ko": "스트라이커즈 1945",
+      "en": "Strikers 1945",
+      "ja": "ストライカーズ1945"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004768",
     "title": "스트랜디드: 에일리언 던",
     "shardId": "game_23",
@@ -12448,6 +14692,27 @@
     "titles": {
       "ko": "스트랜디드: 에일리언 던",
       "en": "Stranded: Alien Dawn"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006412",
+    "title": "스트레이 갓즈: 더 롤플레잉 뮤지컬",
+    "shardId": "game_e7",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Stray Gods: The Roleplaying Musical",
+      "straygodstheroleplayingmusical",
+      "스트레이 갓즈: 더 롤플레잉 뮤지컬",
+      "스트레이갓즈더롤플레잉뮤지컬"
+    ],
+    "titles": {
+      "ko": "스트레이 갓즈: 더 롤플레잉 뮤지컬",
+      "en": "Stray Gods: The Roleplaying Musical"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -12834,6 +15099,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005629",
+    "title": "시스템 쇼크",
+    "shardId": "game_75",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "System Shock",
+      "systemshock",
+      "시스템 쇼크",
+      "시스템쇼크"
+    ],
+    "titles": {
+      "ko": "시스템 쇼크",
+      "en": "System Shock",
+      "ja": "System Shock"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004449",
     "title": "시크릿 오브 에반게리온",
     "shardId": "game_3a",
@@ -12877,6 +15164,29 @@
       "ko": "시티 라이프",
       "en": "City Life",
       "ja": "シティー ライフ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005706",
+    "title": "시티 커넥션",
+    "shardId": "game_54",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "City Connection",
+      "cityconnection",
+      "シティコネクション",
+      "시티 커넥션",
+      "시티커넥션"
+    ],
+    "titles": {
+      "ko": "시티 커넥션",
+      "en": "City Connection",
+      "ja": "シティコネクション"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -12955,6 +15265,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005560",
+    "title": "신세기 에반게리온 2",
+    "shardId": "game_92",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Neon Genesis Evangelion 2",
+      "neongenesisevangelion2",
+      "新世紀エヴァンゲリオン2",
+      "신세기 에반게리온 2",
+      "신세기에반게리온2"
+    ],
+    "titles": {
+      "ko": "신세기 에반게리온 2",
+      "en": "Neon Genesis Evangelion 2",
+      "ja": "新世紀エヴァンゲリオン2"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001469",
     "title": "신스라이더",
     "shardId": "game_0c",
@@ -12993,6 +15326,28 @@
       "ko": "심타워",
       "en": "SimTower",
       "ja": "ザ・タワー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005425",
+    "title": "심팜",
+    "shardId": "game_81",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "SimFarm",
+      "simfarm",
+      "シムファーム",
+      "심팜"
+    ],
+    "titles": {
+      "ko": "심팜",
+      "en": "SimFarm",
+      "ja": "シムファーム"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13154,6 +15509,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006125",
+    "title": "아득히 우러러본, 아름다운",
+    "shardId": "game_a8",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Haruka ni Aogi, Uruwashi no",
+      "harukaniaogi,uruwashino",
+      "遥かに仰ぎ、麗しの",
+      "아득히 우러러본, 아름다운",
+      "아득히우러러본,아름다운"
+    ],
+    "titles": {
+      "ko": "아득히 우러러본, 아름다운",
+      "en": "Haruka ni Aogi, Uruwashi no",
+      "ja": "遥かに仰ぎ、麗しの"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002324",
     "title": "아랑전설 - 숙명의 싸움",
     "shardId": "game_2a",
@@ -13173,6 +15551,29 @@
       "ko": "아랑전설 - 숙명의 싸움",
       "en": "Fatal Fury: King of Fighters",
       "ja": "餓狼伝説 宿命の闘い"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005702",
+    "title": "아랑전설 2",
+    "shardId": "game_a3",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Fatal Fury 2",
+      "fatalfury2",
+      "餓狼伝説2",
+      "아랑전설 2",
+      "아랑전설2"
+    ],
+    "titles": {
+      "ko": "아랑전설 2",
+      "en": "Fatal Fury 2",
+      "ja": "餓狼伝説2"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13338,6 +15739,50 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006195",
+    "title": "아오오니",
+    "shardId": "game_ce",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ao Oni",
+      "aooni",
+      "青鬼",
+      "아오오니"
+    ],
+    "titles": {
+      "ko": "아오오니",
+      "en": "Ao Oni",
+      "ja": "青鬼"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005351",
+    "title": "아오이토리",
+    "shardId": "game_9a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Aoi Tori",
+      "aoitori",
+      "アオイトリ",
+      "아오이토리"
+    ],
+    "titles": {
+      "ko": "아오이토리",
+      "en": "Aoi Tori",
+      "ja": "アオイトリ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005151",
     "title": "아웃런",
     "shardId": "game_7a",
@@ -13379,6 +15824,30 @@
       "ko": "아이돌마스터 SideM 그로잉 스타즈",
       "en": "The Idolmaster SideM: Growing Stars",
       "ja": "アイドルマスター SideM GROWING STARS"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005901",
+    "title": "아이돌마스터 신데렐라 걸즈",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Idolmaster Cinderella Girls",
+      "theidolmastercinderellagirls",
+      "アイドルマスター シンデレラガールズ",
+      "アイドルマスターシンデレラガールズ",
+      "아이돌마스터 신데렐라 걸즈",
+      "아이돌마스터신데렐라걸즈"
+    ],
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈",
+      "en": "The Idolmaster Cinderella Girls",
+      "ja": "アイドルマスター シンデレラガールズ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13452,6 +15921,26 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005909",
+    "title": "아이러브커피",
+    "shardId": "game_5a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "I Love Coffee",
+      "ilovecoffee",
+      "아이러브커피"
+    ],
+    "titles": {
+      "ko": "아이러브커피",
+      "en": "I Love Coffee"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000004158",
@@ -13706,6 +16195,27 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006348",
+    "title": "아토믹 하트 2",
+    "shardId": "game_49",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q117289636",
+      "q117289636",
+      "아토믹 하트 2",
+      "아토믹하트2"
+    ],
+    "titles": {
+      "ko": "아토믹 하트 2",
+      "en": "Q117289636"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000004769",
     "title": "아틀라스 폴른",
     "shardId": "game_7c",
@@ -13773,6 +16283,47 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000006051",
+    "title": "애니멀 웰",
+    "shardId": "game_b0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Animal Well",
+      "animalwell",
+      "애니멀 웰",
+      "애니멀웰"
+    ],
+    "titles": {
+      "ko": "애니멀 웰",
+      "en": "Animal Well"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005910",
+    "title": "애니팡",
+    "shardId": "game_90",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Any pang",
+      "anypang",
+      "애니팡"
+    ],
+    "titles": {
+      "ko": "애니팡",
+      "en": "Any pang"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002640",
     "title": "앨런 웨이크 2",
     "shardId": "game_ee",
@@ -13797,6 +16348,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006282",
+    "title": "앨빈과 슈퍼밴드",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Alvin and the Chipmunks",
+      "alvinandthechipmunks",
+      "アルビン/歌うシマリス3兄弟",
+      "アルビン歌うシマリス3兄弟",
+      "앨빈과 슈퍼밴드",
+      "앨빈과슈퍼밴드"
+    ],
+    "titles": {
+      "ko": "앨빈과 슈퍼밴드",
+      "en": "Alvin and the Chipmunks",
+      "ja": "アルビン/歌うシマリス3兄弟"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001110",
     "title": "앵그리버드 리오",
     "shardId": "game_58",
@@ -13813,6 +16388,29 @@
     "titles": {
       "ko": "앵그리버드 리오",
       "en": "Q1050143"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006128",
+    "title": "양다리 연애",
+    "shardId": "game_68",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Futamata Ren'ai: Two Times the Trouble",
+      "futamataren'aitwotimesthetrouble",
+      "フタマタ恋愛",
+      "양다리 연애",
+      "양다리연애"
+    ],
+    "titles": {
+      "ko": "양다리 연애",
+      "en": "Futamata Ren'ai: Two Times the Trouble",
+      "ja": "フタマタ恋愛"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13863,6 +16461,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006130",
+    "title": "어번 테러",
+    "shardId": "game_54",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Urban Terror",
+      "urbanterror",
+      "어번 테러",
+      "어번테러"
+    ],
+    "titles": {
+      "ko": "어번 테러",
+      "en": "Urban Terror",
+      "ja": "Urban Terror"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004831",
     "title": "어쌔신 크리드 미라지",
     "shardId": "game_be",
@@ -13882,6 +16502,30 @@
       "ko": "어쌔신 크리드 미라지",
       "en": "Assassin's Creed Mirage",
       "ja": "アサシン クリード ミラージュ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006357",
+    "title": "어쌔신 크리드 섀도우스",
+    "shardId": "game_a8",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q117716202",
+      "q117716202",
+      "アサシン クリード シャドウズ",
+      "アサシンクリードシャドウズ",
+      "어쌔신 크리드 섀도우스",
+      "어쌔신크리드섀도우스"
+    ],
+    "titles": {
+      "ko": "어쌔신 크리드 섀도우스",
+      "en": "Q117716202",
+      "ja": "アサシン クリード シャドウズ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13992,6 +16636,30 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005978",
+    "title": "언차티드: 새로운 모험의 시작",
+    "shardId": "game_a8",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Uncharted: Golden Abyss",
+      "unchartedgoldenabyss",
+      "アンチャーテッド 地図なき冒険の始まり",
+      "アンチャーテッド地図なき冒険の始まり",
+      "언차티드: 새로운 모험의 시작",
+      "언차티드새로운모험의시작"
+    ],
+    "titles": {
+      "ko": "언차티드: 새로운 모험의 시작",
+      "en": "Uncharted: Golden Abyss",
+      "ja": "アンチャーテッド 地図なき冒険の始まり"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001116",
@@ -14657,6 +17325,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000005979",
+    "title": "열혈경파 쿠니오군 스페셜",
+    "shardId": "game_ff",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11569162",
+      "q11569162",
+      "熱血硬派くにおくん すぺしゃる",
+      "熱血硬派くにおくんすぺしゃる",
+      "열혈경파 쿠니오군 스페셜",
+      "열혈경파쿠니오군스페셜"
+    ],
+    "titles": {
+      "ko": "열혈경파 쿠니오군 스페셜",
+      "en": "Q11569162",
+      "ja": "熱血硬派くにおくん すぺしゃる"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001471",
     "title": "열혈고교 피구부",
     "shardId": "game_7d",
@@ -14675,6 +17367,53 @@
       "ko": "열혈고교 피구부",
       "en": "Super Dodge Ball",
       "ja": "熱血高校ドッジボール部"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005361",
+    "title": "열혈고교 피구부 축구편",
+    "shardId": "game_99",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Nintendo World Cup",
+      "nintendoworldcup",
+      "熱血高校ドッジボール部 サッカー編",
+      "熱血高校ドッジボール部サッカー編",
+      "열혈고교 피구부 축구편",
+      "열혈고교피구부축구편"
+    ],
+    "titles": {
+      "ko": "열혈고교 피구부 축구편",
+      "en": "Nintendo World Cup",
+      "ja": "熱血高校ドッジボール部 サッカー編"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006053",
+    "title": "영국탐정 미스테리아",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "London Detective Mysteria",
+      "londondetectivemysteria",
+      "英国探偵ミステリア",
+      "영국탐정 미스테리아",
+      "영국탐정미스테리아"
+    ],
+    "titles": {
+      "ko": "영국탐정 미스테리아",
+      "en": "London Detective Mysteria",
+      "ja": "英国探偵ミステリア"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -15182,6 +17921,77 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006205",
+    "title": "용과 같이 1&2 HD EDITION",
+    "shardId": "game_3b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11679165",
+      "q11679165",
+      "龍が如く1&2 HD EDITION",
+      "龍が如く1&2hdedition",
+      "용과 같이 1&2 HD EDITION",
+      "용과같이1&2hdedition"
+    ],
+    "titles": {
+      "ko": "용과 같이 1&2 HD EDITION",
+      "en": "Q11679165",
+      "ja": "龍が如く1&2 HD EDITION"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006285",
+    "title": "용과 같이 7 외전",
+    "shardId": "game_cf",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Like a Dragon Gaiden: The Man Who Erased His Name",
+      "likeadragongaidenthemanwhoerasedhisname",
+      "龍が如く7外伝 名を消した男",
+      "龍が如く7外伝名を消した男",
+      "용과 같이 7 외전",
+      "용과같이7외전"
+    ],
+    "titles": {
+      "ko": "용과 같이 7 외전",
+      "en": "Like a Dragon Gaiden: The Man Who Erased His Name",
+      "ja": "龍が如く7外伝 名を消した男"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006284",
+    "title": "용과 같이 8",
+    "shardId": "game_a0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Like a Dragon: Infinite Wealth",
+      "likeadragoninfinitewealth",
+      "龍が如く8",
+      "용과 같이 8",
+      "용과같이8"
+    ],
+    "titles": {
+      "ko": "용과 같이 8",
+      "en": "Like a Dragon: Infinite Wealth",
+      "ja": "龍が如く8"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001373",
     "title": "용호의 권 2",
     "shardId": "game_aa",
@@ -15443,6 +18253,27 @@
       "ko": "원숭이 섬의 저주",
       "en": "The Curse of Monkey Island",
       "ja": "モンキーアイランド3"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006129",
+    "title": "원숭이 섬의 탈출",
+    "shardId": "game_d5",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Escape from Monkey Island",
+      "escapefrommonkeyisland",
+      "원숭이 섬의 탈출",
+      "원숭이섬의탈출"
+    ],
+    "titles": {
+      "ko": "원숭이 섬의 탈출",
+      "en": "Escape from Monkey Island"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -15732,6 +18563,54 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006124",
+    "title": "유희왕 온라인",
+    "shardId": "game_82",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Yu-Gi-Oh! Online Duel Evolution",
+      "yugioh!onlineduelevolution",
+      "遊☆戯☆王ONLINE",
+      "遊☆戯☆王online",
+      "유희왕 온라인",
+      "유희왕온라인"
+    ],
+    "titles": {
+      "ko": "유희왕 온라인",
+      "en": "Yu-Gi-Oh! Online Duel Evolution",
+      "ja": "遊☆戯☆王ONLINE"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000006121",
+    "title": "은의 시간의 코로나",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kikōyoku Senki: Gin no Toki no Corona",
+      "kikōyokusenkiginnotokinocorona",
+      "輝光翼戦記 銀の刻のコロナ",
+      "輝光翼戦記銀の刻のコロナ",
+      "은의 시간의 코로나",
+      "은의시간의코로나"
+    ],
+    "titles": {
+      "ko": "은의 시간의 코로나",
+      "en": "Kikōyoku Senki: Gin no Toki no Corona",
+      "ja": "輝光翼戦記 銀の刻のコロナ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002977",
     "title": "이 넓은 하늘에, 날개를 펼치고",
     "shardId": "game_91",
@@ -15888,6 +18767,30 @@
       "ko": "이스 I: 에인션트 이스 배니시드",
       "en": "Ys I: Ancient Ys Vanished",
       "ja": "イースI"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005983",
+    "title": "이스 X: 노딕스",
+    "shardId": "game_17",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ys X: Nordics",
+      "ysxnordics",
+      "イースX",
+      "イースx",
+      "이스 X: 노딕스",
+      "이스x노딕스"
+    ],
+    "titles": {
+      "ko": "이스 X: 노딕스",
+      "en": "Ys X: Nordics",
+      "ja": "イースX"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -16051,6 +18954,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006045",
+    "title": "일곱 성인의 소환",
+    "shardId": "game_77",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Genius Invokation TCG",
+      "geniusinvokationtcg",
+      "七聖召喚",
+      "일곱 성인의 소환",
+      "일곱성인의소환"
+    ],
+    "titles": {
+      "ko": "일곱 성인의 소환",
+      "en": "Genius Invokation TCG",
+      "ja": "七聖召喚"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004225",
     "title": "일랜시아",
     "shardId": "game_2b",
@@ -16140,6 +19066,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005759",
+    "title": "전국 바사라",
+    "shardId": "game_57",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Devil Kings",
+      "devilkings",
+      "戦国BASARA",
+      "戦国basara",
+      "전국 바사라",
+      "전국바사라"
+    ],
+    "titles": {
+      "ko": "전국 바사라",
+      "en": "Devil Kings",
+      "ja": "戦国BASARA"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001464",
     "title": "전국무쌍 5",
     "shardId": "game_da",
@@ -16209,6 +19159,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005494",
+    "title": "전여신 2 ~잃어버린 기억으로의 진혼가~",
+    "shardId": "game_f0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Ikusa Megami 2 ~Ushinawareshi Kioku e no Chinkonka~",
+      "ikusamegami2~ushinawareshikiokuenochinkonka~",
+      "戦女神2 〜失われし記憶への鎮魂歌〜",
+      "戦女神2〜失われし記憶への鎮魂歌〜",
+      "전여신 2 ~잃어버린 기억으로의 진혼가~",
+      "전여신2~잃어버린기억으로의진혼가~"
+    ],
+    "titles": {
+      "ko": "전여신 2 ~잃어버린 기억으로의 진혼가~",
+      "en": "Ikusa Megami 2 ~Ushinawareshi Kioku e no Chinkonka~",
+      "ja": "戦女神2 〜失われし記憶への鎮魂歌〜"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000003380",
     "title": "전여신 VERITA",
     "shardId": "game_0c",
@@ -16231,6 +19205,53 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005493",
+    "title": "전여신 ZERO",
+    "shardId": "game_28",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sen megami ZERO",
+      "senmegamizero",
+      "戦女神ZERO",
+      "戦女神zero",
+      "전여신 ZERO",
+      "전여신zero"
+    ],
+    "titles": {
+      "ko": "전여신 ZERO",
+      "en": "Sen megami ZERO",
+      "ja": "戦女神ZERO"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000005769",
+    "title": "전장의 발큐리아",
+    "shardId": "game_96",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Valkyria Chronicles",
+      "valkyriachronicles",
+      "戦場のヴァルキュリア",
+      "전장의 발큐리아",
+      "전장의발큐리아"
+    ],
+    "titles": {
+      "ko": "전장의 발큐리아",
+      "en": "Valkyria Chronicles",
+      "ja": "戦場のヴァルキュリア"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000003722",
@@ -16514,6 +19535,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006049",
+    "title": "종말의 하늘",
+    "shardId": "game_5a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tsui no Sora",
+      "tsuinosora",
+      "終ノ空",
+      "종말의 하늘",
+      "종말의하늘"
+    ],
+    "titles": {
+      "ko": "종말의 하늘",
+      "en": "Tsui no Sora",
+      "ja": "終ノ空"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002242",
     "title": "쥬라기 월드 에볼루션 2",
     "shardId": "game_35",
@@ -16583,6 +19627,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006040",
+    "title": "진 연희무쌍",
+    "shardId": "game_9b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Shin Koihime Musō",
+      "shinkoihimemusō",
+      "真・恋姫†無双 〜乙女繚乱☆三国志演義〜",
+      "真恋姫†無双〜乙女繚乱☆三国志演義〜",
+      "진 연희무쌍",
+      "진연희무쌍"
+    ],
+    "titles": {
+      "ko": "진 연희무쌍",
+      "en": "Shin Koihime Musō",
+      "ja": "真・恋姫†無双 〜乙女繚乱☆三国志演義〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000503",
     "title": "진심으로 날 사랑해라!",
     "shardId": "game_1a",
@@ -16601,6 +19669,49 @@
       "ko": "진심으로 날 사랑해라!",
       "en": "Majikoi! Love Me Seriously!",
       "ja": "真剣で私に恋しなさい!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005902",
+    "title": "질러넷",
+    "shardId": "game_fb",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "ZillerNet",
+      "zillernet",
+      "질러넷"
+    ],
+    "titles": {
+      "ko": "질러넷",
+      "en": "ZillerNet"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005982",
+    "title": "짝사랑의 달",
+    "shardId": "game_72",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Katakoi no Tsuki",
+      "katakoinotsuki",
+      "片恋いの月",
+      "짝사랑의 달",
+      "짝사랑의달"
+    ],
+    "titles": {
+      "ko": "짝사랑의 달",
+      "en": "Katakoi no Tsuki",
+      "ja": "片恋いの月"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -16699,6 +19810,29 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006117",
+    "title": "창천의 저편",
+    "shardId": "game_aa",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Souten no Kanata",
+      "soutennokanata",
+      "蒼天の彼方",
+      "창천의 저편",
+      "창천의저편"
+    ],
+    "titles": {
+      "ko": "창천의 저편",
+      "en": "Souten no Kanata",
+      "ja": "蒼天の彼方"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000657",
@@ -16837,6 +19971,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005763",
+    "title": "철권 카드 챌린지",
+    "shardId": "game_31",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tekken Card Challenge",
+      "tekkencardchallenge",
+      "철권 카드 챌린지",
+      "철권카드챌린지"
+    ],
+    "titles": {
+      "ko": "철권 카드 챌린지",
+      "en": "Tekken Card Challenge"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005229",
     "title": "철권 태그 토너먼트",
     "shardId": "game_cb",
@@ -16902,6 +20057,30 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006120",
+    "title": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+    "shardId": "game_92",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11636211",
+      "q11636211",
+      "超劇場版ケロロ軍曹3 天空大冒険であります!",
+      "超劇場版ケロロ軍曹3天空大冒険であります!",
+      "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+      "초극장판개구리중사케로로더무비천공대모험"
+    ],
+    "titles": {
+      "ko": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+      "en": "Q11636211",
+      "ja": "超劇場版ケロロ軍曹3 天空大冒険であります!"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000005043",
@@ -17028,6 +20207,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000005974",
+    "title": "추-추 찰스",
+    "shardId": "game_d4",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Choo-Choo Charles",
+      "choochoocharles",
+      "チューチューチャールズ",
+      "チューチュー・チャールズ",
+      "추-추 찰스",
+      "추추찰스"
+    ],
+    "titles": {
+      "ko": "추-추 찰스",
+      "en": "Choo-Choo Charles",
+      "ja": "チューチュー・チャールズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002410",
     "title": "춤춰라 메이드 인 와리오",
     "shardId": "game_27",
@@ -17047,6 +20250,52 @@
       "ko": "춤춰라 메이드 인 와리오",
       "en": "WarioWare: Smooth Moves",
       "ja": "おどる メイド イン ワリオ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005355",
+    "title": "츠마시보리",
+    "shardId": "game_7a",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11447161",
+      "q11447161",
+      "妻しぼり",
+      "츠마시보리"
+    ],
+    "titles": {
+      "ko": "츠마시보리",
+      "en": "Q11447161",
+      "ja": "妻しぼり"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000006206",
+    "title": "치킨 리틀",
+    "shardId": "game_43",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chicken Little",
+      "chickenlittle",
+      "チキンリトル",
+      "チキン・リトル",
+      "치킨 리틀",
+      "치킨리틀"
+    ],
+    "titles": {
+      "ko": "치킨 리틀",
+      "en": "Chicken Little",
+      "ja": "チキン・リトル"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -17073,6 +20322,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006041",
+    "title": "카미도리 알케미 마이스터",
+    "shardId": "game_fb",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kami-dori Alchemy Meister",
+      "kamidorialchemymeister",
+      "神採りアルケミーマイスター",
+      "카미도리 알케미 마이스터",
+      "카미도리알케미마이스터"
+    ],
+    "titles": {
+      "ko": "카미도리 알케미 마이스터",
+      "en": "Kami-dori Alchemy Meister",
+      "ja": "神採りアルケミーマイスター"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004367",
     "title": "카브 누아르",
     "shardId": "game_39",
@@ -17091,6 +20363,27 @@
       "ko": "카브 누아르",
       "en": "Cave Noire",
       "ja": "カーブノア"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006414",
+    "title": "카세트 비스트",
+    "shardId": "game_ea",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Cassette Beasts",
+      "cassettebeasts",
+      "카세트 비스트",
+      "카세트비스트"
+    ],
+    "titles": {
+      "ko": "카세트 비스트",
+      "en": "Cassette Beasts"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -17261,6 +20554,50 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005424",
+    "title": "커스터의 복수",
+    "shardId": "game_11",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Custer's Revenge",
+      "custer'srevenge",
+      "カスターの逆襲",
+      "커스터의 복수",
+      "커스터의복수"
+    ],
+    "titles": {
+      "ko": "커스터의 복수",
+      "en": "Custer's Revenge",
+      "ja": "カスターの逆襲"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006281",
+    "title": "컨트롤 레조넌트",
+    "shardId": "game_88",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q116947317",
+      "q116947317",
+      "컨트롤 레조넌트",
+      "컨트롤레조넌트"
+    ],
+    "titles": {
+      "ko": "컨트롤 레조넌트",
+      "en": "Q116947317"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002559",
     "title": "컬트 오브 더 램",
     "shardId": "game_77",
@@ -17400,6 +20737,27 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006198",
+    "title": "케이팝 댄스 페스티벌",
+    "shardId": "game_eb",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "K-pop Dance Festival",
+      "kpopdancefestival",
+      "케이팝 댄스 페스티벌",
+      "케이팝댄스페스티벌"
+    ],
+    "titles": {
+      "ko": "케이팝 댄스 페스티벌",
+      "en": "K-pop Dance Festival"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004448",
     "title": "케인 앤 린치: 데드맨",
     "shardId": "game_e5",
@@ -17469,6 +20827,28 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005491",
+    "title": "코이소라",
+    "shardId": "game_9b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Koiiro Soramoyou",
+      "koiirosoramoyou",
+      "恋色空模様",
+      "코이소라"
+    ],
+    "titles": {
+      "ko": "코이소라",
+      "en": "Koiiro Soramoyou",
+      "ja": "恋色空模様"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000001268",
@@ -17942,6 +21322,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006416",
+    "title": "크로노 오디세이",
+    "shardId": "game_23",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Chrono Odyssey",
+      "chronoodyssey",
+      "크로노 오디세이",
+      "크로노오디세이"
+    ],
+    "titles": {
+      "ko": "크로노 오디세이",
+      "en": "Chrono Odyssey"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000002922",
     "title": "크로노 크로스",
     "shardId": "game_41",
@@ -18377,6 +21778,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005695",
+    "title": "타이리안 2000",
+    "shardId": "game_f4",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tyrian",
+      "tyrian",
+      "타이리안 2000",
+      "타이리안2000"
+    ],
+    "titles": {
+      "ko": "타이리안 2000",
+      "en": "Tyrian"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000004519",
     "title": "타이타닉 미스터리 푸른 전율",
     "shardId": "game_be",
@@ -18395,6 +21817,29 @@
       "ko": "타이타닉 미스터리 푸른 전율",
       "en": "Titanic Mystery: Ao no Senritsu",
       "ja": "タイタニックミステリー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005563",
+    "title": "타임 파일럿",
+    "shardId": "game_0f",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Time Pilot",
+      "timepilot",
+      "タイムパイロット",
+      "타임 파일럿",
+      "타임파일럿"
+    ],
+    "titles": {
+      "ko": "타임 파일럿",
+      "en": "Time Pilot",
+      "ja": "タイムパイロット"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -19106,6 +22551,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005911",
+    "title": "트로피코 4",
+    "shardId": "game_f9",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tropico 4",
+      "tropico4",
+      "트로피코 4",
+      "트로피코4"
+    ],
+    "titles": {
+      "ko": "트로피코 4",
+      "en": "Tropico 4"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005095",
     "title": "트롬본 챔프",
     "shardId": "game_a9",
@@ -19170,6 +22636,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005904",
+    "title": "틱! 택!",
+    "shardId": "game_7b",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tick! Tack!",
+      "tick!tack!",
+      "틱! 택!",
+      "틱!택!"
+    ],
+    "titles": {
+      "ko": "틱! 택!",
+      "en": "Tick! Tack!",
+      "ja": "Tick! Tack!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000109",
     "title": "팀 포트리스 2",
     "shardId": "game_76",
@@ -19219,6 +22707,30 @@
       "ko": "파 어웨이",
       "en": "Far Away",
       "ja": "彼方へ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000006351",
+    "title": "파라노마사이트: 혼조의 7가지 미스터리",
+    "shardId": "game_49",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Paranormasight: The Seven Mysteries of Honjo",
+      "paranormasightthesevenmysteriesofhonjo",
+      "パラノマサイト FILE23 本所七不思議",
+      "パラノマサイトfile23本所七不思議",
+      "파라노마사이트: 혼조의 7가지 미스터리",
+      "파라노마사이트혼조의7가지미스터리"
+    ],
+    "titles": {
+      "ko": "파라노마사이트: 혼조의 7가지 미스터리",
+      "en": "Paranormasight: The Seven Mysteries of Honjo",
+      "ja": "パラノマサイト FILE23 本所七不思議"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -19935,6 +23447,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006411",
+    "title": "페르소나 5: 더 팬텀 X",
+    "shardId": "game_7e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Persona 5: The Phantom X",
+      "persona5thephantomx",
+      "ペルソナ５: The Phantom X",
+      "ペルソナ５thephantomx",
+      "페르소나 5: 더 팬텀 X",
+      "페르소나5더팬텀x"
+    ],
+    "titles": {
+      "ko": "페르소나 5: 더 팬텀 X",
+      "en": "Persona 5: The Phantom X",
+      "ja": "ペルソナ５: The Phantom X"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001742",
     "title": "페르시아의 왕자 3D",
     "shardId": "game_3e",
@@ -19979,6 +23515,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006287",
+    "title": "페어리랜드 스토리",
+    "shardId": "game_6c",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "The Fairyland Story",
+      "thefairylandstory",
+      "フェアリーランドストーリー",
+      "페어리랜드 스토리",
+      "페어리랜드스토리"
+    ],
+    "titles": {
+      "ko": "페어리랜드 스토리",
+      "en": "The Fairyland Story",
+      "ja": "フェアリーランドストーリー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000269",
     "title": "페이트/그랜드 오더",
     "shardId": "game_53",
@@ -20010,6 +23569,28 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000005635",
+    "title": "페이트/할로우 아타락시아",
+    "shardId": "game_25",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Fate/hollow ataraxia",
+      "fatehollowataraxia",
+      "페이트/할로우 아타락시아",
+      "페이트할로우아타락시아"
+    ],
+    "titles": {
+      "ko": "페이트/할로우 아타락시아",
+      "en": "Fate/hollow ataraxia",
+      "ja": "Fate/hollow ataraxia"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000002464",
@@ -20247,6 +23828,30 @@
       "ko": "포켓몬스터 샤이닝 펄",
       "en": "Pokémon Shining Pearl",
       "ja": "ポケットモンスター シャイニングパール"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005828",
+    "title": "포켓몬스터Pt 기라티나",
+    "shardId": "game_17",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pokémon Platinum",
+      "pokémonplatinum",
+      "ポケットモンスター プラチナ",
+      "ポケットモンスタープラチナ",
+      "포켓몬스터Pt 기라티나",
+      "포켓몬스터pt기라티나"
+    ],
+    "titles": {
+      "ko": "포켓몬스터Pt 기라티나",
+      "en": "Pokémon Platinum",
+      "ja": "ポケットモンスター プラチナ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -20926,6 +24531,27 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006123",
+    "title": "플라이트기어",
+    "shardId": "game_0e",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "FlightGear",
+      "flightgear",
+      "플라이트기어"
+    ],
+    "titles": {
+      "ko": "플라이트기어",
+      "en": "FlightGear",
+      "ja": "FlightGear"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002237",
     "title": "플래그 테일: 레퀴엠",
     "shardId": "game_a8",
@@ -21081,6 +24707,28 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000006192",
+    "title": "피자 타워",
+    "shardId": "game_88",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Pizza Tower",
+      "pizzatower",
+      "피자 타워",
+      "피자타워"
+    ],
+    "titles": {
+      "ko": "피자 타워",
+      "en": "Pizza Tower",
+      "ja": "Pizza Tower"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005037",
     "title": "피크민 4",
     "shardId": "game_e3",
@@ -21168,6 +24816,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005766",
+    "title": "하늘의 색, 물의 색",
+    "shardId": "game_39",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Sora no Iro, Mizu no Iro",
+      "soranoiro,mizunoiro",
+      "そらのいろ、みずのいろ",
+      "하늘의 색, 물의 색",
+      "하늘의색,물의색"
+    ],
+    "titles": {
+      "ko": "하늘의 색, 물의 색",
+      "en": "Sora no Iro, Mizu no Iro",
+      "ja": "そらのいろ、みずのいろ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000034",
     "title": "하데스",
     "shardId": "game_16",
@@ -21244,6 +24915,29 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000006038",
+    "title": "하야쿠 모노가타리",
+    "shardId": "game_70",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hyaku Monogatari: Honto ni Atta Kowai Hanashi",
+      "hyakumonogatarihontoniattakowaihanashi",
+      "百物語〜ほんとにあった怖い話〜",
+      "하야쿠 모노가타리",
+      "하야쿠모노가타리"
+    ],
+    "titles": {
+      "ko": "하야쿠 모노가타리",
+      "en": "Hyaku Monogatari: Honto ni Atta Kowai Hanashi",
+      "ja": "百物語〜ほんとにあった怖い話〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005096",
     "title": "하야쿠 모노가타리 2",
     "shardId": "game_7f",
@@ -21263,6 +24957,52 @@
       "ko": "하야쿠 모노가타리 2",
       "en": "Koden Kōreijutsu: Hyaku Monogatari - Honto ni Atta Kowai Hanashi",
       "ja": "古伝降霊術 百物語〜ほんとにあった怖い話〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005906",
+    "title": "하원기가의 일족",
+    "shardId": "game_b1",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Kawarazaki-ke no Ichizoku",
+      "kawarazakikenoichizoku",
+      "河原崎家の一族",
+      "하원기가의 일족",
+      "하원기가의일족"
+    ],
+    "titles": {
+      "ko": "하원기가의 일족",
+      "en": "Kawarazaki-ke no Ichizoku",
+      "ja": "河原崎家の一族"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000006127",
+    "title": "하이-파이 러시",
+    "shardId": "game_af",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Hi-Fi RUSH",
+      "Hi-Fi Rush",
+      "hifirush",
+      "하이-파이 러시",
+      "하이파이러시"
+    ],
+    "titles": {
+      "ko": "하이-파이 러시",
+      "en": "Hi-Fi Rush",
+      "ja": "Hi-Fi RUSH"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -21444,6 +25184,28 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006050",
+    "title": "항봉무녀",
+    "shardId": "game_19",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11611459",
+      "q11611459",
+      "肛奉巫女",
+      "항봉무녀"
+    ],
+    "titles": {
+      "ko": "항봉무녀",
+      "en": "Q11611459",
+      "ja": "肛奉巫女"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002974",
     "title": "해리포터: 깨어난 마법",
     "shardId": "game_55",
@@ -21510,6 +25272,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000005432",
+    "title": "헤이세이 신 오니가시마",
+    "shardId": "game_91",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Heisei Shin Onigashima",
+      "heiseishinonigashima",
+      "平成 新・鬼ヶ島",
+      "平成新鬼ヶ島",
+      "헤이세이 신 오니가시마",
+      "헤이세이신오니가시마"
+    ],
+    "titles": {
+      "ko": "헤이세이 신 오니가시마",
+      "en": "Heisei Shin Onigashima",
+      "ja": "平成 新・鬼ヶ島"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003211",
     "title": "헨타이 프리즌",
     "shardId": "game_c3",
@@ -21552,6 +25338,27 @@
       "ko": "헬로, 굿바이",
       "en": "Hello, Good-bye",
       "ja": "Hello,good-bye"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005903",
+    "title": "혜성의 그림자",
+    "shardId": "game_d2",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Shadow of the Comet",
+      "shadowofthecomet",
+      "혜성의 그림자",
+      "혜성의그림자"
+    ],
+    "titles": {
+      "ko": "혜성의 그림자",
+      "en": "Shadow of the Comet"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -21671,6 +25478,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000006118",
+    "title": "호표기",
+    "shardId": "game_56",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Tiger Knight: Empire War",
+      "tigerknightempirewar",
+      "虎豹騎",
+      "호표기"
+    ],
+    "titles": {
+      "ko": "호표기",
+      "en": "Tiger Knight: Empire War",
+      "ja": "虎豹騎"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000098",
     "title": "홀로우 나이트",
     "shardId": "game_59",
@@ -21747,6 +25576,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000006046",
+    "title": "홍련화",
+    "shardId": "game_35",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Q11605294",
+      "q11605294",
+      "紅蓮華 -ぐれんか-",
+      "紅蓮華ぐれんか",
+      "홍련화"
+    ],
+    "titles": {
+      "ko": "홍련화",
+      "en": "Q11605294",
+      "ja": "紅蓮華 -ぐれんか-"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000005101",
     "title": "화이트 앨범",
     "shardId": "game_10",
@@ -21768,6 +25620,29 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000005485",
+    "title": "환린의 희장군",
+    "shardId": "game_24",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Genrin no kishōgun",
+      "genrinnokishōgun",
+      "幻燐の姫将軍",
+      "환린의 희장군",
+      "환린의희장군"
+    ],
+    "titles": {
+      "ko": "환린의 희장군",
+      "en": "Genrin no kishōgun",
+      "ja": "幻燐の姫将軍"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000003298",

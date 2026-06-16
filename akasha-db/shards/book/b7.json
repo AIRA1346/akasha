@@ -94,5 +94,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006288": {
+    "workId": "wk_000006288",
+    "title": "레드브레스트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1108957"
+    },
+    "titles": {
+      "ko": "레드브레스트",
+      "en": "The Redbreast",
+      "ja": "コマドリの賭け"
+    },
+    "releaseYear": 2000,
+    "creator": "Jo Nesbø",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

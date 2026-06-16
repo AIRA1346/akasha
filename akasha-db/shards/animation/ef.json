@@ -89,5 +89,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005341": {
+    "workId": "wk_000005341",
+    "title": "우라와의 우사기짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18990820"
+    },
+    "titles": {
+      "ko": "우라와의 우사기짱",
+      "en": "Urawa no Usagi-chan",
+      "ja": "浦和の調ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005748": {
+    "workId": "wk_000005748",
+    "title": "메이플라워의 개척자들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22079490"
+    },
+    "titles": {
+      "ko": "메이플라워의 개척자들",
+      "en": "Saints & Strangers",
+      "ja": "信じる者とよそ者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

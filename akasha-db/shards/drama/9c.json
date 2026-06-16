@@ -68,5 +68,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005799": {
+    "workId": "wk_000005799",
+    "title": "쵸이토 마스캇토!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11271964"
+    },
+    "titles": {
+      "ko": "쵸이토 마스캇토!",
+      "en": "Q11271964",
+      "ja": "ちょいとマスカット!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005800": {
+    "workId": "wk_000005800",
+    "title": "주혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272015"
+    },
+    "titles": {
+      "ko": "주혼",
+      "en": "Q11272015",
+      "ja": "走魂"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006079": {
+    "workId": "wk_000006079",
+    "title": "우리들은 익살족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11292867"
+    },
+    "titles": {
+      "ko": "우리들은 익살족",
+      "en": "Q11292867",
+      "ja": "オレたちひょうきん族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

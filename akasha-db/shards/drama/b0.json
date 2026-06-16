@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005929": {
+    "workId": "wk_000005929",
+    "title": "매혹 학원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278651"
+    },
+    "titles": {
+      "ko": "매혹 학원",
+      "en": "Fun & Study in the Marvel of Beginnings",
+      "ja": "まんがはじめて面白塾"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

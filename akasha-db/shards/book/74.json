@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005836": {
+    "workId": "wk_000005836",
+    "title": "요나 혹은 작업 중인 예술가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1101442"
+    },
+    "titles": {
+      "ko": "요나 혹은 작업 중인 예술가",
+      "en": "The Artist at Work"
+    },
+    "creator": "Albert Camus",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

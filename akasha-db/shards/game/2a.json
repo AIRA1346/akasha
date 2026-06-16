@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006201": {
+    "workId": "wk_000006201",
+    "title": "레이튼 교수와 증기의 신세계",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116734043"
+    },
+    "titles": {
+      "ko": "레이튼 교수와 증기의 신세계",
+      "en": "Professor Layton and the New World of Steam",
+      "ja": "レイトン教授と蒸気の新世界"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

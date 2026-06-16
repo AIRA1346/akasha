@@ -16,5 +16,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005709": {
+    "workId": "wk_000005709",
+    "title": "네가 세계의 마지막 소년이라면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1096044"
+    },
+    "titles": {
+      "ko": "네가 세계의 마지막 소년이라면",
+      "en": "The Incredible Tide",
+      "ja": "残された人びと"
+    },
+    "releaseYear": 1970,
+    "creator": "Alexander Key",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005711": {
+    "workId": "wk_000005711",
+    "title": "네가 누구든",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109627249"
+    },
+    "titles": {
+      "ko": "네가 누구든",
+      "en": "Whoever You Are, Honey"
+    },
+    "releaseYear": 2022,
+    "creator": "Olivia Gatwood",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005980": {
+    "workId": "wk_000005980",
+    "title": "마리오 파워 테니스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156917"
+    },
+    "titles": {
+      "ko": "마리오 파워 테니스",
+      "en": "Mario Power Tennis",
+      "ja": "マリオテニスGC"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

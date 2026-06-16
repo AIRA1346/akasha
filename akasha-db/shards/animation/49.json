@@ -135,5 +135,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005888": {
+    "workId": "wk_000005888",
+    "title": "노인 Z",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2346325"
+    },
+    "titles": {
+      "ko": "노인 Z",
+      "en": "Roujin Z",
+      "ja": "老人Z"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006267": {
+    "workId": "wk_000006267",
+    "title": "떴다! 방울이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2635100"
+    },
+    "titles": {
+      "ko": "떴다! 방울이",
+      "en": "Tama and Friends",
+      "ja": "3丁目のタマ うちのタマ知りませんか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

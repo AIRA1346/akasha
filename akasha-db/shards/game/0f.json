@@ -106,5 +106,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005563": {
+    "workId": "wk_000005563",
+    "title": "타임 파일럿",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151504"
+    },
+    "titles": {
+      "ko": "타임 파일럿",
+      "en": "Time Pilot",
+      "ja": "タイムパイロット"
+    },
+    "releaseYear": 1982,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

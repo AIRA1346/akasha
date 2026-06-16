@@ -1,0 +1,21 @@
+{
+  "wk_000005724": {
+    "workId": "wk_000005724",
+    "title": "챕터 27",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062846"
+    },
+    "titles": {
+      "ko": "챕터 27",
+      "en": "Chapter 27",
+      "ja": "チャプター27"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

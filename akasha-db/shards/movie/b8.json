@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006369": {
+    "workId": "wk_000006369",
+    "title": "더 리조트: 반쪽 얼굴의 소녀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106706911"
+    },
+    "titles": {
+      "ko": "더 리조트: 반쪽 얼굴의 소녀",
+      "en": "The Resort"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

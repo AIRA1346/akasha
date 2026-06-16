@@ -143,5 +143,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005559": {
+    "workId": "wk_000005559",
+    "title": "소닉 언리쉬드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150928"
+    },
+    "titles": {
+      "ko": "소닉 언리쉬드",
+      "en": "Sonic Unleashed",
+      "ja": "ソニック ワールドアドベンチャー"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006202": {
+    "workId": "wk_000006202",
+    "title": "FANTASY LIFE i: 빙글빙글 용과 시간을 훔치는 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116734047"
+    },
+    "titles": {
+      "ko": "FANTASY LIFE i: 빙글빙글 용과 시간을 훔치는 소녀",
+      "en": "Fantasy Life i: The Girl Who Steals Time",
+      "ja": "ファンタジーライフｉ グルグルの竜と時をぬすむ少女"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

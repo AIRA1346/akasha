@@ -37,5 +37,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005951": {
+    "workId": "wk_000005951",
+    "title": "3분 기다려 무기 선배",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132165419"
+    },
+    "titles": {
+      "ko": "3분 기다려 무기 선배",
+      "en": "Wait 3 minutes, Mugi-senpai",
+      "ja": "3分待って むぎ先輩"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

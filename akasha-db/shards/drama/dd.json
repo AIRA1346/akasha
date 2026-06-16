@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005934": {
+    "workId": "wk_000005934",
+    "title": "파라다이스 GoGo!!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279959"
+    },
+    "titles": {
+      "ko": "파라다이스 GoGo!!",
+      "en": "Paradise GoGo!",
+      "ja": "パラダイスGoGo!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006233": {
+    "workId": "wk_000006233",
+    "title": "스튜어디스의 애인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11312176"
+    },
+    "titles": {
+      "ko": "스튜어디스의 애인",
+      "en": "Stewardess's Sweetheart",
+      "ja": "スチュワーデスの恋人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

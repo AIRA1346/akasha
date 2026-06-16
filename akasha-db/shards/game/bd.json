@@ -104,5 +104,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005354": {
+    "workId": "wk_000005354",
+    "title": "니드 포 스피드 언바운드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114438019"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 언바운드",
+      "en": "Need for Speed Unbound",
+      "ja": "ニード・フォー・スピード アンバウンド"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

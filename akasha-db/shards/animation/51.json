@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006397": {
+    "workId": "wk_000006397",
+    "title": "짱구는 못말려 극장판: 습격!! 외계인 덩덩이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27438181"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 습격!! 외계인 덩덩이",
+      "en": "Crayon Shin-chan: Invasion!! Alien Shiriri",
+      "ja": "クレヨンしんちゃん 襲来!! 宇宙人シリリ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

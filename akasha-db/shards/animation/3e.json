@@ -52,5 +52,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005347": {
+    "workId": "wk_000005347",
+    "title": "아이돌마스터 신데렐라 걸즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19357037"
+    },
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈",
+      "en": "The Idolmaster Cinderella Girls",
+      "ja": "アイドルマスター シンデレラガールズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006410": {
+    "workId": "wk_000006410",
+    "title": "키즈모노가타리 III 냉혈편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27964616"
+    },
+    "titles": {
+      "ko": "키즈모노가타리 III 냉혈편",
+      "en": "Kizumonogatari Part 3: Reiketsu",
+      "ja": "傷物語〈III 冷血篇〉"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -128,5 +128,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006029": {
+    "workId": "wk_000006029",
+    "title": "너는 아직 군마를 모르는",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24862448"
+    },
+    "titles": {
+      "ko": "너는 아직 군마를 모르는",
+      "en": "Omae wa Mada Gunma o Shiranai",
+      "ja": "お前はまだグンマを知らない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

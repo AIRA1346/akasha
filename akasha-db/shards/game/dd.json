@@ -72,5 +72,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006274": {
+    "workId": "wk_000006274",
+    "title": "데드 오어 얼라이브 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1168536"
+    },
+    "titles": {
+      "ko": "데드 오어 얼라이브 5",
+      "en": "Dead or Alive 5",
+      "ja": "デッド オア アライブ5"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006350": {
+    "workId": "wk_000006350",
+    "title": "소닉 더 헤지혹 살인 사건",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117353776"
+    },
+    "titles": {
+      "ko": "소닉 더 헤지혹 살인 사건",
+      "en": "The Murder of Sonic the Hedgehog",
+      "ja": "ソニック・ザ・ヘッジホッグ殺人事件"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

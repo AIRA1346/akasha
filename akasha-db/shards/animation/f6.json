@@ -109,5 +109,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005402": {
+    "workId": "wk_000005402",
+    "title": "마녀 배달부 키키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q196602"
+    },
+    "titles": {
+      "ko": "마녀 배달부 키키",
+      "en": "Kiki's Delivery Service",
+      "ja": "魔女の宅急便"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006106": {
+    "workId": "wk_000006106",
+    "title": "철인 28호",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2504201"
+    },
+    "titles": {
+      "ko": "철인 28호",
+      "en": "Gigantor",
+      "ja": "鉄人28号"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006257": {
+    "workId": "wk_000006257",
+    "title": "세인트 세이야 - 천계편 overture",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2602741"
+    },
+    "titles": {
+      "ko": "세인트 세이야 - 천계편 overture",
+      "en": "Saint Seiya: The Heaven Chapter - Overture",
+      "ja": "聖闘士星矢 天界編 序奏〜overture〜"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

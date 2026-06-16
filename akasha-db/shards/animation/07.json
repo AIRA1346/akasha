@@ -126,5 +126,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005556": {
+    "workId": "wk_000005556",
+    "title": "레이튼 교수와 영원의 가희",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2096026"
+    },
+    "titles": {
+      "ko": "레이튼 교수와 영원의 가희",
+      "en": "Professor Layton and the Eternal Diva",
+      "ja": "レイトン教授と永遠の歌姫"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005557": {
+    "workId": "wk_000005557",
+    "title": "극장판 유희왕 더 다크 사이드 오브 디멘션즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21005926"
+    },
+    "titles": {
+      "ko": "극장판 유희왕 더 다크 사이드 오브 디멘션즈",
+      "en": "Yu-Gi-Oh!: The Dark Side of Dimensions",
+      "ja": "遊☆戯☆王 THE DARK SIDE OF DIMENSIONS"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006109": {
+    "workId": "wk_000006109",
+    "title": "미궁 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2525680"
+    },
+    "titles": {
+      "ko": "미궁 이야기",
+      "en": "Neo Tokyo",
+      "ja": "迷宮物語"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

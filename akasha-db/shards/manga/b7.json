@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006096": {
+    "workId": "wk_000006096",
+    "title": "아군이 너무 약해보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133453371"
+    },
+    "titles": {
+      "ko": "아군이 너무 약해보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+      "en": "The Banished Court Magician Aims to Become the Strongest",
+      "ja": "味方が弱すぎて補助魔法に徹していた宮廷魔法師、追放されて最強を目指す"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

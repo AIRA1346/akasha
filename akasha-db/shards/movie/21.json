@@ -1,0 +1,21 @@
+{
+  "wk_000006217": {
+    "workId": "wk_000006217",
+    "title": "아미나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106542682"
+    },
+    "titles": {
+      "ko": "아미나",
+      "en": "Amina",
+      "ja": "アミナ"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

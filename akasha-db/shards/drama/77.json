@@ -140,5 +140,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005593": {
+    "workId": "wk_000005593",
+    "title": "오샤레이즘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11261341"
+    },
+    "titles": {
+      "ko": "오샤레이즘",
+      "en": "Q11261341",
+      "ja": "おしゃれイズム"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006315": {
+    "workId": "wk_000006315",
+    "title": "가면라이더 기츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113187487"
+    },
+    "titles": {
+      "ko": "가면라이더 기츠",
+      "en": "Kamen Rider Geats",
+      "ja": "仮面ライダーギーツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

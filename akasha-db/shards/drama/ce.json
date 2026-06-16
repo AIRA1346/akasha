@@ -100,5 +100,60 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005937": {
+    "workId": "wk_000005937",
+    "title": "가는 해 오는 해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280761"
+    },
+    "titles": {
+      "ko": "가는 해 오는 해",
+      "en": "Q11280761",
+      "ja": "ゆく年くる年"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005942": {
+    "workId": "wk_000005942",
+    "title": "라라라♪클래식",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11281395"
+    },
+    "titles": {
+      "ko": "라라라♪클래식",
+      "en": "Q11281395",
+      "ja": "ららら♪クラシック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006232": {
+    "workId": "wk_000006232",
+    "title": "스타피카! THOSE ★ AMAZING ★ KIDS!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11311772"
+    },
+    "titles": {
+      "ko": "스타피카! THOSE ★ AMAZING ★ KIDS!",
+      "en": "Sutapika! THOSE ★ AMAZING ★ KIDS!",
+      "ja": "スタぴか! THOSE★AMAZING★KIDS!"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

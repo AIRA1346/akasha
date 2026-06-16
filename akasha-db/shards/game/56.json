@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006118": {
+    "workId": "wk_000006118",
+    "title": "호표기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625309"
+    },
+    "titles": {
+      "ko": "호표기",
+      "en": "Tiger Knight: Empire War",
+      "ja": "虎豹騎"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

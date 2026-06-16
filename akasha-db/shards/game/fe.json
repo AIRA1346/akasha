@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005835": {
+    "workId": "wk_000005835",
+    "title": "만져라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154907"
+    },
+    "titles": {
+      "ko": "만져라 메이드 인 와리오",
+      "en": "WarioWare: Touched!",
+      "ja": "さわるメイド イン ワリオ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -137,5 +137,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005448": {
+    "workId": "wk_000005448",
+    "title": "사육신",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248535"
+    },
+    "titles": {
+      "ko": "사육신",
+      "en": "Sa Yug Shin",
+      "ja": "死六臣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006088": {
+    "workId": "wk_000006088",
+    "title": "단호하게!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11296829"
+    },
+    "titles": {
+      "ko": "단호하게!",
+      "en": "Q11296829",
+      "ja": "キッパリ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

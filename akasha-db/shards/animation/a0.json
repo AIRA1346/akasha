@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005754": {
+    "workId": "wk_000005754",
+    "title": "JK메시!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22128246"
+    },
+    "titles": {
+      "ko": "JK메시!",
+      "en": "JK-Meshi!",
+      "ja": "JKめし!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

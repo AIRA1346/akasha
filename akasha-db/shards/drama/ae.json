@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005741": {
+    "workId": "wk_000005741",
+    "title": "인생화보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267297"
+    },
+    "titles": {
+      "ko": "인생화보",
+      "en": "Album of Life",
+      "ja": "人生画報"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005744": {
+    "workId": "wk_000005744",
+    "title": "술렁 숲의 간코짱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268669"
+    },
+    "titles": {
+      "ko": "술렁 숲의 간코짱",
+      "en": "Zawazawa-mori no Ganko-chan",
+      "ja": "ざわざわ森のがんこちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006305": {
+    "workId": "wk_000006305",
+    "title": "기적",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106614348"
+    },
+    "titles": {
+      "ko": "기적",
+      "en": "Miracle: Letters to the President",
+      "ja": "手紙と線路と小さな奇跡"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

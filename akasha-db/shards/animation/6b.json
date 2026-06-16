@@ -121,5 +121,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005749": {
+    "workId": "wk_000005749",
+    "title": "역시 내 청춘 러브코메디는 잘못됐다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22099861"
+    },
+    "titles": {
+      "ko": "역시 내 청춘 러브코메디는 잘못됐다.",
+      "en": "My Youth Romantic Comedy Is Wrong, as I Expected",
+      "ja": "やはり俺の青春ラブコメはまちがっている。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

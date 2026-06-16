@@ -56,5 +56,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005639": {
+    "workId": "wk_000005639",
+    "title": "둬훠 이모",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958637"
+    },
+    "titles": {
+      "ko": "둬훠 이모",
+      "en": "Q10958637"
+    },
+    "creator": "Geling Yan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006360": {
+    "workId": "wk_000006360",
+    "title": "마나솔라사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1110851"
+    },
+    "titles": {
+      "ko": "마나솔라사",
+      "en": "Manasollasa",
+      "ja": "マーナソーッラーサ"
+    },
+    "releaseYear": 1200,
+    "creator": "ソーメーシュヴァラ三世",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

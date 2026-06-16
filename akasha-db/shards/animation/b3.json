@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006271": {
+    "workId": "wk_000006271",
+    "title": "개구장이 조디",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2648165"
+    },
+    "titles": {
+      "ko": "개구장이 조디",
+      "en": "The Yearling",
+      "ja": "子鹿物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

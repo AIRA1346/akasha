@@ -55,5 +55,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005828": {
+    "workId": "wk_000005828",
+    "title": "포켓몬스터Pt 기라티나",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154227"
+    },
+    "titles": {
+      "ko": "포켓몬스터Pt 기라티나",
+      "en": "Pokémon Platinum",
+      "ja": "ポケットモンスター プラチナ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005829": {
+    "workId": "wk_000005829",
+    "title": "XIII",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154327"
+    },
+    "titles": {
+      "ko": "XIII",
+      "en": "XIII",
+      "ja": "XIII"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005983": {
+    "workId": "wk_000005983",
+    "title": "이스 X: 노딕스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115705827"
+    },
+    "titles": {
+      "ko": "이스 X: 노딕스",
+      "en": "Ys X: Nordics",
+      "ja": "イースX"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

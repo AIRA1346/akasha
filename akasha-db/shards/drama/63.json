@@ -34,5 +34,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006235": {
+    "workId": "wk_000006235",
+    "title": "폴아웃",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113127312"
+    },
+    "titles": {
+      "ko": "폴아웃",
+      "en": "Fallout",
+      "ja": "フォールアウト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006314": {
+    "workId": "wk_000006314",
+    "title": "찌뿌 플라이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11318595"
+    },
+    "titles": {
+      "ko": "찌뿌 플라이트",
+      "en": "Cheap Flight",
+      "ja": "チープ・フライト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

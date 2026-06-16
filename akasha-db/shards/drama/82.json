@@ -69,5 +69,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006071": {
+    "workId": "wk_000006071",
+    "title": "이로도리히무라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11287255"
+    },
+    "titles": {
+      "ko": "이로도리히무라",
+      "en": "Coloring Himura",
+      "ja": "イロドリヒムラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006444": {
+    "workId": "wk_000006444",
+    "title": "아빠는 뉴스 캐스터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329225"
+    },
+    "titles": {
+      "ko": "아빠는 뉴스 캐스터",
+      "en": "Papa wa Newscaster",
+      "ja": "パパはニュースキャスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -91,5 +91,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006347": {
+    "workId": "wk_000006347",
+    "title": "모두의마블2: 메타월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117197943"
+    },
+    "titles": {
+      "ko": "모두의마블2: 메타월드",
+      "en": "Meta World: My City"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

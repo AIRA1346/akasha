@@ -90,5 +90,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005636": {
+    "workId": "wk_000005636",
+    "title": "스노우 브라더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1152295"
+    },
+    "titles": {
+      "ko": "스노우 브라더스",
+      "en": "Snow Bros.: Nick and Tom",
+      "ja": "スノーブラザーズ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

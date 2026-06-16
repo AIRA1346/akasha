@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005566": {
+    "workId": "wk_000005566",
+    "title": "나의 행복한 결혼",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512255"
+    },
+    "titles": {
+      "ko": "나의 행복한 결혼",
+      "en": "My Happy Marriage",
+      "ja": "わたしの幸せな結婚"
+    },
+    "releaseYear": 2019,
+    "creator": "Akumi Agitogi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

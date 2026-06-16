@@ -139,5 +139,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005462": {
+    "workId": "wk_000005462",
+    "title": "비바비바 V6",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253000"
+    },
+    "titles": {
+      "ko": "비바비바 V6",
+      "en": "VivaVivaV6",
+      "ja": "VivaVivaV6"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005945": {
+    "workId": "wk_000005945",
+    "title": "태양옆에서 편지써두고 싶다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112818259"
+    },
+    "titles": {
+      "ko": "태양옆에서 편지써두고 싶다",
+      "en": "Daung Yin Pyan Bon Nabay Mhar Sar Yay Loh Htar Chin Dal"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -105,5 +105,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005379": {
+    "workId": "wk_000005379",
+    "title": "SCANDAL",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242644"
+    },
+    "titles": {
+      "ko": "SCANDAL",
+      "en": "SCANDAL",
+      "ja": "SCANDAL (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005875": {
+    "workId": "wk_000005875",
+    "title": "본쿠라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278047"
+    },
+    "titles": {
+      "ko": "본쿠라",
+      "en": "Bonkura",
+      "ja": "ぼんくら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

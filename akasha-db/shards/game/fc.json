@@ -85,5 +85,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005360": {
+    "workId": "wk_000005360",
+    "title": "바이오하자드 더 머서너리즈 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145370"
+    },
+    "titles": {
+      "ko": "바이오하자드 더 머서너리즈 3D",
+      "en": "Resident Evil: The Mercenaries 3D",
+      "ja": "バイオハザード ザ・マーセナリーズ 3D"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

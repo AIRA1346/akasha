@@ -54,5 +54,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005492": {
+    "workId": "wk_000005492",
+    "title": "동물 식당",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114956023"
+    },
+    "titles": {
+      "ko": "동물 식당",
+      "en": "Animal Restaurant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006283": {
+    "workId": "wk_000006283",
+    "title": "림버스 컴퍼니",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116970602"
+    },
+    "titles": {
+      "ko": "림버스 컴퍼니",
+      "en": "Limbus Company",
+      "ja": "リンバスカンパニー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

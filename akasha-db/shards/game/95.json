@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005558": {
+    "workId": "wk_000005558",
+    "title": "소닉 라이더즈: 제로 그래비티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150685"
+    },
+    "titles": {
+      "ko": "소닉 라이더즈: 제로 그래비티",
+      "en": "Sonic Riders: Zero Gravity",
+      "ja": "ソニックライダーズ シューティングスターストーリー"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006390": {
+    "workId": "wk_000006390",
+    "title": "두 남자와 룸쉐어 중입니다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136678714"
+    },
+    "titles": {
+      "ko": "두 남자와 룸쉐어 중입니다!",
+      "en": "Pardon the Intrusion, I'm Home!",
+      "ja": "ただいま、おじゃまされます!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

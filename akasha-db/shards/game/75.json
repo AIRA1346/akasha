@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005629": {
+    "workId": "wk_000005629",
+    "title": "시스템 쇼크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151634"
+    },
+    "titles": {
+      "ko": "시스템 쇼크",
+      "en": "System Shock",
+      "ja": "System Shock"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006275": {
+    "workId": "wk_000006275",
+    "title": "금빛 러브리체 -Golden Time-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116877155"
+    },
+    "titles": {
+      "ko": "금빛 러브리체 -Golden Time-",
+      "en": "Kinkoi: Golden Time",
+      "ja": "金色ラブリッチェ -GOLDEN TIME-"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

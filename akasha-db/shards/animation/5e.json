@@ -93,5 +93,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005480": {
+    "workId": "wk_000005480",
+    "title": "우주전함 야마토 2199",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2068751"
+    },
+    "titles": {
+      "ko": "우주전함 야마토 2199",
+      "en": "Star Blazers 2199",
+      "ja": "宇宙戦艦ヤマト2199"
+    },
+    "releaseYear": 2012,
+    "creator": "Michio Murakawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005745": {
+    "workId": "wk_000005745",
+    "title": "석고 보이즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21996364"
+    },
+    "titles": {
+      "ko": "석고 보이즈",
+      "en": "Sekkō Boys",
+      "ja": "石膏ボーイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

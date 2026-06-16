@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005771": {
+    "workId": "wk_000005771",
+    "title": "꿀벌 마야",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109832680"
+    },
+    "titles": {
+      "ko": "꿀벌 마야",
+      "en": "The Adventures of Maya the Bee",
+      "ja": "みつばちマーヤの冒険"
+    },
+    "releaseYear": 1912,
+    "creator": "Waldemar Bonsels",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

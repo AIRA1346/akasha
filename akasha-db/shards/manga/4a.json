@@ -1,0 +1,38 @@
+{
+  "wk_000005543": {
+    "workId": "wk_000005543",
+    "title": "에리스의 성배",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130581122"
+    },
+    "titles": {
+      "ko": "에리스의 성배",
+      "en": "The Holy Grail of Eris",
+      "ja": "エリスの聖杯"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006097": {
+    "workId": "wk_000006097",
+    "title": "마물들은 계획한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133502845"
+    },
+    "titles": {
+      "ko": "마물들은 계획한다",
+      "en": "The Demons Are Planning Something Good",
+      "ja": "魔のものたちは企てる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

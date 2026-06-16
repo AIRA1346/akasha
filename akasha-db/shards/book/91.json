@@ -30,5 +30,42 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000005712": {
+    "workId": "wk_000005712",
+    "title": "우리는 여기에 없었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109801966"
+    },
+    "titles": {
+      "ko": "우리는 여기에 없었다",
+      "en": "We Were Never Here"
+    },
+    "releaseYear": 2021,
+    "creator": "Andrea Bartz",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005913": {
+    "workId": "wk_000005913",
+    "title": "서니",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110577014"
+    },
+    "titles": {
+      "ko": "서니",
+      "en": "Sunny"
+    },
+    "creator": "ジェイソン・レナルズ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

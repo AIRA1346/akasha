@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005469": {
+    "workId": "wk_000005469",
+    "title": "히마텐!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130219861"
+    },
+    "titles": {
+      "ko": "히마텐!",
+      "en": "Himaten!",
+      "ja": "ひまてん！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

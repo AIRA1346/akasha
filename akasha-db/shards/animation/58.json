@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005893": {
+    "workId": "wk_000005893",
+    "title": "91 데이즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23647014"
+    },
+    "titles": {
+      "ko": "91 데이즈",
+      "en": "91 Days",
+      "ja": "91Days"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

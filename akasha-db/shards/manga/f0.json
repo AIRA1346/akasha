@@ -139,5 +139,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005397": {
+    "workId": "wk_000005397",
+    "title": "추방당한 전생 중기사는 게임 지식으로 무쌍한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128758405"
+    },
+    "titles": {
+      "ko": "추방당한 전생 중기사는 게임 지식으로 무쌍한다",
+      "en": "The Exiled Heavy Knight Knows How to Game the System",
+      "ja": "追放された転生重騎士はゲーム知識で無双する"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

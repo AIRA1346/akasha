@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006143": {
+    "workId": "wk_000006143",
+    "title": "돌핀 테일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064885"
+    },
+    "titles": {
+      "ko": "돌핀 테일",
+      "en": "Dolphin Tale",
+      "ja": "イルカと少年"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

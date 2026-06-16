@@ -145,5 +145,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006180": {
+    "workId": "wk_000006180",
+    "title": "히마와리!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2566529"
+    },
+    "titles": {
+      "ko": "히마와리!",
+      "en": "Himawari!",
+      "ja": "ひまわりっ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005356": {
+    "workId": "wk_000005356",
+    "title": "도라에몽 모두 놀자! 미니도라랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144861"
+    },
+    "titles": {
+      "ko": "도라에몽 모두 놀자! 미니도라랜드",
+      "en": "Doraemon: Minna de Asobō! Minidorando",
+      "ja": "ドラえもん みんなで遊ぼう!ミニドランド"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -49,5 +49,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005391": {
+    "workId": "wk_000005391",
+    "title": "비보다 상냥하게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11247432"
+    },
+    "titles": {
+      "ko": "비보다 상냥하게",
+      "en": "Q11247432",
+      "ja": "雨よりも優しく"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005586": {
+    "workId": "wk_000005586",
+    "title": "희수 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112593327"
+    },
+    "titles": {
+      "ko": "희수 (드라마)",
+      "en": "Hee-soo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006072": {
+    "workId": "wk_000006072",
+    "title": "환생-넥스트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11287690"
+    },
+    "titles": {
+      "ko": "환생-넥스트",
+      "en": "Renacer",
+      "ja": "輪廻‐NEXT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -118,5 +118,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006044": {
+    "workId": "wk_000006044",
+    "title": "뮤제닉스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116030507"
+    },
+    "titles": {
+      "ko": "뮤제닉스",
+      "en": "Q116030507"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

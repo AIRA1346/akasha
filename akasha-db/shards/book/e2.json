@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005640": {
+    "workId": "wk_000005640",
+    "title": "홍무정운",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958946"
+    },
+    "titles": {
+      "ko": "홍무정운",
+      "en": "Hongwu Zhengyun",
+      "ja": "洪武正韻"
+    },
+    "releaseYear": 1375,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

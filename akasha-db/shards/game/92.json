@@ -119,5 +119,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005560": {
+    "workId": "wk_000005560",
+    "title": "신세기 에반게리온 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150974"
+    },
+    "titles": {
+      "ko": "신세기 에반게리온 2",
+      "en": "Neon Genesis Evangelion 2",
+      "ja": "新世紀エヴァンゲリオン2"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006120": {
+    "workId": "wk_000006120",
+    "title": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636211"
+    },
+    "titles": {
+      "ko": "초 극장판 개구리 중사 케로로 더 무비 천공대모험",
+      "en": "Q11636211",
+      "ja": "超劇場版ケロロ軍曹3 天空大冒険であります!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

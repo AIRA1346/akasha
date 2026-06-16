@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006169": {
+    "workId": "wk_000006169",
+    "title": "죠시데카!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11310565"
+    },
+    "titles": {
+      "ko": "죠시데카!",
+      "en": "Joshideka!",
+      "ja": "ジョシデカ!-女子刑事-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005407": {
+    "workId": "wk_000005407",
+    "title": "Classroom☆Crisis",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19693243"
+    },
+    "titles": {
+      "ko": "Classroom☆Crisis",
+      "en": "Classroom Crisis",
+      "ja": "クラスルーム☆クライシス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006020": {
+    "workId": "wk_000006020",
+    "title": "전쟁과 추억(미니시리즈)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q245929"
+    },
+    "titles": {
+      "ko": "전쟁과 추억(미니시리즈)",
+      "en": "War and Remembrance",
+      "ja": "戦争の黙示録"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006261": {
+    "workId": "wk_000006261",
+    "title": "마법소녀 메구쨩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2628322"
+    },
+    "titles": {
+      "ko": "마법소녀 메구쨩",
+      "en": "Majokko Megu-chan",
+      "ja": "魔女っ子メグちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

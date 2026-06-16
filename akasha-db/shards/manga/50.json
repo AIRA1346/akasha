@@ -18,5 +18,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005806": {
+    "workId": "wk_000005806",
+    "title": "기절 용사와 암살 공주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131699185"
+    },
+    "titles": {
+      "ko": "기절 용사와 암살 공주",
+      "en": "The Shy Hero and the Assassin Princesses",
+      "ja": "気絶勇者と暗殺姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006391": {
+    "workId": "wk_000006391",
+    "title": "드림☆점보☆걸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136705320"
+    },
+    "titles": {
+      "ko": "드림☆점보☆걸",
+      "en": "Dream Jumbo Girl",
+      "ja": "ドリーム☆ジャンボ☆ガール"
+    },
+    "creator": "Hiroyuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

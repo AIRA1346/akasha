@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006187": {
+    "workId": "wk_000006187",
+    "title": "도라에몽 노비타의 남극 카치코치 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25893643"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 남극 카치코치 대모험",
+      "en": "Doraemon the Movie 2017: Great Adventure in the Antarctic Kachi Kochi",
+      "ja": "ドラえもん のび太の南極カチコチ大冒険"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

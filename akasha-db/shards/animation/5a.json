@@ -113,5 +113,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005625": {
+    "workId": "wk_000005625",
+    "title": "마법사 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21566775"
+    },
+    "titles": {
+      "ko": "마법사 프리큐어!",
+      "en": "Witchy Pretty Cure!",
+      "ja": "魔法つかいプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006114": {
+    "workId": "wk_000006114",
+    "title": "버추어 파이터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2547953"
+    },
+    "titles": {
+      "ko": "버추어 파이터",
+      "en": "Virtua Fighter",
+      "ja": "バーチャファイター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006182": {
+    "workId": "wk_000006182",
+    "title": "마법의 마코쨩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2571307"
+    },
+    "titles": {
+      "ko": "마법의 마코쨩",
+      "en": "Mahō no Mako-chan",
+      "ja": "魔法のマコちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

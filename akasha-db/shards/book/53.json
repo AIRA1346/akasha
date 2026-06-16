@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005368": {
+    "workId": "wk_000005368",
+    "title": "대장엄론경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10937787"
+    },
+    "titles": {
+      "ko": "대장엄론경",
+      "en": "Q10937787",
+      "ja": "大荘厳論経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

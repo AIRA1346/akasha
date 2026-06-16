@@ -104,5 +104,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005880": {
+    "workId": "wk_000005880",
+    "title": "왜 그럴까 ?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278646"
+    },
+    "titles": {
+      "ko": "왜 그럴까 ?",
+      "en": "This Is Why",
+      "ja": "まんがなるほど物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006008": {
+    "workId": "wk_000006008",
+    "title": "애정응해유적양자 : 사랑은 이래야 해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112869278"
+    },
+    "titles": {
+      "ko": "애정응해유적양자 : 사랑은 이래야 해",
+      "en": "Love The Way You Are"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005475": {
+    "workId": "wk_000005475",
+    "title": "마지막으로 하나만 부탁드려도 될까요",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130305468"
+    },
+    "titles": {
+      "ko": "마지막으로 하나만 부탁드려도 될까요",
+      "en": "May I Ask for One Final Thing?",
+      "ja": "最後にひとつだけお願いしてもよろしいでしょうか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006090": {
+    "workId": "wk_000006090",
+    "title": "엔젤전설",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1329708"
+    },
+    "titles": {
+      "ko": "엔젤전설",
+      "en": "Angel Densetsu",
+      "ja": "エンジェル伝説"
+    },
+    "creator": "八木教広",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -122,5 +122,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005425": {
+    "workId": "wk_000005425",
+    "title": "심팜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1146191"
+    },
+    "titles": {
+      "ko": "심팜",
+      "en": "SimFarm",
+      "ja": "シムファーム"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

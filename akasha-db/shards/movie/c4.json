@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006428": {
+    "workId": "wk_000006428",
+    "title": "데이 시프트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106725885"
+    },
+    "titles": {
+      "ko": "데이 시프트",
+      "en": "Day Shift",
+      "ja": "デイ・シフト"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

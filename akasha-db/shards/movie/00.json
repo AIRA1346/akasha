@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005781": {
+    "workId": "wk_000005781",
+    "title": "죽은 시인의 사회",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106316"
+    },
+    "titles": {
+      "ko": "죽은 시인의 사회",
+      "en": "Dead Poets Society",
+      "ja": "いまを生きる"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

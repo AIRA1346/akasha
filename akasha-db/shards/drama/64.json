@@ -137,5 +137,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005515": {
+    "workId": "wk_000005515",
+    "title": "아름다운 도전자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256147"
+    },
+    "titles": {
+      "ko": "아름다운 도전자",
+      "en": "Utsukushiki Challenger",
+      "ja": "美しきチャレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005598": {
+    "workId": "wk_000005598",
+    "title": "오네다리 마스캇토DX!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262060"
+    },
+    "titles": {
+      "ko": "오네다리 마스캇토DX!",
+      "en": "Q11262060",
+      "ja": "おねだりマスカットDX!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006385": {
+    "workId": "wk_000006385",
+    "title": "뉴스 도야마인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324846"
+    },
+    "titles": {
+      "ko": "뉴스 도야마인",
+      "en": "News Toyamajin",
+      "ja": "ニュース富山人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

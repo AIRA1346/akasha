@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006115": {
+    "workId": "wk_000006115",
+    "title": "트러블 초콜릿",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2550567"
+    },
+    "titles": {
+      "ko": "트러블 초콜릿",
+      "en": "Trouble Chocolate",
+      "ja": "トラブルチョコレート"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

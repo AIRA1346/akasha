@@ -1,0 +1,20 @@
+{
+  "wk_000006443": {
+    "workId": "wk_000006443",
+    "title": "엘피스 -희망, 혹은 재앙-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113287106"
+    },
+    "titles": {
+      "ko": "엘피스 -희망, 혹은 재앙-",
+      "en": "Q113287106",
+      "ja": "エルピス-希望、あるいは災い-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

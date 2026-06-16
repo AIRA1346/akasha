@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005584": {
+    "workId": "wk_000005584",
+    "title": "엄마야 누나야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259141"
+    },
+    "titles": {
+      "ko": "엄마야 누나야",
+      "en": "Mom and Sister",
+      "ja": "母よ姉よ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

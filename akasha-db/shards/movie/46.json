@@ -1,0 +1,21 @@
+{
+  "wk_000005574": {
+    "workId": "wk_000005574",
+    "title": "비바 라스베가스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060241"
+    },
+    "titles": {
+      "ko": "비바 라스베가스",
+      "en": "Viva Las Vegas",
+      "ja": "ラスベガス万才"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

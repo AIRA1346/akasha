@@ -87,5 +87,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005873": {
+    "workId": "wk_000005873",
+    "title": "정말로 있었던 무서운 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277884"
+    },
+    "titles": {
+      "ko": "정말로 있었던 무서운 이야기",
+      "en": "The really scary stories",
+      "ja": "ほんとにあった怖い話"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005874": {
+    "workId": "wk_000005874",
+    "title": "나의 여름 방학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277963"
+    },
+    "titles": {
+      "ko": "나의 여름 방학",
+      "en": "My Summer Vacation",
+      "ja": "ぼくの夏休み"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

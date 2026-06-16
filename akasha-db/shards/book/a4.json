@@ -57,5 +57,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006056": {
+    "workId": "wk_000006056",
+    "title": "어정자치통감강목삼편",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11071171"
+    },
+    "titles": {
+      "ko": "어정자치통감강목삼편",
+      "en": "Third Imperial Edition of the Outline of the Comprehensive Mirror for Aid in Government",
+      "ja": "御定資治通鑑綱目三編"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

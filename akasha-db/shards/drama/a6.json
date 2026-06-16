@@ -159,5 +159,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005389": {
+    "workId": "wk_000005389",
+    "title": "스마 스테이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246475"
+    },
+    "titles": {
+      "ko": "스마 스테이션",
+      "en": "SmaSTATION!!",
+      "ja": "SmaSTATION!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

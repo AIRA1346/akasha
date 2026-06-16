@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006037": {
+    "workId": "wk_000006037",
+    "title": "초전자머신 볼테스 V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2487098"
+    },
+    "titles": {
+      "ko": "초전자머신 볼테스 V",
+      "en": "Voltes V",
+      "ja": "超電磁マシーン ボルテスV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

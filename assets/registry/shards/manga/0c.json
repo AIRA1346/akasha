@@ -91,5 +91,41 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005544": {
+    "workId": "wk_000005544",
+    "title": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130600179"
+    },
+    "titles": {
+      "ko": "악식영애와 광혈공작 ~그 마물, 제가 맛있게 먹겠습니다!~",
+      "en": "Pass the Monster Meat, Milady!",
+      "ja": "悪食令嬢と狂血公爵 〜その魔物、私が美味しくいただきます！〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006012": {
+    "workId": "wk_000006012",
+    "title": "쓰레기 용사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132409104"
+    },
+    "titles": {
+      "ko": "쓰레기 용사",
+      "en": "Scum of the Brave",
+      "ja": "勇者のクズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

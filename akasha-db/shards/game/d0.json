@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005564": {
+    "workId": "wk_000005564",
+    "title": "극마계촌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151532"
+    },
+    "titles": {
+      "ko": "극마계촌",
+      "en": "Ultimate Ghosts 'n Goblins",
+      "ja": "極魔界村"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

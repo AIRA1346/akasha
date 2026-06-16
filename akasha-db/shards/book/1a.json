@@ -95,5 +95,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005569": {
+    "workId": "wk_000005569",
+    "title": "밀주원인왕생집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10952743"
+    },
+    "titles": {
+      "ko": "밀주원인왕생집",
+      "en": "Collection of Secret Spells of the Complete Causes for Attaining Rebirth",
+      "ja": "密呪円因往生集"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006215": {
+    "workId": "wk_000006215",
+    "title": "안자춘추",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11089433"
+    },
+    "titles": {
+      "ko": "안자춘추",
+      "en": "Yanzi chunqiu",
+      "ja": "晏子春秋"
+    },
+    "creator": "Yan Ying",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

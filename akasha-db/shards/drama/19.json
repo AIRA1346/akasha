@@ -84,5 +84,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006156": {
+    "workId": "wk_000006156",
+    "title": "아이 경시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11302277"
+    },
+    "titles": {
+      "ko": "아이 경시",
+      "en": "Kodomo Keishi",
+      "ja": "コドモ警視"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

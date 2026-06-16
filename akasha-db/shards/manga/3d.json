@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006015": {
+    "workId": "wk_000006015",
+    "title": "가짜 연금술사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132560833"
+    },
+    "titles": {
+      "ko": "가짜 연금술사",
+      "en": "The Fake Alchemist",
+      "ja": "ニセモノの錬金術師"
+    },
+    "creator": "Jirō Sugiura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

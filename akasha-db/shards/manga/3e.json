@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005611": {
+    "workId": "wk_000005611",
+    "title": "추방자 식당에 어서 오세요!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131448078"
+    },
+    "titles": {
+      "ko": "추방자 식당에 어서 오세요!",
+      "en": "Welcome to the Outcast's Restaurant!",
+      "ja": "追放者食堂へようこそ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

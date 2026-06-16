@@ -71,5 +71,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005674": {
+    "workId": "wk_000005674",
+    "title": "웃기는 사랑은 하고 싶지 않아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263575"
+    },
+    "titles": {
+      "ko": "웃기는 사랑은 하고 싶지 않아",
+      "en": "Q11263575",
+      "ja": "笑える恋はしたくない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006006": {
+    "workId": "wk_000006006",
+    "title": "1923",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112862420"
+    },
+    "titles": {
+      "ko": "1923",
+      "en": "1923",
+      "ja": "1923 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006238": {
+    "workId": "wk_000006238",
+    "title": "줌인! 새터데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11314089"
+    },
+    "titles": {
+      "ko": "줌인! 새터데이",
+      "en": "Zoom in!! Saturday",
+      "ja": "ズームイン!!サタデー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

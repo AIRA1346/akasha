@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005433": {
+    "workId": "wk_000005433",
+    "title": "덴카이치 다이고로 시리즈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10938783"
+    },
+    "titles": {
+      "ko": "덴카이치 다이고로 시리즈",
+      "en": "Q10938783",
+      "ja": "天下一大五郎シリーズ"
+    },
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

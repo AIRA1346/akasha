@@ -157,5 +157,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005463": {
+    "workId": "wk_000005463",
+    "title": "V 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253106"
+    },
+    "titles": {
+      "ko": "V 시리즈",
+      "en": "V Series",
+      "ja": "Vシリーズ (小説)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

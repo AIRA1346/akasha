@@ -202,5 +202,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005628": {
+    "workId": "wk_000005628",
+    "title": "걸즈 앤 판처 극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21646440"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 극장판",
+      "en": "Girls und Panzer der Film",
+      "ja": "ガールズ＆パンツァー 劇場版"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006179": {
+    "workId": "wk_000006179",
+    "title": "산다람쥐 로키 처크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2560435"
+    },
+    "titles": {
+      "ko": "산다람쥐 로키 처크",
+      "en": "Fables of the Green Forest",
+      "ja": "山ねずみロッキーチャック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

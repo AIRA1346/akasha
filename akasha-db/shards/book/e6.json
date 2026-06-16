@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005845": {
+    "workId": "wk_000005845",
+    "title": "노라 웹스터",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110517114"
+    },
+    "titles": {
+      "ko": "노라 웹스터",
+      "en": "Nora Webster"
+    },
+    "releaseYear": 2014,
+    "creator": "Colm Tóibín",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

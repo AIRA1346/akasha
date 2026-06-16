@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005995": {
+    "workId": "wk_000005995",
+    "title": "안녕하세요, 하느님? 저 마거릿이에요",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106448550"
+    },
+    "titles": {
+      "ko": "안녕하세요, 하느님? 저 마거릿이에요",
+      "en": "Are You There God? It's Me, Margaret",
+      "ja": "神さま聞いてる? これが私の生きる道?!"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

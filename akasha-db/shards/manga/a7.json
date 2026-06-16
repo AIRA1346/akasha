@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005537": {
+    "workId": "wk_000005537",
+    "title": "고릴라 신의 가호를 받은 영애는 왕립기사단의 사랑을 받는다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130357997"
+    },
+    "titles": {
+      "ko": "고릴라 신의 가호를 받은 영애는 왕립기사단의 사랑을 받는다",
+      "en": "The Gorilla God's Go-To Girl",
+      "ja": "ゴリラの神から加護された令嬢は王立騎士団で可愛がられる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

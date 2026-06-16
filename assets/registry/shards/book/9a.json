@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006208": {
+    "workId": "wk_000006208",
+    "title": "마르두크 스크램블",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1108316"
+    },
+    "titles": {
+      "ko": "마르두크 스크램블",
+      "en": "Mardock Scramble",
+      "ja": "マルドゥック・スクランブル"
+    },
+    "creator": "Tow Ubukata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

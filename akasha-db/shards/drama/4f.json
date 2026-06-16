@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005665": {
+    "workId": "wk_000005665",
+    "title": "NHK 뉴스 오하이요 시즈오카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262267"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하이요 시즈오카",
+      "en": "Q11262267",
+      "ja": "おはよう静岡"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

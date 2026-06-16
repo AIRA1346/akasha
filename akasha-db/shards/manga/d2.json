@@ -18,5 +18,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005473": {
+    "workId": "wk_000005473",
+    "title": "루리의 보석",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130272455"
+    },
+    "titles": {
+      "ko": "루리의 보석",
+      "en": "Ruri Rocks",
+      "ja": "瑠璃の宝石"
+    },
+    "creator": "Keiichirō Shibuya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005474": {
+    "workId": "wk_000005474",
+    "title": "키리오 팬클럽",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130303268"
+    },
+    "titles": {
+      "ko": "키리오 팬클럽",
+      "en": "Kirio Fanclub",
+      "ja": "霧尾ファンクラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

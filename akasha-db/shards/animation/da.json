@@ -17,5 +17,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005481": {
+    "workId": "wk_000005481",
+    "title": "뱀파이어 헌터 D",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2073279"
+    },
+    "titles": {
+      "ko": "뱀파이어 헌터 D",
+      "en": "Vampire Hunter D: Bloodlust",
+      "ja": "吸血鬼ハンターD ブラッドラスト"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005819": {
+    "workId": "wk_000005819",
+    "title": "V",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2284586"
+    },
+    "titles": {
+      "ko": "V",
+      "en": "V: The Original Miniseries"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

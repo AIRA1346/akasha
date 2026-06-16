@@ -88,5 +88,62 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005954": {
+    "workId": "wk_000005954",
+    "title": "만지지 마세요 코테사시군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132192002"
+    },
+    "titles": {
+      "ko": "만지지 마세요 코테사시군",
+      "en": "Hands Off: Sawaranaide Kotesashi-kun",
+      "ja": "さわらないで小手指くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006246": {
+    "workId": "wk_000006246",
+    "title": "또다시 같은 꿈을 꾸었어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134469472"
+    },
+    "titles": {
+      "ko": "또다시 같은 꿈을 꾸었어",
+      "en": "I Had That Same Dream Again",
+      "ja": "また、同じ夢を見ていた"
+    },
+    "releaseYear": 2017,
+    "creator": "Izumi Kirihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006253": {
+    "workId": "wk_000006253",
+    "title": "사쿠라 트릭",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13516675"
+    },
+    "titles": {
+      "ko": "사쿠라 트릭",
+      "en": "Sakura Trick",
+      "ja": "桜Trick"
+    },
+    "creator": "Tachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

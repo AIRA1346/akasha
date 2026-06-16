@@ -15,5 +15,24 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000005952": {
+    "workId": "wk_000005952",
+    "title": "불새",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321785"
+    },
+    "titles": {
+      "ko": "불새",
+      "en": "Phoenix",
+      "ja": "火の鳥"
+    },
+    "creator": "手塚治虫",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

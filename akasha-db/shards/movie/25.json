@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006067": {
+    "workId": "wk_000006067",
+    "title": "저스트 세이 예스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106456978"
+    },
+    "titles": {
+      "ko": "저스트 세이 예스",
+      "en": "Just Say Yes",
+      "ja": "ジャスト・セイ・イエス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

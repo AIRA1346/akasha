@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006293": {
+    "workId": "wk_000006293",
+    "title": "흑의 소환사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110941604"
+    },
+    "titles": {
+      "ko": "흑의 소환사",
+      "en": "Black Summoner",
+      "ja": "黒の召喚士"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

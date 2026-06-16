@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006403": {
+    "workId": "wk_000006403",
+    "title": "우주전함 야마토: 새로운 여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2758389"
+    },
+    "titles": {
+      "ko": "우주전함 야마토: 새로운 여행",
+      "en": "Yamato: The New Voyage",
+      "ja": "宇宙戦艦ヤマト 新たなる旅立ち"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

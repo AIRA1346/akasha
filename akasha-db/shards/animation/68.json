@@ -125,5 +125,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005970": {
+    "workId": "wk_000005970",
+    "title": "오즈의 마법사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2454867"
+    },
+    "titles": {
+      "ko": "오즈의 마법사",
+      "en": "The Wonderful Wizard of Oz",
+      "ja": "オズの魔法使い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006396": {
+    "workId": "wk_000006396",
+    "title": "오바케의 Q 타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2723478"
+    },
+    "titles": {
+      "ko": "오바케의 Q 타로",
+      "en": "Obake no Q-tarō",
+      "ja": "オバケのQ太郎"
+    },
+    "creator": "藤子不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

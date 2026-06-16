@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005495": {
+    "workId": "wk_000005495",
+    "title": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1149927"
+    },
+    "titles": {
+      "ko": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+      "en": "Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2",
+      "ja": "燃えろ!熱血リズム魂 押忍!闘え!応援団2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

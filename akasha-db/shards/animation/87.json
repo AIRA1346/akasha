@@ -34,5 +34,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006190": {
+    "workId": "wk_000006190",
+    "title": "단지 토모오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2596097"
+    },
+    "titles": {
+      "ko": "단지 토모오",
+      "en": "Danchi Tomoo",
+      "ja": "団地ともお"
+    },
+    "creator": "Tobira Oda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006337": {
+    "workId": "wk_000006337",
+    "title": "세이크리드 세븐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q268512"
+    },
+    "titles": {
+      "ko": "세이크리드 세븐",
+      "en": "Sacred Seven",
+      "ja": "セイクリッドセブン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

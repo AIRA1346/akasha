@@ -104,5 +104,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005528": {
+    "workId": "wk_000005528",
+    "title": "놀러 와요!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257535"
+    },
+    "titles": {
+      "ko": "놀러 와요!",
+      "en": "Asobi ni oideyo!",
+      "ja": "あそびにおいでョ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005933": {
+    "workId": "wk_000005933",
+    "title": "모두의 철도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279494"
+    },
+    "titles": {
+      "ko": "모두의 철도",
+      "en": "Q11279494",
+      "ja": "みんなの鉄道"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

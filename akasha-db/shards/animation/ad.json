@@ -123,5 +123,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005345": {
+    "workId": "wk_000005345",
+    "title": "셜록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q192837"
+    },
+    "titles": {
+      "ko": "셜록",
+      "en": "Sherlock",
+      "ja": "SHERLOCK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005817": {
+    "workId": "wk_000005817",
+    "title": "블레이드 앤 소울",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22773989"
+    },
+    "titles": {
+      "ko": "블레이드 앤 소울",
+      "en": "Blade & Soul",
+      "ja": "ブレイドアンドソウル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005966": {
+    "workId": "wk_000005966",
+    "title": "CROW'S BLOOD",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24211349"
+    },
+    "titles": {
+      "ko": "CROW'S BLOOD",
+      "en": "Crow's Blood",
+      "ja": "CROW'S BLOOD"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

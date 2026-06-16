@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005961": {
+    "workId": "wk_000005961",
+    "title": "탑블레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24045770"
+    },
+    "titles": {
+      "ko": "탑블레이드",
+      "en": "Beyblade",
+      "ja": "爆転シュート ベイブレード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

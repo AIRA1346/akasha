@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005713": {
+    "workId": "wk_000005713",
+    "title": "떠도는 별",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1098250"
+    },
+    "titles": {
+      "ko": "떠도는 별",
+      "en": "Wandering Star"
+    },
+    "releaseYear": 1992,
+    "creator": "Jean-Marie Gustave Le Clézio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

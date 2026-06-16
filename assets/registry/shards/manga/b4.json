@@ -140,5 +140,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006325": {
+    "workId": "wk_000006325",
+    "title": "라이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1354965"
+    },
+    "titles": {
+      "ko": "라이프",
+      "en": "Life",
+      "ja": "ライフ"
+    },
+    "creator": "Keiko Suenobu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

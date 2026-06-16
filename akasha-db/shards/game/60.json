@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006207": {
+    "workId": "wk_000006207",
+    "title": "두근두근 메모리얼 3: 약속의 그 장소에서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1168094"
+    },
+    "titles": {
+      "ko": "두근두근 메모리얼 3: 약속의 그 장소에서",
+      "en": "Tokimeki Memorial 3: Yakusoku no Ano Basho de",
+      "ja": "ときめきメモリアル3 〜約束のあの場所で〜"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

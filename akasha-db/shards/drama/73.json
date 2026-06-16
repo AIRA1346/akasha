@@ -68,5 +68,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005394": {
+    "workId": "wk_000005394",
+    "title": "TARO 의 탑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248169"
+    },
+    "titles": {
+      "ko": "TARO 의 탑",
+      "en": "Tower of TARO",
+      "ja": "TAROの塔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005736": {
+    "workId": "wk_000005736",
+    "title": "디 엠파이어 : 법의 제국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112671189"
+    },
+    "titles": {
+      "ko": "디 엠파이어 : 법의 제국",
+      "en": "The Empire of Law"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

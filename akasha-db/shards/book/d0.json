@@ -37,5 +37,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006057": {
+    "workId": "wk_000006057",
+    "title": "어제수리정온",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11071222"
+    },
+    "titles": {
+      "ko": "어제수리정온",
+      "en": "Yuzhi Shuli Jingyun",
+      "ja": "御製数理精蘊"
+    },
+    "releaseYear": 1723,
+    "creator": "Mei Juecheng",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

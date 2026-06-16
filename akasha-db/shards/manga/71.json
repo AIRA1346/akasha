@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005547": {
+    "workId": "wk_000005547",
+    "title": "푸드코트에서, 내일 또 봐.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130729135"
+    },
+    "titles": {
+      "ko": "푸드코트에서, 내일 또 봐.",
+      "en": "See You Tomorrow at the Food Court",
+      "ja": "フードコートで、また明日。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

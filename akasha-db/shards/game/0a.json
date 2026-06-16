@@ -91,5 +91,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005429": {
+    "workId": "wk_000005429",
+    "title": "사일런트 힐 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114770599"
+    },
+    "titles": {
+      "ko": "사일런트 힐 2",
+      "en": "Q114770599"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005760": {
+    "workId": "wk_000005760",
+    "title": "바이오니클 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153260"
+    },
+    "titles": {
+      "ko": "바이오니클 히어로즈",
+      "en": "Bionicle Heroes",
+      "ja": "バイオニクル ヒーローズ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006352": {
+    "workId": "wk_000006352",
+    "title": "사쿠라의 각",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117413661"
+    },
+    "titles": {
+      "ko": "사쿠라의 각",
+      "en": "Sakura no Toki",
+      "ja": "サクラノ刻"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

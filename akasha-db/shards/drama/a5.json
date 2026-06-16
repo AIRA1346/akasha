@@ -101,5 +101,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006153": {
+    "workId": "wk_000006153",
+    "title": "크로노스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299817"
+    },
+    "titles": {
+      "ko": "크로노스",
+      "en": "CHRONOS",
+      "ja": "クロノス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006387": {
+    "workId": "wk_000006387",
+    "title": "굿잡",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113252657"
+    },
+    "titles": {
+      "ko": "굿잡",
+      "en": "Good Job",
+      "ja": "グッジョブ (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

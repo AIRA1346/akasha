@@ -52,5 +52,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005452": {
+    "workId": "wk_000005452",
+    "title": "생방송은 멈추지 않는다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11249905"
+    },
+    "titles": {
+      "ko": "생방송은 멈추지 않는다!",
+      "en": "Q11249905",
+      "ja": "生放送はとまらない!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005999": {
+    "workId": "wk_000005999",
+    "title": "하노이 신부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284125"
+    },
+    "titles": {
+      "ko": "하노이 신부",
+      "en": "Hanoi Bride",
+      "ja": "ハノイの花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006371": {
+    "workId": "wk_000006371",
+    "title": "나오미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323666"
+    },
+    "titles": {
+      "ko": "나오미",
+      "en": "Naomi",
+      "ja": "ナオミ (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006297": {
+    "workId": "wk_000006297",
+    "title": "더 굿 너스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106590131"
+    },
+    "titles": {
+      "ko": "더 굿 너스",
+      "en": "The Good Nurse",
+      "ja": "グッド・ナース"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

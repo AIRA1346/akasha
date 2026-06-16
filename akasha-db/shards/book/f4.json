@@ -144,5 +144,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005436": {
+    "workId": "wk_000005436",
+    "title": "사기/권027",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10939383"
+    },
+    "titles": {
+      "ko": "사기/권027",
+      "en": "Q10939383",
+      "ja": "史記/卷027"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005710": {
+    "workId": "wk_000005710",
+    "title": "매트릭스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109609245"
+    },
+    "titles": {
+      "ko": "매트릭스",
+      "en": "Matrix"
+    },
+    "releaseYear": 2021,
+    "creator": "Lauren Groff",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

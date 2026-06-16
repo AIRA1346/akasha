@@ -68,5 +68,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006296": {
+    "workId": "wk_000006296",
+    "title": "두자춘",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11098861"
+    },
+    "titles": {
+      "ko": "두자춘",
+      "en": "Toshishun",
+      "ja": "杜子春"
+    },
+    "releaseYear": 1920,
+    "creator": "芥川龍之介",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

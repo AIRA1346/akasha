@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006023": {
+    "workId": "wk_000006023",
+    "title": "닌자전사 토비카게",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2478116"
+    },
+    "titles": {
+      "ko": "닌자전사 토비카게",
+      "en": "Ninja Senshi Tobikage",
+      "ja": "忍者戦士飛影"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006042": {
+    "workId": "wk_000006042",
+    "title": "Atari 50: The Anniversary Celebration",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115932648"
+    },
+    "titles": {
+      "ko": "Atari 50: The Anniversary Celebration",
+      "en": "Atari 50: The Anniversary Celebration",
+      "ja": "Atari 50: The Anniversary Celebration"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

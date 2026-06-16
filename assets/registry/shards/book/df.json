@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006359": {
+    "workId": "wk_000006359",
+    "title": "양휘산법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11102164"
+    },
+    "titles": {
+      "ko": "양휘산법",
+      "ja": "楊輝算法",
+      "zh": "楊輝算法"
+    },
+    "creator": "Yang Hui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

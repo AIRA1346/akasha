@@ -70,5 +70,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005414": {
+    "workId": "wk_000005414",
+    "title": "Fate/stay night [Unlimited Blade Works]",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19980978"
+    },
+    "titles": {
+      "ko": "Fate/stay night [Unlimited Blade Works]",
+      "en": "Fate/stay night: Unlimited Blade Works",
+      "ja": "Fate/stay night [Unlimited Blade Works]"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

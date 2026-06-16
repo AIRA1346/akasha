@@ -17,5 +17,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005427": {
+    "workId": "wk_000005427",
+    "title": "봉우리 깊은 여울에 맴도는 노래",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11476154"
+    },
+    "titles": {
+      "ko": "봉우리 깊은 여울에 맴도는 노래",
+      "en": "Mine Fukaki Se ni Tayutau Uta",
+      "ja": "峰深き瀬にたゆたう唄"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005494": {
+    "workId": "wk_000005494",
+    "title": "전여신 2 ~잃어버린 기억으로의 진혼가~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11496057"
+    },
+    "titles": {
+      "ko": "전여신 2 ~잃어버린 기억으로의 진혼가~",
+      "en": "Ikusa Megami 2 ~Ushinawareshi Kioku e no Chinkonka~",
+      "ja": "戦女神2 〜失われし記憶への鎮魂歌〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006415": {
+    "workId": "wk_000006415",
+    "title": "F1 23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118136346"
+    },
+    "titles": {
+      "ko": "F1 23",
+      "en": "F1 23"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

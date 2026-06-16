@@ -86,5 +86,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006089": {
+    "workId": "wk_000006089",
+    "title": "키티즈 파라다이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11296841"
+    },
+    "titles": {
+      "ko": "키티즈 파라다이스",
+      "en": "Kitty's Paradise",
+      "ja": "キティズパラダイス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006312": {
+    "workId": "wk_000006312",
+    "title": "체이스 ~ 국세 사찰관 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11317715"
+    },
+    "titles": {
+      "ko": "체이스 ~ 국세 사찰관 ~",
+      "en": "Chase-national tax inspectors-",
+      "ja": "チェイス〜国税査察官〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006434": {
+    "workId": "wk_000006434",
+    "title": "헬로! 핑크 레이디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326964"
+    },
+    "titles": {
+      "ko": "헬로! 핑크 레이디",
+      "en": "Hello! Pink Lady",
+      "ja": "ハロー! ピンクレディー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

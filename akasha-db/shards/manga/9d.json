@@ -75,5 +75,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005677": {
+    "workId": "wk_000005677",
+    "title": "꼬마숙녀 치에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1314546"
+    },
+    "titles": {
+      "ko": "꼬마숙녀 치에",
+      "en": "Jarinko Chie",
+      "ja": "じゃりン子チエ"
+    },
+    "creator": "Etsumi Haruki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

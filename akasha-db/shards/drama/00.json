@@ -102,5 +102,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005783": {
+    "workId": "wk_000005783",
+    "title": "장녹수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268743"
+    },
+    "titles": {
+      "ko": "장녹수",
+      "en": "Jang Nok-soo",
+      "ja": "王妃チャン・ノクス -宮廷の陰謀-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005879": {
+    "workId": "wk_000005879",
+    "title": "어떻게 ? 왜 ?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278645"
+    },
+    "titles": {
+      "ko": "어떻게 ? 왜 ?",
+      "en": "The How & Why",
+      "ja": "まんがどうして物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

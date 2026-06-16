@@ -135,5 +135,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005343": {
+    "workId": "wk_000005343",
+    "title": "아키라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1905968"
+    },
+    "titles": {
+      "ko": "아키라",
+      "en": "Akira",
+      "ja": "AKIRA"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

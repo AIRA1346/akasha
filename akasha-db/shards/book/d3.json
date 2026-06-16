@@ -95,5 +95,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006140": {
+    "workId": "wk_000006140",
+    "title": "새로 엮은 옛이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11079012"
+    },
+    "titles": {
+      "ko": "새로 엮은 옛이야기",
+      "en": "Old Tales Retold"
+    },
+    "releaseYear": 1935,
+    "creator": "Lu Xun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

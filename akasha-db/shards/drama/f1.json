@@ -102,5 +102,78 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005527": {
+    "workId": "wk_000005527",
+    "title": "내일의 와(WA)!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257473"
+    },
+    "titles": {
+      "ko": "내일의 와(WA)!",
+      "en": "Q11257473",
+      "ja": "あすのWA!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005849": {
+    "workId": "wk_000005849",
+    "title": "도쿠6 도쿠시마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273069"
+    },
+    "titles": {
+      "ko": "도쿠6 도쿠시마",
+      "en": "Q11273069",
+      "ja": "とく6徳島"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006007": {
+    "workId": "wk_000006007",
+    "title": "이누고에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286911"
+    },
+    "titles": {
+      "ko": "이누고에",
+      "en": "Q11286911",
+      "ja": "イヌゴエ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006075": {
+    "workId": "wk_000006075",
+    "title": "코미디 콜로세움",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11289383"
+    },
+    "titles": {
+      "ko": "코미디 콜로세움",
+      "en": "Comedy Colosseum",
+      "ja": "ウンナン極限ネタバトル! ザ・イロモネア 笑わせたら100万円"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

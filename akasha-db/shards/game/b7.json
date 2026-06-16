@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006356": {
+    "workId": "wk_000006356",
+    "title": "마이트 앤 매직 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1176842"
+    },
+    "titles": {
+      "ko": "마이트 앤 매직 6",
+      "en": "Might and Magic VI: The Mandate of Heaven"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

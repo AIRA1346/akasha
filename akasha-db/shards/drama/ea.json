@@ -103,5 +103,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005946": {
+    "workId": "wk_000005946",
+    "title": "난 매력없는 준재인가?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11281835"
+    },
+    "titles": {
+      "ko": "난 매력없는 준재인가?",
+      "en": "Am I Unattractive?",
+      "ja": "わたしってブスだったの?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006373": {
+    "workId": "wk_000006373",
+    "title": "나스만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324157"
+    },
+    "titles": {
+      "ko": "나스만",
+      "en": "Nurse Man",
+      "ja": "ナースマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

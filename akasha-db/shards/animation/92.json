@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005694": {
+    "workId": "wk_000005694",
+    "title": "명탐정 코난: 절해의 탐정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q218516"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 절해의 탐정",
+      "en": "Detective Conan: Private Eye in the Distant Sea",
+      "ja": "名探偵コナン 絶海の探偵"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

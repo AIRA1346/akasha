@@ -103,5 +103,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005464": {
+    "workId": "wk_000005464",
+    "title": "슈퍼J채널",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253326"
+    },
+    "titles": {
+      "ko": "슈퍼J채널",
+      "en": "Super J Channel",
+      "ja": "スーパーJチャンネル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006380": {
+    "workId": "wk_000006380",
+    "title": "뉴스 845 후쿠오카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324711"
+    },
+    "titles": {
+      "ko": "뉴스 845 후쿠오카",
+      "en": "News 845 Fukuoka",
+      "ja": "ニュース845福岡"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

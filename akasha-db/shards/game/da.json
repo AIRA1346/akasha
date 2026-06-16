@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006196": {
+    "workId": "wk_000006196",
+    "title": "다크사이더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1166313"
+    },
+    "titles": {
+      "ko": "다크사이더스",
+      "en": "Darksiders",
+      "ja": "ダークサイダーズ 〜審判の時〜"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

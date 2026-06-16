@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005374": {
+    "workId": "wk_000005374",
+    "title": "사랑의 종말",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059683"
+    },
+    "titles": {
+      "ko": "사랑의 종말",
+      "en": "The End of the Affair",
+      "ja": "情事の終り"
+    },
+    "releaseYear": 1955,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

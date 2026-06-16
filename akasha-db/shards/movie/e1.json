@@ -28,5 +28,24 @@
       "en": "Spider MAN NWH",
       "ko": "스파이더맨: 노 웨이 홈"
     }
+  },
+  "wk_000005993": {
+    "workId": "wk_000005993",
+    "title": "007 골드핑거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106440"
+    },
+    "titles": {
+      "ko": "007 골드핑거",
+      "en": "Goldfinger",
+      "ja": "007 ゴールドフィンガー"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005530": {
+    "workId": "wk_000005530",
+    "title": "애니파라 음악관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11258109"
+    },
+    "titles": {
+      "ko": "애니파라 음악관",
+      "en": "Anipara Ongakukan",
+      "ja": "アニぱら音楽館"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005931": {
+    "workId": "wk_000005931",
+    "title": "톱 세일즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279098"
+    },
+    "titles": {
+      "ko": "톱 세일즈",
+      "en": "Q11279098",
+      "ja": "トップセールス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

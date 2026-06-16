@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005767": {
+    "workId": "wk_000005767",
+    "title": "별의 커비",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154044"
+    },
+    "titles": {
+      "ko": "별의 커비",
+      "en": "Kirby's Dream Land",
+      "ja": "星のカービィ"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

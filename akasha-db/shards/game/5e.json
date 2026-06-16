@@ -35,5 +35,40 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006279": {
+    "workId": "wk_000006279",
+    "title": "고양이와 스프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116911040"
+    },
+    "titles": {
+      "ko": "고양이와 스프",
+      "en": "Cats & Soup"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006417": {
+    "workId": "wk_000006417",
+    "title": "리틀 키티, 빅 시티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118143124"
+    },
+    "titles": {
+      "ko": "리틀 키티, 빅 시티",
+      "en": "Little Kitty, Big City"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

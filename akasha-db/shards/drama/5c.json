@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005599": {
+    "workId": "wk_000005599",
+    "title": "오네다리 마스캇토SP!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262061"
+    },
+    "titles": {
+      "ko": "오네다리 마스캇토SP!",
+      "en": "Q11262061",
+      "ja": "おねだりマスカットSP!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

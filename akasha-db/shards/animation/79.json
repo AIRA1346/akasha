@@ -112,5 +112,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005965": {
+    "workId": "wk_000005965",
+    "title": "간츠: 오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24211079"
+    },
+    "titles": {
+      "ko": "간츠: 오",
+      "en": "Gantz: O",
+      "ja": "GANTZ:O"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005801": {
+    "workId": "wk_000005801",
+    "title": "페르소나 5",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131465684"
+    },
+    "titles": {
+      "ko": "페르소나 5",
+      "en": "Persona 5",
+      "ja": "ペルソナ５"
+    },
+    "creator": "Hisato Murasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

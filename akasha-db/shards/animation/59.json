@@ -125,5 +125,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006401": {
+    "workId": "wk_000006401",
+    "title": "디지몬 크로스워즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q275676"
+    },
+    "titles": {
+      "ko": "디지몬 크로스워즈",
+      "en": "Digimon Fusion",
+      "ja": "デジモンクロスウォーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

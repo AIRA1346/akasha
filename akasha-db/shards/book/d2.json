@@ -38,5 +38,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005500": {
+    "workId": "wk_000005500",
+    "title": "룬의 아이들 블러디드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455069"
+    },
+    "titles": {
+      "ko": "룬의 아이들 블러디드",
+      "en": "Q109455069"
+    },
+    "creator": "Jeon Min-hee",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

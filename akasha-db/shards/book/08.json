@@ -55,5 +55,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005841": {
+    "workId": "wk_000005841",
+    "title": "무착의보살품",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110269367"
+    },
+    "titles": {
+      "ko": "무착의보살품",
+      "en": "Akṣayamatinirdeśa Sūtra",
+      "ja": "無尽意菩薩品"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005842": {
+    "workId": "wk_000005842",
+    "title": "상속 게임",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110269463"
+    },
+    "titles": {
+      "ko": "상속 게임",
+      "en": "The Inheritance Games"
+    },
+    "releaseYear": 2020,
+    "creator": "Jennifer Lynn Barnes",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

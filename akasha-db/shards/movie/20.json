@@ -1,0 +1,21 @@
+{
+  "wk_000005919": {
+    "workId": "wk_000005919",
+    "title": "흑과 백",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063525"
+    },
+    "titles": {
+      "ko": "흑과 백",
+      "en": "The Defiant Ones",
+      "ja": "手錠のまゝの脱獄"
+    },
+    "releaseYear": 1958,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

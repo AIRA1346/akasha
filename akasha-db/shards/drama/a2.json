@@ -102,5 +102,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005378": {
+    "workId": "wk_000005378",
+    "title": "미성년",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242236"
+    },
+    "titles": {
+      "ko": "미성년",
+      "en": "Under Age",
+      "ja": "未成年"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

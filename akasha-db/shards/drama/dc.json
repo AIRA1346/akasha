@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005793": {
+    "workId": "wk_000005793",
+    "title": "제3공화국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270481"
+    },
+    "titles": {
+      "ko": "제3공화국",
+      "en": "Third Republic",
+      "ja": "第3共和国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -90,5 +90,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006033": {
+    "workId": "wk_000006033",
+    "title": "로스토레이지 인사이티드 위크로스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24866127"
+    },
+    "titles": {
+      "ko": "로스토레이지 인사이티드 위크로스",
+      "en": "Lostorage incited WIXOSS",
+      "ja": "Lostorage incited WIXOSS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

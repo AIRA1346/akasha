@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006094": {
+    "workId": "wk_000006094",
+    "title": "데드 어카운트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133269593"
+    },
+    "titles": {
+      "ko": "데드 어카운트",
+      "en": "Dead Account",
+      "ja": "デッドアカウント"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

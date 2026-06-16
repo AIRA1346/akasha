@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005484": {
+    "workId": "wk_000005484",
+    "title": "밴드 오브 브라더스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q208048"
+    },
+    "titles": {
+      "ko": "밴드 오브 브라더스",
+      "en": "Band of Brothers",
+      "ja": "バンド・オブ・ブラザース"
+    },
+    "creator": "Graham Young",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -71,5 +71,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005746": {
+    "workId": "wk_000005746",
+    "title": "마요이가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21998224"
+    },
+    "titles": {
+      "ko": "마요이가",
+      "en": "The Lost Village",
+      "ja": "迷家-マヨイガ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005815": {
+    "workId": "wk_000005815",
+    "title": "우주 패트롤 루루코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22696372"
+    },
+    "titles": {
+      "ko": "우주 패트롤 루루코",
+      "en": "Space Patrol Luluco",
+      "ja": "宇宙パトロールルル子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

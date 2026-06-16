@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005353": {
+    "workId": "wk_000005353",
+    "title": "귀무자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144140"
+    },
+    "titles": {
+      "ko": "귀무자",
+      "en": "Onimusha: Warlords",
+      "ja": "鬼武者"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

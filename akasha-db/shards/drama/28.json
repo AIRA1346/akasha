@@ -32,5 +32,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005451": {
+    "workId": "wk_000005451",
+    "title": "상처투성이의 러브송",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11249593"
+    },
+    "titles": {
+      "ko": "상처투성이의 러브송",
+      "en": "Kizudarake no Love Song",
+      "ja": "傷だらけのラブソング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005728": {
+    "workId": "wk_000005728",
+    "title": "갓치리 먼데이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11264595"
+    },
+    "titles": {
+      "ko": "갓치리 먼데이",
+      "en": "Money Monday",
+      "ja": "がっちりマンデー!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

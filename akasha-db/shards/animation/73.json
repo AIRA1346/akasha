@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006183": {
+    "workId": "wk_000006183",
+    "title": "절대소년",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2572237"
+    },
+    "titles": {
+      "ko": "절대소년",
+      "en": "Absolute Boy",
+      "ja": "絶対少年"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

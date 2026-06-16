@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006085": {
+    "workId": "wk_000006085",
+    "title": "걸즈 토크 ~ 열명의 시스터들 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11296558"
+    },
+    "titles": {
+      "ko": "걸즈 토크 ~ 열명의 시스터들 ~",
+      "en": "Girls' Talk",
+      "ja": "ガールズトーク〜十人のシスターたち〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

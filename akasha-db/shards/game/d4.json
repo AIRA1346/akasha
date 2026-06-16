@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005974": {
+    "workId": "wk_000005974",
+    "title": "추-추 찰스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115651971"
+    },
+    "titles": {
+      "ko": "추-추 찰스",
+      "en": "Choo-Choo Charles",
+      "ja": "チューチュー・チャールズ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

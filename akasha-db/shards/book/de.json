@@ -75,5 +75,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006137": {
+    "workId": "wk_000006137",
+    "title": "부상략기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11076282"
+    },
+    "titles": {
+      "ko": "부상략기",
+      "en": "Fusō Ryakki",
+      "ja": "扶桑略記"
+    },
+    "releaseYear": 1094,
+    "creator": "Kōen",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

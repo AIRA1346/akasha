@@ -1,0 +1,20 @@
+{
+  "wk_000005903": {
+    "workId": "wk_000005903",
+    "title": "혜성의 그림자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155168"
+    },
+    "titles": {
+      "ko": "혜성의 그림자",
+      "en": "Shadow of the Comet"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

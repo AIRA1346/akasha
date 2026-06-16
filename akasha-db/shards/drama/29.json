@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005390": {
+    "workId": "wk_000005390",
+    "title": "브라더스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246785"
+    },
+    "titles": {
+      "ko": "브라더스",
+      "en": "Q11246785",
+      "ja": "ブラザーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

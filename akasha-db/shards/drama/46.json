@@ -54,5 +54,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005930": {
+    "workId": "wk_000005930",
+    "title": "미혼 육자매",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278827"
+    },
+    "titles": {
+      "ko": "미혼 육자매",
+      "en": "Q11278827",
+      "ja": "みこん六姉妹"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006382": {
+    "workId": "wk_000006382",
+    "title": "뉴스 시즈오카 845",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324737"
+    },
+    "titles": {
+      "ko": "뉴스 시즈오카 845",
+      "en": "News Shizouka 845",
+      "ja": "ニュースしずおか845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

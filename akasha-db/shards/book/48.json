@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005840": {
+    "workId": "wk_000005840",
+    "title": "츤데레 악역 영애 리젤로테와 실황의 엔도 군과 해설의 코바야시 양",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110254736"
+    },
+    "titles": {
+      "ko": "츤데레 악역 영애 리젤로테와 실황의 엔도 군과 해설의 코바야시 양",
+      "en": "Endo and Kobayashi Live! The Latest on Tsundere Villainess Lieselotte",
+      "ja": "ツンデレ悪役令嬢リーゼロッテと実況の遠藤くんと解説の小林さん"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

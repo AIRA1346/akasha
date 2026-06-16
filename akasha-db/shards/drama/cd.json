@@ -123,5 +123,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006162": {
+    "workId": "wk_000006162",
+    "title": "시네마 익스프레스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11307413"
+    },
+    "titles": {
+      "ko": "시네마 익스프레스",
+      "en": "Cinema Express",
+      "ja": "シネマエクスプレス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

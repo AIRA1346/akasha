@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005520": {
+    "workId": "wk_000005520",
+    "title": "아이돌의 구멍~닛테레 제닉을 찾자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256743"
+    },
+    "titles": {
+      "ko": "아이돌의 구멍~닛테레 제닉을 찾자",
+      "en": "Q11256743",
+      "ja": "アイドルの穴〜日テレジェニックを探せ!〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

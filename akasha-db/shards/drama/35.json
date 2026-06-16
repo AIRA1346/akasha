@@ -70,5 +70,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005393": {
+    "workId": "wk_000005393",
+    "title": "TAKE FIVE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248088"
+    },
+    "titles": {
+      "ko": "TAKE FIVE",
+      "en": "TAKE FIVE",
+      "ja": "TAKE FIVE〜俺たちは愛を盗めるか〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005657": {
+    "workId": "wk_000005657",
+    "title": "NHK 뉴스 오하요 히로시마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262156"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 히로시마",
+      "en": "Q11262156",
+      "ja": "おはようひろしま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

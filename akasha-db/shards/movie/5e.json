@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006226": {
+    "workId": "wk_000006226",
+    "title": "퍼니셔 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065829"
+    },
+    "titles": {
+      "ko": "퍼니셔 2",
+      "en": "Punisher: War Zone",
+      "ja": "パニッシャー: ウォー・ゾーン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

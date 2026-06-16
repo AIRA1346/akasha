@@ -53,5 +53,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006111": {
+    "workId": "wk_000006111",
+    "title": "조이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2539476"
+    },
+    "titles": {
+      "ko": "조이드",
+      "en": "Zoids",
+      "ja": "ゾイド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006400": {
+    "workId": "wk_000006400",
+    "title": "익시온 사가 DT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2756199"
+    },
+    "titles": {
+      "ko": "익시온 사가 DT",
+      "en": "Ixion Saga DT",
+      "ja": "イクシオン サーガ DT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

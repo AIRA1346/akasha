@@ -35,5 +35,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005642": {
+    "workId": "wk_000005642",
+    "title": "하에다마처럼 모시는 것",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109596656"
+    },
+    "titles": {
+      "ko": "하에다마처럼 모시는 것",
+      "en": "Q109596656",
+      "ja": "碆霊の如き祀るもの"
+    },
+    "releaseYear": 2018,
+    "creator": "Shinzō Mitsuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

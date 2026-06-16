@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005643": {
+    "workId": "wk_000005643",
+    "title": "레벌루션 No.3",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109598486"
+    },
+    "titles": {
+      "ko": "레벌루션 No.3",
+      "en": "Q109598486",
+      "ja": "レヴォリューションNO.3"
+    },
+    "creator": "Kazuki Kaneshiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -75,5 +75,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005545": {
+    "workId": "wk_000005545",
+    "title": "라이라이라이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130621345"
+    },
+    "titles": {
+      "ko": "라이라이라이",
+      "en": "Rai Rai Rai",
+      "ja": "雷雷雷"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

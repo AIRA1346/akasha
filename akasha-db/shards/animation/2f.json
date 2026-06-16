@@ -55,5 +55,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005349": {
+    "workId": "wk_000005349",
+    "title": "몬스터 팜",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1945339"
+    },
+    "titles": {
+      "ko": "몬스터 팜",
+      "en": "Monster Rancher",
+      "ja": "モンスターファーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006178": {
+    "workId": "wk_000006178",
+    "title": "신데렐라 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2557696"
+    },
+    "titles": {
+      "ko": "신데렐라 이야기",
+      "en": "Cinderella",
+      "ja": "シンデレラ物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

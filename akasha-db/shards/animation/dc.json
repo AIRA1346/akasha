@@ -52,5 +52,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005408": {
+    "workId": "wk_000005408",
+    "title": "Cosmic Baton Girl 코메트상☆",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19820250"
+    },
+    "titles": {
+      "ko": "Cosmic Baton Girl 코메트상☆",
+      "en": "Cosmic Baton Girl Princess Comet",
+      "ja": "Cosmic Baton Girl コメットさん☆"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006185": {
+    "workId": "wk_000006185",
+    "title": "아니*크리15",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2580218"
+    },
+    "titles": {
+      "ko": "아니*크리15",
+      "en": "Ani*Kuri15",
+      "ja": "アニ*クリ15"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

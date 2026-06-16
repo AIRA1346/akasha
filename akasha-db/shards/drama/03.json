@@ -66,5 +66,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005671": {
+    "workId": "wk_000005671",
+    "title": "도와자 ☆ 진파치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262923"
+    },
+    "titles": {
+      "ko": "도와자 ☆ 진파치",
+      "en": "O Tasuke-ya ☆ Jinpachi",
+      "ja": "お助け屋☆陣八"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006001": {
+    "workId": "wk_000006001",
+    "title": "하마키스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284294"
+    },
+    "titles": {
+      "ko": "하마키스",
+      "en": "Q11284294",
+      "ja": "濱キス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006076": {
+    "workId": "wk_000006076",
+    "title": "에어즈 록",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11289535"
+    },
+    "titles": {
+      "ko": "에어즈 록",
+      "en": "Ayers Rock",
+      "ja": "エアーズロック (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

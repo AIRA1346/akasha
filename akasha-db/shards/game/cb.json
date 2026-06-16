@@ -140,5 +140,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006349": {
+    "workId": "wk_000006349",
+    "title": "무기미도",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117313892"
+    },
+    "titles": {
+      "ko": "무기미도",
+      "en": "Path to Nowhere",
+      "ja": "無期迷途"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

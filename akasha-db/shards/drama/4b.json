@@ -33,5 +33,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005466": {
+    "workId": "wk_000005466",
+    "title": "YOU는 뭐하러 일본에?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255238"
+    },
+    "titles": {
+      "ko": "YOU는 뭐하러 일본에?",
+      "en": "Why Did You Come to Japan?",
+      "ja": "YOUは何しに日本へ?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006003": {
+    "workId": "wk_000006003",
+    "title": "해피 뮤직",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11285677"
+    },
+    "titles": {
+      "ko": "해피 뮤직",
+      "en": "HAPPY MUSIC",
+      "ja": "ハッピーMusic"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006378": {
+    "workId": "wk_000006378",
+    "title": "뉴스 845 기타규슈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324709"
+    },
+    "titles": {
+      "ko": "뉴스 845 기타규슈",
+      "en": "News 845 Kiyakyushu",
+      "ja": "ニュース845北九州"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

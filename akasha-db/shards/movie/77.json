@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006300": {
+    "workId": "wk_000006300",
+    "title": "진 사메지마 사건",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106608704"
+    },
+    "titles": {
+      "ko": "진 사메지마 사건",
+      "en": "The Samejima Incident",
+      "ja": "真・鮫島事件"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

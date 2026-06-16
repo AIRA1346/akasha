@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006223": {
+    "workId": "wk_000006223",
+    "title": "007 위기일발",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106571"
+    },
+    "titles": {
+      "ko": "007 위기일발",
+      "en": "From Russia with Love",
+      "ja": "007 ロシアより愛をこめて"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

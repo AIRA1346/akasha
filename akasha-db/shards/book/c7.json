@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006136": {
+    "workId": "wk_000006136",
+    "title": "나의 주인님?!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074950"
+    },
+    "titles": {
+      "ko": "나의 주인님?!",
+      "en": "Boku no Goshujin-sama!?",
+      "ja": "ぼくのご主人様!?"
+    },
+    "creator": "Yūki Takano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

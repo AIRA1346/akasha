@@ -102,5 +102,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005616": {
+    "workId": "wk_000005616",
+    "title": "타마코 마켓",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q211183"
+    },
+    "titles": {
+      "ko": "타마코 마켓",
+      "en": "Tamako Market",
+      "ja": "たまこまーけっと"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006262": {
+    "workId": "wk_000006262",
+    "title": "주간 포켓몬 방송국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2629656"
+    },
+    "titles": {
+      "ko": "주간 포켓몬 방송국",
+      "en": "Pokémon Chronicles",
+      "ja": "週刊ポケモン放送局"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

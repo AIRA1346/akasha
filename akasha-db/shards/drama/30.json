@@ -68,5 +68,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005726": {
+    "workId": "wk_000005726",
+    "title": "위풍당당 그녀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11264125"
+    },
+    "titles": {
+      "ko": "위풍당당 그녀",
+      "en": "Country Princess",
+      "ja": "威風堂々な彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006078": {
+    "workId": "wk_000006078",
+    "title": "오바 자랑 폭탄 냄비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11292192"
+    },
+    "titles": {
+      "ko": "오바 자랑 폭탄 냄비",
+      "en": "Obā jiman no bakudan nabe",
+      "ja": "オバー自慢の爆弾鍋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

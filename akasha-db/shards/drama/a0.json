@@ -88,5 +88,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005597": {
+    "workId": "wk_000005597",
+    "title": "오네다리!! 마스캇토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262059"
+    },
+    "titles": {
+      "ko": "오네다리!! 마스캇토",
+      "en": "Q11262059",
+      "ja": "おねだり!!マスカット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006158": {
+    "workId": "wk_000006158",
+    "title": "설첨상적심도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113042475"
+    },
+    "titles": {
+      "ko": "설첨상적심도",
+      "en": "Cupid's Kitchen"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

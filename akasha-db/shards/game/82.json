@@ -92,5 +92,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006124": {
+    "workId": "wk_000006124",
+    "title": "유희왕 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640282"
+    },
+    "titles": {
+      "ko": "유희왕 온라인",
+      "en": "Yu-Gi-Oh! Online Duel Evolution",
+      "ja": "遊☆戯☆王ONLINE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006133": {
+    "workId": "wk_000006133",
+    "title": "기타 히어로",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116578"
+    },
+    "titles": {
+      "ko": "기타 히어로",
+      "en": "Guitar Hero",
+      "ja": "ギターヒーロー"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

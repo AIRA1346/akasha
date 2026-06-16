@@ -52,5 +52,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005465": {
+    "workId": "wk_000005465",
+    "title": "스타 골든벨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253747"
+    },
+    "titles": {
+      "ko": "스타 골든벨",
+      "en": "Star Golden Bell",
+      "ja": "スターゴールデンベル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005872": {
+    "workId": "wk_000005872",
+    "title": "HOT 군마 640",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277783"
+    },
+    "titles": {
+      "ko": "HOT 군마 640",
+      "en": "Q11277783",
+      "ja": "ほっとぐんま640"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006280": {
+    "workId": "wk_000006280",
+    "title": "모퉁이 뜨개방 with 카페",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116911412"
+    },
+    "titles": {
+      "ko": "모퉁이 뜨개방 with 카페",
+      "en": "Little Corner Tea House",
+      "ja": "ようこそ！ぬいぐるみカフェ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

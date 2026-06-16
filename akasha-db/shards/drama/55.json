@@ -69,5 +69,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005998": {
+    "workId": "wk_000005998",
+    "title": "아사데스.",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283160"
+    },
+    "titles": {
+      "ko": "아사데스.",
+      "en": "Q11283160",
+      "ja": "アサデス。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

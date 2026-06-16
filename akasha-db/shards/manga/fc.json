@@ -92,5 +92,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005334": {
+    "workId": "wk_000005334",
+    "title": "록은 숙녀의 소양이기에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127691393"
+    },
+    "titles": {
+      "ko": "록은 숙녀의 소양이기에",
+      "en": "Rock Is a Lady's Modesty",
+      "ja": "ロックは淑女の嗜みでして"
+    },
+    "creator": "Hiroshi Fukuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006245": {
+    "workId": "wk_000006245",
+    "title": "고문 아르바이트의 일상",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134443516"
+    },
+    "titles": {
+      "ko": "고문 아르바이트의 일상",
+      "en": "The Daily Life of a Part-time Torturer",
+      "ja": "拷問バイトくんの日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

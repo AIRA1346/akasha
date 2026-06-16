@@ -50,5 +50,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005660": {
+    "workId": "wk_000005660",
+    "title": "오하요 시코쿠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262210"
+    },
+    "titles": {
+      "ko": "오하요 시코쿠",
+      "en": "Q11262210",
+      "ja": "おはよう四国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

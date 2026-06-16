@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005619": {
+    "workId": "wk_000005619",
+    "title": "극장판 요괴워치: 탄생의 비밀이다냥!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21160200"
+    },
+    "titles": {
+      "ko": "극장판 요괴워치: 탄생의 비밀이다냥!",
+      "en": "Yo-kai Watch: Tanjō no Himitsu da Nyan!",
+      "ja": "映画 妖怪ウォッチ 誕生の秘密だニャン!"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

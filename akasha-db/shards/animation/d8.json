@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006104": {
+    "workId": "wk_000006104",
+    "title": "닌자보이 란타로: 삼총사의 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24900832"
+    },
+    "titles": {
+      "ko": "닌자보이 란타로: 삼총사의 대모험",
+      "en": "Eiga Nintama Rantarō",
+      "ja": "映画 忍たま乱太郎"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

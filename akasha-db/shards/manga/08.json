@@ -66,5 +66,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005606": {
+    "workId": "wk_000005606",
+    "title": "상처투성이 성녀로부터 복수를 담아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131275987"
+    },
+    "titles": {
+      "ko": "상처투성이 성녀로부터 복수를 담아",
+      "en": "With Vengeance, Sincerely, Your Broken Saintess",
+      "ja": "傷だらけ聖女より報復をこめて"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

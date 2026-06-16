@@ -68,5 +68,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005514": {
+    "workId": "wk_000005514",
+    "title": "아나운서 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255876"
+    },
+    "titles": {
+      "ko": "아나운서 이야기",
+      "en": "Q11255876",
+      "ja": "アナウンサーぷっつん物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005830": {
+    "workId": "wk_000005830",
+    "title": "새하얀 색 심포니",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154641"
+    },
+    "titles": {
+      "ko": "새하얀 색 심포니",
+      "en": "Mashiroiro Symphony",
+      "ja": "ましろ色シンフォニー"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

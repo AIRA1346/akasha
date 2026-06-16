@@ -127,5 +127,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005485": {
+    "workId": "wk_000005485",
+    "title": "환린의 희장군",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11484174"
+    },
+    "titles": {
+      "ko": "환린의 희장군",
+      "en": "Genrin no kishōgun",
+      "ja": "幻燐の姫将軍"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

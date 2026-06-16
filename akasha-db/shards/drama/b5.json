@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005790": {
+    "workId": "wk_000005790",
+    "title": "그날 전에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270409"
+    },
+    "titles": {
+      "ko": "그날 전에",
+      "en": "Sonohinomaeni",
+      "ja": "その日のまえに"
+    },
+    "creator": "Kiyoshi Shigematsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

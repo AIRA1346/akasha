@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005928": {
+    "workId": "wk_000005928",
+    "title": "아폴로 13",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106428"
+    },
+    "titles": {
+      "ko": "아폴로 13",
+      "en": "Apollo 13",
+      "ja": "アポロ13"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006309": {
+    "workId": "wk_000006309",
+    "title": "이스케이프 큐브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106651130"
+    },
+    "titles": {
+      "ko": "이스케이프 큐브",
+      "en": "Meander",
+      "ja": "TUBE チューブ 死の脱出"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

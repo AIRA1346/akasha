@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006189": {
+    "workId": "wk_000006189",
+    "title": "핸드 셰이커",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25915278"
+    },
+    "titles": {
+      "ko": "핸드 셰이커",
+      "en": "Hand Shakers",
+      "ja": "ハンドシェイカー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

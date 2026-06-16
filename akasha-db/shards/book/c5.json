@@ -105,5 +105,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006362": {
+    "workId": "wk_000006362",
+    "title": "계원필경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11111781"
+    },
+    "titles": {
+      "ko": "계원필경",
+      "en": "Gyewon Pilgyeong"
+    },
+    "creator": "최치원",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

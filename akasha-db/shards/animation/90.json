@@ -158,5 +158,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005417": {
+    "workId": "wk_000005417",
+    "title": "부탁해! 미라클 캣츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20039313"
+    },
+    "titles": {
+      "ko": "부탁해! 미라클 캣츠",
+      "en": "Omakase! Miracle Cat-dan",
+      "ja": "おまかせ!みらくるキャット団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006409": {
+    "workId": "wk_000006409",
+    "title": "극장판 셀렉터: 디스트럭티드 위크로스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27954036"
+    },
+    "titles": {
+      "ko": "극장판 셀렉터: 디스트럭티드 위크로스",
+      "en": "Selector Destructed WIXOSS the Movie",
+      "ja": "劇場版selector destructed WIXOSS"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

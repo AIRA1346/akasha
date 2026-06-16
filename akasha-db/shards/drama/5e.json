@@ -69,5 +69,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005382": {
+    "workId": "wk_000005382",
+    "title": "SunnycombTV",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243871"
+    },
+    "titles": {
+      "ko": "SunnycombTV",
+      "en": "Q11243871",
+      "ja": "SunnycombTV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006448": {
+    "workId": "wk_000006448",
+    "title": "비브리아 고서당의 사건 수첩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11330927"
+    },
+    "titles": {
+      "ko": "비브리아 고서당의 사건 수첩",
+      "en": "Biblia Koshodō no Jiken Techō",
+      "ja": "ビブリア古書堂の事件手帖"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

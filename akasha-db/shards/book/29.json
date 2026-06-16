@@ -53,5 +53,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005985": {
+    "workId": "wk_000005985",
+    "title": "잽 건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1106283"
+    },
+    "titles": {
+      "ko": "잽 건",
+      "en": "The Zap Gun",
+      "ja": "ザップ・ガン"
+    },
+    "releaseYear": 1967,
+    "creator": "필립 K. 딕",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005986": {
+    "workId": "wk_000005986",
+    "title": "신은 유희에 굶주려있다.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110635478"
+    },
+    "titles": {
+      "ko": "신은 유희에 굶주려있다.",
+      "en": "Gods' Games We Play",
+      "ja": "神は遊戯に飢えている。"
+    },
+    "releaseYear": 2021,
+    "creator": "Kei Sazane",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

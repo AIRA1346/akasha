@@ -121,5 +121,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005384": {
+    "workId": "wk_000005384",
+    "title": "버스스톱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244351"
+    },
+    "titles": {
+      "ko": "버스스톱",
+      "en": "Q11244351",
+      "ja": "バスストップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005742": {
+    "workId": "wk_000005742",
+    "title": "자니스 카운트다운 라이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268282"
+    },
+    "titles": {
+      "ko": "자니스 카운트다운 라이브",
+      "en": "Johnny's Count Down Live",
+      "ja": "ジャニーズカウントダウンライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006241": {
+    "workId": "wk_000006241",
+    "title": "소돔의 사과 ~ 롯을 죽인 딸들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315144"
+    },
+    "titles": {
+      "ko": "소돔의 사과 ~ 롯을 죽인 딸들",
+      "en": "Sodom no Ringo",
+      "ja": "ソドムの林檎〜ロトを殺した娘たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006043": {
+    "workId": "wk_000006043",
+    "title": "Fate/Samurai Remnant",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115950128"
+    },
+    "titles": {
+      "ko": "Fate/Samurai Remnant",
+      "en": "Fate/Samurai Remnant"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005579": {
+    "workId": "wk_000005579",
+    "title": "굿 닥터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060484"
+    },
+    "titles": {
+      "ko": "굿 닥터",
+      "en": "The Good Doctor",
+      "ja": "グッド・ドクター 禁断のカルテ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006149": {
+    "workId": "wk_000006149",
+    "title": "낫씽 투 루즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065201"
+    },
+    "titles": {
+      "ko": "낫씽 투 루즈",
+      "en": "Nothing to Lose",
+      "ja": "ナッシング・トゥ・ルーズ"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

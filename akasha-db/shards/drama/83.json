@@ -51,5 +51,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005450": {
+    "workId": "wk_000005450",
+    "title": "상냥한 시간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11249487"
+    },
+    "titles": {
+      "ko": "상냥한 시간",
+      "en": "Q11249487",
+      "ja": "優しい時間"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

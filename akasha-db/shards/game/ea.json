@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006414": {
+    "workId": "wk_000006414",
+    "title": "카세트 비스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118111562"
+    },
+    "titles": {
+      "ko": "카세트 비스트",
+      "en": "Cassette Beasts"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

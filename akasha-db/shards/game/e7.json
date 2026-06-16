@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006052": {
+    "workId": "wk_000006052",
+    "title": "GINKA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116168944"
+    },
+    "titles": {
+      "ko": "GINKA",
+      "en": "Ginka",
+      "ja": "GINKA"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006412": {
+    "workId": "wk_000006412",
+    "title": "스트레이 갓즈: 더 롤플레잉 뮤지컬",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117886497"
+    },
+    "titles": {
+      "ko": "스트레이 갓즈: 더 롤플레잉 뮤지컬",
+      "en": "Stray Gods: The Roleplaying Musical"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -68,5 +68,22 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006027": {
+    "workId": "wk_000006027",
+    "title": "시크릿 러브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24839182"
+    },
+    "titles": {
+      "ko": "시크릿 러브",
+      "en": "Secret Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

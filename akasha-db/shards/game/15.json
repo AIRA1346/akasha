@@ -1,0 +1,20 @@
+{
+  "wk_000005428": {
+    "workId": "wk_000005428",
+    "title": "브로테이토",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114770253"
+    },
+    "titles": {
+      "ko": "브로테이토",
+      "en": "Brotato"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

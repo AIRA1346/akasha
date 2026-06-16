@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006287": {
+    "workId": "wk_000006287",
+    "title": "페어리랜드 스토리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1171208"
+    },
+    "titles": {
+      "ko": "페어리랜드 스토리",
+      "en": "The Fairyland Story",
+      "ja": "フェアリーランドストーリー"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -51,5 +51,61 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005860": {
+    "workId": "wk_000005860",
+    "title": "꼬인 인연",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11275061"
+    },
+    "titles": {
+      "ko": "꼬인 인연",
+      "en": "Nejiretakizuna",
+      "ja": "ねじれた絆"
+    },
+    "releaseYear": 1995,
+    "creator": "Shūji Okuno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006073": {
+    "workId": "wk_000006073",
+    "title": "위크엔드 간사이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11288453"
+    },
+    "titles": {
+      "ko": "위크엔드 간사이",
+      "en": "Q11288453",
+      "ja": "ウイークエンド関西"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006379": {
+    "workId": "wk_000006379",
+    "title": "뉴스 845 오키나와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324710"
+    },
+    "titles": {
+      "ko": "뉴스 845 오키나와",
+      "en": "News 845 Okinawa",
+      "ja": "ニュース845沖縄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

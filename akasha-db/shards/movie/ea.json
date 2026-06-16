@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005371": {
+    "workId": "wk_000005371",
+    "title": "서틴 라이브즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105962844"
+    },
+    "titles": {
+      "ko": "서틴 라이브즈",
+      "en": "Thirteen Lives",
+      "ja": "13人の命"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

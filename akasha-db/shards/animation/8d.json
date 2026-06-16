@@ -90,5 +90,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005757": {
+    "workId": "wk_000005757",
+    "title": "매직걸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2234128"
+    },
+    "titles": {
+      "ko": "매직걸",
+      "en": "Magikano",
+      "ja": "マジカノ"
+    },
+    "creator": "Hideki Mitsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006030": {
+    "workId": "wk_000006030",
+    "title": "디지몬 유니버스 어플리 몬스터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24862800"
+    },
+    "titles": {
+      "ko": "디지몬 유니버스 어플리 몬스터즈",
+      "en": "Digimon Universe: App Monsters",
+      "ja": "デジモンユニバース アプリモンスターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006107": {
+    "workId": "wk_000006107",
+    "title": "유리!!! on ICE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25104182"
+    },
+    "titles": {
+      "ko": "유리!!! on ICE",
+      "en": "Yuri on Ice",
+      "ja": "ユーリ on ICE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

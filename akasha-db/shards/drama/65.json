@@ -86,5 +86,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005589": {
+    "workId": "wk_000005589",
+    "title": "주접이 풍년",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112602352"
+    },
+    "titles": {
+      "ko": "주접이 풍년",
+      "en": "Q112602352"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

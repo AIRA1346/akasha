@@ -90,5 +90,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005756": {
+    "workId": "wk_000005756",
+    "title": "극장판 Go! 프린세스 프리큐어 Go!Go!! 호화 3편!!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131068"
+    },
+    "titles": {
+      "ko": "극장판 Go! 프린세스 프리큐어 Go!Go!! 호화 3편!!!",
+      "en": "Go! Princess Precure the Movie: Go! Go!! Splendid Triple Feature!!!",
+      "ja": "映画 Go!プリンセスプリキュア Go!Go!!豪華3本立て!!!"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005897": {
+    "workId": "wk_000005897",
+    "title": "베이블레이드 버스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23747084"
+    },
+    "titles": {
+      "ko": "베이블레이드 버스트",
+      "en": "Beyblade Burst",
+      "ja": "ベイブレードバースト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006404": {
+    "workId": "wk_000006404",
+    "title": "세이렌",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27688349"
+    },
+    "titles": {
+      "ko": "세이렌",
+      "en": "Seiren",
+      "ja": "セイレン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -140,5 +140,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005412": {
+    "workId": "wk_000005412",
+    "title": "포포땅",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1988293"
+    },
+    "titles": {
+      "ko": "포포땅",
+      "en": "Popotan",
+      "ja": "ぽぽたん"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006395": {
+    "workId": "wk_000006395",
+    "title": "드림페스!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27089505"
+    },
+    "titles": {
+      "ko": "드림페스!",
+      "en": "Dream Festival!",
+      "ja": "ドリフェス!"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

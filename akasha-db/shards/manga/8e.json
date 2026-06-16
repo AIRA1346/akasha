@@ -30,5 +30,23 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000005533": {
+    "workId": "wk_000005533",
+    "title": "오니의 신부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130324841"
+    },
+    "titles": {
+      "ko": "오니의 신부",
+      "en": "The Ogre's Bride",
+      "ja": "鬼の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

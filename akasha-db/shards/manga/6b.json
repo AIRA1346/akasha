@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006331": {
+    "workId": "wk_000006331",
+    "title": "건스미스 캣츠",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1363696"
+    },
+    "titles": {
+      "ko": "건스미스 캣츠",
+      "en": "Gunsmith Cats",
+      "ja": "ガンスミスキャッツ"
+    },
+    "releaseYear": 1995,
+    "creator": "Kenichi Sonoda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

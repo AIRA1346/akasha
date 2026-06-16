@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005490": {
+    "workId": "wk_000005490",
+    "title": "사랑은 아니지만",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11491816"
+    },
+    "titles": {
+      "ko": "사랑은 아니지만",
+      "en": "Q11491816",
+      "ja": "恋ではなく―― It's not love, but so where near."
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005910": {
+    "workId": "wk_000005910",
+    "title": "애니팡",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115553084"
+    },
+    "titles": {
+      "ko": "애니팡",
+      "en": "Any pang"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

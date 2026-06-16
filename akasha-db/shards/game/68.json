@@ -1,0 +1,21 @@
+{
+  "wk_000006128": {
+    "workId": "wk_000006128",
+    "title": "양다리 연애",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116453588"
+    },
+    "titles": {
+      "ko": "양다리 연애",
+      "en": "Futamata Ren'ai: Two Times the Trouble",
+      "ja": "フタマタ恋愛"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

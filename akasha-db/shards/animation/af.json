@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006405": {
+    "workId": "wk_000006405",
+    "title": "비비드레드 오퍼레이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2783497"
+    },
+    "titles": {
+      "ko": "비비드레드 오퍼레이션",
+      "en": "Vividred Operation",
+      "ja": "ビビッドレッド・オペレーション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

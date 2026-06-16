@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005675": {
+    "workId": "wk_000005675",
+    "title": "웃음을 찾는 사람들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263577"
+    },
+    "titles": {
+      "ko": "웃음을 찾는 사람들",
+      "en": "Smile People",
+      "ja": "韓流ネタバラエティ ウッチャッサ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

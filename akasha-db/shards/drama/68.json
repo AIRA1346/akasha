@@ -33,5 +33,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005582": {
+    "workId": "wk_000005582",
+    "title": "멋진 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11258982"
+    },
+    "titles": {
+      "ko": "멋진 여자",
+      "en": "Handsome Woman",
+      "ja": "いい女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005554": {
+    "workId": "wk_000005554",
+    "title": "슬픔의 벨라돈나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2088741"
+    },
+    "titles": {
+      "ko": "슬픔의 벨라돈나",
+      "en": "Belladonna of Sadness",
+      "ja": "哀しみのベラドンナ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006336": {
+    "workId": "wk_000006336",
+    "title": "낮잠공주: 모르는 나의 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q26720673"
+    },
+    "titles": {
+      "ko": "낮잠공주: 모르는 나의 이야기",
+      "en": "Napping Princess",
+      "ja": "ひるね姫 〜知らないワタシの物語〜"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

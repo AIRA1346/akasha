@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006176": {
+    "workId": "wk_000006176",
+    "title": "엘프 선생님의 화장실은 어디인가요?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134125607"
+    },
+    "titles": {
+      "ko": "엘프 선생님의 화장실은 어디인가요?",
+      "en": "Elf-sensei no Toilet wa Doko desu ka?",
+      "ja": "エルフ先生のトイレはどこですか？"
+    },
+    "creator": "Chizuna Nakajima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

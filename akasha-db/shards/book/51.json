@@ -1,0 +1,22 @@
+{
+  "wk_000005567": {
+    "workId": "wk_000005567",
+    "title": "트라페지움",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109519667"
+    },
+    "titles": {
+      "ko": "트라페지움",
+      "en": "Trapezium",
+      "ja": "トラペジウム"
+    },
+    "releaseYear": 2018,
+    "creator": "Kazumi Takayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

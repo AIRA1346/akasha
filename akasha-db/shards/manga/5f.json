@@ -16,5 +16,23 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000005549": {
+    "workId": "wk_000005549",
+    "title": "이세계 먼치킨 -HP1인채로 최강최속 던전 공략-",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130958448"
+    },
+    "titles": {
+      "ko": "이세계 먼치킨 -HP1인채로 최강최속 던전 공략-",
+      "en": "Otherworldly Munchkin",
+      "ja": "異世界マンチキン ―HP1のままで最強最速ダンジョン攻略―"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

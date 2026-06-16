@@ -89,5 +89,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005907": {
+    "workId": "wk_000005907",
+    "title": "베트콩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155391"
+    },
+    "titles": {
+      "ko": "베트콩",
+      "en": "Vietcong",
+      "ja": "ベトコン"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

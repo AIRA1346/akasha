@@ -128,5 +128,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006126": {
+    "workId": "wk_000006126",
+    "title": "나유타의 궤적",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11642803"
+    },
+    "titles": {
+      "ko": "나유타의 궤적",
+      "en": "Q11642803",
+      "ja": "那由多の軌跡"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

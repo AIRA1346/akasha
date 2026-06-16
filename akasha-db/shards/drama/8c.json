@@ -81,5 +81,60 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005787": {
+    "workId": "wk_000005787",
+    "title": "멋있는 고문 하우스 !!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269784"
+    },
+    "titles": {
+      "ko": "멋있는 고문 하우스 !!",
+      "en": "Good Neighbors",
+      "ja": "すてきにコモン!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006077": {
+    "workId": "wk_000006077",
+    "title": "최종병기 앨리스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112903230"
+    },
+    "titles": {
+      "ko": "최종병기 앨리스",
+      "en": "Ultimate Weapon Alice",
+      "ja": "最終兵器アリス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006316": {
+    "workId": "wk_000006316",
+    "title": "더 글로리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113197148"
+    },
+    "titles": {
+      "ko": "더 글로리",
+      "en": "The Glory",
+      "ja": "ザ・グローリー～輝かしき復讐～"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

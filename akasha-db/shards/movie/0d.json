@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005925": {
+    "workId": "wk_000005925",
+    "title": "토토리! 우리 둘만의 여름",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106375335"
+    },
+    "titles": {
+      "ko": "토토리! 우리 둘만의 여름",
+      "en": "Sisters: The Summer We Found Our Superpowers"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

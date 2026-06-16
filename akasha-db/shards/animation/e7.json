@@ -71,5 +71,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005348": {
+    "workId": "wk_000005348",
+    "title": "보루토: 나루토 더 무비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19363383"
+    },
+    "titles": {
+      "ko": "보루토: 나루토 더 무비",
+      "en": "Boruto: Naruto the Movie",
+      "ja": "BORUTO ボルト -NARUTO THE MOVIE-"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005617": {
+    "workId": "wk_000005617",
+    "title": "마크로스 델타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21120333"
+    },
+    "titles": {
+      "ko": "마크로스 델타",
+      "en": "Macross Delta",
+      "ja": "マクロスΔ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -34,5 +34,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005521": {
+    "workId": "wk_000005521",
+    "title": "아이치테루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11256828"
+    },
+    "titles": {
+      "ko": "아이치테루",
+      "en": "Q11256828",
+      "ja": "アイチテル!"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005864": {
+    "workId": "wk_000005864",
+    "title": "한 여름의 러브레터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276384"
+    },
+    "titles": {
+      "ko": "한 여름의 러브레터",
+      "en": "Summer Love Letter",
+      "ja": "ひと夏のラブレター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

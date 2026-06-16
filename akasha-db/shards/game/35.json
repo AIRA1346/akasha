@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006046": {
+    "workId": "wk_000006046",
+    "title": "홍련화",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11605294"
+    },
+    "titles": {
+      "ko": "홍련화",
+      "en": "Q11605294",
+      "ja": "紅蓮華 -ぐれんか-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006301": {
+    "workId": "wk_000006301",
+    "title": "내 가장 친한 친구의 엑소시즘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106608773"
+    },
+    "titles": {
+      "ko": "내 가장 친한 친구의 엑소시즘",
+      "en": "My Best Friend's Exorcism",
+      "ja": "ベスト･フレンズ･エクソシズム"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

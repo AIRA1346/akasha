@@ -106,5 +106,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006311": {
+    "workId": "wk_000006311",
+    "title": "더블 키친",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11317335"
+    },
+    "titles": {
+      "ko": "더블 키친",
+      "en": "Double Kitchen",
+      "ja": "ダブル・キッチン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006436": {
+    "workId": "wk_000006436",
+    "title": "반장 ~ 경시청 아즈미 반 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327105"
+    },
+    "titles": {
+      "ko": "반장 ~ 경시청 아즈미 반 ~",
+      "en": "Hanchō 〜 Keishichō Asakahan 〜",
+      "ja": "ハンチョウ〜警視庁安積班〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

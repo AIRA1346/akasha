@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006372": {
+    "workId": "wk_000006372",
+    "title": "내셔널 극장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323791"
+    },
+    "titles": {
+      "ko": "내셔널 극장",
+      "en": "Q11323791",
+      "ja": "ナショナル劇場"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

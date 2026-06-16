@@ -153,5 +153,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005857": {
+    "workId": "wk_000005857",
+    "title": "니코니코분",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274736"
+    },
+    "titles": {
+      "ko": "니코니코분",
+      "en": "Nico Nico Pun",
+      "ja": "にこにこぷん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

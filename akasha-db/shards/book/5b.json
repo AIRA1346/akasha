@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006134": {
+    "workId": "wk_000006134",
+    "title": "내가 그를 죽였다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074877"
+    },
+    "titles": {
+      "ko": "내가 그를 죽였다",
+      "en": "Q11074877",
+      "ja": "私が彼を殺した"
+    },
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005401": {
+    "workId": "wk_000005401",
+    "title": "코브라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1300619"
+    },
+    "titles": {
+      "ko": "코브라",
+      "en": "Cobra",
+      "ja": "コブラ"
+    },
+    "creator": "Buichi Terasawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006177": {
+    "workId": "wk_000006177",
+    "title": "소용돌이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1342891"
+    },
+    "titles": {
+      "ko": "소용돌이",
+      "en": "Uzumaki",
+      "ja": "うずまき"
+    },
+    "creator": "Junji Itō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

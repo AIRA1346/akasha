@@ -127,5 +127,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005350": {
+    "workId": "wk_000005350",
+    "title": "코쿠리코 언덕에서",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q194726"
+    },
+    "titles": {
+      "ko": "코쿠리코 언덕에서",
+      "en": "From Up on Poppy Hill",
+      "ja": "コクリコ坂から"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006269": {
+    "workId": "wk_000006269",
+    "title": "고질라: 괴수행성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q26456695"
+    },
+    "titles": {
+      "ko": "고질라: 괴수행성",
+      "en": "Godzilla: Planet of the Monsters",
+      "ja": "GODZILLA 怪獣惑星"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

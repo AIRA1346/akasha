@@ -75,5 +75,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005467": {
+    "workId": "wk_000005467",
+    "title": "게임 센터 소녀와 이문화 교류",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130070504"
+    },
+    "titles": {
+      "ko": "게임 센터 소녀와 이문화 교류",
+      "en": "Cultural Exchange With a Game Centre Girl",
+      "ja": "ゲーセン少女と異文化交流"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005882": {
+    "workId": "wk_000005882",
+    "title": "오빠 따위 전혀 좋아하지 않는다구!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317227"
+    },
+    "titles": {
+      "ko": "오빠 따위 전혀 좋아하지 않는다구!!",
+      "en": "I Don't Like You at All, Big Brother!",
+      "ja": "お兄ちゃんのことなんかぜんぜん好きじゃないんだからねっ!!"
+    },
+    "releaseYear": 2008,
+    "creator": "Kōichi Kusano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -135,5 +135,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006081": {
+    "workId": "wk_000006081",
+    "title": "오버 30",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11293392"
+    },
+    "titles": {
+      "ko": "오버 30",
+      "en": "Over 30",
+      "ja": "オーバー30"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

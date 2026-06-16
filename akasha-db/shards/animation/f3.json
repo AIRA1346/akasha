@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005690": {
+    "workId": "wk_000005690",
+    "title": "러브 라이브! 더 스쿨 아이돌 무비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21789616"
+    },
+    "titles": {
+      "ko": "러브 라이브! 더 스쿨 아이돌 무비",
+      "en": "Love Live! The School Idol Movie",
+      "ja": "ラブライブ!The School Idol Movie"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

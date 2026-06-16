@@ -87,5 +87,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005861": {
+    "workId": "wk_000005861",
+    "title": "나의 첫 심부름",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11275473"
+    },
+    "titles": {
+      "ko": "나의 첫 심부름",
+      "en": "I'm Old Enough",
+      "ja": "はじめてのおつかい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

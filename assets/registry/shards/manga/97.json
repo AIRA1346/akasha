@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006019": {
+    "workId": "wk_000006019",
+    "title": "아이들의 시간",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1329424"
+    },
+    "titles": {
+      "ko": "아이들의 시간",
+      "en": "Kodomo no Jikan",
+      "ja": "こどものじかん"
+    },
+    "creator": "Kaworu Watashiya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

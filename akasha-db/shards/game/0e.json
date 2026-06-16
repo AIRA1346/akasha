@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006123": {
+    "workId": "wk_000006123",
+    "title": "플라이트기어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1163986"
+    },
+    "titles": {
+      "ko": "플라이트기어",
+      "en": "FlightGear",
+      "ja": "FlightGear"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

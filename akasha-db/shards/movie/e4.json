@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005655": {
+    "workId": "wk_000005655",
+    "title": "예언자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061541"
+    },
+    "titles": {
+      "ko": "예언자",
+      "en": "A Prophet",
+      "ja": "預言者"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006068": {
+    "workId": "wk_000006068",
+    "title": "니트람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106462638"
+    },
+    "titles": {
+      "ko": "니트람",
+      "en": "Nitram",
+      "ja": "ニトラム/NITRAM"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

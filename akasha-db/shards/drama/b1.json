@@ -15,5 +15,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005392": {
+    "workId": "wk_000005392",
+    "title": "달콤한 계절",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11247658"
+    },
+    "titles": {
+      "ko": "달콤한 계절",
+      "en": "Sweet Season",
+      "ja": "Sweet Season"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005846": {
+    "workId": "wk_000005846",
+    "title": "새빛남고 학생회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112725164"
+    },
+    "titles": {
+      "ko": "새빛남고 학생회",
+      "en": "Light on Me",
+      "ja": "ひかり男子高生徒会"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

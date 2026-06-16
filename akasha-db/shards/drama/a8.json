@@ -86,5 +86,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005585": {
+    "workId": "wk_000005585",
+    "title": "업계맨이 간다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259164"
+    },
+    "titles": {
+      "ko": "업계맨이 간다!",
+      "en": "Q11259164",
+      "ja": "ギョーカイ君が行く!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006154": {
+    "workId": "wk_000006154",
+    "title": "쿠로하 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299826"
+    },
+    "titles": {
+      "ko": "쿠로하 시리즈",
+      "en": "Kuroha Series",
+      "ja": "クロハシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

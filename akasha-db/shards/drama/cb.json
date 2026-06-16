@@ -84,5 +84,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005863": {
+    "workId": "wk_000005863",
+    "title": "한 여름의 프로포즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11276383"
+    },
+    "titles": {
+      "ko": "한 여름의 프로포즈",
+      "en": "A Summer Proposal",
+      "ja": "ひと夏のプロポーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

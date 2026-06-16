@@ -49,5 +49,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005583": {
+    "workId": "wk_000005583",
+    "title": "억만장자와 결혼하는 방법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11259047"
+    },
+    "titles": {
+      "ko": "억만장자와 결혼하는 방법",
+      "en": "Q11259047",
+      "ja": "億万長者と結婚する方法"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

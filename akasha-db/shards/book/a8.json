@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005499": {
+    "workId": "wk_000005499",
+    "title": "공자가어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10944269"
+    },
+    "titles": {
+      "ko": "공자가어",
+      "en": "Kongzi Jiayu",
+      "ja": "孔子家語"
+    },
+    "creator": "Kong Anguo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -86,5 +86,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005740": {
+    "workId": "wk_000005740",
+    "title": "인사이트 아시아 - 누들로드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267289"
+    },
+    "titles": {
+      "ko": "인사이트 아시아 - 누들로드",
+      "en": "Q11267289"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

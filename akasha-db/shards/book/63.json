@@ -18,5 +18,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005570": {
+    "workId": "wk_000005570",
+    "title": "대승밀엄경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10952751"
+    },
+    "titles": {
+      "ko": "대승밀엄경",
+      "en": "Ghanavyūha Sūtra",
+      "ja": "密厳経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006364": {
+    "workId": "wk_000006364",
+    "title": "나를 사랑한 바람둥이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111190660"
+    },
+    "titles": {
+      "ko": "나를 사랑한 바람둥이",
+      "en": "The Viscount Who Loved Me"
+    },
+    "releaseYear": 2000,
+    "creator": "Julia Quinn",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

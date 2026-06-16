@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005568": {
+    "workId": "wk_000005568",
+    "title": "메그레와 벤치의 사나이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1095224"
+    },
+    "titles": {
+      "ko": "메그레와 벤치의 사나이",
+      "en": "Maigret and the Man on the Boulevard"
+    },
+    "releaseYear": 1953,
+    "creator": "Georges Simenon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

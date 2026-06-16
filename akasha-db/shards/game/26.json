@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006131": {
+    "workId": "wk_000006131",
+    "title": "두들 점프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165270"
+    },
+    "titles": {
+      "ko": "두들 점프",
+      "en": "Doodle Jump"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

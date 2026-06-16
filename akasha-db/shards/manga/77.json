@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005804": {
+    "workId": "wk_000005804",
+    "title": "흘러가는 나날, 밥은 맛있어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131606575"
+    },
+    "titles": {
+      "ko": "흘러가는 나날, 밥은 맛있어",
+      "en": "Food for the Soul",
+      "ja": "日々は過ぎれど飯うまし"
+    },
+    "creator": "Quro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

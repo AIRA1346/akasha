@@ -107,5 +107,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005752": {
+    "workId": "wk_000005752",
+    "title": "말랑요정 치치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22124851"
+    },
+    "titles": {
+      "ko": "말랑요정 치치",
+      "en": "PriPri Chi-chan!!",
+      "ja": "プリプリちぃちゃん!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

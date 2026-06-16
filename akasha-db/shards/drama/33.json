@@ -33,5 +33,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005784": {
+    "workId": "wk_000005784",
+    "title": "장희빈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268985"
+    },
+    "titles": {
+      "ko": "장희빈",
+      "en": "Jang Hui-bin",
+      "ja": "張禧嬪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006242": {
+    "workId": "wk_000006242",
+    "title": "다카토시 & 온수가 가는 작은 여행 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315930"
+    },
+    "titles": {
+      "ko": "다카토시 & 온수가 가는 작은 여행 시리즈",
+      "en": "Takatoshi & Nukumizu's Small Journey Series",
+      "ja": "タカトシ&温水が行く小さな旅シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

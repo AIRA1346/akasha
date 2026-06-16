@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005681": {
+    "workId": "wk_000005681",
+    "title": "소재 채취가의 이세계 여행기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131460419"
+    },
+    "titles": {
+      "ko": "소재 채취가의 이세계 여행기",
+      "en": "A Gatherer's Adventure in Isekai",
+      "ja": "素材採取家の異世界旅行記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

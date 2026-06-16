@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006065": {
+    "workId": "wk_000006065",
+    "title": "솔드 아웃",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064530"
+    },
+    "titles": {
+      "ko": "솔드 아웃",
+      "en": "Jingle All the Way",
+      "ja": "ジングル・オール・ザ・ウェイ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

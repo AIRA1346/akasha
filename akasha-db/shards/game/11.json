@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005424": {
+    "workId": "wk_000005424",
+    "title": "커스터의 복수",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1146147"
+    },
+    "titles": {
+      "ko": "커스터의 복수",
+      "en": "Custer's Revenge",
+      "ja": "カスターの逆襲"
+    },
+    "releaseYear": 1982,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

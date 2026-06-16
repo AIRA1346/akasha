@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006161": {
+    "workId": "wk_000006161",
+    "title": "쉐어 하우스의 연인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11306927"
+    },
+    "titles": {
+      "ko": "쉐어 하우스의 연인",
+      "en": "The Lovers of Share House",
+      "ja": "シェアハウスの恋人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006411": {
+    "workId": "wk_000006411",
+    "title": "페르소나 5: 더 팬텀 X",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117750097"
+    },
+    "titles": {
+      "ko": "페르소나 5: 더 팬텀 X",
+      "en": "Persona 5: The Phantom X",
+      "ja": "ペルソナ５: The Phantom X"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

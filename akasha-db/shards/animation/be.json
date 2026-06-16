@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005758": {
+    "workId": "wk_000005758",
+    "title": "오소마츠상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22341701"
+    },
+    "titles": {
+      "ko": "오소마츠상",
+      "en": "Mr. Osomatsu",
+      "ja": "おそ松さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

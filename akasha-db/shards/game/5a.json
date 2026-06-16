@@ -54,5 +54,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005909": {
+    "workId": "wk_000005909",
+    "title": "아이러브커피",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115552947"
+    },
+    "titles": {
+      "ko": "아이러브커피",
+      "en": "I Love Coffee"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006049": {
+    "workId": "wk_000006049",
+    "title": "종말의 하늘",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11606277"
+    },
+    "titles": {
+      "ko": "종말의 하늘",
+      "en": "Tsui no Sora",
+      "ja": "終ノ空"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

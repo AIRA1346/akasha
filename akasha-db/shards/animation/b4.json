@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006188": {
+    "workId": "wk_000006188",
+    "title": "잔잔한 내일로부터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2590187"
+    },
+    "titles": {
+      "ko": "잔잔한 내일로부터",
+      "en": "Nagi-Asu: A Lull in the Sea",
+      "ja": "凪のあすから"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006268": {
+    "workId": "wk_000006268",
+    "title": "극장판 기동전사 건담00",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2635717"
+    },
+    "titles": {
+      "ko": "극장판 기동전사 건담00",
+      "en": "Mobile Suit Gundam 00 the Movie: A Wakening of the Trailblazer",
+      "ja": "劇場版 機動戦士ガンダム00 -A wakening of the Trailblazer-"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

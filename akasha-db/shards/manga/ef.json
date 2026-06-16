@@ -16,5 +16,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005338": {
+    "workId": "wk_000005338",
+    "title": "기계 인간 마리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128561611"
+    },
+    "titles": {
+      "ko": "기계 인간 마리",
+      "en": "Mechanical Marie",
+      "ja": "機械じかけのマリー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006017": {
+    "workId": "wk_000006017",
+    "title": "전생했더니 드래곤의 알이었다 ~최강이 아니면 목표로 하지 않아~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132796648"
+    },
+    "titles": {
+      "ko": "전생했더니 드래곤의 알이었다 ~최강이 아니면 목표로 하지 않아~",
+      "en": "Reincarnated as a Dragon Hatchling",
+      "ja": "転生したらドラゴンの卵だった 〜最強以外目指さねぇ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -105,5 +105,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006416": {
+    "workId": "wk_000006416",
+    "title": "크로노 오디세이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118136519"
+    },
+    "titles": {
+      "ko": "크로노 오디세이",
+      "en": "Chrono Odyssey"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006420": {
+    "workId": "wk_000006420",
+    "title": "디펜더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182593"
+    },
+    "titles": {
+      "ko": "디펜더",
+      "en": "Defender",
+      "ja": "ディフェンダー (ゲーム)"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

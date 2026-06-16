@@ -19,5 +19,25 @@
       "ingestSource": "wikidata_ko",
       "coverageSprint03": "e3_b2_curated"
     }
+  },
+  "wk_000006214": {
+    "workId": "wk_000006214",
+    "title": "도키오",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11089233"
+    },
+    "titles": {
+      "ko": "도키오",
+      "en": "Q11089233",
+      "ja": "時生"
+    },
+    "releaseYear": 2002,
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

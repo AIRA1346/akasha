@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005898": {
+    "workId": "wk_000005898",
+    "title": "킹스글레이브: 파이널 판타지 XV",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23762911"
+    },
+    "titles": {
+      "ko": "킹스글레이브: 파이널 판타지 XV",
+      "en": "Kingsglaive: Final Fantasy XV",
+      "ja": "キングスグレイブ ファイナルファンタジーXV"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

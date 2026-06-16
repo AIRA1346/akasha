@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005375": {
+    "workId": "wk_000005375",
+    "title": "수퍼 소닉 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105970894"
+    },
+    "titles": {
+      "ko": "수퍼 소닉 2",
+      "en": "Sonic the Hedgehog 2",
+      "ja": "ソニック・ザ・ムービー/ソニック VS ナックルズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

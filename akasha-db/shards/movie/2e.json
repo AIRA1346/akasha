@@ -17,5 +17,79 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005443": {
+    "workId": "wk_000005443",
+    "title": "이글라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059786"
+    },
+    "titles": {
+      "ko": "이글라",
+      "en": "Needle",
+      "ja": "僕の無事を祈ってくれ"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005578": {
+    "workId": "wk_000005578",
+    "title": "바르도",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106040462"
+    },
+    "titles": {
+      "ko": "바르도",
+      "en": "Bardo, False Chronicle of a Handful of Truths",
+      "ja": "バルド、偽りの記録と一握りの真実"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006069": {
+    "workId": "wk_000006069",
+    "title": "초안:안녕 2011",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106474587"
+    },
+    "titles": {
+      "ko": "초안:안녕 2011",
+      "en": "Q106474587"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006298": {
+    "workId": "wk_000006298",
+    "title": "타마라 드류",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065945"
+    },
+    "titles": {
+      "ko": "타마라 드류",
+      "en": "Tamara Drewe",
+      "ja": "タマラ・ドゥルー 恋のさや当て"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

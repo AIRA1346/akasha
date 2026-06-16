@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005755": {
+    "workId": "wk_000005755",
+    "title": "영화 마루코는 아홉살 - 이탈리아에서 온 소년",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22130421"
+    },
+    "titles": {
+      "ko": "영화 마루코는 아홉살 - 이탈리아에서 온 소년",
+      "en": "Chibi Maruko-chan: Italia Kara Kita Shōnen",
+      "ja": "ちびまる子ちゃん イタリアから来た少年"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

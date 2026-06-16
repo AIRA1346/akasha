@@ -101,5 +101,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005596": {
+    "workId": "wk_000005596",
+    "title": "오네가이! 마스캇토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262039"
+    },
+    "titles": {
+      "ko": "오네가이! 마스캇토",
+      "en": "Q11262039",
+      "ja": "おねがい!マスカット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005735": {
+    "workId": "wk_000005735",
+    "title": "세상에서 나만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266659"
+    },
+    "titles": {
+      "ko": "세상에서 나만",
+      "en": "Konoyo de Ore/ Boku dake",
+      "ja": "この世で俺/僕だけ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

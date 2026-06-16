@@ -123,5 +123,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005856": {
+    "workId": "wk_000005856",
+    "title": "나라 나비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274529"
+    },
+    "titles": {
+      "ko": "나라 나비",
+      "en": "Q11274529",
+      "ja": "ならナビ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

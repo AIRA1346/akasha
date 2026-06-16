@@ -121,5 +121,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005794": {
+    "workId": "wk_000005794",
+    "title": "제4공화국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270513"
+    },
+    "titles": {
+      "ko": "제4공화국",
+      "en": "Fourth Republic",
+      "ja": "第4共和国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005854": {
+    "workId": "wk_000005854",
+    "title": "초난강",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274069"
+    },
+    "titles": {
+      "ko": "초난강",
+      "en": "Q11274069",
+      "ja": "チョナン・カン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

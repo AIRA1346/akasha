@@ -175,5 +175,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005899": {
+    "workId": "wk_000005899",
+    "title": "더버빌가의 테스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2376540"
+    },
+    "titles": {
+      "ko": "더버빌가의 테스",
+      "en": "Tess of the D'Urbervilles",
+      "ja": "テス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005633": {
+    "workId": "wk_000005633",
+    "title": "스와트 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151933"
+    },
+    "titles": {
+      "ko": "스와트 4",
+      "en": "SWAT 4",
+      "ja": "SWAT 4"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006039": {
+    "workId": "wk_000006039",
+    "title": "마블 1943: 라이즈 오브 하이드라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115815979"
+    },
+    "titles": {
+      "ko": "마블 1943: 라이즈 오브 하이드라",
+      "en": "Marvel 1943: Rise of Hydra"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

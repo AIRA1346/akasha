@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000005361": {
+    "workId": "wk_000005361",
+    "title": "열혈고교 피구부 축구편",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145485"
+    },
+    "titles": {
+      "ko": "열혈고교 피구부 축구편",
+      "en": "Nintendo World Cup",
+      "ja": "熱血高校ドッジボール部 サッカー編"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
