@@ -270,6 +270,13 @@ class _PosterCardState extends State<PosterCard> {
             ),
           ),
         ],
+        if (widget.formatSlots.isNotEmpty) ...[
+          const SizedBox(height: 4),
+          FormatChipRow(
+            slots: widget.formatSlots,
+            onHideSlot: widget.onHideFormatSlot,
+          ),
+        ],
       ],
     );
   }
@@ -303,17 +310,6 @@ class _PosterCardState extends State<PosterCard> {
           fontWeight: FontWeight.w600,
           color: fg,
         ),
-      ),
-    );
-  }
-
-  Widget _buildFormatSlotsRow() {
-    if (widget.formatSlots.isEmpty) return const SizedBox.shrink();
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-      child: FormatChipRow(
-        slots: widget.formatSlots,
-        onHideSlot: widget.onHideFormatSlot,
       ),
     );
   }
@@ -363,7 +359,6 @@ class _PosterCardState extends State<PosterCard> {
             child: _buildCardMeta(item),
           ),
         ),
-        _buildFormatSlotsRow(),
       ],
     );
   }
@@ -481,11 +476,17 @@ class _PosterCardState extends State<PosterCard> {
                   ),
                 const Spacer(),
                 _buildFactCardFooter(item, accent),
+                if (widget.formatSlots.isNotEmpty) ...[
+                  const SizedBox(height: 4),
+                  FormatChipRow(
+                    slots: widget.formatSlots,
+                    onHideSlot: widget.onHideFormatSlot,
+                  ),
+                ],
               ],
             ),
           ),
         ),
-        _buildFormatSlotsRow(),
       ],
     );
   }
