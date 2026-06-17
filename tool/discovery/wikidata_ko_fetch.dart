@@ -153,38 +153,53 @@ Future<String> _runSparqlQuery({
   final uri = Uri.parse(wikidataSparqlEndpoint).replace(
     queryParameters: {'format': 'json', 'query': query},
   );
-  final request = await client.getUrl(uri);
-  request.headers.set('User-Agent', akashaDiscoveryUserAgent);
-  request.headers.set('Accept', 'application/sparql-results+json');
 
-  var response = await request.close();
-  var body = await response.transform(utf8.decoder).join();
+  const maxAttempts = 4;
+  for (var attempt = 1; attempt <= maxAttempts; attempt++) {
+    final request = await client.getUrl(uri);
+    request.headers.set('User-Agent', akashaDiscoveryUserAgent);
+    request.headers.set('Accept', 'application/sparql-results+json');
 
-  if (response.statusCode == 429) {
-    final retryAfterSec = _retryAfterSeconds(response);
-    if (retryAfterSec > 0) {
-      await Future<void>.delayed(Duration(seconds: retryAfterSec));
-      final retryRequest = await client.getUrl(uri);
-      retryRequest.headers.set('User-Agent', akashaDiscoveryUserAgent);
-      retryRequest.headers.set('Accept', 'application/sparql-results+json');
-      response = await retryRequest.close();
-      body = await response.transform(utf8.decoder).join();
+    var response = await request.close();
+    var body = await response.transform(utf8.decoder).join();
+
+    if (response.statusCode == 429) {
+      final retryAfterSec = _retryAfterSeconds(response);
+      if (retryAfterSec > 0) {
+        await Future<void>.delayed(Duration(seconds: retryAfterSec));
+        final retryRequest = await client.getUrl(uri);
+        retryRequest.headers.set('User-Agent', akashaDiscoveryUserAgent);
+        retryRequest.headers.set('Accept', 'application/sparql-results+json');
+        response = await retryRequest.close();
+        body = await response.transform(utf8.decoder).join();
+      }
     }
+
+    if (response.statusCode == 429) {
+      throw HttpException(
+        'Wikidata rate limited (429) — respect Retry-After before retrying',
+        uri: uri,
+      );
+    }
+
+    final retryable = response.statusCode == 502 ||
+        response.statusCode == 503 ||
+        response.statusCode == 504;
+    if (retryable && attempt < maxAttempts) {
+      await Future<void>.delayed(Duration(seconds: 5 * attempt));
+      continue;
+    }
+
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      throw HttpException(
+        'Wikidata HTTP ${response.statusCode}: $body',
+        uri: uri,
+      );
+    }
+    return body;
   }
 
-  if (response.statusCode == 429) {
-    throw HttpException(
-      'Wikidata rate limited (429) — respect Retry-After before retrying',
-      uri: uri,
-    );
-  }
-  if (response.statusCode < 200 || response.statusCode >= 300) {
-    throw HttpException(
-      'Wikidata HTTP ${response.statusCode}: $body',
-      uri: uri,
-    );
-  }
-  return body;
+  throw StateError('Wikidata SPARQL failed after $maxAttempts attempts');
 }
 
 int _retryAfterSeconds(HttpClientResponse response) {

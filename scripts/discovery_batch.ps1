@@ -9,7 +9,8 @@ param(
   [int]$Limit = 20,
   [string[]]$Categories = @('manga', 'animation', 'game', 'book', 'movie', 'drama'),
   [switch]$SkipDiscovery,
-  [switch]$SkipGates
+  [switch]$SkipGates,
+  [switch]$ContinueOnError
 )
 
 $ErrorActionPreference = 'Stop'
@@ -33,9 +34,16 @@ if (-not $SkipDiscovery) {
     Write-Host "===== ROUND $round ====="
     $roundCreated = 0
     foreach ($cat in $Categories) {
+      $prevEap = $ErrorActionPreference
+      $ErrorActionPreference = 'Continue'
       $out = & $Dart run tool/discovery/wikidata_ko_trial.dart --category $cat --limit $Limit --apply 2>&1 | Out-String
       $trialExit = $LASTEXITCODE
+      $ErrorActionPreference = $prevEap
       if ($trialExit -ne 0) {
+        if ($ContinueOnError) {
+          Write-Host "WARN: $cat exited $trialExit (continuing)"
+          continue
+        }
         Write-Host "FAIL: $cat exited $trialExit"
         if ($out.Trim().Length -gt 0) { Write-Host $out }
         exit $trialExit
@@ -49,42 +57,60 @@ if (-not $SkipDiscovery) {
       }
     }
     Write-Host "==> registry_builder --sync-assets --bundle-eager-only"
-    & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
-    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only 2>&1 | Out-Null
+    $buildExit = $LASTEXITCODE
+    $ErrorActionPreference = $prevEap
+    if ($buildExit -ne 0) { exit $buildExit }
     $now = (Get-Content akasha-db\manifest.json -Raw | ConvertFrom-Json).entryCount
     Write-Host "ROUND $round : +$roundCreated -> $now"
     Write-Host ''
   }
 } else {
   Write-Host '==> registry_builder --sync-assets --bundle-eager-only'
-  & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $prevEap = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  & $Dart run tool/registry_builder.dart --sync-assets --bundle-eager-only 2>&1 | Out-Null
+  $buildExit = $LASTEXITCODE
+  $ErrorActionPreference = $prevEap
+  if ($buildExit -ne 0) { exit $buildExit }
+}
+
+function Invoke-DartTool {
+  param([string[]]$ToolArgs)
+  $prevEap = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  & $Dart @ToolArgs 2>&1 | Out-Null
+  $code = $LASTEXITCODE
+  $ErrorActionPreference = $prevEap
+  return $code
 }
 
 if (-not $SkipGates) {
   Write-Host '==> dedupe_linter'
-  & $Dart run tool/dedupe_linter.dart
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $code = Invoke-DartTool @('run', 'tool/dedupe_linter.dart')
+  if ($code -ne 0) { exit $code }
 
   Write-Host ''
   Write-Host '==> quality_gate --strict'
-  & $Dart run tool/quality_gate.dart --strict
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $code = Invoke-DartTool @('run', 'tool/quality_gate.dart', '--strict')
+  if ($code -ne 0) { exit $code }
 
   Write-Host ''
   Write-Host '==> ci_registry_check'
-  & $Dart run tool/ci_registry_check.dart
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $code = Invoke-DartTool @('run', 'tool/ci_registry_check.dart')
+  if ($code -ne 0) { exit $code }
 
   Write-Host ''
   Write-Host '==> preflight_check'
-  & $Dart run tool/preflight_check.dart
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $code = Invoke-DartTool @('run', 'tool/preflight_check.dart')
+  if ($code -ne 0) { exit $code }
 
   Write-Host ''
   Write-Host '==> catalog_scale_baseline --strict'
-  & $Dart run tool/catalog_scale_baseline.dart --strict
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  $code = Invoke-DartTool @('run', 'tool/catalog_scale_baseline.dart', '--strict')
+  if ($code -ne 0) { exit $code }
 }
 
 $end = (Get-Content akasha-db\manifest.json -Raw | ConvertFrom-Json).entryCount
