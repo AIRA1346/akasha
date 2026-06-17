@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009639": {
+    "workId": "wk_000009639",
+    "title": "얼티밋 스파이더맨: 대혼란",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13551929"
+    },
+    "titles": {
+      "ko": "얼티밋 스파이더맨: 대혼란",
+      "en": "Ultimate Spider-Man: Total Mayhem",
+      "ja": "アルティメット・スパイダーマン：トータル・メイヘム"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

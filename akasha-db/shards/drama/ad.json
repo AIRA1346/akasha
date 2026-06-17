@@ -173,5 +173,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009420": {
+    "workId": "wk_000009420",
+    "title": "피라-피라송 파라이소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120798817"
+    },
+    "titles": {
+      "ko": "피라-피라송 파라이소",
+      "en": "Pira-Pirasong Paraiso"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

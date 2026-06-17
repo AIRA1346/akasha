@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009425": {
+    "workId": "wk_000009425",
+    "title": "리스너즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84561047"
+    },
+    "titles": {
+      "ko": "리스너즈",
+      "en": "Listeners",
+      "ja": "LISTENERS リスナーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

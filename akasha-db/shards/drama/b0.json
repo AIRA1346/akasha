@@ -104,5 +104,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009466": {
+    "workId": "wk_000009466",
+    "title": "장상사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121029261"
+    },
+    "titles": {
+      "ko": "장상사",
+      "en": "Lost You Forever"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009477": {
+    "workId": "wk_000009477",
+    "title": "오무스비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121309701"
+    },
+    "titles": {
+      "ko": "오무스비",
+      "en": "Omusubi",
+      "ja": "おむすび"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010045": {
+    "workId": "wk_000010045",
+    "title": "B8station",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124482150"
+    },
+    "titles": {
+      "ko": "B8station",
+      "en": "B8station",
+      "ja": "B8station"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

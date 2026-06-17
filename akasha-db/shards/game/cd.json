@@ -140,5 +140,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009097": {
+    "workId": "wk_000009097",
+    "title": "메탈슬러그 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1334705"
+    },
+    "titles": {
+      "ko": "메탈슬러그 3",
+      "en": "Metal Slug 3",
+      "ja": "メタルスラッグ3"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

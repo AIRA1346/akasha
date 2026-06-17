@@ -75,5 +75,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008997": {
+    "workId": "wk_000008997",
+    "title": "슬픈 사이프러스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138330"
+    },
+    "titles": {
+      "ko": "슬픈 사이프러스",
+      "en": "Sad Cypress",
+      "ja": "杉の柩"
+    },
+    "releaseYear": 1940,
+    "creator": "アガサ・クリスティ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

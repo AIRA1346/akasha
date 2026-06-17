@@ -92,5 +92,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009397": {
+    "workId": "wk_000009397",
+    "title": "나의 결혼 원정기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855998"
+    },
+    "titles": {
+      "ko": "나의 결혼 원정기",
+      "en": "Wedding Campaign",
+      "ja": "ウェディング・キャンペーン"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009451": {
+    "workId": "wk_000009451",
+    "title": "피막",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10858783"
+    },
+    "titles": {
+      "ko": "피막",
+      "en": "Pee Mak",
+      "ja": "愛しのゴースト"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009659": {
+    "workId": "wk_000009659",
+    "title": "슈발리에",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108782357"
+    },
+    "titles": {
+      "ko": "슈발리에",
+      "en": "Chevalier",
+      "ja": "シュヴァリエ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

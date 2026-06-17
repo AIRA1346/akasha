@@ -128,5 +128,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009355": {
+    "workId": "wk_000009355",
+    "title": "철인 28호 백주의 잔월",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q8228072"
+    },
+    "titles": {
+      "ko": "철인 28호 백주의 잔월",
+      "en": "Tetsujin 28-gō: Hakuchū no Zangetsu",
+      "ja": "鉄人28号 白昼の残月"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

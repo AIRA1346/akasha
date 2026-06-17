@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010242": {
+    "workId": "wk_000010242",
+    "title": "두더지 잡기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1431716"
+    },
+    "titles": {
+      "ko": "두더지 잡기",
+      "en": "Whac-A-Mole",
+      "ja": "モグラ叩き"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

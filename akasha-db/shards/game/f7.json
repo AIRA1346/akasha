@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010330": {
+    "workId": "wk_000010330",
+    "title": "그란디아 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1457450"
+    },
+    "titles": {
+      "ko": "그란디아 II",
+      "en": "Grandia II",
+      "ja": "グランディアII"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

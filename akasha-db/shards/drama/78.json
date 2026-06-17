@@ -195,5 +195,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009333": {
+    "workId": "wk_000009333",
+    "title": "UNLAME",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119858087"
+    },
+    "titles": {
+      "ko": "UNLAME",
+      "en": "Q119858087",
+      "ja": "OUT OF 48"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009549": {
+    "workId": "wk_000009549",
+    "title": "더 프랜차이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121852809"
+    },
+    "titles": {
+      "ko": "더 프랜차이즈",
+      "en": "The Franchise"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

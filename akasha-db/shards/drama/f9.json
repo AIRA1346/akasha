@@ -230,5 +230,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009462": {
+    "workId": "wk_000009462",
+    "title": "닥터 슬론",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1208153"
+    },
+    "titles": {
+      "ko": "닥터 슬론",
+      "en": "Diagnosis: Murder",
+      "ja": "Dr.マーク・スローン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

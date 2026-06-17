@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009789": {
+    "workId": "wk_000009789",
+    "title": "신나는 마법 동물 학교",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108885070"
+    },
+    "titles": {
+      "ko": "신나는 마법 동물 학교",
+      "en": "School of Magical Animals",
+      "ja": "イーダと動物たちの魔法学園"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

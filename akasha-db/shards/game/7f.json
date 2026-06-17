@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009091": {
+    "workId": "wk_000009091",
+    "title": "더 무비",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1331617"
+    },
+    "titles": {
+      "ko": "더 무비",
+      "en": "The Movies"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

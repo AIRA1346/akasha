@@ -126,5 +126,59 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009228": {
+    "workId": "wk_000009228",
+    "title": "엑스맨2: 울버린의 복수",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133992"
+    },
+    "titles": {
+      "ko": "엑스맨2: 울버린의 복수",
+      "en": "X2: Wolverine's Revenge"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009933": {
+    "workId": "wk_000009933",
+    "title": "레이맨 엽기토끼 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1373328"
+    },
+    "titles": {
+      "ko": "레이맨 엽기토끼 2",
+      "en": "Rayman Raving Rabbids 2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010078": {
+    "workId": "wk_000010078",
+    "title": "메이즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1387759"
+    },
+    "titles": {
+      "ko": "메이즈",
+      "en": "Maze War"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

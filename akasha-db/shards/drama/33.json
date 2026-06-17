@@ -86,5 +86,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009673": {
+    "workId": "wk_000009673",
+    "title": "남과 여",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122639276"
+    },
+    "titles": {
+      "ko": "남과 여",
+      "en": "Man and Woman"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009964": {
+    "workId": "wk_000009964",
+    "title": "소파 방정환",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124300696"
+    },
+    "titles": {
+      "ko": "소파 방정환",
+      "en": "Q124300696"
+    },
+    "releaseYear": 1982,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010259": {
+    "workId": "wk_000010259",
+    "title": "라 페아 마스 베야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247844"
+    },
+    "titles": {
+      "ko": "라 페아 마스 베야",
+      "en": "La Fea Más Bella"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

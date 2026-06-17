@@ -93,5 +93,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009447": {
+    "workId": "wk_000009447",
+    "title": "인명입정리론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11420265"
+    },
+    "titles": {
+      "ko": "인명입정리론",
+      "en": "Q11420265",
+      "ja": "因明入正理論"
+    },
+    "creator": "Śaṅkarasvāmin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010088": {
+    "workId": "wk_000010088",
+    "title": "우리가 세상을 이해하길 멈출 때",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114762016"
+    },
+    "titles": {
+      "ko": "우리가 세상을 이해하길 멈출 때",
+      "en": "When We Cease to Understand the World"
+    },
+    "releaseYear": 2021,
+    "creator": "Benjamín Labatut",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

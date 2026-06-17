@@ -54,5 +54,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009717": {
+    "workId": "wk_000009717",
+    "title": "아내는, 쿠노이치",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11447182"
+    },
+    "titles": {
+      "ko": "아내는, 쿠노이치",
+      "en": "Tsuma wa, kunoichi",
+      "ja": "妻は、くノ一"
+    },
+    "creator": "Machio Kazeno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009953": {
+    "workId": "wk_000009953",
+    "title": "산월기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11468746"
+    },
+    "titles": {
+      "ko": "산월기",
+      "en": "The Moon Over the Mountain",
+      "ja": "山月記"
+    },
+    "releaseYear": 1942,
+    "creator": "中島敦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

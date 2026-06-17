@@ -180,5 +180,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010120": {
+    "workId": "wk_000010120",
+    "title": "고양이의 보은",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q51543"
+    },
+    "titles": {
+      "ko": "고양이의 보은",
+      "en": "The Cat Returns",
+      "ja": "猫の恩返し"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

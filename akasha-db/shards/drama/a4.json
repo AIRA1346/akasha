@@ -191,5 +191,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009861": {
+    "workId": "wk_000009861",
+    "title": "병원 24시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124058947"
+    },
+    "titles": {
+      "ko": "병원 24시",
+      "en": "Q124058947"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

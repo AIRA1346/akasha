@@ -157,5 +157,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009609": {
+    "workId": "wk_000009609",
+    "title": "PRODUCE 101 JAPAN THE GIRLS",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122199948"
+    },
+    "titles": {
+      "ko": "PRODUCE 101 JAPAN THE GIRLS",
+      "en": "PRODUCE 101 JAPAN THE GIRLS",
+      "ja": "PRODUCE 101 JAPAN THE GIRLS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010312": {
+    "workId": "wk_000010312",
+    "title": "마초스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248367"
+    },
+    "titles": {
+      "ko": "마초스",
+      "en": "Machos",
+      "ja": "マチョス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

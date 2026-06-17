@@ -157,5 +157,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010366": {
+    "workId": "wk_000010366",
+    "title": "데부엘베메 라 비다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125171380"
+    },
+    "titles": {
+      "ko": "데부엘베메 라 비다",
+      "en": "Devuélveme la vida"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

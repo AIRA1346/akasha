@@ -215,5 +215,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009146": {
+    "workId": "wk_000009146",
+    "title": "패스트 퓨전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133807542"
+    },
+    "titles": {
+      "ko": "패스트 퓨전",
+      "en": "Fast Fusion",
+      "ja": "FAST Fusion"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

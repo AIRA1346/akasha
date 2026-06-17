@@ -86,5 +86,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009229": {
+    "workId": "wk_000009229",
+    "title": "파라파 더 래퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1340462"
+    },
+    "titles": {
+      "ko": "파라파 더 래퍼",
+      "en": "PaRappa the Rapper",
+      "ja": "パラッパラッパー"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009300": {
+    "workId": "wk_000009300",
+    "title": "갓 오브 워: 체인 오브 올림푸스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1341921"
+    },
+    "titles": {
+      "ko": "갓 오브 워: 체인 오브 올림푸스",
+      "en": "God of War: Chains of Olympus",
+      "ja": "ゴッド・オブ・ウォー 落日の悲愴曲"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009881": {
+    "workId": "wk_000009881",
+    "title": "시스템 쇼크 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371495"
+    },
+    "titles": {
+      "ko": "시스템 쇼크 2",
+      "en": "System Shock 2",
+      "ja": "System Shock 2"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010230": {
+    "workId": "wk_000010230",
+    "title": "레이맨 3: 후드럼 대소동",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416931"
+    },
+    "titles": {
+      "ko": "레이맨 3: 후드럼 대소동",
+      "en": "Rayman 3: Hoodlum Havoc"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009664": {
+    "workId": "wk_000009664",
+    "title": "에너미 마인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088058"
+    },
+    "titles": {
+      "ko": "에너미 마인",
+      "en": "Enemy Mine",
+      "ja": "第5惑星"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

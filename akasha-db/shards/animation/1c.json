@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009124": {
+    "workId": "wk_000009124",
+    "title": "바이올렛 에버가든: 영원과 자동수기인형",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q73896191"
+    },
+    "titles": {
+      "ko": "바이올렛 에버가든: 영원과 자동수기인형",
+      "en": "Violet Evergarden: Eternity and the Auto Memory Doll",
+      "ja": "ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 -"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

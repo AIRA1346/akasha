@@ -209,5 +209,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009535": {
+    "workId": "wk_000009535",
+    "title": "나의 해피엔드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121435074"
+    },
+    "titles": {
+      "ko": "나의 해피엔드",
+      "en": "My Happy Ending"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010114": {
+    "workId": "wk_000010114",
+    "title": "강력하진 않지만 매력적인 강력반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124632309"
+    },
+    "titles": {
+      "ko": "강력하진 않지만 매력적인 강력반",
+      "en": "Seoul Busters"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009597": {
+    "workId": "wk_000009597",
+    "title": "게게게 키타로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087463"
+    },
+    "titles": {
+      "ko": "게게게 키타로",
+      "en": "Gegege no Kitarō",
+      "ja": "ゲゲゲの鬼太郎"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

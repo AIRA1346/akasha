@@ -75,5 +75,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009314": {
+    "workId": "wk_000009314",
+    "title": "왜 에번스를 부르지 않았지?",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141184"
+    },
+    "titles": {
+      "ko": "왜 에번스를 부르지 않았지?",
+      "en": "Why Didn't They Ask Evans?",
+      "ja": "なぜ、エヴァンズに頼まなかったのか?"
+    },
+    "releaseYear": 1934,
+    "creator": "Agatha Christie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010018": {
+    "workId": "wk_000010018",
+    "title": "인간 실격",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147583"
+    },
+    "titles": {
+      "ko": "인간 실격",
+      "en": "No Longer Human",
+      "ja": "人間失格"
+    },
+    "releaseYear": 1948,
+    "creator": "太宰治",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

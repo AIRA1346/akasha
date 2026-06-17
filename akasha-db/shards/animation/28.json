@@ -108,5 +108,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009282": {
+    "workId": "wk_000009282",
+    "title": "로스트 룸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q785224"
+    },
+    "titles": {
+      "ko": "로스트 룸",
+      "en": "The Lost Room",
+      "ja": "ロスト・ルーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010122": {
+    "workId": "wk_000010122",
+    "title": "마법소녀 마도카☆마기카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q53353"
+    },
+    "titles": {
+      "ko": "마법소녀 마도카☆마기카",
+      "en": "Puella Magi Madoka Magica",
+      "ja": "魔法少女まどか☆マギカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

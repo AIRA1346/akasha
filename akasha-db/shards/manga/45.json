@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009069": {
+    "workId": "wk_000009069",
+    "title": "완간 미드나이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2633503"
+    },
+    "titles": {
+      "ko": "완간 미드나이트",
+      "en": "Wangan Midnight",
+      "ja": "湾岸ミッドナイト"
+    },
+    "creator": "Michiharu Kusunoki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

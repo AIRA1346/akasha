@@ -126,5 +126,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009770": {
+    "workId": "wk_000009770",
+    "title": "참지 못하는 동정 오빠와 솔직해질 수 없는 반항 여동생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136325749"
+    },
+    "titles": {
+      "ko": "참지 못하는 동정 오빠와 솔직해질 수 없는 반항 여동생",
+      "en": "Desperate Virgin Brother & Rebellious Little Sister",
+      "ja": "ガマンができない童貞兄キと、スナオになれない反抗妹"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009824": {
+    "workId": "wk_000009824",
+    "title": "돌려라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368157"
+    },
+    "titles": {
+      "ko": "돌려라 메이드 인 와리오",
+      "en": "WarioWare: Twisted!",
+      "ja": "まわるメイド イン ワリオ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

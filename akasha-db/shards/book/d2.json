@@ -92,5 +92,64 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009063": {
+    "workId": "wk_000009063",
+    "title": "티모시 아처의 환생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138582"
+    },
+    "titles": {
+      "ko": "티모시 아처의 환생",
+      "en": "The Transmigration of Timothy Archer",
+      "ja": "ティモシー・アーチャーの転生"
+    },
+    "releaseYear": 1982,
+    "creator": "Philip K. Dick",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009652": {
+    "workId": "wk_000009652",
+    "title": "천공의 알카미레스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11443308"
+    },
+    "titles": {
+      "ko": "천공의 알카미레스",
+      "en": "Tenkū no Arcamiles",
+      "ja": "天空のアルカミレス"
+    },
+    "releaseYear": 2006,
+    "creator": "En Mikami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010085": {
+    "workId": "wk_000010085",
+    "title": "해가 지면, 밤이 내게 기어든다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114761913"
+    },
+    "titles": {
+      "ko": "해가 지면, 밤이 내게 기어든다",
+      "en": "Nightcrawling"
+    },
+    "releaseYear": 2022,
+    "creator": "Leila Mottley",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

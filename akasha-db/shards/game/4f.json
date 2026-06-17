@@ -93,5 +93,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008992": {
+    "workId": "wk_000008992",
+    "title": "넥쉬즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1328237"
+    },
+    "titles": {
+      "ko": "넥쉬즈",
+      "en": "Nexuiz",
+      "ja": "Nexuiz"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010129": {
+    "workId": "wk_000010129",
+    "title": "PC 원시인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1399011"
+    },
+    "titles": {
+      "ko": "PC 원시인",
+      "en": "Bonk's Adventure",
+      "ja": "PC原人"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

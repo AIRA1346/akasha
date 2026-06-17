@@ -176,5 +176,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009820": {
+    "workId": "wk_000009820",
+    "title": "쿠킹마마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1367120"
+    },
+    "titles": {
+      "ko": "쿠킹마마",
+      "en": "Cooking Mama",
+      "ja": "クッキングママ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010236": {
+    "workId": "wk_000010236",
+    "title": "솔저 오브 포춘",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1427606"
+    },
+    "titles": {
+      "ko": "솔저 오브 포춘",
+      "en": "Soldier of Fortune",
+      "ja": "Soldier of Fortune"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

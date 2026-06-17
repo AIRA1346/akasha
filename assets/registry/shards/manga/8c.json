@@ -122,5 +122,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009277": {
+    "workId": "wk_000009277",
+    "title": "쪽빛보다 푸르게",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q280619"
+    },
+    "titles": {
+      "ko": "쪽빛보다 푸르게",
+      "en": "Ai Yori Aoshi",
+      "ja": "藍より青し"
+    },
+    "releaseYear": 1998,
+    "creator": "Kou Fumizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

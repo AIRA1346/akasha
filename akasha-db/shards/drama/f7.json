@@ -211,5 +211,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009792": {
+    "workId": "wk_000009792",
+    "title": "웨딩 임파서블",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123495072"
+    },
+    "titles": {
+      "ko": "웨딩 임파서블",
+      "en": "Wedding Impossible"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010324": {
+    "workId": "wk_000010324",
+    "title": "누에보 아마네세르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249051"
+    },
+    "titles": {
+      "ko": "누에보 아마네세르",
+      "en": "Nuevo amanecer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -104,5 +104,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009416": {
+    "workId": "wk_000009416",
+    "title": "트렁크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120703298"
+    },
+    "titles": {
+      "ko": "트렁크",
+      "en": "The Trunk",
+      "ja": "トランク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009670": {
+    "workId": "wk_000009670",
+    "title": "샤이니의 연하남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12252306"
+    },
+    "titles": {
+      "ko": "샤이니의 연하남",
+      "en": "Shinee's Yunhanam"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

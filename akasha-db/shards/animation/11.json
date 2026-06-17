@@ -110,5 +110,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009290": {
+    "workId": "wk_000009290",
+    "title": "블리치: Memories Of Nobody",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q804434"
+    },
+    "titles": {
+      "ko": "블리치: Memories Of Nobody",
+      "en": "Bleach: Memories of Nobody",
+      "ja": "劇場版BLEACH MEMORIES OF NOBODY"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009930": {
+    "workId": "wk_000009930",
+    "title": "스트레인저 무황인담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q965699"
+    },
+    "titles": {
+      "ko": "스트레인저 무황인담",
+      "en": "Sword of the Stranger",
+      "ja": "ストレンヂア 無皇刃譚"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010051": {
+    "workId": "wk_000010051",
+    "title": "무능한 나나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98844655"
+    },
+    "titles": {
+      "ko": "무능한 나나",
+      "en": "Talentless Nana",
+      "ja": "無能なナナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

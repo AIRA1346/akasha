@@ -142,5 +142,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009790": {
+    "workId": "wk_000009790",
+    "title": "유쾌한 왕따",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123473989"
+    },
+    "titles": {
+      "ko": "유쾌한 왕따",
+      "en": "Yukwaehan Wangtta"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

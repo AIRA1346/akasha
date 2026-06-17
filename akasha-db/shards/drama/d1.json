@@ -157,5 +157,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009478": {
+    "workId": "wk_000009478",
+    "title": "악인전기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121323033"
+    },
+    "titles": {
+      "ko": "악인전기",
+      "en": "Evillive",
+      "ja": "悪人伝記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009613": {
+    "workId": "wk_000009613",
+    "title": "100세 시대 건강하이소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122375771"
+    },
+    "titles": {
+      "ko": "100세 시대 건강하이소",
+      "en": "Q122375771"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009741": {
+    "workId": "wk_000009741",
+    "title": "이애위영",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123270245"
+    },
+    "titles": {
+      "ko": "이애위영",
+      "en": "Only for Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

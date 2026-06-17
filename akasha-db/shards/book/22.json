@@ -17,5 +17,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009309": {
+    "workId": "wk_000009309",
+    "title": "푸른 카벙클",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140678"
+    },
+    "titles": {
+      "ko": "푸른 카벙클",
+      "en": "The Adventure of the Blue Carbuncle",
+      "ja": "青い紅玉"
+    },
+    "releaseYear": 1892,
+    "creator": "Arthur Conan Doyle",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010338": {
+    "workId": "wk_000010338",
+    "title": "일요일 밤에는 나가고 싶지 않아",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11505421"
+    },
+    "titles": {
+      "ko": "일요일 밤에는 나가고 싶지 않아",
+      "en": "Q11505421",
+      "ja": "日曜の夜は出たくない"
+    },
+    "releaseYear": 1994,
+    "creator": "Jun Kurachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

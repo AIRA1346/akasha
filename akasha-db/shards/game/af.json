@@ -127,5 +127,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009499": {
+    "workId": "wk_000009499",
+    "title": "페르소나 4 리바이벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134739905"
+    },
+    "titles": {
+      "ko": "페르소나 4 리바이벌",
+      "en": "Persona 4 Revival",
+      "ja": "ペルソナ4 リバイバル"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009941": {
+    "workId": "wk_000009941",
+    "title": "흔해빠진 직업으로 세계최강 리벨리온 소울",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137458931"
+    },
+    "titles": {
+      "ko": "흔해빠진 직업으로 세계최강 리벨리온 소울",
+      "en": "Arifureta: From Commonplace to World's Strongest - Rebellion Soul",
+      "ja": "ありふれた職業で世界最強 リベリオンソウル"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -57,5 +57,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009312": {
+    "workId": "wk_000009312",
+    "title": "마농 레스코",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141032"
+    },
+    "titles": {
+      "ko": "마농 레스코",
+      "en": "Manon Lescaut",
+      "ja": "マノン・レスコー"
+    },
+    "releaseYear": 1731,
+    "creator": "アントワーヌ・フランソワ・プレヴォ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

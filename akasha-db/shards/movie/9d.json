@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009255": {
+    "workId": "wk_000009255",
+    "title": "틸",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108532414"
+    },
+    "titles": {
+      "ko": "틸",
+      "en": "Till",
+      "ja": "ティル (映画)"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

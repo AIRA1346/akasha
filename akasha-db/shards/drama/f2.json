@@ -228,5 +228,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009473": {
+    "workId": "wk_000009473",
+    "title": "야 초크 세베르센",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121258761"
+    },
+    "titles": {
+      "ko": "야 초크 세베르센",
+      "en": "What If You Love Too Much"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

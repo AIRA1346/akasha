@@ -199,5 +199,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009371": {
+    "workId": "wk_000009371",
+    "title": "귀를 기울이면",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q842292"
+    },
+    "titles": {
+      "ko": "귀를 기울이면",
+      "en": "Whisper of the Heart",
+      "ja": "耳をすませば"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

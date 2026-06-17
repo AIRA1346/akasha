@@ -73,5 +73,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009709": {
+    "workId": "wk_000009709",
+    "title": "포르자 호라이즌 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136148940"
+    },
+    "titles": {
+      "ko": "포르자 호라이즌 6",
+      "en": "Q136148940"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010127": {
+    "workId": "wk_000010127",
+    "title": "패재너두",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1398972"
+    },
+    "titles": {
+      "ko": "패재너두",
+      "en": "Faxanadu",
+      "ja": "ファザナドゥ"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

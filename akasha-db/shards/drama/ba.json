@@ -155,5 +155,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010266": {
+    "workId": "wk_000010266",
+    "title": "개창자 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124812137"
+    },
+    "titles": {
+      "ko": "개창자 (드라마)",
+      "en": "My Secret, Terrius"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

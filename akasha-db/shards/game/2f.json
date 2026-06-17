@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010187": {
+    "workId": "wk_000010187",
+    "title": "파이널 판타지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1415970"
+    },
+    "titles": {
+      "ko": "파이널 판타지",
+      "en": "Final Fantasy",
+      "ja": "ファイナルファンタジー"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

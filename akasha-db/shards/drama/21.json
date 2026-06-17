@@ -159,5 +159,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009745": {
+    "workId": "wk_000009745",
+    "title": "모래에도 꽃이 핀다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123370376"
+    },
+    "titles": {
+      "ko": "모래에도 꽃이 핀다",
+      "en": "Like Flowers in Sand",
+      "ja": "砂の上にも花は咲く"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010224": {
+    "workId": "wk_000010224",
+    "title": "문도 데 피에라스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247653"
+    },
+    "titles": {
+      "ko": "문도 데 피에라스",
+      "en": "Mundo de Fieras"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

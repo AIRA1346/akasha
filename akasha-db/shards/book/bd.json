@@ -144,5 +144,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009588": {
+    "workId": "wk_000009588",
+    "title": "천사의 나이프",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11442272"
+    },
+    "titles": {
+      "ko": "천사의 나이프",
+      "en": "Knife of Angel",
+      "ja": "天使のナイフ"
+    },
+    "releaseYear": 2005,
+    "creator": "Gaku Yakumaru",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

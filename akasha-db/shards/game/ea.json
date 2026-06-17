@@ -142,5 +142,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009145": {
+    "workId": "wk_000009145",
+    "title": "닌텐도 스위치 2 웰컴 투어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133806623"
+    },
+    "titles": {
+      "ko": "닌텐도 스위치 2 웰컴 투어",
+      "en": "Nintendo Switch 2 Welcome Tour",
+      "ja": "Nintendo Switch 2 のひみつ展"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

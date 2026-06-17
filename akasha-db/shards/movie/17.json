@@ -124,5 +124,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009452": {
+    "workId": "wk_000009452",
+    "title": "박사가 사랑한 수식",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10860427"
+    },
+    "titles": {
+      "ko": "박사가 사랑한 수식",
+      "en": "The Professor's Beloved Equation",
+      "ja": "博士の愛した数式"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010253": {
+    "workId": "wk_000010253",
+    "title": "긴장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091856"
+    },
+    "titles": {
+      "ko": "긴장",
+      "en": "This Can't Happen Here"
+    },
+    "releaseYear": 1951,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

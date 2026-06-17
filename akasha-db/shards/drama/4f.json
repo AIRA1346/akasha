@@ -159,5 +159,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009974": {
+    "workId": "wk_000009974",
+    "title": "무여륜비적미려",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124338186"
+    },
+    "titles": {
+      "ko": "무여륜비적미려",
+      "en": "Q124338186"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

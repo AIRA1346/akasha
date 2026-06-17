@@ -191,5 +191,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009414": {
+    "workId": "wk_000009414",
+    "title": "스튜디오 K",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120629381"
+    },
+    "titles": {
+      "ko": "스튜디오 K",
+      "en": "Studio K",
+      "ja": "スタジオK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010321": {
+    "workId": "wk_000010321",
+    "title": "소녀시대의 힘내라 힘!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12485766"
+    },
+    "titles": {
+      "ko": "소녀시대의 힘내라 힘!",
+      "en": "Himnaera Him!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

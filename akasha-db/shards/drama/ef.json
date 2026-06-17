@@ -158,5 +158,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009617": {
+    "workId": "wk_000009617",
+    "title": "LTNS",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122382160"
+    },
+    "titles": {
+      "ko": "LTNS",
+      "en": "LTNS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008964": {
+    "workId": "wk_000008964",
+    "title": "천재 바카본",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2551007"
+    },
+    "titles": {
+      "ko": "천재 바카본",
+      "en": "Tensai Bakabon",
+      "ja": "天才バカボン"
+    },
+    "creator": "Fujio Akatsuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

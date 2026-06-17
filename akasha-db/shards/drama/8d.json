@@ -139,5 +139,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009257": {
+    "workId": "wk_000009257",
+    "title": "먼데이 나잇 나이트로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193741"
+    },
+    "titles": {
+      "ko": "먼데이 나잇 나이트로",
+      "en": "WCW Monday Nitro",
+      "ja": "WCWマンデー・ナイトロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009686": {
+    "workId": "wk_000009686",
+    "title": "Necesito una Amiga",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123088076"
+    },
+    "titles": {
+      "ko": "Necesito una Amiga",
+      "en": "Necesito una Amiga"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

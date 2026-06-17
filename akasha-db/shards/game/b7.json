@@ -35,5 +35,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009580": {
+    "workId": "wk_000009580",
+    "title": "앵그리버드 프렌즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13515768"
+    },
+    "titles": {
+      "ko": "앵그리버드 프렌즈",
+      "en": "Angry Birds Friends"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009879": {
+    "workId": "wk_000009879",
+    "title": "체스 타이탄스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1370646"
+    },
+    "titles": {
+      "ko": "체스 타이탄스",
+      "en": "Chess Titans",
+      "ja": "Chess Titans"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010010": {
+    "workId": "wk_000010010",
+    "title": "건그레이브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138130"
+    },
+    "titles": {
+      "ko": "건그레이브",
+      "en": "Gungrave",
+      "ja": "ガングレイヴ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -174,5 +174,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009012": {
+    "workId": "wk_000009012",
+    "title": "SP THE MOTION PICTURE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188372"
+    },
+    "titles": {
+      "ko": "SP THE MOTION PICTURE",
+      "en": "SP: The Motion Picture",
+      "ja": "SP THE MOTION PICTURE"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009857": {
+    "workId": "wk_000009857",
+    "title": "마이 가디언 에일리언",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124053900"
+    },
+    "titles": {
+      "ko": "마이 가디언 에일리언",
+      "en": "My Guardian Alien",
+      "ja": "マイ・ガーディアン・エイリアン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010115": {
+    "workId": "wk_000010115",
+    "title": "행복한 책 읽기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124636231"
+    },
+    "titles": {
+      "ko": "행복한 책 읽기",
+      "en": "Q124636231"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010167": {
+    "workId": "wk_000010167",
+    "title": "포르 엘라 소이 에바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247340"
+    },
+    "titles": {
+      "ko": "포르 엘라 소이 에바",
+      "en": "Por ella soy Eva"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

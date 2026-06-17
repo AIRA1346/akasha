@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010064": {
+    "workId": "wk_000010064",
+    "title": "돌아가는 펭귄드럼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25059"
+    },
+    "titles": {
+      "ko": "돌아가는 펭귄드럼",
+      "en": "Penguindrum",
+      "ja": "輪るピングドラム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

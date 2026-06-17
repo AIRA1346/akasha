@@ -153,5 +153,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009915": {
+    "workId": "wk_000009915",
+    "title": "세자가 사라졌다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124106896"
+    },
+    "titles": {
+      "ko": "세자가 사라졌다",
+      "en": "Missing Crown Prince",
+      "ja": "世子が消えた〜禁じられた愛〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010326": {
+    "workId": "wk_000010326",
+    "title": "아시 손 엘라스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249218"
+    },
+    "titles": {
+      "ko": "아시 손 엘라스",
+      "en": "Así son ellas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

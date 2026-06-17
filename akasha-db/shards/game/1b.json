@@ -200,5 +200,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010190": {
+    "workId": "wk_000010190",
+    "title": "파이널 판타지 XIII-2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416043"
+    },
+    "titles": {
+      "ko": "파이널 판타지 XIII-2",
+      "en": "Final Fantasy XIII-2",
+      "ja": "ファイナルファンタジーXIII-2"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

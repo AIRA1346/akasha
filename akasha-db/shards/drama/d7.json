@@ -177,5 +177,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009341": {
+    "workId": "wk_000009341",
+    "title": "우아한 제국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120110919"
+    },
+    "titles": {
+      "ko": "우아한 제국",
+      "en": "The Elegant Empire",
+      "ja": "優雅な帝国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

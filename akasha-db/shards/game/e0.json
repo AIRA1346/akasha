@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009298": {
+    "workId": "wk_000009298",
+    "title": "레고 해리 포터: 이어스 5-7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1341780"
+    },
+    "titles": {
+      "ko": "레고 해리 포터: 이어스 5-7",
+      "en": "Lego Harry Potter: Years 5–7",
+      "ja": "レゴ ハリー・ポッター 第5章-第7章"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

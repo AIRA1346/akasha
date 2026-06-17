@@ -158,5 +158,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010359": {
+    "workId": "wk_000010359",
+    "title": "라스 도스 카라스 데 아나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249600"
+    },
+    "titles": {
+      "ko": "라스 도스 카라스 데 아나",
+      "en": "Las Dos Caras de Ana"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

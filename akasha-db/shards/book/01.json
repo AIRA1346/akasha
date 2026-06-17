@@ -114,5 +114,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009392": {
+    "workId": "wk_000009392",
+    "title": "Fate/Zero",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141789"
+    },
+    "titles": {
+      "ko": "Fate/Zero",
+      "en": "Fate/Zero",
+      "ja": "Fate/Zero"
+    },
+    "creator": "Gen Urobuchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

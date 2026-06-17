@@ -131,5 +131,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009132": {
+    "workId": "wk_000009132",
+    "title": "리얼 레이싱 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13361405"
+    },
+    "titles": {
+      "ko": "리얼 레이싱 3",
+      "en": "Real Racing 3",
+      "ja": "リアルレーシング3"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009641": {
+    "workId": "wk_000009641",
+    "title": "수왕기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1355850"
+    },
+    "titles": {
+      "ko": "수왕기",
+      "en": "Altered Beast",
+      "ja": "獣王記"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010013": {
+    "workId": "wk_000010013",
+    "title": "캐슬바니아: 벨몬트의 저주",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138242796"
+    },
+    "titles": {
+      "ko": "캐슬바니아: 벨몬트의 저주",
+      "en": "Q138242796"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009328": {
+    "workId": "wk_000009328",
+    "title": "구부러져라! 스푼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855531"
+    },
+    "titles": {
+      "ko": "구부러져라! 스푼",
+      "en": "Q10855531",
+      "ja": "曲がれ!スプーン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

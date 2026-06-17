@@ -103,5 +103,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009098": {
+    "workId": "wk_000009098",
+    "title": "리듬 천국 미라클 스타즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133567956"
+    },
+    "titles": {
+      "ko": "리듬 천국 미라클 스타즈",
+      "en": "Rhythm Heaven Groove",
+      "ja": "リズム天国 ミラクルスターズ"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009646": {
+    "workId": "wk_000009646",
+    "title": "드래곤볼 Z 배틀 오브 Z",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13580932"
+    },
+    "titles": {
+      "ko": "드래곤볼 Z 배틀 오브 Z",
+      "en": "Dragon Ball Z: Battle of Z",
+      "ja": "ドラゴンボールZ BATTLE OF Z"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

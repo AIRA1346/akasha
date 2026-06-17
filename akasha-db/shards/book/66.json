@@ -37,5 +37,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010199": {
+    "workId": "wk_000010199",
+    "title": "악녀들의 메츠",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492565"
+    },
+    "titles": {
+      "ko": "악녀들의 메츠",
+      "en": "Akujo-tachi no Metz",
+      "ja": "悪女たちのメス"
+    },
+    "releaseYear": 2011,
+    "creator": "Takehiko Hata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

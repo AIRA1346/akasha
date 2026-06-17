@@ -177,5 +177,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009742": {
+    "workId": "wk_000009742",
+    "title": "뉴스퀸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123278341"
+    },
+    "titles": {
+      "ko": "뉴스퀸",
+      "en": "The Queen of News"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009795": {
+    "workId": "wk_000009795",
+    "title": "애적영요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123500386"
+    },
+    "titles": {
+      "ko": "애적영요",
+      "en": "Glory of Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010102": {
+    "workId": "wk_000010102",
+    "title": "폭상전대 분붐저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124608588"
+    },
+    "titles": {
+      "ko": "폭상전대 분붐저",
+      "en": "Bakuage Sentai Boonboomger",
+      "ja": "爆上戦隊ブンブンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

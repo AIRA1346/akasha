@@ -87,5 +87,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009404": {
+    "workId": "wk_000009404",
+    "title": "블랙 포스트맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120336046"
+    },
+    "titles": {
+      "ko": "블랙 포스트맨",
+      "en": "Q120336046",
+      "ja": "ブラックポストマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009405": {
+    "workId": "wk_000009405",
+    "title": "마법전대 매지레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1203502"
+    },
+    "titles": {
+      "ko": "마법전대 매지레인저",
+      "en": "Mahou Sentai Magiranger",
+      "ja": "魔法戦隊マジレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009479": {
+    "workId": "wk_000009479",
+    "title": "아시아 초성단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121323809"
+    },
+    "titles": {
+      "ko": "아시아 초성단",
+      "en": "Asia Super Young",
+      "ja": "ASIA SUPER YOUNG"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

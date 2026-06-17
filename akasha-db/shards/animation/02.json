@@ -91,5 +91,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009562": {
+    "workId": "wk_000009562",
+    "title": "용자경찰 제이데커",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q866992"
+    },
+    "titles": {
+      "ko": "용자경찰 제이데커",
+      "en": "Brave Police J-Decker",
+      "ja": "勇者警察ジェイデッカー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009566": {
+    "workId": "wk_000009566",
+    "title": "라스트 엑자일 -은빛 날개의 팜-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q869393"
+    },
+    "titles": {
+      "ko": "라스트 엑자일 -은빛 날개의 팜-",
+      "en": "Last Exile: Fam, the Silver Wing",
+      "ja": "ラストエグザイル-銀翼のファム-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009927": {
+    "workId": "wk_000009927",
+    "title": "장갑기병 보톰즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q965450"
+    },
+    "titles": {
+      "ko": "장갑기병 보톰즈",
+      "en": "Armored Trooper VOTOMS",
+      "ja": "装甲騎兵ボトムズ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

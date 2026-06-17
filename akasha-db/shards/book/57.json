@@ -92,5 +92,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009521": {
+    "workId": "wk_000009521",
+    "title": "밤 산책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11431302"
+    },
+    "titles": {
+      "ko": "밤 산책",
+      "en": "Woman Walking at Night",
+      "ja": "夜歩く"
+    },
+    "releaseYear": 1973,
+    "creator": "Seishi Yokomizo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009893": {
+    "workId": "wk_000009893",
+    "title": "후지산 백경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11456944"
+    },
+    "titles": {
+      "ko": "후지산 백경",
+      "en": "One Hundred Views of Mount Fuji",
+      "ja": "富嶽百景"
+    },
+    "releaseYear": 1939,
+    "creator": "Osamu Dazai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

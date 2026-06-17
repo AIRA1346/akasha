@@ -1,0 +1,21 @@
+{
+  "wk_000009654": {
+    "workId": "wk_000009654",
+    "title": "여자는 두 번 떠난다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11446207"
+    },
+    "titles": {
+      "ko": "여자는 두 번 떠난다",
+      "en": "Onnatachi wa Nido Asobu",
+      "ja": "女たちは二度遊ぶ"
+    },
+    "creator": "Shuichi Yoshida",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

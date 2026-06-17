@@ -121,5 +121,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009331": {
+    "workId": "wk_000009331",
+    "title": "사우스 오브 노웨어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198457"
+    },
+    "titles": {
+      "ko": "사우스 오브 노웨어",
+      "en": "South of Nowhere"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010226": {
+    "workId": "wk_000010226",
+    "title": "페카도스 아헤노스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247680"
+    },
+    "titles": {
+      "ko": "페카도스 아헤노스",
+      "en": "Pecados Ajenos"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -121,5 +121,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009022": {
+    "workId": "wk_000009022",
+    "title": "피라미드 게임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118994129"
+    },
+    "titles": {
+      "ko": "피라미드 게임",
+      "en": "Pyramid Game",
+      "ja": "ピラミッドゲーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009801": {
+    "workId": "wk_000009801",
+    "title": "내 남자는 큐피드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123608357"
+    },
+    "titles": {
+      "ko": "내 남자는 큐피드",
+      "en": "My Man Is Cupid"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

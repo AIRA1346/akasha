@@ -159,5 +159,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009419": {
+    "workId": "wk_000009419",
+    "title": "낮에 뜨는 달",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120753622"
+    },
+    "titles": {
+      "ko": "낮에 뜨는 달",
+      "en": "Moon in the Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

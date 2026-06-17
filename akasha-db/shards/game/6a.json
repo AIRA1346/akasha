@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009510": {
+    "workId": "wk_000009510",
+    "title": "언더스티드: 과거에서 온 편지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135051514"
+    },
+    "titles": {
+      "ko": "언더스티드: 과거에서 온 편지",
+      "en": "Q135051514",
+      "ja": "アンダステッド：過去からの手紙"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

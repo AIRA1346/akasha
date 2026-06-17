@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009004": {
+    "workId": "wk_000009004",
+    "title": "매드 갓",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108404122"
+    },
+    "titles": {
+      "ko": "매드 갓",
+      "en": "Mad God",
+      "ja": "マッドゴッド"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

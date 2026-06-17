@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009247": {
+    "workId": "wk_000009247",
+    "title": "카구야 님은 고백받고 싶어 ~천재들의 연애 두뇌전~ 파이널",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108504704"
+    },
+    "titles": {
+      "ko": "카구야 님은 고백받고 싶어 ~천재들의 연애 두뇌전~ 파이널",
+      "en": "Kaguya-sama: Love Is War Final",
+      "ja": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～ファイナル"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

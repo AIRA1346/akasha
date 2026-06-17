@@ -198,5 +198,61 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009051": {
+    "workId": "wk_000009051",
+    "title": "썸머 워즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q715526"
+    },
+    "titles": {
+      "ko": "썸머 워즈",
+      "en": "Summer Wars",
+      "ja": "サマーウォーズ"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009560": {
+    "workId": "wk_000009560",
+    "title": "나왔습니다! 파워퍼프 걸즈 Z",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q865498"
+    },
+    "titles": {
+      "ko": "나왔습니다! 파워퍼프 걸즈 Z",
+      "en": "Powerpuff Girls Z",
+      "ja": "出ましたっ!パワパフガールズZ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009691": {
+    "workId": "wk_000009691",
+    "title": "도라에몽 노비타의 신 마계대모험 ~7인의 마법사~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q8913808"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 신 마계대모험 ~7인의 마법사~",
+      "en": "Doraemon: Nobita's New Great Adventure into the Underworld – The Seven Magic Users",
+      "ja": "ドラえもん のび太の新魔界大冒険 〜7人の魔法使い〜"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -229,5 +229,77 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009025": {
+    "workId": "wk_000009025",
+    "title": "오성전대 다이레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190616"
+    },
+    "titles": {
+      "ko": "오성전대 다이레인저",
+      "en": "Gosei Sentai Dairanger",
+      "ja": "五星戦隊ダイレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009412": {
+    "workId": "wk_000009412",
+    "title": "혼례대첩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120533831"
+    },
+    "titles": {
+      "ko": "혼례대첩",
+      "en": "The Matchmakers",
+      "ja": "婚礼大捷"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009921": {
+    "workId": "wk_000009921",
+    "title": "정년이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124243610"
+    },
+    "titles": {
+      "ko": "정년이",
+      "en": "Jeongnyeon: The Star Is Born",
+      "ja": "ジョンニョン: スター誕生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010107": {
+    "workId": "wk_000010107",
+    "title": "놀아주는 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611059"
+    },
+    "titles": {
+      "ko": "놀아주는 여자",
+      "en": "My Sweet Mobster",
+      "ja": "遊んでくれる彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

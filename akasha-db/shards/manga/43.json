@@ -158,5 +158,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009034": {
+    "workId": "wk_000009034",
+    "title": "머나먼 시공 속에서 자양화 꿈 이야기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2626388"
+    },
+    "titles": {
+      "ko": "머나먼 시공 속에서 자양화 꿈 이야기",
+      "en": "Haruka: Beyond the Stream of Time",
+      "ja": "遙かなる時空の中で"
+    },
+    "creator": "Tohko Mizuno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009116": {
+    "workId": "wk_000009116",
+    "title": "폭렬헌터",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2713553"
+    },
+    "titles": {
+      "ko": "폭렬헌터",
+      "en": "Sorcerer Hunters",
+      "ja": "爆れつハンター"
+    },
+    "releaseYear": 1993,
+    "creator": "Satoru Akahori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

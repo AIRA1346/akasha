@@ -224,5 +224,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009011": {
+    "workId": "wk_000009011",
+    "title": "미스 프랑스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187807"
+    },
+    "titles": {
+      "ko": "미스 프랑스",
+      "en": "Miss France",
+      "ja": "ミス・フランス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009682": {
+    "workId": "wk_000009682",
+    "title": "EBS 헬로 루키 콘테스트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122919807"
+    },
+    "titles": {
+      "ko": "EBS 헬로 루키 콘테스트",
+      "en": "EBS Hello Rookie Contest"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010038": {
+    "workId": "wk_000010038",
+    "title": "랜드맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124447212"
+    },
+    "titles": {
+      "ko": "랜드맨",
+      "en": "Landman",
+      "ja": "ランドマン (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

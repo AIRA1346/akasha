@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009208": {
+    "workId": "wk_000009208",
+    "title": "명탐정 코난: 비색의 탄환",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q76769702"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 비색의 탄환",
+      "en": "Detective Conan: The Scarlet Bullet",
+      "ja": "名探偵コナン 緋色の弾丸"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

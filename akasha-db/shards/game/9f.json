@@ -131,5 +131,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010083": {
+    "workId": "wk_000010083",
+    "title": "스타더스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139561194"
+    },
+    "titles": {
+      "ko": "스타더스트",
+      "en": "Q139561194"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

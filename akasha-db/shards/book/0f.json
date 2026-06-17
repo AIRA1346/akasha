@@ -95,5 +95,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009589": {
+    "workId": "wk_000009589",
+    "title": "천사의 대리인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11442279"
+    },
+    "titles": {
+      "ko": "천사의 대리인",
+      "en": "Angel's Agent",
+      "ja": "天使の代理人"
+    },
+    "releaseYear": 2004,
+    "creator": "Muneki Yamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

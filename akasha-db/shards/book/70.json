@@ -108,5 +108,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009107": {
+    "workId": "wk_000009107",
+    "title": "육화의 용사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11392504"
+    },
+    "titles": {
+      "ko": "육화의 용사",
+      "en": "Rokka no Yūsha",
+      "ja": "六花の勇者"
+    },
+    "releaseYear": 2011,
+    "creator": "Ishio Yamagata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

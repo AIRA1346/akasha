@@ -138,5 +138,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009163": {
+    "workId": "wk_000009163",
+    "title": "디즈니 채널 게임스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119179"
+    },
+    "titles": {
+      "ko": "디즈니 채널 게임스",
+      "en": "Disney Channel Games",
+      "ja": "ディズニー・チャンネル ゲームズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009464": {
+    "workId": "wk_000009464",
+    "title": "만장적계절",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120971152"
+    },
+    "titles": {
+      "ko": "만장적계절",
+      "en": "The Long Season",
+      "ja": "ロング・シーズン 長く遠い殺人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009959": {
+    "workId": "wk_000009959",
+    "title": "빈번한 로그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124290430"
+    },
+    "titles": {
+      "ko": "빈번한 로그",
+      "en": "The Airport Diary"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010162": {
+    "workId": "wk_000010162",
+    "title": "피켓 펜스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247248"
+    },
+    "titles": {
+      "ko": "피켓 펜스",
+      "en": "Picket Fences",
+      "ja": "ピケット・フェンス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

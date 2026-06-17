@@ -145,5 +145,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009059": {
+    "workId": "wk_000009059",
+    "title": "압솔룸",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133035994"
+    },
+    "titles": {
+      "ko": "압솔룸",
+      "en": "Q133035994"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009509": {
+    "workId": "wk_000009509",
+    "title": "머나먼 툴레를 향한 여행자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135014647"
+    },
+    "titles": {
+      "ko": "머나먼 툴레를 향한 여행자",
+      "en": "A Traveler to unknown Thule",
+      "ja": "遥かなるトゥーレへの旅人"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009651": {
+    "workId": "wk_000009651",
+    "title": "프리스타일 풋볼 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135917335"
+    },
+    "titles": {
+      "ko": "프리스타일 풋볼 2",
+      "en": "FreeStyle Football 2"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009716": {
+    "workId": "wk_000009716",
+    "title": "에스카 & 로지의 아틀리에 ~황혼 하늘의 연금술사~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13628078"
+    },
+    "titles": {
+      "ko": "에스카 & 로지의 아틀리에 ~황혼 하늘의 연금술사~",
+      "en": "Atelier Escha & Logy: Alchemists of the Dusk Sky",
+      "ja": "エスカ&ロジーのアトリエ 〜黄昏の空の錬金術士〜"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

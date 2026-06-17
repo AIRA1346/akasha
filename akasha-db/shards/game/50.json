@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009058": {
+    "workId": "wk_000009058",
+    "title": "포켓몬 레인저",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1330234"
+    },
+    "titles": {
+      "ko": "포켓몬 레인저",
+      "en": "Pokémon Ranger",
+      "ja": "ポケモンレンジャー"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009774": {
+    "workId": "wk_000009774",
+    "title": "스포일러가 너무 심한 RPG ―최후의 적의 정체는 용사의 아버지―",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136456877"
+    },
+    "titles": {
+      "ko": "스포일러가 너무 심한 RPG ―최후의 적의 정체는 용사의 아버지―",
+      "en": "Heavy Spoilers RPG: The true identity of the final enemy is the hero's father",
+      "ja": "ネタバレが激しすぎるRPG―最後の敵の正体は勇者の父―"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

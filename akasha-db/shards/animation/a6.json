@@ -184,5 +184,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009075": {
+    "workId": "wk_000009075",
+    "title": "기동무투전 G 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q716172"
+    },
+    "titles": {
+      "ko": "기동무투전 G 건담",
+      "en": "Mobile Fighter G Gundam",
+      "ja": "機動武闘伝Gガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

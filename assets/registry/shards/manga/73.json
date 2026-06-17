@@ -68,5 +68,61 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008966": {
+    "workId": "wk_000008966",
+    "title": "이다텐 점프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2564733"
+    },
+    "titles": {
+      "ko": "이다텐 점프",
+      "en": "Idaten Jump",
+      "ja": "IDATEN翔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009029": {
+    "workId": "wk_000009029",
+    "title": "속삭임",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2607852"
+    },
+    "titles": {
+      "ko": "속삭임",
+      "en": "Sasameki Koto",
+      "ja": "ささめきこと"
+    },
+    "creator": "Takashi Ikeda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009203": {
+    "workId": "wk_000009203",
+    "title": "피치피치핏치",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q275953"
+    },
+    "titles": {
+      "ko": "피치피치핏치",
+      "en": "Mermaid Melody Pichi Pichi Pitch",
+      "ja": "ぴちぴちピッチ"
+    },
+    "creator": "Michiko Yokote",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -134,5 +134,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009149": {
+    "workId": "wk_000009149",
+    "title": "시원찮은 그녀를 위한 육성방법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11395269"
+    },
+    "titles": {
+      "ko": "시원찮은 그녀를 위한 육성방법",
+      "en": "Saekano",
+      "ja": "冴えない彼女の育てかた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

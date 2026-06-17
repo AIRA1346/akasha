@@ -94,5 +94,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008959": {
+    "workId": "wk_000008959",
+    "title": "다이쇼 소녀 전래동화",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24899743"
+    },
+    "titles": {
+      "ko": "다이쇼 소녀 전래동화",
+      "en": "Taisho Otome Fairy Tale",
+      "ja": "大正処女御伽話"
+    },
+    "releaseYear": 2015,
+    "creator": "Sana Kirioka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

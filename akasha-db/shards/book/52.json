@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009519": {
+    "workId": "wk_000009519",
+    "title": "메이드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114289268"
+    },
+    "titles": {
+      "ko": "메이드",
+      "en": "The Maid"
+    },
+    "releaseYear": 2022,
+    "creator": "Nita Prose",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

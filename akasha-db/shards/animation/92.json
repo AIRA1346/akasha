@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009819": {
+    "workId": "wk_000009819",
+    "title": "신이 된 날",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q93914580"
+    },
+    "titles": {
+      "ko": "신이 된 날",
+      "en": "The Day I Became a God",
+      "ja": "神様になった日"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

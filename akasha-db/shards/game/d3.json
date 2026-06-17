@@ -87,5 +87,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009140": {
+    "workId": "wk_000009140",
+    "title": "컨슘 미",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133786512"
+    },
+    "titles": {
+      "ko": "컨슘 미",
+      "en": "Consume Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010134": {
+    "workId": "wk_000010134",
+    "title": "바이오하자드 RE: 베로니카",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140073669"
+    },
+    "titles": {
+      "ko": "바이오하자드 RE: 베로니카",
+      "en": "Q140073669",
+      "ja": "バイオハザード RE:ベロニカ"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

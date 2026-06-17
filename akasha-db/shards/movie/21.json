@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010307": {
+    "workId": "wk_000010307",
+    "title": "청춘시련",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109260459"
+    },
+    "titles": {
+      "ko": "청춘시련",
+      "en": "Terrorizers",
+      "ja": "青春弑恋"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

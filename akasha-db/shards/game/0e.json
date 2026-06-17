@@ -129,5 +129,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010238": {
+    "workId": "wk_000010238",
+    "title": "턱스 레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q142908"
+    },
+    "titles": {
+      "ko": "턱스 레이서",
+      "en": "Tux Racer",
+      "ja": "Tux Racer"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

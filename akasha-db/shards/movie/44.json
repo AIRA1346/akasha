@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009457": {
+    "workId": "wk_000009457",
+    "title": "일보지요",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10863988"
+    },
+    "titles": {
+      "ko": "일보지요",
+      "en": "Gone with the Bullets",
+      "ja": "弾丸と共に去りぬ -暗黒街の逃亡者-"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -104,5 +104,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010023": {
+    "workId": "wk_000010023",
+    "title": "참극의 선착장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089809"
+    },
+    "titles": {
+      "ko": "참극의 선착장",
+      "en": "Min and Bill",
+      "ja": "惨劇の波止場"
+    },
+    "releaseYear": 1930,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

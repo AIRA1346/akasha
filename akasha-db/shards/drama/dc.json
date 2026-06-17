@@ -140,5 +140,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009677": {
+    "workId": "wk_000009677",
+    "title": "블랙 라이더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122767212"
+    },
+    "titles": {
+      "ko": "블랙 라이더",
+      "en": "Black Rider",
+      "ja": "ブラック・ライダー (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

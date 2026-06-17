@@ -193,5 +193,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010350": {
+    "workId": "wk_000010350",
+    "title": "페레그리나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249345"
+    },
+    "titles": {
+      "ko": "페레그리나",
+      "en": "Peregrina"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010353": {
+    "workId": "wk_000010353",
+    "title": "마리솔",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249551"
+    },
+    "titles": {
+      "ko": "마리솔",
+      "en": "Marisol",
+      "ja": "マリソル (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

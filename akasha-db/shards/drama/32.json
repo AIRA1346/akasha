@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009544": {
+    "workId": "wk_000009544",
+    "title": "타임머신",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1217770"
+    },
+    "titles": {
+      "ko": "타임머신",
+      "en": "Voyagers!",
+      "ja": "ボイジャーズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

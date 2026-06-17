@@ -193,5 +193,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010327": {
+    "workId": "wk_000010327",
+    "title": "고머 파일, U.S.M.C.",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249300"
+    },
+    "titles": {
+      "ko": "고머 파일, U.S.M.C.",
+      "en": "Gomer Pyle, U.S.M.C.",
+      "ja": "マイペース二等兵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -177,5 +177,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009093": {
+    "workId": "wk_000009093",
+    "title": "아수라장",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133266516"
+    },
+    "titles": {
+      "ko": "아수라장",
+      "en": "Asurajang",
+      "ja": "アスラジャン"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009777": {
+    "workId": "wk_000009777",
+    "title": "후유카라, 쿠루루.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136526608"
+    },
+    "titles": {
+      "ko": "후유카라, 쿠루루.",
+      "en": "Fuyukara, Kururu.",
+      "ja": "ふゆから、くるる。"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

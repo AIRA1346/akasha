@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009275": {
+    "workId": "wk_000009275",
+    "title": "코드 블루",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198138"
+    },
+    "titles": {
+      "ko": "코드 블루",
+      "en": "Code Blue",
+      "ja": "コード・ブルー -ドクターヘリ緊急救命-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

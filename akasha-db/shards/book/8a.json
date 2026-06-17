@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010141": {
+    "workId": "wk_000010141",
+    "title": "해리 포터 프리퀄",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1148668"
+    },
+    "titles": {
+      "ko": "해리 포터 프리퀄",
+      "en": "Harry Potter prequel"
+    },
+    "releaseYear": 2008,
+    "creator": "J・K・ローリング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

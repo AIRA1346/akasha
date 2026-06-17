@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009202": {
+    "workId": "wk_000009202",
+    "title": "시바토라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2758333"
+    },
+    "titles": {
+      "ko": "시바토라",
+      "en": "Shibatora",
+      "ja": "シバトラ"
+    },
+    "creator": "Shin Kibayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

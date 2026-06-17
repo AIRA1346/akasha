@@ -139,5 +139,93 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009259": {
+    "workId": "wk_000009259",
+    "title": "사무라이전대 신켄저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193889"
+    },
+    "titles": {
+      "ko": "사무라이전대 신켄저",
+      "en": "Samurai Sentai Shinkenger",
+      "ja": "侍戦隊シンケンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009260": {
+    "workId": "wk_000009260",
+    "title": "Love in the Air",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119401314"
+    },
+    "titles": {
+      "ko": "Love in the Air",
+      "en": "Love in the Air",
+      "ja": "Love in the Air"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009342": {
+    "workId": "wk_000009342",
+    "title": "아적인간연화",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120120955"
+    },
+    "titles": {
+      "ko": "아적인간연화",
+      "en": "Fireworks of My Heart"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010265": {
+    "workId": "wk_000010265",
+    "title": "기적 (2023년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124811856"
+    },
+    "titles": {
+      "ko": "기적 (2023년 드라마)",
+      "en": "Kiseki: Dear to Me",
+      "ja": "奇蹟"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010268": {
+    "workId": "wk_000010268",
+    "title": "나이트 코트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248182"
+    },
+    "titles": {
+      "ko": "나이트 코트",
+      "en": "Night Court"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -175,5 +175,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009274": {
+    "workId": "wk_000009274",
+    "title": "파인더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198068"
+    },
+    "titles": {
+      "ko": "파인더",
+      "en": "The Finder",
+      "ja": "ザ・ファインダー 千里眼を持つ男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009736": {
+    "workId": "wk_000009736",
+    "title": "릴렛 마티아스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123162234"
+    },
+    "titles": {
+      "ko": "릴렛 마티아스",
+      "en": "Lilet Matias: Attorney-at-Law",
+      "ja": "リレット・マティアス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

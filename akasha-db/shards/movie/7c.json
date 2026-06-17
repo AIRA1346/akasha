@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010203": {
+    "workId": "wk_000010203",
+    "title": "이프 아이 워 유",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10912915"
+    },
+    "titles": {
+      "ko": "이프 아이 워 유",
+      "en": "If I Were You",
+      "ja": "変身男女"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

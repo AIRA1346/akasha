@@ -128,5 +128,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009039": {
+    "workId": "wk_000009039",
+    "title": "자석로보트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712171"
+    },
+    "titles": {
+      "ko": "자석로보트",
+      "en": "Magne Robo Gakeen",
+      "ja": "マグネロボ ガ・キーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

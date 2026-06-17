@@ -75,5 +75,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009449": {
+    "workId": "wk_000009449",
+    "title": "나귀 가죽",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142149"
+    },
+    "titles": {
+      "ko": "나귀 가죽",
+      "en": "La Peau de chagrin",
+      "ja": "あら皮"
+    },
+    "releaseYear": 1831,
+    "creator": "오노레 드 발자크",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009711": {
+    "workId": "wk_000009711",
+    "title": "포켓몬 포코피아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136231470"
+    },
+    "titles": {
+      "ko": "포켓몬 포코피아",
+      "en": "Pokémon Pokopia",
+      "ja": "ぽこ あ ポケモン"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

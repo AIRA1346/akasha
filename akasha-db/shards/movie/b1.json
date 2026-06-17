@@ -34,5 +34,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009326": {
+    "workId": "wk_000009326",
+    "title": "살렘스 롯",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108552200"
+    },
+    "titles": {
+      "ko": "살렘스 롯",
+      "en": "Salem's Lot",
+      "ja": "セイラムズ・ロット"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009728": {
+    "workId": "wk_000009728",
+    "title": "정말 먼 곳",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108845960"
+    },
+    "titles": {
+      "ko": "정말 먼 곳",
+      "en": "A Distant Place",
+      "ja": "本当に遠い所"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

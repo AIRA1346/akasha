@@ -121,5 +121,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009047": {
+    "workId": "wk_000009047",
+    "title": "닌자보이 란타로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q713975"
+    },
+    "titles": {
+      "ko": "닌자보이 란타로",
+      "en": "Nintama Rantarō",
+      "ja": "忍たま乱太郎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009221": {
+    "workId": "wk_000009221",
+    "title": "누가 어린 그레고리를 죽였나?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78191135"
+    },
+    "titles": {
+      "ko": "누가 어린 그레고리를 죽였나?",
+      "en": "Who Killed Little Gregory?",
+      "ja": "グレゴリー事件: 迷宮入りの謎に迫る"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009987": {
+    "workId": "wk_000009987",
+    "title": "THE 빅오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q974411"
+    },
+    "titles": {
+      "ko": "THE 빅오",
+      "en": "The Big O",
+      "ja": "THE ビッグオー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

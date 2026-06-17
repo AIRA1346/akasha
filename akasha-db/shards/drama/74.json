@@ -178,5 +178,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009474": {
+    "workId": "wk_000009474",
+    "title": "아워 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12126821"
+    },
+    "titles": {
+      "ko": "아워 걸",
+      "en": "Our Girl"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009797": {
+    "workId": "wk_000009797",
+    "title": "KNN 정보센터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123550656"
+    },
+    "titles": {
+      "ko": "KNN 정보센터",
+      "en": "KNN INFORMATION CENTER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

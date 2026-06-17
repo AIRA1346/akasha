@@ -157,5 +157,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009364": {
+    "workId": "wk_000009364",
+    "title": "천청난만!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q83663068"
+    },
+    "titles": {
+      "ko": "천청난만!",
+      "en": "Appare-Ranman!",
+      "ja": "天晴爛漫!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

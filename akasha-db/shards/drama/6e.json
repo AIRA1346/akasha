@@ -174,5 +174,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009168": {
+    "workId": "wk_000009168",
+    "title": "맨하탄의 사나이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193168"
+    },
+    "titles": {
+      "ko": "맨하탄의 사나이",
+      "en": "The Equalizer",
+      "ja": "ザ・シークレット・ハンター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009335": {
+    "workId": "wk_000009335",
+    "title": "19/20",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119954554"
+    },
+    "titles": {
+      "ko": "19/20",
+      "en": "Nineteen to Twenty",
+      "ja": "19/20 ～恋はハタチになってから～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009973": {
+    "workId": "wk_000009973",
+    "title": "소리사탕-나를 채우는 너의 소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124338156"
+    },
+    "titles": {
+      "ko": "소리사탕-나를 채우는 너의 소리",
+      "en": "Q124338156"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

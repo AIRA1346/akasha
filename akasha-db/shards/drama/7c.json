@@ -279,5 +279,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009019": {
+    "workId": "wk_000009019",
+    "title": "알유넥스트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118937469"
+    },
+    "titles": {
+      "ko": "알유넥스트",
+      "en": "R U Next?",
+      "ja": "R U Next?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009534": {
+    "workId": "wk_000009534",
+    "title": "방과 후 제방 일지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121413984"
+    },
+    "titles": {
+      "ko": "방과 후 제방 일지",
+      "en": "Diary of Our Days at the Breakwater",
+      "ja": "放課後ていぼう日誌"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009684": {
+    "workId": "wk_000009684",
+    "title": "1864",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12299868"
+    },
+    "titles": {
+      "ko": "1864",
+      "en": "1864",
+      "ja": "1864"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

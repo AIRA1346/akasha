@@ -93,5 +93,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009586": {
+    "workId": "wk_000009586",
+    "title": "신비의 사나이 할리 퀸",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143438"
+    },
+    "titles": {
+      "ko": "신비의 사나이 할리 퀸",
+      "en": "The Mysterious Mr Quin",
+      "ja": "謎のクィン氏"
+    },
+    "releaseYear": 1930,
+    "creator": "Agatha Christie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010090": {
+    "workId": "wk_000010090",
+    "title": "로마 모자 미스터리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147884"
+    },
+    "titles": {
+      "ko": "로마 모자 미스터리",
+      "en": "The Roman Hat Mystery",
+      "ja": "ローマ帽子の謎"
+    },
+    "releaseYear": 1929,
+    "creator": "Frederic Dannay",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

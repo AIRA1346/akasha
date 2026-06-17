@@ -268,5 +268,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009269": {
+    "workId": "wk_000009269",
+    "title": "효심이네 각자도생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119624651"
+    },
+    "titles": {
+      "ko": "효심이네 각자도생",
+      "en": "Live Your Own Life"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -103,5 +103,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009916": {
+    "workId": "wk_000009916",
+    "title": "머니게임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124126702"
+    },
+    "titles": {
+      "ko": "머니게임",
+      "en": "Money Game"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

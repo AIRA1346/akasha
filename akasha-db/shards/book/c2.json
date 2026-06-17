@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009582": {
+    "workId": "wk_000009582",
+    "title": "대승성업론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11432093"
+    },
+    "titles": {
+      "ko": "대승성업론",
+      "en": "Mahāyāna Treatise Establishing Karma",
+      "ja": "大乗成業論"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

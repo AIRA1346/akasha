@@ -125,5 +125,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010232": {
+    "workId": "wk_000010232",
+    "title": "버스트 어 무브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1421439"
+    },
+    "titles": {
+      "ko": "버스트 어 무브",
+      "en": "Bust a Groove",
+      "ja": "バスト ア ムーブ"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

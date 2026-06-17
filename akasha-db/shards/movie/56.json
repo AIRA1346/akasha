@@ -93,5 +93,80 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009000": {
+    "workId": "wk_000009000",
+    "title": "사랑은 오직 한 길",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1083390"
+    },
+    "titles": {
+      "ko": "사랑은 오직 한 길",
+      "en": "Christine",
+      "ja": "恋ひとすじに"
+    },
+    "releaseYear": 1958,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009252": {
+    "workId": "wk_000009252",
+    "title": "고스트하우스 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1085302"
+    },
+    "titles": {
+      "ko": "고스트하우스 2",
+      "en": "Witchery"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009599": {
+    "workId": "wk_000009599",
+    "title": "지상 최대 맥주배달 작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108760444"
+    },
+    "titles": {
+      "ko": "지상 최대 맥주배달 작전",
+      "en": "The Greatest Beer Run Ever",
+      "ja": "史上最高のカンパイ! 〜戦地にビールを届けた男〜"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010302": {
+    "workId": "wk_000010302",
+    "title": "화영웅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10924296"
+    },
+    "titles": {
+      "ko": "화영웅",
+      "en": "What a Hero!",
+      "ja": "英雄列伝 WHAT A HERO"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

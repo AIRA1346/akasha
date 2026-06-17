@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009666": {
+    "workId": "wk_000009666",
+    "title": "여락",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10881514"
+    },
+    "titles": {
+      "ko": "여락",
+      "en": "Lee Rock",
+      "ja": "リー・ロック伝 大いなる野望 PART I 炎の青春"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

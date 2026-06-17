@@ -75,5 +75,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010015": {
+    "workId": "wk_000010015",
+    "title": "형성의 책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147199"
+    },
+    "titles": {
+      "ko": "형성의 책",
+      "en": "Sefer Yetzirah",
+      "ja": "形成の書"
+    },
+    "creator": "아브라함",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010142": {
+    "workId": "wk_000010142",
+    "title": "강한 개미",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11487716"
+    },
+    "titles": {
+      "ko": "강한 개미",
+      "en": "Q11487716",
+      "ja": "強き蟻"
+    },
+    "releaseYear": 1971,
+    "creator": "Seichō Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

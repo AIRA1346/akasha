@@ -159,5 +159,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009702": {
+    "workId": "wk_000009702",
+    "title": "이지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13596262"
+    },
+    "titles": {
+      "ko": "이지",
+      "en": "Iji"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009712": {
+    "workId": "wk_000009712",
+    "title": "요시와 신기한 도감",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136231548"
+    },
+    "titles": {
+      "ko": "요시와 신기한 도감",
+      "en": "Yoshi and the Mysterious Book",
+      "ja": "ヨッシーとフカシギの図鑑"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

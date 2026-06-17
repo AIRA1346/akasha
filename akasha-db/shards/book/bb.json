@@ -114,5 +114,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009891": {
+    "workId": "wk_000009891",
+    "title": "밀엄원발로참회문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11455737"
+    },
+    "titles": {
+      "ko": "밀엄원발로참회문",
+      "en": "Religious Confession at Mitsugon-in Temple",
+      "ja": "密厳院発露懺悔文"
+    },
+    "creator": "Kakuban",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010246": {
+    "workId": "wk_000010246",
+    "title": "석별",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492944"
+    },
+    "titles": {
+      "ko": "석별",
+      "en": "Regrettable Parting",
+      "ja": "惜別"
+    },
+    "releaseYear": 1945,
+    "creator": "太宰治",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

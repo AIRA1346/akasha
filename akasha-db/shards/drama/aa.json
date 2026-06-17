@@ -106,5 +106,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010257": {
+    "workId": "wk_000010257",
+    "title": "다메 초콜라테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247803"
+    },
+    "titles": {
+      "ko": "다메 초콜라테",
+      "en": "Dame chocolate"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

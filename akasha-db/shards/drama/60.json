@@ -121,5 +121,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009678": {
+    "workId": "wk_000009678",
+    "title": "캔트 바이 미 러브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122810518"
+    },
+    "titles": {
+      "ko": "캔트 바이 미 러브",
+      "en": "Can't Buy Me Love",
+      "ja": "キャント・バイ・ミー・ラブ (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009687": {
+    "workId": "wk_000009687",
+    "title": "하이드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123145955"
+    },
+    "titles": {
+      "ko": "하이드",
+      "en": "Hide"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010355": {
+    "workId": "wk_000010355",
+    "title": "카말레오네스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249565"
+    },
+    "titles": {
+      "ko": "카말레오네스",
+      "en": "Camaleones",
+      "ja": "カマレオネス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010364": {
+    "workId": "wk_000010364",
+    "title": "머더봇 다이어리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125130750"
+    },
+    "titles": {
+      "ko": "머더봇 다이어리",
+      "en": "Murderbot",
+      "ja": "マーダーボット (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

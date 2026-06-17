@@ -144,5 +144,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009180": {
+    "workId": "wk_000009180",
+    "title": "모두 착한 아이예요",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7496805"
+    },
+    "titles": {
+      "ko": "모두 착한 아이예요",
+      "en": "Shima Shima Tora no Shimajirō",
+      "ja": "しましまとらのしまじろう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

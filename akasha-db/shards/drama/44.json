@@ -156,5 +156,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010154": {
+    "workId": "wk_000010154",
+    "title": "한뼘드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124691088"
+    },
+    "titles": {
+      "ko": "한뼘드라마",
+      "en": "Nursery Story"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

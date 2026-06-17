@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009458": {
+    "workId": "wk_000009458",
+    "title": "순간 반짝임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10864019"
+    },
+    "titles": {
+      "ko": "순간 반짝임",
+      "en": "Matataki",
+      "ja": "瞬 またたき"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

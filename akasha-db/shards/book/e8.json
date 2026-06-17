@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009445": {
+    "workId": "wk_000009445",
+    "title": "한탄의 미녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11419368"
+    },
+    "titles": {
+      "ko": "한탄의 미녀",
+      "en": "Nageki no Bijo",
+      "ja": "嘆きの美女"
+    },
+    "releaseYear": 2011,
+    "creator": "Asako Yuzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -137,5 +137,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009960": {
+    "workId": "wk_000009960",
+    "title": "장해전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124291006"
+    },
+    "titles": {
+      "ko": "장해전",
+      "en": "The Legend of Zang Hai",
+      "ja": "蔵海伝～静かなる炎、宮廷を揺るがす～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

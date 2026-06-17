@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009895": {
+    "workId": "wk_000009895",
+    "title": "사탄의 인형 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089281"
+    },
+    "titles": {
+      "ko": "사탄의 인형 2",
+      "en": "Child's Play 2",
+      "ja": "チャイルド・プレイ2"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -105,5 +105,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010209": {
+    "workId": "wk_000010209",
+    "title": "아모르시토 코라손",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247433"
+    },
+    "titles": {
+      "ko": "아모르시토 코라손",
+      "en": "Amorcito Corazón"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

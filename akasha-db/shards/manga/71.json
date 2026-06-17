@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009177": {
+    "workId": "wk_000009177",
+    "title": "유희왕 GX",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2741415"
+    },
+    "titles": {
+      "ko": "유희왕 GX",
+      "en": "Yu-Gi-Oh! GX",
+      "ja": "遊☆戯☆王GX"
+    },
+    "creator": "Naoyuki Kageyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

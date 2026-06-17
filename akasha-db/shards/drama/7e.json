@@ -229,5 +229,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009739": {
+    "workId": "wk_000009739",
+    "title": "싱어게인3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123241590"
+    },
+    "titles": {
+      "ko": "싱어게인3",
+      "en": "Sing Again 3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

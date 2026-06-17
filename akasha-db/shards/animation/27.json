@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009296": {
+    "workId": "wk_000009296",
+    "title": "히틀러: 악의 탄생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q818968"
+    },
+    "titles": {
+      "ko": "히틀러: 악의 탄생",
+      "en": "Hitler: The Rise of Evil",
+      "ja": "ヒットラー"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

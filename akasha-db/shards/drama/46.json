@@ -144,5 +144,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009744": {
+    "workId": "wk_000009744",
+    "title": "세작, 매혹된 자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123333036"
+    },
+    "titles": {
+      "ko": "세작, 매혹된 자들",
+      "en": "Captivating the King",
+      "ja": "魅惑の人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009750": {
+    "workId": "wk_000009750",
+    "title": "피도 눈물도 없이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123436635"
+    },
+    "titles": {
+      "ko": "피도 눈물도 없이",
+      "en": "The Two Sisters",
+      "ja": "血も涙もなく (2024年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

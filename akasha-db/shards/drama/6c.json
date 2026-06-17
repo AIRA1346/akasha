@@ -67,5 +67,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009338": {
+    "workId": "wk_000009338",
+    "title": "액세스 할리우드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200690"
+    },
+    "titles": {
+      "ko": "액세스 할리우드",
+      "en": "Access Hollywood",
+      "ja": "アクセス・ハリウッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009904": {
+    "workId": "wk_000009904",
+    "title": "경제 주부가 나섭시다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071828"
+    },
+    "titles": {
+      "ko": "경제 주부가 나섭시다",
+      "en": "Q124071828"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

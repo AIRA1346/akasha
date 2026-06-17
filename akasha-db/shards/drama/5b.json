@@ -227,5 +227,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009679": {
+    "workId": "wk_000009679",
+    "title": "세 번째 결혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122853221"
+    },
+    "titles": {
+      "ko": "세 번째 결혼",
+      "en": "The Third Marriage"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010363": {
+    "workId": "wk_000010363",
+    "title": "이 사랑 통역 되나요?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125121395"
+    },
+    "titles": {
+      "ko": "이 사랑 통역 되나요?",
+      "en": "Can This Love Be Translated?",
+      "ja": "恋の通訳、できますか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -439,6 +439,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000008963",
+    "title": "666 사탄",
+    "shardId": "manga_a5",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Seishi Kishimoto",
+    "tags": [],
+    "searchTokens": [
+      "666 사탄",
+      "666〜サタン〜",
+      "666사탄",
+      "O-Parts Hunter",
+      "Seishi Kishimoto",
+      "opartshunter",
+      "seishikishimoto"
+    ],
+    "titles": {
+      "ko": "666 사탄",
+      "en": "O-Parts Hunter",
+      "ja": "666〜サタン〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000292",
     "title": "86 -에이티식스-",
     "shardId": "manga_2f",
@@ -4454,6 +4479,30 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009200",
+    "title": "기동전사 건담 SEED ASTRAY 시리즈",
+    "shardId": "manga_4a",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Mobile Suit Gundam SEED Astray",
+      "mobilesuitgundamseedastray",
+      "機動戦士ガンダムSEED ASTRAYシリーズ",
+      "機動戦士ガンダムseedastrayシリーズ",
+      "기동전사 건담 SEED ASTRAY 시리즈",
+      "기동전사건담seedastray시리즈"
+    ],
+    "titles": {
+      "ko": "기동전사 건담 SEED ASTRAY 시리즈",
+      "en": "Mobile Suit Gundam SEED Astray",
+      "ja": "機動戦士ガンダムSEED ASTRAYシリーズ"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001090",
     "title": "기동전사 건담 SEED MSV",
     "shardId": "manga_97",
@@ -5503,6 +5552,32 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009205",
+    "title": "날조 트랩 -NTR-",
+    "shardId": "manga_89",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kodama Naoko",
+    "tags": [],
+    "searchTokens": [
+      "Kodama Naoko",
+      "NTR: Netsuzou Trap",
+      "kodamanaoko",
+      "ntrnetsuzoutrap",
+      "捏造トラップ-NTR-",
+      "捏造トラップntr",
+      "날조 트랩 -NTR-",
+      "날조트랩ntr"
+    ],
+    "titles": {
+      "ko": "날조 트랩 -NTR-",
+      "en": "NTR: Netsuzou Trap",
+      "ja": "捏造トラップ-NTR-"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003338",
     "title": "남녀의 우정은 성립할까? (아니, 하지 않아!!)",
     "shardId": "manga_5d",
@@ -5924,6 +5999,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009280",
+    "title": "너무 외로워서 레즈비언 업소에 간 리포트",
+    "shardId": "manga_0b",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Nagata Kabi",
+    "tags": [],
+    "searchTokens": [
+      "My Lesbian Experience With Loneliness",
+      "Nagata Kabi",
+      "mylesbianexperiencewithloneliness",
+      "nagatakabi",
+      "さびしすぎてレズ風俗に行きましたレポ",
+      "너무 외로워서 레즈비언 업소에 간 리포트",
+      "너무외로워서레즈비언업소에간리포트"
+    ],
+    "titles": {
+      "ko": "너무 외로워서 레즈비언 업소에 간 리포트",
+      "en": "My Lesbian Experience With Loneliness",
+      "ja": "さびしすぎてレズ風俗に行きましたレポ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002519",
     "title": "너와 나의 발자취 ~시간여행 카스가연구소~",
     "shardId": "manga_4b",
@@ -6041,6 +6141,31 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000009350",
+    "title": "네가 있는 마을",
+    "shardId": "manga_19",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kōji Seo",
+    "tags": [],
+    "searchTokens": [
+      "A Town Where You Live",
+      "Kōji Seo",
+      "atownwhereyoulive",
+      "kōjiseo",
+      "君のいる町",
+      "네가 있는 마을",
+      "네가있는마을"
+    ],
+    "titles": {
+      "ko": "네가 있는 마을",
+      "en": "A Town Where You Live",
+      "ja": "君のいる町"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000005541",
@@ -6835,6 +6960,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000008959",
+    "title": "다이쇼 소녀 전래동화",
+    "shardId": "manga_56",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Sana Kirioka",
+    "tags": [],
+    "searchTokens": [
+      "Sana Kirioka",
+      "Taisho Otome Fairy Tale",
+      "sanakirioka",
+      "taishootomefairytale",
+      "大正処女御伽話",
+      "다이쇼 소녀 전래동화",
+      "다이쇼소녀전래동화"
+    ],
+    "titles": {
+      "ko": "다이쇼 소녀 전래동화",
+      "en": "Taisho Otome Fairy Tale",
+      "ja": "大正処女御伽話"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000002510",
     "title": "다이아몬드 A",
     "shardId": "manga_b1",
@@ -7475,6 +7625,30 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000008960",
+    "title": "도로로",
+    "shardId": "manga_24",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Osamu Tezuka",
+    "tags": [],
+    "searchTokens": [
+      "Dororo",
+      "Osamu Tezuka",
+      "dororo",
+      "osamutezuka",
+      "どろろ",
+      "도로로"
+    ],
+    "titles": {
+      "ko": "도로로",
+      "en": "Dororo",
+      "ja": "どろろ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000315",
@@ -8159,6 +8333,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000009113",
+    "title": "드리프터즈",
+    "shardId": "manga_1a",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kouta Hirano",
+    "tags": [],
+    "searchTokens": [
+      "Drifters",
+      "Kouta Hirano",
+      "drifters",
+      "koutahirano",
+      "ドリフターズ",
+      "드리프터즈"
+    ],
+    "titles": {
+      "ko": "드리프터즈",
+      "en": "Drifters",
+      "ja": "ドリフターズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000006391",
     "title": "드림☆점보☆걸",
     "shardId": "manga_50",
@@ -8746,6 +8944,31 @@
       "ko": "러프",
       "en": "Rough",
       "ja": "ラフ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000008967",
+    "title": "레이디 레이디!!",
+    "shardId": "manga_12",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Yōko Hanabusa",
+    "tags": [],
+    "searchTokens": [
+      "Lady!!",
+      "Yōko Hanabusa",
+      "lady!!",
+      "yōkohanabusa",
+      "レディ!!",
+      "레이디 레이디!!",
+      "레이디레이디!!"
+    ],
+    "titles": {
+      "ko": "레이디 레이디!!",
+      "en": "Lady!!",
+      "ja": "レディ!!"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -9843,6 +10066,31 @@
       "ko": "매직 쾌두",
       "en": "Magic Kaito",
       "ja": "まじっく快斗"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009034",
+    "title": "머나먼 시공 속에서 자양화 꿈 이야기",
+    "shardId": "manga_43",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Tohko Mizuno",
+    "tags": [],
+    "searchTokens": [
+      "Haruka: Beyond the Stream of Time",
+      "Tohko Mizuno",
+      "harukabeyondthestreamoftime",
+      "tohkomizuno",
+      "遙かなる時空の中で",
+      "머나먼 시공 속에서 자양화 꿈 이야기",
+      "머나먼시공속에서자양화꿈이야기"
+    ],
+    "titles": {
+      "ko": "머나먼 시공 속에서 자양화 꿈 이야기",
+      "en": "Haruka: Beyond the Stream of Time",
+      "ja": "遙かなる時空の中で"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -11541,6 +11789,32 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009351",
+    "title": "바질리스크 ~코우가인법첩~",
+    "shardId": "manga_e5",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Masaki Segawa",
+    "tags": [],
+    "searchTokens": [
+      "Basilisk",
+      "Masaki Segawa",
+      "basilisk",
+      "masakisegawa",
+      "バジリスク 〜甲賀忍法帖〜",
+      "バジリスク〜甲賀忍法帖〜",
+      "바질리스크 ~코우가인법첩~",
+      "바질리스크~코우가인법첩~"
+    ],
+    "titles": {
+      "ko": "바질리스크 ~코우가인법첩~",
+      "en": "Basilisk",
+      "ja": "バジリスク 〜甲賀忍法帖〜"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001627",
     "title": "바쿠온!!",
     "shardId": "manga_c4",
@@ -11832,6 +12106,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009352",
+    "title": "방과후 크리스마",
+    "shardId": "manga_d6",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kumiko Suekane",
+    "tags": [],
+    "searchTokens": [
+      "Afterschool Charisma",
+      "Kumiko Suekane",
+      "afterschoolcharisma",
+      "kumikosuekane",
+      "放課後のカリスマ",
+      "방과후 크리스마",
+      "방과후크리스마"
+    ],
+    "titles": {
+      "ko": "방과후 크리스마",
+      "en": "Afterschool Charisma",
+      "ja": "放課後のカリスマ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001085",
     "title": "배드 걸",
     "shardId": "manga_a6",
@@ -11881,6 +12180,30 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000009109",
+    "title": "백곰카페",
+    "shardId": "manga_6c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Aloha Higa",
+    "tags": [],
+    "searchTokens": [
+      "Aloha Higa",
+      "Polar Bear Café",
+      "alohahiga",
+      "polarbearcafé",
+      "しろくまカフェ",
+      "백곰카페"
+    ],
+    "titles": {
+      "ko": "백곰카페",
+      "en": "Polar Bear Café",
+      "ja": "しろくまカフェ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001950",
     "title": "백마왕자",
     "shardId": "manga_e4",
@@ -11925,6 +12248,30 @@
       "ko": "백작 카인",
       "en": "Earl Cain",
       "ja": "伯爵カインシリーズ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009114",
+    "title": "뱀파이어 기사",
+    "shardId": "manga_8a",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "樋野まつり",
+    "tags": [],
+    "searchTokens": [
+      "Vampire Knight",
+      "vampireknight",
+      "ヴァンパイア騎士",
+      "樋野まつり",
+      "뱀파이어 기사",
+      "뱀파이어기사"
+    ],
+    "titles": {
+      "ko": "뱀파이어 기사",
+      "en": "Vampire Knight",
+      "ja": "ヴァンパイア騎士"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -12419,6 +12766,31 @@
       "ko": "불꽃소년 레카",
       "en": "Flame of Recca",
       "ja": "烈火の炎"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009071",
+    "title": "불꽃의 알펜로제 쥬디와 랜디",
+    "shardId": "manga_a5",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Michiyo Akaishi",
+    "tags": [],
+    "searchTokens": [
+      "Alpen Rose",
+      "Michiyo Akaishi",
+      "alpenrose",
+      "michiyoakaishi",
+      "アルペンローゼ",
+      "불꽃의 알펜로제 쥬디와 랜디",
+      "불꽃의알펜로제쥬디와랜디"
+    ],
+    "titles": {
+      "ko": "불꽃의 알펜로제 쥬디와 랜디",
+      "en": "Alpen Rose",
+      "ja": "アルペンローゼ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -13073,6 +13445,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000008961",
+    "title": "삐리리~ 불어봐! 재규어",
+    "shardId": "manga_bc",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kyosuke Usuta",
+    "tags": [],
+    "searchTokens": [
+      "Kyosuke Usuta",
+      "Pyū to Fuku! Jaguar",
+      "kyosukeusuta",
+      "pyūtofuku!jaguar",
+      "ピューと吹く!ジャガー",
+      "삐리리~ 불어봐! 재규어",
+      "삐리리~불어봐!재규어"
+    ],
+    "titles": {
+      "ko": "삐리리~ 불어봐! 재규어",
+      "en": "Pyū to Fuku! Jaguar",
+      "ja": "ピューと吹く!ジャガー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002288",
     "title": "사건옥가업",
     "shardId": "manga_ef",
@@ -13359,6 +13756,31 @@
       "ko": "사망 유희로 밥을 먹는다.",
       "en": "Playing Death Games to Put Food on the Table",
       "ja": "死亡遊戯で飯を食う。"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009032",
+    "title": "사모님은 여고생",
+    "shardId": "manga_0e",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Hiyoko Kobayashi",
+    "tags": [],
+    "searchTokens": [
+      "Hiyoko Kobayashi",
+      "Oku-sama wa Joshi Kōsei",
+      "hiyokokobayashi",
+      "okusamawajoshikōsei",
+      "おくさまは女子高生",
+      "사모님은 여고생",
+      "사모님은여고생"
+    ],
+    "titles": {
+      "ko": "사모님은 여고생",
+      "en": "Oku-sama wa Joshi Kōsei",
+      "ja": "おくさまは女子高生"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -14225,6 +14647,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009279",
+    "title": "성흔의 퀘이사",
+    "shardId": "manga_9e",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Hiroyuki Yoshino",
+    "tags": [],
+    "searchTokens": [
+      "Hiroyuki Yoshino",
+      "The Qwaser of Stigmata",
+      "hiroyukiyoshino",
+      "theqwaserofstigmata",
+      "聖痕のクェイサー",
+      "성흔의 퀘이사",
+      "성흔의퀘이사"
+    ],
+    "titles": {
+      "ko": "성흔의 퀘이사",
+      "en": "The Qwaser of Stigmata",
+      "ja": "聖痕のクェイサー"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000007268",
     "title": "세계의 끝과 마법사",
     "shardId": "manga_06",
@@ -14722,6 +15169,30 @@
       "ko": "소프테니",
       "en": "Softenni",
       "ja": "そふてにっ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009029",
+    "title": "속삭임",
+    "shardId": "manga_73",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Takashi Ikeda",
+    "tags": [],
+    "searchTokens": [
+      "Sasameki Koto",
+      "Takashi Ikeda",
+      "sasamekikoto",
+      "takashiikeda",
+      "ささめきこと",
+      "속삭임"
+    ],
+    "titles": {
+      "ko": "속삭임",
+      "en": "Sasameki Koto",
+      "ja": "ささめきこと"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -15326,6 +15797,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009176",
+    "title": "스틸 볼 런",
+    "shardId": "manga_91",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "荒木飛呂彦",
+    "tags": [],
+    "searchTokens": [
+      "Steel Ball Run",
+      "steelballrun",
+      "スティールボールラン",
+      "スティール・ボール・ラン",
+      "荒木飛呂彦",
+      "스틸 볼 런",
+      "스틸볼런"
+    ],
+    "titles": {
+      "ko": "스틸 볼 런",
+      "en": "Steel Ball Run",
+      "ja": "スティール・ボール・ラン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000387",
     "title": "스파이 패밀리",
     "shardId": "manga_34",
@@ -15513,6 +16009,30 @@
       "ko": "시드 크래프트의 최종 추리",
       "en": "Syd Craft: Love Is a Mystery",
       "ja": "シド・クラフトの最終推理"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009202",
+    "title": "시바토라",
+    "shardId": "manga_2e",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Shin Kibayashi",
+    "tags": [],
+    "searchTokens": [
+      "Shibatora",
+      "Shin Kibayashi",
+      "shibatora",
+      "shinkibayashi",
+      "シバトラ",
+      "시바토라"
+    ],
+    "titles": {
+      "ko": "시바토라",
+      "en": "Shibatora",
+      "ja": "シバトラ"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -16603,6 +17123,32 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009204",
+    "title": "아이러브 서티",
+    "shardId": "manga_40",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Ken Akamatsu",
+    "tags": [],
+    "searchTokens": [
+      "A.I. Love You",
+      "A・Iが止まらない!",
+      "Ken Akamatsu",
+      "a.i.loveyou",
+      "aiが止まらない!",
+      "kenakamatsu",
+      "아이러브 서티",
+      "아이러브서티"
+    ],
+    "titles": {
+      "ko": "아이러브 서티",
+      "en": "A.I. Love You",
+      "ja": "A・Iが止まらない!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001448",
     "title": "아이러브 트레인",
     "shardId": "manga_f3",
@@ -16885,6 +17431,32 @@
       "ko": "아크로 트립",
       "en": "Acro Trip",
       "ja": "アクロトリップ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009276",
+    "title": "아톰 더 비기닝",
+    "shardId": "manga_ce",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Masami Yūki",
+    "tags": [],
+    "searchTokens": [
+      "Atom: The Beginning",
+      "Masami Yūki",
+      "atomthebeginning",
+      "masamiyūki",
+      "アトム ザ・ビギニング",
+      "アトムザビギニング",
+      "아톰 더 비기닝",
+      "아톰더비기닝"
+    ],
+    "titles": {
+      "ko": "아톰 더 비기닝",
+      "en": "Atom: The Beginning",
+      "ja": "アトム ザ・ビギニング"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -17181,6 +17753,30 @@
       "ko": "야노 군의 평범한 나날",
       "en": "Yano-kun's Ordinary Days",
       "ja": "矢野くんの普通の日々"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009354",
+    "title": "야리칭☆비치부",
+    "shardId": "manga_6d",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Tanaka Ogeretsu",
+    "tags": [],
+    "searchTokens": [
+      "Tanaka Ogeretsu",
+      "Yarichin Bitch Club",
+      "tanakaogeretsu",
+      "yarichinbitchclub",
+      "ヤリチン☆ビッチ部",
+      "야리칭☆비치부"
+    ],
+    "titles": {
+      "ko": "야리칭☆비치부",
+      "en": "Yarichin Bitch Club",
+      "ja": "ヤリチン☆ビッチ部"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -17515,6 +18111,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009281",
+    "title": "어떤 과학의 초전자포",
+    "shardId": "manga_27",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "鎌池和馬",
+    "tags": [],
+    "searchTokens": [
+      "A Certain Scientific Railgun",
+      "acertainscientificrailgun",
+      "とある科学の超電磁砲",
+      "鎌池和馬",
+      "어떤 과학의 초전자포",
+      "어떤과학의초전자포"
+    ],
+    "titles": {
+      "ko": "어떤 과학의 초전자포",
+      "en": "A Certain Scientific Railgun",
+      "ja": "とある科学の超電磁砲"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000004698",
     "title": "어떻게 해야 소꿉친구의 여친이 될 수 있나요?!",
     "shardId": "manga_49",
@@ -17797,6 +18417,31 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000009112",
+    "title": "에덴의 우리",
+    "shardId": "manga_f9",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Yoshinobu Yamada",
+    "tags": [],
+    "searchTokens": [
+      "Cage of Eden",
+      "Yoshinobu Yamada",
+      "cageofeden",
+      "yoshinobuyamada",
+      "エデンの檻",
+      "에덴의 우리",
+      "에덴의우리"
+    ],
+    "titles": {
+      "ko": "에덴의 우리",
+      "en": "Cage of Eden",
+      "ja": "エデンの檻"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005543",
     "title": "에리스의 성배",
     "shardId": "manga_4a",
@@ -17865,6 +18510,31 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009028",
+    "title": "에어 마스터",
+    "shardId": "manga_6f",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Yokusaru Shibata",
+    "tags": [],
+    "searchTokens": [
+      "Air Master",
+      "Yokusaru Shibata",
+      "airmaster",
+      "yokusarushibata",
+      "エアマスター",
+      "에어 마스터",
+      "에어마스터"
+    ],
+    "titles": {
+      "ko": "에어 마스터",
+      "en": "Air Master",
+      "ja": "エアマスター"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000006453",
@@ -18502,6 +19172,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009110",
+    "title": "옆자리 괴물군",
+    "shardId": "manga_93",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Robico",
+    "tags": [],
+    "searchTokens": [
+      "My Little Monster",
+      "Robico",
+      "mylittlemonster",
+      "robico",
+      "となりの怪物くん",
+      "옆자리 괴물군",
+      "옆자리괴물군"
+    ],
+    "titles": {
+      "ko": "옆자리 괴물군",
+      "en": "My Little Monster",
+      "ja": "となりの怪物くん"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000001246",
     "title": "옆자리의 노부쿠니 양은 나를 좋아하는 것 같아",
     "shardId": "manga_ac",
@@ -19115,6 +19810,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009069",
+    "title": "완간 미드나이트",
+    "shardId": "manga_45",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Michiharu Kusunoki",
+    "tags": [],
+    "searchTokens": [
+      "Michiharu Kusunoki",
+      "Wangan Midnight",
+      "michiharukusunoki",
+      "wanganmidnight",
+      "湾岸ミッドナイト",
+      "완간 미드나이트",
+      "완간미드나이트"
+    ],
+    "titles": {
+      "ko": "완간 미드나이트",
+      "en": "Wangan Midnight",
+      "ja": "湾岸ミッドナイト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005535",
     "title": "완벽해서 귀여운 구석이 없다고 파혼당한 성녀는 이웃 나라에 팔린다",
     "shardId": "manga_f1",
@@ -19285,6 +20005,31 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000008968",
+    "title": "욕망!! 팬더가면",
+    "shardId": "manga_b7",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Keishū Ando",
+    "tags": [],
+    "searchTokens": [
+      "Keishū Ando",
+      "Kyūkyoku!! Hentai Kamen",
+      "keishūando",
+      "kyūkyoku!!hentaikamen",
+      "究極!!変態仮面",
+      "욕망!! 팬더가면",
+      "욕망!!팬더가면"
+    ],
+    "titles": {
+      "ko": "욕망!! 팬더가면",
+      "en": "Kyūkyoku!! Hentai Kamen",
+      "ja": "究極!!変態仮面"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000006254",
@@ -19835,6 +20580,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009178",
+    "title": "월광조례",
+    "shardId": "manga_c3",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kazuhiro Fujita",
+    "tags": [],
+    "searchTokens": [
+      "Kazuhiro Fujita",
+      "Moonlight Act",
+      "kazuhirofujita",
+      "moonlightact",
+      "月光条例",
+      "월광조례"
+    ],
+    "titles": {
+      "ko": "월광조례",
+      "en": "Moonlight Act",
+      "ja": "月光条例"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000398",
     "title": "월드 트리거",
     "shardId": "manga_f0",
@@ -19892,6 +20661,31 @@
     },
     "qualityScore": 80,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000009033",
+    "title": "위벨 블라트",
+    "shardId": "manga_96",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Etorōji Shiono",
+    "tags": [],
+    "searchTokens": [
+      "Etorōji Shiono",
+      "etorōjishiono",
+      "Übel Blatt",
+      "übelblatt",
+      "ユーベルブラット",
+      "위벨 블라트",
+      "위벨블라트"
+    ],
+    "titles": {
+      "ko": "위벨 블라트",
+      "en": "Übel Blatt",
+      "ja": "ユーベルブラット"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000000397",
@@ -19972,6 +20766,31 @@
       "ko": "유도부 이야기",
       "en": "Judo-bu Monogatari",
       "ja": "柔道部物語"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000008958",
+    "title": "유라기장의 유우나씨",
+    "shardId": "manga_bc",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Tadahiro Miura",
+    "tags": [],
+    "searchTokens": [
+      "Tadahiro Miura",
+      "Yuuna and the Haunted Hot Springs",
+      "tadahiromiura",
+      "yuunaandthehauntedhotsprings",
+      "ゆらぎ荘の幽奈さん",
+      "유라기장의 유우나씨",
+      "유라기장의유우나씨"
+    ],
+    "titles": {
+      "ko": "유라기장의 유우나씨",
+      "en": "Yuuna and the Haunted Hot Springs",
+      "ja": "ゆらぎ荘の幽奈さん"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -20100,6 +20919,53 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000008962",
+    "title": "유희왕 ARC-V",
+    "shardId": "manga_78",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Yu-Gi-Oh! Arc-V",
+      "yugioh!arcv",
+      "유희왕 ARC-V",
+      "유희왕arcv"
+    ],
+    "titles": {
+      "ko": "유희왕 ARC-V",
+      "en": "Yu-Gi-Oh! Arc-V"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
+    "workId": "wk_000009177",
+    "title": "유희왕 GX",
+    "shardId": "manga_71",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Naoyuki Kageyama",
+    "tags": [],
+    "searchTokens": [
+      "Naoyuki Kageyama",
+      "Yu-Gi-Oh! GX",
+      "naoyukikageyama",
+      "yugioh!gx",
+      "遊☆戯☆王GX",
+      "遊☆戯☆王gx",
+      "유희왕 GX",
+      "유희왕gx"
+    ],
+    "titles": {
+      "ko": "유희왕 GX",
+      "en": "Yu-Gi-Oh! GX",
+      "ja": "遊☆戯☆王GX"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000008065",
@@ -20589,6 +21455,30 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000008966",
+    "title": "이다텐 점프",
+    "shardId": "manga_73",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "IDATEN翔",
+      "Idaten Jump",
+      "idatenjump",
+      "idaten翔",
+      "이다텐 점프",
+      "이다텐점프"
+    ],
+    "titles": {
+      "ko": "이다텐 점프",
+      "en": "Idaten Jump",
+      "ja": "IDATEN翔"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
   },
   {
     "workId": "wk_000000356",
@@ -21763,6 +22653,29 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009201",
+    "title": "절원의 템페스트",
+    "shardId": "manga_4c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Blast of Tempest",
+      "blastoftempest",
+      "絶園のテンペスト",
+      "절원의 템페스트",
+      "절원의템페스트"
+    ],
+    "titles": {
+      "ko": "절원의 템페스트",
+      "en": "Blast of Tempest",
+      "ja": "絶園のテンペスト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000005808",
     "title": "정글은 언제나 맑은 뒤 흐림",
     "shardId": "manga_21",
@@ -22012,6 +22925,29 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000009278",
+    "title": "종말의 하렘",
+    "shardId": "manga_d1",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "World's End Harem",
+      "world'sendharem",
+      "終末のハーレム",
+      "종말의 하렘",
+      "종말의하렘"
+    ],
+    "titles": {
+      "ko": "종말의 하렘",
+      "en": "World's End Harem",
+      "ja": "終末のハーレム"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000002603",
@@ -22322,6 +23258,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009174",
+    "title": "지켜줘 롤리팝",
+    "shardId": "manga_5c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Michiyo Kikuta",
+    "tags": [],
+    "searchTokens": [
+      "Mamotte! Lollipop",
+      "Michiyo Kikuta",
+      "mamotte!lollipop",
+      "michiyokikuta",
+      "まもって!ロリポップ",
+      "지켜줘 롤리팝",
+      "지켜줘롤리팝"
+    ],
+    "titles": {
+      "ko": "지켜줘 롤리팝",
+      "en": "Mamotte! Lollipop",
+      "ja": "まもって!ロリポップ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000381",
     "title": "진격의 거인",
     "shardId": "manga_e3",
@@ -22483,6 +23444,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009277",
+    "title": "쪽빛보다 푸르게",
+    "shardId": "manga_8c",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kou Fumizuki",
+    "tags": [],
+    "searchTokens": [
+      "Ai Yori Aoshi",
+      "Kou Fumizuki",
+      "aiyoriaoshi",
+      "koufumizuki",
+      "藍より青し",
+      "쪽빛보다 푸르게",
+      "쪽빛보다푸르게"
+    ],
+    "titles": {
+      "ko": "쪽빛보다 푸르게",
+      "en": "Ai Yori Aoshi",
+      "ja": "藍より青し"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
+  },
+  {
     "workId": "wk_000005542",
     "title": "착각하는 공방주 ~영웅 파티의 전 잡무 담당이, 실은 전투 이외가 SSS 랭크였다는 흔히 있는 이야기~",
     "shardId": "manga_20",
@@ -22539,6 +23525,31 @@
     },
     "qualityScore": 90,
     "qualityTier": 4
+  },
+  {
+    "workId": "wk_000008964",
+    "title": "천재 바카본",
+    "shardId": "manga_58",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Fujio Akatsuka",
+    "tags": [],
+    "searchTokens": [
+      "Fujio Akatsuka",
+      "Tensai Bakabon",
+      "fujioakatsuka",
+      "tensaibakabon",
+      "天才バカボン",
+      "천재 바카본",
+      "천재바카본"
+    ],
+    "titles": {
+      "ko": "천재 바카본",
+      "en": "Tensai Bakabon",
+      "ja": "天才バカボン"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001610",
@@ -23141,6 +24152,31 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009111",
+    "title": "치토세 Get you!!",
+    "shardId": "manga_f9",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Etsuya Mashima",
+    "tags": [],
+    "searchTokens": [
+      "Chitose Get You!!",
+      "Etsuya Mashima",
+      "chitosegetyou!!",
+      "etsuyamashima",
+      "ちとせげっちゅ!!",
+      "치토세 Get you!!",
+      "치토세getyou!!"
+    ],
+    "titles": {
+      "ko": "치토세 Get you!!",
+      "en": "Chitose Get You!!",
+      "ja": "ちとせげっちゅ!!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000000309",
     "title": "치하야후루",
     "shardId": "manga_4e",
@@ -23444,6 +24480,30 @@
       "ko": "카케구루이",
       "en": "Kakegurui",
       "ja": "賭󠄀ケグルイ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000008957",
+    "title": "카쿠시고토",
+    "shardId": "manga_41",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Kōji Kumeta",
+    "tags": [],
+    "searchTokens": [
+      "Kakushigoto",
+      "Kōji Kumeta",
+      "kakushigoto",
+      "kōjikumeta",
+      "かくしごと",
+      "카쿠시고토"
+    ],
+    "titles": {
+      "ko": "카쿠시고토",
+      "en": "Kakushigoto",
+      "ja": "かくしごと"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -23877,6 +24937,30 @@
       "ko": "코쿠리코 언덕에서",
       "en": "Kokurikozaka kara",
       "ja": "コクリコ坂から"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009353",
+    "title": "코토우라양",
+    "shardId": "manga_dd",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Enokids",
+    "tags": [],
+    "searchTokens": [
+      "Enokids",
+      "Kotoura-san",
+      "enokids",
+      "kotourasan",
+      "琴浦さん",
+      "코토우라양"
+    ],
+    "titles": {
+      "ko": "코토우라양",
+      "en": "Kotoura-san",
+      "ja": "琴浦さん"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -25160,6 +26244,28 @@
     "qualityTier": 4
   },
   {
+    "workId": "wk_000009115",
+    "title": "파르페틱!",
+    "shardId": "manga_51",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "",
+    "tags": [],
+    "searchTokens": [
+      "Parfait Tic!",
+      "parfaittic!",
+      "パフェちっく!",
+      "파르페틱!"
+    ],
+    "titles": {
+      "ko": "파르페틱!",
+      "en": "Parfait Tic!",
+      "ja": "パフェちっく!"
+    },
+    "qualityScore": 50,
+    "qualityTier": 2
+  },
+  {
     "workId": "wk_000001628",
     "title": "파지",
     "shardId": "manga_f2",
@@ -25180,6 +26286,31 @@
     },
     "qualityScore": 50,
     "qualityTier": 2
+  },
+  {
+    "workId": "wk_000009030",
+    "title": "팬텀 블러드",
+    "shardId": "manga_46",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Hirohiko Araki",
+    "tags": [],
+    "searchTokens": [
+      "Hirohiko Araki",
+      "Phantom Blood",
+      "hirohikoaraki",
+      "phantomblood",
+      "ファントムブラッド",
+      "팬텀 블러드",
+      "팬텀블러드"
+    ],
+    "titles": {
+      "ko": "팬텀 블러드",
+      "en": "Phantom Blood",
+      "ja": "ファントムブラッド"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
   },
   {
     "workId": "wk_000001953",
@@ -25515,6 +26646,30 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009116",
+    "title": "폭렬헌터",
+    "shardId": "manga_43",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Satoru Akahori",
+    "tags": [],
+    "searchTokens": [
+      "Satoru Akahori",
+      "Sorcerer Hunters",
+      "satoruakahori",
+      "sorcererhunters",
+      "爆れつハンター",
+      "폭렬헌터"
+    ],
+    "titles": {
+      "ko": "폭렬헌터",
+      "en": "Sorcerer Hunters",
+      "ja": "爆れつハンター"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000001840",
@@ -26039,6 +27194,30 @@
     "qualityTier": 3
   },
   {
+    "workId": "wk_000009203",
+    "title": "피치피치핏치",
+    "shardId": "manga_73",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Michiko Yokote",
+    "tags": [],
+    "searchTokens": [
+      "Mermaid Melody Pichi Pichi Pitch",
+      "Michiko Yokote",
+      "mermaidmelodypichipichipitch",
+      "michikoyokote",
+      "ぴちぴちピッチ",
+      "피치피치핏치"
+    ],
+    "titles": {
+      "ko": "피치피치핏치",
+      "en": "Mermaid Melody Pichi Pichi Pitch",
+      "ja": "ぴちぴちピッチ"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000002606",
     "title": "피타텐",
     "shardId": "manga_94",
@@ -26299,6 +27478,32 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000009070",
+    "title": "하야테X블레이드",
+    "shardId": "manga_6b",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Shizuru Hayashiya",
+    "tags": [],
+    "searchTokens": [
+      "Hayate X Blade",
+      "Shizuru Hayashiya",
+      "hayatexblade",
+      "shizuruhayashiya",
+      "はやて×ブレード",
+      "はやてブレード",
+      "하야테X블레이드",
+      "하야테x블레이드"
+    ],
+    "titles": {
+      "ko": "하야테X블레이드",
+      "en": "Hayate X Blade",
+      "ja": "はやて×ブレード"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000003520",
     "title": "하야테처럼!",
     "shardId": "manga_f8",
@@ -26321,6 +27526,30 @@
     },
     "qualityScore": 65,
     "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009175",
+    "title": "하얏코",
+    "shardId": "manga_f0",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Haruaki Katō",
+    "tags": [],
+    "searchTokens": [
+      "Haruaki Katō",
+      "Hyakko",
+      "haruakikatō",
+      "hyakko",
+      "ヒャッコ",
+      "하얏코"
+    ],
+    "titles": {
+      "ko": "하얏코",
+      "en": "Hyakko",
+      "ja": "ヒャッコ"
+    },
+    "qualityScore": 80,
+    "qualityTier": 4
   },
   {
     "workId": "wk_000000939",
@@ -27205,6 +28434,31 @@
     "qualityTier": 2
   },
   {
+    "workId": "wk_000008965",
+    "title": "황금의 바람",
+    "shardId": "manga_33",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Hirohiko Araki",
+    "tags": [],
+    "searchTokens": [
+      "Golden Wind",
+      "Hirohiko Araki",
+      "goldenwind",
+      "hirohikoaraki",
+      "黄金の風",
+      "황금의 바람",
+      "황금의바람"
+    ],
+    "titles": {
+      "ko": "황금의 바람",
+      "en": "Golden Wind",
+      "ja": "黄金の風"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
     "workId": "wk_000001248",
     "title": "황천의 츠가이",
     "shardId": "manga_af",
@@ -27275,6 +28529,30 @@
       "ko": "회장님은 메이드 사마!",
       "en": "Maid Sama!",
       "ja": "会長はメイド様!"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000008969",
+    "title": "효게모노",
+    "shardId": "manga_51",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Yoshihiro Yamada",
+    "tags": [],
+    "searchTokens": [
+      "Hyouge Mono",
+      "Yoshihiro Yamada",
+      "hyougemono",
+      "yoshihiroyamada",
+      "へうげもの",
+      "효게모노"
+    ],
+    "titles": {
+      "ko": "효게모노",
+      "en": "Hyouge Mono",
+      "ja": "へうげもの"
     },
     "qualityScore": 65,
     "qualityTier": 3
@@ -27619,6 +28897,31 @@
       "ko": "히메고토",
       "en": "Himegoto",
       "ja": "ひめゴト"
+    },
+    "qualityScore": 65,
+    "qualityTier": 3
+  },
+  {
+    "workId": "wk_000009031",
+    "title": "히비키의 마법",
+    "shardId": "manga_16",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "Jun Maeda",
+    "tags": [],
+    "searchTokens": [
+      "Hibiki's Magic",
+      "Jun Maeda",
+      "hibiki'smagic",
+      "junmaeda",
+      "ヒビキのマホウ",
+      "히비키의 마법",
+      "히비키의마법"
+    ],
+    "titles": {
+      "ko": "히비키의 마법",
+      "en": "Hibiki's Magic",
+      "ja": "ヒビキのマホウ"
     },
     "qualityScore": 65,
     "qualityTier": 3

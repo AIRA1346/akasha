@@ -73,5 +73,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009214": {
+    "workId": "wk_000009214",
+    "title": "노인과 바다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7754883"
+    },
+    "titles": {
+      "ko": "노인과 바다",
+      "en": "The Old Man and the Sea"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

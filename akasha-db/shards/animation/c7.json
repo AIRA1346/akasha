@@ -161,5 +161,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009286": {
+    "workId": "wk_000009286",
+    "title": "힐링굿♡프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q79813404"
+    },
+    "titles": {
+      "ko": "힐링굿♡프리큐어",
+      "en": "Healin' Good Pretty Cure",
+      "ja": "ヒーリングっど♥プリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

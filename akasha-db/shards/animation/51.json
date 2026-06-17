@@ -129,5 +129,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009223": {
+    "workId": "wk_000009223",
+    "title": "시날로아의 마라도나 : 끝나지 않은 전설",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78209276"
+    },
+    "titles": {
+      "ko": "시날로아의 마라도나 : 끝나지 않은 전설",
+      "en": "Maradona in Mexico",
+      "ja": "マラドーナ・イン・メキシコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009699": {
+    "workId": "wk_000009699",
+    "title": "일하는 세포",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89987321"
+    },
+    "titles": {
+      "ko": "일하는 세포",
+      "en": "Cells at Work!",
+      "ja": "はたらく細胞"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

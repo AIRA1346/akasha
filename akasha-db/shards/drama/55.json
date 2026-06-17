@@ -140,5 +140,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009173": {
+    "workId": "wk_000009173",
+    "title": "가면라이더 블랙 RX",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193499"
+    },
+    "titles": {
+      "ko": "가면라이더 블랙 RX",
+      "en": "Kamen Rider Black RX",
+      "ja": "仮面ライダーBLACK RX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009798": {
+    "workId": "wk_000009798",
+    "title": "여행의 맛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123570663"
+    },
+    "titles": {
+      "ko": "여행의 맛",
+      "en": "Q123570663"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010104": {
+    "workId": "wk_000010104",
+    "title": "플레이어 2: 꾼들의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611027"
+    },
+    "titles": {
+      "ko": "플레이어 2: 꾼들의 전쟁",
+      "en": "Player 2: Master of Swindlers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

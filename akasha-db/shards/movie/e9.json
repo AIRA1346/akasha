@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009402": {
+    "workId": "wk_000009402",
+    "title": "빅 아이즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10858674"
+    },
+    "titles": {
+      "ko": "빅 아이즈",
+      "en": "Big Eyes",
+      "ja": "ビッグ・アイズ"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

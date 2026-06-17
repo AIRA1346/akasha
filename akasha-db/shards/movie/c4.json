@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009733": {
+    "workId": "wk_000009733",
+    "title": "힙노틱",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108872432"
+    },
+    "titles": {
+      "ko": "힙노틱",
+      "en": "Hypnotic",
+      "ja": "ヒプノティック"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

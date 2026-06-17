@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010293": {
+    "workId": "wk_000010293",
+    "title": "문자화",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11499911"
+    },
+    "titles": {
+      "ko": "문자화",
+      "en": "Q11499911",
+      "ja": "文字禍"
+    },
+    "creator": "中島敦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

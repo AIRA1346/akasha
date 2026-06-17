@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009010": {
+    "workId": "wk_000009010",
+    "title": "라스트 버스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108470673"
+    },
+    "titles": {
+      "ko": "라스트 버스",
+      "en": "The Last Bus",
+      "ja": "君を想い、バスに乗る"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

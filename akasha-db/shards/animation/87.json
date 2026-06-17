@@ -107,5 +107,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009117": {
+    "workId": "wk_000009117",
+    "title": "푸규루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7258983"
+    },
+    "titles": {
+      "ko": "푸규루",
+      "en": "Pugyuru",
+      "ja": "ぷぎゅる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -129,5 +129,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009437": {
+    "workId": "wk_000009437",
+    "title": "그란디아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13462475"
+    },
+    "titles": {
+      "ko": "그란디아",
+      "en": "Grandia",
+      "ja": "グランディア"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009649": {
+    "workId": "wk_000009649",
+    "title": "버브지 4D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135908391"
+    },
+    "titles": {
+      "ko": "버브지 4D",
+      "en": "Q135908391"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009823": {
+    "workId": "wk_000009823",
+    "title": "콘트라 III: 디 에일리언 워즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368099"
+    },
+    "titles": {
+      "ko": "콘트라 III: 디 에일리언 워즈",
+      "en": "Contra III: The Alien Wars",
+      "ja": "魂斗羅スピリッツ"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009934": {
+    "workId": "wk_000009934",
+    "title": "에이스 컴뱃 8: 시브의 날개",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137363885"
+    },
+    "titles": {
+      "ko": "에이스 컴뱃 8: 시브의 날개",
+      "en": "Q137363885",
+      "ja": "エースコンバット8 ウイングス・オブ・シーヴ"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

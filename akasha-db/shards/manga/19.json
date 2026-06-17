@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009350": {
+    "workId": "wk_000009350",
+    "title": "네가 있는 마을",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2819940"
+    },
+    "titles": {
+      "ko": "네가 있는 마을",
+      "en": "A Town Where You Live",
+      "ja": "君のいる町"
+    },
+    "creator": "Kōji Seo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

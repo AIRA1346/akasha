@@ -174,5 +174,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009170": {
+    "workId": "wk_000009170",
+    "title": "가면라이더 W",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193466"
+    },
+    "titles": {
+      "ko": "가면라이더 W",
+      "en": "Kamen Rider W",
+      "ja": "仮面ライダーW"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010311": {
+    "workId": "wk_000010311",
+    "title": "마드레스 에고이스타스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248358"
+    },
+    "titles": {
+      "ko": "마드레스 에고이스타스",
+      "en": "Madres Egoístas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -247,5 +247,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009469": {
+    "workId": "wk_000009469",
+    "title": "매트릭스 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1210827"
+    },
+    "titles": {
+      "ko": "매트릭스 시리즈",
+      "en": "The Matrix series",
+      "ja": "マトリックス"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009752": {
+    "workId": "wk_000009752",
+    "title": "유니버스 티켓",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123461131"
+    },
+    "titles": {
+      "ko": "유니버스 티켓",
+      "en": "Universe Ticket",
+      "ja": "UNIVERSE TICKET"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -120,5 +120,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009349": {
+    "workId": "wk_000009349",
+    "title": "오렌지 데이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202697"
+    },
+    "titles": {
+      "ko": "오렌지 데이즈",
+      "en": "Orange Days",
+      "ja": "オレンジデイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009743": {
+    "workId": "wk_000009743",
+    "title": "1670",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123315231"
+    },
+    "titles": {
+      "ko": "1670",
+      "en": "1670",
+      "ja": "1670"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010157": {
+    "workId": "wk_000010157",
+    "title": "저징 에이미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247192"
+    },
+    "titles": {
+      "ko": "저징 에이미",
+      "en": "Judging Amy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

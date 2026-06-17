@@ -133,5 +133,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009062": {
+    "workId": "wk_000009062",
+    "title": "춘추곡량전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138569"
+    },
+    "titles": {
+      "ko": "춘추곡량전",
+      "en": "Guliang Zhuan",
+      "ja": "春秋穀梁伝"
+    },
+    "creator": "Guliang Chi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

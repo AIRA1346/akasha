@@ -150,5 +150,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009992": {
+    "workId": "wk_000009992",
+    "title": "홀로의 그라피티",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98608925"
+    },
+    "titles": {
+      "ko": "홀로의 그라피티",
+      "en": "Holo no Graffiti",
+      "ja": "ホロのぐらふぃてぃ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

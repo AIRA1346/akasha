@@ -73,5 +73,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009529": {
+    "workId": "wk_000009529",
+    "title": "배드 로드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108703864"
+    },
+    "titles": {
+      "ko": "배드 로드",
+      "en": "Bad Roads",
+      "ja": "バッド・ローズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009661": {
+    "workId": "wk_000009661",
+    "title": "사물의 비밀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10880000"
+    },
+    "titles": {
+      "ko": "사물의 비밀",
+      "en": "Secrets, Objects",
+      "ja": "秘密のオブジェクト"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

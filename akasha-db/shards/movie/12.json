@@ -92,5 +92,61 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009006": {
+    "workId": "wk_000009006",
+    "title": "레이피스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108429282"
+    },
+    "titles": {
+      "ko": "레이피스트",
+      "en": "The Rapist"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009327": {
+    "workId": "wk_000009327",
+    "title": "교섭인 마시타 마사요시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855467"
+    },
+    "titles": {
+      "ko": "교섭인 마시타 마사요시",
+      "en": "Negotiator",
+      "ja": "交渉人 真下正義"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009591": {
+    "workId": "wk_000009591",
+    "title": "아지랑이좌",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087238"
+    },
+    "titles": {
+      "ko": "아지랑이좌",
+      "en": "Kagero-za",
+      "ja": "陽炎座"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

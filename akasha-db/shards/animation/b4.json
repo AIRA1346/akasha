@@ -184,5 +184,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010055": {
+    "workId": "wk_000010055",
+    "title": "디멘션W",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98930199"
+    },
+    "titles": {
+      "ko": "디멘션W",
+      "en": "Dimension W",
+      "ja": "Dimension W"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

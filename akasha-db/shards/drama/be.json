@@ -69,5 +69,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009336": {
+    "workId": "wk_000009336",
+    "title": "주온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200011"
+    },
+    "titles": {
+      "ko": "주온",
+      "en": "Ju-On",
+      "ja": "呪怨"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009467": {
+    "workId": "wk_000009467",
+    "title": "나쁜 기억 지우개",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121031348"
+    },
+    "titles": {
+      "ko": "나쁜 기억 지우개",
+      "en": "Bad Memory Eraser"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009612": {
+    "workId": "wk_000009612",
+    "title": "O'PENing",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122295042"
+    },
+    "titles": {
+      "ko": "O'PENing",
+      "en": "O'PENing"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009747": {
+    "workId": "wk_000009747",
+    "title": "자칼의 날",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123384263"
+    },
+    "titles": {
+      "ko": "자칼의 날",
+      "en": "The Day of the Jackal",
+      "ja": "ジャッカルの日 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

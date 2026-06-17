@@ -157,5 +157,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010099": {
+    "workId": "wk_000010099",
+    "title": "오후 라이브 뉴스 SOON",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124540303"
+    },
+    "titles": {
+      "ko": "오후 라이브 뉴스 SOON",
+      "en": "Afternoon LIVE Newsoon",
+      "ja": "午後LIVE ニュースーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

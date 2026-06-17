@@ -175,5 +175,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009676": {
+    "workId": "wk_000009676",
+    "title": "데블스 플랜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122740095"
+    },
+    "titles": {
+      "ko": "데블스 플랜",
+      "en": "The Devil's Plan",
+      "ja": "悪魔の計略 ～デビルズ・プラン～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009961": {
+    "workId": "wk_000009961",
+    "title": "지붕 위의 남자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124296491"
+    },
+    "titles": {
+      "ko": "지붕 위의 남자",
+      "en": "Q124296491"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

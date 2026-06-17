@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008995": {
+    "workId": "wk_000008995",
+    "title": "종이 도시",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138063"
+    },
+    "titles": {
+      "ko": "종이 도시",
+      "en": "Paper Towns"
+    },
+    "releaseYear": 2008,
+    "creator": "John Green",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010022": {
+    "workId": "wk_000010022",
+    "title": "대분노",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10897320"
+    },
+    "titles": {
+      "ko": "대분노",
+      "en": "Rage of Honor",
+      "ja": "ショー・コスギ'88/復讐遊戯"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

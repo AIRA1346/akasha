@@ -184,5 +184,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009492": {
+    "workId": "wk_000009492",
+    "title": "걸즈 앤 판처 최종장 제1화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85972874"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 최종장 제1화",
+      "en": "Girls und Panzer das Finale: Part 1",
+      "ja": "ガールズ＆パンツァー 最終章 第１話"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

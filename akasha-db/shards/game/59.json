@@ -215,5 +215,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010179": {
+    "workId": "wk_000010179",
+    "title": "데스페라도스 2: 쿠퍼의 복수",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1408101"
+    },
+    "titles": {
+      "ko": "데스페라도스 2: 쿠퍼의 복수",
+      "en": "Desperados 2: Cooper's Revenge"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

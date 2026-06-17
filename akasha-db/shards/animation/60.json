@@ -52,5 +52,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009876": {
+    "workId": "wk_000009876",
+    "title": "아야와 마녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q96031360"
+    },
+    "titles": {
+      "ko": "아야와 마녀",
+      "en": "Earwig and the Witch",
+      "ja": "アーヤと魔女"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009990": {
+    "workId": "wk_000009990",
+    "title": "세기의 도둑들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98065781"
+    },
+    "titles": {
+      "ko": "세기의 도둑들",
+      "en": "The Great Heist",
+      "ja": "世紀の銀行強盗"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

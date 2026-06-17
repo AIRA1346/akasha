@@ -199,5 +199,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009294": {
+    "workId": "wk_000009294",
+    "title": "극장판 프리큐어 미라클 리프 모두에게 이상한 하루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q81413861"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 미라클 리프 모두에게 이상한 하루",
+      "en": "Pretty Cure Miracle Leap: A Strange Day with Everyone!",
+      "ja": "映画 プリキュアミラクルリープ みんなとの不思議な1日"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -183,5 +183,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009218": {
+    "workId": "wk_000009218",
+    "title": "BNA: Brand New Animal",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78051864"
+    },
+    "titles": {
+      "ko": "BNA: Brand New Animal",
+      "en": "BNA: Brand New Animal",
+      "ja": "BNA ビー・エヌ・エー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

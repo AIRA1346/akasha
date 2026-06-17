@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010074": {
+    "workId": "wk_000010074",
+    "title": "에버소울",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138713782"
+    },
+    "titles": {
+      "ko": "에버소울",
+      "en": "Eversoul",
+      "ja": "エバーソウル"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

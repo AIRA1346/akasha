@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009932": {
+    "workId": "wk_000009932",
+    "title": "동물의 숲",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q967090"
+    },
+    "titles": {
+      "ko": "동물의 숲",
+      "en": "Dōbutsu no Mori",
+      "ja": "劇場版 どうぶつの森"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

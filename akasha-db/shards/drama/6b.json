@@ -193,5 +193,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009604": {
+    "workId": "wk_000009604",
+    "title": "스트릿 우먼 파이터2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122019779"
+    },
+    "titles": {
+      "ko": "스트릿 우먼 파이터2",
+      "en": "Street Woman Fighter 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010110": {
+    "workId": "wk_000010110",
+    "title": "이토록 친밀한 배신자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124619385"
+    },
+    "titles": {
+      "ko": "이토록 친밀한 배신자",
+      "en": "Doubt"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

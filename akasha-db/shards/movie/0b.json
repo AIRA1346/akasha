@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010152": {
+    "workId": "wk_000010152",
+    "title": "레이먼드 & 레이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109116365"
+    },
+    "titles": {
+      "ko": "레이먼드 & 레이",
+      "en": "Raymond & Ray",
+      "ja": "レイモンド&レイ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

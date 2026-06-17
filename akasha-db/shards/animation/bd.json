@@ -214,5 +214,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009126": {
+    "workId": "wk_000009126",
+    "title": "세인트 세이야: 레전드 오브 생츄어리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7402171"
+    },
+    "titles": {
+      "ko": "세인트 세이야: 레전드 오브 생츄어리",
+      "en": "Saint Seiya: Legend of Sanctuary",
+      "ja": "聖闘士星矢 Legend of Sanctuary"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -122,5 +122,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009129": {
+    "workId": "wk_000009129",
+    "title": "배틀스타 갈락티카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q746240"
+    },
+    "titles": {
+      "ko": "배틀스타 갈락티카",
+      "en": "Battlestar Galactica",
+      "ja": "宇宙空母ギャラクティカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009288": {
+    "workId": "wk_000009288",
+    "title": "침푸이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7993489"
+    },
+    "titles": {
+      "ko": "침푸이",
+      "en": "Chimpui",
+      "ja": "チンプイ"
+    },
+    "creator": "藤子・F・不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

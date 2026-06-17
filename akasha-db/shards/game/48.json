@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009781": {
+    "workId": "wk_000009781",
+    "title": "빅토리아 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1366277"
+    },
+    "titles": {
+      "ko": "빅토리아 2",
+      "en": "Victoria II",
+      "ja": "Victoria II"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010079": {
+    "workId": "wk_000010079",
+    "title": "최악의 재액인간에게 바친다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139093201"
+    },
+    "titles": {
+      "ko": "최악의 재액인간에게 바친다",
+      "en": "Saiaku Naru Saiyaku Ningen ni Sasagu",
+      "ja": "最悪なる災厄人間に捧ぐ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

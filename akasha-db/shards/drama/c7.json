@@ -176,5 +176,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009803": {
+    "workId": "wk_000009803",
+    "title": "GARO -강철을 잇는 자-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123699067"
+    },
+    "titles": {
+      "ko": "GARO -강철을 잇는 자-",
+      "en": "Garo: The One Who Inherits Steel",
+      "ja": "牙狼-GARO- ハガネを継ぐ者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010034": {
+    "workId": "wk_000010034",
+    "title": "예고생들 오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124412605"
+    },
+    "titles": {
+      "ko": "예고생들 오디션",
+      "en": "Q124412605"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010274": {
+    "workId": "wk_000010274",
+    "title": "Galaxy Superstar",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12483304"
+    },
+    "titles": {
+      "ko": "Galaxy Superstar",
+      "en": "Galaxy Superstar"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

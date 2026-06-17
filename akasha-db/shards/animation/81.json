@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009700": {
+    "workId": "wk_000009700",
+    "title": "행복장의 오코죠상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q900454"
+    },
+    "titles": {
+      "ko": "행복장의 오코죠상",
+      "en": "Okojo-san",
+      "ja": "しあわせソウのオコジョさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

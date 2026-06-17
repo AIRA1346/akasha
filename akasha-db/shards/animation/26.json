@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009293": {
+    "workId": "wk_000009293",
+    "title": "에프제로 팔콘전설",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q8133833"
+    },
+    "titles": {
+      "ko": "에프제로 팔콘전설",
+      "en": "F-Zero: GP Legend",
+      "ja": "F-ZERO ファルコン伝説"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

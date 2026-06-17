@@ -127,5 +127,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009030": {
+    "workId": "wk_000009030",
+    "title": "팬텀 블러드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2608646"
+    },
+    "titles": {
+      "ko": "팬텀 블러드",
+      "en": "Phantom Blood",
+      "ja": "ファントムブラッド"
+    },
+    "creator": "Hirohiko Araki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

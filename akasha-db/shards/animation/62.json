@@ -276,5 +276,40 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009211": {
+    "workId": "wk_000009211",
+    "title": "심해원정대 오르페우스호",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7729541"
+    },
+    "titles": {
+      "ko": "심해원정대 오르페우스호",
+      "en": "The Deep"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009215": {
+    "workId": "wk_000009215",
+    "title": "ID：INVADED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q77844091"
+    },
+    "titles": {
+      "ko": "ID：INVADED",
+      "en": "Id:Invaded",
+      "ja": "ID:INVADED イド：インヴェイデッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

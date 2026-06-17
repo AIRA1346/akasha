@@ -89,5 +89,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009207": {
+    "workId": "wk_000009207",
+    "title": "공각기동대 S.A.C. Solid State Society",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q764897"
+    },
+    "titles": {
+      "ko": "공각기동대 S.A.C. Solid State Society",
+      "en": "Ghost in the Shell: Stand Alone Complex - Solid State Society",
+      "ja": "攻殻機動隊 STAND ALONE COMPLEX Solid State Society"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009993": {
+    "workId": "wk_000009993",
+    "title": "제로의 사역마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98709956"
+    },
+    "titles": {
+      "ko": "제로의 사역마",
+      "en": "The Familiar of Zero",
+      "ja": "ゼロの使い魔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

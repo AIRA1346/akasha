@@ -107,5 +107,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009608": {
+    "workId": "wk_000009608",
+    "title": "잘났어, 정말!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12216006"
+    },
+    "titles": {
+      "ko": "잘났어, 정말!",
+      "en": "Good For You",
+      "ja": "黒の旋律"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010260": {
+    "workId": "wk_000010260",
+    "title": "Mr. 플랑크톤",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124795628"
+    },
+    "titles": {
+      "ko": "Mr. 플랑크톤",
+      "en": "Mr. Plankton",
+      "ja": "Mr. プランクトン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010317": {
+    "workId": "wk_000010317",
+    "title": "데 프레엔테 알 솔",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248428"
+    },
+    "titles": {
+      "ko": "데 프레엔테 알 솔",
+      "en": "De frente al sol"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

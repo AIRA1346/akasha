@@ -103,5 +103,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010024": {
+    "workId": "wk_000010024",
+    "title": "극장판 게게게 키타로 일본폭렬!!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10899320"
+    },
+    "titles": {
+      "ko": "극장판 게게게 키타로 일본폭렬!!",
+      "en": "Gekijô ban Gegege no Kitarô: Nippon bakuretsu",
+      "ja": "劇場版 ゲゲゲの鬼太郎 日本爆裂!!"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

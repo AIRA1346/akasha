@@ -150,5 +150,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010068": {
+    "workId": "wk_000010068",
+    "title": "로켓 나이트 어드벤처스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1382986"
+    },
+    "titles": {
+      "ko": "로켓 나이트 어드벤처스",
+      "en": "Rocket Knight Adventures",
+      "ja": "ロケットナイトアドベンチャーズ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010287": {
+    "workId": "wk_000010287",
+    "title": "덩크 드림",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1450787"
+    },
+    "titles": {
+      "ko": "덩크 드림",
+      "en": "Street Slam",
+      "ja": "ダンクドリーム"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

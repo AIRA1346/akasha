@@ -176,5 +176,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009167": {
+    "workId": "wk_000009167",
+    "title": "가면라이더 히비키",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192800"
+    },
+    "titles": {
+      "ko": "가면라이더 히비키",
+      "en": "Kamen Rider Hibiki",
+      "ja": "仮面ライダー響鬼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009343": {
+    "workId": "wk_000009343",
+    "title": "가면라이더 블레이드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1201321"
+    },
+    "titles": {
+      "ko": "가면라이더 블레이드",
+      "en": "Kamen Rider Blade",
+      "ja": "仮面ライダー剣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009972": {
+    "workId": "wk_000009972",
+    "title": "빌드업 : 보컬 보이그룹 서바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124334502"
+    },
+    "titles": {
+      "ko": "빌드업 : 보컬 보이그룹 서바이벌",
+      "en": "Build Up: Vocal Boy Group Survival"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

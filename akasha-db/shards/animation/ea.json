@@ -164,5 +164,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008979": {
+    "workId": "wk_000008979",
+    "title": "미국 너구리 라스칼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q708565"
+    },
+    "titles": {
+      "ko": "미국 너구리 라스칼",
+      "en": "Rascal the Raccoon",
+      "ja": "あらいぐまラスカル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009986": {
+    "workId": "wk_000009986",
+    "title": "육신합체 갓마즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97339348"
+    },
+    "titles": {
+      "ko": "육신합체 갓마즈",
+      "en": "God Mars",
+      "ja": "六神合体ゴッドマーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

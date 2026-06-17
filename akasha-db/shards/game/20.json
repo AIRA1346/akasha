@@ -147,5 +147,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009999": {
+    "workId": "wk_000009999",
+    "title": "티타늄 코트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137840078"
+    },
+    "titles": {
+      "ko": "티타늄 코트",
+      "en": "Q137840078"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010184": {
+    "workId": "wk_000010184",
+    "title": "세븐스 드래곤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1413167"
+    },
+    "titles": {
+      "ko": "세븐스 드래곤",
+      "en": "7th Dragon",
+      "ja": "セブンスドラゴン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

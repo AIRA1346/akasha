@@ -87,5 +87,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009158": {
+    "workId": "wk_000009158",
+    "title": "마스 사베 엘 디아블로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191179"
+    },
+    "titles": {
+      "ko": "마스 사베 엘 디아블로",
+      "en": "Más Sabe el Diablo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009337": {
+    "workId": "wk_000009337",
+    "title": "과학전대 다이너맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200102"
+    },
+    "titles": {
+      "ko": "과학전대 다이너맨",
+      "en": "Kagaku Sentai Dynaman",
+      "ja": "科学戦隊ダイナマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

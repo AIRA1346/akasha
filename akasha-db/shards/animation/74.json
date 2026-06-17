@@ -145,5 +145,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009633": {
+    "workId": "wk_000009633",
+    "title": "극장판 포켓몬스터 DP: 디아루가 VS 펄기아 VS 다크라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890660"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 DP: 디아루가 VS 펄기아 VS 다크라이",
+      "en": "Pokémon: The Rise of Darkrai",
+      "ja": "劇場版ポケットモンスター ダイヤモンド&パール ディアルガVSパルキアVSダークライ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

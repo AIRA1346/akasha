@@ -156,5 +156,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009615": {
+    "workId": "wk_000009615",
+    "title": "국민맞수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122375935"
+    },
+    "titles": {
+      "ko": "국민맞수",
+      "en": "Q122375935"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010171": {
+    "workId": "wk_000010171",
+    "title": "아메리카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247400"
+    },
+    "titles": {
+      "ko": "아메리카",
+      "en": "América"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

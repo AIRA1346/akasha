@@ -137,5 +137,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009263": {
+    "workId": "wk_000009263",
+    "title": "오릴리아와 블루 문",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195044"
+    },
+    "titles": {
+      "ko": "오릴리아와 블루 문",
+      "en": "Extraterrestrial",
+      "ja": "E.T.の住む星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010168": {
+    "workId": "wk_000010168",
+    "title": "예나 데 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247351"
+    },
+    "titles": {
+      "ko": "예나 데 아모르",
+      "en": "Llena de amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010315": {
+    "workId": "wk_000010315",
+    "title": "스타 인생극장-소녀시대 편",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12484216"
+    },
+    "titles": {
+      "ko": "스타 인생극장-소녀시대 편",
+      "en": "Girls' Generation Star Life Theater",
+      "ja": "スター人生劇場 少女時代編"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

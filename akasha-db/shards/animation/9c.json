@@ -146,5 +146,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009556": {
+    "workId": "wk_000009556",
+    "title": "짱구는 못말려 극장판: 전설을 부르는 춤을 춰라, 아미고!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q864528"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 전설을 부르는 춤을 춰라, 아미고!",
+      "en": "Crayon Shin-chan: The Legend Called: Dance! Amigo!",
+      "ja": "クレヨンしんちゃん 伝説を呼ぶ 踊れ!アミーゴ!"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009631": {
+    "workId": "wk_000009631",
+    "title": "극장판 포켓몬스터: 물의 도시의 수호신 라티아스와 라티오스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890656"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 물의 도시의 수호신 라티아스와 라티오스",
+      "en": "Pokémon Heroes",
+      "ja": "劇場版ポケットモンスター 水の都の護神 ラティアスとラティオス"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

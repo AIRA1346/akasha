@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010095": {
+    "workId": "wk_000010095",
+    "title": "하트 오브 화이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090811"
+    },
+    "titles": {
+      "ko": "하트 오브 화이어",
+      "en": "Hearts of Fire",
+      "ja": "ハーツ・オブ・ファイヤー"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

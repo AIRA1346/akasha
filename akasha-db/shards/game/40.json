@@ -112,5 +112,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009303": {
+    "workId": "wk_000009303",
+    "title": "데드 라이징 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13426706"
+    },
+    "titles": {
+      "ko": "데드 라이징 3",
+      "en": "Dead Rising 3",
+      "ja": "デッドライジング3"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010277": {
+    "workId": "wk_000010277",
+    "title": "데이토나 USA 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1432516"
+    },
+    "titles": {
+      "ko": "데이토나 USA 2",
+      "en": "Daytona USA 2"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

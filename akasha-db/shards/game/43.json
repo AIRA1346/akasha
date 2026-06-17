@@ -144,5 +144,22 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010012": {
+    "workId": "wk_000010012",
+    "title": "갓 오브 워: 썬즈 오브 스파르타",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138241917"
+    },
+    "titles": {
+      "ko": "갓 오브 워: 썬즈 오브 스파르타",
+      "en": "Q138241917"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

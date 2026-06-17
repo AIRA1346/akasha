@@ -158,5 +158,74 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009413": {
+    "workId": "wk_000009413",
+    "title": "임심견록",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120545899"
+    },
+    "titles": {
+      "ko": "임심견록",
+      "en": "Q120545899"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009605": {
+    "workId": "wk_000009605",
+    "title": "삼분야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122067724"
+    },
+    "titles": {
+      "ko": "삼분야",
+      "en": "Here We Meet Again"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009685": {
+    "workId": "wk_000009685",
+    "title": "콩 심은 데 콩 나고 팥 심은 데 팥 난다 (콩콩팥팥)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123054057"
+    },
+    "titles": {
+      "ko": "콩 심은 데 콩 나고 팥 심은 데 팥 난다 (콩콩팥팥)",
+      "en": "GBRB: Reap What You Sow"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010256": {
+    "workId": "wk_000010256",
+    "title": "화이트채플",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247762"
+    },
+    "titles": {
+      "ko": "화이트채플",
+      "en": "Whitechapel",
+      "ja": "ホワイトチャペル 終わりなき殺意"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

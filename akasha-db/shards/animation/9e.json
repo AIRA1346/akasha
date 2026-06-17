@@ -89,5 +89,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008981": {
+    "workId": "wk_000008981",
+    "title": "은하철도 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q710903"
+    },
+    "titles": {
+      "ko": "은하철도 이야기",
+      "en": "The Galaxy Railways",
+      "ja": "銀河鉄道物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009422": {
+    "workId": "wk_000009422",
+    "title": "플라잉 위치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84338099"
+    },
+    "titles": {
+      "ko": "플라잉 위치",
+      "en": "Flying Witch",
+      "ja": "ふらいんぐうぃっち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009815": {
+    "workId": "wk_000009815",
+    "title": "천하무적 멍멍기사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q930079"
+    },
+    "titles": {
+      "ko": "천하무적 멍멍기사",
+      "en": "Dogtanian and the Three Muskehounds",
+      "ja": "ワンワン三銃士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

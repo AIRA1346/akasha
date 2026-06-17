@@ -37,5 +37,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009719": {
+    "workId": "wk_000009719",
+    "title": "밤과 노는 아이들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11447816"
+    },
+    "titles": {
+      "ko": "밤과 노는 아이들",
+      "en": "Q11447816",
+      "ja": "子どもたちは夜と遊ぶ"
+    },
+    "releaseYear": 2005,
+    "creator": "Mizuki Tsujimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009952": {
+    "workId": "wk_000009952",
+    "title": "시게모토 소장의 어머니",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11464594"
+    },
+    "titles": {
+      "ko": "시게모토 소장의 어머니",
+      "en": "Captain Shigemoto's Mother",
+      "ja": "少将滋幹の母"
+    },
+    "releaseYear": 1949,
+    "creator": "Jun'ichirō Tanizaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

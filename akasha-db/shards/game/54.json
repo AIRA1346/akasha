@@ -178,5 +178,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009134": {
+    "workId": "wk_000009134",
+    "title": "프리덤 워즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13365214"
+    },
+    "titles": {
+      "ko": "프리덤 워즈",
+      "en": "Freedom Wars",
+      "ja": "FREEDOM WARS フリーダムウォーズ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009231": {
+    "workId": "wk_000009231",
+    "title": "Elementibox",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134068830"
+    },
+    "titles": {
+      "ko": "Elementibox",
+      "en": "Elementibox"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009715": {
+    "workId": "wk_000009715",
+    "title": "메탈슬러그 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1362747"
+    },
+    "titles": {
+      "ko": "메탈슬러그 7",
+      "en": "Metal Slug 7",
+      "ja": "メタルスラッグ7"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009395": {
+    "workId": "wk_000009395",
+    "title": "라일 라일 크로커다일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108559256"
+    },
+    "titles": {
+      "ko": "라일 라일 크로커다일",
+      "en": "Lyle, Lyle, Crocodile",
+      "ja": "ライル、ライル、クロコダイル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

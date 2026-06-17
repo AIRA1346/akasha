@@ -160,5 +160,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009575": {
+    "workId": "wk_000009575",
+    "title": "메가봉크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135072248"
+    },
+    "titles": {
+      "ko": "메가봉크",
+      "en": "Megabonk"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009938": {
+    "workId": "wk_000009938",
+    "title": "도라에몽 코믹 트래블러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137425187"
+    },
+    "titles": {
+      "ko": "도라에몽 코믹 트래블러",
+      "en": "Doraemon Comic Traveler",
+      "ja": "ドラえもん コミックトラベラー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010177": {
+    "workId": "wk_000010177",
+    "title": "GNU Go",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1404540"
+    },
+    "titles": {
+      "ko": "GNU Go",
+      "en": "GNU Go",
+      "ja": "GNU Go"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

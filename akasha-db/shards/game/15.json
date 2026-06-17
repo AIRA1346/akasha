@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010334": {
+    "workId": "wk_000010334",
+    "title": "익사이트바이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q146124"
+    },
+    "titles": {
+      "ko": "익사이트바이크",
+      "en": "Excitebike",
+      "ja": "エキサイトバイク"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -51,5 +51,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009442": {
+    "workId": "wk_000009442",
+    "title": "라임라이트 레모네이드 잼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134717512"
+    },
+    "titles": {
+      "ko": "라임라이트 레모네이드 잼",
+      "en": "LimeLight Lemonade Jam",
+      "ja": "ライムライト・レモネードジャム"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

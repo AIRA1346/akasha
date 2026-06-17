@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010006": {
+    "workId": "wk_000010006",
+    "title": "달이 이끄는 이세계 여행 천하태평 기행록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138005290"
+    },
+    "titles": {
+      "ko": "달이 이끄는 이세계 여행 천하태평 기행록",
+      "en": "TSUKIMICHI -Moonlit Fantasy-: Peace Chronicles",
+      "ja": "月が導く異世界道中 天下泰平旅日記"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

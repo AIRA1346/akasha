@@ -114,5 +114,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009720": {
+    "workId": "wk_000009720",
+    "title": "학문의 권유",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11448137"
+    },
+    "titles": {
+      "ko": "학문의 권유",
+      "en": "An Encouragement of Learning",
+      "ja": "学問のすゝめ"
+    },
+    "creator": "후쿠자와 유키치",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010019": {
+    "workId": "wk_000010019",
+    "title": "신세기 사랑 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114761768"
+    },
+    "titles": {
+      "ko": "신세기 사랑 이야기",
+      "en": "Love in the New Millennium"
+    },
+    "releaseYear": 2019,
+    "creator": "Can Xue",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

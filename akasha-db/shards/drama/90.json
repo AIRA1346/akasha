@@ -208,5 +208,93 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009270": {
+    "workId": "wk_000009270",
+    "title": "신문연파",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196286"
+    },
+    "titles": {
+      "ko": "신문연파",
+      "en": "Xinwen Lianbo",
+      "ja": "新聞聯播"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009418": {
+    "workId": "wk_000009418",
+    "title": "마이데몬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120721044"
+    },
+    "titles": {
+      "ko": "마이데몬",
+      "en": "My Demon",
+      "ja": "マイ・デーモン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009618": {
+    "workId": "wk_000009618",
+    "title": "Meet the MP",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122443068"
+    },
+    "titles": {
+      "ko": "Meet the MP",
+      "en": "Meet the MP"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009669": {
+    "workId": "wk_000009669",
+    "title": "여왕의 교실",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12252305"
+    },
+    "titles": {
+      "ko": "여왕의 교실",
+      "en": "The Queen's Classroom",
+      "ja": "女王の教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010035": {
+    "workId": "wk_000010035",
+    "title": "연애 지상주의 구역",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124425917"
+    },
+    "titles": {
+      "ko": "연애 지상주의 구역",
+      "en": "Love for Love's Sake"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

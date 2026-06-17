@@ -103,5 +103,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009406": {
+    "workId": "wk_000009406",
+    "title": "가면라이더 스트롱거",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204069"
+    },
+    "titles": {
+      "ko": "가면라이더 스트롱거",
+      "en": "Kamen Rider Stronger",
+      "ja": "仮面ライダーストロンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009470": {
+    "workId": "wk_000009470",
+    "title": "선재 업고 튀어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121144610"
+    },
+    "titles": {
+      "ko": "선재 업고 튀어",
+      "en": "Lovely Runner",
+      "ja": "ソンジェ背負って走れ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010032": {
+    "workId": "wk_000010032",
+    "title": "로얄로더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124389049"
+    },
+    "titles": {
+      "ko": "로얄로더",
+      "en": "The Impossible Heir",
+      "ja": "予期せぬ相続者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

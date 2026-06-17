@@ -122,5 +122,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010040": {
+    "workId": "wk_000010040",
+    "title": "솔로지옥 4",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124466085"
+    },
+    "titles": {
+      "ko": "솔로지옥 4",
+      "en": "Single's Inferno, season 4"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -70,5 +70,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009234": {
+    "workId": "wk_000009234",
+    "title": "니드 포 스피드: 포르쉐 2000",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1341049"
+    },
+    "titles": {
+      "ko": "니드 포 스피드: 포르쉐 2000",
+      "en": "Need for Speed: Porsche Unleashed",
+      "ja": "ニード・フォー・スピード ポルシェ・アンリーシュド"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009708": {
+    "workId": "wk_000009708",
+    "title": "털실 커비 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1361363"
+    },
+    "titles": {
+      "ko": "털실 커비 이야기",
+      "en": "Kirby's Epic Yarn",
+      "ja": "毛糸のカービィ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010007": {
+    "workId": "wk_000010007",
+    "title": "은하영웅전설 전쟁의 윤무곡",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138005773"
+    },
+    "titles": {
+      "ko": "은하영웅전설 전쟁의 윤무곡",
+      "en": "Legend of the Galactic Heroes: Rondo of War",
+      "ja": "銀河英雄伝説 戦いの輪舞曲"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -18,5 +18,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009310": {
+    "workId": "wk_000009310",
+    "title": "전투요정 유키카제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140766"
+    },
+    "titles": {
+      "ko": "전투요정 유키카제",
+      "en": "Yukikaze",
+      "ja": "戦闘妖精・雪風"
+    },
+    "creator": "Chōhei Kambayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

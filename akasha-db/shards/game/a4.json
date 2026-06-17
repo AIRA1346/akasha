@@ -53,5 +53,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008991": {
+    "workId": "wk_000008991",
+    "title": "월-E",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1328166"
+    },
+    "titles": {
+      "ko": "월-E",
+      "en": "WALL-E"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009377": {
+    "workId": "wk_000009377",
+    "title": "아랑 마크 오브 더 울브스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1343613"
+    },
+    "titles": {
+      "ko": "아랑 마크 오브 더 울브스",
+      "en": "Garou: Mark of the Wolves",
+      "ja": "餓狼 MARK OF THE WOLVES"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

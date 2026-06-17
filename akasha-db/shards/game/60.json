@@ -131,5 +131,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009382": {
+    "workId": "wk_000009382",
+    "title": "레이튼 교수와 마신의 피리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1345124"
+    },
+    "titles": {
+      "ko": "레이튼 교수와 마신의 피리",
+      "en": "Professor Layton and the Last Specter",
+      "ja": "レイトン教授と魔神の笛"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010005": {
+    "workId": "wk_000010005",
+    "title": "하이스쿨 D×D Operation paradise infinity",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137988700"
+    },
+    "titles": {
+      "ko": "하이스쿨 D×D Operation paradise infinity",
+      "en": "High School D×D Operation Paradise Infinity",
+      "ja": "ハイスクールD×D Operation paradise infinity"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

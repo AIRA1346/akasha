@@ -246,5 +246,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009018": {
+    "workId": "wk_000009018",
+    "title": "더 모멘트 오브 트루스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118904772"
+    },
+    "titles": {
+      "ko": "더 모멘트 오브 트루스",
+      "en": "The Moment of Truth"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009541": {
+    "workId": "wk_000009541",
+    "title": "수퍼특공대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1216349"
+    },
+    "titles": {
+      "ko": "수퍼특공대",
+      "en": "Misfits of Science",
+      "ja": "ミラクル・エスパーズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010272": {
+    "workId": "wk_000010272",
+    "title": "센티미엔토스 아헤노스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248310"
+    },
+    "titles": {
+      "ko": "센티미엔토스 아헤노스",
+      "en": "Sentimientos Ajenos"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010319": {
+    "workId": "wk_000010319",
+    "title": "열염",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124853278"
+    },
+    "titles": {
+      "ko": "열염",
+      "en": "Burning Flames",
+      "ja": "烈焔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

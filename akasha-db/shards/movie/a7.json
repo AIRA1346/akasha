@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009249": {
+    "workId": "wk_000009249",
+    "title": "카노",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851237"
+    },
+    "titles": {
+      "ko": "카노",
+      "en": "Kano",
+      "ja": "KANO"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010200": {
+    "workId": "wk_000010200",
+    "title": "생쥐와 인간",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091172"
+    },
+    "titles": {
+      "ko": "생쥐와 인간",
+      "en": "Of Mice and Men",
+      "ja": "二十日鼠と人間"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

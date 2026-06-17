@@ -110,5 +110,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009054": {
+    "workId": "wk_000009054",
+    "title": "페이퍼보이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1330205"
+    },
+    "titles": {
+      "ko": "페이퍼보이",
+      "en": "Paperboy",
+      "ja": "ペーパーボーイ"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010233": {
+    "workId": "wk_000010233",
+    "title": "워소",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1422705"
+    },
+    "titles": {
+      "ko": "워소",
+      "en": "Warsow",
+      "ja": "Warsow"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -144,5 +144,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009386": {
+    "workId": "wk_000009386",
+    "title": "플랜츠 vs. 좀비: 가든 워페어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13455638"
+    },
+    "titles": {
+      "ko": "플랜츠 vs. 좀비: 가든 워페어",
+      "en": "Plants vs. Zombies: Garden Warfare",
+      "ja": "プラントvs.ゾンビ ガーデンウォーフェア"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010080": {
+    "workId": "wk_000010080",
+    "title": "표류다이어리 ~미지의 섬과 차원의 문~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139325728"
+    },
+    "titles": {
+      "ko": "표류다이어리 ~미지의 섬과 차원의 문~",
+      "en": "Castaway Diary: Portal to the Unknown Isles",
+      "ja": "漂流ダイアリー ～未知の諸島と次元の扉～"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

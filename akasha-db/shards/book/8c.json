@@ -56,5 +56,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009241": {
+    "workId": "wk_000009241",
+    "title": "10만 분의 1의 우연",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11404740"
+    },
+    "titles": {
+      "ko": "10만 분의 1의 우연",
+      "en": "Q11404740",
+      "ja": "十万分の一の偶然"
+    },
+    "releaseYear": 1981,
+    "creator": "Seichō Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

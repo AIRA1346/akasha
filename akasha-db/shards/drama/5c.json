@@ -70,5 +70,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010156": {
+    "workId": "wk_000010156",
+    "title": "아모르 리알",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247180"
+    },
+    "titles": {
+      "ko": "아모르 리알",
+      "en": "Amor real",
+      "ja": "アモール・レアル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010365": {
+    "workId": "wk_000010365",
+    "title": "메이크 메이트 원",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125145972"
+    },
+    "titles": {
+      "ko": "메이크 메이트 원",
+      "en": "Make Mate 1",
+      "ja": "MAKE MATE 1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

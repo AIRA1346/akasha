@@ -104,5 +104,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009905": {
+    "workId": "wk_000009905",
+    "title": "지금은 시청자시대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071849"
+    },
+    "titles": {
+      "ko": "지금은 시청자시대",
+      "en": "Q124071849"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

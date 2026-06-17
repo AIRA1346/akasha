@@ -254,5 +254,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009041": {
+    "workId": "wk_000009041",
+    "title": "선더버드 2086",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712453"
+    },
+    "titles": {
+      "ko": "선더버드 2086",
+      "en": "Thunderbirds 2086",
+      "ja": "科学救助隊テクノボイジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009430": {
+    "workId": "wk_000009430",
+    "title": "원기폭발 간바루가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q848916"
+    },
+    "titles": {
+      "ko": "원기폭발 간바루가",
+      "en": "Genki Bakuhatsu Ganbaruger",
+      "ja": "元気爆発ガンバルガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

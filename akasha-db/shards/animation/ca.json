@@ -107,5 +107,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009183": {
+    "workId": "wk_000009183",
+    "title": "루 가루: 기피 해야 할 늑대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q755253"
+    },
+    "titles": {
+      "ko": "루 가루: 기피 해야 할 늑대",
+      "en": "Loups=Garous",
+      "ja": "ルー=ガルー 忌避すべき狼"
+    },
+    "releaseYear": 2011,
+    "creator": "Natsuhiko Kyōgoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009488": {
+    "workId": "wk_000009488",
+    "title": "스페이스벅스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85871914"
+    },
+    "titles": {
+      "ko": "스페이스벅스",
+      "en": "The Journey Home",
+      "ja": "スペースバグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009593": {
+    "workId": "wk_000009593",
+    "title": "헬레이저",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108739919"
+    },
+    "titles": {
+      "ko": "헬레이저",
+      "en": "Hellraiser"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

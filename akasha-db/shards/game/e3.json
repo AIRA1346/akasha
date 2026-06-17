@@ -129,5 +129,59 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009375": {
+    "workId": "wk_000009375",
+    "title": "톰 클랜시의 디비전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13431312"
+    },
+    "titles": {
+      "ko": "톰 클랜시의 디비전",
+      "en": "Tom Clancy's The Division",
+      "ja": "ディビジョン"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009576": {
+    "workId": "wk_000009576",
+    "title": "사니양 연구실",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135074051"
+    },
+    "titles": {
+      "ko": "사니양 연구실",
+      "en": "Sani Yang's Laboratory"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009771": {
+    "workId": "wk_000009771",
+    "title": "쁘띠플래닛",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136373824"
+    },
+    "titles": {
+      "ko": "쁘띠플래닛",
+      "en": "Petit Planet",
+      "ja": "プチプラネット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

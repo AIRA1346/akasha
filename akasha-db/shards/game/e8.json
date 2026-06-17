@@ -106,5 +106,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009192": {
+    "workId": "wk_000009192",
+    "title": "엠버 앤 블레이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133857920"
+    },
+    "titles": {
+      "ko": "엠버 앤 블레이드",
+      "en": "Ember & Blade"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009226": {
+    "workId": "wk_000009226",
+    "title": "라스트 렘넌트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1339322"
+    },
+    "titles": {
+      "ko": "라스트 렘넌트",
+      "en": "The Last Remnant",
+      "ja": "ラスト レムナント"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009944": {
+    "workId": "wk_000009944",
+    "title": "강철소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137564827"
+    },
+    "titles": {
+      "ko": "강철소녀",
+      "en": "Battleship Girl",
+      "ja": "Battleship Girl -鋼鉄少女-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

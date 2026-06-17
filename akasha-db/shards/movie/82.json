@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010252": {
+    "workId": "wk_000010252",
+    "title": "님은 먼 곳에",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10918465"
+    },
+    "titles": {
+      "ko": "님은 먼 곳에",
+      "en": "Sunny",
+      "ja": "あなたは遠いところに"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

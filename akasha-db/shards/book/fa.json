@@ -152,5 +152,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009585": {
+    "workId": "wk_000009585",
+    "title": "대송승사략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11434332"
+    },
+    "titles": {
+      "ko": "대송승사략",
+      "en": "Topical Compendium of the Buddhist Clergy compiled in the Great Song dynasty",
+      "ja": "大宋僧史略"
+    },
+    "releaseYear": 999,
+    "creator": "Zànníng",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

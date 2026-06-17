@@ -149,5 +149,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009142": {
+    "workId": "wk_000009142",
+    "title": "동키콩 바난자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133804475"
+    },
+    "titles": {
+      "ko": "동키콩 바난자",
+      "en": "Donkey Kong Bananza",
+      "ja": "ドンキーコング バナンザ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

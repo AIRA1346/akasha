@@ -140,5 +140,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009284": {
+    "workId": "wk_000009284",
+    "title": "식극의 소마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q79310969"
+    },
+    "titles": {
+      "ko": "식극의 소마",
+      "en": "Food Wars!: Shokugeki no Soma",
+      "ja": "食戟のソーマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009289": {
+    "workId": "wk_000009289",
+    "title": "블리치: The DiamondDust Rebellion 또 하나의 빙륜환",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q804429"
+    },
+    "titles": {
+      "ko": "블리치: The DiamondDust Rebellion 또 하나의 빙륜환",
+      "en": "Bleach: The DiamondDust Rebellion",
+      "ja": "劇場版BLEACH The DiamondDust Rebellion もう一つの氷輪丸"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010058": {
+    "workId": "wk_000010058",
+    "title": "러브 라이브! 슈퍼스타!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q99400994"
+    },
+    "titles": {
+      "ko": "러브 라이브! 슈퍼스타!!",
+      "en": "Love Live! Superstar!!",
+      "ja": "ラブライブ!スーパースター!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

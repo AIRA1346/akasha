@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010299": {
+    "workId": "wk_000010299",
+    "title": "레스토프-루안다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109229030"
+    },
+    "titles": {
+      "ko": "레스토프-루안다",
+      "en": "Rostov-Luanda"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

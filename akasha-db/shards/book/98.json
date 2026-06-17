@@ -37,5 +37,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009238": {
+    "workId": "wk_000009238",
+    "title": "제멋대로 떨고 있어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11400319"
+    },
+    "titles": {
+      "ko": "제멋대로 떨고 있어",
+      "en": "Q11400319",
+      "ja": "勝手にふるえてろ"
+    },
+    "releaseYear": 2010,
+    "creator": "Risa Wataya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010140": {
+    "workId": "wk_000010140",
+    "title": "수정환상",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114864478"
+    },
+    "titles": {
+      "ko": "수정환상",
+      "en": "Crystal Fantasy",
+      "ja": "水晶幻想"
+    },
+    "creator": "Yasunari Kawabata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

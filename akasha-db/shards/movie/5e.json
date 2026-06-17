@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009248": {
+    "workId": "wk_000009248",
+    "title": "연방 경찰",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1085121"
+    },
+    "titles": {
+      "ko": "연방 경찰",
+      "en": "The FBI Story",
+      "ja": "連邦警察"
+    },
+    "releaseYear": 1959,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

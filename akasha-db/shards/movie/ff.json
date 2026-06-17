@@ -187,5 +187,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009531": {
+    "workId": "wk_000009531",
+    "title": "아카메 48 폭포 자살미수",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087205"
+    },
+    "titles": {
+      "ko": "아카메 48 폭포 자살미수",
+      "en": "Akame 48 Waterfalls",
+      "ja": "赤目四十八瀧心中未遂"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

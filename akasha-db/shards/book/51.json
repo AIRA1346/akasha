@@ -55,5 +55,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009106": {
+    "workId": "wk_000009106",
+    "title": "하늘의 눈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139149"
+    },
+    "titles": {
+      "ko": "하늘의 눈",
+      "en": "Eye in the Sky",
+      "ja": "宇宙の眼"
+    },
+    "releaseYear": 1957,
+    "creator": "Philip K. Dick",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010144": {
+    "workId": "wk_000010144",
+    "title": "후 향설백물어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11488331"
+    },
+    "titles": {
+      "ko": "후 향설백물어",
+      "en": "Q11488331",
+      "ja": "後巷説百物語"
+    },
+    "releaseYear": 2003,
+    "creator": "Natsuhiko Kyōgoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -120,5 +120,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009480": {
+    "workId": "wk_000009480",
+    "title": "장미의 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121409091"
+    },
+    "titles": {
+      "ko": "장미의 이야기",
+      "en": "The Tale of Rose"
+    },
+    "creator": "이수",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010100": {
+    "workId": "wk_000010100",
+    "title": "수지맞은 우리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124554359"
+    },
+    "titles": {
+      "ko": "수지맞은 우리",
+      "en": "Suji & Uri",
+      "ja": "スジとウリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

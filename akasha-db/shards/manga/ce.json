@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009276": {
+    "workId": "wk_000009276",
+    "title": "아톰 더 비기닝",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27892022"
+    },
+    "titles": {
+      "ko": "아톰 더 비기닝",
+      "en": "Atom: The Beginning",
+      "ja": "アトム ザ・ビギニング"
+    },
+    "creator": "Masami Yūki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

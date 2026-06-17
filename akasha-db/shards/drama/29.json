@@ -68,5 +68,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009408": {
+    "workId": "wk_000009408",
+    "title": "프러포즈 대작전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204706"
+    },
+    "titles": {
+      "ko": "프러포즈 대작전",
+      "en": "Operation Love",
+      "ja": "プロポーズ大作戦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009850": {
+    "workId": "wk_000009850",
+    "title": "선산",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123944011"
+    },
+    "titles": {
+      "ko": "선산",
+      "en": "The Bequeathed",
+      "ja": "ソンサン - 弔いの丘 -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010161": {
+    "workId": "wk_000010161",
+    "title": "힐 스트리트 블루스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247241"
+    },
+    "titles": {
+      "ko": "힐 스트리트 블루스",
+      "en": "Hill Street Blues",
+      "ja": "ヒルストリート・ブルース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

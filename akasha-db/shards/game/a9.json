@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010183": {
+    "workId": "wk_000010183",
+    "title": "매드 맥스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14126363"
+    },
+    "titles": {
+      "ko": "매드 맥스",
+      "en": "Q14126363",
+      "ja": "マッドマックス"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

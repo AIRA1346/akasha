@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009595": {
+    "workId": "wk_000009595",
+    "title": "고스트버스터즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108745"
+    },
+    "titles": {
+      "ko": "고스트버스터즈",
+      "en": "Ghostbusters",
+      "ja": "ゴーストバスターズ"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

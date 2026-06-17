@@ -56,5 +56,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009889": {
+    "workId": "wk_000009889",
+    "title": "키루스의 교육",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145374"
+    },
+    "titles": {
+      "ko": "키루스의 교육",
+      "en": "Cyropaedia",
+      "ja": "キュロスの教育"
+    },
+    "creator": "Xenophon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

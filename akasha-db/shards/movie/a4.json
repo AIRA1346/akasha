@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010093": {
+    "workId": "wk_000010093",
+    "title": "용문비갑",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090566"
+    },
+    "titles": {
+      "ko": "용문비갑",
+      "en": "Flying Swords of Dragon Gate",
+      "ja": "ドラゴンゲート 空飛ぶ剣と幻の秘宝"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -171,5 +171,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010219": {
+    "workId": "wk_000010219",
+    "title": "에머데일",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247575"
+    },
+    "titles": {
+      "ko": "에머데일",
+      "en": "Emmerdale",
+      "ja": "エマーデイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

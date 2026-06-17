@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009511": {
+    "workId": "wk_000009511",
+    "title": "존잘님! 좋아해요!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135053559"
+    },
+    "titles": {
+      "ko": "존잘님! 좋아해요!",
+      "en": "Sensei! I Like You So Much!",
+      "ja": "先生、新刊三冊くださいッ！"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

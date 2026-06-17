@@ -192,5 +192,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009917": {
+    "workId": "wk_000009917",
+    "title": "중증외상센터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124128670"
+    },
+    "titles": {
+      "ko": "중증외상센터",
+      "en": "The Trauma Code: Heroes on Call",
+      "ja": "トラウマコード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010269": {
+    "workId": "wk_000010269",
+    "title": "아푸에스타 포르 운 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248289"
+    },
+    "titles": {
+      "ko": "아푸에스타 포르 운 아모르",
+      "en": "Apuesta por un amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -70,5 +70,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009048": {
+    "workId": "wk_000009048",
+    "title": "유희왕 5D's",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q714031"
+    },
+    "titles": {
+      "ko": "유희왕 5D's",
+      "en": "Yu-Gi-Oh! 5D's",
+      "ja": "遊☆戯☆王5D's"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009217": {
+    "workId": "wk_000009217",
+    "title": "3일의 크리스마스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q77857635"
+    },
+    "titles": {
+      "ko": "3일의 크리스마스",
+      "en": "Three Days of Christmas",
+      "ja": "クリスマスのあの日私たちは"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009292": {
+    "workId": "wk_000009292",
+    "title": "조이드 신세기 슬래시 제로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q8073501"
+    },
+    "titles": {
+      "ko": "조이드 신세기 슬래시 제로",
+      "en": "Zoids: New Century",
+      "ja": "ゾイド新世紀スラッシュゼロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

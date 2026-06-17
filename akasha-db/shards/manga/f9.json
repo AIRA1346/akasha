@@ -67,5 +67,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009111": {
+    "workId": "wk_000009111",
+    "title": "치토세 Get you!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2700406"
+    },
+    "titles": {
+      "ko": "치토세 Get you!!",
+      "en": "Chitose Get You!!",
+      "ja": "ちとせげっちゅ!!"
+    },
+    "creator": "Etsuya Mashima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009112": {
+    "workId": "wk_000009112",
+    "title": "에덴의 우리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2700630"
+    },
+    "titles": {
+      "ko": "에덴의 우리",
+      "en": "Cage of Eden",
+      "ja": "エデンの檻"
+    },
+    "creator": "Yoshinobu Yamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

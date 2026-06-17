@@ -95,5 +95,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009389": {
+    "workId": "wk_000009389",
+    "title": "명탐정 따위 두렵지 않다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11415439"
+    },
+    "titles": {
+      "ko": "명탐정 따위 두렵지 않다",
+      "en": "Meitantei nanka Kowakunai",
+      "ja": "名探偵なんか怖くない"
+    },
+    "creator": "Kyōtarō Nishimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

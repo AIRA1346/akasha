@@ -181,5 +181,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009179": {
+    "workId": "wk_000009179",
+    "title": "Number24",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q74752637"
+    },
+    "titles": {
+      "ko": "Number24",
+      "en": "Number24",
+      "ja": "Number24"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009295": {
+    "workId": "wk_000009295",
+    "title": "극장판 포켓몬스터: 코코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q81583691"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 코코",
+      "en": "Pokémon the Movie: Secrets of the Jungle",
+      "ja": "劇場版ポケットモンスター ココ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

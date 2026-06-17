@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009113": {
+    "workId": "wk_000009113",
+    "title": "드리프터즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2702432"
+    },
+    "titles": {
+      "ko": "드리프터즈",
+      "en": "Drifters",
+      "ja": "ドリフターズ"
+    },
+    "creator": "Kouta Hirano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

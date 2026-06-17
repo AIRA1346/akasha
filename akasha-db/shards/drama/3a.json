@@ -121,5 +121,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009807": {
+    "workId": "wk_000009807",
+    "title": "우리, 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123762174"
+    },
+    "titles": {
+      "ko": "우리, 집",
+      "en": "Bitter Sweet Hell"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009965": {
+    "workId": "wk_000009965",
+    "title": "우리들의 조부님",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124300767"
+    },
+    "titles": {
+      "ko": "우리들의 조부님",
+      "en": "Q124300767"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

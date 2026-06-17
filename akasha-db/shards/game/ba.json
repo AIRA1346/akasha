@@ -106,5 +106,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009831": {
+    "workId": "wk_000009831",
+    "title": "아이온2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136951346"
+    },
+    "titles": {
+      "ko": "아이온2",
+      "en": "Aion 2"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009946": {
+    "workId": "wk_000009946",
+    "title": "용과 같이 극 3 / 용과 같이 3 외전 Dark Ties",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137779656"
+    },
+    "titles": {
+      "ko": "용과 같이 극 3 / 용과 같이 3 외전 Dark Ties",
+      "en": "Yakuza Kiwami 3 & Dark Ties",
+      "ja": "龍が如く 極3 / 龍が如く3外伝 Dark Ties"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

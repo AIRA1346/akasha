@@ -91,5 +91,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010071": {
+    "workId": "wk_000010071",
+    "title": "부탁해 아이프리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138479505"
+    },
+    "titles": {
+      "ko": "부탁해 아이프리",
+      "en": "Onegai AiPri",
+      "ja": "おねがいアイプリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010280": {
+    "workId": "wk_000010280",
+    "title": "포지 오브 엠파이어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1437282"
+    },
+    "titles": {
+      "ko": "포지 오브 엠파이어",
+      "en": "Forge of Empires"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

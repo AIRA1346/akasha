@@ -215,5 +215,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008974": {
+    "workId": "wk_000008974",
+    "title": "신세기 사이버 포뮬러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q706638"
+    },
+    "titles": {
+      "ko": "신세기 사이버 포뮬러",
+      "en": "Future GPX Cyber Formula",
+      "ja": "新世紀GPXサイバーフォーミュラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009568": {
+    "workId": "wk_000009568",
+    "title": "봄버맨 제터스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q871683"
+    },
+    "titles": {
+      "ko": "봄버맨 제터스",
+      "en": "Bomberman Jetters",
+      "ja": "ボンバーマンジェッターズ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010053": {
+    "workId": "wk_000010053",
+    "title": "이누야시키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98915749"
+    },
+    "titles": {
+      "ko": "이누야시키",
+      "en": "Inuyashiki",
+      "ja": "いぬやしき"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

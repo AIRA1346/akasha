@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009032": {
+    "workId": "wk_000009032",
+    "title": "사모님은 여고생",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2618476"
+    },
+    "titles": {
+      "ko": "사모님은 여고생",
+      "en": "Oku-sama wa Joshi Kōsei",
+      "ja": "おくさまは女子高生"
+    },
+    "creator": "Hiyoko Kobayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

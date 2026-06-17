@@ -91,5 +91,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009378": {
+    "workId": "wk_000009378",
+    "title": "탈: 디 아케인 랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134390349"
+    },
+    "titles": {
+      "ko": "탈: 디 아케인 랜드",
+      "en": "TAL: The Arcane Lands"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010278": {
+    "workId": "wk_000010278",
+    "title": "건 파이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1432978"
+    },
+    "titles": {
+      "ko": "건 파이트",
+      "en": "Gun Fight",
+      "ja": "ウエスタンガン"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

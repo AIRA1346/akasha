@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009401": {
+    "workId": "wk_000009401",
+    "title": "프로포즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108586"
+    },
+    "titles": {
+      "ko": "프로포즈",
+      "en": "The Proposal",
+      "ja": "あなたは私の婿になる"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

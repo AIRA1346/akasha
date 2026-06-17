@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009754": {
+    "workId": "wk_000009754",
+    "title": "결혼의 풍경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q901217"
+    },
+    "titles": {
+      "ko": "결혼의 풍경",
+      "en": "Scenes from a Marriage",
+      "ja": "ある結婚の風景"
+    },
+    "releaseYear": 1973,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

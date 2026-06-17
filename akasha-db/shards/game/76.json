@@ -180,5 +180,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009230": {
+    "workId": "wk_000009230",
+    "title": "에일리언 VS. 프레데터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1340662"
+    },
+    "titles": {
+      "ko": "에일리언 VS. 프레데터",
+      "en": "Aliens vs. Predator",
+      "ja": "エイリアンVSプレデター"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009773": {
+    "workId": "wk_000009773",
+    "title": "음흉하고 한결같은 깡촌 오라버니와, 예스럽고 병약한 여동생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136439003"
+    },
+    "titles": {
+      "ko": "음흉하고 한결같은 깡촌 오라버니와, 예스럽고 병약한 여동생",
+      "en": "Sickly Days and Summer Traces",
+      "ja": "エッチで一途なド田舎兄さまと、古式ゆかしい病弱妹"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010054": {
+    "workId": "wk_000010054",
+    "title": "여친, 빌리겠습니다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98923955"
+    },
+    "titles": {
+      "ko": "여친, 빌리겠습니다",
+      "en": "Rent-A-Girlfriend",
+      "ja": "彼女、お借りします"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

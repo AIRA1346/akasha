@@ -72,5 +72,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009038": {
+    "workId": "wk_000009038",
+    "title": "마린보이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711948"
+    },
+    "titles": {
+      "ko": "마린보이",
+      "en": "Marine Boy",
+      "ja": "海底少年マリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009365": {
+    "workId": "wk_000009365",
+    "title": "마이 히메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q836752"
+    },
+    "titles": {
+      "ko": "마이 히메",
+      "en": "My-HiME",
+      "ja": "舞-HiME"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -201,5 +201,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009049": {
+    "workId": "wk_000009049",
+    "title": "이상한 나라의 폴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q714420"
+    },
+    "titles": {
+      "ko": "이상한 나라의 폴",
+      "en": "Paul's Miraculous Adventure",
+      "ja": "ポールのミラクル大作戦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009074": {
+    "workId": "wk_000009074",
+    "title": "마녀의 여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q71574733"
+    },
+    "titles": {
+      "ko": "마녀의 여행",
+      "en": "Wandering Witch: The Journey of Elaina",
+      "ja": "魔女の旅々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -128,5 +128,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009136": {
+    "workId": "wk_000009136",
+    "title": "폴 포지션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1337036"
+    },
+    "titles": {
+      "ko": "폴 포지션",
+      "en": "Pole Position",
+      "ja": "ポールポジション"
+    },
+    "releaseYear": 1982,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

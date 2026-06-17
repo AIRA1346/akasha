@@ -91,5 +91,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009206": {
+    "workId": "wk_000009206",
+    "title": "재판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q76475001"
+    },
+    "titles": {
+      "ko": "재판",
+      "en": "The Trial",
+      "ja": "プロチェッソ - 少女が語らなかったこと -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009877": {
+    "workId": "wk_000009877",
+    "title": "풍인물어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q960545"
+    },
+    "titles": {
+      "ko": "풍인물어",
+      "en": "Windy Tales",
+      "ja": "風人物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

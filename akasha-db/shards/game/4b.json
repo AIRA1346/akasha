@@ -127,5 +127,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009436": {
+    "workId": "wk_000009436",
+    "title": "인퍼머스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1346174"
+    },
+    "titles": {
+      "ko": "인퍼머스",
+      "en": "InFamous",
+      "ja": "INFAMOUS〜悪名高き男〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009498": {
+    "workId": "wk_000009498",
+    "title": "비스트 오브 리인카네이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134739750"
+    },
+    "titles": {
+      "ko": "비스트 오브 리인카네이션",
+      "en": "Beast of Reincarnation"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009501": {
+    "workId": "wk_000009501",
+    "title": "11eyes -죄와 벌과 속죄의 소녀-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1347470"
+    },
+    "titles": {
+      "ko": "11eyes -죄와 벌과 속죄의 소녀-",
+      "en": "11eyes: Tsumi to Batsu to Aganai no Shōjo",
+      "ja": "11eyes -罪と罰と贖いの少女-"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

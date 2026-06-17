@@ -258,5 +258,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010368": {
+    "workId": "wk_000010368",
+    "title": "자천",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125200534"
+    },
+    "titles": {
+      "ko": "자천",
+      "en": "Eternal Brotherhood"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

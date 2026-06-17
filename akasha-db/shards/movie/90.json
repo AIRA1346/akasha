@@ -112,5 +112,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009658": {
+    "workId": "wk_000009658",
+    "title": "영원한 남사친",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108766235"
+    },
+    "titles": {
+      "ko": "영원한 남사친",
+      "en": "Friendzone",
+      "ja": "いつだって友達止まり"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

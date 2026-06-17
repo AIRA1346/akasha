@@ -190,5 +190,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009187": {
+    "workId": "wk_000009187",
+    "title": "스타잔",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7602881"
+    },
+    "titles": {
+      "ko": "스타잔",
+      "en": "Okawari-Boy Starzan S",
+      "ja": "OKAWARI-BOY スターザンS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

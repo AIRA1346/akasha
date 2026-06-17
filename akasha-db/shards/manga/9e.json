@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009279": {
+    "workId": "wk_000009279",
+    "title": "성흔의 퀘이사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q281062"
+    },
+    "titles": {
+      "ko": "성흔의 퀘이사",
+      "en": "The Qwaser of Stigmata",
+      "ja": "聖痕のクェイサー"
+    },
+    "creator": "Hiroyuki Yoshino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

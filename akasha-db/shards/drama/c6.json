@@ -157,5 +157,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009157": {
+    "workId": "wk_000009157",
+    "title": "태양전대 선벌컨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190975"
+    },
+    "titles": {
+      "ko": "태양전대 선벌컨",
+      "en": "Taiyo Sentai Sun Vulcan",
+      "ja": "太陽戦隊サンバルカン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

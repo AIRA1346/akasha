@@ -155,5 +155,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009268": {
+    "workId": "wk_000009268",
+    "title": "사랑의 안단테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119572515"
+    },
+    "titles": {
+      "ko": "사랑의 안단테",
+      "en": "Love Andante"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009910": {
+    "workId": "wk_000009910",
+    "title": "텔마니아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12407705"
+    },
+    "titles": {
+      "ko": "텔마니아",
+      "en": "Telmania"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

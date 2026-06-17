@@ -122,5 +122,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009671": {
+    "workId": "wk_000009671",
+    "title": "러닝메이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122609930"
+    },
+    "titles": {
+      "ko": "러닝메이트",
+      "en": "I Am a Running Mate"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009858": {
+    "workId": "wk_000009858",
+    "title": "노 란추 푼두",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124054325"
+    },
+    "titles": {
+      "ko": "노 란추 푼두",
+      "en": "No Rancho Fundo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

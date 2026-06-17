@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009729": {
+    "workId": "wk_000009729",
+    "title": "십개월의 미래",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108846187"
+    },
+    "titles": {
+      "ko": "십개월의 미래",
+      "en": "Ten Months"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

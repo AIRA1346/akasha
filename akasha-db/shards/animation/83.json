@@ -126,5 +126,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009696": {
+    "workId": "wk_000009696",
+    "title": "공각기동대: SAC 2045",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89383919"
+    },
+    "titles": {
+      "ko": "공각기동대: SAC 2045",
+      "en": "Ghost in the Shell: SAC_2045",
+      "ja": "攻殻機動隊 SAC_2045"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010065": {
+    "workId": "wk_000010065",
+    "title": "GIRLS und PANZER",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28219"
+    },
+    "titles": {
+      "ko": "GIRLS und PANZER",
+      "en": "Girls und Panzer",
+      "ja": "ガールズ&パンツァー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

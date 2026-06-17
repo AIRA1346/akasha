@@ -90,5 +90,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009052": {
+    "workId": "wk_000009052",
+    "title": "잭&위키 ~발바로스의 보물~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1328243"
+    },
+    "titles": {
+      "ko": "잭&위키 ~발바로스의 보물~",
+      "en": "Zack & Wiki: Quest for Barbaros' Treasure",
+      "ja": "宝島Z バルバロスの秘宝"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009513": {
+    "workId": "wk_000009513",
+    "title": "러브커스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135057283"
+    },
+    "titles": {
+      "ko": "러브커스",
+      "en": "Love Curse: Find Your Soulmate",
+      "ja": "恋に落ちるしかなかった"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010124": {
+    "workId": "wk_000010124",
+    "title": "레이맨 카트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1397716"
+    },
+    "titles": {
+      "ko": "레이맨 카트",
+      "en": "Rayman Kart"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -210,5 +210,73 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009415": {
+    "workId": "wk_000009415",
+    "title": "준과 준",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120648840"
+    },
+    "titles": {
+      "ko": "준과 준",
+      "en": "Jun and Jun"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010164": {
+    "workId": "wk_000010164",
+    "title": "미 코라손 인시스테 엔 롤라 볼칸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247319"
+    },
+    "titles": {
+      "ko": "미 코라손 인시스테 엔 롤라 볼칸",
+      "en": "Mi Corazón Insiste… en Lola Volcán"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010309": {
+    "workId": "wk_000010309",
+    "title": "아카풀코, 쿠에르포 이 알마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248340"
+    },
+    "titles": {
+      "ko": "아카풀코, 쿠에르포 이 알마",
+      "en": "Acapulco, cuerpo y alma"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010351": {
+    "workId": "wk_000010351",
+    "title": "아마르 오트라 베스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249376"
+    },
+    "titles": {
+      "ko": "아마르 오트라 베스",
+      "en": "Amar otra vez"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

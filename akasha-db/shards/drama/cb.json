@@ -156,5 +156,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009161": {
+    "workId": "wk_000009161",
+    "title": "전격전대 체인지맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191398"
+    },
+    "titles": {
+      "ko": "전격전대 체인지맨",
+      "en": "Dengeki Sentai Changeman",
+      "ja": "電撃戦隊チェンジマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009538": {
+    "workId": "wk_000009538",
+    "title": "청춘불패 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12157631"
+    },
+    "titles": {
+      "ko": "청춘불패 2",
+      "en": "Invincible Youth Season 2",
+      "ja": "青春不敗2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010044": {
+    "workId": "wk_000010044",
+    "title": "하이라키",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124480568"
+    },
+    "titles": {
+      "ko": "하이라키",
+      "en": "Hierarchy",
+      "ja": "ヒエラルキー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010356": {
+    "workId": "wk_000010356",
+    "title": "알론드라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249577"
+    },
+    "titles": {
+      "ko": "알론드라",
+      "en": "Alondra"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

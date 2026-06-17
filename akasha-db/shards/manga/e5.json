@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009351": {
+    "workId": "wk_000009351",
+    "title": "바질리스크 ~코우가인법첩~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q282464"
+    },
+    "titles": {
+      "ko": "바질리스크 ~코우가인법첩~",
+      "en": "Basilisk",
+      "ja": "バジリスク 〜甲賀忍法帖〜"
+    },
+    "creator": "Masaki Segawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -109,5 +109,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009325": {
+    "workId": "wk_000009325",
+    "title": "샤퍼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108551169"
+    },
+    "titles": {
+      "ko": "샤퍼",
+      "en": "Sharper",
+      "ja": "sharper:騙す人"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009902": {
+    "workId": "wk_000009902",
+    "title": "어 퓨 굿 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108946"
+    },
+    "titles": {
+      "ko": "어 퓨 굿 맨",
+      "en": "A Few Good Men",
+      "ja": "ア・フュー・グッドメン"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

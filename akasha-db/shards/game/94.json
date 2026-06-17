@@ -123,5 +123,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009195": {
+    "workId": "wk_000009195",
+    "title": "이브니클2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133864860"
+    },
+    "titles": {
+      "ko": "이브니클2",
+      "en": "Evenicle 2",
+      "ja": "イブニクル2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009379": {
+    "workId": "wk_000009379",
+    "title": "유로파 유니버설리스 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134397776"
+    },
+    "titles": {
+      "ko": "유로파 유니버설리스 5",
+      "en": "Europa Universalis V"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009512": {
+    "workId": "wk_000009512",
+    "title": "피규어 어드벤처 그룹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135054798"
+    },
+    "titles": {
+      "ko": "피규어 어드벤처 그룹",
+      "en": "Figure Adventure",
+      "ja": "フィギュア冒険団"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010004": {
+    "workId": "wk_000010004",
+    "title": "퀸즈 블레이드 리미트 브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137988520"
+    },
+    "titles": {
+      "ko": "퀸즈 블레이드 리미트 브레이크",
+      "en": "Queen's Blade Limit Break",
+      "ja": "クイーンズブレイドリミットブレイク"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -177,5 +177,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009581": {
+    "workId": "wk_000009581",
+    "title": "링크의 사격 트레이닝+Wii재퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1351639"
+    },
+    "titles": {
+      "ko": "링크의 사격 트레이닝+Wii재퍼",
+      "en": "Link's Crossbow Training",
+      "ja": "リンクのボウガントレーニング"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010076": {
+    "workId": "wk_000010076",
+    "title": "샹그릴라 프론티어: 일곱 최강종",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138717497"
+    },
+    "titles": {
+      "ko": "샹그릴라 프론티어: 일곱 최강종",
+      "en": "Shangri-La Frontier: The Seven Colossi",
+      "ja": "シャングリラ・フロンティア ～七つの最強種～"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

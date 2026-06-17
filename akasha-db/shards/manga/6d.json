@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009354": {
+    "workId": "wk_000009354",
+    "title": "야리칭☆비치부",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28662716"
+    },
+    "titles": {
+      "ko": "야리칭☆비치부",
+      "en": "Yarichin Bitch Club",
+      "ja": "ヤリチン☆ビッチ部"
+    },
+    "creator": "Tanaka Ogeretsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -186,5 +186,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009558": {
+    "workId": "wk_000009558",
+    "title": "게이브리얼의 죽음: 누구의 책임인가?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q86523538"
+    },
+    "titles": {
+      "ko": "게이브리얼의 죽음: 누구의 책임인가?",
+      "en": "The Trials of Gabriel Fernandez",
+      "ja": "ガブリエル事件 - 奪われた小さな命 -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009764": {
+    "workId": "wk_000009764",
+    "title": "지구방위가족",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q910295"
+    },
+    "titles": {
+      "ko": "지구방위가족",
+      "en": "The Family's Defensive Alliance",
+      "ja": "地球防衛家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

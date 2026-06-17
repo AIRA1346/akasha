@@ -141,5 +141,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009262": {
+    "workId": "wk_000009262",
+    "title": "립스틱 정글",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194878"
+    },
+    "titles": {
+      "ko": "립스틱 정글",
+      "en": "Lipstick Jungle",
+      "ja": "リップスティック・ジャングル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010042": {
+    "workId": "wk_000010042",
+    "title": "마고가 돈 문제에 대처하는 법",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124468008"
+    },
+    "titles": {
+      "ko": "마고가 돈 문제에 대처하는 법",
+      "en": "Margo's Got Money Troubles",
+      "ja": "マーゴのマネートラブル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

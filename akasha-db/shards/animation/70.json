@@ -107,5 +107,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009082": {
+    "workId": "wk_000009082",
+    "title": "시대를 초월한 마음",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q719497"
+    },
+    "titles": {
+      "ko": "시대를 초월한 마음",
+      "en": "Inuyasha the Movie: Affections Touching Across Time",
+      "ja": "犬夜叉 時代を越える想い"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009366": {
+    "workId": "wk_000009366",
+    "title": "그레이트 프리텐더",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q83712396"
+    },
+    "titles": {
+      "ko": "그레이트 프리텐더",
+      "en": "Great Pretender",
+      "ja": "GREAT PRETENDER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

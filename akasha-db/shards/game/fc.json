@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010077": {
+    "workId": "wk_000010077",
+    "title": "사월요화 ~4월 8일~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138741041"
+    },
+    "titles": {
+      "ko": "사월요화 ~4월 8일~",
+      "en": "Shigatsu Youka",
+      "ja": "死月妖花"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

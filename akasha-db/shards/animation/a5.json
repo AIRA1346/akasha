@@ -181,5 +181,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009042": {
+    "workId": "wk_000009042",
+    "title": "쥬베이짱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712466"
+    },
+    "titles": {
+      "ko": "쥬베이짱",
+      "en": "Jubei-chan: The Ninja Girl",
+      "ja": "十兵衛ちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009118": {
+    "workId": "wk_000009118",
+    "title": "마스터스 오브 디 에어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q72638293"
+    },
+    "titles": {
+      "ko": "마스터스 오브 디 에어",
+      "en": "Masters of the Air",
+      "ja": "マスターズ・オブ・ザ・エアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009182": {
+    "workId": "wk_000009182",
+    "title": "지옥소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q753729"
+    },
+    "titles": {
+      "ko": "지옥소녀",
+      "en": "Hell Girl",
+      "ja": "地獄少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009357": {
+    "workId": "wk_000009357",
+    "title": "세레비 시간을 초월한 만남",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q82579"
+    },
+    "titles": {
+      "ko": "세레비 시간을 초월한 만남",
+      "en": "Pokémon 4Ever",
+      "ja": "劇場版ポケットモンスター セレビィ 時を超えた遭遇"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -37,5 +37,64 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009239": {
+    "workId": "wk_000009239",
+    "title": "방황하는 자들을 위한 안내서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140185"
+    },
+    "titles": {
+      "ko": "방황하는 자들을 위한 안내서",
+      "en": "The Guide for the Perplexed",
+      "ja": "迷える者への手引き"
+    },
+    "releaseYear": 1190,
+    "creator": "モーシェ・ベン＝マイモーン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009311": {
+    "workId": "wk_000009311",
+    "title": "위험한 사면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11409148"
+    },
+    "titles": {
+      "ko": "위험한 사면",
+      "en": "Dangerous Slope",
+      "ja": "危険な斜面"
+    },
+    "releaseYear": 1959,
+    "creator": "Seichō Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010289": {
+    "workId": "wk_000010289",
+    "title": "그리고 아무 말도 하지 않았다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1149714"
+    },
+    "titles": {
+      "ko": "그리고 아무 말도 하지 않았다",
+      "en": "And Never Said a Word"
+    },
+    "releaseYear": 1953,
+    "creator": "Heinrich Böll",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

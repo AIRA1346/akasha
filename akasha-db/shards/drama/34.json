@@ -229,5 +229,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009610": {
+    "workId": "wk_000009610",
+    "title": "재폭설시분",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122276053"
+    },
+    "titles": {
+      "ko": "재폭설시분",
+      "en": "Amidst A Snowstorm of Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009918": {
+    "workId": "wk_000009918",
+    "title": "네이키드 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1241628"
+    },
+    "titles": {
+      "ko": "네이키드 뉴스",
+      "en": "Naked News",
+      "ja": "ネイキッドニュース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010323": {
+    "workId": "wk_000010323",
+    "title": "에리다스 데 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248731"
+    },
+    "titles": {
+      "ko": "에리다스 데 아모르",
+      "en": "Heridas de Amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

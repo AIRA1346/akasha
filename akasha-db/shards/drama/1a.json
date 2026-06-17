@@ -206,5 +206,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009020": {
+    "workId": "wk_000009020",
+    "title": "더 팔로윙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1189631"
+    },
+    "titles": {
+      "ko": "더 팔로윙",
+      "en": "The Following",
+      "ja": "ザ・フォロイング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009865": {
+    "workId": "wk_000009865",
+    "title": "퀴즈 주부대학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071768"
+    },
+    "titles": {
+      "ko": "퀴즈 주부대학",
+      "en": "Q124071768"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009969": {
+    "workId": "wk_000009969",
+    "title": "환영래도맥락촌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124316686"
+    },
+    "titles": {
+      "ko": "환영래도맥락촌",
+      "en": "Welcome to Milele"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

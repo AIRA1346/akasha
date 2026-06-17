@@ -57,5 +57,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010339": {
+    "workId": "wk_000010339",
+    "title": "일동장유가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11509511"
+    },
+    "titles": {
+      "ko": "일동장유가",
+      "en": "Ildong Jangyuga",
+      "ja": "日東壮遊歌"
+    },
+    "creator": "김인겸",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

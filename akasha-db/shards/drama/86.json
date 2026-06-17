@@ -158,5 +158,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009265": {
+    "workId": "wk_000009265",
+    "title": "트랙터는 사랑을 싣고",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119520200"
+    },
+    "titles": {
+      "ko": "트랙터는 사랑을 싣고",
+      "en": "Love Tractor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009853": {
+    "workId": "wk_000009853",
+    "title": "이슬방울 요정의 일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123984516"
+    },
+    "titles": {
+      "ko": "이슬방울 요정의 일기",
+      "en": "Dew Drop Diaries",
+      "ja": "デュードロップ・ダイアリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

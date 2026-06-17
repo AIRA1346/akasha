@@ -181,5 +181,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009434": {
+    "workId": "wk_000009434",
+    "title": "라이플 이즈 뷰티풀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85377148"
+    },
+    "titles": {
+      "ko": "라이플 이즈 뷰티풀",
+      "en": "Rifle is Beautiful",
+      "ja": "ライフル・イズ・ビューティフル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

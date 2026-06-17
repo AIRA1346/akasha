@@ -193,5 +193,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010283": {
+    "workId": "wk_000010283",
+    "title": "월드 사커 위닝 일레븐 2009",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1441569"
+    },
+    "titles": {
+      "ko": "월드 사커 위닝 일레븐 2009",
+      "en": "Pro Evolution Soccer 2009",
+      "ja": "ワールドサッカー ウイニングイレブン 2009"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

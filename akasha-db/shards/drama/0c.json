@@ -174,5 +174,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009256": {
+    "workId": "wk_000009256",
+    "title": "가면라이더 V3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193512"
+    },
+    "titles": {
+      "ko": "가면라이더 V3",
+      "en": "Kamen Rider V3",
+      "ja": "仮面ライダーV3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009802": {
+    "workId": "wk_000009802",
+    "title": "끝내주는 해결사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123693323"
+    },
+    "titles": {
+      "ko": "끝내주는 해결사",
+      "en": "Queen of Divorce"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010223": {
+    "workId": "wk_000010223",
+    "title": "블루 피터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247639"
+    },
+    "titles": {
+      "ko": "블루 피터",
+      "en": "Blue Peter",
+      "ja": "ブルー・ピーター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

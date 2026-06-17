@@ -157,5 +157,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010039": {
+    "workId": "wk_000010039",
+    "title": "돌풍",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124452133"
+    },
+    "titles": {
+      "ko": "돌풍",
+      "en": "Q124452133",
+      "ja": "旋風"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010316": {
+    "workId": "wk_000010316",
+    "title": "태스크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124842578"
+    },
+    "titles": {
+      "ko": "태스크",
+      "en": "Task"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

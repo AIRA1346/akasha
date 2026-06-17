@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009713": {
+    "workId": "wk_000009713",
+    "title": "마리오 테니스 피버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136231667"
+    },
+    "titles": {
+      "ko": "마리오 테니스 피버",
+      "en": "Mario Tennis Fever",
+      "ja": "マリオテニス フィーバー"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

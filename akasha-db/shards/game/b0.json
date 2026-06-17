@@ -194,5 +194,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009384": {
+    "workId": "wk_000009384",
+    "title": "어비스디아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134532980"
+    },
+    "titles": {
+      "ko": "어비스디아",
+      "en": "Abyssdia",
+      "ja": "アビスディア"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

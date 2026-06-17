@@ -74,5 +74,25 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009398": {
+    "workId": "wk_000009398",
+    "title": "남극의 쉐프",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856056"
+    },
+    "titles": {
+      "ko": "남극의 쉐프",
+      "en": "Nankyoku Ryōrinin",
+      "ja": "南極料理人"
+    },
+    "releaseYear": 2009,
+    "creator": "Jun Nishimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

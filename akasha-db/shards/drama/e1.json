@@ -170,5 +170,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009021": {
+    "workId": "wk_000009021",
+    "title": "윈드폴",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1189754"
+    },
+    "titles": {
+      "ko": "윈드폴",
+      "en": "Windfall",
+      "ja": "WINDFALL 〜運命のいたずら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009672": {
+    "workId": "wk_000009672",
+    "title": "사장돌 마트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122609941"
+    },
+    "titles": {
+      "ko": "사장돌 마트",
+      "en": "CEO-dol Mart"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009913": {
+    "workId": "wk_000009913",
+    "title": "M.K. 22",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12408733"
+    },
+    "titles": {
+      "ko": "M.K. 22",
+      "en": "M.K. 22",
+      "ja": "M. K. 22"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

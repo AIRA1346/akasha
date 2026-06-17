@@ -173,5 +173,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009273": {
+    "workId": "wk_000009273",
+    "title": "더 뷰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197928"
+    },
+    "titles": {
+      "ko": "더 뷰",
+      "en": "The View",
+      "ja": "ザ・ビュー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010225": {
+    "workId": "wk_000010225",
+    "title": "라 에스포사 비르헨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247658"
+    },
+    "titles": {
+      "ko": "라 에스포사 비르헨",
+      "en": "La esposa virgen"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

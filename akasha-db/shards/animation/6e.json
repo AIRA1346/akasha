@@ -53,5 +53,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009219": {
+    "workId": "wk_000009219",
+    "title": "왕 노릇하기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7811076"
+    },
+    "titles": {
+      "ko": "왕 노릇하기",
+      "en": "To Play the King"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009222": {
+    "workId": "wk_000009222",
+    "title": "세 번의 크리스마스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78191292"
+    },
+    "titles": {
+      "ko": "세 번의 크리스마스",
+      "en": "Holiday Secrets",
+      "ja": "ホリデイ・シークレット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009426": {
+    "workId": "wk_000009426",
+    "title": "부호형사 Balance:UNLIMITED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84627446"
+    },
+    "titles": {
+      "ko": "부호형사 Balance:UNLIMITED",
+      "en": "The Millionaire Detective - Balance: Unlimited",
+      "ja": "富豪刑事 Balance:UNLIMITED"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

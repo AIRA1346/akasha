@@ -187,5 +187,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010116": {
+    "workId": "wk_000010116",
+    "title": "아파트404",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124658732"
+    },
+    "titles": {
+      "ko": "아파트404",
+      "en": "Apartment 404"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

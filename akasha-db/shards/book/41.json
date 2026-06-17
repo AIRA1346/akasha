@@ -55,5 +55,82 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008998": {
+    "workId": "wk_000008998",
+    "title": "나나",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138346"
+    },
+    "titles": {
+      "ko": "나나",
+      "en": "Nana",
+      "ja": "ナナ"
+    },
+    "releaseYear": 1880,
+    "creator": "エミール・ゾラ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009102": {
+    "workId": "wk_000009102",
+    "title": "우아하고 감상적인 일본 야구",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387732"
+    },
+    "titles": {
+      "ko": "우아하고 감상적인 일본 야구",
+      "en": "Yūga de Kanshōteki na Nihon Yakyū",
+      "ja": "優雅で感傷的な日本野球"
+    },
+    "creator": "Genichiro Takahashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009315": {
+    "workId": "wk_000009315",
+    "title": "요시와라 뒷면 동심",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11412735"
+    },
+    "titles": {
+      "ko": "요시와라 뒷면 동심",
+      "en": "Yoshiwara Ura Dōshin",
+      "ja": "吉原裏同心"
+    },
+    "creator": "Yasuhide Saeki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009520": {
+    "workId": "wk_000009520",
+    "title": "처지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11429096"
+    },
+    "titles": {
+      "ko": "처지",
+      "en": "Kyōgū",
+      "ja": "境遇"
+    },
+    "creator": "Kanae Minato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

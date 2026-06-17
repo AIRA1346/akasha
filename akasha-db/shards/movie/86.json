@@ -17,5 +17,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009668": {
+    "workId": "wk_000009668",
+    "title": "더스트맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108830409"
+    },
+    "titles": {
+      "ko": "더스트맨",
+      "en": "Dust-Man"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009845": {
+    "workId": "wk_000009845",
+    "title": "별의 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108915000"
+    },
+    "titles": {
+      "ko": "별의 아이",
+      "en": "Under the Stars",
+      "ja": "星の子"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

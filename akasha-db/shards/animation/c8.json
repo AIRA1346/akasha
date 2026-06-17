@@ -158,5 +158,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009369": {
+    "workId": "wk_000009369",
+    "title": "스케이트 리딩☆스타즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q83914246"
+    },
+    "titles": {
+      "ko": "스케이트 리딩☆스타즈",
+      "en": "Skate-Leading Stars",
+      "ja": "スケートリーディング☆スターズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

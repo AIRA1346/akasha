@@ -74,5 +74,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009065": {
+    "workId": "wk_000009065",
+    "title": "저, 트윈 테일이 됩니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11386436"
+    },
+    "titles": {
+      "ko": "저, 트윈 테일이 됩니다",
+      "en": "Gonna be the Twin-Tail!!",
+      "ja": "俺、ツインテールになります。"
+    },
+    "releaseYear": 2012,
+    "creator": "Yume Mizusawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009104": {
+    "workId": "wk_000009104",
+    "title": "팔묘촌",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11390403"
+    },
+    "titles": {
+      "ko": "팔묘촌",
+      "en": "Yatsuhakamura",
+      "ja": "八つ墓村"
+    },
+    "releaseYear": 1971,
+    "creator": "Seishi Yokomizo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

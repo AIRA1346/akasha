@@ -188,5 +188,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009922": {
+    "workId": "wk_000009922",
+    "title": "스트릿댄스 걸스 파이터2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124246042"
+    },
+    "titles": {
+      "ko": "스트릿댄스 걸스 파이터2",
+      "en": "Street Dance Girls Fighter 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010208": {
+    "workId": "wk_000010208",
+    "title": "콘트라 비엔토 이 마레아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247420"
+    },
+    "titles": {
+      "ko": "콘트라 비엔토 이 마레아",
+      "en": "Contra viento y marea"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

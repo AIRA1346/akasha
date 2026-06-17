@@ -162,5 +162,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009080": {
+    "workId": "wk_000009080",
+    "title": "센류소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q71921172"
+    },
+    "titles": {
+      "ko": "센류소녀",
+      "en": "Senryu Girl",
+      "ja": "川柳少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009114": {
+    "workId": "wk_000009114",
+    "title": "뱀파이어 기사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q270595"
+    },
+    "titles": {
+      "ko": "뱀파이어 기사",
+      "en": "Vampire Knight",
+      "ja": "ヴァンパイア騎士"
+    },
+    "creator": "樋野まつり",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

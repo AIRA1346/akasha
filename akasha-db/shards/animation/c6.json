@@ -84,5 +84,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009767": {
+    "workId": "wk_000009767",
+    "title": "이성과 감성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q913553"
+    },
+    "titles": {
+      "ko": "이성과 감성",
+      "en": "Sense and Sensibility",
+      "ja": "分別と多感"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

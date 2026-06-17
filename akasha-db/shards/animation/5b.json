@@ -126,5 +126,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009701": {
+    "workId": "wk_000009701",
+    "title": "속죄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q900953"
+    },
+    "titles": {
+      "ko": "속죄",
+      "en": "Penance",
+      "ja": "贖罪"
+    },
+    "creator": "Kanae Minato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -166,5 +166,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010002": {
+    "workId": "wk_000010002",
+    "title": "코바야시네 메이드래곤 판타지아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137939630"
+    },
+    "titles": {
+      "ko": "코바야시네 메이드래곤 판타지아",
+      "en": "Miss Kobayashi's Dragon Maid Fantasia",
+      "ja": "小林さんちのメイドラゴン ファンタジア"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -187,5 +187,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009698": {
+    "workId": "wk_000009698",
+    "title": "스트라이크 더 블러드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89976018"
+    },
+    "titles": {
+      "ko": "스트라이크 더 블러드",
+      "en": "Strike the Blood",
+      "ja": "ストライク・ザ・ブラッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

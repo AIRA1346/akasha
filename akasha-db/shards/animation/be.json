@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010050": {
+    "workId": "wk_000010050",
+    "title": "연맹공군 항공마법음악대 루미너스 위치스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98821973"
+    },
+    "titles": {
+      "ko": "연맹공군 항공마법음악대 루미너스 위치스",
+      "en": "Luminous Witches",
+      "ja": "連盟空軍航空魔法音楽隊ルミナスウィッチーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

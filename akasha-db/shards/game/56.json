@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009095": {
+    "workId": "wk_000009095",
+    "title": "테일즈 오브 하츠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133441"
+    },
+    "titles": {
+      "ko": "테일즈 오브 하츠",
+      "en": "Tales of Hearts",
+      "ja": "テイルズ オブ ハーツ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

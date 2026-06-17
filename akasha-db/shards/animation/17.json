@@ -209,5 +209,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009050": {
+    "workId": "wk_000009050",
+    "title": "도쿄 매그니튜드 8.0",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q714520"
+    },
+    "titles": {
+      "ko": "도쿄 매그니튜드 8.0",
+      "en": "Tokyo Magnitude 8.0",
+      "ja": "東京マグニチュード8.0"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009690": {
+    "workId": "wk_000009690",
+    "title": "극장판 포켓몬스터 AG: 뮤와 파동의 용사 루카리오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890720"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 AG: 뮤와 파동의 용사 루카리오",
+      "en": "Pokémon: Lucario and the Mystery of Mew",
+      "ja": "劇場版ポケットモンスター アドバンスジェネレーション ミュウと波導の勇者 ルカリオ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

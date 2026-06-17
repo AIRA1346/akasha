@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009444": {
+    "workId": "wk_000009444",
+    "title": "화해",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11418200"
+    },
+    "titles": {
+      "ko": "화해",
+      "en": "Wakai",
+      "ja": "和解"
+    },
+    "creator": "Naoya Shiga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

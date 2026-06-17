@@ -88,5 +88,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009818": {
+    "workId": "wk_000009818",
+    "title": "히나마츠리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q93404991"
+    },
+    "titles": {
+      "ko": "히나마츠리",
+      "en": "Hinamatsuri",
+      "ja": "ヒナまつり"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

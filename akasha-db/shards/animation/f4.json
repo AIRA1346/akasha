@@ -215,5 +215,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009128": {
+    "workId": "wk_000009128",
+    "title": "페이트/스테이 나이트 헤븐즈필 제3장 스프링 송",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q74237069"
+    },
+    "titles": {
+      "ko": "페이트/스테이 나이트 헤븐즈필 제3장 스프링 송",
+      "en": "Fate/stay night: Heaven's Feel III. spring song",
+      "ja": "Fate/stay night [Heaven's Feel] III.spring song"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009184": {
+    "workId": "wk_000009184",
+    "title": "더 로스트 타워",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q75682"
+    },
+    "titles": {
+      "ko": "더 로스트 타워",
+      "en": "Naruto Shippuden the Movie: The Lost Tower",
+      "ja": "劇場版 NARUTO -ナルト- 疾風伝 ザ・ロストタワー"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

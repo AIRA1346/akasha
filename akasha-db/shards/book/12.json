@@ -18,5 +18,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009655": {
+    "workId": "wk_000009655",
+    "title": "여왕벌",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11446530"
+    },
+    "titles": {
+      "ko": "여왕벌",
+      "en": "Queen Bee",
+      "ja": "女王蜂"
+    },
+    "releaseYear": 1952,
+    "creator": "Seishi Yokomizo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

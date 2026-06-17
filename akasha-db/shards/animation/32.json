@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009119": {
+    "workId": "wk_000009119",
+    "title": "낙원추방",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7286814"
+    },
+    "titles": {
+      "ko": "낙원추방",
+      "en": "Expelled from Paradise",
+      "ja": "楽園追放 -Expelled from Paradise-"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

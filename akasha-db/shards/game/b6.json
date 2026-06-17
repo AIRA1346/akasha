@@ -125,5 +125,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010082": {
+    "workId": "wk_000010082",
+    "title": "울티마 VIII: 페이건",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1395352"
+    },
+    "titles": {
+      "ko": "울티마 VIII: 페이건",
+      "en": "Ultima VIII: Pagan"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

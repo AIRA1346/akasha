@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010096": {
+    "workId": "wk_000010096",
+    "title": "셰리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090970"
+    },
+    "titles": {
+      "ko": "셰리",
+      "en": "Chéri",
+      "ja": "わたしの可愛い人 シェリ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

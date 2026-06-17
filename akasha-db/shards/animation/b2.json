@@ -197,5 +197,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009297": {
+    "workId": "wk_000009297",
+    "title": "스카이 크롤러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q820819"
+    },
+    "titles": {
+      "ko": "스카이 크롤러",
+      "en": "The Sky Crawlers",
+      "ja": "スカイ・クロラシリーズ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009363": {
+    "workId": "wk_000009363",
+    "title": "극장판 포켓몬스터: 뮤츠의 역습",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q834799"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 뮤츠의 역습",
+      "en": "Pokémon: The First Movie",
+      "ja": "劇場版ポケットモンスター ミュウツーの逆襲"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

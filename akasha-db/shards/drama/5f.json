@@ -158,5 +158,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009851": {
+    "workId": "wk_000009851",
+    "title": "창 아시아 타일랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123953878"
+    },
+    "titles": {
+      "ko": "창 아시아 타일랜드",
+      "en": "Chuang Asia: Thailand",
+      "ja": "創造営2024"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010258": {
+    "workId": "wk_000010258",
+    "title": "테라 노스트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247837"
+    },
+    "titles": {
+      "ko": "테라 노스트라",
+      "en": "Terra Nostra"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

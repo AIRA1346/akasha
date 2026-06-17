@@ -106,5 +106,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009428": {
+    "workId": "wk_000009428",
+    "title": "MARS RED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q84706088"
+    },
+    "titles": {
+      "ko": "MARS RED",
+      "en": "Mars Red",
+      "ja": "MARS RED"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009622": {
+    "workId": "wk_000009622",
+    "title": "솔저 발터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q88317035"
+    },
+    "titles": {
+      "ko": "솔저 발터",
+      "en": "The Turncoat"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

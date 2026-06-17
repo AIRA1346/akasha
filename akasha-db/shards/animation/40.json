@@ -131,5 +131,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008983": {
+    "workId": "wk_000008983",
+    "title": "SD 건담 포스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711162"
+    },
+    "titles": {
+      "ko": "SD 건담 포스",
+      "en": "Superior Defender Gundam Force",
+      "ja": "SDガンダムフォース"
+    },
+    "creator": "Kei Aoki and Mikamaru",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009759": {
+    "workId": "wk_000009759",
+    "title": "암굴왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q906811"
+    },
+    "titles": {
+      "ko": "암굴왕",
+      "en": "Gankutsuou: The Count of Monte Cristo",
+      "ja": "巌窟王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

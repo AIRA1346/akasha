@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010027": {
+    "workId": "wk_000010027",
+    "title": "빅 트러블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090108"
+    },
+    "titles": {
+      "ko": "빅 트러블",
+      "en": "Big Trouble",
+      "ja": "ビッグ・トラブル"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

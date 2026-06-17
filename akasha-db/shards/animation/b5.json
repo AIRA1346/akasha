@@ -90,5 +90,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008976": {
+    "workId": "wk_000008976",
+    "title": "백수왕 고라이온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q707001"
+    },
+    "titles": {
+      "ko": "백수왕 고라이온",
+      "en": "Beast King GoLion",
+      "ja": "百獣王ゴライオン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

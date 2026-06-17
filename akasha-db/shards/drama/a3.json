@@ -226,5 +226,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009261": {
+    "workId": "wk_000009261",
+    "title": "미나스 데 파시온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119438259"
+    },
+    "titles": {
+      "ko": "미나스 데 파시온",
+      "en": "Minas de pasión"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009804": {
+    "workId": "wk_000009804",
+    "title": "붉은 태양",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123699932"
+    },
+    "titles": {
+      "ko": "붉은 태양",
+      "en": "Pulang Araw",
+      "ja": "赤い太陽"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

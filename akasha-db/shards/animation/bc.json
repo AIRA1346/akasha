@@ -143,5 +143,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008977": {
+    "workId": "wk_000008977",
+    "title": "타임 보칸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q707479"
+    },
+    "titles": {
+      "ko": "타임 보칸",
+      "en": "Time Bokan",
+      "ja": "タイムボカン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

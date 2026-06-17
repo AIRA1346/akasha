@@ -145,5 +145,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009427": {
+    "workId": "wk_000009427",
+    "title": "걸리버의 우주여행",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q846685"
+    },
+    "titles": {
+      "ko": "걸리버의 우주여행",
+      "en": "Gulliver's Travels Beyond the Moon",
+      "ja": "ガリバーの宇宙旅行"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

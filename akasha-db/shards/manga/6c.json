@@ -106,5 +106,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009109": {
+    "workId": "wk_000009109",
+    "title": "백곰카페",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2699660"
+    },
+    "titles": {
+      "ko": "백곰카페",
+      "en": "Polar Bear Café",
+      "ja": "しろくまカフェ"
+    },
+    "creator": "Aloha Higa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

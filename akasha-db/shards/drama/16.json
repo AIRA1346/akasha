@@ -138,5 +138,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009334": {
+    "workId": "wk_000009334",
+    "title": "네이키드 브라더스 밴드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1199027"
+    },
+    "titles": {
+      "ko": "네이키드 브라더스 밴드",
+      "en": "The Naked Brothers Band",
+      "ja": "ネイキッド・ブラザーズ・バンド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009616": {
+    "workId": "wk_000009616",
+    "title": "운수 오진 날",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122382140"
+    },
+    "titles": {
+      "ko": "운수 오진 날",
+      "en": "A Bloody Lucky Day"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010273": {
+    "workId": "wk_000010273",
+    "title": "용감무쌍 용수정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124832697"
+    },
+    "titles": {
+      "ko": "용감무쌍 용수정",
+      "en": "The Brave Yong Soo-jung"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

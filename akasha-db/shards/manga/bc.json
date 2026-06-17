@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008958": {
+    "workId": "wk_000008958",
+    "title": "유라기장의 유우나씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24876869"
+    },
+    "titles": {
+      "ko": "유라기장의 유우나씨",
+      "en": "Yuuna and the Haunted Hot Springs",
+      "ja": "ゆらぎ荘の幽奈さん"
+    },
+    "creator": "Tadahiro Miura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008961": {
+    "workId": "wk_000008961",
+    "title": "삐리리~ 불어봐! 재규어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2517617"
+    },
+    "titles": {
+      "ko": "삐리리~ 불어봐! 재규어",
+      "en": "Pyū to Fuku! Jaguar",
+      "ja": "ピューと吹く!ジャガー"
+    },
+    "creator": "Kyosuke Usuta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

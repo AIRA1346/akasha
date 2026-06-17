@@ -105,5 +105,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009976": {
+    "workId": "wk_000009976",
+    "title": "마레아 데 파시오네스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124344819"
+    },
+    "titles": {
+      "ko": "마레아 데 파시오네스",
+      "en": "Marea de pasiones"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

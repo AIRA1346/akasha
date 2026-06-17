@@ -146,5 +146,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009358": {
+    "workId": "wk_000009358",
+    "title": "토미카 유대합체 어스그랜너",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q82685235"
+    },
+    "titles": {
+      "ko": "토미카 유대합체 어스그랜너",
+      "en": "Tomica Bond Combination Earth Granner",
+      "ja": "トミカ絆合体 アースグランナー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

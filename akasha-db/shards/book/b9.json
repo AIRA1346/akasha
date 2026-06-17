@@ -93,5 +93,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009656": {
+    "workId": "wk_000009656",
+    "title": "산적의 딸 로냐",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144655"
+    },
+    "titles": {
+      "ko": "산적의 딸 로냐",
+      "en": "Ronja, the Robber's Daughter",
+      "ja": "山賊のむすめローニャ"
+    },
+    "releaseYear": 1981,
+    "creator": "Astrid Lindgren",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010294": {
+    "workId": "wk_000010294",
+    "title": "문수사리보살급제선소설길흉시일선악수요경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11500028"
+    },
+    "titles": {
+      "ko": "문수사리보살급제선소설길흉시일선악수요경",
+      "en": "Sūtra on the Astrology of Auspicious and Inauspicious Days and Good and Evil Spoken by Mañjuśrī Bodhisattva and Celestial Beings",
+      "ja": "文殊師利菩薩及諸仙所説吉凶時日善悪宿曜経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

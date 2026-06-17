@@ -125,5 +125,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009648": {
+    "workId": "wk_000009648",
+    "title": "타임 테이커즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135908152"
+    },
+    "titles": {
+      "ko": "타임 테이커즈",
+      "en": "Time Takers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009829": {
+    "workId": "wk_000009829",
+    "title": "아이언맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1369354"
+    },
+    "titles": {
+      "ko": "아이언맨",
+      "en": "Iron Man",
+      "ja": "ゲーム版アイアンマン"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

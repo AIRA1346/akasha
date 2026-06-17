@@ -184,5 +184,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009212": {
+    "workId": "wk_000009212",
+    "title": "마지막 관문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7733901"
+    },
+    "titles": {
+      "ko": "마지막 관문",
+      "en": "The Final Cut"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

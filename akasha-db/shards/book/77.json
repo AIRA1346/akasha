@@ -94,5 +94,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010198": {
+    "workId": "wk_000010198",
+    "title": "악당 (야쿠마루 가쿠)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492550"
+    },
+    "titles": {
+      "ko": "악당 (야쿠마루 가쿠)",
+      "en": "Akutō (Gaku Yakumaru)",
+      "ja": "悪党 (薬丸岳)"
+    },
+    "releaseYear": 2009,
+    "creator": "Gaku Yakumaru",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

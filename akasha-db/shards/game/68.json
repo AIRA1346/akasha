@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010189": {
+    "workId": "wk_000010189",
+    "title": "파이널 판타지 XII: 레버넌트 윙스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416029"
+    },
+    "titles": {
+      "ko": "파이널 판타지 XII: 레버넌트 윙스",
+      "en": "Final Fantasy XII: Revenant Wings",
+      "ja": "ファイナルファンタジーXII レヴァナント・ウイング"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -124,5 +124,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009224": {
+    "workId": "wk_000009224",
+    "title": "마에세츠!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78342378"
+    },
+    "titles": {
+      "ko": "마에세츠!",
+      "en": "Maesetsu!",
+      "ja": "まえせつ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009623": {
+    "workId": "wk_000009623",
+    "title": "백 애로우",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q88516883"
+    },
+    "titles": {
+      "ko": "백 애로우",
+      "en": "Back Arrow",
+      "ja": "バック・アロウ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009923": {
+    "workId": "wk_000009923",
+    "title": "유희왕 극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q962917"
+    },
+    "titles": {
+      "ko": "유희왕 극장판",
+      "en": "Yu-Gi-Oh! The Movie: Pyramid of Light",
+      "ja": "遊☆戯☆王デュエルモンスターズ 光のピラミッド"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

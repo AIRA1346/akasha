@@ -213,5 +213,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009037": {
+    "workId": "wk_000009037",
+    "title": "오자루마루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711735"
+    },
+    "titles": {
+      "ko": "오자루마루",
+      "en": "Ojarumaru",
+      "ja": "おじゃる丸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009502": {
+    "workId": "wk_000009502",
+    "title": "@심플 시리즈 볼륨 4 밀실에서 탈출",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134778538"
+    },
+    "titles": {
+      "ko": "@심플 시리즈 볼륨 4 밀실에서 탈출",
+      "en": "Q134778538",
+      "ja": "@SIMPLEシリーズ Vol.4 THE 密室からの脱出"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

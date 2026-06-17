@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009855": {
+    "workId": "wk_000009855",
+    "title": "커넥션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124043194"
+    },
+    "titles": {
+      "ko": "커넥션",
+      "en": "Connection",
+      "ja": "コネクション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

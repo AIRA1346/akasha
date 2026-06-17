@@ -17,5 +17,22 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008962": {
+    "workId": "wk_000008962",
+    "title": "유희왕 ARC-V",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25209281"
+    },
+    "titles": {
+      "ko": "유희왕 ARC-V",
+      "en": "Yu-Gi-Oh! Arc-V"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -88,5 +88,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009084": {
+    "workId": "wk_000009084",
+    "title": "게드 전기 - 어스시의 전설",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q721737"
+    },
+    "titles": {
+      "ko": "게드 전기 - 어스시의 전설",
+      "en": "Tales from Earthsea",
+      "ja": "ゲド戦記"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009757": {
+    "workId": "wk_000009757",
+    "title": "부도리의 꿈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q904056"
+    },
+    "titles": {
+      "ko": "부도리의 꿈",
+      "en": "The Life of Budori Gusuko",
+      "ja": "グスコーブドリの伝記"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

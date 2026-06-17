@@ -87,5 +87,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009530": {
+    "workId": "wk_000009530",
+    "title": "라빠",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087039"
+    },
+    "titles": {
+      "ko": "라빠",
+      "en": "The Bait",
+      "ja": "ひとりぼっちの狩人たち"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

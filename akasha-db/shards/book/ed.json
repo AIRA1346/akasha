@@ -87,5 +87,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009237": {
+    "workId": "wk_000009237",
+    "title": "해양력이 역사에 미치는 영향",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139846"
+    },
+    "titles": {
+      "ko": "해양력이 역사에 미치는 영향",
+      "en": "The Influence of Sea Power upon History",
+      "ja": "海上権力史論"
+    },
+    "creator": "Alfred Thayer Maan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010249": {
+    "workId": "wk_000010249",
+    "title": "우울한 얼굴의 아이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11495204"
+    },
+    "titles": {
+      "ko": "우울한 얼굴의 아이",
+      "en": "The Infant with a Melancholic Face",
+      "ja": "憂い顔の童子"
+    },
+    "releaseYear": 2005,
+    "creator": "Kenzaburō Ōe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

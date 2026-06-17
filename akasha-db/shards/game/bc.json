@@ -181,5 +181,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009191": {
+    "workId": "wk_000009191",
+    "title": "아니요, 저는 인간이 아닙니다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133857860"
+    },
+    "titles": {
+      "ko": "아니요, 저는 인간이 아닙니다",
+      "en": "Q133857860",
+      "ja": "いいえ、私は人間ではありません"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

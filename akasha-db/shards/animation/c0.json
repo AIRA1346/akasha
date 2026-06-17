@@ -269,5 +269,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009552": {
+    "workId": "wk_000009552",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 노래하는 엉덩이 폭탄!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q864272"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 노래하는 엉덩이 폭탄!",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Singing Buttocks Bomb",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ 歌うケツだけ爆弾!"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

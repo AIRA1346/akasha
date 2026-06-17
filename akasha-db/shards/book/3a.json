@@ -75,5 +75,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010017": {
+    "workId": "wk_000010017",
+    "title": "미사키 요스케 시리즈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11475732"
+    },
+    "titles": {
+      "ko": "미사키 요스케 시리즈",
+      "en": "Q11475732",
+      "ja": "岬洋介シリーズ"
+    },
+    "creator": "Shichiri Nakayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

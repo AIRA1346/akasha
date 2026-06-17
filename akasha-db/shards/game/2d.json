@@ -110,5 +110,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009571": {
+    "workId": "wk_000009571",
+    "title": "에스케이프 프롬 다코프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135060640"
+    },
+    "titles": {
+      "ko": "에스케이프 프롬 다코프",
+      "en": "Q135060640",
+      "ja": "エスケープ フロム ダッコフ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009825": {
+    "workId": "wk_000009825",
+    "title": "호텔 마리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368183"
+    },
+    "titles": {
+      "ko": "호텔 마리오",
+      "en": "Hotel Mario",
+      "ja": "ホテルマリオ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

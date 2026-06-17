@@ -245,5 +245,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009832": {
+    "workId": "wk_000009832",
+    "title": "별의 커비 Wii",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1370609"
+    },
+    "titles": {
+      "ko": "별의 커비 Wii",
+      "en": "Kirby's Return to Dream Land",
+      "ja": "星のカービィ Wii"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010288": {
+    "workId": "wk_000010288",
+    "title": "브로포스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14558333"
+    },
+    "titles": {
+      "ko": "브로포스",
+      "en": "Broforce",
+      "ja": "Broforce"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

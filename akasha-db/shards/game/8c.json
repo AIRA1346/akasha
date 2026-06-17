@@ -92,5 +92,22 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009094": {
+    "workId": "wk_000009094",
+    "title": "마인드웨이브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133281437"
+    },
+    "titles": {
+      "ko": "마인드웨이브",
+      "en": "Q133281437"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

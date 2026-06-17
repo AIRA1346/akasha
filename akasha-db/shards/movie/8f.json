@@ -93,5 +93,80 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009522": {
+    "workId": "wk_000009522",
+    "title": "세인트 세이야: 더 비기닝",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108659401"
+    },
+    "titles": {
+      "ko": "세인트 세이야: 더 비기닝",
+      "en": "Knights of the Zodiac",
+      "ja": "聖闘士星矢 The Beginning"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009524": {
+    "workId": "wk_000009524",
+    "title": "고요의 바다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108688275"
+    },
+    "titles": {
+      "ko": "고요의 바다",
+      "en": "The Sea of Tranquility"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009899": {
+    "workId": "wk_000009899",
+    "title": "조이 라이드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108940271"
+    },
+    "titles": {
+      "ko": "조이 라이드",
+      "en": "Joy Ride",
+      "ja": "ジョイライド"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010202": {
+    "workId": "wk_000010202",
+    "title": "사랑 수업",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091180"
+    },
+    "titles": {
+      "ko": "사랑 수업",
+      "en": "A Lesson in Love",
+      "ja": "愛のレッスン"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

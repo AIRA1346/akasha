@@ -52,5 +52,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009399": {
+    "workId": "wk_000009399",
+    "title": "영화의 거리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108563302"
+    },
+    "titles": {
+      "ko": "영화의 거리",
+      "en": "Cinema Street"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

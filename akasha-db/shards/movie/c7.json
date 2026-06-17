@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009839": {
+    "workId": "wk_000009839",
+    "title": "99.9-형사 전문 변호사-THE MOVIE",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108886504"
+    },
+    "titles": {
+      "ko": "99.9-형사 전문 변호사-THE MOVIE",
+      "en": "99.9 Criminal Lawyer: THE MOVIE",
+      "ja": "99.9-刑事専門弁護士-THE MOVIE"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -105,5 +105,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010263": {
+    "workId": "wk_000010263",
+    "title": "크래시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124799094"
+    },
+    "titles": {
+      "ko": "크래시",
+      "en": "Crash"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

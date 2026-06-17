@@ -153,5 +153,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008993": {
+    "workId": "wk_000008993",
+    "title": "C 프로그래밍 언어 (책)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137974"
+    },
+    "titles": {
+      "ko": "C 프로그래밍 언어 (책)",
+      "en": "The C Programming Language",
+      "ja": "プログラミング言語C"
+    },
+    "releaseYear": 1978,
+    "creator": "Brian Kernighan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

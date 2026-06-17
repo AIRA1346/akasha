@@ -262,5 +262,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009793": {
+    "workId": "wk_000009793",
+    "title": "히어로는 아닙니다만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123495191"
+    },
+    "titles": {
+      "ko": "히어로는 아닙니다만",
+      "en": "The Atypical Family",
+      "ja": "ヒーローではないけれど"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010358": {
+    "workId": "wk_000010358",
+    "title": "푸에고 엔 라 상그레",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249591"
+    },
+    "titles": {
+      "ko": "푸에고 엔 라 상그레",
+      "en": "Fuego en la sangre"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

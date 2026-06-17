@@ -138,5 +138,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010211": {
+    "workId": "wk_000010211",
+    "title": "아비스모 데 파시온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247440"
+    },
+    "titles": {
+      "ko": "아비스모 데 파시온",
+      "en": "Abismo de pasión"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010216": {
+    "workId": "wk_000010216",
+    "title": "원더우먼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247495"
+    },
+    "titles": {
+      "ko": "원더우먼",
+      "en": "Wonder Woman",
+      "ja": "ワンダーウーマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

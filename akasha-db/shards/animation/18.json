@@ -178,5 +178,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009766": {
+    "workId": "wk_000009766",
+    "title": "어새신즈 프라이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q91335540"
+    },
+    "titles": {
+      "ko": "어새신즈 프라이드",
+      "en": "Assassin's Pride",
+      "ja": "アサシンズプライド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

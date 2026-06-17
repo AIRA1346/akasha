@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009645": {
+    "workId": "wk_000009645",
+    "title": "신 세계수의 미궁 밀레니엄의 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13579472"
+    },
+    "titles": {
+      "ko": "신 세계수의 미궁 밀레니엄의 소녀",
+      "en": "Etrian Odyssey Untold: The Millennium Girl",
+      "ja": "新・世界樹の迷宮 ミレニアムの少女"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

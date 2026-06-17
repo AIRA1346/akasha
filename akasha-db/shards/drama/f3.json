@@ -68,5 +68,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009548": {
+    "workId": "wk_000009548",
+    "title": "신병 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121842513"
+    },
+    "titles": {
+      "ko": "신병 (드라마)",
+      "en": "Recruit"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -112,5 +112,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009068": {
+    "workId": "wk_000009068",
+    "title": "옆 듣고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387291"
+    },
+    "titles": {
+      "ko": "옆 듣고",
+      "en": "Kataegiki",
+      "ja": "傍聞き"
+    },
+    "releaseYear": 2008,
+    "creator": "Nagaoka Hiroki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -147,5 +147,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009621": {
+    "workId": "wk_000009621",
+    "title": "86 -에이티식스-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q88295102"
+    },
+    "titles": {
+      "ko": "86 -에이티식스-",
+      "en": "86",
+      "ja": "86-エイティシックス-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

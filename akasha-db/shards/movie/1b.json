@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010025": {
+    "workId": "wk_000010025",
+    "title": "검귀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10900625"
+    },
+    "titles": {
+      "ko": "검귀",
+      "en": "Sword Devil",
+      "ja": "剣鬼"
+    },
+    "releaseYear": 1965,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

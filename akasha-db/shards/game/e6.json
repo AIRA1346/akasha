@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009138": {
+    "workId": "wk_000009138",
+    "title": "니드 포 스피드 라이벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13375520"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 라이벌",
+      "en": "Need for Speed Rivals",
+      "ja": "ニード・フォー・スピード ライバルズ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

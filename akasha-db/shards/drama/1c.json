@@ -140,5 +140,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010105": {
+    "workId": "wk_000010105",
+    "title": "졸업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611029"
+    },
+    "titles": {
+      "ko": "졸업",
+      "en": "The Midnight Romance in Hagwon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

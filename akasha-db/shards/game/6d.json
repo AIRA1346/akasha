@@ -180,5 +180,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010185": {
+    "workId": "wk_000010185",
+    "title": "택틱스 오거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1413485"
+    },
+    "titles": {
+      "ko": "택틱스 오거",
+      "en": "Tactics Ogre: Let Us Cling Together",
+      "ja": "タクティクスオウガ"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

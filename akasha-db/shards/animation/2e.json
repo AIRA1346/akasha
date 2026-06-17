@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009043": {
+    "workId": "wk_000009043",
+    "title": "몽키삼총사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712538"
+    },
+    "titles": {
+      "ko": "몽키삼총사",
+      "en": "Kinkyū Hasshin Saver Kids",
+      "ja": "緊急発進セイバーキッズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009189": {
+    "workId": "wk_000009189",
+    "title": "폭구연발 슈퍼비드맨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7642153"
+    },
+    "titles": {
+      "ko": "폭구연발 슈퍼비드맨",
+      "en": "Super B-Daman",
+      "ja": "爆球連発!!スーパービーダマン"
+    },
+    "creator": "Shun Imaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

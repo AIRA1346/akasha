@@ -131,5 +131,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010132": {
+    "workId": "wk_000010132",
+    "title": "이세계는 스마트폰과 함께. 판타지아 커넥트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139941083"
+    },
+    "titles": {
+      "ko": "이세계는 스마트폰과 함께. 판타지아 커넥트",
+      "en": "In Another World with My Smartphone: Fantasia Connect",
+      "ja": "異世界はスマートフォンとともに。ファンタジアコネクト"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

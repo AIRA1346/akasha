@@ -146,5 +146,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009285": {
+    "workId": "wk_000009285",
+    "title": "유희왕 SEVENS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q79323117"
+    },
+    "titles": {
+      "ko": "유희왕 SEVENS",
+      "en": "Yu-Gi-Oh! Sevens",
+      "ja": "遊☆戯☆王SEVENS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

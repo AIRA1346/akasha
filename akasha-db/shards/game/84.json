@@ -201,5 +201,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010072": {
+    "workId": "wk_000010072",
+    "title": "주시자의 눈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1385731"
+    },
+    "titles": {
+      "ko": "주시자의 눈",
+      "en": "Eye of the Beholder",
+      "ja": "アイ・オブ・ザ・ビホルダー"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010176": {
+    "workId": "wk_000010176",
+    "title": "약사의 혼잣말 후궁이문록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140262409"
+    },
+    "titles": {
+      "ko": "약사의 혼잣말 후궁이문록",
+      "en": "The Apothecary Diaries Palace Chronicles",
+      "ja": "薬屋のひとりごと 後宮異聞録"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010234": {
+    "workId": "wk_000010234",
+    "title": "쥬라기 공원: 오퍼레이션 제네시스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1422943"
+    },
+    "titles": {
+      "ko": "쥬라기 공원: 오퍼레이션 제네시스",
+      "en": "Jurassic Park: Operation Genesis"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

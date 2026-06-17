@@ -220,5 +220,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009554": {
+    "workId": "wk_000009554",
+    "title": "짱구는 못말려 극장판: 포효하라! 떡잎 야생왕국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q864514"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 포효하라! 떡잎 야생왕국",
+      "en": "Crayon Shin-chan: Roar! Kasukabe Wild Kingdom",
+      "ja": "クレヨンしんちゃん オタケベ!カスカベ野生王国"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

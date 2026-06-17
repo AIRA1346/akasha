@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010290": {
+    "workId": "wk_000010290",
+    "title": "두 마리의 호랑이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1149750"
+    },
+    "titles": {
+      "ko": "두 마리의 호랑이",
+      "en": "The Two Tigers"
+    },
+    "releaseYear": 1904,
+    "creator": "Emilio Salgari",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

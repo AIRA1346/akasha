@@ -212,5 +212,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009847": {
+    "workId": "wk_000009847",
+    "title": "여법의 JD",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123900659"
+    },
+    "titles": {
+      "ko": "여법의 JD",
+      "en": "Forensic JD"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009860": {
+    "workId": "wk_000009860",
+    "title": "비디오 추적 놀라운 TV",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124058907"
+    },
+    "titles": {
+      "ko": "비디오 추적 놀라운 TV",
+      "en": "Q124058907"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

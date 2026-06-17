@@ -86,5 +86,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009086": {
+    "workId": "wk_000009086",
+    "title": "녹스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1330428"
+    },
+    "titles": {
+      "ko": "녹스",
+      "en": "Nox",
+      "ja": "Nox"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009090": {
+    "workId": "wk_000009090",
+    "title": "홈월드 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1331028"
+    },
+    "titles": {
+      "ko": "홈월드 2",
+      "en": "Homeworld 2"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009573": {
+    "workId": "wk_000009573",
+    "title": "호라이즌 워커",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135064344"
+    },
+    "titles": {
+      "ko": "호라이즌 워커",
+      "en": "Horizon Walker",
+      "ja": "ホライゾン・ウォーカー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

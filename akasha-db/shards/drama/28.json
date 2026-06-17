@@ -122,5 +122,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009468": {
+    "workId": "wk_000009468",
+    "title": "우씨왕후",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121076688"
+    },
+    "titles": {
+      "ko": "우씨왕후",
+      "en": "Queen Woo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009545": {
+    "workId": "wk_000009545",
+    "title": "트랙시티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12178244"
+    },
+    "titles": {
+      "ko": "트랙시티",
+      "en": "Track City"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009683": {
+    "workId": "wk_000009683",
+    "title": "노 웨이 아웃",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122945542"
+    },
+    "titles": {
+      "ko": "노 웨이 아웃",
+      "en": "No Way Out : The Roulette"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

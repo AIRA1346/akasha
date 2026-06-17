@@ -104,5 +104,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009340": {
+    "workId": "wk_000009340",
+    "title": "온난적첨밀적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120098074"
+    },
+    "titles": {
+      "ko": "온난적첨밀적",
+      "en": "Q120098074"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009407": {
+    "workId": "wk_000009407",
+    "title": "파넬라크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12043700"
+    },
+    "titles": {
+      "ko": "파넬라크",
+      "en": "Panelák"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009463": {
+    "workId": "wk_000009463",
+    "title": "금 나와라, 뚝딱!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12093785"
+    },
+    "titles": {
+      "ko": "금 나와라, 뚝딱!",
+      "en": "Pots of Gold",
+      "ja": "金よ出てこい コンコン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009749": {
+    "workId": "wk_000009749",
+    "title": "비비르 데 아모르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123423948"
+    },
+    "titles": {
+      "ko": "비비르 데 아모르",
+      "en": "Vivir de amor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009852": {
+    "workId": "wk_000009852",
+    "title": "스파이더 누아르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123956515"
+    },
+    "titles": {
+      "ko": "스파이더 누아르",
+      "en": "Spider-Noir",
+      "ja": "スパイダー・ノワール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

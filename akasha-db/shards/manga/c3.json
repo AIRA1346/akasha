@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009178": {
+    "workId": "wk_000009178",
+    "title": "월광조례",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2741524"
+    },
+    "titles": {
+      "ko": "월광조례",
+      "en": "Moonlight Act",
+      "ja": "月光条例"
+    },
+    "creator": "Kazuhiro Fujita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

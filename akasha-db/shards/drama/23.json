@@ -158,5 +158,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009016": {
+    "workId": "wk_000009016",
+    "title": "신비아파트 외전: 연애공식 구하리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118899340"
+    },
+    "titles": {
+      "ko": "신비아파트 외전: 연애공식 구하리",
+      "en": "Hearts and Hari",
+      "ja": "恋愛公式 ク・ハリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010320": {
+    "workId": "wk_000010320",
+    "title": "천상의 화원 곰배령",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12485483"
+    },
+    "titles": {
+      "ko": "천상의 화원 곰배령",
+      "en": "Heaven's Garden",
+      "ja": "天上の花園"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

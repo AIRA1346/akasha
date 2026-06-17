@@ -144,5 +144,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009726": {
+    "workId": "wk_000009726",
+    "title": "예전에 알던 사람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108841266"
+    },
+    "titles": {
+      "ko": "예전에 알던 사람",
+      "en": "Somebody I Used to Know",
+      "ja": "彼女の面影"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

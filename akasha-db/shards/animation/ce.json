@@ -109,5 +109,97 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009131": {
+    "workId": "wk_000009131",
+    "title": "울프스 레인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q747417"
+    },
+    "titles": {
+      "ko": "울프스 레인",
+      "en": "Wolf's Rain",
+      "ja": "WOLF'S RAIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009209": {
+    "workId": "wk_000009209",
+    "title": "더 바이블",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7717444"
+    },
+    "titles": {
+      "ko": "더 바이블",
+      "en": "The Bible",
+      "ja": "THE BIBLE～選ばれし者たちの歴史物語～"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009361": {
+    "workId": "wk_000009361",
+    "title": "남과 북",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q833578"
+    },
+    "titles": {
+      "ko": "남과 북",
+      "en": "North and South",
+      "ja": "南北戦争物語 愛と自由への大地"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009564": {
+    "workId": "wk_000009564",
+    "title": "파이어볼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q869215"
+    },
+    "titles": {
+      "ko": "파이어볼",
+      "en": "Fireball",
+      "ja": "ファイアボール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010062": {
+    "workId": "wk_000010062",
+    "title": "미래 동물 대탐험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24605"
+    },
+    "titles": {
+      "ko": "미래 동물 대탐험",
+      "en": "The Future Is Wild",
+      "ja": "フューチャー・イズ・ワイルド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

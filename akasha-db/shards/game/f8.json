@@ -74,5 +74,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009194": {
+    "workId": "wk_000009194",
+    "title": "부계에 잠든 왕녀의 아바돈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133864659"
+    },
+    "titles": {
+      "ko": "부계에 잠든 왕녀의 아바돈",
+      "en": "Abaddon: Princess of the Decay",
+      "ja": "腐界に眠る王女のアバドーン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010175": {
+    "workId": "wk_000010175",
+    "title": "스포일러가 너무 심한 RPG2 ―절친의 본모습은 대마왕―",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140184385"
+    },
+    "titles": {
+      "ko": "스포일러가 너무 심한 RPG2 ―절친의 본모습은 대마왕―",
+      "en": "Heavy Spoilers RPG 2: Your best friend is actually the great demon king",
+      "ja": "ネタバレが激しすぎるRPG2―親友の真の姿は大魔王―"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -148,5 +148,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009710": {
+    "workId": "wk_000009710",
+    "title": "콰이어트 급행 909호실",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136198227"
+    },
+    "titles": {
+      "ko": "콰이어트 급행 909호실",
+      "en": "Quiet Express: Cabin 909",
+      "ja": "クワイエット急行909号室"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

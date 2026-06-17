@@ -126,5 +126,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009494": {
+    "workId": "wk_000009494",
+    "title": "원피스 극장판 Z",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q860903"
+    },
+    "titles": {
+      "ko": "원피스 극장판 Z",
+      "en": "One Piece Film: Z",
+      "ja": "ONE PIECE FILM Z"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009874": {
+    "workId": "wk_000009874",
+    "title": "오네가이 티쳐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q957889"
+    },
+    "titles": {
+      "ko": "오네가이 티쳐",
+      "en": "Please Teacher!",
+      "ja": "おねがい☆ティーチャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

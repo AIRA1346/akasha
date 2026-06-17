@@ -127,5 +127,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008968": {
+    "workId": "wk_000008968",
+    "title": "욕망!! 팬더가면",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2577837"
+    },
+    "titles": {
+      "ko": "욕망!! 팬더가면",
+      "en": "Kyūkyoku!! Hentai Kamen",
+      "ja": "究極!!変態仮面"
+    },
+    "creator": "Keishū Ando",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

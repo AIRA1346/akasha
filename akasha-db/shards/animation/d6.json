@@ -144,5 +144,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009989": {
+    "workId": "wk_000009989",
+    "title": "해적왕녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97933331"
+    },
+    "titles": {
+      "ko": "해적왕녀",
+      "en": "Fena: Pirate Princess",
+      "ja": "海賊王女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

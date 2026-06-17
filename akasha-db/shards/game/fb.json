@@ -173,5 +173,79 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008988": {
+    "workId": "wk_000008988",
+    "title": "킵 드라이빙",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132798391"
+    },
+    "titles": {
+      "ko": "킵 드라이빙",
+      "en": "Keep Driving"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009190": {
+    "workId": "wk_000009190",
+    "title": "체이싱 칼레이도라이더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133846460"
+    },
+    "titles": {
+      "ko": "체이싱 칼레이도라이더",
+      "en": "Chasing Kaleidorider",
+      "ja": "チェイシング·カレイドライダー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009884": {
+    "workId": "wk_000009884",
+    "title": "전국무쌍",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371574"
+    },
+    "titles": {
+      "ko": "전국무쌍",
+      "en": "Samurai Warriors",
+      "ja": "戦国無双"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009947": {
+    "workId": "wk_000009947",
+    "title": "헤일로 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137802"
+    },
+    "titles": {
+      "ko": "헤일로 3",
+      "en": "Halo 3",
+      "ja": "Halo 3"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

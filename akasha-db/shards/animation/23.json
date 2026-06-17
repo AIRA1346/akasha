@@ -107,5 +107,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009120": {
+    "workId": "wk_000009120",
+    "title": "맹렬 우주해적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q729809"
+    },
+    "titles": {
+      "ko": "맹렬 우주해적",
+      "en": "Bodacious Space Pirates",
+      "ja": "ミニスカ宇宙海賊"
+    },
+    "releaseYear": 2012,
+    "creator": "Yūichi Sasamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009486": {
+    "workId": "wk_000009486",
+    "title": "워싱턴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85847988"
+    },
+    "titles": {
+      "ko": "워싱턴",
+      "en": "Washington"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009695": {
+    "workId": "wk_000009695",
+    "title": "늑대와 향신료",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89304509"
+    },
+    "titles": {
+      "ko": "늑대와 향신료",
+      "en": "Spice and Wolf",
+      "ja": "狼と香辛料"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009991": {
+    "workId": "wk_000009991",
+    "title": "체조 사무라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98381606"
+    },
+    "titles": {
+      "ko": "체조 사무라이",
+      "en": "Taiso Samurai",
+      "ja": "体操ザムライ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

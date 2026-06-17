@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009663": {
+    "workId": "wk_000009663",
+    "title": "유 알 낫 마이 마더",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108803427"
+    },
+    "titles": {
+      "ko": "유 알 낫 마이 마더",
+      "en": "You Are Not My Mother",
+      "ja": "ユー・アー・ノット・マイ・マザー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

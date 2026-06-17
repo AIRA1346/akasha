@@ -146,5 +146,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008973": {
+    "workId": "wk_000008973",
+    "title": "베를린 알렉산더 광장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q705694"
+    },
+    "titles": {
+      "ko": "베를린 알렉산더 광장",
+      "en": "Berlin Alexanderplatz",
+      "ja": "ベルリン・アレクサンダー広場"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

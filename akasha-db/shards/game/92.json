@@ -194,5 +194,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009826": {
+    "workId": "wk_000009826",
+    "title": "카오스;헤드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368299"
+    },
+    "titles": {
+      "ko": "카오스;헤드",
+      "en": "Chaos;Head",
+      "ja": "CHAOS;HEAD"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010228": {
+    "workId": "wk_000010228",
+    "title": "멋진 이 세계",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416303"
+    },
+    "titles": {
+      "ko": "멋진 이 세계",
+      "en": "The World Ends with You",
+      "ja": "すばらしきこのせかい"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010231": {
+    "workId": "wk_000010231",
+    "title": "소울 엣지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1418354"
+    },
+    "titles": {
+      "ko": "소울 엣지",
+      "en": "Soul Edge",
+      "ja": "ソウルエッジ"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

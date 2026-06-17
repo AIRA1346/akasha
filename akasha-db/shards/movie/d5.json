@@ -92,5 +92,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009323": {
+    "workId": "wk_000009323",
+    "title": "가문의 부활",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854991"
+    },
+    "titles": {
+      "ko": "가문의 부활",
+      "en": "Marrying the Mafia III",
+      "ja": "家門の復活"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009787": {
+    "workId": "wk_000009787",
+    "title": "더 하우스 오브 스마일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088798"
+    },
+    "titles": {
+      "ko": "더 하우스 오브 스마일",
+      "en": "The House of Smiles"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

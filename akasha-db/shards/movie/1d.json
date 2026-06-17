@@ -93,5 +93,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009665": {
+    "workId": "wk_000009665",
+    "title": "익스펜더블 4",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108813842"
+    },
+    "titles": {
+      "ko": "익스펜더블 4",
+      "en": "Expend4bles",
+      "ja": "エクスペンダブルズ4"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010207": {
+    "workId": "wk_000010207",
+    "title": "닥터 모로의 DNA",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091580"
+    },
+    "titles": {
+      "ko": "닥터 모로의 DNA",
+      "en": "The Island of Dr. Moreau",
+      "ja": "D.N.A./ドクター・モローの島"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

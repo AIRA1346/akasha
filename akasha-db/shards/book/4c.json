@@ -16,5 +16,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008994": {
+    "workId": "wk_000008994",
+    "title": "실은 나, 최강이었다?",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113799939"
+    },
+    "titles": {
+      "ko": "실은 나, 최강이었다?",
+      "en": "Am I Actually the Strongest?",
+      "ja": "実は俺、最強でした?"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009388": {
+    "workId": "wk_000009388",
+    "title": "명인전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11414715"
+    },
+    "titles": {
+      "ko": "명인전",
+      "en": "meizinden",
+      "ja": "名人伝"
+    },
+    "creator": "Atsushi Nakajima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

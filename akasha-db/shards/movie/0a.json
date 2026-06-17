@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009896": {
+    "workId": "wk_000009896",
+    "title": "사탄의 인형 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089283"
+    },
+    "titles": {
+      "ko": "사탄의 인형 3",
+      "en": "Child's Play 3",
+      "ja": "チャイルド・プレイ3"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010097": {
+    "workId": "wk_000010097",
+    "title": "만약 고교야구의 여자 매니저가 드러커의『매니지먼트』를 읽는다면",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091012"
+    },
+    "titles": {
+      "ko": "만약 고교야구의 여자 매니저가 드러커의『매니지먼트』를 읽는다면",
+      "en": "Moshidora",
+      "ja": "もし高校野球の女子マネージャーがドラッカーの『マネジメント』を読んだら"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

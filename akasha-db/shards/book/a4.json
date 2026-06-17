@@ -152,5 +152,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009066": {
+    "workId": "wk_000009066",
+    "title": "내가 아가씨 학교에 '서민 샘플'로 납치당한 사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11386437"
+    },
+    "titles": {
+      "ko": "내가 아가씨 학교에 '서민 샘플'로 납치당한 사건",
+      "en": "Shomin Sample",
+      "ja": "俺がお嬢様学校に「庶民サンプル」として拉致られた件"
+    },
+    "releaseYear": 2011,
+    "creator": "Takafumi Nanatsuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

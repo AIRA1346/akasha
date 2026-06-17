@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009148": {
+    "workId": "wk_000009148",
+    "title": "전론논문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11393759"
+    },
+    "titles": {
+      "ko": "전론논문",
+      "en": "Q11393759",
+      "ja": "典論"
+    },
+    "creator": "Cao Pi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

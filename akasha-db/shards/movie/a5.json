@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010306": {
+    "workId": "wk_000010306",
+    "title": "용지성",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109258098"
+    },
+    "titles": {
+      "ko": "용지성",
+      "en": "Realm of Terracotta",
+      "ja": "兵馬俑の城"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

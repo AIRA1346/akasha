@@ -184,5 +184,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008975": {
+    "workId": "wk_000008975",
+    "title": "기동전함 나데시코 - The Prince of Darkness",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q706746"
+    },
+    "titles": {
+      "ko": "기동전함 나데시코 - The Prince of Darkness",
+      "en": "Martian Successor Nadesico: The Motion Picture – Prince of Darkness",
+      "ja": "機動戦艦ナデシコ -The prince of darkness-"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

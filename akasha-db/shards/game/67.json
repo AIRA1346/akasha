@@ -88,5 +88,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009940": {
+    "workId": "wk_000009940",
+    "title": "거미입니다만, 문제라도? 미궁의 지배자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137455847"
+    },
+    "titles": {
+      "ko": "거미입니다만, 문제라도? 미궁의 지배자",
+      "en": "So I'm a Spider, So What? Ruler of the Labyrinth",
+      "ja": "蜘蛛ですが、なにか? 迷宮の支配者"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010003": {
+    "workId": "wk_000010003",
+    "title": "FIFA 13",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137977"
+    },
+    "titles": {
+      "ko": "FIFA 13",
+      "en": "FIFA 13"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010240": {
+    "workId": "wk_000010240",
+    "title": "퍼펙트 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q142972"
+    },
+    "titles": {
+      "ko": "퍼펙트 월드",
+      "en": "Perfect World",
+      "ja": "パーフェクト ワールド -完美世界-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

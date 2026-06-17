@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009516": {
+    "workId": "wk_000009516",
+    "title": "기노사키에서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11425921"
+    },
+    "titles": {
+      "ko": "기노사키에서",
+      "en": "At Kinosaki",
+      "ja": "城の崎にて"
+    },
+    "releaseYear": 1917,
+    "creator": "Naoya Shiga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

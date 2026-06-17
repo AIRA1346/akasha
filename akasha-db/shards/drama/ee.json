@@ -155,5 +155,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009258": {
+    "workId": "wk_000009258",
+    "title": "굉굉전대 보켄저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193877"
+    },
+    "titles": {
+      "ko": "굉굉전대 보켄저",
+      "en": "GoGo Sentai Boukenger",
+      "ja": "轟轟戦隊ボウケンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

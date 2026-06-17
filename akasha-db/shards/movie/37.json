@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009901": {
+    "workId": "wk_000009901",
+    "title": "브리트니 VS 스피어스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108940876"
+    },
+    "titles": {
+      "ko": "브리트니 VS 스피어스",
+      "en": "Britney vs Spears",
+      "ja": "ブリトニー対スピアーズ -後見人裁判の行方-"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010204": {
+    "workId": "wk_000010204",
+    "title": "트레인스포팅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109135"
+    },
+    "titles": {
+      "ko": "트레인스포팅",
+      "en": "Trainspotting",
+      "ja": "トレインスポッティング"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

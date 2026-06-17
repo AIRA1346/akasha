@@ -54,5 +54,62 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009242": {
+    "workId": "wk_000009242",
+    "title": "13번째 인격",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11404770"
+    },
+    "titles": {
+      "ko": "13번째 인격",
+      "en": "Isola",
+      "ja": "十三番目の人格 ISOLA"
+    },
+    "releaseYear": 1996,
+    "creator": "Yusuke Kishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010138": {
+    "workId": "wk_000010138",
+    "title": "유령탑",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11484250"
+    },
+    "titles": {
+      "ko": "유령탑",
+      "en": "Ghost Tower",
+      "ja": "幽霊塔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010291": {
+    "workId": "wk_000010291",
+    "title": "모험가가 되고 싶다며 도시로 떠났던 딸이 S랭크가 되었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114977399"
+    },
+    "titles": {
+      "ko": "모험가가 되고 싶다며 도시로 떠났던 딸이 S랭크가 되었다",
+      "en": "My Daughter Left the Nest and Returned an S-Rank Adventurer",
+      "ja": "冒険者になりたいと都に出て行った娘がSランクになってた"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

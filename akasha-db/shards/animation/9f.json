@@ -145,5 +145,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010061": {
+    "workId": "wk_000010061",
+    "title": "빙과",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q99853668"
+    },
+    "titles": {
+      "ko": "빙과",
+      "en": "Hyouka",
+      "ja": "氷菓"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010346": {
+    "workId": "wk_000010346",
+    "title": "보일링 포인트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109284828"
+    },
+    "titles": {
+      "ko": "보일링 포인트",
+      "en": "Boiling Point",
+      "ja": "ボイリング・ポイント/沸騰"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -225,5 +225,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009346": {
+    "workId": "wk_000009346",
+    "title": "투투장부주",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120206657"
+    },
+    "titles": {
+      "ko": "투투장부주",
+      "en": "Hidden Love",
+      "ja": "ひそかな恋模様は、曇りのち晴れ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009967": {
+    "workId": "wk_000009967",
+    "title": "미녀와 순정남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124312197"
+    },
+    "titles": {
+      "ko": "미녀와 순정남",
+      "en": "Beauty and Mr. Romantic",
+      "ja": "美女と純情男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010163": {
+    "workId": "wk_000010163",
+    "title": "파시온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247303"
+    },
+    "titles": {
+      "ko": "파시온",
+      "en": "Pasión"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

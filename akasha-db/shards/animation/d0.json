@@ -109,5 +109,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009036": {
+    "workId": "wk_000009036",
+    "title": "특장기병 돌박",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711654"
+    },
+    "titles": {
+      "ko": "특장기병 돌박",
+      "en": "Special Armored Battalion Dorvack",
+      "ja": "特装機兵ドルバック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009697": {
+    "workId": "wk_000009697",
+    "title": "갤러리 페이크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q898667"
+    },
+    "titles": {
+      "ko": "갤러리 페이크",
+      "en": "Gallery Fake",
+      "ja": "ギャラリーフェイク"
+    },
+    "releaseYear": 2005,
+    "creator": "Fujihiko Hosono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

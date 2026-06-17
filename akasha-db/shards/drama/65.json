@@ -157,5 +157,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009547": {
+    "workId": "wk_000009547",
+    "title": "완벽한 결혼의 정석",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121841153"
+    },
+    "titles": {
+      "ko": "완벽한 결혼의 정석",
+      "en": "Perfect Marriage Revenge"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010170": {
+    "workId": "wk_000010170",
+    "title": "라수스 지 파밀리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247383"
+    },
+    "titles": {
+      "ko": "라수스 지 파밀리아",
+      "en": "Laços de Família"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

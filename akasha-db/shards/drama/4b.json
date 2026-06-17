@@ -141,5 +141,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009014": {
+    "workId": "wk_000009014",
+    "title": "반짝이는 워터멜론",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118869205"
+    },
+    "titles": {
+      "ko": "반짝이는 워터멜론",
+      "en": "Twinkling Watermelon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -50,5 +50,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009546": {
+    "workId": "wk_000009546",
+    "title": "이인지하",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121811198"
+    },
+    "titles": {
+      "ko": "이인지하",
+      "en": "I Am Nobody",
+      "ja": "異人之下 アウトサイダーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010159": {
+    "workId": "wk_000010159",
+    "title": "L.A. 로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247212"
+    },
+    "titles": {
+      "ko": "L.A. 로",
+      "en": "L.A. Law",
+      "ja": "L.A.ロー 七人の弁護士"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

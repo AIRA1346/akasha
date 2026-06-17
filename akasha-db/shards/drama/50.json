@@ -106,5 +106,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009675": {
+    "workId": "wk_000009675",
+    "title": "탄금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122730767"
+    },
+    "titles": {
+      "ko": "탄금",
+      "en": "Dear Hongrang",
+      "ja": "呑金/タングム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010117": {
+    "workId": "wk_000010117",
+    "title": "청실홍실",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124659203"
+    },
+    "titles": {
+      "ko": "청실홍실",
+      "en": "Q124659203"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

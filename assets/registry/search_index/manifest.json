@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "entryCount": 8676,
-  "generatedAt": "2026-06-17T10:04:52.642459Z",
+  "entryCount": 10048,
+  "generatedAt": "2026-06-17T12:10:46.215865Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
-      "entryCount": 1822,
-      "sha256": "dbaf4a78148c75605eac52cb3362d16b53aa9d194a173cb1e4b1581640960539"
+      "entryCount": 2107,
+      "sha256": "9939f258c79211e726d85e73a7b4089e00bc3ad74fdae0683a71030372d60454"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
-      "entryCount": 870,
-      "sha256": "d08f9d70ce710aa6bcd105eb99b7c514a0160c56dc8a6abee49bcc926aa0ff19"
+      "entryCount": 1028,
+      "sha256": "0c15d4074b3b8c1616b0ab3bc56dca7bb1657e53d4a679835c4fa33ff7b73811"
     },
     {
       "category": "drama",
       "path": "search_index/drama.json",
-      "entryCount": 2227,
-      "sha256": "74ba2c00e3b6a76cde4d8e374f04e3c76638dc0d812da157005a0e3a027b5034"
+      "entryCount": 2634,
+      "sha256": "d4530822caa4482a2a7876a936d92b2408b7abee110d2710b3c46dd0acf0658f"
     },
     {
       "category": "game",
       "path": "search_index/game.json",
-      "entryCount": 1538,
-      "sha256": "fde73291e2d8a18778c73bd032eb86ee015dab6745d0521dcf74143a1724940c"
+      "entryCount": 1832,
+      "sha256": "3a51baf4525422b60559c874e0c02f4019ee9a4e8a712f790219fd61a2c15934"
     },
     {
       "category": "manga",
       "path": "search_index/manga.json",
-      "entryCount": 1114,
-      "sha256": "e8179fefb15e10bf33e27eece131005f257922db59b4c742f3c2012f52498c6f"
+      "entryCount": 1167,
+      "sha256": "b4fbd3f43697e0d3819d6d3e12a7479860e7d0d99a7a57ebdd3fe01494ca5de1"
     },
     {
       "category": "movie",
       "path": "search_index/movie.json",
-      "entryCount": 804,
-      "sha256": "312f843ec01c34f40e5c632cf61129db457687f53ae929f23449b6ec7808af24"
+      "entryCount": 979,
+      "sha256": "b1584c702c291830ab377530c9e979bf1df98e71a49aedc74fc67491143d1101"
     },
     {
       "category": "webtoon",

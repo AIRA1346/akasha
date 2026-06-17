@@ -182,5 +182,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009810": {
+    "workId": "wk_000009810",
+    "title": "꿈의별 버튼노즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q9196134"
+    },
+    "titles": {
+      "ko": "꿈의별 버튼노즈",
+      "en": "Button Nose",
+      "ja": "夢の星のボタンノーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

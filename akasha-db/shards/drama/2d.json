@@ -156,5 +156,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009746": {
+    "workId": "wk_000009746",
+    "title": "처음 꽃향기를 만난 순간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123383159"
+    },
+    "titles": {
+      "ko": "처음 꽃향기를 만난 순간",
+      "en": "Fragrance of the First Flower",
+      "ja": "最初の花の香り"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

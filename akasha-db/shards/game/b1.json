@@ -103,5 +103,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009935": {
+    "workId": "wk_000009935",
+    "title": "스타워즈: 갤럭틱 레이서",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137363888"
+    },
+    "titles": {
+      "ko": "스타워즈: 갤럭틱 레이서",
+      "en": "Q137363888"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010178": {
+    "workId": "wk_000010178",
+    "title": "천주 3: 천벌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1407885"
+    },
+    "titles": {
+      "ko": "천주 3: 천벌",
+      "en": "Tenchu: Wrath of Heaven",
+      "ja": "天誅 参"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010235": {
+    "workId": "wk_000010235",
+    "title": "리틀 컴퓨터 피플",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1424936"
+    },
+    "titles": {
+      "ko": "리틀 컴퓨터 피플",
+      "en": "Little Computer People",
+      "ja": "リトル・コンピュータ・ピープル"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

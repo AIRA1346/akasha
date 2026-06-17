@@ -54,5 +54,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009667": {
+    "workId": "wk_000009667",
+    "title": "암흑 같은 밤",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108827983"
+    },
+    "titles": {
+      "ko": "암흑 같은 밤",
+      "en": "Black as Night",
+      "ja": "ブラック・アズ・ナイト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009841": {
+    "workId": "wk_000009841",
+    "title": "영웅출격",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10889271"
+    },
+    "titles": {
+      "ko": "영웅출격",
+      "en": "Proud and Confident"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

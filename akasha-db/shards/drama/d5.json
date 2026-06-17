@@ -140,5 +140,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009027": {
+    "workId": "wk_000009027",
+    "title": "로맨스 빌런",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119077193"
+    },
+    "titles": {
+      "ko": "로맨스 빌런",
+      "en": "The Villain of Romance"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009536": {
+    "workId": "wk_000009536",
+    "title": "수사반장 1958",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121438415"
+    },
+    "titles": {
+      "ko": "수사반장 1958",
+      "en": "Chief Detective 1958"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

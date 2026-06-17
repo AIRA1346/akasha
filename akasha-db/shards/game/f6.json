@@ -129,5 +129,77 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008987": {
+    "workId": "wk_000008987",
+    "title": "포켓몬 챔피언스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132798308"
+    },
+    "titles": {
+      "ko": "포켓몬 챔피언스",
+      "en": "Pokémon Champions",
+      "ja": "Pokémon Champions"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009504": {
+    "workId": "wk_000009504",
+    "title": "바이트파이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1348432"
+    },
+    "titles": {
+      "ko": "바이트파이트",
+      "en": "BiteFight"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009506": {
+    "workId": "wk_000009506",
+    "title": "스텔라 블레이드: 블러드 레인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134950995"
+    },
+    "titles": {
+      "ko": "스텔라 블레이드: 블러드 레인",
+      "en": "Q134950995"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010243": {
+    "workId": "wk_000010243",
+    "title": "탱크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1431857"
+    },
+    "titles": {
+      "ko": "탱크",
+      "en": "Tank"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

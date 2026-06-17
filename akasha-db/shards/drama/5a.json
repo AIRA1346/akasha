@@ -157,5 +157,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009620": {
+    "workId": "wk_000009620",
+    "title": "세계는 지금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122494130"
+    },
+    "titles": {
+      "ko": "세계는 지금",
+      "en": "Q122494130"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009848": {
+    "workId": "wk_000009848",
+    "title": "원더풀 월드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123919021"
+    },
+    "titles": {
+      "ko": "원더풀 월드",
+      "en": "Wonderful World",
+      "ja": "ワンダフルワールド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010031": {
+    "workId": "wk_000010031",
+    "title": "머니챌린지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124360567"
+    },
+    "titles": {
+      "ko": "머니챌린지",
+      "en": "Q124360567"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

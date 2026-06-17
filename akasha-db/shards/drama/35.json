@@ -160,5 +160,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010322": {
+    "workId": "wk_000010322",
+    "title": "닥터 웰비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248656"
+    },
+    "titles": {
+      "ko": "닥터 웰비",
+      "en": "Marcus Welby, M.D.",
+      "ja": "ドクター・ウェルビー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010354": {
+    "workId": "wk_000010354",
+    "title": "이노센테 데 티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249557"
+    },
+    "titles": {
+      "ko": "이노센테 데 티",
+      "en": "Inocente de ti"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -56,5 +56,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009833": {
+    "workId": "wk_000009833",
+    "title": "학생가의 살인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11448821"
+    },
+    "titles": {
+      "ko": "학생가의 살인",
+      "en": "Q11448821",
+      "ja": "学生街の殺人"
+    },
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010197": {
+    "workId": "wk_000010197",
+    "title": "은혜와 원한을 넘어서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492293"
+    },
+    "titles": {
+      "ko": "은혜와 원한을 넘어서",
+      "en": "Q11492293",
+      "ja": "恩讐の彼方に"
+    },
+    "releaseYear": 1919,
+    "creator": "菊池寛",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

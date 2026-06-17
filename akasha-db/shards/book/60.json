@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010136": {
+    "workId": "wk_000010136",
+    "title": "도코노 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11481671"
+    },
+    "titles": {
+      "ko": "도코노 이야기",
+      "en": "Tokono Monogatari",
+      "ja": "常野物語"
+    },
+    "creator": "Riku Onda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

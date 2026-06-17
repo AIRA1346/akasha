@@ -73,5 +73,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009387": {
+    "workId": "wk_000009387",
+    "title": "요시노 구즈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11414512"
+    },
+    "titles": {
+      "ko": "요시노 구즈",
+      "en": "Arrowroot",
+      "ja": "吉野葛"
+    },
+    "creator": "Jun'ichirō Tanizaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009583": {
+    "workId": "wk_000009583",
+    "title": "퍼디도 스트리트 정거장",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143215"
+    },
+    "titles": {
+      "ko": "퍼디도 스트리트 정거장",
+      "en": "Perdido Street Station",
+      "ja": "ペルディード・ストリート・ステーション"
+    },
+    "releaseYear": 2000,
+    "creator": "China Miéville",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

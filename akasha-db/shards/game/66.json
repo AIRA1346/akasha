@@ -126,5 +126,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009135": {
+    "workId": "wk_000009135",
+    "title": "로드 투 보스토크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133696504"
+    },
+    "titles": {
+      "ko": "로드 투 보스토크",
+      "en": "Road to Vostok"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009514": {
+    "workId": "wk_000009514",
+    "title": "젠장! 미녀들한테 포위당했어! 프리퀄",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135058313"
+    },
+    "titles": {
+      "ko": "젠장! 미녀들한테 포위당했어! 프리퀄",
+      "en": "Love is All Around: Echoes of Yesterday",
+      "ja": "しまった！美人に囲まれた！プリクエル"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

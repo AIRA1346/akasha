@@ -86,5 +86,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009330": {
+    "workId": "wk_000009330",
+    "title": "부엘베 아 미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119840686"
+    },
+    "titles": {
+      "ko": "부엘베 아 미",
+      "en": "Vuelve a mí",
+      "ja": "ヴエルベ・ア・ミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009971": {
+    "workId": "wk_000009971",
+    "title": "엄마친구아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124326709"
+    },
+    "titles": {
+      "ko": "엄마친구아들",
+      "en": "Love Next Door",
+      "ja": "となりのMr.パーフェクト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010213": {
+    "workId": "wk_000010213",
+    "title": "털보 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247452"
+    },
+    "titles": {
+      "ko": "털보 가족",
+      "en": "Family Affair",
+      "ja": "ニューヨーク・パパ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010362": {
+    "workId": "wk_000010362",
+    "title": "칠년전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125038077"
+    },
+    "titles": {
+      "ko": "칠년전쟁",
+      "en": "Seven Years of War"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

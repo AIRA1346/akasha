@@ -70,5 +70,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009811": {
+    "workId": "wk_000009811",
+    "title": "천공의 에스카플로네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q92560"
+    },
+    "titles": {
+      "ko": "천공의 에스카플로네",
+      "en": "The Vision of Escaflowne",
+      "ja": "天空のエスカフローネ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009875": {
+    "workId": "wk_000009875",
+    "title": "퀴즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q96025415"
+    },
+    "titles": {
+      "ko": "퀴즈",
+      "en": "Quiz",
+      "ja": "クイズ"
+    },
+    "creator": "James Graham",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

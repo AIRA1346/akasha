@@ -158,5 +158,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009410": {
+    "workId": "wk_000009410",
+    "title": "I-LAND2 N/a",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120495966"
+    },
+    "titles": {
+      "ko": "I-LAND2 N/a",
+      "en": "I-LAND 2: N/α",
+      "ja": "I-LAND 2:N/α"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009856": {
+    "workId": "wk_000009856",
+    "title": "7인의 부활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124043227"
+    },
+    "titles": {
+      "ko": "7인의 부활",
+      "en": "The Escape of the Seven-Resurrection"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010033": {
+    "workId": "wk_000010033",
+    "title": "과부의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124391682"
+    },
+    "titles": {
+      "ko": "과부의 전쟁",
+      "en": "Widows' War",
+      "ja": "未亡人の戦争"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

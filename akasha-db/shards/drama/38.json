@@ -68,5 +68,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009539": {
+    "workId": "wk_000009539",
+    "title": "크레이지 마켓",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121601308"
+    },
+    "titles": {
+      "ko": "크레이지 마켓",
+      "en": "Crazy Market"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009859": {
+    "workId": "wk_000009859",
+    "title": "명곡의 고향",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124058870"
+    },
+    "titles": {
+      "ko": "명곡의 고향",
+      "en": "Q124058870"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010357": {
+    "workId": "wk_000010357",
+    "title": "니 콘티고 니 신 티",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249585"
+    },
+    "titles": {
+      "ko": "니 콘티고 니 신 티",
+      "en": "Ni contigo ni sin ti"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

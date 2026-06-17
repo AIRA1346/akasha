@@ -201,5 +201,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009368": {
+    "workId": "wk_000009368",
+    "title": "달려라 부메랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q839004"
+    },
+    "titles": {
+      "ko": "달려라 부메랑",
+      "en": "Dash! Yonkuro",
+      "ja": "ダッシュ!四駆郎"
+    },
+    "releaseYear": 1989,
+    "creator": "Zaurusu Tokuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -108,5 +108,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009625": {
+    "workId": "wk_000009625",
+    "title": "그리고 베를린에서",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q88759629"
+    },
+    "titles": {
+      "ko": "그리고 베를린에서",
+      "en": "Unorthodox",
+      "ja": "アンオーソドックス"
+    },
+    "releaseYear": 2020,
+    "creator": "Anna Winger",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

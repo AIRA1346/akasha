@@ -92,5 +92,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009141": {
+    "workId": "wk_000009141",
+    "title": "젤다무쌍 봉인 전기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133804382"
+    },
+    "titles": {
+      "ko": "젤다무쌍 봉인 전기",
+      "en": "Hyrule Warriors: Age of Imprisonment",
+      "ja": "ゼルダ無双 封印戦記"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010181": {
+    "workId": "wk_000010181",
+    "title": "시공의 패자: 사가 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1409043"
+    },
+    "titles": {
+      "ko": "시공의 패자: 사가 3",
+      "en": "Final Fantasy Legend III",
+      "ja": "時空の覇者 Sa・Ga3"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

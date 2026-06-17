@@ -113,5 +113,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009176": {
+    "workId": "wk_000009176",
+    "title": "스틸 볼 런",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2738699"
+    },
+    "titles": {
+      "ko": "스틸 볼 런",
+      "en": "Steel Ball Run",
+      "ja": "スティール・ボール・ラン"
+    },
+    "creator": "荒木飛呂彦",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

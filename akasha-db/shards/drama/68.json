@@ -105,5 +105,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009266": {
+    "workId": "wk_000009266",
+    "title": "불편해도 괜찮아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119543889"
+    },
+    "titles": {
+      "ko": "불편해도 괜찮아",
+      "en": "Q119543889"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010037": {
+    "workId": "wk_000010037",
+    "title": "왓 어바웃 브라이언",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1244389"
+    },
+    "titles": {
+      "ko": "왓 어바웃 브라이언",
+      "en": "What About Brian?",
+      "ja": "恋するブライアン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

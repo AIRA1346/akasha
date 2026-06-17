@@ -179,5 +179,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009632": {
+    "workId": "wk_000009632",
+    "title": "극장판 포켓몬스터 DP: 기라티나와 하늘의 꽃다발 쉐이미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q890657"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 DP: 기라티나와 하늘의 꽃다발 쉐이미",
+      "en": "Pokémon: Giratina & the Sky Warrior",
+      "ja": "劇場版ポケットモンスター ダイヤモンド&パール ギラティナと氷空の花束 シェイミ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009980": {
+    "workId": "wk_000009980",
+    "title": "반요의 야샤히메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97171756"
+    },
+    "titles": {
+      "ko": "반요의 야샤히메",
+      "en": "Yashahime",
+      "ja": "半妖の夜叉姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

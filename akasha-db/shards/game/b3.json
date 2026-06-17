@@ -234,5 +234,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010000": {
+    "workId": "wk_000010000",
+    "title": "종이집",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137916877"
+    },
+    "titles": {
+      "ko": "종이집",
+      "en": "Sweet Home",
+      "ja": "紙の家"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

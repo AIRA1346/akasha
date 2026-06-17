@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009662": {
+    "workId": "wk_000009662",
+    "title": "203 고지",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10880293"
+    },
+    "titles": {
+      "ko": "203 고지",
+      "en": "The Battle of Port Arthur",
+      "ja": "二百三高地"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010133": {
+    "workId": "wk_000010133",
+    "title": "콜 오브 듀티: 모던 워페어 4 (2026년 비디오 게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139969024"
+    },
+    "titles": {
+      "ko": "콜 오브 듀티: 모던 워페어 4 (2026년 비디오 게임)",
+      "en": "Call of Duty: Modern Warfare 4",
+      "ja": "Call of Duty: Modern Warfare 4"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

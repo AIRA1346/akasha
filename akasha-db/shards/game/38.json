@@ -109,5 +109,60 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009307": {
+    "workId": "wk_000009307",
+    "title": "헤일로: 스파르탄 어썰트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13427164"
+    },
+    "titles": {
+      "ko": "헤일로: 스파르탄 어썰트",
+      "en": "Halo: Spartan Assault"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010069": {
+    "workId": "wk_000010069",
+    "title": "너네 엄마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138337535"
+    },
+    "titles": {
+      "ko": "너네 엄마",
+      "en": "Your Mom",
+      "ja": "お前の母ちゃん"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010284": {
+    "workId": "wk_000010284",
+    "title": "에노키안의 전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14425618"
+    },
+    "titles": {
+      "ko": "에노키안의 전설",
+      "en": "Tower of Saviors"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

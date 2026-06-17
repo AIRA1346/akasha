@@ -155,5 +155,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009903": {
+    "workId": "wk_000009903",
+    "title": "스포츠 미드나이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071796"
+    },
+    "titles": {
+      "ko": "스포츠 미드나이트",
+      "en": "SPORTS MIDNIGHT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009909": {
+    "workId": "wk_000009909",
+    "title": "학교 요리왕",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071907"
+    },
+    "titles": {
+      "ko": "학교 요리왕",
+      "en": "Q124071907"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009966": {
+    "workId": "wk_000009966",
+    "title": "야한 사진관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124310925"
+    },
+    "titles": {
+      "ko": "야한 사진관",
+      "en": "The Midnight Studio"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

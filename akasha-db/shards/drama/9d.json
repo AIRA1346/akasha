@@ -70,5 +70,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009601": {
+    "workId": "wk_000009601",
+    "title": "재벌X형사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121879488"
+    },
+    "titles": {
+      "ko": "재벌X형사",
+      "en": "Flex X Cop",
+      "ja": "財閥X刑事"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009611": {
+    "workId": "wk_000009611",
+    "title": "XX+XY",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122294948"
+    },
+    "titles": {
+      "ko": "XX+XY",
+      "en": "XX+XY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010103": {
+    "workId": "wk_000010103",
+    "title": "원경 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611023"
+    },
+    "titles": {
+      "ko": "원경 (드라마)",
+      "en": "The Queen Who Crowns",
+      "ja": "元敬〜欲望の王妃〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

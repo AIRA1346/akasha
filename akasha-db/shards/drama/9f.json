@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009015": {
+    "workId": "wk_000009015",
+    "title": "AKBINGO!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188717"
+    },
+    "titles": {
+      "ko": "AKBINGO!",
+      "en": "AKBingo!",
+      "ja": "AKBINGO!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

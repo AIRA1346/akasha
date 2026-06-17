@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009450": {
+    "workId": "wk_000009450",
+    "title": "늑대의 유혹",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114236764"
+    },
+    "titles": {
+      "ko": "늑대의 유혹",
+      "en": "Q114236764"
+    },
+    "releaseYear": 2003,
+    "creator": "Guiyeoni",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

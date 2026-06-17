@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009887": {
+    "workId": "wk_000009887",
+    "title": "와치 독스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371726"
+    },
+    "titles": {
+      "ko": "와치 독스",
+      "en": "Watch Dogs",
+      "ja": "ウォッチドッグス"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

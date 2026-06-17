@@ -37,5 +37,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010016": {
+    "workId": "wk_000010016",
+    "title": "말리의 일곱 개의 달",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114732705"
+    },
+    "titles": {
+      "ko": "말리의 일곱 개의 달",
+      "en": "The Seven Moons of Maali Almeida",
+      "ja": "マーリ・アルメイダの七つの月"
+    },
+    "releaseYear": 2022,
+    "creator": "Shehan Karunatilaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010247": {
+    "workId": "wk_000010247",
+    "title": "가면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114930485"
+    },
+    "titles": {
+      "ko": "가면",
+      "en": "Mask"
+    },
+    "releaseYear": 2012,
+    "creator": "Bora Chung",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

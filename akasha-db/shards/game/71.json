@@ -73,5 +73,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009503": {
+    "workId": "wk_000009503",
+    "title": "스플래툰 레이더스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134822854"
+    },
+    "titles": {
+      "ko": "스플래툰 레이더스",
+      "en": "Splatoon Raiders",
+      "ja": "スプラトゥーン レイダース"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010279": {
+    "workId": "wk_000010279",
+    "title": "돈 도코 돈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1436430"
+    },
+    "titles": {
+      "ko": "돈 도코 돈",
+      "en": "Don Doko Don",
+      "ja": "ドンドコドン"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

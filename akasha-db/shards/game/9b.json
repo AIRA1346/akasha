@@ -235,5 +235,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010123": {
+    "workId": "wk_000010123",
+    "title": "스타폭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139683849"
+    },
+    "titles": {
+      "ko": "스타폭스",
+      "en": "Star Fox",
+      "ja": "Star Fox"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

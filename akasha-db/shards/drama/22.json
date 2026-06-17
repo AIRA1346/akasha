@@ -157,5 +157,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010227": {
+    "workId": "wk_000010227",
+    "title": "형사 Q",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247732"
+    },
+    "titles": {
+      "ko": "형사 Q",
+      "en": "Quincy, M.E.",
+      "ja": "ドクター刑事クインシー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

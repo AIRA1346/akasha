@@ -87,5 +87,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009403": {
+    "workId": "wk_000009403",
+    "title": "세븐킹덤의 기사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120277524"
+    },
+    "titles": {
+      "ko": "세븐킹덤의 기사",
+      "en": "A Knight of the Seven Kingdoms",
+      "ja": "ナイト・オブ・ザ・セブン・キングダムズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010160": {
+    "workId": "wk_000010160",
+    "title": "유나이티드 스테이트 오브 타라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247235"
+    },
+    "titles": {
+      "ko": "유나이티드 스테이트 오브 타라",
+      "en": "United States of Tara",
+      "ja": "ユナイテッド・ステイツ・オブ・タラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010314": {
+    "workId": "wk_000010314",
+    "title": "미 데스티노 에레스 투",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248414"
+    },
+    "titles": {
+      "ko": "미 데스티노 에레스 투",
+      "en": "Mi Destino Eres Tú"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

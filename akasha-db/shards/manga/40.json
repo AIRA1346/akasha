@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009204": {
+    "workId": "wk_000009204",
+    "title": "아이러브 서티",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q278268"
+    },
+    "titles": {
+      "ko": "아이러브 서티",
+      "en": "A.I. Love You",
+      "ja": "A・Iが止まらない!"
+    },
+    "creator": "Ken Akamatsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

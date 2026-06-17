@@ -156,5 +156,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009476": {
+    "workId": "wk_000009476",
+    "title": "낙-아아포이 나 담다민",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121308219"
+    },
+    "titles": {
+      "ko": "낙-아아포이 나 담다민",
+      "en": "Nag-aapoy na Damdamin"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010218": {
+    "workId": "wk_000010218",
+    "title": "인 플레인 사이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247535"
+    },
+    "titles": {
+      "ko": "인 플레인 사이트",
+      "en": "In Plain Sight",
+      "ja": "ザ・プロテクター/狙われる証人たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010262": {
+    "workId": "wk_000010262",
+    "title": "메이드 인 코리아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124799060"
+    },
+    "titles": {
+      "ko": "메이드 인 코리아",
+      "en": "Made in Korea"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

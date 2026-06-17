@@ -105,5 +105,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009017": {
+    "workId": "wk_000009017",
+    "title": "신비아파트 외전: 기억, 하리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118904126"
+    },
+    "titles": {
+      "ko": "신비아파트 외전: 기억, 하리",
+      "en": "Remember, Hari",
+      "ja": "シンビアパート外伝：記憶、ハリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010271": {
+    "workId": "wk_000010271",
+    "title": "라 오트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248297"
+    },
+    "titles": {
+      "ko": "라 오트라",
+      "en": "La Otra"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

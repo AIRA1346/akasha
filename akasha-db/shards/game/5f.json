@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009880": {
+    "workId": "wk_000009880",
+    "title": "사라만다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1370988"
+    },
+    "titles": {
+      "ko": "사라만다",
+      "en": "Salamander",
+      "ja": "沙羅曼蛇"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

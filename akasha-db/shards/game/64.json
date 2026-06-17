@@ -86,5 +86,22 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009198": {
+    "workId": "wk_000009198",
+    "title": "식스타 게이트: 스타게이저",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133893930"
+    },
+    "titles": {
+      "ko": "식스타 게이트: 스타게이저",
+      "en": "Sixtar Gate: Stargazer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

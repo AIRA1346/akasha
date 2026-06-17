@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009653": {
+    "workId": "wk_000009653",
+    "title": "하타요가프라디피카",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144373"
+    },
+    "titles": {
+      "ko": "하타요가프라디피카",
+      "en": "Hatha Yoga Pradipika",
+      "ja": "ハタ・ヨーガ・プラディーピカー"
+    },
+    "creator": "スヴァートマーラーマ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

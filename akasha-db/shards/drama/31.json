@@ -192,5 +192,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009023": {
+    "workId": "wk_000009023",
+    "title": "몹 닥터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190075"
+    },
+    "titles": {
+      "ko": "몹 닥터",
+      "en": "The Mob Doctor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009159": {
+    "workId": "wk_000009159",
+    "title": "지구전대 파이브맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191227"
+    },
+    "titles": {
+      "ko": "지구전대 파이브맨",
+      "en": "Chikyu Sentai Fiveman",
+      "ja": "地球戦隊ファイブマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010166": {
+    "workId": "wk_000010166",
+    "title": "아마르테 아시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247334"
+    },
+    "titles": {
+      "ko": "아마르테 아시",
+      "en": "Amarte Así"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

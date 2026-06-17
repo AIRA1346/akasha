@@ -142,5 +142,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009370": {
+    "workId": "wk_000009370",
+    "title": "라쿠고 천녀 오유이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q841016"
+    },
+    "titles": {
+      "ko": "라쿠고 천녀 오유이",
+      "en": "Rakugo Tennyo Oyui",
+      "ja": "落語天女おゆい"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

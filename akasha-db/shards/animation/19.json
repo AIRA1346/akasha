@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010118": {
+    "workId": "wk_000010118",
+    "title": "드루아가의 탑 ~the Aegis of URUK~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q32256"
+    },
+    "titles": {
+      "ko": "드루아가의 탑 ~the Aegis of URUK~",
+      "en": "The Tower of Druaga",
+      "ja": "ドルアーガの塔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

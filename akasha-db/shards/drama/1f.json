@@ -244,5 +244,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009606": {
+    "workId": "wk_000009606",
+    "title": "거래",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122150536"
+    },
+    "titles": {
+      "ko": "거래",
+      "en": "The Deal"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009614": {
+    "workId": "wk_000009614",
+    "title": "제시카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122375883"
+    },
+    "titles": {
+      "ko": "제시카",
+      "en": "Q122375883"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010029": {
+    "workId": "wk_000010029",
+    "title": "일출",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124360377"
+    },
+    "titles": {
+      "ko": "일출",
+      "en": "Q124360377"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010318": {
+    "workId": "wk_000010318",
+    "title": "바호 라 미스마 피엘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248433"
+    },
+    "titles": {
+      "ko": "바호 라 미스마 피엘",
+      "en": "Bajo la misma piel"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009280": {
+    "workId": "wk_000009280",
+    "title": "너무 외로워서 레즈비언 업소에 간 리포트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28127337"
+    },
+    "titles": {
+      "ko": "너무 외로워서 레즈비언 업소에 간 리포트",
+      "en": "My Lesbian Experience With Loneliness",
+      "ja": "さびしすぎてレズ風俗に行きましたレポ"
+    },
+    "releaseYear": 2016,
+    "creator": "Nagata Kabi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

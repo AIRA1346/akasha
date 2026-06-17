@@ -139,5 +139,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009165": {
+    "workId": "wk_000009165",
+    "title": "갈릴레오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192780"
+    },
+    "titles": {
+      "ko": "갈릴레오",
+      "en": "Galileo",
+      "ja": "ガリレオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009619": {
+    "workId": "wk_000009619",
+    "title": "그린조끼구조대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122480072"
+    },
+    "titles": {
+      "ko": "그린조끼구조대",
+      "en": "Green Vest Rescue Team",
+      "ja": "グリーンチョッキ救助隊"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

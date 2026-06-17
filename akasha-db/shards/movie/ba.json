@@ -36,5 +36,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009596": {
+    "workId": "wk_000009596",
+    "title": "상해탄",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087456"
+    },
+    "titles": {
+      "ko": "상해탄",
+      "en": "Shanghai Grand",
+      "ja": "上海グランド"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009788": {
+    "workId": "wk_000009788",
+    "title": "더 마더",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108882357"
+    },
+    "titles": {
+      "ko": "더 마더",
+      "en": "The Mother",
+      "ja": "ザ・マザー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010347": {
+    "workId": "wk_000010347",
+    "title": "언디스퓨티드 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092933"
+    },
+    "titles": {
+      "ko": "언디스퓨티드 3",
+      "en": "Undisputed III: Redemption",
+      "ja": "Undisputed III: Redemption"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

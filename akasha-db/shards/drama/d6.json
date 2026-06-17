@@ -67,5 +67,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009753": {
+    "workId": "wk_000009753",
+    "title": "포켓몬 컨시어지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123465873"
+    },
+    "titles": {
+      "ko": "포켓몬 컨시어지",
+      "en": "Pokémon Concierge",
+      "ja": "ポケモンコンシェルジュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

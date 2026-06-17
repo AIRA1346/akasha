@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009898": {
+    "workId": "wk_000009898",
+    "title": "같은 속옷을 입는 두 여자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108935293"
+    },
+    "titles": {
+      "ko": "같은 속옷을 입는 두 여자",
+      "en": "The Apartment with Two Women",
+      "ja": "同じ下着を着るふたりの女"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

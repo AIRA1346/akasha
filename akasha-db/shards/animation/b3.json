@@ -161,5 +161,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009040": {
+    "workId": "wk_000009040",
+    "title": "빠뿌야 놀자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7121819"
+    },
+    "titles": {
+      "ko": "빠뿌야 놀자",
+      "en": "Paboo & Mojies",
+      "ja": "パブー&モジーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009081": {
+    "workId": "wk_000009081",
+    "title": "도라에몽 노비타와 구름의 왕국",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q719493"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 구름의 왕국",
+      "en": "Doraemon: Nobita and the Kingdom of Clouds",
+      "ja": "ドラえもん のび太と雲の王国"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009693": {
+    "workId": "wk_000009693",
+    "title": "도쿄 레이븐즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89248109"
+    },
+    "titles": {
+      "ko": "도쿄 레이븐즈",
+      "en": "Tokyo Ravens",
+      "ja": "東京レイヴンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

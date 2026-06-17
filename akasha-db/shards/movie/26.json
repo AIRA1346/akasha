@@ -55,5 +55,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009324": {
+    "workId": "wk_000009324",
+    "title": "간주남 간주녀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855093"
+    },
+    "titles": {
+      "ko": "간주남 간주녀",
+      "en": "Quirky Guys and Gals",
+      "ja": "サビ男サビ女"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009730": {
+    "workId": "wk_000009730",
+    "title": "세바스찬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1088489"
+    },
+    "titles": {
+      "ko": "세바스찬",
+      "en": "Sebastiane",
+      "ja": "セバスチャン"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010251": {
+    "workId": "wk_000010251",
+    "title": "음모자들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10917713"
+    },
+    "titles": {
+      "ko": "음모자들",
+      "en": "Conspirators",
+      "ja": "コンスピレーター 謀略 極限探偵A＋"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

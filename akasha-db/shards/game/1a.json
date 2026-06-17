@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009301": {
+    "workId": "wk_000009301",
+    "title": "철권 레볼루션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13423675"
+    },
+    "titles": {
+      "ko": "철권 레볼루션",
+      "en": "Tekken Revolution",
+      "ja": "鉄拳レボリューション"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

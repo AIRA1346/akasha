@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009250": {
+    "workId": "wk_000009250",
+    "title": "언터처블",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108525"
+    },
+    "titles": {
+      "ko": "언터처블",
+      "en": "The Untouchables",
+      "ja": "アンタッチャブル"
+    },
+    "releaseYear": 1987,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

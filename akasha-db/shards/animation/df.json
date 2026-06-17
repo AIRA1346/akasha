@@ -144,5 +144,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009220": {
+    "workId": "wk_000009220",
+    "title": "도라에몽: 스탠바이미 2",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q78185552"
+    },
+    "titles": {
+      "ko": "도라에몽: 스탠바이미 2",
+      "en": "Stand by Me Doraemon 2",
+      "ja": "STAND BY ME ドラえもん 2"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

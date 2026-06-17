@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010336": {
+    "workId": "wk_000010336",
+    "title": "이름을 말해줘",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150341"
+    },
+    "titles": {
+      "ko": "이름을 말해줘",
+      "en": "An Abundance of Katherines"
+    },
+    "releaseYear": 2007,
+    "creator": "John Green",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

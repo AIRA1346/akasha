@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009592": {
+    "workId": "wk_000009592",
+    "title": "테러리스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087324"
+    },
+    "titles": {
+      "ko": "테러리스트",
+      "en": "A True Mob Story",
+      "ja": "激戦 A True Mob Story"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009724": {
+    "workId": "wk_000009724",
+    "title": "서부 전선 이상 없다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108837349"
+    },
+    "titles": {
+      "ko": "서부 전선 이상 없다",
+      "en": "All Quiet on the Western Front",
+      "ja": "西部戦線異状なし"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

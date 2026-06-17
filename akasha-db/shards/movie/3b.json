@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009786": {
+    "workId": "wk_000009786",
+    "title": "아마겟돈 타임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108877975"
+    },
+    "titles": {
+      "ko": "아마겟돈 타임",
+      "en": "Armageddon Time",
+      "ja": "アーマゲドン・タイム"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

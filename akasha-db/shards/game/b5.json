@@ -186,5 +186,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009945": {
+    "workId": "wk_000009945",
+    "title": "라쳇 & 클랭크: 인투 더 넥서스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13759410"
+    },
+    "titles": {
+      "ko": "라쳇 & 클랭크: 인투 더 넥서스",
+      "en": "Ratchet & Clank: Into the Nexus",
+      "ja": "ラチェット&クランク INTO THE NEXUS"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

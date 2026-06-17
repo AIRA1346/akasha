@@ -69,5 +69,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009067": {
+    "workId": "wk_000009067",
+    "title": "나의 그녀는 사육주(마리아)님 여동생은 주인님",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11386496"
+    },
+    "titles": {
+      "ko": "나의 그녀는 사육주(마리아)님 여동생은 주인님",
+      "en": "Q11386496",
+      "ja": "俺の彼女は飼主様、妹はご主人様"
+    },
+    "creator": "Suguru Manabe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010192": {
+    "workId": "wk_000010192",
+    "title": "화장실 벽에 쓴 낙서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114898139"
+    },
+    "titles": {
+      "ko": "화장실 벽에 쓴 낙서",
+      "en": "Words on Bathroom Walls"
+    },
+    "releaseYear": 2017,
+    "creator": "Julia Walton",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

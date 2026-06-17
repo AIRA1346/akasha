@@ -210,5 +210,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009570": {
+    "workId": "wk_000009570",
+    "title": "내 독재자 스탈린이 이렇게 귀여울 리가 없어?!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135059576"
+    },
+    "titles": {
+      "ko": "내 독재자 스탈린이 이렇게 귀여울 리가 없어?!",
+      "en": "My Dictator Stalin Can't Be This Cute ?!",
+      "ja": "私の独裁者スターリンがこんなに可愛いわけがない?!"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

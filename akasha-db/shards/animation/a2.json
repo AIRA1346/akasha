@@ -158,5 +158,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009186": {
+    "workId": "wk_000009186",
+    "title": "우주해적 미토의 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7572457"
+    },
+    "titles": {
+      "ko": "우주해적 미토의 대모험",
+      "en": "Space Pirate Mito",
+      "ja": "宇宙海賊ミトの大冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

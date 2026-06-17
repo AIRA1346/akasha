@@ -56,5 +56,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009240": {
+    "workId": "wk_000009240",
+    "title": "로드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140295"
+    },
+    "titles": {
+      "ko": "로드",
+      "en": "The Road",
+      "ja": "ザ・ロード"
+    },
+    "releaseYear": 2006,
+    "creator": "コーマック・マッカーシー",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009584": {
+    "workId": "wk_000009584",
+    "title": "쇼쿠고슈이와카슈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143244"
+    },
+    "titles": {
+      "ko": "쇼쿠고슈이와카슈",
+      "en": "Shokugoshūi Wakashū",
+      "ja": "続後拾遺和歌集"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -90,5 +90,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009352": {
+    "workId": "wk_000009352",
+    "title": "방과후 크리스마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2826325"
+    },
+    "titles": {
+      "ko": "방과후 크리스마",
+      "en": "Afterschool Charisma",
+      "ja": "放課後のカリスマ"
+    },
+    "creator": "Kumiko Suekane",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

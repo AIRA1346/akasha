@@ -72,5 +72,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009376": {
+    "workId": "wk_000009376",
+    "title": "브라운더스트2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134359176"
+    },
+    "titles": {
+      "ko": "브라운더스트2",
+      "en": "Brown Dust 2",
+      "ja": "ブラウンダスト2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009638": {
+    "workId": "wk_000009638",
+    "title": "타이완 러브 스토리⁵",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135453371"
+    },
+    "titles": {
+      "ko": "타이완 러브 스토리⁵",
+      "en": "Taiwan Love Story⁵",
+      "ja": "台湾ラブストーリー⁵"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

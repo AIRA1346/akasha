@@ -156,5 +156,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009024": {
+    "workId": "wk_000009024",
+    "title": "메이드 인 저지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190140"
+    },
+    "titles": {
+      "ko": "메이드 인 저지",
+      "en": "Made in Jersey"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009169": {
+    "workId": "wk_000009169",
+    "title": "폭룡전대 아바레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193356"
+    },
+    "titles": {
+      "ko": "폭룡전대 아바레인저",
+      "en": "Bakuryū Sentai Abaranger",
+      "ja": "爆竜戦隊アバレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010360": {
+    "workId": "wk_000010360",
+    "title": "소점",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249620"
+    },
+    "titles": {
+      "ko": "소점",
+      "en": "Shōten",
+      "ja": "笑点"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

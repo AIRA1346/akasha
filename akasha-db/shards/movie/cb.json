@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009254": {
+    "workId": "wk_000009254",
+    "title": "극장판 프리큐어 올스타즈 DX3 미래에 닿아라! 세계를 잇는☆무지갯빛 꽃",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1085305"
+    },
+    "titles": {
+      "ko": "극장판 프리큐어 올스타즈 DX3 미래에 닿아라! 세계를 잇는☆무지갯빛 꽃",
+      "en": "Pretty Cure All Stars DX3: Deliver the Future! The Rainbow-Colored Flower That Connects the World!",
+      "ja": "映画 プリキュアオールスターズDX3 未来に届け!世界をつなぐ☆虹色の花"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

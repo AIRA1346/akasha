@@ -138,5 +138,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009013": {
+    "workId": "wk_000009013",
+    "title": "헝거 게임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11885031"
+    },
+    "titles": {
+      "ko": "헝거 게임",
+      "en": "The Hunger Games",
+      "ja": "ハンガー・ゲーム (映画シリーズ)"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009164": {
+    "workId": "wk_000009164",
+    "title": "해적전대 고카이저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192644"
+    },
+    "titles": {
+      "ko": "해적전대 고카이저",
+      "en": "Kaizoku Sentai Gokaiger",
+      "ja": "海賊戦隊ゴーカイジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009417": {
+    "workId": "wk_000009417",
+    "title": "티아 앨리슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120720637"
+    },
+    "titles": {
+      "ko": "티아 앨리슨",
+      "en": "Tía Alison"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010046": {
+    "workId": "wk_000010046",
+    "title": "가두리 횟집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124514643"
+    },
+    "titles": {
+      "ko": "가두리 횟집",
+      "en": "Ga Doo Ri's Sushi Restaurant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

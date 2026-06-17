@@ -267,5 +267,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010261": {
+    "workId": "wk_000010261",
+    "title": "니냐 아마다 미아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247973"
+    },
+    "titles": {
+      "ko": "니냐 아마다 미아",
+      "en": "Niña Amada Mía"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010328": {
+    "workId": "wk_000010328",
+    "title": "카페 콘 아로마 데 무헤르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249340"
+    },
+    "titles": {
+      "ko": "카페 콘 아로마 데 무헤르",
+      "en": "Café, con aroma de mujer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

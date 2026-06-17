@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009200": {
+    "workId": "wk_000009200",
+    "title": "기동전사 건담 SEED ASTRAY 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2755118"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED ASTRAY 시리즈",
+      "en": "Mobile Suit Gundam SEED Astray",
+      "ja": "機動戦士ガンダムSEED ASTRAYシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

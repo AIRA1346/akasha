@@ -159,5 +159,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009347": {
+    "workId": "wk_000009347",
+    "title": "아무도 없는 숲속에서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120240271"
+    },
+    "titles": {
+      "ko": "아무도 없는 숲속에서",
+      "en": "The Frog",
+      "ja": "誰もいない森の奥で木は音もなく倒れる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009475": {
+    "workId": "wk_000009475",
+    "title": "대송소년지 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121278724"
+    },
+    "titles": {
+      "ko": "대송소년지 2",
+      "en": "Young Blood II"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010270": {
+    "workId": "wk_000010270",
+    "title": "미스터리 수사단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124829354"
+    },
+    "titles": {
+      "ko": "미스터리 수사단",
+      "en": "Agents of Mystery",
+      "ja": "エージェント・オブ・ミステリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -194,5 +194,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009125": {
+    "workId": "wk_000009125",
+    "title": "프린세스 츄츄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q739135"
+    },
+    "titles": {
+      "ko": "프린세스 츄츄",
+      "en": "Princess Tutu",
+      "ja": "プリンセスチュチュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009432": {
+    "workId": "wk_000009432",
+    "title": "위 아 후 위 아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85115721"
+    },
+    "titles": {
+      "ko": "위 아 후 위 아",
+      "en": "We Are Who We Are",
+      "ja": "僕らのままで/WE ARE WHO WE ARE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

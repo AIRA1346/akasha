@@ -108,5 +108,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009574": {
+    "workId": "wk_000009574",
+    "title": "이클립스 : Special Forces",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135064350"
+    },
+    "titles": {
+      "ko": "이클립스 : Special Forces",
+      "en": "Eclipse : Special Forces"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010125": {
+    "workId": "wk_000010125",
+    "title": "텀블팝: 메모리즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139885409"
+    },
+    "titles": {
+      "ko": "텀블팝: 메모리즈",
+      "en": "Q139885409"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

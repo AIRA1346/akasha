@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009313": {
+    "workId": "wk_000009313",
+    "title": "구전초",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11410745"
+    },
+    "titles": {
+      "ko": "구전초",
+      "en": "Orally Transmitted Notes",
+      "ja": "口伝鈔"
+    },
+    "creator": "覚如",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010295": {
+    "workId": "wk_000010295",
+    "title": "머즈그레이브 전례문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150069"
+    },
+    "titles": {
+      "ko": "머즈그레이브 전례문",
+      "en": "The Adventure of the Musgrave Ritual",
+      "ja": "マスグレーヴ家の儀式"
+    },
+    "creator": "アーサー・コナン・ドイル",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

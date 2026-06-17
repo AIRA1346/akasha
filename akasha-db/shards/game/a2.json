@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009133": {
+    "workId": "wk_000009133",
+    "title": "퀀텀 브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13361589"
+    },
+    "titles": {
+      "ko": "퀀텀 브레이크",
+      "en": "Quantum Break",
+      "ja": "Quantum Break"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

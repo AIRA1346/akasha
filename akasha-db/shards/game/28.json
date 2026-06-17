@@ -218,5 +218,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009703": {
+    "workId": "wk_000009703",
+    "title": "붕괴: 넥서스 아니마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135998000"
+    },
+    "titles": {
+      "ko": "붕괴: 넥서스 아니마",
+      "en": "Honkai: Nexus Anima",
+      "ja": "崩壊:ネクサスアニマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009939": {
+    "workId": "wk_000009939",
+    "title": "셜록 홈즈: 미라의 미스터리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1374448"
+    },
+    "titles": {
+      "ko": "셜록 홈즈: 미라의 미스터리",
+      "en": "Sherlock Holmes: The Mystery of the Mummy"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

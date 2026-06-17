@@ -200,5 +200,80 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008982": {
+    "workId": "wk_000008982",
+    "title": "신기동전기 건담 W",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711148"
+    },
+    "titles": {
+      "ko": "신기동전기 건담 W",
+      "en": "Mobile Suit Gundam Wing",
+      "ja": "新機動戦記ガンダムW"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009046": {
+    "workId": "wk_000009046",
+    "title": "비키 바이킹",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q713578"
+    },
+    "titles": {
+      "ko": "비키 바이킹",
+      "en": "Vicky the Viking",
+      "ja": "小さなバイキングビッケ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009763": {
+    "workId": "wk_000009763",
+    "title": "축구왕 슛돌이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q909912"
+    },
+    "titles": {
+      "ko": "축구왕 슛돌이",
+      "en": "Moero! Top Striker",
+      "ja": "燃えろ!トップストライカー"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009817": {
+    "workId": "wk_000009817",
+    "title": "히토히라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q933589"
+    },
+    "titles": {
+      "ko": "히토히라",
+      "en": "Hitohira",
+      "ja": "ひとひら"
+    },
+    "releaseYear": 2007,
+    "creator": "Izumi Kirihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

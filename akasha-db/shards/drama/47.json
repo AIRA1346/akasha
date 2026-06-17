@@ -140,5 +140,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010352": {
+    "workId": "wk_000010352",
+    "title": "후로 케 테 아모",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249545"
+    },
+    "titles": {
+      "ko": "후로 케 테 아모",
+      "en": "Juro Que Te Amo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

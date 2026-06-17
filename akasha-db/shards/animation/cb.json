@@ -145,5 +145,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008972": {
+    "workId": "wk_000008972",
+    "title": "모험소년 샤다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7053569"
+    },
+    "titles": {
+      "ko": "모험소년 샤다",
+      "en": "Bōken Shōnen Shadar",
+      "ja": "冒険少年シャダー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009044": {
+    "workId": "wk_000009044",
+    "title": "파이팅! 대운동회",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q712714"
+    },
+    "titles": {
+      "ko": "파이팅! 대운동회",
+      "en": "Battle Athletes Victory",
+      "ja": "バトルアスリーテス 大運動会"
+    },
+    "creator": "Hideyuki Kurata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

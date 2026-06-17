@@ -161,5 +161,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009551": {
+    "workId": "wk_000009551",
+    "title": "아워 갱",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1218784"
+    },
+    "titles": {
+      "ko": "아워 갱",
+      "en": "Our Gang",
+      "ja": "ちびっこギャング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

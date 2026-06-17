@@ -283,5 +283,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009550": {
+    "workId": "wk_000009550",
+    "title": "아찔한 소개팅",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121872811"
+    },
+    "titles": {
+      "ko": "아찔한 소개팅",
+      "en": "Thrilling Blind Date"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009846": {
+    "workId": "wk_000009846",
+    "title": "마킬링",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123878578"
+    },
+    "titles": {
+      "ko": "마킬링",
+      "en": "Makiling"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010106": {
+    "workId": "wk_000010106",
+    "title": "조립식 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611032"
+    },
+    "titles": {
+      "ko": "조립식 가족",
+      "en": "Family by Choice",
+      "ja": "組み立て式家族〜僕らの恋の在処〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010172": {
+    "workId": "wk_000010172",
+    "title": "글래이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247408"
+    },
+    "titles": {
+      "ko": "글래이즈",
+      "en": "The Glades",
+      "ja": "ザ・グレイズ 〜フロリダ殺人事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

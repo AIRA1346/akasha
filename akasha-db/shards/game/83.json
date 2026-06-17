@@ -162,5 +162,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009236": {
+    "workId": "wk_000009236",
+    "title": "라이온 킹 (비디오 게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134138"
+    },
+    "titles": {
+      "ko": "라이온 킹 (비디오 게임)",
+      "en": "The Lion King",
+      "ja": "ライオン・キング"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009634": {
+    "workId": "wk_000009634",
+    "title": "나 혼자만 레벨업: 카르마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135221605"
+    },
+    "titles": {
+      "ko": "나 혼자만 레벨업: 카르마",
+      "en": "Solo Leveling: Karma",
+      "ja": "俺だけレベルアップな件：KARMA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -271,5 +271,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009431": {
+    "workId": "wk_000009431",
+    "title": "열혈최강 고자우라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q848928"
+    },
+    "titles": {
+      "ko": "열혈최강 고자우라",
+      "en": "Nekketsu Saikyō Go-Saurer",
+      "ja": "熱血最強ゴウザウラー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

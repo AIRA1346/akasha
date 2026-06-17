@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008989": {
+    "workId": "wk_000008989",
+    "title": "요시의 쿠키",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1328124"
+    },
+    "titles": {
+      "ko": "요시의 쿠키",
+      "en": "Yoshi's Cookie",
+      "ja": "ヨッシーのクッキー"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

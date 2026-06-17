@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010180": {
+    "workId": "wk_000010180",
+    "title": "사가 2: 비보전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1408991"
+    },
+    "titles": {
+      "ko": "사가 2: 비보전설",
+      "en": "Final Fantasy Legend II",
+      "ja": "Sa・Ga2 秘宝伝説"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

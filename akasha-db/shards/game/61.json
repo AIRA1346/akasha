@@ -126,5 +126,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009705": {
+    "workId": "wk_000009705",
+    "title": "이나즈마 일레븐 2 위협의 침략자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1360849"
+    },
+    "titles": {
+      "ko": "이나즈마 일레븐 2 위협의 침략자",
+      "en": "Inazuma Eleven 2",
+      "ja": "イナズマイレブン2 脅威の侵略者"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009714": {
+    "workId": "wk_000009714",
+    "title": "여우누이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136248444"
+    },
+    "titles": {
+      "ko": "여우누이",
+      "en": "Q136248444"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -112,5 +112,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009374": {
+    "workId": "wk_000009374",
+    "title": "디 오더: 1886",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13427968"
+    },
+    "titles": {
+      "ko": "디 오더: 1886",
+      "en": "The Order: 1886",
+      "ja": "The Order:1886"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

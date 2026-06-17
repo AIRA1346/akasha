@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010066": {
+    "workId": "wk_000010066",
+    "title": "하울의 움직이는 성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q29011"
+    },
+    "titles": {
+      "ko": "하울의 움직이는 성",
+      "en": "Howl's Moving Castle",
+      "ja": "ハウルの動く城"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

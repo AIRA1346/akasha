@@ -106,5 +106,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010281": {
+    "workId": "wk_000010281",
+    "title": "어반 케이어스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1440402"
+    },
+    "titles": {
+      "ko": "어반 케이어스",
+      "en": "Urban Chaos"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

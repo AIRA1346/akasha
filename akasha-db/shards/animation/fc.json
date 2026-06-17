@@ -201,5 +201,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009210": {
+    "workId": "wk_000009210",
+    "title": "트랜스포머 카로봇",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q772381"
+    },
+    "titles": {
+      "ko": "트랜스포머 카로봇",
+      "en": "Transformers: Robots in Disguise",
+      "ja": "トランスフォーマー カーロボット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

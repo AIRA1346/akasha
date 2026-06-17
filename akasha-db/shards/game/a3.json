@@ -145,5 +145,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009440": {
+    "workId": "wk_000009440",
+    "title": "인왕 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134707677"
+    },
+    "titles": {
+      "ko": "인왕 3",
+      "en": "Q134707677",
+      "ja": "仁王3"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

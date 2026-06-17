@@ -17,5 +17,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009721": {
+    "workId": "wk_000009721",
+    "title": "학전도시 애스터리스크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11448208"
+    },
+    "titles": {
+      "ko": "학전도시 애스터리스크",
+      "en": "The Asterisk War",
+      "ja": "学戦都市アスタリスク"
+    },
+    "releaseYear": 2022,
+    "creator": "Yū Miyazaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009951": {
+    "workId": "wk_000009951",
+    "title": "소녀불충분",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11464552"
+    },
+    "titles": {
+      "ko": "소녀불충분",
+      "en": "Q11464552",
+      "ja": "少女不十分"
+    },
+    "creator": "Nisio Isin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

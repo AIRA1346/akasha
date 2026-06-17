@@ -174,5 +174,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009264": {
+    "workId": "wk_000009264",
+    "title": "어른애들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119518367"
+    },
+    "titles": {
+      "ko": "어른애들",
+      "en": "Adult Kids"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010109": {
+    "workId": "wk_000010109",
+    "title": "조명가게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124616105"
+    },
+    "titles": {
+      "ko": "조명가게",
+      "en": "Light Shop",
+      "ja": "照明店の客人たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010113": {
+    "workId": "wk_000010113",
+    "title": "지배종",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124625340"
+    },
+    "titles": {
+      "ko": "지배종",
+      "en": "Blood Free"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010098": {
+    "workId": "wk_000010098",
+    "title": "닥터 모로의 DNA",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091041"
+    },
+    "titles": {
+      "ko": "닥터 모로의 DNA",
+      "en": "The Island of Dr. Moreau",
+      "ja": "ドクターモローの島"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -215,5 +215,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009772": {
+    "workId": "wk_000009772",
+    "title": "몇 번째인지 모를 처음 뵙겠습니다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136388660"
+    },
+    "titles": {
+      "ko": "몇 번째인지 모를 처음 뵙겠습니다",
+      "en": "Nice To Meet You, Again",
+      "ja": "何度目かのはじめまして"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

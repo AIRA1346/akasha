@@ -246,5 +246,74 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009805": {
+    "workId": "wk_000009805",
+    "title": "장사천재 백사장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123701998"
+    },
+    "titles": {
+      "ko": "장사천재 백사장",
+      "en": "Q123701998"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009907": {
+    "workId": "wk_000009907",
+    "title": "너는 내 운명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071896"
+    },
+    "titles": {
+      "ko": "너는 내 운명",
+      "en": "Q124071896"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009958": {
+    "workId": "wk_000009958",
+    "title": "엘 아모르 노 티에네 레세타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124251331"
+    },
+    "titles": {
+      "ko": "엘 아모르 노 티에네 레세타",
+      "en": "El amor no tiene receta",
+      "ja": "エル・アモール・ノ・ティエネ・レセタ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010112": {
+    "workId": "wk_000010112",
+    "title": "LoL THE NEXT",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124625163"
+    },
+    "titles": {
+      "ko": "LoL THE NEXT",
+      "en": "Q124625163"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -175,5 +175,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009751": {
+    "workId": "wk_000009751",
+    "title": "FBI",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1234407"
+    },
+    "titles": {
+      "ko": "FBI",
+      "en": "The F.B.I.",
+      "ja": "FBIアメリカ連邦警察"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010108": {
+    "workId": "wk_000010108",
+    "title": "손해 보기 싫어서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611400"
+    },
+    "titles": {
+      "ko": "손해 보기 싫어서",
+      "en": "No Gain No Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

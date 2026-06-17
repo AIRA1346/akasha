@@ -143,5 +143,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009272": {
+    "workId": "wk_000009272",
+    "title": "6백만 달러의 사나이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196836"
+    },
+    "titles": {
+      "ko": "6백만 달러의 사나이",
+      "en": "The Six Million Dollar Man",
+      "ja": "600万ドルの男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009471": {
+    "workId": "wk_000009471",
+    "title": "나니아 연대기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1211909"
+    },
+    "titles": {
+      "ko": "나니아 연대기",
+      "en": "The Chronicles of Narnia",
+      "ja": "ナルニア国物語"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -99,5 +99,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009359": {
+    "workId": "wk_000009359",
+    "title": "에르고 프록시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q832098"
+    },
+    "titles": {
+      "ko": "에르고 프록시",
+      "en": "Ergo Proxy",
+      "ja": "Ergo Proxy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

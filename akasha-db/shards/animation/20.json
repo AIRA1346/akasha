@@ -109,5 +109,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008970": {
+    "workId": "wk_000008970",
+    "title": "모모타로 바다의 신병",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q705003"
+    },
+    "titles": {
+      "ko": "모모타로 바다의 신병",
+      "en": "Momotaro: Sacred Sailors",
+      "ja": "桃太郎 海の神兵"
+    },
+    "releaseYear": 1945,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

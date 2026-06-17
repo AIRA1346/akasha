@@ -111,5 +111,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009144": {
+    "workId": "wk_000009144",
+    "title": "드래그 앤드 드라이브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133804575"
+    },
+    "titles": {
+      "ko": "드래그 앤드 드라이브",
+      "en": "Drag x Drive",
+      "ja": "Drag x Drive"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009784": {
+    "workId": "wk_000009784",
+    "title": "별의 커비 64",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1366980"
+    },
+    "titles": {
+      "ko": "별의 커비 64",
+      "en": "Kirby 64: The Crystal Shards",
+      "ja": "星のカービィ64"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010275": {
+    "workId": "wk_000010275",
+    "title": "당신과 그녀와 그녀의 사랑",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14322389"
+    },
+    "titles": {
+      "ko": "당신과 그녀와 그녀의 사랑",
+      "en": "You And Me And Her: A Love Story",
+      "ja": "君と彼女と彼女の恋。"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

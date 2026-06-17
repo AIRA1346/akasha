@@ -90,5 +90,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009559": {
+    "workId": "wk_000009559",
+    "title": "데이트 어 라이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q86525119"
+    },
+    "titles": {
+      "ko": "데이트 어 라이브",
+      "en": "Date A Live",
+      "ja": "デート・ア・ライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009982": {
+    "workId": "wk_000009982",
+    "title": "카미츄!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q972136"
+    },
+    "titles": {
+      "ko": "카미츄!",
+      "en": "Kamichu!",
+      "ja": "かみちゅ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

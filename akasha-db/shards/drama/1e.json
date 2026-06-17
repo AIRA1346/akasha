@@ -157,5 +157,93 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009171": {
+    "workId": "wk_000009171",
+    "title": "체인지 데이즈 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119346909"
+    },
+    "titles": {
+      "ko": "체인지 데이즈 2",
+      "en": "Change Days",
+      "ja": "チェンジデイズ ～恋人、交換してみました～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009461": {
+    "workId": "wk_000009461",
+    "title": "황금나침반 (YTN)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120799778"
+    },
+    "titles": {
+      "ko": "황금나침반 (YTN)",
+      "en": "Q120799778"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009738": {
+    "workId": "wk_000009738",
+    "title": "내가 배우다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123221446"
+    },
+    "titles": {
+      "ko": "내가 배우다",
+      "en": "I Am The Actor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010214": {
+    "workId": "wk_000010214",
+    "title": "119 구조대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247463"
+    },
+    "titles": {
+      "ko": "119 구조대",
+      "en": "Emergency!",
+      "ja": "エマージェンシー!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010367": {
+    "workId": "wk_000010367",
+    "title": "더 스튜디오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125185497"
+    },
+    "titles": {
+      "ko": "더 스튜디오",
+      "en": "The Studio",
+      "ja": "ザ・スタジオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -142,5 +142,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010158": {
+    "workId": "wk_000010158",
+    "title": "배트맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247201"
+    },
+    "titles": {
+      "ko": "배트맨",
+      "en": "Batman",
+      "ja": "怪鳥人間バットマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010212": {
+    "workId": "wk_000010212",
+    "title": "푸에블로 치코, 인피에르노 그란데",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247446"
+    },
+    "titles": {
+      "ko": "푸에블로 치코, 인피에르노 그란데",
+      "en": "Pueblo chico, infierno grande"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

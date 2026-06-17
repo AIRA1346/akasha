@@ -157,5 +157,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009143": {
+    "workId": "wk_000009143",
+    "title": "커비의 에어 라이더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133804482"
+    },
+    "titles": {
+      "ko": "커비의 에어 라이더",
+      "en": "Kirby Air Riders",
+      "ja": "カービィのエアライダー"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

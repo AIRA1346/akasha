@@ -210,5 +210,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009155": {
+    "workId": "wk_000009155",
+    "title": "지식플랫폼 하우투",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119081325"
+    },
+    "titles": {
+      "ko": "지식플랫폼 하우투",
+      "en": "Q119081325"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009688": {
+    "workId": "wk_000009688",
+    "title": "환상연가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123149176"
+    },
+    "titles": {
+      "ko": "환상연가",
+      "en": "Love Song for Illusion",
+      "ja": "ファンタジーソナタ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009794": {
+    "workId": "wk_000009794",
+    "title": "멧돼지 사냥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123495373"
+    },
+    "titles": {
+      "ko": "멧돼지 사냥",
+      "en": "Q123495373"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

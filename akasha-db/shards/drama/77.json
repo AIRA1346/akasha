@@ -230,5 +230,56 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009863": {
+    "workId": "wk_000009863",
+    "title": "여성공감",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071540"
+    },
+    "titles": {
+      "ko": "여성공감",
+      "en": "Q124071540"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009911": {
+    "workId": "wk_000009911",
+    "title": "국가가 부른다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124078474"
+    },
+    "titles": {
+      "ko": "국가가 부른다",
+      "en": "Q124078474"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009920": {
+    "workId": "wk_000009920",
+    "title": "별 하나 나 하나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124176330"
+    },
+    "titles": {
+      "ko": "별 하나 나 하나",
+      "en": "Q124176330"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

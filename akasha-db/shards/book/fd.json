@@ -75,5 +75,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009061": {
+    "workId": "wk_000009061",
+    "title": "춘추공양전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138565"
+    },
+    "titles": {
+      "ko": "춘추공양전",
+      "en": "Gongyang Zhuan",
+      "ja": "春秋公羊伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009515": {
+    "workId": "wk_000009515",
+    "title": "지역 신문을 살 여자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11424410"
+    },
+    "titles": {
+      "ko": "지역 신문을 살 여자",
+      "en": "Chihōshi o kau on'na",
+      "ja": "地方紙を買う女"
+    },
+    "creator": "松本清張",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

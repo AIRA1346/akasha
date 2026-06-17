@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009523": {
+    "workId": "wk_000009523",
+    "title": "불이신탐",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10868811"
+    },
+    "titles": {
+      "ko": "불이신탐",
+      "en": "Badges of Fury",
+      "ja": "ドラゴン・コップス－微笑捜査線－"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

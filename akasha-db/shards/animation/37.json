@@ -142,5 +142,81 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009553": {
+    "workId": "wk_000009553",
+    "title": "짱구는 못말려 극장판: 부리부리 3분 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q864285"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 부리부리 3분 대작전",
+      "en": "Crayon Shin-chan: The Legend Called Buri Buri 3 Minutes Charge",
+      "ja": "クレヨンしんちゃん 伝説を呼ぶブリブリ 3分ポッキリ大進撃"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009808": {
+    "workId": "wk_000009808",
+    "title": "위치 헌터 로빈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q917980"
+    },
+    "titles": {
+      "ko": "위치 헌터 로빈",
+      "en": "Witch Hunter Robin",
+      "ja": "Witch Hunter ROBIN"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009812": {
+    "workId": "wk_000009812",
+    "title": "브레이크 블레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q925693"
+    },
+    "titles": {
+      "ko": "브레이크 블레이드",
+      "en": "Broken Blade",
+      "ja": "ブレイク ブレイド"
+    },
+    "releaseYear": 2014,
+    "creator": "Yūnosuke Yoshinaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010059": {
+    "workId": "wk_000010059",
+    "title": "위크로스 디바 얼라이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q99560641"
+    },
+    "titles": {
+      "ko": "위크로스 디바 얼라이브",
+      "en": "WIXOSS Diva(A)Live",
+      "ja": "WIXOSS DIVA(A)LIVE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

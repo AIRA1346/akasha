@@ -158,5 +158,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009160": {
+    "workId": "wk_000009160",
+    "title": "대전대 고글파이브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191373"
+    },
+    "titles": {
+      "ko": "대전대 고글파이브",
+      "en": "Dai Sentai Goggle-V",
+      "ja": "大戦隊ゴーグルファイブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010047": {
+    "workId": "wk_000010047",
+    "title": "경이로운 귀환",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124535519"
+    },
+    "titles": {
+      "ko": "경이로운 귀환",
+      "en": "Q124535519"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

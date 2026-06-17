@@ -55,5 +55,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009317": {
+    "workId": "wk_000009317",
+    "title": "풀타임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108537543"
+    },
+    "titles": {
+      "ko": "풀타임",
+      "en": "Full Time"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010153": {
+    "workId": "wk_000010153",
+    "title": "쇼타임",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1091168"
+    },
+    "titles": {
+      "ko": "쇼타임",
+      "en": "Showtime",
+      "ja": "ショウタイム"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

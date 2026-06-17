@@ -68,5 +68,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009344": {
+    "workId": "wk_000009344",
+    "title": "디트로이트 1-8-7",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1201528"
+    },
+    "titles": {
+      "ko": "디트로이트 1-8-7",
+      "en": "Detroit 1-8-7",
+      "ja": "デトロイト 1-8-7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009968": {
+    "workId": "wk_000009968",
+    "title": "나도 반대하는 나의 연애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124315434"
+    },
+    "titles": {
+      "ko": "나도 반대하는 나의 연애",
+      "en": "Q124315434"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

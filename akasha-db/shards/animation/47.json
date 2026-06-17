@@ -161,5 +161,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009983": {
+    "workId": "wk_000009983",
+    "title": "걸즈 앤 판처 최종장 제2화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97237281"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 최종장 제2화",
+      "en": "Girls und Panzer das Finale: Part 2",
+      "ja": "ガールズ＆パンツァー 最終章 第2話,"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

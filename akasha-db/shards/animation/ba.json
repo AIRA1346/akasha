@@ -163,5 +163,62 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009085": {
+    "workId": "wk_000009085",
+    "title": "부자연의 선택",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q72438211"
+    },
+    "titles": {
+      "ko": "부자연의 선택",
+      "en": "Unnatural Selection",
+      "ja": "不自然淘汰: ゲノム編集がもたらす未来"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009185": {
+    "workId": "wk_000009185",
+    "title": "캡틴 하록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7572454"
+    },
+    "titles": {
+      "ko": "캡틴 하록",
+      "en": "Harlock: Space Pirate",
+      "ja": "キャプテンハーロック -SPACE PIRATE CAPTAIN HARLOCK-"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009287": {
+    "workId": "wk_000009287",
+    "title": "난, 모모타로(복숭아 동자)의 뭐지?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7986244"
+    },
+    "titles": {
+      "ko": "난, 모모타로(복숭아 동자)의 뭐지?",
+      "en": "Doraemon: What Am I for Momotaro",
+      "ja": "ドラえもん ぼく、桃太郎のなんなのさ"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

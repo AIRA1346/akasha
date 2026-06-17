@@ -72,5 +72,80 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009092": {
+    "workId": "wk_000009092",
+    "title": "지하철 퇴마 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133233834"
+    },
+    "titles": {
+      "ko": "지하철 퇴마 소녀",
+      "en": "Subway Exorcist Girl",
+      "ja": "電車除霊少女"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009383": {
+    "workId": "wk_000009383",
+    "title": "배고픈 괴수 공주 : 은하 미식 여행",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134519559"
+    },
+    "titles": {
+      "ko": "배고픈 괴수 공주 : 은하 미식 여행",
+      "en": "Kaiju Princess 2",
+      "ja": "大食い怪獣姫：惑星のグルメ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009885": {
+    "workId": "wk_000009885",
+    "title": "스타폭스 64 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1371603"
+    },
+    "titles": {
+      "ko": "스타폭스 64 3D",
+      "en": "Star Fox 64 3D",
+      "ja": "スターフォックス64 3D"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010282": {
+    "workId": "wk_000010282",
+    "title": "반지의 제왕: 북부 전쟁",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1440462"
+    },
+    "titles": {
+      "ko": "반지의 제왕: 북부 전쟁",
+      "en": "The Lord of the Rings: War in the North"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

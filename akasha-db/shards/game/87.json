@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010126": {
+    "workId": "wk_000010126",
+    "title": "학원묵시록 HIGHSCHOOL OF THE DEAD DAY 0",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139889555"
+    },
+    "titles": {
+      "ko": "학원묵시록 HIGHSCHOOL OF THE DEAD DAY 0",
+      "en": "HIGH SCHOOL OF THE DEAD DAY 0",
+      "ja": "学園黙示録 HIGHSCHOOL OF THE DEAD DAY 0"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

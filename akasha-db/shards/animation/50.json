@@ -147,5 +147,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009078": {
+    "workId": "wk_000009078",
+    "title": "명탐정 코난: 11번째 스트라이커",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q717510"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 11번째 스트라이커",
+      "en": "Detective Conan: The Eleventh Striker",
+      "ja": "名探偵コナン 11人目のストライカー"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009122": {
+    "workId": "wk_000009122",
+    "title": "드래곤볼 GT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q735669"
+    },
+    "titles": {
+      "ko": "드래곤볼 GT",
+      "en": "Dragon Ball GT",
+      "ja": "ドラゴンボールGT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009626": {
+    "workId": "wk_000009626",
+    "title": "하쿠숀 대마왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q887639"
+    },
+    "titles": {
+      "ko": "하쿠숀 대마왕",
+      "en": "The Genie Family",
+      "ja": "ハクション大魔王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

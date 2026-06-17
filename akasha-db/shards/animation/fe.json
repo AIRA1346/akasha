@@ -166,5 +166,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009814": {
+    "workId": "wk_000009814",
+    "title": "강철 지그",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q92808"
+    },
+    "titles": {
+      "ko": "강철 지그",
+      "en": "Steel Jeeg",
+      "ja": "鋼鉄ジーグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

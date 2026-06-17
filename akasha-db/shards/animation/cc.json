@@ -36,5 +36,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009356": {
+    "workId": "wk_000009356",
+    "title": "지구의 밤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q82473889"
+    },
+    "titles": {
+      "ko": "지구의 밤",
+      "en": "Night on Earth",
+      "ja": "ナイトアース"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009567": {
+    "workId": "wk_000009567",
+    "title": "전익의 시그드리파",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q86957081"
+    },
+    "titles": {
+      "ko": "전익의 시그드리파",
+      "en": "Warlords of Sigrdrifa",
+      "ja": "戦翼のシグルドリーヴァ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

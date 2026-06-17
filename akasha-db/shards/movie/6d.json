@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009251": {
+    "workId": "wk_000009251",
+    "title": "더 챌린지",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108528962"
+    },
+    "titles": {
+      "ko": "더 챌린지",
+      "en": "The Challenge",
+      "ja": "挑戦"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

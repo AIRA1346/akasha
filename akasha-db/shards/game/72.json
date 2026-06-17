@@ -187,5 +187,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010081": {
+    "workId": "wk_000010081",
+    "title": "미남고교 지구방위부 Love Macho",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139488816"
+    },
+    "titles": {
+      "ko": "미남고교 지구방위부 Love Macho",
+      "en": "Cute High Earth Defense Club Love Macho",
+      "ja": "美男高校地球防衛部ラブマッチョ"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -156,5 +156,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009339": {
+    "workId": "wk_000009339",
+    "title": "배틀 피버 J",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200891"
+    },
+    "titles": {
+      "ko": "배틀 피버 J",
+      "en": "Battle Fever J",
+      "ja": "バトルフィーバーJ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

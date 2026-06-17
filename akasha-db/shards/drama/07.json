@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010043": {
+    "workId": "wk_000010043",
+    "title": "기생수: 더 그레이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124480521"
+    },
+    "titles": {
+      "ko": "기생수: 더 그레이",
+      "en": "Parasyte: The Grey",
+      "ja": "寄生獣 -ザ・グレイ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

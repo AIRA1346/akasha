@@ -187,5 +187,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009188": {
+    "workId": "wk_000009188",
+    "title": "극장판 슈타인즈 게이트: 부하영역의 데자뷰",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7606919"
+    },
+    "titles": {
+      "ko": "극장판 슈타인즈 게이트: 부하영역의 데자뷰",
+      "en": "Steins;Gate: The Movie − Load Region of Déjà Vu",
+      "ja": "劇場版 シュタインズ・ゲート 負荷領域のデジャヴ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009495": {
+    "workId": "wk_000009495",
+    "title": "AKB0048",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q862683"
+    },
+    "titles": {
+      "ko": "AKB0048",
+      "en": "AKB0048",
+      "ja": "AKB0048"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009768": {
+    "workId": "wk_000009768",
+    "title": "이 미술부에는 문제가 있다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q91611678"
+    },
+    "titles": {
+      "ko": "이 미술부에는 문제가 있다!",
+      "en": "This Art Club Has a Problem!",
+      "ja": "この美術部には問題がある!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -92,5 +92,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009448": {
+    "workId": "wk_000009448",
+    "title": "인명정리문론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11420266"
+    },
+    "titles": {
+      "ko": "인명정리문론",
+      "en": "Introduction to Logic",
+      "ja": "因明正理門論"
+    },
+    "creator": "Dignāga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009590": {
+    "workId": "wk_000009590",
+    "title": "천사의 귀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11442295"
+    },
+    "titles": {
+      "ko": "천사의 귀",
+      "en": "Q11442295",
+      "ja": "天使の耳"
+    },
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

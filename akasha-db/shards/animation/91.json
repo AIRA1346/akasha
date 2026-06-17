@@ -85,5 +85,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009485": {
+    "workId": "wk_000009485",
+    "title": "나의 히어로 아카데미아 더 무비: 히어로즈:라이징",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85846725"
+    },
+    "titles": {
+      "ko": "나의 히어로 아카데미아 더 무비: 히어로즈:라이징",
+      "en": "My Hero Academia: Heroes Rising",
+      "ja": "僕のヒーローアカデミア THE MOVIE　ヒーローズ：ライジング"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009873": {
+    "workId": "wk_000009873",
+    "title": "젠더 더비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q95582002"
+    },
+    "titles": {
+      "ko": "젠더 더비",
+      "en": "Gender Derby"
+    },
+    "creator": "Camille Ducellier",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

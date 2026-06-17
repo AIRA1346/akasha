@@ -58,5 +58,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009890": {
+    "workId": "wk_000009890",
+    "title": "기생여친 사나",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11455705"
+    },
+    "titles": {
+      "ko": "기생여친 사나",
+      "en": "Kisei Kanojo Sana",
+      "ja": "寄生彼女サナ"
+    },
+    "releaseYear": 2011,
+    "creator": "Izumo Sunagi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

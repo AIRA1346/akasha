@@ -76,5 +76,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010086": {
+    "workId": "wk_000010086",
+    "title": "트러스트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114761914"
+    },
+    "titles": {
+      "ko": "트러스트",
+      "en": "Trust"
+    },
+    "releaseYear": 2022,
+    "creator": "Hernán Díaz",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

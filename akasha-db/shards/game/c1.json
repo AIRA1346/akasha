@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009505": {
+    "workId": "wk_000009505",
+    "title": "마법소녀의 인습촌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134888914"
+    },
+    "titles": {
+      "ko": "마법소녀의 인습촌",
+      "en": "Magical Girl: Taboo Village",
+      "ja": "魔法少女ノ因習村"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

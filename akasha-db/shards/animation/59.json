@@ -161,5 +161,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009482": {
+    "workId": "wk_000009482",
+    "title": "시원찮은 그녀를 위한 육성방법 피날레",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85799121"
+    },
+    "titles": {
+      "ko": "시원찮은 그녀를 위한 육성방법 피날레",
+      "en": "Saekano the Movie: Finale",
+      "ja": "冴えない彼女の育てかた Fine"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009484": {
+    "workId": "wk_000009484",
+    "title": "시리얼 익스페러먼츠 레인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q858387"
+    },
+    "titles": {
+      "ko": "시리얼 익스페러먼츠 레인",
+      "en": "Serial Experiments Lain",
+      "ja": "serial experiments lain"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

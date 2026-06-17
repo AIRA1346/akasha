@@ -223,5 +223,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009162": {
+    "workId": "wk_000009162",
+    "title": "마에스트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119164235"
+    },
+    "titles": {
+      "ko": "마에스트라",
+      "en": "Maestra: Strings of Truth",
+      "ja": "マエストラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009166": {
+    "workId": "wk_000009166",
+    "title": "쿠나 데 로보스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192781"
+    },
+    "titles": {
+      "ko": "쿠나 데 로보스",
+      "en": "Cuna de lobos"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010221": {
+    "workId": "wk_000010221",
+    "title": "에스페란사 델 코라손",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247620"
+    },
+    "titles": {
+      "ko": "에스페란사 델 코라손",
+      "en": "Esperanza del Corazón"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

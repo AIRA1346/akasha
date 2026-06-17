@@ -181,5 +181,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010135": {
+    "workId": "wk_000010135",
+    "title": "파이널 판타지 VII 레벌레이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140074828"
+    },
+    "titles": {
+      "ko": "파이널 판타지 VII 레벌레이션",
+      "en": "Q140074828"
+    },
+    "releaseYear": 2027,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

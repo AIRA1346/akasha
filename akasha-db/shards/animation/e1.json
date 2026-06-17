@@ -72,5 +72,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000009433": {
+    "workId": "wk_000009433",
+    "title": "누가 맬컴 X를 죽였나?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85321437"
+    },
+    "titles": {
+      "ko": "누가 맬컴 X를 죽였나?",
+      "en": "Who Killed Malcolm X?",
+      "ja": "マルコムX暗殺の真相"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009756": {
+    "workId": "wk_000009756",
+    "title": "마이 오토메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q902496"
+    },
+    "titles": {
+      "ko": "마이 오토메",
+      "en": "My-Otome",
+      "ja": "舞-乙HiME"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

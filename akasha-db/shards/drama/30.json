@@ -176,5 +176,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000010101": {
+    "workId": "wk_000010101",
+    "title": "상혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124570428"
+    },
+    "titles": {
+      "ko": "상혼",
+      "en": "TradeWar"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010210": {
+    "workId": "wk_000010210",
+    "title": "대학체전 : 소년선수촌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124743854"
+    },
+    "titles": {
+      "ko": "대학체전 : 소년선수촌",
+      "en": "The League of Universities"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
