@@ -1,0 +1,36 @@
+{
+  "wk_000003443": {
+    "workId": "wk_000003443",
+    "title": "트레이스",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q8011104"
+    },
+    "titles": {
+      "ko": "트레이스",
+      "en": "Trace"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003538": {
+    "workId": "wk_000003538",
+    "title": "메모리스트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97235638"
+    },
+    "titles": {
+      "ko": "메모리스트",
+      "en": "Memorist"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -146,5 +146,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008004": {
+    "workId": "wk_000008004",
+    "title": "쿠로사키 말 따위 안 들을 거야",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20044088"
+    },
+    "titles": {
+      "ko": "쿠로사키 말 따위 안 들을 거야",
+      "en": "Defying Kurosaki-kun",
+      "ja": "黒崎くんの言いなりになんてならない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

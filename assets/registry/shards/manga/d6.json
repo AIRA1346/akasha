@@ -70,5 +70,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008127": {
+    "workId": "wk_000008127",
+    "title": "파렴치 학원",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2086005"
+    },
+    "titles": {
+      "ko": "파렴치 학원",
+      "en": "Harenchi Gakuen",
+      "ja": "ハレンチ学園"
+    },
+    "releaseYear": 1968,
+    "creator": "Go Nagai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

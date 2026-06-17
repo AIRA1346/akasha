@@ -1,0 +1,76 @@
+{
+  "wk_000003478": {
+    "workId": "wk_000003478",
+    "title": "소울 해커즈 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110981081"
+    },
+    "titles": {
+      "ko": "소울 해커즈 2",
+      "en": "Soul Hackers 2",
+      "ja": "ソウルハッカーズ2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004520": {
+    "workId": "wk_000004520",
+    "title": "불릿필리아들의 암시장 ~ 100th Black Market.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113195313"
+    },
+    "titles": {
+      "ko": "불릿필리아들의 암시장 ~ 100th Black Market.",
+      "en": "Barettofiriatachi no Yami-Ichiba ~ 100th Black Market",
+      "ja": "バレットフィリア達の闇市場 〜 100th Black Market."
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006204": {
+    "workId": "wk_000006204",
+    "title": "마도교각 ~어둠의 달여신은 도국에서 노래한다~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673710"
+    },
+    "titles": {
+      "ko": "마도교각 ~어둠의 달여신은 도국에서 노래한다~",
+      "en": "Madou Koukaku ~Yami no Tsuki Megami wa Doukoku de Utau~",
+      "ja": "魔導巧殻 〜闇の月女神は導国で詠う〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006286": {
+    "workId": "wk_000006286",
+    "title": "브램블: 산속의 왕",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117016519"
+    },
+    "titles": {
+      "ko": "브램블: 산속의 왕",
+      "en": "Bramble: The Mountain King"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

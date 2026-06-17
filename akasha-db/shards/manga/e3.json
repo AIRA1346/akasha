@@ -119,5 +119,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006671": {
+    "workId": "wk_000006671",
+    "title": "아카메가 벤다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1525793"
+    },
+    "titles": {
+      "ko": "아카메가 벤다!",
+      "en": "Akame ga Kill!",
+      "ja": "アカメが斬る!"
+    },
+    "releaseYear": 2010,
+    "creator": "Takahiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

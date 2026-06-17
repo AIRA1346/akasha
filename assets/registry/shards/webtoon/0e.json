@@ -1,0 +1,20 @@
+{
+  "wk_000002139": {
+    "workId": "wk_000002139",
+    "title": "인소의 법칙",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113209483"
+    },
+    "titles": {
+      "ko": "인소의 법칙",
+      "en": "My Life as an Internet Novel",
+      "ja": "ネット小説の法則"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

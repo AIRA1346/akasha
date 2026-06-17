@@ -88,5 +88,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007018": {
+    "workId": "wk_000007018",
+    "title": "두남 선생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112081345"
+    },
+    "titles": {
+      "ko": "두남 선생",
+      "en": "Tonan Sensei",
+      "ja": "斗南先生"
+    },
+    "releaseYear": 1942,
+    "creator": "Atsushi Nakajima",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007543": {
+    "workId": "wk_000007543",
+    "title": "아포얀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11258310"
+    },
+    "titles": {
+      "ko": "아포얀",
+      "en": "Apoyan",
+      "ja": "あぽやん"
+    },
+    "creator": "Takeshi Shinno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

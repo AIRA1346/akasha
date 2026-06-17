@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007042": {
+    "workId": "wk_000007042",
+    "title": "세일러 좀비",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16889995"
+    },
+    "titles": {
+      "ko": "세일러 좀비",
+      "en": "Sailor Zombie",
+      "ja": "セーラーゾンビ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

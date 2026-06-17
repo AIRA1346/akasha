@@ -1,0 +1,19 @@
+{
+  "wk_000003021": {
+    "workId": "wk_000003021",
+    "title": "이드",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3147752"
+    },
+    "titles": {
+      "ko": "이드",
+      "en": "Id"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

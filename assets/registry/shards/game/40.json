@@ -1,0 +1,116 @@
+{
+  "wk_000001111": {
+    "workId": "wk_000001111",
+    "title": "바이오하자드 코드: 베로니카",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050284"
+    },
+    "titles": {
+      "ko": "바이오하자드 코드: 베로니카",
+      "en": "Resident Evil – Code: Veronica",
+      "ja": "バイオハザード CODE:Veronica"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001503": {
+    "workId": "wk_000001503",
+    "title": "Pokémon LEGENDS 아르세우스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105688771"
+    },
+    "titles": {
+      "ko": "Pokémon LEGENDS 아르세우스",
+      "en": "Pokémon Legends: Arceus",
+      "ja": "Pokémon LEGENDS アルセウス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001559": {
+    "workId": "wk_000001559",
+    "title": "극상 파로디우스 -과거의 영광을 찾아서-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058736"
+    },
+    "titles": {
+      "ko": "극상 파로디우스 -과거의 영광을 찾아서-",
+      "en": "Gokujo Parodius",
+      "ja": "極上パロディウス 〜過去の栄光を求めて〜"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002234": {
+    "workId": "wk_000002234",
+    "title": "백일몽의 청사진",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107210102"
+    },
+    "titles": {
+      "ko": "백일몽의 청사진",
+      "en": "Cyanotype Daydream -The Girl Who Dreamed the World-",
+      "ja": "白昼夢の青写真"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002913": {
+    "workId": "wk_000002913",
+    "title": "택틱스 오거: 리본",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108649825"
+    },
+    "titles": {
+      "ko": "택틱스 오거: 리본",
+      "en": "Tactics Ogre: Wheel of Fortune",
+      "ja": "タクティクスオウガ 運命の輪"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004896": {
+    "workId": "wk_000004896",
+    "title": "아랑전설 와일드 앰비션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137028"
+    },
+    "titles": {
+      "ko": "아랑전설 와일드 앰비션",
+      "en": "Fatal Fury: Wild Ambition",
+      "ja": "餓狼伝説 WILD AMBITION"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

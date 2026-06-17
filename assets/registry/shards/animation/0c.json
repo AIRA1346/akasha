@@ -1,0 +1,113 @@
+{
+  "wk_000000581": {
+    "workId": "wk_000000581",
+    "title": "모래요정 바람돌이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1036951"
+    },
+    "titles": {
+      "ko": "모래요정 바람돌이",
+      "en": "Onegai! Samia-don",
+      "ja": "おねがい!サミアどん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000919": {
+    "workId": "wk_000000919",
+    "title": "야스케",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106404099"
+    },
+    "titles": {
+      "ko": "야스케",
+      "en": "Yasuke",
+      "ja": "YASUKE －ヤスケ－"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001121": {
+    "workId": "wk_000001121",
+    "title": "신무월의 무녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107209992"
+    },
+    "titles": {
+      "ko": "신무월의 무녀",
+      "en": "Kannazuki no Miko",
+      "ja": "神無月の巫女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001233": {
+    "workId": "wk_000001233",
+    "title": "도라에몽 노비타와 철인병단",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076767"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 철인병단",
+      "en": "Doraemon: Nobita and the Steel Troops",
+      "ja": "ドラえもん のび太と鉄人兵団"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001621": {
+    "workId": "wk_000001621",
+    "title": "프린세스 프린서플 크라운 핸들러 제2장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112194600"
+    },
+    "titles": {
+      "ko": "프린세스 프린서플 크라운 핸들러 제2장",
+      "en": "Princess Principal: Crown Handler – Chapter 2",
+      "ja": "プリンセス・プリンシパル Crown Handler 第2章"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001869": {
+    "workId": "wk_000001869",
+    "title": "방과후의 플레이아데스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135343"
+    },
+    "titles": {
+      "ko": "방과후의 플레이아데스",
+      "en": "Wish Upon the Pleiades",
+      "ja": "放課後のプレアデス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "wk_000001189": {
+    "workId": "wk_000001189",
+    "title": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103822236"
+    },
+    "titles": {
+      "ko": "궁극 진화한 풀다이브RPG가 현실보다 망겜이라면",
+      "en": "Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!",
+      "ja": "究極進化したフルダイブRPGが現実よりもクソゲーだったら"
+    },
+    "creator": "土日月",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001714": {
+    "workId": "wk_000001714",
+    "title": "자비의 시간",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104875432"
+    },
+    "titles": {
+      "ko": "자비의 시간",
+      "en": "A Time for Mercy"
+    },
+    "releaseYear": 2020,
+    "creator": "John Grisham",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002413": {
+    "workId": "wk_000002413",
+    "title": "평화란 이름의 폐허",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105722561"
+    },
+    "titles": {
+      "ko": "평화란 이름의 폐허",
+      "en": "A Desolation Called Peace",
+      "ja": "平和という名の廃墟"
+    },
+    "releaseYear": 2021,
+    "creator": "Arkady Martine",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004022": {
+    "workId": "wk_000004022",
+    "title": "노란 코끼리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10813251"
+    },
+    "titles": {
+      "ko": "노란 코끼리",
+      "en": "Yellow elephant",
+      "ja": "きいろいゾウ"
+    },
+    "releaseYear": 2013,
+    "creator": "Kanako Nishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004664": {
+    "workId": "wk_000004664",
+    "title": "그후의 삶",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108830528"
+    },
+    "titles": {
+      "ko": "그후의 삶",
+      "en": "Afterlives"
+    },
+    "releaseYear": 2020,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006140": {
+    "workId": "wk_000006140",
+    "title": "새로 엮은 옛이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11079012"
+    },
+    "titles": {
+      "ko": "새로 엮은 옛이야기",
+      "en": "Old Tales Retold"
+    },
+    "releaseYear": 1935,
+    "creator": "Lu Xun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

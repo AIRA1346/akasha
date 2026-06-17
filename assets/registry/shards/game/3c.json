@@ -1,0 +1,97 @@
+{
+  "wk_000003121": {
+    "workId": "wk_000003121",
+    "title": "베리어스 데이라이프",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109373920"
+    },
+    "titles": {
+      "ko": "베리어스 데이라이프",
+      "en": "Various Daylife",
+      "ja": "VARIOUS DAYLIFE"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003376": {
+    "workId": "wk_000003376",
+    "title": "뱀파이어 서바이버즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110726215"
+    },
+    "titles": {
+      "ko": "뱀파이어 서바이버즈",
+      "en": "Vampire Survivors",
+      "ja": "Vampire Survivors"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003999": {
+    "workId": "wk_000003999",
+    "title": "대항해시대 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233568"
+    },
+    "titles": {
+      "ko": "대항해시대 3",
+      "en": "Q11233568",
+      "ja": "大航海時代III Costa del Sol"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004012": {
+    "workId": "wk_000004012",
+    "title": "바사라2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242914"
+    },
+    "titles": {
+      "ko": "바사라2",
+      "en": "Q11242914",
+      "ja": "婆裟羅2"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004657": {
+    "workId": "wk_000004657",
+    "title": "라쿠가키 쇼타임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11346665"
+    },
+    "titles": {
+      "ko": "라쿠가키 쇼타임",
+      "en": "Rakugaki Showtime",
+      "ja": "ラクガキショータイム"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

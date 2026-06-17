@@ -1,0 +1,40 @@
+{
+  "wk_000003944": {
+    "workId": "wk_000003944",
+    "title": "위키백과:위키백과 중독",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10786016"
+    },
+    "titles": {
+      "ko": "위키백과:위키백과 중독",
+      "en": "Wikipedia:Wikipediholic",
+      "ja": "Wikipedia:ウィキペディア中毒"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005770": {
+    "workId": "wk_000005770",
+    "title": "탱고 찰리와 폭스트롯 로미오",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109826025"
+    },
+    "titles": {
+      "ko": "탱고 찰리와 폭스트롯 로미오",
+      "en": "Tango Charlie and Foxtrot Romeo",
+      "ja": "タンゴ・チャーリーとフォックストロット・ロミオ"
+    },
+    "releaseYear": 1986,
+    "creator": "John Varley",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

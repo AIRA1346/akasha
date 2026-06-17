@@ -159,5 +159,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007459": {
+    "workId": "wk_000007459",
+    "title": "그대는 음란한 나의 여왕",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17990364"
+    },
+    "titles": {
+      "ko": "그대는 음란한 나의 여왕",
+      "en": "Kimi wa Midara na Boku no Joō",
+      "ja": "君は淫らな僕の女王"
+    },
+    "releaseYear": 2017,
+    "creator": "Lynn Okamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "wk_000005176": {
+    "workId": "wk_000005176",
+    "title": "라잇 온 미",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059435"
+    },
+    "titles": {
+      "ko": "라잇 온 미",
+      "en": "Keep the Lights On"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005922": {
+    "workId": "wk_000005922",
+    "title": "신 가면라이더",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106364049"
+    },
+    "titles": {
+      "ko": "신 가면라이더",
+      "en": "Shin Kamen Rider",
+      "ja": "シン・仮面ライダー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

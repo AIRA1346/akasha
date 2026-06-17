@@ -1,0 +1,145 @@
+{
+  "wk_000000586": {
+    "workId": "wk_000000586",
+    "title": "에토스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101542419"
+    },
+    "titles": {
+      "ko": "에토스",
+      "en": "Ethos",
+      "ja": "イスタンブールの8人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001000": {
+    "workId": "wk_000001000",
+    "title": "손 야즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104775921"
+    },
+    "titles": {
+      "ko": "손 야즈",
+      "en": "Son Yaz"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001367": {
+    "workId": "wk_000001367",
+    "title": "MUSIC BLOOD",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106171336"
+    },
+    "titles": {
+      "ko": "MUSIC BLOOD",
+      "en": "MUSIC BLOOD",
+      "ja": "MUSIC BLOOD"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002020": {
+    "workId": "wk_000002020",
+    "title": "달콤한 인생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856450"
+    },
+    "titles": {
+      "ko": "달콤한 인생",
+      "en": "La Dolce Vita",
+      "ja": "甘い人生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002184": {
+    "workId": "wk_000002184",
+    "title": "노기자카는 어디?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10877647"
+    },
+    "titles": {
+      "ko": "노기자카는 어디?",
+      "en": "Nogizaka tte, Doko?",
+      "ja": "乃木坂って、どこ?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002443": {
+    "workId": "wk_000002443",
+    "title": "왜 오수재인가?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109313772"
+    },
+    "titles": {
+      "ko": "왜 오수재인가?",
+      "en": "Why Her",
+      "ja": "なぜオ・スジェなのか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004620": {
+    "workId": "wk_000004620",
+    "title": "러브추격자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073755"
+    },
+    "titles": {
+      "ko": "러브추격자",
+      "en": "Love Chaser"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004693": {
+    "workId": "wk_000004693",
+    "title": "환혼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110890248"
+    },
+    "titles": {
+      "ko": "환혼",
+      "en": "Alchemy of Souls",
+      "ja": "還魂"
+    },
+    "creator": "Hong sisters",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

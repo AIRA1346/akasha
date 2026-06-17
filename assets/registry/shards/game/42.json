@@ -1,0 +1,107 @@
+{
+  "wk_000000097": {
+    "workId": "wk_000000097",
+    "title": "레인보우 식스 시즈",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Ubisoft",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid359550_2015"
+    ],
+    "titles": {
+      "en": "Tom Clancy's Rainbow Six Siege",
+      "ko": "레인보우 식스 시즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "359550",
+      "wikidata": "Q17183996"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000105": {
+    "workId": "wk_000000105",
+    "title": "포털",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2007,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid400_2007"
+    ],
+    "titles": {
+      "en": "Portal",
+      "ko": "포털"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "400",
+      "wikidata": "Q274897"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000566": {
+    "workId": "wk_000000566",
+    "title": "NEO: 더 월드 엔즈 위드 유",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102356256"
+    },
+    "titles": {
+      "ko": "NEO: 더 월드 엔즈 위드 유",
+      "en": "NEO: The World Ends With You",
+      "ja": "新すばらしきこのせかい"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000966": {
+    "workId": "wk_000000966",
+    "title": "월희 -A piece of blue glass moon-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104627268"
+    },
+    "titles": {
+      "ko": "월희 -A piece of blue glass moon-",
+      "en": "Tsukihime: A piece of blue glass moon",
+      "ja": "月姫 -A piece of blue glass moon-"
+    },
+    "releaseYear": 2024,
+    "creator": "Kinoko Nasu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

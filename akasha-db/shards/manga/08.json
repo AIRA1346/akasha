@@ -84,5 +84,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007644": {
+    "workId": "wk_000007644",
+    "title": "진유기 - 타로와 유쾌한 동료들 -",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18417065"
+    },
+    "titles": {
+      "ko": "진유기 - 타로와 유쾌한 동료들 -",
+      "en": "Chin'yūki: Tarō to yukaina nakama-tachi",
+      "ja": "珍遊記 -太郎とゆかいな仲間たち-"
+    },
+    "creator": "Gatarō Man",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

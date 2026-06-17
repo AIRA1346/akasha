@@ -1,0 +1,57 @@
+{
+  "wk_000001536": {
+    "workId": "wk_000001536",
+    "title": "우국의 라스푸틴",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263071"
+    },
+    "titles": {
+      "ko": "우국의 라스푸틴",
+      "en": "Rasputin the Patriot",
+      "ja": "憂国のラスプーチン"
+    },
+    "creator": "Takashi Nagasaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004875": {
+    "workId": "wk_000004875",
+    "title": "풀 나이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123221346"
+    },
+    "titles": {
+      "ko": "풀 나이트",
+      "en": "Fool Night",
+      "ja": "フールナイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005472": {
+    "workId": "wk_000005472",
+    "title": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130244348"
+    },
+    "titles": {
+      "ko": "조금 사랑이 과한 다크엘프가 이세계에서 따라왔다",
+      "en": "Yandere Dark Elf",
+      "ja": "ちょっとだけ愛が重いダークエルフが異世界から追いかけてきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

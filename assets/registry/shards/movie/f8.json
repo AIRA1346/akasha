@@ -1,0 +1,39 @@
+{
+  "wk_000004851": {
+    "workId": "wk_000004851",
+    "title": "피트 시장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105883095"
+    },
+    "titles": {
+      "ko": "피트 시장",
+      "en": "Mayor Pete"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005309": {
+    "workId": "wk_000005309",
+    "title": "볼케이노",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059532"
+    },
+    "titles": {
+      "ko": "볼케이노",
+      "en": "Volcano",
+      "ja": "ボルケーノ"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

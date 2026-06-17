@@ -1,0 +1,59 @@
+{
+  "wk_000001180": {
+    "workId": "wk_000001180",
+    "title": "화이트 타이거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101098258"
+    },
+    "titles": {
+      "ko": "화이트 타이거",
+      "en": "The White Tiger",
+      "ja": "ザ・ホワイト・タイガー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004108": {
+    "workId": "wk_000004108",
+    "title": "무서운 영화 4",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055299"
+    },
+    "titles": {
+      "ko": "무서운 영화 4",
+      "en": "Scary Movie 4",
+      "ja": "最終絶叫計画4"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006148": {
+    "workId": "wk_000006148",
+    "title": "멘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106514711"
+    },
+    "titles": {
+      "ko": "멘",
+      "en": "Men",
+      "ja": "メン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

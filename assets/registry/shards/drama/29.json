@@ -1,0 +1,72 @@
+{
+  "wk_000001680": {
+    "workId": "wk_000001680",
+    "title": "블리피",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108031224"
+    },
+    "titles": {
+      "ko": "블리피",
+      "en": "Blippi",
+      "ja": "Blippi"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002872": {
+    "workId": "wk_000002872",
+    "title": "KBS배 쟁탈 전국노래자랑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457689"
+    },
+    "titles": {
+      "ko": "KBS배 쟁탈 전국노래자랑",
+      "en": "Q109457689"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003899": {
+    "workId": "wk_000003899",
+    "title": "100인의 선택, 턴업 2019",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110113663"
+    },
+    "titles": {
+      "ko": "100인의 선택, 턴업 2019",
+      "en": "Q110113663"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005390": {
+    "workId": "wk_000005390",
+    "title": "브라더스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246785"
+    },
+    "titles": {
+      "ko": "브라더스",
+      "en": "Q11246785",
+      "ja": "ブラザーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

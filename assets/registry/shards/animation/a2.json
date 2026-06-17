@@ -1,0 +1,162 @@
+{
+  "wk_000000243": {
+    "workId": "wk_000000243",
+    "title": "도쿄 리벤저스",
+    "titles": {
+      "ko": "도쿄 리벤저스",
+      "en": "Tokyo Revengers",
+      "ja": "東京卍リベンジャーズ"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "와카이 켄",
+    "releaseYear": 2021,
+    "tags": [
+      "액션",
+      "시간여행",
+      "조직",
+      "청춘"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2021,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2023,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "2기",
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_tokyo-revengers_2021"
+    ],
+    "externalIds": {
+      "tmdb": "95481",
+      "wikidata": "Q100255568"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000664": {
+    "workId": "wk_000000664",
+    "title": "항설백물어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045857"
+    },
+    "titles": {
+      "ko": "항설백물어",
+      "en": "Requiem from the Darkness",
+      "ja": "巷説百物語"
+    },
+    "releaseYear": 2003,
+    "creator": "Natsuhiko Kyōgoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001391": {
+    "workId": "wk_000001391",
+    "title": "BIRDIE WING -Golf Girls' Story-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109295346"
+    },
+    "titles": {
+      "ko": "BIRDIE WING -Golf Girls' Story-",
+      "en": "Birdie Wing: Golf Girls' Story",
+      "ja": "BIRDIE WING -Golf Girls' Story-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001576": {
+    "workId": "wk_000001576",
+    "title": "사운드트랙 #1",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110831610"
+    },
+    "titles": {
+      "ko": "사운드트랙 #1",
+      "en": "Soundtrack #1",
+      "ja": "サウンドトラック ＃1"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001911": {
+    "workId": "wk_000001911",
+    "title": "북두의 권",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11362502"
+    },
+    "titles": {
+      "ko": "북두의 권",
+      "en": "Fist of the North Star",
+      "ja": "北斗の拳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004062": {
+    "workId": "wk_000004062",
+    "title": "도라에몽 노비타와 이상한 풍사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1309592"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타와 이상한 풍사",
+      "en": "Doraemon: Nobita and the Windmasters",
+      "ja": "ドラえもん のび太とふしぎ風使い"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004359": {
+    "workId": "wk_000004359",
+    "title": "엑셀 사가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1338812"
+    },
+    "titles": {
+      "ko": "엑셀 사가",
+      "en": "Excel Saga",
+      "ja": "エクセル・サーガ"
+    },
+    "releaseYear": 2001,
+    "creator": "Kōshi Rikudō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

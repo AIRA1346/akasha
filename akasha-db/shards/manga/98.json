@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006790": {
+    "workId": "wk_000006790",
+    "title": "샌드 랜드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1573106"
+    },
+    "titles": {
+      "ko": "샌드 랜드",
+      "en": "Sand Land",
+      "ja": "SAND LAND"
+    },
+    "creator": "Akira Toriyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

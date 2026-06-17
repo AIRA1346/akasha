@@ -1,0 +1,21 @@
+{
+  "wk_000004501": {
+    "workId": "wk_000004501",
+    "title": "명탐정 코난: 하이웨이의 타천사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136049243"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 하이웨이의 타천사",
+      "en": "Q136049243",
+      "ja": "名探偵コナン ハイウェイの堕天使"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

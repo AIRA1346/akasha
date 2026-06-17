@@ -1,0 +1,38 @@
+{
+  "wk_000003057": {
+    "workId": "wk_000003057",
+    "title": "대성당의 살인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104881541"
+    },
+    "titles": {
+      "ko": "대성당의 살인",
+      "en": "Murder in the Cathedral"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003145": {
+    "workId": "wk_000003145",
+    "title": "세자매",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104899860"
+    },
+    "titles": {
+      "ko": "세자매",
+      "en": "Three Sisters",
+      "ja": "三姉妹"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

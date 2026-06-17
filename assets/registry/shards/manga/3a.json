@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007266": {
+    "workId": "wk_000007266",
+    "title": "엘드라이브",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17218781"
+    },
+    "titles": {
+      "ko": "엘드라이브",
+      "en": "ēlDLIVE",
+      "ja": "エルドライブ【élDLIVE】"
+    },
+    "creator": "Akira Amano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

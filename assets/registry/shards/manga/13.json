@@ -1,0 +1,20 @@
+{
+  "wk_000004414": {
+    "workId": "wk_000004414",
+    "title": "도라베이스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193452"
+    },
+    "titles": {
+      "ko": "도라베이스",
+      "en": "Dorabase",
+      "ja": "ドラベース ドラえもん超野球外伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

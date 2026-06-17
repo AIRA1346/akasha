@@ -1,0 +1,20 @@
+{
+  "wk_000002289": {
+    "workId": "wk_000002289",
+    "title": "무빙",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122457356"
+    },
+    "titles": {
+      "ko": "무빙",
+      "en": "Moving"
+    },
+    "creator": "Kang Full",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -118,5 +118,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007395": {
+    "workId": "wk_000007395",
+    "title": "하나's lip",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17478758"
+    },
+    "titles": {
+      "ko": "하나's lip",
+      "en": "Hina's Lip",
+      "ja": "陽菜'sリップ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007743": {
+    "workId": "wk_000007743",
+    "title": "드래곤 드림",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1888512"
+    },
+    "titles": {
+      "ko": "드래곤 드림",
+      "en": "Shadow Star",
+      "ja": "なるたる"
+    },
+    "creator": "Mohiro Kitoh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

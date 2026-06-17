@@ -1,0 +1,59 @@
+{
+  "wk_000003151": {
+    "workId": "wk_000003151",
+    "title": "라이거",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104904706"
+    },
+    "titles": {
+      "ko": "라이거",
+      "en": "Liger",
+      "ja": "Liger"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004737": {
+    "workId": "wk_000004737",
+    "title": "나폴레옹",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105806948"
+    },
+    "titles": {
+      "ko": "나폴레옹",
+      "en": "Napoleon",
+      "ja": "ナポレオン"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006301": {
+    "workId": "wk_000006301",
+    "title": "내 가장 친한 친구의 엑소시즘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106608773"
+    },
+    "titles": {
+      "ko": "내 가장 친한 친구의 엑소시즘",
+      "en": "My Best Friend's Exorcism",
+      "ja": "ベスト･フレンズ･エクソシズム"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

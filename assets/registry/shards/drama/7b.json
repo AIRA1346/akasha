@@ -1,0 +1,160 @@
+{
+  "wk_000000494": {
+    "workId": "wk_000000494",
+    "title": "지옥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100934044"
+    },
+    "titles": {
+      "ko": "지옥",
+      "en": "Hellbound",
+      "ja": "地獄が呼んでいる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000769": {
+    "workId": "wk_000000769",
+    "title": "주니어 유로비전 송 콘테스트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103665"
+    },
+    "titles": {
+      "ko": "주니어 유로비전 송 콘테스트",
+      "en": "Junior Eurovision Song Contest",
+      "ja": "ジュニア・ユーロビジョン・ソング・コンテスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001094": {
+    "workId": "wk_000001094",
+    "title": "안녕? 나야!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105044860"
+    },
+    "titles": {
+      "ko": "안녕? 나야!",
+      "en": "Hello, Me!",
+      "ja": "こんにちは? 私だよ!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001252": {
+    "workId": "wk_000001252",
+    "title": "헬프스터즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105612347"
+    },
+    "titles": {
+      "ko": "헬프스터즈",
+      "en": "Helpsters",
+      "ja": "Helpsters 〜お助けモンスターズ〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002357": {
+    "workId": "wk_000002357",
+    "title": "일견경심 : 첫눈에 반하다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109256659"
+    },
+    "titles": {
+      "ko": "일견경심 : 첫눈에 반하다",
+      "en": "Q109256659"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003077": {
+    "workId": "wk_000003077",
+    "title": "썰바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458871"
+    },
+    "titles": {
+      "ko": "썰바이벌",
+      "en": "Ser Vival"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003501": {
+    "workId": "wk_000003501",
+    "title": "화요청백전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461604"
+    },
+    "titles": {
+      "ko": "화요청백전",
+      "en": "Q109461604"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003761": {
+    "workId": "wk_000003761",
+    "title": "U스타 오디션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546600"
+    },
+    "titles": {
+      "ko": "U스타 오디션",
+      "en": "Q109546600"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004120": {
+    "workId": "wk_000004120",
+    "title": "생방송 뭐든지 해결단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115285"
+    },
+    "titles": {
+      "ko": "생방송 뭐든지 해결단",
+      "en": "Q110115285"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "wk_000001540": {
+    "workId": "wk_000001540",
+    "title": "라 브레아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106726747"
+    },
+    "titles": {
+      "ko": "라 브레아",
+      "en": "La Brea",
+      "ja": "ラ・ブレア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002192": {
+    "workId": "wk_000002192",
+    "title": "별똥별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108869539"
+    },
+    "titles": {
+      "ko": "별똥별",
+      "en": "Sh**ting Stars",
+      "ja": "流れ星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003827": {
+    "workId": "wk_000003827",
+    "title": "날아보자!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109597006"
+    },
+    "titles": {
+      "ko": "날아보자!",
+      "en": "Maiagare!",
+      "ja": "舞いあがれ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004036": {
+    "workId": "wk_000004036",
+    "title": "대한민국 아이디어리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114679"
+    },
+    "titles": {
+      "ko": "대한민국 아이디어리그",
+      "en": "Q110114679"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004624": {
+    "workId": "wk_000004624",
+    "title": "대만 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11075224"
+    },
+    "titles": {
+      "ko": "대만 이야기",
+      "en": "Taiwan Story",
+      "ja": "台湾物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005873": {
+    "workId": "wk_000005873",
+    "title": "정말로 있었던 무서운 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277884"
+    },
+    "titles": {
+      "ko": "정말로 있었던 무서운 이야기",
+      "en": "The really scary stories",
+      "ja": "ほんとにあった怖い話"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005874": {
+    "workId": "wk_000005874",
+    "title": "나의 여름 방학",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277963"
+    },
+    "titles": {
+      "ko": "나의 여름 방학",
+      "en": "My Summer Vacation",
+      "ja": "ぼくの夏休み"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

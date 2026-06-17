@@ -1,0 +1,39 @@
+{
+  "wk_000000571": {
+    "workId": "wk_000000571",
+    "title": "최애가 부도칸에 가 준다면 난 죽어도 좋아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101970684"
+    },
+    "titles": {
+      "ko": "최애가 부도칸에 가 준다면 난 죽어도 좋아",
+      "en": "If My Favorite Pop Idol Made It to the Budokan, I Would Die",
+      "ja": "推しが武道館いってくれたら死ぬ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001020": {
+    "workId": "wk_000001020",
+    "title": "사슴의 왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106707387"
+    },
+    "titles": {
+      "ko": "사슴의 왕",
+      "en": "The Deer King",
+      "ja": "鹿の王 ユナと約束の旅"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

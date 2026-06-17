@@ -1,0 +1,90 @@
+{
+  "wk_000000110": {
+    "workId": "wk_000000110",
+    "title": "Nioh",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Ninja",
+    "releaseYear": 2017,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid485510_2017"
+    ],
+    "titles": {
+      "en": "Save 85% on Nioh: Complete Edition",
+      "ko": "Nioh"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "485510",
+      "wikidata": "Q7023416"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002836": {
+    "workId": "wk_000002836",
+    "title": "고인돌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108562421"
+    },
+    "titles": {
+      "ko": "고인돌",
+      "en": "Goindol"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003205": {
+    "workId": "wk_000003205",
+    "title": "쿼스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1098202"
+    },
+    "titles": {
+      "ko": "쿼스",
+      "en": "Block Hole",
+      "ja": "クォース"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005984": {
+    "workId": "wk_000005984",
+    "title": "다크 앤 다커",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115729950"
+    },
+    "titles": {
+      "ko": "다크 앤 다커",
+      "en": "Dark and Darker"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

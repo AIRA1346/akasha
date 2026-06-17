@@ -1,0 +1,21 @@
+{
+  "wk_000000802": {
+    "workId": "wk_000000802",
+    "title": "아오하라이드",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033328"
+    },
+    "titles": {
+      "ko": "아오하라이드",
+      "en": "Ao Haru Ride",
+      "ja": "アオハライド"
+    },
+    "creator": "Io Sakisaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

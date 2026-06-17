@@ -1,0 +1,59 @@
+{
+  "wk_000004295": {
+    "workId": "wk_000004295",
+    "title": "모두의 상식력 텔레비전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279471"
+    },
+    "titles": {
+      "ko": "모두의 상식력 텔레비전",
+      "en": "Minna no Jōshikiryoku Terebi",
+      "ja": "みんなの常識力テレビ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004660": {
+    "workId": "wk_000004660",
+    "title": "네오 안젤리크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134973"
+    },
+    "titles": {
+      "ko": "네오 안젤리크",
+      "en": "Neo Angelique",
+      "ja": "ネオ アンジェリーク"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004773": {
+    "workId": "wk_000004773",
+    "title": "불가사의 던전 떠돌이 시렌 4: 신의 눈과 악마의 배꼽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361731"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 4: 신의 눈과 악마의 배꼽",
+      "en": "Shiren the Wanderer 4: The Eye of God and the Devil's Navel",
+      "ja": "不思議のダンジョン 風来のシレン4 神の眼と悪魔のヘソ"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

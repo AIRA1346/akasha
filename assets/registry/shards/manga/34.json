@@ -36,5 +36,43 @@
     "qualitySignals": {
       "externalIdVerified": true
     }
+  },
+  "wk_000006672": {
+    "workId": "wk_000006672",
+    "title": "신들의 산령",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1526490"
+    },
+    "titles": {
+      "ko": "신들의 산령",
+      "en": "The Summit of the Gods",
+      "ja": "神々の山嶺"
+    },
+    "creator": "Jiro Taniguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007331": {
+    "workId": "wk_000007331",
+    "title": "집주인은 사춘기!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17223559"
+    },
+    "titles": {
+      "ko": "집주인은 사춘기!",
+      "en": "Ooya-san wa Shishunki!",
+      "ja": "大家さんは思春期！"
+    },
+    "creator": "Ruru Minase",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

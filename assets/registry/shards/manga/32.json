@@ -1,0 +1,58 @@
+{
+  "wk_000001292": {
+    "workId": "wk_000001292",
+    "title": "매리지 톡신",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112114773"
+    },
+    "titles": {
+      "ko": "매리지 톡신",
+      "en": "Marriagetoxin",
+      "ja": "マリッジトキシン"
+    },
+    "creator": "Jōmyaku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005540": {
+    "workId": "wk_000005540",
+    "title": "전주교실",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130486655"
+    },
+    "titles": {
+      "ko": "전주교실",
+      "en": "The Bugle Call: Song of War",
+      "ja": "戦奏教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005950": {
+    "workId": "wk_000005950",
+    "title": "카페 알파",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321644"
+    },
+    "titles": {
+      "ko": "카페 알파",
+      "en": "Yokohama Kaidashi Kikō",
+      "ja": "ヨコハマ買い出し紀行"
+    },
+    "creator": "Hitoshi Ashinano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

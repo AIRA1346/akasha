@@ -1,0 +1,97 @@
+{
+  "wk_000002902": {
+    "workId": "wk_000002902",
+    "title": "기동전사 건담 복수의 레퀴엠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120231924"
+    },
+    "titles": {
+      "ko": "기동전사 건담 복수의 레퀴엠",
+      "en": "Gundam: Requiem For Vengeance",
+      "ja": "機動戦士ガンダム 復讐のレクイエム"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003196": {
+    "workId": "wk_000003196",
+    "title": "북극백화점의 안내원",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122776703"
+    },
+    "titles": {
+      "ko": "북극백화점의 안내원",
+      "en": "The Concierge at Hokkyoku Department Store",
+      "ja": "北極百貨店のコンシェルジュさん"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004152": {
+    "workId": "wk_000004152",
+    "title": "흘러가는 나날, 밥은 맛있어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131606570"
+    },
+    "titles": {
+      "ko": "흘러가는 나날, 밥은 맛있어",
+      "en": "Food for the Soul",
+      "ja": "日々は過ぎれど飯うまし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005223": {
+    "workId": "wk_000005223",
+    "title": "와카코 술",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18394334"
+    },
+    "titles": {
+      "ko": "와카코 술",
+      "en": "Wakakozake",
+      "ja": "ワカコ酒"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006265": {
+    "workId": "wk_000006265",
+    "title": "미라클 자이언츠 도무군",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2634726"
+    },
+    "titles": {
+      "ko": "미라클 자이언츠 도무군",
+      "en": "Miracle Giants Dome-kun",
+      "ja": "ミラクルジャイアンツ童夢くん"
+    },
+    "releaseYear": 1988,
+    "creator": "Shōtarō Ishinomori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

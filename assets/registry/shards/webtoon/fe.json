@@ -1,0 +1,19 @@
+{
+  "wk_000002140": {
+    "workId": "wk_000002140",
+    "title": "하나의 하루",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113209545"
+    },
+    "titles": {
+      "ko": "하나의 하루",
+      "en": "Days of Hana"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

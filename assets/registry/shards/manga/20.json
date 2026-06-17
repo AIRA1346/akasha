@@ -1,0 +1,57 @@
+{
+  "wk_000003172": {
+    "workId": "wk_000003172",
+    "title": "미카도노 세 자매는 의외로 쉽다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115313656"
+    },
+    "titles": {
+      "ko": "미카도노 세 자매는 의외로 쉽다",
+      "en": "Dealing with Mikadono Sisters Is a Breeze",
+      "ja": "帝乃三姉妹は案外、チョロい。"
+    },
+    "creator": "Aya Hirakawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004701": {
+    "workId": "wk_000004701",
+    "title": "노을빛 아웃포커스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120402151"
+    },
+    "titles": {
+      "ko": "노을빛 아웃포커스",
+      "en": "Twilight Out of Focus",
+      "ja": "黄昏アウトフォーカス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005542": {
+    "workId": "wk_000005542",
+    "title": "착각하는 공방주 ~영웅 파티의 전 잡무 담당이, 실은 전투 이외가 SSS 랭크였다는 흔히 있는 이야기~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130553562"
+    },
+    "titles": {
+      "ko": "착각하는 공방주 ~영웅 파티의 전 잡무 담당이, 실은 전투 이외가 SSS 랭크였다는 흔히 있는 이야기~",
+      "en": "The Unaware Atelier Master",
+      "ja": "勘違いの工房主～英雄パーティの元雑用係が、実は戦闘以外がSSSランクだったというよくある話～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

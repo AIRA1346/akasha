@@ -126,5 +126,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006859": {
+    "workId": "wk_000006859",
+    "title": "만화로 쉽게 배우는",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16350863"
+    },
+    "titles": {
+      "ko": "만화로 쉽게 배우는",
+      "en": "The Manga Guides",
+      "ja": "マンガでわかるシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007149": {
+    "workId": "wk_000007149",
+    "title": "마법소녀 사이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17209978"
+    },
+    "titles": {
+      "ko": "마법소녀 사이트",
+      "en": "Magical Girl Site",
+      "ja": "魔法少女サイト"
+    },
+    "releaseYear": 2013,
+    "creator": "Kentarō Satō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

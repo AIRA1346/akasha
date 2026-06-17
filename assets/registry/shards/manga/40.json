@@ -1,0 +1,59 @@
+{
+  "wk_000000690": {
+    "workId": "wk_000000690",
+    "title": "괴물 부리는 츠나",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855466"
+    },
+    "titles": {
+      "ko": "괴물 부리는 츠나",
+      "en": "Kaibutsu-zukai Tsuna!",
+      "ja": "怪物づかいツナ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001608": {
+    "workId": "wk_000001608",
+    "title": "태양의 집",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11270742"
+    },
+    "titles": {
+      "ko": "태양의 집",
+      "en": "House of the Sun",
+      "ja": "たいようのいえ"
+    },
+    "creator": "Taamo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005206": {
+    "workId": "wk_000005206",
+    "title": "너와 우주를 걷기 위하여",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125536048"
+    },
+    "titles": {
+      "ko": "너와 우주를 걷기 위하여",
+      "en": "Spacewalking With You",
+      "ja": "君と宇宙を歩くために"
+    },
+    "releaseYear": 2024,
+    "creator": "Inuhiko Doronoda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

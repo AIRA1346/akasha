@@ -1,0 +1,94 @@
+{
+  "wk_000000278": {
+    "workId": "wk_000000278",
+    "title": "옥토패스 트래블러",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Square Enix",
+    "releaseYear": 2018,
+    "tags": [
+      "JRPG",
+      "판타지",
+      "HD-2D",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_octopath-traveler_2018"
+    ],
+    "titles": {
+      "en": "OCTOPATH TRAVELER™",
+      "ko": "옥토패스 트래블러"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "921570",
+      "wikidata": "Q40887608"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001688": {
+    "workId": "wk_000001688",
+    "title": "리볼트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065861"
+    },
+    "titles": {
+      "ko": "리볼트",
+      "en": "Re-Volt",
+      "ja": "リボルト"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003290": {
+    "workId": "wk_000003290",
+    "title": "변덕쟁이 템프테이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110400392"
+    },
+    "titles": {
+      "ko": "변덕쟁이 템프테이션",
+      "en": "Kimagure Temptation",
+      "ja": "きまぐれテンプテーション"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005495": {
+    "workId": "wk_000005495",
+    "title": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1149927"
+    },
+    "titles": {
+      "ko": "불타올라라! 열혈 리듬혼 오쓰! 싸워라! 응원단 2",
+      "en": "Moero! Nekketsu Rhythm Damashii Osu! Tatakae! Ouendan 2",
+      "ja": "燃えろ!熱血リズム魂 押忍!闘え!応援団2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

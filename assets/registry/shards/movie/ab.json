@@ -1,0 +1,21 @@
+{
+  "wk_000001771": {
+    "workId": "wk_000001771",
+    "title": "내 사랑 신디",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1034060"
+    },
+    "titles": {
+      "ko": "내 사랑 신디",
+      "en": "Can't Buy Me Love",
+      "ja": "キャント・バイ・ミー・ラブ"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

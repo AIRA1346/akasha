@@ -103,5 +103,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007391": {
+    "workId": "wk_000007391",
+    "title": "칸나기",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1723828"
+    },
+    "titles": {
+      "ko": "칸나기",
+      "en": "Kannagi: Crazy Shrine Maidens",
+      "ja": "かんなぎ"
+    },
+    "creator": "Eri Takenashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

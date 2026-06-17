@@ -1,0 +1,210 @@
+{
+  "wk_000000489": {
+    "workId": "wk_000000489",
+    "title": "철인왕후",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100605045"
+    },
+    "titles": {
+      "ko": "철인왕후",
+      "en": "Mr. Queen",
+      "ja": "哲仁王后"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001211": {
+    "workId": "wk_000001211",
+    "title": "속아도 꿈결",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105530974"
+    },
+    "titles": {
+      "ko": "속아도 꿈결",
+      "en": "Be My Dream Family",
+      "ja": "だまされても夢心地"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001492": {
+    "workId": "wk_000001492",
+    "title": "티키타카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106630834"
+    },
+    "titles": {
+      "ko": "티키타카",
+      "en": "Tiki-taCAR"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001851": {
+    "workId": "wk_000001851",
+    "title": "할 수 있다고!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108486292"
+    },
+    "titles": {
+      "ko": "할 수 있다고!",
+      "en": "Q108486292"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002111": {
+    "workId": "wk_000002111",
+    "title": "크라임 퍼즐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108623571"
+    },
+    "titles": {
+      "ko": "크라임 퍼즐",
+      "en": "Crime Puzzle"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002125": {
+    "workId": "wk_000002125",
+    "title": "2박3일",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108733480"
+    },
+    "titles": {
+      "ko": "2박3일",
+      "en": "New World"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003006": {
+    "workId": "wk_000003006",
+    "title": "TV를 말한다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458476"
+    },
+    "titles": {
+      "ko": "TV를 말한다",
+      "en": "Q109458476"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003155": {
+    "workId": "wk_000003155",
+    "title": "MBC 뉴스데스크 포항 경주 영덕 울진 울릉",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459030"
+    },
+    "titles": {
+      "ko": "MBC 뉴스데스크 포항 경주 영덕 울진 울릉",
+      "en": "Q109459030"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003157": {
+    "workId": "wk_000003157",
+    "title": "DREAM STATION",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459066"
+    },
+    "titles": {
+      "ko": "DREAM STATION",
+      "en": "Q109459066"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003956": {
+    "workId": "wk_000003956",
+    "title": "국민 영수증",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114249"
+    },
+    "titles": {
+      "ko": "국민 영수증",
+      "en": "Q110114249"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005851": {
+    "workId": "wk_000005851",
+    "title": "천둥소리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273522"
+    },
+    "titles": {
+      "ko": "천둥소리",
+      "en": "Roll of Thunder",
+      "ja": "ホ・ギュン 朝鮮王朝を揺るがした男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006310": {
+    "workId": "wk_000006310",
+    "title": "다이아몬드 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11316987"
+    },
+    "titles": {
+      "ko": "다이아몬드 걸",
+      "en": "Diamond Girl",
+      "ja": "ダイヤモンドガール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "wk_000007419": {
+    "workId": "wk_000007419",
+    "title": "슬랩스틱 브라더스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11254209"
+    },
+    "titles": {
+      "ko": "슬랩스틱 브라더스",
+      "en": "Manzai Gang",
+      "ja": "漫才ギャング"
+    },
+    "creator": "Hiroshi Shinagawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007764": {
+    "workId": "wk_000007764",
+    "title": "증보산림경제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272424"
+    },
+    "titles": {
+      "ko": "증보산림경제",
+      "en": "Chŭngbo sallim kyŏngje",
+      "ja": "増補山林経済"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

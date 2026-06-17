@@ -1,0 +1,40 @@
+{
+  "wk_000001132": {
+    "workId": "wk_000001132",
+    "title": "원더랜드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101010925"
+    },
+    "titles": {
+      "ko": "원더랜드",
+      "en": "Wonderland",
+      "ja": "ワンダーランド"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001927": {
+    "workId": "wk_000001927",
+    "title": "월터와 프랭크",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1035248"
+    },
+    "titles": {
+      "ko": "월터와 프랭크",
+      "en": "Wrestling Ernest Hemingway",
+      "ja": "潮風とベーコンサンドとヘミングウェイ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

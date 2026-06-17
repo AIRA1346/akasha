@@ -1,0 +1,37 @@
+{
+  "wk_000002702": {
+    "workId": "wk_000002702",
+    "title": "하백의 신부",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1402323"
+    },
+    "titles": {
+      "ko": "하백의 신부",
+      "en": "Bride of the Water God"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002890": {
+    "workId": "wk_000002890",
+    "title": "마녀사냥",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17278254"
+    },
+    "titles": {
+      "ko": "마녀사냥",
+      "en": "Witch Hunt"
+    },
+    "creator": "パク・ソ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

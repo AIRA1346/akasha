@@ -1,0 +1,238 @@
+{
+  "wk_000000205": {
+    "workId": "wk_000000205",
+    "title": "카구야님은 고백받고 싶어",
+    "titles": {
+      "ko": "카구야님은 고백받고 싶어",
+      "en": "Kaguya-sama: Love Is War",
+      "ja": "かぐや様は告らせたい"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아카사카 아카",
+    "releaseYear": 2019,
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "심리"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 12
+        },
+        {
+          "label": "2기",
+          "year": 2020,
+          "episodes": 12
+        },
+        {
+          "label": "3기",
+          "year": 2022,
+          "episodes": 13
+        }
+      ],
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_kaguya-sama_2019"
+    ],
+    "externalIds": {
+      "wikidata": "Q62017594"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000226": {
+    "workId": "wk_000000226",
+    "title": "기생수",
+    "titles": {
+      "ko": "기생수",
+      "en": "Parasyte: The Maxim",
+      "ja": "寄生獣 セイの格率"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이와와키 히토시",
+    "releaseYear": 2014,
+    "tags": [
+      "SF",
+      "호러",
+      "액션",
+      "공존"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_parasyte_2014"
+    ],
+    "externalIds": {
+      "wikidata": "Q137808011"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000521": {
+    "workId": "wk_000000521",
+    "title": "BTOOOM!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100976117"
+    },
+    "titles": {
+      "ko": "BTOOOM!",
+      "en": "Btooom!",
+      "ja": "BTOOOM!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001820": {
+    "workId": "wk_000001820",
+    "title": "몽쉐리CoCo",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344687"
+    },
+    "titles": {
+      "ko": "몽쉐리CoCo",
+      "en": "Mon Chéri CoCo",
+      "ja": "モンシェリCoCo"
+    },
+    "creator": "Waki Yamato",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002392": {
+    "workId": "wk_000002392",
+    "title": "아야카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117167922"
+    },
+    "titles": {
+      "ko": "아야카",
+      "en": "Ayaka",
+      "ja": "AYAKA -あやか-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003554": {
+    "workId": "wk_000003554",
+    "title": "전수.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125087128"
+    },
+    "titles": {
+      "ko": "전수.",
+      "en": "Zenshu",
+      "ja": "全修。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004204": {
+    "workId": "wk_000004204",
+    "title": "너와 넘어 사랑이 된다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131757167"
+    },
+    "titles": {
+      "ko": "너와 넘어 사랑이 된다",
+      "en": "With You, Our Love Will Make It Through",
+      "ja": "キミと越えて恋になる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004713": {
+    "workId": "wk_000004713",
+    "title": "네? 사내 시스템을 전부 혼자 관리하는 저를 해고한다구요?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140041679"
+    },
+    "titles": {
+      "ko": "네? 사내 시스템을 전부 혼자 관리하는 저를 해고한다구요?",
+      "en": "Fired? But I Maintain All the Software!",
+      "ja": "え、社内システム全てワンオペしている私を解雇ですか?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005416": {
+    "workId": "wk_000005416",
+    "title": "공각기동대 신극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20038326"
+    },
+    "titles": {
+      "ko": "공각기동대 신극장판",
+      "en": "Ghost in the Shell: The New Movie",
+      "ja": "攻殻機動隊 新劇場版"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005826": {
+    "workId": "wk_000005826",
+    "title": "알프스의 메아리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2339582"
+    },
+    "titles": {
+      "ko": "알프스의 메아리",
+      "en": "Trapp Family Story",
+      "ja": "トラップ一家物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "wk_000000975": {
+    "workId": "wk_000000975",
+    "title": "쵸콧토 시스터",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045285"
+    },
+    "titles": {
+      "ko": "쵸콧토 시스터",
+      "en": "Chocotto Sister",
+      "ja": "ちょこッとSister"
+    },
+    "releaseYear": 2003,
+    "creator": "雑破業",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002291": {
+    "workId": "wk_000002291",
+    "title": "슈퍼스트링 -이세계 견문록-",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123091087"
+    },
+    "titles": {
+      "ko": "슈퍼스트링 -이세계 견문록-",
+      "en": "Super String: Marco Polo's Travel to Multiverse",
+      "ja": "スーパーストリング-異世界見聞録-"
+    },
+    "creator": "Youn In-wan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003623": {
+    "workId": "wk_000003623",
+    "title": "저녁 같이 드실래요?",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97338939"
+    },
+    "titles": {
+      "ko": "저녁 같이 드실래요?",
+      "en": "Shall We Have Dinner Tonight?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

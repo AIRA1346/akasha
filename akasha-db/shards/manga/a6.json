@@ -68,5 +68,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007705": {
+    "workId": "wk_000007705",
+    "title": "이누야시키",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18700625"
+    },
+    "titles": {
+      "ko": "이누야시키",
+      "en": "Inuyashiki",
+      "ja": "いぬやしき"
+    },
+    "releaseYear": 2014,
+    "creator": "오쿠 히로야",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

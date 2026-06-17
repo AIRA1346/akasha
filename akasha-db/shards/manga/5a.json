@@ -135,5 +135,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007645": {
+    "workId": "wk_000007645",
+    "title": "나루토 SD 록리의 청춘 풀파워 닌자전",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18420366"
+    },
+    "titles": {
+      "ko": "나루토 SD 록리의 청춘 풀파워 닌자전",
+      "en": "Rock Lee & His Ninja Pals",
+      "ja": "ロック・リーの青春フルパワー忍伝"
+    },
+    "creator": "Kenji Taira",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

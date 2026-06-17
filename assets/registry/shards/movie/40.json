@@ -1,0 +1,40 @@
+{
+  "wk_000003230": {
+    "workId": "wk_000003230",
+    "title": "마지막 지하철",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049604"
+    },
+    "titles": {
+      "ko": "마지막 지하철",
+      "en": "The Last Metro",
+      "ja": "終電車"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003399": {
+    "workId": "wk_000003399",
+    "title": "스위트 무비",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050548"
+    },
+    "titles": {
+      "ko": "스위트 무비",
+      "en": "Sweet Movie",
+      "ja": "スウィート・ムービー"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

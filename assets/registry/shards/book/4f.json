@@ -1,0 +1,58 @@
+{
+  "wk_000002743": {
+    "workId": "wk_000002743",
+    "title": "굶주림",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062365"
+    },
+    "titles": {
+      "ko": "굶주림",
+      "en": "Hunger"
+    },
+    "releaseYear": 1890,
+    "creator": "Knut Hamsun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005504": {
+    "workId": "wk_000005504",
+    "title": "보협경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10949481"
+    },
+    "titles": {
+      "ko": "보협경",
+      "en": "Jewel Box Sūtra",
+      "ja": "宝篋経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005772": {
+    "workId": "wk_000005772",
+    "title": "붕괴하는 악마의 영토",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109905291"
+    },
+    "titles": {
+      "ko": "붕괴하는 악마의 영토",
+      "en": "The Desolations of Devil's Acre"
+    },
+    "releaseYear": 2021,
+    "creator": "Ransom Riggs",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

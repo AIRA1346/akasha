@@ -1,0 +1,41 @@
+{
+  "wk_000000628": {
+    "workId": "wk_000000628",
+    "title": "침묵",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100333537"
+    },
+    "titles": {
+      "ko": "침묵",
+      "en": "The Silence"
+    },
+    "releaseYear": 2020,
+    "creator": "Don DeLillo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001402": {
+    "workId": "wk_000001402",
+    "title": "그믐, 또는 당신이 세계를 기억하는 방식",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104153387"
+    },
+    "titles": {
+      "ko": "그믐, 또는 당신이 세계를 기억하는 방식",
+      "en": "Q104153387",
+      "ja": "大晦日、またはあなたが世界を記憶する方式"
+    },
+    "releaseYear": 2015,
+    "creator": "Chang Kang-myoung",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

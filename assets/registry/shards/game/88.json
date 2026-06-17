@@ -1,0 +1,179 @@
+{
+  "wk_000000280": {
+    "workId": "wk_000000280",
+    "title": "프린세스 커넥트",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Cygames",
+    "releaseYear": 2018,
+    "tags": [
+      "수집형RPG",
+      "판타지",
+      "코미디",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_princess-connect_2018"
+    ],
+    "titles": {
+      "en": "Princess Connect",
+      "ko": "프린세스 커넥트"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61740575"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000119": {
+    "workId": "wk_000000119",
+    "title": "배틀그라운드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "KRAFTON",
+    "releaseYear": 2017,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid578080_2017"
+    ],
+    "titles": {
+      "en": "PUBG: BATTLEGROUNDS",
+      "ko": "배틀그라운드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "578080",
+      "wikidata": "Q28937399"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000787": {
+    "workId": "wk_000000787",
+    "title": "동방영야초 ~ Imperishable Night",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042155"
+    },
+    "titles": {
+      "ko": "동방영야초 ~ Imperishable Night",
+      "en": "Touhou Eiyashou ~ Imperishable Night",
+      "ja": "東方永夜抄 〜 Imperishable Night."
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002245": {
+    "workId": "wk_000002245",
+    "title": "즐거움을 나눠라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107255671"
+    },
+    "titles": {
+      "ko": "즐거움을 나눠라 메이드 인 와리오",
+      "en": "WarioWare: Get It Together!",
+      "ja": "おすそわける メイド イン ワリオ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002739": {
+    "workId": "wk_000002739",
+    "title": "내 여자친구는 인간이 아니야",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856100"
+    },
+    "titles": {
+      "ko": "내 여자친구는 인간이 아니야",
+      "en": "Q10856100",
+      "ja": "俺の彼女はヒトでなし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005090": {
+    "workId": "wk_000005090",
+    "title": "드래곤퀘스트X 오프라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113999532"
+    },
+    "titles": {
+      "ko": "드래곤퀘스트X 오프라인",
+      "en": "Dragon Quest X Offline",
+      "ja": "ドラゴンクエストX 目覚めし五つの種族 オフライン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006192": {
+    "workId": "wk_000006192",
+    "title": "피자 타워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116590057"
+    },
+    "titles": {
+      "ko": "피자 타워",
+      "en": "Pizza Tower",
+      "ja": "Pizza Tower"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006281": {
+    "workId": "wk_000006281",
+    "title": "컨트롤 레조넌트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116947317"
+    },
+    "titles": {
+      "ko": "컨트롤 레조넌트",
+      "en": "Q116947317"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

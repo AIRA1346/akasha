@@ -120,5 +120,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007079": {
+    "workId": "wk_000007079",
+    "title": "프로젝트 헤일메리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107105860"
+    },
+    "titles": {
+      "ko": "프로젝트 헤일메리",
+      "en": "Project Hail Mary",
+      "ja": "プロジェクト・ヘイル・メアリー"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

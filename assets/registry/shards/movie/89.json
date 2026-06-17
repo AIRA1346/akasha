@@ -1,0 +1,78 @@
+{
+  "wk_000000980": {
+    "workId": "wk_000000980",
+    "title": "살육 호텔",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100761458"
+    },
+    "titles": {
+      "ko": "살육 호텔",
+      "en": "Cadaver",
+      "ja": "殺人ホテル"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002935": {
+    "workId": "wk_000002935",
+    "title": "호스텔 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048645"
+    },
+    "titles": {
+      "ko": "호스텔 2",
+      "en": "Hostel: Part II",
+      "ja": "ホステル2"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004735": {
+    "workId": "wk_000004735",
+    "title": "스타게이트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105801"
+    },
+    "titles": {
+      "ko": "스타게이트",
+      "en": "Stargate",
+      "ja": "スターゲイト"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005174": {
+    "workId": "wk_000005174",
+    "title": "아웃레이지 비욘드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059416"
+    },
+    "titles": {
+      "ko": "아웃레이지 비욘드",
+      "en": "Beyond Outrage",
+      "ja": "アウトレイジ ビヨンド"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

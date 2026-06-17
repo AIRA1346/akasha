@@ -1,0 +1,161 @@
+{
+  "wk_000000888": {
+    "workId": "wk_000000888",
+    "title": "월랜더",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041885"
+    },
+    "titles": {
+      "ko": "월랜더",
+      "en": "Wallander",
+      "ja": "刑事ヴァランダー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001667": {
+    "workId": "wk_000001667",
+    "title": "가면라이더 리바이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107657377"
+    },
+    "titles": {
+      "ko": "가면라이더 리바이스",
+      "en": "Kamen Rider Revice",
+      "ja": "仮面ライダーリバイス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001791": {
+    "workId": "wk_000001791",
+    "title": "KBS 뉴스월드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108366180"
+    },
+    "titles": {
+      "ko": "KBS 뉴스월드",
+      "en": "KBS News World"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002016": {
+    "workId": "wk_000002016",
+    "title": "눈사람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856237"
+    },
+    "titles": {
+      "ko": "눈사람",
+      "en": "Snowman",
+      "ja": "雪だるま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002271": {
+    "workId": "wk_000002271",
+    "title": "다시 너에게 프로포즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10894888"
+    },
+    "titles": {
+      "ko": "다시 너에게 프로포즈",
+      "en": "Q10894888",
+      "ja": "もう一度君に、プロポーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003601": {
+    "workId": "wk_000003601",
+    "title": "오늘의 중요 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109533869"
+    },
+    "titles": {
+      "ko": "오늘의 중요 뉴스",
+      "en": "Q109533869"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004269": {
+    "workId": "wk_000004269",
+    "title": "탑골 랩소디",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110117931"
+    },
+    "titles": {
+      "ko": "탑골 랩소디",
+      "en": "Q110117931"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005194": {
+    "workId": "wk_000005194",
+    "title": "졸업식에, 카미야 우타코가 없다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112293903"
+    },
+    "titles": {
+      "ko": "졸업식에, 카미야 우타코가 없다",
+      "en": "Sotsugyoshiki ni, Kamiya Utako ga Inai",
+      "ja": "卒業式に、神谷詩子がいない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005785": {
+    "workId": "wk_000005785",
+    "title": "전국노래자랑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269295"
+    },
+    "titles": {
+      "ko": "전국노래자랑",
+      "en": "National Singing Contest",
+      "ja": "全国のど自慢"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

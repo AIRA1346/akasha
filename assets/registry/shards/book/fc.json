@@ -1,0 +1,21 @@
+{
+  "wk_000005246": {
+    "workId": "wk_000005246",
+    "title": "대승의장",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10933442"
+    },
+    "titles": {
+      "ko": "대승의장",
+      "en": "Essay on the Meaning of Mahāyāna",
+      "ja": "大乗義章"
+    },
+    "creator": "Jingying Huiyuan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

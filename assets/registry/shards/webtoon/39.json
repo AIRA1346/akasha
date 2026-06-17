@@ -1,0 +1,20 @@
+{
+  "wk_000002373": {
+    "workId": "wk_000002373",
+    "title": "3단합체 김창남",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12580609"
+    },
+    "titles": {
+      "ko": "3단합체 김창남",
+      "en": "3-stage combination Kim Chang-nam"
+    },
+    "creator": "Ha Il-kwon",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

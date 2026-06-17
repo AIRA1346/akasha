@@ -1,0 +1,57 @@
+{
+  "wk_000000415": {
+    "workId": "wk_000000415",
+    "title": "꼭두각시 서커스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002695"
+    },
+    "titles": {
+      "en": "Karakuri Circus",
+      "ja": "からくりサーカス",
+      "ko": "꼭두각시 서커스"
+    },
+    "creator": "Kazuhiro Fujita",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000416": {
+    "workId": "wk_000000416",
+    "title": "はいふり",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100271377"
+    },
+    "titles": {
+      "en": "Haifuri",
+      "ja": "はいふり"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000005541": {
+    "workId": "wk_000005541",
+    "title": "네즈미의 첫사랑",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130487213"
+    },
+    "titles": {
+      "ko": "네즈미의 첫사랑",
+      "en": "Nezumi's First Love",
+      "ja": "ねずみの初恋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000003486": {
+    "workId": "wk_000003486",
+    "title": "태현경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072297"
+    },
+    "titles": {
+      "ko": "태현경",
+      "en": "Taixuanjing",
+      "ja": "太玄経"
+    },
+    "creator": "揚雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

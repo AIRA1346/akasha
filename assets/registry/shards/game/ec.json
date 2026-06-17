@@ -1,0 +1,39 @@
+{
+  "wk_000001513": {
+    "workId": "wk_000001513",
+    "title": "토르: 천둥의 신 (비디오 게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057317"
+    },
+    "titles": {
+      "ko": "토르: 천둥의 신 (비디오 게임)",
+      "en": "Thor: God of Thunder"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003201": {
+    "workId": "wk_000003201",
+    "title": "청춘 프래자일",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109599455"
+    },
+    "titles": {
+      "ko": "청춘 프래자일",
+      "en": "Seishun Fragile",
+      "ja": "青春フラジャイル"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

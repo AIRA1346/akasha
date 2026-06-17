@@ -1,0 +1,197 @@
+{
+  "wk_000000031": {
+    "workId": "wk_000000031",
+    "title": "사이버펑크 2077",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "CD PROJEKT RED",
+    "releaseYear": 2020,
+    "tags": [
+      "SF",
+      "오픈월드",
+      "RPG",
+      "사이버펑크"
+    ],
+    "legacyIds": [
+      "gen_game_appid1091500_2020"
+    ],
+    "titles": {
+      "en": "Cyberpunk 2077",
+      "ko": "사이버펑크 2077"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1091500",
+      "wikidata": "Q3182559"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000039": {
+    "workId": "wk_000000039",
+    "title": "레드 데드 리뎀션 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Rockstar Games",
+    "releaseYear": 2018,
+    "tags": [
+      "오픈월드",
+      "서부",
+      "액션",
+      "스토리"
+    ],
+    "legacyIds": [
+      "gen_game_appid1174180_2018",
+      "gen_game_appid1174180_2019"
+    ],
+    "titles": {
+      "en": "Red Dead Redemption 2",
+      "ko": "레드 데드 리뎀션 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1174180",
+      "wikidata": "Q27438121"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000113": {
+    "workId": "wk_000000113",
+    "title": "새티스팩토리",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Coffee Stain",
+    "releaseYear": 2020,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid526870_2020"
+    ],
+    "titles": {
+      "en": "Satisfactory",
+      "ko": "새티스팩토리"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "526870",
+      "wikidata": "Q62049495"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002322": {
+    "workId": "wk_000002322",
+    "title": "루핑",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107389581"
+    },
+    "titles": {
+      "ko": "루핑",
+      "en": "Looping"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002827": {
+    "workId": "wk_000002827",
+    "title": "노부나가의 야망 전국판",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856190"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 전국판",
+      "en": "Nobunaga's Ambition",
+      "ja": "信長の野望・全国版"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002917": {
+    "workId": "wk_000002917",
+    "title": "시리어스 샘 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087397"
+    },
+    "titles": {
+      "ko": "시리어스 샘 2",
+      "en": "Q1087397",
+      "ja": "シリアス・サム2"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004093": {
+    "workId": "wk_000004093",
+    "title": "스즈미야 하루히의 병렬",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253563"
+    },
+    "titles": {
+      "ko": "스즈미야 하루히의 병렬",
+      "en": "The Parallel of Haruhi Suzumiya",
+      "ja": "涼宮ハルヒの並列"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004901": {
+    "workId": "wk_000004901",
+    "title": "Wii 리모컨플러스로 즐기는 버라이어티 게임 박스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137748"
+    },
+    "titles": {
+      "ko": "Wii 리모컨플러스로 즐기는 버라이어티 게임 박스",
+      "en": "Wii Play: Motion",
+      "ja": "Wiiリモコンプラス バラエティ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

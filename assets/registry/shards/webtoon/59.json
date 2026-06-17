@@ -1,0 +1,19 @@
+{
+  "wk_000002894": {
+    "workId": "wk_000002894",
+    "title": "헬퍼",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18815844"
+    },
+    "titles": {
+      "ko": "헬퍼",
+      "en": "Hellper"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

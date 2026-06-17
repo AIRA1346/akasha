@@ -1,0 +1,21 @@
+{
+  "wk_000005607": {
+    "workId": "wk_000005607",
+    "title": "우주인 무무",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131348648"
+    },
+    "titles": {
+      "ko": "우주인 무무",
+      "en": "Me and the Alien MuMu",
+      "ja": "宇宙人ムームー"
+    },
+    "creator": "Hiroki Miyashita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

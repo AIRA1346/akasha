@@ -1,0 +1,21 @@
+{
+  "wk_000000800": {
+    "workId": "wk_000000800",
+    "title": "울트라매니악",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1028599"
+    },
+    "titles": {
+      "ko": "울트라매니악",
+      "en": "Ultra Maniac",
+      "ja": "ウルトラマニアック"
+    },
+    "creator": "Wataru Yoshizumi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

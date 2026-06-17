@@ -1,0 +1,118 @@
+{
+  "wk_000000517": {
+    "workId": "wk_000000517",
+    "title": "잔혹한 어머니의 날",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100266060"
+    },
+    "titles": {
+      "ko": "잔혹한 어머니의 날",
+      "en": "Mother's Day"
+    },
+    "releaseYear": 2018,
+    "creator": "Nele Neuhaus",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001777": {
+    "workId": "wk_000001777",
+    "title": "90억 가지 신의 이름",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049684"
+    },
+    "titles": {
+      "ko": "90억 가지 신의 이름",
+      "en": "The Nine Billion Names of God",
+      "ja": "90億の神の御名"
+    },
+    "releaseYear": 1953,
+    "creator": "Arthur C. Clarke",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004380": {
+    "workId": "wk_000004380",
+    "title": "삼역",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866092"
+    },
+    "titles": {
+      "ko": "삼역",
+      "en": "Three Books of Changes",
+      "ja": "三易"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004723": {
+    "workId": "wk_000004723",
+    "title": "불설아미타경통찬소",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10886824"
+    },
+    "titles": {
+      "ko": "불설아미타경통찬소",
+      "en": "Commentary and Praise of the Amitābha Sūtra",
+      "ja": "仏説阿弥陀経通賛疏"
+    },
+    "creator": "基",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005434": {
+    "workId": "wk_000005434",
+    "title": "천주실의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10938822"
+    },
+    "titles": {
+      "ko": "천주실의",
+      "en": "True Meaning of the Lord of Heaven",
+      "ja": "天主実義"
+    },
+    "releaseYear": 1630,
+    "creator": "Matteo Ricci",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006295": {
+    "workId": "wk_000006295",
+    "title": "인간 요건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11097398"
+    },
+    "titles": {
+      "ko": "인간 요건",
+      "en": "The Human Factor",
+      "ja": "ヒューマン・ファクター"
+    },
+    "releaseYear": 1978,
+    "creator": "Graham Greene",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

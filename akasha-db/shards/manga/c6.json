@@ -95,5 +95,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007146": {
+    "workId": "wk_000007146",
+    "title": "달콤한 채찍",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17191740"
+    },
+    "titles": {
+      "ko": "달콤한 채찍",
+      "en": "Amai Muchi",
+      "ja": "甘い鞭"
+    },
+    "releaseYear": 2013,
+    "creator": "Kei Ōishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

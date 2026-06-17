@@ -1,0 +1,133 @@
+{
+  "wk_000001169": {
+    "workId": "wk_000001169",
+    "title": "미드타운 매드니스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051694"
+    },
+    "titles": {
+      "ko": "미드타운 매드니스",
+      "en": "Midtown Madness",
+      "ja": "Midtown Madness"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002910": {
+    "workId": "wk_000002910",
+    "title": "네모바지 스폰지밥: 코스믹 셰이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108579526"
+    },
+    "titles": {
+      "ko": "네모바지 스폰지밥: 코스믹 셰이크",
+      "en": "SpongeBob SquarePants: The Cosmic Shake",
+      "ja": "スポンジ・ボブ:ザ コズミック シェイク"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003720": {
+    "workId": "wk_000003720",
+    "title": "픽스폭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111444174"
+    },
+    "titles": {
+      "ko": "픽스폭스",
+      "en": "FixFox"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005235": {
+    "workId": "wk_000005235",
+    "title": "철권",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142893"
+    },
+    "titles": {
+      "ko": "철권",
+      "en": "Tekken",
+      "ja": "鉄拳"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005300": {
+    "workId": "wk_000005300",
+    "title": "아이스윈드 데일 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143807"
+    },
+    "titles": {
+      "ko": "아이스윈드 데일 II",
+      "en": "Icewind Dale II"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005972": {
+    "workId": "wk_000005972",
+    "title": "베요네타 오리진: 세레자와 길을 잃은 악마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115641643"
+    },
+    "titles": {
+      "ko": "베요네타 오리진: 세레자와 길을 잃은 악마",
+      "en": "Bayonetta Origins: Cereza and the Lost Demon",
+      "ja": "ベヨネッタ オリジンズ: セレッサと迷子の悪魔"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006285": {
+    "workId": "wk_000006285",
+    "title": "용과 같이 7 외전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116980103"
+    },
+    "titles": {
+      "ko": "용과 같이 7 외전",
+      "en": "Like a Dragon Gaiden: The Man Who Erased His Name",
+      "ja": "龍が如く7外伝 名を消した男"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

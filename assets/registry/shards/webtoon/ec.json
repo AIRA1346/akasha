@@ -1,0 +1,19 @@
+{
+  "wk_000002527": {
+    "workId": "wk_000002527",
+    "title": "내일도 출근!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135815593"
+    },
+    "titles": {
+      "ko": "내일도 출근!",
+      "en": "Going to Work Tomorrow Too!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

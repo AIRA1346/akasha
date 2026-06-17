@@ -1,0 +1,73 @@
+{
+  "wk_000000699": {
+    "workId": "wk_000000699",
+    "title": "장군의 아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102951567"
+    },
+    "titles": {
+      "ko": "장군의 아들",
+      "en": "Q102951567"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001794": {
+    "workId": "wk_000001794",
+    "title": "더그의 일상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108416593"
+    },
+    "titles": {
+      "ko": "더그의 일상",
+      "en": "Dug Days",
+      "ja": "ダグの日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002011": {
+    "workId": "wk_000002011",
+    "title": "기적의 인간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855745"
+    },
+    "titles": {
+      "ko": "기적의 인간",
+      "en": "Q10855745",
+      "ja": "奇跡の人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004622": {
+    "workId": "wk_000004622",
+    "title": "우리 재산",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074753"
+    },
+    "titles": {
+      "ko": "우리 재산",
+      "en": "GUNG HAY FAT CHOY",
+      "ja": "我々は幸運"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

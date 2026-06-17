@@ -1,0 +1,56 @@
+{
+  "wk_000001293": {
+    "workId": "wk_000001293",
+    "title": "도쿄 에일리언즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112119081"
+    },
+    "titles": {
+      "ko": "도쿄 에일리언즈",
+      "en": "Tokyo Aliens",
+      "ja": "東京エイリアンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005539": {
+    "workId": "wk_000005539",
+    "title": "온화한 귀족의 휴가의 권장",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130474872"
+    },
+    "titles": {
+      "ko": "온화한 귀족의 휴가의 권장",
+      "en": "A Gentle Noble's Vacation Recommendation",
+      "ja": "穏やか貴族の休暇のすすめ。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005610": {
+    "workId": "wk_000005610",
+    "title": "뼈 드래곤의 귀한 딸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131443885"
+    },
+    "titles": {
+      "ko": "뼈 드래곤의 귀한 딸",
+      "en": "The Skull Dragon's Precious Daughter",
+      "ja": "骨ドラゴンのマナ娘"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

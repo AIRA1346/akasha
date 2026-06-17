@@ -1,0 +1,59 @@
+{
+  "wk_000003232": {
+    "workId": "wk_000003232",
+    "title": "행복한 비밀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1049916"
+    },
+    "titles": {
+      "ko": "행복한 비밀",
+      "en": "Divine Secrets of the Ya-Ya Sisterhood",
+      "ja": "ヤァヤァ・シスターズの聖なる秘密"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004736": {
+    "workId": "wk_000004736",
+    "title": "할복: 사무라이의 죽음",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058015"
+    },
+    "titles": {
+      "ko": "할복: 사무라이의 죽음",
+      "en": "Hara-Kiri: Death of a Samurai",
+      "ja": "一命"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004849": {
+    "workId": "wk_000004849",
+    "title": "카페 드 플로르",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058682"
+    },
+    "titles": {
+      "ko": "카페 드 플로르",
+      "en": "Café de Flore",
+      "ja": "カフェ・ド・フロール"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

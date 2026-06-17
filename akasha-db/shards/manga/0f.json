@@ -87,5 +87,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007511": {
+    "workId": "wk_000007511",
+    "title": "무지개빛 데이즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18086520"
+    },
+    "titles": {
+      "ko": "무지개빛 데이즈",
+      "en": "Rainbow Days",
+      "ja": "虹色デイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007703": {
+    "workId": "wk_000007703",
+    "title": "장미왕의 장례행렬",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18658417"
+    },
+    "titles": {
+      "ko": "장미왕의 장례행렬",
+      "en": "Requiem of the Rose King",
+      "ja": "薔薇王の葬列"
+    },
+    "releaseYear": 2013,
+    "creator": "Aya Kanno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "wk_000000900": {
+    "workId": "wk_000000900",
+    "title": "스윙 골프 팡야",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045139"
+    },
+    "titles": {
+      "ko": "스윙 골프 팡야",
+      "en": "Super Swing Golf",
+      "ja": "スイングゴルフ パンヤ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001554": {
+    "workId": "wk_000001554",
+    "title": "메달 오브 아너: 워파이터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057630"
+    },
+    "titles": {
+      "ko": "메달 오브 아너: 워파이터",
+      "en": "Q1057630",
+      "ja": "メダル・オブ・オナー ウォーファイター"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

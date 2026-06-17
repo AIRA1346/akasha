@@ -1,0 +1,57 @@
+{
+  "wk_000000538": {
+    "workId": "wk_000000538",
+    "title": "지젤 씨의 피",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100740599"
+    },
+    "titles": {
+      "ko": "지젤 씨의 피",
+      "en": "The Blood of Madame Giselle"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000801": {
+    "workId": "wk_000000801",
+    "title": "이나중 탁구부",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1031633"
+    },
+    "titles": {
+      "ko": "이나중 탁구부",
+      "en": "The Ping-Pong Club",
+      "ja": "行け!稲中卓球部"
+    },
+    "creator": "Minoru Furuya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000977": {
+    "workId": "wk_000000977",
+    "title": "보이!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1047247"
+    },
+    "titles": {
+      "ko": "보이!",
+      "en": "Ppoi!",
+      "ja": "っポイ!"
+    },
+    "creator": "Takako Yamazaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

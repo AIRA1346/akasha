@@ -1,0 +1,21 @@
+{
+  "wk_000006827": {
+    "workId": "wk_000006827",
+    "title": "원치 않는 불사의 모험가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111633532"
+    },
+    "titles": {
+      "ko": "원치 않는 불사의 모험가",
+      "en": "The Unwanted Undead Adventurer",
+      "ja": "望まぬ不死の冒険者"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

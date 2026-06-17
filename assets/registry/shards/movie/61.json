@@ -1,0 +1,51 @@
+{
+  "wk_000000151": {
+    "workId": "wk_000000151",
+    "title": "바비",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Greta Gerwig",
+    "releaseYear": 2023,
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_barbie-2023_2023"
+    ],
+    "externalIds": {
+      "wikidata": "Q55637037"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Barbie 2023",
+      "ko": "바비"
+    }
+  },
+  "wk_000003747": {
+    "workId": "wk_000003747",
+    "title": "셀러브리티",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052826"
+    },
+    "titles": {
+      "ko": "셀러브리티",
+      "en": "Celebrity",
+      "ja": "セレブリティ"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

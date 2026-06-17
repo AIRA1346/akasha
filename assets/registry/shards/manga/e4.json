@@ -1,0 +1,75 @@
+{
+  "wk_000001586": {
+    "workId": "wk_000001586",
+    "title": "코하루의 나날",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266802"
+    },
+    "titles": {
+      "ko": "코하루의 나날",
+      "en": "Koharu's daily life",
+      "ja": "こはるの日々"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001606": {
+    "workId": "wk_000001606",
+    "title": "잠자는 혹성",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11268676"
+    },
+    "titles": {
+      "ko": "잠자는 혹성",
+      "en": "Q11268676",
+      "ja": "眠れる惑星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001950": {
+    "workId": "wk_000001950",
+    "title": "백마왕자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326298"
+    },
+    "titles": {
+      "ko": "백마왕자",
+      "en": "Hakuba no Ōji-sama",
+      "ja": "ハクバノ王子サマ"
+    },
+    "creator": "Yukizou Saku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003975": {
+    "workId": "wk_000003975",
+    "title": "옆집 누나를 좋아해",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117253540"
+    },
+    "titles": {
+      "ko": "옆집 누나를 좋아해",
+      "en": "I'm in Love with the Older Girl Next Door",
+      "ja": "隣のお姉さんが好き"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

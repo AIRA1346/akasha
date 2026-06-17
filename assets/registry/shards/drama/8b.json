@@ -1,0 +1,108 @@
+{
+  "wk_000001296": {
+    "workId": "wk_000001296",
+    "title": "뭉쳐야 쏜다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105840531"
+    },
+    "titles": {
+      "ko": "뭉쳐야 쏜다",
+      "en": "Q105840531"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001674": {
+    "workId": "wk_000001674",
+    "title": "TG2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079306"
+    },
+    "titles": {
+      "ko": "TG2",
+      "en": "TG2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002009": {
+    "workId": "wk_000002009",
+    "title": "그것이 답이다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855646"
+    },
+    "titles": {
+      "ko": "그것이 답이다!",
+      "en": "Q10855646",
+      "ja": "それが答えだ!"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002010": {
+    "workId": "wk_000002010",
+    "title": "그대는 별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855647"
+    },
+    "titles": {
+      "ko": "그대는 별",
+      "en": "You are a Star",
+      "ja": "あなたは星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003074": {
+    "workId": "wk_000003074",
+    "title": "kbc 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458846"
+    },
+    "titles": {
+      "ko": "kbc 뉴스특보",
+      "en": "Q109458846"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006383": {
+    "workId": "wk_000006383",
+    "title": "뉴스센터 9시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324786"
+    },
+    "titles": {
+      "ko": "뉴스센터 9시",
+      "en": "NEWS CENTER 9",
+      "ja": "ニュースセンター9時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

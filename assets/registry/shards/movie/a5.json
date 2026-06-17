@@ -1,0 +1,21 @@
+{
+  "wk_000003587": {
+    "workId": "wk_000003587",
+    "title": "이탈리안 잡",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051032"
+    },
+    "titles": {
+      "ko": "이탈리안 잡",
+      "en": "The Italian Job",
+      "ja": "ミニミニ大作戦"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

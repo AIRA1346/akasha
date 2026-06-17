@@ -49,5 +49,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000007045": {
+    "workId": "wk_000007045",
+    "title": "citrus",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16958608"
+    },
+    "titles": {
+      "ko": "citrus",
+      "en": "Citrus",
+      "ja": "citrus"
+    },
+    "creator": "Saburouta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

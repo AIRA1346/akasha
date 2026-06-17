@@ -1,0 +1,41 @@
+{
+  "wk_000001032": {
+    "workId": "wk_000001032",
+    "title": "은교",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103036112"
+    },
+    "titles": {
+      "ko": "은교",
+      "en": "Q103036112"
+    },
+    "releaseYear": 2010,
+    "creator": "Park Bum-shin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001718": {
+    "workId": "wk_000001718",
+    "title": "목요 살인 클럽",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104881034"
+    },
+    "titles": {
+      "ko": "목요 살인 클럽",
+      "en": "The Thursday Murder Club",
+      "ja": "木曜殺人クラブ (小説)"
+    },
+    "releaseYear": 2020,
+    "creator": "리처드 오스먼",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

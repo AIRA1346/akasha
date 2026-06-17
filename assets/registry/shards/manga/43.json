@@ -120,5 +120,43 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000006735": {
+    "workId": "wk_000006735",
+    "title": "몬스터 아가씨가 있는 일상",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15646175"
+    },
+    "titles": {
+      "ko": "몬스터 아가씨가 있는 일상",
+      "en": "Monster Musume",
+      "ja": "モンスター娘のいる日常"
+    },
+    "creator": "Okayado",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007513": {
+    "workId": "wk_000007513",
+    "title": "에비츄",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1813828"
+    },
+    "titles": {
+      "ko": "에비츄",
+      "en": "Oruchuban Ebichu",
+      "ja": "おるちゅばんエビちゅ"
+    },
+    "creator": "Risa Itō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

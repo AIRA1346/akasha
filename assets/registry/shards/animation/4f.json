@@ -1,0 +1,128 @@
+{
+  "wk_000001172": {
+    "workId": "wk_000001172",
+    "title": "Takt op.Destiny",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107355627"
+    },
+    "titles": {
+      "ko": "Takt op.Destiny",
+      "en": "Takt op.Destiny",
+      "ja": "takt op.Destiny"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001279": {
+    "workId": "wk_000001279",
+    "title": "이세계 식당",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108091569"
+    },
+    "titles": {
+      "ko": "이세계 식당",
+      "en": "Restaurant to Another World",
+      "ja": "異世界食堂"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001760": {
+    "workId": "wk_000001760",
+    "title": "바쿠만",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327594"
+    },
+    "titles": {
+      "ko": "바쿠만",
+      "en": "Bakuman",
+      "ja": "バクマン。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002038": {
+    "workId": "wk_000002038",
+    "title": "아르스의 거수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114607905"
+    },
+    "titles": {
+      "ko": "아르스의 거수",
+      "en": "Giant Beasts of Ars",
+      "ja": "アルスの巨獣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005087": {
+    "workId": "wk_000005087",
+    "title": "유우키 유우나는 용자다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17465338"
+    },
+    "titles": {
+      "ko": "유우키 유우나는 용자다",
+      "en": "Yuki Yuna is a Hero",
+      "ja": "結城友奈は勇者である"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006103": {
+    "workId": "wk_000006103",
+    "title": "종말의 이제타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24897610"
+    },
+    "titles": {
+      "ko": "종말의 이제타",
+      "en": "Izetta: The Last Witch",
+      "ja": "終末のイゼッタ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006266": {
+    "workId": "wk_000006266",
+    "title": "쥬얼 펫",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2634885"
+    },
+    "titles": {
+      "ko": "쥬얼 펫",
+      "en": "Jewelpet",
+      "ja": "ジュエルペット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

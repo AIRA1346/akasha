@@ -48,5 +48,25 @@
       "ingestChannel": "wikidata_manga",
       "ingestSource": "wikidata"
     }
+  },
+  "wk_000006858": {
+    "workId": "wk_000006858",
+    "title": "늑대 소녀와 검은 왕자",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16258120"
+    },
+    "titles": {
+      "ko": "늑대 소녀와 검은 왕자",
+      "en": "Wolf Girl and Black Prince",
+      "ja": "オオカミ少女と黒王子"
+    },
+    "releaseYear": 2011,
+    "creator": "Ayuko Hatta",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

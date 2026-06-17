@@ -1,0 +1,77 @@
+{
+  "wk_000000562": {
+    "workId": "wk_000000562",
+    "title": "007 퍼스트 라이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102290641"
+    },
+    "titles": {
+      "ko": "007 퍼스트 라이트",
+      "en": "007 First Light"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001171": {
+    "workId": "wk_000001171",
+    "title": "원시은하",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051809"
+    },
+    "titles": {
+      "ko": "원시은하",
+      "en": "ProtoGalaxy",
+      "ja": "原始銀河"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001860": {
+    "workId": "wk_000001860",
+    "title": "소닉 히어로즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068962"
+    },
+    "titles": {
+      "ko": "소닉 히어로즈",
+      "en": "Q1068962",
+      "ja": "ソニック ヒーローズ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004525": {
+    "workId": "wk_000004525",
+    "title": "드래슬레 패밀리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11322994"
+    },
+    "titles": {
+      "ko": "드래슬레 패밀리",
+      "en": "Legacy of the Wizard",
+      "ja": "ドラゴンスレイヤーIV ドラスレファミリー"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

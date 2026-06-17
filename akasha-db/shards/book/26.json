@@ -1,0 +1,61 @@
+{
+  "wk_000007173": {
+    "workId": "wk_000007173",
+    "title": "용사 파티에서 추방된 비스트테이머, 최강종의 고양이귀 소녀와 만나다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112323118"
+    },
+    "titles": {
+      "ko": "용사 파티에서 추방된 비스트테이머, 최강종의 고양이귀 소녀와 만나다",
+      "en": "Beast Tamer",
+      "ja": "勇者パーティーを追放されたビーストテイマー、最強種の猫耳少女と出会う"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008035": {
+    "workId": "wk_000008035",
+    "title": "성룡의 C.I.A",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11282529"
+    },
+    "titles": {
+      "ko": "성룡의 C.I.A",
+      "en": "Q11282529",
+      "ja": "アイ・アム I am."
+    },
+    "releaseYear": 2001,
+    "creator": "Hiroe Suga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008106": {
+    "workId": "wk_000008106",
+    "title": "아저씨의 꿈",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1129859"
+    },
+    "titles": {
+      "ko": "아저씨의 꿈",
+      "en": "Uncle's Dream",
+      "ja": "伯父様の夢"
+    },
+    "releaseYear": 1859,
+    "creator": "표도르 도스토옙스키",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

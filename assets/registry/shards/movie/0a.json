@@ -1,0 +1,21 @@
+{
+  "wk_000001768": {
+    "workId": "wk_000001768",
+    "title": "데스 레이스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1033191"
+    },
+    "titles": {
+      "ko": "데스 레이스",
+      "en": "Death Race",
+      "ja": "デス・レース"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

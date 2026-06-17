@@ -1,0 +1,20 @@
+{
+  "wk_000003187": {
+    "workId": "wk_000003187",
+    "title": "천랑열전",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q484466"
+    },
+    "titles": {
+      "ko": "천랑열전",
+      "en": "Chun Rhang Yul Jun"
+    },
+    "creator": "박성우",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

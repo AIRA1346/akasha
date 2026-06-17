@@ -120,5 +120,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008009": {
+    "workId": "wk_000008009",
+    "title": "니체 선생님 ~ 컨비니에 깨달음 세대의 신인이 내려온 ~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20078591"
+    },
+    "titles": {
+      "ko": "니체 선생님 ~ 컨비니에 깨달음 세대의 신인이 내려온 ~",
+      "en": "Mr. Nietzsche in the Convenience Store",
+      "ja": "ニーチェ先生〜コンビニに、さとり世代の新人が舞い降りた〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

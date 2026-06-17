@@ -1,0 +1,21 @@
+{
+  "wk_000000979": {
+    "workId": "wk_000000979",
+    "title": "악마의 엄마",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104971553"
+    },
+    "titles": {
+      "ko": "악마의 엄마",
+      "en": "Akuma no Mama",
+      "ja": "あくまのまま"
+    },
+    "creator": "Kuzushiro",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

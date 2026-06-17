@@ -1,0 +1,91 @@
+{
+  "wk_000000649": {
+    "workId": "wk_000000649",
+    "title": "형사 블루 건물",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10265746"
+    },
+    "titles": {
+      "ko": "형사 블루 건물",
+      "en": "Detectives Blue Building"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002592": {
+    "workId": "wk_000002592",
+    "title": "사랑한다면 이들처럼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10942963"
+    },
+    "titles": {
+      "ko": "사랑한다면 이들처럼",
+      "en": "If In Love... Like Them",
+      "ja": "愛するなら彼らのように"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004338": {
+    "workId": "wk_000004338",
+    "title": "화요일은 밤이 좋아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118280"
+    },
+    "titles": {
+      "ko": "화요일은 밤이 좋아",
+      "en": "Q110118280"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005670": {
+    "workId": "wk_000005670",
+    "title": "여성 술집방랑기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262734"
+    },
+    "titles": {
+      "ko": "여성 술집방랑기",
+      "en": "SAKABA: Bar Hopping Women",
+      "ja": "おんな酒場放浪記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006386": {
+    "workId": "wk_000006386",
+    "title": "인간관찰버라이어티 모니터링",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11325062"
+    },
+    "titles": {
+      "ko": "인간관찰버라이어티 모니터링",
+      "en": "People Watching Variety Program: Monitoring",
+      "ja": "ニンゲン観察バラエティ モニタリング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

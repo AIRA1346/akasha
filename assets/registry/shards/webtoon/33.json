@@ -1,0 +1,20 @@
+{
+  "wk_000002526": {
+    "workId": "wk_000002526",
+    "title": "연산군의 셰프로 살아남기",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135756941"
+    },
+    "titles": {
+      "ko": "연산군의 셰프로 살아남기",
+      "en": "Surviving as Yeonsan-gun's Chef"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

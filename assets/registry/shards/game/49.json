@@ -1,0 +1,56 @@
+{
+  "wk_000002911": {
+    "workId": "wk_000002911",
+    "title": "배틀그라운드: 뉴 스테이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108585047"
+    },
+    "titles": {
+      "ko": "배틀그라운드: 뉴 스테이트",
+      "en": "New State Mobile"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006348": {
+    "workId": "wk_000006348",
+    "title": "아토믹 하트 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117289636"
+    },
+    "titles": {
+      "ko": "아토믹 하트 2",
+      "en": "Q117289636"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006351": {
+    "workId": "wk_000006351",
+    "title": "파라노마사이트: 혼조의 7가지 미스터리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117360018"
+    },
+    "titles": {
+      "ko": "파라노마사이트: 혼조의 7가지 미스터리",
+      "en": "Paranormasight: The Seven Mysteries of Honjo",
+      "ja": "パラノマサイト FILE23 本所七不思議"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

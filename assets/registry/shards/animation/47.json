@@ -1,0 +1,147 @@
+{
+  "wk_000001761": {
+    "workId": "wk_000001761",
+    "title": "다크 개더링",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113292158"
+    },
+    "titles": {
+      "ko": "다크 개더링",
+      "en": "Dark Gathering",
+      "ja": "ダークギャザリング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002042": {
+    "workId": "wk_000002042",
+    "title": "내가 사랑했던 모든 너에게 (영화)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114872690"
+    },
+    "titles": {
+      "ko": "내가 사랑했던 모든 너에게 (영화)",
+      "en": "To Every You I've Loved Before",
+      "ja": "僕が愛したすべての君へ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002625": {
+    "workId": "wk_000002625",
+    "title": "퐁의 길",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118612313"
+    },
+    "titles": {
+      "ko": "퐁의 길",
+      "en": "Pon no Michi",
+      "ja": "ぽんのみち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004506": {
+    "workId": "wk_000004506",
+    "title": "히든 카드가 많은 빅토리아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136230033"
+    },
+    "titles": {
+      "ko": "히든 카드가 많은 빅토리아",
+      "en": "Victoria of Many Faces",
+      "ja": "手札が多めのビクトリア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004963": {
+    "workId": "wk_000004963",
+    "title": "오즈 탐험대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1617715"
+    },
+    "titles": {
+      "ko": "오즈 탐험대",
+      "en": "The Wonderful Galaxy of Oz",
+      "ja": "スペースオズの冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005218": {
+    "workId": "wk_000005218",
+    "title": "도메스틱 그녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18339562"
+    },
+    "titles": {
+      "ko": "도메스틱 그녀",
+      "en": "Domestic Girlfriend",
+      "ja": "ドメスティックな彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005553": {
+    "workId": "wk_000005553",
+    "title": "더티페어 (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20874770"
+    },
+    "titles": {
+      "ko": "더티페어 (애니메이션)",
+      "en": "Dirty Pair",
+      "ja": "ダーティペア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006181": {
+    "workId": "wk_000006181",
+    "title": "안녕 앤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2568723"
+    },
+    "titles": {
+      "ko": "안녕 앤",
+      "en": "Kon'nichiwa Anne: Before Green Gables",
+      "ja": "こんにちは アン 〜Before Green Gables"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

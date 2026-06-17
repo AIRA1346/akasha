@@ -1,0 +1,90 @@
+{
+  "wk_000000365": {
+    "workId": "wk_000000365",
+    "title": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "와타리 와타루",
+    "releaseYear": 2011,
+    "tags": [
+      "학원",
+      "코미디",
+      "드라마",
+      "청춘"
+    ],
+    "legacyIds": [
+      "sub_manga_oregairu_2011"
+    ],
+    "externalIds": {
+      "wikidata": "Q63225139"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Oregairu",
+      "ko": "내가 친구가 적은 건 아무래도 내가 멋진 고양이인 탓인가"
+    }
+  },
+  "wk_000001951": {
+    "workId": "wk_000001951",
+    "title": "쌍둥이 맑음",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327560"
+    },
+    "titles": {
+      "ko": "쌍둥이 맑음",
+      "en": "Baka-Kyōdai",
+      "ja": "バカ姉弟"
+    },
+    "creator": "Tetsu Adachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005273": {
+    "workId": "wk_000005273",
+    "title": "100미터.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126086643"
+    },
+    "titles": {
+      "ko": "100미터.",
+      "en": "100 Meters",
+      "ja": "ひゃくえむ。"
+    },
+    "creator": "Uoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005532": {
+    "workId": "wk_000005532",
+    "title": "내 방이 던전의 휴식처가 되어버린 사건",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130317206"
+    },
+    "titles": {
+      "ko": "내 방이 던전의 휴식처가 되어버린 사건",
+      "en": "My Room Is a Dungeon Rest Stop",
+      "ja": "僕の部屋がダンジョンの休憩所になってしまった件"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

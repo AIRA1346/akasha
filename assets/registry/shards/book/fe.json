@@ -1,0 +1,20 @@
+{
+  "wk_000007614": {
+    "workId": "wk_000007614",
+    "title": "공작나방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112619721"
+    },
+    "titles": {
+      "ko": "공작나방",
+      "en": "Q112619721"
+    },
+    "creator": "ヘルマン・ヘッセ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "wk_000004101": {
+    "workId": "wk_000004101",
+    "title": "마법의 그림자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108281102"
+    },
+    "titles": {
+      "ko": "마법의 그림자",
+      "en": "Shades of Magic"
+    },
+    "creator": "V. E. Schwab",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

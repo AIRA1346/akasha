@@ -1,0 +1,97 @@
+{
+  "wk_000001077": {
+    "workId": "wk_000001077",
+    "title": "컨버세이션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1009788"
+    },
+    "titles": {
+      "ko": "컨버세이션",
+      "en": "The Conversation",
+      "ja": "カンバセーション…盗聴…"
+    },
+    "releaseYear": 1975,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002421": {
+    "workId": "wk_000002421",
+    "title": "카르멘 존스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043659"
+    },
+    "titles": {
+      "ko": "카르멘 존스",
+      "en": "Carmen Jones",
+      "ja": "カルメン"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002852": {
+    "workId": "wk_000002852",
+    "title": "크랙의 시대 - 코카인에 물들다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104857399"
+    },
+    "titles": {
+      "ko": "크랙의 시대 - 코카인에 물들다",
+      "en": "Crack: Cocaine, Corruption & Conspiracy",
+      "ja": "クラック: コカインをめぐる腐敗と陰謀"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004731": {
+    "workId": "wk_000004731",
+    "title": "파이터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105773952"
+    },
+    "titles": {
+      "ko": "파이터",
+      "en": "Fighter",
+      "ja": "ファイター"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005444": {
+    "workId": "wk_000005444",
+    "title": "비기 - 할 말이 있어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105980495"
+    },
+    "titles": {
+      "ko": "비기 - 할 말이 있어",
+      "en": "Biggie: I Got a Story to Tell",
+      "ja": "ノトーリアス・B.I.G. - 伝えたいこと -"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

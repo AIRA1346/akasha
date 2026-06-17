@@ -1,0 +1,59 @@
+{
+  "wk_000000682": {
+    "workId": "wk_000000682",
+    "title": "왕국의 사료편찬관",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100988192"
+    },
+    "titles": {
+      "ko": "왕국의 사료편찬관",
+      "en": "Q100988192"
+    },
+    "releaseYear": 2020,
+    "creator": "Maël Renouard",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003740": {
+    "workId": "wk_000003740",
+    "title": "장자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074987"
+    },
+    "titles": {
+      "ko": "장자",
+      "en": "Zhuangzi",
+      "ja": "荘子"
+    },
+    "creator": "荘子",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005839": {
+    "workId": "wk_000005839",
+    "title": "말리부의 사랑법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110223711"
+    },
+    "titles": {
+      "ko": "말리부의 사랑법",
+      "en": "Malibu Rising"
+    },
+    "releaseYear": 2021,
+    "creator": "Taylor Jenkins Reid",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

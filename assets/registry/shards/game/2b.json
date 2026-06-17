@@ -1,0 +1,39 @@
+{
+  "wk_000004225": {
+    "workId": "wk_000004225",
+    "title": "일랜시아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267552"
+    },
+    "titles": {
+      "ko": "일랜시아",
+      "en": "Q11267552",
+      "ja": "エランシア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005145": {
+    "workId": "wk_000005145",
+    "title": "파이널 파이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141946"
+    },
+    "titles": {
+      "ko": "파이널 파이트",
+      "en": "Final Fight",
+      "ja": "ファイナルファイト"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

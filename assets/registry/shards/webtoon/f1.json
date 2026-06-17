@@ -1,0 +1,73 @@
+{
+  "wk_000000920": {
+    "workId": "wk_000000920",
+    "title": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104173653"
+    },
+    "titles": {
+      "ko": "이세계 원턴킬 누나 ~누나 동반 이세계 생활 시작했습니다~",
+      "en": "My One-Hit Kill Sister",
+      "ja": "異世界ワンターンキル姉さん〜姉同伴の異世界生活はじめました〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002148": {
+    "workId": "wk_000002148",
+    "title": "약한영웅",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116215000"
+    },
+    "titles": {
+      "ko": "약한영웅",
+      "en": "Weak Hero"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002945": {
+    "workId": "wk_000002945",
+    "title": "외모지상주의",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19161871"
+    },
+    "titles": {
+      "ko": "외모지상주의",
+      "en": "Lookism",
+      "ja": "外見至上主義"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002950": {
+    "workId": "wk_000002950",
+    "title": "프린스의 왕자",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20893971"
+    },
+    "titles": {
+      "ko": "프린스의 왕자",
+      "en": "Prince of Prince"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

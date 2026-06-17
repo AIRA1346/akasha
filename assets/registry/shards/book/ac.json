@@ -1,0 +1,42 @@
+{
+  "wk_000002253": {
+    "workId": "wk_000002253",
+    "title": "휘어진 쟁기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105546412"
+    },
+    "titles": {
+      "ko": "휘어진 쟁기",
+      "en": "Crooked Plow",
+      "ja": "曲がった鋤"
+    },
+    "releaseYear": 2019,
+    "creator": "Itamar Vieira Junior",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005248": {
+    "workId": "wk_000005248",
+    "title": "신비의 제왕",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109342457"
+    },
+    "titles": {
+      "ko": "신비의 제왕",
+      "en": "Lord of Mysteries",
+      "ja": "詭秘の主"
+    },
+    "releaseYear": 2020,
+    "creator": "Cuttlefish That Loves Diving",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}
