@@ -188,11 +188,15 @@ flutter analyze lib/
 flutter test
 dart run tool/ci_registry_check.dart
 dart run tool/preflight_check.dart          # 4종 핵심 gate 일괄
-dart run tool/registry_builder.dart --sync-assets   # v4 manifest + search_index + 번들 샤드 동기화
+# G1+ (entryCount > 2500): eager shard만 번들 — ADR-010
+dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
+dart run tool/catalog_scale_baseline.dart --strict   # 번들 모드·15MB 게이트
+# Discovery 배치 SSOT:
+#   .\scripts\discovery_batch.ps1
 flutter build windows
 ```
 
-앱 번들에는 **search_index(엄선 카탈로그 전체)** 와 **전체 v4 샤드**가 포함됩니다. 사전 확장은 **수동 큐레이션 PR**만 허용합니다 (AniList API bulk·온디맨드 미사용).
+앱 번들에는 **search_index(전체)** 와 **eager 샤드만** (`franchise primary` 등 cold-start 필수)이 포함됩니다. 나머지 샤드는 CDN·캐시 on-demand ([ADR-010](docs/adr/ADR-010-bundle-eager-only.md)). 사전 확장은 **수동 큐레이션·wikidata_ko trial** 경로를 사용합니다 (AniList API bulk·온디맨드 미사용).
 
 Windows 실행 파일: `build/windows/x64/runner/Release/akasha.exe`
 

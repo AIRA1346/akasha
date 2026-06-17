@@ -39,6 +39,7 @@ dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
 | 시점 | 동작 |
 |------|------|
 | @5181, ~3.4MB eager | **eager-only** (G1 flip) |
+| >15MB full sync | **금지** — `discovery_batch.ps1` / `--bundle-eager-only` 필수 |
 | >15MB | CI/release mandatory (already in `build_release.ps1`) |
 
 ---

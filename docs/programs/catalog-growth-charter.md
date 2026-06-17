@@ -58,7 +58,26 @@
 | 수동 PR / Contribution | 고가치·争議 작품 |
 | Discovery trial insert | Wikidata manga — **배치당 gate** (§5) |
 
-**매 배치 후:** `preflight_check` · `ci_registry_check`
+**매 배치 후 (`discovery_batch.ps1` 게이트):**
+
+| 도구 | 역할 |
+|------|------|
+| `dedupe_linter` | 중복 0 |
+| `quality_gate --strict` | titles.en 문법 |
+| `ci_registry_check` | manifest·policy·dedupe |
+| `preflight_check` | 4종 핵심 gate 일괄 |
+| `catalog_scale_baseline --strict` | eager-only · 15MB 번들 |
+
+SD3 pause: dedupe >0 · quality_gate FAIL · SW1 recall 하락
+
+**wikidata_ko 표준 배치 (2026-06-17~):**
+
+```powershell
+.\scripts\discovery_batch.ps1              # 4 rounds · limit 20 · webtoon 제외
+.\scripts\discovery_batch.ps1 -Rounds 6   # 라운드 수 조정
+```
+
+- Discovery apply 후 **`registry_builder --sync-assets --bundle-eager-only`** (ADR-010)
 
 ### 4.2 O3·O8·O9·O12 (재정의)
 
@@ -127,3 +146,4 @@ dedupe >0 · quality FAIL · SW1 recall 하락 시 **일시 감속** — 전면 
 | 일자 | 변경 |
 |------|------|
 | 2026-06-10 | SD2.6 해제 · 병행 확장 Charter 확정 |
+| 2026-06-17 | **Option A** — `discovery_batch.ps1` · eager-only sync · baseline `--strict` |

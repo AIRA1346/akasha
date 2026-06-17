@@ -40,6 +40,21 @@
 
 animation 1084 · drama 1213 · game 913 · manga 705 · book 490 · movie 475 · webtoon 301
 
+## Sprint C3 체크포인트 (2026-06-17)
+
+| 항목 | @8676 실측 | 판정 |
+|------|-----------|:----:|
+| `flutter test` | **318/318** PASS | ✅ |
+| `search_index` parse | **41 ms** | ✅ |
+| `sw1_a` recall@10 | **87/87** (1.0000) | ✅ |
+| browse 모드 | window (>2500) | ✅ |
+| eager bundle | **53** shards · ~0.14 MB | ✅ |
+| `assets/registry` total (eager-only) | **~10.75 MB** (15MB trigger 전) | ⚠️ watch |
+| dedupe | 0 | ✅ |
+| 배치 SSOT | `scripts/discovery_batch.ps1` | ✅ |
+
+**결론:** ADR-010 15MB trigger **근접**. Option A — 배치 파이프라인 eager-only 통일 · `catalog_scale_baseline --strict` 게이트.
+
 ## 후속
 
 1. **Sprint B** — 작품 `.md` dogfood ← **현재 P1**

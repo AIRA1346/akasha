@@ -1,7 +1,8 @@
 // ignore_for_file: avoid_print
 /// AKASHA Registry Builder (akasha-db v4)
-/// Usage: dart run tool/registry_builder.dart [--sync-assets]
+/// Usage: dart run tool/registry_builder.dart [--sync-assets] [--bundle-eager-only]
 ///
+/// G1+ (entryCount > 2500): use --sync-assets --bundle-eager-only (ADR-010).
 /// - Validates hash shards under akasha-db/shards/{category}/{00..ff}.json
 /// - Regenerates manifest.json (v4) and search_index.json (searchTokens)
 /// - Optionally copies akasha-db → assets/registry for app bundle

@@ -1,15 +1,21 @@
 // ignore_for_file: avoid_print
 /// Catalog scale baseline — Phase 2.0 측정 (수정 전 스냅샷).
 ///
-/// Usage: dart run tool/catalog_scale_baseline.dart
+/// Usage: dart run tool/catalog_scale_baseline.dart [--strict]
 ///
 /// Phase 2 (search/browse/bundle) 착수 **전**·**후** 비교용.
 /// 490작에서 수치를 남겨 두면 G1 insert 시 병목 **증명**에 쓴다.
+///
+/// `--strict`: G1+ 번들이 eager-only가 아니거나 assets/registry > 15MB면 exit 1.
 
 import 'dart:convert';
 import 'dart:io';
 
-void main() {
+const _eagerOnlyThreshold = 2500;
+const _bundleMaxBytes = 15 * 1024 * 1024;
+
+void main(List<String> args) {
+  final strict = args.contains('--strict');
   final root = _root();
   final db = Directory('${root.path}/akasha-db');
   final assets = Directory('${root.path}/assets/registry');
@@ -20,14 +26,41 @@ void main() {
   _reportManifest(db, assets);
   _reportSearchIndex(db, assets);
   _reportShards(db, assets);
-  _reportAssetsTotal(assets);
-  _reportBundleMode(db, assets);
+  final assetsBytes = _reportAssetsTotal(assets);
+  final bundleMode = _reportBundleMode(db, assets);
 
   print('\n--- Phase 2 trigger (architecture-evolution-phases) ---');
   print('search_index parse > 50ms @490 → watch');
   print('entryCount > 1000 OR master_index 체감 지연 → Phase 2.1~2.2');
   print('entryCount > 2500 OR assets/registry > 5MB → Phase 2.3 eager-only (ADR-010)');
   print('APK assets/registry > 15MB → CI/release mandatory eager-only');
+
+  if (!strict) return;
+
+  final entryCount = _readEntryCount(db);
+  final errors = <String>[];
+
+  if (entryCount > _eagerOnlyThreshold && bundleMode != 'eager-only') {
+    errors.add(
+      'bundle mode is "$bundleMode" (expected eager-only at entryCount $entryCount)',
+    );
+  }
+  if (assetsBytes > _bundleMaxBytes) {
+    errors.add(
+      'assets/registry is ${_mb(assetsBytes)} MB (limit ${_mb(_bundleMaxBytes)} MB)',
+    );
+  }
+
+  if (errors.isEmpty) {
+    print('\nOK: catalog_scale_baseline --strict');
+    return;
+  }
+
+  stderr.writeln('\nFAIL: catalog_scale_baseline --strict');
+  for (final e in errors) {
+    stderr.writeln('  - $e');
+  }
+  exit(1);
 }
 
 void _reportManifest(Directory db, Directory assets) {
@@ -131,22 +164,23 @@ void _reportShards(Directory db, Directory assets) {
   }
 }
 
-void _reportAssetsTotal(Directory assets) {
-  if (!assets.existsSync()) return;
+int _reportAssetsTotal(Directory assets) {
+  if (!assets.existsSync()) return 0;
   var bytes = 0;
   for (final entity in assets.listSync(recursive: true)) {
     if (entity is File) bytes += entity.lengthSync();
   }
   print('[assets/registry] total');
   print('  size: ${_kb(bytes)} KB (${_mb(bytes)} MB)');
+  return bytes;
 }
 
-void _reportBundleMode(Directory db, Directory assets) {
+String _reportBundleMode(Directory db, Directory assets) {
   final manifestFile = File('${db.path}/manifest.json');
-  if (!manifestFile.existsSync()) return;
+  if (!manifestFile.existsSync()) return 'missing-manifest';
   final manifest = jsonDecode(manifestFile.readAsStringSync()) as Map;
   final shards = manifest['shards'];
-  if (shards is! List) return;
+  if (shards is! List) return 'invalid-manifest';
 
   var eagerInManifest = 0;
   for (final s in shards) {
@@ -172,6 +206,17 @@ void _reportBundleMode(Directory db, Directory assets) {
   print('  eager in manifest: $eagerInManifest');
   print('  bundled shard files: $bundledShardFiles');
   print('  mode: $mode');
+  if (mode.startsWith('eager-only')) return 'eager-only';
+  if (mode == 'full') return 'full';
+  return 'partial';
+}
+
+int _readEntryCount(Directory db) {
+  final file = File('${db.path}/manifest.json');
+  if (!file.existsSync()) return 0;
+  final json = jsonDecode(file.readAsStringSync()) as Map;
+  final count = json['entryCount'];
+  return count is int ? count : 0;
 }
 
 String _kb(int bytes) => (bytes / 1024).toStringAsFixed(1);

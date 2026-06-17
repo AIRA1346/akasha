@@ -35,3 +35,6 @@ jobs:
 
       - name: Registry check
         run: dart run tool/ci_registry_check.dart
+
+      - name: Catalog bundle baseline (strict)
+        run: dart run tool/catalog_scale_baseline.dart --strict
