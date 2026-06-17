@@ -158,5 +158,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008464": {
+    "workId": "wk_000008464",
+    "title": "마리아 메르세데스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1166261"
+    },
+    "titles": {
+      "ko": "마리아 메르세데스",
+      "en": "María Mercedes",
+      "ja": "マリア・メルセデス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

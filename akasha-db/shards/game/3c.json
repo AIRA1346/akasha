@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008580": {
+    "workId": "wk_000008580",
+    "title": "꽃다발을 너에게 보내자 -Kinsenka-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131519342"
+    },
+    "titles": {
+      "ko": "꽃다발을 너에게 보내자 -Kinsenka-",
+      "en": "Perennial Dusk: Kinsenka",
+      "ja": "花束を君に贈ろう-Kinsenka-"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

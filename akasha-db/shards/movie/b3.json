@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008209": {
+    "workId": "wk_000008209",
+    "title": "안토니우스와 클레오파트라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076226"
+    },
+    "titles": {
+      "ko": "안토니우스와 클레오파트라",
+      "en": "Antony and Cleopatra",
+      "ja": "アントニーとクレオパトラ"
+    },
+    "releaseYear": 1972,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

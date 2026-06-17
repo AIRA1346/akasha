@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008762": {
+    "workId": "wk_000008762",
+    "title": "무장소녀 마키아벨리즘",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24708088"
+    },
+    "titles": {
+      "ko": "무장소녀 마키아벨리즘",
+      "en": "Armed Girl's Machiavellism",
+      "ja": "武装少女マキャヴェリズム"
+    },
+    "creator": "Yūya Kurokami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

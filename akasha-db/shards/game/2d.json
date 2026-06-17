@@ -92,5 +92,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008245": {
+    "workId": "wk_000008245",
+    "title": "큐브",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128561"
+    },
+    "titles": {
+      "ko": "큐브",
+      "en": "Q.U.B.E."
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

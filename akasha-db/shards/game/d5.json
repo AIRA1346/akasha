@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008437": {
+    "workId": "wk_000008437",
+    "title": "오카유뉴~~무!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130550397"
+    },
+    "titles": {
+      "ko": "오카유뉴~~무!",
+      "en": "Okayu Nyumu!",
+      "ja": "おかゆにゅ～～む!"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

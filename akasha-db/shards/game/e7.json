@@ -110,5 +110,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008441": {
+    "workId": "wk_000008441",
+    "title": "학원마경",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130638255"
+    },
+    "titles": {
+      "ko": "학원마경",
+      "en": "High School Crisis",
+      "ja": "学院魔境"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008445": {
+    "workId": "wk_000008445",
+    "title": "활협전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130721573"
+    },
+    "titles": {
+      "ko": "활협전",
+      "en": "Legend of Mortal"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008503": {
+    "workId": "wk_000008503",
+    "title": "위대한 악녀: 릴리의 전략",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131397949"
+    },
+    "titles": {
+      "ko": "위대한 악녀: 릴리의 전략",
+      "en": "The Great Villainess: Strategy of Lily",
+      "ja": "大悪逆令嬢 ストラテジーオブリリィ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

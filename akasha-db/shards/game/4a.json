@@ -191,5 +191,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008380": {
+    "workId": "wk_000008380",
+    "title": "용과 같이 8 외전 Pirates in Hawaii",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130330734"
+    },
+    "titles": {
+      "ko": "용과 같이 8 외전 Pirates in Hawaii",
+      "en": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "ja": "龍が如く8外伝 Pirates in Hawaii"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

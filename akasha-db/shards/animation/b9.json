@@ -86,5 +86,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008847": {
+    "workId": "wk_000008847",
+    "title": "시스터 프린세스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702922"
+    },
+    "titles": {
+      "ko": "시스터 프린세스",
+      "en": "Sister Princess",
+      "ja": "シスター・プリンセス"
+    },
+    "releaseYear": 2001,
+    "creator": "Sakurako Kimino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

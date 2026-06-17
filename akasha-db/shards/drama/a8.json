@@ -176,5 +176,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008401": {
+    "workId": "wk_000008401",
+    "title": "낚시형사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11648216"
+    },
+    "titles": {
+      "ko": "낚시형사",
+      "en": "Tsuri Deka",
+      "ja": "釣り刑事"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008941": {
+    "workId": "wk_000008941",
+    "title": "박빙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118593756"
+    },
+    "titles": {
+      "ko": "박빙",
+      "en": "Thin Ice"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

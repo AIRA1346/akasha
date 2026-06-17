@@ -124,5 +124,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008895": {
+    "workId": "wk_000008895",
+    "title": "데그라시: 더 넥스트 제너레이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182912"
+    },
+    "titles": {
+      "ko": "데그라시: 더 넥스트 제너레이션",
+      "en": "Degrassi: The Next Generation",
+      "ja": "デグラッシ: ザ・ネクスト・ジェネレーション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

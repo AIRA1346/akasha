@@ -139,5 +139,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008407": {
+    "workId": "wk_000008407",
+    "title": "저지 쇼어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165712"
+    },
+    "titles": {
+      "ko": "저지 쇼어",
+      "en": "Jersey Shore",
+      "ja": "ジャージーショア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008823": {
+    "workId": "wk_000008823",
+    "title": "고스포드 교수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117833409"
+    },
+    "titles": {
+      "ko": "고스포드 교수",
+      "en": "Gospod Profesor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

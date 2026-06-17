@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008378": {
+    "workId": "wk_000008378",
+    "title": "페이트 트리거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130296943"
+    },
+    "titles": {
+      "ko": "페이트 트리거",
+      "en": "Q130296943",
+      "ja": "運命のトリガー：The Novita"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

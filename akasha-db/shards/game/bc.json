@@ -162,5 +162,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008312": {
+    "workId": "wk_000008312",
+    "title": "리애니멀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129440575"
+    },
+    "titles": {
+      "ko": "리애니멀",
+      "en": "Q129440575",
+      "ja": "REANIMAL"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

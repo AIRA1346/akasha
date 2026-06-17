@@ -265,5 +265,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008682": {
+    "workId": "wk_000008682",
+    "title": "뮤트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116995834"
+    },
+    "titles": {
+      "ko": "뮤트",
+      "en": "Mute",
+      "ja": "Silencio/シレンシオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

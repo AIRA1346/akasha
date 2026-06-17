@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008643": {
+    "workId": "wk_000008643",
+    "title": "트로피코 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1316866"
+    },
+    "titles": {
+      "ko": "트로피코 3",
+      "en": "Tropico 3",
+      "ja": "トロピコ3"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

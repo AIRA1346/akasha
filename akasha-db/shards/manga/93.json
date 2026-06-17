@@ -68,5 +68,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008763": {
+    "workId": "wk_000008763",
+    "title": "뮤",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2478890"
+    },
+    "titles": {
+      "ko": "뮤",
+      "en": "MW",
+      "ja": "MW"
+    },
+    "releaseYear": 2009,
+    "creator": "Osamu Tezuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

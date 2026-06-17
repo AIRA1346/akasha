@@ -120,5 +120,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008606": {
+    "workId": "wk_000008606",
+    "title": "업스테어스, 다운스테어스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1168760"
+    },
+    "titles": {
+      "ko": "업스테어스, 다운스테어스",
+      "en": "Upstairs, Downstairs",
+      "ja": "アップステアーズ、ダウンステアーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008812": {
+    "workId": "wk_000008812",
+    "title": "해리 포터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117662601"
+    },
+    "titles": {
+      "ko": "해리 포터",
+      "en": "Harry Potter",
+      "ja": "ハリー・ポッター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

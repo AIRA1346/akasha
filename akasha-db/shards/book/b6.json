@@ -1,0 +1,21 @@
+{
+  "wk_000008790": {
+    "workId": "wk_000008790",
+    "title": "불연속 살인사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361872"
+    },
+    "titles": {
+      "ko": "불연속 살인사건",
+      "en": "Q11361872",
+      "ja": "不連続殺人事件"
+    },
+    "creator": "Ango Sakaguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -174,5 +174,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008198": {
+    "workId": "wk_000008198",
+    "title": "팔남이라니, 그건 아니지!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61985336"
+    },
+    "titles": {
+      "ko": "팔남이라니, 그건 아니지!",
+      "en": "The 8th Son? Are You Kidding Me?",
+      "ja": "八男って、それはないでしょう!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

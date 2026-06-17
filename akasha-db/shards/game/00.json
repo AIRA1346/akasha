@@ -36,5 +36,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008246": {
+    "workId": "wk_000008246",
+    "title": "제노블레이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1287714"
+    },
+    "titles": {
+      "ko": "제노블레이드",
+      "en": "Xenoblade Chronicles",
+      "ja": "ゼノブレイド"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008379": {
+    "workId": "wk_000008379",
+    "title": "디즈니 픽셀 RPG",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130315778"
+    },
+    "titles": {
+      "ko": "디즈니 픽셀 RPG",
+      "en": "Disney Pixel RPG",
+      "ja": "ディズニー ピクセルRPG"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

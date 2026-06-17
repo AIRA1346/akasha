@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008241": {
+    "workId": "wk_000008241",
+    "title": "사이킥 5: 이터널",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128393022"
+    },
+    "titles": {
+      "ko": "사이킥 5: 이터널",
+      "en": "Psychic 5: Eternal",
+      "ja": "サイキック5 エターナル"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

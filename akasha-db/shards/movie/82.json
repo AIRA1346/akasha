@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008791": {
+    "workId": "wk_000008791",
+    "title": "옥보단 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1081392"
+    },
+    "titles": {
+      "ko": "옥보단 2",
+      "en": "Sex and Zen II",
+      "ja": "スー・チーのSEX&禅"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

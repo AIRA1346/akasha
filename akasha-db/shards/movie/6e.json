@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008519": {
+    "workId": "wk_000008519",
+    "title": "완벽한 가족이 되는 법",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107775407"
+    },
+    "titles": {
+      "ko": "완벽한 가족이 되는 법",
+      "en": "The Guide to the Perfect Family"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

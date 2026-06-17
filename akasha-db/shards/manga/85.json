@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008551": {
+    "workId": "wk_000008551",
+    "title": "헬싱",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q223155"
+    },
+    "titles": {
+      "ko": "헬싱",
+      "en": "Hellsing",
+      "ja": "HELLSING"
+    },
+    "creator": "Kouta Hirano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

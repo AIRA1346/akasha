@@ -94,5 +94,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008221": {
+    "workId": "wk_000008221",
+    "title": "쿠마미코",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21113515"
+    },
+    "titles": {
+      "ko": "쿠마미코",
+      "en": "Kuma Miko: Girl Meets Bear",
+      "ja": "くまみこ"
+    },
+    "releaseYear": 2013,
+    "creator": "Masume Yoshimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

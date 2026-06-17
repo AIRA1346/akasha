@@ -160,5 +160,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008754": {
+    "workId": "wk_000008754",
+    "title": "CSI: 과학수사대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117396"
+    },
+    "titles": {
+      "ko": "CSI: 과학수사대",
+      "en": "CSI: Crime Scene Investigation",
+      "ja": "CSI:科学捜査班"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

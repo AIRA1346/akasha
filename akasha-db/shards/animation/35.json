@@ -149,5 +149,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008231": {
+    "workId": "wk_000008231",
+    "title": "엘리자베스 1세",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q624806"
+    },
+    "titles": {
+      "ko": "엘리자베스 1세",
+      "en": "Elizabeth I",
+      "ja": "エリザベス1世 〜愛と陰謀の王宮〜"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008664": {
+    "workId": "wk_000008664",
+    "title": "이피게네이아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1080171"
+    },
+    "titles": {
+      "ko": "이피게네이아",
+      "en": "Iphigenia",
+      "ja": "イフゲニア"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

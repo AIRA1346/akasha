@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008616": {
+    "workId": "wk_000008616",
+    "title": "이윽고 네가 된다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22932761"
+    },
+    "titles": {
+      "ko": "이윽고 네가 된다",
+      "en": "Bloom Into You",
+      "ja": "やがて君になる"
+    },
+    "creator": "Nio Nakatani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

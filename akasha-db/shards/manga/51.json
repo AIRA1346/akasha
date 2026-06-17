@@ -86,5 +86,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008292": {
+    "workId": "wk_000008292",
+    "title": "플래티넘 엔드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21775854"
+    },
+    "titles": {
+      "ko": "플래티넘 엔드",
+      "en": "Platinum End",
+      "ja": "プラチナエンド"
+    },
+    "releaseYear": 2015,
+    "creator": "Tsugumi Ohba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

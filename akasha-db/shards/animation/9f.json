@@ -127,5 +127,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008908": {
+    "workId": "wk_000008908",
+    "title": "로미오의 푸른 하늘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q703506"
+    },
+    "titles": {
+      "ko": "로미오의 푸른 하늘",
+      "en": "Romeo and the Black Brothers",
+      "ja": "ロミオの青い空"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

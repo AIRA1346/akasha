@@ -107,5 +107,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008364": {
+    "workId": "wk_000008364",
+    "title": "청춘 돼지는 바니걸 선배의 꿈을 꾸지 않는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63615353"
+    },
+    "titles": {
+      "ko": "청춘 돼지는 바니걸 선배의 꿈을 꾸지 않는다",
+      "en": "Seishun Buta Yarō",
+      "ja": "青春ブタ野郎はバニーガール先輩の夢を見ない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

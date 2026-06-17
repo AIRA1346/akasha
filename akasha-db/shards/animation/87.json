@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008232": {
+    "workId": "wk_000008232",
+    "title": "5등분의 신부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62593542"
+    },
+    "titles": {
+      "ko": "5등분의 신부",
+      "en": "The Quintessential Quintuplets",
+      "ja": "五等分の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

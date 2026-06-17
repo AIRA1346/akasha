@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008574": {
+    "workId": "wk_000008574",
+    "title": "투하트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1314509"
+    },
+    "titles": {
+      "ko": "투하트",
+      "en": "To Heart",
+      "ja": "To Heart"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

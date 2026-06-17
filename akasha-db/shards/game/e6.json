@@ -74,5 +74,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008387": {
+    "workId": "wk_000008387",
+    "title": "크로노스: 더 뉴 던",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130550355"
+    },
+    "titles": {
+      "ko": "크로노스: 더 뉴 던",
+      "en": "Cronos: The New Dawn"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

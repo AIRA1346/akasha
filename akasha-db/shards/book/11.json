@@ -76,5 +76,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008653": {
+    "workId": "wk_000008653",
+    "title": "로마인 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11351056"
+    },
+    "titles": {
+      "ko": "로마인 이야기",
+      "en": "Stories of the Romans",
+      "ja": "ローマ人の物語"
+    },
+    "releaseYear": 1992,
+    "creator": "Nanami Shiono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

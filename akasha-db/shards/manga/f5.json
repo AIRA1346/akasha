@@ -37,5 +37,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008549": {
+    "workId": "wk_000008549",
+    "title": "마치다군의 세계",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131611"
+    },
+    "titles": {
+      "ko": "마치다군의 세계",
+      "en": "Machida-kun no Sekai",
+      "ja": "町田くんの世界"
+    },
+    "creator": "Yuki Ando",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

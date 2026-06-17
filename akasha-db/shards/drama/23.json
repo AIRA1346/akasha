@@ -122,5 +122,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008399": {
+    "workId": "wk_000008399",
+    "title": "에피소드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1164742"
+    },
+    "titles": {
+      "ko": "에피소드",
+      "en": "Episodes",
+      "ja": "マット・ルブランの元気か〜い?ハリウッド!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008675": {
+    "workId": "wk_000008675",
+    "title": "소년판타지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116946734"
+    },
+    "titles": {
+      "ko": "소년판타지",
+      "en": "Fantasy Boys",
+      "ja": "少年ファンタジー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

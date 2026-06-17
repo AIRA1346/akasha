@@ -37,5 +37,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008329": {
+    "workId": "wk_000008329",
+    "title": "해피 리탤멘트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326506"
+    },
+    "titles": {
+      "ko": "해피 리탤멘트",
+      "en": "Happy Retirement",
+      "ja": "ハッピー・リタイアメント"
+    },
+    "releaseYear": 2009,
+    "creator": "浅田次郎",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

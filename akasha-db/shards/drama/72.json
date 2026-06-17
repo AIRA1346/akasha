@@ -158,5 +158,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008341": {
+    "workId": "wk_000008341",
+    "title": "주간 스태미너 천국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640011"
+    },
+    "titles": {
+      "ko": "주간 스태미너 천국",
+      "en": "Q11640011",
+      "ja": "週刊スタミナ天国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008412": {
+    "workId": "wk_000008412",
+    "title": "청춘가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11661560"
+    },
+    "titles": {
+      "ko": "청춘가족",
+      "en": "Q11661560",
+      "ja": "青春家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008479": {
+    "workId": "wk_000008479",
+    "title": "패밀리 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116728594"
+    },
+    "titles": {
+      "ko": "패밀리 (드라마)",
+      "en": "Family: The Unbreakable Bond",
+      "ja": "シークレット・ファミリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008880": {
+    "workId": "wk_000008880",
+    "title": "홍김동전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117886297"
+    },
+    "titles": {
+      "ko": "홍김동전",
+      "en": "Beat Coin"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

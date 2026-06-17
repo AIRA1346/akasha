@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008732": {
+    "workId": "wk_000008732",
+    "title": "셰터드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108101523"
+    },
+    "titles": {
+      "ko": "셰터드",
+      "en": "Shattered",
+      "ja": "シャタード 美しき罠"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

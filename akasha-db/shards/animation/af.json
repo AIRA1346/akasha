@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008917": {
+    "workId": "wk_000008917",
+    "title": "학교괴담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704581"
+    },
+    "titles": {
+      "ko": "학교괴담",
+      "en": "Ghost Stories",
+      "ja": "学校の怪談"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

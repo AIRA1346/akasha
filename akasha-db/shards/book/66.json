@@ -17,5 +17,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008517": {
+    "workId": "wk_000008517",
+    "title": "바티스타 수술 팀의 영광",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134851"
+    },
+    "titles": {
+      "ko": "바티스타 수술 팀의 영광",
+      "en": "Team Batista no Eikō",
+      "ja": "チーム・バチスタの栄光"
+    },
+    "releaseYear": 2008,
+    "creator": "Takeru Kaidō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

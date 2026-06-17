@@ -162,5 +162,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008642": {
+    "workId": "wk_000008642",
+    "title": "글라디아투스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1316604"
+    },
+    "titles": {
+      "ko": "글라디아투스",
+      "en": "Gladiatus"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

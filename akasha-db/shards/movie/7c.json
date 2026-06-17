@@ -36,5 +36,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008215": {
+    "workId": "wk_000008215",
+    "title": "시니어 이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107639384"
+    },
+    "titles": {
+      "ko": "시니어 이어",
+      "en": "Senior Year",
+      "ja": "シニアイヤー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008667": {
+    "workId": "wk_000008667",
+    "title": "귀신",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108033569"
+    },
+    "titles": {
+      "ko": "귀신",
+      "en": "Possessed"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

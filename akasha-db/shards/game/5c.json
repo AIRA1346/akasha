@@ -142,5 +142,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008646": {
+    "workId": "wk_000008646",
+    "title": "퍼즐 컴뱃",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317811"
+    },
+    "titles": {
+      "ko": "퍼즐 컴뱃",
+      "en": "Mortal Kombat: Deception",
+      "ja": "モータルコンバット：デセプション"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

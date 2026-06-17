@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008366": {
+    "workId": "wk_000008366",
+    "title": "범죄의 기록: 마지막 핼러윈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63686489"
+    },
+    "titles": {
+      "ko": "범죄의 기록: 마지막 핼러윈",
+      "en": "Crime Diaries: Night Out",
+      "ja": "犯罪アンソロジー: ナイト・パーティーの悲劇"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -108,5 +108,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008230": {
+    "workId": "wk_000008230",
+    "title": "범죄의 기록: 비운의 후보",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62383790"
+    },
+    "titles": {
+      "ko": "범죄의 기록: 비운의 후보",
+      "en": "Historia de un Crimen: Colosio",
+      "ja": "犯罪アンソロジー: 大統領候補の暗殺"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008430": {
+    "workId": "wk_000008430",
+    "title": "합체용사 플러스터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q646801"
+    },
+    "titles": {
+      "ko": "합체용사 플러스터",
+      "en": "Pluster World",
+      "ja": "冒険遊記プラスターワールド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008562": {
+    "workId": "wk_000008562",
+    "title": "돈키호테",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q658540"
+    },
+    "titles": {
+      "ko": "돈키호테",
+      "en": "Zukkoke Knight - Don De La Mancha",
+      "ja": "ずっこけナイトドンデラマンチャ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008566": {
+    "workId": "wk_000008566",
+    "title": "건담 빌드 다이버즈 Re:RISE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66023719"
+    },
+    "titles": {
+      "ko": "건담 빌드 다이버즈 Re:RISE",
+      "en": "Gundam Build Divers Re:Rise",
+      "ja": "ガンダムビルドダイバーズRe:RISE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

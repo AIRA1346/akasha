@@ -141,5 +141,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008223": {
+    "workId": "wk_000008223",
+    "title": "사무라이 선생",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21332448"
+    },
+    "titles": {
+      "ko": "사무라이 선생",
+      "en": "Samurai Sensei",
+      "ja": "サムライせんせい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

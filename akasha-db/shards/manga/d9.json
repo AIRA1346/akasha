@@ -166,5 +166,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008618": {
+    "workId": "wk_000008618",
+    "title": "3×3 EYES",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q229817"
+    },
+    "titles": {
+      "ko": "3×3 EYES",
+      "en": "3×3 Eyes",
+      "ja": "3×3 EYES"
+    },
+    "creator": "Yuzo Takada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

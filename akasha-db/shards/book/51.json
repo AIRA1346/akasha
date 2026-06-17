@@ -38,5 +38,22 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008204": {
+    "workId": "wk_000008204",
+    "title": "요셉과 아스낫",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131505"
+    },
+    "titles": {
+      "ko": "요셉과 아스낫",
+      "en": "Joseph and Aseneth"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

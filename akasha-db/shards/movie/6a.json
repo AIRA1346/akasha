@@ -17,5 +17,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008333": {
+    "workId": "wk_000008333",
+    "title": "수퍼 히어로 끄리쉬",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076823"
+    },
+    "titles": {
+      "ko": "수퍼 히어로 끄리쉬",
+      "en": "Krrish",
+      "ja": "クリッシュ 仮面のヒーロー"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008877": {
+    "workId": "wk_000008877",
+    "title": "코헨과 데이트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1083253"
+    },
+    "titles": {
+      "ko": "코헨과 데이트",
+      "en": "Cohen and Tate",
+      "ja": "ジャッカー"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

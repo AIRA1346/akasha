@@ -108,5 +108,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008758": {
+    "workId": "wk_000008758",
+    "title": "오타쿠에게 사랑은 어려워",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24535016"
+    },
+    "titles": {
+      "ko": "오타쿠에게 사랑은 어려워",
+      "en": "Wotakoi: Love is Hard for Otaku",
+      "ja": "ヲタクに恋は難しい"
+    },
+    "releaseYear": 2018,
+    "creator": "Fujita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

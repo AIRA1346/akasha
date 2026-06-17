@@ -128,5 +128,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008299": {
+    "workId": "wk_000008299",
+    "title": "요술공주 샐리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q632755"
+    },
+    "titles": {
+      "ko": "요술공주 샐리",
+      "en": "Sally the Witch",
+      "ja": "魔法使いサリー"
+    },
+    "releaseYear": 1990,
+    "creator": "Mitsuteru Yokoyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

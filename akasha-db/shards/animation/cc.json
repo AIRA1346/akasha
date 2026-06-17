@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008916": {
+    "workId": "wk_000008916",
+    "title": "괴담 레스토랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704467"
+    },
+    "titles": {
+      "ko": "괴담 레스토랑",
+      "en": "Kaidan Restaurant",
+      "ja": "怪談レストラン"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

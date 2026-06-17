@@ -193,5 +193,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008498": {
+    "workId": "wk_000008498",
+    "title": "디지몬 어드벤처 라스트 에볼루션: 인연",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65230836"
+    },
+    "titles": {
+      "ko": "디지몬 어드벤처 라스트 에볼루션: 인연",
+      "en": "Digimon Adventure: Last Evolution Kizuna",
+      "ja": "デジモンアドベンチャー LAST EVOLUTION 絆"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

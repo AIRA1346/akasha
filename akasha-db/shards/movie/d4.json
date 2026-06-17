@@ -15,5 +15,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008662": {
+    "workId": "wk_000008662",
+    "title": "스피드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108006"
+    },
+    "titles": {
+      "ko": "스피드",
+      "en": "Speed",
+      "ja": "スピード"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -202,5 +202,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008433": {
+    "workId": "wk_000008433",
+    "title": "SD 건담 월드 삼국창걸전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64861510"
+    },
+    "titles": {
+      "ko": "SD 건담 월드 삼국창걸전",
+      "en": "SD Gundam World Sangoku Soketsuden",
+      "ja": "SDガンダムワールド 三国創傑伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

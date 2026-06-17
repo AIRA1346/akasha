@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008647": {
+    "workId": "wk_000008647",
+    "title": "월드 사커 위닝 일레븐 2011",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1318106"
+    },
+    "titles": {
+      "ko": "월드 사커 위닝 일레븐 2011",
+      "en": "Pro Evolution Soccer 2011",
+      "ja": "ワールドサッカー ウイニングイレブン 2011"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

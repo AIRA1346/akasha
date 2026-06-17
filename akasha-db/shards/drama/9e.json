@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008283": {
+    "workId": "wk_000008283",
+    "title": "소녀 리버스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116278166"
+    },
+    "titles": {
+      "ko": "소녀 리버스",
+      "en": "Girl Reverse",
+      "ja": "GIRL REVERSE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

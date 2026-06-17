@@ -231,5 +231,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008229": {
+    "workId": "wk_000008229",
+    "title": "코믹 걸즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62382505"
+    },
+    "titles": {
+      "ko": "코믹 걸즈",
+      "en": "Comic Girls",
+      "ja": "こみっくがーるず"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008701": {
+    "workId": "wk_000008701",
+    "title": "달빛천사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696283"
+    },
+    "titles": {
+      "ko": "달빛천사",
+      "en": "Full Moon o Sagashite",
+      "ja": "満月をさがして"
+    },
+    "releaseYear": 2002,
+    "creator": "Arina Tanemura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

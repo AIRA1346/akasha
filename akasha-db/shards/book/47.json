@@ -114,5 +114,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008390": {
+    "workId": "wk_000008390",
+    "title": "두개골의 서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132953"
+    },
+    "titles": {
+      "ko": "두개골의 서",
+      "en": "The Book of Skulls"
+    },
+    "releaseYear": 1971,
+    "creator": "Robert Silverberg",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

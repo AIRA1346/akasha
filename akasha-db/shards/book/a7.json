@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008449": {
+    "workId": "wk_000008449",
+    "title": "유골의 도시",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133593"
+    },
+    "titles": {
+      "ko": "유골의 도시",
+      "en": "City of Bones",
+      "ja": "シティ・オブ・ボーンズ (小説)"
+    },
+    "releaseYear": 2002,
+    "creator": "Michael Connelly",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -124,5 +124,42 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008289": {
+    "workId": "wk_000008289",
+    "title": "SPEC~제로~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2156250"
+    },
+    "titles": {
+      "ko": "SPEC~제로~",
+      "en": "SPEC: Zero",
+      "ja": "SPEC〜零〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008904": {
+    "workId": "wk_000008904",
+    "title": "봄을 기다리는 우리들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24874043"
+    },
+    "titles": {
+      "ko": "봄을 기다리는 우리들",
+      "en": "Waiting for Spring",
+      "ja": "春待つ僕ら"
+    },
+    "creator": "Anashin",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

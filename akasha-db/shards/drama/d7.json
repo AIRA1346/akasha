@@ -159,5 +159,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008946": {
+    "workId": "wk_000008946",
+    "title": "퀸덤 퍼즐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118673490"
+    },
+    "titles": {
+      "ko": "퀸덤 퍼즐",
+      "en": "Queendom Puzzle",
+      "ja": "QUEENDOM PUZZLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

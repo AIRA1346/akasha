@@ -68,5 +68,92 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008337": {
+    "workId": "wk_000008337",
+    "title": "붉은 순무 검사 분전기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635243"
+    },
+    "titles": {
+      "ko": "붉은 순무 검사 분전기",
+      "en": "Akakabukenjifunsenki",
+      "ja": "赤かぶ検事奮戦記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008599": {
+    "workId": "wk_000008599",
+    "title": "금일의가유 : 오늘도 힘내",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116822543"
+    },
+    "titles": {
+      "ko": "금일의가유 : 오늘도 힘내",
+      "en": "Never Give Up",
+      "ja": "今日もファイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008822": {
+    "workId": "wk_000008822",
+    "title": "행복배틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117818274"
+    },
+    "titles": {
+      "ko": "행복배틀",
+      "en": "Happiness Battle"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008891": {
+    "workId": "wk_000008891",
+    "title": "한국인의 식판",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118185975"
+    },
+    "titles": {
+      "ko": "한국인의 식판",
+      "en": "Q118185975"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008942": {
+    "workId": "wk_000008942",
+    "title": "몸값",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118611502"
+    },
+    "titles": {
+      "ko": "몸값",
+      "en": "Bargain"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

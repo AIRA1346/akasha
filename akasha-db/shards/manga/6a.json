@@ -57,5 +57,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008421": {
+    "workId": "wk_000008421",
+    "title": "빵으로 Peace!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22128378"
+    },
+    "titles": {
+      "ko": "빵으로 Peace!",
+      "en": "Pan de Peace!",
+      "ja": "パンでPeace!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

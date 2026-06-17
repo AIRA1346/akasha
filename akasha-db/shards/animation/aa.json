@@ -89,5 +89,59 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008187": {
+    "workId": "wk_000008187",
+    "title": "코노하나 기담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61652240"
+    },
+    "titles": {
+      "ko": "코노하나 기담",
+      "en": "Konohana Kitan",
+      "ja": "此花亭奇譚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008372": {
+    "workId": "wk_000008372",
+    "title": "기파이터 태랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6403600"
+    },
+    "titles": {
+      "ko": "기파이터 태랑",
+      "en": "Ki Fighter Taerang",
+      "ja": "キ・ファイターテラン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008914": {
+    "workId": "wk_000008914",
+    "title": "달의 요정 세일러문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704353"
+    },
+    "titles": {
+      "ko": "달의 요정 세일러문",
+      "en": "Sailor Moon",
+      "ja": "美少女戦士セーラームーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

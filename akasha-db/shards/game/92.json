@@ -175,5 +175,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008644": {
+    "workId": "wk_000008644",
+    "title": "마녀의 샘3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131718640"
+    },
+    "titles": {
+      "ko": "마녀의 샘3",
+      "en": "WitchSpring3",
+      "ja": "魔女の泉3"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

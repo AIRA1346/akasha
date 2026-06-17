@@ -106,5 +106,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008645": {
+    "workId": "wk_000008645",
+    "title": "마리오 카트 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131767872"
+    },
+    "titles": {
+      "ko": "마리오 카트 월드",
+      "en": "Mario Kart World",
+      "ja": "マリオカート ワールド"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

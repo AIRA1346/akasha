@@ -105,5 +105,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008454": {
+    "workId": "wk_000008454",
+    "title": "위조 쿠폰",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134252"
+    },
+    "titles": {
+      "ko": "위조 쿠폰",
+      "en": "The Forged Coupon",
+      "ja": "にせ利札"
+    },
+    "releaseYear": 1912,
+    "creator": "레프 톨스토이",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008659": {
+    "workId": "wk_000008659",
+    "title": "죽어도 되는 아이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113548780"
+    },
+    "titles": {
+      "ko": "죽어도 되는 아이",
+      "en": "Q113548780"
+    },
+    "releaseYear": 2018,
+    "creator": "Bang Jin-ho",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

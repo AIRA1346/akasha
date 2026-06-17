@@ -104,5 +104,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008680": {
+    "workId": "wk_000008680",
+    "title": "스톨렌 라이프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116986694"
+    },
+    "titles": {
+      "ko": "스톨렌 라이프",
+      "en": "Stolen Life"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008813": {
+    "workId": "wk_000008813",
+    "title": "아씨두리안",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117672073"
+    },
+    "titles": {
+      "ko": "아씨두리안",
+      "en": "Durian's Affair",
+      "ja": "お嬢さんドゥ・リアン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

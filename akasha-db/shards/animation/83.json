@@ -107,5 +107,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008637": {
+    "workId": "wk_000008637",
+    "title": "영화 케이온!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6888619"
+    },
+    "titles": {
+      "ko": "영화 케이온!",
+      "en": "K-On! The Movie",
+      "ja": "映画けいおん！"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

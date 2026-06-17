@@ -209,5 +209,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008546": {
+    "workId": "wk_000008546",
+    "title": "수학 없는 수학여행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116790288"
+    },
+    "titles": {
+      "ko": "수학 없는 수학여행",
+      "en": "Q116790288"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008820": {
+    "workId": "wk_000008820",
+    "title": "무인도의 디바",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117815050"
+    },
+    "titles": {
+      "ko": "무인도의 디바",
+      "en": "Castaway Diva",
+      "ja": "無人島のディーバ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

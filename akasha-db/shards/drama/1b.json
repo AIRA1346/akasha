@@ -121,5 +121,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008271": {
+    "workId": "wk_000008271",
+    "title": "아오이 도쿠가와 삼대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11621198"
+    },
+    "titles": {
+      "ko": "아오이 도쿠가와 삼대",
+      "en": "Aoi Tokugawa Sandai",
+      "ja": "葵 徳川三代"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008543": {
+    "workId": "wk_000008543",
+    "title": "은 십 명의 쿠로키 히토미",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11677919"
+    },
+    "titles": {
+      "ko": "은 십 명의 쿠로키 히토미",
+      "en": "Kuroi jū-ri no kuroki hitomi",
+      "ja": "黒い十人の黒木瞳。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008603": {
+    "workId": "wk_000008603",
+    "title": "소방서 옆 경찰서 그리고 국과수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116860966"
+    },
+    "titles": {
+      "ko": "소방서 옆 경찰서 그리고 국과수",
+      "en": "The First Responders 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

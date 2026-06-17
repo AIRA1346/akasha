@@ -85,5 +85,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008323": {
+    "workId": "wk_000008323",
+    "title": "모탈 컴뱃 트릴로지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1300499"
+    },
+    "titles": {
+      "ko": "모탈 컴뱃 트릴로지",
+      "en": "Mortal Kombat Trilogy",
+      "ja": "モータルコンバット トリロジー"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

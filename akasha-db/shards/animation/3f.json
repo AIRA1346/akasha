@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008832": {
+    "workId": "wk_000008832",
+    "title": "UFO 로보 그랜다이저",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700424"
+    },
+    "titles": {
+      "ko": "UFO 로보 그랜다이저",
+      "en": "Grendizer",
+      "ja": "UFOロボ グレンダイザー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

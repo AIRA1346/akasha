@@ -157,5 +157,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008607": {
+    "workId": "wk_000008607",
+    "title": "순정복서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116877928"
+    },
+    "titles": {
+      "ko": "순정복서",
+      "en": "My Lovely Boxer",
+      "ja": "純情ボクサー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008612": {
+    "workId": "wk_000008612",
+    "title": "초월 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116909105"
+    },
+    "titles": {
+      "ko": "초월 (드라마)",
+      "en": "Beyond"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

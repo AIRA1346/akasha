@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008188": {
+    "workId": "wk_000008188",
+    "title": "흔해빠진 직업으로 세계최강",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61663432"
+    },
+    "titles": {
+      "ko": "흔해빠진 직업으로 세계최강",
+      "en": "Arifureta",
+      "ja": "ありふれた職業で世界最強"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

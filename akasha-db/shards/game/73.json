@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008506": {
+    "workId": "wk_000008506",
+    "title": "본인 착각입니다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131405943"
+    },
+    "titles": {
+      "ko": "본인 착각입니다",
+      "en": "you're just imagining it",
+      "ja": "気のせいだ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -92,5 +92,22 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008263": {
+    "workId": "wk_000008263",
+    "title": "앨리스, 달링",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107657340"
+    },
+    "titles": {
+      "ko": "앨리스, 달링",
+      "en": "Alice, Darling"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

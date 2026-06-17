@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008218": {
+    "workId": "wk_000008218",
+    "title": "엘리트 건달",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q210744"
+    },
+    "titles": {
+      "ko": "엘리트 건달",
+      "en": "Elite Yankee Saburo",
+      "ja": "エリートヤンキー三郎"
+    },
+    "creator": "阿部秀司",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

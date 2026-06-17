@@ -145,5 +145,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008714": {
+    "workId": "wk_000008714",
+    "title": "그레이트 마징가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q698757"
+    },
+    "titles": {
+      "ko": "그레이트 마징가",
+      "en": "Great Mazinger",
+      "ja": "グレートマジンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008915": {
+    "workId": "wk_000008915",
+    "title": "고 ! 고 ! 다섯 쌍둥이 랜드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704448"
+    },
+    "titles": {
+      "ko": "고 ! 고 ! 다섯 쌍둥이 랜드",
+      "en": "Let’s Go Quintuplets!",
+      "ja": "ゴーゴー五つ子ら・ん・ど"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

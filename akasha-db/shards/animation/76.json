@@ -218,5 +218,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008298": {
+    "workId": "wk_000008298",
+    "title": "슈팅 바쿠간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q632746"
+    },
+    "titles": {
+      "ko": "슈팅 바쿠간",
+      "en": "Bakugan Battle Brawlers",
+      "ja": "爆丸バトルブローラーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008373": {
+    "workId": "wk_000008373",
+    "title": "미소의 세상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6406323"
+    },
+    "titles": {
+      "ko": "미소의 세상",
+      "en": "Kiko-chan's Smile",
+      "ja": "きこちゃんすまいる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

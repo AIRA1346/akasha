@@ -147,5 +147,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008922": {
+    "workId": "wk_000008922",
+    "title": "SSX 블러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1325938"
+    },
+    "titles": {
+      "ko": "SSX 블러",
+      "en": "SSX Blur",
+      "ja": "SSXブラー"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

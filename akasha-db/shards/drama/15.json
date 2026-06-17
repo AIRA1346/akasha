@@ -104,5 +104,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008893": {
+    "workId": "wk_000008893",
+    "title": "야에의 벚꽃",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182753"
+    },
+    "titles": {
+      "ko": "야에의 벚꽃",
+      "en": "Yae no Sakura",
+      "ja": "八重の桜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

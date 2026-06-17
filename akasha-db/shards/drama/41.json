@@ -159,5 +159,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008284": {
+    "workId": "wk_000008284",
+    "title": "누구에게도 말할 수 없다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11631682"
+    },
+    "titles": {
+      "ko": "누구에게도 말할 수 없다",
+      "en": "I Cannot Tell Anybody",
+      "ja": "誰にも言えない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

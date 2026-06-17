@@ -52,5 +52,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008227": {
+    "workId": "wk_000008227",
+    "title": "너와 파도를 탈 수 있다면",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62129109"
+    },
+    "titles": {
+      "ko": "너와 파도를 탈 수 있다면",
+      "en": "Ride Your Wave",
+      "ja": "きみと、波にのれたら"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008431": {
+    "workId": "wk_000008431",
+    "title": "종말의 세라프",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64711220"
+    },
+    "titles": {
+      "ko": "종말의 세라프",
+      "en": "Seraph of the End",
+      "ja": "終わりのセラフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008563": {
+    "workId": "wk_000008563",
+    "title": "완다비전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65980217"
+    },
+    "titles": {
+      "ko": "완다비전",
+      "en": "WandaVision",
+      "ja": "ワンダヴィジョン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

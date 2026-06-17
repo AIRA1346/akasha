@@ -105,5 +105,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008470": {
+    "workId": "wk_000008470",
+    "title": "온류 ~ONRYU~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11664297"
+    },
+    "titles": {
+      "ko": "온류 ~ONRYU~",
+      "en": "Q11664297",
+      "ja": "音流〜On Ryu〜"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008890": {
+    "workId": "wk_000008890",
+    "title": "열녀박씨 계약결혼뎐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118148500"
+    },
+    "titles": {
+      "ko": "열녀박씨 계약결혼뎐",
+      "en": "The Story of Park's Marriage Contract"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

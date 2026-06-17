@@ -163,5 +163,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008237": {
+    "workId": "wk_000008237",
+    "title": "HELLO WORLD",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63104664"
+    },
+    "titles": {
+      "ko": "HELLO WORLD",
+      "en": "Hello World",
+      "ja": "HELLO WORLD"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

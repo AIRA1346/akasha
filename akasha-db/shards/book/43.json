@@ -75,5 +75,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008258": {
+    "workId": "wk_000008258",
+    "title": "댄싱라이프",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11317469"
+    },
+    "titles": {
+      "ko": "댄싱라이프",
+      "en": "Dancing Life",
+      "ja": "ダンシングライフ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

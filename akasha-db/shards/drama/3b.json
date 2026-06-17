@@ -136,5 +136,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008282": {
+    "workId": "wk_000008282",
+    "title": "미스터 & 미세스 스미스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116265663"
+    },
+    "titles": {
+      "ko": "미스터 & 미세스 스미스",
+      "en": "Mr. & Mrs. Smith",
+      "ja": "Mr.&Mrs. スミス (2024年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008687": {
+    "workId": "wk_000008687",
+    "title": "유괴의 날",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117033615"
+    },
+    "titles": {
+      "ko": "유괴의 날",
+      "en": "The Kidnapping Day",
+      "ja": "誘拐の日 (小説)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

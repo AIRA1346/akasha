@@ -70,5 +70,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008370": {
+    "workId": "wk_000008370",
+    "title": "유루캠△",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64029196"
+    },
+    "titles": {
+      "ko": "유루캠△",
+      "en": "Laid-Back Camp",
+      "ja": "ゆるキャン△"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008713": {
+    "workId": "wk_000008713",
+    "title": "기동전사 Z 건담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q698745"
+    },
+    "titles": {
+      "ko": "기동전사 Z 건담",
+      "en": "Mobile Suit Zeta Gundam",
+      "ja": "機動戦士Ζガンダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -126,5 +126,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008493": {
+    "workId": "wk_000008493",
+    "title": "세인트 세이야: 나이츠 오브 더 조디악",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65052700"
+    },
+    "titles": {
+      "ko": "세인트 세이야: 나이츠 오브 더 조디악",
+      "en": "Knights of the Zodiac: Saint Seiya",
+      "ja": "聖闘士星矢: Knights of the Zodiac"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008635": {
+    "workId": "wk_000008635",
+    "title": "국가가 부른다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6838112"
+    },
+    "titles": {
+      "ko": "국가가 부른다",
+      "en": "Secret Agent Miss Oh",
+      "ja": "国家が呼ぶ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

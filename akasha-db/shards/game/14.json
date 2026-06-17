@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008446": {
+    "workId": "wk_000008446",
+    "title": "게임 데브 타이쿤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13077230"
+    },
+    "titles": {
+      "ko": "게임 데브 타이쿤",
+      "en": "Game Dev Tycoon",
+      "ja": "Game Dev Tycoon"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

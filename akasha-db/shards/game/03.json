@@ -92,5 +92,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008386": {
+    "workId": "wk_000008386",
+    "title": "마인즈아이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130545091"
+    },
+    "titles": {
+      "ko": "마인즈아이",
+      "en": "MindsEye"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

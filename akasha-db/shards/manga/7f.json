@@ -1,0 +1,21 @@
+{
+  "wk_000008224": {
+    "workId": "wk_000008224",
+    "title": "코다이 집 사람들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21396313"
+    },
+    "titles": {
+      "ko": "코다이 집 사람들",
+      "en": "Kōdai-ke no hitobito",
+      "ja": "高台家の人々"
+    },
+    "creator": "Kozueko Morimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -147,5 +147,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008448": {
+    "workId": "wk_000008448",
+    "title": "니드 포 스피드: 하이 스테이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1309459"
+    },
+    "titles": {
+      "ko": "니드 포 스피드: 하이 스테이크",
+      "en": "Need for Speed: High Stakes"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008578": {
+    "workId": "wk_000008578",
+    "title": "스텔라 소라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131470049"
+    },
+    "titles": {
+      "ko": "스텔라 소라",
+      "en": "Stella Sora",
+      "ja": "ステラソラ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -167,5 +167,25 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008768": {
+    "workId": "wk_000008768",
+    "title": "캔디 캔디",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699643"
+    },
+    "titles": {
+      "ko": "캔디 캔디",
+      "en": "Candy Candy",
+      "ja": "キャンディ♡キャンディ"
+    },
+    "releaseYear": 1992,
+    "creator": "Kyoko Mizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

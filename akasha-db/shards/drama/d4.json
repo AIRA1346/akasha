@@ -85,5 +85,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008544": {
+    "workId": "wk_000008544",
+    "title": "드 S 형사 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11677996"
+    },
+    "titles": {
+      "ko": "드 S 형사 시리즈",
+      "en": "Do S Deka",
+      "ja": "ドS刑事シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

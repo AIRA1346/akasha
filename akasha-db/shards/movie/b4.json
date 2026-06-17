@@ -36,5 +36,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008217": {
+    "workId": "wk_000008217",
+    "title": "드래곤볼 슈퍼: 슈퍼 히어로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107656066"
+    },
+    "titles": {
+      "ko": "드래곤볼 슈퍼: 슈퍼 히어로",
+      "en": "Dragon Ball Super: Super Hero",
+      "ja": "ドラゴンボール超 スーパーヒーロー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008457": {
+    "workId": "wk_000008457",
+    "title": "007 썬더볼 작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107724"
+    },
+    "titles": {
+      "ko": "007 썬더볼 작전",
+      "en": "Thunderball",
+      "ja": "007 サンダーボール作戦"
+    },
+    "releaseYear": 1966,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008665": {
+    "workId": "wk_000008665",
+    "title": "위민 토킹",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108030443"
+    },
+    "titles": {
+      "ko": "위민 토킹",
+      "en": "Women Talking",
+      "ja": "ウーマン・トーキング 私たちの選択"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008899": {
+    "workId": "wk_000008899",
+    "title": "흡혈귀는 툭하면 죽는다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24866387"
+    },
+    "titles": {
+      "ko": "흡혈귀는 툭하면 죽는다",
+      "en": "The Vampire Dies in No Time",
+      "ja": "吸血鬼すぐ死ぬ"
+    },
+    "creator": "Itaru Bonnoki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

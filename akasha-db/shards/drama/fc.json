@@ -84,5 +84,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008538": {
+    "workId": "wk_000008538",
+    "title": "리플리: 더 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116769269"
+    },
+    "titles": {
+      "ko": "리플리: 더 시리즈",
+      "en": "Ripley",
+      "ja": "リプリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008685": {
+    "workId": "wk_000008685",
+    "title": "레벨데",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11702343"
+    },
+    "titles": {
+      "ko": "레벨데",
+      "en": "Rebelde",
+      "ja": "レベルデ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

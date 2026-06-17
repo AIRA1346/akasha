@@ -138,5 +138,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008295": {
+    "workId": "wk_000008295",
+    "title": "ZOMBIE-LOAN",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q219134"
+    },
+    "titles": {
+      "ko": "ZOMBIE-LOAN",
+      "en": "Zombie-Loan",
+      "ja": "ZOMBIE-LOAN"
+    },
+    "releaseYear": 2002,
+    "creator": "Peach-Pit",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008829": {
+    "workId": "wk_000008829",
+    "title": "장난을 잘 치는 타카기 양",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24862454"
+    },
+    "titles": {
+      "ko": "장난을 잘 치는 타카기 양",
+      "en": "Teasing Master Takagi-san",
+      "ja": "からかい上手の高木さん"
+    },
+    "creator": "Sōichirō Yamamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

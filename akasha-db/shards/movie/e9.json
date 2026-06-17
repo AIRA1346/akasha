@@ -73,5 +73,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008870": {
+    "workId": "wk_000008870",
+    "title": "담배연기 속에 피는 사랑",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082977"
+    },
+    "titles": {
+      "ko": "담배연기 속에 피는 사랑",
+      "en": "Love in a Puff",
+      "ja": "恋の紫煙"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008874": {
+    "workId": "wk_000008874",
+    "title": "사이공의 네 괴짜들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831848"
+    },
+    "titles": {
+      "ko": "사이공의 네 괴짜들",
+      "en": "Four Oddballs of Saigon"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

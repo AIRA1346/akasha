@@ -128,5 +128,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008776": {
+    "workId": "wk_000008776",
+    "title": "독수리 오형제",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700127"
+    },
+    "titles": {
+      "ko": "독수리 오형제",
+      "en": "Science Ninja Team Gatchaman",
+      "ja": "科学忍者隊ガッチャマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

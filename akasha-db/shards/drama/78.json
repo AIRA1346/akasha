@@ -142,5 +142,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008343": {
+    "workId": "wk_000008343",
+    "title": "유 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640275"
+    },
+    "titles": {
+      "ko": "유 스타",
+      "en": "Yū! Style",
+      "ja": "遊!Style"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008888": {
+    "workId": "wk_000008888",
+    "title": "천도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118139131"
+    },
+    "titles": {
+      "ko": "천도",
+      "en": "Fight for Justice"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008948": {
+    "workId": "wk_000008948",
+    "title": "버즈 오브 프레이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118689"
+    },
+    "titles": {
+      "ko": "버즈 오브 프레이",
+      "en": "Birds of Prey",
+      "ja": "ゴッサム・シティ・エンジェル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

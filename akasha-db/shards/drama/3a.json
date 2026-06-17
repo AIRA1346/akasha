@@ -103,5 +103,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008540": {
+    "workId": "wk_000008540",
+    "title": "넘버스 : 빌딩숲의 감시자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116771987"
+    },
+    "titles": {
+      "ko": "넘버스 : 빌딩숲의 감시자들",
+      "en": "Numbers",
+      "ja": "ナンバーズ - ビルの森の監視者たち -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -172,5 +172,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008683": {
+    "workId": "wk_000008683",
+    "title": "비밀의 비밀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117005456"
+    },
+    "titles": {
+      "ko": "비밀의 비밀",
+      "en": "Fool Me Once",
+      "ja": "偽りの銃弾"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008755": {
+    "workId": "wk_000008755",
+    "title": "외교관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117425241"
+    },
+    "titles": {
+      "ko": "외교관",
+      "en": "The Diplomat",
+      "ja": "ザ・ディプロマット (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -258,5 +258,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008305": {
+    "workId": "wk_000008305",
+    "title": "이윽고 네가 된다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63436944"
+    },
+    "titles": {
+      "ko": "이윽고 네가 된다",
+      "en": "Bloom Into You",
+      "ja": "やがて君になる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

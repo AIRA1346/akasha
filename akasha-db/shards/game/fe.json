@@ -164,5 +164,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008781": {
+    "workId": "wk_000008781",
+    "title": "나이트 트랩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323428"
+    },
+    "titles": {
+      "ko": "나이트 트랩",
+      "en": "Night Trap",
+      "ja": "ナイトトラップ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "wk_000008900": {
+    "workId": "wk_000008900",
+    "title": "아드 아스트라 페르 아스페라",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24868245"
+    },
+    "titles": {
+      "ko": "아드 아스트라 페르 아스페라",
+      "en": "AD ASTRA★PER ASPERA",
+      "ja": "アド アストラ ペル アスペラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

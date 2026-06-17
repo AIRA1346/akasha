@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008398": {
+    "workId": "wk_000008398",
+    "title": "갈리폴리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077160"
+    },
+    "titles": {
+      "ko": "갈리폴리",
+      "en": "Gallipoli",
+      "ja": "誓い"
+    },
+    "releaseYear": 1982,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -90,5 +90,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008191": {
+    "workId": "wk_000008191",
+    "title": "프린세스 커넥트! Re:Dive (애니메이션)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61740576"
+    },
+    "titles": {
+      "ko": "프린세스 커넥트! Re:Dive (애니메이션)",
+      "en": "Princess Connect! Re:Dive",
+      "ja": "プリンセスコネクト！Re:Dive"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

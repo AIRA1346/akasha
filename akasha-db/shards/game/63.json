@@ -109,5 +109,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008650": {
+    "workId": "wk_000008650",
+    "title": "노래의☆왕자님♪",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1318537"
+    },
+    "titles": {
+      "ko": "노래의☆왕자님♪",
+      "en": "Uta no Prince-sama",
+      "ja": "うたの☆プリンスさまっ♪"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

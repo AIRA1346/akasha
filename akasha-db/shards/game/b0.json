@@ -176,5 +176,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008374": {
+    "workId": "wk_000008374",
+    "title": "소드 오브 콘발라리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130223949"
+    },
+    "titles": {
+      "ko": "소드 오브 콘발라리아",
+      "en": "Sword of Convallaria"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

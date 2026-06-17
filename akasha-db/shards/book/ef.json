@@ -37,5 +37,42 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008328": {
+    "workId": "wk_000008328",
+    "title": "하이 스피드 제시",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11326021"
+    },
+    "titles": {
+      "ko": "하이 스피드 제시",
+      "en": "Hi-Speed Jecy",
+      "ja": "ハイスピード・ジェシー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008931": {
+    "workId": "wk_000008931",
+    "title": "불을 가지고 노는 소녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137369"
+    },
+    "titles": {
+      "ko": "불을 가지고 노는 소녀",
+      "en": "The Girl Who Played with Fire"
+    },
+    "releaseYear": 2005,
+    "creator": "Stieg Larsson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

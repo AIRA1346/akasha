@@ -70,5 +70,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008222": {
+    "workId": "wk_000008222",
+    "title": "GIRL FRIENDS",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2120521"
+    },
+    "titles": {
+      "ko": "GIRL FRIENDS",
+      "en": "Girl Friends",
+      "ja": "GIRL FRIENDS"
+    },
+    "releaseYear": 2006,
+    "creator": "Milk Morinaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

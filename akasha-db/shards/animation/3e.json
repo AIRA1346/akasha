@@ -108,5 +108,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008426": {
+    "workId": "wk_000008426",
+    "title": "신 에반게리온 극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6434144"
+    },
+    "titles": {
+      "ko": "신 에반게리온 극장판",
+      "en": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+      "ja": "シン・エヴァンゲリオン劇場版𝄇"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

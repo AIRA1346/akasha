@@ -177,5 +177,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008195": {
+    "workId": "wk_000008195",
+    "title": "타리 타리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q618201"
+    },
+    "titles": {
+      "ko": "타리 타리",
+      "en": "Tari Tari",
+      "ja": "TARI TARI"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008423": {
+    "workId": "wk_000008423",
+    "title": "메트로폴리스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q640695"
+    },
+    "titles": {
+      "ko": "메트로폴리스",
+      "en": "Metropolis",
+      "ja": "メトロポリス"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

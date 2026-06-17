@@ -179,5 +179,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008699": {
+    "workId": "wk_000008699",
+    "title": "기동전사 건담 SEED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696206"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED",
+      "en": "Mobile Suit Gundam SEED",
+      "ja": "機動戦士ガンダムSEED"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

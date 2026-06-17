@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008593": {
+    "workId": "wk_000008593",
+    "title": "1935년의 황금광들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079463"
+    },
+    "titles": {
+      "ko": "1935년의 황금광들",
+      "en": "Gold Diggers of 1935",
+      "ja": "ゴールド・ディガース36年"
+    },
+    "releaseYear": 1935,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

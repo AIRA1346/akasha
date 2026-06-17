@@ -128,5 +128,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008918": {
+    "workId": "wk_000008918",
+    "title": "노부나가 콘체르토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7046197"
+    },
+    "titles": {
+      "ko": "노부나가 콘체르토",
+      "en": "Nobunaga Concerto",
+      "ja": "信長協奏曲"
+    },
+    "releaseYear": 2009,
+    "creator": "Ayumi Ishii",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008919": {
+    "workId": "wk_000008919",
+    "title": "드래곤볼 改",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704651"
+    },
+    "titles": {
+      "ko": "드래곤볼 改",
+      "en": "Dragon Ball Z Kai",
+      "ja": "ドラゴンボール改"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

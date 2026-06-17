@@ -50,5 +50,64 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008515": {
+    "workId": "wk_000008515",
+    "title": "유지니아",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11345877"
+    },
+    "titles": {
+      "ko": "유지니아",
+      "en": "Eugenia",
+      "ja": "ユージニア"
+    },
+    "releaseYear": 2005,
+    "creator": "Riku Onda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008654": {
+    "workId": "wk_000008654",
+    "title": "박쥐",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135199"
+    },
+    "titles": {
+      "ko": "박쥐",
+      "en": "The Bat"
+    },
+    "releaseYear": 2015,
+    "creator": "Jo Nesbø",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008865": {
+    "workId": "wk_000008865",
+    "title": "난반사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11370545"
+    },
+    "titles": {
+      "ko": "난반사",
+      "en": "Q11370545",
+      "ja": "乱反射 (小説)"
+    },
+    "releaseYear": 2009,
+    "creator": "Tokurō Nukui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -131,5 +131,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008429": {
+    "workId": "wk_000008429",
+    "title": "게이머즈!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64498423"
+    },
+    "titles": {
+      "ko": "게이머즈!",
+      "en": "Gamers!",
+      "ja": "ゲーマーズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008636": {
+    "workId": "wk_000008636",
+    "title": "풀 메탈 패닉! The Second Raid",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6875529"
+    },
+    "titles": {
+      "ko": "풀 메탈 패닉! The Second Raid",
+      "en": "Full Metal Panic! The Second Raid",
+      "ja": "フルメタル・パニック!The Second Raid"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

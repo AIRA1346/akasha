@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008395": {
+    "workId": "wk_000008395",
+    "title": "죽음의 다섯 손가락",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077127"
+    },
+    "titles": {
+      "ko": "죽음의 다섯 손가락",
+      "en": "King Boxer",
+      "ja": "King Boxer"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

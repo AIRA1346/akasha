@@ -35,5 +35,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008876": {
+    "workId": "wk_000008876",
+    "title": "더 챔피언",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108325148"
+    },
+    "titles": {
+      "ko": "더 챔피언",
+      "en": "Prizefighter: The Life of Jem Belcher"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

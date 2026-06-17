@@ -35,5 +35,60 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008425": {
+    "workId": "wk_000008425",
+    "title": "레이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64212353"
+    },
+    "titles": {
+      "ko": "레이브",
+      "en": "Rave Master",
+      "ja": "RAVE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008842": {
+    "workId": "wk_000008842",
+    "title": "초시공요새 마크로스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702373"
+    },
+    "titles": {
+      "ko": "초시공요새 마크로스",
+      "en": "Super Dimension Fortress Macross",
+      "ja": "超時空要塞マクロス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008909": {
+    "workId": "wk_000008909",
+    "title": "반",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q703524"
+    },
+    "titles": {
+      "ko": "반",
+      "en": "Naruto Shippuden the Movie: Bonds",
+      "ja": "劇場版 NARUTO -ナルト- 疾風伝 絆"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

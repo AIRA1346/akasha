@@ -114,5 +114,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008730": {
+    "workId": "wk_000008730",
+    "title": "오자병법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135722"
+    },
+    "titles": {
+      "ko": "오자병법",
+      "en": "Wuzi",
+      "ja": "呉子"
+    },
+    "creator": "Wu Qi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

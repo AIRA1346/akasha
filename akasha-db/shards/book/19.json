@@ -1,0 +1,21 @@
+{
+  "wk_000008262": {
+    "workId": "wk_000008262",
+    "title": "던",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323529"
+    },
+    "titles": {
+      "ko": "던",
+      "en": "Q11323529",
+      "ja": "ドーン (小説)"
+    },
+    "creator": "Keiichiro Hirano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

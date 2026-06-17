@@ -123,5 +123,59 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008342": {
+    "workId": "wk_000008342",
+    "title": "주간신간서적",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640028"
+    },
+    "titles": {
+      "ko": "주간신간서적",
+      "en": "Weekly Book Review",
+      "ja": "週刊ブックレビュー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008747": {
+    "workId": "wk_000008747",
+    "title": "힙(HIP)하게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117280410"
+    },
+    "titles": {
+      "ko": "힙(HIP)하게",
+      "en": "Behind your Touch",
+      "ja": "ヒップタッチの女王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008751": {
+    "workId": "wk_000008751",
+    "title": "폭싹 속았수다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117353211"
+    },
+    "titles": {
+      "ko": "폭싹 속았수다",
+      "en": "When Life Gives You Tangerines",
+      "ja": "おつかれさま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

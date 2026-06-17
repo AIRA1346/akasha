@@ -208,5 +208,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008308": {
+    "workId": "wk_000008308",
+    "title": "히트맨: 앱솔루션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129277"
+    },
+    "titles": {
+      "ko": "히트맨: 앱솔루션",
+      "en": "Hitman: Absolution",
+      "ja": "Hitman: Absolution"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008572": {
+    "workId": "wk_000008572",
+    "title": "인터갤럭틱: 더 헤레틱 프로핏",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131436227"
+    },
+    "titles": {
+      "ko": "인터갤럭틱: 더 헤레틱 프로핏",
+      "en": "Q131436227"
+    },
+    "creator": "Neil Druckmann",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

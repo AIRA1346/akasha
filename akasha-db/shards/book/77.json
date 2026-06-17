@@ -55,5 +55,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008253": {
+    "workId": "wk_000008253",
+    "title": "그림자 영웅의 일상담 용사의 뒤에서 암약하고 있던 최강의 에이전트. 조직이 해체되었으므로, 정체를 숨기고 남들 만큼의 일상을 구가한다.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159311"
+    },
+    "titles": {
+      "ko": "그림자 영웅의 일상담 용사의 뒤에서 암약하고 있던 최강의 에이전트. 조직이 해체되었으므로, 정체를 숨기고 남들 만큼의 일상을 구가한다.",
+      "en": "Kage no Eiyū no Nichijō Tan: Yūsha no Ura de Anyaku Shiteita Saikyō no Agent. Soshiki ga Kaitai Sareta no de, Shōtai Kakushite Hitonami no Nichijō o Ōka Suru",
+      "ja": "影の英雄の日常譚 勇者の裏で暗躍していた最強のエージェント。組織が解体されたので、正体隠して人並みの日常を謳歌する。"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008866": {
+    "workId": "wk_000008866",
+    "title": "예지몽",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11371100"
+    },
+    "titles": {
+      "ko": "예지몽",
+      "en": "Precognitive Dreams",
+      "ja": "予知夢"
+    },
+    "releaseYear": 2000,
+    "creator": "히가시노 게이고",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

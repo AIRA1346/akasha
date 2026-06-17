@@ -87,5 +87,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008856": {
+    "workId": "wk_000008856",
+    "title": "델타 포스: 블랙 호크 다운",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324541"
+    },
+    "titles": {
+      "ko": "델타 포스: 블랙 호크 다운",
+      "en": "Delta Force: Black Hawk Down"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

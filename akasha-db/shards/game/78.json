@@ -183,5 +183,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008640": {
+    "workId": "wk_000008640",
+    "title": "대마계촌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1315653"
+    },
+    "titles": {
+      "ko": "대마계촌",
+      "en": "Ghouls 'n Ghosts",
+      "ja": "大魔界村"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

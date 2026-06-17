@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008867": {
+    "workId": "wk_000008867",
+    "title": "스물 넷의 눈동자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11371380"
+    },
+    "titles": {
+      "ko": "스물 넷의 눈동자",
+      "en": "Twenty-four Eyes",
+      "ja": "二十四の瞳"
+    },
+    "creator": "Sakae Tsuboi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

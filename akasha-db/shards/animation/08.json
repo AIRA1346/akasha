@@ -163,5 +163,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008707": {
+    "workId": "wk_000008707",
+    "title": "대흥분! 초승달 섬의 애니멀 소동",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696646"
+    },
+    "titles": {
+      "ko": "대흥분! 초승달 섬의 애니멀 소동",
+      "en": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+      "ja": "劇場版 NARUTO -ナルト- 大興奮!みかづき島のアニマル騒動だってばよ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -72,5 +72,63 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008254": {
+    "workId": "wk_000008254",
+    "title": "해고당한 암흑병사(30대)의 슬로한 세컨드 라이프",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113162301"
+    },
+    "titles": {
+      "ko": "해고당한 암흑병사(30대)의 슬로한 세컨드 라이프",
+      "en": "Chillin' in My 30s After Getting Fired from the Demon King's Army",
+      "ja": "解雇された暗黒兵士（30代）のスローなセカンドライフ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008391": {
+    "workId": "wk_000008391",
+    "title": "판도라의 상자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329715"
+    },
+    "titles": {
+      "ko": "판도라의 상자",
+      "en": "Q11329715",
+      "ja": "パンドラの匣"
+    },
+    "creator": "다자이 오사무",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008784": {
+    "workId": "wk_000008784",
+    "title": "화한삼재도회",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135803"
+    },
+    "titles": {
+      "ko": "화한삼재도회",
+      "en": "Wakan Sansai Zue",
+      "ja": "和漢三才図会"
+    },
+    "releaseYear": 1713,
+    "creator": "Terashima Ryōan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

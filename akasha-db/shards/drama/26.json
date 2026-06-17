@@ -214,5 +214,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008349": {
+    "workId": "wk_000008349",
+    "title": "술 취한 코토지 류서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11644387"
+    },
+    "titles": {
+      "ko": "술 취한 코토지 류서",
+      "en": "Yoidore ko tō-ji tomegaki",
+      "ja": "酔いどれ小籐次留書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008535": {
+    "workId": "wk_000008535",
+    "title": "요안적니아 : 눈부신 그대여",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116764724"
+    },
+    "titles": {
+      "ko": "요안적니아 : 눈부신 그대여",
+      "en": "Good Women"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

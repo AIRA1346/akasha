@@ -38,5 +38,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008586": {
+    "workId": "wk_000008586",
+    "title": "로트레크 저택 살인 사건",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11350982"
+    },
+    "titles": {
+      "ko": "로트레크 저택 살인 사건",
+      "en": "The Lautrec Villa Murders",
+      "ja": "ロートレック荘事件"
+    },
+    "releaseYear": 1990,
+    "creator": "Yasutaka Tsutsui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

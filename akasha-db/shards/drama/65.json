@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008345": {
+    "workId": "wk_000008345",
+    "title": "유품 정리인 타니자키 아이코",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11642618"
+    },
+    "titles": {
+      "ko": "유품 정리인 타니자키 아이코",
+      "en": "Ihin seiri hito Tanizaki Aiko",
+      "ja": "遺品整理人 谷崎藍子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

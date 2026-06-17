@@ -56,5 +56,41 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008255": {
+    "workId": "wk_000008255",
+    "title": "마지막 춤은 콜린과 함께",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113165000"
+    },
+    "titles": {
+      "ko": "마지막 춤은 콜린과 함께",
+      "en": "Romancing Mister Bridgerton"
+    },
+    "creator": "줄리아 퀸",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008256": {
+    "workId": "wk_000008256",
+    "title": "사랑은 편지를 타고",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113165002"
+    },
+    "titles": {
+      "ko": "사랑은 편지를 타고",
+      "en": "To Sir Phillip, With Love"
+    },
+    "creator": "줄리아 퀸",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

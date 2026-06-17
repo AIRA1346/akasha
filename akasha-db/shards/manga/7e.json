@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008692": {
+    "workId": "wk_000008692",
+    "title": "작열의 탁구소녀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23843627"
+    },
+    "titles": {
+      "ko": "작열의 탁구소녀",
+      "en": "Scorching Ping Pong Girls",
+      "ja": "灼熱の卓球娘"
+    },
+    "creator": "Yagura Asano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

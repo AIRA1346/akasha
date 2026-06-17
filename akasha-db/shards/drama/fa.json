@@ -104,5 +104,39 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008814": {
+    "workId": "wk_000008814",
+    "title": "티에라 데 에스페란사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117705955"
+    },
+    "titles": {
+      "ko": "티에라 데 에스페란사",
+      "en": "Tierra de esperanza"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008884": {
+    "workId": "wk_000008884",
+    "title": "YTN 뉴스 9",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118108906"
+    },
+    "titles": {
+      "ko": "YTN 뉴스 9",
+      "en": "Q118108906"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

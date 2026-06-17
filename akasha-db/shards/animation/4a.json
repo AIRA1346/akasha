@@ -129,5 +129,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008190": {
+    "workId": "wk_000008190",
+    "title": "액셀 월드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61722393"
+    },
+    "titles": {
+      "ko": "액셀 월드",
+      "en": "Accel World",
+      "ja": "アクセル・ワールド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

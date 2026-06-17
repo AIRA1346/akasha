@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008207": {
+    "workId": "wk_000008207",
+    "title": "쇼잉 업",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107610545"
+    },
+    "titles": {
+      "ko": "쇼잉 업",
+      "en": "Showing Up",
+      "ja": "ショーイング・アップ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

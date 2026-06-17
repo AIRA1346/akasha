@@ -106,5 +106,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008361": {
+    "workId": "wk_000008361",
+    "title": "용왕이 하는 일!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63493919"
+    },
+    "titles": {
+      "ko": "용왕이 하는 일!",
+      "en": "The Ryuo's Work is Never Done!",
+      "ja": "りゅうおうのおしごと!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

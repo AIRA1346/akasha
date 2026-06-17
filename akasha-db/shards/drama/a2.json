@@ -155,5 +155,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008410": {
+    "workId": "wk_000008410",
+    "title": "영감 버스 가이드 사건부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11660734"
+    },
+    "titles": {
+      "ko": "영감 버스 가이드 사건부",
+      "en": "Reikan Bus Guide Jikenbo",
+      "ja": "霊感バスガイド事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008748": {
+    "workId": "wk_000008748",
+    "title": "오랫동안 당신을 기다렸습니다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117286141"
+    },
+    "titles": {
+      "ko": "오랫동안 당신을 기다렸습니다",
+      "en": "I Have Waited a Long Time for You"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

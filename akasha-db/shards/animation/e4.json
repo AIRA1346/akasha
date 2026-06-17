@@ -169,5 +169,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008634": {
+    "workId": "wk_000008634",
+    "title": "22/7",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q68325523"
+    },
+    "titles": {
+      "ko": "22/7",
+      "en": "22/7",
+      "ja": "22/7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

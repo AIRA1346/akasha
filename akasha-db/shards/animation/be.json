@@ -71,5 +71,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008436": {
+    "workId": "wk_000008436",
+    "title": "니노쿠니",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65007238"
+    },
+    "titles": {
+      "ko": "니노쿠니",
+      "en": "Ni no Kuni",
+      "ja": "二ノ国"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008705": {
+    "workId": "wk_000008705",
+    "title": "소녀혁명 우테나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696377"
+    },
+    "titles": {
+      "ko": "소녀혁명 우테나",
+      "en": "Revolutionary Girl Utena",
+      "ja": "少女革命ウテナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

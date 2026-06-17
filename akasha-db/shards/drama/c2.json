@@ -139,5 +139,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008465": {
+    "workId": "wk_000008465",
+    "title": "일타강사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116626250"
+    },
+    "titles": {
+      "ko": "일타강사",
+      "en": "Top Teacher"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

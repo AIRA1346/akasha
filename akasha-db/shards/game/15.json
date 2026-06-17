@@ -35,5 +35,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008571": {
+    "workId": "wk_000008571",
+    "title": "디스패치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131436199"
+    },
+    "titles": {
+      "ko": "디스패치",
+      "en": "Q131436199"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008925": {
+    "workId": "wk_000008925",
+    "title": "스타폭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326889"
+    },
+    "titles": {
+      "ko": "스타폭스",
+      "en": "Star Fox",
+      "ja": "スターフォックス"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

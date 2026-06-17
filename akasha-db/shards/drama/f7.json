@@ -194,5 +194,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008949": {
+    "workId": "wk_000008949",
+    "title": "DKZ의 달빛 동아리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118690452"
+    },
+    "titles": {
+      "ko": "DKZ의 달빛 동아리",
+      "en": "DKZ Moonlight Club"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

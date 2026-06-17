@@ -138,5 +138,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008347": {
+    "workId": "wk_000008347",
+    "title": "부장 형사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11643277"
+    },
+    "titles": {
+      "ko": "부장 형사",
+      "en": "Q11643277",
+      "ja": "部長刑事"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008533": {
+    "workId": "wk_000008533",
+    "title": "봉신 야츠루기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11675295"
+    },
+    "titles": {
+      "ko": "봉신 야츠루기",
+      "en": "Hōjin Yatsurugi",
+      "ja": "鳳神ヤツルギ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008738": {
+    "workId": "wk_000008738",
+    "title": "가슴이 뛴다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117184363"
+    },
+    "titles": {
+      "ko": "가슴이 뛴다",
+      "en": "Heartbeat"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

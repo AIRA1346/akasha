@@ -36,5 +36,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008268": {
+    "workId": "wk_000008268",
+    "title": "볼코노고프 대위 탈출하다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107662895"
+    },
+    "titles": {
+      "ko": "볼코노고프 대위 탈출하다",
+      "en": "Captain Volkonogov Escaped"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

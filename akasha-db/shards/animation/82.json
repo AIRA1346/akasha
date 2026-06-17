@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008712": {
+    "workId": "wk_000008712",
+    "title": "톰 소여의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q698394"
+    },
+    "titles": {
+      "ko": "톰 소여의 모험",
+      "en": "The Adventures of Tom Sawyer",
+      "ja": "トム・ソーヤーの冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

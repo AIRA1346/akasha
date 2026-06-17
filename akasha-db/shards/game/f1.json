@@ -127,5 +127,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008573": {
+    "workId": "wk_000008573",
+    "title": "M.U.G.E.N",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1314490"
+    },
+    "titles": {
+      "ko": "M.U.G.E.N",
+      "en": "M.U.G.E.N",
+      "ja": "M.U.G.E.N"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

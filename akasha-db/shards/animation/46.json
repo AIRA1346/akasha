@@ -161,5 +161,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008625": {
+    "workId": "wk_000008625",
+    "title": "청춘 돼지는 꿈꾸는 소녀의 꿈을 꾸지 않는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66788914"
+    },
+    "titles": {
+      "ko": "청춘 돼지는 꿈꾸는 소녀의 꿈을 꾸지 않는다",
+      "en": "Rascal Does Not Dream of a Dreaming Girl",
+      "ja": "青春ブタ野郎はゆめみる少女の夢を見ない"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

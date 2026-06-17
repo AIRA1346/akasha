@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008440": {
+    "workId": "wk_000008440",
+    "title": "러브앤딥스페이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130616446"
+    },
+    "titles": {
+      "ko": "러브앤딥스페이스",
+      "en": "Love and Deepspace",
+      "ja": "恋と深空"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -149,5 +149,41 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008443": {
+    "workId": "wk_000008443",
+    "title": "울티마 IX: 승천",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1306937"
+    },
+    "titles": {
+      "ko": "울티마 IX: 승천",
+      "en": "Ultima IX: Ascension"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008579": {
+    "workId": "wk_000008579",
+    "title": "디스오더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131498390"
+    },
+    "titles": {
+      "ko": "디스오더",
+      "en": "Disorder"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008862": {
+    "workId": "wk_000008862",
+    "title": "세상의 끝, 혹은 시작",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11362194"
+    },
+    "titles": {
+      "ko": "세상의 끝, 혹은 시작",
+      "en": "Q11362194",
+      "ja": "世界の終わり、あるいは始まり"
+    },
+    "releaseYear": 2002,
+    "creator": "Shōgo Utano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

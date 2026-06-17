@@ -156,5 +156,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008894": {
+    "workId": "wk_000008894",
+    "title": "SP",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182856"
+    },
+    "titles": {
+      "ko": "SP",
+      "en": "SP",
+      "ja": "SP 警視庁警備部警護課第四係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -125,5 +125,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008496": {
+    "workId": "wk_000008496",
+    "title": "경시청 특무부 특수흉악범 대책실 제7과 -토쿠나나-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65057296"
+    },
+    "titles": {
+      "ko": "경시청 특무부 특수흉악범 대책실 제7과 -토쿠나나-",
+      "en": "Special Crime Investigation Unit Special 7",
+      "ja": "警視庁 特務部 特殊凶悪犯対策室 第七課 -トクナナ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008709": {
+    "workId": "wk_000008709",
+    "title": "몬타나 존스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q697027"
+    },
+    "titles": {
+      "ko": "몬타나 존스",
+      "en": "Montana Jones",
+      "ja": "モンタナ・ジョーンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

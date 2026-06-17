@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008801": {
+    "workId": "wk_000008801",
+    "title": "의리의 사나이 외팔이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082898"
+    },
+    "titles": {
+      "ko": "의리의 사나이 외팔이",
+      "en": "The One-Armed Swordsman",
+      "ja": "片腕必殺剣"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

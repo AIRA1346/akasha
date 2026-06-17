@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008377": {
+    "workId": "wk_000008377",
+    "title": "코스모 엔젤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130278592"
+    },
+    "titles": {
+      "ko": "코스모 엔젤",
+      "en": "Cosmo Angel",
+      "ja": "コスモエンジェル"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

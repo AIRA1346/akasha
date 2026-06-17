@@ -54,5 +54,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008669": {
+    "workId": "wk_000008669",
+    "title": "서울대작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108067645"
+    },
+    "titles": {
+      "ko": "서울대작전",
+      "en": "Seoul Vibe",
+      "ja": "ソウル・バイブス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008878": {
+    "workId": "wk_000008878",
+    "title": "데드 포 어 달러",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108325691"
+    },
+    "titles": {
+      "ko": "데드 포 어 달러",
+      "en": "Dead for a Dollar",
+      "ja": "Dead for a Dollar"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

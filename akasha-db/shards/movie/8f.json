@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008212": {
+    "workId": "wk_000008212",
+    "title": "얼떨결에 스타트업",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107638338"
+    },
+    "titles": {
+      "ko": "얼떨결에 스타트업",
+      "en": "Bankrolled",
+      "ja": "とんでもファンディング"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

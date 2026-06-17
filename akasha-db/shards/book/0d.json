@@ -94,5 +94,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008512": {
+    "workId": "wk_000008512",
+    "title": "다다미 넉 장 반 세계일주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134458"
+    },
+    "titles": {
+      "ko": "다다미 넉 장 반 세계일주",
+      "en": "The Tatami Galaxy",
+      "ja": "四畳半神話大系"
+    },
+    "creator": "Tomihiko Morimi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

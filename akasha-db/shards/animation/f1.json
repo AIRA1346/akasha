@@ -137,5 +137,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008711": {
+    "workId": "wk_000008711",
+    "title": "미래소년 코난",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q697616"
+    },
+    "titles": {
+      "ko": "미래소년 코난",
+      "en": "Future Boy Conan",
+      "ja": "未来少年コナン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008595": {
+    "workId": "wk_000008595",
+    "title": "쉬 세드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107969593"
+    },
+    "titles": {
+      "ko": "쉬 세드",
+      "en": "She Said",
+      "ja": "SHE SAID/シー・セッド その名を暴け"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

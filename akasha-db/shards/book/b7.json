@@ -132,5 +132,43 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008514": {
+    "workId": "wk_000008514",
+    "title": "패신저",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113456487"
+    },
+    "titles": {
+      "ko": "패신저",
+      "en": "The Passenger"
+    },
+    "releaseYear": 2022,
+    "creator": "Cormac McCarthy",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008864": {
+    "workId": "wk_000008864",
+    "title": "니체가 눈물을 흘릴 때",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136864"
+    },
+    "titles": {
+      "ko": "니체가 눈물을 흘릴 때",
+      "en": "When Nietzsche Wept"
+    },
+    "releaseYear": 2007,
+    "creator": "Irvin Yalom",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

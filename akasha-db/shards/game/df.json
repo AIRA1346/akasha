@@ -73,5 +73,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008240": {
+    "workId": "wk_000008240",
+    "title": "The Sims 4: 사랑법",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128210432"
+    },
+    "titles": {
+      "ko": "The Sims 4: 사랑법",
+      "en": "The Sims 4: Lovestruck",
+      "ja": "The Sims 4: Lovestruck"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008717": {
+    "workId": "wk_000008717",
+    "title": "파이널 파이트 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321249"
+    },
+    "titles": {
+      "ko": "파이널 파이트 2",
+      "en": "Final Fight 2",
+      "ja": "ファイナルファイト2"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

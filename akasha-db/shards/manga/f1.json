@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008356": {
+    "workId": "wk_000008356",
+    "title": "불쾌한 모노노케안",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22123801"
+    },
+    "titles": {
+      "ko": "불쾌한 모노노케안",
+      "en": "The Morose Mononokean",
+      "ja": "不機嫌なモノノケ庵"
+    },
+    "creator": "Kiri Wazawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

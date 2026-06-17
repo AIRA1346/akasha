@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008250": {
+    "workId": "wk_000008250",
+    "title": "아세토 코르사 EVO",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128868263"
+    },
+    "titles": {
+      "ko": "아세토 코르사 EVO",
+      "en": "Assetto Corsa EVO"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

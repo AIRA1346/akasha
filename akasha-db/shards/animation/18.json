@@ -142,5 +142,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008765": {
+    "workId": "wk_000008765",
+    "title": "꾸러기 수비대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699173"
+    },
+    "titles": {
+      "ko": "꾸러기 수비대",
+      "en": "Juuni Senshi Bakuretsu Eto Ranger",
+      "ja": "十二戦支 爆烈エトレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008911": {
+    "workId": "wk_000008911",
+    "title": "최강무장전 삼국연의",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q703770"
+    },
+    "titles": {
+      "ko": "최강무장전 삼국연의",
+      "en": "Romance of the Three Kingdoms",
+      "ja": "最強武将伝 三国演義"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

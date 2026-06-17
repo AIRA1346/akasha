@@ -197,5 +197,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008297": {
+    "workId": "wk_000008297",
+    "title": "리락쿠마와 가오루 씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63248004"
+    },
+    "titles": {
+      "ko": "리락쿠마와 가오루 씨",
+      "en": "Rilakkuma and Kaoru",
+      "ja": "リラックマとカオルさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

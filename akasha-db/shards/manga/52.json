@@ -94,5 +94,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008554": {
+    "workId": "wk_000008554",
+    "title": "재발행 가능!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22661191"
+    },
+    "titles": {
+      "ko": "재발행 가능!",
+      "en": "Jūhan Shuttai!",
+      "ja": "重版出来!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

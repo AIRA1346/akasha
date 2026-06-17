@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008489": {
+    "workId": "wk_000008489",
+    "title": "마녀의 하인과 마왕의 뿔",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131515"
+    },
+    "titles": {
+      "ko": "마녀의 하인과 마왕의 뿔",
+      "en": "Majo no Geboku to Maō no Tsuno",
+      "ja": "魔女の下僕と魔王のツノ"
+    },
+    "creator": "Mochi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008631": {
+    "workId": "wk_000008631",
+    "title": "유희왕 ZEXAL",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q676287"
+    },
+    "titles": {
+      "ko": "유희왕 ZEXAL",
+      "en": "Yu-Gi-Oh! Zexal",
+      "ja": "遊☆戯☆王ZEXAL"
+    },
+    "creator": "Shin Yoshida",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

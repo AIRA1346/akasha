@@ -86,5 +86,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008346": {
+    "workId": "wk_000008346",
+    "title": "딜리버리 맨!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116431269"
+    },
+    "titles": {
+      "ko": "딜리버리 맨!",
+      "en": "Delivery Man",
+      "ja": "デリバリーマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

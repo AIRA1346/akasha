@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008424": {
+    "workId": "wk_000008424",
+    "title": "리포터 블루스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6418796"
+    },
+    "titles": {
+      "ko": "리포터 블루스",
+      "en": "Reporter Blues",
+      "ja": "レポーターブルース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

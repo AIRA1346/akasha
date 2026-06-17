@@ -139,5 +139,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008887": {
+    "workId": "wk_000008887",
+    "title": "접신: 신이 내린 자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118131624"
+    },
+    "titles": {
+      "ko": "접신: 신이 내린 자",
+      "en": "Agent from Above",
+      "ja": "乩身: 天界の使者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -174,5 +174,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008353": {
+    "workId": "wk_000008353",
+    "title": "금요 로드쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11647176"
+    },
+    "titles": {
+      "ko": "금요 로드쇼",
+      "en": "Kin'yō Roadshow",
+      "ja": "金曜ロードショー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008414": {
+    "workId": "wk_000008414",
+    "title": "다크 스카이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1166230"
+    },
+    "titles": {
+      "ko": "다크 스카이",
+      "en": "Dark Skies",
+      "ja": "ダークスカイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008598": {
+    "workId": "wk_000008598",
+    "title": "수도지도아애니",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116822227"
+    },
+    "titles": {
+      "ko": "수도지도아애니",
+      "en": "Q116822227"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008676": {
+    "workId": "wk_000008676",
+    "title": "비밀은 없어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116947667"
+    },
+    "titles": {
+      "ko": "비밀은 없어",
+      "en": "Frankly Speaking",
+      "ja": "正直にお伝えします!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008735": {
+    "workId": "wk_000008735",
+    "title": "쇼미더고스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108119523"
+    },
+    "titles": {
+      "ko": "쇼미더고스트",
+      "en": "Show Me the Ghost",
+      "ja": "ショー・ミー・ザ・ゴースト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008731": {
+    "workId": "wk_000008731",
+    "title": "위지 왜인전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135798"
+    },
+    "titles": {
+      "ko": "위지 왜인전",
+      "en": "Treatise on the people of Wa",
+      "ja": "魏志倭人伝"
+    },
+    "creator": "진수",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

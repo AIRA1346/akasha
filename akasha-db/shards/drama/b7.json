@@ -87,5 +87,76 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008338": {
+    "workId": "wk_000008338",
+    "title": "빨간 송사리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635282"
+    },
+    "titles": {
+      "ko": "빨간 송사리",
+      "en": "Aka medaka",
+      "ja": "赤めだか"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008534": {
+    "workId": "wk_000008534",
+    "title": "오리 교토에 간다. - 전통 여관의 여장 일기 -",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11675510"
+    },
+    "titles": {
+      "ko": "오리 교토에 간다. - 전통 여관의 여장 일기 -",
+      "en": "Kamo, Kyōto e iku. - Shinise ryokan no okami nikki -",
+      "ja": "鴨、京都へ行く。-老舗旅館の女将日記-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008672": {
+    "workId": "wk_000008672",
+    "title": "VIVANT",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116919744"
+    },
+    "titles": {
+      "ko": "VIVANT",
+      "en": "VIVANT",
+      "ja": "VIVANT"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008817": {
+    "workId": "wk_000008817",
+    "title": "마녀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117802577"
+    },
+    "titles": {
+      "ko": "마녀",
+      "en": "The Witch"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

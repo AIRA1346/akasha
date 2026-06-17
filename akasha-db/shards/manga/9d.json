@@ -94,5 +94,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008291": {
+    "workId": "wk_000008291",
+    "title": "다우트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2175921"
+    },
+    "titles": {
+      "ko": "다우트",
+      "en": "Doubt",
+      "ja": "Doubt"
+    },
+    "creator": "Yoshiki Tonogai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

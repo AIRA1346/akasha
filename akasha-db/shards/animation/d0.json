@@ -90,5 +90,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008639": {
+    "workId": "wk_000008639",
+    "title": "거꾸로 된 파테마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6940888"
+    },
+    "titles": {
+      "ko": "거꾸로 된 파테마",
+      "en": "Patema Inverted",
+      "ja": "サカサマのパテマ"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

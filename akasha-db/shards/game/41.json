@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008924": {
+    "workId": "wk_000008924",
+    "title": "Wii로 다함께! 말랑말랑 두뇌교실",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326385"
+    },
+    "titles": {
+      "ko": "Wii로 다함께! 말랑말랑 두뇌교실",
+      "en": "Big Brain Academy: Wii Degree",
+      "ja": "Wiiでやわらかあたま塾"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

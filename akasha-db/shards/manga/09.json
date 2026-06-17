@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008622": {
+    "workId": "wk_000008622",
+    "title": "불꽃소년 레카",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2348046"
+    },
+    "titles": {
+      "ko": "불꽃소년 레카",
+      "en": "Flame of Recca",
+      "ja": "烈火の炎"
+    },
+    "creator": "Nobuyuki Anzai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

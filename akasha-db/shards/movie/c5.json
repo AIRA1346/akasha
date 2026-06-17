@@ -87,5 +87,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008332": {
+    "workId": "wk_000008332",
+    "title": "오! 마이 고스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107675694"
+    },
+    "titles": {
+      "ko": "오! 마이 고스트",
+      "en": "Oh! My Ghost"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

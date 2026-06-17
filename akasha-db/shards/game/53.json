@@ -138,5 +138,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008447": {
+    "workId": "wk_000008447",
+    "title": "킬링 플로어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130887"
+    },
+    "titles": {
+      "ko": "킬링 플로어",
+      "en": "Killing Floor",
+      "ja": "Killing Floor"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008860": {
+    "workId": "wk_000008860",
+    "title": "퍼블 플레이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1324740"
+    },
+    "titles": {
+      "ko": "퍼블 플레이스",
+      "en": "Purble Place",
+      "ja": "Purble Place"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

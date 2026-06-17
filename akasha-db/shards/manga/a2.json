@@ -76,5 +76,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008359": {
+    "workId": "wk_000008359",
+    "title": "노 건즈 라이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22124703"
+    },
+    "titles": {
+      "ko": "노 건즈 라이프",
+      "en": "No Guns Life",
+      "ja": "ノー・ガンズ・ライフ"
+    },
+    "creator": "Tasuku Karasuma",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008488": {
+    "workId": "wk_000008488",
+    "title": "마사무네의 리벤지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131469"
+    },
+    "titles": {
+      "ko": "마사무네의 리벤지",
+      "en": "Masamune-kun's Revenge",
+      "ja": "政宗くんのリベンジ"
+    },
+    "releaseYear": 2012,
+    "creator": "Hazuki Takeoka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

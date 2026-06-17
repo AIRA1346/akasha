@@ -175,5 +175,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008382": {
+    "workId": "wk_000008382",
+    "title": "고스트 오브 요테이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130360297"
+    },
+    "titles": {
+      "ko": "고스트 오브 요테이",
+      "en": "Q130360297",
+      "ja": "ゴースト・オブ・ヨウテイ"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -142,5 +142,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008403": {
+    "workId": "wk_000008403",
+    "title": "긴자 한가운데 !!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11649977"
+    },
+    "titles": {
+      "ko": "긴자 한가운데 !!",
+      "en": "In the Heart of the Ginza!",
+      "ja": "銀座まんまんなか!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

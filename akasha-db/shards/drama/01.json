@@ -140,5 +140,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008411": {
+    "workId": "wk_000008411",
+    "title": "NHK 원세그1",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11661193"
+    },
+    "titles": {
+      "ko": "NHK 원세그1",
+      "en": "NHK One Seg1",
+      "ja": "青山ワンセグ開発"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

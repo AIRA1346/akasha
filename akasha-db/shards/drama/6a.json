@@ -87,5 +87,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008952": {
+    "workId": "wk_000008952",
+    "title": "SBS 수도권뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118732808"
+    },
+    "titles": {
+      "ko": "SBS 수도권뉴스",
+      "en": "Q118732808"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

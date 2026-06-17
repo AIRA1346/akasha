@@ -199,5 +199,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008703": {
+    "workId": "wk_000008703",
+    "title": "대활극!! 설희인법첩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696351"
+    },
+    "titles": {
+      "ko": "대활극!! 설희인법첩",
+      "en": "Naruto the Movie: Ninja Clash in the Land of Snow",
+      "ja": "劇場版 NARUTO -ナルト- 大活劇!雪姫忍法帖だってばよ!!"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008906": {
+    "workId": "wk_000008906",
+    "title": "철인 28호(1980)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q703088"
+    },
+    "titles": {
+      "ko": "철인 28호(1980)",
+      "en": "The New Adventures of Gigantor",
+      "ja": "太陽の使者 鉄人28号"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008185": {
+    "workId": "wk_000008185",
+    "title": "푸른 망아지 브링크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q615648"
+    },
+    "titles": {
+      "ko": "푸른 망아지 브링크",
+      "en": "Blue Blink",
+      "ja": "青いブリンク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

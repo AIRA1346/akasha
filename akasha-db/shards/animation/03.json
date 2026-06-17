@@ -90,5 +90,78 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008196": {
+    "workId": "wk_000008196",
+    "title": "바다이야기 ~당신이 있어 주었기에~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q618974"
+    },
+    "titles": {
+      "ko": "바다이야기 ~당신이 있어 주었기에~",
+      "en": "Umi Monogatari",
+      "ja": "うみものがたり 〜あなたがいてくれたコト〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008306": {
+    "workId": "wk_000008306",
+    "title": "사랑은 비가 갠 뒤처럼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63436998"
+    },
+    "titles": {
+      "ko": "사랑은 비가 갠 뒤처럼",
+      "en": "After the Rain",
+      "ja": "恋は雨上がりのように"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008362": {
+    "workId": "wk_000008362",
+    "title": "코드 기어스 부활의 를르슈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63528764"
+    },
+    "titles": {
+      "ko": "코드 기어스 부활의 를르슈",
+      "en": "Code Geass: Lelouch of the Resurrection",
+      "ja": "コードギアス 復活のルルーシュ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008428": {
+    "workId": "wk_000008428",
+    "title": "거미입니다만, 문제라도?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64497144"
+    },
+    "titles": {
+      "ko": "거미입니다만, 문제라도?",
+      "en": "So I'm a Spider, So What?",
+      "ja": "蜘蛛ですが、なにか？"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

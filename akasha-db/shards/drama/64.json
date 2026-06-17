@@ -191,5 +191,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008892": {
+    "workId": "wk_000008892",
+    "title": "베라보 ~쓰타주 영화의 꿈 이야기~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118196407"
+    },
+    "titles": {
+      "ko": "베라보 ~쓰타주 영화의 꿈 이야기~",
+      "en": "Berabou",
+      "ja": "べらぼう 〜蔦重栄華乃夢噺〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

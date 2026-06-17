@@ -165,5 +165,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008491": {
+    "workId": "wk_000008491",
+    "title": "도라에몽 노비타의 신공룡",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65022408"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 신공룡",
+      "en": "Doraemon: Nobita's New Dinosaur",
+      "ja": "映画ドラえもん のび太の新恐竜"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

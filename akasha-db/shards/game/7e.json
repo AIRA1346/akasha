@@ -93,5 +93,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008921": {
+    "workId": "wk_000008921",
+    "title": "하프라이프 2: 데스매치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1325680"
+    },
+    "titles": {
+      "ko": "하프라이프 2: 데스매치",
+      "en": "Half-Life 2: Deathmatch"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

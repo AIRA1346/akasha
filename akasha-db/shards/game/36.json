@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008509": {
+    "workId": "wk_000008509",
+    "title": "쉐도우 라비린스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131434413"
+    },
+    "titles": {
+      "ko": "쉐도우 라비린스",
+      "en": "Shadow Labyrinth",
+      "ja": "Shadow Labyrinth"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

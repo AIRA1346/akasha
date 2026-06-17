@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008773": {
+    "workId": "wk_000008773",
+    "title": "루팡 3세: 더 퍼스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q69991162"
+    },
+    "titles": {
+      "ko": "루팡 3세: 더 퍼스트",
+      "en": "Lupin III: The First",
+      "ja": "ルパン三世 THE FIRST"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

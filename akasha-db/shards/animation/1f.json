@@ -176,5 +176,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008841": {
+    "workId": "wk_000008841",
+    "title": "소공녀 세라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702071"
+    },
+    "titles": {
+      "ko": "소공녀 세라",
+      "en": "Princess Sara",
+      "ja": "小公女セーラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

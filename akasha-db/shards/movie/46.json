@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008530": {
+    "workId": "wk_000008530",
+    "title": "마술사",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078890"
+    },
+    "titles": {
+      "ko": "마술사",
+      "en": "The Magician",
+      "ja": "魔笛"
+    },
+    "releaseYear": 1958,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

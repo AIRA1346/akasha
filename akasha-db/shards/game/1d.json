@@ -91,5 +91,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008848": {
+    "workId": "wk_000008848",
+    "title": "남극탐험",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323953"
+    },
+    "titles": {
+      "ko": "남극탐험",
+      "en": "Antarctic Adventure",
+      "ja": "けっきょく南極大冒険"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

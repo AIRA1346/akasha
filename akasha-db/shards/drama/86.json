@@ -139,5 +139,24 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008408": {
+    "workId": "wk_000008408",
+    "title": "그늘의 계절",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11658228"
+    },
+    "titles": {
+      "ko": "그늘의 계절",
+      "en": "Kage no Kisetsu",
+      "ja": "陰の季節"
+    },
+    "creator": "Hideo Yokoyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

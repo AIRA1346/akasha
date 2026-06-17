@@ -104,5 +104,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008340": {
+    "workId": "wk_000008340",
+    "title": "초경 21 거터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636314"
+    },
+    "titles": {
+      "ko": "초경 21 거터",
+      "en": "Chōkō 21 Gutter",
+      "ja": "超耕21ガッター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008690": {
+    "workId": "wk_000008690",
+    "title": "방과 후 전쟁활동",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117072066"
+    },
+    "titles": {
+      "ko": "방과 후 전쟁활동",
+      "en": "Duty After School"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

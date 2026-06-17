@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008629": {
+    "workId": "wk_000008629",
+    "title": "용의 아들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6730998"
+    },
+    "titles": {
+      "ko": "용의 아들",
+      "en": "Magical Hat",
+      "ja": "まじかるハット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

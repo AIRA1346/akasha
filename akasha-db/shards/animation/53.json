@@ -53,5 +53,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008565": {
+    "workId": "wk_000008565",
+    "title": "이상한 나라의 앨리스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q660237"
+    },
+    "titles": {
+      "ko": "이상한 나라의 앨리스",
+      "en": "Alice in Wonderland",
+      "ja": "不思議の国のアリス (1999年のテレビ映画)"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008774": {
+    "workId": "wk_000008774",
+    "title": "플랜더스의 개",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699949"
+    },
+    "titles": {
+      "ko": "플랜더스의 개",
+      "en": "Dog of Flanders",
+      "ja": "フランダースの犬"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

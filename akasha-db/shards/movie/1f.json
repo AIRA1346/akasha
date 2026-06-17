@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008264": {
+    "workId": "wk_000008264",
+    "title": "럭키스트 걸 얼라이브",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107657456"
+    },
+    "titles": {
+      "ko": "럭키스트 걸 얼라이브",
+      "en": "Luckiest Girl Alive",
+      "ja": "私は世界一幸運よ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -130,5 +130,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008293": {
+    "workId": "wk_000008293",
+    "title": "하늘의 혈맥",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21825357"
+    },
+    "titles": {
+      "ko": "하늘의 혈맥",
+      "en": "Q21825357",
+      "ja": "天の血脈"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

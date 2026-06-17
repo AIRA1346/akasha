@@ -109,5 +109,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008186": {
+    "workId": "wk_000008186",
+    "title": "마법소녀 육성계획",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61648547"
+    },
+    "titles": {
+      "ko": "마법소녀 육성계획",
+      "en": "Magical Girl Raising Project",
+      "ja": "魔法少女育成計画"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008557": {
+    "workId": "wk_000008557",
+    "title": "나목",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65239487"
+    },
+    "titles": {
+      "ko": "나목",
+      "en": "Q65239487"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

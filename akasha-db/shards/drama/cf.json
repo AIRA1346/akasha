@@ -177,5 +177,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008938": {
+    "workId": "wk_000008938",
+    "title": "빌런즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118366920"
+    },
+    "titles": {
+      "ko": "빌런즈",
+      "en": "Villains"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

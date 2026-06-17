@@ -1,0 +1,21 @@
+{
+  "wk_000008583": {
+    "workId": "wk_000008583",
+    "title": "월드 사커 위닝 일레븐 2012",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1315644"
+    },
+    "titles": {
+      "ko": "월드 사커 위닝 일레븐 2012",
+      "en": "Pro Evolution Soccer 2012",
+      "ja": "ワールドサッカー ウイニングイレブン 2012"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

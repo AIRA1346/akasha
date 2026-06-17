@@ -160,5 +160,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008336": {
+    "workId": "wk_000008336",
+    "title": "붉은 영구차 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635225"
+    },
+    "titles": {
+      "ko": "붉은 영구차 시리즈",
+      "en": "Akai Reikyūsha Series",
+      "ja": "赤い霊柩車シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008903": {
+    "workId": "wk_000008903",
+    "title": "첫사랑 좀비",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24871960"
+    },
+    "titles": {
+      "ko": "첫사랑 좀비",
+      "en": "Hatsukoi Zombie",
+      "ja": "初恋ゾンビ"
+    },
+    "creator": "峰浪りょう",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

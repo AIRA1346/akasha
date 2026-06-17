@@ -89,5 +89,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008294": {
+    "workId": "wk_000008294",
+    "title": "프래자일 병리의 키시 쿄이치로의 소견",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21857792"
+    },
+    "titles": {
+      "ko": "프래자일 병리의 키시 쿄이치로의 소견",
+      "en": "Fragile",
+      "ja": "フラジャイル 病理医岸京一郎の所見"
+    },
+    "releaseYear": 2014,
+    "creator": "Saburo Megumi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

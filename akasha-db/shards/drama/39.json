@@ -171,5 +171,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008811": {
+    "workId": "wk_000008811",
+    "title": "마법사 멀린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1176076"
+    },
+    "titles": {
+      "ko": "마법사 멀린",
+      "en": "Merlin",
+      "ja": "魔術師 MERLIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008947": {
+    "workId": "wk_000008947",
+    "title": "기적의 형제",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118680642"
+    },
+    "titles": {
+      "ko": "기적의 형제",
+      "en": "Miracle Brothers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

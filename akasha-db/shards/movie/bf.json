@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008869": {
+    "workId": "wk_000008869",
+    "title": "스파르타쿠스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108297"
+    },
+    "titles": {
+      "ko": "스파르타쿠스",
+      "en": "Spartacus",
+      "ja": "スパルタカス"
+    },
+    "releaseYear": 1960,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -121,5 +121,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008684": {
+    "workId": "wk_000008684",
+    "title": "더 시드 오브 러브",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117018423"
+    },
+    "titles": {
+      "ko": "더 시드 오브 러브",
+      "en": "The Seed of Love",
+      "ja": "ザ・シード・オブ・ラブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

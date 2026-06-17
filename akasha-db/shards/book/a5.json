@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008205": {
+    "workId": "wk_000008205",
+    "title": "맞선보고 싶지 않아서 억지스러운 조건을 달았더니 동급생이 온 일에 대해서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159257"
+    },
+    "titles": {
+      "ko": "맞선보고 싶지 않아서 억지스러운 조건을 달았더니 동급생이 온 일에 대해서",
+      "en": "Omiai Shitakunakatta node, Murinandai na Jōken o Tsuketara Doukyūsei ga Kita Ken ni Tsuite",
+      "ja": "お見合いしたくなかったので、無理難題な条件をつけたら同級生が来た件について"
+    },
+    "releaseYear": 2020,
+    "creator": "Sakura Sakuragi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

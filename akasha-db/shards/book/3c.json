@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008516": {
+    "workId": "wk_000008516",
+    "title": "우주를 듣는 소년",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113468597"
+    },
+    "titles": {
+      "ko": "우주를 듣는 소년",
+      "en": "The Book of Form and Emptiness"
+    },
+    "releaseYear": 2021,
+    "creator": "Ruth Ozeki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

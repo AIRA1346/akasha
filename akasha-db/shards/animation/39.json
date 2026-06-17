@@ -195,5 +195,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008570": {
+    "workId": "wk_000008570",
+    "title": "행복한 교도소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66685993"
+    },
+    "titles": {
+      "ko": "행복한 교도소",
+      "en": "Happy Jail",
+      "ja": "かくも楽しきムショ暮らし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

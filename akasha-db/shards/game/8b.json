@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008322": {
+    "workId": "wk_000008322",
+    "title": "소울칼리버 IV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1300262"
+    },
+    "titles": {
+      "ko": "소울칼리버 IV",
+      "en": "Soulcalibur IV",
+      "ja": "ソウルキャリバーIV"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -52,5 +52,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008475": {
+    "workId": "wk_000008475",
+    "title": "연인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116678095"
+    },
+    "titles": {
+      "ko": "연인",
+      "en": "My Dearest",
+      "ja": "恋人"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008815": {
+    "workId": "wk_000008815",
+    "title": "우리 연애 시뮬레이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117751615"
+    },
+    "titles": {
+      "ko": "우리 연애 시뮬레이션",
+      "en": "Our Dating Sim"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008939": {
+    "workId": "wk_000008939",
+    "title": "로미나 포데로사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118367418"
+    },
+    "titles": {
+      "ko": "로미나 포데로사",
+      "en": "Romina poderosa",
+      "ja": "ロミナ・ポデローサ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

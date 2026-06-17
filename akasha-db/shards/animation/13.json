@@ -163,5 +163,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008623": {
+    "workId": "wk_000008623",
+    "title": "프론테라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66686180"
+    },
+    "titles": {
+      "ko": "프론테라",
+      "en": "Green Frontier",
+      "ja": "グリーン・フロンティア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

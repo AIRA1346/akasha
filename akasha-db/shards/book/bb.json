@@ -94,5 +94,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008787": {
+    "workId": "wk_000008787",
+    "title": "변두리 로켓",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361234"
+    },
+    "titles": {
+      "ko": "변두리 로켓",
+      "en": "Q11361234",
+      "ja": "下町ロケット"
+    },
+    "releaseYear": 2015,
+    "creator": "Jun Ikeido",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

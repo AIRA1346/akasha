@@ -161,5 +161,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008193": {
+    "workId": "wk_000008193",
+    "title": "우리 딸을 위해서라면, 나는 마왕을 쓰러뜨릴 수 있을지 몰라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61774406"
+    },
+    "titles": {
+      "ko": "우리 딸을 위해서라면, 나는 마왕을 쓰러뜨릴 수 있을지 몰라",
+      "en": "If It's for My Daughter, I'd Even Defeat a Demon Lord",
+      "ja": "うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

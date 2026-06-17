@@ -50,5 +50,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008808": {
+    "workId": "wk_000008808",
+    "title": "소년을 위로해줘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117531201"
+    },
+    "titles": {
+      "ko": "소년을 위로해줘",
+      "en": "A Shoulder to Cry On"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

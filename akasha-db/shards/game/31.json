@@ -122,5 +122,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008778": {
+    "workId": "wk_000008778",
+    "title": "디지몬 스토리: 타임 스트레인저",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132259134"
+    },
+    "titles": {
+      "ko": "디지몬 스토리: 타임 스트레인저",
+      "en": "Q132259134",
+      "ja": "デジモンストーリー タイムストレンジャー"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

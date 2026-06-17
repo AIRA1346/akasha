@@ -104,5 +104,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008404": {
+    "workId": "wk_000008404",
+    "title": "이 연애는 불가항력",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116550095"
+    },
+    "titles": {
+      "ko": "이 연애는 불가항력",
+      "en": "Destined With You",
+      "ja": "この恋は不可抗力"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008480": {
+    "workId": "wk_000008480",
+    "title": "오니헤이 외전 정월 나흘들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673447"
+    },
+    "titles": {
+      "ko": "오니헤이 외전 정월 나흘들",
+      "en": "Onihei Gaiden: Shōgatsu Yokka no Kyaku",
+      "ja": "鬼平外伝 正月四日の客"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

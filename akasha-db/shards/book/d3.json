@@ -114,5 +114,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008657": {
+    "workId": "wk_000008657",
+    "title": "미키7",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113520957"
+    },
+    "titles": {
+      "ko": "미키7",
+      "en": "Mickey7"
+    },
+    "releaseYear": 2022,
+    "creator": "Edward Ashton",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -156,5 +156,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008605": {
+    "workId": "wk_000008605",
+    "title": "호랑이에게 날개",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116869449"
+    },
+    "titles": {
+      "ko": "호랑이에게 날개",
+      "en": "The Tiger and Her Wings",
+      "ja": "虎に翼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

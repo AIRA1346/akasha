@@ -16,5 +16,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008827": {
+    "workId": "wk_000008827",
+    "title": "해피 슈가 라이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24860074"
+    },
+    "titles": {
+      "ko": "해피 슈가 라이프",
+      "en": "Happy Sugar Life",
+      "ja": "ハッピーシュガーライフ"
+    },
+    "releaseYear": 2019,
+    "creator": "Tomiyaki Kagisora",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

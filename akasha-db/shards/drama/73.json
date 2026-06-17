@@ -120,5 +120,42 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008471": {
+    "workId": "wk_000008471",
+    "title": "바람과 구름과 무지개와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11665243"
+    },
+    "titles": {
+      "ko": "바람과 구름과 무지개와",
+      "en": "Kaze to Kumo to Niji to",
+      "ja": "風と雲と虹と"
+    },
+    "releaseYear": 1976,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008476": {
+    "workId": "wk_000008476",
+    "title": "오늘은 좀 매울지도 몰라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116680122"
+    },
+    "titles": {
+      "ko": "오늘은 좀 매울지도 몰라",
+      "en": "Recipe for Farewell",
+      "ja": "今日は少し辛いかもしれない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

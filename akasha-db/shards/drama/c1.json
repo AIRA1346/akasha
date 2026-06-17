@@ -137,5 +137,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008945": {
+    "workId": "wk_000008945",
+    "title": "미스터 브레인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186392"
+    },
+    "titles": {
+      "ko": "미스터 브레인",
+      "en": "Mr. Brain",
+      "ja": "MR.BRAIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

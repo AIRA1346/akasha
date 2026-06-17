@@ -145,5 +145,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008304": {
+    "workId": "wk_000008304",
+    "title": "장난을 잘 치는 타카기 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63436671"
+    },
+    "titles": {
+      "ko": "장난을 잘 치는 타카기 양",
+      "en": "Teasing Master Takagi-san",
+      "ja": "からかい上手の高木さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -141,5 +141,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008831": {
+    "workId": "wk_000008831",
+    "title": "4차원 탐정 똘비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700408"
+    },
+    "titles": {
+      "ko": "4차원 탐정 똘비",
+      "en": "Flint the Time Detective",
+      "ja": "時空探偵ゲンシクン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -90,5 +90,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008334": {
+    "workId": "wk_000008334",
+    "title": "더 파벨만스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107710009"
+    },
+    "titles": {
+      "ko": "더 파벨만스",
+      "en": "The Fabelmans",
+      "ja": "フェイブルマンズ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008394": {
+    "workId": "wk_000008394",
+    "title": "스윙 재즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077116"
+    },
+    "titles": {
+      "ko": "스윙 재즈",
+      "en": "Swing Kids",
+      "ja": "スウィング・キッズ"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

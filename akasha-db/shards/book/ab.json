@@ -37,5 +37,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008451": {
+    "workId": "wk_000008451",
+    "title": "헤븐",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11336732"
+    },
+    "titles": {
+      "ko": "헤븐",
+      "en": "Heaven",
+      "ja": "ヘヴン"
+    },
+    "releaseYear": 2009,
+    "creator": "Mieko Kawakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

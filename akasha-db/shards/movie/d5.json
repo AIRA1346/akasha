@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008670": {
+    "workId": "wk_000008670",
+    "title": "사냥감",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108084642"
+    },
+    "titles": {
+      "ko": "사냥감",
+      "en": "Prey",
+      "ja": "デッドリー・ハンティング"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

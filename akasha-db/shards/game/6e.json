@@ -86,5 +86,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008926": {
+    "workId": "wk_000008926",
+    "title": "트랜스포머: 더 게임",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326987"
+    },
+    "titles": {
+      "ko": "트랜스포머: 더 게임",
+      "en": "Transformers: The Game",
+      "ja": "トランスフォーマー THE GAME"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

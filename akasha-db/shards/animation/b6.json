@@ -164,5 +164,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008638": {
+    "workId": "wk_000008638",
+    "title": "디지몬 어드벤처",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q689114"
+    },
+    "titles": {
+      "ko": "디지몬 어드벤처",
+      "en": "Digimon Adventure",
+      "ja": "デジモンアドベンチャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

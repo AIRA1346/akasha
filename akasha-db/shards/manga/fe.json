@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008419": {
+    "workId": "wk_000008419",
+    "title": "데드데드 데몬즈 디디디디 디스트럭션",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22126280"
+    },
+    "titles": {
+      "ko": "데드데드 데몬즈 디디디디 디스트럭션",
+      "en": "Dead Dead Demon's Dededede Destruction",
+      "ja": "デッドデッドデーモンズデデデデデストラクション"
+    },
+    "creator": "Inio Asano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

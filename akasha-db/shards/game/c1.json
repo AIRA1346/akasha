@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008508": {
+    "workId": "wk_000008508",
+    "title": "스플릿 픽션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131433899"
+    },
+    "titles": {
+      "ko": "스플릿 픽션",
+      "en": "Split Fiction",
+      "ja": "スプリット・フィクション"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

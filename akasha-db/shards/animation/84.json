@@ -165,5 +165,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008838": {
+    "workId": "wk_000008838",
+    "title": "알프스 소녀 안네트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702023"
+    },
+    "titles": {
+      "ko": "알프스 소녀 안네트",
+      "en": "Story of the Alps: My Annette",
+      "ja": "アルプス物語 わたしのアンネット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008845": {
+    "workId": "wk_000008845",
+    "title": "붕붕차차",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702847"
+    },
+    "titles": {
+      "ko": "붕붕차차",
+      "en": "Bubu Chacha",
+      "ja": "ぶぶチャチャ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

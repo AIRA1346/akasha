@@ -175,5 +175,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008955": {
+    "workId": "wk_000008955",
+    "title": "시카고 파이어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187416"
+    },
+    "titles": {
+      "ko": "시카고 파이어",
+      "en": "Chicago Fire",
+      "ja": "シカゴ・ファイアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

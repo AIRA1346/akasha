@@ -158,5 +158,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008743": {
+    "workId": "wk_000008743",
+    "title": "걸어서 환장 속으로",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117232600"
+    },
+    "titles": {
+      "ko": "걸어서 환장 속으로",
+      "en": "Q117232600"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008819": {
+    "workId": "wk_000008819",
+    "title": "울트라맨 블레이자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117805295"
+    },
+    "titles": {
+      "ko": "울트라맨 블레이자",
+      "en": "Ultraman Blazar",
+      "ja": "ウルトラマンブレーザー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

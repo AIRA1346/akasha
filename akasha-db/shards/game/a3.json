@@ -127,5 +127,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008243": {
+    "workId": "wk_000008243",
+    "title": "M.U.L.E.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1284570"
+    },
+    "titles": {
+      "ko": "M.U.L.E.",
+      "en": "M.U.L.E."
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

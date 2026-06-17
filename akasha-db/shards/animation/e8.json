@@ -52,5 +52,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008767": {
+    "workId": "wk_000008767",
+    "title": "고쿠센",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699321"
+    },
+    "titles": {
+      "ko": "고쿠센",
+      "en": "Gokusen",
+      "ja": "ごくせん"
+    },
+    "creator": "Kozueko Morimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

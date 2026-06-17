@@ -261,5 +261,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008539": {
+    "workId": "wk_000008539",
+    "title": "아나 데 나디에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116771872"
+    },
+    "titles": {
+      "ko": "아나 데 나디에",
+      "en": "Ana de nadie",
+      "ja": "アナ・デ・ナディエ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

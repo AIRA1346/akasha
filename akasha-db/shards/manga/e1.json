@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008490": {
+    "workId": "wk_000008490",
+    "title": "길모퉁이 마족",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131597"
+    },
+    "titles": {
+      "ko": "길모퉁이 마족",
+      "en": "The Demon Girl Next Door",
+      "ja": "まちカドまぞく"
+    },
+    "creator": "Izumo Itō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

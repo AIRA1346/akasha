@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008872": {
+    "workId": "wk_000008872",
+    "title": "더 밴쉬즈 오브 이니셔린",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108314506"
+    },
+    "titles": {
+      "ko": "더 밴쉬즈 오브 이니셔린",
+      "en": "The Banshees of Inisherin",
+      "ja": "イニシェリン島の精霊"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

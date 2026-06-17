@@ -208,5 +208,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008681": {
+    "workId": "wk_000008681",
+    "title": "종이달",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116994871"
+    },
+    "titles": {
+      "ko": "종이달",
+      "en": "Paper Moon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -112,5 +112,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008238": {
+    "workId": "wk_000008238",
+    "title": "천명의 콩키스타",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127970771"
+    },
+    "titles": {
+      "ko": "천명의 콩키스타",
+      "en": "Tenmei no Conquista",
+      "ja": "天冥のコンキスタ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

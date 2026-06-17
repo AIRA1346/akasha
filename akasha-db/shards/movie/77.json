@@ -55,5 +55,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008588": {
+    "workId": "wk_000008588",
+    "title": "일본 침몰",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079055"
+    },
+    "titles": {
+      "ko": "일본 침몰",
+      "en": "Japan Sinks",
+      "ja": "日本沈没"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

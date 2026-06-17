@@ -38,5 +38,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008725": {
+    "workId": "wk_000008725",
+    "title": "스텔라 마리스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113549027"
+    },
+    "titles": {
+      "ko": "스텔라 마리스",
+      "en": "Stella Maris"
+    },
+    "releaseYear": 2022,
+    "creator": "Cormac McCarthy",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

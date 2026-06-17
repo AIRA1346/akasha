@@ -140,5 +140,42 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008582": {
+    "workId": "wk_000008582",
+    "title": "스텔라 코드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131548532"
+    },
+    "titles": {
+      "ko": "스텔라 코드",
+      "en": "Stellar Code",
+      "ja": "ステラーコード"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008779": {
+    "workId": "wk_000008779",
+    "title": "타오펭: 로터스의 분노",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323263"
+    },
+    "titles": {
+      "ko": "타오펭: 로터스의 분노",
+      "en": "Tao Feng: Fist of the Lotus"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

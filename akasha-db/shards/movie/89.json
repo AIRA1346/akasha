@@ -74,5 +74,43 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008794": {
+    "workId": "wk_000008794",
+    "title": "패닉 런",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108166716"
+    },
+    "titles": {
+      "ko": "패닉 런",
+      "en": "The Desperate Hour",
+      "ja": "デスパレート・ラン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008799": {
+    "workId": "wk_000008799",
+    "title": "캐릭터 (2021년 영화)",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108183455"
+    },
+    "titles": {
+      "ko": "캐릭터 (2021년 영화)",
+      "en": "Character",
+      "ja": "キャラクター (2021年の映画)"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

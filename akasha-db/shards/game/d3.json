@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008777": {
+    "workId": "wk_000008777",
+    "title": "사로스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132258586"
+    },
+    "titles": {
+      "ko": "사로스",
+      "en": "Saros",
+      "ja": "サロス"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

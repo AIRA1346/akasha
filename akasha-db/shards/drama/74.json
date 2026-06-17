@@ -160,5 +160,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008532": {
+    "workId": "wk_000008532",
+    "title": "마법전대 마지레인저 vs. 데카레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673818"
+    },
+    "titles": {
+      "ko": "마법전대 마지레인저 vs. 데카레인저",
+      "en": "Q11673818",
+      "ja": "魔法戦隊マジレンジャーVSデカレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

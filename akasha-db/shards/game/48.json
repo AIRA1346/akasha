@@ -67,5 +67,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008252": {
+    "workId": "wk_000008252",
+    "title": "반조 카주이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129000"
+    },
+    "titles": {
+      "ko": "반조 카주이",
+      "en": "Banjo-Kazooie",
+      "ja": "バンジョーとカズーイの大冒険"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

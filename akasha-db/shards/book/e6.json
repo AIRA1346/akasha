@@ -55,5 +55,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008326": {
+    "workId": "wk_000008326",
+    "title": "무덤 속 괴물",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324180"
+    },
+    "titles": {
+      "ko": "무덤 속 괴물",
+      "en": "The Tomb Spawn",
+      "ja": "墓の落とし子"
+    },
+    "releaseYear": 1934,
+    "creator": "Clark Ashton Smith",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

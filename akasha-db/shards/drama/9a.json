@@ -122,5 +122,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008739": {
+    "workId": "wk_000008739",
+    "title": "오피스 빌런",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117195662"
+    },
+    "titles": {
+      "ko": "오피스 빌런",
+      "en": "Q117195662"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

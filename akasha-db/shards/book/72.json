@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008450": {
+    "workId": "wk_000008450",
+    "title": "이처럼 사소한 것들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113364856"
+    },
+    "titles": {
+      "ko": "이처럼 사소한 것들",
+      "en": "Small Things Like These"
+    },
+    "releaseYear": 2021,
+    "creator": "Claire Keegan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

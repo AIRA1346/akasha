@@ -275,5 +275,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008764": {
+    "workId": "wk_000008764",
+    "title": "예카테리나 대제",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q698796"
+    },
+    "titles": {
+      "ko": "예카테리나 대제",
+      "en": "Catherine the Great",
+      "ja": "女帝キャサリン"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

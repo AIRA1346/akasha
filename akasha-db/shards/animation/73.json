@@ -107,5 +107,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008837": {
+    "workId": "wk_000008837",
+    "title": "왈가닥 작은 아씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702014"
+    },
+    "titles": {
+      "ko": "왈가닥 작은 아씨",
+      "en": "Little Women II: Jo's Boys",
+      "ja": "若草物語 ナンとジョー先生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -125,5 +125,41 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008189": {
+    "workId": "wk_000008189",
+    "title": "경계선상의 호라이즌",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61719056"
+    },
+    "titles": {
+      "ko": "경계선상의 호라이즌",
+      "en": "Horizon in the Middle of Nowhere",
+      "ja": "境界線上のホライゾン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008710": {
+    "workId": "wk_000008710",
+    "title": "절대무적 라이징오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q697253"
+    },
+    "titles": {
+      "ko": "절대무적 라이징오",
+      "en": "Matchless Raijin-Oh",
+      "ja": "絶対無敵ライジンオー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

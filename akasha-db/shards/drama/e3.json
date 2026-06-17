@@ -139,5 +139,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008276": {
+    "workId": "wk_000008276",
+    "title": "아일레",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116234238"
+    },
+    "titles": {
+      "ko": "아일레",
+      "en": "Aile"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

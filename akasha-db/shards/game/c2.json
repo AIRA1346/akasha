@@ -227,5 +227,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008651": {
+    "workId": "wk_000008651",
+    "title": "닌자 가이덴 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131862321"
+    },
+    "titles": {
+      "ko": "닌자 가이덴 4",
+      "en": "Ninja Gaiden 4",
+      "ja": "NINJA GAIDEN 4"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

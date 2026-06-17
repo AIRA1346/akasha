@@ -219,5 +219,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008766": {
+    "workId": "wk_000008766",
+    "title": "키다리 아저씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699229"
+    },
+    "titles": {
+      "ko": "키다리 아저씨",
+      "en": "My Daddy Long Legs",
+      "ja": "私のあしながおじさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

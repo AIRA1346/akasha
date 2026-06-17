@@ -35,5 +35,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008581": {
+    "workId": "wk_000008581",
+    "title": "마법소녀의 마녀재판",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131547081"
+    },
+    "titles": {
+      "ko": "마법소녀의 마녀재판",
+      "en": "Magical Girl Witch Trials",
+      "ja": "魔法少女ノ魔女裁判"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008722": {
+    "workId": "wk_000008722",
+    "title": "레이맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13219473"
+    },
+    "titles": {
+      "ko": "레이맨",
+      "en": "Rayman",
+      "ja": "レイマン"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

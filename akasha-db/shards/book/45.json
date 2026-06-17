@@ -93,5 +93,44 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008788": {
+    "workId": "wk_000008788",
+    "title": "그늘에서 지킨다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136152"
+    },
+    "titles": {
+      "ko": "그늘에서 지킨다",
+      "en": "Kage Kara Mamoru!",
+      "ja": "陰からマモル!"
+    },
+    "releaseYear": 2003,
+    "creator": "Taro Achi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008934": {
+    "workId": "wk_000008934",
+    "title": "인형은 왜 살해되는가",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11375991"
+    },
+    "titles": {
+      "ko": "인형은 왜 살해되는가",
+      "en": "Q11375991",
+      "ja": "人形はなぜ殺される"
+    },
+    "creator": "Akimitsu Takagi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

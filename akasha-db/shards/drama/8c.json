@@ -155,5 +155,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008481": {
+    "workId": "wk_000008481",
+    "title": "언브레이크 마이 하트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116736307"
+    },
+    "titles": {
+      "ko": "언브레이크 마이 하트",
+      "en": "Unbreak My Heart"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

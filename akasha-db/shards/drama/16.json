@@ -103,5 +103,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008413": {
+    "workId": "wk_000008413",
+    "title": "9층 시사국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116621873"
+    },
+    "titles": {
+      "ko": "9층 시사국",
+      "en": "Q116621873"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008531": {
+    "workId": "wk_000008531",
+    "title": "무죄추정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116736420"
+    },
+    "titles": {
+      "ko": "무죄추정",
+      "en": "Presumed Innocent",
+      "ja": "推定無罪 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

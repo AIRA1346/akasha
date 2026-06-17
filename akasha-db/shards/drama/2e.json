@@ -140,5 +140,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008277": {
+    "workId": "wk_000008277",
+    "title": "그림자 미녀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116251473"
+    },
+    "titles": {
+      "ko": "그림자 미녀",
+      "en": "Shadow Beauty"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008469": {
+    "workId": "wk_000008469",
+    "title": "음악 판타지 꿈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11664236"
+    },
+    "titles": {
+      "ko": "음악 판타지 꿈",
+      "en": "Music, Fantasy, and Dream",
+      "ja": "音楽ファンタジーゆめ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008473": {
+    "workId": "wk_000008473",
+    "title": "수도권 뉴스 845",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11667064"
+    },
+    "titles": {
+      "ko": "수도권 뉴스 845",
+      "en": "Shutoken News 845",
+      "ja": "首都圏ニュース845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

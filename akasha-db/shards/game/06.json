@@ -128,5 +128,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008504": {
+    "workId": "wk_000008504",
+    "title": "얼티밋 모탈 컴뱃 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1313980"
+    },
+    "titles": {
+      "ko": "얼티밋 모탈 컴뱃 3",
+      "en": "Ultimate Mortal Kombat 3",
+      "ja": "アルティメット モータルコンバット 3"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

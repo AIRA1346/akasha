@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008202": {
+    "workId": "wk_000008202",
+    "title": "슬로하이츠의 신",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11313519"
+    },
+    "titles": {
+      "ko": "슬로하이츠의 신",
+      "en": "Q11313519",
+      "ja": "スロウハイツの神様"
+    },
+    "releaseYear": 2007,
+    "creator": "Mizuki Tsujimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

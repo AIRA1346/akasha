@@ -113,5 +113,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008327": {
+    "workId": "wk_000008327",
+    "title": "네버랜드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11325528"
+    },
+    "titles": {
+      "ko": "네버랜드",
+      "en": "Neverland",
+      "ja": "ネバーランド (小説)"
+    },
+    "releaseYear": 2000,
+    "creator": "Riku Onda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008729": {
+    "workId": "wk_000008729",
+    "title": "이세계에서 치트 능력을 손에 넣은 나는, 현실세계에서도 무쌍한다 ~레벨 업은 인생을 바꿨다~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113557501"
+    },
+    "titles": {
+      "ko": "이세계에서 치트 능력을 손에 넣은 나는, 현실세계에서도 무쌍한다 ~레벨 업은 인생을 바꿨다~",
+      "en": "I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too",
+      "ja": "異世界でチート能力を手にした俺は、現実世界をも無双する～レベルアップは人生を変えた～"
+    },
+    "releaseYear": 2018,
+    "creator": "Miku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

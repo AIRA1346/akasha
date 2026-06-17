@@ -188,5 +188,75 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008335": {
+    "workId": "wk_000008335",
+    "title": "붉은 실의 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11635207"
+    },
+    "titles": {
+      "ko": "붉은 실의 여자",
+      "en": "Akai Ito no On'na",
+      "ja": "赤い糸の女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008609": {
+    "workId": "wk_000008609",
+    "title": "아적반파남우 : 나의 빌런 남친",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116893762"
+    },
+    "titles": {
+      "ko": "아적반파남우 : 나의 빌런 남친",
+      "en": "Mr.Bad"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008691": {
+    "workId": "wk_000008691",
+    "title": "이로운 사기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117085988"
+    },
+    "titles": {
+      "ko": "이로운 사기",
+      "en": "Delightfully Deceitful",
+      "ja": "有益な詐欺"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008745": {
+    "workId": "wk_000008745",
+    "title": "귀로 (2023년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117269045"
+    },
+    "titles": {
+      "ko": "귀로 (2023년 드라마)",
+      "en": "Road Home"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

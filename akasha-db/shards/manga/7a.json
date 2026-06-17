@@ -55,5 +55,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008621": {
+    "workId": "wk_000008621",
+    "title": "빅쿠리맨 2000",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2342897"
+    },
+    "titles": {
+      "ko": "빅쿠리맨 2000",
+      "en": "Bikkuriman",
+      "ja": "ビックリマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

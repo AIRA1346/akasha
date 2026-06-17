@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008733": {
+    "workId": "wk_000008733",
+    "title": "야차",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108101745"
+    },
+    "titles": {
+      "ko": "야차",
+      "en": "Yaksha: Ruthless Operations",
+      "ja": "夜叉"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

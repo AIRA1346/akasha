@@ -143,5 +143,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008844": {
+    "workId": "wk_000008844",
+    "title": "기동전사 건담 ZZ",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702643"
+    },
+    "titles": {
+      "ko": "기동전사 건담 ZZ",
+      "en": "Mobile Suit Gundam ZZ",
+      "ja": "機動戦士ガンダムΖΖ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

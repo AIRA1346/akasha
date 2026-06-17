@@ -166,5 +166,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008835": {
+    "workId": "wk_000008835",
+    "title": "기동전함 나데시코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q701317"
+    },
+    "titles": {
+      "ko": "기동전함 나데시코",
+      "en": "Martian Successor Nadesico",
+      "ja": "機動戦艦ナデシコ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -120,5 +120,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008279": {
+    "workId": "wk_000008279",
+    "title": "혈액형 별 여자가 결혼하는 방법 ♪",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11625956"
+    },
+    "titles": {
+      "ko": "혈액형 별 여자가 결혼하는 방법 ♪",
+      "en": "Ketsuekigata Betsu On'na ga Kkekkon suru Hōhō♪",
+      "ja": "血液型別 オンナが結婚する方法♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

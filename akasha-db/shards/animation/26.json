@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008226": {
+    "workId": "wk_000008226",
+    "title": "미래일기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62034895"
+    },
+    "titles": {
+      "ko": "미래일기",
+      "en": "Future Diary",
+      "ja": "未来日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

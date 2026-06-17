@@ -106,5 +106,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008873": {
+    "workId": "wk_000008873",
+    "title": "레트리뷰션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108314793"
+    },
+    "titles": {
+      "ko": "레트리뷰션",
+      "en": "Retribution",
+      "ja": "バッド・デイ・ドライブ"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

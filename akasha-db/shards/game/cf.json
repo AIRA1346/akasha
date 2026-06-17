@@ -129,5 +129,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008319": {
+    "workId": "wk_000008319",
+    "title": "봉함의 그라세스타",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129923630"
+    },
+    "titles": {
+      "ko": "봉함의 그라세스타",
+      "en": "Fuukan no Grasesta",
+      "ja": "封緘のグラセスタ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

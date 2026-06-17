@@ -158,5 +158,62 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008318": {
+    "workId": "wk_000008318",
+    "title": "유성 월드 액터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129923282"
+    },
+    "titles": {
+      "ko": "유성 월드 액터",
+      "en": "Meteor World Actor",
+      "ja": "流星ワールドアクター"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008715": {
+    "workId": "wk_000008715",
+    "title": "식혼도 ~백화요란~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131988343"
+    },
+    "titles": {
+      "ko": "식혼도 ~백화요란~",
+      "en": "Shikhondo: Youkai Rampage",
+      "ja": "食魂徒 ~百花妖乱~"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008718": {
+    "workId": "wk_000008718",
+    "title": "배틀필드 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132178505"
+    },
+    "titles": {
+      "ko": "배틀필드 6",
+      "en": "Q132178505",
+      "ja": "バトルフィールド6"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

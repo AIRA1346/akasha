@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008587": {
+    "workId": "wk_000008587",
+    "title": "007 여왕폐하 대작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107894"
+    },
+    "titles": {
+      "ko": "007 여왕폐하 대작전",
+      "en": "On Her Majesty's Secret Service",
+      "ja": "女王陛下の007"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

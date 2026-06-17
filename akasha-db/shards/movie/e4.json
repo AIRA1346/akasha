@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008805": {
+    "workId": "wk_000008805",
+    "title": "마하 2.6 - 풀 스피드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082924"
+    },
+    "titles": {
+      "ko": "마하 2.6 - 풀 스피드",
+      "en": "Sky Fighters",
+      "ja": "ナイト・オブ・ザ・スカイ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

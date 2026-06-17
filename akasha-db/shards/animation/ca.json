@@ -88,5 +88,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008626": {
+    "workId": "wk_000008626",
+    "title": "짱구는 못말려 극장판: 격돌! 낙서 왕국과 대강 네 명의 용사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q67000951"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 격돌! 낙서 왕국과 대강 네 명의 용사",
+      "en": "Crayon Shin-Chan The Movie: Crash! Graffiti Kingdom and Almost Four Heroes",
+      "ja": "クレヨンしんちゃん 激突! ラクガキングダムとほぼ四人の勇者"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

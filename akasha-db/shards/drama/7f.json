@@ -177,5 +177,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008468": {
+    "workId": "wk_000008468",
+    "title": "한명회 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11664070"
+    },
+    "titles": {
+      "ko": "한명회 (드라마)",
+      "en": "Han Myung Hoe",
+      "ja": "韓明フェ 〜朝鮮王朝を導いた天才策士〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008882": {
+    "workId": "wk_000008882",
+    "title": "춘규몽리인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118107898"
+    },
+    "titles": {
+      "ko": "춘규몽리인",
+      "en": "Romance of a Twin Flower"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

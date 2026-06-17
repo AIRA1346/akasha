@@ -191,5 +191,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008879": {
+    "workId": "wk_000008879",
+    "title": "마당이 있는 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117865066"
+    },
+    "titles": {
+      "ko": "마당이 있는 집",
+      "en": "Lies Hidden in My Garden"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008944": {
+    "workId": "wk_000008944",
+    "title": "선 브라더스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118628605"
+    },
+    "titles": {
+      "ko": "선 브라더스",
+      "en": "The Brothers Sun",
+      "ja": "ブラザーズ・サン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

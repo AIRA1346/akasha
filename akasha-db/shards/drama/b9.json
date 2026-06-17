@@ -141,5 +141,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008287": {
+    "workId": "wk_000008287",
+    "title": "경시청 재범 방지과 마사키 에이지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11632392"
+    },
+    "titles": {
+      "ko": "경시청 재범 방지과 마사키 에이지",
+      "en": "Keishichō saihan bōshi-ka Masaki Eiji",
+      "ja": "警視庁再犯防止課 真崎英嗣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

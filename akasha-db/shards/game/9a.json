@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008510": {
+    "workId": "wk_000008510",
+    "title": "ELDEN RING 밤의 통치자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131435228"
+    },
+    "titles": {
+      "ko": "ELDEN RING 밤의 통치자",
+      "en": "Elden Ring Nightreign",
+      "ja": "エルデンリング ナイトレイン"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

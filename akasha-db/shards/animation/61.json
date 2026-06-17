@@ -165,5 +165,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008702": {
+    "workId": "wk_000008702",
+    "title": "디지몬 테이머즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696346"
+    },
+    "titles": {
+      "ko": "디지몬 테이머즈",
+      "en": "Digimon Tamers",
+      "ja": "デジモンテイマーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

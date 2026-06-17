@@ -69,5 +69,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008619": {
+    "workId": "wk_000008619",
+    "title": "한때는 신이었던 짐승들에게",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q23022984"
+    },
+    "titles": {
+      "ko": "한때는 신이었던 짐승들에게",
+      "en": "To the Abandoned Sacred Beasts",
+      "ja": "かつて神だった獣たちへ"
+    },
+    "creator": "Maybe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

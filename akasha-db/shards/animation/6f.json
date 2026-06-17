@@ -72,5 +72,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008775": {
+    "workId": "wk_000008775",
+    "title": "엄마 찾아 삼천리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700044"
+    },
+    "titles": {
+      "ko": "엄마 찾아 삼천리",
+      "en": "3000 Leagues in Search of Mother",
+      "ja": "母をたずねて三千里"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

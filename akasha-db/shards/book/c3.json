@@ -1,0 +1,22 @@
+{
+  "wk_000008389": {
+    "workId": "wk_000008389",
+    "title": "패러독스 13",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11329363"
+    },
+    "titles": {
+      "ko": "패러독스 13",
+      "en": "Paradox 13",
+      "ja": "パラドックス13"
+    },
+    "releaseYear": 2009,
+    "creator": "Keigo Higashino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

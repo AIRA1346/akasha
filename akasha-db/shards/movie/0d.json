@@ -110,5 +110,62 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008460": {
+    "workId": "wk_000008460",
+    "title": "프랑켄슈타인의 아들",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077374"
+    },
+    "titles": {
+      "ko": "프랑켄슈타인의 아들",
+      "en": "Son of Frankenstein",
+      "ja": "フランケンシュタインの復活"
+    },
+    "releaseYear": 1939,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008527": {
+    "workId": "wk_000008527",
+    "title": "사랑의 리조트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107862498"
+    },
+    "titles": {
+      "ko": "사랑의 리조트",
+      "en": "Resort to Love",
+      "ja": "悩める失恋の処方箋"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008871": {
+    "workId": "wk_000008871",
+    "title": "저승까지 파티피플!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108303999"
+    },
+    "titles": {
+      "ko": "저승까지 파티피플!",
+      "en": "Afterlife of the Party",
+      "ja": "パリピ的アフターライフの始め方"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

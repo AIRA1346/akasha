@@ -1,0 +1,22 @@
+{
+  "wk_000008453": {
+    "workId": "wk_000008453",
+    "title": "마리아비틀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340979"
+    },
+    "titles": {
+      "ko": "마리아비틀",
+      "en": "Bullet Train",
+      "ja": "マリアビートル"
+    },
+    "releaseYear": 2010,
+    "creator": "Kōtarō Isaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

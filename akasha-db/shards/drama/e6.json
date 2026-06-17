@@ -142,5 +142,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008677": {
+    "workId": "wk_000008677",
+    "title": "하늘의 인연",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116947895"
+    },
+    "titles": {
+      "ko": "하늘의 인연",
+      "en": "Mean To Be"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

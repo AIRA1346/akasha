@@ -158,5 +158,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008597": {
+    "workId": "wk_000008597",
+    "title": "웹툰싱어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116819082"
+    },
+    "titles": {
+      "ko": "웹툰싱어",
+      "en": "Webtoon Singer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

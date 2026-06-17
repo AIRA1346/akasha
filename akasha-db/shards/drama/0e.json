@@ -102,5 +102,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008674": {
+    "workId": "wk_000008674",
+    "title": "눈물의 여왕",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116921048"
+    },
+    "titles": {
+      "ko": "눈물의 여왕",
+      "en": "Queen of Tears",
+      "ja": "涙の女王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

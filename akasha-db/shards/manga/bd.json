@@ -104,5 +104,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008487": {
+    "workId": "wk_000008487",
+    "title": "토모다치 게임",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131394"
+    },
+    "titles": {
+      "ko": "토모다치 게임",
+      "en": "Tomodachi Game",
+      "ja": "トモダチゲーム"
+    },
+    "releaseYear": 2013,
+    "creator": "Mikoto Yamaguchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

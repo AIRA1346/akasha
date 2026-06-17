@@ -210,5 +210,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008749": {
+    "workId": "wk_000008749",
+    "title": "애정이이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117288990"
+    },
+    "titles": {
+      "ko": "애정이이",
+      "en": "Nothing But You"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

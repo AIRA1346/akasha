@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008913": {
+    "workId": "wk_000008913",
+    "title": "완소! 퍼펙트 반장",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704211"
+    },
+    "titles": {
+      "ko": "완소! 퍼펙트 반장",
+      "en": "Gokujō!! Mecha Mote Iinchō",
+      "ja": "極上!!めちゃモテ委員長"
+    },
+    "creator": "Tomoko Nishimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

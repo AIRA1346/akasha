@@ -142,5 +142,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008199": {
+    "workId": "wk_000008199",
+    "title": "페르소나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61988991"
+    },
+    "titles": {
+      "ko": "페르소나",
+      "en": "Persona",
+      "ja": "ペルソナ －仮面の下の素顔－"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

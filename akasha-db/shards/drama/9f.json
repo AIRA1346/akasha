@@ -103,5 +103,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008402": {
+    "workId": "wk_000008402",
+    "title": "철도 수사관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11649703"
+    },
+    "titles": {
+      "ko": "철도 수사관",
+      "en": "Tetsudō Sōsakan",
+      "ja": "鉄道捜査官"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008886": {
+    "workId": "wk_000008886",
+    "title": "데스 인 파라다이스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1181286"
+    },
+    "titles": {
+      "ko": "데스 인 파라다이스",
+      "en": "Death in Paradise",
+      "ja": "ミステリー in パラダイス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

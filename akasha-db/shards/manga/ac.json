@@ -182,5 +182,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008825": {
+    "workId": "wk_000008825",
+    "title": "부남자 고교생활",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24801887"
+    },
+    "titles": {
+      "ko": "부남자 고교생활",
+      "en": "The High School Life of a Fudanshi",
+      "ja": "腐男子高校生活"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

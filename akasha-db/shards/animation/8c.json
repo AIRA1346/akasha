@@ -109,5 +109,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008912": {
+    "workId": "wk_000008912",
+    "title": "집 없는 소녀 펠리네",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q703915"
+    },
+    "titles": {
+      "ko": "집 없는 소녀 펠리네",
+      "en": "The Story of Perrine",
+      "ja": "ペリーヌ物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

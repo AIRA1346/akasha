@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008902": {
+    "workId": "wk_000008902",
+    "title": "뒤떨어진 후르츠 타르트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24870821"
+    },
+    "titles": {
+      "ko": "뒤떨어진 후르츠 타르트",
+      "en": "Dropout Idol Fruit Tart",
+      "ja": "おちこぼれフルーツタルト"
+    },
+    "creator": "Sō Hamayumiba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

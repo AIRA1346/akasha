@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008734": {
+    "workId": "wk_000008734",
+    "title": "로미오와 줄리엣",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1081181"
+    },
+    "titles": {
+      "ko": "로미오와 줄리엣",
+      "en": "Romeo and Juliet",
+      "ja": "ロミオとジュリエット"
+    },
+    "releaseYear": 1936,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

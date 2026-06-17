@@ -161,5 +161,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008251": {
+    "workId": "wk_000008251",
+    "title": "에이틴 휠러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1289512"
+    },
+    "titles": {
+      "ko": "에이틴 휠러",
+      "en": "18 Wheeler: American Pro Trucker",
+      "ja": "エイティーン・ホイーラー"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

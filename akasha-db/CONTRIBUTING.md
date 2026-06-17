@@ -2,7 +2,7 @@
 
 Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는 저장소입니다.
 
-> **현재:** v4 해시 샤드, **430작** 엄선  
+> **현재:** v4 해시 샤드, **G1+ (5k+)** · eager-only app bundle (ADR-010)  
 > **장기:** 전 작품 사전 + `wk_` ID + 해시 샤딩 — [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)  
 > **마스터 정책:** [docs/akasha-db-policy.md](../docs/akasha-db-policy.md)
 
@@ -14,9 +14,13 @@ Rune Atelier **자체 작품 사전**을 수동 큐레이션·PR로 확장하는
 
 ```bash
 cd ../  # akasha 앱 루트
-dart run tool/registry_builder.dart --sync-assets
+# G1+ (entryCount > 2500): --bundle-eager-only 필수 (ADR-010)
+dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
+dart run tool/catalog_scale_baseline.dart --strict
 dart run tool/ci_registry_check.dart
 ```
+
+wikidata_ko discovery 배치는 `.\scripts\discovery_batch.ps1` (게이트 일괄 포함).
 
 4. PR을 엽니다.
 

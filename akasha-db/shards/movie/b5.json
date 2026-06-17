@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008526": {
+    "workId": "wk_000008526",
+    "title": "잃어버린 마법의 섬 홋타라케",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078512"
+    },
+    "titles": {
+      "ko": "잃어버린 마법의 섬 홋타라케",
+      "en": "Oblivion Island: Haruka and the Magic Mirror",
+      "ja": "ホッタラケの島 〜遥と魔法の鏡〜"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

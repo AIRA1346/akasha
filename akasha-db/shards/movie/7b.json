@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008592": {
+    "workId": "wk_000008592",
+    "title": "스타 트렉",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107940"
+    },
+    "titles": {
+      "ko": "스타 트렉",
+      "en": "Star Trek: The Motion Picture",
+      "ja": "スタートレック"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

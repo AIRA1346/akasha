@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008624": {
+    "workId": "wk_000008624",
+    "title": "페이트/스테이 나이트 헤븐즈필 제1장 프레시지 플라워",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66777794"
+    },
+    "titles": {
+      "ko": "페이트/스테이 나이트 헤븐즈필 제1장 프레시지 플라워",
+      "en": "Fate/stay night: Heaven's Feel I. presage flower",
+      "ja": "Fate/stay night [Heaven's Feel] I.presage flower"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

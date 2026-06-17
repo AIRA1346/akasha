@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008649": {
+    "workId": "wk_000008649",
+    "title": "하트 나라의 앨리스 ~Wonderful Wonder World~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1318521"
+    },
+    "titles": {
+      "ko": "하트 나라의 앨리스 ~Wonderful Wonder World~",
+      "en": "Alice in the Country of Hearts",
+      "ja": "ハートの国のアリス 〜Wonderful Wonder World〜"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

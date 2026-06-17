@@ -36,5 +36,44 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008695": {
+    "workId": "wk_000008695",
+    "title": "근육맨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2412868"
+    },
+    "titles": {
+      "ko": "근육맨",
+      "en": "Kinnikuman",
+      "ja": "キン肉マン"
+    },
+    "creator": "ゆでたまご",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008830": {
+    "workId": "wk_000008830",
+    "title": "사몬 군은 소환사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24863164"
+    },
+    "titles": {
+      "ko": "사몬 군은 소환사",
+      "en": "Samon-kun wa Summoner",
+      "ja": "左門くんはサモナー"
+    },
+    "releaseYear": 2015,
+    "creator": "Shun Numa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

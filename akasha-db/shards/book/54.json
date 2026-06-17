@@ -92,5 +92,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008203": {
+    "workId": "wk_000008203",
+    "title": "로건의 탈출",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131423"
+    },
+    "titles": {
+      "ko": "로건의 탈출",
+      "en": "Logan's Run",
+      "ja": "2300年 未来の旅 ローガンの逃亡"
+    },
+    "releaseYear": 1967,
+    "creator": "ジョージ・クレイトン・ジョンソン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

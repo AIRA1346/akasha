@@ -17,5 +17,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008936": {
+    "workId": "wk_000008936",
+    "title": "남사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137686"
+    },
+    "titles": {
+      "ko": "남사",
+      "en": "History of Southern Dynasties",
+      "ja": "南史"
+    },
+    "creator": "Li Yanshou",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

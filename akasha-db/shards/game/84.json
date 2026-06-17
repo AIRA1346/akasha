@@ -163,5 +163,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008439": {
+    "workId": "wk_000008439",
+    "title": "세인츠 로우 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13060351"
+    },
+    "titles": {
+      "ko": "세인츠 로우 4",
+      "en": "Saints Row IV",
+      "ja": "Saints Row IV"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008507": {
+    "workId": "wk_000008507",
+    "title": "Pine: 상실의 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131424407"
+    },
+    "titles": {
+      "ko": "Pine: 상실의 이야기",
+      "en": "Pine: A Story of Loss",
+      "ja": "Pine: 喪失の物語"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

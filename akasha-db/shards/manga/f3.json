@@ -73,5 +73,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008760": {
+    "workId": "wk_000008760",
+    "title": "아야코",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2462148"
+    },
+    "titles": {
+      "ko": "아야코",
+      "en": "Ayako",
+      "ja": "奇子"
+    },
+    "creator": "Osamu Tezuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

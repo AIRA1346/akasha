@@ -197,5 +197,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008324": {
+    "workId": "wk_000008324",
+    "title": "페이스 오브 워",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1301576"
+    },
+    "titles": {
+      "ko": "페이스 오브 워",
+      "en": "Faces of War"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

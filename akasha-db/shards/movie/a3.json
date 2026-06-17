@@ -54,5 +54,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008796": {
+    "workId": "wk_000008796",
+    "title": "해왕성 로맨스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108166876"
+    },
+    "titles": {
+      "ko": "해왕성 로맨스",
+      "en": "Neptune Frost"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

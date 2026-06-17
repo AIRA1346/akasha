@@ -71,5 +71,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008556": {
+    "workId": "wk_000008556",
+    "title": "우치타마?! ~우리집 타마를 모르시나요?~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65233943"
+    },
+    "titles": {
+      "ko": "우치타마?! ~우리집 타마를 모르시나요?~",
+      "en": "Uchitama?! Have you seen my Tama?",
+      "ja": "うちタマ?! 〜うちのタマ知りませんか?〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -112,5 +112,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008511": {
+    "workId": "wk_000008511",
+    "title": "소닉 레이싱 크로스월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131436187"
+    },
+    "titles": {
+      "ko": "소닉 레이싱 크로스월드",
+      "en": "Sonic Racing: CrossWorlds",
+      "ja": "ソニックレーシング クロスワールド"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008721": {
+    "workId": "wk_000008721",
+    "title": "도라에몽 노비타의 공룡 2006 DS",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321863"
+    },
+    "titles": {
+      "ko": "도라에몽 노비타의 공룡 2006 DS",
+      "en": "Doraemon: Nobita's Dinosaur 2006 DS",
+      "ja": "ドラえもん のび太の恐竜2006 DS"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

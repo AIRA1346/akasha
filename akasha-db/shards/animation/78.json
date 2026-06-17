@@ -103,5 +103,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008363": {
+    "workId": "wk_000008363",
+    "title": "짱구는 못말려 극장판: 부리부리 왕국의 보물",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q635679"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 부리부리 왕국의 보물",
+      "en": "Crayon Shin-chan: The Hidden Treasure of the Buri Buri Kingdom",
+      "ja": "クレヨンしんちゃん ブリブリ王国の秘宝"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008836": {
+    "workId": "wk_000008836",
+    "title": "혹성로보 단가드A",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q701768"
+    },
+    "titles": {
+      "ko": "혹성로보 단가드A",
+      "en": "Wakusei Robo Danguard Ace",
+      "ja": "惑星ロボ ダンガードA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

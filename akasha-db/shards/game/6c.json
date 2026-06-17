@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008381": {
+    "workId": "wk_000008381",
+    "title": "비너스 베케이션 프리즘: 데드 오어 얼라이브 익스트림",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130332866"
+    },
+    "titles": {
+      "ko": "비너스 베케이션 프리즘: 데드 오어 얼라이브 익스트림",
+      "en": "Venus Vacation Prism: Dead or Alive Xtreme",
+      "ja": "ヴィーナス バケーション プリズム デッド オア アライブ エクストリーム"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

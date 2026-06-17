@@ -238,5 +238,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008303": {
+    "workId": "wk_000008303",
+    "title": "고블린 슬레이어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63435787"
+    },
+    "titles": {
+      "ko": "고블린 슬레이어",
+      "en": "Goblin Slayer",
+      "ja": "ゴブリンスレイヤー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

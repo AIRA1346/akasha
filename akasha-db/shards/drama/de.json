@@ -122,5 +122,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008889": {
+    "workId": "wk_000008889",
+    "title": "백만 팔로워는 추리 중",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118140521"
+    },
+    "titles": {
+      "ko": "백만 팔로워는 추리 중",
+      "en": "Million-follower Detective",
+      "ja": "殺人予言配信"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

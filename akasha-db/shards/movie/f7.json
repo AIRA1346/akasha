@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008528": {
+    "workId": "wk_000008528",
+    "title": "여자들의 꿈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1078811"
+    },
+    "titles": {
+      "ko": "여자들의 꿈",
+      "en": "Secrets of Women",
+      "ja": "シークレット・オブ・ウーマン"
+    },
+    "releaseYear": 1952,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

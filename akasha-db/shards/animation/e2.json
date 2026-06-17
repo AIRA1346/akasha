@@ -166,5 +166,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008700": {
+    "workId": "wk_000008700",
+    "title": "사무라이 7",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696224"
+    },
+    "titles": {
+      "ko": "사무라이 7",
+      "en": "Samurai 7",
+      "ja": "SAMURAI 7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

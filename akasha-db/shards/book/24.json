@@ -75,5 +75,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008726": {
+    "workId": "wk_000008726",
+    "title": "포션빨로 연명합니다!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113549411"
+    },
+    "titles": {
+      "ko": "포션빨로 연명합니다!",
+      "en": "I Shall Survive Using Potions!",
+      "ja": "ポーション頼みで生き延びます!"
+    },
+    "releaseYear": 2017,
+    "creator": "FUNA",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

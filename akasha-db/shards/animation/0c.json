@@ -109,5 +109,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008369": {
+    "workId": "wk_000008369",
+    "title": "짱구는 못말려 극장판: 엄청 맛있어! B급 음식 서바이벌!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q639869"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 엄청 맛있어! B급 음식 서바이벌!",
+      "en": "Crayon Shin-chan: Very Tasty! B-class Gourmet Survival!!",
+      "ja": "クレヨンしんちゃん バカうまっ!B級グルメサバイバル!!"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

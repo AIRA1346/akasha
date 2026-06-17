@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008455": {
+    "workId": "wk_000008455",
+    "title": "길피의 속임수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134288"
+    },
+    "titles": {
+      "ko": "길피의 속임수",
+      "en": "Gylfaginning",
+      "ja": "ギュルヴィたぶらかし"
+    },
+    "creator": "Snorri Sturluson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

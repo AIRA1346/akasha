@@ -123,5 +123,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008719": {
+    "workId": "wk_000008719",
+    "title": "도라에몽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321796"
+    },
+    "titles": {
+      "ko": "도라에몽",
+      "en": "Doraemon",
+      "ja": "ドラえもん"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

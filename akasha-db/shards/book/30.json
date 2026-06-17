@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008259": {
+    "workId": "wk_000008259",
+    "title": "노후를 대비해 이세계에서 금화 8만 개를 모읍니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113196208"
+    },
+    "titles": {
+      "ko": "노후를 대비해 이세계에서 금화 8만 개를 모읍니다",
+      "en": "Saving 80,000 Gold in Another World for My Retirement",
+      "ja": "老後に備えて異世界で8万枚の金貨を貯めます"
+    },
+    "releaseYear": 2017,
+    "creator": "FUNA",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

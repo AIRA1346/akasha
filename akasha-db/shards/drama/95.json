@@ -107,5 +107,57 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008744": {
+    "workId": "wk_000008744",
+    "title": "EBS 교육진단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117254655"
+    },
+    "titles": {
+      "ko": "EBS 교육진단",
+      "en": "Q117254655"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008752": {
+    "workId": "wk_000008752",
+    "title": "TV조선 뉴스 12",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117377623"
+    },
+    "titles": {
+      "ko": "TV조선 뉴스 12",
+      "en": "Q117377623"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008943": {
+    "workId": "wk_000008943",
+    "title": "웰컴투 삼달리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118611683"
+    },
+    "titles": {
+      "ko": "웰컴투 삼달리",
+      "en": "Welcome to Samdalri",
+      "ja": "サムダルリへようこそ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

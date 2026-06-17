@@ -74,5 +74,42 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008216": {
+    "workId": "wk_000008216",
+    "title": "썬다운",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107650846"
+    },
+    "titles": {
+      "ko": "썬다운",
+      "en": "Sundown"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008661": {
+    "workId": "wk_000008661",
+    "title": "지옥의 화원",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108001998"
+    },
+    "titles": {
+      "ko": "지옥의 화원",
+      "en": "Hell's Garden",
+      "ja": "地獄の花園"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

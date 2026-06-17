@@ -105,5 +105,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008809": {
+    "workId": "wk_000008809",
+    "title": "아주 사적인 동남아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117568195"
+    },
+    "titles": {
+      "ko": "아주 사적인 동남아",
+      "en": "Very private Southeast Asia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

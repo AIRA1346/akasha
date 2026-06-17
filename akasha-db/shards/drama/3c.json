@@ -108,5 +108,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008280": {
+    "workId": "wk_000008280",
+    "title": "사랑이라 말해요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116259714"
+    },
+    "titles": {
+      "ko": "사랑이라 말해요",
+      "en": "Call It Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

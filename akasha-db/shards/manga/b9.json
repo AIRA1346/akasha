@@ -36,5 +36,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008355": {
+    "workId": "wk_000008355",
+    "title": "여자고등학생",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22101189"
+    },
+    "titles": {
+      "ko": "여자고등학생",
+      "en": "Joshi Kausei",
+      "ja": "女子かう生"
+    },
+    "releaseYear": 2013,
+    "creator": "Ken Wakai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

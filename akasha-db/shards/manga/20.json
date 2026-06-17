@@ -53,5 +53,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008290": {
+    "workId": "wk_000008290",
+    "title": "바니타스의 카르테",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21576845"
+    },
+    "titles": {
+      "ko": "바니타스의 카르테",
+      "en": "The Case Study of Vanitas",
+      "ja": "ヴァニタスの手記"
+    },
+    "releaseYear": 2015,
+    "creator": "Jun Mochizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

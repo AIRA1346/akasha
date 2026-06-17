@@ -231,5 +231,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008339": {
+    "workId": "wk_000008339",
+    "title": "마에다의 분투",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636042"
+    },
+    "titles": {
+      "ko": "마에다의 분투",
+      "en": "Hashiranka!",
+      "ja": "走らんか!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008351": {
+    "workId": "wk_000008351",
+    "title": "북유럽 코지라세 일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116460184"
+    },
+    "titles": {
+      "ko": "북유럽 코지라세 일기",
+      "en": "Hokuo Kojirase Nikki",
+      "ja": "北欧こじらせ日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

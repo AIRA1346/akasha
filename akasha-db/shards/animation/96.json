@@ -92,5 +92,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008633": {
+    "workId": "wk_000008633",
+    "title": "인사이드 빌 게이츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q68319034"
+    },
+    "titles": {
+      "ko": "인사이드 빌 게이츠",
+      "en": "Inside Bill's Brain: Decoding Bill Gates",
+      "ja": "天才の頭の中: ビル・ゲイツを解読する"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008698": {
+    "workId": "wk_000008698",
+    "title": "기동전사 건담 더블 오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696062"
+    },
+    "titles": {
+      "ko": "기동전사 건담 더블 오",
+      "en": "Mobile Suit Gundam 00",
+      "ja": "機動戦士ガンダム00"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

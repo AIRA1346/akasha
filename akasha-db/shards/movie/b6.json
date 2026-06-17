@@ -85,5 +85,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008213": {
+    "workId": "wk_000008213",
+    "title": "대외비: 권력의 탄생",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107639040"
+    },
+    "titles": {
+      "ko": "대외비: 권력의 탄생",
+      "en": "The Devil's Deal",
+      "ja": "対外秘"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

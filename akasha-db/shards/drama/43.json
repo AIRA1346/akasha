@@ -83,5 +83,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008689": {
+    "workId": "wk_000008689",
+    "title": "금이야 옥이야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117039330"
+    },
+    "titles": {
+      "ko": "금이야 옥이야",
+      "en": "Apple of My Eye",
+      "ja": "我が目の林檎"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -72,5 +72,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008434": {
+    "workId": "wk_000008434",
+    "title": "공룡모험기 쥬라트립퍼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q649385"
+    },
+    "titles": {
+      "ko": "공룡모험기 쥬라트립퍼",
+      "en": "Jura Tripper",
+      "ja": "恐竜冒険記ジュラトリッパー"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

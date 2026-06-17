@@ -127,5 +127,23 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008483": {
+    "workId": "wk_000008483",
+    "title": "안녕, 가시나무 공주",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22129437"
+    },
+    "titles": {
+      "ko": "안녕, 가시나무 공주",
+      "en": "Wake Up, Sleeping Beauty",
+      "ja": "おはよう、いばら姫"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

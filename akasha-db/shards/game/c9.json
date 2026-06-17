@@ -74,5 +74,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008239": {
+    "workId": "wk_000008239",
+    "title": "셀렉트 오블리주",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128034991"
+    },
+    "titles": {
+      "ko": "셀렉트 오블리주",
+      "en": "Select Oblige",
+      "ja": "セレクトオブリージュ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

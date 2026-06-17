@@ -1,0 +1,21 @@
+{
+  "wk_000008484": {
+    "workId": "wk_000008484",
+    "title": "사랑하고 사랑받고, 차고 차이고",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22129787"
+    },
+    "titles": {
+      "ko": "사랑하고 사랑받고, 차고 차이고",
+      "en": "Omoi, Omoware, Furi, Furare",
+      "ja": "思い、思われ、ふり、ふられ"
+    },
+    "creator": "Io Sakisaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

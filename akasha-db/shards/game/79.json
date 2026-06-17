@@ -90,5 +90,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008321": {
+    "workId": "wk_000008321",
+    "title": "아메코이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129924469"
+    },
+    "titles": {
+      "ko": "아메코이",
+      "en": "Ame Koi",
+      "ja": "雨恋"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008923": {
+    "workId": "wk_000008923",
+    "title": "데이토나 USA",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1326048"
+    },
+    "titles": {
+      "ko": "데이토나 USA",
+      "en": "Daytona USA",
+      "ja": "デイトナUSA"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

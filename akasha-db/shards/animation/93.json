@@ -196,5 +196,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008365": {
+    "workId": "wk_000008365",
+    "title": "극장판 미소녀전사 세일러문 R",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q636444"
+    },
+    "titles": {
+      "ko": "극장판 미소녀전사 세일러문 R",
+      "en": "Sailor Moon R: The Movie",
+      "ja": "劇場版美少女戦士セーラームーンR"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

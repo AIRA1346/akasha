@@ -34,5 +34,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008521": {
+    "workId": "wk_000008521",
+    "title": "스가타 산시로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077915"
+    },
+    "titles": {
+      "ko": "스가타 산시로",
+      "en": "Sanshiro Sugata",
+      "ja": "姿三四郎"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -206,5 +206,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008350": {
+    "workId": "wk_000008350",
+    "title": "태어난 김에 세계일주",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116444269"
+    },
+    "titles": {
+      "ko": "태어난 김에 세계일주",
+      "en": "Adventure by Accident"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

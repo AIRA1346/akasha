@@ -111,5 +111,23 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008929": {
+    "workId": "wk_000008929",
+    "title": "히어로즈 앤 제너럴스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1327942"
+    },
+    "titles": {
+      "ko": "히어로즈 앤 제너럴스",
+      "en": "Heroes & Generals"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -156,5 +156,58 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008400": {
+    "workId": "wk_000008400",
+    "title": "더 이벤트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1164745"
+    },
+    "titles": {
+      "ko": "더 이벤트",
+      "en": "The Event",
+      "ja": "THE EVENT/イベント"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008477": {
+    "workId": "wk_000008477",
+    "title": "도시락 형사 진보 토쿠노스케",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11668208"
+    },
+    "titles": {
+      "ko": "도시락 형사 진보 토쿠노스케",
+      "en": "Ekiben keiji Jinbo Tokunosuke",
+      "ja": "駅弁刑事・神保徳之助"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008536": {
+    "workId": "wk_000008536",
+    "title": "소년파 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116764816"
+    },
+    "titles": {
+      "ko": "소년파 2",
+      "en": "Q116764816"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

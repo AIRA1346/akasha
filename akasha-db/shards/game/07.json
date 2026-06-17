@@ -112,5 +112,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008442": {
+    "workId": "wk_000008442",
+    "title": "마리오 파티 : 아일랜드 투어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13063856"
+    },
+    "titles": {
+      "ko": "마리오 파티 : 아일랜드 투어",
+      "en": "Mario Party: Island Tour",
+      "ja": "マリオパーティ アイランドツアー"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008505": {
+    "workId": "wk_000008505",
+    "title": "목장이야기: 미네랄 타운의 동료들",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1313985"
+    },
+    "titles": {
+      "ko": "목장이야기: 미네랄 타운의 동료들",
+      "en": "Harvest Moon: Friends of Mineral Town",
+      "ja": "牧場物語 ミネラルタウンのなかまたち"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -87,5 +87,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008898": {
+    "workId": "wk_000008898",
+    "title": "에트랑제 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24864422"
+    },
+    "titles": {
+      "ko": "에트랑제 시리즈",
+      "en": "Umibe no Étranger",
+      "ja": "海辺のエトランゼ"
+    },
+    "creator": "Kanna Kii",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

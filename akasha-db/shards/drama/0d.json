@@ -173,5 +173,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008273": {
+    "workId": "wk_000008273",
+    "title": "나쁜 엄마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116230044"
+    },
+    "titles": {
+      "ko": "나쁜 엄마",
+      "en": "The Good Bad Mother",
+      "ja": "良くも、悪くも、だって母親"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008821": {
+    "workId": "wk_000008821",
+    "title": "오! 영심이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117816695"
+    },
+    "titles": {
+      "ko": "오! 영심이",
+      "en": "Oh! Young-shim"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

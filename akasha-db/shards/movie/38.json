@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008265": {
+    "workId": "wk_000008265",
+    "title": "우게쓰 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076605"
+    },
+    "titles": {
+      "ko": "우게쓰 이야기",
+      "en": "Ugetsu",
+      "ja": "雨月物語"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

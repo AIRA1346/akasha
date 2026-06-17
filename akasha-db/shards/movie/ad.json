@@ -111,5 +111,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008463": {
+    "workId": "wk_000008463",
+    "title": "007 두 번 산다",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107761"
+    },
+    "titles": {
+      "ko": "007 두 번 산다",
+      "en": "You Only Live Twice",
+      "ja": "007は二度死ぬ"
+    },
+    "releaseYear": 1967,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

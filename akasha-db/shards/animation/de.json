@@ -71,5 +71,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008302": {
+    "workId": "wk_000008302",
+    "title": "어서오세요 자파리 파크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63435641"
+    },
+    "titles": {
+      "ko": "어서오세요 자파리 파크",
+      "en": "Welcome to Japari Park",
+      "ja": "ようこそジャパリパーク"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

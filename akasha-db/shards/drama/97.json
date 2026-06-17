@@ -159,5 +159,40 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008281": {
+    "workId": "wk_000008281",
+    "title": "위성영화극장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11626308"
+    },
+    "titles": {
+      "ko": "위성영화극장",
+      "en": "Q11626308",
+      "ja": "衛星映画劇場"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008951": {
+    "workId": "wk_000008951",
+    "title": "댄스가수 유랑단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118697954"
+    },
+    "titles": {
+      "ko": "댄스가수 유랑단",
+      "en": "Dancing Queens on the Road"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

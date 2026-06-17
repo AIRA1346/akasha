@@ -34,5 +34,23 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008800": {
+    "workId": "wk_000008800",
+    "title": "아포칼립스: 인류 최후의 날",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108219065"
+    },
+    "titles": {
+      "ko": "아포칼립스: 인류 최후의 날",
+      "en": "A Living Dog"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

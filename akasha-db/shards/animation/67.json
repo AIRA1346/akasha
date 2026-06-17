@@ -180,5 +180,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008833": {
+    "workId": "wk_000008833",
+    "title": "꽃의 아이 룬룬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700969"
+    },
+    "titles": {
+      "ko": "꽃의 아이 룬룬",
+      "en": "Hana no Ko Lunlun",
+      "ja": "花の子ルンルン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

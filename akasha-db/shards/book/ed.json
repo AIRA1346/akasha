@@ -68,5 +68,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008392": {
+    "workId": "wk_000008392",
+    "title": "수관 기피를 위한 기도",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113317364"
+    },
+    "titles": {
+      "ko": "수관 기피를 위한 기도",
+      "en": "A Prayer for the Crown-Shy"
+    },
+    "releaseYear": 2022,
+    "creator": "ベッキー・チェンバーズ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

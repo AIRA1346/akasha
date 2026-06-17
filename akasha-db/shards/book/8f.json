@@ -36,5 +36,45 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008257": {
+    "workId": "wk_000008257",
+    "title": "더블 톤",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11317302"
+    },
+    "titles": {
+      "ko": "더블 톤",
+      "en": "Double Tone",
+      "ja": "ダブルトーン"
+    },
+    "releaseYear": 2012,
+    "creator": "Shinji Kajio",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008785": {
+    "workId": "wk_000008785",
+    "title": "네버웨어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113610"
+    },
+    "titles": {
+      "ko": "네버웨어",
+      "en": "Neverwhere",
+      "ja": "ネバーウェア"
+    },
+    "releaseYear": 1996,
+    "creator": "ニール・ゲイマン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

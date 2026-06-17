@@ -127,5 +127,25 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008861": {
+    "workId": "wk_000008861",
+    "title": "브람스를 좋아하세요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1136202"
+    },
+    "titles": {
+      "ko": "브람스를 좋아하세요",
+      "en": "Aimez-vous Brahms?",
+      "ja": "ブラームスはお好き"
+    },
+    "releaseYear": 1959,
+    "creator": "Françoise Sagan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

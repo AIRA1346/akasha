@@ -253,5 +253,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008839": {
+    "workId": "wk_000008839",
+    "title": "시골소녀 폴리아나",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702039"
+    },
+    "titles": {
+      "ko": "시골소녀 폴리아나",
+      "en": "The Story of Pollyanna, Girl of Love",
+      "ja": "愛少女ポリアンナ物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

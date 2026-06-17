@@ -93,5 +93,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008648": {
+    "workId": "wk_000008648",
+    "title": "Holo's 화투",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131827901"
+    },
+    "titles": {
+      "ko": "Holo's 화투",
+      "en": "Holo's Hanafuda",
+      "ja": "ホロの花札"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -90,5 +90,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008834": {
+    "workId": "wk_000008834",
+    "title": "전뇌 모험기 웹 다이버",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q701100"
+    },
+    "titles": {
+      "ko": "전뇌 모험기 웹 다이버",
+      "en": "Dennō Bōkenki Webdiver",
+      "ja": "電脳冒険記ウェブダイバー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

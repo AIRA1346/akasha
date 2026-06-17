@@ -53,5 +53,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008495": {
+    "workId": "wk_000008495",
+    "title": "드롭아웃",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65056901"
+    },
+    "titles": {
+      "ko": "드롭아웃",
+      "en": "The Dropout",
+      "ja": "ドロップアウト〜シリコンバレーを騙した女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008585": {
+    "workId": "wk_000008585",
+    "title": "친밀한 이방인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113506609"
+    },
+    "titles": {
+      "ko": "친밀한 이방인",
+      "en": "Q113506609"
+    },
+    "releaseYear": 2017,
+    "creator": "Chung Han-ah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

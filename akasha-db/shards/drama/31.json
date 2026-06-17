@@ -156,5 +156,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008478": {
+    "workId": "wk_000008478",
+    "title": "진짜가 나타났다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116687949"
+    },
+    "titles": {
+      "ko": "진짜가 나타났다!",
+      "en": "The Real Has Come!",
+      "ja": "本物（チンチャ）が現れた！～まさか結婚するなんて～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008541": {
+    "workId": "wk_000008541",
+    "title": "나의 신부 군",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116776992"
+    },
+    "titles": {
+      "ko": "나의 신부 군",
+      "en": "Mr. Bride, My Darling!",
+      "ja": "わたしのお嫁くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

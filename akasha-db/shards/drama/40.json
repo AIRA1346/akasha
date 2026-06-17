@@ -211,5 +211,41 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008406": {
+    "workId": "wk_000008406",
+    "title": "오인 버린 남자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11655465"
+    },
+    "titles": {
+      "ko": "오인 버린 남자",
+      "en": "The Man who Is Mistaken",
+      "ja": "間違われちゃった男"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008810": {
+    "workId": "wk_000008810",
+    "title": "비벌리힐스 아이들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117590"
+    },
+    "titles": {
+      "ko": "비벌리힐스 아이들",
+      "en": "Beverly Hills, 90210",
+      "ja": "ビバリーヒルズ高校白書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

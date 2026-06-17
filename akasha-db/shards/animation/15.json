@@ -145,5 +145,42 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008772": {
+    "workId": "wk_000008772",
+    "title": "마루 밑 아리에티",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699835"
+    },
+    "titles": {
+      "ko": "마루 밑 아리에티",
+      "en": "Arrietty",
+      "ja": "借りぐらしのアリエッティ"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008843": {
+    "workId": "wk_000008843",
+    "title": "천사소녀 새롬이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q702501"
+    },
+    "titles": {
+      "ko": "천사소녀 새롬이",
+      "en": "Creamy Mami, the Magic Angel",
+      "ja": "魔法の天使クリィミーマミ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

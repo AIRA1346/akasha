@@ -89,5 +89,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008432": {
+    "workId": "wk_000008432",
+    "title": "미루타이츠",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q64788686"
+    },
+    "titles": {
+      "ko": "미루타이츠",
+      "en": "Miru Tights",
+      "ja": "みるタイツ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

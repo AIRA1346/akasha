@@ -16,5 +16,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008555": {
+    "workId": "wk_000008555",
+    "title": "시크릿 워",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2275548"
+    },
+    "titles": {
+      "ko": "시크릿 워",
+      "en": "Secret War",
+      "ja": "シークレット・ウォー"
+    },
+    "creator": "Brian Michael Bendis",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

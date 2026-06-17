@@ -158,5 +158,24 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008418": {
+    "workId": "wk_000008418",
+    "title": "라이플 이즈 뷰티풀",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22126075"
+    },
+    "titles": {
+      "ko": "라이플 이즈 뷰티풀",
+      "en": "Rifle is Beautiful",
+      "ja": "ライフル・イズ・ビューティフル"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -108,5 +108,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008569": {
+    "workId": "wk_000008569",
+    "title": "디지몬 세이버즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q666569"
+    },
+    "titles": {
+      "ko": "디지몬 세이버즈",
+      "en": "Digimon Data Squad",
+      "ja": "デジモンセイバーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

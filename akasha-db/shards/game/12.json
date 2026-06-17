@@ -54,5 +54,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008724": {
+    "workId": "wk_000008724",
+    "title": "역전재판",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1322480"
+    },
+    "titles": {
+      "ko": "역전재판",
+      "en": "Phoenix Wright: Ace Attorney",
+      "ja": "逆転裁判"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -71,5 +71,43 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008492": {
+    "workId": "wk_000008492",
+    "title": "후타코이 얼터너티브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6503143"
+    },
+    "titles": {
+      "ko": "후타코이 얼터너티브",
+      "en": "Futakoi Alternative",
+      "ja": "フタコイ オルタナティブ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008559": {
+    "workId": "wk_000008559",
+    "title": "던전에서 만남을 추구하면 안 되는 걸까",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65242485"
+    },
+    "titles": {
+      "ko": "던전에서 만남을 추구하면 안 되는 걸까",
+      "en": "Is It Wrong to Try to Pick Up Girls in a Dungeon?: Arrow of the Orion",
+      "ja": "劇場版 ダンジョンに出会いを求めるのは間違っているだろうか －オリオンの矢－"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -135,5 +135,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008405": {
+    "workId": "wk_000008405",
+    "title": "개척자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11655246"
+    },
+    "titles": {
+      "ko": "개척자들",
+      "en": "Pioneers",
+      "ja": "開拓者たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

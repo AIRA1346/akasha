@@ -53,5 +53,24 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008192": {
+    "workId": "wk_000008192",
+    "title": "더 스탠드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61774261"
+    },
+    "titles": {
+      "ko": "더 스탠드",
+      "en": "The Stand",
+      "ja": "ザ・スタンド"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

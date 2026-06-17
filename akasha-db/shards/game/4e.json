@@ -126,5 +126,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008375": {
+    "workId": "wk_000008375",
+    "title": "호연",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130238564"
+    },
+    "titles": {
+      "ko": "호연",
+      "en": "Blade & Soul Heroes",
+      "ja": "護縁"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

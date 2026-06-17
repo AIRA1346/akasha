@@ -36,5 +36,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008663": {
+    "workId": "wk_000008663",
+    "title": "맘보",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1080080"
+    },
+    "titles": {
+      "ko": "맘보",
+      "en": "Mambo",
+      "ja": "マンボ"
+    },
+    "releaseYear": 1954,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

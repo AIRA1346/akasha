@@ -110,5 +110,24 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008248": {
+    "workId": "wk_000008248",
+    "title": "스내처",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1288651"
+    },
+    "titles": {
+      "ko": "스내처",
+      "en": "Snatcher",
+      "ja": "スナッチャー"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -17,5 +17,23 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008452": {
+    "workId": "wk_000008452",
+    "title": "헤바즈라 탄트라",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11336748"
+    },
+    "titles": {
+      "ko": "헤바즈라 탄트라",
+      "en": "Hevajra Tantra",
+      "ja": "ヘーヴァジュラ・タントラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

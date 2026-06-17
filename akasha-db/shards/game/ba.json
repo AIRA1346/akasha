@@ -68,5 +68,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008307": {
+    "workId": "wk_000008307",
+    "title": "라이덴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1290054"
+    },
+    "titles": {
+      "ko": "라이덴",
+      "en": "Raiden",
+      "ja": "雷電"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008780": {
+    "workId": "wk_000008780",
+    "title": "마리오와 소닉 소치 동계올림픽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13233160"
+    },
+    "titles": {
+      "ko": "마리오와 소닉 소치 동계올림픽",
+      "en": "Mario & Sonic at the Sochi 2014 Olympic Winter Games",
+      "ja": "マリオ&ソニック AT ソチオリンピック"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

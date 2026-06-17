@@ -71,5 +71,25 @@
       "ingestChannel": "wikidata_ko_manga",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008357": {
+    "workId": "wk_000008357",
+    "title": "결벽남자! 아오야마군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22124083"
+    },
+    "titles": {
+      "ko": "결벽남자! 아오야마군",
+      "en": "Clean Freak! Aoyama kun",
+      "ja": "潔癖男子!青山くん"
+    },
+    "releaseYear": 2014,
+    "creator": "Taku Sakamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -86,5 +86,43 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008716": {
+    "workId": "wk_000008716",
+    "title": "X³: 테란 컨플릭트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1321049"
+    },
+    "titles": {
+      "ko": "X³: 테란 컨플릭트",
+      "en": "X3: Terran Conflict",
+      "ja": "X3: Terran Conflict"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008720": {
+    "workId": "wk_000008720",
+    "title": "동방휘침성 ~ Double Dealing Character",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13218187"
+    },
+    "titles": {
+      "ko": "동방휘침성 ~ Double Dealing Character",
+      "en": "Touhou Kishinjou ~ Double Dealing Character",
+      "ja": "東方輝針城 〜 Double Dealing Character."
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

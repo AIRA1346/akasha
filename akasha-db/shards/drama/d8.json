@@ -103,5 +103,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008824": {
+    "workId": "wk_000008824",
+    "title": "사랑한다고 말해줘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117847731"
+    },
+    "titles": {
+      "ko": "사랑한다고 말해줘",
+      "en": "Tell Me That You Love Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

@@ -35,5 +35,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008875": {
+    "workId": "wk_000008875",
+    "title": "미스 파르 쿠 - 핀란드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831867"
+    },
+    "titles": {
+      "ko": "미스 파르 쿠 - 핀란드",
+      "en": "Miss Farkku-Suomi",
+      "ja": "ミスファークク - フィンランド"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

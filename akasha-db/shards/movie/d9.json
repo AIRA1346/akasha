@@ -15,5 +15,24 @@
       "ingestChannel": "wikidata_ko_movie",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008798": {
+    "workId": "wk_000008798",
+    "title": "당신은 믿지 않겠지만",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108167036"
+    },
+    "titles": {
+      "ko": "당신은 믿지 않겠지만",
+      "en": "The Asian Angel",
+      "ja": "アジアの天使"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

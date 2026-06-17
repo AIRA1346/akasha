@@ -222,5 +222,61 @@
       "ingestChannel": "wikidata_ko_game",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008384": {
+    "workId": "wk_000008384",
+    "title": "파일롯 윙즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1305295"
+    },
+    "titles": {
+      "ko": "파일롯 윙즈",
+      "en": "Pilotwings",
+      "ja": "パイロットウイングス"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008499": {
+    "workId": "wk_000008499",
+    "title": "월드 오브 워크래프트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131007"
+    },
+    "titles": {
+      "ko": "월드 오브 워크래프트",
+      "en": "World of Warcraft",
+      "ja": "ワールドオブウォークラフト"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008927": {
+    "workId": "wk_000008927",
+    "title": "UFO: Afterlight",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1327035"
+    },
+    "titles": {
+      "ko": "UFO: Afterlight",
+      "en": "UFO: Afterlight"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

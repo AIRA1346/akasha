@@ -126,5 +126,23 @@
       "ingestChannel": "wikidata_ko_animation",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008235": {
+    "workId": "wk_000008235",
+    "title": "로비하치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62660474"
+    },
+    "titles": {
+      "ko": "로비하치",
+      "en": "RobiHachi",
+      "ja": "ロビハチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

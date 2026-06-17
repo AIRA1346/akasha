@@ -140,5 +140,23 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008548": {
+    "workId": "wk_000008548",
+    "title": "갭 더 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116814502"
+    },
+    "titles": {
+      "ko": "갭 더 시리즈",
+      "en": "GAP The series",
+      "ja": "ギャップ・ザ・シリーズ（GAP The Series）"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

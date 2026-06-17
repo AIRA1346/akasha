@@ -92,5 +92,24 @@
       "ingestChannel": "wikidata_ko_book",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008933": {
+    "workId": "wk_000008933",
+    "title": "시간이 멈추는 찻집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113753129"
+    },
+    "titles": {
+      "ko": "시간이 멈추는 찻집",
+      "en": "Under the Whispering Door"
+    },
+    "releaseYear": 2021,
+    "creator": "TJ Klune",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }

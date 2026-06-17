@@ -229,5 +229,22 @@
       "ingestChannel": "wikidata_ko_drama",
       "ingestSource": "wikidata_ko"
     }
+  },
+  "wk_000008896": {
+    "workId": "wk_000008896",
+    "title": "그레이시 루의 모험",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11829975"
+    },
+    "titles": {
+      "ko": "그레이시 루의 모험",
+      "en": "The Adventures of Gracie Lou"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
   }
 }
