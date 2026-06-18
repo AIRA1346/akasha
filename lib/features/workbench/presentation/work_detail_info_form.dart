@@ -29,6 +29,8 @@ class WorkDetailInfoForm extends StatelessWidget {
     required this.onResetToDefaults,
     required this.onSaveArchive,
     required this.onAddToLibrary,
+    this.canDeleteMd = false,
+    this.onDeleteArchive,
   });
 
   final AkashaItem item;
@@ -52,6 +54,8 @@ class WorkDetailInfoForm extends StatelessWidget {
   final VoidCallback onResetToDefaults;
   final VoidCallback onSaveArchive;
   final VoidCallback onAddToLibrary;
+  final bool canDeleteMd;
+  final VoidCallback? onDeleteArchive;
 
   @override
   Widget build(BuildContext context) {
@@ -221,6 +225,24 @@ class WorkDetailInfoForm extends StatelessWidget {
             ),
           ],
         ),
+        if (canDeleteMd && onDeleteArchive != null) ...[
+          const SizedBox(height: 6),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: isSaving ? null : onDeleteArchive,
+              icon: const Icon(Icons.delete_outline, size: 16),
+              label: const Text('md 삭제'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.redAccent,
+                side: const BorderSide(color: Colors.redAccent),
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                textStyle: const TextStyle(fontSize: 11),
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

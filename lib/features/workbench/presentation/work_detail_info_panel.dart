@@ -38,6 +38,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
     required this.onResetToDefaults,
     required this.onSaveArchive,
     required this.onAddToLibrary,
+    this.canDeleteMd = false,
+    this.onDeleteArchive,
   });
 
   final AkashaItem item;
@@ -68,6 +70,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
   final VoidCallback onResetToDefaults;
   final VoidCallback onSaveArchive;
   final VoidCallback onAddToLibrary;
+  final bool canDeleteMd;
+  final VoidCallback? onDeleteArchive;
 
   @override
   Widget build(BuildContext context) {
@@ -177,6 +181,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
                             onResetToDefaults: onResetToDefaults,
                             onSaveArchive: onSaveArchive,
                             onAddToLibrary: onAddToLibrary,
+                            canDeleteMd: canDeleteMd,
+                            onDeleteArchive: onDeleteArchive,
                           ),
                         ),
                       ),

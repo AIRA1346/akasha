@@ -11,6 +11,7 @@ import '../../../services/work_info_defaults.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../screens/detail/detail_archive_save.dart';
+import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_info_panel.dart';
 
@@ -73,6 +74,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   bool _externalChangePending = false;
   DateTime? _lastSavedAt;
   Timer? _autoSaveTimer;
+  bool _suppressPersist = false;
 
   static const _autoSaveDelay = Duration(seconds: 2);
 
@@ -225,14 +227,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   @override
   void deactivate() {
     _autoSaveTimer?.cancel();
-    _flushAutoSaveIfNeeded();
+    if (!_suppressPersist) {
+      _flushAutoSaveIfNeeded();
+    }
     super.deactivate();
   }
 
   @override
   void dispose() {
     _autoSaveTimer?.cancel();
-    if (widget.isDirty) {
+    if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         _applyFileEditorToItem();
       } else {
@@ -257,6 +261,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   void _scheduleAutoSave() {
     _autoSaveTimer?.cancel();
+    if (_suppressPersist) return;
     if (AkashaFileService().vaultPath == null) return;
     if (_externalChangePending) return;
     _autoSaveTimer = Timer(_autoSaveDelay, () {
@@ -268,6 +273,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _flushAutoSaveIfNeeded() {
+    if (_suppressPersist) return;
     if (!widget.isDirty) return;
     if (AkashaFileService().vaultPath == null) return;
     if (_externalChangePending) return;
@@ -313,8 +319,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         draftTags: _draftTags,
       );
 
+  bool get _isArchivedInVault => AkashaFileService().isArchivedInVault(_item);
+
   bool get _isArchived =>
-      AkashaFileService().isArchivedInVault(_item) ||
+      _isArchivedInVault ||
       AkashaFileService()
           .inMemoryCache
           .containsKey(AkashaFileService.cacheKeyFor(_item));
@@ -370,7 +378,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     bool silent = false,
     bool switchToPreview = true,
   }) async {
-    if (_isSaving) return;
+    if (_suppressPersist || _isSaving) return;
     _autoSaveTimer?.cancel();
     final contentAtSave = _pageView == SanctumPageView.file
         ? _fileCtrl.text
@@ -426,6 +434,48 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
+  Future<void> _confirmDelete() async {
+    if (_isSaving) return;
+
+    final service = AkashaFileService();
+    if (!_isArchivedInVault) {
+      _showSnack('삭제할 md 파일이 없습니다.');
+      return;
+    }
+
+    final displayTitle = _titleCtrl.text.trim().isNotEmpty
+        ? _titleCtrl.text.trim()
+        : _item.title;
+
+    final confirmed = await showDetailDeleteConfirmDialog(
+      context,
+      title: displayTitle,
+      hasVault: true,
+      hasUnsavedChanges: widget.isDirty,
+    );
+    if (!confirmed || !mounted) return;
+
+    _autoSaveTimer?.cancel();
+    while (_isSaving && mounted) {
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+    }
+    if (!mounted) return;
+
+    setState(() => _suppressPersist = true);
+    widget.onDirtyChanged(false);
+
+    final deleted = await service.deleteAkashaItem(_item);
+    if (!mounted) return;
+
+    if (deleted) {
+      _showSnack('"$displayTitle" md 파일을 삭제했습니다.');
+      widget.onDeleted();
+    } else {
+      setState(() => _suppressPersist = false);
+      _showSnack('삭제할 파일을 찾지 못했습니다.');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final preview = _applyDraft();
@@ -478,6 +528,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           onResetToDefaults: _resetToDefaults,
           onSaveArchive: _saveArchive,
           onAddToLibrary: _handleAddToLibrary,
+          canDeleteMd: _isArchivedInVault,
+          onDeleteArchive: _confirmDelete,
         ),
         Expanded(
           child: ColoredBox(
