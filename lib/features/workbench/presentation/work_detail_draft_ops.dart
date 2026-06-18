@@ -97,6 +97,17 @@ class WorkDetailDraftOps {
     );
   }
 
+  /// 본문·보기 탭에서 에디터 텍스트를 item에 반영 (.md 탭은 별도 처리).
+  static void syncBodyForPageView({
+    required AkashaItem item,
+    required SanctumPageView pageView,
+    required TextEditingController bodyCtrl,
+  }) {
+    if (pageView != SanctumPageView.file) {
+      syncBodyFromEditor(item, bodyCtrl);
+    }
+  }
+
   static String previewBodyMarkdown({
     required AkashaItem item,
     required SanctumPageView pageView,
@@ -109,9 +120,7 @@ class WorkDetailDraftOps {
     required bool draftHallOfFame,
     required List<String> draftTags,
   }) {
-    if (pageView == SanctumPageView.body) {
-      syncBodyFromEditor(item, bodyCtrl);
-    }
+    syncBodyForPageView(item: item, pageView: pageView, bodyCtrl: bodyCtrl);
     final draft = applyDraft(
       item: item,
       titleCtrl: titleCtrl,

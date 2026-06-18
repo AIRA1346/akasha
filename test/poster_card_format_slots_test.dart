@@ -125,4 +125,54 @@ void main() {
     expect(ratingRow, isNotNull);
     expect(identical(ratingRow, statusRow), isTrue);
   });
+
+  testWidgets('PosterCard keeps year row aligned without format slots',
+      (tester) async {
+    final withSlots = createItem(
+      workId: 'wk_with_slots',
+      title: '슬롯 있음',
+      category: MediaCategory.animation,
+      releaseYear: 2011,
+      myStatus: ContentMyStatus.notStarted.label,
+    );
+    final withoutSlots = createItem(
+      workId: 'wk_without_slots',
+      title: '슬롯 없음',
+      category: MediaCategory.animation,
+      releaseYear: 2011,
+      myStatus: ContentMyStatus.notStarted.label,
+    );
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: Row(
+            children: [
+              SizedBox(
+                width: 176,
+                height: 225,
+                child: PosterCard(
+                  item: withSlots,
+                  formatSlots: _manySlots(),
+                ),
+              ),
+              SizedBox(
+                width: 176,
+                height: 225,
+                child: PosterCard(item: withoutSlots),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final yearFinder = find.text('🗓️ 2011년');
+    expect(yearFinder, findsNWidgets(2));
+
+    final withSlotsYearY = tester.getTopLeft(yearFinder.at(0)).dy;
+    final withoutSlotsYearY = tester.getTopLeft(yearFinder.at(1)).dy;
+    expect(withSlotsYearY, closeTo(withoutSlotsYearY, 0.1));
+  });
 }

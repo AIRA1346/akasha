@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'markdown_body_editor.dart';
 import 'vault_markdown_body.dart';
 
 /// Sanctum 4열 — 미리보기 · 본문 편집 · .md 파일 편집
@@ -15,6 +16,11 @@ class SanctumPagePanel extends StatelessWidget {
   final VoidCallback onBodyChanged;
   final VoidCallback onFileChanged;
   final VoidCallback onOpenFileView;
+  final bool isDirty;
+  final bool externalChangePending;
+  final VoidCallback? onReloadFromDisk;
+  final VoidCallback? onDismissExternalChange;
+  final DateTime? lastSavedAt;
 
   const SanctumPagePanel({
     super.key,
@@ -27,6 +33,11 @@ class SanctumPagePanel extends StatelessWidget {
     required this.onBodyChanged,
     required this.onFileChanged,
     required this.onOpenFileView,
+    this.isDirty = false,
+    this.externalChangePending = false,
+    this.onReloadFromDisk,
+    this.onDismissExternalChange,
+    this.lastSavedAt,
   });
 
   @override
@@ -82,11 +93,50 @@ class SanctumPagePanel extends StatelessWidget {
             ],
           ),
         ),
+        if (view == SanctumPageView.body && externalChangePending)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: Colors.amber.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.35)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                child: Row(
+                  children: [
+                    Icon(Icons.sync_problem,
+                        size: 16, color: Colors.amber[700]),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        '외부에서 md 파일이 변경되었습니다.',
+                        style: TextStyle(fontSize: 11, color: Colors.amber[100]),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: onDismissExternalChange,
+                      child: const Text('유지', style: TextStyle(fontSize: 11)),
+                    ),
+                    FilledButton(
+                      onPressed: onReloadFromDisk,
+                      style: FilledButton.styleFrom(
+                        visualDensity: VisualDensity.compact,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                      ),
+                      child: const Text('다시 불러오기', style: TextStyle(fontSize: 11)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         if (view == SanctumPageView.body)
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
-              '마크다운 본문을 직접 작성합니다. `# 시놉`, `# 명대사`, `# 메모` 슬롯과 자유 섹션을 모두 편집할 수 있습니다.',
+              '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.',
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
           ),
@@ -116,32 +166,12 @@ class SanctumPagePanel extends StatelessWidget {
       case SanctumPageView.body:
         return Padding(
           padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-          child: TextField(
+          child: MarkdownBodyEditor(
             controller: bodyController,
-            onChanged: (_) => onBodyChanged(),
-            maxLines: null,
-            expands: true,
-            style: TextStyle(
-              fontSize: 13,
-              height: 1.45,
-              fontFamily: 'Consolas',
-              color: Colors.grey[200],
-            ),
-            decoration: InputDecoration(
-              hintText: '# 📋 시놉시스\n...\n\n# 🎬 명장면 & 명대사\n> ...\n\n# 📝 메모\n...',
-              hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
-              filled: true,
-              fillColor: const Color(0xFF0E0E16),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-              ),
-              contentPadding: const EdgeInsets.all(12),
-            ),
+            onChanged: onBodyChanged,
+            isDirty: isDirty,
+            mdFilePath: mdFilePath,
+            lastSavedAt: lastSavedAt,
           ),
         );
       case SanctumPageView.file:

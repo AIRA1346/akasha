@@ -1,8 +1,11 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
-import '../../../services/markdown_body_merger.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
 import '../../../widgets/sanctum_page_panel.dart';
@@ -24,6 +27,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
+  final void Function(Future<void> Function()? save)? onBindSave;
 
   const WorkDetailWorkspace({
     super.key,
@@ -38,6 +42,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     required this.onDeleted,
     required this.onDirtyChanged,
     this.onAddToLibrary,
+    this.onBindSave,
   });
 
   @override
@@ -61,6 +66,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   late TextEditingController _fileCtrl;
   SanctumPageView _pageView = SanctumPageView.preview;
 
+  StreamSubscription<void>? _vaultSub;
+  DateTime? _diskMtime;
+  bool _externalChangePending = false;
+  DateTime? _lastSavedAt;
+
   @override
   void initState() {
     super.initState();
@@ -69,6 +79,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _bodyCtrl = TextEditingController();
     _fileCtrl = TextEditingController();
     _applyItem(widget.item, resetPageView: true);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
+    _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
+      _onVaultDiskChanged();
+    });
+    _refreshDiskMtime();
+  }
+
+  void _bindSaveHandler() {
+    widget.onBindSave?.call(_saveArchive);
   }
 
   void _applyItem(AkashaItem item, {required bool resetPageView}) {
@@ -78,9 +97,68 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _registryTags = WorkDetailDraftOps.loadRegistryTags(_item.workId);
     _posterUrlCtrl.text = _item.posterPath ?? '';
     _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
-    if (resetPageView) _pageView = SanctumPageView.preview;
+    if (resetPageView) {
+      _pageView = _item.bodyRaw.trim().isEmpty
+          ? SanctumPageView.body
+          : SanctumPageView.preview;
+    }
     _loadDraftFromItem();
     _refreshFullFileEditor();
+    _refreshDiskMtime();
+  }
+
+  void _refreshDiskMtime() {
+    final path = _item.filePath;
+    if (path == null || path.isEmpty) {
+      _diskMtime = null;
+      return;
+    }
+    final file = File(path);
+    _diskMtime = file.existsSync() ? file.lastModifiedSync() : null;
+  }
+
+  Future<void> _onVaultDiskChanged() async {
+    if (!mounted) return;
+    final path = _item.filePath;
+    if (path == null || path.isEmpty) return;
+    final file = File(path);
+    if (!file.existsSync()) return;
+
+    final mtime = file.lastModifiedSync();
+    if (_diskMtime != null && !mtime.isAfter(_diskMtime!)) return;
+
+    if (widget.isDirty) {
+      if (!_externalChangePending) {
+        setState(() => _externalChangePending = true);
+      }
+      return;
+    }
+    await _reloadFromDisk(silent: true);
+  }
+
+  Future<void> _reloadFromDisk({bool silent = false}) async {
+    final path = _item.filePath;
+    if (path == null || path.isEmpty) return;
+    try {
+      final content = await File(path).readAsString();
+      final reloaded = MarkdownParser.deserialize(content, _item.title);
+      reloaded.filePath = path;
+      setState(() => _externalChangePending = false);
+      _applyItem(reloaded, resetPageView: false);
+      widget.onDirtyChanged(false);
+      widget.onSaved(reloaded);
+      _refreshDiskMtime();
+      if (!silent && mounted) {
+        _showSnack('디스크에서 파일을 다시 불러왔습니다.');
+      }
+    } catch (e) {
+      if (mounted) _showSnack('파일 다시 불러오기 실패: $e');
+    }
+  }
+
+  void _dismissExternalChange() {
+    setState(() => _externalChangePending = false);
+    _refreshDiskMtime();
   }
 
   @override
@@ -88,18 +166,47 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.tabId != widget.tabId) {
       _applyItem(widget.item, resetPageView: true);
+      WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
       return;
     }
     if (!widget.isDirty &&
         !WorkDetailDraftOps.sameItemSnapshot(oldWidget.item, widget.item)) {
       _applyItem(widget.item, resetPageView: false);
     }
+    WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
 
   void _refreshFullFileEditor() {
     WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
     final draft = _applyDraft();
     _fileCtrl.text = MarkdownParser.serialize(draft);
+  }
+
+  void _applyFileEditorToItem() {
+    final preservedPath = _item.filePath;
+    final titleFallback = _titleCtrl.text.trim().isNotEmpty
+        ? _titleCtrl.text.trim()
+        : _item.title;
+    final parsed = MarkdownParser.deserialize(_fileCtrl.text, titleFallback);
+    parsed.filePath = preservedPath;
+    _item.bodyRaw = parsed.bodyRaw;
+    _item.description = parsed.description;
+    _item.memorableQuotes = List<String>.from(parsed.memorableQuotes);
+    _item.review = parsed.review;
+    _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
+  }
+
+  void _onPageViewChanged(SanctumPageView next) {
+    if (_pageView == SanctumPageView.body) {
+      WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    } else if (_pageView == SanctumPageView.file &&
+        next != SanctumPageView.file) {
+      _applyFileEditorToItem();
+    }
+    if (next == SanctumPageView.file) {
+      _refreshFullFileEditor();
+    }
+    setState(() => _pageView = next);
   }
 
   void _loadDraftFromItem() {
@@ -111,6 +218,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   @override
   void dispose() {
+    _vaultSub?.cancel();
+    widget.onBindSave?.call(null);
     _titleCtrl.dispose();
     _posterUrlCtrl.dispose();
     _bodyCtrl.dispose();
@@ -226,15 +335,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _draftTags = List<String>.from(saved.tags);
         _registryTags = WorkDetailDraftOps.loadRegistryTags(saved.workId);
         _posterUrlCtrl.text = saved.posterPath ?? '';
-        _bodyCtrl.text = saved.bodyRaw.trim().isNotEmpty
-            ? saved.bodyRaw
-            : MarkdownBodyMerger.buildDefaultBody(
-                synopsis: saved.description,
-                quotes: saved.memorableQuotes,
-                memo: saved.review,
-              );
+        _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(saved);
         _pageView = SanctumPageView.preview;
         _loadDraftFromItem();
+        _refreshFullFileEditor();
+        _lastSavedAt = DateTime.now();
+        _refreshDiskMtime();
       });
       widget.onDirtyChanged(false);
       widget.onSaved(saved);
@@ -261,10 +367,25 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final preview = _applyDraft();
     final vaultLinked = AkashaFileService().vaultPath != null;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        WorkDetailInfoPanel(
+    return Shortcuts(
+      shortcuts: const {
+        SingleActivator(LogicalKeyboardKey.keyS, control: true): _SaveIntent(),
+      },
+      child: Actions(
+        actions: {
+          _SaveIntent: CallbackAction<_SaveIntent>(
+            onInvoke: (_) {
+              _saveArchive();
+              return null;
+            },
+          ),
+        },
+        child: Focus(
+          autofocus: true,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              WorkDetailInfoPanel(
           item: _item,
           preview: preview,
           panelWidth: widget.infoPanelWidth,
@@ -299,9 +420,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             color: const Color(0xFF12121A),
             child: SanctumPagePanel(
               view: _pageView,
-              onViewChanged: (v) => setState(() => _pageView = v),
+              onViewChanged: _onPageViewChanged,
               previewMarkdown: _previewBodyMarkdown,
               mdFilePath: _item.filePath,
+              isDirty: widget.isDirty,
+              externalChangePending: _externalChangePending,
+              onReloadFromDisk: () => _reloadFromDisk(),
+              onDismissExternalChange: _dismissExternalChange,
+              lastSavedAt: _lastSavedAt,
               bodyController: _bodyCtrl,
               fileController: _fileCtrl,
               onBodyChanged: _markDirty,
@@ -310,7 +436,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             ),
           ),
         ),
-      ],
+            ],
+          ),
+        ),
+      ),
     );
   }
+}
+
+class _SaveIntent extends Intent {
+  const _SaveIntent();
 }

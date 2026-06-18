@@ -14,6 +14,9 @@ class WorkbenchController extends ChangeNotifier {
   bool _prefsLoaded = false;
   bool _workViewVisible = false;
 
+  /// 활성 작품 탭의 md 저장 (Ctrl+S·탭 닫기 시 사용).
+  Future<void> Function()? saveActiveTab;
+
   bool get prefsLoaded => _prefsLoaded;
   /// 작품 상세(3·4열)가 메인에 표시 중인지
   bool get hasOpenWork => _workViewVisible && activeTabId != null && activeTab != null;

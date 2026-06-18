@@ -10,7 +10,7 @@ class WorkTabRail extends StatelessWidget {
   final bool collapsed;
   final VoidCallback onToggleCollapsed;
   final ValueChanged<String> onSelect;
-  final ValueChanged<String> onClose;
+  final Future<void> Function(String id) onClose;
 
   const WorkTabRail({
     super.key,

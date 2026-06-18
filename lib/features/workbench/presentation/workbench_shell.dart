@@ -4,10 +4,11 @@ import '../../../models/akasha_item.dart';
 import '../data/workbench_controller.dart';
 import '../../../widgets/work_tab_rail.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
+import 'dialogs/workbench_close_tab_dialog.dart';
 import 'work_detail_workspace.dart';
 
 /// 워크벤치 메인 영역 — 탭 레일 + (작업 뷰 | 브라우즈 콘텐츠)
-class WorkbenchShell extends StatelessWidget {
+class WorkbenchShell extends StatefulWidget {
   final WorkbenchController controller;
   final Widget browseContent;
   final void Function(AkashaItem saved) onWorkSaved;
@@ -24,17 +25,56 @@ class WorkbenchShell extends StatelessWidget {
   });
 
   @override
+  State<WorkbenchShell> createState() => _WorkbenchShellState();
+}
+
+class _WorkbenchShellState extends State<WorkbenchShell> {
+  Future<void> _handleCloseTab(String id) async {
+    final tab = widget.controller.tabs.where((t) => t.id == id).firstOrNull;
+    if (tab == null) return;
+    if (!tab.isDirty) {
+      widget.controller.closeTab(id);
+      return;
+    }
+
+    final isActive = widget.controller.activeTabId == id;
+    final canSave = isActive && widget.controller.saveActiveTab != null;
+    final choice = await showWorkbenchCloseTabDialog(
+      context,
+      title: tab.item.title,
+      canSave: canSave,
+    );
+    if (!mounted || choice == null || choice == WorkbenchCloseTabChoice.cancel) {
+      return;
+    }
+
+    if (choice == WorkbenchCloseTabChoice.saveAndClose) {
+      try {
+        await widget.controller.saveActiveTab!.call();
+      } catch (_) {
+        return;
+      }
+      if (!mounted) return;
+      if (widget.controller.tabs.any((t) => t.id == id && t.isDirty)) {
+        return;
+      }
+    }
+
+    widget.controller.closeTab(id);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ListenableBuilder(
-          listenable: controller,
+          listenable: widget.controller,
           builder: (context, _) {
-            if (!controller.hasTabs) {
+            if (!widget.controller.hasTabs) {
               return const SizedBox.shrink();
             }
-            final layout = controller.layout;
+            final layout = widget.controller.layout;
             final tabRailWidth =
                 layout.tabRailCollapsed ? 52.0 : layout.tabRailWidth;
 
@@ -45,50 +85,52 @@ class WorkbenchShell extends StatelessWidget {
               locked: layout.tabRailLocked,
               onWidthChanged: layout.tabRailCollapsed
                   ? null
-                  : controller.setTabRailWidth,
-              onToggleLock: controller.toggleTabRailLocked,
+                  : widget.controller.setTabRailWidth,
+              onToggleLock: widget.controller.toggleTabRailLocked,
               child: WorkTabRail(
-                tabs: controller.tabs,
-                activeTabId: controller.activeTabId,
+                tabs: widget.controller.tabs,
+                activeTabId: widget.controller.activeTabId,
                 collapsed: layout.tabRailCollapsed,
-                onToggleCollapsed: controller.toggleTabRailCollapsed,
-                onSelect: controller.selectTab,
-                onClose: controller.closeTab,
+                onToggleCollapsed: widget.controller.toggleTabRailCollapsed,
+                onSelect: widget.controller.selectTab,
+                onClose: _handleCloseTab,
               ),
             );
           },
         ),
         Expanded(
           child: ListenableBuilder(
-            listenable: controller,
+            listenable: widget.controller,
             builder: (context, _) {
-              if (!controller.hasOpenWork) {
-                return browseContent;
+              if (!widget.controller.hasOpenWork) {
+                return widget.browseContent;
               }
-              final layout = controller.layout;
+              final layout = widget.controller.layout;
               return WorkDetailWorkspace(
-                key: ValueKey(controller.activeTab!.id),
-                tabId: controller.activeTab!.id,
-                item: controller.activeTab!.item,
-                isDirty: controller.activeTab!.isDirty,
+                key: ValueKey(widget.controller.activeTab!.id),
+                tabId: widget.controller.activeTab!.id,
+                item: widget.controller.activeTab!.item,
+                isDirty: widget.controller.activeTab!.isDirty,
                 infoPanelWidth: layout.infoPanelWidth,
                 infoPanelLocked: layout.infoPanelLocked,
-                onInfoWidthChanged: controller.setInfoPanelWidth,
-                onToggleInfoLock: controller.toggleInfoPanelLocked,
+                onInfoWidthChanged: widget.controller.setInfoPanelWidth,
+                onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
+                onBindSave: (save) =>
+                    widget.controller.saveActiveTab = save,
                 onSaved: (saved) {
-                  final id = controller.activeTab!.id;
-                  controller.updateTabItem(id, saved, dirty: false);
-                  onWorkSaved(saved);
+                  final id = widget.controller.activeTab!.id;
+                  widget.controller.updateTabItem(id, saved, dirty: false);
+                  widget.onWorkSaved(saved);
                 },
                 onDeleted: () {
-                  final tab = controller.activeTab!;
-                  onWorkDeleted(tab.id, tab.item);
+                  final tab = widget.controller.activeTab!;
+                  widget.onWorkDeleted(tab.id, tab.item);
                 },
                 onDirtyChanged: (dirty) {
-                  final id = controller.activeTab!.id;
-                  controller.markDirty(id, dirty: dirty);
+                  final id = widget.controller.activeTab!.id;
+                  widget.controller.markDirty(id, dirty: dirty);
                 },
-                onAddToLibrary: onAddToLibrary,
+                onAddToLibrary: widget.onAddToLibrary,
               );
             },
           ),

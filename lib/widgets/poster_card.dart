@@ -40,6 +40,17 @@ class PosterCard extends StatefulWidget {
 }
 
 class _PosterCardState extends State<PosterCard> {
+  static const double _yearRowHeight = 14;
+
+  static const double _borderWidthNotStarted = 2.0;
+  static const double _borderWidthActive = 2.5;
+
+  static const double _depthShadowBlur = 8;
+  static const double _depthShadowOffsetY = 3;
+  static const double _idleGlowBlur = 11;
+  static const double _hoverGlowBlur = 21;
+  static const double _hoverGlowOffsetY = 8;
+
   bool _isHovered = false;
 
   @override
@@ -58,21 +69,21 @@ class _PosterCardState extends State<PosterCard> {
     if (isNotStarted) {
       cardBorder = Border.all(
         color: widget.showPoster
-            ? Colors.white.withValues(alpha: 0.12)
-            : categoryAccent.withValues(alpha: 0.35),
-        width: 1.5,
+            ? Colors.white.withValues(alpha: 0.17)
+            : categoryAccent.withValues(alpha: 0.44),
+        width: _borderWidthNotStarted,
       );
       glowColor = widget.showPoster ? gradColors[0] : categoryAccent;
     } else if (isFinished) {
       cardBorder = Border.all(
-        color: const Color(0xFF9D4EDD).withValues(alpha: 0.7),
-        width: 2.0,
+        color: const Color(0xFF9D4EDD).withValues(alpha: 0.75),
+        width: _borderWidthActive,
       );
       glowColor = const Color(0xFF9D4EDD);
     } else {
       cardBorder = Border.all(
-        color: Colors.greenAccent.withValues(alpha: 0.6),
-        width: 2.0,
+        color: Colors.greenAccent.withValues(alpha: 0.65),
+        width: _borderWidthActive,
       );
       glowColor = Colors.greenAccent;
     }
@@ -94,22 +105,11 @@ class _PosterCardState extends State<PosterCard> {
           color: const Color(0xFF1E1E2E),
           borderRadius: BorderRadius.circular(10),
           border: cardBorder,
-          boxShadow: _isHovered
-                ? [
-                    BoxShadow(
-                      color:
-                          glowColor.withValues(alpha: isNotStarted ? 0.25 : 0.4),
-                      blurRadius: 16,
-                      offset: const Offset(0, 6),
-                    ),
-                  ]
-                : [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      blurRadius: 6,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
+          boxShadow: _cardShadows(
+            hovered: _isHovered,
+            glowColor: glowColor,
+            isNotStarted: isNotStarted,
+          ),
           ),
           child: widget.showPoster
               ? _buildPosterLayout(item, showArchivedBadge, gradColors)
@@ -126,6 +126,39 @@ class _PosterCardState extends State<PosterCard> {
   }
 
   bool get _hasContextMenu => widget.onOpenLibraryMenu != null;
+
+  List<BoxShadow> _cardShadows({
+    required bool hovered,
+    required Color glowColor,
+    required bool isNotStarted,
+  }) {
+    final depth = BoxShadow(
+      color: Colors.black.withValues(alpha: hovered ? 0.32 : 0.28),
+      blurRadius: _depthShadowBlur,
+      offset: Offset(0, hovered ? _depthShadowOffsetY + 1 : _depthShadowOffsetY),
+    );
+
+    if (hovered) {
+      return [
+        depth,
+        BoxShadow(
+          color: glowColor.withValues(alpha: isNotStarted ? 0.35 : 0.55),
+          blurRadius: _hoverGlowBlur,
+          spreadRadius: 0.5,
+          offset: const Offset(0, _hoverGlowOffsetY),
+        ),
+      ];
+    }
+
+    return [
+      depth,
+      BoxShadow(
+        color: glowColor.withValues(alpha: isNotStarted ? 0.08 : 0.12),
+        blurRadius: _idleGlowBlur,
+        offset: Offset.zero,
+      ),
+    ];
+  }
 
   Offset _cardCenterGlobal() {
     final box = context.findRenderObject() as RenderBox?;
@@ -235,24 +268,43 @@ class _PosterCardState extends State<PosterCard> {
           ),
         const Spacer(),
         _buildRatingStatusRow(item),
-        if (item.releaseYear != null) ...[
-          const SizedBox(height: 5),
-          Text(
-            '🗓️ ${item.releaseYear}년',
-            style: TextStyle(
-              fontSize: 10,
-              color: Colors.grey[400],
-            ),
-          ),
-        ],
-        if (widget.formatSlots.isNotEmpty) ...[
-          const SizedBox(height: 4),
-          FormatChipRow(
-            slots: widget.formatSlots,
-            onHideSlot: widget.onHideFormatSlot,
-          ),
-        ],
+        const SizedBox(height: 5),
+        _buildYearRow(item),
+        const SizedBox(height: 4),
+        _buildFormatSlotRow(),
       ],
+    );
+  }
+
+  Widget _buildYearRow(AkashaItem item) {
+    return SizedBox(
+      height: _yearRowHeight,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: item.releaseYear != null
+            ? Text(
+                '🗓️ ${item.releaseYear}년',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.grey[400],
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+            : const SizedBox.shrink(),
+      ),
+    );
+  }
+
+  Widget _buildFormatSlotRow() {
+    return SizedBox(
+      height: FormatChipRow.rowHeight,
+      child: widget.formatSlots.isNotEmpty
+          ? FormatChipRow(
+              slots: widget.formatSlots,
+              onHideSlot: widget.onHideFormatSlot,
+            )
+          : const SizedBox.shrink(),
     );
   }
 
@@ -485,13 +537,8 @@ class _PosterCardState extends State<PosterCard> {
                   ),
                 const Spacer(),
                 _buildFactCardFooter(item, accent),
-                if (widget.formatSlots.isNotEmpty) ...[
-                  const SizedBox(height: 4),
-                  FormatChipRow(
-                    slots: widget.formatSlots,
-                    onHideSlot: widget.onHideFormatSlot,
-                  ),
-                ],
+                const SizedBox(height: 4),
+                _buildFormatSlotRow(),
               ],
             ),
           ),
