@@ -841,6 +841,7 @@ class _MarkdownTextField extends StatelessWidget {
       onChanged: onChanged,
       maxLines: null,
       expands: true,
+      textAlignVertical: TextAlignVertical.top,
       style: TextStyle(
         fontSize: 13,
         height: 1.45,
