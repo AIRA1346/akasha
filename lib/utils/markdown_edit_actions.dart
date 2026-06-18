@@ -168,6 +168,21 @@ class MarkdownEditActions {
     return _insertBlock(text, sel, insert);
   }
 
+  static TextEditPatch insertCodeBlock({
+    required String text,
+    required TextSelection selection,
+    String placeholder = 'code',
+  }) {
+    return _insertBlock(text, selection, '```\n$placeholder\n```\n');
+  }
+
+  static TextEditPatch insertHorizontalRule({
+    required String text,
+    required TextSelection selection,
+  }) {
+    return _insertBlock(text, selection, '---\n');
+  }
+
   static TextEditPatch insertImage({
     required String text,
     required TextSelection selection,

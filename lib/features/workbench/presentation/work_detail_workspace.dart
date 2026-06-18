@@ -28,6 +28,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final ValueChanged<bool> onDirtyChanged;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final void Function(Future<void> Function()? save)? onBindSave;
+  final void Function(String tabId, AkashaItem draft)? onPreserveDraft;
 
   const WorkDetailWorkspace({
     super.key,
@@ -43,6 +44,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     required this.onDirtyChanged,
     this.onAddToLibrary,
     this.onBindSave,
+    this.onPreserveDraft,
   });
 
   @override
@@ -218,6 +220,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   @override
   void dispose() {
+    if (widget.isDirty) {
+      widget.onPreserveDraft?.call(widget.tabId, _buildSaveDraft());
+    }
     _vaultSub?.cancel();
     widget.onBindSave?.call(null);
     _titleCtrl.dispose();

@@ -30,15 +30,24 @@ class WorkbenchShell extends StatefulWidget {
 
 class _WorkbenchShellState extends State<WorkbenchShell> {
   Future<void> _handleCloseTab(String id) async {
-    final tab = widget.controller.tabs.where((t) => t.id == id).firstOrNull;
+    var tab = widget.controller.tabs.where((t) => t.id == id).firstOrNull;
     if (tab == null) return;
     if (!tab.isDirty) {
       widget.controller.closeTab(id);
       return;
     }
 
-    final isActive = widget.controller.activeTabId == id;
-    final canSave = isActive && widget.controller.saveActiveTab != null;
+    final wasActive = widget.controller.activeTabId == id;
+    if (!wasActive) {
+      widget.controller.selectTab(id);
+      await WidgetsBinding.instance.endOfFrame;
+      await WidgetsBinding.instance.endOfFrame;
+      if (!mounted) return;
+      tab = widget.controller.tabs.where((t) => t.id == id).firstOrNull;
+      if (tab == null) return;
+    }
+
+    final canSave = widget.controller.saveActiveTab != null;
     final choice = await showWorkbenchCloseTabDialog(
       context,
       title: tab.item.title,
@@ -117,6 +126,9 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                 onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
                 onBindSave: (save) =>
                     widget.controller.saveActiveTab = save,
+                onPreserveDraft: (tabId, draft) {
+                  widget.controller.updateTabItem(tabId, draft, dirty: true);
+                },
                 onSaved: (saved) {
                   final id = widget.controller.activeTab!.id;
                   widget.controller.updateTabItem(id, saved, dirty: false);

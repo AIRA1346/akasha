@@ -177,32 +177,13 @@ class SanctumPagePanel extends StatelessWidget {
       case SanctumPageView.file:
         return Padding(
           padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-          child: TextField(
+          child: MarkdownBodyEditor(
             controller: fileController,
-            onChanged: (_) => onFileChanged(),
-            maxLines: null,
-            expands: true,
-            style: TextStyle(
-              fontSize: 12,
-              height: 1.4,
-              fontFamily: 'Consolas',
-              color: Colors.grey[200],
-            ),
-            decoration: InputDecoration(
-              hintText: '---\nwork_id: ...\n---\n\n# 본문',
-              hintStyle: TextStyle(color: Colors.grey[700], height: 1.4),
-              filled: true,
-              fillColor: const Color(0xFF0E0E16),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-              ),
-              contentPadding: const EdgeInsets.all(12),
-            ),
+            onChanged: onFileChanged,
+            isDirty: isDirty,
+            mdFilePath: mdFilePath,
+            lastSavedAt: lastSavedAt,
+            mode: MarkdownEditorMode.fullFile,
           ),
         );
     }

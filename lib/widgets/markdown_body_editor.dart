@@ -7,15 +7,21 @@ import '../services/markdown_body_merger.dart';
 import '../utils/markdown_edit_actions.dart';
 import '../utils/markdown_find_replace.dart';
 import '../utils/markdown_section_index.dart';
+import '../utils/markdown_slash_commands.dart';
 import '../utils/markdown_smart_paste.dart';
+import '../utils/markdown_syntax_highlighter.dart';
 
-/// Sanctum 본문 마크다운 편집기 — 툴바 + 목차 + 상태바 + undo(툴바 액션).
+/// 편집 대상 — 본문만 또는 YAML 포함 전체 md.
+enum MarkdownEditorMode { body, fullFile }
+
+/// Sanctum 마크다운 편집기 — 툴바 + 목차 + 상태바 + undo(툴바 액션).
 class MarkdownBodyEditor extends StatefulWidget {
   final TextEditingController controller;
   final VoidCallback onChanged;
   final bool isDirty;
   final String? mdFilePath;
   final DateTime? lastSavedAt;
+  final MarkdownEditorMode mode;
 
   const MarkdownBodyEditor({
     super.key,
@@ -24,6 +30,7 @@ class MarkdownBodyEditor extends StatefulWidget {
     this.isDirty = false,
     this.mdFilePath,
     this.lastSavedAt,
+    this.mode = MarkdownEditorMode.body,
   });
 
   @override
@@ -33,6 +40,7 @@ class MarkdownBodyEditor extends StatefulWidget {
 class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   final FocusNode _focusNode = FocusNode();
   final FocusNode _findFocusNode = FocusNode();
+  final ScrollController _scrollController = ScrollController();
   final TextEditingController _findCtrl = TextEditingController();
   final TextEditingController _replaceCtrl = TextEditingController();
   final List<_EditorSnapshot> _undoStack = [];
@@ -41,11 +49,12 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   int _lineNumber = 1;
   String _sectionLabel = '본문';
   bool _showFindBar = false;
+  MarkdownSlashMatch? _slashMatch;
 
   @override
   void initState() {
     super.initState();
-    widget.controller.addListener(_updateCursorMeta);
+    widget.controller.addListener(_onControllerUpdate);
     _updateCursorMeta();
   }
 
@@ -53,18 +62,29 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   void didUpdateWidget(MarkdownBodyEditor oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.controller != widget.controller) {
-      oldWidget.controller.removeListener(_updateCursorMeta);
-      widget.controller.addListener(_updateCursorMeta);
+      oldWidget.controller.removeListener(_onControllerUpdate);
+      widget.controller.addListener(_onControllerUpdate);
       _updateCursorMeta();
+      _updateSlashMatch();
+    }
+  }
+
+  void _onControllerUpdate() {
+    _updateCursorMeta();
+    final hadSlash = _slashMatch != null;
+    _updateSlashMatch();
+    if (hadSlash || _slashMatch != null) {
+      setState(() {});
     }
   }
 
   @override
   void dispose() {
-    widget.controller.removeListener(_updateCursorMeta);
+    widget.controller.removeListener(_onControllerUpdate);
     _findCtrl.dispose();
     _replaceCtrl.dispose();
     _findFocusNode.dispose();
+    _scrollController.dispose();
     _focusNode.dispose();
     super.dispose();
   }
@@ -144,6 +164,121 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
       right: right,
       placeholder: placeholder,
     ));
+  }
+
+  void _onEditorChanged(String _) {
+    widget.onChanged();
+    _updateSlashMatch();
+    setState(() {});
+  }
+
+  void _updateSlashMatch() {
+    final text = widget.controller.text;
+    final offset = widget.controller.selection.isValid
+        ? widget.controller.selection.start
+        : text.length;
+    final match = MarkdownSlashCommands.matchAtOffset(text, offset);
+    if (match?.commandStart != _slashMatch?.commandStart ||
+        match?.query != _slashMatch?.query) {
+      _slashMatch = match;
+    }
+  }
+
+  void _applySlashCommand(MarkdownSlashCommand command) {
+    final match = _slashMatch;
+    if (match == null) return;
+
+    final stripped = widget.controller.text.replaceRange(
+      match.commandStart,
+      match.lineEnd,
+      '',
+    );
+    final at = match.commandStart;
+    final sel = TextSelection.collapsed(offset: at);
+
+    TextEditPatch? patch;
+    switch (command.id) {
+      case 'synopsis':
+        patch = MarkdownEditActions.insertSlotSection(
+          text: stripped,
+          selection: sel,
+          kind: MarkdownSlotKind.synopsis,
+        );
+      case 'quotes':
+        patch = MarkdownEditActions.insertSlotSection(
+          text: stripped,
+          selection: sel,
+          kind: MarkdownSlotKind.quotes,
+        );
+      case 'memo':
+        patch = MarkdownEditActions.insertSlotSection(
+          text: stripped,
+          selection: sel,
+          kind: MarkdownSlotKind.memo,
+        );
+      case 'quote_line':
+        patch = MarkdownEditActions.prefixLines(
+          text: stripped,
+          selection: sel,
+          prefix: '> ',
+        );
+      case 'link':
+        patch = MarkdownEditActions.insertLink(text: stripped, selection: sel);
+      case 'image':
+        patch = MarkdownEditActions.insertImage(
+          text: stripped,
+          selection: sel,
+          imagePath: 'path/to/image.png',
+        );
+      case 'code_block':
+        patch = MarkdownEditActions.insertCodeBlock(
+          text: stripped,
+          selection: sel,
+        );
+      case 'hr':
+        patch = MarkdownEditActions.insertHorizontalRule(
+          text: stripped,
+          selection: sel,
+        );
+      case 'h1':
+        patch = MarkdownEditActions.insertHeading(
+          text: stripped,
+          selection: sel,
+          level: 1,
+        );
+      case 'h2':
+        patch = MarkdownEditActions.insertHeading(
+          text: stripped,
+          selection: sel,
+          level: 2,
+        );
+      case 'h3':
+        patch = MarkdownEditActions.insertHeading(
+          text: stripped,
+          selection: sel,
+          level: 3,
+        );
+      case 'bullet':
+        patch = MarkdownEditActions.prefixLines(
+          text: stripped,
+          selection: sel,
+          prefix: '- ',
+        );
+      case 'numbered':
+        patch = MarkdownEditActions.prefixLines(
+          text: stripped,
+          selection: sel,
+          prefix: '1. ',
+        );
+    }
+
+    if (patch == null) {
+      _showSnack('이미 존재하는 섹션입니다.');
+      return;
+    }
+
+    _slashMatch = null;
+    _applyPatch(patch);
   }
 
   void _insertSlot(MarkdownSlotKind kind) {
@@ -363,6 +498,10 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
         SingleActivator(LogicalKeyboardKey.keyB, control: true): _BoldIntent(),
         SingleActivator(LogicalKeyboardKey.keyI, control: true): _ItalicIntent(),
         SingleActivator(LogicalKeyboardKey.keyF, control: true): _FindIntent(),
+        SingleActivator(LogicalKeyboardKey.keyK, control: true): _LinkIntent(),
+        SingleActivator(LogicalKeyboardKey.digit1, control: true): _H1Intent(),
+        SingleActivator(LogicalKeyboardKey.digit2, control: true): _H2Intent(),
+        SingleActivator(LogicalKeyboardKey.digit3, control: true): _H3Intent(),
         SingleActivator(LogicalKeyboardKey.keyV, control: true, shift: true):
             _SmartPasteIntent(),
       },
@@ -383,6 +522,45 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
           _FindIntent: CallbackAction<_FindIntent>(
             onInvoke: (_) {
               _toggleFindBar();
+              return null;
+            },
+          ),
+          _LinkIntent: CallbackAction<_LinkIntent>(
+            onInvoke: (_) {
+              _applyPatch(MarkdownEditActions.insertLink(
+                text: widget.controller.text,
+                selection: widget.controller.selection,
+              ));
+              return null;
+            },
+          ),
+          _H1Intent: CallbackAction<_H1Intent>(
+            onInvoke: (_) {
+              _applyPatch(MarkdownEditActions.insertHeading(
+                text: widget.controller.text,
+                selection: widget.controller.selection,
+                level: 1,
+              ));
+              return null;
+            },
+          ),
+          _H2Intent: CallbackAction<_H2Intent>(
+            onInvoke: (_) {
+              _applyPatch(MarkdownEditActions.insertHeading(
+                text: widget.controller.text,
+                selection: widget.controller.selection,
+                level: 2,
+              ));
+              return null;
+            },
+          ),
+          _H3Intent: CallbackAction<_H3Intent>(
+            onInvoke: (_) {
+              _applyPatch(MarkdownEditActions.insertHeading(
+                text: widget.controller.text,
+                selection: widget.controller.selection,
+                level: 3,
+              ));
               return null;
             },
           ),
@@ -450,6 +628,13 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
               onInsertMemo: () => _insertSlot(MarkdownSlotKind.memo),
               onInsertCustom: _insertCustomSection,
             ),
+            if (_slashMatch != null) ...[
+              const SizedBox(height: 4),
+              _MarkdownSlashMenu(
+                match: _slashMatch!,
+                onSelect: _applySlashCommand,
+              ),
+            ],
             if (_showFindBar) ...[
               const SizedBox(height: 4),
               _MarkdownFindBar(
@@ -470,40 +655,14 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
             ],
             const SizedBox(height: 6),
             Expanded(
-              child: TextField(
+              child: _HighlightedMarkdownField(
                 controller: widget.controller,
                 focusNode: _focusNode,
-                onChanged: (_) => widget.onChanged(),
-                maxLines: null,
-                expands: true,
-                style: TextStyle(
-                  fontSize: 13,
-                  height: 1.45,
-                  fontFamily: 'Consolas',
-                  color: Colors.grey[200],
-                ),
-                decoration: InputDecoration(
-                  hintText:
-                      '# 📋 시놉시스\n...\n\n# 🎬 명장면 & 명대사\n> ...\n\n# 📝 메모\n...',
-                  hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
-                  filled: true,
-                  fillColor: const Color(0xFF0E0E16),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Colors.tealAccent.withValues(alpha: 0.45),
-                    ),
-                  ),
-                  contentPadding: const EdgeInsets.all(12),
-                ),
+                scrollController: _scrollController,
+                onChanged: _onEditorChanged,
+                hintText: widget.mode == MarkdownEditorMode.fullFile
+                    ? '---\nwork_id: ...\n---\n\n# 본문'
+                    : '# 📋 시놉시스\n...\n\n# 🎬 명장면 & 명대사\n> ...\n\n# 📝 메모\n...',
               ),
             ),
             const SizedBox(height: 4),
@@ -512,6 +671,9 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
               sectionLabel: _sectionLabel,
               isDirty: widget.isDirty,
               lastSavedAt: widget.lastSavedAt,
+              hint: widget.mode == MarkdownEditorMode.fullFile
+                  ? '전체 md · / 로 명령'
+                  : '본문 · / 로 명령',
             ),
           ],
         ),
@@ -526,12 +688,14 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
     required this.sectionLabel,
     required this.isDirty,
     this.lastSavedAt,
+    this.hint,
   });
 
   final int lineNumber;
   final String sectionLabel;
   final bool isDirty;
   final DateTime? lastSavedAt;
+  final String? hint;
 
   @override
   Widget build(BuildContext context) {
@@ -557,6 +721,13 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
               '저장됨 ${_formatTime(lastSavedAt!)}',
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
+          if (hint != null) ...[
+            const SizedBox(width: 8),
+            Text(
+              hint!,
+              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+            ),
+          ],
           if (isDirty)
             Text(
               '● 미저장',
@@ -592,6 +763,146 @@ class _FindIntent extends Intent {
 
 class _SmartPasteIntent extends Intent {
   const _SmartPasteIntent();
+}
+
+class _LinkIntent extends Intent {
+  const _LinkIntent();
+}
+
+class _H1Intent extends Intent {
+  const _H1Intent();
+}
+
+class _H2Intent extends Intent {
+  const _H2Intent();
+}
+
+class _H3Intent extends Intent {
+  const _H3Intent();
+}
+
+class _MarkdownSlashMenu extends StatelessWidget {
+  const _MarkdownSlashMenu({
+    required this.match,
+    required this.onSelect,
+  });
+
+  final MarkdownSlashMatch match;
+  final ValueChanged<MarkdownSlashCommand> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: const Color(0xFF1E1E2C),
+      borderRadius: BorderRadius.circular(8),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxHeight: 180),
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          children: [
+            for (final cmd in match.candidates.take(8))
+              ListTile(
+                dense: true,
+                visualDensity: VisualDensity.compact,
+                title: Text(
+                  cmd.label,
+                  style: const TextStyle(fontSize: 12),
+                ),
+                subtitle: cmd.description.isNotEmpty
+                    ? Text(
+                        cmd.description,
+                        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                      )
+                    : null,
+                onTap: () => onSelect(cmd),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _HighlightedMarkdownField extends StatelessWidget {
+  const _HighlightedMarkdownField({
+    required this.controller,
+    required this.focusNode,
+    required this.scrollController,
+    required this.onChanged,
+    required this.hintText,
+  });
+
+  final TextEditingController controller;
+  final FocusNode focusNode;
+  final ScrollController scrollController;
+  final ValueChanged<String> onChanged;
+  final String hintText;
+
+  @override
+  Widget build(BuildContext context) {
+    final baseStyle = TextStyle(
+      fontSize: 13,
+      height: 1.45,
+      fontFamily: 'Consolas',
+      color: Colors.grey[200],
+    );
+
+    final decoration = InputDecoration(
+      hintText: hintText,
+      hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
+      filled: true,
+      fillColor: const Color(0xFF0E0E16),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(
+          color: Colors.tealAccent.withValues(alpha: 0.45),
+        ),
+      ),
+      contentPadding: const EdgeInsets.all(12),
+    );
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: IgnorePointer(
+              child: SingleChildScrollView(
+                controller: scrollController,
+                padding: const EdgeInsets.all(12),
+                child: Text.rich(
+                  MarkdownSyntaxHighlighter.buildSpan(
+                    controller.text,
+                    baseStyle,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          TextField(
+            controller: controller,
+            focusNode: focusNode,
+            scrollController: scrollController,
+            onChanged: onChanged,
+            maxLines: null,
+            expands: true,
+            style: baseStyle.copyWith(color: Colors.transparent),
+            cursorColor: Colors.tealAccent,
+            decoration: decoration,
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _MarkdownFindBar extends StatelessWidget {
