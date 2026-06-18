@@ -9,7 +9,6 @@ import '../utils/markdown_find_replace.dart';
 import '../utils/markdown_section_index.dart';
 import '../utils/markdown_slash_commands.dart';
 import '../utils/markdown_smart_paste.dart';
-import '../utils/markdown_syntax_highlighter.dart';
 
 /// 편집 대상 — 본문만 또는 YAML 포함 전체 md.
 enum MarkdownEditorMode { body, fullFile }
@@ -40,7 +39,6 @@ class MarkdownBodyEditor extends StatefulWidget {
 class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   final FocusNode _focusNode = FocusNode();
   final FocusNode _findFocusNode = FocusNode();
-  final ScrollController _scrollController = ScrollController();
   final TextEditingController _findCtrl = TextEditingController();
   final TextEditingController _replaceCtrl = TextEditingController();
   final List<_EditorSnapshot> _undoStack = [];
@@ -84,7 +82,6 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
     _findCtrl.dispose();
     _replaceCtrl.dispose();
     _findFocusNode.dispose();
-    _scrollController.dispose();
     _focusNode.dispose();
     super.dispose();
   }
@@ -655,10 +652,9 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
             ],
             const SizedBox(height: 6),
             Expanded(
-              child: _HighlightedMarkdownField(
+              child: _MarkdownTextField(
                 controller: widget.controller,
                 focusNode: _focusNode,
-                scrollController: _scrollController,
                 onChanged: _onEditorChanged,
                 hintText: widget.mode == MarkdownEditorMode.fullFile
                     ? '---\nwork_id: ...\n---\n\n# 본문'
@@ -824,82 +820,54 @@ class _MarkdownSlashMenu extends StatelessWidget {
   }
 }
 
-class _HighlightedMarkdownField extends StatelessWidget {
-  const _HighlightedMarkdownField({
+class _MarkdownTextField extends StatelessWidget {
+  const _MarkdownTextField({
     required this.controller,
     required this.focusNode,
-    required this.scrollController,
     required this.onChanged,
     required this.hintText,
   });
 
   final TextEditingController controller;
   final FocusNode focusNode;
-  final ScrollController scrollController;
   final ValueChanged<String> onChanged;
   final String hintText;
 
   @override
   Widget build(BuildContext context) {
-    final baseStyle = TextStyle(
-      fontSize: 13,
-      height: 1.45,
-      fontFamily: 'Consolas',
-      color: Colors.grey[200],
-    );
-
-    final decoration = InputDecoration(
-      hintText: hintText,
-      hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
-      filled: true,
-      fillColor: const Color(0xFF0E0E16),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+    return TextField(
+      controller: controller,
+      focusNode: focusNode,
+      onChanged: onChanged,
+      maxLines: null,
+      expands: true,
+      style: TextStyle(
+        fontSize: 13,
+        height: 1.45,
+        fontFamily: 'Consolas',
+        color: Colors.grey[200],
       ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: Color(0xFF2D2D44)),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(
-          color: Colors.tealAccent.withValues(alpha: 0.45),
+      cursorColor: Colors.tealAccent,
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: TextStyle(color: Colors.grey[700], height: 1.45),
+        filled: true,
+        fillColor: const Color(0xFF0E0E16),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFF2D2D44)),
         ),
-      ),
-      contentPadding: const EdgeInsets.all(12),
-    );
-
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Stack(
-        children: [
-          Positioned.fill(
-            child: IgnorePointer(
-              child: SingleChildScrollView(
-                controller: scrollController,
-                padding: const EdgeInsets.all(12),
-                child: Text.rich(
-                  MarkdownSyntaxHighlighter.buildSpan(
-                    controller.text,
-                    baseStyle,
-                  ),
-                ),
-              ),
-            ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: Color(0xFF2D2D44)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(
+            color: Colors.tealAccent.withValues(alpha: 0.45),
           ),
-          TextField(
-            controller: controller,
-            focusNode: focusNode,
-            scrollController: scrollController,
-            onChanged: onChanged,
-            maxLines: null,
-            expands: true,
-            style: baseStyle.copyWith(color: Colors.transparent),
-            cursorColor: Colors.tealAccent,
-            decoration: decoration,
-          ),
-        ],
+        ),
+        contentPadding: const EdgeInsets.all(12),
       ),
     );
   }

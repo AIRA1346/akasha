@@ -221,6 +221,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   @override
   void dispose() {
     if (widget.isDirty) {
+      if (_pageView == SanctumPageView.file) {
+        _applyFileEditorToItem();
+      } else {
+        WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+      }
       widget.onPreserveDraft?.call(widget.tabId, _buildSaveDraft());
     }
     _vaultSub?.cancel();
