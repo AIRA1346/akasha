@@ -18,6 +18,7 @@ class MarkdownBodyEditor extends StatefulWidget {
   final TextEditingController controller;
   final VoidCallback onChanged;
   final bool isDirty;
+  final bool isSaving;
   final String? mdFilePath;
   final DateTime? lastSavedAt;
   final MarkdownEditorMode mode;
@@ -27,6 +28,7 @@ class MarkdownBodyEditor extends StatefulWidget {
     required this.controller,
     required this.onChanged,
     this.isDirty = false,
+    this.isSaving = false,
     this.mdFilePath,
     this.lastSavedAt,
     this.mode = MarkdownEditorMode.body,
@@ -666,6 +668,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
               lineNumber: _lineNumber,
               sectionLabel: _sectionLabel,
               isDirty: widget.isDirty,
+              isSaving: widget.isSaving,
               lastSavedAt: widget.lastSavedAt,
               hint: widget.mode == MarkdownEditorMode.fullFile
                   ? '전체 md · / 로 명령'
@@ -683,6 +686,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
     required this.lineNumber,
     required this.sectionLabel,
     required this.isDirty,
+    this.isSaving = false,
     this.lastSavedAt,
     this.hint,
   });
@@ -690,6 +694,7 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
   final int lineNumber;
   final String sectionLabel;
   final bool isDirty;
+  final bool isSaving;
   final DateTime? lastSavedAt;
   final String? hint;
 
@@ -712,19 +717,24 @@ class _MarkdownEditorStatusBar extends StatelessWidget {
               style: TextStyle(fontSize: 10, color: Colors.grey[500]),
             ),
           ),
-          if (!isDirty && lastSavedAt != null)
+          if (isSaving)
+            Text(
+              '저장 중…',
+              style: TextStyle(fontSize: 10, color: Colors.tealAccent),
+            )
+          else if (!isDirty && lastSavedAt != null)
             Text(
               '저장됨 ${_formatTime(lastSavedAt!)}',
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
-          if (hint != null) ...[
+          if (hint != null && !isSaving) ...[
             const SizedBox(width: 8),
             Text(
               hint!,
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
           ],
-          if (isDirty)
+          if (isDirty && !isSaving)
             Text(
               '● 미저장',
               style: TextStyle(

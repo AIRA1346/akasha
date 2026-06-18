@@ -17,6 +17,7 @@ class SanctumPagePanel extends StatelessWidget {
   final VoidCallback onFileChanged;
   final VoidCallback onOpenFileView;
   final bool isDirty;
+  final bool isSaving;
   final bool externalChangePending;
   final VoidCallback? onReloadFromDisk;
   final VoidCallback? onDismissExternalChange;
@@ -34,6 +35,7 @@ class SanctumPagePanel extends StatelessWidget {
     required this.onFileChanged,
     required this.onOpenFileView,
     this.isDirty = false,
+    this.isSaving = false,
     this.externalChangePending = false,
     this.onReloadFromDisk,
     this.onDismissExternalChange,
@@ -170,6 +172,7 @@ class SanctumPagePanel extends StatelessWidget {
             controller: bodyController,
             onChanged: onBodyChanged,
             isDirty: isDirty,
+            isSaving: isSaving,
             mdFilePath: mdFilePath,
             lastSavedAt: lastSavedAt,
           ),
@@ -181,6 +184,7 @@ class SanctumPagePanel extends StatelessWidget {
             controller: fileController,
             onChanged: onFileChanged,
             isDirty: isDirty,
+            isSaving: isSaving,
             mdFilePath: mdFilePath,
             lastSavedAt: lastSavedAt,
             mode: MarkdownEditorMode.fullFile,

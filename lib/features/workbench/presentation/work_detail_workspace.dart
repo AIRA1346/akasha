@@ -72,6 +72,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   DateTime? _diskMtime;
   bool _externalChangePending = false;
   DateTime? _lastSavedAt;
+  Timer? _autoSaveTimer;
+
+  static const _autoSaveDelay = Duration(seconds: 2);
 
   @override
   void initState() {
@@ -121,6 +124,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   Future<void> _onVaultDiskChanged() async {
     if (!mounted) return;
+    if (_isSaving) return;
     final path = _item.filePath;
     if (path == null || path.isEmpty) return;
     final file = File(path);
@@ -219,7 +223,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   @override
+  void deactivate() {
+    _autoSaveTimer?.cancel();
+    _flushAutoSaveIfNeeded();
+    super.deactivate();
+  }
+
+  @override
   void dispose() {
+    _autoSaveTimer?.cancel();
     if (widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         _applyFileEditorToItem();
@@ -240,6 +252,27 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   void _markDirty() {
     widget.onDirtyChanged(true);
     setState(() {});
+    _scheduleAutoSave();
+  }
+
+  void _scheduleAutoSave() {
+    _autoSaveTimer?.cancel();
+    if (AkashaFileService().vaultPath == null) return;
+    if (_externalChangePending) return;
+    _autoSaveTimer = Timer(_autoSaveDelay, () {
+      if (!mounted) return;
+      if (!widget.isDirty) return;
+      if (_externalChangePending) return;
+      _saveArchive(silent: true, switchToPreview: false);
+    });
+  }
+
+  void _flushAutoSaveIfNeeded() {
+    if (!widget.isDirty) return;
+    if (AkashaFileService().vaultPath == null) return;
+    if (_externalChangePending) return;
+    if (_isSaving) return;
+    unawaited(_saveArchive(silent: true, switchToPreview: false));
   }
 
   AkashaItem _buildSaveDraft() => WorkDetailDraftOps.buildSaveDraft(
@@ -300,6 +333,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _applyDraft();
       });
       widget.onDirtyChanged(true);
+      _scheduleAutoSave();
     }
   }
 
@@ -332,35 +366,55 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     await widget.onAddToLibrary!(_item);
   }
 
-  Future<void> _saveArchive() async {
+  Future<void> _saveArchive({
+    bool silent = false,
+    bool switchToPreview = true,
+  }) async {
     if (_isSaving) return;
+    _autoSaveTimer?.cancel();
+    final contentAtSave = _pageView == SanctumPageView.file
+        ? _fileCtrl.text
+        : _bodyCtrl.text;
     setState(() => _isSaving = true);
     try {
       final draft = _buildSaveDraft();
       final saved = await DetailArchiveSave.save(draft);
       if (!mounted) return;
+      final contentUnchanged = _pageView == SanctumPageView.file
+          ? _fileCtrl.text == contentAtSave
+          : _bodyCtrl.text == contentAtSave;
       setState(() {
         _item = saved;
-        _titleCtrl.text = saved.title;
+        if (!silent) {
+          _titleCtrl.text = saved.title;
+          _posterUrlCtrl.text = saved.posterPath ?? '';
+          _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(saved);
+          if (switchToPreview) {
+            _pageView = SanctumPageView.preview;
+          }
+        }
         _draftTags = List<String>.from(saved.tags);
         _registryTags = WorkDetailDraftOps.loadRegistryTags(saved.workId);
-        _posterUrlCtrl.text = saved.posterPath ?? '';
-        _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(saved);
-        _pageView = SanctumPageView.preview;
         _loadDraftFromItem();
         _refreshFullFileEditor();
         _lastSavedAt = DateTime.now();
         _refreshDiskMtime();
       });
-      widget.onDirtyChanged(false);
+      if (!silent || contentUnchanged) {
+        widget.onDirtyChanged(false);
+      } else {
+        _scheduleAutoSave();
+      }
       widget.onSaved(saved);
-      _showSnack(
-        AkashaFileService().vaultPath != null
-            ? '"${saved.title}" md 파일을 저장했습니다.'
-            : '"${saved.title}"을(를) 임시 저장했습니다.',
-      );
+      if (!silent) {
+        _showSnack(
+          AkashaFileService().vaultPath != null
+              ? '"${saved.title}" md 파일을 저장했습니다.'
+              : '"${saved.title}"을(를) 임시 저장했습니다.',
+        );
+      }
     } catch (e) {
-      if (mounted) _showSnack('저장 실패: $e');
+      if (mounted && !silent) _showSnack('저장 실패: $e');
     } finally {
       if (mounted) setState(() => _isSaving = false);
     }
@@ -434,6 +488,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               previewMarkdown: _previewBodyMarkdown,
               mdFilePath: _item.filePath,
               isDirty: widget.isDirty,
+              isSaving: _isSaving,
               externalChangePending: _externalChangePending,
               onReloadFromDisk: () => _reloadFromDisk(),
               onDismissExternalChange: _dismissExternalChange,
