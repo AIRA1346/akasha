@@ -244,33 +244,42 @@ class _PosterCardState extends State<PosterCard> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          displayTitle,
-          style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w700,
-            height: 1.2,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: Text(
+                  displayTitle,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                    height: 1.2,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              if (item.creator.isNotEmpty) ...[
+                const SizedBox(height: 3),
+                Text(
+                  item.creator,
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: Colors.grey[400],
+                    height: 1.2,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ],
           ),
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
         ),
-        const SizedBox(height: 3),
-        if (item.creator.isNotEmpty)
-          Text(
-            item.creator,
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.grey[400],
-              height: 1.2,
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-        const Spacer(),
         _buildRatingStatusRow(item),
-        const SizedBox(height: 5),
+        const SizedBox(height: 2),
         _buildYearRow(item),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         _buildFormatSlotRow(),
       ],
     );
@@ -384,7 +393,7 @@ class _PosterCardState extends State<PosterCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          flex: 5,
+          flex: 4,
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -416,7 +425,7 @@ class _PosterCardState extends State<PosterCard> {
         Expanded(
           flex: 3,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+            padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
             child: _buildCardMeta(item),
           ),
         ),

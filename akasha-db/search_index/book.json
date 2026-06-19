@@ -14465,12 +14465,15 @@
     "tags": [],
     "searchTokens": [
       "Yang Hui",
+      "Yang Hui's Mathematical Methods",
       "yanghui",
+      "yanghui'smathematicalmethods",
       "楊輝算法",
       "양휘산법"
     ],
     "titles": {
       "ko": "양휘산법",
+      "en": "Yang Hui's Mathematical Methods",
       "ja": "楊輝算法",
       "zh": "楊輝算法"
     },
@@ -19166,12 +19169,15 @@
     "tags": [],
     "searchTokens": [
       "Difan 帝範",
+      "Emperor's Model",
       "difan帝範",
+      "emperor'smodel",
       "太宗",
       "제범"
     ],
     "titles": {
       "ko": "제범",
+      "en": "Emperor's Model",
       "zh": "Difan 帝範"
     },
     "qualityScore": 65,
@@ -19235,13 +19241,16 @@
     "creator": "Zhang Zhuo",
     "tags": [],
     "searchTokens": [
+      "Records of Court and Country",
       "Zhang Zhuo",
+      "recordsofcourtandcountry",
       "zhangzhuo",
       "朝野僉載",
       "조야첨재"
     ],
     "titles": {
       "ko": "조야첨재",
+      "en": "Records of Court and Country",
       "zh": "朝野僉載"
     },
     "qualityScore": 65,

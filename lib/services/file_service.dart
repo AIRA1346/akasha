@@ -4,6 +4,7 @@ import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
+import '../utils/app_log.dart';
 import 'markdown_parser.dart';
 
 class AkashaFileService {
@@ -142,7 +143,7 @@ class AkashaFileService {
         );
       }
     } catch (e) {
-      print('[AkashaFileService] fingerprint error: $e');
+      appLog('[AkashaFileService] fingerprint error: $e');
     }
     parts.sort();
     return parts.join('\n');
@@ -177,11 +178,11 @@ class AkashaFileService {
           }
         },
         onError: (error) {
-          print('[AkashaFileService] Directory watch error: $error');
+          appLog('[AkashaFileService] Directory watch error: $error');
         },
       );
     } catch (e) {
-      print('[AkashaFileService] Failed to start directory watch: $e');
+      appLog('[AkashaFileService] Failed to start directory watch: $e');
     }
 
     _startPolling();
@@ -270,12 +271,12 @@ class AkashaFileService {
             item.filePath = entity.path;
             parsed.add(item);
           } catch (e) {
-            print('Error reading file ${entity.path}: $e');
+            appLog('Error reading file ${entity.path}: $e');
           }
         }
       }
     } catch (e) {
-      print('Error loading items recursively from vault: $e');
+      appLog('Error loading items recursively from vault: $e');
     }
 
     final items = dedupeItems(parsed);
@@ -298,7 +299,7 @@ class AkashaFileService {
         }
       }
     } catch (e) {
-      print('[AkashaFileService] countMarkdownFiles error: $e');
+      appLog('[AkashaFileService] countMarkdownFiles error: $e');
     }
     return count;
   }
@@ -325,7 +326,7 @@ class AkashaFileService {
           try {
             await oldFile.delete();
           } catch (e) {
-            print('Error deleting old file: $e');
+            appLog('Error deleting old file: $e');
           } finally {
             _startWatching();
           }

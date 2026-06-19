@@ -15,6 +15,7 @@ class HomeShell extends StatefulWidget {
 class _HomeShellState extends State<HomeShell> implements HomeShellHost {
   late final HomeShellController _controller;
 
+  @override
   void scheduleRebuild([void Function()? mutate]) {
     if (!mounted) return;
     setState(() => mutate?.call());

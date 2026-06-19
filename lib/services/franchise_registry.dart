@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../models/franchise_group.dart';
+import '../utils/app_log.dart';
 import 'works_registry.dart';
 
 /// 같은 IP의 여러 매체 workId를 묶어 관리합니다.
@@ -35,7 +36,7 @@ class FranchiseRegistry {
         });
       }
     } catch (e) {
-      print('[FranchiseRegistry] Failed to load franchise groups: $e');
+      appLog('[FranchiseRegistry] Failed to load franchise groups: $e');
     }
     _initialized = true;
   }

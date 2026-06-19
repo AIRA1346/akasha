@@ -7,6 +7,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
+import '../utils/app_log.dart';
 import '../utils/registry_search_utils.dart';
 
 typedef ShardEntriesMerger = void Function(Map<String, dynamic> entries);
@@ -112,7 +113,7 @@ class RegistryShardLoader {
         }
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to clear disk cache: $e');
+      appLog('[RegistryShardLoader] Failed to clear disk cache: $e');
     }
     resetLoadedShards();
   }
@@ -161,7 +162,7 @@ class RegistryShardLoader {
         json.decode(raw) as Map<String, dynamic>,
       );
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load bundled manifest: $e');
+      appLog('[RegistryShardLoader] Failed to load bundled manifest: $e');
     }
   }
 
@@ -172,7 +173,7 @@ class RegistryShardLoader {
       final raw = await rootBundle.loadString(bundledSearchIndexAsset);
       _parseMonolithicSearchIndex(raw);
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load bundled search index: $e');
+      appLog('[RegistryShardLoader] Failed to load bundled search index: $e');
     }
   }
 
@@ -292,7 +293,7 @@ class RegistryShardLoader {
         });
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load legacy aliases: $e');
+      appLog('[RegistryShardLoader] Failed to load legacy aliases: $e');
     }
   }
 
@@ -436,7 +437,7 @@ class RegistryShardLoader {
       await file.writeAsString(content);
       return true;
     } catch (e) {
-      print('[RegistryShardLoader] Failed to cache remote manifest: $e');
+      appLog('[RegistryShardLoader] Failed to cache remote manifest: $e');
       return false;
     }
   }
@@ -455,7 +456,7 @@ class RegistryShardLoader {
         return true;
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to cache remote search index: $e');
+      appLog('[RegistryShardLoader] Failed to cache remote search index: $e');
     }
     return false;
   }
@@ -473,7 +474,7 @@ class RegistryShardLoader {
       await file.writeAsString(content);
       return true;
     } catch (e) {
-      print('[RegistryShardLoader] Failed to cache remote search index manifest: $e');
+      appLog('[RegistryShardLoader] Failed to cache remote search index manifest: $e');
     }
     return false;
   }
@@ -498,7 +499,7 @@ class RegistryShardLoader {
       }
       return true;
     } catch (e) {
-      print(
+      appLog(
         '[RegistryShardLoader] Failed to cache remote search index shard $relativePath: $e',
       );
     }
@@ -521,7 +522,7 @@ class RegistryShardLoader {
         return true;
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to cache remote shard $relativePath: $e');
+      appLog('[RegistryShardLoader] Failed to cache remote shard $relativePath: $e');
     }
     return false;
   }
@@ -541,7 +542,7 @@ class RegistryShardLoader {
         );
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load cached manifest: $e');
+      appLog('[RegistryShardLoader] Failed to load cached manifest: $e');
     }
   }
 
@@ -554,7 +555,7 @@ class RegistryShardLoader {
         _parseMonolithicSearchIndex(await file.readAsString());
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load cached search index: $e');
+      appLog('[RegistryShardLoader] Failed to load cached search index: $e');
     }
   }
 
@@ -575,7 +576,7 @@ class RegistryShardLoader {
       _rebuildMergedSearchIndex();
       return true;
     } catch (e) {
-      print('[RegistryShardLoader] Failed to load cached search index manifest: $e');
+      appLog('[RegistryShardLoader] Failed to load cached search index manifest: $e');
       return false;
     }
   }
@@ -598,7 +599,7 @@ class RegistryShardLoader {
         _shardEntriesMerger?.call(decoded);
       }
     } catch (e) {
-      print('[RegistryShardLoader] Failed to merge legacy monolithic JSON: $e');
+      appLog('[RegistryShardLoader] Failed to merge legacy monolithic JSON: $e');
     }
   }
 

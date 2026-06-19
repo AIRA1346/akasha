@@ -4,6 +4,7 @@ import '../models/registry_work.dart';
 import '../models/work_id_codec.dart';
 import '../utils/registry_catalog_filter.dart';
 import '../utils/registry_search_utils.dart';
+import '../utils/app_log.dart';
 import 'registry_shard_loader.dart';
 import 'registry_sync_service.dart';
 
@@ -218,7 +219,7 @@ class WorksRegistry {
         await _loader.mergeLegacyMonolithicJson(legacyJson);
       }
     } catch (e) {
-      print('Error loading cached sharded registry: $e');
+      appLog('Error loading cached sharded registry: $e');
     }
   }
 

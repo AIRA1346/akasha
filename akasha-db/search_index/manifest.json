@@ -1,19 +1,19 @@
 {
   "version": 1,
   "entryCount": 10048,
-  "generatedAt": "2026-06-17T12:11:03.065135Z",
+  "generatedAt": "2026-06-19T00:15:04.849063Z",
   "shards": [
     {
       "category": "animation",
       "path": "search_index/animation.json",
       "entryCount": 2107,
-      "sha256": "9939f258c79211e726d85e73a7b4089e00bc3ad74fdae0683a71030372d60454"
+      "sha256": "b8e8ac2b93ee8578466cf67dcff2607c171e316922981a5c36c377107097ba08"
     },
     {
       "category": "book",
       "path": "search_index/book.json",
       "entryCount": 1028,
-      "sha256": "0c15d4074b3b8c1616b0ab3bc56dca7bb1657e53d4a679835c4fa33ff7b73811"
+      "sha256": "2343a4ede09776866ed923a64cecd722c32a71494212bff96a0e3df6349d3fa3"
     },
     {
       "category": "drama",
@@ -25,7 +25,7 @@
       "category": "game",
       "path": "search_index/game.json",
       "entryCount": 1832,
-      "sha256": "3a51baf4525422b60559c874e0c02f4019ee9a4e8a712f790219fd61a2c15934"
+      "sha256": "7aa5a1440ec5eedebd17f592ac45744df9733636c18974a5e3386a70772070cc"
     },
     {
       "category": "manga",

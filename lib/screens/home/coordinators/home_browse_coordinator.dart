@@ -12,7 +12,6 @@ import 'home_navigation_coordinator.dart';
 import '../home_registry_hide_actions.dart';
 import 'home_shell_wiring.dart';
 import 'home_workbench_coordinator.dart';
-import '../../../services/my_library_pipeline.dart';
 import '../../../services/personal_library_membership_service.dart';
 
 /// Browse 필터·카드·DnD (E2-4).

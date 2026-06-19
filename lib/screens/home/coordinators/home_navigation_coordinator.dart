@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../home_sidebar_preferences.dart';
 import 'home_filter_coordinator.dart';

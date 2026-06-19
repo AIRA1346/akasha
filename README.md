@@ -57,13 +57,13 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 ## 📚 글로벌 작품 사전 (akasha-db)
 
 > **최종 목표:** 세상의 모든 작품 사전 (IMDb + OpenLibrary급)  
-> **현재 단계:** **490작** (`manifest.entryCount`) → **G1 병행 확장** · v4 운영 — SD2.6 hold **해제** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md))
+> **현재 단계:** **10,048작** (`manifest.entryCount`) → **G1 병행 확장** · v4 운영 — SD2.6 hold **해제** ([catalog-growth-charter](docs/programs/catalog-growth-charter.md))
 
 | 항목 | 정책 |
 |------|------|
 | **철학** | **자체 DB 구축** — 가공·검증 후 적재; 무분별 API 복제 금지 ([akasha-db-policy.md](docs/akasha-db-policy.md)) |
 | **스키마** | **v4** (현재) — `wk_` 영구 ID · `hash(wk_)%256` 샤딩 · sha256 manifest — [SCHEMA.md](akasha-db/SCHEMA.md) |
-| **규모 목표** | 2026 **490** (현재) · 2027 ~5k · 2028 ~50k · 2030 ~500k |
+| **규모 목표** | 2026 **10k** (현재 **10,048** ✅) · 2027 ~50k · 2028 ~100k · 2030 ~500k |
 | **샤딩** | **v4 해시 샤딩 완료** — 351 샤드 ([v4-migration-plan.md](docs/archive/v4-migration-plan.md) Phase A~E ✅) |
 | **포스터** | **대시보드 서재 미표시** · 나만의 서재에서만 유저 Sanctum vault `poster:` / `posters/` 표시 |
 | **볼트** | 아카이브한 작품**만** `.md` — 사전 전체가 md가 되지 않음 |
@@ -130,7 +130,7 @@ flowchart LR
 |------|------|
 | Framework | Flutter (Windows Desktop 우선) |
 | Storage | Local Markdown + YAML front-matter |
-| State | Provider (Riverpod는 v1 이후 검토) |
+| State | `ChangeNotifier` + Coordinator (Riverpod는 v1 이후 검토) |
 | Registry | JSON **v4 해시 샤딩** (`wk_` 영구 ID), 온디맨드 fetch, `searchTokens` 교차 언어 검색 |
 | Locale | `CatalogLocale` + `titles` fallback (UI i18n은 v1.1) |
 | Commerce | `EntitlementService` — cosmetic(Steam) / content(제휴) 분리 |

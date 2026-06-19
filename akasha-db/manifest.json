@@ -2,7 +2,7 @@
   "version": 4,
   "shardBits": 8,
   "entryCount": 10048,
-  "generatedAt": "2026-06-17T12:11:03.065135Z",
+  "generatedAt": "2026-06-19T00:15:04.849063Z",
   "shards": [
     {
       "id": "animation_00",
@@ -138,7 +138,7 @@
       "path": "shards/animation/10.json",
       "eager": false,
       "entryCount": 12,
-      "sha256": "a26f680a4bf983423876329747c29792b2c96ff32369e2bfd9763ddda645643e"
+      "sha256": "9356ca44732654abfe8c6d70aadbda97765fbb15378b1dbf994caa505679635f"
     },
     {
       "id": "animation_11",
@@ -1234,7 +1234,7 @@
       "path": "shards/animation/99.json",
       "eager": false,
       "entryCount": 6,
-      "sha256": "c5d07b418562f1723483da44de06d23d15b809f80a6a33706b377a594f270821"
+      "sha256": "b2822cace8ed3cd4a71328b02dbed65cb8c872705afde561c6684bbb5a6ac690"
     },
     {
       "id": "animation_9a",
@@ -3074,7 +3074,7 @@
       "path": "shards/book/82.json",
       "eager": false,
       "entryCount": 7,
-      "sha256": "eebe7c0872c3c37a6febd6b4a5f6d1ef6bff8e5ce1d606ada76b1fd386c954e9"
+      "sha256": "f3a9966d014f1ebbd2e18445d52e699a3b47a98140de25efb03c795d6c532838"
     },
     {
       "id": "book_83",
@@ -3546,7 +3546,7 @@
       "path": "shards/book/bd.json",
       "eager": false,
       "entryCount": 8,
-      "sha256": "aaf592d383fc558e97fc9e868cf285100dfed07818ff34de05c61246048579fa"
+      "sha256": "99a92e1f8821037c14678e662f023dde667077108b46e9b65be5570f736716b9"
     },
     {
       "id": "book_be",
@@ -3818,7 +3818,7 @@
       "path": "shards/book/df.json",
       "eager": true,
       "entryCount": 7,
-      "sha256": "85111fc140255f151c11b7e33b3b0e6f9f77711ea428c019a0a1b92bea7b43a2"
+      "sha256": "31a216ada8f353f85d4367cec0db0cc6bcdc487e467fc06bca71b9f064b29d6a"
     },
     {
       "id": "book_e0",
@@ -7874,7 +7874,7 @@
       "path": "shards/game/da.json",
       "eager": false,
       "entryCount": 8,
-      "sha256": "1e1b74639b58ebec7b0e686598ec462460b9ed7ba833d256509038dad693d970"
+      "sha256": "7d9421de6c100940c57b2c518297b66ef7cb1519831cb0884036aeea8692da30"
     },
     {
       "id": "game_db",

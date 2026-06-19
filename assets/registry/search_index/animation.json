@@ -853,10 +853,13 @@
     "tags": [],
     "searchTokens": [
       "C",
-      "c"
+      "C Control",
+      "c",
+      "ccontrol"
     ],
     "titles": {
       "ko": "C",
+      "en": "C Control",
       "ja": "C"
     },
     "qualityScore": 50,
@@ -1427,10 +1430,13 @@
     "tags": [],
     "searchTokens": [
       "K",
-      "k"
+      "K Project",
+      "k",
+      "kproject"
     ],
     "titles": {
       "ko": "K",
+      "en": "K Project",
       "ja": "K"
     },
     "qualityScore": 50,

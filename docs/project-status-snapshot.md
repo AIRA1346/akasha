@@ -1,6 +1,6 @@
 ﻿# Project Status Snapshot
 
-> **갱신:** 2026-06-17 (@8676 · E2 ✅ · eager-only batch · test 318)  
+> **갱신:** 2026-06-19 (@10048 · locale-minimum ✅ · test 336+)  
 > **현재 실행:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) · wikidata_ko 배치 · **E4 논의 시작 (Option A)**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
@@ -13,18 +13,18 @@
 
 | 항목 | 상태 |
 |------|------|
-| **Registry** | **8676 works** · v4 hex shards · dedupe **0** |
+| **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
-| **externalId** | **8676/8676 (100%)** |
-| **flutter test** | **318/318 PASS** |
+| **externalId** | **10048/10048 (100%)** |
+| **flutter test** | **336+/336+ PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
 | **Phase 4.4a** | Timeline list ✅ |
-| **다음** | wikidata_ko 배치 → 10k · E4 trigger 관측 |
-| **Scale / Core** | **Phase 2.0~2.3** ✅ @8676 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
+| **다음** | E4 trigger 관측 · Sanctum 워크벤치 안정화 |
+| **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
-| **Discovery** | `wikidata_ko` active · webtoon 소진 · **6카테고리 배치** |
-| **CDN** | akasha-db.pages.dev — **갱신 필요** (로컬 8676) |
+| **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
+| **CDN** | akasha-db.pages.dev — **push 후 갱신 필요** |
 
 ---
 

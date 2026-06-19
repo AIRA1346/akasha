@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/enums.dart';
 import '../models/registry_models.dart';
+import '../utils/app_log.dart';
 import 'registry_shard_loader.dart';
 
 typedef RegistryTextFetcher = Future<String?> Function(String url);
@@ -102,7 +103,7 @@ class RegistrySyncService {
         await file.delete();
       }
     } catch (e) {
-      print('Error clearing legacy registry cache: $e');
+      appLog('Error clearing legacy registry cache: $e');
     }
   }
 
@@ -113,7 +114,7 @@ class RegistrySyncService {
         return await file.readAsString();
       }
     } catch (e) {
-      print('Error reading legacy registry cache: $e');
+      appLog('Error reading legacy registry cache: $e');
     }
     return null;
   }
@@ -143,7 +144,7 @@ class RegistrySyncService {
         json.decode(manifestContent) as Map<String, dynamic>,
       );
     } catch (e) {
-      print('Error parsing remote manifest: $e');
+      appLog('Error parsing remote manifest: $e');
       return _syncLegacyFallback(loader);
     }
 
@@ -177,7 +178,7 @@ class RegistrySyncService {
           }
         }
       } catch (e) {
-        print('Error syncing sharded search index: $e');
+        appLog('Error syncing sharded search index: $e');
       }
     } else {
       final indexContent = await _fetchText('${baseUrl}search_index.json');
@@ -212,7 +213,7 @@ class RegistrySyncService {
             success = true;
           }
         } catch (e) {
-          print('Error syncing legacy registry: $e');
+          appLog('Error syncing legacy registry: $e');
         }
       }
     }
@@ -286,7 +287,7 @@ class RegistrySyncService {
           success = true;
         }
       } catch (e) {
-        print('Error syncing legacy registry: $e');
+        appLog('Error syncing legacy registry: $e');
       }
     }
     if (success) {
@@ -388,7 +389,7 @@ class RegistrySyncService {
         return await response.transform(utf8.decoder).join();
       }
     } catch (e) {
-      print('Error fetching registry resource from $url: $e');
+      appLog('Error fetching registry resource from $url: $e');
     } finally {
       client.close();
     }
