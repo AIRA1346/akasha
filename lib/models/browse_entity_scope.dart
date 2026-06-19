@@ -30,4 +30,13 @@ extension BrowseEntityScopeX on BrowseEntityScope {
         BrowseEntityScope.event => EntityAnchorType.event,
         _ => null,
       };
+
 }
+
+BrowseEntityScope browseScopeForEntityType(EntityAnchorType type) =>
+    switch (type) {
+      EntityAnchorType.person => BrowseEntityScope.person,
+      EntityAnchorType.concept => BrowseEntityScope.concept,
+      EntityAnchorType.event => BrowseEntityScope.event,
+      _ => BrowseEntityScope.all,
+    };

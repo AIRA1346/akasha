@@ -11,6 +11,7 @@ class HomeBrowseFilterController {
   final Set<String> workStatuses = {};
   final Set<String> myStatuses = {};
   BrowseEntityScope entityScope = BrowseEntityScope.work;
+  String? highlightEntityId;
 
   BrowseFilterState get filterState => BrowseFilterState(
         domain: domain,
@@ -76,6 +77,15 @@ class HomeBrowseFilterController {
 
   void setEntityScope(BrowseEntityScope scope) {
     entityScope = scope;
+    highlightEntityId = null;
+  }
+
+  void highlightCatalogEntity(String entityId) {
+    highlightEntityId = entityId;
+  }
+
+  void clearEntityHighlight() {
+    highlightEntityId = null;
   }
 
   void pruneInvalidStatuses() {

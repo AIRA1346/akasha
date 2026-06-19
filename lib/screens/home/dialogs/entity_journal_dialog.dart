@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
@@ -11,7 +12,7 @@ import '../../../services/file_service.dart';
 import '../../../services/record_link_navigator.dart';
 import 'add_catalog_entity_dialog.dart';
 
-/// Entity catalog + journal 상세 · 편집 · 삭제 — Wave 4.1 / W5-3 incoming links.
+/// Entity Sheet — catalog Fact · journal · incoming links (Phase A).
 ///
 /// 반환: `true` 삭제됨 · `false` 저장/생성됨 · `null` 변경 없음.
 Future<bool?> showEntityJournalDialog(
@@ -35,14 +36,21 @@ Future<bool?> showEntityJournalDialog(
 
   return showDialog<bool>(
     context: context,
-    builder: (ctx) => _EntityJournalDialog(
-      entity: entity,
-      initialEntry: entry,
-      vaultPath: vaultPath,
-      linkIndex: linkIndex,
-      userCatalog: userCatalog,
-      vaultItems: vaultItems,
-      onOpenWork: onOpenWork,
+    builder: (ctx) => Dialog(
+      backgroundColor: const Color(0xFF1E1E28),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 28),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 560, maxHeight: 680),
+        child: _EntityJournalDialog(
+          entity: entity,
+          initialEntry: entry,
+          vaultPath: vaultPath,
+          linkIndex: linkIndex,
+          userCatalog: userCatalog,
+          vaultItems: vaultItems,
+          onOpenWork: onOpenWork,
+        ),
+      ),
     ),
   );
 }
@@ -181,99 +189,156 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
   Widget build(BuildContext context) {
     final badge = entityTypeBadgeLabel(widget.entity.anchorType);
 
-    return AlertDialog(
-      title: Text(_editing ? 'Entity journal 편집' : widget.entity.title),
-      content: SizedBox(
-        width: 480,
-        child: SingleChildScrollView(
-          child: Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 16, 12, 8),
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                '$badge · ${widget.entity.entityId}',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.grey,
+              Icon(_iconFor(widget.entity.anchorType), color: Colors.tealAccent),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Entity Sheet',
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: Colors.tealAccent,
+                            letterSpacing: 0.4,
+                          ),
                     ),
-              ),
-              if (widget.entity.aliases.isNotEmpty) ...[
-                const SizedBox(height: 6),
-                Text(
-                  '별칭: ${widget.entity.aliases.join(', ')}',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ],
-              if (_hasJournal && !_creating) ...[
-                const SizedBox(height: 8),
-                Text(
-                  _formatWhen(_current!.addedAt),
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey,
+                    Text(
+                      _editing ? 'journal 편집' : widget.entity.title,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
                       ),
+                    ),
+                    Text(
+                      '$badge · ${widget.entity.entityId}',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Colors.grey,
+                          ),
+                    ),
+                  ],
                 ),
-              ],
-              if (!_editing && !_creating) ...[
-                const SizedBox(height: 12),
-                _IncomingLinksSection(
-                  loading: _loadingIncoming,
-                  paths: _incomingPaths,
-                  onOpen: widget.onOpenWork != null ? _openIncoming : null,
-                ),
-              ],
-              const SizedBox(height: 12),
-              if (_editing || _creating)
-                TextField(
-                  controller: _bodyCtrl,
-                  minLines: 6,
-                  maxLines: 12,
-                  autofocus: _creating,
-                  decoration: const InputDecoration(
-                    labelText: 'journal 본문',
-                    border: OutlineInputBorder(),
-                    alignLabelWithHint: true,
-                  ),
-                )
-              else if (_hasJournal)
-                SelectableText(_current!.body)
-              else
-                Text(
-                  '아직 entity journal이 없습니다.',
-                  style: TextStyle(color: Colors.grey[500]),
-                ),
+              ),
+              IconButton(
+                tooltip: '닫기',
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.close),
+              ),
             ],
           ),
         ),
-      ),
-      actions: [
-        if (!_hasJournal && !_creating)
-          FilledButton(
-            onPressed: () => setState(() {
-              _creating = true;
-              _editing = true;
-            }),
-            child: const Text('journal 생성'),
+        const Divider(height: 1),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (widget.entity.aliases.isNotEmpty) ...[
+                  Text(
+                    '별칭: ${widget.entity.aliases.join(', ')}',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  const SizedBox(height: 8),
+                ],
+                if (_hasJournal && !_creating) ...[
+                  Text(
+                    _formatWhen(_current!.addedAt),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Colors.grey,
+                        ),
+                  ),
+                  const SizedBox(height: 8),
+                ],
+                if (!_editing && !_creating) ...[
+                  _IncomingLinksSection(
+                    loading: _loadingIncoming,
+                    paths: _incomingPaths,
+                    onOpen: widget.onOpenWork != null ? _openIncoming : null,
+                  ),
+                ],
+                const SizedBox(height: 12),
+                if (_editing || _creating)
+                  TextField(
+                    controller: _bodyCtrl,
+                    minLines: 8,
+                    maxLines: 14,
+                    autofocus: _creating,
+                    decoration: const InputDecoration(
+                      labelText: 'journal 본문',
+                      border: OutlineInputBorder(),
+                      alignLabelWithHint: true,
+                    ),
+                  )
+                else if (_hasJournal)
+                  SelectableText(_current!.body)
+                else
+                  Text(
+                    '아직 entity journal이 없습니다.',
+                    style: TextStyle(color: Colors.grey[500]),
+                  ),
+              ],
+            ),
           ),
-        if (_hasJournal && !_editing && !_creating)
-          TextButton(
-            onPressed: () => setState(() => _editing = true),
-            child: const Text('편집'),
+        ),
+        const Divider(height: 1),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 12),
+          child: Wrap(
+            alignment: WrapAlignment.end,
+            spacing: 8,
+            runSpacing: 4,
+            children: [
+              if (!_hasJournal && !_creating)
+                FilledButton(
+                  onPressed: () => setState(() {
+                    _creating = true;
+                    _editing = true;
+                  }),
+                  child: const Text('journal 생성'),
+                ),
+              if (_hasJournal && !_editing && !_creating)
+                TextButton(
+                  onPressed: () => setState(() => _editing = true),
+                  child: const Text('편집'),
+                ),
+              if (_editing || _creating)
+                FilledButton(
+                  onPressed: _save,
+                  child: Text(_creating ? '생성' : '저장'),
+                ),
+              if (_hasJournal && !_creating)
+                TextButton(
+                  onPressed: _delete,
+                  child: const Text('삭제', style: TextStyle(color: Colors.redAccent)),
+                ),
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(_editing || _creating ? '취소' : '닫기'),
+              ),
+            ],
           ),
-        if (_editing || _creating)
-          FilledButton(
-            onPressed: _save,
-            child: Text(_creating ? '생성' : '저장'),
-          ),
-        if (_hasJournal && !_creating)
-          TextButton(
-            onPressed: _delete,
-            child: const Text('삭제', style: TextStyle(color: Colors.redAccent)),
-          ),
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: Text(_editing || _creating ? '취소' : '닫기'),
         ),
       ],
     );
+  }
+
+  static IconData _iconFor(EntityAnchorType type) {
+    return switch (type) {
+      EntityAnchorType.person => Icons.person_outline,
+      EntityAnchorType.concept => Icons.lightbulb_outline,
+      EntityAnchorType.event => Icons.event_outlined,
+      EntityAnchorType.place => Icons.place_outlined,
+      EntityAnchorType.organization => Icons.groups_outlined,
+      _ => Icons.category_outlined,
+    };
   }
 }
 

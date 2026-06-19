@@ -37,6 +37,7 @@ class HomeDialogsCoordinator {
     required this.wrapSetState,
     required this.canAddToLibrary,
     required this.userCatalog,
+    this.onCatalogEntityAdded,
   });
 
   final BuildContext Function() hostContext;
@@ -57,6 +58,7 @@ class HomeDialogsCoordinator {
   final void Function(void Function()) wrapSetState;
   final bool Function() canAddToLibrary;
   final UserCatalogPort userCatalog;
+  final void Function(UserCatalogEntity entity)? onCatalogEntityAdded;
 
   bool get isSyncing => catalog.isSyncing;
   DateTime? get lastSyncTime => catalog.lastSyncTime;
@@ -106,6 +108,9 @@ class HomeDialogsCoordinator {
                 );
                 await AkashaFileService().signalVaultChanged();
               }
+            }
+            if (isMounted()) {
+              onCatalogEntityAdded?.call(result.entity);
             }
           },
         );

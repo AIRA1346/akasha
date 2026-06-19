@@ -21,6 +21,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
     this.vaultItems = const [],
     this.onOpenWork,
     this.compact = false,
+    this.highlightEntityId,
   });
 
   final UserCatalogPort userCatalog;
@@ -29,6 +30,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item)? onOpenWork;
   final bool compact;
+  final String? highlightEntityId;
 
   @override
   State<CatalogEntityBrowseView> createState() =>
@@ -127,7 +129,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
               child: Text(
-                '내 catalog Entity (${_entities.length})',
+                'Entity Discovery · ${_entities.length}',
                 style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
@@ -145,6 +147,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
                   final entity = _entities[index];
                   return _CompactEntityCard(
                     entity: entity,
+                    highlighted: entity.entityId == widget.highlightEntityId,
                     onTap: () => _openEntity(entity),
                   );
                 },
@@ -173,8 +176,15 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
             itemBuilder: (context, index) {
               final entity = _entities[index];
               return Material(
-                color: const Color(0xFF252535),
-                borderRadius: BorderRadius.circular(8),
+                color: entity.entityId == widget.highlightEntityId
+                    ? const Color(0xFF2A3540)
+                    : const Color(0xFF252535),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: entity.entityId == widget.highlightEntityId
+                      ? const BorderSide(color: Colors.tealAccent, width: 1.5)
+                      : BorderSide.none,
+                ),
                 child: ListTile(
                   leading: Icon(_iconFor(entity.anchorType)),
                   title: Text(entity.title),
@@ -219,16 +229,23 @@ class _CompactEntityCard extends StatelessWidget {
   const _CompactEntityCard({
     required this.entity,
     required this.onTap,
+    this.highlighted = false,
   });
 
   final UserCatalogEntity entity;
   final VoidCallback onTap;
+  final bool highlighted;
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF252535),
-      borderRadius: BorderRadius.circular(8),
+      color: highlighted ? const Color(0xFF2A3540) : const Color(0xFF252535),
+      shape: highlighted
+          ? RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: const BorderSide(color: Colors.tealAccent, width: 1.5),
+            )
+          : RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
         onTap: onTap,

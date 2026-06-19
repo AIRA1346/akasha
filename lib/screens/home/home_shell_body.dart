@@ -264,6 +264,7 @@ class HomeShellBody extends StatelessWidget {
         vaultItems: items,
         onOpenWork: onOpenBrowseItem,
         scope: scope,
+        highlightEntityId: filterCtrl.highlightEntityId,
       );
     }
 
@@ -282,23 +283,24 @@ class HomeShellBody extends StatelessWidget {
       onStateChanged: onStateChanged,
     );
 
-    if (scope == BrowseEntityScope.all) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          CatalogEntityBrowseView(
-            userCatalog: userCatalog,
-            linkIndex: linkIndex,
-            vaultItems: items,
-            onOpenWork: onOpenBrowseItem,
-            scope: BrowseEntityScope.all,
-            compact: true,
-          ),
-          Expanded(child: workGrid),
-        ],
-      );
-    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _entityDiscoveryStrip(),
+        Expanded(child: workGrid),
+      ],
+    );
+  }
 
-    return workGrid;
+  Widget _entityDiscoveryStrip() {
+    return CatalogEntityBrowseView(
+      userCatalog: userCatalog,
+      linkIndex: linkIndex,
+      vaultItems: items,
+      onOpenWork: onOpenBrowseItem,
+      scope: BrowseEntityScope.all,
+      compact: true,
+      highlightEntityId: filterCtrl.highlightEntityId,
+    );
   }
 }

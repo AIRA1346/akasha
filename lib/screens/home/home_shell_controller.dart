@@ -30,6 +30,8 @@ import 'home_dashboard_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
+import '../../models/user_catalog_entity.dart';
+import 'dialogs/add_catalog_entity_dialog.dart';
 import 'home_shell_host.dart';
 
 /// Home 화면 조립·위임 (Wave 1.4 + E2).
@@ -164,7 +166,25 @@ class HomeShellController {
       wrapSetState: wrapSetState,
       canAddToLibrary: () => browse.canAddToLibrary,
       userCatalog: userCatalog,
+      onCatalogEntityAdded: onCatalogEntityAdded,
     );
+  }
+
+  void onCatalogEntityAdded(UserCatalogEntity entity) {
+    filterCtrl.setEntityScope(browseScopeForEntityType(entity.anchorType));
+    filterCtrl.highlightCatalogEntity(entity.entityId);
+    rebuild();
+
+    final badge = entityTypeBadgeLabel(entity.anchorType);
+    _showSnack(
+      '$badge 「${entity.title}」 catalog 추가 · Browse Entity Discovery에서 확인',
+    );
+
+    Future.delayed(const Duration(seconds: 4), () {
+      if (!host.mounted) return;
+      filterCtrl.clearEntityHighlight();
+      rebuild();
+    });
   }
 
   // —— Vault / catalog state (UI 호환) ——
