@@ -4,7 +4,10 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/browse_entity_scope.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/entity_vault_loader.dart';
+import '../../../services/file_service.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
+import '../dialogs/entity_journal_dialog.dart';
 
 /// Tier 1.5 catalog Entity 목록 — Wave 4 browse filter.
 class CatalogEntityBrowseView extends StatefulWidget {
@@ -64,32 +67,17 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     });
   }
 
-  void _openEntity(UserCatalogEntity entity) {
-    showDialog<void>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(entity.title),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '${entityTypeBadgeLabel(entity.anchorType)} · ${entity.entityId}',
-              style: const TextStyle(fontSize: 12, color: Colors.grey),
-            ),
-            if (entity.aliases.isNotEmpty) ...[
-              const SizedBox(height: 8),
-              Text('별칭: ${entity.aliases.join(', ')}'),
-            ],
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('닫기'),
-          ),
-        ],
-      ),
+  Future<void> _openEntity(UserCatalogEntity entity) async {
+    final vaultPath = AkashaFileService().vaultPath;
+    final entry = await const EntityVaultLoader().findByEntityId(
+      vaultPath,
+      entity.entityId,
+    );
+    if (!mounted) return;
+    await showEntityJournalDialog(
+      context,
+      entity: entity,
+      entry: entry,
     );
   }
 

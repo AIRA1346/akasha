@@ -21,7 +21,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 | Entity journal vault | 🟢 | entities/{type}/ · parser/store |
 | Browse entity filter (W4-9) | 🟢 | FilterSection chips · CatalogEntityBrowseView |
 | Person seed 100+ | ⬜ | charter defer |
-| Entity journal edit UI | ⬜ | Wave 4.1 — JournalView 패턴 재사용 |
+| Entity journal edit UI | 🟢 | W4.1 — Entity tab · catalog dialog |
 | E2E dogfood | ⬜ | 필요 시점 gate |
 
 ---
@@ -56,6 +56,8 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 | `entity_journal_parser.dart` · `entity_vault_store.dart` | entities/ vault IO |
 | `browse_entity_scope.dart` · `catalog_entity_browse_view.dart` | W4-9 browse filter UI |
 | `filter_section.dart` · `home_shell_body.dart` | scope chips · grid/catalog split |
+| `entity_vault_loader.dart` · `entity_journal_view.dart` | W4.1 load · 기록 Entity tab |
+| `entity_journal_dialog.dart` | catalog · journal 편집/생성/삭제 |
 
 ---
 
@@ -63,7 +65,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 | # | 항목 | Wave |
 |---|------|------|
-| R-W4-1 | Entity journal list/edit UI (JournalView 패턴) | W4.1 |
+| R-W4-1 | Entity journal list/edit UI | ✅ W4.1 |
 | R-W4-2 | Person seed 100+ (non-blocking) | optional |
 | R-W4-3 | Place · Organization user-local MVP | W4.2 |
 | R-W4-4 | Connection graph (Entity links) | W5 |
@@ -74,7 +76,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 | 시점 | 결과 |
 |------|------|
-| Wave 4 exit | **373 passed** |
+| Wave 4 exit | **375 passed** (W4.1 +2) |
 
 ---
 
@@ -82,4 +84,4 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-19 | v1 — Wave 4 MVP exit · 373 tests |
+| 2026-06-19 | v1.1 — W4.1 entity journal UI · 375 tests |

@@ -6,6 +6,7 @@ import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/entity_fact.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
+import 'package:akasha/services/entity_vault_loader.dart';
 import 'package:akasha/services/entity_vault_store.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/fusion_search_service.dart';
@@ -78,6 +79,88 @@ added_at: "2026-06-19T10:00:00.000"
         final parsed = EntityJournalParser.parse(content, saved.storagePath);
         expect(parsed?.entityId, 'pe_u_test1234');
         expect(parsed?.body, '우리 고양이');
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('update and delete entity journal round-trip', () async {
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_w4_entity_');
+      try {
+        await service.setVaultPath(tempDir.path);
+        const store = EntityVaultStore();
+        const loader = EntityVaultLoader();
+
+        final entity = UserCatalogEntity.userLocal(
+          entityId: 'co_u_round01',
+          type: EntityAnchorType.concept,
+          title: 'Tiger',
+        );
+
+        final saved = await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: entity,
+          body: 'v1',
+        );
+
+        final updated = await store.updateEntry(
+          entry: saved,
+          body: 'v2',
+          title: entity.title,
+        );
+        expect(updated.body, 'v2');
+
+        final found = await loader.findByEntityId(tempDir.path, 'co_u_round01');
+        expect(found?.body, 'v2');
+
+        await store.deleteEntry(saved.storagePath);
+        expect(await loader.findByEntityId(tempDir.path, 'co_u_round01'), isNull);
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+  });
+
+  group('EntityVaultLoader', () {
+    test('loads all entity journals sorted newest first', () async {
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_w4_loader_');
+      try {
+        await service.setVaultPath(tempDir.path);
+        const store = EntityVaultStore();
+        const loader = EntityVaultLoader();
+
+        await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: UserCatalogEntity.userLocal(
+            entityId: 'pe_u_old0001',
+            type: EntityAnchorType.person,
+            title: 'Old',
+            addedAt: DateTime.utc(2026, 1, 1),
+          ),
+          body: 'old',
+        );
+        await store.saveCatalogEntity(
+          vaultPath: tempDir.path,
+          entity: UserCatalogEntity.userLocal(
+            entityId: 'pe_u_new0001',
+            type: EntityAnchorType.person,
+            title: 'New',
+            addedAt: DateTime.utc(2026, 6, 19),
+          ),
+          body: 'new',
+        );
+
+        final entries = await loader.loadFromVault(tempDir.path);
+        expect(entries.length, 2);
+        expect(entries.first.entityId, 'pe_u_new0001');
       } finally {
         await service.setVaultPath('');
         if (await tempDir.exists()) {

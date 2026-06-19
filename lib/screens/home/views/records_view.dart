@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../core/ports/user_catalog_port.dart';
+import 'entity_journal_view.dart';
 import 'journal_view.dart';
 import 'timeline_view.dart';
 
@@ -12,6 +14,7 @@ class RecordsView extends StatelessWidget {
     required this.onOpenWork,
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
+    required this.userCatalog,
     this.reloadToken = 0,
   });
 
@@ -19,12 +22,13 @@ class RecordsView extends StatelessWidget {
   final void Function(AkashaItem item) onOpenWork;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
+  final UserCatalogPort userCatalog;
   final int reloadToken;
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -32,6 +36,7 @@ class RecordsView extends StatelessWidget {
             tabs: [
               Tab(text: '타임라인', icon: Icon(Icons.timeline, size: 18)),
               Tab(text: '메모', icon: Icon(Icons.note_alt_outlined, size: 18)),
+              Tab(text: 'Entity', icon: Icon(Icons.category_outlined, size: 18)),
             ],
           ),
           Expanded(
@@ -45,6 +50,10 @@ class RecordsView extends StatelessWidget {
                 ),
                 JournalView(
                   onNewEntry: onNewJournalEntry,
+                  reloadToken: reloadToken,
+                ),
+                EntityJournalView(
+                  userCatalog: userCatalog,
                   reloadToken: reloadToken,
                 ),
               ],

@@ -6,6 +6,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../models/user_catalog_entity.dart';
 import 'entity_journal_parser.dart';
+import 'file_service.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
 class EntityVaultStore {
@@ -52,6 +53,7 @@ class EntityVaultStore {
     );
 
     await _writeAtomic(targetPath, content);
+    await AkashaFileService().signalVaultChanged();
 
     return EntityJournalEntry(
       entityType: entity.anchorType,
@@ -61,6 +63,50 @@ class EntityVaultStore {
       addedAt: addedAt,
       storagePath: targetPath,
     );
+  }
+
+  Future<EntityJournalEntry> updateEntry({
+    required EntityJournalEntry entry,
+    required String body,
+    String? title,
+  }) async {
+    if (entry.storagePath.isEmpty) {
+      throw StateError('Entity journal storage path missing');
+    }
+
+    final resolvedTitle = (title ?? entry.title).trim();
+    if (resolvedTitle.isEmpty) {
+      throw ArgumentError('title must not be empty');
+    }
+
+    final content = EntityJournalParser.serialize(
+      entityType: entry.entityType,
+      entityId: entry.entityId,
+      title: resolvedTitle,
+      body: body,
+      addedAt: entry.addedAt,
+    );
+
+    await _writeAtomic(entry.storagePath, content);
+    await AkashaFileService().signalVaultChanged();
+
+    return EntityJournalEntry(
+      entityType: entry.entityType,
+      entityId: entry.entityId,
+      title: resolvedTitle,
+      body: body.trim(),
+      addedAt: entry.addedAt,
+      storagePath: entry.storagePath,
+    );
+  }
+
+  Future<void> deleteEntry(String storagePath) async {
+    if (storagePath.isEmpty) return;
+    final file = File(storagePath);
+    if (await file.exists()) {
+      await file.delete();
+      await AkashaFileService().signalVaultChanged();
+    }
   }
 
   Future<void> _writeAtomic(String targetPath, String content) async {

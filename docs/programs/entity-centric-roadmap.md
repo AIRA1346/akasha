@@ -28,10 +28,10 @@
 | **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ✅ | 🟢 |
 | **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
 | **4** | W4 | Person · Event · Concept | ✅ v1 | ✅ | ✅ | 🟡 |
-| **5** | W5 | Connection | 📋 | ⬜ | ⬜ | ⬜ |
+| **5** | W5 | Connection | ✅ v1 | ⬜ | ⬜ | ⬜ |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
-**현재 포커스:** Step 5 Wave 5 Connection 설계 · W4.1 entity journal edit UI
+**현재 포커스:** Step 5 Wave 5 Connection — [wave5-connection-spec.md](wave5-connection-spec.md) v1 · W5-0 ADR 초안
 
 ---
 
@@ -94,12 +94,15 @@
 
 ---
 
-## 7. Step 5~6 — Connection · Core
+## 7. Step 5 — Wave 5 (설계 v1)
 
-| Step | SSOT | 상태 |
-|------|------|:----:|
-| W5 | entity-centric-evolution-plan §Wave 5 | 📋 outline only |
-| W6 | entity-centric-evolution-plan §Wave 6 | 📋 non-blocking |
+| # | 작업 | 문서 | 상태 |
+|---|------|------|:----:|
+| 5.1 | Connection spec v1 | [wave5-connection-spec.md](wave5-connection-spec.md) | ✅ |
+| 5.2 | ADR-013 Link Index | — | ⬜ |
+| 5.3 | **코드 W5-1~4** | — | ⬜ |
+
+**Exit:** Work journal → Person/Concept 링크 클릭 E2E.
 
 ---
 
@@ -111,7 +114,8 @@
 | 1 | [wave1-spec](wave1-user-catalog-spec.md) | [wave1-exit](wave1-exit-review.md) | [dogfood](wave1-dogfood-checklist.md) |
 | 2 | [wave2-spec](wave2-vault-record-spec.md) | [wave2-review](wave2-pre-implementation-review.md) | vault-layout-v2 |
 | 3 | [wave3-spec](wave3-timeline-journal-spec.md) | — | |
-| 4 | [wave4-spec](wave4-entity-types-spec.md) | — | entity-type-philosophy |
+| 4 | [wave4-spec](wave4-entity-types-spec.md) | [wave4-exit](wave4-exit-review.md) | entity-type-philosophy |
+| 5 | [wave5-spec](wave5-connection-spec.md) | — | Connection |
 | — | [storage-masterplan](entity-record-storage-masterplan.md) | — | cross-cutting |
 
 ---

@@ -218,6 +218,7 @@ class HomeShellBody extends StatelessWidget {
                                 onOpenWork: onOpenBrowseItem,
                                 onNewTimelineEntry: onNewTimelineEntry,
                                 onNewJournalEntry: onNewJournalEntry,
+                                userCatalog: userCatalog,
                                 reloadToken: timelineReloadToken,
                               )
                             : isPersonalLibraryMode
