@@ -1,7 +1,10 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../models/work_id_codec.dart';
 import '../../../models/library_theme.dart';
 import '../../../services/file_service.dart';
 import '../dialogs/home_dialogs_facade.dart';
@@ -32,6 +35,7 @@ class HomeDialogsCoordinator {
     required this.rebuild,
     required this.wrapSetState,
     required this.canAddToLibrary,
+    required this.userCatalog,
   });
 
   final BuildContext Function() hostContext;
@@ -51,6 +55,7 @@ class HomeDialogsCoordinator {
   final void Function() rebuild;
   final void Function(void Function()) wrapSetState;
   final bool Function() canAddToLibrary;
+  final UserCatalogPort userCatalog;
 
   bool get isSyncing => catalog.isSyncing;
   DateTime? get lastSyncTime => catalog.lastSyncTime;
@@ -63,6 +68,8 @@ class HomeDialogsCoordinator {
     await HomeDialogsFacade.showSearchDialog(
       context: ctx,
       localItems: getItems(),
+      userCatalog: userCatalog,
+      registry: catalog.registry,
       onSelectLocal: workbenchCoord.openBrowseItem,
       onSelectRemote: (work) async {
         if (!isMounted()) return;
@@ -70,15 +77,24 @@ class HomeDialogsCoordinator {
           HomeAutoArchive.itemFromRegistryWork(work),
         );
       },
-      onCustomAdd: (query) => HomeDialogsFacade.showAddDialog(
-        context: ctx,
-        initialTitle: query,
-        onSavedToVault: (item) async {
-          await AkashaFileService().saveItem(item);
-          await loadItems();
-        },
-        onSavedInMemory: addItemInMemory,
-      ),
+      onCustomAdd: (query) async {
+        if (AkashaFileService().vaultPath == null) {
+          showMessage('볼트를 먼저 연결해 주세요.');
+          return;
+        }
+        await HomeDialogsFacade.showAddDialog(
+          context: ctx,
+          initialTitle: query,
+          showMessage: showMessage,
+          onSavedToVault: (item) async {
+            if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
+              await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+            }
+            await AkashaFileService().saveItem(item);
+            await loadItems();
+          },
+        );
+      },
       onCatalogPropose: HomeDialogsFacade.catalogProposeCallback(
         context: ctx,
         refreshContributionCount: catalog.syncCatalogContributionCount,

@@ -11,6 +11,9 @@ import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
 import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
+import '../../../core/ports/registry_port.dart';
+import '../../../core/ports/user_catalog_port.dart';
+import '../../../models/work_id_codec.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/fusion_search_dialog.dart';
 import '../../../widgets/library_theme_picker.dart';
@@ -30,6 +33,8 @@ class HomeDialogsFacade {
   static Future<void> showSearchDialog({
     required BuildContext context,
     required List<AkashaItem> localItems,
+    required UserCatalogPort userCatalog,
+    required RegistryPort registry,
     required void Function(AkashaItem item) onSelectLocal,
     required Future<void> Function(RegistryWork work) onSelectRemote,
     required Future<void> Function(String query) onCustomAdd,
@@ -41,9 +46,11 @@ class HomeDialogsFacade {
       context: context,
       builder: (ctx) => FusionSearchDialog(
         localItems: localItems,
+        userCatalog: userCatalog,
+        registry: registry,
         onSelectLocal: onSelectLocal,
         onSelectRemote: onSelectRemote,
-        onCustomAdd: onCustomAdd,
+        onCustomAdd: (query) => onCustomAdd(query),
         onCatalogPropose: onCatalogPropose,
         onAddLocalToLibrary: onAddLocalToLibrary,
         onAddRemoteToLibrary: onAddRemoteToLibrary,
@@ -75,16 +82,17 @@ class HomeDialogsFacade {
   static Future<void> showAddDialog({
     required BuildContext context,
     String? initialTitle,
+    required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onSavedToVault,
-    required void Function(AkashaItem item) onSavedInMemory,
   }) async {
+    if (AkashaFileService().vaultPath == null) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+
     final result = await showAddWorkDialog(context, initialTitle: initialTitle);
     if (result == null) return;
-    if (AkashaFileService().vaultPath != null) {
-      await onSavedToVault(result);
-    } else {
-      onSavedInMemory(result);
-    }
+    await onSavedToVault(result);
   }
 
   static Future<void> showVaultSettings({
@@ -134,9 +142,7 @@ class HomeDialogsFacade {
       if (entityId != null && entityId.isNotEmpty) {
         entity = EntityAnchor(
           entityId: entityId,
-          type: entityId.startsWith('wk_')
-              ? EntityAnchorType.work
-              : EntityAnchorType.custom,
+          type: EntityAnchor.typeForEntityId(entityId),
         );
       }
 

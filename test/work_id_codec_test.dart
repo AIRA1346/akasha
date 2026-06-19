@@ -30,7 +30,7 @@ void main() {
       expect(parsed.shardKey, 'webtoon_S');
     });
 
-    test('buildCustom generates custom token id', () {
+    test('buildCustom generates legacy custom token id', () {
       final id = WorkIdCodec.buildCustom(
         domain: AppDomain.subculture,
         category: MediaCategory.animation,
@@ -39,6 +39,23 @@ void main() {
       );
       expect(id, 'sub_animation_custom_abc123_2026');
       expect(WorkIdCodec.isMasterFormat(id), isTrue);
+      expect(WorkIdCodec.isUserLocalWorkId(id), isFalse);
+    });
+
+    test('buildUserLocal generates wk_u_* pattern', () {
+      final a = WorkIdCodec.buildUserLocal();
+      final b = WorkIdCodec.buildUserLocal();
+      expect(a, isNot(equals(b)));
+      expect(WorkIdCodec.isUserLocalWorkId(a), isTrue);
+      expect(WorkIdCodec.isGlobalWorkId(a), isFalse);
+      expect(WorkIdCodec.isMasterFormat(a), isTrue);
+      expect(WorkIdCodec.isWkFormat(a), isFalse);
+    });
+
+    test('isMasterFormat accepts user local and rejects plain wk_* invalid', () {
+      expect(WorkIdCodec.isMasterFormat('wk_u_abc12345'), isTrue);
+      expect(WorkIdCodec.isGlobalWorkId('wk_000000001'), isTrue);
+      expect(WorkIdCodec.isWkFormat('wk_u_abc12345'), isFalse);
     });
   });
 }

@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/markdown_parser.dart';
+import 'package:akasha/models/work_id_codec.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
@@ -86,7 +87,7 @@ void main() {
       expect(id, WorksRegistry.getWorkById('sub_manga_naruto_1999')!.workId);
     });
 
-    test('ensureWorkId creates custom id when no registry match', () {
+    test('ensureWorkId creates user local id when no registry match', () {
       final item = createItem(
         workId: '',
         title: '존재하지않는작품XYZ',
@@ -95,7 +96,19 @@ void main() {
         releaseYear: 2025,
       );
       final id = MarkdownParser.ensureWorkId(item);
-      expect(id, startsWith('sub_manga_custom_'));
+      expect(WorkIdCodec.isUserLocalWorkId(id), isTrue);
+      expect(WorkIdCodec.isMasterFormat(id), isTrue);
+    });
+
+    test('ensureWorkId preserves existing user local id', () {
+      const userLocalId = 'wk_u_abcd1234';
+      final item = createItem(
+        workId: userLocalId,
+        title: '내 catalog 작품',
+        category: MediaCategory.manga,
+        domain: AppDomain.subculture,
+      );
+      expect(MarkdownParser.ensureWorkId(item), userLocalId);
     });
 
     test('isArchivedInVault is true only when vault linked and filePath set', () async {

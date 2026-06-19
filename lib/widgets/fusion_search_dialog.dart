@@ -2,17 +2,21 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/akasha_item.dart';
 import '../models/franchise_group.dart';
+import '../core/ports/registry_port.dart';
+import '../core/ports/user_catalog_port.dart';
 import '../services/franchise_fusion_service.dart';
 import '../services/franchise_registry.dart';
-import '../services/franchise_representative_picker.dart';
+import '../services/fusion_search_service.dart';
 import '../services/registry_visibility_service.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import '../widgets/star_rating.dart';
 
-/// 3중 퓨전 검색: [로컬 .md] + [원격 사전] + [직접 추가 CTA]
+/// 3중 퓨전 검색: [로컬 .md] + [내 catalog] + [글로벌 사전] + [직접 추가 CTA]
 class FusionSearchDialog extends StatefulWidget {
   final List<AkashaItem> localItems;
+  final UserCatalogPort userCatalog;
+  final RegistryPort registry;
   final void Function(AkashaItem item) onSelectLocal;
   final Future<void> Function(RegistryWork work) onSelectRemote;
   final void Function(String query) onCustomAdd;
@@ -23,6 +27,8 @@ class FusionSearchDialog extends StatefulWidget {
   const FusionSearchDialog({
     super.key,
     required this.localItems,
+    required this.userCatalog,
+    required this.registry,
     required this.onSelectLocal,
     required this.onSelectRemote,
     required this.onCustomAdd,
@@ -38,15 +44,21 @@ class FusionSearchDialog extends StatefulWidget {
 class _RemoteSearchEntry {
   final RegistryWork work;
   final RegistryRemoteHint hint;
+  final bool isUserCatalog;
 
-  const _RemoteSearchEntry({required this.work, required this.hint});
+  const _RemoteSearchEntry({
+    required this.work,
+    required this.hint,
+    this.isUserCatalog = false,
+  });
 }
 
 class _FusionSearchDialogState extends State<FusionSearchDialog> {
   final _ctrl = TextEditingController();
   Timer? _debounce;
   List<AkashaItem> _localResults = [];
-  List<_RemoteSearchEntry> _remoteEntries = [];
+  List<FusionRegistryHit> _catalogHits = [];
+  List<FusionRegistryHit> _globalHits = [];
   bool _isSearching = false;
   String? _searchError;
 
@@ -57,18 +69,14 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     super.dispose();
   }
 
-  Set<String> get _allLocalWorkIds => widget.localItems
-      .map((e) => e.workId)
-      .where((id) => id.isNotEmpty)
-      .toSet();
-
   void _onQueryChanged(String query) {
     _debounce?.cancel();
     final trimmed = query.trim();
     if (trimmed.isEmpty) {
       setState(() {
         _localResults = [];
-        _remoteEntries = [];
+        _catalogHits = [];
+        _globalHits = [];
         _isSearching = false;
         _searchError = null;
       });
@@ -86,105 +94,37 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
       _searchError = null;
     });
 
-    final q = query.toLowerCase();
-    final local = widget.localItems.where((item) {
-      return item.title.toLowerCase().contains(q) ||
-          item.creator.toLowerCase().contains(q) ||
-          item.tags.any((t) => t.toLowerCase().contains(q));
-    }).toList();
-
-    final localWorkIds = local
-        .map((e) => e.workId)
-        .where((id) => id.isNotEmpty)
-        .toSet();
-
-    List<_RemoteSearchEntry> remoteEntries = [];
     String? error;
+    FusionSearchResult? result;
     try {
-      final registryHits = await WorksRegistry.searchAsync(query);
-      remoteEntries = _dedupeFranchiseEntries(
-        registryHits
-            .where((work) => !localWorkIds.contains(work.workId))
-            .map((work) => _RemoteSearchEntry(
-                  work: work,
-                  hint: RegistryVisibilityService.remoteSearchHint(
-                    workId: work.workId,
-                    userWorkIds: _allLocalWorkIds,
-                  ),
-                ))
-            .toList()
-          ..sort((a, b) {
-            final order = RegistryVisibilityService.remoteHintSortOrder(a.hint)
-                .compareTo(
-                    RegistryVisibilityService.remoteHintSortOrder(b.hint));
-            if (order != 0) return order;
-            final scoreCmp = WorksRegistry.qualityScoreFor(b.work.workId)
-                .compareTo(WorksRegistry.qualityScoreFor(a.work.workId));
-            if (scoreCmp != 0) return scoreCmp;
-            return a.work.title.compareTo(b.work.title);
-          }),
+      result = await FusionSearchService.search(
+        query: query,
+        localItems: widget.localItems,
+        userCatalog: widget.userCatalog,
+        registry: widget.registry,
       );
     } catch (e) {
       error = '원격 사전 검색 실패 (오프라인일 수 있습니다)';
     }
 
     if (!mounted) return;
+    final hits = result?.registryHits ?? [];
     setState(() {
-      _localResults = FranchiseRepresentativePicker.dedupeLocalByFranchise(local);
-      _remoteEntries = remoteEntries;
+      _localResults = result?.localItems ?? [];
+      _catalogHits =
+          hits.where((h) => h.source == FusionRegistrySource.userCatalog).toList();
+      _globalHits =
+          hits.where((h) => h.source == FusionRegistrySource.globalRegistry).toList();
       _isSearching = false;
       _searchError = error;
     });
   }
 
-  List<_RemoteSearchEntry> _dedupeFranchiseEntries(
-    List<_RemoteSearchEntry> entries,
-  ) {
-    final localFranchiseIds = <String>{};
-    for (final local in widget.localItems) {
-      final group = FranchiseRegistry.groupFor(local.workId);
-      if (group != null) localFranchiseIds.add(group.id);
-    }
-
-    final emittedFranchises = <String>{};
-    final result = <_RemoteSearchEntry>[];
-
-    for (final entry in entries) {
-      final group = FranchiseRegistry.groupFor(entry.work.workId);
-      if (group == null) {
-        result.add(entry);
-        continue;
-      }
-
-      if (localFranchiseIds.contains(group.id)) continue;
-      if (emittedFranchises.contains(group.id)) continue;
-      emittedFranchises.add(group.id);
-
-      final franchiseEntries = entries
-          .where(
-            (e) => FranchiseRegistry.groupFor(e.work.workId)?.id == group.id,
-          )
-          .toList();
-
-      final primaryWork =
-          WorksRegistry.getWorkById(group.primaryWorkId) ?? entry.work;
-      final hint = _mergeHints(franchiseEntries.map((e) => e.hint));
-
-      result.add(_RemoteSearchEntry(work: primaryWork, hint: hint));
-    }
-
-    return result;
-  }
-
-  RegistryRemoteHint _mergeHints(Iterable<RegistryRemoteHint> hints) {
-    if (hints.any((h) => h == RegistryRemoteHint.hidden)) {
-      return RegistryRemoteHint.hidden;
-    }
-    if (hints.any((h) => h == RegistryRemoteHint.siblingTracked)) {
-      return RegistryRemoteHint.siblingTracked;
-    }
-    return RegistryRemoteHint.available;
-  }
+  _RemoteSearchEntry _entryFromHit(FusionRegistryHit hit) => _RemoteSearchEntry(
+        work: hit.work,
+        hint: hit.hint,
+        isUserCatalog: hit.isUserLocalCatalog,
+      );
 
   FranchiseGroup? _franchiseForWork(RegistryWork work) =>
       FranchiseRegistry.groupFor(work.workId);
@@ -251,10 +191,11 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   @override
   Widget build(BuildContext context) {
     final query = _ctrl.text.trim();
+    final hasRegistryHits = _catalogHits.isNotEmpty || _globalHits.isNotEmpty;
     final showCustomCta = query.isNotEmpty &&
         !_isSearching &&
         _localResults.isEmpty &&
-        _remoteEntries.isEmpty;
+        !hasRegistryHits;
 
     return AlertDialog(
       title: const Text('🔍 작품 검색'),
@@ -295,7 +236,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
               child: query.isEmpty
                   ? Center(
                       child: Text(
-                        '검색어를 입력하세요.\n로컬 아카이브와 글로벌 사전을 함께 검색합니다.',
+                        '검색어를 입력하세요.\n로컬 아카이브 · 내 catalog · 글로벌 사전을 함께 검색합니다.',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                       ),
@@ -307,9 +248,16 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                           ..._localResults.map(_buildLocalTile),
                           const SizedBox(height: 8),
                         ],
-                        if (_remoteEntries.isNotEmpty) ...[
-                          _sectionLabel('🌐 글로벌 사전', _remoteEntries.length),
-                          ..._remoteEntries.map(_buildRemoteTile),
+                        if (_catalogHits.isNotEmpty) ...[
+                          _sectionLabel('📋 내 catalog', _catalogHits.length),
+                          ..._catalogHits
+                              .map((h) => _buildRemoteTile(_entryFromHit(h))),
+                          const SizedBox(height: 8),
+                        ],
+                        if (_globalHits.isNotEmpty) ...[
+                          _sectionLabel('🌐 글로벌 사전', _globalHits.length),
+                          ..._globalHits
+                              .map((h) => _buildRemoteTile(_entryFromHit(h))),
                         ],
                         if (showCustomCta) ...[
                           const SizedBox(height: 16),
@@ -343,7 +291,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                         if (!_isSearching &&
                             query.isNotEmpty &&
                             _localResults.isEmpty &&
-                            _remoteEntries.isEmpty &&
+                            !hasRegistryHits &&
                             _searchError == null)
                           const Padding(
                             padding: EdgeInsets.only(top: 24),
@@ -423,7 +371,8 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   Widget _buildRemoteTile(_RemoteSearchEntry entry) {
     final work = entry.work;
     final hint = entry.hint;
-    final dimmed = hint != RegistryRemoteHint.available;
+    final isCatalog = entry.isUserCatalog;
+    final dimmed = !isCatalog && hint != RegistryRemoteHint.available;
     final franchise = _franchiseForWork(work);
 
     String? hintText;
@@ -440,7 +389,9 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
         franchise != null ? FranchiseFusionService.franchiseFormatLabels(franchise) : null;
 
     final subtitle = [
-      work.creator.isNotEmpty ? work.creator : '글로벌 사전',
+      work.creator.isNotEmpty
+          ? work.creator
+          : (isCatalog ? '내 catalog' : '글로벌 사전'),
       if (formatLabels != null && formatLabels.isNotEmpty) formatLabels else work.category.label,
       ?hintText,
     ].whereType<String>().join(' · ');
@@ -473,7 +424,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (widget.onAddRemoteToLibrary != null &&
-                hint == RegistryRemoteHint.available)
+                (isCatalog || hint == RegistryRemoteHint.available))
               TextButton(
                 onPressed: () => widget.onAddRemoteToLibrary!(work),
                 style: TextButton.styleFrom(
@@ -486,20 +437,32 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: Colors.blue.withValues(alpha: dimmed ? 0.08 : 0.15),
+                color: (isCatalog ? Colors.teal : Colors.blue)
+                    .withValues(alpha: dimmed ? 0.08 : 0.15),
                 borderRadius: BorderRadius.circular(4),
               ),
               child: Text(
-                hint == RegistryRemoteHint.available ? '사전' : '주의',
+                isCatalog
+                    ? '내 catalog'
+                    : (hint == RegistryRemoteHint.available ? '사전' : '주의'),
                 style: TextStyle(
                   fontSize: 10,
-                  color: dimmed ? Colors.grey[500] : Colors.lightBlueAccent,
+                  color: dimmed && !isCatalog
+                      ? Colors.grey[500]
+                      : (isCatalog ? Colors.tealAccent : Colors.lightBlueAccent),
                 ),
               ),
             ),
           ],
         ),
-        onTap: () => _handleRemoteTap(entry),
+        onTap: () {
+          if (isCatalog) {
+            Navigator.pop(context);
+            widget.onSelectRemote(work);
+            return;
+          }
+          _handleRemoteTap(entry);
+        },
       ),
     );
   }

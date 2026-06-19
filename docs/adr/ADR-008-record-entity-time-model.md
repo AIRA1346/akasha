@@ -5,7 +5,7 @@
 | **상태** | **승인 (Accepted)** |
 | **날짜** | 2026-06-14 |
 | **상위** | [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) §6 · [architecture-evolution-phases.md](../programs/architecture-evolution-phases.md) Phase 1 |
-| **관련** | [ADR-007](ADR-007-app-layering.md) · [ADR-005](ADR-005-minimum-recordable-unit.md) |
+| **관련** | [ADR-007](ADR-007-app-layering.md) · [ADR-005](ADR-005-minimum-recordable-unit.md) · [ADR-011](ADR-011-entity-type-subtype.md) |
 
 ---
 
@@ -43,8 +43,12 @@ Timeline·Entity-less Journal을 **나중에 붙이면** vault·UI·Registry 전
 | `person` | 📋 | 3 |
 | `event` | 📋 | 3 |
 | `concept` | 📋 | 3 |
+| `place` | 📋 | 3b |
+| `organization` | 📋 | 3b |
 | `phenomenon` | 📋 | 3 |
 | `custom` | vault-only | 0 |
+
+전체 Type · ID · Work subtype: [ADR-011](ADR-011-entity-type-subtype.md).
 
 `entityId` + `type` — Tier 1 Fact와 **조인**, Tier 2가 Tier 1 **덮지 않음**.
 
@@ -106,3 +110,4 @@ Entity 없는 커스텀 `.md` → `kind: freeformJournal`, `entity: null`.
 | 일자 | 변경 |
 |------|------|
 | 2026-06-14 | 초판 승인 — Phase 1 Foundation |
+| 2026-06-19 | place·organization 행 · ADR-011 링크 |

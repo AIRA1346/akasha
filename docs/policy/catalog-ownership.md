@@ -22,11 +22,12 @@
 
 ---
 
-## 2. akasha-db 3계층
+## 2. akasha-db 3계층 (+ Tier 1.5)
 
 ```
 Tier 0 — Identity     wk_ (불변) + legacy_aliases
 Tier 1 — AKASHA Meta  title, titles, 연도, externalIds, tags (**description·posterPath v1 금지**)
+Tier 1.5 — User Local catalog/user_entities.json — Fact only · wk_u_* ([user-local-catalog-policy.md](user-local-catalog-policy.md))
 Tier 2 — User Archive 볼트 YAML·posters/ (아카이브한 작품만, 희소)
 ```
 

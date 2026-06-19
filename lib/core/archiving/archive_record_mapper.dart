@@ -1,4 +1,5 @@
 import '../../models/akasha_item.dart';
+import '../../models/work_id_codec.dart';
 import '../../services/file_service.dart';
 import 'archive_record.dart';
 import 'entity_anchor.dart';
@@ -42,9 +43,7 @@ abstract final class ArchiveRecordMapper {
     if (entityId != null && entityId.isNotEmpty) {
       entity = EntityAnchor(
         entityId: entityId,
-        type: entityId.startsWith('wk_')
-            ? EntityAnchorType.work
-            : EntityAnchorType.custom,
+        type: EntityAnchor.typeForEntityId(entityId),
       );
     }
 

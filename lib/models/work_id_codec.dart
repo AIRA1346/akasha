@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'enums.dart';
 
 // ════════════════════════════════════════════════════════════════
@@ -59,6 +61,12 @@ class WorkIdCodec {
   /// v4 영구 ID — `wk_000012345` (9자리 순번, 최대 ~10억 작)
   static final RegExp wkIdPattern = RegExp(r'^wk_\d{9}$');
 
+  /// Tier 1.5 user local — `wk_u_a1b2c3d4` ([ADR-011])
+  static final RegExp userLocalWorkIdPattern =
+      RegExp(r'^wk_u_[a-z0-9]{8}$');
+
+  static const String _userLocalTokenAlphabet = '0123456789abcdefghijklmnopqrstuv';
+
   static final RegExp _masterPatternWithYear = RegExp(
     r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)_(\d{4})$',
   );
@@ -67,7 +75,16 @@ class WorkIdCodec {
     r'^(sub|gen)_(manga|webtoon|animation|game|book|movie|drama)_(.+)$',
   );
 
-  static bool isWkFormat(String workId) => wkIdPattern.hasMatch(workId);
+  static bool isWkFormat(String workId) => isGlobalWorkId(workId);
+
+  static bool isGlobalWorkId(String workId) => wkIdPattern.hasMatch(workId);
+
+  static bool isUserLocalWorkId(String workId) =>
+      userLocalWorkIdPattern.hasMatch(workId);
+
+  static bool isLegacyMasterId(String workId) =>
+      _masterPatternWithYear.hasMatch(workId) ||
+      _masterPatternNoYear.hasMatch(workId);
 
   static String domainPrefix(AppDomain domain) =>
       domain == AppDomain.subculture ? 'sub' : 'gen';
@@ -87,7 +104,17 @@ class WorkIdCodec {
   static ParsedWorkId? parse(String workId) {
     if (workId.isEmpty) return null;
 
-    if (isWkFormat(workId)) {
+    if (isGlobalWorkId(workId)) {
+      return ParsedWorkId(
+        raw: workId,
+        domain: AppDomain.subculture,
+        category: MediaCategory.manga,
+        identifierType: WorkIdIdentifierType.legacy,
+        identifier: workId,
+      );
+    }
+
+    if (isUserLocalWorkId(workId)) {
       return ParsedWorkId(
         raw: workId,
         domain: AppDomain.subculture,
@@ -131,9 +158,22 @@ class WorkIdCodec {
   }
 
   static bool isMasterFormat(String workId) =>
-      isWkFormat(workId) ||
-      _masterPatternWithYear.hasMatch(workId) ||
-      _masterPatternNoYear.hasMatch(workId);
+      isGlobalWorkId(workId) ||
+      isUserLocalWorkId(workId) ||
+      isLegacyMasterId(workId);
+
+  static String buildUserLocal({String? suffix}) {
+    final token = suffix ?? _randomUserLocalToken();
+    return 'wk_u_$token';
+  }
+
+  static String _randomUserLocalToken() {
+    final rand = Random.secure();
+    return List.generate(
+      8,
+      (_) => _userLocalTokenAlphabet[rand.nextInt(_userLocalTokenAlphabet.length)],
+    ).join();
+  }
 
   static String build({
     required AppDomain domain,
@@ -184,6 +224,7 @@ class WorkIdCodec {
         releaseYear: releaseYear,
       );
 
+  /// @Deprecated legacy Phase 0 ID — Wave 1+ uses [buildUserLocal].
   static String buildCustom({
     required AppDomain domain,
     required MediaCategory category,

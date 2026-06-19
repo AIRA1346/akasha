@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../core/ports/registry_port.dart';
+import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/vault_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/library_theme.dart';
@@ -18,6 +19,7 @@ class HomeVaultCoordinator {
   HomeVaultCoordinator({
     required this.vault,
     required this.registry,
+    required this.userCatalog,
     required this.isMounted,
     required this.scheduleRebuild,
     required this.onVaultItemsSynced,
@@ -26,6 +28,7 @@ class HomeVaultCoordinator {
 
   final VaultPort vault;
   final RegistryPort registry;
+  final UserCatalogPort userCatalog;
   final bool Function() isMounted;
   final void Function(void Function()) scheduleRebuild;
   final void Function(List<AkashaItem> items) onVaultItemsSynced;
@@ -54,6 +57,7 @@ class HomeVaultCoordinator {
 
   Future<void> loadItems() async {
     final loadedItems = await HomeVaultLoader.loadItems(vault);
+    await userCatalog.load();
     if (!isMounted()) return;
     scheduleRebuild(() => items = loadedItems);
     onVaultItemsSynced(loadedItems);

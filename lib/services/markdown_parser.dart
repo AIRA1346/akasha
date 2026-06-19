@@ -23,11 +23,7 @@ class MarkdownParser {
       if (hits.isNotEmpty) return hits.first.workId;
     }
 
-    return WorkIdCodec.buildCustom(
-      domain: item.domain,
-      category: item.category,
-      releaseYear: item.releaseYear,
-    );
+    return WorkIdCodec.buildUserLocal();
   }
 
   /// YAML `poster:` 필드에 저장할지 판별합니다.

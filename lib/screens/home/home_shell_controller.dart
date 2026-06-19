@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
 import '../../core/ports/registry_port.dart';
+import '../../core/ports/user_catalog_port.dart';
+import '../../data/adapters/user_catalog_store_adapter.dart';
 import '../../core/ports/registry_sync_port.dart';
 import '../../data/adapters/markdown_vault_adapter.dart';
 import '../../data/adapters/registry_sync_adapter.dart';
@@ -39,6 +41,7 @@ class HomeShellController {
   final WorkbenchController workbench = WorkbenchController();
   final HomeRegistryUi registryUi = const HomeRegistryUi();
   final RegistryPort registry = WorksRegistryAdapter();
+  final UserCatalogPort userCatalog = UserCatalogStoreAdapter();
   final RegistrySyncPort registrySyncPort = RegistrySyncAdapter();
 
   late final HomeVaultCoordinator vault;
@@ -66,6 +69,7 @@ class HomeShellController {
     vault = HomeVaultCoordinator(
       vault: MarkdownVaultAdapter(),
       registry: registry,
+      userCatalog: userCatalog,
       isMounted: () => host.mounted,
       scheduleRebuild: host.scheduleRebuild,
       onVaultItemsSynced: workbench.syncFromVaultItems,
@@ -155,6 +159,7 @@ class HomeShellController {
       rebuild: rebuild,
       wrapSetState: wrapSetState,
       canAddToLibrary: () => browse.canAddToLibrary,
+      userCatalog: userCatalog,
     );
   }
 

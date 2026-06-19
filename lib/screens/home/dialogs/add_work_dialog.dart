@@ -353,11 +353,7 @@ Future<AkashaItem?> showAddWorkDialog(
                   ctx,
                   createItem(
                     workId: selectedRegistryWork?.workId ??
-                        WorkIdCodec.buildCustom(
-                          domain: selDomain,
-                          category: selCategory,
-                          releaseYear: int.tryParse(yearCtrl.text.trim()),
-                        ),
+                        WorkIdCodec.buildUserLocal(),
                     title: title,
                     category: selCategory,
                     domain: selDomain,

@@ -12,7 +12,10 @@ class AkashaFileService {
 
   static final Set<String> _skipDirNames = {
     'posters',
-    'timeline', // Phase 4.1 — ArchiveRecord 전용, AkashaItem 스캔 제외
+    'timeline',
+    'catalog',
+    'journal',
+    'entities',
     'node_modules',
     '.git',
     '.obsidian', // 외부 노트 앱 설정 폴더 — 스캔 제외
@@ -98,6 +101,7 @@ class AkashaFileService {
 
     await Directory(p.join(_vaultPath!, 'posters')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'timeline')).create(recursive: true);
+    await Directory(p.join(_vaultPath!, 'catalog')).create(recursive: true);
 
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);

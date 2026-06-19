@@ -178,10 +178,12 @@ flowchart LR
 
 | | |
 |--|--|
-| **완료** | Phase 0~1 · 2.0~**2.3** · Phase 4.1~**4.4a** · **Sprint C2** @5181 · Wave 1 Home 해부 |
-| **진행** | **Sprint B** dogfood · 대시보드 스크롤(sliver grid) ✅ |
-| **진행** | **E1** ✅ 1차 · **E2** controller 분할 다음 |
-| **이후** | Sprint B friction → E3 글로벌 → M3 Ready 판단 |
+| **완료** | Phase 0~1 · 2.0~**2.3** · Phase 4.1~**4.4a** · **Sprint C2** @10048 · Wave 1 Home 해부 |
+| **완료** | **Wave 0** Entity-centric 설계 SSOT — [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md) · [ADR-011](../adr/ADR-011-entity-type-subtype.md) |
+| **진행** | **Sprint B** dogfood · Sanctum 워크벤치 안정화 |
+| **다음 (코드)** | **Wave 1** Tier 1.5 User Local Catalog · `wk_u_*` · Fusion search |
+| **이후** | Wave 2 vault v2 · Wave 3 Timeline UX · Phase 3 Entity types |
+| **M3** | ⏸️ 품질 Ready 시 |
 
 ---
 
@@ -235,3 +237,4 @@ flowchart LR
 | 2026-06-14 | 초판 — 일정 제거 · Phase 0~6 의존성 |
 | 2026-06-14 | §12 우선순위 검토 · Phase 2.0 baseline · Phase 4.1 다음 |
 | 2026-06-14 | Phase 4.1 read path — parser · loader · adapter · test 277 |
+| 2026-06-19 | §10 Wave 0 Exit · Wave 1 포인터 · entity-centric-evolution-plan 링크 |

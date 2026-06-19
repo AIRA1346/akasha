@@ -18,19 +18,30 @@
 
 ---
 
-## 2. 두 계층
+## 2. Entity · Record · Connection (+ Tier)
 
-| | Tier 1 — AKASHA | Tier 2 — Sanctum vault |
-|--|-----------------|------------------------|
-| **누가** | Rune Atelier (큐레이션·CI) | **유저** |
-| **저장** | `akasha-db` JSON (Git/CDN) | 로컬 `.md` + YAML + `posters/` |
-| **목적** | 「이 작품이 무엇인지」 **발견** | 「나에게 무엇이었는지」 **기록** |
-| **포스터·이미지** | ❌ **미제공** (플레이스홀더 UI) | ✅ URL · 로컬 파일 · 본문 삽입 |
-| **감상·평점·상태** | ❌ | ✅ YAML + Markdown |
-| **시놉·리뷰** | ❌ 외부 복제 | ✅ 유저 자유 작성 |
-| **법적 포지션** | Fact 메타데이터만 배포 | UGC · 개인 기록 |
+**북극성:** 세상에서 만난 모든 것(Entity)을 찾고, 내가 남긴 것(Record)을 축적하고, 관계(Connection)로 연결한다.  
+실행 SSOT: [entity-centric-evolution-plan.md](programs/entity-centric-evolution-plan.md) · [ADR-011](adr/ADR-011-entity-type-subtype.md)
 
-조인 키: `work_id` (`wk_…`). Tier 2는 Tier 1 Fact를 **덮어쓰지 않음**.
+| 개념 | 역할 | Phase 0 (v1) |
+|------|------|:------------:|
+| **Entity** | 기록 대상 (닻) — work · person · event … | `work` only |
+| **Record** | Sanctum `.md` — 감상·일기·메모 | workJournal ✅ · timeline 🔶 |
+| **Connection** | `[[링크]]` · Record ↔ Entity | 📋 Phase 5 |
+
+### 데이터 Tier
+
+| | Tier 1 — Global Fact | Tier 1.5 — User Local | Tier 2 — Sanctum Record |
+|--|----------------------|------------------------|-------------------------|
+| **누가** | Rune Atelier (큐레이션·CI) | **유저** (볼트 catalog) | **유저** |
+| **저장** | `akasha-db` JSON (Git/CDN) | `catalog/user_entities.json` | 로컬 `.md` + YAML + `posters/` |
+| **목적** | 「잘 알려진 것」 **발견** | 「내 catalog에 없던 것」 **발견** | 「나에게 무엇이었는지」 **기록** |
+| **포스터·이미지** | ❌ **미제공** | ❌ | ✅ URL · 로컬 · 본문 |
+| **감상·평점·상태** | ❌ | ❌ | ✅ YAML + Markdown |
+| **법적 포지션** | Fact 메타만 배포 | 로컬 only | UGC · 개인 기록 |
+
+조인 키: `entity_id` (`wk_…` · `wk_u_…` — [user-local-catalog-policy.md](policy/user-local-catalog-policy.md)).  
+Tier 2는 Tier 1·1.5 Fact를 **덮어쓰지 않음**. Legacy frontmatter `work_id` = work Entity alias.
 
 ---
 
@@ -119,9 +130,10 @@
 
 | In | Out |
 |----|-----|
-| 490+ Fact 사전 · 검색 · 플레이스홀더 그리드 | Tier 1 포스터 |
+| 10k+ Fact 사전 · 검색 · 플레이스홀더 그리드 | Tier 1 포스터 |
 | Sanctum 연동 · 아카이브 `.md` | 앱 이미지 큐레이션 |
 | YAML 기본 · 나만의 서재 · IAP 테마 | Discover · Timeline · Recall (v1.1) |
+| (v1.x) Tier 1.5 user catalog · `wk_u_*` | Entity types beyond work (v1.2+) |
 
 스토어: [m2-steam-store-page.md](m2-steam-store-page.md)
 
@@ -160,3 +172,5 @@
 |------|------|
 | 2026-06-10 | 초안 — Fact-only Tier 1 + Sanctum user archive SSOT |
 | 2026-06-14 | ultimate-archiving-vision SSOT 링크 · 유저 여정 장기 축 |
+| 2026-06-19 | §2 Entity·Record·Connection · Tier 1.5 · ADR-011 |
+| 2026-06-19 | §7 Steam v1 · 10k+ · Tier 1.5 v1.x In |
