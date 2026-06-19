@@ -28,7 +28,7 @@
 | **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ✅ | 🟢 |
 | **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
 | **4** | W4 | Person · Event · Concept | ✅ v1 | ✅ | ✅ | 🟡 |
-| **5** | W5 | Connection | ✅ v1 | ⬜ | ⬜ | ⬜ |
+| **5** | W5 | Connection | ✅ v1 | ⬜ | 🔄 | ⬜ |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
 **현재 포커스:** Step 5 Wave 5 Connection — [wave5-connection-spec.md](wave5-connection-spec.md) v1 · W5-0 ADR 초안
@@ -100,7 +100,8 @@
 |---|------|------|:----:|
 | 5.1 | Connection spec v1 | [wave5-connection-spec.md](wave5-connection-spec.md) | ✅ |
 | 5.2 | ADR-013 Link Index | — | ⬜ |
-| 5.3 | **코드 W5-1~4** | — | ⬜ |
+| 5.3 | **코드 W5-1~2** | — | ✅ |
+| 5.4 | **코드 W5-3~4** UI · navigate | — | ⬜ |
 
 **Exit:** Work journal → Person/Concept 링크 클릭 E2E.
 
