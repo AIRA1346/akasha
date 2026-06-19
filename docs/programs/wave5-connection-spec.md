@@ -168,4 +168,4 @@ FusionSearch (title resolve) ✅
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-19 | v1.2 — W5-3~4 UI · vault link index auto-rebuild |
+| 2026-06-19 | v1.2 — Wave 5 MVP exit review · dogfood checklist |

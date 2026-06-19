@@ -1,6 +1,6 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1 ✅ · Wave 2 ✅ · Wave 3 ✅ · Wave 4 ✅ **MVP Exit**  
+> **상태:** Wave 1~4 ✅ MVP · **Wave 5 ✅ MVP Exit** (dogfood ⏳)  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
@@ -28,10 +28,10 @@
 | **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ✅ | 🟢 |
 | **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
 | **4** | W4 | Person · Event · Concept | ✅ v1 | ✅ | ✅ | 🟡 |
-| **5** | W5 | Connection | ✅ v1 | ⬜ | 🔄 | ⬜ |
+| **5** | W5 | Connection | ✅ v1 | ✅ | ✅ | 🟡 |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
-**현재 포커스:** Step 5 Wave 5 Connection — [wave5-connection-spec.md](wave5-connection-spec.md) v1 · W5-0 ADR 초안
+**현재 포커스:** Wave 5 dogfood 1회 · ADR-013 · Wave 6 PoC 검토
 
 ---
 
@@ -94,20 +94,31 @@
 
 ---
 
-## 7. Step 5 — Wave 5 (설계 v1)
+## 7. Step 5 — Wave 5 (✅ MVP Exit)
 
 | # | 작업 | 문서 | 상태 |
 |---|------|------|:----:|
 | 5.1 | Connection spec v1 | [wave5-connection-spec.md](wave5-connection-spec.md) | ✅ |
-| 5.2 | ADR-013 Link Index | — | ⬜ |
+| 5.2 | Exit review | [wave5-exit-review.md](wave5-exit-review.md) | ✅ |
 | 5.3 | **코드 W5-1~4** | — | ✅ |
-| 5.4 | dogfood · ADR-013 | — | ⬜ |
+| 5.4 | Dogfood checklist | [wave5-dogfood-checklist.md](wave5-dogfood-checklist.md) | 📝 |
+| 5.5 | ADR-013 Link Index | — | ⬜ |
 
-**Exit:** Work journal → Person/Concept 링크 클릭 E2E.
+**Exit:** 389 tests · wiki link parse/index · incoming UI · preview tap.
+
+**Gate:** 5.4 dogfood 1회.
 
 ---
 
-## 8. 문서 인덱스
+## 8. Step 6 — Wave 6 (PoC · non-blocking)
+
+| Step | SSOT | 상태 |
+|------|------|:----:|
+| W6 | entity-centric-evolution-plan §Wave 6 | 📋 outline only |
+
+---
+
+## 9. 문서 인덱스
 
 | Wave | Spec | Review | 기타 |
 |------|------|--------|------|
@@ -116,29 +127,26 @@
 | 2 | [wave2-spec](wave2-vault-record-spec.md) | [wave2-review](wave2-pre-implementation-review.md) | vault-layout-v2 |
 | 3 | [wave3-spec](wave3-timeline-journal-spec.md) | — | |
 | 4 | [wave4-spec](wave4-entity-types-spec.md) | [wave4-exit](wave4-exit-review.md) | entity-type-philosophy |
-| 5 | [wave5-spec](wave5-connection-spec.md) | — | Connection |
+| 5 | [wave5-spec](wave5-connection-spec.md) | [wave5-exit](wave5-exit-review.md) | [dogfood](wave5-dogfood-checklist.md) |
 | — | [storage-masterplan](entity-record-storage-masterplan.md) | — | cross-cutting |
 
 ---
 
-## 9. 다음 액션 (순서)
+## 10. 다음 액션 (순서)
 
 ```
-[지금]  Step 1.2 dogfood checklist 작성 ✅
-        Step 2.2 wave2 pre-implementation review ✅
-        Step 3.1 wave3 spec 초안 ✅
-        Step 4.1 wave4 spec 초안 ✅
+[지금]  Wave 5 exit review ✅ · dogfood checklist ✅
 
-[다음]  Step 2.2 P0 결정 확정 → Wave 2 Gate 🟢
-        Step 1.2 dogfood 1회 (사용자)
+[다음]  Wave 5 dogfood 1회 (사용자 · A1~A6)
+        ADR-013 Link Index 초안 (optional)
 
-[그다음] Wave 2 코드 W2-0~6
+[그다음] Wave 6 PoC scope 검토 · W3/W4 dogfood backlog
 ```
 
 ---
 
-## 10. 문서 이력
+## 11. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-19 | v1 — 단계별 로드맵 SSOT |
+| 2026-06-19 | v2 — Wave 5 MVP exit · dogfood checklist |

@@ -3,7 +3,7 @@
 > **일자:** 2026-06-19  
 > **범위:** Wave 4 코드 · 테스트  
 > **판정:** 🟡 **MVP Exit** — multi-type catalog · fusion · entity journal · browse filter ✅ · dogfood ⏳  
-> **다음:** entity journal 편집 UI · Person seed 확장 · Wave 5 Connection
+> **다음:** Wave 6 · dogfood · ADR-013
 
 ---
 
@@ -68,7 +68,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 | R-W4-1 | Entity journal list/edit UI | ✅ W4.1 |
 | R-W4-2 | Person seed 100+ (non-blocking) | optional |
 | R-W4-3 | Place · Organization user-local MVP | W4.2 |
-| R-W4-4 | Connection graph (Entity links) | W5 |
+| R-W4-4 | Connection graph (Entity links) | ✅ W5 MVP |
 
 ---
 
