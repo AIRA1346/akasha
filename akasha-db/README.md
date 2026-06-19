@@ -2,7 +2,7 @@
 
 AKASHA 앱의 **글로벌 작품 메타데이터 사전** (Tier 1 Registry).
 
-**현재:** Steam v1 엄선 **430작** · **v4** — `wk_` 영구 ID · 해시 샤드 (351개)  
+**현재:** **10,048작** · **v4** — `wk_` 영구 ID · 해시 샤드 (1713개)  
 **장기:** 세상의 모든 작품 사전 — [docs/strategy/data-architecture-redesign.md](../docs/strategy/data-architecture-redesign.md)
 
 ## 구조 (v4 — 해시 샤딩)

@@ -1,7 +1,7 @@
 # Release Readiness Checklist — Steam v1
 
 > **지위:** M2→M3 출시 게이트 **운영 SSOT**  
-> **갱신:** 2026-06-16 (extensibility E0~E1 진행)  
+> **갱신:** 2026-06-19 (Release 리허설 · @10048 · CDN push)  
 > **상위:** [ROADMAP.md](../ROADMAP.md) M2 · [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ---
@@ -10,13 +10,13 @@
 
 **M3 출시 = 아래 6개 조건 모두 충족**
 
-| ID | 조건 | 상태 (2026-06-13) |
+| ID | 조건 | 상태 (2026-06-19) |
 |----|------|:-----------------:|
 | R1 | Steam v1 기능 동결 ([ROADMAP](ROADMAP.md) §체크리스트) | ✅ |
 | R2 | 자동 게이트 green (§2) | ✅ |
-| R3 | P0 수동 QA 12/12 (§3) | ✅ |
+| R3 | P0 수동 QA 12/12 (§3) | 🔶 Release 빌드 기준 재확인 권장 |
 | R4 | Steamworks depot·스토어·IAP (§4) | ✅ |
-| R5 | 카탈로그·검색 스토어 약속 일치 (§5) | ✅ |
+| R5 | 카탈로그·검색 스토어 약속 일치 (§5) | 🔶 CDN 10k 배포·스토어 카피 정합 |
 | R6 | 법무·Privacy URL (§6) | ✅ |
 
 **범례:** ✅ PASS · 🔶 부분 · ⏳ 미착수 · ❌ FAIL
@@ -36,14 +36,14 @@ C:\src\flutter\bin\dart.bat run tool/quality_gate.dart --locale-minimum
 C:\src\flutter\bin\dart.bat run tool/coverage_dashboard.dart
 ```
 
-| # | 게이트 | Pass 기준 | 2026-06-10 |
+| # | 게이트 | Pass 기준 | 2026-06-19 |
 |---|--------|-----------|:----------:|
-| G1 | `flutter test` | 0 fail | ✅ **254/254** |
-| G2 | `ci_registry_check` | exit 0 | ✅ (490 works) |
+| G1 | `flutter test` | 0 fail | ✅ **335/335** |
+| G2 | `ci_registry_check` | exit 0 | ✅ (10048 works) |
 | G3 | `preflight_check` | 4 step OK | ✅ |
 | G4 | `quality_gate --release` | RB1·RB2 PASS | ✅ invalid_en=0 |
-| G4b | `quality_gate --locale-minimum` | ko≥99% · en 100% | ✅ 5181/5181 |
-| G5 | `flutter analyze lib/` | 0 error | ✅ (59 info/warn, 0 error) |
+| G4b | `quality_gate --locale-minimum` | ko≥99% · en 100% | ✅ 10048/10048 |
+| G5 | `flutter analyze lib/` | 0 error | ✅ (33 info/warn, 0 error) |
 | G6 | Release 빌드 | exe cold start | ✅ `build\windows\x64\runner\Release\akasha.exe` |
 
 ### CI 갭 (출시 전 close)
@@ -111,11 +111,11 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 
 ## 5. 카탈로그·검색 (G-CATALOG)
 
-| # | 체크 | 기준 | 2026-06-10 |
+| # | 체크 | 기준 | 2026-06-19 |
 |---|------|------|:----------:|
-| C1 | manifest `entryCount` = 번들 | `steam_v1_bundle_test` | ✅ **490** |
+| C1 | manifest `entryCount` = 번들 | `steam_v1_bundle_test` | ✅ **10048** (CDN push) |
 | C2 | dedupe | `dedupe_linter` | ✅ 0 |
-| C3 | 스토어 숫자 = manifest | m2 카피 「490+」 | ✅ |
+| C3 | 스토어 숫자 = manifest | m2 카피 「10k+」 | 🔶 스토어 카피 갱신 필요 |
 | C4 | 대표 검색 20건 recall@10 | ≥ 0.8 | ⏳ |
 | C5 | SD3 Pause 조건 | dedupe·quality·SW1 | ✅ green |
 
@@ -154,7 +154,7 @@ SSOT: [m2-steam-store-page.md](programs/m2-steam-store-page.md)
 | 2026-06-10 | Release exe | 0/12 | 6/6 | test 254 · build OK · P0 auto 4건 · deprecated dialog 삭제 |
 | 2026-06-13 | Release exe | 12/12 | 6/6 | 스팀 데포 업로드 및 수동/자동 QA 전수 합격 |
 | 2026-06-14 | Release exe | — | 6/6 | Sprint A1 — test 271 · build OK |
-| 2026-06-14 | Release exe | 12/12 | 6/6 | Sprint A2 Dogfood E2E ✅ (사용자) |
+| 2026-06-19 | Release exe | — | 7/7 | test **335** · preflight · locale-minimum · build OK · akasha-db CDN push |
 
 ---
 

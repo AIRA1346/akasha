@@ -24,7 +24,7 @@
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
-| **CDN** | akasha-db.pages.dev — **push 후 갱신 필요** |
+| **CDN** | akasha-db.pages.dev — **10048 push 완료** (Pages 배포 대기·확인) |
 
 ---
 
