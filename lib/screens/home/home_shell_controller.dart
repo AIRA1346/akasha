@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
+import '../../core/archiving/record_link.dart';
+import '../../core/ports/record_link_port.dart';
 import '../../core/ports/registry_port.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../data/adapters/user_catalog_store_adapter.dart';
@@ -15,6 +17,7 @@ import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
 import '../../services/personal_library_membership_service.dart';
+import '../../services/record_link_navigator.dart';
 import 'coordinators/home_browse_coordinator.dart';
 import 'coordinators/home_catalog_coordinator.dart';
 import 'coordinators/home_dialogs_coordinator.dart';
@@ -191,6 +194,20 @@ class HomeShellController {
 
   PersonalLibraryMembershipService get libraryMembership =>
       browse.libraryMembership;
+
+  RecordLinkPort get linkIndex => vault.linkIndex;
+
+  Future<void> handleWikiLinkTap(ParsedRecordLink link) async {
+    if (!host.mounted) return;
+    await RecordLinkNavigator.navigateLink(
+      host.context,
+      link: link,
+      userCatalog: userCatalog,
+      vaultItems: vault.items,
+      onOpenWork: workbenchCoord.openBrowseItem,
+      linkIndex: vault.linkIndex,
+    );
+  }
 
   // —— Wiring UI (scaffold) ——
   get dashboardUi => wiring.dashboardUi;

@@ -9,6 +9,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/library_theme.dart';
 import '../../../services/entitlement_service.dart';
 import '../../../services/library_theme_preferences.dart';
+import '../../../services/record_link_index_service.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
 import '../home_auto_archive.dart';
@@ -41,6 +42,9 @@ class HomeVaultCoordinator {
 
   StreamSubscription<void>? vaultUpdateSubscription;
   Timer? vaultReloadDebounce;
+  Timer? linkIndexDebounce;
+
+  final RecordLinkIndexService linkIndex = RecordLinkIndexService();
 
   Future<void> initService() async {
     await vault.init();
@@ -61,7 +65,10 @@ class HomeVaultCoordinator {
     if (!isMounted()) return;
     scheduleRebuild(() => items = loadedItems);
     onVaultItemsSynced(loadedItems);
+    await rebuildLinkIndex();
   }
+
+  Future<void> rebuildLinkIndex() => linkIndex.rebuildIndex();
 
   Future<void> autoArchiveRegistryWorks({
     bool showFeedback = false,
@@ -89,11 +96,16 @@ class HomeVaultCoordinator {
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
         if (isMounted()) onVaultChanged();
       });
+      linkIndexDebounce?.cancel();
+      linkIndexDebounce = Timer(const Duration(milliseconds: 800), () {
+        rebuildLinkIndex();
+      });
     });
   }
 
   void dispose() {
     vaultReloadDebounce?.cancel();
+    linkIndexDebounce?.cancel();
     vaultUpdateSubscription?.cancel();
   }
 }

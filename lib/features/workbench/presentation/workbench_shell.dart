@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../core/archiving/record_link.dart';
 import '../data/workbench_controller.dart';
 import '../../../widgets/work_tab_rail.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
@@ -14,6 +15,7 @@ class WorkbenchShell extends StatefulWidget {
   final void Function(AkashaItem saved) onWorkSaved;
   final void Function(String tabId, AkashaItem item) onWorkDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
 
   const WorkbenchShell({
     super.key,
@@ -22,6 +24,7 @@ class WorkbenchShell extends StatefulWidget {
     required this.onWorkSaved,
     required this.onWorkDeleted,
     this.onAddToLibrary,
+    this.onWikiLinkTap,
   });
 
   @override
@@ -143,6 +146,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                   widget.controller.markDirty(id, dirty: dirty);
                 },
                 onAddToLibrary: widget.onAddToLibrary,
+                onWikiLinkTap: widget.onWikiLinkTap,
               );
             },
           ),

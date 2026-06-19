@@ -100,8 +100,8 @@
 |---|------|------|:----:|
 | 5.1 | Connection spec v1 | [wave5-connection-spec.md](wave5-connection-spec.md) | ✅ |
 | 5.2 | ADR-013 Link Index | — | ⬜ |
-| 5.3 | **코드 W5-1~2** | — | ✅ |
-| 5.4 | **코드 W5-3~4** UI · navigate | — | ⬜ |
+| 5.3 | **코드 W5-1~4** | — | ✅ |
+| 5.4 | dogfood · ADR-013 | — | ⬜ |
 
 **Exit:** Work journal → Person/Concept 링크 클릭 E2E.
 

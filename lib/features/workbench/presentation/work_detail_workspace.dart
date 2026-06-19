@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../core/archiving/record_link.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
@@ -30,6 +31,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final void Function(Future<void> Function()? save)? onBindSave;
   final void Function(String tabId, AkashaItem draft)? onPreserveDraft;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
 
   const WorkDetailWorkspace({
     super.key,
@@ -46,6 +48,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onAddToLibrary,
     this.onBindSave,
     this.onPreserveDraft,
+    this.onWikiLinkTap,
   });
 
   @override
@@ -550,6 +553,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               onBodyChanged: _markDirty,
               onFileChanged: _markDirty,
               onOpenFileView: _refreshFullFileEditor,
+              onWikiLinkTap: widget.onWikiLinkTap,
             ),
           ),
         ),

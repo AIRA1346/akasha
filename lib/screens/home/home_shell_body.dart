@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
+import '../../core/archiving/record_link.dart';
+import '../../core/ports/record_link_port.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
@@ -85,7 +87,9 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onNewJournalEntry;
   final int timelineReloadToken;
   final UserCatalogPort userCatalog;
+  final RecordLinkPort linkIndex;
   final void Function(BrowseEntityScope scope) onEntityScopeChanged;
+  final void Function(ParsedRecordLink link) onWikiLinkTap;
 
   const HomeShellBody({
     super.key,
@@ -139,7 +143,9 @@ class HomeShellBody extends StatelessWidget {
     required this.onNewJournalEntry,
     required this.timelineReloadToken,
     required this.userCatalog,
+    required this.linkIndex,
     required this.onEntityScopeChanged,
+    required this.onWikiLinkTap,
   });
 
   @override
@@ -212,6 +218,7 @@ class HomeShellBody extends StatelessWidget {
                         onWorkSaved: onWorkbenchWorkSaved,
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onAddToLibrary: onAddToLibrary,
+                        onWikiLinkTap: onWikiLinkTap,
                         browseContent: isTimelineMode
                             ? RecordsView(
                                 vaultItems: items,
@@ -253,6 +260,9 @@ class HomeShellBody extends StatelessWidget {
     if (!scope.showsWorkGrid) {
       return CatalogEntityBrowseView(
         userCatalog: userCatalog,
+        linkIndex: linkIndex,
+        vaultItems: items,
+        onOpenWork: onOpenBrowseItem,
         scope: scope,
       );
     }
@@ -278,6 +288,9 @@ class HomeShellBody extends StatelessWidget {
         children: [
           CatalogEntityBrowseView(
             userCatalog: userCatalog,
+            linkIndex: linkIndex,
+            vaultItems: items,
+            onOpenWork: onOpenBrowseItem,
             scope: BrowseEntityScope.all,
             compact: true,
           ),

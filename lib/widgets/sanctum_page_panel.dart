@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/archiving/record_link.dart';
 import 'markdown_body_editor.dart';
 import 'vault_markdown_body.dart';
 
@@ -22,6 +23,7 @@ class SanctumPagePanel extends StatelessWidget {
   final VoidCallback? onReloadFromDisk;
   final VoidCallback? onDismissExternalChange;
   final DateTime? lastSavedAt;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
 
   const SanctumPagePanel({
     super.key,
@@ -40,6 +42,7 @@ class SanctumPagePanel extends StatelessWidget {
     this.onReloadFromDisk,
     this.onDismissExternalChange,
     this.lastSavedAt,
+    this.onWikiLinkTap,
   });
 
   @override
@@ -163,6 +166,7 @@ class SanctumPagePanel extends StatelessWidget {
           child: VaultMarkdownBody(
             data: previewMarkdown,
             mdFilePath: mdFilePath,
+            onWikiLinkTap: onWikiLinkTap,
           ),
         );
       case SanctumPageView.body:

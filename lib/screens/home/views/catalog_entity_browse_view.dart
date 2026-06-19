@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../models/akasha_item.dart';
 import '../../../models/browse_entity_scope.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
@@ -15,11 +17,17 @@ class CatalogEntityBrowseView extends StatefulWidget {
     super.key,
     required this.userCatalog,
     required this.scope,
+    this.linkIndex,
+    this.vaultItems = const [],
+    this.onOpenWork,
     this.compact = false,
   });
 
   final UserCatalogPort userCatalog;
   final BrowseEntityScope scope;
+  final RecordLinkPort? linkIndex;
+  final List<AkashaItem> vaultItems;
+  final void Function(AkashaItem item)? onOpenWork;
   final bool compact;
 
   @override
@@ -78,6 +86,10 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
       context,
       entity: entity,
       entry: entry,
+      linkIndex: widget.linkIndex,
+      userCatalog: widget.userCatalog,
+      vaultItems: widget.vaultItems,
+      onOpenWork: widget.onOpenWork,
     );
   }
 

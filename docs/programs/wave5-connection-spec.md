@@ -1,6 +1,6 @@
 # Wave 5 — Connection 구현 스펙
 
-> **상태:** W5-1~2 **코드** · W5-3 UI ⬜  
+> **상태:** W5-1~4 **MVP 코드** · dogfood ⬜  
 > **갱신:** 2026-06-19  
 > **선행:** Wave 3 ✅ · Wave 4 ✅ MVP  
 > **SSOT:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md) §Wave 5
@@ -147,8 +147,8 @@ Timeline/journal `added_at` / `time_anchor` 같은 **로컬 날짜** Record를 E
 
 - [x] W5-1 RecordLinkParser
 - [x] W5-2 Link index rebuild + incremental (full rebuild MVP)
-- [ ] W5-3 incoming links on entity detail
-- [ ] W5-4 outbound link click navigate
+- [x] W5-3 incoming links on entity detail
+- [x] W5-4 outbound link click navigate (preview tap)
 - [ ] Work → Person · Concept link E2E dogfood
 
 ---
@@ -168,4 +168,4 @@ FusionSearch (title resolve) ✅
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-19 | v1.1 — W5-1 parser · W5-2 index service |
+| 2026-06-19 | v1.2 — W5-3~4 UI · vault link index auto-rebuild |

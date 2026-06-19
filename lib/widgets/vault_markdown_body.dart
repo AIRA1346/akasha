@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 import '../utils/vault_asset_resolver.dart';
+import '../core/archiving/record_link.dart';
+import '../services/record_link_markdown.dart';
 import 'safe_local_image.dart';
 
 /// Sanctum vault md 본문 렌더러 — vault 상대 이미지·외부 URL 지원
 class VaultMarkdownBody extends StatelessWidget {
   final String data;
   final String? mdFilePath;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
 
   const VaultMarkdownBody({
     super.key,
     required this.data,
     this.mdFilePath,
+    this.onWikiLinkTap,
   });
 
   static const _networkImageHeaders = {
@@ -58,12 +62,20 @@ class VaultMarkdownBody extends StatelessWidget {
       ),
     );
 
+    final displayData = RecordLinkMarkdown.preprocessForDisplay(data);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: MarkdownBody(
-        data: data,
+        data: displayData,
         styleSheet: sheet,
         selectable: true,
+        onTapLink: (text, href, title) {
+          final link = RecordLinkMarkdown.linkFromTapHref(href);
+          if (link != null && onWikiLinkTap != null) {
+            onWikiLinkTap!(link);
+          }
+        },
         imageBuilder: (uri, title, alt) =>
             _buildImage(uri.toString(), alt ?? title),
       ),
