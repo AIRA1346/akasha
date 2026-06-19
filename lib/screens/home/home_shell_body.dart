@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
+import '../../core/ports/user_catalog_port.dart';
+import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../features/workbench/presentation/workbench_shell.dart';
 import '../../models/akasha_item.dart';
@@ -21,6 +23,7 @@ import 'home_dashboard_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_section_preferences.dart';
 import 'home_vault_banner.dart';
+import 'views/catalog_entity_browse_view.dart';
 import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
 import 'views/records_view.dart';
@@ -81,6 +84,8 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
   final int timelineReloadToken;
+  final UserCatalogPort userCatalog;
+  final void Function(BrowseEntityScope scope) onEntityScopeChanged;
 
   const HomeShellBody({
     super.key,
@@ -133,6 +138,8 @@ class HomeShellBody extends StatelessWidget {
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
     required this.timelineReloadToken,
+    required this.userCatalog,
+    required this.onEntityScopeChanged,
   });
 
   @override
@@ -181,6 +188,8 @@ class HomeShellBody extends StatelessWidget {
                     onClearCategories: onClearCategories,
                     onToggleWorkStatus: onToggleWorkStatus,
                     onToggleMyStatus: onToggleMyStatus,
+                    selectedEntityScope: filterCtrl.entityScope,
+                    onEntityScopeChanged: onEntityScopeChanged,
                   ),
                 if (!isTimelineMode) const Divider(height: 1),
               ],
@@ -224,20 +233,7 @@ class HomeShellBody extends StatelessWidget {
                                 onCuratedReorder: onCuratedReorder,
                                 onSearch: onSearch,
                               )
-                            : BrowseView(
-                                filteredCards: filteredCards,
-                                sectionPrefs: sectionPrefs,
-                                filterCategories: filterCtrl.categories,
-                                isCatalogLoading: isCatalogLoading,
-                                isCatalogLoadingMore: isCatalogLoadingMore,
-                                catalogHasMore: catalogHasMore,
-                                catalogLoadedThrough: catalogLoadedThrough,
-                                catalogTotalEntries: catalogTotalEntries,
-                                onLoadMoreCatalog: onLoadMoreCatalog,
-                                displayName: displayName,
-                                posterCardBuilder: posterCardBuilder,
-                                onStateChanged: onStateChanged,
-                              ),
+                            : _buildDashboardBrowseContent(),
                       ),
                     ),
                   ],
@@ -248,5 +244,47 @@ class HomeShellBody extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Widget _buildDashboardBrowseContent() {
+    final scope = filterCtrl.entityScope;
+
+    if (!scope.showsWorkGrid) {
+      return CatalogEntityBrowseView(
+        userCatalog: userCatalog,
+        scope: scope,
+      );
+    }
+
+    final workGrid = BrowseView(
+      filteredCards: filteredCards,
+      sectionPrefs: sectionPrefs,
+      filterCategories: filterCtrl.categories,
+      isCatalogLoading: isCatalogLoading,
+      isCatalogLoadingMore: isCatalogLoadingMore,
+      catalogHasMore: catalogHasMore,
+      catalogLoadedThrough: catalogLoadedThrough,
+      catalogTotalEntries: catalogTotalEntries,
+      onLoadMoreCatalog: onLoadMoreCatalog,
+      displayName: displayName,
+      posterCardBuilder: posterCardBuilder,
+      onStateChanged: onStateChanged,
+    );
+
+    if (scope == BrowseEntityScope.all) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          CatalogEntityBrowseView(
+            userCatalog: userCatalog,
+            scope: BrowseEntityScope.all,
+            compact: true,
+          ),
+          Expanded(child: workGrid),
+        ],
+      );
+    }
+
+    return workGrid;
   }
 }

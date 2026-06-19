@@ -82,6 +82,7 @@ flutter:
     - assets/registry/shards/book/
     - assets/registry/shards/movie/
     - assets/registry/shards/drama/
+    - assets/entities/person_seed.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,3 +1,4 @@
+import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../services/browse_pipeline.dart';
 import '../../utils/helpers.dart';
@@ -9,6 +10,7 @@ class HomeBrowseFilterController {
   final Set<MediaCategory> categories = {};
   final Set<String> workStatuses = {};
   final Set<String> myStatuses = {};
+  BrowseEntityScope entityScope = BrowseEntityScope.work;
 
   BrowseFilterState get filterState => BrowseFilterState(
         domain: domain,
@@ -70,6 +72,10 @@ class HomeBrowseFilterController {
     if (!myStatuses.remove(label)) {
       myStatuses.add(label);
     }
+  }
+
+  void setEntityScope(BrowseEntityScope scope) {
+    entityScope = scope;
   }
 
   void pruneInvalidStatuses() {

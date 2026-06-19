@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
@@ -21,11 +22,18 @@ class FakeUserCatalogPort implements UserCatalogPort {
   List<UserCatalogEntity> get all => List.unmodifiable(_entities);
 
   @override
-  List<UserCatalogEntity> search(String query, {MediaCategory? subtype}) {
+  List<UserCatalogEntity> search(
+    String query, {
+    MediaCategory? subtype,
+    EntityAnchorType? entityType,
+  }) {
     final q = query.trim().toLowerCase();
     if (q.isEmpty) return const [];
     return _entities.where((entity) {
-      if (subtype != null && entity.subtype != subtype) return false;
+      if (entityType != null && entity.anchorType != entityType) return false;
+      if (subtype != null && entity.isWorkEntity && entity.subtype != subtype) {
+        return false;
+      }
       return entity.matchesQuery(q);
     }).toList();
   }

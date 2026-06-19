@@ -1,3 +1,5 @@
+import '../core/archiving/entity_anchor.dart';
+import '../../core/ports/entity_registry_port.dart';
 import '../core/ports/registry_port.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
@@ -18,13 +20,17 @@ class FusionRegistryHit {
     required this.work,
     required this.source,
     this.hint = RegistryRemoteHint.available,
+    this.entityType = EntityAnchorType.work,
   });
 
   final RegistryWork work;
   final FusionRegistrySource source;
   final RegistryRemoteHint hint;
+  final EntityAnchorType entityType;
 
   bool get isUserLocalCatalog => source == FusionRegistrySource.userCatalog;
+
+  bool get isWorkEntity => entityType == EntityAnchorType.work;
 }
 
 class FusionSearchResult {
@@ -44,6 +50,7 @@ abstract final class FusionSearchService {
     required List<AkashaItem> localItems,
     required UserCatalogPort userCatalog,
     required RegistryPort registry,
+    EntityRegistryPort? entityRegistry,
   }) async {
     final trimmed = query.trim();
     if (trimmed.isEmpty) {
@@ -79,12 +86,29 @@ abstract final class FusionSearchService {
         FusionRegistryHit(
           work: entity.toRegistryWork(),
           source: FusionRegistrySource.userCatalog,
+          entityType: entity.anchorType,
         ),
       );
     }
 
     final catalogIds = catalogHits.map((e) => e.work.workId).toSet();
-    final excludeIds = {...allLocalWorkIds, ...catalogIds};
+    var excludeIds = {...allLocalWorkIds, ...catalogIds};
+
+    final entityGlobalHits = <FusionRegistryHit>[];
+    if (entityRegistry != null) {
+      await entityRegistry.init();
+      for (final fact in entityRegistry.search(trimmed)) {
+        if (excludeIds.contains(fact.entityId)) continue;
+        entityGlobalHits.add(
+          FusionRegistryHit(
+            work: fact.toRegistryWork(),
+            source: FusionRegistrySource.globalRegistry,
+            entityType: fact.entityType,
+          ),
+        );
+        excludeIds = {...excludeIds, fact.entityId};
+      }
+    }
 
     final globalWorks = await registry.searchAsync(trimmed);
     final globalEntries = globalWorks
@@ -108,7 +132,7 @@ abstract final class FusionSearchService {
 
     return FusionSearchResult(
       localItems: local,
-      registryHits: [...catalogHits, ...dedupedGlobal],
+      registryHits: [...catalogHits, ...entityGlobalHits, ...dedupedGlobal],
     );
   }
 

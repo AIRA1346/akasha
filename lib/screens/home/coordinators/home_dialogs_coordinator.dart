@@ -6,6 +6,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../models/work_id_codec.dart';
 import '../../../models/library_theme.dart';
+import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../home_auto_archive.dart';
@@ -82,16 +83,30 @@ class HomeDialogsCoordinator {
           showMessage('볼트를 먼저 연결해 주세요.');
           return;
         }
-        await HomeDialogsFacade.showAddDialog(
+        await HomeDialogsFacade.showCustomAddWithTypePicker(
           context: ctx,
-          initialTitle: query,
+          query: query,
           showMessage: showMessage,
-          onSavedToVault: (item) async {
+          onWorkSavedToVault: (item) async {
             await AkashaFileService().saveItem(item);
             if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
               await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
             }
             await loadItems();
+          },
+          onCatalogEntitySaved: (result) async {
+            await userCatalog.upsert(result.entity);
+            if (result.createJournal) {
+              final vault = AkashaFileService().vaultPath;
+              if (vault != null && vault.isNotEmpty) {
+                await const EntityVaultStore().saveCatalogEntity(
+                  vaultPath: vault,
+                  entity: result.entity,
+                  body: result.journalBody,
+                );
+                await AkashaFileService().signalVaultChanged();
+              }
+            }
           },
         );
       },

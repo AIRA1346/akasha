@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
+import '../../../models/browse_entity_scope.dart';
 import '../../../models/enums.dart';
 import '../../../services/file_service.dart';
 import '../home_browse_filter_controller.dart';
@@ -91,6 +92,10 @@ class HomeBrowseCoordinator {
 
   void toggleMyStatus(String label) {
     scheduleRebuild(() => wiring.filterCoordinator.toggleMyStatus(label));
+  }
+
+  void onEntityScopeChanged(BrowseEntityScope scope) {
+    scheduleRebuild(() => wiring.filterCoordinator.setEntityScope(scope));
   }
 
   Widget buildPosterCard(BrowseCard card) => HomePosterCardFactory(

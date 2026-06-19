@@ -3,6 +3,9 @@ enum RecordKind {
   /// Tier 1 `wk_` 에 묶인 작품 Journal — Phase 0 기본.
   workJournal,
 
+  /// Wave 4 — non-work Entity journal (`entities/{type}/`).
+  entityJournal,
+
   /// Entity 없이 vault에만 있는 Journal.
   freeformJournal,
 

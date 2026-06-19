@@ -1,3 +1,4 @@
+import '../core/archiving/entity_anchor.dart';
 import 'enums.dart';
 import 'registry_work.dart';
 import 'work_titles.dart';
@@ -7,6 +8,12 @@ import '../utils/work_title_resolver.dart';
 /// Tier 1.5 — user local catalog Fact ([user-local-catalog-policy.md]).
 class UserCatalogEntity {
   static const String entityTypeWork = 'work';
+  static const String entityTypePerson = 'person';
+  static const String entityTypeEvent = 'event';
+  static const String entityTypeConcept = 'concept';
+  static const String entityTypePlace = 'place';
+  static const String entityTypeOrganization = 'organization';
+  static const String entityTypeCustom = 'custom';
   static const String catalogSourceUser = 'user';
 
   final String entityId;
@@ -33,6 +40,15 @@ class UserCatalogEntity {
     required this.addedAt,
   });
 
+  bool get isWorkEntity => entityType == entityTypeWork;
+
+  EntityAnchorType get anchorType {
+    for (final type in EntityAnchorType.values) {
+      if (type.name == entityType) return type;
+    }
+    return EntityAnchorType.custom;
+  }
+
   factory UserCatalogEntity.fromAkashaItem(AkashaItem item) {
     return UserCatalogEntity(
       entityId: item.workId,
@@ -43,6 +59,24 @@ class UserCatalogEntity {
       releaseYear: item.releaseYear,
       domain: item.domain,
       addedAt: item.addedAt,
+    );
+  }
+
+  factory UserCatalogEntity.userLocal({
+    required String entityId,
+    required EntityAnchorType type,
+    required String title,
+    MediaCategory? subtype,
+    List<String> aliases = const [],
+    DateTime? addedAt,
+  }) {
+    return UserCatalogEntity(
+      entityId: entityId,
+      entityType: type.name,
+      subtype: subtype ?? MediaCategory.manga,
+      title: title,
+      aliases: aliases,
+      addedAt: addedAt ?? DateTime.now().toUtc(),
     );
   }
 
@@ -82,7 +116,9 @@ class UserCatalogEntity {
   Map<String, dynamic> toJson() => {
         'entityId': entityId,
         'entityType': entityType,
-        'subtype': subtype.name,
+        if (isWorkEntity) 'subtype': subtype.name,
+        if (!isWorkEntity && subtype != MediaCategory.manga)
+          'subtype': subtype.name,
         'title': title,
         'titles': titles.toJson(),
         'creator': creator,
@@ -105,7 +141,10 @@ class UserCatalogEntity {
       domain: domain,
       creator: creator,
       releaseYear: releaseYear,
-      extensions: const {'userLocalCatalog': true},
+      extensions: {
+        'userLocalCatalog': true,
+        'entityType': entityType,
+      },
     );
   }
 

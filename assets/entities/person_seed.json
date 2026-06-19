@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "entities": [
+    {
+      "entityId": "pe_000000001",
+      "entityType": "person",
+      "title": "Albert Einstein",
+      "aliases": ["아인슈타인", "Einstein", "알베르트 아인슈타인"]
+    },
+    {
+      "entityId": "pe_000000002",
+      "entityType": "person",
+      "title": "Marie Curie",
+      "aliases": ["마리 퀴리", "Curie"]
+    },
+    {
+      "entityId": "pe_000000003",
+      "entityType": "person",
+      "title": "Ada Lovelace",
+      "aliases": ["에이다 러브레이스", "Lovelace"]
+    },
+    {
+      "entityId": "pe_000000004",
+      "entityType": "person",
+      "title": "Hayao Miyazaki",
+      "aliases": ["미야자키 하야오", "Miyazaki"]
+    },
+    {
+      "entityId": "pe_000000005",
+      "entityType": "person",
+      "title": "Osamu Tezuka",
+      "aliases": ["手塚治虫", "테즈uka", "Tezuka"]
+    }
+  ]
+}

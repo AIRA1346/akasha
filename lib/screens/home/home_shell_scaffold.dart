@@ -117,6 +117,8 @@ class HomeShellScaffold extends StatelessWidget {
               onNewTimelineEntry: controller.openTimelineQuickCapture,
               onNewJournalEntry: controller.openJournalQuickCapture,
               timelineReloadToken: controller.timelineReloadToken,
+              userCatalog: controller.userCatalog,
+              onEntityScopeChanged: controller.onEntityScopeChanged,
               onSelectPersonalLibrary: controller.selectPersonalLibrary,
               onEditPersonalLibrary: (lib) =>
                   controller.personalLibraryUi.showEditDialog(

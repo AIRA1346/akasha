@@ -1,3 +1,4 @@
+import '../../../models/browse_entity_scope.dart';
 import '../../../models/enums.dart';
 import '../../../models/personal_library_config.dart';
 import '../home_browse_filter_controller.dart';
@@ -71,5 +72,9 @@ class HomeFilterCoordinator {
   void toggleMyStatus(String label) {
     filterCtrl.toggleMyStatus(label);
     syncFiltersToActiveView();
+  }
+
+  void setEntityScope(BrowseEntityScope scope) {
+    filterCtrl.setEntityScope(scope);
   }
 }

@@ -11,6 +11,7 @@ import '../../data/adapters/works_registry_adapter.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
+import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
 import '../../services/personal_library_membership_service.dart';
@@ -263,6 +264,8 @@ class HomeShellController {
   void clearCategories() => browse.clearCategories();
   void toggleWorkStatus(String label) => browse.toggleWorkStatus(label);
   void toggleMyStatus(String label) => browse.toggleMyStatus(label);
+  void onEntityScopeChanged(BrowseEntityScope scope) =>
+      browse.onEntityScopeChanged(scope);
 
   AkashaItem resolveItemForOpen(AkashaItem item) =>
       workbenchCoord.resolveItemForOpen(item);

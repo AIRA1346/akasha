@@ -6,6 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 
 import '../core/ports/user_catalog_port.dart';
+import '../core/archiving/entity_anchor.dart';
+import '../models/entity_id_codec.dart';
 import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
 import '../models/work_id_codec.dart';
@@ -70,7 +72,7 @@ class UserCatalogStore implements UserCatalogPort {
                 Map<String, dynamic>.from(entry),
               );
               if (entity.entityId.isNotEmpty &&
-                  WorkIdCodec.isUserLocalWorkId(entity.entityId)) {
+                  EntityIdCodec.isUserLocalAny(entity.entityId)) {
                 _entities.add(entity);
               }
             }
@@ -92,12 +94,19 @@ class UserCatalogStore implements UserCatalogPort {
   }
 
   @override
-  List<UserCatalogEntity> search(String query, {MediaCategory? subtype}) {
+  List<UserCatalogEntity> search(
+    String query, {
+    MediaCategory? subtype,
+    EntityAnchorType? entityType,
+  }) {
     final trimmed = query.trim();
     if (trimmed.isEmpty) return const [];
     final q = trimmed.toLowerCase();
     return _entities.where((entity) {
-      if (subtype != null && entity.subtype != subtype) return false;
+      if (entityType != null && entity.anchorType != entityType) return false;
+      if (subtype != null && entity.isWorkEntity && entity.subtype != subtype) {
+        return false;
+      }
       return entity.matchesQuery(q);
     }).toList();
   }

@@ -74,15 +74,26 @@ class EntityFrontmatter {
 
   /// Lazy v2 fields to merge into YAML (Wave 2+).
   Map<String, String> toLazyWriteFields() {
-    if (entityType != EntityAnchorType.work || entityId.isEmpty) {
-      return const {};
+    if (entityId.isEmpty) return const {};
+
+    if (entityType == EntityAnchorType.work) {
+      return {
+        'entity_type': entityType.name,
+        'entity_id': entityId,
+        'subtype': subtype.name,
+        'record_kind': recordKind.name,
+      };
     }
-    return {
-      'entity_type': entityType.name,
-      'entity_id': entityId,
-      'subtype': subtype.name,
-      'record_kind': recordKind.name,
-    };
+
+    if (recordKind == RecordKind.entityJournal) {
+      return {
+        'entity_type': entityType.name,
+        'entity_id': entityId,
+        'record_kind': recordKind.name,
+      };
+    }
+
+    return const {};
   }
 
   EntityAnchor? toEntityAnchor() {

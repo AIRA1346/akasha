@@ -1,3 +1,4 @@
+import '../../core/archiving/entity_anchor.dart';
 import '../../models/enums.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/user_catalog_entity.dart';
@@ -18,8 +19,12 @@ class UserCatalogStoreAdapter implements UserCatalogPort {
   List<UserCatalogEntity> get all => _store.all;
 
   @override
-  List<UserCatalogEntity> search(String query, {MediaCategory? subtype}) =>
-      _store.search(query, subtype: subtype);
+  List<UserCatalogEntity> search(
+    String query, {
+    MediaCategory? subtype,
+    EntityAnchorType? entityType,
+  }) =>
+      _store.search(query, subtype: subtype, entityType: entityType);
 
   @override
   UserCatalogEntity? getById(String entityId) => _store.getById(entityId);

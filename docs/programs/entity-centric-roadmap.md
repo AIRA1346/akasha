@@ -1,6 +1,6 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1 ✅ · Wave 2 ✅ · Wave 3 ✅ MVP · Wave 4 **검토 → 코드 Gate**  
+> **상태:** Wave 1 ✅ · Wave 2 ✅ · Wave 3 ✅ · Wave 4 ✅ **MVP Exit**  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
@@ -27,11 +27,11 @@
 | **1** | W1 | Work Tier 1.5 catalog | ✅ | ✅ | ✅ | 🟡 |
 | **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ✅ | 🟢 |
 | **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
-| **4** | W4 | Person · Event · Concept | ✅ v1 | ⬜ | ⬜ | ⬜ |
+| **4** | W4 | Person · Event · Concept | ✅ v1 | ✅ | ✅ | 🟡 |
 | **5** | W5 | Connection | 📋 | ⬜ | ⬜ | ⬜ |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
-**현재 포커스:** Step 3 MVP Exit ✅ → Step 4 pre-review
+**현재 포커스:** Step 5 Wave 5 Connection 설계 · W4.1 entity journal edit UI
 
 ---
 
@@ -77,15 +77,18 @@
 
 ---
 
-## 6. Step 4 — Wave 4 (설계)
+## 6. Step 4 — Wave 4 (✅ MVP Exit)
 
 | # | 작업 | 문서 | 상태 |
 |---|------|------|:----:|
 | 4.1 | 7종 Type spec | [wave4-entity-types-spec.md](wave4-entity-types-spec.md) | ✅ v1 |
 | 4.2 | Concept vs Person (철학) | [entity-type-philosophy.md](../policy/entity-type-philosophy.md) | ✅ |
-| 4.3 | `EntityIdCodec` / catalog 일반화 | wave4 spec §4 | 📝 |
-| 4.4 | Person MVP seed (Wikidata) | wave4 spec §6 | 📝 |
-| 4.5 | **코드** | — | ⬜ W1+W2 Exit 후 |
+| 4.3 | `EntityIdCodec` / catalog 일반화 | wave4 spec §4 | ✅ |
+| 4.4 | Person MVP seed | wave4 spec §6 | ✅ (5 seed) |
+| 4.5 | **코드 W4-0~9** | — | ✅ |
+| 4.6 | Exit review | [wave4-exit-review.md](wave4-exit-review.md) | ✅ |
+
+**Exit:** 373 tests · multi-type catalog · fusion · entity journal · browse filter.
 
 **의존:** Wave 1 (catalog pattern) · Wave 2 (vault v2).
 

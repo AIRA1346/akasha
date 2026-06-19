@@ -6,10 +6,14 @@ import '../../../core/archiving/archive_record.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/record_kind.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
+import '../../../core/ports/entity_registry_port.dart';
+import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
+import '../../../services/entity_vault_store.dart';
 import '../../../services/journal_vault_store.dart';
+import '../../../services/person_seed_registry.dart';
 import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
@@ -18,6 +22,7 @@ import '../../../models/work_id_codec.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/fusion_search_dialog.dart';
 import '../../../widgets/library_theme_picker.dart';
+import 'add_catalog_entity_dialog.dart';
 import 'add_work_dialog.dart';
 import 'catalog_add_contribution_dialog.dart';
 import 'catalog_contributions_inbox_dialog.dart';
@@ -37,6 +42,7 @@ class HomeDialogsFacade {
     required List<AkashaItem> localItems,
     required UserCatalogPort userCatalog,
     required RegistryPort registry,
+    EntityRegistryPort? entityRegistry,
     required void Function(AkashaItem item) onSelectLocal,
     required Future<void> Function(RegistryWork work) onSelectRemote,
     required Future<void> Function(String query) onCustomAdd,
@@ -50,6 +56,7 @@ class HomeDialogsFacade {
         localItems: localItems,
         userCatalog: userCatalog,
         registry: registry,
+        entityRegistry: entityRegistry ?? PersonSeedRegistry.instance,
         onSelectLocal: onSelectLocal,
         onSelectRemote: onSelectRemote,
         onCustomAdd: (query) => onCustomAdd(query),
@@ -95,6 +102,45 @@ class HomeDialogsFacade {
     final result = await showAddWorkDialog(context, initialTitle: initialTitle);
     if (result == null) return;
     await onSavedToVault(result);
+  }
+
+  /// Wave 4 — 유형 선택 후 Work 아카이브 또는 catalog-only Entity 추가.
+  static Future<void> showCustomAddWithTypePicker({
+    required BuildContext context,
+    required String query,
+    required void Function(String message) showMessage,
+    required Future<void> Function(AkashaItem item) onWorkSavedToVault,
+    required Future<void> Function(CatalogEntityAddResult result) onCatalogEntitySaved,
+  }) async {
+    if (AkashaFileService().vaultPath == null) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+
+    final pickedType = await showCustomEntityTypePicker(
+      context,
+      initialTitle: query,
+    );
+    if (pickedType == null || !context.mounted) return;
+
+    if (pickedType == EntityAnchorType.work) {
+      await showAddDialog(
+        context: context,
+        initialTitle: query,
+        showMessage: showMessage,
+        onSavedToVault: onWorkSavedToVault,
+      );
+      return;
+    }
+
+    final addResult = await showAddCatalogEntityDialog(
+      context,
+      entityType: pickedType,
+      initialTitle: query,
+    );
+    if (addResult == null || !context.mounted) return;
+    await onCatalogEntitySaved(addResult);
+    showMessage('catalog에 「${addResult.entity.title}」을(를) 추가했습니다.');
   }
 
   static Future<void> showVaultSettings({

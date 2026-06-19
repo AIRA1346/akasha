@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/browse_entity_scope.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
 
@@ -17,6 +18,8 @@ class FilterSection extends StatelessWidget {
   final VoidCallback onClearCategories; // 변경: 카테고리 전체 클리어
   final ValueChanged<String> onToggleWorkStatus;
   final ValueChanged<String> onToggleMyStatus;
+  final BrowseEntityScope selectedEntityScope;
+  final ValueChanged<BrowseEntityScope> onEntityScopeChanged;
 
   const FilterSection({
     super.key,
@@ -29,6 +32,8 @@ class FilterSection extends StatelessWidget {
     required this.onClearCategories,
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
+    required this.selectedEntityScope,
+    required this.onEntityScopeChanged,
   });
 
   @override
@@ -40,6 +45,24 @@ class FilterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: BrowseEntityScope.values.map((scope) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 6),
+                  child: _chip(
+                    label: scope.label,
+                    selected: selectedEntityScope == scope,
+                    onTap: () => onEntityScopeChanged(scope),
+                    small: true,
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+          const SizedBox(height: 8),
+          if (selectedEntityScope.showsWorkGrid) ...[
           // ── 1. 대분류 (도메인) 필터 ──
           Row(
             children: [
@@ -127,6 +150,7 @@ class FilterSection extends StatelessWidget {
                 ),
               ),
             ),
+          ],
         ],
       ),
     );

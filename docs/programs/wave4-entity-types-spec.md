@@ -1,6 +1,6 @@
 # Wave 4 — Entity Types (Person · Event · Concept · …) 구현 스펙
 
-> **상태:** 설계 v1 · 코드 **대기** (Wave 1+2 Exit 후)  
+> **상태:** W4-0~9 **MVP Exit** · Person seed 5 · entity journal · browse filter ✅  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md) — **7종 + Custom · Animal ❌**  
 > **저장:** [entity-record-storage-masterplan.md](entity-record-storage-masterplan.md)
@@ -209,10 +209,16 @@ Dedupe: same `entityId` only (title dedupe **cross-type ❌** — homonym OK).
 
 ## 10. Wave 4 Exit
 
-- [ ] Person · Event · Concept 각 1건 E2E
-- [ ] Tiger = Concept · 나비 = Person dogfood ([philosophy §4](../policy/entity-type-philosophy.md))
-- [ ] Animal Type **미추가** 확인
-- [ ] Wave 1~2 regression green
+- [x] W4-0 EntityIdCodec + EntityAnchor enum
+- [x] W4-2 UserCatalog multi-type
+- [x] W4-3 FusionSearch multi-type catalog
+- [x] W4-4 Person seed 5 + EntityRegistryPort
+- [x] W4-5 Add dialog type picker
+- [x] W4-6 entities journal save (opt-in)
+- [x] W4-7 Concept MVP (user local co_u_*)
+- [x] W4-8 Event MVP (user local ev_u_*)
+- [x] W4-9 Browse entity type filter
+- [ ] Person · Event · Concept E2E dogfood
 
 ---
 

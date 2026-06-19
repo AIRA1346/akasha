@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
+import '../core/archiving/entity_anchor.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../utils/app_log.dart';
@@ -107,6 +108,14 @@ class AkashaFileService {
     await Directory(p.join(_vaultPath!, 'works')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'journal')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'entities')).create(recursive: true);
+    for (final type in EntityAnchorType.values) {
+      if (type == EntityAnchorType.work || type == EntityAnchorType.phenomenon) {
+        continue;
+      }
+      await Directory(
+        p.join(_vaultPath!, 'entities', type.name),
+      ).create(recursive: true);
+    }
 
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, 'works', cat.name)).create(recursive: true);
