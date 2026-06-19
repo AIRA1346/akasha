@@ -164,6 +164,18 @@ Future<EntityAnchorType?> showCustomEntityTypePicker(
               subtitle: '사건·행사',
               onTap: () => Navigator.pop(ctx, EntityAnchorType.event),
             ),
+            _TypeTile(
+              icon: Icons.place_outlined,
+              label: 'Place',
+              subtitle: '장소 — 카페·도시',
+              onTap: () => Navigator.pop(ctx, EntityAnchorType.place),
+            ),
+            _TypeTile(
+              icon: Icons.groups_outlined,
+              label: 'Organization',
+              subtitle: '조직·팀·브랜드',
+              onTap: () => Navigator.pop(ctx, EntityAnchorType.organization),
+            ),
           ],
         ),
       ),

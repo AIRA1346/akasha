@@ -167,6 +167,7 @@ class HomeShellController {
       canAddToLibrary: () => browse.canAddToLibrary,
       userCatalog: userCatalog,
       onCatalogEntityAdded: onCatalogEntityAdded,
+      getLinkIndex: () => vault.linkIndex,
     );
   }
 

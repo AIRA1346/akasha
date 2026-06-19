@@ -19,7 +19,7 @@ Wave 5 MVP(`[[entity_id|label]]` 파싱 → vault link index → 양방향 탐�
 | Entity incoming links | 🟢 | entity journal dialog 섹션 |
 | Workbench preview tap | 🟢 | `akasha-wiki:` → navigate |
 | Title-only resolve | 🟢 | catalog alias · vault work title |
-| ADR-013 | ⬜ | 문서 defer |
+| ADR-013 | 🟢 | [ADR-013](../adr/ADR-013-connection-link-index.md) |
 | W5-5 sameDay | ⬜ | optional |
 | E2E dogfood | ⏳ | manual gate |
 

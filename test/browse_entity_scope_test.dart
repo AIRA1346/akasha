@@ -3,7 +3,7 @@ import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/browse_entity_scope.dart';
 
 void main() {
-  test('browseScopeForEntityType maps person concept event', () {
+  test('browseScopeForEntityType maps person concept event place org', () {
     expect(
       browseScopeForEntityType(EntityAnchorType.person),
       BrowseEntityScope.person,
@@ -13,8 +13,16 @@ void main() {
       BrowseEntityScope.concept,
     );
     expect(
+      browseScopeForEntityType(EntityAnchorType.event),
+      BrowseEntityScope.event,
+    );
+    expect(
       browseScopeForEntityType(EntityAnchorType.place),
-      BrowseEntityScope.all,
+      BrowseEntityScope.place,
+    );
+    expect(
+      browseScopeForEntityType(EntityAnchorType.organization),
+      BrowseEntityScope.organization,
     );
   });
 }

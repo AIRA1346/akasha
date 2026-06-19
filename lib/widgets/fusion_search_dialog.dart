@@ -9,6 +9,7 @@ import '../core/ports/user_catalog_port.dart';
 import '../services/franchise_fusion_service.dart';
 import '../services/franchise_registry.dart';
 import '../services/fusion_search_service.dart';
+import '../services/fusion_search_sections.dart';
 import '../services/registry_visibility_service.dart';
 import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../services/user_registry_preferences.dart';
@@ -221,7 +222,12 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   @override
   Widget build(BuildContext context) {
     final query = _ctrl.text.trim();
-    final hasRegistryHits = _catalogHits.isNotEmpty || _globalHits.isNotEmpty;
+    final groups = FusionSearchSections.group(
+      local: _localResults,
+      catalogHits: _catalogHits,
+      globalHits: _globalHits,
+    );
+    final hasRegistryHits = groups.hasRegistryHits;
     final showCustomCta = query.isNotEmpty &&
         !_isSearching &&
         _localResults.isEmpty &&
@@ -273,20 +279,44 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                     )
                   : ListView(
                       children: [
-                        if (_localResults.isNotEmpty) ...[
-                          _sectionLabel('📂 내 아카이브', _localResults.length),
-                          ..._localResults.map(_buildLocalTile),
+                        if (groups.local.isNotEmpty) ...[
+                          _sectionLabel('📂 내 아카이브', groups.local.length),
+                          ...groups.local.map(_buildLocalTile),
                           const SizedBox(height: 8),
                         ],
-                        if (_catalogHits.isNotEmpty) ...[
-                          _sectionLabel('📋 내 catalog', _catalogHits.length),
-                          ..._catalogHits
+                        if (groups.catalogWork.isNotEmpty) ...[
+                          _sectionLabel(
+                            '📋 내 catalog — Work',
+                            groups.catalogWork.length,
+                          ),
+                          ...groups.catalogWork
                               .map((h) => _buildRemoteTile(_entryFromHit(h))),
                           const SizedBox(height: 8),
                         ],
-                        if (_globalHits.isNotEmpty) ...[
-                          _sectionLabel('🌐 글로벌 사전', _globalHits.length),
-                          ..._globalHits
+                        if (groups.catalogEntity.isNotEmpty) ...[
+                          _sectionLabel(
+                            '📋 내 catalog — Entity',
+                            groups.catalogEntity.length,
+                          ),
+                          ...groups.catalogEntity
+                              .map((h) => _buildRemoteTile(_entryFromHit(h))),
+                          const SizedBox(height: 8),
+                        ],
+                        if (groups.globalWork.isNotEmpty) ...[
+                          _sectionLabel(
+                            '🌐 글로벌 사전 — Work',
+                            groups.globalWork.length,
+                          ),
+                          ...groups.globalWork
+                              .map((h) => _buildRemoteTile(_entryFromHit(h))),
+                          const SizedBox(height: 8),
+                        ],
+                        if (groups.globalEntity.isNotEmpty) ...[
+                          _sectionLabel(
+                            '🌐 글로벌 — Entity',
+                            groups.globalEntity.length,
+                          ),
+                          ...groups.globalEntity
                               .map((h) => _buildRemoteTile(_entryFromHit(h))),
                         ],
                         if (showCustomCta) ...[

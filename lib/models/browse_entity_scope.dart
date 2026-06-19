@@ -7,6 +7,8 @@ enum BrowseEntityScope {
   person,
   concept,
   event,
+  place,
+  organization,
 }
 
 extension BrowseEntityScopeX on BrowseEntityScope {
@@ -16,6 +18,8 @@ extension BrowseEntityScopeX on BrowseEntityScope {
         BrowseEntityScope.person => 'Person',
         BrowseEntityScope.concept => 'Concept',
         BrowseEntityScope.event => 'Event',
+        BrowseEntityScope.place => 'Place',
+        BrowseEntityScope.organization => 'Org',
       };
 
   bool get showsWorkGrid =>
@@ -28,6 +32,8 @@ extension BrowseEntityScopeX on BrowseEntityScope {
         BrowseEntityScope.person => EntityAnchorType.person,
         BrowseEntityScope.concept => EntityAnchorType.concept,
         BrowseEntityScope.event => EntityAnchorType.event,
+        BrowseEntityScope.place => EntityAnchorType.place,
+        BrowseEntityScope.organization => EntityAnchorType.organization,
         _ => null,
       };
 
@@ -38,5 +44,7 @@ BrowseEntityScope browseScopeForEntityType(EntityAnchorType type) =>
       EntityAnchorType.person => BrowseEntityScope.person,
       EntityAnchorType.concept => BrowseEntityScope.concept,
       EntityAnchorType.event => BrowseEntityScope.event,
+      EntityAnchorType.place => BrowseEntityScope.place,
+      EntityAnchorType.organization => BrowseEntityScope.organization,
       _ => BrowseEntityScope.all,
     };

@@ -209,6 +209,8 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
       BrowseEntityScope.person => 'catalog에 Person이 없습니다.',
       BrowseEntityScope.concept => 'catalog에 Concept이 없습니다.',
       BrowseEntityScope.event => 'catalog에 Event가 없습니다.',
+      BrowseEntityScope.place => 'catalog에 Place가 없습니다.',
+      BrowseEntityScope.organization => 'catalog에 Organization이 없습니다.',
       _ => 'catalog에 Entity가 없습니다.',
     };
   }

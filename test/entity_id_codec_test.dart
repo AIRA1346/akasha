@@ -23,6 +23,14 @@ void main() {
       final event = EntityIdCodec.buildUserLocal(EntityAnchorType.event);
       expect(event.startsWith('ev_u_'), isTrue);
       expect(EntityIdCodec.typeFromId(event), EntityAnchorType.event);
+
+      final place = EntityIdCodec.buildUserLocal(EntityAnchorType.place);
+      expect(place.startsWith('pl_u_'), isTrue);
+      expect(EntityIdCodec.typeFromId(place), EntityAnchorType.place);
+
+      final org = EntityIdCodec.buildUserLocal(EntityAnchorType.organization);
+      expect(org.startsWith('or_u_'), isTrue);
+      expect(EntityIdCodec.typeFromId(org), EntityAnchorType.organization);
     });
 
     test('global id patterns', () {

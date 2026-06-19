@@ -1,6 +1,6 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1~4 ✅ MVP · **Wave 5 ✅ MVP Exit** (dogfood ⏳)  
+> **상태:** Wave 1~5 ✅ MVP · **Phase A/B UX** ✅ · dogfood ⏳ (구현 완료 후)  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
@@ -31,7 +31,7 @@
 | **5** | W5 | Connection | ✅ v1 | ✅ | ✅ | 🟡 |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
-**현재 포커스:** Wave 5 dogfood 1회 · ADR-013 · Wave 6 PoC 검토
+**현재 포커스:** Phase B Fusion type 섹션 · W4.2 Place/Org · ADR-013 ✅ · dogfood는 구현 완료 후 1회
 
 ---
 
@@ -102,7 +102,7 @@
 | 5.2 | Exit review | [wave5-exit-review.md](wave5-exit-review.md) | ✅ |
 | 5.3 | **코드 W5-1~4** | — | ✅ |
 | 5.4 | Dogfood checklist | [wave5-dogfood-checklist.md](wave5-dogfood-checklist.md) | 📝 |
-| 5.5 | ADR-013 Link Index | — | ⬜ |
+| 5.5 | ADR-013 Link Index | [ADR-013](../adr/ADR-013-connection-link-index.md) | ✅ |
 
 **Exit:** 389 tests · wiki link parse/index · incoming UI · preview tap.
 
@@ -135,12 +135,11 @@
 ## 10. 다음 액션 (순서)
 
 ```
-[지금]  Wave 5 exit review ✅ · dogfood checklist ✅
+[지금]  Phase A Entity Discovery strip ✅ · Phase B Fusion sections ✅
+        W4.2 Place/Organization catalog ✅ · ADR-013 ✅
 
-[다음]  Wave 5 dogfood 1회 (사용자 · A1~A6)
-        ADR-013 Link Index 초안 (optional)
-
-[그다음] Wave 6 PoC scope 검토 · W3/W4 dogfood backlog
+[다음]  Wave 6 PoC scope 검토 (optional)
+        dogfood 1회 — wave5-dogfood-checklist (구현 완료 후)
 ```
 
 ---
