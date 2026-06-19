@@ -18,7 +18,9 @@ Wave 0 설계는 **ADR-008 · ultimate-archiving-vision · GPT Entity 대화**�
 
 | 문서 | v2 산출 |
 |------|---------|
-| [wave1-user-catalog-spec.md](wave1-user-catalog-spec.md) | W1 구현 SSOT |
+| [entity-record-storage-masterplan.md](entity-record-storage-masterplan.md) | Entity/Record Type별 저장 · 시나리오 S1~S6 |
+| [wave1-exit-review.md](wave1-exit-review.md) | Wave 1 post-implementation Gate |
+| [wave2-vault-record-spec.md](wave2-vault-record-spec.md) | Wave 2 구현 SSOT |
 
 | 영역 | 등급 | 요약 |
 |------|:----:|------|
@@ -382,3 +384,4 @@ user catalog id와 `.md` work_id **동일 문자열**이면 OK.
 |------|------|
 | 2026-06-19 | 초판 — Wave 0 전면 검토 · P0~P2 · W1 순서 |
 | 2026-06-19 | **v2** — 코드 경로 · Browse/Search · ensureWorkId 7 · wave1 spec · in-memory 정책 |
+| 2026-06-19 | v3 포인터 — wave1-exit-review · wave2-vault-record-spec · entity-record-storage-masterplan |

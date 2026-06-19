@@ -1,8 +1,10 @@
 # Entity-Centric Evolution Plan — 존재 아카이빙 실행 SSOT
 
-> **상태:** Wave 0 ✅ · Wave 1 코드 착수 대기  
+> **상태:** Wave 0 ✅ · Wave 1 ✅ · **Wave 2 설계 v1** · 코드 착수 대기  
+> **로드맵:** [entity-centric-roadmap.md](entity-centric-roadmap.md) — 단계별 Gate  
 > **갱신:** 2026-06-19  
 > **결정:** 매체(Media Type) 최상위 분류 폐기 → **Entity + Record + Connection** 중심으로 진화  
+**철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md) — 7종 + Custom · Animal Type ❌  
 > **북극성:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)  
 > **기술 토대:** [ADR-008](../adr/ADR-008-record-entity-time-model.md) · [architecture-evolution-phases.md](architecture-evolution-phases.md)  
 > **선행 대화:** GPT Entity 모델 정렬 (2026-06-19)
@@ -97,7 +99,7 @@ Phase 1(Work) UI·볼트는 유지하되, 내부 모델·스키마·문서를 En
 | Phase 4 Timeline | 🔶 | 4.1~4.4a ✅ · 4.4b Entity Link ⏳ |
 | Phase 3 Entity types | ❌ | person/event/concept Tier 1 없음 |
 | Phase 5 Connection | ❌ | Link UI·인덱스 |
-| Tier 1.5 User Catalog | ❌ | custom ID가 검색·Fact layer 미연동 |
+| Tier 1.5 User Catalog | ✅ | Wave 1 `d4f8503` · [wave1-exit-review.md](wave1-exit-review.md) |
 | `MediaCategory` = UI 최상위 | ✅ (의도적) | Entity type으로 **승격** 설계만 |
 
 **Steam v1:** Phase 0 범위 **출시 가능** — 본 계획은 v1 **이후·병행** 확장.
@@ -153,9 +155,11 @@ Phase 1(Work) UI·볼트는 유지하되, 내부 모델·스키마·문서를 En
 | W1-5 | Contribution queue ↔ user catalog 관계 문서화 | policy § | merge 시 ID 치환 규칙 |
 | W1-6 | 테스트: user catalog only · catalog+md · global+md | test | regression green |
 
-**W1 Exit:** 사전 없이 추가한 Work가 **검색·조인**됨 · `wk_u_*` 발급.
+**W1 Exit:** ✅ 코드·테스트 — [wave1-exit-review.md](wave1-exit-review.md) · dogfood ⏳
 
 **W1 구현 SSOT:** [wave1-user-catalog-spec.md](wave1-user-catalog-spec.md)
+
+**W2 설계 SSOT:** [wave2-vault-record-spec.md](wave2-vault-record-spec.md) · [wave2-pre-implementation-review.md](wave2-pre-implementation-review.md)
 
 **W1 의존:** W0-2, W0-1 (ID 규칙).
 
@@ -175,7 +179,9 @@ Phase 1(Work) UI·볼트는 유지하되, 내부 모델·스키마·문서를 En
 
 **W2 Exit:** 모든 Record가 `ArchiveRecord`로 표현 가능 · 구 `.md` 100% 호환.
 
-**W2 의존:** W0-3, Phase 1 ✅.
+**W2 구현 SSOT:** [wave2-vault-record-spec.md](wave2-vault-record-spec.md)
+
+**W2 의존:** W0-3, Phase 1 ✅, Wave 1 Exit Review.
 
 ---
 

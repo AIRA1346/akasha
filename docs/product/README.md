@@ -12,6 +12,9 @@
 |:-:|------|------|
 | 0 | [programs/phase1-work-e2e-plan.md](../programs/phase1-work-e2e-plan.md) | **현재 실행** — Phase 1 E2E Sprint A~D |
 | 0 | [programs/entity-centric-evolution-plan.md](../programs/entity-centric-evolution-plan.md) | **Entity-centric 실행** — Wave 0~6 |
+| 0 | [programs/entity-centric-roadmap.md](../programs/entity-centric-roadmap.md) | **단계별 Gate** — Wave 1~4 진행 SSOT |
+| 0 | [policy/entity-type-philosophy.md](../policy/entity-type-philosophy.md) | **Entity Type 철학** — 7종 · Animal ❌ · 「왜 기록?」 |
+| 0 | [programs/entity-record-storage-masterplan.md](../programs/entity-record-storage-masterplan.md) | **Entity·Record 저장** — Type별 ID·경로·시나리오 |
 | 1 | [ultimate-archiving-vision.md](ultimate-archiving-vision.md) | **궁극적 아카이빙** — Entity+Timeline · Phase 1~4 |
 | 2 | [../product-vision.md](../product-vision.md) | Fact 사전 + Sanctum · v1 범위 |
 | 3 | [sanctum-md-customization.md](sanctum-md-customization.md) | `.md` YAML·슬롯·편집 |
@@ -26,6 +29,7 @@
 |------|:----:|------|
 | [ultimate-archiving-vision.md](ultimate-archiving-vision.md) | SSOT | 존재 아카이브 · Entity+Timeline · v1=작품 |
 | [vault-layout-v2.md](vault-layout-v2.md) | 스펙 | Entity-aware 볼트 · frontmatter v2 |
+| [../policy/entity-type-philosophy.md](../policy/entity-type-philosophy.md) | SSOT | Entity Type 세분화 철학 |
 | [sanctum-md-customization.md](sanctum-md-customization.md) | v1 P0~P3 ✅ | Sanctum `.md` 구현 |
 | [workbench-layout.md](workbench-layout.md) | ✅ | 4열 레이아웃 |
 | [my-library-design.md](my-library-design.md) | v1 ✅ | 나만의 서재 |

@@ -6,13 +6,15 @@
 | **날짜** | 2026-06-19 |
 | **상위** | [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) · [entity-centric-evolution-plan.md](../programs/entity-centric-evolution-plan.md) |
 | **선행** | [ADR-008](ADR-008-record-entity-time-model.md) · [ADR-001](ADR-001-dual-layer-entity-model.md) |
-| **관련** | [ADR-005](ADR-005-minimum-recordable-unit.md) · [user-local-catalog-policy.md](../policy/user-local-catalog-policy.md) · [vault-layout-v2.md](../product/vault-layout-v2.md) |
+| **관련** | [entity-type-philosophy.md](../policy/entity-type-philosophy.md) · [ADR-005](ADR-005-minimum-recordable-unit.md) · [user-local-catalog-policy.md](../policy/user-local-catalog-policy.md) · [vault-layout-v2.md](../product/vault-layout-v2.md) |
 
 ---
 
 ## 1. 맥락
 
 AKASHA 최상위 분류가 **매체(Media Type)** — `manga`, `animation`, `game` … — 에 고정되면, 인물·사건·지역·아이디어·일기 확장 시 **분류 체계가 붕괴**한다.
+
+**설계 철학:** AKASHA는 백과사전이 아니라 **개인 아카이브** — Type 세분화는 [entity-type-philosophy.md](../policy/entity-type-philosophy.md) §3 **7종 + Custom** 에 수렴한다.
 
 궁극 목표는 **「세상에서 만난 모든 것」** 을 사용자 관점에서 축적·연결·재활용하는 것이다.  
 작품은 **Entity Type `work`의 첫 subtype 집합**일 뿐, 제품 정의가 아니다.
@@ -45,6 +47,9 @@ AKASHA 최상위 분류가 **매체(Media Type)** — `manga`, `animation`, `gam
 | `organization` | 3b | 📋 | ✅ | `or_` · `or_u_` |
 | `phenomenon` | 3 | 📋 | ✅ | `ph_` · `ph_u_` |
 | `custom` | 0 | vault-only | ✅ | `cu_u_` |
+
+**목표 집합 (철학 SSOT):** Work · Person · Event · Place · Concept · Organization · Custom — [entity-type-philosophy.md](../policy/entity-type-philosophy.md).  
+`phenomenon`은 ADR-008 legacy — 신규 UI·Fact **우선 대상 아님**. **Animal Type은 도입하지 않음** (종·개념 → Concept, 특정 개체 → Person).
 
 - **Global (`*_` 9자리):** Rune Atelier 큐레이션 · akasha-db (또는 entity-db) · CI
 - **User local (`*_u_`):** [user-local-catalog-policy.md](../policy/user-local-catalog-policy.md) — 볼트 소유 · 즉시 검색 merge
