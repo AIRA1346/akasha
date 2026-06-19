@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class UserPreferences {
   static const String displayNameKey = 'akasha_display_name';
   static const String autoArchiveRegistryKey = 'akasha_auto_archive_registry';
+  static const String vaultWorksLayoutKey = 'akasha_vault_use_works_layout';
   static const String defaultDisplayName = '사용자';
 
   static Future<String> getDisplayName() async {
@@ -31,5 +32,16 @@ class UserPreferences {
     } else {
       await prefs.setString(displayNameKey, trimmed);
     }
+  }
+
+  /// Wave 2 — 신규 work journal을 `{vault}/works/{subtype}/`에 저장.
+  static Future<bool> isVaultWorksLayoutEnabled() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(vaultWorksLayoutKey) ?? false;
+  }
+
+  static Future<void> setVaultWorksLayoutEnabled(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(vaultWorksLayoutKey, enabled);
   }
 }

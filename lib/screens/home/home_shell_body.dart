@@ -23,7 +23,7 @@ import 'home_section_preferences.dart';
 import 'home_vault_banner.dart';
 import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
-import 'views/timeline_view.dart';
+import 'views/records_view.dart';
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
@@ -79,6 +79,7 @@ class HomeShellBody extends StatelessWidget {
   ) onCuratedReorder;
   final VoidCallback onSearch;
   final VoidCallback onNewTimelineEntry;
+  final VoidCallback onNewJournalEntry;
   final int timelineReloadToken;
 
   const HomeShellBody({
@@ -130,6 +131,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onCuratedReorder,
     required this.onSearch,
     required this.onNewTimelineEntry,
+    required this.onNewJournalEntry,
     required this.timelineReloadToken,
   });
 
@@ -202,10 +204,11 @@ class HomeShellBody extends StatelessWidget {
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onAddToLibrary: onAddToLibrary,
                         browseContent: isTimelineMode
-                            ? TimelineView(
+                            ? RecordsView(
                                 vaultItems: items,
                                 onOpenWork: onOpenBrowseItem,
-                                onNewEntry: onNewTimelineEntry,
+                                onNewTimelineEntry: onNewTimelineEntry,
+                                onNewJournalEntry: onNewJournalEntry,
                                 reloadToken: timelineReloadToken,
                               )
                             : isPersonalLibraryMode

@@ -1,6 +1,6 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1 ✅ 코드 · Wave 2~4 **설계 진행 중** · 코드 Gate 전  
+> **상태:** Wave 1 ✅ · Wave 2 ✅ · Wave 3 ✅ MVP · Wave 4 **검토 → 코드 Gate**  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
@@ -25,13 +25,13 @@
 |:----:|------|------|:----:|:----:|:----:|:----:|
 | **0** | W0 | Entity SSOT 문서 | ✅ | ✅ | — | ✅ |
 | **1** | W1 | Work Tier 1.5 catalog | ✅ | ✅ | ✅ | 🟡 |
-| **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ⬜ | 🟡 |
-| **3** | W3 | Timeline · journal UX | ✅ v1 | ⬜ | ⬜ | ⬜ |
+| **2** | W2 | Vault frontmatter v2 | ✅ v1 | ✅ | ✅ | 🟢 |
+| **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
 | **4** | W4 | Person · Event · Concept | ✅ v1 | ⬜ | ⬜ | ⬜ |
 | **5** | W5 | Connection | 📋 | ⬜ | ⬜ | ⬜ |
 | **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
 
-**현재 포커스:** Step 1 Gate 마무리 → Step 2 검토 완료 → Step 2 코드
+**현재 포커스:** Step 3 MVP Exit ✅ → Step 4 pre-review
 
 ---
 
@@ -48,7 +48,7 @@
 
 ---
 
-## 4. Step 2 — Wave 2 (🔄 설계)
+## 4. Step 2 — Wave 2 (✅ 코드 Exit)
 
 | # | 작업 | 문서 | 상태 |
 |---|------|------|:----:|
@@ -56,22 +56,24 @@
 | 2.2 | Pre-implementation review | [wave2-pre-implementation-review.md](wave2-pre-implementation-review.md) | ✅ |
 | 2.3 | EntityFrontmatter API 확정 | wave2 review §4 | ✅ |
 | 2.4 | Test fixtures 정의 | wave2 spec §8 | ✅ |
-| 2.5 | **코드 W2-0~6** | — | ⬜ Gate 후 |
+| 2.5 | **코드 W2-0~6** | — | ✅ |
+| 2.6 | Exit review | [wave2-exit-review.md](wave2-exit-review.md) | ✅ |
 
-**Gate 통과 조건:** 2.2 판정 🟢 · P0-W2 전부 결정 · Wave 1 regression plan.
+**Exit:** 357 tests · legacy 호환 · R1 upsert fix.
 
 ---
 
-## 5. Step 3 — Wave 3 (설계)
+## 5. Step 3 — Wave 3 (✅ MVP Exit)
 
 | # | 작업 | 문서 | 상태 |
 |---|------|------|:----:|
-| 3.1 | Timeline · journal spec | [wave3-timeline-journal-spec.md](wave3-timeline-journal-spec.md) | ✅ v1 |
-| 3.2 | Phase 4.4b Entity link UI | wave3 spec §5 | 📝 |
-| 3.3 | Home 「기록」축 | wave3 spec §6 | 📝 |
-| 3.4 | **코드** | — | ⬜ W2 Exit 후 |
+| 3.1 | Timeline · journal spec | [wave3-timeline-journal-spec.md](wave3-timeline-journal-spec.md) | ✅ |
+| 3.2 | Pre-implementation review | [wave3-pre-implementation-review.md](wave3-pre-implementation-review.md) | ✅ |
+| 3.3 | **코드 W3-0~J4 MVP** | — | ✅ |
+| 3.4 | Exit review | [wave3-exit-review.md](wave3-exit-review.md) | ✅ |
+| 3.5 | Workbench timeline tab | wave3 exit R-W3-1 | ⏳ |
 
-**의존:** Wave 2 (frontmatter v2 · ArchiveRecord round-trip).
+**Exit:** 361 tests · 「기록」축 · journal E2E · timeline edit.
 
 ---
 

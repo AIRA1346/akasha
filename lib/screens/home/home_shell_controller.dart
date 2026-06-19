@@ -184,6 +184,7 @@ class HomeShellController {
   int get timelineReloadToken => navigation.timelineReloadToken;
   bool get isPersonalLibraryMode => navigation.isPersonalLibraryMode;
   bool get isTimelineMode => navigation.isTimelineMode;
+  bool get isRecordsMode => navigation.isRecordsMode;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;
   bool get canAddToLibrary => browse.canAddToLibrary;
 
@@ -293,6 +294,7 @@ class HomeShellController {
   Future<void> openVaultSettingsDialog() => dialogs.openVaultSettingsDialog();
   Future<void> openClipboardImportDialog() => dialogs.openClipboardImportDialog();
   Future<void> openTimelineQuickCapture() => dialogs.openTimelineQuickCapture();
+  Future<void> openJournalQuickCapture() => dialogs.openJournalQuickCapture();
   Future<void> selectVaultFolder() => dialogs.selectVaultFolder();
   Future<void> onCuratedReorder(
     List<BrowseCard> cards,

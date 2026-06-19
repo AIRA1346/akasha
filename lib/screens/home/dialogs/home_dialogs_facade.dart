@@ -9,6 +9,7 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
+import '../../../services/journal_vault_store.dart';
 import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
@@ -23,6 +24,7 @@ import 'catalog_contributions_inbox_dialog.dart';
 import 'clipboard_import_dialog.dart';
 import 'prompt_templates_dialog.dart';
 import 'registry_sync_dialog.dart';
+import 'journal_quick_capture_dialog.dart';
 import 'timeline_quick_capture_dialog.dart';
 import 'vault_settings_dialog.dart';
 
@@ -162,6 +164,39 @@ class HomeDialogsFacade {
       return true;
     } catch (e) {
       showMessage('타임라인 저장 실패: $e');
+      return false;
+    }
+  }
+
+  /// Wave 3 — freeform journal quick capture → `vault/journal/`.
+  static Future<bool> showJournalQuickCapture({
+    required BuildContext context,
+    required void Function(String message) showMessage,
+  }) async {
+    if (AkashaFileService().vaultPath == null) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return false;
+    }
+
+    final input = await showJournalQuickCaptureDialog(context);
+    if (input == null || !context.mounted) return false;
+
+    try {
+      final recordId = JournalVaultStore.generateRecordId();
+      await VaultArchiveRecordAdapter().save(
+        ArchiveRecord(
+          recordId: recordId,
+          kind: RecordKind.freeformJournal,
+          title: input.title,
+          timeAnchor: DateTime.now(),
+        ),
+        bodyMarkdown: input.body,
+      );
+
+      showMessage('메모를 저장했습니다.');
+      return true;
+    } catch (e) {
+      showMessage('메모 저장 실패: $e');
       return false;
     }
   }

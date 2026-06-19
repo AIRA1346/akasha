@@ -1,4 +1,5 @@
 import 'package:yaml/yaml.dart';
+import '../core/archiving/entity_frontmatter.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/work_id_codec.dart';
@@ -59,6 +60,19 @@ class MarkdownParser {
     final buffer = StringBuffer();
     buffer.writeln('---');
     buffer.writeln('work_id: "${item.workId}"');
+    if (item.workId.isNotEmpty) {
+      final entityFields = EntityFrontmatter.forWorkItem(
+        workId: item.workId,
+        category: item.category,
+      ).toLazyWriteFields();
+      for (final entry in entityFields.entries) {
+        if (entry.key == 'entity_id') {
+          buffer.writeln('${entry.key}: "${entry.value.replaceAll('"', '\\"')}"');
+        } else {
+          buffer.writeln('${entry.key}: ${entry.value}');
+        }
+      }
+    }
     buffer.writeln('title: "${item.title.replaceAll('"', '\\"')}"'); // YAML title (외부 편집기 호환)
     buffer.writeln('category: ${item.category.name}');
     buffer.writeln('domain: ${item.domain.name}');
@@ -146,6 +160,10 @@ class MarkdownParser {
 
         yamlMap = {
           'work_id': regExtract('work_id', yamlStr),
+          'entity_id': regExtract('entity_id', yamlStr),
+          'entity_type': regExtract('entity_type', yamlStr),
+          'subtype': regExtract('subtype', yamlStr),
+          'record_kind': regExtract('record_kind', yamlStr),
           'title': regExtract('title', yamlStr),
           'category': regExtract('category', yamlStr),
           'domain': regExtract('domain', yamlStr),
@@ -161,19 +179,26 @@ class MarkdownParser {
     }
 
     // 메타데이터 추출
-    String workId = WorksRegistry.resolveWorkId(
-      yamlMap['work_id']?.toString() ?? '',
-    );
-    final title = yamlMap['title']?.toString() ?? fallbackTitle;
-    final categoryStr = yamlMap['category']?.toString() ?? 'manga';
-    
     MediaCategory category = MediaCategory.manga;
     for (final cat in MediaCategory.values) {
-      if (cat.name == categoryStr) {
+      if (cat.name == (yamlMap['category']?.toString() ?? 'manga')) {
         category = cat;
         break;
       }
     }
+
+    final entityMeta = EntityFrontmatter.inferFromYaml(
+      yamlMap,
+      categoryFallback: category,
+    );
+    category = entityMeta.subtype;
+
+    String workId = WorksRegistry.resolveWorkId(entityMeta.resolvedWorkId);
+    if (workId.isEmpty && yamlMap['work_id'] != null) {
+      workId = WorksRegistry.resolveWorkId(yamlMap['work_id']?.toString() ?? '');
+    }
+
+    final title = yamlMap['title']?.toString() ?? fallbackTitle;
 
     AppDomain domain = AppDomain.subculture;
     final domainStr = yamlMap['domain']?.toString();

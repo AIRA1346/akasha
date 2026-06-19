@@ -87,10 +87,10 @@ class HomeDialogsCoordinator {
           initialTitle: query,
           showMessage: showMessage,
           onSavedToVault: (item) async {
+            await AkashaFileService().saveItem(item);
             if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
               await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
             }
-            await AkashaFileService().saveItem(item);
             await loadItems();
           },
         );
@@ -196,6 +196,14 @@ class HomeDialogsCoordinator {
       showMessage: showMessage,
     );
     if (saved && isMounted()) navigation.onTimelineQuickCaptureSaved();
+  }
+
+  Future<void> openJournalQuickCapture() async {
+    final saved = await HomeDialogsFacade.showJournalQuickCapture(
+      context: hostContext(),
+      showMessage: showMessage,
+    );
+    if (saved && isMounted()) navigation.onJournalQuickCaptureSaved();
   }
 
   Future<void> selectVaultFolder() async {

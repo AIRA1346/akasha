@@ -6,6 +6,8 @@ import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../utils/app_log.dart';
 import 'markdown_parser.dart';
+import 'user_preferences.dart';
+import 'vault_work_journal_paths.dart';
 
 class AkashaFileService {
   static const String _prefVaultKey = 'akasha_vault_path';
@@ -102,6 +104,13 @@ class AkashaFileService {
     await Directory(p.join(_vaultPath!, 'posters')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'timeline')).create(recursive: true);
     await Directory(p.join(_vaultPath!, 'catalog')).create(recursive: true);
+    await Directory(p.join(_vaultPath!, 'works')).create(recursive: true);
+    await Directory(p.join(_vaultPath!, 'journal')).create(recursive: true);
+    await Directory(p.join(_vaultPath!, 'entities')).create(recursive: true);
+
+    for (final cat in MediaCategory.values) {
+      await Directory(p.join(_vaultPath!, 'works', cat.name)).create(recursive: true);
+    }
 
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
@@ -346,10 +355,13 @@ class AkashaFileService {
     if (item.filePath != null && item.filePath!.isNotEmpty) {
       targetPath = item.filePath!;
     } else {
-      final categoryDir = p.join(_vaultPath!, item.category.name);
-      await Directory(categoryDir).create(recursive: true);
-      final safeTitle = _makeSafeFilename(item.title);
-      targetPath = p.join(categoryDir, '$safeTitle.md');
+      final useWorksLayout = await UserPreferences.isVaultWorksLayoutEnabled();
+      targetPath = VaultWorkJournalPaths.resolveNewPath(
+        vaultRoot: _vaultPath!,
+        item: item,
+        useWorksLayout: useWorksLayout,
+      );
+      await Directory(p.dirname(targetPath)).create(recursive: true);
       item.filePath = targetPath;
     }
 

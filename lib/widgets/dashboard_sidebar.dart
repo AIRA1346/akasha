@@ -120,8 +120,8 @@ class DashboardSidebar extends StatelessWidget {
                 ),
                 const Divider(color: Color(0xFF2D2D44), height: 1),
                 SidebarItemWidget(
-                  name: '타임라인',
-                  icon: Icons.timeline,
+                  name: '기록',
+                  icon: Icons.edit_note_outlined,
                   isActive: selectionMode == SidebarSelectionMode.timeline,
                   accentColor: Colors.lightBlueAccent,
                   canEdit: false,

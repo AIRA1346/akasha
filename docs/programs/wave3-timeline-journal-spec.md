@@ -1,6 +1,6 @@
 # Wave 3 — Timeline · Journal First 구현 스펙
 
-> **상태:** 설계 v1 · 코드 **대기** (Wave 2 Exit 후)  
+> **상태:** 설계 v1 · pre-review ✅ · 코드 **Gate 대기** ([wave3-pre-implementation-review.md](wave3-pre-implementation-review.md))  
 > **갱신:** 2026-06-19  
 > **상위:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md) · [vault-layout-v2.md](../product/vault-layout-v2.md)  
 > **철학:** Note/일기 = **Record** · Entity optional
@@ -152,11 +152,13 @@ added_at: "…"
 
 ## 9. Wave 3 Exit
 
-- [ ] Timeline list + edit E2E
-- [ ] freeformJournal save E2E
-- [ ] Entity link picker (archived works)
-- [ ] Phase 4 Exit ([architecture-evolution-phases §6](../programs/architecture-evolution-phases.md))
-- [ ] Wave 2 tests green
+- [x] Timeline list + edit E2E (dialog MVP)
+- [x] freeformJournal save E2E
+- [ ] Entity link picker (archived works) — capture dropdown only
+- [ ] Phase 4 Exit (workbench tab)
+- [x] Wave 2 tests green (361)
+
+**상세:** [wave3-exit-review.md](wave3-exit-review.md)
 
 ---
 

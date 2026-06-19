@@ -28,6 +28,9 @@ class HomeNavigationCoordinator {
 
   bool get isPersonalLibraryMode => sidebarCoordinator.isPersonalLibraryMode;
   bool get isTimelineMode => filterCoordinator.isTimelineMode;
+
+  /// Wave 3 alias — 「기록」축 (timeline + journal).
+  bool get isRecordsMode => isTimelineMode;
   bool get isCuratedLibraryActive => sidebarCoordinator.isCuratedLibraryActive;
 
   Future<void> loadSidebarState() async {
@@ -91,5 +94,9 @@ class HomeNavigationCoordinator {
       sidebarCoordinator.selectTimeline();
       workbench.showBrowse();
     });
+  }
+
+  void onJournalQuickCaptureSaved() {
+    onTimelineQuickCaptureSaved();
   }
 }

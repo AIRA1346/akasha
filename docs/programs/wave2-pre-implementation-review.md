@@ -3,7 +3,7 @@
 > **일자:** 2026-06-19  
 > **범위:** [wave2-vault-record-spec.md](wave2-vault-record-spec.md) · [vault-layout-v2.md](../product/vault-layout-v2.md)  
 > **선행:** Wave 1 ✅ · [wave1-exit-review.md](wave1-exit-review.md)  
-> **판정:** 🟡 **조건부 통과** — P0-W2-1~5 결정 확정 후 코드 Gate 🟢  
+> **판정:** 🟢 **코드 Exit** — [wave2-exit-review.md](wave2-exit-review.md) · 357 tests  
 > **구현 SSOT:** [wave2-vault-record-spec.md](wave2-vault-record-spec.md)
 
 ---
@@ -29,11 +29,11 @@ Wave 2는 **Work Record의 frontmatter v2 + ArchiveRecord round-trip** — Entit
 
 | 기능 | 현재 | Wave 2 |
 |------|------|--------|
-| Read `entity_type` | ❌ | W2-1 |
-| Read `entity_id` | ❌ (work_id only) | W2-1 |
-| Read `subtype` | ❌ (category only) | W2-1 |
-| Read `record_kind` | ❌ | W2-1 infer |
-| Write `entity_*` lazy | ❌ | W2-2 |
+| Read `entity_type` | ✅ | W2-1 |
+| Read `entity_id` | ✅ | W2-1 |
+| Read `subtype` | ✅ | W2-1 |
+| Read `record_kind` | ✅ | W2-1 infer |
+| Write `entity_*` lazy | ✅ | W2-2 |
 | `wk_u_*` registry fusion | N/A (null) | user catalog path 유지 |
 
 **리스크:** deserialize 시 `entity_id`≠`work_id` 불일치 파일 — **entity_id 우선** 규칙 필요 (§4.2).
@@ -42,9 +42,9 @@ Wave 2는 **Work Record의 frontmatter v2 + ArchiveRecord round-trip** — Entit
 
 | 기능 | 현재 | Wave 2 |
 |------|------|--------|
-| save path | `{vault}/{category}/{title}.md` | resolver W2-3 |
-| `works/` scan | ✅ (skip 아님) | include |
-| `journal/` stub | ❌ | W2 `_ensureFolderStructure` |
+| save path | ✅ resolver W2-3 | legacy default · works/ opt-in |
+| `works/` scan | ✅ include | unchanged |
+| `journal/` stub | ✅ | `_ensureFolderStructure` |
 | fingerprint | `.md` only · catalog skip | unchanged |
 
 ### 2.3 `archive_record_mapper.dart`
@@ -53,7 +53,7 @@ Wave 2는 **Work Record의 frontmatter v2 + ArchiveRecord round-trip** — Entit
 |------|------|--------|
 | `fromAkashaItem` | work Entity only | typeForEntityId |
 | `fromTimelineEntry` | ✅ | unchanged |
-| `fromWorkMarkdown` | ❌ | W2-4 신규 |
+| `fromWorkMarkdown` | ✅ | W2-4 |
 
 ### 2.4 `vault_archive_record_adapter.dart`
 
@@ -166,11 +166,11 @@ Vault settings dialog — advanced section · Wave 2 optional UI.
 | # | 조건 | 상태 |
 |---|------|:----:|
 | G1 | 본 review P0 전부 ✅ | ✅ |
-| G2 | wave1-dogfood 1회 또는 friction logged | ⏳ |
+| G2 | wave1-dogfood 1회 또는 friction logged | ⏳ (코드 Exit 분리) |
 | G3 | EntityFrontmatter API §4 팀 합의 | ✅ |
-| G4 | Test fixtures §6 작성 | ⏳ (코드와 동시) |
+| G4 | Test fixtures §6 작성 | ✅ |
 
-**Gate 🟢 시:** W2-0 (`EntityFrontmatter`) 부터 순차 구현.
+**코드 Exit ✅** — Wave 3 Gate: [wave3-pre-implementation-review.md](wave3-pre-implementation-review.md)
 
 ---
 

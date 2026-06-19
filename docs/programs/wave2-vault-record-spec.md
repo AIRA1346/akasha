@@ -202,12 +202,14 @@ Fixtures: `test/fixtures/vault_v1_legacy.md`, `vault_v2_work.md` ✅
 
 ## 10. Wave 2 Exit
 
-- [ ] Parser read v2 + legacy infer
-- [ ] Serializer lazy v2 on save
-- [ ] works/ path opt-in
-- [ ] ArchiveRecord round-trip 1 Work path
-- [ ] Wave 1 + legacy fixtures green
-- [ ] [vault-layout-v2.md §9](../product/vault-layout-v2.md) checklist
+- [x] Parser read v2 + legacy infer
+- [x] Serializer lazy v2 on save
+- [x] works/ path opt-in
+- [x] ArchiveRecord round-trip 1 Work path
+- [x] Wave 1 + legacy fixtures green
+- [x] vault-layout-v2 §4 frontmatter ([wave2-exit-review.md](wave2-exit-review.md))
+
+**코드 Exit:** 357 tests @ 2026-06-19 · 상세 [wave2-exit-review.md](wave2-exit-review.md)
 
 ---
 

@@ -3,29 +3,38 @@ import '../../core/archiving/archive_record_mapper.dart';
 import '../../core/archiving/record_kind.dart';
 import '../../core/ports/archive_record_port.dart';
 import '../../services/file_service.dart';
+import '../../services/journal_vault_loader.dart';
+import '../../services/journal_vault_store.dart';
 import '../../services/timeline_vault_loader.dart';
 import '../../services/timeline_vault_store.dart';
 
-/// Sanctum vault → [ArchiveRecord] ([ADR-008] Phase 1 + Phase 4 timeline).
+/// Sanctum vault → [ArchiveRecord] ([ADR-008] Phase 1 + Phase 4 timeline + Wave 3 journal).
 class VaultArchiveRecordAdapter implements ArchiveRecordPort {
   VaultArchiveRecordAdapter({
     AkashaFileService? fileService,
     TimelineVaultLoader? timelineLoader,
     TimelineVaultStore? timelineStore,
+    JournalVaultLoader? journalLoader,
+    JournalVaultStore? journalStore,
   })  : _fileService = fileService ?? AkashaFileService(),
         _timelineLoader = timelineLoader ?? const TimelineVaultLoader(),
-        _timelineStore = timelineStore ?? const TimelineVaultStore();
+        _timelineStore = timelineStore ?? const TimelineVaultStore(),
+        _journalLoader = journalLoader ?? const JournalVaultLoader(),
+        _journalStore = journalStore ?? const JournalVaultStore();
 
   final AkashaFileService _fileService;
   final TimelineVaultLoader _timelineLoader;
   final TimelineVaultStore _timelineStore;
+  final JournalVaultLoader _journalLoader;
+  final JournalVaultStore _journalStore;
 
   @override
   Future<List<ArchiveRecord>> listRecords({Set<RecordKind>? kinds}) async {
     final records = <ArchiveRecord>[];
 
-    final includeVault =
-        kinds == null || kinds.contains(RecordKind.workJournal) || kinds.contains(RecordKind.freeformJournal);
+    final includeVault = kinds == null ||
+        kinds.contains(RecordKind.workJournal) ||
+        kinds.contains(RecordKind.freeformJournal);
     if (includeVault) {
       final items = await _fileService.loadAllItems();
       for (final item in items) {
@@ -34,6 +43,14 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
           records.add(record);
         }
       }
+    }
+
+    final includeJournal =
+        kinds == null || kinds.contains(RecordKind.freeformJournal);
+    if (includeJournal) {
+      final journals =
+          await _journalLoader.loadFromVault(_fileService.vaultPath);
+      records.addAll(journals.map(ArchiveRecordMapper.fromJournalEntry));
     }
 
     final includeTimeline = kinds == null || kinds.contains(RecordKind.timelineEntry);
@@ -61,6 +78,13 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
       if (record.recordId == recordId) return record;
     }
 
+    final journals = await _journalLoader.loadFromVault(_fileService.vaultPath);
+    for (final entry in journals) {
+      if (entry.recordId == recordId) {
+        return ArchiveRecordMapper.fromJournalEntry(entry);
+      }
+    }
+
     final timeline = await _timelineLoader.loadFromVault(_fileService.vaultPath);
     for (final entry in timeline) {
       if (entry.recordId == recordId) {
@@ -73,23 +97,34 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
 
   @override
   Future<void> save(ArchiveRecord record, {String? bodyMarkdown}) async {
-    if (record.kind != RecordKind.timelineEntry) {
-      throw UnsupportedError(
-        'Phase 4.2: timelineEntry via ArchiveRecordPort; workJournal via VaultPort.saveItem',
-      );
-    }
-
     final vaultPath = _fileService.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       throw StateError('Vault path not set');
     }
 
-    await _timelineStore.save(
-      vaultPath: vaultPath,
-      record: record,
-      body: bodyMarkdown ?? '',
+    if (record.kind == RecordKind.timelineEntry) {
+      await _timelineStore.save(
+        vaultPath: vaultPath,
+        record: record,
+        body: bodyMarkdown ?? '',
+      );
+      await _fileService.signalVaultChanged();
+      return;
+    }
+
+    if (record.kind == RecordKind.freeformJournal) {
+      await _journalStore.save(
+        vaultPath: vaultPath,
+        record: record,
+        body: bodyMarkdown ?? '',
+      );
+      await _fileService.signalVaultChanged();
+      return;
+    }
+
+    throw UnsupportedError(
+      'workJournal via VaultPort.saveItem; timeline/journal via ArchiveRecordPort',
     );
-    await _fileService.signalVaultChanged();
   }
 
   @override
@@ -103,13 +138,21 @@ class VaultArchiveRecordAdapter implements ArchiveRecordPort {
 
     final existing = await getById(recordId);
     if (existing == null) return;
-    if (existing.kind != RecordKind.timelineEntry) {
-      throw UnsupportedError(
-        'Phase 4.2: timelineEntry only; workJournal via VaultPort',
-      );
+
+    if (existing.kind == RecordKind.timelineEntry) {
+      await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
+      await _fileService.signalVaultChanged();
+      return;
     }
 
-    await _timelineStore.delete(vaultPath: vaultPath, recordId: recordId);
-    await _fileService.signalVaultChanged();
+    if (existing.kind == RecordKind.freeformJournal) {
+      await _journalStore.delete(vaultPath: vaultPath, recordId: recordId);
+      await _fileService.signalVaultChanged();
+      return;
+    }
+
+    throw UnsupportedError(
+      'timeline/journal only; workJournal via VaultPort',
+    );
   }
 }

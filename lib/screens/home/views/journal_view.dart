@@ -1,37 +1,31 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/archive_record.dart';
-import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/archiving/journal_entry.dart';
 import '../../../core/archiving/record_kind.dart';
-import '../../../core/archiving/timeline_entry.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
-import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
-import '../../../services/timeline_vault_loader.dart';
+import '../../../services/journal_vault_loader.dart';
 
-/// Phase 4.4 — Timeline entry 시간순 목록.
-class TimelineView extends StatefulWidget {
-  const TimelineView({
+/// Wave 3 — freeform journal 시간순 목록.
+class JournalView extends StatefulWidget {
+  const JournalView({
     super.key,
-    required this.vaultItems,
-    required this.onOpenWork,
     required this.onNewEntry,
     this.reloadToken = 0,
   });
 
-  final List<AkashaItem> vaultItems;
-  final void Function(AkashaItem item) onOpenWork;
   final VoidCallback onNewEntry;
   final int reloadToken;
 
   @override
-  State<TimelineView> createState() => _TimelineViewState();
+  State<JournalView> createState() => _JournalViewState();
 }
 
-class _TimelineViewState extends State<TimelineView> {
-  final _loader = const TimelineVaultLoader();
+class _JournalViewState extends State<JournalView> {
+  final _loader = const JournalVaultLoader();
   final _adapter = VaultArchiveRecordAdapter();
-  List<TimelineEntry> _entries = const [];
+  List<JournalEntry> _entries = const [];
   bool _loading = true;
 
   @override
@@ -41,7 +35,7 @@ class _TimelineViewState extends State<TimelineView> {
   }
 
   @override
-  void didUpdateWidget(covariant TimelineView oldWidget) {
+  void didUpdateWidget(covariant JournalView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.reloadToken != widget.reloadToken) {
       _reload();
@@ -59,15 +53,7 @@ class _TimelineViewState extends State<TimelineView> {
     });
   }
 
-  String? _workTitleFor(String? entityId) {
-    if (entityId == null || entityId.isEmpty) return null;
-    for (final item in widget.vaultItems) {
-      if (item.workId == entityId) return item.title;
-    }
-    return entityId;
-  }
-
-  Future<void> _openDetail(TimelineEntry entry) async {
+  Future<void> _openDetail(JournalEntry entry) async {
     final titleCtrl = TextEditingController(text: entry.title);
     final bodyCtrl = TextEditingController(text: entry.body);
     var editing = false;
@@ -76,7 +62,7 @@ class _TimelineViewState extends State<TimelineView> {
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setLocal) => AlertDialog(
-          title: Text(editing ? '타임라인 편집' : entry.title),
+          title: Text(editing ? '메모 편집' : entry.title),
           content: SizedBox(
             width: 480,
             child: SingleChildScrollView(
@@ -85,29 +71,11 @@ class _TimelineViewState extends State<TimelineView> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    _formatWhen(entry.occurredAt),
+                    _formatWhen(entry.addedAt),
                     style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
                           color: Colors.grey,
                         ),
                   ),
-                  if (entry.entityId != null && !editing) ...[
-                    const SizedBox(height: 8),
-                    InkWell(
-                      onTap: () {
-                        for (final item in widget.vaultItems) {
-                          if (item.workId == entry.entityId) {
-                            Navigator.pop(ctx);
-                            widget.onOpenWork(item);
-                            return;
-                          }
-                        }
-                      },
-                      child: Text(
-                        '🔗 ${_workTitleFor(entry.entityId)}',
-                        style: const TextStyle(color: Colors.tealAccent),
-                      ),
-                    ),
-                  ],
                   const SizedBox(height: 12),
                   if (editing) ...[
                     TextField(
@@ -150,22 +118,13 @@ class _TimelineViewState extends State<TimelineView> {
                   if (title.isEmpty) {
                     title = body.length <= 40 ? body : '${body.substring(0, 40)}…';
                   }
-                  EntityAnchor? entity;
-                  final entityId = entry.entityId?.trim();
-                  if (entityId != null && entityId.isNotEmpty) {
-                    entity = EntityAnchor(
-                      entityId: entityId,
-                      type: EntityAnchor.typeForEntityId(entityId),
-                    );
-                  }
                   await _adapter.save(
                     ArchiveRecord(
                       recordId: entry.recordId,
-                      kind: RecordKind.timelineEntry,
+                      kind: RecordKind.freeformJournal,
                       title: title,
-                      timeAnchor: entry.occurredAt,
+                      timeAnchor: entry.addedAt,
                       storagePath: entry.storagePath,
-                      entity: entity,
                     ),
                     bodyMarkdown: body,
                   );
@@ -179,7 +138,7 @@ class _TimelineViewState extends State<TimelineView> {
                   context: ctx,
                   builder: (c) => AlertDialog(
                     title: const Text('삭제'),
-                    content: const Text('이 타임라인 기록을 삭제할까요?'),
+                    content: const Text('이 메모를 삭제할까요?'),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(c, false),
@@ -236,7 +195,7 @@ class _TimelineViewState extends State<TimelineView> {
   Widget build(BuildContext context) {
     if (AkashaFileService().vaultPath == null) {
       return const Center(
-        child: Text('볼트를 연결하면 타임라인을 볼 수 있습니다.'),
+        child: Text('볼트를 연결하면 메모를 볼 수 있습니다.'),
       );
     }
 
@@ -249,14 +208,14 @@ class _TimelineViewState extends State<TimelineView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.timeline, size: 48, color: Colors.grey),
+            const Icon(Icons.note_alt_outlined, size: 48, color: Colors.grey),
             const SizedBox(height: 12),
-            const Text('아직 타임라인 기록이 없습니다.'),
+            const Text('아직 메모가 없습니다.'),
             const SizedBox(height: 16),
             FilledButton.icon(
               onPressed: widget.onNewEntry,
               icon: const Icon(Icons.edit_note_outlined),
-              label: const Text('첫 기록 작성'),
+              label: const Text('첫 메모 작성'),
             ),
           ],
         ),
@@ -271,7 +230,7 @@ class _TimelineViewState extends State<TimelineView> {
           child: Row(
             children: [
               Text(
-                '타임라인 (${_entries.length})',
+                '메모 (${_entries.length})',
                 style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
@@ -279,7 +238,7 @@ class _TimelineViewState extends State<TimelineView> {
               ),
               const Spacer(),
               IconButton(
-                tooltip: '새 기록',
+                tooltip: '새 메모',
                 onPressed: widget.onNewEntry,
                 icon: const Icon(Icons.add),
               ),
@@ -320,7 +279,7 @@ class _TimelineViewState extends State<TimelineView> {
                               ),
                             ),
                             Text(
-                              _formatWhen(entry.occurredAt),
+                              _formatWhen(entry.addedAt),
                               style: TextStyle(
                                 fontSize: 11,
                                 color: Colors.grey[500],
@@ -328,16 +287,6 @@ class _TimelineViewState extends State<TimelineView> {
                             ),
                           ],
                         ),
-                        if (entry.entityId != null) ...[
-                          const SizedBox(height: 4),
-                          Text(
-                            '🔗 ${_workTitleFor(entry.entityId)}',
-                            style: const TextStyle(
-                              fontSize: 11,
-                              color: Colors.tealAccent,
-                            ),
-                          ),
-                        ],
                         const SizedBox(height: 6),
                         Text(
                           _preview(entry.body),
