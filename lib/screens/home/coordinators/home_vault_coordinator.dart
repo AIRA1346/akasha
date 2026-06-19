@@ -10,6 +10,8 @@ import '../../../models/library_theme.dart';
 import '../../../services/entitlement_service.dart';
 import '../../../services/library_theme_preferences.dart';
 import '../../../services/record_link_index_service.dart';
+import '../../../services/event_ledger_service.dart';
+import '../../../core/archiving/vault_ledger_event.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
 import '../home_auto_archive.dart';
@@ -44,7 +46,9 @@ class HomeVaultCoordinator {
   Timer? vaultReloadDebounce;
   Timer? linkIndexDebounce;
 
-  final RecordLinkIndexService linkIndex = RecordLinkIndexService();
+  final EventLedgerService eventLedger = EventLedgerService();
+  late final RecordLinkIndexService linkIndex =
+      RecordLinkIndexService(eventLedger: eventLedger);
 
   Future<void> initService() async {
     await vault.init();
@@ -66,9 +70,24 @@ class HomeVaultCoordinator {
     scheduleRebuild(() => items = loadedItems);
     onVaultItemsSynced(loadedItems);
     await rebuildLinkIndex();
+    await eventLedger.append(
+      VaultLedgerEvent(
+        type: VaultLedgerEventType.vaultReloaded,
+        at: DateTime.now().toUtc(),
+        meta: {'itemCount': loadedItems.length},
+      ),
+    );
   }
 
-  Future<void> rebuildLinkIndex() => linkIndex.rebuildIndex();
+  Future<void> rebuildLinkIndex() => linkIndex.rebuildIndex(
+        onRebuilt: (stats) => eventLedger.append(
+          VaultLedgerEvent(
+            type: VaultLedgerEventType.linkIndexRebuilt,
+            at: DateTime.now().toUtc(),
+            meta: stats,
+          ),
+        ),
+      );
 
   Future<void> autoArchiveRegistryWorks({
     bool showFeedback = false,

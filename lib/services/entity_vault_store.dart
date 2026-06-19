@@ -4,13 +4,19 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
+import '../core/archiving/record_kind.dart';
 import '../models/user_catalog_entity.dart';
+import '../core/archiving/vault_ledger_event.dart';
 import 'entity_journal_parser.dart';
+import 'event_ledger_service.dart';
 import 'file_service.dart';
 
 /// `vault/entities/{type}/` 쓰기 — Wave 4.
 class EntityVaultStore {
-  const EntityVaultStore();
+  EntityVaultStore({EventLedgerService? eventLedger})
+      : _eventLedger = eventLedger ?? EventLedgerService();
+
+  final EventLedgerService _eventLedger;
 
   static String _makeSafeFilename(String title) {
     return title.replaceAll(RegExp(r'[\\/:*?"<>|]'), '_').trim();
@@ -54,6 +60,14 @@ class EntityVaultStore {
 
     await _writeAtomic(targetPath, content);
     await AkashaFileService().signalVaultChanged();
+    await _eventLedger.append(
+      VaultLedgerEvent(
+        type: VaultLedgerEventType.recordSaved,
+        at: DateTime.now().toUtc(),
+        path: targetPath,
+        meta: {'recordKind': RecordKind.entityJournal.name},
+      ),
+    );
 
     return EntityJournalEntry(
       entityType: entity.anchorType,
@@ -89,6 +103,14 @@ class EntityVaultStore {
 
     await _writeAtomic(entry.storagePath, content);
     await AkashaFileService().signalVaultChanged();
+    await _eventLedger.append(
+      VaultLedgerEvent(
+        type: VaultLedgerEventType.recordSaved,
+        at: DateTime.now().toUtc(),
+        path: entry.storagePath,
+        meta: {'recordKind': RecordKind.entityJournal.name},
+      ),
+    );
 
     return EntityJournalEntry(
       entityType: entry.entityType,
@@ -106,6 +128,14 @@ class EntityVaultStore {
     if (await file.exists()) {
       await file.delete();
       await AkashaFileService().signalVaultChanged();
+      await _eventLedger.append(
+        VaultLedgerEvent(
+          type: VaultLedgerEventType.recordDeleted,
+          at: DateTime.now().toUtc(),
+          path: storagePath,
+          meta: {'recordKind': RecordKind.entityJournal.name},
+        ),
+      );
     }
   }
 

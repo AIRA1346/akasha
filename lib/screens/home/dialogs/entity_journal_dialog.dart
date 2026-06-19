@@ -7,9 +7,12 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../core/archiving/record_kind.dart';
+import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../services/record_link_navigator.dart';
+import '../../../services/same_day_record_service.dart';
 import 'add_catalog_entity_dialog.dart';
 
 /// Entity Sheet — catalog Fact · journal · incoming links (Phase A).
@@ -79,7 +82,7 @@ class _EntityJournalDialog extends StatefulWidget {
 }
 
 class _EntityJournalDialogState extends State<_EntityJournalDialog> {
-  static const _store = EntityVaultStore();
+  static final _store = EntityVaultStore();
 
   EntityJournalEntry? _current;
   late final TextEditingController _bodyCtrl;
@@ -87,6 +90,8 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
   var _editing = false;
   List<String> _incomingPaths = const [];
   var _loadingIncoming = false;
+  List<SameDayRecordRef> _sameDayRefs = const [];
+  var _loadingSameDay = false;
 
   @override
   void initState() {
@@ -96,12 +101,28 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
     _editing = _creating;
     _bodyCtrl = TextEditingController(text: _current?.body ?? '');
     _loadIncoming();
+    _loadSameDay();
   }
 
   @override
   void dispose() {
     _bodyCtrl.dispose();
     super.dispose();
+  }
+
+  Future<void> _loadSameDay() async {
+    setState(() => _loadingSameDay = true);
+    final anchor = _current?.addedAt ?? widget.entity.addedAt;
+    final refs = await SameDayRecordService.findForAnchor(
+      vaultPath: widget.vaultPath,
+      anchor: anchor,
+      excludePath: _current?.storagePath,
+    );
+    if (!mounted) return;
+    setState(() {
+      _sameDayRefs = refs;
+      _loadingSameDay = false;
+    });
   }
 
   Future<void> _loadIncoming() async {
@@ -169,6 +190,41 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
       }
       Navigator.pop(context, true);
     }
+  }
+
+  Future<void> _openSameDay(SameDayRecordRef ref) async {
+    final onOpenWork = widget.onOpenWork;
+    final catalog = widget.userCatalog;
+    if (ref.kind == RecordKind.workJournal &&
+        onOpenWork != null &&
+        catalog != null) {
+      await RecordLinkNavigator.openRecordPath(
+        context,
+        storagePath: ref.storagePath,
+        vaultItems: widget.vaultItems,
+        userCatalog: catalog,
+        onOpenWork: onOpenWork,
+      );
+      return;
+    }
+
+    if (!mounted) return;
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('${ref.kindLabel} · ${ref.title}'),
+        content: Text(
+          '${_formatWhen(ref.when.toLocal())}\n${ref.storagePath}',
+          style: const TextStyle(fontSize: 12),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('닫기'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _openIncoming(String path) async {
@@ -263,6 +319,12 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
                     paths: _incomingPaths,
                     onOpen: widget.onOpenWork != null ? _openIncoming : null,
                   ),
+                  _SameDaySection(
+                    loading: _loadingSameDay,
+                    refs: _sameDayRefs,
+                    anchor: _current?.addedAt ?? widget.entity.addedAt,
+                    onOpen: _openSameDay,
+                  ),
                 ],
                 const SizedBox(height: 12),
                 if (_editing || _creating)
@@ -339,6 +401,76 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
       EntityAnchorType.organization => Icons.groups_outlined,
       _ => Icons.category_outlined,
     };
+  }
+}
+
+class _SameDaySection extends StatelessWidget {
+  const _SameDaySection({
+    required this.loading,
+    required this.refs,
+    required this.anchor,
+    required this.onOpen,
+  });
+
+  final bool loading;
+  final List<SameDayRecordRef> refs;
+  final DateTime anchor;
+  final Future<void> Function(SameDayRecordRef ref) onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    if (loading) {
+      return const Padding(
+        padding: EdgeInsets.only(top: 8),
+        child: LinearProgressIndicator(minHeight: 2),
+      );
+    }
+
+    if (refs.isEmpty) return const SizedBox.shrink();
+
+    final local = anchor.toLocal();
+    final dateLabel =
+        '${local.year}-${local.month.toString().padLeft(2, '0')}-${local.day.toString().padLeft(2, '0')}';
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            '같은 날 기록 · $dateLabel (${refs.length})',
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: Colors.tealAccent,
+            ),
+          ),
+          const SizedBox(height: 6),
+          ...refs.map((ref) {
+            return Material(
+              color: const Color(0xFF252535),
+              borderRadius: BorderRadius.circular(6),
+              child: ListTile(
+                dense: true,
+                visualDensity: VisualDensity.compact,
+                leading: Icon(
+                  ref.kind == RecordKind.timelineEntry
+                      ? Icons.timeline
+                      : Icons.notes,
+                  size: 16,
+                ),
+                title: Text(ref.title, style: const TextStyle(fontSize: 12)),
+                subtitle: Text(
+                  ref.kindLabel,
+                  style: const TextStyle(fontSize: 10),
+                ),
+                onTap: () => onOpen(ref),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
   }
 }
 

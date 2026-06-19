@@ -1,6 +1,6 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1~5 ✅ MVP · **Phase A/B UX** ✅ · dogfood ⏳ (구현 완료 후)  
+> **상태:** Wave 1~5 ✅ · Phase A/B UX ✅ · **W6-1 ledger PoC ✅** · dogfood ⏳  
 > **갱신:** 2026-06-19  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
@@ -29,7 +29,7 @@
 | **3** | W3 | Timeline · journal UX | ✅ v1 | ✅ | ✅ | 🟡 |
 | **4** | W4 | Person · Event · Concept | ✅ v1 | ✅ | ✅ | 🟡 |
 | **5** | W5 | Connection | ✅ v1 | ✅ | ✅ | 🟡 |
-| **6** | W6 | Memory Core PoC | 📋 | ⬜ | ⬜ | ⬜ |
+| **6** | W6 | Memory Core PoC | ✅ v1 | ⬜ | 🔶 W6-1 | ⬜ |
 
 **현재 포커스:** Phase B Fusion type 섹션 · W4.2 Place/Org · ADR-013 ✅ · dogfood는 구현 완료 후 1회
 
@@ -110,11 +110,14 @@
 
 ---
 
-## 8. Step 6 — Wave 6 (PoC · non-blocking)
+## 8. Step 6 — Wave 6 (PoC · W6-1 Exit)
 
-| Step | SSOT | 상태 |
-|------|------|:----:|
-| W6 | entity-centric-evolution-plan §Wave 6 | 📋 outline only |
+| # | 작업 | 문서 | 상태 |
+|---|------|------|:----:|
+| 6.1 | Memory Core spec | [wave6-memory-core-spec.md](wave6-memory-core-spec.md) | ✅ |
+| 6.2 | **W6-1 event_ledger.jsonl** | — | ✅ |
+| 6.3 | W6-2 SQLite projector | — | ⬜ |
+| 6.4 | W6-3 MCP read PoC | — | ⬜ |
 
 ---
 

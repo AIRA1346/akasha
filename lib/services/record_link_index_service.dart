@@ -5,13 +5,18 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/record_link.dart';
 import '../core/ports/record_link_port.dart';
+import '../core/archiving/vault_ledger_event.dart';
+import 'event_ledger_service.dart';
 import 'file_service.dart';
 import 'record_link_parser.dart';
 
 /// `vault/.akasha/link_index.json` — Wave 5.
 class RecordLinkIndexService implements RecordLinkPort {
-  RecordLinkIndexService({AkashaFileService? fileService})
-      : _fileService = fileService ?? AkashaFileService();
+  RecordLinkIndexService({
+    AkashaFileService? fileService,
+    EventLedgerService? eventLedger,
+  })  : _fileService = fileService ?? AkashaFileService(),
+        _eventLedger = eventLedger ?? EventLedgerService();
 
   static const int schemaVersion = 1;
   static const String indexDirName = '.akasha';
@@ -29,13 +34,17 @@ class RecordLinkIndexService implements RecordLinkPort {
   };
 
   final AkashaFileService _fileService;
+  final EventLedgerService _eventLedger;
 
   Map<String, List<RecordLink>> _outgoing = {};
   Map<String, List<String>> _incoming = {};
   bool _loaded = false;
 
   @override
-  Future<void> rebuildIndex({String? changedPath}) async {
+  Future<void> rebuildIndex({
+    String? changedPath,
+    Future<void> Function(Map<String, dynamic> stats)? onRebuilt,
+  }) async {
     final vaultPath = _fileService.vaultPath;
     if (vaultPath == null || vaultPath.isEmpty) {
       _outgoing = {};
@@ -88,6 +97,24 @@ class RecordLinkIndexService implements RecordLinkPort {
     _loaded = true;
 
     await _persist(vaultPath);
+
+    final stats = {
+      'outgoingSources': outgoing.length,
+      'incomingEntities': incoming.length,
+      if (changedPath != null && changedPath.isNotEmpty)
+        'changedPath': p.normalize(changedPath),
+    };
+    if (onRebuilt != null) {
+      await onRebuilt(stats);
+    } else {
+      await _eventLedger.append(
+        VaultLedgerEvent(
+          type: VaultLedgerEventType.linkIndexRebuilt,
+          at: DateTime.now().toUtc(),
+          meta: stats,
+        ),
+      );
+    }
   }
 
   @override

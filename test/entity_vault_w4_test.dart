@@ -57,7 +57,7 @@ added_at: "2026-06-19T10:00:00.000"
       final tempDir = await Directory.systemTemp.createTemp('akasha_w4_entity_');
       try {
         await service.setVaultPath(tempDir.path);
-        const store = EntityVaultStore();
+        final store = EntityVaultStore();
 
         final entity = UserCatalogEntity.userLocal(
           entityId: 'pe_u_test1234',
@@ -92,7 +92,7 @@ added_at: "2026-06-19T10:00:00.000"
       final tempDir = await Directory.systemTemp.createTemp('akasha_w4_entity_');
       try {
         await service.setVaultPath(tempDir.path);
-        const store = EntityVaultStore();
+        final store = EntityVaultStore();
         const loader = EntityVaultLoader();
 
         final entity = UserCatalogEntity.userLocal(
@@ -134,7 +134,7 @@ added_at: "2026-06-19T10:00:00.000"
       final tempDir = await Directory.systemTemp.createTemp('akasha_w4_loader_');
       try {
         await service.setVaultPath(tempDir.path);
-        const store = EntityVaultStore();
+        final store = EntityVaultStore();
         const loader = EntityVaultLoader();
 
         await store.saveCatalogEntity(

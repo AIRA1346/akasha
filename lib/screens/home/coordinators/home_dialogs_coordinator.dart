@@ -114,7 +114,7 @@ class HomeDialogsCoordinator {
             if (result.createJournal) {
               final vault = AkashaFileService().vaultPath;
               if (vault != null && vault.isNotEmpty) {
-                await const EntityVaultStore().saveCatalogEntity(
+                await EntityVaultStore().saveCatalogEntity(
                   vaultPath: vault,
                   entity: result.entity,
                   body: result.journalBody,
