@@ -244,6 +244,7 @@ class HomeShellController {
       userCatalog: userCatalog,
       vaultItems: vault.items,
       onOpenWork: workbenchCoord.openBrowseItem,
+      onOpenEntity: workbenchCoord.openEntity,
       linkIndex: vault.linkIndex,
     );
   }
@@ -343,10 +344,19 @@ class HomeShellController {
   AkashaItem resolveItemForOpen(AkashaItem item) =>
       workbenchCoord.resolveItemForOpen(item);
   void openBrowseItem(AkashaItem item) => workbenchCoord.openBrowseItem(item);
+  Future<void> openEntity(UserCatalogEntity entity) =>
+      workbenchCoord.openEntity(entity);
   Future<void> onWorkbenchWorkSaved(AkashaItem saved) =>
       workbenchCoord.onWorkbenchWorkSaved(saved);
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) =>
       workbenchCoord.onWorkbenchWorkDeleted(tabId, item);
+  Future<void> onWorkbenchEntitySaved(
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal,
+  ) =>
+      workbenchCoord.onWorkbenchEntitySaved(entity, journal);
+  Future<void> onWorkbenchEntityDeleted(String tabId) =>
+      workbenchCoord.onWorkbenchEntityDeleted(tabId);
 
   Widget buildPosterCard(BrowseCard card) => browse.buildPosterCard(card);
 

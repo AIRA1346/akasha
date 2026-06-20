@@ -9,7 +9,6 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../services/file_service.dart';
 import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
-import '../dialogs/entity_journal_dialog.dart';
 
 /// Wave 4.1 — entity journal (`vault/entities/`) 시간순 목록.
 class EntityJournalView extends StatefulWidget {
@@ -19,6 +18,7 @@ class EntityJournalView extends StatefulWidget {
     required this.linkIndex,
     required this.vaultItems,
     required this.onOpenWork,
+    required this.onOpenEntity,
     this.reloadToken = 0,
   });
 
@@ -26,6 +26,7 @@ class EntityJournalView extends StatefulWidget {
   final RecordLinkPort linkIndex;
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item) onOpenWork;
+  final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final int reloadToken;
 
   @override
@@ -93,15 +94,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
       return;
     }
 
-    await showEntityJournalDialog(
-      context,
-      entity: catalog,
-      entry: entry,
-      linkIndex: widget.linkIndex,
-      userCatalog: widget.userCatalog,
-      vaultItems: widget.vaultItems,
-      onOpenWork: widget.onOpenWork,
-    );
+    await widget.onOpenEntity(catalog);
     if (mounted) await _reload();
   }
 

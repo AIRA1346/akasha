@@ -1,5 +1,7 @@
+import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/features/workbench/data/workbench_controller.dart';
-import 'package:akasha/features/workbench/presentation/work_tab.dart';
+import 'package:akasha/features/workbench/presentation/collectible_tab.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/utils/helpers.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -15,7 +17,7 @@ void main() {
     original.filePath = r'C:\vault\manga\before.md';
     original.rating = 3;
     ctrl.openWork(original);
-    final tabId = WorkTab.idFor(original);
+    final tabId = WorkCollectibleTab.idFor(original);
 
     final updated = createItem(
       workId: 'wk_sync',
@@ -27,7 +29,7 @@ void main() {
 
     ctrl.syncFromVaultItems([updated]);
 
-    expect(ctrl.activeTab!.item.rating, 5);
+    expect(ctrl.activeWorkTab!.item.rating, 5);
     expect(ctrl.activeTab!.id, tabId);
   });
 
@@ -40,7 +42,7 @@ void main() {
     );
     original.filePath = r'C:\vault\manga\dirty.md';
     ctrl.openWork(original);
-    ctrl.markDirty(WorkTab.idFor(original), dirty: true);
+    ctrl.markDirty(WorkCollectibleTab.idFor(original), dirty: true);
 
     final updated = createItem(
       workId: 'wk_dirty',
@@ -52,6 +54,21 @@ void main() {
 
     ctrl.syncFromVaultItems([updated]);
 
-    expect(ctrl.activeTab!.item.rating, 0);
+    expect(ctrl.activeWorkTab!.item.rating, 0);
+  });
+
+  test('openEntity adds entity tab and shows detail view', () {
+    final ctrl = WorkbenchController();
+    final entity = UserCatalogEntity.userLocal(
+      entityId: 'pe_u_test',
+      type: EntityAnchorType.person,
+      title: 'Test Person',
+    );
+
+    ctrl.openEntity(entity);
+
+    expect(ctrl.hasOpenDetail, isTrue);
+    expect(ctrl.activeEntityTab!.entity.title, 'Test Person');
+    expect(ctrl.tabs.length, 1);
   });
 }

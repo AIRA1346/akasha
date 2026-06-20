@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
 import 'entity_journal_view.dart';
@@ -13,6 +14,7 @@ class RecordsView extends StatelessWidget {
     super.key,
     required this.vaultItems,
     required this.onOpenWork,
+    required this.onOpenEntity,
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
     required this.userCatalog,
@@ -22,6 +24,7 @@ class RecordsView extends StatelessWidget {
 
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item) onOpenWork;
+  final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
   final UserCatalogPort userCatalog;
@@ -60,6 +63,7 @@ class RecordsView extends StatelessWidget {
                   linkIndex: linkIndex,
                   vaultItems: vaultItems,
                   onOpenWork: onOpenWork,
+                  onOpenEntity: onOpenEntity,
                   reloadToken: reloadToken,
                 ),
               ],

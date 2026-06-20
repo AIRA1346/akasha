@@ -1,33 +1,51 @@
 import 'package:flutter/foundation.dart';
 
+import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
-import '../presentation/work_tab.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../presentation/collectible_tab.dart';
 import 'workbench_layout_prefs.dart';
 
-/// 열린 작품 탭·활성 탭·레이아웃 prefs
+/// 열린 Collectible 탭·활성 탭·레이아웃 prefs (Phase 6: Work + Entity).
 class WorkbenchController extends ChangeNotifier {
   static const int maxTabs = 16;
 
-  final List<WorkTab> tabs = [];
+  final List<CollectibleTab> tabs = [];
   String? activeTabId;
   WorkbenchLayoutPrefs layout = WorkbenchLayoutPrefs.defaults();
   bool _prefsLoaded = false;
-  bool _workViewVisible = false;
+  bool _detailViewVisible = false;
 
-  /// 활성 작품 탭의 md 저장 (Ctrl+S·탭 닫기 시 사용).
+  /// 활성 탭의 md 저장 (Ctrl+S·탭 닫기 시 사용).
   Future<void> Function()? saveActiveTab;
 
   bool get prefsLoaded => _prefsLoaded;
-  /// 작품 상세(3·4열)가 메인에 표시 중인지
-  bool get hasOpenWork => _workViewVisible && activeTabId != null && activeTab != null;
+
+  /// Work · Entity 상세가 메인에 표시 중인지.
+  bool get hasOpenDetail =>
+      _detailViewVisible && activeTabId != null && activeTab != null;
+
+  /// @deprecated Use [hasOpenDetail]
+  bool get hasOpenWork => hasOpenDetail;
+
   bool get hasTabs => tabs.isNotEmpty;
 
-  WorkTab? get activeTab {
+  CollectibleTab? get activeTab {
     if (activeTabId == null) return null;
     for (final tab in tabs) {
       if (tab.id == activeTabId) return tab;
     }
     return null;
+  }
+
+  WorkCollectibleTab? get activeWorkTab {
+    final tab = activeTab;
+    return tab is WorkCollectibleTab ? tab : null;
+  }
+
+  EntityCollectibleTab? get activeEntityTab {
+    final tab = activeTab;
+    return tab is EntityCollectibleTab ? tab : null;
   }
 
   Future<void> loadPrefs() async {
@@ -37,34 +55,58 @@ class WorkbenchController extends ChangeNotifier {
   }
 
   void openWork(AkashaItem item) {
-    final id = WorkTab.idFor(item);
+    final id = WorkCollectibleTab.idFor(item);
     final existing = tabs.where((t) => t.id == id).firstOrNull;
-    if (existing != null) {
+    if (existing is WorkCollectibleTab) {
       existing.item = item;
       activeTabId = id;
     } else {
       if (tabs.length >= maxTabs) {
         tabs.removeAt(0);
       }
-      tabs.add(WorkTab(id: id, item: item));
+      tabs.add(WorkCollectibleTab(id: id, item: item));
       activeTabId = id;
     }
     layout.tabRailCollapsed = false;
-    _workViewVisible = true;
+    _detailViewVisible = true;
     notifyListeners();
   }
 
-  /// 서재·대시보드 탐색으로 돌아갈 때 — 탭은 유지, 작품 상세 패널만 숨김
+  void openEntity(
+    UserCatalogEntity entity, {
+    EntityJournalEntry? journal,
+  }) {
+    if (entity.isWorkEntity) return;
+    final id = EntityCollectibleTab.idFor(entity.entityId);
+    final existing = tabs.where((t) => t.id == id).firstOrNull;
+    if (existing is EntityCollectibleTab) {
+      existing.entity = entity;
+      existing.journal = journal;
+      activeTabId = id;
+    } else {
+      if (tabs.length >= maxTabs) {
+        tabs.removeAt(0);
+      }
+      tabs.add(
+        EntityCollectibleTab(entity: entity, journal: journal),
+      );
+      activeTabId = id;
+    }
+    layout.tabRailCollapsed = false;
+    _detailViewVisible = true;
+    notifyListeners();
+  }
+
   void showBrowse() {
-    if (!_workViewVisible) return;
-    _workViewVisible = false;
+    if (!_detailViewVisible) return;
+    _detailViewVisible = false;
     notifyListeners();
   }
 
   void selectTab(String id) {
     if (tabs.any((t) => t.id == id)) {
       activeTabId = id;
-      _workViewVisible = true;
+      _detailViewVisible = true;
       notifyListeners();
     }
   }
@@ -73,7 +115,7 @@ class WorkbenchController extends ChangeNotifier {
     tabs.removeWhere((t) => t.id == id);
     if (activeTabId == id) {
       activeTabId = tabs.isEmpty ? null : tabs.last.id;
-      if (tabs.isEmpty) _workViewVisible = false;
+      if (tabs.isEmpty) _detailViewVisible = false;
     }
     notifyListeners();
   }
@@ -90,7 +132,7 @@ class WorkbenchController extends ChangeNotifier {
 
   void updateTabItem(String id, AkashaItem item, {bool dirty = false}) {
     for (final tab in tabs) {
-      if (tab.id == id) {
+      if (tab.id == id && tab is WorkCollectibleTab) {
         tab.item = item;
         tab.isDirty = dirty;
         notifyListeners();
@@ -99,11 +141,43 @@ class WorkbenchController extends ChangeNotifier {
     }
   }
 
-  /// 볼트 재로드 후 디스크 내용을 열린 탭에 반영 (편집 중 탭은 유지).
+  void updateEntityTab(
+    String id,
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal, {
+    bool dirty = false,
+  }) {
+    for (final tab in tabs) {
+      if (tab.id == id && tab is EntityCollectibleTab) {
+        tab.entity = entity;
+        tab.journal = journal;
+        tab.isDirty = dirty;
+        notifyListeners();
+        return;
+      }
+    }
+  }
+
+  void preserveEntityDraft(
+    String id,
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal,
+  ) {
+    for (final tab in tabs) {
+      if (tab.id == id && tab is EntityCollectibleTab) {
+        tab.entity = entity;
+        tab.journal = journal;
+        tab.isDirty = true;
+        notifyListeners();
+        return;
+      }
+    }
+  }
+
   void syncFromVaultItems(List<AkashaItem> vaultItems) {
     var changed = false;
     for (final tab in tabs) {
-      if (tab.isDirty) continue;
+      if (tab is! WorkCollectibleTab || tab.isDirty) continue;
       final match = _matchVaultItem(tab.item, vaultItems);
       if (match == null) continue;
       if (_sameItemSnapshot(tab.item, match)) continue;

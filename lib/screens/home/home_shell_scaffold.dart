@@ -185,8 +185,11 @@ class HomeShellScaffold extends StatelessWidget {
               onToggleWorkStatus: controller.toggleWorkStatus,
               onToggleMyStatus: controller.toggleMyStatus,
               onOpenBrowseItem: controller.openBrowseItem,
+              onOpenEntity: controller.openEntity,
               onWorkbenchWorkSaved: controller.onWorkbenchWorkSaved,
               onWorkbenchWorkDeleted: controller.onWorkbenchWorkDeleted,
+              onWorkbenchEntitySaved: controller.onWorkbenchEntitySaved,
+              onWorkbenchEntityDeleted: controller.onWorkbenchEntityDeleted,
               onAddToLibrary: controller.canAddToLibrary
                   ? (AkashaItem item) =>
                       controller.libraryUi.showAddToLibraryForItem(

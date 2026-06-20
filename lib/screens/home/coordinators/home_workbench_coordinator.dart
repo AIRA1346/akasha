@@ -1,8 +1,12 @@
+import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
-import '../../../features/workbench/presentation/work_tab.dart';
+import '../../../features/workbench/presentation/collectible_tab.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../services/entity_vault_loader.dart';
+import '../../../services/file_service.dart';
 
-/// 워크벤치 탭·작품 열기/저장 (E2-3).
+/// 워크벤치 탭·Collectible 열기/저장 (E2-3 · Phase 6).
 class HomeWorkbenchCoordinator {
   HomeWorkbenchCoordinator({
     required this.workbench,
@@ -20,7 +24,7 @@ class HomeWorkbenchCoordinator {
   final void Function(void Function(List<AkashaItem> items) mutate) mutateItems;
   final Future<void> Function() reloadItems;
 
-  bool _lastWorkbenchShowsWork = false;
+  bool _lastWorkbenchShowsDetail = false;
   bool _lastWorkbenchHadTabs = false;
 
   void attach() => workbench.addListener(onWorkbenchChanged);
@@ -29,18 +33,19 @@ class HomeWorkbenchCoordinator {
 
   void onWorkbenchChanged() {
     if (!isMounted()) return;
-    final showsWork = workbench.hasOpenWork;
+    final showsDetail = workbench.hasOpenDetail;
     final hasTabs = workbench.hasTabs;
-    if (showsWork == _lastWorkbenchShowsWork && hasTabs == _lastWorkbenchHadTabs) {
+    if (showsDetail == _lastWorkbenchShowsDetail &&
+        hasTabs == _lastWorkbenchHadTabs) {
       return;
     }
-    _lastWorkbenchShowsWork = showsWork;
+    _lastWorkbenchShowsDetail = showsDetail;
     _lastWorkbenchHadTabs = hasTabs;
     rebuild();
   }
 
   void captureWorkbenchLayout() {
-    _lastWorkbenchShowsWork = workbench.hasOpenWork;
+    _lastWorkbenchShowsDetail = workbench.hasOpenDetail;
     _lastWorkbenchHadTabs = workbench.hasTabs;
   }
 
@@ -63,10 +68,35 @@ class HomeWorkbenchCoordinator {
     if (isMounted()) rebuild();
   }
 
+  Future<void> openEntity(UserCatalogEntity entity) async {
+    if (entity.isWorkEntity) {
+      for (final item in getItems()) {
+        if (item.workId == entity.entityId) {
+          openBrowseItem(item);
+          return;
+        }
+      }
+      return;
+    }
+
+    EntityJournalEntry? entry;
+    final vaultPath = AkashaFileService().vaultPath;
+    if (vaultPath != null && vaultPath.isNotEmpty) {
+      entry = await const EntityVaultLoader().findByEntityId(
+        vaultPath,
+        entity.entityId,
+      );
+    }
+
+    if (!isMounted()) return;
+    workbench.openEntity(entity, journal: entry);
+    rebuild();
+  }
+
   Future<void> onWorkbenchWorkSaved(AkashaItem saved) async {
     await reloadItems();
     if (!isMounted()) return;
-    workbench.updateTabItem(WorkTab.idFor(saved), saved, dirty: false);
+    workbench.updateTabItem(WorkCollectibleTab.idFor(saved), saved, dirty: false);
   }
 
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
@@ -79,5 +109,24 @@ class HomeWorkbenchCoordinator {
       });
     }
     await reloadItems();
+  }
+
+  Future<void> onWorkbenchEntitySaved(
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal,
+  ) async {
+    if (!isMounted()) return;
+    workbench.updateEntityTab(
+      EntityCollectibleTab.idFor(entity.entityId),
+      entity,
+      journal,
+      dirty: false,
+    );
+    rebuild();
+  }
+
+  Future<void> onWorkbenchEntityDeleted(String tabId) async {
+    workbench.closeTab(tabId);
+    if (isMounted()) rebuild();
   }
 }

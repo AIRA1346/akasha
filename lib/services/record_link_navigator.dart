@@ -21,6 +21,7 @@ abstract final class RecordLinkNavigator {
     required UserCatalogPort userCatalog,
     required List<AkashaItem> vaultItems,
     required void Function(AkashaItem item) onOpenWork,
+    Future<void> Function(UserCatalogEntity entity)? onOpenEntity,
     RecordLinkPort? linkIndex,
   }) async {
     if (link.kind == RecordLinkKind.explicitId && link.targetEntityId != null) {
@@ -30,6 +31,7 @@ abstract final class RecordLinkNavigator {
         userCatalog: userCatalog,
         vaultItems: vaultItems,
         onOpenWork: onOpenWork,
+        onOpenEntity: onOpenEntity,
         linkIndex: linkIndex,
       );
       return;
@@ -49,6 +51,7 @@ abstract final class RecordLinkNavigator {
         userCatalog: userCatalog,
         vaultItems: vaultItems,
         onOpenWork: onOpenWork,
+        onOpenEntity: onOpenEntity,
         linkIndex: linkIndex,
       );
       return;
@@ -183,11 +186,14 @@ abstract final class RecordLinkNavigator {
     required UserCatalogPort userCatalog,
     required List<AkashaItem> vaultItems,
     required void Function(AkashaItem item) onOpenWork,
+    Future<void> Function(UserCatalogEntity entity)? onOpenEntity,
     RecordLinkPort? linkIndex,
   }) async {
     final type = EntityIdCodec.typeFromId(entityId);
 
-    if (type == EntityAnchorType.work || entityId.startsWith('sub_') || entityId.startsWith('gen_')) {
+    if (type == EntityAnchorType.work ||
+        entityId.startsWith('sub_') ||
+        entityId.startsWith('gen_')) {
       for (final item in vaultItems) {
         if (item.workId == entityId) {
           onOpenWork(item);
@@ -198,6 +204,26 @@ abstract final class RecordLinkNavigator {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('볼트에 work ($entityId) 아카이브가 없습니다.')),
       );
+      return;
+    }
+
+    if (onOpenEntity != null) {
+      await userCatalog.load();
+      UserCatalogEntity? catalog;
+      for (final entity in userCatalog.all) {
+        if (entity.entityId == entityId) {
+          catalog = entity;
+          break;
+        }
+      }
+      if (catalog == null) {
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('「$entityId」 Entity를 찾을 수 없습니다.')),
+        );
+        return;
+      }
+      await onOpenEntity(catalog);
       return;
     }
 

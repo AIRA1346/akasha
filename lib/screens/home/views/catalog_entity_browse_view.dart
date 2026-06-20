@@ -33,6 +33,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
     this.linkIndex,
     this.vaultItems = const [],
     this.onOpenWork,
+    this.onOpenEntity,
     this.compact = false,
     this.highlightEntityId,
     this.entityGallerySort = EntityGallerySortCriteria.recentlyAdded,
@@ -49,6 +50,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
   final RecordLinkPort? linkIndex;
   final List<AkashaItem> vaultItems;
   final void Function(AkashaItem item)? onOpenWork;
+  final void Function(UserCatalogEntity entity)? onOpenEntity;
   final bool compact;
   final String? highlightEntityId;
   final EntityGallerySortCriteria entityGallerySort;
@@ -309,6 +311,11 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   }
 
   Future<void> _openEntity(UserCatalogEntity entity) async {
+    if (widget.onOpenEntity != null) {
+      widget.onOpenEntity!(entity);
+      return;
+    }
+
     final vaultPath = AkashaFileService().vaultPath;
     final entry = await const EntityVaultLoader().findByEntityId(
       vaultPath,

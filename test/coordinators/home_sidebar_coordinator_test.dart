@@ -5,6 +5,7 @@ import 'package:akasha/models/personal_library_config.dart';
 import 'package:akasha/screens/home/coordinators/home_filter_coordinator.dart';
 import 'package:akasha/screens/home/coordinators/home_sidebar_coordinator.dart';
 import 'package:akasha/screens/home/home_browse_filter_controller.dart';
+import 'package:akasha/screens/home/home_collectible_collection_controller.dart';
 import 'package:akasha/screens/home/home_dashboard_controller.dart';
 import 'package:akasha/screens/home/home_personal_library_controller.dart';
 import 'package:akasha/screens/home/home_section_preferences.dart';
@@ -29,6 +30,7 @@ void main() {
       );
       sidebarCoordinator = HomeSidebarCoordinator(
         personalLibCtrl: personalLibCtrl,
+        collectionCtrl: HomeCollectibleCollectionController(),
         dashboardCtrl: dashboardCtrl,
         sectionPrefs: sectionPrefs,
         filterCoordinator: filterCoordinator,

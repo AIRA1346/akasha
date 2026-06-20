@@ -17,6 +17,8 @@ import '../../models/enums.dart';
 import '../../models/library_theme.dart';
 import '../../models/collectible_collection.dart';
 import '../../models/personal_library_config.dart';
+import '../../models/user_catalog_entity.dart';
+import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/work_drag_payload.dart';
 import '../../services/entity_related_works_discovery.dart';
 import '../../services/file_service.dart';
@@ -87,8 +89,14 @@ class HomeShellBody extends StatelessWidget {
   final void Function(String label) onToggleWorkStatus;
   final void Function(String label) onToggleMyStatus;
   final void Function(AkashaItem item) onOpenBrowseItem;
+  final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final Future<void> Function(AkashaItem saved) onWorkbenchWorkSaved;
   final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
+  final Future<void> Function(
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal,
+  ) onWorkbenchEntitySaved;
+  final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final Future<void> Function(
     List<BrowseCard> cards,
@@ -167,8 +175,11 @@ class HomeShellBody extends StatelessWidget {
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
     required this.onOpenBrowseItem,
+    required this.onOpenEntity,
     required this.onWorkbenchWorkSaved,
     required this.onWorkbenchWorkDeleted,
+    required this.onWorkbenchEntitySaved,
+    required this.onWorkbenchEntityDeleted,
     this.onAddToLibrary,
     required this.onCuratedReorder,
     this.onEntityCollectionCuratedReorder,
@@ -260,8 +271,11 @@ class HomeShellBody extends StatelessWidget {
                     Expanded(
                       child: WorkbenchShell(
                         controller: workbench,
+                        userCatalog: userCatalog,
                         onWorkSaved: onWorkbenchWorkSaved,
                         onWorkDeleted: onWorkbenchWorkDeleted,
+                        onEntitySaved: onWorkbenchEntitySaved,
+                        onEntityDeleted: onWorkbenchEntityDeleted,
                         onAddToLibrary: onAddToLibrary,
                         onWikiLinkTap: onWikiLinkTap,
                         onRequestEntityLink: onRequestEntityLink,
@@ -269,6 +283,7 @@ class HomeShellBody extends StatelessWidget {
                             ? RecordsView(
                                 vaultItems: items,
                                 onOpenWork: onOpenBrowseItem,
+                                onOpenEntity: onOpenEntity,
                                 onNewTimelineEntry: onNewTimelineEntry,
                                 onNewJournalEntry: onNewJournalEntry,
                                 userCatalog: userCatalog,
@@ -281,6 +296,7 @@ class HomeShellBody extends StatelessWidget {
                                 linkIndex: linkIndex,
                                 vaultItems: items,
                                 onOpenWork: onOpenBrowseItem,
+                                onOpenEntity: (entity) => onOpenEntity(entity),
                                 scope: BrowseEntityScope.all,
                                 posterCardBuilder: posterCardBuilder,
                                 relatedWorksDiscoveryFactory: () =>
@@ -380,6 +396,7 @@ class HomeShellBody extends StatelessWidget {
       linkIndex: linkIndex,
       vaultItems: items,
       onOpenWork: onOpenBrowseItem,
+      onOpenEntity: (entity) => onOpenEntity(entity),
       scope: scope,
       highlightEntityId: filterCtrl.highlightEntityId,
       entityGallerySort: sectionPrefs.entityGallerySort,
@@ -412,6 +429,7 @@ class HomeShellBody extends StatelessWidget {
       linkIndex: linkIndex,
       vaultItems: items,
       onOpenWork: onOpenBrowseItem,
+      onOpenEntity: (entity) => onOpenEntity(entity),
       scope: BrowseEntityScope.all,
       compact: true,
       highlightEntityId: filterCtrl.highlightEntityId,

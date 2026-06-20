@@ -16,8 +16,8 @@ import '../../../services/entity_catalog_sync.dart';
 import '../../../services/file_service.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
+import '../../../services/open_collectible.dart';
 import '../dialogs/home_dialogs_facade.dart';
-import '../dialogs/entity_journal_dialog.dart';
 import '../home_auto_archive.dart';
 import 'home_catalog_coordinator.dart';
 import 'home_navigation_coordinator.dart';
@@ -90,7 +90,7 @@ class HomeDialogsCoordinator {
         if (!isMounted()) return;
         final type = EntityIdCodec.typeFromId(work.workId);
         if (type != null && type != EntityAnchorType.work) {
-          await _openEntitySheet(work.workId);
+          await _openEntityInWorkbench(work.workId);
           return;
         }
         workbenchCoord.openBrowseItem(
@@ -132,15 +132,7 @@ class HomeDialogsCoordinator {
               if (!isMounted()) return;
 
               if (saved.entry != null) {
-                await showEntityJournalDialog(
-                  hostContext(),
-                  entity: saved.entity,
-                  entry: saved.entry,
-                  linkIndex: getLinkIndex?.call(),
-                  userCatalog: userCatalog,
-                  vaultItems: getItems(),
-                  onOpenWork: workbenchCoord.openBrowseItem,
-                );
+                await workbenchCoord.openEntity(saved.entity);
               }
 
               onEntityArchived?.call(saved.entity, saved.entry);
@@ -186,34 +178,13 @@ class HomeDialogsCoordinator {
     );
   }
 
-  Future<void> _openEntitySheet(String entityId) async {
-    await userCatalog.load();
-    UserCatalogEntity? entity;
-    for (final candidate in userCatalog.all) {
-      if (candidate.entityId == entityId) {
-        entity = candidate;
-        break;
-      }
-    }
+  Future<void> _openEntityInWorkbench(String entityId) async {
+    final entity = await CollectibleOpener.findEntity(userCatalog, entityId);
     if (entity == null) {
       showMessage('「$entityId」을(를) 찾을 수 없습니다.');
       return;
     }
-
-    final entry = await const EntityVaultLoader().findByEntityId(
-      AkashaFileService().vaultPath,
-      entity.entityId,
-    );
-    if (!isMounted()) return;
-    await showEntityJournalDialog(
-      hostContext(),
-      entity: entity,
-      entry: entry,
-      linkIndex: getLinkIndex?.call(),
-      userCatalog: userCatalog,
-      vaultItems: getItems(),
-      onOpenWork: workbenchCoord.openBrowseItem,
-    );
+    await workbenchCoord.openEntity(entity);
   }
 
   Future<void> _promoteCatalogOnlyToArchive(RegistryWork work) async {
@@ -241,7 +212,7 @@ class HomeDialogsCoordinator {
       entity.entityId,
     );
     if (existing != null) {
-      await _openEntitySheet(entity.entityId);
+      await _openEntityInWorkbench(entity.entityId);
       return;
     }
 
@@ -258,15 +229,7 @@ class HomeDialogsCoordinator {
       await loadItems();
       if (!isMounted()) return;
 
-      await showEntityJournalDialog(
-        hostContext(),
-        entity: mirrored,
-        entry: entry,
-        linkIndex: getLinkIndex?.call(),
-        userCatalog: userCatalog,
-        vaultItems: getItems(),
-        onOpenWork: workbenchCoord.openBrowseItem,
-      );
+      await workbenchCoord.openEntity(mirrored);
       onEntityArchived?.call(mirrored, entry);
     } on EntityVaultPathConflict catch (e) {
       showMessage(e.userMessage);
