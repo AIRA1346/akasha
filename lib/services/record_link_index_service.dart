@@ -144,6 +144,12 @@ class RecordLinkIndexService implements RecordLinkPort {
     return List.unmodifiable(_incoming[entityId] ?? const []);
   }
 
+  @override
+  Future<Iterable<String>> incomingEntityIds() async {
+    await _ensureLoaded();
+    return _incoming.keys;
+  }
+
   Future<void> _ensureLoaded() async {
     if (_loaded) return;
     final vaultPath = _fileService.vaultPath;

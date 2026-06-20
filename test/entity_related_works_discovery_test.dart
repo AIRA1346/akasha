@@ -4,10 +4,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/core/archiving/entity_journal_entry.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
+import 'package:akasha/services/entity_vault_loader.dart';
 import 'package:akasha/services/entity_related_works_discovery.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/record_link_index_service.dart';
@@ -333,5 +335,147 @@ $body
       expect(all[subaruId]!.workIds, {rezeroId});
       expect(all[saberId]!.workIds, {fateId});
     });
+
+    test('discoverAll loads vault journals once for batch resolve', () async {
+      const subaruId = 'pe_u_subaru01';
+      const emiliaId = 'pe_u_emilia01';
+      const saberId = 'pe_u_saber001';
+      const rezeroId = 'wk_u_rezero01';
+
+      await catalog.upsert(
+        UserCatalogEntity.userLocal(
+          entityId: subaruId,
+          type: EntityAnchorType.person,
+          title: '스바루',
+        ),
+      );
+      await writeEntityJournal(
+        entityId: emiliaId,
+        title: 'Emilia',
+        body: '[[wk_u_rezero01|Re:Zero]]',
+      );
+
+      final rezeroPath = await writeWork(
+        workId: rezeroId,
+        title: 'Re:Zero',
+        fileName: 'Re_Zero.md',
+        body: '[[pe_u_subaru01|스바루]]',
+      );
+      final items = [
+        workItem(workId: rezeroId, title: 'Re:Zero', workPath: rezeroPath),
+      ];
+      await linkIndex.rebuildIndex(userCatalog: catalog, vaultItems: items);
+
+      final countingLoader = _CountingEntityVaultLoader();
+      final service = RecordLinkEntityRelatedWorksDiscovery(
+        linkIndex: linkIndex,
+        vaultItems: items,
+        vaultLoader: countingLoader,
+        vaultPath: tempDir.path,
+      );
+
+      final batch = await service.discoverAll([
+        subaruId,
+        emiliaId,
+        saberId,
+        subaruId,
+      ]);
+
+      expect(countingLoader.loadFromVaultCallCount, 1);
+      expect(countingLoader.findByEntityIdCallCount, 0);
+      expect(batch[subaruId]!.workIds, {rezeroId});
+      expect(batch[emiliaId]!.workIds, {rezeroId});
+      expect(batch[saberId]!.workIds, isEmpty);
+
+      await service.discover(subaruId);
+      expect(countingLoader.loadFromVaultCallCount, 2);
+      expect(countingLoader.findByEntityIdCallCount, 1);
+    });
+
+    test('discoverAll caches incoming record counts for gallery reuse', () async {
+      const subaruId = 'pe_u_subaru01';
+      const rezeroId = 'wk_u_rezero01';
+
+      await catalog.upsert(
+        UserCatalogEntity.userLocal(
+          entityId: subaruId,
+          type: EntityAnchorType.person,
+          title: '스바루',
+        ),
+      );
+
+      final rezeroPath = await writeWork(
+        workId: rezeroId,
+        title: 'Re:Zero',
+        fileName: 'Re_Zero.md',
+        body: '[[pe_u_subaru01|스바루]]',
+      );
+      final items = [
+        workItem(workId: rezeroId, title: 'Re:Zero', workPath: rezeroPath),
+      ];
+      await linkIndex.rebuildIndex(userCatalog: catalog, vaultItems: items);
+
+      final service = await discovery(vaultItems: items);
+      await service.discoverAll([subaruId]);
+
+      expect(service.cachedIncomingRecordCount(subaruId), 1);
+      expect(service.cachedJournalsByEntityId, isNotNull);
+    });
+
+    test('entityIdsForWork returns incoming and outgoing linked entities',
+        () async {
+      const subaruId = 'pe_u_subaru01';
+      const emiliaId = 'pe_u_emilia01';
+      const rezeroId = 'wk_u_rezero01';
+
+      await catalog.upsert(
+        UserCatalogEntity.userLocal(
+          entityId: subaruId,
+          type: EntityAnchorType.person,
+          title: '스바루',
+        ),
+      );
+      await writeEntityJournal(
+        entityId: emiliaId,
+        title: 'Emilia',
+        body: '[[wk_u_rezero01|Re:Zero]]',
+      );
+
+      final rezeroPath = await writeWork(
+        workId: rezeroId,
+        title: 'Re:Zero',
+        fileName: 'Re_Zero.md',
+        body: '[[pe_u_subaru01|스바루]]',
+      );
+      final items = [
+        workItem(workId: rezeroId, title: 'Re:Zero', workPath: rezeroPath),
+      ];
+      await linkIndex.rebuildIndex(userCatalog: catalog, vaultItems: items);
+
+      final service = await discovery(vaultItems: items);
+      final linked = await service.entityIdsForWork(rezeroId);
+
+      expect(linked, {subaruId, emiliaId});
+    });
   });
+}
+
+class _CountingEntityVaultLoader extends EntityVaultLoader {
+  int loadFromVaultCallCount = 0;
+  int findByEntityIdCallCount = 0;
+
+  @override
+  Future<List<EntityJournalEntry>> loadFromVault(String? vaultPath) async {
+    loadFromVaultCallCount++;
+    return super.loadFromVault(vaultPath);
+  }
+
+  @override
+  Future<EntityJournalEntry?> findByEntityId(
+    String? vaultPath,
+    String entityId,
+  ) async {
+    findByEntityIdCallCount++;
+    return super.findByEntityId(vaultPath, entityId);
+  }
 }

@@ -14,6 +14,17 @@ class CollectibleCollectionFilter {
     this.relatedWorkId,
   });
 
+  /// Filter mode requires at least one of tagsAll or relatedWorkId (Phase 4 Step 3).
+  static bool hasFilterPredicate({
+    List<String>? tagsAll,
+    String? relatedWorkId,
+  }) {
+    final tags = tagsAll ?? const [];
+    if (tags.isNotEmpty) return true;
+    final workId = relatedWorkId?.trim();
+    return workId != null && workId.isNotEmpty;
+  }
+
   Map<String, dynamic> toJson() => {
         if (kinds != null) 'kinds': kinds!.map((k) => k.name).toList(),
         if (tagsAll != null) 'tagsAll': tagsAll,

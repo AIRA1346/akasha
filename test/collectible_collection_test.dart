@@ -1,9 +1,12 @@
 import 'package:akasha/core/archiving/entity_anchor.dart';
+import 'package:akasha/core/archiving/entity_journal_entry.dart';
 import 'package:akasha/models/collectible_collection.dart';
 import 'package:akasha/models/collectible_collection_filter.dart';
 import 'package:akasha/models/collectible_kind.dart';
 import 'package:akasha/models/collectible_ref.dart';
 import 'package:akasha/models/entity_browse_card.dart';
+import 'package:akasha/models/collectible_browse_item.dart';
+import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/models/entity_related_works.dart';
@@ -39,6 +42,23 @@ class _FakeEntityRelatedWorksDiscovery implements EntityRelatedWorksDiscovery {
     return {
       for (final id in uniqueIds)
         id: await discover(id),
+    };
+  }
+
+  @override
+  int? cachedIncomingRecordCount(String entityId) => null;
+
+  @override
+  EntityJournalEntry? cachedJournal(String entityId) => null;
+
+  @override
+  Map<String, EntityJournalEntry>? get cachedJournalsByEntityId => null;
+
+  @override
+  Future<Set<String>> entityIdsForWork(String workId) async {
+    return {
+      for (final entry in _workIdsByEntity.entries)
+        if (entry.value.contains(workId)) entry.key,
     };
   }
 }
@@ -380,6 +400,137 @@ void main() {
     });
   });
 
+  group('CollectibleRef work kind', () {
+    test('json round-trip includes work kind', () {
+      const ref = CollectibleRef(kind: CollectibleKind.work, id: 'wk_u_rezero01');
+      final parsed = CollectibleRef.fromJson(ref.toJson());
+      expect(parsed.kind, CollectibleKind.work);
+      expect(parsed.id, 'wk_u_rezero01');
+    });
+  });
+
+  group('CollectibleCollectionPipeline mixed curated', () {
+    test('resolveMembers preserves work and entity order', () async {
+      const workId = 'wk_u_rezero01';
+      const subaruId = 'pe_u_subaru01';
+      final collection = CollectibleCollection(
+        id: 'col_u_mixed01',
+        title: 'Re:Zero Shelf',
+        mode: CollectibleCollectionMode.curated,
+        memberOrder: const [
+          CollectibleRef(kind: CollectibleKind.work, id: workId),
+          CollectibleRef(kind: CollectibleKind.person, id: subaruId),
+        ],
+      );
+      final vaultItems = [
+        ContentItem(
+          workId: workId,
+          title: 'Re:Zero',
+          category: MediaCategory.book,
+          domain: AppDomain.subculture,
+        ),
+      ];
+      final members = await CollectibleCollectionPipeline.resolveMembers(
+        collection: collection,
+        catalog: [
+          UserCatalogEntity.userLocal(
+            entityId: subaruId,
+            type: EntityAnchorType.person,
+            title: '스바루',
+          ),
+        ],
+        vaultItems: vaultItems,
+      );
+
+      expect(members.length, 2);
+      expect(members[0], isA<WorkCollectibleMember>());
+      expect((members[0] as WorkCollectibleMember).item.workId, workId);
+      expect(members[1], isA<EntityCollectibleMember>());
+      expect((members[1] as EntityCollectibleMember).entity.entityId, subaruId);
+    });
+
+    test('resolve skips work member when vault item missing', () async {
+      const workId = 'wk_u_missing1';
+      const subaruId = 'pe_u_subaru01';
+      final collection = CollectibleCollection(
+        id: 'col_u_mixed02',
+        title: 'Shelf',
+        mode: CollectibleCollectionMode.curated,
+        memberOrder: const [
+          CollectibleRef(kind: CollectibleKind.work, id: workId),
+          CollectibleRef(kind: CollectibleKind.person, id: subaruId),
+        ],
+      );
+      final members = await CollectibleCollectionPipeline.resolveMembers(
+        collection: collection,
+        catalog: [
+          UserCatalogEntity.userLocal(
+            entityId: subaruId,
+            type: EntityAnchorType.person,
+            title: '스바루',
+          ),
+        ],
+        vaultItems: const [],
+      );
+
+      expect(members.length, 1);
+      expect(members.single, isA<EntityCollectibleMember>());
+    });
+
+    test('resolve entity-only via resolve() ignores work without vault', () async {
+      const workId = 'wk_u_rezero01';
+      const subaruId = 'pe_u_subaru01';
+      final collection = CollectibleCollection(
+        id: 'col_u_mixed03',
+        title: 'Shelf',
+        mode: CollectibleCollectionMode.curated,
+        memberOrder: const [
+          CollectibleRef(kind: CollectibleKind.work, id: workId),
+          CollectibleRef(kind: CollectibleKind.person, id: subaruId),
+        ],
+      );
+      final resolved = await CollectibleCollectionPipeline.resolve(
+        collection: collection,
+        catalog: [
+          UserCatalogEntity.userLocal(
+            entityId: subaruId,
+            type: EntityAnchorType.person,
+            title: '스바루',
+          ),
+        ],
+      );
+      expect(resolved.map((e) => e.entityId), [subaruId]);
+    });
+  });
+
+  group('reorderRefsInMemberOrder', () {
+    test('reorders mixed work and entity refs', () {
+      const fullOrder = [
+        CollectibleRef(kind: CollectibleKind.work, id: 'wk_u_rezero01'),
+        CollectibleRef(kind: CollectibleKind.person, id: 'pe_u_emilia01'),
+        CollectibleRef(kind: CollectibleKind.person, id: 'pe_u_subaru01'),
+      ];
+      const visible = [
+        CollectibleRef(kind: CollectibleKind.work, id: 'wk_u_rezero01'),
+        CollectibleRef(kind: CollectibleKind.person, id: 'pe_u_subaru01'),
+      ];
+      final reordered = reorderRefsInMemberOrder(
+        fullOrder: fullOrder,
+        visibleRefs: visible,
+        oldIndex: 0,
+        newIndex: 1,
+      );
+      expect(
+        reordered.map(collectibleRefKey),
+        [
+          'person:pe_u_subaru01',
+          'person:pe_u_emilia01',
+          'work:wk_u_rezero01',
+        ],
+      );
+    });
+  });
+
   group('reorderEntityIdsInMemberOrder', () {
     test('preserves missing members while reordering visible cards', () {
       const fullOrder = [
@@ -508,6 +659,62 @@ void main() {
           ],
         );
         expect(resolved.map((e) => e.title), ['스바루', '에밀리아']);
+      } finally {
+        await fileService.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('Re:Zero Cast relatedWorkId-only survives save and reload', () async {
+      final fileService = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_col_cast_');
+      try {
+        await fileService.setVaultPath(tempDir.path);
+        final storage = CollectibleCollectionStorageService(fileService);
+        const rezeroWorkId = 'wk_u_rezero01';
+        final original = [
+          CollectibleCollection(
+            id: 'col_u_rezero_cast',
+            title: 'Re:Zero Cast',
+            mode: CollectibleCollectionMode.filter,
+            filter: const CollectibleCollectionFilter(
+              kinds: [CollectibleKind.person],
+              relatedWorkId: rezeroWorkId,
+            ),
+          ),
+        ];
+        await storage.save(original);
+
+        final reloaded = await storage.load();
+        expect(reloaded, hasLength(1));
+        expect(reloaded.first.filter?.relatedWorkId, rezeroWorkId);
+        expect(reloaded.first.filter?.tagsAll, isNull);
+        expect(reloaded.first.filter?.kinds?.map((k) => k.name), ['person']);
+
+        const subaruId = 'pe_u_subaru01';
+        const saberId = 'pe_u_saber001';
+        final resolved = await CollectibleCollectionPipeline.resolve(
+          collection: reloaded.first,
+          catalog: [
+            UserCatalogEntity.userLocal(
+              entityId: subaruId,
+              type: EntityAnchorType.person,
+              title: '스바루',
+            ),
+            UserCatalogEntity.userLocal(
+              entityId: saberId,
+              type: EntityAnchorType.person,
+              title: 'Saber',
+            ),
+          ],
+          relatedWorksDiscovery: _FakeEntityRelatedWorksDiscovery({
+            subaruId: {rezeroWorkId},
+            saberId: {'wk_u_fate0001'},
+          }),
+        );
+        expect(resolved.map((e) => e.entityId), [subaruId]);
       } finally {
         await fileService.setVaultPath('');
         if (await tempDir.exists()) {

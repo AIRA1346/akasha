@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../models/collectible_collection_preset.dart' as collection_builders;
 import '../../models/collectible_collection_filter.dart';
 import '../../models/collectible_collection.dart';
 import '../../models/collectible_collection_id_codec.dart';
@@ -109,6 +110,17 @@ class HomeCollectibleCollectionController {
       ),
     );
   }
+
+  static CollectibleCollection buildRelatedWorkCollection({
+    required String title,
+    required String workId,
+    List<CollectibleKind> kinds = const [CollectibleKind.person],
+  }) =>
+      collection_builders.buildRelatedWorkCollection(
+        title: title,
+        workId: workId,
+        kinds: kinds,
+      );
 
   static CollectibleCollection buildCuratedCollection({
     required String title,

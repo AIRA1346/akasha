@@ -1,6 +1,7 @@
 import 'collectible_kind.dart';
+import 'user_catalog_entity.dart';
 
-/// Entity collection member reference — Phase 3 entity IDs only.
+/// Collection member reference — Entity or Work (Phase 5).
 class CollectibleRef {
   final CollectibleKind kind;
   final String id;
@@ -31,4 +32,16 @@ class CollectibleRef {
 
   @override
   int get hashCode => Object.hash(kind, id);
+}
+
+CollectibleRef collectibleRefFromEntity(UserCatalogEntity entity) {
+  final kind = collectibleKindFromUserEntity(entity);
+  return CollectibleRef(
+    kind: kind ?? CollectibleKind.person,
+    id: entity.entityId,
+  );
+}
+
+CollectibleRef collectibleRefFromWorkId(String workId) {
+  return CollectibleRef(kind: CollectibleKind.work, id: workId);
 }

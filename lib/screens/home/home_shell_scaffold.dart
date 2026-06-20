@@ -120,6 +120,7 @@ class HomeShellScaffold extends StatelessWidget {
                 controller.host.context,
                 personalLibCtrl: controller.personalLibCtrl,
                 setState: controller.wrapSetState,
+                vaultItems: controller.items,
               ),
               onSelectTimeline: controller.selectTimeline,
               onNewTimelineEntry: controller.openTimelineQuickCapture,
@@ -152,6 +153,7 @@ class HomeShellScaffold extends StatelessWidget {
                 controller.host.context,
                 config: col,
                 setState: controller.wrapSetState,
+                vaultItems: controller.items,
               ),
               onDeleteCollectibleCollection: (id) =>
                   controller.collectionUi.confirmDelete(
@@ -200,6 +202,8 @@ class HomeShellScaffold extends StatelessWidget {
               onCuratedReorder: controller.onCuratedReorder,
               onEntityCollectionCuratedReorder:
                   controller.onEntityCollectionCuratedReorder,
+              onCollectibleCollectionCuratedReorder:
+                  controller.onCollectibleCollectionCuratedReorder,
               onSearch: controller.openSearchDialog,
             ),
           ),

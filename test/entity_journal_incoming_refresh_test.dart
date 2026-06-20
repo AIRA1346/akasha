@@ -110,6 +110,9 @@ class _FakeLinkIndex implements RecordLinkPort {
       List.unmodifiable(incomingByEntity[entityId] ?? const []);
 
   @override
+  Future<Iterable<String>> incomingEntityIds() async => incomingByEntity.keys;
+
+  @override
   Future<List<RecordLink>> outgoingLinks(String sourcePath) async =>
       List.unmodifiable(outgoingByPath[sourcePath] ?? const []);
 

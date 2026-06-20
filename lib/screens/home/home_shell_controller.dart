@@ -13,6 +13,7 @@ import '../../data/adapters/works_registry_adapter.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
+import '../../models/collectible_browse_item.dart';
 import '../../models/entity_browse_card.dart';
 import '../../widgets/entity_curated_reorder_grid.dart';
 import '../../models/entity_link_selection.dart';
@@ -388,6 +389,23 @@ class HomeShellController {
     applyEntityReorderToCollection(
       collection: col,
       visibleCards: visibleCards,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+    await collectionCtrl.save();
+    rebuild();
+  }
+
+  Future<void> onCollectibleCollectionCuratedReorder(
+    List<CollectibleBrowseItem> visibleItems,
+    int oldIndex,
+    int newIndex,
+  ) async {
+    final col = collectionCtrl.activeCollection;
+    if (col == null || !col.isCurated) return;
+    applyCollectibleReorderToCollection(
+      collection: col,
+      visibleItems: visibleItems,
       oldIndex: oldIndex,
       newIndex: newIndex,
     );

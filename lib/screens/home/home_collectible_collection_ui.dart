@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/ports/user_catalog_port.dart';
+import '../../models/akasha_item.dart';
 import '../../models/collectible_collection.dart';
 import '../../models/user_catalog_entity.dart';
 import 'dialogs/collectible_collection_edit_dialog.dart';
@@ -28,12 +29,14 @@ class HomeCollectibleCollectionUi {
     BuildContext context, {
     required HomePersonalLibraryController personalLibCtrl,
     required void Function(void Function()) setState,
+    List<AkashaItem> vaultItems = const [],
   }) async {
     final entities = await _loadCatalogEntities();
     if (!context.mounted) return;
     final created = await showCollectibleCollectionEditDialog(
       context,
       catalogEntities: entities,
+      vaultItems: vaultItems,
     );
     if (created == null || !context.mounted) return;
     setState(() {
@@ -46,6 +49,7 @@ class HomeCollectibleCollectionUi {
     BuildContext context, {
     required CollectibleCollection config,
     required void Function(void Function()) setState,
+    List<AkashaItem> vaultItems = const [],
   }) async {
     final entities = await _loadCatalogEntities();
     if (!context.mounted) return;
@@ -53,6 +57,7 @@ class HomeCollectibleCollectionUi {
       context,
       config: config,
       catalogEntities: entities,
+      vaultItems: vaultItems,
     );
     if (updated == null || !context.mounted) return;
     setState(() {});

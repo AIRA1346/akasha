@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/browse_entity_scope.dart';
+import '../../../models/browse_card.dart';
+import '../../../models/collectible_browse_item.dart';
 import '../../../models/collectible_collection.dart';
+import '../../../models/collectible_kind.dart';
 import '../../../models/entity_browse_card.dart';
 import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -35,7 +39,9 @@ class CatalogEntityBrowseView extends StatefulWidget {
     this.onEntityGallerySortChanged,
     this.collection,
     this.onCuratedReorder,
+    this.onCollectibleCuratedReorder,
     this.relatedWorksDiscoveryFactory,
+    this.posterCardBuilder,
   });
 
   final UserCatalogPort userCatalog;
@@ -53,7 +59,13 @@ class CatalogEntityBrowseView extends StatefulWidget {
     int oldIndex,
     int newIndex,
   )? onCuratedReorder;
+  final Future<void> Function(
+    List<CollectibleBrowseItem> visibleItems,
+    int oldIndex,
+    int newIndex,
+  )? onCollectibleCuratedReorder;
   final EntityRelatedWorksDiscovery Function()? relatedWorksDiscoveryFactory;
+  final Widget Function(BrowseCard card)? posterCardBuilder;
 
   @override
   State<CatalogEntityBrowseView> createState() =>
@@ -64,8 +76,17 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   static const double _cardMinWidth = 170;
   static const double _childAspectRatio = 0.68;
 
+  static const double _mixedChildAspectRatio = 0.72;
+
   List<EntityBrowseCard> _cards = const [];
+  List<CollectibleBrowseItem> _browseItems = const [];
   bool _loading = true;
+
+  bool get _usesCollectibleBrowse => widget.collection != null;
+  bool get _isMixedBrowse =>
+      _browseItems.any((item) => item is WorkCollectibleBrowseItem);
+  int get _itemCount =>
+      _usesCollectibleBrowse ? _browseItems.length : _cards.length;
 
   @override
   void initState() {
@@ -86,6 +107,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     }
     if (oldWidget.entityGallerySort != widget.entityGallerySort &&
         !_loading &&
+        !_usesCollectibleBrowse &&
         _cards.isNotEmpty) {
       setState(() {
         _cards = sortEntityBrowseCards(_cards, widget.entityGallerySort);
@@ -98,30 +120,77 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     await widget.userCatalog.load();
     if (!mounted) return;
 
-    List<UserCatalogEntity> filtered;
+    final relatedWorksDiscovery = widget.relatedWorksDiscoveryFactory?.call();
     final collection = widget.collection;
+
     if (collection != null) {
-      filtered = await CollectibleCollectionPipeline.resolve(
+      final members = await CollectibleCollectionPipeline.resolveMembers(
         collection: collection,
         catalog: widget.userCatalog.all,
-        relatedWorksDiscovery: widget.relatedWorksDiscoveryFactory?.call(),
+        vaultItems: widget.vaultItems,
+        relatedWorksDiscovery: relatedWorksDiscovery,
       );
-    } else {
-      final typeFilter = widget.scope.catalogEntityType;
-      final all = widget.userCatalog.all.where((e) => !e.isWorkEntity);
-      filtered = typeFilter == null
-          ? all.toList()
-          : all.where((e) => e.anchorType == typeFilter).toList();
+      var browseItems = await _buildCollectibleBrowseItems(
+        members,
+        relatedWorksDiscovery: relatedWorksDiscovery,
+      );
+      if (!collection.isCurated) {
+        browseItems = _sortCollectibleBrowseItems(
+          browseItems,
+          _effectiveSortCriteria(),
+        );
+      }
+      if (!mounted) return;
+      setState(() {
+        _browseItems = browseItems;
+        _cards = const [];
+        _loading = false;
+      });
+      return;
     }
 
-    final cards = await _buildBrowseCards(filtered);
+    final typeFilter = widget.scope.catalogEntityType;
+    final all = widget.userCatalog.all.where((e) => !e.isWorkEntity);
+    final filtered = typeFilter == null
+        ? all.toList()
+        : all.where((e) => e.anchorType == typeFilter).toList();
+
+    final cards = await _buildBrowseCards(
+      filtered,
+      relatedWorksDiscovery: relatedWorksDiscovery,
+    );
     if (!mounted) return;
 
     final sortCriteria = _effectiveSortCriteria();
     setState(() {
+      _browseItems = const [];
       _cards = _applySort(cards, sortCriteria);
       _loading = false;
     });
+  }
+
+  List<CollectibleBrowseItem> _sortCollectibleBrowseItems(
+    List<CollectibleBrowseItem> items,
+    EntityGallerySortCriteria criteria,
+  ) {
+    if (criteria.isManualOrder) return items;
+    final entityItems = items.whereType<EntityCollectibleBrowseItem>().toList();
+    if (entityItems.length != items.length) return items;
+    final sortedCards = sortEntityBrowseCards(
+      entityItems.map((item) => item.card).toList(),
+      criteria,
+    );
+    final byId = {for (final card in sortedCards) card.entity.entityId: card};
+    return [
+      for (final item in items)
+        if (item is EntityCollectibleBrowseItem)
+          EntityCollectibleBrowseItem(
+            ref: item.ref,
+            card: byId[item.card.entity.entityId] ?? item.card,
+          )
+        else
+          item,
+    ];
   }
 
   EntityGallerySortCriteria _effectiveSortCriteria() {
@@ -141,25 +210,52 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   }
 
   Future<List<EntityBrowseCard>> _buildBrowseCards(
-    List<UserCatalogEntity> entities,
-  ) async {
-    final vaultPath = AkashaFileService().vaultPath;
-    final journals = await const EntityVaultLoader().loadFromVault(vaultPath);
-    final byId = {for (final j in journals) j.entityId: j};
+    List<UserCatalogEntity> entities, {
+    EntityRelatedWorksDiscovery? relatedWorksDiscovery,
+  }) async {
+    final cachedJournals = relatedWorksDiscovery?.cachedJournalsByEntityId;
+    final Map<String, EntityJournalEntry> byId;
+    if (cachedJournals != null) {
+      byId = cachedJournals;
+    } else {
+      final vaultPath = AkashaFileService().vaultPath;
+      final journals = await const EntityVaultLoader().loadFromVault(vaultPath);
+      byId = {for (final j in journals) j.entityId: j};
+    }
 
     final cards = <EntityBrowseCard>[];
     final linkIndex = widget.linkIndex;
-    List<List<String>> incomingByEntity = const [];
-    if (linkIndex != null && entities.isNotEmpty) {
-      incomingByEntity = await Future.wait(
-        entities.map((e) => linkIndex.incomingRecordPaths(e.entityId)),
-      );
+    final uncachedIncoming = <int>[];
+    final incomingByEntity = List<int?>.filled(entities.length, null);
+
+    if (linkIndex != null) {
+      for (var i = 0; i < entities.length; i++) {
+        final cached = relatedWorksDiscovery?.cachedIncomingRecordCount(
+          entities[i].entityId,
+        );
+        if (cached != null) {
+          incomingByEntity[i] = cached;
+        } else {
+          uncachedIncoming.add(i);
+        }
+      }
+
+      if (uncachedIncoming.isNotEmpty) {
+        final fetched = await Future.wait(
+          uncachedIncoming.map(
+            (i) => linkIndex.incomingRecordPaths(entities[i].entityId),
+          ),
+        );
+        for (var j = 0; j < uncachedIncoming.length; j++) {
+          incomingByEntity[uncachedIncoming[j]] = fetched[j].length;
+        }
+      }
     }
 
     for (var i = 0; i < entities.length; i++) {
       final entity = entities[i];
       final journal = byId[entity.entityId];
-      final incoming = linkIndex != null ? incomingByEntity[i].length : 0;
+      final incoming = linkIndex != null ? (incomingByEntity[i] ?? 0) : 0;
       final body = journal?.body.trim() ?? '';
       cards.add(
         EntityBrowseCard(
@@ -172,6 +268,44 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
       );
     }
     return cards;
+  }
+
+  Future<List<CollectibleBrowseItem>> _buildCollectibleBrowseItems(
+    List<CollectibleMember> members, {
+    EntityRelatedWorksDiscovery? relatedWorksDiscovery,
+  }) async {
+    final entities = members
+        .whereType<EntityCollectibleMember>()
+        .map((member) => member.entity)
+        .toList();
+    final entityCards = await _buildBrowseCards(
+      entities,
+      relatedWorksDiscovery: relatedWorksDiscovery,
+    );
+    final entityCardById = {
+      for (final card in entityCards) card.entity.entityId: card,
+    };
+
+    return [
+      for (final member in members)
+        switch (member) {
+          WorkCollectibleMember(:final ref, :final item) =>
+            WorkCollectibleBrowseItem(
+              ref: ref,
+              card: BrowseCard(item: item),
+            ),
+          EntityCollectibleMember(:final ref, :final entity) =>
+            EntityCollectibleBrowseItem(
+              ref: ref,
+              card: entityCardById[entity.entityId] ??
+                  EntityBrowseCard(entity: entity, isArchived: false),
+            ),
+        },
+    ];
+  }
+
+  void _openWork(BrowseCard card) {
+    widget.onOpenWork?.call(card.item);
   }
 
   Future<void> _openEntity(UserCatalogEntity entity) async {
@@ -196,7 +330,14 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   void _onSortChanged(EntityGallerySortCriteria criteria) {
     widget.onEntityGallerySortChanged?.call(criteria);
     setState(() {
-      _cards = _applySort(_cards, _effectiveSortCriteriaFor(criteria));
+      if (_usesCollectibleBrowse) {
+        _browseItems = _sortCollectibleBrowseItems(
+          _browseItems,
+          _effectiveSortCriteriaFor(criteria),
+        );
+      } else {
+        _cards = _applySort(_cards, _effectiveSortCriteriaFor(criteria));
+      }
     });
   }
 
@@ -209,18 +350,28 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     return criteria;
   }
 
-  bool get _useCuratedReorder =>
-      widget.collection?.isCurated == true &&
-      widget.entityGallerySort.isManualOrder &&
-      widget.onCuratedReorder != null &&
-      _cards.length > 1;
+  bool get _useCuratedReorder {
+    if (widget.collection?.isCurated != true ||
+        !widget.entityGallerySort.isManualOrder ||
+        _itemCount <= 1) {
+      return false;
+    }
+    if (_isMixedBrowse) {
+      return widget.onCollectibleCuratedReorder != null &&
+          widget.posterCardBuilder != null;
+    }
+    return widget.onCuratedReorder != null;
+  }
+
+  bool get _useMixedCuratedReorder =>
+      _useCuratedReorder && _isMixedBrowse;
 
   String get _headerTitle {
     final collection = widget.collection;
     if (collection != null) {
-      return '${collection.title} (${_cards.length})';
+      return '${collection.title} (${_itemCount})';
     }
-    return '${widget.scope.label} 갤러리 (${_cards.length})';
+    return '${widget.scope.label} 갤러리 (${_itemCount})';
   }
 
   List<EntityGallerySortCriteria> get _sortOptions {
@@ -319,24 +470,52 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
           ),
         ),
         Expanded(
-          child: _useCuratedReorder
-              ? EntityCuratedReorderGrid(
-                  cards: _cards,
+          child: _useMixedCuratedReorder
+              ? CollectibleCuratedReorderGrid(
+                  items: _browseItems,
                   highlightEntityId: widget.highlightEntityId,
+                  posterCardBuilder: widget.posterCardBuilder!,
+                  onOpenWork: _openWork,
                   onOpenEntity: (card) => _openEntity(card.entity),
                   onReorder: (oldIndex, newIndex) async {
-                    await widget.onCuratedReorder!(
-                      _cards,
+                    await widget.onCollectibleCuratedReorder!(
+                      _browseItems,
                       oldIndex,
                       newIndex,
                     );
                     if (mounted) await _reload();
                   },
                 )
+              : _useCuratedReorder
+              ? EntityCuratedReorderGrid(
+                  cards: _entityCardsForDisplay,
+                  highlightEntityId: widget.highlightEntityId,
+                  onOpenEntity: (card) => _openEntity(card.entity),
+                  onReorder: (oldIndex, newIndex) async {
+                    await widget.onCuratedReorder!(
+                      _entityCardsForDisplay,
+                      oldIndex,
+                      newIndex,
+                    );
+                    if (mounted) await _reload();
+                  },
+                )
+              : _usesCollectibleBrowse
+              ? _buildMixedGalleryGrid()
               : _buildGalleryGrid(),
         ),
       ],
     );
+  }
+
+  List<EntityBrowseCard> get _entityCardsForDisplay {
+    if (_usesCollectibleBrowse) {
+      return _browseItems
+          .whereType<EntityCollectibleBrowseItem>()
+          .map((item) => item.card)
+          .toList();
+    }
+    return _cards;
   }
 
   Widget _buildGalleryGrid() {
@@ -373,12 +552,61 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
     );
   }
 
-  bool get _entriesEmpty => _cards.isEmpty;
+  Widget _buildMixedGalleryGrid() {
+    final posterBuilder = widget.posterCardBuilder;
+    if (posterBuilder == null) {
+      return _buildGalleryGrid();
+    }
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        const spacing = 12.0;
+        final maxWidth = constraints.maxWidth;
+        if (maxWidth <= 0) return const SizedBox.shrink();
+
+        final crossAxisCount = (maxWidth / _cardMinWidth).floor().clamp(2, 8);
+        final aspectRatio =
+            _isMixedBrowse ? _mixedChildAspectRatio : _childAspectRatio;
+
+        return Scrollbar(
+          thumbVisibility: true,
+          child: GridView.builder(
+            padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
+              mainAxisSpacing: spacing,
+              crossAxisSpacing: spacing,
+              childAspectRatio: aspectRatio,
+            ),
+            itemCount: _browseItems.length,
+            itemBuilder: (context, index) {
+              final item = _browseItems[index];
+              return switch (item) {
+                WorkCollectibleBrowseItem(:final card) => GestureDetector(
+                    onTap: () => _openWork(card),
+                    child: posterBuilder(card),
+                  ),
+                EntityCollectibleBrowseItem(:final card) =>
+                  EntityCollectibleCard(
+                    card: card,
+                    highlighted:
+                        card.entity.entityId == widget.highlightEntityId,
+                    onTap: () => _openEntity(card.entity),
+                  ),
+              };
+            },
+          ),
+        );
+      },
+    );
+  }
+
+  bool get _entriesEmpty => _itemCount == 0;
 
   String get _emptyMessage {
     if (widget.collection != null) {
       return widget.collection!.isCurated
-          ? '컬렉션에 Entity를 추가해 보세요.'
+          ? '컬렉션에 Work 또는 Entity를 추가해 보세요.'
           : '조건에 맞는 Entity가 없습니다.';
     }
     return switch (widget.scope) {

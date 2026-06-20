@@ -13,4 +13,7 @@ abstract interface class RecordLinkPort {
   Future<List<RecordLink>> outgoingLinks(String sourcePath);
 
   Future<List<String>> incomingRecordPaths(String entityId);
+
+  /// Entity ids with at least one incoming record link in the index.
+  Future<Iterable<String>> incomingEntityIds();
 }

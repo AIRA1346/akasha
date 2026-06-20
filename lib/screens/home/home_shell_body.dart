@@ -9,6 +9,7 @@ import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../features/workbench/presentation/workbench_shell.dart';
 import '../../models/akasha_item.dart';
+import '../../models/collectible_browse_item.dart';
 import '../../models/entity_browse_card.dart';
 import '../../models/browse_card.dart';
 import '../../models/dashboard_config.dart';
@@ -99,6 +100,11 @@ class HomeShellBody extends StatelessWidget {
     int oldIndex,
     int newIndex,
   )? onEntityCollectionCuratedReorder;
+  final Future<void> Function(
+    List<CollectibleBrowseItem> visibleItems,
+    int oldIndex,
+    int newIndex,
+  )? onCollectibleCollectionCuratedReorder;
   final VoidCallback onSearch;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
@@ -166,6 +172,7 @@ class HomeShellBody extends StatelessWidget {
     this.onAddToLibrary,
     required this.onCuratedReorder,
     this.onEntityCollectionCuratedReorder,
+    this.onCollectibleCollectionCuratedReorder,
     required this.onSearch,
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
@@ -275,6 +282,7 @@ class HomeShellBody extends StatelessWidget {
                                 vaultItems: items,
                                 onOpenWork: onOpenBrowseItem,
                                 scope: BrowseEntityScope.all,
+                                posterCardBuilder: posterCardBuilder,
                                 relatedWorksDiscoveryFactory: () =>
                                     HomeShellWiring
                                         .createEntityRelatedWorksDiscovery(
@@ -296,6 +304,11 @@ class HomeShellBody extends StatelessWidget {
                                     collectionCtrl.activeCollection?.isCurated ==
                                             true
                                         ? onEntityCollectionCuratedReorder
+                                        : null,
+                                onCollectibleCuratedReorder:
+                                    collectionCtrl.activeCollection?.isCurated ==
+                                            true
+                                        ? onCollectibleCollectionCuratedReorder
                                         : null,
                               )
                             : isPersonalLibraryMode

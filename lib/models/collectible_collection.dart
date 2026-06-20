@@ -6,7 +6,7 @@ enum CollectibleCollectionMode {
   filter,
 }
 
-/// Entity-only collection — independent from Work PersonalLibrary.
+/// User-defined collection — Entity + Work members (Phase 5 curated mixed).
 class CollectibleCollection {
   final String id;
   String title;
@@ -37,8 +37,10 @@ class CollectibleCollection {
     final seen = <String>{};
     final result = <CollectibleRef>[];
     for (final ref in order) {
-      if (ref.id.isEmpty || seen.contains(ref.id)) continue;
-      seen.add(ref.id);
+      if (ref.id.isEmpty) continue;
+      final key = '${ref.kind.name}:${ref.id}';
+      if (seen.contains(key)) continue;
+      seen.add(key);
       result.add(ref);
     }
     return result;

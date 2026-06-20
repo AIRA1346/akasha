@@ -1,4 +1,5 @@
 import '../core/archiving/entity_anchor.dart';
+import '../core/archiving/entity_journal_entry.dart';
 import '../core/ports/record_link_port.dart';
 import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
@@ -14,6 +15,18 @@ abstract interface class EntityRelatedWorksDiscovery {
   Future<Map<String, EntityRelatedWorks>> discoverAll(
     Iterable<String> entityIds,
   );
+
+  /// Badge count from the last [discover]/[discoverAll] for [entityId], if cached.
+  int? cachedIncomingRecordCount(String entityId);
+
+  /// Journal loaded during the last [discover]/[discoverAll], if cached.
+  EntityJournalEntry? cachedJournal(String entityId);
+
+  /// Full vault journal map from the last [discoverAll], when available.
+  Map<String, EntityJournalEntry>? get cachedJournalsByEntityId;
+
+  /// Entity ids linked to [workId] via incoming ∪ outgoing (Cast pre-filter).
+  Future<Set<String>> entityIdsForWork(String workId);
 }
 
 /// incoming (Work→Entity) + outgoing (Entity journal→Work) merge, deduped by workId.
@@ -35,18 +48,101 @@ class RecordLinkEntityRelatedWorksDiscovery
   final EntityVaultLoader _vaultLoader;
   final String? _vaultPath;
 
+  final Map<String, int> _incomingRecordCountByEntity = {};
+  Map<String, EntityJournalEntry>? _journalByEntityId;
+
+  @override
+  int? cachedIncomingRecordCount(String entityId) =>
+      _incomingRecordCountByEntity[entityId];
+
+  @override
+  EntityJournalEntry? cachedJournal(String entityId) =>
+      _journalByEntityId?[entityId];
+
+  @override
+  Map<String, EntityJournalEntry>? get cachedJournalsByEntityId =>
+      _journalByEntityId;
+
   @override
   Future<EntityRelatedWorks> discover(String entityId) async {
+    _incomingRecordCountByEntity.clear();
+    return _discoverEntity(entityId);
+  }
+
+  @override
+  Future<Map<String, EntityRelatedWorks>> discoverAll(
+    Iterable<String> entityIds,
+  ) async {
+    final uniqueIds = entityIds.where((id) => id.isNotEmpty).toSet();
+    if (uniqueIds.isEmpty) return const {};
+
+    _incomingRecordCountByEntity.clear();
+
+    final journals = await _vaultLoader.loadFromVault(_vaultPath);
+    final journalByEntityId = <String, EntityJournalEntry>{};
+    for (final entry in journals) {
+      journalByEntityId.putIfAbsent(entry.entityId, () => entry);
+    }
+    _journalByEntityId = journalByEntityId;
+
+    final entries = await Future.wait(
+      uniqueIds.map(
+        (id) async => MapEntry(
+          id,
+          await _discoverEntity(id, journalByEntityId: journalByEntityId),
+        ),
+      ),
+    );
+    return Map.fromEntries(entries);
+  }
+
+  @override
+  Future<Set<String>> entityIdsForWork(String workId) async {
+    if (workId.isEmpty) return const {};
+
+    final linked = <String>{};
+
+    for (final entityId in await _linkIndex.incomingEntityIds()) {
+      final paths = await _linkIndex.incomingRecordPaths(entityId);
+      for (final path in paths) {
+        final resolved = await _resolveWorkIdFromRecordPath(path);
+        if (resolved == workId) {
+          linked.add(entityId);
+          break;
+        }
+      }
+    }
+
+    final journals = await _vaultLoader.loadFromVault(_vaultPath);
+    for (final journal in journals) {
+      final outgoing = await _linkIndex.outgoingLinks(journal.storagePath);
+      if (outgoing.any((link) => link.targetEntityId == workId)) {
+        linked.add(journal.entityId);
+      }
+    }
+
+    return linked;
+  }
+
+  Future<EntityRelatedWorks> _discoverEntity(
+    String entityId, {
+    Map<String, EntityJournalEntry>? journalByEntityId,
+  }) async {
     final workIds = <String>{};
 
     final incomingPaths = await _linkIndex.incomingRecordPaths(entityId);
+    _incomingRecordCountByEntity[entityId] = incomingPaths.length;
     for (final path in incomingPaths) {
       final workId = await _resolveWorkIdFromRecordPath(path);
       if (workId != null) workIds.add(workId);
     }
 
-    final journal = await _vaultLoader.findByEntityId(_vaultPath, entityId);
+    final journal = journalByEntityId != null
+        ? journalByEntityId[entityId]
+        : await _vaultLoader.findByEntityId(_vaultPath, entityId);
     if (journal != null) {
+      _journalByEntityId ??= {};
+      _journalByEntityId![entityId] = journal;
       final outgoing = await _linkIndex.outgoingLinks(journal.storagePath);
       for (final link in outgoing) {
         final targetId = link.targetEntityId;
@@ -57,17 +153,6 @@ class RecordLinkEntityRelatedWorksDiscovery
     }
 
     return EntityRelatedWorks(entityId: entityId, workIds: workIds);
-  }
-
-  @override
-  Future<Map<String, EntityRelatedWorks>> discoverAll(
-    Iterable<String> entityIds,
-  ) async {
-    final uniqueIds = entityIds.where((id) => id.isNotEmpty).toSet();
-    final entries = await Future.wait(
-      uniqueIds.map((id) async => MapEntry(id, await discover(id))),
-    );
-    return Map.fromEntries(entries);
   }
 
   Future<String?> _resolveWorkIdFromRecordPath(String storagePath) async {
