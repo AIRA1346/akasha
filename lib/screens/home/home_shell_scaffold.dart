@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../config/feature_flags.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
+import '../../models/browse_entity_scope.dart';
 import '../../models/work_drag_payload.dart';
 import 'dialogs/home_dialogs_facade.dart';
 import 'home_app_bar.dart';
