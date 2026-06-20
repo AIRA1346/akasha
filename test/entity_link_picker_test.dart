@@ -77,12 +77,14 @@ void main() {
       required String id,
       required String title,
       List<String> aliases = const [],
+      List<String> tags = const [],
     }) {
       return UserCatalogEntity.userLocal(
         entityId: id,
         type: EntityAnchorType.person,
         title: title,
         aliases: aliases,
+        tags: tags,
       );
     }
 
@@ -129,6 +131,25 @@ void main() {
       expect(results.length, 1);
       expect(results.first.entity.entityId, 'co_u_tiger01');
       expect(results.first.entity.title, 'Tiger');
+    });
+
+    test('semantic tag search finds entity', () async {
+      final taggedCatalog = _FakeUserCatalog([
+        person(
+          id: 'pe_u_hero01',
+          title: '나츠키 스바루',
+          tags: const ['영웅', '구원'],
+        ),
+      ]);
+
+      final results = await EntityLinkPickerCandidates.build(
+        userCatalog: taggedCatalog,
+        query: '영웅',
+        archivedEntityIds: {'pe_u_hero01'},
+      );
+
+      expect(results.length, 1);
+      expect(results.first.entity.entityId, 'pe_u_hero01');
     });
 
     test('archived entities sort before catalog-only', () async {

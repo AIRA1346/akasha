@@ -6,7 +6,12 @@ import '../../models/personal_library_config.dart';
 import '../../services/personal_library_storage_service.dart';
 import 'home_dashboard_controller.dart';
 
-enum SidebarSelectionMode { dashboard, personalLibrary, timeline }
+enum SidebarSelectionMode {
+  dashboard,
+  personalLibrary,
+  timeline,
+  collectibleCollection,
+}
 
 /// 나만의 서재 목록·활성 ID·영속화 (볼트 `.akasha/` 우선)
 class HomePersonalLibraryController {
@@ -66,7 +71,9 @@ class HomePersonalLibraryController {
           ? SidebarSelectionMode.personalLibrary
           : modeStr == SidebarSelectionMode.timeline.name
               ? SidebarSelectionMode.timeline
-              : SidebarSelectionMode.dashboard;
+              : modeStr == SidebarSelectionMode.collectibleCollection.name
+                  ? SidebarSelectionMode.collectibleCollection
+                  : SidebarSelectionMode.dashboard;
 
       if (needsSave) {
         await _storage.save(libraries);
@@ -126,6 +133,11 @@ class HomePersonalLibraryController {
 
   void selectTimelineMode() {
     sidebarMode = SidebarSelectionMode.timeline;
+    saveActiveState();
+  }
+
+  void selectCollectibleCollectionMode() {
+    sidebarMode = SidebarSelectionMode.collectibleCollection;
     saveActiveState();
   }
 

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../models/collectible_collection.dart';
 import '../models/dashboard_config.dart';
 import '../models/personal_library_config.dart';
 import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import 'personal_library_drop_target.dart';
 
-/// 나만의 서재 + 대시보드 서재 사이드바 (나만의 서재 상단)
+/// 나만의 서재 + 컬렉션 + 대시보드 서재 사이드바.
 class DashboardSidebar extends StatelessWidget {
   static const Color dashboardAccent = Colors.tealAccent;
   static const Color personalAccent = Colors.amberAccent;
+  static const Color collectionAccent = Colors.deepPurpleAccent;
 
   final bool isOpen;
   final SidebarSelectionMode selectionMode;
@@ -17,15 +19,21 @@ class DashboardSidebar extends StatelessWidget {
   final String? activeDashboardId;
   final List<PersonalLibraryConfig> personalLibraries;
   final String? activePersonalLibraryId;
+  final List<CollectibleCollection> collectibleCollections;
+  final String? activeCollectibleCollectionId;
   final VoidCallback onAddDashboard;
   final void Function(String id) onSelectDashboard;
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
   final VoidCallback onAddPersonalLibrary;
+  final VoidCallback onAddCollectibleCollection;
   final VoidCallback onSelectTimeline;
   final void Function(String id) onSelectPersonalLibrary;
   final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
   final void Function(String id) onDeletePersonalLibrary;
+  final void Function(String id) onSelectCollectibleCollection;
+  final void Function(CollectibleCollection col) onEditCollectibleCollection;
+  final void Function(String id) onDeleteCollectibleCollection;
   final void Function(String libraryId, WorkDragPayload payload)? onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
 
@@ -37,15 +45,21 @@ class DashboardSidebar extends StatelessWidget {
     required this.activeDashboardId,
     required this.personalLibraries,
     required this.activePersonalLibraryId,
+    this.collectibleCollections = const [],
+    this.activeCollectibleCollectionId,
     required this.onAddDashboard,
     required this.onSelectDashboard,
     required this.onEditDashboard,
     required this.onDeleteDashboard,
     required this.onAddPersonalLibrary,
+    required this.onAddCollectibleCollection,
     required this.onSelectTimeline,
     required this.onSelectPersonalLibrary,
     required this.onEditPersonalLibrary,
     required this.onDeletePersonalLibrary,
+    required this.onSelectCollectibleCollection,
+    required this.onEditCollectibleCollection,
+    required this.onDeleteCollectibleCollection,
     this.onDropWorkToLibrary,
     this.onLibraryDragStarted,
   });
@@ -117,6 +131,62 @@ class DashboardSidebar extends StatelessWidget {
                       return row;
                     },
                   ),
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                _SectionHeader(
+                  icon: Icons.category_outlined,
+                  iconColor: collectionAccent,
+                  title: '컬렉션',
+                  onAdd: onAddCollectibleCollection,
+                  addTooltip: '컬렉션 추가',
+                ),
+                const Divider(color: Color(0xFF2D2D44), height: 1),
+                Expanded(
+                  flex: 2,
+                  child: collectibleCollections.isEmpty
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          child: Text(
+                            'Entity 컬렉션이 없습니다',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                        )
+                      : ListView.builder(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          itemCount: collectibleCollections.length,
+                          itemBuilder: (context, index) {
+                            final col = collectibleCollections[index];
+                            final isActive = selectionMode ==
+                                    SidebarSelectionMode
+                                        .collectibleCollection &&
+                                col.id == activeCollectibleCollectionId;
+                            final countLabel = col.isCurated
+                                ? (col.memberOrder.isNotEmpty
+                                    ? ' (${col.memberOrder.length})'
+                                    : '')
+                                : '';
+                            return SidebarItemWidget(
+                              name: '${col.title}$countLabel',
+                              icon: col.isCurated
+                                  ? Icons.favorite_outline
+                                  : Icons.local_offer_outlined,
+                              isActive: isActive,
+                              accentColor: collectionAccent,
+                              editTooltip: '컬렉션 설정',
+                              onTap: () =>
+                                  onSelectCollectibleCollection(col.id),
+                              onEdit: () => onEditCollectibleCollection(col),
+                              onDelete: () =>
+                                  onDeleteCollectibleCollection(col.id),
+                            );
+                          },
+                        ),
                 ),
                 const Divider(color: Color(0xFF2D2D44), height: 1),
                 SidebarItemWidget(

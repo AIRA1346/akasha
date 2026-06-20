@@ -4,19 +4,25 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/entity_id_codec.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
+import '../../../utils/entity_tag_validation.dart';
+import '../../../widgets/editable_tag_chips.dart';
 
 /// R1 — Person · Event · Concept Archive-First 추가 (Work parity).
 Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
   BuildContext context, {
   required EntityAnchorType entityType,
   String? initialTitle,
+  Set<String> workTitleIndex = const {},
 }) async {
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final aliasesCtrl = TextEditingController();
   final bodyCtrl = TextEditingController();
   final archiveFirst = EntityArchiveService.usesArchiveFirstFlow(entityType);
   var nameOnly = false;
+  var tags = <String>[];
 
   final typeLabel = _typeLabel(entityType);
 
@@ -49,6 +55,20 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                     border: OutlineInputBorder(),
                     isDense: true,
                   ),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  '태그 (감상 축 · semantic)',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.grey[400],
+                  ),
+                ),
+                const SizedBox(height: 4),
+                EditableTagChips(
+                  tags: tags,
+                  onChanged: (next) => setLocal(() => tags = next),
                 ),
                 if (archiveFirst && !nameOnly) ...[
                   const SizedBox(height: 12),
@@ -98,6 +118,11 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                   .map((e) => e.trim())
                   .where((e) => e.isNotEmpty)
                   .toList();
+              EntityTagValidation.showWorkTitleWarningIfNeeded(
+                ctx,
+                tags: tags,
+                workTitles: workTitleIndex,
+              );
               Navigator.pop(
                 ctx,
                 CatalogEntityAddResult(
@@ -106,6 +131,7 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                     type: entityType,
                     title: title,
                     aliases: aliases,
+                    tags: tags,
                   ),
                   nameOnly: archiveFirst && nameOnly,
                   journalBody: bodyCtrl.text.trim(),

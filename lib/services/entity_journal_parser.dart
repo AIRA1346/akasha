@@ -4,6 +4,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/entity_journal_entry.dart';
 import '../core/archiving/record_kind.dart';
 import '../models/entity_id_codec.dart';
+import '../utils/entity_tags.dart';
 
 /// `vault/entities/{type}/*.md` parser — Wave 4.
 abstract final class EntityJournalParser {
@@ -26,6 +27,7 @@ abstract final class EntityJournalParser {
     );
     final title = yaml['title']?.toString().trim() ?? entityId;
     final addedAt = _parseDateTime(yaml['added_at']) ?? DateTime.now();
+    final tags = EntityTags.parseYaml(yaml['tags']);
 
     return EntityJournalEntry(
       entityType: entityType,
@@ -34,6 +36,7 @@ abstract final class EntityJournalParser {
       body: split.body.trim(),
       addedAt: addedAt,
       storagePath: filePath,
+      tags: tags,
     );
   }
 
@@ -43,6 +46,7 @@ abstract final class EntityJournalParser {
     required String title,
     required String body,
     DateTime? addedAt,
+    List<String> tags = const [],
   }) {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
@@ -52,6 +56,7 @@ abstract final class EntityJournalParser {
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(title)}"')
       ..writeln('added_at: "${added.toIso8601String()}"')
+      ..writeln(EntityTags.serializeYamlLine(tags))
       ..writeln('---')
       ..writeln()
       ..write(body.trim());

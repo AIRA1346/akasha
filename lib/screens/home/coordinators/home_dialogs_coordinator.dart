@@ -107,6 +107,8 @@ class HomeDialogsCoordinator {
           context: ctx,
           query: query,
           showMessage: showMessage,
+          userCatalog: userCatalog,
+          vaultItems: getItems(),
           onWorkSavedToVault: (item) async {
             await AkashaFileService().saveItem(item);
             if (WorkIdCodec.isUserLocalWorkId(item.workId)) {

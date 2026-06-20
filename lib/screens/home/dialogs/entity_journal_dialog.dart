@@ -16,6 +16,8 @@ import '../../../services/file_service.dart';
 import '../../../services/record_link_navigator.dart';
 import '../../../services/record_link_stale_label.dart';
 import '../../../services/same_day_record_service.dart';
+import '../../../utils/entity_tag_validation.dart';
+import '../../../widgets/editable_tag_chips.dart';
 import 'add_catalog_entity_dialog.dart';
 
 /// Entity Sheet — archived entity journal · incoming links (Phase A).
@@ -89,6 +91,7 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
 
   EntityJournalEntry? _current;
   late final TextEditingController _bodyCtrl;
+  late List<String> _tags;
   var _creating = false;
   var _editing = false;
   List<String> _incomingPaths = const [];
@@ -104,6 +107,7 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
     _creating = _current == null;
     _editing = _creating;
     _bodyCtrl = TextEditingController(text: _current?.body ?? '');
+    _tags = List<String>.from(_current?.tags ?? widget.entity.tags);
     _loadIncoming();
     _loadSameDay();
   }
@@ -161,11 +165,24 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
       return;
     }
 
+    final catalog = widget.userCatalog;
+    if (catalog != null) {
+      await catalog.load();
+      EntityTagValidation.showWorkTitleWarningIfNeeded(
+        context,
+        tags: _tags,
+        workTitles: EntityTagValidation.buildWorkTitleIndex(
+          catalogEntities: catalog.all,
+          vaultItems: widget.vaultItems,
+        ),
+      );
+    }
+
     try {
       if (_creating || _current == null) {
         _current = await _store.saveCatalogEntity(
           vaultPath: widget.vaultPath,
-          entity: widget.entity,
+          entity: widget.entity.copyWith(tags: _tags),
           body: body,
         );
       } else {
@@ -173,6 +190,7 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
           entry: _current!,
           body: body,
           title: _current!.title,
+          tags: _tags,
         );
       }
 
@@ -191,7 +209,7 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
     final catalog = widget.userCatalog;
     if (catalog == null) return;
     await EntityArchiveService.syncCatalogFromJournal(
-      draft: widget.entity,
+      draft: widget.entity.copyWith(tags: _tags),
       entry: entry,
       userCatalog: catalog,
     );
@@ -343,6 +361,40 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
                   ),
                   const SizedBox(height: 8),
                 ],
+                if (_editing || _creating)
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '태그',
+                        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                              color: Colors.grey[400],
+                            ),
+                      ),
+                      const SizedBox(height: 4),
+                      EditableTagChips(
+                        tags: _tags,
+                        onChanged: (next) => setState(() => _tags = next),
+                        compact: false,
+                      ),
+                      const SizedBox(height: 12),
+                    ],
+                  )
+                else if (_tags.isNotEmpty) ...[
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 6,
+                    children: [
+                      for (final tag in _tags)
+                        Chip(
+                          label: Text(tag, style: const TextStyle(fontSize: 11)),
+                          visualDensity: VisualDensity.compact,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                ],
                 if (_hasJournal && !_creating) ...[
                   Text(
                     _formatWhen(_current!.addedAt),
@@ -410,7 +462,12 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
                 ),
               if (_hasJournal && !_editing && !_creating)
                 TextButton(
-                  onPressed: () => setState(() => _editing = true),
+                  onPressed: () => setState(() {
+                    _editing = true;
+                    if (_current != null) {
+                      _tags = List<String>.from(_current!.tags);
+                    }
+                  }),
                   child: const Text('편집'),
                 ),
               if (_editing || _creating)

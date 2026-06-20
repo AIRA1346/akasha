@@ -1,9 +1,15 @@
+import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/registry_port.dart';
+import '../../../core/ports/user_catalog_port.dart';
+import '../../../models/akasha_item.dart';
 import '../../../services/browse_pipeline.dart';
+import '../../../services/entity_related_works_discovery.dart';
 import '../../../services/my_library_pipeline.dart';
 import '../../../services/personal_library_membership_service.dart';
 import '../home_browse_filter_controller.dart';
+import '../home_collectible_collection_controller.dart';
 import '../home_dashboard_controller.dart';
+import '../home_collectible_collection_ui.dart';
 import '../home_dashboard_ui.dart';
 import '../home_library_ui.dart';
 import '../home_personal_library_controller.dart';
@@ -28,6 +34,7 @@ class HomeShellWiring {
     required this.libraryMenuBuilder,
     required this.libraryUi,
     required this.personalLibraryUi,
+    required this.collectionUi,
     required this.dashboardUi,
     required this.hideActions,
   });
@@ -41,12 +48,26 @@ class HomeShellWiring {
   final HomeLibraryMenuBuilder libraryMenuBuilder;
   final HomeLibraryUi libraryUi;
   final HomePersonalLibraryUi personalLibraryUi;
+  final HomeCollectibleCollectionUi collectionUi;
   final HomeDashboardUi dashboardUi;
   final HomeRegistryHideActions hideActions;
+
+  /// Fresh discovery per resolve — vaultItems may change after archive/sync.
+  static EntityRelatedWorksDiscovery createEntityRelatedWorksDiscovery({
+    required RecordLinkPort linkIndex,
+    required List<AkashaItem> vaultItems,
+  }) {
+    return RecordLinkEntityRelatedWorksDiscovery(
+      linkIndex: linkIndex,
+      vaultItems: vaultItems,
+    );
+  }
 
   factory HomeShellWiring.create({
     required RegistryPort registry,
     required HomePersonalLibraryController personalLibCtrl,
+    required HomeCollectibleCollectionController collectionCtrl,
+    required UserCatalogPort userCatalog,
     required HomeBrowseFilterController filterCtrl,
     required HomeDashboardController dashboardCtrl,
     required HomeSectionPreferences sectionPrefs,
@@ -74,6 +95,7 @@ class HomeShellWiring {
     );
     final sidebarCoordinator = HomeSidebarCoordinator(
       personalLibCtrl: personalLibCtrl,
+      collectionCtrl: collectionCtrl,
       dashboardCtrl: dashboardCtrl,
       sectionPrefs: sectionPrefs,
       filterCoordinator: filterCoordinator,
@@ -94,6 +116,10 @@ class HomeShellWiring {
       filterCoordinator: filterCoordinator,
       sectionPrefs: sectionPrefs,
     );
+    final collectionUi = HomeCollectibleCollectionUi(
+      collectionCtrl: collectionCtrl,
+      userCatalog: userCatalog,
+    );
     final dashboardUi = HomeDashboardUi(
       dashboardCtrl: dashboardCtrl,
       filterCoordinator: filterCoordinator,
@@ -109,6 +135,7 @@ class HomeShellWiring {
       libraryMenuBuilder: libraryMenuBuilder,
       libraryUi: libraryUi,
       personalLibraryUi: personalLibraryUi,
+      collectionUi: collectionUi,
       dashboardUi: dashboardUi,
       hideActions: hideActions,
     );

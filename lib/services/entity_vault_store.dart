@@ -67,6 +67,7 @@ class EntityVaultStore {
       title: entity.title,
       body: body,
       addedAt: addedAt,
+      tags: entity.tags,
     );
 
     await _writeAtomic(targetPath, content);
@@ -87,6 +88,7 @@ class EntityVaultStore {
       body: body.trim(),
       addedAt: addedAt,
       storagePath: targetPath,
+      tags: List<String>.from(entity.tags),
     );
   }
 
@@ -94,6 +96,7 @@ class EntityVaultStore {
     required EntityJournalEntry entry,
     required String body,
     String? title,
+    List<String>? tags,
   }) async {
     if (entry.storagePath.isEmpty) {
       throw StateError('Entity journal storage path missing');
@@ -104,12 +107,15 @@ class EntityVaultStore {
       throw ArgumentError('title must not be empty');
     }
 
+    final resolvedTags = tags ?? entry.tags;
+
     final content = EntityJournalParser.serialize(
       entityType: entry.entityType,
       entityId: entry.entityId,
       title: resolvedTitle,
       body: body,
       addedAt: entry.addedAt,
+      tags: resolvedTags,
     );
 
     await _writeAtomic(entry.storagePath, content);
@@ -130,6 +136,7 @@ class EntityVaultStore {
       body: body.trim(),
       addedAt: entry.addedAt,
       storagePath: entry.storagePath,
+      tags: List<String>.from(resolvedTags),
     );
   }
 

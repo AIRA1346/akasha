@@ -69,6 +69,7 @@ class HomeShellScaffold extends StatelessWidget {
             body: HomeShellBody(
               isSidebarOpen: controller.isSidebarOpen,
               isPersonalLibraryMode: controller.isPersonalLibraryMode,
+              isCollectibleCollectionMode: controller.isCollectibleCollectionMode,
               isTimelineMode: controller.isTimelineMode,
               isCuratedLibraryActive: controller.isCuratedLibraryActive,
               isCatalogLoading: controller.isCatalogLoading,
@@ -88,6 +89,7 @@ class HomeShellScaffold extends StatelessWidget {
               filterCtrl: controller.filterCtrl,
               dashboardCtrl: controller.dashboardCtrl,
               personalLibCtrl: controller.personalLibCtrl,
+              collectionCtrl: controller.collectionCtrl,
               libraryMembership: controller.libraryMembership,
               workbench: controller.workbench,
               posterCardBuilder: controller.buildPosterCard,
@@ -113,6 +115,12 @@ class HomeShellScaffold extends StatelessWidget {
                 controller.host.context,
                 setState: controller.wrapSetState,
               ),
+              onAddCollectibleCollection: () =>
+                  controller.collectionUi.promptCreate(
+                controller.host.context,
+                personalLibCtrl: controller.personalLibCtrl,
+                setState: controller.wrapSetState,
+              ),
               onSelectTimeline: controller.selectTimeline,
               onNewTimelineEntry: controller.openTimelineQuickCapture,
               onNewJournalEntry: controller.openJournalQuickCapture,
@@ -123,6 +131,7 @@ class HomeShellScaffold extends StatelessWidget {
               onWikiLinkTap: controller.handleWikiLinkTap,
               onRequestEntityLink: controller.handleRequestEntityLink,
               onSelectPersonalLibrary: controller.selectPersonalLibrary,
+              onSelectCollectibleCollection: controller.selectCollectibleCollection,
               onEditPersonalLibrary: (lib) =>
                   controller.personalLibraryUi.showEditDialog(
                 controller.host.context,
@@ -134,6 +143,18 @@ class HomeShellScaffold extends StatelessWidget {
               ),
               onDeletePersonalLibrary: (id) =>
                   controller.personalLibraryUi.confirmDelete(
+                controller.host.context,
+                id: id,
+                setState: controller.wrapSetState,
+              ),
+              onEditCollectibleCollection: (col) =>
+                  controller.collectionUi.showEditDialog(
+                controller.host.context,
+                config: col,
+                setState: controller.wrapSetState,
+              ),
+              onDeleteCollectibleCollection: (id) =>
+                  controller.collectionUi.confirmDelete(
                 controller.host.context,
                 id: id,
                 setState: controller.wrapSetState,
@@ -177,6 +198,8 @@ class HomeShellScaffold extends StatelessWidget {
                       )
                   : null,
               onCuratedReorder: controller.onCuratedReorder,
+              onEntityCollectionCuratedReorder:
+                  controller.onEntityCollectionCuratedReorder,
               onSearch: controller.openSearchDialog,
             ),
           ),

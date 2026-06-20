@@ -9,20 +9,25 @@ import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../features/workbench/presentation/workbench_shell.dart';
 import '../../models/akasha_item.dart';
+import '../../models/entity_browse_card.dart';
 import '../../models/browse_card.dart';
 import '../../models/dashboard_config.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
+import '../../models/collectible_collection.dart';
 import '../../models/personal_library_config.dart';
 import '../../models/work_drag_payload.dart';
+import '../../services/entity_related_works_discovery.dart';
 import '../../services/file_service.dart';
 import '../../services/personal_library_membership_service.dart';
+import 'coordinators/home_shell_wiring.dart';
 import '../../utils/recall_picker.dart';
 import '../../widgets/dashboard_sidebar.dart';
 import '../../widgets/filter_section.dart';
 import '../../widgets/today_recall_card.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
+import 'home_collectible_collection_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_section_preferences.dart';
 import 'home_vault_banner.dart';
@@ -35,6 +40,7 @@ import 'views/records_view.dart';
 class HomeShellBody extends StatelessWidget {
   final bool isSidebarOpen;
   final bool isPersonalLibraryMode;
+  final bool isCollectibleCollectionMode;
   final bool isTimelineMode;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
@@ -52,6 +58,7 @@ class HomeShellBody extends StatelessWidget {
   final HomeBrowseFilterController filterCtrl;
   final HomeDashboardController dashboardCtrl;
   final HomePersonalLibraryController personalLibCtrl;
+  final HomeCollectibleCollectionController collectionCtrl;
   final PersonalLibraryMembershipService libraryMembership;
   final WorkbenchController workbench;
   final Widget Function(BrowseCard) posterCardBuilder;
@@ -61,10 +68,14 @@ class HomeShellBody extends StatelessWidget {
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
   final VoidCallback onAddPersonalLibrary;
+  final VoidCallback onAddCollectibleCollection;
   final VoidCallback onSelectTimeline;
   final void Function(String id) onSelectPersonalLibrary;
+  final void Function(String id) onSelectCollectibleCollection;
   final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
   final void Function(String id) onDeletePersonalLibrary;
+  final void Function(CollectibleCollection col) onEditCollectibleCollection;
+  final void Function(String id) onDeleteCollectibleCollection;
   final Future<void> Function(String libraryId, WorkDragPayload payload)?
       onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
@@ -83,6 +94,11 @@ class HomeShellBody extends StatelessWidget {
     int oldIndex,
     int newIndex,
   ) onCuratedReorder;
+  final Future<void> Function(
+    List<EntityBrowseCard> visibleCards,
+    int oldIndex,
+    int newIndex,
+  )? onEntityCollectionCuratedReorder;
   final VoidCallback onSearch;
   final VoidCallback onNewTimelineEntry;
   final VoidCallback onNewJournalEntry;
@@ -100,6 +116,7 @@ class HomeShellBody extends StatelessWidget {
     super.key,
     required this.isSidebarOpen,
     required this.isPersonalLibraryMode,
+    required this.isCollectibleCollectionMode,
     required this.isTimelineMode,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
@@ -117,6 +134,7 @@ class HomeShellBody extends StatelessWidget {
     required this.filterCtrl,
     required this.dashboardCtrl,
     required this.personalLibCtrl,
+    required this.collectionCtrl,
     required this.libraryMembership,
     required this.workbench,
     required this.posterCardBuilder,
@@ -126,10 +144,14 @@ class HomeShellBody extends StatelessWidget {
     required this.onEditDashboard,
     required this.onDeleteDashboard,
     required this.onAddPersonalLibrary,
+    required this.onAddCollectibleCollection,
     required this.onSelectTimeline,
     required this.onSelectPersonalLibrary,
+    required this.onSelectCollectibleCollection,
     required this.onEditPersonalLibrary,
     required this.onDeletePersonalLibrary,
+    required this.onEditCollectibleCollection,
+    required this.onDeleteCollectibleCollection,
     this.onDropWorkToLibrary,
     this.onLibraryDragStarted,
     required this.onConnectVault,
@@ -143,6 +165,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onWorkbenchWorkDeleted,
     this.onAddToLibrary,
     required this.onCuratedReorder,
+    this.onEntityCollectionCuratedReorder,
     required this.onSearch,
     required this.onNewTimelineEntry,
     required this.onNewJournalEntry,
@@ -158,6 +181,7 @@ class HomeShellBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final dailyRecall = FeatureFlags.showRecallCard &&
             !isPersonalLibraryMode &&
+            !isCollectibleCollectionMode &&
             !isTimelineMode
         ? RecallPicker.pickDailyRecall(items)
         : null;
@@ -171,15 +195,21 @@ class HomeShellBody extends StatelessWidget {
           activeDashboardId: dashboardCtrl.activeDashboardId,
           personalLibraries: personalLibCtrl.libraries,
           activePersonalLibraryId: personalLibCtrl.activeLibraryId,
+          collectibleCollections: collectionCtrl.collections,
+          activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
           onAddDashboard: onAddDashboard,
           onSelectDashboard: (id) => onSelectDashboard(id),
           onEditDashboard: onEditDashboard,
           onDeleteDashboard: onDeleteDashboard,
           onAddPersonalLibrary: onAddPersonalLibrary,
+          onAddCollectibleCollection: onAddCollectibleCollection,
           onSelectTimeline: onSelectTimeline,
           onSelectPersonalLibrary: onSelectPersonalLibrary,
+          onSelectCollectibleCollection: onSelectCollectibleCollection,
           onEditPersonalLibrary: onEditPersonalLibrary,
           onDeletePersonalLibrary: onDeletePersonalLibrary,
+          onEditCollectibleCollection: onEditCollectibleCollection,
+          onDeleteCollectibleCollection: onDeleteCollectibleCollection,
           onDropWorkToLibrary: onDropWorkToLibrary,
           onLibraryDragStarted: onLibraryDragStarted,
         ),
@@ -189,7 +219,7 @@ class HomeShellBody extends StatelessWidget {
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
               if (!workbench.hasOpenWork) ...[
-                if (!isTimelineMode)
+                if (!isTimelineMode && !isCollectibleCollectionMode)
                   FilterSection(
                     selectedDomain: filterCtrl.domain,
                     selectedCategories: filterCtrl.categories,
@@ -203,9 +233,11 @@ class HomeShellBody extends StatelessWidget {
                     selectedEntityScope: filterCtrl.entityScope,
                     onEntityScopeChanged: onEntityScopeChanged,
                   ),
-                if (!isTimelineMode) const Divider(height: 1),
+                if (!isTimelineMode && !isCollectibleCollectionMode)
+                  const Divider(height: 1),
               ],
               if (!isPersonalLibraryMode &&
+                  !isCollectibleCollectionMode &&
                   !isTimelineMode &&
                   !workbench.hasOpenWork &&
                   isCatalogLoading)
@@ -235,6 +267,36 @@ class HomeShellBody extends StatelessWidget {
                                 userCatalog: userCatalog,
                                 linkIndex: linkIndex,
                                 reloadToken: timelineReloadToken,
+                              )
+                            : isCollectibleCollectionMode
+                            ? CatalogEntityBrowseView(
+                                userCatalog: userCatalog,
+                                linkIndex: linkIndex,
+                                vaultItems: items,
+                                onOpenWork: onOpenBrowseItem,
+                                scope: BrowseEntityScope.all,
+                                relatedWorksDiscoveryFactory: () =>
+                                    HomeShellWiring
+                                        .createEntityRelatedWorksDiscovery(
+                                  linkIndex: linkIndex,
+                                  vaultItems: items,
+                                ),
+                                collection: collectionCtrl.activeCollection,
+                                highlightEntityId:
+                                    filterCtrl.highlightEntityId,
+                                entityGallerySort:
+                                    sectionPrefs.entityGallerySort,
+                                onEntityGallerySortChanged: (criteria) {
+                                  sectionPrefs.setEntityGallerySort(
+                                    criteria,
+                                    onStateChanged,
+                                  );
+                                },
+                                onCuratedReorder:
+                                    collectionCtrl.activeCollection?.isCurated ==
+                                            true
+                                        ? onEntityCollectionCuratedReorder
+                                        : null,
                               )
                             : isPersonalLibraryMode
                             ? PersonalLibraryView(
@@ -273,6 +335,10 @@ class HomeShellBody extends StatelessWidget {
         onOpenWork: onOpenBrowseItem,
         scope: scope,
         highlightEntityId: filterCtrl.highlightEntityId,
+        entityGallerySort: sectionPrefs.entityGallerySort,
+        onEntityGallerySortChanged: (criteria) {
+          sectionPrefs.setEntityGallerySort(criteria, onStateChanged);
+        },
       );
     }
 

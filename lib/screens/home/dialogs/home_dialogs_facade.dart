@@ -20,6 +20,7 @@ import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/work_id_codec.dart';
 import '../../../services/works_registry.dart';
+import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/fusion_search_dialog.dart';
 import '../../../widgets/library_theme_picker.dart';
 import 'add_catalog_entity_dialog.dart';
@@ -113,6 +114,8 @@ class HomeDialogsFacade {
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onWorkSavedToVault,
     required Future<void> Function(CatalogEntityAddResult result) onEntitySaved,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
   }) async {
     if (AkashaFileService().vaultPath == null) {
       showMessage('볼트를 먼저 연결해 주세요.');
@@ -135,10 +138,21 @@ class HomeDialogsFacade {
       return;
     }
 
+    if (userCatalog != null) {
+      await userCatalog.load();
+    }
+    final workTitleIndex = userCatalog != null
+        ? EntityTagValidation.buildWorkTitleIndex(
+            catalogEntities: userCatalog.all,
+            vaultItems: vaultItems,
+          )
+        : const <String>{};
+
     final addResult = await showAddCatalogEntityDialog(
       context,
       entityType: pickedType,
       initialTitle: query,
+      workTitleIndex: workTitleIndex,
     );
     if (addResult == null || !context.mounted) return;
     await onEntitySaved(addResult);

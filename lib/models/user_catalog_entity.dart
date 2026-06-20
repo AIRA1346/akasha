@@ -4,6 +4,8 @@ import 'registry_work.dart';
 import 'work_titles.dart';
 import 'akasha_item.dart';
 import '../utils/work_title_resolver.dart';
+import '../widgets/editable_tag_chips.dart';
+import '../utils/entity_tag_semantics.dart';
 
 /// Tier 1.5 — user local catalog Fact ([user-local-catalog-policy.md]).
 class UserCatalogEntity {
@@ -25,6 +27,7 @@ class UserCatalogEntity {
   final int? releaseYear;
   final AppDomain domain;
   final List<String> aliases;
+  final List<String> tags;
   final DateTime addedAt;
 
   const UserCatalogEntity({
@@ -37,6 +40,7 @@ class UserCatalogEntity {
     this.releaseYear,
     this.domain = AppDomain.subculture,
     this.aliases = const [],
+    this.tags = const [],
     required this.addedAt,
   });
 
@@ -58,6 +62,7 @@ class UserCatalogEntity {
       creator: item.creator,
       releaseYear: item.releaseYear,
       domain: item.domain,
+      tags: List<String>.from(item.tags),
       addedAt: item.addedAt,
     );
   }
@@ -68,6 +73,7 @@ class UserCatalogEntity {
     required String title,
     MediaCategory? subtype,
     List<String> aliases = const [],
+    List<String> tags = const [],
     DateTime? addedAt,
   }) {
     return UserCatalogEntity(
@@ -76,7 +82,36 @@ class UserCatalogEntity {
       subtype: subtype ?? MediaCategory.manga,
       title: title,
       aliases: aliases,
+      tags: tags,
       addedAt: addedAt ?? DateTime.now().toUtc(),
+    );
+  }
+
+  UserCatalogEntity copyWith({
+    String? entityId,
+    String? entityType,
+    MediaCategory? subtype,
+    String? title,
+    WorkTitles? titles,
+    String? creator,
+    int? releaseYear,
+    AppDomain? domain,
+    List<String>? aliases,
+    List<String>? tags,
+    DateTime? addedAt,
+  }) {
+    return UserCatalogEntity(
+      entityId: entityId ?? this.entityId,
+      entityType: entityType ?? this.entityType,
+      subtype: subtype ?? this.subtype,
+      title: title ?? this.title,
+      titles: titles ?? this.titles,
+      creator: creator ?? this.creator,
+      releaseYear: releaseYear ?? this.releaseYear,
+      domain: domain ?? this.domain,
+      aliases: aliases ?? this.aliases,
+      tags: tags ?? this.tags,
+      addedAt: addedAt ?? this.addedAt,
     );
   }
 
@@ -108,6 +143,9 @@ class UserCatalogEntity {
               .where((e) => e.isNotEmpty)
               .toList() ??
           const [],
+      tags: parseTagList(
+        (json['tags'] as List?)?.map((e) => e.toString()) ?? const [],
+      ),
       addedAt: DateTime.tryParse(json['addedAt']?.toString() ?? '') ??
           DateTime.now().toUtc(),
     );
@@ -125,6 +163,7 @@ class UserCatalogEntity {
         if (releaseYear != null) 'releaseYear': releaseYear,
         'domain': domain.name,
         'aliases': aliases,
+        'tags': tags,
         'addedAt': addedAt.toUtc().toIso8601String(),
         'source': catalogSourceUser,
       };
@@ -141,6 +180,7 @@ class UserCatalogEntity {
       domain: domain,
       creator: creator,
       releaseYear: releaseYear,
+      tags: tags,
       extensions: {
         'userLocalCatalog': true,
         'entityType': entityType,
@@ -156,9 +196,16 @@ class UserCatalogEntity {
     for (final alias in aliases) {
       if (alias.toLowerCase().contains(q)) return true;
     }
+    for (final tag in tags) {
+      if (tag.toLowerCase().contains(q)) return true;
+    }
     for (final token in toRegistryWork().searchTokens) {
       if (token.toLowerCase().contains(q)) return true;
     }
     return false;
   }
+
+  /// Collection filter — exact tag match (AND). Search uses [matchesQuery] substring.
+  bool matchesTagsAll(List<String> requiredTags) =>
+      EntityTagSemantics.matchesTagsAll(tags, requiredTags);
 }

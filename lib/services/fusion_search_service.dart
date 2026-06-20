@@ -86,6 +86,9 @@ abstract final class FusionSearchService {
     final localEntityJournals = allEntityJournals.where((entry) {
       if (entry.title.toLowerCase().contains(q)) return true;
       if (entry.body.toLowerCase().contains(q)) return true;
+      for (final tag in entry.tags) {
+        if (tag.toLowerCase().contains(q)) return true;
+      }
       return false;
     }).toList();
 

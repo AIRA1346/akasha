@@ -38,6 +38,7 @@ void main() {
           type: EntityAnchorType.person,
           title: '나츠키 스바루',
           aliases: ['스바루'],
+          tags: const ['영웅', '구원'],
         );
         final result = CatalogEntityAddResult(
           entity: draft,
@@ -66,6 +67,10 @@ void main() {
         final stored = catalog.getById('pe_u_r1test01');
         expect(stored, isNotNull);
         expect(stored!.title, '나츠키 스바루');
+        expect(stored.tags, ['영웅', '구원']);
+
+        final md = await File(saved.entry!.storagePath).readAsString();
+        expect(md, contains('tags: ["영웅", "구원"]'));
       } finally {
         catalog.resetForTesting();
         await service.setVaultPath('');
@@ -126,6 +131,29 @@ void main() {
         ),
       );
       expect(mirrored.title, 'Journal Title');
+      expect(mirrored.tags, isEmpty);
+    });
+
+    test('mirror copies journal semantic tags', () {
+      final draft = UserCatalogEntity.userLocal(
+        entityId: 'pe_u_sync02',
+        type: EntityAnchorType.person,
+        title: 'Draft',
+        tags: const ['구원'],
+      );
+      final mirrored = EntityCatalogSync.mirrorFromJournal(
+        draft: draft,
+        entry: EntityJournalEntry(
+          entityType: EntityAnchorType.person,
+          entityId: 'pe_u_sync02',
+          title: 'Journal Title',
+          body: '',
+          addedAt: DateTime.utc(2026, 6, 19),
+          storagePath: '/vault/entities/person/Journal Title.md',
+          tags: const ['영웅', '성장'],
+        ),
+      );
+      expect(mirrored.tags, ['영웅', '성장']);
     });
   });
 

@@ -27,6 +27,8 @@ class HomeNavigationCoordinator {
   int timelineReloadToken = 0;
 
   bool get isPersonalLibraryMode => sidebarCoordinator.isPersonalLibraryMode;
+  bool get isCollectibleCollectionMode =>
+      sidebarCoordinator.isCollectibleCollectionMode;
   bool get isTimelineMode => filterCoordinator.isTimelineMode;
 
   /// Wave 3 alias — 「기록」축 (timeline + journal).
@@ -59,6 +61,11 @@ class HomeNavigationCoordinator {
     if (isMounted()) rebuild();
   }
 
+  Future<void> loadCollectibleCollections() async {
+    await sidebarCoordinator.loadCollectibleCollections();
+    if (isMounted()) rebuild();
+  }
+
   Future<void> selectDashboard(String id) async {
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
@@ -70,6 +77,13 @@ class HomeNavigationCoordinator {
   void selectPersonalLibrary(String id) {
     scheduleRebuild(() {
       sidebarCoordinator.selectPersonalLibrary(id);
+      workbench.showBrowse();
+    });
+  }
+
+  void selectCollectibleCollection(String id) {
+    scheduleRebuild(() {
+      sidebarCoordinator.selectCollectibleCollection(id);
       workbench.showBrowse();
     });
   }

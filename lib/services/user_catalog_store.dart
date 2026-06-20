@@ -19,7 +19,7 @@ class UserCatalogStore implements UserCatalogPort {
   static final UserCatalogStore instance = UserCatalogStore._();
 
   static const String catalogFileName = 'user_entities.json';
-  static const int schemaVersion = 1;
+  static const int schemaVersion = 2;
 
   final List<UserCatalogEntity> _entities = [];
   final StreamController<void> _changeController =

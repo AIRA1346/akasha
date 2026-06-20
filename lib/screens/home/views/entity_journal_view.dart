@@ -7,6 +7,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/file_service.dart';
+import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
 import '../dialogs/entity_journal_dialog.dart';
 
@@ -114,11 +115,6 @@ class _EntityJournalViewState extends State<EntityJournalView> {
     return '$y-$m-$d $h:$min';
   }
 
-  static String _preview(String body) {
-    final trimmed = body.trim();
-    if (trimmed.length <= 120) return trimmed;
-    return '${trimmed.substring(0, 120)}…';
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -220,7 +216,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          _preview(entry.body),
+                          EntityBodyPreview.format(entry.body),
                           style: TextStyle(
                             fontSize: 13,
                             color: Colors.grey[300],

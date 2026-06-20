@@ -46,6 +46,7 @@ added_at: "2026-06-19T10:00:00.000"
         title: parsed.title,
         body: parsed.body,
         addedAt: parsed.addedAt,
+        tags: parsed.tags,
       );
       expect(reserialized, contains('record_kind: entityJournal'));
     });

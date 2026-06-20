@@ -1,8 +1,13 @@
+import 'dart:io';
+
+import 'package:path/path.dart' as p;
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/fusion_search_service.dart';
+import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/helpers.dart';
 
@@ -10,6 +15,12 @@ import 'fakes/fake_registry_port.dart';
 import 'fakes/fake_user_catalog_port.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUp(() {
+    SharedPreferences.setMockInitialValues({});
+  });
+
   group('FusionSearchService', () {
     test('returns catalog-only hit when no local md or global match', () async {
       final catalog = FakeUserCatalogPort()
@@ -105,6 +116,66 @@ void main() {
       expect(result.registryHits, hasLength(1));
       expect(result.registryHits.first.source, FusionRegistrySource.userCatalog);
       expect(result.registryHits.first.work.workId, sharedId);
+    });
+
+    test('finds archived entity journal by semantic tag', () async {
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_fusion_tags_');
+      try {
+        await service.setVaultPath(tempDir.path);
+        final entityDir = Directory(p.join(tempDir.path, 'entities', 'person'));
+        await entityDir.create(recursive: true);
+        await File(p.join(entityDir.path, 'natsuki.md')).writeAsString('''
+---
+entity_type: person
+entity_id: "pe_u_fusiontag1"
+record_kind: entityJournal
+title: "나츠키 스바루"
+added_at: "2026-06-20T12:00:00.000Z"
+tags: ["영웅", "성장", "구원"]
+---
+메모
+''');
+
+        final result = await FusionSearchService.search(
+          query: '영웅',
+          localItems: const [],
+          userCatalog: FakeUserCatalogPort(),
+          registry: FakeRegistryPort(),
+        );
+
+        expect(result.localEntityJournals, hasLength(1));
+        expect(result.localEntityJournals.first.entityId, 'pe_u_fusiontag1');
+        expect(result.localEntityJournals.first.tags, contains('영웅'));
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('catalog tag match via matchesQuery', () async {
+      final catalog = FakeUserCatalogPort()
+        ..seed([
+          UserCatalogEntity.userLocal(
+            entityId: 'pe_u_cattag01',
+            type: EntityAnchorType.person,
+            title: '에밀리아',
+            tags: const ['영웅', '왕후보'],
+          ),
+        ]);
+
+      final result = await FusionSearchService.search(
+        query: '왕후보',
+        localItems: const [],
+        userCatalog: catalog,
+        registry: FakeRegistryPort(),
+      );
+
+      expect(result.registryHits, hasLength(1));
+      expect(result.registryHits.first.entityType, EntityAnchorType.person);
+      expect(result.registryHits.first.work.tags, contains('왕후보'));
     });
   });
 

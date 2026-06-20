@@ -1,5 +1,7 @@
 import '../../../models/personal_library_config.dart';
+import '../../../models/entity_gallery_sort.dart';
 import '../../../utils/helpers.dart';
+import '../home_collectible_collection_controller.dart';
 import '../home_dashboard_controller.dart';
 import '../home_personal_library_controller.dart';
 import '../home_section_preferences.dart';
@@ -9,17 +11,22 @@ import 'home_filter_coordinator.dart';
 class HomeSidebarCoordinator {
   HomeSidebarCoordinator({
     required this.personalLibCtrl,
+    required this.collectionCtrl,
     required this.dashboardCtrl,
     required this.sectionPrefs,
     required this.filterCoordinator,
   });
 
   final HomePersonalLibraryController personalLibCtrl;
+  final HomeCollectibleCollectionController collectionCtrl;
   final HomeDashboardController dashboardCtrl;
   final HomeSectionPreferences sectionPrefs;
   final HomeFilterCoordinator filterCoordinator;
 
   bool get isPersonalLibraryMode => filterCoordinator.isPersonalLibraryMode;
+
+  bool get isCollectibleCollectionMode =>
+      filterCoordinator.isCollectibleCollectionMode;
 
   bool get isCuratedLibraryActive {
     final lib = personalLibCtrl.activeLibrary;
@@ -44,7 +51,20 @@ class HomeSidebarCoordinator {
     }
   }
 
-  /// 대시보드 선택 후 registry prefetch 필요
+  Future<void> loadCollectibleCollections() async {
+    await collectionCtrl.load();
+  }
+
+  void selectCollectibleCollection(String id) {
+    collectionCtrl.selectCollection(id, personalLibCtrl: personalLibCtrl);
+    final col = collectionCtrl.activeCollection;
+    if (col?.isCurated == true &&
+        !sectionPrefs.entityGallerySort.isManualOrder) {
+      sectionPrefs.entityGallerySort = EntityGallerySortCriteria.manualOrder;
+      sectionPrefs.saveEntityGallerySort(EntityGallerySortCriteria.manualOrder);
+    }
+  }
+
   void selectDashboard(String id) {
     dashboardCtrl.select(id);
     personalLibCtrl.selectDashboardMode();

@@ -131,6 +131,10 @@ abstract final class RecordLinkNavigator {
     r'''work_id:\s*["']?([^"'\s]+)["']?''',
   );
 
+  /// Frontmatter `work_id:` when [findVaultItemForRecordPath] misses vaultItems.
+  static Future<String?> readWorkIdFromRecordPath(String storagePath) =>
+      _readWorkIdFromMd(storagePath);
+
   static Future<String?> _readWorkIdFromMd(String mdPath) async {
     try {
       final file = File(mdPath);

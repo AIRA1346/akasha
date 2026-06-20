@@ -20,6 +20,9 @@ class HomeFilterCoordinator {
   bool get isPersonalLibraryMode =>
       personalLibCtrl.sidebarMode == SidebarSelectionMode.personalLibrary;
 
+  bool get isCollectibleCollectionMode =>
+      personalLibCtrl.sidebarMode == SidebarSelectionMode.collectibleCollection;
+
   bool get isTimelineMode =>
       personalLibCtrl.sidebarMode == SidebarSelectionMode.timeline;
 

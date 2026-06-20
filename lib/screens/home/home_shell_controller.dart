@@ -13,6 +13,8 @@ import '../../data/adapters/works_registry_adapter.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
+import '../../models/entity_browse_card.dart';
+import '../../widgets/entity_curated_reorder_grid.dart';
 import '../../models/entity_link_selection.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
@@ -28,6 +30,7 @@ import 'coordinators/home_vault_coordinator.dart';
 import 'coordinators/home_workbench_coordinator.dart';
 import 'home_browse_filter_controller.dart';
 import 'home_dashboard_controller.dart';
+import 'home_collectible_collection_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
@@ -47,6 +50,8 @@ class HomeShellController {
   final HomeDashboardController dashboardCtrl = HomeDashboardController();
   final HomePersonalLibraryController personalLibCtrl =
       HomePersonalLibraryController();
+  final HomeCollectibleCollectionController collectionCtrl =
+      HomeCollectibleCollectionController();
   final WorkbenchController workbench = WorkbenchController();
   final HomeRegistryUi registryUi = const HomeRegistryUi();
   final RegistryPort registry = WorksRegistryAdapter();
@@ -97,6 +102,8 @@ class HomeShellController {
     wiring = HomeShellWiring.create(
       registry: registry,
       personalLibCtrl: personalLibCtrl,
+      collectionCtrl: collectionCtrl,
+      userCatalog: userCatalog,
       filterCtrl: filterCtrl,
       dashboardCtrl: dashboardCtrl,
       sectionPrefs: sectionPrefs,
@@ -217,6 +224,7 @@ class HomeShellController {
   bool get isSidebarOpen => navigation.isSidebarOpen;
   int get timelineReloadToken => navigation.timelineReloadToken;
   bool get isPersonalLibraryMode => navigation.isPersonalLibraryMode;
+  bool get isCollectibleCollectionMode => navigation.isCollectibleCollectionMode;
   bool get isTimelineMode => navigation.isTimelineMode;
   bool get isRecordsMode => navigation.isRecordsMode;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;
@@ -254,6 +262,7 @@ class HomeShellController {
   get dashboardUi => wiring.dashboardUi;
   get libraryUi => wiring.libraryUi;
   get personalLibraryUi => wiring.personalLibraryUi;
+  get collectionUi => wiring.collectionUi;
 
   Future<void> init() async {
     _initCoordinators();
@@ -278,6 +287,7 @@ class HomeShellController {
     await navigation.loadSidebarState();
     await navigation.loadDashboards();
     await navigation.loadPersonalLibraries();
+    await navigation.loadCollectibleCollections();
     sectionPrefs = await HomeSectionPreferences.load();
     await vault.loadPreferences();
     await loadItems();
@@ -307,8 +317,12 @@ class HomeShellController {
   void toggleSidebar() => navigation.toggleSidebar();
   Future<void> loadDashboards() => navigation.loadDashboards();
   Future<void> loadPersonalLibraries() => navigation.loadPersonalLibraries();
+  Future<void> loadCollectibleCollections() =>
+      navigation.loadCollectibleCollections();
   Future<void> selectDashboard(String id) => navigation.selectDashboard(id);
   void selectPersonalLibrary(String id) => navigation.selectPersonalLibrary(id);
+  void selectCollectibleCollection(String id) =>
+      navigation.selectCollectibleCollection(id);
   void selectTimeline() => navigation.selectTimeline();
   void onLibraryDragStarted() => navigation.onLibraryDragStarted();
 
@@ -363,4 +377,21 @@ class HomeShellController {
     int newIndex,
   ) =>
       browse.onCuratedReorder(cards, oldIndex, newIndex);
+
+  Future<void> onEntityCollectionCuratedReorder(
+    List<EntityBrowseCard> visibleCards,
+    int oldIndex,
+    int newIndex,
+  ) async {
+    final col = collectionCtrl.activeCollection;
+    if (col == null || !col.isCurated) return;
+    applyEntityReorderToCollection(
+      collection: col,
+      visibleCards: visibleCards,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+    await collectionCtrl.save();
+    rebuild();
+  }
 }

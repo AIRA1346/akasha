@@ -31,6 +31,7 @@ void main() {
           creator: '작가',
           releaseYear: 2024,
           domain: AppDomain.subculture,
+          tags: const ['판타지', '이세계'],
           addedAt: DateTime.utc(2024, 1, 2),
         );
 
@@ -44,6 +45,7 @@ void main() {
         expect(loaded.title, entity.title);
         expect(loaded.creator, entity.creator);
         expect(loaded.releaseYear, 2024);
+        expect(loaded.tags, ['판타지', '이세계']);
 
         final file = File('${tempDir.path}/catalog/user_entities.json');
         expect(await file.exists(), isTrue);

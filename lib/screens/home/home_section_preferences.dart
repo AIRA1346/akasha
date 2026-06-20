@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../utils/helpers.dart';
 import '../../models/enums.dart';
+import '../../models/entity_gallery_sort.dart';
+import '../../utils/helpers.dart';
 
 /// 홈 섹션 정렬·접이식 상태 영속화
 class HomeSectionPreferences {
@@ -11,6 +12,8 @@ class HomeSectionPreferences {
   SortCriteria librarySort = SortCriteria.titleAsc;
   SortCriteria yearlySort = SortCriteria.titleAsc;
   SortCriteria watchlistSort = SortCriteria.titleAsc;
+  EntityGallerySortCriteria entityGallerySort =
+      EntityGallerySortCriteria.recentlyAdded;
 
   bool hofExpanded = true;
   bool libraryExpanded = true;
@@ -28,6 +31,7 @@ class HomeSectionPreferences {
       prefs.librarySort = _readSort(sp, 'library');
       prefs.yearlySort = _readSort(sp, 'yearly');
       prefs.watchlistSort = _readSort(sp, 'watchlist');
+      prefs.entityGallerySort = _readEntityGallerySort(sp);
       prefs.hofExpanded = sp.getBool('akasha_expanded_hof') ?? true;
       prefs.libraryExpanded = sp.getBool('akasha_expanded_library') ?? true;
       prefs.yearlyExpanded = sp.getBool('akasha_expanded_yearly') ?? true;
@@ -37,6 +41,24 @@ class HomeSectionPreferences {
       debugPrint('Error loading section preferences: $e');
     }
     return prefs;
+  }
+
+  static EntityGallerySortCriteria _readEntityGallerySort(SharedPreferences sp) {
+    final raw = sp.getString('akasha_sort_entity_gallery');
+    if (raw == null) return EntityGallerySortCriteria.recentlyAdded;
+    return EntityGallerySortCriteria.values.firstWhere(
+      (e) => e.name == raw,
+      orElse: () => EntityGallerySortCriteria.recentlyAdded,
+    );
+  }
+
+  Future<void> saveEntityGallerySort(EntityGallerySortCriteria criteria) async {
+    try {
+      final sp = await SharedPreferences.getInstance();
+      await sp.setString('akasha_sort_entity_gallery', criteria.name);
+    } catch (e) {
+      debugPrint('Error saving entity gallery sort: $e');
+    }
   }
 
   static SortCriteria _readSort(SharedPreferences sp, String key) {
@@ -154,6 +176,12 @@ class HomeSectionPreferences {
   void setWatchlistSort(SortCriteria value, VoidCallback notify) {
     watchlistSort = value;
     saveSort('watchlist', value);
+    notify();
+  }
+
+  void setEntityGallerySort(EntityGallerySortCriteria value, VoidCallback notify) {
+    entityGallerySort = value;
+    saveEntityGallerySort(value);
     notify();
   }
 }

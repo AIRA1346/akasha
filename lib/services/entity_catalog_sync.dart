@@ -17,6 +17,7 @@ abstract final class EntityCatalogSync {
       releaseYear: draft.releaseYear,
       domain: draft.domain,
       aliases: draft.aliases,
+      tags: entry.tags,
       addedAt: entry.addedAt,
     );
   }
