@@ -9,8 +9,10 @@ import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
+import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../widgets/web_image_search_dialog.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_journal_parser.dart';
 import '../../../services/entity_vault_path_conflict.dart';
@@ -39,6 +41,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     required this.onDeleted,
     required this.onDirtyChanged,
     required this.onBindSave,
+    this.onAddToLibrary,
     this.onPreserveDraft,
     this.onInfoWidthChanged,
     this.onToggleInfoLock,
@@ -75,6 +78,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     BuildContext context,
     String selectedText,
   )? onRequestEntityLink;
+  final Future<void> Function(UserCatalogEntity entity)? onAddToLibrary;
 
   @override
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
@@ -85,9 +89,12 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
   late UserCatalogEntity _entity;
   EntityJournalEntry? _journal;
+  late EntityItem _item;
+  late EntityItem _preview;
   late List<String> _draftTags;
   late final TextEditingController _bodyCtrl;
   late final TextEditingController _fileCtrl;
+  late final TextEditingController _posterUrlCtrl;
   SanctumPageView _pageView = SanctumPageView.preview;
   bool _isSaving = false;
   bool _suppressPersist = false;
@@ -102,13 +109,53 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
   static const _autoSaveDelay = Duration(seconds: 2);
 
+  EntityItem _buildEntityItem(UserCatalogEntity entity, EntityJournalEntry? journal) {
+    return EntityItem(
+      entityType: entity.anchorType,
+      entityId: entity.entityId,
+      title: entity.title,
+      category: entity.subtype,
+      domain: entity.domain,
+      creator: entity.creator,
+      releaseYear: entity.releaseYear,
+      posterPath: journal?.posterPath ?? entity.posterPath,
+      tags: List<String>.from(journal?.tags ?? entity.tags),
+      addedAt: journal?.addedAt ?? entity.addedAt,
+      bodyRaw: journal?.body ?? '',
+    );
+  }
+
+  void _updatePreview() {
+    setState(() {
+      _preview = EntityItem(
+        entityType: _entity.anchorType,
+        entityId: _entity.entityId,
+        title: _entity.title,
+        category: _entity.subtype,
+        domain: _entity.domain,
+        creator: _entity.creator,
+        releaseYear: _entity.releaseYear,
+        posterPath: _posterUrlCtrl.text,
+        tags: _draftTags,
+        addedAt: _journal?.addedAt ?? _entity.addedAt,
+        bodyRaw: _bodyCtrl.text,
+      );
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     _entity = widget.entity;
     _journal = widget.journal;
+    _item = _buildEntityItem(_entity, _journal);
+    _preview = _item;
     _draftTags = List<String>.from(_journal?.tags ?? _entity.tags);
     _bodyCtrl = TextEditingController(text: _journal?.body ?? '');
+    _posterUrlCtrl = TextEditingController(text: _journal?.posterPath ?? _entity.posterPath ?? '');
+    _posterUrlCtrl.addListener(() {
+      _updatePreview();
+    });
     _fileCtrl = TextEditingController(text: _serializeFile());
     _pageView = _bodyCtrl.text.trim().isEmpty
         ? SanctumPageView.body
@@ -169,8 +216,11 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     if (oldWidget.tabId != widget.tabId) {
       _entity = widget.entity;
       _journal = widget.journal;
+      _item = _buildEntityItem(_entity, _journal);
+      _preview = _item;
       _draftTags = List<String>.from(_journal?.tags ?? _entity.tags);
       _bodyCtrl.text = _journal?.body ?? '';
+      _posterUrlCtrl.text = _journal?.posterPath ?? _entity.posterPath ?? '';
       _fileCtrl.text = _serializeFile();
       _pageView = _bodyCtrl.text.trim().isEmpty
           ? SanctumPageView.body
@@ -185,8 +235,11 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
             oldWidget.journal?.storagePath != widget.journal?.storagePath)) {
       _entity = widget.entity;
       _journal = widget.journal;
+      _item = _buildEntityItem(_entity, _journal);
+      _preview = _item;
       _draftTags = List<String>.from(_journal?.tags ?? _entity.tags);
       _bodyCtrl.text = _journal?.body ?? '';
+      _posterUrlCtrl.text = _journal?.posterPath ?? _entity.posterPath ?? '';
       _fileCtrl.text = _serializeFile();
       _loadIncoming();
       _loadSameDay();
@@ -208,6 +261,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         body: _bodyCtrl.text,
         addedAt: _entity.addedAt,
         tags: _draftTags,
+        posterPath: _posterUrlCtrl.text,
       );
     }
     return EntityJournalParser.serialize(
@@ -217,6 +271,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       body: _bodyCtrl.text,
       addedAt: entry.addedAt,
       tags: _draftTags,
+      posterPath: _posterUrlCtrl.text,
     );
   }
 
@@ -284,6 +339,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     widget.onBindSave(null);
     _bodyCtrl.dispose();
     _fileCtrl.dispose();
+    _posterUrlCtrl.dispose();
     super.dispose();
   }
 
@@ -326,7 +382,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
     setState(() => _isSaving = true);
     try {
-      final entityDraft = _entity.copyWith(tags: _draftTags);
+      final entityDraft = _entity.copyWith(tags: _draftTags, posterPath: _posterUrlCtrl.text);
       EntityJournalEntry saved;
       if (_journal == null) {
         saved = await _store.saveCatalogEntity(
@@ -339,6 +395,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
           entry: _journal!,
           body: body,
           tags: _draftTags,
+          posterPath: _posterUrlCtrl.text,
         );
       }
 
@@ -355,6 +412,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       setState(() {
         _entity = mirrored;
         _journal = saved;
+        _item = _buildEntityItem(mirrored, saved);
+        _preview = _item;
         _draftTags = List<String>.from(saved.tags);
         _fileCtrl.text = _serializeFile();
         _lastSavedAt = DateTime.now();
@@ -514,6 +573,37 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     );
   }
 
+  Future<void> _openPosterCorrection() async {
+    final selected = await showDialog<String>(
+      context: context,
+      builder: (searchCtx) => WebImageSearchDialog(
+        initialQuery: _entity.title,
+        category: _entity.subtype,
+      ),
+    );
+    if (selected != null) {
+      setState(() {
+        _posterUrlCtrl.text = selected;
+        _updatePreview();
+      });
+      _markDirty();
+    }
+  }
+
+  Future<void> _handleAddToLibrary() async {
+    if (widget.onAddToLibrary == null) return;
+    if (AkashaFileService().vaultPath == null) {
+      _showSnack('볼트 연결 후 서재에 담을 수 있습니다.');
+      return;
+    }
+    if (_journal == null) {
+      await _saveJournal();
+    }
+    if (_journal != null) {
+      await widget.onAddToLibrary!(_entity);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final hasJournal = _journal != null;
@@ -537,7 +627,9 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               EntityDetailInfoPanel(
-                entity: _entity,
+                item: _item,
+                preview: _preview,
+                aliases: _entity.aliases,
                 hasJournal: hasJournal,
                 panelWidth: widget.infoPanelWidth,
                 infoPanelLocked: widget.infoPanelLocked,
@@ -555,9 +647,14 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                 onToggleInfoLock: widget.onToggleInfoLock,
                 onDraftTagsChanged: (tags) {
                   setState(() => _draftTags = tags);
+                  _updatePreview();
                   _markDirty();
                 },
                 onSave: () => _saveJournal(),
+                onPosterTap: _openPosterCorrection,
+                posterUrlCtrl: _posterUrlCtrl,
+                showAddToLibrary: widget.onAddToLibrary != null,
+                onAddToLibrary: _handleAddToLibrary,
                 canDeleteMd: hasJournal,
                 onDeleteArchive: hasJournal ? _confirmDelete : null,
               ),

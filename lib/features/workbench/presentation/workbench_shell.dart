@@ -28,6 +28,7 @@ class WorkbenchShell extends StatefulWidget {
     this.userCatalog,
     this.linkIndex,
     this.onAddToLibrary,
+    this.onAddToLibraryForEntity,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
   });
@@ -42,6 +43,7 @@ class WorkbenchShell extends StatefulWidget {
   final UserCatalogPort? userCatalog;
   final RecordLinkPort? linkIndex;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
+  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
   final Future<EntityLinkSelection?> Function(
     BuildContext context,
@@ -200,6 +202,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     linkIndex: widget.linkIndex,
                     onInfoWidthChanged: widget.controller.setInfoPanelWidth,
                     onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
+                    onAddToLibrary: widget.onAddToLibraryForEntity,
                     onBindSave: (save) =>
                         widget.controller.saveActiveTab = save,
                     onPreserveDraft: (tabId, draftEntity, draftJournal, tags, body) {

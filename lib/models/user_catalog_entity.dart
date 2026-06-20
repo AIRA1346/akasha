@@ -29,6 +29,7 @@ class UserCatalogEntity {
   final List<String> aliases;
   final List<String> tags;
   final DateTime addedAt;
+  final String? posterPath;
 
   const UserCatalogEntity({
     required this.entityId,
@@ -42,6 +43,7 @@ class UserCatalogEntity {
     this.aliases = const [],
     this.tags = const [],
     required this.addedAt,
+    this.posterPath,
   });
 
   bool get isWorkEntity => entityType == entityTypeWork;
@@ -64,6 +66,7 @@ class UserCatalogEntity {
       domain: item.domain,
       tags: List<String>.from(item.tags),
       addedAt: item.addedAt,
+      posterPath: item.posterPath,
     );
   }
 
@@ -75,6 +78,7 @@ class UserCatalogEntity {
     List<String> aliases = const [],
     List<String> tags = const [],
     DateTime? addedAt,
+    String? posterPath,
   }) {
     return UserCatalogEntity(
       entityId: entityId,
@@ -84,6 +88,7 @@ class UserCatalogEntity {
       aliases: aliases,
       tags: tags,
       addedAt: addedAt ?? DateTime.now().toUtc(),
+      posterPath: posterPath,
     );
   }
 
@@ -99,6 +104,7 @@ class UserCatalogEntity {
     List<String>? aliases,
     List<String>? tags,
     DateTime? addedAt,
+    String? posterPath,
   }) {
     return UserCatalogEntity(
       entityId: entityId ?? this.entityId,
@@ -112,6 +118,7 @@ class UserCatalogEntity {
       aliases: aliases ?? this.aliases,
       tags: tags ?? this.tags,
       addedAt: addedAt ?? this.addedAt,
+      posterPath: posterPath ?? this.posterPath,
     );
   }
 
@@ -148,6 +155,7 @@ class UserCatalogEntity {
       ),
       addedAt: DateTime.tryParse(json['addedAt']?.toString() ?? '') ??
           DateTime.now().toUtc(),
+      posterPath: json['posterPath']?.toString() ?? json['poster_path']?.toString(),
     );
   }
 
@@ -166,6 +174,7 @@ class UserCatalogEntity {
         'tags': tags,
         'addedAt': addedAt.toUtc().toIso8601String(),
         'source': catalogSourceUser,
+        if (posterPath != null) 'posterPath': posterPath,
       };
 
   RegistryWork toRegistryWork() {
@@ -181,6 +190,7 @@ class UserCatalogEntity {
       creator: creator,
       releaseYear: releaseYear,
       tags: tags,
+      posterPath: posterPath,
       extensions: {
         'userLocalCatalog': true,
         'entityType': entityType,

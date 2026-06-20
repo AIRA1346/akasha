@@ -4,16 +4,21 @@ import 'package:path/path.dart' as p;
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
+import '../../../models/akasha_item.dart';
+import '../../../models/enums.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../../../widgets/editable_tag_chips.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
+import 'work_detail_info_poster.dart';
 
 /// Entity collectible — Workbench 좌측 정보 패널 (Phase 6).
 class EntityDetailInfoPanel extends StatelessWidget {
   const EntityDetailInfoPanel({
     super.key,
-    required this.entity,
+    required this.item,
+    required this.preview,
+    required this.aliases,
     required this.hasJournal,
     required this.panelWidth,
     required this.infoPanelLocked,
@@ -31,11 +36,17 @@ class EntityDetailInfoPanel extends StatelessWidget {
     required this.onToggleInfoLock,
     required this.onDraftTagsChanged,
     required this.onSave,
+    required this.onPosterTap,
+    required this.posterUrlCtrl,
+    required this.showAddToLibrary,
+    required this.onAddToLibrary,
     this.canDeleteMd = false,
     this.onDeleteArchive,
   });
 
-  final UserCatalogEntity entity;
+  final AkashaItem item;
+  final AkashaItem preview;
+  final List<String> aliases;
   final bool hasJournal;
   final double panelWidth;
   final bool infoPanelLocked;
@@ -53,12 +64,17 @@ class EntityDetailInfoPanel extends StatelessWidget {
   final VoidCallback? onToggleInfoLock;
   final ValueChanged<List<String>> onDraftTagsChanged;
   final VoidCallback onSave;
+  final VoidCallback onPosterTap;
+  final TextEditingController posterUrlCtrl;
+  final bool showAddToLibrary;
+  final VoidCallback onAddToLibrary;
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
 
   @override
   Widget build(BuildContext context) {
-    final badge = entityTypeBadgeLabel(entity.anchorType);
+    final entityItem = item as EntityItem;
+    final badge = entityTypeBadgeLabel(entityItem.entityType);
 
     return WorkbenchResizablePanel(
       width: panelWidth,
@@ -84,43 +100,20 @@ class EntityDetailInfoPanel extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              Container(
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Colors.teal.withValues(alpha: 0.25),
-                      const Color(0xFF252535),
-                    ],
-                  ),
-                  border: Border.all(color: Colors.teal.withValues(alpha: 0.35)),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      _iconFor(entity.anchorType),
-                      size: 36,
-                      color: Colors.tealAccent,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      badge,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.tealAccent,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
+              Align(
+                alignment: Alignment.topCenter,
+                child: WorkDetailInfoPoster(
+                  preview: preview,
+                  posterUrlCtrl: posterUrlCtrl,
+                  gradColors: categoryGradient(item.category),
+                  maxWidth: panelWidth,
+                  maxHeight: 180,
+                  onPosterTap: onPosterTap,
                 ),
               ),
               const SizedBox(height: 14),
               Text(
-                entity.title,
+                item.title,
                 style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w700,
@@ -129,13 +122,13 @@ class EntityDetailInfoPanel extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                entity.entityId,
+                item.workId,
                 style: TextStyle(fontSize: 11, color: Colors.grey[600]),
               ),
-              if (entity.aliases.isNotEmpty) ...[
+              if (aliases.isNotEmpty) ...[
                 const SizedBox(height: 10),
                 Text(
-                  '별칭: ${entity.aliases.join(', ')}',
+                  '별칭: ${aliases.join(', ')}',
                   style: TextStyle(fontSize: 12, color: Colors.grey[400]),
                 ),
               ],
@@ -173,6 +166,22 @@ class EntityDetailInfoPanel extends StatelessWidget {
                 compact: false,
               ),
               const SizedBox(height: 20),
+              if (showAddToLibrary) ...[
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    onPressed: onAddToLibrary,
+                    icon: const Icon(Icons.collections_bookmark_outlined, size: 16),
+                    label: Text(hasJournal ? '서재에 담기' : '저장하고 서재에 담기'),
+                    style: OutlinedButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      textStyle: const TextStyle(fontSize: 11),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 6),
+              ],
               FilledButton.icon(
                 onPressed: isSaving ? null : onSave,
                 icon: isSaving
@@ -209,7 +218,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
               _SameDaySection(
                 loading: loadingSameDay,
                 refs: sameDayRefs,
-                anchor: entity.addedAt,
+                anchor: item.addedAt,
                 onOpen: onOpenSameDay,
               ),
             ],

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../config/feature_flags.dart';
 import '../../models/akasha_item.dart';
+import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/work_drag_payload.dart';
@@ -199,6 +200,22 @@ class HomeShellScaffold extends StatelessWidget {
                             controller.isCuratedLibraryActive,
                         items: controller.items,
                         resolveItemForOpen: controller.resolveItemForOpen,
+                        setState: controller.wrapSetState,
+                        onCreateLibrary: () =>
+                            controller.libraryUi.promptCreateCuratedLibrary(
+                          controller.host.context,
+                          setState: controller.wrapSetState,
+                        ),
+                      )
+                  : null,
+              onAddToLibraryForEntity: controller.canAddToLibrary
+                  ? (UserCatalogEntity entity) =>
+                      controller.libraryUi.showAddToLibraryForEntity(
+                        controller.host.context,
+                        entity: entity,
+                        isCuratedLibraryActive:
+                            controller.isCuratedLibraryActive,
+                        items: controller.items,
                         setState: controller.wrapSetState,
                         onCreateLibrary: () =>
                             controller.libraryUi.promptCreateCuratedLibrary(

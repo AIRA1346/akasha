@@ -10,6 +10,7 @@ class EntityJournalEntry {
     required this.addedAt,
     required this.storagePath,
     this.tags = const [],
+    this.posterPath,
   });
 
   final EntityAnchorType entityType;
@@ -19,4 +20,5 @@ class EntityJournalEntry {
   final DateTime addedAt;
   final String storagePath;
   final List<String> tags;
+  final String? posterPath;
 }

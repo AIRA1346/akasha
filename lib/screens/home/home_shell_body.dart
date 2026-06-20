@@ -98,6 +98,7 @@ class HomeShellBody extends StatelessWidget {
   ) onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
+  final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
   final Future<void> Function(
     List<BrowseCard> cards,
     int oldIndex,
@@ -181,6 +182,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onWorkbenchEntitySaved,
     required this.onWorkbenchEntityDeleted,
     this.onAddToLibrary,
+    this.onAddToLibraryForEntity,
     required this.onCuratedReorder,
     this.onEntityCollectionCuratedReorder,
     this.onCollectibleCollectionCuratedReorder,
@@ -278,6 +280,7 @@ class HomeShellBody extends StatelessWidget {
                         onEntitySaved: onWorkbenchEntitySaved,
                         onEntityDeleted: onWorkbenchEntityDeleted,
                         onAddToLibrary: onAddToLibrary,
+                        onAddToLibraryForEntity: onAddToLibraryForEntity,
                         onWikiLinkTap: onWikiLinkTap,
                         onRequestEntityLink: onRequestEntityLink,
                         browseContent: isTimelineMode

@@ -19,6 +19,7 @@ abstract final class EntityCatalogSync {
       aliases: draft.aliases,
       tags: entry.tags,
       addedAt: entry.addedAt,
+      posterPath: entry.posterPath,
     );
   }
 }

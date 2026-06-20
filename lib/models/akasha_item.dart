@@ -1,3 +1,4 @@
+import '../core/archiving/entity_anchor.dart';
 import 'category_descriptor.dart';
 import 'enums.dart';
 
@@ -176,4 +177,48 @@ class GameItem extends AkashaItem {
   void setMyStatus(String label) {
     myStatus = GameMyStatus.values.firstWhere((e) => e.label == label);
   }
+}
+
+// ────────────────────────────────────────────
+//  일반 엔티티 아이템 (인물, 사건, 개념 등)
+// ────────────────────────────────────────────
+
+class EntityItem extends AkashaItem {
+  final EntityAnchorType entityType;
+  final String entityId;
+
+  EntityItem({
+    required this.entityType,
+    required String entityId,
+    required super.title,
+    required super.category,
+    required super.domain,
+    super.creator = '',
+    super.releaseYear,
+    super.rating = 0.0,
+    super.posterPath,
+    super.description = '',
+    super.memorableQuotes,
+    super.review = '',
+    super.isHallOfFame = false,
+    super.tags,
+    super.addedAt,
+    super.bodyRaw = '',
+  })  : entityId = entityId,
+        super(workId: entityId);
+
+  @override
+  String get workStatusLabel => '';
+  @override
+  String get myStatusLabel => '';
+
+  @override
+  List<String> get workStatusOptions => const [];
+  @override
+  List<String> get myStatusOptions => const [];
+
+  @override
+  void setWorkStatus(String label) {}
+  @override
+  void setMyStatus(String label) {}
 }

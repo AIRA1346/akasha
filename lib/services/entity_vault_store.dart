@@ -68,6 +68,7 @@ class EntityVaultStore {
       body: body,
       addedAt: addedAt,
       tags: entity.tags,
+      posterPath: entity.posterPath,
     );
 
     await _writeAtomic(targetPath, content);
@@ -89,6 +90,7 @@ class EntityVaultStore {
       addedAt: addedAt,
       storagePath: targetPath,
       tags: List<String>.from(entity.tags),
+      posterPath: entity.posterPath,
     );
   }
 
@@ -97,6 +99,7 @@ class EntityVaultStore {
     required String body,
     String? title,
     List<String>? tags,
+    String? posterPath,
   }) async {
     if (entry.storagePath.isEmpty) {
       throw StateError('Entity journal storage path missing');
@@ -116,6 +119,7 @@ class EntityVaultStore {
       body: body,
       addedAt: entry.addedAt,
       tags: resolvedTags,
+      posterPath: posterPath ?? entry.posterPath,
     );
 
     await _writeAtomic(entry.storagePath, content);
@@ -137,6 +141,7 @@ class EntityVaultStore {
       addedAt: entry.addedAt,
       storagePath: entry.storagePath,
       tags: List<String>.from(resolvedTags),
+      posterPath: posterPath ?? entry.posterPath,
     );
   }
 

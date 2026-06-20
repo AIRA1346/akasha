@@ -2,6 +2,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/browse_card.dart';
 import '../../../models/membership_apply_result.dart';
 import '../../../models/personal_library_config.dart';
+import '../../../models/user_catalog_entity.dart';
 import '../../../services/file_service.dart';
 import '../../../services/franchise_library_scope.dart';
 import '../../../services/library_membership_apply.dart';
@@ -128,6 +129,18 @@ class HomeMembershipCoordinator {
           ),
         );
       },
+    );
+  }
+
+  /// Entity library panel 「적용」.
+  Future<MembershipApplyResult> applyEntityLibraryPanel(
+    UserCatalogEntity entity, {
+    required WorkLibraryPanelApplyInput input,
+  }) async {
+    return await _membership.applyCheckboxDiff(
+      workIds: [entity.entityId],
+      desiredChecked: input.desiredChecked,
+      initialChecked: input.initialChecked,
     );
   }
 }

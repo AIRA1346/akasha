@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../models/akasha_item.dart';
+import '../../models/enums.dart';
+import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';
 import '../../models/membership_apply_result.dart';
 import '../../models/personal_library_config.dart';
@@ -279,6 +281,59 @@ class HomeLibraryUi {
       filterCoordinator.applyPersonalLibraryFilterSnapshot(config);
     });
     await personalLibCtrl.save();
+    setState(() {});
     return config;
+  }
+
+  Future<void> showAddToLibraryForEntity(
+    BuildContext context, {
+    required UserCatalogEntity entity,
+    required bool isCuratedLibraryActive,
+    required List<AkashaItem> items,
+    required void Function(void Function()) setState,
+    required Future<PersonalLibraryConfig?> Function() onCreateLibrary,
+  }) async {
+    if (AkashaFileService().vaultPath == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text(vaultRequiredMessage)),
+      );
+      return;
+    }
+
+    final dummyItem = ContentItem(
+      workId: entity.entityId,
+      title: entity.title,
+      category: MediaCategory.book,
+      domain: AppDomain.generalCulture,
+      tags: entity.tags,
+      addedAt: entity.addedAt,
+      posterPath: entity.posterPath,
+    );
+    dummyItem.filePath = 'dummy_path';
+
+    final request = WorkLibraryMenuRequest(
+      displayTitle: entity.title,
+      draftItem: dummyItem,
+      showTitleEditor: false,
+      singleWorkIds: [entity.entityId],
+      entireIpWorkIds: const [],
+      showIpScopeOption: false,
+      membership: membershipCoordinator.membership,
+      activeLibraryId: personalLibCtrl.activeLibraryId,
+      onCreateLibrary: onCreateLibrary,
+      onApply: (input) => membershipCoordinator.applyEntityLibraryPanel(
+        entity,
+        input: input,
+      ),
+    );
+
+    if (!context.mounted) return;
+
+    final result = await showWorkLibraryDialog(
+      context,
+      request: request,
+    );
+    showMembershipApplySnackBar(context, result);
+    setState(() {});
   }
 }

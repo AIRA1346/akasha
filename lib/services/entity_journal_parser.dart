@@ -28,6 +28,7 @@ abstract final class EntityJournalParser {
     final title = yaml['title']?.toString().trim() ?? entityId;
     final addedAt = _parseDateTime(yaml['added_at']) ?? DateTime.now();
     final tags = EntityTags.parseYaml(yaml['tags']);
+    final posterPath = yaml['poster_path']?.toString().trim();
 
     return EntityJournalEntry(
       entityType: entityType,
@@ -37,6 +38,7 @@ abstract final class EntityJournalParser {
       addedAt: addedAt,
       storagePath: filePath,
       tags: tags,
+      posterPath: posterPath,
     );
   }
 
@@ -47,6 +49,7 @@ abstract final class EntityJournalParser {
     required String body,
     DateTime? addedAt,
     List<String> tags = const [],
+    String? posterPath,
   }) {
     final added = addedAt ?? DateTime.now();
     final buffer = StringBuffer()
@@ -56,7 +59,11 @@ abstract final class EntityJournalParser {
       ..writeln('record_kind: ${RecordKind.entityJournal.name}')
       ..writeln('title: "${_escape(title)}"')
       ..writeln('added_at: "${added.toIso8601String()}"')
-      ..writeln(EntityTags.serializeYamlLine(tags))
+      ..writeln(EntityTags.serializeYamlLine(tags));
+    if (posterPath != null && posterPath.isNotEmpty) {
+      buffer.writeln('poster_path: "${_escape(posterPath)}"');
+    }
+    buffer
       ..writeln('---')
       ..writeln()
       ..write(body.trim());
