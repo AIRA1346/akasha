@@ -9,7 +9,7 @@
 
 ## 현재 위치 → 출시 경로
 
-**M1 ✅ → … → Phase 0 ✅ → Phase 1 ✅ → Phase 2 Catalog Scale ← 현재 → Phase 3~6**
+**M1 ✅ → … → Phase 0 ✅ → Phase 1 ✅ → Phase 6 Detail Parity (6.2 완료 · 6.3 진행) ← 현재**
 
 ### 실행 트랙 (일정 없음)
 
@@ -21,7 +21,7 @@
 | **3** | Entity types | 대기 |
 | **4** | Timeline Archive | 대기 |
 | **5** | Connection | 대기 |
-| **6** | Memory Core PoC | 대기 |
+| **6** | Detail Parity (Entity -> Workbench) | **진행** (6.2 완료 ✅, 6.3 진행 🔨) |
 | **M3** | Steam Release | ⏸️ 품질 Ready |
 
 상세: [architecture-evolution-phases.md](docs/programs/architecture-evolution-phases.md)

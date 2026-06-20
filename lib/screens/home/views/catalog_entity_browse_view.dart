@@ -22,7 +22,6 @@ import '../../../widgets/entity_collectible_card.dart';
 import '../../../widgets/entity_curated_reorder_grid.dart';
 import '../../../widgets/entity_gallery_sort_dropdown.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
-import '../dialogs/entity_journal_dialog.dart';
 
 /// Tier 1.5 catalog Entity gallery — Wave 4 browse · R2-E Phase 1.
 class CatalogEntityBrowseView extends StatefulWidget {
@@ -311,27 +310,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   }
 
   Future<void> _openEntity(UserCatalogEntity entity) async {
-    if (widget.onOpenEntity != null) {
-      widget.onOpenEntity!(entity);
-      return;
-    }
-
-    final vaultPath = AkashaFileService().vaultPath;
-    final entry = await const EntityVaultLoader().findByEntityId(
-      vaultPath,
-      entity.entityId,
-    );
-    if (!mounted) return;
-    await showEntityJournalDialog(
-      context,
-      entity: entity,
-      entry: entry,
-      linkIndex: widget.linkIndex,
-      userCatalog: widget.userCatalog,
-      vaultItems: widget.vaultItems,
-      onOpenWork: widget.onOpenWork,
-    );
-    if (mounted) await _reload();
+    widget.onOpenEntity?.call(entity);
   }
 
   void _onSortChanged(EntityGallerySortCriteria criteria) {

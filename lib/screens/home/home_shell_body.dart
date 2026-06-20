@@ -272,6 +272,7 @@ class HomeShellBody extends StatelessWidget {
                       child: WorkbenchShell(
                         controller: workbench,
                         userCatalog: userCatalog,
+                        linkIndex: linkIndex,
                         onWorkSaved: onWorkbenchWorkSaved,
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onEntitySaved: onWorkbenchEntitySaved,

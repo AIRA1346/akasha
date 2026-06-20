@@ -5,7 +5,10 @@ import 'package:flutter/services.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/archiving/record_link.dart';
+import '../../../core/archiving/record_kind.dart';
+import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
@@ -13,6 +16,9 @@ import '../../../services/entity_journal_parser.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
+import '../../../services/same_day_record_service.dart';
+import '../../../services/record_link_navigator.dart';
+import '../../../services/record_link_stale_label.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_info_panel.dart';
@@ -28,6 +34,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     required this.infoPanelWidth,
     this.infoPanelLocked = false,
     this.userCatalog,
+    this.linkIndex,
     required this.onSaved,
     required this.onDeleted,
     required this.onDirtyChanged,
@@ -46,6 +53,7 @@ class EntityDetailWorkspace extends StatefulWidget {
   final double infoPanelWidth;
   final bool infoPanelLocked;
   final UserCatalogPort? userCatalog;
+  final RecordLinkPort? linkIndex;
   final void Function(
     UserCatalogEntity entity,
     EntityJournalEntry? journal,
@@ -86,6 +94,12 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   DateTime? _lastSavedAt;
   Timer? _autoSaveTimer;
 
+  List<String> _incomingPaths = const [];
+  bool _loadingIncoming = false;
+  int _staleLabelRecordCount = 0;
+  List<SameDayRecordRef> _sameDayRefs = const [];
+  bool _loadingSameDay = false;
+
   static const _autoSaveDelay = Duration(seconds: 2);
 
   @override
@@ -100,6 +114,53 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         ? SanctumPageView.body
         : SanctumPageView.preview;
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
+    _loadIncoming();
+    _loadSameDay();
+  }
+
+  Future<void> _loadSameDay() async {
+    final anchor = _journal?.addedAt ?? _entity.addedAt;
+    setState(() => _loadingSameDay = true);
+    try {
+      final refs = await SameDayRecordService.findForAnchor(
+        vaultPath: AkashaFileService().vaultPath,
+        anchor: anchor,
+        excludePath: _journal?.storagePath,
+      );
+      if (mounted) {
+        setState(() {
+          _sameDayRefs = refs;
+          _loadingSameDay = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingSameDay = false);
+    }
+  }
+
+  Future<void> _loadIncoming() async {
+    final index = widget.linkIndex;
+    if (index == null) return;
+    setState(() => _loadingIncoming = true);
+    try {
+      final paths = await index.incomingRecordPaths(_entity.entityId);
+      final uniquePaths = paths.toSet().toList()..sort();
+      final currentTitle = _journal?.title ?? _entity.title;
+      final stale = await RecordLinkStaleLabel.countForEntity(
+        linkIndex: index,
+        entityId: _entity.entityId,
+        currentTitle: currentTitle,
+      );
+      if (mounted) {
+        setState(() {
+          _incomingPaths = uniquePaths;
+          _staleLabelRecordCount = stale.staleRecordCount;
+          _loadingIncoming = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingIncoming = false);
+    }
   }
 
   @override
@@ -115,6 +176,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
           ? SanctumPageView.body
           : SanctumPageView.preview;
       WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
+      _loadIncoming();
+      _loadSameDay();
       return;
     }
     if (!widget.isDirty &&
@@ -125,6 +188,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _draftTags = List<String>.from(_journal?.tags ?? _entity.tags);
       _bodyCtrl.text = _journal?.body ?? '';
       _fileCtrl.text = _serializeFile();
+      _loadIncoming();
+      _loadSameDay();
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -299,6 +364,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       });
       widget.onDirtyChanged(false);
       widget.onSaved(mirrored, saved);
+      _loadIncoming();
+      _loadSameDay();
       if (!silent) {
         _showSnack('"${mirrored.title}" entity journal을 저장했습니다.');
       }
@@ -309,6 +376,91 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     } finally {
       if (mounted) setState(() => _isSaving = false);
     }
+  }
+
+  Future<void> _openIncoming(String path) async {
+    final catalog = widget.userCatalog;
+    if (catalog == null) return;
+
+    await RecordLinkNavigator.openRecordPath(
+      context,
+      storagePath: path,
+      vaultItems: const [],
+      userCatalog: catalog,
+      onOpenWork: (item) {
+        widget.onWikiLinkTap?.call(
+          ParsedRecordLink(
+            kind: RecordLinkKind.explicitId,
+            raw: '[[${item.workId}]]',
+            targetEntityId: item.workId,
+          ),
+        );
+      },
+      onOpenEntity: (entity) async {
+        widget.onWikiLinkTap?.call(
+          ParsedRecordLink(
+            kind: RecordLinkKind.explicitId,
+            raw: '[[${entity.entityId}]]',
+            targetEntityId: entity.entityId,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _openSameDay(SameDayRecordRef ref) async {
+    final catalog = widget.userCatalog;
+    if (ref.kind == RecordKind.workJournal && catalog != null) {
+      await RecordLinkNavigator.openRecordPath(
+        context,
+        storagePath: ref.storagePath,
+        vaultItems: const [],
+        userCatalog: catalog,
+        onOpenWork: (item) {
+          widget.onWikiLinkTap?.call(
+            ParsedRecordLink(
+              kind: RecordLinkKind.explicitId,
+              raw: '[[${item.workId}]]',
+              targetEntityId: item.workId,
+            ),
+          );
+        },
+        onOpenEntity: (entity) async {
+          widget.onWikiLinkTap?.call(
+            ParsedRecordLink(
+              kind: RecordLinkKind.explicitId,
+              raw: '[[${entity.entityId}]]',
+              targetEntityId: entity.entityId,
+            ),
+          );
+        },
+      );
+      return;
+    }
+
+    if (!mounted) return;
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('${ref.kindLabel} · ${ref.title}'),
+        content: Text(
+          '${_formatWhen(ref.when.toLocal())}\n${ref.storagePath}',
+          style: const TextStyle(fontSize: 12),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('닫기'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _formatWhen(DateTime dt) {
+    final h = dt.hour.toString().padLeft(2, '0');
+    final m = dt.minute.toString().padLeft(2, '0');
+    return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')} $h:$m';
   }
 
   Future<void> _confirmDelete() async {
@@ -391,6 +543,14 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                 infoPanelLocked: widget.infoPanelLocked,
                 draftTags: _draftTags,
                 isSaving: _isSaving,
+                loadingIncoming: _loadingIncoming,
+                incomingPaths: _incomingPaths,
+                staleLabelRecordCount: _staleLabelRecordCount,
+                onRefreshIncoming: _loadIncoming,
+                loadingSameDay: _loadingSameDay,
+                sameDayRefs: _sameDayRefs,
+                onOpenIncoming: _openIncoming,
+                onOpenSameDay: _openSameDay,
                 onInfoWidthChanged: widget.onInfoWidthChanged,
                 onToggleInfoLock: widget.onToggleInfoLock,
                 onDraftTagsChanged: (tags) {

@@ -38,6 +38,7 @@ import 'home_section_preferences.dart';
 import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/user_catalog_entity.dart';
 import 'dialogs/add_catalog_entity_dialog.dart';
+import '../../services/file_service.dart';
 import 'dialogs/entity_link_picker_dialog.dart';
 import 'home_shell_host.dart';
 
@@ -298,6 +299,10 @@ class HomeShellController {
     await refreshLastSyncTime();
     vault.bindVaultWatch(onVaultChanged: () async {
       await loadItems();
+      final vaultPath = AkashaFileService().vaultPath;
+      if (vaultPath != null && vaultPath.isNotEmpty) {
+        await workbench.syncEntityTabs(vaultPath);
+      }
       host.scheduleRebuild(() => navigation.timelineReloadToken++);
     });
     catalog.registrySync.checkAutoSync();

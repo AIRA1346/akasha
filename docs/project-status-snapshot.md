@@ -1,30 +1,29 @@
-﻿# Project Status Snapshot
-
-> **갱신:** 2026-06-19 (@10048 · locale-minimum ✅ · test 336+)  
-> **현재 실행:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) · wikidata_ko 배치 · **E4 논의 시작 (Option A)**  
+# Project Status Snapshot
+ 
+> **갱신:** 2026-06-21 (@10048 · locale-minimum ✅ · test 505+)  
+> **현재 실행:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) · wikidata_ko 배치 · **Phase 6.3 (incoming/sameDay 패널 이전)**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
 > **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
 > **확장:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) — **SD2.6 hold 해제**
-
+ 
 ---
-
+ 
 ## Executive Summary
-
+ 
 | 항목 | 상태 |
 |------|------|
 | **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **10048/10048 (100%)** |
-| **flutter test** | **336+/336+ PASS** |
+| **flutter test** | **505+ PASS** |
 | **Phase 1** | Record Foundation ✅ |
-| **Phase 4.3** | Quick capture UI ✅ · Dogfood ✅ |
-| **Phase 4.4a** | Timeline list ✅ |
-| **다음** | E4 trigger 관측 · Sanctum 워크벤치 안정화 |
+| **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
+| **다음** | Phase 6.3 incoming/sameDay 패널 이전, 레거시 Sheet 정리 |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
-| **CDN** | akasha-db.pages.dev — **10048 push 완료** (Pages 배포 대기·확인) |
+| **CDN** | akasha-db.pages.dev — **10048 push 완료** |
 
 ---
 

@@ -1,8 +1,10 @@
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/entity_journal_parser.dart';
 import '../presentation/collectible_tab.dart';
 import 'workbench_layout_prefs.dart';
 
@@ -183,6 +185,29 @@ class WorkbenchController extends ChangeNotifier {
       if (_sameItemSnapshot(tab.item, match)) continue;
       tab.item = match;
       changed = true;
+    }
+    if (changed) notifyListeners();
+  }
+
+  Future<void> syncEntityTabs(String vaultPath) async {
+    var changed = false;
+    for (final tab in tabs) {
+      if (tab is! EntityCollectibleTab || tab.isDirty) continue;
+      final path = tab.journal?.storagePath;
+      if (path == null || path.isEmpty) continue;
+      final file = File(path);
+      if (!await file.exists()) continue;
+      try {
+        final content = await file.readAsString();
+        final updatedJournal = EntityJournalParser.parse(content, path);
+        if (updatedJournal != null) {
+          if (tab.journal?.body != updatedJournal.body ||
+              !listEquals(tab.journal?.tags, updatedJournal.tags)) {
+            tab.journal = updatedJournal;
+            changed = true;
+          }
+        }
+      } catch (_) {}
     }
     if (changed) notifyListeners();
   }

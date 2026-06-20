@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
 
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/archiving/record_kind.dart';
+import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../../../widgets/editable_tag_chips.dart';
@@ -16,6 +19,14 @@ class EntityDetailInfoPanel extends StatelessWidget {
     required this.infoPanelLocked,
     required this.draftTags,
     required this.isSaving,
+    required this.loadingIncoming,
+    required this.incomingPaths,
+    required this.staleLabelRecordCount,
+    required this.onRefreshIncoming,
+    required this.loadingSameDay,
+    required this.sameDayRefs,
+    required this.onOpenIncoming,
+    required this.onOpenSameDay,
     required this.onInfoWidthChanged,
     required this.onToggleInfoLock,
     required this.onDraftTagsChanged,
@@ -30,6 +41,14 @@ class EntityDetailInfoPanel extends StatelessWidget {
   final bool infoPanelLocked;
   final List<String> draftTags;
   final bool isSaving;
+  final bool loadingIncoming;
+  final List<String> incomingPaths;
+  final int staleLabelRecordCount;
+  final VoidCallback? onRefreshIncoming;
+  final bool loadingSameDay;
+  final List<SameDayRecordRef> sameDayRefs;
+  final ValueChanged<String> onOpenIncoming;
+  final ValueChanged<SameDayRecordRef> onOpenSameDay;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final ValueChanged<List<String>> onDraftTagsChanged;
@@ -176,6 +195,23 @@ class EntityDetailInfoPanel extends StatelessWidget {
                   ),
                 ),
               ],
+              const SizedBox(height: 20),
+              const Divider(height: 1),
+              const SizedBox(height: 20),
+              _IncomingLinksSection(
+                loading: loadingIncoming,
+                paths: incomingPaths,
+                staleLabelRecordCount: staleLabelRecordCount,
+                onRefresh: onRefreshIncoming,
+                onOpen: onOpenIncoming,
+              ),
+              const SizedBox(height: 24),
+              _SameDaySection(
+                loading: loadingSameDay,
+                refs: sameDayRefs,
+                anchor: entity.addedAt,
+                onOpen: onOpenSameDay,
+              ),
             ],
           ),
         ),
@@ -191,4 +227,175 @@ class EntityDetailInfoPanel extends StatelessWidget {
         EntityAnchorType.organization => Icons.groups_outlined,
         _ => Icons.category_outlined,
       };
+}
+
+class _SameDaySection extends StatelessWidget {
+  const _SameDaySection({
+    required this.loading,
+    required this.refs,
+    required this.anchor,
+    required this.onOpen,
+  });
+
+  final bool loading;
+  final List<SameDayRecordRef> refs;
+  final DateTime anchor;
+  final ValueChanged<SameDayRecordRef> onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    if (loading) {
+      return const Padding(
+        padding: EdgeInsets.only(top: 8),
+        child: LinearProgressIndicator(minHeight: 2),
+      );
+    }
+
+    if (refs.isEmpty) return const SizedBox.shrink();
+
+    final local = anchor.toLocal();
+    final dateLabel =
+        '${local.year}-${local.month.toString().padLeft(2, '0')}-${local.day.toString().padLeft(2, '0')}';
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            '같은 날 기록 · $dateLabel (${refs.length})',
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: Colors.tealAccent,
+            ),
+          ),
+          const SizedBox(height: 6),
+          ...refs.map((ref) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Material(
+                color: const Color(0xFF252535),
+                borderRadius: BorderRadius.circular(6),
+                child: ListTile(
+                  dense: true,
+                  visualDensity: VisualDensity.compact,
+                  leading: Icon(
+                    ref.kind == RecordKind.timelineEntry
+                        ? Icons.timeline
+                        : Icons.notes,
+                    size: 16,
+                  ),
+                  title: Text(ref.title, style: const TextStyle(fontSize: 12)),
+                  subtitle: Text(
+                    ref.kindLabel,
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  onTap: () => onOpen(ref),
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+}
+
+class _IncomingLinksSection extends StatelessWidget {
+  const _IncomingLinksSection({
+    required this.loading,
+    required this.paths,
+    required this.staleLabelRecordCount,
+    this.onRefresh,
+    this.onOpen,
+  });
+
+  final bool loading;
+  final List<String> paths;
+  final int staleLabelRecordCount;
+  final VoidCallback? onRefresh;
+  final ValueChanged<String>? onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    if (loading) {
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 4),
+        child: LinearProgressIndicator(minHeight: 2),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '연결된 Record ${paths.length}개',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.tealAccent,
+                    ),
+                  ),
+                  if (staleLabelRecordCount > 0) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      '제목 갱신 필요 ${staleLabelRecordCount}개',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.amber.shade200,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            if (onRefresh != null)
+              IconButton(
+                key: const Key('entity_incoming_refresh'),
+                icon: const Icon(Icons.refresh, size: 18),
+                tooltip: 'Incoming Links 새로고침',
+                visualDensity: VisualDensity.compact,
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+                onPressed: onRefresh,
+              ),
+          ],
+        ),
+        if (paths.isNotEmpty) ...[
+          const SizedBox(height: 6),
+          ...paths.map((path) {
+            final label = p.basename(path);
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Material(
+                color: const Color(0xFF252535),
+                borderRadius: BorderRadius.circular(6),
+                child: ListTile(
+                  dense: true,
+                  visualDensity: VisualDensity.compact,
+                  leading: const Icon(Icons.link, size: 16),
+                  title: Text(label, style: const TextStyle(fontSize: 12)),
+                  subtitle: Text(
+                    path,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  onTap: onOpen != null ? () => onOpen!(path) : null,
+                ),
+              ),
+            );
+          }),
+        ],
+      ],
+    );
+  }
 }

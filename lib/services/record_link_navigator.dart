@@ -9,7 +9,7 @@ import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
 import '../models/user_catalog_entity.dart';
-import '../screens/home/dialogs/entity_journal_dialog.dart';
+import 'entity_journal_parser.dart';
 import 'entity_vault_loader.dart';
 import 'file_service.dart';
 
@@ -69,6 +69,7 @@ abstract final class RecordLinkNavigator {
     required List<AkashaItem> vaultItems,
     required UserCatalogPort userCatalog,
     required void Function(AkashaItem item) onOpenWork,
+    Future<void> Function(UserCatalogEntity entity)? onOpenEntity,
   }) async {
     final item = await findVaultItemForRecordPath(
       storagePath: storagePath,
@@ -77,6 +78,30 @@ abstract final class RecordLinkNavigator {
     if (item != null) {
       onOpenWork(item);
       return;
+    }
+
+    if (onOpenEntity != null) {
+      try {
+        final file = File(storagePath);
+        if (await file.exists()) {
+          final content = await file.readAsString();
+          final entry = EntityJournalParser.parse(content, storagePath);
+          if (entry != null) {
+            await userCatalog.load();
+            UserCatalogEntity? match;
+            for (final entity in userCatalog.all) {
+              if (entity.entityId == entry.entityId) {
+                match = entity;
+                break;
+              }
+            }
+            if (match != null) {
+              await onOpenEntity(match);
+              return;
+            }
+          }
+        }
+      } catch (_) {}
     }
 
     if (!context.mounted) return;
@@ -227,36 +252,9 @@ abstract final class RecordLinkNavigator {
       return;
     }
 
-    await userCatalog.load();
-    UserCatalogEntity? catalog;
-    for (final entity in userCatalog.all) {
-      if (entity.entityId == entityId) {
-        catalog = entity;
-        break;
-      }
-    }
-
-    if (catalog == null) {
-      if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('「$entityId」 Entity를 찾을 수 없습니다.')),
-      );
-      return;
-    }
-
-    final entry = await const EntityVaultLoader().findByEntityId(
-      AkashaFileService().vaultPath,
-      entityId,
-    );
     if (!context.mounted) return;
-    await showEntityJournalDialog(
-      context,
-      entity: catalog,
-      entry: entry,
-      linkIndex: linkIndex,
-      userCatalog: userCatalog,
-      vaultItems: vaultItems,
-      onOpenWork: onOpenWork,
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Entity를 열 수 있는 환경이 아닙니다.')),
     );
   }
 }

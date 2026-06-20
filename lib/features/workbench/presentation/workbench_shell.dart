@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
 import '../../../core/archiving/record_link.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -25,6 +26,7 @@ class WorkbenchShell extends StatefulWidget {
     required this.onEntitySaved,
     required this.onEntityDeleted,
     this.userCatalog,
+    this.linkIndex,
     this.onAddToLibrary,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
@@ -38,6 +40,7 @@ class WorkbenchShell extends StatefulWidget {
       onEntitySaved;
   final void Function(String tabId) onEntityDeleted;
   final UserCatalogPort? userCatalog;
+  final RecordLinkPort? linkIndex;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
   final Future<EntityLinkSelection?> Function(
@@ -194,6 +197,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     infoPanelWidth: layout.infoPanelWidth,
                     infoPanelLocked: layout.infoPanelLocked,
                     userCatalog: widget.userCatalog,
+                    linkIndex: widget.linkIndex,
                     onInfoWidthChanged: widget.controller.setInfoPanelWidth,
                     onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
                     onBindSave: (save) =>
