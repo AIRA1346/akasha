@@ -1,0 +1,155 @@
+{
+  "wk_000000882": {
+    "workId": "wk_000000882",
+    "title": "행복 트리밍",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512225"
+    },
+    "titles": {
+      "ko": "행복 트리밍",
+      "en": "Shiawase Trimming",
+      "ja": "しあわせ鳥見んぐ"
+    },
+    "releaseYear": 2020,
+    "creator": "わらびもちきなこ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001890": {
+    "workId": "wk_000001890",
+    "title": "디-프래그!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320196"
+    },
+    "titles": {
+      "ko": "디-프래그!",
+      "en": "D-Frag!",
+      "ja": "ディーふらぐ!"
+    },
+    "creator": "Tomoya Haruno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002508": {
+    "workId": "wk_000002508",
+    "title": "극화 오바Q",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11398263"
+    },
+    "titles": {
+      "ko": "극화 오바Q",
+      "en": "Q11398263",
+      "ja": "劇画・オバQ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004198": {
+    "workId": "wk_000004198",
+    "title": "베이블레이드 X",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118940775"
+    },
+    "titles": {
+      "ko": "베이블레이드 X",
+      "en": "Beyblade X",
+      "ja": "BEYBLADE X"
+    },
+    "creator": "Posuka Demizu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004703": {
+    "workId": "wk_000004703",
+    "title": "유어 포르마",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120669647"
+    },
+    "titles": {
+      "ko": "유어 포르마",
+      "en": "Your Forma",
+      "ja": "ユア・フォルマ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007047": {
+    "workId": "wk_000007047",
+    "title": "남편이 무슨 말을 하는지 모르겠다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17151016"
+    },
+    "titles": {
+      "ko": "남편이 무슨 말을 하는지 모르겠다",
+      "en": "I Can't Understand What My Husband is Saying",
+      "ja": "旦那が何を言っているかわからない件"
+    },
+    "creator": "Coolkyousinnjya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008007": {
+    "workId": "wk_000008007",
+    "title": "슬로우 스타트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20045166"
+    },
+    "titles": {
+      "ko": "슬로우 스타트",
+      "en": "Slow Start",
+      "ja": "スロウスタート"
+    },
+    "releaseYear": 2013,
+    "creator": "Yuiko Tokumi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008552": {
+    "workId": "wk_000008552",
+    "title": "죠죠리온",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22343522"
+    },
+    "titles": {
+      "ko": "죠죠리온",
+      "en": "JoJolion",
+      "ja": "ジョジョリオン"
+    },
+    "creator": "Hirohiko Araki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

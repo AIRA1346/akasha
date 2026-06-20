@@ -1,0 +1,148 @@
+{
+  "wk_000000371": {
+    "workId": "wk_000000371",
+    "title": "5등분의 신부",
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "하루카와 하루키",
+    "releaseYear": 2017,
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "하렘"
+    ],
+    "externalIds": {
+      "tmdb": "84669",
+      "wikidata": "Q38277250"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_manga_quintessential-quintuplets_2017"
+    ],
+    "titles": {
+      "en": "Quintessential Quintuplets",
+      "ko": "5등분의 신부"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000456": {
+    "workId": "wk_000000456",
+    "title": "론리 걸에게 거역할 수 없어",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101244815"
+    },
+    "titles": {
+      "en": "I Can't Say No to the Lonely Girl",
+      "ja": "ロンリーガールに逆らえない",
+      "ko": "론리 걸에게 거역할 수 없어"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000004492": {
+    "workId": "wk_000004492",
+    "title": "학원특경 듀칼리온",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200652"
+    },
+    "titles": {
+      "ko": "학원특경 듀칼리온",
+      "en": "Duklyon: Clamp School Defenders",
+      "ja": "学園特警デュカリオン"
+    },
+    "creator": "Clamp",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004742": {
+    "workId": "wk_000004742",
+    "title": "목소리로 일하자!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1208940"
+    },
+    "titles": {
+      "ko": "목소리로 일하자!",
+      "en": "Koe de Oshigoto!",
+      "ja": "こえでおしごと!"
+    },
+    "creator": "Azure Konno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004745": {
+    "workId": "wk_000004745",
+    "title": "던전 안의 사람",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121535868"
+    },
+    "titles": {
+      "ko": "던전 안의 사람",
+      "en": "Dungeon People",
+      "ja": "ダンジョンの中のひと"
+    },
+    "creator": "Sui Futami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007264": {
+    "workId": "wk_000007264",
+    "title": "나는 마리 안에",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17218026"
+    },
+    "titles": {
+      "ko": "나는 마리 안에",
+      "en": "Inside Mari",
+      "ja": "ぼくは麻理のなか"
+    },
+    "creator": "Shūzō Oshimi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007954": {
+    "workId": "wk_000007954",
+    "title": "학원 베이비시터즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20043608"
+    },
+    "titles": {
+      "ko": "학원 베이비시터즈",
+      "en": "School Babysitters",
+      "ja": "学園ベビーシッターズ"
+    },
+    "creator": "Hari Tokeino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

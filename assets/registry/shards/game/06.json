@@ -1,0 +1,169 @@
+{
+  "wk_000002545": {
+    "workId": "wk_000002545",
+    "title": "아이들 택배 타이쿤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107688485"
+    },
+    "titles": {
+      "ko": "아이들 택배 타이쿤",
+      "en": "Idle Courier Tycoon",
+      "ja": "放置宅配便タイクーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003562": {
+    "workId": "wk_000003562",
+    "title": "두근두근 문예부 플러스!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111051127"
+    },
+    "titles": {
+      "ko": "두근두근 문예부 플러스!",
+      "en": "Doki Doki Literature Club Plus!",
+      "ja": "ドキドキ文芸部プラス!"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004371": {
+    "workId": "wk_000004371",
+    "title": "짱구는 못말려 부리부리 떡잎마을 대모험!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11299624"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 부리부리 떡잎마을 대모험!",
+      "en": "Q11299624",
+      "ja": "クレヨンしんちゃん おバカ大忍伝 すすめ!カスカベ忍者隊!"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004767": {
+    "workId": "wk_000004767",
+    "title": "듄: 어웨이크닝",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113585920"
+    },
+    "titles": {
+      "ko": "듄: 어웨이크닝",
+      "en": "Q113585920"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005045": {
+    "workId": "wk_000005045",
+    "title": "마계전기 디스가이아 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113989175"
+    },
+    "titles": {
+      "ko": "마계전기 디스가이아 7",
+      "en": "Disgaea 7: Vows of the Virtueless",
+      "ja": "魔界戦記ディスガイア7"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005426": {
+    "workId": "wk_000005426",
+    "title": "사이베리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147147"
+    },
+    "titles": {
+      "ko": "사이베리아",
+      "en": "Q1147147",
+      "ja": "サイベリア"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007483": {
+    "workId": "wk_000007483",
+    "title": "기적의 분식집",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122366352"
+    },
+    "titles": {
+      "ko": "기적의 분식집",
+      "en": "Miracle Snack Shop"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008504": {
+    "workId": "wk_000008504",
+    "title": "얼티밋 모탈 컴뱃 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1313980"
+    },
+    "titles": {
+      "ko": "얼티밋 모탈 컴뱃 3",
+      "en": "Ultimate Mortal Kombat 3",
+      "ja": "アルティメット モータルコンバット 3"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010329": {
+    "workId": "wk_000010329",
+    "title": "고딕 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1456987"
+    },
+    "titles": {
+      "ko": "고딕 2",
+      "en": "Q1456987"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

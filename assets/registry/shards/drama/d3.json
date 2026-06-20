@@ -1,0 +1,213 @@
+{
+  "wk_000001678": {
+    "workId": "wk_000001678",
+    "title": "한자왕 주몽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985895"
+    },
+    "titles": {
+      "ko": "한자왕 주몽",
+      "en": "Q107985895"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003062": {
+    "workId": "wk_000003062",
+    "title": "붐샤카라카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458616"
+    },
+    "titles": {
+      "ko": "붐샤카라카",
+      "en": "Q109458616"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004254": {
+    "workId": "wk_000004254",
+    "title": "워맨스가 필요해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115898"
+    },
+    "titles": {
+      "ko": "워맨스가 필요해",
+      "en": "Q110115898"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005675": {
+    "workId": "wk_000005675",
+    "title": "웃음을 찾는 사람들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263577"
+    },
+    "titles": {
+      "ko": "웃음을 찾는 사람들",
+      "en": "Smile People",
+      "ja": "韓流ネタバラエティ ウッチャッサ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006774": {
+    "workId": "wk_000006774",
+    "title": "더 존: 버터야 산다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113638060"
+    },
+    "titles": {
+      "ko": "더 존: 버터야 산다",
+      "en": "The Zone: Survival Mission"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006839": {
+    "workId": "wk_000006839",
+    "title": "인간재생 공장장 오카다 이와지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11376220"
+    },
+    "titles": {
+      "ko": "인간재생 공장장 오카다 이와지",
+      "en": "Ningen saisei kōbachō Okada Iwa-ji",
+      "ja": "人間再生・工場長 岡田岩児"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007384": {
+    "workId": "wk_000007384",
+    "title": "나쁜 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492537"
+    },
+    "titles": {
+      "ko": "나쁜 여자",
+      "en": "The Bad Woman",
+      "ja": "悪いオンナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007627": {
+    "workId": "wk_000007627",
+    "title": "사쿠라 중학 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11537738"
+    },
+    "titles": {
+      "ko": "사쿠라 중학 시리즈",
+      "en": "Q11537738",
+      "ja": "桜中学シリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009013": {
+    "workId": "wk_000009013",
+    "title": "헝거 게임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11885031"
+    },
+    "titles": {
+      "ko": "헝거 게임",
+      "en": "The Hunger Games",
+      "ja": "ハンガー・ゲーム (映画シリーズ)"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009164": {
+    "workId": "wk_000009164",
+    "title": "해적전대 고카이저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192644"
+    },
+    "titles": {
+      "ko": "해적전대 고카이저",
+      "en": "Kaizoku Sentai Gokaiger",
+      "ja": "海賊戦隊ゴーカイジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009417": {
+    "workId": "wk_000009417",
+    "title": "티아 앨리슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120720637"
+    },
+    "titles": {
+      "ko": "티아 앨리슨",
+      "en": "Tía Alison"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010046": {
+    "workId": "wk_000010046",
+    "title": "가두리 횟집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124514643"
+    },
+    "titles": {
+      "ko": "가두리 횟집",
+      "en": "Ga Doo Ri's Sushi Restaurant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

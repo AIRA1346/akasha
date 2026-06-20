@@ -1,0 +1,156 @@
+{
+  "wk_000001193": {
+    "workId": "wk_000001193",
+    "title": "완벽하게 사라지는 방법",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103855903"
+    },
+    "titles": {
+      "ko": "완벽하게 사라지는 방법",
+      "en": "Cómo desaparecer completamente"
+    },
+    "releaseYear": 2004,
+    "creator": "Mariana Enriquez",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002059": {
+    "workId": "wk_000002059",
+    "title": "일본삼대실록",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052981"
+    },
+    "titles": {
+      "ko": "일본삼대실록",
+      "en": "Nihon Sandai Jitsuroku",
+      "ja": "日本三代実録"
+    },
+    "creator": "菅原道真",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003659": {
+    "workId": "wk_000003659",
+    "title": "도남의 날개",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395295"
+    },
+    "titles": {
+      "ko": "도남의 날개",
+      "en": "The Aspired Wings",
+      "ja": "図南の翼"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003663": {
+    "workId": "wk_000003663",
+    "title": "백은의 언덕 검은 달",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107395428"
+    },
+    "titles": {
+      "ko": "백은의 언덕 검은 달",
+      "en": "The Silver Ruins, The Black Moon",
+      "ja": "白銀の墟 玄の月"
+    },
+    "creator": "Fuyumi Ono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006895": {
+    "workId": "wk_000006895",
+    "title": "용족(지앙난)",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11181271"
+    },
+    "titles": {
+      "ko": "용족(지앙난)",
+      "en": "Dragon Raja",
+      "ja": "龍族"
+    },
+    "releaseYear": 2017,
+    "creator": "지앙난 (중국의 소설가)",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007612": {
+    "workId": "wk_000007612",
+    "title": "신전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1125986"
+    },
+    "titles": {
+      "ko": "신전",
+      "en": "The Temple",
+      "ja": "海底の神殿"
+    },
+    "releaseYear": 1925,
+    "creator": "ハワード・フィリップス・ラヴクラフト",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009720": {
+    "workId": "wk_000009720",
+    "title": "학문의 권유",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11448137"
+    },
+    "titles": {
+      "ko": "학문의 권유",
+      "en": "An Encouragement of Learning",
+      "ja": "学問のすゝめ"
+    },
+    "creator": "후쿠자와 유키치",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010019": {
+    "workId": "wk_000010019",
+    "title": "신세기 사랑 이야기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114761768"
+    },
+    "titles": {
+      "ko": "신세기 사랑 이야기",
+      "en": "Love in the New Millennium"
+    },
+    "releaseYear": 2019,
+    "creator": "Can Xue",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

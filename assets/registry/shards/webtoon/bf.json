@@ -1,0 +1,19 @@
+{
+  "wk_000002615": {
+    "workId": "wk_000002615",
+    "title": "welcome to 미션마켓",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138327820"
+    },
+    "titles": {
+      "ko": "welcome to 미션마켓",
+      "en": "Q138327820"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

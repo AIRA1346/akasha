@@ -328,6 +328,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
     required this.onBullet,
     required this.onNumbered,
     required this.onLink,
+    required this.onEntityLink,
+    required this.entityLinkEnabled,
     required this.onImage,
     required this.onFind,
     required this.onSmartPaste,
@@ -355,6 +357,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
   final VoidCallback onBullet;
   final VoidCallback onNumbered;
   final VoidCallback onLink;
+  final VoidCallback onEntityLink;
+  final bool entityLinkEnabled;
   final VoidCallback onImage;
   final VoidCallback onFind;
   final VoidCallback onSmartPaste;
@@ -392,6 +396,12 @@ class _MarkdownEditorToolbar extends StatelessWidget {
             _btn(Icons.format_list_bulleted, '글머리', onBullet),
             _btn(Icons.format_list_numbered, '번호 목록', onNumbered),
             _btn(Icons.link, '링크', onLink),
+            _btn(
+              Icons.hub_outlined,
+              'Entity 연결',
+              onEntityLink,
+              enabled: entityLinkEnabled,
+            ),
             _btn(
               Icons.image_outlined,
               vaultLinked ? '이미지 삽입' : '이미지 (볼트 필요)',

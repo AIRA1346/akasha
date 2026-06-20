@@ -1,0 +1,97 @@
+{
+  "wk_000001341": {
+    "workId": "wk_000001341",
+    "title": "나비효과: 레버레이션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1018109"
+    },
+    "titles": {
+      "ko": "나비효과: 레버레이션",
+      "en": "The Butterfly Effect 3: Revelations",
+      "ja": "バタフライ・エフェクト3/最後の選択"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004109": {
+    "workId": "wk_000004109",
+    "title": "아웃사이더",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055332"
+    },
+    "titles": {
+      "ko": "아웃사이더",
+      "en": "The Outsiders",
+      "ja": "アウトサイダー"
+    },
+    "releaseYear": 1983,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009596": {
+    "workId": "wk_000009596",
+    "title": "상해탄",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087456"
+    },
+    "titles": {
+      "ko": "상해탄",
+      "en": "Shanghai Grand",
+      "ja": "上海グランド"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009788": {
+    "workId": "wk_000009788",
+    "title": "더 마더",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108882357"
+    },
+    "titles": {
+      "ko": "더 마더",
+      "en": "The Mother",
+      "ja": "ザ・マザー"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010347": {
+    "workId": "wk_000010347",
+    "title": "언디스퓨티드 3",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092933"
+    },
+    "titles": {
+      "ko": "언디스퓨티드 3",
+      "en": "Undisputed III: Redemption",
+      "ja": "Undisputed III: Redemption"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

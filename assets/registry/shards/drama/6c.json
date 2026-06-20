@@ -1,0 +1,106 @@
+{
+  "wk_000002994": {
+    "workId": "wk_000002994",
+    "title": "KBS 뮤직스테이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458033"
+    },
+    "titles": {
+      "ko": "KBS 뮤직스테이션",
+      "en": "Q109458033"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003691": {
+    "workId": "wk_000003691",
+    "title": "아침스포츠",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546137"
+    },
+    "titles": {
+      "ko": "아침스포츠",
+      "en": "Q109546137"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006779": {
+    "workId": "wk_000006779",
+    "title": "두 번째 세계",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113653595"
+    },
+    "titles": {
+      "ko": "두 번째 세계",
+      "en": "The Second World"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006846": {
+    "workId": "wk_000006846",
+    "title": "전설의 감찰의 오니구마의 사건부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11381439"
+    },
+    "titles": {
+      "ko": "전설의 감찰의 오니구마의 사건부",
+      "en": "Densetsu no kansatsui oniguma no jikenbo",
+      "ja": "伝説の監察医 オニグマの事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009338": {
+    "workId": "wk_000009338",
+    "title": "액세스 할리우드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1200690"
+    },
+    "titles": {
+      "ko": "액세스 할리우드",
+      "en": "Access Hollywood",
+      "ja": "アクセス・ハリウッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009904": {
+    "workId": "wk_000009904",
+    "title": "경제 주부가 나섭시다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071828"
+    },
+    "titles": {
+      "ko": "경제 주부가 나섭시다",
+      "en": "Q124071828"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "wk_000008930": {
+    "workId": "wk_000008930",
+    "title": "오분 후의 세계",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11372037"
+    },
+    "titles": {
+      "ko": "오분 후의 세계",
+      "en": "Q11372037",
+      "ja": "五分後の世界"
+    },
+    "creator": "Ryū Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

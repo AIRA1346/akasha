@@ -13,6 +13,7 @@ import '../../data/adapters/works_registry_adapter.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
+import '../../models/entity_link_selection.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
@@ -30,8 +31,10 @@ import 'home_dashboard_controller.dart';
 import 'home_personal_library_controller.dart';
 import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
+import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/user_catalog_entity.dart';
 import 'dialogs/add_catalog_entity_dialog.dart';
+import 'dialogs/entity_link_picker_dialog.dart';
 import 'home_shell_host.dart';
 
 /// Home 화면 조립·위임 (Wave 1.4 + E2).
@@ -166,20 +169,26 @@ class HomeShellController {
       wrapSetState: wrapSetState,
       canAddToLibrary: () => browse.canAddToLibrary,
       userCatalog: userCatalog,
-      onCatalogEntityAdded: onCatalogEntityAdded,
+      onEntityArchived: onEntityArchived,
       getLinkIndex: () => vault.linkIndex,
     );
   }
 
-  void onCatalogEntityAdded(UserCatalogEntity entity) {
+  void onEntityArchived(UserCatalogEntity entity, EntityJournalEntry? entry) {
     filterCtrl.setEntityScope(browseScopeForEntityType(entity.anchorType));
     filterCtrl.highlightCatalogEntity(entity.entityId);
     rebuild();
 
     final badge = entityTypeBadgeLabel(entity.anchorType);
-    _showSnack(
-      '$badge 「${entity.title}」 catalog 추가 · Browse Entity Discovery에서 확인',
-    );
+    if (entry != null) {
+      _showSnack(
+        '$badge 「${entity.title}」 아카이브에 추가됨 · 기록 → Entity에서 확인',
+      );
+    } else {
+      _showSnack(
+        '$badge 「${entity.title}」 이름만 등록됨 · Fusion에서 아카이브 가능',
+      );
+    }
 
     Future.delayed(const Duration(seconds: 4), () {
       if (!host.mounted) return;
@@ -227,6 +236,17 @@ class HomeShellController {
       vaultItems: vault.items,
       onOpenWork: workbenchCoord.openBrowseItem,
       linkIndex: vault.linkIndex,
+    );
+  }
+
+  Future<EntityLinkSelection?> handleRequestEntityLink(
+    BuildContext context,
+    String selectedText,
+  ) {
+    return showEntityLinkPickerDialog(
+      context,
+      userCatalog: userCatalog,
+      initialQuery: selectedText,
     );
   }
 

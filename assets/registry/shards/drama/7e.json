@@ -1,0 +1,250 @@
+{
+  "wk_000001101": {
+    "workId": "wk_000001101",
+    "title": "폐재틈천관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105099960"
+    },
+    "titles": {
+      "ko": "폐재틈천관",
+      "en": "Here Comes Fortune Star"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001210": {
+    "workId": "wk_000001210",
+    "title": "오케이 광자매",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105502084"
+    },
+    "titles": {
+      "ko": "오케이 광자매",
+      "en": "Revolutionary Sisters",
+      "ja": "オーケー! グァン姉妹"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001301": {
+    "workId": "wk_000001301",
+    "title": "마인:MINE (2021년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105940076"
+    },
+    "titles": {
+      "ko": "마인:MINE (2021년 드라마)",
+      "en": "Mine",
+      "ja": "Mine (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001455": {
+    "workId": "wk_000001455",
+    "title": "39 계단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106541549"
+    },
+    "titles": {
+      "ko": "39 계단",
+      "en": "The 39 Steps"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001847": {
+    "workId": "wk_000001847",
+    "title": "Answer~ 경시청 검증 수사관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846453"
+    },
+    "titles": {
+      "ko": "Answer~ 경시청 검증 수사관",
+      "en": "Answer",
+      "ja": "Answer〜警視庁検証捜査官"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001852": {
+    "workId": "wk_000001852",
+    "title": "사내맞선",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108486931"
+    },
+    "titles": {
+      "ko": "사내맞선",
+      "en": "Business Proposal",
+      "ja": "社内お見合い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002266": {
+    "workId": "wk_000002266",
+    "title": "이 구역의 미친 X",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108916196"
+    },
+    "titles": {
+      "ko": "이 구역의 미친 X",
+      "en": "Mad For Each Other",
+      "ja": "このエリアのクレイジーX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005054": {
+    "workId": "wk_000005054",
+    "title": "100 자격을 가질 여자 ~ 두 사람의 이혼남 살인 수사 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11185051"
+    },
+    "titles": {
+      "ko": "100 자격을 가질 여자 ~ 두 사람의 이혼남 살인 수사 ~",
+      "en": "100 No shikaku o motsu on'na 〜 futari no Batsuichi satsujin sōsa 〜",
+      "ja": "100の資格を持つ女〜ふたりのバツイチ殺人捜査〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005529": {
+    "workId": "wk_000005529",
+    "title": "당신 옆에 누군가있다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257962"
+    },
+    "titles": {
+      "ko": "당신 옆에 누군가있다",
+      "en": "Anata no Tonari ni Dareka Iru",
+      "ja": "あなたの隣に誰かいる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005738": {
+    "workId": "wk_000005738",
+    "title": "범죄도시 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112671899"
+    },
+    "titles": {
+      "ko": "범죄도시 시리즈",
+      "en": "Crime City"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007025": {
+    "workId": "wk_000007025",
+    "title": "명탐정 캐서린",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11415447"
+    },
+    "titles": {
+      "ko": "명탐정 캐서린",
+      "en": "Meitantei Catherine",
+      "ja": "名探偵キャサリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007253": {
+    "workId": "wk_000007253",
+    "title": "쏘우",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145690"
+    },
+    "titles": {
+      "ko": "쏘우",
+      "en": "Saw",
+      "ja": "ソウシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007633": {
+    "workId": "wk_000007633",
+    "title": "극뇌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11541507"
+    },
+    "titles": {
+      "ko": "극뇌",
+      "en": "Gokunō",
+      "ja": "極脳"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009739": {
+    "workId": "wk_000009739",
+    "title": "싱어게인3",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123241590"
+    },
+    "titles": {
+      "ko": "싱어게인3",
+      "en": "Sing Again 3"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "wk_000000399": {
+    "workId": "wk_000000399",
+    "title": "새벽의 연화",
+    "titles": {
+      "ko": "새벽의 연화",
+      "en": "Yona of the Dawn",
+      "ja": "暁のヨナ"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "쿠스노다 미즈",
+    "releaseYear": 2009,
+    "tags": [
+      "모험",
+      "역사",
+      "로맨스",
+      "성장"
+    ],
+    "legacyIds": [
+      "sub_manga_yona-of-the-dawn_2009"
+    ],
+    "externalIds": {
+      "wikidata": "Q11514831"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001449": {
+    "workId": "wk_000001449",
+    "title": "아칸베",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257023"
+    },
+    "titles": {
+      "ko": "아칸베",
+      "en": "Q11257023",
+      "ja": "アカンベー"
+    },
+    "releaseYear": 1982,
+    "creator": "Yōji Katakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003622": {
+    "workId": "wk_000003622",
+    "title": "바람의 전사 단",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11665345"
+    },
+    "titles": {
+      "ko": "바람의 전사 단",
+      "en": "Super Ninja Dan",
+      "ja": "風の戦士ダン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008963": {
+    "workId": "wk_000008963",
+    "title": "666 사탄",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q255014"
+    },
+    "titles": {
+      "ko": "666 사탄",
+      "en": "O-Parts Hunter",
+      "ja": "666〜サタン〜"
+    },
+    "creator": "Seishi Kishimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009071": {
+    "workId": "wk_000009071",
+    "title": "불꽃의 알펜로제 쥬디와 랜디",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2663042"
+    },
+    "titles": {
+      "ko": "불꽃의 알펜로제 쥬디와 랜디",
+      "en": "Alpen Rose",
+      "ja": "アルペンローゼ"
+    },
+    "creator": "Michiyo Akaishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

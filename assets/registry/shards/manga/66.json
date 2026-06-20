@@ -1,0 +1,77 @@
+{
+  "wk_000001722": {
+    "workId": "wk_000001722",
+    "title": "숲 속의 곰, 동면 중.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112921143"
+    },
+    "titles": {
+      "ko": "숲 속의 곰, 동면 중.",
+      "en": "Caressing the Nipples of My Hibernating Bear",
+      "ja": "森のくまさん、冬眠中。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007388": {
+    "workId": "wk_000007388",
+    "title": "방과후 의사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17230194"
+    },
+    "titles": {
+      "ko": "방과후 의사",
+      "en": "Houkago Karte",
+      "ja": "放課後カルテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007394": {
+    "workId": "wk_000007394",
+    "title": "키스x시스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1743797"
+    },
+    "titles": {
+      "ko": "키스x시스",
+      "en": "Kiss×sis",
+      "ja": "Kiss×sis"
+    },
+    "creator": "Bow Ditama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008697": {
+    "workId": "wk_000008697",
+    "title": "블레이저 드라이브",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2441381"
+    },
+    "titles": {
+      "ko": "블레이저 드라이브",
+      "en": "Blazer Drive",
+      "ja": "ブレイザードライブ"
+    },
+    "releaseYear": 2008,
+    "creator": "Seishi Kishimoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

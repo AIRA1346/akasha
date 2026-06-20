@@ -1,0 +1,60 @@
+{
+  "wk_000006139": {
+    "workId": "wk_000006139",
+    "title": "마하지관",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11078487"
+    },
+    "titles": {
+      "ko": "마하지관",
+      "en": "Mohe Zhiguan",
+      "ja": "摩訶止観"
+    },
+    "creator": "Zhiyi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006552": {
+    "workId": "wk_000006552",
+    "title": "패배 히로인이 너무 많아!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111317616"
+    },
+    "titles": {
+      "ko": "패배 히로인이 너무 많아!",
+      "en": "Too Many Losing Heroines!",
+      "ja": "負けヒロインが多すぎる！"
+    },
+    "releaseYear": 2021,
+    "creator": "Takibi Amamori",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009587": {
+    "workId": "wk_000009587",
+    "title": "유어 포르마",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114397576"
+    },
+    "titles": {
+      "ko": "유어 포르마",
+      "en": "Your Forma",
+      "ja": "ユア・フォルマ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

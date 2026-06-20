@@ -1,0 +1,153 @@
+{
+  "wk_000000604": {
+    "workId": "wk_000000604",
+    "title": "Sneaky Sasquatch",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103387599"
+    },
+    "titles": {
+      "ko": "Sneaky Sasquatch",
+      "en": "Sneaky Sasquatch",
+      "ja": "Sneaky Sasquatch"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001973": {
+    "workId": "wk_000001973",
+    "title": "터미네이터 2: 심판의 날",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10693357"
+    },
+    "titles": {
+      "ko": "터미네이터 2: 심판의 날",
+      "en": "Terminator 2: Judgment Day",
+      "ja": "ターミネーター2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005629": {
+    "workId": "wk_000005629",
+    "title": "시스템 쇼크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151634"
+    },
+    "titles": {
+      "ko": "시스템 쇼크",
+      "en": "System Shock",
+      "ja": "System Shock"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006275": {
+    "workId": "wk_000006275",
+    "title": "금빛 러브리체 -Golden Time-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116877155"
+    },
+    "titles": {
+      "ko": "금빛 러브리체 -Golden Time-",
+      "en": "Kinkoi: Golden Time",
+      "ja": "金色ラブリッチェ -GOLDEN TIME-"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007800": {
+    "workId": "wk_000007800",
+    "title": "버니 가든",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124290989"
+    },
+    "titles": {
+      "ko": "버니 가든",
+      "en": "Bunny Garden",
+      "ja": "バニーガーデン"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008155": {
+    "workId": "wk_000008155",
+    "title": "이환",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127507724"
+    },
+    "titles": {
+      "ko": "이환",
+      "en": "Neverness to Everness",
+      "ja": "NTE: Neverness to Everness"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008378": {
+    "workId": "wk_000008378",
+    "title": "페이트 트리거",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130296943"
+    },
+    "titles": {
+      "ko": "페이트 트리거",
+      "en": "Q130296943",
+      "ja": "運命のトリガー：The Novita"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010070": {
+    "workId": "wk_000010070",
+    "title": "브레이크 마이 케이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138448060"
+    },
+    "titles": {
+      "ko": "브레이크 마이 케이스",
+      "en": "Break My Case",
+      "ja": "ブレイクマイケース"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

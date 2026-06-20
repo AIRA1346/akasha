@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_vault_loader.dart';
 import '../../../services/file_service.dart';
@@ -13,10 +15,16 @@ class EntityJournalView extends StatefulWidget {
   const EntityJournalView({
     super.key,
     required this.userCatalog,
+    required this.linkIndex,
+    required this.vaultItems,
+    required this.onOpenWork,
     this.reloadToken = 0,
   });
 
   final UserCatalogPort userCatalog;
+  final RecordLinkPort linkIndex;
+  final List<AkashaItem> vaultItems;
+  final void Function(AkashaItem item) onOpenWork;
   final int reloadToken;
 
   @override
@@ -88,6 +96,10 @@ class _EntityJournalViewState extends State<EntityJournalView> {
       context,
       entity: catalog,
       entry: entry,
+      linkIndex: widget.linkIndex,
+      userCatalog: widget.userCatalog,
+      vaultItems: widget.vaultItems,
+      onOpenWork: widget.onOpenWork,
     );
     if (mounted) await _reload();
   }
@@ -133,7 +145,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
             ),
             const SizedBox(height: 8),
             Text(
-              'catalog에서 Entity 추가 시 journal 생성을 선택하세요.',
+              'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.',
               style: TextStyle(fontSize: 12, color: Colors.grey[600]),
             ),
           ],

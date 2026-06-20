@@ -1,0 +1,182 @@
+{
+  "wk_000004474": {
+    "workId": "wk_000004474",
+    "title": "군검사 도베르만",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110443756"
+    },
+    "titles": {
+      "ko": "군검사 도베르만",
+      "en": "Military Prosecutor Doberman",
+      "ja": "軍検事ドーベルマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006166": {
+    "workId": "wk_000006166",
+    "title": "지팡구 아침 6",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11309554"
+    },
+    "titles": {
+      "ko": "지팡구 아침 6",
+      "en": "Zipangu Asa 6",
+      "ja": "ジパングあさ6"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006370": {
+    "workId": "wk_000006370",
+    "title": "드레미파 도넛!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323373"
+    },
+    "titles": {
+      "ko": "드레미파 도넛!",
+      "en": "Do-Re-Mi-Fa Donuts!",
+      "ja": "ドレミファ・どーなっつ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006842": {
+    "workId": "wk_000006842",
+    "title": "헤크 패밀리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138000"
+    },
+    "titles": {
+      "ko": "헤크 패밀리",
+      "en": "The Middle",
+      "ja": "ザ・ミドル 中流家族のフツーの幸せ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007368": {
+    "workId": "wk_000007368",
+    "title": "일꾼의 탄생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114867123"
+    },
+    "titles": {
+      "ko": "일꾼의 탄생",
+      "en": "Q114867123"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007449": {
+    "workId": "wk_000007449",
+    "title": "신·필살 사치인",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11501019"
+    },
+    "titles": {
+      "ko": "신·필살 사치인",
+      "en": "Shin Hissatsu Shiokinin",
+      "ja": "新・必殺仕置人"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007579": {
+    "workId": "wk_000007579",
+    "title": "메리 퀴어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115332793"
+    },
+    "titles": {
+      "ko": "메리 퀴어",
+      "en": "Merry Queer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007634": {
+    "workId": "wk_000007634",
+    "title": "요코하마 견문전 스터 ☆ 장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11543261"
+    },
+    "titles": {
+      "ko": "요코하마 견문전 스터 ☆ 장",
+      "en": "Yokohama Kenbun-den Star ☆ Jean",
+      "ja": "横浜見聞伝スター☆ジャン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008118": {
+    "workId": "wk_000008118",
+    "title": "결혼식에 가자 !!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11606677"
+    },
+    "titles": {
+      "ko": "결혼식에 가자 !!",
+      "en": "Wedding Dream Believer",
+      "ja": "結婚式へ行こう!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008754": {
+    "workId": "wk_000008754",
+    "title": "CSI: 과학수사대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117396"
+    },
+    "titles": {
+      "ko": "CSI: 과학수사대",
+      "en": "CSI: Crime Scene Investigation",
+      "ja": "CSI:科学捜査班"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

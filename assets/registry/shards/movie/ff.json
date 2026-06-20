@@ -1,0 +1,210 @@
+{
+  "wk_000001334": {
+    "workId": "wk_000001334",
+    "title": "턴 레프트, 턴 라이트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1015884"
+    },
+    "titles": {
+      "ko": "턴 레프트, 턴 라이트",
+      "en": "Turn Left, Turn Right",
+      "ja": "ターンレフト・ターンライト"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002419": {
+    "workId": "wk_000002419",
+    "title": "카르멘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043604"
+    },
+    "titles": {
+      "ko": "카르멘",
+      "en": "Carmen",
+      "ja": "カルメン"
+    },
+    "releaseYear": 1983,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003405": {
+    "workId": "wk_000003405",
+    "title": "캐치 어 파이어",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050558"
+    },
+    "titles": {
+      "ko": "캐치 어 파이어",
+      "en": "Catch a Fire",
+      "ja": "輝く夜明けに向かって"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003820": {
+    "workId": "wk_000003820",
+    "title": "앤트맨과 와스프: 퀀터매니아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105359456"
+    },
+    "titles": {
+      "ko": "앤트맨과 와스프: 퀀터매니아",
+      "en": "Ant-Man and the Wasp: Quantumania",
+      "ja": "アントマン＆ワスプ：クアントマニア"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004733": {
+    "workId": "wk_000004733",
+    "title": "더 빅뱅",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057794"
+    },
+    "titles": {
+      "ko": "더 빅뱅",
+      "en": "The Big Bang",
+      "ja": "ザ・ビッグバン！！"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006143": {
+    "workId": "wk_000006143",
+    "title": "돌핀 테일",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1064885"
+    },
+    "titles": {
+      "ko": "돌핀 테일",
+      "en": "Dolphin Tale",
+      "ja": "イルカと少年"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006644": {
+    "workId": "wk_000006644",
+    "title": "파이널 컷",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106838911"
+    },
+    "titles": {
+      "ko": "파이널 컷",
+      "en": "Final Cut",
+      "ja": "キャメラを止めるな!"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007237": {
+    "workId": "wk_000007237",
+    "title": "4월 이야기",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1072582"
+    },
+    "titles": {
+      "ko": "4월 이야기",
+      "en": "April Story",
+      "ja": "四月物語"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007560": {
+    "workId": "wk_000007560",
+    "title": "생존 지침서",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107451717"
+    },
+    "titles": {
+      "ko": "생존 지침서",
+      "en": "Instructions for Survival"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008591": {
+    "workId": "wk_000008591",
+    "title": "이별계약",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10792815"
+    },
+    "titles": {
+      "ko": "이별계약",
+      "en": "A Wedding Invitation",
+      "ja": "最後の晩餐"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009531": {
+    "workId": "wk_000009531",
+    "title": "아카메 48 폭포 자살미수",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087205"
+    },
+    "titles": {
+      "ko": "아카메 48 폭포 자살미수",
+      "en": "Akame 48 Waterfalls",
+      "ja": "赤目四十八瀧心中未遂"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "wk_000001637": {
+    "workId": "wk_000001637",
+    "title": "젯 셋 라디오 퓨처",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063810"
+    },
+    "titles": {
+      "ko": "젯 셋 라디오 퓨처",
+      "en": "Jet Set Radio Future"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002475": {
+    "workId": "wk_000002475",
+    "title": "R.U.S.E.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076519"
+    },
+    "titles": {
+      "ko": "R.U.S.E.",
+      "en": "R.U.S.E.",
+      "ja": "R.U.S.E."
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004231": {
+    "workId": "wk_000004231",
+    "title": "키스와 마왕과 홍차",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11277434"
+    },
+    "titles": {
+      "ko": "키스와 마왕과 홍차",
+      "en": "Kiss to Maou to Darjeeling",
+      "ja": "キスと魔王と紅茶"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004973": {
+    "workId": "wk_000004973",
+    "title": "니드 포 스피드 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139035"
+    },
+    "titles": {
+      "ko": "니드 포 스피드 II",
+      "en": "Need for Speed II",
+      "ja": "ニード・フォー・スピードII"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006821": {
+    "workId": "wk_000006821",
+    "title": "요시의 알",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194285"
+    },
+    "titles": {
+      "ko": "요시의 알",
+      "en": "Yoshi",
+      "ja": "ヨッシーのたまご"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006887": {
+    "workId": "wk_000006887",
+    "title": "스타워즈: 갤럭틱 배틀 그라운드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194920"
+    },
+    "titles": {
+      "ko": "스타워즈: 갤럭틱 배틀 그라운드",
+      "en": "Star Wars: Galactic Battlegrounds",
+      "ja": "スター・ウォーズ ギャラクティック・バトルグラウンド"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008440": {
+    "workId": "wk_000008440",
+    "title": "러브앤딥스페이스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130616446"
+    },
+    "titles": {
+      "ko": "러브앤딥스페이스",
+      "en": "Love and Deepspace",
+      "ja": "恋と深空"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009572": {
+    "workId": "wk_000009572",
+    "title": "운명 게임2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135062388"
+    },
+    "titles": {
+      "ko": "운명 게임2",
+      "en": "Game of Fate 2: A Century's Promise"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009883": {
+    "workId": "wk_000009883",
+    "title": "NBA 2K14",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13715618"
+    },
+    "titles": {
+      "ko": "NBA 2K14",
+      "en": "NBA 2K14",
+      "ja": "NBA 2K14"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010331": {
+    "workId": "wk_000010331",
+    "title": "배관공은 넥타이를 매지 않는다",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1457823"
+    },
+    "titles": {
+      "ko": "배관공은 넥타이를 매지 않는다",
+      "en": "Plumbers Don't Wear Ties",
+      "ja": "Plumbers Don't Wear Ties"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

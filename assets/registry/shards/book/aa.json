@@ -1,0 +1,135 @@
+{
+  "wk_000000811": {
+    "workId": "wk_000000811",
+    "title": "불의 후계자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101984807"
+    },
+    "titles": {
+      "ko": "불의 후계자",
+      "en": "Heir of Fire"
+    },
+    "releaseYear": 2014,
+    "creator": "Sarah J. Maas",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002477": {
+    "workId": "wk_000002477",
+    "title": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105778319"
+    },
+    "titles": {
+      "ko": "사상 최강의 대마왕, 마을 사람 A로 전생하다",
+      "en": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+      "ja": "史上最強の大魔王、村人Aに転生する"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002655": {
+    "workId": "wk_000002655",
+    "title": "즐거운 학문",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061693"
+    },
+    "titles": {
+      "ko": "즐거운 학문",
+      "en": "Gay Science",
+      "ja": "悦ばしき知識"
+    },
+    "releaseYear": 1882,
+    "creator": "프리드리히 니체",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004169": {
+    "workId": "wk_000004169",
+    "title": "새들이 모조리 사라진다면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108439991"
+    },
+    "titles": {
+      "ko": "새들이 모조리 사라진다면",
+      "en": "Bewilderment"
+    },
+    "releaseYear": 2021,
+    "creator": "Richard Powers",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004459": {
+    "workId": "wk_000004459",
+    "title": "오공입축기",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10872595"
+    },
+    "titles": {
+      "ko": "오공입축기",
+      "en": "Q10872595",
+      "ja": "悟空入竺記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004663": {
+    "workId": "wk_000004663",
+    "title": "마지막 선물",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108829378"
+    },
+    "titles": {
+      "ko": "마지막 선물",
+      "en": "The Last Gift"
+    },
+    "releaseYear": 2011,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005157": {
+    "workId": "wk_000005157",
+    "title": "나의 몬티셀로",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109254584"
+    },
+    "titles": {
+      "ko": "나의 몬티셀로",
+      "en": "My Monticello"
+    },
+    "releaseYear": 2021,
+    "creator": "Jocelyn Nicole Johnson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

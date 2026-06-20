@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 import '../../../core/archiving/record_link.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/entity_link_selection.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
@@ -32,6 +33,10 @@ class WorkDetailWorkspace extends StatefulWidget {
   final void Function(Future<void> Function()? save)? onBindSave;
   final void Function(String tabId, AkashaItem draft)? onPreserveDraft;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
+  final Future<EntityLinkSelection?> Function(
+    BuildContext context,
+    String selectedText,
+  )? onRequestEntityLink;
 
   const WorkDetailWorkspace({
     super.key,
@@ -49,6 +54,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onBindSave,
     this.onPreserveDraft,
     this.onWikiLinkTap,
+    this.onRequestEntityLink,
   });
 
   @override
@@ -554,6 +560,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               onFileChanged: _markDirty,
               onOpenFileView: _refreshFullFileEditor,
               onWikiLinkTap: widget.onWikiLinkTap,
+              onRequestEntityLink: widget.onRequestEntityLink,
             ),
           ),
         ),

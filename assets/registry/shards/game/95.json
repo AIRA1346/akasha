@@ -1,0 +1,189 @@
+{
+  "wk_000001746": {
+    "workId": "wk_000001746",
+    "title": "아이스 클라이머",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066657"
+    },
+    "titles": {
+      "ko": "아이스 클라이머",
+      "en": "Ice Climber",
+      "ja": "アイスクライマー"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003567": {
+    "workId": "wk_000003567",
+    "title": "Urban Legend: Shin Hayarigami",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111148177"
+    },
+    "titles": {
+      "ko": "Urban Legend: Shin Hayarigami",
+      "en": "Urban Legend: Shin Hayarigami",
+      "ja": "真 流行り神"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003925": {
+    "workId": "wk_000003925",
+    "title": "가넷 크레이들",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11200874"
+    },
+    "titles": {
+      "ko": "가넷 크레이들",
+      "en": "Garnet Cradle",
+      "ja": "GARNET CRADLE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004156": {
+    "workId": "wk_000004156",
+    "title": "Zero Infinity -Devil of Maxwell-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255917"
+    },
+    "titles": {
+      "ko": "Zero Infinity -Devil of Maxwell-",
+      "en": "Zero Infinity -Devil of Maxwell-",
+      "ja": "Zero Infinity -Devil of Maxwell-"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005558": {
+    "workId": "wk_000005558",
+    "title": "소닉 라이더즈: 제로 그래비티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1150685"
+    },
+    "titles": {
+      "ko": "소닉 라이더즈: 제로 그래비티",
+      "en": "Sonic Riders: Zero Gravity",
+      "ja": "ソニックライダーズ シューティングスターストーリー"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006477": {
+    "workId": "wk_000006477",
+    "title": "연희무쌍",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1184973"
+    },
+    "titles": {
+      "ko": "연희무쌍",
+      "en": "Koihime Musō",
+      "ja": "恋姫†無双 〜ドキッ☆乙女だらけの三国志演義〜"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007166": {
+    "workId": "wk_000007166",
+    "title": "메탈슬러그 6",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1199051"
+    },
+    "titles": {
+      "ko": "메탈슬러그 6",
+      "en": "Metal Slug 6",
+      "ja": "メタルスラッグ6"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007927": {
+    "workId": "wk_000007927",
+    "title": "노라와 황녀와 도둑고양이 하트 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125524156"
+    },
+    "titles": {
+      "ko": "노라와 황녀와 도둑고양이 하트 2",
+      "en": "The Princess, the Stray Cat, and Matters of the Heart 2",
+      "ja": "ノラと皇女と野良猫ハート2"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008443": {
+    "workId": "wk_000008443",
+    "title": "울티마 IX: 승천",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1306937"
+    },
+    "titles": {
+      "ko": "울티마 IX: 승천",
+      "en": "Ultima IX: Ascension"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008579": {
+    "workId": "wk_000008579",
+    "title": "디스오더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131498390"
+    },
+    "titles": {
+      "ko": "디스오더",
+      "en": "Disorder"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

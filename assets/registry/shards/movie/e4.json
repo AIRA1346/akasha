@@ -1,0 +1,77 @@
+{
+  "wk_000001128": {
+    "workId": "wk_000001128",
+    "title": "애비규환",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100989574"
+    },
+    "titles": {
+      "ko": "애비규환",
+      "en": "More Than Family"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005655": {
+    "workId": "wk_000005655",
+    "title": "예언자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061541"
+    },
+    "titles": {
+      "ko": "예언자",
+      "en": "A Prophet",
+      "ja": "預言者"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006068": {
+    "workId": "wk_000006068",
+    "title": "니트람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106462638"
+    },
+    "titles": {
+      "ko": "니트람",
+      "en": "Nitram",
+      "ja": "ニトラム/NITRAM"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008805": {
+    "workId": "wk_000008805",
+    "title": "마하 2.6 - 풀 스피드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082924"
+    },
+    "titles": {
+      "ko": "마하 2.6 - 풀 스피드",
+      "en": "Sky Fighters",
+      "ja": "ナイト・オブ・ザ・スカイ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "wk_000001992": {
+    "workId": "wk_000001992",
+    "title": "더 스타 메이커",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10381822"
+    },
+    "titles": {
+      "ko": "더 스타 메이커",
+      "en": "The Star Maker"
+    },
+    "releaseYear": 1939,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002418": {
+    "workId": "wk_000002418",
+    "title": "협박은 나의 인생",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10430860"
+    },
+    "titles": {
+      "ko": "협박은 나의 인생",
+      "en": "Blackmail Is My Life",
+      "ja": "恐喝こそわが人生"
+    },
+    "releaseYear": 1968,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003312": {
+    "workId": "wk_000003312",
+    "title": "어 히어로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105012394"
+    },
+    "titles": {
+      "ko": "어 히어로",
+      "en": "A Hero",
+      "ja": "英雄の証明"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004674": {
+    "workId": "wk_000004674",
+    "title": "불어라 검풍아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105728237"
+    },
+    "titles": {
+      "ko": "불어라 검풍아",
+      "en": "Slate",
+      "ja": "スレイト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007128": {
+    "workId": "wk_000007128",
+    "title": "할리우드 스타걸",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107121729"
+    },
+    "titles": {
+      "ko": "할리우드 스타걸",
+      "en": "Hollywood Stargirl",
+      "ja": "ハリウッド・スターガール"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009006": {
+    "workId": "wk_000009006",
+    "title": "레이피스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108429282"
+    },
+    "titles": {
+      "ko": "레이피스트",
+      "en": "The Rapist"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009327": {
+    "workId": "wk_000009327",
+    "title": "교섭인 마시타 마사요시",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855467"
+    },
+    "titles": {
+      "ko": "교섭인 마시타 마사요시",
+      "en": "Negotiator",
+      "ja": "交渉人 真下正義"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009591": {
+    "workId": "wk_000009591",
+    "title": "아지랑이좌",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087238"
+    },
+    "titles": {
+      "ko": "아지랑이좌",
+      "en": "Kagero-za",
+      "ja": "陽炎座"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

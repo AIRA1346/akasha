@@ -1,10 +1,13 @@
 import '../core/archiving/entity_anchor.dart';
+import '../core/archiving/entity_journal_entry.dart';
 import '../../core/ports/entity_registry_port.dart';
 import '../core/ports/registry_port.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
 import '../models/franchise_group.dart';
 import '../models/registry_work.dart';
+import '../services/entity_vault_loader.dart';
+import '../services/file_service.dart';
 import '../services/franchise_registry.dart';
 import '../services/franchise_representative_picker.dart';
 import '../services/registry_visibility_service.dart';
@@ -21,12 +24,16 @@ class FusionRegistryHit {
     required this.source,
     this.hint = RegistryRemoteHint.available,
     this.entityType = EntityAnchorType.work,
+    this.catalogOnly = false,
   });
 
   final RegistryWork work;
   final FusionRegistrySource source;
   final RegistryRemoteHint hint;
   final EntityAnchorType entityType;
+
+  /// user catalog hit without archived entity journal (R1).
+  final bool catalogOnly;
 
   bool get isUserLocalCatalog => source == FusionRegistrySource.userCatalog;
 
@@ -36,14 +43,16 @@ class FusionRegistryHit {
 class FusionSearchResult {
   const FusionSearchResult({
     required this.localItems,
+    required this.localEntityJournals,
     required this.registryHits,
   });
 
   final List<AkashaItem> localItems;
+  final List<EntityJournalEntry> localEntityJournals;
   final List<FusionRegistryHit> registryHits;
 }
 
-/// 3-tier fusion: local `.md` · user catalog · global registry.
+/// Fusion: local work `.md` · local entity journal · user catalog · global.
 abstract final class FusionSearchService {
   static Future<FusionSearchResult> search({
     required String query,
@@ -51,10 +60,15 @@ abstract final class FusionSearchService {
     required UserCatalogPort userCatalog,
     required RegistryPort registry,
     EntityRegistryPort? entityRegistry,
+    EntityVaultLoader? entityLoader,
   }) async {
     final trimmed = query.trim();
     if (trimmed.isEmpty) {
-      return const FusionSearchResult(localItems: [], registryHits: []);
+      return const FusionSearchResult(
+        localItems: [],
+        localEntityJournals: [],
+        registryHits: [],
+      );
     }
 
     final q = trimmed.toLowerCase();
@@ -65,6 +79,20 @@ abstract final class FusionSearchService {
             item.tags.any((t) => t.toLowerCase().contains(q));
       }).toList(),
     );
+
+    final loader = entityLoader ?? const EntityVaultLoader();
+    final vaultPath = AkashaFileService().vaultPath;
+    final allEntityJournals = await loader.loadFromVault(vaultPath);
+    final localEntityJournals = allEntityJournals.where((entry) {
+      if (entry.title.toLowerCase().contains(q)) return true;
+      if (entry.body.toLowerCase().contains(q)) return true;
+      return false;
+    }).toList();
+
+    final archivedEntityIds = allEntityJournals
+        .map((e) => e.entityId)
+        .where((id) => id.isNotEmpty)
+        .toSet();
 
     final localWorkIds = local
         .map((e) => e.workId)
@@ -82,17 +110,28 @@ abstract final class FusionSearchService {
       if (WorksRegistry.setContainsWorkId(localWorkIds, entity.entityId)) {
         continue;
       }
+
+      final isNonWork = !entity.isWorkEntity;
+      if (isNonWork && archivedEntityIds.contains(entity.entityId)) {
+        continue;
+      }
+
       catalogHits.add(
         FusionRegistryHit(
           work: entity.toRegistryWork(),
           source: FusionRegistrySource.userCatalog,
           entityType: entity.anchorType,
+          catalogOnly: isNonWork,
         ),
       );
     }
 
     final catalogIds = catalogHits.map((e) => e.work.workId).toSet();
-    var excludeIds = {...allLocalWorkIds, ...catalogIds};
+    var excludeIds = {
+      ...allLocalWorkIds,
+      ...catalogIds,
+      ...archivedEntityIds,
+    };
 
     final entityGlobalHits = <FusionRegistryHit>[];
     if (entityRegistry != null) {
@@ -132,6 +171,7 @@ abstract final class FusionSearchService {
 
     return FusionSearchResult(
       localItems: local,
+      localEntityJournals: localEntityJournals,
       registryHits: [...catalogHits, ...entityGlobalHits, ...dedupedGlobal],
     );
   }

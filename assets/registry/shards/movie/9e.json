@@ -1,0 +1,115 @@
+{
+  "wk_000003495": {
+    "workId": "wk_000003495",
+    "title": "시간의 끝에서 널 기다려",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105080537"
+    },
+    "titles": {
+      "ko": "시간의 끝에서 널 기다려",
+      "en": "Love You Forever"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005921": {
+    "workId": "wk_000005921",
+    "title": "KIMI",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106363032"
+    },
+    "titles": {
+      "ko": "KIMI",
+      "en": "Kimi",
+      "ja": "KIMI/サイバー・トラップ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007076": {
+    "workId": "wk_000007076",
+    "title": "6번 칸",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107092356"
+    },
+    "titles": {
+      "ko": "6번 칸",
+      "en": "Compartment No. 6",
+      "ja": "コンパートメントNo.6"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009394": {
+    "workId": "wk_000009394",
+    "title": "김정일리아",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855884"
+    },
+    "titles": {
+      "ko": "김정일리아",
+      "en": "Kimjongilia",
+      "ja": "金正日花 (映画)"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009732": {
+    "workId": "wk_000009732",
+    "title": "시크릿 카운터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108865625"
+    },
+    "titles": {
+      "ko": "시크릿 카운터",
+      "en": "The Town of Headcounts",
+      "ja": "人数の町"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010026": {
+    "workId": "wk_000010026",
+    "title": "힘내라! 자이언!",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10900855"
+    },
+    "titles": {
+      "ko": "힘내라! 자이언!",
+      "en": "Ganbare! Gian!!",
+      "ja": "がんばれ!ジャイアン!!"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "wk_000000389": {
+    "workId": "wk_000000389",
+    "title": "화장실의 하니코 군",
+    "titles": {
+      "ko": "화장실의 하니코 군",
+      "en": "Toilet-Bound Hanako-kun",
+      "ja": "地縛少年花子くん"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아이다이로",
+    "releaseYear": 2014,
+    "tags": [
+      "오컬트",
+      "학원",
+      "미스터리",
+      "코미디"
+    ],
+    "legacyIds": [
+      "sub_manga_toilet-bound-hanako-kun_2014"
+    ],
+    "externalIds": {
+      "wikidata": "Q28684168"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000534": {
+    "workId": "wk_000000534",
+    "title": "괴인 개발부의 쿠로이츠 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107445470"
+    },
+    "titles": {
+      "ko": "괴인 개발부의 쿠로이츠 씨",
+      "en": "Miss Kuroitsu from the Monster Development Department",
+      "ja": "怪人開発部の黒井津さん"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000881": {
+    "workId": "wk_000000881",
+    "title": "전생 악녀의 흑역사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109512208"
+    },
+    "titles": {
+      "ko": "전생 악녀의 흑역사",
+      "en": "The Dark History of the Reincarnated Villainess",
+      "ja": "転生悪女の黒歴史"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001246": {
+    "workId": "wk_000001246",
+    "title": "옆자리의 노부쿠니 양은 나를 좋아하는 것 같아",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111944266"
+    },
+    "titles": {
+      "ko": "옆자리의 노부쿠니 양은 나를 좋아하는 것 같아",
+      "en": "I Get the Feeling That Nobukuni-san Likes Me",
+      "ja": "となりの信國さんは俺のことが好きな気がする"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002062": {
+    "workId": "wk_000002062",
+    "title": "라즈베리 타임즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340148"
+    },
+    "titles": {
+      "ko": "라즈베리 타임즈",
+      "en": "The Marshmallow Times",
+      "ja": "マシュマロ通信"
+    },
+    "releaseYear": 2004,
+    "creator": "Lun Lun Yamamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002785": {
+    "workId": "wk_000002785",
+    "title": "닌자 핫토리군+파만 초능력 워즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11490777"
+    },
+    "titles": {
+      "ko": "닌자 핫토리군+파만 초능력 워즈",
+      "en": "Ninja Hattori-kun Plus Perman: Chōnōryoku Wars",
+      "ja": "忍者ハットリくん+パーマン 超能力ウォーズ"
+    },
+    "releaseYear": 1984,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006669": {
+    "workId": "wk_000006669",
+    "title": "내 첫사랑을 너에게 바친다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15131818"
+    },
+    "titles": {
+      "ko": "내 첫사랑을 너에게 바친다",
+      "en": "Boku no Hatsukoi o Kimi ni Sasagu",
+      "ja": "僕の初恋をキミに捧ぐ"
+    },
+    "creator": "Kotomi Aoki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006789": {
+    "workId": "wk_000006789",
+    "title": "평범한 여학생이 지방 아이돌을 해봤다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15715361"
+    },
+    "titles": {
+      "ko": "평범한 여학생이 지방 아이돌을 해봤다",
+      "en": "Locodol",
+      "ja": "普通の女子校生が【ろこどる】やってみた。"
+    },
+    "creator": "Kotaro Kosugi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007643": {
+    "workId": "wk_000007643",
+    "title": "히노마루 스모",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18338780"
+    },
+    "titles": {
+      "ko": "히노마루 스모",
+      "en": "Hinomaru Sumo",
+      "ja": "火ノ丸相撲"
+    },
+    "creator": "Kawada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008825": {
+    "workId": "wk_000008825",
+    "title": "부남자 고교생활",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24801887"
+    },
+    "titles": {
+      "ko": "부남자 고교생활",
+      "en": "The High School Life of a Fudanshi",
+      "ja": "腐男子高校生活"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

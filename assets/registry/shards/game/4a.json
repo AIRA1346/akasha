@@ -1,0 +1,233 @@
+{
+  "wk_000000068": {
+    "workId": "wk_000000068",
+    "title": "스파이더맨 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Insomniac",
+    "releaseYear": 2023,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid2215430_2023"
+    ],
+    "titles": {
+      "en": "Ghost of Tsushima DIRECTOR'S CUT",
+      "ko": "스파이더맨 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "2215430",
+      "wikidata": "Q107398164"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000285": {
+    "workId": "wk_000000285",
+    "title": "우마무스메",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Cygames",
+    "releaseYear": 2021,
+    "tags": [
+      "육성",
+      "경마",
+      "수집",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_umamusume_2021"
+    ],
+    "titles": {
+      "en": "Umamusume",
+      "ko": "우마무스메"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q104337736"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002158": {
+    "workId": "wk_000002158",
+    "title": "문명 IV: 콜로니제이션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071001"
+    },
+    "titles": {
+      "ko": "문명 IV: 콜로니제이션",
+      "en": "Civilization IV: Colonization"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002831": {
+    "workId": "wk_000002831",
+    "title": "노부나가의 야망 창천록",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856192"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 창천록",
+      "en": "Nobunaga's Ambition: Soutenroku",
+      "ja": "信長の野望・蒼天録"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004004": {
+    "workId": "wk_000004004",
+    "title": "러브카미",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11236959"
+    },
+    "titles": {
+      "ko": "러브카미",
+      "en": "LoveKami",
+      "ja": "恋神 -ラブカミ-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004589": {
+    "workId": "wk_000004589",
+    "title": "쉬벌리: 미디벌 워페어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113289"
+    },
+    "titles": {
+      "ko": "쉬벌리: 미디벌 워페어",
+      "en": "Chivalry: Medieval Warfare"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006810": {
+    "workId": "wk_000006810",
+    "title": "마이크로소프트 플라이트 시뮬레이터 2024",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119361120"
+    },
+    "titles": {
+      "ko": "마이크로소프트 플라이트 시뮬레이터 2024",
+      "en": "Microsoft Flight Simulator 2024"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007805": {
+    "workId": "wk_000007805",
+    "title": "환세취호전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124361074"
+    },
+    "titles": {
+      "ko": "환세취호전",
+      "en": "Q124361074"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008086": {
+    "workId": "wk_000008086",
+    "title": "스카이 코드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126374427"
+    },
+    "titles": {
+      "ko": "스카이 코드",
+      "en": "Sky Chord",
+      "ja": "スカイコード"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008380": {
+    "workId": "wk_000008380",
+    "title": "용과 같이 8 외전 Pirates in Hawaii",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130330734"
+    },
+    "titles": {
+      "ko": "용과 같이 8 외전 Pirates in Hawaii",
+      "en": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "ja": "龍が如く8外伝 Pirates in Hawaii"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009570": {
+    "workId": "wk_000009570",
+    "title": "내 독재자 스탈린이 이렇게 귀여울 리가 없어?!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135059576"
+    },
+    "titles": {
+      "ko": "내 독재자 스탈린이 이렇게 귀여울 리가 없어?!",
+      "en": "My Dictator Stalin Can't Be This Cute ?!",
+      "ja": "私の独裁者スターリンがこんなに可愛いわけがない?!"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

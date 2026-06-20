@@ -1,0 +1,59 @@
+{
+  "wk_000004671": {
+    "workId": "wk_000004671",
+    "title": "국제우주정거장",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105710372"
+    },
+    "titles": {
+      "ko": "국제우주정거장",
+      "en": "I.S.S.",
+      "ja": "I.S.S. (映画)"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005721": {
+    "workId": "wk_000005721",
+    "title": "러브 송",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1062362"
+    },
+    "titles": {
+      "ko": "러브 송",
+      "en": "Love Songs",
+      "ja": "愛のうた、パリ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008801": {
+    "workId": "wk_000008801",
+    "title": "의리의 사나이 외팔이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1082898"
+    },
+    "titles": {
+      "ko": "의리의 사나이 외팔이",
+      "en": "The One-Armed Swordsman",
+      "ja": "片腕必殺剣"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

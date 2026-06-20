@@ -1,0 +1,196 @@
+{
+  "wk_000001048": {
+    "workId": "wk_000001048",
+    "title": "컬러 러쉬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902640"
+    },
+    "titles": {
+      "ko": "컬러 러쉬",
+      "en": "Color Rush",
+      "ja": "カラーラッシュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003420": {
+    "workId": "wk_000003420",
+    "title": "꼬리에 꼬리를 무는 그날 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461491"
+    },
+    "titles": {
+      "ko": "꼬리에 꼬리를 무는 그날 이야기",
+      "en": "The story of the day when the tail was bitten"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003506": {
+    "workId": "wk_000003506",
+    "title": "애재성공하",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109463749"
+    },
+    "titles": {
+      "ko": "애재성공하",
+      "en": "Q109463749"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003833": {
+    "workId": "wk_000003833",
+    "title": "트레이서 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109804030"
+    },
+    "titles": {
+      "ko": "트레이서 (드라마)",
+      "en": "Tracer",
+      "ja": "トレーサー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005394": {
+    "workId": "wk_000005394",
+    "title": "TARO 의 탑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11248169"
+    },
+    "titles": {
+      "ko": "TARO 의 탑",
+      "en": "Tower of TARO",
+      "ja": "TAROの塔"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005736": {
+    "workId": "wk_000005736",
+    "title": "디 엠파이어 : 법의 제국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112671189"
+    },
+    "titles": {
+      "ko": "디 엠파이어 : 법의 제국",
+      "en": "The Empire of Law"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007626": {
+    "workId": "wk_000007626",
+    "title": "남의연애",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115347333"
+    },
+    "titles": {
+      "ko": "남의연애",
+      "en": "His Man"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008471": {
+    "workId": "wk_000008471",
+    "title": "바람과 구름과 무지개와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11665243"
+    },
+    "titles": {
+      "ko": "바람과 구름과 무지개와",
+      "en": "Kaze to Kumo to Niji to",
+      "ja": "風と雲と虹と"
+    },
+    "releaseYear": 1976,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008476": {
+    "workId": "wk_000008476",
+    "title": "오늘은 좀 매울지도 몰라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116680122"
+    },
+    "titles": {
+      "ko": "오늘은 좀 매울지도 몰라",
+      "en": "Recipe for Farewell",
+      "ja": "今日は少し辛いかもしれない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010039": {
+    "workId": "wk_000010039",
+    "title": "돌풍",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124452133"
+    },
+    "titles": {
+      "ko": "돌풍",
+      "en": "Q124452133",
+      "ja": "旋風"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010316": {
+    "workId": "wk_000010316",
+    "title": "태스크",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124842578"
+    },
+    "titles": {
+      "ko": "태스크",
+      "en": "Task"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

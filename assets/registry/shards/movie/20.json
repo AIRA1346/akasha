@@ -1,0 +1,78 @@
+{
+  "wk_000005919": {
+    "workId": "wk_000005919",
+    "title": "흑과 백",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1063525"
+    },
+    "titles": {
+      "ko": "흑과 백",
+      "en": "The Defiant Ones",
+      "ja": "手錠のまゝの脱獄"
+    },
+    "releaseYear": 1958,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006645": {
+    "workId": "wk_000006645",
+    "title": "체 게바라",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068641"
+    },
+    "titles": {
+      "ko": "체 게바라",
+      "en": "Che!",
+      "ja": "ゲバラ!"
+    },
+    "releaseYear": 1977,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007129": {
+    "workId": "wk_000007129",
+    "title": "샤이안",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071402"
+    },
+    "titles": {
+      "ko": "샤이안",
+      "en": "Cheyenne Autumn",
+      "ja": "シャイアン"
+    },
+    "releaseYear": 1964,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009329": {
+    "workId": "wk_000009329",
+    "title": "극장판 SPEC: 클로즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855668"
+    },
+    "titles": {
+      "ko": "극장판 SPEC: 클로즈",
+      "en": "SPEC: Close",
+      "ja": "劇場版 SPEC〜結〜"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

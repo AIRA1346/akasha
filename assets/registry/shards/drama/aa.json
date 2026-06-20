@@ -1,0 +1,127 @@
+{
+  "wk_000001001": {
+    "workId": "wk_000001001",
+    "title": "이미테이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104784097"
+    },
+    "titles": {
+      "ko": "이미테이션",
+      "en": "Imitation",
+      "ja": "イミテーション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005456": {
+    "workId": "wk_000005456",
+    "title": "세기말의 시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251142"
+    },
+    "titles": {
+      "ko": "세기말의 시",
+      "en": "Q11251142",
+      "ja": "世紀末の詩"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005457": {
+    "workId": "wk_000005457",
+    "title": "세상에서 아빠가 제일 좋아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251308"
+    },
+    "titles": {
+      "ko": "세상에서 아빠가 제일 좋아",
+      "en": "Q11251308",
+      "ja": "世界で一番パパが好き"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006723": {
+    "workId": "wk_000006723",
+    "title": "클레오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113574132"
+    },
+    "titles": {
+      "ko": "클레오",
+      "en": "Kleo",
+      "ja": "KLEO/クレオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007186": {
+    "workId": "wk_000007186",
+    "title": "모범택시 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114450321"
+    },
+    "titles": {
+      "ko": "모범택시 2",
+      "en": "Taxi Driver 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007628": {
+    "workId": "wk_000007628",
+    "title": "노부타 프로듀스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154027"
+    },
+    "titles": {
+      "ko": "노부타 프로듀스",
+      "en": "Nobuta wo Produce",
+      "ja": "野ブタ。をプロデュース"
+    },
+    "creator": "白岩玄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010257": {
+    "workId": "wk_000010257",
+    "title": "다메 초콜라테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247803"
+    },
+    "titles": {
+      "ko": "다메 초콜라테",
+      "en": "Dame chocolate"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "wk_000000473": {
+    "workId": "wk_000000473",
+    "title": "원더 에그 프라이어리티",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100235430"
+    },
+    "titles": {
+      "ko": "원더 에그 프라이어리티",
+      "en": "Wonder Egg Priority",
+      "ja": "ワンダーエッグ・プライオリティ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001920": {
+    "workId": "wk_000001920",
+    "title": "공주님 조심하세요",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1139138"
+    },
+    "titles": {
+      "ko": "공주님 조심하세요",
+      "en": "Hime-sama Goyōjin",
+      "ja": "姫様ご用心"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004420": {
+    "workId": "wk_000004420",
+    "title": "히로인? 성녀? 아니요, 올 워크스 메이드 입니다! (자랑)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134442789"
+    },
+    "titles": {
+      "ko": "히로인? 성녀? 아니요, 올 워크스 메이드 입니다! (자랑)",
+      "en": "Heroine? Saint? No, I'm an All-Works Maid (and Proud of It)!",
+      "ja": "ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004635": {
+    "workId": "wk_000004635",
+    "title": "세인트 세이야 오메가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1370881"
+    },
+    "titles": {
+      "ko": "세인트 세이야 오메가",
+      "en": "Saint Seiya Omega",
+      "ja": "聖闘士星矢Ω"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004749": {
+    "workId": "wk_000004749",
+    "title": "비밀결사 매발톱단",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1458106"
+    },
+    "titles": {
+      "ko": "비밀결사 매발톱단",
+      "en": "Eagle Talon",
+      "ja": "秘密結社鷹の爪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008773": {
+    "workId": "wk_000008773",
+    "title": "루팡 3세: 더 퍼스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q69991162"
+    },
+    "titles": {
+      "ko": "루팡 3세: 더 퍼스트",
+      "en": "Lupin III: The First",
+      "ja": "ルパン三世 THE FIRST"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009120": {
+    "workId": "wk_000009120",
+    "title": "맹렬 우주해적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q729809"
+    },
+    "titles": {
+      "ko": "맹렬 우주해적",
+      "en": "Bodacious Space Pirates",
+      "ja": "ミニスカ宇宙海賊"
+    },
+    "releaseYear": 2012,
+    "creator": "Yūichi Sasamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009486": {
+    "workId": "wk_000009486",
+    "title": "워싱턴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85847988"
+    },
+    "titles": {
+      "ko": "워싱턴",
+      "en": "Washington"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009695": {
+    "workId": "wk_000009695",
+    "title": "늑대와 향신료",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89304509"
+    },
+    "titles": {
+      "ko": "늑대와 향신료",
+      "en": "Spice and Wolf",
+      "ja": "狼と香辛料"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009991": {
+    "workId": "wk_000009991",
+    "title": "체조 사무라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98381606"
+    },
+    "titles": {
+      "ko": "체조 사무라이",
+      "en": "Taiso Samurai",
+      "ja": "体操ザムライ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

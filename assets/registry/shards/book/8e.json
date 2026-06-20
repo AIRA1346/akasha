@@ -1,0 +1,41 @@
+{
+  "wk_000007871": {
+    "workId": "wk_000007871",
+    "title": "트레인스포팅",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11279562"
+    },
+    "titles": {
+      "ko": "트레인스포팅",
+      "en": "Trainspotting",
+      "ja": "トレインスポッティング"
+    },
+    "releaseYear": 1993,
+    "creator": "Irvine Welsh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009954": {
+    "workId": "wk_000009954",
+    "title": "당회요",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1146991"
+    },
+    "titles": {
+      "ko": "당회요",
+      "en": "Tang Huiyao",
+      "ja": "唐会要"
+    },
+    "creator": "Wang Pu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

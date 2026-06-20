@@ -1,0 +1,161 @@
+{
+  "wk_000004043": {
+    "workId": "wk_000004043",
+    "title": "롤 더 넥스트 2021",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114850"
+    },
+    "titles": {
+      "ko": "롤 더 넥스트 2021",
+      "en": "Q110114850"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004687": {
+    "workId": "wk_000004687",
+    "title": "NHK 뉴스 오하요 일본",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11087026"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 일본",
+      "en": "NHK News Ohayō Nippon",
+      "ja": "NHKニュースおはよう日本"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004776": {
+    "workId": "wk_000004776",
+    "title": "지속 가능한 사랑입니까?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110932402"
+    },
+    "titles": {
+      "ko": "지속 가능한 사랑입니까?",
+      "en": "Is love sustainable?",
+      "ja": "持続可能な恋ですか?〜父と娘の結婚行進曲〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004918": {
+    "workId": "wk_000004918",
+    "title": "멘탈코치 제갈길",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111366726"
+    },
+    "titles": {
+      "ko": "멘탈코치 제갈길",
+      "en": "Mental Coach Je Gal-gil"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005788": {
+    "workId": "wk_000005788",
+    "title": "줄곧 당신을 사랑했어요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11269967"
+    },
+    "titles": {
+      "ko": "줄곧 당신을 사랑했어요",
+      "en": "I've Loved You from the Start",
+      "ja": "ずっとあなたが好きだった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007311": {
+    "workId": "wk_000007311",
+    "title": "팬레터를 보내주세요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114705387"
+    },
+    "titles": {
+      "ko": "팬레터를 보내주세요",
+      "en": "Fanletter Please",
+      "ja": "ファンレターを送ってください"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007436": {
+    "workId": "wk_000007436",
+    "title": "정보 라이브 미야네야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492793"
+    },
+    "titles": {
+      "ko": "정보 라이브 미야네야",
+      "en": "Miyaneya",
+      "ja": "情報ライブ ミヤネ屋"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007835": {
+    "workId": "wk_000007835",
+    "title": "불타오르다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11567118"
+    },
+    "titles": {
+      "ko": "불타오르다",
+      "en": "Homura Tatsu",
+      "ja": "炎立つ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010105": {
+    "workId": "wk_000010105",
+    "title": "졸업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611029"
+    },
+    "titles": {
+      "ko": "졸업",
+      "en": "The Midnight Romance in Hagwon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

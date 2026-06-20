@@ -1,0 +1,194 @@
+{
+  "wk_000000705": {
+    "workId": "wk_000000705",
+    "title": "네트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1030954"
+    },
+    "titles": {
+      "ko": "네트",
+      "en": "The Net"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001299": {
+    "workId": "wk_000001299",
+    "title": "울트라맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058534"
+    },
+    "titles": {
+      "ko": "울트라맨",
+      "en": "Ultraman",
+      "ja": "ウルトラマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001549": {
+    "workId": "wk_000001549",
+    "title": "미 페카도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068083"
+    },
+    "titles": {
+      "ko": "미 페카도",
+      "en": "Mi pecado"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004337": {
+    "workId": "wk_000004337",
+    "title": "화요일에 만나요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118279"
+    },
+    "titles": {
+      "ko": "화요일에 만나요",
+      "en": "Q110118279"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004695": {
+    "workId": "wk_000004695",
+    "title": "DOCTORS~ 최강의 명의 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11091752"
+    },
+    "titles": {
+      "ko": "DOCTORS~ 최강의 명의 ~",
+      "en": "The briliant medical doctor",
+      "ja": "DOCTORS〜最強の名医〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005662": {
+    "workId": "wk_000005662",
+    "title": "오하요 규슈 오키나와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262234"
+    },
+    "titles": {
+      "ko": "오하요 규슈 오키나와",
+      "en": "Q11262234",
+      "ja": "おはよう日本 九州沖縄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005739": {
+    "workId": "wk_000005739",
+    "title": "라 마드라스트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112672826"
+    },
+    "titles": {
+      "ko": "라 마드라스트라",
+      "en": "The Stepmom"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007824": {
+    "workId": "wk_000007824",
+    "title": "솔로지옥 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115644786"
+    },
+    "titles": {
+      "ko": "솔로지옥 2",
+      "en": "Single's Inferno, season 2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009680": {
+    "workId": "wk_000009680",
+    "title": "언젠가는 슬기로울 전공의생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122854712"
+    },
+    "titles": {
+      "ko": "언젠가는 슬기로울 전공의생활",
+      "en": "Resident Playbook",
+      "ja": "いつかは賢いレジデント生活"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009849": {
+    "workId": "wk_000009849",
+    "title": "신부님은 명탐정",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1239303"
+    },
+    "titles": {
+      "ko": "신부님은 명탐정",
+      "en": "Don Matteo",
+      "ja": "マッテオ神父の事件簿"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009963": {
+    "workId": "wk_000009963",
+    "title": "안개를 찾아서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124300692"
+    },
+    "titles": {
+      "ko": "안개를 찾아서",
+      "en": "Q124300692"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

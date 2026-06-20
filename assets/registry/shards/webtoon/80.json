@@ -1,0 +1,21 @@
+{
+  "wk_000002214": {
+    "workId": "wk_000002214",
+    "title": "Wind Breaker",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122227187"
+    },
+    "titles": {
+      "ko": "Wind Breaker",
+      "en": "Wind Breaker",
+      "ja": "Wind Breaker"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "wk_000002838": {
+    "workId": "wk_000002838",
+    "title": "추남, 미녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106292088"
+    },
+    "titles": {
+      "ko": "추남, 미녀",
+      "en": "Q106292088"
+    },
+    "releaseYear": 2016,
+    "creator": "Amélie Nothomb",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006634": {
+    "workId": "wk_000006634",
+    "title": "시간이 스며드는 아침",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11151542"
+    },
+    "titles": {
+      "ko": "시간이 스며드는 아침",
+      "en": "Q11151542",
+      "ja": "時が滲む朝"
+    },
+    "releaseYear": 2008,
+    "creator": "Yang Yi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008163": {
+    "workId": "wk_000008163",
+    "title": "아몬틸라도의 술통",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1130590"
+    },
+    "titles": {
+      "ko": "아몬틸라도의 술통",
+      "en": "The Cask of Amontillado",
+      "ja": "アモンティラードの樽"
+    },
+    "releaseYear": 1846,
+    "creator": "Edgar Allan Poe",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009312": {
+    "workId": "wk_000009312",
+    "title": "마농 레스코",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141032"
+    },
+    "titles": {
+      "ko": "마농 레스코",
+      "en": "Manon Lescaut",
+      "ja": "マノン・レスコー"
+    },
+    "releaseYear": 1731,
+    "creator": "アントワーヌ・フランソワ・プレヴォ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

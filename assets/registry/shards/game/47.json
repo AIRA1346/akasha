@@ -1,0 +1,97 @@
+{
+  "wk_000003931": {
+    "workId": "wk_000003931",
+    "title": "에어가이츠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1121317"
+    },
+    "titles": {
+      "ko": "에어가이츠",
+      "en": "Ehrgeiz",
+      "ja": "エアガイツ"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004909": {
+    "workId": "wk_000004909",
+    "title": "Shooting Storm",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113875209"
+    },
+    "titles": {
+      "ko": "Shooting Storm",
+      "en": "Metal Torrent",
+      "ja": "あぁ無情 刹那"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007352": {
+    "workId": "wk_000007352",
+    "title": "노을빛으로 물드는 언덕",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205695"
+    },
+    "titles": {
+      "ko": "노을빛으로 물드는 언덕",
+      "en": "Akaneiro ni Somaru Saka",
+      "ja": "あかね色に染まる坂"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007818": {
+    "workId": "wk_000007818",
+    "title": "학원 아이돌마스터",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124745260"
+    },
+    "titles": {
+      "ko": "학원 아이돌마스터",
+      "en": "Gakuen Idolmaster",
+      "ja": "学園アイドルマスター"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010180": {
+    "workId": "wk_000010180",
+    "title": "사가 2: 비보전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1408991"
+    },
+    "titles": {
+      "ko": "사가 2: 비보전설",
+      "en": "Final Fantasy Legend II",
+      "ja": "Sa・Ga2 秘宝伝説"
+    },
+    "releaseYear": 1990,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

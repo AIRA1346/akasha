@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/archiving/record_link.dart';
+import '../models/entity_link_selection.dart';
 import 'markdown_body_editor.dart';
 import 'vault_markdown_body.dart';
 
@@ -24,6 +25,10 @@ class SanctumPagePanel extends StatelessWidget {
   final VoidCallback? onDismissExternalChange;
   final DateTime? lastSavedAt;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
+  final Future<EntityLinkSelection?> Function(
+    BuildContext context,
+    String selectedText,
+  )? onRequestEntityLink;
 
   const SanctumPagePanel({
     super.key,
@@ -43,6 +48,7 @@ class SanctumPagePanel extends StatelessWidget {
     this.onDismissExternalChange,
     this.lastSavedAt,
     this.onWikiLinkTap,
+    this.onRequestEntityLink,
   });
 
   @override
@@ -179,6 +185,7 @@ class SanctumPagePanel extends StatelessWidget {
             isSaving: isSaving,
             mdFilePath: mdFilePath,
             lastSavedAt: lastSavedAt,
+            onRequestEntityLink: onRequestEntityLink,
           ),
         );
       case SanctumPageView.file:

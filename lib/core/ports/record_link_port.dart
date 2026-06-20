@@ -1,8 +1,14 @@
 import '../archiving/record_link.dart';
+import '../../models/akasha_item.dart';
+import 'user_catalog_port.dart';
 
 /// Wave 5 — vault link index read/write.
 abstract interface class RecordLinkPort {
-  Future<void> rebuildIndex({String? changedPath});
+  Future<void> rebuildIndex({
+    String? changedPath,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
+  });
 
   Future<List<RecordLink>> outgoingLinks(String sourcePath);
 

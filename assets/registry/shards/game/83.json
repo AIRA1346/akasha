@@ -1,0 +1,203 @@
+{
+  "wk_000000038": {
+    "workId": "wk_000000038",
+    "title": "에이펙스 레전드",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Respawn Entertainment",
+    "releaseYear": 2020,
+    "tags": [
+      "배틀로얄",
+      "FPS",
+      "팀플레이",
+      "SF"
+    ],
+    "legacyIds": [
+      "gen_game_appid1172470_2020"
+    ],
+    "titles": {
+      "en": "Apex Legends™",
+      "ko": "에이펙스 레전드"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1172470",
+      "wikidata": "Q61478103"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000711": {
+    "workId": "wk_000000711",
+    "title": "더 킹 오브 파이터즈 '98 얼티밋 매치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10381520"
+    },
+    "titles": {
+      "ko": "더 킹 오브 파이터즈 '98 얼티밋 매치",
+      "en": "The King of Fighters '98 Ultimate Match"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003871": {
+    "workId": "wk_000003871",
+    "title": "와일드프로스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111968535"
+    },
+    "titles": {
+      "ko": "와일드프로스트",
+      "en": "Wildfrost"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004446": {
+    "workId": "wk_000004446",
+    "title": "사이버 사이클즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11304151"
+    },
+    "titles": {
+      "ko": "사이버 사이클즈",
+      "en": "Cyber Cycles",
+      "ja": "サイバーサイクルズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004528": {
+    "workId": "wk_000004528",
+    "title": "별의 커비 울트라 슈퍼 디럭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132456"
+    },
+    "titles": {
+      "ko": "별의 커비 울트라 슈퍼 디럭스",
+      "en": "Kirby Super Star Ultra",
+      "ja": "星のカービィ ウルトラスーパーデラックス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005241": {
+    "workId": "wk_000005241",
+    "title": "베어너클",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143285"
+    },
+    "titles": {
+      "ko": "베어너클",
+      "en": "Streets of Rage",
+      "ja": "ベア・ナックル"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007118": {
+    "workId": "wk_000007118",
+    "title": "아르카나 파밀리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198409"
+    },
+    "titles": {
+      "ko": "아르카나 파밀리아",
+      "en": "Arcana Famiglia",
+      "ja": "アルカナ・ファミリア -La storia della Arcana Famiglia-"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007859": {
+    "workId": "wk_000007859",
+    "title": "귀부 ~사랑하는 딸 강제 발정~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125024505"
+    },
+    "titles": {
+      "ko": "귀부 ~사랑하는 딸 강제 발정~",
+      "en": "Oni Chichi ~Manamusume Kyousei Hatsujou~",
+      "ja": "鬼父～愛娘強制発情～"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009236": {
+    "workId": "wk_000009236",
+    "title": "라이온 킹 (비디오 게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134138"
+    },
+    "titles": {
+      "ko": "라이온 킹 (비디오 게임)",
+      "en": "The Lion King",
+      "ja": "ライオン・キング"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009634": {
+    "workId": "wk_000009634",
+    "title": "나 혼자만 레벨업: 카르마",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135221605"
+    },
+    "titles": {
+      "ko": "나 혼자만 레벨업: 카르마",
+      "en": "Solo Leveling: Karma",
+      "ja": "俺だけレベルアップな件：KARMA"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

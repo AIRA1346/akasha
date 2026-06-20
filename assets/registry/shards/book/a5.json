@@ -1,0 +1,80 @@
+{
+  "wk_000003944": {
+    "workId": "wk_000003944",
+    "title": "위키백과:위키백과 중독",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10786016"
+    },
+    "titles": {
+      "ko": "위키백과:위키백과 중독",
+      "en": "Wikipedia:Wikipediholic",
+      "ja": "Wikipedia:ウィキペディア中毒"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005770": {
+    "workId": "wk_000005770",
+    "title": "탱고 찰리와 폭스트롯 로미오",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109826025"
+    },
+    "titles": {
+      "ko": "탱고 찰리와 폭스트롯 로미오",
+      "en": "Tango Charlie and Foxtrot Romeo",
+      "ja": "タンゴ・チャーリーとフォックストロット・ロミオ"
+    },
+    "releaseYear": 1986,
+    "creator": "John Varley",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008205": {
+    "workId": "wk_000008205",
+    "title": "맞선보고 싶지 않아서 억지스러운 조건을 달았더니 동급생이 온 일에 대해서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159257"
+    },
+    "titles": {
+      "ko": "맞선보고 싶지 않아서 억지스러운 조건을 달았더니 동급생이 온 일에 대해서",
+      "en": "Omiai Shitakunakatta node, Murinandai na Jōken o Tsuketara Doukyūsei ga Kita Ken ni Tsuite",
+      "ja": "お見合いしたくなかったので、無理難題な条件をつけたら同級生が来た件について"
+    },
+    "releaseYear": 2020,
+    "creator": "Sakura Sakuragi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009243": {
+    "workId": "wk_000009243",
+    "title": "비밀만다라십주심론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11404837"
+    },
+    "titles": {
+      "ko": "비밀만다라십주심론",
+      "en": "Treatise on the Ten Stages of the Development of Mind",
+      "ja": "十住心論"
+    },
+    "releaseYear": 830,
+    "creator": "Kūkai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

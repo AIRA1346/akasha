@@ -1,0 +1,224 @@
+{
+  "wk_000001282": {
+    "workId": "wk_000001282",
+    "title": "히로인이라는 자! ~미움받는 히로인과 비밀스러운 일~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108314574"
+    },
+    "titles": {
+      "ko": "히로인이라는 자! ~미움받는 히로인과 비밀스러운 일~",
+      "en": "Heroines Run the Show",
+      "ja": "ヒロインたるもの！〜嫌われヒロインと内緒のお仕事〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001580": {
+    "workId": "wk_000001580",
+    "title": "시노비의 잇토키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111007972"
+    },
+    "titles": {
+      "ko": "시노비의 잇토키",
+      "en": "Shinobi no Ittoki",
+      "ja": "忍の一時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001582": {
+    "workId": "wk_000001582",
+    "title": "오니팡!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111040699"
+    },
+    "titles": {
+      "ko": "오니팡!",
+      "en": "Onipan!",
+      "ja": "おにぱん!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003285": {
+    "workId": "wk_000003285",
+    "title": "ef - a tale of memories.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123340011"
+    },
+    "titles": {
+      "ko": "ef - a tale of memories.",
+      "en": "Ef: A Tale of Memories",
+      "ja": "ef - a tale of memories."
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005887": {
+    "workId": "wk_000005887",
+    "title": "개구쟁이 왕자의 왕뱀퇴치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2344327"
+    },
+    "titles": {
+      "ko": "개구쟁이 왕자의 왕뱀퇴치",
+      "en": "The Little Prince and the Eight-Headed Dragon",
+      "ja": "わんぱく王子の大蛇退治"
+    },
+    "releaseYear": 1963,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006259": {
+    "workId": "wk_000006259",
+    "title": "명탐정 코난: 세기말의 마술사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q260821"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 세기말의 마술사",
+      "en": "Case Closed: The Last Wizard of the Century",
+      "ja": "名探偵コナン 世紀末の魔術師"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006684": {
+    "workId": "wk_000006684",
+    "title": "개구리 왕눈이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q319117"
+    },
+    "titles": {
+      "ko": "개구리 왕눈이",
+      "en": "Demetan Croaker, The Boy Frog",
+      "ja": "けろっこデメタン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007214": {
+    "workId": "wk_000007214",
+    "title": "선 위의 세상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q481467"
+    },
+    "titles": {
+      "ko": "선 위의 세상",
+      "en": "World on a Wire",
+      "ja": "あやつり糸の世界"
+    },
+    "releaseYear": 1973,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008304": {
+    "workId": "wk_000008304",
+    "title": "장난을 잘 치는 타카기 양",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63436671"
+    },
+    "titles": {
+      "ko": "장난을 잘 치는 타카기 양",
+      "en": "Teasing Master Takagi-san",
+      "ja": "からかい上手の高木さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009085": {
+    "workId": "wk_000009085",
+    "title": "부자연의 선택",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q72438211"
+    },
+    "titles": {
+      "ko": "부자연의 선택",
+      "en": "Unnatural Selection",
+      "ja": "不自然淘汰: ゲノム編集がもたらす未来"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009185": {
+    "workId": "wk_000009185",
+    "title": "캡틴 하록",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7572454"
+    },
+    "titles": {
+      "ko": "캡틴 하록",
+      "en": "Harlock: Space Pirate",
+      "ja": "キャプテンハーロック -SPACE PIRATE CAPTAIN HARLOCK-"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009287": {
+    "workId": "wk_000009287",
+    "title": "난, 모모타로(복숭아 동자)의 뭐지?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7986244"
+    },
+    "titles": {
+      "ko": "난, 모모타로(복숭아 동자)의 뭐지?",
+      "en": "Doraemon: What Am I for Momotaro",
+      "ja": "ドラえもん ぼく、桃太郎のなんなのさ"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

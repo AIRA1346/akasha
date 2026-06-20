@@ -1,0 +1,41 @@
+{
+  "wk_000002519": {
+    "workId": "wk_000002519",
+    "title": "너와 나의 발자취 ~시간여행 카스가연구소~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11416145"
+    },
+    "titles": {
+      "ko": "너와 나의 발자취 ~시간여행 카스가연구소~",
+      "en": "Kimi to Boku no Ashiato: Time Travel Kasuga Kenkyūsho",
+      "ja": "君と僕のアシアト〜タイムトラベル春日研究所〜"
+    },
+    "releaseYear": 2009,
+    "creator": "Kumichi Yoshizuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007585": {
+    "workId": "wk_000007585",
+    "title": "Fate/kaleid liner 프리즈마☆이리야",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q182652"
+    },
+    "titles": {
+      "ko": "Fate/kaleid liner 프리즈마☆이리야",
+      "en": "Fate/kaleid liner Prisma Illya",
+      "ja": "Fate/kaleid liner プリズマ☆イリヤ"
+    },
+    "creator": "Hiroshi Hiroyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

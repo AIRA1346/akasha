@@ -1,0 +1,60 @@
+{
+  "wk_000008453": {
+    "workId": "wk_000008453",
+    "title": "마리아비틀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11340979"
+    },
+    "titles": {
+      "ko": "마리아비틀",
+      "en": "Bullet Train",
+      "ja": "マリアビートル"
+    },
+    "releaseYear": 2010,
+    "creator": "Kōtarō Isaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009835": {
+    "workId": "wk_000009835",
+    "title": "백인일수",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145042"
+    },
+    "titles": {
+      "ko": "백인일수",
+      "en": "Hyakunin Isshu",
+      "ja": "百人一首"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010245": {
+    "workId": "wk_000010245",
+    "title": "악마의 공놀이 노래",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492630"
+    },
+    "titles": {
+      "ko": "악마의 공놀이 노래",
+      "en": "Akuma no Temariuta",
+      "ja": "悪魔の手毬唄"
+    },
+    "releaseYear": 1971,
+    "creator": "Seishi Yokomizo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

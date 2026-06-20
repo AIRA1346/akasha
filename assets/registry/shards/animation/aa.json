@@ -1,0 +1,185 @@
+{
+  "wk_000001283": {
+    "workId": "wk_000001283",
+    "title": "군청의 팡파르",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108314623"
+    },
+    "titles": {
+      "ko": "군청의 팡파르",
+      "en": "Fanfare of Adolescence",
+      "ja": "群青のファンファーレ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003712": {
+    "workId": "wk_000003712",
+    "title": "이세계 묵시록 마이노그라~파멸의 문명에서 시작하는 세계 정복~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126889588"
+    },
+    "titles": {
+      "ko": "이세계 묵시록 마이노그라~파멸의 문명에서 시작하는 세계 정복~",
+      "en": "Apocalypse Bringer Mynoghra",
+      "ja": "異世界黙示録マイノグーラ～破滅の文明で始める世界征服～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005958": {
+    "workId": "wk_000005958",
+    "title": "꼬마 엘시드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2394592"
+    },
+    "titles": {
+      "ko": "꼬마 엘시드",
+      "en": "Ruy, the Little Cid",
+      "ja": "リトル・エル・シドの冒険"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006681": {
+    "workId": "wk_000006681",
+    "title": "디지몬 프론티어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q311940"
+    },
+    "titles": {
+      "ko": "디지몬 프론티어",
+      "en": "Digimon Frontier",
+      "ja": "デジモンフロンティア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006877": {
+    "workId": "wk_000006877",
+    "title": "노 게임 노 라이프 제로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q37601569"
+    },
+    "titles": {
+      "ko": "노 게임 노 라이프 제로",
+      "en": "No Game No Life: Zero",
+      "ja": "ノーゲーム・ノーライフ ゼロ"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008187": {
+    "workId": "wk_000008187",
+    "title": "코노하나 기담",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61652240"
+    },
+    "titles": {
+      "ko": "코노하나 기담",
+      "en": "Konohana Kitan",
+      "ja": "此花亭奇譚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008372": {
+    "workId": "wk_000008372",
+    "title": "기파이터 태랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6403600"
+    },
+    "titles": {
+      "ko": "기파이터 태랑",
+      "en": "Ki Fighter Taerang",
+      "ja": "キ・ファイターテラン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008914": {
+    "workId": "wk_000008914",
+    "title": "달의 요정 세일러문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704353"
+    },
+    "titles": {
+      "ko": "달의 요정 세일러문",
+      "en": "Sailor Moon",
+      "ja": "美少女戦士セーラームーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009627": {
+    "workId": "wk_000009627",
+    "title": "바람이 분다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q888131"
+    },
+    "titles": {
+      "ko": "바람이 분다",
+      "en": "The Wind Rises",
+      "ja": "風立ちぬ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009765": {
+    "workId": "wk_000009765",
+    "title": "듀얼마스터즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q912997"
+    },
+    "titles": {
+      "ko": "듀얼마스터즈",
+      "en": "Duel Masters",
+      "ja": "デュエル・マスターズ"
+    },
+    "creator": "Shigenobu Matsumoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

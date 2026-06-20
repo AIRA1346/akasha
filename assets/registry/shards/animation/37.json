@@ -1,0 +1,222 @@
+{
+  "wk_000000204": {
+    "workId": "wk_000000204",
+    "title": "주술회전",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MAPPA",
+    "releaseYear": 2020,
+    "tags": [
+      "액션",
+      "초자연",
+      "학원",
+      "다크"
+    ],
+    "externalIds": {
+      "tmdb": "95479",
+      "wikidata": "Q98836216"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_jujutsu-kaisen_2020"
+    ],
+    "titles": {
+      "en": "Jujutsu Kaisen",
+      "ko": "주술회전"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000005019": {
+    "workId": "wk_000005019",
+    "title": "페어리 테일",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16510277"
+    },
+    "titles": {
+      "ko": "페어리 테일",
+      "en": "Fairy Tail",
+      "ja": "フェアリーテイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005142": {
+    "workId": "wk_000005142",
+    "title": "공각기동대 STAND ALONE COMPLEX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1776982"
+    },
+    "titles": {
+      "ko": "공각기동대 STAND ALONE COMPLEX",
+      "en": "Ghost in the Shell: Stand Alone Complex",
+      "ja": "攻殻機動隊 STAND ALONE COMPLEX"
+    },
+    "releaseYear": 2002,
+    "creator": "Kenji Kamiyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006342": {
+    "workId": "wk_000006342",
+    "title": "BLOOD-C",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2699816"
+    },
+    "titles": {
+      "ko": "BLOOD-C",
+      "en": "Blood-C",
+      "ja": "BLOOD-C"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006615": {
+    "workId": "wk_000006615",
+    "title": "밤은 짧아 걸어 아가씨야",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q30300951"
+    },
+    "titles": {
+      "ko": "밤은 짧아 걸어 아가씨야",
+      "en": "Night Is Short, Walk On Girl",
+      "ja": "夜は短し歩けよ乙女"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007465": {
+    "workId": "wk_000007465",
+    "title": "세계에서 가장 경이로운 집",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q50366583"
+    },
+    "titles": {
+      "ko": "세계에서 가장 경이로운 집",
+      "en": "The World's Most Extraordinary Homes",
+      "ja": "世界の摩訶不思議な家"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008072": {
+    "workId": "wk_000008072",
+    "title": "트랜스포머 슈퍼링크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q605856"
+    },
+    "titles": {
+      "ko": "트랜스포머 슈퍼링크",
+      "en": "Transformers: Energon",
+      "ja": "トランスフォーマー スーパーリンク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009553": {
+    "workId": "wk_000009553",
+    "title": "짱구는 못말려 극장판: 부리부리 3분 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q864285"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 부리부리 3분 대작전",
+      "en": "Crayon Shin-chan: The Legend Called Buri Buri 3 Minutes Charge",
+      "ja": "クレヨンしんちゃん 伝説を呼ぶブリブリ 3分ポッキリ大進撃"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009808": {
+    "workId": "wk_000009808",
+    "title": "위치 헌터 로빈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q917980"
+    },
+    "titles": {
+      "ko": "위치 헌터 로빈",
+      "en": "Witch Hunter Robin",
+      "ja": "Witch Hunter ROBIN"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009812": {
+    "workId": "wk_000009812",
+    "title": "브레이크 블레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q925693"
+    },
+    "titles": {
+      "ko": "브레이크 블레이드",
+      "en": "Broken Blade",
+      "ja": "ブレイク ブレイド"
+    },
+    "releaseYear": 2014,
+    "creator": "Yūnosuke Yoshinaga",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010059": {
+    "workId": "wk_000010059",
+    "title": "위크로스 디바 얼라이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q99560641"
+    },
+    "titles": {
+      "ko": "위크로스 디바 얼라이브",
+      "en": "WIXOSS Diva(A)Live",
+      "ja": "WIXOSS DIVA(A)LIVE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

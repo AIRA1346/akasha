@@ -1,0 +1,21 @@
+{
+  "wk_000004608": {
+    "workId": "wk_000004608",
+    "title": "고백",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105708865"
+    },
+    "titles": {
+      "ko": "고백",
+      "en": "Go Back",
+      "ja": "告白 (2020年の映画)"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

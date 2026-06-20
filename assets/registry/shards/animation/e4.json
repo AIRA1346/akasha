@@ -1,0 +1,209 @@
+{
+  "wk_000000176": {
+    "workId": "wk_000000176",
+    "title": "블리치",
+    "titles": {
+      "ko": "블리치",
+      "en": "Bleach",
+      "ja": "BLEACH"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "쿠보 타이토",
+    "releaseYear": 2004,
+    "tags": [
+      "액션",
+      "초자연",
+      "사신",
+      "성장"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2004,
+          "episodes": 366
+        },
+        {
+          "label": "천년혈전",
+          "year": 2022,
+          "episodes": 26
+        }
+      ],
+      "latestSeason": "천년혈전",
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_bleach_2004"
+    ],
+    "externalIds": {
+      "tmdb": "30936",
+      "wikidata": "Q5362638"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000212": {
+    "workId": "wk_000000212",
+    "title": "메이드 인 어비스",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "Kinema Citrus",
+    "releaseYear": 2017,
+    "tags": [
+      "판타지",
+      "모험",
+      "다크",
+      "명작"
+    ],
+    "legacyIds": [
+      "sub_animation_made-in-abyss_2017"
+    ],
+    "titles": {
+      "en": "Made IN Abyss",
+      "ko": "메이드 인 어비스"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q61853333"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002229": {
+    "workId": "wk_000002229",
+    "title": "THE MARGINAL SERVICE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115802088"
+    },
+    "titles": {
+      "ko": "THE MARGINAL SERVICE",
+      "en": "The Marginal Service",
+      "ja": "THE MARGINAL SERVICE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002540": {
+    "workId": "wk_000002540",
+    "title": "코마다 위스키 패밀리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117997583"
+    },
+    "titles": {
+      "ko": "코마다 위스키 패밀리",
+      "en": "Komada: A Whisky Family",
+      "ja": "駒田蒸留所へようこそ"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005418": {
+    "workId": "wk_000005418",
+    "title": "기동신세기 건담 X",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2014012"
+    },
+    "titles": {
+      "ko": "기동신세기 건담 X",
+      "en": "After War Gundam X",
+      "ja": "機動新世紀ガンダムX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006113": {
+    "workId": "wk_000006113",
+    "title": "바쿠간 배틀 플래닛",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q25471211"
+    },
+    "titles": {
+      "ko": "바쿠간 배틀 플래닛",
+      "en": "Bakugan: Battle Planet",
+      "ja": "爆丸バトルプラネット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007526": {
+    "workId": "wk_000007526",
+    "title": "리틀 위치 아카데미아: 마법장치의 퍼레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q51790112"
+    },
+    "titles": {
+      "ko": "리틀 위치 아카데미아: 마법장치의 퍼레이드",
+      "en": "Little Witch Academia: The Enchanted Parade",
+      "ja": "リトルウィッチアカデミア 魔法仕掛けのパレード"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008634": {
+    "workId": "wk_000008634",
+    "title": "22/7",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q68325523"
+    },
+    "titles": {
+      "ko": "22/7",
+      "en": "22/7",
+      "ja": "22/7"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009698": {
+    "workId": "wk_000009698",
+    "title": "스트라이크 더 블러드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q89976018"
+    },
+    "titles": {
+      "ko": "스트라이크 더 블러드",
+      "en": "Strike the Blood",
+      "ja": "ストライク・ザ・ブラッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "wk_000001538": {
+    "workId": "wk_000001538",
+    "title": "저승사자입니다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263477"
+    },
+    "titles": {
+      "ko": "저승사자입니다",
+      "en": "Omukae desu",
+      "ja": "お迎えです。"
+    },
+    "creator": "Meca Tanaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005949": {
+    "workId": "wk_000005949",
+    "title": "코쿠리코 언덕에서",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1319658"
+    },
+    "titles": {
+      "ko": "코쿠리코 언덕에서",
+      "en": "Kokurikozaka kara",
+      "ja": "コクリコ坂から"
+    },
+    "creator": "Tetsurō Sayama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008063": {
+    "workId": "wk_000008063",
+    "title": "온천유정 하코네짱",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20724731"
+    },
+    "titles": {
+      "ko": "온천유정 하코네짱",
+      "en": "Onsen Yōsei Hakone-chan",
+      "ja": "温泉幼精ハコネちゃん"
+    },
+    "creator": "Daisuke Yui",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008621": {
+    "workId": "wk_000008621",
+    "title": "빅쿠리맨 2000",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2342897"
+    },
+    "titles": {
+      "ko": "빅쿠리맨 2000",
+      "en": "Bikkuriman",
+      "ja": "ビックリマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

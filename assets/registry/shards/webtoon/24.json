@@ -1,0 +1,21 @@
+{
+  "wk_000003189": {
+    "workId": "wk_000003189",
+    "title": "궁",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q489478"
+    },
+    "titles": {
+      "ko": "궁",
+      "en": "Goong",
+      "ja": "らぶきょん LOVE in 景福宮"
+    },
+    "creator": "박소희",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

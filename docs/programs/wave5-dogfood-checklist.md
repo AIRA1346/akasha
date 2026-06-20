@@ -1,8 +1,12 @@
 # Wave 5 Dogfood Checklist — Connection E2E
 
-> **목적:** Wave 5 Exit Gate · Wave 6 착수 전 수동 검증  
+> **상태:** **legacy** — Wave 4 **catalog-first** Add flow 기준  
 > **갱신:** 2026-06-19  
+> **대체 SSOT:** [archive-first-dogfood-checklist.md](archive-first-dogfood-checklist.md) (R5 Gate · R1 후 실행)  
 > **상위:** [wave5-exit-review.md](wave5-exit-review.md)
+
+> ⚠️ A1 「catalog에 Person 추가 · journal opt-in」은 [Archive-First UX debt](wave4-exit-review.md#4-known-ux-debt--archive-first-r1-대상)입니다.  
+> dogfood는 **R1 Exit 후** `archive-first-dogfood-checklist.md`로 실행하세요.
 
 ---
 
@@ -20,7 +24,7 @@
 
 | # | 단계 | 기대 | Pass | 메모 |
 |---|------|------|:----:|------|
-| A1 | catalog에 Person 추가 (`pe_u_*`) · journal opt-in | `entities/person/*.md` | ☐ | |
+| A1 | catalog에 Person 추가 (`pe_u_*`) · journal opt-in | `entities/person/*.md` | ☐ | **→ R1: `.md` 기본** |
 | A2 | Work journal 본문에 `[[pe_u_xxx\|작가]]` 작성 · 저장 | `.md` persist | ☐ | |
 | A3 | 볼트 갱신 후 (또는 재시작) | `.akasha/link_index.json` 생성 | ☐ | |
 | A4 | Sanctum **보기** 탭 · 링크 tap | Person journal dialog | ☐ | |
@@ -60,5 +64,13 @@
 
 ## Gate
 
-- [ ] A1~A6 Pass
-- [ ] Friction 0건 **또는** R-W5 항목에 spec 반영
+- [ ] **superseded** — [archive-first-dogfood-checklist.md](archive-first-dogfood-checklist.md) 사용
+
+---
+
+## 문서 이력
+
+| 일자 | 변경 |
+|------|------|
+| 2026-06-19 | v1 — Wave 5 Connection dogfood |
+| 2026-06-19 | **v1.1** — legacy 표시 · Archive-First checklist supersede |

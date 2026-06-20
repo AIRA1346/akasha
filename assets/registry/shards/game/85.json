@@ -1,0 +1,21 @@
+{
+  "wk_000004009": {
+    "workId": "wk_000004009",
+    "title": "머나먼 시공 속에서 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240112"
+    },
+    "titles": {
+      "ko": "머나먼 시공 속에서 4",
+      "en": "Harukanaru Toki no Naka de 4",
+      "ja": "遙かなる時空の中で4"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

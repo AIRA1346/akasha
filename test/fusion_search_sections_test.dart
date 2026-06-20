@@ -16,22 +16,33 @@ FusionRegistryHit _hit({
   required String id,
   required EntityAnchorType type,
   FusionRegistrySource source = FusionRegistrySource.userCatalog,
+  bool catalogOnly = false,
 }) {
   return FusionRegistryHit(
     work: _work(id, title: id),
     source: source,
     entityType: type,
+    catalogOnly: catalogOnly,
   );
 }
 
 void main() {
   test('FusionSearchSections splits catalog and global by entity type', () {
     final groups = FusionSearchSections.group(
-      local: const [],
+      localWork: const [],
+      localEntity: const [],
       catalogHits: [
         _hit(id: 'wk_u_aaaaaaaa', type: EntityAnchorType.work),
-        _hit(id: 'pe_u_bbbbbbbb', type: EntityAnchorType.person),
-        _hit(id: 'co_u_cccccccc', type: EntityAnchorType.concept),
+        _hit(
+          id: 'pe_u_bbbbbbbb',
+          type: EntityAnchorType.person,
+          catalogOnly: true,
+        ),
+        _hit(
+          id: 'co_u_cccccccc',
+          type: EntityAnchorType.concept,
+          catalogOnly: true,
+        ),
       ],
       globalHits: [
         _hit(
@@ -48,7 +59,7 @@ void main() {
     );
 
     expect(groups.catalogWork.length, 1);
-    expect(groups.catalogEntity.length, 2);
+    expect(groups.catalogEntityOnly.length, 2);
     expect(groups.globalWork.length, 1);
     expect(groups.globalEntity.length, 1);
     expect(groups.hasRegistryHits, isTrue);

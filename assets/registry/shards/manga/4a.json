@@ -1,0 +1,94 @@
+{
+  "wk_000005543": {
+    "workId": "wk_000005543",
+    "title": "에리스의 성배",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130581122"
+    },
+    "titles": {
+      "ko": "에리스의 성배",
+      "en": "The Holy Grail of Eris",
+      "ja": "エリスの聖杯"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006097": {
+    "workId": "wk_000006097",
+    "title": "마물들은 계획한다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133502845"
+    },
+    "titles": {
+      "ko": "마물들은 계획한다",
+      "en": "The Demons Are Planning Something Good",
+      "ja": "魔のものたちは企てる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006522": {
+    "workId": "wk_000006522",
+    "title": "아기 공룡 렉스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1405721"
+    },
+    "titles": {
+      "ko": "아기 공룡 렉스",
+      "en": "Rex",
+      "ja": "REX 恐竜物語"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007462": {
+    "workId": "wk_000007462",
+    "title": "코바야시네 메이드래곤",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17991408"
+    },
+    "titles": {
+      "ko": "코바야시네 메이드래곤",
+      "en": "Miss Kobayashi's Dragon Maid",
+      "ja": "小林さんちのメイドラゴン"
+    },
+    "creator": "Coolkyousinnjya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009200": {
+    "workId": "wk_000009200",
+    "title": "기동전사 건담 SEED ASTRAY 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2755118"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED ASTRAY 시리즈",
+      "en": "Mobile Suit Gundam SEED Astray",
+      "ja": "機動戦士ガンダムSEED ASTRAYシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

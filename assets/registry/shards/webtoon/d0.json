@@ -1,0 +1,20 @@
+{
+  "wk_000002888": {
+    "workId": "wk_000002888",
+    "title": "月요일 소년",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16961696"
+    },
+    "titles": {
+      "ko": "月요일 소년",
+      "en": "Moon Boy"
+    },
+    "creator": "Lee Young-you",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

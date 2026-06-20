@@ -1,0 +1,195 @@
+{
+  "wk_000000997": {
+    "workId": "wk_000000997",
+    "title": "푸에고 아르디엔테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104767388"
+    },
+    "titles": {
+      "ko": "푸에고 아르디엔테",
+      "en": "Fuego ardiente",
+      "ja": "フエゴ・アルディエンテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001372": {
+    "workId": "wk_000001372",
+    "title": "강철부대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106288594"
+    },
+    "titles": {
+      "ko": "강철부대",
+      "en": "Steel Troops"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001553": {
+    "workId": "wk_000001553",
+    "title": "케리다 에네미가",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068166"
+    },
+    "titles": {
+      "ko": "케리다 에네미가",
+      "en": "Querida Enemiga"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004047": {
+    "workId": "wk_000004047",
+    "title": "머니센스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110114914"
+    },
+    "titles": {
+      "ko": "머니센스",
+      "en": "Q110114914"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006771": {
+    "workId": "wk_000006771",
+    "title": "레슨 인 케미스트리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113630126"
+    },
+    "titles": {
+      "ko": "레슨 인 케미스트리",
+      "en": "Lessons in Chemistry"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006782": {
+    "workId": "wk_000006782",
+    "title": "코펜하겐 카우보이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113699735"
+    },
+    "titles": {
+      "ko": "코펜하겐 카우보이",
+      "en": "Copenhagen Cowboy",
+      "ja": "コペンハーゲン・カウボーイ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006980": {
+    "workId": "wk_000006980",
+    "title": "비 엠비셔스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114089242"
+    },
+    "titles": {
+      "ko": "비 엠비셔스",
+      "en": "Be Mbitious"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008052": {
+    "workId": "wk_000008052",
+    "title": "나 호스트 짱 ~ 일곱 호스트 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11594606"
+    },
+    "titles": {
+      "ko": "나 호스트 짱 ~ 일곱 호스트 ~",
+      "en": "Watashi no hosuto-chan 〜 shi chi nin no hosuto 〜",
+      "ja": "私のホストちゃん〜しちにんのホスト〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008472": {
+    "workId": "wk_000008472",
+    "title": "식채의 왕국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11666060"
+    },
+    "titles": {
+      "ko": "식채의 왕국",
+      "en": "The Kingdom of Ingredients",
+      "ja": "食彩の王国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009615": {
+    "workId": "wk_000009615",
+    "title": "국민맞수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122375935"
+    },
+    "titles": {
+      "ko": "국민맞수",
+      "en": "Q122375935"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010171": {
+    "workId": "wk_000010171",
+    "title": "아메리카",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247400"
+    },
+    "titles": {
+      "ko": "아메리카",
+      "en": "América"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

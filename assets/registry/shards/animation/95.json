@@ -1,0 +1,166 @@
+{
+  "wk_000001281": {
+    "workId": "wk_000001281",
+    "title": "천국의 깃발 아래",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108166770"
+    },
+    "titles": {
+      "ko": "천국의 깃발 아래",
+      "en": "Under the Banner of Heaven",
+      "ja": "アンダー・ザ・ヘブン 信仰の真実"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003277": {
+    "workId": "wk_000003277",
+    "title": "바이바이, 어스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123038864"
+    },
+    "titles": {
+      "ko": "바이바이, 어스",
+      "en": "Bye Bye, Earth",
+      "ja": "ばいばい、アース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003636": {
+    "workId": "wk_000003636",
+    "title": "숨겨! 마키나 양!!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125865039"
+    },
+    "titles": {
+      "ko": "숨겨! 마키나 양!!",
+      "en": "Makina-san's a Love Bot?!",
+      "ja": "かくして！マキナさん！！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003773": {
+    "workId": "wk_000003773",
+    "title": "전지적 독자 시점",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127202248"
+    },
+    "titles": {
+      "ko": "전지적 독자 시점",
+      "en": "Omniscient Reader's Viewpoint",
+      "ja": "全知的な読者の視点から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005623": {
+    "workId": "wk_000005623",
+    "title": "UFO학원의 비밀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21418850"
+    },
+    "titles": {
+      "ko": "UFO학원의 비밀",
+      "en": "The Laws of The Universe Part 0",
+      "ja": "UFO学園の秘密"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005821": {
+    "workId": "wk_000005821",
+    "title": "정글북",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2296189"
+    },
+    "titles": {
+      "ko": "정글북",
+      "en": "The Jungle Book",
+      "ja": "ジャングルブック・少年モーグリ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006340": {
+    "workId": "wk_000006340",
+    "title": "용자 라이딘",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2698000"
+    },
+    "titles": {
+      "ko": "용자 라이딘",
+      "en": "Brave Raideen",
+      "ja": "勇者ライディーン"
+    },
+    "creator": "Yoshitake Suzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006685": {
+    "workId": "wk_000006685",
+    "title": "늑대소년 켄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3195002"
+    },
+    "titles": {
+      "ko": "늑대소년 켄",
+      "en": "Wolf Boy Ken",
+      "ja": "狼少年ケン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009180": {
+    "workId": "wk_000009180",
+    "title": "모두 착한 아이예요",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7496805"
+    },
+    "titles": {
+      "ko": "모두 착한 아이예요",
+      "en": "Shima Shima Tora no Shimajirō",
+      "ja": "しましまとらのしまじろう"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

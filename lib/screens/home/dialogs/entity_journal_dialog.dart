@@ -9,13 +9,16 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
+import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_vault_store.dart';
+import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/file_service.dart';
 import '../../../services/record_link_navigator.dart';
+import '../../../services/record_link_stale_label.dart';
 import '../../../services/same_day_record_service.dart';
 import 'add_catalog_entity_dialog.dart';
 
-/// Entity Sheet — catalog Fact · journal · incoming links (Phase A).
+/// Entity Sheet — archived entity journal · incoming links (Phase A).
 ///
 /// 반환: `true` 삭제됨 · `false` 저장/생성됨 · `null` 변경 없음.
 Future<bool?> showEntityJournalDialog(
@@ -90,6 +93,7 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
   var _editing = false;
   List<String> _incomingPaths = const [];
   var _loadingIncoming = false;
+  var _staleLabelRecordCount = 0;
   List<SameDayRecordRef> _sameDayRefs = const [];
   var _loadingSameDay = false;
 
@@ -131,9 +135,17 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
 
     setState(() => _loadingIncoming = true);
     final paths = await index.incomingRecordPaths(widget.entity.entityId);
+    final uniquePaths = paths.toSet().toList()..sort();
+    final currentTitle = _current?.title ?? widget.entity.title;
+    final stale = await RecordLinkStaleLabel.countForEntity(
+      linkIndex: index,
+      entityId: widget.entity.entityId,
+      currentTitle: currentTitle,
+    );
     if (!mounted) return;
     setState(() {
-      _incomingPaths = paths;
+      _incomingPaths = uniquePaths;
+      _staleLabelRecordCount = stale.staleRecordCount;
       _loadingIncoming = false;
     });
   }
@@ -149,21 +161,40 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
       return;
     }
 
-    if (_creating || _current == null) {
-      _current = await _store.saveCatalogEntity(
-        vaultPath: widget.vaultPath,
-        entity: widget.entity,
-        body: body,
-      );
-    } else {
-      _current = await _store.updateEntry(
-        entry: _current!,
-        body: body,
-        title: widget.entity.title,
+    try {
+      if (_creating || _current == null) {
+        _current = await _store.saveCatalogEntity(
+          vaultPath: widget.vaultPath,
+          entity: widget.entity,
+          body: body,
+        );
+      } else {
+        _current = await _store.updateEntry(
+          entry: _current!,
+          body: body,
+          title: _current!.title,
+        );
+      }
+
+      await _syncCatalogFromJournal(_current!);
+
+      if (mounted) Navigator.pop(context, false);
+    } on EntityVaultPathConflict catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.userMessage)),
       );
     }
+  }
 
-    if (mounted) Navigator.pop(context, false);
+  Future<void> _syncCatalogFromJournal(EntityJournalEntry entry) async {
+    final catalog = widget.userCatalog;
+    if (catalog == null) return;
+    await EntityArchiveService.syncCatalogFromJournal(
+      draft: widget.entity,
+      entry: entry,
+      userCatalog: catalog,
+    );
   }
 
   Future<void> _delete() async {
@@ -186,7 +217,15 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
     );
     if (ok == true && mounted) {
       if (_current != null) {
-        await _store.deleteEntry(_current!.storagePath);
+        final catalog = widget.userCatalog;
+        if (catalog != null) {
+          await EntityArchiveService.deleteArchivedEntity(
+            entry: _current!,
+            userCatalog: catalog,
+          );
+        } else {
+          await _store.deleteEntry(_current!.storagePath);
+        }
       }
       Navigator.pop(context, true);
     }
@@ -314,11 +353,14 @@ class _EntityJournalDialogState extends State<_EntityJournalDialog> {
                   const SizedBox(height: 8),
                 ],
                 if (!_editing && !_creating) ...[
-                  _IncomingLinksSection(
-                    loading: _loadingIncoming,
-                    paths: _incomingPaths,
-                    onOpen: widget.onOpenWork != null ? _openIncoming : null,
-                  ),
+                  if (widget.linkIndex != null)
+                    _IncomingLinksSection(
+                      loading: _loadingIncoming,
+                      paths: _incomingPaths,
+                      staleLabelRecordCount: _staleLabelRecordCount,
+                      onRefresh: _loadIncoming,
+                      onOpen: widget.onOpenWork != null ? _openIncoming : null,
+                    ),
                   _SameDaySection(
                     loading: _loadingSameDay,
                     refs: _sameDayRefs,
@@ -478,11 +520,15 @@ class _IncomingLinksSection extends StatelessWidget {
   const _IncomingLinksSection({
     required this.loading,
     required this.paths,
+    required this.staleLabelRecordCount,
+    this.onRefresh,
     this.onOpen,
   });
 
   final bool loading;
   final List<String> paths;
+  final int staleLabelRecordCount;
+  final Future<void> Function()? onRefresh;
   final Future<void> Function(String path)? onOpen;
 
   @override
@@ -494,40 +540,72 @@ class _IncomingLinksSection extends StatelessWidget {
       );
     }
 
-    if (paths.isEmpty) return const SizedBox.shrink();
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          '링크한 Record (${paths.length})',
-          style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: Colors.tealAccent,
-          ),
-        ),
-        const SizedBox(height: 6),
-        ...paths.map((path) {
-          final label = p.basename(path);
-          return Material(
-            color: const Color(0xFF252535),
-            borderRadius: BorderRadius.circular(6),
-            child: ListTile(
-              dense: true,
-              visualDensity: VisualDensity.compact,
-              leading: const Icon(Icons.link, size: 16),
-              title: Text(label, style: const TextStyle(fontSize: 12)),
-              subtitle: Text(
-                path,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 10),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '연결된 Record ${paths.length}개',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.tealAccent,
+                    ),
+                  ),
+                  if (staleLabelRecordCount > 0) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      '제목 갱신 필요 ${staleLabelRecordCount}개',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.amber.shade200,
+                      ),
+                    ),
+                  ],
+                ],
               ),
-              onTap: onOpen != null ? () => onOpen!(path) : null,
             ),
-          );
-        }),
+            if (onRefresh != null)
+              IconButton(
+                key: const Key('entity_incoming_refresh'),
+                icon: const Icon(Icons.refresh, size: 18),
+                tooltip: 'Incoming Links 새로고침',
+                visualDensity: VisualDensity.compact,
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+                onPressed: onRefresh,
+              ),
+          ],
+        ),
+        if (paths.isNotEmpty) ...[
+          const SizedBox(height: 6),
+          ...paths.map((path) {
+            final label = p.basename(path);
+            return Material(
+              color: const Color(0xFF252535),
+              borderRadius: BorderRadius.circular(6),
+              child: ListTile(
+                dense: true,
+                visualDensity: VisualDensity.compact,
+                leading: const Icon(Icons.link, size: 16),
+                title: Text(label, style: const TextStyle(fontSize: 12)),
+                subtitle: Text(
+                  path,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 10),
+                ),
+                onTap: onOpen != null ? () => onOpen!(path) : null,
+              ),
+            );
+          }),
+        ],
       ],
     );
   }

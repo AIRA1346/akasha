@@ -1,0 +1,188 @@
+{
+  "wk_000001649": {
+    "workId": "wk_000001649",
+    "title": "신비한 별의 쌍둥이 공주 꼬옥!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255027"
+    },
+    "titles": {
+      "ko": "신비한 별의 쌍둥이 공주 꼬옥!",
+      "en": "Fushigiboshi no Futagohime Gyu!",
+      "ja": "ふしぎ星の☆ふたご姫 Gyu!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002082": {
+    "workId": "wk_000002082",
+    "title": "빛의 전사 프리큐어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1151646"
+    },
+    "titles": {
+      "ko": "빛의 전사 프리큐어",
+      "en": "Pretty Cure",
+      "ja": "ふたりはプリキュア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002223": {
+    "workId": "wk_000002223",
+    "title": "신차원! 짱구는 못말려 THE MOVIE: 초능력 대결전 ~날아라 수제 김밥~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115657429"
+    },
+    "titles": {
+      "ko": "신차원! 짱구는 못말려 THE MOVIE: 초능력 대결전 ~날아라 수제 김밥~",
+      "en": "Shin Jigen! Crayon Shin-chan the Movie: Chounouryoku Daikessen - Tobe Tobe Temakizushi",
+      "ja": "しん次元! クレヨンしんちゃん THE MOVIE 超能力大決戦 〜とべとべ手巻き寿司〜"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002900": {
+    "workId": "wk_000002900",
+    "title": "프리!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12019559"
+    },
+    "titles": {
+      "ko": "프리!",
+      "en": "Free!",
+      "ja": "Free!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004505": {
+    "workId": "wk_000004505",
+    "title": "리의 탐정사무소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136147704"
+    },
+    "titles": {
+      "ko": "리의 탐정사무소",
+      "en": "Lee's Detective Agency",
+      "ja": "リー探偵事務所"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004962": {
+    "workId": "wk_000004962",
+    "title": "은하철도 999: 이터널 판타지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16173685"
+    },
+    "titles": {
+      "ko": "은하철도 999: 이터널 판타지",
+      "en": "Galaxy Express 999 : Eternal Fantasy",
+      "ja": "銀河鉄道999 エターナル・ファンタジー"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006533": {
+    "workId": "wk_000006533",
+    "title": "명탐정 코난: 천국으로의 카운트다운",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q287096"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 천국으로의 카운트다운",
+      "en": "Case Closed: Countdown to Heaven",
+      "ja": "名探偵コナン 天国へのカウントダウン"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008918": {
+    "workId": "wk_000008918",
+    "title": "노부나가 콘체르토",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7046197"
+    },
+    "titles": {
+      "ko": "노부나가 콘체르토",
+      "en": "Nobunaga Concerto",
+      "ja": "信長協奏曲"
+    },
+    "releaseYear": 2009,
+    "creator": "Ayumi Ishii",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008919": {
+    "workId": "wk_000008919",
+    "title": "드래곤볼 改",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704651"
+    },
+    "titles": {
+      "ko": "드래곤볼 改",
+      "en": "Dragon Ball Z Kai",
+      "ja": "ドラゴンボール改"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009814": {
+    "workId": "wk_000009814",
+    "title": "강철 지그",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q92808"
+    },
+    "titles": {
+      "ko": "강철 지그",
+      "en": "Steel Jeeg",
+      "ja": "鋼鉄ジーグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "wk_000004533": {
+    "workId": "wk_000004533",
+    "title": "강각의 레기오스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1087664"
+    },
+    "titles": {
+      "ko": "강각의 레기오스",
+      "en": "Chrome Shelled Regios",
+      "ja": "鋼殻のレギオス"
+    },
+    "releaseYear": 2006,
+    "creator": "Amagi Shusuke",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004669": {
+    "workId": "wk_000004669",
+    "title": "혐오스런 마츠코의 일생",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10884462"
+    },
+    "titles": {
+      "ko": "혐오스런 마츠코의 일생",
+      "en": "Q10884462",
+      "ja": "嫌われ松子の一生"
+    },
+    "releaseYear": 2003,
+    "creator": "Muneki Yamada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006212": {
+    "workId": "wk_000006212",
+    "title": "비올레타",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110879058"
+    },
+    "titles": {
+      "ko": "비올레타",
+      "en": "Violeta"
+    },
+    "releaseYear": 2022,
+    "creator": "Isabel Allende",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008037": {
+    "workId": "wk_000008037",
+    "title": "어나더 페이스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284182"
+    },
+    "titles": {
+      "ko": "어나더 페이스",
+      "en": "Another Face",
+      "ja": "アナザーフェイス (小説)"
+    },
+    "creator": "Shun'ichi Dōba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

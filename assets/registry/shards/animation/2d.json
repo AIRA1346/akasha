@@ -1,0 +1,173 @@
+{
+  "wk_000000208": {
+    "workId": "wk_000000208",
+    "title": "킹덤",
+    "titles": {
+      "ko": "킹덤",
+      "en": "Kingdom",
+      "ja": "キングダム"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "하라 야스히사",
+    "releaseYear": 2012,
+    "tags": [
+      "역사",
+      "전쟁",
+      "성장",
+      "액션"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1~5기",
+          "year": 2012,
+          "episodes": 120
+        }
+      ],
+      "latestSeason": "1~5기",
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_kingdom_2012"
+    ],
+    "externalIds": {
+      "tmdb": "72408",
+      "wikidata": "Q103970675"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001066": {
+    "workId": "wk_000001066",
+    "title": "동쪽의 에덴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069002"
+    },
+    "titles": {
+      "ko": "동쪽의 에덴",
+      "en": "Eden of the East",
+      "ja": "東のエデン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002219": {
+    "workId": "wk_000002219",
+    "title": "해치의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155809"
+    },
+    "titles": {
+      "ko": "해치의 모험",
+      "en": "The Adventures of Hutch the Honeybee",
+      "ja": "昆虫物語 みなしごハッチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002534": {
+    "workId": "wk_000002534",
+    "title": "그녀가 공작저로 가야 했던 사정",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117355470"
+    },
+    "titles": {
+      "ko": "그녀가 공작저로 가야 했던 사정",
+      "en": "Why Raeliana Ended Up at the Duke's Mansion",
+      "ja": "彼女が公爵邸に行った理由"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002631": {
+    "workId": "wk_000002631",
+    "title": "신기동전기 건담 W Endless Waltz",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186878"
+    },
+    "titles": {
+      "ko": "신기동전기 건담 W Endless Waltz",
+      "en": "Gundam Wing: Endless Waltz",
+      "ja": "新機動戦記ガンダムW Endless Waltz"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004426": {
+    "workId": "wk_000004426",
+    "title": "오니의 신부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134783546"
+    },
+    "titles": {
+      "ko": "오니의 신부",
+      "en": "The Ogre's Bride",
+      "ja": "鬼の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008079": {
+    "workId": "wk_000008079",
+    "title": "루팡 3세: 칼리오스트로의 성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q608079"
+    },
+    "titles": {
+      "ko": "루팡 3세: 칼리오스트로의 성",
+      "en": "The Castle of Cagliostro",
+      "ja": "ルパン三世 カリオストロの城"
+    },
+    "releaseYear": 1979,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009992": {
+    "workId": "wk_000009992",
+    "title": "홀로의 그라피티",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98608925"
+    },
+    "titles": {
+      "ko": "홀로의 그라피티",
+      "en": "Holo no Graffiti",
+      "ja": "ホロのぐらふぃてぃ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

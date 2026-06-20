@@ -1,0 +1,214 @@
+{
+  "wk_000000495": {
+    "workId": "wk_000000495",
+    "title": "펫 비타민",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100997875"
+    },
+    "titles": {
+      "ko": "펫 비타민",
+      "en": "Pet Vitamin"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001105": {
+    "workId": "wk_000001105",
+    "title": "유금세월",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105212144"
+    },
+    "titles": {
+      "ko": "유금세월",
+      "en": "My Best Friend's Story"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001542": {
+    "workId": "wk_000001542",
+    "title": "더 페리퍼럴",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106742665"
+    },
+    "titles": {
+      "ko": "더 페리퍼럴",
+      "en": "The Peripheral",
+      "ja": "ペリフェラル -接続された未来-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001673": {
+    "workId": "wk_000001673",
+    "title": "이벤트를 확인하세요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107920976"
+    },
+    "titles": {
+      "ko": "이벤트를 확인하세요",
+      "en": "Q107920976",
+      "ja": "イベントを確認してください"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001895": {
+    "workId": "wk_000001895",
+    "title": "게릴라 콘서트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851530"
+    },
+    "titles": {
+      "ko": "게릴라 콘서트",
+      "en": "Q10851530"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003502": {
+    "workId": "wk_000003502",
+    "title": "한글용사 아이야",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461609"
+    },
+    "titles": {
+      "ko": "한글용사 아이야",
+      "en": "Hangeul Warrior Aiya"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005527": {
+    "workId": "wk_000005527",
+    "title": "내일의 와(WA)!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257473"
+    },
+    "titles": {
+      "ko": "내일의 와(WA)!",
+      "en": "Q11257473",
+      "ja": "あすのWA!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005849": {
+    "workId": "wk_000005849",
+    "title": "도쿠6 도쿠시마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11273069"
+    },
+    "titles": {
+      "ko": "도쿠6 도쿠시마",
+      "en": "Q11273069",
+      "ja": "とく6徳島"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006007": {
+    "workId": "wk_000006007",
+    "title": "이누고에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286911"
+    },
+    "titles": {
+      "ko": "이누고에",
+      "en": "Q11286911",
+      "ja": "イヌゴエ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006075": {
+    "workId": "wk_000006075",
+    "title": "코미디 콜로세움",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11289383"
+    },
+    "titles": {
+      "ko": "코미디 콜로세움",
+      "en": "Comedy Colosseum",
+      "ja": "ウンナン極限ネタバトル! ザ・イロモネア 笑わせたら100万円"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009676": {
+    "workId": "wk_000009676",
+    "title": "데블스 플랜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122740095"
+    },
+    "titles": {
+      "ko": "데블스 플랜",
+      "en": "The Devil's Plan",
+      "ja": "悪魔の計略 ～デビルズ・プラン～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009961": {
+    "workId": "wk_000009961",
+    "title": "지붕 위의 남자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124296491"
+    },
+    "titles": {
+      "ko": "지붕 위의 남자",
+      "en": "Q124296491"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

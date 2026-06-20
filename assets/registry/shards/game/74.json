@@ -1,0 +1,115 @@
+{
+  "wk_000000718": {
+    "workId": "wk_000000718",
+    "title": "마이니치 잇쇼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041243"
+    },
+    "titles": {
+      "ko": "마이니치 잇쇼",
+      "en": "Mainichi Issho",
+      "ja": "まいにちいっしょ"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000834": {
+    "workId": "wk_000000834",
+    "title": "갤러가",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1043534"
+    },
+    "titles": {
+      "ko": "갤러가",
+      "en": "Galaga",
+      "ja": "ギャラガ"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003644": {
+    "workId": "wk_000003644",
+    "title": "킬러 이즈 데드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11125803"
+    },
+    "titles": {
+      "ko": "킬러 이즈 데드",
+      "en": "Killer Is Dead",
+      "ja": "KILLER IS DEAD"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003728": {
+    "workId": "wk_000003728",
+    "title": "킹덤 하츠 IV",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111550485"
+    },
+    "titles": {
+      "ko": "킹덤 하츠 IV",
+      "en": "Kingdom Hearts IV",
+      "ja": "キングダム ハーツIV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004297": {
+    "workId": "wk_000004297",
+    "title": "퍼즐앤드래곤",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11280991"
+    },
+    "titles": {
+      "ko": "퍼즐앤드래곤",
+      "en": "Puzzle & Dragons",
+      "ja": "パズル&ドラゴンズ"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007484": {
+    "workId": "wk_000007484",
+    "title": "연애×로열",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122367719"
+    },
+    "titles": {
+      "ko": "연애×로열",
+      "en": "Renai X Royale - Love's a Battle",
+      "ja": "恋愛×ロワイアル"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

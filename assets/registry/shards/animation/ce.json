@@ -1,0 +1,205 @@
+{
+  "wk_000000578": {
+    "workId": "wk_000000578",
+    "title": "거울 속의 몽환성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1026730"
+    },
+    "titles": {
+      "ko": "거울 속의 몽환성",
+      "en": "Inuyasha the Movie: The Castle Beyond the Looking Glass",
+      "ja": "映画犬夜叉 鏡の中の夢幻城"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001824": {
+    "workId": "wk_000001824",
+    "title": "겐지 이야기 천년기 Genji",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134579"
+    },
+    "titles": {
+      "ko": "겐지 이야기 천년기 Genji",
+      "en": "Genji Monogatari Sennenki",
+      "ja": "源氏物語千年紀 Genji"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002537": {
+    "workId": "wk_000002537",
+    "title": "어리석은 천사는 악마와 춤춘다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117841659"
+    },
+    "titles": {
+      "ko": "어리석은 천사는 악마와 춤춘다",
+      "en": "The Foolish Angel Dances with the Devil",
+      "ja": "愚かな天使は悪魔と踊る"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004419": {
+    "workId": "wk_000004419",
+    "title": "29세 독신 중견 모험가의 일상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134350657"
+    },
+    "titles": {
+      "ko": "29세 독신 중견 모험가의 일상",
+      "en": "An Adventurer's Daily Grind at Age 29",
+      "ja": "29歳独身中堅冒険者の日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006471": {
+    "workId": "wk_000006471",
+    "title": "극장판 어드벤처 타임: 비밀의 아일랜드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28452609"
+    },
+    "titles": {
+      "ko": "극장판 어드벤처 타임: 비밀의 아일랜드",
+      "en": "Islands"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008301": {
+    "workId": "wk_000008301",
+    "title": "꼬마 마법사 레미 : 견습 마법사를 찾아서",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63312461"
+    },
+    "titles": {
+      "ko": "꼬마 마법사 레미 : 견습 마법사를 찾아서",
+      "en": "Looking for Magical Doremi",
+      "ja": "魔女見習いをさがして"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009131": {
+    "workId": "wk_000009131",
+    "title": "울프스 레인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q747417"
+    },
+    "titles": {
+      "ko": "울프스 레인",
+      "en": "Wolf's Rain",
+      "ja": "WOLF'S RAIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009209": {
+    "workId": "wk_000009209",
+    "title": "더 바이블",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7717444"
+    },
+    "titles": {
+      "ko": "더 바이블",
+      "en": "The Bible",
+      "ja": "THE BIBLE～選ばれし者たちの歴史物語～"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009361": {
+    "workId": "wk_000009361",
+    "title": "남과 북",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q833578"
+    },
+    "titles": {
+      "ko": "남과 북",
+      "en": "North and South",
+      "ja": "南北戦争物語 愛と自由への大地"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009564": {
+    "workId": "wk_000009564",
+    "title": "파이어볼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q869215"
+    },
+    "titles": {
+      "ko": "파이어볼",
+      "en": "Fireball",
+      "ja": "ファイアボール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010062": {
+    "workId": "wk_000010062",
+    "title": "미래 동물 대탐험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24605"
+    },
+    "titles": {
+      "ko": "미래 동물 대탐험",
+      "en": "The Future Is Wild",
+      "ja": "フューチャー・イズ・ワイルド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

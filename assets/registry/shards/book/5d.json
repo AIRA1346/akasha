@@ -1,0 +1,42 @@
+{
+  "wk_000006557": {
+    "workId": "wk_000006557",
+    "title": "조던의 아이들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1114499"
+    },
+    "titles": {
+      "ko": "조던의 아이들",
+      "en": "Orphans of the Sky",
+      "ja": "宇宙の孤児"
+    },
+    "releaseYear": 1963,
+    "creator": "Robert A. Heinlein",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007615": {
+    "workId": "wk_000007615",
+    "title": "왕의 여자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262510"
+    },
+    "titles": {
+      "ko": "왕의 여자",
+      "en": "Resting Cloud",
+      "ja": "寝むって行くあの雲よ"
+    },
+    "releaseYear": 1968,
+    "creator": "Park Chong-hwa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

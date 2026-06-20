@@ -103,7 +103,22 @@ MVP는 **정확성 우선 full rebuild**. 볼트 규모(개인 vault)에서 debo
 
 Fusion catalog hit · wiki tap · Browse Entity tile은 **동일 Entity Sheet** surface.
 
-### 2.7 Port
+### 2.7 Link Identity — R2-B Authoring (Locked)
+
+> **SSOT:** [link-identity-policy.md](../policy/link-identity-policy.md)
+
+| | |
+|--|--|
+| **Entity identity SSOT** | `entityId` |
+| **Authoring canonical storage** | `[[entityId\|Title]]` (picker가 id를 알 때) |
+| **Fallback storage** | `[[Title]]` — 수동 · Obsidian · best-effort resolve |
+| **Resolve order** | 1) explicitId 2) title fallback |
+| **Incoming index** | explicitId 직접 + title resolve (R2-A) |
+| **Preview** | label(Title)만 표시 · canonical form 전제 |
+
+Wave 5 ADR은 **파싱·인덱스·navigate**를 정의한다. R2-B policy는 **authoring이 vault에 무엇을 쓸지**를 잠근다.
+
+### 2.8 Port
 
 ```dart
 abstract interface class RecordLinkPort {
@@ -153,3 +168,4 @@ abstract interface class RecordLinkPort {
 | 일자 | 변경 |
 |------|------|
 | 2026-06-19 | v1 — Wave 5 MVP 코드 정합 · ADR-013 확정 |
+| 2026-06-19 | v1.1 — §2.7 R2-B Link Identity Policy Lock ([link-identity-policy.md](../policy/link-identity-policy.md)) |

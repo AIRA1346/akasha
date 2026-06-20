@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/entity_link_selection.dart';
 import '../services/markdown_body_merger.dart';
 
 /// 마크다운 본문 편집 — 선택 영역 wrap·삽입 (순수 함수).
@@ -149,6 +150,29 @@ class MarkdownEditActions {
     return TextEditPatch(
       text: newText,
       selection: TextSelection(baseOffset: urlStart, extentOffset: urlEnd),
+    );
+  }
+
+  /// Entity wiki link — canonical `[[entityId|Title]]` (R2-B).
+  static TextEditPatch insertWikiLink({
+    required String text,
+    required TextSelection selection,
+    required String entityId,
+    required String title,
+  }) {
+    final token = EntityLinkSelection(
+      entityId: entityId,
+      title: title,
+      entityType: '',
+    ).canonicalWikiToken;
+
+    final sel = _clampedSelection(text, selection);
+    final start = sel.isValid ? sel.start : text.length;
+    final end = sel.isValid ? sel.end : text.length;
+    final newText = text.replaceRange(start, end, token);
+    return TextEditPatch(
+      text: newText,
+      selection: TextSelection.collapsed(offset: start + token.length),
     );
   }
 

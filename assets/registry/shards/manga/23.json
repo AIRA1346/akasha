@@ -1,0 +1,60 @@
+{
+  "wk_000002877": {
+    "workId": "wk_000002877",
+    "title": "전국요호",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11496014"
+    },
+    "titles": {
+      "ko": "전국요호",
+      "en": "Sengoku Youko",
+      "ja": "戦国妖狐"
+    },
+    "releaseYear": 2007,
+    "creator": "Satoshi Mizukami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005953": {
+    "workId": "wk_000005953",
+    "title": "인외 교실의 인간 혐오 교사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q132182371"
+    },
+    "titles": {
+      "ko": "인외 교실의 인간 혐오 교사",
+      "en": "A Misanthrope Teaches a Class for Demi-Humans",
+      "ja": "人外教室の人間嫌い教師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008617": {
+    "workId": "wk_000008617",
+    "title": "다!다!다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2293617"
+    },
+    "titles": {
+      "ko": "다!다!다!",
+      "en": "UFO Baby",
+      "ja": "だぁ!だぁ!だぁ!"
+    },
+    "releaseYear": 2000,
+    "creator": "Mika Kawamura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

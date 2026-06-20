@@ -1,0 +1,116 @@
+{
+  "wk_000001217": {
+    "workId": "wk_000001217",
+    "title": "동굴 이야기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051853"
+    },
+    "titles": {
+      "ko": "동굴 이야기",
+      "en": "Cave Story",
+      "ja": "洞窟物語"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002558": {
+    "workId": "wk_000002558",
+    "title": "마블 미드나잇 선즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108273563"
+    },
+    "titles": {
+      "ko": "마블 미드나잇 선즈",
+      "en": "Midnight Suns",
+      "ja": "マーベル ミッドナイト・サンズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002824": {
+    "workId": "wk_000002824",
+    "title": "노부나가의 야망 열풍전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856187"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 열풍전",
+      "en": "Nobunaga's Ambition: Reppuden",
+      "ja": "信長の野望・烈風伝"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004658": {
+    "workId": "wk_000004658",
+    "title": "에일리언 솔저",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134672"
+    },
+    "titles": {
+      "ko": "에일리언 솔저",
+      "en": "Alien Soldier",
+      "ja": "エイリアンソルジャー"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009194": {
+    "workId": "wk_000009194",
+    "title": "부계에 잠든 왕녀의 아바돈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133864659"
+    },
+    "titles": {
+      "ko": "부계에 잠든 왕녀의 아바돈",
+      "en": "Abaddon: Princess of the Decay",
+      "ja": "腐界に眠る王女のアバドーン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010175": {
+    "workId": "wk_000010175",
+    "title": "스포일러가 너무 심한 RPG2 ―절친의 본모습은 대마왕―",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140184385"
+    },
+    "titles": {
+      "ko": "스포일러가 너무 심한 RPG2 ―절친의 본모습은 대마왕―",
+      "en": "Heavy Spoilers RPG 2: Your best friend is actually the great demon king",
+      "ja": "ネタバレが激しすぎるRPG2―親友の真の姿は大魔王―"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

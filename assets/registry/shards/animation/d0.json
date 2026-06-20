@@ -1,0 +1,151 @@
+{
+  "wk_000001563": {
+    "workId": "wk_000001563",
+    "title": "시끌별 녀석들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110362821"
+    },
+    "titles": {
+      "ko": "시끌별 녀석들",
+      "en": "Urusei Yatsura",
+      "ja": "うる星やつら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003717": {
+    "workId": "wk_000003717",
+    "title": "극장판 귀멸의 칼날: 무한성편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126948105"
+    },
+    "titles": {
+      "ko": "극장판 귀멸의 칼날: 무한성편",
+      "en": "Demon Slayer: Kimetsu no Yaiba – Infinity Castle",
+      "ja": "劇場版「鬼滅の刃」無限城編"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004716": {
+    "workId": "wk_000004716",
+    "title": "로미오x줄리엣",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1416758"
+    },
+    "titles": {
+      "ko": "로미오x줄리엣",
+      "en": "Romeo × Juliet",
+      "ja": "ロミオ×ジュリエット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005683": {
+    "workId": "wk_000005683",
+    "title": "원피스 필름 골드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21646817"
+    },
+    "titles": {
+      "ko": "원피스 필름 골드",
+      "en": "One Piece Film: Gold",
+      "ja": "ONE PIECE FILM GOLD"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006525": {
+    "workId": "wk_000006525",
+    "title": "뿌이뿌이 모루카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28684947"
+    },
+    "titles": {
+      "ko": "뿌이뿌이 모루카",
+      "en": "Pui Pui Molcar",
+      "ja": "PUI PUI モルカー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008639": {
+    "workId": "wk_000008639",
+    "title": "거꾸로 된 파테마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6940888"
+    },
+    "titles": {
+      "ko": "거꾸로 된 파테마",
+      "en": "Patema Inverted",
+      "ja": "サカサマのパテマ"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009036": {
+    "workId": "wk_000009036",
+    "title": "특장기병 돌박",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711654"
+    },
+    "titles": {
+      "ko": "특장기병 돌박",
+      "en": "Special Armored Battalion Dorvack",
+      "ja": "特装機兵ドルバック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009697": {
+    "workId": "wk_000009697",
+    "title": "갤러리 페이크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q898667"
+    },
+    "titles": {
+      "ko": "갤러리 페이크",
+      "en": "Gallery Fake",
+      "ja": "ギャラリーフェイク"
+    },
+    "releaseYear": 2005,
+    "creator": "Fujihiko Hosono",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

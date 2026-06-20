@@ -1,0 +1,165 @@
+{
+  "wk_000000062": {
+    "workId": "wk_000000062",
+    "title": "콜 오브 듀티: MW II",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Infinity Ward",
+    "releaseYear": 2022,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1938090_2022"
+    ],
+    "titles": {
+      "en": "Call of Duty®",
+      "ko": "콜 오브 듀티: MW II"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1938090",
+      "wikidata": "Q76255"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002721": {
+    "workId": "wk_000002721",
+    "title": "마이크로소프트 솔리테어 컬렉션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10851671"
+    },
+    "titles": {
+      "ko": "마이크로소프트 솔리테어 컬렉션",
+      "en": "Microsoft Solitaire Collection",
+      "ja": "Microsoft Solitaire Collection"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003131": {
+    "workId": "wk_000003131",
+    "title": "타임라이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109564597"
+    },
+    "titles": {
+      "ko": "타임라이",
+      "en": "Timelie",
+      "ja": "Timelie - タイムライ"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004006": {
+    "workId": "wk_000004006",
+    "title": "툼레이더 III",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1123794"
+    },
+    "titles": {
+      "ko": "툼레이더 III",
+      "en": "Tomb Raider III"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005100": {
+    "workId": "wk_000005100",
+    "title": "테일즈 오브 베스페리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141823"
+    },
+    "titles": {
+      "ko": "테일즈 오브 베스페리아",
+      "en": "Tales of Vesperia",
+      "ja": "テイルズ オブ ヴェスペリア"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007930": {
+    "workId": "wk_000007930",
+    "title": "미소녀 만화경 이문 설녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125636115"
+    },
+    "titles": {
+      "ko": "미소녀 만화경 이문 설녀",
+      "en": "Bishoujo Mangekyou Ibun - Yuki Onna",
+      "ja": "美少女万華鏡異聞 雪おんな"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009648": {
+    "workId": "wk_000009648",
+    "title": "타임 테이커즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135908152"
+    },
+    "titles": {
+      "ko": "타임 테이커즈",
+      "en": "Time Takers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009829": {
+    "workId": "wk_000009829",
+    "title": "아이언맨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1369354"
+    },
+    "titles": {
+      "ko": "아이언맨",
+      "en": "Iron Man",
+      "ja": "ゲーム版アイアンマン"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

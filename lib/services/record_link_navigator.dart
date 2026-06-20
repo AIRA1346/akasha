@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
+import 'dart:io';
 
 import '../core/archiving/entity_anchor.dart';
 import '../core/archiving/record_link.dart';
@@ -55,7 +56,7 @@ abstract final class RecordLinkNavigator {
 
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('「$title」 Entity를 catalog에서 찾지 못했습니다.')),
+      SnackBar(content: Text('「$title」 Entity를 아카이브에서 찾지 못했습니다.')),
     );
   }
 
@@ -66,19 +67,86 @@ abstract final class RecordLinkNavigator {
     required UserCatalogPort userCatalog,
     required void Function(AkashaItem item) onOpenWork,
   }) async {
-    final normalized = p.normalize(storagePath);
-    for (final item in vaultItems) {
-      final path = item.filePath;
-      if (path != null && p.normalize(path) == normalized) {
-        onOpenWork(item);
-        return;
-      }
+    final item = await findVaultItemForRecordPath(
+      storagePath: storagePath,
+      vaultItems: vaultItems,
+    );
+    if (item != null) {
+      onOpenWork(item);
+      return;
     }
 
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('기록 열기: ${p.basename(normalized)}')),
+      SnackBar(content: Text('기록 열기: ${p.basename(p.normalize(storagePath))}')),
     );
+  }
+
+  /// incoming link path → vault work item (path · work_id · unique basename).
+  static Future<AkashaItem?> findVaultItemForRecordPath({
+    required String storagePath,
+    required List<AkashaItem> vaultItems,
+  }) async {
+    final normalized = p.normalize(storagePath);
+
+    for (final item in vaultItems) {
+      final path = item.filePath;
+      if (path != null && _pathsEqual(path, normalized)) {
+        return item;
+      }
+    }
+
+    final workId = await _readWorkIdFromMd(normalized);
+    if (workId != null && workId.isNotEmpty) {
+      for (final item in vaultItems) {
+        if (item.workId == workId) return item;
+      }
+    }
+
+    final base = p.basename(normalized).toLowerCase();
+    AkashaItem? basenameMatch;
+    var basenameCount = 0;
+    for (final item in vaultItems) {
+      final path = item.filePath;
+      if (path == null || path.isEmpty) continue;
+      if (p.basename(path).toLowerCase() != base) continue;
+      basenameMatch = item;
+      basenameCount++;
+    }
+    if (basenameCount == 1) return basenameMatch;
+
+    return null;
+  }
+
+  static bool _pathsEqual(String a, String b) {
+    final na = p.normalize(a);
+    final nb = p.normalize(b);
+    if (Platform.isWindows) {
+      return na.toLowerCase() == nb.toLowerCase();
+    }
+    return na == nb;
+  }
+
+  static final RegExp _workIdPattern = RegExp(
+    r'''work_id:\s*["']?([^"'\s]+)["']?''',
+  );
+
+  static Future<String?> _readWorkIdFromMd(String mdPath) async {
+    try {
+      final file = File(mdPath);
+      if (!await file.exists()) return null;
+      final lines = (await file.readAsString()).split('\n');
+      if (lines.isEmpty || lines.first.trim() != '---') return null;
+
+      for (var i = 1; i < lines.length; i++) {
+        if (lines[i].trim() == '---') break;
+        final match = _workIdPattern.firstMatch(lines[i]);
+        if (match != null) return match.group(1)?.trim();
+      }
+      return null;
+    } catch (_) {
+      return null;
+    }
   }
 
   static String? resolveTitleToEntityId(
@@ -141,7 +209,7 @@ abstract final class RecordLinkNavigator {
     if (catalog == null) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('catalog에 $entityId 가 없습니다.')),
+        SnackBar(content: Text('「$entityId」 Entity를 찾을 수 없습니다.')),
       );
       return;
     }

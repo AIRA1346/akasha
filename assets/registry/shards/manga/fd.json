@@ -1,0 +1,117 @@
+{
+  "wk_000001840": {
+    "workId": "wk_000001840",
+    "title": "푸니르는 귀여운 슬라임",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113159304"
+    },
+    "titles": {
+      "ko": "푸니르는 귀여운 슬라임",
+      "en": "Puniru Is a Cute Slime",
+      "ja": "ぷにるはかわいいスライム"
+    },
+    "creator": "Maedakun",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001842": {
+    "workId": "wk_000001842",
+    "title": "KATSU!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1131859"
+    },
+    "titles": {
+      "ko": "KATSU!",
+      "en": "Katsu!",
+      "ja": "KATSU!"
+    },
+    "creator": "Mitsuru Adachi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004946": {
+    "workId": "wk_000004946",
+    "title": "레이와의 다라 씨",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124302291"
+    },
+    "titles": {
+      "ko": "레이와의 다라 씨",
+      "en": "Dara-san of Reiwa",
+      "ja": "令和のダラさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006092": {
+    "workId": "wk_000006092",
+    "title": "내가 본 미래",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133249809"
+    },
+    "titles": {
+      "ko": "내가 본 미래",
+      "en": "The Future I Saw",
+      "ja": "私が見た未来"
+    },
+    "creator": "Ryo Tatsuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006986": {
+    "workId": "wk_000006986",
+    "title": "오빠라도 사랑만 있으면 상관없잖아?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16878946"
+    },
+    "titles": {
+      "ko": "오빠라도 사랑만 있으면 상관없잖아?",
+      "en": "Sakigake!! Onii-chan dakedo Ai sae Areba Kankei Nai yo ne!",
+      "ja": "魁!! お兄ちゃんだけど愛さえあれば関係ないよねっ"
+    },
+    "releaseYear": 2012,
+    "creator": "Daisuke Suzuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007957": {
+    "workId": "wk_000007957",
+    "title": "일찍이 마법소녀와 악은 적대하고 있었다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q20043668"
+    },
+    "titles": {
+      "ko": "일찍이 마법소녀와 악은 적대하고 있었다.",
+      "en": "The Magical Girl and the Evil Lieutenant Used to Be Archenemies",
+      "ja": "かつて魔法少女と悪は敵対していた。"
+    },
+    "releaseYear": 2013,
+    "creator": "Cocoa Fujiwara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

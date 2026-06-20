@@ -1,0 +1,205 @@
+{
+  "wk_000002388": {
+    "workId": "wk_000002388",
+    "title": "KUROMI'S PRETTY JOURNEY",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116946956"
+    },
+    "titles": {
+      "ko": "KUROMI'S PRETTY JOURNEY",
+      "en": "Kuromi's Pretty Journey",
+      "ja": "KUROMI'S PRETTY JOURNEY"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003023": {
+    "workId": "wk_000003023",
+    "title": "프레시 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1205226"
+    },
+    "titles": {
+      "ko": "프레시 프리큐어!",
+      "en": "Fresh Pretty Cure!",
+      "ja": "フレッシュプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003996": {
+    "workId": "wk_000003996",
+    "title": "우마무스메 PRETTY DERBY 새로운 시대의 문",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130598211"
+    },
+    "titles": {
+      "ko": "우마무스메 PRETTY DERBY 새로운 시대의 문",
+      "en": "Umamusume: Pretty Derby - Beginning of a New Era",
+      "ja": "ウマ娘 プリティーダービー 新時代の扉"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005291": {
+    "workId": "wk_000005291",
+    "title": "그것이 성우!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18711417"
+    },
+    "titles": {
+      "ko": "그것이 성우!",
+      "en": "Seiyu's Life!",
+      "ja": "それが声優!"
+    },
+    "releaseYear": 2011,
+    "creator": "Masumi Asano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006022": {
+    "workId": "wk_000006022",
+    "title": "우주를 달리는 소녀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2472823"
+    },
+    "titles": {
+      "ko": "우주를 달리는 소녀",
+      "en": "The Girl Who Leapt Through Space",
+      "ja": "宇宙をかける少女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007916": {
+    "workId": "wk_000007916",
+    "title": "히어로 마스크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q59530645"
+    },
+    "titles": {
+      "ko": "히어로 마스크",
+      "en": "Hero Mask",
+      "ja": "HERO MASK"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008984": {
+    "workId": "wk_000008984",
+    "title": "전설의 용자 다간",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711317"
+    },
+    "titles": {
+      "ko": "전설의 용자 다간",
+      "en": "The Brave Fighter of Legend Da-Garn",
+      "ja": "伝説の勇者ダ・ガーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009561": {
+    "workId": "wk_000009561",
+    "title": "합신전대 메칸더 로보",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q866312"
+    },
+    "titles": {
+      "ko": "합신전대 메칸더 로보",
+      "en": "Mechander Robo",
+      "ja": "合身戦隊メカンダーロボ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009761": {
+    "workId": "wk_000009761",
+    "title": "케로로 중사 극장판 1기 - 최종병기 키루루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q908105"
+    },
+    "titles": {
+      "ko": "케로로 중사 극장판 1기 - 최종병기 키루루",
+      "en": "Keroro Gunsō the Super Movie",
+      "ja": "超劇場版ケロロ軍曹"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009866": {
+    "workId": "wk_000009866",
+    "title": "천년여우",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q939736"
+    },
+    "titles": {
+      "ko": "천년여우",
+      "en": "Millennium Actress",
+      "ja": "千年女優"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009996": {
+    "workId": "wk_000009996",
+    "title": "IDOLY PRIDE",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98793223"
+    },
+    "titles": {
+      "ko": "IDOLY PRIDE",
+      "en": "Idoly Pride",
+      "ja": "IDOLY PRIDE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

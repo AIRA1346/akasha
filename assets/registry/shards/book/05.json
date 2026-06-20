@@ -1,0 +1,117 @@
+{
+  "wk_000005244": {
+    "workId": "wk_000005244",
+    "title": "이세계 소환은 두 번째입니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109297684"
+    },
+    "titles": {
+      "ko": "이세계 소환은 두 번째입니다",
+      "en": "Summoned to Another World... Again?",
+      "ja": "異世界召喚は二度目です"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005708": {
+    "workId": "wk_000005708",
+    "title": "살아만 있다면",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109603850"
+    },
+    "titles": {
+      "ko": "살아만 있다면",
+      "en": "Q109603850",
+      "ja": "生きてさえいれば"
+    },
+    "releaseYear": 2018,
+    "creator": "Ruka Kosaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005916": {
+    "workId": "wk_000005916",
+    "title": "집으로 가는 길",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110605380"
+    },
+    "titles": {
+      "ko": "집으로 가는 길",
+      "en": "Look Both Ways"
+    },
+    "releaseYear": 2019,
+    "creator": "ジェイソン・レナルズ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006062": {
+    "workId": "wk_000006062",
+    "title": "널 오타쿠로 만들어줄 테니까",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073547"
+    },
+    "titles": {
+      "ko": "널 오타쿠로 만들어줄 테니까",
+      "en": "Omae o Otaku ni Shiteyaru kara, Ore o Riajū ni Shitekure!",
+      "ja": "おまえをオタクにしてやるから、俺をリア充にしてくれ!"
+    },
+    "creator": "Rin Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006553": {
+    "workId": "wk_000006553",
+    "title": "몰락",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11139133"
+    },
+    "titles": {
+      "ko": "몰락",
+      "en": "Sinking"
+    },
+    "creator": "Yu Dafu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008261": {
+    "workId": "wk_000008261",
+    "title": "디지털 데빌 스토리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320508"
+    },
+    "titles": {
+      "ko": "디지털 데빌 스토리",
+      "en": "Digital Devil Story",
+      "ja": "デジタル・デビル・ストーリー"
+    },
+    "releaseYear": 1986,
+    "creator": "Aya Nishitani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

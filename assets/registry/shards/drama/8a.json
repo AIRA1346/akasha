@@ -1,0 +1,197 @@
+{
+  "wk_000000777": {
+    "workId": "wk_000000777",
+    "title": "료불기적아과의생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103916805"
+    },
+    "titles": {
+      "ko": "료불기적아과의생",
+      "en": "Healer of Children"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000820": {
+    "workId": "wk_000000820",
+    "title": "미쓰백 (텔레비전 프로그램)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103928223"
+    },
+    "titles": {
+      "ko": "미쓰백 (텔레비전 프로그램)",
+      "en": "Miss Back"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001009": {
+    "workId": "wk_000001009",
+    "title": "일본 침몰-희망의 사람-",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104879228"
+    },
+    "titles": {
+      "ko": "일본 침몰-희망의 사람-",
+      "en": "Japan Sinks: People of Hope",
+      "ja": "日本沈没-希望のひと-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001203": {
+    "workId": "wk_000001203",
+    "title": "시 노스 데한",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105438971"
+    },
+    "titles": {
+      "ko": "시 노스 데한",
+      "en": "Si nos dejan"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001741": {
+    "workId": "wk_000001741",
+    "title": "민족과 운명",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10831745"
+    },
+    "titles": {
+      "ko": "민족과 운명",
+      "en": "Nation and Destiny",
+      "ja": "民族と運命"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003826": {
+    "workId": "wk_000003826",
+    "title": "THE TIME,",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109595444"
+    },
+    "titles": {
+      "ko": "THE TIME,",
+      "en": "THE TIME,",
+      "ja": "THE TIME,"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004333": {
+    "workId": "wk_000004333",
+    "title": "해방타운",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118216"
+    },
+    "titles": {
+      "ko": "해방타운",
+      "en": "Q110118216"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005454": {
+    "workId": "wk_000005454",
+    "title": "TV's TV",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11250252"
+    },
+    "titles": {
+      "ko": "TV's TV",
+      "en": "TV's TV",
+      "ja": "TV's TV"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007895": {
+    "workId": "wk_000007895",
+    "title": "와일드보이즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156921"
+    },
+    "titles": {
+      "ko": "와일드보이즈",
+      "en": "Wildboyz",
+      "ja": "ワイルドボーイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009609": {
+    "workId": "wk_000009609",
+    "title": "PRODUCE 101 JAPAN THE GIRLS",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122199948"
+    },
+    "titles": {
+      "ko": "PRODUCE 101 JAPAN THE GIRLS",
+      "en": "PRODUCE 101 JAPAN THE GIRLS",
+      "ja": "PRODUCE 101 JAPAN THE GIRLS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010312": {
+    "workId": "wk_000010312",
+    "title": "마초스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248367"
+    },
+    "titles": {
+      "ko": "마초스",
+      "en": "Machos",
+      "ja": "マチョス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

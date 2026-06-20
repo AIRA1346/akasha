@@ -1,0 +1,239 @@
+{
+  "wk_000000221": {
+    "workId": "wk_000000221",
+    "title": "노라가미",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "BONES",
+    "releaseYear": 2014,
+    "tags": [
+      "판타지",
+      "신",
+      "액션",
+      "코미디"
+    ],
+    "legacyIds": [
+      "sub_animation_noragami_2014"
+    ],
+    "titles": {
+      "en": "Noragami",
+      "ko": "노라가미"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q50621313"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000913": {
+    "workId": "wk_000000913",
+    "title": "iii 아이스크린",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106239134"
+    },
+    "titles": {
+      "ko": "iii 아이스크린",
+      "en": "Iii Icecrin",
+      "ja": "Iiiあいすくりん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002806": {
+    "workId": "wk_000002806",
+    "title": "디지몬 제볼루션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195683"
+    },
+    "titles": {
+      "ko": "디지몬 제볼루션",
+      "en": "Digital Monster X-Evolution",
+      "ja": "DIGITAL MONSTER X-evolution"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003544": {
+    "workId": "wk_000003544",
+    "title": "어차피, 사랑하고 만다.",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124660797"
+    },
+    "titles": {
+      "ko": "어차피, 사랑하고 만다.",
+      "en": "Anyway, I'm Falling in Love with You",
+      "ja": "どうせ、恋してしまうんだ。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006035": {
+    "workId": "wk_000006035",
+    "title": "쿠로코의 농구 라스트 게임",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24868434"
+    },
+    "titles": {
+      "ko": "쿠로코의 농구 라스트 게임",
+      "en": "Kuroko's Basketball The Movie: Last Game",
+      "ja": "劇場版 黒子のバスケ LAST GAME"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006334": {
+    "workId": "wk_000006334",
+    "title": "무효와 로지의 마법률상담사무소",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2671498"
+    },
+    "titles": {
+      "ko": "무효와 로지의 마법률상담사무소",
+      "en": "Muhyo & Roji's Bureau of Supernatural Investigation",
+      "ja": "ムヒョとロージーの魔法律相談事務所"
+    },
+    "creator": "Yoshiyuki Nishi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007348": {
+    "workId": "wk_000007348",
+    "title": "초코초코 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4943988"
+    },
+    "titles": {
+      "ko": "초코초코 대작전",
+      "en": "Bootleg",
+      "ja": "チョコレート・アンダーグラウンド"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007648": {
+    "workId": "wk_000007648",
+    "title": "록맨 에그제",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q527398"
+    },
+    "titles": {
+      "ko": "록맨 에그제",
+      "en": "MegaMan NT Warrior",
+      "ja": "ロックマンエグゼ"
+    },
+    "creator": "Ryo Takamisaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008147": {
+    "workId": "wk_000008147",
+    "title": "쓰레기의 본망",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61500361"
+    },
+    "titles": {
+      "ko": "쓰레기의 본망",
+      "en": "Scum's Wish",
+      "ja": "クズの本懐"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008699": {
+    "workId": "wk_000008699",
+    "title": "기동전사 건담 SEED",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696206"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED",
+      "en": "Mobile Suit Gundam SEED",
+      "ja": "機動戦士ガンダムSEED"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009297": {
+    "workId": "wk_000009297",
+    "title": "스카이 크롤러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q820819"
+    },
+    "titles": {
+      "ko": "스카이 크롤러",
+      "en": "The Sky Crawlers",
+      "ja": "スカイ・クロラシリーズ"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009363": {
+    "workId": "wk_000009363",
+    "title": "극장판 포켓몬스터: 뮤츠의 역습",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q834799"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 뮤츠의 역습",
+      "en": "Pokémon: The First Movie",
+      "ja": "劇場版ポケットモンスター ミュウツーの逆襲"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

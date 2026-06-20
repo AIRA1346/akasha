@@ -1,0 +1,131 @@
+{
+  "wk_000004071": {
+    "workId": "wk_000004071",
+    "title": "마법사의 약속",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131279746"
+    },
+    "titles": {
+      "ko": "마법사의 약속",
+      "en": "Promise of Wizard",
+      "ja": "魔法使いの約束"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004421": {
+    "workId": "wk_000004421",
+    "title": "관희의 챠이카",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134452212"
+    },
+    "titles": {
+      "ko": "관희의 챠이카",
+      "en": "Chaika: The Coffin Princess",
+      "ja": "棺姫のチャイカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004640": {
+    "workId": "wk_000004640",
+    "title": "전설의 마법 쿠루쿠루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1374301"
+    },
+    "titles": {
+      "ko": "전설의 마법 쿠루쿠루",
+      "en": "Magical Circle Guru Guru",
+      "ja": "魔法陣グルグル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005347": {
+    "workId": "wk_000005347",
+    "title": "아이돌마스터 신데렐라 걸즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q19357037"
+    },
+    "titles": {
+      "ko": "아이돌마스터 신데렐라 걸즈",
+      "en": "The Idolmaster Cinderella Girls",
+      "ja": "アイドルマスター シンデレラガールズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006410": {
+    "workId": "wk_000006410",
+    "title": "키즈모노가타리 III 냉혈편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27964616"
+    },
+    "titles": {
+      "ko": "키즈모노가타리 III 냉혈편",
+      "en": "Kizumonogatari Part 3: Reiketsu",
+      "ja": "傷物語〈III 冷血篇〉"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006873": {
+    "workId": "wk_000006873",
+    "title": "극장판 스위트 프리큐어♪ 되찾아라! 마음이 이어주는 기적의 멜로디♪",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3720638"
+    },
+    "titles": {
+      "ko": "극장판 스위트 프리큐어♪ 되찾아라! 마음이 이어주는 기적의 멜로디♪",
+      "en": "Suite PreCure the Movie: Take it back! The Miraculous Melody that Connects Hearts",
+      "ja": "映画 スイートプリキュア♪ とりもどせ! 心がつなぐ奇跡のメロディ♪"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008426": {
+    "workId": "wk_000008426",
+    "title": "신 에반게리온 극장판",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6434144"
+    },
+    "titles": {
+      "ko": "신 에반게리온 극장판",
+      "en": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+      "ja": "シン・エヴァンゲリオン劇場版𝄇"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

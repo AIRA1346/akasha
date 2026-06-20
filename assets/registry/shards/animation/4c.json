@@ -1,0 +1,279 @@
+{
+  "wk_000000909": {
+    "workId": "wk_000000909",
+    "title": "육화의 용사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106072129"
+    },
+    "titles": {
+      "ko": "육화의 용사",
+      "en": "Rokka no Yūsha",
+      "ja": "六花の勇者"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000916": {
+    "workId": "wk_000000916",
+    "title": "견왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106365617"
+    },
+    "titles": {
+      "ko": "견왕",
+      "en": "Inu-Oh",
+      "ja": "犬王"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000970": {
+    "workId": "wk_000000970",
+    "title": "인피니트 스트라토스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106554273"
+    },
+    "titles": {
+      "ko": "인피니트 스트라토스",
+      "en": "Infinite Stratos",
+      "ja": "IS〈インフィニット・ストラトス〉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001592": {
+    "workId": "wk_000001592",
+    "title": "골판지전기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111354794"
+    },
+    "titles": {
+      "ko": "골판지전기",
+      "en": "Danball Senki",
+      "ja": "ダンボール戦機"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002301": {
+    "workId": "wk_000002301",
+    "title": "변변찮은 마술강사와 금기교전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116246446"
+    },
+    "titles": {
+      "ko": "변변찮은 마술강사와 금기교전",
+      "en": "Akashic Records of Bastard Magical Instructor",
+      "ja": "ロクでなし魔術講師と禁忌教典"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002715": {
+    "workId": "wk_000002715",
+    "title": "하나우쿄 메이드대",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191955"
+    },
+    "titles": {
+      "ko": "하나우쿄 메이드대",
+      "en": "Hanaukyo Maid Team",
+      "ja": "花右京メイド隊"
+    },
+    "releaseYear": 2001,
+    "creator": "Morishige",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003548": {
+    "workId": "wk_000003548",
+    "title": "학생회 임원들",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124749024"
+    },
+    "titles": {
+      "ko": "학생회 임원들",
+      "en": "Seitokai Yakuindomo",
+      "ja": "生徒会役員共"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004708": {
+    "workId": "wk_000004708",
+    "title": "펜과 수갑과 사실혼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139390978"
+    },
+    "titles": {
+      "ko": "펜과 수갑과 사실혼",
+      "en": "A Pen, Handcuffs, and a Common-Law Marriage",
+      "ja": "ペンと手錠と事実婚"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005684": {
+    "workId": "wk_000005684",
+    "title": "단간론파 3 -The End of 키보가미네 학원-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21650765"
+    },
+    "titles": {
+      "ko": "단간론파 3 -The End of 키보가미네 학원-",
+      "en": "Danganronpa 3: The End of Hope's Peak High School",
+      "ja": "ダンガンロンパ3 -The End of 希望ヶ峰学園-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006470": {
+    "workId": "wk_000006470",
+    "title": "명탐정 코난: 눈동자 속의 암살자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2840937"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 눈동자 속의 암살자",
+      "en": "Case Closed: Captured in Her Eyes",
+      "ja": "名探偵コナン 瞳の中の暗殺者"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006527": {
+    "workId": "wk_000006527",
+    "title": "아이돌타임 프리파라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28690902"
+    },
+    "titles": {
+      "ko": "아이돌타임 프리파라",
+      "en": "Idol Time PriPara",
+      "ja": "アイドルタイムプリパラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008982": {
+    "workId": "wk_000008982",
+    "title": "신기동전기 건담 W",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711148"
+    },
+    "titles": {
+      "ko": "신기동전기 건담 W",
+      "en": "Mobile Suit Gundam Wing",
+      "ja": "新機動戦記ガンダムW"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009046": {
+    "workId": "wk_000009046",
+    "title": "비키 바이킹",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q713578"
+    },
+    "titles": {
+      "ko": "비키 바이킹",
+      "en": "Vicky the Viking",
+      "ja": "小さなバイキングビッケ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009763": {
+    "workId": "wk_000009763",
+    "title": "축구왕 슛돌이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q909912"
+    },
+    "titles": {
+      "ko": "축구왕 슛돌이",
+      "en": "Moero! Top Striker",
+      "ja": "燃えろ!トップストライカー"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009817": {
+    "workId": "wk_000009817",
+    "title": "히토히라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q933589"
+    },
+    "titles": {
+      "ko": "히토히라",
+      "en": "Hitohira",
+      "ja": "ひとひら"
+    },
+    "releaseYear": 2007,
+    "creator": "Izumi Kirihara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

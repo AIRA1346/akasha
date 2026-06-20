@@ -49,6 +49,7 @@ class HomeDialogsFacade {
     required Future<void> Function(String query)? onCatalogPropose,
     required Future<void> Function(AkashaItem item)? onAddLocalToLibrary,
     required Future<void> Function(RegistryWork work)? onAddRemoteToLibrary,
+    Future<void> Function(RegistryWork work)? onPromoteCatalogEntity,
   }) async {
     await showDialog(
       context: context,
@@ -63,6 +64,7 @@ class HomeDialogsFacade {
         onCatalogPropose: onCatalogPropose,
         onAddLocalToLibrary: onAddLocalToLibrary,
         onAddRemoteToLibrary: onAddRemoteToLibrary,
+        onPromoteCatalogEntity: onPromoteCatalogEntity,
       ),
     );
   }
@@ -104,13 +106,13 @@ class HomeDialogsFacade {
     await onSavedToVault(result);
   }
 
-  /// Wave 4 — 유형 선택 후 Work 아카이브 또는 catalog-only Entity 추가.
+  /// R1 — Work 아카이브 또는 Person/Event/Concept Archive-First 추가.
   static Future<void> showCustomAddWithTypePicker({
     required BuildContext context,
     required String query,
     required void Function(String message) showMessage,
     required Future<void> Function(AkashaItem item) onWorkSavedToVault,
-    required Future<void> Function(CatalogEntityAddResult result) onCatalogEntitySaved,
+    required Future<void> Function(CatalogEntityAddResult result) onEntitySaved,
   }) async {
     if (AkashaFileService().vaultPath == null) {
       showMessage('볼트를 먼저 연결해 주세요.');
@@ -139,8 +141,7 @@ class HomeDialogsFacade {
       initialTitle: query,
     );
     if (addResult == null || !context.mounted) return;
-    await onCatalogEntitySaved(addResult);
-    showMessage('catalog에 「${addResult.entity.title}」을(를) 추가했습니다.');
+    await onEntitySaved(addResult);
   }
 
   static Future<void> showVaultSettings({

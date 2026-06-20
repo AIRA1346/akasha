@@ -1,0 +1,115 @@
+{
+  "wk_000001602": {
+    "workId": "wk_000001602",
+    "title": "일본인과 천황",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267802"
+    },
+    "titles": {
+      "ko": "일본인과 천황",
+      "en": "Manga Nihonjin to Tennō",
+      "ja": "マンガ日本人と天皇"
+    },
+    "releaseYear": 2000,
+    "creator": "Tetsu Kariya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002447": {
+    "workId": "wk_000002447",
+    "title": "우리들은 모두 카와이장",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387589"
+    },
+    "titles": {
+      "ko": "우리들은 모두 카와이장",
+      "en": "The Kawai Complex Guide to Manors and Hostel Behavior",
+      "ja": "僕らはみんな河合荘"
+    },
+    "creator": "Ruri Miyahara",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002600": {
+    "workId": "wk_000002600",
+    "title": "너와 종이비행기와.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11416153"
+    },
+    "titles": {
+      "ko": "너와 종이비행기와.",
+      "en": "Q11416153",
+      "ja": "君と紙ヒコーキと。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003520": {
+    "workId": "wk_000003520",
+    "title": "하야테처럼!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116122"
+    },
+    "titles": {
+      "ko": "하야테처럼!",
+      "en": "Hayate the Combat Butler",
+      "ja": "ハヤテのごとく!"
+    },
+    "creator": "Kenjiro Hata",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006390": {
+    "workId": "wk_000006390",
+    "title": "두 남자와 룸쉐어 중입니다!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136678714"
+    },
+    "titles": {
+      "ko": "두 남자와 룸쉐어 중입니다!",
+      "en": "Pardon the Intrusion, I'm Home!",
+      "ja": "ただいま、おじゃまされます!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007150": {
+    "workId": "wk_000007150",
+    "title": "도망치는 건 부끄럽지만 도움이 된다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17210063"
+    },
+    "titles": {
+      "ko": "도망치는 건 부끄럽지만 도움이 된다",
+      "en": "The Full-Time Wife Escapist",
+      "ja": "逃げるは恥だが役に立つ"
+    },
+    "creator": "Tsunami Umino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

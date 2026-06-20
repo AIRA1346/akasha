@@ -1,0 +1,21 @@
+{
+  "wk_000009008": {
+    "workId": "wk_000009008",
+    "title": "더 메뉴",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108444804"
+    },
+    "titles": {
+      "ko": "더 메뉴",
+      "en": "The Menu",
+      "ja": "ザ・メニュー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

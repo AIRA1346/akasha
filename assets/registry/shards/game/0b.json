@@ -1,0 +1,181 @@
+{
+  "wk_000000088": {
+    "workId": "wk_000000088",
+    "title": "오리와 먹구름",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Moon Studios",
+    "releaseYear": 2015,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid261550_2015"
+    ],
+    "titles": {
+      "en": "Mount &amp; Blade II: Bannerlord",
+      "ko": "오리와 먹구름"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "261550",
+      "wikidata": "Q1929970"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001062": {
+    "workId": "wk_000001062",
+    "title": "스컬: 더 히어로 슬레이어",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104882978"
+    },
+    "titles": {
+      "ko": "스컬: 더 히어로 슬레이어",
+      "en": "Skul: The Hero Slayer",
+      "ja": "Skul: The Hero Slayer"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001164": {
+    "workId": "wk_000001164",
+    "title": "드림스케이퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105100762"
+    },
+    "titles": {
+      "ko": "드림스케이퍼",
+      "en": "Dreamscaper"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002820": {
+    "workId": "wk_000002820",
+    "title": "노부나가의 야망 Internet",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856180"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 Internet",
+      "en": "Q10856180",
+      "ja": "信長の野望Internet"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003475": {
+    "workId": "wk_000003475",
+    "title": "드레곤 슬레이어: 영웅전설",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11091967"
+    },
+    "titles": {
+      "ko": "드레곤 슬레이어: 영웅전설",
+      "en": "Dragon Slayer: The Legend of Heroes",
+      "ja": "ドラゴンスレイヤー英雄伝説"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007926": {
+    "workId": "wk_000007926",
+    "title": "시계장치의 레이라인 -아침 안개에 지는 꽃-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125523923"
+    },
+    "titles": {
+      "ko": "시계장치의 레이라인 -아침 안개에 지는 꽃-",
+      "en": "Tokeijikake no Ley Line -Asagiri ni Chiru Hana-",
+      "ja": "時計仕掛けのレイライン －朝霧に散る花－"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007973": {
+    "workId": "wk_000007973",
+    "title": "마녀의 속죄",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12594498"
+    },
+    "titles": {
+      "ko": "마녀의 속죄",
+      "en": "Atonement of a Witch",
+      "ja": "魔女の贖罪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008033": {
+    "workId": "wk_000008033",
+    "title": "클리커",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12620775"
+    },
+    "titles": {
+      "ko": "클리커",
+      "en": "Clickr"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009827": {
+    "workId": "wk_000009827",
+    "title": "바르사푸라",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136890958"
+    },
+    "titles": {
+      "ko": "바르사푸라",
+      "en": "Varsapura",
+      "ja": "ヴァルサプラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

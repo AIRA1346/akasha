@@ -1,0 +1,203 @@
+{
+  "wk_000000725": {
+    "workId": "wk_000000725",
+    "title": "학생회의 일존",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105092645"
+    },
+    "titles": {
+      "ko": "학생회의 일존",
+      "en": "Student Council's Discretion",
+      "ja": "生徒会の一存"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001412": {
+    "workId": "wk_000001412",
+    "title": "세계명작동화 백조의 호수",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093555"
+    },
+    "titles": {
+      "ko": "세계명작동화 백조의 호수",
+      "en": "Swan Lake",
+      "ja": "世界名作童話 白鳥の湖"
+    },
+    "releaseYear": 1981,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003115": {
+    "workId": "wk_000003115",
+    "title": "극장판 마법소녀 마도카☆마기카 <발푸르기스의 회천>",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122386776"
+    },
+    "titles": {
+      "ko": "극장판 마법소녀 마도카☆마기카 <발푸르기스의 회천>",
+      "en": "Puella Magi Madoka Magica the Movie: Walpurgisnacht Rising",
+      "ja": "劇場版 魔法少女まどか☆マギカ〈ワルプルギスの廻天〉"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005026": {
+    "workId": "wk_000005026",
+    "title": "유루유리 나츠야스미",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16830192"
+    },
+    "titles": {
+      "ko": "유루유리 나츠야스미",
+      "en": "YuruYuri Nachuyachumi!",
+      "ja": "ゆるゆり なちゅやちゅみ！"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005477": {
+    "workId": "wk_000005477",
+    "title": "멋지다 코니",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2056346"
+    },
+    "titles": {
+      "ko": "멋지다 코니",
+      "en": "Dotto! Koni-chan",
+      "ja": "ドッとKONIちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007054": {
+    "workId": "wk_000007054",
+    "title": "소닉 X",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q428130"
+    },
+    "titles": {
+      "ko": "소닉 X",
+      "en": "Sonic X",
+      "ja": "ソニックX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007853": {
+    "workId": "wk_000007853",
+    "title": "짱구는 못말려 극장판: 액션가면 VS 그래그래 마왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q577093"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 액션가면 VS 그래그래 마왕",
+      "en": "Crayon Shin-chan: Action Mask vs. Leotard Devil",
+      "ja": "クレヨンしんちゃん アクション仮面VSハイグレ魔王"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008143": {
+    "workId": "wk_000008143",
+    "title": "전력토끼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q6139607"
+    },
+    "titles": {
+      "ko": "전력토끼",
+      "en": "Zenryoku Rabbits",
+      "ja": "全力ウサギ"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008714": {
+    "workId": "wk_000008714",
+    "title": "그레이트 마징가",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q698757"
+    },
+    "titles": {
+      "ko": "그레이트 마징가",
+      "en": "Great Mazinger",
+      "ja": "グレートマジンガー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008915": {
+    "workId": "wk_000008915",
+    "title": "고 ! 고 ! 다섯 쌍둥이 랜드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q704448"
+    },
+    "titles": {
+      "ko": "고 ! 고 ! 다섯 쌍둥이 랜드",
+      "en": "Let’s Go Quintuplets!",
+      "ja": "ゴーゴー五つ子ら・ん・ど"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009434": {
+    "workId": "wk_000009434",
+    "title": "라이플 이즈 뷰티풀",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85377148"
+    },
+    "titles": {
+      "ko": "라이플 이즈 뷰티풀",
+      "en": "Rifle is Beautiful",
+      "ja": "ライフル・イズ・ビューティフル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

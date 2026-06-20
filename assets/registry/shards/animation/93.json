@@ -1,0 +1,274 @@
+{
+  "wk_000000192": {
+    "workId": "wk_000000192",
+    "title": "불꽃 소방대",
+    "titles": {
+      "ko": "불꽃 소방대",
+      "en": "Fire Force",
+      "ja": "炎炎ノ消防隊"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "아츠시 오쿠보",
+    "releaseYear": 2019,
+    "tags": [
+      "액션",
+      "초능력",
+      "SF",
+      "미스터리"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2019,
+          "episodes": 24
+        },
+        {
+          "label": "2기",
+          "year": 2020,
+          "episodes": 24
+        },
+        {
+          "label": "3기",
+          "year": 2025,
+          "episodes": 12
+        }
+      ],
+      "latestSeason": "3기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "tmdb": "88046",
+      "wikidata": "Q66091988"
+    },
+    "legacyIds": [
+      "sub_animation_fire-force_2019"
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000721": {
+    "workId": "wk_000000721",
+    "title": "원피스 - 기계태엽성의 메카거병",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1048739"
+    },
+    "titles": {
+      "ko": "원피스 - 기계태엽성의 메카거병",
+      "en": "One Piece: The Giant Mechanical Soldier of Karakuri Castle",
+      "ja": "ONE PIECE THE MOVIE カラクリ城のメカ巨兵"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002157": {
+    "workId": "wk_000002157",
+    "title": "성전사 단바인",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1154223"
+    },
+    "titles": {
+      "ko": "성전사 단바인",
+      "en": "Aura Battler Dunbine",
+      "ja": "聖戦士ダンバイン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002389": {
+    "workId": "wk_000002389",
+    "title": "마이 마이 신코 이야기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1169881"
+    },
+    "titles": {
+      "ko": "마이 마이 신코 이야기",
+      "en": "Mai Mai Miracle",
+      "ja": "マイマイ新子と千年の魔法"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004433": {
+    "workId": "wk_000004433",
+    "title": "고문 아르바이트의 일상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134992344"
+    },
+    "titles": {
+      "ko": "고문 아르바이트의 일상",
+      "en": "The Daily Life of a Part-time Torturer",
+      "ja": "拷問バイトくんの日常"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004966": {
+    "workId": "wk_000004966",
+    "title": "딱지왕 김태풍",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16351638"
+    },
+    "titles": {
+      "ko": "딱지왕 김태풍",
+      "en": "Gigant Big-Shot Tsukasa",
+      "ja": "超爆裂異次元メンコバトル ギガントシューター つかさ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006874": {
+    "workId": "wk_000006874",
+    "title": "바람의 소녀 에밀리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3724578"
+    },
+    "titles": {
+      "ko": "바람의 소녀 에밀리",
+      "en": "Kaze no Shōjo Emily",
+      "ja": "風の少女エミリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007053": {
+    "workId": "wk_000007053",
+    "title": "커렉터 유이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q427448"
+    },
+    "titles": {
+      "ko": "커렉터 유이",
+      "en": "Corrector Yui",
+      "ja": "コレクター・ユイ"
+    },
+    "creator": "Keiko Okamoto",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007464": {
+    "workId": "wk_000007464",
+    "title": "미남고교 지구방위부 HAPPY KISS!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q50317552"
+    },
+    "titles": {
+      "ko": "미남고교 지구방위부 HAPPY KISS!",
+      "en": "Cute High Earth Defense Club HAPPY KISS!",
+      "ja": "美男高校地球防衛部HAPPY KISS!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008365": {
+    "workId": "wk_000008365",
+    "title": "극장판 미소녀전사 세일러문 R",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q636444"
+    },
+    "titles": {
+      "ko": "극장판 미소녀전사 세일러문 R",
+      "en": "Sailor Moon R: The Movie",
+      "ja": "劇場版美少女戦士セーラームーンR"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008974": {
+    "workId": "wk_000008974",
+    "title": "신세기 사이버 포뮬러",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q706638"
+    },
+    "titles": {
+      "ko": "신세기 사이버 포뮬러",
+      "en": "Future GPX Cyber Formula",
+      "ja": "新世紀GPXサイバーフォーミュラ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009568": {
+    "workId": "wk_000009568",
+    "title": "봄버맨 제터스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q871683"
+    },
+    "titles": {
+      "ko": "봄버맨 제터스",
+      "en": "Bomberman Jetters",
+      "ja": "ボンバーマンジェッターズ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010053": {
+    "workId": "wk_000010053",
+    "title": "이누야시키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q98915749"
+    },
+    "titles": {
+      "ko": "이누야시키",
+      "en": "Inuyashiki",
+      "ja": "いぬやしき"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "wk_000002565": {
+    "workId": "wk_000002565",
+    "title": "신비기사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105965397"
+    },
+    "titles": {
+      "ko": "신비기사",
+      "en": "The Mystery Knight"
+    },
+    "releaseYear": 2010,
+    "creator": "ジョージ・R・R・マーティン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004239": {
+    "workId": "wk_000004239",
+    "title": "고문진보",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855300"
+    },
+    "titles": {
+      "ko": "고문진보",
+      "en": "True Treasures of Ancient Writing",
+      "ja": "古文真宝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004601": {
+    "workId": "wk_000004601",
+    "title": "오륜서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10881511"
+    },
+    "titles": {
+      "ko": "오륜서",
+      "en": "Book of the Five Relationships",
+      "ja": "五倫書"
+    },
+    "creator": "Xuande Emperor",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005638": {
+    "workId": "wk_000005638",
+    "title": "와인즈버그, 오하이오",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958564"
+    },
+    "titles": {
+      "ko": "와인즈버그, 오하이오",
+      "en": "Winesburg, Ohio",
+      "ja": "ワインズバーグ・オハイオ"
+    },
+    "releaseYear": 1919,
+    "creator": "Sherwood Anderson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006138": {
+    "workId": "wk_000006138",
+    "title": "마하승기율",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11078484"
+    },
+    "titles": {
+      "ko": "마하승기율",
+      "en": "Q11078484",
+      "ja": "摩訶僧祇律"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009521": {
+    "workId": "wk_000009521",
+    "title": "밤 산책",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11431302"
+    },
+    "titles": {
+      "ko": "밤 산책",
+      "en": "Woman Walking at Night",
+      "ja": "夜歩く"
+    },
+    "releaseYear": 1973,
+    "creator": "Seishi Yokomizo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009893": {
+    "workId": "wk_000009893",
+    "title": "후지산 백경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11456944"
+    },
+    "titles": {
+      "ko": "후지산 백경",
+      "en": "One Hundred Views of Mount Fuji",
+      "ja": "富嶽百景"
+    },
+    "releaseYear": 1939,
+    "creator": "Osamu Dazai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

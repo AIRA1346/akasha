@@ -1,0 +1,61 @@
+{
+  "wk_000003223": {
+    "workId": "wk_000003223",
+    "title": "정의가 잠든 사이에",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106958107"
+    },
+    "titles": {
+      "ko": "정의가 잠든 사이에",
+      "en": "While Justice Sleeps"
+    },
+    "releaseYear": 2021,
+    "creator": "ステイシー・エイブラムス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007169": {
+    "workId": "wk_000007169",
+    "title": "미모사의 고백",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112181576"
+    },
+    "titles": {
+      "ko": "미모사의 고백",
+      "en": "The Mimosa Confessions",
+      "ja": "ミモザの告白"
+    },
+    "releaseYear": 2021,
+    "creator": "Mei Hachimoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008105": {
+    "workId": "wk_000008105",
+    "title": "캐로링",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11297328"
+    },
+    "titles": {
+      "ko": "캐로링",
+      "en": "Caroling",
+      "ja": "キャロリング"
+    },
+    "releaseYear": 2014,
+    "creator": "有川ひろ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "wk_000004914": {
+    "workId": "wk_000004914",
+    "title": "방금 떠나온 세계",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108960521"
+    },
+    "titles": {
+      "ko": "방금 떠나온 세계",
+      "en": "The World We Just Left Behind",
+      "ja": "この世界からは出ていくけれど"
+    },
+    "releaseYear": 2021,
+    "creator": "Kim Choyeop",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007123": {
+    "workId": "wk_000007123",
+    "title": "쿠 훌린의 수태",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1121419"
+    },
+    "titles": {
+      "ko": "쿠 훌린의 수태",
+      "en": "Compert Con Culainn",
+      "ja": "クー・フリンの誕生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

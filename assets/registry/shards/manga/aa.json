@@ -1,0 +1,22 @@
+{
+  "wk_000000463": {
+    "workId": "wk_000000463",
+    "title": "무적코털 보보보",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101422054"
+    },
+    "titles": {
+      "en": "Bobobo-bo Bo-bobo",
+      "ja": "ボボボーボ・ボーボボ",
+      "ko": "무적코털 보보보"
+    },
+    "releaseYear": 2001,
+    "creator": "Yoshio Sawai",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "wk_000001735": {
+    "workId": "wk_000001735",
+    "title": "폭렬무대 : 스테이지 붐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108261974"
+    },
+    "titles": {
+      "ko": "폭렬무대 : 스테이지 붐",
+      "en": "Stage Boom"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002012": {
+    "workId": "wk_000002012",
+    "title": "꼭지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855936"
+    },
+    "titles": {
+      "ko": "꼭지",
+      "en": "Tough Guy's Love",
+      "ja": "コッチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002667": {
+    "workId": "wk_000002667",
+    "title": "트로트의 민족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455075"
+    },
+    "titles": {
+      "ko": "트로트의 민족",
+      "en": "Trot's Nation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005114": {
+    "workId": "wk_000005114",
+    "title": "결혼백서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111969021"
+    },
+    "titles": {
+      "ko": "결혼백서",
+      "en": "Welcome to Wedding Hell",
+      "ja": "結婚白書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005514": {
+    "workId": "wk_000005514",
+    "title": "아나운서 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255876"
+    },
+    "titles": {
+      "ko": "아나운서 이야기",
+      "en": "Q11255876",
+      "ja": "アナウンサーぷっつん物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007696": {
+    "workId": "wk_000007696",
+    "title": "소용없어 거짓말",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115531995"
+    },
+    "titles": {
+      "ko": "소용없어 거짓말",
+      "en": "My Lovely Liar"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008404": {
+    "workId": "wk_000008404",
+    "title": "이 연애는 불가항력",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116550095"
+    },
+    "titles": {
+      "ko": "이 연애는 불가항력",
+      "en": "Destined With You",
+      "ja": "この恋は不可抗力"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008480": {
+    "workId": "wk_000008480",
+    "title": "오니헤이 외전 정월 나흘들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673447"
+    },
+    "titles": {
+      "ko": "오니헤이 외전 정월 나흘들",
+      "en": "Onihei Gaiden: Shōgatsu Yokka no Kyaku",
+      "ja": "鬼平外伝 正月四日の客"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009409": {
+    "workId": "wk_000009409",
+    "title": "LIGHTHOUSE",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120490391"
+    },
+    "titles": {
+      "ko": "LIGHTHOUSE",
+      "en": "Lighthouse",
+      "ja": "LIGHTHOUSE"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009465": {
+    "workId": "wk_000009465",
+    "title": "시공전사 스필반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1209815"
+    },
+    "titles": {
+      "ko": "시공전사 스필반",
+      "en": "Jikuu Senshi Spielban",
+      "ja": "時空戦士スピルバン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010036": {
+    "workId": "wk_000010036",
+    "title": "사소한 도전 60초",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124435131"
+    },
+    "titles": {
+      "ko": "사소한 도전 60초",
+      "en": "Minute to Win It"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

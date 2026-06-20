@@ -1,0 +1,203 @@
+{
+  "wk_000000519": {
+    "workId": "wk_000000519",
+    "title": "미나미 카마쿠라 고교 여자 자전거부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100743087"
+    },
+    "titles": {
+      "ko": "미나미 카마쿠라 고교 여자 자전거부",
+      "en": "Minami Kamakura High School Girls Cycling Club",
+      "ja": "南鎌倉高校女子自転車部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000791": {
+    "workId": "wk_000000791",
+    "title": "극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105424646"
+    },
+    "titles": {
+      "ko": "극장판 소드 아트 온라인 -프로그레시브-: 별 없는 밤의 아리아",
+      "en": "Sword Art Online Progressive: Aria of a Starless Night",
+      "ja": "劇場版 ソードアート・オンライン -プログレッシブ- 星なき夜のアリア"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001270": {
+    "workId": "wk_000001270",
+    "title": "오퍼: 대부 비하인드 스토리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107740038"
+    },
+    "titles": {
+      "ko": "오퍼: 대부 비하인드 스토리",
+      "en": "The Offer",
+      "ja": "ジ・オファー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002803": {
+    "workId": "wk_000002803",
+    "title": "헤이디스 바이러스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1194087"
+    },
+    "titles": {
+      "ko": "헤이디스 바이러스",
+      "en": "Covert One: The Hades Factor"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004746": {
+    "workId": "wk_000004746",
+    "title": "야미시바이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14539183"
+    },
+    "titles": {
+      "ko": "야미시바이",
+      "en": "Yamishibai: Japanese Ghost Stories",
+      "ja": "闇芝居"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006028": {
+    "workId": "wk_000006028",
+    "title": "울려라! 유포니엄",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24861591"
+    },
+    "titles": {
+      "ko": "울려라! 유포니엄",
+      "en": "Sound! Euphonium",
+      "ja": "響け!ユーフォニアム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006458": {
+    "workId": "wk_000006458",
+    "title": "사쿠라 퀘스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27971247"
+    },
+    "titles": {
+      "ko": "사쿠라 퀘스트",
+      "en": "Sakura Quest",
+      "ja": "サクラクエスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007270": {
+    "workId": "wk_000007270",
+    "title": "라그나로크 디 애니메이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q483552"
+    },
+    "titles": {
+      "ko": "라그나로크 디 애니메이션",
+      "en": "Ragnarok the Animation",
+      "ja": "RAGNAROK THE ANIMATION"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007274": {
+    "workId": "wk_000007274",
+    "title": "향단전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q484377"
+    },
+    "titles": {
+      "ko": "향단전",
+      "en": "Legend of Hyang Dan",
+      "ja": "イルジメ外伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008625": {
+    "workId": "wk_000008625",
+    "title": "청춘 돼지는 꿈꾸는 소녀의 꿈을 꾸지 않는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66788914"
+    },
+    "titles": {
+      "ko": "청춘 돼지는 꿈꾸는 소녀의 꿈을 꾸지 않는다",
+      "en": "Rascal Does Not Dream of a Dreaming Girl",
+      "ja": "青春ブタ野郎はゆめみる少女の夢を見ない"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010120": {
+    "workId": "wk_000010120",
+    "title": "고양이의 보은",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q51543"
+    },
+    "titles": {
+      "ko": "고양이의 보은",
+      "en": "The Cat Returns",
+      "ja": "猫の恩返し"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

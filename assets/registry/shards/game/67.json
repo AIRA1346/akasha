@@ -1,0 +1,147 @@
+{
+  "wk_000000050": {
+    "workId": "wk_000000050",
+    "title": "슈퍼 러버런",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Team Cherry",
+    "releaseYear": 2021,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1454400_2021"
+    ],
+    "titles": {
+      "en": "Cookie Clicker",
+      "ko": "슈퍼 러버런"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1454400",
+      "wikidata": "Q15103408"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000570": {
+    "workId": "wk_000000570",
+    "title": "드라이브클럽",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10268796"
+    },
+    "titles": {
+      "ko": "드라이브클럽",
+      "en": "Driveclub",
+      "ja": "DRIVECLUB"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003729": {
+    "workId": "wk_000003729",
+    "title": "메멘토 모리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111581791"
+    },
+    "titles": {
+      "ko": "메멘토 모리",
+      "en": "Memento Mori",
+      "ja": "メメントモリ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004527": {
+    "workId": "wk_000004527",
+    "title": "돈 덴 러버 Vol 1 〜흑백으로 정하자〜",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11323435"
+    },
+    "titles": {
+      "ko": "돈 덴 러버 Vol 1 〜흑백으로 정하자〜",
+      "en": "Don Den Lover Vol. 1: Let's Flip Some Discs",
+      "ja": "ドンデンラバー Vol.1 〜白黒つけよっ〜"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009940": {
+    "workId": "wk_000009940",
+    "title": "거미입니다만, 문제라도? 미궁의 지배자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137455847"
+    },
+    "titles": {
+      "ko": "거미입니다만, 문제라도? 미궁의 지배자",
+      "en": "So I'm a Spider, So What? Ruler of the Labyrinth",
+      "ja": "蜘蛛ですが、なにか? 迷宮の支配者"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010003": {
+    "workId": "wk_000010003",
+    "title": "FIFA 13",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137977"
+    },
+    "titles": {
+      "ko": "FIFA 13",
+      "en": "FIFA 13"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010240": {
+    "workId": "wk_000010240",
+    "title": "퍼펙트 월드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q142972"
+    },
+    "titles": {
+      "ko": "퍼펙트 월드",
+      "en": "Perfect World",
+      "ja": "パーフェクト ワールド -完美世界-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

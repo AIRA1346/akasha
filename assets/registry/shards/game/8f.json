@@ -1,0 +1,96 @@
+{
+  "wk_000001315": {
+    "workId": "wk_000001315",
+    "title": "수프라랜드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105449034"
+    },
+    "titles": {
+      "ko": "수프라랜드",
+      "en": "Supraland"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001511": {
+    "workId": "wk_000001511",
+    "title": "네가 바라는 영원",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057155"
+    },
+    "titles": {
+      "ko": "네가 바라는 영원",
+      "en": "Kimi ga Nozomu Eien",
+      "ja": "君が望む永遠"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003481": {
+    "workId": "wk_000003481",
+    "title": "도검난무 무쌍",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111008389"
+    },
+    "titles": {
+      "ko": "도검난무 무쌍",
+      "en": "Touken Ranbu Warriors",
+      "ja": "刀剣乱舞無双"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008783": {
+    "workId": "wk_000008783",
+    "title": "포춘 아테리얼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1323643"
+    },
+    "titles": {
+      "ko": "포춘 아테리얼",
+      "en": "Fortune Arterial",
+      "ja": "FORTUNE ARTERIAL"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009193": {
+    "workId": "wk_000009193",
+    "title": "동방금상경 ~ Fossilized Wonders.",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133858296"
+    },
+    "titles": {
+      "ko": "동방금상경 ~ Fossilized Wonders.",
+      "en": "Touhou Kinjoukyou ~ Fossilized Wonders",
+      "ja": "東方錦上京 〜 Fossilized Wonders."
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "wk_000007614": {
+    "workId": "wk_000007614",
+    "title": "공작나방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112619721"
+    },
+    "titles": {
+      "ko": "공작나방",
+      "en": "Q112619721"
+    },
+    "creator": "ヘルマン・ヘッセ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009894": {
+    "workId": "wk_000009894",
+    "title": "젊은 남자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114570838"
+    },
+    "titles": {
+      "ko": "젊은 남자",
+      "en": "Le jeune homme"
+    },
+    "releaseYear": 2022,
+    "creator": "Annie Ernaux",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010296": {
+    "workId": "wk_000010296",
+    "title": "신햄릿",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11500973"
+    },
+    "titles": {
+      "ko": "신햄릿",
+      "en": "The New Hamlet",
+      "ja": "新ハムレット"
+    },
+    "creator": "太宰治",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

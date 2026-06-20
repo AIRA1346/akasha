@@ -1,0 +1,223 @@
+{
+  "wk_000000663": {
+    "workId": "wk_000000663",
+    "title": "케로로 더 무비: 기적의 사차원섬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1044964"
+    },
+    "titles": {
+      "ko": "케로로 더 무비: 기적의 사차원섬",
+      "en": "Keroro Gunso the Super Movie: Creation! Ultimate Keroro, Wonder Space-Time Island",
+      "ja": "超劇場版ケロロ軍曹 誕生!究極ケロロ 奇跡の時空島であります!!"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001749": {
+    "workId": "wk_000001749",
+    "title": "HIGHSPEED Étoile",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113110749"
+    },
+    "titles": {
+      "ko": "HIGHSPEED Étoile",
+      "en": "Highspeed Etoile",
+      "ja": "HIGHSPEED Étoile"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002617": {
+    "workId": "wk_000002617",
+    "title": "극장판 포켓몬스터 베스트위시: 큐레무 VS 성검사 케르디오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1184859"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터 베스트위시: 큐레무 VS 성검사 케르디오",
+      "en": "Pokémon the Movie: Kyurem vs. the Sword of Justice",
+      "ja": "劇場版ポケットモンスター ベストウイッシュ キュレムVS聖剣士 ケルディオ"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003110": {
+    "workId": "wk_000003110",
+    "title": "스노우 퀸",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1216050"
+    },
+    "titles": {
+      "ko": "스노우 퀸",
+      "en": "Snow Queen",
+      "ja": "スノー・クイーン 〜雪の女王〜"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003919": {
+    "workId": "wk_000003919",
+    "title": "향기로운 꽃은 늠름하게 핀다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130305455"
+    },
+    "titles": {
+      "ko": "향기로운 꽃은 늠름하게 핀다",
+      "en": "The Fragrant Flower Blooms with Dignity",
+      "ja": "薫る花は凛と咲く"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004752": {
+    "workId": "wk_000004752",
+    "title": "포켓몬스터 THE ORIGIN",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q14870116"
+    },
+    "titles": {
+      "ko": "포켓몬스터 THE ORIGIN",
+      "en": "Pokémon Origins",
+      "ja": "ポケットモンスター THE ORIGIN"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005402": {
+    "workId": "wk_000005402",
+    "title": "마녀 배달부 키키",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q196602"
+    },
+    "titles": {
+      "ko": "마녀 배달부 키키",
+      "en": "Kiki's Delivery Service",
+      "ja": "魔女の宅急便"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006106": {
+    "workId": "wk_000006106",
+    "title": "철인 28호",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2504201"
+    },
+    "titles": {
+      "ko": "철인 28호",
+      "en": "Gigantor",
+      "ja": "鉄人28号"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006257": {
+    "workId": "wk_000006257",
+    "title": "세인트 세이야 - 천계편 overture",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2602741"
+    },
+    "titles": {
+      "ko": "세인트 세이야 - 천계편 overture",
+      "en": "Saint Seiya: The Heaven Chapter - Overture",
+      "ja": "聖闘士星矢 天界編 序奏〜overture〜"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007060": {
+    "workId": "wk_000007060",
+    "title": "현란무답제 더 마즈 데이브레이크",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4388986"
+    },
+    "titles": {
+      "ko": "현란무답제 더 마즈 데이브레이크",
+      "en": "Mars Daybreak",
+      "ja": "絢爛舞踏祭 ザ・マーズ・デイブレイク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007958": {
+    "workId": "wk_000007958",
+    "title": "러키☆스타",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5973302"
+    },
+    "titles": {
+      "ko": "러키☆스타",
+      "en": "Lucky Star",
+      "ja": "らき☆すた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009926": {
+    "workId": "wk_000009926",
+    "title": "아쿠다마 드라이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q96482434"
+    },
+    "titles": {
+      "ko": "아쿠다마 드라이브",
+      "en": "Akudama Drive",
+      "ja": "アクダマドライブ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "wk_000000698": {
+    "workId": "wk_000000698",
+    "title": "멘티르 파라 비비르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1029183"
+    },
+    "titles": {
+      "ko": "멘티르 파라 비비르",
+      "en": "Mentir para vivir"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003160": {
+    "workId": "wk_000003160",
+    "title": "생활상양광일양찬란",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109459215"
+    },
+    "titles": {
+      "ko": "생활상양광일양찬란",
+      "en": "Q109459215"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005192": {
+    "workId": "wk_000005192",
+    "title": "미세스 아메리칸 파이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112262014"
+    },
+    "titles": {
+      "ko": "미세스 아메리칸 파이",
+      "en": "Palm Royale",
+      "ja": "パーム・ロワイヤル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005328": {
+    "workId": "wk_000005328",
+    "title": "퓨어 소울: 네가 나를 잊어도",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11240092"
+    },
+    "titles": {
+      "ko": "퓨어 소울: 네가 나를 잊어도",
+      "en": "Q11240092",
+      "ja": "Pure Soul〜君が僕を忘れても〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007500": {
+    "workId": "wk_000007500",
+    "title": "복덩이들고",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115132605"
+    },
+    "titles": {
+      "ko": "복덩이들고",
+      "en": "Q115132605"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007990": {
+    "workId": "wk_000007990",
+    "title": "한밤중의 왕국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11583015"
+    },
+    "titles": {
+      "ko": "한밤중의 왕국",
+      "en": "Q11583015",
+      "ja": "真夜中の王国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008824": {
+    "workId": "wk_000008824",
+    "title": "사랑한다고 말해줘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117847731"
+    },
+    "titles": {
+      "ko": "사랑한다고 말해줘",
+      "en": "Tell Me That You Love Me"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009962": {
+    "workId": "wk_000009962",
+    "title": "봄에는 개나리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124300644"
+    },
+    "titles": {
+      "ko": "봄에는 개나리",
+      "en": "Q124300644"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

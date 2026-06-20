@@ -1,0 +1,61 @@
+{
+  "wk_000002001": {
+    "workId": "wk_000002001",
+    "title": "전생현자의 이세계 라이프 ~제2의 직업을 얻어 세계최강이 되었습니다~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105164595"
+    },
+    "titles": {
+      "ko": "전생현자의 이세계 라이프 ~제2의 직업을 얻어 세계최강이 되었습니다~",
+      "en": "My Isekai Life",
+      "ja": "転生賢者の異世界ライフ 〜第二の職業を得て、世界最強になりました〜"
+    },
+    "releaseYear": 2018,
+    "creator": "Shotō Shinkō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006134": {
+    "workId": "wk_000006134",
+    "title": "내가 그를 죽였다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074877"
+    },
+    "titles": {
+      "ko": "내가 그를 죽였다",
+      "en": "Q11074877",
+      "ja": "私が彼を殺した"
+    },
+    "creator": "東野圭吾",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009151": {
+    "workId": "wk_000009151",
+    "title": "얼음고래",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11395411"
+    },
+    "titles": {
+      "ko": "얼음고래",
+      "en": "Q11395411",
+      "ja": "凍りのくじら"
+    },
+    "releaseYear": 2005,
+    "creator": "Mizuki Tsujimura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

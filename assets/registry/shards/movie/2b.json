@@ -1,0 +1,59 @@
+{
+  "wk_000002101": {
+    "workId": "wk_000002101",
+    "title": "스파이더헤드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104094034"
+    },
+    "titles": {
+      "ko": "스파이더헤드",
+      "en": "Spiderhead",
+      "ja": "エスケイプ・フロム・スパイダーヘッド"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006562": {
+    "workId": "wk_000006562",
+    "title": "유령인간",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067611"
+    },
+    "titles": {
+      "ko": "유령인간",
+      "en": "Visible Secret",
+      "ja": "スー・チー in ヴィジブル・シークレット"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008210": {
+    "workId": "wk_000008210",
+    "title": "비스트 스토커",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1076380"
+    },
+    "titles": {
+      "ko": "비스트 스토커",
+      "en": "Beast Stalker",
+      "ja": "ビースト・ストーカー/証人"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

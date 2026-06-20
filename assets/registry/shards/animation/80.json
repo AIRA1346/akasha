@@ -1,0 +1,113 @@
+{
+  "wk_000001075": {
+    "workId": "wk_000001075",
+    "title": "초전동로보 철인 28호 FX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071017"
+    },
+    "titles": {
+      "ko": "초전동로보 철인 28호 FX",
+      "en": "Chō Dendō Robo Tetsujin 28-go FX",
+      "ja": "超電動ロボ 鉄人28号FX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002629": {
+    "workId": "wk_000002629",
+    "title": "짱구는 못말려 극장판: 암흑마왕 대추적",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1186469"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 암흑마왕 대추적",
+      "en": "Crayon Shin-chan: Pursuit of the Balls of Darkness",
+      "ja": "クレヨンしんちゃん 暗黒タマタマ大追跡"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007647": {
+    "workId": "wk_000007647",
+    "title": "유희왕 GX",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q527316"
+    },
+    "titles": {
+      "ko": "유희왕 GX",
+      "en": "Yu-Gi-Oh! GX",
+      "ja": "遊☆戯☆王デュエルモンスターズGX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007788": {
+    "workId": "wk_000007788",
+    "title": "데브스 (드라마)",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q56276177"
+    },
+    "titles": {
+      "ko": "데브스 (드라마)",
+      "en": "Devs"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007841": {
+    "workId": "wk_000007841",
+    "title": "하루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5640689"
+    },
+    "titles": {
+      "ko": "하루",
+      "en": "Hal",
+      "ja": "ハル"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010063": {
+    "workId": "wk_000010063",
+    "title": "블리치: 지옥편",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24673"
+    },
+    "titles": {
+      "ko": "블리치: 지옥편",
+      "en": "Bleach: Hell Verse",
+      "ja": "劇場版BLEACH 地獄篇"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

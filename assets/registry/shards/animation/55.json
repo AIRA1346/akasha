@@ -1,0 +1,76 @@
+{
+  "wk_000003922": {
+    "workId": "wk_000003922",
+    "title": "영화 코바야시네 메이드래곤 외로움쟁이 용",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130337103"
+    },
+    "titles": {
+      "ko": "영화 코바야시네 메이드래곤 외로움쟁이 용",
+      "en": "Miss Kobayashi's Dragon Maid: A Lonely Dragon Wants to be Loved",
+      "ja": "小林さんちのメイドラゴン さみしがりやの竜"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005225": {
+    "workId": "wk_000005225",
+    "title": "소울 이터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18553975"
+    },
+    "titles": {
+      "ko": "소울 이터",
+      "en": "Soul Eater",
+      "ja": "ソウルイーター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006531": {
+    "workId": "wk_000006531",
+    "title": "감바의 대모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28700655"
+    },
+    "titles": {
+      "ko": "감바의 대모험",
+      "en": "Gamba: Gamba to Nakama-tachi",
+      "ja": "GAMBA ガンバと仲間たち"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007466": {
+    "workId": "wk_000007466",
+    "title": "암살교실",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q50376961"
+    },
+    "titles": {
+      "ko": "암살교실",
+      "en": "Assassination Classroom",
+      "ja": "暗殺教室"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

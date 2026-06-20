@@ -1,0 +1,135 @@
+{
+  "wk_000001434": {
+    "workId": "wk_000001434",
+    "title": "비크람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102147287"
+    },
+    "titles": {
+      "ko": "비크람",
+      "en": "Vikram",
+      "ja": "ヴィクラム"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002575": {
+    "workId": "wk_000002575",
+    "title": "요괴대전쟁: 가디언즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104630023"
+    },
+    "titles": {
+      "ko": "요괴대전쟁: 가디언즈",
+      "en": "The Great Yokai War: Guardians",
+      "ja": "妖怪大戦争 ガーディアンズ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003887": {
+    "workId": "wk_000003887",
+    "title": "부베의 연인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1053810"
+    },
+    "titles": {
+      "ko": "부베의 연인",
+      "en": "Bebo's Girl",
+      "ja": "ブーベの恋人"
+    },
+    "releaseYear": 1963,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005580": {
+    "workId": "wk_000005580",
+    "title": "소년우연대",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060500"
+    },
+    "titles": {
+      "ko": "소년우연대",
+      "en": "Young Thugs: Innocent Blood",
+      "ja": "岸和田少年愚連隊 血煙り純情篇"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007183": {
+    "workId": "wk_000007183",
+    "title": "이블 데드 라이즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107203508"
+    },
+    "titles": {
+      "ko": "이블 데드 라이즈",
+      "en": "Evil Dead Rise",
+      "ja": "死霊のはらわた ライジング"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007552": {
+    "workId": "wk_000007552",
+    "title": "천사의 사랑",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073956"
+    },
+    "titles": {
+      "ko": "천사의 사랑",
+      "en": "Tenshi no Koi",
+      "ja": "天使の恋"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009658": {
+    "workId": "wk_000009658",
+    "title": "영원한 남사친",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108766235"
+    },
+    "titles": {
+      "ko": "영원한 남사친",
+      "en": "Friendzone",
+      "ja": "いつだって友達止まり"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

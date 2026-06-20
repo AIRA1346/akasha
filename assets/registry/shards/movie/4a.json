@@ -1,0 +1,114 @@
+{
+  "wk_000000864": {
+    "workId": "wk_000000864",
+    "title": "청킹맨션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100584262"
+    },
+    "titles": {
+      "ko": "청킹맨션",
+      "en": "Hand Rolled Cigarette"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005441": {
+    "workId": "wk_000005441",
+    "title": "사랑에 빠진 것처럼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1059733"
+    },
+    "titles": {
+      "ko": "사랑에 빠진 것처럼",
+      "en": "Like Someone in Love",
+      "ja": "ライク・サムワン・イン・ラブ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005572": {
+    "workId": "wk_000005572",
+    "title": "우울한 청춘",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060149"
+    },
+    "titles": {
+      "ko": "우울한 청춘",
+      "en": "Blue Spring",
+      "ja": "青い春"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005652": {
+    "workId": "wk_000005652",
+    "title": "샴페인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1061079"
+    },
+    "titles": {
+      "ko": "샴페인",
+      "en": "Champagne",
+      "ja": "シャンパーニュ"
+    },
+    "releaseYear": 1928,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006220": {
+    "workId": "wk_000006220",
+    "title": "왓쳐",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106554940"
+    },
+    "titles": {
+      "ko": "왓쳐",
+      "en": "Watcher"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008732": {
+    "workId": "wk_000008732",
+    "title": "셰터드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108101523"
+    },
+    "titles": {
+      "ko": "셰터드",
+      "en": "Shattered",
+      "ja": "シャタード 美しき罠"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

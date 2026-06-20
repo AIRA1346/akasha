@@ -1,0 +1,131 @@
+{
+  "wk_000004206": {
+    "workId": "wk_000004206",
+    "title": "네기마!?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1317932"
+    },
+    "titles": {
+      "ko": "네기마!?",
+      "en": "Negima!?",
+      "ja": "ネギま!?"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005484": {
+    "workId": "wk_000005484",
+    "title": "밴드 오브 브라더스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q208048"
+    },
+    "titles": {
+      "ko": "밴드 오브 브라더스",
+      "en": "Band of Brothers",
+      "ja": "バンド・オブ・ブラザース"
+    },
+    "creator": "Graham Young",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006744": {
+    "workId": "wk_000006744",
+    "title": "루돌프 황태자의 마지막 사랑",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q328124"
+    },
+    "titles": {
+      "ko": "루돌프 황태자의 마지막 사랑",
+      "en": "The Crown Prince"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008565": {
+    "workId": "wk_000008565",
+    "title": "이상한 나라의 앨리스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q660237"
+    },
+    "titles": {
+      "ko": "이상한 나라의 앨리스",
+      "en": "Alice in Wonderland",
+      "ja": "不思議の国のアリス (1999年のテレビ映画)"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008774": {
+    "workId": "wk_000008774",
+    "title": "플랜더스의 개",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q699949"
+    },
+    "titles": {
+      "ko": "플랜더스의 개",
+      "en": "Dog of Flanders",
+      "ja": "フランダースの犬"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009809": {
+    "workId": "wk_000009809",
+    "title": "하운티드 정션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q919258"
+    },
+    "titles": {
+      "ko": "하운티드 정션",
+      "en": "Haunted Junction",
+      "ja": "HAUNTEDじゃんくしょん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010119": {
+    "workId": "wk_000010119",
+    "title": "프로젝트 A코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q4316"
+    },
+    "titles": {
+      "ko": "프로젝트 A코",
+      "en": "Project A-ko",
+      "ja": "プロジェクトA子"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

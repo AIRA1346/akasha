@@ -2,6 +2,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../models/entity_link_selection.dart';
 import '../services/file_service.dart';
 import '../services/markdown_body_merger.dart';
 import '../utils/markdown_edit_actions.dart';
@@ -24,6 +25,10 @@ class MarkdownBodyEditor extends StatefulWidget {
   final String? mdFilePath;
   final DateTime? lastSavedAt;
   final MarkdownEditorMode mode;
+  final Future<EntityLinkSelection?> Function(
+    BuildContext context,
+    String selectedText,
+  )? onRequestEntityLink;
 
   const MarkdownBodyEditor({
     super.key,
@@ -34,6 +39,7 @@ class MarkdownBodyEditor extends StatefulWidget {
     this.mdFilePath,
     this.lastSavedAt,
     this.mode = MarkdownEditorMode.body,
+    this.onRequestEntityLink,
   });
 
   @override
@@ -411,6 +417,31 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
     ));
   }
 
+  Future<void> _insertEntityLink() async {
+    final onRequest = widget.onRequestEntityLink;
+    if (onRequest == null) {
+      _showSnack('Entity 연결을 사용할 수 없습니다.');
+      return;
+    }
+
+    final text = widget.controller.text;
+    final sel = widget.controller.selection;
+    var selectedText = '';
+    if (sel.isValid && !sel.isCollapsed) {
+      selectedText = text.substring(sel.start, sel.end);
+    }
+
+    final picked = await onRequest(context, selectedText);
+    if (!mounted || picked == null) return;
+
+    _applyPatch(MarkdownEditActions.insertWikiLink(
+      text: text,
+      selection: sel,
+      entityId: picked.entityId,
+      title: picked.title,
+    ));
+  }
+
   Future<void> _insertImage() async {
     final service = AkashaFileService();
     if (service.vaultPath == null) {
@@ -620,6 +651,8 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
                 text: widget.controller.text,
                 selection: widget.controller.selection,
               )),
+              onEntityLink: _insertEntityLink,
+              entityLinkEnabled: widget.onRequestEntityLink != null,
               onImage: _insertImage,
               onFind: _toggleFindBar,
               onSmartPaste: _smartPaste,

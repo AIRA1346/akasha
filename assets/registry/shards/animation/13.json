@@ -1,0 +1,222 @@
+{
+  "wk_000000724": {
+    "workId": "wk_000000724",
+    "title": "Vivy -Fluorite Eye’s Song-",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105086938"
+    },
+    "titles": {
+      "ko": "Vivy -Fluorite Eye’s Song-",
+      "en": "Vivy: Fluorite Eye’s Song",
+      "ja": "ヴィヴィ -フローライトアイズソング-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001386": {
+    "workId": "wk_000001386",
+    "title": "도쿄 24구",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109183058"
+    },
+    "titles": {
+      "ko": "도쿄 24구",
+      "en": "Tokyo 24th Ward",
+      "ja": "東京24区"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003372": {
+    "workId": "wk_000003372",
+    "title": "걸즈 밴드 크라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123937666"
+    },
+    "titles": {
+      "ko": "걸즈 밴드 크라이",
+      "en": "Girls Band Cry",
+      "ja": "ガールズバンドクライ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003555": {
+    "workId": "wk_000003555",
+    "title": "극장판 울려라! 유포니엄: 앙상블 콘테스트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125505755"
+    },
+    "titles": {
+      "ko": "극장판 울려라! 유포니엄: 앙상블 콘테스트",
+      "en": "Sound! Euphonium: Ensemble Contest",
+      "ja": "特別編 響け!ユーフォニアム〜アンサンブルコンテスト〜"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004434": {
+    "workId": "wk_000004434",
+    "title": "영원한 황혼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135102970"
+    },
+    "titles": {
+      "ko": "영원한 황혼",
+      "en": "Dusk Beyond the End of the World",
+      "ja": "永久のユウグレ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004502": {
+    "workId": "wk_000004502",
+    "title": "극장판 도라에몽: 신 진구의 해저귀암성",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136121463"
+    },
+    "titles": {
+      "ko": "극장판 도라에몽: 신 진구의 해저귀암성",
+      "en": "Doraemon: Nobita and the New Castle of the Undersea Devil",
+      "ja": "映画ドラえもん 新・のび太の海底鬼岩城"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005281": {
+    "workId": "wk_000005281",
+    "title": "명탐정 코난: 업화의 해바라기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18601583"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 업화의 해바라기",
+      "en": "Detective Conan: Sunflowers of Inferno",
+      "ja": "名探偵コナン 業火の向日葵"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007277": {
+    "workId": "wk_000007277",
+    "title": "건담 빌드 다이버즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q48539751"
+    },
+    "titles": {
+      "ko": "건담 빌드 다이버즈",
+      "en": "Gundam Build Divers",
+      "ja": "ガンダムビルドダイバーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007339": {
+    "workId": "wk_000007339",
+    "title": "Steins;Gate 0",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q48835532"
+    },
+    "titles": {
+      "ko": "Steins;Gate 0",
+      "en": "Steins;Gate 0",
+      "ja": "シュタインズ・ゲート ゼロ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008623": {
+    "workId": "wk_000008623",
+    "title": "프론테라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66686180"
+    },
+    "titles": {
+      "ko": "프론테라",
+      "en": "Green Frontier",
+      "ja": "グリーン・フロンティア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009179": {
+    "workId": "wk_000009179",
+    "title": "Number24",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q74752637"
+    },
+    "titles": {
+      "ko": "Number24",
+      "en": "Number24",
+      "ja": "Number24"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009295": {
+    "workId": "wk_000009295",
+    "title": "극장판 포켓몬스터: 코코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q81583691"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 코코",
+      "en": "Pokémon the Movie: Secrets of the Jungle",
+      "ja": "劇場版ポケットモンスター ココ"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

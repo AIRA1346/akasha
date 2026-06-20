@@ -1,0 +1,21 @@
+{
+  "wk_000001943": {
+    "workId": "wk_000001943",
+    "title": "나노리스트",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461738"
+    },
+    "titles": {
+      "ko": "나노리스트",
+      "en": "Nano List",
+      "ja": "ナノリスト"
+    },
+    "creator": "민송아",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

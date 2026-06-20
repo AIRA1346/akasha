@@ -1,0 +1,138 @@
+{
+  "wk_000001772": {
+    "workId": "wk_000001772",
+    "title": "나트의 강령술",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902596"
+    },
+    "titles": {
+      "ko": "나트의 강령술",
+      "en": "Necromancy in Naat",
+      "ja": "ナートの降霊術"
+    },
+    "releaseYear": 1936,
+    "creator": "クラーク・アシュトン・スミス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003051": {
+    "workId": "wk_000003051",
+    "title": "토끼와 거북이",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1067484"
+    },
+    "titles": {
+      "ko": "토끼와 거북이",
+      "en": "The Tortoise and the Hare",
+      "ja": "ウサギとカメ"
+    },
+    "creator": "アイソーポス",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004018": {
+    "workId": "wk_000004018",
+    "title": "그 달은 일요일뿐이었다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108005484"
+    },
+    "titles": {
+      "ko": "그 달은 일요일뿐이었다",
+      "en": "A Month of Sundays"
+    },
+    "releaseYear": 1975,
+    "creator": "John Updike",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005639": {
+    "workId": "wk_000005639",
+    "title": "둬훠 이모",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10958637"
+    },
+    "titles": {
+      "ko": "둬훠 이모",
+      "en": "Q10958637"
+    },
+    "creator": "Geling Yan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006360": {
+    "workId": "wk_000006360",
+    "title": "마나솔라사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1110851"
+    },
+    "titles": {
+      "ko": "마나솔라사",
+      "en": "Manasollasa",
+      "ja": "マーナソーッラーサ"
+    },
+    "releaseYear": 1200,
+    "creator": "ソーメーシュヴァラ三世",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007740": {
+    "workId": "wk_000007740",
+    "title": "죽지 않는 소년을 사랑한 소녀",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11272038"
+    },
+    "titles": {
+      "ko": "죽지 않는 소년을 사랑한 소녀",
+      "en": "Shinanai Otoko ni Koishita Shōjo",
+      "ja": "死なない男に恋した少女"
+    },
+    "releaseYear": 2008,
+    "creator": "Kazuki Sorano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008159": {
+    "workId": "wk_000008159",
+    "title": "게이트 - 자위대. 그의 땅에서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11301677"
+    },
+    "titles": {
+      "ko": "게이트 - 자위대. 그의 땅에서",
+      "en": "Gate",
+      "ja": "ゲート 自衛隊 彼の地にて、斯く戦えり"
+    },
+    "releaseYear": 2010,
+    "creator": "Takumi Yanai",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

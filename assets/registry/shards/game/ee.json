@@ -1,0 +1,78 @@
+{
+  "wk_000002640": {
+    "workId": "wk_000002640",
+    "title": "앨런 웨이크 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108417001"
+    },
+    "titles": {
+      "ko": "앨런 웨이크 2",
+      "en": "Q108417001",
+      "ja": "Alan Wake 2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006751": {
+    "workId": "wk_000006751",
+    "title": "램페이지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192318"
+    },
+    "titles": {
+      "ko": "램페이지",
+      "en": "Rampage",
+      "ja": "ランページ"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006889": {
+    "workId": "wk_000006889",
+    "title": "록 밴드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195153"
+    },
+    "titles": {
+      "ko": "록 밴드",
+      "en": "Q1195153",
+      "ja": "ロックバンド"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007002": {
+    "workId": "wk_000007002",
+    "title": "레이튼 교수와 이상한 마을",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1195476"
+    },
+    "titles": {
+      "ko": "레이튼 교수와 이상한 마을",
+      "en": "Professor Layton and the Curious Village",
+      "ja": "レイトン教授と不思議な町"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

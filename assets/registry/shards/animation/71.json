@@ -1,0 +1,116 @@
+{
+  "wk_000000231": {
+    "workId": "wk_000000231",
+    "title": "사카모토 데이즈",
+    "titles": {
+      "ko": "사카모토 데이즈",
+      "en": "Sakamoto Days",
+      "ja": "SAKAMOTO DAYS"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "스즈키 유우토",
+    "releaseYear": 2025,
+    "tags": [
+      "액션",
+      "코미디",
+      "킬러",
+      "가족"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2025,
+          "episodes": 11
+        }
+      ],
+      "latestSeason": "1기",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "tmdb": "207332",
+      "wikidata": "Q126127689"
+    },
+    "legacyIds": [
+      "sub_animation_sakamoto-days_2025"
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001595": {
+    "workId": "wk_000001595",
+    "title": "마법소녀 매지컬 디스트로이어즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111439075"
+    },
+    "titles": {
+      "ko": "마법소녀 매지컬 디스트로이어즈",
+      "en": "Magical Destroyers",
+      "ja": "魔法少女マジカルデストロイヤーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006526": {
+    "workId": "wk_000006526",
+    "title": "산리오 남자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28690097"
+    },
+    "titles": {
+      "ko": "산리오 남자",
+      "en": "Sanrio Boys",
+      "ja": "サンリオ男子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007278": {
+    "workId": "wk_000007278",
+    "title": "페르소나 5 디 애니메이션",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q48569833"
+    },
+    "titles": {
+      "ko": "페르소나 5 디 애니메이션",
+      "en": "Persona 5: The Animation",
+      "ja": "PERSONA5 the Animation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009754": {
+    "workId": "wk_000009754",
+    "title": "결혼의 풍경",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q901217"
+    },
+    "titles": {
+      "ko": "결혼의 풍경",
+      "en": "Scenes from a Marriage",
+      "ja": "ある結婚の風景"
+    },
+    "releaseYear": 1973,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

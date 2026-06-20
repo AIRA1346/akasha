@@ -1,0 +1,163 @@
+{
+  "wk_000000112": {
+    "workId": "wk_000000112",
+    "title": "플래닛 코스터",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Frontier",
+    "releaseYear": 2016,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid493340_2016"
+    ],
+    "titles": {
+      "en": "Planet Coaster",
+      "ko": "플래닛 코스터"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "493340",
+      "wikidata": "Q19744696"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001313": {
+    "workId": "wk_000001313",
+    "title": "MLB 더 쇼 21",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105419734"
+    },
+    "titles": {
+      "ko": "MLB 더 쇼 21",
+      "en": "MLB: The Show 21"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002835": {
+    "workId": "wk_000002835",
+    "title": "노블 워크스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856198"
+    },
+    "titles": {
+      "ko": "노블 워크스",
+      "en": "Noble ☆ Works",
+      "ja": "のーぶる☆わーくす"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004524": {
+    "workId": "wk_000004524",
+    "title": "드래곤 컬렉션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11322989"
+    },
+    "titles": {
+      "ko": "드래곤 컬렉션",
+      "en": "Dragon Collection",
+      "ja": "ドラゴンコレクション"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007217": {
+    "workId": "wk_000007217",
+    "title": "푸얀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1199765"
+    },
+    "titles": {
+      "ko": "푸얀",
+      "en": "Pooyan",
+      "ja": "プーヤン"
+    },
+    "releaseYear": 1985,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007605": {
+    "workId": "wk_000007605",
+    "title": "맛있는 사랑",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123251643"
+    },
+    "titles": {
+      "ko": "맛있는 사랑",
+      "en": "Tasty Love"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008027": {
+    "workId": "wk_000008027",
+    "title": "중국, 위기일발!!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12617553"
+    },
+    "titles": {
+      "ko": "중국, 위기일발!!",
+      "en": "Q12617553"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009097": {
+    "workId": "wk_000009097",
+    "title": "메탈슬러그 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1334705"
+    },
+    "titles": {
+      "ko": "메탈슬러그 3",
+      "en": "Metal Slug 3",
+      "ja": "メタルスラッグ3"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

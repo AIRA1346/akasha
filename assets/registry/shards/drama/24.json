@@ -1,0 +1,215 @@
+{
+  "wk_000001855": {
+    "workId": "wk_000001855",
+    "title": "빌려드립니다 바퀴 달린 집",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108506728"
+    },
+    "titles": {
+      "ko": "빌려드립니다 바퀴 달린 집",
+      "en": "Q108506728"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004189": {
+    "workId": "wk_000004189",
+    "title": "오늘부터 무해하게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115834"
+    },
+    "titles": {
+      "ko": "오늘부터 무해하게",
+      "en": "Q110115834"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004404": {
+    "workId": "wk_000004404",
+    "title": "재벌집 막내아들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110244733"
+    },
+    "titles": {
+      "ko": "재벌집 막내아들",
+      "en": "Reborn Rich",
+      "ja": "財閥家の末息子"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004922": {
+    "workId": "wk_000004922",
+    "title": "안나",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111415144"
+    },
+    "titles": {
+      "ko": "안나",
+      "en": "Anna",
+      "ja": "アンナ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004931": {
+    "workId": "wk_000004931",
+    "title": "심궁첩영",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11153186"
+    },
+    "titles": {
+      "ko": "심궁첩영",
+      "en": "Mystery in the Palace",
+      "ja": "諍い女たちの後宮"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005268": {
+    "workId": "wk_000005268",
+    "title": "NHK 뉴스 오하요 간사이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235046"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 간사이",
+      "en": "NHK News Ohayo kansai",
+      "ja": "NHKニュースおはよう関西"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005880": {
+    "workId": "wk_000005880",
+    "title": "왜 그럴까 ?",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278646"
+    },
+    "titles": {
+      "ko": "왜 그럴까 ?",
+      "en": "This Is Why",
+      "ja": "まんがなるほど物語"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006008": {
+    "workId": "wk_000006008",
+    "title": "애정응해유적양자 : 사랑은 이래야 해",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112869278"
+    },
+    "titles": {
+      "ko": "애정응해유적양자 : 사랑은 이래야 해",
+      "en": "Love The Way You Are"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007256": {
+    "workId": "wk_000007256",
+    "title": "테라시마 타쿠마의 훈훈후훈 ♪ 후후훈훈 ♪♪",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11457837"
+    },
+    "titles": {
+      "ko": "테라시마 타쿠마의 훈훈후훈 ♪ 후후훈훈 ♪♪",
+      "en": "Terashima Takuma no Fun Fun Fu Fu - n ♪ Fufufun Fu - n ♪♪",
+      "ja": "寺島拓篤のふんふんふふ〜ん♪ふふふんふ〜ん♪♪"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007310": {
+    "workId": "wk_000007310",
+    "title": "얄르 차프크느",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114689844"
+    },
+    "titles": {
+      "ko": "얄르 차프크느",
+      "en": "Yalı Çapkını",
+      "ja": "ヤリ・チャプキーニ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008688": {
+    "workId": "wk_000008688",
+    "title": "닥터 차정숙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117035204"
+    },
+    "titles": {
+      "ko": "닥터 차정숙",
+      "en": "Doctor Cha Jung-sook",
+      "ja": "医師チャ・ジョンスク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010327": {
+    "workId": "wk_000010327",
+    "title": "고머 파일, U.S.M.C.",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249300"
+    },
+    "titles": {
+      "ko": "고머 파일, U.S.M.C.",
+      "en": "Gomer Pyle, U.S.M.C.",
+      "ja": "マイペース二等兵"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "wk_000000012": {
+    "workId": "wk_000000012",
+    "title": "노르웨이의 숲",
+    "category": "book",
+    "domain": "generalCulture",
+    "creator": "무라카미 하루키",
+    "releaseYear": 1987,
+    "tags": [
+      "청춘",
+      "로맨스",
+      "문학",
+      "일본"
+    ],
+    "legacyIds": [
+      "gen_book_norwegian-wood_1987"
+    ],
+    "titles": {
+      "en": "Norwegian Wood",
+      "ko": "노르웨이의 숲"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q751348"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000004379": {
+    "workId": "wk_000004379",
+    "title": "삼교원류수신대전",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10866059"
+    },
+    "titles": {
+      "ko": "삼교원류수신대전",
+      "en": "Comprehensive Collection of Deities from the Three Religions",
+      "ja": "三教源流捜神大全"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "wk_000000550": {
+    "workId": "wk_000000550",
+    "title": "고요의 바다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101083996"
+    },
+    "titles": {
+      "ko": "고요의 바다",
+      "en": "The Silent Sea",
+      "ja": "静かなる海"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004477": {
+    "workId": "wk_000004477",
+    "title": "킬힐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110529626"
+    },
+    "titles": {
+      "ko": "킬힐",
+      "en": "Kill Heel"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005582": {
+    "workId": "wk_000005582",
+    "title": "멋진 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11258982"
+    },
+    "titles": {
+      "ko": "멋진 여자",
+      "en": "Handsome Woman",
+      "ja": "いい女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006843": {
+    "workId": "wk_000006843",
+    "title": "코버트 어페어스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138005"
+    },
+    "titles": {
+      "ko": "코버트 어페어스",
+      "en": "Covert Affairs",
+      "ja": "コバート・アフェア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007836": {
+    "workId": "wk_000007836",
+    "title": "사우스랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156746"
+    },
+    "titles": {
+      "ko": "사우스랜드",
+      "en": "Southland",
+      "ja": "サウスランド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008673": {
+    "workId": "wk_000008673",
+    "title": "라 프리메라 베스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116921044"
+    },
+    "titles": {
+      "ko": "라 프리메라 베스",
+      "en": "Eva Lasting",
+      "ja": "エヴァが教えてくれること"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009266": {
+    "workId": "wk_000009266",
+    "title": "불편해도 괜찮아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119543889"
+    },
+    "titles": {
+      "ko": "불편해도 괜찮아",
+      "en": "Q119543889"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010037": {
+    "workId": "wk_000010037",
+    "title": "왓 어바웃 브라이언",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1244389"
+    },
+    "titles": {
+      "ko": "왓 어바웃 브라이언",
+      "en": "What About Brian?",
+      "ja": "恋するブライアン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

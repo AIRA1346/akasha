@@ -1,0 +1,108 @@
+{
+  "wk_000000152": {
+    "workId": "wk_000000152",
+    "title": "듄",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Denis Villeneuve",
+    "releaseYear": 2021,
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_dune-2021_2021"
+    ],
+    "externalIds": {
+      "wikidata": "Q60834962"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Dune 2021",
+      "ko": "듄"
+    }
+  },
+  "wk_000001993": {
+    "workId": "wk_000001993",
+    "title": "조제",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103819225"
+    },
+    "titles": {
+      "ko": "조제",
+      "en": "Josée",
+      "ja": "ジョゼと虎と魚たち"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006953": {
+    "workId": "wk_000006953",
+    "title": "멋진 세계",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106969761"
+    },
+    "titles": {
+      "ko": "멋진 세계",
+      "en": "Under the Open Sky",
+      "ja": "すばらしき世界"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007435": {
+    "workId": "wk_000007435",
+    "title": "화이트 노이즈",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107377383"
+    },
+    "titles": {
+      "ko": "화이트 노이즈",
+      "en": "White Noise",
+      "ja": "ホワイト・ノイズ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007623": {
+    "workId": "wk_000007623",
+    "title": "치삼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1074868"
+    },
+    "titles": {
+      "ko": "치삼",
+      "en": "Chisum",
+      "ja": "チザム"
+    },
+    "releaseYear": 1970,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

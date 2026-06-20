@@ -1,0 +1,110 @@
+{
+  "wk_000000290": {
+    "workId": "wk_000000290",
+    "title": "젠레스 존 제로",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2024,
+    "tags": [
+      "액션",
+      "SF",
+      "도시",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_zenless-zone-zero_2024"
+    ],
+    "titles": {
+      "en": "Zenless Zone Zero",
+      "ko": "젠레스 존 제로"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q111983519"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000789": {
+    "workId": "wk_000000789",
+    "title": "아가레스트 전기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042365"
+    },
+    "titles": {
+      "ko": "아가레스트 전기",
+      "en": "Record of Agarest War",
+      "ja": "アガレスト戦記"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002086": {
+    "workId": "wk_000002086",
+    "title": "보더 브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070977"
+    },
+    "titles": {
+      "ko": "보더 브레이크",
+      "en": "Border Break",
+      "ja": "ボーダーブレイク"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007487": {
+    "workId": "wk_000007487",
+    "title": "야생 동물 스포츠의 날",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122379715"
+    },
+    "titles": {
+      "ko": "야생 동물 스포츠의 날",
+      "en": "Wild Animal Sports Day",
+      "ja": "野生動物運動会"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008985": {
+    "workId": "wk_000008985",
+    "title": "제비우스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1327963"
+    },
+    "titles": {
+      "ko": "제비우스",
+      "en": "Q1327963",
+      "ja": "ゼビウス"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

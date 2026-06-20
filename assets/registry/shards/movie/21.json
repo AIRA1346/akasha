@@ -1,0 +1,78 @@
+{
+  "wk_000006217": {
+    "workId": "wk_000006217",
+    "title": "아미나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106542682"
+    },
+    "titles": {
+      "ko": "아미나",
+      "en": "Amina",
+      "ja": "アミナ"
+    },
+    "releaseYear": 1980,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007886": {
+    "workId": "wk_000007886",
+    "title": "방법: 재차의",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107610311"
+    },
+    "titles": {
+      "ko": "방법: 재차의",
+      "en": "The Cursed: Dead Man’s Prey",
+      "ja": "呪呪呪／死者をあやつる者"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008461": {
+    "workId": "wk_000008461",
+    "title": "휴전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1077585"
+    },
+    "titles": {
+      "ko": "휴전",
+      "en": "The Truce",
+      "ja": "遙かなる帰郷"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010307": {
+    "workId": "wk_000010307",
+    "title": "청춘시련",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109260459"
+    },
+    "titles": {
+      "ko": "청춘시련",
+      "en": "Terrorizers",
+      "ja": "青春弑恋"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

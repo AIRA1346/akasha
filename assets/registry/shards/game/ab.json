@@ -1,0 +1,131 @@
+{
+  "wk_000000267": {
+    "workId": "wk_000000267",
+    "title": "셀레스테",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Maddy Makes Games",
+    "releaseYear": 2018,
+    "tags": [
+      "인디",
+      "플랫포머",
+      "난이도",
+      "힐링"
+    ],
+    "legacyIds": [
+      "sub_game_celeste_2018"
+    ],
+    "titles": {
+      "en": "Celeste",
+      "ko": "셀레스테"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W2_e2_title_fix",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "504230",
+      "wikidata": "Q28451532"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000002249": {
+    "workId": "wk_000002249",
+    "title": "Rance 01 -빛을 찾아서-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107295582"
+    },
+    "titles": {
+      "ko": "Rance 01 -빛을 찾아서-",
+      "en": "Rance 01 - Quest for Hikari"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003561": {
+    "workId": "wk_000003561",
+    "title": "프롭나이트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111031775"
+    },
+    "titles": {
+      "ko": "프롭나이트",
+      "en": "Propnight",
+      "ja": "Propnight"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004308": {
+    "workId": "wk_000004308",
+    "title": "이치단트알",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11286752"
+    },
+    "titles": {
+      "ko": "이치단트알",
+      "en": "Puzzle & Action: Ichidant-R",
+      "ja": "イチダントアール"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005907": {
+    "workId": "wk_000005907",
+    "title": "베트콩",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1155391"
+    },
+    "titles": {
+      "ko": "베트콩",
+      "en": "Vietcong",
+      "ja": "ベトコン"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007922": {
+    "workId": "wk_000007922",
+    "title": "Rance IX -헬만 혁명-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125523005"
+    },
+    "titles": {
+      "ko": "Rance IX -헬만 혁명-",
+      "en": "Rance IX - Helman Kakumei -",
+      "ja": "Rance IX -ヘルマン革命-"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

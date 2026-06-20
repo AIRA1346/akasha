@@ -1,0 +1,150 @@
+{
+  "wk_000000414": {
+    "workId": "wk_000000414",
+    "title": "2.43 清陰高校男子バレー部",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100256359"
+    },
+    "titles": {
+      "en": "2.43: Seiin High School Boys Volleyball Team",
+      "ja": "2.43 清陰高校男子バレー部"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000688": {
+    "workId": "wk_000000688",
+    "title": "고, 보이즈!: 마지막 잎새 사수 프로젝트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855258"
+    },
+    "titles": {
+      "ko": "고, 보이즈!: 마지막 잎새 사수 프로젝트",
+      "en": "Ike! Danshi Kōkō Engekibu",
+      "ja": "行け!男子高校演劇部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001893": {
+    "workId": "wk_000001893",
+    "title": "토쿠보우 아사쿠라 소헤이",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11321176"
+    },
+    "titles": {
+      "ko": "토쿠보우 아사쿠라 소헤이",
+      "en": "Tokubou Asakura Sōhei",
+      "ja": "トクボウ 朝倉草平"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003431": {
+    "workId": "wk_000003431",
+    "title": "들려주오 사랑의 속삭임을",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11611181"
+    },
+    "titles": {
+      "ko": "들려주오 사랑의 속삭임을",
+      "en": "Kikaseto yo, Ai no Kotoba o",
+      "ja": "聞かせてよ愛の言葉を"
+    },
+    "creator": "Mutsumi Tsukumo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006096": {
+    "workId": "wk_000006096",
+    "title": "아군이 너무 약해보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133453371"
+    },
+    "titles": {
+      "ko": "아군이 너무 약해보조 마법으로 일관하던 궁정 마법사,추방당해서 최강을 노린다",
+      "en": "The Banished Court Magician Aims to Become the Strongest",
+      "ja": "味方が弱すぎて補助魔法に徹していた宮廷魔法師、追放されて最強を目指す"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006732": {
+    "workId": "wk_000006732",
+    "title": "하나야마타",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15407839"
+    },
+    "titles": {
+      "ko": "하나야마타",
+      "en": "Hanayamata",
+      "ja": "ハナヤマタ"
+    },
+    "creator": "Sō Hamayumiba",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007512": {
+    "workId": "wk_000007512",
+    "title": "하이스코어 걸",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q181357"
+    },
+    "titles": {
+      "ko": "하이스코어 걸",
+      "en": "Hi Score Girl",
+      "ja": "ハイスコアガール"
+    },
+    "creator": "Rensuke Oshikiri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008968": {
+    "workId": "wk_000008968",
+    "title": "욕망!! 팬더가면",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2577837"
+    },
+    "titles": {
+      "ko": "욕망!! 팬더가면",
+      "en": "Kyūkyoku!! Hentai Kamen",
+      "ja": "究極!!変態仮面"
+    },
+    "creator": "Keishū Ando",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

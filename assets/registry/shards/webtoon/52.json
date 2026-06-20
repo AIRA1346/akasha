@@ -1,0 +1,19 @@
+{
+  "wk_000003445": {
+    "workId": "wk_000003445",
+    "title": "FFF급 관심용사",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q85971115"
+    },
+    "titles": {
+      "ko": "FFF급 관심용사",
+      "en": "FFF-Class Trashero"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

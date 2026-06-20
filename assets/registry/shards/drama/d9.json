@@ -1,0 +1,230 @@
+{
+  "wk_000002504": {
+    "workId": "wk_000002504",
+    "title": "대사당",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10937144"
+    },
+    "titles": {
+      "ko": "대사당",
+      "en": "Ancestral Temple"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004180": {
+    "workId": "wk_000004180",
+    "title": "아시안탑밴드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115589"
+    },
+    "titles": {
+      "ko": "아시안탑밴드",
+      "en": "Q110115589"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004329": {
+    "workId": "wk_000004329",
+    "title": "골든일레븐",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118103"
+    },
+    "titles": {
+      "ko": "골든일레븐",
+      "en": "Q110118103"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004934": {
+    "workId": "wk_000004934",
+    "title": "바이트 씨스터즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111541900"
+    },
+    "titles": {
+      "ko": "바이트 씨스터즈",
+      "en": "Bite Sisters"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005525": {
+    "workId": "wk_000005525",
+    "title": "아사이치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11257248"
+    },
+    "titles": {
+      "ko": "아사이치",
+      "en": "asaichi",
+      "ja": "あさイチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007255": {
+    "workId": "wk_000007255",
+    "title": "가이딩 라이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1145764"
+    },
+    "titles": {
+      "ko": "가이딩 라이트",
+      "en": "Guiding Light",
+      "ja": "ガイディング・ライト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007260": {
+    "workId": "wk_000007260",
+    "title": "어쩌다 마주친, 그대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114616573"
+    },
+    "titles": {
+      "ko": "어쩌다 마주친, 그대",
+      "en": "My Perfect Stranger",
+      "ja": "偶然出会った、あなた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007830": {
+    "workId": "wk_000007830",
+    "title": "화원 북의 영웅 아테루이 전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11566875"
+    },
+    "titles": {
+      "ko": "화원 북의 영웅 아테루이 전",
+      "en": "Ka'en Kita no Eiyū Aterui Den",
+      "ja": "火怨・北の英雄 アテルイ伝"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008407": {
+    "workId": "wk_000008407",
+    "title": "저지 쇼어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165712"
+    },
+    "titles": {
+      "ko": "저지 쇼어",
+      "en": "Jersey Shore",
+      "ja": "ジャージーショア"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008823": {
+    "workId": "wk_000008823",
+    "title": "고스포드 교수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117833409"
+    },
+    "titles": {
+      "ko": "고스포드 교수",
+      "en": "Gospod Profesor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009264": {
+    "workId": "wk_000009264",
+    "title": "어른애들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119518367"
+    },
+    "titles": {
+      "ko": "어른애들",
+      "en": "Adult Kids"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010109": {
+    "workId": "wk_000010109",
+    "title": "조명가게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124616105"
+    },
+    "titles": {
+      "ko": "조명가게",
+      "en": "Light Shop",
+      "ja": "照明店の客人たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010113": {
+    "workId": "wk_000010113",
+    "title": "지배종",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124625340"
+    },
+    "titles": {
+      "ko": "지배종",
+      "en": "Blood Free"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

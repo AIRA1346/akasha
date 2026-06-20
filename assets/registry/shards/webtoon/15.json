@@ -1,0 +1,20 @@
+{
+  "wk_000002211": {
+    "workId": "wk_000002211",
+    "title": "사랑은 환상!",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121754691"
+    },
+    "titles": {
+      "ko": "사랑은 환상!",
+      "en": "Love is an Illusion!"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

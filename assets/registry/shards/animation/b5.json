@@ -1,0 +1,112 @@
+{
+  "wk_000000475": {
+    "workId": "wk_000000475",
+    "title": "아이돌즈!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100255605"
+    },
+    "titles": {
+      "ko": "아이돌즈!",
+      "en": "Idolls!",
+      "ja": "アイドールズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005340": {
+    "workId": "wk_000005340",
+    "title": "아이돌 사변",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18989784"
+    },
+    "titles": {
+      "ko": "아이돌 사변",
+      "en": "Idol Incidents",
+      "ja": "アイドル事変"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005968": {
+    "workId": "wk_000005968",
+    "title": "흑집사: 북 오브 더 아틀란틱",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24238541"
+    },
+    "titles": {
+      "ko": "흑집사: 북 오브 더 아틀란틱",
+      "en": "Black Butler: Book of the Atlantic",
+      "ja": "劇場版「黒執事 Book of the Atlantic」"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007095": {
+    "workId": "wk_000007095",
+    "title": "배트맨 닌자",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q44353698"
+    },
+    "titles": {
+      "ko": "배트맨 닌자",
+      "en": "Batman Ninja",
+      "ja": "ニンジャバットマン"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007350": {
+    "workId": "wk_000007350",
+    "title": "길티 크라운",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q494610"
+    },
+    "titles": {
+      "ko": "길티 크라운",
+      "en": "Guilty Crown",
+      "ja": "ギルティクラウン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008976": {
+    "workId": "wk_000008976",
+    "title": "백수왕 고라이온",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q707001"
+    },
+    "titles": {
+      "ko": "백수왕 고라이온",
+      "en": "Beast King GoLion",
+      "ja": "百獣王ゴライオン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

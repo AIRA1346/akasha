@@ -1,0 +1,180 @@
+{
+  "wk_000001296": {
+    "workId": "wk_000001296",
+    "title": "뭉쳐야 쏜다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105840531"
+    },
+    "titles": {
+      "ko": "뭉쳐야 쏜다",
+      "en": "Q105840531"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001674": {
+    "workId": "wk_000001674",
+    "title": "TG2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079306"
+    },
+    "titles": {
+      "ko": "TG2",
+      "en": "TG2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002009": {
+    "workId": "wk_000002009",
+    "title": "그것이 답이다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855646"
+    },
+    "titles": {
+      "ko": "그것이 답이다!",
+      "en": "Q10855646",
+      "ja": "それが答えだ!"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002010": {
+    "workId": "wk_000002010",
+    "title": "그대는 별",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855647"
+    },
+    "titles": {
+      "ko": "그대는 별",
+      "en": "You are a Star",
+      "ja": "あなたは星"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003074": {
+    "workId": "wk_000003074",
+    "title": "kbc 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458846"
+    },
+    "titles": {
+      "ko": "kbc 뉴스특보",
+      "en": "Q109458846"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006383": {
+    "workId": "wk_000006383",
+    "title": "뉴스센터 9시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324786"
+    },
+    "titles": {
+      "ko": "뉴스센터 9시",
+      "en": "NEWS CENTER 9",
+      "ja": "ニュースセンター9時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008340": {
+    "workId": "wk_000008340",
+    "title": "초경 21 거터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11636314"
+    },
+    "titles": {
+      "ko": "초경 21 거터",
+      "en": "Chōkō 21 Gutter",
+      "ja": "超耕21ガッター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008690": {
+    "workId": "wk_000008690",
+    "title": "방과 후 전쟁활동",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117072066"
+    },
+    "titles": {
+      "ko": "방과 후 전쟁활동",
+      "en": "Duty After School"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009165": {
+    "workId": "wk_000009165",
+    "title": "갈릴레오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192780"
+    },
+    "titles": {
+      "ko": "갈릴레오",
+      "en": "Galileo",
+      "ja": "ガリレオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009619": {
+    "workId": "wk_000009619",
+    "title": "그린조끼구조대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122480072"
+    },
+    "titles": {
+      "ko": "그린조끼구조대",
+      "en": "Green Vest Rescue Team",
+      "ja": "グリーンチョッキ救助隊"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

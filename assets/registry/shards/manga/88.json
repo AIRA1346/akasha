@@ -1,0 +1,40 @@
+{
+  "wk_000006173": {
+    "workId": "wk_000006173",
+    "title": "바람과 나무의 시",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1338432"
+    },
+    "titles": {
+      "ko": "바람과 나무의 시",
+      "en": "Kaze to Ki no Uta",
+      "ja": "風と木の詩"
+    },
+    "creator": "Keiko Takemiya",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007642": {
+    "workId": "wk_000007642",
+    "title": "NEW GAME!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18338746"
+    },
+    "titles": {
+      "ko": "NEW GAME!",
+      "en": "New Game!",
+      "ja": "NEW GAME!"
+    },
+    "creator": "Shōtarō Tokunō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

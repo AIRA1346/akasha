@@ -1,0 +1,57 @@
+{
+  "wk_000000510": {
+    "workId": "wk_000000510",
+    "title": "부에노스 아이레스 1977",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1001863"
+    },
+    "titles": {
+      "ko": "부에노스 아이레스 1977",
+      "en": "Chronicle of an Escape"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002938": {
+    "workId": "wk_000002938",
+    "title": "매직아치",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104868959"
+    },
+    "titles": {
+      "ko": "매직아치",
+      "en": "Magic Arch 3D"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010305": {
+    "workId": "wk_000010305",
+    "title": "자토이치",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1092576"
+    },
+    "titles": {
+      "ko": "자토이치",
+      "en": "The Tale of Zatoichi",
+      "ja": "座頭市物語"
+    },
+    "releaseYear": 1962,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

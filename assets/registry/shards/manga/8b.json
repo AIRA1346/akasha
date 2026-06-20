@@ -1,0 +1,60 @@
+{
+  "wk_000001665": {
+    "workId": "wk_000001665",
+    "title": "Engage Kiss",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112860635"
+    },
+    "titles": {
+      "ko": "Engage Kiss",
+      "en": "Engage Kiss",
+      "ja": "Engage Kiss"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003698": {
+    "workId": "wk_000003698",
+    "title": "타몬 군 지금 어느 쪽?!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116825658"
+    },
+    "titles": {
+      "ko": "타몬 군 지금 어느 쪽?!",
+      "en": "Tamon's B-Side",
+      "ja": "多聞くん今どっち!?"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008422": {
+    "workId": "wk_000008422",
+    "title": "타나카 군은 항상 나른해",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22128485"
+    },
+    "titles": {
+      "ko": "타나카 군은 항상 나른해",
+      "en": "Tanaka-kun is Always Listless",
+      "ja": "田中くんはいつもけだるげ"
+    },
+    "releaseYear": 2016,
+    "creator": "Nozomi Uda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "wk_000003587": {
+    "workId": "wk_000003587",
+    "title": "이탈리안 잡",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1051032"
+    },
+    "titles": {
+      "ko": "이탈리안 잡",
+      "en": "The Italian Job",
+      "ja": "ミニミニ大作戦"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008795": {
+    "workId": "wk_000008795",
+    "title": "영도다리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108166861"
+    },
+    "titles": {
+      "ko": "영도다리",
+      "en": "I Came from Busan"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010306": {
+    "workId": "wk_000010306",
+    "title": "용지성",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109258098"
+    },
+    "titles": {
+      "ko": "용지성",
+      "en": "Realm of Terracotta",
+      "ja": "兵馬俑の城"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

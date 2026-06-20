@@ -1,0 +1,119 @@
+{
+  "wk_000001788": {
+    "workId": "wk_000001788",
+    "title": "타임 워커 제로",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11315756"
+    },
+    "titles": {
+      "ko": "타임 워커 제로",
+      "en": "Time Walker Zero",
+      "ja": "タイムウォーカー零"
+    },
+    "creator": "Yūki Hidaka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003257": {
+    "workId": "wk_000003257",
+    "title": "전생귀족의 이세계 모험록 ~자중을 모르는 신들의 사도~",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115620194"
+    },
+    "titles": {
+      "ko": "전생귀족의 이세계 모험록 ~자중을 모르는 신들의 사도~",
+      "en": "Chronicles of an Aristocrat Reborn in Another World",
+      "ja": "転生貴族の異世界冒険録 〜自重を知らない神々の使徒〜"
+    },
+    "releaseYear": 2018,
+    "creator": "Yashū",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006392": {
+    "workId": "wk_000006392",
+    "title": "단둘이 버스",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136757281"
+    },
+    "titles": {
+      "ko": "단둘이 버스",
+      "en": "Futari Bus",
+      "ja": "ふたりバス"
+    },
+    "releaseYear": 2026,
+    "creator": "豊林サカネ",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007043": {
+    "workId": "wk_000007043",
+    "title": "류가조 나나나의 매장금",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16892259"
+    },
+    "titles": {
+      "ko": "류가조 나나나의 매장금",
+      "en": "Nanana's Buried Treasure",
+      "ja": "龍ヶ嬢七々々の埋蔵金"
+    },
+    "creator": "Kazuma Otorino",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008359": {
+    "workId": "wk_000008359",
+    "title": "노 건즈 라이프",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22124703"
+    },
+    "titles": {
+      "ko": "노 건즈 라이프",
+      "en": "No Guns Life",
+      "ja": "ノー・ガンズ・ライフ"
+    },
+    "creator": "Tasuku Karasuma",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008488": {
+    "workId": "wk_000008488",
+    "title": "마사무네의 리벤지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22131469"
+    },
+    "titles": {
+      "ko": "마사무네의 리벤지",
+      "en": "Masamune-kun's Revenge",
+      "ja": "政宗くんのリベンジ"
+    },
+    "releaseYear": 2012,
+    "creator": "Hazuki Takeoka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

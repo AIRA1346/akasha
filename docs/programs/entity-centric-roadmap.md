@@ -1,7 +1,8 @@
 # Entity-Centric 로드맵 — 단계별 진행 SSOT
 
-> **상태:** Wave 1~5 ✅ · Phase A/B UX ✅ · **W6-1 ledger PoC ✅** · dogfood ⏳  
+> **상태:** Wave 1~5 ✅ · Phase A/B UX ✅ · W6-1 ledger PoC ✅ · **Archive-First R0 ✅** · dogfood ⏳ (R5)  
 > **갱신:** 2026-06-19  
+> **Archive-First:** [archive-first-realignment-plan.md](archive-first-realignment-plan.md)  
 > **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md)  
 > **실행:** [entity-centric-evolution-plan.md](entity-centric-evolution-plan.md)
 
@@ -14,8 +15,9 @@
 | G1 | **문서·검토 → Gate → 코드** — Exit checklist green 전 착수 금지 |
 | G2 | **한 Wave = 한 PR theme** — scope creep 금지 |
 | G3 | **Breaking migration 없음** — lazy upgrade only |
-| G4 | **Work-first UI** — Person/Concept UI는 Wave 4 |
+| G4 | **Work-first Browse** — Person/Concept는 **archived tile** (포스터 그리드 ❌) |
 | G5 | 신규 Entity Type — [entity-type-philosophy.md](../policy/entity-type-philosophy.md) §6.1 검증 |
+| G6 | **Archive-First** — 사용자 「추가」= `.md` Record · catalog = 배관 ([R-plan](archive-first-realignment-plan.md)) |
 
 ---
 
@@ -31,7 +33,24 @@
 | **5** | W5 | Connection | ✅ v1 | ✅ | ✅ | 🟡 |
 | **6** | W6 | Memory Core PoC | ✅ v1 | ⬜ | 🔶 W6-1 | ⬜ |
 
-**현재 포커스:** Phase B Fusion type 섹션 · W4.2 Place/Org · ADR-013 ✅ · dogfood는 구현 완료 후 1회
+**현재 포커스:** **Phase R0** 문서 SSOT · **Phase R1** Add flow 뒤집기 (P0) · dogfood = R5 Gate
+
+---
+
+## 2b. Archive-First Realignment (Phase R)
+
+> SSOT: [archive-first-realignment-plan.md](archive-first-realignment-plan.md)
+
+| Phase | 목표 | 설계 | 코드 | Gate |
+|:-----:|------|:----:|:----:|:----:|
+| **R0** | 문서·용어 SSOT | ✅ | — | ✅ |
+| **R1** | Person 추가 = `.md` 기본 · 카피 교체 | ✅ | ⬜ | P0 |
+| **R2** | 서재 entityId · 기록 Entity 1급 | ✅ | ⬜ | P1 |
+| **R3** | Fusion local tier · resolve order | ✅ | ⬜ | P1 |
+| **R4** | Unified Archive UX | ✅ | ⬜ | P2 |
+| **R5** | dogfood Gate | ✅ | ⬜ | P0 (R1 후) |
+
+**Known UX debt (Wave 4):** Person 추가 → catalog-first · journal opt-in · 「catalog 추가」 SnackBar → R1에서 수정.
 
 ---
 
@@ -132,17 +151,20 @@
 | 4 | [wave4-spec](wave4-entity-types-spec.md) | [wave4-exit](wave4-exit-review.md) | entity-type-philosophy |
 | 5 | [wave5-spec](wave5-connection-spec.md) | [wave5-exit](wave5-exit-review.md) | [dogfood](wave5-dogfood-checklist.md) |
 | — | [storage-masterplan](entity-record-storage-masterplan.md) | — | cross-cutting |
+| — | **[archive-first](archive-first-realignment-plan.md)** | — | [dogfood R5](archive-first-dogfood-checklist.md) |
 
 ---
 
 ## 10. 다음 액션 (순서)
 
 ```
-[지금]  Phase A Entity Discovery strip ✅ · Phase B Fusion sections ✅
-        W4.2 Place/Organization catalog ✅ · ADR-013 ✅
+[완료]  Phase A Entity Discovery strip ✅ · Phase B Fusion sections ✅
+        W4.2 Place/Organization ✅ · ADR-013 ✅ · W5-5 sameDay ✅ · W6-1 ledger ✅
 
-[다음]  Wave 6 PoC scope 검토 (optional)
-        dogfood 1회 — wave5-dogfood-checklist (구현 완료 후)
+[지금]  Phase R0 — Archive-First 문서 SSOT (본 roadmap · policy · masterplan · exit reviews)
+[R1]    Person 추가 = entities/person/*.md 기본 · UI 「catalog」→「아카이브」
+[R5]    dogfood 1회 — archive-first-dogfood-checklist (R1 후)
+[W6]    SQLite projector / MCP — R1과 병렬 optional
 ```
 
 ---
@@ -152,3 +174,4 @@
 | 일자 | 변경 |
 |------|------|
 | 2026-06-19 | v2 — Wave 5 MVP exit · dogfood checklist |
+| 2026-06-19 | **v3 Archive-First** — Phase R0~R5 · G6 · UX debt pointer |

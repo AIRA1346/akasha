@@ -121,6 +121,7 @@ class HomeShellScaffold extends StatelessWidget {
               linkIndex: controller.linkIndex,
               onEntityScopeChanged: controller.onEntityScopeChanged,
               onWikiLinkTap: controller.handleWikiLinkTap,
+              onRequestEntityLink: controller.handleRequestEntityLink,
               onSelectPersonalLibrary: controller.selectPersonalLibrary,
               onEditPersonalLibrary: (lib) =>
                   controller.personalLibraryUi.showEditDialog(

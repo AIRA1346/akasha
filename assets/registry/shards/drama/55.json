@@ -1,0 +1,196 @@
+{
+  "wk_000001302": {
+    "workId": "wk_000001302",
+    "title": "뉴스 금요일 5시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105940494"
+    },
+    "titles": {
+      "ko": "뉴스 금요일 5시",
+      "en": "Q105940494",
+      "ja": "ニュース きん5時"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002349": {
+    "workId": "wk_000002349",
+    "title": "발칙한 여자들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10913774"
+    },
+    "titles": {
+      "ko": "발칙한 여자들",
+      "en": "Outrageous Women",
+      "ja": "イヴの反乱"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003421": {
+    "workId": "wk_000003421",
+    "title": "나는 차였어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461496"
+    },
+    "titles": {
+      "ko": "나는 차였어",
+      "en": "Q109461496"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005065": {
+    "workId": "wk_000005065",
+    "title": "BS영배틀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191808"
+    },
+    "titles": {
+      "ko": "BS영배틀",
+      "en": "BS Young Battle",
+      "ja": "BSヤングバトル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005998": {
+    "workId": "wk_000005998",
+    "title": "아사데스.",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283160"
+    },
+    "titles": {
+      "ko": "아사데스.",
+      "en": "Q11283160",
+      "ja": "アサデス。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006914": {
+    "workId": "wk_000006914",
+    "title": "형사 뱀에게 횡단된다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11396310"
+    },
+    "titles": {
+      "ko": "형사 뱀에게 횡단된다",
+      "en": "Keiji hebi ni yokogira reru",
+      "ja": "刑事 蛇に横切られる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007491": {
+    "workId": "wk_000007491",
+    "title": "일요 미술관",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11505482"
+    },
+    "titles": {
+      "ko": "일요 미술관",
+      "en": "Nichiyō Bijutsukan",
+      "ja": "日曜美術館"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008537": {
+    "workId": "wk_000008537",
+    "title": "풍취반하 : 반하에 부는 바람",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116769116"
+    },
+    "titles": {
+      "ko": "풍취반하 : 반하에 부는 바람",
+      "en": "Wild Bloom"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009173": {
+    "workId": "wk_000009173",
+    "title": "가면라이더 블랙 RX",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193499"
+    },
+    "titles": {
+      "ko": "가면라이더 블랙 RX",
+      "en": "Kamen Rider Black RX",
+      "ja": "仮面ライダーBLACK RX"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009798": {
+    "workId": "wk_000009798",
+    "title": "여행의 맛",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123570663"
+    },
+    "titles": {
+      "ko": "여행의 맛",
+      "en": "Q123570663"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010104": {
+    "workId": "wk_000010104",
+    "title": "플레이어 2: 꾼들의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611027"
+    },
+    "titles": {
+      "ko": "플레이어 2: 꾼들의 전쟁",
+      "en": "Player 2: Master of Swindlers"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

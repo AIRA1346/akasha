@@ -1,0 +1,95 @@
+{
+  "wk_000001191": {
+    "workId": "wk_000001191",
+    "title": "터널",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103845096"
+    },
+    "titles": {
+      "ko": "터널",
+      "en": "Q103845096"
+    },
+    "releaseYear": 2013,
+    "creator": "So Jae-won",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001836": {
+    "workId": "wk_000001836",
+    "title": "독수리와 천사",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105009466"
+    },
+    "titles": {
+      "ko": "독수리와 천사",
+      "en": "Eagles and Angels"
+    },
+    "releaseYear": 2001,
+    "creator": "Juli Zeh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001879": {
+    "workId": "wk_000001879",
+    "title": "이케부쿠로 웨스트 게이트 파크",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050442"
+    },
+    "titles": {
+      "ko": "이케부쿠로 웨스트 게이트 파크",
+      "en": "Ikebukuro West Gate Park",
+      "ja": "池袋ウエストゲートパーク"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006059": {
+    "workId": "wk_000006059",
+    "title": "고산옥황심인경",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11071970"
+    },
+    "titles": {
+      "ko": "고산옥황심인경",
+      "en": "Mind-Seal Scripture of the Exalted Jade Sovereign",
+      "ja": "高上玉皇心印経"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007420": {
+    "workId": "wk_000007420",
+    "title": "신은 주사위를 던지지 않는다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11255167"
+    },
+    "titles": {
+      "ko": "신은 주사위를 던지지 않는다",
+      "en": "Kami wa Saikoro wo Furanai",
+      "ja": "神はサイコロを振らない"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

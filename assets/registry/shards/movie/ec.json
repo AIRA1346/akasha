@@ -1,0 +1,77 @@
+{
+  "wk_000001179": {
+    "workId": "wk_000001179",
+    "title": "킬링 오브 투 러버스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101093703"
+    },
+    "titles": {
+      "ko": "킬링 오브 투 러버스",
+      "en": "The Killing of Two Lovers"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003891": {
+    "workId": "wk_000003891",
+    "title": "티탄",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105393862"
+    },
+    "titles": {
+      "ko": "티탄",
+      "en": "Titane",
+      "ja": "チタン"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007181": {
+    "workId": "wk_000007181",
+    "title": "스페이스맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107175474"
+    },
+    "titles": {
+      "ko": "스페이스맨",
+      "en": "Spaceman",
+      "ja": "スペースマン"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007553": {
+    "workId": "wk_000007553",
+    "title": "카운트다운 투 제로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1073975"
+    },
+    "titles": {
+      "ko": "카운트다운 투 제로",
+      "en": "Countdown to Zero",
+      "ja": "カウントダウンZERO"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

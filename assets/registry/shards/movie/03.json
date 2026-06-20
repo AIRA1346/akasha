@@ -1,0 +1,135 @@
+{
+  "wk_000001436": {
+    "workId": "wk_000001436",
+    "title": "데드풀과 울버린",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102180106"
+    },
+    "titles": {
+      "ko": "데드풀과 울버린",
+      "en": "Deadpool & Wolverine",
+      "ja": "デッドプール&ウルヴァリン"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002656": {
+    "workId": "wk_000002656",
+    "title": "킹 오브 파이터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1046883"
+    },
+    "titles": {
+      "ko": "킹 오브 파이터",
+      "en": "The King of Fighters",
+      "ja": "ザ・キング・オブ・ファイターズ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003749": {
+    "workId": "wk_000003749",
+    "title": "셀 211",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1052975"
+    },
+    "titles": {
+      "ko": "셀 211",
+      "en": "Cell 211",
+      "ja": "プリズン211"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005509": {
+    "workId": "wk_000005509",
+    "title": "더 쓰리 머스커티어스: 달타냥",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105998710"
+    },
+    "titles": {
+      "ko": "더 쓰리 머스커티어스: 달타냥",
+      "en": "The Three Musketeers: D'Artagnan",
+      "ja": "三銃士 ダルタニアン物語"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009528": {
+    "workId": "wk_000009528",
+    "title": "늑대와 사자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108701958"
+    },
+    "titles": {
+      "ko": "늑대와 사자",
+      "en": "The Wolf and the Lion",
+      "ja": "オオカミとライオン"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009600": {
+    "workId": "wk_000009600",
+    "title": "에놀라 홈즈 2",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108764447"
+    },
+    "titles": {
+      "ko": "에놀라 홈즈 2",
+      "en": "Enola Holmes 2",
+      "ja": "エノーラ・ホームズの事件簿2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010348": {
+    "workId": "wk_000010348",
+    "title": "더 마에스트로",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109301770"
+    },
+    "titles": {
+      "ko": "더 마에스트로",
+      "en": "Ennio",
+      "ja": "モリコーネ　映画が恋した音楽家"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

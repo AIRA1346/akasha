@@ -1,0 +1,213 @@
+{
+  "wk_000000949": {
+    "workId": "wk_000000949",
+    "title": "아미 오브 더 데드: 로스트 베가스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104590280"
+    },
+    "titles": {
+      "ko": "아미 오브 더 데드: 로스트 베가스",
+      "en": "Army of the Dead: Lost Vegas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002992": {
+    "workId": "wk_000002992",
+    "title": "대한민국 해양대탐험",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109457976"
+    },
+    "titles": {
+      "ko": "대한민국 해양대탐험",
+      "en": "Q109457976"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004332": {
+    "workId": "wk_000004332",
+    "title": "나를알아줘 : 뽕카페",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118203"
+    },
+    "titles": {
+      "ko": "나를알아줘 : 뽕카페",
+      "en": "Q110118203"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004998": {
+    "workId": "wk_000004998",
+    "title": "아내의 복수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111730799"
+    },
+    "titles": {
+      "ko": "아내의 복수",
+      "en": "Dendam Seorang Isteri"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005671": {
+    "workId": "wk_000005671",
+    "title": "도와자 ☆ 진파치",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262923"
+    },
+    "titles": {
+      "ko": "도와자 ☆ 진파치",
+      "en": "O Tasuke-ya ☆ Jinpachi",
+      "ja": "お助け屋☆陣八"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006001": {
+    "workId": "wk_000006001",
+    "title": "하마키스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11284294"
+    },
+    "titles": {
+      "ko": "하마키스",
+      "en": "Q11284294",
+      "ja": "濱キス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006076": {
+    "workId": "wk_000006076",
+    "title": "에어즈 록",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11289535"
+    },
+    "titles": {
+      "ko": "에어즈 록",
+      "en": "Ayers Rock",
+      "ja": "エアーズロック (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007379": {
+    "workId": "wk_000007379",
+    "title": "The Really Loud House",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114917662"
+    },
+    "titles": {
+      "ko": "The Really Loud House",
+      "en": "The Really Loud House",
+      "ja": "The Really Loud House"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007896": {
+    "workId": "wk_000007896",
+    "title": "불타라!! 로보콘",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11569218"
+    },
+    "titles": {
+      "ko": "불타라!! 로보콘",
+      "en": "Moero!! Robocon",
+      "ja": "燃えろ!!ロボコン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008894": {
+    "workId": "wk_000008894",
+    "title": "SP",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1182856"
+    },
+    "titles": {
+      "ko": "SP",
+      "en": "SP",
+      "ja": "SP 警視庁警備部警護課第四係"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009170": {
+    "workId": "wk_000009170",
+    "title": "가면라이더 W",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193466"
+    },
+    "titles": {
+      "ko": "가면라이더 W",
+      "en": "Kamen Rider W",
+      "ja": "仮面ライダーW"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010311": {
+    "workId": "wk_000010311",
+    "title": "마드레스 에고이스타스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1248358"
+    },
+    "titles": {
+      "ko": "마드레스 에고이스타스",
+      "en": "Madres Egoístas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

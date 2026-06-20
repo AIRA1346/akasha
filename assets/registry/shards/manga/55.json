@@ -1,0 +1,40 @@
+{
+  "wk_000004194": {
+    "workId": "wk_000004194",
+    "title": "미스터리 극장 에지",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1187997"
+    },
+    "titles": {
+      "ko": "미스터리 극장 에지",
+      "en": "Psychometrer Eiji",
+      "ja": "サイコメトラーGAIJI"
+    },
+    "creator": "Shin Kibayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007515": {
+    "workId": "wk_000007515",
+    "title": "최종교사",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q18210069"
+    },
+    "titles": {
+      "ko": "최종교사",
+      "en": "Ultimate Teacher",
+      "ja": "最終教師"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

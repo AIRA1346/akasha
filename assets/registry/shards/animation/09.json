@@ -1,0 +1,129 @@
+{
+  "wk_000001763": {
+    "workId": "wk_000001763",
+    "title": "핀치와 펀치",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11331668"
+    },
+    "titles": {
+      "ko": "핀치와 펀치",
+      "en": "Pinch to Punch",
+      "ja": "ピンチとパンチ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002535": {
+    "workId": "wk_000002535",
+    "title": "재와 환상의 그림갈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117449284"
+    },
+    "titles": {
+      "ko": "재와 환상의 그림갈",
+      "en": "Grimgar of Fantasy and Ash",
+      "ja": "灰と幻想のグリムガル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002959": {
+    "workId": "wk_000002959",
+    "title": "노을빛 아웃포커스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120402152"
+    },
+    "titles": {
+      "ko": "노을빛 아웃포커스",
+      "en": "Twilight Out of Focus",
+      "ja": "黄昏アウトフォーカス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004358": {
+    "workId": "wk_000004358",
+    "title": "카난 님은 초보 악마",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133873393"
+    },
+    "titles": {
+      "ko": "카난 님은 초보 악마",
+      "en": "Mistress Kanan Is Devilishly Easy",
+      "ja": "カナン様はあくまでチョロい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007402": {
+    "workId": "wk_000007402",
+    "title": "기동경찰 패트레이버",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q497306"
+    },
+    "titles": {
+      "ko": "기동경찰 패트레이버",
+      "en": "Patlabor: The Movie",
+      "ja": "機動警察パトレイバー the Movie"
+    },
+    "releaseYear": 1989,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007471": {
+    "workId": "wk_000007471",
+    "title": "차지맨 켄!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q5074293"
+    },
+    "titles": {
+      "ko": "차지맨 켄!",
+      "en": "Chargeman Ken!",
+      "ja": "チャージマン研!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008364": {
+    "workId": "wk_000008364",
+    "title": "청춘 돼지는 바니걸 선배의 꿈을 꾸지 않는다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q63615353"
+    },
+    "titles": {
+      "ko": "청춘 돼지는 바니걸 선배의 꿈을 꾸지 않는다",
+      "en": "Seishun Buta Yarō",
+      "ja": "青春ブタ野郎はバニーガール先輩の夢を見ない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

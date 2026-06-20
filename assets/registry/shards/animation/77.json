@@ -1,0 +1,163 @@
+{
+  "wk_000000797": {
+    "workId": "wk_000000797",
+    "title": "아쿠아맨: 아틀란티스의 왕",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105676187"
+    },
+    "titles": {
+      "ko": "아쿠아맨: 아틀란티스의 왕",
+      "en": "Aquaman: King of Atlantis"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002621": {
+    "workId": "wk_000002621",
+    "title": "테카맨 블레이드",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185522"
+    },
+    "titles": {
+      "ko": "테카맨 블레이드",
+      "en": "Tekkaman Blade",
+      "ja": "宇宙の騎士テッカマンブレード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003195": {
+    "workId": "wk_000003195",
+    "title": "대도서관의 양치기",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122706296"
+    },
+    "titles": {
+      "ko": "대도서관의 양치기",
+      "en": "A Good Librarian Like a Good Shepherd",
+      "ja": "大図書館の羊飼い"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003785": {
+    "workId": "wk_000003785",
+    "title": "고양이로 전생한 아저씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q128130782"
+    },
+    "titles": {
+      "ko": "고양이로 전생한 아저씨",
+      "en": "Neko ni Tensei Shita Oji-san",
+      "ja": "ねこに転生したおじさん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004895": {
+    "workId": "wk_000004895",
+    "title": "타마코 러브 스토리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15975680"
+    },
+    "titles": {
+      "ko": "타마코 러브 스토리",
+      "en": "Tamako Love Story",
+      "ja": "たまこラブストーリー"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006338": {
+    "workId": "wk_000006338",
+    "title": "포켓몬 제너레이션즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q26912012"
+    },
+    "titles": {
+      "ko": "포켓몬 제너레이션즈",
+      "en": "Pokémon Generations",
+      "ja": "ポケモンジェネレーションズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006747": {
+    "workId": "wk_000006747",
+    "title": "그랑블루 판타지 THE Animation",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q33101542"
+    },
+    "titles": {
+      "ko": "그랑블루 판타지 THE Animation",
+      "en": "Granblue Fantasy The Animation"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007712": {
+    "workId": "wk_000007712",
+    "title": "보석의 나라",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q53877791"
+    },
+    "titles": {
+      "ko": "보석의 나라",
+      "en": "Land of the Lustrous",
+      "ja": "宝石の国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008831": {
+    "workId": "wk_000008831",
+    "title": "4차원 탐정 똘비",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700408"
+    },
+    "titles": {
+      "ko": "4차원 탐정 똘비",
+      "en": "Flint the Time Detective",
+      "ja": "時空探偵ゲンシクン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

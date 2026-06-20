@@ -1,0 +1,39 @@
+{
+  "wk_000005430": {
+    "workId": "wk_000005430",
+    "title": "사일런트 힐: 타운폴",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114771189"
+    },
+    "titles": {
+      "ko": "사일런트 힐: 타운폴",
+      "en": "Q114771189",
+      "ja": "サイレントヒル タウンフォール"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006418": {
+    "workId": "wk_000006418",
+    "title": "블라스퍼머스 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118213344"
+    },
+    "titles": {
+      "ko": "블라스퍼머스 2",
+      "en": "Blasphemous 2"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

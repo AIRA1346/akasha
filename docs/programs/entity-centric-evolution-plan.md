@@ -1,7 +1,8 @@
 # Entity-Centric Evolution Plan — 존재 아카이빙 실행 SSOT
 
-> **상태:** Wave 0 ✅ · Wave 1 ✅ · **Wave 2 설계 v1** · 코드 착수 대기  
+> **상태:** Wave 0~5 ✅ · W6-1 PoC ✅ · **Archive-First R0 ✅ · R1 대기**  
 > **로드맵:** [entity-centric-roadmap.md](entity-centric-roadmap.md) — 단계별 Gate  
+> **Archive-First:** [archive-first-realignment-plan.md](archive-first-realignment-plan.md) — catalog=배관 · `.md`=제품  
 > **갱신:** 2026-06-19  
 > **결정:** 매체(Media Type) 최상위 분류 폐기 → **Entity + Record + Connection** 중심으로 진화  
 **철학:** [entity-type-philosophy.md](../policy/entity-type-philosophy.md) — 7종 + Custom · Animal Type ❌  
@@ -25,11 +26,23 @@ Phase 1(Work) UI·볼트는 유지하되, 내부 모델·스키마·문서를 En
 | **최상위 분류** | 만화·애니·게임… (`MediaCategory`) | **Entity Type** (work, person, event, place, concept, note, custom…) |
 | **작품 하위** | = 최상위 | **Work subtype** (`anime`, `manga`, `game` …) |
 | **핵심 자산** | `.md` (암묵적) | **ArchiveRecord** — `.md` + YAML SSOT |
-| **완성도 지표** | 카탈로그 크기 | **찾기 → 기록 → 재탐색 → 연결** 루프 |
+| **완성도 지표** | 카탈로그 크기 | **아카이브 Record 수 · 링크 밀도** · 찾기→기록→재탐색 루프 |
 | **글로벌 DB** | 전 작품 커버 | **발견 품질** (10k+) + **유저 로컬 Fact** |
 
 **대개편이 아닌 이유:** ADR-008 · `lib/core/archiving/*` · Phase 로드맵에 이미 동일 방향이 명시됨.  
 **대개편이 되는 경우:** Steam v1 전에 UI·볼트·Tier 1 DB를 한 번에 전면 교체할 때 — **금지**.
+
+### 2.1 Archive-First Realignment (2026-06-19)
+
+Wave 4 Person Add flow가 **Tier 1.5 catalog를 제품 1급**으로 올린 UX debt를 정정한다.
+
+| | Wave 4 (현재 코드) | Archive-First (R1+) |
+|--|-------------------|---------------------|
+| Person 「추가」 | `user_entities.json` 기본 | **`entities/person/*.md` 기본** |
+| catalog | UI 노출 · 「catalog 추가」 | **배관** · UI 노출 ❌ |
+| dogfood Gate | wave5 checklist (legacy) | [archive-first-dogfood-checklist.md](archive-first-dogfood-checklist.md) R5 |
+
+**Wave 0~6 기술 산출은 유지** — UX·우선순위·용어만 재정렬. 실행: Phase R0~R5.
 
 ---
 
@@ -321,12 +334,12 @@ flowchart TB
 
 ## 11. 다음 액션 (즉시)
 
-| 순서 | 작업 | 담당 | 코드 |
-|:--:|------|------|:----:|
-| 1 | ~~W0 설계 SSOT~~ | — | ✅ |
-| 2 | **Wave 0 검토** — [entity-centric-wave0-review.md](entity-centric-wave0-review.md) | — | ✅ |
-| 3 | **W1-0** WorkIdCodec · EntityAnchor.isWork | Engineering | ✅ 다음 |
-| 4 | **W1-1~3** UserCatalogStore · Fusion · dialog | Engineering | ⏳ |
+| 순서 | 작업 | 상태 |
+|:--:|------|:----:|
+| 1 | Wave 0~5 · W6-1 코드 Exit | ✅ |
+| 2 | **Archive-First R0** — 문서 SSOT | ✅ |
+| 3 | **Archive-First R1** — Person `.md` 기본 · 카피 교체 | ⬜ **다음** |
+| 4 | **R5 dogfood** — archive-first-dogfood-checklist | ⬜ R1 후 |
 
 ---
 
@@ -344,6 +357,8 @@ flowchart TB
 | [extensibility-hardening-plan.md](extensibility-hardening-plan.md) | Port·리팩터 규칙 |
 | [wave1-user-catalog-spec.md](wave1-user-catalog-spec.md) | **Wave 1** 구현 SSOT |
 | [entity-centric-wave0-review.md](entity-centric-wave0-review.md) | Wave 0 **검토 v2** |
+| [entity-record-storage-masterplan.md](entity-record-storage-masterplan.md) | Entity vs Record 시나리오 |
+| **[archive-first-realignment-plan.md](archive-first-realignment-plan.md)** | **Archive-First R0~R5** |
 | [catalog-growth-charter.md](catalog-growth-charter.md) | Tier 1 Work **별 트랙** |
 
 ---
@@ -355,3 +370,4 @@ flowchart TB
 | 2026-06-19 | 초판 — GPT Entity 정렬 · Wave 0~6 · Tier 1.5 · Steam v1 관계 |
 | 2026-06-19 | **Wave 0 Exit** — ADR-011 · policy · vault v2 · SSOT 갱신 |
 | 2026-06-19 | Wave 0 검토 — [entity-centric-wave0-review.md](entity-centric-wave0-review.md) · P0 패치 |
+| 2026-06-19 | **Archive-First** — §2.1 · R0 Exit · R1 next |

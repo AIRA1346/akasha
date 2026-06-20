@@ -1,0 +1,226 @@
+{
+  "wk_000000244": {
+    "workId": "wk_000000244",
+    "title": "토라도라!",
+    "titles": {
+      "ko": "토라도라!",
+      "en": "Toradora!",
+      "ja": "とらドラ！"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "타케마야 야스코",
+    "releaseYear": 2008,
+    "tags": [
+      "로맨스",
+      "코미디",
+      "학원",
+      "성장"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2008,
+          "episodes": 25
+        }
+      ],
+      "latestSeason": "1기",
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_animation_toradora_2008"
+    ],
+    "externalIds": {
+      "tmdb": "65334",
+      "wikidata": "Q61400349"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001228": {
+    "workId": "wk_000001228",
+    "title": "금색의 코르다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107533884"
+    },
+    "titles": {
+      "ko": "금색의 코르다",
+      "en": "La Corda d'Oro",
+      "ja": "金色のコルダ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002303": {
+    "workId": "wk_000002303",
+    "title": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116267851"
+    },
+    "titles": {
+      "ko": "VTuber인데 방송 끄는 걸 깜빡했더니 전설이 되어있었다",
+      "en": "VTuber Legend",
+      "ja": "VTuberなんだが配信切り忘れたら伝説になってた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002622": {
+    "workId": "wk_000002622",
+    "title": "마스터 키튼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1185624"
+    },
+    "titles": {
+      "ko": "마스터 키튼",
+      "en": "Master Keaton",
+      "ja": "MASTERキートン"
+    },
+    "creator": "Naoki Urasawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002713": {
+    "workId": "wk_000002713",
+    "title": "무한의 리바이어스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191236"
+    },
+    "titles": {
+      "ko": "무한의 리바이어스",
+      "en": "Infinite Ryvius",
+      "ja": "無限のリヴァイアス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005625": {
+    "workId": "wk_000005625",
+    "title": "마법사 프리큐어!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21566775"
+    },
+    "titles": {
+      "ko": "마법사 프리큐어!",
+      "en": "Witchy Pretty Cure!",
+      "ja": "魔法つかいプリキュア!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006114": {
+    "workId": "wk_000006114",
+    "title": "버추어 파이터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2547953"
+    },
+    "titles": {
+      "ko": "버추어 파이터",
+      "en": "Virtua Fighter",
+      "ja": "バーチャファイター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006182": {
+    "workId": "wk_000006182",
+    "title": "마법의 마코쨩",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2571307"
+    },
+    "titles": {
+      "ko": "마법의 마코쨩",
+      "en": "Mahō no Mako-chan",
+      "ja": "魔法のマコちゃん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006599": {
+    "workId": "wk_000006599",
+    "title": "극장판 데이트 어 라이브: 마유리 저지먼트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q29034232"
+    },
+    "titles": {
+      "ko": "극장판 데이트 어 라이브: 마유리 저지먼트",
+      "en": "Date A Live: Mayuri Judgement",
+      "ja": "劇場版デート・ア・ライブ 万由里ジャッジメント"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009558": {
+    "workId": "wk_000009558",
+    "title": "게이브리얼의 죽음: 누구의 책임인가?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q86523538"
+    },
+    "titles": {
+      "ko": "게이브리얼의 죽음: 누구의 책임인가?",
+      "en": "The Trials of Gabriel Fernandez",
+      "ja": "ガブリエル事件 - 奪われた小さな命 -"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009764": {
+    "workId": "wk_000009764",
+    "title": "지구방위가족",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q910295"
+    },
+    "titles": {
+      "ko": "지구방위가족",
+      "en": "The Family's Defensive Alliance",
+      "ja": "地球防衛家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

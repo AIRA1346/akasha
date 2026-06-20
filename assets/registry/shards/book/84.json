@@ -1,0 +1,21 @@
+{
+  "wk_000007674": {
+    "workId": "wk_000007674",
+    "title": "이코노클라스트!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11266876"
+    },
+    "titles": {
+      "ko": "이코노클라스트!",
+      "en": "Q11266876",
+      "ja": "イコノクラスト!"
+    },
+    "creator": "Ichirō Sakaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

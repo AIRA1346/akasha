@@ -1,0 +1,21 @@
+{
+  "wk_000002459": {
+    "workId": "wk_000002459",
+    "title": "작전명 순정",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126680717"
+    },
+    "titles": {
+      "ko": "작전명 순정",
+      "en": "Operation: True Love",
+      "ja": "作戦名は純情"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

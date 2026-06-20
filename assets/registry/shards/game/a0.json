@@ -1,0 +1,95 @@
+{
+  "wk_000001557": {
+    "workId": "wk_000001557",
+    "title": "뿌요뿌요 피버",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1058179"
+    },
+    "titles": {
+      "ko": "뿌요뿌요 피버",
+      "en": "Puyo Pop Fever",
+      "ja": "ぷよぷよフィーバー"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002032": {
+    "workId": "wk_000002032",
+    "title": "크루세이더 킹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1070633"
+    },
+    "titles": {
+      "ko": "크루세이더 킹",
+      "en": "Crusader Kings",
+      "ja": "Crusader Kings"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006284": {
+    "workId": "wk_000006284",
+    "title": "용과 같이 8",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116980062"
+    },
+    "titles": {
+      "ko": "용과 같이 8",
+      "en": "Like a Dragon: Infinite Wealth",
+      "ja": "龍が如く8"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007070": {
+    "workId": "wk_000007070",
+    "title": "천지창조",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197149"
+    },
+    "titles": {
+      "ko": "천지창조",
+      "en": "Terranigma",
+      "ja": "天地創造"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009508": {
+    "workId": "wk_000009508",
+    "title": "블러드 메시지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134986532"
+    },
+    "titles": {
+      "ko": "블러드 메시지",
+      "en": "Q134986532"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "wk_000000766": {
+    "workId": "wk_000000766",
+    "title": "상어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10345134"
+    },
+    "titles": {
+      "ko": "상어",
+      "en": "Don't Look Back: The Legend of Orpheus",
+      "ja": "サメ 〜愛の黙示録〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001308": {
+    "workId": "wk_000001308",
+    "title": "스테이 클로즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105972947"
+    },
+    "titles": {
+      "ko": "스테이 클로즈",
+      "en": "Stay Close",
+      "ja": "ステイ・クロース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001963": {
+    "workId": "wk_000001963",
+    "title": "TBS 목요일 밤 9시 드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854857"
+    },
+    "titles": {
+      "ko": "TBS 목요일 밤 9시 드라마",
+      "en": "Q10854857",
+      "ja": "木曜ドラマ9"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002682": {
+    "workId": "wk_000002682",
+    "title": "작전남녀2 : 폭탄스캔들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455932"
+    },
+    "titles": {
+      "ko": "작전남녀2 : 폭탄스캔들",
+      "en": "Q109455932"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004482": {
+    "workId": "wk_000004482",
+    "title": "법대로 사랑하라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110542489"
+    },
+    "titles": {
+      "ko": "법대로 사랑하라",
+      "en": "The Law Cafe",
+      "ja": "法に従って愛せ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005186": {
+    "workId": "wk_000005186",
+    "title": "G ★ 워즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11222009"
+    },
+    "titles": {
+      "ko": "G ★ 워즈",
+      "en": "G ★ Wars",
+      "ja": "G★ウォーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005269": {
+    "workId": "wk_000005269",
+    "title": "NHK  뉴스 오하이요 아오모리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235047"
+    },
+    "titles": {
+      "ko": "NHK  뉴스 오하이요 아오모리",
+      "en": "NHK News Ohayo Aomori",
+      "ja": "NHKニュースおはよう青森"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005856": {
+    "workId": "wk_000005856",
+    "title": "나라 나비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274529"
+    },
+    "titles": {
+      "ko": "나라 나비",
+      "en": "Q11274529",
+      "ja": "ならナビ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006973": {
+    "workId": "wk_000006973",
+    "title": "내 눈에 콩깍지 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114035073"
+    },
+    "titles": {
+      "ko": "내 눈에 콩깍지 (드라마)",
+      "en": "The Love in Your Eyes"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007991": {
+    "workId": "wk_000007991",
+    "title": "한밤중의 비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11583021"
+    },
+    "titles": {
+      "ko": "한밤중의 비",
+      "en": "Q11583021",
+      "ja": "真夜中の雨"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009167": {
+    "workId": "wk_000009167",
+    "title": "가면라이더 히비키",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1192800"
+    },
+    "titles": {
+      "ko": "가면라이더 히비키",
+      "en": "Kamen Rider Hibiki",
+      "ja": "仮面ライダー響鬼"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009343": {
+    "workId": "wk_000009343",
+    "title": "가면라이더 블레이드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1201321"
+    },
+    "titles": {
+      "ko": "가면라이더 블레이드",
+      "en": "Kamen Rider Blade",
+      "ja": "仮面ライダー剣"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009972": {
+    "workId": "wk_000009972",
+    "title": "빌드업 : 보컬 보이그룹 서바이벌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124334502"
+    },
+    "titles": {
+      "ko": "빌드업 : 보컬 보이그룹 서바이벌",
+      "en": "Build Up: Vocal Boy Group Survival"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

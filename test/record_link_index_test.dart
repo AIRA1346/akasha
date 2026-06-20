@@ -3,10 +3,16 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:akasha/core/archiving/entity_anchor.dart';
 import 'package:akasha/core/archiving/record_link.dart';
+import 'package:akasha/models/akasha_item.dart';
+import 'package:akasha/models/enums.dart';
+import 'package:akasha/models/user_catalog_entity.dart';
 import 'package:akasha/services/entity_journal_parser.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/record_link_index_service.dart';
+import 'package:akasha/services/record_link_navigator.dart';
+import 'package:akasha/services/user_catalog_store.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -74,9 +80,76 @@ added_at: "2026-06-19T10:00:00.000"
       }
     });
 
-    test('title-only links are outgoing but not indexed as incoming', () async {
+    test('title-only link indexes incoming when catalog resolves title', () async {
       final service = AkashaFileService();
       final index = RecordLinkIndexService(fileService: service);
+      final catalog = UserCatalogStore.instance..resetForTesting();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_r2a_');
+
+      try {
+        await service.setVaultPath(tempDir.path);
+
+        const entityId = 'pe_u_natsuki1';
+        await catalog.upsert(
+          UserCatalogEntity.userLocal(
+            entityId: entityId,
+            type: EntityAnchorType.person,
+            title: '나츠키 스바루',
+          ),
+        );
+
+        final worksDir = Directory(p.join(tempDir.path, 'works', 'book'));
+        await worksDir.create(recursive: true);
+        final workPath = p.join(worksDir.path, 'Re_Zero.md');
+        await File(workPath).writeAsString('''---
+title: "Re:Zero"
+work_id: "wk_u_rezero01"
+---
+감상 [[나츠키 스바루]] 등장
+''');
+
+        final workItem = ContentItem(
+          workId: 'wk_u_rezero01',
+          title: 'Re:Zero',
+          category: MediaCategory.book,
+          domain: AppDomain.subculture,
+        )..filePath = p.normalize(workPath);
+
+        await index.rebuildIndex(
+          userCatalog: catalog,
+          vaultItems: [workItem],
+        );
+
+        final normalizedWork = p.normalize(workPath);
+        final outgoing = await index.outgoingLinks(normalizedWork);
+        expect(outgoing.length, 1);
+        expect(outgoing.first.kind, RecordLinkKind.titleOnly);
+        expect(outgoing.first.targetTitle, '나츠키 스바루');
+
+        final incoming = await index.incomingRecordPaths(entityId);
+        expect(incoming.length, 1);
+        expect(p.normalize(incoming.first), normalizedWork);
+
+        var openedTitle = '';
+        final returnItem = await RecordLinkNavigator.findVaultItemForRecordPath(
+          storagePath: incoming.first,
+          vaultItems: [workItem],
+        );
+        if (returnItem != null) openedTitle = returnItem.title;
+        expect(openedTitle, 'Re:Zero');
+      } finally {
+        catalog.resetForTesting();
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('title-only link skipped when title does not resolve', () async {
+      final service = AkashaFileService();
+      final index = RecordLinkIndexService(fileService: service);
+      final catalog = UserCatalogStore.instance..resetForTesting();
       final tempDir = await Directory.systemTemp.createTemp('akasha_w5_title_');
 
       try {
@@ -94,16 +167,17 @@ added_at: "2026-06-19T10:00:00.000"
 [[Tiger]] concept
 ''');
 
-        await index.rebuildIndex();
+        await index.rebuildIndex(userCatalog: catalog);
 
         final outgoing = await index.outgoingLinks(p.normalize(journalPath));
         expect(outgoing.length, 1);
         expect(outgoing.first.kind, RecordLinkKind.titleOnly);
         expect(outgoing.first.targetTitle, 'Tiger');
 
-        final incoming = await index.incomingRecordPaths('Tiger');
-        expect(incoming, isEmpty);
+        expect(await index.incomingRecordPaths('Tiger'), isEmpty);
+        expect(await index.incomingRecordPaths('co_u_unknown'), isEmpty);
       } finally {
+        catalog.resetForTesting();
         await service.setVaultPath('');
         if (await tempDir.exists()) {
           await tempDir.delete(recursive: true);

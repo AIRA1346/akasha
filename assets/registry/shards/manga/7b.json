@@ -1,0 +1,58 @@
+{
+  "wk_000005471": {
+    "workId": "wk_000005471",
+    "title": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130234755"
+    },
+    "titles": {
+      "ko": "A랭크 파티를 이탈한 나는, 전 제자들과 미궁 심부를 목표로 한다.",
+      "en": "I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!",
+      "ja": "Aランクパーティを離脱した俺は、元教え子たちと迷宮深部を目指す。"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007332": {
+    "workId": "wk_000007332",
+    "title": "ALL OUT!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17223656"
+    },
+    "titles": {
+      "ko": "ALL OUT!!",
+      "en": "All Out!!",
+      "ja": "ALL OUT!!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008128": {
+    "workId": "wk_000008128",
+    "title": "산",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2087878"
+    },
+    "titles": {
+      "ko": "산",
+      "en": "Gaku: Minna no Yama",
+      "ja": "岳 みんなの山"
+    },
+    "releaseYear": 2011,
+    "creator": "Shinichi Ishizuka",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "wk_000003806": {
+    "workId": "wk_000003806",
+    "title": "여름을 향한 터널, 이별의 출구",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107564401"
+    },
+    "titles": {
+      "ko": "여름을 향한 터널, 이별의 출구",
+      "en": "The Tunnel to Summer, the Exit of Goodbye",
+      "ja": "夏へのトンネル、さよならの出口"
+    },
+    "releaseYear": 2019,
+    "creator": "Mei Hachimoku",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004016": {
+    "workId": "wk_000004016",
+    "title": "서풍",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107982514"
+    },
+    "titles": {
+      "ko": "서풍",
+      "en": "The Western Wind",
+      "ja": "西風"
+    },
+    "creator": "サマンサ・ハーヴィー",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008658": {
+    "workId": "wk_000008658",
+    "title": "구세주의 복음서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1135232"
+    },
+    "titles": {
+      "ko": "구세주의 복음서",
+      "en": "Unknown Berlin Gospel",
+      "ja": "救い主の福音書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010141": {
+    "workId": "wk_000010141",
+    "title": "해리 포터 프리퀄",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1148668"
+    },
+    "titles": {
+      "ko": "해리 포터 프리퀄",
+      "en": "Harry Potter prequel"
+    },
+    "releaseYear": 2008,
+    "creator": "J・K・ローリング",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

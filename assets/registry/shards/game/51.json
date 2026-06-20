@@ -1,0 +1,185 @@
+{
+  "wk_000000048": {
+    "workId": "wk_000000048",
+    "title": "Sons of the Forest",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Endnight",
+    "releaseYear": 2023,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1326470_2023"
+    ],
+    "titles": {
+      "en": "Save 70% on Sons Of The Forest",
+      "ko": "Sons of the Forest"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1326470",
+      "wikidata": "Q110379185"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000899": {
+    "workId": "wk_000000899",
+    "title": "천지를 먹다 2-적벽대전",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1045002"
+    },
+    "titles": {
+      "ko": "천지를 먹다 2-적벽대전",
+      "en": "Warriors of Fate",
+      "ja": "天地を喰らう2・赤壁の戦い"
+    },
+    "releaseYear": 1996,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001376": {
+    "workId": "wk_000001376",
+    "title": "레고 크리에이터: 해리 포터와 비밀의 방",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10556421"
+    },
+    "titles": {
+      "ko": "레고 크리에이터: 해리 포터와 비밀의 방",
+      "en": "Lego Creator: Harry Potter and the Chamber of Secrets"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002821": {
+    "workId": "wk_000002821",
+    "title": "노부나가의 야망 for 원더스완",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10856182"
+    },
+    "titles": {
+      "ko": "노부나가의 야망 for 원더스완",
+      "en": "Q10856182",
+      "ja": "信長の野望 for ワンダースワン"
+    },
+    "releaseYear": 1999,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003936": {
+    "workId": "wk_000003936",
+    "title": "헬로, 굿바이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11223230"
+    },
+    "titles": {
+      "ko": "헬로, 굿바이",
+      "en": "Hello, Good-bye",
+      "ja": "Hello,good-bye"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006688": {
+    "workId": "wk_000006688",
+    "title": "어메이징 알렉스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190348"
+    },
+    "titles": {
+      "ko": "어메이징 알렉스",
+      "en": "Amazing Alex",
+      "ja": "アメイジングアレックス"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007063": {
+    "workId": "wk_000007063",
+    "title": "던전앤드래곤 온라인",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196795"
+    },
+    "titles": {
+      "ko": "던전앤드래곤 온라인",
+      "en": "Dungeons & Dragons Online",
+      "ja": "ダンジョンズ&ドラゴンズ オンライン"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007794": {
+    "workId": "wk_000007794",
+    "title": "로제와 황혼의 고성",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124062716"
+    },
+    "titles": {
+      "ko": "로제와 황혼의 고성",
+      "en": "A Rose in the Twilight",
+      "ja": "ロゼと黄昏の古城"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007925": {
+    "workId": "wk_000007925",
+    "title": "시계장치의 레이라인 -잔영의 밤이 밝아올 때-",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125523909"
+    },
+    "titles": {
+      "ko": "시계장치의 레이라인 -잔영의 밤이 밝아올 때-",
+      "en": "Tokeijikake no Ley Line -Zan'ei no Yoru ga Akeru Toki-",
+      "ja": "時計仕掛けのレイライン -残影の夜が明ける時-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

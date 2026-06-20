@@ -1,0 +1,243 @@
+{
+  "wk_000000259": {
+    "workId": "wk_000000259",
+    "title": "오버로드",
+    "category": "book",
+    "domain": "subculture",
+    "creator": "칸나카",
+    "releaseYear": 2012,
+    "tags": [
+      "라이트노벨",
+      "이세계",
+      "판타지",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_book_overlord-light-novel_2012"
+    ],
+    "titles": {
+      "en": "Overlord",
+      "ko": "오버로드"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q11293422"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001773": {
+    "workId": "wk_000001773",
+    "title": "침략자들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902769"
+    },
+    "titles": {
+      "ko": "침략자들",
+      "en": "Invasion"
+    },
+    "creator": "Luke Rhinehart",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002570": {
+    "workId": "wk_000002570",
+    "title": "코드 브레이커",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106008008"
+    },
+    "titles": {
+      "ko": "코드 브레이커",
+      "en": "The Code Breaker",
+      "ja": "コード・ブレーカー : 生命科学革命と人類の未来"
+    },
+    "releaseYear": 2021,
+    "creator": "월터 아이작슨",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003397": {
+    "workId": "wk_000003397",
+    "title": "반야등론석",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107154292"
+    },
+    "titles": {
+      "ko": "반야등론석",
+      "en": "The Lamp of Discernment",
+      "ja": "般若燈論釈"
+    },
+    "creator": "청변",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004240": {
+    "workId": "wk_000004240",
+    "title": "고양이의 지구의",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855327"
+    },
+    "titles": {
+      "ko": "고양이의 지구의",
+      "en": "Q10855327",
+      "ja": "猫の地球儀"
+    },
+    "creator": "Mizuhito Akiyama",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004597": {
+    "workId": "wk_000004597",
+    "title": "악부시집",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10878399"
+    },
+    "titles": {
+      "ko": "악부시집",
+      "en": "Collection of Yuefu Lyric Poems",
+      "ja": "楽府詩集"
+    },
+    "creator": "郭茂倩",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004983": {
+    "workId": "wk_000004983",
+    "title": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109018471"
+    },
+    "titles": {
+      "ko": "용사, 그만둡니다 ~다음 직장은 마왕성~",
+      "en": "I'm Quitting Heroing",
+      "ja": "勇者、辞めます～次の職場は魔王城～"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005436": {
+    "workId": "wk_000005436",
+    "title": "사기/권027",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10939383"
+    },
+    "titles": {
+      "ko": "사기/권027",
+      "en": "Q10939383",
+      "ja": "史記/卷027"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005710": {
+    "workId": "wk_000005710",
+    "title": "매트릭스",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109609245"
+    },
+    "titles": {
+      "ko": "매트릭스",
+      "en": "Matrix"
+    },
+    "releaseYear": 2021,
+    "creator": "Lauren Groff",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006702": {
+    "workId": "wk_000006702",
+    "title": "나인",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111542078"
+    },
+    "titles": {
+      "ko": "나인",
+      "en": "Q111542078"
+    },
+    "releaseYear": 2021,
+    "creator": "チョン・ソンラン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006823": {
+    "workId": "wk_000006823",
+    "title": "신기생뎐",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111620852"
+    },
+    "titles": {
+      "ko": "신기생뎐",
+      "en": "Q111620852"
+    },
+    "releaseYear": 2005,
+    "creator": "Lee Hyun-su",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010193": {
+    "workId": "wk_000010193",
+    "title": "심리 시험",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11490604"
+    },
+    "titles": {
+      "ko": "심리 시험",
+      "en": "Shinri Shiken",
+      "ja": "心理試験"
+    },
+    "releaseYear": 1925,
+    "creator": "Edogawa Ranpo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

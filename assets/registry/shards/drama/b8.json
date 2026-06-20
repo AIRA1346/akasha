@@ -1,0 +1,107 @@
+{
+  "wk_000002771": {
+    "workId": "wk_000002771",
+    "title": "바닷가 사람들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456382"
+    },
+    "titles": {
+      "ko": "바닷가 사람들",
+      "en": "Q109456382"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002996": {
+    "workId": "wk_000002996",
+    "title": "주X말의 영화",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458174"
+    },
+    "titles": {
+      "ko": "주X말의 영화",
+      "en": "Q109458174"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004116": {
+    "workId": "wk_000004116",
+    "title": "빛과 사슬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115210"
+    },
+    "titles": {
+      "ko": "빛과 사슬",
+      "en": "Q110115210"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004690": {
+    "workId": "wk_000004690",
+    "title": "어둠 속의 감시자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110885430"
+    },
+    "titles": {
+      "ko": "어둠 속의 감시자",
+      "en": "The Watcher",
+      "ja": "ザ・ウォッチャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006855": {
+    "workId": "wk_000006855",
+    "title": "건강의 톱자리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11387169"
+    },
+    "titles": {
+      "ko": "건강의 톱자리",
+      "en": "Q11387169",
+      "ja": "健康こどもっち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010264": {
+    "workId": "wk_000010264",
+    "title": "사랑 후에 오는 것들 (2024년 드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124805103"
+    },
+    "titles": {
+      "ko": "사랑 후에 오는 것들 (2024년 드라마)",
+      "en": "What Comes After Love",
+      "ja": "愛のあとにくるもの"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

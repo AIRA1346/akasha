@@ -1,0 +1,113 @@
+{
+  "wk_000000317": {
+    "workId": "wk_000000317",
+    "title": "드래곤볼",
+    "titles": {
+      "ko": "드래곤볼",
+      "en": "Dragon Ball",
+      "ja": "ドラゴンボール"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "토리야마 아키라",
+    "releaseYear": 1984,
+    "tags": [
+      "액션",
+      "모험",
+      "무술",
+      "코미디"
+    ],
+    "extensions": {
+      "coverageSprint04ExternalId": "tmdb",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "sub_manga_dragon-ball_1984"
+    ],
+    "externalIds": {
+      "tmdb": "30979",
+      "wikidata": "Q15051307"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000449": {
+    "workId": "wk_000000449",
+    "title": "평온세대의 위타천들",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101209152"
+    },
+    "titles": {
+      "en": "The Idaten Deities Know Only Peace",
+      "ja": "平穏世代の韋駄天達",
+      "ko": "평온세대의 위타천들"
+    },
+    "releaseYear": 2018,
+    "creator": "Amahara",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000000762": {
+    "workId": "wk_000000762",
+    "title": "히메가사키 사쿠라코는 오늘도 딱하면서 귀여워",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109269133"
+    },
+    "titles": {
+      "ko": "히메가사키 사쿠라코는 오늘도 딱하면서 귀여워",
+      "en": "Himegasaki Sakurako Is a Hot Mess",
+      "ja": "姫ヶ崎櫻子は今日も不憫可愛い"
+    },
+    "creator": "Kōsuke Yasuda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003082": {
+    "workId": "wk_000003082",
+    "title": "사정을 모르는 전학생이 거침없이 다가온다.",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115193845"
+    },
+    "titles": {
+      "ko": "사정을 모르는 전학생이 거침없이 다가온다.",
+      "en": "My Clueless First Friend",
+      "ja": "事情を知らない転校生がグイグイくる。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008620": {
+    "workId": "wk_000008620",
+    "title": "꾸러기 닌자 토리",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2318999"
+    },
+    "titles": {
+      "ko": "꾸러기 닌자 토리",
+      "en": "Ninja Hattori-kun",
+      "ja": "忍者ハットリくん"
+    },
+    "creator": "藤子不二雄",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

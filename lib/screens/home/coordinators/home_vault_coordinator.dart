@@ -80,6 +80,8 @@ class HomeVaultCoordinator {
   }
 
   Future<void> rebuildLinkIndex() => linkIndex.rebuildIndex(
+        userCatalog: userCatalog,
+        vaultItems: items,
         onRebuilt: (stats) => eventLedger.append(
           VaultLedgerEvent(
             type: VaultLedgerEventType.linkIndexRebuilt,

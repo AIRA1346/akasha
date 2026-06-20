@@ -1,0 +1,40 @@
+{
+  "wk_000004311": {
+    "workId": "wk_000004311",
+    "title": "나와 그녀가 마왕과 용사로 학생회장",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855993"
+    },
+    "titles": {
+      "ko": "나와 그녀가 마왕과 용사로 학생회장",
+      "en": "Q10855993",
+      "ja": "俺と彼女が魔王と勇者で生徒会長"
+    },
+    "creator": "Jō Aikawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007676": {
+    "workId": "wk_000007676",
+    "title": "잃어버린 편지",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11267910"
+    },
+    "titles": {
+      "ko": "잃어버린 편지",
+      "en": "A Lost Letter"
+    },
+    "releaseYear": 1884,
+    "creator": "Ion Luca Caragiale",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

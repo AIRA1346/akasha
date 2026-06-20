@@ -1,0 +1,147 @@
+{
+  "wk_000000063": {
+    "workId": "wk_000000063",
+    "title": "스타크래프트 리마스터",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Blizzard",
+    "releaseYear": 2017,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid1962663_2017"
+    ],
+    "titles": {
+      "en": "Call of Duty®: Warzone™",
+      "ko": "스타크래프트 리마스터"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "1962663",
+      "wikidata": "Q87416343"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001114": {
+    "workId": "wk_000001114",
+    "title": "동방문화첩 ~ Shoot the Bullet",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050387"
+    },
+    "titles": {
+      "ko": "동방문화첩 ~ Shoot the Bullet",
+      "en": "Touhou Bunkachou ~ Shoot the Bullet",
+      "ja": "東方文花帖 〜 Shoot the Bullet."
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003730": {
+    "workId": "wk_000003730",
+    "title": "루이지 맨션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111597000"
+    },
+    "titles": {
+      "ko": "루이지 맨션",
+      "en": "Luigi's Mansion",
+      "ja": "ルイージマンション"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005150": {
+    "workId": "wk_000005150",
+    "title": "기타프릭스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142106"
+    },
+    "titles": {
+      "ko": "기타프릭스",
+      "en": "Guitar Freaks",
+      "ja": "GUITARFREAKS"
+    },
+    "releaseYear": 1998,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007607": {
+    "workId": "wk_000007607",
+    "title": "젠장! 미녀들한테 포위당했어!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123281053"
+    },
+    "titles": {
+      "ko": "젠장! 미녀들한테 포위당했어!",
+      "en": "Love Is All Around",
+      "ja": "しまった！美人に囲まれた！"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007726": {
+    "workId": "wk_000007726",
+    "title": "천년의 소녀",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123812079"
+    },
+    "titles": {
+      "ko": "천년의 소녀",
+      "en": "Memories: The Millennium Girl"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010082": {
+    "workId": "wk_000010082",
+    "title": "울티마 VIII: 페이건",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1395352"
+    },
+    "titles": {
+      "ko": "울티마 VIII: 페이건",
+      "en": "Ultima VIII: Pagan"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

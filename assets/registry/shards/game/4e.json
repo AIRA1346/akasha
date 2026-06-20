@@ -1,0 +1,223 @@
+{
+  "wk_000000121": {
+    "workId": "wk_000000121",
+    "title": "카운터 스트라이크 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2012,
+    "tags": [
+      "FPS",
+      "PvP",
+      "e스포츠",
+      "전술"
+    ],
+    "legacyIds": [
+      "gen_game_appid730_2012",
+      "gen_game_appid730_2023"
+    ],
+    "titles": {
+      "en": "Counter-Strike 2",
+      "ko": "카운터 스트라이크 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "730",
+      "wikidata": "Q111165107"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001057": {
+    "workId": "wk_000001057",
+    "title": "언더커버 캅스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1047581"
+    },
+    "titles": {
+      "ko": "언더커버 캅스",
+      "en": "Undercover Cops",
+      "ja": "アンダーカバーコップス"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001380": {
+    "workId": "wk_000001380",
+    "title": "루퍼스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105597521"
+    },
+    "titles": {
+      "ko": "루퍼스",
+      "en": "Loopers",
+      "ja": "Loopers"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002160": {
+    "workId": "wk_000002160",
+    "title": "디지몬 스토리",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1071044"
+    },
+    "titles": {
+      "ko": "디지몬 스토리",
+      "en": "Digimon World DS",
+      "ja": "デジモンストーリー"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004518": {
+    "workId": "wk_000004518",
+    "title": "슈퍼 철구 파이트!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11313994"
+    },
+    "titles": {
+      "ko": "슈퍼 철구 파이트!",
+      "en": "Super Tekkyu Fight!",
+      "ja": "スーパー鉄球ファイト!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006132": {
+    "workId": "wk_000006132",
+    "title": "MLB 더 쇼 23",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116564061"
+    },
+    "titles": {
+      "ko": "MLB 더 쇼 23",
+      "en": "Q116564061"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008375": {
+    "workId": "wk_000008375",
+    "title": "호연",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130238564"
+    },
+    "titles": {
+      "ko": "호연",
+      "en": "Blade & Soul Heroes",
+      "ja": "護縁"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009059": {
+    "workId": "wk_000009059",
+    "title": "압솔룸",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133035994"
+    },
+    "titles": {
+      "ko": "압솔룸",
+      "en": "Q133035994"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009509": {
+    "workId": "wk_000009509",
+    "title": "머나먼 툴레를 향한 여행자",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135014647"
+    },
+    "titles": {
+      "ko": "머나먼 툴레를 향한 여행자",
+      "en": "A Traveler to unknown Thule",
+      "ja": "遥かなるトゥーレへの旅人"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009651": {
+    "workId": "wk_000009651",
+    "title": "프리스타일 풋볼 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135917335"
+    },
+    "titles": {
+      "ko": "프리스타일 풋볼 2",
+      "en": "FreeStyle Football 2"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009716": {
+    "workId": "wk_000009716",
+    "title": "에스카 & 로지의 아틀리에 ~황혼 하늘의 연금술사~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13628078"
+    },
+    "titles": {
+      "ko": "에스카 & 로지의 아틀리에 ~황혼 하늘의 연금술사~",
+      "en": "Atelier Escha & Logy: Alchemists of the Dusk Sky",
+      "ja": "エスカ&ロジーのアトリエ 〜黄昏の空の錬金術士〜"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

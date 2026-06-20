@@ -1,0 +1,151 @@
+{
+  "wk_000002576": {
+    "workId": "wk_000002576",
+    "title": "천국의 여인",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104646669"
+    },
+    "titles": {
+      "ko": "천국의 여인",
+      "en": "The Lady of Heaven"
+    },
+    "releaseYear": 2021,
+    "creator": "Yasser Al-Habib",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003491": {
+    "workId": "wk_000003491",
+    "title": "라라와 크리스마스 요정",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105061531"
+    },
+    "titles": {
+      "ko": "라라와 크리스마스 요정",
+      "en": "Christmas at Cattle Hill"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006369": {
+    "workId": "wk_000006369",
+    "title": "더 리조트: 반쪽 얼굴의 소녀",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106706911"
+    },
+    "titles": {
+      "ko": "더 리조트: 반쪽 얼굴의 소녀",
+      "en": "The Resort"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006952": {
+    "workId": "wk_000006952",
+    "title": "클래식 호러 스토리",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106958533"
+    },
+    "titles": {
+      "ko": "클래식 호러 스토리",
+      "en": "A Classic Horror Story",
+      "ja": "ア・クラシック・ホラー・ストーリー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007561": {
+    "workId": "wk_000007561",
+    "title": "더 롱 할로윈, 파트 투",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107452640"
+    },
+    "titles": {
+      "ko": "더 롱 할로윈, 파트 투",
+      "en": "Batman: The Long Halloween"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008736": {
+    "workId": "wk_000008736",
+    "title": "낫 오케이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108123132"
+    },
+    "titles": {
+      "ko": "낫 오케이",
+      "en": "Not Okay",
+      "ja": "ノット・オッケー！"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009325": {
+    "workId": "wk_000009325",
+    "title": "샤퍼",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108551169"
+    },
+    "titles": {
+      "ko": "샤퍼",
+      "en": "Sharper",
+      "ja": "sharper:騙す人"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009902": {
+    "workId": "wk_000009902",
+    "title": "어 퓨 굿 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108946"
+    },
+    "titles": {
+      "ko": "어 퓨 굿 맨",
+      "en": "A Few Good Men",
+      "ja": "ア・フュー・グッドメン"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

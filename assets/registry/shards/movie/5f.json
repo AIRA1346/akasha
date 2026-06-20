@@ -1,0 +1,38 @@
+{
+  "wk_000001430": {
+    "workId": "wk_000001430",
+    "title": "벨로시랩터",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q102047812"
+    },
+    "titles": {
+      "ko": "벨로시랩터",
+      "en": "Velociraptor"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001926": {
+    "workId": "wk_000001926",
+    "title": "파운드",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10352186"
+    },
+    "titles": {
+      "ko": "파운드",
+      "en": "Pound"
+    },
+    "releaseYear": 1970,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

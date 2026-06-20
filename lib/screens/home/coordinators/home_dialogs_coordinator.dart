@@ -10,9 +10,12 @@ import '../../../models/registry_work.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../models/work_id_codec.dart';
 import '../../../models/library_theme.dart';
-import '../../../services/entity_vault_store.dart';
+import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../services/entity_archive_service.dart';
+import '../../../services/entity_catalog_sync.dart';
 import '../../../services/file_service.dart';
 import '../../../services/entity_vault_loader.dart';
+import '../../../services/entity_vault_path_conflict.dart';
 import '../dialogs/home_dialogs_facade.dart';
 import '../dialogs/entity_journal_dialog.dart';
 import '../home_auto_archive.dart';
@@ -43,7 +46,7 @@ class HomeDialogsCoordinator {
     required this.wrapSetState,
     required this.canAddToLibrary,
     required this.userCatalog,
-    this.onCatalogEntityAdded,
+    this.onEntityArchived,
     this.getLinkIndex,
   });
 
@@ -65,7 +68,8 @@ class HomeDialogsCoordinator {
   final void Function(void Function()) wrapSetState;
   final bool Function() canAddToLibrary;
   final UserCatalogPort userCatalog;
-  final void Function(UserCatalogEntity entity)? onCatalogEntityAdded;
+  final void Function(UserCatalogEntity entity, EntityJournalEntry? entry)?
+      onEntityArchived;
   final RecordLinkPort Function()? getLinkIndex;
 
   bool get isSyncing => catalog.isSyncing;
@@ -86,13 +90,14 @@ class HomeDialogsCoordinator {
         if (!isMounted()) return;
         final type = EntityIdCodec.typeFromId(work.workId);
         if (type != null && type != EntityAnchorType.work) {
-          await _openCatalogEntitySheet(work);
+          await _openEntitySheet(work.workId);
           return;
         }
         workbenchCoord.openBrowseItem(
           HomeAutoArchive.itemFromRegistryWork(work),
         );
       },
+      onPromoteCatalogEntity: _promoteCatalogOnlyToArchive,
       onCustomAdd: (query) async {
         if (AkashaFileService().vaultPath == null) {
           showMessage('볼트를 먼저 연결해 주세요.');
@@ -109,21 +114,36 @@ class HomeDialogsCoordinator {
             }
             await loadItems();
           },
-          onCatalogEntitySaved: (result) async {
-            await userCatalog.upsert(result.entity);
-            if (result.createJournal) {
-              final vault = AkashaFileService().vaultPath;
-              if (vault != null && vault.isNotEmpty) {
-                await EntityVaultStore().saveCatalogEntity(
-                  vaultPath: vault,
-                  entity: result.entity,
-                  body: result.journalBody,
-                );
-                await AkashaFileService().signalVaultChanged();
-              }
+          onEntitySaved: (result) async {
+            final vault = AkashaFileService().vaultPath;
+            if (vault == null || vault.isEmpty) {
+              showMessage('볼트를 먼저 연결해 주세요.');
+              return;
             }
-            if (isMounted()) {
-              onCatalogEntityAdded?.call(result.entity);
+            try {
+              final saved = await EntityArchiveService.saveFromAddResult(
+                result: result,
+                vaultPath: vault,
+                userCatalog: userCatalog,
+              );
+              await loadItems();
+              if (!isMounted()) return;
+
+              if (saved.entry != null) {
+                await showEntityJournalDialog(
+                  hostContext(),
+                  entity: saved.entity,
+                  entry: saved.entry,
+                  linkIndex: getLinkIndex?.call(),
+                  userCatalog: userCatalog,
+                  vaultItems: getItems(),
+                  onOpenWork: workbenchCoord.openBrowseItem,
+                );
+              }
+
+              onEntityArchived?.call(saved.entity, saved.entry);
+            } on EntityVaultPathConflict catch (e) {
+              showMessage(e.userMessage);
             }
           },
         );
@@ -164,17 +184,17 @@ class HomeDialogsCoordinator {
     );
   }
 
-  Future<void> _openCatalogEntitySheet(RegistryWork work) async {
+  Future<void> _openEntitySheet(String entityId) async {
     await userCatalog.load();
     UserCatalogEntity? entity;
     for (final candidate in userCatalog.all) {
-      if (candidate.entityId == work.workId) {
+      if (candidate.entityId == entityId) {
         entity = candidate;
         break;
       }
     }
     if (entity == null) {
-      showMessage('catalog에 ${work.workId} 가 없습니다.');
+      showMessage('「$entityId」을(를) 찾을 수 없습니다.');
       return;
     }
 
@@ -192,6 +212,63 @@ class HomeDialogsCoordinator {
       vaultItems: getItems(),
       onOpenWork: workbenchCoord.openBrowseItem,
     );
+  }
+
+  Future<void> _promoteCatalogOnlyToArchive(RegistryWork work) async {
+    final vault = AkashaFileService().vaultPath;
+    if (vault == null || vault.isEmpty) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+
+    await userCatalog.load();
+    UserCatalogEntity? entity;
+    for (final candidate in userCatalog.all) {
+      if (candidate.entityId == work.workId) {
+        entity = candidate;
+        break;
+      }
+    }
+    if (entity == null) {
+      showMessage('「${work.title}」을(를) 찾을 수 없습니다.');
+      return;
+    }
+
+    final existing = await const EntityVaultLoader().findByEntityId(
+      vault,
+      entity.entityId,
+    );
+    if (existing != null) {
+      await _openEntitySheet(entity.entityId);
+      return;
+    }
+
+    try {
+      final entry = await EntityArchiveService.promoteCatalogOnly(
+        entity: entity,
+        vaultPath: vault,
+      );
+      final mirrored = EntityCatalogSync.mirrorFromJournal(
+        draft: entity,
+        entry: entry,
+      );
+      await userCatalog.upsert(mirrored);
+      await loadItems();
+      if (!isMounted()) return;
+
+      await showEntityJournalDialog(
+        hostContext(),
+        entity: mirrored,
+        entry: entry,
+        linkIndex: getLinkIndex?.call(),
+        userCatalog: userCatalog,
+        vaultItems: getItems(),
+        onOpenWork: workbenchCoord.openBrowseItem,
+      );
+      onEntityArchived?.call(mirrored, entry);
+    } on EntityVaultPathConflict catch (e) {
+      showMessage(e.userMessage);
+    }
   }
 
   Future<void> onAddWorksFromLibraryEdit() async {

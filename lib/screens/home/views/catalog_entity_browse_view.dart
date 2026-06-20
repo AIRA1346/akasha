@@ -164,7 +164,7 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
           child: Text(
-            '${widget.scope.label} catalog (${_entities.length})',
+            '${widget.scope.label} 아카이브 (${_entities.length})',
             style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
           ),
         ),
@@ -206,12 +206,12 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
 
   String get _emptyMessage {
     return switch (widget.scope) {
-      BrowseEntityScope.person => 'catalog에 Person이 없습니다.',
-      BrowseEntityScope.concept => 'catalog에 Concept이 없습니다.',
-      BrowseEntityScope.event => 'catalog에 Event가 없습니다.',
-      BrowseEntityScope.place => 'catalog에 Place가 없습니다.',
-      BrowseEntityScope.organization => 'catalog에 Organization이 없습니다.',
-      _ => 'catalog에 Entity가 없습니다.',
+      BrowseEntityScope.person => '아카이브된 Person이 없습니다.',
+      BrowseEntityScope.concept => '아카이브된 Concept이 없습니다.',
+      BrowseEntityScope.event => '아카이브된 Event가 없습니다.',
+      BrowseEntityScope.place => '아카이브된 Place가 없습니다.',
+      BrowseEntityScope.organization => '아카이브된 Organization이 없습니다.',
+      _ => '아카이브된 Entity가 없습니다.',
     };
   }
 

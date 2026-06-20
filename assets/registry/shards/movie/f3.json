@@ -1,0 +1,97 @@
+{
+  "wk_000001770": {
+    "workId": "wk_000001770",
+    "title": "시간과 바람",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10339864"
+    },
+    "titles": {
+      "ko": "시간과 바람",
+      "en": "Time and the Wind"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001934": {
+    "workId": "wk_000001934",
+    "title": "자산어보",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103742243"
+    },
+    "titles": {
+      "ko": "자산어보",
+      "en": "The Book of Fish",
+      "ja": "茲山魚譜"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003492": {
+    "workId": "wk_000003492",
+    "title": "새비지 맨",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105062959"
+    },
+    "titles": {
+      "ko": "새비지 맨",
+      "en": "Savage Salvation",
+      "ja": "ワイルド・リベンジ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004606": {
+    "workId": "wk_000004606",
+    "title": "연을 쫓는 아이",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057045"
+    },
+    "titles": {
+      "ko": "연을 쫓는 아이",
+      "en": "The Kite Runner",
+      "ja": "君のためなら千回でも"
+    },
+    "releaseYear": 2008,
+    "creator": "Khaled Hosseini",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010297": {
+    "workId": "wk_000010297",
+    "title": "연애 빠진 로맨스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109228965"
+    },
+    "titles": {
+      "ko": "연애 빠진 로맨스",
+      "en": "Nothing Serious",
+      "ja": "恋愛の抜けたロマンス"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

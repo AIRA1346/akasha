@@ -1,0 +1,78 @@
+{
+  "wk_000000751": {
+    "workId": "wk_000000751",
+    "title": "클레르들륀에서 사라진 사람들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101444552"
+    },
+    "titles": {
+      "ko": "클레르들륀에서 사라진 사람들",
+      "en": "The Missing of Clairdelune"
+    },
+    "releaseYear": 2015,
+    "creator": "크리스텔 다보스",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002651": {
+    "workId": "wk_000002651",
+    "title": "리빌드 월드",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106103753"
+    },
+    "titles": {
+      "ko": "리빌드 월드",
+      "en": "Rebuild World",
+      "ja": "リビルドワールド"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003138": {
+    "workId": "wk_000003138",
+    "title": "수경주",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1068478"
+    },
+    "titles": {
+      "ko": "수경주",
+      "en": "Commentary on the Water Classic",
+      "ja": "水経注"
+    },
+    "creator": "Li Daoyuan",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003221": {
+    "workId": "wk_000003221",
+    "title": "외톨이의 이세계 공략",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106955945"
+    },
+    "titles": {
+      "ko": "외톨이의 이세계 공략",
+      "en": "Loner Life in Another World",
+      "ja": "ひとりぼっちの異世界攻略"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

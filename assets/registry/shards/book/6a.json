@@ -1,0 +1,97 @@
+{
+  "wk_000002650": {
+    "workId": "wk_000002650",
+    "title": "여덟 번의 시계 종소리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060935"
+    },
+    "titles": {
+      "ko": "여덟 번의 시계 종소리",
+      "en": "The Eight Strokes of the Clock",
+      "ja": "八点鐘"
+    },
+    "releaseYear": 1923,
+    "creator": "モーリス・ルブラン",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004097": {
+    "workId": "wk_000004097",
+    "title": "가난한 사람들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108195609"
+    },
+    "titles": {
+      "ko": "가난한 사람들",
+      "en": "The Poor People"
+    },
+    "creator": "ヴィクトル・ユーゴー",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004316": {
+    "workId": "wk_000004316",
+    "title": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10860215"
+    },
+    "titles": {
+      "ko": "색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해",
+      "en": "Colorless Tsukuru Tazaki and His Years of Pilgrimage",
+      "ja": "色彩を持たない多崎つくると、彼の巡礼の年"
+    },
+    "releaseYear": 2013,
+    "creator": "Haruki Murakami",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005843": {
+    "workId": "wk_000005843",
+    "title": "일본에 어서 오세요 엘프 씨.",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110291441"
+    },
+    "titles": {
+      "ko": "일본에 어서 오세요 엘프 씨.",
+      "en": "Welcome to Japan, Ms. Elf!",
+      "ja": "日本へようこそエルフさん。"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005915": {
+    "workId": "wk_000005915",
+    "title": "제감도설",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11060134"
+    },
+    "titles": {
+      "ko": "제감도설",
+      "en": "The Emperor's Mirror, Illustrated and Discussed"
+    },
+    "creator": "張居正",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "wk_000000551": {
+    "workId": "wk_000000551",
+    "title": "피스메이커",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101089777"
+    },
+    "titles": {
+      "ko": "피스메이커",
+      "en": "Peacemaker",
+      "ja": "ピースメーカー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001106": {
+    "workId": "wk_000001106",
+    "title": "볼테스V 레거시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105226203"
+    },
+    "titles": {
+      "ko": "볼테스V 레거시",
+      "en": "Voltes V: Legacy",
+      "ja": "ボルテスV：レガシー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001304": {
+    "workId": "wk_000001304",
+    "title": "대박부동산",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105943258"
+    },
+    "titles": {
+      "ko": "대박부동산",
+      "en": "Sell Your Haunted House",
+      "ja": "テバク不動産"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001676": {
+    "workId": "wk_000001676",
+    "title": "바라던 바다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107985624"
+    },
+    "titles": {
+      "ko": "바라던 바다",
+      "en": "Sea of Hope",
+      "ja": "パラドンバダ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001966": {
+    "workId": "wk_000001966",
+    "title": "걸즈 어 고고! 미소녀 클럽 31",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855165"
+    },
+    "titles": {
+      "ko": "걸즈 어 고고! 미소녀 클럽 31",
+      "en": "Q10855165",
+      "ja": "GIRLS A GOGO!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002180": {
+    "workId": "wk_000002180",
+    "title": "어사와 조이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108764822"
+    },
+    "titles": {
+      "ko": "어사와 조이",
+      "en": "Secret Royal Inspector & Joy",
+      "ja": "御史とジョイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002995": {
+    "workId": "wk_000002995",
+    "title": "뽀뽀뽀 좋아좋아",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458070"
+    },
+    "titles": {
+      "ko": "뽀뽀뽀 좋아좋아",
+      "en": "Q109458070"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003079": {
+    "workId": "wk_000003079",
+    "title": "리플레이 : 다시 시작되는 순간",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458873"
+    },
+    "titles": {
+      "ko": "리플레이 : 다시 시작되는 순간",
+      "en": "Q109458873"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003592": {
+    "workId": "wk_000003592",
+    "title": "백종원 클라쓰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464531"
+    },
+    "titles": {
+      "ko": "백종원 클라쓰",
+      "en": "Q109464531"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005463": {
+    "workId": "wk_000005463",
+    "title": "V 시리즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11253106"
+    },
+    "titles": {
+      "ko": "V 시리즈",
+      "en": "V Series",
+      "ja": "Vシリーズ (小説)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007084": {
+    "workId": "wk_000007084",
+    "title": "Just for Laughs: Gags",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1142783"
+    },
+    "titles": {
+      "ko": "Just for Laughs: Gags",
+      "en": "Just for Laughs Gags",
+      "ja": "Just For Laughs Gags"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007138": {
+    "workId": "wk_000007138",
+    "title": "천체관측",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11442228"
+    },
+    "titles": {
+      "ko": "천체관측",
+      "en": "serchin'for my polestar",
+      "ja": "天体観測"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008168": {
+    "workId": "wk_000008168",
+    "title": "워킹 데드: 데릴 딕슨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116148366"
+    },
+    "titles": {
+      "ko": "워킹 데드: 데릴 딕슨",
+      "en": "The Walking Dead: Daryl Dixon",
+      "ja": "ウォーキング・デッド: ダリル・ディクソン"
+    },
+    "creator": "David Zabel",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009462": {
+    "workId": "wk_000009462",
+    "title": "닥터 슬론",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1208153"
+    },
+    "titles": {
+      "ko": "닥터 슬론",
+      "en": "Diagnosis: Murder",
+      "ja": "Dr.マーク・スローン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

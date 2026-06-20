@@ -1,0 +1,58 @@
+{
+  "wk_000001877": {
+    "workId": "wk_000001877",
+    "title": "형사 실프와 평행 우주의 인생들",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105019592"
+    },
+    "titles": {
+      "ko": "형사 실프와 평행 우주의 인생들",
+      "en": "In free fall"
+    },
+    "releaseYear": 2007,
+    "creator": "Juli Zeh",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007672": {
+    "workId": "wk_000007672",
+    "title": "음식디미방",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265215"
+    },
+    "titles": {
+      "ko": "음식디미방",
+      "en": "Eumsik dimibang",
+      "ja": "飮食知味方"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009718": {
+    "workId": "wk_000009718",
+    "title": "채근담",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1144765"
+    },
+    "titles": {
+      "ko": "채근담",
+      "en": "Caigentan",
+      "ja": "菜根譚"
+    },
+    "creator": "Hong Zicheng",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

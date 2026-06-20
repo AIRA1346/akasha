@@ -1,0 +1,40 @@
+{
+  "wk_000004984": {
+    "workId": "wk_000004984",
+    "title": "교황의 예언",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090343"
+    },
+    "titles": {
+      "ko": "교황의 예언",
+      "en": "Prophecy of the Popes",
+      "ja": "全ての教皇に関する大司教聖マラキの預言"
+    },
+    "releaseYear": 1595,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005918": {
+    "workId": "wk_000005918",
+    "title": "언어의 무게",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110625920"
+    },
+    "titles": {
+      "ko": "언어의 무게",
+      "en": "Q110625920"
+    },
+    "releaseYear": 2020,
+    "creator": "Peter Bieri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

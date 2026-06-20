@@ -5,9 +5,12 @@ import 'package:path/path.dart' as p;
 
 import '../core/archiving/record_link.dart';
 import '../core/ports/record_link_port.dart';
+import '../core/ports/user_catalog_port.dart';
 import '../core/archiving/vault_ledger_event.dart';
+import '../models/akasha_item.dart';
 import 'event_ledger_service.dart';
 import 'file_service.dart';
+import 'record_link_navigator.dart';
 import 'record_link_parser.dart';
 
 /// `vault/.akasha/link_index.json` — Wave 5.
@@ -39,10 +42,14 @@ class RecordLinkIndexService implements RecordLinkPort {
   Map<String, List<RecordLink>> _outgoing = {};
   Map<String, List<String>> _incoming = {};
   bool _loaded = false;
+  UserCatalogPort? _resolveUserCatalog;
+  List<AkashaItem> _resolveVaultItems = const [];
 
   @override
   Future<void> rebuildIndex({
     String? changedPath,
+    UserCatalogPort? userCatalog,
+    List<AkashaItem> vaultItems = const [],
     Future<void> Function(Map<String, dynamic> stats)? onRebuilt,
   }) async {
     final vaultPath = _fileService.vaultPath;
@@ -52,6 +59,17 @@ class RecordLinkIndexService implements RecordLinkPort {
       _loaded = true;
       return;
     }
+
+    if (userCatalog != null) {
+      _resolveUserCatalog = userCatalog;
+      await userCatalog.load();
+    }
+    if (vaultItems.isNotEmpty) {
+      _resolveVaultItems = vaultItems;
+    }
+
+    final catalog = _resolveUserCatalog;
+    final items = _resolveVaultItems;
 
     final outgoing = <String, List<RecordLink>>{};
     final incoming = <String, List<String>>{};
@@ -75,13 +93,9 @@ class RecordLinkIndexService implements RecordLinkPort {
         outgoing[sourcePath] = _dedupeLinks(links);
 
         for (final link in outgoing[sourcePath]!) {
-          if (link.kind != RecordLinkKind.explicitId ||
-              link.targetEntityId == null) {
-            continue;
-          }
-          incoming
-              .putIfAbsent(link.targetEntityId!, () => [])
-              .add(sourcePath);
+          final targetId = _incomingTargetId(link, catalog, items);
+          if (targetId == null) continue;
+          incoming.putIfAbsent(targetId, () => []).add(sourcePath);
         }
       } catch (_) {
         // skip unreadable files
@@ -226,6 +240,25 @@ class RecordLinkIndexService implements RecordLinkPort {
           _scanSkipDirNames.contains(part) ||
           (part.startsWith('.') && part != indexDirName),
     );
+  }
+
+  String? _incomingTargetId(
+    RecordLink link,
+    UserCatalogPort? catalog,
+    List<AkashaItem> vaultItems,
+  ) {
+    if (link.kind == RecordLinkKind.explicitId) {
+      return link.targetEntityId;
+    }
+    if (link.kind == RecordLinkKind.titleOnly && catalog != null) {
+      final title = link.targetTitle ?? link.raw;
+      return RecordLinkNavigator.resolveTitleToEntityId(
+        title,
+        userCatalog: catalog,
+        vaultItems: vaultItems,
+      );
+    }
+    return null;
   }
 
   List<RecordLink> _dedupeLinks(List<RecordLink> links) {

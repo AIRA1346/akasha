@@ -4,8 +4,9 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/entity_id_codec.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/entity_archive_service.dart';
 
-/// Wave 4 — Person · Concept · Event 등 catalog-only Fact 추가.
+/// R1 — Person · Event · Concept Archive-First 추가 (Work parity).
 Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
   BuildContext context, {
   required EntityAnchorType entityType,
@@ -14,7 +15,8 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
   final titleCtrl = TextEditingController(text: initialTitle ?? '');
   final aliasesCtrl = TextEditingController();
   final bodyCtrl = TextEditingController();
-  var createJournal = false;
+  final archiveFirst = EntityArchiveService.usesArchiveFirstFlow(entityType);
+  var nameOnly = false;
 
   final typeLabel = _typeLabel(entityType);
 
@@ -22,7 +24,7 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setLocal) => AlertDialog(
-        title: Text('$typeLabel 추가 (catalog)'),
+        title: Text('$typeLabel 아카이브'),
         content: SizedBox(
           width: 420,
           child: SingleChildScrollView(
@@ -48,16 +50,8 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                     isDense: true,
                   ),
                 ),
-                const SizedBox(height: 12),
-                CheckboxListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: const Text('entities journal 생성'),
-                  subtitle: const Text('vault/entities/{type}/ 에 .md 저장'),
-                  value: createJournal,
-                  onChanged: (v) => setLocal(() => createJournal = v ?? false),
-                ),
-                if (createJournal) ...[
-                  const SizedBox(height: 8),
+                if (archiveFirst && !nameOnly) ...[
+                  const SizedBox(height: 12),
                   TextField(
                     controller: bodyCtrl,
                     minLines: 3,
@@ -67,6 +61,18 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                       border: OutlineInputBorder(),
                       alignLabelWithHint: true,
                     ),
+                  ),
+                ],
+                if (archiveFirst) ...[
+                  const SizedBox(height: 8),
+                  CheckboxListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: const Text('이름만 등록 (고급)'),
+                    subtitle: const Text(
+                      'journal 없이 링크용 ID만 — 기본 아카이브 flow 아님',
+                    ),
+                    value: nameOnly,
+                    onChanged: (v) => setLocal(() => nameOnly = v ?? false),
                   ),
                 ],
               ],
@@ -101,12 +107,12 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                     title: title,
                     aliases: aliases,
                   ),
-                  createJournal: createJournal,
+                  nameOnly: archiveFirst && nameOnly,
                   journalBody: bodyCtrl.text.trim(),
                 ),
               );
             },
-            child: const Text('catalog에 추가'),
+            child: Text(archiveFirst ? '아카이브에 추가' : '추가'),
           ),
         ],
       ),
@@ -149,32 +155,20 @@ Future<EntityAnchorType?> showCustomEntityTypePicker(
             _TypeTile(
               icon: Icons.person_outline,
               label: 'Person',
-              subtitle: '개별 존재 — 나비, 캐릭터',
+              subtitle: 'entities/person/*.md 아카이브',
               onTap: () => Navigator.pop(ctx, EntityAnchorType.person),
             ),
             _TypeTile(
               icon: Icons.lightbulb_outline,
               label: 'Concept',
-              subtitle: '종·상징·개념 — Tiger',
+              subtitle: 'entities/concept/*.md 아카이브',
               onTap: () => Navigator.pop(ctx, EntityAnchorType.concept),
             ),
             _TypeTile(
               icon: Icons.event_outlined,
               label: 'Event',
-              subtitle: '사건·행사',
+              subtitle: 'entities/event/*.md 아카이브',
               onTap: () => Navigator.pop(ctx, EntityAnchorType.event),
-            ),
-            _TypeTile(
-              icon: Icons.place_outlined,
-              label: 'Place',
-              subtitle: '장소 — 카페·도시',
-              onTap: () => Navigator.pop(ctx, EntityAnchorType.place),
-            ),
-            _TypeTile(
-              icon: Icons.groups_outlined,
-              label: 'Organization',
-              subtitle: '조직·팀·브랜드',
-              onTap: () => Navigator.pop(ctx, EntityAnchorType.organization),
             ),
           ],
         ),
@@ -236,5 +230,14 @@ String entityTypeBadgeLabel(EntityAnchorType type) {
     EntityAnchorType.organization => 'Org',
     EntityAnchorType.custom => 'Custom',
     EntityAnchorType.phenomenon => 'Legacy',
+  };
+}
+
+String entityTypeArchiveSectionLabel(EntityAnchorType type) {
+  return switch (type) {
+    EntityAnchorType.person => 'Person',
+    EntityAnchorType.concept => 'Concept',
+    EntityAnchorType.event => 'Event',
+    _ => entityTypeBadgeLabel(type),
   };
 }

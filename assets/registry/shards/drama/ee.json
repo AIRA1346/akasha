@@ -1,0 +1,177 @@
+{
+  "wk_000000584": {
+    "workId": "wk_000000584",
+    "title": "엘 시드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101541477"
+    },
+    "titles": {
+      "ko": "엘 시드",
+      "en": "El Cid",
+      "ja": "エル・シッド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000947": {
+    "workId": "wk_000000947",
+    "title": "밥이 되어라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104549455"
+    },
+    "titles": {
+      "ko": "밥이 되어라",
+      "en": "A Good Supper"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001300": {
+    "workId": "wk_000001300",
+    "title": "다크홀",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105883276"
+    },
+    "titles": {
+      "ko": "다크홀",
+      "en": "Dark Hole",
+      "ja": "ダークホール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002426": {
+    "workId": "wk_000002426",
+    "title": "제시의 쇼!터뷰",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109257617"
+    },
+    "titles": {
+      "ko": "제시의 쇼!터뷰",
+      "en": "Showterview with Jessi"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002445": {
+    "workId": "wk_000002445",
+    "title": "스폰서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109317306"
+    },
+    "titles": {
+      "ko": "스폰서",
+      "en": "Sponsor",
+      "ja": "スポンサー～破滅の足音～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002764": {
+    "workId": "wk_000002764",
+    "title": "베스트 아나테이너 선발대회",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456281"
+    },
+    "titles": {
+      "ko": "베스트 아나테이너 선발대회",
+      "en": "Q109456281"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003765": {
+    "workId": "wk_000003765",
+    "title": "오! 마이 스타",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109547060"
+    },
+    "titles": {
+      "ko": "오! 마이 스타",
+      "en": "Q109547060"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006664": {
+    "workId": "wk_000006664",
+    "title": "태풍의 신부",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113529018"
+    },
+    "titles": {
+      "ko": "태풍의 신부",
+      "en": "Vengeance of the Bride",
+      "ja": "台風の新婦"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006772": {
+    "workId": "wk_000006772",
+    "title": "오 마이웨딩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113635142"
+    },
+    "titles": {
+      "ko": "오 마이웨딩",
+      "en": "Q113635142"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009258": {
+    "workId": "wk_000009258",
+    "title": "굉굉전대 보켄저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1193877"
+    },
+    "titles": {
+      "ko": "굉굉전대 보켄저",
+      "en": "GoGo Sentai Boukenger",
+      "ja": "轟轟戦隊ボウケンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

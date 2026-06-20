@@ -1,0 +1,115 @@
+{
+  "wk_000001375": {
+    "workId": "wk_000001375",
+    "title": "트라이앵글 스트래티지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105561171"
+    },
+    "titles": {
+      "ko": "트라이앵글 스트래티지",
+      "en": "Triangle Strategy",
+      "ja": "トライアングルストラテジー"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002914": {
+    "workId": "wk_000002914",
+    "title": "시푸",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108650420"
+    },
+    "titles": {
+      "ko": "시푸",
+      "en": "Sifu",
+      "ja": "Sifu"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008246": {
+    "workId": "wk_000008246",
+    "title": "제노블레이드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1287714"
+    },
+    "titles": {
+      "ko": "제노블레이드",
+      "en": "Xenoblade Chronicles",
+      "ja": "ゼノブレイド"
+    },
+    "releaseYear": 2012,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008379": {
+    "workId": "wk_000008379",
+    "title": "디즈니 픽셀 RPG",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130315778"
+    },
+    "titles": {
+      "ko": "디즈니 픽셀 RPG",
+      "en": "Disney Pixel RPG",
+      "ja": "ディズニー ピクセルRPG"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009088": {
+    "workId": "wk_000009088",
+    "title": "로로의 모험",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1330641"
+    },
+    "titles": {
+      "ko": "로로의 모험",
+      "en": "Adventures of Lolo"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010067": {
+    "workId": "wk_000010067",
+    "title": "로스트 소드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q138297654"
+    },
+    "titles": {
+      "ko": "로스트 소드",
+      "en": "Lost Sword: Tales of Britania",
+      "ja": "ロストソード"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

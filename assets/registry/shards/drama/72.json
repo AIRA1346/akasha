@@ -1,0 +1,305 @@
+{
+  "wk_000001364": {
+    "workId": "wk_000001364",
+    "title": "여고추리반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106136508"
+    },
+    "titles": {
+      "ko": "여고추리반",
+      "en": "Q106136508",
+      "ja": "女子高推理部"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002863": {
+    "workId": "wk_000002863",
+    "title": "더 마스크드 탤런트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456943"
+    },
+    "titles": {
+      "ko": "더 마스크드 탤런트",
+      "en": "The Masked Talent"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003069": {
+    "workId": "wk_000003069",
+    "title": "저취시생활",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458820"
+    },
+    "titles": {
+      "ko": "저취시생활",
+      "en": "Q109458820"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005010": {
+    "workId": "wk_000005010",
+    "title": "주식회사 세계충격영상사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11184719"
+    },
+    "titles": {
+      "ko": "주식회사 세계충격영상사",
+      "en": "THE WORLD IMPACT IMAGE COMPANY LTD.",
+      "ja": "(株)世界衝撃映像社"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005181": {
+    "workId": "wk_000005181",
+    "title": "하이재킹",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112131897"
+    },
+    "titles": {
+      "ko": "하이재킹",
+      "en": "Hijack",
+      "ja": "ハイジャック (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005381": {
+    "workId": "wk_000005381",
+    "title": "밤의 히트 스튜디오",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243785"
+    },
+    "titles": {
+      "ko": "밤의 히트 스튜디오",
+      "en": "Yoru no Hit Studio",
+      "ja": "夜のヒットスタジオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006590": {
+    "workId": "wk_000006590",
+    "title": "러브 & 파이트",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11347272"
+    },
+    "titles": {
+      "ko": "러브 & 파이트",
+      "en": "Love & Fight",
+      "ja": "ラブ&ファイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006841": {
+    "workId": "wk_000006841",
+    "title": "임협 헬퍼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11378637"
+    },
+    "titles": {
+      "ko": "임협 헬퍼",
+      "en": "Ninkyō Helper",
+      "ja": "任侠ヘルパー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007315": {
+    "workId": "wk_000007315",
+    "title": "고개의 군상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11476053"
+    },
+    "titles": {
+      "ko": "고개의 군상",
+      "en": "Touge no Gunzou",
+      "ja": "峠の群像"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008341": {
+    "workId": "wk_000008341",
+    "title": "주간 스태미너 천국",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11640011"
+    },
+    "titles": {
+      "ko": "주간 스태미너 천국",
+      "en": "Q11640011",
+      "ja": "週刊スタミナ天国"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008412": {
+    "workId": "wk_000008412",
+    "title": "청춘가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11661560"
+    },
+    "titles": {
+      "ko": "청춘가족",
+      "en": "Q11661560",
+      "ja": "青春家族"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008479": {
+    "workId": "wk_000008479",
+    "title": "패밀리 (드라마)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116728594"
+    },
+    "titles": {
+      "ko": "패밀리 (드라마)",
+      "en": "Family: The Unbreakable Bond",
+      "ja": "シークレット・ファミリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008880": {
+    "workId": "wk_000008880",
+    "title": "홍김동전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117886297"
+    },
+    "titles": {
+      "ko": "홍김동전",
+      "en": "Beat Coin"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009025": {
+    "workId": "wk_000009025",
+    "title": "오성전대 다이레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190616"
+    },
+    "titles": {
+      "ko": "오성전대 다이레인저",
+      "en": "Gosei Sentai Dairanger",
+      "ja": "五星戦隊ダイレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009412": {
+    "workId": "wk_000009412",
+    "title": "혼례대첩",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120533831"
+    },
+    "titles": {
+      "ko": "혼례대첩",
+      "en": "The Matchmakers",
+      "ja": "婚礼大捷"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009921": {
+    "workId": "wk_000009921",
+    "title": "정년이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124243610"
+    },
+    "titles": {
+      "ko": "정년이",
+      "en": "Jeongnyeon: The Star Is Born",
+      "ja": "ジョンニョン: スター誕生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010107": {
+    "workId": "wk_000010107",
+    "title": "놀아주는 여자",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611059"
+    },
+    "titles": {
+      "ko": "놀아주는 여자",
+      "en": "My Sweet Mobster",
+      "ja": "遊んでくれる彼女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "wk_000004143": {
+    "workId": "wk_000004143",
+    "title": "네크로노미코의 코즈믹 호러 쇼",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131430109"
+    },
+    "titles": {
+      "ko": "네크로노미코의 코즈믹 호러 쇼",
+      "en": "Necronomico and the Cosmic Horror Show",
+      "ja": "ネクロノミ子のコズミックホラーショウ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006534": {
+    "workId": "wk_000006534",
+    "title": "괴 ~아야카시~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2874865"
+    },
+    "titles": {
+      "ko": "괴 ~아야카시~",
+      "en": "Ayakashi: Samurai Horror Tales",
+      "ja": "怪 〜ayakashi〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007779": {
+    "workId": "wk_000007779",
+    "title": "포켓몬스터 DP",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q556918"
+    },
+    "titles": {
+      "ko": "포켓몬스터 DP",
+      "en": "Pokémon the Series: Diamond and Pearl",
+      "ja": "ポケットモンスター ダイヤモンド&パール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008077": {
+    "workId": "wk_000008077",
+    "title": "미국을 향한 음모",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q60752460"
+    },
+    "titles": {
+      "ko": "미국을 향한 음모",
+      "en": "The Plot Against America",
+      "ja": "プロット・アゲンスト・アメリカ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

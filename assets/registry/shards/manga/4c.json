@@ -1,0 +1,114 @@
+{
+  "wk_000000543": {
+    "workId": "wk_000000543",
+    "title": "옥 안의 솔리스트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107625493"
+    },
+    "titles": {
+      "ko": "옥 안의 솔리스트",
+      "en": "Soloist in a Cage",
+      "ja": "檻ノ中のソリスト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001034": {
+    "workId": "wk_000001034",
+    "title": "잃어버린 미래를 찾아서",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11054409"
+    },
+    "titles": {
+      "ko": "잃어버린 미래를 찾아서",
+      "en": "In Search of the Lost Future",
+      "ja": "失われた未来を求めて"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003617": {
+    "workId": "wk_000003617",
+    "title": "나가토 유키짱의 소실",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11654890"
+    },
+    "titles": {
+      "ko": "나가토 유키짱의 소실",
+      "en": "The Disappearance of Nagato Yuki-chan",
+      "ja": "長門有希ちゃんの消失"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004794": {
+    "workId": "wk_000004794",
+    "title": "펌프킨 나이트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122234478"
+    },
+    "titles": {
+      "ko": "펌프킨 나이트",
+      "en": "Pumpkin Night",
+      "ja": "パンプキンナイト"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008616": {
+    "workId": "wk_000008616",
+    "title": "이윽고 네가 된다",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22932761"
+    },
+    "titles": {
+      "ko": "이윽고 네가 된다",
+      "en": "Bloom Into You",
+      "ja": "やがて君になる"
+    },
+    "creator": "Nio Nakatani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009201": {
+    "workId": "wk_000009201",
+    "title": "절원의 템페스트",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2756456"
+    },
+    "titles": {
+      "ko": "절원의 템페스트",
+      "en": "Blast of Tempest",
+      "ja": "絶園のテンペスト"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

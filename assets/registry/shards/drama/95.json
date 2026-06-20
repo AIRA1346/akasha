@@ -1,0 +1,216 @@
+{
+  "wk_000003591": {
+    "workId": "wk_000003591",
+    "title": "병아리 하이킥",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109464507"
+    },
+    "titles": {
+      "ko": "병아리 하이킥",
+      "en": "chick high kick"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005056": {
+    "workId": "wk_000005056",
+    "title": "5시부터 9시까지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11188068"
+    },
+    "titles": {
+      "ko": "5시부터 9시까지",
+      "en": "From Five to Nine",
+      "ja": "5時から9時まで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005120": {
+    "workId": "wk_000005120",
+    "title": "치얼업",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111992856"
+    },
+    "titles": {
+      "ko": "치얼업",
+      "en": "Cheer Up",
+      "ja": "チアアップ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005860": {
+    "workId": "wk_000005860",
+    "title": "꼬인 인연",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11275061"
+    },
+    "titles": {
+      "ko": "꼬인 인연",
+      "en": "Nejiretakizuna",
+      "ja": "ねじれた絆"
+    },
+    "releaseYear": 1995,
+    "creator": "Shūji Okuno",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006073": {
+    "workId": "wk_000006073",
+    "title": "위크엔드 간사이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11288453"
+    },
+    "titles": {
+      "ko": "위크엔드 간사이",
+      "en": "Q11288453",
+      "ja": "ウイークエンド関西"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006379": {
+    "workId": "wk_000006379",
+    "title": "뉴스 845 오키나와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11324710"
+    },
+    "titles": {
+      "ko": "뉴스 845 오키나와",
+      "en": "News 845 Okinawa",
+      "ja": "ニュース845沖縄"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008744": {
+    "workId": "wk_000008744",
+    "title": "EBS 교육진단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117254655"
+    },
+    "titles": {
+      "ko": "EBS 교육진단",
+      "en": "Q117254655"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008752": {
+    "workId": "wk_000008752",
+    "title": "TV조선 뉴스 12",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117377623"
+    },
+    "titles": {
+      "ko": "TV조선 뉴스 12",
+      "en": "Q117377623"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008943": {
+    "workId": "wk_000008943",
+    "title": "웰컴투 삼달리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118611683"
+    },
+    "titles": {
+      "ko": "웰컴투 삼달리",
+      "en": "Welcome to Samdalri",
+      "ja": "サムダルリへようこそ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009347": {
+    "workId": "wk_000009347",
+    "title": "아무도 없는 숲속에서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120240271"
+    },
+    "titles": {
+      "ko": "아무도 없는 숲속에서",
+      "en": "The Frog",
+      "ja": "誰もいない森の奥で木は音もなく倒れる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009475": {
+    "workId": "wk_000009475",
+    "title": "대송소년지 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q121278724"
+    },
+    "titles": {
+      "ko": "대송소년지 2",
+      "en": "Young Blood II"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010270": {
+    "workId": "wk_000010270",
+    "title": "미스터리 수사단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124829354"
+    },
+    "titles": {
+      "ko": "미스터리 수사단",
+      "en": "Agents of Mystery",
+      "ja": "エージェント・オブ・ミステリー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

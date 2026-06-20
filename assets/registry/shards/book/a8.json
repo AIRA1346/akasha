@@ -1,0 +1,60 @@
+{
+  "wk_000001080": {
+    "workId": "wk_000001080",
+    "title": "명통감",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10316006"
+    },
+    "titles": {
+      "ko": "명통감",
+      "en": "Myeongtonggam",
+      "ja": "明通鑑",
+      "zh": "明通鑑"
+    },
+    "creator": "Xia Xie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005499": {
+    "workId": "wk_000005499",
+    "title": "공자가어",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10944269"
+    },
+    "titles": {
+      "ko": "공자가어",
+      "en": "Kongzi Jiayu",
+      "ja": "孔子家語"
+    },
+    "creator": "Kong Anguo",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008166": {
+    "workId": "wk_000008166",
+    "title": "이세계에서 복슬복슬을 쓰담쓰담하기 위해 노력 중입니다",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113119099"
+    },
+    "titles": {
+      "ko": "이세계에서 복슬복슬을 쓰담쓰담하기 위해 노력 중입니다",
+      "en": "Fluffy Paradise",
+      "ja": "異世界でもふもふなでなでするためにがんばってます。"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

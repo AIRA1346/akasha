@@ -1,0 +1,249 @@
+{
+  "wk_000000648": {
+    "workId": "wk_000000648",
+    "title": "데 포카스, 포카스 풀가스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10264555"
+    },
+    "titles": {
+      "ko": "데 포카스, 포카스 풀가스",
+      "en": "De pocas, pocas pulgas"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001368": {
+    "workId": "wk_000001368",
+    "title": "그들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106180078"
+    },
+    "titles": {
+      "ko": "그들",
+      "en": "Them",
+      "ja": "ゼム (2021年のテレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001964": {
+    "workId": "wk_000001964",
+    "title": "VJ특공대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854897"
+    },
+    "titles": {
+      "ko": "VJ특공대",
+      "en": "Q10854897",
+      "ja": "VJ特攻隊"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002677": {
+    "workId": "wk_000002677",
+    "title": "어쩌다 마주친 그 개",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109455794"
+    },
+    "titles": {
+      "ko": "어쩌다 마주친 그 개",
+      "en": "Q109455794"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003838": {
+    "workId": "wk_000003838",
+    "title": "금수저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109921573"
+    },
+    "titles": {
+      "ko": "금수저",
+      "en": "The Golden Spoon",
+      "ja": "ゴールデンスプーン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004400": {
+    "workId": "wk_000004400",
+    "title": "BoysPlanet",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110190620"
+    },
+    "titles": {
+      "ko": "BoysPlanet",
+      "en": "Boys Planet",
+      "ja": "BOYS PLANET"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004612": {
+    "workId": "wk_000004612",
+    "title": "후궁견환전",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11070218"
+    },
+    "titles": {
+      "ko": "후궁견환전",
+      "en": "The Legend of Zhen Huan",
+      "ja": "宮廷の諍い女"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005386": {
+    "workId": "wk_000005386",
+    "title": "ST 경시청 과학 특수반",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11244855"
+    },
+    "titles": {
+      "ko": "ST 경시청 과학 특수반",
+      "en": "ST Keishichō Kagaku Tokusōhan",
+      "ja": "ST 警視庁科学特捜班"
+    },
+    "releaseYear": 2015,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006005": {
+    "workId": "wk_000006005",
+    "title": "여봉행",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112861443"
+    },
+    "titles": {
+      "ko": "여봉행",
+      "en": "The Legend of Shen Li"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006374": {
+    "workId": "wk_000006374",
+    "title": "더 프랙티스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1132439"
+    },
+    "titles": {
+      "ko": "더 프랙티스",
+      "en": "The Practice",
+      "ja": "ザ・プラクティス ボストン弁護士ファイル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008176": {
+    "workId": "wk_000008176",
+    "title": "마간당 딜라그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116178874"
+    },
+    "titles": {
+      "ko": "마간당 딜라그",
+      "en": "Magandang Dilag",
+      "ja": "マガンダン・ディラグ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008949": {
+    "workId": "wk_000008949",
+    "title": "DKZ의 달빛 동아리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118690452"
+    },
+    "titles": {
+      "ko": "DKZ의 달빛 동아리",
+      "en": "DKZ Moonlight Club"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009792": {
+    "workId": "wk_000009792",
+    "title": "웨딩 임파서블",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123495072"
+    },
+    "titles": {
+      "ko": "웨딩 임파서블",
+      "en": "Wedding Impossible"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010324": {
+    "workId": "wk_000010324",
+    "title": "누에보 아마네세르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1249051"
+    },
+    "titles": {
+      "ko": "누에보 아마네세르",
+      "en": "Nuevo amanecer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

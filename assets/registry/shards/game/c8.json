@@ -1,0 +1,168 @@
+{
+  "wk_000000135": {
+    "workId": "wk_000000135",
+    "title": "엑시옴",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "인디 제작사",
+    "releaseYear": 2024,
+    "tags": [
+      "인디",
+      "얼리액세스",
+      "SF"
+    ],
+    "legacyIds": [
+      "gen_game_axiom_2024"
+    ],
+    "titles": {
+      "en": "Axiom Verge",
+      "ko": "엑시옴"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "332200",
+      "wikidata": "Q4830546"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000713": {
+    "workId": "wk_000000713",
+    "title": "라이자의 아틀리에 2 ~잃어버린 전승과 비밀의 요정~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q103816433"
+    },
+    "titles": {
+      "ko": "라이자의 아틀리에 2 ~잃어버린 전승과 비밀의 요정~",
+      "en": "Atelier Ryza 2: Lost Legends & the Secret Fairy",
+      "ja": "ライザのアトリエ2 〜失われた伝承と秘密の妖精〜"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004593": {
+    "workId": "wk_000004593",
+    "title": "스트리트 파이터 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1133204"
+    },
+    "titles": {
+      "ko": "스트리트 파이터 2",
+      "en": "Street Fighter II",
+      "ja": "ストリートファイターII"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004899": {
+    "workId": "wk_000004899",
+    "title": "원숭이 섬의 저주",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1137217"
+    },
+    "titles": {
+      "ko": "원숭이 섬의 저주",
+      "en": "The Curse of Monkey Island",
+      "ja": "モンキーアイランド3"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005147": {
+    "workId": "wk_000005147",
+    "title": "스타폭스 64",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141963"
+    },
+    "titles": {
+      "ko": "스타폭스 64",
+      "en": "Star Fox 64",
+      "ja": "スターフォックス64"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007109": {
+    "workId": "wk_000007109",
+    "title": "슈퍼 마리오브라더스 원더",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q119819453"
+    },
+    "titles": {
+      "ko": "슈퍼 마리오브라더스 원더",
+      "en": "Super Mario Bros. Wonder",
+      "ja": "スーパーマリオブラザーズ ワンダー"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009770": {
+    "workId": "wk_000009770",
+    "title": "참지 못하는 동정 오빠와 솔직해질 수 없는 반항 여동생",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136325749"
+    },
+    "titles": {
+      "ko": "참지 못하는 동정 오빠와 솔직해질 수 없는 반항 여동생",
+      "en": "Desperate Virgin Brother & Rebellious Little Sister",
+      "ja": "ガマンができない童貞兄キと、スナオになれない反抗妹"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009824": {
+    "workId": "wk_000009824",
+    "title": "돌려라 메이드 인 와리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1368157"
+    },
+    "titles": {
+      "ko": "돌려라 메이드 인 와리오",
+      "en": "WarioWare: Twisted!",
+      "ja": "まわるメイド イン ワリオ"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "wk_000000133": {
+    "workId": "wk_000000133",
+    "title": "페이퍼스, 플리즈",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Lucas Pope",
+    "releaseYear": 2013,
+    "tags": [
+      "퍼즐",
+      "인디",
+      "시뮬",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_game_appid239030_2013"
+    ],
+    "titles": {
+      "en": "Papers, Please",
+      "ko": "페이퍼스, 플리즈"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "239030",
+      "wikidata": "Q14565978"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000720": {
+    "workId": "wk_000000720",
+    "title": "베이스볼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1041292"
+    },
+    "titles": {
+      "ko": "베이스볼",
+      "en": "Baseball",
+      "ja": "ベースボール"
+    },
+    "releaseYear": 1986,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002240": {
+    "workId": "wk_000002240",
+    "title": "마블의 가디언즈 오브 갤럭시",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107214964"
+    },
+    "titles": {
+      "ko": "마블의 가디언즈 오브 갤럭시",
+      "en": "Guardians of the Galaxy",
+      "ja": "ガーディアンズ・オブ・ザ・ギャラクシー"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005704": {
+    "workId": "wk_000005704",
+    "title": "디렉티브 8020",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115249849"
+    },
+    "titles": {
+      "ko": "디렉티브 8020",
+      "en": "Directive 8020"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007167": {
+    "workId": "wk_000007167",
+    "title": "하프라이프: 소스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1199351"
+    },
+    "titles": {
+      "ko": "하프라이프: 소스",
+      "en": "Half-Life: Source"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007364": {
+    "workId": "wk_000007364",
+    "title": "어디선가 본 \"그 게임\"을 스틱맨으로 만들어 봤는데, 과연 당신은 클리어할 수 있을까?",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q120794046"
+    },
+    "titles": {
+      "ko": "어디선가 본 \"그 게임\"을 스틱맨으로 만들어 봤는데, 과연 당신은 클리어할 수 있을까?",
+      "en": "Yeah! You Want \"Those Games,\" Right? So Here You Go! Now, Let's See You Clear Them!",
+      "ja": "どこかで見た“あのゲー”ムたちを棒人間で作ってみたけれど、果たしてあなたはクリアできるのか？"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009137": {
+    "workId": "wk_000009137",
+    "title": "금색의갓슈벨",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133730557"
+    },
+    "titles": {
+      "ko": "금색의갓슈벨",
+      "en": "Golden Gash Bell"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

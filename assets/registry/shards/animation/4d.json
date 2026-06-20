@@ -1,0 +1,219 @@
+{
+  "wk_000001322": {
+    "workId": "wk_000001322",
+    "title": "배틀 스피리츠 히어로즈",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10846568"
+    },
+    "titles": {
+      "ko": "배틀 스피리츠 히어로즈",
+      "en": "Battle Spirits - Heroes",
+      "ja": "バトルスピリッツ 覇王"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003780": {
+    "workId": "wk_000003780",
+    "title": "우주전함 티라미스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127958226"
+    },
+    "titles": {
+      "ko": "우주전함 티라미스",
+      "en": "Space Battleship Tiramisu",
+      "ja": "宇宙戦艦ティラミス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005086": {
+    "workId": "wk_000005086",
+    "title": "왕도둑 JING",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1742099"
+    },
+    "titles": {
+      "ko": "왕도둑 JING",
+      "en": "Jing: King of Bandits",
+      "ja": "王ドロボウJING"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005615": {
+    "workId": "wk_000005615",
+    "title": "스타뮤",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21042277"
+    },
+    "titles": {
+      "ko": "스타뮤",
+      "en": "Star-Myu",
+      "ja": "スタミュ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005960": {
+    "workId": "wk_000005960",
+    "title": "나스 안달루시아의 여름",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2395290"
+    },
+    "titles": {
+      "ko": "나스 안달루시아의 여름",
+      "en": "Nasu: Summer in Andalusia",
+      "ja": "茄子 アンダルシアの夏"
+    },
+    "releaseYear": 2003,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006408": {
+    "workId": "wk_000006408",
+    "title": "매칭! 소년양궁부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q27953426"
+    },
+    "titles": {
+      "ko": "매칭! 소년양궁부",
+      "en": "Matching! Boys Archery"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007763": {
+    "workId": "wk_000007763",
+    "title": "위 아 더 웨이브",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55635619"
+    },
+    "titles": {
+      "ko": "위 아 더 웨이브",
+      "en": "We Are the Wave",
+      "ja": "我らはウェイヴ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008138": {
+    "workId": "wk_000008138",
+    "title": "음란한 아오는 공부를 할 수 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q61041592"
+    },
+    "titles": {
+      "ko": "음란한 아오는 공부를 할 수 없어",
+      "en": "Ao-chan Can't Study!",
+      "ja": "淫らな青ちゃんは勉強ができない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008564": {
+    "workId": "wk_000008564",
+    "title": "호크아이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q65980843"
+    },
+    "titles": {
+      "ko": "호크아이",
+      "en": "Hawkeye",
+      "ja": "ホークアイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009216": {
+    "workId": "wk_000009216",
+    "title": "살인자의 고백",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q77855747"
+    },
+    "titles": {
+      "ko": "살인자의 고백",
+      "en": "The Confession Killer",
+      "ja": "コンフェッション・キラー: 疑惑の自供"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009563": {
+    "workId": "wk_000009563",
+    "title": "극장판 포켓몬스터: 루기아의 탄생",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q868048"
+    },
+    "titles": {
+      "ko": "극장판 포켓몬스터: 루기아의 탄생",
+      "en": "Pokémon The Movie 2000",
+      "ja": "劇場版ポケットモンスター 幻のポケモン ルギア爆誕"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009755": {
+    "workId": "wk_000009755",
+    "title": "프리티 리듬: 오로라 드림",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q902228"
+    },
+    "titles": {
+      "ko": "프리티 리듬: 오로라 드림",
+      "en": "Pretty Rhythm: Aurora Dream",
+      "ja": "プリティーリズム・オーロラドリーム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

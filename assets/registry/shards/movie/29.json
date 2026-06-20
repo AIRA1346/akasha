@@ -1,0 +1,78 @@
+{
+  "wk_000000621": {
+    "workId": "wk_000000621",
+    "title": "안나 성당의 기적",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1002100"
+    },
+    "titles": {
+      "ko": "안나 성당의 기적",
+      "en": "Miracle at St. Anna",
+      "ja": "セントアンナの奇跡"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001703": {
+    "workId": "wk_000001703",
+    "title": "닉크",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1030652"
+    },
+    "titles": {
+      "ko": "닉크",
+      "en": "Ricochet",
+      "ja": "リコシェ"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005571": {
+    "workId": "wk_000005571",
+    "title": "모래그릇",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1060124"
+    },
+    "titles": {
+      "ko": "모래그릇",
+      "en": "Castle of Sand",
+      "ja": "砂の器"
+    },
+    "releaseYear": 1974,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006569": {
+    "workId": "wk_000006569",
+    "title": "종이꽃",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106774439"
+    },
+    "titles": {
+      "ko": "종이꽃",
+      "en": "Paper Flower",
+      "ja": "よりそう花ゝ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

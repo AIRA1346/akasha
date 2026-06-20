@@ -1,0 +1,206 @@
+{
+  "wk_000000118": {
+    "workId": "wk_000000118",
+    "title": "도타 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2013,
+    "tags": [
+      "MOBA",
+      "PvP",
+      "e스포츠",
+      "전략"
+    ],
+    "legacyIds": [
+      "gen_game_appid570_2013"
+    ],
+    "titles": {
+      "en": "Dota 2",
+      "ko": "도타 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "570",
+      "wikidata": "Q771541"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001686": {
+    "workId": "wk_000001686",
+    "title": "건퍼레이드 마치",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065678"
+    },
+    "titles": {
+      "ko": "건퍼레이드 마치",
+      "en": "Gunparade March",
+      "ja": "高機動幻想ガンパレード・マーチ"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001974": {
+    "workId": "wk_000001974",
+    "title": "터미네이터 2: 체스 전쟁",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10693359"
+    },
+    "titles": {
+      "ko": "터미네이터 2: 체스 전쟁",
+      "en": "Terminator 2: Judgment Day - Chess Wars"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002550": {
+    "workId": "wk_000002550",
+    "title": "마셜 챔피언",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079957"
+    },
+    "titles": {
+      "ko": "마셜 챔피언",
+      "en": "Martial Champion",
+      "ja": "マーシャルチャンピオン"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003216": {
+    "workId": "wk_000003216",
+    "title": "타워 오브 판타지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110379107"
+    },
+    "titles": {
+      "ko": "타워 오브 판타지",
+      "en": "Tower of Fantasy",
+      "ja": "Tower of Fantasy（幻塔）"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003866": {
+    "workId": "wk_000003866",
+    "title": "ChuSingura46+1",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11194587"
+    },
+    "titles": {
+      "ko": "ChuSingura46+1",
+      "en": "ChuSingura46+1",
+      "ja": "ChuSingura46+1 -忠臣蔵46+1-"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004221": {
+    "workId": "wk_000004221",
+    "title": "우리들에게 날개는 없다 ~Prelude~",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11263159"
+    },
+    "titles": {
+      "ko": "우리들에게 날개는 없다 ~Prelude~",
+      "en": "Ore-tachi ni Tsubasa wa Nai ~Prelude~",
+      "ja": "俺たちに翼はない〜Prelude〜"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004301": {
+    "workId": "wk_000004301",
+    "title": "프린세스 윗치즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11283264"
+    },
+    "titles": {
+      "ko": "프린세스 윗치즈",
+      "en": "Princess Witches",
+      "ja": "プリンセスうぃっちぃず"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007163": {
+    "workId": "wk_000007163",
+    "title": "닥터마리오",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1198580"
+    },
+    "titles": {
+      "ko": "닥터마리오",
+      "en": "Dr. Mario",
+      "ja": "ドクターマリオ"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008640": {
+    "workId": "wk_000008640",
+    "title": "대마계촌",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1315653"
+    },
+    "titles": {
+      "ko": "대마계촌",
+      "en": "Ghouls 'n Ghosts",
+      "ja": "大魔界村"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

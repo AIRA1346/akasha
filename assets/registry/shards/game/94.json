@@ -1,0 +1,202 @@
+{
+  "wk_000000117": {
+    "workId": "wk_000000117",
+    "title": "레프트 4 데드 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2009,
+    "tags": [
+      "게임",
+      "Steam",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_game_appid550_2009"
+    ],
+    "titles": {
+      "en": "Left 4 Dead 2",
+      "ko": "레프트 4 데드 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "550",
+      "wikidata": "Q472909"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001470": {
+    "workId": "wk_000001470",
+    "title": "조 블레이드 3",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105663345"
+    },
+    "titles": {
+      "ko": "조 블레이드 3",
+      "en": "Joe Blade III"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003204": {
+    "workId": "wk_000003204",
+    "title": "초탐정사건부: 레인 코드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109797152"
+    },
+    "titles": {
+      "ko": "초탐정사건부: 레인 코드",
+      "en": "Master Detective Archives: Rain Code",
+      "ja": "超探偵事件簿 レインコード"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003650": {
+    "workId": "wk_000003650",
+    "title": "골판지전기",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111355181"
+    },
+    "titles": {
+      "ko": "골판지전기",
+      "en": "Danball Senki",
+      "ja": "ダンボール戦機"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004089": {
+    "workId": "wk_000004089",
+    "title": "성전사 전승 작탁의 기사",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11251016"
+    },
+    "titles": {
+      "ko": "성전사 전승 작탁의 기사",
+      "en": "Q11251016",
+      "ja": "聖戦士伝承・雀卓の騎士"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008090": {
+    "workId": "wk_000008090",
+    "title": "클레르 옵스퀴르: 33 원정대",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126462072"
+    },
+    "titles": {
+      "ko": "클레르 옵스퀴르: 33 원정대",
+      "en": "Q126462072"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009195": {
+    "workId": "wk_000009195",
+    "title": "이브니클2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q133864860"
+    },
+    "titles": {
+      "ko": "이브니클2",
+      "en": "Evenicle 2",
+      "ja": "イブニクル2"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009379": {
+    "workId": "wk_000009379",
+    "title": "유로파 유니버설리스 5",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134397776"
+    },
+    "titles": {
+      "ko": "유로파 유니버설리스 5",
+      "en": "Europa Universalis V"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009512": {
+    "workId": "wk_000009512",
+    "title": "피규어 어드벤처 그룹",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135054798"
+    },
+    "titles": {
+      "ko": "피규어 어드벤처 그룹",
+      "en": "Figure Adventure",
+      "ja": "フィギュア冒険団"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010004": {
+    "workId": "wk_000010004",
+    "title": "퀸즈 블레이드 리미트 브레이크",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137988520"
+    },
+    "titles": {
+      "ko": "퀸즈 블레이드 리미트 브레이크",
+      "en": "Queen's Blade Limit Break",
+      "ja": "クイーンズブレイドリミットブレイク"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

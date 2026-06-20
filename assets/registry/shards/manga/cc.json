@@ -1,0 +1,109 @@
+{
+  "wk_000000400": {
+    "workId": "wk_000000400",
+    "title": "요츠바랑!",
+    "titles": {
+      "ko": "요츠바랑!",
+      "en": "Yotsuba&!",
+      "ja": "よつばと!"
+    },
+    "category": "manga",
+    "domain": "subculture",
+    "creator": "아자마 케이야",
+    "releaseYear": 2003,
+    "tags": [
+      "일상",
+      "코미디",
+      "힐링",
+      "가족"
+    ],
+    "legacyIds": [
+      "sub_manga_yotsubato_2003"
+    ],
+    "externalIds": {
+      "wikidata": "Q390279"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001411": {
+    "workId": "wk_000001411",
+    "title": "So What?",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11246613"
+    },
+    "titles": {
+      "ko": "So What?",
+      "en": "So What?",
+      "ja": "So What?"
+    },
+    "creator": "Megumi Wakatsuki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004196": {
+    "workId": "wk_000004196",
+    "title": "원아웃",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188984"
+    },
+    "titles": {
+      "ko": "원아웃",
+      "en": "One Outs",
+      "ja": "ONE OUTS"
+    },
+    "creator": "Shinobu Kaitani",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004566": {
+    "workId": "wk_000004566",
+    "title": "WORKING!!",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1202916"
+    },
+    "titles": {
+      "ko": "WORKING!!",
+      "en": "Working!!",
+      "ja": "WORKING!!"
+    },
+    "creator": "Karino Takatsu",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006454": {
+    "workId": "wk_000006454",
+    "title": "첫사랑 메이즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137442829"
+    },
+    "titles": {
+      "ko": "첫사랑 메이즈",
+      "en": "Hatsukoi Maze",
+      "ja": "ハツコイメイズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "wk_000000826": {
+    "workId": "wk_000000826",
+    "title": "GTO",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1040270"
+    },
+    "titles": {
+      "ko": "GTO",
+      "en": "Great Teacher Onizuka",
+      "ja": "GTO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001490": {
+    "workId": "wk_000001490",
+    "title": "NCIS: 하와이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106623987"
+    },
+    "titles": {
+      "ko": "NCIS: 하와이",
+      "en": "NCIS: Hawaiʻi",
+      "ja": "NCIS: ハワイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001792": {
+    "workId": "wk_000001792",
+    "title": "파워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108372670"
+    },
+    "titles": {
+      "ko": "파워",
+      "en": "The Power"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003406": {
+    "workId": "wk_000003406",
+    "title": "생방송 이목집중",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109460964"
+    },
+    "titles": {
+      "ko": "생방송 이목집중",
+      "en": "Q109460964"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005387": {
+    "workId": "wk_000005387",
+    "title": "보디가드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11245340"
+    },
+    "titles": {
+      "ko": "보디가드",
+      "en": "Bodyguard",
+      "ja": "ボディーガード"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006167": {
+    "workId": "wk_000006167",
+    "title": "정글",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11310136"
+    },
+    "titles": {
+      "ko": "정글",
+      "en": "Jungle",
+      "ja": "ジャングル"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006497": {
+    "workId": "wk_000006497",
+    "title": "후지 TV 수요일 밤 8시 시대극",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11333208"
+    },
+    "titles": {
+      "ko": "후지 TV 수요일 밤 8시 시대극",
+      "en": "Q11333208",
+      "ja": "フジテレビ水曜夜8時枠時代劇"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006501": {
+    "workId": "wk_000006501",
+    "title": "블랙페앙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11334554"
+    },
+    "titles": {
+      "ko": "블랙페앙",
+      "en": "Black Forceps 1988",
+      "ja": "ブラックペアン1988"
+    },
+    "releaseYear": 2007,
+    "creator": "Takeru Kaidō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006503": {
+    "workId": "wk_000006503",
+    "title": "뿌리마다무",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11335635"
+    },
+    "titles": {
+      "ko": "뿌리마다무",
+      "en": "Pre-Madame",
+      "ja": "プリマダム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008532": {
+    "workId": "wk_000008532",
+    "title": "마법전대 마지레인저 vs. 데카레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673818"
+    },
+    "titles": {
+      "ko": "마법전대 마지레인저 vs. 데카레인저",
+      "en": "Q11673818",
+      "ja": "魔法戦隊マジレンジャーVSデカレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009474": {
+    "workId": "wk_000009474",
+    "title": "아워 걸",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12126821"
+    },
+    "titles": {
+      "ko": "아워 걸",
+      "en": "Our Girl"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009797": {
+    "workId": "wk_000009797",
+    "title": "KNN 정보센터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123550656"
+    },
+    "titles": {
+      "ko": "KNN 정보센터",
+      "en": "KNN INFORMATION CENTER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

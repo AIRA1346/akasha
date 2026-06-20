@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../core/archiving/entity_anchor.dart';
+import '../core/archiving/entity_journal_entry.dart';
 import '../models/akasha_item.dart';
 import '../models/franchise_group.dart';
+import '../models/enums.dart';
+import '../models/registry_work.dart';
 import '../core/ports/entity_registry_port.dart';
 import '../core/ports/registry_port.dart';
 import '../core/ports/user_catalog_port.dart';
@@ -16,7 +19,7 @@ import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import '../widgets/star_rating.dart';
 
-/// 3중 퓨전 검색: [로컬 .md] + [내 catalog] + [글로벌 사전] + [직접 추가 CTA]
+/// Fusion: 로컬 아카이브 · user local · 글로벌 사전 · 직접 추가 CTA.
 class FusionSearchDialog extends StatefulWidget {
   final List<AkashaItem> localItems;
   final UserCatalogPort userCatalog;
@@ -28,6 +31,7 @@ class FusionSearchDialog extends StatefulWidget {
   final void Function(String query)? onCatalogPropose;
   final Future<void> Function(AkashaItem item)? onAddLocalToLibrary;
   final Future<void> Function(RegistryWork work)? onAddRemoteToLibrary;
+  final Future<void> Function(RegistryWork work)? onPromoteCatalogEntity;
 
   const FusionSearchDialog({
     super.key,
@@ -41,6 +45,7 @@ class FusionSearchDialog extends StatefulWidget {
     this.onCatalogPropose,
     this.onAddLocalToLibrary,
     this.onAddRemoteToLibrary,
+    this.onPromoteCatalogEntity,
   });
 
   @override
@@ -50,21 +55,24 @@ class FusionSearchDialog extends StatefulWidget {
 class _RemoteSearchEntry {
   final RegistryWork work;
   final RegistryRemoteHint hint;
-  final bool isUserCatalog;
+  final bool isUserLocal;
   final EntityAnchorType entityType;
+  final bool catalogOnly;
 
   const _RemoteSearchEntry({
     required this.work,
     required this.hint,
-    this.isUserCatalog = false,
+    this.isUserLocal = false,
     this.entityType = EntityAnchorType.work,
+    this.catalogOnly = false,
   });
 }
 
 class _FusionSearchDialogState extends State<FusionSearchDialog> {
   final _ctrl = TextEditingController();
   Timer? _debounce;
-  List<AkashaItem> _localResults = [];
+  List<AkashaItem> _localWorkResults = [];
+  List<EntityJournalEntry> _localEntityResults = [];
   List<FusionRegistryHit> _catalogHits = [];
   List<FusionRegistryHit> _globalHits = [];
   bool _isSearching = false;
@@ -82,7 +90,8 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     final trimmed = query.trim();
     if (trimmed.isEmpty) {
       setState(() {
-        _localResults = [];
+        _localWorkResults = [];
+        _localEntityResults = [];
         _catalogHits = [];
         _globalHits = [];
         _isSearching = false;
@@ -119,7 +128,8 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     if (!mounted) return;
     final hits = result?.registryHits ?? [];
     setState(() {
-      _localResults = result?.localItems ?? [];
+      _localWorkResults = result?.localItems ?? [];
+      _localEntityResults = result?.localEntityJournals ?? [];
       _catalogHits =
           hits.where((h) => h.source == FusionRegistrySource.userCatalog).toList();
       _globalHits =
@@ -132,32 +142,39 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   _RemoteSearchEntry _entryFromHit(FusionRegistryHit hit) => _RemoteSearchEntry(
         work: hit.work,
         hint: hit.hint,
-        isUserCatalog: hit.isUserLocalCatalog,
+        isUserLocal: hit.isUserLocalCatalog,
         entityType: hit.entityType,
+        catalogOnly: hit.catalogOnly,
       );
+
+  RegistryWork _registryWorkFromEntityEntry(EntityJournalEntry entry) {
+    for (final entity in widget.userCatalog.all) {
+      if (entity.entityId == entry.entityId) {
+        return entity.toRegistryWork();
+      }
+    }
+    return RegistryWork(
+      workId: entry.entityId,
+      title: entry.title,
+      category: MediaCategory.manga,
+      domain: AppDomain.subculture,
+    );
+  }
 
   FranchiseGroup? _franchiseForWork(RegistryWork work) =>
       FranchiseRegistry.groupFor(work.workId);
 
   Future<void> _handleRemoteTap(_RemoteSearchEntry entry) async {
     if (entry.entityType != EntityAnchorType.work) {
+      if (entry.catalogOnly && widget.onPromoteCatalogEntity != null) {
+        if (!mounted) return;
+        Navigator.pop(context);
+        await widget.onPromoteCatalogEntity!(entry.work);
+        return;
+      }
       if (!mounted) return;
-      await showDialog<void>(
-        context: context,
-        builder: (ctx) => AlertDialog(
-          title: Text(entry.work.title),
-          content: Text(
-            '${entityTypeBadgeLabel(entry.entityType)} · 내 catalog\n'
-            'ID: ${entry.work.workId}',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('닫기'),
-            ),
-          ],
-        ),
-      );
+      Navigator.pop(context);
+      await widget.onSelectRemote(entry.work);
       return;
     }
 
@@ -223,18 +240,17 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
   Widget build(BuildContext context) {
     final query = _ctrl.text.trim();
     final groups = FusionSearchSections.group(
-      local: _localResults,
+      localWork: _localWorkResults,
+      localEntity: _localEntityResults,
       catalogHits: _catalogHits,
       globalHits: _globalHits,
     );
-    final hasRegistryHits = groups.hasRegistryHits;
     final showCustomCta = query.isNotEmpty &&
         !_isSearching &&
-        _localResults.isEmpty &&
-        !hasRegistryHits;
+        !groups.hasAnyHits;
 
     return AlertDialog(
-      title: const Text('🔍 작품 검색'),
+      title: const Text('🔍 검색'),
       content: SizedBox(
         width: 440,
         height: 460,
@@ -244,7 +260,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
               controller: _ctrl,
               autofocus: true,
               decoration: InputDecoration(
-                hintText: '제목, 작가, 태그로 검색...',
+                hintText: '제목, 작가, 태그, Entity…',
                 border: const OutlineInputBorder(),
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: _isSearching
@@ -272,33 +288,41 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
               child: query.isEmpty
                   ? Center(
                       child: Text(
-                        '검색어를 입력하세요.\n로컬 아카이브 · 내 catalog · 글로벌 사전을 함께 검색합니다.',
+                        '검색어를 입력하세요.\n로컬 아카이브 · 내 등록 · 글로벌 사전을 함께 검색합니다.',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                       ),
                     )
                   : ListView(
                       children: [
-                        if (groups.local.isNotEmpty) ...[
-                          _sectionLabel('📂 내 아카이브', groups.local.length),
-                          ...groups.local.map(_buildLocalTile),
+                        if (groups.localWork.isNotEmpty) ...[
+                          _sectionLabel('📂 내 아카이브 — Work', groups.localWork.length),
+                          ...groups.localWork.map(_buildLocalWorkTile),
+                          const SizedBox(height: 8),
+                        ],
+                        if (groups.localEntity.isNotEmpty) ...[
+                          _sectionLabel(
+                            '📂 내 아카이브 — Entity',
+                            groups.localEntity.length,
+                          ),
+                          ...groups.localEntity.map(_buildLocalEntityTile),
                           const SizedBox(height: 8),
                         ],
                         if (groups.catalogWork.isNotEmpty) ...[
                           _sectionLabel(
-                            '📋 내 catalog — Work',
+                            '📂 내 아카이브 — Work (등록만)',
                             groups.catalogWork.length,
                           ),
                           ...groups.catalogWork
                               .map((h) => _buildRemoteTile(_entryFromHit(h))),
                           const SizedBox(height: 8),
                         ],
-                        if (groups.catalogEntity.isNotEmpty) ...[
+                        if (groups.catalogEntityOnly.isNotEmpty) ...[
                           _sectionLabel(
-                            '📋 내 catalog — Entity',
-                            groups.catalogEntity.length,
+                            '⏳ 아카이브되지 않음',
+                            groups.catalogEntityOnly.length,
                           ),
-                          ...groups.catalogEntity
+                          ...groups.catalogEntityOnly
                               .map((h) => _buildRemoteTile(_entryFromHit(h))),
                           const SizedBox(height: 8),
                         ],
@@ -350,8 +374,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                         ],
                         if (!_isSearching &&
                             query.isNotEmpty &&
-                            _localResults.isEmpty &&
-                            !hasRegistryHits &&
+                            !groups.hasAnyHits &&
                             _searchError == null)
                           const Padding(
                             padding: EdgeInsets.only(top: 24),
@@ -386,7 +409,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     );
   }
 
-  Widget _buildLocalTile(AkashaItem item) {
+  Widget _buildLocalWorkTile(AkashaItem item) {
     final franchise = FranchiseRegistry.groupFor(item.workId);
     final formatLabels = franchise != null
         ? FranchiseFusionService.franchiseFormatLabels(franchise)
@@ -428,11 +451,40 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     );
   }
 
+  Widget _buildLocalEntityTile(EntityJournalEntry entry) {
+    final badge = entityTypeBadgeLabel(entry.entityType);
+    return ListTile(
+      dense: true,
+      leading: Icon(_iconForEntityType(entry.entityType), size: 20),
+      title: Text(entry.title, style: const TextStyle(fontSize: 13)),
+      subtitle: Text(
+        '$badge · 내 아카이브',
+        style: const TextStyle(fontSize: 11),
+      ),
+      trailing: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+        decoration: BoxDecoration(
+          color: Colors.teal.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: Text(
+          badge,
+          style: const TextStyle(fontSize: 10, color: Colors.tealAccent),
+        ),
+      ),
+      onTap: () {
+        Navigator.pop(context);
+        widget.onSelectRemote(_registryWorkFromEntityEntry(entry));
+      },
+    );
+  }
+
   Widget _buildRemoteTile(_RemoteSearchEntry entry) {
     final work = entry.work;
     final hint = entry.hint;
-    final isCatalog = entry.isUserCatalog;
-    final dimmed = !isCatalog && hint != RegistryRemoteHint.available;
+    final isUserLocal = entry.isUserLocal;
+    final catalogOnly = entry.catalogOnly;
+    final dimmed = !isUserLocal && hint != RegistryRemoteHint.available;
     final franchise = _franchiseForWork(work);
 
     String? hintText;
@@ -442,7 +494,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
       case RegistryRemoteHint.hidden:
         hintText = '숨김됨';
       case RegistryRemoteHint.available:
-        break;
+        if (catalogOnly) hintText = '아카이브되지 않음';
     }
 
     final formatLabels =
@@ -455,7 +507,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
     final subtitle = [
       work.creator.isNotEmpty
           ? work.creator
-          : (isCatalog ? '내 catalog' : '글로벌 사전'),
+          : (isUserLocal ? '내 등록' : '글로벌 사전'),
       if (typeBadge != null)
         typeBadge
       else if (formatLabels != null && formatLabels.isNotEmpty)
@@ -470,7 +522,9 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
       child: ListTile(
         dense: true,
         leading: Icon(
-          work.category.icon,
+          catalogOnly
+              ? _iconForEntityType(entry.entityType)
+              : work.category.icon,
           size: 20,
           color: dimmed ? Colors.grey : Colors.lightBlueAccent,
         ),
@@ -482,18 +536,33 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
           subtitle,
           style: TextStyle(
             fontSize: 11,
-            color: hint == RegistryRemoteHint.siblingTracked
+            color: catalogOnly
                 ? Colors.orange[300]
-                : hint == RegistryRemoteHint.hidden
-                    ? Colors.grey[500]
-                    : null,
+                : hint == RegistryRemoteHint.siblingTracked
+                    ? Colors.orange[300]
+                    : hint == RegistryRemoteHint.hidden
+                        ? Colors.grey[500]
+                        : null,
           ),
         ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (widget.onAddRemoteToLibrary != null &&
-                (isCatalog || hint == RegistryRemoteHint.available))
+            if (catalogOnly && widget.onPromoteCatalogEntity != null)
+              TextButton(
+                onPressed: () async {
+                  Navigator.pop(context);
+                  await widget.onPromoteCatalogEntity!(work);
+                },
+                style: TextButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  minimumSize: Size.zero,
+                ),
+                child: const Text('아카이브하기', style: TextStyle(fontSize: 11)),
+              )
+            else if (widget.onAddRemoteToLibrary != null &&
+                (isUserLocal || hint == RegistryRemoteHint.available))
               TextButton(
                 onPressed: () => widget.onAddRemoteToLibrary!(work),
                 style: TextButton.styleFrom(
@@ -503,29 +572,30 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                 ),
                 child: const Text('담기', style: TextStyle(fontSize: 11)),
               ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
-                color: (isCatalog ? Colors.teal : Colors.blue)
-                    .withValues(alpha: dimmed ? 0.08 : 0.15),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: Text(
-                isCatalog
-                    ? (typeBadge ?? '내 catalog')
-                    : (hint == RegistryRemoteHint.available ? '사전' : '주의'),
-                style: TextStyle(
-                  fontSize: 10,
-                  color: dimmed && !isCatalog
-                      ? Colors.grey[500]
-                      : (isCatalog ? Colors.tealAccent : Colors.lightBlueAccent),
+            if (!catalogOnly)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: (isUserLocal ? Colors.teal : Colors.blue)
+                      .withValues(alpha: dimmed ? 0.08 : 0.15),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text(
+                  isUserLocal
+                      ? (typeBadge ?? '내 아카이브')
+                      : (hint == RegistryRemoteHint.available ? '사전' : '주의'),
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: dimmed && !isUserLocal
+                        ? Colors.grey[500]
+                        : (isUserLocal ? Colors.tealAccent : Colors.lightBlueAccent),
+                  ),
                 ),
               ),
-            ),
           ],
         ),
         onTap: () {
-          if (isCatalog) {
+          if (isUserLocal && !catalogOnly) {
             Navigator.pop(context);
             widget.onSelectRemote(work);
             return;
@@ -534,5 +604,16 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
         },
       ),
     );
+  }
+
+  static IconData _iconForEntityType(EntityAnchorType type) {
+    return switch (type) {
+      EntityAnchorType.person => Icons.person_outline,
+      EntityAnchorType.concept => Icons.lightbulb_outline,
+      EntityAnchorType.event => Icons.event_outlined,
+      EntityAnchorType.place => Icons.place_outlined,
+      EntityAnchorType.organization => Icons.groups_outlined,
+      _ => Icons.category_outlined,
+    };
   }
 }

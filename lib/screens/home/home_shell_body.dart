@@ -4,6 +4,7 @@ import '../../config/feature_flags.dart';
 import '../../core/archiving/record_link.dart';
 import '../../core/ports/record_link_port.dart';
 import '../../core/ports/user_catalog_port.dart';
+import '../../models/entity_link_selection.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../features/workbench/data/workbench_controller.dart';
 import '../../features/workbench/presentation/workbench_shell.dart';
@@ -90,6 +91,10 @@ class HomeShellBody extends StatelessWidget {
   final RecordLinkPort linkIndex;
   final void Function(BrowseEntityScope scope) onEntityScopeChanged;
   final void Function(ParsedRecordLink link) onWikiLinkTap;
+  final Future<EntityLinkSelection?> Function(
+    BuildContext context,
+    String selectedText,
+  ) onRequestEntityLink;
 
   const HomeShellBody({
     super.key,
@@ -146,6 +151,7 @@ class HomeShellBody extends StatelessWidget {
     required this.linkIndex,
     required this.onEntityScopeChanged,
     required this.onWikiLinkTap,
+    required this.onRequestEntityLink,
   });
 
   @override
@@ -219,6 +225,7 @@ class HomeShellBody extends StatelessWidget {
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onAddToLibrary: onAddToLibrary,
                         onWikiLinkTap: onWikiLinkTap,
+                        onRequestEntityLink: onRequestEntityLink,
                         browseContent: isTimelineMode
                             ? RecordsView(
                                 vaultItems: items,
@@ -226,6 +233,7 @@ class HomeShellBody extends StatelessWidget {
                                 onNewTimelineEntry: onNewTimelineEntry,
                                 onNewJournalEntry: onNewJournalEntry,
                                 userCatalog: userCatalog,
+                                linkIndex: linkIndex,
                                 reloadToken: timelineReloadToken,
                               )
                             : isPersonalLibraryMode

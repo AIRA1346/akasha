@@ -1,0 +1,165 @@
+{
+  "wk_000000001": {
+    "workId": "wk_000000001",
+    "title": "카우보이 비밥",
+    "category": "animation",
+    "domain": "generalCulture",
+    "creator": "SUNRISE",
+    "releaseYear": 1998,
+    "tags": [
+      "SF",
+      "느와르",
+      "재즈",
+      "액션"
+    ],
+    "externalIds": {
+      "tmdb": "30991",
+      "wikidata": "Q101244908"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "legacyIds": [
+      "gen_animation_cowboy-bebop_1998"
+    ],
+    "titles": {
+      "en": "Cowboy Bebop",
+      "ko": "카우보이 비밥"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001389": {
+    "workId": "wk_000001389",
+    "title": "기동전사 건담 쿠쿠루스 도안의 섬",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109267341"
+    },
+    "titles": {
+      "ko": "기동전사 건담 쿠쿠루스 도안의 섬",
+      "en": "Mobile Suit Gundam: Cucuruz Doan's Island",
+      "ja": "機動戦士ガンダム ククルス・ドアンの島"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003852": {
+    "workId": "wk_000003852",
+    "title": "야생의 라스트 보스가 나타났다!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q129676429"
+    },
+    "titles": {
+      "ko": "야생의 라스트 보스가 나타났다!",
+      "en": "A Wild Last Boss Appeared!",
+      "ja": "野生のラスボスが現れた!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004888": {
+    "workId": "wk_000004888",
+    "title": "텐카이 나이트",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q15883847"
+    },
+    "titles": {
+      "ko": "텐카이 나이트",
+      "en": "Tenkai Knights",
+      "ja": "テンカイナイト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006804": {
+    "workId": "wk_000006804",
+    "title": "아마가미 SS",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3613535"
+    },
+    "titles": {
+      "ko": "아마가미 SS",
+      "en": "Amagami SS",
+      "ja": "アマガミSS"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007756": {
+    "workId": "wk_000007756",
+    "title": "나의 히어로 아카데미아 더 무비: 두 명의 히어로",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q55391732"
+    },
+    "titles": {
+      "ko": "나의 히어로 아카데미아 더 무비: 두 명의 히어로",
+      "en": "My Hero Academia: Two Heroes",
+      "ja": "僕のヒーローアカデミア THE MOVIE ～2人の英雄～"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008624": {
+    "workId": "wk_000008624",
+    "title": "페이트/스테이 나이트 헤븐즈필 제1장 프레시지 플라워",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q66777794"
+    },
+    "titles": {
+      "ko": "페이트/스테이 나이트 헤븐즈필 제1장 프레시지 플라워",
+      "en": "Fate/stay night: Heaven's Feel I. presage flower",
+      "ja": "Fate/stay night [Heaven's Feel] I.presage flower"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009370": {
+    "workId": "wk_000009370",
+    "title": "라쿠고 천녀 오유이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q841016"
+    },
+    "titles": {
+      "ko": "라쿠고 천녀 오유이",
+      "en": "Rakugo Tennyo Oyui",
+      "ja": "落語天女おゆい"
+    },
+    "releaseYear": 2006,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

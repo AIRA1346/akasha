@@ -1,0 +1,178 @@
+{
+  "wk_000002183": {
+    "workId": "wk_000002183",
+    "title": "극한데뷔 야생돌",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108776110"
+    },
+    "titles": {
+      "ko": "극한데뷔 야생돌",
+      "en": "The Wild Idol"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005004": {
+    "workId": "wk_000005004",
+    "title": "커튼콜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111792312"
+    },
+    "titles": {
+      "ko": "커튼콜",
+      "en": "Curtain Call"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005264": {
+    "workId": "wk_000005264",
+    "title": "NHK 뉴스 9",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235031"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 9",
+      "en": "NHK News 9",
+      "ja": "NHKニュース9"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006151": {
+    "workId": "wk_000006151",
+    "title": "쿠마로쿠!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11298804"
+    },
+    "titles": {
+      "ko": "쿠마로쿠!",
+      "en": "Kumaroku!",
+      "ja": "クマロク!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007033": {
+    "workId": "wk_000007033",
+    "title": "수권전대 게키레인저",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1141930"
+    },
+    "titles": {
+      "ko": "수권전대 게키레인저",
+      "en": "Juken Sentai Gekiranger",
+      "ja": "獣拳戦隊ゲキレンジャー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007938": {
+    "workId": "wk_000007938",
+    "title": "아마 오의 공감 스쿨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11574288"
+    },
+    "titles": {
+      "ko": "아마 오의 공감 스쿨",
+      "en": "Sympathy School of Ama'o",
+      "ja": "甘王の共感スクール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008814": {
+    "workId": "wk_000008814",
+    "title": "티에라 데 에스페란사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117705955"
+    },
+    "titles": {
+      "ko": "티에라 데 에스페란사",
+      "en": "Tierra de esperanza"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008884": {
+    "workId": "wk_000008884",
+    "title": "YTN 뉴스 9",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q118108906"
+    },
+    "titles": {
+      "ko": "YTN 뉴스 9",
+      "en": "Q118108906"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009154": {
+    "workId": "wk_000009154",
+    "title": "멘탈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190808"
+    },
+    "titles": {
+      "ko": "멘탈",
+      "en": "Mental",
+      "ja": "メンタル:癒しのカルテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009674": {
+    "workId": "wk_000009674",
+    "title": "정글의 법칙",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12269923"
+    },
+    "titles": {
+      "ko": "정글의 법칙",
+      "en": "Law of the Jungle",
+      "ja": "ジャングルの法則"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

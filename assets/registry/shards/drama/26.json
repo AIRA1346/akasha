@@ -1,0 +1,287 @@
+{
+  "wk_000000552": {
+    "workId": "wk_000000552",
+    "title": "아이 톨드 선셋 어바웃 유",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101094826"
+    },
+    "titles": {
+      "ko": "아이 톨드 선셋 어바웃 유",
+      "en": "I Told Sunset About You",
+      "ja": "アイ・トールド・サンセット・アバウト・ユー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000892": {
+    "workId": "wk_000000892",
+    "title": "너와 세계가 끝나는 날에",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104369607"
+    },
+    "titles": {
+      "ko": "너와 세계가 끝나는 날에",
+      "en": "Love You as the World Ends",
+      "ja": "君と世界が終わる日に"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000946": {
+    "workId": "wk_000000946",
+    "title": "우리 집 이야기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104519504"
+    },
+    "titles": {
+      "ko": "우리 집 이야기",
+      "en": "Story of My Family!!!",
+      "ja": "俺の家の話"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000956": {
+    "workId": "wk_000000956",
+    "title": "펜트하우스 2",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104698851"
+    },
+    "titles": {
+      "ko": "펜트하우스 2",
+      "en": "The Penthouse 2: War in Life",
+      "ja": "ペントハウス2"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002429": {
+    "workId": "wk_000002429",
+    "title": "경로를 이탈하였습니다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109260087"
+    },
+    "titles": {
+      "ko": "경로를 이탈하였습니다",
+      "en": "Off the Course"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005255": {
+    "workId": "wk_000005255",
+    "title": "더 뮤직아워",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11233702"
+    },
+    "titles": {
+      "ko": "더 뮤직아워",
+      "en": "THE MUSIC HOUR",
+      "ja": "ザ・ミュージックアワー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006311": {
+    "workId": "wk_000006311",
+    "title": "더블 키친",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11317335"
+    },
+    "titles": {
+      "ko": "더블 키친",
+      "en": "Double Kitchen",
+      "ja": "ダブル・キッチン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006436": {
+    "workId": "wk_000006436",
+    "title": "반장 ~ 경시청 아즈미 반 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11327105"
+    },
+    "titles": {
+      "ko": "반장 ~ 경시청 아즈미 반 ~",
+      "en": "Hanchō 〜 Keishichō Asakahan 〜",
+      "ja": "ハンチョウ〜警視庁安積班〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006724": {
+    "workId": "wk_000006724",
+    "title": "미 카미노 에스 아마르테",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113587211"
+    },
+    "titles": {
+      "ko": "미 카미노 에스 아마르테",
+      "en": "Mi camino es amarte",
+      "ja": "ミー・カミーノ・エス・アマルテ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007185": {
+    "workId": "wk_000007185",
+    "title": "기적의 동물원 ~ 아사히 야마 동물원 이야기 ~",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11444905"
+    },
+    "titles": {
+      "ko": "기적의 동물원 ~ 아사히 야마 동물원 이야기 ~",
+      "en": "Miracle Zoo: The Story of Asahiyama Zoo",
+      "ja": "奇跡の動物園〜旭山動物園物語〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007988": {
+    "workId": "wk_000007988",
+    "title": "백호대 ~ 패배 체들",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11580361"
+    },
+    "titles": {
+      "ko": "백호대 ~ 패배 체들",
+      "en": "Byakkotai",
+      "ja": "白虎隊〜敗れざる者たち"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008123": {
+    "workId": "wk_000008123",
+    "title": "미미신스케",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11608832"
+    },
+    "titles": {
+      "ko": "미미신스케",
+      "en": "Oishinsuke",
+      "ja": "美味紳助"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008349": {
+    "workId": "wk_000008349",
+    "title": "술 취한 코토지 류서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11644387"
+    },
+    "titles": {
+      "ko": "술 취한 코토지 류서",
+      "en": "Yoidore ko tō-ji tomegaki",
+      "ja": "酔いどれ小籐次留書"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008535": {
+    "workId": "wk_000008535",
+    "title": "요안적니아 : 눈부신 그대여",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116764724"
+    },
+    "titles": {
+      "ko": "요안적니아 : 눈부신 그대여",
+      "en": "Good Women"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009906": {
+    "workId": "wk_000009906",
+    "title": "문화탐험 오늘의 현장",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124071858"
+    },
+    "titles": {
+      "ko": "문화탐험 오늘의 현장",
+      "en": "Q124071858"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010030": {
+    "workId": "wk_000010030",
+    "title": "신난다 기획",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124360407"
+    },
+    "titles": {
+      "ko": "신난다 기획",
+      "en": "Q124360407"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

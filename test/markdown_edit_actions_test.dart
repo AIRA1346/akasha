@@ -79,4 +79,72 @@ void main() {
     );
     expect(patch.text, contains('![shot](posters/test.jpg)'));
   });
+
+  group('insertWikiLink', () {
+    const entityId = 'pe_u_natsuki1';
+    const title = '나츠키 스바루';
+    const expected = '[[pe_u_natsuki1|나츠키 스바루]]';
+
+    test('collapsed selection inserts inline canonical token', () {
+      const text = 'hello ';
+      const selection = TextSelection.collapsed(offset: text.length);
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: text,
+        selection: selection,
+        entityId: entityId,
+        title: title,
+      );
+      expect(patch.text, 'hello $expected');
+      expect(patch.selection, TextSelection.collapsed(offset: patch.text.length));
+    });
+
+    test('ranged selection replaces selection with canonical token', () {
+      const text = 'hello 스바루';
+      const selection = TextSelection(baseOffset: 6, extentOffset: 9);
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: text,
+        selection: selection,
+        entityId: entityId,
+        title: title,
+      );
+      expect(patch.text, 'hello $expected');
+      expect(patch.selection, TextSelection.collapsed(offset: patch.text.length));
+    });
+
+    test('multiline body inserts at cursor', () {
+      const text = 'line one\nhello ';
+      const selection = TextSelection.collapsed(offset: text.length);
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: text,
+        selection: selection,
+        entityId: entityId,
+        title: title,
+      );
+      expect(patch.text, 'line one\nhello $expected');
+    });
+
+    test('unicode title in canonical output', () {
+      const text = 'memo ';
+      const selection = TextSelection.collapsed(offset: text.length);
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: text,
+        selection: selection,
+        entityId: 'co_u_tiger01',
+        title: '虎＋호랑이',
+      );
+      expect(patch.text, 'memo [[co_u_tiger01|虎＋호랑이]]');
+    });
+
+    test('exact canonical token matches EntityLinkSelection helper', () {
+      const text = '';
+      const selection = TextSelection.collapsed(offset: 0);
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: text,
+        selection: selection,
+        entityId: entityId,
+        title: title,
+      );
+      expect(patch.text, expected);
+    });
+  });
 }

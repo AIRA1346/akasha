@@ -1,0 +1,134 @@
+{
+  "wk_000004521": {
+    "workId": "wk_000004521",
+    "title": "데스스마일즈 II",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11320577"
+    },
+    "titles": {
+      "ko": "데스스마일즈 II",
+      "en": "Deathsmiles II",
+      "ja": "デススマイルズII 魔界のメリークリスマス"
+    },
+    "releaseYear": 2009,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004971": {
+    "workId": "wk_000004971",
+    "title": "아이언맨 2",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1138903"
+    },
+    "titles": {
+      "ko": "아이언맨 2",
+      "en": "Iron Man 2",
+      "ja": "アイアンマン2"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006197": {
+    "workId": "wk_000006197",
+    "title": "바람의 전설 재너두",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11665323"
+    },
+    "titles": {
+      "ko": "바람의 전설 재너두",
+      "en": "The Legend of Xanadu",
+      "ja": "風の伝説ザナドゥ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006695": {
+    "workId": "wk_000006695",
+    "title": "오투잼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191461"
+    },
+    "titles": {
+      "ko": "오투잼",
+      "en": "O2Jam",
+      "ja": "O2Jam"
+    },
+    "releaseYear": 2005,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007071": {
+    "workId": "wk_000007071",
+    "title": "퍼즐 보블",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1197521"
+    },
+    "titles": {
+      "ko": "퍼즐 보블",
+      "en": "Puzzle Bobble",
+      "ja": "パズルボブル"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008084": {
+    "workId": "wk_000008084",
+    "title": "홍길동전 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q12625343"
+    },
+    "titles": {
+      "ko": "홍길동전 (게임)",
+      "en": "Hong Gildong-jeon"
+    },
+    "releaseYear": 1993,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010187": {
+    "workId": "wk_000010187",
+    "title": "파이널 판타지",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1415970"
+    },
+    "titles": {
+      "ko": "파이널 판타지",
+      "en": "Final Fantasy",
+      "ja": "ファイナルファンタジー"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

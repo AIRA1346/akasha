@@ -1,0 +1,237 @@
+{
+  "wk_000000245": {
+    "workId": "wk_000000245",
+    "title": "트라이건",
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "MADHOUSE",
+    "releaseYear": 1998,
+    "tags": [
+      "SF",
+      "액션",
+      "코미디",
+      "명작"
+    ],
+    "legacyIds": [
+      "sub_animation_trigun_1998"
+    ],
+    "titles": {
+      "en": "Trigun",
+      "ko": "트라이건"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q18575654"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000849": {
+    "workId": "wk_000000849",
+    "title": "Fairy 란마루 ~당신의 마음을 돕겠습니다~",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105962046"
+    },
+    "titles": {
+      "ko": "Fairy 란마루 ~당신의 마음을 돕겠습니다~",
+      "en": "Fairy Ranmaru",
+      "ja": "Fairy蘭丸〜あなたの心お助けします〜"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003363": {
+    "workId": "wk_000003363",
+    "title": "도게자로 부탁해봤다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123536965"
+    },
+    "titles": {
+      "ko": "도게자로 부탁해봤다",
+      "en": "Dogeza: I Tried Asking While Kowtowing",
+      "ja": "土下座で頼んでみた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004714": {
+    "workId": "wk_000004714",
+    "title": "앙상블 스타즈!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q140056987"
+    },
+    "titles": {
+      "ko": "앙상블 스타즈!",
+      "en": "Ensemble Stars!",
+      "ja": "あんさんぶるスターズ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005747": {
+    "workId": "wk_000005747",
+    "title": "제멋대로 하이스펙",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q22078423"
+    },
+    "titles": {
+      "ko": "제멋대로 하이스펙",
+      "en": "Wagamama High Spec",
+      "ja": "ワガママハイスペック"
+    },
+    "releaseYear": 2017,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006270": {
+    "workId": "wk_000006270",
+    "title": "별의 목소리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q264812"
+    },
+    "titles": {
+      "ko": "별의 목소리",
+      "en": "Voices of a Distant Star",
+      "ja": "ほしのこえ"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006931": {
+    "workId": "wk_000006931",
+    "title": "파뇨파뇨 디지캐럿",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3893490"
+    },
+    "titles": {
+      "ko": "파뇨파뇨 디지캐럿",
+      "en": "Panyo Panyo Di Gi Charat",
+      "ja": "ぱにょぱにょデ・ジ・キャラット"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007097": {
+    "workId": "wk_000007097",
+    "title": "페이트/아포크리파",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q45263523"
+    },
+    "titles": {
+      "ko": "페이트/아포크리파",
+      "en": "Fate/Apocrypha",
+      "ja": "Fate/Apocrypha"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007917": {
+    "workId": "wk_000007917",
+    "title": "케무리쿠사",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q59618491"
+    },
+    "titles": {
+      "ko": "케무리쿠사",
+      "en": "Kemurikusa",
+      "ja": "ケムリクサ"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008195": {
+    "workId": "wk_000008195",
+    "title": "타리 타리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q618201"
+    },
+    "titles": {
+      "ko": "타리 타리",
+      "en": "Tari Tari",
+      "ja": "TARI TARI"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008423": {
+    "workId": "wk_000008423",
+    "title": "메트로폴리스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q640695"
+    },
+    "titles": {
+      "ko": "메트로폴리스",
+      "en": "Metropolis",
+      "ja": "メトロポリス"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009126": {
+    "workId": "wk_000009126",
+    "title": "세인트 세이야: 레전드 오브 생츄어리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7402171"
+    },
+    "titles": {
+      "ko": "세인트 세이야: 레전드 오브 생츄어리",
+      "en": "Saint Seiya: Legend of Sanctuary",
+      "ja": "聖闘士星矢 Legend of Sanctuary"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

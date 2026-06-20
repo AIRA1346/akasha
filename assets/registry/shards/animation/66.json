@@ -1,0 +1,95 @@
+{
+  "wk_000001620": {
+    "workId": "wk_000001620",
+    "title": "새 엄마가 데려온 딸이 전 여친이었다",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112191929"
+    },
+    "titles": {
+      "ko": "새 엄마가 데려온 딸이 전 여친이었다",
+      "en": "My Stepmom's Daughter Is My Ex",
+      "ja": "継母の連れ子が元カノだった"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001648": {
+    "workId": "wk_000001648",
+    "title": "쇼트피스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11243303"
+    },
+    "titles": {
+      "ko": "쇼트피스",
+      "en": "Short Peace",
+      "ja": "SHORT PEACE"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004495": {
+    "workId": "wk_000004495",
+    "title": "신의 정원이 딸린 쿠스노키 저택",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q135315518"
+    },
+    "titles": {
+      "ko": "신의 정원이 딸린 쿠스노키 저택",
+      "en": "Kusunoki's Garden of Gods",
+      "ja": "神の庭付き楠木邸"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005023": {
+    "workId": "wk_000005023",
+    "title": "폼포코 너구리 대작전",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q167206"
+    },
+    "titles": {
+      "ko": "폼포코 너구리 대작전",
+      "en": "Pom Poko",
+      "ja": "平成狸合戦ぽんぽこ"
+    },
+    "releaseYear": 1994,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007593": {
+    "workId": "wk_000007593",
+    "title": "기동전사 건담 NT",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q52157597"
+    },
+    "titles": {
+      "ko": "기동전사 건담 NT",
+      "en": "Mobile Suit Gundam Narrative",
+      "ja": "機動戦士ガンダムNT"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

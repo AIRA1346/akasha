@@ -1,0 +1,80 @@
+{
+  "wk_000000540": {
+    "workId": "wk_000000540",
+    "title": "돌격! 남자훈련소",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1075436"
+    },
+    "titles": {
+      "ko": "돌격! 남자훈련소",
+      "en": "Sakigake!! Otokojuku",
+      "ja": "魁!!男塾"
+    },
+    "releaseYear": 1988,
+    "creator": "Akira Miyashita",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002051": {
+    "workId": "wk_000002051",
+    "title": "피스 오브 케이크",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11331730"
+    },
+    "titles": {
+      "ko": "피스 오브 케이크",
+      "en": "Piece of Cake",
+      "ja": "ピース オブ ケイク"
+    },
+    "releaseYear": 2015,
+    "creator": "George Asakura",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004195": {
+    "workId": "wk_000004195",
+    "title": "정의의 아군",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1188879"
+    },
+    "titles": {
+      "ko": "정의의 아군",
+      "en": "Seigi no Mikata",
+      "ja": "正義の味方"
+    },
+    "creator": "Chiaki Hijiri",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005331": {
+    "workId": "wk_000005331",
+    "title": "미카구라 학원 조곡",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q127123494"
+    },
+    "titles": {
+      "ko": "미카구라 학원 조곡",
+      "en": "Mikagura School Suite",
+      "ja": "ミカグラ学園組曲"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "wk_000001127": {
+    "workId": "wk_000001127",
+    "title": "떠도는 남자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100989443"
+    },
+    "titles": {
+      "ko": "떠도는 남자",
+      "en": "No Land's Man"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002847": {
+    "workId": "wk_000002847",
+    "title": "시라노",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104845839"
+    },
+    "titles": {
+      "ko": "시라노",
+      "en": "Cyrano",
+      "ja": "シラノ"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004028": {
+    "workId": "wk_000004028",
+    "title": "인트로덕션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105443659"
+    },
+    "titles": {
+      "ko": "인트로덕션",
+      "en": "Introduction",
+      "ja": "イントロダクション"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008735": {
+    "workId": "wk_000008735",
+    "title": "쇼미더고스트",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108119523"
+    },
+    "titles": {
+      "ko": "쇼미더고스트",
+      "en": "Show Me the Ghost",
+      "ja": "ショー・ミー・ザ・ゴースト"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

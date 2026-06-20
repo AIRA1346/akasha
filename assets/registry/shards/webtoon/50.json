@@ -1,0 +1,37 @@
+{
+  "wk_000003100": {
+    "workId": "wk_000003100",
+    "title": "귀",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3780155"
+    },
+    "titles": {
+      "ko": "귀",
+      "en": "Gwi - The Spectre"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003535": {
+    "workId": "wk_000003535",
+    "title": "그녀가 공작저로 가야 했던 사정",
+    "category": "webtoon",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q97210865"
+    },
+    "titles": {
+      "ko": "그녀가 공작저로 가야 했던 사정",
+      "en": "Why Raeliana Ended Up at the Duke's Mansion",
+      "ja": "彼女が公爵邸に行った理由"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_webtoon",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "wk_000001738": {
+    "workId": "wk_000001738",
+    "title": "펫키지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108297169"
+    },
+    "titles": {
+      "ko": "펫키지",
+      "en": "Petkage",
+      "ja": "ペットケージ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002190": {
+    "workId": "wk_000002190",
+    "title": "혐오스런 마츠코의 일생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10884463"
+    },
+    "titles": {
+      "ko": "혐오스런 마츠코의 일생",
+      "en": "Q10884463",
+      "ja": "嫌われ松子の一生 (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002776": {
+    "workId": "wk_000002776",
+    "title": "배틀 코덕쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456512"
+    },
+    "titles": {
+      "ko": "배틀 코덕쇼",
+      "en": "Q109456512"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005658": {
+    "workId": "wk_000005658",
+    "title": "NHK 뉴스 오하이요 후쿠시마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262158"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하이요 후쿠시마",
+      "en": "Q11262158",
+      "ja": "おはようふくしま"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006586": {
+    "workId": "wk_000006586",
+    "title": "모닝쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11344877"
+    },
+    "titles": {
+      "ko": "모닝쇼",
+      "en": "Morning Show",
+      "ja": "モーニングショー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007567": {
+    "workId": "wk_000007567",
+    "title": "아메리칸 파이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115187"
+    },
+    "titles": {
+      "ko": "아메리칸 파이",
+      "en": "American Pie",
+      "ja": "アメリカン・パイ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009748": {
+    "workId": "wk_000009748",
+    "title": "린랑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123384383"
+    },
+    "titles": {
+      "ko": "린랑",
+      "en": "Linlang"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

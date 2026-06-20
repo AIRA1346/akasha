@@ -1,0 +1,211 @@
+{
+  "wk_000001456": {
+    "workId": "wk_000001456",
+    "title": "마리마르",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1065443"
+    },
+    "titles": {
+      "ko": "마리마르",
+      "en": "Marimar",
+      "ja": "マリマール"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002021": {
+    "workId": "wk_000002021",
+    "title": "강산여차다교",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108566293"
+    },
+    "titles": {
+      "ko": "강산여차다교",
+      "en": "A Land So Rich In Beauty"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002665": {
+    "workId": "wk_000002665",
+    "title": "트라이아웃, 나는 투수다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109454816"
+    },
+    "titles": {
+      "ko": "트라이아웃, 나는 투수다!",
+      "en": "Q109454816"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003075": {
+    "workId": "wk_000003075",
+    "title": "TJB 뉴스특보",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109458847"
+    },
+    "titles": {
+      "ko": "TJB 뉴스특보",
+      "en": "Q109458847"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004050": {
+    "workId": "wk_000004050",
+    "title": "미스트롯 2 7공주 스페셜",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115002"
+    },
+    "titles": {
+      "ko": "미스트롯 2 7공주 스페셜",
+      "en": "Q110115002"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004616": {
+    "workId": "wk_000004616",
+    "title": "호텔리어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11073270"
+    },
+    "titles": {
+      "ko": "호텔리어",
+      "en": "Hotelier",
+      "ja": "ホテリアー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004689": {
+    "workId": "wk_000004689",
+    "title": "별처럼 빛나는 너에게",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110885119"
+    },
+    "titles": {
+      "ko": "별처럼 빛나는 너에게",
+      "en": "Shining for One Thing"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005070": {
+    "workId": "wk_000005070",
+    "title": "영안여몽 : 다시 쓰는 꿈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111946821"
+    },
+    "titles": {
+      "ko": "영안여몽 : 다시 쓰는 꿈",
+      "en": "Till the End of the Moon"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005460": {
+    "workId": "wk_000005460",
+    "title": "USO !? 재팬",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11252139"
+    },
+    "titles": {
+      "ko": "USO !? 재팬",
+      "en": "USO!?JAPAN",
+      "ja": "USO!?ジャパン"
+    },
+    "releaseYear": 2001,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006787": {
+    "workId": "wk_000006787",
+    "title": "교토 뉴스 845",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11374810"
+    },
+    "titles": {
+      "ko": "교토 뉴스 845",
+      "en": "Kyoto News 845",
+      "ja": "京都ニュース845"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006898": {
+    "workId": "wk_000006898",
+    "title": "3인칭 복수",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113877789"
+    },
+    "titles": {
+      "ko": "3인칭 복수",
+      "en": "Revenge of Others"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008180": {
+    "workId": "wk_000008180",
+    "title": "가면의 여왕",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116183661"
+    },
+    "titles": {
+      "ko": "가면의 여왕",
+      "en": "Queen of the Masks"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

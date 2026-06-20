@@ -1,0 +1,58 @@
+{
+  "wk_000004098": {
+    "workId": "wk_000004098",
+    "title": "산중 문답",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10823450"
+    },
+    "titles": {
+      "ko": "산중 문답",
+      "en": "Mountain Q&A"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004530": {
+    "workId": "wk_000004530",
+    "title": "핍의 살인 사건 안내서",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108749605"
+    },
+    "titles": {
+      "ko": "핍의 살인 사건 안내서",
+      "en": "A Good Girl's Guide to Murder"
+    },
+    "releaseYear": 2019,
+    "creator": "Holly Jackson",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005243": {
+    "workId": "wk_000005243",
+    "title": "닥터 화이트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109294168"
+    },
+    "titles": {
+      "ko": "닥터 화이트",
+      "en": "Dr. White",
+      "ja": "ドクター・ホワイト"
+    },
+    "releaseYear": 2015,
+    "creator": "Shin Kibayashi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

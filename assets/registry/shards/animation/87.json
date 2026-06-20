@@ -1,0 +1,129 @@
+{
+  "wk_000002307": {
+    "workId": "wk_000002307",
+    "title": "철인 28호 가오!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11649523"
+    },
+    "titles": {
+      "ko": "철인 28호 가오!",
+      "en": "Tetsujin 28-go Gao!",
+      "ja": "鉄人28号ガオ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003556": {
+    "workId": "wk_000003556",
+    "title": "닌자와 암살자의 동거",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q125569311"
+    },
+    "titles": {
+      "ko": "닌자와 암살자의 동거",
+      "en": "A Ninja and an Assassin Under One Roof",
+      "ja": "忍者と殺し屋のふたりぐらし"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006190": {
+    "workId": "wk_000006190",
+    "title": "단지 토모오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2596097"
+    },
+    "titles": {
+      "ko": "단지 토모오",
+      "en": "Danchi Tomoo",
+      "ja": "団地ともお"
+    },
+    "creator": "Tobira Oda",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006337": {
+    "workId": "wk_000006337",
+    "title": "세이크리드 세븐",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q268512"
+    },
+    "titles": {
+      "ko": "세이크리드 세븐",
+      "en": "Sacred Seven",
+      "ja": "セイクリッドセブン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006677": {
+    "workId": "wk_000006677",
+    "title": "풀 메탈 패닉!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3090791"
+    },
+    "titles": {
+      "ko": "풀 메탈 패닉!",
+      "en": "Full Metal Panic!",
+      "ja": "フルメタル・パニック!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008232": {
+    "workId": "wk_000008232",
+    "title": "5등분의 신부",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q62593542"
+    },
+    "titles": {
+      "ko": "5등분의 신부",
+      "en": "The Quintessential Quintuplets",
+      "ja": "五等分の花嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009117": {
+    "workId": "wk_000009117",
+    "title": "푸규루",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q7258983"
+    },
+    "titles": {
+      "ko": "푸규루",
+      "en": "Pugyuru",
+      "ja": "ぷぎゅる"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

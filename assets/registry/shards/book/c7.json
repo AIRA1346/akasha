@@ -1,0 +1,137 @@
+{
+  "wk_000002931": {
+    "workId": "wk_000002931",
+    "title": "타나토노트",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066371"
+    },
+    "titles": {
+      "ko": "타나토노트",
+      "en": "The Thanatonauts"
+    },
+    "releaseYear": 1994,
+    "creator": "베르나르 베르베르",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003657": {
+    "workId": "wk_000003657",
+    "title": "레드 런던의 여행자: 마법의 그림자",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107389244"
+    },
+    "titles": {
+      "ko": "레드 런던의 여행자: 마법의 그림자",
+      "en": "A Darker Shade of Magic"
+    },
+    "releaseYear": 2015,
+    "creator": "V. E. Schwab",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004236": {
+    "workId": "wk_000004236",
+    "title": "A군(17)의 전쟁",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10854437"
+    },
+    "titles": {
+      "ko": "A군(17)의 전쟁",
+      "en": "Q10854437",
+      "ja": "A君(17)の戦争"
+    },
+    "creator": "Daisuke Satō",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006136": {
+    "workId": "wk_000006136",
+    "title": "나의 주인님?!",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11074950"
+    },
+    "titles": {
+      "ko": "나의 주인님?!",
+      "en": "Boku no Goshujin-sama!?",
+      "ja": "ぼくのご主人様!?"
+    },
+    "creator": "Yūki Takano",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006637": {
+    "workId": "wk_000006637",
+    "title": "정토십의론",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11152566"
+    },
+    "titles": {
+      "ko": "정토십의론",
+      "en": "Discourse on Ten Doubts about Pure Land",
+      "ja": "浄土十疑論"
+    },
+    "creator": "Zhiyi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009586": {
+    "workId": "wk_000009586",
+    "title": "신비의 사나이 할리 퀸",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1143438"
+    },
+    "titles": {
+      "ko": "신비의 사나이 할리 퀸",
+      "en": "The Mysterious Mr Quin",
+      "ja": "謎のクィン氏"
+    },
+    "releaseYear": 1930,
+    "creator": "Agatha Christie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010090": {
+    "workId": "wk_000010090",
+    "title": "로마 모자 미스터리",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1147884"
+    },
+    "titles": {
+      "ko": "로마 모자 미스터리",
+      "en": "The Roman Hat Mystery",
+      "ja": "ローマ帽子の謎"
+    },
+    "releaseYear": 1929,
+    "creator": "Frederic Dannay",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

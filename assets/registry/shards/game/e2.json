@@ -1,0 +1,40 @@
+{
+  "wk_000003294": {
+    "workId": "wk_000003294",
+    "title": "토엠",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110468743"
+    },
+    "titles": {
+      "ko": "토엠",
+      "en": "TOEM",
+      "ja": "トーエム"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003800": {
+    "workId": "wk_000003800",
+    "title": "아머드 코어 버딕트 데이",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11189584"
+    },
+    "titles": {
+      "ko": "아머드 코어 버딕트 데이",
+      "en": "Armored Core: Verdict Day",
+      "ja": "ARMORED CORE VERDICT DAY"
+    },
+    "releaseYear": 2013,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

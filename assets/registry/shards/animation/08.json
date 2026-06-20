@@ -1,0 +1,186 @@
+{
+  "wk_000000479": {
+    "workId": "wk_000000479",
+    "title": "주문은 토끼입니까?",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100471038"
+    },
+    "titles": {
+      "ko": "주문은 토끼입니까?",
+      "en": "Is the Order a Rabbit?",
+      "ja": "ご注文はうさぎですか？"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001863": {
+    "workId": "wk_000001863",
+    "title": "짱구는 못말려 극장판: 태풍을 부르는 장엄한 전설의 전투",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1134782"
+    },
+    "titles": {
+      "ko": "짱구는 못말려 극장판: 태풍을 부르는 장엄한 전설의 전투",
+      "en": "Crayon Shin-chan: Fierceness That Invites Storm! The Battle of the Warring States",
+      "ja": "クレヨンしんちゃん 嵐を呼ぶ アッパレ!戦国大合戦"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002960": {
+    "workId": "wk_000002960",
+    "title": "피노키오의 모험",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1204125"
+    },
+    "titles": {
+      "ko": "피노키오의 모험",
+      "en": "Pinocchio: The Series",
+      "ja": "樫の木モック"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004507": {
+    "workId": "wk_000004507",
+    "title": "극장판 너와 아이돌 프리큐어♪ 기다렸지! 너에게 전하는 키랏키라이브!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q136260086"
+    },
+    "titles": {
+      "ko": "극장판 너와 아이돌 프리큐어♪ 기다렸지! 너에게 전하는 키랏키라이브!",
+      "en": "You and Idol Pretty Cure the Movie: For You! Our Kirakilala Concert!",
+      "ja": "映画 キミとアイドルプリキュア♪ お待たせ!キミに届けるキラッキライブ!"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004711": {
+    "workId": "wk_000004711",
+    "title": "아빠도, 하고 싶어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q139568072"
+    },
+    "titles": {
+      "ko": "아빠도, 하고 싶어",
+      "en": "Papa Datte, Shitai",
+      "ja": "パパだって、したい"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005024": {
+    "workId": "wk_000005024",
+    "title": "내 여동생이 이렇게 귀여울 리가 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q16748950"
+    },
+    "titles": {
+      "ko": "내 여동생이 이렇게 귀여울 리가 없어",
+      "en": "Oreimo",
+      "ja": "俺の妹がこんなに可愛いわけない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006875": {
+    "workId": "wk_000006875",
+    "title": "대공마룡 가이킹",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q3740933"
+    },
+    "titles": {
+      "ko": "대공마룡 가이킹",
+      "en": "Gaiking",
+      "ja": "大空魔竜ガイキング"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007102": {
+    "workId": "wk_000007102",
+    "title": "미래의 미라이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q45865176"
+    },
+    "titles": {
+      "ko": "미래의 미라이",
+      "en": "Mirai of the Future",
+      "ja": "未来のミライ"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007516": {
+    "workId": "wk_000007516",
+    "title": "물드는 세계의 내일로부터",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q51030310"
+    },
+    "titles": {
+      "ko": "물드는 세계의 내일로부터",
+      "en": "Iroduku: The World in Colors",
+      "ja": "色づく世界の明日から"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008707": {
+    "workId": "wk_000008707",
+    "title": "대흥분! 초승달 섬의 애니멀 소동",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q696646"
+    },
+    "titles": {
+      "ko": "대흥분! 초승달 섬의 애니멀 소동",
+      "en": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+      "ja": "劇場版 NARUTO -ナルト- 大興奮!みかづき島のアニマル騒動だってばよ"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

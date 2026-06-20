@@ -1,0 +1,224 @@
+{
+  "wk_000000145": {
+    "workId": "wk_000000145",
+    "title": "스타듀 밸리",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "ConcernedApe",
+    "releaseYear": 2016,
+    "tags": [
+      "농사",
+      "힐링",
+      "인디",
+      "샌드박스"
+    ],
+    "legacyIds": [
+      "gen_game_appid413150_2016",
+      "gen_game_stardew-valley_2016",
+      "sub_game_stardew-valley-sub_2016"
+    ],
+    "titles": {
+      "en": "Stardew Valley",
+      "ko": "스타듀 밸리"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "413150",
+      "wikidata": "Q23013817"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000289": {
+    "workId": "wk_000000289",
+    "title": "용과 같이 0",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "Ryu Ga Gotoku Studio",
+    "releaseYear": 2015,
+    "tags": [
+      "액션",
+      "야쿠자",
+      "스토리",
+      "일본"
+    ],
+    "legacyIds": [
+      "sub_game_yakuza-0_2015"
+    ],
+    "titles": {
+      "en": "Yakuza 0",
+      "ko": "용과 같이 0"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "638970",
+      "wikidata": "Q17634308"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000003120": {
+    "workId": "wk_000003120",
+    "title": "달려나가라★청춘 스파킹!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109366462"
+    },
+    "titles": {
+      "ko": "달려나가라★청춘 스파킹!",
+      "en": "Kakenuke★Seishun Sparking!",
+      "ja": "かけぬけ★青春スパーキング!"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005911": {
+    "workId": "wk_000005911",
+    "title": "트로피코 4",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156301"
+    },
+    "titles": {
+      "ko": "트로피코 4",
+      "en": "Tropico 4"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006053": {
+    "workId": "wk_000006053",
+    "title": "영국탐정 미스테리아",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11616903"
+    },
+    "titles": {
+      "ko": "영국탐정 미스테리아",
+      "en": "London Detective Mysteria",
+      "ja": "英国探偵ミステリア"
+    },
+    "releaseYear": 2019,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006121": {
+    "workId": "wk_000006121",
+    "title": "은의 시간의 코로나",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11637673"
+    },
+    "titles": {
+      "ko": "은의 시간의 코로나",
+      "en": "Kikōyoku Senki: Gin no Toki no Corona",
+      "ja": "輝光翼戦記 銀の刻のコロナ"
+    },
+    "releaseYear": 2011,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006282": {
+    "workId": "wk_000006282",
+    "title": "앨빈과 슈퍼밴드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1169638"
+    },
+    "titles": {
+      "ko": "앨빈과 슈퍼밴드",
+      "en": "Alvin and the Chipmunks",
+      "ja": "アルビン/歌うシマリス3兄弟"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008091": {
+    "workId": "wk_000008091",
+    "title": "던전 키퍼",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1265742"
+    },
+    "titles": {
+      "ko": "던전 키퍼",
+      "en": "Dungeon Keeper",
+      "ja": "ダンジョンキーパー"
+    },
+    "releaseYear": 1997,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009943": {
+    "workId": "wk_000009943",
+    "title": "대마인스쿼드",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q137546336"
+    },
+    "titles": {
+      "ko": "대마인스쿼드",
+      "en": "Taimanin Squad",
+      "ja": "対魔忍スクワッド"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010237": {
+    "workId": "wk_000010237",
+    "title": "아마존의 여왕",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1428744"
+    },
+    "titles": {
+      "ko": "아마존의 여왕",
+      "en": "Flight of the Amazon Queen"
+    },
+    "releaseYear": 1995,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

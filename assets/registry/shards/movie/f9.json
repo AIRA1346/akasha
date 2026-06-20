@@ -1,0 +1,40 @@
+{
+  "wk_000004678": {
+    "workId": "wk_000004678",
+    "title": "나나",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1057558"
+    },
+    "titles": {
+      "ko": "나나",
+      "en": "Nana",
+      "ja": "女優ナナ"
+    },
+    "releaseYear": 1926,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008587": {
+    "workId": "wk_000008587",
+    "title": "007 여왕폐하 대작전",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107894"
+    },
+    "titles": {
+      "ko": "007 여왕폐하 대작전",
+      "en": "On Her Majesty's Secret Service",
+      "ja": "女王陛下の007"
+    },
+    "releaseYear": 1969,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "wk_000000555": {
+    "workId": "wk_000000555",
+    "title": "제발 그 남자 만나지 마요",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101208250"
+    },
+    "titles": {
+      "ko": "제발 그 남자 만나지 마요",
+      "en": "Please Don't Date Him",
+      "ja": "どうかその男と会わないで"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000891": {
+    "workId": "wk_000000891",
+    "title": "코라손 살바헤",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1042321"
+    },
+    "titles": {
+      "ko": "코라손 살바헤",
+      "en": "Corazón Salvaje",
+      "ja": "ワイルドな心"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001902": {
+    "workId": "wk_000001902",
+    "title": "TBS 목요일 9시 연속 드라마",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10852868"
+    },
+    "titles": {
+      "ko": "TBS 목요일 9시 연속 드라마",
+      "en": "TBS Thursday 9:00 Drama",
+      "ja": "TBS木曜9時枠の連続ドラマ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003677": {
+    "workId": "wk_000003677",
+    "title": "꽃미남 캐스팅, 오! 보이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546013"
+    },
+    "titles": {
+      "ko": "꽃미남 캐스팅, 오! 보이",
+      "en": "Q109546013"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004399": {
+    "workId": "wk_000004399",
+    "title": "알렘 다 일루상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110153067"
+    },
+    "titles": {
+      "ko": "알렘 다 일루상",
+      "en": "Além da Ilusão",
+      "ja": "幻想を超えて"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004779": {
+    "workId": "wk_000004779",
+    "title": "아다마스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110941718"
+    },
+    "titles": {
+      "ko": "아다마스",
+      "en": "Adamas",
+      "ja": "アダマス 失われたダイヤ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005379": {
+    "workId": "wk_000005379",
+    "title": "SCANDAL",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11242644"
+    },
+    "titles": {
+      "ko": "SCANDAL",
+      "en": "SCANDAL",
+      "ja": "SCANDAL (テレビドラマ)"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005875": {
+    "workId": "wk_000005875",
+    "title": "본쿠라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11278047"
+    },
+    "titles": {
+      "ko": "본쿠라",
+      "en": "Bonkura",
+      "ja": "ぼんくら"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006720": {
+    "workId": "wk_000006720",
+    "title": "나는 SOLO",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113548365"
+    },
+    "titles": {
+      "ko": "나는 SOLO",
+      "en": "I Am Solo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007370": {
+    "workId": "wk_000007370",
+    "title": "이두나!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q114878691"
+    },
+    "titles": {
+      "ko": "이두나!",
+      "en": "Doona!",
+      "ja": "イ・ドゥナ！"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007891": {
+    "workId": "wk_000007891",
+    "title": "해리스 로우",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1156876"
+    },
+    "titles": {
+      "ko": "해리스 로우",
+      "en": "Harry's Law",
+      "ja": "ハリーズ・ロー 裏通り法律事務所"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008608": {
+    "workId": "wk_000008608",
+    "title": "더 타임 호텔",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116878004"
+    },
+    "titles": {
+      "ko": "더 타임 호텔",
+      "en": "Time is Money"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

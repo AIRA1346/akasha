@@ -1,0 +1,248 @@
+{
+  "wk_000000557": {
+    "workId": "wk_000000557",
+    "title": "런 온",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101219144"
+    },
+    "titles": {
+      "ko": "런 온",
+      "en": "Run On",
+      "ja": "それでも僕らは走り続ける"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000650": {
+    "workId": "wk_000000650",
+    "title": "생활비",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10266459"
+    },
+    "titles": {
+      "ko": "생활비",
+      "en": "Dinheiro Vivo"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002114": {
+    "workId": "wk_000002114",
+    "title": "35세의 고교생",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10863728"
+    },
+    "titles": {
+      "ko": "35세의 고교생",
+      "en": "No Dropping Out: Back to School at 35",
+      "ja": "35歳の高校生"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002767": {
+    "workId": "wk_000002767",
+    "title": "뮤직박스 아름다운 세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109456320"
+    },
+    "titles": {
+      "ko": "뮤직박스 아름다운 세상",
+      "en": "Q109456320"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004181": {
+    "workId": "wk_000004181",
+    "title": "아이돌 리그",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110115593"
+    },
+    "titles": {
+      "ko": "아이돌 리그",
+      "en": "Idol League"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004485": {
+    "workId": "wk_000004485",
+    "title": "랜턴즈",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110556821"
+    },
+    "titles": {
+      "ko": "랜턴즈",
+      "en": "Lanterns",
+      "ja": "ランタンズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004615": {
+    "workId": "wk_000004615",
+    "title": "괴이",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110732490"
+    },
+    "titles": {
+      "ko": "괴이",
+      "en": "Monstrous"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006498": {
+    "workId": "wk_000006498",
+    "title": "청규아총감",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q113332411"
+    },
+    "titles": {
+      "ko": "청규아총감",
+      "en": "Master of My Own"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007386": {
+    "workId": "wk_000007386",
+    "title": "신 정보 7DAYS 뉴스 캐스터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11492738"
+    },
+    "titles": {
+      "ko": "신 정보 7DAYS 뉴스 캐스터",
+      "en": "Q11492738",
+      "ja": "情報7days ニュースキャスター"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008478": {
+    "workId": "wk_000008478",
+    "title": "진짜가 나타났다!",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116687949"
+    },
+    "titles": {
+      "ko": "진짜가 나타났다!",
+      "en": "The Real Has Come!",
+      "ja": "本物（チンチャ）が現れた！～まさか結婚するなんて～"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008541": {
+    "workId": "wk_000008541",
+    "title": "나의 신부 군",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116776992"
+    },
+    "titles": {
+      "ko": "나의 신부 군",
+      "en": "Mr. Bride, My Darling!",
+      "ja": "わたしのお嫁くん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009023": {
+    "workId": "wk_000009023",
+    "title": "몹 닥터",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1190075"
+    },
+    "titles": {
+      "ko": "몹 닥터",
+      "en": "The Mob Doctor"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009159": {
+    "workId": "wk_000009159",
+    "title": "지구전대 파이브맨",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191227"
+    },
+    "titles": {
+      "ko": "지구전대 파이브맨",
+      "en": "Chikyu Sentai Fiveman",
+      "ja": "地球戦隊ファイブマン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010166": {
+    "workId": "wk_000010166",
+    "title": "아마르테 아시",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247334"
+    },
+    "titles": {
+      "ko": "아마르테 아시",
+      "en": "Amarte Así"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

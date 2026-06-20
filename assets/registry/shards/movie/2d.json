@@ -1,0 +1,110 @@
+{
+  "wk_000000404": {
+    "workId": "wk_000000404",
+    "title": "귀멸의 칼날: 무한열차편",
+    "category": "movie",
+    "domain": "subculture",
+    "creator": "ufotable",
+    "releaseYear": 2020,
+    "tags": [
+      "액션",
+      "귀신",
+      "극장판",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_movie_demon-slayer-mugen-train_2020"
+    ],
+    "externalIds": {
+      "wikidata": "Q96376192"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "Demon Slayer Mugen Train",
+      "ko": "귀멸의 칼날: 무한열차편"
+    }
+  },
+  "wk_000000678": {
+    "workId": "wk_000000678",
+    "title": "침묵의 숲",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100270990"
+    },
+    "titles": {
+      "ko": "침묵의 숲",
+      "en": "The Silent Forest",
+      "ja": "無聲 The Silent Forest"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003494": {
+    "workId": "wk_000003494",
+    "title": "캐터필러",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1050729"
+    },
+    "titles": {
+      "ko": "캐터필러",
+      "en": "Caterpillar",
+      "ja": "キャタピラー"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007684": {
+    "workId": "wk_000007684",
+    "title": "퍼펙트 핏",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107546759"
+    },
+    "titles": {
+      "ko": "퍼펙트 핏",
+      "en": "A Perfect Fit",
+      "ja": "パーフェクト・フィット"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008266": {
+    "workId": "wk_000008266",
+    "title": "리플렉션",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q107662862"
+    },
+    "titles": {
+      "ko": "리플렉션",
+      "en": "Reflection",
+      "ja": "リフレクション"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

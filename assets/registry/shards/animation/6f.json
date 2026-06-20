@@ -1,0 +1,148 @@
+{
+  "wk_000002151": {
+    "workId": "wk_000002151",
+    "title": "걸즈 앤 판처 최종장 제4화",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115300029"
+    },
+    "titles": {
+      "ko": "걸즈 앤 판처 최종장 제4화",
+      "en": "Girls und Panzer das Finale: Part 4",
+      "ja": "ガールズ＆パンツァー 最終章 第4話"
+    },
+    "releaseYear": 2023,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002155": {
+    "workId": "wk_000002155",
+    "title": "구데타마: 엄마 찾아 뒹굴뒹굴",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q115351839"
+    },
+    "titles": {
+      "ko": "구데타마: 엄마 찾아 뒹굴뒹굴",
+      "en": "Gudetama: An Eggcellent Adventure",
+      "ja": "ぐでたま 〜母をたずねてどんくらい〜"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006112": {
+    "workId": "wk_000006112",
+    "title": "기동전사 건담 SEED C.E.73 STARGAZER",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q2543496"
+    },
+    "titles": {
+      "ko": "기동전사 건담 SEED C.E.73 STARGAZER",
+      "en": "Mobile Suit Gundam SEED C.E. 73: Stargazer",
+      "ja": "機動戦士ガンダムSEED C.E.73 STARGAZER"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006528": {
+    "workId": "wk_000006528",
+    "title": "파이널 판타지 XIV 빛의 아버지",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q28691526"
+    },
+    "titles": {
+      "ko": "파이널 판타지 XIV 빛의 아버지",
+      "en": "Final Fantasy XIV: Dad of Light",
+      "ja": "ファイナルファンタジーXIV 光のお父さん"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008775": {
+    "workId": "wk_000008775",
+    "title": "엄마 찾아 삼천리",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q700044"
+    },
+    "titles": {
+      "ko": "엄마 찾아 삼천리",
+      "en": "3000 Leagues in Search of Mother",
+      "ja": "母をたずねて三千里"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008978": {
+    "workId": "wk_000008978",
+    "title": "잇큐씨",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q708513"
+    },
+    "titles": {
+      "ko": "잇큐씨",
+      "en": "Ikkyū-san",
+      "ja": "一休さん"
+    },
+    "releaseYear": 1978,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008980": {
+    "workId": "wk_000008980",
+    "title": "미래로보 달타니어스",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q710394"
+    },
+    "titles": {
+      "ko": "미래로보 달타니어스",
+      "en": "Future Robot Daltanious",
+      "ja": "未来ロボ ダルタニアス"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009123": {
+    "workId": "wk_000009123",
+    "title": "The Effect",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q73894973"
+    },
+    "titles": {
+      "ko": "The Effect",
+      "en": "The Effect"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

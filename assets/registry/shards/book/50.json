@@ -1,0 +1,41 @@
+{
+  "wk_000004241": {
+    "workId": "wk_000004241",
+    "title": "공중과 그 문제",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855412"
+    },
+    "titles": {
+      "ko": "공중과 그 문제",
+      "en": "The Public and its Problems",
+      "ja": "現代政治の基礎 - 公衆とその諸問題"
+    },
+    "releaseYear": 1954,
+    "creator": "John Dewey",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004667": {
+    "workId": "wk_000004667",
+    "title": "도티",
+    "category": "book",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q108839999"
+    },
+    "titles": {
+      "ko": "도티",
+      "en": "Dottie"
+    },
+    "releaseYear": 1990,
+    "creator": "Abdulrazak Gurnah",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_book",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

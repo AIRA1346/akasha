@@ -2,8 +2,8 @@
 
 > **일자:** 2026-06-19  
 > **범위:** Wave 4 코드 · 테스트  
-> **판정:** 🟡 **MVP Exit** — multi-type catalog · fusion · entity journal · browse filter ✅ · dogfood ⏳  
-> **다음:** Wave 6 · dogfood · ADR-013
+> **판정:** 🟡 **MVP Exit** — multi-type catalog · fusion · entity journal · browse filter ✅ · **Archive-First UX debt 🔶** · dogfood ⏳ (R5)  
+> **다음:** [archive-first-realignment-plan.md](archive-first-realignment-plan.md) R1 · Wave 6 · dogfood
 
 ---
 
@@ -17,7 +17,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 | UserCatalog multi-type | 🟢 | pe_u_* · co_u_* · ev_u_* load/search |
 | FusionSearch multi-type | 🟢 | catalog + global Person hit |
 | Person seed registry | 🟢 | bundled 5명 (Einstein 등) |
-| Add catalog entity dialog | 🟢 | 유형 선택 · opt-in journal |
+| Add catalog entity dialog | 🟡 | 유형 선택 ✅ · **catalog-first · journal opt-in** — UX debt |
 | Entity journal vault | 🟢 | entities/{type}/ · parser/store |
 | Browse entity filter (W4-9) | 🟢 | FilterSection chips · CatalogEntityBrowseView |
 | Person seed 100+ | ⬜ | charter defer |
@@ -61,7 +61,24 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 ---
 
-## 4. 잔여 · Wave 5 전
+## 4. Known UX debt — Archive-First (R1 대상)
+
+> SSOT: [archive-first-realignment-plan.md](archive-first-realignment-plan.md) §2
+
+| # | 현재 (Wave 4) | 목표 (R1) |
+|---|---------------|-----------|
+| D1 | Person 추가 → `user_entities.json` **기본** | `entities/person/*.md` **기본** |
+| D2 | journal 생성 **opt-in** 체크 | journal **기본 ON** · 「이름만」= 고급 |
+| D3 | SnackBar 「catalog 추가」 | 「**아카이브에 추가됨**」 |
+| D4 | Fusion 섹션 「내 catalog — Entity」 | 「**내 아카이브** — Person/Concept…」 |
+| D5 | catalog-only Person → Browse/서재 **미노출** | archived journal 기준 strip/기록 (R2) |
+| D6 | `onCatalogEntityAdded` highlight | `onEntityArchived` · journal path (R1) |
+
+**판정:** Wave 4 **기술 Exit ✅** · 제품 의도 정합은 **R1 Gate**에서 해소.
+
+---
+
+## 5. 잔여 · Wave 5 전
 
 | # | 항목 | Wave |
 |---|------|------|
@@ -72,7 +89,7 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 ---
 
-## 5. 테스트
+## 6. 테스트
 
 | 시점 | 결과 |
 |------|------|
@@ -80,8 +97,9 @@ Wave 4 MVP(Person · Event · Concept user-local + Person global seed) 목표는
 
 ---
 
-## 6. 문서 이력
+## 7. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
 | 2026-06-19 | v1.1 — W4.1 entity journal UI · 375 tests |
+| 2026-06-19 | **v1.2 Archive-First** — §4 UX debt · R1 pointer |

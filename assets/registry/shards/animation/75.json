@@ -1,0 +1,121 @@
+{
+  "wk_000000242": {
+    "workId": "wk_000000242",
+    "title": "도쿄 구울",
+    "titles": {
+      "ko": "도쿄 구울",
+      "en": "Tokyo Ghoul",
+      "ja": "東京喰種トーキョーグール"
+    },
+    "category": "animation",
+    "domain": "subculture",
+    "creator": "이시다 슈",
+    "releaseYear": 2014,
+    "tags": [
+      "다크",
+      "액션",
+      "호러",
+      "정체성"
+    ],
+    "extensions": {
+      "seasons": [
+        {
+          "label": "1기",
+          "year": 2014,
+          "episodes": 12
+        },
+        {
+          "label": ":re",
+          "year": 2018,
+          "episodes": 24
+        }
+      ],
+      "latestSeason": ":re",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "tmdb": "61374",
+      "wikidata": "Q40239998"
+    },
+    "legacyIds": [
+      "sub_animation_tokyo-ghoul_2014"
+    ],
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000844": {
+    "workId": "wk_000000844",
+    "title": "앱솔루트 듀오",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105758758"
+    },
+    "titles": {
+      "ko": "앱솔루트 듀오",
+      "en": "Absolute Duo",
+      "ja": "アブソリュート・デュオ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005143": {
+    "workId": "wk_000005143",
+    "title": "시로바코",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17903715"
+    },
+    "titles": {
+      "ko": "시로바코",
+      "en": "Shirobako",
+      "ja": "SHIROBAKO"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007351": {
+    "workId": "wk_000007351",
+    "title": "꽃이 피는 첫걸음",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q494804"
+    },
+    "titles": {
+      "ko": "꽃이 피는 첫걸음",
+      "en": "Hanasaku Iroha",
+      "ja": "花咲くいろは"
+    },
+    "creator": "Mari Okada",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009359": {
+    "workId": "wk_000009359",
+    "title": "에르고 프록시",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q832098"
+    },
+    "titles": {
+      "ko": "에르고 프록시",
+      "en": "Ergo Proxy",
+      "ja": "Ergo Proxy"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

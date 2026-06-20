@@ -1,0 +1,197 @@
+{
+  "wk_000001046": {
+    "workId": "wk_000001046",
+    "title": "베네딕트 비밀클럽",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104902314"
+    },
+    "titles": {
+      "ko": "베네딕트 비밀클럽",
+      "en": "The Mysterious Benedict Society",
+      "ja": "秘密結社ベネディクト団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001849": {
+    "workId": "wk_000001849",
+    "title": "FNN 슈퍼타임",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10847126"
+    },
+    "titles": {
+      "ko": "FNN 슈퍼타임",
+      "en": "FNN Super Time",
+      "ja": "FNNスーパータイム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003425": {
+    "workId": "wk_000003425",
+    "title": "G1 열린TV 시청자세상",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109461594"
+    },
+    "titles": {
+      "ko": "G1 열린TV 시청자세상",
+      "en": "Q109461594"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004342": {
+    "workId": "wk_000004342",
+    "title": "요걸스 다이어리",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110118366"
+    },
+    "titles": {
+      "ko": "요걸스 다이어리",
+      "en": "Q110118366"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004554": {
+    "workId": "wk_000004554",
+    "title": "수리남",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110633989"
+    },
+    "titles": {
+      "ko": "수리남",
+      "en": "Narco-Saints",
+      "ja": "スリナム"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007035": {
+    "workId": "wk_000007035",
+    "title": "국회 중계(일본)",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11420438"
+    },
+    "titles": {
+      "ko": "국회 중계(일본)",
+      "en": "Live coverage of the Japanese Diet",
+      "ja": "国会中継"
+    },
+    "releaseYear": 1952,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007452": {
+    "workId": "wk_000007452",
+    "title": "신주쿠 폭주 구급대",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11501850"
+    },
+    "titles": {
+      "ko": "신주쿠 폭주 구급대",
+      "en": "Shinjukubōsōkyūkyūtai",
+      "ja": "新宿暴走救急隊"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007492": {
+    "workId": "wk_000007492",
+    "title": "일본열도 지방소",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11507391"
+    },
+    "titles": {
+      "ko": "일본열도 지방소",
+      "en": "Hometowns All over Japan",
+      "ja": "日本列島ふるさと発"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008757": {
+    "workId": "wk_000008757",
+    "title": "진주탑",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117431932"
+    },
+    "titles": {
+      "ko": "진주탑",
+      "en": "Q117431932"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009851": {
+    "workId": "wk_000009851",
+    "title": "창 아시아 타일랜드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123953878"
+    },
+    "titles": {
+      "ko": "창 아시아 타일랜드",
+      "en": "Chuang Asia: Thailand",
+      "ja": "創造営2024"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010258": {
+    "workId": "wk_000010258",
+    "title": "테라 노스트라",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1247837"
+    },
+    "titles": {
+      "ko": "테라 노스트라",
+      "en": "Terra Nostra"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "wk_000000420": {
+    "workId": "wk_000000420",
+    "title": "七海みなみは輝きたい",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q100331981"
+    },
+    "titles": {
+      "en": "Nanami Minami wa Kagayakitai",
+      "ja": "七海みなみは輝きたい"
+    },
+    "creator": "Yūki Yaku",
+    "extensions": {
+      "ingestChannel": "wikidata_manga",
+      "ingestSource": "wikidata"
+    }
+  },
+  "wk_000004274": {
+    "workId": "wk_000004274",
+    "title": "일기당천",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1191681"
+    },
+    "titles": {
+      "ko": "일기당천",
+      "en": "Ikki Tousen",
+      "ja": "一騎当千"
+    },
+    "creator": "Yuji Shiozaki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006861": {
+    "workId": "wk_000006861",
+    "title": "미소녀전사 세일러문",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1643098"
+    },
+    "titles": {
+      "ko": "미소녀전사 세일러문",
+      "en": "Sailor Moon",
+      "ja": "美少女戦士セーラームーン"
+    },
+    "releaseYear": 1991,
+    "creator": "Naoko Takeuchi",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000007155": {
+    "workId": "wk_000007155",
+    "title": "푸치푸치땅땅푸치땅땅",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q17213117"
+    },
+    "titles": {
+      "ko": "푸치푸치땅땅푸치땅땅",
+      "en": "Q17213117",
+      "ja": "プチプチたんたんプチたんたん"
+    },
+    "creator": "Tozen Ujiie",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

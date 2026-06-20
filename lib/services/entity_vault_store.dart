@@ -8,6 +8,7 @@ import '../core/archiving/record_kind.dart';
 import '../models/user_catalog_entity.dart';
 import '../core/archiving/vault_ledger_event.dart';
 import 'entity_journal_parser.dart';
+import 'entity_vault_path_conflict.dart';
 import 'event_ledger_service.dart';
 import 'file_service.dart';
 
@@ -47,7 +48,17 @@ class EntityVaultStore {
         await File(targetPath).readAsString(),
         targetPath,
       );
-      if (existing != null) addedAt = existing.addedAt;
+      if (existing != null) {
+        if (existing.entityId != entity.entityId) {
+          throw EntityVaultPathConflict(
+            existingEntityId: existing.entityId,
+            incomingEntityId: entity.entityId,
+            title: entity.title,
+            path: targetPath,
+          );
+        }
+        addedAt = existing.addedAt;
+      }
     }
 
     final content = EntityJournalParser.serialize(
@@ -122,21 +133,22 @@ class EntityVaultStore {
     );
   }
 
-  Future<void> deleteEntry(String storagePath) async {
-    if (storagePath.isEmpty) return;
+  /// `.md` 삭제 성공 시 `true`. 경로 없음·파일 없음은 `false`.
+  Future<bool> deleteEntry(String storagePath) async {
+    if (storagePath.isEmpty) return false;
     final file = File(storagePath);
-    if (await file.exists()) {
-      await file.delete();
-      await AkashaFileService().signalVaultChanged();
-      await _eventLedger.append(
-        VaultLedgerEvent(
-          type: VaultLedgerEventType.recordDeleted,
-          at: DateTime.now().toUtc(),
-          path: storagePath,
-          meta: {'recordKind': RecordKind.entityJournal.name},
-        ),
-      );
-    }
+    if (!await file.exists()) return false;
+    await file.delete();
+    await AkashaFileService().signalVaultChanged();
+    await _eventLedger.append(
+      VaultLedgerEvent(
+        type: VaultLedgerEventType.recordDeleted,
+        at: DateTime.now().toUtc(),
+        path: storagePath,
+        meta: {'recordKind': RecordKind.entityJournal.name},
+      ),
+    );
+    return true;
   }
 
   Future<void> _writeAtomic(String targetPath, String content) async {

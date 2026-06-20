@@ -1,0 +1,238 @@
+{
+  "wk_000000272": {
+    "workId": "wk_000000272",
+    "title": "원신",
+    "category": "game",
+    "domain": "subculture",
+    "creator": "HoYoverse",
+    "releaseYear": 2020,
+    "tags": [
+      "오픈월드",
+      "수집형RPG",
+      "판타지",
+      "서브컬처"
+    ],
+    "legacyIds": [
+      "sub_game_genshin-impact_2020"
+    ],
+    "titles": {
+      "en": "Genshin Impact",
+      "ko": "원신"
+    },
+    "extensions": {
+      "coverageSprint03": "legacy_slug",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "wikidata": "Q65059474"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000000143": {
+    "workId": "wk_000000143",
+    "title": "포털 2",
+    "category": "game",
+    "domain": "generalCulture",
+    "creator": "Valve",
+    "releaseYear": 2011,
+    "tags": [
+      "퍼즐",
+      "SF",
+      "코미디",
+      "명작"
+    ],
+    "legacyIds": [
+      "gen_game_portal-2_2011"
+    ],
+    "titles": {
+      "en": "Portal 2",
+      "ko": "포털 2"
+    },
+    "extensions": {
+      "coverageSprint03": "steam_fetch",
+      "coverageSprint04ExternalId": "steam",
+      "coverageSprint04R2Fix": "W1_review",
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual"
+    },
+    "externalIds": {
+      "steam": "620",
+      "wikidata": "Q279446"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    }
+  },
+  "wk_000001975": {
+    "workId": "wk_000001975",
+    "title": "루미네스",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1069373"
+    },
+    "titles": {
+      "ko": "루미네스",
+      "en": "Lumines",
+      "ja": "ルミネス"
+    },
+    "releaseYear": 2004,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004222": {
+    "workId": "wk_000004222",
+    "title": "다운타운 스페셜: 쿠니오군의 시대극이다 전원집합!",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11265439"
+    },
+    "titles": {
+      "ko": "다운타운 스페셜: 쿠니오군의 시대극이다 전원집합!",
+      "en": "Downtown Special: Kunio-kun's Historical Period Drama!",
+      "ja": "ダウンタウンスペシャル くにおくんの時代劇だよ全員集合!"
+    },
+    "releaseYear": 1991,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005706": {
+    "workId": "wk_000005706",
+    "title": "시티 커넥션",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1153074"
+    },
+    "titles": {
+      "ko": "시티 커넥션",
+      "en": "City Connection",
+      "ja": "シティコネクション"
+    },
+    "releaseYear": 1988,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006130": {
+    "workId": "wk_000006130",
+    "title": "어번 테러",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1165046"
+    },
+    "titles": {
+      "ko": "어번 테러",
+      "en": "Urban Terror",
+      "ja": "Urban Terror"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006200": {
+    "workId": "wk_000006200",
+    "title": "술래잡기 (게임)",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11673371"
+    },
+    "titles": {
+      "ko": "술래잡기 (게임)",
+      "en": "Onigokko!",
+      "ja": "鬼ごっこ!"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008023": {
+    "workId": "wk_000008023",
+    "title": "융융 전파 신드롬",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q126096836"
+    },
+    "titles": {
+      "ko": "융융 전파 신드롬",
+      "en": "Yunyun Syndrome!? Rhythm Psychosis",
+      "ja": "ゆんゆん電波シンドローム"
+    },
+    "releaseYear": 2026,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009134": {
+    "workId": "wk_000009134",
+    "title": "프리덤 워즈",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13365214"
+    },
+    "titles": {
+      "ko": "프리덤 워즈",
+      "en": "Freedom Wars",
+      "ja": "FREEDOM WARS フリーダムウォーズ"
+    },
+    "releaseYear": 2014,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009231": {
+    "workId": "wk_000009231",
+    "title": "Elementibox",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q134068830"
+    },
+    "titles": {
+      "ko": "Elementibox",
+      "en": "Elementibox"
+    },
+    "releaseYear": 2024,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009715": {
+    "workId": "wk_000009715",
+    "title": "메탈슬러그 7",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1362747"
+    },
+    "titles": {
+      "ko": "메탈슬러그 7",
+      "en": "Metal Slug 7",
+      "ja": "メタルスラッグ7"
+    },
+    "releaseYear": 2008,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

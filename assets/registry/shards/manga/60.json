@@ -1,0 +1,77 @@
+{
+  "wk_000000994": {
+    "workId": "wk_000000994",
+    "title": "DOG SIGNAL",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q110496194"
+    },
+    "titles": {
+      "ko": "DOG SIGNAL",
+      "en": "Dog Signal",
+      "ja": "DOG SIGNAL"
+    },
+    "releaseYear": 2018,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001089": {
+    "workId": "wk_000001089",
+    "title": "타쿠미 시리즈",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11121497"
+    },
+    "titles": {
+      "ko": "타쿠미 시리즈",
+      "en": "Takumi-kun Series",
+      "ja": "タクミくんシリーズ"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004416": {
+    "workId": "wk_000004416",
+    "title": "연공",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1196627"
+    },
+    "titles": {
+      "ko": "연공",
+      "en": "Koizora",
+      "ja": "恋空"
+    },
+    "releaseYear": 2007,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008694": {
+    "workId": "wk_000008694",
+    "title": "탑블레이드",
+    "category": "manga",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q24045769"
+    },
+    "titles": {
+      "ko": "탑블레이드",
+      "en": "Beyblade",
+      "ja": "爆転シュート ベイブレード"
+    },
+    "creator": "Takao Aoki",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_manga",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

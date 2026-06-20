@@ -1,0 +1,214 @@
+{
+  "wk_000000496": {
+    "workId": "wk_000000496",
+    "title": "암행어사: 조선비밀수사단",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101011917"
+    },
+    "titles": {
+      "ko": "암행어사: 조선비밀수사단",
+      "en": "Royal Secret Agent",
+      "ja": "暗行御史：朝鮮秘密捜査団"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000000549": {
+    "workId": "wk_000000549",
+    "title": "조선구마사",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q101060442"
+    },
+    "titles": {
+      "ko": "조선구마사",
+      "en": "Joseon Exorcist",
+      "ja": "朝鮮駆魔師"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000001156": {
+    "workId": "wk_000001156",
+    "title": "푸콘 가족",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1054175"
+    },
+    "titles": {
+      "ko": "푸콘 가족",
+      "en": "The Fuccons",
+      "ja": "オー!マイキー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002346": {
+    "workId": "wk_000002346",
+    "title": "마스터셰프 US",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1090807"
+    },
+    "titles": {
+      "ko": "마스터셰프 US",
+      "en": "Q1090807"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002582": {
+    "workId": "wk_000002582",
+    "title": "주니어 마스터셰프",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1093999"
+    },
+    "titles": {
+      "ko": "주니어 마스터셰프",
+      "en": "Junior MasterChef Australia"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004999": {
+    "workId": "wk_000004999",
+    "title": "장미맨션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q111731763"
+    },
+    "titles": {
+      "ko": "장미맨션",
+      "en": "Rose Mansion",
+      "ja": "バラマンション"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005066": {
+    "workId": "wk_000005066",
+    "title": "BS 열도 뉴스",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11191810"
+    },
+    "titles": {
+      "ko": "BS 열도 뉴스",
+      "en": "Q11191810",
+      "ja": "BS列島ニュース"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006011": {
+    "workId": "wk_000006011",
+    "title": "미 세크레토",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q112871943"
+    },
+    "titles": {
+      "ko": "미 세크레토",
+      "en": "Mi secreto",
+      "ja": "ミ・セクレト"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008178": {
+    "workId": "wk_000008178",
+    "title": "풀이 불탄다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11618202"
+    },
+    "titles": {
+      "ko": "풀이 불탄다",
+      "en": "Kusa Moeru",
+      "ja": "草燃える"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008597": {
+    "workId": "wk_000008597",
+    "title": "웹툰싱어",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q116819082"
+    },
+    "titles": {
+      "ko": "웹툰싱어",
+      "en": "Webtoon Singer"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009751": {
+    "workId": "wk_000009751",
+    "title": "FBI",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1234407"
+    },
+    "titles": {
+      "ko": "FBI",
+      "en": "The F.B.I.",
+      "ja": "FBIアメリカ連邦警察"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010108": {
+    "workId": "wk_000010108",
+    "title": "손해 보기 싫어서",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124611400"
+    },
+    "titles": {
+      "ko": "손해 보기 싫어서",
+      "en": "No Gain No Love"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

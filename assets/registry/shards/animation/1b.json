@@ -1,0 +1,112 @@
+{
+  "wk_000002396": {
+    "workId": "wk_000002396",
+    "title": "밤의 해파리는 헤엄칠 수 없어",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117287200"
+    },
+    "titles": {
+      "ko": "밤의 해파리는 헤엄칠 수 없어",
+      "en": "Jellyfish Can't Swim in the Night",
+      "ja": "夜のクラゲは泳げない"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003981": {
+    "workId": "wk_000003981",
+    "title": "공주기사는 야만인의 아내",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q130416580"
+    },
+    "titles": {
+      "ko": "공주기사는 야만인의 아내",
+      "en": "The Warrior Princess and the Barbaric King",
+      "ja": "姫騎士は蛮族の嫁"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004076": {
+    "workId": "wk_000004076",
+    "title": "명탐정 코난: 척안의 잔상",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q131358956"
+    },
+    "titles": {
+      "ko": "명탐정 코난: 척안의 잔상",
+      "en": "Detective Conan: One-Eyed Flashback",
+      "ja": "名探偵コナン 隻眼の残像"
+    },
+    "releaseYear": 2025,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005619": {
+    "workId": "wk_000005619",
+    "title": "극장판 요괴워치: 탄생의 비밀이다냥!",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q21160200"
+    },
+    "titles": {
+      "ko": "극장판 요괴워치: 탄생의 비밀이다냥!",
+      "en": "Yo-kai Watch: Tanjō no Himitsu da Nyan!",
+      "ja": "映画 妖怪ウォッチ 誕生の秘密だニャン!"
+    },
+    "releaseYear": 2020,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009038": {
+    "workId": "wk_000009038",
+    "title": "마린보이",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q711948"
+    },
+    "titles": {
+      "ko": "마린보이",
+      "en": "Marine Boy",
+      "ja": "海底少年マリン"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009365": {
+    "workId": "wk_000009365",
+    "title": "마이 히메",
+    "category": "animation",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q836752"
+    },
+    "titles": {
+      "ko": "마이 히메",
+      "en": "My-HiME",
+      "ja": "舞-HiME"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_animation",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "wk_000001969": {
+    "workId": "wk_000001969",
+    "title": "궁중잔혹사: 꽃들의 전쟁",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10855627"
+    },
+    "titles": {
+      "ko": "궁중잔혹사: 꽃들의 전쟁",
+      "en": "Blooded Palace: The War of Flowers",
+      "ja": "花たちの戦い -宮廷残酷史-"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002117": {
+    "workId": "wk_000002117",
+    "title": "미세스타운 남편이 죽었다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q10865218"
+    },
+    "titles": {
+      "ko": "미세스타운 남편이 죽었다",
+      "en": "Q10865218"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003688": {
+    "workId": "wk_000003688",
+    "title": "더 콜라보레이션",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q109546072"
+    },
+    "titles": {
+      "ko": "더 콜라보레이션",
+      "en": "Q109546072"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005270": {
+    "workId": "wk_000005270",
+    "title": "NHK 뉴스 오하요 가가와",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11235049"
+    },
+    "titles": {
+      "ko": "NHK 뉴스 오하요 가가와",
+      "en": "NHK News Ohayo Kagawa",
+      "ja": "NHKニュースおはよう香川"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005668": {
+    "workId": "wk_000005668",
+    "title": "어머니 선생의 진료일기",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11262371"
+    },
+    "titles": {
+      "ko": "어머니 선생의 진료일기",
+      "en": "Ofukuro Sensei no Shinryō Nikki",
+      "ja": "おふくろ先生の診療日記"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005858": {
+    "workId": "wk_000005858",
+    "title": "니코니코푼이 찾아왔다",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11274738"
+    },
+    "titles": {
+      "ko": "니코니코푼이 찾아왔다",
+      "en": "Nico Nico Pun ga Yattekita",
+      "ja": "にこにこぷんがやってきた"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006646": {
+    "workId": "wk_000006646",
+    "title": "러브 러브 쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11347330"
+    },
+    "titles": {
+      "ko": "러브 러브 쇼",
+      "en": "Q11347330",
+      "ja": "ラブラブショー"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006972": {
+    "workId": "wk_000006972",
+    "title": "엘런 쇼",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1140270"
+    },
+    "titles": {
+      "ko": "엘런 쇼",
+      "en": "The Ellen Show"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000008806": {
+    "workId": "wk_000008806",
+    "title": "로열 블러드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q117443148"
+    },
+    "titles": {
+      "ko": "로열 블러드",
+      "en": "Royal Blood",
+      "ja": "王家の血"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009620": {
+    "workId": "wk_000009620",
+    "title": "세계는 지금",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q122494130"
+    },
+    "titles": {
+      "ko": "세계는 지금",
+      "en": "Q122494130"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009848": {
+    "workId": "wk_000009848",
+    "title": "원더풀 월드",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q123919021"
+    },
+    "titles": {
+      "ko": "원더풀 월드",
+      "en": "Wonderful World",
+      "ja": "ワンダフルワールド"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000010031": {
+    "workId": "wk_000010031",
+    "title": "머니챌린지",
+    "category": "drama",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q124360567"
+    },
+    "titles": {
+      "ko": "머니챌린지",
+      "en": "Q124360567"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_drama",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

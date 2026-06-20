@@ -1,0 +1,78 @@
+{
+  "wk_000001742": {
+    "workId": "wk_000001742",
+    "title": "페르시아의 왕자 3D",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1066134"
+    },
+    "titles": {
+      "ko": "페르시아의 왕자 3D",
+      "en": "Prince of Persia 3D",
+      "ja": "プリンス・オブ・ペルシャ3D"
+    },
+    "releaseYear": 2000,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000002549": {
+    "workId": "wk_000002549",
+    "title": "싱귤래리티",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1079645"
+    },
+    "titles": {
+      "ko": "싱귤래리티",
+      "en": "Singularity",
+      "ja": "シンギュラリティ"
+    },
+    "releaseYear": 2010,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004818": {
+    "workId": "wk_000004818",
+    "title": "불가사의 던전 떠돌이 시렌 5: 포춘 타워와 운명의 주사위",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q11361732"
+    },
+    "titles": {
+      "ko": "불가사의 던전 떠돌이 시렌 5: 포춘 타워와 운명의 주사위",
+      "en": "Shiren the Wanderer: The Tower of Fortune and the Dice of Fate",
+      "ja": "不思議のダンジョン 風来のシレン5 フォーチュンタワーと運命のダイス"
+    },
+    "releaseYear": 2022,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009302": {
+    "workId": "wk_000009302",
+    "title": "미러스 엣지 카탈리스트",
+    "category": "game",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q13426441"
+    },
+    "titles": {
+      "ko": "미러스 엣지 카탈리스트",
+      "en": "Q13426441",
+      "ja": "ミラーズエッジ カタリスト"
+    },
+    "releaseYear": 2016,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_game",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}

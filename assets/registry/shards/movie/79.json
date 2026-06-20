@@ -1,0 +1,162 @@
+{
+  "wk_000000165": {
+    "workId": "wk_000000165",
+    "title": "더 배트맨",
+    "category": "movie",
+    "domain": "generalCulture",
+    "creator": "Matt Reeves",
+    "releaseYear": 2022,
+    "tags": [
+      "영화",
+      "대중문화"
+    ],
+    "legacyIds": [
+      "gen_movie_the-batman_2022"
+    ],
+    "externalIds": {
+      "wikidata": "Q61117344"
+    },
+    "extensions": {
+      "ingestChannel": "manual_wikidata",
+      "ingestSource": "manual",
+      "coverageSprint03": "legacy_slug"
+    },
+    "qualitySignals": {
+      "externalIdVerified": true
+    },
+    "titles": {
+      "en": "THE Batman",
+      "ko": "더 배트맨"
+    }
+  },
+  "wk_000002104": {
+    "workId": "wk_000002104",
+    "title": "용서받지 못한 자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q104137"
+    },
+    "titles": {
+      "ko": "용서받지 못한 자",
+      "en": "Unforgiven",
+      "ja": "許されざる者"
+    },
+    "releaseYear": 1992,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000003819": {
+    "workId": "wk_000003819",
+    "title": "호텔 하이비스커스",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105335888"
+    },
+    "titles": {
+      "ko": "호텔 하이비스커스",
+      "en": "Hotel Hibiscus",
+      "ja": "ホテル・ハイビスカス"
+    },
+    "releaseYear": 2002,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004246": {
+    "workId": "wk_000004246",
+    "title": "블루 라인 (영화)",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105560278"
+    },
+    "titles": {
+      "ko": "블루 라인 (영화)",
+      "en": "The Assault"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000004252": {
+    "workId": "wk_000004252",
+    "title": "신의 카르테",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1055785"
+    },
+    "titles": {
+      "ko": "신의 카르테",
+      "en": "Kamisama no Karute",
+      "ja": "神様のカルテ"
+    },
+    "releaseYear": 2011,
+    "creator": "Sōsuke Natsukawa",
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000005169": {
+    "workId": "wk_000005169",
+    "title": "리카르도 가족으로 산다는 것",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q105907125"
+    },
+    "titles": {
+      "ko": "리카르도 가족으로 산다는 것",
+      "en": "Being the Ricardos",
+      "ja": "愛すべき夫妻の秘密"
+    },
+    "releaseYear": 2021,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000006833": {
+    "workId": "wk_000006833",
+    "title": "구타유발자",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q106935774"
+    },
+    "titles": {
+      "ko": "구타유발자",
+      "en": "Assailant"
+    },
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  },
+  "wk_000009956": {
+    "workId": "wk_000009956",
+    "title": "토린호의 운명",
+    "category": "movie",
+    "domain": "subculture",
+    "externalIds": {
+      "wikidata": "Q1089543"
+    },
+    "titles": {
+      "ko": "토린호의 운명",
+      "en": "In Which We Serve",
+      "ja": "軍旗の下に"
+    },
+    "releaseYear": 1942,
+    "extensions": {
+      "ingestChannel": "wikidata_ko_movie",
+      "ingestSource": "wikidata_ko"
+    }
+  }
+}
