@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../config/feature_flags.dart';
 import '../../models/akasha_item.dart';
+import '../../models/browse_card.dart';
 import '../../models/work_drag_payload.dart';
 import 'dialogs/home_dialogs_facade.dart';
 import 'home_app_bar.dart';
@@ -17,8 +18,11 @@ class HomeShellScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scope = controller.filterCtrl.entityScope;
     final filtered = controller.isPersonalLibraryMode
-        ? controller.personalBrowseCards
+        ? (scope.showsWorkGrid
+            ? controller.personalBrowseCards
+            : const <BrowseCard>[])
         : controller.filteredBrowseCards;
 
     return CallbackShortcuts(

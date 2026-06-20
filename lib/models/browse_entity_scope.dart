@@ -25,6 +25,9 @@ extension BrowseEntityScopeX on BrowseEntityScope {
   bool get showsWorkGrid =>
       this == BrowseEntityScope.work || this == BrowseEntityScope.all;
 
+  /// Work grid 위 compact Entity strip — [`BrowseEntityScope.all`] only.
+  bool get showsEntityDiscoveryStrip => this == BrowseEntityScope.all;
+
   bool get showsCatalogEntities =>
       this != BrowseEntityScope.work;
 

@@ -312,18 +312,7 @@ class HomeShellBody extends StatelessWidget {
                                         : null,
                               )
                             : isPersonalLibraryMode
-                            ? PersonalLibraryView(
-                                filteredCards: filteredCards,
-                                allItems: items,
-                                sectionPrefs: sectionPrefs,
-                                displayName: displayName,
-                                isCuratedLibraryActive: isCuratedLibraryActive,
-                                activeLibrary: personalLibCtrl.activeLibrary,
-                                posterCardBuilder: posterCardBuilder,
-                                onStateChanged: onStateChanged,
-                                onCuratedReorder: onCuratedReorder,
-                                onSearch: onSearch,
-                              )
+                            ? _buildPersonalLibraryBrowseContent()
                             : _buildDashboardBrowseContent(),
                       ),
                     ),
@@ -341,18 +330,7 @@ class HomeShellBody extends StatelessWidget {
     final scope = filterCtrl.entityScope;
 
     if (!scope.showsWorkGrid) {
-      return CatalogEntityBrowseView(
-        userCatalog: userCatalog,
-        linkIndex: linkIndex,
-        vaultItems: items,
-        onOpenWork: onOpenBrowseItem,
-        scope: scope,
-        highlightEntityId: filterCtrl.highlightEntityId,
-        entityGallerySort: sectionPrefs.entityGallerySort,
-        onEntityGallerySortChanged: (criteria) {
-          sectionPrefs.setEntityGallerySort(criteria, onStateChanged);
-        },
-      );
+      return _buildCatalogEntityBrowse(scope);
     }
 
     final workGrid = BrowseView(
@@ -369,6 +347,55 @@ class HomeShellBody extends StatelessWidget {
       posterCardBuilder: posterCardBuilder,
       onStateChanged: onStateChanged,
     );
+
+    return _wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
+  }
+
+  Widget _buildPersonalLibraryBrowseContent() {
+    final scope = filterCtrl.entityScope;
+
+    if (!scope.showsWorkGrid) {
+      return _buildCatalogEntityBrowse(scope);
+    }
+
+    final workGrid = PersonalLibraryView(
+      filteredCards: filteredCards,
+      allItems: items,
+      sectionPrefs: sectionPrefs,
+      displayName: displayName,
+      isCuratedLibraryActive: isCuratedLibraryActive,
+      activeLibrary: personalLibCtrl.activeLibrary,
+      posterCardBuilder: posterCardBuilder,
+      onStateChanged: onStateChanged,
+      onCuratedReorder: onCuratedReorder,
+      onSearch: onSearch,
+    );
+
+    return _wrapWorkGridWithOptionalEntityStrip(scope, workGrid);
+  }
+
+  Widget _buildCatalogEntityBrowse(BrowseEntityScope scope) {
+    return CatalogEntityBrowseView(
+      userCatalog: userCatalog,
+      linkIndex: linkIndex,
+      vaultItems: items,
+      onOpenWork: onOpenBrowseItem,
+      scope: scope,
+      highlightEntityId: filterCtrl.highlightEntityId,
+      entityGallerySort: sectionPrefs.entityGallerySort,
+      onEntityGallerySortChanged: (criteria) {
+        sectionPrefs.setEntityGallerySort(criteria, onStateChanged);
+      },
+    );
+  }
+
+  Widget _wrapWorkGridWithOptionalEntityStrip(
+    BrowseEntityScope scope,
+    Widget workGrid,
+  ) {
+    if (!scope.showsEntityDiscoveryStrip) {
+      return workGrid;
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
