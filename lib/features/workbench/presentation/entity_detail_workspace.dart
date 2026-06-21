@@ -357,12 +357,22 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _syncBodyFromEditor();
     }
 
-    final body = _bodyCtrl.text.trim();
+    var body = _bodyCtrl.text.trim();
     if (body.isEmpty) {
-      if (!silent && mounted) {
-        _showSnack('본문을 입력해 주세요.');
+      // 메타데이터(포스터, 태그)만 변경된 경우에도 저장을 허용합니다.
+      final hasMetaChanges = _posterUrlCtrl.text.trim().isNotEmpty ||
+          _draftTags.isNotEmpty;
+      if (!hasMetaChanges) {
+        if (!silent && mounted) {
+          _showSnack('본문을 입력해 주세요.');
+        }
+        return;
       }
-      return;
+      // 메타 변경이 있으면 placeholder body를 삽입하여 YAML 구조를 유지합니다.
+      body = '(기록 대기중)';
+      if (!silent) {
+        _bodyCtrl.text = body;
+      }
     }
 
     final catalog = widget.userCatalog;

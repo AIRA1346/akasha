@@ -118,7 +118,9 @@ class UserCatalogEntity {
       aliases: aliases ?? this.aliases,
       tags: tags ?? this.tags,
       addedAt: addedAt ?? this.addedAt,
-      posterPath: posterPath ?? this.posterPath,
+      posterPath: (posterPath != null && posterPath.isNotEmpty)
+          ? posterPath
+          : (posterPath == null ? this.posterPath : null),
     );
   }
 

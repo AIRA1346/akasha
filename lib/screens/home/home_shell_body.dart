@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
 import '../../core/archiving/record_link.dart';
+import '../../core/archiving/entity_anchor.dart';
 import '../../core/ports/record_link_port.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/entity_link_selection.dart';
@@ -126,6 +127,7 @@ class HomeShellBody extends StatelessWidget {
     BuildContext context,
     String selectedText,
   ) onRequestEntityLink;
+  final void Function(EntityAnchorType? type)? onAddNewEntity;
 
   const HomeShellBody({
     super.key,
@@ -195,6 +197,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onEntityScopeChanged,
     required this.onWikiLinkTap,
     required this.onRequestEntityLink,
+    this.onAddNewEntity,
   });
 
   @override
@@ -252,6 +255,7 @@ class HomeShellBody extends StatelessWidget {
                     onToggleMyStatus: onToggleMyStatus,
                     selectedEntityScope: filterCtrl.entityScope,
                     onEntityScopeChanged: onEntityScopeChanged,
+                    onAddNewEntity: onAddNewEntity,
                   ),
                 if (!isTimelineMode && !isCollectibleCollectionMode)
                   const Divider(height: 1),
@@ -330,6 +334,7 @@ class HomeShellBody extends StatelessWidget {
                                             true
                                         ? onCollectibleCollectionCuratedReorder
                                         : null,
+                                onAddNewEntity: onAddNewEntity,
                               )
                             : isPersonalLibraryMode
                             ? _buildPersonalLibraryBrowseContent()
@@ -407,6 +412,7 @@ class HomeShellBody extends StatelessWidget {
       onEntityGallerySortChanged: (criteria) {
         sectionPrefs.setEntityGallerySort(criteria, onStateChanged);
       },
+      onAddNewEntity: onAddNewEntity,
     );
   }
 

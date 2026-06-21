@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../core/archiving/entity_anchor.dart';
 import '../models/browse_entity_scope.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
@@ -20,6 +21,7 @@ class FilterSection extends StatelessWidget {
   final ValueChanged<String> onToggleMyStatus;
   final BrowseEntityScope selectedEntityScope;
   final ValueChanged<BrowseEntityScope> onEntityScopeChanged;
+  final void Function(EntityAnchorType? type)? onAddNewEntity;
 
   const FilterSection({
     super.key,
@@ -34,6 +36,7 @@ class FilterSection extends StatelessWidget {
     required this.onToggleMyStatus,
     required this.selectedEntityScope,
     required this.onEntityScopeChanged,
+    this.onAddNewEntity,
   });
 
   @override
@@ -45,21 +48,34 @@ class FilterSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: BrowseEntityScope.values.map((scope) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 6),
-                  child: _chip(
-                    label: scope.label,
-                    selected: selectedEntityScope == scope,
-                    onTap: () => onEntityScopeChanged(scope),
-                    small: true,
+          Row(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: BrowseEntityScope.values.map((scope) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: _chip(
+                          label: scope.label,
+                          selected: selectedEntityScope == scope,
+                          onTap: () => onEntityScopeChanged(scope),
+                          small: true,
+                        ),
+                      );
+                    }).toList(),
                   ),
-                );
-              }).toList(),
-            ),
+                ),
+              ),
+              if (onAddNewEntity != null)
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: _AddArchiveButton(
+                    onTap: () => onAddNewEntity!(selectedEntityScope.catalogEntityType),
+                  ),
+                ),
+            ],
           ),
           const SizedBox(height: 8),
           if (selectedEntityScope.showsWorkGrid) ...[
@@ -147,6 +163,19 @@ class FilterSection extends StatelessWidget {
                   fontSize: 11,
                   color: Colors.grey[600],
                   fontStyle: FontStyle.italic,
+                ),
+              ),
+            ),
+          ] else ...[
+            // ── Entity scope 전용 안내 (Work 필터 대신 높이 유지) ──
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(
+                '📂  ${selectedEntityScope.label} 아카이브 갤러리',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey[500],
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
@@ -240,6 +269,48 @@ class FilterSection extends StatelessWidget {
       showCheckmark: false,
       visualDensity: small ? VisualDensity.compact : VisualDensity.standard,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    );
+  }
+}
+
+class _AddArchiveButton extends StatelessWidget {
+  const _AddArchiveButton({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.tealAccent.withValues(alpha: 0.12),
+      borderRadius: BorderRadius.circular(8),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(
+              color: Colors.tealAccent.withValues(alpha: 0.3),
+            ),
+          ),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.add, size: 14, color: Colors.tealAccent),
+              SizedBox(width: 4),
+              Text(
+                '아카이브',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.tealAccent,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
