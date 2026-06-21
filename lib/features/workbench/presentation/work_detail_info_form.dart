@@ -70,17 +70,6 @@ class WorkDetailInfoForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // 도메인 / 카테고리 메타 칩
-        Wrap(
-          spacing: 4,
-          runSpacing: 4,
-          children: [
-            _metaChip(icon: item.domain.icon, label: item.domain.label),
-            _metaChip(icon: item.category.icon, label: item.category.label),
-          ],
-        ),
-        const SizedBox(height: 10),
-
         // 제목 필드 (보더리스 형태로 고급스럽게)
         TextField(
           controller: titleCtrl,
@@ -191,6 +180,8 @@ class WorkDetailInfoForm extends StatelessWidget {
 
         // 아카이브 기능 보존용 오리지널 기능 버튼 패널
         _buildOriginalActionsPanel(),
+        const SizedBox(height: 20),
+        _buildQuickMemoField(),
       ],
     );
   }
@@ -320,35 +311,66 @@ class WorkDetailInfoForm extends StatelessWidget {
     if (concepts.isEmpty) {
       return Text('설정된 태그가 없습니다', style: TextStyle(fontSize: 10, color: Colors.grey[600]));
     }
-    return Wrap(
-      spacing: 6,
-      runSpacing: 6,
+    return Column(
       children: concepts.map((tag) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          margin: const EdgeInsets.only(bottom: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
           decoration: BoxDecoration(
-            color: const Color(0xFF1E1E2C),
-            borderRadius: BorderRadius.circular(6),
+            color: const Color(0xFF161824),
+            borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.white.withValues(alpha: 0.04)),
           ),
-          child: Text(
-            tag,
-            style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+          child: Row(
+            children: [
+               Expanded(
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Text(
+                       tag,
+                       style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white),
+                     ),
+                     const SizedBox(height: 2),
+                     Text(
+                       _getTagSubLabel(tag),
+                       style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                     ),
+                   ],
+                 ),
+               ),
+               Icon(Icons.navigate_next_rounded, size: 14, color: Colors.grey[600]),
+            ],
           ),
         );
       }).toList(),
     );
   }
 
+  String _getTagSubLabel(String tag) {
+    switch (tag) {
+      case '마녀교':
+        return '용어 · 조직';
+      case '사망 회귀':
+        return '능력 · 설정';
+      case '마녀':
+        return '인물 군상';
+      case '성역':
+        return '장소 · 설정';
+      default:
+        return '태그 · 관련 개념';
+    }
+  }
+
   Widget _buildConnectedWorks(bool isReZero) {
     final works = isReZero
         ? [
-            _ConnectedData('무직전생', '사사적 유사성 92%'),
-            _ConnectedData('소드 아트 온라인', '세계관 유사성 85%'),
-            _ConnectedData('오버로드', '테마 유사성 78%'),
+            _ConnectedData('무직전생', '서사적 유사성 92%', 'https://images.justwatch.com/poster/245388040/s592/mujikjeonsaeng-sinsunghamyeon-ddanpanaji-ganda.jpg'),
+            _ConnectedData('소드 아트 온라인', '세계관 유사성 85%', 'https://images.justwatch.com/poster/8547437/s592/sodeu-ateu-onlain.jpg'),
+            _ConnectedData('오버로드', '테마 유사성 78%', 'https://images.justwatch.com/poster/11269094/s592/obeolodeu.jpg'),
           ]
         : [
-            _ConnectedData('유사 작품', '유사성 70%'),
+            _ConnectedData('유사 작품', '유사성 70%', ''),
           ];
 
     return Column(
@@ -359,11 +381,22 @@ class WorkDetailInfoForm extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
-                child: Container(
+                child: SizedBox(
                   width: 24,
                   height: 32,
-                  color: const Color(0xFF222533),
-                  child: const Center(child: Icon(Icons.movie_outlined, size: 12, color: Colors.grey)),
+                  child: w.imageUrl.isNotEmpty
+                      ? Image.network(
+                          w.imageUrl,
+                          fit: BoxFit.cover,
+                          errorBuilder: (_, __, ___) => Container(
+                            color: const Color(0xFF222533),
+                            child: const Center(child: Icon(Icons.movie_outlined, size: 12, color: Colors.grey)),
+                          ),
+                        )
+                      : Container(
+                          color: const Color(0xFF222533),
+                          child: const Center(child: Icon(Icons.movie_outlined, size: 12, color: Colors.grey)),
+                        ),
                 ),
               ),
               const SizedBox(width: 8),
@@ -544,6 +577,35 @@ class WorkDetailInfoForm extends StatelessWidget {
       },
     );
   }
+  Widget _buildQuickMemoField() {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF161824),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      child: Row(
+        children: [
+          Icon(Icons.edit_note_rounded, size: 18, color: Colors.grey[500]),
+          const SizedBox(width: 8),
+          Expanded(
+            child: TextField(
+              maxLines: null,
+              style: const TextStyle(fontSize: 11, color: Colors.white),
+              decoration: InputDecoration(
+                hintText: '메모를 추가하세요...',
+                hintStyle: TextStyle(fontSize: 11, color: Colors.grey[600]),
+                border: InputBorder.none,
+                isDense: true,
+                contentPadding: EdgeInsets.zero,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _CharData {
@@ -553,7 +615,8 @@ class _CharData {
 }
 
 class _ConnectedData {
-  const _ConnectedData(this.title, this.match);
+  const _ConnectedData(this.title, this.match, this.imageUrl);
   final String title;
   final String match;
+  final String imageUrl;
 }

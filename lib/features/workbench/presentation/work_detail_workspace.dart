@@ -46,6 +46,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     BuildContext context,
     String selectedText,
   )? onRequestEntityLink;
+  final VoidCallback? onClose;
 
   const WorkDetailWorkspace({
     super.key,
@@ -66,6 +67,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onPreserveDraft,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
+    this.onClose,
   });
 
   @override
@@ -701,6 +703,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 onAddToLibrary: _handleAddToLibrary,
                 canDeleteMd: _isArchivedInVault,
                 onDeleteArchive: _confirmDelete,
+                onClose: widget.onClose,
               ),
         Expanded(
           child: ColoredBox(

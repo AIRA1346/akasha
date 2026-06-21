@@ -51,6 +51,10 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // 0. 최상단 검색창 및 프로필 탑바 UI
+            _buildTopSearchBar(),
+            const SizedBox(height: 24),
+
             // 1. 환영 인사말
             _buildWelcomeHeader(),
             const SizedBox(height: 28),
@@ -73,6 +77,103 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           ],
         ),
       ),
+    );
+  }
+
+  Color _getCategoryColor(String category) {
+    switch (category) {
+      case '인물':
+        return const Color(0xFF00E5FF);
+      case '개념':
+        return const Color(0xFFFFB74D);
+      case '장소':
+        return const Color(0xFF81C784);
+      case '사건':
+        return const Color(0xFFFF5252);
+      default:
+        return const Color(0xFF6C63FF);
+    }
+  }
+
+  Widget _buildTopSearchBar() {
+    return Row(
+      children: [
+        // 1. 검색 인풋창 (옵시디언/노션 스타일)
+        Expanded(
+          child: GestureDetector(
+            onTap: widget.onSearch,
+            child: Container(
+              height: 38,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              decoration: BoxDecoration(
+                color: const Color(0xFF161824),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.06),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.search_rounded, size: 16, color: Colors.grey[500]),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      '작품, 인물, 사건, 장소, 개념을 검색하세요...',
+                      style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.04),
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+                    ),
+                    child: Text(
+                      'Ctrl K',
+                      style: TextStyle(fontSize: 9, color: Colors.grey[500], fontFamily: 'Consolas'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: 16),
+        // 2. 테마 단추 (라이트/다크)
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.wb_sunny_outlined, size: 18, color: Colors.grey[400]),
+          padding: EdgeInsets.zero,
+          constraints: const BoxConstraints(),
+        ),
+        const SizedBox(width: 12),
+        // 3. 종 단추 (알림)
+        IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.notifications_none_rounded, size: 18, color: Colors.grey[400]),
+          padding: EdgeInsets.zero,
+          constraints: const BoxConstraints(),
+        ),
+        const SizedBox(width: 12),
+        // 4. 아바타 프로필
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Image.network(
+              'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) => const Icon(Icons.person, size: 14, color: Colors.white),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -124,19 +225,19 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         title: '에밀리아',
         category: '인물',
         exploreRate: 0.45,
-        imageUrl: 'https://api.ready.is/vault/emilia.png', // Fallback to icon if unavailable
+        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
       ),
       _ContinueExploreData(
         title: '마녀교',
         category: '개념',
         exploreRate: 0.62,
-        imageUrl: '',
+        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
       ),
       _ContinueExploreData(
         title: '프리실라 바리에르',
         category: '인물',
         exploreRate: 0.33,
-        imageUrl: '',
+        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
       ),
     ];
 
@@ -174,98 +275,105 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         color: const Color(0xFF161824),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withValues(alpha: 0.04),
+          color: Colors.white.withValues(alpha: 0.08),
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // 카드 포스터 영역
-          Expanded(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-              child: Stack(
-                fit: StackFit.expand,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            // 1. 이미지 배경
+            if (data.imageUrl.isNotEmpty)
+              Image.network(
+                data.imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => _buildPlaceholderPoster(data.category),
+              )
+            else
+              _buildPlaceholderPoster(data.category),
+
+            // 2. 어두운 그라디언트 오버레이 (하단 가독성 확보)
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.black.withValues(alpha: 0.0),
+                    Colors.black.withValues(alpha: 0.85),
+                  ],
+                  stops: const [0.35, 1.0],
+                ),
+              ),
+            ),
+
+            // 3. 텍스트 및 배지 오버레이
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  if (data.imageUrl.isNotEmpty)
-                    Image.network(
-                      data.imageUrl,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => _buildPlaceholderPoster(data.category),
-                    )
-                  else
-                    _buildPlaceholderPoster(data.category),
                   // 카테고리 태그 칩
-                  Positioned(
-                    left: 8,
-                    bottom: 8,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF5D3FD3).withValues(alpha: 0.8),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        data.category,
-                        style: const TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: _getCategoryColor(data.category).withValues(alpha: 0.85),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text(
+                      data.category,
+                      style: const TextStyle(
+                        fontSize: 9,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    data.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(2),
+                          child: LinearProgressIndicator(
+                            value: data.exploreRate,
+                            minHeight: 3,
+                            backgroundColor: Colors.white.withValues(alpha: 0.15),
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              _getCategoryColor(data.category),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '${(data.exploreRate * 100).toInt()}% 탐색',
+                        style: TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[300],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-          ),
-          // 정보 텍스트 영역
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  data.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(2),
-                        child: LinearProgressIndicator(
-                          value: data.exploreRate,
-                          minHeight: 3,
-                          backgroundColor: Colors.white.withValues(alpha: 0.08),
-                          valueColor: const AlwaysStoppedAnimation<Color>(
-                            Color(0xFF5D3FD3),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      '${(data.exploreRate * 100).toInt()}% 탐색',
-                      style: TextStyle(
-                        fontSize: 9,
-                        color: Colors.grey[400],
-                        fontFamily: 'Consolas',
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -377,7 +485,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           children: [
             Expanded(
               child: _buildDiscoveryCard(
-                title: '사사적 유사성',
+                title: '서사적 유사성',
                 rate: '92%',
                 leftTitle: 'Re:제로부터 시작하는 이세계 생활',
                 rightTitle: '무직전생',
@@ -392,8 +500,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 rate: '89%',
                 leftTitle: '에밀리아',
                 rightTitle: '알베도',
-                leftImg: '',
-                rightImg: '',
+                leftImg: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+                rightImg: 'https://images.justwatch.com/poster/11269094/s592/obeolodeu.jpg',
               ),
             ),
             const SizedBox(width: 16),
@@ -403,8 +511,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 rate: '85%',
                 leftTitle: '마녀교',
                 rightTitle: '아카식 레코드',
-                leftImg: '',
-                rightImg: '',
+                leftImg: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+                rightImg: 'https://images.justwatch.com/poster/308119864/s592/jangsongui-peulilen.jpg',
               ),
             ),
           ],
@@ -757,42 +865,50 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           ),
         ),
         const SizedBox(height: 12),
-        Row(
+        Column(
           children: [
-            Expanded(
-              child: _buildActionCard(
-                icon: Icons.assignment_turned_in_outlined,
-                title: '작품 검색',
-                desc: '새로운 작품을 찾아보세요',
-                onTap: widget.onSearch,
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildActionCard(
+                    icon: Icons.assignment_turned_in_outlined,
+                    title: '작품 검색',
+                    desc: '새로운 이세계 지식을 검색하고 라이브러리에 등록하세요.',
+                    onTap: widget.onSearch,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: _buildActionCard(
+                    icon: Icons.person_search_outlined,
+                    title: '인물 탐색',
+                    desc: '이세계에 존재하는 매력적인 주인공들과 그 관계를 분석합니다.',
+                    onTap: widget.onExploreEntities,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _buildActionCard(
-                icon: Icons.person_search_outlined,
-                title: '인물 탐색',
-                desc: '흥미로운 인물을 발견하세요',
-                onTap: widget.onExploreEntities,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _buildActionCard(
-                icon: Icons.hub_outlined,
-                title: '그래프 탐색',
-                desc: '관계의 벡터를 확인하세요',
-                onTap: widget.onGraph,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _buildActionCard(
-                icon: Icons.access_time_outlined,
-                title: '타임라인',
-                desc: '시간의 흐름을 따라가세요',
-                onTap: widget.onTimeline,
-              ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildActionCard(
+                    icon: Icons.hub_outlined,
+                    title: '그래프 탐색',
+                    desc: '연결된 사건과 지식의 성운을 입체적인 망으로 보여줍니다.',
+                    onTap: widget.onGraph,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: _buildActionCard(
+                    icon: Icons.access_time_outlined,
+                    title: '타임라인',
+                    desc: '각 작품과 사건이 발생한 역사적 순서의 궤적을 확인합니다.',
+                    onTap: widget.onTimeline,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

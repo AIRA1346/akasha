@@ -47,6 +47,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     this.onToggleInfoLock,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
+    this.onClose,
   });
 
   final UserCatalogEntity entity;
@@ -79,6 +80,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     String selectedText,
   )? onRequestEntityLink;
   final Future<void> Function(UserCatalogEntity entity)? onAddToLibrary;
+  final VoidCallback? onClose;
 
   @override
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
@@ -667,6 +669,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                 onAddToLibrary: _handleAddToLibrary,
                 canDeleteMd: hasJournal,
                 onDeleteArchive: hasJournal ? _confirmDelete : null,
+                onClose: widget.onClose,
               ),
               Expanded(
                 child: ColoredBox(

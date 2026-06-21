@@ -51,6 +51,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
     required this.onAddToLibrary,
     this.canDeleteMd = false,
     this.onDeleteArchive,
+    this.onClose,
   });
 
   final AkashaItem item;
@@ -91,6 +92,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
   final VoidCallback onAddToLibrary;
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
@@ -112,28 +114,6 @@ class WorkDetailInfoPanel extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 8, 10, 4),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.info_outline,
-                    size: 18,
-                    color: Colors.tealAccent,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    '작품 정보',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const Divider(height: 1, color: Color(0xFF2D2D44)),
             if (!vaultLinked)
               Padding(
                 padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
@@ -172,6 +152,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
                             maxWidth: constraints.maxWidth,
                             maxHeight: posterMaxHeight,
                             onPosterTap: onPosterTap,
+                            onClose: onClose,
                           ),
                         ),
                       ),

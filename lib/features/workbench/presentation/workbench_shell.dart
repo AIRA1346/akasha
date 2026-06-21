@@ -190,6 +190,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onAddToLibrary: widget.onAddToLibrary,
                     onWikiLinkTap: widget.onWikiLinkTap,
                     onRequestEntityLink: widget.onRequestEntityLink,
+                    onClose: () => _handleCloseTab(active.id),
                   ),
                 EntityCollectibleTab(:final entity, :final journal, :final isDirty) =>
                   EntityDetailWorkspace(
@@ -231,6 +232,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     },
                     onWikiLinkTap: widget.onWikiLinkTap,
                     onRequestEntityLink: widget.onRequestEntityLink,
+                    onClose: () => _handleCloseTab(active.id),
                   ),
               };
             },

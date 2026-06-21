@@ -32,7 +32,7 @@ void main() {
       ),
     );
 
-    expect(find.text('작품 정보'), findsOneWidget);
+    expect(find.text('Navigation Smoke'), findsAtLeastNWidgets(1));
     expect(find.text('태그'), findsOneWidget);
     expect(find.text('판타지'), findsOneWidget);
   });

@@ -18,6 +18,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
     required this.maxWidth,
     required this.maxHeight,
     required this.onPosterTap,
+    this.onClose,
   });
 
   final AkashaItem preview;
@@ -26,6 +27,7 @@ class WorkDetailInfoPoster extends StatelessWidget {
   final double maxWidth;
   final double maxHeight;
   final VoidCallback onPosterTap;
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +92,51 @@ class WorkDetailInfoPoster extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // 3. 좌측 상단 카테고리 배지 오버레이
+              Positioned(
+                left: 12,
+                top: 12,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.65),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+                  ),
+                  child: Text(
+                    preview.category.label,
+                    style: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+              // 4. 우측 상단 닫기 'X' 버튼 오버레이
+              if (onClose != null)
+                Positioned(
+                  right: 12,
+                  top: 12,
+                  child: GestureDetector(
+                    onTap: onClose,
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.65),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+                      ),
+                      child: const Icon(
+                        Icons.close_rounded,
+                        size: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

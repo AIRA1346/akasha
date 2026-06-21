@@ -42,6 +42,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
     required this.onAddToLibrary,
     this.canDeleteMd = false,
     this.onDeleteArchive,
+    this.onClose,
   });
 
   final AkashaItem item;
@@ -70,6 +71,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
   final VoidCallback onAddToLibrary;
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
@@ -90,16 +92,6 @@ class EntityDetailInfoPanel extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                'Entity 정보',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey[500],
-                  letterSpacing: 0.3,
-                ),
-              ),
-              const SizedBox(height: 12),
               Align(
                 alignment: Alignment.topCenter,
                 child: WorkDetailInfoPoster(
@@ -109,6 +101,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
                   maxWidth: panelWidth,
                   maxHeight: 180,
                   onPosterTap: onPosterTap,
+                  onClose: onClose,
                 ),
               ),
               const SizedBox(height: 14),

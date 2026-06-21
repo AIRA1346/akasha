@@ -203,6 +203,12 @@ class HomeShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hasNoFilters = filterCtrl.domain == null &&
+        filterCtrl.categories.isEmpty &&
+        filterCtrl.workStatuses.isEmpty &&
+        filterCtrl.myStatuses.isEmpty &&
+        filterCtrl.highlightEntityId == null;
+
     final dailyRecall = FeatureFlags.showRecallCard &&
             !isPersonalLibraryMode &&
             !isCollectibleCollectionMode &&
@@ -243,7 +249,7 @@ class HomeShellBody extends StatelessWidget {
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
               if (!workbench.hasOpenWork) ...[
-                if (!isTimelineMode && !isCollectibleCollectionMode)
+                if (!isTimelineMode && !isCollectibleCollectionMode && (!hasNoFilters || isPersonalLibraryMode))
                   FilterSection(
                     selectedDomain: filterCtrl.domain,
                     selectedCategories: filterCtrl.categories,
@@ -258,7 +264,7 @@ class HomeShellBody extends StatelessWidget {
                     onEntityScopeChanged: onEntityScopeChanged,
                     onAddNewEntity: onAddNewEntity,
                   ),
-                if (!isTimelineMode && !isCollectibleCollectionMode)
+                if (!isTimelineMode && !isCollectibleCollectionMode && (!hasNoFilters || isPersonalLibraryMode))
                   const Divider(height: 1),
               ],
               if (!isPersonalLibraryMode &&
