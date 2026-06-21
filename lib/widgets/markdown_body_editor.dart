@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -58,6 +59,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   String _sectionLabel = '본문';
   bool _showFindBar = false;
   MarkdownSlashMatch? _slashMatch;
+  int _slashSelectedIndex = 0;
 
   @override
   void initState() {
@@ -188,6 +190,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
     if (match?.commandStart != _slashMatch?.commandStart ||
         match?.query != _slashMatch?.query) {
       _slashMatch = match;
+      _slashSelectedIndex = 0;
     }
   }
 
@@ -666,6 +669,7 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
               const SizedBox(height: 4),
               _MarkdownSlashMenu(
                 match: _slashMatch!,
+                selectedIndex: _slashSelectedIndex,
                 onSelect: _applySlashCommand,
               ),
             ],
@@ -689,13 +693,44 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
             ],
             const SizedBox(height: 6),
             Expanded(
-              child: _MarkdownTextField(
-                controller: widget.controller,
-                focusNode: _focusNode,
-                onChanged: _onEditorChanged,
-                hintText: widget.mode == MarkdownEditorMode.fullFile
-                    ? '---\nwork_id: ...\n---\n\n# 본문'
-                    : '# 📋 시놉시스\n...\n\n# 🎬 명장면 & 명대사\n> ...\n\n# 📝 메모\n...',
+              child: Focus(
+                onKeyEvent: (FocusNode node, KeyEvent event) {
+                  if (_slashMatch != null && event is KeyDownEvent) {
+                    final candidates = _slashMatch!.candidates.take(8).toList();
+                    if (candidates.isEmpty) return KeyEventResult.ignored;
+
+                    if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+                      setState(() {
+                        _slashSelectedIndex = (_slashSelectedIndex + 1) % candidates.length;
+                      });
+                      return KeyEventResult.handled;
+                    } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+                      setState(() {
+                        _slashSelectedIndex =
+                            (_slashSelectedIndex - 1 + candidates.length) %
+                                candidates.length;
+                      });
+                      return KeyEventResult.handled;
+                    } else if (event.logicalKey == LogicalKeyboardKey.enter) {
+                      _applySlashCommand(candidates[_slashSelectedIndex]);
+                      return KeyEventResult.handled;
+                    } else if (event.logicalKey == LogicalKeyboardKey.escape) {
+                      setState(() {
+                        _slashMatch = null;
+                      });
+                      return KeyEventResult.handled;
+                    }
+                  }
+                  return KeyEventResult.ignored;
+                },
+                child: _MarkdownTextField(
+                  controller: widget.controller,
+                  focusNode: _focusNode,
+                  onChanged: _onEditorChanged,
+                  hintText: widget.mode == MarkdownEditorMode.fullFile
+                      ? '---\nwork_id: ...\n---\n\n# 본문'
+                      : '# 📋 시놉시스\n...\n\n# 🎬 명장면 & 명대사\n> ...\n\n# 📝 메모\n...',
+                ),
               ),
             ),
             const SizedBox(height: 4),

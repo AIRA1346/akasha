@@ -232,7 +232,142 @@ class HomeShellScaffold extends StatelessWidget {
               onSearch: controller.openSearchDialog,
               onAddNewEntity: controller.openAddEntityDialog,
             ),
+            bottomNavigationBar: _buildBottomNavigationBar(context),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBottomNavigationBar(BuildContext context) {
+    final isHome = !controller.isPersonalLibraryMode &&
+        !controller.isCollectibleCollectionMode &&
+        !controller.isTimelineMode;
+
+    return Container(
+      height: 68,
+      decoration: BoxDecoration(
+        color: const Color(0xFF0F0F1A), // 다크 블루
+        border: Border(
+          top: BorderSide(
+            color: Colors.white.withValues(alpha: 0.05),
+            width: 1.0,
+          ),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _buildBottomTabItem(
+            icon: Icons.home_filled,
+            label: '홈',
+            isSelected: isHome,
+            onTap: () {
+              controller.filterCtrl.clearCategories();
+              controller.filterCtrl.onDomainChanged(null);
+              if (!isHome) {
+                controller.selectDashboard('master_index');
+              }
+              controller.rebuild();
+            },
+          ),
+          _buildBottomTabItem(
+            icon: Icons.explore_outlined,
+            label: '탐색',
+            isSelected: false,
+            onTap: () {
+              controller.onEntityScopeChanged(BrowseEntityScope.all);
+            },
+          ),
+          GestureDetector(
+            onTap: controller.openSearchDialog,
+            child: Container(
+              width: 44,
+              height: 44,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF6C63FF),
+                    Color(0xFF5D3FD3),
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFF5D3FD3),
+                    blurRadius: 8,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: const Icon(
+                Icons.search,
+                color: Colors.white,
+                size: 22,
+              ),
+            ),
+          ),
+          _buildBottomTabItem(
+            icon: Icons.book_outlined,
+            label: '라이브러리',
+            isSelected: controller.isPersonalLibraryMode,
+            onTap: () {
+              if (controller.personalLibCtrl.libraries.isNotEmpty) {
+                controller.selectPersonalLibrary(
+                  controller.personalLibCtrl.libraries.first.id,
+                );
+              } else {
+                controller.showLibraryThemePicker();
+              }
+            },
+          ),
+          _buildBottomTabItem(
+            icon: Icons.folder_open_outlined,
+            label: '컬렉션',
+            isSelected: controller.isCollectibleCollectionMode,
+            onTap: () {
+              if (controller.collectionCtrl.collections.isNotEmpty) {
+                controller.selectCollectibleCollection(
+                  controller.collectionCtrl.collections.first.id,
+                );
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBottomTabItem({
+    required IconData icon,
+    required String label,
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    final color = isSelected ? const Color(0xFF6C63FF) : Colors.grey[500];
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: color,
+              size: 20,
+            ),
+            const SizedBox(height: 3),
+            Text(
+              label,
+              style: TextStyle(
+                color: color,
+                fontSize: 9,
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+          ],
         ),
       ),
     );

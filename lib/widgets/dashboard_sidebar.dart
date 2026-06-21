@@ -80,178 +80,45 @@ class DashboardSidebar extends StatelessWidget {
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _SectionHeader(
-                  icon: Icons.collections_bookmark_outlined,
-                  iconColor: personalAccent,
-                  title: '나만의 서재',
-                  onAdd: onAddPersonalLibrary,
-                  addTooltip: '나만의 서재 추가',
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
+                // 1. 로고 영역
+                _buildLogoHeader(),
+                const SizedBox(height: 8),
+
+                // 2. 스크롤 가능한 본문 영역
                 Expanded(
-                  flex: 3,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    itemCount: personalLibraries.length,
-                    itemBuilder: (context, index) {
-                      final lib = personalLibraries[index];
-                      final isActive = selectionMode ==
-                              SidebarSelectionMode.personalLibrary &&
-                          lib.id == activePersonalLibraryId;
-                      Widget row = SidebarItemWidget(
-                        name: lib.isCurated && lib.memberOrder.isNotEmpty
-                            ? '${lib.name} (${lib.memberOrder.length})'
-                            : lib.name,
-                        icon: lib.isMasterArchive
-                            ? Icons.inventory_2_outlined
-                            : lib.isCurated
-                                ? Icons.collections_bookmark_outlined
-                                : lib.categories.length == 1
-                                    ? lib.categories.first.icon
-                                    : Icons.filter_list_outlined,
-                        isActive: isActive,
-                        accentColor: personalAccent,
-                        canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,
-                        canDelete: lib.id != PersonalLibraryConfig.masterArchiveId,
-                        editTooltip: '서재 설정',
-                        onTap: () => onSelectPersonalLibrary(lib.id),
-                        onEdit: () => onEditPersonalLibrary(lib),
-                        onDelete: () => onDeletePersonalLibrary(lib.id),
-                      );
-                      if (lib.isCurated && onDropWorkToLibrary != null) {
-                        row = PersonalLibraryDropTarget(
-                          accentColor: personalAccent,
-                          onAccept: (payload) {
-                            onLibraryDragStarted?.call();
-                            onDropWorkToLibrary!(lib.id, payload);
-                          },
-                          child: row,
-                        );
-                      }
-                      return row;
-                    },
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildMainMenu(context),
+                        const SizedBox(height: 16),
+                        _buildRecentExplore(),
+                        const SizedBox(height: 16),
+                        _buildMyCollections(),
+                        const SizedBox(height: 16),
+                      ],
+                    ),
                   ),
                 ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                _SectionHeader(
-                  icon: Icons.category_outlined,
-                  iconColor: collectionAccent,
-                  title: '컬렉션',
-                  onAdd: onAddCollectibleCollection,
-                  addTooltip: '컬렉션 추가',
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                Expanded(
-                  flex: 2,
-                  child: collectibleCollections.isEmpty
-                      ? Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 8,
-                          ),
-                          child: Text(
-                            'Entity 컬렉션이 없습니다',
-                            style: TextStyle(
-                              fontSize: 11,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        )
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          itemCount: collectibleCollections.length,
-                          itemBuilder: (context, index) {
-                            final col = collectibleCollections[index];
-                            final isActive = selectionMode ==
-                                    SidebarSelectionMode
-                                        .collectibleCollection &&
-                                col.id == activeCollectibleCollectionId;
-                            final countLabel = col.isCurated
-                                ? (col.memberOrder.isNotEmpty
-                                    ? ' (${col.memberOrder.length})'
-                                    : '')
-                                : '';
-                            return SidebarItemWidget(
-                              name: '${col.title}$countLabel',
-                              icon: col.isCurated
-                                  ? Icons.favorite_outline
-                                  : Icons.local_offer_outlined,
-                              isActive: isActive,
-                              accentColor: collectionAccent,
-                              editTooltip: '컬렉션 설정',
-                              onTap: () =>
-                                  onSelectCollectibleCollection(col.id),
-                              onEdit: () => onEditCollectibleCollection(col),
-                              onDelete: () =>
-                                  onDeleteCollectibleCollection(col.id),
-                            );
-                          },
-                        ),
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                SidebarItemWidget(
-                  name: '기록',
-                  icon: Icons.edit_note_outlined,
-                  isActive: selectionMode == SidebarSelectionMode.timeline,
-                  accentColor: Colors.lightBlueAccent,
-                  canEdit: false,
-                  canDelete: false,
-                  onTap: onSelectTimeline,
-                  onEdit: () {},
-                  onDelete: () {},
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                _SectionHeader(
-                  icon: Icons.library_books,
-                  iconColor: dashboardAccent,
-                  title: '대시보드 서재',
-                  onAdd: onAddDashboard,
-                  addTooltip: '새 대시보드 추가',
-                ),
-                const Divider(color: Color(0xFF2D2D44), height: 1),
-                Expanded(
-                  flex: 2,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    itemCount: dashboards.length,
-                    itemBuilder: (context, index) {
-                      final dash = dashboards[index];
-                      final isActive = selectionMode ==
-                              SidebarSelectionMode.dashboard &&
-                          dash.id == activeDashboardId;
-                      return SidebarItemWidget(
-                        name: dash.name,
-                        icon: dash.categories.isNotEmpty
-                            ? dash.categories.first.icon
-                            : dash.domain != null
-                                ? dash.domain!.icon
-                                : Icons.dashboard_outlined,
-                        isActive: isActive,
-                        accentColor: dashboardAccent,
-                        canEdit: dash.id != 'master_index',
-                        canDelete: dash.id != 'master_index',
-                        onTap: () => onSelectDashboard(dash.id),
-                        onEdit: () => onEditDashboard(dash),
-                        onDelete: () => onDeleteDashboard(dash.id),
-                      );
-                    },
-                  ),
-                ),
+
+                // 3. AKASHA Pro 배너
+                _buildProBanner(),
+
+                // 4. 하단 사이드바 토글 힌트
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: const BoxDecoration(
-                    color: Color(0xFF1A1A26),
-                    border:
-                        Border(top: BorderSide(color: Color(0xFF2D2D44))),
+                    color: Color(0xFF161622),
+                    border: Border(top: BorderSide(color: Color(0xFF2D2D44))),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      _TabKeyHint(),
-                      SizedBox(width: 8),
+                      const _TabKeyHint(),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           '키를 눌러 사이드바 토글',
-                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                          style: TextStyle(fontSize: 10, color: Colors.grey[500]),
                         ),
                       ),
                     ],
@@ -260,6 +127,375 @@ class DashboardSidebar extends StatelessWidget {
               ],
             )
           : const SizedBox.shrink(),
+    );
+  }
+
+  Widget _buildLogoHeader() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              color: const Color(0xFF6C63FF).withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: const Icon(
+              Icons.blur_on_rounded,
+              color: Color(0xFF6C63FF),
+              size: 20,
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'AKASHA',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                const SizedBox(height: 1),
+                Text(
+                  'Your Knowledge Universe',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 8,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMainMenu(BuildContext context) {
+    final isHome = selectionMode == SidebarSelectionMode.dashboard &&
+        activeDashboardId == 'master_index';
+
+    return Column(
+      children: [
+        _buildMenuTile(
+          icon: Icons.home_filled,
+          label: '홈',
+          isSelected: isHome,
+          onTap: () => onSelectDashboard('master_index'),
+        ),
+        _buildMenuTile(
+          icon: Icons.explore_outlined,
+          label: '탐색',
+          isSelected: false,
+          onTap: () {
+            // 탐색 관련 이벤트 호출
+          },
+        ),
+        _buildMenuTile(
+          icon: Icons.book_outlined,
+          label: '라이브러리',
+          isSelected: selectionMode == SidebarSelectionMode.personalLibrary,
+          onTap: () {
+            if (personalLibraries.isNotEmpty) {
+              onSelectPersonalLibrary(personalLibraries.first.id);
+            }
+          },
+        ),
+        _buildMenuTile(
+          icon: Icons.folder_open_outlined,
+          label: '컬렉션',
+          isSelected: selectionMode == SidebarSelectionMode.collectibleCollection,
+          onTap: () {
+            if (collectibleCollections.isNotEmpty) {
+              onSelectCollectibleCollection(collectibleCollections.first.id);
+            }
+          },
+        ),
+        _buildMenuTile(
+          icon: Icons.hub_outlined,
+          label: '그래프',
+          isSelected: false,
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('지식 그래프 모드는 준비 중입니다.'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
+        ),
+        _buildMenuTile(
+          icon: Icons.access_time_outlined,
+          label: '타임라인',
+          isSelected: selectionMode == SidebarSelectionMode.timeline,
+          onTap: onSelectTimeline,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMenuTile({
+    required IconData icon,
+    required String label,
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+      decoration: BoxDecoration(
+        color: isSelected ? const Color(0xFF2A2A3E) : Colors.transparent,
+        borderRadius: BorderRadius.circular(6),
+        border: isSelected
+            ? Border.all(
+                color: const Color(0xFF6C63FF).withValues(alpha: 0.3),
+                width: 1.0,
+              )
+            : Border.all(color: Colors.transparent, width: 1.0),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(6),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                size: 16,
+                color: isSelected ? const Color(0xFF6C63FF) : Colors.grey[400],
+              ),
+              const SizedBox(width: 12),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                  color: isSelected ? Colors.white : Colors.grey[300],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRecentExplore() {
+    final recentItems = [
+      _RecentData(title: 'Re:제로부터 시작하는 이세계 생활', category: '작품'),
+      _RecentData(title: '에밀리아', category: '인물'),
+      _RecentData(title: '마녀교', category: '개념'),
+      _RecentData(title: '프리실라 바리에르', category: '인물'),
+      _RecentData(title: '루그니카 왕국', category: '장소'),
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            '최근 탐색',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[500],
+              letterSpacing: 0.5,
+            ),
+          ),
+          const SizedBox(height: 8),
+          ...recentItems.map((item) {
+            IconData icon;
+            Color iconColor;
+            if (item.category == '인물') {
+              icon = Icons.person_outline_rounded;
+              iconColor = const Color(0xFF00E5FF);
+            } else if (item.category == '개념') {
+              icon = Icons.psychology_outlined;
+              iconColor = const Color(0xFFFFB74D);
+            } else if (item.category == '장소') {
+              icon = Icons.place_outlined;
+              iconColor = const Color(0xFF81C784);
+            } else {
+              icon = Icons.movie_outlined;
+              iconColor = const Color(0xFF6C63FF);
+            }
+
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  Icon(icon, size: 14, color: iconColor),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      item.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    item.category,
+                    style: TextStyle(
+                      fontSize: 8,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMyCollections() {
+    final collections = [
+      _ColData(title: '최애 애니', count: 128),
+      _ColData(title: 'Type-Moon Universe', count: 54),
+      _ColData(title: '라이트노벨', count: 313),
+      _ColData(title: '인상 깊은 캐릭터', count: 87),
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Text(
+                '내 컬렉션',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey[500],
+                  letterSpacing: 0.5,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '모두 보기',
+                style: TextStyle(
+                  fontSize: 9,
+                  color: Colors.grey[600],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          ...collections.map((col) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.folder_open_outlined,
+                    size: 14,
+                    color: Colors.grey[400],
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      col.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    '${col.count}',
+                    style: TextStyle(
+                      fontSize: 9,
+                      color: Colors.grey[500],
+                      fontFamily: 'Consolas',
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProBanner() {
+    return Container(
+      margin: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: const Color(0xFF171725),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.04),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text(
+            'AKASHA Pro',
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            '더 많은 기능을 경험해보세요',
+            style: TextStyle(
+              fontSize: 9,
+              color: Colors.grey[500],
+            ),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 28,
+            child: FilledButton(
+              onPressed: () {
+                // 업그레이드 액션 스텁
+              },
+              style: FilledButton.styleFrom(
+                backgroundColor: const Color(0xFF5D3FD3),
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+              ),
+              child: const Text(
+                '업그레이드',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -454,4 +690,16 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
       ),
     );
   }
+}
+
+class _RecentData {
+  const _RecentData({required this.title, required this.category});
+  final String title;
+  final String category;
+}
+
+class _ColData {
+  const _ColData({required this.title, required this.count});
+  final String title;
+  final int count;
 }

@@ -39,6 +39,7 @@ import 'views/catalog_entity_browse_view.dart';
 import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
 import 'views/records_view.dart';
+import 'views/home_dashboard_view.dart';
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
@@ -338,7 +339,7 @@ class HomeShellBody extends StatelessWidget {
                               )
                             : isPersonalLibraryMode
                             ? _buildPersonalLibraryBrowseContent()
-                            : _buildDashboardBrowseContent(),
+                            : _buildDashboardBrowseContent(context),
                       ),
                     ),
                   ],
@@ -351,8 +352,35 @@ class HomeShellBody extends StatelessWidget {
     );
   }
 
-  Widget _buildDashboardBrowseContent() {
+  Widget _buildDashboardBrowseContent(BuildContext context) {
     final scope = filterCtrl.entityScope;
+
+    final hasNoFilters = filterCtrl.domain == null &&
+        filterCtrl.categories.isEmpty &&
+        filterCtrl.workStatuses.isEmpty &&
+        filterCtrl.myStatuses.isEmpty &&
+        filterCtrl.highlightEntityId == null;
+
+    if (hasNoFilters) {
+      return HomeDashboardView(
+        vaultItems: items,
+        onOpenWork: onOpenBrowseItem,
+        onOpenEntity: onOpenEntity,
+        onSearch: onSearch,
+        onTimeline: onSelectTimeline,
+        onGraph: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('지식 그래프 탐색 기능은 준비 중입니다.'),
+              duration: Duration(seconds: 2),
+            ),
+          );
+        },
+        onExploreEntities: () {
+          onEntityScopeChanged(BrowseEntityScope.all);
+        },
+      );
+    }
 
     if (!scope.showsWorkGrid) {
       return _buildCatalogEntityBrowse(scope);
