@@ -91,8 +91,9 @@ class CollectibleTabRail extends StatelessWidget {
   }
 }
 
-class _TabTile extends StatelessWidget {
+class _TabTile extends StatefulWidget {
   const _TabTile({
+    super.key,
     required this.tab,
     required this.active,
     required this.compact,
@@ -107,7 +108,20 @@ class _TabTile extends StatelessWidget {
   final VoidCallback onClose;
 
   @override
+  State<_TabTile> createState() => _TabTileState();
+}
+
+class _TabTileState extends State<_TabTile> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
+    final tab = widget.tab;
+    final active = widget.active;
+    final compact = widget.compact;
+    final onTap = widget.onTap;
+    final onClose = widget.onClose;
+
     if (compact) {
       return Tooltip(
         message: tab.title,
@@ -115,21 +129,37 @@ class _TabTile extends StatelessWidget {
           color: active ? const Color(0xFF2A2A40) : Colors.transparent,
           child: InkWell(
             onTap: onTap,
+            onHover: (hovered) => setState(() => _isHovered = hovered),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Column(
+              child: Row(
                 children: [
-                  _TabThumbnail(tab: tab, size: 36, height: 48),
-                  if (tab.isDirty)
-                    Container(
-                      margin: const EdgeInsets.only(top: 4),
-                      width: 6,
-                      height: 6,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
-                      ),
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 150),
+                    width: active || _isHovered ? 3.0 : 0.0,
+                    height: active ? 28.0 : (_isHovered ? 14.0 : 0.0),
+                    decoration: BoxDecoration(
+                      color: active ? Colors.tealAccent : Colors.tealAccent.withOpacity(0.4),
+                      borderRadius: BorderRadius.circular(1.5),
                     ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        _TabThumbnail(tab: tab, size: 36, height: 48),
+                        if (tab.isDirty)
+                          Container(
+                            margin: const EdgeInsets.only(top: 4),
+                            width: 6,
+                            height: 6,
+                            decoration: const BoxDecoration(
+                              color: Colors.amber,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -142,10 +172,25 @@ class _TabTile extends StatelessWidget {
       color: active ? const Color(0xFF2A2A40) : Colors.transparent,
       child: InkWell(
         onTap: onTap,
+        onHover: (hovered) => setState(() => _isHovered = hovered),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(8, 6, 4, 6),
+          padding: const EdgeInsets.fromLTRB(4, 6, 4, 6),
           child: Row(
             children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 150),
+                width: active || _isHovered ? 3.5 : 0.0,
+                height: active ? 28.0 : (_isHovered ? 14.0 : 0.0),
+                decoration: BoxDecoration(
+                  color: active ? Colors.tealAccent : Colors.tealAccent.withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+              AnimatedPadding(
+                padding: EdgeInsets.only(left: active || _isHovered ? 6.0 : 0.0),
+                duration: const Duration(milliseconds: 150),
+                child: const SizedBox.shrink(),
+              ),
               _TabThumbnail(tab: tab, size: 32, height: 44),
               const SizedBox(width: 8),
               Expanded(

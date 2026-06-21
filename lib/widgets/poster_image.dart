@@ -183,9 +183,21 @@ class _PosterImageState extends State<PosterImage> {
                 }
                 return placeholder;
               },
+              frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                if (wasSynchronouslyLoaded) return child;
+                return AnimatedOpacity(
+                  opacity: frame == null ? 0.0 : 1.0,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOut,
+                  child: child,
+                );
+              },
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) return child;
-                return placeholder;
+                return ShimmerLoadingPlaceholder(
+                  width: width,
+                  height: height,
+                );
               },
             ),
           );
@@ -253,5 +265,67 @@ class _PosterImageState extends State<PosterImage> {
       if (vaultFile.existsSync()) return vaultFile;
     }
     return null;
+  }
+}
+
+class ShimmerLoadingPlaceholder extends StatefulWidget {
+  final double? width;
+  final double? height;
+
+  const ShimmerLoadingPlaceholder({
+    super.key,
+    this.width,
+    this.height,
+  });
+
+  @override
+  State<ShimmerLoadingPlaceholder> createState() => _ShimmerLoadingPlaceholderState();
+}
+
+class _ShimmerLoadingPlaceholderState extends State<ShimmerLoadingPlaceholder>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        final value = _controller.value * 3.0 - 1.0;
+        return SizedBox(
+          width: widget.width ?? double.infinity,
+          height: widget.height,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment(value - 1.0, -0.3),
+                end: Alignment(value, 0.3),
+                colors: const [
+                  Color(0xFF1E1E2F),
+                  Color(0xFF2E2E42),
+                  Color(0xFF1E1E2F),
+                ],
+                stops: const [0.0, 0.5, 1.0],
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 }

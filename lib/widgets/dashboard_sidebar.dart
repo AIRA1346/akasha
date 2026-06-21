@@ -398,12 +398,22 @@ class _SidebarItemWidgetState extends State<SidebarItemWidget> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             child: Row(
               children: [
-                Icon(
-                  widget.icon,
-                  size: 16,
-                  color: isActive ? widget.accentColor : Colors.grey[400],
+                AnimatedScale(
+                  scale: _isHovered ? 1.15 : 1.0,
+                  duration: const Duration(milliseconds: 150),
+                  curve: Curves.easeOut,
+                  child: Icon(
+                    widget.icon,
+                    size: 16,
+                    color: isActive ? widget.accentColor : Colors.grey[400],
+                  ),
                 ),
-                const SizedBox(width: 10),
+                AnimatedPadding(
+                  padding: EdgeInsets.only(left: _isHovered ? 14 : 10),
+                  duration: const Duration(milliseconds: 150),
+                  curve: Curves.easeOut,
+                  child: const SizedBox.shrink(),
+                ),
                 Expanded(
                   child: Text(
                     widget.name,
