@@ -164,6 +164,8 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     isDirty: isDirty,
                     infoPanelWidth: layout.infoPanelWidth,
                     infoPanelLocked: layout.infoPanelLocked,
+                    userCatalog: widget.userCatalog,
+                    linkIndex: widget.linkIndex,
                     onInfoWidthChanged: widget.controller.setInfoPanelWidth,
                     onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
                     onBindSave: (save) =>

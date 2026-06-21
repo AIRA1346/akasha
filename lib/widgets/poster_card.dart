@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import '../core/archiving/entity_anchor.dart';
 import '../models/enums.dart';
 import '../models/akasha_item.dart';
 import '../models/format_slot.dart';
 import '../services/file_service.dart';
 import '../utils/catalog_display_title.dart';
 import '../utils/status_helpers.dart';
+import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import 'format_chip_row.dart';
 import 'poster_image.dart';
 import 'star_rating.dart';
@@ -22,6 +24,8 @@ class PosterCard extends StatefulWidget {
   final void Function(Offset globalPosition)? onOpenLibraryMenu;
   final void Function(FormatSlot slot)? onHideFormatSlot;
   final int curatedLibraryCount;
+  final int incomingRecordCount;
+  final bool highlighted;
 
   const PosterCard({
     super.key,
@@ -30,6 +34,8 @@ class PosterCard extends StatefulWidget {
     this.franchiseId,
     this.showPoster = true,
     this.curatedLibraryCount = 0,
+    this.incomingRecordCount = 0,
+    this.highlighted = false,
     this.onTap,
     this.onOpenLibraryMenu,
     this.onHideFormatSlot,
@@ -65,8 +71,21 @@ class _PosterCardState extends State<PosterCard> {
 
     Border cardBorder;
     Color glowColor;
+    final isEntity = item is EntityItem;
 
-    if (isNotStarted) {
+    if (widget.highlighted) {
+      cardBorder = Border.all(
+        color: Colors.tealAccent,
+        width: 2.0,
+      );
+      glowColor = Colors.tealAccent;
+    } else if (isEntity) {
+      cardBorder = Border.all(
+        color: Colors.tealAccent.withValues(alpha: 0.35),
+        width: 1.0,
+      );
+      glowColor = Colors.tealAccent;
+    } else if (isNotStarted) {
       cardBorder = Border.all(
         color: widget.showPoster
             ? Colors.white.withValues(alpha: 0.17)
@@ -108,7 +127,7 @@ class _PosterCardState extends State<PosterCard> {
           boxShadow: _cardShadows(
             hovered: _isHovered,
             glowColor: glowColor,
-            isNotStarted: isNotStarted,
+            isNotStarted: isNotStarted || isEntity,
           ),
           ),
           child: widget.showPoster
@@ -174,6 +193,9 @@ class _PosterCardState extends State<PosterCard> {
       watchlistStatusEmojiLabel(item);
 
   Color _categoryAccent(MediaCategory category) {
+    if (widget.item is EntityItem) {
+      return Colors.tealAccent;
+    }
     switch (category) {
       case MediaCategory.manga:
         return const Color(0xFF818CF8);
@@ -241,6 +263,8 @@ class _PosterCardState extends State<PosterCard> {
 
   Widget _buildCardMeta(AkashaItem item) {
     final displayTitle = resolveCatalogDisplayTitle(item);
+    final isEntity = item is EntityItem;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -276,11 +300,51 @@ class _PosterCardState extends State<PosterCard> {
             ],
           ),
         ),
-        _buildRatingStatusRow(item),
-        const SizedBox(height: 2),
-        _buildYearRow(item),
-        const SizedBox(height: 2),
-        _buildFormatSlotRow(),
+        if (isEntity)
+          _buildEntityMetaRow(item as EntityItem)
+        else ...[
+          _buildRatingStatusRow(item),
+          const SizedBox(height: 2),
+          _buildYearRow(item),
+          const SizedBox(height: 2),
+          _buildFormatSlotRow(),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildEntityMetaRow(EntityItem item) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+          decoration: BoxDecoration(
+            color: Colors.tealAccent.withValues(alpha: 0.15),
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(
+              color: Colors.tealAccent.withValues(alpha: 0.3),
+            ),
+          ),
+          child: Text(
+            entityTypeBadgeLabel(item.entityType),
+            style: const TextStyle(
+              fontSize: 9,
+              fontWeight: FontWeight.w700,
+              color: Colors.tealAccent,
+            ),
+          ),
+        ),
+        const Spacer(),
+        if (widget.incomingRecordCount > 0)
+          Text(
+            '🔗 ${widget.incomingRecordCount}',
+            style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+              color: Colors.tealAccent,
+            ),
+          ),
       ],
     );
   }
@@ -434,7 +498,8 @@ class _PosterCardState extends State<PosterCard> {
   }
 
   Widget _buildFactCardLayout(AkashaItem item, bool showArchivedBadge) {
-    final accent = _categoryAccent(item.category);
+    final isEntity = item is EntityItem;
+    final accent = isEntity ? Colors.tealAccent : _categoryAccent(item.category);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -465,7 +530,9 @@ class _PosterCardState extends State<PosterCard> {
                 right: 6,
                 bottom: -6,
                 child: Icon(
-                  item.category.icon,
+                  isEntity
+                      ? iconForEntityAnchorType(item.entityType)
+                      : item.category.icon,
                   size: 56,
                   color: Colors.white.withValues(alpha: 0.08),
                 ),
@@ -485,7 +552,9 @@ class _PosterCardState extends State<PosterCard> {
                         ),
                       ),
                       child: Icon(
-                        item.category.icon,
+                        isEntity
+                            ? iconForEntityAnchorType(item.entityType)
+                            : item.category.icon,
                         size: 16,
                         color: Colors.white.withValues(alpha: 0.92),
                       ),
@@ -493,7 +562,9 @@ class _PosterCardState extends State<PosterCard> {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        item.category.label,
+                        isEntity
+                            ? entityTypeBadgeLabel(item.entityType)
+                            : item.category.label,
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,
@@ -545,9 +616,31 @@ class _PosterCardState extends State<PosterCard> {
                     overflow: TextOverflow.ellipsis,
                   ),
                 const Spacer(),
-                _buildFactCardFooter(item, accent),
-                const SizedBox(height: 4),
-                _buildFormatSlotRow(),
+                if (isEntity)
+                  Row(
+                    children: [
+                      _metaPill(
+                        entityTypeBadgeLabel(item.entityType),
+                        accent.withValues(alpha: 0.15),
+                        accent,
+                      ),
+                      const Spacer(),
+                      if (widget.incomingRecordCount > 0)
+                        Text(
+                          '🔗 ${widget.incomingRecordCount}',
+                          style: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.tealAccent,
+                          ),
+                        ),
+                    ],
+                  )
+                else ...[
+                  _buildFactCardFooter(item, accent),
+                  const SizedBox(height: 4),
+                  _buildFormatSlotRow(),
+                ],
               ],
             ),
           ),
@@ -555,4 +648,16 @@ class _PosterCardState extends State<PosterCard> {
       ],
     );
   }
+}
+
+/// Shared icon map for entity gallery cards.
+IconData iconForEntityAnchorType(EntityAnchorType type) {
+  return switch (type) {
+    EntityAnchorType.person => Icons.person_outline,
+    EntityAnchorType.concept => Icons.lightbulb_outline,
+    EntityAnchorType.event => Icons.event_outlined,
+    EntityAnchorType.place => Icons.place_outlined,
+    EntityAnchorType.organization => Icons.groups_outlined,
+    _ => Icons.category_outlined,
+  };
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../config/feature_flags.dart';
 import '../../core/archiving/record_link.dart';
+import '../../core/archiving/entity_anchor.dart';
 import '../../core/ports/record_link_port.dart';
 import '../../core/ports/registry_port.dart';
 import '../../core/ports/user_catalog_port.dart';
@@ -387,6 +388,8 @@ class HomeShellController {
   Future<void> openTimelineQuickCapture() => dialogs.openTimelineQuickCapture();
   Future<void> openJournalQuickCapture() => dialogs.openJournalQuickCapture();
   Future<void> selectVaultFolder() => dialogs.selectVaultFolder();
+  Future<void> openAddEntityDialog(EntityAnchorType? forceType) =>
+      dialogs.openAddEntityDialog(forceType);
   Future<void> onCuratedReorder(
     List<BrowseCard> cards,
     int oldIndex,

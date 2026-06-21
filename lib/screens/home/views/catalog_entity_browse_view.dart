@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
@@ -42,6 +43,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
     this.onCollectibleCuratedReorder,
     this.relatedWorksDiscoveryFactory,
     this.posterCardBuilder,
+    this.onAddNewEntity,
   });
 
   final UserCatalogPort userCatalog;
@@ -67,6 +69,7 @@ class CatalogEntityBrowseView extends StatefulWidget {
   )? onCollectibleCuratedReorder;
   final EntityRelatedWorksDiscovery Function()? relatedWorksDiscoveryFactory;
   final Widget Function(BrowseCard card)? posterCardBuilder;
+  final void Function(EntityAnchorType? type)? onAddNewEntity;
 
   @override
   State<CatalogEntityBrowseView> createState() =>
@@ -387,6 +390,21 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
               _emptyMessage,
               style: TextStyle(color: Colors.grey[500]),
             ),
+            if (widget.onAddNewEntity != null) ...[
+              const SizedBox(height: 16),
+              FilledButton.icon(
+                onPressed: () => widget.onAddNewEntity?.call(widget.scope.catalogEntityType),
+                icon: const Icon(Icons.add),
+                label: const Text('아카이브에 추가'),
+                style: FilledButton.styleFrom(
+                  backgroundColor: Colors.tealAccent.withValues(alpha: 0.15),
+                  foregroundColor: Colors.tealAccent,
+                  side: BorderSide(
+                    color: Colors.tealAccent.withValues(alpha: 0.3),
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
       );
@@ -446,6 +464,17 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
                 ),
               ),
               const Spacer(),
+              if (widget.onAddNewEntity != null) ...[
+                TextButton.icon(
+                  onPressed: () => widget.onAddNewEntity?.call(widget.scope.catalogEntityType),
+                  icon: const Icon(Icons.add, size: 16),
+                  label: const Text('추가'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.tealAccent,
+                  ),
+                ),
+                const SizedBox(width: 8),
+              ],
               if (widget.onEntityGallerySortChanged != null)
                 EntityGallerySortDropdown(
                   currentCriteria: widget.entityGallerySort,

@@ -8,6 +8,7 @@ import '../../../models/akasha_item.dart';
 import '../../../models/entity_id_codec.dart';
 import '../../../models/registry_work.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/work_id_codec.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/archiving/entity_journal_entry.dart';
@@ -18,6 +19,8 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/open_collectible.dart';
 import '../dialogs/home_dialogs_facade.dart';
+import '../dialogs/add_catalog_entity_dialog.dart';
+import '../../../utils/entity_tag_validation.dart';
 import '../home_auto_archive.dart';
 import 'home_catalog_coordinator.dart';
 import 'home_navigation_coordinator.dart';
@@ -322,6 +325,90 @@ class HomeDialogsCoordinator {
       }
     } catch (e) {
       if (isMounted()) showMessage('볼트 연결에 실패했습니다: $e');
+    }
+  }
+
+  Future<void> openAddEntityDialog(EntityAnchorType? forceType) async {
+    final ctx = hostContext();
+    final vaultPath = AkashaFileService().vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+
+    if (forceType == null) {
+      await HomeDialogsFacade.showCustomAddWithTypePicker(
+        context: ctx,
+        query: '',
+        showMessage: showMessage,
+        userCatalog: userCatalog,
+        vaultItems: getItems(),
+        onWorkSavedToVault: (item) async {
+          await AkashaFileService().saveItem(item);
+          if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
+            await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+          }
+          await loadItems();
+        },
+        onEntitySaved: _saveEntityResult,
+      );
+      return;
+    }
+
+    if (forceType == EntityAnchorType.work) {
+      await HomeDialogsFacade.showAddDialog(
+        context: ctx,
+        initialTitle: '',
+        showMessage: showMessage,
+        onSavedToVault: (item) async {
+          await AkashaFileService().saveItem(item);
+          if (WorkIdCodec.isUserLocalWorkId(item.workId)) {
+            await userCatalog.upsert(UserCatalogEntity.fromAkashaItem(item));
+          }
+          await loadItems();
+        },
+      );
+      return;
+    }
+
+    await userCatalog.load();
+    final workTitleIndex = EntityTagValidation.buildWorkTitleIndex(
+      catalogEntities: userCatalog.all,
+      vaultItems: getItems(),
+    );
+
+    final addResult = await showAddCatalogEntityDialog(
+      ctx,
+      entityType: forceType,
+      initialTitle: '',
+      workTitleIndex: workTitleIndex,
+    );
+    if (addResult == null || !isMounted()) return;
+    await _saveEntityResult(addResult);
+  }
+
+  Future<void> _saveEntityResult(CatalogEntityAddResult result) async {
+    final vaultPath = AkashaFileService().vaultPath;
+    if (vaultPath == null || vaultPath.isEmpty) {
+      showMessage('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+    try {
+      final saved = await EntityArchiveService.saveFromAddResult(
+        result: result,
+        vaultPath: vaultPath,
+        userCatalog: userCatalog,
+      );
+      await loadItems();
+      if (!isMounted()) return;
+
+      if (saved.entry != null) {
+        await workbenchCoord.openEntity(saved.entity);
+      }
+
+      onEntityArchived?.call(saved.entity, saved.entry);
+    } on EntityVaultPathConflict catch (e) {
+      showMessage(e.userMessage);
     }
   }
 }

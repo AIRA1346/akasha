@@ -230,6 +230,7 @@ class HomeShellScaffold extends StatelessWidget {
               onCollectibleCollectionCuratedReorder:
                   controller.onCollectibleCollectionCuratedReorder,
               onSearch: controller.openSearchDialog,
+              onAddNewEntity: controller.openAddEntityDialog,
             ),
           ),
         ),

@@ -5,11 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../core/archiving/record_link.dart';
+import '../../../core/archiving/record_kind.dart';
+import '../../../core/archiving/same_day_record_ref.dart';
+import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
+import '../../../services/same_day_record_service.dart';
+import '../../../services/record_link_navigator.dart';
+import '../../../services/record_link_stale_label.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../screens/detail/detail_archive_save.dart';
@@ -24,6 +31,8 @@ class WorkDetailWorkspace extends StatefulWidget {
   final bool isDirty;
   final double infoPanelWidth;
   final bool infoPanelLocked;
+  final UserCatalogPort? userCatalog;
+  final RecordLinkPort? linkIndex;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final void Function(AkashaItem saved) onSaved;
@@ -45,6 +54,8 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.isDirty = false,
     required this.infoPanelWidth,
     this.infoPanelLocked = false,
+    this.userCatalog,
+    this.linkIndex,
     this.onInfoWidthChanged,
     this.onToggleInfoLock,
     required this.onSaved,
@@ -85,6 +96,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   Timer? _autoSaveTimer;
   bool _suppressPersist = false;
 
+  List<String> _incomingPaths = const [];
+  bool _loadingIncoming = false;
+  int _staleLabelRecordCount = 0;
+  List<SameDayRecordRef> _sameDayRefs = const [];
+  bool _loadingSameDay = false;
+
   static const _autoSaveDelay = Duration(seconds: 2);
 
   @override
@@ -100,6 +117,52 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       _onVaultDiskChanged();
     });
     _refreshDiskMtime();
+    _loadIncoming();
+    _loadSameDay();
+  }
+
+  Future<void> _loadSameDay() async {
+    final anchor = _item.addedAt;
+    setState(() => _loadingSameDay = true);
+    try {
+      final refs = await SameDayRecordService.findForAnchor(
+        vaultPath: AkashaFileService().vaultPath,
+        anchor: anchor,
+        excludePath: _item.filePath,
+      );
+      if (mounted) {
+        setState(() {
+          _sameDayRefs = refs;
+          _loadingSameDay = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingSameDay = false);
+    }
+  }
+
+  Future<void> _loadIncoming() async {
+    final index = widget.linkIndex;
+    if (index == null) return;
+    setState(() => _loadingIncoming = true);
+    try {
+      final paths = await index.incomingRecordPaths(_item.workId);
+      final uniquePaths = paths.toSet().toList()..sort();
+      final stale = await RecordLinkStaleLabel.countForEntity(
+        linkIndex: index,
+        entityId: _item.workId,
+        currentTitle: _item.title,
+      );
+      if (mounted) {
+        setState(() {
+          _incomingPaths = uniquePaths;
+          _staleLabelRecordCount = stale.staleRecordCount;
+          _loadingIncoming = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingIncoming = false);
+    }
   }
 
   void _bindSaveHandler() {
@@ -184,11 +247,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     if (oldWidget.tabId != widget.tabId) {
       _applyItem(widget.item, resetPageView: true);
       WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
+      _loadIncoming();
+      _loadSameDay();
       return;
     }
     if (!widget.isDirty &&
         !WorkDetailDraftOps.sameItemSnapshot(oldWidget.item, widget.item)) {
       _applyItem(widget.item, resetPageView: false);
+      _loadIncoming();
+      _loadSameDay();
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -423,6 +490,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _scheduleAutoSave();
       }
       widget.onSaved(saved);
+      _loadIncoming();
+      _loadSameDay();
       if (!silent) {
         _showSnack(
           AkashaFileService().vaultPath != null
@@ -435,6 +504,91 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     } finally {
       if (mounted) setState(() => _isSaving = false);
     }
+  }
+
+  Future<void> _openIncoming(String path) async {
+    final catalog = widget.userCatalog;
+    if (catalog == null) return;
+
+    await RecordLinkNavigator.openRecordPath(
+      context,
+      storagePath: path,
+      vaultItems: const [],
+      userCatalog: catalog,
+      onOpenWork: (item) {
+        widget.onWikiLinkTap?.call(
+          ParsedRecordLink(
+            kind: RecordLinkKind.explicitId,
+            raw: '[[${item.workId}]]',
+            targetEntityId: item.workId,
+          ),
+        );
+      },
+      onOpenEntity: (entity) async {
+        widget.onWikiLinkTap?.call(
+          ParsedRecordLink(
+            kind: RecordLinkKind.explicitId,
+            raw: '[[${entity.entityId}]]',
+            targetEntityId: entity.entityId,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _openSameDay(SameDayRecordRef ref) async {
+    final catalog = widget.userCatalog;
+    if (ref.kind == RecordKind.workJournal && catalog != null) {
+      await RecordLinkNavigator.openRecordPath(
+        context,
+        storagePath: ref.storagePath,
+        vaultItems: const [],
+        userCatalog: catalog,
+        onOpenWork: (item) {
+          widget.onWikiLinkTap?.call(
+            ParsedRecordLink(
+              kind: RecordLinkKind.explicitId,
+              raw: '[[${item.workId}]]',
+              targetEntityId: item.workId,
+            ),
+          );
+        },
+        onOpenEntity: (entity) async {
+          widget.onWikiLinkTap?.call(
+            ParsedRecordLink(
+              kind: RecordLinkKind.explicitId,
+              raw: '[[${entity.entityId}]]',
+              targetEntityId: entity.entityId,
+            ),
+          );
+        },
+      );
+      return;
+    }
+
+    if (!mounted) return;
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text('${ref.kindLabel} · ${ref.title}'),
+        content: Text(
+          '${_formatWhen(ref.when.toLocal())}\n${ref.storagePath}',
+          style: const TextStyle(fontSize: 12),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('닫기'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _formatWhen(DateTime dt) {
+    final h = dt.hour.toString().padLeft(2, '0');
+    final m = dt.minute.toString().padLeft(2, '0');
+    return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')} $h:$m';
   }
 
   void _showSnack(String message) {
@@ -509,37 +663,45 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               WorkDetailInfoPanel(
-          item: _item,
-          preview: preview,
-          panelWidth: widget.infoPanelWidth,
-          infoPanelLocked: widget.infoPanelLocked,
-          vaultLinked: vaultLinked,
-          titleCtrl: _titleCtrl,
-          posterUrlCtrl: _posterUrlCtrl,
-          draftRating: _draftRating,
-          draftWorkStatus: _draftWorkStatus,
-          draftMyStatus: _draftMyStatus,
-          draftHallOfFame: _draftHallOfFame,
-          draftTags: _draftTags,
-          registryTags: _registryTags,
-          isSaving: _isSaving,
-          isArchived: _isArchived,
-          showAddToLibrary: widget.onAddToLibrary != null,
-          onInfoWidthChanged: widget.onInfoWidthChanged,
-          onToggleInfoLock: widget.onToggleInfoLock,
-          onMarkDirty: _markDirty,
-          onDraftRatingChanged: (v) => setState(() => _draftRating = v),
-          onDraftWorkStatusChanged: (v) => setState(() => _draftWorkStatus = v),
-          onDraftMyStatusChanged: (v) => setState(() => _draftMyStatus = v),
-          onDraftHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
-          onDraftTagsChanged: (tags) => setState(() => _draftTags = tags),
-          onPosterTap: _openPosterCorrection,
-          onResetToDefaults: _resetToDefaults,
-          onSaveArchive: _saveArchive,
-          onAddToLibrary: _handleAddToLibrary,
-          canDeleteMd: _isArchivedInVault,
-          onDeleteArchive: _confirmDelete,
-        ),
+                item: _item,
+                preview: preview,
+                panelWidth: widget.infoPanelWidth,
+                infoPanelLocked: widget.infoPanelLocked,
+                vaultLinked: vaultLinked,
+                titleCtrl: _titleCtrl,
+                posterUrlCtrl: _posterUrlCtrl,
+                draftRating: _draftRating,
+                draftWorkStatus: _draftWorkStatus,
+                draftMyStatus: _draftMyStatus,
+                draftHallOfFame: _draftHallOfFame,
+                draftTags: _draftTags,
+                registryTags: _registryTags,
+                isSaving: _isSaving,
+                isArchived: _isArchived,
+                showAddToLibrary: widget.onAddToLibrary != null,
+                loadingIncoming: _loadingIncoming,
+                incomingPaths: _incomingPaths,
+                staleLabelRecordCount: _staleLabelRecordCount,
+                onRefreshIncoming: _loadIncoming,
+                loadingSameDay: _loadingSameDay,
+                sameDayRefs: _sameDayRefs,
+                onOpenIncoming: _openIncoming,
+                onOpenSameDay: _openSameDay,
+                onInfoWidthChanged: widget.onInfoWidthChanged,
+                onToggleInfoLock: widget.onToggleInfoLock,
+                onMarkDirty: _markDirty,
+                onDraftRatingChanged: (v) => setState(() => _draftRating = v),
+                onDraftWorkStatusChanged: (v) => setState(() => _draftWorkStatus = v),
+                onDraftMyStatusChanged: (v) => setState(() => _draftMyStatus = v),
+                onDraftHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
+                onDraftTagsChanged: (tags) => setState(() => _draftTags = tags),
+                onPosterTap: _openPosterCorrection,
+                onResetToDefaults: _resetToDefaults,
+                onSaveArchive: _saveArchive,
+                onAddToLibrary: _handleAddToLibrary,
+                canDeleteMd: _isArchivedInVault,
+                onDeleteArchive: _confirmDelete,
+              ),
         Expanded(
           child: ColoredBox(
             color: const Color(0xFF12121A),

@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 EntityBrowseCard _sampleCard({
   String title = '나츠키 스바루',
+  String creator = '나가월 탓페이',
   List<String> aliases = const ['스바루'],
   String bodyPreview = '평범한 고등학생이던 그는…',
   bool archived = true,
@@ -18,6 +19,7 @@ EntityBrowseCard _sampleCard({
       entityType: UserCatalogEntity.entityTypePerson,
       subtype: MediaCategory.manga,
       title: title,
+      creator: creator,
       aliases: aliases,
       addedAt: DateTime.utc(2024, 1, 1),
     ),
@@ -28,7 +30,7 @@ EntityBrowseCard _sampleCard({
 }
 
 void main() {
-  testWidgets('shows title, alias, preview, type badge, incoming count', (
+  testWidgets('shows title, creator, type badge, incoming count in poster layout', (
     tester,
   ) async {
     var tapped = false;
@@ -41,25 +43,26 @@ void main() {
             child: EntityCollectibleCard(
               card: _sampleCard(),
               onTap: () => tapped = true,
+              showPoster: true,
             ),
           ),
         ),
       ),
     );
 
-    expect(find.text('나츠키 스바루'), findsOneWidget);
-    expect(find.text('스바루'), findsOneWidget);
-    expect(find.text('평범한 고등학생이던 그는…'), findsOneWidget);
+    expect(find.text('나츠키 스바루'), findsAtLeastNWidgets(1));
+    expect(find.text('나가월 탓페이'), findsOneWidget);
     expect(find.text('Person'), findsOneWidget);
-    expect(find.text('🔗 연결 3'), findsOneWidget);
-    expect(find.textContaining('ent_person'), findsNothing);
+    expect(find.text('🔗 3'), findsOneWidget);
 
     await tester.tap(find.byType(EntityCollectibleCard));
     await tester.pump();
     expect(tapped, isTrue);
   });
 
-  testWidgets('shows placeholder when body preview empty', (tester) async {
+  testWidgets('shows title, creator, type badge, incoming count in fact card layout', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
@@ -67,15 +70,18 @@ void main() {
             width: 180,
             height: 260,
             child: EntityCollectibleCard(
-              card: _sampleCard(bodyPreview: '', archived: false, incoming: 0),
+              card: _sampleCard(incoming: 5),
               onTap: () {},
+              showPoster: false,
             ),
           ),
         ),
       ),
     );
 
-    expect(find.text('(메모 없음)'), findsOneWidget);
-    expect(find.text('🔗 연결'), findsNothing);
+    expect(find.text('나츠키 스바루'), findsOneWidget);
+    expect(find.text('나가월 탓페이'), findsOneWidget);
+    expect(find.text('Person'), findsNWidgets(2)); // Badge in header + footer
+    expect(find.text('🔗 5'), findsOneWidget);
   });
 }

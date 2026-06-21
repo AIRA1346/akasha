@@ -1,69 +1,36 @@
-# AKASHA Docs
+# AKASHA Documentation System
 
-> **갱신:** 2026-06-14 · Registry **490** · [ROADMAP](../ROADMAP.md)
+AKASHA 프로젝트의 문서 관리 시스템입니다. 본 프로젝트는 **코드가 유일한 진실(Source of Truth)**이며, 문서는 항상 코드의 구현 상태를 뒤따라 최신화됩니다.
 
-문서는 **루트 7개 + 하위 폴더**로 정리했다. 완료된 스프린트·리뷰·일회성 조사는 **`archive/`** (44건).
-
----
-
-## 처음 읽는 순서
-
-| # | 문서 | 내용 |
-|:-:|------|------|
-| 0 | [programs/architecture-evolution-phases.md](programs/architecture-evolution-phases.md) | **실행 SSOT** — Phase 0~6 |
-| 1 | [product-vision.md](product-vision.md) | Tier 1/2 · Steam v1 |
-| 2 | [../ROADMAP.md](../ROADMAP.md) | 출시 경로 |
-| 3 | [project-status-snapshot.md](project-status-snapshot.md) | Gate·Registry **운영 SSOT** |
-| 4 | [programs/catalog-growth-charter.md](programs/catalog-growth-charter.md) | **카탈로그 확장** (별 트랙) |
+인지 부하를 최소화하고 문서의 신뢰도를 유지하기 위해, 모든 문서는 다음 3가지 카테고리로 엄격히 분류하여 운영합니다.
 
 ---
 
-## 루트 (핵심 SSOT)
+## 📂 1. Active (현재 유효한 문서) · [`docs/active/`](active/)
 
-| 문서 | 역할 |
-|------|------|
-| [data-policy.md](data-policy.md) | 데이터 필드·법무 **최상위** |
-| [discovery-policy.md](discovery-policy.md) | Discovery 경계 |
-| [discovery-source-decision.md](discovery-source-decision.md) | 소스 결정 요약 |
-| [policy/discovery-legal-baseline.md](policy/discovery-legal-baseline.md) | **Discovery 법무 SSOT** (코드·ToS 검토) |
-| [akasha-db-policy.md](akasha-db-policy.md) | 사전 구축·ID·포스터 |
-| [product-vision.md](product-vision.md) | Tier 1/2 · Steam v1 |
-| [product/ultimate-archiving-vision.md](product/ultimate-archiving-vision.md) | **궁극적 아카이빙 SSOT** |
-| [project-status-snapshot.md](project-status-snapshot.md) | 현재 상태 스냅샷 |
+현재 실제 프로젝트에 유효하게 적용되고 작동하는 문서들입니다. 이 디렉토리에 포함된 파일들만 항상 최신 상태로 유지 관리됩니다.
 
----
-
-## 하위 폴더
-
-| 폴더 | 내용 | 대표 문서 |
-|------|------|-----------|
-| **[programs/](programs/)** | **진행 중** 스프린트·확장 | [phase1-work-e2e-plan](programs/phase1-work-e2e-plan.md) · [catalog-growth-charter](programs/catalog-growth-charter.md) |
-| **[policy/](policy/)** | 규격·게이트·**법무** | [discovery-legal-baseline](policy/discovery-legal-baseline.md) · [expansion-tool-grading](policy/expansion-tool-grading.md) |
-| **[strategy/](strategy/)** | 장기 성장·아키텍처 | [registry-growth-strategy](strategy/registry-growth-strategy.md) · [data-architecture-redesign](strategy/data-architecture-redesign.md) |
-| **[validation/](validation/)** | SW1·URV·search_index 검증 | [global-search-validation-plan](validation/global-search-validation-plan.md) · [universal-registry-validation](validation/universal-registry-validation.md) |
-| **[product/](product/)** | **제품·아카이빙** 설계 | [ultimate-archiving-vision](product/ultimate-archiving-vision.md) · [sanctum-md-customization](product/sanctum-md-customization.md) |
-| **[adr/](adr/)** | 아키텍처 결정 | [adr/README](adr/README.md) |
-| **[archive/](archive/)** | 완료 프로그램·리뷰·감사 | [archive/README](archive/README.md) |
+| 파일 | 역할 | 설명 |
+|---|---|---|
+| [PROJECT_CONSTITUTION.md](active/PROJECT_CONSTITUTION.md) | **Supreme SSOT** | 프로젝트 최상위 헌법. 정체성, 핵심 철학, 의사결정 필터 수록. |
+| [CURRENT_STATE.md](active/CURRENT_STATE.md) | **Reality SSOT** | 실제 코드 및 레지스트리 상태 기준 구현 현황. |
+| [VISION.md](active/VISION.md) | **Product SSOT** | 제품 비전 및 유저 여정, 데이터 티어 구분 정책. |
+| [ARCHITECTURE.md](active/ARCHITECTURE.md) | **Architecture SSOT** | v4 런타임 및 해시 샤딩 인프라 아키텍처. |
+| [PROJECT_STATUS.md](active/PROJECT_STATUS.md) | **Operational SSOT** | 품질 게이트 통과 스냅샷 및 릴리즈 준비 현황. |
+| [ROADMAP.md](active/ROADMAP.md) | **Roadmap SSOT** | 5대 정체성 카테고리(Archive/Discovery/Graph/Library/Scale) 중심의 로드맵. |
+| [privacy.md](active/privacy.md) | **Legal Policy** | 개인정보 처리방침. |
 
 ---
 
-## 로컬 운영 도구
+## 📂 2. Historical (과거 기록 문서) · [`docs/history/`](history/)
 
-```bash
-dart run tool/preflight_check.dart
-dart run tool/ci_registry_check.dart
-dart run tool/a5_scale_governance_observation.dart --apply
-dart run tool/discovery_manifest_check.dart
-```
+과거에 작성되었던 스프린트 계획, 회고, 게이트 리뷰, 아키텍처 의사결정 기록(ADR) 등입니다.
+* **읽기 전용:** 이 디렉토리의 문서들은 역사적 사실의 기록을 위한 것으로, 더 이상 수정하거나 최신화하지 않습니다.
+* 과거 설계 흐름이나 이전 결정의 맥락을 파악하고 싶을 때 참조합니다.
 
 ---
 
-## 문서 이력
+## 📂 3. Draft (실험 및 제안 문서) · [`docs/draft/`](draft/)
 
-| 일자 | 변경 |
-|------|------|
-| 2026-06-10 | IA 재편 — 루트 58→7 |
-| 2026-06-10 | **SD2.6 해제** — catalog-growth-charter |
-| 2026-06-14 | **product/ultimate-archiving-vision** SSOT · Sanctum·워크벤치 `product/` 이동 |
-| 2026-06-14 | ultimate v2 — Entity+Timeline · Phase 1~4 · Core/제품 분리 |
-| 2026-06-14 | **phase1-work-e2e-plan** — 현재 실행 SSOT |
+구현이 확정되지 않은 아이디어, 신규 기능의 초안 설계, 제안 문서 등이 위치하는 임시 공간입니다.
+* 논의가 완료되어 구현이 확정되면, 해당 내용을 `Active` 문서군에 통합(or 이관)하고 Draft 내의 문서는 삭제하거나 `Historical`로 이동시킵니다.

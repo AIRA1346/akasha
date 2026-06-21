@@ -1,11 +1,11 @@
 # Project Status Snapshot
  
 > **갱신:** 2026-06-21 (@10048 · locale-minimum ✅ · test 505+)  
-> **현재 실행:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) · wikidata_ko 배치 · **Phase 6.3 (incoming/sameDay 패널 이전)**  
+> **현재 실행:** catalog-growth-charter · wikidata_ko 배치 · **Phase 6.3 (incoming/sameDay 패널 이전)**  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
-> **출시:** [release-readiness-checklist.md](release-readiness-checklist.md)  
-> **정리:** [programs/repo-cleanup-plan.md](programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
-> **확장:** [catalog-growth-charter.md](programs/catalog-growth-charter.md) — **SD2.6 hold 해제**
+> **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
+> **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
+> **확장:** catalog-growth-charter — **SD2.6 hold 해제**
  
 ---
  
@@ -38,7 +38,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | SD3 Pause (품질·dedupe 회귀 시 감속) | O3를 insert **스위치**로 쓰기 |
 | Fact-only · Wikidata 법무 경계 | 430 **고정 출시** 가정 |
 
-**2026-06-13:** Steam depot·스토어·P0 QA 12/12 완료. 정식 릴리즈 전 **Wave 1 Home 해부**를 blocking으로 설정 ([release-readiness-checklist](release-readiness-checklist.md) §7).
+**2026-06-13:** Steam depot·스토어·P0 QA 12/12 완료. 정식 릴리즈 전 **Wave 1 Home 해부**를 blocking으로 설정 ([release-readiness-checklist](../history/release-readiness-checklist.md) §7).
 
 ---
 
@@ -86,7 +86,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | Sprint / Wave |
 |---|------|:-------------:|
-| 1 | **E0** — SSOT·friction log 갱신 | [extensibility-hardening](programs/extensibility-hardening-plan.md) |
+| 1 | **E0** — SSOT·friction log 갱신 | [extensibility-hardening](../history/programs/extensibility-hardening-plan.md) |
 | 2 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | E1 |
 | 3 | **Sprint B1** — 작품 `.md` 지속 dogfood | B |
 | 4 | friction 있으면 §2 기준 수정 | B |
@@ -103,7 +103,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-10 | G2 50% · 문서 IA 재편 |
 | 2026-06-10 | **SD2.6 해제** · catalog-growth-charter · 병행 확장 |
 | 2026-06-10 | **Release audit** — 490작 · test 250 · release-readiness-checklist |
-| 2026-06-13 | Steam depot·P0 QA 12/12 — [release-readiness-checklist](release-readiness-checklist.md) |
+| 2026-06-13 | Steam depot·P0 QA 12/12 — [release-readiness-checklist](../history/release-readiness-checklist.md) |
 | 2026-06-14 | Wave 1 2차 — coordinator·HomeShellBody · shell 1004줄 |
 | 2026-06-14 | Wave 1 3차 — UI glue 분리 · shell 710 · test 268 |
 | 2026-06-14 | Wave 1 4차 — controller·scaffold · shell **40줄** · test 271 |

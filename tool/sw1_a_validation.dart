@@ -265,7 +265,7 @@ List<Map<String, dynamic>> _loadIndex(Directory root) {
 }
 
 List<GsQuery> _loadQueries(Directory root) {
-  final path = File(p.join(root.path, 'docs', 'validation', 'global-search-query-set.md'));
+  final path = File(p.join(root.path, 'docs', 'history', 'validation', 'global-search-query-set.md'));
   final lines = path.readAsLinesSync();
   final out = <GsQuery>[];
 

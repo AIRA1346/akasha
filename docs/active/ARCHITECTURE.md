@@ -1,10 +1,10 @@
 # AKASHA 데이터 아키텍처 재설계
 
-> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (430작 · 331 해시 샤드)  
-> **기준일:** 2026-06-10  
-> **제품·포스터 SSOT:** [product-vision.md](../product-vision.md) · **아카이빙 북극성:** [product/ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md)
+> **상태:** 설계 확정 v2 · **v4 런타임 운영 중** (490작 · 382 해시 샤드)  
+> **기준일:** 2026-06-21  
+> **제품·포스터 SSOT:** [VISION.md](VISION.md) · **아카이빙 북극성:** [history/product/ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md)
 
-관련: [akasha-db-policy.md]](../akasha-db-policy.md) · [catalog-ownership.md](catalog-ownership.md) · [ROADMAP.md](../ROADMAP.md)
+관련: [history/policy/akasha-db-policy.md](../history/policy/akasha-db-policy.md) · [history/policy/catalog-ownership.md](../history/policy/catalog-ownership.md) · [ROADMAP.md](ROADMAP.md)
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### 0.1 최종 비전
 
-> **제품 SSOT:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
+> **제품 SSOT:** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) — 아래는 인프라 문서 관점 요약.
 
 **AKASHA = 지식 정보(Entity Anchor) + 나만의 일기(Subjective Journal) + 시각적 감상(Appreciation) + AI 친화적 지식 그래프**
 
@@ -43,7 +43,7 @@
 | Pipeline이 TMDB URL resolve → shard | Pipeline은 **Fact만** — 이미지·시놉은 유저 vault |
 | 「엄선 레지스트리」= 최종 정체성 | **전 작품 사전**이 목표, 430작은 **현재 단계** |
 
-인프라(샤딩·`wk_`·search_index)는 유지. **콘텐츠·이미지 호스팅**만 Tier 2로 이동 — [product-vision.md]](../product-vision.md).
+인프라(샤딩·`wk_`·search_index)는 유지. **콘텐츠·이미지 호스팅**만 Tier 2로 이동 — [VISION.md](VISION.md).
 
 ---
 
@@ -74,7 +74,7 @@
 | **역할** | 「원피스 검색 → Fact 카드」 | 「내가 쓴 기록 + 내 커버」 |
 
 **검색 서비스 관점:** Tier 1은 **텍스트 Fact + searchTokens**만 CDN에 둔다.  
-이미지·창작 표현은 AKASHA가 **호스팅·큐레이션하지 않음** — [data-policy.md §0.3](data-policy.md#03-tier-1-포스터-미제공-v1-steam).
+이미지·창작 표현은 AKASHA가 **호스팅·큐레이션하지 않음** — [history/policy/data-policy.md §0.3](../history/policy/data-policy.md#03-tier-1-포스터-미제공-v1-steam).
 
 ```json
 {
@@ -235,7 +235,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 | 적용 | `--apply` 시 샤드 `workId` → `wk_`, `legacyIds`에 옛 `sub_*` 보존 |
 
 옛 볼트 `.md`의 `work_id`는 **rename 없이** `legacy_aliases`로 `wk_`에 조인된다.  
-상세 일정: [v4-migration-plan.md]](../archive/v4-migration-plan.md) Phase A.
+상세 일정: [v4-migration-plan.md](../history/v4-migration-plan.md) Phase A.
 
 ---
 
@@ -304,7 +304,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ## 7. 엔티티 및 저널이 「저장」되는 경로 (감상 융합)
 
-> **제품·로드맵 SSOT:** [ultimate-archiving-vision.md](../product/ultimate-archiving-vision.md) §3–§6
+> **제품·로드맵 SSOT:** [ultimate-archiving-vision.md](../history/product/ultimate-archiving-vision.md) §3–§6
 
 ### 7.1 레지스트리에 추가 (공식 사전 - 객체 닻)
 
@@ -357,7 +357,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ## 9. 구현 우선순위 · Steam 출시 게이트
 
-> **결정:** Steam v1 **이전에** Phase A~D(v4 런타임) 완료. 실행 상세는 [v4-migration-plan.md]](../archive/v4-migration-plan.md).
+> **결정:** Steam v1 **이전에** Phase A~D(v4 런타임) 완료. 실행 상세는 [v4-migration-plan.md](../history/v4-migration-plan.md).
 
 | 구분 | Phase | Steam 전 |
 |------|-------|----------|
@@ -393,7 +393,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 ### Phase C — Canonicalization CI ✅
 
-- [x] [canonicalization-policy.md]](../policy/canonicalization-policy.md) 문서  
+- [x] [canonicalization-policy.md](../history/policy/canonicalization-policy.md) 문서  
 - [x] `dedupe_linter.dart` — 후보 제시만, 자동 merge 금지  
 - [x] `retire_work_ids.dart` — 중복 병합 (430작)  
 - [x] `franchise_groups` = `wk_` members 검증  
@@ -427,7 +427,7 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 |---|------|------|
 | D1 | 최종 목표 = **전 작품 사전** | 제품 비전 |
 | D2 | **샤딩 유지** + 해시 키로 전환 | 50만~100만, 지금 인프라 재사용 |
-| D3 | Tier 1 **`posterPath`·`description` 금지** (v1) | Fact index + 유저 vault — [product-vision.md]](../product-vision.md) |
+| D3 | Tier 1 **`posterPath`·`description` 금지** (v1) | Fact index + 유저 vault — [VISION.md](VISION.md) |
 | D4 | 볼트 `.md` **희소** | 아카이브한 작품만 |
 | D5 | `wk_` 영구 ID | 메타 변경 시 조인 유지 |
 | D6 | 장기 **Registry Pipeline** + AI | 수만 작품 인간 불가 |
@@ -440,15 +440,15 @@ legacy_aliases  ← sub_manga_one-piece_1997 → wk_00001234
 
 | 문서 | 내용 |
 |------|------|
-| [product-vision.md]](../product-vision.md) | **제품·Tier 1/2 SSOT** |
+| [VISION.md](VISION.md) | **제품·Tier 1/2 SSOT** |
 | [README.md](../README.md) | 「전 작품 사전」목표, 현재 엄선 단계 |
-| [ROADMAP.md](../ROADMAP.md) | 출시·데이터 백로그 |
-| [akasha-db-policy.md]](../akasha-db-policy.md) | 구축·운영·법무 마스터 |
-| [canonicalization-policy.md]](../policy/canonicalization-policy.md) | identity·dedupe 규칙 |
-| [catalog-ownership.md](catalog-ownership.md) | 3계층·소유권 |
-| [v4-migration-plan.md]](../archive/v4-migration-plan.md) | **Steam 전 실행 계획** |
+| [ROADMAP.md](ROADMAP.md) | 출시·데이터 백로그 |
+| [akasha-db-policy.md](../history/policy/akasha-db-policy.md) | 구축·운영·법무 마스터 |
+| [canonicalization-policy.md](../history/policy/canonicalization-policy.md) | identity·dedupe 규칙 |
+| [catalog-ownership.md](../history/policy/catalog-ownership.md) | 3계층·소유권 |
+| [v4-migration-plan.md](../history/v4-migration-plan.md) | **Steam 전 실행 계획** |
 | [akasha-db/SCHEMA.md](../akasha-db/SCHEMA.md) | v3 현재 · v4 `wk_`·해시 샤드 |
 
 ---
 
-*2026-06-10: Tier 1 poster·description 제거로 [product-vision.md]](../product-vision.md)와 정렬. 인프라(v4·샤딩·`wk_`)는 본 문서 기준 유지.*
+*2026-06-10: Tier 1 poster·description 제거로 [VISION.md](VISION.md)와 정렬. 인프라(v4·샤딩·`wk_`)는 본 문서 기준 유지.*
