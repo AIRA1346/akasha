@@ -6,6 +6,7 @@ import '../../home/home_poster_card_factory.dart';
 import '../../../widgets/universe_orbit_painter.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../widgets/poster_image.dart';
 import 'dashboard_preview_panel.dart';
 
 /// 시안 사진과 동일한 프리미엄 홈 대시보드 마스터 뷰.
@@ -272,9 +273,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () {
-            setState(() {
-              _selectedPreviewItem = item;
-            });
+            widget.onOpenWork(item);
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10), // inner radius
@@ -282,17 +281,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
               fit: StackFit.expand,
               children: [
                 // 1. 이미지 배경
-                if (item.posterPath != null && item.posterPath!.isNotEmpty)
-                  Image.network(
-                    item.posterPath!,
-                    headers: const {
-                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    },
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _buildPlaceholderPoster(item.category.name),
-                  )
-                else
-                  _buildPlaceholderPoster(item.category.name),
+                PosterImage(item: item, fit: BoxFit.cover),
 
                 // 2. 어두운 그라디언트 오버레이 (하단 가독성 확보)
                 Container(
@@ -803,11 +792,16 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
         onTap: () {
-          setState(() {
-            _selectedPreviewItem = item;
-          });
+          widget.onOpenWork(item);
         },
-        child: _buildDiscoveryThumb(item.title, item.posterPath ?? ''),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: SizedBox(
+            width: 52,
+            height: 52,
+            child: PosterImage(item: item, fit: BoxFit.cover),
+          ),
+        ),
       ),
     );
   }
@@ -975,9 +969,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           child: InkWell(
             borderRadius: BorderRadius.circular(8),
             onTap: () {
-              setState(() {
-                _selectedPreviewItem = work;
-              });
+              widget.onOpenWork(work);
             },
             child: Padding(
               padding: const EdgeInsets.all(4.0),
@@ -988,16 +980,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                     child: SizedBox(
                       width: 32,
                       height: 32,
-                      child: work.posterPath != null && work.posterPath!.isNotEmpty
-                          ? Image.network(
-                              work.posterPath!,
-                              headers: const {
-                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                              },
-                              fit: BoxFit.cover,
-                              errorBuilder: (_, __, ___) => Container(color: const Color(0xFF222533)),
-                            )
-                          : Container(color: const Color(0xFF222533)),
+                      child: PosterImage(item: work, fit: BoxFit.cover),
                     ),
                   ),
                   const SizedBox(width: 10),
