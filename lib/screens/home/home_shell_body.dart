@@ -21,7 +21,6 @@ import '../../models/personal_library_config.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/work_drag_payload.dart';
-import '../../services/entity_related_works_discovery.dart';
 import '../../services/file_service.dart';
 import '../../services/personal_library_membership_service.dart';
 import 'coordinators/home_shell_wiring.dart';
@@ -47,6 +46,8 @@ class HomeShellBody extends StatelessWidget {
   final bool isPersonalLibraryMode;
   final bool isCollectibleCollectionMode;
   final bool isTimelineMode;
+  final bool isExploreBrowseMode;
+  final bool isExploreModeActive;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
   final bool isCatalogLoadingMore;
@@ -70,6 +71,10 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onStateChanged;
   final VoidCallback onAddDashboard;
   final Future<void> Function(String id) onSelectDashboard;
+  final Future<void> Function() onGoHome;
+  final Future<void> Function() onGoExplore;
+  final Future<void> Function(BrowseEntityScope scope) onGoExploreEntities;
+  final VoidCallback onVaultSettings;
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
   final VoidCallback onAddPersonalLibrary;
@@ -137,6 +142,8 @@ class HomeShellBody extends StatelessWidget {
     required this.isPersonalLibraryMode,
     required this.isCollectibleCollectionMode,
     required this.isTimelineMode,
+    required this.isExploreBrowseMode,
+    required this.isExploreModeActive,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
     this.isCatalogLoadingMore = false,
@@ -160,6 +167,10 @@ class HomeShellBody extends StatelessWidget {
     required this.onStateChanged,
     required this.onAddDashboard,
     required this.onSelectDashboard,
+    required this.onGoHome,
+    required this.onGoExplore,
+    required this.onGoExploreEntities,
+    required this.onVaultSettings,
     required this.onEditDashboard,
     required this.onDeleteDashboard,
     required this.onAddPersonalLibrary,
@@ -223,6 +234,8 @@ class HomeShellBody extends StatelessWidget {
         DashboardSidebar(
           isOpen: isSidebarOpen,
           selectionMode: personalLibCtrl.sidebarMode,
+          isExploreMode: isExploreModeActive,
+          recentExploreItems: items,
           dashboards: dashboardCtrl.dashboards,
           activeDashboardId: dashboardCtrl.activeDashboardId,
           personalLibraries: personalLibCtrl.libraries,
@@ -231,6 +244,9 @@ class HomeShellBody extends StatelessWidget {
           activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
           onAddDashboard: onAddDashboard,
           onSelectDashboard: (id) => onSelectDashboard(id),
+          onGoHome: onGoHome,
+          onGoExplore: onGoExplore,
+          onOpenRecentExplore: onOpenBrowseItem,
           onEditDashboard: onEditDashboard,
           onDeleteDashboard: onDeleteDashboard,
           onAddPersonalLibrary: onAddPersonalLibrary,
@@ -252,7 +268,9 @@ class HomeShellBody extends StatelessWidget {
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
               if (!workbench.hasOpenWork) ...[
-                if (!isTimelineMode && !isCollectibleCollectionMode && (!hasNoFilters || isPersonalLibraryMode))
+                if (!isTimelineMode &&
+                    !isCollectibleCollectionMode &&
+                    (!hasNoFilters || isPersonalLibraryMode || isExploreBrowseMode))
                   FilterSection(
                     selectedDomain: filterCtrl.domain,
                     selectedCategories: filterCtrl.categories,
@@ -267,7 +285,9 @@ class HomeShellBody extends StatelessWidget {
                     onEntityScopeChanged: onEntityScopeChanged,
                     onAddNewEntity: onAddNewEntity,
                   ),
-                if (!isTimelineMode && !isCollectibleCollectionMode && (!hasNoFilters || isPersonalLibraryMode))
+                if (!isTimelineMode &&
+                    !isCollectibleCollectionMode &&
+                    (!hasNoFilters || isPersonalLibraryMode || isExploreBrowseMode))
                   const Divider(height: 1),
               ],
               if (!isPersonalLibraryMode &&
@@ -370,7 +390,7 @@ class HomeShellBody extends StatelessWidget {
         filterCtrl.myStatuses.isEmpty &&
         filterCtrl.highlightEntityId == null;
 
-    if (hasNoFilters) {
+    if (hasNoFilters && !isExploreBrowseMode) {
       return HomeDashboardView(
         vaultItems: items,
         userCatalog: userCatalog,
@@ -378,17 +398,9 @@ class HomeShellBody extends StatelessWidget {
         onOpenEntity: onOpenEntity,
         onSearch: onSearch,
         onTimeline: onSelectTimeline,
-        onGraph: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('지식 그래프 탐색 기능은 준비 중입니다.'),
-              duration: Duration(seconds: 2),
-            ),
-          );
-        },
-        onExploreEntities: () {
-          onEntityScopeChanged(BrowseEntityScope.all);
-        },
+        onGoExplore: onGoExplore,
+        onExploreEntities: () => onGoExploreEntities(BrowseEntityScope.person),
+        onVaultSettings: onVaultSettings,
       );
     }
 

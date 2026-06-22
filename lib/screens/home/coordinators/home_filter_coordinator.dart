@@ -80,4 +80,14 @@ class HomeFilterCoordinator {
   void setEntityScope(BrowseEntityScope scope) {
     filterCtrl.setEntityScope(scope);
   }
+
+  /// 프리미엄 홈 대시보드 진입용 — 필터를 모두 초기화하고 master 대시보드에 동기화.
+  void resetForHomeDashboard() {
+    filterCtrl.onDomainChanged(null);
+    filterCtrl.clearCategories();
+    filterCtrl.clearEntityHighlight();
+    filterCtrl.setEntityScope(BrowseEntityScope.all);
+    filterCtrl.syncToDashboard(dashboardCtrl);
+    dashboardCtrl.save();
+  }
 }

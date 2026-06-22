@@ -1,8 +1,10 @@
 import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../config/feature_flags.dart';
+import '../../theme/akasha_colors.dart';
 import '../../models/akasha_item.dart';
 import '../../models/user_catalog_entity.dart';
 import '../../models/browse_card.dart';
@@ -28,10 +30,7 @@ class HomeShellScaffold extends StatelessWidget {
             : const <BrowseCard>[])
         : controller.filteredBrowseCards;
 
-    final isHomeDashboard = !controller.isPersonalLibraryMode &&
-        !controller.isCollectibleCollectionMode &&
-        !controller.isTimelineMode &&
-        !controller.filterCtrl.hasAnyFilters;
+    final isHomeDashboard = controller.isHomeDashboardMode;
 
     return CallbackShortcuts(
       bindings: {
@@ -86,6 +85,8 @@ class HomeShellScaffold extends StatelessWidget {
               isPersonalLibraryMode: controller.isPersonalLibraryMode,
               isCollectibleCollectionMode: controller.isCollectibleCollectionMode,
               isTimelineMode: controller.isTimelineMode,
+              isExploreBrowseMode: controller.isExploreBrowseMode,
+              isExploreModeActive: controller.isExploreModeActive,
               isCuratedLibraryActive: controller.isCuratedLibraryActive,
               isCatalogLoading: controller.isCatalogLoading,
               isCatalogLoadingMore: controller.isCatalogLoadingMore,
@@ -114,6 +115,10 @@ class HomeShellScaffold extends StatelessWidget {
                 config: null,
                 setState: controller.wrapSetState,
               ),
+              onGoHome: controller.goHome,
+              onGoExplore: controller.goExplore,
+              onGoExploreEntities: controller.goExploreEntities,
+              onVaultSettings: controller.openVaultSettingsDialog,
               onSelectDashboard: controller.selectDashboard,
               onEditDashboard: (dash) => controller.dashboardUi.showEditDialog(
                 controller.host.context,
@@ -249,9 +254,8 @@ class HomeShellScaffold extends StatelessWidget {
   }
 
   Widget _buildBottomNavigationBar(BuildContext context) {
-    final isHome = !controller.isPersonalLibraryMode &&
-        !controller.isCollectibleCollectionMode &&
-        !controller.isTimelineMode;
+    final isHome = controller.isHomeDashboardMode;
+    final isExplore = controller.isExploreModeActive;
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
@@ -262,7 +266,7 @@ class HomeShellScaffold extends StatelessWidget {
           child: Container(
             height: 64,
             decoration: BoxDecoration(
-              color: const Color(0xFF161824).withValues(alpha: 0.65), // 반투명 다크 블루
+              color: AkashaColors.surface.withValues(alpha: 0.65),
               borderRadius: BorderRadius.circular(30),
               border: Border.all(
                 color: Colors.white.withValues(alpha: 0.08),
@@ -283,22 +287,13 @@ class HomeShellScaffold extends StatelessWidget {
                   icon: Icons.home_filled,
                   label: '홈',
                   isSelected: isHome,
-                  onTap: () {
-                    controller.filterCtrl.clearCategories();
-                    controller.filterCtrl.onDomainChanged(null);
-                    if (!isHome) {
-                      controller.selectDashboard('master_index');
-                    }
-                    controller.rebuild();
-                  },
+                  onTap: () => controller.goHome(),
                 ),
                 _buildBottomTabItem(
                   icon: Icons.explore_outlined,
                   label: '탐색',
-                  isSelected: false,
-                  onTap: () {
-                    controller.onEntityScopeChanged(BrowseEntityScope.all);
-                  },
+                  isSelected: isExplore,
+                  onTap: () => controller.goExplore(),
                 ),
                 GestureDetector(
                   onTap: controller.openSearchDialog,
@@ -309,13 +304,13 @@ class HomeShellScaffold extends StatelessWidget {
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFF6C63FF),
-                          Color(0xFF4D3FC3),
+                          AkashaColors.accent,
+                          AkashaColors.accentDark,
                         ],
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFF6C63FF),
+                          color: AkashaColors.accent,
                           blurRadius: 12,
                           spreadRadius: 1,
                           offset: Offset(0, 3),
@@ -369,7 +364,7 @@ class HomeShellScaffold extends StatelessWidget {
     required bool isSelected,
     required VoidCallback onTap,
   }) {
-    final color = isSelected ? const Color(0xFF6C63FF) : Colors.grey[500];
+    final color = isSelected ? AkashaColors.accent : Colors.grey[500];
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),

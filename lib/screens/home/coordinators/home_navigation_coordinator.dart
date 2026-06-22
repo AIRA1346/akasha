@@ -1,3 +1,4 @@
+import '../../../models/browse_entity_scope.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../home_sidebar_preferences.dart';
 import 'home_filter_coordinator.dart';
@@ -15,6 +16,8 @@ class HomeNavigationCoordinator {
     required this.rebuild,
   });
 
+  static const String homeDashboardId = 'master_index';
+
   final bool Function() isMounted;
   final void Function(void Function()) scheduleRebuild;
   final HomeSidebarCoordinator sidebarCoordinator;
@@ -26,6 +29,9 @@ class HomeNavigationCoordinator {
   bool isSidebarOpen = true;
   int timelineReloadToken = 0;
 
+  /// master_index에서 browse 그리드를 보여줄 때 true (프리미엄 홈 대시보드 대신).
+  bool isExploreBrowseMode = false;
+
   bool get isPersonalLibraryMode => sidebarCoordinator.isPersonalLibraryMode;
   bool get isCollectibleCollectionMode =>
       sidebarCoordinator.isCollectibleCollectionMode;
@@ -34,6 +40,22 @@ class HomeNavigationCoordinator {
   /// Wave 3 alias — 「기록」축 (timeline + journal).
   bool get isRecordsMode => isTimelineMode;
   bool get isCuratedLibraryActive => sidebarCoordinator.isCuratedLibraryActive;
+
+  bool get isOnMasterDashboard =>
+      sidebarCoordinator.dashboardCtrl.activeDashboardId == homeDashboardId &&
+      !isPersonalLibraryMode &&
+      !isCollectibleCollectionMode &&
+      !isTimelineMode;
+
+  /// 프리미엄 홈 대시보드(환영·계속 탐험하기) 표시 조건.
+  bool get isHomeDashboardMode =>
+      isOnMasterDashboard &&
+      !isExploreBrowseMode &&
+      !filterCoordinator.filterCtrl.hasAnyFilters;
+
+  /// browse 그리드 탐색 모드.
+  bool get isExploreModeActive =>
+      isOnMasterDashboard && isExploreBrowseMode;
 
   Future<void> loadSidebarState() async {
     final open = await HomeSidebarPreferences.loadOpen();
@@ -69,6 +91,40 @@ class HomeNavigationCoordinator {
   Future<void> selectDashboard(String id) async {
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
+      isExploreBrowseMode = false;
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
+  }
+
+  /// 프리미엄 홈 대시보드로 이동.
+  Future<void> goHome() async {
+    scheduleRebuild(() {
+      isExploreBrowseMode = false;
+      sidebarCoordinator.selectDashboard(homeDashboardId);
+      filterCoordinator.resetForHomeDashboard();
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
+  }
+
+  /// 작품 browse 그리드 탐색 모드.
+  Future<void> goExplore() async {
+    scheduleRebuild(() {
+      isExploreBrowseMode = true;
+      sidebarCoordinator.selectDashboard(homeDashboardId);
+      filterCoordinator.setEntityScope(BrowseEntityScope.all);
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
+  }
+
+  /// 엔티티 갤러리 탐색 모드.
+  Future<void> goExploreEntities(BrowseEntityScope scope) async {
+    scheduleRebuild(() {
+      isExploreBrowseMode = true;
+      sidebarCoordinator.selectDashboard(homeDashboardId);
+      filterCoordinator.setEntityScope(scope);
       workbench.showBrowse();
     });
     await prefetchRegistry();
@@ -76,6 +132,7 @@ class HomeNavigationCoordinator {
 
   void selectPersonalLibrary(String id) {
     scheduleRebuild(() {
+      isExploreBrowseMode = false;
       sidebarCoordinator.selectPersonalLibrary(id);
       workbench.showBrowse();
     });
@@ -83,6 +140,7 @@ class HomeNavigationCoordinator {
 
   void selectCollectibleCollection(String id) {
     scheduleRebuild(() {
+      isExploreBrowseMode = false;
       sidebarCoordinator.selectCollectibleCollection(id);
       workbench.showBrowse();
     });
@@ -90,6 +148,7 @@ class HomeNavigationCoordinator {
 
   void selectTimeline() {
     scheduleRebuild(() {
+      isExploreBrowseMode = false;
       sidebarCoordinator.selectTimeline();
       workbench.showBrowse();
     });
@@ -106,6 +165,7 @@ class HomeNavigationCoordinator {
     scheduleRebuild(() {
       timelineReloadToken++;
       sidebarCoordinator.selectTimeline();
+      isExploreBrowseMode = false;
       workbench.showBrowse();
     });
   }

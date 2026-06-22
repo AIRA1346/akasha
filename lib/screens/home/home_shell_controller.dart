@@ -231,6 +231,9 @@ class HomeShellController {
   bool get isTimelineMode => navigation.isTimelineMode;
   bool get isRecordsMode => navigation.isRecordsMode;
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;
+  bool get isHomeDashboardMode => navigation.isHomeDashboardMode;
+  bool get isExploreBrowseMode => navigation.isExploreBrowseMode;
+  bool get isExploreModeActive => navigation.isExploreModeActive;
   bool get canAddToLibrary => browse.canAddToLibrary;
 
   PersonalLibraryMembershipService get libraryMembership =>
@@ -328,6 +331,10 @@ class HomeShellController {
   Future<void> loadCollectibleCollections() =>
       navigation.loadCollectibleCollections();
   Future<void> selectDashboard(String id) => navigation.selectDashboard(id);
+  Future<void> goHome() => navigation.goHome();
+  Future<void> goExplore() => navigation.goExplore();
+  Future<void> goExploreEntities(BrowseEntityScope scope) =>
+      navigation.goExploreEntities(scope);
   void selectPersonalLibrary(String id) => navigation.selectPersonalLibrary(id);
   void selectCollectibleCollection(String id) =>
       navigation.selectCollectibleCollection(id);

@@ -1,3 +1,4 @@
+import '../../../theme/akasha_colors.dart';
 import 'package:flutter/material.dart';
 import '../../../models/akasha_item.dart';
 import '../../../widgets/poster_image.dart';
@@ -19,7 +20,7 @@ class DashboardPreviewPanel extends StatelessWidget {
     return Container(
       width: 320,
       decoration: BoxDecoration(
-        color: const Color(0xFF161824),
+        color: AkashaColors.surface,
         border: Border(
           left: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
         ),
@@ -108,7 +109,7 @@ class DashboardPreviewPanel extends StatelessWidget {
                         child: FilledButton(
                           onPressed: onOpenDetail,
                           style: FilledButton.styleFrom(
-                            backgroundColor: const Color(0xFF6C63FF),
+                            backgroundColor: AkashaColors.accent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -120,32 +121,6 @@ class DashboardPreviewPanel extends StatelessWidget {
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                             ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          item.isHallOfFame ? Icons.favorite : Icons.favorite_border,
-                          size: 20,
-                          color: item.isHallOfFame ? Colors.redAccent : Colors.grey[400],
-                        ),
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white.withValues(alpha: 0.05),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.more_horiz_rounded, size: 20),
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white.withValues(alpha: 0.05),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                       ),
@@ -178,22 +153,6 @@ class DashboardPreviewPanel extends StatelessWidget {
                     const SizedBox(height: 32),
                   ],
 
-                  // 9. 그래프에서 보기 버튼
-                  SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.hub_outlined, size: 16),
-                      label: const Text('그래프에서 보기'),
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFF6C63FF),
-                        side: const BorderSide(color: Color(0xFF6C63FF)),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                    ),
-                  ),
                   const SizedBox(height: 24),
                 ],
               ),

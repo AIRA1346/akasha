@@ -3,6 +3,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../theme/akasha_colors.dart';
+
 /// 지식 우주 현황을 시각화하는 공전 궤도 애니메이션 위젯.
 class UniverseOrbitWidget extends StatefulWidget {
   const UniverseOrbitWidget({
@@ -87,7 +89,7 @@ class _UniverseOrbitPainter extends CustomPainter {
 
     // 우주 먼지 / 미세 배경 그리드 데코레이션
     final bgPaint = Paint()
-      ..color = const Color(0xFF1E1E2E).withValues(alpha: 0.1)
+      ..color = AkashaColors.surfaceElevated.withValues(alpha: 0.1)
       ..strokeWidth = 1.0
       ..style = PaintingStyle.stroke;
     canvas.drawCircle(center, size.height * 0.45, bgPaint);
@@ -126,7 +128,7 @@ class _UniverseOrbitPainter extends CustomPainter {
         tiltAngle: -math.pi / 10,
         speedFactor: 1.5,
         phase: 0.0,
-        color: const Color(0xFF6C63FF), // Indigo
+        color: AkashaColors.accent,
         staticPos: Offset(centerX - r * 2.3, centerY - r * 0.6),
       ),
       _OrbitData(
@@ -137,7 +139,7 @@ class _UniverseOrbitPainter extends CustomPainter {
         tiltAngle: -math.pi / 28,
         speedFactor: -1.0,
         phase: math.pi / 3,
-        color: const Color(0xFF00E5FF), // Aqua
+        color: AkashaColors.personAccent,
         staticPos: Offset(centerX + r * 1.6, centerY - r * 0.6),
       ),
       _OrbitData(
@@ -148,7 +150,7 @@ class _UniverseOrbitPainter extends CustomPainter {
         tiltAngle: math.pi / 8,
         speedFactor: 2.2,
         phase: math.pi * 0.8,
-        color: const Color(0xFFFFB74D), // Yellow Orange
+        color: AkashaColors.placeAccent,
         staticPos: Offset(centerX - r * 2.0, centerY + r * 0.65),
       ),
       _OrbitData(
@@ -159,7 +161,7 @@ class _UniverseOrbitPainter extends CustomPainter {
         tiltAngle: math.pi / 16,
         speedFactor: -0.7,
         phase: math.pi * 1.3,
-        color: const Color(0xFF81C784), // Light Green
+        color: AkashaColors.eventAccent,
         staticPos: Offset(centerX + r * 1.3, centerY + r * 0.65),
       ),
     ];
