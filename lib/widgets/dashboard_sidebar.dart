@@ -324,14 +324,6 @@ class DashboardSidebar extends StatelessWidget {
   }
 
   Widget _buildRecentExplore() {
-    final recentItems = [
-      _RecentData(title: 'Re:제로부터 시작하는 이세계 생활', category: '작품'),
-      _RecentData(title: '에밀리아', category: '인물'),
-      _RecentData(title: '마녀교', category: '개념'),
-      _RecentData(title: '프리실라 바리에르', category: '인물'),
-      _RecentData(title: '루그니카 왕국', category: '장소'),
-    ];
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -347,64 +339,25 @@ class DashboardSidebar extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          ...recentItems.map((item) {
-            IconData icon;
-            Color iconColor;
-            if (item.category == '인물') {
-              icon = Icons.person_outline_rounded;
-              iconColor = const Color(0xFF00E5FF);
-            } else if (item.category == '개념') {
-              icon = Icons.psychology_outlined;
-              iconColor = const Color(0xFFFFB74D);
-            } else if (item.category == '장소') {
-              icon = Icons.place_outlined;
-              iconColor = const Color(0xFF81C784);
-            } else {
-              icon = Icons.movie_outlined;
-              iconColor = const Color(0xFF6C63FF);
-            }
-
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Row(
-                children: [
-                  Icon(icon, size: 14, color: iconColor),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      item.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.grey[300],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 6),
-                  Text(
-                    item.category,
-                    style: TextStyle(
-                      fontSize: 8,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text(
+              '최근 탐색 기록이 없습니다.',
+              style: TextStyle(
+                fontSize: 11,
+                color: Colors.grey[600],
               ),
-            );
-          }),
+            ),
+          ),
         ],
       ),
     );
   }
 
   Widget _buildMyCollections() {
-    final collections = [
-      _ColData(title: '최애 애니', count: 128),
-      _ColData(title: 'Type-Moon Universe', count: 54),
-      _ColData(title: '라이트노벨', count: 313),
-      _ColData(title: '인상 깊은 캐릭터', count: 87),
-    ];
+    if (collectibleCollections.isEmpty) {
+      return const SizedBox.shrink();
+    }
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -433,38 +386,48 @@ class DashboardSidebar extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          ...collections.map((col) {
+          ...collectibleCollections.take(5).map((col) {
+            final isActive = selectionMode == SidebarSelectionMode.collectibleCollection &&
+                activeCollectibleCollectionId == col.id;
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.folder_open_outlined,
-                    size: 14,
-                    color: Colors.grey[400],
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      col.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.grey[300],
+              child: InkWell(
+                onTap: () => onSelectCollectibleCollection(col.id),
+                borderRadius: BorderRadius.circular(4),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.folder_open_outlined,
+                        size: 14,
+                        color: isActive ? collectionAccent : Colors.grey[400],
                       ),
-                    ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          col.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: isActive ? Colors.white : Colors.grey[300],
+                            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        col.isCurated ? '${col.memberOrder.length}' : '필터',
+                        style: TextStyle(
+                          fontSize: 9,
+                          color: Colors.grey[500],
+                          fontFamily: 'Consolas',
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 6),
-                  Text(
-                    '${col.count}',
-                    style: TextStyle(
-                      fontSize: 9,
-                      color: Colors.grey[500],
-                      fontFamily: 'Consolas',
-                    ),
-                  ),
-                ],
+                ),
               ),
             );
           }),

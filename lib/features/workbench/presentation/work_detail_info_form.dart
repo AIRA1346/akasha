@@ -59,12 +59,9 @@ class WorkDetailInfoForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isReZero = item.title.contains('Re:제로') || item.workId.contains('rezero');
-
-    // 1. 시안용 메타데이터 (Re:제로일 경우 100% 매칭, 타 작품은 폴백)
-    final japaneseTitle = isReZero ? 'Re:ゼロから始める異世界生活' : (item.creator.isNotEmpty ? item.creator : 'Original Work');
-    final metaLineText = isReZero ? '2016 · 애니메이션 · 2시즌' : metaLine;
-    final ratingCountText = isReZero ? '(1.2K)' : '';
+    // 1. 시안용 메타데이터
+    final alternativeTitle = item.creator.isNotEmpty ? item.creator : 'Original Work';
+    final metaLineText = metaLine;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -88,11 +85,12 @@ class WorkDetailInfoForm extends StatelessWidget {
         ),
         const SizedBox(height: 4),
 
-        // 일어 원제 / 서브 정보
-        Text(
-          japaneseTitle,
-          style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-        ),
+        // 대체 타이틀 / 서브 정보
+        if (alternativeTitle.isNotEmpty)
+          Text(
+            alternativeTitle,
+            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+          ),
         const SizedBox(height: 2),
         Text(
           metaLineText,
@@ -138,25 +136,25 @@ class WorkDetailInfoForm extends StatelessWidget {
         // 핵심 정보 테이블
         _buildSectionHeader('핵심 정보'),
         const SizedBox(height: 8),
-        _buildInfoTable(isReZero),
+        _buildInfoTable(),
         const SizedBox(height: 20),
 
         // 주요 인물
         _buildSectionHeader('주요 인물'),
         const SizedBox(height: 8),
-        _buildKeyCharacters(isReZero),
+        _buildKeyCharacters(),
         const SizedBox(height: 20),
 
         // 관련 개념
         _buildSectionHeader('태그'),
         const SizedBox(height: 8),
-        _buildRelatedConcepts(isReZero),
+        _buildRelatedConcepts(),
         const SizedBox(height: 20),
 
         // 연결된 작품
         _buildSectionHeader('연결된 작품'),
         const SizedBox(height: 8),
-        _buildConnectedWorks(isReZero),
+        _buildConnectedWorks(),
         const SizedBox(height: 16),
 
         // 그래프에서 보기 버튼
@@ -197,11 +195,11 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoTable(bool isReZero) {
-    final genre = isReZero ? '다크 판타지, 이세계' : '정보 없음';
-    final creator = isReZero ? '나가츠키 텟페이' : (item.creator.isNotEmpty ? item.creator : '정보 없음');
-    final studio = isReZero ? 'White Fox' : '정보 없음';
-    final ratingValue = isReZero ? '8.6' : draftRating.toStringAsFixed(1);
+  Widget _buildInfoTable() {
+    final genre = item.category.name;
+    final creator = item.creator.isNotEmpty ? item.creator : '정보 없음';
+    final studio = '정보 없음';
+    final ratingValue = draftRating > 0 ? draftRating.toStringAsFixed(1) : '평가 없음';
 
     return Table(
       columnWidths: {
@@ -230,10 +228,6 @@ class WorkDetailInfoForm extends StatelessWidget {
               ratingValue,
               style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
             ),
-            if (isReZero) ...[
-              const SizedBox(width: 4),
-              Text('(1.2K)', style: TextStyle(fontSize: 9, color: Colors.grey[500])),
-            ],
           ],
         )),
       ],
@@ -261,17 +255,10 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildKeyCharacters(bool isReZero) {
-    final characters = isReZero
-        ? [
-            _CharData('나츠키 스바루', '주인공'),
-            _CharData('에밀리아', '여주인공'),
-            _CharData('렘', '메이드'),
-            _CharData('베아트리스', '정령'),
-          ]
-        : [
-            _CharData('주요 인물', '캐릭터'),
-          ];
+  Widget _buildKeyCharacters() {
+    final characters = [
+      _CharData('인물 정보 없음', '캐릭터'),
+    ];
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -306,8 +293,8 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildRelatedConcepts(bool isReZero) {
-    final concepts = isReZero ? ['마녀교', '사망 회귀', '마녀', '성역'] : draftTags;
+  Widget _buildRelatedConcepts() {
+    final concepts = draftTags;
     if (concepts.isEmpty) {
       return Text('설정된 태그가 없습니다', style: TextStyle(fontSize: 10, color: Colors.grey[600]));
     }
@@ -362,16 +349,10 @@ class WorkDetailInfoForm extends StatelessWidget {
     }
   }
 
-  Widget _buildConnectedWorks(bool isReZero) {
-    final works = isReZero
-        ? [
-            _ConnectedData('무직전생', '서사적 유사성 92%', 'https://images.justwatch.com/poster/245388040/s592/mujikjeonsaeng-sinsunghamyeon-ddanpanaji-ganda.jpg'),
-            _ConnectedData('소드 아트 온라인', '세계관 유사성 85%', 'https://images.justwatch.com/poster/8547437/s592/sodeu-ateu-onlain.jpg'),
-            _ConnectedData('오버로드', '테마 유사성 78%', 'https://images.justwatch.com/poster/11269094/s592/obeolodeu.jpg'),
-          ]
-        : [
-            _ConnectedData('유사 작품', '유사성 70%', ''),
-          ];
+  Widget _buildConnectedWorks() {
+    final works = [
+      _ConnectedData('연결된 작품 없음', '', ''),
+    ];
 
     return Column(
       children: works.map((w) {
@@ -406,17 +387,18 @@ class WorkDetailInfoForm extends StatelessWidget {
                   style: const TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.w500),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1B1D2A),
-                  borderRadius: BorderRadius.circular(4),
+              if (w.match.isNotEmpty)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1B1D2A),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Text(
+                    w.match,
+                    style: TextStyle(fontSize: 8, color: Colors.grey[400], fontWeight: FontWeight.bold),
+                  ),
                 ),
-                child: Text(
-                  w.match,
-                  style: TextStyle(fontSize: 8, color: Colors.grey[400], fontWeight: FontWeight.bold),
-                ),
-              ),
             ],
           ),
         );

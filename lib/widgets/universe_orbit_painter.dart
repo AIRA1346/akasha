@@ -1,9 +1,22 @@
 import 'dart:math' as math;
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 /// 지식 우주 현황을 시각화하는 공전 궤도 애니메이션 위젯.
 class UniverseOrbitWidget extends StatefulWidget {
-  const UniverseOrbitWidget({super.key});
+  const UniverseOrbitWidget({
+    super.key,
+    required this.workCount,
+    required this.personCount,
+    required this.placeCount,
+    required this.eventCount,
+  });
+
+  final int workCount;
+  final int personCount;
+  final int placeCount;
+  final int eventCount;
 
   @override
   State<UniverseOrbitWidget> createState() => _UniverseOrbitWidgetState();
@@ -35,7 +48,13 @@ class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
       builder: (context, child) {
         return CustomPaint(
           size: const Size(double.infinity, 320),
-          painter: _UniverseOrbitPainter(progress: _controller.value),
+          painter: _UniverseOrbitPainter(
+            progress: _controller.value,
+            workCount: widget.workCount,
+            personCount: widget.personCount,
+            placeCount: widget.placeCount,
+            eventCount: widget.eventCount,
+          ),
         );
       },
     );
@@ -43,9 +62,19 @@ class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
 }
 
 class _UniverseOrbitPainter extends CustomPainter {
-  _UniverseOrbitPainter({required this.progress});
+  _UniverseOrbitPainter({
+    required this.progress,
+    required this.workCount,
+    required this.personCount,
+    required this.placeCount,
+    required this.eventCount,
+  });
 
   final double progress;
+  final int workCount;
+  final int personCount;
+  final int placeCount;
+  final int eventCount;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -84,11 +113,14 @@ class _UniverseOrbitPainter extends CustomPainter {
       ).createShader(Rect.fromCircle(center: center, radius: 12));
     canvas.drawCircle(center, 12, sunCorePaint);
 
+    // 포맷팅 (1,000 이상 콤마)
+    final fmt = NumberFormat('#,###');
+
     // 2. 궤도 파라미터 정의 (고정 비율화 및 대칭 정적 위치 매핑)
     final orbits = [
       _OrbitData(
         label: '작품',
-        count: '10,048',
+        count: fmt.format(workCount),
         a: r * 2.1,
         b: r * 0.85,
         tiltAngle: -math.pi / 10,
@@ -99,7 +131,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       ),
       _OrbitData(
         label: '인물',
-        count: '38,742',
+        count: fmt.format(personCount),
         a: r * 2.5,
         b: r * 1.05,
         tiltAngle: -math.pi / 28,
@@ -110,7 +142,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       ),
       _OrbitData(
         label: '장소',
-        count: '2,341',
+        count: fmt.format(placeCount),
         a: r * 1.7,
         b: r * 0.65,
         tiltAngle: math.pi / 8,
@@ -121,7 +153,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       ),
       _OrbitData(
         label: '사건',
-        count: '5,812',
+        count: fmt.format(eventCount),
         a: r * 2.8,
         b: r * 1.25,
         tiltAngle: math.pi / 16,
@@ -189,7 +221,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       );
       final countPainter = TextPainter(
         text: countSpan,
-        textDirection: TextDirection.ltr,
+        textDirection: ui.TextDirection.ltr,
       )..layout();
 
       // 카테고리 텍스트
@@ -203,7 +235,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       );
       final labelPainter = TextPainter(
         text: labelSpan,
-        textDirection: TextDirection.ltr,
+        textDirection: ui.TextDirection.ltr,
       )..layout();
 
       // 카테고리 라벨 그리기 (위쪽)
@@ -222,7 +254,11 @@ class _UniverseOrbitPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _UniverseOrbitPainter oldDelegate) {
-    return oldDelegate.progress != progress;
+    return oldDelegate.progress != progress ||
+           oldDelegate.workCount != workCount ||
+           oldDelegate.personCount != personCount ||
+           oldDelegate.placeCount != placeCount ||
+           oldDelegate.eventCount != eventCount;
   }
 }
 

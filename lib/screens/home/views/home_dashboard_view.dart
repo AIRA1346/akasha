@@ -4,78 +4,85 @@ import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../home/home_poster_card_factory.dart';
 import '../../../widgets/universe_orbit_painter.dart';
+import '../../../core/ports/user_catalog_port.dart';
+import '../../../core/archiving/entity_anchor.dart';
+import 'dashboard_preview_panel.dart';
 
 /// 시안 사진과 동일한 프리미엄 홈 대시보드 마스터 뷰.
 class HomeDashboardView extends StatefulWidget {
   const HomeDashboardView({
     super.key,
     required this.vaultItems,
+    required this.userCatalog,
     required this.onOpenWork,
     required this.onOpenEntity,
     required this.onSearch,
     required this.onTimeline,
     required this.onGraph,
     required this.onExploreEntities,
+    this.selectedPreviewItem,
+    this.onPreviewItem,
+    this.onClosePreview,
   });
 
   final List<AkashaItem> vaultItems;
+  final UserCatalogPort userCatalog;
   final void Function(AkashaItem) onOpenWork;
   final void Function(UserCatalogEntity) onOpenEntity;
   final VoidCallback onSearch;
   final VoidCallback onTimeline;
   final VoidCallback onGraph;
   final VoidCallback onExploreEntities;
+  final AkashaItem? selectedPreviewItem;
+  final void Function(AkashaItem)? onPreviewItem;
+  final VoidCallback? onClosePreview;
 
   @override
   State<HomeDashboardView> createState() => _HomeDashboardViewState();
 }
 
 class _HomeDashboardViewState extends State<HomeDashboardView> {
-  int _activeDiscoveryTab = 0; // 0: 추천 연결, 1: 새로운 작품, 2: 주목할 인물
+  int _activeDiscoveryTab = 0;
+  AkashaItem? _selectedPreviewItem; // 0: 추천 연결, 1: 새로운 작품, 2: 주목할 인물
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFF0A0B10), // Deep Space Black
-            Color(0xFF11131E), // Dark Navy
-          ],
-        ),
+        color: Color(0xFF0F111A), // 매우 어두운 네이비톤 배경
       ),
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // 0. 최상단 검색창 및 프로필 탑바 UI
-            _buildTopSearchBar(),
-            const SizedBox(height: 24),
-
-            // 1. 환영 인사말
-            _buildWelcomeHeader(),
-            const SizedBox(height: 28),
-
-            // 2. 계속 탐험하기
-            _buildContinueExploring(),
-            const SizedBox(height: 36),
-
-            // 3. 발견의 여정
-            _buildDiscoveryJourney(),
-            const SizedBox(height: 36),
-
-            // 4. 지식 우주 현황 & 최근 추가된 작품 (가로 2열 배치)
-            _buildUniverseAndRecentlyAdded(),
-            const SizedBox(height: 36),
-
-            // 5. 빠른 액션
-            _buildQuickActions(),
-            const SizedBox(height: 48),
-          ],
-        ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _buildTopSearchBar(),
+                  const SizedBox(height: 40),
+                  _buildWelcomeHeader(),
+                  const SizedBox(height: 28),
+                  _buildContinueExploring(),
+                  const SizedBox(height: 40),
+                  _buildDiscoveryJourney(),
+                  const SizedBox(height: 40),
+                  _buildUniverseAndRecentlyAdded(),
+                  const SizedBox(height: 40),
+                  _buildQuickActions(),
+                  const SizedBox(height: 80),
+                ],
+              ),
+            ),
+          ),
+          if (_selectedPreviewItem != null)
+            DashboardPreviewPanel(
+              item: _selectedPreviewItem!,
+              onClose: () => setState(() => _selectedPreviewItem = null),
+              onOpenDetail: () => widget.onOpenWork(_selectedPreviewItem!),
+            ),
+        ],
       ),
     );
   }
@@ -216,33 +223,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
   }
 
   Widget _buildContinueExploring() {
-    // 목업 리스트
-    final mockCards = [
-      _ContinueExploreData(
-        title: 'Re:제로부터 시작하는 이세계 생활',
-        category: '작품',
-        exploreRate: 0.78,
-        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
-      ),
-      _ContinueExploreData(
-        title: '에밀리아',
-        category: '인물',
-        exploreRate: 0.45,
-        imageUrl: 'https://images.justwatch.com/poster/305740706/s592/re-zero-starting-life-in-another-world-the-frozen-bond.jpg',
-      ),
-      _ContinueExploreData(
-        title: '마녀교',
-        category: '개념',
-        exploreRate: 0.62,
-        imageUrl: 'https://images.justwatch.com/poster/239726211/s592/re-zero-starting-life-in-another-world-season-2.jpg',
-      ),
-      _ContinueExploreData(
-        title: '프리실라 바리에르',
-        category: '인물',
-        exploreRate: 0.33,
-        imageUrl: 'https://images.justwatch.com/poster/317585489/s592/re-zero-starting-life-in-another-world-season-3.jpg',
-      ),
-    ];
+    final sortedItems = List<AkashaItem>.from(widget.vaultItems)
+      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+    final recentItems = sortedItems.take(4).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -261,7 +244,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              ...mockCards.map((card) => _buildExploreCard(card)),
+              ...recentItems.map((item) => _buildExploreCard(item)),
               _buildAddExploreCard(),
             ],
           ),
@@ -270,7 +253,11 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
     );
   }
 
-  Widget _buildExploreCard(_ContinueExploreData data) {
+  Widget _buildExploreCard(AkashaItem item) {
+    // 임시 탐색률 산출
+    final exploreRate = (item.review.length / 500).clamp(0.1, 1.0);
+    final isSelected = _selectedPreviewItem?.workId == item.workId;
+
     return Container(
       width: 145,
       margin: const EdgeInsets.only(right: 12),
@@ -278,107 +265,119 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         color: const Color(0xFF161824),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withValues(alpha: 0.08),
+          color: isSelected ? const Color(0xFF6C63FF) : Colors.white.withValues(alpha: 0.08),
+          width: isSelected ? 2.0 : 1.0,
         ),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            // 1. 이미지 배경
-            if (data.imageUrl.isNotEmpty)
-              Image.network(
-                data.imageUrl,
-                headers: const {
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                },
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => _buildPlaceholderPoster(data.category),
-              )
-            else
-              _buildPlaceholderPoster(data.category),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(10),
+          onTap: () {
+            setState(() {
+              _selectedPreviewItem = item;
+            });
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10), // inner radius
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                // 1. 이미지 배경
+                if (item.posterPath != null && item.posterPath!.isNotEmpty)
+                  Image.network(
+                    item.posterPath!,
+                    headers: const {
+                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    },
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => _buildPlaceholderPoster(item.category.name),
+                  )
+                else
+                  _buildPlaceholderPoster(item.category.name),
 
-            // 2. 어두운 그라디언트 오버레이 (하단 가독성 확보)
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withValues(alpha: 0.0),
-                    Colors.black.withValues(alpha: 0.85),
-                  ],
-                  stops: const [0.35, 1.0],
+                // 2. 어두운 그라디언트 오버레이 (하단 가독성 확보)
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withValues(alpha: 0.0),
+                        Colors.black.withValues(alpha: 0.85),
+                      ],
+                      stops: const [0.35, 1.0],
+                    ),
+                  ),
                 ),
-              ),
-            ),
 
-            // 3. 텍스트 및 배지 오버레이
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  // 카테고리 태그 칩
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: _getCategoryColor(data.category).withValues(alpha: 0.85),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Text(
-                      data.category,
-                      style: const TextStyle(
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    data.title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Row(
+                // 3. 텍스트 및 배지 오버레이
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(2),
-                          child: LinearProgressIndicator(
-                            value: data.exploreRate,
-                            minHeight: 3,
-                            backgroundColor: Colors.white.withValues(alpha: 0.15),
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              _getCategoryColor(data.category),
-                            ),
+                      // 카테고리 태그 칩
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: _getCategoryColor(item.category.name).withValues(alpha: 0.85),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          item.category.name,
+                          style: const TextStyle(
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      const SizedBox(height: 6),
                       Text(
-                        '${(data.exploreRate * 100).toInt()}% 탐색',
-                        style: TextStyle(
-                          fontSize: 9,
+                        item.title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 11,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey[300],
+                          color: Colors.white,
                         ),
+                      ),
+                      const SizedBox(height: 6),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(2),
+                              child: LinearProgressIndicator(
+                                value: exploreRate,
+                                minHeight: 3,
+                                backgroundColor: Colors.white.withValues(alpha: 0.15),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  _getCategoryColor(item.category.name),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            '${(exploreRate * 100).toInt()}% 탐색',
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[300],
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -488,40 +487,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         ),
         const SizedBox(height: 12),
         Row(
-          children: [
-            Expanded(
-              child: _buildDiscoveryCard(
-                title: '서사적 유사성',
-                rate: '92%',
-                leftTitle: 'Re:제로부터 시작하는 이세계 생활',
-                rightTitle: '무직전생',
-                leftImg: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
-                rightImg: 'https://images.justwatch.com/poster/245388040/s592/mujikjeonsaeng-sinsunghamyeon-ddanpanaji-ganda.jpg',
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: _buildDiscoveryCard(
-                title: '캐릭터 유사성',
-                rate: '89%',
-                leftTitle: '에밀리아',
-                rightTitle: '알베도',
-                leftImg: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
-                rightImg: 'https://images.justwatch.com/poster/11269094/s592/obeolodeu.jpg',
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: _buildDiscoveryCard(
-                title: '개념적 연결',
-                rate: '85%',
-                leftTitle: '마녀교',
-                rightTitle: '아카식 레코드',
-                leftImg: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
-                rightImg: 'https://images.justwatch.com/poster/308119864/s592/jangsongui-peulilen.jpg',
-              ),
-            ),
-          ],
+          children: _buildDiscoveryContent(),
         ),
         const SizedBox(height: 12),
         Center(
@@ -543,36 +509,124 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
 
   Widget _buildTabButton(int index, String label) {
     final isActive = _activeDiscoveryTab == index;
-    return Padding(
-      padding: const EdgeInsets.only(left: 12),
-      child: TextButton(
-        onPressed: () => setState(() => _activeDiscoveryTab = index),
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          backgroundColor: isActive ? const Color(0xFF1B1D2A) : Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6),
-          ),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 11,
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-            color: isActive ? const Color(0xFF6C63FF) : Colors.grey[500],
-          ),
+    return TextButton(
+      onPressed: () => setState(() => _activeDiscoveryTab = index),
+      style: TextButton.styleFrom(
+        foregroundColor: isActive ? Colors.white : Colors.grey[600],
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
         ),
       ),
     );
   }
 
+  List<Widget> _buildDiscoveryContent() {
+    if (widget.vaultItems.length < 2) {
+      return [
+        const Expanded(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(24.0),
+              child: Text(
+                '더 많은 작품을 추가하여 발견의 여정을 시작하세요.',
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+            ),
+          ),
+        )
+      ];
+    }
+
+    if (_activeDiscoveryTab == 0) {
+      // 추천 연결: 최근 작품들의 간이 연결
+      final sorted = List<AkashaItem>.from(widget.vaultItems)..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+      final a = sorted[0];
+      final b = sorted[1];
+      final c = sorted.length > 2 ? sorted[2] : sorted[0];
+      
+      return [
+        Expanded(
+          child: _buildDiscoveryCard(
+            title: '최근 추가된 항목',
+            rate: '100%',
+            leftItem: a,
+            rightItem: b,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _buildDiscoveryCard(
+            title: '유사한 카테고리',
+            rate: '85%',
+            leftItem: b,
+            rightItem: c,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: _buildDiscoveryCard(
+            title: '발견의 시작',
+            rate: '70%',
+            leftItem: c,
+            rightItem: a,
+          ),
+        ),
+      ];
+    } else if (_activeDiscoveryTab == 1) {
+      // 새로운 작품
+      final sorted = List<AkashaItem>.from(widget.vaultItems)..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+      return sorted.take(3).map((item) {
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: _buildDiscoveryCardSingle(
+              title: '새로운 작품',
+              item: item,
+            ),
+          ),
+        );
+      }).toList();
+    } else {
+      // 주목할 인물
+      final persons = widget.userCatalog.all.where((e) => e.anchorType == EntityAnchorType.person).toList();
+      if (persons.isEmpty) {
+        return [
+          const Expanded(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.all(24.0),
+                child: Text(
+                  '등록된 인물이 없습니다.',
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ),
+            ),
+          )
+        ];
+      }
+      return persons.take(3).map((person) {
+        return Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: _buildDiscoveryCardEntity(
+              title: '주목할 인물',
+              entity: person,
+            ),
+          ),
+        );
+      }).toList();
+    }
+  }
+
   Widget _buildDiscoveryCard({
     required String title,
     required String rate,
-    required String leftTitle,
-    required String rightTitle,
-    required String leftImg,
-    required String rightImg,
+    required AkashaItem leftItem,
+    required AkashaItem rightItem,
   }) {
     return Container(
       padding: const EdgeInsets.all(14),
@@ -613,7 +667,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildDiscoveryThumb(leftTitle, leftImg),
+                _buildDiscoveryThumbForWork(leftItem),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
                   child: Icon(
@@ -622,11 +676,110 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                     color: Color(0xFF6C63FF),
                   ),
                 ),
-                _buildDiscoveryThumb(rightTitle, rightImg),
+                _buildDiscoveryThumbForWork(rightItem),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildDiscoveryCardSingle({
+    required String title,
+    required AkashaItem item,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: const Color(0xFF161824),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.04),
+        ),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () {
+            setState(() {
+              _selectedPreviewItem = item;
+            });
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Center(
+                child: _buildDiscoveryThumbForWork(item),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDiscoveryCardEntity({
+    required String title,
+    required UserCatalogEntity entity,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: const Color(0xFF161824),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.04),
+        ),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () => widget.onOpenEntity(entity),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Center(
+                child: _buildDiscoveryThumb(entity.title, ''), // 엔티티는 URL이 없을 수 있음
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDiscoveryThumbForWork(AkashaItem item) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        onTap: () {
+          setState(() {
+            _selectedPreviewItem = item;
+          });
+        },
+        child: _buildDiscoveryThumb(item.title, item.posterPath ?? ''),
       ),
     );
   }
@@ -683,6 +836,12 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
   }
 
   Widget _buildUniverseAndRecentlyAdded() {
+    final workCount = widget.vaultItems.length;
+    final allEntities = widget.userCatalog.all;
+    final personCount = allEntities.where((e) => e.anchorType == EntityAnchorType.person).length;
+    final placeCount = allEntities.where((e) => e.anchorType == EntityAnchorType.place).length;
+    final eventCount = allEntities.where((e) => e.anchorType == EntityAnchorType.event).length;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -708,7 +867,12 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const UniverseOrbitWidget(),
+                UniverseOrbitWidget(
+                  workCount: workCount,
+                  personCount: personCount,
+                  placeCount: placeCount,
+                  eventCount: eventCount,
+                ),
               ],
             ),
           ),
@@ -767,98 +931,92 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
   }
 
   List<Widget> _buildRecentlyAddedList() {
-    final items = [
-      _RecentWorkData(
-        title: '장송의 프리렌',
-        meta: '2023 · 애니메이션',
-        url: 'https://images.justwatch.com/poster/308119864/s592/jangsongui-peulilen.jpg',
-      ),
-      _RecentWorkData(
-        title: '주술회전 2기',
-        meta: '2023 · 애니메이션',
-        url: 'https://images.justwatch.com/poster/306161476/s592/jusuhoejeon.jpg',
-      ),
-      _RecentWorkData(
-        title: '스파이 패밀리 2기',
-        meta: '2023 · 애니메이션',
-        url: 'https://images.justwatch.com/poster/301594966/s592/seupai-paemili.jpg',
-      ),
-      _RecentWorkData(
-        title: '데드 마운트 데스 플레이',
-        meta: '2023 · 애니메이션',
-        url: '',
-      ),
-      _RecentWorkData(
-        title: '최애의 아이 2기',
-        meta: '2024 · 애니메이션',
-        url: '',
-      ),
-    ];
+    final sortedItems = List<AkashaItem>.from(widget.vaultItems)
+      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+    final recentItems = sortedItems.take(5).toList();
 
-    return List.generate(items.length, (index) {
-      final work = items[index];
+    return List.generate(recentItems.length, (index) {
+      final work = recentItems[index];
+      final isSelected = _selectedPreviewItem?.workId == work.workId;
+      
       return Padding(
         padding: const EdgeInsets.only(bottom: 12),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: SizedBox(
-                width: 32,
-                height: 32,
-                child: work.url.isNotEmpty
-                    ? Image.network(
-                        work.url,
-                        headers: const {
-                          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                        },
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) => Container(color: const Color(0xFF222533)),
-                      )
-                    : Container(color: const Color(0xFF222533)),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: Material(
+          color: isSelected ? const Color(0xFF6C63FF).withValues(alpha: 0.1) : Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(8),
+            onTap: () {
+              setState(() {
+                _selectedPreviewItem = work;
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Row(
                 children: [
-                  Text(
-                    work.title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: SizedBox(
+                      width: 32,
+                      height: 32,
+                      child: work.posterPath != null && work.posterPath!.isNotEmpty
+                          ? Image.network(
+                              work.posterPath!,
+                              headers: const {
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                              },
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, __, ___) => Container(color: const Color(0xFF222533)),
+                            )
+                          : Container(color: const Color(0xFF222533)),
                     ),
                   ),
-                  const SizedBox(height: 2),
-                  Text(
-                    work.meta,
-                    style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          work.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          '${work.releaseYear ?? ''} · ${work.category.name}',
+                          style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                        ),
+                      ],
+                    ),
                   ),
+                  const SizedBox(width: 8),
+                  if (index == 0) // 가장 최근 추가된 1개에만 NEW 뱃지 표시
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF1E2838),
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(color: const Color(0xFF2C3E5A), width: 0.8),
+                      ),
+                      child: const Text(
+                        'NEW',
+                        style: TextStyle(
+                          fontSize: 8,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF00E5FF),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),
-            const SizedBox(width: 8),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
-                color: const Color(0xFF1E2838),
-                borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: const Color(0xFF2C3E5A), width: 0.8),
-              ),
-              child: const Text(
-                'NEW',
-                style: TextStyle(
-                  fontSize: 8,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF00E5FF),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       );
     });
@@ -994,30 +1152,4 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
       ),
     );
   }
-}
-
-class _ContinueExploreData {
-  _ContinueExploreData({
-    required this.title,
-    required this.category,
-    required this.exploreRate,
-    required this.imageUrl,
-  });
-
-  final String title;
-  final String category;
-  final double exploreRate;
-  final String imageUrl;
-}
-
-class _RecentWorkData {
-  _RecentWorkData({
-    required this.title,
-    required this.meta,
-    required this.url,
-  });
-
-  final String title;
-  final String meta;
-  final String url;
 }

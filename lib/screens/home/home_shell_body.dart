@@ -373,6 +373,7 @@ class HomeShellBody extends StatelessWidget {
     if (hasNoFilters) {
       return HomeDashboardView(
         vaultItems: items,
+        userCatalog: userCatalog,
         onOpenWork: onOpenBrowseItem,
         onOpenEntity: onOpenEntity,
         onSearch: onSearch,
