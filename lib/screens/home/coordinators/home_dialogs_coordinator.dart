@@ -51,6 +51,8 @@ class HomeDialogsCoordinator {
     required this.userCatalog,
     this.onEntityArchived,
     this.getLinkIndex,
+    this.onPreviewLocalWork,
+    this.onPreviewEntity,
   });
 
   final BuildContext Function() hostContext;
@@ -74,6 +76,8 @@ class HomeDialogsCoordinator {
   final void Function(UserCatalogEntity entity, EntityJournalEntry? entry)?
       onEntityArchived;
   final RecordLinkPort Function()? getLinkIndex;
+  final void Function(AkashaItem item)? onPreviewLocalWork;
+  final void Function(UserCatalogEntity entity)? onPreviewEntity;
 
   bool get isSyncing => catalog.isSyncing;
   DateTime? get lastSyncTime => catalog.lastSyncTime;
@@ -88,17 +92,20 @@ class HomeDialogsCoordinator {
       localItems: getItems(),
       userCatalog: userCatalog,
       registry: catalog.registry,
-      onSelectLocal: workbenchCoord.openBrowseItem,
+      onSelectLocal: onPreviewLocalWork ?? workbenchCoord.openBrowseItem,
       onSelectRemote: (work) async {
         if (!isMounted()) return;
         final type = EntityIdCodec.typeFromId(work.workId);
         if (type != null && type != EntityAnchorType.work) {
-          await _openEntityInWorkbench(work.workId);
+          await _openEntityFromSearch(work.workId);
           return;
         }
-        workbenchCoord.openBrowseItem(
-          HomeAutoArchive.itemFromRegistryWork(work),
-        );
+        final item = HomeAutoArchive.itemFromRegistryWork(work);
+        if (onPreviewLocalWork != null) {
+          onPreviewLocalWork!(item);
+        } else {
+          workbenchCoord.openBrowseItem(item);
+        }
       },
       onPromoteCatalogEntity: _promoteCatalogOnlyToArchive,
       onCustomAdd: (query) async {
@@ -181,10 +188,14 @@ class HomeDialogsCoordinator {
     );
   }
 
-  Future<void> _openEntityInWorkbench(String entityId) async {
+  Future<void> _openEntityFromSearch(String entityId) async {
     final entity = await CollectibleOpener.findEntity(userCatalog, entityId);
     if (entity == null) {
       showMessage('「$entityId」을(를) 찾을 수 없습니다.');
+      return;
+    }
+    if (onPreviewEntity != null) {
+      onPreviewEntity!(entity);
       return;
     }
     await workbenchCoord.openEntity(entity);
@@ -215,7 +226,7 @@ class HomeDialogsCoordinator {
       entity.entityId,
     );
     if (existing != null) {
-      await _openEntityInWorkbench(entity.entityId);
+      await _openEntityFromSearch(entity.entityId);
       return;
     }
 

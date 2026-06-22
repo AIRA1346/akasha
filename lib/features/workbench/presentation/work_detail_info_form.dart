@@ -5,8 +5,8 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 
-/// 워크벤치 작품정보 패널 — 편집 폼 (제목·평점·상태·태그·액션).
-class WorkDetailInfoForm extends StatelessWidget {
+/// 워크벤치 작품정보 패널 — 연결 우선 레이아웃.
+class WorkDetailInfoForm extends StatefulWidget {
   const WorkDetailInfoForm({
     super.key,
     required this.item,
@@ -37,6 +37,8 @@ class WorkDetailInfoForm extends StatelessWidget {
     this.onOpenLinkedEntity,
     this.onOpenLinkedWork,
     this.onGoKnowledgeGraph,
+    this.onFocusSanctum,
+    this.notesSection,
   });
 
   final AkashaItem item;
@@ -67,21 +69,29 @@ class WorkDetailInfoForm extends StatelessWidget {
   final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
   final void Function(AkashaItem work)? onOpenLinkedWork;
   final VoidCallback? onGoKnowledgeGraph;
+  final VoidCallback? onFocusSanctum;
+  final Widget? notesSection;
+
+  @override
+  State<WorkDetailInfoForm> createState() => _WorkDetailInfoFormState();
+}
+
+class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
+  bool _metadataExpanded = false;
 
   @override
   Widget build(BuildContext context) {
-    // 1. 시안용 메타데이터
-    final alternativeTitle = item.creator.isNotEmpty ? item.creator : 'Original Work';
-    final metaLineText = metaLine;
+    final alternativeTitle =
+        widget.item.creator.isNotEmpty ? widget.item.creator : '';
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // 제목 필드 (보더리스 형태로 고급스럽게)
+        // —— 작품 헤더 ——
         TextField(
-          controller: titleCtrl,
-          onChanged: (_) => onMarkDirty(),
+          controller: widget.titleCtrl,
+          onChanged: (_) => widget.onMarkDirty(),
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w900,
@@ -94,164 +104,170 @@ class WorkDetailInfoForm extends StatelessWidget {
             contentPadding: EdgeInsets.zero,
           ),
         ),
-        const SizedBox(height: 4),
-
-        // 대체 타이틀 / 서브 정보
-        if (alternativeTitle.isNotEmpty)
+        if (alternativeTitle.isNotEmpty) ...[
+          const SizedBox(height: 4),
           Text(
             alternativeTitle,
             style: TextStyle(fontSize: 11, color: Colors.grey[500]),
           ),
+        ],
         const SizedBox(height: 2),
         Text(
-          metaLineText,
+          widget.metaLine,
           style: TextStyle(fontSize: 11, color: Colors.grey[500]),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 14),
 
-        // 액션 버튼 행 (상세 정보, 하트, 더보기)
-        Row(
-          children: [
-            Expanded(
-              child: SizedBox(
-                height: 32,
-                child: FilledButton.icon(
-                  onPressed: onSaveArchive,
-                  icon: const Icon(Icons.navigate_next_rounded, size: 14),
-                  label: const Text('상세 정보', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF5D3FD3),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(width: 8),
-            _buildIconButton(
-              icon: Icons.favorite_border_rounded,
-              onPressed: () {},
-            ),
-            const SizedBox(width: 8),
-            _buildIconButton(
-              icon: Icons.more_horiz_rounded,
-              onPressed: () {},
-            ),
-          ],
-        ),
-        const SizedBox(height: 20),
-        const Divider(color: Color(0xFF2D2D44), height: 1),
-        const SizedBox(height: 16),
-
-        // 핵심 정보 테이블
-        _buildSectionHeader('핵심 정보'),
-        const SizedBox(height: 8),
-        _buildInfoTable(),
-        const SizedBox(height: 20),
-
+        // —— 연결 (최상단) ——
         WorkLinkNeighborsSections(
-          neighbors: linkNeighbors,
-          loading: loadingLinkNeighbors,
-          onOpenEntity: onOpenLinkedEntity,
-          onOpenWork: onOpenLinkedWork,
+          neighbors: widget.linkNeighbors,
+          loading: widget.loadingLinkNeighbors,
+          conceptTags: widget.draftTags,
+          onOpenEntity: widget.onOpenLinkedEntity,
+          onOpenWork: widget.onOpenLinkedWork,
+          onLinkCta: widget.onFocusSanctum,
           sectionTitleStyle: const TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF6C63FF),
           ),
         ),
-        if (!loadingLinkNeighbors &&
-            linkNeighbors.characters.isEmpty &&
-            linkNeighbors.connectedWorks.isEmpty)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              '본문에 [[Entity 연결]]을 추가하면 인물·작품이 표시됩니다.',
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
-            ),
-          ),
-        const SizedBox(height: 20),
-
-        // 관련 개념
-        _buildSectionHeader('태그'),
-        const SizedBox(height: 8),
-        _buildRelatedConcepts(),
-        const SizedBox(height: 20),
-
-        // 연결된 작품 섹션은 WorkLinkNeighborsSections에 포함됨 — 태그 아래 그래프 버튼
-        SizedBox(
-          height: 32,
-          child: OutlinedButton.icon(
-            onPressed: onGoKnowledgeGraph,
-            icon: const Icon(Icons.hub_outlined, size: 14, color: Color(0xFF6C63FF)),
-            label: const Text('그래프에서 보기', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white)),
-            style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: Color(0xFF6C63FF)),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(6),
+        if (widget.onGoKnowledgeGraph != null) ...[
+          SizedBox(
+            height: 30,
+            child: OutlinedButton.icon(
+              onPressed: widget.onGoKnowledgeGraph,
+              icon: const Icon(Icons.hub_outlined, size: 14, color: Color(0xFF6C63FF)),
+              label: const Text(
+                '연결 맵에서 보기',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Color(0xFF6C63FF)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
               ),
             ),
           ),
-        ),
-        const SizedBox(height: 20),
-        const Divider(color: Color(0xFF2D2D44), height: 1),
-        const SizedBox(height: 16),
+          const SizedBox(height: 12),
+        ],
 
-        // 아카이브 기능 보존용 오리지널 기능 버튼 패널
-        _buildOriginalActionsPanel(),
-        const SizedBox(height: 20),
+        const Divider(color: Color(0xFF2D2D44), height: 1),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Text(
+            '노트',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[500],
+              letterSpacing: 0.5,
+            ),
+          ),
+        ),
         _buildQuickMemoField(),
+        if (widget.notesSection != null) ...[
+          const SizedBox(height: 12),
+          widget.notesSection!,
+        ],
+
+        const SizedBox(height: 8),
+        const Divider(color: Color(0xFF2D2D44), height: 1),
+        const SizedBox(height: 4),
+
+        // —— 메타데이터 (접힘) ——
+        Theme(
+          data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+          child: ExpansionTile(
+            key: const Key('work_metadata_expansion'),
+            initiallyExpanded: _metadataExpanded,
+            onExpansionChanged: (v) => setState(() => _metadataExpanded = v),
+            tilePadding: EdgeInsets.zero,
+            childrenPadding: const EdgeInsets.only(bottom: 8),
+            title: Text(
+              '메타데이터',
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[400],
+              ),
+            ),
+            children: [
+              _buildInfoTable(),
+              const SizedBox(height: 12),
+              _buildRelatedConceptsEditor(),
+              const SizedBox(height: 12),
+              _buildOriginalActionsPanel(),
+            ],
+          ),
+        ),
       ],
     );
   }
 
-  Widget _buildSectionHeader(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-        fontSize: 11,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-    );
-  }
-
   Widget _buildInfoTable() {
-    final genre = item.category.name;
-    final creator = item.creator.isNotEmpty ? item.creator : '정보 없음';
-    final studio = '정보 없음';
-    final ratingValue = draftRating > 0 ? draftRating.toStringAsFixed(1) : '평가 없음';
+    final genre = widget.item.category.name;
+    final creator =
+        widget.item.creator.isNotEmpty ? widget.item.creator : '정보 없음';
+    const studio = '정보 없음';
+    final ratingValue = widget.draftRating > 0
+        ? widget.draftRating.toStringAsFixed(1)
+        : '평가 없음';
 
     return Table(
-      columnWidths: {
-        0: const FixedColumnWidth(64),
-        1: const FlexColumnWidth(),
+      columnWidths: const {
+        0: FixedColumnWidth(64),
+        1: FlexColumnWidth(),
       },
       children: [
-        _buildTableRow('장로', Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-          decoration: BoxDecoration(
-            color: const Color(0xFF00E5FF).withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: Text(
-            genre,
-            style: const TextStyle(fontSize: 10, color: Color(0xFF00E5FF), fontWeight: FontWeight.bold),
-          ),
-        )),
-        _buildTableRow('원작', Text(creator, style: const TextStyle(fontSize: 10, color: Colors.white))),
-        _buildTableRow('제작사', Text(studio, style: const TextStyle(fontSize: 10, color: Colors.white))),
-        _buildTableRow('평점', Row(
-          children: [
-            const Icon(Icons.star, size: 12, color: Colors.amber),
-            const SizedBox(width: 4),
-            Text(
-              ratingValue,
-              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+        _buildTableRow(
+          '장르',
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+            decoration: BoxDecoration(
+              color: const Color(0xFF00E5FF).withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(4),
             ),
-          ],
-        )),
+            child: Text(
+              genre,
+              style: const TextStyle(
+                fontSize: 10,
+                color: Color(0xFF00E5FF),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        _buildTableRow(
+          '원작',
+          Text(creator, style: const TextStyle(fontSize: 10, color: Colors.white)),
+        ),
+        _buildTableRow(
+          '제작사',
+          Text(studio, style: const TextStyle(fontSize: 10, color: Colors.white)),
+        ),
+        _buildTableRow(
+          '평점',
+          Row(
+            children: [
+              const Icon(Icons.star, size: 12, color: Colors.amber),
+              const SizedBox(width: 4),
+              Text(
+                ratingValue,
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -277,10 +293,13 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildRelatedConcepts() {
-    final concepts = draftTags;
+  Widget _buildRelatedConceptsEditor() {
+    final concepts = widget.draftTags;
     if (concepts.isEmpty) {
-      return Text('설정된 태그가 없습니다', style: TextStyle(fontSize: 10, color: Colors.grey[600]));
+      return Text(
+        '설정된 태그가 없습니다',
+        style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+      );
     }
     return Column(
       children: concepts.map((tag) {
@@ -292,59 +311,32 @@ class WorkDetailInfoForm extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.white.withValues(alpha: 0.04)),
           ),
-          child: Row(
-            children: [
-               Expanded(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Text(
-                       tag,
-                       style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white),
-                     ),
-                     const SizedBox(height: 2),
-                     Text(
-                       _getTagSubLabel(tag),
-                       style: TextStyle(fontSize: 9, color: Colors.grey[500]),
-                     ),
-                   ],
-                 ),
-               ),
-               Icon(Icons.navigate_next_rounded, size: 14, color: Colors.grey[600]),
-            ],
+          child: Text(
+            tag,
+            style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         );
       }).toList(),
     );
   }
 
-  String _getTagSubLabel(String tag) {
-    switch (tag) {
-      case '마녀교':
-        return '용어 · 조직';
-      case '사망 회귀':
-        return '능력 · 설정';
-      case '마녀':
-        return '인물 군상';
-      case '성역':
-        return '장소 · 설정';
-      default:
-        return '태그 · 관련 개념';
-    }
-  }
-
   Widget _buildOriginalActionsPanel() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // 원본 태그 및 평점 수정 컨트롤 보존 (인터랙션 백엔드 보존)
-        if (showAddToLibrary) ...[
+        if (widget.showAddToLibrary) ...[
           SizedBox(
             width: double.infinity,
             child: OutlinedButton.icon(
-              onPressed: onAddToLibrary,
+              onPressed: widget.onAddToLibrary,
               icon: const Icon(Icons.collections_bookmark_outlined, size: 14),
-              label: Text(isArchived ? '서재에 담기' : '저장하고 서재에 담기'),
+              label: Text(
+                widget.isArchived ? '서재에 담기' : '저장하고 서재에 담기',
+              ),
               style: OutlinedButton.styleFrom(
                 visualDensity: VisualDensity.compact,
                 padding: const EdgeInsets.symmetric(vertical: 6),
@@ -358,7 +350,7 @@ class WorkDetailInfoForm extends StatelessWidget {
           children: [
             Expanded(
               child: OutlinedButton(
-                onPressed: onResetToDefaults,
+                onPressed: widget.onResetToDefaults,
                 style: OutlinedButton.styleFrom(
                   visualDensity: VisualDensity.compact,
                   padding: const EdgeInsets.symmetric(vertical: 6),
@@ -371,30 +363,30 @@ class WorkDetailInfoForm extends StatelessWidget {
             Expanded(
               flex: 2,
               child: FilledButton(
-                onPressed: isSaving ? null : onSaveArchive,
+                onPressed: widget.isSaving ? null : widget.onSaveArchive,
                 style: FilledButton.styleFrom(
                   backgroundColor: const Color(0xFF2E2E3E),
                   visualDensity: VisualDensity.compact,
                   padding: const EdgeInsets.symmetric(vertical: 6),
                   textStyle: const TextStyle(fontSize: 10),
                 ),
-                child: isSaving
+                child: widget.isSaving
                     ? const SizedBox(
                         width: 12,
                         height: 12,
                         child: CircularProgressIndicator(strokeWidth: 1.5),
                       )
-                    : Text(isArchived ? 'md 저장' : 'md 생성'),
+                    : Text(widget.isArchived ? 'md 저장' : 'md 생성'),
               ),
             ),
           ],
         ),
-        if (canDeleteMd && onDeleteArchive != null) ...[
+        if (widget.canDeleteMd && widget.onDeleteArchive != null) ...[
           const SizedBox(height: 6),
           SizedBox(
             width: double.infinity,
             child: OutlinedButton.icon(
-              onPressed: isSaving ? null : onDeleteArchive,
+              onPressed: widget.isSaving ? null : widget.onDeleteArchive,
               icon: const Icon(Icons.delete_outline, size: 14),
               label: const Text('md 삭제'),
               style: OutlinedButton.styleFrom(
@@ -411,81 +403,6 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildIconButton({required IconData icon, required VoidCallback onPressed}) {
-    return Container(
-      width: 32,
-      height: 32,
-      decoration: BoxDecoration(
-        color: const Color(0xFF1E1E2C),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.04)),
-      ),
-      child: IconButton(
-        icon: Icon(icon, size: 14, color: Colors.white),
-        padding: EdgeInsets.zero,
-        onPressed: onPressed,
-      ),
-    );
-  }
-
-  Widget _metaChip({required IconData icon, required String label}) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-      decoration: BoxDecoration(
-        color: const Color(0xFF252538),
-        borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: const Color(0xFF3A3A52)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 11, color: Colors.tealAccent),
-          const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(fontSize: 10, color: Colors.grey[300]),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _statusDropdown({
-    required String label,
-    required String value,
-    required List<String> options,
-    required ValueChanged<String> onChanged,
-  }) {
-    final safeOptions = options.isEmpty ? [value] : options;
-    final resolved =
-        safeOptions.contains(value) ? value : safeOptions.first;
-
-    return DropdownButtonFormField<String>(
-      initialValue: resolved,
-      isExpanded: true,
-      isDense: true,
-      style: const TextStyle(fontSize: 10, height: 1.1),
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(fontSize: 10, color: Colors.grey[500]),
-        border: const OutlineInputBorder(),
-        isDense: true,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-      ),
-      items: safeOptions
-          .map(
-            (s) => DropdownMenuItem(
-              value: s,
-              child: Text(s, maxLines: 1, overflow: TextOverflow.ellipsis),
-            ),
-          )
-          .toList(),
-      onChanged: (v) {
-        if (v != null) onChanged(v);
-      },
-    );
-  }
   Widget _buildQuickMemoField() {
     return Container(
       decoration: BoxDecoration(
@@ -499,18 +416,22 @@ class WorkDetailInfoForm extends StatelessWidget {
           Icon(Icons.edit_note_rounded, size: 18, color: Colors.grey[500]),
           const SizedBox(width: 8),
           Expanded(
-            child: TextField(
-              maxLines: null,
-              style: const TextStyle(fontSize: 11, color: Colors.white),
-              decoration: InputDecoration(
-                hintText: '메모를 추가하세요...',
-                hintStyle: TextStyle(fontSize: 11, color: Colors.grey[600]),
-                border: InputBorder.none,
-                isDense: true,
-                contentPadding: EdgeInsets.zero,
-              ),
+            child: Text(
+              '상세 기록은 우측 Sanctum에서 작성하세요',
+              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
           ),
+          if (widget.onFocusSanctum != null)
+            TextButton(
+              onPressed: widget.onFocusSanctum,
+              style: TextButton.styleFrom(
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              child: const Text('기록하기', style: TextStyle(fontSize: 10)),
+            ),
         ],
       ),
     );

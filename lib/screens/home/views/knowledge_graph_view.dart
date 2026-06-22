@@ -19,6 +19,8 @@ class KnowledgeGraphView extends StatefulWidget {
     required this.linkIndex,
     required this.onOpenWork,
     required this.onOpenEntity,
+    this.onOpenRecord,
+    this.onConnectEntity,
   });
 
   final List<AkashaItem> vaultItems;
@@ -26,6 +28,8 @@ class KnowledgeGraphView extends StatefulWidget {
   final RecordLinkPort linkIndex;
   final void Function(AkashaItem work) onOpenWork;
   final void Function(UserCatalogEntity entity) onOpenEntity;
+  final VoidCallback? onOpenRecord;
+  final VoidCallback? onConnectEntity;
 
   @override
   State<KnowledgeGraphView> createState() => _KnowledgeGraphViewState();
@@ -97,6 +101,10 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
         return a.title.compareTo(b.title);
       });
 
+    final allLinksEmpty = !_loadingCounts &&
+        works.isNotEmpty &&
+        works.every((w) => (_linkCounts[w.workId] ?? 0) == 0);
+
     return Container(
       color: AkashaColors.background,
       child: Column(
@@ -123,6 +131,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               ],
             ),
           ),
+          if (allLinksEmpty) _buildEmptyLinksBanner(),
           if (_loadingCounts)
             const Expanded(
               child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
@@ -130,9 +139,24 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
           else if (works.isEmpty)
             Expanded(
               child: Center(
-                child: Text(
-                  '볼트에 작품이 없습니다.',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '볼트에 작품이 없습니다.',
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                    ),
+                    if (widget.onConnectEntity != null) ...[
+                      const SizedBox(height: 12),
+                      OutlinedButton(
+                        onPressed: widget.onConnectEntity,
+                        child: const Text(
+                          '엔티티 연결하기',
+                          style: TextStyle(fontSize: 11),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ),
             )
@@ -187,7 +211,9 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                           ),
                         ),
                         subtitle: Text(
-                          count > 0 ? '연결 $count개' : '연결 없음',
+                          count > 0
+                              ? '연결 $count개'
+                              : '연결 없음 · 기록에서 [[링크]] 추가',
                           style: TextStyle(
                             fontSize: 11,
                             color: count > 0
@@ -241,6 +267,66 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               ),
             ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildEmptyLinksBanner() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 0, 24, 12),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: AkashaColors.surfaceCard(radius: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              '아직 연결된 지식이 없습니다.',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[300],
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              '첫 연결을 만들어 보세요. 작품 기록에 [[위키 링크]]를 추가하면 여기에 표시됩니다.',
+              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                if (widget.onOpenRecord != null)
+                  FilledButton.icon(
+                    onPressed: widget.onOpenRecord,
+                    icon: const Icon(Icons.edit_note_outlined, size: 14),
+                    label: const Text(
+                      '기록 열기',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AkashaColors.accent,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                    ),
+                  ),
+                if (widget.onConnectEntity != null)
+                  OutlinedButton.icon(
+                    onPressed: widget.onConnectEntity,
+                    icon: const Icon(Icons.person_add_alt_1_outlined, size: 14),
+                    label: const Text(
+                      '엔티티 연결하기',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

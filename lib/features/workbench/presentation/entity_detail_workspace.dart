@@ -18,9 +18,11 @@ import '../../../services/entity_journal_parser.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
+import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../services/same_day_record_service.dart';
 import '../../../services/record_link_navigator.dart';
 import '../../../services/record_link_stale_label.dart';
+import '../../../utils/entity_link_neighbors.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_info_panel.dart';
@@ -37,6 +39,7 @@ class EntityDetailWorkspace extends StatefulWidget {
     this.infoPanelLocked = false,
     this.userCatalog,
     this.linkIndex,
+    this.vaultItems = const [],
     required this.onSaved,
     required this.onDeleted,
     required this.onDirtyChanged,
@@ -48,6 +51,9 @@ class EntityDetailWorkspace extends StatefulWidget {
     this.onWikiLinkTap,
     this.onRequestEntityLink,
     this.onClose,
+    this.onGoKnowledgeGraph,
+    this.onRecordOpenWork,
+    this.onRecordOpenEntity,
   });
 
   final UserCatalogEntity entity;
@@ -58,6 +64,7 @@ class EntityDetailWorkspace extends StatefulWidget {
   final bool infoPanelLocked;
   final UserCatalogPort? userCatalog;
   final RecordLinkPort? linkIndex;
+  final List<AkashaItem> vaultItems;
   final void Function(
     UserCatalogEntity entity,
     EntityJournalEntry? journal,
@@ -81,6 +88,9 @@ class EntityDetailWorkspace extends StatefulWidget {
   )? onRequestEntityLink;
   final Future<void> Function(UserCatalogEntity entity)? onAddToLibrary;
   final VoidCallback? onClose;
+  final VoidCallback? onGoKnowledgeGraph;
+  final void Function(AkashaItem item)? onRecordOpenWork;
+  final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
 
   @override
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
@@ -108,6 +118,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   int _staleLabelRecordCount = 0;
   List<SameDayRecordRef> _sameDayRefs = const [];
   bool _loadingSameDay = false;
+  EntityLinkNeighbors _linkNeighbors = const EntityLinkNeighbors();
+  bool _loadingLinkNeighbors = false;
 
   static const _autoSaveDelay = Duration(seconds: 2);
 
@@ -165,6 +177,59 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
     _loadIncoming();
     _loadSameDay();
+    _loadLinkNeighbors();
+  }
+
+  Future<void> _loadLinkNeighbors() async {
+    final catalog = widget.userCatalog;
+    final index = widget.linkIndex;
+    if (catalog == null || index == null) return;
+    setState(() => _loadingLinkNeighbors = true);
+    try {
+      final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
+        linkIndex: index,
+        vaultItems: widget.vaultItems,
+      );
+      final neighbors = await fetchEntityLinkNeighbors(
+        entity: _entity,
+        userCatalog: catalog,
+        discovery: discovery,
+        linkIndex: index,
+        vaultItems: widget.vaultItems,
+      );
+      if (mounted) {
+        setState(() {
+          _linkNeighbors = neighbors;
+          _loadingLinkNeighbors = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingLinkNeighbors = false);
+    }
+  }
+
+  void _openLinkedEntity(UserCatalogEntity entity) {
+    widget.onWikiLinkTap?.call(
+      ParsedRecordLink(
+        kind: RecordLinkKind.explicitId,
+        raw: '[[${entity.entityId}]]',
+        targetEntityId: entity.entityId,
+      ),
+    );
+  }
+
+  void _openLinkedWork(AkashaItem work) {
+    widget.onWikiLinkTap?.call(
+      ParsedRecordLink(
+        kind: RecordLinkKind.explicitId,
+        raw: '[[${work.workId}]]',
+        targetEntityId: work.workId,
+      ),
+    );
+  }
+
+  void _focusSanctumForLinks() {
+    setState(() => _pageView = SanctumPageView.body);
   }
 
   Future<void> _loadSameDay() async {
@@ -230,6 +295,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
       _loadIncoming();
       _loadSameDay();
+      _loadLinkNeighbors();
       return;
     }
     if (!widget.isDirty &&
@@ -245,6 +311,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _fileCtrl.text = _serializeFile();
       _loadIncoming();
       _loadSameDay();
+      _loadLinkNeighbors();
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -437,6 +504,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       widget.onSaved(mirrored, saved);
       _loadIncoming();
       _loadSameDay();
+      _loadLinkNeighbors();
       if (!silent) {
         _showSnack('"${mirrored.title}" entity journal을 저장했습니다.');
       }
@@ -459,6 +527,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       vaultItems: const [],
       userCatalog: catalog,
       onOpenWork: (item) {
+        if (widget.onRecordOpenWork != null) {
+          widget.onRecordOpenWork!(item);
+          return;
+        }
         widget.onWikiLinkTap?.call(
           ParsedRecordLink(
             kind: RecordLinkKind.explicitId,
@@ -468,6 +540,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         );
       },
       onOpenEntity: (entity) async {
+        if (widget.onRecordOpenEntity != null) {
+          await widget.onRecordOpenEntity!(entity);
+          return;
+        }
         widget.onWikiLinkTap?.call(
           ParsedRecordLink(
             kind: RecordLinkKind.explicitId,
@@ -488,6 +564,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         vaultItems: const [],
         userCatalog: catalog,
         onOpenWork: (item) {
+          if (widget.onRecordOpenWork != null) {
+            widget.onRecordOpenWork!(item);
+            return;
+          }
           widget.onWikiLinkTap?.call(
             ParsedRecordLink(
               kind: RecordLinkKind.explicitId,
@@ -497,6 +577,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
           );
         },
         onOpenEntity: (entity) async {
+          if (widget.onRecordOpenEntity != null) {
+            await widget.onRecordOpenEntity!(entity);
+            return;
+          }
           widget.onWikiLinkTap?.call(
             ParsedRecordLink(
               kind: RecordLinkKind.explicitId,
@@ -670,6 +754,12 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                 canDeleteMd: hasJournal,
                 onDeleteArchive: hasJournal ? _confirmDelete : null,
                 onClose: widget.onClose,
+                onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                linkNeighbors: _linkNeighbors,
+                loadingLinkNeighbors: _loadingLinkNeighbors,
+                onOpenLinkedEntity: _openLinkedEntity,
+                onOpenLinkedWork: _openLinkedWork,
+                onFocusSanctumForLinks: _focusSanctumForLinks,
               ),
               Expanded(
                 child: ColoredBox(

@@ -13,6 +13,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
   required UserCatalogPort userCatalog,
   EntityVaultLoader? entityLoader,
   String? initialQuery,
+  EntityAnchorType? anchorTypeFilter,
 }) {
   return showDialog<EntityLinkSelection>(
     context: context,
@@ -20,6 +21,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
       userCatalog: userCatalog,
       entityLoader: entityLoader,
       initialQuery: initialQuery,
+      anchorTypeFilter: anchorTypeFilter,
     ),
   );
 }
@@ -30,11 +32,13 @@ class EntityLinkPickerDialog extends StatefulWidget {
     required this.userCatalog,
     this.entityLoader,
     this.initialQuery,
+    this.anchorTypeFilter,
   });
 
   final UserCatalogPort userCatalog;
   final EntityVaultLoader? entityLoader;
   final String? initialQuery;
+  final EntityAnchorType? anchorTypeFilter;
 
   @override
   State<EntityLinkPickerDialog> createState() => _EntityLinkPickerDialogState();
@@ -68,6 +72,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
       userCatalog: widget.userCatalog,
       query: _queryCtrl.text,
       loader: widget.entityLoader,
+      anchorTypeFilter: widget.anchorTypeFilter,
     );
     if (!mounted) return;
     setState(() {

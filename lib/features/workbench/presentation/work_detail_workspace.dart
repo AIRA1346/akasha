@@ -10,7 +10,10 @@ import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/entity_link_selection.dart';
+import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
+import '../../../utils/markdown_edit_actions.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../utils/work_link_neighbors.dart';
@@ -51,6 +54,12 @@ class WorkDetailWorkspace extends StatefulWidget {
     String selectedText,
   )? onRequestEntityLink;
   final VoidCallback? onClose;
+  final VoidCallback? onGoKnowledgeGraph;
+  final EntityAnchorType? pendingEntityLinkType;
+  final String? pendingEntityLinkWorkId;
+  final VoidCallback? onPendingEntityLinkHandled;
+  final void Function(AkashaItem item)? onRecordOpenWork;
+  final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
 
   const WorkDetailWorkspace({
     super.key,
@@ -73,6 +82,12 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onWikiLinkTap,
     this.onRequestEntityLink,
     this.onClose,
+    this.onGoKnowledgeGraph,
+    this.pendingEntityLinkType,
+    this.pendingEntityLinkWorkId,
+    this.onPendingEntityLinkHandled,
+    this.onRecordOpenWork,
+    this.onRecordOpenEntity,
   });
 
   @override
@@ -129,6 +144,40 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _loadIncoming();
     _loadSameDay();
     _loadLinkNeighbors();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeRunPendingEntityLinkPick();
+    });
+  }
+
+  Future<void> _maybeRunPendingEntityLinkPick() async {
+    final type = widget.pendingEntityLinkType;
+    final workId = widget.pendingEntityLinkWorkId;
+    final catalog = widget.userCatalog;
+    if (type == null || catalog == null) return;
+    if (workId != null && workId != _item.workId) return;
+
+    widget.onPendingEntityLinkHandled?.call();
+    if (!mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showEntityLinkPickerDialog(
+      context,
+      userCatalog: catalog,
+      anchorTypeFilter: type,
+    );
+    if (!mounted || picked == null) return;
+
+    final patch = MarkdownEditActions.insertWikiLink(
+      text: _bodyCtrl.text,
+      selection: _bodyCtrl.selection,
+      entityId: picked.entityId,
+      title: picked.title,
+    );
+    _bodyCtrl.text = patch.text;
+    _bodyCtrl.selection = patch.selection;
+    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    _markDirty();
   }
 
   Future<void> _loadLinkNeighbors() async {
@@ -337,6 +386,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _item.memorableQuotes = List<String>.from(parsed.memorableQuotes);
     _item.review = parsed.review;
     _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
+  }
+
+  void _focusSanctumForLinks() {
+    setState(() => _pageView = SanctumPageView.body);
   }
 
   void _onPageViewChanged(SanctumPageView next) {
@@ -573,9 +626,13 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     await RecordLinkNavigator.openRecordPath(
       context,
       storagePath: path,
-      vaultItems: const [],
+      vaultItems: widget.vaultItems,
       userCatalog: catalog,
       onOpenWork: (item) {
+        if (widget.onRecordOpenWork != null) {
+          widget.onRecordOpenWork!(item);
+          return;
+        }
         widget.onWikiLinkTap?.call(
           ParsedRecordLink(
             kind: RecordLinkKind.explicitId,
@@ -585,6 +642,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         );
       },
       onOpenEntity: (entity) async {
+        if (widget.onRecordOpenEntity != null) {
+          await widget.onRecordOpenEntity!(entity);
+          return;
+        }
         widget.onWikiLinkTap?.call(
           ParsedRecordLink(
             kind: RecordLinkKind.explicitId,
@@ -602,9 +663,13 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       await RecordLinkNavigator.openRecordPath(
         context,
         storagePath: ref.storagePath,
-        vaultItems: const [],
+        vaultItems: widget.vaultItems,
         userCatalog: catalog,
         onOpenWork: (item) {
+          if (widget.onRecordOpenWork != null) {
+            widget.onRecordOpenWork!(item);
+            return;
+          }
           widget.onWikiLinkTap?.call(
             ParsedRecordLink(
               kind: RecordLinkKind.explicitId,
@@ -614,6 +679,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           );
         },
         onOpenEntity: (entity) async {
+          if (widget.onRecordOpenEntity != null) {
+            await widget.onRecordOpenEntity!(entity);
+            return;
+          }
           widget.onWikiLinkTap?.call(
             ParsedRecordLink(
               kind: RecordLinkKind.explicitId,
@@ -766,6 +835,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 loadingLinkNeighbors: _loadingLinkNeighbors,
                 onOpenLinkedEntity: _openLinkedEntity,
                 onOpenLinkedWork: _openLinkedWork,
+                onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                onFocusSanctum: _focusSanctumForLinks,
               ),
         Expanded(
           child: ColoredBox(

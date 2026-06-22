@@ -35,7 +35,7 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                   child: _ActionCard(
                     icon: Icons.assignment_turned_in_outlined,
                     title: '작품 검색',
-                    desc: '새로운 이세계 지식을 검색하고 라이브러리에 등록하세요.',
+                    desc: '볼트·카탈로그에서 작품과 인물을 찾습니다.',
                     onTap: onSearch,
                   ),
                 ),
@@ -44,7 +44,7 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                   child: _ActionCard(
                     icon: Icons.person_search_outlined,
                     title: '인물 탐색',
-                    desc: '이세계에 존재하는 매력적인 주인공들과 그 관계를 분석합니다.',
+                    desc: '등록된 인물 엔티티를 갤러리로 봅니다.',
                     onTap: onExploreEntities,
                   ),
                 ),
@@ -57,14 +57,14 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                   child: FeatureFlags.showKnowledgeGraph
                       ? _ActionCard(
                           icon: Icons.hub_outlined,
-                          title: '그래프 탐색 [Beta]',
-                          desc: '연결된 사건과 지식의 성운을 입체적인 망으로 보여줍니다.',
+                          title: '연결 맵',
+                          desc: '볼트의 [[wiki]] 링크로 이어진 작품·인물 관계를 봅니다.',
                           onTap: onGoKnowledgeGraph,
                         )
                       : _ActionCard(
                           icon: Icons.explore_outlined,
                           title: '전체 탐색',
-                          desc: '라이브러리의 모든 작품을 그리드로 탐색합니다.',
+                          desc: '라이브러리 작품을 그리드로 탐색합니다.',
                           onTap: onGoExplore,
                         ),
                 ),
@@ -72,8 +72,8 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                 Expanded(
                   child: _ActionCard(
                     icon: Icons.access_time_outlined,
-                    title: '타임라인',
-                    desc: '각 작품과 사건이 발생한 역사적 순서의 궤적을 확인합니다.',
+                    title: '기록',
+                    desc: '타임라인과 일지에서 시간순 기록을 확인합니다.',
                     onTap: onTimeline,
                   ),
                 ),

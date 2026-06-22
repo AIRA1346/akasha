@@ -38,6 +38,8 @@ import 'views/catalog_entity_browse_view.dart';
 import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
 import 'views/records_view.dart';
+import 'views/dashboard_preview_panel.dart';
+import 'views/entity_dashboard_preview_panel.dart';
 import 'views/home_dashboard_view.dart';
 import 'views/knowledge_graph_view.dart';
 
@@ -140,6 +142,23 @@ class HomeShellBody extends StatelessWidget {
   ) onRequestEntityLink;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
   final VoidCallback? onToggleSidebar;
+  final AkashaItem? workPreviewItem;
+  final UserCatalogEntity? entityPreviewItem;
+  final void Function(AkashaItem item) onPreviewWork;
+  final void Function(UserCatalogEntity entity) onPreviewEntity;
+  final void Function(AkashaItem item) onPreviewLinkedWork;
+  final void Function(UserCatalogEntity entity) onPreviewLinkedEntity;
+  final bool canPopPreview;
+  final VoidCallback onPopPreview;
+  final VoidCallback onCloseWorkPreview;
+  final VoidCallback onCloseEntityPreview;
+  final VoidCallback onOpenWorkFromPreview;
+  final Future<void> Function() onOpenEntityFromPreview;
+  final EntityAnchorType? pendingWorkEntityLinkType;
+  final String? pendingWorkEntityLinkWorkId;
+  final VoidCallback onClearPendingWorkEntityLink;
+  final void Function(EntityAnchorType type) onConnectEntityFromPreview;
+  final VoidCallback onGraphOpenRecord;
 
   const HomeShellBody({
     super.key,
@@ -221,6 +240,23 @@ class HomeShellBody extends StatelessWidget {
     required this.onRequestEntityLink,
     this.onAddNewEntity,
     this.onToggleSidebar,
+    this.workPreviewItem,
+    this.entityPreviewItem,
+    required this.onPreviewWork,
+    required this.onPreviewEntity,
+    required this.onPreviewLinkedWork,
+    required this.onPreviewLinkedEntity,
+    required this.canPopPreview,
+    required this.onPopPreview,
+    required this.onCloseWorkPreview,
+    required this.onCloseEntityPreview,
+    required this.onOpenWorkFromPreview,
+    required this.onOpenEntityFromPreview,
+    this.pendingWorkEntityLinkType,
+    this.pendingWorkEntityLinkWorkId,
+    required this.onClearPendingWorkEntityLink,
+    required this.onConnectEntityFromPreview,
+    required this.onGraphOpenRecord,
   });
 
   @override
@@ -274,7 +310,11 @@ class HomeShellBody extends StatelessWidget {
           onToggleSidebar: onToggleSidebar,
         ),
         Expanded(
-          child: Column(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Column(
             children: [
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
@@ -329,6 +369,13 @@ class HomeShellBody extends StatelessWidget {
                         onAddToLibraryForEntity: onAddToLibraryForEntity,
                         onWikiLinkTap: onWikiLinkTap,
                         onRequestEntityLink: onRequestEntityLink,
+                        onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+                        pendingWorkEntityLinkType: pendingWorkEntityLinkType,
+                        pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
+                        onPendingWorkEntityLinkHandled:
+                            onClearPendingWorkEntityLink,
+                        onRecordOpenWork: onOpenBrowseItem,
+                        onRecordOpenEntity: onOpenEntity,
                         browseContent: isTimelineMode
                             ? RecordsView(
                                 vaultItems: items,
@@ -345,8 +392,8 @@ class HomeShellBody extends StatelessWidget {
                                 userCatalog: userCatalog,
                                 linkIndex: linkIndex,
                                 vaultItems: items,
-                                onOpenWork: onOpenBrowseItem,
-                                onOpenEntity: (entity) => onOpenEntity(entity),
+                                onOpenWork: onPreviewWork,
+                                onOpenEntity: onPreviewEntity,
                                 scope: BrowseEntityScope.all,
                                 posterCardBuilder: posterCardBuilder,
                                 relatedWorksDiscoveryFactory: () =>
@@ -387,6 +434,38 @@ class HomeShellBody extends StatelessWidget {
                 ),
               ),
             ],
+                ),
+              ),
+              if (workPreviewItem != null && !workbench.hasOpenDetail)
+                DashboardPreviewPanel(
+                  item: workPreviewItem!,
+                  userCatalog: userCatalog,
+                  linkIndex: linkIndex,
+                  vaultItems: items,
+                  canGoBack: canPopPreview,
+                  onBack: onPopPreview,
+                  onClose: onCloseWorkPreview,
+                  onOpenDetail: onOpenWorkFromPreview,
+                  onOpenEntity: onPreviewLinkedEntity,
+                  onOpenWork: onPreviewLinkedWork,
+                  onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+                  onConnectEntityType: onConnectEntityFromPreview,
+                ),
+              if (entityPreviewItem != null && !workbench.hasOpenDetail)
+                EntityDashboardPreviewPanel(
+                  entity: entityPreviewItem!,
+                  userCatalog: userCatalog,
+                  linkIndex: linkIndex,
+                  vaultItems: items,
+                  canGoBack: canPopPreview,
+                  onBack: onPopPreview,
+                  onClose: onCloseEntityPreview,
+                  onOpenDetail: onOpenEntityFromPreview,
+                  onOpenEntity: onPreviewLinkedEntity,
+                  onOpenWork: onPreviewLinkedWork,
+                  onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+                ),
+            ],
           ),
         ),
       ],
@@ -407,8 +486,12 @@ class HomeShellBody extends StatelessWidget {
         vaultItems: items,
         userCatalog: userCatalog,
         linkIndex: linkIndex,
-        onOpenWork: onOpenBrowseItem,
-        onOpenEntity: onOpenEntity,
+        onOpenWork: onPreviewWork,
+        onOpenEntity: onPreviewEntity,
+        onOpenRecord: onGraphOpenRecord,
+        onConnectEntity: onAddNewEntity == null
+            ? null
+            : () => onAddNewEntity!(null),
       );
     }
 
@@ -418,13 +501,11 @@ class HomeShellBody extends StatelessWidget {
         recentExploreItems: recentExploreItems,
         userCatalog: userCatalog,
         linkIndex: linkIndex,
-        onOpenWork: onOpenBrowseItem,
-        onOpenEntity: onOpenEntity,
+        previewItem: workPreviewItem,
+        entityPreviewItem: entityPreviewItem,
+        onPreviewWork: onPreviewWork,
+        onPreviewEntity: onPreviewEntity,
         onSearch: onSearch,
-        onTimeline: onSelectTimeline,
-        onGoExplore: onGoExplore,
-        onGoKnowledgeGraph: onGoKnowledgeGraph,
-        onExploreEntities: () => onGoExploreEntities(BrowseEntityScope.person),
         onVaultSettings: onVaultSettings,
       );
     }
@@ -479,8 +560,8 @@ class HomeShellBody extends StatelessWidget {
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       vaultItems: items,
-      onOpenWork: onOpenBrowseItem,
-      onOpenEntity: (entity) => onOpenEntity(entity),
+      onOpenWork: onPreviewWork,
+      onOpenEntity: onPreviewEntity,
       scope: scope,
       highlightEntityId: filterCtrl.highlightEntityId,
       entityGallerySort: sectionPrefs.entityGallerySort,
@@ -513,8 +594,8 @@ class HomeShellBody extends StatelessWidget {
       userCatalog: userCatalog,
       linkIndex: linkIndex,
       vaultItems: items,
-      onOpenWork: onOpenBrowseItem,
-      onOpenEntity: (entity) => onOpenEntity(entity),
+      onOpenWork: onPreviewWork,
+      onOpenEntity: onPreviewEntity,
       scope: BrowseEntityScope.all,
       compact: true,
       highlightEntityId: filterCtrl.highlightEntityId,

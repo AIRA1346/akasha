@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -10,7 +8,7 @@ import 'package:akasha/core/ports/user_catalog_port.dart';
 import 'package:akasha/models/akasha_item.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/user_catalog_entity.dart';
-import 'package:akasha/screens/home/views/home_dashboard_view.dart';
+import 'package:akasha/screens/home/views/entity_dashboard_preview_panel.dart';
 import 'package:akasha/theme/akasha_theme.dart';
 
 class _FakeUserCatalog implements UserCatalogPort {
@@ -60,33 +58,35 @@ class _FakeLinkIndex implements RecordLinkPort {
 }
 
 void main() {
-  testWidgets('HomeDashboardView shows four exploration sections only', (tester) async {
+  testWidgets('EntityDashboardPreviewPanel shows record CTA', (tester) async {
+    final entity = UserCatalogEntity.userLocal(
+      entityId: 'ent_test',
+      type: EntityAnchorType.person,
+      title: '에밀리아',
+      subtype: MediaCategory.animation,
+      addedAt: DateTime(2024),
+    );
+
     await tester.pumpWidget(
       MaterialApp(
         theme: AkashaTheme.dark(),
-        home: HomeDashboardView(
-          vaultItems: const [],
-          recentExploreItems: const [],
-          userCatalog: _FakeUserCatalog(),
-          linkIndex: _FakeLinkIndex(),
-          onPreviewWork: (_) {},
-          onPreviewEntity: (_) {},
-          onSearch: () {},
-          onVaultSettings: () {},
+        home: Scaffold(
+          body: EntityDashboardPreviewPanel(
+            entity: entity,
+            userCatalog: _FakeUserCatalog(),
+            linkIndex: _FakeLinkIndex(),
+            vaultItems: const [],
+            onClose: () {},
+            onOpenDetail: () {},
+          ),
         ),
       ),
     );
+    await tester.pump();
 
-    expect(find.text('계속 탐험하기'), findsOneWidget);
-    expect(find.text('오늘의 연결'), findsOneWidget);
-    expect(find.text('최근 발견'), findsOneWidget);
-    expect(find.text('최근 기록'), findsOneWidget);
-    expect(find.text('안녕하세요, 탐험가님!'), findsNothing);
-    expect(find.text('빠른 액션'), findsNothing);
-    expect(
-      find.text('아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.'),
-      findsOneWidget,
-    );
-    expect(find.text('검색으로 탐험 시작'), findsOneWidget);
+    expect(find.text('에밀리아'), findsWidgets);
+    expect(find.text('기록하기 >'), findsOneWidget);
+    expect(find.text('연결된 작품'), findsOneWidget);
+    expect(find.textContaining('아직 연결된 작품'), findsOneWidget);
   });
 }

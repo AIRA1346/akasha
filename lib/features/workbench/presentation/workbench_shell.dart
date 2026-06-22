@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/archiving/record_link.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
@@ -32,6 +33,12 @@ class WorkbenchShell extends StatefulWidget {
     this.onAddToLibraryForEntity,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
+    this.onGoKnowledgeGraph,
+    this.pendingWorkEntityLinkType,
+    this.pendingWorkEntityLinkWorkId,
+    this.onPendingWorkEntityLinkHandled,
+    this.onRecordOpenWork,
+    this.onRecordOpenEntity,
   });
 
   final WorkbenchController controller;
@@ -51,6 +58,12 @@ class WorkbenchShell extends StatefulWidget {
     BuildContext context,
     String selectedText,
   )? onRequestEntityLink;
+  final VoidCallback? onGoKnowledgeGraph;
+  final EntityAnchorType? pendingWorkEntityLinkType;
+  final String? pendingWorkEntityLinkWorkId;
+  final VoidCallback? onPendingWorkEntityLinkHandled;
+  final void Function(AkashaItem item)? onRecordOpenWork;
+  final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
 
   @override
   State<WorkbenchShell> createState() => _WorkbenchShellState();
@@ -193,6 +206,13 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onAddToLibrary: widget.onAddToLibrary,
                     onWikiLinkTap: widget.onWikiLinkTap,
                     onRequestEntityLink: widget.onRequestEntityLink,
+                    onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                    pendingEntityLinkType: widget.pendingWorkEntityLinkType,
+                    pendingEntityLinkWorkId: widget.pendingWorkEntityLinkWorkId,
+                    onPendingEntityLinkHandled:
+                        widget.onPendingWorkEntityLinkHandled,
+                    onRecordOpenWork: widget.onRecordOpenWork,
+                    onRecordOpenEntity: widget.onRecordOpenEntity,
                     onClose: () => _handleCloseTab(active.id),
                   ),
                 EntityCollectibleTab(:final entity, :final journal, :final isDirty) =>
@@ -206,6 +226,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     infoPanelLocked: layout.infoPanelLocked,
                     userCatalog: widget.userCatalog,
                     linkIndex: widget.linkIndex,
+                    vaultItems: widget.vaultItems,
                     onInfoWidthChanged: widget.controller.setInfoPanelWidth,
                     onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
                     onAddToLibrary: widget.onAddToLibraryForEntity,
@@ -235,6 +256,9 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     },
                     onWikiLinkTap: widget.onWikiLinkTap,
                     onRequestEntityLink: widget.onRequestEntityLink,
+                    onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                    onRecordOpenWork: widget.onRecordOpenWork,
+                    onRecordOpenEntity: widget.onRecordOpenEntity,
                     onClose: () => _handleCloseTab(active.id),
                   ),
               };

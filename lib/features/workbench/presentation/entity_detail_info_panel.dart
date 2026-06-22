@@ -8,7 +8,9 @@ import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
+import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/editable_tag_chips.dart';
+import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
 import 'work_detail_info_poster.dart';
 
@@ -43,6 +45,12 @@ class EntityDetailInfoPanel extends StatelessWidget {
     this.canDeleteMd = false,
     this.onDeleteArchive,
     this.onClose,
+    this.onGoKnowledgeGraph,
+    this.linkNeighbors = const EntityLinkNeighbors(),
+    this.loadingLinkNeighbors = false,
+    this.onOpenLinkedEntity,
+    this.onOpenLinkedWork,
+    this.onFocusSanctumForLinks,
   });
 
   final AkashaItem item;
@@ -72,6 +80,12 @@ class EntityDetailInfoPanel extends StatelessWidget {
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
   final VoidCallback? onClose;
+  final VoidCallback? onGoKnowledgeGraph;
+  final EntityLinkNeighbors linkNeighbors;
+  final bool loadingLinkNeighbors;
+  final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
+  final void Function(AkashaItem work)? onOpenLinkedWork;
+  final VoidCallback? onFocusSanctumForLinks;
 
   @override
   Widget build(BuildContext context) {
@@ -144,6 +158,61 @@ class EntityDetailInfoPanel extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
+
+              // —— 연결 (탐험 허브) ——
+              EntityLinkNeighborsSections(
+                neighbors: linkNeighbors,
+                entityTags: draftTags,
+                loading: loadingLinkNeighbors,
+                onOpenEntity: onOpenLinkedEntity,
+                onOpenWork: onOpenLinkedWork,
+                onRecordCta: onFocusSanctumForLinks,
+                sectionTitleStyle: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF6C63FF),
+                ),
+              ),
+              if (onGoKnowledgeGraph != null) ...[
+                const SizedBox(height: 4),
+                SizedBox(
+                  height: 30,
+                  child: OutlinedButton.icon(
+                    onPressed: onGoKnowledgeGraph,
+                    icon: const Icon(Icons.hub_outlined, size: 14, color: Color(0xFF6C63FF)),
+                    label: const Text(
+                      '연결 맵에서 보기',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      side: const BorderSide(color: Color(0xFF6C63FF)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+              const Divider(height: 24),
+              _IncomingLinksSection(
+                loading: loadingIncoming,
+                paths: incomingPaths,
+                staleLabelRecordCount: staleLabelRecordCount,
+                onRefresh: onRefreshIncoming,
+                onOpen: onOpenIncoming,
+              ),
+              const SizedBox(height: 24),
+              _SameDaySection(
+                loading: loadingSameDay,
+                refs: sameDayRefs,
+                anchor: item.addedAt,
+                onOpen: onOpenSameDay,
+              ),
+              const Divider(height: 24),
               Text(
                 '태그',
                 style: TextStyle(
@@ -197,23 +266,6 @@ class EntityDetailInfoPanel extends StatelessWidget {
                   ),
                 ),
               ],
-              const SizedBox(height: 20),
-              const Divider(height: 1),
-              const SizedBox(height: 20),
-              _IncomingLinksSection(
-                loading: loadingIncoming,
-                paths: incomingPaths,
-                staleLabelRecordCount: staleLabelRecordCount,
-                onRefresh: onRefreshIncoming,
-                onOpen: onOpenIncoming,
-              ),
-              const SizedBox(height: 24),
-              _SameDaySection(
-                loading: loadingSameDay,
-                refs: sameDayRefs,
-                anchor: item.addedAt,
-                onOpen: onOpenSameDay,
-              ),
             ],
           ),
         ),

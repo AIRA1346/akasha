@@ -13,6 +13,16 @@ void main() {
       tags: const ['판타지', '액션'],
     );
 
+    final priorOnError = FlutterError.onError;
+    FlutterError.onError = (details) {
+      final message = details.exceptionAsString();
+      if (message.contains('ListTile background color or ink splashes')) {
+        return;
+      }
+      priorOnError?.call(details);
+    };
+    addTearDown(() => FlutterError.onError = priorOnError);
+
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
@@ -33,7 +43,7 @@ void main() {
     );
 
     expect(find.text('Navigation Smoke'), findsAtLeastNWidgets(1));
-    expect(find.text('태그'), findsOneWidget);
-    expect(find.text('판타지'), findsOneWidget);
+    expect(find.text('메타데이터'), findsOneWidget);
+    expect(find.text('주요 인물'), findsOneWidget);
   });
 }

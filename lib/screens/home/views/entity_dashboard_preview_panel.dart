@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../config/feature_flags.dart';
+import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../services/entity_related_works_discovery.dart';
-import '../../../config/feature_flags.dart';
+import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../../../theme/akasha_colors.dart';
-import '../../../utils/work_link_neighbors.dart';
+import '../../../utils/entity_link_neighbors.dart';
+import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/poster_image.dart';
-import '../../../widgets/work_link_neighbors_sections.dart';
-import '../../../widgets/work_preview_empty_connections.dart';
-import '../../../core/archiving/entity_anchor.dart';
 
-class DashboardPreviewPanel extends StatefulWidget {
-  const DashboardPreviewPanel({
+class EntityDashboardPreviewPanel extends StatefulWidget {
+  const EntityDashboardPreviewPanel({
     super.key,
-    required this.item,
+    required this.entity,
     required this.userCatalog,
     required this.linkIndex,
     required this.vaultItems,
@@ -28,10 +27,9 @@ class DashboardPreviewPanel extends StatefulWidget {
     this.onOpenEntity,
     this.onOpenWork,
     this.onGoKnowledgeGraph,
-    this.onConnectEntityType,
   });
 
-  final AkashaItem item;
+  final UserCatalogEntity entity;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final List<AkashaItem> vaultItems;
@@ -42,14 +40,15 @@ class DashboardPreviewPanel extends StatefulWidget {
   final void Function(UserCatalogEntity entity)? onOpenEntity;
   final void Function(AkashaItem work)? onOpenWork;
   final VoidCallback? onGoKnowledgeGraph;
-  final void Function(EntityAnchorType type)? onConnectEntityType;
 
   @override
-  State<DashboardPreviewPanel> createState() => _DashboardPreviewPanelState();
+  State<EntityDashboardPreviewPanel> createState() =>
+      _EntityDashboardPreviewPanelState();
 }
 
-class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
-  late Future<WorkLinkNeighbors> _neighborsFuture;
+class _EntityDashboardPreviewPanelState
+    extends State<EntityDashboardPreviewPanel> {
+  late Future<EntityLinkNeighbors> _neighborsFuture;
 
   @override
   void initState() {
@@ -58,20 +57,20 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
   }
 
   @override
-  void didUpdateWidget(covariant DashboardPreviewPanel oldWidget) {
+  void didUpdateWidget(covariant EntityDashboardPreviewPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.item.workId != widget.item.workId) {
+    if (oldWidget.entity.entityId != widget.entity.entityId) {
       _neighborsFuture = _loadNeighbors();
     }
   }
 
-  Future<WorkLinkNeighbors> _loadNeighbors() {
+  Future<EntityLinkNeighbors> _loadNeighbors() {
     final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
       linkIndex: widget.linkIndex,
       vaultItems: widget.vaultItems,
     );
-    return fetchWorkLinkNeighbors(
-      work: widget.item,
+    return fetchEntityLinkNeighbors(
+      entity: widget.entity,
       userCatalog: widget.userCatalog,
       discovery: discovery,
       linkIndex: widget.linkIndex,
@@ -81,6 +80,20 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
 
   @override
   Widget build(BuildContext context) {
+    final badge = entityTypeBadgeLabel(widget.entity.anchorType);
+    final avatarItem = EntityItem(
+      entityType: widget.entity.anchorType,
+      entityId: widget.entity.entityId,
+      title: widget.entity.title,
+      category: widget.entity.subtype,
+      domain: widget.entity.domain,
+      creator: widget.entity.creator,
+      releaseYear: widget.entity.releaseYear,
+      posterPath: widget.entity.posterPath,
+      tags: widget.entity.tags,
+      addedAt: widget.entity.addedAt,
+    );
+
     return Container(
       width: 320,
       decoration: BoxDecoration(
@@ -119,7 +132,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                 Row(
                   children: [
                     Text(
-                      widget.item.category.name,
+                      badge,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -148,18 +161,15 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: SizedBox(
-                        width: 180,
-                        height: 260,
-                        child: PosterImage(
-                          item: widget.item,
-                          fit: BoxFit.cover,
-                        ),
+                        width: 120,
+                        height: 120,
+                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 20),
                   Text(
-                    widget.item.title,
+                    widget.entity.title,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -167,95 +177,58 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                       height: 1.2,
                     ),
                   ),
+                  if (widget.entity.aliases.isNotEmpty) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      widget.entity.aliases.join(' · '),
+                      style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                    ),
+                  ],
                   const SizedBox(height: 6),
                   Text(
-                    widget.item.creator.isNotEmpty
-                        ? widget.item.creator
-                        : '작자 미상',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[400]),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    '${widget.item.releaseYear ?? '연도 미상'} · ${widget.item.category.name}',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                    widget.entity.entityId,
+                    style: TextStyle(fontSize: 10, color: Colors.grey[600]),
                   ),
                   const SizedBox(height: 24),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: FilledButton(
-                          onPressed: widget.onOpenDetail,
-                          style: FilledButton.styleFrom(
-                            backgroundColor: AkashaColors.accent,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                          ),
-                          child: const Text(
-                            '기록하기 >',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: widget.onOpenDetail,
+                      style: FilledButton.styleFrom(
+                        backgroundColor: AkashaColors.accent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                      child: const Text(
+                        '기록하기 >',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                  const SizedBox(height: 32),
-                  _buildInfoRow('장르', widget.item.category.name),
-                  _buildInfoRow(
-                    '원작',
-                    widget.item.creator.isNotEmpty
-                        ? widget.item.creator
-                        : '정보 없음',
-                  ),
-                  _buildInfoRow(
-                    '평점',
-                    widget.item.rating > 0
-                        ? '${widget.item.rating} / 10.0'
-                        : '평가 없음',
-                  ),
-                  const SizedBox(height: 16),
-                  FutureBuilder<WorkLinkNeighbors>(
+                  const SizedBox(height: 24),
+                  FutureBuilder<EntityLinkNeighbors>(
                     future: _neighborsFuture,
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const WorkLinkNeighborsSections(
-                          neighbors: WorkLinkNeighbors(),
+                        return const EntityLinkNeighborsSections(
+                          neighbors: EntityLinkNeighbors(),
+                          entityTags: [],
                           loading: true,
                         );
                       }
                       final neighbors =
-                          snapshot.data ?? const WorkLinkNeighbors();
-                      if (!neighbors.hasAnyLink &&
-                          widget.item.tags.isEmpty) {
-                        return WorkPreviewEmptyConnections(
-                          onConnectPerson: widget.onConnectEntityType == null
-                              ? null
-                              : () => widget.onConnectEntityType!(
-                                    EntityAnchorType.person,
-                                  ),
-                          onConnectEvent: widget.onConnectEntityType == null
-                              ? null
-                              : () => widget.onConnectEntityType!(
-                                    EntityAnchorType.event,
-                                  ),
-                          onConnectConcept: widget.onConnectEntityType == null
-                              ? null
-                              : () => widget.onConnectEntityType!(
-                                    EntityAnchorType.concept,
-                                  ),
-                          onOpenRecord: widget.onOpenDetail,
-                        );
-                      }
-                      return WorkLinkNeighborsSections(
+                          snapshot.data ?? const EntityLinkNeighbors();
+                      return EntityLinkNeighborsSections(
                         neighbors: neighbors,
-                        conceptTags: widget.item.tags,
+                        entityTags: widget.entity.tags,
                         onOpenEntity: widget.onOpenEntity,
                         onOpenWork: widget.onOpenWork,
-                        onLinkCta: widget.onOpenDetail,
+                        onRecordCta: widget.onOpenDetail,
                       );
                     },
                   ),
@@ -280,49 +253,6 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildInfoRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 80,
-            child: Text(
-              label,
-              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-            ),
-          ),
-          Expanded(
-            child: Text(
-              value,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTagChip(String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(fontSize: 11, color: Colors.grey[300]),
       ),
     );
   }

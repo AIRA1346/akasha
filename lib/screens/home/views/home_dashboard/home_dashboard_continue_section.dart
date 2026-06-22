@@ -12,28 +12,67 @@ class HomeDashboardContinueSection extends StatelessWidget {
     required this.recentExploreItems,
     required this.selectedPreviewItem,
     required this.onItemTap,
-    required this.onGoExplore,
+    this.selectedEntityPreviewId,
+    this.onSearch,
+    this.fallbackVaultItems = const [],
   });
 
   final List<AkashaItem> recentExploreItems;
   final AkashaItem? selectedPreviewItem;
+  final String? selectedEntityPreviewId;
   final void Function(AkashaItem item) onItemTap;
-  final VoidCallback onGoExplore;
+  final VoidCallback? onSearch;
+  final List<AkashaItem> fallbackVaultItems;
+
+  List<AkashaItem> get _displayItems {
+    if (recentExploreItems.isNotEmpty) {
+      return recentExploreItems.take(4).toList();
+    }
+    final sorted = List<AkashaItem>.from(fallbackVaultItems)
+      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
+    return sorted.take(4).toList();
+  }
+
+  bool get _usingVaultFallback =>
+      recentExploreItems.isEmpty && _displayItems.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
-    final recentItems = recentExploreItems.take(4).toList();
+    final displayItems = _displayItems;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         HomeDashboardStyles.sectionHeader('계속 탐험하기'),
         const SizedBox(height: 12),
-        if (recentItems.isEmpty)
+        if (displayItems.isEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
+                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                ),
+                if (onSearch != null) ...[
+                  const SizedBox(height: 8),
+                  TextButton(
+                    onPressed: onSearch,
+                    child: const Text(
+                      '검색으로 탐험 시작',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          )
+        else if (_usingVaultFallback)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
             child: Text(
-              '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
+              '최근 추가한 작품부터 탐험해 보세요.',
               style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
           ),
@@ -42,17 +81,24 @@ class HomeDashboardContinueSection extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              ...recentItems.map((item) => _ExploreCard(
+              ...displayItems.map((item) => _ExploreCard(
                     item: item,
-                    isSelected: _isSameExploreItem(selectedPreviewItem, item),
+                    isSelected: _isSelected(item),
                     onTap: () => onItemTap(item),
                   )),
-              _AddExploreCard(onTap: onGoExplore),
+              if (onSearch != null) _AddExploreCard(onTap: onSearch!),
             ],
           ),
         ),
       ],
     );
+  }
+
+  bool _isSelected(AkashaItem item) {
+    if (item is EntityItem && selectedEntityPreviewId != null) {
+      return selectedEntityPreviewId == item.entityId;
+    }
+    return _isSameExploreItem(selectedPreviewItem, item);
   }
 
   static bool _isSameExploreItem(AkashaItem? selected, AkashaItem item) {
@@ -258,7 +304,7 @@ class _AddExploreCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                '탐색 기록 더 보기',
+                '검색으로 더 보기',
                 style: TextStyle(
                   fontSize: 11,
                   color: Colors.grey[500],

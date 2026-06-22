@@ -58,6 +58,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
     this.loadingLinkNeighbors = false,
     this.onOpenLinkedEntity,
     this.onOpenLinkedWork,
+    this.onGoKnowledgeGraph,
+    this.onFocusSanctum,
   });
 
   final AkashaItem item;
@@ -103,6 +105,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
   final bool loadingLinkNeighbors;
   final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
   final void Function(AkashaItem work)? onOpenLinkedWork;
+  final VoidCallback? onGoKnowledgeGraph;
+  final VoidCallback? onFocusSanctum;
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +151,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
-                  final posterMaxHeight = constraints.maxHeight * 0.55;
+                  final posterMaxHeight = constraints.maxHeight * 0.30;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -200,23 +204,26 @@ class WorkDetailInfoPanel extends StatelessWidget {
                                 loadingLinkNeighbors: loadingLinkNeighbors,
                                 onOpenLinkedEntity: onOpenLinkedEntity,
                                 onOpenLinkedWork: onOpenLinkedWork,
-                              ),
-                              const SizedBox(height: 20),
-                              const Divider(height: 1),
-                              const SizedBox(height: 20),
-                              _IncomingLinksSection(
-                                loading: loadingIncoming,
-                                paths: incomingPaths,
-                                staleLabelRecordCount: staleLabelRecordCount,
-                                onRefresh: onRefreshIncoming,
-                                onOpen: onOpenIncoming,
-                              ),
-                              const SizedBox(height: 24),
-                              _SameDaySection(
-                                loading: loadingSameDay,
-                                refs: sameDayRefs,
-                                anchor: item.addedAt,
-                                onOpen: onOpenSameDay,
+                                onGoKnowledgeGraph: onGoKnowledgeGraph,
+                                onFocusSanctum: onFocusSanctum,
+                                notesSection: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    _IncomingLinksSection(
+                                      loading: loadingIncoming,
+                                      paths: incomingPaths,
+                                      staleLabelRecordCount: staleLabelRecordCount,
+                                      onRefresh: onRefreshIncoming,
+                                      onOpen: onOpenIncoming,
+                                    ),
+                                    _SameDaySection(
+                                      loading: loadingSameDay,
+                                      refs: sameDayRefs,
+                                      anchor: item.addedAt,
+                                      onOpen: onOpenSameDay,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

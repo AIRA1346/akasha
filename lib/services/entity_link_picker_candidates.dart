@@ -39,6 +39,7 @@ abstract final class EntityLinkPickerCandidates {
     Set<String>? archivedEntityIds,
     EntityVaultLoader? loader,
     String? vaultPath,
+    EntityAnchorType? anchorTypeFilter,
   }) async {
     await userCatalog.load();
     final archived = archivedEntityIds ??
@@ -49,7 +50,10 @@ abstract final class EntityLinkPickerCandidates {
         ? userCatalog.all
         : userCatalog.search(trimmed);
 
-    final filtered = raw.where(_isLinkableEntity).toList();
+    final filtered = raw.where(_isLinkableEntity).where((entity) {
+      if (anchorTypeFilter == null) return true;
+      return entity.anchorType == anchorTypeFilter;
+    }).toList();
 
     final candidates = filtered
         .map(

@@ -12,10 +12,20 @@ class WorkLinkNeighbors {
   const WorkLinkNeighbors({
     this.characters = const [],
     this.connectedWorks = const [],
+    this.events = const [],
+    this.concepts = const [],
   });
 
   final List<UserCatalogEntity> characters;
   final List<AkashaItem> connectedWorks;
+  final List<UserCatalogEntity> events;
+  final List<UserCatalogEntity> concepts;
+
+  bool get hasAnyLink =>
+      characters.isNotEmpty ||
+      connectedWorks.isNotEmpty ||
+      events.isNotEmpty ||
+      concepts.isNotEmpty;
 }
 
 Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
@@ -26,6 +36,8 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   required List<AkashaItem> vaultItems,
   int characterLimit = 4,
   int connectedWorkLimit = 4,
+  int eventLimit = 3,
+  int conceptLimit = 3,
 }) async {
   if (work is EntityItem || work.workId.isEmpty) {
     return const WorkLinkNeighbors();
@@ -35,11 +47,23 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   final linkedEntityIds = await discovery.entityIdsForWork(work.workId);
 
   final characters = <UserCatalogEntity>[];
+  final events = <UserCatalogEntity>[];
+  final concepts = <UserCatalogEntity>[];
+
   for (final entityId in linkedEntityIds) {
-    if (EntityIdCodec.typeFromId(entityId) != EntityAnchorType.person) continue;
+    final type = EntityIdCodec.typeFromId(entityId);
     final entity = userCatalog.getById(entityId);
-    if (entity != null) characters.add(entity);
-    if (characters.length >= characterLimit) break;
+    if (entity == null) continue;
+    switch (type) {
+      case EntityAnchorType.person:
+        if (characters.length < characterLimit) characters.add(entity);
+      case EntityAnchorType.event:
+        if (events.length < eventLimit) events.add(entity);
+      case EntityAnchorType.concept:
+        if (concepts.length < conceptLimit) concepts.add(entity);
+      default:
+        break;
+    }
   }
 
   if (characters.length < characterLimit) {
@@ -99,5 +123,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   return WorkLinkNeighbors(
     characters: characters,
     connectedWorks: connectedWorks,
+    events: events,
+    concepts: concepts,
   );
 }
