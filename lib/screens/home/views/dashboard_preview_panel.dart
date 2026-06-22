@@ -1,35 +1,75 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/ports/record_link_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../screens/home/coordinators/home_shell_wiring.dart';
+import '../../../services/entity_related_works_discovery.dart';
 import '../../../theme/akasha_colors.dart';
-import '../../../utils/work_related_characters.dart';
+import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/poster_image.dart';
+import '../../../widgets/work_link_neighbors_sections.dart';
 
-class DashboardPreviewPanel extends StatelessWidget {
+class DashboardPreviewPanel extends StatefulWidget {
   const DashboardPreviewPanel({
     super.key,
     required this.item,
     required this.userCatalog,
+    required this.linkIndex,
+    required this.vaultItems,
     required this.onClose,
     required this.onOpenDetail,
     this.onOpenEntity,
+    this.onOpenWork,
   });
 
   final AkashaItem item;
   final UserCatalogPort userCatalog;
+  final RecordLinkPort linkIndex;
+  final List<AkashaItem> vaultItems;
   final VoidCallback onClose;
   final VoidCallback onOpenDetail;
   final void Function(UserCatalogEntity entity)? onOpenEntity;
+  final void Function(AkashaItem work)? onOpenWork;
+
+  @override
+  State<DashboardPreviewPanel> createState() => _DashboardPreviewPanelState();
+}
+
+class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
+  late Future<WorkLinkNeighbors> _neighborsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _neighborsFuture = _loadNeighbors();
+  }
+
+  @override
+  void didUpdateWidget(covariant DashboardPreviewPanel oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.item.workId != widget.item.workId) {
+      _neighborsFuture = _loadNeighbors();
+    }
+  }
+
+  Future<WorkLinkNeighbors> _loadNeighbors() {
+    final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
+    return fetchWorkLinkNeighbors(
+      work: widget.item,
+      userCatalog: widget.userCatalog,
+      discovery: discovery,
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final characters = item is EntityItem
-        ? const <UserCatalogEntity>[]
-        : relatedCharactersForWork(work: item, catalog: userCatalog);
-
     return Container(
       width: 320,
       decoration: BoxDecoration(
@@ -46,7 +86,7 @@ class DashboardPreviewPanel extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  item.category.name,
+                  widget.item.category.name,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -57,7 +97,7 @@ class DashboardPreviewPanel extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.close_rounded, size: 20),
                   color: Colors.grey[500],
-                  onPressed: onClose,
+                  onPressed: widget.onClose,
                   splashRadius: 20,
                 ),
               ],
@@ -76,7 +116,7 @@ class DashboardPreviewPanel extends StatelessWidget {
                         width: 180,
                         height: 260,
                         child: PosterImage(
-                          item: item,
+                          item: widget.item,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -84,7 +124,7 @@ class DashboardPreviewPanel extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    item.title,
+                    widget.item.title,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -94,26 +134,22 @@ class DashboardPreviewPanel extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    item.creator.isNotEmpty ? item.creator : '작자 미상',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[400],
-                    ),
+                    widget.item.creator.isNotEmpty
+                        ? widget.item.creator
+                        : '작자 미상',
+                    style: TextStyle(fontSize: 12, color: Colors.grey[400]),
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${item.releaseYear ?? '연도 미상'} · ${item.category.name}',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[600],
-                    ),
+                    '${widget.item.releaseYear ?? '연도 미상'} · ${widget.item.category.name}',
+                    style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                   ),
                   const SizedBox(height: 24),
                   Row(
                     children: [
                       Expanded(
                         child: FilledButton(
-                          onPressed: onOpenDetail,
+                          onPressed: widget.onOpenDetail,
                           style: FilledButton.styleFrom(
                             backgroundColor: AkashaColors.accent,
                             shape: RoundedRectangleBorder(
@@ -133,24 +169,40 @@ class DashboardPreviewPanel extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 32),
-                  _buildInfoRow('장르', item.category.name),
-                  _buildInfoRow('원작', item.creator.isNotEmpty ? item.creator : '정보 없음'),
-                  _buildInfoRow('평점', item.rating > 0 ? '${item.rating} / 10.0' : '평가 없음'),
+                  _buildInfoRow('장르', widget.item.category.name),
+                  _buildInfoRow(
+                    '원작',
+                    widget.item.creator.isNotEmpty
+                        ? widget.item.creator
+                        : '정보 없음',
+                  ),
+                  _buildInfoRow(
+                    '평점',
+                    widget.item.rating > 0
+                        ? '${widget.item.rating} / 10.0'
+                        : '평가 없음',
+                  ),
                   const SizedBox(height: 24),
-                  if (characters.isNotEmpty) ...[
-                    const Text(
-                      '주요 인물',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    _buildCharacterRow(characters),
-                    const SizedBox(height: 24),
-                  ],
-                  if (item.tags.isNotEmpty) ...[
+                  FutureBuilder<WorkLinkNeighbors>(
+                    future: _neighborsFuture,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const WorkLinkNeighborsSections(
+                          neighbors: WorkLinkNeighbors(),
+                          loading: true,
+                        );
+                      }
+                      final neighbors =
+                          snapshot.data ?? const WorkLinkNeighbors();
+                      return WorkLinkNeighborsSections(
+                        neighbors: neighbors,
+                        onOpenEntity: widget.onOpenEntity,
+                        onOpenWork: widget.onOpenWork,
+                      );
+                    },
+                  ),
+                  if (widget.item.tags.isNotEmpty) ...[
+                    const SizedBox(height: 8),
                     const Text(
                       '관련 개념',
                       style: TextStyle(
@@ -163,9 +215,10 @@ class DashboardPreviewPanel extends StatelessWidget {
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
-                      children: item.tags.map((tag) => _buildTagChip(tag)).toList(),
+                      children: widget.item.tags
+                          .map((tag) => _buildTagChip(tag))
+                          .toList(),
                     ),
-                    const SizedBox(height: 32),
                   ],
                   const SizedBox(height: 24),
                 ],
@@ -173,62 +226,6 @@ class DashboardPreviewPanel extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildCharacterRow(List<UserCatalogEntity> characters) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: characters.map((person) {
-          final avatarItem = EntityItem(
-            entityType: EntityAnchorType.person,
-            entityId: person.entityId,
-            title: person.title,
-            category: person.subtype,
-            domain: person.domain,
-            creator: person.creator,
-            releaseYear: person.releaseYear,
-            posterPath: person.posterPath,
-            tags: person.tags,
-            addedAt: person.addedAt,
-          );
-
-          return Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: InkWell(
-              onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
-              borderRadius: BorderRadius.circular(8),
-              child: SizedBox(
-                width: 56,
-                child: Column(
-                  children: [
-                    ClipOval(
-                      child: SizedBox(
-                        width: 40,
-                        height: 40,
-                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      person.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        }).toList(),
       ),
     );
   }
@@ -271,10 +268,7 @@ class DashboardPreviewPanel extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: TextStyle(
-          fontSize: 11,
-          color: Colors.grey[300],
-        ),
+        style: TextStyle(fontSize: 11, color: Colors.grey[300]),
       ),
     );
   }

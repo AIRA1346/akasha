@@ -10,12 +10,14 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
     required this.onSearch,
     required this.onExploreEntities,
     required this.onGoExplore,
+    required this.onGoKnowledgeGraph,
     required this.onTimeline,
   });
 
   final VoidCallback onSearch;
   final VoidCallback onExploreEntities;
   final VoidCallback onGoExplore;
+  final VoidCallback onGoKnowledgeGraph;
   final VoidCallback onTimeline;
 
   @override
@@ -57,7 +59,7 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                           icon: Icons.hub_outlined,
                           title: '그래프 탐색 [Beta]',
                           desc: '연결된 사건과 지식의 성운을 입체적인 망으로 보여줍니다.',
-                          onTap: onGoExplore,
+                          onTap: onGoKnowledgeGraph,
                         )
                       : _ActionCard(
                           icon: Icons.explore_outlined,

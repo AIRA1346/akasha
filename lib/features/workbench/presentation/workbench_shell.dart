@@ -27,6 +27,7 @@ class WorkbenchShell extends StatefulWidget {
     required this.onEntityDeleted,
     this.userCatalog,
     this.linkIndex,
+    this.vaultItems = const [],
     this.onAddToLibrary,
     this.onAddToLibraryForEntity,
     this.onWikiLinkTap,
@@ -42,6 +43,7 @@ class WorkbenchShell extends StatefulWidget {
   final void Function(String tabId) onEntityDeleted;
   final UserCatalogPort? userCatalog;
   final RecordLinkPort? linkIndex;
+  final List<AkashaItem> vaultItems;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
@@ -166,6 +168,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     infoPanelLocked: layout.infoPanelLocked,
                     userCatalog: widget.userCatalog,
                     linkIndex: widget.linkIndex,
+                    vaultItems: widget.vaultItems,
                     onInfoWidthChanged: widget.controller.setInfoPanelWidth,
                     onToggleInfoLock: widget.controller.toggleInfoPanelLocked,
                     onBindSave: (save) =>

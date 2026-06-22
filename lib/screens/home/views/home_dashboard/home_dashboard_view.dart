@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/ports/record_link_port.dart';
 import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
@@ -19,11 +20,13 @@ class HomeDashboardView extends StatefulWidget {
     required this.vaultItems,
     required this.recentExploreItems,
     required this.userCatalog,
+    required this.linkIndex,
     required this.onOpenWork,
     required this.onOpenEntity,
     required this.onSearch,
     required this.onTimeline,
     required this.onGoExplore,
+    required this.onGoKnowledgeGraph,
     required this.onExploreEntities,
     required this.onVaultSettings,
   });
@@ -31,11 +34,13 @@ class HomeDashboardView extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final List<AkashaItem> recentExploreItems;
   final UserCatalogPort userCatalog;
+  final RecordLinkPort linkIndex;
   final void Function(AkashaItem) onOpenWork;
   final void Function(UserCatalogEntity) onOpenEntity;
   final VoidCallback onSearch;
   final VoidCallback onTimeline;
   final VoidCallback onGoExplore;
+  final VoidCallback onGoKnowledgeGraph;
   final VoidCallback onExploreEntities;
   final VoidCallback onVaultSettings;
 
@@ -111,6 +116,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                     onSearch: widget.onSearch,
                     onExploreEntities: widget.onExploreEntities,
                     onGoExplore: widget.onGoExplore,
+                    onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
                     onTimeline: widget.onTimeline,
                   ),
                   const SizedBox(height: 80),
@@ -122,6 +128,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
             DashboardPreviewPanel(
               item: _selectedPreviewItem!,
               userCatalog: widget.userCatalog,
+              linkIndex: widget.linkIndex,
+              vaultItems: widget.vaultItems,
               onClose: () => setState(() => _selectedPreviewItem = null),
               onOpenDetail: () {
                 final item = _selectedPreviewItem!;
@@ -129,6 +137,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 widget.onOpenWork(item);
               },
               onOpenEntity: widget.onOpenEntity,
+              onOpenWork: (work) {
+                setState(() => _selectedPreviewItem = work);
+              },
             ),
         ],
       ),

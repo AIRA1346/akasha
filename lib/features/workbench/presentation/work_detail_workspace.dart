@@ -11,6 +11,9 @@ import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../screens/home/coordinators/home_shell_wiring.dart';
+import '../../../utils/work_link_neighbors.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
@@ -33,6 +36,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final bool infoPanelLocked;
   final UserCatalogPort? userCatalog;
   final RecordLinkPort? linkIndex;
+  final List<AkashaItem> vaultItems;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
   final void Function(AkashaItem saved) onSaved;
@@ -57,6 +61,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.infoPanelLocked = false,
     this.userCatalog,
     this.linkIndex,
+    this.vaultItems = const [],
     this.onInfoWidthChanged,
     this.onToggleInfoLock,
     required this.onSaved,
@@ -103,6 +108,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   int _staleLabelRecordCount = 0;
   List<SameDayRecordRef> _sameDayRefs = const [];
   bool _loadingSameDay = false;
+  WorkLinkNeighbors _linkNeighbors = const WorkLinkNeighbors();
+  bool _loadingLinkNeighbors = false;
 
   static const _autoSaveDelay = Duration(seconds: 2);
 
@@ -121,6 +128,55 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _refreshDiskMtime();
     _loadIncoming();
     _loadSameDay();
+    _loadLinkNeighbors();
+  }
+
+  Future<void> _loadLinkNeighbors() async {
+    final catalog = widget.userCatalog;
+    final index = widget.linkIndex;
+    if (catalog == null || index == null) return;
+    setState(() => _loadingLinkNeighbors = true);
+    try {
+      final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
+        linkIndex: index,
+        vaultItems: widget.vaultItems,
+      );
+      final neighbors = await fetchWorkLinkNeighbors(
+        work: _item,
+        userCatalog: catalog,
+        discovery: discovery,
+        linkIndex: index,
+        vaultItems: widget.vaultItems,
+      );
+      if (mounted) {
+        setState(() {
+          _linkNeighbors = neighbors;
+          _loadingLinkNeighbors = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loadingLinkNeighbors = false);
+    }
+  }
+
+  void _openLinkedEntity(UserCatalogEntity entity) {
+    widget.onWikiLinkTap?.call(
+      ParsedRecordLink(
+        kind: RecordLinkKind.explicitId,
+        raw: '[[${entity.entityId}]]',
+        targetEntityId: entity.entityId,
+      ),
+    );
+  }
+
+  void _openLinkedWork(AkashaItem work) {
+    widget.onWikiLinkTap?.call(
+      ParsedRecordLink(
+        kind: RecordLinkKind.explicitId,
+        raw: '[[${work.workId}]]',
+        targetEntityId: work.workId,
+      ),
+    );
   }
 
   Future<void> _loadSameDay() async {
@@ -186,6 +242,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _loadDraftFromItem();
     _refreshFullFileEditor();
     _refreshDiskMtime();
+    _loadLinkNeighbors();
   }
 
   void _refreshDiskMtime() {
@@ -494,6 +551,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       widget.onSaved(saved);
       _loadIncoming();
       _loadSameDay();
+      _loadLinkNeighbors();
       if (!silent) {
         _showSnack(
           AkashaFileService().vaultPath != null
@@ -704,6 +762,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 canDeleteMd: _isArchivedInVault,
                 onDeleteArchive: _confirmDelete,
                 onClose: widget.onClose,
+                linkNeighbors: _linkNeighbors,
+                loadingLinkNeighbors: _loadingLinkNeighbors,
+                onOpenLinkedEntity: _openLinkedEntity,
+                onOpenLinkedWork: _openLinkedWork,
               ),
         Expanded(
           child: ColoredBox(

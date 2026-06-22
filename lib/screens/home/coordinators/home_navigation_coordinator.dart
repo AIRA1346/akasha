@@ -32,6 +32,9 @@ class HomeNavigationCoordinator {
   /// master_index에서 browse 그리드를 보여줄 때 true (프리미엄 홈 대시보드 대신).
   bool isExploreBrowseMode = false;
 
+  /// 지식 그래프 뷰 모드.
+  bool isKnowledgeGraphMode = false;
+
   bool get isPersonalLibraryMode => sidebarCoordinator.isPersonalLibraryMode;
   bool get isCollectibleCollectionMode =>
       sidebarCoordinator.isCollectibleCollectionMode;
@@ -51,11 +54,15 @@ class HomeNavigationCoordinator {
   bool get isHomeDashboardMode =>
       isOnMasterDashboard &&
       !isExploreBrowseMode &&
+      !isKnowledgeGraphMode &&
       !filterCoordinator.filterCtrl.hasAnyFilters;
 
   /// browse 그리드 탐색 모드.
   bool get isExploreModeActive =>
       isOnMasterDashboard && isExploreBrowseMode;
+
+  bool get isKnowledgeGraphViewActive =>
+      isOnMasterDashboard && isKnowledgeGraphMode;
 
   Future<void> loadSidebarState() async {
     final open = await HomeSidebarPreferences.loadOpen();
@@ -92,6 +99,7 @@ class HomeNavigationCoordinator {
     scheduleRebuild(() {
       sidebarCoordinator.selectDashboard(id);
       isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
       workbench.showBrowse();
     });
     await prefetchRegistry();
@@ -101,6 +109,7 @@ class HomeNavigationCoordinator {
   Future<void> goHome() async {
     scheduleRebuild(() {
       isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.resetForHomeDashboard();
       workbench.showBrowse();
@@ -112,6 +121,7 @@ class HomeNavigationCoordinator {
   Future<void> goExplore() async {
     scheduleRebuild(() {
       isExploreBrowseMode = true;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.setEntityScope(BrowseEntityScope.all);
       workbench.showBrowse();
@@ -123,6 +133,7 @@ class HomeNavigationCoordinator {
   Future<void> goExploreEntities(BrowseEntityScope scope) async {
     scheduleRebuild(() {
       isExploreBrowseMode = true;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectDashboard(homeDashboardId);
       filterCoordinator.setEntityScope(scope);
       workbench.showBrowse();
@@ -133,6 +144,7 @@ class HomeNavigationCoordinator {
   void selectPersonalLibrary(String id) {
     scheduleRebuild(() {
       isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectPersonalLibrary(id);
       workbench.showBrowse();
     });
@@ -141,6 +153,7 @@ class HomeNavigationCoordinator {
   void selectCollectibleCollection(String id) {
     scheduleRebuild(() {
       isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectCollectibleCollection(id);
       workbench.showBrowse();
     });
@@ -149,9 +162,22 @@ class HomeNavigationCoordinator {
   void selectTimeline() {
     scheduleRebuild(() {
       isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
       sidebarCoordinator.selectTimeline();
       workbench.showBrowse();
     });
+  }
+
+  /// 지식 연결 맵 뷰.
+  Future<void> goKnowledgeGraph() async {
+    scheduleRebuild(() {
+      isKnowledgeGraphMode = true;
+      isExploreBrowseMode = false;
+      sidebarCoordinator.selectDashboard(homeDashboardId);
+      filterCoordinator.setEntityScope(BrowseEntityScope.all);
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
   }
 
   void onLibraryDragStarted() {

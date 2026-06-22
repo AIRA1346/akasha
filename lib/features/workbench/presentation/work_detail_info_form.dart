@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
-import '../../../widgets/editable_tag_chips.dart';
-import '../../../widgets/star_rating.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../utils/work_link_neighbors.dart';
+import '../../../widgets/work_link_neighbors_sections.dart';
 
 /// 워크벤치 작품정보 패널 — 편집 폼 (제목·평점·상태·태그·액션).
 class WorkDetailInfoForm extends StatelessWidget {
@@ -31,6 +32,11 @@ class WorkDetailInfoForm extends StatelessWidget {
     required this.onAddToLibrary,
     this.canDeleteMd = false,
     this.onDeleteArchive,
+    this.linkNeighbors = const WorkLinkNeighbors(),
+    this.loadingLinkNeighbors = false,
+    this.onOpenLinkedEntity,
+    this.onOpenLinkedWork,
+    this.onGoKnowledgeGraph,
   });
 
   final AkashaItem item;
@@ -56,6 +62,11 @@ class WorkDetailInfoForm extends StatelessWidget {
   final VoidCallback onAddToLibrary;
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
+  final WorkLinkNeighbors linkNeighbors;
+  final bool loadingLinkNeighbors;
+  final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
+  final void Function(AkashaItem work)? onOpenLinkedWork;
+  final VoidCallback? onGoKnowledgeGraph;
 
   @override
   Widget build(BuildContext context) {
@@ -139,10 +150,27 @@ class WorkDetailInfoForm extends StatelessWidget {
         _buildInfoTable(),
         const SizedBox(height: 20),
 
-        // 주요 인물
-        _buildSectionHeader('주요 인물'),
-        const SizedBox(height: 8),
-        _buildKeyCharacters(),
+        WorkLinkNeighborsSections(
+          neighbors: linkNeighbors,
+          loading: loadingLinkNeighbors,
+          onOpenEntity: onOpenLinkedEntity,
+          onOpenWork: onOpenLinkedWork,
+          sectionTitleStyle: const TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        if (!loadingLinkNeighbors &&
+            linkNeighbors.characters.isEmpty &&
+            linkNeighbors.connectedWorks.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Text(
+              '본문에 [[Entity 연결]]을 추가하면 인물·작품이 표시됩니다.',
+              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+            ),
+          ),
         const SizedBox(height: 20),
 
         // 관련 개념
@@ -151,17 +179,11 @@ class WorkDetailInfoForm extends StatelessWidget {
         _buildRelatedConcepts(),
         const SizedBox(height: 20),
 
-        // 연결된 작품
-        _buildSectionHeader('연결된 작품'),
-        const SizedBox(height: 8),
-        _buildConnectedWorks(),
-        const SizedBox(height: 16),
-
-        // 그래프에서 보기 버튼
+        // 연결된 작품 섹션은 WorkLinkNeighborsSections에 포함됨 — 태그 아래 그래프 버튼
         SizedBox(
           height: 32,
           child: OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: onGoKnowledgeGraph,
             icon: const Icon(Icons.hub_outlined, size: 14, color: Color(0xFF6C63FF)),
             label: const Text('그래프에서 보기', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white)),
             style: OutlinedButton.styleFrom(
@@ -255,44 +277,6 @@ class WorkDetailInfoForm extends StatelessWidget {
     );
   }
 
-  Widget _buildKeyCharacters() {
-    final characters = [
-      _CharData('인물 정보 없음', '캐릭터'),
-    ];
-
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: characters.map((c) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 18,
-                  backgroundColor: const Color(0xFF222533),
-                  child: Text(
-                    c.name.substring(0, 1),
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF6C63FF), fontWeight: FontWeight.bold),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  c.name,
-                  style: const TextStyle(fontSize: 9, color: Colors.white, fontWeight: FontWeight.w500),
-                ),
-                Text(
-                  c.role,
-                  style: TextStyle(fontSize: 8, color: Colors.grey[600]),
-                ),
-              ],
-            ),
-          );
-        }).toList(),
-      ),
-    );
-  }
-
   Widget _buildRelatedConcepts() {
     final concepts = draftTags;
     if (concepts.isEmpty) {
@@ -347,63 +331,6 @@ class WorkDetailInfoForm extends StatelessWidget {
       default:
         return '태그 · 관련 개념';
     }
-  }
-
-  Widget _buildConnectedWorks() {
-    final works = [
-      _ConnectedData('연결된 작품 없음', '', ''),
-    ];
-
-    return Column(
-      children: works.map((w) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(4),
-                child: SizedBox(
-                  width: 24,
-                  height: 32,
-                  child: w.imageUrl.isNotEmpty
-                      ? Image.network(
-                          w.imageUrl,
-                          fit: BoxFit.cover,
-                          errorBuilder: (_, __, ___) => Container(
-                            color: const Color(0xFF222533),
-                            child: const Center(child: Icon(Icons.movie_outlined, size: 12, color: Colors.grey)),
-                          ),
-                        )
-                      : Container(
-                          color: const Color(0xFF222533),
-                          child: const Center(child: Icon(Icons.movie_outlined, size: 12, color: Colors.grey)),
-                        ),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  w.title,
-                  style: const TextStyle(fontSize: 11, color: Colors.white, fontWeight: FontWeight.w500),
-                ),
-              ),
-              if (w.match.isNotEmpty)
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1B1D2A),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    w.match,
-                    style: TextStyle(fontSize: 8, color: Colors.grey[400], fontWeight: FontWeight.bold),
-                  ),
-                ),
-            ],
-          ),
-        );
-      }).toList(),
-    );
   }
 
   Widget _buildOriginalActionsPanel() {
@@ -588,17 +515,4 @@ class WorkDetailInfoForm extends StatelessWidget {
       ),
     );
   }
-}
-
-class _CharData {
-  const _CharData(this.name, this.role);
-  final String name;
-  final String role;
-}
-
-class _ConnectedData {
-  const _ConnectedData(this.title, this.match, this.imageUrl);
-  final String title;
-  final String match;
-  final String imageUrl;
 }

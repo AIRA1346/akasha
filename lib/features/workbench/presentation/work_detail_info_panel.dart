@@ -4,6 +4,8 @@ import 'package:path/path.dart' as p;
 import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../utils/work_link_neighbors.dart';
 import '../../../models/enums.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
 import 'work_detail_info_form.dart';
@@ -52,6 +54,10 @@ class WorkDetailInfoPanel extends StatelessWidget {
     this.canDeleteMd = false,
     this.onDeleteArchive,
     this.onClose,
+    this.linkNeighbors = const WorkLinkNeighbors(),
+    this.loadingLinkNeighbors = false,
+    this.onOpenLinkedEntity,
+    this.onOpenLinkedWork,
   });
 
   final AkashaItem item;
@@ -93,6 +99,10 @@ class WorkDetailInfoPanel extends StatelessWidget {
   final bool canDeleteMd;
   final VoidCallback? onDeleteArchive;
   final VoidCallback? onClose;
+  final WorkLinkNeighbors linkNeighbors;
+  final bool loadingLinkNeighbors;
+  final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
+  final void Function(AkashaItem work)? onOpenLinkedWork;
 
   @override
   Widget build(BuildContext context) {
@@ -186,6 +196,10 @@ class WorkDetailInfoPanel extends StatelessWidget {
                                 onAddToLibrary: onAddToLibrary,
                                 canDeleteMd: canDeleteMd,
                                 onDeleteArchive: onDeleteArchive,
+                                linkNeighbors: linkNeighbors,
+                                loadingLinkNeighbors: loadingLinkNeighbors,
+                                onOpenLinkedEntity: onOpenLinkedEntity,
+                                onOpenLinkedWork: onOpenLinkedWork,
                               ),
                               const SizedBox(height: 20),
                               const Divider(height: 1),

@@ -13,12 +13,13 @@ import 'poster_image.dart';
 
 /// 나만의 서재 + 컬렉션 + 대시보드 서재 사이드바.
 class DashboardSidebar extends StatelessWidget {
-  static const Color dashboardAccent = Colors.tealAccent;
+  static const Color dashboardAccent = AkashaColors.accent;
   static const Color personalAccent = Colors.amberAccent;
-  static const Color collectionAccent = Colors.deepPurpleAccent;
+  static const Color collectionAccent = AkashaColors.accentDark;
 
   final bool isOpen;
   final bool isExploreMode;
+  final bool isKnowledgeGraphMode;
   final SidebarSelectionMode selectionMode;
   final List<AkashaItem> recentExploreItems;
   final List<DashboardConfig> dashboards;
@@ -31,6 +32,7 @@ class DashboardSidebar extends StatelessWidget {
   final Future<void> Function(String id) onSelectDashboard;
   final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
+  final Future<void> Function() onGoKnowledgeGraph;
   final void Function(AkashaItem item)? onOpenRecentExplore;
   final void Function(DashboardConfig dash) onEditDashboard;
   final void Function(String id) onDeleteDashboard;
@@ -51,6 +53,7 @@ class DashboardSidebar extends StatelessWidget {
     super.key,
     required this.isOpen,
     required this.isExploreMode,
+    this.isKnowledgeGraphMode = false,
     this.recentExploreItems = const [],
     required this.selectionMode,
     required this.dashboards,
@@ -63,6 +66,7 @@ class DashboardSidebar extends StatelessWidget {
     required this.onSelectDashboard,
     required this.onGoHome,
     required this.onGoExplore,
+    required this.onGoKnowledgeGraph,
     this.onOpenRecentExplore,
     required this.onEditDashboard,
     required this.onDeleteDashboard,
@@ -278,15 +282,8 @@ class DashboardSidebar extends StatelessWidget {
           _buildMenuTile(
             icon: Icons.hub_outlined,
             label: '그래프',
-            isSelected: false,
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('지식 그래프 모드는 준비 중입니다.'),
-                  duration: Duration(seconds: 2),
-                ),
-              );
-            },
+            isSelected: isKnowledgeGraphMode,
+            onTap: () => onGoKnowledgeGraph(),
           ),
         _buildMenuTile(
           icon: Icons.access_time_outlined,

@@ -39,6 +39,7 @@ import 'views/browse_view.dart';
 import 'views/personal_library_view.dart';
 import 'views/records_view.dart';
 import 'views/home_dashboard_view.dart';
+import 'views/knowledge_graph_view.dart';
 
 /// HomeShell Scaffold body — sidebar · 필터 · workbench browse 영역.
 class HomeShellBody extends StatelessWidget {
@@ -47,6 +48,7 @@ class HomeShellBody extends StatelessWidget {
   final bool isCollectibleCollectionMode;
   final bool isTimelineMode;
   final bool isExploreBrowseMode;
+  final bool isKnowledgeGraphMode;
   final bool isExploreModeActive;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
@@ -60,6 +62,7 @@ class HomeShellBody extends StatelessWidget {
   final String displayName;
   final List<AkashaItem> items;
   final List<AkashaItem> recentExploreItems;
+  final RecordLinkPort linkIndex;
   final List<BrowseCard> filteredCards;
   final HomeSectionPreferences sectionPrefs;
   final HomeBrowseFilterController filterCtrl;
@@ -74,6 +77,7 @@ class HomeShellBody extends StatelessWidget {
   final Future<void> Function(String id) onSelectDashboard;
   final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
+  final Future<void> Function() onGoKnowledgeGraph;
   final Future<void> Function(BrowseEntityScope scope) onGoExploreEntities;
   final VoidCallback onVaultSettings;
   final void Function(DashboardConfig dash) onEditDashboard;
@@ -128,7 +132,6 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onNewJournalEntry;
   final int timelineReloadToken;
   final UserCatalogPort userCatalog;
-  final RecordLinkPort linkIndex;
   final void Function(BrowseEntityScope scope) onEntityScopeChanged;
   final void Function(ParsedRecordLink link) onWikiLinkTap;
   final Future<EntityLinkSelection?> Function(
@@ -145,6 +148,7 @@ class HomeShellBody extends StatelessWidget {
     required this.isCollectibleCollectionMode,
     required this.isTimelineMode,
     required this.isExploreBrowseMode,
+    required this.isKnowledgeGraphMode,
     required this.isExploreModeActive,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
@@ -158,6 +162,7 @@ class HomeShellBody extends StatelessWidget {
     required this.displayName,
     required this.items,
     required this.recentExploreItems,
+    required this.linkIndex,
     required this.filteredCards,
     required this.sectionPrefs,
     required this.filterCtrl,
@@ -172,6 +177,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onSelectDashboard,
     required this.onGoHome,
     required this.onGoExplore,
+    required this.onGoKnowledgeGraph,
     required this.onGoExploreEntities,
     required this.onVaultSettings,
     required this.onEditDashboard,
@@ -210,7 +216,6 @@ class HomeShellBody extends StatelessWidget {
     required this.onNewJournalEntry,
     required this.timelineReloadToken,
     required this.userCatalog,
-    required this.linkIndex,
     required this.onEntityScopeChanged,
     required this.onWikiLinkTap,
     required this.onRequestEntityLink,
@@ -239,6 +244,7 @@ class HomeShellBody extends StatelessWidget {
           isOpen: isSidebarOpen,
           selectionMode: personalLibCtrl.sidebarMode,
           isExploreMode: isExploreModeActive,
+          isKnowledgeGraphMode: isKnowledgeGraphMode,
           recentExploreItems: recentExploreItems,
           dashboards: dashboardCtrl.dashboards,
           activeDashboardId: dashboardCtrl.activeDashboardId,
@@ -250,6 +256,7 @@ class HomeShellBody extends StatelessWidget {
           onSelectDashboard: (id) => onSelectDashboard(id),
           onGoHome: onGoHome,
           onGoExplore: onGoExplore,
+          onGoKnowledgeGraph: onGoKnowledgeGraph,
           onOpenRecentExplore: onOpenRecentExplore,
           onEditDashboard: onEditDashboard,
           onDeleteDashboard: onDeleteDashboard,
@@ -313,6 +320,7 @@ class HomeShellBody extends StatelessWidget {
                         controller: workbench,
                         userCatalog: userCatalog,
                         linkIndex: linkIndex,
+                        vaultItems: items,
                         onWorkSaved: onWorkbenchWorkSaved,
                         onWorkDeleted: onWorkbenchWorkDeleted,
                         onEntitySaved: onWorkbenchEntitySaved,
@@ -394,16 +402,28 @@ class HomeShellBody extends StatelessWidget {
         filterCtrl.myStatuses.isEmpty &&
         filterCtrl.highlightEntityId == null;
 
+    if (isKnowledgeGraphMode) {
+      return KnowledgeGraphView(
+        vaultItems: items,
+        userCatalog: userCatalog,
+        linkIndex: linkIndex,
+        onOpenWork: onOpenBrowseItem,
+        onOpenEntity: onOpenEntity,
+      );
+    }
+
     if (hasNoFilters && !isExploreBrowseMode) {
       return HomeDashboardView(
         vaultItems: items,
         recentExploreItems: recentExploreItems,
         userCatalog: userCatalog,
+        linkIndex: linkIndex,
         onOpenWork: onOpenBrowseItem,
         onOpenEntity: onOpenEntity,
         onSearch: onSearch,
         onTimeline: onSelectTimeline,
         onGoExplore: onGoExplore,
+        onGoKnowledgeGraph: onGoKnowledgeGraph,
         onExploreEntities: () => onGoExploreEntities(BrowseEntityScope.person),
         onVaultSettings: onVaultSettings,
       );

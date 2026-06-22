@@ -258,6 +258,7 @@ class HomeShellController {
   bool get isCuratedLibraryActive => navigation.isCuratedLibraryActive;
   bool get isHomeDashboardMode => navigation.isHomeDashboardMode;
   bool get isExploreBrowseMode => navigation.isExploreBrowseMode;
+  bool get isKnowledgeGraphMode => navigation.isKnowledgeGraphMode;
   bool get isExploreModeActive => navigation.isExploreModeActive;
   bool get canAddToLibrary => browse.canAddToLibrary;
 
@@ -360,6 +361,7 @@ class HomeShellController {
   Future<void> selectDashboard(String id) => navigation.selectDashboard(id);
   Future<void> goHome() => navigation.goHome();
   Future<void> goExplore() => navigation.goExplore();
+  Future<void> goKnowledgeGraph() => navigation.goKnowledgeGraph();
   Future<void> goExploreEntities(BrowseEntityScope scope) =>
       navigation.goExploreEntities(scope);
   void selectPersonalLibrary(String id) => navigation.selectPersonalLibrary(id);

@@ -7,5 +7,5 @@ class FeatureFlags {
   static const bool catalogContributions = true;
 
   /// 지식 그래프 탐색 — v1.1에서 활성화 예정
-  static const bool showKnowledgeGraph = false;
+  static const bool showKnowledgeGraph = true;
 }
