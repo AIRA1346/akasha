@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
+import '../../../../utils/exploration_progress.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
@@ -79,6 +80,9 @@ class _ExploreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final progress = explorationProgress(item);
+    final progressLabel = explorationProgressPercent(item);
+
     return Container(
       width: 145,
       margin: const EdgeInsets.only(right: 12),
@@ -182,6 +186,34 @@ class _ExploreCard extends StatelessWidget {
                             ),
                           ],
                         ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(2),
+                              child: LinearProgressIndicator(
+                                value: progress,
+                                minHeight: 3,
+                                backgroundColor:
+                                    Colors.white.withValues(alpha: 0.12),
+                                valueColor: const AlwaysStoppedAnimation(
+                                  AkashaColors.accent,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            '$progressLabel%',
+                            style: TextStyle(
+                              fontSize: 8,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[300],
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

@@ -1,22 +1,35 @@
-import '../../../theme/akasha_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/user_catalog_entity.dart';
+import '../../../theme/akasha_colors.dart';
+import '../../../utils/work_related_characters.dart';
 import '../../../widgets/poster_image.dart';
 
 class DashboardPreviewPanel extends StatelessWidget {
   const DashboardPreviewPanel({
     super.key,
     required this.item,
+    required this.userCatalog,
     required this.onClose,
     required this.onOpenDetail,
+    this.onOpenEntity,
   });
 
   final AkashaItem item;
+  final UserCatalogPort userCatalog;
   final VoidCallback onClose;
   final VoidCallback onOpenDetail;
+  final void Function(UserCatalogEntity entity)? onOpenEntity;
 
   @override
   Widget build(BuildContext context) {
+    final characters = item is EntityItem
+        ? const <UserCatalogEntity>[]
+        : relatedCharactersForWork(work: item, catalog: userCatalog);
+
     return Container(
       width: 320,
       decoration: BoxDecoration(
@@ -28,7 +41,6 @@ class DashboardPreviewPanel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // 1. 헤더 (작품 탭 라벨 + 닫기 버튼)
           Padding(
             padding: const EdgeInsets.only(left: 16, right: 8, top: 8, bottom: 8),
             child: Row(
@@ -51,14 +63,12 @@ class DashboardPreviewPanel extends StatelessWidget {
               ],
             ),
           ),
-
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 2. 포스터 이미지
                   Center(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
@@ -73,8 +83,6 @@ class DashboardPreviewPanel extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-
-                  // 3. 타이틀 영역
                   Text(
                     item.title,
                     style: const TextStyle(
@@ -101,8 +109,6 @@ class DashboardPreviewPanel extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-
-                  // 4. 액션 버튼 Row
                   Row(
                     children: [
                       Expanded(
@@ -127,14 +133,23 @@ class DashboardPreviewPanel extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 32),
-
-                  // 5. 핵심 정보 테이블
                   _buildInfoRow('장르', item.category.name),
                   _buildInfoRow('원작', item.creator.isNotEmpty ? item.creator : '정보 없음'),
                   _buildInfoRow('평점', item.rating > 0 ? '${item.rating} / 10.0' : '평가 없음'),
                   const SizedBox(height: 24),
-
-                  // 7. 관련 개념 (Tags)
+                  if (characters.isNotEmpty) ...[
+                    const Text(
+                      '주요 인물',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    _buildCharacterRow(characters),
+                    const SizedBox(height: 24),
+                  ],
                   if (item.tags.isNotEmpty) ...[
                     const Text(
                       '관련 개념',
@@ -152,13 +167,68 @@ class DashboardPreviewPanel extends StatelessWidget {
                     ),
                     const SizedBox(height: 32),
                   ],
-
                   const SizedBox(height: 24),
                 ],
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildCharacterRow(List<UserCatalogEntity> characters) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: characters.map((person) {
+          final avatarItem = EntityItem(
+            entityType: EntityAnchorType.person,
+            entityId: person.entityId,
+            title: person.title,
+            category: person.subtype,
+            domain: person.domain,
+            creator: person.creator,
+            releaseYear: person.releaseYear,
+            posterPath: person.posterPath,
+            tags: person.tags,
+            addedAt: person.addedAt,
+          );
+
+          return Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: InkWell(
+              onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
+              borderRadius: BorderRadius.circular(8),
+              child: SizedBox(
+                width: 56,
+                child: Column(
+                  children: [
+                    ClipOval(
+                      child: SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      person.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }

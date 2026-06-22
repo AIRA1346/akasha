@@ -9,6 +9,7 @@ import '../models/work_drag_payload.dart';
 import '../screens/home/home_personal_library_controller.dart';
 import '../theme/akasha_colors.dart';
 import 'personal_library_drop_target.dart';
+import 'poster_image.dart';
 
 /// 나만의 서재 + 컬렉션 + 대시보드 서재 사이드바.
 class DashboardSidebar extends StatelessWidget {
@@ -493,10 +494,13 @@ class DashboardSidebar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           children: [
-            Icon(
-              Icons.history_rounded,
-              size: 12,
-              color: Colors.grey[600],
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: SizedBox(
+                width: 28,
+                height: 28,
+                child: PosterImage(item: item, fit: BoxFit.cover),
+              ),
             ),
             const SizedBox(width: 8),
             Expanded(

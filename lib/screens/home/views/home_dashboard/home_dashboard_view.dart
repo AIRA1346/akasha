@@ -121,12 +121,14 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           if (_selectedPreviewItem != null)
             DashboardPreviewPanel(
               item: _selectedPreviewItem!,
+              userCatalog: widget.userCatalog,
               onClose: () => setState(() => _selectedPreviewItem = null),
               onOpenDetail: () {
                 final item = _selectedPreviewItem!;
                 setState(() => _selectedPreviewItem = null);
                 widget.onOpenWork(item);
               },
+              onOpenEntity: widget.onOpenEntity,
             ),
         ],
       ),
