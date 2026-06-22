@@ -168,6 +168,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
             borderRadius: BorderRadius.circular(14),
             child: Image.network(
               'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+              headers: const {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+              },
               fit: BoxFit.cover,
               errorBuilder: (_, __, ___) => const Icon(Icons.person, size: 14, color: Colors.white),
             ),
@@ -225,19 +228,19 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         title: '에밀리아',
         category: '인물',
         exploreRate: 0.45,
-        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+        imageUrl: 'https://images.justwatch.com/poster/305740706/s592/re-zero-starting-life-in-another-world-the-frozen-bond.jpg',
       ),
       _ContinueExploreData(
         title: '마녀교',
         category: '개념',
         exploreRate: 0.62,
-        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+        imageUrl: 'https://images.justwatch.com/poster/239726211/s592/re-zero-starting-life-in-another-world-season-2.jpg',
       ),
       _ContinueExploreData(
         title: '프리실라 바리에르',
         category: '인물',
         exploreRate: 0.33,
-        imageUrl: 'https://images.justwatch.com/poster/8734024/s592/re-jeborobuteo-sijaghaneun-isegye-saenghwal.jpg',
+        imageUrl: 'https://images.justwatch.com/poster/317585489/s592/re-zero-starting-life-in-another-world-season-3.jpg',
       ),
     ];
 
@@ -287,6 +290,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
             if (data.imageUrl.isNotEmpty)
               Image.network(
                 data.imageUrl,
+                headers: const {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                },
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => _buildPlaceholderPoster(data.category),
               )
@@ -636,6 +642,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
             child: url.isNotEmpty
                 ? Image.network(
                     url,
+                    headers: const {
+                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    },
                     fit: BoxFit.cover,
                     errorBuilder: (_, __, ___) => _buildThumbPlaceholder(label),
                   )
@@ -800,6 +809,9 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 child: work.url.isNotEmpty
                     ? Image.network(
                         work.url,
+                        headers: const {
+                          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                        },
                         fit: BoxFit.cover,
                         errorBuilder: (_, __, ___) => Container(color: const Color(0xFF222533)),
                       )

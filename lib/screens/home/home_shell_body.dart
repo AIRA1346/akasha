@@ -129,6 +129,7 @@ class HomeShellBody extends StatelessWidget {
     String selectedText,
   ) onRequestEntityLink;
   final void Function(EntityAnchorType? type)? onAddNewEntity;
+  final VoidCallback? onToggleSidebar;
 
   const HomeShellBody({
     super.key,
@@ -199,6 +200,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onWikiLinkTap,
     required this.onRequestEntityLink,
     this.onAddNewEntity,
+    this.onToggleSidebar,
   });
 
   @override
@@ -242,6 +244,7 @@ class HomeShellBody extends StatelessWidget {
           onDeleteCollectibleCollection: onDeleteCollectibleCollection,
           onDropWorkToLibrary: onDropWorkToLibrary,
           onLibraryDragStarted: onLibraryDragStarted,
+          onToggleSidebar: onToggleSidebar,
         ),
         Expanded(
           child: Column(

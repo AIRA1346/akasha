@@ -36,6 +36,7 @@ class DashboardSidebar extends StatelessWidget {
   final void Function(String id) onDeleteCollectibleCollection;
   final void Function(String libraryId, WorkDragPayload payload)? onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
+  final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
     super.key,
@@ -62,6 +63,7 @@ class DashboardSidebar extends StatelessWidget {
     required this.onDeleteCollectibleCollection,
     this.onDropWorkToLibrary,
     this.onLibraryDragStarted,
+    this.onToggleSidebar,
   });
 
   @override
@@ -104,26 +106,57 @@ class DashboardSidebar extends StatelessWidget {
                 // 3. AKASHA Pro 배너
                 _buildProBanner(),
 
-                // 4. 하단 사이드바 토글 힌트
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF161622),
-                    border: Border(top: BorderSide(color: Color(0xFF2D2D44))),
-                  ),
-                  child: Row(
-                    children: [
-                      const _TabKeyHint(),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          '키를 눌러 사이드바 토글',
-                          style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                        ),
+                // 4. 하단 사이드바 접기 단추
+                if (onToggleSidebar != null)
+                  InkWell(
+                    onTap: onToggleSidebar,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF161622),
+                        border: Border(top: BorderSide(color: Color(0xFF2D2D44))),
                       ),
-                    ],
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.arrow_back_rounded,
+                            size: 14,
+                            color: Colors.grey,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            '접기',
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[400],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                else
+                  // 폴백
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF161622),
+                      border: Border(top: BorderSide(color: Color(0xFF2D2D44))),
+                    ),
+                    child: Row(
+                      children: [
+                        const _TabKeyHint(),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            '키를 눌러 사이드바 토글',
+                            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
               ],
             )
           : const SizedBox.shrink(),

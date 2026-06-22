@@ -13,6 +13,13 @@ class HomeBrowseFilterController {
   BrowseEntityScope entityScope = BrowseEntityScope.work;
   String? highlightEntityId;
 
+  bool get hasAnyFilters =>
+      domain != null ||
+      categories.isNotEmpty ||
+      workStatuses.isNotEmpty ||
+      myStatuses.isNotEmpty ||
+      highlightEntityId != null;
+
   BrowseFilterState get filterState => BrowseFilterState(
         domain: domain,
         categories: Set.from(categories),

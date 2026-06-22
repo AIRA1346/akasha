@@ -53,6 +53,9 @@ class _UniverseOrbitPainter extends CustomPainter {
     final centerY = size.height / 2;
     final center = Offset(centerX, centerY);
 
+    // 고정 비율 궤도 반경 상수 r
+    final r = size.height * 0.38;
+
     // 우주 먼지 / 미세 배경 그리드 데코레이션
     final bgPaint = Paint()
       ..color = const Color(0xFF1E1E2E).withValues(alpha: 0.1)
@@ -61,11 +64,16 @@ class _UniverseOrbitPainter extends CustomPainter {
     canvas.drawCircle(center, size.height * 0.45, bgPaint);
     canvas.drawCircle(center, size.height * 0.35, bgPaint);
 
-    // 1. 중앙 항성 (Sun) 드로잉 - 글로우 효과 포함
-    final sunGlowPaint = Paint()
-      ..color = const Color(0xFFFF8C00).withValues(alpha: 0.25)
+    // 1. 중앙 항성 (Sun) 드로잉 - 글로우 효과 보강
+    final sunGlowPaint1 = Paint()
+      ..color = const Color(0xFFFF8C00).withValues(alpha: 0.15)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 24);
+    canvas.drawCircle(center, 38, sunGlowPaint1);
+
+    final sunGlowPaint2 = Paint()
+      ..color = const Color(0xFFFF4500).withValues(alpha: 0.3)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
-    canvas.drawCircle(center, 22, sunGlowPaint);
+    canvas.drawCircle(center, 22, sunGlowPaint2);
 
     final sunCorePaint = Paint()
       ..shader = const RadialGradient(
@@ -76,57 +84,57 @@ class _UniverseOrbitPainter extends CustomPainter {
       ).createShader(Rect.fromCircle(center: center, radius: 12));
     canvas.drawCircle(center, 12, sunCorePaint);
 
-    // 2. 궤도 파라미터 정의 (장반경 a, 단반경 b, 궤도 회전각(기울기), 공전 속도 배수, 초기 위상, 노드 정보)
+    // 2. 궤도 파라미터 정의 (고정 비율화 및 대칭 정적 위치 매핑)
     final orbits = [
       _OrbitData(
         label: '작품',
         count: '10,048',
-        a: size.width * 0.32,
-        b: size.height * 0.22,
+        a: r * 2.1,
+        b: r * 0.85,
         tiltAngle: -math.pi / 10,
         speedFactor: 1.5,
         phase: 0.0,
         color: const Color(0xFF6C63FF), // Indigo
-        labelOffset: const Offset(-80, -20),
+        staticPos: Offset(centerX - r * 2.3, centerY - r * 0.6),
       ),
       _OrbitData(
         label: '인물',
         count: '38,742',
-        a: size.width * 0.38,
-        b: size.height * 0.28,
+        a: r * 2.5,
+        b: r * 1.05,
         tiltAngle: -math.pi / 28,
-        speedFactor: -1.0, // 반시계 방향
+        speedFactor: -1.0,
         phase: math.pi / 3,
         color: const Color(0xFF00E5FF), // Aqua
-        labelOffset: const Offset(30, -24),
+        staticPos: Offset(centerX + r * 1.6, centerY - r * 0.6),
       ),
       _OrbitData(
         label: '장소',
         count: '2,341',
-        a: size.width * 0.26,
-        b: size.height * 0.16,
+        a: r * 1.7,
+        b: r * 0.65,
         tiltAngle: math.pi / 8,
         speedFactor: 2.2,
         phase: math.pi * 0.8,
         color: const Color(0xFFFFB74D), // Yellow Orange
-        labelOffset: const Offset(-80, 20),
+        staticPos: Offset(centerX - r * 2.0, centerY + r * 0.65),
       ),
       _OrbitData(
         label: '사건',
         count: '5,812',
-        a: size.width * 0.42,
-        b: size.height * 0.34,
+        a: r * 2.8,
+        b: r * 1.25,
         tiltAngle: math.pi / 16,
         speedFactor: -0.7,
         phase: math.pi * 1.3,
         color: const Color(0xFF81C784), // Light Green
-        labelOffset: const Offset(30, 20),
+        staticPos: Offset(centerX + r * 1.3, centerY + r * 0.65),
       ),
     ];
 
     final orbitLinePaint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 0.8;
+      ..strokeWidth = 0.9;
 
     for (final orbit in orbits) {
       // (1) 기울어진 타원 궤도선 그리기
@@ -134,7 +142,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       canvas.translate(centerX, centerY);
       canvas.rotate(orbit.tiltAngle);
       
-      orbitLinePaint.color = orbit.color.withValues(alpha: 0.12);
+      orbitLinePaint.color = orbit.color.withValues(alpha: 0.14);
       canvas.drawOval(
         Rect.fromLTRB(-orbit.a, -orbit.b, orbit.a, orbit.b),
         orbitLinePaint,
@@ -152,72 +160,29 @@ class _UniverseOrbitPainter extends CustomPainter {
 
       final nodePos = Offset(centerX + rotatedX, centerY + rotatedY);
 
-      // (3) 노드 구체 및 글로우 그리기
-      final nodeGlow = Paint()
-        ..color = orbit.color.withValues(alpha: 0.6)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
-      canvas.drawCircle(nodePos, 8, nodeGlow);
+      // (3) 노드 구체 및 2중 글로우 그리기
+      final nodeGlow1 = Paint()
+        ..color = orbit.color.withValues(alpha: 0.4)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
+      canvas.drawCircle(nodePos, 11, nodeGlow1);
 
-      final nodeCore = Paint()..color = orbit.color;
-      canvas.drawCircle(nodePos, 4, nodeCore);
+      final nodeGlow2 = Paint()
+        ..color = orbit.color.withValues(alpha: 0.7)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
+      canvas.drawCircle(nodePos, 7, nodeGlow2);
 
-      // (4) 고유 라벨 매핑 텍스트 렌더링
-      final textPos = nodePos + orbit.labelOffset;
+      final nodeCore = Paint()..color = Colors.white;
+      canvas.drawCircle(nodePos, 3.5, nodeCore);
 
-      // 텍스트 배경 반투명 박스
-      final rectPaint = Paint()
-        ..color = const Color(0xFF0F0F1A).withValues(alpha: 0.8)
-        ..style = PaintingStyle.fill;
-      final borderPaint = Paint()
-        ..color = orbit.color.withValues(alpha: 0.25)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.0;
+      // (4) 고정 대칭 텍스트 라벨 드로잉
+      final staticPos = orbit.staticPos;
 
-      const rectW = 68.0;
-      const rectH = 34.0;
-      final textRect = Rect.fromLTWH(
-        textPos.dx - rectW / 2,
-        textPos.dy - rectH / 2,
-        rectW,
-        rectH,
-      );
-      
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(textRect, const Radius.circular(6)),
-        rectPaint,
-      );
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(textRect, const Radius.circular(6)),
-        borderPaint,
-      );
-
-      // 카테고리 텍스트 ("작품" 등)
-      final labelSpan = TextSpan(
-        text: orbit.label,
-        style: TextStyle(
-          color: Colors.grey[400],
-          fontSize: 9,
-          fontWeight: FontWeight.w500,
-        ),
-      );
-      final labelPainter = TextPainter(
-        text: labelSpan,
-        textDirection: TextDirection.ltr,
-      )..layout();
-      labelPainter.paint(
-        canvas,
-        Offset(
-          textRect.center.dx - labelPainter.width / 2,
-          textRect.top + 3,
-        ),
-      );
-
-      // 수치 텍스트 ("10,048")
+      // 수치 텍스트
       final countSpan = TextSpan(
         text: orbit.count,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
-          fontSize: 10,
+          fontSize: 12,
           fontWeight: FontWeight.bold,
           fontFamily: 'Consolas',
         ),
@@ -226,12 +191,31 @@ class _UniverseOrbitPainter extends CustomPainter {
         text: countSpan,
         textDirection: TextDirection.ltr,
       )..layout();
+
+      // 카테고리 텍스트
+      final labelSpan = TextSpan(
+        text: orbit.label,
+        style: TextStyle(
+          color: Colors.grey[500],
+          fontSize: 10,
+          fontWeight: FontWeight.w600,
+        ),
+      );
+      final labelPainter = TextPainter(
+        text: labelSpan,
+        textDirection: TextDirection.ltr,
+      )..layout();
+
+      // 카테고리 라벨 그리기 (위쪽)
+      labelPainter.paint(
+        canvas,
+        Offset(staticPos.dx, staticPos.dy - 12),
+      );
+
+      // 수치 그리기 (아래쪽)
       countPainter.paint(
         canvas,
-        Offset(
-          textRect.center.dx - countPainter.width / 2,
-          textRect.bottom - countPainter.height - 3,
-        ),
+        Offset(staticPos.dx, staticPos.dy + 3),
       );
     }
   }
@@ -252,7 +236,7 @@ class _OrbitData {
     required this.speedFactor,
     required this.phase,
     required this.color,
-    required this.labelOffset,
+    required this.staticPos,
   });
 
   final String label;
@@ -263,5 +247,5 @@ class _OrbitData {
   final double speedFactor;
   final double phase;
   final Color color;
-  final Offset labelOffset;
+  final Offset staticPos;
 }

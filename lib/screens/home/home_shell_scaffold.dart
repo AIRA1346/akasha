@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -27,6 +28,11 @@ class HomeShellScaffold extends StatelessWidget {
             : const <BrowseCard>[])
         : controller.filteredBrowseCards;
 
+    final isHomeDashboard = !controller.isPersonalLibraryMode &&
+        !controller.isCollectibleCollectionMode &&
+        !controller.isTimelineMode &&
+        !controller.filterCtrl.hasAnyFilters;
+
     return CallbackShortcuts(
       bindings: {
         const SingleActivator(LogicalKeyboardKey.tab): () {
@@ -51,28 +57,31 @@ class HomeShellScaffold extends StatelessWidget {
             backgroundColor: controller.isPersonalLibraryMode
                 ? controller.libraryTheme.backgroundColor
                 : null,
-            appBar: HomeAppBar(
-              isSidebarOpen: controller.isSidebarOpen,
-              isSyncing: controller.isSyncing,
-              showLibraryThemeButton: controller.isPersonalLibraryMode,
-              onLibraryTheme: controller.showLibraryThemePicker,
-              libraryThemeAccent: controller.libraryTheme.accentColor,
-              onToggleSidebar: controller.toggleSidebar,
-              onSearch: controller.openSearchDialog,
-              onTimelineCapture: controller.openTimelineQuickCapture,
-              onClipboardImport: controller.openClipboardImportDialog,
-              onSync: controller.syncRegistry,
-              onSyncSettings: controller.showCustomUrlDialog,
-              onPromptTemplates: () =>
-                  HomeDialogsFacade.showPromptTemplates(context),
-              onVaultSettings: controller.openVaultSettingsDialog,
-              onClearRegistryCache: controller.clearRegistryCache,
-              onCatalogInbox: FeatureFlags.catalogContributions
-                  ? controller.openCatalogContributionsInbox
-                  : null,
-              catalogContributionCount: controller.catalogContributionCount,
-            ),
+            appBar: isHomeDashboard
+                ? null
+                : HomeAppBar(
+                    isSidebarOpen: controller.isSidebarOpen,
+                    isSyncing: controller.isSyncing,
+                    showLibraryThemeButton: controller.isPersonalLibraryMode,
+                    onLibraryTheme: controller.showLibraryThemePicker,
+                    libraryThemeAccent: controller.libraryTheme.accentColor,
+                    onToggleSidebar: controller.toggleSidebar,
+                    onSearch: controller.openSearchDialog,
+                    onTimelineCapture: controller.openTimelineQuickCapture,
+                    onClipboardImport: controller.openClipboardImportDialog,
+                    onSync: controller.syncRegistry,
+                    onSyncSettings: controller.showCustomUrlDialog,
+                    onPromptTemplates: () =>
+                        HomeDialogsFacade.showPromptTemplates(context),
+                    onVaultSettings: controller.openVaultSettingsDialog,
+                    onClearRegistryCache: controller.clearRegistryCache,
+                    onCatalogInbox: FeatureFlags.catalogContributions
+                        ? controller.openCatalogContributionsInbox
+                        : null,
+                    catalogContributionCount: controller.catalogContributionCount,
+                  ),
             body: HomeShellBody(
+              onToggleSidebar: controller.toggleSidebar,
               isSidebarOpen: controller.isSidebarOpen,
               isPersonalLibraryMode: controller.isPersonalLibraryMode,
               isCollectibleCollectionMode: controller.isCollectibleCollectionMode,
@@ -244,96 +253,112 @@ class HomeShellScaffold extends StatelessWidget {
         !controller.isCollectibleCollectionMode &&
         !controller.isTimelineMode;
 
-    return Container(
-      height: 68,
-      decoration: BoxDecoration(
-        color: const Color(0xFF0F0F1A), // 다크 블루
-        border: Border(
-          top: BorderSide(
-            color: Colors.white.withValues(alpha: 0.05),
-            width: 1.0,
-          ),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _buildBottomTabItem(
-            icon: Icons.home_filled,
-            label: '홈',
-            isSelected: isHome,
-            onTap: () {
-              controller.filterCtrl.clearCategories();
-              controller.filterCtrl.onDomainChanged(null);
-              if (!isHome) {
-                controller.selectDashboard('master_index');
-              }
-              controller.rebuild();
-            },
-          ),
-          _buildBottomTabItem(
-            icon: Icons.explore_outlined,
-            label: '탐색',
-            isSelected: false,
-            onTap: () {
-              controller.onEntityScopeChanged(BrowseEntityScope.all);
-            },
-          ),
-          GestureDetector(
-            onTap: controller.openSearchDialog,
-            child: Container(
-              width: 44,
-              height: 44,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF6C63FF),
-                    Color(0xFF5D3FD3),
-                  ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: BackdropFilter(
+          filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+          child: Container(
+            height: 64,
+            decoration: BoxDecoration(
+              color: const Color(0xFF161824).withValues(alpha: 0.65), // 반투명 다크 블루
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.08),
+                width: 1.0,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.25),
+                  blurRadius: 16,
+                  offset: const Offset(0, 4),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFF5D3FD3),
-                    blurRadius: 8,
-                    offset: Offset(0, 2),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildBottomTabItem(
+                  icon: Icons.home_filled,
+                  label: '홈',
+                  isSelected: isHome,
+                  onTap: () {
+                    controller.filterCtrl.clearCategories();
+                    controller.filterCtrl.onDomainChanged(null);
+                    if (!isHome) {
+                      controller.selectDashboard('master_index');
+                    }
+                    controller.rebuild();
+                  },
+                ),
+                _buildBottomTabItem(
+                  icon: Icons.explore_outlined,
+                  label: '탐색',
+                  isSelected: false,
+                  onTap: () {
+                    controller.onEntityScopeChanged(BrowseEntityScope.all);
+                  },
+                ),
+                GestureDetector(
+                  onTap: controller.openSearchDialog,
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFF6C63FF),
+                          Color(0xFF4D3FC3),
+                        ],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xFF6C63FF),
+                          blurRadius: 12,
+                          spreadRadius: 1,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: const Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 22,
+                    ),
                   ),
-                ],
-              ),
-              child: const Icon(
-                Icons.search,
-                color: Colors.white,
-                size: 22,
-              ),
+                ),
+                _buildBottomTabItem(
+                  icon: Icons.book_outlined,
+                  label: '라이브러리',
+                  isSelected: controller.isPersonalLibraryMode,
+                  onTap: () {
+                    if (controller.personalLibCtrl.libraries.isNotEmpty) {
+                      controller.selectPersonalLibrary(
+                        controller.personalLibCtrl.libraries.first.id,
+                      );
+                    } else {
+                      controller.showLibraryThemePicker();
+                    }
+                  },
+                ),
+                _buildBottomTabItem(
+                  icon: Icons.folder_open_outlined,
+                  label: '컬렉션',
+                  isSelected: controller.isCollectibleCollectionMode,
+                  onTap: () {
+                    if (controller.collectionCtrl.collections.isNotEmpty) {
+                      controller.selectCollectibleCollection(
+                        controller.collectionCtrl.collections.first.id,
+                      );
+                    }
+                  },
+                ),
+              ],
             ),
           ),
-          _buildBottomTabItem(
-            icon: Icons.book_outlined,
-            label: '라이브러리',
-            isSelected: controller.isPersonalLibraryMode,
-            onTap: () {
-              if (controller.personalLibCtrl.libraries.isNotEmpty) {
-                controller.selectPersonalLibrary(
-                  controller.personalLibCtrl.libraries.first.id,
-                );
-              } else {
-                controller.showLibraryThemePicker();
-              }
-            },
-          ),
-          _buildBottomTabItem(
-            icon: Icons.folder_open_outlined,
-            label: '컬렉션',
-            isSelected: controller.isCollectibleCollectionMode,
-            onTap: () {
-              if (controller.collectionCtrl.collections.isNotEmpty) {
-                controller.selectCollectibleCollection(
-                  controller.collectionCtrl.collections.first.id,
-                );
-              }
-            },
-          ),
-        ],
+        ),
       ),
     );
   }

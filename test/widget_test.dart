@@ -15,7 +15,7 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const AkashaApp());
 
-    // Verify that our app builds successfully (it should show the app title or main screen).
-    expect(find.text('A K A S H A'), findsOneWidget);
+    // Verify that our app builds successfully (it should show the welcome header on home dashboard).
+    expect(find.text('안녕하세요, 탐험가님!'), findsOneWidget);
   });
 }
