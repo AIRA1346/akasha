@@ -254,8 +254,6 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
   }
 
   Widget _buildExploreCard(AkashaItem item) {
-    // 임시 탐색률 산출
-    final exploreRate = (item.review.length / 500).clamp(0.1, 1.0);
     final isSelected = _selectedPreviewItem?.workId == item.workId;
 
     return Container(
@@ -346,32 +344,38 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                         ),
                       ),
                       const SizedBox(height: 6),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(2),
-                              child: LinearProgressIndicator(
-                                value: exploreRate,
-                                minHeight: 3,
-                                backgroundColor: Colors.white.withValues(alpha: 0.15),
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  _getCategoryColor(item.category.name),
+                      if (item.tags.isNotEmpty)
+                        Row(
+                          children: [
+                            Icon(Icons.local_offer_outlined, size: 10, color: Colors.grey[400]),
+                            const SizedBox(width: 4),
+                            Expanded(
+                              child: Text(
+                                item.tags.take(2).join(', '),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  color: Colors.grey[300],
                                 ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            '${(exploreRate * 100).toInt()}% 탐색',
-                            style: TextStyle(
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[300],
+                          ],
+                        )
+                      else if (item.review.isNotEmpty)
+                        Row(
+                          children: [
+                            Icon(Icons.edit_document, size: 10, color: Colors.grey[400]),
+                            const SizedBox(width: 4),
+                            Text(
+                              '기록 있음',
+                              style: TextStyle(
+                                fontSize: 9,
+                                color: Colors.grey[300],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
+                          ],
+                        ),
                     ],
                   ),
                 ),
@@ -542,7 +546,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
     }
 
     if (_activeDiscoveryTab == 0) {
-      // 추천 연결: 최근 작품들의 간이 연결
+      // 추천 연결: 최근 작품들 간의 실제 연결고리 찾기
       final sorted = List<AkashaItem>.from(widget.vaultItems)..sort((a, b) => b.addedAt.compareTo(a.addedAt));
       final a = sorted[0];
       final b = sorted[1];
@@ -551,8 +555,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
       return [
         Expanded(
           child: _buildDiscoveryCard(
-            title: '최근 추가된 항목',
-            rate: '100%',
+            title: '최근 추가됨',
+            rateText: _getCommonalityText(a, b),
             leftItem: a,
             rightItem: b,
           ),
@@ -560,8 +564,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         const SizedBox(width: 16),
         Expanded(
           child: _buildDiscoveryCard(
-            title: '유사한 카테고리',
-            rate: '85%',
+            title: '연관 탐색',
+            rateText: _getCommonalityText(b, c),
             leftItem: b,
             rightItem: c,
           ),
@@ -569,8 +573,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         const SizedBox(width: 16),
         Expanded(
           child: _buildDiscoveryCard(
-            title: '발견의 시작',
-            rate: '70%',
+            title: '발견의 고리',
+            rateText: _getCommonalityText(c, a),
             leftItem: c,
             rightItem: a,
           ),
@@ -622,9 +626,28 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
     }
   }
 
+  String _getCommonalityText(AkashaItem a, AkashaItem b) {
+    if (a.workId == b.workId) return '동일 작품';
+    
+    // 1. 겹치는 태그 확인
+    final commonTags = a.tags.where((tag) => b.tags.contains(tag)).toList();
+    if (commonTags.isNotEmpty) {
+      return '공통 태그: ${commonTags.first}';
+    }
+    // 2. 같은 원작자 확인
+    if (a.creator.isNotEmpty && a.creator == b.creator) {
+      return '같은 창작자';
+    }
+    // 3. 같은 카테고리
+    if (a.category == b.category) {
+      return '동일 카테고리';
+    }
+    return '연결 탐색 중';
+  }
+
   Widget _buildDiscoveryCard({
     required String title,
-    required String rate,
+    required String rateText,
     required AkashaItem leftItem,
     required AkashaItem rightItem,
   }) {
@@ -651,12 +674,17 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 ),
               ),
               const Spacer(),
-              Text(
-                rate,
-                style: const TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF6C63FF),
+              Expanded(
+                child: Text(
+                  rateText,
+                  textAlign: TextAlign.right,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF6C63FF),
+                  ),
                 ),
               ),
             ],
@@ -1064,8 +1092,8 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                 Expanded(
                   child: _buildActionCard(
                     icon: Icons.hub_outlined,
-                    title: '그래프 탐색',
-                    desc: '연결된 사건과 지식의 성운을 입체적인 망으로 보여줍니다.',
+                    title: '그래프 탐색 [Beta]',
+                    desc: '연결된 사건과 지식의 성운을 입체적인 망으로 보여줍니다. (준비 중)',
                     onTap: widget.onGraph,
                   ),
                 ),
