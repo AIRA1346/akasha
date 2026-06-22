@@ -7,6 +7,7 @@ import '../../../widgets/universe_orbit_painter.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../widgets/poster_image.dart';
+import '../../../models/user_catalog_entity.dart';
 import 'dashboard_preview_panel.dart';
 
 /// 시안 사진과 동일한 프리미엄 홈 대시보드 마스터 뷰.
@@ -273,7 +274,21 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: () {
-            widget.onOpenWork(item);
+            if (item is EntityItem) {
+              final entity = widget.userCatalog.all.firstWhere(
+                (e) => e.entityId == item.entityId,
+                orElse: () => UserCatalogEntity.userLocal(
+                  entityId: item.entityId,
+                  type: item.entityType,
+                  title: item.title,
+                  subtype: item.category,
+                  addedAt: item.addedAt,
+                ),
+              );
+              widget.onOpenEntity(entity);
+            } else {
+              widget.onOpenWork(item);
+            }
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10), // inner radius
@@ -792,7 +807,21 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
         onTap: () {
-          widget.onOpenWork(item);
+          if (item is EntityItem) {
+            final entity = widget.userCatalog.all.firstWhere(
+              (e) => e.entityId == item.entityId,
+              orElse: () => UserCatalogEntity.userLocal(
+                entityId: item.entityId,
+                type: item.entityType,
+                title: item.title,
+                subtype: item.category,
+                addedAt: item.addedAt,
+              ),
+            );
+            widget.onOpenEntity(entity);
+          } else {
+            widget.onOpenWork(item);
+          }
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
@@ -969,7 +998,21 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
           child: InkWell(
             borderRadius: BorderRadius.circular(8),
             onTap: () {
-              widget.onOpenWork(work);
+              if (work is EntityItem) {
+                final entity = widget.userCatalog.all.firstWhere(
+                  (e) => e.entityId == work.entityId,
+                  orElse: () => UserCatalogEntity.userLocal(
+                    entityId: work.entityId,
+                    type: work.entityType,
+                    title: work.title,
+                    subtype: work.category,
+                    addedAt: work.addedAt,
+                  ),
+                );
+                widget.onOpenEntity(entity);
+              } else {
+                widget.onOpenWork(work);
+              }
             },
             child: Padding(
               padding: const EdgeInsets.all(4.0),
