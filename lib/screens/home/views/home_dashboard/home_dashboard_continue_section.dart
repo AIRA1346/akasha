@@ -8,28 +8,34 @@ import 'home_dashboard_styles.dart';
 class HomeDashboardContinueSection extends StatelessWidget {
   const HomeDashboardContinueSection({
     super.key,
-    required this.vaultItems,
+    required this.recentExploreItems,
     required this.selectedPreviewItem,
     required this.onItemTap,
     required this.onGoExplore,
   });
 
-  final List<AkashaItem> vaultItems;
+  final List<AkashaItem> recentExploreItems;
   final AkashaItem? selectedPreviewItem;
   final void Function(AkashaItem item) onItemTap;
   final VoidCallback onGoExplore;
 
   @override
   Widget build(BuildContext context) {
-    final sortedItems = List<AkashaItem>.from(vaultItems)
-      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
-    final recentItems = sortedItems.take(4).toList();
+    final recentItems = recentExploreItems.take(4).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         HomeDashboardStyles.sectionHeader('계속 탐험하기'),
         const SizedBox(height: 12),
+        if (recentItems.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Text(
+              '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
+              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+            ),
+          ),
         SizedBox(
           height: 180,
           child: ListView(
@@ -37,7 +43,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
             children: [
               ...recentItems.map((item) => _ExploreCard(
                     item: item,
-                    isSelected: selectedPreviewItem?.workId == item.workId,
+                    isSelected: _isSameExploreItem(selectedPreviewItem, item),
                     onTap: () => onItemTap(item),
                   )),
               _AddExploreCard(onTap: onGoExplore),
@@ -46,6 +52,17 @@ class HomeDashboardContinueSection extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  static bool _isSameExploreItem(AkashaItem? selected, AkashaItem item) {
+    if (selected == null) return false;
+    if (item is EntityItem && selected is EntityItem) {
+      return selected.entityId == item.entityId;
+    }
+    if (item is! EntityItem && selected is! EntityItem) {
+      return selected.workId == item.workId;
+    }
+    return false;
   }
 }
 

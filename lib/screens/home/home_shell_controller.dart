@@ -22,6 +22,8 @@ import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
 import '../../services/personal_library_membership_service.dart';
+import '../../services/recent_exploration_resolver.dart';
+import '../../services/recent_exploration_store.dart';
 import '../../services/record_link_navigator.dart';
 import 'coordinators/home_browse_coordinator.dart';
 import 'coordinators/home_catalog_coordinator.dart';
@@ -68,8 +70,10 @@ class HomeShellController {
   late final HomeNavigationCoordinator navigation;
   late final HomeBrowseCoordinator browse;
   late final HomeDialogsCoordinator dialogs;
+  late final RecentExplorationStore recentExploration;
 
   HomeSectionPreferences sectionPrefs = HomeSectionPreferences();
+  List<AkashaItem> recentExploreItems = [];
 
   void wrapSetState(void Function() mutate) => host.scheduleRebuild(mutate);
 
@@ -182,6 +186,27 @@ class HomeShellController {
       onEntityArchived: onEntityArchived,
       getLinkIndex: () => vault.linkIndex,
     );
+
+    recentExploration = RecentExplorationStore(
+      onChanged: () {
+        if (!host.mounted) return;
+        refreshRecentExploration();
+      },
+    );
+  }
+
+  Future<void> refreshRecentExploration() async {
+    recentExploreItems = resolveRecentExplorationItems(
+      itemKeys: recentExploration.itemKeys,
+      vaultItems: items,
+      userCatalog: userCatalog,
+    );
+    rebuild();
+  }
+
+  Future<void> loadRecentExploration() async {
+    await recentExploration.load();
+    await refreshRecentExploration();
   }
 
   void onEntityArchived(UserCatalogEntity entity, EntityJournalEntry? entry) {
@@ -298,11 +323,13 @@ class HomeShellController {
     sectionPrefs = await HomeSectionPreferences.load();
     await vault.loadPreferences();
     await loadItems();
+    await loadRecentExploration();
     await vault.runStartupAutoArchiveIfNeeded();
     await prefetchRegistryForCurrentFilters();
     await refreshLastSyncTime();
     vault.bindVaultWatch(onVaultChanged: () async {
       await loadItems();
+      await refreshRecentExploration();
       final vaultPath = AkashaFileService().vaultPath;
       if (vaultPath != null && vaultPath.isNotEmpty) {
         await workbench.syncEntityTabs(vaultPath);
@@ -356,9 +383,26 @@ class HomeShellController {
 
   AkashaItem resolveItemForOpen(AkashaItem item) =>
       workbenchCoord.resolveItemForOpen(item);
-  void openBrowseItem(AkashaItem item) => workbenchCoord.openBrowseItem(item);
-  Future<void> openEntity(UserCatalogEntity entity) =>
-      workbenchCoord.openEntity(entity);
+  void openBrowseItem(AkashaItem item) {
+    workbenchCoord.openBrowseItem(item);
+    recentExploration.recordWork(item.workId);
+  }
+
+  Future<void> openEntity(UserCatalogEntity entity) async {
+    await workbenchCoord.openEntity(entity);
+    await recentExploration.recordEntity(entity.entityId);
+  }
+
+  void openRecentExploreItem(AkashaItem item) {
+    if (item is EntityItem) {
+      final entity = userCatalog.getById(item.entityId);
+      if (entity != null) {
+        openEntity(entity);
+        return;
+      }
+    }
+    openBrowseItem(item);
+  }
   Future<void> onWorkbenchWorkSaved(AkashaItem saved) =>
       workbenchCoord.onWorkbenchWorkSaved(saved);
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) =>

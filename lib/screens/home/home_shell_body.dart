@@ -59,6 +59,7 @@ class HomeShellBody extends StatelessWidget {
   final LibraryTheme libraryTheme;
   final String displayName;
   final List<AkashaItem> items;
+  final List<AkashaItem> recentExploreItems;
   final List<BrowseCard> filteredCards;
   final HomeSectionPreferences sectionPrefs;
   final HomeBrowseFilterController filterCtrl;
@@ -96,6 +97,7 @@ class HomeShellBody extends StatelessWidget {
   final void Function(String label) onToggleWorkStatus;
   final void Function(String label) onToggleMyStatus;
   final void Function(AkashaItem item) onOpenBrowseItem;
+  final void Function(AkashaItem item) onOpenRecentExplore;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final Future<void> Function(AkashaItem saved) onWorkbenchWorkSaved;
   final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
@@ -155,6 +157,7 @@ class HomeShellBody extends StatelessWidget {
     required this.libraryTheme,
     required this.displayName,
     required this.items,
+    required this.recentExploreItems,
     required this.filteredCards,
     required this.sectionPrefs,
     required this.filterCtrl,
@@ -191,6 +194,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
     required this.onOpenBrowseItem,
+    required this.onOpenRecentExplore,
     required this.onOpenEntity,
     required this.onWorkbenchWorkSaved,
     required this.onWorkbenchWorkDeleted,
@@ -235,7 +239,7 @@ class HomeShellBody extends StatelessWidget {
           isOpen: isSidebarOpen,
           selectionMode: personalLibCtrl.sidebarMode,
           isExploreMode: isExploreModeActive,
-          recentExploreItems: items,
+          recentExploreItems: recentExploreItems,
           dashboards: dashboardCtrl.dashboards,
           activeDashboardId: dashboardCtrl.activeDashboardId,
           personalLibraries: personalLibCtrl.libraries,
@@ -246,7 +250,7 @@ class HomeShellBody extends StatelessWidget {
           onSelectDashboard: (id) => onSelectDashboard(id),
           onGoHome: onGoHome,
           onGoExplore: onGoExplore,
-          onOpenRecentExplore: onOpenBrowseItem,
+          onOpenRecentExplore: onOpenRecentExplore,
           onEditDashboard: onEditDashboard,
           onDeleteDashboard: onDeleteDashboard,
           onAddPersonalLibrary: onAddPersonalLibrary,
@@ -393,6 +397,7 @@ class HomeShellBody extends StatelessWidget {
     if (hasNoFilters && !isExploreBrowseMode) {
       return HomeDashboardView(
         vaultItems: items,
+        recentExploreItems: recentExploreItems,
         userCatalog: userCatalog,
         onOpenWork: onOpenBrowseItem,
         onOpenEntity: onOpenEntity,

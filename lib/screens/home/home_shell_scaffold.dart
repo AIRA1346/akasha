@@ -100,6 +100,7 @@ class HomeShellScaffold extends StatelessWidget {
               libraryTheme: controller.libraryTheme,
               displayName: controller.displayName,
               items: controller.items,
+              recentExploreItems: controller.recentExploreItems,
               filteredCards: filtered,
               sectionPrefs: controller.sectionPrefs,
               filterCtrl: controller.filterCtrl,
@@ -200,6 +201,7 @@ class HomeShellScaffold extends StatelessWidget {
               onToggleWorkStatus: controller.toggleWorkStatus,
               onToggleMyStatus: controller.toggleMyStatus,
               onOpenBrowseItem: controller.openBrowseItem,
+              onOpenRecentExplore: controller.openRecentExploreItem,
               onOpenEntity: controller.openEntity,
               onWorkbenchWorkSaved: controller.onWorkbenchWorkSaved,
               onWorkbenchWorkDeleted: controller.onWorkbenchWorkDeleted,
@@ -346,6 +348,13 @@ class HomeShellScaffold extends StatelessWidget {
                     if (controller.collectionCtrl.collections.isNotEmpty) {
                       controller.selectCollectibleCollection(
                         controller.collectionCtrl.collections.first.id,
+                      );
+                    } else {
+                      controller.collectionUi.promptCreate(
+                        controller.host.context,
+                        personalLibCtrl: controller.personalLibCtrl,
+                        setState: controller.wrapSetState,
+                        vaultItems: controller.items,
                       );
                     }
                   },

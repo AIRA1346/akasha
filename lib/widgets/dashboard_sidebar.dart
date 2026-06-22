@@ -448,9 +448,7 @@ class DashboardSidebar extends StatelessWidget {
   }
 
   Widget _buildRecentExplore() {
-    final sorted = List<AkashaItem>.from(recentExploreItems)
-      ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
-    final recent = sorted.take(4).toList();
+    final recent = recentExploreItems.take(4).toList();
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),

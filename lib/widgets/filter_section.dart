@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../core/archiving/entity_anchor.dart';
 import '../models/browse_entity_scope.dart';
+import '../theme/akasha_colors.dart';
 import '../models/enums.dart';
 import '../utils/helpers.dart';
 
@@ -281,7 +283,7 @@ class _AddArchiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.tealAccent.withValues(alpha: 0.12),
+      color: AkashaColors.accent.withValues(alpha: 0.12),
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
@@ -291,20 +293,20 @@ class _AddArchiveButton extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: Colors.tealAccent.withValues(alpha: 0.3),
+              color: AkashaColors.accent.withValues(alpha: 0.3),
             ),
           ),
-          child: const Row(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.add, size: 14, color: Colors.tealAccent),
-              SizedBox(width: 4),
+              Icon(Icons.add, size: 14, color: AkashaColors.accent),
+              const SizedBox(width: 4),
               Text(
                 '아카이브',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
-                  color: Colors.tealAccent,
+                  color: AkashaColors.accent,
                 ),
               ),
             ],

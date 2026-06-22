@@ -17,6 +17,7 @@ class HomeDashboardView extends StatefulWidget {
   const HomeDashboardView({
     super.key,
     required this.vaultItems,
+    required this.recentExploreItems,
     required this.userCatalog,
     required this.onOpenWork,
     required this.onOpenEntity,
@@ -28,6 +29,7 @@ class HomeDashboardView extends StatefulWidget {
   });
 
   final List<AkashaItem> vaultItems;
+  final List<AkashaItem> recentExploreItems;
   final UserCatalogPort userCatalog;
   final void Function(AkashaItem) onOpenWork;
   final void Function(UserCatalogEntity) onOpenEntity;
@@ -83,7 +85,7 @@ class _HomeDashboardViewState extends State<HomeDashboardView> {
                   const HomeDashboardWelcomeHeader(),
                   const SizedBox(height: 28),
                   HomeDashboardContinueSection(
-                    vaultItems: widget.vaultItems,
+                    recentExploreItems: widget.recentExploreItems,
                     selectedPreviewItem: _selectedPreviewItem,
                     onItemTap: _handleItemTap,
                     onGoExplore: widget.onGoExplore,

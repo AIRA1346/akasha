@@ -7,6 +7,7 @@ import 'data/adapters/works_registry_adapter.dart';
 import 'screens/home/home_shell.dart';
 import 'services/catalog_locale_preferences.dart';
 import 'services/franchise_registry.dart';
+import 'theme/akasha_theme.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  AKASHA — 확장형 올인원 아카이브 앱
@@ -59,26 +60,7 @@ class _AkashaAppState extends State<AkashaApp> {
       locale: _appLocale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData.dark(useMaterial3: true).copyWith(
-        scaffoldBackgroundColor: const Color(0xFF13131D),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.tealAccent,
-          brightness: Brightness.dark,
-        ).copyWith(
-          surface: const Color(0xFF1A1A28),
-        ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF1A1A28),
-          surfaceTintColor: Colors.transparent,
-          elevation: 0,
-        ),
-        cardTheme: const CardThemeData(
-          color: Color(0xFF1E1E2E),
-        ),
-        dividerTheme: DividerThemeData(
-          color: Colors.grey.withValues(alpha: 0.15),
-        ),
-      ),
+      theme: AkashaTheme.dark(),
       home: const HomeShell(),
     );
   }
