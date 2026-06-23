@@ -106,9 +106,7 @@ class HomeBrowseCoordinator {
         hideActions: hideActions,
         isPersonalLibraryMode: navigation.isPersonalLibraryMode,
         canAddToLibrary: canAddToLibrary,
-        onOpenItem: navigation.isPersonalLibraryMode
-            ? workbenchCoord.openBrowseItem
-            : (onPreviewWork ?? workbenchCoord.openBrowseItem),
+        onOpenItem: onPreviewWork ?? workbenchCoord.openBrowseItem,
         onOpenLibraryMenu: (c, pos) => wiring.libraryUi.openWorkLibraryMenu(
           hostContext(),
           card: c,

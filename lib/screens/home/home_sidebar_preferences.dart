@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HomeSidebarPreferences {
   static const _prefKey = 'akasha_sidebar_open';
 
-  static Future<bool> loadOpen({bool defaultOpen = true}) async {
+  static Future<bool> loadOpen({bool defaultOpen = false}) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       return prefs.getBool(_prefKey) ?? defaultOpen;

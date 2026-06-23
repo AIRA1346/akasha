@@ -17,3 +17,14 @@ class EntityPreviewFrame extends PreviewFrame {
 
   final UserCatalogEntity entity;
 }
+
+/// Preview→Workbench 진입 시 복귀용 스냅샷 (current + back stack).
+class PreviewReturnSnapshot {
+  const PreviewReturnSnapshot({
+    required this.current,
+    required this.backStack,
+  });
+
+  final PreviewFrame current;
+  final List<PreviewFrame> backStack;
+}

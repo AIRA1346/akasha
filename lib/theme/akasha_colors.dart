@@ -23,6 +23,24 @@ abstract final class AkashaColors {
   static const placeAccent = Color(0xFF81C784);
   static const eventAccent = Color(0xFFFF5252);
 
+  /// Workbench surfaces (R14-A).
+  static const workbenchPanel = Color(0xFF1A1A28);
+  static const workbenchEditor = Color(0xFF12121A);
+  static const workbenchListTile = Color(0xFF252535);
+  static const workbenchMutedButton = Color(0xFF2E2E3E);
+
+  /// Semantic text (R14-A).
+  static const textPrimary = Colors.white;
+  static const textSecondary = Color(0xFFB0B0B8);
+  static const textMuted = Color(0xFF9E9E9E);
+  static const textCaption = Color(0xFF757575);
+  static const linkAccent = personAccent;
+
+  static const statusDirty = Color(0xFFFFE082);
+  static const statusSaved = Color(0xFFB9F6CA);
+  static const statusSaving = Color(0xFFB0B0B8);
+  static const statusWarning = Color(0xFFFFB300);
+
   static Color borderSubtle([double alpha = 0.04]) =>
       Colors.white.withValues(alpha: alpha);
 

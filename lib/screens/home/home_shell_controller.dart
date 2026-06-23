@@ -42,8 +42,14 @@ import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/user_catalog_entity.dart';
 import 'dialogs/add_catalog_entity_dialog.dart';
 import '../../services/file_service.dart';
+import '../../services/link_candidate_service.dart';
+import '../../services/works_registry.dart';
+import '../../screens/detail/detail_archive_save.dart';
 import 'dialogs/entity_link_picker_dialog.dart';
 import 'home_shell_host.dart';
+import '../../utils/vault_work_presence.dart';
+import 'home_auto_archive.dart';
+import 'home_registry_archive.dart';
 import 'preview_frame.dart';
 
 /// Home 화면 조립·위임 (Wave 1.4 + E2).
@@ -78,8 +84,10 @@ class HomeShellController {
   AkashaItem? workPreviewItem;
   UserCatalogEntity? entityPreviewItem;
   final List<PreviewFrame> _previewBackStack = [];
+  PreviewReturnSnapshot? _previewReturnSnapshot;
   EntityAnchorType? pendingWorkEntityLinkType;
   String? pendingWorkEntityLinkWorkId;
+  LinkCandidate? pendingWorkEntityLinkCandidate;
 
   void wrapSetState(void Function() mutate) => host.scheduleRebuild(mutate);
 
@@ -295,20 +303,51 @@ class HomeShellController {
   }
 
   void clearPendingWorkEntityLinkType() {
-    if (pendingWorkEntityLinkType == null && pendingWorkEntityLinkWorkId == null) {
+    if (pendingWorkEntityLinkType == null &&
+        pendingWorkEntityLinkWorkId == null &&
+        pendingWorkEntityLinkCandidate == null) {
       return;
     }
     pendingWorkEntityLinkType = null;
     pendingWorkEntityLinkWorkId = null;
+    pendingWorkEntityLinkCandidate = null;
     rebuild();
   }
 
   void openWorkFromPreviewToConnect(EntityAnchorType type) {
+    _openWorkFromPreviewToConnectWithPending(
+      type: type,
+      candidate: null,
+    );
+  }
+
+  void openWorkFromPreviewToConnectSuggested(LinkCandidate candidate) {
+    _openWorkFromPreviewToConnectWithPending(
+      type: candidate.anchorType,
+      candidate: candidate,
+    );
+  }
+
+  Future<void> _openWorkFromPreviewToConnectWithPending({
+    required EntityAnchorType type,
+    LinkCandidate? candidate,
+  }) async {
     final item = workPreviewItem;
     if (item == null) return;
+    if (VaultWorkPresence.isRegistryOnlyPreview(item, vault.items)) {
+      await archiveRegistryWorkFromPreview();
+    }
+    final updated = workPreviewItem;
+    if (updated == null) return;
     pendingWorkEntityLinkType = type;
-    pendingWorkEntityLinkWorkId = item.workId;
-    openWorkFromPreview();
+    pendingWorkEntityLinkWorkId = updated.workId;
+    pendingWorkEntityLinkCandidate = candidate;
+    await openWorkFromPreview();
+  }
+
+  void connectSuggestedForWork(LinkCandidate candidate, AkashaItem work) {
+    openWorkPreview(workbenchCoord.resolveItemForOpen(work));
+    openWorkFromPreviewToConnectSuggested(candidate);
   }
 
   void openMostRecentWorkForRecord() {
@@ -424,6 +463,7 @@ class HomeShellController {
   AkashaItem resolveItemForOpen(AkashaItem item) =>
       workbenchCoord.resolveItemForOpen(item);
   void openBrowseItem(AkashaItem item) {
+    _clearPreviewReturnSnapshot();
     closeAllPreviews();
     workbenchCoord.openBrowseItem(item);
     recentExploration.recordWork(item.workId);
@@ -431,6 +471,9 @@ class HomeShellController {
   }
 
   void openWorkPreview(AkashaItem item, {bool push = false}) {
+    if (!push) {
+      _clearPreviewReturnSnapshot();
+    }
     final resolved = workbenchCoord.resolveItemForOpen(item);
     if (push) {
       _pushCurrentPreviewIfOpen();
@@ -450,10 +493,31 @@ class HomeShellController {
     workPreviewItem = null;
     entityPreviewItem = null;
     _previewBackStack.clear();
+    _clearPreviewReturnSnapshot();
     if (hadPreview) rebuild();
   }
 
+  bool get hasOpenPreview =>
+      workPreviewItem != null || entityPreviewItem != null;
+
   bool get canPopPreview => _previewBackStack.isNotEmpty;
+
+  /// Hub surface (Home, Graph): replace when starting fresh, push when continuing.
+  void navigateWorkPreview(AkashaItem item) {
+    if (hasOpenPreview) {
+      previewLinkedWork(item);
+    } else {
+      openWorkPreview(item);
+    }
+  }
+
+  void navigateEntityPreview(UserCatalogEntity entity) {
+    if (hasOpenPreview) {
+      previewLinkedEntity(entity);
+    } else {
+      openEntityPreview(entity);
+    }
+  }
 
   void popPreview() {
     if (_previewBackStack.isEmpty) {
@@ -490,15 +554,54 @@ class HomeShellController {
     }
   }
 
-  void openWorkFromPreview() {
+  Future<void> openWorkFromPreview() async {
     final item = workPreviewItem;
     if (item == null) return;
+    if (VaultWorkPresence.isRegistryOnlyPreview(item, vault.items)) {
+      await archiveRegistryWorkFromPreview();
+      return;
+    }
+    final snapshot = _capturePreviewReturnSnapshot();
     closeAllPreviews();
+    _previewReturnSnapshot = snapshot;
     workbenchCoord.openBrowseItem(item);
     rebuild();
   }
 
+  void previewRegistryWork(RegistryWork work) {
+    navigateWorkPreview(HomeAutoArchive.itemFromRegistryWork(work));
+  }
+
+  Future<void> archiveRegistryWorkFromPreview() async {
+    final item = workPreviewItem;
+    if (item == null) return;
+
+    if (AkashaFileService().vaultPath == null) {
+      _showSnack('볼트를 먼저 연결해 주세요.');
+      return;
+    }
+
+    final registryWork = WorksRegistry.getWorkById(item.workId);
+    final AkashaItem saved;
+    if (registryWork != null) {
+      saved = await HomeRegistryArchive.persistRegistryWork(
+        registryWork,
+        reloadItems: loadItems,
+        onDemoAdd: (_) {},
+      );
+    } else {
+      saved = await DetailArchiveSave.save(item);
+      await loadItems();
+    }
+
+    openWorkPreview(workbenchCoord.resolveItemForOpen(saved));
+    _showSnack('"${saved.title}"을(를) 아카이브했습니다.');
+  }
+
   void openEntityPreview(UserCatalogEntity entity, {bool push = false}) {
+    if (!push) {
+      _clearPreviewReturnSnapshot();
+    }
     if (push) {
       _pushCurrentPreviewIfOpen();
     } else {
@@ -515,7 +618,9 @@ class HomeShellController {
   Future<void> openEntityFromPreview() async {
     final entity = entityPreviewItem;
     if (entity == null) return;
+    final snapshot = _capturePreviewReturnSnapshot();
     closeAllPreviews();
+    _previewReturnSnapshot = snapshot;
     await workbenchCoord.openEntity(entity);
     rebuild();
   }
@@ -529,6 +634,7 @@ class HomeShellController {
   }
 
   Future<void> openEntity(UserCatalogEntity entity) async {
+    _clearPreviewReturnSnapshot();
     closeAllPreviews();
     await workbenchCoord.openEntity(entity);
     await recentExploration.recordEntity(entity.entityId);
@@ -545,17 +651,98 @@ class HomeShellController {
     }
     openWorkPreview(item);
   }
-  Future<void> onWorkbenchWorkSaved(AkashaItem saved) =>
-      workbenchCoord.onWorkbenchWorkSaved(saved);
-  Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) =>
-      workbenchCoord.onWorkbenchWorkDeleted(tabId, item);
+  Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
+    await workbenchCoord.onWorkbenchWorkSaved(saved);
+    if (!silent) {
+      _maybeReturnToPreviewAfterSave(workId: saved.workId);
+    }
+  }
+
+  Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
+    _maybeClearPreviewReturnForWork(item.workId);
+    await workbenchCoord.onWorkbenchWorkDeleted(tabId, item);
+  }
+
   Future<void> onWorkbenchEntitySaved(
     UserCatalogEntity entity,
-    EntityJournalEntry? journal,
-  ) =>
-      workbenchCoord.onWorkbenchEntitySaved(entity, journal);
-  Future<void> onWorkbenchEntityDeleted(String tabId) =>
-      workbenchCoord.onWorkbenchEntityDeleted(tabId);
+    EntityJournalEntry? journal, {
+    bool silent = false,
+  }) async {
+    await workbenchCoord.onWorkbenchEntitySaved(entity, journal);
+    if (!silent) {
+      _maybeReturnToPreviewAfterSave(entityId: entity.entityId);
+    }
+  }
+
+  Future<void> onWorkbenchEntityDeleted(String tabId) async {
+    final tab = workbench.activeEntityTab;
+    if (tab != null) {
+      _maybeClearPreviewReturnForEntity(tab.entity.entityId);
+    }
+    await workbenchCoord.onWorkbenchEntityDeleted(tabId);
+  }
+
+  PreviewReturnSnapshot? _capturePreviewReturnSnapshot() {
+    final current = _captureCurrentPreviewFrame();
+    if (current == null) return null;
+    return PreviewReturnSnapshot(
+      current: current,
+      backStack: List<PreviewFrame>.from(_previewBackStack),
+    );
+  }
+
+  void _clearPreviewReturnSnapshot() {
+    _previewReturnSnapshot = null;
+  }
+
+  void _maybeClearPreviewReturnForWork(String workId) {
+    final snapshot = _previewReturnSnapshot;
+    if (snapshot == null) return;
+    if (snapshot.current case WorkPreviewFrame(:final item) when item.workId == workId) {
+      _clearPreviewReturnSnapshot();
+    }
+  }
+
+  void _maybeClearPreviewReturnForEntity(String entityId) {
+    final snapshot = _previewReturnSnapshot;
+    if (snapshot == null) return;
+    if (snapshot.current case EntityPreviewFrame(:final entity)
+        when entity.entityId == entityId) {
+      _clearPreviewReturnSnapshot();
+    }
+  }
+
+  void _maybeReturnToPreviewAfterSave({String? workId, String? entityId}) {
+    final snapshot = _previewReturnSnapshot;
+    if (snapshot == null) return;
+
+    final matches = switch (snapshot.current) {
+      WorkPreviewFrame(:final item) =>
+        workId != null && item.workId == workId,
+      EntityPreviewFrame(:final entity) =>
+        entityId != null && entity.entityId == entityId,
+    };
+    if (!matches) return;
+
+    _clearPreviewReturnSnapshot();
+    _previewBackStack
+      ..clear()
+      ..addAll(snapshot.backStack.map(_resolvePreviewFrame));
+    _restorePreviewFrame(_resolvePreviewFrame(snapshot.current));
+    workbench.showBrowse();
+    rebuild();
+  }
+
+  PreviewFrame _resolvePreviewFrame(PreviewFrame frame) {
+    switch (frame) {
+      case WorkPreviewFrame(:final item):
+        return WorkPreviewFrame(workbenchCoord.resolveItemForOpen(item));
+      case EntityPreviewFrame(:final entity):
+        return EntityPreviewFrame(
+          userCatalog.getById(entity.entityId) ?? entity,
+        );
+    }
+  }
 
   Widget buildPosterCard(BrowseCard card) => browse.buildPosterCard(card);
 

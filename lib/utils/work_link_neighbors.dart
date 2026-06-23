@@ -5,6 +5,7 @@ import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
 import '../models/user_catalog_entity.dart';
 import '../services/entity_related_works_discovery.dart';
+import '../services/relationship_discovery_service.dart';
 import 'work_related_characters.dart';
 
 /// 작품 기준 링크 인덱스 이웃 — 인물·연결 작품.
@@ -14,18 +15,31 @@ class WorkLinkNeighbors {
     this.connectedWorks = const [],
     this.events = const [],
     this.concepts = const [],
+    this.places = const [],
+    this.organizations = const [],
+    this.connectedWorkBridgeLabels = const {},
+    this.themeClusters = const [],
   });
 
   final List<UserCatalogEntity> characters;
   final List<AkashaItem> connectedWorks;
   final List<UserCatalogEntity> events;
   final List<UserCatalogEntity> concepts;
+  final List<UserCatalogEntity> places;
+  final List<UserCatalogEntity> organizations;
+  final Map<String, String> connectedWorkBridgeLabels;
+  final List<ConceptThemeCluster> themeClusters;
 
   bool get hasAnyLink =>
       characters.isNotEmpty ||
       connectedWorks.isNotEmpty ||
       events.isNotEmpty ||
-      concepts.isNotEmpty;
+      concepts.isNotEmpty ||
+      places.isNotEmpty ||
+      organizations.isNotEmpty;
+
+  String? bridgeLabelForWork(String workId) =>
+      connectedWorkBridgeLabels[workId];
 }
 
 Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
@@ -38,6 +52,8 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   int connectedWorkLimit = 4,
   int eventLimit = 3,
   int conceptLimit = 3,
+  int placeLimit = 3,
+  int organizationLimit = 3,
 }) async {
   if (work is EntityItem || work.workId.isEmpty) {
     return const WorkLinkNeighbors();
@@ -49,6 +65,8 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   final characters = <UserCatalogEntity>[];
   final events = <UserCatalogEntity>[];
   final concepts = <UserCatalogEntity>[];
+  final places = <UserCatalogEntity>[];
+  final organizations = <UserCatalogEntity>[];
 
   for (final entityId in linkedEntityIds) {
     final type = EntityIdCodec.typeFromId(entityId);
@@ -61,6 +79,12 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
         if (events.length < eventLimit) events.add(entity);
       case EntityAnchorType.concept:
         if (concepts.length < conceptLimit) concepts.add(entity);
+      case EntityAnchorType.place:
+        if (places.length < placeLimit) places.add(entity);
+      case EntityAnchorType.organization:
+        if (organizations.length < organizationLimit) {
+          organizations.add(entity);
+        }
       default:
         break;
     }
@@ -120,10 +144,31 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
     }
   }
 
+  final bridgeLabels =
+      await RelationshipDiscoveryService.bridgeLabelsForConnectedWorks(
+    sourceWork: work,
+    connectedWorks: connectedWorks,
+    discovery: discovery,
+    userCatalog: userCatalog,
+    linkIndex: linkIndex,
+  );
+
+  final themeClusters =
+      await RelationshipDiscoveryService.conceptThemeClustersForWork(
+    workId: work.workId,
+    vaultItems: vaultItems,
+    userCatalog: userCatalog,
+    discovery: discovery,
+  );
+
   return WorkLinkNeighbors(
     characters: characters,
     connectedWorks: connectedWorks,
     events: events,
     concepts: concepts,
+    places: places,
+    organizations: organizations,
+    connectedWorkBridgeLabels: bridgeLabels,
+    themeClusters: themeClusters,
   );
 }

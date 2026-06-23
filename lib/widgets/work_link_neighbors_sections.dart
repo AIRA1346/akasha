@@ -6,6 +6,7 @@ import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
 import '../utils/work_link_neighbors.dart';
 import 'poster_image.dart';
+import 'work_preview_theme_clusters_section.dart';
 
 /// 작품·프리뷰·워크벤치 공통 — 링크 이웃 섹션 (연결 우선 UX).
 class WorkLinkNeighborsSections extends StatelessWidget {
@@ -17,6 +18,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     this.onOpenEntity,
     this.onOpenWork,
     this.onLinkCta,
+    this.onOpenConcept,
     this.characterTitleStyle,
     this.sectionTitleStyle,
     this.showEmptySections = true,
@@ -28,6 +30,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
   final void Function(UserCatalogEntity entity)? onOpenEntity;
   final void Function(AkashaItem work)? onOpenWork;
   final VoidCallback? onLinkCta;
+  final void Function(UserCatalogEntity entity)? onOpenConcept;
   final TextStyle? characterTitleStyle;
   final TextStyle? sectionTitleStyle;
   final bool showEmptySections;
@@ -71,9 +74,17 @@ class WorkLinkNeighborsSections extends StatelessWidget {
               ? null
               : WorkLinkConnectedWorksList(
                   works: neighbors.connectedWorks,
+                  bridgeLabelsByWorkId: neighbors.connectedWorkBridgeLabels,
                   onOpenWork: onOpenWork,
                 ),
         ),
+        if (neighbors.themeClusters.isNotEmpty)
+          WorkPreviewThemeClustersSection(
+            clusters: neighbors.themeClusters,
+            onOpenConcept: onOpenConcept == null
+                ? null
+                : (cluster) => onOpenConcept!(cluster.concept),
+          ),
         _section(
           title: '관련 사건',
           isEmpty: neighbors.events.isEmpty,
@@ -111,6 +122,28 @@ class WorkLinkNeighborsSections extends StatelessWidget {
                       ),
                     ],
                   ],
+                ),
+        ),
+        _section(
+          title: '관련 장소',
+          isEmpty: neighbors.places.isEmpty,
+          titleStyle: titleStyle,
+          child: neighbors.places.isEmpty
+              ? null
+              : _EntityChipList(
+                  entities: neighbors.places,
+                  onOpenEntity: onOpenEntity,
+                ),
+        ),
+        _section(
+          title: '관련 조직',
+          isEmpty: neighbors.organizations.isEmpty,
+          titleStyle: titleStyle,
+          child: neighbors.organizations.isEmpty
+              ? null
+              : _EntityChipList(
+                  entities: neighbors.organizations,
+                  onOpenEntity: onOpenEntity,
                 ),
         ),
       ],
@@ -189,7 +222,7 @@ class _EmptyLinkCta extends StatelessWidget {
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 child: const Text(
-                  '본문에서 [[링크]] 추가하기',
+                  '본문에서 링크 추가하기',
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -326,10 +359,12 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
   const WorkLinkConnectedWorksList({
     super.key,
     required this.works,
+    this.bridgeLabelsByWorkId = const {},
     this.onOpenWork,
   });
 
   final List<AkashaItem> works;
+  final Map<String, String> bridgeLabelsByWorkId;
   final void Function(AkashaItem work)? onOpenWork;
 
   @override
@@ -355,36 +390,56 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   Expanded(
-                    child: Text(
-                      work.title,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 11,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          work.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 11,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        if (bridgeLabelsByWorkId[work.workId] != null) ...[
+                          const SizedBox(height: 2),
+                          Text(
+                            bridgeLabelsByWorkId[work.workId]!,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 9,
+                              color: Colors.grey[500],
+                            ),
+                          ),
+                        ],
+                      ],
                     ),
                   ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: AkashaColors.surface,
-                      borderRadius: BorderRadius.circular(4),
-                      border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.08),
+                  if (bridgeLabelsByWorkId[work.workId] == null)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AkashaColors.surface,
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.08),
+                        ),
+                      ),
+                      child: Text(
+                        '링크 연결',
+                        style: TextStyle(
+                          fontSize: 8,
+                          color: Colors.grey[400],
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    child: Text(
-                      '링크 연결',
-                      style: TextStyle(
-                        fontSize: 8,
-                        color: Colors.grey[400],
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

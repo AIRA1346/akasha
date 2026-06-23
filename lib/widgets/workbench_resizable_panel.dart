@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme/akasha_colors.dart';
+
 /// 드래그 리사이즈 + 잠금 토글이 있는 워크벤치 열
 class WorkbenchResizablePanel extends StatelessWidget {
   final double width;
@@ -45,12 +47,12 @@ class WorkbenchResizablePanel extends StatelessWidget {
                     },
               onDoubleTap: onToggleLock,
               child: Container(
-                color: const Color(0xFF2D2D44),
+                color: AkashaColors.border,
                 child: Center(
                   child: Icon(
                     locked ? Icons.lock_outline : Icons.drag_indicator,
                     size: 12,
-                    color: Colors.grey[600],
+                    color: AkashaColors.textCaption,
                   ),
                 ),
               ),

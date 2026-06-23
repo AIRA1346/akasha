@@ -111,8 +111,6 @@ class DashboardSidebar extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _buildMainMenu(context),
-                        const SizedBox(height: 16),
-                        _buildRecentExplore(),
                         if (personalLibraries.isNotEmpty) ...[
                           const SizedBox(height: 16),
                           _buildPersonalLibraries(),
@@ -240,48 +238,25 @@ class DashboardSidebar extends StatelessWidget {
   }
 
   Widget _buildMainMenu(BuildContext context) {
-    final isHome = selectionMode == SidebarSelectionMode.dashboard &&
-        activeDashboardId == 'master_index' &&
-        !isExploreMode;
-
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildMenuTile(
-          icon: Icons.home_filled,
-          label: '홈',
-          isSelected: isHome,
-          onTap: onGoHome,
-        ),
-        _buildMenuTile(
-          icon: Icons.explore_outlined,
-          label: '탐색',
-          isSelected: isExploreMode,
-          onTap: onGoExplore,
-        ),
-        _buildMenuTile(
-          icon: Icons.book_outlined,
-          label: '라이브러리',
-          isSelected: selectionMode == SidebarSelectionMode.personalLibrary,
-          onTap: () {
-            if (personalLibraries.isNotEmpty) {
-              onSelectPersonalLibrary(personalLibraries.first.id);
-            }
-          },
-        ),
-        _buildMenuTile(
-          icon: Icons.folder_open_outlined,
-          label: '컬렉션',
-          isSelected: selectionMode == SidebarSelectionMode.collectibleCollection,
-          onTap: () {
-            if (collectibleCollections.isNotEmpty) {
-              onSelectCollectibleCollection(collectibleCollections.first.id);
-            }
-          },
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+          child: Text(
+            '도구',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[500],
+              letterSpacing: 0.5,
+            ),
+          ),
         ),
         if (FeatureFlags.showKnowledgeGraph)
           _buildMenuTile(
             icon: Icons.hub_outlined,
-            label: '그래프',
+            label: '연결 목록',
             isSelected: isKnowledgeGraphMode,
             onTap: () => onGoKnowledgeGraph(),
           ),
@@ -442,78 +417,6 @@ class DashboardSidebar extends StatelessWidget {
           );
         }),
       ],
-    );
-  }
-
-  Widget _buildRecentExplore() {
-    final recent = recentExploreItems.take(4).toList();
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            '최근 탐색',
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[500],
-              letterSpacing: 0.5,
-            ),
-          ),
-          const SizedBox(height: 8),
-          if (recent.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              child: Text(
-                '최근 탐색 기록이 없습니다.',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey[600],
-                ),
-              ),
-            )
-          else
-            ...recent.map((item) => _buildRecentExploreTile(item)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildRecentExploreTile(AkashaItem item) {
-    return InkWell(
-      onTap: onOpenRecentExplore == null
-          ? null
-          : () => onOpenRecentExplore!(item),
-      borderRadius: BorderRadius.circular(6),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: SizedBox(
-                width: 28,
-                height: 28,
-                child: PosterImage(item: item, fit: BoxFit.cover),
-              ),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                item.title,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey[400],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 

@@ -77,4 +77,12 @@ class PersonSeedRegistry implements EntityRegistryPort {
       return entity.matchesQuery(q);
     }).toList();
   }
+
+  /// 전체 seed 목록 (Entity Link Picker Cold Graph용).
+  List<EntityFact> listFacts({EntityAnchorType? type}) {
+    if (!_initialized) return const [];
+    return _entities
+        .where((entity) => type == null || entity.entityType == type)
+        .toList();
+  }
 }

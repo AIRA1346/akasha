@@ -31,7 +31,7 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
         const SizedBox(height: 12),
         if (recent.isEmpty)
           Text(
-            '작품을 열어 Sanctum에 감상을 기록하면 여기에 표시됩니다.',
+            '작품을 열어 감상을 기록하면 여기에 표시됩니다.',
             style: TextStyle(fontSize: 11, color: Colors.grey[500]),
           )
         else

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/archiving/record_link.dart';
+import '../features/workbench/presentation/workbench_save_status_hint.dart';
 import '../models/entity_link_selection.dart';
 import 'markdown_body_editor.dart';
 import 'vault_markdown_body.dart';
@@ -64,7 +65,7 @@ class SanctumPagePanel extends StatelessWidget {
                   size: 18, color: Colors.tealAccent),
               const SizedBox(width: 8),
               Text(
-                'Sanctum 페이지',
+                '기록 본문',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -102,6 +103,14 @@ class SanctumPagePanel extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 0, 12, 4),
+          child: WorkbenchSaveStatusHint(
+            isDirty: isDirty,
+            isSaving: isSaving,
+            lastSavedAt: lastSavedAt,
           ),
         ),
         if (view == SanctumPageView.body && externalChangePending)

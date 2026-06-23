@@ -23,6 +23,7 @@ import '../../../services/same_day_record_service.dart';
 import '../../../services/record_link_navigator.dart';
 import '../../../services/record_link_stale_label.dart';
 import '../../../utils/entity_link_neighbors.dart';
+import '../../../theme/akasha_colors.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'entity_detail_info_panel.dart';
@@ -67,8 +68,9 @@ class EntityDetailWorkspace extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final void Function(
     UserCatalogEntity entity,
-    EntityJournalEntry? journal,
-  ) onSaved;
+    EntityJournalEntry? journal, {
+    required bool silent,
+  }) onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final void Function(Future<void> Function()? save) onBindSave;
@@ -501,7 +503,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         }
       });
       widget.onDirtyChanged(false);
-      widget.onSaved(mirrored, saved);
+      widget.onSaved(mirrored, saved, silent: silent);
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();
@@ -731,6 +733,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                 infoPanelLocked: widget.infoPanelLocked,
                 draftTags: _draftTags,
                 isSaving: _isSaving,
+                isDirty: widget.isDirty,
+                lastSavedAt: _lastSavedAt,
                 loadingIncoming: _loadingIncoming,
                 incomingPaths: _incomingPaths,
                 staleLabelRecordCount: _staleLabelRecordCount,
@@ -763,7 +767,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
               ),
               Expanded(
                 child: ColoredBox(
-                  color: const Color(0xFF12121A),
+                  color: AkashaColors.workbenchEditor,
                   child: SanctumPagePanel(
                     view: _pageView,
                     onViewChanged: _onPageViewChanged,

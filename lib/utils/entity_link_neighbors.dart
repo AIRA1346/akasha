@@ -13,6 +13,8 @@ class EntityLinkNeighbors {
     this.persons = const [],
     this.events = const [],
     this.concepts = const [],
+    this.places = const [],
+    this.organizations = const [],
     this.incomingLinkCount = 0,
   });
 
@@ -20,6 +22,8 @@ class EntityLinkNeighbors {
   final List<UserCatalogEntity> persons;
   final List<UserCatalogEntity> events;
   final List<UserCatalogEntity> concepts;
+  final List<UserCatalogEntity> places;
+  final List<UserCatalogEntity> organizations;
   final int incomingLinkCount;
 
   bool get hasAnyLink =>
@@ -27,6 +31,8 @@ class EntityLinkNeighbors {
       persons.isNotEmpty ||
       events.isNotEmpty ||
       concepts.isNotEmpty ||
+      places.isNotEmpty ||
+      organizations.isNotEmpty ||
       incomingLinkCount > 0;
 }
 
@@ -40,6 +46,8 @@ Future<EntityLinkNeighbors> fetchEntityLinkNeighbors({
   int personLimit = 4,
   int eventLimit = 3,
   int conceptLimit = 3,
+  int placeLimit = 3,
+  int organizationLimit = 3,
 }) async {
   await userCatalog.load();
   final related = await discovery.discover(entity.entityId);
@@ -60,6 +68,8 @@ Future<EntityLinkNeighbors> fetchEntityLinkNeighbors({
   final persons = <UserCatalogEntity>[];
   final events = <UserCatalogEntity>[];
   final concepts = <UserCatalogEntity>[];
+  final places = <UserCatalogEntity>[];
+  final organizations = <UserCatalogEntity>[];
 
   final journal = discovery.cachedJournal(entity.entityId);
   if (journal != null) {
@@ -87,6 +97,16 @@ Future<EntityLinkNeighbors> fetchEntityLinkNeighbors({
               !concepts.any((e) => e.entityId == linked.entityId)) {
             concepts.add(linked);
           }
+        case EntityAnchorType.place:
+          if (places.length < placeLimit &&
+              !places.any((e) => e.entityId == linked.entityId)) {
+            places.add(linked);
+          }
+        case EntityAnchorType.organization:
+          if (organizations.length < organizationLimit &&
+              !organizations.any((e) => e.entityId == linked.entityId)) {
+            organizations.add(linked);
+          }
         default:
           break;
       }
@@ -98,6 +118,8 @@ Future<EntityLinkNeighbors> fetchEntityLinkNeighbors({
     persons: persons,
     events: events,
     concepts: concepts,
+    places: places,
+    organizations: organizations,
     incomingLinkCount: incomingCount,
   );
 }

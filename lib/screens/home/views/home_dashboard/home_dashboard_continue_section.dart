@@ -13,7 +13,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
     required this.selectedPreviewItem,
     required this.onItemTap,
     this.selectedEntityPreviewId,
-    this.onSearch,
+    this.isColdStart = false,
     this.fallbackVaultItems = const [],
   });
 
@@ -21,7 +21,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
   final AkashaItem? selectedPreviewItem;
   final String? selectedEntityPreviewId;
   final void Function(AkashaItem item) onItemTap;
-  final VoidCallback? onSearch;
+  final bool isColdStart;
   final List<AkashaItem> fallbackVaultItems;
 
   List<AkashaItem> get _displayItems {
@@ -48,24 +48,11 @@ class HomeDashboardContinueSection extends StatelessWidget {
         if (displayItems.isEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
-                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-                ),
-                if (onSearch != null) ...[
-                  const SizedBox(height: 8),
-                  TextButton(
-                    onPressed: onSearch,
-                    child: const Text(
-                      '검색으로 탐험 시작',
-                      style: TextStyle(fontSize: 11),
-                    ),
-                  ),
-                ],
-              ],
+            child: Text(
+              isColdStart
+                  ? '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'
+                  : '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
+              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
           )
         else if (_usingVaultFallback)
@@ -76,20 +63,20 @@ class HomeDashboardContinueSection extends StatelessWidget {
               style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
           ),
-        SizedBox(
-          height: 180,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              ...displayItems.map((item) => _ExploreCard(
-                    item: item,
-                    isSelected: _isSelected(item),
-                    onTap: () => onItemTap(item),
-                  )),
-              if (onSearch != null) _AddExploreCard(onTap: onSearch!),
-            ],
+        if (displayItems.isNotEmpty)
+          SizedBox(
+            height: 180,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                ...displayItems.map((item) => _ExploreCard(
+                      item: item,
+                      isSelected: _isSelected(item),
+                      onTap: () => onItemTap(item),
+                    )),
+              ],
+            ),
           ),
-        ),
       ],
     );
   }
@@ -265,53 +252,6 @@ class _ExploreCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _AddExploreCard extends StatelessWidget {
-  const _AddExploreCard({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 145,
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: onTap,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.04),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.add, size: 20, color: Colors.grey[500]),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                '검색으로 더 보기',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey[500],
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
           ),
         ),
       ),

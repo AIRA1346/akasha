@@ -85,7 +85,8 @@ void main() {
     await tester.pump();
 
     expect(find.text('에밀리아'), findsWidgets);
-    expect(find.text('기록하기 >'), findsOneWidget);
+    expect(find.text('지금 보는 항목'), findsOneWidget);
+    expect(find.text('기록하기'), findsOneWidget);
     expect(find.text('연결된 작품'), findsOneWidget);
     expect(find.textContaining('아직 연결된 작품'), findsOneWidget);
   });

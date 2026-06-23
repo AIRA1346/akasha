@@ -39,6 +39,11 @@ class HomeShellScaffold extends StatelessWidget {
             controller.toggleSidebar();
           }
         },
+        const SingleActivator(LogicalKeyboardKey.keyK, control: true): () {
+          if (ModalRoute.of(context)?.isCurrent == true) {
+            controller.openSearchDialog();
+          }
+        },
       },
       child: Focus(
         autofocus: true,
@@ -209,6 +214,8 @@ class HomeShellScaffold extends StatelessWidget {
               entityPreviewItem: controller.entityPreviewItem,
               onPreviewWork: controller.openWorkPreview,
               onPreviewEntity: controller.openEntityPreview,
+              onNavigateWorkPreview: controller.navigateWorkPreview,
+              onNavigateEntityPreview: controller.navigateEntityPreview,
               onPreviewLinkedWork: controller.previewLinkedWork,
               onPreviewLinkedEntity: controller.previewLinkedEntity,
               canPopPreview: controller.canPopPreview,
@@ -219,11 +226,18 @@ class HomeShellScaffold extends StatelessWidget {
               onOpenEntityFromPreview: controller.openEntityFromPreview,
               pendingWorkEntityLinkType: controller.pendingWorkEntityLinkType,
               pendingWorkEntityLinkWorkId: controller.pendingWorkEntityLinkWorkId,
+              pendingWorkEntityLinkCandidate: controller.pendingWorkEntityLinkCandidate,
               onClearPendingWorkEntityLink:
                   controller.clearPendingWorkEntityLinkType,
               onConnectEntityFromPreview:
                   controller.openWorkFromPreviewToConnect,
+              onConnectSuggestedFromPreview:
+                  controller.openWorkFromPreviewToConnectSuggested,
+              onConnectSuggestedFromHome: controller.connectSuggestedForWork,
               onGraphOpenRecord: controller.openMostRecentWorkForRecord,
+              onPreviewRegistryWork: controller.previewRegistryWork,
+              onArchiveRegistryWorkFromPreview:
+                  controller.archiveRegistryWorkFromPreview,
               onWorkbenchWorkSaved: controller.onWorkbenchWorkSaved,
               onWorkbenchWorkDeleted: controller.onWorkbenchWorkDeleted,
               onWorkbenchEntitySaved: controller.onWorkbenchEntitySaved,

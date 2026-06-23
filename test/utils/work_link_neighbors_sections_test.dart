@@ -20,6 +20,6 @@ void main() {
     expect(find.text('연결된 작품'), findsOneWidget);
     expect(find.text('관련 사건'), findsOneWidget);
     expect(find.text('관련 개념'), findsOneWidget);
-    expect(find.textContaining('아직'), findsNWidgets(4));
+    expect(find.textContaining('아직'), findsNWidgets(6));
   });
 }

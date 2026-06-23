@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../features/workbench/presentation/collectible_tab.dart';
+import '../../../theme/akasha_colors.dart';
 import '../../../widgets/poster_image.dart';
 
 /// 열린 Collectible 탭 레일 (Work + Entity).
@@ -26,7 +27,7 @@ class CollectibleTabRail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF181824),
+      color: AkashaColors.surface,
       child: Column(
         children: [
           Material(

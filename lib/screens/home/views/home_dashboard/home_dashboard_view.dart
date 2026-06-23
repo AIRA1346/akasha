@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
 import '../../../../models/user_catalog_entity.dart';
+import '../../../../models/registry_work.dart';
+import '../../../../services/link_candidate_service.dart';
 import '../../../../core/ports/record_link_port.dart';
 import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../theme/akasha_colors.dart';
+import 'home_dashboard_hero.dart';
 import 'home_dashboard_continue_section.dart';
 import 'home_dashboard_recent_discovery_section.dart';
 import 'home_dashboard_recent_records_section.dart';
+import 'home_dashboard_registry_bridge_section.dart';
+import 'home_dashboard_theme_clusters_section.dart';
 import 'home_dashboard_todays_links_section.dart';
 import 'home_dashboard_top_bar.dart';
 
@@ -25,6 +30,8 @@ class HomeDashboardView extends StatelessWidget {
     required this.onVaultSettings,
     this.previewItem,
     this.entityPreviewItem,
+    this.onConnectSuggested,
+    this.onPreviewRegistryWork,
   });
 
   final List<AkashaItem> vaultItems;
@@ -37,6 +44,9 @@ class HomeDashboardView extends StatelessWidget {
   final VoidCallback onVaultSettings;
   final AkashaItem? previewItem;
   final UserCatalogEntity? entityPreviewItem;
+  final void Function(LinkCandidate candidate, AkashaItem work)?
+      onConnectSuggested;
+  final void Function(RegistryWork work)? onPreviewRegistryWork;
 
   void _handleItemTap(AkashaItem item) {
     if (item is EntityItem) {
@@ -58,6 +68,8 @@ class HomeDashboardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isColdStart = recentExploreItems.isEmpty;
+
     return Container(
       decoration: const BoxDecoration(color: AkashaColors.background),
       child: SingleChildScrollView(
@@ -65,6 +77,8 @@ class HomeDashboardView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            HomeDashboardHero(onStartExplore: onSearch),
+            const SizedBox(height: 24),
             HomeDashboardTopBar(
               onSearch: onSearch,
               onVaultSettings: onVaultSettings,
@@ -76,7 +90,7 @@ class HomeDashboardView extends StatelessWidget {
               selectedPreviewItem: previewItem,
               selectedEntityPreviewId: entityPreviewItem?.entityId,
               onItemTap: _handleItemTap,
-              onSearch: onSearch,
+              isColdStart: isColdStart,
             ),
             const SizedBox(height: 32),
             HomeDashboardTodaysLinksSection(
@@ -85,8 +99,24 @@ class HomeDashboardView extends StatelessWidget {
               linkIndex: linkIndex,
               onOpenWork: onPreviewWork,
               onOpenEntity: onPreviewEntity,
+              onConnectSuggested: onConnectSuggested,
             ),
             const SizedBox(height: 32),
+            HomeDashboardThemeClustersSection(
+              vaultItems: vaultItems,
+              userCatalog: userCatalog,
+              linkIndex: linkIndex,
+              onOpenConcept: onPreviewEntity,
+            ),
+            const SizedBox(height: 32),
+            if (onPreviewRegistryWork != null)
+              HomeDashboardRegistryBridgeSection(
+                vaultItems: vaultItems,
+                userCatalog: userCatalog,
+                linkIndex: linkIndex,
+                onPreviewRegistryWork: onPreviewRegistryWork!,
+              ),
+            if (onPreviewRegistryWork != null) const SizedBox(height: 32),
             HomeDashboardRecentDiscoverySection(
               vaultItems: vaultItems,
               selectedPreviewItem: previewItem,

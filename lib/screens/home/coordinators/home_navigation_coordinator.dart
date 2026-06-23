@@ -26,7 +26,7 @@ class HomeNavigationCoordinator {
   final Future<void> Function() prefetchRegistry;
   final void Function() rebuild;
 
-  bool isSidebarOpen = true;
+  bool isSidebarOpen = false;
   int timelineReloadToken = 0;
 
   /// master_index에서 browse 그리드를 보여줄 때 true (프리미엄 홈 대시보드 대신).

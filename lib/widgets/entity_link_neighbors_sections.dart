@@ -132,6 +132,30 @@ class EntityLinkNeighborsSections extends StatelessWidget {
                   ],
                 ),
         ),
+        _section(
+          title: '관련 장소',
+          isEmpty: neighbors.places.isEmpty,
+          titleStyle: titleStyle,
+          emptyMessage: '아직 관련 장소가 없습니다.',
+          child: neighbors.places.isEmpty
+              ? null
+              : _EntityChipList(
+                  entities: neighbors.places,
+                  onOpenEntity: onOpenEntity,
+                ),
+        ),
+        _section(
+          title: '관련 조직',
+          isEmpty: neighbors.organizations.isEmpty,
+          titleStyle: titleStyle,
+          emptyMessage: '아직 관련 조직이 없습니다.',
+          child: neighbors.organizations.isEmpty
+              ? null
+              : _EntityChipList(
+                  entities: neighbors.organizations,
+                  onOpenEntity: onOpenEntity,
+                ),
+        ),
       ],
     );
   }

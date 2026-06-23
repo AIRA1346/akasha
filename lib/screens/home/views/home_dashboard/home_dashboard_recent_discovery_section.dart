@@ -31,7 +31,7 @@ class HomeDashboardRecentDiscoverySection extends StatelessWidget {
         const SizedBox(height: 12),
         if (recent.isEmpty)
           Text(
-            '검색으로 작품을 찾아 볼트에 추가해 보세요.',
+            '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.',
             style: TextStyle(fontSize: 11, color: Colors.grey[500]),
           )
         else

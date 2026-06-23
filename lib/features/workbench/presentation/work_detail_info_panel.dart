@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as p;
 
-import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../models/enums.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
+import 'widgets/workbench_panel_styles.dart';
+import 'widgets/workbench_record_links_sections.dart';
 import 'work_detail_info_form.dart';
 import 'work_detail_info_poster.dart';
 
@@ -30,6 +33,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
     required this.registryTags,
     required this.isSaving,
     required this.isArchived,
+    this.isDirty = false,
+    this.lastSavedAt,
     required this.showAddToLibrary,
     required this.loadingIncoming,
     required this.incomingPaths,
@@ -77,6 +82,8 @@ class WorkDetailInfoPanel extends StatelessWidget {
   final Set<String> registryTags;
   final bool isSaving;
   final bool isArchived;
+  final bool isDirty;
+  final DateTime? lastSavedAt;
   final bool showAddToLibrary;
   final bool loadingIncoming;
   final List<String> incomingPaths;
@@ -124,24 +131,31 @@ class WorkDetailInfoPanel extends StatelessWidget {
       onWidthChanged: onInfoWidthChanged,
       onToggleLock: onToggleInfoLock,
       child: ColoredBox(
-        color: const Color(0xFF1A1A28),
+        color: AkashaColors.workbenchPanel,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (!vaultLinked)
               Padding(
-                padding: const EdgeInsets.fromLTRB(8, 6, 8, 0),
+                padding: const EdgeInsets.fromLTRB(
+                  AkashaSpacing.md,
+                  AkashaSpacing.sm,
+                  AkashaSpacing.md,
+                  0,
+                ),
                 child: Row(
                   children: [
-                    Icon(Icons.folder_off_outlined,
-                        size: 14, color: Colors.amber[700]),
-                    const SizedBox(width: 6),
+                    const Icon(
+                      Icons.folder_off_outlined,
+                      size: 14,
+                      color: AkashaColors.statusWarning,
+                    ),
+                    const SizedBox(width: AkashaSpacing.sm),
                     Expanded(
                       child: Text(
                         '볼트 미연동 · 임시 저장만',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.amber[700],
+                        style: AkashaTypography.caption.copyWith(
+                          color: AkashaColors.statusWarning,
                         ),
                       ),
                     ),
@@ -156,7 +170,12 @@ class WorkDetailInfoPanel extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 6, 8, 2),
+                        padding: const EdgeInsets.fromLTRB(
+                          AkashaSpacing.md,
+                          AkashaSpacing.sm,
+                          AkashaSpacing.md,
+                          AkashaSpacing.xs,
+                        ),
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: WorkDetailInfoPoster(
@@ -172,60 +191,58 @@ class WorkDetailInfoPanel extends StatelessWidget {
                       ),
                       Expanded(
                         child: SingleChildScrollView(
-                          padding: const EdgeInsets.fromLTRB(8, 2, 8, 8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              WorkDetailInfoForm(
-                                item: item,
-                                metaLine: metaLine,
-                                titleCtrl: titleCtrl,
-                                draftRating: draftRating,
-                                draftWorkStatus: draftWorkStatus,
-                                draftMyStatus: draftMyStatus,
-                                draftHallOfFame: draftHallOfFame,
-                                draftTags: draftTags,
-                                registryTags: registryTags,
-                                isSaving: isSaving,
-                                isArchived: isArchived,
-                                showAddToLibrary: showAddToLibrary,
-                                onMarkDirty: onMarkDirty,
-                                onDraftRatingChanged: onDraftRatingChanged,
-                                onDraftWorkStatusChanged: onDraftWorkStatusChanged,
-                                onDraftMyStatusChanged: onDraftMyStatusChanged,
-                                onDraftHallOfFameChanged: onDraftHallOfFameChanged,
-                                onDraftTagsChanged: onDraftTagsChanged,
-                                onResetToDefaults: onResetToDefaults,
-                                onSaveArchive: onSaveArchive,
-                                onAddToLibrary: onAddToLibrary,
-                                canDeleteMd: canDeleteMd,
-                                onDeleteArchive: onDeleteArchive,
-                                linkNeighbors: linkNeighbors,
-                                loadingLinkNeighbors: loadingLinkNeighbors,
-                                onOpenLinkedEntity: onOpenLinkedEntity,
-                                onOpenLinkedWork: onOpenLinkedWork,
-                                onGoKnowledgeGraph: onGoKnowledgeGraph,
-                                onFocusSanctum: onFocusSanctum,
-                                notesSection: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                                  children: [
-                                    _IncomingLinksSection(
-                                      loading: loadingIncoming,
-                                      paths: incomingPaths,
-                                      staleLabelRecordCount: staleLabelRecordCount,
-                                      onRefresh: onRefreshIncoming,
-                                      onOpen: onOpenIncoming,
-                                    ),
-                                    _SameDaySection(
-                                      loading: loadingSameDay,
-                                      refs: sameDayRefs,
-                                      anchor: item.addedAt,
-                                      onOpen: onOpenSameDay,
-                                    ),
-                                  ],
+                          padding: WorkbenchPanelStyles.panelPadding,
+                          child: WorkDetailInfoForm(
+                            item: item,
+                            metaLine: metaLine,
+                            titleCtrl: titleCtrl,
+                            draftRating: draftRating,
+                            draftWorkStatus: draftWorkStatus,
+                            draftMyStatus: draftMyStatus,
+                            draftHallOfFame: draftHallOfFame,
+                            draftTags: draftTags,
+                            registryTags: registryTags,
+                            isSaving: isSaving,
+                            isArchived: isArchived,
+                            isDirty: isDirty,
+                            lastSavedAt: lastSavedAt,
+                            showAddToLibrary: showAddToLibrary,
+                            onMarkDirty: onMarkDirty,
+                            onDraftRatingChanged: onDraftRatingChanged,
+                            onDraftWorkStatusChanged: onDraftWorkStatusChanged,
+                            onDraftMyStatusChanged: onDraftMyStatusChanged,
+                            onDraftHallOfFameChanged: onDraftHallOfFameChanged,
+                            onDraftTagsChanged: onDraftTagsChanged,
+                            onResetToDefaults: onResetToDefaults,
+                            onSaveArchive: onSaveArchive,
+                            onAddToLibrary: onAddToLibrary,
+                            canDeleteMd: canDeleteMd,
+                            onDeleteArchive: onDeleteArchive,
+                            linkNeighbors: linkNeighbors,
+                            loadingLinkNeighbors: loadingLinkNeighbors,
+                            onOpenLinkedEntity: onOpenLinkedEntity,
+                            onOpenLinkedWork: onOpenLinkedWork,
+                            onGoKnowledgeGraph: onGoKnowledgeGraph,
+                            onFocusSanctum: onFocusSanctum,
+                            notesSection: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                WorkbenchIncomingLinksSection(
+                                  loading: loadingIncoming,
+                                  paths: incomingPaths,
+                                  staleLabelRecordCount: staleLabelRecordCount,
+                                  refreshKey: const Key('work_incoming_refresh'),
+                                  onRefresh: onRefreshIncoming,
+                                  onOpen: onOpenIncoming,
                                 ),
-                              ),
-                            ],
+                                WorkbenchSameDayRecordsSection(
+                                  loading: loadingSameDay,
+                                  refs: sameDayRefs,
+                                  anchor: item.addedAt,
+                                  onOpen: onOpenSameDay,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -237,177 +254,6 @@ class WorkDetailInfoPanel extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _SameDaySection extends StatelessWidget {
-  const _SameDaySection({
-    required this.loading,
-    required this.refs,
-    required this.anchor,
-    required this.onOpen,
-  });
-
-  final bool loading;
-  final List<SameDayRecordRef> refs;
-  final DateTime anchor;
-  final ValueChanged<SameDayRecordRef> onOpen;
-
-  @override
-  Widget build(BuildContext context) {
-    if (loading) {
-      return const Padding(
-        padding: EdgeInsets.only(top: 8),
-        child: LinearProgressIndicator(minHeight: 2),
-      );
-    }
-
-    if (refs.isEmpty) return const SizedBox.shrink();
-
-    final local = anchor.toLocal();
-    final dateLabel =
-        '${local.year}-${local.month.toString().padLeft(2, '0')}-${local.day.toString().padLeft(2, '0')}';
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            '같은 날 기록 · $dateLabel (${refs.length})',
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.tealAccent,
-            ),
-          ),
-          const SizedBox(height: 6),
-          ...refs.map((ref) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Material(
-                color: const Color(0xFF252535),
-                borderRadius: BorderRadius.circular(6),
-                child: ListTile(
-                  dense: true,
-                  visualDensity: VisualDensity.compact,
-                  leading: Icon(
-                    ref.kind == RecordKind.timelineEntry
-                        ? Icons.timeline
-                        : Icons.notes,
-                    size: 16,
-                  ),
-                  title: Text(ref.title, style: const TextStyle(fontSize: 12)),
-                  subtitle: Text(
-                    ref.kindLabel,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  onTap: () => onOpen(ref),
-                ),
-              ),
-            );
-          }),
-        ],
-      ),
-    );
-  }
-}
-
-class _IncomingLinksSection extends StatelessWidget {
-  const _IncomingLinksSection({
-    required this.loading,
-    required this.paths,
-    required this.staleLabelRecordCount,
-    this.onRefresh,
-    this.onOpen,
-  });
-
-  final bool loading;
-  final List<String> paths;
-  final int staleLabelRecordCount;
-  final VoidCallback? onRefresh;
-  final ValueChanged<String>? onOpen;
-
-  @override
-  Widget build(BuildContext context) {
-    if (loading) {
-      return const Padding(
-        padding: EdgeInsets.symmetric(vertical: 4),
-        child: LinearProgressIndicator(minHeight: 2),
-      );
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '연결된 Record ${paths.length}개',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.tealAccent,
-                    ),
-                  ),
-                  if (staleLabelRecordCount > 0) ...[
-                    const SizedBox(height: 2),
-                    Text(
-                      '제목 갱신 필요 ${staleLabelRecordCount}개',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.amber.shade200,
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-            if (onRefresh != null)
-              IconButton(
-                key: const Key('work_incoming_refresh'),
-                icon: const Icon(Icons.refresh, size: 18),
-                tooltip: 'Incoming Links 새로고침',
-                visualDensity: VisualDensity.compact,
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-                onPressed: onRefresh,
-              ),
-          ],
-        ),
-        if (paths.isNotEmpty) ...[
-          const SizedBox(height: 6),
-          ...paths.map((path) {
-            final label = p.basename(path);
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Material(
-                color: const Color(0xFF252535),
-                borderRadius: BorderRadius.circular(6),
-                child: ListTile(
-                  dense: true,
-                  visualDensity: VisualDensity.compact,
-                  leading: const Icon(Icons.link, size: 16),
-                  title: Text(label, style: const TextStyle(fontSize: 12)),
-                  subtitle: Text(
-                    path,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  onTap: onOpen != null ? () => onOpen!(path) : null,
-                ),
-              ),
-            );
-          }),
-        ],
-      ],
     );
   }
 }

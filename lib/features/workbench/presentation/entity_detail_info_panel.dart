@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as p;
 
-import '../../../core/archiving/entity_anchor.dart';
-import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/enums.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
+import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_spacing.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/editable_tag_chips.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
+import 'widgets/workbench_panel_styles.dart';
+import 'widgets/workbench_record_links_sections.dart';
 import 'work_detail_info_poster.dart';
 
 /// Entity collectible — Workbench 좌측 정보 패널 (Phase 6).
@@ -26,6 +28,8 @@ class EntityDetailInfoPanel extends StatelessWidget {
     required this.infoPanelLocked,
     required this.draftTags,
     required this.isSaving,
+    this.isDirty = false,
+    this.lastSavedAt,
     required this.loadingIncoming,
     required this.incomingPaths,
     required this.staleLabelRecordCount,
@@ -61,6 +65,8 @@ class EntityDetailInfoPanel extends StatelessWidget {
   final bool infoPanelLocked;
   final List<String> draftTags;
   final bool isSaving;
+  final bool isDirty;
+  final DateTime? lastSavedAt;
   final bool loadingIncoming;
   final List<String> incomingPaths;
   final int staleLabelRecordCount;
@@ -91,6 +97,7 @@ class EntityDetailInfoPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final entityItem = item as EntityItem;
     final badge = entityTypeBadgeLabel(entityItem.entityType);
+    final saveLabel = hasJournal ? 'md 저장' : 'journal 생성';
 
     return WorkbenchResizablePanel(
       width: panelWidth,
@@ -100,9 +107,9 @@ class EntityDetailInfoPanel extends StatelessWidget {
       onWidthChanged: onInfoWidthChanged,
       onToggleLock: onToggleInfoLock,
       child: ColoredBox(
-        color: const Color(0xFF1A1A26),
+        color: AkashaColors.workbenchPanel,
         child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+          padding: WorkbenchPanelStyles.panelPadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -118,48 +125,44 @@ class EntityDetailInfoPanel extends StatelessWidget {
                   onClose: onClose,
                 ),
               ),
-              const SizedBox(height: 14),
-              Text(
-                item.title,
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w700,
-                  height: 1.25,
-                ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                item.workId,
-                style: TextStyle(fontSize: 11, color: Colors.grey[600]),
-              ),
+              const SizedBox(height: AkashaSpacing.md),
+              Text(item.title, style: AkashaTypography.headline),
+              const SizedBox(height: AkashaSpacing.xs),
+              Text(badge, style: AkashaTypography.bodySecondary),
               if (aliases.isNotEmpty) ...[
-                const SizedBox(height: 10),
+                const SizedBox(height: AkashaSpacing.sm),
                 Text(
                   '별칭: ${aliases.join(', ')}',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                  style: AkashaTypography.body,
                 ),
               ],
-              const SizedBox(height: 8),
+              const SizedBox(height: AkashaSpacing.sm),
               Row(
                 children: [
                   Icon(
-                    hasJournal ? Icons.inventory_2_outlined : Icons.cloud_outlined,
+                    hasJournal
+                        ? Icons.inventory_2_outlined
+                        : Icons.cloud_outlined,
                     size: 14,
-                    color: hasJournal ? Colors.greenAccent : Colors.grey,
+                    color: hasJournal
+                        ? AkashaColors.statusSaved
+                        : AkashaColors.textMuted,
                   ),
-                  const SizedBox(width: 6),
+                  const SizedBox(width: AkashaSpacing.sm),
                   Text(
-                    hasJournal ? '아카이브됨' : 'catalog only',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: hasJournal ? Colors.greenAccent : Colors.grey,
+                    hasJournal ? '기록 있음' : '기록 없음 (카탈로그만)',
+                    style: AkashaTypography.bodySecondary.copyWith(
+                      color: hasJournal
+                          ? AkashaColors.statusSaved
+                          : AkashaColors.textMuted,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AkashaSpacing.lg),
 
-              // —— 연결 (탐험 허브) ——
+              WorkbenchPanelStyles.connectionsHeader(),
+              const SizedBox(height: AkashaSpacing.sm),
               EntityLinkNeighborsSections(
                 neighbors: linkNeighbors,
                 entityTags: draftTags,
@@ -167,289 +170,60 @@ class EntityDetailInfoPanel extends StatelessWidget {
                 onOpenEntity: onOpenLinkedEntity,
                 onOpenWork: onOpenLinkedWork,
                 onRecordCta: onFocusSanctumForLinks,
-                sectionTitleStyle: const TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF6C63FF),
-                ),
+                sectionTitleStyle: AkashaTypography.sectionTitle,
               ),
               if (onGoKnowledgeGraph != null) ...[
-                const SizedBox(height: 4),
-                SizedBox(
-                  height: 30,
-                  child: OutlinedButton.icon(
-                    onPressed: onGoKnowledgeGraph,
-                    icon: const Icon(Icons.hub_outlined, size: 14, color: Color(0xFF6C63FF)),
-                    label: const Text(
-                      '연결 맵에서 보기',
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Color(0xFF6C63FF)),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                    ),
-                  ),
+                const SizedBox(height: AkashaSpacing.xs),
+                WorkbenchPanelStyles.graphListButton(
+                  onPressed: onGoKnowledgeGraph!,
                 ),
               ],
-              const Divider(height: 24),
-              _IncomingLinksSection(
+
+              WorkbenchPanelStyles.panelDivider(),
+              WorkbenchIncomingLinksSection(
                 loading: loadingIncoming,
                 paths: incomingPaths,
                 staleLabelRecordCount: staleLabelRecordCount,
+                refreshKey: const Key('entity_incoming_refresh'),
                 onRefresh: onRefreshIncoming,
                 onOpen: onOpenIncoming,
               ),
-              const SizedBox(height: 24),
-              _SameDaySection(
+              const SizedBox(height: AkashaSpacing.md),
+              WorkbenchSameDayRecordsSection(
                 loading: loadingSameDay,
                 refs: sameDayRefs,
                 anchor: item.addedAt,
                 onOpen: onOpenSameDay,
               ),
-              const Divider(height: 24),
-              Text(
-                '태그',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey[500],
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 6),
+
+              WorkbenchPanelStyles.panelDivider(),
+              WorkbenchPanelStyles.sectionLabel('태그'),
+              const SizedBox(height: AkashaSpacing.sm),
               EditableTagChips(
                 tags: draftTags,
                 onChanged: onDraftTagsChanged,
                 compact: false,
               ),
-              const SizedBox(height: 20),
-              if (showAddToLibrary) ...[
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    onPressed: onAddToLibrary,
-                    icon: const Icon(Icons.collections_bookmark_outlined, size: 16),
-                    label: Text(hasJournal ? '서재에 담기' : '저장하고 서재에 담기'),
-                    style: OutlinedButton.styleFrom(
-                      visualDensity: VisualDensity.compact,
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      textStyle: const TextStyle(fontSize: 11),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 6),
-              ],
-              FilledButton.icon(
-                onPressed: isSaving ? null : onSave,
-                icon: isSaving
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : const Icon(Icons.save_outlined, size: 18),
-                label: Text(hasJournal ? 'md 저장' : 'journal 생성'),
+
+              const SizedBox(height: AkashaSpacing.lg),
+              WorkbenchSaveActions(
+                isSaving: isSaving,
+                isDirty: isDirty,
+                lastSavedAt: lastSavedAt,
+                saveLabel: saveLabel,
+                explicitSaveLabel: saveLabel,
+                onSave: onSave,
+                showAddToLibrary: showAddToLibrary,
+                libraryLabel:
+                    hasJournal ? '서재에 담기' : '저장하고 서재에 담기',
+                onAddToLibrary: onAddToLibrary,
+                canDeleteMd: canDeleteMd,
+                onDeleteArchive: onDeleteArchive,
               ),
-              if (canDeleteMd && onDeleteArchive != null) ...[
-                const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: isSaving ? null : onDeleteArchive,
-                  icon: const Icon(Icons.delete_outline, size: 18),
-                  label: const Text('md 삭제'),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.redAccent,
-                  ),
-                ),
-              ],
             ],
           ),
         ),
       ),
-    );
-  }
-
-  IconData _iconFor(EntityAnchorType type) => switch (type) {
-        EntityAnchorType.person => Icons.person_outline,
-        EntityAnchorType.concept => Icons.lightbulb_outline,
-        EntityAnchorType.event => Icons.event_outlined,
-        EntityAnchorType.place => Icons.place_outlined,
-        EntityAnchorType.organization => Icons.groups_outlined,
-        _ => Icons.category_outlined,
-      };
-}
-
-class _SameDaySection extends StatelessWidget {
-  const _SameDaySection({
-    required this.loading,
-    required this.refs,
-    required this.anchor,
-    required this.onOpen,
-  });
-
-  final bool loading;
-  final List<SameDayRecordRef> refs;
-  final DateTime anchor;
-  final ValueChanged<SameDayRecordRef> onOpen;
-
-  @override
-  Widget build(BuildContext context) {
-    if (loading) {
-      return const Padding(
-        padding: EdgeInsets.only(top: 8),
-        child: LinearProgressIndicator(minHeight: 2),
-      );
-    }
-
-    if (refs.isEmpty) return const SizedBox.shrink();
-
-    final local = anchor.toLocal();
-    final dateLabel =
-        '${local.year}-${local.month.toString().padLeft(2, '0')}-${local.day.toString().padLeft(2, '0')}';
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            '같은 날 기록 · $dateLabel (${refs.length})',
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.tealAccent,
-            ),
-          ),
-          const SizedBox(height: 6),
-          ...refs.map((ref) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Material(
-                color: const Color(0xFF252535),
-                borderRadius: BorderRadius.circular(6),
-                child: ListTile(
-                  dense: true,
-                  visualDensity: VisualDensity.compact,
-                  leading: Icon(
-                    ref.kind == RecordKind.timelineEntry
-                        ? Icons.timeline
-                        : Icons.notes,
-                    size: 16,
-                  ),
-                  title: Text(ref.title, style: const TextStyle(fontSize: 12)),
-                  subtitle: Text(
-                    ref.kindLabel,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  onTap: () => onOpen(ref),
-                ),
-              ),
-            );
-          }),
-        ],
-      ),
-    );
-  }
-}
-
-class _IncomingLinksSection extends StatelessWidget {
-  const _IncomingLinksSection({
-    required this.loading,
-    required this.paths,
-    required this.staleLabelRecordCount,
-    this.onRefresh,
-    this.onOpen,
-  });
-
-  final bool loading;
-  final List<String> paths;
-  final int staleLabelRecordCount;
-  final VoidCallback? onRefresh;
-  final ValueChanged<String>? onOpen;
-
-  @override
-  Widget build(BuildContext context) {
-    if (loading) {
-      return const Padding(
-        padding: EdgeInsets.symmetric(vertical: 4),
-        child: LinearProgressIndicator(minHeight: 2),
-      );
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '연결된 Record ${paths.length}개',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.tealAccent,
-                    ),
-                  ),
-                  if (staleLabelRecordCount > 0) ...[
-                    const SizedBox(height: 2),
-                    Text(
-                      '제목 갱신 필요 ${staleLabelRecordCount}개',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.amber.shade200,
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-            if (onRefresh != null)
-              IconButton(
-                key: const Key('entity_incoming_refresh'),
-                icon: const Icon(Icons.refresh, size: 18),
-                tooltip: 'Incoming Links 새로고침',
-                visualDensity: VisualDensity.compact,
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-                onPressed: onRefresh,
-              ),
-          ],
-        ),
-        if (paths.isNotEmpty) ...[
-          const SizedBox(height: 6),
-          ...paths.map((path) {
-            final label = p.basename(path);
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Material(
-                color: const Color(0xFF252535),
-                borderRadius: BorderRadius.circular(6),
-                child: ListTile(
-                  dense: true,
-                  visualDensity: VisualDensity.compact,
-                  leading: const Icon(Icons.link, size: 16),
-                  title: Text(label, style: const TextStyle(fontSize: 12)),
-                  subtitle: Text(
-                    path,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  onTap: onOpen != null ? () => onOpen!(path) : null,
-                ),
-              ),
-            );
-          }),
-        ],
-      ],
     );
   }
 }

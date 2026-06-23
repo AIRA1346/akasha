@@ -10,7 +10,7 @@ import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/poster_image.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 
-/// 볼트 작품별 위키 링크 연결을 탐색하는 지식 그래프 뷰 (v1.1 리스트형).
+/// 볼트 작품별 위키 링크 연결을 탐색하는 연결 목록 뷰 (v1.1 리스트형).
 class KnowledgeGraphView extends StatefulWidget {
   const KnowledgeGraphView({
     super.key,
@@ -45,6 +45,19 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
   void initState() {
     super.initState();
     _loadCounts();
+  }
+
+  @override
+  void didUpdateWidget(covariant KnowledgeGraphView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.vaultItems != widget.vaultItems ||
+        oldWidget.linkIndex != widget.linkIndex) {
+      setState(() {
+        _loadingCounts = true;
+        _expandedNeighbors.clear();
+      });
+      _loadCounts();
+    }
   }
 
   Future<void> _loadCounts() async {
@@ -116,7 +129,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  '지식 연결 맵',
+                  '연결 목록',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -125,7 +138,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  '작품 기록의 [[위키 링크]]로 연결된 인물·작품을 탐색합니다.',
+                  '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
                   style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                 ),
               ],
@@ -213,7 +226,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                         subtitle: Text(
                           count > 0
                               ? '연결 $count개'
-                              : '연결 없음 · 기록에서 [[링크]] 추가',
+                              : '연결 없음 · 기록에서 링크 추가',
                           style: TextStyle(
                             fontSize: 11,
                             color: count > 0
@@ -290,7 +303,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
             ),
             const SizedBox(height: 4),
             Text(
-              '첫 연결을 만들어 보세요. 작품 기록에 [[위키 링크]]를 추가하면 여기에 표시됩니다.',
+              '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.',
               style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
             const SizedBox(height: 12),

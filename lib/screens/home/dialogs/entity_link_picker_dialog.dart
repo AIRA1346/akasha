@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
+import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
+import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_link_picker_candidates.dart';
+import '../../../services/entity_seed_catalog_promotion.dart';
 import '../../../services/entity_vault_loader.dart';
+import '../../../services/link_candidate_service.dart';
+import '../../../theme/akasha_colors.dart';
 import 'add_catalog_entity_dialog.dart';
 
 /// R2-B — Work Sanctum Entity link picker (선택만 · markdown 삽입은 Step 2).
@@ -14,6 +19,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
   EntityVaultLoader? entityLoader,
   String? initialQuery,
   EntityAnchorType? anchorTypeFilter,
+  AkashaItem? workContext,
 }) {
   return showDialog<EntityLinkSelection>(
     context: context,
@@ -22,6 +28,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
       entityLoader: entityLoader,
       initialQuery: initialQuery,
       anchorTypeFilter: anchorTypeFilter,
+      workContext: workContext,
     ),
   );
 }
@@ -33,12 +40,14 @@ class EntityLinkPickerDialog extends StatefulWidget {
     this.entityLoader,
     this.initialQuery,
     this.anchorTypeFilter,
+    this.workContext,
   });
 
   final UserCatalogPort userCatalog;
   final EntityVaultLoader? entityLoader;
   final String? initialQuery;
   final EntityAnchorType? anchorTypeFilter;
+  final AkashaItem? workContext;
 
   @override
   State<EntityLinkPickerDialog> createState() => _EntityLinkPickerDialogState();
@@ -47,6 +56,7 @@ class EntityLinkPickerDialog extends StatefulWidget {
 class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
   late final TextEditingController _queryCtrl;
   List<EntityLinkPickerCandidate> _candidates = const [];
+  List<LinkCandidate> _recommendations = const [];
   var _loading = true;
 
   @override
@@ -68,21 +78,62 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
 
   Future<void> _reload() async {
     setState(() => _loading = true);
+
+    final query = _queryCtrl.text;
+    final work = widget.workContext;
+
+    List<LinkCandidate> recommendations = const [];
+    if (work != null) {
+      recommendations = await LinkCandidateService.candidatesForWork(
+        work: work,
+        userCatalog: widget.userCatalog,
+        typeFilter: widget.anchorTypeFilter,
+        limit: 6,
+      );
+      final q = query.trim().toLowerCase();
+      if (q.isNotEmpty) {
+        recommendations = recommendations
+            .where(
+              (c) =>
+                  c.title.toLowerCase().contains(q) ||
+                  (c.matchDetail?.toLowerCase().contains(q) ?? false),
+            )
+            .toList();
+      }
+    }
+
     final list = await EntityLinkPickerCandidates.build(
       userCatalog: widget.userCatalog,
-      query: _queryCtrl.text,
+      query: query,
       loader: widget.entityLoader,
       anchorTypeFilter: widget.anchorTypeFilter,
     );
+
+    final recommendedIds = recommendations
+        .map((c) => c.entityId)
+        .where((id) => id.isNotEmpty)
+        .toSet();
+    final filtered = list
+        .where((c) => !recommendedIds.contains(c.entity.entityId))
+        .toList();
+
     if (!mounted) return;
     setState(() {
-      _candidates = list;
+      _recommendations = recommendations;
+      _candidates = filtered;
       _loading = false;
     });
   }
 
-  void _select(EntityLinkPickerCandidate candidate) {
-    final entity = candidate.entity;
+  Future<void> _select(EntityLinkPickerCandidate candidate) async {
+    UserCatalogEntity entity = candidate.entity;
+    if (candidate.isSeed && candidate.seedFact != null) {
+      entity = await EntitySeedCatalogPromotion.ensureInCatalog(
+        userCatalog: widget.userCatalog,
+        fact: candidate.seedFact!,
+      );
+    }
+    if (!mounted) return;
     Navigator.pop(
       context,
       EntityLinkSelection(
@@ -93,8 +144,21 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
     );
   }
 
+  Future<void> _selectRecommendation(LinkCandidate candidate) async {
+    final selection = await LinkCandidateService.resolveSelection(
+      candidate: candidate,
+      userCatalog: widget.userCatalog,
+    );
+    if (!mounted) return;
+    Navigator.pop(context, selection);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final hasRecommendations = _recommendations.isNotEmpty;
+    final hasCandidates = _candidates.isNotEmpty;
+    final showEmpty = !hasRecommendations && !hasCandidates;
+
     return AlertDialog(
       title: const Text('Entity 연결'),
       content: SizedBox(
@@ -115,7 +179,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
             ),
             const SizedBox(height: 8),
             Text(
-              '아카이브된 Person · Event · Concept',
+              _subtitleText(),
               style: TextStyle(fontSize: 11, color: Colors.grey[500]),
             ),
             const SizedBox(height: 8),
@@ -124,26 +188,43 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
                   ? const Center(
                       child: CircularProgressIndicator(strokeWidth: 2),
                     )
-                  : _candidates.isEmpty
+                  : showEmpty
                       ? Center(
                           child: Text(
                             _queryCtrl.text.trim().isEmpty
                                 ? '연결할 Entity가 없습니다.'
-                                : '「${_queryCtrl.text.trim()}」과(와) 일치하는 Entity가 없습니다.',
+                                : '「${_queryCtrl.text.trim()}」과(와) 일치하는 항목이 없습니다.',
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey[500],
+                            ),
                           ),
                         )
-                      : ListView.separated(
-                          itemCount: _candidates.length,
-                          separatorBuilder: (_, __) => const Divider(height: 1),
-                          itemBuilder: (context, index) {
-                            final item = _candidates[index];
-                            return _CandidateTile(
-                              candidate: item,
-                              onTap: () => _select(item),
-                            );
-                          },
+                      : ListView(
+                          children: [
+                            if (hasRecommendations) ...[
+                              const _SectionLabel('이 작품과 관련'),
+                              ..._recommendations.map(
+                                (item) => _RecommendationTile(
+                                  candidate: item,
+                                  onTap: () => _selectRecommendation(item),
+                                ),
+                              ),
+                              if (hasCandidates) ...[
+                                const SizedBox(height: 8),
+                                const Divider(height: 1),
+                                const SizedBox(height: 8),
+                                const _SectionLabel('검색 결과'),
+                              ],
+                            ],
+                            ..._candidates.map(
+                              (item) => _CandidateTile(
+                                candidate: item,
+                                onTap: () => _select(item),
+                              ),
+                            ),
+                          ],
                         ),
             ),
           ],
@@ -156,6 +237,92 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
         ),
       ],
     );
+  }
+
+  String _subtitleText() {
+    if (_recommendations.isNotEmpty) {
+      return '추천 후보 · Person · Event · Concept · Place · Org';
+    }
+    if (_candidates.any((c) => c.isSeed)) {
+      return '내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다';
+    }
+    return '카탈로그 · Person · Event · Concept · Place · Org';
+  }
+}
+
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey[400],
+        ),
+      ),
+    );
+  }
+}
+
+class _RecommendationTile extends StatelessWidget {
+  const _RecommendationTile({
+    required this.candidate,
+    required this.onTap,
+  });
+
+  final LinkCandidate candidate;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      dense: true,
+      onTap: onTap,
+      leading: Icon(
+        _iconFor(candidate.anchorType),
+        size: 20,
+        color: AkashaColors.accent,
+      ),
+      title: Text(
+        candidate.title,
+        style: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+      subtitle: Text(
+        [
+          _reasonLabel(candidate.reason),
+          if (candidate.matchDetail != null) candidate.matchDetail!,
+        ].join(' · '),
+        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+      ),
+      trailing: const Icon(Icons.north_west, size: 14, color: Colors.tealAccent),
+    );
+  }
+
+  static String _reasonLabel(LinkCandidateReason reason) {
+    return switch (reason) {
+      LinkCandidateReason.creator => 'creator',
+      LinkCandidateReason.tag => 'tag',
+      LinkCandidateReason.seed => 'seed',
+      LinkCandidateReason.catalog => 'catalog',
+    };
+  }
+
+  static IconData _iconFor(EntityAnchorType type) {
+    return switch (type) {
+      EntityAnchorType.person => Icons.person_outline,
+      EntityAnchorType.event => Icons.event_outlined,
+      EntityAnchorType.concept => Icons.lightbulb_outline,
+      EntityAnchorType.place => Icons.place_outlined,
+      EntityAnchorType.organization => Icons.groups_outlined,
+      _ => Icons.category_outlined,
+    };
   }
 }
 
@@ -188,8 +355,9 @@ class _CandidateTile extends StatelessWidget {
       subtitle: Text(
         [
           badge,
+          if (candidate.isSeed) '사전 인물',
           if (candidate.isArchived) '아카이브',
-          entity.entityId,
+          if (!candidate.isSeed) entity.entityId,
         ].join(' · '),
         style: TextStyle(fontSize: 10, color: Colors.grey[500]),
       ),
@@ -208,6 +376,8 @@ class _CandidateTile extends StatelessWidget {
       EntityAnchorType.person => Icons.person_outline,
       EntityAnchorType.event => Icons.event_outlined,
       EntityAnchorType.concept => Icons.lightbulb_outline,
+      EntityAnchorType.place => Icons.place_outlined,
+      EntityAnchorType.organization => Icons.groups_outlined,
       _ => Icons.category_outlined,
     };
   }

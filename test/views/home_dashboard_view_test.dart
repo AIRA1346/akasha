@@ -60,7 +60,9 @@ class _FakeLinkIndex implements RecordLinkPort {
 }
 
 void main() {
-  testWidgets('HomeDashboardView shows four exploration sections only', (tester) async {
+  testWidgets('HomeDashboardView shows hero and exploration sections', (tester) async {
+    var searchTapped = false;
+
     await tester.pumpWidget(
       MaterialApp(
         theme: AkashaTheme.dark(),
@@ -71,22 +73,35 @@ void main() {
           linkIndex: _FakeLinkIndex(),
           onPreviewWork: (_) {},
           onPreviewEntity: (_) {},
-          onSearch: () {},
+          onSearch: () => searchTapped = true,
           onVaultSettings: () {},
         ),
       ),
     );
 
+    expect(find.text('기록하고, 연결하고, 발견하세요'), findsOneWidget);
+    expect(
+      find.text(
+        '작품, 사람, 사건, 개념을 기록하면 연결이 생기고 새로운 발견으로 이어집니다.',
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('탐험 시작하기'), findsOneWidget);
     expect(find.text('계속 탐험하기'), findsOneWidget);
     expect(find.text('오늘의 연결'), findsOneWidget);
     expect(find.text('최근 발견'), findsOneWidget);
     expect(find.text('최근 기록'), findsOneWidget);
     expect(find.text('안녕하세요, 탐험가님!'), findsNothing);
     expect(find.text('빠른 액션'), findsNothing);
+    expect(find.text('검색으로 탐험 시작'), findsNothing);
+    expect(find.text('검색으로 더 보기'), findsNothing);
     expect(
-      find.text('아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.'),
+      find.text('탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'),
       findsOneWidget,
     );
-    expect(find.text('검색으로 탐험 시작'), findsOneWidget);
+    expect(find.text('[[wiki]]'), findsNothing);
+
+    await tester.tap(find.text('탐험 시작하기'));
+    expect(searchTapped, isTrue);
   });
 }

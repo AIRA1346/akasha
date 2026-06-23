@@ -19,6 +19,8 @@ import '../../models/library_theme.dart';
 import '../../models/collectible_collection.dart';
 import '../../models/personal_library_config.dart';
 import '../../models/user_catalog_entity.dart';
+import '../../models/registry_work.dart';
+import '../../services/link_candidate_service.dart';
 import '../../core/archiving/entity_journal_entry.dart';
 import '../../models/work_drag_payload.dart';
 import '../../services/file_service.dart';
@@ -105,12 +107,13 @@ class HomeShellBody extends StatelessWidget {
   final void Function(AkashaItem item) onOpenBrowseItem;
   final void Function(AkashaItem item) onOpenRecentExplore;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
-  final Future<void> Function(AkashaItem saved) onWorkbenchWorkSaved;
+  final Future<void> Function(AkashaItem saved, {bool silent}) onWorkbenchWorkSaved;
   final Future<void> Function(String tabId, AkashaItem item) onWorkbenchWorkDeleted;
   final Future<void> Function(
     UserCatalogEntity entity,
-    EntityJournalEntry? journal,
-  ) onWorkbenchEntitySaved;
+    EntityJournalEntry? journal, {
+    bool silent,
+  }) onWorkbenchEntitySaved;
   final Future<void> Function(String tabId) onWorkbenchEntityDeleted;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
   final Future<void> Function(UserCatalogEntity entity)? onAddToLibraryForEntity;
@@ -146,6 +149,8 @@ class HomeShellBody extends StatelessWidget {
   final UserCatalogEntity? entityPreviewItem;
   final void Function(AkashaItem item) onPreviewWork;
   final void Function(UserCatalogEntity entity) onPreviewEntity;
+  final void Function(AkashaItem item) onNavigateWorkPreview;
+  final void Function(UserCatalogEntity entity) onNavigateEntityPreview;
   final void Function(AkashaItem item) onPreviewLinkedWork;
   final void Function(UserCatalogEntity entity) onPreviewLinkedEntity;
   final bool canPopPreview;
@@ -156,9 +161,15 @@ class HomeShellBody extends StatelessWidget {
   final Future<void> Function() onOpenEntityFromPreview;
   final EntityAnchorType? pendingWorkEntityLinkType;
   final String? pendingWorkEntityLinkWorkId;
+  final LinkCandidate? pendingWorkEntityLinkCandidate;
   final VoidCallback onClearPendingWorkEntityLink;
   final void Function(EntityAnchorType type) onConnectEntityFromPreview;
+  final void Function(LinkCandidate candidate) onConnectSuggestedFromPreview;
+  final void Function(LinkCandidate candidate, AkashaItem work)
+      onConnectSuggestedFromHome;
   final VoidCallback onGraphOpenRecord;
+  final void Function(RegistryWork work) onPreviewRegistryWork;
+  final Future<void> Function() onArchiveRegistryWorkFromPreview;
 
   const HomeShellBody({
     super.key,
@@ -244,6 +255,8 @@ class HomeShellBody extends StatelessWidget {
     this.entityPreviewItem,
     required this.onPreviewWork,
     required this.onPreviewEntity,
+    required this.onNavigateWorkPreview,
+    required this.onNavigateEntityPreview,
     required this.onPreviewLinkedWork,
     required this.onPreviewLinkedEntity,
     required this.canPopPreview,
@@ -254,9 +267,14 @@ class HomeShellBody extends StatelessWidget {
     required this.onOpenEntityFromPreview,
     this.pendingWorkEntityLinkType,
     this.pendingWorkEntityLinkWorkId,
+    this.pendingWorkEntityLinkCandidate,
     required this.onClearPendingWorkEntityLink,
     required this.onConnectEntityFromPreview,
+    required this.onConnectSuggestedFromPreview,
+    required this.onConnectSuggestedFromHome,
     required this.onGraphOpenRecord,
+    required this.onPreviewRegistryWork,
+    required this.onArchiveRegistryWorkFromPreview,
   });
 
   @override
@@ -353,7 +371,7 @@ class HomeShellBody extends StatelessWidget {
                     if (dailyRecall != null && !workbench.hasOpenWork)
                       TodayRecallCard(
                         recall: dailyRecall,
-                        onTap: () => onOpenBrowseItem(dailyRecall.item),
+                        onTap: () => onPreviewWork(dailyRecall.item),
                       ),
                     Expanded(
                       child: WorkbenchShell(
@@ -372,6 +390,7 @@ class HomeShellBody extends StatelessWidget {
                         onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
                         pendingWorkEntityLinkType: pendingWorkEntityLinkType,
                         pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
+                        pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
                         onPendingWorkEntityLinkHandled:
                             onClearPendingWorkEntityLink,
                         onRecordOpenWork: onOpenBrowseItem,
@@ -450,6 +469,9 @@ class HomeShellBody extends StatelessWidget {
                   onOpenWork: onPreviewLinkedWork,
                   onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
                   onConnectEntityType: onConnectEntityFromPreview,
+                  onConnectSuggested: onConnectSuggestedFromPreview,
+                  onPreviewRegistryWork: onPreviewRegistryWork,
+                  onArchiveRegistryWork: onArchiveRegistryWorkFromPreview,
                 ),
               if (entityPreviewItem != null && !workbench.hasOpenDetail)
                 EntityDashboardPreviewPanel(
@@ -464,6 +486,7 @@ class HomeShellBody extends StatelessWidget {
                   onOpenEntity: onPreviewLinkedEntity,
                   onOpenWork: onPreviewLinkedWork,
                   onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
+                  onPreviewRegistryWork: onPreviewRegistryWork,
                 ),
             ],
           ),
@@ -486,8 +509,8 @@ class HomeShellBody extends StatelessWidget {
         vaultItems: items,
         userCatalog: userCatalog,
         linkIndex: linkIndex,
-        onOpenWork: onPreviewWork,
-        onOpenEntity: onPreviewEntity,
+        onOpenWork: onNavigateWorkPreview,
+        onOpenEntity: onNavigateEntityPreview,
         onOpenRecord: onGraphOpenRecord,
         onConnectEntity: onAddNewEntity == null
             ? null
@@ -503,10 +526,12 @@ class HomeShellBody extends StatelessWidget {
         linkIndex: linkIndex,
         previewItem: workPreviewItem,
         entityPreviewItem: entityPreviewItem,
-        onPreviewWork: onPreviewWork,
-        onPreviewEntity: onPreviewEntity,
+        onPreviewWork: onNavigateWorkPreview,
+        onPreviewEntity: onNavigateEntityPreview,
         onSearch: onSearch,
         onVaultSettings: onVaultSettings,
+        onConnectSuggested: onConnectSuggestedFromHome,
+        onPreviewRegistryWork: onPreviewRegistryWork,
       );
     }
 

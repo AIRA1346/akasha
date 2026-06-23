@@ -8,6 +8,7 @@ import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/link_candidate_service.dart';
 import '../data/workbench_controller.dart';
 import '../../../widgets/collectible_tab_rail.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
@@ -36,6 +37,7 @@ class WorkbenchShell extends StatefulWidget {
     this.onGoKnowledgeGraph,
     this.pendingWorkEntityLinkType,
     this.pendingWorkEntityLinkWorkId,
+    this.pendingWorkEntityLinkCandidate,
     this.onPendingWorkEntityLinkHandled,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
@@ -43,10 +45,13 @@ class WorkbenchShell extends StatefulWidget {
 
   final WorkbenchController controller;
   final Widget browseContent;
-  final void Function(AkashaItem saved) onWorkSaved;
+  final void Function(AkashaItem saved, {required bool silent}) onWorkSaved;
   final void Function(String tabId, AkashaItem item) onWorkDeleted;
-  final void Function(UserCatalogEntity entity, EntityJournalEntry? journal)
-      onEntitySaved;
+  final void Function(
+    UserCatalogEntity entity,
+    EntityJournalEntry? journal, {
+    required bool silent,
+  }) onEntitySaved;
   final void Function(String tabId) onEntityDeleted;
   final UserCatalogPort? userCatalog;
   final RecordLinkPort? linkIndex;
@@ -61,6 +66,7 @@ class WorkbenchShell extends StatefulWidget {
   final VoidCallback? onGoKnowledgeGraph;
   final EntityAnchorType? pendingWorkEntityLinkType;
   final String? pendingWorkEntityLinkWorkId;
+  final LinkCandidate? pendingWorkEntityLinkCandidate;
   final VoidCallback? onPendingWorkEntityLinkHandled;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
@@ -189,13 +195,13 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onPreserveDraft: (tabId, draft) {
                       widget.controller.updateTabItem(tabId, draft, dirty: true);
                     },
-                    onSaved: (saved) {
+                    onSaved: (saved, {required bool silent}) {
                       widget.controller.updateTabItem(
                         active.id,
                         saved,
                         dirty: false,
                       );
-                      widget.onWorkSaved(saved);
+                      widget.onWorkSaved(saved, silent: silent);
                     },
                     onDeleted: () {
                       widget.onWorkDeleted(active.id, item);
@@ -209,6 +215,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
                     pendingEntityLinkType: widget.pendingWorkEntityLinkType,
                     pendingEntityLinkWorkId: widget.pendingWorkEntityLinkWorkId,
+                    pendingEntityLinkCandidate: widget.pendingWorkEntityLinkCandidate,
                     onPendingEntityLinkHandled:
                         widget.onPendingWorkEntityLinkHandled,
                     onRecordOpenWork: widget.onRecordOpenWork,
@@ -239,14 +246,18 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                         draftJournal,
                       );
                     },
-                    onSaved: (savedEntity, savedJournal) {
+                    onSaved: (savedEntity, savedJournal, {required bool silent}) {
                       widget.controller.updateEntityTab(
                         active.id,
                         savedEntity,
                         savedJournal,
                         dirty: false,
                       );
-                      widget.onEntitySaved(savedEntity, savedJournal);
+                      widget.onEntitySaved(
+                        savedEntity,
+                        savedJournal,
+                        silent: silent,
+                      );
                     },
                     onDeleted: () {
                       widget.onEntityDeleted(active.id);

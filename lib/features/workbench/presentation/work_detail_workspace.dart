@@ -12,6 +12,7 @@ import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/entity_link_selection.dart';
+import '../../../services/link_candidate_service.dart';
 import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
 import '../../../utils/markdown_edit_actions.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -27,6 +28,7 @@ import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../screens/detail/detail_archive_save.dart';
 import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_info_panel.dart';
 
@@ -42,7 +44,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
-  final void Function(AkashaItem saved) onSaved;
+  final void Function(AkashaItem saved, {required bool silent}) onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
@@ -57,6 +59,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final VoidCallback? onGoKnowledgeGraph;
   final EntityAnchorType? pendingEntityLinkType;
   final String? pendingEntityLinkWorkId;
+  final LinkCandidate? pendingEntityLinkCandidate;
   final VoidCallback? onPendingEntityLinkHandled;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
@@ -85,6 +88,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.onGoKnowledgeGraph,
     this.pendingEntityLinkType,
     this.pendingEntityLinkWorkId,
+    this.pendingEntityLinkCandidate,
     this.onPendingEntityLinkHandled,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
@@ -152,6 +156,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   Future<void> _maybeRunPendingEntityLinkPick() async {
     final type = widget.pendingEntityLinkType;
     final workId = widget.pendingEntityLinkWorkId;
+    final preselected = widget.pendingEntityLinkCandidate;
     final catalog = widget.userCatalog;
     if (type == null || catalog == null) return;
     if (workId != null && workId != _item.workId) return;
@@ -161,11 +166,20 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
     setState(() => _pageView = SanctumPageView.body);
 
-    final picked = await showEntityLinkPickerDialog(
-      context,
-      userCatalog: catalog,
-      anchorTypeFilter: type,
-    );
+    final EntityLinkSelection? picked;
+    if (preselected != null) {
+      picked = await LinkCandidateService.resolveSelection(
+        candidate: preselected,
+        userCatalog: catalog,
+      );
+    } else {
+      picked = await showEntityLinkPickerDialog(
+        context,
+        userCatalog: catalog,
+        anchorTypeFilter: type,
+        workContext: _item,
+      );
+    }
     if (!mounted || picked == null) return;
 
     final patch = MarkdownEditActions.insertWikiLink(
@@ -334,7 +348,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       setState(() => _externalChangePending = false);
       _applyItem(reloaded, resetPageView: false);
       widget.onDirtyChanged(false);
-      widget.onSaved(reloaded);
+      widget.onSaved(reloaded, silent: true);
       _refreshDiskMtime();
       if (!silent && mounted) {
         _showSnack('디스크에서 파일을 다시 불러왔습니다.');
@@ -601,7 +615,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       } else {
         _scheduleAutoSave();
       }
-      widget.onSaved(saved);
+      widget.onSaved(saved, silent: silent);
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();
@@ -807,6 +821,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 registryTags: _registryTags,
                 isSaving: _isSaving,
                 isArchived: _isArchived,
+                isDirty: widget.isDirty,
+                lastSavedAt: _lastSavedAt,
                 showAddToLibrary: widget.onAddToLibrary != null,
                 loadingIncoming: _loadingIncoming,
                 incomingPaths: _incomingPaths,
@@ -840,7 +856,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               ),
         Expanded(
           child: ColoredBox(
-            color: const Color(0xFF12121A),
+            color: AkashaColors.workbenchEditor,
             child: SanctumPagePanel(
               view: _pageView,
               onViewChanged: _onPageViewChanged,
