@@ -365,9 +365,13 @@ class DashboardSidebar extends StatelessWidget {
             icon: isEntity ? Icons.person_outline : Icons.movie_outlined,
             isActive: false,
             accentColor: dashboardAccent,
+            canEdit: false,
+            canDelete: false,
             onTap: onOpenRecentExplore == null
                 ? () {}
                 : () => onOpenRecentExplore!(item),
+            onEdit: () {},
+            onDelete: () {},
           );
         }),
       ],

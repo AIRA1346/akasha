@@ -661,7 +661,6 @@ class _EntityCard extends StatelessWidget {
       title: entity.title,
       category: entity.subtype,
       domain: entity.domain,
-      domain: entity.domain,
       creator: entity.creator,
       releaseYear: entity.releaseYear,
       posterPath: entity.posterPath,
