@@ -162,8 +162,10 @@ class HomeShellBody extends StatelessWidget {
   final EntityAnchorType? pendingWorkEntityLinkType;
   final String? pendingWorkEntityLinkWorkId;
   final LinkCandidate? pendingWorkEntityLinkCandidate;
+  final bool pendingWorkLinkPick;
   final VoidCallback onClearPendingWorkEntityLink;
   final void Function(EntityAnchorType type) onConnectEntityFromPreview;
+  final VoidCallback onConnectWorkFromPreview;
   final void Function(LinkCandidate candidate) onConnectSuggestedFromPreview;
   final void Function(LinkCandidate candidate, AkashaItem work)
       onConnectSuggestedFromHome;
@@ -268,8 +270,10 @@ class HomeShellBody extends StatelessWidget {
     this.pendingWorkEntityLinkType,
     this.pendingWorkEntityLinkWorkId,
     this.pendingWorkEntityLinkCandidate,
+    this.pendingWorkLinkPick = false,
     required this.onClearPendingWorkEntityLink,
     required this.onConnectEntityFromPreview,
+    required this.onConnectWorkFromPreview,
     required this.onConnectSuggestedFromPreview,
     required this.onConnectSuggestedFromHome,
     required this.onGraphOpenRecord,
@@ -391,6 +395,7 @@ class HomeShellBody extends StatelessWidget {
                         pendingWorkEntityLinkType: pendingWorkEntityLinkType,
                         pendingWorkEntityLinkWorkId: pendingWorkEntityLinkWorkId,
                         pendingWorkEntityLinkCandidate: pendingWorkEntityLinkCandidate,
+                        pendingWorkLinkPick: pendingWorkLinkPick,
                         onPendingWorkEntityLinkHandled:
                             onClearPendingWorkEntityLink,
                         onRecordOpenWork: onOpenBrowseItem,
@@ -469,6 +474,7 @@ class HomeShellBody extends StatelessWidget {
                   onOpenWork: onPreviewLinkedWork,
                   onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
                   onConnectEntityType: onConnectEntityFromPreview,
+                  onConnectWorkFromPreview: onConnectWorkFromPreview,
                   onConnectSuggested: onConnectSuggestedFromPreview,
                   onPreviewRegistryWork: onPreviewRegistryWork,
                   onArchiveRegistryWork: onArchiveRegistryWorkFromPreview,

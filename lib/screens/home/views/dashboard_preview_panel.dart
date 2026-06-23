@@ -37,6 +37,7 @@ class DashboardPreviewPanel extends StatefulWidget {
     this.onOpenWork,
     this.onGoKnowledgeGraph,
     this.onConnectEntityType,
+    this.onConnectWorkFromPreview,
     this.onConnectSuggested,
     this.onPreviewRegistryWork,
     this.onArchiveRegistryWork,
@@ -54,6 +55,7 @@ class DashboardPreviewPanel extends StatefulWidget {
   final void Function(AkashaItem work)? onOpenWork;
   final VoidCallback? onGoKnowledgeGraph;
   final void Function(EntityAnchorType type)? onConnectEntityType;
+  final VoidCallback? onConnectWorkFromPreview;
   final void Function(LinkCandidate candidate)? onConnectSuggested;
   final void Function(RegistryWork work)? onPreviewRegistryWork;
   final Future<void> Function()? onArchiveRegistryWork;
@@ -257,8 +259,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                   }
                   final neighbors =
                       snapshot.data ?? const WorkLinkNeighbors();
-                  if (!neighbors.hasAnyLink &&
-                      widget.item.tags.isEmpty) {
+                  if (!neighbors.hasAnyLink) {
                     return FutureBuilder<List<LinkCandidate>>(
                       future: _suggestedFuture,
                       builder: (context, suggestedSnap) {
@@ -303,10 +304,12 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                         neighbors: neighbors,
                         conceptTags: widget.item.tags,
                         sourceWork: widget.item,
+                        showEmptySections: false,
                         onOpenEntity: widget.onOpenEntity,
                         onOpenWork: widget.onOpenWork,
-                        onLinkCta: widget.onOpenDetail,
                         onOpenConcept: widget.onOpenEntity,
+                        onAddEntity: widget.onConnectEntityType,
+                        onAddWork: widget.onConnectWorkFromPreview,
                       ),
                       if (neighbors.hasAnyLink)
                         FutureBuilder<List<LinkCandidate>>(

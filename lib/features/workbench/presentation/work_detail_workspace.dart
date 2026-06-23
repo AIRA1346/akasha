@@ -66,6 +66,7 @@ class WorkDetailWorkspace extends StatefulWidget {
   final EntityAnchorType? pendingEntityLinkType;
   final String? pendingEntityLinkWorkId;
   final LinkCandidate? pendingEntityLinkCandidate;
+  final bool pendingWorkLinkPick;
   final VoidCallback? onPendingEntityLinkHandled;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
@@ -95,6 +96,7 @@ class WorkDetailWorkspace extends StatefulWidget {
     this.pendingEntityLinkType,
     this.pendingEntityLinkWorkId,
     this.pendingEntityLinkCandidate,
+    this.pendingWorkLinkPick = false,
     this.onPendingEntityLinkHandled,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
@@ -167,8 +169,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final workId = widget.pendingEntityLinkWorkId;
     final preselected = widget.pendingEntityLinkCandidate;
     final catalog = widget.userCatalog;
-    if (type == null || catalog == null) return;
     if (workId != null && workId != _item.workId) return;
+
+    if (widget.pendingWorkLinkPick) {
+      widget.onPendingEntityLinkHandled?.call();
+      if (!mounted) return;
+      await _requestWorkLink();
+      return;
+    }
+
+    if (type == null || catalog == null) return;
 
     widget.onPendingEntityLinkHandled?.call();
     if (!mounted) return;

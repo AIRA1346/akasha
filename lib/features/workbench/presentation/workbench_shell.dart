@@ -38,6 +38,7 @@ class WorkbenchShell extends StatefulWidget {
     this.pendingWorkEntityLinkType,
     this.pendingWorkEntityLinkWorkId,
     this.pendingWorkEntityLinkCandidate,
+    this.pendingWorkLinkPick = false,
     this.onPendingWorkEntityLinkHandled,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
@@ -67,6 +68,7 @@ class WorkbenchShell extends StatefulWidget {
   final EntityAnchorType? pendingWorkEntityLinkType;
   final String? pendingWorkEntityLinkWorkId;
   final LinkCandidate? pendingWorkEntityLinkCandidate;
+  final bool pendingWorkLinkPick;
   final VoidCallback? onPendingWorkEntityLinkHandled;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
@@ -216,6 +218,7 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     pendingEntityLinkType: widget.pendingWorkEntityLinkType,
                     pendingEntityLinkWorkId: widget.pendingWorkEntityLinkWorkId,
                     pendingEntityLinkCandidate: widget.pendingWorkEntityLinkCandidate,
+                    pendingWorkLinkPick: widget.pendingWorkLinkPick,
                     onPendingEntityLinkHandled:
                         widget.onPendingWorkEntityLinkHandled,
                     onRecordOpenWork: widget.onRecordOpenWork,

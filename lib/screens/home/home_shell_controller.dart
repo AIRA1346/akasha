@@ -88,6 +88,7 @@ class HomeShellController {
   EntityAnchorType? pendingWorkEntityLinkType;
   String? pendingWorkEntityLinkWorkId;
   LinkCandidate? pendingWorkEntityLinkCandidate;
+  bool pendingWorkLinkPick = false;
 
   void wrapSetState(void Function() mutate) => host.scheduleRebuild(mutate);
 
@@ -305,12 +306,14 @@ class HomeShellController {
   void clearPendingWorkEntityLinkType() {
     if (pendingWorkEntityLinkType == null &&
         pendingWorkEntityLinkWorkId == null &&
-        pendingWorkEntityLinkCandidate == null) {
+        pendingWorkEntityLinkCandidate == null &&
+        !pendingWorkLinkPick) {
       return;
     }
     pendingWorkEntityLinkType = null;
     pendingWorkEntityLinkWorkId = null;
     pendingWorkEntityLinkCandidate = null;
+    pendingWorkLinkPick = false;
     rebuild();
   }
 
@@ -318,6 +321,15 @@ class HomeShellController {
     _openWorkFromPreviewToConnectWithPending(
       type: type,
       candidate: null,
+      pickWork: false,
+    );
+  }
+
+  void openWorkFromPreviewToConnectWork() {
+    _openWorkFromPreviewToConnectWithPending(
+      type: null,
+      candidate: null,
+      pickWork: true,
     );
   }
 
@@ -325,12 +337,14 @@ class HomeShellController {
     _openWorkFromPreviewToConnectWithPending(
       type: candidate.anchorType,
       candidate: candidate,
+      pickWork: false,
     );
   }
 
   Future<void> _openWorkFromPreviewToConnectWithPending({
-    required EntityAnchorType type,
+    EntityAnchorType? type,
     LinkCandidate? candidate,
+    required bool pickWork,
   }) async {
     final item = workPreviewItem;
     if (item == null) return;
@@ -339,9 +353,10 @@ class HomeShellController {
     }
     final updated = workPreviewItem;
     if (updated == null) return;
-    pendingWorkEntityLinkType = type;
+    pendingWorkEntityLinkType = pickWork ? null : type;
     pendingWorkEntityLinkWorkId = updated.workId;
     pendingWorkEntityLinkCandidate = candidate;
+    pendingWorkLinkPick = pickWork;
     await openWorkFromPreview();
   }
 
