@@ -293,19 +293,34 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   void _assignControllerTextIfChanged(TextEditingController ctrl, String text) {
     if (ctrl.text == text) return;
-    ctrl.text = text;
+    final selection = ctrl.selection;
+    ctrl.value = TextEditingValue(
+      text: text,
+      selection: selection.isValid && selection.end <= text.length
+          ? selection
+          : TextSelection.collapsed(offset: text.length),
+    );
   }
 
-  void _applyItem(AkashaItem item, {required bool resetPageView}) {
+  void _applyItem(
+    AkashaItem item, {
+    required bool resetPageView,
+    bool preserveBodyEditor = false,
+  }) {
     _item = item;
     _assignControllerTextIfChanged(_titleCtrl, _item.title);
     _draftTags = List<String>.from(_item.tags);
     _registryTags = WorkDetailDraftOps.loadRegistryTags(_item.workId);
     _assignControllerTextIfChanged(_posterUrlCtrl, _item.posterPath ?? '');
-    _assignControllerTextIfChanged(
-      _bodyCtrl,
-      WorkDetailDraftOps.initialBodyMarkdown(_item),
-    );
+    if (preserveBodyEditor) {
+      _item.bodyRaw = _bodyCtrl.text;
+      WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    } else {
+      _assignControllerTextIfChanged(
+        _bodyCtrl,
+        WorkDetailDraftOps.initialBodyMarkdown(_item),
+      );
+    }
     if (resetPageView) {
       _pageView = _item.bodyRaw.trim().isEmpty
           ? SanctumPageView.body
@@ -384,7 +399,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     }
     if (!widget.isDirty &&
         !WorkDetailDraftOps.sameItemSnapshot(oldWidget.item, widget.item)) {
-      _applyItem(widget.item, resetPageView: false);
+      _applyItem(
+        widget.item,
+        resetPageView: false,
+        preserveBodyEditor: _pageView == SanctumPageView.body,
+      );
       _loadIncoming();
       _loadSameDay();
     }
@@ -634,7 +653,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       } else {
         _scheduleAutoSave();
       }
-      widget.onSaved(saved, silent: silent, dirty: stillDirty);
+      widget.onSaved(_item, silent: silent, dirty: stillDirty);
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();

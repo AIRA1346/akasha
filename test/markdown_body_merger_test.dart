@@ -123,4 +123,20 @@ void main() {
     expect(restored.review, '내용');
     expect(item.bodyRaw, '# 📝 메모\n내용\n\n\n');
   });
+
+  test('serialize does not append extra trailing newline to body', () {
+    final item = createItem(
+      workId: 'wk_no_extra_nl',
+      title: '줄바꿈',
+      category: MediaCategory.manga,
+    );
+    item.bodyRaw = '# 📝 메모\n내용';
+
+    final serialized = MarkdownParser.serialize(item);
+    final bodyStart = serialized.indexOf('# 📝 메모');
+    final body = serialized.substring(bodyStart).split('\n---').first;
+
+    expect(body, '# 📝 메모\n내용');
+    expect(MarkdownParser.deserialize(serialized, '줄바꿈').bodyRaw, '# 📝 메모\n내용');
+  });
 }

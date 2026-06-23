@@ -117,9 +117,6 @@ class MarkdownParser {
           );
     if (bodyToWrite.isNotEmpty) {
       buffer.write(bodyToWrite);
-      if (!bodyToWrite.endsWith('\n')) {
-        buffer.writeln();
-      }
     }
 
     return buffer.toString();

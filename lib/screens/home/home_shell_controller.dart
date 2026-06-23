@@ -652,7 +652,7 @@ class HomeShellController {
     openWorkPreview(item);
   }
   Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
-    await workbenchCoord.onWorkbenchWorkSaved(saved);
+    await workbenchCoord.onWorkbenchWorkSaved(saved, silent: silent);
     if (!silent) {
       _maybeReturnToPreviewAfterSave(workId: saved.workId);
     }

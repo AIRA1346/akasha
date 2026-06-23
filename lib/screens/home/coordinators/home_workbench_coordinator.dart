@@ -93,10 +93,22 @@ class HomeWorkbenchCoordinator {
     rebuild();
   }
 
-  Future<void> onWorkbenchWorkSaved(AkashaItem saved) async {
+  Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
     await reloadItems();
     if (!isMounted()) return;
-    workbench.updateTabItem(WorkCollectibleTab.idFor(saved), saved, dirty: false);
+    if (silent) {
+      // WorkbenchShell.onSaved already synced the open tab from the editor.
+      return;
+    }
+    final tabId = WorkCollectibleTab.idFor(saved);
+    AkashaItem resolved = saved;
+    for (final item in getItems()) {
+      if (saved.workId.isNotEmpty && item.workId == saved.workId) {
+        resolved = item;
+        break;
+      }
+    }
+    workbench.updateTabItem(tabId, resolved, dirty: false);
   }
 
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
