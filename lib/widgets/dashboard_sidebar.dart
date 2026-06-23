@@ -111,10 +111,14 @@ class DashboardSidebar extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _buildMainMenu(context),
-                        if (personalLibraries.isNotEmpty) ...[
-                          const SizedBox(height: 16),
-                          _buildPersonalLibraries(),
-                        ],
+                if (personalLibraries.isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  _buildPersonalLibraries(),
+                ],
+                if (recentExploreItems.isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  _buildRecentExplores(),
+                ],
                         if (_customDashboards.isNotEmpty) ...[
                           const SizedBox(height: 16),
                           _buildCustomDashboards(),
@@ -345,6 +349,28 @@ class DashboardSidebar extends StatelessWidget {
             ),
         ],
       ),
+    );
+  }
+
+  Widget _buildRecentExplores() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _buildSectionTitle('최근 탐색'),
+        const SizedBox(height: 4),
+        ...recentExploreItems.take(5).map((item) {
+          final isEntity = item is EntityItem;
+          return SidebarItemWidget(
+            name: item.title,
+            icon: isEntity ? Icons.person_outline : Icons.movie_outlined,
+            isActive: false,
+            accentColor: dashboardAccent,
+            onTap: onOpenRecentExplore == null
+                ? () {}
+                : () => onOpenRecentExplore!(item),
+          );
+        }),
+      ],
     );
   }
 

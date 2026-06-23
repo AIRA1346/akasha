@@ -5,6 +5,7 @@ import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
 import '../utils/work_link_neighbors.dart';
+import '../utils/connection_similarity.dart';
 import 'poster_image.dart';
 import 'work_preview_theme_clusters_section.dart';
 
@@ -22,6 +23,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     this.characterTitleStyle,
     this.sectionTitleStyle,
     this.showEmptySections = true,
+    this.sourceWork,
   });
 
   final WorkLinkNeighbors neighbors;
@@ -34,6 +36,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
   final TextStyle? characterTitleStyle;
   final TextStyle? sectionTitleStyle;
   final bool showEmptySections;
+  final AkashaItem? sourceWork;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +78,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
               : WorkLinkConnectedWorksList(
                   works: neighbors.connectedWorks,
                   bridgeLabelsByWorkId: neighbors.connectedWorkBridgeLabels,
+                  sourceWork: sourceWork,
                   onOpenWork: onOpenWork,
                 ),
         ),
@@ -360,17 +364,25 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
     super.key,
     required this.works,
     this.bridgeLabelsByWorkId = const {},
+    this.sourceWork,
     this.onOpenWork,
   });
 
   final List<AkashaItem> works;
   final Map<String, String> bridgeLabelsByWorkId;
+  final AkashaItem? sourceWork;
   final void Function(AkashaItem work)? onOpenWork;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: works.map((work) {
+        final bridge = bridgeLabelsByWorkId[work.workId];
+        final percent = sourceWork != null
+            ? workPairSimilarityPercent(sourceWork!, work)
+            : null;
+        final subtitle = bridge ?? (percent != null ? '서사 유사도 $percent%' : null);
+
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: InkWell(
@@ -403,22 +415,43 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        if (bridgeLabelsByWorkId[work.workId] != null) ...[
+                        if (subtitle != null) ...[
                           const SizedBox(height: 2),
                           Text(
-                            bridgeLabelsByWorkId[work.workId]!,
+                            subtitle,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: 9,
-                              color: Colors.grey[500],
+                              color: bridge != null
+                                  ? AkashaColors.accent.withValues(alpha: 0.85)
+                                  : Colors.grey[500],
                             ),
                           ),
                         ],
                       ],
                     ),
                   ),
-                  if (bridgeLabelsByWorkId[work.workId] == null)
+                  if (percent != null && bridge == null)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AkashaColors.accent.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Text(
+                        '$percent%',
+                        style: const TextStyle(
+                          fontSize: 8,
+                          color: AkashaColors.accent,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    )
+                  else if (bridge == null && subtitle == null)
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 6,

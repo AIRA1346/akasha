@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../models/akasha_item.dart';
+import '../../../../models/browse_entity_scope.dart';
 import '../../../../models/user_catalog_entity.dart';
 import '../../../../models/registry_work.dart';
 import '../../../../services/link_candidate_service.dart';
@@ -9,14 +10,13 @@ import '../../../../core/ports/user_catalog_port.dart';
 import '../../../../theme/akasha_colors.dart';
 import 'home_dashboard_hero.dart';
 import 'home_dashboard_continue_section.dart';
-import 'home_dashboard_recent_discovery_section.dart';
-import 'home_dashboard_recent_records_section.dart';
+import 'home_dashboard_discovery_section.dart';
+import 'home_dashboard_quick_actions_section.dart';
 import 'home_dashboard_registry_bridge_section.dart';
-import 'home_dashboard_theme_clusters_section.dart';
-import 'home_dashboard_todays_links_section.dart';
+import 'home_dashboard_universe_section.dart';
 import 'home_dashboard_top_bar.dart';
 
-/// 탐험 중심 홈 — 4섹션 IA (P5).
+/// 탐험 중심 홈 — mock 5블록 IA (R15).
 class HomeDashboardView extends StatelessWidget {
   const HomeDashboardView({
     super.key,
@@ -28,10 +28,15 @@ class HomeDashboardView extends StatelessWidget {
     required this.onPreviewEntity,
     required this.onSearch,
     required this.onVaultSettings,
+    required this.onGoExplore,
+    required this.onGoExploreEntities,
+    required this.onGoKnowledgeGraph,
+    required this.onTimeline,
     this.previewItem,
     this.entityPreviewItem,
     this.onConnectSuggested,
     this.onPreviewRegistryWork,
+    this.onOpenRecordFromHome,
   });
 
   final List<AkashaItem> vaultItems;
@@ -42,11 +47,16 @@ class HomeDashboardView extends StatelessWidget {
   final void Function(UserCatalogEntity) onPreviewEntity;
   final VoidCallback onSearch;
   final VoidCallback onVaultSettings;
+  final VoidCallback onGoExplore;
+  final void Function(BrowseEntityScope scope) onGoExploreEntities;
+  final VoidCallback onGoKnowledgeGraph;
+  final VoidCallback onTimeline;
   final AkashaItem? previewItem;
   final UserCatalogEntity? entityPreviewItem;
   final void Function(LinkCandidate candidate, AkashaItem work)?
       onConnectSuggested;
   final void Function(RegistryWork work)? onPreviewRegistryWork;
+  final void Function(AkashaItem work)? onOpenRecordFromHome;
 
   void _handleItemTap(AkashaItem item) {
     if (item is EntityItem) {
@@ -93,20 +103,24 @@ class HomeDashboardView extends StatelessWidget {
               isColdStart: isColdStart,
             ),
             const SizedBox(height: 32),
-            HomeDashboardTodaysLinksSection(
+            HomeDashboardDiscoverySection(
               vaultItems: vaultItems,
               userCatalog: userCatalog,
               linkIndex: linkIndex,
-              onOpenWork: onPreviewWork,
+              onItemTap: _handleItemTap,
               onOpenEntity: onPreviewEntity,
+              onGoExplore: onGoExplore,
+              onSearch: onSearch,
               onConnectSuggested: onConnectSuggested,
+              onOpenRecord: onOpenRecordFromHome,
             ),
             const SizedBox(height: 32),
-            HomeDashboardThemeClustersSection(
+            HomeDashboardUniverseSection(
               vaultItems: vaultItems,
               userCatalog: userCatalog,
-              linkIndex: linkIndex,
-              onOpenConcept: onPreviewEntity,
+              selectedPreviewItem: previewItem,
+              onItemTap: _handleItemTap,
+              onSearch: onSearch,
             ),
             const SizedBox(height: 32),
             if (onPreviewRegistryWork != null)
@@ -117,15 +131,13 @@ class HomeDashboardView extends StatelessWidget {
                 onPreviewRegistryWork: onPreviewRegistryWork!,
               ),
             if (onPreviewRegistryWork != null) const SizedBox(height: 32),
-            HomeDashboardRecentDiscoverySection(
-              vaultItems: vaultItems,
-              selectedPreviewItem: previewItem,
-              onItemTap: _handleItemTap,
-            ),
-            const SizedBox(height: 32),
-            HomeDashboardRecentRecordsSection(
-              vaultItems: vaultItems,
-              onItemTap: onPreviewWork,
+            HomeDashboardQuickActionsSection(
+              onSearch: onSearch,
+              onExploreEntities: () =>
+                  onGoExploreEntities(BrowseEntityScope.person),
+              onGoExplore: onGoExplore,
+              onGoKnowledgeGraph: onGoKnowledgeGraph,
+              onTimeline: onTimeline,
             ),
             const SizedBox(height: 24),
           ],

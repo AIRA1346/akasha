@@ -224,6 +224,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
                             onOpenLinkedWork: onOpenLinkedWork,
                             onGoKnowledgeGraph: onGoKnowledgeGraph,
                             onFocusSanctum: onFocusSanctum,
+                            hideConnectionsSection: true,
                             notesSection: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [

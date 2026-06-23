@@ -46,6 +46,7 @@ class WorkDetailInfoForm extends StatefulWidget {
     this.onGoKnowledgeGraph,
     this.onFocusSanctum,
     this.notesSection,
+    this.hideConnectionsSection = false,
   });
 
   final AkashaItem item;
@@ -80,6 +81,7 @@ class WorkDetailInfoForm extends StatefulWidget {
   final VoidCallback? onGoKnowledgeGraph;
   final VoidCallback? onFocusSanctum;
   final Widget? notesSection;
+  final bool hideConnectionsSection;
 
   @override
   State<WorkDetailInfoForm> createState() => _WorkDetailInfoFormState();
@@ -115,27 +117,33 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         Text(widget.metaLine, style: AkashaTypography.bodySecondary),
         const SizedBox(height: AkashaSpacing.md),
 
-        WorkbenchPanelStyles.connectionsHeader(),
-        const SizedBox(height: AkashaSpacing.sm),
-        WorkLinkNeighborsSections(
-          neighbors: widget.linkNeighbors,
-          loading: widget.loadingLinkNeighbors,
-          conceptTags: widget.draftTags,
-          onOpenEntity: widget.onOpenLinkedEntity,
-          onOpenWork: widget.onOpenLinkedWork,
-          onLinkCta: widget.onFocusSanctum,
-          sectionTitleStyle: AkashaTypography.sectionTitle,
-        ),
-        if (widget.onGoKnowledgeGraph != null) ...[
-          const SizedBox(height: AkashaSpacing.xs),
-          WorkbenchPanelStyles.graphListButton(
-            onPressed: widget.onGoKnowledgeGraph!,
+        if (!widget.hideConnectionsSection) ...[
+          WorkbenchPanelStyles.connectionsHeader(),
+          const SizedBox(height: AkashaSpacing.sm),
+          WorkLinkNeighborsSections(
+            neighbors: widget.linkNeighbors,
+            loading: widget.loadingLinkNeighbors,
+            conceptTags: widget.draftTags,
+            sourceWork: widget.item,
+            onOpenEntity: widget.onOpenLinkedEntity,
+            onOpenWork: widget.onOpenLinkedWork,
+            onLinkCta: widget.onFocusSanctum,
+            sectionTitleStyle: AkashaTypography.sectionTitle,
           ),
+          if (widget.onGoKnowledgeGraph != null) ...[
+            const SizedBox(height: AkashaSpacing.xs),
+            WorkbenchPanelStyles.graphListButton(
+              onPressed: widget.onGoKnowledgeGraph!,
+            ),
+            const SizedBox(height: AkashaSpacing.md),
+          ],
+        ] else ...[
+          _buildInfoTable(),
           const SizedBox(height: AkashaSpacing.md),
         ],
 
         WorkbenchPanelStyles.panelDivider(vertical: AkashaSpacing.sm),
-        WorkbenchPanelStyles.sectionLabel('노트'),
+        WorkbenchPanelStyles.sectionLabel('메모'),
         const SizedBox(height: AkashaSpacing.sm),
         _buildQuickMemoField(),
         if (widget.notesSection != null) ...[
@@ -177,8 +185,9 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
               ),
             ),
             children: [
-              _buildInfoTable(),
-              const SizedBox(height: AkashaSpacing.md),
+              if (!widget.hideConnectionsSection) _buildInfoTable(),
+              if (!widget.hideConnectionsSection)
+                const SizedBox(height: AkashaSpacing.md),
               _buildRelatedConceptsEditor(),
             ],
           ),

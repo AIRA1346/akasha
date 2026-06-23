@@ -31,6 +31,7 @@ import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_info_panel.dart';
+import 'work_detail_connections_panel.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
 class WorkDetailWorkspace extends StatefulWidget {
@@ -435,6 +436,34 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   void _focusSanctumForLinks() {
     setState(() => _pageView = SanctumPageView.body);
+  }
+
+  Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
+    final catalog = widget.userCatalog;
+    if (catalog == null) return;
+    if (!mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showEntityLinkPickerDialog(
+      context,
+      userCatalog: catalog,
+      anchorTypeFilter: type,
+      workContext: _item,
+    );
+    if (!mounted || picked == null) return;
+
+    final patch = MarkdownEditActions.insertWikiLink(
+      text: _bodyCtrl.text,
+      selection: _bodyCtrl.selection,
+      entityId: picked.entityId,
+      title: picked.title,
+    );
+    _bodyCtrl.text = patch.text;
+    _bodyCtrl.selection = patch.selection;
+    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    _markDirty();
+    await _loadLinkNeighbors();
   }
 
   void _onPageViewChanged(SanctumPageView next) {
@@ -916,6 +945,19 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             ),
           ),
         ),
+              WorkDetailConnectionsPanel(
+                item: _item,
+                linkNeighbors: _linkNeighbors,
+                loadingLinkNeighbors: _loadingLinkNeighbors,
+                draftTags: _draftTags,
+                onOpenLinkedEntity: _openLinkedEntity,
+                onOpenLinkedWork: _openLinkedWork,
+                onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                onFocusSanctum: _focusSanctumForLinks,
+                onAddEntityLink: widget.userCatalog != null
+                    ? _requestEntityLinkForType
+                    : null,
+              ),
             ],
           ),
         ),

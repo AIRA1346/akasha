@@ -530,8 +530,13 @@ class HomeShellBody extends StatelessWidget {
         onPreviewEntity: onNavigateEntityPreview,
         onSearch: onSearch,
         onVaultSettings: onVaultSettings,
+        onGoExplore: onGoExplore,
+        onGoExploreEntities: onGoExploreEntities,
+        onGoKnowledgeGraph: onGoKnowledgeGraph,
+        onTimeline: onSelectTimeline,
         onConnectSuggested: onConnectSuggestedFromHome,
         onPreviewRegistryWork: onPreviewRegistryWork,
+        onOpenRecordFromHome: onOpenBrowseItem,
       );
     }
 

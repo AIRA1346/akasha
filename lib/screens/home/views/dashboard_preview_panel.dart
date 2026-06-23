@@ -20,6 +20,7 @@ import '../../../widgets/work_preview_empty_connections.dart';
 import '../../../widgets/work_preview_next_connections.dart';
 import '../../../widgets/work_preview_registry_surface.dart';
 import 'preview_panel_chrome.dart';
+import 'preview_memo_bar.dart';
 
 class DashboardPreviewPanel extends StatefulWidget {
   const DashboardPreviewPanel({
@@ -183,14 +184,17 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
           left: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
         ),
       ),
-      child: PreviewPanelChrome(
-        typeLabel: typeLabel,
-        title: widget.item.title,
-        canGoBack: widget.canGoBack,
-        onBack: widget.onBack,
-        onClose: widget.onClose,
-        onOpenDetail: widget.onOpenDetail,
-        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Expanded(
+            child: PreviewPanelChrome(
+              typeLabel: typeLabel,
+              title: widget.item.title,
+              canGoBack: widget.canGoBack,
+              onBack: widget.onBack,
+              onClose: widget.onClose,
+              onOpenDetail: widget.onOpenDetail,
+              body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -223,6 +227,8 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                   style: TextStyle(fontSize: 10, color: Colors.grey[600]),
                 ),
               ],
+              const SizedBox(height: 12),
+              _PreviewMetaTable(item: widget.item),
               if (_isRegistryOnly)
                 WorkPreviewRegistrySurface(
                   archiving: _archiving,
@@ -296,6 +302,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                       WorkLinkNeighborsSections(
                         neighbors: neighbors,
                         conceptTags: widget.item.tags,
+                        sourceWork: widget.item,
                         onOpenEntity: widget.onOpenEntity,
                         onOpenWork: widget.onOpenWork,
                         onLinkCta: widget.onOpenDetail,
@@ -332,20 +339,75 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                 const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
-                  child: OutlinedButton.icon(
+                  child: FilledButton.icon(
                     onPressed: widget.onGoKnowledgeGraph,
-                    icon: const Icon(Icons.list_alt_outlined, size: 14),
+                    icon: const Icon(Icons.hub_outlined, size: 14),
                     label: const Text(
-                      '연결 목록에서 보기',
+                      '연결 맵에서 보기',
                       style: TextStyle(fontSize: 11),
                     ),
                   ),
                 ),
               ],
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
             ],
           ),
         ),
+            ),
+          ),
+          PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
+        ],
+      ),
+    );
+  }
+}
+
+class _PreviewMetaTable extends StatelessWidget {
+  const _PreviewMetaTable({required this.item});
+
+  final AkashaItem item;
+
+  @override
+  Widget build(BuildContext context) {
+    final rows = <(String, String)>[
+      ('장르', item.category.label),
+      if (item.creator.isNotEmpty) ('원작', item.creator),
+      if (item.tags.isNotEmpty) ('태그', item.tags.take(3).join(', ')),
+    ];
+
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+      ),
+      child: Column(
+        children: rows
+            .map(
+              (row) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 44,
+                      child: Text(
+                        row.$1,
+                        style: TextStyle(fontSize: 9, color: Colors.grey[600]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        row.$2,
+                        style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+            .toList(),
       ),
     );
   }

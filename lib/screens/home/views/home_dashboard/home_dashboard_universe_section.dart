@@ -106,6 +106,15 @@ class HomeDashboardUniverseSection extends StatelessWidget {
       ..sort((a, b) => b.addedAt.compareTo(a.addedAt));
     final recentItems = sortedItems.take(5).toList();
 
+    if (recentItems.isEmpty) {
+      return [
+        Text(
+          '최근 추가한 작품이 없습니다.',
+          style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+        ),
+      ];
+    }
+
     return List.generate(recentItems.length, (index) {
       final work = recentItems[index];
       final isSelected = selectedPreviewItem?.workId == work.workId;
