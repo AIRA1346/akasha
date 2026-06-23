@@ -45,12 +45,18 @@ class MarkdownBodyMerger {
     for (final section in sections) {
       if (section.slotKind == null) continue;
       foundSlots.add(section.slotKind!);
-      section.content = _formatSlotContent(
+      final formatted = _formatSlotContent(
         section.slotKind!,
         synopsis: synopsis,
         quotes: quotes,
         memo: memo,
       );
+      if (_normalizeSlotContent(section.content) ==
+              _normalizeSlotContent(formatted) &&
+          section.content.isNotEmpty) {
+        continue;
+      }
+      section.content = formatted;
     }
 
     final buffer = StringBuffer();
@@ -59,9 +65,11 @@ class MarkdownBodyMerger {
         if (buffer.isNotEmpty) buffer.writeln();
         buffer.writeln(section.headingLine);
       }
-      final content = section.content.trimRight();
-      if (content.isNotEmpty) {
-        buffer.writeln(content);
+      if (section.content.isNotEmpty) {
+        buffer.write(section.content);
+        if (!section.content.endsWith('\n')) {
+          buffer.writeln();
+        }
       }
     }
 
@@ -95,11 +103,14 @@ class MarkdownBodyMerger {
         if (i > 0) buffer.writeln();
         final section = trailing[i];
         buffer.writeln(section.headingLine);
-        buffer.writeln(section.content.trimRight());
+        buffer.write(section.content);
+        if (!section.content.endsWith('\n')) {
+          buffer.writeln();
+        }
       }
     }
 
-    return buffer.toString().trimRight();
+    return buffer.toString();
   }
 
   /// 슬롯만으로 기본 본문 생성 (신규 아카이브)
@@ -115,6 +126,15 @@ class MarkdownBodyMerger {
         memo: memo,
       );
 
+  static String _normalizeSlotContent(String content) {
+    if (content.isEmpty) return content;
+    final lines = content.split('\n');
+    while (lines.isNotEmpty && lines.last.isEmpty) {
+      lines.removeLast();
+    }
+    return lines.join('\n');
+  }
+
   static String _formatSlotContent(
     MarkdownSlotKind kind, {
     required String synopsis,
@@ -123,11 +143,11 @@ class MarkdownBodyMerger {
   }) {
     switch (kind) {
       case MarkdownSlotKind.synopsis:
-        return synopsis.trim();
+        return synopsis;
       case MarkdownSlotKind.quotes:
         return _formatQuotes(quotes);
       case MarkdownSlotKind.memo:
-        return memo.trim();
+        return memo;
     }
   }
 
@@ -148,31 +168,31 @@ class MarkdownBodyMerger {
     final sections = <_BodySection>[];
     String? currentHeading;
     MarkdownSlotKind? currentSlot;
-    final contentBuffer = StringBuffer();
+    final contentLines = <String>[];
 
     void flush() {
       sections.add(_BodySection(
         headingLine: currentHeading,
-        content: contentBuffer.toString(),
+        content: contentLines.join('\n'),
         slotKind: currentSlot,
       ));
-      contentBuffer.clear();
+      contentLines.clear();
     }
 
     for (final line in lines) {
       final trimmed = line.trim();
       if (trimmed.startsWith('# ')) {
-        if (currentHeading != null || contentBuffer.isNotEmpty) {
+        if (currentHeading != null || contentLines.isNotEmpty) {
           flush();
         }
         currentHeading = trimmed;
         currentSlot = slotKindForHeadingLine(trimmed);
         continue;
       }
-      contentBuffer.writeln(line);
+      contentLines.add(line);
     }
 
-    if (currentHeading != null || contentBuffer.toString().trim().isNotEmpty) {
+    if (currentHeading != null || contentLines.isNotEmpty) {
       flush();
     }
 
@@ -195,9 +215,9 @@ class MarkdownBodyMerger {
     for (final section in sections) {
       switch (section.slotKind) {
         case MarkdownSlotKind.synopsis:
-          synopsis = section.content.trim();
+          synopsis = _normalizeSlotContent(section.content);
         case MarkdownSlotKind.memo:
-          memo = section.content.trim();
+          memo = _normalizeSlotContent(section.content);
         case MarkdownSlotKind.quotes:
           for (final line in section.content.split('\n')) {
             final trimmed = line.trim();

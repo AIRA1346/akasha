@@ -79,13 +79,13 @@ void main() {
     expect(bodyCtrl.text, '본문   ');
   });
 
-  test('buildSaveDraft trims trailing whitespace only at save', () {
+  test('buildSaveDraft keeps editor body verbatim for save', () {
     final item = createItem(
       workId: 'wk_trim_save',
       title: '저장 트림',
       category: MediaCategory.manga,
     );
-    final bodyCtrl = TextEditingController(text: '# 📝 메모\n내용   ');
+    final bodyCtrl = TextEditingController(text: '# 📝 메모\n내용   \n\n\n');
     final titleCtrl = TextEditingController(text: item.title);
     final posterCtrl = TextEditingController();
     final fileCtrl = TextEditingController();
@@ -104,7 +104,8 @@ void main() {
       draftTags: item.tags,
     );
 
-    expect(item.bodyRaw, '# 📝 메모\n내용');
-    expect(bodyCtrl.text, '# 📝 메모\n내용   ');
+    expect(item.bodyRaw, '# 📝 메모\n내용   \n\n\n');
+    expect(item.review, '내용   ');
+    expect(bodyCtrl.text, '# 📝 메모\n내용   \n\n\n');
   });
 }

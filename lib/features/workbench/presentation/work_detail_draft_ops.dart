@@ -85,7 +85,6 @@ class WorkDetailDraftOps {
       return parsed;
     }
     syncBodyFromEditor(item, bodyCtrl);
-    item.bodyRaw = item.bodyRaw.trimRight();
     return applyDraft(
       item: item,
       titleCtrl: titleCtrl,

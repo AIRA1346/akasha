@@ -107,16 +107,19 @@ class MarkdownParser {
     buffer.writeln('---');
     buffer.writeln();
 
-    final mergedBody = MarkdownBodyMerger.mergeBody(
-      bodyRaw: item.bodyRaw,
-      synopsis: item.description,
-      quotes: item.memorableQuotes,
-      memo: item.review,
-    );
-    item.bodyRaw = mergedBody;
-    if (mergedBody.isNotEmpty) {
-      buffer.writeln(mergedBody);
-      buffer.writeln();
+    final bodyToWrite = item.bodyRaw.trim().isNotEmpty
+        ? item.bodyRaw
+        : MarkdownBodyMerger.mergeBody(
+            bodyRaw: '',
+            synopsis: item.description,
+            quotes: item.memorableQuotes,
+            memo: item.review,
+          );
+    if (bodyToWrite.isNotEmpty) {
+      buffer.write(bodyToWrite);
+      if (!bodyToWrite.endsWith('\n')) {
+        buffer.writeln();
+      }
     }
 
     return buffer.toString();
@@ -233,7 +236,8 @@ class MarkdownParser {
     }
 
     // 마크다운 바디 — 원문 보존 + 슬롯 필드 추출
-    final bodyRaw = lines.sublist(bodyStartLine).join('\n').trimRight();
+    final bodyRaw =
+        lines.sublist(bodyStartLine).join('\n').replaceFirst(RegExp(r'^\n+'), '');
     final slots = MarkdownBodyMerger.parseSlots(bodyRaw);
     final quotes = slots.quotes;
     final userSynopsis = slots.synopsis;

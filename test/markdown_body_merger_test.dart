@@ -1,7 +1,9 @@
+import 'package:akasha/features/workbench/presentation/work_detail_draft_ops.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/markdown_body_merger.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/utils/helpers.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -48,6 +50,9 @@ void main() {
 # 🎵 OST 메모
 커스텀 섹션 유지
 
+# 🎬 명장면 & 명대사
+> 슬로우 라이프
+
 # 📝 메모
 메모
 ''';
@@ -82,5 +87,40 @@ void main() {
     expect(merged, contains('# 📋 시놉시스'));
     expect(merged, contains('# 🎬 명장면 & 명대사'));
     expect(merged, contains('# 📝 메모'));
+  });
+
+  test('parseSlots and mergeBody preserve trailing blank lines in memo', () {
+    const body = '# 📝 메모\n내용\n\n\n';
+    final slots = MarkdownBodyMerger.parseSlots(body);
+    expect(slots.memo, '내용');
+
+    final merged = MarkdownBodyMerger.mergeBody(
+      bodyRaw: body,
+      synopsis: slots.synopsis,
+      quotes: slots.quotes,
+      memo: slots.memo,
+    );
+    expect(merged, body);
+  });
+
+  test('serialize round-trip preserves trailing blank lines in memo slot', () {
+    final item = createItem(
+      workId: 'sub_manga_frieren_2020',
+      title: '장송의 프리렌',
+      category: MediaCategory.manga,
+      domain: AppDomain.subculture,
+    );
+    item.bodyRaw = '# 📝 메모\n내용\n\n\n';
+    WorkDetailDraftOps.syncBodyFromEditor(
+      item,
+      TextEditingController(text: item.bodyRaw),
+    );
+
+    final serialized = MarkdownParser.serialize(item);
+    final restored = MarkdownParser.deserialize(serialized, 'fallback');
+
+    expect(restored.bodyRaw, '# 📝 메모\n내용\n\n\n');
+    expect(restored.review, '내용');
+    expect(item.bodyRaw, '# 📝 메모\n내용\n\n\n');
   });
 }
