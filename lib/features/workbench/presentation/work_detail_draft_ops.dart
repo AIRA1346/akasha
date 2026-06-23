@@ -33,7 +33,7 @@ class WorkDetailDraftOps {
   }
 
   static void syncBodyFromEditor(AkashaItem item, TextEditingController bodyCtrl) {
-    item.bodyRaw = bodyCtrl.text.trimRight();
+    item.bodyRaw = bodyCtrl.text;
     final slots = MarkdownBodyMerger.parseSlots(item.bodyRaw);
     item.description = slots.synopsis;
     item.memorableQuotes = List<String>.from(slots.quotes);
@@ -85,6 +85,7 @@ class WorkDetailDraftOps {
       return parsed;
     }
     syncBodyFromEditor(item, bodyCtrl);
+    item.bodyRaw = item.bodyRaw.trimRight();
     return applyDraft(
       item: item,
       titleCtrl: titleCtrl,

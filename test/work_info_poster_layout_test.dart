@@ -48,7 +48,7 @@ void main() {
               item: item,
               tabId: 'tab-poster-layout',
               infoPanelWidth: 280,
-              onSaved: (_) {},
+              onSaved: (_, {required bool silent, bool dirty = false}) {},
               onDeleted: () {},
               onDirtyChanged: (_) {},
             ),

@@ -33,7 +33,7 @@ void main() {
               item: item,
               tabId: item.workId,
               infoPanelWidth: 280,
-              onSaved: (_, {required bool silent}) {},
+              onSaved: (_, {required bool silent, bool dirty = false}) {},
               onDeleted: () {},
               onDirtyChanged: (_) {},
             ),

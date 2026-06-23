@@ -125,6 +125,7 @@ class WorkbenchController extends ChangeNotifier {
   void markDirty(String id, {bool dirty = true}) {
     for (final tab in tabs) {
       if (tab.id == id) {
+        if (tab.isDirty == dirty) return;
         tab.isDirty = dirty;
         notifyListeners();
         return;

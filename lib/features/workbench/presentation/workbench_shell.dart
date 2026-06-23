@@ -195,11 +195,11 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onPreserveDraft: (tabId, draft) {
                       widget.controller.updateTabItem(tabId, draft, dirty: true);
                     },
-                    onSaved: (saved, {required bool silent}) {
+                    onSaved: (saved, {required bool silent, bool dirty = false}) {
                       widget.controller.updateTabItem(
                         active.id,
                         saved,
-                        dirty: false,
+                        dirty: dirty,
                       );
                       widget.onWorkSaved(saved, silent: silent);
                     },

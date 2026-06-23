@@ -44,7 +44,8 @@ class WorkDetailWorkspace extends StatefulWidget {
   final List<AkashaItem> vaultItems;
   final ValueChanged<double>? onInfoWidthChanged;
   final VoidCallback? onToggleInfoLock;
-  final void Function(AkashaItem saved, {required bool silent}) onSaved;
+  final void Function(AkashaItem saved, {required bool silent, bool dirty})
+      onSaved;
   final VoidCallback onDeleted;
   final ValueChanged<bool> onDirtyChanged;
   final Future<void> Function(AkashaItem item)? onAddToLibrary;
@@ -290,13 +291,21 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     widget.onBindSave?.call(_saveArchive);
   }
 
+  void _assignControllerTextIfChanged(TextEditingController ctrl, String text) {
+    if (ctrl.text == text) return;
+    ctrl.text = text;
+  }
+
   void _applyItem(AkashaItem item, {required bool resetPageView}) {
     _item = item;
-    _titleCtrl.text = _item.title;
+    _assignControllerTextIfChanged(_titleCtrl, _item.title);
     _draftTags = List<String>.from(_item.tags);
     _registryTags = WorkDetailDraftOps.loadRegistryTags(_item.workId);
-    _posterUrlCtrl.text = _item.posterPath ?? '';
-    _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
+    _assignControllerTextIfChanged(_posterUrlCtrl, _item.posterPath ?? '');
+    _assignControllerTextIfChanged(
+      _bodyCtrl,
+      WorkDetailDraftOps.initialBodyMarkdown(_item),
+    );
     if (resetPageView) {
       _pageView = _item.bodyRaw.trim().isEmpty
           ? SanctumPageView.body
@@ -348,7 +357,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       setState(() => _externalChangePending = false);
       _applyItem(reloaded, resetPageView: false);
       widget.onDirtyChanged(false);
-      widget.onSaved(reloaded, silent: true);
+      widget.onSaved(reloaded, silent: true, dirty: false);
       _refreshDiskMtime();
       if (!silent && mounted) {
         _showSnack('디스크에서 파일을 다시 불러왔습니다.');
@@ -399,7 +408,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _item.description = parsed.description;
     _item.memorableQuotes = List<String>.from(parsed.memorableQuotes);
     _item.review = parsed.review;
-    _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
+    _assignControllerTextIfChanged(
+      _bodyCtrl,
+      WorkDetailDraftOps.initialBodyMarkdown(_item),
+    );
   }
 
   void _focusSanctumForLinks() {
@@ -456,8 +468,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _markDirty() {
+    final wasDirty = widget.isDirty;
     widget.onDirtyChanged(true);
-    setState(() {});
+    if (!wasDirty && _pageView == SanctumPageView.preview) {
+      setState(() {});
+    }
     _scheduleAutoSave();
   }
 
@@ -593,12 +608,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       final contentUnchanged = _pageView == SanctumPageView.file
           ? _fileCtrl.text == contentAtSave
           : _bodyCtrl.text == contentAtSave;
+      final stillDirty = !contentUnchanged;
       setState(() {
         _item = saved;
-        if (!silent) {
-          _titleCtrl.text = saved.title;
-          _posterUrlCtrl.text = saved.posterPath ?? '';
-          _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(saved);
+        if (!silent && !stillDirty) {
+          _assignControllerTextIfChanged(_titleCtrl, saved.title);
+          _assignControllerTextIfChanged(_posterUrlCtrl, saved.posterPath ?? '');
+          _assignControllerTextIfChanged(
+            _bodyCtrl,
+            WorkDetailDraftOps.initialBodyMarkdown(saved),
+          );
           if (switchToPreview) {
             _pageView = SanctumPageView.preview;
           }
@@ -610,12 +629,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _lastSavedAt = DateTime.now();
         _refreshDiskMtime();
       });
-      if (!silent || contentUnchanged) {
+      if (!stillDirty) {
         widget.onDirtyChanged(false);
       } else {
         _scheduleAutoSave();
       }
-      widget.onSaved(saved, silent: silent);
+      widget.onSaved(saved, silent: silent, dirty: stillDirty);
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();

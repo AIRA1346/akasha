@@ -64,4 +64,47 @@ void main() {
     expect(item.review, '저장된 메모');
     expect(preview, isNot(contains('에디터만 변경')));
   });
+
+  test('syncBodyFromEditor preserves trailing whitespace while editing', () {
+    final item = createItem(
+      workId: 'wk_trim',
+      title: '트림',
+      category: MediaCategory.manga,
+    );
+    final bodyCtrl = TextEditingController(text: '본문   ');
+
+    WorkDetailDraftOps.syncBodyFromEditor(item, bodyCtrl);
+
+    expect(item.bodyRaw, '본문   ');
+    expect(bodyCtrl.text, '본문   ');
+  });
+
+  test('buildSaveDraft trims trailing whitespace only at save', () {
+    final item = createItem(
+      workId: 'wk_trim_save',
+      title: '저장 트림',
+      category: MediaCategory.manga,
+    );
+    final bodyCtrl = TextEditingController(text: '# 📝 메모\n내용   ');
+    final titleCtrl = TextEditingController(text: item.title);
+    final posterCtrl = TextEditingController();
+    final fileCtrl = TextEditingController();
+
+    WorkDetailDraftOps.buildSaveDraft(
+      item: item,
+      pageView: SanctumPageView.body,
+      titleCtrl: titleCtrl,
+      bodyCtrl: bodyCtrl,
+      fileCtrl: fileCtrl,
+      posterUrlCtrl: posterCtrl,
+      draftRating: item.rating,
+      draftWorkStatus: item.workStatusLabel,
+      draftMyStatus: item.myStatusLabel,
+      draftHallOfFame: item.isHallOfFame,
+      draftTags: item.tags,
+    );
+
+    expect(item.bodyRaw, '# 📝 메모\n내용');
+    expect(bodyCtrl.text, '# 📝 메모\n내용   ');
+  });
 }
