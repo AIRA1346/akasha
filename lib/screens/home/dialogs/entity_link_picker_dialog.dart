@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
+import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/entity_archive_service.dart';
+import '../../../services/entity_vault_path_conflict.dart';
+import '../../../services/entity_vault_loader.dart';
+import '../../../services/file_service.dart';
 import '../../../services/entity_link_picker_candidates.dart';
 import '../../../services/entity_seed_catalog_promotion.dart';
-import '../../../services/entity_vault_loader.dart';
 import '../../../services/link_candidate_service.dart';
+import '../../../utils/entity_tag_validation.dart';
 import '../../../theme/akasha_colors.dart';
 import 'add_catalog_entity_dialog.dart';
 
@@ -20,6 +25,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
   String? initialQuery,
   EntityAnchorType? anchorTypeFilter,
   AkashaItem? workContext,
+  List<AkashaItem> vaultItems = const [],
 }) {
   return showDialog<EntityLinkSelection>(
     context: context,
@@ -29,6 +35,7 @@ Future<EntityLinkSelection?> showEntityLinkPickerDialog(
       initialQuery: initialQuery,
       anchorTypeFilter: anchorTypeFilter,
       workContext: workContext,
+      vaultItems: vaultItems,
     ),
   );
 }
@@ -41,6 +48,7 @@ class EntityLinkPickerDialog extends StatefulWidget {
     this.initialQuery,
     this.anchorTypeFilter,
     this.workContext,
+    this.vaultItems = const [],
   });
 
   final UserCatalogPort userCatalog;
@@ -48,6 +56,7 @@ class EntityLinkPickerDialog extends StatefulWidget {
   final String? initialQuery;
   final EntityAnchorType? anchorTypeFilter;
   final AkashaItem? workContext;
+  final List<AkashaItem> vaultItems;
 
   @override
   State<EntityLinkPickerDialog> createState() => _EntityLinkPickerDialogState();
@@ -58,6 +67,8 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
   List<EntityLinkPickerCandidate> _candidates = const [];
   List<LinkCandidate> _recommendations = const [];
   var _loading = true;
+  var _tab = 0;
+  var _creating = false;
 
   @override
   void initState() {
@@ -153,6 +164,73 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
     Navigator.pop(context, selection);
   }
 
+  Future<void> _createNewEntity() async {
+    final type = widget.anchorTypeFilter;
+    if (type == null || _creating) return;
+
+    setState(() => _creating = true);
+    try {
+      await widget.userCatalog.load();
+      if (!mounted) return;
+      final workTitleIndex = EntityTagValidation.buildWorkTitleIndex(
+        catalogEntities: widget.userCatalog.all,
+        vaultItems: widget.vaultItems,
+      );
+
+      final addResult = await showAddCatalogEntityDialog(
+        context,
+        entityType: type,
+        initialTitle: _queryCtrl.text.trim(),
+        workTitleIndex: workTitleIndex,
+      );
+      if (!mounted || addResult == null) return;
+
+      final entity = await _persistAddResult(addResult);
+      if (!mounted || entity == null) return;
+
+      Navigator.pop(
+        context,
+        EntityLinkSelection(
+          entityId: entity.entityId,
+          title: entity.title,
+          entityType: entity.entityType,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _creating = false);
+    }
+  }
+
+  Future<UserCatalogEntity?> _persistAddResult(
+    CatalogEntityAddResult addResult,
+  ) async {
+    final vault = AkashaFileService().vaultPath;
+    if (vault != null && vault.isNotEmpty) {
+      try {
+        final saved = await EntityArchiveService.saveFromAddResult(
+          result: addResult,
+          vaultPath: vault,
+          userCatalog: widget.userCatalog,
+        );
+        return saved.entity;
+      } on EntityVaultPathConflict catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.userMessage)),
+          );
+        }
+        return null;
+      }
+    }
+
+    await widget.userCatalog.upsert(addResult.entity);
+    return addResult.entity;
+  }
+
+  bool get _canCreateNew =>
+      widget.anchorTypeFilter != null &&
+      widget.anchorTypeFilter != EntityAnchorType.work;
+
   @override
   Widget build(BuildContext context) {
     final hasRecommendations = _recommendations.isNotEmpty;
@@ -160,73 +238,94 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
     final showEmpty = !hasRecommendations && !hasCandidates;
 
     return AlertDialog(
-      title: const Text('Entity 연결'),
+      title: Text(_dialogTitle()),
       content: SizedBox(
         width: 420,
-        height: 400,
+        height: 440,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: _queryCtrl,
-              autofocus: true,
-              decoration: const InputDecoration(
-                hintText: '이름 · 별칭 검색',
-                prefixIcon: Icon(Icons.search, size: 20),
-                border: OutlineInputBorder(),
-                isDense: true,
+            if (_canCreateNew) ...[
+              Row(
+                children: [
+                  _PickerTab(
+                    label: '기존 연결',
+                    selected: _tab == 0,
+                    onTap: () => setState(() => _tab = 0),
+                  ),
+                  const SizedBox(width: 8),
+                  _PickerTab(
+                    label: '새로 만들기',
+                    selected: _tab == 1,
+                    onTap: () => setState(() => _tab = 1),
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              _subtitleText(),
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-            ),
-            const SizedBox(height: 8),
-            Expanded(
-              child: _loading
-                  ? const Center(
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : showEmpty
-                      ? Center(
-                          child: Text(
-                            _queryCtrl.text.trim().isEmpty
-                                ? '연결할 Entity가 없습니다.'
-                                : '「${_queryCtrl.text.trim()}」과(와) 일치하는 항목이 없습니다.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey[500],
+              const SizedBox(height: 10),
+            ],
+            if (_tab == 0 || !_canCreateNew) ...[
+              TextField(
+                controller: _queryCtrl,
+                autofocus: true,
+                decoration: const InputDecoration(
+                  hintText: '이름 · 별칭 검색',
+                  prefixIcon: Icon(Icons.search, size: 20),
+                  border: OutlineInputBorder(),
+                  isDense: true,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                _subtitleText(),
+                style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              ),
+              const SizedBox(height: 8),
+              Expanded(
+                child: _loading
+                    ? const Center(
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : showEmpty
+                        ? Center(
+                            child: Text(
+                              _queryCtrl.text.trim().isEmpty
+                                  ? '연결할 Entity가 없습니다.'
+                                  : '「${_queryCtrl.text.trim()}」과(와) 일치하는 항목이 없습니다.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey[500],
+                              ),
                             ),
-                          ),
-                        )
-                      : ListView(
-                          children: [
-                            if (hasRecommendations) ...[
-                              const _SectionLabel('이 작품과 관련'),
-                              ..._recommendations.map(
-                                (item) => _RecommendationTile(
+                          )
+                        : ListView(
+                            children: [
+                              if (hasRecommendations) ...[
+                                const _SectionLabel('이 작품과 관련'),
+                                ..._recommendations.map(
+                                  (item) => _RecommendationTile(
+                                    candidate: item,
+                                    onTap: () => _selectRecommendation(item),
+                                  ),
+                                ),
+                                if (hasCandidates) ...[
+                                  const SizedBox(height: 8),
+                                  const Divider(height: 1),
+                                  const SizedBox(height: 8),
+                                  const _SectionLabel('검색 결과'),
+                                ],
+                              ],
+                              ..._candidates.map(
+                                (item) => _CandidateTile(
                                   candidate: item,
-                                  onTap: () => _selectRecommendation(item),
+                                  onTap: () => _select(item),
                                 ),
                               ),
-                              if (hasCandidates) ...[
-                                const SizedBox(height: 8),
-                                const Divider(height: 1),
-                                const SizedBox(height: 8),
-                                const _SectionLabel('검색 결과'),
-                              ],
                             ],
-                            ..._candidates.map(
-                              (item) => _CandidateTile(
-                                candidate: item,
-                                onTap: () => _select(item),
-                              ),
-                            ),
-                          ],
-                        ),
-            ),
+                          ),
+              ),
+            ] else
+              Expanded(child: _buildCreateTab()),
           ],
         ),
       ),
@@ -239,6 +338,70 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
     );
   }
 
+  Widget _buildCreateTab() {
+    final type = widget.anchorTypeFilter!;
+    final typeLabel = entityTypeBadgeLabel(type);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          '카탈로그에 없는 $typeLabel을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.',
+          style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+        ),
+        const SizedBox(height: 16),
+        if (_queryCtrl.text.trim().isNotEmpty)
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            dense: true,
+            leading: Icon(_iconFor(type), size: 20, color: AkashaColors.accent),
+            title: Text(
+              _queryCtrl.text.trim(),
+              style: const TextStyle(fontWeight: FontWeight.w600),
+            ),
+            subtitle: Text(
+              '검색어를 이름으로 사용',
+              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            ),
+          ),
+        const Spacer(),
+        FilledButton.icon(
+          onPressed: _creating ? null : _createNewEntity,
+          icon: _creating
+              ? const SizedBox(
+                  width: 14,
+                  height: 14,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.add, size: 16),
+          label: Text('$typeLabel 새로 만들기'),
+        ),
+      ],
+    );
+  }
+
+  static IconData _iconFor(EntityAnchorType type) {
+    return switch (type) {
+      EntityAnchorType.person => Icons.person_outline,
+      EntityAnchorType.event => Icons.event_outlined,
+      EntityAnchorType.concept => Icons.lightbulb_outline,
+      EntityAnchorType.place => Icons.place_outlined,
+      EntityAnchorType.organization => Icons.groups_outlined,
+      _ => Icons.category_outlined,
+    };
+  }
+
+  String _dialogTitle() {
+    return switch (widget.anchorTypeFilter) {
+      EntityAnchorType.person => '인물 추가',
+      EntityAnchorType.event => '사건 추가',
+      EntityAnchorType.concept => '개념 추가',
+      EntityAnchorType.place => '장소 추가',
+      EntityAnchorType.organization => '조직 추가',
+      _ => 'Entity 연결',
+    };
+  }
+
   String _subtitleText() {
     if (_recommendations.isNotEmpty) {
       return '추천 후보 · Person · Event · Concept · Place · Org';
@@ -247,6 +410,44 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
       return '내 카탈로그에 없습니다 · 사전 인물에서 연결할 수 있습니다';
     }
     return '카탈로그 · Person · Event · Concept · Place · Org';
+  }
+}
+
+class _PickerTab extends StatelessWidget {
+  const _PickerTab({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(6),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: selected ? AkashaColors.accent.withValues(alpha: 0.15) : null,
+          borderRadius: BorderRadius.circular(6),
+          border: Border.all(
+            color: selected ? AkashaColors.accent : Colors.grey[700]!,
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.w600,
+            color: selected ? AkashaColors.accent : Colors.grey[400],
+          ),
+        ),
+      ),
+    );
   }
 }
 

@@ -14,6 +14,7 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
+import '../../../screens/home/dialogs/work_link_picker_dialog.dart';
 import '../../../utils/markdown_edit_actions.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
@@ -32,6 +33,9 @@ import '../../../theme/akasha_colors.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
+import 'widgets/workbench_breadcrumb.dart';
+import 'widgets/workbench_panel_styles.dart';
+import 'widgets/work_sanctum_section_editor.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
 class WorkDetailWorkspace extends StatefulWidget {
@@ -132,6 +136,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   WorkLinkNeighbors _linkNeighbors = const WorkLinkNeighbors();
   bool _loadingLinkNeighbors = false;
 
+  final GlobalKey<WorkSanctumSectionEditorState> _sectionEditorKey =
+      GlobalKey<WorkSanctumSectionEditorState>();
+
   static const _autoSaveDelay = Duration(seconds: 2);
 
   @override
@@ -180,20 +187,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         userCatalog: catalog,
         anchorTypeFilter: type,
         workContext: _item,
+        vaultItems: widget.vaultItems,
       );
     }
     if (!mounted || picked == null) return;
-
-    final patch = MarkdownEditActions.insertWikiLink(
-      text: _bodyCtrl.text,
-      selection: _bodyCtrl.selection,
-      entityId: picked.entityId,
-      title: picked.title,
-    );
-    _bodyCtrl.text = patch.text;
-    _bodyCtrl.selection = patch.selection;
-    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    _markDirty();
+    await _applyWikiLinkSelection(picked);
   }
 
   Future<void> _loadLinkNeighbors() async {
@@ -450,17 +448,40 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       userCatalog: catalog,
       anchorTypeFilter: type,
       workContext: _item,
+      vaultItems: widget.vaultItems,
     );
     if (!mounted || picked == null) return;
+    await _applyWikiLinkSelection(picked);
+  }
 
-    final patch = MarkdownEditActions.insertWikiLink(
-      text: _bodyCtrl.text,
-      selection: _bodyCtrl.selection,
-      entityId: picked.entityId,
-      title: picked.title,
+  Future<void> _requestWorkLink() async {
+    if (!mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showWorkLinkPickerDialog(
+      context,
+      vaultItems: widget.vaultItems,
+      excludeWorkId: _item.workId,
     );
-    _bodyCtrl.text = patch.text;
-    _bodyCtrl.selection = patch.selection;
+    if (!mounted || picked == null) return;
+    await _applyWikiLinkSelection(picked);
+  }
+
+  Future<void> _applyWikiLinkSelection(EntityLinkSelection picked) async {
+    final sectionEditor = _sectionEditorKey.currentState;
+    if (sectionEditor != null && _pageView == SanctumPageView.body) {
+      sectionEditor.insertWikiLink(picked);
+    } else {
+      final patch = MarkdownEditActions.insertWikiLink(
+        text: _bodyCtrl.text,
+        selection: _bodyCtrl.selection,
+        entityId: picked.entityId,
+        title: picked.title,
+      );
+      _bodyCtrl.text = patch.text;
+      _bodyCtrl.selection = patch.selection;
+    }
     WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
     _markDirty();
     await _loadLinkNeighbors();
@@ -869,9 +890,27 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         },
         child: Focus(
           autofocus: true,
-          child: Row(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              WorkbenchBreadcrumb(
+                segments: [
+                  WorkbenchBreadcrumbSegment(
+                    label: '서재',
+                    onTap: widget.onClose,
+                  ),
+                  const WorkbenchBreadcrumbSegment(label: '작품'),
+                  WorkbenchBreadcrumbSegment(
+                    label: _titleCtrl.text.trim().isNotEmpty
+                        ? _titleCtrl.text.trim()
+                        : _item.title,
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
               WorkDetailInfoPanel(
                 item: _item,
                 preview: preview,
@@ -927,6 +966,11 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
             child: SanctumPagePanel(
               view: _pageView,
               onViewChanged: _onPageViewChanged,
+              headerTitle: '작품 정보 편집',
+              titleController: _titleCtrl,
+              onTitleChanged: _markDirty,
+              sectionLayout: true,
+              sectionEditorKey: _sectionEditorKey,
               previewMarkdown: _previewBodyMarkdown,
               mdFilePath: _item.filePath,
               isDirty: widget.isDirty,
@@ -942,6 +986,22 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               onOpenFileView: _refreshFullFileEditor,
               onWikiLinkTap: widget.onWikiLinkTap,
               onRequestEntityLink: widget.onRequestEntityLink,
+              footer: WorkbenchSaveActions(
+                isSaving: _isSaving,
+                isDirty: widget.isDirty,
+                lastSavedAt: _lastSavedAt,
+                saveLabel: _isArchived ? 'md 저장' : 'md 생성',
+                onSave: _saveArchive,
+                showAddToLibrary: widget.onAddToLibrary != null,
+                libraryLabel: _isArchived
+                    ? '서재에 담기'
+                    : '저장하고 서재에 담기',
+                onAddToLibrary: _handleAddToLibrary,
+                showReset: true,
+                onReset: _resetToDefaults,
+                canDeleteMd: _isArchivedInVault,
+                onDeleteArchive: _confirmDelete,
+              ),
             ),
           ),
         ),
@@ -957,6 +1017,18 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 onAddEntityLink: widget.userCatalog != null
                     ? _requestEntityLinkForType
                     : null,
+                onAddWorkLink: _requestWorkLink,
+                loadingIncoming: _loadingIncoming,
+                incomingPaths: _incomingPaths,
+                staleLabelRecordCount: _staleLabelRecordCount,
+                onRefreshIncoming: _loadIncoming,
+                onOpenIncoming: _openIncoming,
+                loadingSameDay: _loadingSameDay,
+                sameDayRefs: _sameDayRefs,
+                onOpenSameDay: _openSameDay,
+              ),
+                  ],
+                ),
               ),
             ],
           ),

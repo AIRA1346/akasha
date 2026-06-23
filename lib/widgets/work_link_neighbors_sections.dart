@@ -24,6 +24,9 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     this.sectionTitleStyle,
     this.showEmptySections = true,
     this.sourceWork,
+    this.workbenchLayout = false,
+    this.onAddEntity,
+    this.onAddWork,
   });
 
   final WorkLinkNeighbors neighbors;
@@ -37,6 +40,9 @@ class WorkLinkNeighborsSections extends StatelessWidget {
   final TextStyle? sectionTitleStyle;
   final bool showEmptySections;
   final AkashaItem? sourceWork;
+  final bool workbenchLayout;
+  final void Function(EntityAnchorType type)? onAddEntity;
+  final VoidCallback? onAddWork;
 
   @override
   Widget build(BuildContext context) {
@@ -62,17 +68,28 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           title: '주요 인물',
           isEmpty: neighbors.characters.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.person),
+          addLabel: '인물 추가',
           child: neighbors.characters.isEmpty
               ? null
-              : WorkLinkCharacterRow(
-                  characters: neighbors.characters,
-                  onOpenEntity: onOpenEntity,
-                ),
+              : workbenchLayout
+                  ? WorkLinkCharacterWorkbenchList(
+                      characters: neighbors.characters,
+                      onOpenEntity: onOpenEntity,
+                    )
+                  : WorkLinkCharacterRow(
+                      characters: neighbors.characters,
+                      onOpenEntity: onOpenEntity,
+                    ),
         ),
         _section(
           title: '연결된 작품',
           isEmpty: neighbors.connectedWorks.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddWork,
+          addLabel: '작품 추가',
           child: neighbors.connectedWorks.isEmpty
               ? null
               : WorkLinkConnectedWorksList(
@@ -93,6 +110,10 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           title: '관련 사건',
           isEmpty: neighbors.events.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.event),
+          addLabel: '사건 추가',
           child: neighbors.events.isEmpty
               ? null
               : _EntityChipList(
@@ -104,6 +125,10 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           title: '관련 개념',
           isEmpty: neighbors.concepts.isEmpty && conceptTags.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.concept),
+          addLabel: '개념 추가',
           child: neighbors.concepts.isEmpty && conceptTags.isEmpty
               ? null
               : Column(
@@ -132,6 +157,10 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           title: '관련 장소',
           isEmpty: neighbors.places.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.place),
+          addLabel: '장소 추가',
           child: neighbors.places.isEmpty
               ? null
               : _EntityChipList(
@@ -143,6 +172,10 @@ class WorkLinkNeighborsSections extends StatelessWidget {
           title: '관련 조직',
           isEmpty: neighbors.organizations.isEmpty,
           titleStyle: titleStyle,
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.organization),
+          addLabel: '조직 추가',
           child: neighbors.organizations.isEmpty
               ? null
               : _EntityChipList(
@@ -159,6 +192,8 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     required bool isEmpty,
     required TextStyle titleStyle,
     Widget? child,
+    VoidCallback? onAdd,
+    String addLabel = '추가',
   }) {
     if (!showEmptySections && isEmpty) return const SizedBox.shrink();
 
@@ -167,7 +202,27 @@ class WorkLinkNeighborsSections extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(title, style: titleStyle),
+          Row(
+            children: [
+              Expanded(child: Text(title, style: titleStyle)),
+              if (onAdd != null)
+                TextButton.icon(
+                  onPressed: onAdd,
+                  icon: const Icon(Icons.add, size: 14),
+                  label: Text(
+                    addLabel,
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  style: TextButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    foregroundColor: AkashaColors.accent,
+                  ),
+                ),
+            ],
+          ),
           const SizedBox(height: 8),
           if (isEmpty)
             _EmptyLinkCta(
@@ -355,6 +410,95 @@ class WorkLinkCharacterRow extends StatelessWidget {
           );
         }).toList(),
       ),
+    );
+  }
+}
+
+/// 워크벤치 우측 패널 — 인물 행 (mock 리스트형).
+class WorkLinkCharacterWorkbenchList extends StatelessWidget {
+  const WorkLinkCharacterWorkbenchList({
+    super.key,
+    required this.characters,
+    this.onOpenEntity,
+  });
+
+  final List<UserCatalogEntity> characters;
+  final void Function(UserCatalogEntity entity)? onOpenEntity;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: characters.map((person) {
+        final avatarItem = EntityItem(
+          entityType: EntityAnchorType.person,
+          entityId: person.entityId,
+          title: person.title,
+          category: person.subtype,
+          domain: person.domain,
+          creator: person.creator,
+          releaseYear: person.releaseYear,
+          posterPath: person.posterPath,
+          tags: person.tags,
+          addedAt: person.addedAt,
+        );
+        final role = person.tags.isNotEmpty ? person.tags.first : '인물';
+
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: Material(
+            color: Colors.white.withValues(alpha: 0.03),
+            borderRadius: BorderRadius.circular(8),
+            child: InkWell(
+              onTap: onOpenEntity == null ? null : () => onOpenEntity!(person),
+              borderRadius: BorderRadius.circular(8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                child: Row(
+                  children: [
+                    ClipOval(
+                      child: SizedBox(
+                        width: 36,
+                        height: 36,
+                        child: PosterImage(item: avatarItem, fit: BoxFit.cover),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            person.title,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            role,
+                            style: TextStyle(
+                              fontSize: 9,
+                              color: Colors.grey[500],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.link_rounded,
+                      size: 16,
+                      color: AkashaColors.accent.withValues(alpha: 0.8),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 }

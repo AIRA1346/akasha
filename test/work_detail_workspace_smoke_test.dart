@@ -43,7 +43,8 @@ void main() {
     );
 
     expect(find.text('Navigation Smoke'), findsAtLeastNWidgets(1));
-    expect(find.text('메타데이터'), findsOneWidget);
-    expect(find.text('주요 인물'), findsOneWidget);
+    expect(find.text('연결'), findsOneWidget);
+    expect(find.text('설명'), findsOneWidget);
+    expect(find.text('감상'), findsOneWidget);
   });
 }

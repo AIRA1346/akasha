@@ -225,25 +225,7 @@ class WorkDetailInfoPanel extends StatelessWidget {
                             onGoKnowledgeGraph: onGoKnowledgeGraph,
                             onFocusSanctum: onFocusSanctum,
                             hideConnectionsSection: true,
-                            notesSection: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                WorkbenchIncomingLinksSection(
-                                  loading: loadingIncoming,
-                                  paths: incomingPaths,
-                                  staleLabelRecordCount: staleLabelRecordCount,
-                                  refreshKey: const Key('work_incoming_refresh'),
-                                  onRefresh: onRefreshIncoming,
-                                  onOpen: onOpenIncoming,
-                                ),
-                                WorkbenchSameDayRecordsSection(
-                                  loading: loadingSameDay,
-                                  refs: sameDayRefs,
-                                  anchor: item.addedAt,
-                                  onOpen: onOpenSameDay,
-                                ),
-                              ],
-                            ),
+                            summaryLayout: true,
                           ),
                         ),
                       ),

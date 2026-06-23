@@ -47,6 +47,7 @@ class WorkDetailInfoForm extends StatefulWidget {
     this.onFocusSanctum,
     this.notesSection,
     this.hideConnectionsSection = false,
+    this.summaryLayout = false,
   });
 
   final AkashaItem item;
@@ -82,6 +83,7 @@ class WorkDetailInfoForm extends StatefulWidget {
   final VoidCallback? onFocusSanctum;
   final Widget? notesSection;
   final bool hideConnectionsSection;
+  final bool summaryLayout;
 
   @override
   State<WorkDetailInfoForm> createState() => _WorkDetailInfoFormState();
@@ -99,16 +101,24 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
       children: [
-        TextField(
-          controller: widget.titleCtrl,
-          onChanged: (_) => widget.onMarkDirty(),
-          style: AkashaTypography.headlineEditable,
-          decoration: const InputDecoration(
-            isDense: true,
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.zero,
+        if (widget.summaryLayout) ...[
+          Text(
+            widget.titleCtrl.text.trim().isNotEmpty
+                ? widget.titleCtrl.text.trim()
+                : widget.item.title,
+            style: AkashaTypography.headlineEditable,
           ),
-        ),
+        ] else
+          TextField(
+            controller: widget.titleCtrl,
+            onChanged: (_) => widget.onMarkDirty(),
+            style: AkashaTypography.headlineEditable,
+            decoration: const InputDecoration(
+              isDense: true,
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.zero,
+            ),
+          ),
         if (alternativeTitle.isNotEmpty) ...[
           const SizedBox(height: AkashaSpacing.xs),
           Text(alternativeTitle, style: AkashaTypography.bodySecondary),
@@ -139,6 +149,22 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
           ],
         ] else ...[
           _buildInfoTable(),
+          if (widget.draftTags.isNotEmpty) ...[
+            const SizedBox(height: AkashaSpacing.sm),
+            Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: widget.draftTags
+                  .map(
+                    (tag) => Chip(
+                      label: Text(tag, style: const TextStyle(fontSize: 10)),
+                      visualDensity: VisualDensity.compact,
+                      backgroundColor: AkashaColors.surface,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
           const SizedBox(height: AkashaSpacing.md),
         ],
 
@@ -146,52 +172,56 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
         WorkbenchPanelStyles.sectionLabel('메모'),
         const SizedBox(height: AkashaSpacing.sm),
         _buildQuickMemoField(),
-        if (widget.notesSection != null) ...[
+        if (widget.notesSection != null && !widget.summaryLayout) ...[
           const SizedBox(height: AkashaSpacing.md),
           widget.notesSection!,
         ],
 
-        WorkbenchPanelStyles.panelDivider(),
-        WorkbenchSaveActions(
-          isSaving: widget.isSaving,
-          isDirty: widget.isDirty,
-          lastSavedAt: widget.lastSavedAt,
-          saveLabel: widget.isArchived ? 'md 저장' : 'md 생성',
-          onSave: widget.onSaveArchive,
-          showAddToLibrary: widget.showAddToLibrary,
-          libraryLabel: widget.isArchived
-              ? '서재에 담기'
-              : '저장하고 서재에 담기',
-          onAddToLibrary: widget.onAddToLibrary,
-          showReset: true,
-          onReset: widget.onResetToDefaults,
-          canDeleteMd: widget.canDeleteMd,
-          onDeleteArchive: widget.onDeleteArchive,
-        ),
-
-        const SizedBox(height: AkashaSpacing.md),
-        Theme(
-          data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-          child: ExpansionTile(
-            key: const Key('work_metadata_expansion'),
-            initiallyExpanded: _metadataExpanded,
-            onExpansionChanged: (v) => setState(() => _metadataExpanded = v),
-            tilePadding: EdgeInsets.zero,
-            childrenPadding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
-            title: Text(
-              '메타데이터',
-              style: AkashaTypography.bodySecondary.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            children: [
-              if (!widget.hideConnectionsSection) _buildInfoTable(),
-              if (!widget.hideConnectionsSection)
-                const SizedBox(height: AkashaSpacing.md),
-              _buildRelatedConceptsEditor(),
-            ],
+        if (!widget.summaryLayout) ...[
+          WorkbenchPanelStyles.panelDivider(),
+          WorkbenchSaveActions(
+            isSaving: widget.isSaving,
+            isDirty: widget.isDirty,
+            lastSavedAt: widget.lastSavedAt,
+            saveLabel: widget.isArchived ? 'md 저장' : 'md 생성',
+            onSave: widget.onSaveArchive,
+            showAddToLibrary: widget.showAddToLibrary,
+            libraryLabel: widget.isArchived
+                ? '서재에 담기'
+                : '저장하고 서재에 담기',
+            onAddToLibrary: widget.onAddToLibrary,
+            showReset: true,
+            onReset: widget.onResetToDefaults,
+            canDeleteMd: widget.canDeleteMd,
+            onDeleteArchive: widget.onDeleteArchive,
           ),
-        ),
+        ],
+
+        if (!widget.summaryLayout) ...[
+          const SizedBox(height: AkashaSpacing.md),
+          Theme(
+            data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+            child: ExpansionTile(
+              key: const Key('work_metadata_expansion'),
+              initiallyExpanded: _metadataExpanded,
+              onExpansionChanged: (v) => setState(() => _metadataExpanded = v),
+              tilePadding: EdgeInsets.zero,
+              childrenPadding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
+              title: Text(
+                '메타데이터',
+                style: AkashaTypography.bodySecondary.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                if (!widget.hideConnectionsSection) _buildInfoTable(),
+                if (!widget.hideConnectionsSection)
+                  const SizedBox(height: AkashaSpacing.md),
+                _buildRelatedConceptsEditor(),
+              ],
+            ),
+          ),
+        ],
       ],
     );
   }
@@ -308,38 +338,35 @@ class _WorkDetailInfoFormState extends State<WorkDetailInfoForm> {
   }
 
   Widget _buildQuickMemoField() {
-    return Container(
-      decoration: BoxDecoration(
-        color: AkashaColors.surface,
-        borderRadius: AkashaRadius.mdBorder,
-        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: AkashaSpacing.md,
-        vertical: AkashaSpacing.sm,
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.edit_note_rounded, size: 18, color: AkashaColors.textMuted),
-          const SizedBox(width: AkashaSpacing.sm),
-          Expanded(
-            child: Text(
-              '상세 기록은 우측 기록 본문에서 작성하세요',
-              style: AkashaTypography.caption,
-            ),
-          ),
-          if (widget.onFocusSanctum != null)
-            TextButton(
-              onPressed: widget.onFocusSanctum,
-              style: TextButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                minimumSize: Size.zero,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    return InkWell(
+      onTap: widget.onFocusSanctum,
+      borderRadius: AkashaRadius.mdBorder,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AkashaColors.surface,
+          borderRadius: AkashaRadius.mdBorder,
+          border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AkashaSpacing.md,
+          vertical: AkashaSpacing.sm,
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.edit_note_rounded, size: 18, color: AkashaColors.textMuted),
+            const SizedBox(width: AkashaSpacing.sm),
+            Expanded(
+              child: Text(
+                widget.summaryLayout
+                    ? '메모 · 본문에서 편집'
+                    : '상세 기록은 우측 기록 본문에서 작성하세요',
+                style: AkashaTypography.caption,
               ),
-              child: Text('기록하기', style: AkashaTypography.caption),
             ),
-        ],
+            if (widget.onFocusSanctum != null)
+              Icon(Icons.chevron_right_rounded, size: 18, color: Colors.grey[600]),
+          ],
+        ),
       ),
     );
   }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../core/archiving/record_link.dart';
+import '../features/workbench/presentation/widgets/work_sanctum_section_editor.dart';
 import '../features/workbench/presentation/workbench_save_status_hint.dart';
 import '../models/entity_link_selection.dart';
+import '../theme/akasha_colors.dart';
 import 'markdown_body_editor.dart';
 import 'vault_markdown_body.dart';
 
@@ -30,6 +32,12 @@ class SanctumPagePanel extends StatelessWidget {
     BuildContext context,
     String selectedText,
   )? onRequestEntityLink;
+  final String headerTitle;
+  final TextEditingController? titleController;
+  final VoidCallback? onTitleChanged;
+  final Widget? footer;
+  final bool sectionLayout;
+  final GlobalKey<WorkSanctumSectionEditorState>? sectionEditorKey;
 
   const SanctumPagePanel({
     super.key,
@@ -50,6 +58,12 @@ class SanctumPagePanel extends StatelessWidget {
     this.lastSavedAt,
     this.onWikiLinkTap,
     this.onRequestEntityLink,
+    this.headerTitle = '기록 본문',
+    this.titleController,
+    this.onTitleChanged,
+    this.footer,
+    this.sectionLayout = false,
+    this.sectionEditorKey,
   });
 
   @override
@@ -59,49 +73,87 @@ class SanctumPagePanel extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Icon(Icons.menu_book_outlined,
-                  size: 18, color: Colors.tealAccent),
-              const SizedBox(width: 8),
-              Text(
-                '기록 본문',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[300],
-                ),
-              ),
-              const Spacer(),
-              SegmentedButton<SanctumPageView>(
-                segments: const [
-                  ButtonSegment(
-                    value: SanctumPageView.preview,
-                    icon: Icon(Icons.visibility_outlined, size: 16),
-                    label: Text('보기', style: TextStyle(fontSize: 11)),
+              Row(
+                children: [
+                  const Icon(Icons.menu_book_outlined,
+                      size: 18, color: Colors.tealAccent),
+                  const SizedBox(width: 8),
+                  Text(
+                    headerTitle,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[300],
+                    ),
                   ),
-                  ButtonSegment(
-                    value: SanctumPageView.body,
-                    icon: Icon(Icons.edit_note_outlined, size: 16),
-                    label: Text('본문', style: TextStyle(fontSize: 11)),
-                  ),
-                  ButtonSegment(
-                    value: SanctumPageView.file,
-                    icon: Icon(Icons.description_outlined, size: 16),
-                    label: Text('.md', style: TextStyle(fontSize: 11)),
+                  const Spacer(),
+                  SegmentedButton<SanctumPageView>(
+                    segments: [
+                      const ButtonSegment(
+                        value: SanctumPageView.preview,
+                        icon: Icon(Icons.visibility_outlined, size: 16),
+                        label: Text('보기', style: TextStyle(fontSize: 11)),
+                      ),
+                      ButtonSegment(
+                        value: SanctumPageView.body,
+                        icon: const Icon(Icons.edit_note_outlined, size: 16),
+                        label: Text(
+                          sectionLayout ? '기록' : '본문',
+                          style: const TextStyle(fontSize: 11),
+                        ),
+                      ),
+                      const ButtonSegment(
+                        value: SanctumPageView.file,
+                        icon: Icon(Icons.description_outlined, size: 16),
+                        label: Text('.md', style: TextStyle(fontSize: 11)),
+                      ),
+                    ],
+                    selected: {view},
+                    onSelectionChanged: (selected) {
+                      final next = selected.first;
+                      if (next == SanctumPageView.file) onOpenFileView();
+                      onViewChanged(next);
+                    },
+                    style: ButtonStyle(
+                      visualDensity: VisualDensity.compact,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
                   ),
                 ],
-                selected: {view},
-                onSelectionChanged: (selected) {
-                  final next = selected.first;
-                  if (next == SanctumPageView.file) onOpenFileView();
-                  onViewChanged(next);
-                },
-                style: ButtonStyle(
-                  visualDensity: VisualDensity.compact,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
               ),
+              if (titleController != null) ...[
+                const SizedBox(height: 8),
+                TextField(
+                  controller: titleController,
+                  onChanged: (_) => onTitleChanged?.call(),
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    hintText: '작품 제목',
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey[600],
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.08),
+                      ),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 8,
+                    ),
+                  ),
+                ),
+              ],
             ],
           ),
         ),
@@ -156,7 +208,9 @@ class SanctumPagePanel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
-              '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.',
+              sectionLayout
+                  ? '설명·감상을 섹션별로 편집합니다. 고급 편집은 「.md」 탭을 사용하세요.'
+                  : '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.',
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
           ),
@@ -164,11 +218,22 @@ class SanctumPagePanel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
-              'YAML frontmatter + 본문 전체입니다. 왼쪽 「md 저장」으로 vault에 기록됩니다.',
+              'YAML frontmatter + 본문 전체입니다. 하단 「md 저장」으로 vault에 기록됩니다.',
               style: TextStyle(fontSize: 10, color: Colors.grey[600]),
             ),
           ),
         Expanded(child: _buildContent(context)),
+        if (footer != null)
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: AkashaColors.workbenchPanel,
+              border: Border(top: BorderSide(color: Colors.grey[850]!)),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
+              child: footer!,
+            ),
+          ),
       ],
     );
   }
@@ -185,6 +250,16 @@ class SanctumPagePanel extends StatelessWidget {
           ),
         );
       case SanctumPageView.body:
+        if (sectionLayout) {
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+            child: WorkSanctumSectionEditor(
+              key: sectionEditorKey,
+              bodyController: bodyController,
+              onChanged: onBodyChanged,
+            ),
+          );
+        }
         return Padding(
           padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
           child: MarkdownBodyEditor(

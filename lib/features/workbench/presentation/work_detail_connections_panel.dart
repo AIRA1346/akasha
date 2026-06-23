@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_anchor.dart';
+import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../theme/akasha_colors.dart';
@@ -8,9 +9,10 @@ import '../../../theme/akasha_spacing.dart';
 import '../../../theme/akasha_typography.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
+import 'widgets/workbench_record_links_sections.dart';
 
-/// 워크벤치 우측 연결 패널 — mock 3열 레이아웃 (R15).
-class WorkDetailConnectionsPanel extends StatelessWidget {
+/// 워크벤치 우측 연결 패널 — mock 3열 · 연결|정보 탭 (R15).
+class WorkDetailConnectionsPanel extends StatefulWidget {
   const WorkDetailConnectionsPanel({
     super.key,
     required this.item,
@@ -22,6 +24,15 @@ class WorkDetailConnectionsPanel extends StatelessWidget {
     this.onGoKnowledgeGraph,
     this.onFocusSanctum,
     this.onAddEntityLink,
+    this.onAddWorkLink,
+    this.loadingIncoming = false,
+    this.incomingPaths = const [],
+    this.staleLabelRecordCount = 0,
+    this.onRefreshIncoming,
+    this.onOpenIncoming,
+    this.loadingSameDay = false,
+    this.sameDayRefs = const [],
+    this.onOpenSameDay,
     this.width = 300,
   });
 
@@ -34,12 +45,29 @@ class WorkDetailConnectionsPanel extends StatelessWidget {
   final VoidCallback? onGoKnowledgeGraph;
   final VoidCallback? onFocusSanctum;
   final void Function(EntityAnchorType type)? onAddEntityLink;
+  final VoidCallback? onAddWorkLink;
+  final bool loadingIncoming;
+  final List<String> incomingPaths;
+  final int staleLabelRecordCount;
+  final VoidCallback? onRefreshIncoming;
+  final ValueChanged<String>? onOpenIncoming;
+  final bool loadingSameDay;
+  final List<SameDayRecordRef> sameDayRefs;
+  final ValueChanged<SameDayRecordRef>? onOpenSameDay;
   final double width;
+
+  @override
+  State<WorkDetailConnectionsPanel> createState() =>
+      _WorkDetailConnectionsPanelState();
+}
+
+class _WorkDetailConnectionsPanelState extends State<WorkDetailConnectionsPanel> {
+  int _tab = 0;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width,
+      width: widget.width,
       child: ColoredBox(
         color: AkashaColors.workbenchPanel,
         child: Column(
@@ -50,15 +78,25 @@ class WorkDetailConnectionsPanel extends StatelessWidget {
                 AkashaSpacing.md,
                 AkashaSpacing.md,
                 AkashaSpacing.md,
-                AkashaSpacing.sm,
+                AkashaSpacing.xs,
               ),
               child: Row(
                 children: [
-                  Text('연결', style: AkashaTypography.sectionTitle),
+                  _PanelTab(
+                    label: '연결',
+                    selected: _tab == 0,
+                    onTap: () => setState(() => _tab = 0),
+                  ),
+                  const SizedBox(width: 8),
+                  _PanelTab(
+                    label: '정보',
+                    selected: _tab == 1,
+                    onTap: () => setState(() => _tab = 1),
+                  ),
                   const Spacer(),
-                  if (onGoKnowledgeGraph != null)
+                  if (widget.onGoKnowledgeGraph != null)
                     TextButton(
-                      onPressed: onGoKnowledgeGraph,
+                      onPressed: widget.onGoKnowledgeGraph,
                       style: TextButton.styleFrom(
                         visualDensity: VisualDensity.compact,
                         padding: EdgeInsets.zero,
@@ -76,85 +114,178 @@ class WorkDetailConnectionsPanel extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _AddRow(
-                      label: '인물 추가',
-                      onTap: onAddEntityLink == null
-                          ? null
-                          : () => onAddEntityLink!(EntityAnchorType.person),
-                    ),
-                    const SizedBox(height: AkashaSpacing.sm),
-                    WorkLinkNeighborsSections(
-                      neighbors: linkNeighbors,
-                      loading: loadingLinkNeighbors,
-                      conceptTags: draftTags,
-                      sourceWork: item,
-                      onOpenEntity: onOpenLinkedEntity,
-                      onOpenWork: onOpenLinkedWork,
-                      onLinkCta: onFocusSanctum,
-                      sectionTitleStyle: AkashaTypography.caption.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                    const SizedBox(height: AkashaSpacing.md),
-                    _AddRow(
-                      label: '작품 연결 추가',
-                      onTap: onFocusSanctum,
-                    ),
-                    _AddRow(
-                      label: '개념 추가',
-                      onTap: onAddEntityLink == null
-                          ? null
-                          : () => onAddEntityLink!(EntityAnchorType.concept),
-                    ),
-                    _AddRow(
-                      label: '장소 추가',
-                      onTap: onAddEntityLink == null
-                          ? null
-                          : () => onAddEntityLink!(EntityAnchorType.place),
-                    ),
-                    _AddRow(
-                      label: '사건 추가',
-                      onTap: onAddEntityLink == null
-                          ? null
-                          : () => onAddEntityLink!(EntityAnchorType.event),
-                    ),
-                    const SizedBox(height: AkashaSpacing.lg),
-                  ],
-                ),
-              ),
+              child: _tab == 0 ? _buildConnectionsTab() : _buildInfoTab(),
             ),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildConnectionsTab() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (!widget.loadingLinkNeighbors && !widget.linkNeighbors.hasAnyLink)
+            Padding(
+              padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
+              child: Text(
+                '섹션의 「추가」로 Entity를 연결하면 본문에 [[링크]]가 삽입됩니다.',
+                style: AkashaTypography.caption.copyWith(
+                  color: Colors.grey[500],
+                ),
+              ),
+            ),
+          WorkLinkNeighborsSections(
+            neighbors: widget.linkNeighbors,
+            loading: widget.loadingLinkNeighbors,
+            conceptTags: widget.draftTags,
+            sourceWork: widget.item,
+            workbenchLayout: true,
+            showEmptySections: false,
+            onOpenEntity: widget.onOpenLinkedEntity,
+            onOpenWork: widget.onOpenLinkedWork,
+            onAddEntity: widget.onAddEntityLink,
+            onAddWork: widget.onAddWorkLink,
+            sectionTitleStyle: AkashaTypography.caption.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[300],
+            ),
+          ),
+          const SizedBox(height: AkashaSpacing.lg),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoTab() {
+    final n = widget.linkNeighbors;
+    final linkCount = n.characters.length +
+        n.connectedWorks.length +
+        n.events.length +
+        n.concepts.length +
+        n.places.length +
+        n.organizations.length;
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: AkashaSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _InfoRow(label: '연결 수', value: '$linkCount'),
+          if (widget.item.filePath != null)
+            _InfoRow(label: '저장 경로', value: widget.item.filePath!),
+          if (widget.draftTags.isNotEmpty) ...[
+            const SizedBox(height: AkashaSpacing.sm),
+            Text('태그', style: AkashaTypography.sectionLabel),
+            const SizedBox(height: 6),
+            Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: widget.draftTags
+                  .map(
+                    (t) => Chip(
+                      label: Text(t, style: const TextStyle(fontSize: 10)),
+                      visualDensity: VisualDensity.compact,
+                      backgroundColor: AkashaColors.surface,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
+          const SizedBox(height: AkashaSpacing.md),
+          WorkbenchIncomingLinksSection(
+            loading: widget.loadingIncoming,
+            paths: widget.incomingPaths,
+            staleLabelRecordCount: widget.staleLabelRecordCount,
+            refreshKey: const Key('work_incoming_refresh_panel'),
+            onRefresh: widget.onRefreshIncoming,
+            onOpen: widget.onOpenIncoming,
+          ),
+          const SizedBox(height: AkashaSpacing.md),
+          WorkbenchSameDayRecordsSection(
+            loading: widget.loadingSameDay,
+            refs: widget.sameDayRefs,
+            anchor: widget.item.addedAt,
+            onOpen: widget.onOpenSameDay ?? (_) {},
+          ),
+          const SizedBox(height: AkashaSpacing.lg),
+        ],
+      ),
+    );
+  }
 }
 
-class _AddRow extends StatelessWidget {
-  const _AddRow({required this.label, this.onTap});
+class _PanelTab extends StatelessWidget {
+  const _PanelTab({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
 
   final String label;
-  final VoidCallback? onTap;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(6),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: selected
+              ? AkashaColors.accent.withValues(alpha: 0.15)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(6),
+          border: Border.all(
+            color: selected
+                ? AkashaColors.accent.withValues(alpha: 0.4)
+                : Colors.white.withValues(alpha: 0.08),
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 11,
+            fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            color: selected ? Colors.white : Colors.grey[500],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _InfoRow extends StatelessWidget {
+  const _InfoRow({required this.label, required this.value});
+
+  final String label;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 6),
-      child: OutlinedButton.icon(
-        onPressed: onTap,
-        icon: const Icon(Icons.add, size: 14),
-        label: Text(label, style: const TextStyle(fontSize: 11)),
-        style: OutlinedButton.styleFrom(
-          foregroundColor: Colors.grey[300],
-          side: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        ),
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 64,
+            child: Text(label, style: AkashaTypography.caption),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: AkashaTypography.caption.copyWith(
+                color: AkashaColors.textPrimary,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
