@@ -1,5 +1,3 @@
-import 'dart:ui' as ui;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -294,74 +292,46 @@ class HomeShellScaffold extends StatelessWidget {
     final isHome = controller.isHomeDashboardMode;
     final isExplore = controller.isExploreModeActive;
 
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(30),
-        child: BackdropFilter(
-          filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-          child: Container(
-            height: 64,
-            decoration: BoxDecoration(
-              color: AkashaColors.surface.withValues(alpha: 0.65),
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(
-                color: Colors.white.withValues(alpha: 0.08),
-                width: 1.0,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.25),
-                  blurRadius: 16,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildBottomTabItem(
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AkashaColors.surface,
+        border: Border(
+          top: BorderSide(color: AkashaColors.border.withValues(alpha: 0.85)),
+        ),
+      ),
+      child: SafeArea(
+        top: false,
+        child: SizedBox(
+          height: 56,
+          child: Row(
+            children: [
+              Expanded(
+                child: _buildBottomTabItem(
                   icon: Icons.home_filled,
                   label: '홈',
                   isSelected: isHome,
                   onTap: () => controller.goHome(),
                 ),
-                _buildBottomTabItem(
+              ),
+              Expanded(
+                child: _buildBottomTabItem(
                   icon: Icons.explore_outlined,
                   label: '탐색',
                   isSelected: isExplore,
                   onTap: () => controller.goExplore(),
                 ),
-                GestureDetector(
+              ),
+              Expanded(
+                child: _buildBottomTabItem(
+                  icon: Icons.search,
+                  label: '검색',
+                  isSelected: false,
+                  emphasize: true,
                   onTap: controller.openSearchDialog,
-                  child: Container(
-                    width: 44,
-                    height: 44,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        colors: [
-                          AkashaColors.accent,
-                          AkashaColors.accentDark,
-                        ],
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AkashaColors.accent,
-                          blurRadius: 12,
-                          spreadRadius: 1,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: const Icon(
-                      Icons.search,
-                      color: Colors.white,
-                      size: 22,
-                    ),
-                  ),
                 ),
-                _buildBottomTabItem(
+              ),
+              Expanded(
+                child: _buildBottomTabItem(
                   icon: Icons.book_outlined,
                   label: '라이브러리',
                   isSelected: controller.isPersonalLibraryMode,
@@ -375,7 +345,9 @@ class HomeShellScaffold extends StatelessWidget {
                     }
                   },
                 ),
-                _buildBottomTabItem(
+              ),
+              Expanded(
+                child: _buildBottomTabItem(
                   icon: Icons.folder_open_outlined,
                   label: '컬렉션',
                   isSelected: controller.isCollectibleCollectionMode,
@@ -394,8 +366,8 @@ class HomeShellScaffold extends StatelessWidget {
                     }
                   },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -407,28 +379,30 @@ class HomeShellScaffold extends StatelessWidget {
     required String label,
     required bool isSelected,
     required VoidCallback onTap,
+    bool emphasize = false,
   }) {
-    final color = isSelected ? AkashaColors.accent : Colors.grey[500];
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+    final color = isSelected || emphasize
+        ? AkashaColors.accent
+        : AkashaColors.textMuted;
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               icon,
               color: color,
-              size: 20,
+              size: 22,
             ),
-            const SizedBox(height: 3),
+            const SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
                 color: color,
-                fontSize: 9,
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                fontSize: 10,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
               ),
             ),
           ],

@@ -127,7 +127,7 @@ class HomeDashboardView extends StatelessWidget {
               vaultItems: vaultItems,
               onItemTap: onPreviewWork,
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 24),
           ],
         ),
       ),
