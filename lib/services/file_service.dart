@@ -121,6 +121,7 @@ class AkashaFileService {
       await Directory(p.join(_vaultPath!, 'works', cat.name)).create(recursive: true);
     }
 
+    // TODO(remove): 구 `{vault}/{category}/` — works 레이아웃 전환·마이그레이션 후 생성 중단.
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
     }
@@ -339,10 +340,11 @@ class AkashaFileService {
 
     if (_vaultPath == null) return;
 
+    final useWorksLayout = await UserPreferences.isVaultWorksLayoutEnabled();
+
     if (oldTitle != null && oldTitle != item.title) {
       if (item.filePath != null && item.filePath!.isNotEmpty) {
         final oldFile = File(item.filePath!);
-        final parentDir = p.dirname(item.filePath!);
         if (oldFile.existsSync()) {
           _stopWatching();
           try {
@@ -353,8 +355,11 @@ class AkashaFileService {
             _startWatching();
           }
         }
-        final safeTitle = _makeSafeFilename(item.title);
-        item.filePath = p.join(parentDir, '$safeTitle.md');
+        item.filePath = VaultWorkJournalPaths.resolvePathAfterTitleChange(
+          vaultRoot: _vaultPath!,
+          item: item,
+          useWorksLayout: useWorksLayout,
+        );
       } else {
         await deleteItem(oldTitle, item.category);
       }
@@ -364,15 +369,15 @@ class AkashaFileService {
     if (item.filePath != null && item.filePath!.isNotEmpty) {
       targetPath = item.filePath!;
     } else {
-      final useWorksLayout = await UserPreferences.isVaultWorksLayoutEnabled();
       targetPath = VaultWorkJournalPaths.resolveNewPath(
         vaultRoot: _vaultPath!,
         item: item,
         useWorksLayout: useWorksLayout,
       );
-      await Directory(p.dirname(targetPath)).create(recursive: true);
       item.filePath = targetPath;
     }
+
+    await Directory(p.dirname(targetPath)).create(recursive: true);
 
     final content = MarkdownParser.serialize(item);
 

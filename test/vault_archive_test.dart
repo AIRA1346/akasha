@@ -294,5 +294,100 @@ void main() {
         p.join('/vault', 'works', 'manga', '테스트_작품.md'),
       ]);
     });
+
+    test('title rename moves legacy file to works layout when enabled', () async {
+      SharedPreferences.setMockInitialValues({
+        UserPreferences.vaultWorksLayoutKey: true,
+      });
+
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_legacy_rename_');
+      try {
+        await service.setVaultPath(tempDir.path);
+
+        final legacyPath = p.join(
+          tempDir.path,
+          MediaCategory.manga.name,
+          '레거시 제목.md',
+        );
+        await Directory(p.dirname(legacyPath)).create(recursive: true);
+        final item = createItem(
+          workId: 'sub_manga_legacyrename_2024',
+          title: '레거시 제목',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+        );
+        item.filePath = legacyPath;
+        await File(legacyPath).writeAsString(MarkdownParser.serialize(item));
+
+        item.title = 'works로 이동';
+        await service.saveItem(item, oldTitle: '레거시 제목');
+
+        expect(File(legacyPath).existsSync(), isFalse);
+        final worksPath = p.join(
+          tempDir.path,
+          'works',
+          MediaCategory.manga.name,
+          'works로 이동.md',
+        );
+        expect(File(worksPath).existsSync(), isTrue);
+        expect(item.filePath, worksPath);
+
+        final loaded = await service.loadAllItems();
+        expect(loaded, hasLength(1));
+        expect(loaded.first.title, 'works로 이동');
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('title rename stays in works layout when already on works path', () async {
+      SharedPreferences.setMockInitialValues({
+        UserPreferences.vaultWorksLayoutKey: true,
+      });
+
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_works_rename_');
+      try {
+        await service.setVaultPath(tempDir.path);
+
+        final item = createItem(
+          workId: 'sub_manga_worksrename_2024',
+          title: 'works 제목',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+        );
+        await service.saveItem(item);
+
+        final oldWorksPath = p.join(
+          tempDir.path,
+          'works',
+          MediaCategory.manga.name,
+          'works 제목.md',
+        );
+        expect(File(oldWorksPath).existsSync(), isTrue);
+
+        item.title = 'works 제목 (갱신)';
+        await service.saveItem(item, oldTitle: 'works 제목');
+
+        expect(File(oldWorksPath).existsSync(), isFalse);
+        final newWorksPath = p.join(
+          tempDir.path,
+          'works',
+          MediaCategory.manga.name,
+          'works 제목 (갱신).md',
+        );
+        expect(File(newWorksPath).existsSync(), isTrue);
+        expect(item.filePath, newWorksPath);
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
   });
 }

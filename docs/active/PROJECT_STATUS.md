@@ -42,13 +42,15 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ---
 
-## 2. Gate (@2008)
+## 2. Gate (@10048)
+
+> 구현·Registry 상세는 **[CURRENT_STATE.md](CURRENT_STATE.md)** (Reality SSOT)를 따릅니다.
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **311/311 PASS** |
+| `flutter test` | **505+ PASS** |
 | `registry_builder` | PASS |
-| `dedupe_linter` | PASS (2008 works) |
+| `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
 | `quality_gate --release` | PASS |
 | `coverage_dashboard` | titles_ko 100% · titles_en 100% · invalid_en 0 |
@@ -65,7 +67,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **G-AUTO** | ✅ | test 265 · analyze 0 error · Release build OK |
 | **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
 | **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
-| **G-CATALOG** | ✅ | **2008작** · recall@10 **87/87** (@490 SW1-A) |
+| **G-CATALOG** | ✅ | **10048작** · recall@10 **87/87** (SW1-A) |
 | **G-COPY** | ✅ | Privacy doc · 스토어 카피 정합 |
 
 ---

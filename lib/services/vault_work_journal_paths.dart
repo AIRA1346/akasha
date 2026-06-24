@@ -14,8 +14,21 @@ abstract final class VaultWorkJournalPaths {
     if (useWorksLayout) {
       return p.join(vaultRoot, 'works', item.category.name, '$safeTitle.md');
     }
+    // TODO(remove): v1.2+ — 구 `{vault}/{category}/` 레이아웃. works 레이아웃 기본 전환·마이그레이션 후 제거.
     return p.join(vaultRoot, item.category.name, '$safeTitle.md');
   }
+
+  /// 제목 변경 후 저장 경로. 기존 filePath의 parent를 유지하지 않고 레이아웃 설정에 맞는 경로로 이동.
+  static String resolvePathAfterTitleChange({
+    required String vaultRoot,
+    required AkashaItem item,
+    required bool useWorksLayout,
+  }) =>
+      resolveNewPath(
+        vaultRoot: vaultRoot,
+        item: item,
+        useWorksLayout: useWorksLayout,
+      );
 
   /// 삭제 시 시도할 경로 (filePath 우선, 없으면 legacy + works 레이아웃).
   static List<String> resolveDeleteCandidates({
@@ -28,6 +41,7 @@ abstract final class VaultWorkJournalPaths {
       return [filePath];
     }
     final safeTitle = _makeSafeFilename(title);
+    // TODO(remove): 첫 경로는 구 레이아웃 — 마이그레이션 완료 후 works 경로만 남길 것.
     return [
       p.join(vaultRoot, category.name, '$safeTitle.md'),
       p.join(vaultRoot, 'works', category.name, '$safeTitle.md'),

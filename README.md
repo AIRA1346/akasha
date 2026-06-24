@@ -6,6 +6,8 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 **1차 출시 목표:** Steam (Windows) · **v1 목표 시점:** 2026년 3분기
 
+> **구현 현황 SSOT:** 코드·레지스트리의 **현재 상태**는 [docs/active/CURRENT_STATE.md](docs/active/CURRENT_STATE.md)만 기준으로 삼습니다. README·ROADMAP·PROJECT_STATUS의 수치·게이트는 보조 참고입니다.
+
 상세 마일스톤·백로그는 [ROADMAP.md](ROADMAP.md)를 참고하세요.
 
 ---
@@ -32,9 +34,9 @@ AKASHA는 단순한 미디어 감상 기록(트래커) 앱을 넘어, 유저가 
 
 | 항목 | 비고 |
 |------|------|
-| 오늘의 회상 카드 | 코드는 있으나 v1 스토어 설명·마케팅에서 제외 → v1.1 |
-| 타임라인 / 완성 캘린더 | 철학 2번 축, v1 이후 |
-| 취향 기반 추천 (Discover) | 철학 3번 축, v1 이후 |
+| 오늘의 회상 카드 | `FeatureFlags.showRecallCard` — v1.1 |
+| 타임라인 / 완성 캘린더 | `FeatureFlags.showTimeline` — v1 이후 |
+| 취향 기반 추천 (Discover) | `FeatureFlags.showDiscoveryHome` — v1 이후 |
 | TMDB / IGDB 등 외부 API | 저작권·운영 리스크, v1 이후 |
 | Riverpod 대규모 리팩터 | v1 이후 |
 | 모바일 (Android / iOS) | Windows 검증 후 |
@@ -188,6 +190,7 @@ flutter analyze lib/
 flutter test
 dart run tool/ci_registry_check.dart
 dart run tool/preflight_check.dart          # 4종 핵심 gate 일괄
+# 도구 전체 인덱스: tool/README.md
 # G1+ (entryCount > 2500): eager shard만 번들 — ADR-010
 dart run tool/registry_builder.dart --sync-assets --bundle-eager-only
 dart run tool/catalog_scale_baseline.dart --strict   # 번들 모드·15MB 게이트

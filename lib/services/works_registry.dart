@@ -46,6 +46,7 @@ class WorksRegistry {
     _loader.resetLoadedShards();
     await _loader.loadCachedBootstrap();
     final legacyJson = await RegistrySyncService().readCachedRegistry();
+    // TODO(remove): mergeLegacyMonolithicJson — clearLegacyRegistryCache와 동일 조건.
     if (legacyJson != null && legacyJson.isNotEmpty) {
       await _loader.mergeLegacyMonolithicJson(legacyJson);
     }
@@ -214,6 +215,7 @@ class WorksRegistry {
       await _loader.loadCachedBootstrap();
 
       // 레거시 단일 JSON 캐시 하위 호환
+      // TODO(remove): mergeLegacyMonolithicJson — clearLegacyRegistryCache와 동일 조건.
       final legacyJson = await RegistrySyncService().readCachedRegistry();
       if (legacyJson != null && legacyJson.isNotEmpty) {
         await _loader.mergeLegacyMonolithicJson(legacyJson);
