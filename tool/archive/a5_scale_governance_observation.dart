@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
-/// A5 Scale — O8 governance bundle wall-time 관측.
+/// A5 Scale ??O8 governance bundle wall-time 관�?
 ///
-/// Usage: dart run tool/a5_scale_governance_observation.dart [--apply]
+/// Usage: dart run tool/archive/a5_scale_governance_observation.dart [--apply]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_governance_o8.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_governance_o8.json
 
 import 'dart:convert';
 import 'dart:io';
@@ -45,7 +45,7 @@ void main(List<String> args) {
 
     final ok = r.exitCode == 0;
     print(
-      '${ok ? "PASS" : "FAIL"} ${step.$1} — ${sw.elapsedMilliseconds}ms (exit ${r.exitCode})',
+      '${ok ? "PASS" : "FAIL"} ${step.$1} ??${sw.elapsedMilliseconds}ms (exit ${r.exitCode})',
     );
     results.add({
       'tool': step.$1,
@@ -90,7 +90,7 @@ void main(List<String> args) {
     out.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(report)}\n');
     print('Wrote ${out.path}');
   } else {
-    print('\nDry-run — pass --apply to write report');
+    print('\nDry-run ??pass --apply to write report');
   }
 }
 

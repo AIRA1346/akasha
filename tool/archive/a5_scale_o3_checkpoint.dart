@@ -1,25 +1,25 @@
 // ignore_for_file: avoid_print
-/// A5 Scale — O3 G2 throughput checkpoint 산출 (SD1).
+/// A5 Scale ??O3 G2 throughput checkpoint ?�출 (SD1).
 ///
 /// Usage:
-///   dart run tool/a5_scale_o3_checkpoint.dart [--apply]
-///   dart run tool/a5_scale_o3_checkpoint.dart --as-of 2026-07-09 --apply
+///   dart run tool/archive/a5_scale_o3_checkpoint.dart [--apply]
+///   dart run tool/archive/a5_scale_o3_checkpoint.dart --as-of 2026-07-09 --apply
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_o3_checkpoint.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_o3_checkpoint.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-/// Scale @410 baseline 이후 Maintainer net insert (frozen day-0 session).
+/// Scale @410 baseline ?�후 Maintainer net insert (frozen day-0 session).
 const maintainerNetFrom410 = 12;
 
 /// SD1.1 · SD1.2
 final clockStart = DateTime.utc(2026, 6, 9);
 final checkpointDate = DateTime.utc(2026, 7, 9);
 
-/// Discovery G2 가설 (월 net insert)
+/// Discovery G2 가??(??net insert)
 const g2RateLowPerMonth = 3000;
 const g2RateHighPerMonth = 5000;
 
@@ -65,7 +65,7 @@ void main(List<String> args) {
     'currentWorks': entryCount,
     'maintainerNetFrom410': maintainerNetFrom410,
     'expansionNetFrom410': entryCount - 410 - maintainerNetFrom410,
-    'o3Excluded': 'Pilot 402→410 · Expansion batch5/6/7',
+    'o3Excluded': 'Pilot 402??10 · Expansion batch5/6/7',
     'monthlyRateMaintainer': monthlyRate,
     'monthlyRateRounded': monthlyRate?.toStringAsFixed(1),
     'g2HypothesisPerMonth': {'low': g2RateLowPerMonth, 'high': g2RateHighPerMonth},
@@ -73,7 +73,7 @@ void main(List<String> args) {
     'sd26Hold': true,
     'formula': 'maintainer_net / elapsed_days * 30',
     'note': elapsedDays == 0
-        ? 'day-0 세션 — rate는 elapsed>0 또는 checkpoint에서 산출'
+        ? 'day-0 ?�션 ??rate??elapsed>0 ?�는 checkpoint?�서 ?�출'
         : null,
   };
 
@@ -98,7 +98,7 @@ void main(List<String> args) {
     out.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(report)}\n');
     print('Wrote ${out.path}');
   } else {
-    print('Dry-run — pass --apply to write report');
+    print('Dry-run ??pass --apply to write report');
   }
 }
 

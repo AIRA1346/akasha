@@ -1,18 +1,18 @@
 // ignore_for_file: avoid_print
-/// A5 Scale — O9 semantic enrich spot-check (syntactic gate 밖).
+/// A5 Scale ??O9 semantic enrich spot-check (syntactic gate �?.
 ///
-/// Usage: dart run tool/a5_scale_semantic_spotcheck.dart [--apply]
+/// Usage: dart run tool/archive/a5_scale_semantic_spotcheck.dart [--apply]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_semantic_o9.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_semantic_o9.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
+import '../coverage_quality.dart';
 
-/// SD4.2 cohort — Scale·Expansion enrich 경로 20건.
+/// SD4.2 cohort ??Scale·Expansion enrich 경로 20�?
 const _cohortWorkIds = [
   'sub_webtoon_scale-supply-b1a_2026',
   'sub_game_scale-supply-b1b_2026',
@@ -104,7 +104,7 @@ void main(List<String> args) {
     final f = checkSemanticJa(work);
     if (f != null) {
       findings.add(f);
-      print('FLAG ${f.workId} — ${f.issue.name}');
+      print('FLAG ${f.workId} ??${f.issue.name}');
     } else {
       print('OK   $workId');
     }
@@ -133,7 +133,7 @@ void main(List<String> args) {
         )
         .toList(),
     'note':
-        'Heuristic only — KPI PASS와 semantic 신뢰 분리 측정. 인적 spot-check는 flagged=0일 때도 SD4.2 주기 유지.',
+        'Heuristic only ??KPI PASS?� semantic ?�뢰 분리 측정. ?�적 spot-check??flagged=0???�도 SD4.2 주기 ?��?.',
   };
 
   print('\nFlagged: ${findings.length} / ${_cohortWorkIds.length - missing}');
@@ -147,7 +147,7 @@ void main(List<String> args) {
     out.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(report)}\n');
     print('Wrote ${out.path}');
   } else {
-    print('Dry-run — pass --apply to write report');
+    print('Dry-run ??pass --apply to write report');
   }
 }
 

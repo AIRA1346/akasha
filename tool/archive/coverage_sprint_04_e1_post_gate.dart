@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B-4 — E1 cohort post Quality Gate (E1–E5) reclassification.
+/// Sprint 04 Phase B-4 ??E1 cohort post Quality Gate (E1?�E5) reclassification.
 ///
-/// Usage: dart run tool/coverage_sprint_04_e1_post_gate.dart [--write-json]
+/// Usage: dart run tool/archive/coverage_sprint_04_e1_post_gate.dart [--write-json]
 ///
 /// Read-only · no apply · no registry mutation.
 
@@ -11,7 +11,7 @@ import 'dart:math' as math;
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
+import '../coverage_quality.dart';
 
 const _e4Threshold = 0.15;
 
@@ -65,7 +65,7 @@ void main(List<String> args) {
       };
     }
 
-    // E5 — same predicate as E3 for attach-time cohort (virtual attach)
+    // E5 ??same predicate as E3 for attach-time cohort (virtual attach)
     if (dupOwners.isNotEmpty) {
       triggered.add('E5');
       ruleDetails['E5'] = {
@@ -207,9 +207,9 @@ bool _crossGameTitleMismatch(String titleKo, String titleEn) {
   final ko = titleKo.toLowerCase();
   if (en.isEmpty) return false;
   const mismatches = [
-    (ko: '니케', enNeedle: 'wukong'),
-    (ko: '블루 아카이브', enNeedle: 'songs of conquest'),
-    (ko: '파이널 판타지', enNeedle: 'site error'),
+    (ko: '?��?', enNeedle: 'wukong'),
+    (ko: '블루 ?�카?�브', enNeedle: 'songs of conquest'),
+    (ko: '?�이???��?지', enNeedle: 'site error'),
   ];
   for (final m in mismatches) {
     if (ko.contains(m.ko) && en.contains(m.enNeedle)) return true;
@@ -217,7 +217,7 @@ bool _crossGameTitleMismatch(String titleKo, String titleEn) {
   return false;
 }
 
-/// Token overlap: |A ∩ B| / max(|A|, |B|) on alphanumeric tokens (len ≥ 2).
+/// Token overlap: |A ??B| / max(|A|, |B|) on alphanumeric tokens (len ??2).
 double _titleTokenOverlap(String titleKo, String titleEn) {
   final a = _tokens(titleKo);
   final b = _tokens(titleEn);

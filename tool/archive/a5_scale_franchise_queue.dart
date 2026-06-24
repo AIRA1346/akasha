@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// A5 Scale — O12 franchise 수동 큐 스냅샷.
+/// A5 Scale ??O12 franchise ?�동 ???�냅??
 ///
-/// Usage: dart run tool/a5_scale_franchise_queue.dart [--apply]
+/// Usage: dart run tool/archive/a5_scale_franchise_queue.dart [--apply]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_franchise_o12.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/scale_franchise_o12.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-/// SD4.3 — franchise 클러스터 1건 수동 연결 추정 (maintainer-minutes).
+/// SD4.3 ??franchise ?�러?�터 1�??�동 ?�결 추정 (maintainer-minutes).
 const _minutesPerCluster = 15.0;
 
 void main(List<String> args) {
@@ -131,7 +131,7 @@ void main(List<String> args) {
     out.writeAsStringSync('${const JsonEncoder.withIndent('  ').convert(report)}\n');
     print('Wrote ${out.path}');
   } else {
-    print('Dry-run — pass --apply to write report');
+    print('Dry-run ??pass --apply to write report');
   }
 }
 

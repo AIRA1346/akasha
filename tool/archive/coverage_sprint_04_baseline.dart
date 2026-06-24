@@ -1,18 +1,18 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase A — externalId baseline measurement (read-only).
+/// Sprint 04 Phase A ??externalId baseline measurement (read-only).
 ///
-/// Usage: dart run tool/coverage_sprint_04_baseline.dart [--write-json]
+/// Usage: dart run tool/archive/coverage_sprint_04_baseline.dart [--write-json]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_baseline.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_baseline.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
-import 'poster_verification.dart';
-import 'quality_loop_utils.dart';
+import '../coverage_quality.dart';
+import '../poster_verification.dart';
+import '../quality_loop_utils.dart';
 
 const g2TargetRate = 0.50;
 
@@ -113,7 +113,7 @@ void main(List<String> args) {
     'byCategory': categoryTable,
     'providerDistribution': {
       'worksWithProvider': providerWorks,
-      'note': '작품 단위 — 복수 provider 보유 시 각 provider에 1회 집계',
+      'note': '?�품 ?�위 ??복수 provider 보유 ??�?provider??1??집계',
     },
     'cohort': {
       'E1_steam': {

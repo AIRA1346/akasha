@@ -2,9 +2,9 @@
 /// Sprint 04 externalId G2 enrich runner.
 ///
 /// Usage:
-///   dart run tool/coverage_sprint_04_external_id.dart --dry-run
-///   dart run tool/coverage_sprint_04_external_id.dart --apply --phase tmdb
-///   dart run tool/coverage_sprint_04_external_id.dart --apply --phase steam --batch-size 50
+///   dart run tool/archive/coverage_sprint_04_external_id.dart --dry-run
+///   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase tmdb
+///   dart run tool/archive/coverage_sprint_04_external_id.dart --apply --phase steam --batch-size 50
 ///
 /// Scope:
 /// - E2 TMDB poster cohort: posterPath resolved through tmdb_poster_cache.json.
@@ -16,8 +16,8 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'poster_verification.dart';
-import 'quality_loop_utils.dart';
+import '../poster_verification.dart';
+import '../quality_loop_utils.dart';
 
 const _targetExternalIdCount = 201;
 

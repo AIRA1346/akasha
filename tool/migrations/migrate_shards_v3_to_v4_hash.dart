@@ -1,17 +1,17 @@
 // ignore_for_file: avoid_print
-/// v3 슬러그 샤드 → v4 해시 샤드 (`hash(wk_) % 256`)
+/// v3 ?�러�??�드 ??v4 ?�시 ?�드 (`hash(wk_) % 256`)
 ///
 /// Usage:
-///   dart run tool/migrate_shards_v3_to_v4_hash.dart
-///   dart run tool/migrate_shards_v3_to_v4_hash.dart --apply --sync-assets
+///   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart
+///   dart run tool/migrations/migrate_shards_v3_to_v4_hash.dart --apply --sync-assets
 ///
-/// 산출물: `shards/{category}/{00..ff}.json` (sparse — 작품 있는 버킷만)
+/// ?�출�? `shards/{category}/{00..ff}.json` (sparse ???�품 ?�는 버킷�?
 
 import 'dart:convert';
 import 'dart:io';
 
-import 'registry_hash_utils.dart';
-import 'wk_id_utils.dart';
+import '../registry_hash_utils.dart';
+import '../wk_id_utils.dart';
 
 void main(List<String> args) async {
   final apply = args.contains('--apply');
@@ -80,7 +80,7 @@ void main(List<String> args) async {
   }
 
   if (!apply) {
-    print('\nDry-run — pass --apply to write v4 shards');
+    print('\nDry-run ??pass --apply to write v4 shards');
     exit(0);
   }
 

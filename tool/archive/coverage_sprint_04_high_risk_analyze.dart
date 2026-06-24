@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B-2 — HIGH risk disposition analysis (read-only).
+/// Sprint 04 Phase B-2 ??HIGH risk disposition analysis (read-only).
 ///
-/// Usage: dart run tool/coverage_sprint_04_high_risk_analyze.dart [--write-json]
+/// Usage: dart run tool/archive/coverage_sprint_04_high_risk_analyze.dart [--write-json]
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
-import 'poster_verification.dart';
-import 'quality_loop_utils.dart';
+import '../coverage_quality.dart';
+import '../poster_verification.dart';
+import '../quality_loop_utils.dart';
 
 const _highRiskIds = [
   'wk_000000144',
@@ -152,8 +152,8 @@ Map<String, dynamic> _classify({
 
   final promoEn = RegExp(r'^save\s+\d+%\s+on\s+', caseSensitive: false).hasMatch(titleEn.trim());
   final siteError = titleEn.toLowerCase().contains('site error');
-  final crossGame = (titleKo.contains('니케') && titleEn.toLowerCase().contains('wukong')) ||
-      (titleKo.contains('블루 아카이브') && titleEn.toLowerCase().contains('songs of conquest')) ||
+  final crossGame = (titleKo.contains('?��?') && titleEn.toLowerCase().contains('wukong')) ||
+      (titleKo.contains('블루 ?�카?�브') && titleEn.toLowerCase().contains('songs of conquest')) ||
       siteError;
 
   if (promoEn || siteError || crossGame) {
@@ -215,7 +215,7 @@ Map<String, dynamic> _classify({
   if (workId == 'wk_000000270') {
     return (
       'MANUAL_FIX',
-      'titles.en Site Error — fix titles/poster source before externalId attach.',
+      'titles.en Site Error ??fix titles/poster source before externalId attach.',
     );
   }
   if (workId == 'wk_000000266') {

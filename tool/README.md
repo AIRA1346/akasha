@@ -36,21 +36,17 @@ Wikidata·trial 채널 등 **카탈로그 확장** 배치. SSOT: `scripts/discov
 | `discovery/wikidata_ko_trial.dart` | wikidata_ko 채널 trial |
 | `discovery/trial_apply.dart` | trial 적용·merge |
 
-## 마이그레이션 (`migrations/` — 정리 예정)
+## 마이그레이션 (`migrations/`)
 
-v3→v4 등 **스키마 전환** 스크립트. 전환 완료 후 `archive/`로 이동.
+v3→v4 등 **완료된 스키마 전환** 스크립트. 상세 목록: [`migrations/README.md`](migrations/README.md)
 
-| 스크립트 | 비고 |
-|----------|------|
-| `migrate_registry_v3.dart` | v3 monolithic → 샤드 |
-| `migrate_shards_v3_to_v4_hash.dart` | v4 해시 샤딩 |
-| `migrate_wk_pad9.dart` | wk_ ID 패딩 |
-| `sync_legacy_works_registry.dart` | 구 works_registry 동기화 |
-| `migrate_manga_to_webtoon.dart` | 카테고리 마이그레이션 |
+```bash
+dart run tool/migrations/migrate_registry_v3.dart --dry-run
+```
 
-## 아카이브 (`archive/` — 정리 예정)
+## 아카이브 (`archive/`)
 
-완료된 스프린트·실험 배치. **새 작업에 사용하지 마세요.**
+완료된 스프린트·실험 배치. **새 작업에 사용하지 마세요.** 상세 목록: [`archive/README.md`](archive/README.md)
 
 | 패턴 | 예시 |
 |------|------|

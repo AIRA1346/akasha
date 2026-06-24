@@ -1,16 +1,16 @@
 // ignore_for_file: avoid_print
-/// Sprint 04 Phase B — E1 Steam cohort quality audit (read-only).
+/// Sprint 04 Phase B ??E1 Steam cohort quality audit (read-only).
 ///
-/// Usage: dart run tool/coverage_sprint_04_e1_audit.dart [--write-json]
+/// Usage: dart run tool/archive/coverage_sprint_04_e1_audit.dart [--write-json]
 ///
-/// 산출: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_e1_audit.json
+/// ?�출: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_04_e1_audit.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
+import '../coverage_quality.dart';
 
 void main(List<String> args) {
   final writeJson = args.contains('--write-json');
@@ -265,9 +265,9 @@ bool _crossGameTitleMismatch(String titleKo, String titleEn) {
   final ko = titleKo.toLowerCase();
   if (en.isEmpty) return false;
   const mismatches = [
-    (ko: '니케', enNeedle: 'wukong'),
-    (ko: '블루 아카이브', enNeedle: 'songs of conquest'),
-    (ko: '파이널 판타지', enNeedle: 'site error'),
+    (ko: '?��?', enNeedle: 'wukong'),
+    (ko: '블루 ?�카?�브', enNeedle: 'songs of conquest'),
+    (ko: '?�이???��?지', enNeedle: 'site error'),
   ];
   for (final m in mismatches) {
     if (ko.contains(m.ko) && en.contains(m.enNeedle)) return true;

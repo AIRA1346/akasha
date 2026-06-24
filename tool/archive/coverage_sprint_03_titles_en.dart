@@ -1,26 +1,26 @@
 // ignore_for_file: avoid_print
-/// Coverage Sprint 03 — titles.en 50% milestone (+101 works) + Economics 실측.
+/// Coverage Sprint 03 ??titles.en 50% milestone (+101 works) + Economics ?�측.
 ///
 /// Usage:
-///   dart run tool/coverage_sprint_03_titles_en.dart                    # dry-run cohort
-///   dart run tool/coverage_sprint_03_titles_en.dart --apply            # enrich + report
-///   dart run tool/coverage_sprint_03_titles_en.dart --remediate --apply # fix invalid en
+///   dart run tool/archive/coverage_sprint_03_titles_en.dart                    # dry-run cohort
+///   dart run tool/archive/coverage_sprint_03_titles_en.dart --apply            # enrich + report
+///   dart run tool/archive/coverage_sprint_03_titles_en.dart --remediate --apply # fix invalid en
 ///
-/// 산출물: akasha-db/pipeline/artifacts/coverage_dashboard/sprint_03_report.json
+/// ?�출�? akasha-db/pipeline/artifacts/coverage_dashboard/sprint_03_report.json
 
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
-import 'coverage_quality.dart';
-import 'dedupe_utils.dart';
-import 'poster_verification.dart';
+import '../coverage_quality.dart';
+import '../dedupe_utils.dart';
+import '../poster_verification.dart';
 
 const _milestoneCount = 101;
 const _targetRate = 0.50;
 
-/// Sprint 02 보정 단가 (maintainer-minutes / work)
+/// Sprint 02 보정 ?��? (maintainer-minutes / work)
 const _minutesAuto = 2.0;
 const _minutesSemi = 5.0;
 const _minutesManual = 15.0;
@@ -37,7 +37,7 @@ void main(List<String> args) async {
   final franchisePeers = _loadFranchisePeers(root);
   _primePeerEnCache(root);
   final cohort = remediate ? _selectRemediateCohort(root) : _selectCohort(root);
-  print('Sprint 03 — titles.en 50% (+$_milestoneCount works)${remediate ? ' [remediate]' : ''}');
+  print('Sprint 03 ??titles.en 50% (+$_milestoneCount works)${remediate ? ' [remediate]' : ''}');
   print('  cohort: ${cohort.length} works');
   print('  tiers: ${_countBy(cohort, (c) => c.tier)}');
   print('  categories: ${_countBy(cohort, (c) => c.category)}');
@@ -445,7 +445,7 @@ String _humanizeSlug(String slug) {
 
 String? _englishFromDescription(Map<String, dynamic> work) {
   final desc = work['description']?.toString() ?? '';
-  final m = RegExp(r'^(.+?)\s*[—–-]\s*Steam').firstMatch(desc);
+  final m = RegExp(r'^(.+?)\s*[?��?]\s*Steam').firstMatch(desc);
   if (m != null) {
     final t = m.group(1)!.trim();
     if (_isMostlyLatin(t)) return t;
@@ -530,7 +530,7 @@ void _primePeerEnCache(Directory root) {
   }
 }
 
-/// Sprint 03 cohort 잔여 수동 매핑 (unresolved fallback).
+/// Sprint 03 cohort ?�여 ?�동 매핑 (unresolved fallback).
 const _curatedTitlesEn = <String, String>{
   'wk_000000253': '86 -Eighty-Six-',
   'wk_000004322': 'X (2022 film)',
