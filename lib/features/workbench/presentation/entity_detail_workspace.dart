@@ -18,7 +18,6 @@ import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../services/record_link_navigator.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
@@ -31,6 +30,7 @@ import 'entity_detail_link_pick_ops.dart';
 import 'workbench_link_pick_ops.dart';
 import 'entity_detail_vault_sync.dart';
 import 'work_detail_vault_sync.dart';
+import 'workbench_record_navigation.dart';
 import 'entity_detail_connections_panel.dart';
 import 'entity_detail_info_panel.dart';
 import 'workbench_autosave_scheduler.dart';
@@ -687,101 +687,27 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     final catalog = widget.userCatalog;
     if (catalog == null) return;
 
-    await RecordLinkNavigator.openRecordPath(
-      context,
+    await WorkbenchRecordNavigation.openIncoming(
+      context: context,
       storagePath: path,
-      vaultItems: const [],
+      vaultItems: widget.vaultItems,
       userCatalog: catalog,
-      onOpenWork: (item) {
-        if (widget.onRecordOpenWork != null) {
-          widget.onRecordOpenWork!(item);
-          return;
-        }
-        widget.onWikiLinkTap?.call(
-          ParsedRecordLink(
-            kind: RecordLinkKind.explicitId,
-            raw: '[[${item.workId}]]',
-            targetEntityId: item.workId,
-          ),
-        );
-      },
-      onOpenEntity: (entity) async {
-        if (widget.onRecordOpenEntity != null) {
-          await widget.onRecordOpenEntity!(entity);
-          return;
-        }
-        widget.onWikiLinkTap?.call(
-          ParsedRecordLink(
-            kind: RecordLinkKind.explicitId,
-            raw: '[[${entity.entityId}]]',
-            targetEntityId: entity.entityId,
-          ),
-        );
-      },
+      onRecordOpenWork: widget.onRecordOpenWork,
+      onRecordOpenEntity: widget.onRecordOpenEntity,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
   }
 
   Future<void> _openSameDay(SameDayRecordRef ref) async {
-    final catalog = widget.userCatalog;
-    if (ref.kind == RecordKind.workJournal && catalog != null) {
-      await RecordLinkNavigator.openRecordPath(
-        context,
-        storagePath: ref.storagePath,
-        vaultItems: const [],
-        userCatalog: catalog,
-        onOpenWork: (item) {
-          if (widget.onRecordOpenWork != null) {
-            widget.onRecordOpenWork!(item);
-            return;
-          }
-          widget.onWikiLinkTap?.call(
-            ParsedRecordLink(
-              kind: RecordLinkKind.explicitId,
-              raw: '[[${item.workId}]]',
-              targetEntityId: item.workId,
-            ),
-          );
-        },
-        onOpenEntity: (entity) async {
-          if (widget.onRecordOpenEntity != null) {
-            await widget.onRecordOpenEntity!(entity);
-            return;
-          }
-          widget.onWikiLinkTap?.call(
-            ParsedRecordLink(
-              kind: RecordLinkKind.explicitId,
-              raw: '[[${entity.entityId}]]',
-              targetEntityId: entity.entityId,
-            ),
-          );
-        },
-      );
-      return;
-    }
-
-    if (!mounted) return;
-    await showDialog<void>(
+    await WorkbenchRecordNavigation.openSameDay(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text('${ref.kindLabel} · ${ref.title}'),
-        content: Text(
-          '${_formatWhen(ref.when.toLocal())}\n${ref.storagePath}',
-          style: const TextStyle(fontSize: 12),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('닫기'),
-          ),
-        ],
-      ),
+      ref: ref,
+      vaultItems: widget.vaultItems,
+      userCatalog: widget.userCatalog,
+      onRecordOpenWork: widget.onRecordOpenWork,
+      onRecordOpenEntity: widget.onRecordOpenEntity,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
-  }
-
-  String _formatWhen(DateTime dt) {
-    final h = dt.hour.toString().padLeft(2, '0');
-    final m = dt.minute.toString().padLeft(2, '0');
-    return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')} $h:$m';
   }
 
   Future<void> _confirmDelete() async {

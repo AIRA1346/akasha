@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../core/archiving/record_link.dart';
 import '../../../core/archiving/record_kind.dart';
+import '../../../core/archiving/record_link.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../core/ports/record_link_port.dart';
@@ -14,12 +13,9 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
-import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../utils/work_link_neighbors.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
-import '../../../services/record_link_navigator.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
@@ -31,9 +27,10 @@ import 'workbench_link_pick_ops.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
+import 'work_detail_connections_coordinator.dart';
 import 'work_detail_vault_sync.dart';
 import 'workbench_autosave_scheduler.dart';
-import 'workbench_record_links_loader.dart';
+import 'workbench_record_navigation.dart';
 import 'widgets/workbench_breadcrumb.dart';
 import 'widgets/workbench_panel_styles.dart';
 import 'widgets/work_sanctum_section_editor.dart';
@@ -125,27 +122,33 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   SanctumPageView _pageView = SanctumPageView.preview;
 
   StreamSubscription<void>? _vaultSub;
-  final WorkDetailVaultDiskSync _vaultDiskSync = WorkDetailVaultDiskSync();
+  late final WorkDetailConnectionsCoordinator _connections;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
   bool _suppressPersist = false;
 
-  List<String> _incomingPaths = const [];
-  bool _loadingIncoming = false;
-  int _staleLabelRecordCount = 0;
-  List<SameDayRecordRef> _sameDayRefs = const [];
-  bool _loadingSameDay = false;
-  WorkLinkNeighbors _linkNeighbors = const WorkLinkNeighbors();
-  bool _loadingLinkNeighbors = false;
-
   final GlobalKey<WorkSanctumSectionEditorState> _sectionEditorKey =
       GlobalKey<WorkSanctumSectionEditorState>();
 
-  bool get _externalChangePending => _vaultDiskSync.externalChangePending;
+  bool get _externalChangePending => _connections.externalChangePending;
+
+  void _refreshRecordLinks() {
+    _connections.refreshAll(
+      work: _item,
+      userCatalog: widget.userCatalog,
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
+  }
 
   @override
   void initState() {
     super.initState();
+    _connections = WorkDetailConnectionsCoordinator(
+      onStateChanged: () {
+        if (mounted) setState(() {});
+      },
+    );
     _titleCtrl = TextEditingController();
     _posterUrlCtrl = TextEditingController();
     _bodyCtrl = TextEditingController();
@@ -155,10 +158,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
       _onVaultDiskChanged();
     });
-    _refreshDiskMtime();
-    _loadIncoming();
-    _loadSameDay();
-    _loadLinkNeighbors();
+    _connections.refreshDiskMtime(_item.filePath);
+    _refreshRecordLinks();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _maybeRunPendingEntityLinkPick();
     });
@@ -200,34 +201,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     }
   }
 
-  Future<void> _loadLinkNeighbors() async {
-    final catalog = widget.userCatalog;
-    final index = widget.linkIndex;
-    if (catalog == null || index == null) return;
-    setState(() => _loadingLinkNeighbors = true);
-    try {
-      final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
-        linkIndex: index,
-        vaultItems: widget.vaultItems,
-      );
-      final neighbors = await fetchWorkLinkNeighbors(
-        work: _item,
-        userCatalog: catalog,
-        discovery: discovery,
-        linkIndex: index,
-        vaultItems: widget.vaultItems,
-      );
-      if (mounted) {
-        setState(() {
-          _linkNeighbors = neighbors;
-          _loadingLinkNeighbors = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingLinkNeighbors = false);
-    }
-  }
-
   void _openLinkedEntity(UserCatalogEntity entity) {
     widget.onWikiLinkTap?.call(
       ParsedRecordLink(
@@ -246,46 +219,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         targetEntityId: work.workId,
       ),
     );
-  }
-
-  Future<void> _loadSameDay() async {
-    setState(() => _loadingSameDay = true);
-    try {
-      final refs = await WorkbenchRecordLinksLoader.loadSameDay(
-        anchor: _item.addedAt,
-        excludePath: _item.filePath,
-      );
-      if (mounted) {
-        setState(() {
-          _sameDayRefs = refs;
-          _loadingSameDay = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingSameDay = false);
-    }
-  }
-
-  Future<void> _loadIncoming() async {
-    final index = widget.linkIndex;
-    if (index == null) return;
-    setState(() => _loadingIncoming = true);
-    try {
-      final snapshot = await WorkbenchRecordLinksLoader.loadIncoming(
-        linkIndex: index,
-        recordEntityId: _item.workId,
-        currentTitle: _item.title,
-      );
-      if (mounted) {
-        setState(() {
-          _incomingPaths = snapshot.paths;
-          _staleLabelRecordCount = snapshot.staleLabelRecordCount;
-          _loadingIncoming = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingIncoming = false);
-    }
   }
 
   void _bindSaveHandler() {
@@ -322,15 +255,18 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     }
     _loadDraftFromItem();
     _refreshFullFileEditor();
-    _refreshDiskMtime();
-    _loadLinkNeighbors();
+    _connections.refreshDiskMtime(_item.filePath);
+    _connections.loadLinkNeighbors(
+      work: _item,
+      userCatalog: widget.userCatalog,
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
   }
-
-  void _refreshDiskMtime() => _vaultDiskSync.refreshDiskMtime(_item.filePath);
 
   Future<void> _onVaultDiskChanged() async {
     if (!mounted) return;
-    final action = _vaultDiskSync.evaluateFileChange(
+    final action = _connections.evaluateVaultDiskChange(
       filePath: _item.filePath,
       isSaving: _isSaving,
       isDirty: widget.isDirty,
@@ -347,27 +283,25 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
-    final path = _item.filePath;
-    if (path == null || path.isEmpty) return;
     try {
-      final content = await File(path).readAsString();
-      final reloaded = MarkdownParser.deserialize(content, _item.title);
-      reloaded.filePath = path;
-      setState(() => _vaultDiskSync.externalChangePending = false);
+      final reloaded = await _connections.reloadWorkFromDisk(current: _item);
+      if (reloaded == null) {
+        throw StateError('reload failed');
+      }
+      if (!mounted) return;
       _applyItem(reloaded, resetPageView: false);
       widget.onDirtyChanged(false);
       widget.onSaved(reloaded, silent: true, dirty: false);
-      _refreshDiskMtime();
       if (!silent && mounted) {
         _showSnack('디스크에서 파일을 다시 불러왔습니다.');
       }
     } catch (e) {
-      if (mounted) _showSnack('파일 다시 불러오기 실패: $e');
+      if (mounted && !silent) _showSnack('파일 다시 불러오기 실패: $e');
     }
   }
 
   void _dismissExternalChange() {
-    setState(() => _vaultDiskSync.dismissExternalChange(_item.filePath));
+    _connections.dismissExternalChange(_item.filePath);
   }
 
   @override
@@ -376,8 +310,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     if (oldWidget.tabId != widget.tabId) {
       _applyItem(widget.item, resetPageView: true);
       WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
-      _loadIncoming();
-      _loadSameDay();
+      _refreshRecordLinks();
       return;
     }
     if (!widget.isDirty &&
@@ -387,8 +320,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         resetPageView: false,
         preserveBodyEditor: _pageView == SanctumPageView.body,
       );
-      _loadIncoming();
-      _loadSameDay();
+      _connections.loadIncoming(work: _item, linkIndex: widget.linkIndex);
+      _connections.loadSameDay(work: _item);
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -459,7 +392,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       bodyCtrl: _bodyCtrl,
       syncBodyToItem: () => WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl),
       markDirty: _markDirty,
-      reloadLinkNeighbors: _loadLinkNeighbors,
+      reloadLinkNeighbors: () => _connections.loadLinkNeighbors(
+        work: _item,
+        userCatalog: widget.userCatalog,
+        linkIndex: widget.linkIndex,
+        vaultItems: widget.vaultItems,
+      ),
     );
   }
 
@@ -671,7 +609,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _loadDraftFromItem();
         _refreshFullFileEditor();
         _lastSavedAt = DateTime.now();
-        _refreshDiskMtime();
+        _connections.refreshDiskMtime(_item.filePath);
       });
       if (!stillDirty) {
         widget.onDirtyChanged(false);
@@ -679,9 +617,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         _scheduleAutoSave();
       }
       widget.onSaved(_item, silent: silent, dirty: stillDirty);
-      _loadIncoming();
-      _loadSameDay();
-      _loadLinkNeighbors();
+      _refreshRecordLinks();
       if (!silent) {
         _showSnack(WorkDetailArchiveOps.saveSuccessMessage(saved));
       }
@@ -696,101 +632,27 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final catalog = widget.userCatalog;
     if (catalog == null) return;
 
-    await RecordLinkNavigator.openRecordPath(
-      context,
+    await WorkbenchRecordNavigation.openIncoming(
+      context: context,
       storagePath: path,
       vaultItems: widget.vaultItems,
       userCatalog: catalog,
-      onOpenWork: (item) {
-        if (widget.onRecordOpenWork != null) {
-          widget.onRecordOpenWork!(item);
-          return;
-        }
-        widget.onWikiLinkTap?.call(
-          ParsedRecordLink(
-            kind: RecordLinkKind.explicitId,
-            raw: '[[${item.workId}]]',
-            targetEntityId: item.workId,
-          ),
-        );
-      },
-      onOpenEntity: (entity) async {
-        if (widget.onRecordOpenEntity != null) {
-          await widget.onRecordOpenEntity!(entity);
-          return;
-        }
-        widget.onWikiLinkTap?.call(
-          ParsedRecordLink(
-            kind: RecordLinkKind.explicitId,
-            raw: '[[${entity.entityId}]]',
-            targetEntityId: entity.entityId,
-          ),
-        );
-      },
+      onRecordOpenWork: widget.onRecordOpenWork,
+      onRecordOpenEntity: widget.onRecordOpenEntity,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
   }
 
   Future<void> _openSameDay(SameDayRecordRef ref) async {
-    final catalog = widget.userCatalog;
-    if (ref.kind == RecordKind.workJournal && catalog != null) {
-      await RecordLinkNavigator.openRecordPath(
-        context,
-        storagePath: ref.storagePath,
-        vaultItems: widget.vaultItems,
-        userCatalog: catalog,
-        onOpenWork: (item) {
-          if (widget.onRecordOpenWork != null) {
-            widget.onRecordOpenWork!(item);
-            return;
-          }
-          widget.onWikiLinkTap?.call(
-            ParsedRecordLink(
-              kind: RecordLinkKind.explicitId,
-              raw: '[[${item.workId}]]',
-              targetEntityId: item.workId,
-            ),
-          );
-        },
-        onOpenEntity: (entity) async {
-          if (widget.onRecordOpenEntity != null) {
-            await widget.onRecordOpenEntity!(entity);
-            return;
-          }
-          widget.onWikiLinkTap?.call(
-            ParsedRecordLink(
-              kind: RecordLinkKind.explicitId,
-              raw: '[[${entity.entityId}]]',
-              targetEntityId: entity.entityId,
-            ),
-          );
-        },
-      );
-      return;
-    }
-
-    if (!mounted) return;
-    await showDialog<void>(
+    await WorkbenchRecordNavigation.openSameDay(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text('${ref.kindLabel} · ${ref.title}'),
-        content: Text(
-          '${_formatWhen(ref.when.toLocal())}\n${ref.storagePath}',
-          style: const TextStyle(fontSize: 12),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('닫기'),
-          ),
-        ],
-      ),
+      ref: ref,
+      vaultItems: widget.vaultItems,
+      userCatalog: widget.userCatalog,
+      onRecordOpenWork: widget.onRecordOpenWork,
+      onRecordOpenEntity: widget.onRecordOpenEntity,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
-  }
-
-  String _formatWhen(DateTime dt) {
-    final h = dt.hour.toString().padLeft(2, '0');
-    final m = dt.minute.toString().padLeft(2, '0');
-    return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')} $h:$m';
   }
 
   void _showSnack(String message) {
@@ -901,12 +763,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 isDirty: widget.isDirty,
                 lastSavedAt: _lastSavedAt,
                 showAddToLibrary: widget.onAddToLibrary != null,
-                loadingIncoming: _loadingIncoming,
-                incomingPaths: _incomingPaths,
-                staleLabelRecordCount: _staleLabelRecordCount,
-                onRefreshIncoming: _loadIncoming,
-                loadingSameDay: _loadingSameDay,
-                sameDayRefs: _sameDayRefs,
+                loadingIncoming: _connections.loadingIncoming,
+                incomingPaths: _connections.incomingPaths,
+                staleLabelRecordCount: _connections.staleLabelRecordCount,
+                onRefreshIncoming: () => _connections.loadIncoming(
+                  work: _item,
+                  linkIndex: widget.linkIndex,
+                ),
+                loadingSameDay: _connections.loadingSameDay,
+                sameDayRefs: _connections.sameDayRefs,
                 onOpenIncoming: _openIncoming,
                 onOpenSameDay: _openSameDay,
                 onInfoWidthChanged: widget.onInfoWidthChanged,
@@ -924,8 +789,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 canDeleteMd: _isArchivedInVault,
                 onDeleteArchive: _confirmDelete,
                 onClose: widget.onClose,
-                linkNeighbors: _linkNeighbors,
-                loadingLinkNeighbors: _loadingLinkNeighbors,
+                linkNeighbors: _connections.linkNeighbors,
+                loadingLinkNeighbors: _connections.loadingLinkNeighbors,
                 onOpenLinkedEntity: _openLinkedEntity,
                 onOpenLinkedWork: _openLinkedWork,
                 onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
@@ -978,8 +843,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         ),
               WorkDetailConnectionsPanel(
                 item: _item,
-                linkNeighbors: _linkNeighbors,
-                loadingLinkNeighbors: _loadingLinkNeighbors,
+                linkNeighbors: _connections.linkNeighbors,
+                loadingLinkNeighbors: _connections.loadingLinkNeighbors,
                 draftTags: _draftTags,
                 onOpenLinkedEntity: _openLinkedEntity,
                 onOpenLinkedWork: _openLinkedWork,
@@ -989,13 +854,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                     ? _requestEntityLinkForType
                     : null,
                 onAddWorkLink: _requestWorkLink,
-                loadingIncoming: _loadingIncoming,
-                incomingPaths: _incomingPaths,
-                staleLabelRecordCount: _staleLabelRecordCount,
-                onRefreshIncoming: _loadIncoming,
+                loadingIncoming: _connections.loadingIncoming,
+                incomingPaths: _connections.incomingPaths,
+                staleLabelRecordCount: _connections.staleLabelRecordCount,
+                onRefreshIncoming: () => _connections.loadIncoming(
+                  work: _item,
+                  linkIndex: widget.linkIndex,
+                ),
                 onOpenIncoming: _openIncoming,
-                loadingSameDay: _loadingSameDay,
-                sameDayRefs: _sameDayRefs,
+                loadingSameDay: _connections.loadingSameDay,
+                sameDayRefs: _connections.sameDayRefs,
                 onOpenSameDay: _openSameDay,
               ),
                   ],
