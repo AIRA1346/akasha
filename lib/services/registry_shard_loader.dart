@@ -22,10 +22,12 @@ class RegistryShardLoader {
   static const String bundledSearchIndexManifestAsset =
       'assets/registry/search_index/manifest.json';
   static const String bundledLegacyAliasesAsset = 'assets/registry/legacy_aliases.json';
+  // TODO(remove): 구 슬러그 work_id 해석 — 마스터 wk_ ID 전환 완료·alias 0건 확인 후.
 
   RegistryManifest? _manifest;
   RegistrySearchIndexManifest? _searchIndexManifest;
   List<RegistrySearchIndexEntry> _searchIndex = [];
+  final Map<String, RegistrySearchIndexEntry> _searchIndexByWorkId = {};
   final Map<MediaCategory, List<RegistrySearchIndexEntry>> _searchIndexByCategory =
       {};
   bool _useShardedSearchIndex = false;
@@ -50,6 +52,7 @@ class RegistryShardLoader {
     _loadedShardIds.clear();
     _searchIndexByCategory.clear();
     _searchIndex = [];
+    _searchIndexByWorkId.clear();
     _searchIndexManifest = null;
     _useShardedSearchIndex = false;
   }
@@ -129,10 +132,7 @@ class RegistryShardLoader {
 
   int qualityScoreFor(String workId) {
     if (workId.isEmpty) return 0;
-    for (final entry in _searchIndex) {
-      if (entry.workId == workId) return entry.qualityScore;
-    }
-    return 0;
+    return _searchIndexByWorkId[workId]?.qualityScore ?? 0;
   }
 
   Set<String> resolveShardIdsForQuery(String query) =>
@@ -194,6 +194,7 @@ class RegistryShardLoader {
     final decoded = json.decode(raw);
     if (decoded is List) {
       _searchIndex = _parseSearchIndexList(decoded);
+      _rebuildSearchIndexWorkIdMap();
       _useShardedSearchIndex = false;
     }
   }
@@ -261,6 +262,15 @@ class RegistryShardLoader {
   void _rebuildMergedSearchIndex() {
     if (_searchIndexByCategory.isEmpty) return;
     _searchIndex = _searchIndexByCategory.values.expand((e) => e).toList();
+    _rebuildSearchIndexWorkIdMap();
+  }
+
+  void _rebuildSearchIndexWorkIdMap() {
+    _searchIndexByWorkId
+      ..clear()
+      ..addEntries(
+        _searchIndex.map((entry) => MapEntry(entry.workId, entry)),
+      );
   }
 
   Iterable<RegistrySearchIndexEntry> _entriesForFilters({
@@ -469,6 +479,7 @@ class RegistryShardLoader {
       _useShardedSearchIndex = true;
       _searchIndexByCategory.clear();
       _searchIndex = [];
+      _searchIndexByWorkId.clear();
       final file = await _cacheFile('search_index/manifest.json');
       await file.parent.create(recursive: true);
       await file.writeAsString(content);
@@ -592,6 +603,7 @@ class RegistryShardLoader {
   }
 
   /// 레거시 단일 JSON(works_registry.json) 병합 — 하위 호환
+  /// TODO(remove): v4 샤드-only 캐시가 모든 설치에 적용된 뒤 (모니터링 2 릴리즈 후) 제거.
   Future<void> mergeLegacyMonolithicJson(String jsonStr) async {
     try {
       final decoded = json.decode(jsonStr);

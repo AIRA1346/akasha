@@ -29,6 +29,7 @@ import 'coordinators/home_browse_coordinator.dart';
 import 'coordinators/home_catalog_coordinator.dart';
 import 'coordinators/home_dialogs_coordinator.dart';
 import 'coordinators/home_navigation_coordinator.dart';
+import 'coordinators/home_preview_link_coordinator.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'coordinators/home_vault_coordinator.dart';
 import 'coordinators/home_workbench_coordinator.dart';
@@ -78,6 +79,7 @@ class HomeShellController {
   late final HomeBrowseCoordinator browse;
   late final HomeDialogsCoordinator dialogs;
   late final RecentExplorationStore recentExploration;
+  late final HomePreviewLinkCoordinator previewLinks;
 
   HomeSectionPreferences sectionPrefs = HomeSectionPreferences();
   List<AkashaItem> recentExploreItems = [];
@@ -85,10 +87,18 @@ class HomeShellController {
   UserCatalogEntity? entityPreviewItem;
   final List<PreviewFrame> _previewBackStack = [];
   PreviewReturnSnapshot? _previewReturnSnapshot;
-  EntityAnchorType? pendingWorkEntityLinkType;
-  String? pendingWorkEntityLinkWorkId;
-  LinkCandidate? pendingWorkEntityLinkCandidate;
-  bool pendingWorkLinkPick = false;
+
+  EntityAnchorType? get pendingWorkEntityLinkType =>
+      previewLinks.pendingWorkEntityLinkType;
+  String? get pendingWorkEntityLinkWorkId =>
+      previewLinks.pendingWorkEntityLinkWorkId;
+  LinkCandidate? get pendingWorkEntityLinkCandidate =>
+      previewLinks.pendingWorkEntityLinkCandidate;
+  bool get pendingWorkLinkPick => previewLinks.pendingWorkLinkPick;
+  EntityAnchorType? get pendingEntityEntityLinkType =>
+      previewLinks.pendingEntityEntityLinkType;
+  String? get pendingEntityLinkEntityId => previewLinks.pendingEntityLinkEntityId;
+  bool get pendingEntityWorkLinkPick => previewLinks.pendingEntityWorkLinkPick;
 
   void wrapSetState(void Function() mutate) => host.scheduleRebuild(mutate);
 
@@ -211,6 +221,17 @@ class HomeShellController {
         refreshRecentExploration();
       },
     );
+
+    previewLinks = HomePreviewLinkCoordinator(
+      rebuild: rebuild,
+      workPreviewItem: () => workPreviewItem,
+      entityPreviewItem: () => entityPreviewItem,
+      isRegistryOnlyPreview: (item) =>
+          VaultWorkPresence.isRegistryOnlyPreview(item, vault.items),
+      archiveRegistryWorkFromPreview: archiveRegistryWorkFromPreview,
+      openWorkFromPreview: openWorkFromPreview,
+      openEntityFromPreview: openEntityFromPreview,
+    );
   }
 
   Future<void> refreshRecentExploration() async {
@@ -303,66 +324,28 @@ class HomeShellController {
     );
   }
 
-  void clearPendingWorkEntityLinkType() {
-    if (pendingWorkEntityLinkType == null &&
-        pendingWorkEntityLinkWorkId == null &&
-        pendingWorkEntityLinkCandidate == null &&
-        !pendingWorkLinkPick) {
-      return;
-    }
-    pendingWorkEntityLinkType = null;
-    pendingWorkEntityLinkWorkId = null;
-    pendingWorkEntityLinkCandidate = null;
-    pendingWorkLinkPick = false;
-    rebuild();
-  }
+  void clearPendingWorkEntityLinkType() => previewLinks.clearPendingWork();
 
-  void openWorkFromPreviewToConnect(EntityAnchorType type) {
-    _openWorkFromPreviewToConnectWithPending(
-      type: type,
-      candidate: null,
-      pickWork: false,
-    );
-  }
+  void clearPendingEntityLink() => previewLinks.clearPendingEntity();
 
-  void openWorkFromPreviewToConnectWork() {
-    _openWorkFromPreviewToConnectWithPending(
-      type: null,
-      candidate: null,
-      pickWork: true,
-    );
-  }
+  void openWorkFromPreviewToConnect(EntityAnchorType type) =>
+      previewLinks.openWorkFromPreviewToConnect(type);
 
-  void openWorkFromPreviewToConnectSuggested(LinkCandidate candidate) {
-    _openWorkFromPreviewToConnectWithPending(
-      type: candidate.anchorType,
-      candidate: candidate,
-      pickWork: false,
-    );
-  }
+  void openWorkFromPreviewToConnectWork() =>
+      previewLinks.openWorkFromPreviewToConnectWork();
 
-  Future<void> _openWorkFromPreviewToConnectWithPending({
-    EntityAnchorType? type,
-    LinkCandidate? candidate,
-    required bool pickWork,
-  }) async {
-    final item = workPreviewItem;
-    if (item == null) return;
-    if (VaultWorkPresence.isRegistryOnlyPreview(item, vault.items)) {
-      await archiveRegistryWorkFromPreview();
-    }
-    final updated = workPreviewItem;
-    if (updated == null) return;
-    pendingWorkEntityLinkType = pickWork ? null : type;
-    pendingWorkEntityLinkWorkId = updated.workId;
-    pendingWorkEntityLinkCandidate = candidate;
-    pendingWorkLinkPick = pickWork;
-    await openWorkFromPreview();
-  }
+  void openWorkFromPreviewToConnectSuggested(LinkCandidate candidate) =>
+      previewLinks.openWorkFromPreviewToConnectSuggested(candidate);
+
+  void openEntityFromPreviewToConnect(EntityAnchorType type) =>
+      previewLinks.openEntityFromPreviewToConnect(type);
+
+  void openEntityFromPreviewToConnectWork() =>
+      previewLinks.openEntityFromPreviewToConnectWork();
 
   void connectSuggestedForWork(LinkCandidate candidate, AkashaItem work) {
     openWorkPreview(workbenchCoord.resolveItemForOpen(work));
-    openWorkFromPreviewToConnectSuggested(candidate);
+    previewLinks.openWorkFromPreviewToConnectSuggested(candidate);
   }
 
   void openMostRecentWorkForRecord() {

@@ -19,14 +19,23 @@ import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../services/same_day_record_service.dart';
 import '../../../services/record_link_navigator.dart';
-import '../../../services/record_link_stale_label.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../config/feature_flags.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
+import '../../../core/archiving/entity_anchor.dart';
+import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
+import '../../../screens/home/dialogs/work_link_picker_dialog.dart';
+import '../../../screens/home/views/preview_record_view_model.dart';
+import '../../../utils/markdown_edit_actions.dart';
+import 'entity_detail_connections_panel.dart';
 import 'entity_detail_info_panel.dart';
+import 'workbench_autosave_scheduler.dart';
+import 'workbench_record_links_loader.dart';
+import 'widgets/workbench_breadcrumb.dart';
+import 'widgets/workbench_panel_styles.dart';
 
 /// Entity collectible — Workbench 3·4열 (Phase 6).
 class EntityDetailWorkspace extends StatefulWidget {
@@ -55,6 +64,10 @@ class EntityDetailWorkspace extends StatefulWidget {
     this.onGoKnowledgeGraph,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
+    this.pendingEntityLinkType,
+    this.pendingEntityLinkEntityId,
+    this.pendingEntityWorkLinkPick = false,
+    this.onPendingEntityLinkHandled,
   });
 
   final UserCatalogEntity entity;
@@ -93,6 +106,10 @@ class EntityDetailWorkspace extends StatefulWidget {
   final VoidCallback? onGoKnowledgeGraph;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
+  final EntityAnchorType? pendingEntityLinkType;
+  final String? pendingEntityLinkEntityId;
+  final bool pendingEntityWorkLinkPick;
+  final VoidCallback? onPendingEntityLinkHandled;
 
   @override
   State<EntityDetailWorkspace> createState() => _EntityDetailWorkspaceState();
@@ -113,7 +130,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   bool _isSaving = false;
   bool _suppressPersist = false;
   DateTime? _lastSavedAt;
-  Timer? _autoSaveTimer;
+  final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
 
   List<String> _incomingPaths = const [];
   bool _loadingIncoming = false;
@@ -122,8 +139,6 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   bool _loadingSameDay = false;
   EntityLinkNeighbors _linkNeighbors = const EntityLinkNeighbors();
   bool _loadingLinkNeighbors = false;
-
-  static const _autoSaveDelay = Duration(seconds: 2);
 
   EntityItem _buildEntityItem(UserCatalogEntity entity, EntityJournalEntry? journal) {
     return EntityItem(
@@ -180,6 +195,83 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     _loadIncoming();
     _loadSameDay();
     _loadLinkNeighbors();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeRunPendingEntityLinkPick();
+    });
+  }
+
+  Future<void> _maybeRunPendingEntityLinkPick() async {
+    final type = widget.pendingEntityLinkType;
+    final entityId = widget.pendingEntityLinkEntityId;
+    if (entityId != null && entityId != _entity.entityId) return;
+
+    if (widget.pendingEntityWorkLinkPick) {
+      widget.onPendingEntityLinkHandled?.call();
+      if (!mounted) return;
+      await _requestWorkLink();
+      return;
+    }
+
+    if (type == null || widget.userCatalog == null) return;
+
+    widget.onPendingEntityLinkHandled?.call();
+    if (!mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showEntityLinkPickerDialog(
+      context,
+      userCatalog: widget.userCatalog!,
+      anchorTypeFilter: type,
+      workContext: _item,
+      vaultItems: widget.vaultItems,
+    );
+    if (!mounted || picked == null) return;
+    await _applyWikiLinkSelection(picked);
+  }
+
+  Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
+    final catalog = widget.userCatalog;
+    if (catalog == null || !mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showEntityLinkPickerDialog(
+      context,
+      userCatalog: catalog,
+      anchorTypeFilter: type,
+      workContext: _item,
+      vaultItems: widget.vaultItems,
+    );
+    if (!mounted || picked == null) return;
+    await _applyWikiLinkSelection(picked);
+  }
+
+  Future<void> _requestWorkLink() async {
+    if (!mounted) return;
+
+    setState(() => _pageView = SanctumPageView.body);
+
+    final picked = await showWorkLinkPickerDialog(
+      context,
+      vaultItems: widget.vaultItems,
+      excludeWorkId: '',
+    );
+    if (!mounted || picked == null) return;
+    await _applyWikiLinkSelection(picked);
+  }
+
+  Future<void> _applyWikiLinkSelection(EntityLinkSelection picked) async {
+    final patch = MarkdownEditActions.insertWikiLink(
+      text: _bodyCtrl.text,
+      selection: _bodyCtrl.selection,
+      entityId: picked.entityId,
+      title: picked.title,
+    );
+    _bodyCtrl.text = patch.text;
+    _bodyCtrl.selection = patch.selection;
+    _markDirty();
+    await _loadLinkNeighbors();
   }
 
   Future<void> _loadLinkNeighbors() async {
@@ -211,6 +303,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   void _openLinkedEntity(UserCatalogEntity entity) {
+    if (widget.onRecordOpenEntity != null) {
+      widget.onRecordOpenEntity!(entity);
+      return;
+    }
     widget.onWikiLinkTap?.call(
       ParsedRecordLink(
         kind: RecordLinkKind.explicitId,
@@ -221,6 +317,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   void _openLinkedWork(AkashaItem work) {
+    if (widget.onRecordOpenWork != null) {
+      widget.onRecordOpenWork!(work);
+      return;
+    }
     widget.onWikiLinkTap?.call(
       ParsedRecordLink(
         kind: RecordLinkKind.explicitId,
@@ -238,8 +338,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     final anchor = _journal?.addedAt ?? _entity.addedAt;
     setState(() => _loadingSameDay = true);
     try {
-      final refs = await SameDayRecordService.findForAnchor(
-        vaultPath: AkashaFileService().vaultPath,
+      final refs = await WorkbenchRecordLinksLoader.loadSameDay(
         anchor: anchor,
         excludePath: _journal?.storagePath,
       );
@@ -259,18 +358,16 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     if (index == null) return;
     setState(() => _loadingIncoming = true);
     try {
-      final paths = await index.incomingRecordPaths(_entity.entityId);
-      final uniquePaths = paths.toSet().toList()..sort();
       final currentTitle = _journal?.title ?? _entity.title;
-      final stale = await RecordLinkStaleLabel.countForEntity(
+      final snapshot = await WorkbenchRecordLinksLoader.loadIncoming(
         linkIndex: index,
-        entityId: _entity.entityId,
+        recordEntityId: _entity.entityId,
         currentTitle: currentTitle,
       );
       if (mounted) {
         setState(() {
-          _incomingPaths = uniquePaths;
-          _staleLabelRecordCount = stale.staleRecordCount;
+          _incomingPaths = snapshot.paths;
+          _staleLabelRecordCount = snapshot.staleLabelRecordCount;
           _loadingIncoming = false;
         });
       }
@@ -377,24 +474,23 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   void _scheduleAutoSave() {
-    _autoSaveTimer?.cancel();
-    if (_suppressPersist) return;
-    if (AkashaFileService().vaultPath == null) return;
-    _autoSaveTimer = Timer(_autoSaveDelay, () {
-      if (!mounted || !widget.isDirty) return;
-      unawaited(_saveJournal(silent: true));
-    });
+    _autosave.schedule(
+      persistEnabled: !_suppressPersist,
+      isDirty: () => widget.isDirty,
+      isActive: () => mounted,
+      save: () => _saveJournal(silent: true),
+    );
   }
 
   @override
   void deactivate() {
-    _autoSaveTimer?.cancel();
+    _autosave.cancel();
     super.deactivate();
   }
 
   @override
   void dispose() {
-    _autoSaveTimer?.cancel();
+    _autosave.dispose();
     if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         _syncBodyFromEditor();
@@ -705,6 +801,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   @override
   Widget build(BuildContext context) {
     final hasJournal = _journal != null;
+    final saveLabel = hasJournal ? 'md 저장' : 'journal 생성';
+    final typeLabel = entityTypeDisplayLabel(_entity.anchorType);
 
     return Shortcuts(
       shortcuts: const {
@@ -721,69 +819,104 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         },
         child: Focus(
           autofocus: true,
-          child: Row(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              EntityDetailInfoPanel(
-                item: _item,
-                preview: _preview,
-                aliases: _entity.aliases,
-                hasJournal: hasJournal,
-                panelWidth: widget.infoPanelWidth,
-                infoPanelLocked: widget.infoPanelLocked,
-                draftTags: _draftTags,
-                isSaving: _isSaving,
-                isDirty: widget.isDirty,
-                lastSavedAt: _lastSavedAt,
-                loadingIncoming: _loadingIncoming,
-                incomingPaths: _incomingPaths,
-                staleLabelRecordCount: _staleLabelRecordCount,
-                onRefreshIncoming: _loadIncoming,
-                loadingSameDay: _loadingSameDay,
-                sameDayRefs: _sameDayRefs,
-                onOpenIncoming: _openIncoming,
-                onOpenSameDay: _openSameDay,
-                onInfoWidthChanged: widget.onInfoWidthChanged,
-                onToggleInfoLock: widget.onToggleInfoLock,
-                onDraftTagsChanged: (tags) {
-                  setState(() => _draftTags = tags);
-                  _updatePreview();
-                  _markDirty();
-                },
-                onSave: () => _saveJournal(),
-                onPosterTap: _openPosterCorrection,
-                posterUrlCtrl: _posterUrlCtrl,
-                showAddToLibrary: widget.onAddToLibrary != null,
-                onAddToLibrary: _handleAddToLibrary,
-                canDeleteMd: hasJournal,
-                onDeleteArchive: hasJournal ? _confirmDelete : null,
-                onClose: widget.onClose,
-                onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
-                linkNeighbors: _linkNeighbors,
-                loadingLinkNeighbors: _loadingLinkNeighbors,
-                onOpenLinkedEntity: _openLinkedEntity,
-                onOpenLinkedWork: _openLinkedWork,
-                onFocusSanctumForLinks: _focusSanctumForLinks,
-              ),
+              if (FeatureFlags.showWorkbenchBreadcrumb)
+                WorkbenchBreadcrumb(
+                  segments: [
+                    WorkbenchBreadcrumbSegment(
+                      label: '서재',
+                      onTap: widget.onClose,
+                    ),
+                    WorkbenchBreadcrumbSegment(label: typeLabel),
+                    WorkbenchBreadcrumbSegment(label: _entity.title),
+                  ],
+                ),
               Expanded(
-                child: ColoredBox(
-                  color: AkashaColors.workbenchEditor,
-                  child: SanctumPagePanel(
-                    view: _pageView,
-                    onViewChanged: _onPageViewChanged,
-                    previewMarkdown: _bodyCtrl.text,
-                    mdFilePath: _journal?.storagePath,
-                    isDirty: widget.isDirty,
-                    isSaving: _isSaving,
-                    lastSavedAt: _lastSavedAt,
-                    bodyController: _bodyCtrl,
-                    fileController: _fileCtrl,
-                    onBodyChanged: _markDirty,
-                    onFileChanged: _markDirty,
-                    onOpenFileView: _refreshFileEditor,
-                    onWikiLinkTap: widget.onWikiLinkTap,
-                    onRequestEntityLink: widget.onRequestEntityLink,
-                  ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    EntityDetailInfoPanel(
+                      entity: _entity,
+                      preview: _preview,
+                      hasJournal: hasJournal,
+                      panelWidth: widget.infoPanelWidth,
+                      infoPanelLocked: widget.infoPanelLocked,
+                      onInfoWidthChanged: widget.onInfoWidthChanged,
+                      onToggleInfoLock: widget.onToggleInfoLock,
+                      onPosterTap: _openPosterCorrection,
+                      posterUrlCtrl: _posterUrlCtrl,
+                      onClose: widget.onClose,
+                      onFocusSanctum: _focusSanctumForLinks,
+                    ),
+                    Expanded(
+                      child: ColoredBox(
+                        color: AkashaColors.workbenchEditor,
+                        child: SanctumPagePanel(
+                          view: _pageView,
+                          onViewChanged: _onPageViewChanged,
+                          headerTitle: '기록 본문',
+                          previewMarkdown: _bodyCtrl.text,
+                          mdFilePath: _journal?.storagePath,
+                          isDirty: widget.isDirty,
+                          isSaving: _isSaving,
+                          lastSavedAt: _lastSavedAt,
+                          bodyController: _bodyCtrl,
+                          fileController: _fileCtrl,
+                          onBodyChanged: _markDirty,
+                          onFileChanged: _markDirty,
+                          onOpenFileView: _refreshFileEditor,
+                          onWikiLinkTap: widget.onWikiLinkTap,
+                          onRequestEntityLink: widget.onRequestEntityLink,
+                          footer: WorkbenchSaveActions(
+                            isSaving: _isSaving,
+                            isDirty: widget.isDirty,
+                            lastSavedAt: _lastSavedAt,
+                            saveLabel: saveLabel,
+                            explicitSaveLabel: saveLabel,
+                            onSave: () => _saveJournal(),
+                            showAddToLibrary: widget.onAddToLibrary != null,
+                            libraryLabel: hasJournal
+                                ? '서재에 담기'
+                                : '저장하고 서재에 담기',
+                            onAddToLibrary: _handleAddToLibrary,
+                            canDeleteMd: hasJournal,
+                            onDeleteArchive: hasJournal ? _confirmDelete : null,
+                          ),
+                        ),
+                      ),
+                    ),
+                    EntityDetailConnectionsPanel(
+                      entity: _entity,
+                      linkNeighbors: _linkNeighbors,
+                      loadingLinkNeighbors: _loadingLinkNeighbors,
+                      draftTags: _draftTags,
+                      onOpenLinkedEntity: _openLinkedEntity,
+                      onOpenLinkedWork: _openLinkedWork,
+                      onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
+                      onFocusSanctum: _focusSanctumForLinks,
+                      onAddEntityLink: widget.userCatalog != null
+                          ? _requestEntityLinkForType
+                          : null,
+                      onAddWorkLink: widget.userCatalog != null
+                          ? _requestWorkLink
+                          : null,
+                      loadingIncoming: _loadingIncoming,
+                      incomingPaths: _incomingPaths,
+                      staleLabelRecordCount: _staleLabelRecordCount,
+                      onRefreshIncoming: _loadIncoming,
+                      onOpenIncoming: _openIncoming,
+                      loadingSameDay: _loadingSameDay,
+                      sameDayRefs: _sameDayRefs,
+                      onOpenSameDay: _openSameDay,
+                      onDraftTagsChanged: (tags) {
+                        setState(() => _draftTags = tags);
+                        _updatePreview();
+                        _markDirty();
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],

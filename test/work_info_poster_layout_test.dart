@@ -28,6 +28,9 @@ void main() {
   });
 
   testWidgets('work info panel reserves flex-weighted poster height', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(1400, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
     final item = createItem(
       workId: 'wk_test_poster_layout',
       title: '포스터 레이아웃 테스트',
@@ -62,10 +65,10 @@ void main() {
     expect(posterFinder, findsOneWidget);
 
     final posterSize = tester.getSize(posterFinder);
-    // 55% 예산·2:3 프레임 — 잘리지 않으면서 과도한 세로 여백 없음
-    expect(posterSize.height, greaterThan(180));
-    expect(posterSize.height, lessThan(400));
-    expect(posterSize.width, greaterThan(180));
+    // 좌측 패널 30% 예산·2:3 프레임 (기본 테스트 뷰포트 1400×900)
+    expect(posterSize.height, greaterThan(100));
+    expect(posterSize.height, lessThan(220));
+    expect(posterSize.width, greaterThan(100));
 
     final poster = tester.widget<PosterImage>(posterFinder);
     expect(poster.fit, BoxFit.contain);

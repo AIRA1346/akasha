@@ -6,6 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('WorkDetailWorkspace builds for catalog-like item', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(1400, 900));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
     final item = createItem(
       workId: 'wk_smoke_nav',
       title: 'Navigation Smoke',

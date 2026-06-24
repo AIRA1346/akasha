@@ -22,17 +22,19 @@ import '../../../utils/work_link_neighbors.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
-import '../../../services/same_day_record_service.dart';
 import '../../../services/record_link_navigator.dart';
-import '../../../services/record_link_stale_label.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
-import '../../../screens/detail/detail_archive_save.dart';
 import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
 import '../../../theme/akasha_colors.dart';
+import '../../../config/feature_flags.dart';
 import 'work_detail_draft_ops.dart';
+import 'work_detail_archive_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
+import 'work_detail_vault_sync.dart';
+import 'workbench_autosave_scheduler.dart';
+import 'workbench_record_links_loader.dart';
 import 'widgets/workbench_breadcrumb.dart';
 import 'widgets/workbench_panel_styles.dart';
 import 'widgets/work_sanctum_section_editor.dart';
@@ -124,10 +126,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   SanctumPageView _pageView = SanctumPageView.preview;
 
   StreamSubscription<void>? _vaultSub;
-  DateTime? _diskMtime;
-  bool _externalChangePending = false;
+  final WorkDetailVaultDiskSync _vaultDiskSync = WorkDetailVaultDiskSync();
   DateTime? _lastSavedAt;
-  Timer? _autoSaveTimer;
+  final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
   bool _suppressPersist = false;
 
   List<String> _incomingPaths = const [];
@@ -141,7 +142,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   final GlobalKey<WorkSanctumSectionEditorState> _sectionEditorKey =
       GlobalKey<WorkSanctumSectionEditorState>();
 
-  static const _autoSaveDelay = Duration(seconds: 2);
+  bool get _externalChangePending => _vaultDiskSync.externalChangePending;
 
   @override
   void initState() {
@@ -253,12 +254,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _loadSameDay() async {
-    final anchor = _item.addedAt;
     setState(() => _loadingSameDay = true);
     try {
-      final refs = await SameDayRecordService.findForAnchor(
-        vaultPath: AkashaFileService().vaultPath,
-        anchor: anchor,
+      final refs = await WorkbenchRecordLinksLoader.loadSameDay(
+        anchor: _item.addedAt,
         excludePath: _item.filePath,
       );
       if (mounted) {
@@ -277,17 +276,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     if (index == null) return;
     setState(() => _loadingIncoming = true);
     try {
-      final paths = await index.incomingRecordPaths(_item.workId);
-      final uniquePaths = paths.toSet().toList()..sort();
-      final stale = await RecordLinkStaleLabel.countForEntity(
+      final snapshot = await WorkbenchRecordLinksLoader.loadIncoming(
         linkIndex: index,
-        entityId: _item.workId,
+        recordEntityId: _item.workId,
         currentTitle: _item.title,
       );
       if (mounted) {
         setState(() {
-          _incomingPaths = uniquePaths;
-          _staleLabelRecordCount = stale.staleRecordCount;
+          _incomingPaths = snapshot.paths;
+          _staleLabelRecordCount = snapshot.staleLabelRecordCount;
           _loadingIncoming = false;
         });
       }
@@ -301,14 +298,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _assignControllerTextIfChanged(TextEditingController ctrl, String text) {
-    if (ctrl.text == text) return;
-    final selection = ctrl.selection;
-    ctrl.value = TextEditingValue(
-      text: text,
-      selection: selection.isValid && selection.end <= text.length
-          ? selection
-          : TextSelection.collapsed(offset: text.length),
-    );
+    WorkDetailDraftOps.assignControllerTextIfChanged(ctrl, text);
   }
 
   void _applyItem(
@@ -341,34 +331,24 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _loadLinkNeighbors();
   }
 
-  void _refreshDiskMtime() {
-    final path = _item.filePath;
-    if (path == null || path.isEmpty) {
-      _diskMtime = null;
-      return;
-    }
-    final file = File(path);
-    _diskMtime = file.existsSync() ? file.lastModifiedSync() : null;
-  }
+  void _refreshDiskMtime() => _vaultDiskSync.refreshDiskMtime(_item.filePath);
 
   Future<void> _onVaultDiskChanged() async {
     if (!mounted) return;
-    if (_isSaving) return;
-    final path = _item.filePath;
-    if (path == null || path.isEmpty) return;
-    final file = File(path);
-    if (!file.existsSync()) return;
-
-    final mtime = file.lastModifiedSync();
-    if (_diskMtime != null && !mtime.isAfter(_diskMtime!)) return;
-
-    if (widget.isDirty) {
-      if (!_externalChangePending) {
-        setState(() => _externalChangePending = true);
-      }
-      return;
+    final action = _vaultDiskSync.evaluateFileChange(
+      filePath: _item.filePath,
+      isSaving: _isSaving,
+      isDirty: widget.isDirty,
+    );
+    switch (action) {
+      case VaultDiskChangeAction.noOp:
+        return;
+      case VaultDiskChangeAction.promptReload:
+        if (mounted) setState(() {});
+        return;
+      case VaultDiskChangeAction.reload:
+        await _reloadFromDisk(silent: true);
     }
-    await _reloadFromDisk(silent: true);
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
@@ -378,7 +358,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       final content = await File(path).readAsString();
       final reloaded = MarkdownParser.deserialize(content, _item.title);
       reloaded.filePath = path;
-      setState(() => _externalChangePending = false);
+      setState(() => _vaultDiskSync.externalChangePending = false);
       _applyItem(reloaded, resetPageView: false);
       widget.onDirtyChanged(false);
       widget.onSaved(reloaded, silent: true, dirty: false);
@@ -392,8 +372,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _dismissExternalChange() {
-    setState(() => _externalChangePending = false);
-    _refreshDiskMtime();
+    setState(() => _vaultDiskSync.dismissExternalChange(_item.filePath));
   }
 
   @override
@@ -519,7 +498,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   @override
   void deactivate() {
-    _autoSaveTimer?.cancel();
+    _autosave.cancel();
     if (!_suppressPersist) {
       _flushAutoSaveIfNeeded();
     }
@@ -528,7 +507,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   @override
   void dispose() {
-    _autoSaveTimer?.cancel();
+    _autosave.dispose();
     if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
         _applyFileEditorToItem();
@@ -556,25 +535,25 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _scheduleAutoSave() {
-    _autoSaveTimer?.cancel();
-    if (_suppressPersist) return;
-    if (AkashaFileService().vaultPath == null) return;
-    if (_externalChangePending) return;
-    _autoSaveTimer = Timer(_autoSaveDelay, () {
-      if (!mounted) return;
-      if (!widget.isDirty) return;
-      if (_externalChangePending) return;
-      _saveArchive(silent: true, switchToPreview: false);
-    });
+    _autosave.schedule(
+      persistEnabled: !_suppressPersist,
+      isDirty: () => widget.isDirty,
+      isActive: () => mounted,
+      save: () => _saveArchive(silent: true, switchToPreview: false),
+      blockOnExternalChange: true,
+      externalChangePending: () => _externalChangePending,
+    );
   }
 
   void _flushAutoSaveIfNeeded() {
-    if (_suppressPersist) return;
-    if (!widget.isDirty) return;
-    if (AkashaFileService().vaultPath == null) return;
-    if (_externalChangePending) return;
-    if (_isSaving) return;
-    unawaited(_saveArchive(silent: true, switchToPreview: false));
+    _autosave.flushIfNeeded(
+      persistEnabled: !_suppressPersist,
+      isDirty: () => widget.isDirty,
+      isSaving: _isSaving,
+      save: () => _saveArchive(silent: true, switchToPreview: false),
+      blockOnExternalChange: true,
+      externalChangePending: () => _externalChangePending,
+    );
   }
 
   AkashaItem _buildSaveDraft() => WorkDetailDraftOps.buildSaveDraft(
@@ -615,13 +594,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         draftTags: _draftTags,
       );
 
-  bool get _isArchivedInVault => AkashaFileService().isArchivedInVault(_item);
+  bool get _isArchivedInVault => WorkDetailArchiveOps.isArchivedInVault(_item);
 
-  bool get _isArchived =>
-      _isArchivedInVault ||
-      AkashaFileService()
-          .inMemoryCache
-          .containsKey(AkashaFileService.cacheKeyFor(_item));
+  bool get _isArchived => WorkDetailArchiveOps.isArchived(_item);
 
   Future<void> _openPosterCorrection() async {
     final selected = await showDialog<String>(
@@ -675,19 +650,22 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     bool switchToPreview = true,
   }) async {
     if (_suppressPersist || _isSaving) return;
-    _autoSaveTimer?.cancel();
+    _autosave.cancel();
     final contentAtSave = _pageView == SanctumPageView.file
         ? _fileCtrl.text
         : _bodyCtrl.text;
     setState(() => _isSaving = true);
     try {
-      final draft = _buildSaveDraft();
-      final saved = await DetailArchiveSave.save(draft);
+      final outcome = await WorkDetailArchiveOps.persist(
+        draft: _buildSaveDraft(),
+        pageView: _pageView,
+        contentAtSave: contentAtSave,
+        currentFileContent: _fileCtrl.text,
+        currentBodyContent: _bodyCtrl.text,
+      );
+      final saved = outcome.saved;
       if (!mounted) return;
-      final contentUnchanged = _pageView == SanctumPageView.file
-          ? _fileCtrl.text == contentAtSave
-          : _bodyCtrl.text == contentAtSave;
-      final stillDirty = !contentUnchanged;
+      final stillDirty = outcome.stillDirty;
       setState(() {
         _item = saved;
         if (!silent && !stillDirty) {
@@ -718,11 +696,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       _loadSameDay();
       _loadLinkNeighbors();
       if (!silent) {
-        _showSnack(
-          AkashaFileService().vaultPath != null
-              ? '"${saved.title}" md 파일을 저장했습니다.'
-              : '"${saved.title}"을(를) 임시 저장했습니다.',
-        );
+        _showSnack(WorkDetailArchiveOps.saveSuccessMessage(saved));
       }
     } catch (e) {
       if (mounted && !silent) _showSnack('저장 실패: $e');
@@ -841,7 +815,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   Future<void> _confirmDelete() async {
     if (_isSaving) return;
 
-    final service = AkashaFileService();
     if (!_isArchivedInVault) {
       _showSnack('삭제할 md 파일이 없습니다.');
       return;
@@ -859,7 +832,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
     if (!confirmed || !mounted) return;
 
-    _autoSaveTimer?.cancel();
+    _autosave.cancel();
     while (_isSaving && mounted) {
       await Future<void>.delayed(const Duration(milliseconds: 50));
     }
@@ -868,7 +841,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     setState(() => _suppressPersist = true);
     widget.onDirtyChanged(false);
 
-    final deleted = await service.deleteAkashaItem(_item);
+    final deleted = await WorkDetailArchiveOps.deleteFromVault(_item);
     if (!mounted) return;
 
     if (deleted) {
@@ -903,20 +876,21 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              WorkbenchBreadcrumb(
-                segments: [
-                  WorkbenchBreadcrumbSegment(
-                    label: '서재',
-                    onTap: widget.onClose,
-                  ),
-                  const WorkbenchBreadcrumbSegment(label: '작품'),
-                  WorkbenchBreadcrumbSegment(
-                    label: _titleCtrl.text.trim().isNotEmpty
-                        ? _titleCtrl.text.trim()
-                        : _item.title,
-                  ),
-                ],
-              ),
+              if (FeatureFlags.showWorkbenchBreadcrumb)
+                WorkbenchBreadcrumb(
+                  segments: [
+                    WorkbenchBreadcrumbSegment(
+                      label: '서재',
+                      onTap: widget.onClose,
+                    ),
+                    const WorkbenchBreadcrumbSegment(label: '작품'),
+                    WorkbenchBreadcrumbSegment(
+                      label: _titleCtrl.text.trim().isNotEmpty
+                          ? _titleCtrl.text.trim()
+                          : _item.title,
+                    ),
+                  ],
+                ),
               Expanded(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -145,4 +145,18 @@ class WorkDetailDraftOps {
     final work = WorksRegistry.getWorkById(resolved);
     return work?.tags.toSet() ?? {};
   }
+
+  static void assignControllerTextIfChanged(
+    TextEditingController ctrl,
+    String text,
+  ) {
+    if (ctrl.text == text) return;
+    final selection = ctrl.selection;
+    ctrl.value = TextEditingValue(
+      text: text,
+      selection: selection.isValid && selection.end <= text.length
+          ? selection
+          : TextSelection.collapsed(offset: text.length),
+    );
+  }
 }

@@ -76,21 +76,9 @@ class SanctumPagePanel extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                children: [
-                  const Icon(Icons.menu_book_outlined,
-                      size: 18, color: Colors.tealAccent),
-                  const SizedBox(width: 8),
-                  Text(
-                    headerTitle,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                  const Spacer(),
-                  SegmentedButton<SanctumPageView>(
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final viewSwitcher = SegmentedButton<SanctumPageView>(
                     segments: [
                       const ButtonSegment(
                         value: SanctumPageView.preview,
@@ -121,8 +109,55 @@ class SanctumPagePanel extends StatelessWidget {
                       visualDensity: VisualDensity.compact,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
-                  ),
-                ],
+                  );
+
+                  final titleStyle = TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[300],
+                  );
+
+                  if (constraints.maxWidth < 480) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(Icons.menu_book_outlined,
+                                size: 18, color: Colors.tealAccent),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                headerTitle,
+                                overflow: TextOverflow.ellipsis,
+                                style: titleStyle,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        viewSwitcher,
+                      ],
+                    );
+                  }
+
+                  return Row(
+                    children: [
+                      const Icon(Icons.menu_book_outlined,
+                          size: 18, color: Colors.tealAccent),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: Text(
+                          headerTitle,
+                          overflow: TextOverflow.ellipsis,
+                          style: titleStyle,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(child: viewSwitcher),
+                    ],
+                  );
+                },
               ),
               if (titleController != null) ...[
                 const SizedBox(height: 8),
