@@ -1,12 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/services/file_service.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/models/work_id_codec.dart';
 import 'package:akasha/services/works_registry.dart';
+import 'package:akasha/data/adapters/markdown_vault_adapter.dart';
+import 'package:akasha/services/user_preferences.dart';
+import 'package:akasha/services/vault_work_journal_paths.dart';
 import 'package:akasha/utils/helpers.dart';
 
 void main() {
@@ -171,6 +175,124 @@ void main() {
           await tempDir.delete(recursive: true);
         }
       }
+    });
+
+    test('deleteItem removes works layout file when title rename fallback runs', () async {
+      SharedPreferences.setMockInitialValues({
+        UserPreferences.vaultWorksLayoutKey: true,
+      });
+
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_works_delete_');
+      try {
+        await service.setVaultPath(tempDir.path);
+
+        final item = createItem(
+          workId: 'sub_manga_worksdelete_2024',
+          title: 'works 삭제 테스트',
+          category: MediaCategory.manga,
+          domain: AppDomain.subculture,
+        );
+
+        await service.saveItem(item);
+        final worksPath = p.join(
+          tempDir.path,
+          'works',
+          MediaCategory.manga.name,
+          'works 삭제 테스트.md',
+        );
+        expect(File(worksPath).existsSync(), isTrue);
+
+        item.title = 'works 삭제 테스트 (갱신)';
+        item.filePath = null;
+        await service.saveItem(item, oldTitle: 'works 삭제 테스트');
+
+        expect(File(worksPath).existsSync(), isFalse);
+        expect(await service.countMarkdownFiles(), 1);
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('deleteAkashaItem removes works layout file via filePath', () async {
+      SharedPreferences.setMockInitialValues({
+        UserPreferences.vaultWorksLayoutKey: true,
+      });
+
+      final service = AkashaFileService();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_works_akasha_delete_');
+      try {
+        await service.setVaultPath(tempDir.path);
+
+        final item = createItem(
+          workId: 'sub_game_worksdelete_2024',
+          title: '어댑터 삭제 테스트',
+          category: MediaCategory.game,
+          domain: AppDomain.subculture,
+        );
+
+        await service.saveItem(item);
+        expect(item.filePath, isNotNull);
+        expect(File(item.filePath!).existsSync(), isTrue);
+
+        final deleted = await service.deleteAkashaItem(item);
+        expect(deleted, isTrue);
+        expect(File(item.filePath!).existsSync(), isFalse);
+        expect(await service.countMarkdownFiles(), 0);
+      } finally {
+        await service.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('MarkdownVaultAdapter.deleteItem uses filePath for works layout', () async {
+      SharedPreferences.setMockInitialValues({
+        UserPreferences.vaultWorksLayoutKey: true,
+      });
+
+      final adapter = MarkdownVaultAdapter();
+      final tempDir = await Directory.systemTemp.createTemp('akasha_adapter_delete_');
+      try {
+        await adapter.setVaultPath(tempDir.path);
+
+        final item = createItem(
+          workId: 'sub_movie_adapterdelete_2024',
+          title: '어댑터 경로 삭제',
+          category: MediaCategory.movie,
+          domain: AppDomain.subculture,
+        );
+
+        await adapter.saveItem(item);
+        expect(item.filePath, isNotNull);
+        expect(File(item.filePath!).existsSync(), isTrue);
+
+        await adapter.deleteItem(item);
+        expect(File(item.filePath!).existsSync(), isFalse);
+        expect(await adapter.countMarkdownFiles(), 0);
+      } finally {
+        await adapter.setVaultPath('');
+        if (await tempDir.exists()) {
+          await tempDir.delete(recursive: true);
+        }
+      }
+    });
+
+    test('resolveDeleteCandidates includes legacy and works paths', () {
+      final candidates = VaultWorkJournalPaths.resolveDeleteCandidates(
+        vaultRoot: '/vault',
+        title: '테스트/작품',
+        category: MediaCategory.manga,
+      );
+
+      expect(candidates, [
+        p.join('/vault', 'manga', '테스트_작품.md'),
+        p.join('/vault', 'works', 'manga', '테스트_작품.md'),
+      ]);
     });
   });
 }

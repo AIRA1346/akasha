@@ -17,6 +17,23 @@ abstract final class VaultWorkJournalPaths {
     return p.join(vaultRoot, item.category.name, '$safeTitle.md');
   }
 
+  /// 삭제 시 시도할 경로 (filePath 우선, 없으면 legacy + works 레이아웃).
+  static List<String> resolveDeleteCandidates({
+    required String vaultRoot,
+    required String title,
+    required MediaCategory category,
+    String? filePath,
+  }) {
+    if (filePath != null && filePath.isNotEmpty) {
+      return [filePath];
+    }
+    final safeTitle = _makeSafeFilename(title);
+    return [
+      p.join(vaultRoot, category.name, '$safeTitle.md'),
+      p.join(vaultRoot, 'works', category.name, '$safeTitle.md'),
+    ];
+  }
+
   static String _makeSafeFilename(String title) {
     return title.replaceAll(RegExp(r'[\\/:*?"<>|]'), '_').trim();
   }

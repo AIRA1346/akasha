@@ -420,26 +420,13 @@ class AkashaFileService {
 
     if (_vaultPath == null) return true;
 
-    File? targetFile;
-    if (item.filePath != null && item.filePath!.isNotEmpty) {
-      targetFile = File(item.filePath!);
-    } else {
-      final safeTitle = _makeSafeFilename(item.title);
-      targetFile = File(
-        p.join(_vaultPath!, item.category.name, '$safeTitle.md'),
-      );
-    }
-
-    if (!await targetFile.exists()) return false;
-
-    _stopWatching();
-    try {
-      await targetFile.delete();
-      _notifyVaultUpdated();
-      return true;
-    } finally {
-      _startWatching();
-    }
+    final candidates = VaultWorkJournalPaths.resolveDeleteCandidates(
+      vaultRoot: _vaultPath!,
+      title: item.title,
+      category: item.category,
+      filePath: item.filePath,
+    );
+    return _deleteAtCandidatePaths(candidates);
   }
 
   /// 제목·카테고리 기반 삭제 (파일명 변경 시 saveItem 내부용)
@@ -450,18 +437,33 @@ class AkashaFileService {
 
     if (_vaultPath == null) return;
 
-    final safeTitle = _makeSafeFilename(title);
-    final filePath = p.join(_vaultPath!, category.name, '$safeTitle.md');
-    final file = File(filePath);
+    final candidates = VaultWorkJournalPaths.resolveDeleteCandidates(
+      vaultRoot: _vaultPath!,
+      title: title,
+      category: category,
+    );
+    await _deleteAtCandidatePaths(candidates);
+  }
 
-    if (await file.exists()) {
-      _stopWatching();
-      try {
-        await file.delete();
-        _notifyVaultUpdated();
-      } finally {
-        _startWatching();
+  Future<bool> _deleteAtCandidatePaths(List<String> candidatePaths) async {
+    final existing = <File>[];
+    for (final path in candidatePaths) {
+      final file = File(path);
+      if (await file.exists()) {
+        existing.add(file);
       }
+    }
+    if (existing.isEmpty) return false;
+
+    _stopWatching();
+    try {
+      for (final file in existing) {
+        await file.delete();
+      }
+      _notifyVaultUpdated();
+      return true;
+    } finally {
+      _startWatching();
     }
   }
 
