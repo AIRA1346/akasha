@@ -16,12 +16,12 @@ import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
-import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../screens/home/views/preview_record_view_model.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_connections_coordinator.dart';
+import 'entity_detail_save_ops.dart';
 import 'entity_detail_delete_ops.dart';
 import 'entity_detail_draft_ops.dart';
 import 'entity_detail_link_pick_ops.dart';
@@ -481,12 +481,15 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   Future<void> _saveJournal({bool silent = false}) async {
-    if (_suppressPersist || _isSaving) return;
-    if (!EntityDetailArchiveOps.isVaultConnected()) {
-      final msg = EntityDetailArchiveOps.vaultRequiredSnack(silent: silent);
-      if (msg != null && mounted) {
-        _showSnack(msg);
-      }
+    if (EntityDetailSaveOps.shouldSkip(
+      suppressPersist: _suppressPersist,
+      isSaving: _isSaving,
+    )) {
+      return;
+    }
+    final vaultMsg = EntityDetailSaveOps.vaultBlockedMessage(silent: silent);
+    if (vaultMsg != null) {
+      if (mounted) _showSnack(vaultMsg);
       return;
     }
 
@@ -494,80 +497,90 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _syncBodyFromEditor();
     }
 
+    final emptyMsg = EntityDetailSaveOps.emptyBodyBlockedMessage(
+      rawBody: _bodyCtrl.text,
+      posterPath: _posterUrlCtrl.text,
+      tags: _draftTags,
+      silent: silent,
+    );
+    if (emptyMsg != null) {
+      if (mounted) _showSnack(emptyMsg);
+      return;
+    }
     final bodyResolve = EntityDetailArchiveOps.resolveBodyForSave(
       rawBody: _bodyCtrl.text,
       posterPath: _posterUrlCtrl.text,
       tags: _draftTags,
     );
-    if (bodyResolve.body == null) {
-      final msg = EntityDetailArchiveOps.emptyBodySnack(silent: silent);
-      if (msg != null && mounted) {
-        _showSnack(msg);
-      }
-      return;
-    }
     final body = bodyResolve.body!;
     if (bodyResolve.usedPlaceholder && !silent) {
       _bodyCtrl.text = body;
     }
 
-    final catalog = widget.userCatalog;
-    if (catalog != null) {
-      await catalog.load();
-      if (mounted) {
-        EntityTagValidation.showWorkTitleWarningIfNeeded(
-          context,
-          tags: _draftTags,
-          workTitles: EntityTagValidation.buildWorkTitleIndex(
-            catalogEntities: catalog.all,
-            vaultItems: const [],
-          ),
-        );
-      }
-    }
+    await EntityDetailSaveOps.warnWorkTitleTagsIfNeeded(
+      context: context,
+      mounted: mounted,
+      catalog: widget.userCatalog,
+      tags: _draftTags,
+    );
 
     setState(() => _isSaving = true);
     try {
-      final vaultPath = AkashaFileService().vaultPath!;
-      final entityDraft =
-          _entity.copyWith(tags: _draftTags, posterPath: _posterUrlCtrl.text);
-      final outcome = await EntityDetailArchiveOps.persist(
-        vaultPath: vaultPath,
-        entityDraft: entityDraft,
-        existingJournal: _journal,
-        body: body,
+      final result = await EntityDetailSaveOps.run(
+        entity: _entity,
+        journal: _journal,
         tags: _draftTags,
         posterPath: _posterUrlCtrl.text,
-        userCatalog: catalog,
+        body: body,
+        usedPlaceholder: bodyResolve.usedPlaceholder,
+        catalog: widget.userCatalog,
         vaultStore: _store,
       );
-      final mirrored = outcome.mirrored;
-      final saved = outcome.saved;
-
       if (!mounted) return;
-      setState(() {
-        _entity = mirrored;
-        _journal = saved;
-        _item = _buildEntityItem(mirrored, saved);
-        _preview = _item;
-        _draftTags = List<String>.from(saved.tags);
-        _fileCtrl.text = _serializeFile();
-        _lastSavedAt = DateTime.now();
-        if (!silent && _pageView != SanctumPageView.file) {
-          _pageView = SanctumPageView.preview;
-        }
-      });
-      widget.onDirtyChanged(false);
-      widget.onSaved(mirrored, saved, silent: silent);
-      _refreshRecordLinks();
-      _connections.refreshDiskMtime(_journal?.storagePath);
-      if (!silent) {
-        _showSnack(EntityDetailArchiveOps.saveSuccessMessage(mirrored));
+      switch (result) {
+        case EntityDetailSaveSkipped():
+          return;
+        case EntityDetailSaveFailed(:final error):
+          if (!silent) {
+            final msg = error is EntityVaultPathConflict
+                ? error.userMessage
+                : '저장 실패: $error';
+            _showSnack(msg);
+          }
+        case EntityDetailSaveSucceeded(
+            :final mirrored,
+            :final saved,
+            :final savedAt,
+            :final serializedFile,
+            :final bodyForPlaceholder,
+          ):
+          if (bodyForPlaceholder != null && !silent) {
+            _bodyCtrl.text = bodyForPlaceholder;
+          }
+          final nextPageView = EntityDetailSaveOps.pageViewAfterSave(
+            current: _pageView,
+            silent: silent,
+          );
+          setState(() {
+            _entity = mirrored;
+            _journal = saved;
+            _item = _buildEntityItem(mirrored, saved);
+            _preview = _item;
+            _draftTags = List<String>.from(saved.tags);
+            _fileCtrl.text = serializedFile;
+            _lastSavedAt = savedAt;
+            if (nextPageView != null) {
+              _pageView = nextPageView;
+            }
+          });
+          widget.onDirtyChanged(false);
+          widget.onSaved(mirrored, saved, silent: silent);
+          _refreshRecordLinks();
+          _connections.refreshDiskMtime(_journal?.storagePath);
+          if (!silent) {
+            _showSnack(EntityDetailArchiveOps.saveSuccessMessage(mirrored));
+          }
       }
-    } on EntityVaultPathConflict catch (e) {
-      if (mounted && !silent) _showSnack(e.userMessage);
-    } catch (e) {
-      if (mounted && !silent) _showSnack('저장 실패: $e');
     } finally {
       if (mounted) setState(() => _isSaving = false);
     }

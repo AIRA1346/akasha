@@ -65,6 +65,3 @@ class WorkbenchVaultDiskSync {
     refreshDiskMtime(filePath);
   }
 }
-
-/// @deprecated Use [WorkbenchVaultDiskSync].
-typedef WorkDetailVaultDiskSync = WorkbenchVaultDiskSync;

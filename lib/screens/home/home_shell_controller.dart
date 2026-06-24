@@ -16,7 +16,6 @@ import '../../models/akasha_item.dart';
 import '../../models/browse_card.dart';
 import '../../models/collectible_browse_item.dart';
 import '../../models/entity_browse_card.dart';
-import '../../widgets/entity_curated_reorder_grid.dart';
 import '../../models/entity_link_selection.dart';
 import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
@@ -24,6 +23,7 @@ import '../../models/library_theme.dart';
 import '../../services/personal_library_membership_service.dart';
 import '../../services/record_link_navigator.dart';
 import 'coordinators/home_browse_coordinator.dart';
+import 'coordinators/home_collection_reorder_ops.dart';
 import 'coordinators/home_catalog_coordinator.dart';
 import 'coordinators/home_dialogs_coordinator.dart';
 import 'coordinators/home_entity_archive_ops.dart';
@@ -561,16 +561,13 @@ class HomeShellController {
     int oldIndex,
     int newIndex,
   ) async {
-    final col = collectionCtrl.activeCollection;
-    if (col == null || !col.isCurated) return;
-    applyEntityReorderToCollection(
-      collection: col,
+    final changed = await HomeCollectionReorderOps.reorderEntityCollection(
+      collectionCtrl: collectionCtrl,
       visibleCards: visibleCards,
       oldIndex: oldIndex,
       newIndex: newIndex,
     );
-    await collectionCtrl.save();
-    rebuild();
+    if (changed) rebuild();
   }
 
   Future<void> onCollectibleCollectionCuratedReorder(
@@ -578,15 +575,12 @@ class HomeShellController {
     int oldIndex,
     int newIndex,
   ) async {
-    final col = collectionCtrl.activeCollection;
-    if (col == null || !col.isCurated) return;
-    applyCollectibleReorderToCollection(
-      collection: col,
+    final changed = await HomeCollectionReorderOps.reorderCollectibleCollection(
+      collectionCtrl: collectionCtrl,
       visibleItems: visibleItems,
       oldIndex: oldIndex,
       newIndex: newIndex,
     );
-    await collectionCtrl.save();
-    rebuild();
+    if (changed) rebuild();
   }
 }

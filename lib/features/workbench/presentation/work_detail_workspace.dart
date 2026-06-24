@@ -17,6 +17,7 @@ import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
+import 'work_detail_save_ops.dart';
 import 'work_detail_delete_ops.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_link_pick_ops.dart';
@@ -567,55 +568,72 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     bool silent = false,
     bool switchToPreview = true,
   }) async {
-    if (_suppressPersist || _isSaving) return;
+    if (WorkDetailSaveOps.shouldSkip(
+      suppressPersist: _suppressPersist,
+      isSaving: _isSaving,
+    )) {
+      return;
+    }
     _autosave.cancel();
     final contentAtSave = _pageView == SanctumPageView.file
         ? _fileCtrl.text
         : _bodyCtrl.text;
     setState(() => _isSaving = true);
     try {
-      final outcome = await WorkDetailArchiveOps.persist(
+      final result = await WorkDetailSaveOps.run(
         draft: _buildSaveDraft(),
         pageView: _pageView,
         contentAtSave: contentAtSave,
         currentFileContent: _fileCtrl.text,
         currentBodyContent: _bodyCtrl.text,
       );
-      final saved = outcome.saved;
       if (!mounted) return;
-      final stillDirty = outcome.stillDirty;
-      setState(() {
-        _item = saved;
-        if (!silent && !stillDirty) {
-          _assignControllerTextIfChanged(_titleCtrl, saved.title);
-          _assignControllerTextIfChanged(_posterUrlCtrl, saved.posterPath ?? '');
-          _assignControllerTextIfChanged(
-            _bodyCtrl,
-            WorkDetailDraftOps.initialBodyMarkdown(saved),
+      switch (result) {
+        case WorkDetailSaveSkipped():
+          return;
+        case WorkDetailSaveFailed(:final error):
+          if (!silent) _showSnack('저장 실패: $error');
+        case WorkDetailSaveSucceeded(
+            :final saved,
+            :final stillDirty,
+            :final savedAt,
+          ):
+          final bodyMarkdown = WorkDetailSaveOps.bodyMarkdownAfterSave(
+            saved: saved,
+            silent: silent,
+            stillDirty: stillDirty,
           );
-          if (switchToPreview) {
-            _pageView = SanctumPageView.preview;
+          setState(() {
+            _item = saved;
+            if (bodyMarkdown != null) {
+              _assignControllerTextIfChanged(_titleCtrl, saved.title);
+              _assignControllerTextIfChanged(
+                _posterUrlCtrl,
+                saved.posterPath ?? '',
+              );
+              _assignControllerTextIfChanged(_bodyCtrl, bodyMarkdown);
+              if (switchToPreview) {
+                _pageView = SanctumPageView.preview;
+              }
+            }
+            _draftTags = List<String>.from(saved.tags);
+            _registryTags = WorkDetailDraftOps.loadRegistryTags(saved.workId);
+            _loadDraftFromItem();
+            _refreshFullFileEditor();
+            _lastSavedAt = savedAt;
+            _connections.refreshDiskMtime(_item.filePath);
+          });
+          if (!stillDirty) {
+            widget.onDirtyChanged(false);
+          } else {
+            _scheduleAutoSave();
           }
-        }
-        _draftTags = List<String>.from(saved.tags);
-        _registryTags = WorkDetailDraftOps.loadRegistryTags(saved.workId);
-        _loadDraftFromItem();
-        _refreshFullFileEditor();
-        _lastSavedAt = DateTime.now();
-        _connections.refreshDiskMtime(_item.filePath);
-      });
-      if (!stillDirty) {
-        widget.onDirtyChanged(false);
-      } else {
-        _scheduleAutoSave();
+          widget.onSaved(_item, silent: silent, dirty: stillDirty);
+          _refreshRecordLinks();
+          if (!silent) {
+            _showSnack(WorkDetailArchiveOps.saveSuccessMessage(saved));
+          }
       }
-      widget.onSaved(_item, silent: silent, dirty: stillDirty);
-      _refreshRecordLinks();
-      if (!silent) {
-        _showSnack(WorkDetailArchiveOps.saveSuccessMessage(saved));
-      }
-    } catch (e) {
-      if (mounted && !silent) _showSnack('저장 실패: $e');
     } finally {
       if (mounted) setState(() => _isSaving = false);
     }

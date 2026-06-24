@@ -2,12 +2,12 @@ import 'package:akasha/features/workbench/presentation/work_detail_vault_sync.da
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('WorkDetailVaultDiskSync.resolveChange', () {
+  group('WorkbenchVaultDiskSync.resolveChange', () {
     final known = DateTime(2024, 1, 1, 12);
 
     test('noOp while saving', () {
       expect(
-        WorkDetailVaultDiskSync.resolveChange(
+        WorkbenchVaultDiskSync.resolveChange(
           knownMtime: known,
           fileMtime: known.add(const Duration(hours: 1)),
           isSaving: true,
@@ -19,7 +19,7 @@ void main() {
 
     test('noOp when file not newer', () {
       expect(
-        WorkDetailVaultDiskSync.resolveChange(
+        WorkbenchVaultDiskSync.resolveChange(
           knownMtime: known,
           fileMtime: known,
           isSaving: false,
@@ -31,7 +31,7 @@ void main() {
 
     test('promptReload when dirty and disk newer', () {
       expect(
-        WorkDetailVaultDiskSync.resolveChange(
+        WorkbenchVaultDiskSync.resolveChange(
           knownMtime: known,
           fileMtime: known.add(const Duration(seconds: 1)),
           isSaving: false,
@@ -43,7 +43,7 @@ void main() {
 
     test('reload when clean and disk newer', () {
       expect(
-        WorkDetailVaultDiskSync.resolveChange(
+        WorkbenchVaultDiskSync.resolveChange(
           knownMtime: known,
           fileMtime: known.add(const Duration(seconds: 1)),
           isSaving: false,
@@ -55,7 +55,7 @@ void main() {
   });
 
   test('evaluateFileChange sets externalChangePending on conflict', () {
-    final sync = WorkDetailVaultDiskSync();
+    final sync = WorkbenchVaultDiskSync();
     sync.diskMtime = DateTime(2024, 1, 1);
 
     final action = sync.evaluateFileChange(
