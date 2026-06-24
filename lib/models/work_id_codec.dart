@@ -183,7 +183,7 @@ class WorkIdCodec {
   }) {
     final id = identifier.trim();
     final yearSuffix = releaseYear != null ? '_$releaseYear' : '';
-    return '${domainPrefix(domain)}_${category.name}_${id}$yearSuffix';
+    return '${domainPrefix(domain)}_${category.name}_$id$yearSuffix';
   }
 
   static String buildIsbn({

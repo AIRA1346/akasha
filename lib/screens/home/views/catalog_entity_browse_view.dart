@@ -9,7 +9,6 @@ import '../../../models/browse_entity_scope.dart';
 import '../../../models/browse_card.dart';
 import '../../../models/collectible_browse_item.dart';
 import '../../../models/collectible_collection.dart';
-import '../../../models/collectible_kind.dart';
 import '../../../models/entity_browse_card.dart';
 import '../../../models/entity_gallery_sort.dart';
 import '../../../models/user_catalog_entity.dart';
@@ -358,9 +357,9 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
   String get _headerTitle {
     final collection = widget.collection;
     if (collection != null) {
-      return '${collection.title} (${_itemCount})';
+      return '${collection.title} ($_itemCount)';
     }
-    return '${widget.scope.label} 갤러리 (${_itemCount})';
+    return '${widget.scope.label} 갤러리 ($_itemCount)';
   }
 
   List<EntityGallerySortCriteria> get _sortOptions {

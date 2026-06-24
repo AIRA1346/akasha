@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/archiving/entity_journal_entry.dart';
-import '../../../models/user_catalog_entity.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../services/entity_vault_store.dart';
 import 'entity_detail_archive_ops.dart';

@@ -34,9 +34,13 @@ import 'coordinators/home_shell_wiring.dart';
 import 'coordinators/home_vault_coordinator.dart';
 import 'coordinators/home_workbench_coordinator.dart';
 import 'home_browse_filter_controller.dart';
-import 'home_dashboard_controller.dart';
 import 'home_collectible_collection_controller.dart';
+import 'home_collectible_collection_ui.dart';
+import 'home_dashboard_controller.dart';
+import 'home_dashboard_ui.dart';
+import 'home_library_ui.dart';
 import 'home_personal_library_controller.dart';
+import 'home_personal_library_ui.dart';
 import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
 import '../../core/archiving/entity_journal_entry.dart';
@@ -347,10 +351,10 @@ class HomeShellController {
   }
 
   // —— Wiring UI (scaffold) ——
-  get dashboardUi => wiring.dashboardUi;
-  get libraryUi => wiring.libraryUi;
-  get personalLibraryUi => wiring.personalLibraryUi;
-  get collectionUi => wiring.collectionUi;
+  HomeDashboardUi get dashboardUi => wiring.dashboardUi;
+  HomeLibraryUi get libraryUi => wiring.libraryUi;
+  HomePersonalLibraryUi get personalLibraryUi => wiring.personalLibraryUi;
+  HomeCollectibleCollectionUi get collectionUi => wiring.collectionUi;
 
   Future<void> init() async {
     _initCoordinators();

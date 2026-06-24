@@ -1,6 +1,6 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-24 (@10048 · locale-minimum ✅ · test **591**)  
+> **갱신:** 2026-06-25 (@10048 · locale-minimum ✅ · test **596** · analyze 0 issue)  
 > **현재 실행:** **Sprint B1 dogfood** (실사용 검증) · 코드 건강 Phase 7 ✅ 완료  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
@@ -16,7 +16,7 @@
 | **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **10048/10048 (100%)** |
-| **flutter test** | **591 PASS** |
+| **flutter test** | **596 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
@@ -50,7 +50,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **591 PASS** |
+| `flutter test` | **596 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
@@ -66,7 +66,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 게이트 | 상태 | 비고 |
 |--------|:----:|------|
-| **G-AUTO** | ✅ | test 265 · analyze 0 error · Release build OK |
+| **G-AUTO** | ✅ | test 596 · analyze 0 issue · Release build OK |
 | **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
 | **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
 | **G-CATALOG** | ✅ | **10048작** · recall@10 **87/87** (SW1-A) |

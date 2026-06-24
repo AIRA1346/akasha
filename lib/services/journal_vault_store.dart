@@ -55,7 +55,6 @@ class JournalVaultStore {
     final title = (record.title?.trim().isNotEmpty ?? false)
         ? record.title!.trim()
         : recordId;
-    final timeAnchor = record.timeAnchor ?? DateTime.now();
 
     var addedAt = DateTime.now();
     var targetPath = record.storagePath?.trim();

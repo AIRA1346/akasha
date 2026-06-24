@@ -68,7 +68,7 @@ Future<TimelineQuickCaptureResult?> showTimelineQuickCaptureDialog(
                   if (works.isNotEmpty) ...[
                     const SizedBox(height: 12),
                     DropdownButtonFormField<String?>(
-                      value: selectedWorkId,
+                      initialValue: selectedWorkId,
                       decoration: const InputDecoration(
                         labelText: '작품 연결 (선택)',
                         border: OutlineInputBorder(),

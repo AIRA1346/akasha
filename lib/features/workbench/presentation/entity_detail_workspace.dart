@@ -519,7 +519,6 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
     await EntityDetailSaveOps.warnWorkTitleTagsIfNeeded(
       context: context,
-      mounted: mounted,
       catalog: widget.userCatalog,
       tags: _draftTags,
     );

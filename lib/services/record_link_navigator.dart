@@ -10,8 +10,6 @@ import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
 import '../models/user_catalog_entity.dart';
 import 'entity_journal_parser.dart';
-import 'entity_vault_loader.dart';
-import 'file_service.dart';
 
 /// Wave 5 — wiki link tap · incoming record open.
 abstract final class RecordLinkNavigator {

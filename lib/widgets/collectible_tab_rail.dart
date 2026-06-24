@@ -94,7 +94,6 @@ class CollectibleTabRail extends StatelessWidget {
 
 class _TabTile extends StatefulWidget {
   const _TabTile({
-    super.key,
     required this.tab,
     required this.active,
     required this.compact,
@@ -140,7 +139,7 @@ class _TabTileState extends State<_TabTile> {
                     width: active || _isHovered ? 3.0 : 0.0,
                     height: active ? 28.0 : (_isHovered ? 14.0 : 0.0),
                     decoration: BoxDecoration(
-                      color: active ? Colors.tealAccent : Colors.tealAccent.withOpacity(0.4),
+                      color: active ? Colors.tealAccent : Colors.tealAccent.withValues(alpha: 0.4),
                       borderRadius: BorderRadius.circular(1.5),
                     ),
                   ),
@@ -183,7 +182,7 @@ class _TabTileState extends State<_TabTile> {
                 width: active || _isHovered ? 3.5 : 0.0,
                 height: active ? 28.0 : (_isHovered ? 14.0 : 0.0),
                 decoration: BoxDecoration(
-                  color: active ? Colors.tealAccent : Colors.tealAccent.withOpacity(0.4),
+                  color: active ? Colors.tealAccent : Colors.tealAccent.withValues(alpha: 0.4),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),

@@ -13,10 +13,9 @@ import 'workbench_record_links_loader.dart';
 /// WorkDetailWorkspace — incoming·sameDay·neighbors·vault disk sync 상태.
 class WorkDetailConnectionsCoordinator {
   WorkDetailConnectionsCoordinator({
-    required VoidCallback onStateChanged,
+    required this.onStateChanged,
     WorkbenchVaultDiskSync? vaultDiskSync,
-  })  : onStateChanged = onStateChanged,
-        vaultDiskSync = vaultDiskSync ?? WorkbenchVaultDiskSync();
+  }) : vaultDiskSync = vaultDiskSync ?? WorkbenchVaultDiskSync();
 
   final VoidCallback onStateChanged;
   final WorkbenchVaultDiskSync vaultDiskSync;

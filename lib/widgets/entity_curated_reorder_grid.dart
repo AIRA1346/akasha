@@ -29,7 +29,7 @@ class EntityCuratedReorderGrid extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
       buildDefaultDragHandles: false,
       itemCount: cards.length,
-      onReorder: onReorder,
+      onReorderItem: onReorder,
       itemBuilder: (context, index) {
         final card = cards[index];
         return ReorderableDragStartListener(
@@ -97,7 +97,7 @@ class CollectibleCuratedReorderGrid extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
       buildDefaultDragHandles: false,
       itemCount: items.length,
-      onReorder: onReorder,
+      onReorderItem: onReorder,
       itemBuilder: (context, index) {
         final item = items[index];
         return ReorderableDragStartListener(

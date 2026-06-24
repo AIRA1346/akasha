@@ -383,6 +383,7 @@ class HomeDialogsCoordinator {
     }
 
     await userCatalog.load();
+    if (!ctx.mounted) return;
     final workTitleIndex = EntityTagValidation.buildWorkTitleIndex(
       catalogEntities: userCatalog.all,
       vaultItems: getItems(),

@@ -10,7 +10,6 @@ import '../../../utils/work_link_neighbors.dart';
 import '../../../models/enums.dart';
 import '../../../widgets/workbench_resizable_panel.dart';
 import 'widgets/workbench_panel_styles.dart';
-import 'widgets/workbench_record_links_sections.dart';
 import 'work_detail_info_form.dart';
 import 'work_detail_info_poster.dart';
 

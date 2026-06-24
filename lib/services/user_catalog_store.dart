@@ -10,7 +10,6 @@ import '../core/archiving/entity_anchor.dart';
 import '../models/entity_id_codec.dart';
 import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
-import '../models/work_id_codec.dart';
 import 'file_service.dart';
 
 /// Tier 1.5 user catalog — `{vault}/catalog/user_entities.json`.
@@ -24,12 +23,10 @@ class UserCatalogStore implements UserCatalogPort {
   final List<UserCatalogEntity> _entities = [];
   final StreamController<void> _changeController =
       StreamController<void>.broadcast();
-  bool _loaded = false;
 
   @visibleForTesting
   void resetForTesting() {
     _entities.clear();
-    _loaded = false;
   }
 
   @visibleForTesting
@@ -37,7 +34,6 @@ class UserCatalogStore implements UserCatalogPort {
     _entities
       ..clear()
       ..addAll(items);
-    _loaded = true;
   }
 
   @override
@@ -51,13 +47,11 @@ class UserCatalogStore implements UserCatalogPort {
     _entities.clear();
     final vault = AkashaFileService().vaultPath;
     if (vault == null || vault.isEmpty) {
-      _loaded = true;
       return;
     }
 
     final file = _catalogFile(vault);
     if (!await file.exists()) {
-      _loaded = true;
       return;
     }
 
@@ -82,7 +76,6 @@ class UserCatalogStore implements UserCatalogPort {
     } catch (e) {
       debugPrint('[UserCatalogStore] load failed: $e');
     }
-    _loaded = true;
   }
 
   @override

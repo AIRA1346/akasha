@@ -121,7 +121,7 @@ class _PosterCardState extends State<PosterCard> {
         duration: const Duration(milliseconds: 200),
         curve: Curves.easeOut,
         transform: _isHovered
-            ? (Matrix4.identity()..translate(0.0, -4.0))
+            ? Matrix4.translationValues(0.0, -4.0, 0.0)
             : Matrix4.identity(),
         decoration: BoxDecoration(
           color: const Color(0xFF1E1E2E),
@@ -304,7 +304,7 @@ class _PosterCardState extends State<PosterCard> {
           ),
         ),
         if (isEntity)
-          _buildEntityMetaRow(item as EntityItem)
+          _buildEntityMetaRow(item)
         else ...[
           _buildRatingStatusRow(item),
           const SizedBox(height: 2),

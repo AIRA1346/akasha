@@ -4,8 +4,6 @@ import '../../core/ports/entity_registry_port.dart';
 import '../core/ports/registry_port.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
-import '../models/franchise_group.dart';
-import '../models/registry_work.dart';
 import '../services/entity_vault_loader.dart';
 import '../services/file_service.dart';
 import '../services/franchise_registry.dart';

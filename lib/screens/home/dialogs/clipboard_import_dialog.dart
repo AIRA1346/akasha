@@ -82,9 +82,11 @@ Future<void> showClipboardImportDialog(
                 );
               }
             } catch (e) {
-              ScaffoldMessenger.of(ctx).showSnackBar(
-                SnackBar(content: Text('파싱에 실패했습니다: $e')),
-              );
+              if (ctx.mounted) {
+                ScaffoldMessenger.of(ctx).showSnackBar(
+                  SnackBar(content: Text('파싱에 실패했습니다: $e')),
+                );
+              }
             }
           },
           child: const Text('파싱 및 가져오기'),

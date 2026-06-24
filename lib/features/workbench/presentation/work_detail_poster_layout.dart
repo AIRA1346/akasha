@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
-
 /// 작품정보 패널 포스터 — 2:3 프레임을 max 안에 맞춤 (빈 세로 여백 최소화).
-@visibleForTesting
 ({double width, double height}) infoPosterDisplayBounds({
   required double maxWidth,
   required double maxHeight,

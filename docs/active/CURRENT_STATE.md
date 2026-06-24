@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-24 (test **591** · Phase 7 ✅ · **Sprint B1 dogfood**)  
+> **갱신:** 2026-06-25 (test **596** · analyze 0 issue · Phase 7 ✅ · **Sprint B1 dogfood**)  
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### Ⅱ. 게이트웨이 및 CI 검증
 * **검색 Recall 검증 (`sw1_a_validation.dart`):** baseline 95개 검색 쿼리에 대해 Recall@10 **100% 달성** (87/87 recall-evaluated).
-* **CI 검증 게이트:** `flutter test` **591 PASS**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
+* **CI 검증 게이트:** `flutter test` **596 PASS**, `flutter analyze lib/` **0 issue**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
 
 ### Ⅲ. Home Shell (Wave 1 + Phase 7)
 * **프리뷰:** `HomePreviewCoordinator` — 스택·복귀·연결 픽 pending 통합.

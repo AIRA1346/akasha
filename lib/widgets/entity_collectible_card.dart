@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/entity_browse_card.dart';
 import 'poster_card.dart';

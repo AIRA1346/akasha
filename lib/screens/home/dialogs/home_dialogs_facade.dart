@@ -11,14 +11,12 @@ import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/file_service.dart';
-import '../../../services/entity_vault_store.dart';
 import '../../../services/journal_vault_store.dart';
 import '../../../services/person_seed_registry.dart';
 import '../../../services/timeline_vault_store.dart';
 import '../../../models/library_theme.dart';
 import '../../../core/ports/registry_port.dart';
 import '../../../core/ports/user_catalog_port.dart';
-import '../../../models/work_id_codec.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/fusion_search_dialog.dart';
@@ -141,6 +139,7 @@ class HomeDialogsFacade {
     if (userCatalog != null) {
       await userCatalog.load();
     }
+    if (!context.mounted) return;
     final workTitleIndex = userCatalog != null
         ? EntityTagValidation.buildWorkTitleIndex(
             catalogEntities: userCatalog.all,

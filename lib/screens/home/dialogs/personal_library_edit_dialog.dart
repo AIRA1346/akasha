@@ -125,9 +125,8 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                       ReorderableListView(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        onReorder: (oldIndex, newIndex) {
+                        onReorderItem: (oldIndex, newIndex) {
                           setD(() {
-                            if (newIndex > oldIndex) newIndex -= 1;
                             final id = tempMemberOrder.removeAt(oldIndex);
                             tempMemberOrder.insert(newIndex, id);
                           });

@@ -170,7 +170,7 @@ class RegistrySyncService {
           json.decode(indexManifestContent) as Map<String, dynamic>,
         );
         for (final shard in indexManifest.shards) {
-          final shardContent = await _fetchText('${baseUrl}${shard.path}');
+          final shardContent = await _fetchText('$baseUrl${shard.path}');
           if (shardContent != null) {
             success = (await loader.cacheRemoteSearchIndexShard(
                   shard.path,
@@ -192,7 +192,7 @@ class RegistrySyncService {
     final eagerShards = remoteManifest.eagerShards();
     for (final shard in eagerShards) {
       if (!await _shardNeedsSync(shard, previousManifest, loader)) continue;
-      final shardContent = await _fetchText('${baseUrl}${shard.path}');
+      final shardContent = await _fetchText('$baseUrl${shard.path}');
       if (shardContent != null) {
         final ok = await loader.cacheRemoteShard(shard.path, shardContent);
         success = ok || success;
@@ -319,7 +319,7 @@ class RegistrySyncService {
       final meta = loader.manifest?.shardById(shardId);
       if (meta == null) continue;
       if (await loader.hasBundledShard(meta.path)) continue;
-      final content = await _fetchText('${baseUrl}${meta.path}');
+      final content = await _fetchText('$baseUrl${meta.path}');
       if (content != null) {
         success = await loader.cacheRemoteShard(meta.path, content) || success;
       }

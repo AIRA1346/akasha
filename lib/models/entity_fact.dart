@@ -1,7 +1,6 @@
 import '../core/archiving/entity_anchor.dart';
 import 'enums.dart';
 import 'registry_work.dart';
-import 'user_catalog_entity.dart';
 
 /// Tier 1 global Entity Fact (Person · Concept …) — Wave 4.
 class EntityFact {

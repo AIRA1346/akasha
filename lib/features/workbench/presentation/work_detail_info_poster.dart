@@ -177,7 +177,7 @@ class _BlurredPosterBackground extends StatelessWidget {
           'User-Agent':
               'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         },
-        errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+        errorBuilder: (_, _, _) => const SizedBox.shrink(),
       );
     }
     final localFile = _resolveLocalFile(path);
@@ -185,7 +185,7 @@ class _BlurredPosterBackground extends StatelessWidget {
       return Image.file(
         localFile,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+        errorBuilder: (_, _, _) => const SizedBox.shrink(),
       );
     }
     return const SizedBox.shrink();

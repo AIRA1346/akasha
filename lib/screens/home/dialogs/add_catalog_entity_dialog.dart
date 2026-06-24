@@ -4,8 +4,6 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/catalog_entity_add_result.dart';
 import '../../../models/entity_id_codec.dart';
 import '../../../models/user_catalog_entity.dart';
-import '../../../models/akasha_item.dart';
-import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/editable_tag_chips.dart';

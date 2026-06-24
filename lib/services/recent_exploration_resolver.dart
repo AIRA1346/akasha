@@ -1,9 +1,6 @@
-import '../core/archiving/entity_anchor.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../models/akasha_item.dart';
-import '../models/enums.dart';
 import '../models/user_catalog_entity.dart';
-import 'recent_exploration_store.dart';
 
 /// 최근 탐색 키 → 표시용 [AkashaItem] 목록.
 List<AkashaItem> resolveRecentExplorationItems({

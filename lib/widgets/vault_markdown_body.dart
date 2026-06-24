@@ -76,8 +76,8 @@ class VaultMarkdownBody extends StatelessWidget {
             onWikiLinkTap!(link);
           }
         },
-        imageBuilder: (uri, title, alt) =>
-            _buildImage(uri.toString(), alt ?? title),
+        sizedImageBuilder: (config) =>
+            _buildImage(config.uri.toString(), config.alt ?? config.title),
       ),
     );
   }
@@ -95,7 +95,7 @@ class VaultMarkdownBody extends StatelessWidget {
           child: SafeLocalImage(
             file: local,
             fit: BoxFit.contain,
-            errorBuilder: (_, __, ___) => _brokenImage(alt),
+            errorBuilder: (_, _, _) => _brokenImage(alt),
           ),
         ),
       );
@@ -109,7 +109,7 @@ class VaultMarkdownBody extends StatelessWidget {
           child: Image.network(
             src,
             headers: _networkImageHeaders,
-            errorBuilder: (_, __, ___) => _brokenImage(alt),
+            errorBuilder: (_, _, _) => _brokenImage(alt),
           ),
         ),
       );

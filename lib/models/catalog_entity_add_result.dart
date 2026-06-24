@@ -1,4 +1,3 @@
-import '../core/archiving/entity_anchor.dart';
 import '../services/entity_archive_service.dart';
 import 'user_catalog_entity.dart';
 

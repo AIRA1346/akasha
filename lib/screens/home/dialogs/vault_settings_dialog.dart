@@ -53,7 +53,7 @@ Future<void> showVaultSettingsDialog(
                 ),
                 const SizedBox(height: 6),
                 DropdownButtonFormField<CatalogLocale>(
-                  value: localLocale,
+                  initialValue: localLocale,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     isDense: true,

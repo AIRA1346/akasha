@@ -1,4 +1,3 @@
-import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../services/relationship_discovery_service.dart';

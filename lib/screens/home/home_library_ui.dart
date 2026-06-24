@@ -94,6 +94,7 @@ class HomeLibraryUi {
       libraryId: libraryId,
       item: item,
     );
+    if (!context.mounted) return;
 
     if (outcome.vaultMdError != null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -158,6 +159,7 @@ class HomeLibraryUi {
         onCreateLibrary: canAddToLibrary ? onCreateLibrary : null,
       ),
     );
+    if (!context.mounted) return;
     showMembershipApplySnackBar(context, result);
     setState(() {});
   }
@@ -192,6 +194,7 @@ class HomeLibraryUi {
         onCreateLibrary: onCreateLibrary,
       ),
     );
+    if (!context.mounted) return;
     showMembershipApplySnackBar(context, result);
     setState(() {});
   }
@@ -333,6 +336,7 @@ class HomeLibraryUi {
       context,
       request: request,
     );
+    if (!context.mounted) return;
     showMembershipApplySnackBar(context, result);
     setState(() {});
   }

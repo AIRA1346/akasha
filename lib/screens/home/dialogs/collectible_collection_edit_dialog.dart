@@ -117,7 +117,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                 ),
                 const SizedBox(height: 12),
                 DropdownButtonFormField<CollectibleCollectionMode>(
-                  value: mode,
+                  initialValue: mode,
                   decoration: const InputDecoration(
                     labelText: '모드',
                     border: OutlineInputBorder(),
@@ -198,7 +198,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                     )
                   else
                     DropdownButtonFormField<String?>(
-                      value: relatedWorkId != null &&
+                      initialValue: relatedWorkId != null &&
                               pickableWorks.any((w) => w.workId == relatedWorkId)
                           ? relatedWorkId
                           : null,
@@ -441,7 +441,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                 );
                 return;
               }
-              config!.title = title;
+              config.title = title;
               config.mode = mode;
               if (mode == CollectibleCollectionMode.filter) {
                 config.filter = buildFilter();

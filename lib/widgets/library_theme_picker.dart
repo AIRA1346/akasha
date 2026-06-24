@@ -10,6 +10,8 @@ Future<LibraryTheme?> showLibraryThemePicker(
   required LibraryTheme current,
 }) async {
   await EntitlementService.instance.load();
+  if (!context.mounted) return null;
+
   final entitlements = EntitlementService.instance;
 
   return showModalBottomSheet<LibraryTheme>(

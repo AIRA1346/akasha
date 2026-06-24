@@ -19,6 +19,5 @@ class SameDayRecordRef {
         RecordKind.freeformJournal => 'Journal',
         RecordKind.workJournal => 'Work',
         RecordKind.entityJournal => 'Entity',
-        _ => kind.name,
       };
 }

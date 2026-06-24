@@ -254,7 +254,7 @@ class _JournalViewState extends State<JournalView> {
           child: ListView.separated(
             padding: const EdgeInsets.all(12),
             itemCount: _entries.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (_, _) => const SizedBox(height: 8),
             itemBuilder: (context, index) {
               final entry = _entries[index];
               return Material(

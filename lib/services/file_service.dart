@@ -522,10 +522,6 @@ class AkashaFileService {
     return p.join('posters', uniqueFilename);
   }
 
-  String _makeSafeFilename(String title) {
-    return title.replaceAll(RegExp(r'[\\/:*?"<>|]'), '_').trim();
-  }
-
   void dispose() {
     _stopWatching();
     _vaultUpdateController?.close();

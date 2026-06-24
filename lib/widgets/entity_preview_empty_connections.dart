@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../core/archiving/entity_anchor.dart';
 import '../theme/akasha_colors.dart';
 
 /// Entity Preview — 연결 0건일 때 타입별 연결 CTA (Work 패널과 동일 패턴).

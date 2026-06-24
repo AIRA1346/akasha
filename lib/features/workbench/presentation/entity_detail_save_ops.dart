@@ -74,13 +74,12 @@ abstract final class EntityDetailSaveOps {
 
   static Future<void> warnWorkTitleTagsIfNeeded({
     required BuildContext context,
-    required bool mounted,
     required UserCatalogPort? catalog,
     required List<String> tags,
   }) async {
     if (catalog == null) return;
     await catalog.load();
-    if (!mounted) return;
+    if (!context.mounted) return;
     EntityTagValidation.showWorkTitleWarningIfNeeded(
       context,
       tags: tags,
