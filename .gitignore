@@ -38,6 +38,7 @@ migrate_working_dir/
 /build/
 /coverage/
 /registry_cache/
+/test/failures/
 
 # Symbolication related
 app.*.symbols

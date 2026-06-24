@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-24 (test **591** · Phase 7b save ops)  
+> **갱신:** 2026-06-24 (test **591** · Phase 7 ✅ · **Sprint B1 dogfood**)  
 
 ---
 
@@ -50,7 +50,12 @@
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.
 * **상세 편집:** Markdown 본문 편집과 YAML frontmatter 폼 편집 기능이 완결되어 상호 탭 싱크 처리.
 * **연결 패널:** Work·Entity 각각 `*ConnectionsCoordinator`로 incoming / sameDay / link neighbors·vault 외부 편집 감지 분리.
-* **공유 ops:** `workbench_linked_record_ops`, `workbench_vault_disk_ops`, `*draft_ops`, `*delete_ops`, `workbench_save_shortcuts`.
+* **공유 ops:** `workbench_linked_record_ops`, `workbench_vault_disk_ops`, `*draft_ops`, `*delete_ops`, `*save_ops`, `workbench_save_shortcuts`.
+
+### Ⅲ. Sprint B1 (Dogfood)
+* SSOT: [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
+* 자동: `.\scripts\dogfood_precheck.ps1` (test → ci_registry → preflight → sw1_a → quality_gate --release)
+* 수동: Release 빌드에서 볼트·Work/Entity `.md` 루프 · P0 QA 12/12 재확인
 
 ---
 

@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
 > **갱신:** 2026-06-24 (@10048 · locale-minimum ✅ · test **591**)  
-> **현재 실행:** 코드 건강 Phase 7 — **Home preview·Workbench ops** ✅ 진행 중 · **Sprint B1 dogfood** 병행 예정  
+> **현재 실행:** **Sprint B1 dogfood** (실사용 검증) · 코드 건강 Phase 7 ✅ 완료  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -21,7 +21,7 @@
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
 | **코드 건강** | Phase 0~6 ✅ · **Phase 7** Home preview·Workbench shared ops ✅ |
-| **다음** | workspace save ops · `home_dialogs` 분해 · **Sprint B1 dogfood** |
+| **다음** | **Sprint B1 dogfood** · `home_dialogs` 분해(선택) · R14 P0 surface |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -97,7 +97,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 4 | `tool/archive` · `tool/migrations` 스크립트 이동 | ✅ |
 | 5 | `registry_shard_loader` workId 캐시 | ✅ |
 | 6 | vault fingerprint 조건부 polling | ✅ |
-| 7 | Home `HomePreviewCoordinator`·recent exploration · Workbench linked/vault/delete/draft ops | ✅ |
+| 7 | Home preview·recent·archive/reorder · Workbench linked/vault/save/delete/draft ops | ✅ |
 
 **대형 파일 (참고):** `work_detail_workspace` ~792줄 · `entity_detail_workspace` ~736줄 · `home_shell_controller` ~516줄 · `home_dialogs_coordinator` ~395줄
 
@@ -107,11 +107,11 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | **workspace save ops** · `home_dialogs_coordinator` 분해 | **P0** |
-| 2 | **Sprint B1** — 작품·entity `.md` 지속 dogfood | **P0** |
+| 1 | **Sprint B1** — [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) · `dogfood_precheck.ps1` | **P0** |
+| 2 | P0 QA 12/12 Release 빌드 재확인 (R3) | **P0** |
 | 3 | **R14 P0** — design token · Preview 정보 계층 (Engine 무변경) | P1 |
-| 4 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | P1 |
-| 5 | P0 QA Release 빌드 기준 재확인 · `git push` 정리 | P1 |
+| 4 | `home_dialogs_coordinator` 분해 (선택) | P2 |
+| 5 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | P1 |
 | 6 | **M3** — Ready 시 Steam Release | ⏸️ |
 
 ---
