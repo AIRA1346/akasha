@@ -87,6 +87,7 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
   void didUpdateWidget(covariant DashboardPreviewPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.item.workId != widget.item.workId ||
+        oldWidget.item.filePath != widget.item.filePath ||
         oldWidget.linkIndexRevision != widget.linkIndexRevision ||
         oldWidget.vaultItems.length != widget.vaultItems.length ||
         !_sameVaultWorkIds(oldWidget.vaultItems, widget.vaultItems)) {
@@ -104,10 +105,12 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
   }
 
   void _reloadFutures() {
-    _neighborsFuture = _loadNeighbors();
-    _suggestedFuture = _loadSuggested();
-    _nextConnectionsFuture = _loadNextConnections();
-    _registryFuture = _loadRegistryCandidates();
+    setState(() {
+      _neighborsFuture = _loadNeighbors();
+      _suggestedFuture = _loadSuggested();
+      _nextConnectionsFuture = _loadNextConnections();
+      _registryFuture = _loadRegistryCandidates();
+    });
   }
 
   Future<WorkLinkNeighbors> _loadNeighbors() {

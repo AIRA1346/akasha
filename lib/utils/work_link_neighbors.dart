@@ -6,6 +6,9 @@ import '../models/entity_id_codec.dart';
 import '../models/user_catalog_entity.dart';
 import '../services/entity_related_works_discovery.dart';
 import '../services/relationship_discovery_service.dart';
+import '../services/works_registry.dart';
+import 'catalog_entity_resolver.dart';
+import 'work_link_resolution.dart';
 import 'work_related_characters.dart';
 
 /// 작품 기준 링크 인덱스 이웃 — 인물·연결 작품.
@@ -60,7 +63,33 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   }
 
   await userCatalog.load();
-  final linkedEntityIds = await discovery.entityIdsForWork(work.workId);
+  final effectiveWork = WorkLinkResolution.vaultWorkForLinks(work, vaultItems);
+  final linkedEntityIds =
+      await discovery.entityIdsForWork(effectiveWork.workId);
+  final allLinkedIds = linkedEntityIds.toSet();
+
+  final filePath = effectiveWork.filePath;
+  if (filePath != null && filePath.isNotEmpty) {
+    final outgoing = await linkIndex.outgoingLinks(filePath);
+    for (final link in outgoing) {
+      final targetId = CatalogEntityResolver.recordLinkEntityId(
+        link,
+        userCatalog: userCatalog,
+        vaultItems: vaultItems,
+      );
+      if (targetId == null ||
+          WorkLinkResolution.workIdsReferToSame(targetId, effectiveWork.workId)) {
+        continue;
+      }
+      if (EntityIdCodec.typeFromId(targetId) == EntityAnchorType.work) continue;
+      allLinkedIds.add(targetId);
+    }
+  }
+
+  final resolvedEntities = await CatalogEntityResolver.resolveMany(
+    entityIds: allLinkedIds,
+    userCatalog: userCatalog,
+  );
 
   final characters = <UserCatalogEntity>[];
   final events = <UserCatalogEntity>[];
@@ -68,11 +97,10 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   final places = <UserCatalogEntity>[];
   final organizations = <UserCatalogEntity>[];
 
-  for (final entityId in linkedEntityIds) {
-    final type = EntityIdCodec.typeFromId(entityId);
-    final entity = userCatalog.getById(entityId);
+  for (final entityId in allLinkedIds) {
+    final entity = resolvedEntities[entityId];
     if (entity == null) continue;
-    switch (type) {
+    switch (EntityIdCodec.typeFromId(entityId)) {
       case EntityAnchorType.person:
         if (characters.length < characterLimit) characters.add(entity);
       case EntityAnchorType.event:
@@ -92,7 +120,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
 
   if (characters.length < characterLimit) {
     for (final entity in relatedCharactersForWork(
-      work: work,
+      work: effectiveWork,
       catalog: userCatalog,
       limit: characterLimit,
     )) {
@@ -103,24 +131,30 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   }
 
   final workScores = <String, int>{};
-  final selfId = work.workId;
-  final filePath = work.filePath;
+  final selfId = effectiveWork.workId;
   if (filePath != null && filePath.isNotEmpty) {
     final outgoing = await linkIndex.outgoingLinks(filePath);
     for (final link in outgoing) {
-      final targetId = link.targetEntityId;
-      if (targetId == null || targetId == selfId) continue;
+      final targetId = CatalogEntityResolver.recordLinkEntityId(
+        link,
+        userCatalog: userCatalog,
+        vaultItems: vaultItems,
+      );
+      if (targetId == null ||
+          WorkLinkResolution.workIdsReferToSame(targetId, selfId)) {
+        continue;
+      }
       if (EntityIdCodec.typeFromId(targetId) == EntityAnchorType.work) {
         workScores[targetId] = (workScores[targetId] ?? 0) + 3;
       }
     }
   }
 
-  if (linkedEntityIds.isNotEmpty) {
-    final relatedByEntity = await discovery.discoverAll(linkedEntityIds);
+  if (allLinkedIds.isNotEmpty) {
+    final relatedByEntity = await discovery.discoverAll(allLinkedIds);
     for (final related in relatedByEntity.values) {
       for (final workId in related.workIds) {
-        if (workId == selfId) continue;
+        if (WorkLinkResolution.workIdsReferToSame(workId, selfId)) continue;
         workScores[workId] = (workScores[workId] ?? 0) + 1;
       }
     }
@@ -137,7 +171,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
   for (final workId in sortedWorkIds) {
     if (connectedWorks.length >= connectedWorkLimit) break;
     for (final item in vaultItems) {
-      if (item.workId == workId) {
+      if (WorksRegistry.setContainsWorkId({workId}, item.workId)) {
         connectedWorks.add(item);
         break;
       }
@@ -146,7 +180,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
 
   final bridgeLabels =
       await RelationshipDiscoveryService.bridgeLabelsForConnectedWorks(
-    sourceWork: work,
+    sourceWork: effectiveWork,
     connectedWorks: connectedWorks,
     discovery: discovery,
     userCatalog: userCatalog,
@@ -155,7 +189,7 @@ Future<WorkLinkNeighbors> fetchWorkLinkNeighbors({
 
   final themeClusters =
       await RelationshipDiscoveryService.conceptThemeClustersForWork(
-    workId: work.workId,
+    workId: effectiveWork.workId,
     vaultItems: vaultItems,
     userCatalog: userCatalog,
     discovery: discovery,

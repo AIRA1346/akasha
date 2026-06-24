@@ -78,8 +78,10 @@ class _EntityDashboardPreviewPanelState
     if (oldWidget.entity.entityId != widget.entity.entityId ||
         oldWidget.linkIndexRevision != widget.linkIndexRevision ||
         oldWidget.vaultItems.length != widget.vaultItems.length) {
-      _neighborsFuture = _loadNeighbors();
-      _registryFuture = _loadRegistryCandidates();
+      setState(() {
+        _neighborsFuture = _loadNeighbors();
+        _registryFuture = _loadRegistryCandidates();
+      });
     }
   }
 

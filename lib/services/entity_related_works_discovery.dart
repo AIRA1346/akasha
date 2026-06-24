@@ -4,6 +4,7 @@ import '../core/ports/record_link_port.dart';
 import '../models/akasha_item.dart';
 import '../models/entity_id_codec.dart';
 import '../models/entity_related_works.dart';
+import '../utils/work_link_resolution.dart';
 import 'entity_vault_loader.dart';
 import 'file_service.dart';
 import 'record_link_navigator.dart';
@@ -106,17 +107,39 @@ class RecordLinkEntityRelatedWorksDiscovery
       final paths = await _linkIndex.incomingRecordPaths(entityId);
       for (final path in paths) {
         final resolved = await _resolveWorkIdFromRecordPath(path);
-        if (resolved == workId) {
+        if (resolved != null &&
+            WorkLinkResolution.workIdsReferToSame(resolved, workId)) {
           linked.add(entityId);
           break;
         }
       }
     }
 
+    for (final item in _vaultItems) {
+      if (!WorkLinkResolution.workIdsReferToSame(item.workId, workId)) continue;
+      final path = item.filePath;
+      if (path == null || path.isEmpty) continue;
+      final outgoing = await _linkIndex.outgoingLinks(path);
+      for (final link in outgoing) {
+        final targetId = link.targetEntityId;
+        if (targetId == null ||
+            targetId.isEmpty ||
+            _isWorkEntityId(targetId) ||
+            WorkLinkResolution.workIdsReferToSame(targetId, workId)) {
+          continue;
+        }
+        linked.add(targetId);
+      }
+    }
+
     final journals = await _vaultLoader.loadFromVault(_vaultPath);
     for (final journal in journals) {
       final outgoing = await _linkIndex.outgoingLinks(journal.storagePath);
-      if (outgoing.any((link) => link.targetEntityId == workId)) {
+      if (outgoing.any((link) {
+        final targetId = link.targetEntityId;
+        return targetId != null &&
+            WorkLinkResolution.workIdsReferToSame(targetId, workId);
+      })) {
         linked.add(journal.entityId);
       }
     }
