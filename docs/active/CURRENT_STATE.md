@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-21  
+> **갱신:** 2026-06-24  
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### Ⅱ. 게이트웨이 및 CI 검증
 * **검색 Recall 검증 (`sw1_a_validation.dart`):** baseline 95개 검색 쿼리에 대해 Recall@10 **100% 달성** (87/87 recall-evaluated).
-* **CI 검증 게이트:** `flutter test` **505+ PASS**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
+* **CI 검증 게이트:** `flutter test` **580 PASS**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
 
 ---
 
@@ -44,6 +44,7 @@
 ### Ⅱ. 워크벤치 (4열 상세 편집기)
 * **탭 관리:** 다중 Work 및 Entity 탭을 열어둔 다단계 작업 공간.
 * **상세 편집:** Markdown 본문 편집과 YAML frontmatter 폼 편집 기능이 완결되어 상호 탭 싱크 처리.
+* **연결 패널:** Work·Entity 각각 `*ConnectionsCoordinator`로 incoming / sameDay / link neighbors·vault 외부 편집 감지 분리.
 
 ---
 
@@ -55,7 +56,7 @@
 | **Phase 1** | Record 기초 (Foundation) | **완료 (100%)** |
 | **Phase 2** | 카탈로그 확장성 및 CI (10k scale) | **완료 (100%)** |
 | **Phase 6.2** | 워크벤치 상세 통합 (Workbench Parity) | **완료 (100%)** |
-| **Phase 6.3** | incoming/sameDay 패널 마이그레이션 | **진행 중 (85%)** (`SameDayRecordRef` 및 역방향 링크 등 코드 구현 완료, 패널 통합 마이그레이션 및 마무리 진행 중) |
+| **Phase 6.3** | incoming/sameDay·connections coordinator | **완료 (100%)** |
 | **M3** | Steam Release 준비 | **보류 (⏸️)** (M2 depot, IAP, 스토어 등록은 완료되었으나 품질 폴리시 충족을 위해 홀드) |
 | **Phase 3** | Entity 타입 다각화 (Work 이외) | **미착수** |
 | **Phase 4** | 타임라인 아카이브 | **미착수** |

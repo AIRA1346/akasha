@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-21 (@10048 · locale-minimum ✅ · test 505+)  
-> **현재 실행:** catalog-growth-charter · wikidata_ko 배치 · **Phase 6.3 (incoming/sameDay 패널 이전)**  
+> **갱신:** 2026-06-24 (@10048 · locale-minimum ✅ · test **580**)  
+> **현재 실행:** 코드 건강 스프린트 — **Workbench 분해·vault polling·`tool/` 정리** ✅  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -16,10 +16,12 @@
 | **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **10048/10048 (100%)** |
-| **flutter test** | **505+ PASS** |
+| **flutter test** | **580 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
-| **다음** | Phase 6.3 incoming/sameDay 패널 이전, 레거시 Sheet 정리 |
+| **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
+| **코드 건강** | vault 경로 · FeatureFlags v1 · workbench 모듈화 · `tool/` archive · vault polling ✅ |
+| **다음** | `home_shell_controller` 분해 · friction dogfood |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -48,7 +50,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **505+ PASS** |
+| `flutter test` | **580 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
@@ -84,20 +86,36 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 ---
 
-## 5. 다음 권장 작업
+## 5. 코드 건강 스프린트 (2026-06)
 
-| # | 작업 | Sprint / Wave |
-|---|------|:-------------:|
-| 1 | **E0** — SSOT·friction log 갱신 | [extensibility-hardening](../history/programs/extensibility-hardening-plan.md) |
-| 2 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | E1 |
-| 3 | **Sprint B1** — 작품 `.md` 지속 dogfood | B |
-| 4 | friction 있으면 §2 기준 수정 | B |
-| 5 | **E2~E3** — controller 분할 · 글로벌 locale | E2~E3 |
+| Phase | 내용 | 상태 |
+|:---:|------|:---:|
+| 0 | README SSOT · `PROJECT_STATUS` 정리 | ✅ |
+| 1 | Vault works 레이아웃 rename | ✅ |
+| 2 | `FeatureFlags` v1 post-v1 UI 숨김 | ✅ |
+| 3 | Workbench 상태 레이어 분해 (archive·link pick·connections coordinator) | ✅ |
+| 4 | `tool/archive` · `tool/migrations` 스크립트 이동 | ✅ |
+| 5 | `registry_shard_loader` workId 캐시 | ✅ |
+| 6 | vault fingerprint 조건부 polling | ✅ |
+
+**대형 파일 (참고):** `work_detail_workspace` 882줄 · `entity_detail_workspace` 875줄 · `home_shell_controller` 809줄
+
+---
+
+## 6. 다음 권장 작업
+
+| # | 작업 | 우선 |
+|---|------|:----:|
+| 1 | **`home_shell_controller` 분해** — preview/tab coordinator 이전 | **P0** |
+| 2 | **Sprint B1** — 작품·entity `.md` 지속 dogfood | P0 |
+| 3 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | P1 |
+| 4 | friction 있으면 §2 기준 수정 | P1 |
+| 5 | **E2~E3** — 글로벌 locale | P2 |
 | 6 | **M3** — Ready 시 Steam Release | ⏸️ |
 
 ---
 
-## 6. 문서 이력
+## 7. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
@@ -114,3 +132,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-14 | **M3 보류** → Sprint **B** |
 | 2026-06-16 | sliver grid 스크롤 · **extensibility-hardening-plan** · test **305** |
 | 2026-06-16 | E2-5 Port DI · E2-6 workspace 분리 · E1-A3b 순환 제거 · test 318 |
+| 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
