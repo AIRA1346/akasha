@@ -45,17 +45,26 @@ class _UniverseOrbitWidgetState extends State<UniverseOrbitWidget>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return CustomPaint(
-          size: const Size(double.infinity, 320),
-          painter: _UniverseOrbitPainter(
-            progress: _controller.value,
-            workCount: widget.workCount,
-            personCount: widget.personCount,
-            placeCount: widget.placeCount,
-            eventCount: widget.eventCount,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth;
+        final height = math.min(220.0, math.max(160.0, width * 0.52));
+
+        return ClipRect(
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return CustomPaint(
+                size: Size(width, height),
+                painter: _UniverseOrbitPainter(
+                  progress: _controller.value,
+                  workCount: widget.workCount,
+                  personCount: widget.personCount,
+                  placeCount: widget.placeCount,
+                  eventCount: widget.eventCount,
+                ),
+              );
+            },
           ),
         );
       },
@@ -80,89 +89,93 @@ class _UniverseOrbitPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    const pad = 10.0;
     final centerX = size.width / 2;
     final centerY = size.height / 2;
     final center = Offset(centerX, centerY);
+    final baseR = math.min(size.width - pad * 2, size.height - pad * 2) * 0.34;
 
-    // 고정 비율 궤도 반경 상수 r
-    final r = size.height * 0.38;
-
-    // 우주 먼지 / 미세 배경 그리드 데코레이션
+    // 배경 동심원
     final bgPaint = Paint()
       ..color = AkashaColors.surfaceElevated.withValues(alpha: 0.1)
       ..strokeWidth = 1.0
       ..style = PaintingStyle.stroke;
-    canvas.drawCircle(center, size.height * 0.45, bgPaint);
-    canvas.drawCircle(center, size.height * 0.35, bgPaint);
+    canvas.drawCircle(center, baseR * 0.55, bgPaint);
+    canvas.drawCircle(center, baseR * 0.82, bgPaint);
 
-    // 1. 중앙 항성 (Sun) 드로잉 - 글로우 효과 보강
+    // 중앙 항성
     final sunGlowPaint1 = Paint()
       ..color = const Color(0xFFFF8C00).withValues(alpha: 0.15)
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 24);
-    canvas.drawCircle(center, 38, sunGlowPaint1);
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 16);
+    canvas.drawCircle(center, baseR * 0.18, sunGlowPaint1);
 
     final sunGlowPaint2 = Paint()
       ..color = const Color(0xFFFF4500).withValues(alpha: 0.3)
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
-    canvas.drawCircle(center, 22, sunGlowPaint2);
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
+    canvas.drawCircle(center, baseR * 0.11, sunGlowPaint2);
 
     final sunCorePaint = Paint()
-      ..shader = const RadialGradient(
-        colors: [
-          Color(0xFFFFD700), // Gold
-          Color(0xFFFF4500), // OrangeRed
+      ..shader = RadialGradient(
+        colors: const [
+          Color(0xFFFFD700),
+          Color(0xFFFF4500),
         ],
-      ).createShader(Rect.fromCircle(center: center, radius: 12));
-    canvas.drawCircle(center, 12, sunCorePaint);
+      ).createShader(Rect.fromCircle(center: center, radius: baseR * 0.07));
+    canvas.drawCircle(center, baseR * 0.07, sunCorePaint);
 
-    // 포맷팅 (1,000 이상 콤마)
     final fmt = NumberFormat('#,###');
 
-    // 2. 궤도 파라미터 정의 (고정 비율화 및 대칭 정적 위치 매핑)
+    final labelPositions = [
+      Offset(pad + 2, pad + 18),
+      Offset(size.width - pad - 52, pad + 18),
+      Offset(pad + 2, size.height - pad - 28),
+      Offset(size.width - pad - 52, size.height - pad - 28),
+    ];
+
     final orbits = [
       _OrbitData(
         label: '작품',
         count: fmt.format(workCount),
-        a: r * 2.1,
-        b: r * 0.85,
+        a: baseR * 0.92,
+        b: baseR * 0.36,
         tiltAngle: -math.pi / 10,
         speedFactor: 1.5,
         phase: 0.0,
         color: AkashaColors.accent,
-        staticPos: Offset(centerX - r * 2.3, centerY - r * 0.6),
+        staticPos: labelPositions[0],
       ),
       _OrbitData(
         label: '인물',
         count: fmt.format(personCount),
-        a: r * 2.5,
-        b: r * 1.05,
+        a: baseR * 1.0,
+        b: baseR * 0.4,
         tiltAngle: -math.pi / 28,
         speedFactor: -1.0,
         phase: math.pi / 3,
         color: AkashaColors.personAccent,
-        staticPos: Offset(centerX + r * 1.6, centerY - r * 0.6),
+        staticPos: labelPositions[1],
       ),
       _OrbitData(
         label: '장소',
         count: fmt.format(placeCount),
-        a: r * 1.7,
-        b: r * 0.65,
+        a: baseR * 0.78,
+        b: baseR * 0.3,
         tiltAngle: math.pi / 8,
         speedFactor: 2.2,
         phase: math.pi * 0.8,
         color: AkashaColors.placeAccent,
-        staticPos: Offset(centerX - r * 2.0, centerY + r * 0.65),
+        staticPos: labelPositions[2],
       ),
       _OrbitData(
         label: '사건',
         count: fmt.format(eventCount),
-        a: r * 2.8,
-        b: r * 1.25,
+        a: baseR * 1.06,
+        b: baseR * 0.44,
         tiltAngle: math.pi / 16,
         speedFactor: -0.7,
         phase: math.pi * 1.3,
         color: AkashaColors.eventAccent,
-        staticPos: Offset(centerX + r * 1.3, centerY + r * 0.65),
+        staticPos: labelPositions[3],
       ),
     ];
 
@@ -197,16 +210,16 @@ class _UniverseOrbitPainter extends CustomPainter {
       // (3) 노드 구체 및 2중 글로우 그리기
       final nodeGlow1 = Paint()
         ..color = orbit.color.withValues(alpha: 0.4)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
-      canvas.drawCircle(nodePos, 11, nodeGlow1);
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+      canvas.drawCircle(nodePos, baseR * 0.07, nodeGlow1);
 
       final nodeGlow2 = Paint()
         ..color = orbit.color.withValues(alpha: 0.7)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4);
-      canvas.drawCircle(nodePos, 7, nodeGlow2);
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+      canvas.drawCircle(nodePos, baseR * 0.045, nodeGlow2);
 
       final nodeCore = Paint()..color = Colors.white;
-      canvas.drawCircle(nodePos, 3.5, nodeCore);
+      canvas.drawCircle(nodePos, baseR * 0.025, nodeCore);
 
       // (4) 고정 대칭 텍스트 라벨 드로잉
       final staticPos = orbit.staticPos;
