@@ -109,6 +109,34 @@ void main() {
       expect(s.browseOffset, WorksRegistry.browsePrefetchWindowSize);
     });
 
+    test('master_index filter prefetch emits scoped catalog window state', () async {
+      WorksRegistry.loader.resetLoadedShardsForTesting();
+      await WorksRegistry.clearDiskCacheAndReloadBundle();
+
+      final filters = HomeBrowseFilterController()
+        ..toggleCategory(MediaCategory.webtoon);
+      final webtoonTotal = WorksRegistry.catalogIndexEntryCount(
+        category: MediaCategory.webtoon,
+      );
+      CatalogWindowState? state;
+
+      await prefetchRegistryForFilters(
+        registry: WorksRegistryAdapter(),
+        activeDashboardId: 'master_index',
+        filters: filters,
+        onCatalogLoadingChanged: (_) {},
+        isMounted: () => true,
+        onDataChanged: () {},
+        onCatalogWindowState: (s) => state = s,
+      );
+
+      expect(state, isNotNull);
+      final s = state!;
+      expect(s.totalEntries, webtoonTotal);
+      expect(s.browseOffset, webtoonTotal);
+      expect(webtoonTotal, greaterThan(0));
+    });
+
     test('append prefetch advances catalog window offset', () async {
       WorksRegistry.loader.resetLoadedShardsForTesting();
       await WorksRegistry.clearDiskCacheAndReloadBundle();

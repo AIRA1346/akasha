@@ -29,6 +29,12 @@ Future<void> prefetchRegistryForFilters({
             ? null
             : Set<MediaCategory>.from(filters.categories),
       );
+      _emitCatalogWindowState(
+        registry,
+        filters,
+        browseOffset,
+        onCatalogWindowState,
+      );
       if (isMounted()) onDataChanged();
       return;
     }
@@ -95,13 +101,15 @@ void _emitCatalogWindowState(
     domain: filters.domain,
     category: filters.categories.length == 1 ? filters.categories.first : null,
   );
+  final hasActiveIndexFilters =
+      filters.domain != null || filters.categories.isNotEmpty;
   final useFullCatalog = fullCatalogAtOffsetZero &&
       filters.domain == null &&
       filters.categories.isEmpty &&
       total > 0 &&
       total <= registry.browseFullCatalogThreshold;
   onCatalogWindowState((
-    browseOffset: useFullCatalog
+    browseOffset: useFullCatalog || hasActiveIndexFilters
         ? total
         : (browseOffset + limit).clamp(0, total),
     totalEntries: total,
