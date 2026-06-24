@@ -19,7 +19,7 @@ Future<bool?> showCatalogAddContributionDialog(
   final descCtrl = TextEditingController();
   final noteCtrl = TextEditingController();
   final anilistCtrl = TextEditingController();
-  AppDomain domain = AppDomain.subculture;
+  final domain = AppDomain.newWorkDefault;
   MediaCategory category = MediaCategory.manga;
 
   return showDialog<bool>(
@@ -84,26 +84,6 @@ Future<bool?> showCatalogAddContributionDialog(
                       .toList(),
                   onChanged: (v) {
                     if (v != null) setD(() => category = v);
-                  },
-                ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<AppDomain>(
-                  initialValue: domain,
-                  decoration: const InputDecoration(
-                    labelText: '도메인',
-                    border: OutlineInputBorder(),
-                    isDense: true,
-                  ),
-                  items: AppDomain.values
-                      .map(
-                        (d) => DropdownMenuItem(
-                          value: d,
-                          child: Text(d.label),
-                        ),
-                      )
-                      .toList(),
-                  onChanged: (v) {
-                    if (v != null) setD(() => domain = v);
                   },
                 ),
                 const SizedBox(height: 10),

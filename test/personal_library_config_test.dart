@@ -52,6 +52,25 @@ void main() {
       );
     });
 
+    test('normalizeLibraries strips domain filter from all libraries', () {
+      final normalized = PersonalLibraryConfig.normalizeLibraries([
+        PersonalLibraryConfig(
+          id: PersonalLibraryConfig.masterArchiveId,
+          name: 'master_archive',
+          domain: AppDomain.generalCulture,
+        ),
+        PersonalLibraryConfig(
+          id: 'personal_1',
+          name: '커스텀',
+          domain: AppDomain.subculture,
+          categories: {MediaCategory.manga},
+        ),
+      ]);
+
+      expect(normalized.first.domain, isNull);
+      expect(normalized[1].domain, isNull);
+    });
+
     test('json round-trip with filters', () {
       final original = PersonalLibraryConfig(
         id: 'personal_1',

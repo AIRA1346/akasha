@@ -200,7 +200,6 @@ class HomeShellScaffold extends StatelessWidget {
               onLibraryDragStarted:
                   controller.canAddToLibrary ? controller.onLibraryDragStarted : null,
               onConnectVault: controller.selectVaultFolder,
-              onDomainChanged: controller.onDomainChanged,
               onToggleCategory: controller.toggleCategory,
               onClearCategories: controller.clearCategories,
               onToggleWorkStatus: controller.toggleWorkStatus,

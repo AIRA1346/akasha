@@ -22,12 +22,9 @@ Future<void> prefetchRegistryForFilters({
   bool append = false,
 }) async {
   if (activeDashboardId == 'master_index') {
-    if (filters.domain != null || filters.categories.isNotEmpty) {
+    if (filters.categories.isNotEmpty) {
       await registry.prefetchForFilters(
-        domain: filters.domain,
-        categories: filters.categories.isEmpty
-            ? null
-            : Set<MediaCategory>.from(filters.categories),
+        categories: Set<MediaCategory>.from(filters.categories),
       );
       _emitCatalogWindowState(
         registry,
@@ -73,16 +70,13 @@ Future<void> prefetchRegistryForFilters({
     return;
   }
 
-  if (filters.domain == null && filters.categories.isEmpty) {
+  if (filters.categories.isEmpty) {
     if (isMounted()) onDataChanged();
     return;
   }
 
   await registry.prefetchForFilters(
-    domain: filters.domain,
-    categories: filters.categories.isEmpty
-        ? null
-        : Set<MediaCategory>.from(filters.categories),
+    categories: Set<MediaCategory>.from(filters.categories),
   );
 
   if (isMounted()) onDataChanged();
@@ -98,13 +92,10 @@ void _emitCatalogWindowState(
   if (onCatalogWindowState == null) return;
   final limit = registry.browsePrefetchWindowSize;
   final total = registry.catalogIndexEntryCount(
-    domain: filters.domain,
     category: filters.categories.length == 1 ? filters.categories.first : null,
   );
-  final hasActiveIndexFilters =
-      filters.domain != null || filters.categories.isNotEmpty;
+  final hasActiveIndexFilters = filters.categories.isNotEmpty;
   final useFullCatalog = fullCatalogAtOffsetZero &&
-      filters.domain == null &&
       filters.categories.isEmpty &&
       total > 0 &&
       total <= registry.browseFullCatalogThreshold;

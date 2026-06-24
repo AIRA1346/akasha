@@ -12,7 +12,6 @@ Future<void> showDashboardEditDialog(
 }) async {
   final isNew = config == null;
   final nameCtrl = TextEditingController(text: config?.name ?? '');
-  AppDomain? tempDomain = config?.domain;
   final Set<MediaCategory> tempCategories =
       config != null ? Set.from(config.categories) : {};
   final Set<String> tempMyStatuses =
@@ -60,33 +59,6 @@ Future<void> showDashboardEditDialog(
                       border: OutlineInputBorder(),
                       isDense: true,
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    '대분류 (도메인) 필터',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  DropdownButtonFormField<AppDomain?>(
-                    initialValue: tempDomain,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      isDense: true,
-                    ),
-                    items: [
-                      const DropdownMenuItem(
-                        value: null,
-                        child: Text('전체 도메인'),
-                      ),
-                      ...AppDomain.values.map(
-                        (d) => DropdownMenuItem(value: d, child: Text(d.label)),
-                      ),
-                    ],
-                    onChanged: (v) => setD(() => tempDomain = v),
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -201,7 +173,6 @@ Future<void> showDashboardEditDialog(
                     DashboardConfig(
                       id: DateTime.now().millisecondsSinceEpoch.toString(),
                       name: name,
-                      domain: tempDomain,
                       categories: tempCategories,
                       myStatuses: tempMyStatuses,
                       workStatuses: tempWorkStatuses,
@@ -210,7 +181,7 @@ Future<void> showDashboardEditDialog(
                   );
                 } else {
                   config.name = name;
-                  config.domain = tempDomain;
+                  config.domain = null;
                   config.categories = tempCategories;
                   config.myStatuses = tempMyStatuses;
                   config.workStatuses = tempWorkStatuses;

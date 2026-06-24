@@ -6,7 +6,6 @@ import 'home_dashboard_controller.dart';
 
 /// 홈 browse 필터 상태 + 대시보드 동기화
 class HomeBrowseFilterController {
-  AppDomain? domain;
   final Set<MediaCategory> categories = {};
   final Set<String> workStatuses = {};
   final Set<String> myStatuses = {};
@@ -14,21 +13,18 @@ class HomeBrowseFilterController {
   String? highlightEntityId;
 
   bool get hasAnyFilters =>
-      domain != null ||
       categories.isNotEmpty ||
       workStatuses.isNotEmpty ||
       myStatuses.isNotEmpty ||
       highlightEntityId != null;
 
   BrowseFilterState get filterState => BrowseFilterState(
-        domain: domain,
         categories: Set.from(categories),
         workStatuses: Set.from(workStatuses),
         myStatuses: Set.from(myStatuses),
       );
 
   void applySnapshot(DashboardFilterSnapshot snap) {
-    domain = snap.domain;
     categories
       ..clear()
       ..addAll(snap.categories);
@@ -42,19 +38,11 @@ class HomeBrowseFilterController {
 
   void syncToDashboard(HomeDashboardController dashboardCtrl) {
     dashboardCtrl.syncActiveFromFilters(
-      domain: domain,
       categories: categories,
       workStatuses: workStatuses,
       myStatuses: myStatuses,
     );
     dashboardCtrl.save();
-  }
-
-  void onDomainChanged(AppDomain? value) {
-    domain = value;
-    categories.clear();
-    workStatuses.clear();
-    myStatuses.clear();
   }
 
   void toggleCategory(MediaCategory category) {

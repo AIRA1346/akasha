@@ -9,7 +9,6 @@ const kAkashaPromptTemplate = '''
 work_id: "" (비워두면 AKASHA가 사전 매칭 또는 custom ID를 부여)
 title: "작품의 정확한 제목"
 category: manga | game | animation | book | movie | drama (하나만)
-domain: subculture | generalCulture (대분류에 맞게 하나만 선택)
 creator: "원작자 / 제작사 / 감독 등"
 release_year: 출시 또는 연재 시작 연도 (숫자만, 예: 2011)
 rating: 5.0 (0.0~5.0 범위의 실수)

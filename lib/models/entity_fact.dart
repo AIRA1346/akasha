@@ -50,7 +50,7 @@ class EntityFact {
       title: title,
       aliases: aliases,
       category: MediaCategory.book,
-      domain: AppDomain.generalCulture,
+      domain: AppDomain.subculture,
       description: description,
       extensions: {
         'globalEntityFact': true,

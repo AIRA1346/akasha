@@ -70,12 +70,6 @@ class HomeBrowseCoordinator {
     );
   }
 
-  void onDomainChanged(AppDomain? domain) {
-    final needsPrefetch = wiring.filterCoordinator.onDomainChanged(domain);
-    rebuild();
-    if (needsPrefetch) prefetchRegistry();
-  }
-
   void toggleCategory(MediaCategory category) {
     final needsPrefetch = wiring.filterCoordinator.toggleCategory(category);
     rebuild();

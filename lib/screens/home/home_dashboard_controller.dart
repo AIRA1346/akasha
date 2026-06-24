@@ -40,7 +40,6 @@ class HomeDashboardController {
   DashboardFilterSnapshot filterSnapshotFor(DashboardConfig? dashboard) {
     if (dashboard == null) return const DashboardFilterSnapshot();
     return DashboardFilterSnapshot(
-      domain: dashboard.domain,
       categories: Set.from(dashboard.categories),
       workStatuses: Set.from(dashboard.workStatuses),
       myStatuses: Set.from(dashboard.myStatuses),
@@ -60,7 +59,6 @@ class HomeDashboardController {
         DashboardConfig(
           id: 'manga_dashboard',
           name: 'manga_dashboard',
-          domain: AppDomain.subculture,
           categories: {MediaCategory.manga},
         ),
         DashboardConfig(
@@ -82,6 +80,9 @@ class HomeDashboardController {
         dashboards = decoded
             .map((e) => DashboardConfig.fromJson(e as Map<String, dynamic>))
             .toList();
+        for (final dash in dashboards) {
+          dash.domain = null;
+        }
       } else {
         dashboards = defaultDashboards();
         await _saveDashboardsInternal(prefs);
@@ -140,14 +141,13 @@ class HomeDashboardController {
   }
 
   void syncActiveFromFilters({
-    required AppDomain? domain,
     required Set<MediaCategory> categories,
     required Set<String> workStatuses,
     required Set<String> myStatuses,
   }) {
     final active = activeDashboard;
     if (active == null) return;
-    active.domain = domain;
+    active.domain = null;
     active.categories = Set.from(categories);
     active.workStatuses = Set.from(workStatuses);
     active.myStatuses = Set.from(myStatuses);

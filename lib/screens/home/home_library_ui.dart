@@ -304,7 +304,7 @@ class HomeLibraryUi {
       workId: entity.entityId,
       title: entity.title,
       category: MediaCategory.book,
-      domain: AppDomain.generalCulture,
+      domain: AppDomain.newWorkDefault,
       tags: entity.tags,
       addedAt: entity.addedAt,
       posterPath: entity.posterPath,

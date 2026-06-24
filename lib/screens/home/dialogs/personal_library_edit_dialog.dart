@@ -29,7 +29,6 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
 }) async {
   final isMasterArchive = config.id == PersonalLibraryConfig.masterArchiveId;
   final nameCtrl = TextEditingController(text: config.name);
-  AppDomain? tempDomain = config.domain;
   final Set<MediaCategory> tempCategories = Set.from(config.categories);
   final Set<String> tempMyStatuses = Set.from(config.myStatuses);
   final Set<String> tempWorkStatuses = Set.from(config.workStatuses);
@@ -187,33 +186,6 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                   ],
                   const SizedBox(height: 16),
                   const Text(
-                    '대분류 (도메인) 필터',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  DropdownButtonFormField<AppDomain?>(
-                    initialValue: tempDomain,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      isDense: true,
-                    ),
-                    items: [
-                      const DropdownMenuItem(
-                        value: null,
-                        child: Text('전체 도메인'),
-                      ),
-                      ...AppDomain.values.map(
-                        (d) => DropdownMenuItem(value: d, child: Text(d.label)),
-                      ),
-                    ],
-                    onChanged: (v) => setD(() => tempDomain = v),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
                     '소분류 (카테고리) 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
@@ -321,7 +293,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                 if (name.isEmpty) return;
 
                 config.name = name;
-                config.domain = tempDomain;
+                config.domain = null;
                 config.categories = tempCategories;
                 config.workStatuses = tempWorkStatuses;
                 config.myStatuses = tempMyStatuses;

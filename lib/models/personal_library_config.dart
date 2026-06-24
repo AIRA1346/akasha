@@ -200,6 +200,11 @@ class PersonalLibraryConfig {
             : masterArchive());
 
     master.mode = PersonalLibraryMode.filter;
+    master.domain = null;
+
+    for (final lib in custom) {
+      lib.domain = null;
+    }
 
     custom.sort((a, b) => a.name.compareTo(b.name));
     return [master, ...custom];

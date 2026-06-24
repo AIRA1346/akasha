@@ -428,7 +428,6 @@ class HomeShellController {
   Future<void> openSearchDialog() => dialogs.openSearchDialog();
   Future<void> onAddWorksFromLibraryEdit() => dialogs.onAddWorksFromLibraryEdit();
 
-  void onDomainChanged(AppDomain? domain) => browse.onDomainChanged(domain);
   void toggleCategory(MediaCategory category) => browse.toggleCategory(category);
   void clearCategories() => browse.clearCategories();
   void toggleWorkStatus(String label) => browse.toggleWorkStatus(label);

@@ -5,7 +5,8 @@ import 'category_descriptor.dart';
 //  AKASHA — 카테고리 & 상태 Enum 정의
 // ════════════════════════════════════════════════════════════════
 
-/// 대분류 (도메인)
+/// Registry·YAML 메타 (읽기·레거시). UI 필터·신규 선택에서는 사용하지 않음.
+/// @see [DOMAIN_DEPRECATION_PLAN.md](../../docs/active/DOMAIN_DEPRECATION_PLAN.md)
 enum AppDomain {
   subculture('서브컬처', Icons.auto_awesome),
   generalCulture('일반 문화', Icons.account_balance);
@@ -13,6 +14,9 @@ enum AppDomain {
   final String label;
   final IconData icon;
   const AppDomain(this.label, this.icon);
+
+  /// 신규 작품·기여 제안 기본값
+  static const AppDomain newWorkDefault = subculture;
 }
 
 /// 매체 카테고리

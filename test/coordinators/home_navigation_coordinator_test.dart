@@ -58,7 +58,6 @@ void main() {
 
     test('goHome clears explore mode and filters for premium dashboard', () async {
       navigation.isExploreBrowseMode = true;
-      filterCtrl.domain = AppDomain.subculture;
       filterCtrl.categories.add(MediaCategory.animation);
 
       await navigation.goHome();

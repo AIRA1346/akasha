@@ -20,7 +20,7 @@ Future<AkashaItem?> showAddWorkDialog(
   final creatorCtrl = TextEditingController();
   final yearCtrl = TextEditingController();
   final posterUrlCtrl = TextEditingController();
-  AppDomain selDomain = AppDomain.subculture;
+  AppDomain selDomain = AppDomain.newWorkDefault;
   MediaCategory selCategory = MediaCategory.manga;
   String selWork = workStatusOptionsFor(selCategory).first;
   String selMy = myStatusOptionsFor(selCategory).first;
@@ -63,7 +63,7 @@ Future<AkashaItem?> showAddWorkDialog(
                           creatorCtrl.clear();
                           yearCtrl.clear();
                           posterUrlCtrl.clear();
-                          selDomain = AppDomain.subculture;
+                          selDomain = AppDomain.newWorkDefault;
                           return;
                         }
                         selectedRegistryWork = selection;
@@ -184,54 +184,6 @@ Future<AkashaItem?> showAddWorkDialog(
                     onChanged: (v) => setD(() => selRating = v),
                   ),
                   const SizedBox(height: 18),
-                  const Text(
-                    '대분류 (도메인)',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
-                  ),
-                  const SizedBox(height: 6),
-                  DropdownButtonFormField<AppDomain>(
-                    initialValue: selDomain,
-                    isExpanded: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      isDense: true,
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                    ),
-                    items: isPreRegistered
-                        ? [
-                            DropdownMenuItem(
-                              value: selDomain,
-                              child: Row(
-                                children: [
-                                  Icon(selDomain.icon, size: 18),
-                                  const SizedBox(width: 8),
-                                  Text(selDomain.label),
-                                ],
-                              ),
-                            ),
-                          ]
-                        : AppDomain.values
-                            .map(
-                              (d) => DropdownMenuItem(
-                                value: d,
-                                child: Row(
-                                  children: [
-                                    Icon(d.icon, size: 18),
-                                    const SizedBox(width: 8),
-                                    Text(d.label),
-                                  ],
-                                ),
-                              ),
-                            )
-                            .toList(),
-                    onChanged: isPreRegistered
-                        ? null
-                        : (v) {
-                            if (v != null) setD(() => selDomain = v);
-                          },
-                  ),
-                  const SizedBox(height: 14),
                   const Text(
                     '카테고리',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),

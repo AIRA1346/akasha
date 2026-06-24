@@ -11,12 +11,10 @@ import '../utils/helpers.dart';
 // ════════════════════════════════════════════════════════════════
 
 class FilterSection extends StatelessWidget {
-  final AppDomain? selectedDomain;
   final Set<MediaCategory> selectedCategories; // 변경: 다중 카테고리 지원
   final Set<String> selectedWorkStatuses;
   final Set<String> selectedMyStatuses;
 
-  final ValueChanged<AppDomain?> onDomainChanged;
   final ValueChanged<MediaCategory> onToggleCategory; // 변경: 카테고리 토글 콜백
   final VoidCallback onClearCategories; // 변경: 카테고리 전체 클리어
   final ValueChanged<String> onToggleWorkStatus;
@@ -27,11 +25,9 @@ class FilterSection extends StatelessWidget {
 
   const FilterSection({
     super.key,
-    required this.selectedDomain,
     required this.selectedCategories,
     required this.selectedWorkStatuses,
     required this.selectedMyStatuses,
-    required this.onDomainChanged,
     required this.onToggleCategory,
     required this.onClearCategories,
     required this.onToggleWorkStatus,
@@ -81,7 +77,7 @@ class FilterSection extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           if (selectedEntityScope.showsWorkGrid) ...[
-          // ── 1. 대분류 (도메인) 필터 ──
+          // ── 매체 (카테고리) 필터 ──
           Row(
             children: [
               Expanded(
@@ -90,41 +86,7 @@ class FilterSection extends StatelessWidget {
                   child: Row(
                     children: [
                       _chip(
-                        label: '전체',
-                        selected: selectedDomain == null,
-                        onTap: () => onDomainChanged(null),
-                      ),
-                      const SizedBox(width: 6),
-                      ...AppDomain.values.map(
-                        (dom) => Padding(
-                          padding: const EdgeInsets.only(right: 6),
-                          child: _chip(
-                            label: dom.label,
-                            icon: dom.icon,
-                            selected: selectedDomain == dom,
-                            onTap: () => onDomainChanged(dom),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 8),
-
-          // ── 2. 소분류 (카테고리) 필터 ──
-          Row(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      _chip(
-                        label: selectedDomain == null ? '매체 전체' : '${selectedDomain!.label} 전체',
+                        label: '매체 전체',
                         selected: selectedCategories.isEmpty,
                         onTap: onClearCategories,
                         small: true,

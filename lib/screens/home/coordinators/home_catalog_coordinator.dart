@@ -75,7 +75,6 @@ class HomeCatalogCoordinator {
   bool get catalogUsesWindowedPrefetch =>
       dashboardCtrl.activeDashboardId == 'master_index' &&
       !isPersonalLibraryMode() &&
-      filterCtrl.domain == null &&
       filterCtrl.categories.isEmpty;
 
   bool get catalogHasMore =>

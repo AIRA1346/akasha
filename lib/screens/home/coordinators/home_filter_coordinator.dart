@@ -33,7 +33,6 @@ class HomeFilterCoordinator {
   void syncFiltersToActiveView() {
     if (isPersonalLibraryMode) {
       personalLibCtrl.syncActiveFromFilters(
-        domain: filterCtrl.domain,
         categories: filterCtrl.categories,
         workStatuses: filterCtrl.workStatuses,
         myStatuses: filterCtrl.myStatuses,
@@ -46,13 +45,6 @@ class HomeFilterCoordinator {
 
   void applyPersonalLibraryFilterSnapshot(PersonalLibraryConfig? library) {
     applyDashboardFilters(personalLibCtrl.filterSnapshotFor(library));
-  }
-
-  /// registry prefetch가 필요하면 true
-  bool onDomainChanged(AppDomain? domain) {
-    filterCtrl.onDomainChanged(domain);
-    syncFiltersToActiveView();
-    return !isPersonalLibraryMode;
   }
 
   bool toggleCategory(MediaCategory category) {
@@ -83,7 +75,6 @@ class HomeFilterCoordinator {
 
   /// 프리미엄 홈 대시보드 진입용 — 필터를 모두 초기화하고 master 대시보드에 동기화.
   void resetForHomeDashboard() {
-    filterCtrl.onDomainChanged(null);
     filterCtrl.clearCategories();
     filterCtrl.clearEntityHighlight();
     filterCtrl.setEntityScope(BrowseEntityScope.all);

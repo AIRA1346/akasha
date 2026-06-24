@@ -39,7 +39,6 @@ class HomePersonalLibraryController {
   DashboardFilterSnapshot filterSnapshotFor(PersonalLibraryConfig? library) {
     if (library == null) return const DashboardFilterSnapshot();
     return DashboardFilterSnapshot(
-      domain: library.domain,
       categories: Set.from(library.categories),
       workStatuses: Set.from(library.workStatuses),
       myStatuses: Set.from(library.myStatuses),
@@ -157,14 +156,13 @@ class HomePersonalLibraryController {
   }
 
   void syncActiveFromFilters({
-    required AppDomain? domain,
     required Set<MediaCategory> categories,
     required Set<String> workStatuses,
     required Set<String> myStatuses,
   }) {
     final active = activeLibrary;
     if (active == null) return;
-    active.domain = domain;
+    active.domain = null;
     active.categories = Set.from(categories);
     active.workStatuses = Set.from(workStatuses);
     active.myStatuses = Set.from(myStatuses);

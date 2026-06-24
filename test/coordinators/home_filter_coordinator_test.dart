@@ -25,15 +25,14 @@ void main() {
       );
     });
 
-    test('대시보드 모드에서 도메인 변경 시 prefetch 필요', () {
+    test('대시보드 모드에서 카테고리 토글 시 prefetch 필요', () {
       personalLibCtrl.sidebarMode = SidebarSelectionMode.dashboard;
-      filterCtrl.onDomainChanged(AppDomain.subculture);
 
       final needsPrefetch =
-          coordinator.onDomainChanged(AppDomain.generalCulture);
+          coordinator.toggleCategory(MediaCategory.animation);
 
       expect(needsPrefetch, isTrue);
-      expect(filterCtrl.domain, AppDomain.generalCulture);
+      expect(filterCtrl.categories, contains(MediaCategory.animation));
     });
 
     test('나만의 서재 모드에서 카테고리 토글 시 prefetch 불필요', () {

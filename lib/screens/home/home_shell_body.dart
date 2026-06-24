@@ -99,7 +99,6 @@ class HomeShellBody extends StatelessWidget {
       onDropWorkToLibrary;
   final VoidCallback? onLibraryDragStarted;
   final VoidCallback onConnectVault;
-  final void Function(AppDomain? domain) onDomainChanged;
   final void Function(MediaCategory category) onToggleCategory;
   final VoidCallback onClearCategories;
   final void Function(String label) onToggleWorkStatus;
@@ -231,7 +230,6 @@ class HomeShellBody extends StatelessWidget {
     this.onDropWorkToLibrary,
     this.onLibraryDragStarted,
     required this.onConnectVault,
-    required this.onDomainChanged,
     required this.onToggleCategory,
     required this.onClearCategories,
     required this.onToggleWorkStatus,
@@ -293,8 +291,7 @@ class HomeShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasNoFilters = filterCtrl.domain == null &&
-        filterCtrl.categories.isEmpty &&
+    final hasNoFilters = filterCtrl.categories.isEmpty &&
         filterCtrl.workStatuses.isEmpty &&
         filterCtrl.myStatuses.isEmpty &&
         filterCtrl.highlightEntityId == null;
@@ -355,11 +352,9 @@ class HomeShellBody extends StatelessWidget {
                     !isCollectibleCollectionMode &&
                     (!hasNoFilters || isPersonalLibraryMode || isExploreBrowseMode))
                   FilterSection(
-                    selectedDomain: filterCtrl.domain,
                     selectedCategories: filterCtrl.categories,
                     selectedWorkStatuses: filterCtrl.workStatuses,
                     selectedMyStatuses: filterCtrl.myStatuses,
-                    onDomainChanged: onDomainChanged,
                     onToggleCategory: onToggleCategory,
                     onClearCategories: onClearCategories,
                     onToggleWorkStatus: onToggleWorkStatus,
@@ -520,8 +515,7 @@ class HomeShellBody extends StatelessWidget {
   Widget _buildDashboardBrowseContent(BuildContext context) {
     final scope = filterCtrl.entityScope;
 
-    final hasNoFilters = filterCtrl.domain == null &&
-        filterCtrl.categories.isEmpty &&
+    final hasNoFilters = filterCtrl.categories.isEmpty &&
         filterCtrl.workStatuses.isEmpty &&
         filterCtrl.myStatuses.isEmpty &&
         filterCtrl.highlightEntityId == null;
