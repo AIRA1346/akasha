@@ -12,11 +12,8 @@ import '../../../core/ports/record_link_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/entity_link_selection.dart';
-import '../../../services/link_candidate_service.dart';
-import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
-import '../../../screens/home/dialogs/work_link_picker_dialog.dart';
-import '../../../utils/markdown_edit_actions.dart';
 import '../../../models/user_catalog_entity.dart';
+import '../../../services/link_candidate_service.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
 import '../../../utils/work_link_neighbors.dart';
 import '../../../services/file_service.dart';
@@ -29,6 +26,8 @@ import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
 import 'work_detail_draft_ops.dart';
+import 'work_detail_link_pick_ops.dart';
+import 'workbench_link_pick_ops.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
@@ -166,43 +165,39 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _maybeRunPendingEntityLinkPick() async {
-    final type = widget.pendingEntityLinkType;
-    final workId = widget.pendingEntityLinkWorkId;
-    final preselected = widget.pendingEntityLinkCandidate;
-    final catalog = widget.userCatalog;
-    if (workId != null && workId != _item.workId) return;
-
-    if (widget.pendingWorkLinkPick) {
-      widget.onPendingEntityLinkHandled?.call();
-      if (!mounted) return;
-      await _requestWorkLink();
-      return;
+    final request = WorkDetailLinkPickOps.pendingRequest(
+      pendingWorkId: widget.pendingEntityLinkWorkId,
+      pendingWorkLinkPick: widget.pendingWorkLinkPick,
+      entityLinkType: widget.pendingEntityLinkType,
+      preselected: widget.pendingEntityLinkCandidate,
+    );
+    switch (WorkbenchLinkPickOps.classifyPending(
+      request: request,
+      currentContextId: _item.workId,
+      catalog: widget.userCatalog,
+    )) {
+      case WorkbenchPendingLinkResolution.wrongContext:
+      case WorkbenchPendingLinkResolution.skipped:
+        return;
+      case WorkbenchPendingLinkResolution.pickWork:
+        widget.onPendingEntityLinkHandled?.call();
+        if (!mounted) return;
+        await _requestWorkLink();
+      case WorkbenchPendingLinkResolution.pickEntity:
+        widget.onPendingEntityLinkHandled?.call();
+        if (!mounted) return;
+        setState(() => _pageView = SanctumPageView.body);
+        final picked = await WorkbenchLinkPickOps.pickEntityLink(
+          context: context,
+          catalog: widget.userCatalog!,
+          type: request.entityLinkType!,
+          workContext: _item,
+          vaultItems: widget.vaultItems,
+          preselected: request.preselected,
+        );
+        if (!mounted || picked == null) return;
+        await _applyWikiLinkSelection(picked);
     }
-
-    if (type == null || catalog == null) return;
-
-    widget.onPendingEntityLinkHandled?.call();
-    if (!mounted) return;
-
-    setState(() => _pageView = SanctumPageView.body);
-
-    final EntityLinkSelection? picked;
-    if (preselected != null) {
-      picked = await LinkCandidateService.resolveSelection(
-        candidate: preselected,
-        userCatalog: catalog,
-      );
-    } else {
-      picked = await showEntityLinkPickerDialog(
-        context,
-        userCatalog: catalog,
-        anchorTypeFilter: type,
-        workContext: _item,
-        vaultItems: widget.vaultItems,
-      );
-    }
-    if (!mounted || picked == null) return;
-    await _applyWikiLinkSelection(picked);
   }
 
   Future<void> _loadLinkNeighbors() async {
@@ -427,15 +422,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
     final catalog = widget.userCatalog;
-    if (catalog == null) return;
-    if (!mounted) return;
+    if (catalog == null || !mounted) return;
 
     setState(() => _pageView = SanctumPageView.body);
 
-    final picked = await showEntityLinkPickerDialog(
-      context,
-      userCatalog: catalog,
-      anchorTypeFilter: type,
+    final picked = await WorkDetailLinkPickOps.requestEntityLinkForType(
+      context: context,
+      catalog: catalog,
+      type: type,
       workContext: _item,
       vaultItems: widget.vaultItems,
     );
@@ -448,8 +442,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
     setState(() => _pageView = SanctumPageView.body);
 
-    final picked = await showWorkLinkPickerDialog(
-      context,
+    final picked = await WorkDetailLinkPickOps.requestWorkLink(
+      context: context,
       vaultItems: widget.vaultItems,
       excludeWorkId: _item.workId,
     );
@@ -458,22 +452,15 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _applyWikiLinkSelection(EntityLinkSelection picked) async {
-    final sectionEditor = _sectionEditorKey.currentState;
-    if (sectionEditor != null && _pageView == SanctumPageView.body) {
-      sectionEditor.insertWikiLink(picked);
-    } else {
-      final patch = MarkdownEditActions.insertWikiLink(
-        text: _bodyCtrl.text,
-        selection: _bodyCtrl.selection,
-        entityId: picked.entityId,
-        title: picked.title,
-      );
-      _bodyCtrl.text = patch.text;
-      _bodyCtrl.selection = patch.selection;
-    }
-    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    _markDirty();
-    await _loadLinkNeighbors();
+    await WorkDetailLinkPickOps.applySelection(
+      picked: picked,
+      pageView: _pageView,
+      sectionEditor: _sectionEditorKey.currentState,
+      bodyCtrl: _bodyCtrl,
+      syncBodyToItem: () => WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl),
+      markDirty: _markDirty,
+      reloadLinkNeighbors: _loadLinkNeighbors,
+    );
   }
 
   void _onPageViewChanged(SanctumPageView next) {

@@ -13,7 +13,6 @@ import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../widgets/web_image_search_dialog.dart';
-import '../../../services/entity_archive_service.dart';
 import '../../../services/entity_journal_parser.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
@@ -26,10 +25,10 @@ import '../../../config/feature_flags.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../core/archiving/entity_anchor.dart';
-import '../../../screens/home/dialogs/entity_link_picker_dialog.dart';
-import '../../../screens/home/dialogs/work_link_picker_dialog.dart';
 import '../../../screens/home/views/preview_record_view_model.dart';
-import '../../../utils/markdown_edit_actions.dart';
+import 'entity_detail_archive_ops.dart';
+import 'entity_detail_link_pick_ops.dart';
+import 'workbench_link_pick_ops.dart';
 import 'entity_detail_connections_panel.dart';
 import 'entity_detail_info_panel.dart';
 import 'workbench_autosave_scheduler.dart';
@@ -201,33 +200,37 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   Future<void> _maybeRunPendingEntityLinkPick() async {
-    final type = widget.pendingEntityLinkType;
-    final entityId = widget.pendingEntityLinkEntityId;
-    if (entityId != null && entityId != _entity.entityId) return;
-
-    if (widget.pendingEntityWorkLinkPick) {
-      widget.onPendingEntityLinkHandled?.call();
-      if (!mounted) return;
-      await _requestWorkLink();
-      return;
-    }
-
-    if (type == null || widget.userCatalog == null) return;
-
-    widget.onPendingEntityLinkHandled?.call();
-    if (!mounted) return;
-
-    setState(() => _pageView = SanctumPageView.body);
-
-    final picked = await showEntityLinkPickerDialog(
-      context,
-      userCatalog: widget.userCatalog!,
-      anchorTypeFilter: type,
-      workContext: _item,
-      vaultItems: widget.vaultItems,
+    final request = EntityDetailLinkPickOps.pendingRequest(
+      pendingEntityId: widget.pendingEntityLinkEntityId,
+      pendingWorkLinkPick: widget.pendingEntityWorkLinkPick,
+      entityLinkType: widget.pendingEntityLinkType,
     );
-    if (!mounted || picked == null) return;
-    await _applyWikiLinkSelection(picked);
+    switch (WorkbenchLinkPickOps.classifyPending(
+      request: request,
+      currentContextId: _entity.entityId,
+      catalog: widget.userCatalog,
+    )) {
+      case WorkbenchPendingLinkResolution.wrongContext:
+      case WorkbenchPendingLinkResolution.skipped:
+        return;
+      case WorkbenchPendingLinkResolution.pickWork:
+        widget.onPendingEntityLinkHandled?.call();
+        if (!mounted) return;
+        await _requestWorkLink();
+      case WorkbenchPendingLinkResolution.pickEntity:
+        widget.onPendingEntityLinkHandled?.call();
+        if (!mounted) return;
+        setState(() => _pageView = SanctumPageView.body);
+        final picked = await WorkbenchLinkPickOps.pickEntityLink(
+          context: context,
+          catalog: widget.userCatalog!,
+          type: request.entityLinkType!,
+          workContext: _item,
+          vaultItems: widget.vaultItems,
+        );
+        if (!mounted || picked == null) return;
+        await _applyWikiLinkSelection(picked);
+    }
   }
 
   Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
@@ -236,10 +239,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
     setState(() => _pageView = SanctumPageView.body);
 
-    final picked = await showEntityLinkPickerDialog(
-      context,
-      userCatalog: catalog,
-      anchorTypeFilter: type,
+    final picked = await EntityDetailLinkPickOps.requestEntityLinkForType(
+      context: context,
+      catalog: catalog,
+      type: type,
       workContext: _item,
       vaultItems: widget.vaultItems,
     );
@@ -252,26 +255,21 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
     setState(() => _pageView = SanctumPageView.body);
 
-    final picked = await showWorkLinkPickerDialog(
-      context,
+    final picked = await EntityDetailLinkPickOps.requestWorkLink(
+      context: context,
       vaultItems: widget.vaultItems,
-      excludeWorkId: '',
     );
     if (!mounted || picked == null) return;
     await _applyWikiLinkSelection(picked);
   }
 
   Future<void> _applyWikiLinkSelection(EntityLinkSelection picked) async {
-    final patch = MarkdownEditActions.insertWikiLink(
-      text: _bodyCtrl.text,
-      selection: _bodyCtrl.selection,
-      entityId: picked.entityId,
-      title: picked.title,
+    await EntityDetailLinkPickOps.applySelection(
+      picked: picked,
+      bodyCtrl: _bodyCtrl,
+      markDirty: _markDirty,
+      reloadLinkNeighbors: _loadLinkNeighbors,
     );
-    _bodyCtrl.text = patch.text;
-    _bodyCtrl.selection = patch.selection;
-    _markDirty();
-    await _loadLinkNeighbors();
   }
 
   Future<void> _loadLinkNeighbors() async {
@@ -512,10 +510,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
   Future<void> _saveJournal({bool silent = false}) async {
     if (_suppressPersist || _isSaving) return;
-    final vaultPath = AkashaFileService().vaultPath;
-    if (vaultPath == null || vaultPath.isEmpty) {
-      if (!silent && mounted) {
-        _showSnack('볼트를 먼저 연결해 주세요.');
+    if (!EntityDetailArchiveOps.isVaultConnected()) {
+      final msg = EntityDetailArchiveOps.vaultRequiredSnack(silent: silent);
+      if (msg != null && mounted) {
+        _showSnack(msg);
       }
       return;
     }
@@ -524,22 +522,21 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _syncBodyFromEditor();
     }
 
-    var body = _bodyCtrl.text.trim();
-    if (body.isEmpty) {
-      // 메타데이터(포스터, 태그)만 변경된 경우에도 저장을 허용합니다.
-      final hasMetaChanges = _posterUrlCtrl.text.trim().isNotEmpty ||
-          _draftTags.isNotEmpty;
-      if (!hasMetaChanges) {
-        if (!silent && mounted) {
-          _showSnack('본문을 입력해 주세요.');
-        }
-        return;
+    final bodyResolve = EntityDetailArchiveOps.resolveBodyForSave(
+      rawBody: _bodyCtrl.text,
+      posterPath: _posterUrlCtrl.text,
+      tags: _draftTags,
+    );
+    if (bodyResolve.body == null) {
+      final msg = EntityDetailArchiveOps.emptyBodySnack(silent: silent);
+      if (msg != null && mounted) {
+        _showSnack(msg);
       }
-      // 메타 변경이 있으면 placeholder body를 삽입하여 YAML 구조를 유지합니다.
-      body = '(기록 대기중)';
-      if (!silent) {
-        _bodyCtrl.text = body;
-      }
+      return;
+    }
+    final body = bodyResolve.body!;
+    if (bodyResolve.usedPlaceholder && !silent) {
+      _bodyCtrl.text = body;
     }
 
     final catalog = widget.userCatalog;
@@ -559,31 +556,21 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
     setState(() => _isSaving = true);
     try {
-      final entityDraft = _entity.copyWith(tags: _draftTags, posterPath: _posterUrlCtrl.text);
-      EntityJournalEntry saved;
-      if (_journal == null) {
-        saved = await _store.saveCatalogEntity(
-          vaultPath: vaultPath,
-          entity: entityDraft,
-          body: body,
-        );
-      } else {
-        saved = await _store.updateEntry(
-          entry: _journal!,
-          body: body,
-          tags: _draftTags,
-          posterPath: _posterUrlCtrl.text,
-        );
-      }
-
-      var mirrored = entityDraft;
-      if (catalog != null) {
-        mirrored = await EntityArchiveService.syncCatalogFromJournal(
-          draft: entityDraft,
-          entry: saved,
-          userCatalog: catalog,
-        );
-      }
+      final vaultPath = AkashaFileService().vaultPath!;
+      final entityDraft =
+          _entity.copyWith(tags: _draftTags, posterPath: _posterUrlCtrl.text);
+      final outcome = await EntityDetailArchiveOps.persist(
+        vaultPath: vaultPath,
+        entityDraft: entityDraft,
+        existingJournal: _journal,
+        body: body,
+        tags: _draftTags,
+        posterPath: _posterUrlCtrl.text,
+        userCatalog: catalog,
+        vaultStore: _store,
+      );
+      final mirrored = outcome.mirrored;
+      final saved = outcome.saved;
 
       if (!mounted) return;
       setState(() {
@@ -604,7 +591,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _loadSameDay();
       _loadLinkNeighbors();
       if (!silent) {
-        _showSnack('"${mirrored.title}" entity journal을 저장했습니다.');
+        _showSnack(EntityDetailArchiveOps.saveSuccessMessage(mirrored));
       }
     } on EntityVaultPathConflict catch (e) {
       if (mounted && !silent) _showSnack(e.userMessage);
@@ -746,9 +733,10 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     setState(() => _suppressPersist = true);
     widget.onDirtyChanged(false);
 
-    final deleted = await EntityArchiveService.deleteArchivedEntity(
+    final deleted = await EntityDetailArchiveOps.deleteFromVault(
       entry: _journal!,
       userCatalog: catalog,
+      vaultStore: _store,
     );
     if (!mounted) return;
 
@@ -790,7 +778,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _showSnack('볼트 연결 후 서재에 담을 수 있습니다.');
       return;
     }
-    if (_journal == null) {
+    if (!EntityDetailArchiveOps.hasJournal(_journal)) {
       await _saveJournal();
     }
     if (_journal != null) {
@@ -800,7 +788,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
   @override
   Widget build(BuildContext context) {
-    final hasJournal = _journal != null;
+    final hasJournal = EntityDetailArchiveOps.hasJournal(_journal);
     final saveLabel = hasJournal ? 'md 저장' : 'journal 생성';
     final typeLabel = entityTypeDisplayLabel(_entity.anchorType);
 
