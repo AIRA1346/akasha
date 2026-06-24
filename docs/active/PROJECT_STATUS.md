@@ -50,7 +50,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **589 PASS** |
+| `flutter test` | **591 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
