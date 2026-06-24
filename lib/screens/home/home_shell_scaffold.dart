@@ -107,6 +107,7 @@ class HomeShellScaffold extends StatelessWidget {
               items: controller.items,
               recentExploreItems: controller.recentExploreItems,
               linkIndex: controller.linkIndex,
+              linkIndexRevision: controller.linkIndexRevision,
               filteredCards: filtered,
               sectionPrefs: controller.sectionPrefs,
               filterCtrl: controller.filterCtrl,

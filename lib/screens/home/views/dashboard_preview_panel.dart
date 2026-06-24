@@ -29,6 +29,7 @@ class DashboardPreviewPanel extends StatefulWidget {
     required this.item,
     required this.userCatalog,
     required this.linkIndex,
+    this.linkIndexRevision = 0,
     required this.vaultItems,
     this.canGoBack = false,
     this.onBack,
@@ -47,6 +48,7 @@ class DashboardPreviewPanel extends StatefulWidget {
   final AkashaItem item;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
+  final int linkIndexRevision;
   final List<AkashaItem> vaultItems;
   final bool canGoBack;
   final VoidCallback? onBack;
@@ -85,10 +87,20 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
   void didUpdateWidget(covariant DashboardPreviewPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.item.workId != widget.item.workId ||
-        oldWidget.vaultItems != widget.vaultItems ||
-        oldWidget.linkIndex != widget.linkIndex) {
+        oldWidget.linkIndexRevision != widget.linkIndexRevision ||
+        oldWidget.vaultItems.length != widget.vaultItems.length ||
+        !_sameVaultWorkIds(oldWidget.vaultItems, widget.vaultItems)) {
       _reloadFutures();
     }
+  }
+
+  bool _sameVaultWorkIds(List<AkashaItem> a, List<AkashaItem> b) {
+    if (identical(a, b)) return true;
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i].workId != b[i].workId) return false;
+    }
+    return true;
   }
 
   void _reloadFutures() {

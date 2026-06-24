@@ -68,6 +68,7 @@ class HomeShellBody extends StatelessWidget {
   final List<AkashaItem> items;
   final List<AkashaItem> recentExploreItems;
   final RecordLinkPort linkIndex;
+  final int linkIndexRevision;
   final List<BrowseCard> filteredCards;
   final HomeSectionPreferences sectionPrefs;
   final HomeBrowseFilterController filterCtrl;
@@ -203,6 +204,7 @@ class HomeShellBody extends StatelessWidget {
     required this.items,
     required this.recentExploreItems,
     required this.linkIndex,
+    required this.linkIndexRevision,
     required this.filteredCards,
     required this.sectionPrefs,
     required this.filterCtrl,
@@ -470,6 +472,7 @@ class HomeShellBody extends StatelessWidget {
                   item: workPreviewItem!,
                   userCatalog: userCatalog,
                   linkIndex: linkIndex,
+                  linkIndexRevision: linkIndexRevision,
                   vaultItems: items,
                   canGoBack: canPopPreview,
                   onBack: onPopPreview,
@@ -489,6 +492,7 @@ class HomeShellBody extends StatelessWidget {
                   entity: entityPreviewItem!,
                   userCatalog: userCatalog,
                   linkIndex: linkIndex,
+                  linkIndexRevision: linkIndexRevision,
                   vaultItems: items,
                   canGoBack: canPopPreview,
                   onBack: onPopPreview,

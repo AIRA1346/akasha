@@ -25,6 +25,7 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
     required this.entity,
     required this.userCatalog,
     required this.linkIndex,
+    this.linkIndexRevision = 0,
     required this.vaultItems,
     this.canGoBack = false,
     this.onBack,
@@ -41,6 +42,7 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
   final UserCatalogEntity entity;
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
+  final int linkIndexRevision;
   final List<AkashaItem> vaultItems;
   final bool canGoBack;
   final VoidCallback? onBack;
@@ -73,7 +75,9 @@ class _EntityDashboardPreviewPanelState
   @override
   void didUpdateWidget(covariant EntityDashboardPreviewPanel oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.entity.entityId != widget.entity.entityId) {
+    if (oldWidget.entity.entityId != widget.entity.entityId ||
+        oldWidget.linkIndexRevision != widget.linkIndexRevision ||
+        oldWidget.vaultItems.length != widget.vaultItems.length) {
       _neighborsFuture = _loadNeighbors();
       _registryFuture = _loadRegistryCandidates();
     }

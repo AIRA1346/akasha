@@ -283,6 +283,7 @@ class HomeShellController {
       browse.libraryMembership;
 
   RecordLinkPort get linkIndex => vault.linkIndex;
+  int get linkIndexRevision => vault.linkIndexRevision;
 
   Future<void> handleWikiLinkTap(ParsedRecordLink link) async {
     if (!host.mounted) return;

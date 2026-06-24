@@ -42,9 +42,11 @@ class HomeVaultCoordinator {
   bool autoArchiveRegistry = false;
   LibraryTheme libraryTheme = LibraryTheme.classic;
 
+  /// [RecordLinkIndexService] 재빌드마다 증가 — 프리뷰 패널 연결 섹션 갱신용.
+  int linkIndexRevision = 0;
+
   StreamSubscription<void>? vaultUpdateSubscription;
   Timer? vaultReloadDebounce;
-  Timer? linkIndexDebounce;
 
   final EventLedgerService eventLedger = EventLedgerService();
   late final RecordLinkIndexService linkIndex =
@@ -67,9 +69,10 @@ class HomeVaultCoordinator {
     final loadedItems = await HomeVaultLoader.loadItems(vault);
     await userCatalog.load();
     if (!isMounted()) return;
+    await rebuildLinkIndex(vaultItems: loadedItems);
+    if (!isMounted()) return;
     scheduleRebuild(() => items = loadedItems);
     onVaultItemsSynced(loadedItems);
-    await rebuildLinkIndex();
     await eventLedger.append(
       VaultLedgerEvent(
         type: VaultLedgerEventType.vaultReloaded,
@@ -79,17 +82,22 @@ class HomeVaultCoordinator {
     );
   }
 
-  Future<void> rebuildLinkIndex() => linkIndex.rebuildIndex(
-        userCatalog: userCatalog,
-        vaultItems: items,
-        onRebuilt: (stats) => eventLedger.append(
-          VaultLedgerEvent(
-            type: VaultLedgerEventType.linkIndexRebuilt,
-            at: DateTime.now().toUtc(),
-            meta: stats,
-          ),
+  Future<void> rebuildLinkIndex({List<AkashaItem>? vaultItems}) async {
+    await linkIndex.rebuildIndex(
+      userCatalog: userCatalog,
+      vaultItems: vaultItems ?? items,
+      onRebuilt: (stats) => eventLedger.append(
+        VaultLedgerEvent(
+          type: VaultLedgerEventType.linkIndexRebuilt,
+          at: DateTime.now().toUtc(),
+          meta: stats,
         ),
-      );
+      ),
+    );
+    if (isMounted()) {
+      scheduleRebuild(() => linkIndexRevision++);
+    }
+  }
 
   Future<void> autoArchiveRegistryWorks({
     bool showFeedback = false,
@@ -117,16 +125,11 @@ class HomeVaultCoordinator {
       vaultReloadDebounce = Timer(const Duration(milliseconds: 400), () {
         if (isMounted()) onVaultChanged();
       });
-      linkIndexDebounce?.cancel();
-      linkIndexDebounce = Timer(const Duration(milliseconds: 800), () {
-        rebuildLinkIndex();
-      });
     });
   }
 
   void dispose() {
     vaultReloadDebounce?.cancel();
-    linkIndexDebounce?.cancel();
     vaultUpdateSubscription?.cancel();
   }
 }
