@@ -31,6 +31,7 @@ class HomeBrowseCoordinator {
     required this.prefetchRegistry,
     required this.wrapSetState,
     this.onPreviewWork,
+    this.onOpenWorkDetail,
   });
 
   final BuildContext Function() hostContext;
@@ -46,6 +47,7 @@ class HomeBrowseCoordinator {
   final Future<void> Function() prefetchRegistry;
   final void Function(void Function()) wrapSetState;
   final void Function(AkashaItem item)? onPreviewWork;
+  final Future<void> Function(AkashaItem item)? onOpenWorkDetail;
 
   PersonalLibraryMembershipService get libraryMembership =>
       wiring.libraryMembership;
@@ -101,6 +103,10 @@ class HomeBrowseCoordinator {
         isPersonalLibraryMode: navigation.isPersonalLibraryMode,
         canAddToLibrary: canAddToLibrary,
         onOpenItem: onPreviewWork ?? workbenchCoord.openBrowseItem,
+        onOpenItemDetail: (item) {
+          final open = onOpenWorkDetail ?? workbenchCoord.openBrowseItem;
+          open(item);
+        },
         onOpenLibraryMenu: (c, pos) => wiring.libraryUi.openWorkLibraryMenu(
           hostContext(),
           card: c,

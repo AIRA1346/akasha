@@ -19,6 +19,7 @@ class HomePosterCardFactory {
     required this.isPersonalLibraryMode,
     required this.canAddToLibrary,
     required this.onOpenItem,
+    required this.onOpenItemDetail,
     required this.onOpenLibraryMenu,
     required this.onLibraryDragStarted,
   });
@@ -29,6 +30,7 @@ class HomePosterCardFactory {
   final bool isPersonalLibraryMode;
   final bool canAddToLibrary;
   final void Function(AkashaItem item) onOpenItem;
+  final void Function(AkashaItem item) onOpenItemDetail;
   final void Function(BrowseCard card, Offset anchor) onOpenLibraryMenu;
   final VoidCallback onLibraryDragStarted;
 
@@ -52,6 +54,7 @@ class HomePosterCardFactory {
       showPoster: isPersonalLibraryMode,
       curatedLibraryCount: libraryBadgeCount,
       onTap: () => onOpenItem(item),
+      onDoubleTap: () => onOpenItemDetail(item),
       onOpenLibraryMenu:
           canOpenMenu ? (pos) => onOpenLibraryMenu(card, pos) : null,
       onHideFormatSlot: hideActions.formatSlotHideActionFor(card),

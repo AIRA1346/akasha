@@ -228,6 +228,26 @@ class HomePreviewCoordinator {
     rebuild();
   }
 
+  /// 그리드 더블클릭 등 프리뷰 없이 작품 상세로 바로 진입.
+  Future<void> openWorkDetail(AkashaItem item) async {
+    var resolved = resolveItemForOpen(item);
+    if (VaultWorkPresence.isRegistryOnlyPreview(resolved, getVaultItems())) {
+      workPreviewItem = resolved;
+      await archiveRegistryWorkFromPreview();
+      final updated = workPreviewItem;
+      if (updated == null ||
+          VaultWorkPresence.isRegistryOnlyPreview(updated, getVaultItems())) {
+        return;
+      }
+      resolved = updated;
+    }
+    clearReturnSnapshot();
+    closeAllPreviews();
+    openBrowseItemInWorkbench(resolved);
+    recordWorkExploration(resolved.workId);
+    rebuild();
+  }
+
   Future<void> openEntityFromPreview() async {
     final entity = entityPreviewItem;
     if (entity == null) return;

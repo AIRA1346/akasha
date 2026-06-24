@@ -22,7 +22,9 @@ class HomeDashboardDiscoverySection extends StatefulWidget {
     required this.userCatalog,
     required this.linkIndex,
     required this.onItemTap,
+    this.onItemDoubleTap,
     required this.onOpenEntity,
+    this.onOpenEntityDetail,
     required this.onGoExplore,
     required this.onSearch,
     this.onConnectSuggested,
@@ -33,7 +35,9 @@ class HomeDashboardDiscoverySection extends StatefulWidget {
   final UserCatalogPort userCatalog;
   final RecordLinkPort linkIndex;
   final void Function(AkashaItem item) onItemTap;
+  final void Function(AkashaItem item)? onItemDoubleTap;
   final void Function(UserCatalogEntity entity) onOpenEntity;
+  final void Function(UserCatalogEntity entity)? onOpenEntityDetail;
   final VoidCallback onGoExplore;
   final VoidCallback onSearch;
   final void Function(LinkCandidate candidate, AkashaItem work)?
@@ -280,6 +284,7 @@ class _HomeDashboardDiscoverySectionState
             child: _PairCard(
               highlight: pair,
               onItemTap: widget.onItemTap,
+              onItemDoubleTap: widget.onItemDoubleTap,
               onOpenEntity: widget.onOpenEntity,
               onConnectSuggested: widget.onConnectSuggested,
             ),
@@ -311,6 +316,9 @@ class _HomeDashboardDiscoverySectionState
             child: _SingleCard(
               item: item,
               onTap: () => widget.onItemTap(item),
+              onDoubleTap: widget.onItemDoubleTap == null
+                  ? null
+                  : () => widget.onItemDoubleTap!(item),
             ),
           ),
         );
@@ -336,6 +344,9 @@ class _HomeDashboardDiscoverySectionState
           child: _EntityCard(
             entity: person,
             onTap: () => widget.onOpenEntity(person),
+            onDoubleTap: widget.onOpenEntityDetail == null
+                ? null
+                : () => widget.onOpenEntityDetail!(person),
           ),
         ),
       );
@@ -475,12 +486,14 @@ class _PairCard extends StatelessWidget {
   const _PairCard({
     required this.highlight,
     required this.onItemTap,
+    this.onItemDoubleTap,
     required this.onOpenEntity,
     this.onConnectSuggested,
   });
 
   final _PairHighlight highlight;
   final void Function(AkashaItem item) onItemTap;
+  final void Function(AkashaItem item)? onItemDoubleTap;
   final void Function(UserCatalogEntity entity) onOpenEntity;
   final void Function(LinkCandidate candidate, AkashaItem work)?
       onConnectSuggested;
@@ -518,6 +531,9 @@ class _PairCard extends StatelessWidget {
                 _WorkThumb(
                   item: highlight.left,
                   onTap: () => onItemTap(highlight.left),
+                  onDoubleTap: onItemDoubleTap == null
+                      ? null
+                      : () => onItemDoubleTap!(highlight.left),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
@@ -541,6 +557,9 @@ class _PairCard extends StatelessWidget {
                   _WorkThumb(
                     item: highlight.right,
                     onTap: () => onItemTap(highlight.right),
+                    onDoubleTap: onItemDoubleTap == null
+                        ? null
+                        : () => onItemDoubleTap!(highlight.right),
                   ),
               ],
             ),
@@ -601,10 +620,15 @@ class _SuggestionThumb extends StatelessWidget {
 }
 
 class _SingleCard extends StatelessWidget {
-  const _SingleCard({required this.item, required this.onTap});
+  const _SingleCard({
+    required this.item,
+    required this.onTap,
+    this.onDoubleTap,
+  });
 
   final AkashaItem item;
   final VoidCallback onTap;
+  final VoidCallback? onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -616,6 +640,7 @@ class _SingleCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
           onTap: onTap,
+          onDoubleTap: onDoubleTap,
           child: Column(
             children: [
               const Align(
@@ -648,10 +673,15 @@ class _SingleCard extends StatelessWidget {
 }
 
 class _EntityCard extends StatelessWidget {
-  const _EntityCard({required this.entity, required this.onTap});
+  const _EntityCard({
+    required this.entity,
+    required this.onTap,
+    this.onDoubleTap,
+  });
 
   final UserCatalogEntity entity;
   final VoidCallback onTap;
+  final VoidCallback? onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -676,6 +706,7 @@ class _EntityCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
           onTap: onTap,
+          onDoubleTap: onDoubleTap,
           child: Column(
             children: [
               ClipOval(
@@ -702,10 +733,15 @@ class _EntityCard extends StatelessWidget {
 }
 
 class _WorkThumb extends StatelessWidget {
-  const _WorkThumb({required this.item, required this.onTap});
+  const _WorkThumb({
+    required this.item,
+    required this.onTap,
+    this.onDoubleTap,
+  });
 
   final AkashaItem item;
   final VoidCallback onTap;
+  final VoidCallback? onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -714,6 +750,7 @@ class _WorkThumb extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
         onTap: onTap,
+        onDoubleTap: onDoubleTap,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: SizedBox(

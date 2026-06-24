@@ -21,6 +21,7 @@ class PosterCard extends StatefulWidget {
   final String? franchiseId;
   final bool showPoster;
   final VoidCallback? onTap;
+  final VoidCallback? onDoubleTap;
   final void Function(Offset globalPosition)? onOpenLibraryMenu;
   final void Function(FormatSlot slot)? onHideFormatSlot;
   final int curatedLibraryCount;
@@ -37,6 +38,7 @@ class PosterCard extends StatefulWidget {
     this.incomingRecordCount = 0,
     this.highlighted = false,
     this.onTap,
+    this.onDoubleTap,
     this.onOpenLibraryMenu,
     this.onHideFormatSlot,
   });
@@ -109,6 +111,7 @@ class _PosterCardState extends State<PosterCard> {
 
     final cardBody = GestureDetector(
       onTap: widget.onTap,
+      onDoubleTap: widget.onDoubleTap,
       onSecondaryTapDown: _hasContextMenu
           ? (d) => _openContextMenu(d.globalPosition)
           : null,

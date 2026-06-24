@@ -108,6 +108,8 @@ class HomeShellBody extends StatelessWidget {
   final void Function(String label) onToggleWorkStatus;
   final void Function(String label) onToggleMyStatus;
   final void Function(AkashaItem item) onOpenBrowseItem;
+  final void Function(AkashaItem item) onOpenItemDetail;
+  final void Function(UserCatalogEntity entity) onOpenEntityDetail;
   final void Function(AkashaItem item) onOpenRecentExplore;
   final Future<void> Function(UserCatalogEntity entity) onOpenEntity;
   final Future<void> Function(AkashaItem saved, {bool silent}) onWorkbenchWorkSaved;
@@ -243,6 +245,8 @@ class HomeShellBody extends StatelessWidget {
     required this.onToggleWorkStatus,
     required this.onToggleMyStatus,
     required this.onOpenBrowseItem,
+    required this.onOpenItemDetail,
+    required this.onOpenEntityDetail,
     required this.onOpenRecentExplore,
     required this.onOpenEntity,
     required this.onWorkbenchWorkSaved,
@@ -553,6 +557,8 @@ class HomeShellBody extends StatelessWidget {
         onConnectSuggested: onConnectSuggestedFromHome,
         onPreviewRegistryWork: onPreviewRegistryWork,
         onOpenRecordFromHome: onOpenBrowseItem,
+        onOpenItemDetail: onOpenItemDetail,
+        onOpenEntityDetail: onOpenEntityDetail,
       );
     }
 

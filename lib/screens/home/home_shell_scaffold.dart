@@ -209,6 +209,8 @@ class HomeShellScaffold extends StatelessWidget {
               onToggleWorkStatus: controller.toggleWorkStatus,
               onToggleMyStatus: controller.toggleMyStatus,
               onOpenBrowseItem: controller.openBrowseItem,
+              onOpenItemDetail: controller.openItemDetail,
+              onOpenEntityDetail: controller.openEntity,
               onOpenRecentExplore: controller.openRecentExploreItem,
               onOpenEntity: controller.openEntity,
               workPreviewItem: controller.workPreviewItem,

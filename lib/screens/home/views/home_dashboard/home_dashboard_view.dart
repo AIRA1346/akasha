@@ -38,6 +38,8 @@ class HomeDashboardView extends StatelessWidget {
     this.onConnectSuggested,
     this.onPreviewRegistryWork,
     this.onOpenRecordFromHome,
+    this.onOpenItemDetail,
+    this.onOpenEntityDetail,
   });
 
   final List<AkashaItem> vaultItems;
@@ -58,6 +60,8 @@ class HomeDashboardView extends StatelessWidget {
       onConnectSuggested;
   final void Function(RegistryWork work)? onPreviewRegistryWork;
   final void Function(AkashaItem work)? onOpenRecordFromHome;
+  final void Function(AkashaItem item)? onOpenItemDetail;
+  final void Function(UserCatalogEntity entity)? onOpenEntityDetail;
 
   void _handleItemTap(AkashaItem item) {
     if (item is EntityItem) {
@@ -75,6 +79,40 @@ class HomeDashboardView extends StatelessWidget {
       return;
     }
     onPreviewWork(item);
+  }
+
+  void _handleItemDoubleTap(AkashaItem item) {
+    if (item is EntityItem) {
+      final entity = userCatalog.all.firstWhere(
+        (e) => e.entityId == item.entityId,
+        orElse: () => UserCatalogEntity.userLocal(
+          entityId: item.entityId,
+          type: item.entityType,
+          title: item.title,
+          subtype: item.category,
+          addedAt: item.addedAt,
+        ),
+      );
+      if (onOpenEntityDetail != null) {
+        onOpenEntityDetail!(entity);
+      } else {
+        onPreviewEntity(entity);
+      }
+      return;
+    }
+    if (onOpenItemDetail != null) {
+      onOpenItemDetail!(item);
+    } else {
+      onOpenRecordFromHome?.call(item);
+    }
+  }
+
+  void _handleEntityDoubleTap(UserCatalogEntity entity) {
+    if (onOpenEntityDetail != null) {
+      onOpenEntityDetail!(entity);
+    } else {
+      onPreviewEntity(entity);
+    }
   }
 
   @override
@@ -101,6 +139,7 @@ class HomeDashboardView extends StatelessWidget {
               selectedPreviewItem: previewItem,
               selectedEntityPreviewId: entityPreviewItem?.entityId,
               onItemTap: _handleItemTap,
+              onItemDoubleTap: _handleItemDoubleTap,
               isColdStart: isColdStart,
             ),
             if (FeatureFlags.showDiscoveryHome) ...[
@@ -110,7 +149,9 @@ class HomeDashboardView extends StatelessWidget {
                 userCatalog: userCatalog,
                 linkIndex: linkIndex,
                 onItemTap: _handleItemTap,
+                onItemDoubleTap: _handleItemDoubleTap,
                 onOpenEntity: onPreviewEntity,
+                onOpenEntityDetail: _handleEntityDoubleTap,
                 onGoExplore: onGoExplore,
                 onSearch: onSearch,
                 onConnectSuggested: onConnectSuggested,
@@ -124,6 +165,7 @@ class HomeDashboardView extends StatelessWidget {
                 userCatalog: userCatalog,
                 selectedPreviewItem: previewItem,
                 onItemTap: _handleItemTap,
+                onItemDoubleTap: _handleItemDoubleTap,
                 onSearch: onSearch,
               ),
             ],

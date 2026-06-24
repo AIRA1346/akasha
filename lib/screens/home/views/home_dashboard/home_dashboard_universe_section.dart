@@ -15,6 +15,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
     required this.userCatalog,
     required this.selectedPreviewItem,
     required this.onItemTap,
+    this.onItemDoubleTap,
     required this.onSearch,
   });
 
@@ -22,6 +23,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
   final UserCatalogPort userCatalog;
   final AkashaItem? selectedPreviewItem;
   final void Function(AkashaItem item) onItemTap;
+  final void Function(AkashaItem item)? onItemDoubleTap;
   final VoidCallback onSearch;
 
   @override
@@ -129,6 +131,9 @@ class HomeDashboardUniverseSection extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(8),
             onTap: () => onItemTap(work),
+            onDoubleTap: onItemDoubleTap == null
+                ? null
+                : () => onItemDoubleTap!(work),
             child: Padding(
               padding: const EdgeInsets.all(4.0),
               child: Row(

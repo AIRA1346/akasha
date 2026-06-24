@@ -200,6 +200,7 @@ class HomeShellController {
       prefetchRegistry: () => catalog.prefetchRegistryForCurrentFilters(),
       wrapSetState: wrapSetState,
       onPreviewWork: openWorkPreview,
+      onOpenWorkDetail: openWorkDetail,
     );
 
     dialogs = HomeDialogsCoordinator(
@@ -446,6 +447,24 @@ class HomeShellController {
     workbenchCoord.openBrowseItem(item);
     recentExplore.store.recordWork(item.workId);
     rebuild();
+  }
+
+  Future<void> openWorkDetail(AkashaItem item) => preview.openWorkDetail(item);
+
+  Future<void> openItemDetail(AkashaItem item) async {
+    if (item is EntityItem) {
+      final entity = userCatalog.getById(item.entityId) ??
+          UserCatalogEntity.userLocal(
+            entityId: item.entityId,
+            type: item.entityType,
+            title: item.title,
+            subtype: item.category,
+            addedAt: item.addedAt,
+          );
+      await openEntity(entity);
+      return;
+    }
+    await openWorkDetail(item);
   }
 
   void openWorkPreview(AkashaItem item, {bool push = false}) =>

@@ -13,6 +13,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
     required this.recentExploreItems,
     required this.selectedPreviewItem,
     required this.onItemTap,
+    this.onItemDoubleTap,
     this.selectedEntityPreviewId,
     this.isColdStart = false,
     this.fallbackVaultItems = const [],
@@ -22,6 +23,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
   final AkashaItem? selectedPreviewItem;
   final String? selectedEntityPreviewId;
   final void Function(AkashaItem item) onItemTap;
+  final void Function(AkashaItem item)? onItemDoubleTap;
   final bool isColdStart;
   final List<AkashaItem> fallbackVaultItems;
 
@@ -74,6 +76,9 @@ class HomeDashboardContinueSection extends StatelessWidget {
                       item: item,
                       isSelected: _isSelected(item),
                       onTap: () => onItemTap(item),
+                      onDoubleTap: onItemDoubleTap == null
+                          ? null
+                          : () => onItemDoubleTap!(item),
                     )),
               ],
             ),
@@ -106,11 +111,13 @@ class _ExploreCard extends StatelessWidget {
     required this.item,
     required this.isSelected,
     required this.onTap,
+    this.onDoubleTap,
   });
 
   final AkashaItem item;
   final bool isSelected;
   final VoidCallback onTap;
+  final VoidCallback? onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -140,6 +147,7 @@ class _ExploreCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: onTap,
+          onDoubleTap: onDoubleTap,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Stack(
