@@ -87,6 +87,7 @@ void main() {
 
       await service.setVaultPath('');
       await service.setVaultPath(vaultDir.path);
+      service.forceVaultPollFallback();
       await Future<void>.delayed(const Duration(milliseconds: 80));
 
       var notifyCount = 0;

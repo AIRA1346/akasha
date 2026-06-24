@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:path/path.dart' as p;
+import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../core/archiving/entity_anchor.dart';
 import '../models/enums.dart';
@@ -9,6 +10,7 @@ import '../utils/app_log.dart';
 import 'markdown_parser.dart';
 import 'user_preferences.dart';
 import 'vault_work_journal_paths.dart';
+import 'vault_watch_poll_policy.dart';
 
 class AkashaFileService {
   static const String _prefVaultKey = 'akasha_vault_path';
@@ -37,9 +39,10 @@ class AkashaFileService {
   Timer? _watchDebounce;
   Timer? _pollTimer;
   String? _lastVaultFingerprint;
+  bool _directoryWatchActive = false;
   final Map<String, AkashaItem> _inMemoryCache = {};
 
-  /// 외부 편집 감지 폴링 간격 (Windows·클라우드 드라이브 watch 보조).
+  /// 외부 편집 감지 폴링 간격 — directory watch 실패 시 fallback.
   static Duration vaultPollInterval = const Duration(seconds: 2);
 
   /// 메모리 캐시 반환 (데모 모드 지원용)
@@ -193,6 +196,7 @@ class AkashaFileService {
     final dir = Directory(_vaultPath!);
     if (!dir.existsSync()) return;
 
+    _directoryWatchActive = false;
     try {
       _watcherSubscription = dir.watch(recursive: true).listen(
         (event) {
@@ -202,14 +206,33 @@ class AkashaFileService {
         },
         onError: (error) {
           appLog('[AkashaFileService] Directory watch error: $error');
+          _fallbackToPolling();
+        },
+        onDone: () {
+          appLog('[AkashaFileService] Directory watch ended');
+          _fallbackToPolling();
         },
       );
+      _directoryWatchActive = true;
     } catch (e) {
       appLog('[AkashaFileService] Failed to start directory watch: $e');
+      _directoryWatchActive = false;
     }
 
     _startPolling();
   }
+
+  void _fallbackToPolling() {
+    if (!_directoryWatchActive && _pollTimer != null) return;
+    _directoryWatchActive = false;
+    _watcherSubscription?.cancel();
+    _watcherSubscription = null;
+    _startPolling();
+  }
+
+  /// 테스트·watch 불안정 환경에서 fingerprint 폴링 fallback 강제.
+  @visibleForTesting
+  void forceVaultPollFallback() => _fallbackToPolling();
 
   bool _shouldNotifyForWatchEvent(String path) {
     if (_shouldSkipPath(path)) return false;
@@ -222,12 +245,23 @@ class AkashaFileService {
 
   void _startPolling() {
     _pollTimer?.cancel();
+    _pollTimer = null;
     if (_vaultPath == null) return;
+
+    if (!VaultWatchPollPolicy.shouldRunPeriodicPoll(
+      directoryWatchActive: _directoryWatchActive,
+    )) {
+      if (_lastVaultFingerprint == null) {
+        unawaited(_refreshVaultFingerprint());
+      }
+      return;
+    }
+
     _lastVaultFingerprint = null;
     _pollTimer = Timer.periodic(vaultPollInterval, (_) {
       _pollVaultChanges();
     });
-    _pollVaultChanges();
+    unawaited(_pollVaultChanges());
   }
 
   void _stopPolling() {
@@ -241,6 +275,7 @@ class AkashaFileService {
     _watchDebounce = null;
     _watcherSubscription?.cancel();
     _watcherSubscription = null;
+    _directoryWatchActive = false;
     _stopPolling();
   }
 
