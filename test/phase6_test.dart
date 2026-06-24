@@ -21,7 +21,7 @@ void main() {
           workId: eldenId,
           title: '엘든 링',
           category: MediaCategory.game,
-          domain: AppDomain.generalCulture,
+          domain: AppDomain.subculture,
           myStatus: '클리어(완결)',
           workStatus: '출시됨',
         ),
@@ -30,7 +30,6 @@ void main() {
       final userWorkIds = userItems.map((e) => e.workId).toSet();
 
       final filteredWorks = WorksRegistry.getFilteredWorksSync(
-        domain: AppDomain.generalCulture,
         category: MediaCategory.game,
       );
 

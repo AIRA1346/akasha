@@ -33,7 +33,6 @@ void main() {
       final results = browsePipeline.build(
         allUserItems: [],
         filters: const BrowseFilterState(
-          domain: AppDomain.subculture,
           categories: {MediaCategory.animation},
         ),
       );

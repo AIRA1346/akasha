@@ -132,11 +132,7 @@ class UserCatalogEntity {
       (e) => e.name == subtypeStr,
       orElse: () => MediaCategory.manga,
     );
-    final domainStr = json['domain']?.toString() ?? 'subculture';
-    final domain = AppDomain.values.firstWhere(
-      (e) => e.name == domainStr,
-      orElse: () => AppDomain.subculture,
-    );
+    final domain = AppDomain.fromStorage(json['domain']?.toString());
 
     return UserCatalogEntity(
       entityId: json['entityId']?.toString() ?? '',

@@ -162,7 +162,7 @@ flowchart LR
 | `work_id` | `wk_` 영구 ID (마스터 키). 비어 있으면 사전 매칭 후 자동 부여 · 구 슬러그 ID는 자동 변환 |
 | `title` | 작품 제목 (파일명과 동기화) |
 | `category` | `manga` · `animation` · `game` · `book` · `movie` · `drama` |
-| `domain` | `subculture` · `generalCulture` |
+| `domain` | ⚠️ deprecated | Registry: `subculture` only · YAML 읽기 호환 (`AppDomain.fromStorage`) |
 | `poster` | `posters/` 상대경로 또는 커스텀 URL — 나만의 서재 카드에 표시 |
 | `rating` | 0.0~5.0 |
 | `status` / `my_status` | 나의 상태 |

@@ -14,7 +14,7 @@ const validCategories = {
   'drama',
 };
 
-const validDomains = {'subculture', 'generalCulture'};
+const validDomains = {'subculture'};
 
 const validStatusNames = {
   'submitted',
@@ -43,12 +43,12 @@ List<String> validateContributionMap(Map<String, dynamic> contribution) {
     final title = map['title']?.toString().trim() ?? '';
     if (title.isEmpty) errors.add('$id: title required');
     final category = map['category']?.toString() ?? '';
-    final domain = map['domain']?.toString() ?? '';
+    final domain = map['domain']?.toString() ?? 'subculture';
     if (!validCategories.contains(category)) {
       errors.add('$id: invalid category $category');
     }
-    if (!validDomains.contains(domain)) {
-      errors.add('$id: invalid domain $domain');
+    if (domain != 'subculture') {
+      errors.add('$id: domain must be subculture (got $domain)');
     }
     final poster = map['posterPath']?.toString();
     final posterErr = validatePosterUrlForShard(

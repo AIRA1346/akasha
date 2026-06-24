@@ -10335,7 +10335,7 @@
     "title": "기묘한 이야기",
     "shardId": "drama_8c",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "더퍼 형제 (The Duffer Brothers)",
     "tags": [
       "SF",
@@ -15508,7 +15508,7 @@
     "title": "더 만달로리안",
     "shardId": "drama_e9",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Jon Favreau",
     "tags": [
       "SF",
@@ -15727,7 +15727,7 @@
     "title": "더 오피스",
     "shardId": "drama_7a",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Greg Daniels",
     "tags": [
       "코미디",
@@ -26510,7 +26510,7 @@
     "title": "브레이킹 배드",
     "shardId": "drama_3b",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "빈스 길리건",
     "tags": [
       "범죄",
@@ -40150,7 +40150,7 @@
     "title": "오징어 게임",
     "shardId": "drama_5b",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "황동혁 (Hwang Dong-hyuk)",
     "tags": [
       "서바이벌",
@@ -41010,7 +41010,7 @@
     "title": "왕좌의 게임",
     "shardId": "drama_ce",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "DB Weiss / David Benioff",
     "tags": [
       "판타지",
@@ -42935,7 +42935,7 @@
     "title": "위쳐",
     "shardId": "drama_7d",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Lauren Schmidt Hissrich",
     "tags": [
       "판타지",
@@ -44018,7 +44018,7 @@
     "title": "이상한 변호사 우영우",
     "shardId": "drama_7c",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "유인식",
     "tags": [
       "법정",
@@ -48583,7 +48583,7 @@
     "title": "체르노빌",
     "shardId": "drama_36",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Craig Mazin",
     "tags": [
       "역사",
@@ -51318,7 +51318,7 @@
     "title": "킹덤",
     "shardId": "drama_5d",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "김성훈 / 김은희",
     "tags": [
       "사극",
@@ -52655,7 +52655,7 @@
     "title": "트루 디텍티브",
     "shardId": "drama_d6",
     "category": "drama",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Nic Pizzolatto",
     "tags": [
       "미스터리",

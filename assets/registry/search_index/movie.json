@@ -2373,7 +2373,7 @@
     "title": "기생충",
     "shardId": "movie_84",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "봉준호",
     "tags": [
       "스릴러",
@@ -3835,7 +3835,7 @@
     "title": "다크 나이트",
     "shardId": "movie_66",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "크리스토퍼 놀란",
     "tags": [
       "히어로",
@@ -4075,7 +4075,7 @@
     "title": "대부",
     "shardId": "movie_74",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "프란시스 포드 코폴라",
     "tags": [
       "범죄",
@@ -4450,7 +4450,7 @@
     "title": "더 배트맨",
     "shardId": "movie_79",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Matt Reeves",
     "tags": [
       "영화",
@@ -5390,7 +5390,7 @@
     "title": "듄",
     "shardId": "movie_f6",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Denis Villeneuve",
     "tags": [
       "영화",
@@ -7117,7 +7117,7 @@
     "title": "매트릭스",
     "shardId": "movie_39",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "워쇼스키 자매 (The Wachowskis)",
     "tags": [
       "사이버펑크",
@@ -7812,7 +7812,7 @@
     "title": "바비",
     "shardId": "movie_61",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Greta Gerwig",
     "tags": [
       "영화",
@@ -7975,7 +7975,7 @@
     "title": "반지의 제왕: 반지 원정대",
     "shardId": "movie_f2",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "피터 잭슨",
     "tags": [
       "판타지",
@@ -10875,7 +10875,7 @@
     "title": "센과 치히로의 행방불명",
     "shardId": "movie_ef",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "미야자키 하야오",
     "tags": [
       "애니메이션",
@@ -11833,7 +11833,7 @@
     "title": "스파이더맨: 노 웨이 홈",
     "shardId": "movie_e1",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Jon Watts",
     "tags": [
       "영화",
@@ -13666,7 +13666,7 @@
     "title": "어벤져스: 엔드게임",
     "shardId": "movie_b6",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "루소 형제",
     "tags": [
       "히어로",
@@ -14016,7 +14016,7 @@
     "title": "에브리씽 에브리웨어",
     "shardId": "movie_35",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Daniels",
     "tags": [
       "영화",
@@ -14740,7 +14740,7 @@
     "title": "오펜하이머",
     "shardId": "movie_b2",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Christopher Nolan",
     "tags": [
       "영화",
@@ -16109,7 +16109,7 @@
     "title": "인셉션",
     "shardId": "movie_9c",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "크리스토퍼 놀란",
     "tags": [
       "SF",
@@ -16183,7 +16183,7 @@
     "title": "인터스텔라",
     "shardId": "movie_0f",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "크리스토퍼 놀란 (Christopher Nolan)",
     "tags": [
       "SF",
@@ -19785,7 +19785,7 @@
     "title": "토이 스토리",
     "shardId": "movie_35",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "존 래시터",
     "tags": [
       "애니메이션",
@@ -20383,7 +20383,7 @@
     "title": "파이트 클럽",
     "shardId": "movie_2a",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "데이비드 핀처",
     "tags": [
       "스릴러",
@@ -20668,7 +20668,7 @@
     "title": "펄프 픽션",
     "shardId": "movie_c5",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "쿠엔틴 타란티노",
     "tags": [
       "범죄",
@@ -20768,7 +20768,7 @@
     "title": "포레스트 검프",
     "shardId": "movie_17",
     "category": "movie",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "로버트 저메키스",
     "tags": [
       "드라마",

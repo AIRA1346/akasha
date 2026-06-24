@@ -101,7 +101,7 @@
     "title": "1984",
     "shardId": "book_61",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "조지 오웰",
     "tags": [
       "디스토피아",
@@ -4053,7 +4053,7 @@
     "title": "노르웨이의 숲",
     "shardId": "book_75",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "무라카미 하루키",
     "tags": [
       "청춘",
@@ -4382,7 +4382,7 @@
     "title": "다빈치 코드",
     "shardId": "book_9f",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "댄 브라운",
     "tags": [
       "미스터리",
@@ -5735,7 +5735,7 @@
     "title": "듄",
     "shardId": "book_f0",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "프랭크 허버트",
     "tags": [
       "SF",
@@ -6007,7 +6007,7 @@
     "title": "라플라스의 마녀",
     "shardId": "book_9d",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "히가시노 게이고 (Keigo Higashino)",
     "tags": [
       "소설",
@@ -8691,7 +8691,7 @@
     "title": "반지의 제왕: 반지 원정대",
     "shardId": "book_b4",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "J.R.R. 톨킨",
     "tags": [
       "판타지",
@@ -11749,7 +11749,7 @@
     "title": "셜록 홈즈: 단홍색 연구",
     "shardId": "book_73",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "아서 코난 도일",
     "tags": [
       "추리",
@@ -13825,7 +13825,7 @@
     "title": "아이언 레디 플레이어 원",
     "shardId": "book_a3",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "언스트 어니스트 클라인",
     "tags": [
       "SF",
@@ -15727,7 +15727,7 @@
     "title": "오리엔트 특급 살인",
     "shardId": "book_c5",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "아가사 크리스티",
     "tags": [
       "추리",
@@ -17158,7 +17158,7 @@
     "title": "은하수를 여행하는 히치하이커를 위한 안내서",
     "shardId": "book_bd",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "더글러스 애덤스",
     "tags": [
       "SF",
@@ -22405,7 +22405,7 @@
     "title": "퍼시 잭슨과 번개 도둑",
     "shardId": "book_ed",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "릭 리오던",
     "tags": [
       "판타지",
@@ -23421,7 +23421,7 @@
     "title": "해리 포터와 마법사의 돌",
     "shardId": "book_cf",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "J.K. 롤링 (J.K. Rowling)",
     "tags": [
       "소설",
@@ -23715,7 +23715,7 @@
     "title": "헝거 게임",
     "shardId": "book_f9",
     "category": "book",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "수잔 콜린스",
     "tags": [
       "SF",

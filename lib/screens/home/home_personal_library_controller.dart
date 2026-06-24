@@ -162,7 +162,6 @@ class HomePersonalLibraryController {
   }) {
     final active = activeLibrary;
     if (active == null) return;
-    active.domain = null;
     active.categories = Set.from(categories);
     active.workStatuses = Set.from(workStatuses);
     active.myStatuses = Set.from(myStatuses);

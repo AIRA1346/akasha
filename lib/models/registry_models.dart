@@ -176,7 +176,6 @@ class RegistrySearchIndexEntry {
 
   factory RegistrySearchIndexEntry.fromJson(Map<String, dynamic> json) {
     final categoryStr = json['category']?.toString() ?? 'manga';
-    final domainStr = json['domain']?.toString() ?? 'subculture';
     final poster = json['posterPath']?.toString();
     return RegistrySearchIndexEntry(
       workId: json['workId']?.toString() ?? '',
@@ -186,10 +185,7 @@ class RegistrySearchIndexEntry {
         (e) => e.name == categoryStr,
         orElse: () => MediaCategory.manga,
       ),
-      domain: AppDomain.values.firstWhere(
-        (e) => e.name == domainStr,
-        orElse: () => AppDomain.subculture,
-      ),
+      domain: AppDomain.fromStorage(json['domain']?.toString()),
       creator: json['creator']?.toString() ?? '',
       tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ??
           const [],

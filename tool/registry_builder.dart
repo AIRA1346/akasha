@@ -40,7 +40,7 @@ const _validCategories = {
   'drama',
 };
 
-const _validDomains = {'subculture', 'generalCulture'};
+const _validDomains = {'subculture'};
 
 void main(List<String> args) {
   final syncAssets = args.contains('--sync-assets');
@@ -359,13 +359,22 @@ void _validateWork(
   }
 
   final category = work['category']?.toString() ?? '';
-  final domain = work['domain']?.toString() ?? '';
+  var domain = work['domain']?.toString() ?? '';
   final title = work['title']?.toString() ?? '';
   final titles = parseTitlesJson(work['titles']);
   final hasTitle = title.isNotEmpty || titles.isNotEmpty;
 
   if (!_validCategories.contains(category)) {
     errors.add('$shardPath/$workId: invalid category $category');
+  }
+  if (domain == 'generalCulture') {
+    errors.add(
+      '$shardPath/$workId: generalCulture deprecated — run tool/migrate_domain_normalize.dart',
+    );
+  }
+  if (domain.isEmpty) {
+    work['domain'] = 'subculture';
+    domain = 'subculture';
   }
   if (!_validDomains.contains(domain)) {
     errors.add('$shardPath/$workId: invalid domain $domain');

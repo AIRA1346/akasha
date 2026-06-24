@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/models/registry_work.dart';
 import 'package:akasha/services/works_registry.dart';
 import 'package:akasha/utils/registry_extension_labels.dart';
 
@@ -18,6 +19,7 @@ void main() {
       },
     });
 
+    expect(work.domain, AppDomain.subculture);
     expect(work.extensions['steamAppId'], '322170');
     final lines = formatRegistryExtensionLines(work);
     expect(lines, contains('플랫폼: PC · 콘솔'));

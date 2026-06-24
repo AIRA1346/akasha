@@ -29,7 +29,6 @@ class PersonalLibraryConfig {
   String name;
   PersonalLibraryMode mode;
   List<String> memberOrder;
-  AppDomain? domain;
   Set<MediaCategory> categories;
   Set<String> workStatuses;
   Set<String> myStatuses;
@@ -40,7 +39,6 @@ class PersonalLibraryConfig {
     required this.name,
     PersonalLibraryMode? mode,
     List<String>? memberOrder,
-    this.domain,
     Set<MediaCategory>? categories,
     Set<String>? workStatuses,
     Set<String>? myStatuses,
@@ -61,7 +59,6 @@ class PersonalLibraryConfig {
 
   bool get isFilterMode => mode == PersonalLibraryMode.filter;
 
-  /// 파생 — 저장하지 않음 (API·테스트 편의)
   Set<String> get memberWorkIds => memberOrder.toSet();
 
   static List<String> normalizeMemberOrder(List<String> order) {
@@ -80,7 +77,6 @@ class PersonalLibraryConfig {
         'name': name,
         'mode': mode.name,
         'memberOrder': memberOrder,
-        'domain': domain?.name,
         'categories': categories.map((e) => e.name).toList(),
         'workStatuses': workStatuses.toList(),
         'myStatuses': myStatuses.toList(),
@@ -88,17 +84,6 @@ class PersonalLibraryConfig {
       };
 
   factory PersonalLibraryConfig.fromJson(Map<String, dynamic> json) {
-    AppDomain? parsedDomain;
-    if (json['domain'] != null) {
-      try {
-        parsedDomain = AppDomain.values.firstWhere(
-          (e) => e.name == json['domain'],
-        );
-      } catch (_) {
-        parsedDomain = null;
-      }
-    }
-
     final parsedCategories = <MediaCategory>{};
     if (json['categories'] != null) {
       for (final catName in json['categories'] as List<dynamic>) {
@@ -130,7 +115,6 @@ class PersonalLibraryConfig {
       name: json['name'] as String,
       mode: parsedMode,
       memberOrder: order,
-      domain: parsedDomain,
       categories: parsedCategories,
       workStatuses: Set<String>.from(json['workStatuses'] ?? []),
       myStatuses: Set<String>.from(json['myStatuses'] ?? []),
@@ -143,7 +127,6 @@ class PersonalLibraryConfig {
     String? name,
     PersonalLibraryMode? mode,
     List<String>? memberOrder,
-    AppDomain? domain,
     Set<MediaCategory>? categories,
     Set<String>? workStatuses,
     Set<String>? myStatuses,
@@ -154,7 +137,6 @@ class PersonalLibraryConfig {
       name: name ?? this.name,
       mode: mode ?? this.mode,
       memberOrder: memberOrder ?? List.from(this.memberOrder),
-      domain: domain ?? this.domain,
       categories: categories ?? Set.from(this.categories),
       workStatuses: workStatuses ?? Set.from(this.workStatuses),
       myStatuses: myStatuses ?? Set.from(this.myStatuses),
@@ -170,7 +152,6 @@ class PersonalLibraryConfig {
 
   static List<PersonalLibraryConfig> defaultLibraries() => [masterArchive()];
 
-  /// 저장된 목록에서 레거시 프리셋 제거 + `master_archive` 보장
   static List<PersonalLibraryConfig> normalizeLibraries(
     List<PersonalLibraryConfig> input,
   ) {
@@ -200,11 +181,6 @@ class PersonalLibraryConfig {
             : masterArchive());
 
     master.mode = PersonalLibraryMode.filter;
-    master.domain = null;
-
-    for (final lib in custom) {
-      lib.domain = null;
-    }
 
     custom.sort((a, b) => a.name.compareTo(b.name));
     return [master, ...custom];

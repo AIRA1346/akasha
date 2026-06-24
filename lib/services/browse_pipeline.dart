@@ -1,19 +1,18 @@
-import '../core/ports/registry_port.dart';
-import '../models/akasha_item.dart';
 import '../models/browse_card.dart';
 import '../models/enums.dart';
+import '../models/registry_work.dart';
+import '../core/ports/registry_port.dart';
+import '../models/akasha_item.dart';
 import 'franchise_fusion_service.dart';
 import 'works_registry.dart';
 
 /// 홈 그리드용 필터 입력 (HomeScreen 상태의 스냅샷)
 class BrowseFilterState {
-  final AppDomain? domain;
   final Set<MediaCategory> categories;
   final Set<String> workStatuses;
   final Set<String> myStatuses;
 
   const BrowseFilterState({
-    this.domain,
     this.categories = const {},
     this.workStatuses = const {},
     this.myStatuses = const {},
@@ -52,9 +51,6 @@ class BrowsePipeline {
     BrowseFilterState filters,
   ) {
     return items.where((item) {
-      if (filters.domain != null && item.domain != filters.domain) {
-        return false;
-      }
       if (filters.categories.isNotEmpty &&
           !filters.categories.contains(item.category)) {
         return false;
@@ -65,20 +61,12 @@ class BrowsePipeline {
 
   List<RegistryWork> _resolveRegistryWorks(BrowseFilterState filters) {
     if (filters.categories.isEmpty) {
-      return _registryPort.getFilteredWorksSync(
-        domain: filters.domain,
-        category: null,
-      );
+      return _registryPort.getFilteredWorksSync(category: null);
     }
 
     final works = <RegistryWork>[];
     for (final cat in filters.categories) {
-      works.addAll(
-        _registryPort.getFilteredWorksSync(
-          domain: filters.domain,
-          category: cat,
-        ),
-      );
+      works.addAll(_registryPort.getFilteredWorksSync(category: cat));
     }
     return works;
   }

@@ -19,24 +19,25 @@
 |:-----:|------|:----:|
 | **1** | UI — browse 필터·작품 추가·서재/대시보드 설정·기여 다이얼로그에서 domain 선택 제거 | ✅ |
 | **2** | 런타임 — 필터 스냅샷·서재 `normalizeLibraries`에서 domain 무시·제거 | ✅ |
-| **3** | Registry — ingest 기본 `subculture` · `generalCulture` 신규 금지 · 일괄 정규화 스크립트 | ⏳ |
-| **4** | 스키마 — `domain` optional → 제거 · data-policy·README 갱신 · `sub_`/`gen_` 파싱만 유지 | ⏳ |
+| **3** | Registry — ingest 기본 `subculture` · `generalCulture` 신규 금지 · `migrate_domain_normalize.dart` | ✅ |
+| **4** | 스키마 — `fromStorage` 정규화 · config domain 필드 제거 · 문서 갱신 · `sub_`/`gen_` 파싱 유지 | ✅ |
 
 ---
 
-## 유지 (Phase 4까지)
+## 유지 (레거시 호환)
 
 | 항목 | 이유 |
 |------|------|
-| `AkashaItem.domain` · YAML `domain:` | 기존 볼트·Registry 읽기 |
+| `AkashaItem.domain` · YAML `domain:` | 읽기 시 `AppDomain.fromStorage` → subculture |
 | `WorkIdCodec` `sub_`/`gen_` | 레거시 마스터 ID |
-| `RegistryWork.domain` | Tier 1 Fact 필드 (읽기 전용) |
+| `RegistryWork.domain` | Tier 1 필드 — 값은 항상 subculture |
 
-## 제거됨 (Phase 1–2)
+## 제거됨
 
-- Browse `FilterSection` domain 칩
-- 사용자 필터·서재·대시보드에 domain 저장
-- 신규 작품 추가 시 domain 선택 UI
+- Browse·서재·대시보드 **domain 필터 UI·저장**
+- `generalCulture` Registry ingest (162건 → subculture 마이그레이션)
+- `PersonalLibraryConfig.domain` · `DashboardConfig.domain`
+- `BrowseFilterState.domain`
 
 ---
 
@@ -55,4 +56,4 @@ flutter test
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-24 | Phase 1–2 구현 — UI·필터·다이얼로그·스냅샷 |
+| 2026-06-24 | Phase 3–4 — Registry 162건 정규화 · fromStorage · config domain 제거 |

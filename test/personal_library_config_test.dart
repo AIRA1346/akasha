@@ -52,30 +52,10 @@ void main() {
       );
     });
 
-    test('normalizeLibraries strips domain filter from all libraries', () {
-      final normalized = PersonalLibraryConfig.normalizeLibraries([
-        PersonalLibraryConfig(
-          id: PersonalLibraryConfig.masterArchiveId,
-          name: 'master_archive',
-          domain: AppDomain.generalCulture,
-        ),
-        PersonalLibraryConfig(
-          id: 'personal_1',
-          name: '커스텀',
-          domain: AppDomain.subculture,
-          categories: {MediaCategory.manga},
-        ),
-      ]);
-
-      expect(normalized.first.domain, isNull);
-      expect(normalized[1].domain, isNull);
-    });
-
     test('json round-trip with filters', () {
       final original = PersonalLibraryConfig(
         id: 'personal_1',
         name: '커스텀 서재',
-        domain: AppDomain.subculture,
         categories: {MediaCategory.manga, MediaCategory.animation},
         workStatuses: {'완결'},
         myStatuses: {'전부 봄'},
@@ -83,13 +63,22 @@ void main() {
       final restored = PersonalLibraryConfig.fromJson(original.toJson());
       expect(restored.id, original.id);
       expect(restored.name, original.name);
-      expect(restored.domain, AppDomain.subculture);
       expect(restored.categories, original.categories);
       expect(restored.workStatuses, original.workStatuses);
       expect(restored.myStatuses, original.myStatuses);
       expect(restored.inclusionRules, ['archived']);
       expect(restored.mode, PersonalLibraryMode.filter);
       expect(restored.memberOrder, isEmpty);
+    });
+
+    test('fromJson ignores legacy domain field', () {
+      final restored = PersonalLibraryConfig.fromJson({
+        'id': 'personal_1',
+        'name': '커스텀',
+        'domain': 'generalCulture',
+        'categories': ['manga'],
+      });
+      expect(restored.categories, {MediaCategory.manga});
     });
 
     test('memberOrder is SSOT and dedupes', () {

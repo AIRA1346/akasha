@@ -16,7 +16,6 @@ void main() {
       final config = DashboardConfig(
         id: 'test_id',
         name: 'manga_dashboard',
-        domain: AppDomain.subculture,
         categories: {MediaCategory.manga},
         myStatuses: {'보는 중', '전부 봄'},
         workStatuses: {'연재중'},
@@ -25,7 +24,7 @@ void main() {
       final jsonMap = config.toJson();
       expect(jsonMap['id'], 'test_id');
       expect(jsonMap['name'], 'manga_dashboard');
-      expect(jsonMap['domain'], 'subculture');
+      expect(jsonMap.containsKey('domain'), isFalse);
       expect(jsonMap['categories'], contains('manga'));
       expect(jsonMap['myStatuses'], containsAll(['보는 중', '전부 봄']));
       expect(jsonMap['workStatuses'], containsAll(['연재중']));
@@ -33,28 +32,21 @@ void main() {
       final parsed = DashboardConfig.fromJson(jsonMap);
       expect(parsed.id, 'test_id');
       expect(parsed.name, 'manga_dashboard');
-      expect(parsed.domain, AppDomain.subculture);
       expect(parsed.categories, contains(MediaCategory.manga));
       expect(parsed.myStatuses, containsAll(['보는 중', '전부 봄']));
       expect(parsed.workStatuses, containsAll(['연재중']));
     });
 
-    test('DashboardConfig handles null domain and category during serialization', () {
-      final config = DashboardConfig(
-        id: 'master_index',
-        name: '전체보기',
-        domain: null,
-        categories: {},
-      );
+    test('DashboardConfig ignores legacy domain in JSON', () {
+      final parsed = DashboardConfig.fromJson({
+        'id': 'master_index',
+        'name': '전체보기',
+        'domain': 'subculture',
+        'categories': [],
+      });
 
-      final jsonMap = config.toJson();
-      expect(jsonMap['domain'], isNull);
-      expect(jsonMap['categories'], isEmpty);
-
-      final parsed = DashboardConfig.fromJson(jsonMap);
       expect(parsed.id, 'master_index');
       expect(parsed.name, '전체보기');
-      expect(parsed.domain, isNull);
       expect(parsed.categories, isEmpty);
     });
 
@@ -68,17 +60,17 @@ void main() {
       final encoded = jsonEncode(list.map((e) => e.toJson()).toList());
       await prefs.setString('akasha_dashboards', encoded);
 
-      final savedStr = prefs.getString('akasha_dashboards');
-      expect(savedStr, isNotNull);
+      final loadedStr = prefs.getString('akasha_dashboards');
+      expect(loadedStr, isNotNull);
 
-      final List<dynamic> decoded = jsonDecode(savedStr!);
-      final parsedList = decoded.map((e) => DashboardConfig.fromJson(e as Map<String, dynamic>)).toList();
+      final decoded = jsonDecode(loadedStr!) as List;
+      final loaded = decoded
+          .map((e) => DashboardConfig.fromJson(e as Map<String, dynamic>))
+          .toList();
 
-      expect(parsedList.length, 2);
-      expect(parsedList[0].name, 'Manga Only');
-      expect(parsedList[0].categories, contains(MediaCategory.manga));
-      expect(parsedList[1].name, 'Game Only');
-      expect(parsedList[1].categories, contains(MediaCategory.game));
+      expect(loaded, hasLength(2));
+      expect(loaded[0].categories, contains(MediaCategory.manga));
+      expect(loaded[1].categories, contains(MediaCategory.game));
     });
   });
 }

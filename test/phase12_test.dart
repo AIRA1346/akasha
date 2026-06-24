@@ -28,7 +28,6 @@ void main() {
       final parsed = DashboardConfig.fromJson(legacyJson);
       expect(parsed.id, 'legacy_manga');
       expect(parsed.name, '비주얼 만화 서재');
-      expect(parsed.domain, AppDomain.subculture);
       
       // categories 세트로 마이그레이션이 잘 되었는지 검증
       expect(parsed.categories, contains(MediaCategory.manga));

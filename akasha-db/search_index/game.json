@@ -253,7 +253,7 @@
     "title": "7 Days to Die",
     "shardId": "game_04",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "The Fun Pimps",
     "tags": [
       "게임",
@@ -519,7 +519,7 @@
     "title": "Age of Empires II DE",
     "shardId": "game_c2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Forgotten Empires",
     "tags": [
       "게임",
@@ -550,7 +550,7 @@
     "title": "Age of Empires IV",
     "shardId": "game_5d",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Relic",
     "tags": [
       "게임",
@@ -625,7 +625,7 @@
     "title": "Armored Core VI",
     "shardId": "game_6a",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "게임",
@@ -746,7 +746,7 @@
     "title": "Cities Skylines II",
     "shardId": "game_b0",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Colossal Order",
     "tags": [
       "게임",
@@ -912,7 +912,7 @@
     "title": "Don't Starve",
     "shardId": "game_cb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Klei",
     "tags": [
       "게임",
@@ -941,7 +941,7 @@
     "title": "Don't Starve Together",
     "shardId": "game_53",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Klei",
     "tags": [
       "게임",
@@ -970,7 +970,7 @@
     "title": "Dying Light",
     "shardId": "game_97",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Techland",
     "tags": [
       "게임",
@@ -999,7 +999,7 @@
     "title": "Dying Light 2",
     "shardId": "game_96",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Techland",
     "tags": [
       "게임",
@@ -1552,7 +1552,7 @@
     "title": "GTA IV",
     "shardId": "game_39",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar",
     "tags": [
       "게임",
@@ -1583,7 +1583,7 @@
     "title": "GTA San Andreas",
     "shardId": "game_cb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar",
     "tags": [
       "게임",
@@ -1634,7 +1634,7 @@
     "title": "Ghost of Tsushima",
     "shardId": "game_5c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Sucker Punch",
     "tags": [
       "게임",
@@ -1705,7 +1705,7 @@
     "title": "Grand Theft Auto III",
     "shardId": "game_48",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar",
     "tags": [
       "게임",
@@ -1736,7 +1736,7 @@
     "title": "Hades II",
     "shardId": "game_04",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Supergiant",
     "tags": [
       "게임",
@@ -1916,7 +1916,7 @@
     "title": "Lies of P",
     "shardId": "game_b0",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Neowiz",
     "tags": [
       "게임",
@@ -2278,7 +2278,7 @@
     "title": "Nioh",
     "shardId": "game_bf",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Team Ninja",
     "tags": [
       "게임",
@@ -2309,7 +2309,7 @@
     "title": "Nioh 2",
     "shardId": "game_d3",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Team Ninja",
     "tags": [
       "게임",
@@ -2682,7 +2682,7 @@
     "title": "Resident Evil 2",
     "shardId": "game_50",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Capcom",
     "tags": [
       "게임",
@@ -2713,7 +2713,7 @@
     "title": "Resident Evil 3",
     "shardId": "game_6f",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Capcom",
     "tags": [
       "게임",
@@ -2744,7 +2744,7 @@
     "title": "Resident Evil 4",
     "shardId": "game_be",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Capcom",
     "tags": [
       "게임",
@@ -2775,7 +2775,7 @@
     "title": "Resident Evil Village",
     "shardId": "game_9b",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Capcom",
     "tags": [
       "게임",
@@ -3009,7 +3009,7 @@
     "title": "Sons of the Forest",
     "shardId": "game_51",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Endnight",
     "tags": [
       "게임",
@@ -3784,7 +3784,7 @@
     "title": "가라오케 파티",
     "shardId": "game_b2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "게임",
@@ -3859,7 +3859,7 @@
     "title": "갓 오브 워",
     "shardId": "game_2c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Santa Monica Studio",
     "tags": [
       "액션",
@@ -5163,7 +5163,7 @@
     "title": "그랜드 테프트 오토 V",
     "shardId": "game_be",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar Games",
     "tags": [
       "오픈월드",
@@ -7085,7 +7085,7 @@
     "title": "다크 소울",
     "shardId": "game_c2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "게임",
@@ -7116,7 +7116,7 @@
     "title": "다크 소울 3",
     "shardId": "game_fb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "게임",
@@ -7696,7 +7696,7 @@
     "title": "더 엘더스크롤 V: 스카이림",
     "shardId": "game_4b",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bethesda",
     "tags": [
       "오픈월드",
@@ -7729,7 +7729,7 @@
     "title": "더 위처 3: 와일드 헌트",
     "shardId": "game_26",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "CD PROJEKT RED",
     "tags": [
       "오픈월드",
@@ -8106,7 +8106,7 @@
     "title": "더 포레스트",
     "shardId": "game_70",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Endnight",
     "tags": [
       "게임",
@@ -8297,7 +8297,7 @@
     "title": "데드 바이 데이라이트",
     "shardId": "game_58",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Behaviour",
     "tags": [
       "게임",
@@ -8531,7 +8531,7 @@
     "title": "데스티니 가디언즈",
     "shardId": "game_98",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bungie",
     "tags": [
       "루트슈터",
@@ -8978,7 +8978,7 @@
     "title": "도타 2",
     "shardId": "game_78",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "MOBA",
@@ -9012,7 +9012,7 @@
     "title": "도타 언더로드",
     "shardId": "game_fb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "게임",
@@ -10625,7 +10625,7 @@
     "title": "디아블로 IV",
     "shardId": "game_13",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Blizzard",
     "tags": [
       "핵앤슬래시",
@@ -10840,7 +10840,7 @@
     "title": "딥 락 갤럭틱",
     "shardId": "game_ca",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Ghost Ship",
     "tags": [
       "게임",
@@ -10983,7 +10983,7 @@
     "title": "라스트 오브 어스 Part II",
     "shardId": "game_97",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Naughty Dog",
     "tags": [
       "게임",
@@ -11475,7 +11475,7 @@
     "title": "러스트",
     "shardId": "game_d8",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Facepunch Studios",
     "tags": [
       "서바이벌",
@@ -11645,7 +11645,7 @@
     "title": "레드 데드 리뎀션 2",
     "shardId": "game_9c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar Games",
     "tags": [
       "오픈월드",
@@ -11698,7 +11698,7 @@
     "title": "레딧 리데임",
     "shardId": "game_92",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Digixart",
     "tags": [
       "게임",
@@ -11972,7 +11972,7 @@
     "title": "레인보우 식스 시즈",
     "shardId": "game_42",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Ubisoft",
     "tags": [
       "게임",
@@ -12072,7 +12072,7 @@
     "title": "레인월드",
     "shardId": "game_c3",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Videocult",
     "tags": [
       "게임",
@@ -12145,7 +12145,7 @@
     "title": "레프트 4 데드 2",
     "shardId": "game_94",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "게임",
@@ -12378,7 +12378,7 @@
     "title": "로스트 아크",
     "shardId": "game_31",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Smilegate",
     "tags": [
       "게임",
@@ -12524,7 +12524,7 @@
     "title": "로켓 리그",
     "shardId": "game_6e",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Psyonix",
     "tags": [
       "게임",
@@ -12964,7 +12964,7 @@
     "title": "리그 오브 레전드",
     "shardId": "game_fd",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Riot Games",
     "tags": [
       "MOBA",
@@ -13269,7 +13269,7 @@
     "title": "리틀 나이트메어",
     "shardId": "game_39",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Tarsier",
     "tags": [
       "게임",
@@ -13300,7 +13300,7 @@
     "title": "리틀 나이트메어 2",
     "shardId": "game_d8",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Supermassive",
     "tags": [
       "게임",
@@ -13530,7 +13530,7 @@
     "title": "림월드",
     "shardId": "game_98",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Ludeon",
     "tags": [
       "게임",
@@ -14582,7 +14582,7 @@
     "title": "마블 스파이더맨 리마스터",
     "shardId": "game_af",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Insomniac",
     "tags": [
       "게임",
@@ -14937,7 +14937,7 @@
     "title": "마인크래프트",
     "shardId": "game_69",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Mojang Studios",
     "tags": [
       "샌드박스",
@@ -15150,7 +15150,7 @@
     "title": "매스 이펙트 2",
     "shardId": "game_fd",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "BioWare",
     "tags": [
       "SF",
@@ -16935,7 +16935,7 @@
     "title": "미스트워커",
     "shardId": "game_84",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Square Enix",
     "tags": [
       "게임",
@@ -17171,7 +17171,7 @@
     "title": "바이오쇼크",
     "shardId": "game_45",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Irrational Games",
     "tags": [
       "FPS",
@@ -17575,7 +17575,7 @@
     "title": "발할라: 신들의 황혼",
     "shardId": "game_eb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Ubisoft",
     "tags": [
       "게임",
@@ -17606,7 +17606,7 @@
     "title": "발헤임",
     "shardId": "game_e8",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Iron Gate",
     "tags": [
       "게임",
@@ -17793,7 +17793,7 @@
     "title": "배틀그라운드",
     "shardId": "game_88",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "KRAFTON",
     "tags": [
       "게임",
@@ -17866,7 +17866,7 @@
     "title": "배틀필드 2042",
     "shardId": "game_fc",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "DICE",
     "tags": [
       "게임",
@@ -19386,7 +19386,7 @@
     "title": "블랙 미스",
     "shardId": "game_7d",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Blizzard",
     "tags": [
       "게임",
@@ -19482,7 +19482,7 @@
     "title": "블러드본",
     "shardId": "game_93",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "게임",
@@ -20197,7 +20197,7 @@
     "title": "사이버펑크 2077",
     "shardId": "game_9c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "CD PROJEKT RED",
     "tags": [
       "SF",
@@ -20597,7 +20597,7 @@
     "title": "새티스팩토리",
     "shardId": "game_9c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Coffee Stain",
     "tags": [
       "게임",
@@ -20998,7 +20998,7 @@
     "title": "세키로",
     "shardId": "game_6d",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "게임",
@@ -22107,7 +22107,7 @@
     "title": "슈퍼 러버런",
     "shardId": "game_67",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Team Cherry",
     "tags": [
       "게임",
@@ -22965,7 +22965,7 @@
     "title": "스카이림 SE",
     "shardId": "game_b1",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bethesda",
     "tags": [
       "게임",
@@ -23080,7 +23080,7 @@
     "title": "스타듀 밸리",
     "shardId": "game_f9",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "ConcernedApe",
     "tags": [
       "농사",
@@ -23201,7 +23201,7 @@
     "title": "스타크래프트 리마스터",
     "shardId": "game_b6",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Blizzard",
     "tags": [
       "게임",
@@ -23346,7 +23346,7 @@
     "title": "스타필드",
     "shardId": "game_ed",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bethesda",
     "tags": [
       "게임",
@@ -23488,7 +23488,7 @@
     "title": "스텔라리스",
     "shardId": "game_ff",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Paradox",
     "tags": [
       "게임",
@@ -23792,7 +23792,7 @@
     "title": "스파이더맨 2",
     "shardId": "game_4a",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Insomniac",
     "tags": [
       "게임",
@@ -24042,7 +24042,7 @@
     "title": "슬라임 랜처",
     "shardId": "game_e5",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Monomi Park",
     "tags": [
       "게임",
@@ -24495,7 +24495,7 @@
     "title": "시티즈: 스카이라인",
     "shardId": "game_45",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Colossal Order",
     "tags": [
       "게임",
@@ -26084,7 +26084,7 @@
     "title": "아크: 서바이벌 이볼브드",
     "shardId": "game_c0",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Studio Wildcard",
     "tags": [
       "게임",
@@ -26954,7 +26954,7 @@
     "title": "언차티드: 도적들과 유산",
     "shardId": "game_3a",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Naughty Dog",
     "tags": [
       "게임",
@@ -27461,7 +27461,7 @@
     "title": "에이펙스 레전드",
     "shardId": "game_83",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Respawn Entertainment",
     "tags": [
       "배틀로얄",
@@ -27656,7 +27656,7 @@
     "title": "엑스칼리버",
     "shardId": "game_77",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Square Enix",
     "tags": [
       "게임",
@@ -27710,7 +27710,7 @@
     "title": "엑시옴",
     "shardId": "game_c8",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "인디 제작사",
     "tags": [
       "인디",
@@ -27830,7 +27830,7 @@
     "title": "엘든 링",
     "shardId": "game_b3",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "FromSoftware",
     "tags": [
       "소울라이크",
@@ -28356,7 +28356,7 @@
     "title": "오리와 먹구름",
     "shardId": "game_0b",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Moon Studios",
     "tags": [
       "게임",
@@ -28478,7 +28478,7 @@
     "title": "오버워치 2",
     "shardId": "game_fe",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Blizzard",
     "tags": [
       "FPS",
@@ -28512,7 +28512,7 @@
     "title": "오버쿡드 2",
     "shardId": "game_0d",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Team17",
     "tags": [
       "게임",
@@ -29612,7 +29612,7 @@
     "title": "워프레임",
     "shardId": "game_10",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Digital Extremes",
     "tags": [
       "F2P",
@@ -30163,7 +30163,7 @@
     "title": "유로 트럭 시뮬레이터 2",
     "shardId": "game_98",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "SCS Software",
     "tags": [
       "게임",
@@ -30215,7 +30215,7 @@
     "title": "유로파 유니버설리스 IV",
     "shardId": "game_04",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Paradox",
     "tags": [
       "게임",
@@ -31941,7 +31941,7 @@
     "title": "젤다의 전설 브레스 오브 더 와일드",
     "shardId": "game_64",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Nintendo",
     "tags": [
       "오픈월드",
@@ -33366,7 +33366,7 @@
     "title": "최후의 생还자 Part I",
     "shardId": "game_61",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Naughty Dog",
     "tags": [
       "게임",
@@ -33669,7 +33669,7 @@
     "title": "카운터 스트라이크 2",
     "shardId": "game_4e",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "FPS",
@@ -34076,7 +34076,7 @@
     "title": "컵헤드",
     "shardId": "game_2c",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Studio MDHR",
     "tags": [
       "게임",
@@ -34336,7 +34336,7 @@
     "title": "콜 오브 듀티: MW II",
     "shardId": "game_bb",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Infinity Ward",
     "tags": [
       "게임",
@@ -35227,7 +35227,7 @@
     "title": "크루세이더 킹즈 3",
     "shardId": "game_1b",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Paradox",
     "tags": [
       "게임",
@@ -35567,7 +35567,7 @@
     "title": "킹덤 컴 2",
     "shardId": "game_ba",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Warhorse",
     "tags": [
       "게임",
@@ -35598,7 +35598,7 @@
     "title": "킹덤 컴: 딜리버런스",
     "shardId": "game_b3",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Warhorse",
     "tags": [
       "게임",
@@ -36304,7 +36304,7 @@
     "title": "테라리아",
     "shardId": "game_24",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Re-Logic",
     "tags": [
       "샌드박스",
@@ -36719,7 +36719,7 @@
     "title": "토탈 워: 삼국",
     "shardId": "game_43",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Creative Assembly",
     "tags": [
       "게임",
@@ -36750,7 +36750,7 @@
     "title": "토탈 워: 워해머 3",
     "shardId": "game_2e",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Creative Assembly",
     "tags": [
       "게임",
@@ -37229,7 +37229,7 @@
     "title": "팀 포트리스 2",
     "shardId": "game_76",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "게임",
@@ -38043,7 +38043,7 @@
     "title": "팔월드",
     "shardId": "game_de",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Pocketpair",
     "tags": [
       "게임",
@@ -38280,7 +38280,7 @@
     "title": "팩토리오",
     "shardId": "game_23",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Wube Software",
     "tags": [
       "게임",
@@ -38965,7 +38965,7 @@
     "title": "페이퍼스, 플리즈",
     "shardId": "game_d6",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Lucas Pope",
     "tags": [
       "퍼즐",
@@ -39519,7 +39519,7 @@
     "title": "포털",
     "shardId": "game_42",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "게임",
@@ -39549,7 +39549,7 @@
     "title": "포털 2",
     "shardId": "game_54",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "퍼즐",
@@ -39671,7 +39671,7 @@
     "title": "폴아웃 3",
     "shardId": "game_c5",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bethesda",
     "tags": [
       "게임",
@@ -39702,7 +39702,7 @@
     "title": "폴아웃 4",
     "shardId": "game_e5",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bethesda",
     "tags": [
       "게임",
@@ -39733,7 +39733,7 @@
     "title": "폴아웃: 뉴 베가스",
     "shardId": "game_28",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Obsidian",
     "tags": [
       "게임",
@@ -40045,7 +40045,7 @@
     "title": "프로젝트 좀보이드",
     "shardId": "game_c2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "The Indie Stone",
     "tags": [
       "게임",
@@ -40187,7 +40187,7 @@
     "title": "프리즌 아키텍트",
     "shardId": "game_a5",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Introversion",
     "tags": [
       "게임",
@@ -40460,7 +40460,7 @@
     "title": "플래닛 코스터",
     "shardId": "game_cd",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Frontier",
     "tags": [
       "게임",
@@ -40491,7 +40491,7 @@
     "title": "플래닛 코스터 2",
     "shardId": "game_f3",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Frontier",
     "tags": [
       "게임",
@@ -40860,7 +40860,7 @@
     "title": "하데스",
     "shardId": "game_16",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Supergiant Games",
     "tags": [
       "로그라이크",
@@ -41189,7 +41189,7 @@
     "title": "하트 오브 아이언 IV",
     "shardId": "game_fd",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Paradox",
     "tags": [
       "게임",
@@ -41220,7 +41220,7 @@
     "title": "하프라이프 2",
     "shardId": "game_16",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Valve",
     "tags": [
       "FPS",
@@ -41835,7 +41835,7 @@
     "title": "호그와트 레거시",
     "shardId": "game_0f",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Avalanche",
     "tags": [
       "게임",
@@ -41890,7 +41890,7 @@
     "title": "호라이즌 제로 던",
     "shardId": "game_3f",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Guerrilla",
     "tags": [
       "게임",
@@ -41942,7 +41942,7 @@
     "title": "호라이즌 포비든 웨스트",
     "shardId": "game_09",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Guerrilla",
     "tags": [
       "게임",
@@ -42085,7 +42085,7 @@
     "title": "홀로우 나이트",
     "shardId": "game_59",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Team Cherry",
     "tags": [
       "메트로바니아",

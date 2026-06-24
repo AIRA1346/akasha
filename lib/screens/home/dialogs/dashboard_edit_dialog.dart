@@ -181,7 +181,6 @@ Future<void> showDashboardEditDialog(
                   );
                 } else {
                   config.name = name;
-                  config.domain = null;
                   config.categories = tempCategories;
                   config.myStatuses = tempMyStatuses;
                   config.workStatuses = tempWorkStatuses;

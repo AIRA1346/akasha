@@ -30,7 +30,7 @@
 | `externalIds` | | **`wikidata` (spine, 권장)** · `steam` · `tmdb` · `mal` · `isbn` … (`anilist` 신규 ❌) |
 | `wikidataRelations` | | `[{ "p": "P144", "target": "Q24862683" }]` — P-id·Q-id만 |
 | `category` | ✅ | manga · animation · game · book · movie · drama · webtoon |
-| `domain` | ✅ | subculture · generalCulture |
+| `domain` | ⚠️ | **deprecated** — canonical `subculture` only ([DOMAIN_DEPRECATION_PLAN](../docs/active/DOMAIN_DEPRECATION_PLAN.md)) |
 | `extensions` | | 레거시 확장 · **`seasons[]`** (애니 시즌 Q-id 메타) |
 | `qualitySignals` | | **원본** 품질 신호만 저장 (`tier`·`score` 저장 금지) |
 

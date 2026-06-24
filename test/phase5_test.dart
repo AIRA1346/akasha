@@ -45,7 +45,7 @@ is_hall_of_fame: true
       );
       expect(item.title, '엘든 링 (문법 깨짐)');
       expect(item.category, MediaCategory.game);
-      expect(item.domain, AppDomain.generalCulture);
+      expect(item.domain, AppDomain.subculture);
       expect(item.rating, 4.5);
       expect(item.isHallOfFame, true);
       expect(item.myStatusLabel, '플레이 중');

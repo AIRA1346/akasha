@@ -200,14 +200,7 @@ class MarkdownParser {
 
     final title = yamlMap['title']?.toString() ?? fallbackTitle;
 
-    AppDomain domain = AppDomain.subculture;
-    final domainStr = yamlMap['domain']?.toString();
-    for (final dom in AppDomain.values) {
-      if (dom.name == domainStr) {
-        domain = dom;
-        break;
-      }
-    }
+    AppDomain domain = AppDomain.fromStorage(yamlMap['domain']?.toString());
 
     final rating = double.tryParse(yamlMap['rating']?.toString() ?? '') ?? 0.0;
     final workStatusStr = yamlMap['work_status']?.toString();

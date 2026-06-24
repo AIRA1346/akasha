@@ -436,9 +436,7 @@ class DashboardSidebar extends StatelessWidget {
             name: dash.name,
             icon: dash.categories.isNotEmpty
                 ? dash.categories.first.icon
-                : dash.domain != null
-                    ? dash.domain!.icon
-                    : Icons.dashboard_outlined,
+                : Icons.dashboard_outlined,
             isActive: isActive,
             accentColor: dashboardAccent,
             onTap: () => onSelectDashboard(dash.id),

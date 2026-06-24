@@ -3,7 +3,7 @@
     "workId": "wk_000000031",
     "title": "사이버펑크 2077",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "CD PROJEKT RED",
     "releaseYear": 2020,
     "tags": [
@@ -37,7 +37,7 @@
     "workId": "wk_000000039",
     "title": "레드 데드 리뎀션 2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Rockstar Games",
     "releaseYear": 2018,
     "tags": [
@@ -72,7 +72,7 @@
     "workId": "wk_000000113",
     "title": "새티스팩토리",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Coffee Stain",
     "releaseYear": 2020,
     "tags": [

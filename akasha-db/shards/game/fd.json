@@ -3,7 +3,7 @@
     "workId": "wk_000000139",
     "title": "리그 오브 레전드",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Riot Games",
     "releaseYear": 2009,
     "tags": [
@@ -37,7 +37,7 @@
     "workId": "wk_000000140",
     "title": "매스 이펙트 2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "BioWare",
     "releaseYear": 2010,
     "tags": [
@@ -71,7 +71,7 @@
     "workId": "wk_000000103",
     "title": "하트 오브 아이언 IV",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Paradox",
     "releaseYear": 2016,
     "tags": [

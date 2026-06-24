@@ -32,12 +32,6 @@ class MyLibraryPipeline {
   }) {
     var archived = ArchivedWorksQuery.archivedItems(allUserItems);
 
-    if (filters.domain != null) {
-      archived = archived
-          .where((item) => item.domain == filters.domain)
-          .toList();
-    }
-
     if (filters.categories.isNotEmpty) {
       archived = archived
           .where((item) => filters.categories.contains(item.category))
@@ -68,11 +62,6 @@ class MyLibraryPipeline {
       if (item.workId.isEmpty) return false;
       return _registryPort.setContainsWorkId(memberIds, item.workId);
     }).toList();
-
-    if (filters.domain != null) {
-      members =
-          members.where((item) => item.domain == filters.domain).toList();
-    }
 
     if (filters.categories.isNotEmpty) {
       members = members

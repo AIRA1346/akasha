@@ -5,18 +5,32 @@ import 'category_descriptor.dart';
 //  AKASHA — 카테고리 & 상태 Enum 정의
 // ════════════════════════════════════════════════════════════════
 
-/// Registry·YAML 메타 (읽기·레거시). UI 필터·신규 선택에서는 사용하지 않음.
+/// Registry·YAML 레거시 메타. 신규·UI에서는 **subculture만** 사용.
 /// @see [DOMAIN_DEPRECATION_PLAN.md](../../docs/active/DOMAIN_DEPRECATION_PLAN.md)
 enum AppDomain {
   subculture('서브컬처', Icons.auto_awesome),
+
+  /// @deprecated AppDomain 폐기 — 읽기 호환만. [fromStorage]는 항상 [subculture].
+  @Deprecated('Use AppDomain.subculture / AppDomain.fromStorage')
   generalCulture('일반 문화', Icons.account_balance);
 
   final String label;
   final IconData icon;
   const AppDomain(this.label, this.icon);
 
-  /// 신규 작품·기여 제안 기본값
+  /// 신규 작품·기여·Registry canonical 값
   static const AppDomain newWorkDefault = subculture;
+
+  /// Registry·YAML·JSON — unknown·generalCulture → subculture
+  static AppDomain fromStorage(String? raw) {
+    if (raw == null || raw.isEmpty || raw == 'generalCulture') {
+      return subculture;
+    }
+    for (final d in AppDomain.values) {
+      if (d.name == raw) return d;
+    }
+    return subculture;
+  }
 }
 
 /// 매체 카테고리

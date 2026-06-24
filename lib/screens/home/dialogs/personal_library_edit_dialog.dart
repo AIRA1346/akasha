@@ -293,7 +293,6 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                 if (name.isEmpty) return;
 
                 config.name = name;
-                config.domain = null;
                 config.categories = tempCategories;
                 config.workStatuses = tempWorkStatuses;
                 config.myStatuses = tempMyStatuses;

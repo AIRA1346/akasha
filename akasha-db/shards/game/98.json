@@ -3,7 +3,7 @@
     "workId": "wk_000000028",
     "title": "데스티니 가디언즈",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Bungie",
     "releaseYear": 2019,
     "tags": [
@@ -37,7 +37,7 @@
     "workId": "wk_000000072",
     "title": "유로 트럭 시뮬레이터 2",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "SCS Software",
     "releaseYear": 2012,
     "tags": [
@@ -70,7 +70,7 @@
     "workId": "wk_000000093",
     "title": "림월드",
     "category": "game",
-    "domain": "generalCulture",
+    "domain": "subculture",
     "creator": "Ludeon",
     "releaseYear": 2018,
     "tags": [

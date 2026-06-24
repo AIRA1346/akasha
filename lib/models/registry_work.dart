@@ -67,11 +67,7 @@ class RegistryWork {
       orElse: () => MediaCategory.manga,
     );
 
-    final domainStr = json['domain']?.toString() ?? 'subculture';
-    final domain = AppDomain.values.firstWhere(
-      (e) => e.name == domainStr,
-      orElse: () => AppDomain.subculture,
-    );
+    final domain = AppDomain.fromStorage(json['domain']?.toString());
 
     final extensions = <String, dynamic>{};
     final rawExtensions = json['extensions'];

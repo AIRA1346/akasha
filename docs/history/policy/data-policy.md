@@ -67,7 +67,7 @@ Discovery Signal (일회성, Git X)
 | `title` | Fact | ✅ | 공식·통용명 (사실) |
 | `titles.{ko,en,ja,…}` | Fact | ✅ | 다언어 정식명 |
 | `category` | Fact | ✅ | AKASHA taxonomy |
-| `domain` | Fact | ✅ | subculture / generalCulture |
+| `domain` | Fact (deprecated) | ✅ | **`subculture` only** — `generalCulture` 제거 ([DOMAIN_DEPRECATION_PLAN](../../active/DOMAIN_DEPRECATION_PLAN.md)) |
 | `releaseYear` | Fact | ✅ | 사실 연도 |
 | `creator` | Fact | ✅ | 작가·감독·개발사명 (사실) |
 | `externalIds.*` | Fact | ✅ | 숫자·코드 참조만; **자동 fetch 근거 아님** |

@@ -8,13 +8,11 @@ import '../../models/enums.dart';
 
 /// 활성 대시보드에서 복원할 필터 스냅샷
 class DashboardFilterSnapshot {
-  final AppDomain? domain;
   final Set<MediaCategory> categories;
   final Set<String> workStatuses;
   final Set<String> myStatuses;
 
   const DashboardFilterSnapshot({
-    this.domain,
     this.categories = const {},
     this.workStatuses = const {},
     this.myStatuses = const {},
@@ -53,7 +51,6 @@ class HomeDashboardController {
         DashboardConfig(
           id: 'master_index',
           name: 'master_index',
-          domain: null,
           categories: {},
         ),
         DashboardConfig(
@@ -64,7 +61,6 @@ class HomeDashboardController {
         DashboardConfig(
           id: 'game_dashboard',
           name: 'game_dashboard',
-          domain: null,
           categories: {MediaCategory.game},
         ),
       ];
@@ -80,9 +76,6 @@ class HomeDashboardController {
         dashboards = decoded
             .map((e) => DashboardConfig.fromJson(e as Map<String, dynamic>))
             .toList();
-        for (final dash in dashboards) {
-          dash.domain = null;
-        }
       } else {
         dashboards = defaultDashboards();
         await _saveDashboardsInternal(prefs);
@@ -147,7 +140,6 @@ class HomeDashboardController {
   }) {
     final active = activeDashboard;
     if (active == null) return;
-    active.domain = null;
     active.categories = Set.from(categories);
     active.workStatuses = Set.from(workStatuses);
     active.myStatuses = Set.from(myStatuses);
