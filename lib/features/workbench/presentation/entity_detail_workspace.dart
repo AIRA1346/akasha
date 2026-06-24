@@ -17,8 +17,6 @@ import '../../../services/entity_journal_parser.dart';
 import '../../../services/entity_vault_path_conflict.dart';
 import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
-import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../utils/entity_link_neighbors.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
 import '../../../utils/entity_tag_validation.dart';
@@ -26,15 +24,14 @@ import '../../../widgets/sanctum_page_panel.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../screens/home/views/preview_record_view_model.dart';
 import 'entity_detail_archive_ops.dart';
+import 'entity_detail_connections_coordinator.dart';
+import 'work_detail_vault_sync.dart';
 import 'entity_detail_link_pick_ops.dart';
 import 'workbench_link_pick_ops.dart';
-import 'entity_detail_vault_sync.dart';
-import 'work_detail_vault_sync.dart';
 import 'workbench_record_navigation.dart';
 import 'entity_detail_connections_panel.dart';
 import 'entity_detail_info_panel.dart';
 import 'workbench_autosave_scheduler.dart';
-import 'workbench_record_links_loader.dart';
 import 'widgets/workbench_breadcrumb.dart';
 import 'widgets/workbench_panel_styles.dart';
 
@@ -133,17 +130,19 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
   StreamSubscription<void>? _vaultSub;
-  final WorkbenchVaultDiskSync _vaultDiskSync = WorkbenchVaultDiskSync();
+  late final EntityDetailConnectionsCoordinator _connections;
 
-  List<String> _incomingPaths = const [];
-  bool _loadingIncoming = false;
-  int _staleLabelRecordCount = 0;
-  List<SameDayRecordRef> _sameDayRefs = const [];
-  bool _loadingSameDay = false;
-  EntityLinkNeighbors _linkNeighbors = const EntityLinkNeighbors();
-  bool _loadingLinkNeighbors = false;
+  bool get _externalChangePending => _connections.externalChangePending;
 
-  bool get _externalChangePending => _vaultDiskSync.externalChangePending;
+  void _refreshRecordLinks() {
+    _connections.refreshAll(
+      entity: _entity,
+      journal: _journal,
+      userCatalog: widget.userCatalog,
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
+  }
 
   EntityItem _buildEntityItem(UserCatalogEntity entity, EntityJournalEntry? journal) {
     return EntityItem(
@@ -182,6 +181,11 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   @override
   void initState() {
     super.initState();
+    _connections = EntityDetailConnectionsCoordinator(
+      onStateChanged: () {
+        if (mounted) setState(() {});
+      },
+    );
     _entity = widget.entity;
     _journal = widget.journal;
     _item = _buildEntityItem(_entity, _journal);
@@ -200,21 +204,16 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
       _onVaultDiskChanged();
     });
-    _refreshDiskMtime();
-    _loadIncoming();
-    _loadSameDay();
-    _loadLinkNeighbors();
+    _connections.refreshDiskMtime(_journal?.storagePath);
+    _refreshRecordLinks();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _maybeRunPendingEntityLinkPick();
     });
   }
 
-  void _refreshDiskMtime() =>
-      _vaultDiskSync.refreshDiskMtime(_journal?.storagePath);
-
   Future<void> _onVaultDiskChanged() async {
     if (!mounted) return;
-    final action = _vaultDiskSync.evaluateFileChange(
+    final action = _connections.evaluateVaultDiskChange(
       filePath: _journal?.storagePath,
       isSaving: _isSaving,
       isDirty: widget.isDirty,
@@ -243,20 +242,24 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     _item = _buildEntityItem(_entity, _journal);
     _preview = _item;
     _fileCtrl.text = _serializeFile();
-    _refreshDiskMtime();
-    _loadLinkNeighbors();
+    _connections.refreshDiskMtime(_journal?.storagePath);
+    _connections.loadLinkNeighbors(
+      entity: _entity,
+      userCatalog: widget.userCatalog,
+      linkIndex: widget.linkIndex,
+      vaultItems: widget.vaultItems,
+    );
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
-    final path = _journal?.storagePath;
-    if (path == null || path.isEmpty) return;
     try {
-      final parsed = await EntityDetailVaultSync.loadJournalFromDisk(path);
+      final parsed = await _connections.reloadJournalFromDisk(
+        storagePath: _journal?.storagePath,
+      );
       if (parsed == null) {
         throw StateError('journal parse failed');
       }
       if (!mounted) return;
-      setState(() => _vaultDiskSync.externalChangePending = false);
       _applyJournalFromEntry(parsed);
       widget.onDirtyChanged(false);
       widget.onSaved(_entity, parsed, silent: true);
@@ -271,9 +274,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   void _dismissExternalChange() {
-    setState(
-      () => _vaultDiskSync.dismissExternalChange(_journal?.storagePath),
-    );
+    _connections.dismissExternalChange(_journal?.storagePath);
   }
 
   Future<void> _maybeRunPendingEntityLinkPick() async {
@@ -345,36 +346,13 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       picked: picked,
       bodyCtrl: _bodyCtrl,
       markDirty: _markDirty,
-      reloadLinkNeighbors: _loadLinkNeighbors,
-    );
-  }
-
-  Future<void> _loadLinkNeighbors() async {
-    final catalog = widget.userCatalog;
-    final index = widget.linkIndex;
-    if (catalog == null || index == null) return;
-    setState(() => _loadingLinkNeighbors = true);
-    try {
-      final discovery = HomeShellWiring.createEntityRelatedWorksDiscovery(
-        linkIndex: index,
-        vaultItems: widget.vaultItems,
-      );
-      final neighbors = await fetchEntityLinkNeighbors(
+      reloadLinkNeighbors: () => _connections.loadLinkNeighbors(
         entity: _entity,
-        userCatalog: catalog,
-        discovery: discovery,
-        linkIndex: index,
+        userCatalog: widget.userCatalog,
+        linkIndex: widget.linkIndex,
         vaultItems: widget.vaultItems,
-      );
-      if (mounted) {
-        setState(() {
-          _linkNeighbors = neighbors;
-          _loadingLinkNeighbors = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingLinkNeighbors = false);
-    }
+      ),
+    );
   }
 
   void _openLinkedEntity(UserCatalogEntity entity) {
@@ -409,48 +387,6 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     setState(() => _pageView = SanctumPageView.body);
   }
 
-  Future<void> _loadSameDay() async {
-    final anchor = _journal?.addedAt ?? _entity.addedAt;
-    setState(() => _loadingSameDay = true);
-    try {
-      final refs = await WorkbenchRecordLinksLoader.loadSameDay(
-        anchor: anchor,
-        excludePath: _journal?.storagePath,
-      );
-      if (mounted) {
-        setState(() {
-          _sameDayRefs = refs;
-          _loadingSameDay = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingSameDay = false);
-    }
-  }
-
-  Future<void> _loadIncoming() async {
-    final index = widget.linkIndex;
-    if (index == null) return;
-    setState(() => _loadingIncoming = true);
-    try {
-      final currentTitle = _journal?.title ?? _entity.title;
-      final snapshot = await WorkbenchRecordLinksLoader.loadIncoming(
-        linkIndex: index,
-        recordEntityId: _entity.entityId,
-        currentTitle: currentTitle,
-      );
-      if (mounted) {
-        setState(() {
-          _incomingPaths = snapshot.paths;
-          _staleLabelRecordCount = snapshot.staleLabelRecordCount;
-          _loadingIncoming = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) setState(() => _loadingIncoming = false);
-    }
-  }
-
   @override
   void didUpdateWidget(EntityDetailWorkspace oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -467,10 +403,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
           ? SanctumPageView.body
           : SanctumPageView.preview;
       WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
-      _loadIncoming();
-      _loadSameDay();
-      _loadLinkNeighbors();
-      _refreshDiskMtime();
+      _refreshRecordLinks();
+      _connections.refreshDiskMtime(_journal?.storagePath);
       return;
     }
     if (!widget.isDirty &&
@@ -484,10 +418,19 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _bodyCtrl.text = _journal?.body ?? '';
       _posterUrlCtrl.text = _journal?.posterPath ?? _entity.posterPath ?? '';
       _fileCtrl.text = _serializeFile();
-      _loadIncoming();
-      _loadSameDay();
-      _loadLinkNeighbors();
-      _refreshDiskMtime();
+      _connections.loadIncoming(
+        entity: _entity,
+        journal: _journal,
+        linkIndex: widget.linkIndex,
+      );
+      _connections.loadSameDay(entity: _entity, journal: _journal);
+      _connections.loadLinkNeighbors(
+        entity: _entity,
+        userCatalog: widget.userCatalog,
+        linkIndex: widget.linkIndex,
+        vaultItems: widget.vaultItems,
+      );
+      _connections.refreshDiskMtime(_journal?.storagePath);
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -667,10 +610,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       });
       widget.onDirtyChanged(false);
       widget.onSaved(mirrored, saved, silent: silent);
-      _loadIncoming();
-      _loadSameDay();
-      _loadLinkNeighbors();
-      _refreshDiskMtime();
+      _refreshRecordLinks();
+      _connections.refreshDiskMtime(_journal?.storagePath);
       if (!silent) {
         _showSnack(EntityDetailArchiveOps.saveSuccessMessage(mirrored));
       }
@@ -887,8 +828,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                     ),
                     EntityDetailConnectionsPanel(
                       entity: _entity,
-                      linkNeighbors: _linkNeighbors,
-                      loadingLinkNeighbors: _loadingLinkNeighbors,
+                      linkNeighbors: _connections.linkNeighbors,
+                      loadingLinkNeighbors: _connections.loadingLinkNeighbors,
                       draftTags: _draftTags,
                       onOpenLinkedEntity: _openLinkedEntity,
                       onOpenLinkedWork: _openLinkedWork,
@@ -900,13 +841,17 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                       onAddWorkLink: widget.userCatalog != null
                           ? _requestWorkLink
                           : null,
-                      loadingIncoming: _loadingIncoming,
-                      incomingPaths: _incomingPaths,
-                      staleLabelRecordCount: _staleLabelRecordCount,
-                      onRefreshIncoming: _loadIncoming,
+                      loadingIncoming: _connections.loadingIncoming,
+                      incomingPaths: _connections.incomingPaths,
+                      staleLabelRecordCount: _connections.staleLabelRecordCount,
+                      onRefreshIncoming: () => _connections.loadIncoming(
+                        entity: _entity,
+                        journal: _journal,
+                        linkIndex: widget.linkIndex,
+                      ),
                       onOpenIncoming: _openIncoming,
-                      loadingSameDay: _loadingSameDay,
-                      sameDayRefs: _sameDayRefs,
+                      loadingSameDay: _connections.loadingSameDay,
+                      sameDayRefs: _connections.sameDayRefs,
                       onOpenSameDay: _openSameDay,
                       onDraftTagsChanged: (tags) {
                         setState(() => _draftTags = tags);
