@@ -159,4 +159,95 @@ class WorkDetailDraftOps {
           : TextSelection.collapsed(offset: text.length),
     );
   }
+
+  static SanctumPageView initialPageView(AkashaItem item) =>
+      item.bodyRaw.trim().isEmpty ? SanctumPageView.body : SanctumPageView.preview;
+
+  static void applyFileEditorToItem({
+    required AkashaItem item,
+    required TextEditingController titleCtrl,
+    required TextEditingController bodyCtrl,
+    required TextEditingController fileCtrl,
+  }) {
+    final preservedPath = item.filePath;
+    final titleFallback = titleCtrl.text.trim().isNotEmpty
+        ? titleCtrl.text.trim()
+        : item.title;
+    final parsed = MarkdownParser.deserialize(fileCtrl.text, titleFallback);
+    parsed.filePath = preservedPath;
+    item.bodyRaw = parsed.bodyRaw;
+    item.description = parsed.description;
+    item.memorableQuotes = List<String>.from(parsed.memorableQuotes);
+    item.review = parsed.review;
+    assignControllerTextIfChanged(
+      bodyCtrl,
+      initialBodyMarkdown(item),
+    );
+  }
+
+  static void refreshFullFileEditor({
+    required AkashaItem item,
+    required TextEditingController bodyCtrl,
+    required TextEditingController fileCtrl,
+    required TextEditingController titleCtrl,
+    required TextEditingController posterUrlCtrl,
+    required double draftRating,
+    required String draftWorkStatus,
+    required String draftMyStatus,
+    required bool draftHallOfFame,
+    required List<String> draftTags,
+  }) {
+    syncBodyFromEditor(item, bodyCtrl);
+    final draft = applyDraft(
+      item: item,
+      titleCtrl: titleCtrl,
+      posterUrlCtrl: posterUrlCtrl,
+      draftRating: draftRating,
+      draftWorkStatus: draftWorkStatus,
+      draftMyStatus: draftMyStatus,
+      draftHallOfFame: draftHallOfFame,
+      draftTags: draftTags,
+    );
+    fileCtrl.text = MarkdownParser.serialize(draft);
+  }
+
+  static void handlePageViewChanging({
+    required SanctumPageView current,
+    required SanctumPageView next,
+    required AkashaItem item,
+    required TextEditingController bodyCtrl,
+    required TextEditingController titleCtrl,
+    required TextEditingController fileCtrl,
+    required TextEditingController posterUrlCtrl,
+    required double draftRating,
+    required String draftWorkStatus,
+    required String draftMyStatus,
+    required bool draftHallOfFame,
+    required List<String> draftTags,
+  }) {
+    if (current == SanctumPageView.body) {
+      syncBodyFromEditor(item, bodyCtrl);
+    } else if (current == SanctumPageView.file && next != SanctumPageView.file) {
+      applyFileEditorToItem(
+        item: item,
+        titleCtrl: titleCtrl,
+        bodyCtrl: bodyCtrl,
+        fileCtrl: fileCtrl,
+      );
+    }
+    if (next == SanctumPageView.file) {
+      refreshFullFileEditor(
+        item: item,
+        bodyCtrl: bodyCtrl,
+        fileCtrl: fileCtrl,
+        titleCtrl: titleCtrl,
+        posterUrlCtrl: posterUrlCtrl,
+        draftRating: draftRating,
+        draftWorkStatus: draftWorkStatus,
+        draftMyStatus: draftMyStatus,
+        draftHallOfFame: draftHallOfFame,
+        draftTags: draftTags,
+      );
+    }
+  }
 }

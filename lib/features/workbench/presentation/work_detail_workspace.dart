@@ -1,9 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-import '../../../core/archiving/record_kind.dart';
 import '../../../core/archiving/record_link.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
 import '../../../core/ports/user_catalog_port.dart';
@@ -14,13 +12,12 @@ import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/file_service.dart';
-import '../../../services/markdown_parser.dart';
 import '../../../services/work_info_defaults.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
-import '../../../screens/detail/dialogs/detail_delete_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
+import 'work_detail_delete_ops.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_link_pick_ops.dart';
 import 'workbench_link_pick_ops.dart';
@@ -28,11 +25,13 @@ import 'work_detail_archive_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
 import 'work_detail_connections_coordinator.dart';
-import 'work_detail_vault_sync.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_record_navigation.dart';
+import 'workbench_linked_record_ops.dart';
+import 'workbench_vault_disk_ops.dart';
 import 'widgets/workbench_breadcrumb.dart';
 import 'widgets/workbench_panel_styles.dart';
+import 'widgets/workbench_save_shortcuts.dart';
 import 'widgets/work_sanctum_section_editor.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
@@ -202,22 +201,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _openLinkedEntity(UserCatalogEntity entity) {
-    widget.onWikiLinkTap?.call(
-      ParsedRecordLink(
-        kind: RecordLinkKind.explicitId,
-        raw: '[[${entity.entityId}]]',
-        targetEntityId: entity.entityId,
-      ),
+    WorkbenchLinkedRecordOps.openLinkedEntity(
+      entity: entity,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
   }
 
   void _openLinkedWork(AkashaItem work) {
-    widget.onWikiLinkTap?.call(
-      ParsedRecordLink(
-        kind: RecordLinkKind.explicitId,
-        raw: '[[${work.workId}]]',
-        targetEntityId: work.workId,
-      ),
+    WorkbenchLinkedRecordOps.openLinkedWork(
+      work: work,
+      onWikiLinkTap: widget.onWikiLinkTap,
     );
   }
 
@@ -249,9 +242,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
       );
     }
     if (resetPageView) {
-      _pageView = _item.bodyRaw.trim().isEmpty
-          ? SanctumPageView.body
-          : SanctumPageView.preview;
+      _pageView = WorkDetailDraftOps.initialPageView(_item);
     }
     _loadDraftFromItem();
     _refreshFullFileEditor();
@@ -266,20 +257,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   Future<void> _onVaultDiskChanged() async {
     if (!mounted) return;
-    final action = _connections.evaluateVaultDiskChange(
-      filePath: _item.filePath,
-      isSaving: _isSaving,
-      isDirty: widget.isDirty,
+    await WorkbenchVaultDiskOps.handleChange(
+      action: _connections.evaluateVaultDiskChange(
+        filePath: _item.filePath,
+        isSaving: _isSaving,
+        isDirty: widget.isDirty,
+      ),
+      mounted: mounted,
+      promptRebuild: () => setState(() {}),
+      reloadFromDisk: _reloadFromDisk,
     );
-    switch (action) {
-      case VaultDiskChangeAction.noOp:
-        return;
-      case VaultDiskChangeAction.promptReload:
-        if (mounted) setState(() {});
-        return;
-      case VaultDiskChangeAction.reload:
-        await _reloadFromDisk(silent: true);
-    }
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
@@ -327,30 +314,45 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   void _refreshFullFileEditor() {
-    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    final draft = _applyDraft();
-    _fileCtrl.text = MarkdownParser.serialize(draft);
-  }
-
-  void _applyFileEditorToItem() {
-    final preservedPath = _item.filePath;
-    final titleFallback = _titleCtrl.text.trim().isNotEmpty
-        ? _titleCtrl.text.trim()
-        : _item.title;
-    final parsed = MarkdownParser.deserialize(_fileCtrl.text, titleFallback);
-    parsed.filePath = preservedPath;
-    _item.bodyRaw = parsed.bodyRaw;
-    _item.description = parsed.description;
-    _item.memorableQuotes = List<String>.from(parsed.memorableQuotes);
-    _item.review = parsed.review;
-    _assignControllerTextIfChanged(
-      _bodyCtrl,
-      WorkDetailDraftOps.initialBodyMarkdown(_item),
+    WorkDetailDraftOps.refreshFullFileEditor(
+      item: _item,
+      bodyCtrl: _bodyCtrl,
+      fileCtrl: _fileCtrl,
+      titleCtrl: _titleCtrl,
+      posterUrlCtrl: _posterUrlCtrl,
+      draftRating: _draftRating,
+      draftWorkStatus: _draftWorkStatus,
+      draftMyStatus: _draftMyStatus,
+      draftHallOfFame: _draftHallOfFame,
+      draftTags: _draftTags,
     );
   }
 
-  void _focusSanctumForLinks() {
-    setState(() => _pageView = SanctumPageView.body);
+  void _applyFileEditorToItem() {
+    WorkDetailDraftOps.applyFileEditorToItem(
+      item: _item,
+      titleCtrl: _titleCtrl,
+      bodyCtrl: _bodyCtrl,
+      fileCtrl: _fileCtrl,
+    );
+  }
+
+  void _onPageViewChanged(SanctumPageView next) {
+    WorkDetailDraftOps.handlePageViewChanging(
+      current: _pageView,
+      next: next,
+      item: _item,
+      bodyCtrl: _bodyCtrl,
+      titleCtrl: _titleCtrl,
+      fileCtrl: _fileCtrl,
+      posterUrlCtrl: _posterUrlCtrl,
+      draftRating: _draftRating,
+      draftWorkStatus: _draftWorkStatus,
+      draftMyStatus: _draftMyStatus,
+      draftHallOfFame: _draftHallOfFame,
+      draftTags: _draftTags,
+    );
+    setState(() => _pageView = next);
   }
 
   Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
@@ -401,17 +403,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  void _onPageViewChanged(SanctumPageView next) {
-    if (_pageView == SanctumPageView.body) {
-      WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    } else if (_pageView == SanctumPageView.file &&
-        next != SanctumPageView.file) {
-      _applyFileEditorToItem();
-    }
-    if (next == SanctumPageView.file) {
-      _refreshFullFileEditor();
-    }
-    setState(() => _pageView = next);
+  void _focusSanctumForLinks() {
+    setState(() => _pageView = SanctumPageView.body);
   }
 
   void _loadDraftFromItem() {
@@ -673,10 +666,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         ? _titleCtrl.text.trim()
         : _item.title;
 
-    final confirmed = await showDetailDeleteConfirmDialog(
+    final confirmed = await WorkDetailDeleteOps.confirmDelete(
       context,
-      title: displayTitle,
-      hasVault: true,
+      displayTitle: displayTitle,
       hasUnsavedChanges: widget.isDirty,
     );
     if (!confirmed || !mounted) return;
@@ -690,7 +682,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     setState(() => _suppressPersist = true);
     widget.onDirtyChanged(false);
 
-    final deleted = await WorkDetailArchiveOps.deleteFromVault(_item);
+    final deleted = await WorkDetailDeleteOps.deleteFromVault(_item);
     if (!mounted) return;
 
     if (deleted) {
@@ -707,22 +699,9 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     final preview = _applyDraft();
     final vaultLinked = AkashaFileService().vaultPath != null;
 
-    return Shortcuts(
-      shortcuts: const {
-        SingleActivator(LogicalKeyboardKey.keyS, control: true): _SaveIntent(),
-      },
-      child: Actions(
-        actions: {
-          _SaveIntent: CallbackAction<_SaveIntent>(
-            onInvoke: (_) {
-              _saveArchive();
-              return null;
-            },
-          ),
-        },
-        child: Focus(
-          autofocus: true,
-          child: Column(
+    return WorkbenchSaveShortcuts(
+      onSave: _saveArchive,
+      child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if (FeatureFlags.showWorkbenchBreadcrumb)
@@ -871,12 +850,6 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               ),
             ],
           ),
-        ),
-      ),
     );
   }
-}
-
-class _SaveIntent extends Intent {
-  const _SaveIntent();
 }

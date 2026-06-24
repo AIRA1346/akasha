@@ -22,14 +22,14 @@ import '../../models/browse_entity_scope.dart';
 import '../../models/enums.dart';
 import '../../models/library_theme.dart';
 import '../../services/personal_library_membership_service.dart';
-import '../../services/recent_exploration_resolver.dart';
-import '../../services/recent_exploration_store.dart';
 import '../../services/record_link_navigator.dart';
 import 'coordinators/home_browse_coordinator.dart';
 import 'coordinators/home_catalog_coordinator.dart';
 import 'coordinators/home_dialogs_coordinator.dart';
+import 'coordinators/home_entity_archive_ops.dart';
 import 'coordinators/home_navigation_coordinator.dart';
-import 'coordinators/home_preview_link_coordinator.dart';
+import 'coordinators/home_preview_coordinator.dart';
+import 'coordinators/home_recent_exploration_coordinator.dart';
 import 'coordinators/home_shell_wiring.dart';
 import 'coordinators/home_vault_coordinator.dart';
 import 'coordinators/home_workbench_coordinator.dart';
@@ -40,18 +40,12 @@ import 'home_personal_library_controller.dart';
 import 'home_registry_ui.dart';
 import 'home_section_preferences.dart';
 import '../../core/archiving/entity_journal_entry.dart';
+import '../../models/registry_work.dart';
 import '../../models/user_catalog_entity.dart';
-import 'dialogs/add_catalog_entity_dialog.dart';
 import '../../services/file_service.dart';
 import '../../services/link_candidate_service.dart';
-import '../../services/works_registry.dart';
-import '../../screens/detail/detail_archive_save.dart';
 import 'dialogs/entity_link_picker_dialog.dart';
 import 'home_shell_host.dart';
-import '../../utils/vault_work_presence.dart';
-import 'home_auto_archive.dart';
-import 'home_registry_archive.dart';
-import 'preview_frame.dart';
 
 /// Home 화면 조립·위임 (Wave 1.4 + E2).
 class HomeShellController {
@@ -78,27 +72,24 @@ class HomeShellController {
   late final HomeNavigationCoordinator navigation;
   late final HomeBrowseCoordinator browse;
   late final HomeDialogsCoordinator dialogs;
-  late final RecentExplorationStore recentExploration;
-  late final HomePreviewLinkCoordinator previewLinks;
+  late final HomeRecentExplorationCoordinator recentExplore;
+  late final HomePreviewCoordinator preview;
 
   HomeSectionPreferences sectionPrefs = HomeSectionPreferences();
-  List<AkashaItem> recentExploreItems = [];
-  AkashaItem? workPreviewItem;
-  UserCatalogEntity? entityPreviewItem;
-  final List<PreviewFrame> _previewBackStack = [];
-  PreviewReturnSnapshot? _previewReturnSnapshot;
 
   EntityAnchorType? get pendingWorkEntityLinkType =>
-      previewLinks.pendingWorkEntityLinkType;
+      preview.pendingWorkEntityLinkType;
   String? get pendingWorkEntityLinkWorkId =>
-      previewLinks.pendingWorkEntityLinkWorkId;
+      preview.pendingWorkEntityLinkWorkId;
   LinkCandidate? get pendingWorkEntityLinkCandidate =>
-      previewLinks.pendingWorkEntityLinkCandidate;
-  bool get pendingWorkLinkPick => previewLinks.pendingWorkLinkPick;
+      preview.pendingWorkEntityLinkCandidate;
+  bool get pendingWorkLinkPick => preview.pendingWorkLinkPick;
   EntityAnchorType? get pendingEntityEntityLinkType =>
-      previewLinks.pendingEntityEntityLinkType;
-  String? get pendingEntityLinkEntityId => previewLinks.pendingEntityLinkEntityId;
-  bool get pendingEntityWorkLinkPick => previewLinks.pendingEntityWorkLinkPick;
+      preview.pendingEntityEntityLinkType;
+  String? get pendingEntityLinkEntityId => preview.pendingEntityLinkEntityId;
+  bool get pendingEntityWorkLinkPick => preview.pendingEntityWorkLinkPick;
+
+  List<AkashaItem> get recentExploreItems => recentExplore.items;
 
   void wrapSetState(void Function() mutate) => host.scheduleRebuild(mutate);
 
@@ -129,6 +120,27 @@ class HomeShellController {
       getItems: () => vault.items,
       mutateItems: (m) => host.scheduleRebuild(() => m(vault.items)),
       reloadItems: () => vault.loadItems(),
+    );
+
+    recentExplore = HomeRecentExplorationCoordinator(
+      isMounted: () => host.mounted,
+      rebuild: rebuild,
+      getVaultItems: () => vault.items,
+      userCatalog: userCatalog,
+    );
+
+    preview = HomePreviewCoordinator(
+      rebuild: rebuild,
+      resolveItemForOpen: workbenchCoord.resolveItemForOpen,
+      openBrowseItemInWorkbench: workbenchCoord.openBrowseItem,
+      openEntityInWorkbench: workbenchCoord.openEntity,
+      showBrowseInWorkbench: workbench.showBrowse,
+      getVaultItems: () => vault.items,
+      recordWorkExploration: recentExplore.store.recordWork,
+      recordEntityExploration: recentExplore.store.recordEntity,
+      showSnack: _showSnack,
+      loadItems: () => vault.loadItems(),
+      resolveEntity: userCatalog.getById,
     );
 
     wiring = HomeShellWiring.create(
@@ -212,64 +224,30 @@ class HomeShellController {
       onEntityArchived: onEntityArchived,
       getLinkIndex: () => vault.linkIndex,
       onPreviewLocalWork: openWorkPreview,
-      onPreviewEntity: openEntityPreview,
-    );
-
-    recentExploration = RecentExplorationStore(
-      onChanged: () {
-        if (!host.mounted) return;
-        refreshRecentExploration();
-      },
-    );
-
-    previewLinks = HomePreviewLinkCoordinator(
-      rebuild: rebuild,
-      workPreviewItem: () => workPreviewItem,
-      entityPreviewItem: () => entityPreviewItem,
-      isRegistryOnlyPreview: (item) =>
-          VaultWorkPresence.isRegistryOnlyPreview(item, vault.items),
-      archiveRegistryWorkFromPreview: archiveRegistryWorkFromPreview,
-      openWorkFromPreview: openWorkFromPreview,
-      openEntityFromPreview: openEntityFromPreview,
+      onPreviewEntity: preview.openEntityPreview,
     );
   }
 
-  Future<void> refreshRecentExploration() async {
-    recentExploreItems = resolveRecentExplorationItems(
-      itemKeys: recentExploration.itemKeys,
-      vaultItems: items,
-      userCatalog: userCatalog,
-    );
-    rebuild();
-  }
+  Future<void> refreshRecentExploration() => recentExplore.refresh();
 
-  Future<void> loadRecentExploration() async {
-    await recentExploration.load();
-    await refreshRecentExploration();
-  }
+  Future<void> loadRecentExploration() => recentExplore.load();
 
   void onEntityArchived(UserCatalogEntity entity, EntityJournalEntry? entry) {
-    filterCtrl.setEntityScope(browseScopeForEntityType(entity.anchorType));
-    filterCtrl.highlightCatalogEntity(entity.entityId);
-    rebuild();
-
-    final badge = entityTypeBadgeLabel(entity.anchorType);
-    if (entry != null) {
-      _showSnack(
-        '$badge 「${entity.title}」 아카이브에 추가됨 · 기록 → Entity에서 확인',
-      );
-    } else {
-      _showSnack(
-        '$badge 「${entity.title}」 이름만 등록됨 · Fusion에서 아카이브 가능',
-      );
-    }
-
-    Future.delayed(const Duration(seconds: 4), () {
-      if (!host.mounted) return;
-      filterCtrl.clearEntityHighlight();
-      rebuild();
-    });
+    HomeEntityArchiveOps.onEntityArchived(
+      entity: entity,
+      entry: entry,
+      filterCtrl: filterCtrl,
+      rebuild: rebuild,
+      isMounted: () => host.mounted,
+      showSnack: _showSnack,
+    );
   }
+
+  // —— Preview state (UI 호환) ——
+  AkashaItem? get workPreviewItem => preview.workPreviewItem;
+  UserCatalogEntity? get entityPreviewItem => preview.entityPreviewItem;
+  bool get hasOpenPreview => preview.hasOpenPreview;
+  bool get canPopPreview => preview.canPopPreview;
 
   // —— Vault / catalog state (UI 호환) ——
   List<AkashaItem> get items => vault.items;
@@ -324,28 +302,28 @@ class HomeShellController {
     );
   }
 
-  void clearPendingWorkEntityLinkType() => previewLinks.clearPendingWork();
+  void clearPendingWorkEntityLinkType() => preview.clearPendingWork();
 
-  void clearPendingEntityLink() => previewLinks.clearPendingEntity();
+  void clearPendingEntityLink() => preview.clearPendingEntity();
 
   void openWorkFromPreviewToConnect(EntityAnchorType type) =>
-      previewLinks.openWorkFromPreviewToConnect(type);
+      preview.openWorkFromPreviewToConnect(type);
 
   void openWorkFromPreviewToConnectWork() =>
-      previewLinks.openWorkFromPreviewToConnectWork();
+      preview.openWorkFromPreviewToConnectWork();
 
   void openWorkFromPreviewToConnectSuggested(LinkCandidate candidate) =>
-      previewLinks.openWorkFromPreviewToConnectSuggested(candidate);
+      preview.openWorkFromPreviewToConnectSuggested(candidate);
 
   void openEntityFromPreviewToConnect(EntityAnchorType type) =>
-      previewLinks.openEntityFromPreviewToConnect(type);
+      preview.openEntityFromPreviewToConnect(type);
 
   void openEntityFromPreviewToConnectWork() =>
-      previewLinks.openEntityFromPreviewToConnectWork();
+      preview.openEntityFromPreviewToConnectWork();
 
   void connectSuggestedForWork(LinkCandidate candidate, AkashaItem work) {
-    openWorkPreview(workbenchCoord.resolveItemForOpen(work));
-    previewLinks.openWorkFromPreviewToConnectSuggested(candidate);
+    preview.openWorkPreview(workbenchCoord.resolveItemForOpen(work));
+    preview.openWorkFromPreviewToConnectSuggested(candidate);
   }
 
   void openMostRecentWorkForRecord() {
@@ -461,203 +439,68 @@ class HomeShellController {
   AkashaItem resolveItemForOpen(AkashaItem item) =>
       workbenchCoord.resolveItemForOpen(item);
   void openBrowseItem(AkashaItem item) {
-    _clearPreviewReturnSnapshot();
-    closeAllPreviews();
+    preview.clearReturnSnapshot();
+    preview.closeAllPreviews();
     workbenchCoord.openBrowseItem(item);
-    recentExploration.recordWork(item.workId);
+    recentExplore.store.recordWork(item.workId);
     rebuild();
   }
 
-  void openWorkPreview(AkashaItem item, {bool push = false}) {
-    if (!push) {
-      _clearPreviewReturnSnapshot();
-    }
-    final resolved = workbenchCoord.resolveItemForOpen(item);
-    if (push) {
-      _pushCurrentPreviewIfOpen();
-    } else {
-      _previewBackStack.clear();
-    }
-    entityPreviewItem = null;
-    workPreviewItem = resolved;
-    recentExploration.recordWork(resolved.workId);
-    rebuild();
-  }
+  void openWorkPreview(AkashaItem item, {bool push = false}) =>
+      preview.openWorkPreview(item, push: push);
 
-  void closeWorkPreview() => closeAllPreviews();
+  void closeAllPreviews() => preview.closeAllPreviews();
 
-  void closeAllPreviews() {
-    final hadPreview = workPreviewItem != null || entityPreviewItem != null;
-    workPreviewItem = null;
-    entityPreviewItem = null;
-    _previewBackStack.clear();
-    _clearPreviewReturnSnapshot();
-    if (hadPreview) rebuild();
-  }
+  void navigateWorkPreview(AkashaItem item) => preview.navigateWorkPreview(item);
 
-  bool get hasOpenPreview =>
-      workPreviewItem != null || entityPreviewItem != null;
+  void navigateEntityPreview(UserCatalogEntity entity) =>
+      preview.navigateEntityPreview(entity);
 
-  bool get canPopPreview => _previewBackStack.isNotEmpty;
+  void popPreview() => preview.popPreview();
 
-  /// Hub surface (Home, Graph): replace when starting fresh, push when continuing.
-  void navigateWorkPreview(AkashaItem item) {
-    if (hasOpenPreview) {
-      previewLinkedWork(item);
-    } else {
-      openWorkPreview(item);
-    }
-  }
+  Future<void> openWorkFromPreview() => preview.openWorkFromPreview();
 
-  void navigateEntityPreview(UserCatalogEntity entity) {
-    if (hasOpenPreview) {
-      previewLinkedEntity(entity);
-    } else {
-      openEntityPreview(entity);
-    }
-  }
+  void previewRegistryWork(RegistryWork work) =>
+      preview.previewRegistryWork(work);
 
-  void popPreview() {
-    if (_previewBackStack.isEmpty) {
-      closeAllPreviews();
-      return;
-    }
-    _restorePreviewFrame(_previewBackStack.removeLast());
-    rebuild();
-  }
+  Future<void> archiveRegistryWorkFromPreview() =>
+      preview.archiveRegistryWorkFromPreview();
 
-  PreviewFrame? _captureCurrentPreviewFrame() {
-    final work = workPreviewItem;
-    if (work != null) return WorkPreviewFrame(work);
-    final entity = entityPreviewItem;
-    if (entity != null) return EntityPreviewFrame(entity);
-    return null;
-  }
+  void openEntityPreview(UserCatalogEntity entity, {bool push = false}) =>
+      preview.openEntityPreview(entity, push: push);
 
-  void _pushCurrentPreviewIfOpen() {
-    final current = _captureCurrentPreviewFrame();
-    if (current != null) {
-      _previewBackStack.add(current);
-    }
-  }
+  Future<void> openEntityFromPreview() => preview.openEntityFromPreview();
 
-  void _restorePreviewFrame(PreviewFrame frame) {
-    switch (frame) {
-      case WorkPreviewFrame(:final item):
-        workPreviewItem = item;
-        entityPreviewItem = null;
-      case EntityPreviewFrame(:final entity):
-        entityPreviewItem = entity;
-        workPreviewItem = null;
-    }
-  }
+  void previewLinkedWork(AkashaItem work) => preview.previewLinkedWork(work);
 
-  Future<void> openWorkFromPreview() async {
-    final item = workPreviewItem;
-    if (item == null) return;
-    if (VaultWorkPresence.isRegistryOnlyPreview(item, vault.items)) {
-      await archiveRegistryWorkFromPreview();
-      return;
-    }
-    final snapshot = _capturePreviewReturnSnapshot();
-    closeAllPreviews();
-    _previewReturnSnapshot = snapshot;
-    workbenchCoord.openBrowseItem(item);
-    rebuild();
-  }
-
-  void previewRegistryWork(RegistryWork work) {
-    navigateWorkPreview(HomeAutoArchive.itemFromRegistryWork(work));
-  }
-
-  Future<void> archiveRegistryWorkFromPreview() async {
-    final item = workPreviewItem;
-    if (item == null) return;
-
-    if (AkashaFileService().vaultPath == null) {
-      _showSnack('볼트를 먼저 연결해 주세요.');
-      return;
-    }
-
-    final registryWork = WorksRegistry.getWorkById(item.workId);
-    final AkashaItem saved;
-    if (registryWork != null) {
-      saved = await HomeRegistryArchive.persistRegistryWork(
-        registryWork,
-        reloadItems: loadItems,
-        onDemoAdd: (_) {},
-      );
-    } else {
-      saved = await DetailArchiveSave.save(item);
-      await loadItems();
-    }
-
-    openWorkPreview(workbenchCoord.resolveItemForOpen(saved));
-    _showSnack('"${saved.title}"을(를) 아카이브했습니다.');
-  }
-
-  void openEntityPreview(UserCatalogEntity entity, {bool push = false}) {
-    if (!push) {
-      _clearPreviewReturnSnapshot();
-    }
-    if (push) {
-      _pushCurrentPreviewIfOpen();
-    } else {
-      _previewBackStack.clear();
-    }
-    workPreviewItem = null;
-    entityPreviewItem = entity;
-    recentExploration.recordEntity(entity.entityId);
-    rebuild();
-  }
-
-  void closeEntityPreview() => closeAllPreviews();
-
-  Future<void> openEntityFromPreview() async {
-    final entity = entityPreviewItem;
-    if (entity == null) return;
-    final snapshot = _capturePreviewReturnSnapshot();
-    closeAllPreviews();
-    _previewReturnSnapshot = snapshot;
-    await workbenchCoord.openEntity(entity);
-    rebuild();
-  }
-
-  void previewLinkedWork(AkashaItem work) {
-    openWorkPreview(work, push: true);
-  }
-
-  void previewLinkedEntity(UserCatalogEntity entity) {
-    openEntityPreview(entity, push: true);
-  }
+  void previewLinkedEntity(UserCatalogEntity entity) =>
+      preview.previewLinkedEntity(entity);
 
   Future<void> openEntity(UserCatalogEntity entity) async {
-    _clearPreviewReturnSnapshot();
-    closeAllPreviews();
+    preview.clearReturnSnapshot();
+    preview.closeAllPreviews();
     await workbenchCoord.openEntity(entity);
-    await recentExploration.recordEntity(entity.entityId);
+    await recentExplore.store.recordEntity(entity.entityId);
     rebuild();
   }
 
   void openRecentExploreItem(AkashaItem item) {
-    if (item is EntityItem) {
-      final entity = userCatalog.getById(item.entityId);
-      if (entity != null) {
-        openEntityPreview(entity);
-        return;
-      }
-    }
-    openWorkPreview(item);
+    recentExplore.openItem(
+      item,
+      openEntityPreview: preview.openEntityPreview,
+      openWorkPreview: preview.openWorkPreview,
+    );
   }
+
   Future<void> onWorkbenchWorkSaved(AkashaItem saved, {bool silent = false}) async {
     await workbenchCoord.onWorkbenchWorkSaved(saved, silent: silent);
     if (!silent) {
-      _maybeReturnToPreviewAfterSave(workId: saved.workId);
+      preview.maybeReturnAfterSave(workId: saved.workId);
     }
   }
 
   Future<void> onWorkbenchWorkDeleted(String tabId, AkashaItem item) async {
-    _maybeClearPreviewReturnForWork(item.workId);
+    preview.maybeClearReturnForWork(item.workId);
     await workbenchCoord.onWorkbenchWorkDeleted(tabId, item);
   }
 
@@ -668,78 +511,16 @@ class HomeShellController {
   }) async {
     await workbenchCoord.onWorkbenchEntitySaved(entity, journal);
     if (!silent) {
-      _maybeReturnToPreviewAfterSave(entityId: entity.entityId);
+      preview.maybeReturnAfterSave(entityId: entity.entityId);
     }
   }
 
   Future<void> onWorkbenchEntityDeleted(String tabId) async {
     final tab = workbench.activeEntityTab;
     if (tab != null) {
-      _maybeClearPreviewReturnForEntity(tab.entity.entityId);
+      preview.maybeClearReturnForEntity(tab.entity.entityId);
     }
     await workbenchCoord.onWorkbenchEntityDeleted(tabId);
-  }
-
-  PreviewReturnSnapshot? _capturePreviewReturnSnapshot() {
-    final current = _captureCurrentPreviewFrame();
-    if (current == null) return null;
-    return PreviewReturnSnapshot(
-      current: current,
-      backStack: List<PreviewFrame>.from(_previewBackStack),
-    );
-  }
-
-  void _clearPreviewReturnSnapshot() {
-    _previewReturnSnapshot = null;
-  }
-
-  void _maybeClearPreviewReturnForWork(String workId) {
-    final snapshot = _previewReturnSnapshot;
-    if (snapshot == null) return;
-    if (snapshot.current case WorkPreviewFrame(:final item) when item.workId == workId) {
-      _clearPreviewReturnSnapshot();
-    }
-  }
-
-  void _maybeClearPreviewReturnForEntity(String entityId) {
-    final snapshot = _previewReturnSnapshot;
-    if (snapshot == null) return;
-    if (snapshot.current case EntityPreviewFrame(:final entity)
-        when entity.entityId == entityId) {
-      _clearPreviewReturnSnapshot();
-    }
-  }
-
-  void _maybeReturnToPreviewAfterSave({String? workId, String? entityId}) {
-    final snapshot = _previewReturnSnapshot;
-    if (snapshot == null) return;
-
-    final matches = switch (snapshot.current) {
-      WorkPreviewFrame(:final item) =>
-        workId != null && item.workId == workId,
-      EntityPreviewFrame(:final entity) =>
-        entityId != null && entity.entityId == entityId,
-    };
-    if (!matches) return;
-
-    _clearPreviewReturnSnapshot();
-    _previewBackStack
-      ..clear()
-      ..addAll(snapshot.backStack.map(_resolvePreviewFrame));
-    _restorePreviewFrame(_resolvePreviewFrame(snapshot.current));
-    workbench.showBrowse();
-    rebuild();
-  }
-
-  PreviewFrame _resolvePreviewFrame(PreviewFrame frame) {
-    switch (frame) {
-      case WorkPreviewFrame(:final item):
-        return WorkPreviewFrame(workbenchCoord.resolveItemForOpen(item));
-      case EntityPreviewFrame(:final entity):
-        return EntityPreviewFrame(
-          userCatalog.getById(entity.entityId) ?? entity,
-        );
-    }
   }
 
   Widget buildPosterCard(BrowseCard card) => browse.buildPosterCard(card);

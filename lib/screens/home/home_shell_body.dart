@@ -155,8 +155,7 @@ class HomeShellBody extends StatelessWidget {
   final void Function(UserCatalogEntity entity) onPreviewLinkedEntity;
   final bool canPopPreview;
   final VoidCallback onPopPreview;
-  final VoidCallback onCloseWorkPreview;
-  final VoidCallback onCloseEntityPreview;
+  final VoidCallback onCloseAllPreviews;
   final VoidCallback onOpenWorkFromPreview;
   final Future<void> Function() onOpenEntityFromPreview;
   final EntityAnchorType? pendingWorkEntityLinkType;
@@ -269,8 +268,7 @@ class HomeShellBody extends StatelessWidget {
     required this.onPreviewLinkedEntity,
     required this.canPopPreview,
     required this.onPopPreview,
-    required this.onCloseWorkPreview,
-    required this.onCloseEntityPreview,
+    required this.onCloseAllPreviews,
     required this.onOpenWorkFromPreview,
     required this.onOpenEntityFromPreview,
     this.pendingWorkEntityLinkType,
@@ -484,7 +482,7 @@ class HomeShellBody extends StatelessWidget {
                   vaultItems: items,
                   canGoBack: canPopPreview,
                   onBack: onPopPreview,
-                  onClose: onCloseWorkPreview,
+                  onClose: onCloseAllPreviews,
                   onOpenDetail: onOpenWorkFromPreview,
                   onOpenEntity: onPreviewLinkedEntity,
                   onOpenWork: onPreviewLinkedWork,
@@ -503,7 +501,7 @@ class HomeShellBody extends StatelessWidget {
                   vaultItems: items,
                   canGoBack: canPopPreview,
                   onBack: onPopPreview,
-                  onClose: onCloseEntityPreview,
+                  onClose: onCloseAllPreviews,
                   onOpenDetail: onOpenEntityFromPreview,
                   onOpenEntity: onPreviewLinkedEntity,
                   onOpenWork: onPreviewLinkedWork,
