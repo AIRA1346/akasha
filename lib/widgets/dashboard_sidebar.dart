@@ -3,84 +3,65 @@ import 'package:flutter/material.dart';
 import '../config/feature_flags.dart';
 import '../models/akasha_item.dart';
 import '../models/collectible_collection.dart';
-import '../models/dashboard_config.dart';
-import '../models/personal_library_config.dart';
-import '../models/work_drag_payload.dart';
+import '../models/collectible_kind.dart';
+import '../models/collectible_ref.dart';
 import '../screens/home/home_personal_library_controller.dart';
+import '../screens/home/views/preview_record_view_model.dart';
 import '../theme/akasha_colors.dart';
-import 'personal_library_drop_target.dart';
 import 'poster_image.dart';
 
-/// 나만의 서재 + 컬렉션 + 대시보드 서재 사이드바.
+/// 홈 좌측 네비게이션 사이드바 (시안: primary nav · 최근 탐색 · 내 컬렉션).
 class DashboardSidebar extends StatelessWidget {
   static const Color dashboardAccent = AkashaColors.accent;
   static const Color personalAccent = Colors.amberAccent;
   static const Color collectionAccent = AkashaColors.accentDark;
 
+  static const double _sidebarWidth = 280;
+
   final bool isOpen;
+  final bool isHomeMode;
   final bool isExploreMode;
+  final bool isPersonalLibraryMode;
+  final bool isCollectibleCollectionMode;
   final bool isKnowledgeGraphMode;
+  final bool isTimelineMode;
   final SidebarSelectionMode selectionMode;
   final List<AkashaItem> recentExploreItems;
-  final List<DashboardConfig> dashboards;
-  final String? activeDashboardId;
-  final List<PersonalLibraryConfig> personalLibraries;
-  final String? activePersonalLibraryId;
+  final List<AkashaItem> vaultItems;
   final List<CollectibleCollection> collectibleCollections;
   final String? activeCollectibleCollectionId;
-  final VoidCallback onAddDashboard;
-  final Future<void> Function(String id) onSelectDashboard;
   final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
+  final Future<void> Function() onGoLibrary;
+  final Future<void> Function() onGoCollection;
   final Future<void> Function() onGoKnowledgeGraph;
-  final void Function(AkashaItem item)? onOpenRecentExplore;
-  final void Function(DashboardConfig dash) onEditDashboard;
-  final void Function(String id) onDeleteDashboard;
-  final VoidCallback onAddPersonalLibrary;
-  final VoidCallback onAddCollectibleCollection;
   final VoidCallback onSelectTimeline;
-  final void Function(String id) onSelectPersonalLibrary;
-  final void Function(PersonalLibraryConfig lib) onEditPersonalLibrary;
-  final void Function(String id) onDeletePersonalLibrary;
+  final void Function(AkashaItem item)? onOpenRecentExplore;
   final void Function(String id) onSelectCollectibleCollection;
-  final void Function(CollectibleCollection col) onEditCollectibleCollection;
-  final void Function(String id) onDeleteCollectibleCollection;
-  final void Function(String libraryId, WorkDragPayload payload)? onDropWorkToLibrary;
-  final VoidCallback? onLibraryDragStarted;
   final VoidCallback? onToggleSidebar;
 
   const DashboardSidebar({
     super.key,
     required this.isOpen,
+    required this.isHomeMode,
     required this.isExploreMode,
+    required this.isPersonalLibraryMode,
+    required this.isCollectibleCollectionMode,
     this.isKnowledgeGraphMode = false,
-    this.recentExploreItems = const [],
+    required this.isTimelineMode,
     required this.selectionMode,
-    required this.dashboards,
-    required this.activeDashboardId,
-    required this.personalLibraries,
-    required this.activePersonalLibraryId,
+    this.recentExploreItems = const [],
+    this.vaultItems = const [],
     this.collectibleCollections = const [],
     this.activeCollectibleCollectionId,
-    required this.onAddDashboard,
-    required this.onSelectDashboard,
     required this.onGoHome,
     required this.onGoExplore,
+    required this.onGoLibrary,
+    required this.onGoCollection,
     required this.onGoKnowledgeGraph,
-    this.onOpenRecentExplore,
-    required this.onEditDashboard,
-    required this.onDeleteDashboard,
-    required this.onAddPersonalLibrary,
-    required this.onAddCollectibleCollection,
     required this.onSelectTimeline,
-    required this.onSelectPersonalLibrary,
-    required this.onEditPersonalLibrary,
-    required this.onDeletePersonalLibrary,
+    this.onOpenRecentExplore,
     required this.onSelectCollectibleCollection,
-    required this.onEditCollectibleCollection,
-    required this.onDeleteCollectibleCollection,
-    this.onDropWorkToLibrary,
-    this.onLibraryDragStarted,
     this.onToggleSidebar,
   });
 
@@ -89,101 +70,38 @@ class DashboardSidebar extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
-      width: isOpen ? 260.0 : 0.0,
+      width: isOpen ? _sidebarWidth : 0.0,
       decoration: const BoxDecoration(
         color: AkashaColors.sidebar,
         border: Border(
-          right: BorderSide(color: AkashaColors.border, width: 1.5),
+          right: BorderSide(color: AkashaColors.border, width: 1),
         ),
       ),
+      clipBehavior: Clip.hardEdge,
       child: isOpen
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 1. 로고 영역
                 _buildLogoHeader(),
-                const SizedBox(height: 8),
-
-                // 2. 스크롤 가능한 본문 영역
                 Expanded(
                   child: SingleChildScrollView(
+                    padding: const EdgeInsets.only(bottom: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _buildMainMenu(context),
-                if (personalLibraries.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-                  _buildPersonalLibraries(),
-                ],
-                if (recentExploreItems.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-                  _buildRecentExplores(),
-                ],
-                        if (_customDashboards.isNotEmpty) ...[
-                          const SizedBox(height: 16),
-                          _buildCustomDashboards(),
+                        _buildPrimaryNav(),
+                        if (recentExploreItems.isNotEmpty) ...[
+                          const SizedBox(height: 20),
+                          _buildRecentExplores(),
                         ],
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 20),
                         _buildMyCollections(),
                       ],
                     ),
                   ),
                 ),
-
-                // 3. AKASHA Pro 배너
                 _buildProBanner(),
-
-                // 4. 하단 사이드바 접기 단추
-                if (onToggleSidebar != null)
-                  InkWell(
-                    onTap: onToggleSidebar,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                      decoration: const BoxDecoration(
-                        color: AkashaColors.sidebarFooter,
-                        border: Border(top: BorderSide(color: AkashaColors.border)),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.arrow_back_rounded,
-                            size: 14,
-                            color: Colors.grey,
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            '접기',
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[400],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                else
-                  // 폴백
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: const BoxDecoration(
-                      color: AkashaColors.sidebarFooter,
-                      border: Border(top: BorderSide(color: AkashaColors.border)),
-                    ),
-                    child: Row(
-                      children: [
-                        const _TabKeyHint(),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            '키를 눌러 사이드바 토글',
-                            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                if (onToggleSidebar != null) _buildCollapseFooter(),
               ],
             )
           : const SizedBox.shrink(),
@@ -191,49 +109,27 @@ class DashboardSidebar extends StatelessWidget {
   }
 
   Widget _buildLogoHeader() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-      child: Row(
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(20, 24, 20, 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              color: AkashaColors.accent.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(6),
-            ),
-            child: const Icon(
-              Icons.blur_on_rounded,
-              color: AkashaColors.accent,
-              size: 20,
+          Text(
+            'AKASHA',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+              letterSpacing: 1.2,
             ),
           ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'AKASHA',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-                const SizedBox(height: 1),
-                Text(
-                  'Your Knowledge Universe',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 8,
-                    color: Colors.grey[600],
-                  ),
-                ),
-              ],
+          SizedBox(height: 4),
+          Text(
+            'Your Knowledge Universe',
+            style: TextStyle(
+              fontSize: 10,
+              color: AkashaColors.textCaption,
+              letterSpacing: 0.2,
             ),
           ),
         ],
@@ -241,110 +137,86 @@ class DashboardSidebar extends StatelessWidget {
     );
   }
 
-  Widget _buildMainMenu(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-          child: Text(
-            '도구',
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[500],
-              letterSpacing: 0.5,
-            ),
-          ),
-        ),
-        if (FeatureFlags.showKnowledgeGraph)
-          _buildMenuTile(
-            icon: Icons.hub_outlined,
-            label: '연결 목록',
-            isSelected: isKnowledgeGraphMode,
-            onTap: () => onGoKnowledgeGraph(),
-          ),
-        _buildMenuTile(
-          icon: Icons.access_time_outlined,
-          label: '타임라인',
-          isSelected: selectionMode == SidebarSelectionMode.timeline,
-          onTap: onSelectTimeline,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildMenuTile({
-    required IconData icon,
-    required String label,
-    required bool isSelected,
-    required VoidCallback onTap,
-  }) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-      decoration: BoxDecoration(
-        color: isSelected ? AkashaColors.menuSelected : Colors.transparent,
-        borderRadius: BorderRadius.circular(6),
-        border: isSelected
-            ? Border.all(
-                color: AkashaColors.accent.withValues(alpha: 0.3),
-                width: 1.0,
-              )
-            : Border.all(color: Colors.transparent, width: 1.0),
-      ),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(6),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                size: 16,
-                color: isSelected ? AkashaColors.accent : Colors.grey[400],
-              ),
-              const SizedBox(width: 12),
-              Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  color: isSelected ? Colors.white : Colors.grey[300],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  List<DashboardConfig> get _customDashboards =>
-      dashboards.where((d) => d.id != 'master_index').toList();
-
-  Widget _buildSectionTitle(String title, {VoidCallback? onAdd}) {
+  Widget _buildPrimaryNav() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Column(
+        children: [
+          _SidebarNavTile(
+            icon: Icons.home_outlined,
+            label: '홈',
+            isSelected: isHomeMode,
+            onTap: () => onGoHome(),
+          ),
+          _SidebarNavTile(
+            icon: Icons.explore_outlined,
+            label: '탐색',
+            isSelected: isExploreMode,
+            onTap: () => onGoExplore(),
+          ),
+          _SidebarNavTile(
+            icon: Icons.menu_book_outlined,
+            label: '라이브러리',
+            isSelected: isPersonalLibraryMode,
+            onTap: () => onGoLibrary(),
+          ),
+          _SidebarNavTile(
+            icon: Icons.collections_bookmark_outlined,
+            label: '컬렉션',
+            isSelected: isCollectibleCollectionMode,
+            onTap: () => onGoCollection(),
+          ),
+          if (FeatureFlags.showKnowledgeGraph)
+            _SidebarNavTile(
+              icon: Icons.hub_outlined,
+              label: '그래프',
+              isSelected: isKnowledgeGraphMode,
+              onTap: () => onGoKnowledgeGraph(),
+            ),
+          _SidebarNavTile(
+            icon: Icons.access_time_outlined,
+            label: '타임라인',
+            isSelected: isTimelineMode,
+            onTap: onSelectTimeline,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(
+    String title, {
+    String? trailingLabel,
+    VoidCallback? onTrailing,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
           Text(
             title,
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[500],
-              letterSpacing: 0.5,
+            style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+              color: AkashaColors.textCaption,
+              letterSpacing: 0.3,
             ),
           ),
           const Spacer(),
-          if (onAdd != null)
+          if (trailingLabel != null && onTrailing != null)
             InkWell(
-              onTap: onAdd,
+              onTap: onTrailing,
               borderRadius: BorderRadius.circular(4),
               child: Padding(
-                padding: const EdgeInsets.all(4),
-                child: Icon(Icons.add, size: 14, color: Colors.grey[500]),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                child: Text(
+                  trailingLabel,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    color: AkashaColors.accent,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ),
         ],
@@ -357,147 +229,93 @@ class DashboardSidebar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _buildSectionTitle('최근 탐색'),
-        const SizedBox(height: 4),
-        ...recentExploreItems.take(5).map((item) {
-          final isEntity = item is EntityItem;
-          return SidebarItemWidget(
-            name: item.title,
-            icon: isEntity ? Icons.person_outline : Icons.movie_outlined,
-            isActive: false,
-            accentColor: dashboardAccent,
-            canEdit: false,
-            canDelete: false,
-            onTap: onOpenRecentExplore == null
-                ? () {}
-                : () => onOpenRecentExplore!(item),
-            onEdit: () {},
-            onDelete: () {},
-          );
-        }),
+        const SizedBox(height: 6),
+        ...recentExploreItems.take(5).map(_buildRecentRow),
       ],
     );
   }
 
-  Widget _buildPersonalLibraries() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _buildSectionTitle('나의 서재', onAdd: onAddPersonalLibrary),
-        const SizedBox(height: 4),
-        ...personalLibraries.map((lib) {
-          final isActive = selectionMode == SidebarSelectionMode.personalLibrary &&
-              lib.id == activePersonalLibraryId;
-          Widget row = SidebarItemWidget(
-            name: lib.isCurated && lib.memberOrder.isNotEmpty
-                ? '${lib.name} (${lib.memberOrder.length})'
-                : lib.name,
-            icon: lib.isMasterArchive
-                ? Icons.inventory_2_outlined
-                : lib.isCurated
-                    ? Icons.collections_bookmark_outlined
-                    : lib.categories.length == 1
-                        ? lib.categories.first.icon
-                        : Icons.filter_list_outlined,
-            isActive: isActive,
-            accentColor: personalAccent,
-            canEdit: lib.id != PersonalLibraryConfig.masterArchiveId,
-            canDelete: lib.id != PersonalLibraryConfig.masterArchiveId,
-            editTooltip: '서재 설정',
-            onTap: () => onSelectPersonalLibrary(lib.id),
-            onEdit: () => onEditPersonalLibrary(lib),
-            onDelete: () => onDeletePersonalLibrary(lib.id),
-          );
-          if (lib.isCurated && onDropWorkToLibrary != null) {
-            row = PersonalLibraryDropTarget(
-              accentColor: personalAccent,
-              onAccept: (payload) {
-                onLibraryDragStarted?.call();
-                onDropWorkToLibrary!(lib.id, payload);
-              },
-              child: row,
-            );
-          }
-          return row;
-        }),
-      ],
-    );
-  }
-
-  Widget _buildCustomDashboards() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        _buildSectionTitle('대시보드', onAdd: onAddDashboard),
-        const SizedBox(height: 4),
-        ..._customDashboards.map((dash) {
-          final isActive = selectionMode == SidebarSelectionMode.dashboard &&
-              dash.id == activeDashboardId;
-          return SidebarItemWidget(
-            name: dash.name,
-            icon: dash.categories.isNotEmpty
-                ? dash.categories.first.icon
-                : Icons.dashboard_outlined,
-            isActive: isActive,
-            accentColor: dashboardAccent,
-            onTap: () => onSelectDashboard(dash.id),
-            onEdit: () => onEditDashboard(dash),
-            onDelete: () => onDeleteDashboard(dash.id),
-          );
-        }),
-      ],
+  Widget _buildRecentRow(AkashaItem item) {
+    final subtitle = switch (item) {
+      EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
+      _ => '작품',
+    };
+    return _SidebarThumbnailTile(
+      item: item,
+      title: item.title,
+      subtitle: subtitle,
+      onTap: onOpenRecentExplore == null
+          ? () {}
+          : () => onOpenRecentExplore!(item),
     );
   }
 
   Widget _buildMyCollections() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _buildSectionTitle('내 컬렉션', onAdd: onAddCollectibleCollection),
-          const SizedBox(height: 4),
-          if (collectibleCollections.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text(
-                '컬렉션이 없습니다',
-                style: TextStyle(fontSize: 11, color: Colors.grey[600]),
-              ),
-            )
-          else
-            ...collectibleCollections.take(8).map((col) {
-              final isActive =
-                  selectionMode == SidebarSelectionMode.collectibleCollection &&
-                      activeCollectibleCollectionId == col.id;
-              final countLabel = col.isCurated
-                  ? (col.memberOrder.isNotEmpty ? ' (${col.memberOrder.length})' : '')
-                  : '';
-              return SidebarItemWidget(
-                name: '${col.title}$countLabel',
-                icon: col.isCurated
-                    ? Icons.favorite_outline
-                    : Icons.local_offer_outlined,
-                isActive: isActive,
-                accentColor: collectionAccent,
-                editTooltip: '컬렉션 설정',
-                onTap: () => onSelectCollectibleCollection(col.id),
-                onEdit: () => onEditCollectibleCollection(col),
-                onDelete: () => onDeleteCollectibleCollection(col.id),
-              );
-            }),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _buildSectionTitle(
+          '내 컬렉션',
+          trailingLabel: collectibleCollections.isNotEmpty ? '모두 보기' : null,
+          onTrailing:
+              collectibleCollections.isNotEmpty ? () => onGoCollection() : null,
+        ),
+        const SizedBox(height: 6),
+        if (collectibleCollections.isEmpty)
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            child: Text(
+              '컬렉션이 없습니다',
+              style: TextStyle(fontSize: 11, color: AkashaColors.textCaption),
+            ),
+          )
+        else
+          ...collectibleCollections.take(4).map(_buildCollectionRow),
+      ],
     );
+  }
+
+  Widget _buildCollectionRow(CollectibleCollection col) {
+    final isActive =
+        selectionMode == SidebarSelectionMode.collectibleCollection &&
+            activeCollectibleCollectionId == col.id;
+    final count = col.isCurated ? col.memberOrder.length : 0;
+    final subtitle = count > 0 ? '$count 작품' : '컬렉션';
+    final coverItem = _coverItemForCollection(col);
+
+    return _SidebarThumbnailTile(
+      item: coverItem,
+      title: col.title,
+      subtitle: subtitle,
+      isActive: isActive,
+      fallbackIcon: Icons.favorite_outline,
+      onTap: () => onSelectCollectibleCollection(col.id),
+    );
+  }
+
+  AkashaItem? _coverItemForCollection(CollectibleCollection col) {
+    if (!col.isCurated || col.memberOrder.isEmpty) return null;
+    final byWorkId = <String, AkashaItem>{
+      for (final item in vaultItems)
+        if (item.workId.isNotEmpty) item.workId: item,
+    };
+    for (final CollectibleRef ref in col.memberOrder) {
+      if (ref.kind == CollectibleKind.work) {
+        final item = byWorkId[ref.id];
+        if (item != null) return item;
+      }
+    }
+    return null;
   }
 
   Widget _buildProBanner() {
     return Container(
-      margin: const EdgeInsets.all(12),
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: AkashaColors.proBanner,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AkashaColors.borderSubtle()),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -505,167 +323,264 @@ class DashboardSidebar extends StatelessWidget {
           const Text(
             'AKASHA Pro',
             style: TextStyle(
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          const SizedBox(height: 2),
-          Text(
+          const SizedBox(height: 4),
+          const Text(
             '더 많은 기능을 경험해보세요',
             style: TextStyle(
-              fontSize: 9,
-              color: Colors.grey[500],
+              fontSize: 10,
+              color: AkashaColors.textCaption,
             ),
           ),
-          const SizedBox(height: 10),
-          Text(
-            '곧 출시 예정',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 9, color: Colors.grey[600]),
+          const SizedBox(height: 12),
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              backgroundColor: AkashaColors.proButton,
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              textStyle: const TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            child: const Text('업그레이드'),
           ),
         ],
       ),
     );
   }
-}
 
-class _TabKeyHint extends StatelessWidget {
-  const _TabKeyHint();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-      decoration: BoxDecoration(
-        color: AkashaColors.border,
-        borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: Colors.grey),
-      ),
-      child: const Text(
-        'Tab',
-        style: TextStyle(
-          fontSize: 10,
-          color: Colors.grey,
-          fontWeight: FontWeight.bold,
+  Widget _buildCollapseFooter() {
+    return InkWell(
+      onTap: onToggleSidebar,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        decoration: const BoxDecoration(
+          color: AkashaColors.sidebarFooter,
+          border: Border(top: BorderSide(color: AkashaColors.border)),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.chevron_left_rounded, size: 18, color: Colors.grey[500]),
+            const SizedBox(width: 6),
+            Text(
+              '접기',
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[500],
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-class SidebarItemWidget extends StatefulWidget {
-  final String name;
-  final IconData icon;
-  final bool isActive;
-  final Color accentColor;
-  final bool canEdit;
-  final bool canDelete;
-  final String editTooltip;
-  final VoidCallback onTap;
-  final VoidCallback onEdit;
-  final VoidCallback onDelete;
-
-  const SidebarItemWidget({
-    super.key,
-    required this.name,
+class _SidebarNavTile extends StatefulWidget {
+  const _SidebarNavTile({
     required this.icon,
-    required this.isActive,
-    required this.accentColor,
-    this.canEdit = true,
-    this.canDelete = true,
-    this.editTooltip = '설정',
+    required this.label,
+    required this.isSelected,
     required this.onTap,
-    required this.onEdit,
-    required this.onDelete,
   });
 
+  final IconData icon;
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+
   @override
-  State<SidebarItemWidget> createState() => _SidebarItemWidgetState();
+  State<_SidebarNavTile> createState() => _SidebarNavTileState();
 }
 
-class _SidebarItemWidgetState extends State<SidebarItemWidget> {
-  bool _isHovered = false;
+class _SidebarNavTileState extends State<_SidebarNavTile> {
+  bool _hovered = false;
 
   @override
   Widget build(BuildContext context) {
-    final isActive = widget.isActive;
+    final selected = widget.isSelected;
+    final bg = selected
+        ? AkashaColors.accent.withValues(alpha: 0.14)
+        : _hovered
+            ? AkashaColors.surface.withValues(alpha: 0.6)
+            : Colors.transparent;
+
     return MouseRegion(
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-        decoration: BoxDecoration(
-          color: isActive
-              ? AkashaColors.menuSelected
-              : _isHovered
-                  ? AkashaColors.surface
-                  : Colors.transparent,
-          borderRadius: BorderRadius.circular(6),
-          border: isActive
-              ? Border.all(
-                  color: widget.accentColor.withValues(alpha: 0.35),
-                  width: 1.0,
-                )
-              : Border.all(color: Colors.transparent, width: 1.0),
-        ),
-        child: InkWell(
-          onTap: widget.onTap,
-          borderRadius: BorderRadius.circular(6),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-            child: Row(
-              children: [
-                AnimatedScale(
-                  scale: _isHovered ? 1.15 : 1.0,
-                  duration: const Duration(milliseconds: 150),
-                  curve: Curves.easeOut,
-                  child: Icon(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 2),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: widget.onTap,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: bg,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Row(
+                children: [
+                  if (selected)
+                    Container(
+                      width: 3,
+                      height: 18,
+                      margin: const EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        color: AkashaColors.accent,
+                        borderRadius: BorderRadius.circular(2),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AkashaColors.accent.withValues(alpha: 0.45),
+                            blurRadius: 6,
+                          ),
+                        ],
+                      ),
+                    )
+                  else
+                    const SizedBox(width: 13),
+                  Icon(
                     widget.icon,
-                    size: 16,
-                    color: isActive ? widget.accentColor : Colors.grey[400],
+                    size: 18,
+                    color: selected ? AkashaColors.accent : Colors.grey[400],
                   ),
-                ),
-                AnimatedPadding(
-                  padding: EdgeInsets.only(left: _isHovered ? 14 : 10),
-                  duration: const Duration(milliseconds: 150),
-                  curve: Curves.easeOut,
-                  child: const SizedBox.shrink(),
-                ),
-                Expanded(
-                  child: Text(
-                    widget.name,
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight:
-                          isActive ? FontWeight.bold : FontWeight.normal,
-                      color: isActive ? Colors.white : Colors.grey[300],
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      widget.label,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight:
+                            selected ? FontWeight.w600 : FontWeight.w500,
+                        color: selected ? Colors.white : Colors.grey[300],
+                      ),
                     ),
-                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                if (_isHovered || isActive) ...[
-                  if (widget.canEdit) ...[
-                    IconButton(
-                      icon: const Icon(Icons.edit_outlined,
-                          size: 14, color: Colors.grey),
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(),
-                      tooltip: widget.editTooltip,
-                      onPressed: widget.onEdit,
-                    ),
-                    if (widget.canDelete) const SizedBox(width: 6),
-                  ],
-                  if (widget.canDelete)
-                    IconButton(
-                      icon: const Icon(Icons.delete,
-                          size: 14, color: Colors.redAccent),
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(),
-                      onPressed: widget.onDelete,
-                    ),
                 ],
-              ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SidebarThumbnailTile extends StatefulWidget {
+  const _SidebarThumbnailTile({
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+    this.item,
+    this.isActive = false,
+    this.fallbackIcon = Icons.image_outlined,
+  });
+
+  final AkashaItem? item;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+  final bool isActive;
+  final IconData fallbackIcon;
+
+  @override
+  State<_SidebarThumbnailTile> createState() => _SidebarThumbnailTileState();
+}
+
+class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final highlight = widget.isActive || _hovered;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: widget.onTap,
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              decoration: BoxDecoration(
+                color: highlight
+                    ? AkashaColors.menuSelected.withValues(alpha: 0.7)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: SizedBox(
+                      width: 36,
+                      height: 36,
+                      child: widget.item != null
+                          ? PosterImage(
+                              item: widget.item!,
+                              width: 36,
+                              height: 36,
+                              fit: BoxFit.cover,
+                            )
+                          : ColoredBox(
+                              color: AkashaColors.thumbPlaceholder,
+                              child: Icon(
+                                widget.fallbackIcon,
+                                size: 16,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: widget.isActive
+                                ? FontWeight.w600
+                                : FontWeight.w500,
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          widget.subtitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 10,
+                            color: AkashaColors.textCaption,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -1,4 +1,5 @@
 import '../../../models/browse_entity_scope.dart';
+import '../../../models/personal_library_config.dart';
 import '../../../features/workbench/data/workbench_controller.dart';
 import '../home_sidebar_preferences.dart';
 import 'home_filter_coordinator.dart';
@@ -166,6 +167,34 @@ class HomeNavigationCoordinator {
       sidebarCoordinator.selectTimeline();
       workbench.showBrowse();
     });
+  }
+
+  /// 나만의 서재 뷰 (활성 서재 또는 master archive).
+  Future<void> goLibrary() async {
+    scheduleRebuild(() {
+      isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
+      final libId = sidebarCoordinator.personalLibCtrl.activeLibraryId ??
+          PersonalLibraryConfig.masterArchiveId;
+      sidebarCoordinator.selectPersonalLibrary(libId);
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
+  }
+
+  /// 컬렉션 뷰 (활성 컬렉션 또는 첫 번째).
+  Future<void> goCollection() async {
+    final cols = sidebarCoordinator.collectionCtrl.collections;
+    if (cols.isEmpty) return;
+    scheduleRebuild(() {
+      isExploreBrowseMode = false;
+      isKnowledgeGraphMode = false;
+      final id = sidebarCoordinator.collectionCtrl.activeCollectionId ??
+          cols.first.id;
+      sidebarCoordinator.selectCollectibleCollection(id);
+      workbench.showBrowse();
+    });
+    await prefetchRegistry();
   }
 
   /// 지식 연결 맵 뷰.

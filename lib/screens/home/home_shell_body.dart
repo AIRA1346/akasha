@@ -54,6 +54,7 @@ class HomeShellBody extends StatelessWidget {
   final bool isExploreBrowseMode;
   final bool isKnowledgeGraphMode;
   final bool isExploreModeActive;
+  final bool isHomeDashboardMode;
   final bool isCuratedLibraryActive;
   final bool isCatalogLoading;
   final bool isCatalogLoadingMore;
@@ -81,6 +82,8 @@ class HomeShellBody extends StatelessWidget {
   final Future<void> Function(String id) onSelectDashboard;
   final Future<void> Function() onGoHome;
   final Future<void> Function() onGoExplore;
+  final Future<void> Function() onGoLibrary;
+  final Future<void> Function() onGoCollection;
   final Future<void> Function() onGoKnowledgeGraph;
   final Future<void> Function(BrowseEntityScope scope) onGoExploreEntities;
   final VoidCallback onVaultSettings;
@@ -186,6 +189,7 @@ class HomeShellBody extends StatelessWidget {
     required this.isExploreBrowseMode,
     required this.isKnowledgeGraphMode,
     required this.isExploreModeActive,
+    required this.isHomeDashboardMode,
     required this.isCuratedLibraryActive,
     required this.isCatalogLoading,
     this.isCatalogLoadingMore = false,
@@ -213,6 +217,8 @@ class HomeShellBody extends StatelessWidget {
     required this.onSelectDashboard,
     required this.onGoHome,
     required this.onGoExplore,
+    required this.onGoLibrary,
+    required this.onGoCollection,
     required this.onGoKnowledgeGraph,
     required this.onGoExploreEntities,
     required this.onVaultSettings,
@@ -307,35 +313,25 @@ class HomeShellBody extends StatelessWidget {
       children: [
         DashboardSidebar(
           isOpen: isSidebarOpen,
-          selectionMode: personalLibCtrl.sidebarMode,
+          isHomeMode: isHomeDashboardMode,
           isExploreMode: isExploreModeActive,
+          isPersonalLibraryMode: isPersonalLibraryMode,
+          isCollectibleCollectionMode: isCollectibleCollectionMode,
           isKnowledgeGraphMode: isKnowledgeGraphMode,
+          isTimelineMode: isTimelineMode,
+          selectionMode: personalLibCtrl.sidebarMode,
           recentExploreItems: recentExploreItems,
-          dashboards: dashboardCtrl.dashboards,
-          activeDashboardId: dashboardCtrl.activeDashboardId,
-          personalLibraries: personalLibCtrl.libraries,
-          activePersonalLibraryId: personalLibCtrl.activeLibraryId,
+          vaultItems: items,
           collectibleCollections: collectionCtrl.collections,
           activeCollectibleCollectionId: collectionCtrl.activeCollectionId,
-          onAddDashboard: onAddDashboard,
-          onSelectDashboard: (id) => onSelectDashboard(id),
           onGoHome: onGoHome,
           onGoExplore: onGoExplore,
+          onGoLibrary: onGoLibrary,
+          onGoCollection: onGoCollection,
           onGoKnowledgeGraph: onGoKnowledgeGraph,
           onOpenRecentExplore: onOpenRecentExplore,
-          onEditDashboard: onEditDashboard,
-          onDeleteDashboard: onDeleteDashboard,
-          onAddPersonalLibrary: onAddPersonalLibrary,
-          onAddCollectibleCollection: onAddCollectibleCollection,
           onSelectTimeline: onSelectTimeline,
-          onSelectPersonalLibrary: onSelectPersonalLibrary,
           onSelectCollectibleCollection: onSelectCollectibleCollection,
-          onEditPersonalLibrary: onEditPersonalLibrary,
-          onDeletePersonalLibrary: onDeletePersonalLibrary,
-          onEditCollectibleCollection: onEditCollectibleCollection,
-          onDeleteCollectibleCollection: onDeleteCollectibleCollection,
-          onDropWorkToLibrary: onDropWorkToLibrary,
-          onLibraryDragStarted: onLibraryDragStarted,
           onToggleSidebar: onToggleSidebar,
         ),
         Expanded(

@@ -414,6 +414,8 @@ class HomeShellController {
   Future<void> selectDashboard(String id) => navigation.selectDashboard(id);
   Future<void> goHome() => navigation.goHome();
   Future<void> goExplore() => navigation.goExplore();
+  Future<void> goLibrary() => navigation.goLibrary();
+  Future<void> goCollection() => navigation.goCollection();
   Future<void> goKnowledgeGraph() => navigation.goKnowledgeGraph();
   Future<void> goExploreEntities(BrowseEntityScope scope) =>
       navigation.goExploreEntities(scope);
