@@ -69,14 +69,15 @@ class HomeDashboardQuickActionsSection extends StatelessWidget {
                         ),
                 ),
                 const SizedBox(width: 12),
-                Expanded(
-                  child: _ActionCard(
-                    icon: Icons.access_time_outlined,
-                    title: '기록',
-                    desc: '타임라인과 일지에서 시간순 기록을 확인합니다.',
-                    onTap: onTimeline,
+                if (FeatureFlags.showTimeline)
+                  Expanded(
+                    child: _ActionCard(
+                      icon: Icons.access_time_outlined,
+                      title: '기록',
+                      desc: '타임라인과 일지에서 시간순 기록을 확인합니다.',
+                      onTap: onTimeline,
+                    ),
                   ),
-                ),
               ],
             ),
           ],

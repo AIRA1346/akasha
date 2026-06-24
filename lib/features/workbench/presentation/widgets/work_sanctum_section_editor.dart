@@ -8,7 +8,7 @@ import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/markdown_edit_actions.dart';
 
-/// 워크벤치 중앙 — mock 스타일 슬롯 섹션 편집 (설명 · 감상 · 명장면).
+/// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (설명 · 감상 · 명장면). 본문 md와 동기화.
 class WorkSanctumSectionEditor extends StatefulWidget {
   const WorkSanctumSectionEditor({
     super.key,

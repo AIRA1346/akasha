@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_typography.dart';
 
-/// 워크벤치 상단 경로 — mock `서재 > 작품 > 제목`.
+/// 워크벤치 상단 경로 breadcrumb. v1: [FeatureFlags.showWorkbenchBreadcrumb].
 class WorkbenchBreadcrumb extends StatelessWidget {
   const WorkbenchBreadcrumb({
     super.key,

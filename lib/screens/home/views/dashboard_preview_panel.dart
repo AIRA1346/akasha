@@ -20,6 +20,7 @@ import '../../../widgets/work_preview_next_connections.dart';
 import '../../../widgets/work_preview_registry_surface.dart';
 import 'preview_memo_bar.dart';
 import 'preview_panel_chrome.dart';
+import 'preview_record_view_model.dart';
 import 'preview_work_panel_content.dart';
 
 class DashboardPreviewPanel extends StatefulWidget {
@@ -261,7 +262,10 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
 
   @override
   Widget build(BuildContext context) {
-    final typeLabel = _isRegistryOnly ? '사전 · ${widget.item.category.name}' : widget.item.category.name;
+    final typeLabel = _isRegistryOnly
+        ? '사전 · ${widget.item.category.name}'
+        : widget.item.category.name;
+    final record = PreviewRecordViewModel.fromWork(widget.item);
     return Container(
       width: 320,
       decoration: BoxDecoration(
@@ -284,17 +288,17 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    PreviewWorkHero(item: widget.item),
+                    PreviewRecordHero(model: record),
                     const SizedBox(height: 14),
-                    PreviewWorkTitleBlock(item: widget.item),
+                    PreviewRecordTitleBlock(model: record),
                     const SizedBox(height: 12),
-                    PreviewWorkActionBar(
+                    PreviewRecordActionBar(
                       onOpenDetail: widget.onOpenDetail,
                       canGoBack: widget.canGoBack,
                       onBack: widget.onBack,
                     ),
                     const SizedBox(height: 18),
-                    PreviewCoreInfoSection(item: widget.item),
+                    PreviewRecordCoreInfoSection(rows: record.coreInfoRows),
                     if (_isRegistryOnly) ...[
                       const SizedBox(height: 14),
                       WorkPreviewRegistrySurface(
@@ -352,7 +356,8 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
               ),
             ),
           ),
-          PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
+          if (FeatureFlags.showPreviewMemoBar)
+            PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
         ],
       ),
     );

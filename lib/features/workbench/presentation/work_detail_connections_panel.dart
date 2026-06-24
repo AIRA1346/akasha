@@ -11,7 +11,7 @@ import '../../../utils/work_link_neighbors.dart';
 import '../../../widgets/work_link_neighbors_sections.dart';
 import 'widgets/workbench_record_links_sections.dart';
 
-/// 워크벤치 우측 연결 패널 — mock 3열 · 연결|정보 탭 (R15).
+/// 워크벤치 우측 연결 패널 — 연결|정보 탭. 실데이터 link neighbors 연동.
 class WorkDetailConnectionsPanel extends StatefulWidget {
   const WorkDetailConnectionsPanel({
     super.key,

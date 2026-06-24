@@ -1,21 +1,15 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:akasha/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const AkashaApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our app builds successfully (it should show the welcome header on home dashboard).
-    expect(find.text('안녕하세요, 탐험가님!'), findsOneWidget);
+  testWidgets('AkashaApp smoke builds home dashboard hero', (tester) async {
+    await tester.pumpWidget(const AkashaApp());
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 2));
+
+    expect(find.text('기록하고, 연결하고, 발견하세요'), findsOneWidget);
   });
 }

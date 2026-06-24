@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:akasha/config/feature_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -59,24 +60,40 @@ class _FakeLinkIndex implements RecordLinkPort {
   Future<Iterable<String>> incomingEntityIds() async => const [];
 }
 
+Widget _wrap(HomeDashboardView child) {
+  return MaterialApp(
+    theme: AkashaTheme.dark(),
+    home: child,
+  );
+}
+
+HomeDashboardView _dashboard({
+  VoidCallback? onSearch,
+  List<AkashaItem> vaultItems = const [],
+  List<AkashaItem> recentExploreItems = const [],
+}) {
+  return HomeDashboardView(
+    vaultItems: vaultItems,
+    recentExploreItems: recentExploreItems,
+    userCatalog: _FakeUserCatalog(),
+    linkIndex: _FakeLinkIndex(),
+    onPreviewWork: (_) {},
+    onPreviewEntity: (_) {},
+    onSearch: onSearch ?? () {},
+    onVaultSettings: () {},
+    onGoExplore: () {},
+    onGoExploreEntities: (_) {},
+    onGoKnowledgeGraph: () {},
+    onTimeline: () {},
+  );
+}
+
 void main() {
-  testWidgets('HomeDashboardView shows hero and exploration sections', (tester) async {
+  testWidgets('HomeDashboardView v1 shows hero, continue, quick actions', (tester) async {
     var searchTapped = false;
 
     await tester.pumpWidget(
-      MaterialApp(
-        theme: AkashaTheme.dark(),
-        home: HomeDashboardView(
-          vaultItems: const [],
-          recentExploreItems: const [],
-          userCatalog: _FakeUserCatalog(),
-          linkIndex: _FakeLinkIndex(),
-          onPreviewWork: (_) {},
-          onPreviewEntity: (_) {},
-          onSearch: () => searchTapped = true,
-          onVaultSettings: () {},
-        ),
-      ),
+      _wrap(_dashboard(onSearch: () => searchTapped = true)),
     );
 
     expect(find.text('기록하고, 연결하고, 발견하세요'), findsOneWidget);
@@ -88,17 +105,33 @@ void main() {
     );
     expect(find.text('탐험 시작하기'), findsOneWidget);
     expect(find.text('계속 탐험하기'), findsOneWidget);
-    expect(find.text('오늘의 연결'), findsOneWidget);
-    expect(find.text('최근 발견'), findsOneWidget);
-    expect(find.text('최근 기록'), findsOneWidget);
-    expect(find.text('안녕하세요, 탐험가님!'), findsNothing);
-    expect(find.text('빠른 액션'), findsNothing);
-    expect(find.text('검색으로 탐험 시작'), findsNothing);
-    expect(find.text('검색으로 더 보기'), findsNothing);
+    expect(find.text('빠른 액션'), findsOneWidget);
+    expect(find.text('작품 검색'), findsOneWidget);
+    expect(find.text('인물 탐색'), findsOneWidget);
+
+    if (FeatureFlags.showKnowledgeGraph) {
+      expect(find.text('연결 맵'), findsOneWidget);
+    } else {
+      expect(find.text('전체 탐색'), findsOneWidget);
+    }
+
     expect(
       find.text('탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'),
       findsOneWidget,
     );
+
+    // v1: post-v1 blocks hidden via FeatureFlags
+    if (!FeatureFlags.showDiscoveryHome) {
+      expect(find.text('오늘의 연결'), findsNothing);
+      expect(find.text('최근 발견'), findsNothing);
+      expect(find.text('발견의 여정'), findsNothing);
+    }
+    if (!FeatureFlags.showTimeline) {
+      expect(find.text('기록'), findsNothing);
+    }
+
+    expect(find.text('안녕하세요, 탐험가님!'), findsNothing);
+    expect(find.text('검색으로 탐험 시작'), findsNothing);
     expect(find.text('[[wiki]]'), findsNothing);
 
     await tester.tap(find.text('탐험 시작하기'));

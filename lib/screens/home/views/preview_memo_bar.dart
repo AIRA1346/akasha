@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
 
-/// 프리뷰 하단 빠른 메모 진입 (mock · R15).
+/// 프리뷰 하단 빠른 메모 진입. v1: [FeatureFlags.showPreviewMemoBar].
 class PreviewMemoBar extends StatelessWidget {
   const PreviewMemoBar({
     super.key,

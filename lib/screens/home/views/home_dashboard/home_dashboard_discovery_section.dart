@@ -14,7 +14,7 @@ import '../../../../utils/work_link_neighbors.dart';
 import '../../../../widgets/poster_image.dart';
 import 'home_dashboard_styles.dart';
 
-/// 발견의 여정 — 추천 연결·새 작품·주목 인물 (mock · R15).
+/// 발견의 여정 — 추천 연결·새 작품·주목 인물. v1: [FeatureFlags.showDiscoveryHome].
 class HomeDashboardDiscoverySection extends StatefulWidget {
   const HomeDashboardDiscoverySection({
     super.key,

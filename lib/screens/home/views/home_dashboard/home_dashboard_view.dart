@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../config/feature_flags.dart';
 import '../../../../models/akasha_item.dart';
 import '../../../../models/browse_entity_scope.dart';
 import '../../../../models/user_catalog_entity.dart';
@@ -16,7 +17,7 @@ import 'home_dashboard_registry_bridge_section.dart';
 import 'home_dashboard_universe_section.dart';
 import 'home_dashboard_top_bar.dart';
 
-/// 탐험 중심 홈 — mock 5블록 IA (R15).
+/// 탐험 중심 홈 — Continue·Discover·Universe 블록 (Discover/Universe는 [FeatureFlags]).
 class HomeDashboardView extends StatelessWidget {
   const HomeDashboardView({
     super.key,
@@ -102,35 +103,40 @@ class HomeDashboardView extends StatelessWidget {
               onItemTap: _handleItemTap,
               isColdStart: isColdStart,
             ),
-            const SizedBox(height: 32),
-            HomeDashboardDiscoverySection(
-              vaultItems: vaultItems,
-              userCatalog: userCatalog,
-              linkIndex: linkIndex,
-              onItemTap: _handleItemTap,
-              onOpenEntity: onPreviewEntity,
-              onGoExplore: onGoExplore,
-              onSearch: onSearch,
-              onConnectSuggested: onConnectSuggested,
-              onOpenRecord: onOpenRecordFromHome,
-            ),
-            const SizedBox(height: 32),
-            HomeDashboardUniverseSection(
-              vaultItems: vaultItems,
-              userCatalog: userCatalog,
-              selectedPreviewItem: previewItem,
-              onItemTap: _handleItemTap,
-              onSearch: onSearch,
-            ),
-            const SizedBox(height: 32),
-            if (onPreviewRegistryWork != null)
+            if (FeatureFlags.showDiscoveryHome) ...[
+              const SizedBox(height: 32),
+              HomeDashboardDiscoverySection(
+                vaultItems: vaultItems,
+                userCatalog: userCatalog,
+                linkIndex: linkIndex,
+                onItemTap: _handleItemTap,
+                onOpenEntity: onPreviewEntity,
+                onGoExplore: onGoExplore,
+                onSearch: onSearch,
+                onConnectSuggested: onConnectSuggested,
+                onOpenRecord: onOpenRecordFromHome,
+              ),
+            ],
+            if (FeatureFlags.showHomeUniverseSection) ...[
+              const SizedBox(height: 32),
+              HomeDashboardUniverseSection(
+                vaultItems: vaultItems,
+                userCatalog: userCatalog,
+                selectedPreviewItem: previewItem,
+                onItemTap: _handleItemTap,
+                onSearch: onSearch,
+              ),
+            ],
+            if (onPreviewRegistryWork != null) ...[
+              const SizedBox(height: 32),
               HomeDashboardRegistryBridgeSection(
                 vaultItems: vaultItems,
                 userCatalog: userCatalog,
                 linkIndex: linkIndex,
                 onPreviewRegistryWork: onPreviewRegistryWork!,
               ),
-            if (onPreviewRegistryWork != null) const SizedBox(height: 32),
+            ],
+            const SizedBox(height: 32),
             HomeDashboardQuickActionsSection(
               onSearch: onSearch,
               onExploreEntities: () =>
