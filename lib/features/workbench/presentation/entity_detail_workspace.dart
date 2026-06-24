@@ -29,6 +29,8 @@ import '../../../screens/home/views/preview_record_view_model.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_link_pick_ops.dart';
 import 'workbench_link_pick_ops.dart';
+import 'entity_detail_vault_sync.dart';
+import 'work_detail_vault_sync.dart';
 import 'entity_detail_connections_panel.dart';
 import 'entity_detail_info_panel.dart';
 import 'workbench_autosave_scheduler.dart';
@@ -130,6 +132,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   bool _suppressPersist = false;
   DateTime? _lastSavedAt;
   final WorkbenchAutosaveScheduler _autosave = WorkbenchAutosaveScheduler();
+  StreamSubscription<void>? _vaultSub;
+  final WorkbenchVaultDiskSync _vaultDiskSync = WorkbenchVaultDiskSync();
 
   List<String> _incomingPaths = const [];
   bool _loadingIncoming = false;
@@ -138,6 +142,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   bool _loadingSameDay = false;
   EntityLinkNeighbors _linkNeighbors = const EntityLinkNeighbors();
   bool _loadingLinkNeighbors = false;
+
+  bool get _externalChangePending => _vaultDiskSync.externalChangePending;
 
   EntityItem _buildEntityItem(UserCatalogEntity entity, EntityJournalEntry? journal) {
     return EntityItem(
@@ -191,12 +197,83 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         ? SanctumPageView.body
         : SanctumPageView.preview;
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
+    _vaultSub = AkashaFileService().onVaultUpdated.listen((_) {
+      _onVaultDiskChanged();
+    });
+    _refreshDiskMtime();
     _loadIncoming();
     _loadSameDay();
     _loadLinkNeighbors();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _maybeRunPendingEntityLinkPick();
     });
+  }
+
+  void _refreshDiskMtime() =>
+      _vaultDiskSync.refreshDiskMtime(_journal?.storagePath);
+
+  Future<void> _onVaultDiskChanged() async {
+    if (!mounted) return;
+    final action = _vaultDiskSync.evaluateFileChange(
+      filePath: _journal?.storagePath,
+      isSaving: _isSaving,
+      isDirty: widget.isDirty,
+    );
+    switch (action) {
+      case VaultDiskChangeAction.noOp:
+        return;
+      case VaultDiskChangeAction.promptReload:
+        if (mounted) setState(() {});
+        return;
+      case VaultDiskChangeAction.reload:
+        await _reloadFromDisk(silent: true);
+    }
+  }
+
+  void _applyJournalFromEntry(EntityJournalEntry entry) {
+    _journal = entry;
+    _entity = _entity.copyWith(
+      title: entry.title,
+      tags: entry.tags,
+      posterPath: entry.posterPath,
+    );
+    _draftTags = List<String>.from(entry.tags);
+    _bodyCtrl.text = entry.body;
+    _posterUrlCtrl.text = entry.posterPath ?? '';
+    _item = _buildEntityItem(_entity, _journal);
+    _preview = _item;
+    _fileCtrl.text = _serializeFile();
+    _refreshDiskMtime();
+    _loadLinkNeighbors();
+  }
+
+  Future<void> _reloadFromDisk({bool silent = false}) async {
+    final path = _journal?.storagePath;
+    if (path == null || path.isEmpty) return;
+    try {
+      final parsed = await EntityDetailVaultSync.loadJournalFromDisk(path);
+      if (parsed == null) {
+        throw StateError('journal parse failed');
+      }
+      if (!mounted) return;
+      setState(() => _vaultDiskSync.externalChangePending = false);
+      _applyJournalFromEntry(parsed);
+      widget.onDirtyChanged(false);
+      widget.onSaved(_entity, parsed, silent: true);
+      if (!silent && mounted) {
+        _showSnack('디스크에서 journal을 다시 불러왔습니다.');
+      }
+    } catch (e) {
+      if (mounted && !silent) {
+        _showSnack('journal 다시 불러오기 실패: $e');
+      }
+    }
+  }
+
+  void _dismissExternalChange() {
+    setState(
+      () => _vaultDiskSync.dismissExternalChange(_journal?.storagePath),
+    );
   }
 
   Future<void> _maybeRunPendingEntityLinkPick() async {
@@ -393,6 +470,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();
+      _refreshDiskMtime();
       return;
     }
     if (!widget.isDirty &&
@@ -409,6 +487,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();
+      _refreshDiskMtime();
     }
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
@@ -502,6 +581,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       );
     }
     widget.onBindSave(null);
+    _vaultSub?.cancel();
     _bodyCtrl.dispose();
     _fileCtrl.dispose();
     _posterUrlCtrl.dispose();
@@ -590,6 +670,7 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       _loadIncoming();
       _loadSameDay();
       _loadLinkNeighbors();
+      _refreshDiskMtime();
       if (!silent) {
         _showSnack(EntityDetailArchiveOps.saveSuccessMessage(mirrored));
       }
@@ -849,6 +930,9 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                           mdFilePath: _journal?.storagePath,
                           isDirty: widget.isDirty,
                           isSaving: _isSaving,
+                          externalChangePending: _externalChangePending,
+                          onReloadFromDisk: () => _reloadFromDisk(),
+                          onDismissExternalChange: _dismissExternalChange,
                           lastSavedAt: _lastSavedAt,
                           bodyController: _bodyCtrl,
                           fileController: _fileCtrl,

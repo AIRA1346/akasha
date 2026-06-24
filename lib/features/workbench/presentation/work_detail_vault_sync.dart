@@ -9,8 +9,8 @@ enum VaultDiskChangeAction {
   reload,
 }
 
-/// Work journal vault 파일 mtime 추적·외부 변경 판별.
-class WorkDetailVaultDiskSync {
+/// Work·Entity journal vault 파일 mtime 추적·외부 변경 판별.
+class WorkbenchVaultDiskSync {
   DateTime? diskMtime;
   bool externalChangePending = false;
 
@@ -65,3 +65,6 @@ class WorkDetailVaultDiskSync {
     refreshDiskMtime(filePath);
   }
 }
+
+/// @deprecated Use [WorkbenchVaultDiskSync].
+typedef WorkDetailVaultDiskSync = WorkbenchVaultDiskSync;
