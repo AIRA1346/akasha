@@ -166,6 +166,12 @@ class HomeShellBody extends StatelessWidget {
   final VoidCallback onClearPendingWorkEntityLink;
   final void Function(EntityAnchorType type) onConnectEntityFromPreview;
   final VoidCallback onConnectWorkFromPreview;
+  final EntityAnchorType? pendingEntityEntityLinkType;
+  final String? pendingEntityLinkEntityId;
+  final bool pendingEntityWorkLinkPick;
+  final VoidCallback onClearPendingEntityLink;
+  final void Function(EntityAnchorType type) onConnectEntityFromEntityPreview;
+  final VoidCallback onConnectWorkFromEntityPreview;
   final void Function(LinkCandidate candidate) onConnectSuggestedFromPreview;
   final void Function(LinkCandidate candidate, AkashaItem work)
       onConnectSuggestedFromHome;
@@ -274,6 +280,12 @@ class HomeShellBody extends StatelessWidget {
     required this.onClearPendingWorkEntityLink,
     required this.onConnectEntityFromPreview,
     required this.onConnectWorkFromPreview,
+    this.pendingEntityEntityLinkType,
+    this.pendingEntityLinkEntityId,
+    this.pendingEntityWorkLinkPick = false,
+    required this.onClearPendingEntityLink,
+    required this.onConnectEntityFromEntityPreview,
+    required this.onConnectWorkFromEntityPreview,
     required this.onConnectSuggestedFromPreview,
     required this.onConnectSuggestedFromHome,
     required this.onGraphOpenRecord,
@@ -398,6 +410,10 @@ class HomeShellBody extends StatelessWidget {
                         pendingWorkLinkPick: pendingWorkLinkPick,
                         onPendingWorkEntityLinkHandled:
                             onClearPendingWorkEntityLink,
+                        pendingEntityEntityLinkType: pendingEntityEntityLinkType,
+                        pendingEntityLinkEntityId: pendingEntityLinkEntityId,
+                        pendingEntityWorkLinkPick: pendingEntityWorkLinkPick,
+                        onClearPendingEntityLink: onClearPendingEntityLink,
                         onRecordOpenWork: onOpenBrowseItem,
                         onRecordOpenEntity: onOpenEntity,
                         browseContent: isTimelineMode
@@ -493,6 +509,8 @@ class HomeShellBody extends StatelessWidget {
                   onOpenWork: onPreviewLinkedWork,
                   onGoKnowledgeGraph: () => onGoKnowledgeGraph(),
                   onPreviewRegistryWork: onPreviewRegistryWork,
+                  onConnectEntityType: onConnectEntityFromEntityPreview,
+                  onConnectWork: onConnectWorkFromEntityPreview,
                 ),
             ],
           ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
 import '../utils/entity_link_neighbors.dart';
-import 'poster_image.dart';
 import 'work_link_neighbors_sections.dart';
 
-/// Entity 프리뷰·패널 공통 — 연결 섹션.
+/// Entity 프리뷰·워크벤치 공통 — 연결 섹션 (WorkLinkNeighborsSections와 동일 UX).
 class EntityLinkNeighborsSections extends StatelessWidget {
   const EntityLinkNeighborsSections({
     super.key,
@@ -18,6 +18,10 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     this.onOpenWork,
     this.onRecordCta,
     this.sectionTitleStyle,
+    this.showEmptySections = true,
+    this.workbenchLayout = false,
+    this.onAddEntity,
+    this.onAddWork,
   });
 
   final EntityLinkNeighbors neighbors;
@@ -27,6 +31,10 @@ class EntityLinkNeighborsSections extends StatelessWidget {
   final void Function(AkashaItem work)? onOpenWork;
   final VoidCallback? onRecordCta;
   final TextStyle? sectionTitleStyle;
+  final bool showEmptySections;
+  final bool workbenchLayout;
+  final void Function(EntityAnchorType type)? onAddEntity;
+  final VoidCallback? onAddWork;
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +51,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
       );
     }
 
-    final titleStyle = sectionTitleStyle ??
-        const TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        );
+    final titleStyle = sectionTitleStyle ?? _defaultSectionTitle;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -71,7 +74,8 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           title: '연결된 작품',
           isEmpty: neighbors.connectedWorks.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 연결된 작품이 없습니다.',
+          onAdd: onAddWork,
+          addLabel: '작품 추가',
           child: neighbors.connectedWorks.isEmpty
               ? null
               : WorkLinkConnectedWorksList(
@@ -83,19 +87,30 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           title: '연결된 인물',
           isEmpty: neighbors.persons.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 연결된 인물이 없습니다.',
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.person),
+          addLabel: '인물 추가',
           child: neighbors.persons.isEmpty
               ? null
-              : WorkLinkCharacterRow(
-                  characters: neighbors.persons,
-                  onOpenEntity: onOpenEntity,
-                ),
+              : workbenchLayout
+                  ? WorkLinkCharacterWorkbenchList(
+                      characters: neighbors.persons,
+                      onOpenEntity: onOpenEntity,
+                    )
+                  : WorkLinkCharacterRow(
+                      characters: neighbors.persons,
+                      onOpenEntity: onOpenEntity,
+                    ),
         ),
         _section(
           title: '관련 사건',
           isEmpty: neighbors.events.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 관련 사건이 없습니다.',
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.event),
+          addLabel: '사건 추가',
           child: neighbors.events.isEmpty
               ? null
               : _EntityChipList(
@@ -107,7 +122,10 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           title: '관련 개념',
           isEmpty: neighbors.concepts.isEmpty && entityTags.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 관련 개념이 없습니다.',
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.concept),
+          addLabel: '개념 추가',
           child: neighbors.concepts.isEmpty && entityTags.isEmpty
               ? null
               : Column(
@@ -136,7 +154,10 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           title: '관련 장소',
           isEmpty: neighbors.places.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 관련 장소가 없습니다.',
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.place),
+          addLabel: '장소 추가',
           child: neighbors.places.isEmpty
               ? null
               : _EntityChipList(
@@ -148,7 +169,10 @@ class EntityLinkNeighborsSections extends StatelessWidget {
           title: '관련 조직',
           isEmpty: neighbors.organizations.isEmpty,
           titleStyle: titleStyle,
-          emptyMessage: '아직 관련 조직이 없습니다.',
+          onAdd: onAddEntity == null
+              ? null
+              : () => onAddEntity!(EntityAnchorType.organization),
+          addLabel: '조직 추가',
           child: neighbors.organizations.isEmpty
               ? null
               : _EntityChipList(
@@ -164,21 +188,43 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     required String title,
     required bool isEmpty,
     required TextStyle titleStyle,
-    required String emptyMessage,
     Widget? child,
+    VoidCallback? onAdd,
+    String addLabel = '추가',
   }) {
+    if (!showEmptySections && isEmpty) return const SizedBox.shrink();
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(title, style: titleStyle),
+          Row(
+            children: [
+              Expanded(child: Text(title, style: titleStyle)),
+              if (onAdd != null)
+                TextButton.icon(
+                  onPressed: onAdd,
+                  icon: const Icon(Icons.add, size: 14),
+                  label: Text(
+                    addLabel,
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  style: TextButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    foregroundColor: AkashaColors.accent,
+                  ),
+                ),
+            ],
+          ),
           const SizedBox(height: 8),
           if (isEmpty)
-            _EmptyLinkCta(
-              message: emptyMessage,
-              ctaLabel: '기록에서 [[링크]] 추가하기',
-              onPressed: onRecordCta,
+            _EmptySectionHint(
+              message: '아직 $title 연결이 없습니다.',
+              onOpenRecord: onRecordCta,
             )
           else
             child!,
@@ -186,18 +232,22 @@ class EntityLinkNeighborsSections extends StatelessWidget {
       ),
     );
   }
+
+  static const _defaultSectionTitle = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 }
 
-class _EmptyLinkCta extends StatelessWidget {
-  const _EmptyLinkCta({
+class _EmptySectionHint extends StatelessWidget {
+  const _EmptySectionHint({
     required this.message,
-    required this.ctaLabel,
-    this.onPressed,
+    this.onOpenRecord,
   });
 
   final String message;
-  final String ctaLabel;
-  final VoidCallback? onPressed;
+  final VoidCallback? onOpenRecord;
 
   @override
   Widget build(BuildContext context) {
@@ -208,33 +258,9 @@ class _EmptyLinkCta extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(message, style: TextStyle(fontSize: 10, color: Colors.grey[500])),
-          if (onPressed != null) ...[
-            const SizedBox(height: 6),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton(
-                onPressed: onPressed,
-                style: TextButton.styleFrom(
-                  visualDensity: VisualDensity.compact,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(
-                  ctaLabel,
-                  style: const TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ],
+      child: Text(
+        message,
+        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
       ),
     );
   }

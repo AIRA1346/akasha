@@ -40,6 +40,10 @@ class WorkbenchShell extends StatefulWidget {
     this.pendingWorkEntityLinkCandidate,
     this.pendingWorkLinkPick = false,
     this.onPendingWorkEntityLinkHandled,
+    this.pendingEntityEntityLinkType,
+    this.pendingEntityLinkEntityId,
+    this.pendingEntityWorkLinkPick = false,
+    this.onClearPendingEntityLink,
     this.onRecordOpenWork,
     this.onRecordOpenEntity,
   });
@@ -70,6 +74,10 @@ class WorkbenchShell extends StatefulWidget {
   final LinkCandidate? pendingWorkEntityLinkCandidate;
   final bool pendingWorkLinkPick;
   final VoidCallback? onPendingWorkEntityLinkHandled;
+  final EntityAnchorType? pendingEntityEntityLinkType;
+  final String? pendingEntityLinkEntityId;
+  final bool pendingEntityWorkLinkPick;
+  final VoidCallback? onClearPendingEntityLink;
   final void Function(AkashaItem item)? onRecordOpenWork;
   final Future<void> Function(UserCatalogEntity entity)? onRecordOpenEntity;
 
@@ -274,6 +282,10 @@ class _WorkbenchShellState extends State<WorkbenchShell> {
                     onRecordOpenWork: widget.onRecordOpenWork,
                     onRecordOpenEntity: widget.onRecordOpenEntity,
                     onClose: () => _handleCloseTab(active.id),
+                    pendingEntityLinkType: widget.pendingEntityEntityLinkType,
+                    pendingEntityLinkEntityId: widget.pendingEntityLinkEntityId,
+                    pendingEntityWorkLinkPick: widget.pendingEntityWorkLinkPick,
+                    onPendingEntityLinkHandled: widget.onClearPendingEntityLink,
                   ),
               };
             },

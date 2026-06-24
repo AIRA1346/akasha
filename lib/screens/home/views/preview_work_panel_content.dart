@@ -1,63 +1,39 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/akasha_item.dart';
-import '../../../services/works_registry.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../widgets/poster_image.dart';
+import 'preview_record_view_model.dart';
 
-/// mock 우측 패널 — 히어로 · 제목 · 메타 · 핵심 정보.
-class PreviewWorkHero extends StatelessWidget {
-  const PreviewWorkHero({super.key, required this.item});
+/// 우측 패널 히어로·제목·메타 (Work·Entity 공통). 실데이터 [PreviewRecordViewModel] 연동.
+class PreviewRecordHero extends StatelessWidget {
+  const PreviewRecordHero({super.key, required this.model});
 
-  final AkashaItem item;
+  final PreviewRecordViewModel model;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: AspectRatio(
-        aspectRatio: 16 / 9,
-        child: PosterImage(item: item, fit: BoxFit.cover),
+        aspectRatio: model.heroAspectRatio,
+        child: PosterImage(item: model.posterItem, fit: BoxFit.cover),
       ),
     );
   }
 }
 
-class PreviewWorkTitleBlock extends StatelessWidget {
-  const PreviewWorkTitleBlock({super.key, required this.item});
+class PreviewRecordTitleBlock extends StatelessWidget {
+  const PreviewRecordTitleBlock({super.key, required this.model});
 
-  final AkashaItem item;
-
-  String? get _alternateTitle {
-    final registry = WorksRegistry.getWorkById(item.workId);
-    if (registry == null) return null;
-    for (final tag in const ['ja', 'native', 'romaji', 'en']) {
-      final title = registry.titles[tag];
-      if (title != null && title.isNotEmpty && title != item.title) {
-        return title;
-      }
-    }
-    return null;
-  }
-
-  String get _metaLine {
-    final parts = <String>[
-      if (item.releaseYear != null) '${item.releaseYear}',
-      item.category.label,
-      if (item.workStatusLabel.isNotEmpty) item.workStatusLabel,
-    ];
-    return parts.join(' · ');
-  }
+  final PreviewRecordViewModel model;
 
   @override
   Widget build(BuildContext context) {
-    final alt = _alternateTitle;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          item.title,
+          model.title,
           style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.bold,
@@ -65,16 +41,20 @@ class PreviewWorkTitleBlock extends StatelessWidget {
             height: 1.25,
           ),
         ),
-        if (alt != null) ...[
+        if (model.subtitle != null) ...[
           const SizedBox(height: 4),
           Text(
-            alt,
-            style: TextStyle(fontSize: 11, color: Colors.grey[500], height: 1.3),
+            model.subtitle!,
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.grey[500],
+              height: 1.3,
+            ),
           ),
         ],
         const SizedBox(height: 6),
         Text(
-          _metaLine,
+          model.metaLine,
           style: TextStyle(fontSize: 11, color: Colors.grey[500]),
         ),
       ],
@@ -82,8 +62,8 @@ class PreviewWorkTitleBlock extends StatelessWidget {
   }
 }
 
-class PreviewWorkActionBar extends StatelessWidget {
-  const PreviewWorkActionBar({
+class PreviewRecordActionBar extends StatelessWidget {
+  const PreviewRecordActionBar({
     super.key,
     required this.onOpenDetail,
     this.canGoBack = false,
@@ -139,78 +119,13 @@ class PreviewWorkActionBar extends StatelessWidget {
   }
 }
 
-class PreviewCoreInfoSection extends StatelessWidget {
-  const PreviewCoreInfoSection({super.key, required this.item});
+class PreviewRecordCoreInfoSection extends StatelessWidget {
+  const PreviewRecordCoreInfoSection({super.key, required this.rows});
 
-  final AkashaItem item;
-
-  String get _genre {
-    if (item.tags.isNotEmpty) return item.tags.first;
-    return item.category.label;
-  }
-
-  String get _studio {
-    final registry = WorksRegistry.getWorkById(item.workId);
-    final ext = registry?.extensions;
-    if (ext != null) {
-      for (final key in const ['studio', 'production', 'studioName', 'publisher']) {
-        final value = ext[key];
-        if (value != null && value.toString().trim().isNotEmpty) {
-          return value.toString();
-        }
-      }
-    }
-    return '정보 없음';
-  }
+  final List<PreviewCoreInfoRow> rows;
 
   @override
   Widget build(BuildContext context) {
-    final rows = <_CoreInfoRow>[
-      _CoreInfoRow(
-        icon: Icons.category_outlined,
-        label: '장르',
-        value: _genre,
-      ),
-      _CoreInfoRow(
-        icon: Icons.auto_stories_outlined,
-        label: '원작',
-        value: item.creator.isNotEmpty ? item.creator : '정보 없음',
-      ),
-      _CoreInfoRow(
-        icon: Icons.business_outlined,
-        label: '제작사',
-        value: _studio,
-      ),
-      _CoreInfoRow(
-        icon: Icons.star_rounded,
-        label: '평점',
-        valueWidget: item.rating > 0
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.star, size: 12, color: Colors.amber[600]),
-                  const SizedBox(width: 4),
-                  Text(
-                    item.rating.toStringAsFixed(1),
-                    style: const TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    ' / 10',
-                    style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                  ),
-                ],
-              )
-            : Text(
-                '평가 없음',
-                style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-              ),
-      ),
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -239,7 +154,7 @@ class PreviewCoreInfoSection extends StatelessWidget {
                     height: 12,
                     color: Colors.white.withValues(alpha: 0.05),
                   ),
-                rows[i],
+                _CoreInfoRowWidget(row: rows[i]),
               ],
             ],
           ),
@@ -249,37 +164,29 @@ class PreviewCoreInfoSection extends StatelessWidget {
   }
 }
 
-class _CoreInfoRow extends StatelessWidget {
-  const _CoreInfoRow({
-    required this.icon,
-    required this.label,
-    this.value,
-    this.valueWidget,
-  });
+class _CoreInfoRowWidget extends StatelessWidget {
+  const _CoreInfoRowWidget({required this.row});
 
-  final IconData icon;
-  final String label;
-  final String? value;
-  final Widget? valueWidget;
+  final PreviewCoreInfoRow row;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 14, color: Colors.grey[600]),
+        Icon(row.icon, size: 14, color: Colors.grey[600]),
         const SizedBox(width: 8),
         SizedBox(
           width: 42,
           child: Text(
-            label,
+            row.label,
             style: TextStyle(fontSize: 10, color: Colors.grey[600]),
           ),
         ),
         Expanded(
-          child: valueWidget ??
+          child: row.valueWidget ??
               Text(
-                value ?? '',
+                row.value ?? '',
                 style: const TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
@@ -314,3 +221,6 @@ class PreviewSectionHeader extends StatelessWidget {
     );
   }
 }
+
+// ── 레거시 import 호환 (dashboard_preview_panel 등) ──
+// Work·Entity 모두 PreviewRecord* 위젯 + PreviewRecordViewModel 사용.

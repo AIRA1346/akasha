@@ -232,6 +232,15 @@ class HomeShellScaffold extends StatelessWidget {
                   controller.openWorkFromPreviewToConnect,
               onConnectWorkFromPreview:
                   controller.openWorkFromPreviewToConnectWork,
+              pendingEntityEntityLinkType:
+                  controller.pendingEntityEntityLinkType,
+              pendingEntityLinkEntityId: controller.pendingEntityLinkEntityId,
+              pendingEntityWorkLinkPick: controller.pendingEntityWorkLinkPick,
+              onClearPendingEntityLink: controller.clearPendingEntityLink,
+              onConnectEntityFromEntityPreview:
+                  controller.openEntityFromPreviewToConnect,
+              onConnectWorkFromEntityPreview:
+                  controller.openEntityFromPreviewToConnectWork,
               onConnectSuggestedFromPreview:
                   controller.openWorkFromPreviewToConnectSuggested,
               onConnectSuggestedFromHome: controller.connectSuggestedForWork,

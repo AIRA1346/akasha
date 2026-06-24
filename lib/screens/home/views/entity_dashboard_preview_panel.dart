@@ -8,14 +8,16 @@ import '../../../models/akasha_item.dart';
 import '../../../models/registry_work.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../screens/home/coordinators/home_shell_wiring.dart';
-import '../../../screens/home/dialogs/add_catalog_entity_dialog.dart';
-import '../../../theme/akasha_colors.dart';
 import '../../../services/registry_discovery_candidate_service.dart';
+import '../../../theme/akasha_colors.dart';
 import '../../../utils/entity_link_neighbors.dart';
 import '../../../widgets/entity_link_neighbors_sections.dart';
-import '../../../widgets/poster_image.dart';
+import '../../../widgets/entity_preview_empty_connections.dart';
 import '../../../widgets/registry_discovery_candidates_section.dart';
+import 'preview_memo_bar.dart';
 import 'preview_panel_chrome.dart';
+import 'preview_record_view_model.dart';
+import 'preview_work_panel_content.dart';
 
 class EntityDashboardPreviewPanel extends StatefulWidget {
   const EntityDashboardPreviewPanel({
@@ -32,6 +34,8 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
     this.onOpenWork,
     this.onGoKnowledgeGraph,
     this.onPreviewRegistryWork,
+    this.onConnectEntityType,
+    this.onConnectWork,
   });
 
   final UserCatalogEntity entity;
@@ -46,6 +50,8 @@ class EntityDashboardPreviewPanel extends StatefulWidget {
   final void Function(AkashaItem work)? onOpenWork;
   final VoidCallback? onGoKnowledgeGraph;
   final void Function(RegistryWork work)? onPreviewRegistryWork;
+  final void Function(EntityAnchorType type)? onConnectEntityType;
+  final VoidCallback? onConnectWork;
 
   @override
   State<EntityDashboardPreviewPanel> createState() =>
@@ -97,21 +103,62 @@ class _EntityDashboardPreviewPanelState
     );
   }
 
+  Widget _buildConnectionsSection() {
+    return FutureBuilder<EntityLinkNeighbors>(
+      future: _neighborsFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const EntityLinkNeighborsSections(
+            neighbors: EntityLinkNeighbors(),
+            entityTags: [],
+            loading: true,
+          );
+        }
+        final neighbors = snapshot.data ?? const EntityLinkNeighbors();
+        if (!neighbors.hasAnyLink) {
+          return EntityPreviewEmptyConnections(
+            onConnectWork: widget.onConnectWork,
+            onConnectPerson: widget.onConnectEntityType == null
+                ? null
+                : () => widget.onConnectEntityType!(EntityAnchorType.person),
+            onConnectEvent: widget.onConnectEntityType == null
+                ? null
+                : () => widget.onConnectEntityType!(EntityAnchorType.event),
+            onConnectConcept: widget.onConnectEntityType == null
+                ? null
+                : () => widget.onConnectEntityType!(EntityAnchorType.concept),
+            onConnectPlace: widget.onConnectEntityType == null
+                ? null
+                : () => widget.onConnectEntityType!(EntityAnchorType.place),
+            onConnectOrganization: widget.onConnectEntityType == null
+                ? null
+                : () =>
+                    widget.onConnectEntityType!(EntityAnchorType.organization),
+            onOpenRecord: widget.onOpenDetail,
+          );
+        }
+        return EntityLinkNeighborsSections(
+          neighbors: neighbors,
+          entityTags: widget.entity.tags,
+          showEmptySections: false,
+          onOpenEntity: widget.onOpenEntity,
+          onOpenWork: widget.onOpenWork,
+          onAddEntity: widget.onConnectEntityType,
+          onAddWork: widget.onConnectWork,
+          sectionTitleStyle: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey[400],
+            letterSpacing: 0.2,
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final badge = entityTypeBadgeLabel(widget.entity.anchorType);
-    final avatarItem = EntityItem(
-      entityType: widget.entity.anchorType,
-      entityId: widget.entity.entityId,
-      title: widget.entity.title,
-      category: widget.entity.subtype,
-      domain: widget.entity.domain,
-      creator: widget.entity.creator,
-      releaseYear: widget.entity.releaseYear,
-      posterPath: widget.entity.posterPath,
-      tags: widget.entity.tags,
-      addedAt: widget.entity.addedAt,
-    );
+    final record = PreviewRecordViewModel.fromEntity(widget.entity);
 
     return Container(
       width: 320,
@@ -121,99 +168,83 @@ class _EntityDashboardPreviewPanelState
           left: BorderSide(color: Colors.white.withValues(alpha: 0.08)),
         ),
       ),
-      child: PreviewPanelChrome(
-        typeLabel: badge,
-        title: widget.entity.title,
-        canGoBack: widget.canGoBack,
-        onBack: widget.onBack,
-        onClose: widget.onClose,
-        onOpenDetail: widget.onOpenDetail,
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: SizedBox(
-                    width: 96,
-                    height: 96,
-                    child: PosterImage(item: avatarItem, fit: BoxFit.cover),
-                  ),
-                ),
-              ),
-              if (widget.entity.aliases.isNotEmpty) ...[
-                const SizedBox(height: 10),
-                Text(
-                  widget.entity.aliases.join(' · '),
-                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-                ),
-              ],
-              const SizedBox(height: 16),
-              Text(
-                '연결',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[400],
-                ),
-              ),
-              const SizedBox(height: 8),
-              FutureBuilder<EntityLinkNeighbors>(
-                future: _neighborsFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const EntityLinkNeighborsSections(
-                      neighbors: EntityLinkNeighbors(),
-                      entityTags: [],
-                      loading: true,
-                    );
-                  }
-                  final neighbors =
-                      snapshot.data ?? const EntityLinkNeighbors();
-                  return EntityLinkNeighborsSections(
-                    neighbors: neighbors,
-                    entityTags: widget.entity.tags,
-                    onOpenEntity: widget.onOpenEntity,
-                    onOpenWork: widget.onOpenWork,
-                    onRecordCta: widget.onOpenDetail,
-                  );
-                },
-              ),
-              FutureBuilder<List<RegistryDiscoveryCandidate>>(
-                future: _registryFuture,
-                builder: (context, registrySnap) {
-                  return RegistryDiscoveryCandidatesSection(
-                    candidates: registrySnap.data ?? const [],
-                    loading: registrySnap.connectionState ==
-                        ConnectionState.waiting,
-                    bridgeHint: widget.entity.title.isNotEmpty
-                        ? '${widget.entity.title} 관련 사전 작품'
-                        : null,
-                    onPreviewRegistryWork: widget.onPreviewRegistryWork,
-                  );
-                },
-              ),
-              if (widget.onGoKnowledgeGraph != null &&
-                  FeatureFlags.showKnowledgeGraph) ...[
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    onPressed: widget.onGoKnowledgeGraph,
-                    icon: const Icon(Icons.list_alt_outlined, size: 14),
-                    label: const Text(
-                      '연결 목록에서 보기',
-                      style: TextStyle(fontSize: 11),
+      child: Column(
+        children: [
+          Expanded(
+            child: PreviewPanelChrome(
+              typeLabel: record.typeLabel,
+              compactHeader: true,
+              canGoBack: widget.canGoBack,
+              onBack: widget.onBack,
+              onClose: widget.onClose,
+              body: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    PreviewRecordHero(model: record),
+                    const SizedBox(height: 14),
+                    PreviewRecordTitleBlock(model: record),
+                    const SizedBox(height: 12),
+                    PreviewRecordActionBar(
+                      onOpenDetail: widget.onOpenDetail,
+                      canGoBack: widget.canGoBack,
+                      onBack: widget.onBack,
                     ),
-                  ),
+                    const SizedBox(height: 18),
+                    PreviewRecordCoreInfoSection(rows: record.coreInfoRows),
+                    const SizedBox(height: 18),
+                    _buildConnectionsSection(),
+                    FutureBuilder<List<RegistryDiscoveryCandidate>>(
+                      future: _registryFuture,
+                      builder: (context, registrySnap) {
+                        return RegistryDiscoveryCandidatesSection(
+                          candidates: registrySnap.data ?? const [],
+                          loading: registrySnap.connectionState ==
+                              ConnectionState.waiting,
+                          bridgeHint: widget.entity.title.isNotEmpty
+                              ? '${widget.entity.title} 관련 사전 작품'
+                              : null,
+                          onPreviewRegistryWork: widget.onPreviewRegistryWork,
+                        );
+                      },
+                    ),
+                    if (widget.onGoKnowledgeGraph != null &&
+                        FeatureFlags.showKnowledgeGraph) ...[
+                      const SizedBox(height: 14),
+                      SizedBox(
+                        width: double.infinity,
+                        child: FilledButton.icon(
+                          onPressed: widget.onGoKnowledgeGraph,
+                          icon: const Icon(Icons.hub_outlined, size: 14),
+                          label: const Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                '그래프에서 보기',
+                                style: TextStyle(fontSize: 11),
+                              ),
+                              Icon(Icons.chevron_right_rounded, size: 16),
+                            ],
+                          ),
+                          style: FilledButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 11),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 8),
+                  ],
                 ),
-              ],
-              const SizedBox(height: 16),
-            ],
+              ),
+            ),
           ),
-        ),
+          if (FeatureFlags.showPreviewMemoBar)
+            PreviewMemoBar(onOpenDetail: widget.onOpenDetail),
+        ],
       ),
     );
   }

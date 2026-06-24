@@ -54,6 +54,10 @@ EntityItem _entityAsItem(UserCatalogEntity entity) {
     title: entity.title,
     category: entity.subtype,
     domain: entity.domain,
+    creator: entity.creator,
+    releaseYear: entity.releaseYear,
+    posterPath: entity.posterPath,
+    tags: List<String>.from(entity.tags),
     addedAt: entity.addedAt,
   );
 }

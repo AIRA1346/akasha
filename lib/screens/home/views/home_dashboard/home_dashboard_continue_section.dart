@@ -4,6 +4,7 @@ import '../../../../models/akasha_item.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../utils/exploration_progress.dart';
 import '../../../../widgets/poster_image.dart';
+import '../../../home/views/preview_record_view_model.dart';
 import 'home_dashboard_styles.dart';
 
 class HomeDashboardContinueSection extends StatelessWidget {
@@ -115,6 +116,13 @@ class _ExploreCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final progress = explorationProgress(item);
     final progressLabel = explorationProgressPercent(item);
+    final badgeLabel = switch (item) {
+      EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
+      _ => item.category.label,
+    };
+    final badgeColor = item is EntityItem
+        ? HomeDashboardStyles.categoryColorFor(badgeLabel)
+        : HomeDashboardStyles.categoryColor(item);
 
     return Container(
       width: 145,
@@ -160,12 +168,11 @@ class _ExploreCard extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
-                          color: HomeDashboardStyles.categoryColor(item)
-                              .withValues(alpha: 0.85),
+                          color: badgeColor.withValues(alpha: 0.85),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Text(
-                          item.category.name,
+                          badgeLabel,
                           style: const TextStyle(
                             fontSize: 9,
                             fontWeight: FontWeight.bold,
