@@ -1,24 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/archiving/entity_anchor.dart';
+import '../../../../core/ports/user_catalog_port.dart';
+import '../../../../models/akasha_item.dart';
 import '../../../../models/entity_link_selection.dart';
+import '../../../../models/enums.dart';
 import '../../../../models/sanctum_cast_entry.dart';
+import '../../../../models/sanctum_gallery_entry.dart';
 import '../../../../services/markdown_body_merger.dart';
+import '../../../../services/sanctum_image_import.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_radius.dart';
 import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/markdown_edit_actions.dart';
+import '../../../../utils/vault_asset_resolver.dart';
+import '../../../../widgets/poster_image.dart';
+import '../../../../widgets/safe_local_image.dart';
 
-/// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (출연 · 설명 · 감상 · 명장면). 본문 md와 동기화.
+/// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (출연 · 갤러리 · 설명 · 감상 · 명장면). 본문 md와 동기화.
 class WorkSanctumSectionEditor extends StatefulWidget {
   const WorkSanctumSectionEditor({
     super.key,
     required this.bodyController,
     required this.onChanged,
+    this.userCatalog,
   });
 
   final TextEditingController bodyController;
   final VoidCallback onChanged;
+  final UserCatalogPort? userCatalog;
 
   @override
   State<WorkSanctumSectionEditor> createState() =>
@@ -30,6 +41,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
   late final TextEditingController _memoCtrl;
   late final TextEditingController _quotesCtrl;
   List<SanctumCastEntry> _castEntries = [];
+  List<SanctumGalleryEntry> _galleryEntries = [];
   var _quotesExpanded = false;
   var _flushLock = false;
 
@@ -102,6 +114,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     _flushLock = true;
     final slots = MarkdownBodyMerger.parseSlots(widget.bodyController.text);
     _castEntries = List<SanctumCastEntry>.from(slots.cast);
+    _galleryEntries = List<SanctumGalleryEntry>.from(slots.gallery);
     _synopsisCtrl.text = slots.synopsis;
     _memoCtrl.text = slots.memo;
     _quotesCtrl.text = slots.quotes.join('\n');
@@ -122,6 +135,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     final merged = MarkdownBodyMerger.mergeBody(
       bodyRaw: widget.bodyController.text,
       cast: _castEntries,
+      gallery: _galleryEntries,
       synopsis: _synopsisCtrl.text,
       quotes: quotes,
       memo: _memoCtrl.text,
@@ -154,6 +168,40 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     widget.onChanged();
   }
 
+  Future<void> _addGalleryImage() async {
+    if (!SanctumImageImport.canImport) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('이미지 추가는 Sanctum 볼트 연결 후 사용할 수 있습니다.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
+
+    final path = await SanctumImageImport.pickAndImport();
+    if (!mounted || path == null) return;
+
+    setState(() {
+      _galleryEntries = [
+        ..._galleryEntries,
+        SanctumGalleryEntry(imagePath: path),
+      ];
+    });
+    _flushToBody();
+    widget.onChanged();
+  }
+
+  void _removeGalleryEntry(int index) {
+    setState(() {
+      _galleryEntries = List<SanctumGalleryEntry>.from(_galleryEntries)
+        ..removeAt(index);
+    });
+    _flushToBody();
+    widget.onChanged();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -163,8 +211,15 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
         children: [
           _CastSection(
             entries: _castEntries,
+            userCatalog: widget.userCatalog,
             onRoleChanged: _updateCastRole,
             onRemove: _removeCastEntry,
+          ),
+          const SizedBox(height: AkashaSpacing.md),
+          _GallerySection(
+            entries: _galleryEntries,
+            onAdd: _addGalleryImage,
+            onRemove: _removeGalleryEntry,
           ),
           const SizedBox(height: AkashaSpacing.md),
           _SectionCard(
@@ -197,11 +252,13 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
 class _CastSection extends StatelessWidget {
   const _CastSection({
     required this.entries,
+    this.userCatalog,
     required this.onRoleChanged,
     required this.onRemove,
   });
 
   final List<SanctumCastEntry> entries;
+  final UserCatalogPort? userCatalog;
   final void Function(int index, String role) onRoleChanged;
   final void Function(int index) onRemove;
 
@@ -240,6 +297,7 @@ class _CastSection extends StatelessWidget {
                   ),
                   child: _CastEntryRow(
                     entry: entry,
+                    userCatalog: userCatalog,
                     onRoleChanged: (role) => onRoleChanged(index, role),
                     onRemove: () => onRemove(index),
                   ),
@@ -255,11 +313,13 @@ class _CastSection extends StatelessWidget {
 class _CastEntryRow extends StatefulWidget {
   const _CastEntryRow({
     required this.entry,
+    this.userCatalog,
     required this.onRoleChanged,
     required this.onRemove,
   });
 
   final SanctumCastEntry entry;
+  final UserCatalogPort? userCatalog;
   final ValueChanged<String> onRoleChanged;
   final VoidCallback onRemove;
 
@@ -293,6 +353,29 @@ class _CastEntryRowState extends State<_CastEntryRow> {
 
   @override
   Widget build(BuildContext context) {
+    final catalogEntity = widget.userCatalog?.getById(widget.entry.entityId);
+    final avatarItem = catalogEntity != null
+        ? EntityItem(
+            entityType: catalogEntity.anchorType,
+            entityId: catalogEntity.entityId,
+            title: catalogEntity.title,
+            category: catalogEntity.subtype,
+            domain: catalogEntity.domain,
+            creator: catalogEntity.creator,
+            releaseYear: catalogEntity.releaseYear,
+            posterPath: catalogEntity.posterPath,
+            tags: catalogEntity.tags,
+            addedAt: catalogEntity.addedAt,
+          )
+        : EntityItem(
+            entityType: EntityAnchorType.person,
+            entityId: widget.entry.entityId,
+            title: widget.entry.title,
+            category: MediaCategory.book,
+            domain: AppDomain.subculture,
+            addedAt: DateTime.now(),
+          );
+
     return DecoratedBox(
       decoration: BoxDecoration(
         color: AkashaColors.workbenchEditor,
@@ -303,6 +386,14 @@ class _CastEntryRowState extends State<_CastEntryRow> {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         child: Row(
           children: [
+            ClipOval(
+              child: SizedBox(
+                width: 36,
+                height: 36,
+                child: PosterImage(item: avatarItem, fit: BoxFit.cover),
+              ),
+            ),
+            const SizedBox(width: 10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -347,6 +438,115 @@ class _CastEntryRowState extends State<_CastEntryRow> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _GallerySection extends StatelessWidget {
+  const _GallerySection({
+    required this.entries,
+    required this.onAdd,
+    required this.onRemove,
+  });
+
+  final List<SanctumGalleryEntry> entries;
+  final VoidCallback onAdd;
+  final void Function(int index) onRemove;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AkashaColors.surface.withValues(alpha: 0.35),
+        borderRadius: AkashaRadius.mdBorder,
+        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(AkashaSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.photo_library_outlined,
+                    size: 16, color: AkashaColors.accent),
+                const SizedBox(width: AkashaSpacing.sm),
+                Text('갤러리', style: AkashaTypography.sectionTitle),
+                const Spacer(),
+                TextButton.icon(
+                  onPressed: onAdd,
+                  icon: const Icon(Icons.add_photo_alternate_outlined, size: 16),
+                  label: const Text('이미지 추가', style: TextStyle(fontSize: 11)),
+                  style: TextButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    foregroundColor: AkashaColors.accent,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: AkashaSpacing.sm),
+            if (entries.isEmpty)
+              Text(
+                '스크린샷·콜라주를 추가하면 미리보기 상단에 갤러리로 표시됩니다.',
+                style: AkashaTypography.bodySecondary,
+              )
+            else
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(entries.length, (index) {
+                    final entry = entries[index];
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        right: index == entries.length - 1 ? 0 : 8,
+                      ),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          ClipRRect(
+                            borderRadius: AkashaRadius.smBorder,
+                            child: SizedBox(
+                              width: 96,
+                              height: 72,
+                              child: _galleryThumb(entry.imagePath),
+                            ),
+                          ),
+                          Positioned(
+                            top: -6,
+                            right: -6,
+                            child: Material(
+                              color: AkashaColors.workbenchPanel,
+                              shape: const CircleBorder(),
+                              child: InkWell(
+                                onTap: () => onRemove(index),
+                                customBorder: const CircleBorder(),
+                                child: const Padding(
+                                  padding: EdgeInsets.all(2),
+                                  child: Icon(Icons.close, size: 14),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _galleryThumb(String imagePath) {
+    final local = VaultAssetResolver.resolveImageFile(imagePath);
+    if (local != null) {
+      return SafeLocalImage(file: local, fit: BoxFit.cover);
+    }
+    return ColoredBox(
+      color: AkashaColors.workbenchEditor,
+      child: Icon(Icons.broken_image, color: Colors.grey[600]),
     );
   }
 }

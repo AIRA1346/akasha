@@ -1,11 +1,11 @@
 import 'dart:ui' as ui;
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../models/entity_link_selection.dart';
 import '../services/file_service.dart';
 import '../services/markdown_body_merger.dart';
+import '../services/sanctum_image_import.dart';
 import '../utils/markdown_edit_actions.dart';
 import '../utils/markdown_find_replace.dart';
 import '../utils/markdown_section_index.dart';
@@ -208,6 +208,18 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
 
     TextEditPatch? patch;
     switch (command.id) {
+      case 'cast':
+        patch = MarkdownEditActions.insertSlotSection(
+          text: stripped,
+          selection: sel,
+          kind: MarkdownSlotKind.cast,
+        );
+      case 'gallery':
+        patch = MarkdownEditActions.insertSlotSection(
+          text: stripped,
+          selection: sel,
+          kind: MarkdownSlotKind.gallery,
+        );
       case 'synopsis':
         patch = MarkdownEditActions.insertSlotSection(
           text: stripped,
@@ -408,8 +420,19 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   Future<void> _smartPaste() async {
     final data = await Clipboard.getData(Clipboard.kTextPlain);
     final raw = data?.text;
+
+    final importedImage = await SanctumImageImport.importClipboardTextPath(raw);
+    if (importedImage != null) {
+      _applyPatch(MarkdownEditActions.insertImage(
+        text: widget.controller.text,
+        selection: widget.controller.selection,
+        imagePath: importedImage,
+      ));
+      return;
+    }
+
     if (raw == null || raw.trim().isEmpty) {
-      _showSnack('클립보드에 텍스트가 없습니다.');
+      _showSnack('클립보드에 붙여넣을 내용이 없습니다.');
       return;
     }
     final normalized = MarkdownSmartPaste.normalizeForBody(raw);
@@ -446,21 +469,14 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   }
 
   Future<void> _insertImage() async {
-    final service = AkashaFileService();
-    if (service.vaultPath == null) {
+    if (!SanctumImageImport.canImport) {
       _showSnack('이미지 삽입은 Sanctum 볼트 연결 후 사용할 수 있습니다.');
       return;
     }
 
-    final fileResult = await FilePicker.pickFiles(type: FileType.image);
-    if (fileResult == null || fileResult.files.single.path == null) return;
+    final normalized = await SanctumImageImport.pickAndImport();
+    if (!mounted || normalized == null) return;
 
-    final relativePath = await service.importPosterImage(
-      fileResult.files.single.path!,
-    );
-    if (!mounted || relativePath == null) return;
-
-    final normalized = relativePath.replaceAll('\\', '/');
     _applyPatch(MarkdownEditActions.insertImage(
       text: widget.controller.text,
       selection: widget.controller.selection,
@@ -514,6 +530,8 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
     switch (kind) {
       case MarkdownSlotKind.cast:
         return '출연';
+      case MarkdownSlotKind.gallery:
+        return '갤러리';
       case MarkdownSlotKind.synopsis:
         return '시놉시스';
       case MarkdownSlotKind.quotes:
@@ -662,6 +680,8 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
               onFind: _toggleFindBar,
               onSmartPaste: _smartPaste,
               onJumpToSection: _jumpToSection,
+              onInsertCast: () => _insertSlot(MarkdownSlotKind.cast),
+              onInsertGallery: () => _insertSlot(MarkdownSlotKind.gallery),
               onInsertSynopsis: () => _insertSlot(MarkdownSlotKind.synopsis),
               onInsertQuotes: () => _insertSlot(MarkdownSlotKind.quotes),
               onInsertMemo: () => _insertSlot(MarkdownSlotKind.memo),

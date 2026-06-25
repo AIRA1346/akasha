@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../core/archiving/record_link.dart';
 import '../../core/ports/user_catalog_port.dart';
+import '../../models/sanctum_gallery_entry.dart';
 import 'entity_wiki_chip.dart';
+import 'sanctum_vault_image.dart';
 
 /// 본문 텍스트의 `[[entityId|Title]]` 토큰을 인라인 칩으로 렌더.
 class SanctumWikiInlineText extends StatelessWidget {
@@ -74,17 +76,19 @@ class SanctumWikiInlineText extends StatelessWidget {
   }
 }
 
-/// 문단 단위 wiki 인라인 (빈 줄로 구분).
+/// 문단 단위 wiki·이미지 인라인 (빈 줄로 구분).
 class SanctumWikiParagraphs extends StatelessWidget {
   const SanctumWikiParagraphs({
     super.key,
     required this.content,
+    this.mdFilePath,
     this.userCatalog,
     this.onWikiLinkTap,
     this.style,
   });
 
   final String content;
+  final String? mdFilePath;
   final UserCatalogPort? userCatalog;
   final void Function(ParsedRecordLink link)? onWikiLinkTap;
   final TextStyle? style;
@@ -100,14 +104,73 @@ class SanctumWikiParagraphs extends StatelessWidget {
       children: [
         for (var i = 0; i < paragraphs.length; i++) ...[
           if (i > 0) const SizedBox(height: 10),
-          SanctumWikiInlineText(
-            text: paragraphs[i].replaceAll('\n', ' '),
+          SanctumProseBlock(
+            content: paragraphs[i],
+            mdFilePath: mdFilePath,
             userCatalog: userCatalog,
             onWikiLinkTap: onWikiLinkTap,
             style: style,
           ),
         ],
       ],
+    );
+  }
+}
+
+/// 단일 문단 — 이미지 줄·wiki 텍스트 혼합.
+class SanctumProseBlock extends StatelessWidget {
+  const SanctumProseBlock({
+    super.key,
+    required this.content,
+    this.mdFilePath,
+    this.userCatalog,
+    this.onWikiLinkTap,
+    this.style,
+  });
+
+  final String content;
+  final String? mdFilePath;
+  final UserCatalogPort? userCatalog;
+  final void Function(ParsedRecordLink link)? onWikiLinkTap;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) {
+    final lines = content.split('\n');
+    final children = <Widget>[];
+
+    for (final line in lines) {
+      final image = SanctumGalleryFormat.parseInlineImageLine(line);
+      if (image != null) {
+        children.add(SanctumVaultImage(
+          src: image.imagePath,
+          mdFilePath: mdFilePath,
+          caption: image.caption,
+        ));
+        continue;
+      }
+
+      final trimmed = line.trim();
+      if (trimmed.isEmpty) {
+        if (children.isNotEmpty) {
+          children.add(const SizedBox(height: 6));
+        }
+        continue;
+      }
+
+      children.add(SanctumWikiInlineText(
+        text: line,
+        userCatalog: userCatalog,
+        onWikiLinkTap: onWikiLinkTap,
+        style: style,
+      ));
+    }
+
+    if (children.isEmpty) return const SizedBox.shrink();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: children,
     );
   }
 }

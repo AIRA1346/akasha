@@ -73,6 +73,8 @@ class SanctumPagePanel extends StatelessWidget {
     this.onOpenLinkedEntity,
   });
 
+  bool get _useRichPreview => sectionLayout || userCatalog != null;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -285,14 +287,14 @@ class SanctumPagePanel extends StatelessWidget {
       case SanctumPageView.preview:
         return SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 24),
-          child: sectionLayout
+          child: _useRichPreview
               ? SanctumPreviewBody(
                   data: previewMarkdown,
                   mdFilePath: mdFilePath,
                   userCatalog: userCatalog,
                   onWikiLinkTap: onWikiLinkTap,
                   onOpenEntity: onOpenLinkedEntity,
-                  slotAware: true,
+                  slotAware: sectionLayout,
                 )
               : VaultMarkdownBody(
                   data: previewMarkdown,
@@ -308,6 +310,7 @@ class SanctumPagePanel extends StatelessWidget {
               key: sectionEditorKey,
               bodyController: bodyController,
               onChanged: onBodyChanged,
+              userCatalog: userCatalog,
             ),
           );
         }

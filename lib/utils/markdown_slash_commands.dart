@@ -33,6 +33,18 @@ class MarkdownSlashCommands {
 
   static const commands = <MarkdownSlashCommand>[
     MarkdownSlashCommand(
+      id: 'gallery',
+      label: '갤러리 섹션',
+      keywords: ['갤러리', 'gallery', '사진', 'photo'],
+      description: '# 🖼 갤러리',
+    ),
+    MarkdownSlashCommand(
+      id: 'cast',
+      label: '출연 섹션',
+      keywords: ['출연', 'cast', '인물'],
+      description: '# 👥 출연',
+    ),
+    MarkdownSlashCommand(
       id: 'synopsis',
       label: '시놉시스 섹션',
       keywords: ['시놉', 'synopsis', '시놉시스'],

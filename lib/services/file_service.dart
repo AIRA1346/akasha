@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:path/path.dart' as p;
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -519,6 +520,21 @@ class AkashaFileService {
     final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
 
     await file.copy(destinationPath);
+    return p.join('posters', uniqueFilename);
+  }
+
+  /// 클립보드·붙여넣기 바이트를 posters에 저장하고 상대 경로 반환.
+  Future<String?> importPosterImageFromBytes(
+    Uint8List bytes, {
+    String extension = 'png',
+  }) async {
+    if (_vaultPath == null || bytes.isEmpty) return null;
+
+    final ext = extension.startsWith('.') ? extension.substring(1) : extension;
+    final uniqueFilename =
+        '${DateTime.now().millisecondsSinceEpoch}_paste.$ext';
+    final destinationPath = p.join(_vaultPath!, 'posters', uniqueFilename);
+    await File(destinationPath).writeAsBytes(bytes, flush: true);
     return p.join('posters', uniqueFilename);
   }
 

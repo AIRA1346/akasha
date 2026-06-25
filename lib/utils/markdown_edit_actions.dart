@@ -23,6 +23,8 @@ class MarkdownEditActions {
     switch (kind) {
       case MarkdownSlotKind.cast:
         return MarkdownBodyMerger.castHeading;
+      case MarkdownSlotKind.gallery:
+        return MarkdownBodyMerger.galleryHeading;
       case MarkdownSlotKind.synopsis:
         return MarkdownBodyMerger.synopsisHeading;
       case MarkdownSlotKind.quotes:
@@ -35,6 +37,8 @@ class MarkdownEditActions {
   static String defaultContentForSlot(MarkdownSlotKind kind) {
     switch (kind) {
       case MarkdownSlotKind.cast:
+        return '';
+      case MarkdownSlotKind.gallery:
         return '';
       case MarkdownSlotKind.synopsis:
         return '';

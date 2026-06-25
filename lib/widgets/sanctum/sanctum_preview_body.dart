@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import '../../core/archiving/record_link.dart';
 import '../../core/ports/user_catalog_port.dart';
 import '../../models/sanctum_cast_entry.dart';
+import '../../models/sanctum_gallery_entry.dart';
 import '../../models/user_catalog_entity.dart';
 import 'sanctum_cast_strip.dart';
+import 'sanctum_gallery_strip.dart';
+import 'sanctum_quote_cards.dart';
 import 'sanctum_wiki_inline_text.dart';
 
-/// 슬롯 인지 Sanctum 미리보기 — 출연 스트립 + wiki 칩 인라인 본문.
+/// 슬롯 인지 Sanctum 미리보기 — 출연·갤러리 스트립 + wiki 칩 인라인 본문.
 class SanctumPreviewBody extends StatelessWidget {
   const SanctumPreviewBody({
     super.key,
@@ -44,6 +47,7 @@ class SanctumPreviewBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         child: SanctumWikiParagraphs(
           content: data,
+          mdFilePath: mdFilePath,
           userCatalog: userCatalog,
           onWikiLinkTap: onWikiLinkTap,
           style: TextStyle(fontSize: 14, height: 1.55, color: Colors.grey[200]),
@@ -54,12 +58,6 @@ class SanctumPreviewBody extends StatelessWidget {
     final parsed = _parsePreviewSections(data);
     final bodyStyle =
         TextStyle(fontSize: 14, height: 1.55, color: Colors.grey[200]);
-    final quoteStyle = TextStyle(
-      fontSize: 14,
-      height: 1.5,
-      fontStyle: FontStyle.italic,
-      color: Colors.tealAccent.withValues(alpha: 0.85),
-    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,6 +68,11 @@ class SanctumPreviewBody extends StatelessWidget {
             userCatalog: userCatalog,
             onWikiLinkTap: onWikiLinkTap,
             onOpenEntity: onOpenEntity,
+          ),
+        if (parsed.gallery.isNotEmpty)
+          SanctumGalleryStrip(
+            entries: parsed.gallery,
+            mdFilePath: mdFilePath,
           ),
         for (final section in parsed.sections) ...[
           if (section.heading != null)
@@ -87,14 +90,14 @@ class SanctumPreviewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: section.kind == _PreviewSectionKind.quotes
-                ? _QuoteBlocks(
+                ? SanctumQuoteCards(
                     content: section.content,
                     userCatalog: userCatalog,
                     onWikiLinkTap: onWikiLinkTap,
-                    style: quoteStyle,
                   )
                 : SanctumWikiParagraphs(
                     content: section.content,
+                    mdFilePath: mdFilePath,
                     userCatalog: userCatalog,
                     onWikiLinkTap: onWikiLinkTap,
                     style: bodyStyle,
@@ -113,7 +116,7 @@ class SanctumPreviewBody extends StatelessWidget {
   }
 }
 
-enum _PreviewSectionKind { prose, quotes, cast }
+enum _PreviewSectionKind { prose, quotes, cast, gallery }
 
 class _PreviewSection {
   const _PreviewSection({
@@ -130,10 +133,12 @@ class _PreviewSection {
 class _ParsedPreview {
   const _ParsedPreview({
     required this.cast,
+    required this.gallery,
     required this.sections,
   });
 
   final List<SanctumCastEntry> cast;
+  final List<SanctumGalleryEntry> gallery;
   final List<_PreviewSection> sections;
 }
 
@@ -141,6 +146,7 @@ _ParsedPreview _parsePreviewSections(String bodyRaw) {
   final lines = bodyRaw.split('\n');
   final sections = <_PreviewSection>[];
   final castEntries = <SanctumCastEntry>[];
+  final galleryEntries = <SanctumGalleryEntry>[];
 
   String? currentHeading;
   _PreviewSectionKind currentKind = _PreviewSectionKind.prose;
@@ -148,14 +154,20 @@ _ParsedPreview _parsePreviewSections(String bodyRaw) {
 
   void flush() {
     final content = contentLines.join('\n').trim();
-    if (currentKind == _PreviewSectionKind.cast) {
-      castEntries.addAll(SanctumCastFormat.parseBlock(content));
-    } else if (currentHeading != null || content.isNotEmpty) {
-      sections.add(_PreviewSection(
-        heading: currentHeading,
-        content: content,
-        kind: currentKind,
-      ));
+    switch (currentKind) {
+      case _PreviewSectionKind.cast:
+        castEntries.addAll(SanctumCastFormat.parseBlock(content));
+      case _PreviewSectionKind.gallery:
+        galleryEntries.addAll(SanctumGalleryFormat.parseBlock(content));
+      case _PreviewSectionKind.prose:
+      case _PreviewSectionKind.quotes:
+        if (currentHeading != null || content.isNotEmpty) {
+          sections.add(_PreviewSection(
+            heading: currentHeading,
+            content: content,
+            kind: currentKind,
+          ));
+        }
     }
     contentLines.clear();
   }
@@ -172,7 +184,11 @@ _ParsedPreview _parsePreviewSections(String bodyRaw) {
   }
   flush();
 
-  return _ParsedPreview(cast: castEntries, sections: sections);
+  return _ParsedPreview(
+    cast: castEntries,
+    gallery: galleryEntries,
+    sections: sections,
+  );
 }
 
 _PreviewSectionKind _kindForHeading(String headingLine) {
@@ -180,67 +196,13 @@ _PreviewSectionKind _kindForHeading(String headingLine) {
   if (lower.contains('출연') || lower.contains('cast')) {
     return _PreviewSectionKind.cast;
   }
+  if (lower.contains('갤러리') || lower.contains('gallery')) {
+    return _PreviewSectionKind.gallery;
+  }
   if (lower.contains('명대사') ||
       lower.contains('명장면') ||
       lower.contains('quote')) {
     return _PreviewSectionKind.quotes;
   }
   return _PreviewSectionKind.prose;
-}
-
-class _QuoteBlocks extends StatelessWidget {
-  const _QuoteBlocks({
-    required this.content,
-    this.userCatalog,
-    this.onWikiLinkTap,
-    this.style,
-  });
-
-  final String content;
-  final UserCatalogPort? userCatalog;
-  final void Function(ParsedRecordLink link)? onWikiLinkTap;
-  final TextStyle? style;
-
-  @override
-  Widget build(BuildContext context) {
-    final quotes = <String>[];
-    for (final line in content.split('\n')) {
-      final trimmed = line.trim();
-      if (trimmed.isEmpty) continue;
-      if (trimmed.startsWith('>')) {
-        final quote = trimmed.substring(1).trim();
-        if (quote.isNotEmpty) quotes.add(quote);
-      } else if (!trimmed.startsWith('#')) {
-        quotes.add(trimmed);
-      }
-    }
-
-    if (quotes.isEmpty) return const SizedBox.shrink();
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        for (var i = 0; i < quotes.length; i++) ...[
-          if (i > 0) const SizedBox(height: 10),
-          Container(
-            padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
-            decoration: BoxDecoration(
-              border: Border(
-                left: BorderSide(
-                  color: Colors.tealAccent.withValues(alpha: 0.4),
-                  width: 3,
-                ),
-              ),
-            ),
-            child: SanctumWikiInlineText(
-              text: quotes[i],
-              userCatalog: userCatalog,
-              onWikiLinkTap: onWikiLinkTap,
-              style: style,
-            ),
-          ),
-        ],
-      ],
-    );
-  }
 }

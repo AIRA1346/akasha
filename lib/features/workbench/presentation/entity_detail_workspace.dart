@@ -743,6 +743,8 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                           onOpenFileView: _refreshFileEditor,
                           onWikiLinkTap: widget.onWikiLinkTap,
                           onRequestEntityLink: widget.onRequestEntityLink,
+                          userCatalog: widget.userCatalog,
+                          onOpenLinkedEntity: _openLinkedEntity,
                           footer: WorkbenchSaveActions(
                             isSaving: _isSaving,
                             isDirty: widget.isDirty,

@@ -1,10 +1,12 @@
 import '../models/sanctum_cast_entry.dart';
+import '../models/sanctum_gallery_entry.dart';
 
 /// Sanctum vault 본문 — 슬롯 섹션 merge·round-trip
 class MarkdownBodyMerger {
   MarkdownBodyMerger._();
 
   static const castHeading = '# 👥 출연';
+  static const galleryHeading = '# 🖼 갤러리';
   static const synopsisHeading = '# 📋 시놉시스';
   static const quotesHeading = '# 🎬 명장면 & 명대사';
   static const memoHeading = '# 📝 메모';
@@ -19,6 +21,9 @@ class MarkdownBodyMerger {
 
     if (heading.contains('출연') || heading.contains('cast')) {
       return MarkdownSlotKind.cast;
+    }
+    if (heading.contains('갤러리') || heading.contains('gallery')) {
+      return MarkdownSlotKind.gallery;
     }
     if (heading.contains('명대사') ||
         heading.contains('명장면') ||
@@ -42,6 +47,7 @@ class MarkdownBodyMerger {
   static String mergeBody({
     required String bodyRaw,
     List<SanctumCastEntry> cast = const [],
+    List<SanctumGalleryEntry> gallery = const [],
     required String synopsis,
     required List<String> quotes,
     required String memo,
@@ -55,6 +61,7 @@ class MarkdownBodyMerger {
       final formatted = _formatSlotContent(
         section.slotKind!,
         cast: cast,
+        gallery: gallery,
         synopsis: synopsis,
         quotes: quotes,
         memo: memo,
@@ -87,6 +94,13 @@ class MarkdownBodyMerger {
         headingLine: castHeading,
         content: SanctumCastFormat.formatBlock(cast),
         slotKind: MarkdownSlotKind.cast,
+      ));
+    }
+    if (!foundSlots.contains(MarkdownSlotKind.gallery) && gallery.isNotEmpty) {
+      trailing.add(_BodySection(
+        headingLine: galleryHeading,
+        content: SanctumGalleryFormat.formatBlock(gallery),
+        slotKind: MarkdownSlotKind.gallery,
       ));
     }
     if (!foundSlots.contains(MarkdownSlotKind.synopsis) &&
@@ -131,6 +145,7 @@ class MarkdownBodyMerger {
   /// 슬롯만으로 기본 본문 생성 (신규 아카이브)
   static String buildDefaultBody({
     List<SanctumCastEntry> cast = const [],
+    List<SanctumGalleryEntry> gallery = const [],
     required String synopsis,
     required List<String> quotes,
     required String memo,
@@ -138,6 +153,7 @@ class MarkdownBodyMerger {
       mergeBody(
         bodyRaw: '',
         cast: cast,
+        gallery: gallery,
         synopsis: synopsis,
         quotes: quotes,
         memo: memo,
@@ -155,6 +171,7 @@ class MarkdownBodyMerger {
   static String _formatSlotContent(
     MarkdownSlotKind kind, {
     required List<SanctumCastEntry> cast,
+    required List<SanctumGalleryEntry> gallery,
     required String synopsis,
     required List<String> quotes,
     required String memo,
@@ -162,6 +179,8 @@ class MarkdownBodyMerger {
     switch (kind) {
       case MarkdownSlotKind.cast:
         return SanctumCastFormat.formatBlock(cast);
+      case MarkdownSlotKind.gallery:
+        return SanctumGalleryFormat.formatBlock(gallery);
       case MarkdownSlotKind.synopsis:
         return synopsis;
       case MarkdownSlotKind.quotes:
@@ -226,6 +245,7 @@ class MarkdownBodyMerger {
   /// 본문에서 슬롯 필드 추출 (deserialize용)
   static ({
     List<SanctumCastEntry> cast,
+    List<SanctumGalleryEntry> gallery,
     String synopsis,
     List<String> quotes,
     String memo,
@@ -234,6 +254,7 @@ class MarkdownBodyMerger {
   ) {
     final sections = _parseSections(bodyRaw);
     final cast = <SanctumCastEntry>[];
+    final gallery = <SanctumGalleryEntry>[];
     var synopsis = '';
     final quotes = <String>[];
     var memo = '';
@@ -242,6 +263,8 @@ class MarkdownBodyMerger {
       switch (section.slotKind) {
         case MarkdownSlotKind.cast:
           cast.addAll(SanctumCastFormat.parseBlock(section.content));
+        case MarkdownSlotKind.gallery:
+          gallery.addAll(SanctumGalleryFormat.parseBlock(section.content));
         case MarkdownSlotKind.synopsis:
           synopsis = _normalizeSlotContent(section.content);
         case MarkdownSlotKind.memo:
@@ -262,11 +285,17 @@ class MarkdownBodyMerger {
       }
     }
 
-    return (cast: cast, synopsis: synopsis, quotes: quotes, memo: memo);
+    return (
+      cast: cast,
+      gallery: gallery,
+      synopsis: synopsis,
+      quotes: quotes,
+      memo: memo,
+    );
   }
 }
 
-enum MarkdownSlotKind { cast, synopsis, quotes, memo }
+enum MarkdownSlotKind { cast, gallery, synopsis, quotes, memo }
 
 class _BodySection {
   final String? headingLine;

@@ -424,6 +424,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
     required this.onFind,
     required this.onSmartPaste,
     required this.onJumpToSection,
+    required this.onInsertCast,
+    required this.onInsertGallery,
     required this.onInsertSynopsis,
     required this.onInsertQuotes,
     required this.onInsertMemo,
@@ -453,6 +455,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
   final VoidCallback onFind;
   final VoidCallback onSmartPaste;
   final ValueChanged<MarkdownSectionEntry> onJumpToSection;
+  final VoidCallback onInsertCast;
+  final VoidCallback onInsertGallery;
   final VoidCallback onInsertSynopsis;
   final VoidCallback onInsertQuotes;
   final VoidCallback onInsertMemo;
@@ -530,6 +534,10 @@ class _MarkdownEditorToolbar extends StatelessWidget {
               padding: EdgeInsets.zero,
               onSelected: (v) {
                 switch (v) {
+                  case 'cast':
+                    onInsertCast();
+                  case 'gallery':
+                    onInsertGallery();
                   case 'synopsis':
                     onInsertSynopsis();
                   case 'quotes':
@@ -541,6 +549,8 @@ class _MarkdownEditorToolbar extends StatelessWidget {
                 }
               },
               itemBuilder: (_) => const [
+                PopupMenuItem(value: 'cast', child: Text('👥 출연')),
+                PopupMenuItem(value: 'gallery', child: Text('🖼 갤러리')),
                 PopupMenuItem(value: 'synopsis', child: Text('📋 시놉시스')),
                 PopupMenuItem(
                   value: 'quotes',

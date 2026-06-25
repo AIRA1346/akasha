@@ -1,6 +1,7 @@
 import 'package:akasha/features/workbench/presentation/work_detail_draft_ops.dart';
 import 'package:akasha/models/enums.dart';
 import 'package:akasha/models/sanctum_cast_entry.dart';
+import 'package:akasha/models/sanctum_gallery_entry.dart';
 import 'package:akasha/services/markdown_body_merger.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -210,6 +211,46 @@ void main() {
 
       expect(merged, contains(MarkdownBodyMerger.castHeading));
       expect(merged, contains('[[pe_u_x|엑스]]'));
+    });
+  });
+
+  group('MarkdownBodyMerger gallery slot', () {
+    test('parseSlots extracts gallery image lines', () {
+      const body = '''
+# 🖼 갤러리
+- ![](posters/100_a.jpg)
+- ![캡션](posters/200_b.png)
+
+# 📝 메모
+본문
+''';
+
+      final slots = MarkdownBodyMerger.parseSlots(body);
+      expect(slots.gallery.length, 2);
+      expect(slots.gallery[0].imagePath, 'posters/100_a.jpg');
+      expect(slots.gallery[1].caption, '캡션');
+      expect(slots.memo, '본문');
+    });
+
+    test('mergeBody round-trips gallery entries', () {
+      final merged = MarkdownBodyMerger.mergeBody(
+        bodyRaw: '',
+        gallery: const [
+          SanctumGalleryEntry(imagePath: 'posters/a.jpg'),
+          SanctumGalleryEntry(
+            imagePath: 'posters/b.jpg',
+            caption: '장면',
+          ),
+        ],
+        synopsis: '',
+        quotes: const [],
+        memo: '',
+      );
+
+      final slots = MarkdownBodyMerger.parseSlots(merged);
+      expect(slots.gallery.length, 2);
+      expect(slots.gallery[1].caption, '장면');
+      expect(merged, contains(MarkdownBodyMerger.galleryHeading));
     });
   });
 }
