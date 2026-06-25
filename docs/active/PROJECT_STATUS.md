@@ -1,7 +1,7 @@
 # Project Status Snapshot
  
-> **갱신:** 2026-06-25 (@10048 · locale-minimum ✅ · test **596** · analyze 0 issue)  
-> **현재 실행:** **Sprint B1 dogfood** (실사용 검증) · 코드 건강 Phase 7 ✅ 완료  
+> **갱신:** 2026-06-25 (@10048 · locale-minimum ✅ · test **605** · analyze 0 error)  
+> **현재 실행:** **Foundation Sprint F0** ✅ · **F1** SSOT 갱신 · **Sprint B1** 수동 dogfood  
 > **목적:** Gate·Registry·프로그램 **운영 SSOT**  
 > **출시:** [release-readiness-checklist](../history/release-readiness-checklist.md)  
 > **정리:** [repo-cleanup-plan](../history/programs/repo-cleanup-plan.md) · Phase 1~2 ✅ (2026-06-12)  
@@ -16,12 +16,12 @@
 | **Registry** | **10048 works** · v4 hex shards · dedupe **0** |
 | **4종 핵심 Gate** | **전부 PASS** |
 | **externalId** | **10048/10048 (100%)** |
-| **flutter test** | **596 PASS** |
+| **flutter test** | **605 PASS** |
 | **Phase 1** | Record Foundation ✅ |
 | **Phase 6.2** | 전 경로 Workbench 통합 ✅ |
 | **Phase 6.3** | incoming/sameDay·connections coordinator ✅ |
-| **코드 건강** | Phase 0~6 ✅ · **Phase 7** Home preview·Workbench shared ops ✅ |
-| **다음** | **Sprint B1 dogfood** · `home_dialogs` 분해(선택) · R14 P0 surface |
+| **코드 건강** | Phase 0~7 ✅ · **Sanctum C1~C4** ✅ |
+| **다음** | **Foundation F1~F4** · **Sprint B1** 수동 dogfood · R14-B |
 | **Scale / Core** | **Phase 2.0~2.3** ✅ @10048 · G1 ✅ · **ADR-010 eager-only batch** ✅ |
 | **Steam** | depot·스토어·IAP ✅ — **Wave 1 Home 해부** ✅ |
 | **Discovery** | `wikidata_ko` active · **10k milestone** ✅ |
@@ -50,7 +50,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 도구 | 결과 |
 |------|:----:|
-| `flutter test` | **596 PASS** |
+| `flutter test` | **605 PASS** |
 | `registry_builder` | PASS |
 | `dedupe_linter` | PASS (10048 works) |
 | `quality_gate --strict` | PASS |
@@ -66,7 +66,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | 게이트 | 상태 | 비고 |
 |--------|:----:|------|
-| **G-AUTO** | ✅ | test 596 · analyze 0 issue · Release build OK |
+| **G-AUTO** | ✅ | test 605 · analyze 0 error · Release build OK |
 | **G-QA** | ✅ | P0 수동 **12/12** (2026-06-13) |
 | **G-STEAM** | ✅ | depot·스토어·IAP·Privacy URL |
 | **G-CATALOG** | ✅ | **10048작** · recall@10 **87/87** (SW1-A) |
@@ -97,9 +97,13 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 4 | `tool/archive` · `tool/migrations` 스크립트 이동 | ✅ |
 | 5 | `registry_shard_loader` workId 캐시 | ✅ |
 | 6 | vault fingerprint 조건부 polling | ✅ |
-| 7 | Home preview·recent·archive/reorder · Workbench linked/vault/save/delete/draft ops | ✅ |
+| 7 | Home preview·recent·archive/reorder · Workbench shared ops | ✅ |
+| **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
+| **F** | **Foundation** — F0 감사 ✅ · F1 SSOT · F2~F4 구조·R14·레거시 | 🟡 |
 
-**대형 파일 (참고):** `work_detail_workspace` ~792줄 · `entity_detail_workspace` ~736줄 · `home_shell_controller` ~516줄 · `home_dialogs_coordinator` ~395줄
+**대형 파일 (2026-06-25):** `work_detail_workspace` **886** · `entity_detail_workspace` **796** · `work_sanctum_section_editor` **720** · `home_shell_controller` **537**
+
+감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md)
 
 ---
 
@@ -107,12 +111,13 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 
 | # | 작업 | 우선 |
 |---|------|:----:|
-| 1 | **Sprint B1** — [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md) · `dogfood_precheck.ps1` | **P0** |
-| 2 | P0 QA 12/12 Release 빌드 재확인 (R3) | **P0** |
-| 3 | **R14 P0** — design token · Preview 정보 계층 (Engine 무변경) | P1 |
-| 4 | `home_dialogs_coordinator` 분해 (선택) | P2 |
-| 5 | **E1** — `RegistryWork` 도메인 · runtime `displayTitle` | P1 |
-| 6 | **M3** — Ready 시 Steam Release | ⏸️ |
+| 1 | **Foundation F1** — SSOT·B1 D7~D9 (Sanctum dogfood) | **P0** |
+| 2 | **Sprint B1** 수동 — P0 QA 12/12 · D1~D9 | **P0** |
+| 3 | **Foundation F2** — `work_sanctum_section_editor` 분해 | **P0** |
+| 4 | **Foundation F3** — R14-B Preview·Save status 토큰 | P1 |
+| 5 | `git push` — 로컬 11+커밋 원격 반영 | P1 |
+| 6 | **Foundation F4** — `TODO(remove)` 제거 조건·works 레이아웃 정책 | P1 |
+| 7 | **M3** Steam Release | ⏸️ B1 완료 후 |
 
 ---
 
@@ -135,3 +140,4 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | 2026-06-16 | E2-5 Port DI · E2-6 workspace 분리 · E1-A3b 순환 제거 · test 318 |
 | 2026-06-24 | 코드 건강 Phase 0~6 — vault·FeatureFlags·workbench coordinator·`tool/` archive·polling · test **580** |
 | 2026-06-24 | 코드 건강 Phase 7b — save ops·collection reorder·docs SSOT · test **591** |
+| 2026-06-25 | **Sanctum C1~C4** · Foundation F0 감사 · test **605** · [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) |

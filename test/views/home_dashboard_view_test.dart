@@ -80,7 +80,6 @@ HomeDashboardView _dashboard({
     onPreviewWork: (_) {},
     onPreviewEntity: (_) {},
     onSearch: onSearch ?? () {},
-    onVaultSettings: () {},
     onGoExplore: () {},
     onGoExploreEntities: (_) {},
     onGoKnowledgeGraph: () {},

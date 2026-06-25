@@ -1,7 +1,7 @@
 # AKASHA Current State (현재 상태)
 
 > **지위:** 프로젝트 구현 현황 SSOT (코드 및 레지스트리 실제 기준)  
-> **갱신:** 2026-06-25 (test **596** · analyze 0 issue · Phase 7 ✅ · **Sprint B1 dogfood**)  
+> **갱신:** 2026-06-25 (test **605** · analyze 0 error · Foundation F0 ✅ · Sprint B1 dogfood)  
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### Ⅱ. 게이트웨이 및 CI 검증
 * **검색 Recall 검증 (`sw1_a_validation.dart`):** baseline 95개 검색 쿼리에 대해 Recall@10 **100% 달성** (87/87 recall-evaluated).
-* **CI 검증 게이트:** `flutter test` **596 PASS**, `flutter analyze lib/` **0 issue**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
+* **CI 검증 게이트:** `flutter test` **605 PASS**, `flutter analyze lib/` **0 error**, `ci_registry_check` 통과, `preflight_check` 통과, `quality_gate --locale-minimum` 통과.
 
 ### Ⅲ. Home Shell (Wave 1 + Phase 7)
 * **프리뷰:** `HomePreviewCoordinator` — 스택·복귀·연결 픽 pending 통합.
@@ -52,7 +52,26 @@
 * **연결 패널:** Work·Entity 각각 `*ConnectionsCoordinator`로 incoming / sameDay / link neighbors·vault 외부 편집 감지 분리.
 * **공유 ops:** `workbench_linked_record_ops`, `workbench_vault_disk_ops`, `*draft_ops`, `*delete_ops`, `*save_ops`, `workbench_save_shortcuts`.
 
-### Ⅲ. Sprint B1 (Dogfood)
+### Ⅱ-b. Sanctum 아카이빙 (Work 기록, 2026-06)
+
+| 단계 | 기능 |
+|:---:|------|
+| C1 | `[[entityId\|제목]]` 저장 유지 · 미리보기 **wiki 아바타 칩** |
+| C2 | `# 👥 출연` 슬롯 · 패널 인물 추가 → 출연 |
+| C3 | `# 🖼 갤러리` · 이미지 DnD/붙여넣기 · **명장면 카드** |
+| C4 | **기록 완성도 %** · 카테고리 **템플릿** · **HTML보내기** (Work) |
+| + | Entity journal HTML보내기 · [link-identity-policy §14](../history/policy/link-identity-policy.md) |
+
+핵심 모듈: `MarkdownBodyMerger`, `WorkSanctumSectionEditor`, `SanctumPreviewBody`, `SanctumHtmlExporter`, `SanctumArchiveCompletion`.
+
+### Ⅲ. Foundation Sprint (2026-06)
+
+* 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md)
+* **F0** ✅ — test 605 · `dogfood_precheck` PASS
+* **F1** 🟡 — SSOT·B1 Sanctum 시나리오
+* **F2~F4** — Sanctum 편집기 분해 · R14-B · 레거시 `TODO(remove)`
+
+### Ⅳ. Sprint B1 (Dogfood)
 * SSOT: [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)
 * 자동: `.\scripts\dogfood_precheck.ps1` (test → ci_registry → preflight → sw1_a → quality_gate --release)
 * 수동: Release 빌드에서 볼트·Work/Entity `.md` 루프 · P0 QA 12/12 재확인

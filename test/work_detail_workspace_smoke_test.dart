@@ -48,6 +48,7 @@ void main() {
     expect(find.text('Navigation Smoke'), findsAtLeastNWidgets(1));
     expect(find.text('연결'), findsOneWidget);
     expect(find.text('설명'), findsOneWidget);
-    expect(find.text('감상'), findsOneWidget);
+    expect(find.text('기록 완성도'), findsOneWidget);
+    expect(find.text('감상'), findsAtLeastNWidgets(1));
   });
 }

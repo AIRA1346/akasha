@@ -1,5 +1,4 @@
 import 'package:akasha/models/enums.dart';
-import 'package:akasha/models/sanctum_cast_entry.dart';
 import 'package:akasha/models/sanctum_gallery_entry.dart';
 import 'package:akasha/services/markdown_body_merger.dart';
 import 'package:akasha/services/sanctum_html_exporter.dart';
@@ -41,7 +40,7 @@ ${MarkdownBodyMerger.quotesHeading}
   });
 
   test('parseSlots round-trip matches gallery format in HTML', () {
-    const galleryLine = SanctumGalleryEntry(
+    final galleryLine = const SanctumGalleryEntry(
       imagePath: 'posters/scene.jpg',
       caption: '장면',
     ).toMarkdownLine();
