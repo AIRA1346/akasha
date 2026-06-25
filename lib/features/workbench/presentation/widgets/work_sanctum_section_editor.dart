@@ -17,6 +17,7 @@ import '../../../../utils/markdown_edit_actions.dart';
 import '../../../../utils/vault_asset_resolver.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/safe_local_image.dart';
+import '../../../../widgets/sanctum/sanctum_image_drop_zone.dart';
 
 /// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (출연 · 갤러리 · 설명 · 감상 · 명장면). 본문 md와 동기화.
 class WorkSanctumSectionEditor extends StatefulWidget {
@@ -168,6 +169,18 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     widget.onChanged();
   }
 
+  Future<void> _importGalleryPaths(List<String> paths) async {
+    if (paths.isEmpty) return;
+    setState(() {
+      _galleryEntries = [
+        ..._galleryEntries,
+        for (final path in paths) SanctumGalleryEntry(imagePath: path),
+      ];
+    });
+    _flushToBody();
+    widget.onChanged();
+  }
+
   Future<void> _addGalleryImage() async {
     if (!SanctumImageImport.canImport) {
       if (!mounted) return;
@@ -182,15 +195,33 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
 
     final path = await SanctumImageImport.pickAndImport();
     if (!mounted || path == null) return;
+    await _importGalleryPaths([path]);
+  }
 
-    setState(() {
-      _galleryEntries = [
-        ..._galleryEntries,
-        SanctumGalleryEntry(imagePath: path),
-      ];
-    });
-    _flushToBody();
-    widget.onChanged();
+  Future<void> _pasteGalleryFromClipboard() async {
+    if (!SanctumImageImport.canImport) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('붙여넣기는 Sanctum 볼트 연결 후 사용할 수 있습니다.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
+
+    final imported = await SanctumImageImport.importFromClipboard();
+    if (!mounted) return;
+    if (imported.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('클립보드에 이미지가 없습니다.'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
+    await _importGalleryPaths(imported);
   }
 
   void _removeGalleryEntry(int index) {
@@ -219,6 +250,8 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
           _GallerySection(
             entries: _galleryEntries,
             onAdd: _addGalleryImage,
+            onPaste: _pasteGalleryFromClipboard,
+            onImportPaths: _importGalleryPaths,
             onRemove: _removeGalleryEntry,
           ),
           const SizedBox(height: AkashaSpacing.md),
@@ -446,17 +479,24 @@ class _GallerySection extends StatelessWidget {
   const _GallerySection({
     required this.entries,
     required this.onAdd,
+    required this.onPaste,
+    required this.onImportPaths,
     required this.onRemove,
   });
 
   final List<SanctumGalleryEntry> entries;
   final VoidCallback onAdd;
+  final VoidCallback onPaste;
+  final Future<void> Function(List<String> paths) onImportPaths;
   final void Function(int index) onRemove;
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
+    return SanctumImageDropZone(
+      enabled: SanctumImageImport.canImport,
+      onImagesDropped: onImportPaths,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
         color: AkashaColors.surface.withValues(alpha: 0.35),
         borderRadius: AkashaRadius.mdBorder,
         border: Border.all(color: AkashaColors.borderSubtle(0.06)),
@@ -474,6 +514,15 @@ class _GallerySection extends StatelessWidget {
                 Text('갤러리', style: AkashaTypography.sectionTitle),
                 const Spacer(),
                 TextButton.icon(
+                  onPressed: onPaste,
+                  icon: const Icon(Icons.content_paste_go_outlined, size: 16),
+                  label: const Text('붙여넣기', style: TextStyle(fontSize: 11)),
+                  style: TextButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    foregroundColor: Colors.grey[400],
+                  ),
+                ),
+                TextButton.icon(
                   onPressed: onAdd,
                   icon: const Icon(Icons.add_photo_alternate_outlined, size: 16),
                   label: const Text('이미지 추가', style: TextStyle(fontSize: 11)),
@@ -487,7 +536,7 @@ class _GallerySection extends StatelessWidget {
             const SizedBox(height: AkashaSpacing.sm),
             if (entries.isEmpty)
               Text(
-                '스크린샷·콜라주를 추가하면 미리보기 상단에 갤러리로 표시됩니다.',
+                '이미지를 끌어다 놓거나, 붙여넣기·추가로 스크린샷·콜라주를 넣을 수 있습니다.',
                 style: AkashaTypography.bodySecondary,
               )
             else
@@ -535,6 +584,7 @@ class _GallerySection extends StatelessWidget {
               ),
           ],
         ),
+      ),
       ),
     );
   }

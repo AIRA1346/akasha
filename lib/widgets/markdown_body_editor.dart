@@ -418,19 +418,25 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
   }
 
   Future<void> _smartPaste() async {
-    final data = await Clipboard.getData(Clipboard.kTextPlain);
-    final raw = data?.text;
-
-    final importedImage = await SanctumImageImport.importClipboardTextPath(raw);
-    if (importedImage != null) {
-      _applyPatch(MarkdownEditActions.insertImage(
-        text: widget.controller.text,
-        selection: widget.controller.selection,
-        imagePath: importedImage,
-      ));
+    final imported = await SanctumImageImport.importFromClipboard();
+    if (imported.isNotEmpty) {
+      var text = widget.controller.text;
+      var selection = widget.controller.selection;
+      for (final path in imported) {
+        final patch = MarkdownEditActions.insertImage(
+          text: text,
+          selection: selection,
+          imagePath: path,
+        );
+        text = patch.text;
+        selection = patch.selection;
+      }
+      _applyPatch(TextEditPatch(text: text, selection: selection));
       return;
     }
 
+    final data = await Clipboard.getData(Clipboard.kTextPlain);
+    final raw = data?.text;
     if (raw == null || raw.trim().isEmpty) {
       _showSnack('클립보드에 붙여넣을 내용이 없습니다.');
       return;
