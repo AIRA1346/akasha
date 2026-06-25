@@ -136,8 +136,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P0 | analyze lint · FOUNDATION_AUDIT 갱신 | ✅ |
 | P1 | `hasOpenWork` · `WorkTab` deprecated 제거 | ✅ |
 | P1 | Entity neighbors · preview chrome 토큰 | ✅ |
-| P2 | `entity_detail_workspace` 분해 | 🟡 796→**754** · sanctum panel·library·snapshot |
-| P2 | `work_detail_workspace` 추가 분해 | ⬜ |
+| P2 | `entity_detail_workspace` 분해 | 🟡 796→**755** |
+| P2 | `work_detail_workspace` 분해 | 🟡 857→**814** |
 | P2 | `markdown_body_editor` 분해 | ⬜ |
 | P3 | R14-C Home·Dialog grey pass | ⬜ |
 
