@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../models/enums.dart';
 import '../../../services/sanctum_body_templates.dart';
+import '../../../widgets/web_image_search_dialog.dart';
+import 'work_detail_draft_ops.dart';
+import 'widgets/work_sanctum_section_editor.dart';
 import '../../../services/sanctum_html_exporter.dart';
 
 /// Work Sanctum — 템플릿·HTML보내기 (workspace UI에서 위임).
@@ -67,6 +71,40 @@ abstract final class WorkDetailSanctumOps {
       WorkDetailHtmlExportFailure(:final message) => message,
     };
   }
+
+  /// 템플릿 적용. 성공 시 스낵바 메시지 반환.
+  static Future<String?> applyBodyTemplate({
+    required BuildContext context,
+    required SanctumBodyTemplate template,
+    required TextEditingController bodyCtrl,
+    required AkashaItem item,
+    required WorkSanctumSectionEditorState? sectionEditor,
+    required VoidCallback markDirty,
+  }) async {
+    if (bodyCtrl.text.trim().isNotEmpty) {
+      final confirmed = await confirmTemplateOverwrite(context);
+      if (!confirmed) return null;
+    }
+
+    bodyCtrl.text = bodyMarkdownForTemplate(template);
+    WorkDetailDraftOps.syncBodyFromEditor(item, bodyCtrl);
+    sectionEditor?.reloadFromBody();
+    markDirty();
+    return '「${template.label}」 템플릿을 적용했습니다.';
+  }
+
+  static Future<String?> pickPosterUrl({
+    required BuildContext context,
+    required String title,
+    required MediaCategory category,
+  }) =>
+      showDialog<String>(
+        context: context,
+        builder: (searchCtx) => WebImageSearchDialog(
+          initialQuery: title,
+          category: category,
+        ),
+      );
 }
 
 sealed class WorkDetailHtmlExportResult {

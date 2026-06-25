@@ -104,4 +104,53 @@ abstract final class WorkDetailLinkPickOps {
       memo: slots.memo,
     );
   }
+
+  static Future<void> runPendingPick({
+    required BuildContext context,
+    required String? pendingWorkId,
+    required bool pendingWorkLinkPick,
+    required EntityAnchorType? pendingEntityLinkType,
+    required LinkCandidate? preselected,
+    required String currentWorkId,
+    required UserCatalogPort? catalog,
+    required AkashaItem item,
+    required List<AkashaItem> vaultItems,
+    required void Function(SanctumPageView view) showBodyView,
+    required Future<void> Function() requestWorkLink,
+    required Future<void> Function(EntityLinkSelection picked) applySelection,
+    required VoidCallback? onPendingHandled,
+  }) async {
+    final request = pendingRequest(
+      pendingWorkId: pendingWorkId,
+      pendingWorkLinkPick: pendingWorkLinkPick,
+      entityLinkType: pendingEntityLinkType,
+      preselected: preselected,
+    );
+    switch (WorkbenchLinkPickOps.classifyPending(
+      request: request,
+      currentContextId: currentWorkId,
+      catalog: catalog,
+    )) {
+      case WorkbenchPendingLinkResolution.wrongContext:
+      case WorkbenchPendingLinkResolution.skipped:
+        return;
+      case WorkbenchPendingLinkResolution.pickWork:
+        onPendingHandled?.call();
+        await requestWorkLink();
+      case WorkbenchPendingLinkResolution.pickEntity:
+        onPendingHandled?.call();
+        if (catalog == null) return;
+        showBodyView(SanctumPageView.body);
+        final picked = await WorkbenchLinkPickOps.pickEntityLink(
+          context: context,
+          catalog: catalog,
+          type: request.entityLinkType!,
+          workContext: item,
+          vaultItems: vaultItems,
+          preselected: request.preselected,
+        );
+        if (picked == null) return;
+        await applySelection(picked);
+    }
+  }
 }

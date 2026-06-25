@@ -14,17 +14,14 @@ import '../../../services/link_candidate_service.dart';
 import '../../../services/file_service.dart';
 import '../../../services/work_info_defaults.dart';
 import '../../../services/sanctum_body_templates.dart';
-import '../../../widgets/sanctum/sanctum_archive_toolbar.dart';
-import '../../../widgets/sanctum_page_panel.dart';
-import '../../../widgets/web_image_search_dialog.dart';
-import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
+import '../../../widgets/sanctum_page_panel.dart';
 import 'work_detail_sanctum_ops.dart';
 import 'work_detail_save_ops.dart';
 import 'work_detail_delete_ops.dart';
 import 'work_detail_draft_ops.dart';
 import 'work_detail_link_pick_ops.dart';
-import 'workbench_link_pick_ops.dart';
+import 'work_detail_library_ops.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_info_panel.dart';
 import 'work_detail_connections_panel.dart';
@@ -34,8 +31,8 @@ import 'workbench_record_navigation.dart';
 import 'workbench_linked_record_ops.dart';
 import 'workbench_vault_disk_ops.dart';
 import 'widgets/workbench_breadcrumb.dart';
-import 'widgets/workbench_panel_styles.dart';
 import 'widgets/workbench_save_shortcuts.dart';
+import 'widgets/work_detail_sanctum_panel.dart';
 import 'widgets/work_sanctum_section_editor.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
@@ -169,39 +166,22 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _maybeRunPendingEntityLinkPick() async {
-    final request = WorkDetailLinkPickOps.pendingRequest(
+    if (!mounted) return;
+    await WorkDetailLinkPickOps.runPendingPick(
+      context: context,
       pendingWorkId: widget.pendingEntityLinkWorkId,
       pendingWorkLinkPick: widget.pendingWorkLinkPick,
-      entityLinkType: widget.pendingEntityLinkType,
+      pendingEntityLinkType: widget.pendingEntityLinkType,
       preselected: widget.pendingEntityLinkCandidate,
-    );
-    switch (WorkbenchLinkPickOps.classifyPending(
-      request: request,
-      currentContextId: _item.workId,
+      currentWorkId: _item.workId,
       catalog: widget.userCatalog,
-    )) {
-      case WorkbenchPendingLinkResolution.wrongContext:
-      case WorkbenchPendingLinkResolution.skipped:
-        return;
-      case WorkbenchPendingLinkResolution.pickWork:
-        widget.onPendingEntityLinkHandled?.call();
-        if (!mounted) return;
-        await _requestWorkLink();
-      case WorkbenchPendingLinkResolution.pickEntity:
-        widget.onPendingEntityLinkHandled?.call();
-        if (!mounted) return;
-        setState(() => _pageView = SanctumPageView.body);
-        final picked = await WorkbenchLinkPickOps.pickEntityLink(
-          context: context,
-          catalog: widget.userCatalog!,
-          type: request.entityLinkType!,
-          workContext: _item,
-          vaultItems: widget.vaultItems,
-          preselected: request.preselected,
-        );
-        if (!mounted || picked == null) return;
-        await _applyWikiLinkSelection(picked);
-    }
+      item: _item,
+      vaultItems: widget.vaultItems,
+      showBodyView: (view) => setState(() => _pageView = view),
+      requestWorkLink: _requestWorkLink,
+      applySelection: _applyWikiLinkSelection,
+      onPendingHandled: widget.onPendingEntityLinkHandled,
+    );
   }
 
   void _openLinkedEntity(UserCatalogEntity entity) {
@@ -521,12 +501,10 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   bool get _isArchived => WorkDetailArchiveOps.isArchived(_item);
 
   Future<void> _openPosterCorrection() async {
-    final selected = await showDialog<String>(
+    final selected = await WorkDetailSanctumOps.pickPosterUrl(
       context: context,
-      builder: (searchCtx) => WebImageSearchDialog(
-        initialQuery: _item.title,
-        category: _item.category,
-      ),
+      title: _item.title,
+      category: _item.category,
     );
     if (selected != null) {
       setState(() {
@@ -556,15 +534,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _handleAddToLibrary() async {
-    if (widget.onAddToLibrary == null) return;
-    if (AkashaFileService().vaultPath == null) {
-      _showSnack('볼트 연결 후 서재에 담을 수 있습니다.');
-      return;
-    }
-    if (!_isArchived) {
-      await _saveArchive();
-    }
-    await widget.onAddToLibrary!(_item);
+    await WorkDetailLibraryOps.addToLibrary(
+      item: _item,
+      onAddToLibrary: widget.onAddToLibrary,
+      vaultConnected: AkashaFileService().vaultPath != null,
+      isArchived: () => _isArchived,
+      saveArchive: () => _saveArchive(),
+      showSnack: _showSnack,
+    );
   }
 
   Future<void> _saveArchive({
@@ -676,20 +653,18 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _applyBodyTemplate(SanctumBodyTemplate template) async {
-    if (_bodyCtrl.text.trim().isNotEmpty) {
-      final confirmed = await WorkDetailSanctumOps.confirmTemplateOverwrite(
-        context,
-      );
-      if (!confirmed) return;
+    final message = await WorkDetailSanctumOps.applyBodyTemplate(
+      context: context,
+      template: template,
+      bodyCtrl: _bodyCtrl,
+      item: _item,
+      sectionEditor: _sectionEditorKey.currentState,
+      markDirty: _markDirty,
+    );
+    if (message != null && mounted) {
+      setState(() {});
+      _showSnack(message);
     }
-
-    setState(() {
-      _bodyCtrl.text = WorkDetailSanctumOps.bodyMarkdownForTemplate(template);
-      WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    });
-    _sectionEditorKey.currentState?.reloadFromBody();
-    _markDirty();
-    _showSnack('「${template.label}」 템플릿을 적용했습니다.');
   }
 
   Future<void> _exportHtml() async {
@@ -831,62 +806,43 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
                 onFocusSanctum: _focusSanctumForLinks,
               ),
         Expanded(
-          child: ColoredBox(
-            color: AkashaColors.workbenchEditor,
-            child: SanctumPagePanel(
-              view: _pageView,
-              onViewChanged: _onPageViewChanged,
-              headerTitle: '작품 정보 편집',
-              titleController: _titleCtrl,
-              onTitleChanged: _markDirty,
-              sectionLayout: true,
-              sectionEditorKey: _sectionEditorKey,
-              previewMarkdown: _previewBodyMarkdown,
-              mdFilePath: _item.filePath,
-              isDirty: widget.isDirty,
-              isSaving: _isSaving,
-              externalChangePending: _externalChangePending,
-              onReloadFromDisk: () => _reloadFromDisk(),
-              onDismissExternalChange: _dismissExternalChange,
-              lastSavedAt: _lastSavedAt,
-              bodyController: _bodyCtrl,
-              fileController: _fileCtrl,
-              onBodyChanged: _markDirty,
-              onFileChanged: _markDirty,
-              onOpenFileView: _refreshFullFileEditor,
-              onWikiLinkTap: widget.onWikiLinkTap,
-              onRequestEntityLink: widget.onRequestEntityLink,
-              userCatalog: widget.userCatalog,
-              onOpenLinkedEntity: _openLinkedEntity,
-              archiveCompletionBodyRaw: _bodyCtrl.text,
-              footer: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SanctumArchiveToolbar(
-                    category: _item.category,
-                    canExportHtml: _isArchivedInVault,
-                    onApplyTemplate: _applyBodyTemplate,
-                    onExportHtml: _exportHtml,
-                  ),
-                  WorkbenchSaveActions(
-                    isSaving: _isSaving,
-                    isDirty: widget.isDirty,
-                    lastSavedAt: _lastSavedAt,
-                    saveLabel: _isArchived ? 'md 저장' : 'md 생성',
-                    onSave: _saveArchive,
-                    showAddToLibrary: widget.onAddToLibrary != null,
-                    libraryLabel: _isArchived
-                        ? '서재에 담기'
-                        : '저장하고 서재에 담기',
-                    onAddToLibrary: _handleAddToLibrary,
-                    showReset: true,
-                    onReset: _resetToDefaults,
-                    canDeleteMd: _isArchivedInVault,
-                    onDeleteArchive: _confirmDelete,
-                  ),
-                ],
-              ),
-            ),
+          child: WorkDetailSanctumPanel(
+            pageView: _pageView,
+            onViewChanged: _onPageViewChanged,
+            titleController: _titleCtrl,
+            onTitleChanged: _markDirty,
+            sectionEditorKey: _sectionEditorKey,
+            bodyController: _bodyCtrl,
+            fileController: _fileCtrl,
+            previewMarkdown: _previewBodyMarkdown,
+            mdFilePath: _item.filePath,
+            isDirty: widget.isDirty,
+            isSaving: _isSaving,
+            externalChangePending: _externalChangePending,
+            onReloadFromDisk: () => _reloadFromDisk(),
+            onDismissExternalChange: _dismissExternalChange,
+            lastSavedAt: _lastSavedAt,
+            onBodyChanged: _markDirty,
+            onFileChanged: _markDirty,
+            onOpenFileView: _refreshFullFileEditor,
+            onWikiLinkTap: widget.onWikiLinkTap,
+            onRequestEntityLink: widget.onRequestEntityLink,
+            userCatalog: widget.userCatalog,
+            onOpenLinkedEntity: _openLinkedEntity,
+            category: _item.category,
+            archiveCompletionBodyRaw: _bodyCtrl.text,
+            canExportHtml: _isArchivedInVault,
+            onApplyTemplate: _applyBodyTemplate,
+            onExportHtml: _exportHtml,
+            saveLabel: _isArchived ? 'md 저장' : 'md 생성',
+            onSave: _saveArchive,
+            showAddToLibrary: widget.onAddToLibrary != null,
+            libraryLabel:
+                _isArchived ? '서재에 담기' : '저장하고 서재에 담기',
+            onAddToLibrary: _handleAddToLibrary,
+            onReset: _resetToDefaults,
+            canDeleteMd: _isArchivedInVault,
+            onDeleteArchive: _confirmDelete,
           ),
         ),
               WorkDetailConnectionsPanel(

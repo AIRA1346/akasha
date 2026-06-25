@@ -51,8 +51,8 @@
 
 | 줄 수 | 파일 | 비고 |
 |------:|------|------|
-| 857 | `work_detail_workspace.dart` | F2 sanctum ops 분리 — **본체 대형** |
-| **754** | `entity_detail_workspace.dart` | P2 분해 진행 (`sanctum_panel`·ops·snapshot) |
+| **814** | `work_detail_workspace.dart` | P2 분해 (`sanctum_panel`·library·link ops) |
+| **755** | `entity_detail_workspace.dart` | P2 분해 진행 |
 | 730 | `markdown_body_editor.dart` | P2 분해 후보 |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
