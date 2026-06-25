@@ -16,9 +16,7 @@ import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../../../services/sanctum_html_exporter.dart';
 import '../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../core/archiving/entity_anchor.dart';
@@ -29,6 +27,7 @@ import 'entity_detail_save_ops.dart';
 import 'entity_detail_delete_ops.dart';
 import 'entity_detail_draft_ops.dart';
 import 'entity_detail_link_pick_ops.dart';
+import 'entity_detail_sanctum_ops.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_link_pick_ops.dart';
 import 'workbench_linked_record_ops.dart';
@@ -669,24 +668,13 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
         ? _posterUrlCtrl.text.trim()
         : item.posterPath;
 
-    try {
-      final path = await SanctumHtmlExporter.exportAdjacentToRecord(
-        item: item,
-        bodyMarkdown: _bodyCtrl.text,
-        titleOverride: _entity.title,
-      );
-      if (!mounted) return;
-      if (path == null) {
-        _showSnack('HTML 파일을 만들 수 없습니다.');
-        return;
-      }
-      final opened = await launchUrl(Uri.file(path));
-      _showSnack(
-        opened ? 'HTML을 저장하고 열었습니다.' : 'HTML을 저장했습니다: $path',
-      );
-    } catch (e) {
-      if (mounted) _showSnack('HTML보내기 실패: $e');
-    }
+    final result = await EntityDetailSanctumOps.exportHtml(
+      item: item,
+      bodyMarkdown: _bodyCtrl.text,
+      titleOverride: _entity.title,
+    );
+    if (!mounted) return;
+    _showSnack(EntityDetailSanctumOps.htmlExportSnackMessage(result));
   }
 
   Future<void> _openPosterCorrection() async {
