@@ -23,16 +23,20 @@ import 'work_detail_library_ops.dart';
 import 'work_detail_archive_ops.dart';
 import 'work_detail_connections_coordinator.dart';
 import 'work_detail_item_hydration.dart';
+import 'work_detail_save_orchestrator.dart';
 import 'work_detail_save_ui_patch.dart';
 import 'work_detail_delete_flow_ops.dart';
 import 'workbench_workspace_record_nav.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
 import 'workbench_vault_disk_ops.dart';
+import 'workbench_vault_reload_flow.dart';
 import 'workbench_vault_reload_messages.dart';
 import 'widgets/workbench_save_shortcuts.dart';
 import 'widgets/work_detail_workspace_body.dart';
 import 'widgets/work_sanctum_section_editor.dart';
+
+part 'work_detail_workspace_ui.part.dart';
 
 /// 3열 작품정보 + 4열 Sanctum md (워크벤치 작업 뷰)
 class WorkDetailWorkspace extends StatefulWidget {
@@ -253,23 +257,20 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
-    try {
-      final reloaded = await _connections.reloadWorkFromDisk(current: _item);
-      if (reloaded == null) {
-        throw StateError('reload failed');
-      }
-      if (!mounted) return;
-      _applyItem(reloaded, resetPageView: false);
-      widget.onDirtyChanged(false);
-      widget.onSaved(reloaded, silent: true, dirty: false);
-      if (!silent && mounted) {
-        _showSnack(WorkbenchVaultReloadMessages.workSuccess);
-      }
-    } catch (e) {
-      if (mounted && !silent) {
-        _showSnack(WorkbenchVaultReloadMessages.workFailure(e));
-      }
-    }
+    await WorkbenchVaultReloadFlow.run(
+      reload: () => _connections.reloadWorkFromDisk(current: _item),
+      onReloaded: (reloaded) {
+        _applyItem(reloaded, resetPageView: false);
+        widget.onDirtyChanged(false);
+        widget.onSaved(reloaded, silent: true, dirty: false);
+      },
+      showSuccess: _showSnack,
+      showFailure: _showSnack,
+      successMessage: () => WorkbenchVaultReloadMessages.workSuccess,
+      failureMessage: WorkbenchVaultReloadMessages.workFailure,
+      silent: silent,
+      isMounted: () => mounted,
+    );
   }
 
   void _dismissExternalChange() {
@@ -394,14 +395,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   void _applySaveUiPatch(WorkDetailSaveUiPatch patch) {
     _item = patch.item;
-    if (patch.titleText != null) {
-      _assignControllerTextIfChanged(_titleCtrl, patch.titleText!);
-      _assignControllerTextIfChanged(_posterUrlCtrl, patch.posterText!);
-      _assignControllerTextIfChanged(_bodyCtrl, patch.bodyText!);
-      if (patch.pageView != null) {
-        _pageView = patch.pageView!;
-      }
-    }
+    patch.applyToControllers(
+      titleCtrl: _titleCtrl,
+      posterUrlCtrl: _posterUrlCtrl,
+      bodyCtrl: _bodyCtrl,
+      onPageView: (view) => _pageView = view,
+    );
     _draftTags = patch.draftTags;
     _registryTags = patch.registryTags;
     _draftRating = patch.draftRating;
@@ -573,33 +572,31 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     )) {
       return;
     }
-    _autosave.cancel();
-    final contentAtSave = _pageView == SanctumPageView.file
-        ? _fileCtrl.text
-        : _bodyCtrl.text;
     setState(() => _isSaving = true);
     try {
-      final result = await WorkDetailSaveOps.run(
+      final result = await WorkDetailSaveOrchestrator.run(
+        suppressPersist: _suppressPersist,
+        isSaving: false,
+        cancelAutosave: _autosave.cancel,
         draft: _buildSaveDraft(),
         pageView: _pageView,
-        contentAtSave: contentAtSave,
+        contentAtSave: _pageView == SanctumPageView.file
+            ? _fileCtrl.text
+            : _bodyCtrl.text,
         currentFileContent: _fileCtrl.text,
         currentBodyContent: _bodyCtrl.text,
+        currentPageView: _pageView,
+        silent: silent,
+        switchToPreview: switchToPreview,
       );
       if (!mounted) return;
       switch (result) {
-        case WorkDetailSaveSkipped():
+        case WorkDetailSaveOrchestrationSkipped():
           return;
-        case WorkDetailSaveFailed(:final error):
+        case WorkDetailSaveOrchestrationFailed(:final error):
           if (!silent) _showSnack('저장 실패: $error');
-        case WorkDetailSaveSucceeded result:
-          final patch = WorkDetailSaveUiPatch.fromSucceeded(
-            result: result,
-            currentPageView: _pageView,
-            silent: silent,
-            switchToPreview: switchToPreview,
-          );
-          setState(() => _applySaveUiPatch(patch));
+        case WorkDetailSaveOrchestrationSucceeded result:
+          setState(() => _applySaveUiPatch(result.patch));
           if (!result.stillDirty) {
             widget.onDirtyChanged(false);
           } else {
@@ -719,80 +716,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   Widget build(BuildContext context) {
     return WorkbenchSaveShortcuts(
       onSave: _saveArchive,
-      child: WorkDetailWorkspaceBody(
-        item: _item,
-        preview: _applyDraft(),
-        infoPanelWidth: widget.infoPanelWidth,
-        infoPanelLocked: widget.infoPanelLocked,
-        vaultLinked: AkashaFileService().vaultPath != null,
-        titleCtrl: _titleCtrl,
-        posterUrlCtrl: _posterUrlCtrl,
-        bodyCtrl: _bodyCtrl,
-        fileCtrl: _fileCtrl,
-        draftRating: _draftRating,
-        draftWorkStatus: _draftWorkStatus,
-        draftMyStatus: _draftMyStatus,
-        draftHallOfFame: _draftHallOfFame,
-        draftTags: _draftTags,
-        registryTags: _registryTags,
-        isSaving: _isSaving,
-        isArchived: _isArchived,
-        isArchivedInVault: _isArchivedInVault,
-        isDirty: widget.isDirty,
-        lastSavedAt: _lastSavedAt,
-        showAddToLibrary: widget.onAddToLibrary != null,
-        loadingIncoming: _connections.loadingIncoming,
-        incomingPaths: _connections.incomingPaths,
-        staleLabelRecordCount: _connections.staleLabelRecordCount,
-        loadingSameDay: _connections.loadingSameDay,
-        sameDayRefs: _connections.sameDayRefs,
-        linkNeighbors: _connections.linkNeighbors,
-        loadingLinkNeighbors: _connections.loadingLinkNeighbors,
-        pageView: _pageView,
-        sectionEditorKey: _sectionEditorKey,
-        previewBodyMarkdown: _previewBodyMarkdown,
-        externalChangePending: _externalChangePending,
-        onClose: widget.onClose,
-        onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
-        userCatalog: widget.userCatalog,
-        onWikiLinkTap: widget.onWikiLinkTap,
-        onRequestEntityLink: widget.onRequestEntityLink,
-        onInfoWidthChanged: widget.onInfoWidthChanged,
-        onToggleInfoLock: widget.onToggleInfoLock,
-        onRefreshIncoming: () => _connections.loadIncoming(
-          work: _item,
-          linkIndex: widget.linkIndex,
-        ),
-        onOpenIncoming: _openIncoming,
-        onOpenSameDay: _openSameDay,
-        onMarkDirty: _markDirty,
-        onDraftRatingChanged: (v) => setState(() => _draftRating = v),
-        onDraftWorkStatusChanged: (v) => setState(() => _draftWorkStatus = v),
-        onDraftMyStatusChanged: (v) => setState(() => _draftMyStatus = v),
-        onDraftHallOfFameChanged: (v) => setState(() => _draftHallOfFame = v),
-        onDraftTagsChanged: (tags) => setState(() => _draftTags = tags),
-        onPosterTap: _openPosterCorrection,
-        onResetToDefaults: _resetToDefaults,
-        onSaveArchive: _saveArchive,
-        onAddToLibrary: _handleAddToLibrary,
-        onDeleteArchive: _confirmDelete,
-        onOpenLinkedEntity: _openLinkedEntity,
-        onOpenLinkedWork: _openLinkedWork,
-        onFocusSanctum: _focusSanctumForLinks,
-        onViewChanged: _onPageViewChanged,
-        onTitleChanged: _markDirty,
-        onReloadFromDisk: () => _reloadFromDisk(),
-        onDismissExternalChange: _dismissExternalChange,
-        onBodyChanged: _markDirty,
-        onFileChanged: _markDirty,
-        onOpenFileView: _refreshFullFileEditor,
-        onApplyTemplate: _applyBodyTemplate,
-        onExportHtml: _exportHtml,
-        onAddEntityLink: widget.userCatalog != null
-            ? _requestEntityLinkForType
-            : null,
-        onAddWorkLink: _requestWorkLink,
-      ),
+      child: buildWorkDetailWorkspaceBody(this),
     );
   }
 }

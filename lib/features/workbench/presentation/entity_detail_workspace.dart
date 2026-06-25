@@ -17,19 +17,23 @@ import '../../../core/archiving/entity_anchor.dart';
 import 'entity_detail_archive_ops.dart';
 import 'entity_detail_connections_coordinator.dart';
 import 'entity_detail_save_ops.dart';
-import 'entity_detail_delete_ops.dart';
 import 'entity_detail_draft_ops.dart';
 import 'entity_detail_library_ops.dart';
 import 'entity_detail_link_pick_ops.dart';
 import 'entity_detail_sanctum_ops.dart';
+import 'entity_detail_save_orchestrator.dart';
 import 'entity_detail_save_ui_patch.dart';
+import 'entity_detail_delete_flow_ops.dart';
 import 'workbench_workspace_record_nav.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
 import 'workbench_vault_disk_ops.dart';
+import 'workbench_vault_reload_flow.dart';
 import 'workbench_vault_reload_messages.dart';
 import 'widgets/entity_detail_workspace_body.dart';
 import 'widgets/workbench_save_shortcuts.dart';
+
+part 'entity_detail_workspace_ui.part.dart';
 
 /// Entity collectible — Workbench 3·4열 (Phase 6).
 class EntityDetailWorkspace extends StatefulWidget {
@@ -234,25 +238,22 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
   }
 
   Future<void> _reloadFromDisk({bool silent = false}) async {
-    try {
-      final parsed = await _connections.reloadJournalFromDisk(
+    await WorkbenchVaultReloadFlow.run(
+      reload: () => _connections.reloadJournalFromDisk(
         storagePath: _journal?.storagePath,
-      );
-      if (parsed == null) {
-        throw StateError('journal parse failed');
-      }
-      if (!mounted) return;
-      _applyJournalFromEntry(parsed);
-      widget.onDirtyChanged(false);
-      widget.onSaved(_entity, parsed, silent: true);
-      if (!silent && mounted) {
-        _showSnack(WorkbenchVaultReloadMessages.entitySuccess);
-      }
-    } catch (e) {
-      if (mounted && !silent) {
-        _showSnack(WorkbenchVaultReloadMessages.entityFailure(e));
-      }
-    }
+      ),
+      onReloaded: (parsed) {
+        _applyJournalFromEntry(parsed);
+        widget.onDirtyChanged(false);
+        widget.onSaved(_entity, parsed, silent: true);
+      },
+      showSuccess: _showSnack,
+      showFailure: _showSnack,
+      successMessage: () => WorkbenchVaultReloadMessages.entitySuccess,
+      failureMessage: WorkbenchVaultReloadMessages.entityFailure,
+      silent: silent,
+      isMounted: () => mounted,
+    );
   }
 
   void _dismissExternalChange() {
@@ -483,83 +484,70 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       return;
     }
 
-    final prepare = EntityDetailSavePrepareOps.prepare(
-      rawBody: _bodyCtrl.text,
-      posterPath: _posterUrlCtrl.text,
-      tags: _draftTags,
-      silent: silent,
-      pageView: _pageView,
-      syncBodyFromEditor: _syncBodyFromEditor,
-    );
-    switch (prepare) {
-      case EntityDetailSaveBlocked(:final message):
-        if (mounted) _showSnack(message);
-        return;
-      case EntityDetailSaveReady(:final body, :final usedPlaceholder):
-        if (usedPlaceholder && !silent) {
-          _bodyCtrl.text = body;
-        }
-
-        await EntityDetailSaveOps.warnWorkTitleTagsIfNeeded(
+    setState(() => _isSaving = true);
+    try {
+      final result = await EntityDetailSaveOrchestrator.run(
+        suppressPersist: _suppressPersist,
+        isSaving: false,
+        rawBody: _bodyCtrl.text,
+        posterPath: _posterUrlCtrl.text,
+        tags: _draftTags,
+        silent: silent,
+        pageView: _pageView,
+        syncBodyFromEditor: _syncBodyFromEditor,
+        entity: _entity,
+        journal: _journal,
+        catalog: widget.userCatalog,
+        vaultStore: _store,
+        currentPageView: _pageView,
+        beforePersist: () => EntityDetailSaveOps.warnWorkTitleTagsIfNeeded(
           context: context,
           catalog: widget.userCatalog,
           tags: _draftTags,
-        );
-
-        setState(() => _isSaving = true);
-        try {
-          final result = await EntityDetailSaveOps.run(
-            entity: _entity,
-            journal: _journal,
-            tags: _draftTags,
-            posterPath: _posterUrlCtrl.text,
-            body: body,
-            usedPlaceholder: usedPlaceholder,
-            catalog: widget.userCatalog,
-            vaultStore: _store,
+        ),
+      );
+      if (!mounted) return;
+      switch (result) {
+        case EntityDetailSaveOrchestrationSkipped():
+          return;
+        case EntityDetailSaveOrchestrationBlocked(:final message):
+          _showSnack(message);
+        case EntityDetailSaveOrchestrationFailed(:final error):
+          final msg = EntityDetailSavePrepareOps.saveFailedMessage(
+            error: error,
+            silent: silent,
           );
-          if (!mounted) return;
-          switch (result) {
-            case EntityDetailSaveSkipped():
-              return;
-            case EntityDetailSaveFailed(:final error):
-              final msg = EntityDetailSavePrepareOps.saveFailedMessage(
-                error: error,
-                silent: silent,
-              );
-              if (msg != null) _showSnack(msg);
-            case EntityDetailSaveSucceeded result:
-              final patch = EntityDetailSaveUiPatch.fromSucceeded(
-                result: result,
-                currentPageView: _pageView,
-                silent: silent,
-              );
-              if (patch.bodyForPlaceholder != null && !silent) {
-                _bodyCtrl.text = patch.bodyForPlaceholder!;
-              }
-              setState(() {
-                _entity = patch.entity;
-                _journal = patch.journal;
-                _item = patch.item;
-                _preview = patch.preview;
-                _draftTags = patch.draftTags;
-                _fileCtrl.text = patch.serializedFile;
-                _lastSavedAt = patch.savedAt;
-                if (patch.pageView != null) {
-                  _pageView = patch.pageView!;
-                }
-              });
-              widget.onDirtyChanged(false);
-              widget.onSaved(patch.entity, patch.journal, silent: silent);
-              _refreshRecordLinks();
-              _connections.refreshDiskMtime(_journal?.storagePath);
-              if (!silent) {
-                _showSnack(EntityDetailArchiveOps.saveSuccessMessage(patch.entity));
-              }
+          if (msg != null) _showSnack(msg);
+        case EntityDetailSaveOrchestrationSucceeded result:
+          if (result.usedPlaceholder && !silent) {
+            _bodyCtrl.text = result.body;
           }
-        } finally {
-          if (mounted) setState(() => _isSaving = false);
-        }
+          if (result.patch.bodyForPlaceholder != null && !silent) {
+            _bodyCtrl.text = result.patch.bodyForPlaceholder!;
+          }
+          final patch = result.patch;
+          setState(() {
+            _entity = patch.entity;
+            _journal = patch.journal;
+            _item = patch.item;
+            _preview = patch.preview;
+            _draftTags = patch.draftTags;
+            _fileCtrl.text = patch.serializedFile;
+            _lastSavedAt = patch.savedAt;
+            if (patch.pageView != null) {
+              _pageView = patch.pageView!;
+            }
+          });
+          widget.onDirtyChanged(false);
+          widget.onSaved(patch.entity, patch.journal, silent: silent);
+          _refreshRecordLinks();
+          _connections.refreshDiskMtime(_journal?.storagePath);
+          if (!silent) {
+            _showSnack(EntityDetailArchiveOps.saveSuccessMessage(patch.entity));
+          }
+      }
+    } finally {
+      if (mounted) setState(() => _isSaving = false);
     }
   }
 
@@ -585,35 +573,32 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
       );
 
   Future<void> _confirmDelete() async {
-    if (_journal == null || _isSaving) return;
-    final confirmed = await EntityDetailDeleteOps.confirmDelete(
-      context,
+    final result = await EntityDetailDeleteFlowOps.run(
+      context: context,
+      isSaving: _isSaving,
+      journal: _journal,
       title: _entity.title,
-    );
-    if (!confirmed || !mounted) return;
-
-    final catalog = widget.userCatalog;
-    if (catalog == null) {
-      _showSnack('catalog 연결이 필요합니다.');
-      return;
-    }
-
-    setState(() => _suppressPersist = true);
-    widget.onDirtyChanged(false);
-
-    final deleted = await EntityDetailDeleteOps.deleteJournal(
-      entry: _journal!,
-      userCatalog: catalog,
+      catalog: widget.userCatalog,
       vaultStore: _store,
+      onConfirmed: () async {
+        if (!mounted) return;
+        setState(() => _suppressPersist = true);
+        widget.onDirtyChanged(false);
+      },
     );
     if (!mounted) return;
 
-    if (deleted) {
-      _showSnack('「${_entity.title}」 journal을 삭제했습니다.');
-      widget.onDeleted();
-    } else {
-      setState(() => _suppressPersist = false);
-      _showSnack('삭제할 파일을 찾지 못했습니다.');
+    switch (result) {
+      case EntityDetailDeleteBlocked(:final message):
+        if (message.isNotEmpty) _showSnack(message);
+      case EntityDetailDeleteCancelled():
+        return;
+      case EntityDetailDeleteSucceeded(:final title):
+        _showSnack('「$title」 journal을 삭제했습니다.');
+        widget.onDeleted();
+      case EntityDetailDeleteFailed(:final message):
+        setState(() => _suppressPersist = false);
+        _showSnack(message);
     }
   }
 
@@ -674,75 +659,9 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
 
   @override
   Widget build(BuildContext context) {
-    final hasJournal = EntityDetailArchiveOps.hasJournal(_journal);
-    final saveLabel = hasJournal ? 'md 저장' : 'journal 생성';
-
     return WorkbenchSaveShortcuts(
       onSave: () => _saveJournal(),
-      child: EntityDetailWorkspaceBody(
-        entity: _entity,
-        preview: _preview,
-        hasJournal: hasJournal,
-        saveLabel: saveLabel,
-        infoPanelWidth: widget.infoPanelWidth,
-        infoPanelLocked: widget.infoPanelLocked,
-        posterUrlCtrl: _posterUrlCtrl,
-        bodyCtrl: _bodyCtrl,
-        fileCtrl: _fileCtrl,
-        draftTags: _draftTags,
-        pageView: _pageView,
-        isDirty: widget.isDirty,
-        isSaving: _isSaving,
-        externalChangePending: _externalChangePending,
-        lastSavedAt: _lastSavedAt,
-        showAddToLibrary: widget.onAddToLibrary != null,
-        linkNeighbors: _connections.linkNeighbors,
-        loadingLinkNeighbors: _connections.loadingLinkNeighbors,
-        loadingIncoming: _connections.loadingIncoming,
-        incomingPaths: _connections.incomingPaths,
-        staleLabelRecordCount: _connections.staleLabelRecordCount,
-        loadingSameDay: _connections.loadingSameDay,
-        sameDayRefs: _connections.sameDayRefs,
-        onClose: widget.onClose,
-        onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
-        userCatalog: widget.userCatalog,
-        linkIndex: widget.linkIndex,
-        journalStoragePath: _journal?.storagePath,
-        onWikiLinkTap: widget.onWikiLinkTap,
-        onRequestEntityLink: widget.onRequestEntityLink,
-        onInfoWidthChanged: widget.onInfoWidthChanged,
-        onToggleInfoLock: widget.onToggleInfoLock,
-        onPosterTap: _openPosterCorrection,
-        onFocusSanctum: _focusSanctumForLinks,
-        onViewChanged: _onPageViewChanged,
-        onReloadFromDisk: () => _reloadFromDisk(),
-        onDismissExternalChange: _dismissExternalChange,
-        onBodyChanged: _markDirty,
-        onFileChanged: _markDirty,
-        onOpenFileView: _refreshFileEditor,
-        onSave: () => _saveJournal(),
-        onExportHtml: _exportHtml,
-        onAddToLibrary: _handleAddToLibrary,
-        onDeleteArchive: hasJournal ? _confirmDelete : null,
-        onOpenLinkedEntity: _openLinkedEntity,
-        onOpenLinkedWork: _openLinkedWork,
-        onAddEntityLink: widget.userCatalog != null
-            ? _requestEntityLinkForType
-            : null,
-        onAddWorkLink: widget.userCatalog != null ? _requestWorkLink : null,
-        onRefreshIncoming: () => _connections.loadIncoming(
-          entity: _entity,
-          journal: _journal,
-          linkIndex: widget.linkIndex,
-        ),
-        onOpenIncoming: _openIncoming,
-        onOpenSameDay: _openSameDay,
-        onDraftTagsChanged: (tags) {
-          setState(() => _draftTags = tags);
-          _updatePreview();
-          _markDirty();
-        },
-      ),
+      child: buildEntityDetailWorkspaceBody(this),
     );
   }
 }

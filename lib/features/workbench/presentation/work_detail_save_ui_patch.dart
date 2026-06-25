@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../../models/akasha_item.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'work_detail_draft_ops.dart';
@@ -65,5 +67,24 @@ class WorkDetailSaveUiPatch {
       savedAt: result.savedAt,
       stillDirty: result.stillDirty,
     );
+  }
+
+  void applyToControllers({
+    required TextEditingController titleCtrl,
+    required TextEditingController posterUrlCtrl,
+    required TextEditingController bodyCtrl,
+    required void Function(SanctumPageView pageView)? onPageView,
+  }) {
+    if (titleText != null) {
+      WorkDetailDraftOps.assignControllerTextIfChanged(titleCtrl, titleText!);
+      WorkDetailDraftOps.assignControllerTextIfChanged(
+        posterUrlCtrl,
+        posterText!,
+      );
+      WorkDetailDraftOps.assignControllerTextIfChanged(bodyCtrl, bodyText!);
+      if (pageView != null) {
+        onPageView?.call(pageView!);
+      }
+    }
   }
 }
