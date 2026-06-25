@@ -6,6 +6,90 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_journal_parser.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 
+/// EntityDetailWorkspace 컨트롤러·상태 동기화 스냅샷.
+class EntityDetailWorkspaceSnapshot {
+  const EntityDetailWorkspaceSnapshot({
+    required this.entity,
+    required this.journal,
+    required this.item,
+    required this.preview,
+    required this.draftTags,
+    required this.bodyText,
+    required this.posterText,
+    required this.fileText,
+    required this.pageView,
+  });
+
+  final UserCatalogEntity entity;
+  final EntityJournalEntry? journal;
+  final EntityItem item;
+  final EntityItem preview;
+  final List<String> draftTags;
+  final String bodyText;
+  final String posterText;
+  final String fileText;
+  final SanctumPageView pageView;
+
+  static EntityDetailWorkspaceSnapshot fromProps({
+    required UserCatalogEntity entity,
+    required EntityJournalEntry? journal,
+  }) {
+    final draftTags = List<String>.from(journal?.tags ?? entity.tags);
+    final bodyText = journal?.body ?? '';
+    final posterText = journal?.posterPath ?? entity.posterPath ?? '';
+    final item = EntityDetailDraftOps.buildEntityItem(entity, journal);
+    return EntityDetailWorkspaceSnapshot(
+      entity: entity,
+      journal: journal,
+      item: item,
+      preview: item,
+      draftTags: draftTags,
+      bodyText: bodyText,
+      posterText: posterText,
+      fileText: EntityDetailDraftOps.serializeFile(
+        entity: entity,
+        journal: journal,
+        body: bodyText,
+        tags: draftTags,
+        posterPath: posterText,
+      ),
+      pageView: EntityDetailDraftOps.initialPageView(bodyText),
+    );
+  }
+
+  static EntityDetailWorkspaceSnapshot fromJournalEntry({
+    required UserCatalogEntity entity,
+    required EntityJournalEntry entry,
+    required SanctumPageView pageView,
+  }) {
+    final mirrored = entity.copyWith(
+      title: entry.title,
+      tags: entry.tags,
+      posterPath: entry.posterPath,
+    );
+    final tags = List<String>.from(entry.tags);
+    final posterText = entry.posterPath ?? '';
+    final item = EntityDetailDraftOps.buildEntityItem(mirrored, entry);
+    return EntityDetailWorkspaceSnapshot(
+      entity: mirrored,
+      journal: entry,
+      item: item,
+      preview: item,
+      draftTags: tags,
+      bodyText: entry.body,
+      posterText: posterText,
+      fileText: EntityDetailDraftOps.serializeFile(
+        entity: mirrored,
+        journal: entry,
+        body: entry.body,
+        tags: tags,
+        posterPath: posterText,
+      ),
+      pageView: pageView,
+    );
+  }
+}
+
 /// EntityDetailWorkspace draft·journal 파일 편집.
 abstract final class EntityDetailDraftOps {
   static SanctumPageView initialPageView(String bodyText) =>

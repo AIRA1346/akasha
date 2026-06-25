@@ -52,7 +52,7 @@
 | 줄 수 | 파일 | 비고 |
 |------:|------|------|
 | 857 | `work_detail_workspace.dart` | F2 sanctum ops 분리 — **본체 대형** |
-| 796 | `entity_detail_workspace.dart` | P2 분해 후보 |
+| **754** | `entity_detail_workspace.dart` | P2 분해 진행 (`sanctum_panel`·ops·snapshot) |
 | 730 | `markdown_body_editor.dart` | P2 분해 후보 |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
@@ -136,7 +136,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P0 | analyze lint · FOUNDATION_AUDIT 갱신 | ✅ |
 | P1 | `hasOpenWork` · `WorkTab` deprecated 제거 | ✅ |
 | P1 | Entity neighbors · preview chrome 토큰 | ✅ |
-| P2 | `entity_detail_workspace` 분해 | 🟡 `entity_detail_sanctum_ops` |
+| P2 | `entity_detail_workspace` 분해 | 🟡 796→**754** · sanctum panel·library·snapshot |
 | P2 | `work_detail_workspace` 추가 분해 | ⬜ |
 | P2 | `markdown_body_editor` 분해 | ⬜ |
 | P3 | R14-C Home·Dialog grey pass | ⬜ |
