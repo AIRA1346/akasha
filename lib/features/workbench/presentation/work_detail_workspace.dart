@@ -12,12 +12,11 @@ import '../../../models/entity_link_selection.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/file_service.dart';
-import '../../../services/work_info_defaults.dart';
 import '../../../services/sanctum_body_templates.dart';
 import '../../../widgets/sanctum_page_panel.dart';
-import 'work_detail_sanctum_ops.dart';
 import 'work_detail_save_ops.dart';
 import 'work_detail_draft_ops.dart';
+import 'work_detail_draft_bundle.dart';
 import 'work_detail_link_pick_ops.dart';
 import 'work_detail_library_ops.dart';
 import 'work_detail_archive_ops.dart';
@@ -26,6 +25,7 @@ import 'work_detail_item_hydration.dart';
 import 'work_detail_save_orchestrator.dart';
 import 'work_detail_save_ui_patch.dart';
 import 'work_detail_delete_flow_ops.dart';
+import 'work_detail_sanctum_workspace_ops.dart';
 import 'workbench_workspace_record_nav.dart';
 import 'workbench_autosave_scheduler.dart';
 import 'workbench_linked_record_ops.dart';
@@ -135,6 +135,20 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   bool get _externalChangePending => _connections.externalChangePending;
 
+  WorkDetailDraftBundle get _draft => WorkDetailDraftBundle(
+        item: _item,
+        pageView: _pageView,
+        titleCtrl: _titleCtrl,
+        bodyCtrl: _bodyCtrl,
+        fileCtrl: _fileCtrl,
+        posterUrlCtrl: _posterUrlCtrl,
+        draftRating: _draftRating,
+        draftWorkStatus: _draftWorkStatus,
+        draftMyStatus: _draftMyStatus,
+        draftHallOfFame: _draftHallOfFame,
+        draftTags: _draftTags,
+      );
+
   void _refreshRecordLinks() {
     _connections.refreshAll(
       work: _item,
@@ -201,38 +215,35 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  void _bindSaveHandler() {
-    widget.onBindSave?.call(_saveArchive);
-  }
-
-  void _assignControllerTextIfChanged(TextEditingController ctrl, String text) {
-    WorkDetailDraftOps.assignControllerTextIfChanged(ctrl, text);
-  }
+  void _bindSaveHandler() => widget.onBindSave?.call(_saveArchive);
 
   void _applyItem(
     AkashaItem item, {
     required bool resetPageView,
     bool preserveBodyEditor = false,
   }) {
-    final hydration = WorkDetailItemHydration.fromItem(
+    WorkDetailItemHydration.fromItem(
       item,
       resetPageView: resetPageView,
       preserveBodyEditor: preserveBodyEditor,
       currentBodyText: _bodyCtrl.text,
       currentPageView: _pageView,
+    ).writeTo(
+      setItem: (next) => _item = next,
+      titleCtrl: _titleCtrl,
+      posterUrlCtrl: _posterUrlCtrl,
+      bodyCtrl: _bodyCtrl,
+      setPageView: (view) => _pageView = view,
+      setDraftState: (tags, registry, rating, workStatus, myStatus, hall) {
+        _draftTags = tags;
+        _registryTags = registry;
+        _draftRating = rating;
+        _draftWorkStatus = workStatus;
+        _draftMyStatus = myStatus;
+        _draftHallOfFame = hall;
+      },
     );
-    _item = hydration.item;
-    _assignControllerTextIfChanged(_titleCtrl, hydration.titleText);
-    _draftTags = hydration.draftTags;
-    _registryTags = hydration.registryTags;
-    _assignControllerTextIfChanged(_posterUrlCtrl, hydration.posterText);
-    _assignControllerTextIfChanged(_bodyCtrl, hydration.bodyText);
-    _pageView = hydration.pageView;
-    _draftRating = hydration.draftRating;
-    _draftWorkStatus = hydration.draftWorkStatus;
-    _draftMyStatus = hydration.draftMyStatus;
-    _draftHallOfFame = hydration.draftHallOfFame;
-    _refreshFullFileEditor();
+    _draft.refreshFullFileEditor();
     _connections.refreshDiskMtime(_item.filePath);
     _connections.loadLinkNeighbors(
       work: _item,
@@ -273,9 +284,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  void _dismissExternalChange() {
-    _connections.dismissExternalChange(_item.filePath);
-  }
+  void _dismissExternalChange() =>
+      _connections.dismissExternalChange(_item.filePath);
 
   @override
   void didUpdateWidget(WorkDetailWorkspace oldWidget) {
@@ -299,78 +309,31 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     WidgetsBinding.instance.addPostFrameCallback((_) => _bindSaveHandler());
   }
 
-  void _refreshFullFileEditor() {
-    WorkDetailDraftOps.refreshFullFileEditor(
-      item: _item,
-      bodyCtrl: _bodyCtrl,
-      fileCtrl: _fileCtrl,
-      titleCtrl: _titleCtrl,
-      posterUrlCtrl: _posterUrlCtrl,
-      draftRating: _draftRating,
-      draftWorkStatus: _draftWorkStatus,
-      draftMyStatus: _draftMyStatus,
-      draftHallOfFame: _draftHallOfFame,
-      draftTags: _draftTags,
-    );
-  }
-
-  void _applyFileEditorToItem() {
-    WorkDetailDraftOps.applyFileEditorToItem(
-      item: _item,
-      titleCtrl: _titleCtrl,
-      bodyCtrl: _bodyCtrl,
-      fileCtrl: _fileCtrl,
-    );
-  }
-
   void _onPageViewChanged(SanctumPageView next) {
-    WorkDetailDraftOps.handlePageViewChanging(
-      current: _pageView,
-      next: next,
-      item: _item,
-      bodyCtrl: _bodyCtrl,
-      titleCtrl: _titleCtrl,
-      fileCtrl: _fileCtrl,
-      posterUrlCtrl: _posterUrlCtrl,
-      draftRating: _draftRating,
-      draftWorkStatus: _draftWorkStatus,
-      draftMyStatus: _draftMyStatus,
-      draftHallOfFame: _draftHallOfFame,
-      draftTags: _draftTags,
-    );
+    _draft.handlePageViewChanging(current: _pageView, next: next);
     setState(() => _pageView = next);
   }
 
-  Future<void> _requestEntityLinkForType(EntityAnchorType type) async {
-    final catalog = widget.userCatalog;
-    if (catalog == null || !mounted) return;
+  Future<void> _requestEntityLinkForType(EntityAnchorType type) =>
+      WorkDetailLinkPickOps.runInteractiveEntityPick(
+        context: context,
+        isMounted: () => mounted,
+        catalog: widget.userCatalog,
+        type: type,
+        workContext: _item,
+        vaultItems: widget.vaultItems,
+        showBodyView: (view) => setState(() => _pageView = view),
+        applySelection: _applyWikiLinkSelection,
+      );
 
-    setState(() => _pageView = SanctumPageView.body);
-
-    final picked = await WorkDetailLinkPickOps.requestEntityLinkForType(
-      context: context,
-      catalog: catalog,
-      type: type,
-      workContext: _item,
-      vaultItems: widget.vaultItems,
-    );
-    if (!mounted || picked == null) return;
-    await _applyWikiLinkSelection(picked);
-  }
-
-  Future<void> _requestWorkLink() async {
-    if (!mounted) return;
-
-    setState(() => _pageView = SanctumPageView.body);
-
-    final picked = await WorkDetailLinkPickOps.requestWorkLink(
-      context: context,
-      vaultItems: widget.vaultItems,
-      excludeWorkId: _item.workId,
-    );
-    if (!mounted || picked == null) return;
-    await _applyWikiLinkSelection(picked);
-  }
+  Future<void> _requestWorkLink() => WorkDetailLinkPickOps.runInteractiveWorkPick(
+        context: context,
+        isMounted: () => mounted,
+        vaultItems: widget.vaultItems,
+        excludeWorkId: _item.workId,
+        showBodyView: (view) => setState(() => _pageView = view),
+        applySelection: _applyWikiLinkSelection,
+      );
 
   Future<void> _applyWikiLinkSelection(EntityLinkSelection picked) async {
     await WorkDetailLinkPickOps.applySelection(
@@ -389,9 +352,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  void _focusSanctumForLinks() {
-    setState(() => _pageView = SanctumPageView.body);
-  }
+  void _focusSanctumForLinks() => setState(() => _pageView = SanctumPageView.body);
 
   void _applySaveUiPatch(WorkDetailSaveUiPatch patch) {
     _item = patch.item;
@@ -407,7 +368,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _draftWorkStatus = patch.draftWorkStatus;
     _draftMyStatus = patch.draftMyStatus;
     _draftHallOfFame = patch.draftHallOfFame;
-    _refreshFullFileEditor();
+    _draft.refreshFullFileEditor();
     _lastSavedAt = patch.savedAt;
     _connections.refreshDiskMtime(_item.filePath);
   }
@@ -426,11 +387,16 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     _autosave.dispose();
     if (!_suppressPersist && widget.isDirty) {
       if (_pageView == SanctumPageView.file) {
-        _applyFileEditorToItem();
+        WorkDetailDraftOps.applyFileEditorToItem(
+          item: _item,
+          titleCtrl: _titleCtrl,
+          bodyCtrl: _bodyCtrl,
+          fileCtrl: _fileCtrl,
+        );
       } else {
         WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
       }
-      widget.onPreserveDraft?.call(widget.tabId, _buildSaveDraft());
+      widget.onPreserveDraft?.call(widget.tabId, _draft.buildSaveDraft());
     }
     _vaultSub?.cancel();
     widget.onBindSave?.call(null);
@@ -472,82 +438,39 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
-  AkashaItem _buildSaveDraft() => WorkDetailDraftOps.buildSaveDraft(
-        item: _item,
-        pageView: _pageView,
-        titleCtrl: _titleCtrl,
-        bodyCtrl: _bodyCtrl,
-        fileCtrl: _fileCtrl,
-        posterUrlCtrl: _posterUrlCtrl,
-        draftRating: _draftRating,
-        draftWorkStatus: _draftWorkStatus,
-        draftMyStatus: _draftMyStatus,
-        draftHallOfFame: _draftHallOfFame,
-        draftTags: _draftTags,
-      );
-
-  String get _previewBodyMarkdown => WorkDetailDraftOps.previewBodyMarkdown(
-        item: _item,
-        pageView: _pageView,
-        bodyCtrl: _bodyCtrl,
-        titleCtrl: _titleCtrl,
-        posterUrlCtrl: _posterUrlCtrl,
-        draftRating: _draftRating,
-        draftWorkStatus: _draftWorkStatus,
-        draftMyStatus: _draftMyStatus,
-        draftHallOfFame: _draftHallOfFame,
-        draftTags: _draftTags,
-      );
-
-  AkashaItem _applyDraft() => WorkDetailDraftOps.applyDraft(
-        item: _item,
-        titleCtrl: _titleCtrl,
-        posterUrlCtrl: _posterUrlCtrl,
-        draftRating: _draftRating,
-        draftWorkStatus: _draftWorkStatus,
-        draftMyStatus: _draftMyStatus,
-        draftHallOfFame: _draftHallOfFame,
-        draftTags: _draftTags,
-      );
-
   bool get _isArchivedInVault => WorkDetailArchiveOps.isArchivedInVault(_item);
 
   bool get _isArchived => WorkDetailArchiveOps.isArchived(_item);
 
   Future<void> _openPosterCorrection() async {
-    final selected = await WorkDetailSanctumOps.pickPosterUrl(
+    await WorkDetailSanctumWorkspaceOps.openPosterCorrection(
       context: context,
-      title: _item.title,
-      category: _item.category,
+      item: _item,
+      posterUrlCtrl: _posterUrlCtrl,
+      onApplied: () => setState(_draft.applyDraft),
+      onDirty: () => widget.onDirtyChanged(true),
+      scheduleAutoSave: _scheduleAutoSave,
     );
-    if (selected != null) {
-      setState(() {
-        _posterUrlCtrl.text = selected;
-        _applyDraft();
-      });
-      widget.onDirtyChanged(true);
-      _scheduleAutoSave();
-    }
   }
 
   void _resetToDefaults() {
-    WorkInfoDefaults.applyRegistryDefaults(_item);
-    _titleCtrl.text = _item.title;
-    _draftTags = List<String>.from(_item.tags);
-    _registryTags = WorkDetailDraftOps.loadRegistryTags(_item.workId);
-    _posterUrlCtrl.text = _item.posterPath ?? '';
-    _bodyCtrl.text = WorkDetailDraftOps.initialBodyMarkdown(_item);
-    final fields = WorkDetailDraftOps.draftFieldsFromItem(_item);
-    _draftRating = fields.rating;
-    _draftWorkStatus = fields.workStatus;
-    _draftMyStatus = fields.myStatus;
-    _draftHallOfFame = fields.hallOfFame;
-    _markDirty();
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('사전 기본값으로 되돌렸습니다. (work_id는 유지)'),
-        duration: Duration(seconds: 2),
-      ),
+    WorkDetailSanctumWorkspaceOps.resetToDefaults(
+      item: _item,
+      titleCtrl: _titleCtrl,
+      posterUrlCtrl: _posterUrlCtrl,
+      bodyCtrl: _bodyCtrl,
+      onTags: (tags, registry) {
+        _draftTags = tags;
+        _registryTags = registry;
+      },
+      onDraftFields: (rating, workStatus, myStatus, hall) {
+        _draftRating = rating;
+        _draftWorkStatus = workStatus;
+        _draftMyStatus = myStatus;
+        _draftHallOfFame = hall;
+      },
+      markDirty: _markDirty,
+      showSnack: _showSnack,
     );
   }
 
@@ -578,7 +501,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
         suppressPersist: _suppressPersist,
         isSaving: false,
         cancelAutosave: _autosave.cancel,
-        draft: _buildSaveDraft(),
+        draft: _draft.buildSaveDraft(),
         pageView: _pageView,
         contentAtSave: _pageView == SanctumPageView.file
             ? _fileCtrl.text
@@ -641,7 +564,7 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _applyBodyTemplate(SanctumBodyTemplate template) async {
-    final message = await WorkDetailSanctumOps.applyBodyTemplate(
+    final message = await WorkDetailSanctumWorkspaceOps.applyBodyTemplate(
       context: context,
       template: template,
       bodyCtrl: _bodyCtrl,
@@ -656,20 +579,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
   }
 
   Future<void> _exportHtml() async {
-    if (!_isArchivedInVault) {
-      _showSnack('HTML보내기 전에 md를 저장해 주세요.');
-      return;
-    }
-
-    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
-    final title = _titleCtrl.text.trim();
-    final result = await WorkDetailSanctumOps.exportHtml(
-      item: _item,
-      bodyMarkdown: _bodyCtrl.text,
-      titleOverride: title.isNotEmpty ? title : null,
-    );
     if (!mounted) return;
-    _showSnack(WorkDetailSanctumOps.htmlExportSnackMessage(result));
+    await WorkDetailSanctumWorkspaceOps.exportHtml(
+      isArchivedInVault: _isArchivedInVault,
+      item: _item,
+      titleCtrl: _titleCtrl,
+      bodyCtrl: _bodyCtrl,
+      showSnack: _showSnack,
+    );
   }
 
   Future<void> _confirmDelete() async {
@@ -698,18 +615,12 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
     if (!mounted) return;
 
-    switch (result) {
-      case WorkDetailDeleteBlocked(:final message):
-        if (message.isNotEmpty) _showSnack(message);
-      case WorkDetailDeleteCancelled():
-        return;
-      case WorkDetailDeleteSucceeded(:final displayTitle):
-        _showSnack('"$displayTitle" md 파일을 삭제했습니다.');
-        widget.onDeleted();
-      case WorkDetailDeleteFailed(:final message):
-        setState(() => _suppressPersist = false);
-        _showSnack(message);
-    }
+    WorkDetailDeleteFlowOps.handleResult(
+      result: result,
+      showSnack: _showSnack,
+      onDeleted: widget.onDeleted,
+      restorePersist: () => setState(() => _suppressPersist = false),
+    );
   }
 
   @override

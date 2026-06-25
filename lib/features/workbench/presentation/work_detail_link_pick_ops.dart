@@ -105,6 +105,48 @@ abstract final class WorkDetailLinkPickOps {
     );
   }
 
+  static Future<void> runInteractiveEntityPick({
+    required BuildContext context,
+    required bool Function() isMounted,
+    required UserCatalogPort? catalog,
+    required EntityAnchorType type,
+    required AkashaItem workContext,
+    required List<AkashaItem> vaultItems,
+    required void Function(SanctumPageView view) showBodyView,
+    required Future<void> Function(EntityLinkSelection picked) applySelection,
+  }) async {
+    if (catalog == null || !isMounted()) return;
+    showBodyView(SanctumPageView.body);
+    final picked = await requestEntityLinkForType(
+      context: context,
+      catalog: catalog,
+      type: type,
+      workContext: workContext,
+      vaultItems: vaultItems,
+    );
+    if (!isMounted() || picked == null) return;
+    await applySelection(picked);
+  }
+
+  static Future<void> runInteractiveWorkPick({
+    required BuildContext context,
+    required bool Function() isMounted,
+    required List<AkashaItem> vaultItems,
+    required String excludeWorkId,
+    required void Function(SanctumPageView view) showBodyView,
+    required Future<void> Function(EntityLinkSelection picked) applySelection,
+  }) async {
+    if (!isMounted()) return;
+    showBodyView(SanctumPageView.body);
+    final picked = await requestWorkLink(
+      context: context,
+      vaultItems: vaultItems,
+      excludeWorkId: excludeWorkId,
+    );
+    if (!isMounted() || picked == null) return;
+    await applySelection(picked);
+  }
+
   static Future<void> runPendingPick({
     required BuildContext context,
     required String? pendingWorkId,

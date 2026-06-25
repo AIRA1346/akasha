@@ -61,4 +61,34 @@ class WorkDetailItemHydration {
       draftHallOfFame: fields.hallOfFame,
     );
   }
+
+  void writeTo({
+    required void Function(AkashaItem item) setItem,
+    required TextEditingController titleCtrl,
+    required TextEditingController posterUrlCtrl,
+    required TextEditingController bodyCtrl,
+    required void Function(SanctumPageView pageView) setPageView,
+    required void Function(
+      List<String> draftTags,
+      Set<String> registryTags,
+      double draftRating,
+      String draftWorkStatus,
+      String draftMyStatus,
+      bool draftHallOfFame,
+    ) setDraftState,
+  }) {
+    setItem(item);
+    WorkDetailDraftOps.assignControllerTextIfChanged(titleCtrl, titleText);
+    WorkDetailDraftOps.assignControllerTextIfChanged(posterUrlCtrl, posterText);
+    WorkDetailDraftOps.assignControllerTextIfChanged(bodyCtrl, bodyText);
+    setPageView(pageView);
+    setDraftState(
+      draftTags,
+      registryTags,
+      draftRating,
+      draftWorkStatus,
+      draftMyStatus,
+      draftHallOfFame,
+    );
+  }
 }

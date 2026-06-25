@@ -68,4 +68,24 @@ abstract final class WorkDetailDeleteFlowOps {
     }
     return const WorkDetailDeleteFailed('삭제할 파일을 찾지 못했습니다.');
   }
+
+  static void handleResult({
+    required WorkDetailDeleteFlowResult result,
+    required void Function(String message) showSnack,
+    required VoidCallback onDeleted,
+    required VoidCallback restorePersist,
+  }) {
+    switch (result) {
+      case WorkDetailDeleteBlocked(:final message):
+        if (message.isNotEmpty) showSnack(message);
+      case WorkDetailDeleteCancelled():
+        return;
+      case WorkDetailDeleteSucceeded(:final displayTitle):
+        showSnack('"$displayTitle" md 파일을 삭제했습니다.');
+        onDeleted();
+      case WorkDetailDeleteFailed(:final message):
+        restorePersist();
+        showSnack(message);
+    }
+  }
 }

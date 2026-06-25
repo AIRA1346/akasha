@@ -6,7 +6,7 @@ WorkDetailWorkspaceBody buildWorkDetailWorkspaceBody(
   final widget = state.widget;
   return WorkDetailWorkspaceBody(
     item: state._item,
-    preview: state._applyDraft(),
+    preview: state._draft.applyDraft(),
     infoPanelWidth: widget.infoPanelWidth,
     infoPanelLocked: widget.infoPanelLocked,
     vaultLinked: AkashaFileService().vaultPath != null,
@@ -35,7 +35,7 @@ WorkDetailWorkspaceBody buildWorkDetailWorkspaceBody(
     loadingLinkNeighbors: state._connections.loadingLinkNeighbors,
     pageView: state._pageView,
     sectionEditorKey: state._sectionEditorKey,
-    previewBodyMarkdown: state._previewBodyMarkdown,
+    previewBodyMarkdown: state._draft.previewBodyMarkdown(),
     externalChangePending: state._externalChangePending,
     onClose: widget.onClose,
     onGoKnowledgeGraph: widget.onGoKnowledgeGraph,
@@ -72,7 +72,7 @@ WorkDetailWorkspaceBody buildWorkDetailWorkspaceBody(
     onDismissExternalChange: state._dismissExternalChange,
     onBodyChanged: state._markDirty,
     onFileChanged: state._markDirty,
-    onOpenFileView: state._refreshFullFileEditor,
+    onOpenFileView: () => state._draft.refreshFullFileEditor(),
     onApplyTemplate: state._applyBodyTemplate,
     onExportHtml: state._exportHtml,
     onAddEntityLink:

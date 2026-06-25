@@ -51,8 +51,8 @@
 
 | 줄 수 | 파일 | 비고 |
 |------:|------|------|
-| **662** | `work_detail_workspace.dart` | P2 분해 (orchestrator·reload flow·ui part) |
-| **615** | `entity_detail_workspace.dart` | P2 분해 (orchestrator·delete flow·ui part) |
+| **583** | `work_detail_workspace.dart` | P2 ✅ (draft bundle·sanctum·link ops) |
+| **615** | `entity_detail_workspace.dart` | P2 ✅ |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
 | 641 | `catalog_entity_browse_view.dart` | |
@@ -137,8 +137,8 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P0 | analyze lint · FOUNDATION_AUDIT 갱신 | ✅ |
 | P1 | `hasOpenWork` · `WorkTab` deprecated 제거 | ✅ |
 | P1 | Entity neighbors · preview chrome 토큰 | ✅ |
-| P2 | `entity_detail_workspace` 분해 | 🟡 796→**615** |
-| P2 | `work_detail_workspace` 분해 | 🟡 857→**662** |
+| P2 | `entity_detail_workspace` 분해 | ✅ 796→**615** |
+| P2 | `work_detail_workspace` 분해 | ✅ 857→**583** |
 | P2 | `markdown_body_editor` 분해 | ✅ 730→**455** |
 | P3 | R14-C Home·Dialog grey pass | ⬜ |
 
@@ -151,5 +151,5 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
-| 2026-06-24 | P2 workspace orchestrator — save/delete/reload flow · ui part |
+| 2026-06-24 | P2 work workspace 완료 — draft bundle·sanctum·link session (**583줄**) |
 | 2026-06-24 | P2 `markdown_body_editor` — undo/slash/find/insert ops · shortcuts part |
