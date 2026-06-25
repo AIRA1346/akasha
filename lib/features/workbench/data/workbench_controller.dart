@@ -8,9 +8,9 @@ import '../../../services/entity_journal_parser.dart';
 import '../presentation/collectible_tab.dart';
 import 'workbench_layout_prefs.dart';
 
-/// 열린 Collectible 탭·활성 탭·레이아웃 prefs (Phase 6: Work + Entity).
+/// 열린 Collectible 세션·레이아웃 prefs (Phase 6: Work + Entity).
 class WorkbenchController extends ChangeNotifier {
-  static const int maxTabs = 16;
+  static const int maxTabs = 1;
 
   final List<CollectibleTab> tabs = [];
   String? activeTabId;
@@ -58,18 +58,10 @@ class WorkbenchController extends ChangeNotifier {
 
   void openWork(AkashaItem item) {
     final id = WorkCollectibleTab.idFor(item);
-    final existing = tabs.where((t) => t.id == id).firstOrNull;
-    if (existing is WorkCollectibleTab) {
-      existing.item = item;
-      activeTabId = id;
-    } else {
-      if (tabs.length >= maxTabs) {
-        tabs.removeAt(0);
-      }
-      tabs.add(WorkCollectibleTab(id: id, item: item));
-      activeTabId = id;
-    }
-    layout.tabRailCollapsed = false;
+    tabs
+      ..clear()
+      ..add(WorkCollectibleTab(id: id, item: item));
+    activeTabId = id;
     _detailViewVisible = true;
     notifyListeners();
   }
@@ -80,28 +72,21 @@ class WorkbenchController extends ChangeNotifier {
   }) {
     if (entity.isWorkEntity) return;
     final id = EntityCollectibleTab.idFor(entity.entityId);
-    final existing = tabs.where((t) => t.id == id).firstOrNull;
-    if (existing is EntityCollectibleTab) {
-      existing.entity = entity;
-      existing.journal = journal;
-      activeTabId = id;
-    } else {
-      if (tabs.length >= maxTabs) {
-        tabs.removeAt(0);
-      }
-      tabs.add(
-        EntityCollectibleTab(entity: entity, journal: journal),
-      );
-      activeTabId = id;
-    }
-    layout.tabRailCollapsed = false;
+    tabs
+      ..clear()
+      ..add(EntityCollectibleTab(entity: entity, journal: journal));
+    activeTabId = id;
     _detailViewVisible = true;
     notifyListeners();
   }
 
+  /// browse(그리드·홈)로 돌아갈 때 상세 세션을 닫습니다.
   void showBrowse() {
-    if (!_detailViewVisible) return;
+    if (!_detailViewVisible && tabs.isEmpty) return;
     _detailViewVisible = false;
+    tabs.clear();
+    activeTabId = null;
+    saveActiveTab = null;
     notifyListeners();
   }
 

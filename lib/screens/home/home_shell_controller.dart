@@ -510,6 +510,10 @@ class HomeShellController {
   }
 
   void openRecentExploreItem(AkashaItem item) {
+    if (workbench.hasOpenDetail) {
+      openItemDetail(item);
+      return;
+    }
     recentExplore.openItem(
       item,
       openEntityPreview: preview.openEntityPreview,

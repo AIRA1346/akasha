@@ -336,6 +336,12 @@ class HomeShellBody extends StatelessWidget {
           onGoCollection: onGoCollection,
           onGoKnowledgeGraph: onGoKnowledgeGraph,
           onOpenRecentExplore: onOpenRecentExplore,
+          activeDetailWorkId: workbench.hasOpenDetail
+              ? workbench.activeWorkTab?.item.workId
+              : null,
+          activeDetailEntityId: workbench.hasOpenDetail
+              ? workbench.activeEntityTab?.entity.entityId
+              : null,
           onSelectTimeline: onSelectTimeline,
           onSelectCollectibleCollection: onSelectCollectibleCollection,
           onToggleSidebar: onToggleSidebar,

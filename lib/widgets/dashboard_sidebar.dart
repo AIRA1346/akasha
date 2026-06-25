@@ -37,6 +37,8 @@ class DashboardSidebar extends StatelessWidget {
   final Future<void> Function() onGoKnowledgeGraph;
   final VoidCallback onSelectTimeline;
   final void Function(AkashaItem item)? onOpenRecentExplore;
+  final String? activeDetailWorkId;
+  final String? activeDetailEntityId;
   final void Function(String id) onSelectCollectibleCollection;
   final VoidCallback? onToggleSidebar;
 
@@ -61,6 +63,8 @@ class DashboardSidebar extends StatelessWidget {
     required this.onGoKnowledgeGraph,
     required this.onSelectTimeline,
     this.onOpenRecentExplore,
+    this.activeDetailWorkId,
+    this.activeDetailEntityId,
     required this.onSelectCollectibleCollection,
     this.onToggleSidebar,
   });
@@ -240,10 +244,18 @@ class DashboardSidebar extends StatelessWidget {
       EntityItem(:final entityType) => entityTypeDisplayLabel(entityType),
       _ => '작품',
     };
+    final isActive = switch (item) {
+      EntityItem(:final entityId) =>
+        activeDetailEntityId != null && entityId == activeDetailEntityId,
+      _ => activeDetailWorkId != null &&
+          item.workId.isNotEmpty &&
+          item.workId == activeDetailWorkId,
+    };
     return _SidebarThumbnailTile(
       item: item,
       title: item.title,
       subtitle: subtitle,
+      isActive: isActive,
       onTap: onOpenRecentExplore == null
           ? () {}
           : () => onOpenRecentExplore!(item),
