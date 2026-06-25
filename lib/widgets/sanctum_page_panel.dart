@@ -4,6 +4,8 @@ import '../core/archiving/record_link.dart';
 import '../core/ports/user_catalog_port.dart';
 import '../features/workbench/presentation/widgets/work_sanctum_section_editor.dart';
 import '../features/workbench/presentation/workbench_save_status_hint.dart';
+import '../services/sanctum_archive_completion.dart';
+import 'sanctum/sanctum_archive_completion_bar.dart';
 import '../models/entity_link_selection.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
@@ -43,6 +45,7 @@ class SanctumPagePanel extends StatelessWidget {
   final GlobalKey<WorkSanctumSectionEditorState>? sectionEditorKey;
   final UserCatalogPort? userCatalog;
   final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
+  final String? archiveCompletionBodyRaw;
 
   const SanctumPagePanel({
     super.key,
@@ -71,6 +74,7 @@ class SanctumPagePanel extends StatelessWidget {
     this.sectionEditorKey,
     this.userCatalog,
     this.onOpenLinkedEntity,
+    this.archiveCompletionBodyRaw,
   });
 
   bool get _useRichPreview => sectionLayout || userCatalog != null;
@@ -209,6 +213,12 @@ class SanctumPagePanel extends StatelessWidget {
             lastSavedAt: lastSavedAt,
           ),
         ),
+        if (sectionLayout && archiveCompletionBodyRaw != null)
+          SanctumArchiveCompletionBar(
+            report: SanctumArchiveCompletion.evaluate(
+              bodyRaw: archiveCompletionBodyRaw!,
+            ),
+          ),
         if (view == SanctumPageView.body && externalChangePending)
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),

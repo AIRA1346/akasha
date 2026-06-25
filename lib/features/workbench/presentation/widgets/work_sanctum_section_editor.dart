@@ -84,6 +84,9 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     widget.onChanged();
   }
 
+  /// 외부에서 본문을 교체한 뒤 섹션 편집기를 다시 읽습니다.
+  void reloadFromBody() => _loadFromBody();
+
   void insertCastEntry(EntityLinkSelection picked, {String? role}) {
     if (_castEntries.any((entry) => entry.entityId == picked.entityId)) return;
     setState(() {

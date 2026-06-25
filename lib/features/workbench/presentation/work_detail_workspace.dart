@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/archiving/record_link.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
@@ -13,6 +14,9 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
 import '../../../services/file_service.dart';
 import '../../../services/work_info_defaults.dart';
+import '../../../services/sanctum_body_templates.dart';
+import '../../../services/sanctum_html_exporter.dart';
+import '../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
@@ -672,6 +676,68 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
     );
   }
 
+  Future<void> _applyBodyTemplate(SanctumBodyTemplate template) async {
+    if (_bodyCtrl.text.trim().isNotEmpty) {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('템플릿 적용'),
+          content: const Text(
+            '현재 기록 본문을 템플릿으로 바꿉니다. 계속할까요?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(false),
+              child: const Text('취소'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(ctx).pop(true),
+              child: const Text('적용'),
+            ),
+          ],
+        ),
+      );
+      if (confirmed != true) return;
+    }
+
+    setState(() {
+      _bodyCtrl.text = template.bodyMarkdown.trim();
+      WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    });
+    _sectionEditorKey.currentState?.reloadFromBody();
+    _markDirty();
+    _showSnack('「${template.label}」 템플릿을 적용했습니다.');
+  }
+
+  Future<void> _exportHtml() async {
+    if (!_isArchivedInVault) {
+      _showSnack('HTML보내기 전에 md를 저장해 주세요.');
+      return;
+    }
+
+    WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
+    final title = _titleCtrl.text.trim();
+    try {
+      final path = await SanctumHtmlExporter.exportAdjacentToRecord(
+        item: _item,
+        bodyMarkdown: _bodyCtrl.text,
+        titleOverride: title.isNotEmpty ? title : null,
+      );
+      if (!mounted) return;
+      if (path == null) {
+        _showSnack('HTML 파일을 만들 수 없습니다.');
+        return;
+      }
+      final uri = Uri.file(path);
+      final opened = await launchUrl(uri);
+      _showSnack(
+        opened ? 'HTML을 저장하고 열었습니다.' : 'HTML을 저장했습니다: $path',
+      );
+    } catch (e) {
+      if (mounted) _showSnack('HTML보내기 실패: $e');
+    }
+  }
+
   Future<void> _confirmDelete() async {
     if (_isSaving) return;
 
@@ -821,21 +887,33 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               onRequestEntityLink: widget.onRequestEntityLink,
               userCatalog: widget.userCatalog,
               onOpenLinkedEntity: _openLinkedEntity,
-              footer: WorkbenchSaveActions(
-                isSaving: _isSaving,
-                isDirty: widget.isDirty,
-                lastSavedAt: _lastSavedAt,
-                saveLabel: _isArchived ? 'md 저장' : 'md 생성',
-                onSave: _saveArchive,
-                showAddToLibrary: widget.onAddToLibrary != null,
-                libraryLabel: _isArchived
-                    ? '서재에 담기'
-                    : '저장하고 서재에 담기',
-                onAddToLibrary: _handleAddToLibrary,
-                showReset: true,
-                onReset: _resetToDefaults,
-                canDeleteMd: _isArchivedInVault,
-                onDeleteArchive: _confirmDelete,
+              archiveCompletionBodyRaw: _bodyCtrl.text,
+              footer: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SanctumArchiveToolbar(
+                    category: _item.category,
+                    canExportHtml: _isArchivedInVault,
+                    onApplyTemplate: _applyBodyTemplate,
+                    onExportHtml: _exportHtml,
+                  ),
+                  WorkbenchSaveActions(
+                    isSaving: _isSaving,
+                    isDirty: widget.isDirty,
+                    lastSavedAt: _lastSavedAt,
+                    saveLabel: _isArchived ? 'md 저장' : 'md 생성',
+                    onSave: _saveArchive,
+                    showAddToLibrary: widget.onAddToLibrary != null,
+                    libraryLabel: _isArchived
+                        ? '서재에 담기'
+                        : '저장하고 서재에 담기',
+                    onAddToLibrary: _handleAddToLibrary,
+                    showReset: true,
+                    onReset: _resetToDefaults,
+                    canDeleteMd: _isArchivedInVault,
+                    onDeleteArchive: _confirmDelete,
+                  ),
+                ],
               ),
             ),
           ),
