@@ -40,13 +40,13 @@ class EntityPreviewEmptyConnections extends StatelessWidget {
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[300],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: 4),
           Text(
             '아래에서 연결을 추가하거나 상세 정보에서 기록을 작성하세요.',
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
           ),
           const SizedBox(height: 12),
           if (onConnectWork != null)

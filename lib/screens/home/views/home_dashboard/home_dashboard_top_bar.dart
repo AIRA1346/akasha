@@ -29,12 +29,12 @@ class HomeDashboardTopBar extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.search_rounded, size: 16, color: Colors.grey[500]),
+                  Icon(Icons.search_rounded, size: 16, color: AkashaColors.textMuted),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       '작품, 인물, 사건, 장소, 개념을 검색하세요...',
-                      style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                     ),
                   ),
                   Container(
@@ -48,7 +48,7 @@ class HomeDashboardTopBar extends StatelessWidget {
                       'Ctrl K',
                       style: TextStyle(
                         fontSize: 9,
-                        color: Colors.grey[500],
+                        color: AkashaColors.textMuted,
                         fontFamily: 'Consolas',
                       ),
                     ),
@@ -62,7 +62,7 @@ class HomeDashboardTopBar extends StatelessWidget {
         IconButton(
           onPressed: onVaultSettings,
           tooltip: '볼트 설정',
-          icon: Icon(Icons.settings_outlined, size: 18, color: Colors.grey[400]),
+          icon: Icon(Icons.settings_outlined, size: 18, color: AkashaColors.textSecondary),
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(),
         ),

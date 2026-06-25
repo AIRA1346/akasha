@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../models/enums.dart';
 import '../services/file_service.dart';
 import '../utils/helpers.dart';
+import '../theme/akasha_colors.dart';
 
 class WebImageSearchDialog extends StatefulWidget {
   final String initialQuery;
@@ -169,7 +170,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
             // 검색어 및 브라우저 열기 버튼
             const Text(
               '포스터 검색어',
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 6),
             Row(
@@ -266,7 +267,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                                     _detectedClipboardUrl!,
                                     fit: BoxFit.cover,
                                     errorBuilder: (_, _, _) => const Center(
-                                      child: Icon(Icons.broken_image, color: Colors.grey),
+                                      child: Icon(Icons.broken_image, color: AkashaColors.textMuted),
                                     ),
                                   ),
                                 ),
@@ -322,7 +323,7 @@ class _WebImageSearchDialogState extends State<WebImageSearchDialog> {
                             const SizedBox(height: 10),
                             const Text(
                               '인터넷 브라우저에서 포스터 주소를 복사하기를 기다리는 중...',
-                              style: TextStyle(fontSize: 11, color: Colors.grey),
+                              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                             ),
                           ],
                         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../services/registry_sync_service.dart';
 import '../home_registry_sync.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 글로벌 사전 동기화·커스텀 URL 설정 다이얼로그
 Future<void> showRegistrySyncDialog(
@@ -32,7 +33,7 @@ Future<void> showRegistrySyncDialog(
               children: [
                 Row(
                   children: [
-                    Icon(Icons.history, size: 16, color: Colors.grey[500]),
+                    Icon(Icons.history, size: 16, color: AkashaColors.textMuted),
                     const SizedBox(width: 6),
                     Expanded(
                       child: Text(
@@ -63,12 +64,12 @@ Future<void> showRegistrySyncDialog(
                 const SizedBox(height: 6),
                 const Text(
                   'manifest.json, search_index.json, shards/ 파일을 이 주소에서 내려받습니다.',
-                  style: TextStyle(fontSize: 11, color: Colors.grey),
+                  style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   '기본값: $defaultBase',
-                  style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 10),
                 TextField(

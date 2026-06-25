@@ -303,7 +303,7 @@ class _HomeDashboardDiscoverySectionState
             child: Center(
               child: Text(
                 '최근 추가한 작품이 없습니다.',
-                style: TextStyle(color: Colors.grey, fontSize: 12),
+                style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
               ),
             ),
           ),
@@ -422,7 +422,7 @@ class _EmptyCta extends StatelessWidget {
           Text(
             message,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
           ),
           const SizedBox(height: 10),
           Wrap(
@@ -469,7 +469,7 @@ class _TabButton extends StatelessWidget {
     return TextButton(
       onPressed: onTap,
       style: TextButton.styleFrom(
-        foregroundColor: isActive ? Colors.white : Colors.grey[600],
+        foregroundColor: isActive ? Colors.white : AkashaColors.textCaption,
       ),
       child: Text(
         label,
@@ -609,7 +609,7 @@ class _SuggestionThumb extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 9, color: Colors.grey[400]),
+                style: TextStyle(fontSize: 9, color: AkashaColors.textSecondary),
               ),
             ),
           ],

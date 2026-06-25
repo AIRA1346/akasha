@@ -88,7 +88,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                       ),
                       child: Text(
                         '모두 보기',
-                        style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
                       ),
                     ),
                   ],
@@ -112,7 +112,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
       return [
         Text(
           '최근 추가한 작품이 없습니다.',
-          style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+          style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
         ),
       ];
     }
@@ -164,7 +164,7 @@ class HomeDashboardUniverseSection extends StatelessWidget {
                         const SizedBox(height: 2),
                         Text(
                           '${work.releaseYear ?? ''} · ${work.category.name}',
-                          style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                          style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
                         ),
                       ],
                     ),

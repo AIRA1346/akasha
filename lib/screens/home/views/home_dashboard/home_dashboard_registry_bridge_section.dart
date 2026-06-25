@@ -8,6 +8,7 @@ import '../../../../services/registry_discovery_candidate_service.dart';
 import '../../../../widgets/poster_image.dart';
 import '../../../../widgets/registry_discovery_candidates_section.dart';
 import 'home_dashboard_styles.dart';
+import '../../../../theme/akasha_colors.dart';
 
 /// Home — Vault 작품에서 Registry 사전 작품으로 이어지는 브리지 (R11 P1).
 class HomeDashboardRegistryBridgeSection extends StatefulWidget {
@@ -135,7 +136,7 @@ class _HomeDashboardRegistryBridgeSectionState
                         const SizedBox(height: 4),
                         Text(
                           '${card.bridgeLabel} → 사전 추천',
-                          style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                          style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
                         ),
                         RegistryDiscoveryCandidatesSection(
                           candidates: card.candidates,

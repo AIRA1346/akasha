@@ -243,7 +243,7 @@ class _UniverseOrbitPainter extends CustomPainter {
       final labelSpan = TextSpan(
         text: orbit.label,
         style: TextStyle(
-          color: Colors.grey[500],
+          color: AkashaColors.textMuted,
           fontSize: 10,
           fontWeight: FontWeight.w600,
         ),

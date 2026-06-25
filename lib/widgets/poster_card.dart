@@ -10,6 +10,7 @@ import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import 'format_chip_row.dart';
 import 'poster_image.dart';
 import 'star_rating.dart';
+import '../theme/akasha_colors.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  포스터 카드 위젯 (AKASHA 대시보드 스타일)
@@ -293,7 +294,7 @@ class _PosterCardState extends State<PosterCard> {
                   item.creator,
                   style: TextStyle(
                     fontSize: 11,
-                    color: Colors.grey[400],
+                    color: AkashaColors.textSecondary,
                     height: 1.2,
                   ),
                   maxLines: 1,
@@ -362,7 +363,7 @@ class _PosterCardState extends State<PosterCard> {
                 '🗓️ ${item.releaseYear}년',
                 style: TextStyle(
                   fontSize: 10,
-                  color: Colors.grey[400],
+                  color: AkashaColors.textSecondary,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -406,7 +407,7 @@ class _PosterCardState extends State<PosterCard> {
             _getStatusTextWithEmoji(item),
             style: TextStyle(
               fontSize: 11,
-              color: Colors.grey[300],
+              color: AkashaColors.textSecondary,
               fontWeight: FontWeight.w500,
             ),
             maxLines: 1,
@@ -612,7 +613,7 @@ class _PosterCardState extends State<PosterCard> {
                     item.creator,
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey[400],
+                      color: AkashaColors.textSecondary,
                       height: 1.2,
                     ),
                     maxLines: 1,

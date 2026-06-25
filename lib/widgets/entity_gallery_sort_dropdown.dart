@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/entity_gallery_sort.dart';
+import '../theme/akasha_colors.dart';
 
 /// Entity gallery header sort control.
 class EntityGallerySortDropdown extends StatelessWidget {
@@ -30,8 +31,8 @@ class EntityGallerySortDropdown extends StatelessWidget {
         child: DropdownButton<EntityGallerySortCriteria>(
           value: effectiveValue,
           isDense: true,
-          icon: const Icon(Icons.sort, size: 14, color: Colors.grey),
-          style: const TextStyle(fontSize: 11, color: Colors.grey),
+          icon: const Icon(Icons.sort, size: 14, color: AkashaColors.textMuted),
+          style: const TextStyle(fontSize: 11, color: AkashaColors.textMuted),
           dropdownColor: const Color(0xFF2A2A3E),
           items: options
               .map(

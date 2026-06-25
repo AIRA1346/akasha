@@ -22,6 +22,7 @@ import '../../../widgets/entity_collectible_card.dart';
 import '../../../widgets/entity_curated_reorder_grid.dart';
 import '../../../widgets/entity_gallery_sort_dropdown.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Tier 1.5 catalog Entity gallery — Wave 4 browse · R2-E Phase 1.
 class CatalogEntityBrowseView extends StatefulWidget {
@@ -383,11 +384,11 @@ class _CatalogEntityBrowseViewState extends State<CatalogEntityBrowseView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.inventory_2_outlined, size: 48, color: Colors.grey[600]),
+            Icon(Icons.inventory_2_outlined, size: 48, color: AkashaColors.textCaption),
             const SizedBox(height: 12),
             Text(
               _emptyMessage,
-              style: TextStyle(color: Colors.grey[500]),
+              style: TextStyle(color: AkashaColors.textMuted),
             ),
             if (widget.onAddNewEntity != null) ...[
               const SizedBox(height: 16),

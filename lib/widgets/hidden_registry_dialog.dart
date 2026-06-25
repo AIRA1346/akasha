@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
+import '../theme/akasha_colors.dart';
 
 /// 숨긴 사전 항목 목록 조회·복원 다이얼로그
 Future<void> showHiddenRegistryDialog(
@@ -54,7 +55,7 @@ class _HiddenRegistryDialogState extends State<_HiddenRegistryDialog> {
                   '숨긴 사전 항목이 없습니다.\n'
                   '가상 카드를 길게 눌러 숨길 수 있습니다.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 13, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 13, color: AkashaColors.textMuted),
                 ),
               )
             : ListView.separated(
@@ -71,7 +72,7 @@ class _HiddenRegistryDialogState extends State<_HiddenRegistryDialog> {
                     leading: Icon(
                       category?.icon ?? Icons.visibility_off_outlined,
                       size: 20,
-                      color: Colors.grey[400],
+                      color: AkashaColors.textSecondary,
                     ),
                     title: Text(title, style: const TextStyle(fontSize: 13)),
                     subtitle: Text(

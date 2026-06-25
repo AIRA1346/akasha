@@ -196,7 +196,7 @@ class _HomeDashboardTodaysLinksSectionState
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   '기록에서 연결한 작품·인물이 여기에 표시됩니다.',
-                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                 ),
               );
             }
@@ -349,7 +349,7 @@ class _LinkCard extends StatelessWidget {
                     '$targetType · $targetLabel',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                    style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
                   ),
                 ],
               ),

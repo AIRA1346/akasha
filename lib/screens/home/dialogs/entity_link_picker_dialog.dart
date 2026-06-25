@@ -277,7 +277,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
               const SizedBox(height: 8),
               Text(
                 _subtitleText(),
-                style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 8),
               Expanded(
@@ -294,7 +294,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey[500],
+                                color: AkashaColors.textMuted,
                               ),
                             ),
                           )
@@ -347,7 +347,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
       children: [
         Text(
           '카탈로그에 없는 $typeLabel을(를) 새로 등록하고, 이 작품 본문에 바로 연결합니다.',
-          style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+          style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
         ),
         const SizedBox(height: 16),
         if (_queryCtrl.text.trim().isNotEmpty)
@@ -361,7 +361,7 @@ class _EntityLinkPickerDialogState extends State<EntityLinkPickerDialog> {
             ),
             subtitle: Text(
               '검색어를 이름으로 사용',
-              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
             ),
           ),
         const Spacer(),
@@ -435,7 +435,7 @@ class _PickerTab extends StatelessWidget {
           color: selected ? AkashaColors.accent.withValues(alpha: 0.15) : null,
           borderRadius: BorderRadius.circular(6),
           border: Border.all(
-            color: selected ? AkashaColors.accent : Colors.grey[700]!,
+            color: selected ? AkashaColors.accent : AkashaColors.textCaption,
           ),
         ),
         child: Text(
@@ -443,7 +443,7 @@ class _PickerTab extends StatelessWidget {
           style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w600,
-            color: selected ? AkashaColors.accent : Colors.grey[400],
+            color: selected ? AkashaColors.accent : AkashaColors.textSecondary,
           ),
         ),
       ),
@@ -465,7 +465,7 @@ class _SectionLabel extends StatelessWidget {
         style: TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.bold,
-          color: Colors.grey[400],
+          color: AkashaColors.textSecondary,
         ),
       ),
     );
@@ -500,7 +500,7 @@ class _RecommendationTile extends StatelessWidget {
           _reasonLabel(candidate.reason),
           if (candidate.matchDetail != null) candidate.matchDetail!,
         ].join(' · '),
-        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
       ),
       trailing: const Icon(Icons.north_west, size: 14, color: Colors.tealAccent),
     );
@@ -547,7 +547,7 @@ class _CandidateTile extends StatelessWidget {
       leading: Icon(
         _iconFor(entity.anchorType),
         size: 20,
-        color: candidate.isArchived ? Colors.tealAccent : Colors.grey,
+        color: candidate.isArchived ? Colors.tealAccent : AkashaColors.textMuted,
       ),
       title: Text(
         entity.title,
@@ -560,12 +560,12 @@ class _CandidateTile extends StatelessWidget {
           if (candidate.isArchived) '아카이브',
           if (!candidate.isSeed) entity.entityId,
         ].join(' · '),
-        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
       ),
       trailing: entity.aliases.isNotEmpty
           ? Text(
               entity.aliases.take(2).join(', '),
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
               overflow: TextOverflow.ellipsis,
             )
           : null,

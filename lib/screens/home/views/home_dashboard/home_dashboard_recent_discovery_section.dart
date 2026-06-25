@@ -32,7 +32,7 @@ class HomeDashboardRecentDiscoverySection extends StatelessWidget {
         if (recent.isEmpty)
           Text(
             '탐험을 시작하면 최근에 본 작품이 여기에 모입니다.',
-            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
           )
         else
           SizedBox(
@@ -118,7 +118,7 @@ class _DiscoveryCard extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         item.category.name,
-                        style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
                       ),
                     ],
                   ),

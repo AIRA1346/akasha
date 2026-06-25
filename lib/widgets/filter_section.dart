@@ -125,7 +125,7 @@ class FilterSection extends StatelessWidget {
                 '💡  매체(만화, 게임 등)를 선택하시면 세부 상태(완결여부, 플레이/감상 상태) 필터가 활성화됩니다.',
                 style: TextStyle(
                   fontSize: 11,
-                  color: Colors.grey[600],
+                  color: AkashaColors.textCaption,
                   fontStyle: FontStyle.italic,
                 ),
               ),
@@ -138,7 +138,7 @@ class FilterSection extends StatelessWidget {
                 '📂  ${selectedEntityScope.label} 아카이브 갤러리',
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.grey[500],
+                  color: AkashaColors.textMuted,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -167,7 +167,7 @@ class FilterSection extends StatelessWidget {
             Text('작품 상태',
                 style: TextStyle(
                     fontSize: 11,
-                    color: Colors.grey[500],
+                    color: AkashaColors.textMuted,
                     fontWeight: FontWeight.w500)),
             const SizedBox(width: 10),
             ...workOpts.map((label) => Padding(
@@ -188,7 +188,7 @@ class FilterSection extends StatelessWidget {
             Text('나의 상태',
                 style: TextStyle(
                     fontSize: 11,
-                    color: Colors.grey[500],
+                    color: AkashaColors.textMuted,
                     fontWeight: FontWeight.w500)),
             const SizedBox(width: 10),
             Expanded(

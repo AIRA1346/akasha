@@ -139,7 +139,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                 const SizedBox(height: 6),
                 Text(
                   '작품별로 묶인 연결을 목록으로 봅니다. (노드 그래프가 아닙니다)',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                 ),
               ],
             ),
@@ -157,7 +157,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                   children: [
                     Text(
                       '볼트에 작품이 없습니다.',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                     ),
                     if (widget.onConnectEntity != null) ...[
                       const SizedBox(height: 12),
@@ -231,7 +231,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                             fontSize: 11,
                             color: count > 0
                                 ? AkashaColors.accent
-                                : Colors.grey[600],
+                                : AkashaColors.textCaption,
                           ),
                         ),
                         trailing: TextButton(
@@ -268,7 +268,7 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
                                 '펼쳐서 연결을 불러오세요.',
                                 style: TextStyle(
                                   fontSize: 11,
-                                  color: Colors.grey[600],
+                                  color: AkashaColors.textCaption,
                                 ),
                               ),
                             ),
@@ -298,13 +298,13 @@ class _KnowledgeGraphViewState extends State<KnowledgeGraphView> {
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey[300],
+                color: AkashaColors.textSecondary,
               ),
             ),
             const SizedBox(height: 4),
             Text(
               '첫 연결을 만들어 보세요. 작품 기록에 링크를 추가하면 여기에 표시됩니다.',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 12),
             Wrap(

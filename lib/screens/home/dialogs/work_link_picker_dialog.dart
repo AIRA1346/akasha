@@ -129,7 +129,7 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
             const SizedBox(height: 8),
             Text(
               '서재에 저장된 작품을 본문에 [[링크]]로 연결합니다.',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 8),
             Expanded(
@@ -140,7 +140,7 @@ class _WorkLinkPickerDialogState extends State<WorkLinkPickerDialog> {
                             ? '연결할 다른 작품이 없습니다.'
                             : '「$query」과(와) 일치하는 작품이 없습니다.',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                       ),
                     )
                   : ListView.builder(
@@ -192,7 +192,7 @@ class _WorkTile extends StatelessWidget {
       ),
       subtitle: Text(
         subtitle,
-        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+        style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
       ),
       trailing: const Icon(Icons.link, size: 14, color: Colors.tealAccent),
     );

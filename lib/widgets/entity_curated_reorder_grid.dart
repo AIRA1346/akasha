@@ -7,6 +7,7 @@ import '../models/collectible_kind.dart';
 import '../models/collectible_ref.dart';
 import '../models/entity_browse_card.dart';
 import '../widgets/entity_collectible_card.dart';
+import '../theme/akasha_colors.dart';
 
 /// Entity-only curated collection reorder — separate from Work CuratedReorderGrid.
 class EntityCuratedReorderGrid extends StatelessWidget {
@@ -47,7 +48,7 @@ class EntityCuratedReorderGrid extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   child: Row(
                     children: [
-                      const Icon(Icons.drag_handle, color: Colors.grey, size: 20),
+                      const Icon(Icons.drag_handle, color: AkashaColors.textMuted, size: 20),
                       const SizedBox(width: 4),
                       Expanded(
                         child: SizedBox(
@@ -115,7 +116,7 @@ class CollectibleCuratedReorderGrid extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   child: Row(
                     children: [
-                      const Icon(Icons.drag_handle, color: Colors.grey, size: 20),
+                      const Icon(Icons.drag_handle, color: AkashaColors.textMuted, size: 20),
                       const SizedBox(width: 4),
                       Expanded(
                         child: SizedBox(

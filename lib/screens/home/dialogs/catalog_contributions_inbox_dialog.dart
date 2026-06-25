@@ -8,6 +8,7 @@ import '../../../models/catalog_contribution.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../utils/catalog_contribution_export.dart';
 import 'catalog_add_contribution_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 저장된 카탈로그 제안 목록 — export·GitHub Issue·삭제
 Future<void> showCatalogContributionsInboxDialog(BuildContext context) async {
@@ -54,7 +55,7 @@ class _CatalogContributionsInboxDialogState
                   children: [
                     Text(
                       '저장된 제안이 없습니다.',
-                      style: TextStyle(color: Colors.grey[500]),
+                      style: TextStyle(color: AkashaColors.textMuted),
                     ),
                     const SizedBox(height: 16),
                     OutlinedButton.icon(

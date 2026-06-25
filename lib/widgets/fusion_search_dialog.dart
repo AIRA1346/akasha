@@ -18,6 +18,7 @@ import '../screens/home/dialogs/add_catalog_entity_dialog.dart';
 import '../services/user_registry_preferences.dart';
 import '../services/works_registry.dart';
 import '../widgets/star_rating.dart';
+import '../theme/akasha_colors.dart';
 
 /// Fusion: 로컬 아카이브 · user local · 글로벌 사전 · 직접 추가 CTA.
 class FusionSearchDialog extends StatefulWidget {
@@ -290,7 +291,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                       child: Text(
                         '검색어를 입력하세요.\n로컬 아카이브 · 내 등록 · 글로벌 사전을 함께 검색합니다.',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                       ),
                     )
                   : ListView(
@@ -526,7 +527,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
               ? _iconForEntityType(entry.entityType)
               : work.category.icon,
           size: 20,
-          color: dimmed ? Colors.grey : Colors.lightBlueAccent,
+          color: dimmed ? AkashaColors.textMuted : Colors.lightBlueAccent,
         ),
         title: Text(
           franchise?.displayName ?? work.title,
@@ -541,7 +542,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                 : hint == RegistryRemoteHint.siblingTracked
                     ? Colors.orange[300]
                     : hint == RegistryRemoteHint.hidden
-                        ? Colors.grey[500]
+                        ? AkashaColors.textMuted
                         : null,
           ),
         ),
@@ -587,7 +588,7 @@ class _FusionSearchDialogState extends State<FusionSearchDialog> {
                   style: TextStyle(
                     fontSize: 10,
                     color: dimmed && !isUserLocal
-                        ? Colors.grey[500]
+                        ? AkashaColors.textMuted
                         : (isUserLocal ? Colors.tealAccent : Colors.lightBlueAccent),
                   ),
                 ),

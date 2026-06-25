@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/akasha_colors.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  섹션 헤더 위젯 (AKASHA 대시보드 스타일)
@@ -41,7 +42,7 @@ class SectionHeader extends StatelessWidget {
                       ? Icons.keyboard_arrow_down
                       : Icons.keyboard_arrow_right,
                   size: 20,
-                  color: Colors.grey[400],
+                  color: AkashaColors.textSecondary,
                 ),
                 const SizedBox(width: 4),
               ],
@@ -67,7 +68,7 @@ class SectionHeader extends StatelessWidget {
               subtitle!,
               style: TextStyle(
                 fontSize: 12,
-                color: Colors.grey[500],
+                color: AkashaColors.textMuted,
               ),
             ),
           ],

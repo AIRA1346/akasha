@@ -6,6 +6,7 @@ import '../../../models/catalog_contribution.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../services/works_registry.dart';
 import '../../../widgets/web_image_search_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 기존 사전 작품 **수정 제안** (포스터·연도·제목 등)
 Future<bool?> showCatalogFixContributionDialog(
@@ -45,12 +46,12 @@ Future<bool?> showCatalogFixContributionDialog(
               children: [
                 Text(
                   CatalogContributionConfig.disclaimerKo,
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'workId: $resolvedId',
-                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 14),
                 TextField(

@@ -9,6 +9,7 @@ import '../../../services/entity_vault_loader.dart';
 import '../../../services/file_service.dart';
 import '../../../utils/entity_body_preview.dart';
 import '../dialogs/add_catalog_entity_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Wave 4.1 — entity journal (`vault/entities/`) 시간순 목록.
 class EntityJournalView extends StatefulWidget {
@@ -126,16 +127,16 @@ class _EntityJournalViewState extends State<EntityJournalView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.category_outlined, size: 48, color: Colors.grey[600]),
+            Icon(Icons.category_outlined, size: 48, color: AkashaColors.textCaption),
             const SizedBox(height: 12),
             Text(
               '아직 entity journal이 없습니다.',
-              style: TextStyle(color: Colors.grey[500]),
+              style: TextStyle(color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 8),
             Text(
               'Fusion → 직접 추가로 Person · Concept · Event를 아카이브하세요.',
-              style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 12, color: AkashaColors.textCaption),
             ),
           ],
         ),
@@ -197,7 +198,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                               _formatWhen(entry.addedAt),
                               style: TextStyle(
                                 fontSize: 11,
-                                color: Colors.grey[500],
+                                color: AkashaColors.textMuted,
                               ),
                             ),
                           ],
@@ -212,7 +213,7 @@ class _EntityJournalViewState extends State<EntityJournalView> {
                           EntityBodyPreview.format(entry.body),
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.grey[300],
+                            color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),
                         ),

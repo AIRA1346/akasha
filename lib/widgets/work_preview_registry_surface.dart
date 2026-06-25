@@ -28,7 +28,7 @@ class WorkPreviewRegistrySurface extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.cloud_outlined, size: 16, color: Colors.grey[400]),
+              Icon(Icons.cloud_outlined, size: 16, color: AkashaColors.textSecondary),
               const SizedBox(width: 8),
               Expanded(
                 child: Column(
@@ -39,13 +39,13 @@ class WorkPreviewRegistrySurface extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey[300],
+                        color: AkashaColors.textSecondary,
                       ),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       '아직 내 볼트에 없습니다. 아카이브하면 연결 그래프에 참여합니다.',
-                      style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
                     ),
                   ],
                 ),

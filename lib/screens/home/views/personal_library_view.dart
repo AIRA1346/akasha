@@ -12,6 +12,7 @@ import '../../../widgets/browse_dashboard_sections.dart';
 import '../home_personal_library_controller.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 개인 서재 그리드·curated reorder·섹션 prefs 연동
 class PersonalLibraryView extends StatefulWidget {
@@ -114,7 +115,7 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
                       : Icons.inventory_2_outlined)
                   : Icons.folder_off_outlined,
               size: 48,
-              color: Colors.grey[700],
+              color: AkashaColors.textCaption,
             ),
             const SizedBox(height: 12),
             Text(
@@ -142,7 +143,7 @@ class _PersonalLibraryViewState extends State<PersonalLibraryView> {
                       : hasMembersButFiltered
                           ? '상단 필터를 조정해 보세요.'
                           : '검색으로 작품을 추가해 보세요.',
-              style: TextStyle(color: Colors.grey[500], height: 1.5),
+              style: TextStyle(color: AkashaColors.textMuted, height: 1.5),
               textAlign: TextAlign.center,
             ),
             if (vaultLinked && isCuratedEmpty) ...[

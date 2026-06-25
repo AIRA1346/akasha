@@ -44,19 +44,19 @@ class WorkPreviewEmptyConnections extends StatelessWidget {
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[300],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: 4),
           Text(
             '이 작품 기록에서 링크로 지식 우주를 확장해 보세요.',
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
           ),
           if (suggestedLinks.isNotEmpty) ...[
             const SizedBox(height: 12),
             Text(
               '추천 연결',
-              style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 6),
             Wrap(
@@ -85,7 +85,7 @@ class WorkPreviewEmptyConnections extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             '이 작품에서',
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 10, color: AkashaColors.textMuted),
           ),
           const SizedBox(height: 6),
           _linkButton(

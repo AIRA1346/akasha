@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../theme/akasha_colors.dart';
 
 class HomeDashboardWelcomeHeader extends StatelessWidget {
   const HomeDashboardWelcomeHeader({super.key});
@@ -31,7 +32,7 @@ class HomeDashboardWelcomeHeader extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           '오늘도 지식의 우주를 탐험해볼까요?',
-          style: TextStyle(fontSize: 13, color: Colors.grey[500]),
+          style: TextStyle(fontSize: 13, color: AkashaColors.textMuted),
         ),
       ],
     );

@@ -124,7 +124,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 3 | Save status semantic 색 | ✅ |
 | 4 | Sanctum hint·배너 | ✅ F3 |
 | 5 | `preview_panel_chrome` | ✅ Post-F4 |
-| 6 | Home·Dialog `Colors.grey` ~70파일 | ⬜ R14-C (P3) |
+| 6 | Home·Dialog `Colors.grey` ~70파일 | ✅ R14-C (P3) — `lib/screens/home` 33 + home 위젯 24 |
 
 **금지:** Discovery Engine · Preview stack 정책 · Save Return 문구 변경.
 
@@ -140,7 +140,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P2 | `entity_detail_workspace` 분해 | ✅ 796→**615** |
 | P2 | `work_detail_workspace` 분해 | ✅ 857→**583** |
 | P2 | `markdown_body_editor` 분해 | ✅ 730→**455** |
-| P3 | R14-C Home·Dialog grey pass | ⬜ |
+| P3 | R14-C Home·Dialog grey pass | ✅ 57파일 · `AkashaColors` semantic |
 
 ---
 
@@ -151,5 +151,6 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P3 R14-C — Home·Dialog `Colors.grey` → `AkashaColors` (57파일) |
 | 2026-06-24 | P2 work workspace 완료 — draft bundle·sanctum·link session (**583줄**) |
 | 2026-06-24 | P2 `markdown_body_editor` — undo/slash/find/insert ops · shortcuts part |

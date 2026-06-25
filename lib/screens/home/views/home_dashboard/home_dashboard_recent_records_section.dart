@@ -32,7 +32,7 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
         if (recent.isEmpty)
           Text(
             '작품을 열어 감상을 기록하면 여기에 표시됩니다.',
-            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
           )
         else
           Column(
@@ -81,14 +81,14 @@ class HomeDashboardRecentRecordsSection extends StatelessWidget {
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     fontSize: 10,
-                                    color: Colors.grey[500],
+                                    color: AkashaColors.textMuted,
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           Icon(Icons.edit_note_outlined,
-                              size: 16, color: Colors.grey[600]),
+                              size: 16, color: AkashaColors.textCaption),
                         ],
                       ),
                     ),

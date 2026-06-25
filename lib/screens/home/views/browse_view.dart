@@ -8,6 +8,7 @@ import '../../../utils/helpers.dart';
 import '../../../widgets/browse_dashboard_sections.dart';
 import '../home_section_preferences.dart';
 import '../../../models/browse_card.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 비-개인서재(대시보드) browse 그리드·섹션 prefs 연동
 class BrowseView extends StatefulWidget {
@@ -76,7 +77,7 @@ class _BrowseViewState extends State<BrowseView> {
             const SizedBox(height: 12),
             Text(
               l10n?.browseLoadingCatalog ?? '글로벌 작품 사전 불러오는 중…',
-              style: const TextStyle(color: Colors.grey),
+              style: const TextStyle(color: AkashaColors.textMuted),
             ),
           ],
         ),
@@ -88,11 +89,11 @@ class _BrowseViewState extends State<BrowseView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.search_off, size: 48, color: Colors.grey[700]),
+            Icon(Icons.search_off, size: 48, color: AkashaColors.textCaption),
             const SizedBox(height: 12),
             Text(
               l10n?.browseNoResults ?? '조건에 맞는 작품이 없습니다.',
-              style: TextStyle(color: Colors.grey[500]),
+              style: TextStyle(color: AkashaColors.textMuted),
             ),
           ],
         ),
@@ -189,7 +190,7 @@ class _CatalogWindowFooter extends StatelessWidget {
             l10n != null
                 ? l10n.browseCatalogIndexed(loadedThrough, totalEntries)
                 : '글로벌 사전 $loadedThrough / $totalEntries 작품 색인 로드됨',
-            style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+            style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
           ),
           if (hasMore) ...[
             const SizedBox(height: 8),

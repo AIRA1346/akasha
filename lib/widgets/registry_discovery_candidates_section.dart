@@ -44,14 +44,14 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.cloud_outlined, size: 14, color: Colors.grey[500]),
+              Icon(Icons.cloud_outlined, size: 14, color: AkashaColors.textMuted),
               const SizedBox(width: 6),
               Text(
                 '사전에서 더 보기',
                 style: TextStyle(
                   fontSize: compact ? 10 : 11,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey[400],
+                  color: AkashaColors.textSecondary,
                 ),
               ),
             ],
@@ -60,7 +60,7 @@ class RegistryDiscoveryCandidatesSection extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               bridgeHint!,
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
             ),
           ],
           const SizedBox(height: 6),

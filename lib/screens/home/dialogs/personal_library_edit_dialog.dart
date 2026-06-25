@@ -6,6 +6,7 @@ import '../../../models/personal_library_config.dart';
 import '../../../services/works_registry.dart';
 import '../../../utils/archived_works_query.dart';
 import '../../../utils/helpers.dart';
+import '../../../theme/akasha_colors.dart';
 
 String _memberTitle(String workId, List<AkashaItem> vaultItems) {
   for (final item in vaultItems) {
@@ -69,7 +70,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     '서재 이름',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -111,7 +112,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                       '담긴 작품 (${tempMemberOrder.length})',
                       style: const TextStyle(
                         fontSize: 11,
-                        color: Colors.grey,
+                        color: AkashaColors.textMuted,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -119,7 +120,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     if (tempMemberOrder.isEmpty)
                       Text(
                         '아직 담긴 작품이 없습니다.',
-                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                       )
                     else
                       ReorderableListView(
@@ -145,7 +146,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                                 tempMemberOrder[i],
                                 style: TextStyle(
                                   fontSize: 10,
-                                  color: Colors.grey[600],
+                                  color: AkashaColors.textCaption,
                                 ),
                               ),
                               trailing: IconButton(
@@ -188,7 +189,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     '소분류 (카테고리) 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -220,7 +221,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     '작품 상태 조건 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -251,7 +252,7 @@ Future<PersonalLibraryConfig?> showPersonalLibraryEditDialog(
                     '나의 상태 조건 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

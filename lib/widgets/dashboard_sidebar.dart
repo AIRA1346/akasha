@@ -331,14 +331,14 @@ class DashboardSidebar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(Icons.chevron_left_rounded, size: 18, color: Colors.grey[500]),
+            Icon(Icons.chevron_left_rounded, size: 18, color: AkashaColors.textMuted),
             const SizedBox(width: 6),
             Text(
               '접기',
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
-                color: Colors.grey[500],
+                color: AkashaColors.textMuted,
               ),
             ),
           ],
@@ -416,7 +416,7 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                   Icon(
                     widget.icon,
                     size: 18,
-                    color: selected ? AkashaColors.accent : Colors.grey[400],
+                    color: selected ? AkashaColors.accent : AkashaColors.textSecondary,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -426,7 +426,7 @@ class _SidebarNavTileState extends State<_SidebarNavTile> {
                         fontSize: 13,
                         fontWeight:
                             selected ? FontWeight.w600 : FontWeight.w500,
-                        color: selected ? Colors.white : Colors.grey[300],
+                        color: selected ? Colors.white : AkashaColors.textSecondary,
                       ),
                     ),
                   ),
@@ -505,7 +505,7 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                               child: Icon(
                                 widget.fallbackIcon,
                                 size: 16,
-                                color: Colors.grey[600],
+                                color: AkashaColors.textCaption,
                               ),
                             ),
                     ),
@@ -524,7 +524,7 @@ class _SidebarThumbnailTileState extends State<_SidebarThumbnailTile> {
                             fontWeight: widget.isActive
                                 ? FontWeight.w600
                                 : FontWeight.w500,
-                            color: Colors.grey[200],
+                            color: AkashaColors.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 2),

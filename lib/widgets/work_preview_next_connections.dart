@@ -29,7 +29,7 @@ class WorkPreviewNextConnections extends StatelessWidget {
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[400],
+              color: AkashaColors.textSecondary,
             ),
           ),
           const SizedBox(height: 6),

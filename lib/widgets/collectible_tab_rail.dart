@@ -42,14 +42,14 @@ class CollectibleTabRail extends StatelessWidget {
                     Icon(
                       collapsed ? Icons.chevron_right : Icons.chevron_left,
                       size: 18,
-                      color: Colors.grey[500],
+                      color: AkashaColors.textMuted,
                     ),
                     if (!collapsed)
                       Text(
                         '탭',
                         style: TextStyle(
                           fontSize: 11,
-                          color: Colors.grey[500],
+                          color: AkashaColors.textMuted,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -64,7 +64,7 @@ class CollectibleTabRail extends StatelessWidget {
               child: Center(
                 child: Text(
                   collapsed ? '·' : '항목 없음',
-                  style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+                  style: TextStyle(fontSize: 10, color: AkashaColors.textCaption),
                 ),
               ),
             )
@@ -205,7 +205,7 @@ class _TabTileState extends State<_TabTile> {
                         fontSize: 11,
                         fontWeight:
                             active ? FontWeight.w700 : FontWeight.w500,
-                        color: active ? Colors.white : Colors.grey[400],
+                        color: active ? Colors.white : AkashaColors.textSecondary,
                         height: 1.2,
                       ),
                     ),
@@ -227,7 +227,7 @@ class _TabTileState extends State<_TabTile> {
                   padding: EdgeInsets.zero,
                   iconSize: 16,
                   onPressed: onClose,
-                  icon: Icon(Icons.close, color: Colors.grey[600]),
+                  icon: Icon(Icons.close, color: AkashaColors.textCaption),
                 ),
               ),
             ],

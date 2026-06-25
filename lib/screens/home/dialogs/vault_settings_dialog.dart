@@ -7,6 +7,7 @@ import '../../../services/file_service.dart';
 import '../../../services/user_preferences.dart';
 import '../../../services/user_registry_preferences.dart';
 import '../../../widgets/hidden_registry_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 로컬 볼트(Vault) 설정 다이얼로그
 Future<void> showVaultSettingsDialog(
@@ -47,7 +48,7 @@ Future<void> showVaultSettingsDialog(
                   l10n.settingsDisplayLanguage,
                   style: const TextStyle(
                     fontSize: 11,
-                    color: Colors.grey,
+                    color: AkashaColors.textMuted,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -99,7 +100,7 @@ Future<void> showVaultSettingsDialog(
                 const SizedBox(height: 12),
                 const Text(
                   '※ manga, game, animation 등 카테고리 폴더에 .md가 생성됩니다. work_id는 YAML에 기록됩니다.',
-                  style: TextStyle(fontSize: 11, color: Colors.grey),
+                  style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 8),
                 SwitchListTile(
@@ -159,7 +160,7 @@ Future<void> showVaultSettingsDialog(
                 '표시 이름 (워치리스트 등)',
                 style: TextStyle(
                   fontSize: 11,
-                  color: Colors.grey,
+                  color: AkashaColors.textMuted,
                   fontWeight: FontWeight.bold,
                 ),
               ),

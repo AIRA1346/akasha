@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/format_slot.dart';
+import '../theme/akasha_colors.dart';
 
 /// 카드 하단 매체 칩 행 — **고정 높이 1줄** (+N 오버플로).
 class FormatChipRow extends StatelessWidget {
@@ -158,13 +159,13 @@ class _OverflowChip extends StatelessWidget {
           color: Colors.white.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(4),
           border: Border.all(
-            color: Colors.grey.withValues(alpha: 0.35),
+            color: AkashaColors.borderSubtle(0.35),
           ),
         ),
         child: Text(
           '+$count',
           style: FormatChipRow._overflowTextStyle.copyWith(
-            color: Colors.grey[300],
+            color: AkashaColors.textSecondary,
           ),
         ),
       ),
@@ -193,18 +194,18 @@ class _FormatChip extends StatelessWidget {
       bgColor = Colors.white.withValues(alpha: 0.14);
       textColor = const Color(0xFFE8E8E8);
     } else if (isHidden) {
-      borderColor = Colors.grey.withValues(alpha: 0.25);
+      borderColor = AkashaColors.borderSubtle(0.25);
       bgColor = Colors.transparent;
-      textColor = Colors.grey[600]!;
+      textColor = AkashaColors.textCaption;
     } else {
-      borderColor = Colors.grey.withValues(alpha: 0.35);
+      borderColor = AkashaColors.borderSubtle(0.35);
       bgColor = Colors.transparent;
-      textColor = Colors.grey[400]!;
+      textColor = AkashaColors.textSecondary;
     }
 
     if (dimmed && !isHidden) {
-      textColor = Colors.grey[600]!;
-      borderColor = Colors.grey.withValues(alpha: 0.2);
+      textColor = AkashaColors.textCaption;
+      borderColor = AkashaColors.borderSubtle(0.2);
     }
 
     final chip = Container(

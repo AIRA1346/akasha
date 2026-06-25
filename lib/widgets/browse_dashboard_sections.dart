@@ -10,6 +10,7 @@ import '../utils/helpers.dart';
 import 'curated_reorder_grid.dart';
 import 'section_header.dart';
 import 'section_sort_dropdown.dart';
+import '../theme/akasha_colors.dart';
 
 /// 홈 browse 섹션 — CustomScrollView + Sliver (대시보드 · 개인 서재 공용)
 class BrowseDashboardSections extends StatelessWidget {
@@ -291,7 +292,7 @@ class BrowseDashboardSections extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     '(${groups.byYear[year]!.length}개 작품)',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                    style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
                   ),
                 ],
               ),
@@ -318,7 +319,7 @@ class BrowseDashboardSections extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     '(${groups.noYear.length}개 작품)',
-                    style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                    style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
                   ),
                 ],
               ),
@@ -384,7 +385,7 @@ class BrowseDashboardSections extends StatelessWidget {
                     Text(
                       '새로운 작품을 추가하거나 작품 편집에서 나의 상태를 "볼 예정"으로 설정하면 자동으로 이곳에 정렬됩니다.',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 11, color: Colors.grey[400]),
+                      style: TextStyle(fontSize: 11, color: AkashaColors.textSecondary),
                     ),
                   ],
                 ),
@@ -453,7 +454,7 @@ class BrowseDashboardSections extends StatelessWidget {
                     ? Icons.keyboard_arrow_down
                     : Icons.keyboard_arrow_right,
                 size: 20,
-                color: Colors.grey[400],
+                color: AkashaColors.textSecondary,
               ),
               const SizedBox(width: 4),
             ],
@@ -474,7 +475,7 @@ class BrowseDashboardSections extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               '($count개 작품)',
-              style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+              style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
             ),
           ],
         ),

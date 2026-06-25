@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../theme/akasha_colors.dart';
 import '../services/works_registry.dart';
 
 /// debounce + searchAsync 기반 작품 사전 Autocomplete
@@ -136,7 +137,7 @@ class _RegistryWorkAutocompleteState extends State<RegistryWorkAutocomplete> {
             margin: const EdgeInsets.only(top: 4),
             constraints: const BoxConstraints(maxHeight: 140),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey.shade700),
+              border: Border.all(color: AkashaColors.border),
               borderRadius: BorderRadius.circular(4),
             ),
             child: ListView.builder(

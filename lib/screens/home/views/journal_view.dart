@@ -6,6 +6,7 @@ import '../../../core/archiving/record_kind.dart';
 import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../services/file_service.dart';
 import '../../../services/journal_vault_loader.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Wave 3 — freeform journal 시간순 목록.
 class JournalView extends StatefulWidget {
@@ -73,7 +74,7 @@ class _JournalViewState extends State<JournalView> {
                   Text(
                     _formatWhen(entry.addedAt),
                     style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey,
+                          color: AkashaColors.textMuted,
                         ),
                   ),
                   const SizedBox(height: 12),
@@ -208,7 +209,7 @@ class _JournalViewState extends State<JournalView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.note_alt_outlined, size: 48, color: Colors.grey),
+            const Icon(Icons.note_alt_outlined, size: 48, color: AkashaColors.textMuted),
             const SizedBox(height: 12),
             const Text('아직 메모가 없습니다.'),
             const SizedBox(height: 16),
@@ -282,7 +283,7 @@ class _JournalViewState extends State<JournalView> {
                               _formatWhen(entry.addedAt),
                               style: TextStyle(
                                 fontSize: 11,
-                                color: Colors.grey[500],
+                                color: AkashaColors.textMuted,
                               ),
                             ),
                           ],
@@ -292,7 +293,7 @@ class _JournalViewState extends State<JournalView> {
                           _preview(entry.body),
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.grey[300],
+                            color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),
                         ),

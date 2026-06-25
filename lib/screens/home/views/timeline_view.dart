@@ -8,6 +8,7 @@ import '../../../data/adapters/vault_archive_record_adapter.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
 import '../../../services/timeline_vault_loader.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Phase 4.4 — Timeline entry 시간순 목록.
 class TimelineView extends StatefulWidget {
@@ -87,7 +88,7 @@ class _TimelineViewState extends State<TimelineView> {
                   Text(
                     _formatWhen(entry.occurredAt),
                     style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey,
+                          color: AkashaColors.textMuted,
                         ),
                   ),
                   if (entry.entityId != null && !editing) ...[
@@ -249,7 +250,7 @@ class _TimelineViewState extends State<TimelineView> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.timeline, size: 48, color: Colors.grey),
+            const Icon(Icons.timeline, size: 48, color: AkashaColors.textMuted),
             const SizedBox(height: 12),
             const Text('아직 타임라인 기록이 없습니다.'),
             const SizedBox(height: 16),
@@ -323,7 +324,7 @@ class _TimelineViewState extends State<TimelineView> {
                               _formatWhen(entry.occurredAt),
                               style: TextStyle(
                                 fontSize: 11,
-                                color: Colors.grey[500],
+                                color: AkashaColors.textMuted,
                               ),
                             ),
                           ],
@@ -343,7 +344,7 @@ class _TimelineViewState extends State<TimelineView> {
                           _preview(entry.body),
                           style: TextStyle(
                             fontSize: 13,
-                            color: Colors.grey[300],
+                            color: AkashaColors.textSecondary,
                             height: 1.35,
                           ),
                         ),

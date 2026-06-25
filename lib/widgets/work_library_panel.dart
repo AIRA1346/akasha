@@ -5,6 +5,7 @@ import '../models/membership_apply_result.dart';
 import '../models/personal_library_config.dart';
 import '../services/library_membership_apply.dart';
 import '../services/personal_library_membership_service.dart';
+import '../theme/akasha_colors.dart';
 
 /// 서재 멤버십 체크리스트 + (선택) 표시 숨기기 — popover/dialog 공통 본문
 class WorkLibraryPanel extends StatefulWidget {
@@ -239,7 +240,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                       padding: const EdgeInsets.fromLTRB(16, 6, 16, 0),
                       child: Text(
                         widget.draftMetaLine!,
-                        style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                       ),
                     ),
                 ],
@@ -250,7 +251,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                       '나만의 서재',
                       style: TextStyle(
                         fontSize: 11,
-                        color: Colors.grey[500],
+                        color: AkashaColors.textMuted,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -338,7 +339,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                               _librarySubtitle(lib) ?? '',
                               style: TextStyle(
                                 fontSize: 10,
-                                color: Colors.grey[600],
+                                color: AkashaColors.textCaption,
                               ),
                             ),
                             controlAffinity: ListTileControlAffinity.leading,
@@ -373,7 +374,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                     padding: const EdgeInsets.all(16),
                     child: Text(
                       'curated 서재가 없습니다.',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                     ),
                   ),
                 if (widget.hasHideSection) ...[
@@ -382,7 +383,7 @@ class _WorkLibraryPanelState extends State<WorkLibraryPanel> {
                     tilePadding: const EdgeInsets.symmetric(horizontal: 8),
                     title: Text(
                       '표시 안 함',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+                      style: TextStyle(fontSize: 12, color: AkashaColors.textSecondary),
                     ),
                     initiallyExpanded: _hideExpanded,
                     onExpansionChanged: (v) =>

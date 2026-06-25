@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../models/akasha_item.dart';
 import '../../../services/file_service.dart';
 import '../../../services/markdown_parser.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// AI 마크다운 클립보드 가져오기 다이얼로그
 Future<void> showClipboardImportDialog(
@@ -25,7 +26,7 @@ Future<void> showClipboardImportDialog(
           children: [
             const Text(
               'AI가 생성한 마크다운 텍스트를 여기에 붙여넣으세요. 파싱하여 작품 목록에 추가합니다.',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
+              style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 8),
             Expanded(

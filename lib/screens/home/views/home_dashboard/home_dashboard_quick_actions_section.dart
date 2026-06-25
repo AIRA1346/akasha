@@ -137,7 +137,7 @@ class _ActionCard extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         desc,
-                        style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 9, color: AkashaColors.textMuted),
                       ),
                     ],
                   ),

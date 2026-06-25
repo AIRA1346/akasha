@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../models/dashboard_config.dart';
 import '../../../models/enums.dart';
 import '../../../utils/helpers.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 대시보드 추가·수정 다이얼로그
 Future<void> showDashboardEditDialog(
@@ -47,7 +48,7 @@ Future<void> showDashboardEditDialog(
                     '대시보드 이름',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -65,7 +66,7 @@ Future<void> showDashboardEditDialog(
                     '소분류 (카테고리) 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -97,7 +98,7 @@ Future<void> showDashboardEditDialog(
                     '작품 상태 조건 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -128,7 +129,7 @@ Future<void> showDashboardEditDialog(
                     '나의 상태 조건 필터 (다중 선택 가능)',
                     style: TextStyle(
                       fontSize: 11,
-                      color: Colors.grey,
+                      color: AkashaColors.textMuted,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/akasha_colors.dart';
 
 // ════════════════════════════════════════════════════════════════
 //  별점 표시 위젯 (커스텀, 외부 패키지 불필요)
@@ -18,7 +19,7 @@ class StarRating extends StatelessWidget {
     required this.rating,
     this.size = 16,
     this.color = Colors.amber,
-    this.emptyColor = Colors.grey,
+    this.emptyColor = AkashaColors.textMuted,
   });
 
   @override
@@ -82,7 +83,7 @@ class InteractiveStarRating extends StatelessWidget {
                     ? Icons.star_half_rounded
                     : Icons.star_border_rounded),
             size: size,
-            color: rating >= starValue - 0.5 ? color : Colors.grey.withValues(alpha: 0.3),
+            color: rating >= starValue - 0.5 ? color : AkashaColors.textMuted.withValues(alpha: 0.3),
           ),
         );
       }),

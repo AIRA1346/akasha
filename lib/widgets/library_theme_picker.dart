@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/library_theme.dart';
 import '../services/entitlement_service.dart';
 import '../services/library_theme_preferences.dart';
+import '../theme/akasha_colors.dart';
 
 /// 나만의 서재 테마 선택 바텀시트 + IAP 안내.
 Future<LibraryTheme?> showLibraryThemePicker(
@@ -32,7 +33,7 @@ Future<LibraryTheme?> showLibraryThemePicker(
               const SizedBox(height: 4),
               Text(
                 '기본 테마는 무료 · 프리미엄 테마는 Steam IAP',
-                style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
               ),
               const SizedBox(height: 12),
               ...LibraryTheme.all.map((theme) {

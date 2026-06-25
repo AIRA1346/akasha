@@ -5,6 +5,7 @@ import '../../../models/catalog_contribution.dart';
 import '../../../models/enums.dart';
 import '../../../services/catalog_contribution_service.dart';
 import '../../../widgets/web_image_search_dialog.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// 글로벌 사전에 **신규 작품 추가 제안** (로컬 큐 — 자동 반영 없음)
 Future<bool?> showCatalogAddContributionDialog(
@@ -36,7 +37,7 @@ Future<bool?> showCatalogAddContributionDialog(
               children: [
                 Text(
                   CatalogContributionConfig.disclaimerKo,
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                  style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
                 ),
                 const SizedBox(height: 14),
                 TextField(

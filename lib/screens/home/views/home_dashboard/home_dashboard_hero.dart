@@ -30,7 +30,7 @@ class HomeDashboardHero extends StatelessWidget {
           '작품, 사람, 사건, 개념을 기록하면 연결이 생기고 새로운 발견으로 이어집니다.',
           style: TextStyle(
             fontSize: 12,
-            color: Colors.grey[400],
+            color: AkashaColors.textSecondary,
             height: 1.45,
           ),
         ),

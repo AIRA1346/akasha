@@ -55,7 +55,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
               isColdStart
                   ? '탐험을 시작하면 최근에 본 작품과 인물이 여기에 표시됩니다.'
                   : '아직 탐색 기록이 없습니다. 작품이나 인물을 열면 여기에 표시됩니다.',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             ),
           )
         else if (_usingVaultFallback)
@@ -63,7 +63,7 @@ class HomeDashboardContinueSection extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(
               '최근 추가한 작품부터 탐험해 보세요.',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+              style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             ),
           ),
         if (displayItems.isNotEmpty)
@@ -204,7 +204,7 @@ class _ExploreCard extends StatelessWidget {
                         Row(
                           children: [
                             Icon(Icons.local_offer_outlined,
-                                size: 10, color: Colors.grey[400]),
+                                size: 10, color: AkashaColors.textSecondary),
                             const SizedBox(width: 4),
                             Expanded(
                               child: Text(
@@ -213,7 +213,7 @@ class _ExploreCard extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 9,
-                                  color: Colors.grey[300],
+                                  color: AkashaColors.textSecondary,
                                 ),
                               ),
                             ),
@@ -223,13 +223,13 @@ class _ExploreCard extends StatelessWidget {
                         Row(
                           children: [
                             Icon(Icons.edit_document,
-                                size: 10, color: Colors.grey[400]),
+                                size: 10, color: AkashaColors.textSecondary),
                             const SizedBox(width: 4),
                             Text(
                               '기록 있음',
                               style: TextStyle(
                                 fontSize: 9,
-                                color: Colors.grey[300],
+                                color: AkashaColors.textSecondary,
                               ),
                             ),
                           ],
@@ -257,7 +257,7 @@ class _ExploreCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 8,
                               fontWeight: FontWeight.bold,
-                              color: Colors.grey[300],
+                              color: AkashaColors.textSecondary,
                             ),
                           ),
                         ],

@@ -27,14 +27,14 @@ class WorkPreviewThemeClustersSection extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.hub_outlined, size: 14, color: Colors.grey[500]),
+              Icon(Icons.hub_outlined, size: 14, color: AkashaColors.textMuted),
               const SizedBox(width: 6),
               Text(
                 '반복되는 주제',
                 style: TextStyle(
                   fontSize: compact ? 10 : 11,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey[400],
+                  color: AkashaColors.textSecondary,
                 ),
               ),
             ],

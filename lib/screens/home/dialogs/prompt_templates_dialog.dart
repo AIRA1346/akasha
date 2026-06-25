@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../theme/akasha_colors.dart';
 
 const kAkashaPromptTemplate = '''
 당신은 서브컬처(만화, 게임, 애니메이션, 책) 아카이빙 전문가입니다.
@@ -46,7 +47,7 @@ Future<void> showPromptTemplatesDialog(BuildContext context) async {
           children: [
             const Text(
               '이 템플릿을 AI에게 제공하면, 규격에 맞는 마크다운을 쉽게 받아올 수 있습니다.',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
+              style: TextStyle(fontSize: 12, color: AkashaColors.textMuted),
             ),
             const SizedBox(height: 8),
             Expanded(
@@ -55,7 +56,7 @@ Future<void> showPromptTemplatesDialog(BuildContext context) async {
                 decoration: BoxDecoration(
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: Colors.grey.withValues(alpha: 0.15)),
+                  border: Border.all(color: AkashaColors.borderSubtle(0.15)),
                 ),
                 child: const SingleChildScrollView(
                   child: Text(

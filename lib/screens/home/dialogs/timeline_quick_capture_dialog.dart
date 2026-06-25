@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/akasha_item.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Phase 4.3 — Timeline quick capture 입력.
 class TimelineQuickCaptureResult {
@@ -97,7 +98,7 @@ Future<TimelineQuickCaptureResult?> showTimelineQuickCaptureDialog(
                   Text(
                     'vault/timeline/ 에 저장됩니다.',
                     style: Theme.of(ctx).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey,
+                          color: AkashaColors.textMuted,
                         ),
                   ),
                 ],

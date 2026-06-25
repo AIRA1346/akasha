@@ -5,6 +5,7 @@ import '../utils/vault_asset_resolver.dart';
 import '../core/archiving/record_link.dart';
 import '../services/record_link_markdown.dart';
 import 'safe_local_image.dart';
+import '../theme/akasha_colors.dart';
 
 /// Sanctum vault md 본문 렌더러 — vault 상대 이미지·외부 URL 지원
 class VaultMarkdownBody extends StatelessWidget {
@@ -32,7 +33,7 @@ class VaultMarkdownBody extends StatelessWidget {
         child: Text(
           'Sanctum 페이지가 비어 있습니다.\n'
           '「본문」 또는 「.md」 탭에서 감상·메모를 작성해 보세요.',
-          style: TextStyle(fontSize: 13, color: Colors.grey[500], height: 1.5),
+          style: TextStyle(fontSize: 13, color: AkashaColors.textMuted, height: 1.5),
         ),
       );
     }
@@ -125,13 +126,13 @@ class VaultMarkdownBody extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.broken_image, size: 18, color: Colors.grey[600]),
+          Icon(Icons.broken_image, size: 18, color: AkashaColors.textCaption),
           if (label != null && label.isNotEmpty) ...[
             const SizedBox(width: 8),
             Flexible(
               child: Text(
                 label,
-                style: TextStyle(fontSize: 11, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 11, color: AkashaColors.textCaption),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

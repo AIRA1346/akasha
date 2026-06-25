@@ -10,6 +10,7 @@ import '../../../models/collectible_kind.dart';
 import '../../../models/collectible_ref.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../widgets/editable_tag_chips.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// Work picker row — catalog Work entity or vault item fallback.
 class CollectibleWorkPickerOption {
@@ -160,7 +161,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                     padding: const EdgeInsets.only(top: 4),
                     child: Text(
                       '볼트·카탈로그에 해당 Work가 있을 때만 활성화됩니다.',
-                      style: TextStyle(color: Colors.grey[500], fontSize: 11),
+                      style: TextStyle(color: AkashaColors.textMuted, fontSize: 11),
                     ),
                   ),
                   const Divider(height: 24),
@@ -171,7 +172,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                   const SizedBox(height: 4),
                   Text(
                     '태그 기반 · 작품 기반 · 혼합 — 아래에서 설정 후 「추가」',
-                    style: TextStyle(color: Colors.grey[600], fontSize: 11),
+                    style: TextStyle(color: AkashaColors.textCaption, fontSize: 11),
                   ),
                 ],
                 if (mode == CollectibleCollectionMode.filter) ...[
@@ -194,7 +195,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                   if (pickableWorks.isEmpty)
                     Text(
                       '카탈로그·볼트에 Work가 없습니다.',
-                      style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                      style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
                     )
                   else
                     DropdownButtonFormField<String?>(
@@ -224,7 +225,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                                   work.workId,
                                   style: TextStyle(
                                     fontSize: 10,
-                                    color: Colors.grey[600],
+                                    color: AkashaColors.textCaption,
                                   ),
                                 ),
                               ],
@@ -288,7 +289,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                   if (pickableWorks.isEmpty)
                     Text(
                       '카탈로그·볼트에 Work가 없습니다.',
-                      style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                      style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
                     )
                   else
                     ConstrainedBox(
@@ -331,7 +332,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                   if (pickableEntities.isEmpty)
                     Text(
                       '카탈로그에 Person·Concept 등 Entity가 없습니다.',
-                      style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                      style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
                     )
                   else
                     ConstrainedBox(
@@ -369,7 +370,7 @@ Future<CollectibleCollection?> showCollectibleCollectionEditDialog(
                       padding: const EdgeInsets.only(top: 8),
                       child: Text(
                         '선택 ${selectedRefs.length}개 · 갤러리에서 순서 변경',
-                        style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                        style: TextStyle(color: AkashaColors.textMuted, fontSize: 12),
                       ),
                     ),
                 ],

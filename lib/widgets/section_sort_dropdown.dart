@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/helpers.dart';
+import '../theme/akasha_colors.dart';
 
 /// 섹션 헤더용 정렬 드롭다운 (접기/펼치기 제스처 전파 차단)
 class SectionSortDropdown extends StatelessWidget {
@@ -31,8 +32,8 @@ class SectionSortDropdown extends StatelessWidget {
           child: DropdownButton<SortCriteria>(
             value: effectiveValue,
             isDense: true,
-            icon: const Icon(Icons.sort, size: 14, color: Colors.grey),
-            style: const TextStyle(fontSize: 11, color: Colors.grey),
+            icon: const Icon(Icons.sort, size: 14, color: AkashaColors.textMuted),
+            style: const TextStyle(fontSize: 11, color: AkashaColors.textMuted),
             dropdownColor: const Color(0xFF2A2A3E),
             items: options
                 .map(

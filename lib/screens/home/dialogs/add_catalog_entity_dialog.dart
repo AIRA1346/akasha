@@ -7,6 +7,7 @@ import '../../../models/user_catalog_entity.dart';
 import '../../../services/entity_archive_service.dart';
 import '../../../utils/entity_tag_validation.dart';
 import '../../../widgets/editable_tag_chips.dart';
+import '../../../theme/akasha_colors.dart';
 
 /// R1 — Person · Event · Concept Archive-First 추가 (Work parity).
 Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
@@ -60,7 +61,7 @@ Future<CatalogEntityAddResult?> showAddCatalogEntityDialog(
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    color: Colors.grey[400],
+                    color: AkashaColors.textSecondary,
                   ),
                 ),
                 const SizedBox(height: 4),

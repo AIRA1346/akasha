@@ -41,7 +41,7 @@ class PreviewMemoBar extends StatelessWidget {
                   ),
                   child: Text(
                     '메모를 추가하세요…',
-                    style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                    style: TextStyle(fontSize: 11, color: AkashaColors.textMuted),
                   ),
                 ),
               ),
