@@ -819,6 +819,8 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
               onOpenFileView: _refreshFullFileEditor,
               onWikiLinkTap: widget.onWikiLinkTap,
               onRequestEntityLink: widget.onRequestEntityLink,
+              userCatalog: widget.userCatalog,
+              onOpenLinkedEntity: _openLinkedEntity,
               footer: WorkbenchSaveActions(
                 isSaving: _isSaving,
                 isDirty: widget.isDirty,

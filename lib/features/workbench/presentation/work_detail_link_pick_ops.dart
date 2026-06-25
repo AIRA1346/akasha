@@ -4,7 +4,10 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../core/ports/user_catalog_port.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/entity_link_selection.dart';
+import '../../../models/sanctum_cast_entry.dart';
+import '../../../models/user_catalog_entity.dart';
 import '../../../services/link_candidate_service.dart';
+import '../../../services/markdown_body_merger.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import 'widgets/work_sanctum_section_editor.dart';
 import 'workbench_link_pick_ops.dart';
@@ -59,8 +62,16 @@ abstract final class WorkDetailLinkPickOps {
     required VoidCallback markDirty,
     required Future<void> Function() reloadLinkNeighbors,
   }) async {
+    final isPerson = picked.entityType == UserCatalogEntity.entityTypePerson;
+
     if (sectionEditor != null && pageView == SanctumPageView.body) {
-      sectionEditor.insertWikiLink(picked);
+      if (isPerson) {
+        sectionEditor.insertCastEntry(picked);
+      } else {
+        sectionEditor.insertWikiLink(picked);
+      }
+    } else if (isPerson) {
+      _applyCastToBody(bodyCtrl: bodyCtrl, picked: picked);
     } else {
       WorkbenchLinkPickOps.applyToBodyController(
         bodyCtrl: bodyCtrl,
@@ -70,5 +81,27 @@ abstract final class WorkDetailLinkPickOps {
     syncBodyToItem();
     markDirty();
     await reloadLinkNeighbors();
+  }
+
+  static void _applyCastToBody({
+    required TextEditingController bodyCtrl,
+    required EntityLinkSelection picked,
+  }) {
+    final slots = MarkdownBodyMerger.parseSlots(bodyCtrl.text);
+    final cast = List<SanctumCastEntry>.from(slots.cast);
+    if (cast.any((entry) => entry.entityId == picked.entityId)) return;
+
+    cast.add(SanctumCastEntry(
+      entityId: picked.entityId,
+      title: picked.title,
+    ));
+
+    bodyCtrl.text = MarkdownBodyMerger.mergeBody(
+      bodyRaw: bodyCtrl.text,
+      cast: cast,
+      synopsis: slots.synopsis,
+      quotes: slots.quotes,
+      memo: slots.memo,
+    );
   }
 }

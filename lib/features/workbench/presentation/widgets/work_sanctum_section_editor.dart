@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../models/entity_link_selection.dart';
+import '../../../../models/sanctum_cast_entry.dart';
 import '../../../../services/markdown_body_merger.dart';
 import '../../../../theme/akasha_colors.dart';
 import '../../../../theme/akasha_radius.dart';
@@ -8,7 +9,7 @@ import '../../../../theme/akasha_spacing.dart';
 import '../../../../theme/akasha_typography.dart';
 import '../../../../utils/markdown_edit_actions.dart';
 
-/// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (설명 · 감상 · 명장면). 본문 md와 동기화.
+/// 워크벤치 중앙 Sanctum 슬롯 섹션 편집 (출연 · 설명 · 감상 · 명장면). 본문 md와 동기화.
 class WorkSanctumSectionEditor extends StatefulWidget {
   const WorkSanctumSectionEditor({
     super.key,
@@ -28,6 +29,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
   late final TextEditingController _synopsisCtrl;
   late final TextEditingController _memoCtrl;
   late final TextEditingController _quotesCtrl;
+  List<SanctumCastEntry> _castEntries = [];
   var _quotesExpanded = false;
   var _flushLock = false;
 
@@ -69,6 +71,22 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     widget.onChanged();
   }
 
+  void insertCastEntry(EntityLinkSelection picked, {String? role}) {
+    if (_castEntries.any((entry) => entry.entityId == picked.entityId)) return;
+    setState(() {
+      _castEntries = [
+        ..._castEntries,
+        SanctumCastEntry(
+          entityId: picked.entityId,
+          title: picked.title,
+          role: role,
+        ),
+      ];
+    });
+    _flushToBody();
+    widget.onChanged();
+  }
+
   void _onBodyExternalChange() {
     if (_flushLock) return;
     _loadFromBody();
@@ -83,6 +101,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
   void _loadFromBody() {
     _flushLock = true;
     final slots = MarkdownBodyMerger.parseSlots(widget.bodyController.text);
+    _castEntries = List<SanctumCastEntry>.from(slots.cast);
     _synopsisCtrl.text = slots.synopsis;
     _memoCtrl.text = slots.memo;
     _quotesCtrl.text = slots.quotes.join('\n');
@@ -90,6 +109,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
       _quotesExpanded = true;
     }
     _flushLock = false;
+    if (mounted) setState(() {});
   }
 
   void _flushToBody() {
@@ -101,6 +121,7 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
 
     final merged = MarkdownBodyMerger.mergeBody(
       bodyRaw: widget.bodyController.text,
+      cast: _castEntries,
       synopsis: _synopsisCtrl.text,
       quotes: quotes,
       memo: _memoCtrl.text,
@@ -113,6 +134,26 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
     _flushLock = false;
   }
 
+  void _updateCastRole(int index, String role) {
+    final entry = _castEntries[index];
+    final nextRole = role.trim();
+    _castEntries[index] = SanctumCastEntry(
+      entityId: entry.entityId,
+      title: entry.title,
+      role: nextRole.isEmpty ? null : nextRole,
+    );
+    _flushToBody();
+    widget.onChanged();
+  }
+
+  void _removeCastEntry(int index) {
+    setState(() {
+      _castEntries = List<SanctumCastEntry>.from(_castEntries)..removeAt(index);
+    });
+    _flushToBody();
+    widget.onChanged();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -120,6 +161,12 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          _CastSection(
+            entries: _castEntries,
+            onRoleChanged: _updateCastRole,
+            onRemove: _removeCastEntry,
+          ),
+          const SizedBox(height: AkashaSpacing.md),
           _SectionCard(
             icon: Icons.description_outlined,
             title: '설명',
@@ -142,6 +189,163 @@ class WorkSanctumSectionEditorState extends State<WorkSanctumSectionEditor> {
             controller: _quotesCtrl,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _CastSection extends StatelessWidget {
+  const _CastSection({
+    required this.entries,
+    required this.onRoleChanged,
+    required this.onRemove,
+  });
+
+  final List<SanctumCastEntry> entries;
+  final void Function(int index, String role) onRoleChanged;
+  final void Function(int index) onRemove;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AkashaColors.surface.withValues(alpha: 0.35),
+        borderRadius: AkashaRadius.mdBorder,
+        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(AkashaSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.people_outline, size: 16, color: AkashaColors.accent),
+                const SizedBox(width: AkashaSpacing.sm),
+                Text('출연', style: AkashaTypography.sectionTitle),
+              ],
+            ),
+            const SizedBox(height: AkashaSpacing.sm),
+            if (entries.isEmpty)
+              Text(
+                '우측 「인물 추가」로 출연진을 넣으면 미리보기 상단에 카드로 표시됩니다.',
+                style: AkashaTypography.bodySecondary,
+              )
+            else
+              ...List.generate(entries.length, (index) {
+                final entry = entries[index];
+                return Padding(
+                  padding: EdgeInsets.only(
+                    bottom: index == entries.length - 1 ? 0 : AkashaSpacing.sm,
+                  ),
+                  child: _CastEntryRow(
+                    entry: entry,
+                    onRoleChanged: (role) => onRoleChanged(index, role),
+                    onRemove: () => onRemove(index),
+                  ),
+                );
+              }),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CastEntryRow extends StatefulWidget {
+  const _CastEntryRow({
+    required this.entry,
+    required this.onRoleChanged,
+    required this.onRemove,
+  });
+
+  final SanctumCastEntry entry;
+  final ValueChanged<String> onRoleChanged;
+  final VoidCallback onRemove;
+
+  @override
+  State<_CastEntryRow> createState() => _CastEntryRowState();
+}
+
+class _CastEntryRowState extends State<_CastEntryRow> {
+  late final TextEditingController _roleCtrl;
+
+  @override
+  void initState() {
+    super.initState();
+    _roleCtrl = TextEditingController(text: widget.entry.role ?? '');
+  }
+
+  @override
+  void didUpdateWidget(covariant _CastEntryRow oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.entry.role != widget.entry.role &&
+        _roleCtrl.text != (widget.entry.role ?? '')) {
+      _roleCtrl.text = widget.entry.role ?? '';
+    }
+  }
+
+  @override
+  void dispose() {
+    _roleCtrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AkashaColors.workbenchEditor,
+        borderRadius: AkashaRadius.smBorder,
+        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.entry.title,
+                    style: AkashaTypography.body.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  TextField(
+                    controller: _roleCtrl,
+                    onChanged: widget.onRoleChanged,
+                    style: AkashaTypography.caption,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      hintText: '역할 (예: 주인공)',
+                      hintStyle: AkashaTypography.bodySecondary,
+                      border: OutlineInputBorder(
+                        borderRadius: AkashaRadius.smBorder,
+                        borderSide: BorderSide(
+                          color: AkashaColors.borderSubtle(0.08),
+                        ),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 6,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            IconButton(
+              onPressed: widget.onRemove,
+              icon: Icon(Icons.close, size: 16, color: Colors.grey[500]),
+              visualDensity: VisualDensity.compact,
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,10 @@
+import '../models/sanctum_cast_entry.dart';
+
 /// Sanctum vault 본문 — 슬롯 섹션 merge·round-trip
 class MarkdownBodyMerger {
   MarkdownBodyMerger._();
 
+  static const castHeading = '# 👥 출연';
   static const synopsisHeading = '# 📋 시놉시스';
   static const quotesHeading = '# 🎬 명장면 & 명대사';
   static const memoHeading = '# 📝 메모';
@@ -14,6 +17,9 @@ class MarkdownBodyMerger {
     if (!trimmed.startsWith('# ')) return null;
     final heading = trimmed.substring(2).toLowerCase();
 
+    if (heading.contains('출연') || heading.contains('cast')) {
+      return MarkdownSlotKind.cast;
+    }
     if (heading.contains('명대사') ||
         heading.contains('명장면') ||
         heading.contains('quote')) {
@@ -35,6 +41,7 @@ class MarkdownBodyMerger {
   /// 슬롯 필드를 [bodyRaw]에 merge. 커스텀 섹션·순서 유지.
   static String mergeBody({
     required String bodyRaw,
+    List<SanctumCastEntry> cast = const [],
     required String synopsis,
     required List<String> quotes,
     required String memo,
@@ -47,6 +54,7 @@ class MarkdownBodyMerger {
       foundSlots.add(section.slotKind!);
       final formatted = _formatSlotContent(
         section.slotKind!,
+        cast: cast,
         synopsis: synopsis,
         quotes: quotes,
         memo: memo,
@@ -74,6 +82,13 @@ class MarkdownBodyMerger {
     }
 
     final trailing = <_BodySection>[];
+    if (!foundSlots.contains(MarkdownSlotKind.cast) && cast.isNotEmpty) {
+      trailing.add(_BodySection(
+        headingLine: castHeading,
+        content: SanctumCastFormat.formatBlock(cast),
+        slotKind: MarkdownSlotKind.cast,
+      ));
+    }
     if (!foundSlots.contains(MarkdownSlotKind.synopsis) &&
         synopsis.trim().isNotEmpty) {
       trailing.add(_BodySection(
@@ -115,12 +130,14 @@ class MarkdownBodyMerger {
 
   /// 슬롯만으로 기본 본문 생성 (신규 아카이브)
   static String buildDefaultBody({
+    List<SanctumCastEntry> cast = const [],
     required String synopsis,
     required List<String> quotes,
     required String memo,
   }) =>
       mergeBody(
         bodyRaw: '',
+        cast: cast,
         synopsis: synopsis,
         quotes: quotes,
         memo: memo,
@@ -137,11 +154,14 @@ class MarkdownBodyMerger {
 
   static String _formatSlotContent(
     MarkdownSlotKind kind, {
+    required List<SanctumCastEntry> cast,
     required String synopsis,
     required List<String> quotes,
     required String memo,
   }) {
     switch (kind) {
+      case MarkdownSlotKind.cast:
+        return SanctumCastFormat.formatBlock(cast);
       case MarkdownSlotKind.synopsis:
         return synopsis;
       case MarkdownSlotKind.quotes:
@@ -204,16 +224,24 @@ class MarkdownBodyMerger {
   }
 
   /// 본문에서 슬롯 필드 추출 (deserialize용)
-  static ({String synopsis, List<String> quotes, String memo}) parseSlots(
+  static ({
+    List<SanctumCastEntry> cast,
+    String synopsis,
+    List<String> quotes,
+    String memo,
+  }) parseSlots(
     String bodyRaw,
   ) {
     final sections = _parseSections(bodyRaw);
+    final cast = <SanctumCastEntry>[];
     var synopsis = '';
     final quotes = <String>[];
     var memo = '';
 
     for (final section in sections) {
       switch (section.slotKind) {
+        case MarkdownSlotKind.cast:
+          cast.addAll(SanctumCastFormat.parseBlock(section.content));
         case MarkdownSlotKind.synopsis:
           synopsis = _normalizeSlotContent(section.content);
         case MarkdownSlotKind.memo:
@@ -234,11 +262,11 @@ class MarkdownBodyMerger {
       }
     }
 
-    return (synopsis: synopsis, quotes: quotes, memo: memo);
+    return (cast: cast, synopsis: synopsis, quotes: quotes, memo: memo);
   }
 }
 
-enum MarkdownSlotKind { synopsis, quotes, memo }
+enum MarkdownSlotKind { cast, synopsis, quotes, memo }
 
 class _BodySection {
   final String? headingLine;

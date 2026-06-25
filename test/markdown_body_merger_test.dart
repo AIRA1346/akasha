@@ -1,5 +1,6 @@
 import 'package:akasha/features/workbench/presentation/work_detail_draft_ops.dart';
 import 'package:akasha/models/enums.dart';
+import 'package:akasha/models/sanctum_cast_entry.dart';
 import 'package:akasha/services/markdown_body_merger.dart';
 import 'package:akasha/services/markdown_parser.dart';
 import 'package:akasha/utils/helpers.dart';
@@ -138,5 +139,77 @@ void main() {
 
     expect(body, '# 📝 메모\n내용');
     expect(MarkdownParser.deserialize(serialized, '줄바꿈').bodyRaw, '# 📝 메모\n내용');
+  });
+
+  group('MarkdownBodyMerger cast slot', () {
+    test('parseSlots extracts cast entries with roles', () {
+      const body = '''
+# 👥 출연
+- [[pe_u_alice|앨리스]] role:주인공
+- [[pe_u_bob|밥]]
+
+# 📝 메모
+감상문
+''';
+
+      final slots = MarkdownBodyMerger.parseSlots(body);
+      expect(slots.cast.length, 2);
+      expect(slots.cast[0].entityId, 'pe_u_alice');
+      expect(slots.cast[0].title, '앨리스');
+      expect(slots.cast[0].role, '주인공');
+      expect(slots.cast[1].entityId, 'pe_u_bob');
+      expect(slots.memo, '감상문');
+    });
+
+    test('mergeBody round-trips cast without losing custom sections', () {
+      const bodyRaw = '''
+# 커스텀
+메모 남김
+
+# 👥 출연
+- [[pe_u_alice|앨리스]] role:히로인
+''';
+
+      final merged = MarkdownBodyMerger.mergeBody(
+        bodyRaw: bodyRaw,
+        cast: const [
+          SanctumCastEntry(
+            entityId: 'pe_u_alice',
+            title: '앨리스',
+            role: '히로인',
+          ),
+          SanctumCastEntry(
+            entityId: 'pe_u_bob',
+            title: '밥',
+          ),
+        ],
+        synopsis: '줄거리',
+        quotes: const ['명대사'],
+        memo: '감상',
+      );
+
+      final slots = MarkdownBodyMerger.parseSlots(merged);
+      expect(slots.cast.length, 2);
+      expect(slots.cast[1].title, '밥');
+      expect(slots.synopsis, '줄거리');
+      expect(slots.quotes, ['명대사']);
+      expect(slots.memo, '감상');
+      expect(merged, contains('# 커스텀'));
+    });
+
+    test('appends cast slot when missing', () {
+      final merged = MarkdownBodyMerger.mergeBody(
+        bodyRaw: '',
+        cast: const [
+          SanctumCastEntry(entityId: 'pe_u_x', title: '엑스'),
+        ],
+        synopsis: '',
+        quotes: const [],
+        memo: '',
+      );
+
+      expect(merged, contains(MarkdownBodyMerger.castHeading));
+      expect(merged, contains('[[pe_u_x|엑스]]'));
+    });
   });
 }

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../core/archiving/record_link.dart';
+import '../core/ports/user_catalog_port.dart';
 import '../features/workbench/presentation/widgets/work_sanctum_section_editor.dart';
 import '../features/workbench/presentation/workbench_save_status_hint.dart';
 import '../models/entity_link_selection.dart';
+import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
 import 'markdown_body_editor.dart';
+import 'sanctum/sanctum_preview_body.dart';
 import 'vault_markdown_body.dart';
 
 /// Sanctum 4열 — 미리보기 · 본문 편집 · .md 파일 편집
@@ -38,6 +41,8 @@ class SanctumPagePanel extends StatelessWidget {
   final Widget? footer;
   final bool sectionLayout;
   final GlobalKey<WorkSanctumSectionEditorState>? sectionEditorKey;
+  final UserCatalogPort? userCatalog;
+  final void Function(UserCatalogEntity entity)? onOpenLinkedEntity;
 
   const SanctumPagePanel({
     super.key,
@@ -64,6 +69,8 @@ class SanctumPagePanel extends StatelessWidget {
     this.footer,
     this.sectionLayout = false,
     this.sectionEditorKey,
+    this.userCatalog,
+    this.onOpenLinkedEntity,
   });
 
   @override
@@ -278,11 +285,20 @@ class SanctumPagePanel extends StatelessWidget {
       case SanctumPageView.preview:
         return SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 24),
-          child: VaultMarkdownBody(
-            data: previewMarkdown,
-            mdFilePath: mdFilePath,
-            onWikiLinkTap: onWikiLinkTap,
-          ),
+          child: sectionLayout
+              ? SanctumPreviewBody(
+                  data: previewMarkdown,
+                  mdFilePath: mdFilePath,
+                  userCatalog: userCatalog,
+                  onWikiLinkTap: onWikiLinkTap,
+                  onOpenEntity: onOpenLinkedEntity,
+                  slotAware: true,
+                )
+              : VaultMarkdownBody(
+                  data: previewMarkdown,
+                  mdFilePath: mdFilePath,
+                  onWikiLinkTap: onWikiLinkTap,
+                ),
         );
       case SanctumPageView.body:
         if (sectionLayout) {

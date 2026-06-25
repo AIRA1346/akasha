@@ -133,6 +133,7 @@ class WorkDetailDraftOps {
     );
     return MarkdownBodyMerger.mergeBody(
       bodyRaw: draft.bodyRaw,
+      cast: MarkdownBodyMerger.parseSlots(draft.bodyRaw).cast,
       synopsis: draft.description,
       quotes: draft.memorableQuotes,
       memo: draft.review,
