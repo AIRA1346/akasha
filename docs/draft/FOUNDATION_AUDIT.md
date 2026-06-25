@@ -52,7 +52,7 @@
 | 886 | `work_detail_workspace.dart` | Sanctum toolbar·template·HTML |
 | 796 | `entity_detail_workspace.dart` | entity HTML export |
 | 730 | `markdown_body_editor.dart` | 슬롯·paste·slash |
-| **720** | **`work_sanctum_section_editor.dart`** | **신규 1순위 분해 대상** |
+| 720 | `work_sanctum_section_editor.dart` | **→ 254** (F2 분해) |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
 | 641 | `catalog_entity_browse_view.dart` | |
@@ -114,7 +114,7 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 |:---:|------|------|:---:|
 | **F0** | 0.5~1일 | 기준선 감사·테스트 green | ✅ |
 | **F1** | 1일 | SSOT 문서·B1 D7~D9 | 🟡 진행 |
-| **F2** | 3~5일 | `work_sanctum_section_editor` 분해 · workspace ops 추출 | ⬜ |
+| **F2** | 3~5일 | `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops` | ✅ |
 | **F3** | 2~3일 | R14-B Preview·Save status·Neighbors 토큰 | ⬜ |
 | **F4** | 2일 | `TODO(remove)` 제거 조건표 · works 레이아웃 정책 | ⬜ |
 
@@ -140,3 +140,4 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | 일자 | 변경 |
 |------|------|
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS · 대형 파일·Sanctum·TODO 감사 |
+| 2026-06-25 | F2 — Sanctum 섹션 위젯 4종 분리 · `work_detail_sanctum_ops` |

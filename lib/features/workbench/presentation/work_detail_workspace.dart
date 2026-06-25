@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/archiving/record_link.dart';
 import '../../../core/archiving/same_day_record_ref.dart';
@@ -15,12 +14,12 @@ import '../../../services/link_candidate_service.dart';
 import '../../../services/file_service.dart';
 import '../../../services/work_info_defaults.dart';
 import '../../../services/sanctum_body_templates.dart';
-import '../../../services/sanctum_html_exporter.dart';
 import '../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../widgets/web_image_search_dialog.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
+import 'work_detail_sanctum_ops.dart';
 import 'work_detail_save_ops.dart';
 import 'work_detail_delete_ops.dart';
 import 'work_detail_draft_ops.dart';
@@ -678,30 +677,14 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
   Future<void> _applyBodyTemplate(SanctumBodyTemplate template) async {
     if (_bodyCtrl.text.trim().isNotEmpty) {
-      final confirmed = await showDialog<bool>(
-        context: context,
-        builder: (ctx) => AlertDialog(
-          title: const Text('템플릿 적용'),
-          content: const Text(
-            '현재 기록 본문을 템플릿으로 바꿉니다. 계속할까요?',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(ctx).pop(false),
-              child: const Text('취소'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.of(ctx).pop(true),
-              child: const Text('적용'),
-            ),
-          ],
-        ),
+      final confirmed = await WorkDetailSanctumOps.confirmTemplateOverwrite(
+        context,
       );
-      if (confirmed != true) return;
+      if (!confirmed) return;
     }
 
     setState(() {
-      _bodyCtrl.text = template.bodyMarkdown.trim();
+      _bodyCtrl.text = WorkDetailSanctumOps.bodyMarkdownForTemplate(template);
       WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
     });
     _sectionEditorKey.currentState?.reloadFromBody();
@@ -717,25 +700,13 @@ class _WorkDetailWorkspaceState extends State<WorkDetailWorkspace> {
 
     WorkDetailDraftOps.syncBodyFromEditor(_item, _bodyCtrl);
     final title = _titleCtrl.text.trim();
-    try {
-      final path = await SanctumHtmlExporter.exportAdjacentToRecord(
-        item: _item,
-        bodyMarkdown: _bodyCtrl.text,
-        titleOverride: title.isNotEmpty ? title : null,
-      );
-      if (!mounted) return;
-      if (path == null) {
-        _showSnack('HTML 파일을 만들 수 없습니다.');
-        return;
-      }
-      final uri = Uri.file(path);
-      final opened = await launchUrl(uri);
-      _showSnack(
-        opened ? 'HTML을 저장하고 열었습니다.' : 'HTML을 저장했습니다: $path',
-      );
-    } catch (e) {
-      if (mounted) _showSnack('HTML보내기 실패: $e');
-    }
+    final result = await WorkDetailSanctumOps.exportHtml(
+      item: _item,
+      bodyMarkdown: _bodyCtrl.text,
+      titleOverride: title.isNotEmpty ? title : null,
+    );
+    if (!mounted) return;
+    _showSnack(WorkDetailSanctumOps.htmlExportSnackMessage(result));
   }
 
   Future<void> _confirmDelete() async {
