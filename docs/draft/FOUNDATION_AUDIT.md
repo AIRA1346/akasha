@@ -79,14 +79,18 @@
 
 ## 5. 레거시 `TODO(remove)` (9건)
 
-| 파일 | 건수 | F4 결정 필요 |
-|------|:----:|-------------|
-| `vault_work_journal_paths.dart` | 2 | works 레이아웃 마이그레이션 완료 조건 |
-| `works_registry.dart` | 2 | monolithic JSON 병합 제거 |
-| `registry_shard_loader.dart` | 2 | legacy alias · v4-only 캐시 |
-| `registry_sync_service.dart` | 1 | legacy cache clear |
-| `file_service.dart` | 1 | 구 category 폴더 생성 |
-| `user_preferences.dart` | 1 | works 레이아웃 기본값 `true` 전환 |
+> **제거 조건 SSOT:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) (F4 ✅)
+
+| 파일 | 건수 | F4 결정 |
+|------|:----:|---------|
+| `vault_work_journal_paths.dart` | 2 | v1.2+ G4~G7 충족 후 제거 |
+| `works_registry.dart` | 2 | M3+2 릴리즈 · R2 동시 제거 |
+| `registry_shard_loader.dart` | 2 | alias **889건 유지** · monolithic M3+2 |
+| `registry_sync_service.dart` | 1 | R2 동시 제거 |
+| `file_service.dart` | 1 | v1.2+ works 레이아웃 게이트 |
+| `user_preferences.dart` | 1 | v1.0 **기본 false 고정** |
+
+**M3 v1.0:** 코드 삭제 **없음** — 게이트만 확정.
 
 ---
 
@@ -116,7 +120,7 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | **F1** | 1일 | SSOT 문서·B1 D7~D9 | ✅ |
 | **F2** | 3~5일 | `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops` | ✅ |
 | **F3** | 2~3일 | R14-B Preview·Save status·Neighbors 토큰 | ✅ |
-| **F4** | 2일 | `TODO(remove)` 제거 조건표 · works 레이아웃 정책 | ⬜ |
+| **F4** | 2일 | `TODO(remove)` 제거 조건표 · works 레이아웃 정책 | ✅ |
 
 **의존성:** F0 → F1 → B1 수동 dogfood → F2 → F3. M3 재개는 B1 §5 완료 후.
 
@@ -140,4 +144,4 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | 일자 | 변경 |
 |------|------|
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS · 대형 파일·Sanctum·TODO 감사 |
-| 2026-06-25 | F3 — R14-B Preview·Neighbors·Sanctum hint 토큰 통일 |
+| 2026-06-25 | F4 — [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false |

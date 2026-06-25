@@ -14,7 +14,7 @@ abstract final class VaultWorkJournalPaths {
     if (useWorksLayout) {
       return p.join(vaultRoot, 'works', item.category.name, '$safeTitle.md');
     }
-    // TODO(remove): v1.2+ — 구 `{vault}/{category}/` 레이아웃. works 레이아웃 기본 전환·마이그레이션 후 제거.
+    // TODO(remove): L2 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3
     return p.join(vaultRoot, item.category.name, '$safeTitle.md');
   }
 
@@ -41,7 +41,7 @@ abstract final class VaultWorkJournalPaths {
       return [filePath];
     }
     final safeTitle = _makeSafeFilename(title);
-    // TODO(remove): 첫 경로는 구 레이아웃 — 마이그레이션 완료 후 works 경로만 남길 것.
+    // TODO(remove): L3 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3
     return [
       p.join(vaultRoot, category.name, '$safeTitle.md'),
       p.join(vaultRoot, 'works', category.name, '$safeTitle.md'),

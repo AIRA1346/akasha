@@ -22,7 +22,7 @@ class RegistryShardLoader {
   static const String bundledSearchIndexManifestAsset =
       'assets/registry/search_index/manifest.json';
   static const String bundledLegacyAliasesAsset = 'assets/registry/legacy_aliases.json';
-  // TODO(remove): 구 슬러그 work_id 해석 — 마스터 wk_ ID 전환 완료·alias 0건 확인 후.
+  // TODO(remove): R1 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.1
 
   RegistryManifest? _manifest;
   RegistrySearchIndexManifest? _searchIndexManifest;
@@ -603,7 +603,7 @@ class RegistryShardLoader {
   }
 
   /// 레거시 단일 JSON(works_registry.json) 병합 — 하위 호환
-  /// TODO(remove): v4 샤드-only 캐시가 모든 설치에 적용된 뒤 (모니터링 2 릴리즈 후) 제거.
+  /// TODO(remove): R2 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.2
   Future<void> mergeLegacyMonolithicJson(String jsonStr) async {
     try {
       final decoded = json.decode(jsonStr);

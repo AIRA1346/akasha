@@ -97,7 +97,7 @@ class RegistrySyncService {
   }
 
   /// `local_works_registry.json` — v3 이전 단일 캐시.
-  /// TODO(remove): v4 샤드 캐시만 사용하는 전환 완료 후 삭제.
+  /// TODO(remove): R5 — docs/draft/LEGACY_REMOVAL_POLICY.md §3.2
   Future<void> clearLegacyRegistryCache() async {
     try {
       final file = await _legacyCacheFile;

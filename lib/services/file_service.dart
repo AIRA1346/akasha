@@ -125,7 +125,7 @@ class AkashaFileService {
       await Directory(p.join(_vaultPath!, 'works', cat.name)).create(recursive: true);
     }
 
-    // TODO(remove): 구 `{vault}/{category}/` — works 레이아웃 전환·마이그레이션 후 생성 중단.
+    // TODO(remove): L4 — docs/draft/LEGACY_REMOVAL_POLICY.md §2.3
     for (final cat in MediaCategory.values) {
       await Directory(p.join(_vaultPath!, cat.name)).create(recursive: true);
     }
