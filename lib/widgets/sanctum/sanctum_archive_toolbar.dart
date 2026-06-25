@@ -2,23 +2,30 @@ import 'package:flutter/material.dart';
 
 import '../../models/enums.dart';
 import '../../services/sanctum_body_templates.dart';
+import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_spacing.dart';
+import '../../theme/akasha_typography.dart';
 import '../../features/workbench/presentation/widgets/workbench_panel_styles.dart';
 
 /// Sanctum 기록 — 템플릿 적용 · HTML보내기.
 class SanctumArchiveToolbar extends StatelessWidget {
   const SanctumArchiveToolbar({
     super.key,
-    required this.category,
-    required this.onApplyTemplate,
+    this.category,
+    this.onApplyTemplate,
     required this.onExportHtml,
     this.canExportHtml = false,
+    this.showTemplates = true,
   });
 
-  final MediaCategory category;
-  final ValueChanged<SanctumBodyTemplate> onApplyTemplate;
+  final MediaCategory? category;
+  final ValueChanged<SanctumBodyTemplate>? onApplyTemplate;
   final VoidCallback onExportHtml;
   final bool canExportHtml;
+  final bool showTemplates;
+
+  bool get _templatesEnabled =>
+      showTemplates && category != null && onApplyTemplate != null;
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +33,17 @@ class SanctumArchiveToolbar extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: AkashaSpacing.sm),
       child: Row(
         children: [
-          Expanded(
-            child: OutlinedButton.icon(
-              onPressed: () => _showTemplatePicker(context),
-              icon: const Icon(Icons.article_outlined, size: 14),
-              label: const Text('템플릿'),
-              style: WorkbenchPanelStyles.compactOutlinedStyle(),
+          if (_templatesEnabled) ...[
+            Expanded(
+              child: OutlinedButton.icon(
+                onPressed: () => _showTemplatePicker(context),
+                icon: const Icon(Icons.article_outlined, size: 14),
+                label: const Text('템플릿'),
+                style: WorkbenchPanelStyles.compactOutlinedStyle(),
+              ),
             ),
-          ),
-          const SizedBox(width: AkashaSpacing.sm),
+            const SizedBox(width: AkashaSpacing.sm),
+          ],
           Expanded(
             child: OutlinedButton.icon(
               onPressed: canExportHtml ? onExportHtml : null,
@@ -49,7 +58,8 @@ class SanctumArchiveToolbar extends StatelessWidget {
   }
 
   Future<void> _showTemplatePicker(BuildContext context) async {
-    final templates = SanctumBodyTemplates.forCategory(category);
+    if (!_templatesEnabled) return;
+    final templates = SanctumBodyTemplates.forCategory(category!);
     final picked = await showDialog<SanctumBodyTemplate>(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -81,6 +91,6 @@ class SanctumArchiveToolbar extends StatelessWidget {
         ],
       ),
     );
-    if (picked != null) onApplyTemplate(picked);
+    if (picked != null) onApplyTemplate!(picked);
   }
 }

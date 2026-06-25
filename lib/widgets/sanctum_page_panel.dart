@@ -9,6 +9,7 @@ import 'sanctum/sanctum_archive_completion_bar.dart';
 import '../models/entity_link_selection.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import 'markdown_body_editor.dart';
 import 'sanctum/sanctum_preview_body.dart';
 import 'vault_markdown_body.dart';
@@ -124,10 +125,9 @@ class SanctumPagePanel extends StatelessWidget {
                     ),
                   );
 
-                  final titleStyle = TextStyle(
+                  final titleStyle = AkashaTypography.headline.copyWith(
                     fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[300],
+                    color: AkashaColors.textPrimary,
                   );
 
                   if (constraints.maxWidth < 480) {
@@ -137,7 +137,7 @@ class SanctumPagePanel extends StatelessWidget {
                         Row(
                           children: [
                             const Icon(Icons.menu_book_outlined,
-                                size: 18, color: Colors.tealAccent),
+                                size: 18, color: AkashaColors.accent),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
@@ -157,7 +157,7 @@ class SanctumPagePanel extends StatelessWidget {
                   return Row(
                     children: [
                       const Icon(Icons.menu_book_outlined,
-                          size: 18, color: Colors.tealAccent),
+                          size: 18, color: AkashaColors.accent),
                       const SizedBox(width: 8),
                       Flexible(
                         child: Text(

@@ -16,6 +16,10 @@ import '../../../services/entity_vault_store.dart';
 import '../../../services/file_service.dart';
 import '../../../theme/akasha_colors.dart';
 import '../../../config/feature_flags.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../../services/sanctum_html_exporter.dart';
+import '../../../widgets/sanctum/sanctum_archive_toolbar.dart';
 import '../../../widgets/sanctum_page_panel.dart';
 import '../../../core/archiving/entity_anchor.dart';
 import '../../../screens/home/views/preview_record_view_model.dart';
@@ -651,6 +655,40 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
     );
   }
 
+  Future<void> _exportHtml() async {
+    final storagePath = _journal?.storagePath;
+    if (storagePath == null || storagePath.isEmpty) {
+      _showSnack('HTML보내기 전에 journal을 저장해 주세요.');
+      return;
+    }
+
+    final item = _buildEntityItem(_entity, _journal);
+    item.filePath = storagePath;
+    item.bodyRaw = _bodyCtrl.text;
+    item.posterPath = _posterUrlCtrl.text.trim().isNotEmpty
+        ? _posterUrlCtrl.text.trim()
+        : item.posterPath;
+
+    try {
+      final path = await SanctumHtmlExporter.exportAdjacentToRecord(
+        item: item,
+        bodyMarkdown: _bodyCtrl.text,
+        titleOverride: _entity.title,
+      );
+      if (!mounted) return;
+      if (path == null) {
+        _showSnack('HTML 파일을 만들 수 없습니다.');
+        return;
+      }
+      final opened = await launchUrl(Uri.file(path));
+      _showSnack(
+        opened ? 'HTML을 저장하고 열었습니다.' : 'HTML을 저장했습니다: $path',
+      );
+    } catch (e) {
+      if (mounted) _showSnack('HTML보내기 실패: $e');
+    }
+  }
+
   Future<void> _openPosterCorrection() async {
     final selected = await showDialog<String>(
       context: context,
@@ -745,20 +783,31 @@ class _EntityDetailWorkspaceState extends State<EntityDetailWorkspace> {
                           onRequestEntityLink: widget.onRequestEntityLink,
                           userCatalog: widget.userCatalog,
                           onOpenLinkedEntity: _openLinkedEntity,
-                          footer: WorkbenchSaveActions(
-                            isSaving: _isSaving,
-                            isDirty: widget.isDirty,
-                            lastSavedAt: _lastSavedAt,
-                            saveLabel: saveLabel,
-                            explicitSaveLabel: saveLabel,
-                            onSave: () => _saveJournal(),
-                            showAddToLibrary: widget.onAddToLibrary != null,
-                            libraryLabel: hasJournal
-                                ? '서재에 담기'
-                                : '저장하고 서재에 담기',
-                            onAddToLibrary: _handleAddToLibrary,
-                            canDeleteMd: hasJournal,
-                            onDeleteArchive: hasJournal ? _confirmDelete : null,
+                          footer: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              SanctumArchiveToolbar(
+                                showTemplates: false,
+                                canExportHtml: hasJournal,
+                                onExportHtml: _exportHtml,
+                              ),
+                              WorkbenchSaveActions(
+                                isSaving: _isSaving,
+                                isDirty: widget.isDirty,
+                                lastSavedAt: _lastSavedAt,
+                                saveLabel: saveLabel,
+                                explicitSaveLabel: saveLabel,
+                                onSave: () => _saveJournal(),
+                                showAddToLibrary: widget.onAddToLibrary != null,
+                                libraryLabel: hasJournal
+                                    ? '서재에 담기'
+                                    : '저장하고 서재에 담기',
+                                onAddToLibrary: _handleAddToLibrary,
+                                canDeleteMd: hasJournal,
+                                onDeleteArchive:
+                                    hasJournal ? _confirmDelete : null,
+                              ),
+                            ],
                           ),
                         ),
                       ),

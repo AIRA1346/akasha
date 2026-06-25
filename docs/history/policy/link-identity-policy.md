@@ -261,7 +261,27 @@ explicitId canonical link `[[entityId|Label]]` 에서
 
 ---
 
-## 14. 문서 이력
+## 14. Sanctum 표시 레이어 (2026-06)
+
+> **범위:** vault **저장 문법은 변경하지 않음**. Workbench 「보기」탭·`SanctumPreviewBody`에서만 리치 렌더.
+
+| 저장 (authoring) | 표시 (UI) | 구현 |
+|------------------|-----------|------|
+| `[[entityId\|Title]]` | 아바타 + 이름 **wiki 칩** | `EntityWikiChip` · `SanctumWikiInlineText` |
+| `# 👥 출연` + `- [[id\|이름]] role:역할` | 가로 **출연 스트립** | `SanctumCastStrip` |
+| `# 🖼 갤러리` + `- ![](posters/…)` | 가로 **갤러리 스트립** | `SanctumGalleryStrip` |
+| `# 🎬 명장면` + `> 인용` | **인용 카드** | `SanctumQuoteCards` |
+| `![](posters/…)` (본문) | vault 상대 경로 이미지 | `SanctumVaultImage` |
+
+**규칙**
+
+- identity SSOT는 여전히 `entityId` (§1). 표시는 catalog `posterPath`·저장 시점 label을 사용.
+- `[[@…]]`·`:::cast` 등 **신규 저장 문법은 도입하지 않음**.
+- HTML보내기(`SanctumHtmlExporter`)는 동일 슬롯 파싱으로 정적 HTML 생성 — md 옆 `{제목}.html`.
+
+---
+
+## 15. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
@@ -271,3 +291,4 @@ explicitId canonical link `[[entityId|Label]]` 에서
 | 2026-06-20 | v1.3 — §11 Step 3 wiring · §12 Step 4 E2E verification |
 | 2026-06-19 | v1.4 — §13 R2-D Step 2 stale label definition · Entity Sheet count |
 | 2026-06-19 | v1.5 — §13.3 Step 3 Incoming refresh button |
+| 2026-06-24 | v1.6 — §14 Sanctum 표시 레이어 (wiki 칩·출연·갤러리·HTML보내기) |
