@@ -4,6 +4,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import '../utils/entity_link_neighbors.dart';
 import 'work_link_neighbors_sections.dart';
 
@@ -233,11 +234,7 @@ class EntityLinkNeighborsSections extends StatelessWidget {
     );
   }
 
-  static const _defaultSectionTitle = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-  );
+  static final _defaultSectionTitle = AkashaTypography.sectionTitle;
 }
 
 class _EmptySectionHint extends StatelessWidget {

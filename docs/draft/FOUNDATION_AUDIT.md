@@ -113,9 +113,9 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | Phase | 기간 | 내용 | 상태 |
 |:---:|------|------|:---:|
 | **F0** | 0.5~1일 | 기준선 감사·테스트 green | ✅ |
-| **F1** | 1일 | SSOT 문서·B1 D7~D9 | 🟡 진행 |
+| **F1** | 1일 | SSOT 문서·B1 D7~D9 | ✅ |
 | **F2** | 3~5일 | `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops` | ✅ |
-| **F3** | 2~3일 | R14-B Preview·Save status·Neighbors 토큰 | ⬜ |
+| **F3** | 2~3일 | R14-B Preview·Save status·Neighbors 토큰 | ✅ |
 | **F4** | 2일 | `TODO(remove)` 제거 조건표 · works 레이아웃 정책 | ⬜ |
 
 **의존성:** F0 → F1 → B1 수동 dogfood → F2 → F3. M3 재개는 B1 §5 완료 후.
@@ -140,4 +140,4 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | 일자 | 변경 |
 |------|------|
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS · 대형 파일·Sanctum·TODO 감사 |
-| 2026-06-25 | F2 — Sanctum 섹션 위젯 4종 분리 · `work_detail_sanctum_ops` |
+| 2026-06-25 | F3 — R14-B Preview·Neighbors·Sanctum hint 토큰 통일 |

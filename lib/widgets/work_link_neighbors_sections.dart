@@ -4,6 +4,7 @@ import '../core/archiving/entity_anchor.dart';
 import '../models/akasha_item.dart';
 import '../models/user_catalog_entity.dart';
 import '../theme/akasha_colors.dart';
+import '../theme/akasha_typography.dart';
 import '../utils/work_link_neighbors.dart';
 import '../utils/connection_similarity.dart';
 import 'poster_image.dart';
@@ -236,11 +237,7 @@ class WorkLinkNeighborsSections extends StatelessWidget {
     );
   }
 
-  static const _defaultSectionTitle = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
-  );
+  static final _defaultSectionTitle = AkashaTypography.sectionTitle;
 }
 
 class _EmptyLinkCta extends StatelessWidget {
@@ -257,16 +254,16 @@ class _EmptyLinkCta extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFF161824),
+        color: AkashaColors.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             message,
-            style: TextStyle(fontSize: 10, color: Colors.grey[500]),
+            style: AkashaTypography.caption,
           ),
           if (onPressed != null) ...[
             const SizedBox(height: 6),
@@ -340,7 +337,7 @@ class _ConceptTagChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+        style: AkashaTypography.caption.copyWith(color: AkashaColors.textSecondary),
       ),
     );
   }
@@ -479,10 +476,7 @@ class WorkLinkCharacterWorkbenchList extends StatelessWidget {
                           ),
                           Text(
                             role,
-                            style: TextStyle(
-                              fontSize: 9,
-                              color: Colors.grey[500],
-                            ),
+                            style: AkashaTypography.caption,
                           ),
                         ],
                       ),
@@ -569,7 +563,7 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                               fontSize: 9,
                               color: bridge != null
                                   ? AkashaColors.accent.withValues(alpha: 0.85)
-                                  : Colors.grey[500],
+                                  : AkashaColors.textCaption,
                             ),
                           ),
                         ],
@@ -610,10 +604,8 @@ class WorkLinkConnectedWorksList extends StatelessWidget {
                       ),
                       child: Text(
                         '링크 연결',
-                        style: TextStyle(
-                          fontSize: 8,
-                          color: Colors.grey[400],
-                          fontWeight: FontWeight.bold,
+                        style: AkashaTypography.micro.copyWith(
+                          color: AkashaColors.textMuted,
                         ),
                       ),
                     ),

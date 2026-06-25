@@ -151,12 +151,6 @@ class _EntityDashboardPreviewPanelState
           onOpenWork: widget.onOpenWork,
           onAddEntity: widget.onConnectEntityType,
           onAddWork: widget.onConnectWork,
-          sectionTitleStyle: TextStyle(
-            fontSize: 11,
-            fontWeight: FontWeight.bold,
-            color: Colors.grey[400],
-            letterSpacing: 0.2,
-          ),
         );
       },
     );

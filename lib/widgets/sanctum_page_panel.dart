@@ -185,9 +185,8 @@ class SanctumPagePanel extends StatelessWidget {
                   decoration: InputDecoration(
                     isDense: true,
                     hintText: '작품 제목',
-                    hintStyle: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey[600],
+                    hintStyle: AkashaTypography.headline.copyWith(
+                      color: AkashaColors.textCaption,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -224,21 +223,25 @@ class SanctumPagePanel extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: Colors.amber.withValues(alpha: 0.12),
+                color: AkashaColors.statusWarning.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.amber.withValues(alpha: 0.35)),
+                border: Border.all(
+                  color: AkashaColors.statusWarning.withValues(alpha: 0.35),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                 child: Row(
                   children: [
                     Icon(Icons.sync_problem,
-                        size: 16, color: Colors.amber[700]),
+                        size: 16, color: AkashaColors.statusWarning),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
                         '외부에서 md 파일이 변경되었습니다.',
-                        style: TextStyle(fontSize: 11, color: Colors.amber[100]),
+                        style: AkashaTypography.bodySecondary.copyWith(
+                          color: AkashaColors.textPrimary,
+                        ),
                       ),
                     ),
                     TextButton(
@@ -265,7 +268,7 @@ class SanctumPagePanel extends StatelessWidget {
               sectionLayout
                   ? '설명·감상을 섹션별로 편집합니다. 고급 편집은 「.md」 탭을 사용하세요.'
                   : '마크다운 본문을 편집합니다. 메타데이터(평점·태그 등)는 왼쪽 작품 정보, YAML은 「.md」 탭에서 다룹니다.',
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: AkashaTypography.caption,
             ),
           ),
         if (view == SanctumPageView.file)
@@ -273,7 +276,7 @@ class SanctumPagePanel extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
             child: Text(
               'YAML frontmatter + 본문 전체입니다. 하단 「md 저장」으로 vault에 기록됩니다.',
-              style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+              style: AkashaTypography.caption,
             ),
           ),
         Expanded(child: _buildContent(context)),
@@ -281,7 +284,7 @@ class SanctumPagePanel extends StatelessWidget {
           DecoratedBox(
             decoration: BoxDecoration(
               color: AkashaColors.workbenchPanel,
-              border: Border(top: BorderSide(color: Colors.grey[850]!)),
+              border: Border(top: BorderSide(color: AkashaColors.border)),
             ),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),

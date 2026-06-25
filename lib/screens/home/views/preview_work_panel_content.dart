@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 import '../../../widgets/poster_image.dart';
 import 'preview_record_view_model.dart';
 
@@ -34,29 +35,17 @@ class PreviewRecordTitleBlock extends StatelessWidget {
       children: [
         Text(
           model.title,
-          style: const TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            height: 1.25,
-          ),
+          style: AkashaTypography.headline.copyWith(fontSize: 17, height: 1.25),
         ),
         if (model.subtitle != null) ...[
           const SizedBox(height: 4),
           Text(
             model.subtitle!,
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.grey[500],
-              height: 1.3,
-            ),
+            style: AkashaTypography.bodySecondary.copyWith(height: 1.3),
           ),
         ],
         const SizedBox(height: 6),
-        Text(
-          model.metaLine,
-          style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-        ),
+        Text(model.metaLine, style: AkashaTypography.bodySecondary),
       ],
     );
   }
@@ -84,7 +73,7 @@ class PreviewRecordActionBar extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               visualDensity: VisualDensity.compact,
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              foregroundColor: Colors.grey[300],
+              foregroundColor: AkashaColors.textSecondary,
               side: BorderSide(color: Colors.white.withValues(alpha: 0.12)),
             ),
             child: const Icon(Icons.arrow_back_rounded, size: 16),
@@ -129,15 +118,7 @@ class PreviewRecordCoreInfoSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          '핵심 정보',
-          style: TextStyle(
-            fontSize: 11,
-            fontWeight: FontWeight.bold,
-            color: Colors.grey[400],
-            letterSpacing: 0.2,
-          ),
-        ),
+        Text('핵심 정보', style: AkashaTypography.sectionLabel),
         const SizedBox(height: 10),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
@@ -174,23 +155,19 @@ class _CoreInfoRowWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(row.icon, size: 14, color: Colors.grey[600]),
+        Icon(row.icon, size: 14, color: AkashaColors.textCaption),
         const SizedBox(width: 8),
         SizedBox(
           width: 42,
-          child: Text(
-            row.label,
-            style: TextStyle(fontSize: 10, color: Colors.grey[600]),
-          ),
+          child: Text(row.label, style: AkashaTypography.caption),
         ),
         Expanded(
           child: row.valueWidget ??
               Text(
                 row.value ?? '',
-                style: const TextStyle(
-                  fontSize: 11,
+                style: AkashaTypography.bodySecondary.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: Colors.white,
+                  color: AkashaColors.textPrimary,
                 ),
               ),
         ),
@@ -209,15 +186,7 @@ class PreviewSectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.bold,
-          color: Colors.grey[400],
-          letterSpacing: 0.2,
-        ),
-      ),
+      child: Text(title, style: AkashaTypography.sectionLabel),
     );
   }
 }

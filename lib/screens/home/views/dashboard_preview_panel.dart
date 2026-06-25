@@ -252,12 +252,6 @@ class _DashboardPreviewPanelState extends State<DashboardPreviewPanel> {
               onOpenConcept: widget.onOpenEntity,
               onAddEntity: widget.onConnectEntityType,
               onAddWork: widget.onConnectWorkFromPreview,
-              sectionTitleStyle: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[400],
-                letterSpacing: 0.2,
-              ),
             ),
             if (neighbors.hasAnyLink)
               FutureBuilder<List<LinkCandidate>>(

@@ -68,8 +68,10 @@
 
 * 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md)
 * **F0** ✅ — test 605 · `dogfood_precheck` PASS
-* **F1** 🟡 — SSOT·B1 Sanctum 시나리오
-* **F2~F4** — Sanctum 편집기 분해 · R14-B · 레거시 `TODO(remove)`
+* **F1** ✅ — SSOT·B1 Sanctum 시나리오 D7~D9
+* **F2** ✅ — `work_sanctum_section_editor` 분해 · `work_detail_sanctum_ops`
+* **F3** ✅ — R14-B Preview·Neighbors·Sanctum hint 토큰
+* **F4** — 레거시 `TODO(remove)` 제거 조건
 
 ### Ⅳ. Sprint B1 (Dogfood)
 * SSOT: [SPRINT_B1_DOGFOOD.md](SPRINT_B1_DOGFOOD.md)

@@ -4,6 +4,8 @@ import '../../../core/archiving/entity_anchor.dart';
 import '../../../models/akasha_item.dart';
 import '../../../models/user_catalog_entity.dart';
 import '../../../services/works_registry.dart';
+import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// Work·Entity 프리뷰 패널 공통 표시 모델.
 class PreviewRecordViewModel {
@@ -182,26 +184,19 @@ class PreviewCoreInfoRow {
           ? Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.star, size: 12, color: Colors.amber[600]),
+                Icon(Icons.star, size: 12, color: AkashaColors.statusWarning),
                 const SizedBox(width: 4),
                 Text(
                   rating.toStringAsFixed(1),
-                  style: const TextStyle(
-                    fontSize: 11,
+                  style: AkashaTypography.bodySecondary.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: AkashaColors.textPrimary,
                   ),
                 ),
-                Text(
-                  ' / 10',
-                  style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-                ),
+                Text(' / 10', style: AkashaTypography.caption),
               ],
             )
-          : Text(
-              '평가 없음',
-              style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-            ),
+          : Text('평가 없음', style: AkashaTypography.bodySecondary),
     );
   }
 
