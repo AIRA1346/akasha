@@ -27,9 +27,6 @@ class WorkbenchController extends ChangeNotifier {
   bool get hasOpenDetail =>
       _detailViewVisible && activeTabId != null && activeTab != null;
 
-  /// @deprecated Use [hasOpenDetail]
-  bool get hasOpenWork => hasOpenDetail;
-
   bool get hasTabs => tabs.isNotEmpty;
 
   CollectibleTab? get activeTab {

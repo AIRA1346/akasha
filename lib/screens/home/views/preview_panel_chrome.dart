@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme/akasha_colors.dart';
+import '../../../theme/akasha_typography.dart';
 
 /// Preview 패널 고정 헤더 — 현재 노드 · 이전 · 기록하기 (R4-C P0).
 class PreviewPanelChrome extends StatelessWidget {
@@ -59,17 +60,16 @@ class PreviewPanelChrome extends StatelessWidget {
           ),
           child: Text(
             typeLabel,
-            style: TextStyle(
-              fontSize: 10,
+            style: AkashaTypography.caption.copyWith(
               fontWeight: FontWeight.bold,
-              color: Colors.grey[400],
+              color: AkashaColors.textMuted,
             ),
           ),
         ),
         const Spacer(),
         IconButton(
           icon: const Icon(Icons.close_rounded, size: 20),
-          color: Colors.grey[500],
+          color: AkashaColors.textCaption,
           onPressed: onClose,
           splashRadius: 20,
           tooltip: '닫기',
@@ -98,10 +98,8 @@ class PreviewPanelChrome extends StatelessWidget {
               ),
               child: Text(
                 typeLabel,
-                style: TextStyle(
-                  fontSize: 9,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[400],
+                style: AkashaTypography.micro.copyWith(
+                  color: AkashaColors.textMuted,
                   letterSpacing: 0.3,
                 ),
               ),
@@ -109,7 +107,7 @@ class PreviewPanelChrome extends StatelessWidget {
             const Spacer(),
             IconButton(
               icon: const Icon(Icons.close_rounded, size: 20),
-              color: Colors.grey[500],
+              color: AkashaColors.textCaption,
               onPressed: onClose,
               splashRadius: 20,
               tooltip: '닫기',
@@ -117,21 +115,13 @@ class PreviewPanelChrome extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 6),
-        Text(
-          '지금 보는 항목',
-          style: TextStyle(fontSize: 9, color: Colors.grey[600]),
-        ),
+        Text('지금 보는 항목', style: AkashaTypography.micro),
         const SizedBox(height: 2),
         Text(
           detailTitle,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            height: 1.25,
-          ),
+          style: AkashaTypography.headline.copyWith(fontSize: 15),
         ),
         if (openDetail != null) ...[
           const SizedBox(height: 10),
@@ -154,7 +144,7 @@ class PreviewPanelChrome extends StatelessWidget {
                       horizontal: 10,
                       vertical: 8,
                     ),
-                    foregroundColor: Colors.grey[300],
+                    foregroundColor: AkashaColors.textSecondary,
                     side: BorderSide(
                       color: Colors.white.withValues(alpha: 0.12),
                     ),

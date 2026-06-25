@@ -355,7 +355,7 @@ class HomeShellBody extends StatelessWidget {
             children: [
               if (AkashaFileService().vaultPath == null)
                 HomeVaultBanner(onConnectVault: onConnectVault),
-              if (!workbench.hasOpenWork) ...[
+              if (!workbench.hasOpenDetail) ...[
                 if (!isTimelineMode &&
                     !isCollectibleCollectionMode &&
                     (!hasNoFilters ||
@@ -385,13 +385,13 @@ class HomeShellBody extends StatelessWidget {
               if (!isPersonalLibraryMode &&
                   !isCollectibleCollectionMode &&
                   !isTimelineMode &&
-                  !workbench.hasOpenWork &&
+                  !workbench.hasOpenDetail &&
                   isCatalogLoading)
                 const LinearProgressIndicator(minHeight: 2),
               Expanded(
                 child: Column(
                   children: [
-                    if (dailyRecall != null && !workbench.hasOpenWork)
+                    if (dailyRecall != null && !workbench.hasOpenDetail)
                       TodayRecallCard(
                         recall: dailyRecall,
                         onTap: () => onPreviewWork(dailyRecall.item),

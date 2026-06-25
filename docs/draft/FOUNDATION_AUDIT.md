@@ -1,23 +1,25 @@
 # Foundation Audit — 기초 다지기 감사 (F0)
 
-> **일자:** 2026-06-25  
-> **지위:** Foundation Sprint F0 산출물 (draft)  
-> **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)
+> **일자:** 2026-06-25 (F0) · **재검토:** 2026-06-25 (Post-F4)  
+> **지위:** Foundation Sprint 감사 SSOT (draft)  
+> **상위:** [PROJECT_STATUS.md](../active/PROJECT_STATUS.md) · [CURRENT_STATE.md](../active/CURRENT_STATE.md)  
+> **레거시:** [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md)
 
 ---
 
 ## 1. Executive Summary
 
-| 항목 | 결과 |
-|------|------|
-| `flutter test` | **605/605 PASS** (F0-1 수정 후) |
+| 항목 | 결과 (재검토 2026-06-25) |
+|------|--------------------------|
+| `flutter test` | **605/605 PASS** |
 | `dogfood_precheck.ps1` | **PASS** |
-| `flutter analyze lib` | **0 error** (info/warn 3건) |
-| Release build | 최근 `build_release.ps1` OK (`b6d4899`) |
-| Git | `main` **origin보다 11커밋 앞섬** (미 push) |
-| 문서 SSOT | Sanctum C1~C4 **누락** → F1에서 갱신 |
+| `flutter analyze lib` | **0 issue** (Post-F4 lint 정리 후) |
+| Release build | `build_release.ps1` OK (`202236a`) |
+| Git | `main` **origin보다 17+커밋 앞섬** (미 push) |
+| Foundation F0~F4 | **✅ 완료** |
+| B1 수동 dogfood | **사용자 진행** (Q/D 체크리스트 미완) |
 
-**판단:** Gate·Registry는 건강. **Sanctum 기능 스프린트 이후 문서·테스트·구조 부채**가 다음 병목이다.
+**판단:** Gate·Registry·Foundation Sprint는 건강. **출시 전 병목**은 B1 수동 검증과 **워크벤치 대형 파일·R14 전역 토큰** 잔여.
 
 ---
 
@@ -45,21 +47,21 @@
 
 ---
 
-## 3. 대형 파일 (600줄+, 2026-06-25 실측)
+## 3. 대형 파일 (600줄+, 2026-06-25 재실측)
 
 | 줄 수 | 파일 | 비고 |
 |------:|------|------|
-| 886 | `work_detail_workspace.dart` | Sanctum toolbar·template·HTML |
-| 796 | `entity_detail_workspace.dart` | entity HTML export |
-| 730 | `markdown_body_editor.dart` | 슬롯·paste·slash |
-| 720 | `work_sanctum_section_editor.dart` | **→ 254** (F2 분해) |
+| 857 | `work_detail_workspace.dart` | F2 sanctum ops 분리 — **본체 대형** |
+| 796 | `entity_detail_workspace.dart` | P2 분해 후보 |
+| 730 | `markdown_body_editor.dart` | P2 분해 후보 |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
 | 641 | `catalog_entity_browse_view.dart` | |
+| 630 | `poster_card.dart` | |
+| 590 | `work_link_neighbors_sections.dart` | F3 토큰화 |
+| 587 | `registry_shard_loader.dart` | |
 | 537 | `home_shell_controller.dart` | Phase 7 분해 완료 |
-| 587 | `registry_shard_loader.dart` | workId 캐시 완료 |
-
-**문서 갱신 전 수치:** PROJECT_STATUS는 ~792/~736 — **실측과 불일치** (F1 반영).
+| **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
 
 ---
 
@@ -72,8 +74,6 @@
 | C3 | 갤러리·이미지 DnD/붙여넣기·명장면 카드 | ✅ |
 | C4 | 완성도 %·템플릿·HTML보내기 (Work) | ✅ |
 | Post-C4 | Entity HTML·Sanctum 헤더 토큰·정책 §14 | ✅ |
-
-**미커밋 테스트 수정:** F0 회귀 수정 3파일 (커밋 대기).
 
 ---
 
@@ -94,25 +94,13 @@
 
 ---
 
-## 6. 미 push 커밋 (11건, Sanctum 중심)
+## 6. Git · 원격
 
-```
-b6d4899 chore: sync registry manifests after release build
-5bf11e5 feat: extend Sanctum HTML export to entities and polish panel tokens
-f2931fe chore: sync registry manifests after release build
-a2fab30 feat: add Sanctum archive completion, templates, and HTML export
-e5ec387 chore: sync registry manifests after release build
-e9a476e feat: add gallery drag-drop and clipboard image paste for Sanctum
-2052703 chore: sync registry manifests after release build
-ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
-66b5cb8 chore: sync registry manifests after release build
-9315b58 fix: handle cast slot label in markdown body editor switch
-9454397 feat: add Sanctum cast slot and rich wiki link preview chips
-```
+Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin/main` 대비). `git push` 대기.
 
 ---
 
-## 7. Foundation 로드맵 (F1~F4)
+## 7. Foundation 로드맵 (F0~F4)
 
 | Phase | 기간 | 내용 | 상태 |
 |:---:|------|------|:---:|
@@ -122,26 +110,43 @@ ec2d388 feat: add Sanctum gallery slot and expand rich preview rendering
 | **F3** | 2~3일 | R14-B Preview·Save status·Neighbors 토큰 | ✅ |
 | **F4** | 2일 | `TODO(remove)` 제거 조건표 · works 레이아웃 정책 | ✅ |
 
-**의존성:** F0 → F1 → B1 수동 dogfood → F2 → F3. M3 재개는 B1 §5 완료 후.
+**의존성:** F0~F4 ✅ → **B1 수동 dogfood** (사용자) → M3 재개.
 
 ---
 
-## 8. R14 잔여 (F3 범위)
+## 8. R14 잔여 (Post-F3)
 
-| # | 항목 | 파일 후보 |
-|---|------|-----------|
-| 1 | Preview 정보 계층 | `dashboard_preview_panel.dart` |
-| 2 | Neighbors sectionTitle 토큰 | `work_link_neighbors_sections.dart` |
-| 3 | Save status semantic 색 | `workbench_save_status_hint.dart` |
-| 4 | Sanctum hint·배너 grey | `sanctum_page_panel.dart` |
+| # | 항목 | 상태 |
+|---|------|:---:|
+| 1 | Preview 정보 계층 (`preview_work_panel_content`) | ✅ F3 |
+| 2 | Neighbors `sectionTitle` 토큰 | ✅ F3 + Entity neighbors |
+| 3 | Save status semantic 색 | ✅ |
+| 4 | Sanctum hint·배너 | ✅ F3 |
+| 5 | `preview_panel_chrome` | ✅ Post-F4 |
+| 6 | Home·Dialog `Colors.grey` ~70파일 | ⬜ R14-C (P3) |
 
 **금지:** Discovery Engine · Preview stack 정책 · Save Return 문구 변경.
 
 ---
 
-## 9. 문서 이력
+## 9. Post-Foundation 백로그 (에이전트)
+
+| 우선 | 작업 | 상태 |
+|:----:|------|:---:|
+| P0 | analyze lint · FOUNDATION_AUDIT 갱신 | ✅ |
+| P1 | `hasOpenWork` · `WorkTab` deprecated 제거 | ✅ |
+| P1 | Entity neighbors · preview chrome 토큰 | ✅ |
+| P2 | `entity_detail_workspace` 분해 | ⬜ |
+| P2 | `work_detail_workspace` 추가 분해 | ⬜ |
+| P2 | `markdown_body_editor` 분해 | ⬜ |
+| P3 | R14-C Home·Dialog grey pass | ⬜ |
+
+---
+
+## 10. 문서 이력
 
 | 일자 | 변경 |
 |------|------|
-| 2026-06-25 | F0 초안 — test 605 · precheck PASS · 대형 파일·Sanctum·TODO 감사 |
-| 2026-06-25 | F4 — [LEGACY_REMOVAL_POLICY.md](LEGACY_REMOVAL_POLICY.md) · 9건 게이트 · v1.0 works=false |
+| 2026-06-25 | F0 초안 — test 605 · precheck PASS |
+| 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
+| 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |

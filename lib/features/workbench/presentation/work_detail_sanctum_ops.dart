@@ -61,7 +61,7 @@ abstract final class WorkDetailSanctumOps {
 
   static String htmlExportSnackMessage(WorkDetailHtmlExportResult result) {
     return switch (result) {
-      WorkDetailHtmlExportSuccess(:final path, openedInBrowser: true) =>
+      WorkDetailHtmlExportSuccess(openedInBrowser: true) =>
         'HTML을 저장하고 열었습니다.',
       WorkDetailHtmlExportSuccess(:final path) => 'HTML을 저장했습니다: $path',
       WorkDetailHtmlExportFailure(:final message) => message,

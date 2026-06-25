@@ -62,11 +62,11 @@ class EntityLinkNeighborsSections extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12),
             child: Row(
               children: [
-                Icon(Icons.link, size: 14, color: Colors.grey[500]),
+                Icon(Icons.link, size: 14, color: AkashaColors.textCaption),
                 const SizedBox(width: 6),
                 Text(
                   '이 엔티티를 가리키는 기록 ${neighbors.incomingLinkCount}건',
-                  style: TextStyle(fontSize: 11, color: Colors.grey[400]),
+                  style: AkashaTypography.bodySecondary,
                 ),
               ],
             ),
@@ -251,14 +251,11 @@ class _EmptySectionHint extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFF161824),
+        color: AkashaColors.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.06)),
+        border: Border.all(color: AkashaColors.borderSubtle(0.06)),
       ),
-      child: Text(
-        message,
-        style: TextStyle(fontSize: 10, color: Colors.grey[500]),
-      ),
+      child: Text(message, style: AkashaTypography.caption),
     );
   }
 }
@@ -310,7 +307,7 @@ class _ConceptTagChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+        style: AkashaTypography.caption.copyWith(color: AkashaColors.textSecondary),
       ),
     );
   }

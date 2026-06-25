@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/enums.dart';
 import '../../services/sanctum_body_templates.dart';
-import '../../theme/akasha_colors.dart';
 import '../../theme/akasha_spacing.dart';
-import '../../theme/akasha_typography.dart';
 import '../../features/workbench/presentation/widgets/workbench_panel_styles.dart';
 
 /// Sanctum 기록 — 템플릿 적용 · HTML보내기.
@@ -69,7 +67,7 @@ class SanctumArchiveToolbar extends StatelessWidget {
           child: ListView.separated(
             shrinkWrap: true,
             itemCount: templates.length,
-            separatorBuilder: (_, __) => const Divider(height: 1),
+            separatorBuilder: (_, _) => const Divider(height: 1),
             itemBuilder: (context, index) {
               final template = templates[index];
               return ListTile(

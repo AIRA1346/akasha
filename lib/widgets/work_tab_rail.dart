@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../features/workbench/presentation/work_tab.dart';
+import '../features/workbench/presentation/collectible_tab.dart';
 import '../widgets/poster_image.dart';
 
 /// 열린 작품 탭 레일 (2열)
 class WorkTabRail extends StatelessWidget {
-  final List<WorkTab> tabs;
+  final List<WorkCollectibleTab> tabs;
   final String? activeTabId;
   final bool collapsed;
   final VoidCallback onToggleCollapsed;
@@ -94,7 +94,7 @@ class WorkTabRail extends StatelessWidget {
 }
 
 class _TabTile extends StatelessWidget {
-  final WorkTab tab;
+  final WorkCollectibleTab tab;
   final bool active;
   final bool compact;
   final VoidCallback onTap;
