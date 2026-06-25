@@ -51,9 +51,8 @@
 
 | 줄 수 | 파일 | 비고 |
 |------:|------|------|
-| **814** | `work_detail_workspace.dart` | P2 분해 (`sanctum_panel`·library·link ops) |
-| **755** | `entity_detail_workspace.dart` | P2 분해 진행 |
-| 730 | `markdown_body_editor.dart` | P2 분해 후보 |
+| **736** | `work_detail_workspace.dart` | P2 분해 (`workspace_body`·hydration·save flow) |
+| **690** | `entity_detail_workspace.dart` | P2 분해 (`workspace_body`·save prepare) |
 | 713 | `home_dashboard_discovery_section.dart` | FeatureFlags 숨김 |
 | 649 | `home_shell_body.dart` | |
 | 641 | `catalog_entity_browse_view.dart` | |
@@ -62,6 +61,8 @@
 | 587 | `registry_shard_loader.dart` | |
 | 537 | `home_shell_controller.dart` | Phase 7 분해 완료 |
 | **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
+
+> `markdown_body_editor.dart` **455줄** (P2 완료) — `markdown_editor_*_ops`·`markdown_slash_command_patch`·shortcuts part 추출.
 
 ---
 
@@ -136,9 +137,9 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P0 | analyze lint · FOUNDATION_AUDIT 갱신 | ✅ |
 | P1 | `hasOpenWork` · `WorkTab` deprecated 제거 | ✅ |
 | P1 | Entity neighbors · preview chrome 토큰 | ✅ |
-| P2 | `entity_detail_workspace` 분해 | 🟡 796→**755** |
-| P2 | `work_detail_workspace` 분해 | 🟡 857→**814** |
-| P2 | `markdown_body_editor` 분해 | ⬜ |
+| P2 | `entity_detail_workspace` 분해 | 🟡 796→**690** |
+| P2 | `work_detail_workspace` 분해 | 🟡 857→**736** |
+| P2 | `markdown_body_editor` 분해 | ✅ 730→**455** |
 | P3 | R14-C Home·Dialog grey pass | ⬜ |
 
 ---
@@ -150,3 +151,5 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-24 | P2 workspace body — `*_workspace_body.dart` 3열 레이아웃 추출 |
+| 2026-06-24 | P2 `markdown_body_editor` — undo/slash/find/insert ops · shortcuts part |

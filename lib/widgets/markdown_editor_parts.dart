@@ -392,13 +392,6 @@ class _MarkdownFindBar extends StatelessWidget {
   }
 }
 
-class _EditorSnapshot {
-  const _EditorSnapshot({required this.text, required this.selection});
-
-  final String text;
-  final TextSelection selection;
-}
-
 class _MarkdownEditorToolbar extends StatelessWidget {
   const _MarkdownEditorToolbar({
     required this.canUndo,

@@ -33,12 +33,28 @@ class WorkDetailDraftOps {
   }
 
   static void syncBodyFromEditor(AkashaItem item, TextEditingController bodyCtrl) {
-    item.bodyRaw = bodyCtrl.text;
+    syncBodyFromText(item, bodyCtrl.text);
+  }
+
+  static void syncBodyFromText(AkashaItem item, String bodyText) {
+    item.bodyRaw = bodyText;
     final slots = MarkdownBodyMerger.parseSlots(item.bodyRaw);
     item.description = slots.synopsis;
     item.memorableQuotes = List<String>.from(slots.quotes);
     item.review = slots.memo;
   }
+
+  static ({
+    double rating,
+    String workStatus,
+    String myStatus,
+    bool hallOfFame,
+  }) draftFieldsFromItem(AkashaItem item) => (
+        rating: item.rating,
+        workStatus: item.workStatusLabel,
+        myStatus: item.myStatusLabel,
+        hallOfFame: item.isHallOfFame,
+      );
 
   static AkashaItem applyDraft({
     required AkashaItem item,
