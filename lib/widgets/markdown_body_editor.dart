@@ -512,6 +512,8 @@ class _MarkdownBodyEditorState extends State<MarkdownBodyEditor> {
 
   String _slotLabel(MarkdownSlotKind kind) {
     switch (kind) {
+      case MarkdownSlotKind.cast:
+        return '출연';
       case MarkdownSlotKind.synopsis:
         return '시놉시스';
       case MarkdownSlotKind.quotes:
