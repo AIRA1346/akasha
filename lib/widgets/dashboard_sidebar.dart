@@ -104,7 +104,6 @@ class DashboardSidebar extends StatelessWidget {
                     ),
                   ),
                 ),
-                _buildProBanner(),
                 if (onToggleSidebar != null) _buildCollapseFooter(),
               ],
             )
@@ -318,56 +317,6 @@ class DashboardSidebar extends StatelessWidget {
       }
     }
     return null;
-  }
-
-  Widget _buildProBanner() {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: AkashaColors.proBanner,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AkashaColors.borderSubtle(0.08)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text(
-            'AKASHA Pro',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 4),
-          const Text(
-            '더 많은 기능을 경험해보세요',
-            style: TextStyle(
-              fontSize: 10,
-              color: AkashaColors.textCaption,
-            ),
-          ),
-          const SizedBox(height: 12),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              backgroundColor: AkashaColors.proButton,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              textStyle: const TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            child: const Text('업그레이드'),
-          ),
-        ],
-      ),
-    );
   }
 
   Widget _buildCollapseFooter() {
