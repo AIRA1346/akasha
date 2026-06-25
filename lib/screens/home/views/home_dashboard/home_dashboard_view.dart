@@ -15,7 +15,6 @@ import 'home_dashboard_discovery_section.dart';
 import 'home_dashboard_quick_actions_section.dart';
 import 'home_dashboard_registry_bridge_section.dart';
 import 'home_dashboard_universe_section.dart';
-import 'home_dashboard_top_bar.dart';
 
 /// 탐험 중심 홈 — Continue·Discover·Universe 블록 (Discover/Universe는 [FeatureFlags]).
 class HomeDashboardView extends StatelessWidget {
@@ -28,7 +27,6 @@ class HomeDashboardView extends StatelessWidget {
     required this.onPreviewWork,
     required this.onPreviewEntity,
     required this.onSearch,
-    required this.onVaultSettings,
     required this.onGoExplore,
     required this.onGoExploreEntities,
     required this.onGoKnowledgeGraph,
@@ -49,7 +47,6 @@ class HomeDashboardView extends StatelessWidget {
   final void Function(AkashaItem) onPreviewWork;
   final void Function(UserCatalogEntity) onPreviewEntity;
   final VoidCallback onSearch;
-  final VoidCallback onVaultSettings;
   final VoidCallback onGoExplore;
   final void Function(BrowseEntityScope scope) onGoExploreEntities;
   final VoidCallback onGoKnowledgeGraph;
@@ -127,11 +124,6 @@ class HomeDashboardView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             HomeDashboardHero(onStartExplore: onSearch),
-            const SizedBox(height: 24),
-            HomeDashboardTopBar(
-              onSearch: onSearch,
-              onVaultSettings: onVaultSettings,
-            ),
             const SizedBox(height: 28),
             HomeDashboardContinueSection(
               recentExploreItems: recentExploreItems,

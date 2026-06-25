@@ -352,7 +352,10 @@ class HomeShellBody extends StatelessWidget {
               if (!workbench.hasOpenWork) ...[
                 if (!isTimelineMode &&
                     !isCollectibleCollectionMode &&
-                    (!hasNoFilters || isPersonalLibraryMode || isExploreBrowseMode))
+                    (!hasNoFilters ||
+                        isPersonalLibraryMode ||
+                        isExploreBrowseMode ||
+                        isHomeDashboardMode))
                   FilterSection(
                     selectedCategories: filterCtrl.categories,
                     selectedWorkStatuses: filterCtrl.workStatuses,
@@ -367,7 +370,10 @@ class HomeShellBody extends StatelessWidget {
                   ),
                 if (!isTimelineMode &&
                     !isCollectibleCollectionMode &&
-                    (!hasNoFilters || isPersonalLibraryMode || isExploreBrowseMode))
+                    (!hasNoFilters ||
+                        isPersonalLibraryMode ||
+                        isExploreBrowseMode ||
+                        isHomeDashboardMode))
                   const Divider(height: 1),
               ],
               if (!isPersonalLibraryMode &&
@@ -538,7 +544,11 @@ class HomeShellBody extends StatelessWidget {
       );
     }
 
-    if (hasNoFilters && !isExploreBrowseMode) {
+    final showHomeDashboard = hasNoFilters &&
+        !isExploreBrowseMode &&
+        scope.showsWorkGrid;
+
+    if (showHomeDashboard) {
       return HomeDashboardView(
         vaultItems: items,
         recentExploreItems: recentExploreItems,
@@ -549,7 +559,6 @@ class HomeShellBody extends StatelessWidget {
         onPreviewWork: onNavigateWorkPreview,
         onPreviewEntity: onNavigateEntityPreview,
         onSearch: onSearch,
-        onVaultSettings: onVaultSettings,
         onGoExplore: onGoExplore,
         onGoExploreEntities: onGoExploreEntities,
         onGoKnowledgeGraph: onGoKnowledgeGraph,
