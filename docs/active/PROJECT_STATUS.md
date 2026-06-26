@@ -113,7 +113,6 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 |---|------|:----:|
 | 1 | **M3** Steam Release 착수 | **P0** |
 | 2 | `registry_shard_loader` 분해 | P1 |
-| 3 | **M3** Steam Release 착수 | **P0** |
 
 ---
 
