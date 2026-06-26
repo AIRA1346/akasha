@@ -69,7 +69,7 @@
 | **126** | `poster_card.dart` | P9 ✅ style·layouts 분리 |
 | 590 | `work_link_neighbors_sections.dart` | P10 ✅ **207** + chrome·layouts |
 | 587 | `registry_shard_loader.dart` | |
-| 537 | `home_shell_controller.dart` | Phase 7 분해 완료 |
+| 537 | `home_shell_controller.dart` | P11 ✅ **156** + bundle·mixins |
 | **254** | `work_sanctum_section_editor.dart` | F2 ✅ |
 
 > `markdown_body_editor.dart` **455줄** (P2 완료) — `markdown_editor_*_ops`·`markdown_slash_command_patch`·shortcuts part 추출.
@@ -159,6 +159,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | P8 | workspace UI part analyze 정리 | ✅ `setState`·private builder · lib 0 issue |
 | P9 | `poster_card` 분해 | ✅ 668→**126** + style·layouts |
 | P10 | `work_link_neighbors_sections` 분해 | ✅ 590→**207** + chrome·character·connected works |
+| P11 | `home_shell_controller` 분해 | ✅ 615→**156** + bundle·mixins |
 
 ---
 
@@ -169,6 +170,7 @@ Foundation F0~F4 · Sanctum C1~C4 · manifest sync 포함 **17+커밋** (`origin
 | 2026-06-25 | F0 초안 — test 605 · precheck PASS |
 | 2026-06-25 | F4 — LEGACY_REMOVAL_POLICY · 9건 게이트 |
 | 2026-06-25 | Post-F4 재검토 — 대형 파일 재실측 · R14·백로그 · P0/P1 정리 |
+| 2026-06-26 | P11 — `home_shell_controller` bundle·mixins 분해 (**156줄** shell) |
 | 2026-06-26 | P10 — `work_link_neighbors` chrome·layouts 분해 (**207줄** shell) |
 | 2026-06-26 | Vault agent — VAULT_README · entity_path_index · `VAULT_AGENT_GUIDE` |
 | 2026-06-24 | P9 — `poster_card` style·layouts 분해 (**126줄** shell) |

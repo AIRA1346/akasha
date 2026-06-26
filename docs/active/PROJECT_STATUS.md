@@ -101,7 +101,7 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | **S** | **Sanctum C1~C4** — wiki 칩·출연·갤러리·완성도·템플릿·HTML | ✅ |
 | **F** | **Foundation F0~F4** — 감사·Sanctum 분해·R14-B·레거시 정책 | ✅ |
 
-**대형 파일 (2026-06-26):** `entity_detail_workspace` **~620** · `work_detail_workspace` **~591** · `work_link_neighbors_sections` **~220** (P10) · `home_shell_controller` **537**
+**대형 파일 (2026-06-26):** `entity_detail_workspace` **~620** · `work_detail_workspace` **~591** · `home_shell_controller` **156** (P11) · `registry_shard_loader` **587**
 
 감사 SSOT: [FOUNDATION_AUDIT.md](../draft/FOUNDATION_AUDIT.md) · Vault: [VAULT_AGENT_GUIDE.md](VAULT_AGENT_GUIDE.md)
 
@@ -112,8 +112,8 @@ insert를 막던 SD2.6 hold는 **폐기**하고, **작품을 추가하면서** s
 | # | 작업 | 우선 |
 |---|------|:----:|
 | 1 | **M3** Steam Release 착수 | **P0** |
-| 2 | P10 `work_link_neighbors` 분해 | P1 |
-| 3 | `home_shell_controller` 분해 | P2 |
+| 2 | `registry_shard_loader` 분해 | P1 |
+| 3 | **M3** Steam Release 착수 | **P0** |
 
 ---
 
